@@ -8473,11 +8473,7 @@ export const blogPosts: BlogPost[] = [
   excerpt: "Discover the best personal loan calculators that help salaried employees plan EMIs, compare lenders, and make smart borrowing decisions in 2025.",
   coverImage: "https://image-generator.ryrob.com/user/generated/article-writer/1748253631668.jpg",
   content: [
-    {
-      type: 'image',
-      url: 'https://image-generator.ryrob.com/user/generated/article-writer/1748253631668.jpg',
-      caption: 'Best personal loan calculators for salaried employees'
-    },
+   
     {
       type: 'heading',
       content: 'Introduction'
@@ -8669,7 +8665,8 @@ export const blogPosts: BlogPost[] = [
       author: 'Rahul Mehta, Senior Loan Officer'
     }
   ]
-}
+},
+  
 ];     
 
 
