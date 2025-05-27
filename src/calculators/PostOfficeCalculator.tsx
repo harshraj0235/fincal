@@ -64,9 +64,9 @@ const schemeDetails: Record<SchemeType, SchemeDetails> = {
 };
 
 export const PostOfficeCalculator: React.FC = () => {
-  const [schemeType, setSchemeType] = useState<SchemeType>('td');
+  const [schemeType, setSchemeType] = useState<SchemeType>('kvp');
   const [amount, setAmount] = useState<number>(100000);
-  const [tenure, setTenure] = useState<number>(5);
+  const [tenure, setTenure] = useState<number>(10);
   const [maturityAmount, setMaturityAmount] = useState<number>(0);
   const [totalInterest, setTotalInterest] = useState<number>(0);
   const [monthlyIncome, setMonthlyIncome] = useState<number>(0);
@@ -104,6 +104,7 @@ export const PostOfficeCalculator: React.FC = () => {
         break;
         
       case 'kvp':
+        // KVP doubles the money in approximately 10 years at 7.5%
         calculatedMaturity = amount * Math.pow(2, tenure / 10);
         calculatedInterest = calculatedMaturity - amount;
         break;

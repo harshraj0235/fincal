@@ -58,6 +58,10 @@ import { BrokerageCalculator } from '../calculators/BrokerageCalculator';
 import { MarginTradingCalculator } from '../calculators/MarginTradingCalculator';
 import { MutualFundReturnsCalculator } from '../calculators/MutualFundReturnsCalculator';
 import { MutualFundCostCalculator } from '../calculators/MutualFundCostCalculator';
+import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalculator';
+import { NpsCalculator } from '../calculators/NpsCalculator';
+import { NpsTier2Calculator } from '../calculators/NpsTier2Calculator';
+import { PostOfficeCalculator } from '../calculators/PostOfficeCalculator';
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -198,6 +202,14 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <MutualFundReturnsCalculator />;
       case 'mutual-fund-cost-calculator':
         return <MutualFundCostCalculator />;
+      case 'sukanya-samriddhi-calculator':
+        return <SukanyaSamriddhiCalculator />;
+      case 'nps-calculator':
+        return <NpsCalculator />;
+      case 'nps-tier-2-calculator':
+        return <NpsTier2Calculator />;
+      case 'post-office-schemes-calculator':
+        return <PostOfficeCalculator />;
       default:
         return (
           <div className="text-center py-8">

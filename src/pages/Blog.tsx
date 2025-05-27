@@ -81,6 +81,20 @@ export const Blog: React.FC = () => {
           </div>
           
           <div className="p-4 bg-primary-50 rounded-lg border border-primary-100">
+            <h3 className="text-lg font-semibold text-primary-900 mb-2">Government Scheme Guides</h3>
+            <p className="text-sm text-primary-700 mb-3">
+              Explore our comprehensive guides on various government financial schemes in India.
+            </p>
+            <Link 
+              to="/blog/category/government-schemes" 
+              className="text-sm font-medium text-primary-700 hover:text-primary-800 flex items-center"
+            >
+              View all guides
+              <ArrowRight className="h-4 w-4 ml-1" />
+            </Link>
+          </div>
+          
+          <div className="p-4 bg-primary-50 rounded-lg border border-primary-100">
             <h3 className="text-lg font-semibold text-primary-900 mb-2">Write for Us</h3>
             <p className="text-sm text-primary-700 mb-3">
               Share your financial expertise with our community. We welcome guest contributions from finance professionals.
@@ -151,6 +165,66 @@ export const Blog: React.FC = () => {
               ))}
             </div>
           )}
+          
+          {/* Government Scheme Articles Section */}
+          <div className="mt-12 bg-[--success-50] rounded-xl p-6 border border-[--success-200]">
+            <h2 className="text-2xl font-bold text-[--success-900] mb-4">Government Scheme Guides</h2>
+            <p className="text-[--success-700] mb-6">
+              Comprehensive guides to help you understand and maximize benefits from various government financial schemes in India.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-neutral-900 mb-2">Sukanya Samriddhi Yojana: Complete Guide</h3>
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
+                  Everything you need to know about SSY - eligibility, benefits, tax advantages, and how to maximize returns.
+                </p>
+                <Link to="/blog/sukanya-samriddhi-yojana-guide" className="text-xs text-[--success-600] font-medium hover:underline">
+                  Read More →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-neutral-900 mb-2">National Pension System: Tier 1 vs Tier 2</h3>
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
+                  Detailed comparison of NPS Tier 1 and Tier 2 accounts - features, benefits, tax implications, and investment strategies.
+                </p>
+                <Link to="/blog/nps-tier1-vs-tier2-comparison" className="text-xs text-[--success-600] font-medium hover:underline">
+                  Read More →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-neutral-900 mb-2">Post Office Savings Schemes: Which One is Right for You?</h3>
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
+                  Compare KVP, NSC, SCSS, MIS, and other post office schemes to find the best option for your financial goals.
+                </p>
+                <Link to="/blog/post-office-savings-schemes-comparison" className="text-xs text-[--success-600] font-medium hover:underline">
+                  Read More →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-neutral-900 mb-2">PM Vaya Vandana Yojana: Pension Scheme for Senior Citizens</h3>
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
+                  A detailed look at PMVVY - benefits, eligibility, comparison with other senior citizen schemes, and application process.
+                </p>
+                <Link to="/blog/pm-vaya-vandana-yojana-guide" className="text-xs text-[--success-600] font-medium hover:underline">
+                  Read More →
+                </Link>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <Link 
+                to="/blog/category/government-schemes" 
+                className="inline-flex items-center text-[--success-700] hover:text-[--success-800] font-medium"
+              >
+                View all government scheme guides
+                <ArrowRight className="h-4 w-4 ml-1" />
+              </Link>
+            </div>
+          </div>
           
           {/* Pagination */}
           {filteredPosts.length > 0 && (

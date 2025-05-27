@@ -21,6 +21,153 @@ export interface CalculatorCategory {
 // Define the calculator categories
 export const calculatorCategories: CalculatorCategory[] = [
   {
+    id: 'government-schemes',
+    name: 'Government Schemes',
+    description: 'Calculate returns and benefits from various government-backed financial schemes in India',
+    calculators: [
+      {
+        id: 'sukanya-samriddhi-calculator',
+        name: 'Sukanya Samriddhi Yojana Calculator',
+        description: 'Calculate returns on investments in the Sukanya Samriddhi Yojana scheme for girl children',
+        category: 'Government Schemes',
+        keywords: ['sukanya samriddhi', 'ssy', 'girl child', 'government scheme', 'tax saving'],
+        info: [
+          "The Sukanya Samriddhi Yojana (SSY) Calculator helps you estimate the maturity amount and returns on your investments in this government-backed savings scheme for girl children.",
+          "SSY is a small deposit scheme for the girl child launched as part of the 'Beti Bachao Beti Padhao' campaign. It offers one of the highest interest rates among government schemes and comes with tax benefits under Section 80C.",
+          "This calculator shows you the total deposit amount, interest earned, and the final maturity value based on your annual contribution, the girl's current age, and the prevailing interest rate."
+        ],
+        faqs: [
+          {
+            question: "Who can open a Sukanya Samriddhi Account?",
+            answer: "A Sukanya Samriddhi Account can be opened by a parent or legal guardian for a girl child up to the age of 10 years. A maximum of two accounts can be opened in a family (one for each girl child)."
+          },
+          {
+            question: "What is the minimum and maximum deposit amount?",
+            answer: "The minimum annual deposit is ₹250 and the maximum is ₹1,50,000 per account. Deposits can be made in lump sum or in installments."
+          },
+          {
+            question: "What are the tax benefits of Sukanya Samriddhi Yojana?",
+            answer: "SSY enjoys EEE (Exempt-Exempt-Exempt) tax status. This means the investment amount is eligible for tax deduction under Section 80C, the interest earned is tax-free, and the maturity amount is also exempt from tax."
+          },
+          {
+            question: "When does the account mature?",
+            answer: "The account matures when the girl child reaches 21 years of age. However, deposits are only required for the first 15 years from the date of opening the account."
+          }
+        ],
+        relatedCalculators: ['ppf-calculator', 'fd-calculator', 'tax-saving-investment-calculator']
+      },
+      {
+        id: 'nps-calculator',
+        name: 'National Pension System Calculator',
+        description: 'Plan your retirement corpus with the National Pension System calculator',
+        category: 'Government Schemes',
+        keywords: ['nps', 'national pension system', 'pension', 'retirement', 'annuity'],
+        info: [
+          "The National Pension System (NPS) Calculator helps you estimate your retirement corpus based on your monthly contributions, expected returns, and investment horizon.",
+          "NPS is a voluntary, long-term retirement savings scheme designed to enable systematic savings during your working life. It's regulated by the Pension Fund Regulatory and Development Authority (PFRDA).",
+          "This calculator shows you the total contribution amount, expected returns, and the final corpus value at retirement, helping you plan for a financially secure future."
+        ],
+        faqs: [
+          {
+            question: "What are the tax benefits of investing in NPS?",
+            answer: "NPS offers multiple tax benefits: 1) Deduction up to ₹1.5 lakh under Section 80C, 2) Additional deduction of up to ₹50,000 under Section 80CCD(1B), 3) Employer contributions up to 10% of salary are tax-free under Section 80CCD(2), and 4) 60% of the corpus withdrawn at maturity is tax-free."
+          },
+          {
+            question: "How is the NPS corpus distributed at retirement?",
+            answer: "At retirement (age 60), you can withdraw up to 60% of the corpus as a lump sum (tax-free), and at least 40% must be used to purchase an annuity that provides a regular pension."
+          },
+          {
+            question: "What investment options are available in NPS?",
+            answer: "NPS offers two investment approaches: 1) Active Choice - where you decide the allocation across Equity (E), Corporate Bonds (C), Government Securities (G), and Alternative Investment Funds (A), and 2) Auto Choice - where allocation is automatically adjusted based on your age."
+          },
+          {
+            question: "Can I withdraw from NPS before retirement?",
+            answer: "Yes, partial withdrawals (up to 25% of your contributions) are allowed after 3 years for specific needs like children's education, home purchase, or medical treatment. Premature exit is also possible, but 80% of the corpus must be used to purchase an annuity."
+          }
+        ],
+        relatedCalculators: ['nps-tier-2-calculator', 'retirement-calculator', 'pension-calculator']
+      },
+      {
+        id: 'nps-tier-2-calculator',
+        name: 'NPS Tier-2 Calculator',
+        description: 'Calculate returns on your NPS Tier-2 account investments',
+        category: 'Government Schemes',
+        keywords: ['nps tier 2', 'national pension system', 'voluntary contribution', 'pension investment'],
+        info: [
+          "The NPS Tier-2 Calculator helps you estimate the returns on your investments in the National Pension System's Tier-2 account.",
+          "Unlike the Tier-1 account which is primarily for retirement, the Tier-2 account offers more flexibility with no lock-in period and unlimited withdrawals, making it similar to a mutual fund investment.",
+          "This calculator shows you the potential growth of your investments based on your monthly contributions, asset allocation, and investment horizon."
+        ],
+        faqs: [
+          {
+            question: "What is the difference between NPS Tier-1 and Tier-2 accounts?",
+            answer: "The main differences are: 1) Tier-1 is a retirement account with restrictions on withdrawals, while Tier-2 has no withdrawal restrictions, 2) Tier-1 offers tax benefits, while Tier-2 generally doesn't (except for government employees), 3) Tier-1 has a lock-in until retirement age, while Tier-2 has no lock-in period."
+          },
+          {
+            question: "Who can open an NPS Tier-2 account?",
+            answer: "Only those who already have an active NPS Tier-1 account can open a Tier-2 account. You cannot open a Tier-2 account directly without first having a Tier-1 account."
+          },
+          {
+            question: "What are the investment options in NPS Tier-2?",
+            answer: "NPS Tier-2 offers the same investment options as Tier-1: Equity (E), Corporate Bonds (C), Government Securities (G), and Alternative Investment Funds (A). You can choose your asset allocation or opt for the auto choice option."
+          },
+          {
+            question: "Are there any minimum contribution requirements for NPS Tier-2?",
+            answer: "There is no minimum annual contribution requirement for the Tier-2 account. However, there is a minimum initial contribution of ₹1,000 to activate the account and a minimum contribution of ₹250 for subsequent transactions."
+          }
+        ],
+        relatedCalculators: ['nps-calculator', 'mutual-fund-returns-calculator', 'sip-calculator']
+      },
+      {
+        id: 'post-office-schemes-calculator',
+        name: 'Post Office Schemes Calculator',
+        description: 'Calculate returns on various post office savings schemes including Kisan Vikas Patra (KVP)',
+        category: 'Government Schemes',
+        keywords: ['post office', 'savings scheme', 'kvp', 'nsc', 'monthly income scheme'],
+        info: [
+          "The Post Office Schemes Calculator helps you estimate returns on various savings schemes offered by India Post, including Kisan Vikas Patra (KVP), Time Deposit, Recurring Deposit, Monthly Income Scheme, and Senior Citizen Savings Scheme.",
+          "These government-backed schemes offer secure investment options with guaranteed returns, making them popular among conservative investors.",
+          "This calculator shows you the maturity amount, total interest earned, and for certain schemes, the monthly income generated based on your investment amount and the current interest rates."
+        ],
+        faqs: [
+          {
+            question: "What is Kisan Vikas Patra (KVP)?",
+            answer: "Kisan Vikas Patra is a savings certificate scheme where your investment doubles in about 10 years (current doubling period: 123 months). It offers a current interest rate of 7.5% compounded annually. There is no maximum investment limit, and certificates can be purchased in denominations starting from ₹1,000."
+          },
+          {
+            question: "What are the tax implications of post office schemes?",
+            answer: "Tax implications vary by scheme. NSC and PPF qualify for tax deduction under Section 80C. Interest earned on most post office schemes is taxable as per your income tax slab. However, there is no TDS on post office scheme interest, but you need to declare the income in your tax returns."
+          },
+          {
+            question: "Can I withdraw money from these schemes prematurely?",
+            answer: "Premature withdrawal rules vary by scheme. KVP allows premature withdrawal after 2.5 years with a penalty. Time Deposits allow premature withdrawal with a penalty. SCSS allows premature closure after one year with a penalty. MIS allows premature withdrawal after one year with a penalty."
+          },
+          {
+            question: "How do I invest in post office savings schemes?",
+            answer: "You can invest in these schemes by visiting any post office. Some schemes can also be accessed through designated banks. You'll need to fill out the relevant application form and provide KYC documents (identity and address proof). Some post offices now also offer online account opening and management facilities."
+          }
+        ],
+        relatedCalculators: ['fd-calculator', 'rd-calculator', 'ppf-calculator']
+      },
+      {
+        id: 'ppf-calculator',
+        name: 'PPF Calculator',
+        description: 'Calculate the maturity value and returns on your Public Provident Fund investment',
+        category: 'Government Schemes',
+        keywords: ['ppf', 'public provident fund', 'tax saving', 'long term investment', 'government scheme'],
+        relatedCalculators: ['epf-calculator', 'sip-calculator', 'sukanya-samriddhi-calculator']
+      },
+      {
+        id: 'epf-calculator',
+        name: 'EPF Calculator',
+        description: 'Calculate the maturity value of your Employee Provident Fund (EPF) account',
+        category: 'Government Schemes',
+        keywords: ['epf', 'employee provident fund', 'pf', 'retirement', 'employer contribution'],
+        relatedCalculators: ['ppf-calculator', 'nps-calculator', 'gratuity-calculator']
+      }
+    ]
+  },
+  {
     id: 'loan-calculators',
     name: 'Loan Calculators',
     description: 'Calculate EMIs, loan eligibility, prepayment benefits and more with our comprehensive loan calculators',
@@ -268,49 +415,6 @@ export const calculatorCategories: CalculatorCategory[] = [
         relatedCalculators: ['sip-calculator', 'fd-calculator', 'rd-calculator']
       },
       {
-        id: 'ppf-calculator',
-        name: 'PPF Calculator',
-        description: 'Calculate the maturity value and returns on your Public Provident Fund investment',
-        category: 'Investment Calculators',
-        keywords: ['ppf', 'public provident fund', 'tax saving', 'long term investment', 'government scheme'],
-        info: [
-          'The PPF Calculator helps you calculate the maturity value and returns on your Public Provident Fund (PPF) investments based on your annual investment amount and the current PPF interest rate.',
-          'PPF is a government-backed long-term investment scheme with a lock-in period of 15 years. It offers tax benefits under Section 80C and the interest earned is tax-free.',
-          'This calculator shows you the total investment amount, interest earned, and the final maturity value of your PPF account.'
-        ],
-        faqs: [
-          {
-            question: 'What is the maximum and minimum investment limit in PPF?',
-            answer: 'The minimum annual investment in PPF is ₹500, and the maximum is ₹1,50,000. You can invest in lump sum or in up to 12 installments per financial year.'
-          },
-          {
-            question: 'What is the current interest rate for PPF?',
-            answer: 'The PPF interest rate is set by the government and is reviewed quarterly. The current rate is 7.1% per annum (as of 2023-24). Interest is calculated on the lowest balance between the 5th and the last day of the month.'
-          },
-          {
-            question: 'Can I extend my PPF account after maturity?',
-            answer: 'Yes, after the initial 15 years, you can extend your PPF account in blocks of 5 years each. During the extension, you can continue to make deposits or leave it without deposits and just earn interest.'
-          }
-        ],
-        relatedCalculators: ['epf-calculator', 'sip-calculator', 'sukanya-samriddhi-calculator']
-      },
-      {
-        id: 'epf-calculator',
-        name: 'EPF Calculator',
-        description: 'Calculate the maturity value of your Employee Provident Fund (EPF) account',
-        category: 'Investment Calculators',
-        keywords: ['epf', 'employee provident fund', 'pf', 'retirement', 'employer contribution'],
-        relatedCalculators: ['ppf-calculator', 'nps-calculator', 'gratuity-calculator']
-      },
-      {
-        id: 'nps-calculator',
-        name: 'NPS Calculator',
-        description: 'Plan your retirement corpus with the National Pension System calculator',
-        category: 'Investment Calculators',
-        keywords: ['nps', 'national pension system', 'pension', 'retirement', 'annuity'],
-        relatedCalculators: ['epf-calculator', 'retirement-calculator', 'pension-calculator']
-      },
-      {
         id: 'fd-calculator',
         name: 'Fixed Deposit Calculator',
         description: 'Calculate the maturity value and interest earned on your fixed deposits',
@@ -325,30 +429,6 @@ export const calculatorCategories: CalculatorCategory[] = [
         category: 'Investment Calculators',
         keywords: ['rd', 'recurring deposit', 'monthly deposit', 'bank deposit', 'savings'],
         relatedCalculators: ['fd-calculator', 'sip-calculator', 'ppf-calculator']
-      },
-      {
-        id: 'sukanya-samriddhi-calculator',
-        name: 'Sukanya Samriddhi Yojana Calculator',
-        description: 'Calculate returns on investments in the Sukanya Samriddhi Yojana scheme',
-        category: 'Investment Calculators',
-        keywords: ['sukanya samriddhi', 'ssy', 'girl child', 'government scheme', 'tax saving'],
-        relatedCalculators: ['ppf-calculator', 'fd-calculator', 'education-planning-calculator']
-      },
-      {
-        id: 'nps-tier-2-calculator',
-        name: 'NPS Tier-2 Calculator',
-        description: 'Calculate returns on your NPS Tier-2 account investments',
-        category: 'Investment Calculators',
-        keywords: ['nps tier 2', 'national pension system', 'voluntary contribution', 'pension investment'],
-        relatedCalculators: ['nps-calculator', 'retirement-calculator', 'ppf-calculator']
-      },
-      {
-        id: 'post-office-schemes-calculator',
-        name: 'Post Office Schemes Calculator',
-        description: 'Calculate returns on various post office savings schemes',
-        category: 'Investment Calculators',
-        keywords: ['post office', 'savings scheme', 'kvp', 'nsc', 'monthly income scheme'],
-        relatedCalculators: ['fd-calculator', 'rd-calculator', 'ppf-calculator']
       },
       {
         id: 'mutual-fund-returns-calculator',

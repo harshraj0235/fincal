@@ -61,6 +61,57 @@ export const Footer: React.FC = () => {
                   PPF Calculator
                 </Link>
               </li>
+              <li>
+                <Link to="/calculators/sukanya-samriddhi-calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  Sukanya Samriddhi Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculators/nps-calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  NPS Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculators/post-office-schemes-calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  Post Office Schemes Calculator
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">Government Schemes</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/calculators/sukanya-samriddhi-calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  Sukanya Samriddhi Yojana
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculators/nps-calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  National Pension System
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculators/post-office-schemes-calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  Kisan Vikas Patra
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculators/ppf-calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  Public Provident Fund
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculators/epf-calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  Employee Provident Fund
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog/category/government-schemes" className="text-neutral-300 hover:text-white transition-colors">
+                  All Government Schemes
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -103,19 +154,6 @@ export const Footer: React.FC = () => {
                   Terms & Conditions
                 </Link>
               </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Calculator Categories</h3>
-            <ul className="space-y-2">
-              {calculatorCategories.slice(0, 5).map(category => (
-                <li key={category.id}>
-                  <Link to={`/#${category.id}`} className="text-neutral-300 hover:text-white transition-colors">
-                    {category.name}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
         </div>
