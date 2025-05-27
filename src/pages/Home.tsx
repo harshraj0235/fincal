@@ -1,24 +1,33 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calculator, TrendingUp, DollarSign, PieChart } from 'lucide-react';
+import { Calculator, TrendingUp, DollarSign, PieChart, FileText, Award, Shield, Building } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 
 export const Home: React.FC = () => {
   const location = useLocation();
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const govtSchemesRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
     // Check if there's a hash in the URL
     if (location.hash) {
       const categoryId = location.hash.substring(1);
-      const element = categoryRefs.current[categoryId];
       
-      if (element) {
-        // Scroll to the category with a small delay to ensure rendering is complete
+      if (categoryId === 'govt-schemes' && govtSchemesRef.current) {
+        // Scroll to government schemes section
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          govtSchemesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
+      } else {
+        const element = categoryRefs.current[categoryId];
+        
+        if (element) {
+          // Scroll to the category with a small delay to ensure rendering is complete
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
       }
     }
   }, [location]);
@@ -41,6 +50,9 @@ export const Home: React.FC = () => {
               </Link>
               <Link to="/calculators/sip-calculator" className="btn bg-white text-[--primary-800] border border-[--primary-200] hover:bg-neutral-50">
                 SIP Calculator
+              </Link>
+              <Link to="#govt-schemes" className="btn bg-[--success-600] text-white hover:bg-[--success-700]">
+                Government Schemes
               </Link>
             </div>
           </div>
@@ -96,6 +108,334 @@ export const Home: React.FC = () => {
                 <p className="text-neutral-600">{calculator.description}</p>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Government Schemes Section */}
+      <section 
+        id="govt-schemes" 
+        ref={govtSchemesRef}
+        className="py-12 sm:py-16 bg-gradient-to-r from-[--success-50] to-[--primary-50]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">Government Schemes for Indians</h2>
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto">
+              Explore various government schemes designed to provide financial security and benefits to Indian citizens
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Investment & Savings Schemes */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--primary-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--primary-100] p-3 mr-4">
+                    <PieChart className="h-6 w-6 text-[--primary-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Investment & Savings</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--primary-100] text-[--primary-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Public Provident Fund (PPF)</p>
+                      <p className="text-sm text-neutral-600">Long-term savings with tax benefits under Section 80C</p>
+                      <Link to="/calculators/ppf-calculator" className="text-xs text-[--primary-600] font-medium hover:underline">Calculate Returns →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--primary-100] text-[--primary-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Sukanya Samriddhi Yojana</p>
+                      <p className="text-sm text-neutral-600">Savings scheme for girl child with high interest rates</p>
+                      <Link to="/calculators/sukanya-samriddhi-calculator" className="text-xs text-[--primary-600] font-medium hover:underline">Calculate Returns →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--primary-100] text-[--primary-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">National Pension System (NPS)</p>
+                      <p className="text-sm text-neutral-600">Voluntary retirement savings scheme with tax benefits</p>
+                      <Link to="/calculators/nps-calculator" className="text-xs text-[--primary-600] font-medium hover:underline">Calculate Returns →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--primary-100] text-[--primary-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Kisan Vikas Patra (KVP)</p>
+                      <p className="text-sm text-neutral-600">Investment scheme that doubles your money in about 10 years</p>
+                      <Link to="/calculators/post-office-schemes-calculator" className="text-xs text-[--primary-600] font-medium hover:underline">Calculate Returns →</Link>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Insurance & Social Security */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--success-500] to-[--success-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--success-100] p-3 mr-4">
+                    <Shield className="h-6 w-6 text-[--success-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Insurance & Social Security</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--success-100] text-[--success-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Pradhan Mantri Jeevan Jyoti Bima Yojana</p>
+                      <p className="text-sm text-neutral-600">Life insurance coverage of ₹2 lakh at just ₹330 per year</p>
+                      <Link to="/calculators/term-insurance-calculator" className="text-xs text-[--success-600] font-medium hover:underline">Compare with Term Insurance →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--success-100] text-[--success-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Pradhan Mantri Suraksha Bima Yojana</p>
+                      <p className="text-sm text-neutral-600">Accidental death coverage of ₹2 lakh at just ₹12 per year</p>
+                      <Link to="/calculators/human-life-value-calculator" className="text-xs text-[--success-600] font-medium hover:underline">Calculate Coverage Needs →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--success-100] text-[--success-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Atal Pension Yojana</p>
+                      <p className="text-sm text-neutral-600">Guaranteed pension of ₹1,000 to ₹5,000 per month after 60</p>
+                      <Link to="/calculators/pension-calculator" className="text-xs text-[--success-600] font-medium hover:underline">Calculate Pension →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--success-100] text-[--success-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Ayushman Bharat</p>
+                      <p className="text-sm text-neutral-600">Health insurance coverage up to ₹5 lakh per family per year</p>
+                      <Link to="/calculators/health-insurance-calculator" className="text-xs text-[--success-600] font-medium hover:underline">Calculate Health Insurance →</Link>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Business & Employment */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--accent-500] to-[--accent-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--accent-100] p-3 mr-4">
+                    <Building className="h-6 w-6 text-[--accent-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Business & Employment</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--accent-100] text-[--accent-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Pradhan Mantri Mudra Yojana</p>
+                      <p className="text-sm text-neutral-600">Loans up to ₹10 lakh for small businesses without collateral</p>
+                      <Link to="/calculators/business-loan-calculator" className="text-xs text-[--accent-600] font-medium hover:underline">Calculate Business Loan EMI →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--accent-100] text-[--accent-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Stand-Up India</p>
+                      <p className="text-sm text-neutral-600">Loans from ₹10 lakh to ₹1 crore for SC/ST and women entrepreneurs</p>
+                      <Link to="/calculators/loan-affordability-calculator" className="text-xs text-[--accent-600] font-medium hover:underline">Calculate Loan Affordability →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--accent-100] text-[--accent-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">PM-KISAN</p>
+                      <p className="text-sm text-neutral-600">Direct income support of ₹6,000 per year to farmer families</p>
+                      <Link to="/calculators/financial-goal-calculator" className="text-xs text-[--accent-600] font-medium hover:underline">Plan Financial Goals →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--accent-100] text-[--accent-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">MGNREGA</p>
+                      <p className="text-sm text-neutral-600">Guarantees 100 days of wage employment in rural areas</p>
+                      <Link to="/calculators/budget-calculator" className="text-xs text-[--accent-600] font-medium hover:underline">Create Budget Plan →</Link>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Housing & Property */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--secondary-500]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--secondary-100] p-3 mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[--secondary-600]">
+                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Housing & Property</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--secondary-100] text-[--secondary-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Pradhan Mantri Awas Yojana (PMAY)</p>
+                      <p className="text-sm text-neutral-600">Housing subsidy up to ₹2.67 lakh for affordable housing</p>
+                      <Link to="/calculators/home-loan-calculator" className="text-xs text-[--secondary-600] font-medium hover:underline">Calculate Home Loan EMI →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--secondary-100] text-[--secondary-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">CLSS for MIG</p>
+                      <p className="text-sm text-neutral-600">Interest subsidy for middle income groups on home loans</p>
+                      <Link to="/calculators/loan-affordability-calculator" className="text-xs text-[--secondary-600] font-medium hover:underline">Check Loan Affordability →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--secondary-100] text-[--secondary-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">RERA Protection</p>
+                      <p className="text-sm text-neutral-600">Regulatory framework to protect homebuyers' interests</p>
+                      <Link to="/calculators/property-registration-calculator" className="text-xs text-[--secondary-600] font-medium hover:underline">Calculate Registration Costs →</Link>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Education & Skill Development */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--error-500] to-[--error-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--error-100] p-3 mr-4">
+                    <FileText className="h-6 w-6 text-[--error-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Education & Skills</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--error-100] text-[--error-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Vidya Lakshmi Portal</p>
+                      <p className="text-sm text-neutral-600">Single window for education loans from multiple banks</p>
+                      <Link to="/calculators/emi-calculator" className="text-xs text-[--error-600] font-medium hover:underline">Calculate Education Loan EMI →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--error-100] text-[--error-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">PM Kaushal Vikas Yojana</p>
+                      <p className="text-sm text-neutral-600">Free skill training for youth with certification and monetary reward</p>
+                      <Link to="/calculators/financial-goal-calculator" className="text-xs text-[--error-600] font-medium hover:underline">Plan Career Goals →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--error-100] text-[--error-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">National Scholarship Portal</p>
+                      <p className="text-sm text-neutral-600">Single platform for all scholarship schemes across ministries</p>
+                      <Link to="/calculators/compound-interest-calculator" className="text-xs text-[--error-600] font-medium hover:underline">Calculate Education Fund →</Link>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Tax Benefits & Subsidies */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--accent-500] to-[--primary-500]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--accent-100] p-3 mr-4">
+                    <Award className="h-6 w-6 text-[--accent-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Tax Benefits & Subsidies</h3>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--accent-100] text-[--accent-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Section 80C Deductions</p>
+                      <p className="text-sm text-neutral-600">Tax benefits up to ₹1.5 lakh on various investments</p>
+                      <Link to="/calculators/section-80c-calculator" className="text-xs text-[--accent-600] font-medium hover:underline">Calculate Tax Savings →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--accent-100] text-[--accent-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">LPG Subsidy</p>
+                      <p className="text-sm text-neutral-600">Direct benefit transfer for LPG cylinder subsidies</p>
+                      <Link to="/calculators/budget-calculator" className="text-xs text-[--accent-600] font-medium hover:underline">Plan Monthly Budget →</Link>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-[--accent-100] text-[--accent-600] flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="text-xs font-bold">✓</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-neutral-900">Electricity Subsidies</p>
+                      <p className="text-sm text-neutral-600">State-specific subsidies for electricity consumption</p>
+                      <Link to="/calculators/tax-saving-investment-calculator" className="text-xs text-[--accent-600] font-medium hover:underline">Plan Tax Savings →</Link>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <Link to="/blog" className="inline-flex items-center text-[--primary-600] hover:text-[--primary-700] font-medium">
+              <FileText className="h-5 w-5 mr-2" />
+              Read our detailed guides on government schemes
+            </Link>
           </div>
         </div>
       </section>
