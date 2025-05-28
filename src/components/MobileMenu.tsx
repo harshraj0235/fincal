@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { X, ChevronRight, FileText, PenTool as Tool } from 'lucide-react';
+import { X, ChevronRight, FileText } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 interface MobileMenuProps {
@@ -68,15 +68,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
           >
             Home
-          </Link>
-          
-          <Link 
-            to="/#tools" 
-            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg flex items-center"
-            onClick={onClose}
-          >
-            <Tool className="h-4 w-4 mr-2" />
-            Financial Tools
           </Link>
           
           <Link 
