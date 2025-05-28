@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { X, ChevronRight, FileText, Tool } from 'lucide-react';
+import { X, ChevronRight, FileText, PenTool as Tool } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 interface MobileMenuProps {
