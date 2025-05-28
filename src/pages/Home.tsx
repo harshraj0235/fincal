@@ -1,13 +1,17 @@
-import React, { useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Calculator, TrendingUp, DollarSign, PieChart, FileText, Award, Shield, Building } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Calculator, TrendingUp, DollarSign, PieChart, FileText, Award, Shield, Building, Search, CreditCard, AlertTriangle, Home, HelpCircle, Target, MessageSquare } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 
 export const Home: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const govtSchemesRef = useRef<HTMLDivElement | null>(null);
+  const toolsRef = useRef<HTMLDivElement | null>(null);
+  const [showToolsModal, setShowToolsModal] = useState<boolean>(false);
+  const [activeToolModal, setActiveToolModal] = useState<string | null>(null);
   
   useEffect(() => {
     // Check if there's a hash in the URL
@@ -18,6 +22,11 @@ export const Home: React.FC = () => {
         // Scroll to government schemes section
         setTimeout(() => {
           govtSchemesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else if (categoryId === 'tools' && toolsRef.current) {
+        // Scroll to tools section
+        setTimeout(() => {
+          toolsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       } else {
         const element = categoryRefs.current[categoryId];
@@ -31,6 +40,442 @@ export const Home: React.FC = () => {
       }
     }
   }, [location]);
+
+  const openToolModal = (toolId: string) => {
+    setActiveToolModal(toolId);
+    setShowToolsModal(true);
+  };
+
+  const closeToolModal = () => {
+    setShowToolsModal(false);
+    setActiveToolModal(null);
+  };
+
+  const renderToolContent = () => {
+    switch (activeToolModal) {
+      case 'emi-calculator':
+        return (
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-4">Loan EMI Calculator</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Loan Amount (₹)</label>
+                <input type="number" className="input" placeholder="Enter loan amount" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Interest Rate (%)</label>
+                <input type="number" className="input" placeholder="Enter interest rate" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Loan Tenure (Years)</label>
+                <input type="number" className="input" placeholder="Enter loan tenure" />
+              </div>
+              <button className="btn btn-primary w-full">Calculate EMI</button>
+              <div className="mt-4">
+                <Link to="/calculators/emi-calculator" className="text-primary-600 hover:text-primary-700 font-medium">
+                  Use Advanced EMI Calculator →
+                </Link>
+              </div>
+            </div>
+          </div>
+        );
+      case 'cibil-score':
+        return (
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-4">CIBIL Score Explanation</h3>
+            <div className="space-y-4">
+              <div className="bg-neutral-50 p-4 rounded-lg">
+                <h4 className="font-medium mb-2">What is CIBIL Score?</h4>
+                <p className="text-sm text-neutral-600">
+                  A CIBIL Score is a three-digit number between 300 and 900 that represents your creditworthiness. 
+                  The higher the score, the better your chances of loan approval.
+                </p>
+              </div>
+              
+              <div className="space-y-2">
+                <div className="flex items-center">
+                  <div className="w-full bg-neutral-200 rounded-full h-2.5">
+                    <div className="bg-red-500 h-2.5 rounded-full" style={{ width: '20%' }}></div>
+                  </div>
+                  <span className="ml-2 text-sm">300-549</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-full bg-neutral-200 rounded-full h-2.5">
+                    <div className="bg-yellow-500 h-2.5 rounded-full" style={{ width: '20%' }}></div>
+                  </div>
+                  <span className="ml-2 text-sm">550-649</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-full bg-neutral-200 rounded-full h-2.5">
+                    <div className="bg-yellow-300 h-2.5 rounded-full" style={{ width: '20%' }}></div>
+                  </div>
+                  <span className="ml-2 text-sm">650-699</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-full bg-neutral-200 rounded-full h-2.5">
+                    <div className="bg-green-300 h-2.5 rounded-full" style={{ width: '20%' }}></div>
+                  </div>
+                  <span className="ml-2 text-sm">700-749</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-full bg-neutral-200 rounded-full h-2.5">
+                    <div className="bg-green-500 h-2.5 rounded-full" style={{ width: '20%' }}></div>
+                  </div>
+                  <span className="ml-2 text-sm">750-900</span>
+                </div>
+              </div>
+              
+              <div className="bg-primary-50 p-4 rounded-lg">
+                <h4 className="font-medium mb-2">Factors Affecting CIBIL Score</h4>
+                <ul className="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                  <li>Payment History (35%)</li>
+                  <li>Credit Utilization (30%)</li>
+                  <li>Credit Age (15%)</li>
+                  <li>Credit Mix (10%)</li>
+                  <li>New Credit Inquiries (10%)</li>
+                </ul>
+              </div>
+              
+              <a href="https://www.cibil.com/freecibilscore" target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full">
+                Check Your CIBIL Score for Free
+              </a>
+            </div>
+          </div>
+        );
+      case 'rera-search':
+        return (
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-4">RERA Builder Search</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Select State</label>
+                <select className="input">
+                  <option value="">Select State</option>
+                  <option value="maharashtra">Maharashtra</option>
+                  <option value="karnataka">Karnataka</option>
+                  <option value="tamil-nadu">Tamil Nadu</option>
+                  <option value="delhi">Delhi</option>
+                  <option value="uttar-pradesh">Uttar Pradesh</option>
+                  <option value="gujarat">Gujarat</option>
+                  <option value="haryana">Haryana</option>
+                </select>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Search by</label>
+                <div className="flex space-x-4">
+                  <label className="flex items-center">
+                    <input type="radio" name="search-type" className="mr-2" defaultChecked />
+                    <span>Project Name</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input type="radio" name="search-type" className="mr-2" />
+                    <span>Builder Name</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input type="radio" name="search-type" className="mr-2" />
+                    <span>RERA Number</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Enter Search Term</label>
+                <input type="text" className="input" placeholder="Enter project/builder name or RERA number" />
+              </div>
+              
+              <button className="btn btn-primary w-full">Search RERA Database</button>
+              
+              <div className="bg-neutral-50 p-4 rounded-lg text-sm text-neutral-600">
+                <p className="font-medium text-neutral-700 mb-2">Why check RERA registration?</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Ensures the project is legally registered</li>
+                  <li>Protects buyer rights and investments</li>
+                  <li>Guarantees transparency in property transactions</li>
+                  <li>Provides recourse in case of disputes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      case 'fraud-reporting':
+        return (
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-4">Financial Fraud Reporting</h3>
+            <div className="space-y-4">
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <AlertTriangle className="h-5 w-5 text-red-600" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="text-sm font-medium">Report Financial Fraud Immediately</h4>
+                    <p className="text-xs mt-1">
+                      If you've been a victim of financial fraud, report it immediately to minimize damage.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Type of Fraud</label>
+                <select className="input">
+                  <option value="">Select Fraud Type</option>
+                  <option value="upi">UPI Fraud</option>
+                  <option value="credit-card">Credit/Debit Card Fraud</option>
+                  <option value="phishing">Phishing Attack</option>
+                  <option value="investment">Investment Fraud</option>
+                  <option value="loan">Loan Fraud</option>
+                  <option value="kyc">KYC Fraud</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-neutral-700 mb-1">Bank/Financial Institution</label>
+                  <input type="text" className="input" placeholder="Enter bank name" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-neutral-700 mb-1">Amount (₹)</label>
+                  <input type="number" className="input" placeholder="Enter amount" />
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Fraud Details</label>
+                <textarea className="input" rows={3} placeholder="Describe what happened"></textarea>
+              </div>
+              
+              <button className="btn bg-red-600 hover:bg-red-700 text-white w-full">Report Fraud</button>
+              
+              <div className="bg-neutral-50 p-4 rounded-lg">
+                <h4 className="font-medium text-sm mb-2">Important Helplines</h4>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex justify-between">
+                    <span>National Cyber Crime Helpline</span>
+                    <a href="tel:1930" className="font-medium text-primary-600">1930</a>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>RBI Complaints</span>
+                    <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600">cms.rbi.org.in</a>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Banking Ombudsman</span>
+                    <a href="tel:14448" className="font-medium text-primary-600">14448</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      case 'savings-goal':
+        return (
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-4">Savings Goal Planner</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Goal Name</label>
+                <input type="text" className="input" placeholder="e.g., Home Down Payment, Vacation" />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Target Amount (₹)</label>
+                <input type="number" className="input" placeholder="Enter target amount" />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Timeline (Months)</label>
+                <input type="number" className="input" placeholder="Enter number of months" />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Current Savings (₹)</label>
+                <input type="number" className="input" placeholder="Enter current savings" />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-1">Expected Annual Return (%)</label>
+                <input type="number" className="input" placeholder="Enter expected return" defaultValue="7" />
+              </div>
+              
+              <button className="btn btn-primary w-full">Calculate Monthly Savings</button>
+              
+              <div className="mt-4">
+                <Link to="/calculators/financial-goal-calculator" className="text-primary-600 hover:text-primary-700 font-medium">
+                  Use Advanced Goal Planner →
+                </Link>
+              </div>
+            </div>
+          </div>
+        );
+      case 'bank-helpline':
+        return (
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-4">Bank Helpline Directory</h3>
+            <div className="space-y-4">
+              <div>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Search className="h-5 w-5 text-neutral-400" />
+                  </div>
+                  <input
+                    type="text"
+                    className="input pl-10"
+                    placeholder="Search for a bank..."
+                  />
+                </div>
+              </div>
+              
+              <div className="space-y-3 max-h-80 overflow-y-auto">
+                <div className="bg-white p-3 rounded-lg border border-neutral-200">
+                  <h4 className="font-medium">State Bank of India</h4>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                      <p className="text-neutral-500">Customer Care</p>
+                      <a href="tel:1800112211" className="text-primary-600 font-medium">1800-11-2211</a>
+                    </div>
+                    <div>
+                      <p className="text-neutral-500">Card Blocking</p>
+                      <a href="tel:18001234" className="text-primary-600 font-medium">1800-1234</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-3 rounded-lg border border-neutral-200">
+                  <h4 className="font-medium">HDFC Bank</h4>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                      <p className="text-neutral-500">Customer Care</p>
+                      <a href="tel:18002026161" className="text-primary-600 font-medium">1800-202-6161</a>
+                    </div>
+                    <div>
+                      <p className="text-neutral-500">Card Blocking</p>
+                      <a href="tel:18002586161" className="text-primary-600 font-medium">1800-258-6161</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-3 rounded-lg border border-neutral-200">
+                  <h4 className="font-medium">ICICI Bank</h4>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                      <p className="text-neutral-500">Customer Care</p>
+                      <a href="tel:18001080" className="text-primary-600 font-medium">1800-1080</a>
+                    </div>
+                    <div>
+                      <p className="text-neutral-500">Card Blocking</p>
+                      <a href="tel:18001860" className="text-primary-600 font-medium">1800-1860</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-3 rounded-lg border border-neutral-200">
+                  <h4 className="font-medium">Axis Bank</h4>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                      <p className="text-neutral-500">Customer Care</p>
+                      <a href="tel:18605505555" className="text-primary-600 font-medium">1860-550-5555</a>
+                    </div>
+                    <div>
+                      <p className="text-neutral-500">Card Blocking</p>
+                      <a href="tel:18605005555" className="text-primary-600 font-medium">1860-500-5555</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white p-3 rounded-lg border border-neutral-200">
+                  <h4 className="font-medium">Kotak Mahindra Bank</h4>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                      <p className="text-neutral-500">Customer Care</p>
+                      <a href="tel:18602662666" className="text-primary-600 font-medium">1860-266-2666</a>
+                    </div>
+                    <div>
+                      <p className="text-neutral-500">Card Blocking</p>
+                      <a href="tel:18602662666" className="text-primary-600 font-medium">1860-266-2666</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-neutral-50 p-4 rounded-lg text-sm">
+                <p className="font-medium text-neutral-700 mb-2">Important RBI Helplines</p>
+                <ul className="space-y-2">
+                  <li className="flex justify-between">
+                    <span>RBI Complaints Management System</span>
+                    <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium">cms.rbi.org.in</a>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Banking Ombudsman</span>
+                    <a href="tel:14448" className="text-primary-600 font-medium">14448</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      case 'chatbot':
+        return (
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-4">Financial Assistant</h3>
+            <div className="bg-neutral-50 rounded-lg p-4 h-80 overflow-y-auto mb-4 flex flex-col">
+              <div className="bg-primary-100 text-primary-800 p-3 rounded-lg self-start mb-3 max-w-[80%]">
+                <p>Hello! I'm your financial assistant. How can I help you today?</p>
+              </div>
+              
+              <div className="bg-white p-3 rounded-lg self-end mb-3 max-w-[80%] border border-neutral-200">
+                <p>I want to know about tax saving investments</p>
+              </div>
+              
+              <div className="bg-primary-100 text-primary-800 p-3 rounded-lg self-start mb-3 max-w-[80%]">
+                <p>Great question! Here are some popular tax-saving investment options in India:</p>
+                <ul className="list-disc list-inside mt-2 space-y-1">
+                  <li>PPF (Public Provident Fund)</li>
+                  <li>ELSS (Equity Linked Saving Scheme)</li>
+                  <li>Tax-saving FDs (Fixed Deposits)</li>
+                  <li>National Pension System (NPS)</li>
+                  <li>Sukanya Samriddhi Yojana (for girl child)</li>
+                </ul>
+                <p className="mt-2">Would you like more details about any specific option?</p>
+              </div>
+              
+              <div className="bg-white p-3 rounded-lg self-end mb-3 max-w-[80%] border border-neutral-200">
+                <p>Tell me more about ELSS</p>
+              </div>
+              
+              <div className="bg-primary-100 text-primary-800 p-3 rounded-lg self-start max-w-[80%]">
+                <p>ELSS (Equity Linked Saving Scheme) is a type of mutual fund that invests primarily in equity and equity-related products. Key features:</p>
+                <ul className="list-disc list-inside mt-2 space-y-1">
+                  <li>Tax deduction up to ₹1.5 lakh under Section 80C</li>
+                  <li>Shortest lock-in period (3 years) among tax-saving instruments</li>
+                  <li>Potential for higher returns compared to traditional options</li>
+                  <li>SIP option available for disciplined investing</li>
+                </ul>
+                <p className="mt-2">Would you like to calculate potential returns using our SIP calculator?</p>
+              </div>
+            </div>
+            
+            <div className="flex">
+              <input type="text" className="input flex-grow" placeholder="Type your question here..." />
+              <button className="btn btn-primary ml-2">Send</button>
+            </div>
+            
+            <div className="mt-4 text-sm text-neutral-500">
+              <p>Try asking about:</p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="bg-neutral-100 px-2 py-1 rounded-full text-xs">Tax saving options</span>
+                <span className="bg-neutral-100 px-2 py-1 rounded-full text-xs">Loan eligibility</span>
+                <span className="bg-neutral-100 px-2 py-1 rounded-full text-xs">Investment advice</span>
+                <span className="bg-neutral-100 px-2 py-1 rounded-full text-xs">Government schemes</span>
+              </div>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
   
   return (
     <div className="w-full">
@@ -108,6 +553,189 @@ export const Home: React.FC = () => {
                 <p className="text-neutral-600">{calculator.description}</p>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Financial Tools Section */}
+      <section 
+        id="tools" 
+        ref={toolsRef}
+        className="py-12 sm:py-16 bg-gradient-to-r from-[--primary-50] to-[--secondary-50]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">Essential Financial Tools</h2>
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto">
+              Specialized tools to help you navigate the complex financial landscape in India
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* EMI Calculator Tool */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--primary-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--primary-100] p-3 mr-4">
+                    <Calculator className="h-6 w-6 text-[--primary-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Loan EMI Calculator</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Calculate your monthly loan installments instantly. Plan your budget with accurate EMI estimates for home, car, personal, and business loans.
+                </p>
+                <button 
+                  onClick={() => openToolModal('emi-calculator')}
+                  className="btn bg-[--primary-600] text-white hover:bg-[--primary-700] w-full"
+                >
+                  Calculate EMI
+                </button>
+              </div>
+            </div>
+            
+            {/* CIBIL Score Tool */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
+              <div className="p-1 bg-gradient-to-r from-[--success-500] to-[--success-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--success-100] p-3 mr-4">
+                    <CreditCard className="h-6 w-6 text-[--success-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">CIBIL Score Explanation</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Understand what your credit score means and how it affects your loan eligibility. Learn how to improve your score for better financial opportunities.
+                </p>
+                <button 
+                  onClick={() => openToolModal('cibil-score')}
+                  className="btn bg-[--success-600] text-white hover:bg-[--success-700] w-full"
+                >
+                  Understand CIBIL Score
+                </button>
+              </div>
+            </div>
+            
+            {/* RERA Search Tool */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
+              <div className="p-1 bg-gradient-to-r from-[--accent-500] to-[--accent-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--accent-100] p-3 mr-4">
+                    <Home className="h-6 w-6 text-[--accent-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">RERA Builder Search</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Verify builder credentials and project approvals before investing in property. Access RERA registration details across different states in India.
+                </p>
+                <button 
+                  onClick={() => openToolModal('rera-search')}
+                  className="btn bg-[--accent-600] text-white hover:bg-[--accent-700] w-full"
+                >
+                  Search RERA Database
+                </button>
+              </div>
+            </div>
+            
+            {/* Fraud Reporting Tool */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
+              <div className="p-1 bg-gradient-to-r from-[--error-500] to-[--error-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--error-100] p-3 mr-4">
+                    <AlertTriangle className="h-6 w-6 text-[--error-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Fraud Reporting</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Quick access to report financial fraud and scams. Get guidance on immediate steps to take if you've been a victim of financial fraud.
+                </p>
+                <button 
+                  onClick={() => openToolModal('fraud-reporting')}
+                  className="btn bg-[--error-600] text-white hover:bg-[--error-700] w-full"
+                >
+                  Report Financial Fraud
+                </button>
+              </div>
+            </div>
+            
+            {/* Savings Goal Planner */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--secondary-500]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--secondary-100] p-3 mr-4">
+                    <Target className="h-6 w-6 text-[--secondary-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Savings Goal Planner</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Set financial goals and create a savings plan to achieve them. Calculate how much you need to save monthly to reach your target amount.
+                </p>
+                <button 
+                  onClick={() => openToolModal('savings-goal')}
+                  className="btn bg-[--secondary-600] text-white hover:bg-[--secondary-700] w-full"
+                >
+                  Plan Your Savings
+                </button>
+              </div>
+            </div>
+            
+            {/* Bank Helpline Directory */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--primary-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--primary-100] p-3 mr-4">
+                    <HelpCircle className="h-6 w-6 text-[--primary-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Bank Helpline Directory</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Quick access to customer care numbers and helplines for all major banks in India. Find the right contact for your banking needs.
+                </p>
+                <button 
+                  onClick={() => openToolModal('bank-helpline')}
+                  className="btn bg-[--primary-600] text-white hover:bg-[--primary-700] w-full"
+                >
+                  Find Bank Helplines
+                </button>
+              </div>
+            </div>
+            
+            {/* Interactive Chatbot */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105 lg:col-span-3">
+              <div className="p-1 bg-gradient-to-r from-[--accent-500] to-[--primary-500]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--accent-100] p-3 mr-4">
+                    <MessageSquare className="h-6 w-6 text-[--accent-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Interactive Financial Assistant</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Get instant answers to your financial questions. Our AI-powered assistant can help with basic financial concepts, calculator guidance, and general financial advice.
+                </p>
+                <div className="flex justify-center">
+                  <button 
+                    onClick={() => openToolModal('chatbot')}
+                    className="btn bg-[--accent-600] text-white hover:bg-[--accent-700] px-8"
+                  >
+                    Chat with Financial Assistant
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-neutral-600 mb-4">
+              These tools are designed to help you make informed financial decisions. For more detailed calculations, explore our comprehensive calculator suite.
+            </p>
+            <Link to="/#" className="inline-flex items-center text-[--primary-600] hover:text-[--primary-700] font-medium">
+              Explore All Calculators
+            </Link>
           </div>
         </div>
       </section>
@@ -496,6 +1124,26 @@ export const Home: React.FC = () => {
           </Link>
         </div>
       </section>
+
+      {/* Tools Modal */}
+      {showToolsModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl shadow-xl max-w-md w-full max-h-[90vh] overflow-hidden">
+            <div className="flex justify-between items-center p-4 border-b">
+              <div className="text-lg font-semibold text-neutral-900">Financial Tool</div>
+              <button 
+                onClick={closeToolModal}
+                className="text-neutral-500 hover:text-neutral-700"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="overflow-y-auto max-h-[calc(90vh-4rem)]">
+              {renderToolContent()}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

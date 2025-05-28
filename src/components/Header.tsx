@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Calculator, Search, ChevronRight, FileText } from 'lucide-react';
+import { Menu, X, Calculator, Search, ChevronRight, FileText, Tool } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { SearchBar } from './SearchBar';
 import { calculatorCategories } from '../data/calculatorData';
@@ -119,6 +119,10 @@ export const Header: React.FC = () => {
                 </div>
               )}
             </div>
+            <Link to="/#tools" className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center">
+              <Tool className="h-4 w-4 mr-1" />
+              Tools
+            </Link>
             <button 
               onClick={() => setSearchOpen(true)}
               className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center space-x-1"
