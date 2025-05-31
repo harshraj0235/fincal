@@ -494,7 +494,7 @@ Disallow: /blog/tag/*/page/`}</code>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-white p-4 rounded-lg shadow-sm">
             <p className="text-sm text-neutral-500 mb-1">Total URLs</p>
-            <p className="text-2xl font-bold text-primary-900">{7 + blogUrls.length + calculatorUrls.length + 4}</p>
+            <p className="text-2xl font-bold text-primary-900">{8 + blogUrls.length + calculatorUrls.length + 6}</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm">
             <p className="text-sm text-neutral-500 mb-1">Calculator Pages</p>
@@ -506,7 +506,7 @@ Disallow: /blog/tag/*/page/`}</code>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm">
             <p className="text-sm text-neutral-500 mb-1">Main Pages</p>
-            <p className="text-2xl font-bold text-primary-900">7</p>
+            <p className="text-2xl font-bold text-primary-900">8</p>
           </div>
         </div>
       </div>

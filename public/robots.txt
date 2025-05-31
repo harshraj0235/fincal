@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Sitemap: https://moneycal.in/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /wp-admin/
+
+# Disallow duplicate content
+Disallow: /blog/category/*/page/
+Disallow: /blog/tag/*/page/
