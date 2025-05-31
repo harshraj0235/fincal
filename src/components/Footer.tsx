@@ -80,31 +80,31 @@ export const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Government Schemes</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">Banking Tools</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/calculators/sukanya-samriddhi-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  Sukanya Samriddhi Yojana
+                <Link to="/calculators/bank-ifsc-finder" className="text-neutral-300 hover:text-white transition-colors">
+                  Bank IFSC/MICR Finder
                 </Link>
               </li>
               <li>
-                <Link to="/calculators/nps-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  National Pension System
+                <Link to="/calculators/upi-failure-troubleshooter" className="text-neutral-300 hover:text-white transition-colors">
+                  UPI Failure Troubleshooter
                 </Link>
               </li>
               <li>
-                <Link to="/calculators/post-office-schemes-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  Kisan Vikas Patra
+                <Link to="/calculators/atm-locator" className="text-neutral-300 hover:text-white transition-colors">
+                  ATM Locator
                 </Link>
               </li>
               <li>
-                <Link to="/calculators/ppf-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  Public Provident Fund
+                <Link to="/calculators/bank-holiday-calendar" className="text-neutral-300 hover:text-white transition-colors">
+                  Bank Holiday Calendar
                 </Link>
               </li>
               <li>
-                <Link to="/calculators/epf-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  Employee Provident Fund
+                <Link to="/calculators/interest-rates-comparison" className="text-neutral-300 hover:text-white transition-colors">
+                  Best Interest Rates
                 </Link>
               </li>
               <li>

@@ -851,6 +851,148 @@ export const calculatorCategories: CalculatorCategory[] = [
         relatedCalculators: ['mutual-fund-returns-calculator', 'sip-calculator']
       }
     ]
+  },
+  {
+    id: 'finance-banking-tools',
+    name: 'Finance & Banking Tools',
+    description: 'Essential tools for banking transactions, troubleshooting, and financial information',
+    calculators: [
+      {
+        id: 'bank-ifsc-finder',
+        name: 'Bank IFSC/MICR Finder',
+        description: 'Locate bank branch codes for seamless financial transactions',
+        category: 'Finance & Banking Tools',
+        keywords: ['ifsc code', 'micr code', 'bank branch', 'neft', 'rtgs', 'imps', 'bank transfer'],
+        info: [
+          'The Bank IFSC/MICR Finder helps you quickly locate the correct IFSC (Indian Financial System Code) and MICR (Magnetic Ink Character Recognition) codes for any bank branch in India.',
+          'These codes are essential for conducting NEFT, RTGS, and IMPS transactions, as well as for setting up direct debits and processing cheques.',
+          'Simply select your bank, state, city, and branch to find the accurate codes needed for your financial transactions.'
+        ],
+        faqs: [
+          {
+            question: 'What is an IFSC code?',
+            answer: 'IFSC (Indian Financial System Code) is an 11-character alphanumeric code that uniquely identifies a bank branch participating in various online money transfer options like NEFT, RTGS, and IMPS. The first 4 characters represent the bank, the 5th is a control character (usually 0), and the last 6 characters represent the branch.'
+          },
+          {
+            question: 'What is a MICR code?',
+            answer: 'MICR (Magnetic Ink Character Recognition) is a 9-digit code printed on cheques using special magnetic ink. It helps in the automated processing of cheques. The first 3 digits represent the city, the next 3 identify the bank, and the last 3 identify the branch.'
+          },
+          {
+            question: 'Why do I need these codes?',
+            answer: 'IFSC codes are required for electronic fund transfers like NEFT, RTGS, and IMPS. MICR codes are primarily used for cheque processing. Both codes help ensure that your money reaches the correct bank branch.'
+          }
+        ],
+        relatedCalculators: ['currency-converter', 'savings-account-calculator', 'fd-calculator']
+      },
+      {
+        id: 'upi-failure-troubleshooter',
+        name: 'UPI Transaction Failure Troubleshooter',
+        description: 'Diagnose and resolve failed UPI transactions with step-by-step guidance',
+        category: 'Finance & Banking Tools',
+        keywords: ['upi', 'transaction failure', 'payment issue', 'upi troubleshooting', 'digital payment'],
+        info: [
+          'The UPI Transaction Failure Troubleshooter helps you identify the cause of failed UPI transactions and provides step-by-step guidance to resolve the issue.',
+          'UPI (Unified Payments Interface) has become the backbone of digital payments in India, but transaction failures can occur due to various reasons like network issues, bank server problems, or incorrect information.',
+          'This tool analyzes the error code or failure pattern and suggests appropriate actions to resolve the issue or recover your funds.'
+        ],
+        faqs: [
+          {
+            question: 'What are common reasons for UPI transaction failures?',
+            answer: 'Common reasons include: insufficient balance, incorrect UPI PIN, daily/per transaction limits exceeded, bank server downtime, network connectivity issues, beneficiary account issues, expired/blocked VPA (Virtual Payment Address), or app-related technical problems.'
+          },
+          {
+            question: 'What should I do if money is debited but not credited?',
+            answer: 'First, wait for 24-48 hours as some transactions may be delayed. Check your bank statement to confirm the debit. If the issue persists, note down the transaction reference number and contact your bank\'s customer care or raise a complaint through the UPI app you used. You can also file a complaint on the NPCI website or use the banking ombudsman as a last resort.'
+          },
+          {
+            question: 'How long does it take for a failed UPI transaction to be refunded?',
+            answer: 'According to NPCI guidelines, auto-reversal for failed transactions should happen within 5 working days. However, most banks process refunds within 24-48 hours. If you don\'t receive a refund within this timeframe, you should contact your bank.'
+          }
+        ],
+        relatedCalculators: ['bank-ifsc-finder', 'currency-converter']
+      },
+      {
+        id: 'atm-locator',
+        name: 'ATM Locator with Status',
+        description: 'Find nearby ATMs with real-time operational status information',
+        category: 'Finance & Banking Tools',
+        keywords: ['atm', 'atm near me', 'cash withdrawal', 'bank atm', 'atm status'],
+        info: [
+          'The ATM Locator helps you find nearby ATMs across India with real-time information about their operational status.',
+          'This tool provides details about ATM locations, cash availability, working hours, and supported services like cash deposit, cardless withdrawal, and more.',
+          'You can filter ATMs by bank, distance, and available services to find the most convenient option for your needs.'
+        ],
+        faqs: [
+          {
+            question: 'How accurate is the ATM status information?',
+            answer: 'The ATM status information is updated regularly based on bank reports and user feedback. However, real-time status may vary due to sudden technical issues or cash replenishment schedules. We recommend checking the last update timestamp for the most accurate information.'
+          },
+          {
+            question: 'Can I find ATMs that support cardless withdrawals?',
+            answer: 'Yes, you can filter ATMs based on services offered, including cardless withdrawals. Many banks now offer this feature through their mobile banking apps, allowing you to withdraw cash without a physical card.'
+          },
+          {
+            question: 'Are there any charges for using other bank ATMs?',
+            answer: 'Yes, there are usually charges for using ATMs of banks other than your own after exceeding the free monthly transaction limit. Currently, most banks offer 3-5 free transactions per month at other bank ATMs in metro cities and 5-7 free transactions in non-metro locations. Beyond this limit, charges typically range from ₹20-25 per transaction.'
+          }
+        ],
+        relatedCalculators: ['bank-ifsc-finder', 'currency-converter']
+      },
+      {
+        id: 'bank-holiday-calendar',
+        name: 'Bank Holiday Calendar',
+        description: 'Comprehensive calendar of bank holidays across all Indian states',
+        category: 'Finance & Banking Tools',
+        keywords: ['bank holiday', 'bank closing days', 'banking hours', 'rbi holidays', 'state bank holidays'],
+        info: [
+          'The Bank Holiday Calendar provides a comprehensive list of all bank holidays across different states in India.',
+          'Banks in India observe holidays based on the Negotiable Instruments Act, RBI guidelines, and state-specific celebrations, which vary from state to state.',
+          'This tool helps you plan your banking activities by providing accurate information about upcoming bank holidays in your state or any state across India.'
+        ],
+        faqs: [
+          {
+            question: 'Are bank holidays the same across all states in India?',
+            answer: 'No, bank holidays vary across states. While some holidays like Republic Day, Independence Day, and Gandhi Jayanti are observed nationwide, many holidays are state-specific based on local festivals and events. Each state typically has 15-20 bank holidays per year in addition to second and fourth Saturdays and all Sundays.'
+          },
+          {
+            question: 'Do online banking services work during bank holidays?',
+            answer: 'Yes, most online banking services like mobile banking, internet banking, ATMs, and UPI transactions remain functional during bank holidays. However, services requiring manual processing like cheque clearance, NEFT/RTGS (in some cases), loan approvals, or branch-specific services will not be processed until the next working day.'
+          },
+          {
+            question: 'How can I find out if a particular day is a bank holiday in my state?',
+            answer: 'You can use our Bank Holiday Calendar tool to check holidays for your specific state. Simply select your state from the dropdown menu and view the complete list of holidays for the current year. You can also check the RBI website or your bank\'s official website for the holiday list.'
+          }
+        ],
+        relatedCalculators: ['bank-ifsc-finder', 'fd-calculator', 'rd-calculator']
+      },
+      {
+        id: 'interest-rates-comparison',
+        name: 'Best Interest Rates Table',
+        description: 'Compare current interest rates across banks for various financial products',
+        category: 'Finance & Banking Tools',
+        keywords: ['interest rates', 'bank rates', 'fd rates', 'loan rates', 'savings account rates', 'best rates'],
+        info: [
+          'The Best Interest Rates Table helps you compare current interest rates offered by various banks and financial institutions across different products.',
+          'This comprehensive comparison covers savings accounts, fixed deposits, recurring deposits, home loans, personal loans, car loans, and more.',
+          'Updated regularly, this tool enables you to make informed decisions by identifying the most competitive rates in the market for your financial needs.'
+        ],
+        faqs: [
+          {
+            question: 'How often are the interest rates updated?',
+            answer: 'We update our interest rate database weekly to reflect the latest changes announced by banks and financial institutions. However, rates are subject to change without notice, so we recommend verifying the current rates on the official website of the respective bank before making any financial decision.'
+          },
+          {
+            question: 'Why do interest rates vary between banks?',
+            answer: 'Interest rates vary between banks due to several factors including the bank\'s liquidity position, cost of funds, RBI policy rates, competition, bank\'s credit rating, and business strategy. Some banks may offer higher rates to attract more deposits or lower loan rates to increase their lending portfolio.'
+          },
+          {
+            question: 'Are there any special interest rates for senior citizens?',
+            answer: 'Yes, most banks offer additional interest rate benefits to senior citizens, typically 0.25% to 0.50% higher than regular rates on fixed deposits and some savings schemes. Our comparison table includes a separate section highlighting these special rates for senior citizens across different banks.'
+          }
+        ],
+        relatedCalculators: ['fd-calculator', 'rd-calculator', 'loan-comparison-calculator', 'home-loan-calculator']
+      }
+    ]
   }
 ];
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calculator, TrendingUp, DollarSign, PieChart, FileText, Award, Shield, Building } from 'lucide-react';
+import { Calculator, TrendingUp, DollarSign, PieChart, FileText, Award, Shield, Building, Search, MapPin, CreditCard } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 
@@ -8,6 +8,7 @@ export const Home: React.FC = () => {
   const location = useLocation();
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const govtSchemesRef = useRef<HTMLDivElement | null>(null);
+  const bankingToolsRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
     // Check if there's a hash in the URL
@@ -18,6 +19,11 @@ export const Home: React.FC = () => {
         // Scroll to government schemes section
         setTimeout(() => {
           govtSchemesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else if (categoryId === 'banking-tools' && bankingToolsRef.current) {
+        // Scroll to banking tools section
+        setTimeout(() => {
+          bankingToolsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       } else {
         const element = categoryRefs.current[categoryId];
@@ -108,6 +114,185 @@ export const Home: React.FC = () => {
                 <p className="text-neutral-600">{calculator.description}</p>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Finance & Banking Tools Section */}
+      <section 
+        id="banking-tools" 
+        ref={bankingToolsRef}
+        className="py-12 sm:py-16 bg-gradient-to-r from-[--primary-50] to-[--secondary-50]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">Finance & Banking Tools</h2>
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto">
+              Essential tools for everyday banking needs, transaction troubleshooting, and financial information
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Bank IFSC/MICR Finder */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--primary-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--primary-100] p-3 mr-4">
+                    <Search className="h-6 w-6 text-[--primary-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Bank IFSC/MICR Finder</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Quickly find IFSC and MICR codes for any bank branch in India for seamless fund transfers and banking operations.
+                </p>
+                <Link to="/calculators/bank-ifsc-finder" className="text-[--primary-600] font-medium flex items-center">
+                  Find Bank Codes
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            
+            {/* UPI Transaction Failure Troubleshooter */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--error-500] to-[--error-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--error-100] p-3 mr-4">
+                    <CreditCard className="h-6 w-6 text-[--error-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">UPI Failure Troubleshooter</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Diagnose and resolve UPI transaction failures with step-by-step guidance and recover your stuck payments.
+                </p>
+                <Link to="/calculators/upi-failure-troubleshooter" className="text-[--error-600] font-medium flex items-center">
+                  Troubleshoot UPI Issues
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            
+            {/* ATM Locator with Status */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--success-500] to-[--success-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--success-100] p-3 mr-4">
+                    <MapPin className="h-6 w-6 text-[--success-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">ATM Locator</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Find nearby ATMs with real-time status information on cash availability and operational conditions.
+                </p>
+                <Link to="/calculators/atm-locator" className="text-[--success-600] font-medium flex items-center">
+                  Find ATMs Near You
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Bank Holiday Calendar */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--accent-500] to-[--accent-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--accent-100] p-3 mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[--accent-600]">
+                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                      <line x1="16" x2="16" y1="2" y2="6"></line>
+                      <line x1="8" x2="8" y1="2" y2="6"></line>
+                      <line x1="3" x2="21" y1="10" y2="10"></line>
+                      <path d="M8 14h.01"></path>
+                      <path d="M12 14h.01"></path>
+                      <path d="M16 14h.01"></path>
+                      <path d="M8 18h.01"></path>
+                      <path d="M12 18h.01"></path>
+                      <path d="M16 18h.01"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Bank Holiday Calendar</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Comprehensive calendar of bank holidays across all Indian states to help plan your banking activities.
+                </p>
+                <Link to="/calculators/bank-holiday-calendar" className="text-[--accent-600] font-medium flex items-center">
+                  View Bank Holidays
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Best Interest Rates Table */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--secondary-500]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--secondary-100] p-3 mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[--secondary-600]">
+                      <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h1"></path>
+                      <path d="M17 3h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1"></path>
+                      <path d="M12 12v9"></path>
+                      <path d="M8 21h8"></path>
+                      <path d="M12 3v9"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Best Interest Rates</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Compare current interest rates across banks for loans, deposits, and savings accounts to find the best deals.
+                </p>
+                <Link to="/calculators/interest-rates-comparison" className="text-[--secondary-600] font-medium flex items-center">
+                  Compare Rates
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Banking Tools Info */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--primary-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="rounded-full bg-[--primary-100] p-3 mr-4">
+                    <FileText className="h-6 w-6 text-[--primary-600]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Banking Knowledge</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Access comprehensive guides on banking services, digital payments, and financial security best practices.
+                </p>
+                <Link to="/blog/category/banking" className="text-[--primary-600] font-medium flex items-center">
+                  Read Banking Guides
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-neutral-700 mb-4">
+              Our banking tools are designed to simplify your financial transactions and provide quick access to essential banking information.
+            </p>
+            <Link to="/calculators/finance-banking-tools" className="inline-flex items-center text-[--primary-600] hover:text-[--primary-700] font-medium">
+              Explore all banking tools and resources
+              <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
