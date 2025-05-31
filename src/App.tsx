@@ -39,7 +39,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap.xml" element={<SitemapXml />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/\" replace />} />
       </Routes>
     </Layout>
   );
