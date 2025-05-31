@@ -62,6 +62,12 @@ import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalcu
 import { NpsCalculator } from '../calculators/NpsCalculator';
 import { NpsTier2Calculator } from '../calculators/NpsTier2Calculator';
 import { PostOfficeCalculator } from '../calculators/PostOfficeCalculator';
+import { BankIfscFinder } from '../calculators/BankIfscFinder';
+import { UpiFailureTroubleshooter } from '../calculators/UpiFailureTroubleshooter';
+import { AtmLocator } from '../calculators/AtmLocator';
+import { BankHolidayCalendar } from '../calculators/BankHolidayCalendar';
+import { InterestRatesComparison } from '../calculators/InterestRatesComparison';
+import { BankingKnowledge } from '../calculators/BankingKnowledge';
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -210,6 +216,18 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <NpsTier2Calculator />;
       case 'post-office-schemes-calculator':
         return <PostOfficeCalculator />;
+      case 'bank-ifsc-finder':
+        return <BankIfscFinder />;
+      case 'upi-failure-troubleshooter':
+        return <UpiFailureTroubleshooter />;
+      case 'atm-locator':
+        return <AtmLocator />;
+      case 'bank-holiday-calendar':
+        return <BankHolidayCalendar />;
+      case 'interest-rates-comparison':
+        return <InterestRatesComparison />;
+      case 'banking-knowledge':
+        return <BankingKnowledge />;
       default:
         return (
           <div className="text-center py-8">
