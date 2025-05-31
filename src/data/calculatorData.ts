@@ -30,78 +30,78 @@ export const calculatorCategories: CalculatorCategory[] = [
         name: 'Bank IFSC/MICR Finder',
         description: 'Quickly find IFSC and MICR codes for any bank branch in India for seamless fund transfers and banking operations',
         category: 'Finance & Banking Tools',
-        keywords: ['ifsc', 'micr', 'bank code', 'branch code', 'neft', 'rtgs', 'imps', 'bank branch'],
+        keywords: ['ifsc', 'micr', 'bank code', 'branch code', 'fund transfer', 'neft', 'rtgs', 'imps'],
         info: [
-          "The Bank IFSC/MICR Finder helps you locate the correct IFSC (Indian Financial System Code) and MICR (Magnetic Ink Character Recognition) codes for any bank branch in India.",
+          "The Bank IFSC/MICR Finder helps you quickly locate the correct IFSC (Indian Financial System Code) and MICR (Magnetic Ink Character Recognition) codes for any bank branch in India.",
           "IFSC codes are essential for NEFT, RTGS, and IMPS transactions, while MICR codes are used primarily for cheque processing.",
-          "This tool provides comprehensive information including branch address, contact details, and direct links to bank websites."
+          "This tool provides comprehensive information including branch address, contact details, and the ability to copy codes with a single click for error-free transactions."
         ],
         faqs: [
           {
             question: "What is an IFSC code and why do I need it?",
-            answer: "IFSC (Indian Financial System Code) is an 11-character code used to identify bank branches participating in electronic funds transfer systems like NEFT, RTGS, and IMPS. You need it to ensure your money is transferred to the correct bank branch when making online transactions."
+            answer: "IFSC (Indian Financial System Code) is an 11-character code used to identify bank branches participating in electronic funds transfer networks like NEFT, RTGS, and IMPS. You need it to ensure your money is transferred to the correct bank branch when making online transactions."
+          },
+          {
+            question: "How is an IFSC code structured?",
+            answer: "An IFSC code consists of 11 characters: the first 4 alphabetic characters represent the bank code, the 5th character is always '0' (zero), and the last 6 characters represent the specific branch code."
           },
           {
             question: "What happens if I use an incorrect IFSC code?",
-            answer: "Using an incorrect IFSC code can lead to transaction failure or delays. In some cases, the money might be credited to a wrong account if the account number exists at the incorrect branch. Always verify the IFSC code before initiating a transaction."
-          },
-          {
-            question: "How is MICR code different from IFSC code?",
-            answer: "MICR (Magnetic Ink Character Recognition) code is a 9-digit code primarily used for cheque processing, while IFSC is used for electronic fund transfers. MICR codes help in the automated sorting and processing of cheques, while IFSC facilitates online money transfers."
+            answer: "Using an incorrect IFSC code can lead to transaction failure or, worse, your money being transferred to the wrong account. The transaction might be rejected immediately, or it could be processed but sent to the wrong branch, causing delays in recovery."
           }
         ],
-        relatedCalculators: ['currency-converter', 'interest-rates-comparison', 'bank-holiday-calendar']
+        relatedCalculators: ['upi-failure-troubleshooter', 'currency-converter', 'interest-rates-comparison']
       },
       {
         id: 'upi-failure-troubleshooter',
-        name: 'UPI Transaction Failure Troubleshooter',
+        name: 'UPI Failure Troubleshooter',
         description: 'Diagnose and resolve UPI transaction failures with step-by-step guidance and recover your stuck payments',
         category: 'Finance & Banking Tools',
-        keywords: ['upi', 'payment failure', 'transaction error', 'upi troubleshooting', 'failed payment', 'payment stuck'],
+        keywords: ['upi', 'payment failure', 'transaction error', 'payment stuck', 'refund', 'digital payment'],
         info: [
-          "The UPI Transaction Failure Troubleshooter helps you diagnose and resolve issues with failed or pending UPI transactions.",
-          "UPI (Unified Payments Interface) has revolutionized digital payments in India, but transaction failures can occur due to various reasons including network issues, bank server problems, or incorrect credentials.",
-          "This tool provides step-by-step guidance to help you understand why your transaction failed and how to resolve the issue or recover your money."
+          "The UPI Failure Troubleshooter helps you diagnose and resolve issues with failed or pending UPI transactions.",
+          "UPI (Unified Payments Interface) has become India's most popular payment method, but transaction failures can occur due to various reasons including network issues, bank server problems, or incorrect PIN entries.",
+          "This tool provides step-by-step guidance to help you understand why your transaction failed and how to recover your money or complete your payment successfully."
         ],
         faqs: [
           {
             question: "How long does it take for a failed UPI transaction to be refunded?",
-            answer: "According to NPCI guidelines, failed UPI transaction amounts should be refunded automatically within 5 working days. However, most banks process refunds within 24-48 hours. If you don't receive a refund within 5 working days, you should contact your bank or raise a complaint through your UPI app."
+            answer: "According to NPCI guidelines, failed UPI transaction amounts should be refunded automatically within 5 working days. However, most banks process refunds within 24-48 hours. If you don't receive a refund within 5 days, you should contact your bank or raise a complaint through your UPI app."
           },
           {
             question: "Can I cancel a UPI transaction after it's initiated?",
             answer: "No, UPI transactions cannot be canceled once they are initiated and you've entered your UPI PIN. UPI transfers are designed to be instant and irreversible. If you've sent money to the wrong person, you'll need to contact that person directly and request them to return the funds."
           },
           {
-            question: "What should I do if money is debited but not credited to the recipient?",
-            answer: "First, check your transaction history in the UPI app to confirm the status. If it shows 'pending', wait for 24-48 hours as the transaction might be processing. If the status is 'failed' but money is debited, it should be automatically refunded within 5 working days. If not refunded, raise a complaint through your UPI app or contact your bank with the transaction reference number."
+            question: "What should I do if money was debited but the recipient didn't receive it?",
+            answer: "First, check your transaction history in the UPI app to confirm the status. If it shows 'pending', wait for 24-48 hours as the transaction might still be processing. If it shows 'failed' but money was debited, the amount should be automatically refunded within 5 working days. If not refunded, raise a complaint through your UPI app or contact your bank with the transaction reference number."
           }
         ],
-        relatedCalculators: ['bank-ifsc-finder', 'atm-locator', 'bank-holiday-calendar']
+        relatedCalculators: ['bank-ifsc-finder', 'atm-locator', 'banking-knowledge']
       },
       {
         id: 'atm-locator',
-        name: 'ATM Locator with Status',
+        name: 'ATM Locator',
         description: 'Find nearby ATMs with real-time status information on cash availability and operational conditions',
         category: 'Finance & Banking Tools',
-        keywords: ['atm', 'atm near me', 'cash withdrawal', 'atm finder', 'cash availability', 'bank atm'],
+        keywords: ['atm', 'cash withdrawal', 'atm near me', 'cash deposit', 'bank atm', 'atm status'],
         info: [
           "The ATM Locator helps you find nearby ATMs with real-time information on their operational status and cash availability.",
-          "This tool provides comprehensive details about ATMs including distance, features like cardless withdrawal and cash deposit, and accessibility options.",
-          "You can filter ATMs by bank, distance, operational status, and special features to find the most convenient option for your needs."
+          "This tool provides comprehensive details including distance, features (like cardless withdrawal, cash deposit, wheelchair accessibility), and last updated status to help you find the most convenient ATM for your needs.",
+          "You can filter ATMs by bank, distance, and specific features to save time and avoid visiting ATMs that are out of service or out of cash."
         ],
         faqs: [
           {
             question: "How accurate is the cash availability information?",
-            answer: "Cash availability information is updated regularly based on data from banks and user reports. While we strive for accuracy, there might be occasional delays in updates, especially during high-demand periods or bank holidays."
+            answer: "Cash availability information is updated regularly based on data from banks and user reports. While we strive for accuracy, there might be occasional delays in updates, especially during high-demand periods or bank holidays. The 'last updated' timestamp shows when the information was last refreshed for each ATM."
           },
           {
             question: "What are the daily ATM withdrawal limits?",
-            answer: "ATM withdrawal limits vary by bank and account type. Typically, they range from ₹10,000 to ₹1,00,000 per day depending on your card type and bank policies. Check with your specific bank for your account's limits."
+            answer: "ATM withdrawal limits vary by bank and account type. Typical daily limits for major Indian banks range from ₹10,000 to ₹2,00,000 depending on the card type and bank. These limits apply to withdrawals from ATMs. Different limits may apply for other transaction types."
           },
           {
             question: "Are there any charges for using ATMs?",
-            answer: "Using your own bank's ATMs is usually free for unlimited transactions. For other bank ATMs, the first 3-5 transactions per month (depending on location) are free, after which charges of approximately ₹20 plus GST per transaction apply."
+            answer: "ATM usage charges depend on whether you're using your own bank's ATM or another bank's ATM. Own bank ATMs are usually free for unlimited transactions. For other bank ATMs, the first 3-5 financial transactions per month are free (depending on location), after which ₹20 + GST per transaction is charged."
           }
         ],
         relatedCalculators: ['bank-holiday-calendar', 'bank-ifsc-finder', 'currency-converter']
@@ -111,81 +111,81 @@ export const calculatorCategories: CalculatorCategory[] = [
         name: 'Bank Holiday Calendar',
         description: 'Comprehensive calendar of bank holidays across all Indian states to help plan your banking activities',
         category: 'Finance & Banking Tools',
-        keywords: ['bank holiday', 'bank closing days', 'banking hours', 'financial year calendar', 'rbi holidays'],
+        keywords: ['bank holiday', 'banking hours', 'bank closed', 'holiday calendar', 'financial planning'],
         info: [
           "The Bank Holiday Calendar provides a comprehensive list of days when banks are closed across different states in India.",
-          "This tool helps you plan your banking activities in advance to avoid last-minute rushes and ensure timely completion of important financial transactions.",
-          "The calendar includes national holidays, state-specific holidays, and weekend closures, with filtering options by state and holiday type."
+          "This tool helps you plan your banking activities in advance to avoid last-minute rushes and ensure your financial transactions are processed on time.",
+          "You can filter holidays by state, month, and type (national, state-specific, RBI holidays, or weekends) to get the most relevant information for your location."
         ],
         faqs: [
           {
             question: "Are bank holidays the same across all states in India?",
-            answer: "No, bank holidays vary across states in India. While some holidays like Republic Day, Independence Day, and Gandhi Jayanti are observed nationwide, many holidays are state-specific based on local festivals and events."
+            answer: "No, bank holidays vary across states in India. While some holidays like Republic Day, Independence Day, and Gandhi Jayanti are observed nationwide, many holidays are state-specific based on local festivals and events. This is why it's important to check the bank holiday calendar specific to your state when planning financial transactions."
           },
           {
-            question: "Are weekends considered bank holidays?",
-            answer: "All banks are closed on Sundays. For Saturdays, banks are closed on the second and fourth Saturdays of every month, while they remain open on the first, third, and fifth (if applicable) Saturdays."
+            question: "Do all banks follow the same holiday calendar?",
+            answer: "All scheduled commercial banks, regional rural banks, and cooperative banks generally follow the holiday list declared by the Reserve Bank of India (RBI) and respective State Governments. However, there might be slight variations with some private banks having additional working days on select holidays or certain branches in commercial areas operating on otherwise holidays."
           },
           {
             question: "Will online banking services be available during bank holidays?",
-            answer: "Yes, online banking services including internet banking, mobile banking, UPI transactions, ATM services, and card transactions remain operational during bank holidays. However, services like NEFT might have processing delays, and customer service might be limited."
+            answer: "Yes, online banking services remain operational during bank holidays. This includes internet banking, mobile banking apps, UPI transactions, ATM services, and card transactions. However, services like NEFT might have processing delays, and cheque clearances won't happen on holidays."
           }
         ],
-        relatedCalculators: ['atm-locator', 'bank-ifsc-finder', 'upi-failure-troubleshooter']
+        relatedCalculators: ['atm-locator', 'bank-ifsc-finder', 'banking-knowledge']
       },
       {
         id: 'interest-rates-comparison',
-        name: 'Best Interest Rates Table',
+        name: 'Best Interest Rates',
         description: 'Compare current interest rates across banks for loans, deposits, and savings accounts to find the best deals',
         category: 'Finance & Banking Tools',
-        keywords: ['interest rates', 'bank rates', 'fd rates', 'loan rates', 'savings account interest', 'best rates'],
+        keywords: ['interest rate', 'bank rate', 'fd rate', 'loan interest', 'savings account', 'best rates'],
         info: [
-          "The Best Interest Rates Comparison tool helps you compare current interest rates offered by major banks in India for various financial products.",
-          "This tool covers deposit products like savings accounts and fixed deposits, as well as loan products including home loans, personal loans, car loans, and education loans.",
-          "You can filter by product type, customer category, and sort rates to find the most competitive offers in the market."
+          "The Best Interest Rates tool helps you compare current interest rates offered by major banks in India for various financial products.",
+          "This comparison includes rates for savings accounts, fixed deposits of different tenures, and various types of loans including home, personal, car, and education loans.",
+          "The tool also highlights special offers and preferential rates for specific customer segments like senior citizens and women borrowers to help you find the most advantageous rates for your situation."
         ],
         faqs: [
           {
             question: "How often are the interest rates updated?",
-            answer: "We update our interest rate database weekly. However, for major policy changes or when the RBI changes key rates, we update our database immediately to reflect these changes."
+            answer: "We update our interest rate database weekly. However, for major policy changes or when the RBI changes key rates, we update our database immediately to reflect these changes. Each rate shows the last updated date for transparency. For the most current rates, we recommend confirming with the bank directly before making financial decisions."
           },
           {
             question: "Do banks offer different interest rates to different customers?",
-            answer: "Yes, many banks offer preferential rates to certain customer segments like senior citizens, women borrowers, government employees, high net worth individuals, and customers with excellent credit scores."
+            answer: "Yes, many banks offer preferential rates to certain customer segments. Senior citizens typically get 0.25% to 0.50% higher rates on fixed deposits. Women borrowers may receive 0.05% to 0.25% lower loan rates. Government employees, high net worth individuals, and salary account holders may also receive preferential rates based on their status or relationship with the bank."
           },
           {
             question: "Are the lowest loan interest rates always the best option?",
-            answer: "Not necessarily. While the interest rate is important, you should also consider other factors like processing fees, prepayment penalties, loan tenure flexibility, hidden charges, customer service quality, and approval time."
+            answer: "Not necessarily. While the interest rate is important, you should also consider other factors like processing fees, prepayment penalties, loan tenure flexibility, hidden charges, customer service quality, and approval time. Our detailed comparison includes these additional factors to help you make a comprehensive decision."
           }
         ],
-        relatedCalculators: ['fd-calculator', 'emi-calculator', 'loan-comparison-calculator', 'home-loan-calculator']
+        relatedCalculators: ['emi-calculator', 'fd-calculator', 'loan-comparison-calculator']
       },
       {
         id: 'banking-knowledge',
-        name: 'Banking Knowledge Center',
+        name: 'Banking Knowledge',
         description: 'Access comprehensive guides on banking services, digital payments, and financial security best practices',
         category: 'Finance & Banking Tools',
-        keywords: ['banking guides', 'financial literacy', 'digital banking', 'banking security', 'financial education'],
+        keywords: ['banking guide', 'financial literacy', 'digital banking', 'banking security', 'financial education'],
         info: [
-          "The Banking Knowledge Center provides educational resources on various aspects of banking and financial services in India.",
-          "This comprehensive repository includes guides on digital banking, security best practices, understanding banking products, and navigating common banking procedures.",
-          "The content is regularly updated to reflect the latest developments in the Indian banking sector and financial technology landscape."
+          "The Banking Knowledge center provides comprehensive educational resources on various aspects of banking and financial services in India.",
+          "This resource includes guides on digital banking, UPI payments, banking security, credit management, and basic banking concepts to help you navigate the financial system more effectively.",
+          "The content is regularly updated to reflect the latest developments, regulations, and best practices in the Indian banking sector."
         ],
         faqs: [
           {
-            question: "How can I protect myself from online banking frauds?",
-            answer: "To protect yourself from online banking frauds: never share your PIN, password, or OTP; use strong, unique passwords; enable two-factor authentication; verify website URLs before logging in; be cautious of phishing emails and calls; regularly monitor your accounts; keep your devices and apps updated; and report suspicious activities immediately."
+            question: "How can I protect myself from online banking fraud?",
+            answer: "To protect yourself from online banking fraud: 1) Never share your passwords, PINs, or OTPs with anyone, 2) Use strong, unique passwords and enable two-factor authentication, 3) Verify website URLs before logging in, 4) Avoid using public Wi-Fi for banking transactions, 5) Keep your devices and apps updated, 6) Monitor your accounts regularly for unauthorized transactions, and 7) Report suspicious activities immediately to your bank."
           },
           {
-            question: "What is the difference between NEFT, RTGS, and IMPS?",
-            answer: "NEFT (National Electronic Funds Transfer) processes transactions in batches with no minimum or maximum limit. RTGS (Real Time Gross Settlement) is for high-value transactions (minimum ₹2 lakhs) with real-time processing. IMPS (Immediate Payment Service) offers 24/7 instant transfers with limits typically up to ₹5 lakhs. NEFT and RTGS are available 24/7 since December 2019."
+            question: "What should I do if I notice an unauthorized transaction in my account?",
+            answer: "If you notice an unauthorized transaction: 1) Contact your bank immediately through their official customer care number, 2) Request to block your card/account to prevent further unauthorized transactions, 3) File a formal complaint with details of the transaction, 4) Follow up with a written complaint if necessary, 5) File a police complaint for significant amounts, and 6) Monitor your account for any additional suspicious activity."
           },
           {
-            question: "How do I choose the right type of bank account?",
-            answer: "Choose based on your needs: Regular savings accounts are for basic banking with minimal balance requirements. Premium accounts offer additional benefits with higher minimum balance. Zero-balance or basic accounts have no minimum balance but limited features. Salary accounts are for receiving employment income. Current accounts are for businesses with higher transaction volumes."
+            question: "How can I improve my banking experience with digital tools?",
+            answer: "To enhance your banking experience with digital tools: 1) Use mobile banking apps for convenient 24/7 access, 2) Set up automatic bill payments to avoid late fees, 3) Use UPI for quick and secure payments, 4) Enable account alerts for all transactions, 5) Utilize budgeting features in banking apps, 6) Explore digital savings tools and goal-based saving features, and 7) Take advantage of reward programs and cashback offers available through digital channels."
           }
         ],
-        relatedCalculators: ['bank-ifsc-finder', 'upi-failure-troubleshooter', 'interest-rates-comparison']
+        relatedCalculators: ['upi-failure-troubleshooter', 'bank-ifsc-finder', 'interest-rates-comparison']
       }
     ]
   },
