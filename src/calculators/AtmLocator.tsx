@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Search, Filter, Clock, CreditCard, DollarSign, Banknote, Wheelchair, Check } from 'lucide-react';
+import { MapPin, Search, Filter, Clock, CreditCard, DollarSign, Banknote, Armchair as Wheelchair, Check } from 'lucide-react';
 
 interface ATM {
   id: string;
