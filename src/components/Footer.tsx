@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calculator, Facebook, Twitter, Linkedin, Instagram, FileText } from 'lucide-react';
+import { Calculator, Facebook, Twitter, Linkedin, Instagram, FileText, Map } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 export const Footer: React.FC = () => {
@@ -108,8 +108,8 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog/category/government-schemes" className="text-neutral-300 hover:text-white transition-colors">
-                  All Government Schemes
+                <Link to="/blog/category/banking" className="text-neutral-300 hover:text-white transition-colors">
+                  Banking Guides
                 </Link>
               </li>
             </ul>
@@ -152,6 +152,12 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/terms-and-conditions" className="text-neutral-300 hover:text-white transition-colors">
                   Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link to="/sitemap" className="text-neutral-300 hover:text-white transition-colors flex items-center">
+                  <Map className="h-4 w-4 mr-1" />
+                  Sitemap
                 </Link>
               </li>
             </ul>

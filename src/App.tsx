@@ -12,6 +12,7 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsAndConditions } from './pages/TermsAndConditions';
 import { AboutUs } from './pages/AboutUs';
 import { ContactUs } from './pages/ContactUs';
+import { Sitemap } from './pages/Sitemap';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/sitemap" element={<Sitemap />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>

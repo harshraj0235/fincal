@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { X, ChevronRight, FileText } from 'lucide-react';
+import { X, ChevronRight, FileText, Map } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 interface MobileMenuProps {
@@ -93,6 +93,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
           >
             Contact Us
+          </Link>
+          
+          <Link 
+            to="/sitemap" 
+            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg flex items-center"
+            onClick={onClose}
+          >
+            <Map className="h-4 w-4 mr-2" />
+            Sitemap
           </Link>
           
           <div className="mt-4">
