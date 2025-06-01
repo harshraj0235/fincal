@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
@@ -22,7 +22,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         )}
         <div className={`flex-grow ${isHomePage ? '' : 'p-6'}`}>
-          {children}
+          <Suspense fallback={<div className="flex justify-center items-center h-64">Loading...</div>}>
+            {children}
+          </Suspense>
         </div>
       </main>
       <Footer />

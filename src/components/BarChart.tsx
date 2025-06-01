@@ -47,11 +47,12 @@ export const BarChart: React.FC<BarChartProps> = ({
     const g = svg.append('g')
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
     
-    // Add x-axis
-    g.append('g')
+    // Add x-axis with optimized rendering
+    const xAxis = g.append('g')
       .attr('transform', `translate(0, ${innerHeight})`)
-      .call(d3.axisBottom(xScale))
-      .selectAll('text')
+      .call(d3.axisBottom(xScale));
+    
+    xAxis.selectAll('text')
       .style('text-anchor', 'middle')
       .style('font-size', '12px')
       .style('fill', '#64748b');
@@ -67,8 +68,8 @@ export const BarChart: React.FC<BarChartProps> = ({
         .text(xLabel);
     }
     
-    // Add y-axis
-    g.append('g')
+    // Add y-axis with optimized rendering
+    const yAxis = g.append('g')
       .call(d3.axisLeft(yScale)
         .ticks(5)
         .tickFormat(d => {
@@ -80,8 +81,9 @@ export const BarChart: React.FC<BarChartProps> = ({
           }
           return value.toString();
         })
-      )
-      .selectAll('text')
+      );
+    
+    yAxis.selectAll('text')
       .style('font-size', '12px')
       .style('fill', '#64748b');
     
@@ -97,52 +99,63 @@ export const BarChart: React.FC<BarChartProps> = ({
         .text(yLabel);
     }
     
-    // Add bars
-    g.selectAll('.bar')
-      .data(data)
-      .enter()
-      .append('rect')
-      .attr('class', 'bar')
-      .attr('x', d => xScale(d[xKey]) as number)
-      .attr('y', innerHeight)
-      .attr('width', xScale.bandwidth())
-      .attr('height', 0)
-      .attr('fill', typeof color === 'function' ? (d => color(d)) : color)
-      .attr('rx', 4)
-      .attr('opacity', 0.8)
-      .transition()
-      .duration(800)
-      .attr('y', d => yScale(d[yKey]))
-      .attr('height', d => innerHeight - yScale(d[yKey]));
-    
-    // Add value labels
-    g.selectAll('.value-label')
-      .data(data)
-      .enter()
-      .append('text')
-      .attr('class', 'value-label')
-      .attr('x', d => (xScale(d[xKey]) as number) + xScale.bandwidth() / 2)
-      .attr('y', d => yScale(d[yKey]) - 5)
-      .attr('text-anchor', 'middle')
-      .style('font-size', '11px')
-      .style('fill', '#64748b')
-      .style('opacity', 0)
-      .text(d => {
-        const value = d[yKey];
-        if (value >= 1000000) {
-          return `${(value / 1000000).toFixed(1)}M`;
-        } else if (value >= 1000) {
-          return `${(value / 1000).toFixed(0)}K`;
-        }
-        return value.toString();
-      })
-      .transition()
-      .duration(800)
-      .style('opacity', 1);
+    // Use requestAnimationFrame for smoother animations
+    requestAnimationFrame(() => {
+      // Add bars with optimized animation
+      const bars = g.selectAll('.bar')
+        .data(data)
+        .enter()
+        .append('rect')
+        .attr('class', 'bar')
+        .attr('x', d => xScale(d[xKey]) as number)
+        .attr('y', innerHeight)
+        .attr('width', xScale.bandwidth())
+        .attr('height', 0)
+        .attr('fill', typeof color === 'function' ? (d => color(d)) : color)
+        .attr('rx', 4)
+        .attr('opacity', 0.8);
+      
+      bars.transition()
+        .duration(600)
+        .attr('y', d => yScale(d[yKey]))
+        .attr('height', d => innerHeight - yScale(d[yKey]));
+      
+      // Add value labels with optimized rendering
+      const labels = g.selectAll('.value-label')
+        .data(data)
+        .enter()
+        .append('text')
+        .attr('class', 'value-label')
+        .attr('x', d => (xScale(d[xKey]) as number) + xScale.bandwidth() / 2)
+        .attr('y', d => yScale(d[yKey]) - 5)
+        .attr('text-anchor', 'middle')
+        .style('font-size', '11px')
+        .style('fill', '#64748b')
+        .style('opacity', 0)
+        .text(d => {
+          const value = d[yKey];
+          if (value >= 1000000) {
+            return `${(value / 1000000).toFixed(1)}M`;
+          } else if (value >= 1000) {
+            return `${(value / 1000).toFixed(0)}K`;
+          }
+          return value.toString();
+        });
+      
+      labels.transition()
+        .duration(600)
+        .style('opacity', 1);
+    });
     
   }, [data, xKey, yKey, color, xLabel, yLabel, formatY]);
   
   return (
-    <svg ref={svgRef} width="100%" height="100%"></svg>
+    <svg ref={svgRef} width="100%" height="100%" className="will-change-transform">
+      <defs>
+        <clipPath id="chart-area">
+          <rect x="0" y="0" width="100%" height="100%"></rect>
+        </clipPath>
+      </defs>
+    </svg>
   );
 };

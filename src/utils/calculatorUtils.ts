@@ -5,25 +5,43 @@ export const formatCurrency = (amount: number): string => {
   return `₹${amount.toLocaleString('en-IN')}`;
 };
 
-// Calculate EMI (Equated Monthly Installment)
+// Memoization cache for expensive calculations
+const calculationCache: Record<string, any> = {};
+
+// Calculate EMI (Equated Monthly Installment) with caching
 export const calculateEMI = (
   principal: number,
   interestRate: number,
   tenureInMonths: number
 ): number => {
+  const cacheKey = `emi_${principal}_${interestRate}_${tenureInMonths}`;
+  
+  if (calculationCache[cacheKey]) {
+    return calculationCache[cacheKey];
+  }
+  
   const monthlyRate = interestRate / 12 / 100;
-  return (
+  const result = (
     (principal * monthlyRate * Math.pow(1 + monthlyRate, tenureInMonths)) /
     (Math.pow(1 + monthlyRate, tenureInMonths) - 1)
   );
+  
+  calculationCache[cacheKey] = result;
+  return result;
 };
 
-// Calculate loan breakup into principal and interest components
+// Calculate loan breakup into principal and interest components with caching
 export const calculateLoanBreakup = (
   principal: number,
   interestRate: number,
   tenureInMonths: number
 ): Array<{principal: number; interest: number}> => {
+  const cacheKey = `breakup_${principal}_${interestRate}_${tenureInMonths}`;
+  
+  if (calculationCache[cacheKey]) {
+    return calculationCache[cacheKey];
+  }
+  
   const emi = calculateEMI(principal, interestRate, tenureInMonths);
   const yearlyBreakup: Array<{principal: number; interest: number}> = [];
   let remainingPrincipal = principal;
@@ -53,10 +71,11 @@ export const calculateLoanBreakup = (
     });
   }
   
+  calculationCache[cacheKey] = yearlyBreakup;
   return yearlyBreakup;
 };
 
-// Calculate SIP (Systematic Investment Plan) returns
+// Calculate SIP (Systematic Investment Plan) returns with caching
 export const calculateSIPReturns = (
   monthlyInvestment: number,
   expectedReturn: number,
@@ -67,6 +86,12 @@ export const calculateSIPReturns = (
   totalValue: number;
   yearlyBreakup: Array<{year: number; investment: number; value: number}>;
 } => {
+  const cacheKey = `sip_${monthlyInvestment}_${expectedReturn}_${timePeriodYears}`;
+  
+  if (calculationCache[cacheKey]) {
+    return calculationCache[cacheKey];
+  }
+  
   const monthlyRate = expectedReturn / 12 / 100;
   const months = timePeriodYears * 12;
   
@@ -90,12 +115,15 @@ export const calculateSIPReturns = (
     });
   }
   
-  return {
+  const result = {
     investedAmount,
     estimatedReturns,
     totalValue,
     yearlyBreakup
   };
+  
+  calculationCache[cacheKey] = result;
+  return result;
 };
 
 // Calculate GST (Goods and Services Tax)
@@ -142,6 +170,12 @@ export const calculatePPF = (
   maturityValue: number;
   yearlyBreakup: Array<{year: number; investment: number; interest: number; balance: number}>;
 } => {
+  const cacheKey = `ppf_${yearlyInvestment}_${interestRate}_${timePeriodYears}`;
+  
+  if (calculationCache[cacheKey]) {
+    return calculationCache[cacheKey];
+  }
+  
   const yearlyBreakup: Array<{year: number; investment: number; interest: number; balance: number}> = [];
   let balance = 0;
   
@@ -162,12 +196,15 @@ export const calculatePPF = (
   const maturityValue = balance;
   const totalInterest = maturityValue - totalInvestment;
   
-  return {
+  const result = {
     totalInvestment,
     totalInterest,
     maturityValue,
     yearlyBreakup
   };
+  
+  calculationCache[cacheKey] = result;
+  return result;
 };
 
 // Income Tax Calculator
@@ -194,6 +231,12 @@ export const calculateIncomeTax = (
   cess: number;
   totalTax: number;
 } => {
+  const cacheKey = `tax_${annualIncome}_${taxRegime}_${ageCategory}_${JSON.stringify(deductions)}`;
+  
+  if (calculationCache[cacheKey]) {
+    return calculationCache[cacheKey];
+  }
+  
   // Calculate total deductions (applicable only for old regime)
   const totalDeductions = taxRegime === 'old' 
     ? Math.min(deductions.section80C, 150000) +
@@ -436,7 +479,7 @@ export const calculateIncomeTax = (
   // Calculate effective tax rate
   const effectiveTaxRate = (totalTax / annualIncome) * 100;
   
-  return {
+  const result = {
     taxableIncome,
     totalDeductions,
     taxLiability: totalTaxLiability,
@@ -446,4 +489,17 @@ export const calculateIncomeTax = (
     cess,
     totalTax
   };
+  
+  calculationCache[cacheKey] = result;
+  return result;
+};
+
+// Clear cache when it gets too large
+export const clearCalculationCache = () => {
+  const cacheSize = Object.keys(calculationCache).length;
+  if (cacheSize > 100) {
+    for (const key in calculationCache) {
+      delete calculationCache[key];
+    }
+  }
 };
