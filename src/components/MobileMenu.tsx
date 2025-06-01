@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { X, ChevronRight, FileText, Map, Globe, BookOpen } from 'lucide-react';
+import { X, ChevronRight, FileText, Map, BookOpen } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 interface MobileMenuProps {
@@ -43,32 +43,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     onClose();
   };
   
-  const handleLanguageChange = (languageCode: string) => {
-    // Get the Google Translate select element
-    const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-    if (selectElement) {
-      selectElement.value = languageCode;
-      selectElement.dispatchEvent(new Event('change'));
-    } else {
-      // If the select element is not available, try to initialize it
-      const translateElement = document.getElementById('google_translate_element');
-      if (translateElement) {
-        translateElement.style.display = 'block';
-        
-        // Try again after a short delay
-        setTimeout(() => {
-          const newSelectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-          if (newSelectElement) {
-            newSelectElement.value = languageCode;
-            newSelectElement.dispatchEvent(new Event('change'));
-          }
-        }, 500);
-      }
-    }
-    
-    onClose();
-  };
-  
   if (!isOpen) return null;
   
   return (
@@ -95,60 +69,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           >
             Home
           </Link>
-          
-          <div className="mt-4">
-            <h3 className="font-medium text-neutral-500 px-4 py-2">Language</h3>
-            <div className="space-y-1 ml-4">
-              <button 
-                onClick={() => handleLanguageChange('en')} 
-                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
-              >
-                English
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('hi')} 
-                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
-              >
-                हिन्दी (Hindi)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('ta')} 
-                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
-              >
-                தமிழ் (Tamil)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('te')} 
-                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
-              >
-                తెలుగు (Telugu)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('bn')} 
-                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
-              >
-                বাংলা (Bengali)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('mr')} 
-                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
-              >
-                मराठी (Marathi)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('gu')} 
-                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
-              >
-                ગુજરાતી (Gujarati)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('kn')} 
-                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
-              >
-                ಕನ್ನಡ (Kannada)
-              </button>
-            </div>
-          </div>
           
           <Link 
             to="/blog" 

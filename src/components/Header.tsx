@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Calculator, Search, ChevronRight, FileText, Map, Globe, BookOpen } from 'lucide-react';
+import { Menu, X, Calculator, Search, ChevronRight, FileText, Map, BookOpen } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { SearchBar } from './SearchBar';
 import { calculatorCategories } from '../data/calculatorData';
@@ -10,11 +10,9 @@ export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
-  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const categoriesRef = useRef<HTMLDivElement>(null);
-  const languageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,16 +27,12 @@ export const Header: React.FC = () => {
     setMobileMenuOpen(false);
     setSearchOpen(false);
     setCategoriesOpen(false);
-    setLanguageMenuOpen(false);
   }, [location]);
   
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (categoriesRef.current && !categoriesRef.current.contains(event.target as Node)) {
         setCategoriesOpen(false);
-      }
-      if (languageRef.current && !languageRef.current.contains(event.target as Node)) {
-        setLanguageMenuOpen(false);
       }
     };
     
@@ -51,31 +45,6 @@ export const Header: React.FC = () => {
   const handleCalculatorClick = (calculatorId: string) => {
     navigate(`/calculators/${calculatorId}`);
     setCategoriesOpen(false);
-  };
-
-  const handleLanguageChange = (languageCode: string) => {
-    const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-    if (selectElement) {
-      selectElement.value = languageCode;
-      selectElement.dispatchEvent(new Event('change'));
-    } else {
-      // If the select element is not available, try to initialize it
-      const translateElement = document.getElementById('google_translate_element');
-      if (translateElement) {
-        translateElement.style.display = 'block';
-        
-        // Try again after a short delay
-        setTimeout(() => {
-          const newSelectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-          if (newSelectElement) {
-            newSelectElement.value = languageCode;
-            newSelectElement.dispatchEvent(new Event('change'));
-          }
-        }, 500);
-      }
-    }
-    
-    setLanguageMenuOpen(false);
   };
 
   return (
@@ -95,76 +64,6 @@ export const Header: React.FC = () => {
             <Link to="/" className="text-neutral-700 hover:text-primary-600 transition-colors">
               Home
             </Link>
-            <div className="relative" ref={languageRef}>
-              <button 
-                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
-              >
-                <Globe className="h-4 w-4 mr-1" />
-                Language
-                <svg 
-                  className={`ml-1 h-4 w-4 transition-transform ${languageMenuOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              
-              {languageMenuOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10 py-2">
-                  <button 
-                    onClick={() => handleLanguageChange('en')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    English
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('hi')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    हिन्दी (Hindi)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('ta')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    தமிழ் (Tamil)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('te')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    తెలుగు (Telugu)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('bn')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    বাংলা (Bengali)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('mr')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    मराठी (Marathi)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('gu')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    ગુજરાતી (Gujarati)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('kn')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    ಕನ್ನಡ (Kannada)
-                  </button>
-                </div>
-              )}
-            </div>
             <div className="relative" ref={categoriesRef}>
               <button 
                 onClick={() => setCategoriesOpen(!categoriesOpen)}
@@ -271,12 +170,6 @@ export const Header: React.FC = () => {
           
           <div className="flex md:hidden items-center space-x-4">
             <button 
-              onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100"
-            >
-              <Globe className="h-5 w-5" />
-            </button>
-            <button 
               onClick={() => setSearchOpen(true)}
               className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100"
             >
@@ -305,72 +198,6 @@ export const Header: React.FC = () => {
               </button>
             </div>
             <SearchBar onClose={() => setSearchOpen(false)} />
-          </div>
-        </div>
-      )}
-      
-      {languageMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20">
-          <div className="bg-white rounded-lg w-full max-w-xs mx-4 p-4 shadow-xl">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold">Select Language</h2>
-              <button 
-                onClick={() => setLanguageMenuOpen(false)}
-                className="text-neutral-500 hover:text-neutral-700"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-            <div className="space-y-2">
-              <button 
-                onClick={() => handleLanguageChange('en')} 
-                className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
-              >
-                English
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('hi')} 
-                className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
-              >
-                हिन्दी (Hindi)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('ta')} 
-                className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
-              >
-                தமிழ் (Tamil)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('te')} 
-                className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
-              >
-                తెలుగు (Telugu)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('bn')} 
-                className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
-              >
-                বাংলা (Bengali)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('mr')} 
-                className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
-              >
-                मराठी (Marathi)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('gu')} 
-                className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
-              >
-                ગુજરાતી (Gujarati)
-              </button>
-              <button 
-                onClick={() => handleLanguageChange('kn')} 
-                className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
-              >
-                ಕನ್ನಡ (Kannada)
-              </button>
-            </div>
           </div>
         </div>
       )}
