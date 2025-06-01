@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { X, ChevronRight, FileText, Map } from 'lucide-react';
+import { X, ChevronRight, FileText, Map, Globe } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 interface MobileMenuProps {
@@ -40,6 +40,19 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   
   const handleCalculatorClick = (calculatorId: string) => {
     navigate(`/calculators/${calculatorId}`);
+    onClose();
+  };
+  
+  const handleLanguageChange = (language: string) => {
+    // This function triggers the Google Translate API
+    const googleTranslateElement = document.getElementById('google_translate_element');
+    if (googleTranslateElement) {
+      const selectElement = googleTranslateElement.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (selectElement) {
+        selectElement.value = language;
+        selectElement.dispatchEvent(new Event('change'));
+      }
+    }
     onClose();
   };
   
@@ -103,6 +116,42 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             <Map className="h-4 w-4 mr-2" />
             Sitemap
           </Link>
+          
+          <div className="mt-4">
+            <h3 className="font-medium text-neutral-500 px-4 py-2">Language</h3>
+            <div className="space-y-1 ml-4">
+              <button 
+                onClick={() => handleLanguageChange('en')} 
+                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
+              >
+                English
+              </button>
+              <button 
+                onClick={() => handleLanguageChange('hi')} 
+                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
+              >
+                हिन्दी (Hindi)
+              </button>
+              <button 
+                onClick={() => handleLanguageChange('ta')} 
+                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
+              >
+                தமிழ் (Tamil)
+              </button>
+              <button 
+                onClick={() => handleLanguageChange('te')} 
+                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
+              >
+                తెలుగు (Telugu)
+              </button>
+              <button 
+                onClick={() => handleLanguageChange('bn')} 
+                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
+              >
+                বাংলা (Bengali)
+              </button>
+            </div>
+          </div>
           
           <div className="mt-4">
             <h3 className="font-medium text-neutral-500 px-4 py-2">Calculator Categories</h3>
