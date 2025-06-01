@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calculator, TrendingUp, DollarSign, PieChart, FileText, Award, Shield, Building, Search, MapPin, CreditCard } from 'lucide-react';
+import { Calculator, TrendingUp, DollarSign, PieChart, FileText, Award, Shield, Building, Search, MapPin, CreditCard, Globe, BookOpen } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 
@@ -9,6 +9,7 @@ export const Home: React.FC = () => {
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const govtSchemesRef = useRef<HTMLDivElement | null>(null);
   const bankingToolsRef = useRef<HTMLDivElement | null>(null);
+  const financialNavigatorRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
     // Check if there's a hash in the URL
@@ -24,6 +25,11 @@ export const Home: React.FC = () => {
         // Scroll to banking tools section
         setTimeout(() => {
           bankingToolsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else if (categoryId === 'financial-navigator' && financialNavigatorRef.current) {
+        // Scroll to financial navigator section
+        setTimeout(() => {
+          financialNavigatorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       } else {
         const element = categoryRefs.current[categoryId];
@@ -57,10 +63,102 @@ export const Home: React.FC = () => {
               <Link to="/calculators/sip-calculator" className="btn bg-white text-[--primary-800] border border-[--primary-200] hover:bg-neutral-50">
                 SIP Calculator
               </Link>
-              <Link to="#govt-schemes" className="btn bg-[--success-600] text-white hover:bg-[--success-700]">
-                Government Schemes
+              <Link to="#financial-navigator" className="btn bg-[--accent-600] text-white hover:bg-[--accent-700]">
+                Financial Navigator
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Financial Navigator Section */}
+      <section 
+        id="financial-navigator" 
+        ref={financialNavigatorRef}
+        className="py-12 sm:py-16 bg-gradient-to-r from-[--accent-50] to-[--primary-50]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">Financial Navigator: Your Guide to Indian Finance</h2>
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto">
+              Navigate the complex world of banking and finance with our comprehensive educational tools designed to improve your financial literacy
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-[--accent-100]">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="md:w-1/2">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-4 flex items-center">
+                  <BookOpen className="w-5 h-5 mr-2 text-[--accent-600]" />
+                  Financial Literacy Hub
+                </h3>
+                <p className="text-neutral-700 mb-4">
+                  Our Financial Navigator is a comprehensive guide to help you understand and navigate the Indian financial system. From UPI payments to KYC processes, loan comparisons to scam detection, we've got you covered with practical knowledge and interactive tools.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-[--accent-100] text-[--accent-800] rounded-full text-sm">UPI Explainer</span>
+                  <span className="px-3 py-1 bg-[--accent-100] text-[--accent-800] rounded-full text-sm">KYC Help</span>
+                  <span className="px-3 py-1 bg-[--accent-100] text-[--accent-800] rounded-full text-sm">Loan Comparison</span>
+                  <span className="px-3 py-1 bg-[--accent-100] text-[--accent-800] rounded-full text-sm">CIBIL Education</span>
+                  <span className="px-3 py-1 bg-[--accent-100] text-[--accent-800] rounded-full text-sm">Scam Detection</span>
+                </div>
+                <a 
+                  href="/financial-navigator.html" 
+                  target="_blank"
+                  className="inline-flex items-center text-[--accent-600] hover:text-[--accent-700] font-medium"
+                >
+                  Launch Financial Navigator
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+              <div className="md:w-1/2">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-[--accent-50] p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <Globe className="h-5 w-5 text-[--accent-600] mr-2" />
+                      <h4 className="font-medium text-[--accent-800]">UPI Explainer</h4>
+                    </div>
+                    <p className="text-sm text-[--accent-700]">Understand how UPI works with our interactive simulator</p>
+                  </div>
+                  <div className="bg-[--primary-50] p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <Shield className="h-5 w-5 text-[--primary-600] mr-2" />
+                      <h4 className="font-medium text-[--primary-800]">KYC Help</h4>
+                    </div>
+                    <p className="text-sm text-[--primary-700]">Step-by-step guidance for completing KYC processes</p>
+                  </div>
+                  <div className="bg-[--success-50] p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <Calculator className="h-5 w-5 text-[--success-600] mr-2" />
+                      <h4 className="font-medium text-[--success-800]">EMI Calculator</h4>
+                    </div>
+                    <p className="text-sm text-[--success-700]">Visual calculator to understand loan payments</p>
+                  </div>
+                  <div className="bg-[--error-50] p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <Search className="h-5 w-5 text-[--error-600] mr-2" />
+                      <h4 className="font-medium text-[--error-800]">Scam Detector</h4>
+                    </div>
+                    <p className="text-sm text-[--error-700]">Identify and avoid common financial scams</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <p className="text-neutral-700 mb-4">
+              Our Financial Navigator is designed to simplify complex financial concepts and empower you with the knowledge to make informed decisions.
+            </p>
+            <a 
+              href="/financial-navigator.html" 
+              target="_blank"
+              className="btn bg-[--accent-600] text-white hover:bg-[--accent-700]"
+            >
+              Explore Financial Navigator
+            </a>
           </div>
         </div>
       </section>
@@ -260,25 +358,25 @@ export const Home: React.FC = () => {
               </div>
             </div>
             
-            {/* Banking Knowledge */}
+            {/* Financial Navigator */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--primary-600]"></div>
+              <div className="p-1 bg-gradient-to-r from-[--accent-500] to-[--accent-600]"></div>
               <div className="p-6">
                 <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-[--primary-100] p-3 mr-4">
-                    <FileText className="h-6 w-6 text-[--primary-600]" />
+                  <div className="rounded-full bg-[--accent-100] p-3 mr-4">
+                    <BookOpen className="h-6 w-6 text-[--accent-600]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-neutral-900">Banking Knowledge</h3>
+                  <h3 className="text-xl font-semibold text-neutral-900">Financial Navigator</h3>
                 </div>
                 <p className="text-neutral-600 mb-4">
-                  Access comprehensive guides on banking services, digital payments, and financial security best practices.
+                  Interactive guide to help you understand UPI, KYC, loans, and protect yourself from financial scams.
                 </p>
-                <Link to="/blog/category/banking" className="text-[--primary-600] font-medium flex items-center">
-                  Read Banking Guides
+                <a href="/financial-navigator.html" target="_blank" className="text-[--accent-600] font-medium flex items-center">
+                  Launch Financial Navigator
                   <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                   </svg>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -563,7 +661,7 @@ export const Home: React.FC = () => {
                     <div>
                       <p className="font-medium text-neutral-900">National Scholarship Portal</p>
                       <p className="text-sm text-neutral-600">Single platform for all scholarship schemes across ministries</p>
-                      <Link to="/calculators/compound-interest-calculator" className="text-xs text-[--error-600] font-medium hover:underline">Calculate Education Fund →</Link>
+                      <Link to="/calculators/compound-interest-calculator" className="text-xs text-[--success-600] font-medium hover:underline">Calculate Education Fund →</Link>
                     </div>
                   </li>
                 </ul>

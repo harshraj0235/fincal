@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Calculator, Search, ChevronRight, FileText, Map, Globe } from 'lucide-react';
+import { Menu, X, Calculator, Search, ChevronRight, FileText, Map, Globe, BookOpen } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { SearchBar } from './SearchBar';
 import { calculatorCategories } from '../data/calculatorData';
@@ -278,6 +278,14 @@ export const Header: React.FC = () => {
               <FileText className="h-4 w-4 mr-1" />
               Blog
             </Link>
+            <a 
+              href="/financial-navigator.html" 
+              target="_blank"
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
+            >
+              <BookOpen className="h-4 w-4 mr-1" />
+              Financial Navigator
+            </a>
             <Link 
               to="/about-us" 
               className="text-neutral-700 hover:text-primary-600 transition-colors"

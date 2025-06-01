@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calculator, Facebook, Twitter, Linkedin, Instagram, FileText, Map } from 'lucide-react';
+import { Calculator, Facebook, Twitter, Linkedin, Instagram, FileText, Map, BookOpen } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 export const Footer: React.FC = () => {
@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Banking Tools</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">Tools & Resources</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/calculators/bank-ifsc-finder" className="text-neutral-300 hover:text-white transition-colors">
@@ -106,6 +106,12 @@ export const Footer: React.FC = () => {
                 <Link to="/calculators/interest-rates-comparison" className="text-neutral-300 hover:text-white transition-colors">
                   Best Interest Rates
                 </Link>
+              </li>
+              <li>
+                <a href="/financial-navigator.html" target="_blank" className="text-neutral-300 hover:text-white transition-colors flex items-center">
+                  <BookOpen className="h-4 w-4 mr-1" />
+                  Financial Navigator
+                </a>
               </li>
               <li>
                 <Link to="/blog/category/banking" className="text-neutral-300 hover:text-white transition-colors">

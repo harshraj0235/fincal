@@ -69,6 +69,11 @@ export const Sitemap: React.FC = () => {
                 Sitemap
               </Link>
             </li>
+            <li>
+              <a href="/financial-navigator.html" target="_blank" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Financial Navigator
+              </a>
+            </li>
           </ul>
         </div>
         
@@ -135,6 +140,11 @@ export const Sitemap: React.FC = () => {
               <Link to="/calculators/banking-knowledge" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
                 Banking Knowledge
               </Link>
+            </li>
+            <li>
+              <a href="/financial-navigator.html" target="_blank" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Financial Navigator
+              </a>
             </li>
           </ul>
         </div>
