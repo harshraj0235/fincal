@@ -54,7 +54,6 @@ export const Header: React.FC = () => {
   };
 
   const handleLanguageChange = (languageCode: string) => {
-    // Get the Google Translate select element
     const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
     if (selectElement) {
       selectElement.value = languageCode;
