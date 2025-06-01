@@ -215,3 +215,53 @@ body {
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
 }
+
+/* Custom language selector */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-selector-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: white;
+  border: 1px solid var(--neutral-300);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--neutral-800);
+}
+
+.language-selector-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 180px;
+  overflow: hidden;
+}
+
+.language-option {
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.language-option:hover {
+  background-color: var(--neutral-100);
+}
+
+/* Fix for Google Translate top bar */
+.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}

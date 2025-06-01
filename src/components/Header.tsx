@@ -53,16 +53,72 @@ export const Header: React.FC = () => {
     setCategoriesOpen(false);
   };
 
-  const handleLanguageChange = (language: string) => {
-    // This function triggers the Google Translate API
-    const googleTranslateElement = document.getElementById('google_translate_element');
-    if (googleTranslateElement) {
-      const selectElement = googleTranslateElement.querySelector('.goog-te-combo') as HTMLSelectElement;
-      if (selectElement) {
-        selectElement.value = language;
-        selectElement.dispatchEvent(new Event('change'));
+  const handleLanguageChange = (languageCode: string) => {
+    // Get the Google Translate select element
+    const iframe = document.querySelector('.goog-te-menu-frame') as HTMLIFrameElement;
+    if (!iframe) {
+      // If iframe doesn't exist yet, trigger the Google Translate dropdown
+      const element = document.querySelector('#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:first-child') as HTMLElement;
+      if (element) {
+        element.click();
+        // We need to wait for the iframe to be created
+        setTimeout(() => handleLanguageChange(languageCode), 300);
+      }
+      return;
+    }
+
+    // Map our language codes to Google's language codes
+    const googleLanguageCodes: Record<string, string> = {
+      'en': 'English',
+      'hi': 'Hindi',
+      'ta': 'Tamil',
+      'te': 'Telugu',
+      'bn': 'Bengali',
+      'mr': 'Marathi',
+      'gu': 'Gujarati',
+      'kn': 'Kannada'
+    };
+
+    // Find the language in the dropdown
+    const iframeDocument = iframe.contentDocument || iframe.contentWindow?.document;
+    if (iframeDocument) {
+      const items = iframeDocument.querySelectorAll('.goog-te-menu2-item');
+      
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i] as HTMLElement;
+        const text = item.textContent || '';
+        
+        if (text.includes(googleLanguageCodes[languageCode])) {
+          item.click();
+          break;
+        }
       }
     }
+    
+    setLanguageMenuOpen(false);
+  };
+
+  // Function to change language directly using Google's API
+  const changeLanguage = (languageCode: string) => {
+    // First, we need to ensure the Google Translate widget is initialized
+    const translateElement = document.getElementById('google_translate_element');
+    if (!translateElement) return;
+
+    // Trigger the Google Translate dropdown
+    const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (selectElement) {
+      selectElement.value = languageCode;
+      selectElement.dispatchEvent(new Event('change'));
+    } else {
+      // If the select element is not available, try to initialize it
+      const script = document.createElement('script');
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(script);
+      
+      // Try again after a short delay
+      setTimeout(() => changeLanguage(languageCode), 500);
+    }
+    
     setLanguageMenuOpen(false);
   };
 
@@ -103,49 +159,49 @@ export const Header: React.FC = () => {
               {languageMenuOpen && (
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10 py-2">
                   <button 
-                    onClick={() => handleLanguageChange('en')} 
+                    onClick={() => changeLanguage('en')} 
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
                   >
                     English
                   </button>
                   <button 
-                    onClick={() => handleLanguageChange('hi')} 
+                    onClick={() => changeLanguage('hi')} 
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
                   >
                     हिन्दी (Hindi)
                   </button>
                   <button 
-                    onClick={() => handleLanguageChange('ta')} 
+                    onClick={() => changeLanguage('ta')} 
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
                   >
                     தமிழ் (Tamil)
                   </button>
                   <button 
-                    onClick={() => handleLanguageChange('te')} 
+                    onClick={() => changeLanguage('te')} 
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
                   >
                     తెలుగు (Telugu)
                   </button>
                   <button 
-                    onClick={() => handleLanguageChange('bn')} 
+                    onClick={() => changeLanguage('bn')} 
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
                   >
                     বাংলা (Bengali)
                   </button>
                   <button 
-                    onClick={() => handleLanguageChange('mr')} 
+                    onClick={() => changeLanguage('mr')} 
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
                   >
                     मराठी (Marathi)
                   </button>
                   <button 
-                    onClick={() => handleLanguageChange('gu')} 
+                    onClick={() => changeLanguage('gu')} 
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
                   >
                     ગુજરાતી (Gujarati)
                   </button>
                   <button 
-                    onClick={() => handleLanguageChange('kn')} 
+                    onClick={() => changeLanguage('kn')} 
                     className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
                   >
                     ಕನ್ನಡ (Kannada)
@@ -303,49 +359,49 @@ export const Header: React.FC = () => {
             </div>
             <div className="space-y-2">
               <button 
-                onClick={() => handleLanguageChange('en')} 
+                onClick={() => changeLanguage('en')} 
                 className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
               >
                 English
               </button>
               <button 
-                onClick={() => handleLanguageChange('hi')} 
+                onClick={() => changeLanguage('hi')} 
                 className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
               >
                 हिन्दी (Hindi)
               </button>
               <button 
-                onClick={() => handleLanguageChange('ta')} 
+                onClick={() => changeLanguage('ta')} 
                 className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
               >
                 தமிழ் (Tamil)
               </button>
               <button 
-                onClick={() => handleLanguageChange('te')} 
+                onClick={() => changeLanguage('te')} 
                 className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
               >
                 తెలుగు (Telugu)
               </button>
               <button 
-                onClick={() => handleLanguageChange('bn')} 
+                onClick={() => changeLanguage('bn')} 
                 className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
               >
                 বাংলা (Bengali)
               </button>
               <button 
-                onClick={() => handleLanguageChange('mr')} 
+                onClick={() => changeLanguage('mr')} 
                 className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
               >
                 मराठी (Marathi)
               </button>
               <button 
-                onClick={() => handleLanguageChange('gu')} 
+                onClick={() => changeLanguage('gu')} 
                 className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
               >
                 ગુજરાતી (Gujarati)
               </button>
               <button 
-                onClick={() => handleLanguageChange('kn')} 
+                onClick={() => changeLanguage('kn')} 
                 className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-100 rounded-lg"
               >
                 ಕನ್ನಡ (Kannada)
