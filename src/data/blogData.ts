@@ -570,23 +570,14 @@ export const blogPosts: BlogPost[] = [
   id: 6,
   title: "How to Calculate Home Loan EMI with Prepayment Options in India",
   slug: "home-loan-emi-prepayment-guide",
-  date: "August 10, 2023",
+  date: "june 01, 2025",
   author: "Rahul Kapoor",
   authorTitle: "Mortgage Expert",
   authorImage: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
   authorBio: "With 10+ years in banking, Rahul specializes in helping Indians make informed home loan decisions and save lakhs through smart repayment strategies.",
   coverImage: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg",
   excerpt: "Learn to calculate your home loan EMI accurately and discover how strategic prepayments can save you ₹5-10 lakhs in interest. Includes interactive calculator.",
-  categories: [
-    "Government Schemes",
-    "Investment", 
-    "Tax Planning",
-    "Retirement Planning",
-    "Rural Finance",
-    "Senior Citizens",
-    "Financial Inclusion",
-    "Government - update"
-  ],
+  categories: ["Government Schemes", "Investment", "Tax Planning"],
   content: [
     {
       type: "paragraph",
