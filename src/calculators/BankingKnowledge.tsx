@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import { Book, Search, FileText, Shield, CreditCard, Smartphone, ExternalLink } from 'lucide-react';
 
-
-
 interface Article {
 
   id: string;
@@ -761,7 +759,4 @@ export const BankingKnowledge: React.FC = () => {
   );
 
 };
-
-
-
 export default BankingKnowledge;
