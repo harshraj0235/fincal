@@ -565,7 +565,183 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Atal Pension Yojana (APY) is a government-backed pension scheme primarily aimed at workers in the unorganized sector. Discover how this scheme works, its benefits, and how to maximize your pension amount.",
     categories: ["Government Schemes", "Retirement Planning", "Financial Inclusion"],
     content: []
-  }
+  },
+   {
+    id: 6,
+    title: "How to Calculate Home Loan EMI with Prepayment Options in India",
+    slug: "home-loan-emi-prepayment-calculator",
+    date: "July 22, 2023",
+    author: "Arjun Mehta",
+    authorTitle: "Mortgage Advisor",
+    authorImage: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
+    authorBio: "Arjun specializes in home finance with 12 years of experience helping Indian families make smart borrowing decisions. He's helped over 500 clients save on interest payments.",
+    coverImage: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg",
+    excerpt: "Learn to calculate your home loan EMI accurately and discover how strategic prepayments can save you lakhs in interest. Includes a free interactive calculator tool.",
+    categories: ["Home Loans", "Financial Planning", "Calculators"],
+    content: [
+      {
+        type: "paragraph",
+        content: "Understanding your home loan EMI (Equated Monthly Installment) is crucial for financial planning in India's growing real estate market. With property prices rising, most homebuyers rely on loans spanning 15-30 years. Knowing exactly what you'll pay each month - and how prepayments can reduce your burden - helps you budget effectively and save significantly on interest."
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg",
+        caption: "Smart EMI planning can make home ownership more affordable"
+      },
+      {
+        type: "heading",
+        content: "Home Loan EMI Basics"
+      },
+      {
+        type: "subheading",
+        content: "What Makes Up Your EMI?"
+      },
+      {
+        type: "paragraph",
+        content: "Every EMI has two components:"
+      },
+      {
+        type: "list",
+        items: [
+          "Principal: The actual loan amount you borrowed",
+          "Interest: The bank's charge for lending you money"
+        ]
+      },
+      {
+        type: "paragraph",
+        content: "In the early years, up to 70-80% of your EMI goes toward interest. This gradually reverses as you pay down the loan."
+      },
+      {
+        type: "subheading",
+        content: "Key Factors Affecting EMI"
+      },
+      {
+        type: "list",
+        items: [
+          "Loan Amount: ₹10 lakhs vs ₹1 crore makes a huge difference",
+          "Interest Rate: Current rates range from 8.4% to 9.5% in India (2023)",
+          "Tenure: Standard options are 5-30 years",
+          "Type: Fixed vs floating rate loans behave differently"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Try Our Home Loan Calculator"
+      },
+      {
+        type: "paragraph",
+        content: "Get instant EMI estimates with our easy-to-use calculator:"
+      },
+      {
+        type: "html",
+        content: `<iframe src="https://moneycal.in/calculators/home-loan-calculator" width="100%" height="500px" frameborder="0" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 20px 0;"></iframe>`
+      },
+      {
+        type: "paragraph",
+        content: "Pro Tip: Use the 'Advanced Options' to factor in prepayments and see how much interest you can save."
+      },
+      {
+        type: "heading",
+        content: "The Math Behind EMI Calculations"
+      },
+      {
+        type: "subheading",
+        content: "The EMI Formula Explained"
+      },
+      {
+        type: "paragraph",
+        content: "The standard formula banks use:"
+      },
+      {
+        type: "quote",
+        content: "EMI = [P × R × (1+R)^N] ÷ [(1+R)^N-1]",
+        author: "Where P=Principal, R=Monthly Interest Rate, N=Tenure in Months"
+      },
+      {
+        type: "subheading",
+        content: "Real Example Calculation"
+      },
+      {
+        type: "paragraph",
+        content: "For a ₹50 lakh loan at 8.5% interest for 20 years:"
+      },
+      {
+        type: "list",
+        items: [
+          "Monthly interest rate = 8.5%/12 = 0.708% (0.00708)",
+          "Total months = 20 × 12 = 240",
+          "EMI = [50,00,000 × 0.00708 × (1+0.00708)^240] ÷ [(1+0.00708)^240-1]",
+          "Final EMI ≈ ₹43,391"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg",
+        caption: "Understanding your EMI breakdown helps plan prepayments"
+      },
+      {
+        type: "heading",
+        content: "Power of Prepayments"
+      },
+      {
+        type: "subheading",
+        content: "How Prepayments Save You Money"
+      },
+      {
+        type: "list",
+        items: [
+          "Reduces principal amount immediately",
+          "Lowers total interest over loan tenure",
+          "Can shorten loan period by years",
+          "Saves average ₹2-3 lakh per ₹1 lakh prepaid (on 20-year loans)"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Smart Prepayment Strategies"
+      },
+      {
+        type: "list",
+        items: [
+          "Make prepayments early in loan tenure for maximum impact",
+          "Use annual bonuses/tax refunds for lump-sum prepayments",
+          "Increase EMI by 5% yearly if your income grows",
+          "Check for prepayment penalties (usually 2-5% before 3 years)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Case Study: The Patel Family"
+      },
+      {
+        type: "paragraph",
+        content: "The Patels took a ₹75 lakh loan at 9% for 25 years (EMI: ₹62,993). By prepaying ₹3 lakh every 2 years:"
+      },
+      {
+        type: "list",
+        items: [
+          "Loan tenure reduced to 18 years",
+          "Total interest saved: ₹28.7 lakh",
+          "Final payout: 3 years before their daughter's college admission"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Final Tips"
+      },
+      {
+        type: "list",
+        items: [
+          "Always negotiate interest rates - even 0.25% matters over 20 years",
+          "Consider refinancing if rates drop by 1%+",
+          "Maintain emergency fund before aggressive prepayments",
+          "Use calculators before major financial decisions"
+        ]
+      },
+      {
+        type: "paragraph",
+        content: "Remember: Every rupee prepaid saves you ₹2-3 in interest over long tenures. Plan wisely!"
+      }
 ];
 
 // Helper functions
