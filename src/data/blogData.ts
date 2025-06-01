@@ -567,181 +567,148 @@ export const blogPosts: BlogPost[] = [
     content: []
   },
    {
-    id: 6,
-    title: "How to Calculate Home Loan EMI with Prepayment Options in India",
-    slug: "home-loan-emi-prepayment-calculator",
-    date: "July 22, 2023",
-    author: "Arjun Mehta",
-    authorTitle: "Mortgage Advisor",
-    authorImage: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
-    authorBio: "Arjun specializes in home finance with 12 years of experience helping Indian families make smart borrowing decisions. He's helped over 500 clients save on interest payments.",
-    coverImage: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg",
-    excerpt: "Learn to calculate your home loan EMI accurately and discover how strategic prepayments can save you lakhs in interest. Includes a free interactive calculator tool.",
-    categories: ["Home Loans", "Financial Planning", "Calculators"],
-    content: [
-      {
-        type: "paragraph",
-        content: "Understanding your home loan EMI (Equated Monthly Installment) is crucial for financial planning in India's growing real estate market. With property prices rising, most homebuyers rely on loans spanning 15-30 years. Knowing exactly what you'll pay each month - and how prepayments can reduce your burden - helps you budget effectively and save significantly on interest."
-      },
-      {
-        type: "image",
-        url: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg",
-        caption: "Smart EMI planning can make home ownership more affordable"
-      },
-      {
-        type: "heading",
-        content: "Home Loan EMI Basics"
-      },
-      {
-        type: "subheading",
-        content: "What Makes Up Your EMI?"
-      },
-      {
-        type: "paragraph",
-        content: "Every EMI has two components:"
-      },
-      {
-        type: "list",
-        items: [
-          "Principal: The actual loan amount you borrowed",
-          "Interest: The bank's charge for lending you money"
-        ]
-      },
-      {
-        type: "paragraph",
-        content: "In the early years, up to 70-80% of your EMI goes toward interest. This gradually reverses as you pay down the loan."
-      },
-      {
-        type: "subheading",
-        content: "Key Factors Affecting EMI"
-      },
-      {
-        type: "list",
-        items: [
-          "Loan Amount: ₹10 lakhs vs ₹1 crore makes a huge difference",
-          "Interest Rate: Current rates range from 8.4% to 9.5% in India (2023)",
-          "Tenure: Standard options are 5-30 years",
-          "Type: Fixed vs floating rate loans behave differently"
-        ]
-      },
-      {
-        type: "heading",
-        content: "Try Our Home Loan Calculator"
-      },
-      {
-        type: "paragraph",
-        content: "Get instant EMI estimates with our easy-to-use calculator:"
-      },
-      {
-        type: "html",
-        content: `<iframe src="https://moneycal.in/calculators/home-loan-calculator" width="100%" height="500px" frameborder="0" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 20px 0;"></iframe>`
-      },
-      {
-        type: "paragraph",
-        content: "Pro Tip: Use the 'Advanced Options' to factor in prepayments and see how much interest you can save."
-      },
-      {
-        type: "heading",
-        content: "The Math Behind EMI Calculations"
-      },
-      {
-        type: "subheading",
-        content: "The EMI Formula Explained"
-      },
-      {
-        type: "paragraph",
-        content: "The standard formula banks use:"
-      },
-      {
-        type: "quote",
-        content: "EMI = [P × R × (1+R)^N] ÷ [(1+R)^N-1]",
-        author: "Where P=Principal, R=Monthly Interest Rate, N=Tenure in Months"
-      },
-      {
-        type: "subheading",
-        content: "Real Example Calculation"
-      },
-      {
-        type: "paragraph",
-        content: "For a ₹50 lakh loan at 8.5% interest for 20 years:"
-      },
-      {
-        type: "list",
-        items: [
-          "Monthly interest rate = 8.5%/12 = 0.708% (0.00708)",
-          "Total months = 20 × 12 = 240",
-          "EMI = [50,00,000 × 0.00708 × (1+0.00708)^240] ÷ [(1+0.00708)^240-1]",
-          "Final EMI ≈ ₹43,391"
-        ]
-      },
-      {
-        type: "image",
-        url: "https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg",
-        caption: "Understanding your EMI breakdown helps plan prepayments"
-      },
-      {
-        type: "heading",
-        content: "Power of Prepayments"
-      },
-      {
-        type: "subheading",
-        content: "How Prepayments Save You Money"
-      },
-      {
-        type: "list",
-        items: [
-          "Reduces principal amount immediately",
-          "Lowers total interest over loan tenure",
-          "Can shorten loan period by years",
-          "Saves average ₹2-3 lakh per ₹1 lakh prepaid (on 20-year loans)"
-        ]
-      },
-      {
-        type: "subheading",
-        content: "Smart Prepayment Strategies"
-      },
-      {
-        type: "list",
-        items: [
-          "Make prepayments early in loan tenure for maximum impact",
-          "Use annual bonuses/tax refunds for lump-sum prepayments",
-          "Increase EMI by 5% yearly if your income grows",
-          "Check for prepayment penalties (usually 2-5% before 3 years)"
-        ]
-      },
-      {
-        type: "heading",
-        content: "Case Study: The Patel Family"
-      },
-      {
-        type: "paragraph",
-        content: "The Patels took a ₹75 lakh loan at 9% for 25 years (EMI: ₹62,993). By prepaying ₹3 lakh every 2 years:"
-      },
-      {
-        type: "list",
-        items: [
-          "Loan tenure reduced to 18 years",
-          "Total interest saved: ₹28.7 lakh",
-          "Final payout: 3 years before their daughter's college admission"
-        ]
-      },
-      {
-        type: "heading",
-        content: "Final Tips"
-      },
-      {
-        type: "list",
-        items: [
-          "Always negotiate interest rates - even 0.25% matters over 20 years",
-          "Consider refinancing if rates drop by 1%+",
-          "Maintain emergency fund before aggressive prepayments",
-          "Use calculators before major financial decisions"
-        ]
-      },
-      {
-        type: "paragraph",
-        content: "Remember: Every rupee prepaid saves you ₹2-3 in interest over long tenures. Plan wisely!"
-      }
+  id: 6,
+  title: "How to Calculate Home Loan EMI with Prepayment Options in India",
+  slug: "home-loan-emi-prepayment-guide",
+  date: "August 10, 2023",
+  author: "Rahul Kapoor",
+  authorTitle: "Mortgage Expert",
+  authorImage: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+  authorBio: "With 10+ years in banking, Rahul specializes in helping Indians make informed home loan decisions and save lakhs through smart repayment strategies.",
+  coverImage: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg",
+  excerpt: "Learn to calculate your home loan EMI accurately and discover how strategic prepayments can save you ₹5-10 lakhs in interest. Includes interactive calculator.",
+  categories: [
+    "Government Schemes",
+    "Investment", 
+    "Tax Planning",
+    "Retirement Planning",
+    "Rural Finance",
+    "Senior Citizens",
+    "Financial Inclusion",
+    "Government - update"
+  ],
+  content: [
+    {
+      type: "paragraph",
+      content: "For most Indians, a home loan is the largest financial commitment they'll ever make. Understanding your Equated Monthly Installment (EMI) and how prepayments work can save you lakhs over your loan tenure. Let's break down everything you need to know."
+    },
+    {
+      type: "heading",
+      content: "What Exactly is a Home Loan EMI?"
+    },
+    {
+      type: "paragraph",
+      content: "Your EMI is the fixed monthly payment that combines both principal repayment and interest charges. What many don't realize is that in the initial years, nearly 80% of your EMI goes toward interest payments, with only 20% reducing your principal."
+    },
+    {
+      type: "image",
+      url: "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg",
+      caption: "Understanding your EMI structure helps plan prepayments effectively"
+    },
+    {
+      type: "heading",
+      content: "Try Our Home Loan EMI Calculator"
+    },
+    {
+      type: "paragraph",
+      content: "Get instant estimates with our interactive tool. Adjust the sliders to see how different loan amounts, tenures, and interest rates affect your payments:"
+    },
+    {
+      type: "html",
+      content: `<iframe src="https://moneycal.in/calculators/home-loan-calculator" width="100%" height="500px" frameborder="0" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin: 25px 0;"></iframe>`
+    },
+    {
+      type: "heading",
+      content: "Key Factors Affecting Your EMI"
+    },
+    {
+      type: "list",
+      items: [
+        "Loan Amount: ₹30 lakh vs ₹50 lakh makes a huge difference",
+        "Interest Rate: Just 0.5% difference can change EMI by ₹1,500-₹2,000",
+        "Tenure: 15-year vs 20-year loans have very different EMI profiles",
+        "Prepayments: Can reduce either your EMI or loan tenure"
+      ]
+    },
+    {
+      type: "quote",
+      content: "Making just one extra EMI payment each year can reduce a 20-year loan to 17 years, saving ₹3-5 lakhs in interest.",
+      author: "Banking Expert"
+    },
+    {
+      type: "heading",
+      content: "The EMI Formula Explained"
+    },
+    {
+      type: "paragraph",
+      content: "The mathematical formula used by banks is:"
+    },
+    {
+      type: "paragraph",
+      content: "EMI = [P × R × (1+R)^N] / [(1+R)^N-1]"
+    },
+    {
+      type: "paragraph",
+      content: "Where P=Principal, R=Monthly Interest Rate, N=Tenure in Months"
+    },
+    {
+      type: "heading",
+      content: "How Prepayments Change the Game"
+    },
+    {
+      type: "subheading",
+      content: "Real-Life Example"
+    },
+    {
+      type: "paragraph",
+      content: "For a ₹50 lakh loan at 8% interest for 20 years:"
+    },
+    {
+      type: "list",
+      items: [
+        "Normal EMI: ₹41,822/month",
+        "With ₹5 lakh prepayment after 5 years: Saves ₹7.2 lakh interest",
+        "Option to either reduce EMI to ₹36,514 or tenure by 3 years"
+      ]
+    },
+    {
+      type: "image",
+      url: "https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg",
+      caption: "Strategic prepayments can dramatically reduce your interest burden"
+    },
+    {
+      type: "heading",
+      content: "Smart Prepayment Strategies"
+    },
+    {
+      type: "list",
+      items: [
+        "Make prepayments early in loan tenure when interest component is highest",
+        "Use bonuses/tax refunds for lump-sum prepayments",
+        "Some banks allow converting prepayment amount into EMIs (ask your lender)",
+        "Check for prepayment charges (usually 2-5% before 3 years)"
+      ]
+    },
+    {
+      type: "heading",
+      content: "Final Tips"
+    },
+    {
+      type: "paragraph",
+      content: "1. Always negotiate interest rates with your bank"
+    },
+    {
+      type: "paragraph",
+      content: "2. Consider refinancing if rates drop by 0.75% or more"
+    },
+    {
+      type: "paragraph",
+      content: "3. Use our calculator above to compare different scenarios"
+    },
+    {
+      type: "paragraph",
+      content: "Remember, every ₹1 lakh prepaid in the first 5 years saves about ₹2.5 lakh in interest over the loan tenure."
+    }
 ];
 
 // Helper functions
