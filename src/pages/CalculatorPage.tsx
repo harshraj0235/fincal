@@ -67,7 +67,6 @@ import { UpiFailureTroubleshooter } from '../calculators/UpiFailureTroubleshoote
 import { AtmLocator } from '../calculators/AtmLocator';
 import { BankHolidayCalendar } from '../calculators/BankHolidayCalendar';
 import { InterestRatesComparison } from '../calculators/InterestRatesComparison';
-import { BankingKnowledge } from '../calculators/BankingKnowledge';
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -227,7 +226,11 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
       case 'interest-rates-comparison':
         return <InterestRatesComparison />;
       case 'banking-knowledge':
-        return <BankingKnowledge />;
+        return <div className="text-center py-8">
+          <p className="text-neutral-600">
+            This calculator is coming soon. Please check back later!
+          </p>
+        </div>;
       default:
         return (
           <div className="text-center py-8">
