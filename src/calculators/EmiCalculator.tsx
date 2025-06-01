@@ -13,6 +13,11 @@ export const EmiCalculator: React.FC = () => {
   const [totalPayment, setTotalPayment] = useState<number>(0);
   const [breakup, setBreakup] = useState<{principal: number; interest: number}[]>([]);
   
+  // Manual input states
+  const [manualLoanAmount, setManualLoanAmount] = useState<string>(loanAmount.toString());
+  const [manualInterestRate, setManualInterestRate] = useState<string>(interestRate.toString());
+  const [manualLoanTenure, setManualLoanTenure] = useState<string>(loanTenure.toString());
+  
   useEffect(() => {
     const tenureInMonths = tenureType === 'years' ? loanTenure * 12 : loanTenure;
     const calculatedEmi = calculateEMI(loanAmount, interestRate, tenureInMonths);
@@ -24,6 +29,42 @@ export const EmiCalculator: React.FC = () => {
     setTotalPayment(totalAmount);
     setBreakup(calculateLoanBreakup(loanAmount, interestRate, tenureInMonths));
   }, [loanAmount, interestRate, loanTenure, tenureType]);
+  
+  // Update slider values when manual inputs change
+  const handleManualLoanAmountChange = (value: string) => {
+    setManualLoanAmount(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 10000 && numValue <= 10000000) {
+      setLoanAmount(numValue);
+    }
+  };
+  
+  const handleManualInterestRateChange = (value: string) => {
+    setManualInterestRate(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 5 && numValue <= 20) {
+      setInterestRate(numValue);
+    }
+  };
+  
+  const handleManualLoanTenureChange = (value: string) => {
+    setManualLoanTenure(value);
+    const numValue = parseInt(value);
+    if (!isNaN(numValue)) {
+      const min = tenureType === 'years' ? 1 : 1;
+      const max = tenureType === 'years' ? 30 : 360;
+      if (numValue >= min && numValue <= max) {
+        setLoanTenure(numValue);
+      }
+    }
+  };
+  
+  // Update manual input values when sliders change
+  useEffect(() => {
+    setManualLoanAmount(loanAmount.toString());
+    setManualInterestRate(interestRate.toString());
+    setManualLoanTenure(loanTenure.toString());
+  }, [loanAmount, interestRate, loanTenure]);
   
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -39,9 +80,20 @@ export const EmiCalculator: React.FC = () => {
               <label htmlFor="loan-amount" className="text-sm font-medium text-neutral-700">
                 Loan Amount (₹)
               </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(loanAmount)}
-              </span>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {formatCurrency(loanAmount)}
+                </span>
+                <input 
+                  type="number"
+                  value={manualLoanAmount}
+                  onChange={(e) => handleManualLoanAmountChange(e.target.value)}
+                  className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="10000"
+                  max="10000000"
+                  step="10000"
+                />
+              </div>
             </div>
             <input 
               type="range" 
@@ -64,9 +116,20 @@ export const EmiCalculator: React.FC = () => {
               <label htmlFor="interest-rate" className="text-sm font-medium text-neutral-700">
                 Interest Rate (% p.a.)
               </label>
-              <span className="text-sm text-neutral-500">
-                {interestRate.toFixed(2)}%
-              </span>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {interestRate.toFixed(2)}%
+                </span>
+                <input 
+                  type="number"
+                  value={manualInterestRate}
+                  onChange={(e) => handleManualInterestRateChange(e.target.value)}
+                  className="w-20 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="5"
+                  max="20"
+                  step="0.05"
+                />
+              </div>
             </div>
             <input 
               type="range" 
@@ -89,22 +152,30 @@ export const EmiCalculator: React.FC = () => {
               <label htmlFor="loan-tenure" className="text-sm font-medium text-neutral-700">
                 Loan Tenure
               </label>
-              <div className="flex space-x-2">
-                <button 
-                  className={`px-2 py-1 text-xs rounded-md ${tenureType === 'years' ? 'bg-primary-100 text-primary-800' : 'bg-neutral-100 text-neutral-600'}`}
-                  onClick={() => setTenureType('years')}
-                >
-                  Years
-                </button>
-                <button 
-                  className={`px-2 py-1 text-xs rounded-md ${tenureType === 'months' ? 'bg-primary-100 text-primary-800' : 'bg-neutral-100 text-neutral-600'}`}
-                  onClick={() => setTenureType('months')}
-                >
-                  Months
-                </button>
-                <span className="text-sm text-neutral-500">
-                  {loanTenure} {tenureType}
-                </span>
+              <div className="flex items-center">
+                <div className="flex space-x-2 mr-2">
+                  <button 
+                    className={`px-2 py-1 text-xs rounded-md ${tenureType === 'years' ? 'bg-primary-100 text-primary-800' : 'bg-neutral-100 text-neutral-600'}`}
+                    onClick={() => setTenureType('years')}
+                  >
+                    Years
+                  </button>
+                  <button 
+                    className={`px-2 py-1 text-xs rounded-md ${tenureType === 'months' ? 'bg-primary-100 text-primary-800' : 'bg-neutral-100 text-neutral-600'}`}
+                    onClick={() => setTenureType('months')}
+                  >
+                    Months
+                  </button>
+                </div>
+                <input 
+                  type="number"
+                  value={manualLoanTenure}
+                  onChange={(e) => handleManualLoanTenureChange(e.target.value)}
+                  className="w-20 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min={tenureType === 'years' ? 1 : 1}
+                  max={tenureType === 'years' ? 30 : 360}
+                  step="1"
+                />
               </div>
             </div>
             <input 

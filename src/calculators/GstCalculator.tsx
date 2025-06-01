@@ -12,6 +12,10 @@ export const GstCalculator: React.FC = () => {
   const [cgst, setCgst] = useState<number>(0);
   const [sgst, setSgst] = useState<number>(0);
   
+  // Manual input states
+  const [manualAmount, setManualAmount] = useState<string>(amount.toString());
+  const [manualGstRate, setManualGstRate] = useState<string>(gstRate.toString());
+  
   useEffect(() => {
     const result = calculateGST(amount, gstRate, calculationType);
     
@@ -28,6 +32,29 @@ export const GstCalculator: React.FC = () => {
     setCgst(result.gstAmount / 2);
     setSgst(result.gstAmount / 2);
   }, [amount, gstRate, calculationType]);
+  
+  // Update slider values when manual inputs change
+  const handleManualAmountChange = (value: string) => {
+    setManualAmount(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 0) {
+      setAmount(numValue);
+    }
+  };
+  
+  const handleManualGstRateChange = (value: string) => {
+    setManualGstRate(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 0 && numValue <= 100) {
+      setGstRate(numValue);
+    }
+  };
+  
+  // Update manual input values when sliders change
+  useEffect(() => {
+    setManualAmount(amount.toString());
+    setManualGstRate(gstRate.toString());
+  }, [amount, gstRate]);
   
   return (
     <div className="space-y-8">
@@ -72,19 +99,21 @@ export const GstCalculator: React.FC = () => {
               <label htmlFor="amount" className="block text-sm font-medium text-neutral-700 mb-2">
                 {calculationType === 'exclusive' ? 'Base Amount (₹)' : 'Total Amount (₹)'}
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <span className="text-neutral-500 sm:text-sm">₹</span>
+              <div className="flex items-center">
+                <div className="relative flex-grow mr-2">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <span className="text-neutral-500 sm:text-sm">₹</span>
+                  </div>
+                  <input
+                    type="number"
+                    id="amount"
+                    className="input pl-8"
+                    placeholder="Enter amount"
+                    value={manualAmount}
+                    onChange={(e) => handleManualAmountChange(e.target.value)}
+                    min="0"
+                  />
                 </div>
-                <input
-                  type="number"
-                  id="amount"
-                  className="input pl-8"
-                  placeholder="Enter amount"
-                  value={amount}
-                  onChange={(e) => setAmount(Number(e.target.value))}
-                  min="0"
-                />
               </div>
             </div>
             
@@ -92,20 +121,22 @@ export const GstCalculator: React.FC = () => {
               <label htmlFor="gst-rate" className="block text-sm font-medium text-neutral-700 mb-2">
                 GST Rate (%)
               </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <input
-                  type="number"
-                  id="gst-rate"
-                  className="input pr-8"
-                  placeholder="GST rate"
-                  value={gstRate}
-                  onChange={(e) => setGstRate(Number(e.target.value))}
-                  min="0"
-                  max="100"
-                  step="0.01"
-                />
-                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                  <span className="text-neutral-500 sm:text-sm">%</span>
+              <div className="flex items-center">
+                <div className="relative flex-grow mr-2">
+                  <input
+                    type="number"
+                    id="gst-rate"
+                    className="input pr-8"
+                    placeholder="GST rate"
+                    value={manualGstRate}
+                    onChange={(e) => handleManualGstRateChange(e.target.value)}
+                    min="0"
+                    max="100"
+                    step="0.01"
+                  />
+                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                    <span className="text-neutral-500 sm:text-sm">%</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -115,34 +146,34 @@ export const GstCalculator: React.FC = () => {
             {calculationType === 'exclusive' ? (
               <div className="flex flex-col items-center space-y-2">
                 <div className="bg-neutral-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500">Base Amount</p>
+                  <p className="text-sm text-neutral-500 mb-1">Base Amount</p>
                   <p className="text-xl font-bold text-neutral-900">{formatCurrency(baseAmount)}</p>
                 </div>
                 <Plus className="h-5 w-5 text-neutral-400" />
                 <div className="bg-primary-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500">GST Amount ({gstRate}%)</p>
+                  <p className="text-sm text-neutral-500 mb-1">GST Amount ({gstRate}%)</p>
                   <p className="text-xl font-bold text-primary-800">{formatCurrency(gstAmount)}</p>
                 </div>
                 <ArrowDown className="h-5 w-5 text-neutral-400" />
                 <div className="bg-accent-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500">Total Amount</p>
+                  <p className="text-sm text-neutral-500 mb-1">Total Amount</p>
                   <p className="text-xl font-bold text-accent-800">{formatCurrency(totalAmount)}</p>
                 </div>
               </div>
             ) : (
               <div className="flex flex-col items-center space-y-2">
                 <div className="bg-accent-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500">Total Amount</p>
+                  <p className="text-sm text-neutral-500 mb-1">Total Amount</p>
                   <p className="text-xl font-bold text-accent-800">{formatCurrency(totalAmount)}</p>
                 </div>
                 <ArrowDown className="h-5 w-5 text-neutral-400" />
                 <div className="bg-neutral-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500">Base Amount</p>
+                  <p className="text-sm text-neutral-500 mb-1">Base Amount</p>
                   <p className="text-xl font-bold text-neutral-900">{formatCurrency(baseAmount)}</p>
                 </div>
                 <Plus className="h-5 w-5 text-neutral-400" />
                 <div className="bg-primary-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500">GST Amount ({gstRate}%)</p>
+                  <p className="text-sm text-neutral-500 mb-1">GST Amount ({gstRate}%)</p>
                   <p className="text-xl font-bold text-primary-800">{formatCurrency(gstAmount)}</p>
                 </div>
               </div>

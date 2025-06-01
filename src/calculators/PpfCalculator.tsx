@@ -13,12 +13,49 @@ export const PpfCalculator: React.FC = () => {
   const [maturityValue, setMaturityValue] = useState<number>(0);
   const [yearlyBreakup, setYearlyBreakup] = useState<Array<{year: number; investment: number; interest: number; balance: number}>>([]);
   
+  // Manual input states
+  const [manualYearlyInvestment, setManualYearlyInvestment] = useState<string>(yearlyInvestment.toString());
+  const [manualInterestRate, setManualInterestRate] = useState<string>(interestRate.toString());
+  const [manualTimePeriod, setManualTimePeriod] = useState<string>(timePeriod.toString());
+  
   useEffect(() => {
     const result = calculatePPF(yearlyInvestment, interestRate, timePeriod);
     setTotalInvestment(result.totalInvestment);
     setTotalInterest(result.totalInterest);
     setMaturityValue(result.maturityValue);
     setYearlyBreakup(result.yearlyBreakup);
+  }, [yearlyInvestment, interestRate, timePeriod]);
+  
+  // Update slider values when manual inputs change
+  const handleManualYearlyInvestmentChange = (value: string) => {
+    setManualYearlyInvestment(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 500 && numValue <= 150000) {
+      setYearlyInvestment(numValue);
+    }
+  };
+  
+  const handleManualInterestRateChange = (value: string) => {
+    setManualInterestRate(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 5 && numValue <= 10) {
+      setInterestRate(numValue);
+    }
+  };
+  
+  const handleManualTimePeriodChange = (value: string) => {
+    setManualTimePeriod(value);
+    const numValue = parseInt(value);
+    if (!isNaN(numValue) && numValue >= 15 && numValue <= 50) {
+      setTimePeriod(numValue);
+    }
+  };
+  
+  // Update manual input values when sliders change
+  useEffect(() => {
+    setManualYearlyInvestment(yearlyInvestment.toString());
+    setManualInterestRate(interestRate.toString());
+    setManualTimePeriod(timePeriod.toString());
   }, [yearlyInvestment, interestRate, timePeriod]);
   
   return (
@@ -35,9 +72,20 @@ export const PpfCalculator: React.FC = () => {
               <label htmlFor="yearly-investment" className="text-sm font-medium text-neutral-700">
                 Yearly Investment (₹)
               </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(yearlyInvestment)}
-              </span>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {formatCurrency(yearlyInvestment)}
+                </span>
+                <input 
+                  type="number"
+                  value={manualYearlyInvestment}
+                  onChange={(e) => handleManualYearlyInvestmentChange(e.target.value)}
+                  className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="500"
+                  max="150000"
+                  step="500"
+                />
+              </div>
             </div>
             <input 
               type="range" 
@@ -60,9 +108,20 @@ export const PpfCalculator: React.FC = () => {
               <label htmlFor="interest-rate" className="text-sm font-medium text-neutral-700">
                 Interest Rate (% p.a.)
               </label>
-              <span className="text-sm text-neutral-500">
-                {interestRate.toFixed(2)}%
-              </span>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {interestRate.toFixed(2)}%
+                </span>
+                <input 
+                  type="number"
+                  value={manualInterestRate}
+                  onChange={(e) => handleManualInterestRateChange(e.target.value)}
+                  className="w-20 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="5"
+                  max="10"
+                  step="0.1"
+                />
+              </div>
             </div>
             <input 
               type="range" 
@@ -85,9 +144,20 @@ export const PpfCalculator: React.FC = () => {
               <label htmlFor="time-period" className="text-sm font-medium text-neutral-700">
                 Time Period (Years)
               </label>
-              <span className="text-sm text-neutral-500">
-                {timePeriod} years
-              </span>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {timePeriod} years
+                </span>
+                <input 
+                  type="number"
+                  value={manualTimePeriod}
+                  onChange={(e) => handleManualTimePeriodChange(e.target.value)}
+                  className="w-20 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="15"
+                  max="50"
+                  step="5"
+                />
+              </div>
             </div>
             <input 
               type="range" 

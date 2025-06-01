@@ -13,6 +13,14 @@ export const IncomeTaxCalculator: React.FC = () => {
   const [hra, setHra] = useState<number>(0);
   const [housingLoanInterest, setHousingLoanInterest] = useState<number>(0);
   
+  // Manual input states
+  const [manualAnnualIncome, setManualAnnualIncome] = useState<string>(annualIncome.toString());
+  const [manualSection80C, setManualSection80C] = useState<string>(section80C.toString());
+  const [manualSection80D, setManualSection80D] = useState<string>(section80D.toString());
+  const [manualSection80G, setManualSection80G] = useState<string>(section80G.toString());
+  const [manualHra, setManualHra] = useState<string>(hra.toString());
+  const [manualHousingLoanInterest, setManualHousingLoanInterest] = useState<string>(housingLoanInterest.toString());
+  
   const [taxDetails, setTaxDetails] = useState<{
     taxableIncome: number;
     totalDeductions: number;
@@ -54,6 +62,65 @@ export const IncomeTaxCalculator: React.FC = () => {
     hra, 
     housingLoanInterest
   ]);
+  
+  // Update slider values when manual inputs change
+  const handleManualAnnualIncomeChange = (value: string) => {
+    setManualAnnualIncome(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 250000 && numValue <= 10000000) {
+      setAnnualIncome(numValue);
+    }
+  };
+  
+  const handleManualSection80CChange = (value: string) => {
+    setManualSection80C(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 0 && numValue <= 150000) {
+      setSection80C(numValue);
+    }
+  };
+  
+  const handleManualSection80DChange = (value: string) => {
+    setManualSection80D(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 0 && numValue <= 100000) {
+      setSection80D(numValue);
+    }
+  };
+  
+  const handleManualSection80GChange = (value: string) => {
+    setManualSection80G(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 0) {
+      setSection80G(numValue);
+    }
+  };
+  
+  const handleManualHraChange = (value: string) => {
+    setManualHra(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 0) {
+      setHra(numValue);
+    }
+  };
+  
+  const handleManualHousingLoanInterestChange = (value: string) => {
+    setManualHousingLoanInterest(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 0 && numValue <= 200000) {
+      setHousingLoanInterest(numValue);
+    }
+  };
+  
+  // Update manual input values when sliders change
+  useEffect(() => {
+    setManualAnnualIncome(annualIncome.toString());
+    setManualSection80C(section80C.toString());
+    setManualSection80D(section80D.toString());
+    setManualSection80G(section80G.toString());
+    setManualHra(hra.toString());
+    setManualHousingLoanInterest(housingLoanInterest.toString());
+  }, [annualIncome, section80C, section80D, section80G, hra, housingLoanInterest]);
   
   const compareTaxRegimes = () => {
     const oldRegimeDeductions = {
@@ -141,9 +208,20 @@ export const IncomeTaxCalculator: React.FC = () => {
                 <label htmlFor="annual-income" className="text-sm font-medium text-neutral-700">
                   Annual Income (₹)
                 </label>
-                <span className="text-sm text-neutral-500">
-                  {formatCurrency(annualIncome)}
-                </span>
+                <div className="flex items-center">
+                  <span className="text-sm text-neutral-500 mr-2">
+                    {formatCurrency(annualIncome)}
+                  </span>
+                  <input 
+                    type="number"
+                    value={manualAnnualIncome}
+                    onChange={(e) => handleManualAnnualIncomeChange(e.target.value)}
+                    className="w-28 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                    min="250000"
+                    max="10000000"
+                    step="10000"
+                  />
+                </div>
               </div>
               <input 
                 type="range" 
@@ -181,9 +259,20 @@ export const IncomeTaxCalculator: React.FC = () => {
                         </span>
                       </span>
                     </label>
-                    <span className="text-sm text-neutral-500">
-                      {formatCurrency(section80C)}
-                    </span>
+                    <div className="flex items-center">
+                      <span className="text-sm text-neutral-500 mr-2">
+                        {formatCurrency(section80C)}
+                      </span>
+                      <input 
+                        type="number"
+                        value={manualSection80C}
+                        onChange={(e) => handleManualSection80CChange(e.target.value)}
+                        className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                        min="0"
+                        max="150000"
+                        step="1000"
+                      />
+                    </div>
                   </div>
                   <input 
                     type="range" 
@@ -212,9 +301,20 @@ export const IncomeTaxCalculator: React.FC = () => {
                         </span>
                       </span>
                     </label>
-                    <span className="text-sm text-neutral-500">
-                      {formatCurrency(section80D)}
-                    </span>
+                    <div className="flex items-center">
+                      <span className="text-sm text-neutral-500 mr-2">
+                        {formatCurrency(section80D)}
+                      </span>
+                      <input 
+                        type="number"
+                        value={manualSection80D}
+                        onChange={(e) => handleManualSection80DChange(e.target.value)}
+                        className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                        min="0"
+                        max="100000"
+                        step="1000"
+                      />
+                    </div>
                   </div>
                   <input 
                     type="range" 
@@ -234,6 +334,47 @@ export const IncomeTaxCalculator: React.FC = () => {
                 
                 <div>
                   <div className="flex justify-between mb-2">
+                    <label htmlFor="section-80g" className="text-sm font-medium text-neutral-700 flex items-center group">
+                      Section 80G
+                      <span className="group relative ml-1">
+                        <HelpCircle className="h-3.5 w-3.5 text-neutral-400" />
+                        <span className="tooltip">
+                          Donations to charitable organizations
+                        </span>
+                      </span>
+                    </label>
+                    <div className="flex items-center">
+                      <span className="text-sm text-neutral-500 mr-2">
+                        {formatCurrency(section80G)}
+                      </span>
+                      <input 
+                        type="number"
+                        value={manualSection80G}
+                        onChange={(e) => handleManualSection80GChange(e.target.value)}
+                        className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                        min="0"
+                        step="1000"
+                      />
+                    </div>
+                  </div>
+                  <input 
+                    type="range" 
+                    id="section-80g"
+                    min="0" 
+                    max="100000" 
+                    step="5000" 
+                    value={section80G} 
+                    onChange={(e) => setSection80G(Number(e.target.value))}
+                    className="slider"
+                  />
+                  <div className="flex justify-between mt-1 text-xs text-neutral-500">
+                    <span>₹0</span>
+                    <span>₹1L</span>
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="flex justify-between mb-2">
                     <label htmlFor="hra" className="text-sm font-medium text-neutral-700 flex items-center group">
                       HRA Exemption
                       <span className="group relative ml-1">
@@ -243,9 +384,19 @@ export const IncomeTaxCalculator: React.FC = () => {
                         </span>
                       </span>
                     </label>
-                    <span className="text-sm text-neutral-500">
-                      {formatCurrency(hra)}
-                    </span>
+                    <div className="flex items-center">
+                      <span className="text-sm text-neutral-500 mr-2">
+                        {formatCurrency(hra)}
+                      </span>
+                      <input 
+                        type="number"
+                        value={manualHra}
+                        onChange={(e) => handleManualHraChange(e.target.value)}
+                        className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                        min="0"
+                        step="1000"
+                      />
+                    </div>
                   </div>
                   <input 
                     type="range" 
@@ -274,9 +425,20 @@ export const IncomeTaxCalculator: React.FC = () => {
                         </span>
                       </span>
                     </label>
-                    <span className="text-sm text-neutral-500">
-                      {formatCurrency(housingLoanInterest)}
-                    </span>
+                    <div className="flex items-center">
+                      <span className="text-sm text-neutral-500 mr-2">
+                        {formatCurrency(housingLoanInterest)}
+                      </span>
+                      <input 
+                        type="number"
+                        value={manualHousingLoanInterest}
+                        onChange={(e) => handleManualHousingLoanInterestChange(e.target.value)}
+                        className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                        min="0"
+                        max="200000"
+                        step="1000"
+                      />
+                    </div>
                   </div>
                   <input 
                     type="range" 

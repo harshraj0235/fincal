@@ -12,12 +12,49 @@ export const SipCalculator: React.FC = () => {
   const [totalValue, setTotalValue] = useState<number>(0);
   const [yearlyBreakup, setYearlyBreakup] = useState<Array<{year: number; investment: number; value: number}>>([]);
   
+  // Manual input states
+  const [manualMonthlyInvestment, setManualMonthlyInvestment] = useState<string>(monthlyInvestment.toString());
+  const [manualExpectedReturn, setManualExpectedReturn] = useState<string>(expectedReturn.toString());
+  const [manualTimePeriod, setManualTimePeriod] = useState<string>(timePeriod.toString());
+  
   useEffect(() => {
     const result = calculateSIPReturns(monthlyInvestment, expectedReturn, timePeriod);
     setInvestedAmount(result.investedAmount);
     setEstimatedReturns(result.estimatedReturns);
     setTotalValue(result.totalValue);
     setYearlyBreakup(result.yearlyBreakup);
+  }, [monthlyInvestment, expectedReturn, timePeriod]);
+  
+  // Update slider values when manual inputs change
+  const handleManualMonthlyInvestmentChange = (value: string) => {
+    setManualMonthlyInvestment(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 500 && numValue <= 100000) {
+      setMonthlyInvestment(numValue);
+    }
+  };
+  
+  const handleManualExpectedReturnChange = (value: string) => {
+    setManualExpectedReturn(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 1 && numValue <= 30) {
+      setExpectedReturn(numValue);
+    }
+  };
+  
+  const handleManualTimePeriodChange = (value: string) => {
+    setManualTimePeriod(value);
+    const numValue = parseInt(value);
+    if (!isNaN(numValue) && numValue >= 1 && numValue <= 30) {
+      setTimePeriod(numValue);
+    }
+  };
+  
+  // Update manual input values when sliders change
+  useEffect(() => {
+    setManualMonthlyInvestment(monthlyInvestment.toString());
+    setManualExpectedReturn(expectedReturn.toString());
+    setManualTimePeriod(timePeriod.toString());
   }, [monthlyInvestment, expectedReturn, timePeriod]);
   
   return (
@@ -34,9 +71,20 @@ export const SipCalculator: React.FC = () => {
               <label htmlFor="monthly-investment" className="text-sm font-medium text-neutral-700">
                 Monthly Investment (₹)
               </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(monthlyInvestment)}
-              </span>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {formatCurrency(monthlyInvestment)}
+                </span>
+                <input 
+                  type="number"
+                  value={manualMonthlyInvestment}
+                  onChange={(e) => handleManualMonthlyInvestmentChange(e.target.value)}
+                  className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="500"
+                  max="100000"
+                  step="500"
+                />
+              </div>
             </div>
             <input 
               type="range" 
@@ -59,9 +107,20 @@ export const SipCalculator: React.FC = () => {
               <label htmlFor="expected-return" className="text-sm font-medium text-neutral-700">
                 Expected Annual Return (%)
               </label>
-              <span className="text-sm text-neutral-500">
-                {expectedReturn.toFixed(2)}%
-              </span>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {expectedReturn.toFixed(2)}%
+                </span>
+                <input 
+                  type="number"
+                  value={manualExpectedReturn}
+                  onChange={(e) => handleManualExpectedReturnChange(e.target.value)}
+                  className="w-20 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="1"
+                  max="30"
+                  step="0.1"
+                />
+              </div>
             </div>
             <input 
               type="range" 
@@ -84,9 +143,20 @@ export const SipCalculator: React.FC = () => {
               <label htmlFor="time-period" className="text-sm font-medium text-neutral-700">
                 Time Period (Years)
               </label>
-              <span className="text-sm text-neutral-500">
-                {timePeriod} years
-              </span>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {timePeriod} years
+                </span>
+                <input 
+                  type="number"
+                  value={manualTimePeriod}
+                  onChange={(e) => handleManualTimePeriodChange(e.target.value)}
+                  className="w-20 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="1"
+                  max="30"
+                  step="1"
+                />
+              </div>
             </div>
             <input 
               type="range" 
