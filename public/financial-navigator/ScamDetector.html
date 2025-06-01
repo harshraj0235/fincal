@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn to identify common phishing attempts, fake SMS, and other financial frauds with a simulator and awareness hub.">
+    <meta name="keywords" content="scam detector, financial fraud, phishing, OTP fraud, vishing, bank scams, QR code scams, cybercrime, India">
+    <title>Scam Detector Simulator + Awareness Hub | Financial Navigator</title>
+
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for body and scrollbar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex; /* Use flexbox for centering content */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center horizontally */
+            padding: 1rem; /* Add some default padding for all devices */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8; /* Medium gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* Darker gray on hover */
+        }
+        /* Tailwind apply for common input field styles */
+        .input-field {
+            @apply mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Detect and Avoid Financial Scams",
+      "description": "Learn to identify common phishing attempts, fake SMS, and other financial frauds with a simulator and awareness hub.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "text": "Recognize common scam tactics like phishing, OTP fraud, vishing, and fake job offers."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Use the scam message analyzer to check suspicious messages for keywords."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Never click on suspicious links or share sensitive financial details like PIN, OTP, CVV."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Immediately report any suspected scam attempts to your bank and cyber crime authorities."
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="flex flex-col items-center min-h-screen p-4">
+    <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-4xl border border-gray-200">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Scam Detector Simulator + Awareness Hub</h1>
+            <a href="/financial-navigator.html" class="text-blue-600 hover:text-blue-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-1">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                Back to Navigator
+            </a>
+        </div>
+
+        <img src="https://placehold.co/600x200/FF6347/000?text=Scam+Alert" alt="Illustration of a mobile phone with a scam warning and phishing icon" class="w-full h-auto rounded-lg mb-6 shadow-md">
+        
+        <p class="text-base leading-relaxed mb-4">
+            Financial scams are rampant, and fraudsters constantly evolve their tactics. This section helps you identify common phishing attempts, fake SMS messages, and other financial frauds. Remember, banks or legitimate institutions will NEVER ask for your PIN, OTP, CVV, or full card number over the phone, SMS, or email.
+        </p>
+        
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-700 mb-3">Common Scam Tactics:</h3>
+        <ul class="list-disc list-inside text-base space-y-2 mb-6">
+            <li><strong>Phishing:</strong> Fake emails/SMS impersonating banks, asking for sensitive details.</li>
+            <li><strong>OTP Fraud:</strong> Tricking you into sharing OTPs, which are then used to authorize transactions.</li>
+            <li><strong>Vishing (Voice Phishing):</strong> Fraudulent calls pretending to be bank officials, asking for details.</li>
+            <li><strong>Job Scams:</strong> Offering fake jobs and asking for 'processing fees' or bank details.</li>
+            <li><strong>Lottery Scams:</strong> Notifying you of a lottery win and asking for a fee to release funds.</li>
+            <li><strong>QR Code Scams:</strong> Sending QR codes that, when scanned, initiate a 'send money' transaction instead of 'receive money'.</li>
+        </ul>
+
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-700 mb-3">Scam Message Analyzer (Simulator)</h3>
+        <p class="text-base mb-4">
+            Paste a suspicious message (SMS/Email content) below to get a simulated analysis. This tool uses simple keyword matching and is for educational purposes only. Always verify directly with your bank.
+        </p>
+        <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+            <div>
+                <label for="scam-text-input" class="block text-sm font-medium text-gray-700 mb-1">Enter suspicious message:</label>
+                <textarea id="scam-text-input" rows="6" placeholder="e.g., Your A/c will be blocked if KYC not updated. Click here: [fake-link.com]"
+                          class="input-field"></textarea>
+            </div>
+            <button id="analyze-scam-btn"
+                    class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-75">
+                Analyze Message
+            </button>
+            <div id="scam-analysis-output" class="mt-4 p-3 rounded-md text-sm font-medium hidden"></div>
+        </div>
+        
+        <div class="mt-8 bg-red-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-red-900 mb-4">What to do if you suspect a scam:</h3>
+            <ul class="list-disc list-inside text-red-800 space-y-2">
+                <li>Do NOT click on any links.</li>
+                <li>Do NOT share any personal or financial details.</li>
+                <li>Block the sender.</li>
+                <li>Report to your bank immediately.</li>
+                <li>Report to cyber crime authorities (e.g., National Cybercrime Reporting Portal: <a href="https://cybercrime.gov.in/" target="_blank" class="text-red-600 underline">cybercrime.gov.in</a>).</li>
+            </ul>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Real-World Scam Examples</h3>
+                <div class="space-y-4">
+                    <div class="p-3 bg-red-50 rounded-md">
+                        <p class="text-sm text-red-800 font-medium">
+                            "Dear customer, your SBI account will be blocked today. Please update your KYC by clicking on [fake-link.com]"
+                        </p>
+                        <p class="text-xs text-red-600 mt-1">
+                            ⚠️ Scam: Banks never send links for KYC updates via SMS
+                        </p>
+                    </div>
+                    <div class="p-3 bg-red-50 rounded-md">
+                        <p class="text-sm text-red-800 font-medium">
+                            "Congratulations! You have won ₹10,00,000 in Kaun Banega Crorepati lottery. To claim prize, pay ₹5,000 processing fee to [account details]"
+                        </p>
+                        <p class="text-xs text-red-600 mt-1">
+                            ⚠️ Scam: Legitimate lotteries never ask for fees to release winnings
+                        </p>
+                    </div>
+                    <div class="p-3 bg-red-50 rounded-md">
+                        <p class="text-sm text-red-800 font-medium">
+                            "I'm calling from HDFC Bank. Your card has suspicious transactions. Share your OTP to block your card immediately."
+                        </p>
+                        <p class="text-xs text-red-600 mt-1">
+                            ⚠️ Scam: Banks never ask for OTPs over phone calls
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Red Flags to Watch For</h3>
+                <ul class="list-disc list-inside text-sm space-y-2">
+                    <li>Urgent action required or account will be blocked</li>
+                    <li>Requests for PIN, OTP, CVV, or password</li>
+                    <li>Suspicious links or attachments</li>
+                    <li>Poor grammar or spelling errors</li>
+                    <li>Offers that seem too good to be true</li>
+                    <li>Pressure to act immediately</li>
+                    <li>Requests to download unknown apps</li>
+                    <li>Calls asking for remote access to your device</li>
+                    <li>Messages about winning contests you never entered</li>
+                    <li>Requests to pay via unusual methods</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Scam Detector Simulator Logic ---
+        const analyzeScamBtn = document.getElementById('analyze-scam-btn');
+        const scamTextInput = document.getElementById('scam-text-input');
+        const scamAnalysisOutput = document.getElementById('scam-analysis-output');
+
+        const scamKeywords = [
+            'otp', 'pin', 'cvv', 'account blocked', 'kyc update', 'win lottery', 'claim prize',
+            'urgent action', 'click link', 'verify account', 'debit card blocked', 'credit card suspended',
+            'unusual activity', 'share details', 'download app', 'remote access', 'bank manager',
+            'income tax refund', 'customs duty', 'delivery pending', 'aadhaar link', 'pan update',
+            'password', 'login details', 'bank account', 'card number', 'expiry date', 'security code',
+            'suspicious transaction', 'verify identity', 'government grant', 'job offer', 'processing fee',
+            'investment opportunity', 'high returns', 'guaranteed profit', 'customer service'
+        ];
+
+        analyzeScamBtn.addEventListener('click', () => {
+            const message = scamTextInput.value.toLowerCase();
+            let isScam = false;
+            let detectedKeywords = [];
+
+            scamKeywords.forEach(keyword => {
+                if (message.includes(keyword)) {
+                    isScam = true;
+                    detectedKeywords.push(keyword);
+                }
+            });
+
+            scamAnalysisOutput.classList.remove('hidden');
+            if (isScam) {
+                scamAnalysisOutput.classList.add('bg-red-100', 'text-red-700');
+                scamAnalysisOutput.classList.remove('bg-green-100', 'text-green-700');
+                scamAnalysisOutput.innerHTML = `
+                    <p class="font-bold mb-2">🚨 Warning: This message appears suspicious!</p>
+                    <p>Detected keywords: <span class="font-semibold">${detectedKeywords.join(', ')}</span></p>
+                    <p class="mt-2">Always be cautious with messages asking for personal details, financial information, or urgent action. Do NOT click on suspicious links or share OTPs.</p>
+                `;
+            } else if (message.length > 10) { // Simple check to avoid empty analysis
+                scamAnalysisOutput.classList.add('bg-green-100', 'text-green-700');
+                scamAnalysisOutput.classList.remove('bg-red-100', 'text-red-700');
+                scamAnalysisOutput.innerHTML = `
+                    <p class="font-bold mb-2">✅ This message does not contain common scam keywords.</p>
+                    <p>However, always exercise caution and verify with your bank directly if unsure.</p>
+                `;
+            } else {
+                scamAnalysisOutput.classList.add('bg-gray-100', 'text-gray-700');
+                scamAnalysisOutput.classList.remove('bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+                scamAnalysisOutput.textContent = "Please enter a message to analyze.";
+            }
+        });
+    </script>
+</body>
+</html>

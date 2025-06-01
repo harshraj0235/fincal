@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A guide for beginners to understand Fixed Deposits (FD), Recurring Deposits (RD), and Systematic Investment Plans (SIP), along with calculators to estimate returns.">
+    <meta name="keywords" content="investment advisor, beginner investment, FD calculator, SIP calculator, fixed deposit, recurring deposit, systematic investment plan, India">
+    <title>Beginner Investment Advisor + Calculators | Financial Navigator</title>
+
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for body and scrollbar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex; /* Use flexbox for centering content */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center horizontally */
+            padding: 1rem; /* Add some default padding for all devices */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8; /* Medium gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* Darker gray on hover */
+        }
+        /* Tailwind apply for common input field styles */
+        .input-field {
+            @apply mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+        }
+        /* Tailwind apply for common calculator button styles */
+        .calc-button {
+            @apply w-full text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-75;
+        }
+        /* Tailwind apply for common calculator output styles */
+        .calc-output {
+            @apply p-3 bg-gray-100 rounded-md text-gray-700 text-sm;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Beginner Investment Advisor and Calculators (FD, RD, SIP)",
+      "description": "A guide for beginners to understand Fixed Deposits (FD), Recurring Deposits (RD), and Systematic Investment Plans (SIP), along with calculators to estimate returns.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "text": "Learn about Fixed Deposits (FD) as a safe investment option."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Use the FD calculator to estimate maturity amount based on principal, rate, and tenure."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Understand Recurring Deposits (RD) for disciplined monthly savings."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Explore Systematic Investment Plans (SIP) for investing in mutual funds regularly."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Use the SIP calculator to project the estimated corpus based on monthly investment, expected return, and tenure."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Always research or consult a financial advisor before making investment decisions."
+        }
+      ],
+      "tool": [
+        {
+          "@type": "Calculator",
+          "name": "Fixed Deposit (FD) Calculator",
+          "description": "Calculates the maturity amount and total interest for a Fixed Deposit.",
+          "url": "https://moneycal.in/financial-navigator/InvestmentAdvisor.html"
+        },
+        {
+          "@type": "Calculator",
+          "name": "SIP (Systematic Investment Plan) Calculator",
+          "description": "Estimates the future corpus, total invested, and estimated returns for a Systematic Investment Plan.",
+          "url": "https://moneycal.in/financial-navigator/InvestmentAdvisor.html"
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="flex flex-col items-center min-h-screen p-4">
+    <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-4xl border border-gray-200">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Beginner Investment Advisor + Calculators</h1>
+            <a href="/financial-navigator.html" class="text-blue-600 hover:text-blue-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-1">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                Back to Navigator
+            </a>
+        </div>
+
+        <img src="https://placehold.co/600x200/ADD8E6/000?text=Investment+Growth" alt="Illustration of growing money plant and investment graphs" class="w-full h-auto rounded-lg mb-6 shadow-md">
+        
+        <p class="text-base leading-relaxed mb-4">
+            Starting your investment journey can seem daunting, but it's crucial for building wealth and achieving financial goals. This section introduces some popular and relatively safe investment options for beginners in India: Fixed Deposits (FD), Recurring Deposits (RD), and Systematic Investment Plans (SIP).
+        </p>
+        
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-700 mb-3">Understanding Basic Investments:</h3>
+        <ul class="list-disc list-inside text-base space-y-2 mb-6">
+            <li><strong>Fixed Deposit (FD):</strong> You invest a lump sum for a fixed period at a fixed interest rate. Safe, predictable returns.</li>
+            <li><strong>Recurring Deposit (RD):</strong> You deposit a fixed amount every month for a fixed period, earning interest. Good for disciplined savings.</li>
+            <li><strong>Systematic Investment Plan (SIP):</strong> A method of investing a fixed amount regularly (e.g., monthly) into mutual funds. Benefits from rupee cost averaging and compounding.</li>
+        </ul>
+
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-700 mb-3">Investment Calculators:</h3>
+        <div class="bg-white p-6 rounded-lg shadow-md space-y-6">
+            <div>
+                <h4 class="text-lg sm:text-xl font-semibold text-gray-700 mb-3">Fixed Deposit (FD) Calculator</h4>
+                <div class="space-y-3">
+                    <div>
+                        <label for="fd-principal" class="block text-sm font-medium text-gray-700 mb-1">Principal Amount (₹)</label>
+                        <input type="number" id="fd-principal" placeholder="e.g., 100000" class="input-field">
+                    </div>
+                    <div>
+                        <label for="fd-rate" class="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
+                        <input type="number" id="fd-rate" placeholder="e.g., 6.5" step="0.1" class="input-field">
+                    </div>
+                    <div>
+                        <label for="fd-tenure" class="block text-sm font-medium text-gray-700 mb-1">Tenure (Years)</label>
+                        <input type="number" id="fd-tenure" placeholder="e.g., 5" class="input-field">
+                    </div>
+                    <button id="calculate-fd-btn" class="calc-button bg-blue-500 hover:bg-blue-600">Calculate FD Maturity</button>
+                    <p id="fd-output" class="calc-output mt-2"></p>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg sm:text-xl font-semibold text-gray-700 mb-3">SIP (Systematic Investment Plan) Calculator</h4>
+                <div class="space-y-3">
+                    <div>
+                        <label for="sip-monthly" class="block text-sm font-medium text-gray-700 mb-1">Monthly Investment (₹)</label>
+                        <input type="number" id="sip-monthly" placeholder="e.g., 5000" class="input-field">
+                    </div>
+                    <div>
+                        <label for="sip-rate" class="block text-sm font-medium text-gray-700 mb-1">Expected Annual Return (%)</label>
+                        <input type="number" id="sip-rate" placeholder="e.g., 12" step="0.1" class="input-field">
+                    </div>
+                    <div>
+                        <label for="sip-tenure" class="block text-sm font-medium text-gray-700 mb-1">Tenure (Years)</label>
+                        <input type="number" id="sip-tenure" placeholder="e.g., 10" class="input-field">
+                    </div>
+                    <button id="calculate-sip-btn" class="calc-button bg-purple-500 hover:bg-purple-600">Calculate SIP Corpus</button>
+                    <p id="sip-output" class="calc-output mt-2"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-blue-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-blue-900 mb-3">Investment Risk Spectrum</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                        <span class="text-blue-800 font-medium">Low Risk:</span>
+                        <span class="text-blue-800 ml-2">FD, RD, Government Bonds</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                        <span class="text-blue-800 font-medium">Medium Risk:</span>
+                        <span class="text-blue-800 ml-2">Debt Mutual Funds, Corporate Bonds</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                        <span class="text-blue-800 font-medium">High Risk:</span>
+                        <span class="text-blue-800 ml-2">Equity Mutual Funds, Stocks, Crypto</span>
+                    </div>
+                </div>
+                <p class="text-blue-800 mt-4 text-sm">Beginners should start with low to medium risk investments and gradually diversify as they gain knowledge and experience.</p>
+            </div>
+            
+            <div class="bg-green-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-900 mb-3">Investment Best Practices</h3>
+                <ul class="list-disc list-inside text-green-800 space-y-2">
+                    <li>Start early to benefit from compounding</li>
+                    <li>Invest regularly, even if small amounts</li>
+                    <li>Diversify across different investment types</li>
+                    <li>Align investments with financial goals</li>
+                    <li>Review and rebalance periodically</li>
+                    <li>Consider tax implications of investments</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="text-base leading-relaxed mt-6">
+            Remember, investing involves risks. Always do your research or consult a financial advisor before making investment decisions.
+        </p>
+    </div>
+
+    <script>
+        // --- 9. Beginner Investment Advisor + Calculators Logic ---
+        const calculateFdBtn = document.getElementById('calculate-fd-btn');
+        const fdPrincipalInput = document.getElementById('fd-principal');
+        const fdRateInput = document.getElementById('fd-rate');
+        const fdTenureInput = document.getElementById('fd-tenure');
+        const fdOutput = document.getElementById('fd-output');
+
+        // Helper function to format currency
+        const formatCurrency = (amount) => `₹${parseFloat(amount).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+        calculateFdBtn.addEventListener('click', () => {
+            const principal = parseFloat(fdPrincipalInput.value);
+            const annualRate = parseFloat(fdRateInput.value);
+            const tenureYears = parseFloat(fdTenureInput.value);
+
+            if (isNaN(principal) || isNaN(annualRate) || isNaN(tenureYears) || principal <= 0 || annualRate < 0 || tenureYears <= 0) {
+                fdOutput.textContent = "Please enter valid positive numbers.";
+                fdOutput.classList.add('text-red-600');
+                return;
+            }
+
+            const maturityAmount = principal * Math.pow((1 + (annualRate / 100)), tenureYears);
+            const totalInterest = maturityAmount - principal;
+
+            fdOutput.classList.remove('text-red-600');
+            fdOutput.textContent = `Maturity Amount: ${formatCurrency(maturityAmount)}. Total Interest: ${formatCurrency(totalInterest)}.`;
+        });
+
+        const calculateSipBtn = document.getElementById('calculate-sip-btn');
+        const sipMonthlyInput = document.getElementById('sip-monthly');
+        const sipRateInput = document.getElementById('sip-rate');
+        const sipTenureInput = document.getElementById('sip-tenure');
+        const sipOutput = document.getElementById('sip-output');
+
+        calculateSipBtn.addEventListener('click', () => {
+            const monthlyInvestment = parseFloat(sipMonthlyInput.value);
+            const annualReturn = parseFloat(sipRateInput.value);
+            const tenureYears = parseFloat(sipTenureInput.value);
+
+            if (isNaN(monthlyInvestment) || isNaN(annualReturn) || isNaN(tenureYears) || monthlyInvestment <= 0 || annualReturn < 0 || tenureYears <= 0) {
+                sipOutput.textContent = "Please enter valid positive numbers.";
+                sipOutput.classList.add('text-red-600');
+                return;
+            }
+
+            const monthlyRate = annualReturn / (12 * 100);
+            const tenureMonths = tenureYears * 12;
+
+            let futureValue = 0;
+            if (monthlyRate === 0) {
+                futureValue = monthlyInvestment * tenureMonths;
+            } else {
+                futureValue = monthlyInvestment * (Math.pow(1 + monthlyRate, tenureMonths) - 1) / monthlyRate * (1 + monthlyRate);
+            }
+
+            const totalInvested = monthlyInvestment * tenureMonths;
+            const estimatedReturn = futureValue - totalInvested;
+
+            sipOutput.classList.remove('text-red-600');
+            sipOutput.textContent = `Estimated Corpus: ${formatCurrency(futureValue)}. Total Invested: ${formatCurrency(totalInvested)}. Estimated Return: ${formatCurrency(estimatedReturn)}.`;
+        });
+    </script>
+</body>
+</html>

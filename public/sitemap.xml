@@ -56,6 +56,56 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Financial Navigator Pages -->
+  <url>
+    <loc>https://moneycal.in/financial-navigator/LoanComparison.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/financial-navigator/EMICalculator.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/financial-navigator/CIBILEducator.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/financial-navigator/ScamDetector.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/financial-navigator/LoanDocs.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/financial-navigator/BillReminder.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/financial-navigator/InvestmentAdvisor.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/financial-navigator/FeeDecoder.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Blog Posts -->
   <url>
     <loc>https://moneycal.in/blog/sukanya-samriddhi-yojana-guide</loc>

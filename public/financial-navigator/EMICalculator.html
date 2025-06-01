@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your Equated Monthly Installments (EMI) for loans, visualize principal vs. interest, and understand total payable amounts.">
+    <meta name="keywords" content="EMI calculator, loan EMI, monthly installment, loan calculator, principal, interest, loan tenure, India">
+    <title>EMI Calculator with Visual Chart | Financial Navigator</title>
+
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for body and scrollbar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex; /* Use flexbox for centering content */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center horizontally */
+            padding: 1rem; /* Add some default padding for all devices */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8; /* Medium gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* Darker gray on hover */
+        }
+
+        /* Basic styling for the EMI chart bars */
+        .emi-chart-bar {
+            height: 20px; /* Fixed height for bars */
+            border-radius: 4px;
+            margin-bottom: 4px;
+        }
+        /* Tailwind apply for common input field styles */
+        .input-field {
+            @apply mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+        }
+        /* Tailwind apply for common calculator button styles */
+        .calc-button {
+            @apply w-full text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-opacity-75;
+        }
+        /* Tailwind apply for common calculator output styles */
+        .calc-output {
+            @apply p-3 bg-gray-100 rounded-md text-gray-700 text-sm;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Calculator",
+      "name": "EMI Calculator with Visual Chart",
+      "description": "Calculate your Equated Monthly Installments (EMI) for loans, visualize principal vs. interest, and understand total payable amounts.",
+      "url": "https://moneycal.in/financial-navigator/EMICalculator.html",
+      "toolCategory": "FinancialCalculator"
+    }
+    </script>
+</head>
+<body class="flex flex-col items-center min-h-screen p-4">
+    <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-4xl border border-gray-200">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">EMI Calculator with Visual Chart</h1>
+            <a href="/financial-navigator.html" class="text-blue-600 hover:text-blue-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-1">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                Back to Navigator
+            </a>
+        </div>
+
+        <img src="https://placehold.co/600x200/FFB6C1/000?text=EMI+Calculator" alt="Illustration of a calculator and financial charts for EMI" class="w-full h-auto rounded-lg mb-6 shadow-md">
+        
+        <p class="text-base leading-relaxed mb-4">
+            An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. EMIs are used to pay off both interest and principal each month, so that over a specified number of years, the loan is fully paid off. Use this calculator to quickly determine your EMI.
+        </p>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+            <div>
+                <label for="emi-principal" class="block text-sm font-medium text-gray-700 mb-1">Loan Amount (₹)</label>
+                <input type="number" id="emi-principal" placeholder="e.g., 1000000" class="input-field" required>
+            </div>
+            <div>
+                <label for="emi-rate" class="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
+                <input type="number" id="emi-rate" placeholder="e.g., 8.5" step="0.1" class="input-field" required>
+            </div>
+            <div>
+                <label for="emi-tenure" class="block text-sm font-medium text-gray-700 mb-1">Loan Tenure (Years)</label>
+                <input type="number" id="emi-tenure" placeholder="e.g., 10" class="input-field" required>
+            </div>
+            <button id="calculate-emi-btn"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+                Calculate EMI
+            </button>
+            <div id="emi-output" class="mt-4 p-4 bg-gray-100 rounded-md hidden">
+                <p class="text-lg font-semibold text-gray-800 mb-2">Calculated EMI: <span id="emi-value" class="text-blue-700"></span></p>
+                <p class="text-sm text-gray-600">Total Interest Payable: <span id="total-interest"></span></p>
+                <p class="text-sm text-gray-600">Total Amount Payable: <span id="total-payable"></span></p>
+                <div id="emi-chart" class="mt-4">
+                    <p class="text-md font-semibold text-gray-700 mb-2">Principal vs. Interest:</p>
+                    <div class="flex items-center mb-2">
+                        <div class="emi-chart-bar bg-green-500" id="principal-bar" style="width: 0%;"></div>
+                        <span class="ml-2 text-sm text-gray-700" id="principal-percent">0% Principal</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="emi-chart-bar bg-red-500" id="interest-bar" style="width: 0%;"></div>
+                        <span class="ml-2 text-sm text-gray-700" id="interest-percent">0% Interest</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-blue-900 mb-4">Understanding EMI Calculation</h3>
+            <p class="text-blue-800 mb-4">EMI is calculated using the formula:</p>
+            <div class="bg-white p-3 rounded-lg text-center mb-4">
+                <p class="font-mono text-blue-900">EMI = [P × r × (1 + r)^n] ÷ [(1 + r)^n - 1]</p>
+            </div>
+            <p class="text-blue-800 mb-2">Where:</p>
+            <ul class="list-disc list-inside text-blue-800 space-y-1">
+                <li>P = Principal loan amount</li>
+                <li>r = Monthly interest rate (Annual rate ÷ 12 ÷ 100)</li>
+                <li>n = Loan tenure in months</li>
+            </ul>
+            <p class="text-blue-800 mt-4">For more detailed calculations, try our <a href="/calculators/emi-calculator" class="text-blue-600 underline">advanced EMI calculator</a> with amortization schedule.</p>
+        </div>
+    </div>
+
+    <script>
+        // --- EMI Calculator Logic ---
+        const calculateEmiBtn = document.getElementById('calculate-emi-btn');
+        const emiPrincipalInput = document.getElementById('emi-principal');
+        const emiRateInput = document.getElementById('emi-rate');
+        const emiTenureInput = document.getElementById('emi-tenure');
+        const emiOutputDiv = document.getElementById('emi-output');
+        const emiValueSpan = document.getElementById('emi-value');
+        const totalInterestSpan = document.getElementById('total-interest');
+        const totalPayableSpan = document.getElementById('total-payable');
+        const principalBar = document.getElementById('principal-bar');
+        const interestBar = document.getElementById('interest-bar');
+        const principalPercent = document.getElementById('principal-percent');
+        const interestPercent = document.getElementById('interest-percent');
+
+        // Helper function to format currency
+        const formatCurrency = (amount) => `₹${parseFloat(amount).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+        calculateEmiBtn.addEventListener('click', () => {
+            const principal = parseFloat(emiPrincipalInput.value);
+            const annualRate = parseFloat(emiRateInput.value);
+            const tenureYears = parseFloat(emiTenureInput.value);
+
+            if (isNaN(principal) || isNaN(annualRate) || isNaN(tenureYears) || principal <= 0 || annualRate < 0 || tenureYears <= 0) {
+                alert("Please enter valid positive numbers for all fields.");
+                emiOutputDiv.classList.add('hidden');
+                return;
+            }
+
+            const monthlyRate = annualRate / (12 * 100);
+            const tenureMonths = tenureYears * 12;
+
+            let emi = 0;
+            if (monthlyRate === 0) {
+                emi = principal / tenureMonths;
+            } else {
+                emi = principal * monthlyRate * Math.pow(1 + monthlyRate, tenureMonths) / (Math.pow(1 + monthlyRate, tenureMonths) - 1);
+            }
+
+            const totalPayable = emi * tenureMonths;
+            const totalInterest = totalPayable - principal;
+
+            emiValueSpan.textContent = formatCurrency(emi);
+            totalInterestSpan.textContent = formatCurrency(totalInterest);
+            totalPayableSpan.textContent = formatCurrency(totalPayable);
+            emiOutputDiv.classList.remove('hidden');
+
+            // Update chart
+            const total = principal + totalInterest;
+            const principalRatio = (principal / total) * 100;
+            const interestRatio = (totalInterest / total) * 100;
+
+            principalBar.style.width = `${principalRatio}%`;
+            interestBar.style.width = `${interestRatio}%`;
+            principalPercent.textContent = `${principalRatio.toFixed(1)}% Principal`;
+            interestPercent.textContent = `${interestRatio.toFixed(1)}% Interest`;
+        });
+    </script>
+</body>
+</html>

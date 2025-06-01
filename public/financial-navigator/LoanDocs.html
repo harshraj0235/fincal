@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A checklist tool to help individuals understand and prepare the necessary documents for personal, home, car, and education loans.">
+    <meta name="keywords" content="loan documents, loan application, document checklist, personal loan, home loan, car loan, education loan, India">
+    <title>Loan Document Checklist | Financial Navigator</title>
+
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for body and scrollbar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex; /* Use flexbox for centering content */
+            flex-direction: column; /* Stack content vertically */
+            align-items: center; /* Center horizontally */
+            padding: 1rem; /* Add some default padding for all devices */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8; /* Medium gray thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* Darker gray on hover */
+        }
+        /* Tailwind apply for common input field styles */
+        .input-field {
+            @apply mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Prepare Documents for Different Loan Types",
+      "description": "A checklist tool to help individuals understand and prepare the necessary documents for personal, home, car, and education loans.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "text": "Select the desired loan type (Personal, Home, Car, or Education Loan)."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Review the automatically generated list of required documents for Identity Proof, Address Proof, and Income Proof."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Gather all listed documents, ensuring they are valid and up-to-date."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Confirm the exact requirements with your chosen lender before submission."
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="flex flex-col items-center min-h-screen p-4">
+    <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-4xl border border-gray-200">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">Loan Document Checklist</h1>
+            <a href="/financial-navigator.html" class="text-blue-600 hover:text-blue-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-1">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+                Back to Navigator
+            </a>
+        </div>
+
+        <img src="https://placehold.co/600x200/F0E68C/000?text=Loan+Documents" alt="Illustration of a stack of loan documents and a pen" class="w-full h-auto rounded-lg mb-6 shadow-md">
+        
+        <p class="text-base leading-relaxed mb-4">
+            Applying for a loan requires a specific set of documents for identity, address, income, and financial stability verification. The exact list can vary based on the loan type and the lender. This tool provides a general checklist for common loan types to help you prepare.
+        </p>
+        
+        <h3 class="text-xl sm:text-2xl font-semibold text-gray-700 mb-3">Select Loan Type to See Documents:</h3>
+        <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+            <div>
+                <label for="loan-type-select" class="block text-sm font-medium text-gray-700 mb-1">Choose Loan Type:</label>
+                <select id="loan-type-select" class="input-field">
+                    <option value="">-- Select --</option>
+                    <option value="personal">Personal Loan</option>
+                    <option value="home">Home Loan</option>
+                    <option value="car">Car Loan</option>
+                    <option value="education">Education Loan</option>
+                </select>
+            </div>
+            <div id="loan-documents-output" class="mt-4 p-4 bg-gray-100 rounded-md hidden">
+                <h4 class="text-lg sm:text-xl font-semibold text-gray-800 mb-3">Required Documents:</h4>
+                <ul id="document-list" class="list-disc list-inside text-base space-y-2">
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-yellow-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-yellow-900 mb-3">Document Preparation Tips</h3>
+                <ul class="list-disc list-inside text-yellow-800 space-y-2">
+                    <li>Keep all documents updated and readily accessible</li>
+                    <li>Ensure all photocopies are clear and legible</li>
+                    <li>Self-attest all photocopies with your signature</li>
+                    <li>Carry original documents for verification</li>
+                    <li>Organize documents in a folder for easy reference</li>
+                </ul>
+            </div>
+            
+            <div class="bg-blue-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold text-blue-900 mb-3">Common Reasons for Loan Rejection</h3>
+                <ul class="list-disc list-inside text-blue-800 space-y-2">
+                    <li>Incomplete or incorrect documentation</li>
+                    <li>Poor credit score (below 700)</li>
+                    <li>High existing debt burden</li>
+                    <li>Unstable employment history</li>
+                    <li>Insufficient income for requested loan amount</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="text-base leading-relaxed mt-6">
+            Always confirm the exact document requirements with your chosen lender, as lists can vary. Having all documents ready can significantly speed up your loan application process.
+        </p>
+    </div>
+
+    <script>
+        // --- Loan Document Generator Tool Logic ---
+        const loanTypeSelect = document.getElementById('loan-type-select');
+        const loanDocumentsOutput = document.getElementById('loan-documents-output');
+        const documentList = document.getElementById('document-list');
+
+        // Document lists for different loan types
+        const loanDocuments = {
+            personal: [
+                'Identity Proof (Aadhaar, PAN, Passport, Driving License)',
+                'Address Proof (Aadhaar, Passport, Utility Bill)',
+                'Income Proof (Salary slips for last 3 months, Bank statements for last 6 months)',
+                'Employment Proof (Employee ID card, Appointment letter)',
+                'Bank statements (last 6 months)'
+            ],
+            home: [
+                'Identity Proof (Aadhaar, PAN, Passport, Driving License)',
+                'Address Proof (Aadhaar, Passport, Utility Bill)',
+                'Income Proof (Salary slips/ITR, Bank statements)',
+                'Property Documents (Sale deed, Agreement to sell, Occupancy Certificate)',
+                'NOC from builder/society (if applicable)',
+                'Bank statements (last 6 months)'
+            ],
+            car: [
+                'Identity Proof (Aadhaar, PAN, Passport, Driving License)',
+                'Address Proof (Aadhaar, Passport, Utility Bill)',
+                'Income Proof (Salary slips/ITR, Bank statements)',
+                'Proforma Invoice from Car Dealer',
+                'Bank statements (last 6 months)'
+            ],
+            education: [
+                'Identity Proof (Aadhaar, PAN, Passport)',
+                'Address Proof (Aadhaar, Passport, Utility Bill)',
+                'Academic Records (Mark sheets, Admission letter)',
+                'Income Proof of Co-applicant/Guarantor (if applicable)',
+                'Loan application form',
+                'Bank statements (last 6 months)'
+            ]
+        };
+
+        loanTypeSelect.addEventListener('change', () => {
+            const selectedType = loanTypeSelect.value;
+            documentList.innerHTML = ''; // Clear previous list
+
+            if (selectedType && loanDocuments[selectedType]) {
+                const docs = loanDocuments[selectedType];
+                docs.forEach(doc => {
+                    const li = document.createElement('li');
+                    li.textContent = doc;
+                    documentList.appendChild(li);
+                });
+                loanDocumentsOutput.classList.remove('hidden');
+            } else {
+                loanDocumentsOutput.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
