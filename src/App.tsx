@@ -14,6 +14,7 @@ import { AboutUs } from './pages/AboutUs';
 import { ContactUs } from './pages/ContactUs';
 import { Sitemap } from './pages/Sitemap';
 import { SitemapXml } from './pages/SitemapXml';
+import { BankingKnowledge } from './pages/BankingKnowledge';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/blog/write" element={<WriteBlog />} />
+        <Route path="/blog/category/banking" element={<BankingKnowledge />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/about-us" element={<AboutUs />} />

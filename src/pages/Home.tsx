@@ -260,7 +260,7 @@ export const Home: React.FC = () => {
               </div>
             </div>
             
-            {/* Banking Tools Info */}
+            {/* Banking Knowledge */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--primary-600]"></div>
               <div className="p-6">
