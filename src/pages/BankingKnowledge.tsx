@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Book, Search, FileText, Shield, CreditCard, Smartphone, ExternalLink, ArrowLeft } from 'lucide-react';
 
 // Define the structure for an Article, including full content and SEO metadata
@@ -16,6 +17,7 @@ interface Article {
 }
 
 export const BankingKnowledge: React.FC = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   // State to hold the currently viewed full article
@@ -859,6 +861,16 @@ export const BankingKnowledge: React.FC = () => {
   // Render the main article list view
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8 font-sans">
+      <div className="mb-8">
+        <button 
+          onClick={() => navigate(-1)} 
+          className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4 mr-1" />
+          <span>Back</span>
+        </button>
+      </div>
+      
       {/* Introduction Section */}
       <div className="mb-8 text-center md:text-left">
         <h1 className="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-4 leading-tight">

@@ -83,6 +83,76 @@ export const Header: React.FC = () => {
             <Link to="/" className="text-neutral-700 hover:text-primary-600 transition-colors">
               Home
             </Link>
+            <div className="relative" ref={languageRef}>
+              <button 
+                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+                className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
+              >
+                <Globe className="h-4 w-4 mr-1" />
+                Language
+                <svg 
+                  className={`ml-1 h-4 w-4 transition-transform ${languageMenuOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              
+              {languageMenuOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10 py-2">
+                  <button 
+                    onClick={() => handleLanguageChange('en')} 
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                  >
+                    English
+                  </button>
+                  <button 
+                    onClick={() => handleLanguageChange('hi')} 
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                  >
+                    हिन्दी (Hindi)
+                  </button>
+                  <button 
+                    onClick={() => handleLanguageChange('ta')} 
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                  >
+                    தமிழ் (Tamil)
+                  </button>
+                  <button 
+                    onClick={() => handleLanguageChange('te')} 
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                  >
+                    తెలుగు (Telugu)
+                  </button>
+                  <button 
+                    onClick={() => handleLanguageChange('bn')} 
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                  >
+                    বাংলা (Bengali)
+                  </button>
+                  <button 
+                    onClick={() => handleLanguageChange('mr')} 
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                  >
+                    मराठी (Marathi)
+                  </button>
+                  <button 
+                    onClick={() => handleLanguageChange('gu')} 
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                  >
+                    ગુજરાતી (Gujarati)
+                  </button>
+                  <button 
+                    onClick={() => handleLanguageChange('kn')} 
+                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                  >
+                    ಕನ್ನಡ (Kannada)
+                  </button>
+                </div>
+              )}
+            </div>
             <div className="relative" ref={categoriesRef}>
               <button 
                 onClick={() => setCategoriesOpen(!categoriesOpen)}
@@ -171,76 +241,6 @@ export const Header: React.FC = () => {
               <Map className="h-4 w-4 mr-1" />
               Sitemap
             </Link>
-            <div className="relative" ref={languageRef}>
-              <button 
-                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
-              >
-                <Globe className="h-4 w-4 mr-1" />
-                Language
-                <svg 
-                  className={`ml-1 h-4 w-4 transition-transform ${languageMenuOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              
-              {languageMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-10 py-2">
-                  <button 
-                    onClick={() => handleLanguageChange('en')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    English
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('hi')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    हिन्दी (Hindi)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('ta')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    தமிழ் (Tamil)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('te')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    తెలుగు (Telugu)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('bn')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    বাংলা (Bengali)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('mr')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    मराठी (Marathi)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('gu')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    ગુજરાતી (Gujarati)
-                  </button>
-                  <button 
-                    onClick={() => handleLanguageChange('kn')} 
-                    className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
-                  >
-                    ಕನ್ನಡ (Kannada)
-                  </button>
-                </div>
-              )}
-            </div>
             <Link 
               to="/calculators/income-tax-calculator" 
               className="btn btn-primary"

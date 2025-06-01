@@ -83,40 +83,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             Home
           </Link>
           
-          <Link 
-            to="/blog" 
-            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg flex items-center"
-            onClick={onClose}
-          >
-            <FileText className="h-4 w-4 mr-2" />
-            Blog
-          </Link>
-          
-          <Link 
-            to="/about-us" 
-            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg"
-            onClick={onClose}
-          >
-            About Us
-          </Link>
-          
-          <Link 
-            to="/contact-us" 
-            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg"
-            onClick={onClose}
-          >
-            Contact Us
-          </Link>
-          
-          <Link 
-            to="/sitemap" 
-            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg flex items-center"
-            onClick={onClose}
-          >
-            <Map className="h-4 w-4 mr-2" />
-            Sitemap
-          </Link>
-          
           <div className="mt-4">
             <h3 className="font-medium text-neutral-500 px-4 py-2">Language</h3>
             <div className="space-y-1 ml-4">
@@ -150,8 +116,60 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               >
                 বাংলা (Bengali)
               </button>
+              <button 
+                onClick={() => handleLanguageChange('mr')} 
+                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
+              >
+                मराठी (Marathi)
+              </button>
+              <button 
+                onClick={() => handleLanguageChange('gu')} 
+                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
+              >
+                ગુજરાતી (Gujarati)
+              </button>
+              <button 
+                onClick={() => handleLanguageChange('kn')} 
+                className="block w-full text-left py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg text-sm"
+              >
+                ಕನ್ನಡ (Kannada)
+              </button>
             </div>
           </div>
+          
+          <Link 
+            to="/blog" 
+            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg flex items-center"
+            onClick={onClose}
+          >
+            <FileText className="h-4 w-4 mr-2" />
+            Blog
+          </Link>
+          
+          <Link 
+            to="/about-us" 
+            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg"
+            onClick={onClose}
+          >
+            About Us
+          </Link>
+          
+          <Link 
+            to="/contact-us" 
+            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg"
+            onClick={onClose}
+          >
+            Contact Us
+          </Link>
+          
+          <Link 
+            to="/sitemap" 
+            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg flex items-center"
+            onClick={onClose}
+          >
+            <Map className="h-4 w-4 mr-2" />
+            Sitemap
+          </Link>
           
           <div className="mt-4">
             <h3 className="font-medium text-neutral-500 px-4 py-2">Calculator Categories</h3>
