@@ -44,25 +44,26 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   };
   
   const handleLanguageChange = (languageCode: string) => {
-    // Function to change language using Google Translate API
+    // Get the Google Translate select element
     const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
     if (selectElement) {
       selectElement.value = languageCode;
       selectElement.dispatchEvent(new Event('change'));
     } else {
       // If the select element is not available, try to initialize it
-      const script = document.createElement('script');
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      document.body.appendChild(script);
-      
-      // Try again after a short delay
-      setTimeout(() => {
-        const newSelectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-        if (newSelectElement) {
-          newSelectElement.value = languageCode;
-          newSelectElement.dispatchEvent(new Event('change'));
-        }
-      }, 500);
+      const translateElement = document.getElementById('google_translate_element');
+      if (translateElement) {
+        translateElement.style.display = 'block';
+        
+        // Try again after a short delay
+        setTimeout(() => {
+          const newSelectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+          if (newSelectElement) {
+            newSelectElement.value = languageCode;
+            newSelectElement.dispatchEvent(new Event('change'));
+          }
+        }, 500);
+      }
     }
     
     onClose();
