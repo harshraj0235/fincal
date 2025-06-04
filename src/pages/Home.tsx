@@ -10,6 +10,7 @@ export const Home: React.FC = () => {
   const govtSchemesRef = useRef<HTMLDivElement | null>(null);
   const bankingToolsRef = useRef<HTMLDivElement | null>(null);
   const financialNavigatorRef = useRef<HTMLDivElement | null>(null);
+  const astroFinanceRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
     // Check if there's a hash in the URL
@@ -30,6 +31,11 @@ export const Home: React.FC = () => {
         // Scroll to financial navigator section
         setTimeout(() => {
           financialNavigatorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      } else if (categoryId === 'astro-finance' && astroFinanceRef.current) {
+        // Scroll to astro-finance section
+        setTimeout(() => {
+          astroFinanceRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       } else {
         const element = categoryRefs.current[categoryId];
@@ -158,6 +164,175 @@ export const Home: React.FC = () => {
               className="btn bg-[--accent-600] text-white hover:bg-[--accent-700]"
             >
               Explore Financial Navigator
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      {/* Astro-Finance Insights Section */}
+      <section 
+        id="astro-finance" 
+        ref={astroFinanceRef}
+        className="py-12 sm:py-16 bg-gradient-to-r from-[--primary-50] to-[--secondary-50]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">Astro-Finance Insights Hub</h2>
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto">
+              Explore the intersection of astrology and finance with our specialized tools that provide unique perspectives on financial decisions
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-xl shadow-lg p-6 mb-8 border border-[--primary-100]">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="md:w-1/2">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-4 flex items-center">
+                  <span className="text-2xl mr-2">🌌</span>
+                  Astrological Financial Guidance
+                </h3>
+                <p className="text-neutral-700 mb-4">
+                  Our Astro-Finance Insights Hub offers a unique blend of traditional astrological wisdom and modern financial concepts. Discover how cosmic energies might influence your financial decisions and explore personalized insights based on your birth details.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-[--primary-100] text-[--primary-800] rounded-full text-sm">Daily Finance Horoscope</span>
+                  <span className="px-3 py-1 bg-[--primary-100] text-[--primary-800] rounded-full text-sm">Zodiac Compatibility</span>
+                  <span className="px-3 py-1 bg-[--primary-100] text-[--primary-800] rounded-full text-sm">Lucky Number Calculator</span>
+                  <span className="px-3 py-1 bg-[--primary-100] text-[--primary-800] rounded-full text-sm">Auspicious Timing</span>
+                </div>
+                <a 
+                  href="/astro-finance-insights.html" 
+                  target="_blank"
+                  className="inline-flex items-center text-[--primary-600] hover:text-[--primary-700] font-medium"
+                >
+                  Explore Astro-Finance Tools
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+              <div className="md:w-1/2">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-[--primary-50] p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <span className="text-xl mr-2">💸</span>
+                      <h4 className="font-medium text-[--primary-800]">Finance Horoscope</h4>
+                    </div>
+                    <p className="text-sm text-[--primary-700]">Daily and monthly financial predictions for your zodiac sign</p>
+                  </div>
+                  <div className="bg-[--secondary-50] p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <span className="text-xl mr-2">📈</span>
+                      <h4 className="font-medium text-[--secondary-800]">Market Timing</h4>
+                    </div>
+                    <p className="text-sm text-[--secondary-700]">Astrological insights for stock market trends and timing</p>
+                  </div>
+                  <div className="bg-[--accent-50] p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <span className="text-xl mr-2">⏰</span>
+                      <h4 className="font-medium text-[--accent-800]">Auspicious Timing</h4>
+                    </div>
+                    <p className="text-sm text-[--accent-700]">Find favorable times for financial activities and investments</p>
+                  </div>
+                  <div className="bg-[--success-50] p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <span className="text-xl mr-2">💎</span>
+                      <h4 className="font-medium text-[--success-800]">Gemstone Finder</h4>
+                    </div>
+                    <p className="text-sm text-[--success-700]">Discover gemstones that may enhance your financial prospects</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--primary-500] to-[--primary-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="text-4xl mr-3">🔢</div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Numerology & Finance</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Discover how your personal numbers might influence your financial decisions and wealth potential. Calculate your Life Path Number and Lucky Numbers.
+                </p>
+                <a 
+                  href="/astro-finance-insights.html#numerology" 
+                  className="text-[--primary-600] font-medium flex items-center"
+                >
+                  Explore Numerology Tools
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--accent-500] to-[--accent-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="text-4xl mr-3">🗓️</div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Auspicious Timing</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Find the most favorable times for important financial activities like business launches, property purchases, or major investments.
+                </p>
+                <a 
+                  href="/astro-finance-insights.html#timing" 
+                  className="text-[--accent-600] font-medium flex items-center"
+                >
+                  Find Auspicious Times
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="p-1 bg-gradient-to-r from-[--success-500] to-[--success-600]"></div>
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="text-4xl mr-3">🌙</div>
+                  <h3 className="text-xl font-semibold text-neutral-900">Vedic Astrology</h3>
+                </div>
+                <p className="text-neutral-600 mb-4">
+                  Explore traditional Vedic astrological tools like Kundli generation, Moon Sign calculation, and Nakshatra analysis for financial insights.
+                </p>
+                <a 
+                  href="/astro-finance-insights.html#vedic" 
+                  className="text-[--success-600] font-medium flex items-center"
+                >
+                  Explore Vedic Tools
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-[--primary-50] rounded-lg p-6 border border-[--primary-100]">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 mt-1">
+                <svg className="h-5 w-5 text-[--primary-600]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <p className="ml-3 text-sm text-[--primary-700]">
+                <strong>Disclaimer:</strong> Our Astro-Finance tools are provided for entertainment and educational purposes only. Financial decisions should be based primarily on sound financial principles, research, and professional advice. Astrological insights should be considered supplementary.
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <a 
+              href="/astro-finance-insights.html" 
+              target="_blank"
+              className="btn bg-[--primary-600] text-white hover:bg-[--primary-700]"
+            >
+              Explore All Astro-Finance Tools
             </a>
           </div>
         </div>
