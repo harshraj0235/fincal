@@ -4,1803 +4,1687 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Financial Navigator - FinCalc India</title>
-  <meta name="description" content="Interactive financial education tool to help you understand banking, UPI, KYC, loans, and protect yourself from financial scams in India">
+  <meta name="description" content="Navigate the complex world of Indian finance with our comprehensive educational tools designed to improve your financial literacy">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#2563eb">
-  
-  <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-50: #eff6ff;
-      --primary-100: #dbeafe;
-      --primary-200: #bfdbfe;
-      --primary-300: #93c5fd;
-      --primary-400: #60a5fa;
-      --primary-500: #3b82f6;
-      --primary-600: #2563eb;
-      --primary-700: #1d4ed8;
-      --primary-800: #1e40af;
-      --primary-900: #1e3a8a;
-      
-      --secondary-50: #f0fdfa;
-      --secondary-100: #ccfbf1;
-      --secondary-200: #99f6e4;
-      --secondary-300: #5eead4;
-      --secondary-400: #2dd4bf;
-      --secondary-500: #14b8a6;
-      --secondary-600: #0d9488;
-      --secondary-700: #0f766e;
-      --secondary-800: #115e59;
-      --secondary-900: #134e4a;
-      
-      --accent-50: #fffbeb;
-      --accent-100: #fef3c7;
-      --accent-200: #fde68a;
-      --accent-300: #fcd34d;
-      --accent-400: #fbbf24;
-      --accent-500: #f59e0b;
-      --accent-600: #d97706;
-      --accent-700: #b45309;
-      --accent-800: #92400e;
-      --accent-900: #78350f;
-      
-      --success-50: #f0fdf4;
-      --success-100: #dcfce7;
-      --success-200: #bbf7d0;
-      --success-300: #86efac;
-      --success-400: #4ade80;
-      --success-500: #22c55e;
-      --success-600: #16a34a;
-      --success-700: #15803d;
-      --success-800: #166534;
-      --success-900: #14532d;
-      
-      --warning-50: #fffbeb;
-      --warning-100: #fef3c7;
-      --warning-200: #fde68a;
-      --warning-300: #fcd34d;
-      --warning-400: #fbbf24;
-      --warning-500: #f59e0b;
-      --warning-600: #d97706;
-      --warning-700: #b45309;
-      --warning-800: #92400e;
-      --warning-900: #78350f;
-      
-      --error-50: #fef2f2;
-      --error-100: #fee2e2;
-      --error-200: #fecaca;
-      --error-300: #fca5a5;
-      --error-400: #f87171;
-      --error-500: #ef4444;
-      --error-600: #dc2626;
-      --error-700: #b91c1c;
-      --error-800: #991b1b;
-      --error-900: #7f1d1d;
-      
-      --neutral-50: #f8fafc;
-      --neutral-100: #f1f5f9;
-      --neutral-200: #e2e8f0;
-      --neutral-300: #cbd5e1;
-      --neutral-400: #94a3b8;
-      --neutral-500: #64748b;
-      --neutral-600: #475569;
-      --neutral-700: #334155;
-      --neutral-800: #1e293b;
-      --neutral-900: #0f172a;
-    }
-    
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: var(--neutral-800);
-      background-color: var(--neutral-50);
-      line-height: 1.5;
     }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
+    .tooltip {
+      @apply absolute invisible group-hover:visible bg-neutral-800 text-white text-sm rounded-lg py-2 px-3 -mt-14 z-10 transition-opacity opacity-0 group-hover:opacity-100 w-max max-w-xs;
     }
-    
-    header {
-      background-color: white;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--neutral-900);
-      text-decoration: none;
-    }
-    
-    .logo svg {
-      margin-right: 0.5rem;
-      color: var(--primary-600);
-    }
-    
-    .back-button {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      background-color: var(--primary-600);
-      color: white;
-      border-radius: 0.375rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: background-color 0.2s;
-    }
-    
-    .back-button:hover {
-      background-color: var(--primary-700);
-    }
-    
-    .back-button svg {
-      margin-right: 0.5rem;
-    }
-    
-    .hero {
-      background: linear-gradient(to right, var(--primary-600), var(--secondary-600));
-      color: white;
-      padding: 4rem 0;
-      text-align: center;
-    }
-    
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      opacity: 0.9;
-    }
-    
-    .cta-button {
-      display: inline-block;
-      background-color: white;
-      color: var(--primary-700);
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.375rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .section {
-      padding: 4rem 0;
-    }
-    
-    .section-title {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    
-    .section-title h2 {
-      font-size: 2rem;
-      color: var(--neutral-900);
-      margin-bottom: 1rem;
-    }
-    
-    .section-title p {
-      font-size: 1.125rem;
-      color: var(--neutral-600);
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .card {
-      background-color: white;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .card-header {
-      padding: 1.5rem;
-      background: linear-gradient(to right, var(--primary-100), var(--secondary-100));
-      display: flex;
-      align-items: center;
-    }
-    
-    .card-icon {
-      width: 3rem;
-      height: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: white;
-      border-radius: 50%;
-      margin-right: 1rem;
-      color: var(--primary-600);
-    }
-    
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--neutral-900);
-    }
-    
-    .card-body {
-      padding: 1.5rem;
-    }
-    
-    .card-description {
-      color: var(--neutral-700);
-      margin-bottom: 1.5rem;
-    }
-    
-    .card-features {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .card-features li {
-      padding: 0.5rem 0;
-      display: flex;
-      align-items: center;
-      color: var(--neutral-600);
-    }
-    
-    .card-features li::before {
-      content: "✓";
-      color: var(--success-500);
-      font-weight: bold;
-      margin-right: 0.5rem;
-    }
-    
-    .card-footer {
-      padding: 1rem 1.5rem;
-      background-color: var(--neutral-50);
-      border-top: 1px solid var(--neutral-100);
-    }
-    
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      color: var(--primary-600);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    
-    .card-link:hover {
-      text-decoration: underline;
-    }
-    
-    .card-link svg {
-      margin-left: 0.25rem;
-    }
-    
-    .feature-section {
-      background-color: var(--primary-50);
-      padding: 4rem 0;
-    }
-    
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-    }
-    
-    .feature-icon {
-      width: 3rem;
-      height: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--primary-100);
-      border-radius: 50%;
-      margin-right: 1rem;
-      color: var(--primary-600);
-      flex-shrink: 0;
-    }
-    
-    .feature-content h3 {
-      font-size: 1.25rem;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      color: var(--neutral-900);
-    }
-    
-    .feature-content p {
-      color: var(--neutral-600);
-      margin: 0;
-    }
-    
-    .testimonial-section {
-      background-color: white;
-      padding: 4rem 0;
-    }
-    
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .testimonial-card {
-      background-color: var(--neutral-50);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-    
-    .testimonial-content {
-      font-style: italic;
-      color: var(--neutral-700);
-      margin-bottom: 1rem;
-    }
-    
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-    }
-    
-    .testimonial-avatar {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      background-color: var(--primary-100);
-      margin-right: 1rem;
-      overflow: hidden;
-    }
-    
-    .testimonial-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .testimonial-info h4 {
-      margin: 0;
-      font-size: 1rem;
-      color: var(--neutral-900);
-    }
-    
-    .testimonial-info p {
-      margin: 0;
-      font-size: 0.875rem;
-      color: var(--neutral-500);
-    }
-    
-    .faq-section {
-      background-color: var(--neutral-50);
-      padding: 4rem 0;
-    }
-    
-    .faq-list {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .faq-item {
-      margin-bottom: 1rem;
-      border: 1px solid var(--neutral-200);
-      border-radius: 0.5rem;
-      overflow: hidden;
-    }
-    
-    .faq-question {
-      padding: 1rem 1.5rem;
-      background-color: white;
-      font-weight: 600;
-      color: var(--neutral-900);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .faq-question:hover {
-      background-color: var(--neutral-50);
-    }
-    
-    .faq-answer {
-      padding: 0 1.5rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s, padding 0.3s;
-    }
-    
-    .faq-item.active .faq-answer {
-      padding: 1rem 1.5rem;
-      max-height: 500px;
-      border-top: 1px solid var(--neutral-200);
-    }
-    
-    .cta-section {
-      background: linear-gradient(to right, var(--accent-600), var(--primary-600));
-      color: white;
-      padding: 4rem 0;
-      text-align: center;
-    }
-    
-    .cta-section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    
-    .cta-section p {
-      font-size: 1.125rem;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      opacity: 0.9;
-    }
-    
-    footer {
-      background-color: var(--neutral-800);
-      color: white;
-      padding: 4rem 0 2rem;
-    }
-    
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .footer-column h3 {
-      font-size: 1.25rem;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      color: white;
-    }
-    
-    .footer-links {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .footer-links li {
-      margin-bottom: 0.75rem;
-    }
-    
-    .footer-links a {
-      color: var(--neutral-300);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    
-    .footer-links a:hover {
-      color: white;
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid var(--neutral-700);
-      color: var(--neutral-400);
-      font-size: 0.875rem;
-    }
-    
-    /* Interactive elements */
-    .interactive-demo {
-      background-color: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .demo-tabs {
-      display: flex;
-      border-bottom: 1px solid var(--neutral-200);
-      margin-bottom: 1.5rem;
-    }
-    
-    .demo-tab {
-      padding: 0.75rem 1.5rem;
-      cursor: pointer;
-      font-weight: 500;
-      color: var(--neutral-600);
-      border-bottom: 2px solid transparent;
-    }
-    
-    .demo-tab.active {
-      color: var(--primary-600);
-      border-bottom-color: var(--primary-600);
-    }
-    
-    .demo-content {
-      display: none;
-    }
-    
-    .demo-content.active {
-      display: block;
-    }
-    
-    .demo-screen {
-      background-color: var(--neutral-50);
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .demo-actions {
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    .demo-button {
-      padding: 0.5rem 1rem;
-      background-color: var(--primary-600);
-      color: white;
-      border: none;
-      border-radius: 0.375rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    
-    .demo-button:hover {
-      background-color: var(--primary-700);
-    }
-    
-    .demo-button.secondary {
-      background-color: var(--neutral-200);
-      color: var(--neutral-800);
-    }
-    
-    .demo-button.secondary:hover {
-      background-color: var(--neutral-300);
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 3rem 0;
-      }
-      
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .hero p {
-        font-size: 1rem;
-      }
-      
-      .section {
-        padding: 3rem 0;
-      }
-      
-      .section-title h2 {
-        font-size: 1.75rem;
-      }
-      
-      .card-grid, .feature-grid, .testimonial-grid {
-        grid-template-columns: 1fr;
-      }
+    .tooltip::after {
+      content: '';
+      @apply absolute -bottom-1 left-1/2 -translate-x-1/2 border-4 border-t-neutral-800 border-x-transparent border-b-transparent;
     }
   </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            accent: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              900: '#78350f',
+            },
+            success: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            error: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              800: '#991b1b',
+              900: '#7f1d1d',
+            },
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <header>
-    <div class="container header-content">
-      <a href="/" class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow-md py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="/" class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
           <line x1="8" y1="21" x2="16" y2="21"></line>
           <line x1="12" y1="17" x2="12" y2="21"></line>
         </svg>
-        FinCalc India
+        <span class="text-xl font-bold text-neutral-900">FinCalc India</span>
       </a>
-      <a href="/" class="back-button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="19" y1="12" x2="5" y2="12"></line>
-          <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-        Back to FinCalc India
-      </a>
+      
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-neutral-700 hover:text-primary-600 transition-colors">Home</a>
+        <a href="/blog" class="text-neutral-700 hover:text-primary-600 transition-colors">Blog</a>
+        <a href="/about-us" class="text-neutral-700 hover:text-primary-600 transition-colors">About</a>
+        <a href="/contact-us" class="text-neutral-700 hover:text-primary-600 transition-colors">Contact</a>
+      </nav>
+      
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-neutral-700 p-2 rounded-full hover:bg-neutral-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 py-2">
+      <div class="container mx-auto px-4 space-y-2">
+        <a href="/" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Home</a>
+        <a href="/blog" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Blog</a>
+        <a href="/about-us" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">About</a>
+        <a href="/contact-us" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Contact</a>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Financial Navigator</h1>
-      <p>Your interactive guide to understanding and navigating the Indian financial system with confidence</p>
-      <a href="#tools" class="cta-button">Explore Tools</a>
-    </div>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Financial Navigator</h1>
+        <p class="text-xl max-w-3xl mx-auto mb-8">Your comprehensive guide to understanding and navigating the Indian financial system</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#banking-basics" class="bg-white text-primary-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+            Banking Basics
+          </a>
+          <a href="#investment-guide" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+            Investment Guide
+          </a>
+        </div>
+      </div>
+    </section>
 
-  <section class="section" id="tools">
-    <div class="container">
-      <div class="section-title">
-        <h2>Interactive Financial Education Tools</h2>
-        <p>Explore our comprehensive suite of tools designed to help you understand and navigate the Indian financial system</p>
-      </div>
-      
-      <div class="card-grid">
-        <!-- UPI Explainer Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                <path d="M12 12h.01"></path>
-                <path d="M17 12h.01"></path>
-                <path d="M7 12h.01"></path>
-              </svg>
+    <!-- Main Content -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Left Sidebar -->
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-md p-6 sticky top-24">
+              <h2 class="text-xl font-semibold text-neutral-900 mb-4">Quick Navigation</h2>
+              <nav class="space-y-2">
+                <a href="#banking-basics" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Banking Basics
+                </a>
+                <a href="#upi-guide" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  UPI Payment Guide
+                </a>
+                <a href="#kyc-explained" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  KYC Process Explained
+                </a>
+                <a href="#investment-guide" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Investment Guide
+                </a>
+                <a href="#loan-comparison" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Loan Comparison
+                </a>
+                <a href="#tax-planning" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Tax Planning
+                </a>
+                <a href="#retirement-planning" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Retirement Planning
+                </a>
+                <a href="#insurance-guide" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Insurance Guide
+                </a>
+                <a href="#scam-detection" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Financial Scam Detection
+                </a>
+                <a href="#digital-banking" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Digital Banking
+                </a>
+                <a href="#astro-finance" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Astro-Finance Insights
+                </a>
+              </nav>
             </div>
-            <h3 class="card-title">UPI Explainer</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Understand how UPI works, its features, and how to use it securely for your daily transactions.</p>
-            <ul class="card-features">
-              <li>Interactive UPI transaction simulator</li>
-              <li>Step-by-step guide to setting up UPI</li>
-              <li>Security best practices</li>
-              <li>Troubleshooting common issues</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#upi-explainer" class="card-link">
-              Learn about UPI
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- KYC Helper Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">KYC Helper</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Navigate the Know Your Customer (KYC) process with ease for various financial services in India.</p>
-            <ul class="card-features">
-              <li>Document checklist for different KYC processes</li>
-              <li>Video KYC walkthrough</li>
-              <li>Aadhaar-based KYC guide</li>
-              <li>KYC update procedures</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#kyc-helper" class="card-link">
-              Understand KYC
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Loan Comparison Tool Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                <line x1="2" y1="10" x2="22" y2="10"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Loan Comparison Tool</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Compare different loan options and understand the fine print to make informed borrowing decisions.</p>
-            <ul class="card-features">
-              <li>Side-by-side loan comparison</li>
-              <li>Hidden fees explainer</li>
-              <li>Prepayment and foreclosure terms</li>
-              <li>Loan jargon dictionary</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#loan-comparison" class="card-link">
-              Compare Loans
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- CIBIL Score Educator Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">CIBIL Score Educator</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Learn how credit scores work in India, what affects them, and how to improve your creditworthiness.</p>
-            <ul class="card-features">
-              <li>Credit score simulator</li>
-              <li>Factors affecting your score</li>
-              <li>Score improvement strategies</li>
-              <li>Credit report interpretation guide</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#cibil-educator" class="card-link">
-              Master Credit Scores
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Financial Scam Detector Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
-                <path d="M12 9v4"></path>
-                <path d="M12 17h.01"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Financial Scam Detector</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Protect yourself from common financial frauds and scams prevalent in India with our interactive guide.</p>
-            <ul class="card-features">
-              <li>Red flags in financial offers</li>
-              <li>Common scam scenarios</li>
-              <li>Reporting mechanisms</li>
-              <li>Real-world case studies</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#scam-detector" class="card-link">
-              Stay Protected
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Digital Banking Guide Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                <line x1="1" y1="10" x2="23" y2="10"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Digital Banking Guide</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Master online and mobile banking with step-by-step tutorials for common banking operations.</p>
-            <ul class="card-features">
-              <li>Mobile banking app walkthroughs</li>
-              <li>Secure online banking practices</li>
-              <li>Digital payment methods comparison</li>
-              <li>Troubleshooting common issues</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#digital-banking" class="card-link">
-              Explore Digital Banking
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="feature-section" id="upi-explainer">
-    <div class="container">
-      <div class="section-title">
-        <h2>UPI Explainer</h2>
-        <p>Understand the Unified Payments Interface (UPI) system that has revolutionized digital payments in India</p>
-      </div>
-      
-      <div class="feature-grid">
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-7h-2c0-1-1.5-1-1-3"></path>
-              <path d="M2 9v1c0 1.1.9 2 2 2h1"></path>
-              <path d="M16 11h0"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>What is UPI?</h3>
-            <p>UPI (Unified Payments Interface) is a real-time payment system developed by the National Payments Corporation of India (NPCI) that enables instant money transfers between bank accounts using a mobile platform.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>Security Features</h3>
-            <p>UPI transactions are secured with multiple layers of authentication including your UPI PIN, device binding, and encrypted data transmission, making it one of the safest payment methods available.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>Types of UPI IDs</h3>
-            <p>UPI allows you to create virtual payment addresses (VPAs) in formats like name@bankname or phone@upi, eliminating the need to share sensitive bank details for transactions.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v20"></path>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>Transaction Limits</h3>
-            <p>UPI has daily transaction limits (currently ₹1 lakh per day) and per-transaction limits that may vary by bank. These limits help manage risk while still accommodating most daily payment needs.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="interactive-demo">
-        <h3>Interactive UPI Transaction Simulator</h3>
-        <div class="demo-tabs">
-          <div class="demo-tab active" data-tab="send-money">Send Money</div>
-          <div class="demo-tab" data-tab="request-money">Request Money</div>
-          <div class="demo-tab" data-tab="scan-pay">Scan & Pay</div>
-        </div>
-        
-        <div class="demo-content active" id="send-money">
-          <div class="demo-screen">
-            <h4>Step 1: Enter UPI ID or Select Contact</h4>
-            <p>Enter the UPI ID of the recipient (e.g., name@bankname) or select from your contacts who have registered UPI IDs.</p>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button secondary">Back</button>
-            <button class="demo-button">Next Step</button>
-          </div>
-        </div>
-        
-        <div class="demo-content" id="request-money">
-          <div class="demo-screen">
-            <h4>Step 1: Enter UPI ID to Request From</h4>
-            <p>Enter the UPI ID of the person you want to request money from, or select from your contacts.</p>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button secondary">Back</button>
-            <button class="demo-button">Next Step</button>
-          </div>
-        </div>
-        
-        <div class="demo-content" id="scan-pay">
-          <div class="demo-screen">
-            <h4>Step 1: Scan QR Code</h4>
-            <p>Position your phone camera to scan the merchant's QR code. The payment details will be automatically populated.</p>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button secondary">Back</button>
-            <button class="demo-button">Next Step</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="scam-detector">
-    <div class="container">
-      <div class="section-title">
-        <h2>Financial Scam Detector</h2>
-        <p>Learn to identify and protect yourself from common financial scams in India</p>
-      </div>
-      
-      <div class="card-grid">
-        <!-- UPI Scams Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
-                <path d="M12 9v4"></path>
-                <path d="M12 17h.01"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">UPI Scams</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Fraudsters have developed various techniques to exploit UPI users. Learn how to identify and avoid these scams.</p>
-            <ul class="card-features">
-              <li>Fake payment confirmation scams</li>
-              <li>"Request money" instead of "send money" tricks</li>
-              <li>Screen sharing scams during troubleshooting</li>
-              <li>QR code payment fraud techniques</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#upi-scams" class="card-link">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Investment Fraud Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2v20"></path>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Investment Fraud</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Protect yourself from investment scams promising unrealistic returns or using pressure tactics to extract money.</p>
-            <ul class="card-features">
-              <li>Ponzi and pyramid schemes</li>
-              <li>Fake cryptocurrency investments</li>
-              <li>Unregistered investment opportunities</li>
-              <li>High-return, no-risk investment red flags</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#investment-fraud" class="card-link">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Loan Scams Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                <line x1="2" y1="10" x2="22" y2="10"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Loan Scams</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Identify fraudulent loan offers and protect yourself from predatory lending practices and upfront fee scams.</p>
-            <ul class="card-features">
-              <li>Processing fee scams</li>
-              <li>Fake loan approval messages</li>
-              <li>Predatory digital lending apps</li>
-              <li>Loan forgiveness fraud</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#loan-scams" class="card-link">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="interactive-demo">
-        <h3>Scam Detection Interactive Simulator</h3>
-        <p>Test your ability to identify financial scams with our interactive scenarios. Can you spot the red flags?</p>
-        
-        <div class="demo-screen">
-          <h4>Scenario: Unexpected UPI Request</h4>
-          <p>You receive a message: "Your electricity bill payment failed. To avoid disconnection, please approve the pending UPI request immediately. For help, call our executive at 9XXXXXXXXX."</p>
-          <p><strong>What would you do?</strong></p>
-        </div>
-        
-        <div class="demo-actions">
-          <button class="demo-button">Approve the UPI request</button>
-          <button class="demo-button">Call the provided number</button>
-          <button class="demo-button">Check your electricity provider's official app or website</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="feature-section" id="kyc-helper">
-    <div class="container">
-      <div class="section-title">
-        <h2>KYC Helper</h2>
-        <p>Navigate the Know Your Customer (KYC) process with ease for various financial services</p>
-      </div>
-      
-      <div class="feature-grid">
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="18" height="18" x="3" y="3" rx="2"></rect>
-              <path d="M3 9h18"></path>
-              <path d="M9 21V9"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>What is KYC?</h3>
-            <p>Know Your Customer (KYC) is a mandatory process that financial institutions use to verify the identity of their clients. It helps prevent fraud, money laundering, and terrorist financing while ensuring regulatory compliance.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <path d="M14 2v6h6"></path>
-              <path d="M16 13H8"></path>
-              <path d="M16 17H8"></path>
-              <path d="M10 9H8"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>Required Documents</h3>
-            <p>Standard KYC requires proof of identity (Aadhaar, PAN, Voter ID), proof of address (utility bills, passport), and a recent photograph. Our tool provides a customized checklist based on the specific service you're applying for.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-              <path d="M12 8v4"></path>
-              <path d="M12 16h.01"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>Types of KYC</h3>
-            <p>Learn about different KYC processes including physical KYC, e-KYC (electronic verification using Aadhaar), Video KYC (remote verification), and Central KYC (CKYC) which allows for KYC portability across financial institutions.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>KYC Security</h3>
-            <p>Understand how to protect your personal information during the KYC process, identify legitimate KYC requests, and avoid KYC-related fraud attempts that have become increasingly common.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="interactive-demo">
-        <h3>KYC Process Simulator</h3>
-        <div class="demo-tabs">
-          <div class="demo-tab active" data-tab="bank-kyc">Bank Account</div>
-          <div class="demo-tab" data-tab="mutual-fund-kyc">Mutual Funds</div>
-          <div class="demo-tab" data-tab="video-kyc">Video KYC</div>
-        </div>
-        
-        <div class="demo-content active" id="bank-kyc">
-          <div class="demo-screen">
-            <h4>Bank Account KYC Requirements</h4>
-            <ul>
-              <li>PAN Card (mandatory)</li>
-              <li>Aadhaar Card for address proof and e-KYC</li>
-              <li>Recent passport-sized photograph</li>
-              <li>Additional address proof if Aadhaar address is different</li>
-            </ul>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button">View Step-by-Step Process</button>
-          </div>
-        </div>
-        
-        <div class="demo-content" id="mutual-fund-kyc">
-          <div class="demo-screen">
-            <h4>Mutual Fund KYC Requirements</h4>
-            <ul>
-              <li>KYC form (available online or at AMC offices)</li>
-              <li>PAN Card (mandatory)</li>
-              <li>Address proof (Aadhaar, passport, voter ID)</li>
-              <li>Recent photograph</li>
-              <li>In-person verification or Video KYC</li>
-            </ul>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button">View Step-by-Step Process</button>
-          </div>
-        </div>
-        
-        <div class="demo-content" id="video-kyc">
-          <div class="demo-screen">
-            <h4>Video KYC Process</h4>
-            <ul>
-              <li>Schedule a video call with the financial institution</li>
-              <li>Keep original KYC documents ready for verification</li>
-              <li>Ensure good internet connection and lighting</li>
-              <li>Be prepared for a live photograph and signature capture</li>
-              <li>Verification of location through geo-tagging</li>
-            </ul>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button">View Step-by-Step Process</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="loan-comparison">
-    <div class="container">
-      <div class="section-title">
-        <h2>Loan Comparison Tool</h2>
-        <p>Understand different loan options and make informed borrowing decisions</p>
-      </div>
-      
-      <div class="card-grid">
-        <!-- Home Loan Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-            </div>
-            <h3 class="card-title">Home Loan Guide</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Navigate the complexities of home loans with our comprehensive guide to terms, conditions, and hidden costs.</p>
-            <ul class="card-features">
-              <li>Fixed vs. floating interest rates</li>
-              <li>Processing fees and other charges</li>
-              <li>Prepayment and foreclosure terms</li>
-              <li>Tax benefits under Section 24 and 80C</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#home-loan" class="card-link">
-              Explore Home Loans
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Personal Loan Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                <line x1="2" y1="10" x2="22" y2="10"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Personal Loan Analyzer</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Understand the true cost of personal loans and compare offers from different lenders to find the best option.</p>
-            <ul class="card-features">
-              <li>APR vs. flat interest rate comparison</li>
-              <li>Hidden fees and charges</li>
-              <li>Prepayment penalties</li>
-              <li>Eligibility criteria across lenders</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#personal-loan" class="card-link">
-              Analyze Personal Loans
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Education Loan Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Education Loan Guide</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Navigate education financing options with our comprehensive guide to student loans in India and abroad.</p>
-            <ul class="card-features">
-              <li>Collateral vs. non-collateral loans</li>
-              <li>Moratorium period explained</li>
-              <li>Tax benefits under Section 80E</li>
-              <li>Loan forgiveness and repayment assistance</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#education-loan" class="card-link">
-              Explore Education Loans
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="interactive-demo">
-        <h3>Loan Jargon Decoder</h3>
-        <p>Confused by loan terminology? Our interactive tool explains common loan terms in simple language.</p>
-        
-        <div class="demo-screen">
-          <h4>Select a term to understand:</h4>
-          <select style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid var(--neutral-300); border-radius: 0.375rem;">
-            <option value="">Choose a loan term...</option>
-            <option value="apr">Annual Percentage Rate (APR)</option>
-            <option value="emi">Equated Monthly Installment (EMI)</option>
-            <option value="tenor">Loan Tenor/Tenure</option>
-            <option value="foreclosure">Foreclosure</option>
-            <option value="moratorium">Moratorium Period</option>
-            <option value="floating">Floating Interest Rate</option>
-            <option value="processing">Processing Fee</option>
-            <option value="prepayment">Prepayment Penalty</option>
-          </select>
-          
-          <div style="background-color: var(--primary-50); padding: 1rem; border-radius: 0.375rem;">
-            <p><strong>Annual Percentage Rate (APR):</strong> The annual rate charged for borrowing, expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="feature-section" id="cibil-educator">
-    <div class="container">
-      <div class="section-title">
-        <h2>CIBIL Score Educator</h2>
-        <p>Understand credit scores, their importance, and how to improve your creditworthiness</p>
-      </div>
-      
-      <div class="feature-grid">
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"></path>
-              <line x1="2" y1="20" x2="2" y2="20"></line>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>What is a CIBIL Score?</h3>
-            <p>A CIBIL Score is a three-digit number between 300 and 900 that represents your creditworthiness. It's calculated based on your credit history and payment behavior. Higher scores indicate better creditworthiness, with scores above 750 generally considered excellent.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>Factors Affecting Your Score</h3>
-            <p>Your CIBIL score is influenced by payment history (35%), credit utilization (30%), credit age (15%), credit mix (10%), and new credit applications (10%). Understanding these factors helps you manage your credit profile effectively.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
-              <path d="m9 12 2 2 4-4"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>Importance of a Good Score</h3>
-            <p>A good CIBIL score can help you secure loans and credit cards with better interest rates, higher credit limits, and faster approvals. It can also affect rental applications, job opportunities in the financial sector, and insurance premiums.</p>
-          </div>
-        </div>
-        
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v20"></path>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <div class="feature-content">
-            <h3>How to Improve Your Score</h3>
-            <p>Improve your CIBIL score by paying bills on time, keeping credit utilization below 30%, maintaining a healthy credit mix, avoiding multiple loan applications in a short period, and regularly checking your credit report for errors.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="interactive-demo">
-        <h3>Credit Score Simulator</h3>
-        <p>See how different financial actions might affect your credit score with our interactive simulator.</p>
-        
-        <div class="demo-screen">
-          <h4>Current Credit Score: 720</h4>
-          <p>Select an action to see its potential impact on your credit score:</p>
-          
-          <div style="margin-bottom: 1rem;">
-            <select style="width: 100%; padding: 0.5rem; border: 1px solid var(--neutral-300); border-radius: 0.375rem;">
-              <option value="">Choose an action...</option>
-              <option value="late_payment">Missing a credit card payment</option>
-              <option value="pay_off">Paying off a loan completely</option>
-              <option value="new_card">Applying for a new credit card</option>
-              <option value="increase_limit">Increasing credit limit</option>
-              <option value="reduce_utilization">Reducing credit utilization from 70% to 30%</option>
-              <option value="close_old">Closing your oldest credit card</option>
-            </select>
           </div>
           
-          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-            <div style="flex-grow: 1; height: 8px; background-color: var(--neutral-200); border-radius: 4px; overflow: hidden;">
-              <div style="width: 72%; height: 100%; background-color: var(--primary-600);"></div>
-            </div>
-            <span style="margin-left: 1rem; font-weight: 500;">720</span>
-          </div>
-          
-          <div style="background-color: var(--error-50); padding: 1rem; border-radius: 0.375rem; border-left: 4px solid var(--error-500);">
-            <p><strong>Potential Impact:</strong> Missing a credit card payment could lower your score by 50-100 points, depending on your current credit profile and payment history. Late payments can stay on your credit report for up to 7 years.</p>
+          <!-- Main Content -->
+          <div class="md:col-span-2 space-y-12">
+            <section id="banking-basics" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Banking Basics</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Understanding Indian Banking System</h3>
+                  <p class="text-neutral-600 mb-4">
+                    The Indian banking system consists of commercial banks, regional rural banks, cooperative banks, and small finance banks. Each serves different needs and customer segments.
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Public Sector Banks</h4>
+                      <p class="text-sm text-neutral-600">Government-owned banks like SBI, PNB, and Bank of Baroda that offer widespread services.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Private Sector Banks</h4>
+                      <p class="text-sm text-neutral-600">Privately owned banks like HDFC, ICICI, and Axis Bank known for technology and service.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Regional Rural Banks</h4>
+                      <p class="text-sm text-neutral-600">Banks focused on rural areas and agricultural services.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Small Finance Banks</h4>
+                      <p class="text-sm text-neutral-600">Specialized banks providing financial inclusion for underserved segments.</p>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Types of Bank Accounts</h3>
+                  <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Account Type</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Features</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Best For</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Savings Account</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Interest-earning, limited transactions</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Regular savings, emergency funds</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Current Account</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No interest, unlimited transactions</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Businesses, high transaction volume</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Fixed Deposit</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Higher interest, locked for fixed period</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Long-term savings, stable returns</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Recurring Deposit</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Regular monthly deposits, fixed interest</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Disciplined savings, goal-based saving</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mt-8 mb-4">Banking Charges & Fees</h3>
+                  <p class="text-neutral-600 mb-4">
+                    Understanding various banking charges can help you manage your accounts more efficiently and avoid unnecessary fees.
+                  </p>
+                  <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fee Type</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Typical Range</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">How to Avoid</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Minimum Balance Charge</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹100-₹500 per quarter</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Maintain required minimum balance</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ATM Transaction Fees</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹20 after free limit</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Use home bank ATMs, stay within free limits</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">NEFT/RTGS/IMPS Charges</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹0-₹25 (varies by amount)</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Use UPI for free transfers</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Debit Card Annual Fee</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹150-₹500</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Opt for zero annual fee cards, maintain higher balance</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Cheque Book Charges</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">₹2-₹5 per leaf</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Use digital payments, get free cheque leaves with premium accounts</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="upi-guide" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">UPI Payment Guide</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Understanding UPI (Unified Payments Interface)</h3>
+                  <p class="text-neutral-600 mb-4">
+                    UPI is India's revolutionary real-time payment system that allows you to link multiple bank accounts in a single mobile application. It enables seamless fund routing and merchant payments.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <h4 class="font-medium text-neutral-900 mb-3">How UPI Works</h4>
+                      <ol class="list-decimal list-inside space-y-2 text-neutral-600">
+                        <li>Download a UPI app (Google Pay, PhonePe, Paytm, etc.)</li>
+                        <li>Link your bank account(s)</li>
+                        <li>Create a UPI PIN for secure transactions</li>
+                        <li>Start sending/receiving money using mobile number, UPI ID, or QR code</li>
+                      </ol>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-neutral-900 mb-3">Benefits of UPI</h4>
+                      <ul class="list-disc list-inside space-y-2 text-neutral-600">
+                        <li>24/7 availability</li>
+                        <li>Instant transfers</li>
+                        <li>No need to share bank details</li>
+                        <li>Multiple payment methods (QR, ID, number)</li>
+                        <li>Free for most transactions</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-primary-50 p-4 rounded-lg mb-6">
+                    <h4 class="font-medium text-primary-900 mb-2">UPI Transaction Limits</h4>
+                    <p class="text-primary-700 mb-2">As of 2025, the general UPI transaction limits are:</p>
+                    <ul class="list-disc list-inside text-primary-700">
+                      <li>Maximum limit per transaction: ₹1,00,000</li>
+                      <li>Maximum daily limit: ₹1,00,000</li>
+                      <li>Note: Limits may vary by bank and UPI app</li>
+                    </ul>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Popular UPI Apps Comparison</h3>
+                  <div class="overflow-x-auto mb-6">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">App</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Key Features</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unique Benefits</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Best For</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Google Pay</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rewards, bill payments, business payments</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Google Pay Spots, scratch cards</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Rewards seekers, Google users</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">PhonePe</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Insurance, mutual funds, gold investment</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Switch feature, extensive merchant network</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Financial services users, Flipkart shoppers</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Paytm</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Wallet, shopping, entertainment</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Paytm Mall, movie tickets, events</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Lifestyle & entertainment users</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">BHIM</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Simple interface, direct bank integration</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Government backed, lightweight app</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">First-time users, basic transaction needs</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Amazon Pay</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Amazon shopping integration, bill payments</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Amazon Pay Later, shopping rewards</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Amazon shoppers</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Troubleshooting Common UPI Issues</h3>
+                  <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Issue</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Possible Cause</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Solution</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Transaction Failed</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Insufficient balance, network issues</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Check balance, ensure stable internet</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Money Debited but Not Credited</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Bank server timeout</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Wait 24-48 hours for auto-reversal</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Incorrect UPI PIN</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Forgotten PIN</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Reset PIN through UPI app</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">App Crashes During Payment</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">App bug or phone memory issue</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Update app, clear cache</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="kyc-explained" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">KYC Process Explained</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">What is KYC?</h3>
+                  <p class="text-neutral-600 mb-4">
+                    Know Your Customer (KYC) is a mandatory process in India where financial institutions verify the identity and address of their customers. It helps prevent fraud, money laundering, and terrorist financing.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <h4 class="font-medium text-neutral-900 mb-3">Required Documents</h4>
+                      <ul class="list-disc list-inside space-y-2 text-neutral-600">
+                        <li><strong>Identity Proof:</strong> Aadhaar, PAN Card, Passport, Voter ID</li>
+                        <li><strong>Address Proof:</strong> Aadhaar, Utility Bills, Passport</li>
+                        <li><strong>Photograph:</strong> Recent passport-sized photo</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-neutral-900 mb-3">Types of KYC</h4>
+                      <ul class="list-disc list-inside space-y-2 text-neutral-600">
+                        <li><strong>Minimum KYC:</strong> Basic verification with limited transaction limits</li>
+                        <li><strong>Full KYC:</strong> Complete verification with full account features</li>
+                        <li><strong>e-KYC:</strong> Electronic verification using Aadhaar</li>
+                        <li><strong>Video KYC:</strong> Remote verification through video call</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">KYC Process Step-by-Step</h3>
+                  <div class="relative">
+                    <div class="absolute left-4 inset-y-0 w-0.5 bg-gray-200"></div>
+                    <div class="space-y-6 relative">
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">1</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">Document Submission</h4>
+                          <p class="text-neutral-600 mt-1">Submit identity and address proof documents to your bank or financial institution.</p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">2</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">Verification</h4>
+                          <p class="text-neutral-600 mt-1">The institution verifies your documents for authenticity.</p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">3</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">In-Person Verification (if required)</h4>
+                          <p class="text-neutral-600 mt-1">Some institutions may require you to appear in person for verification.</p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">4</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">KYC Approval</h4>
+                          <p class="text-neutral-600 mt-1">Once verified, your KYC is approved and linked to your account.</p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">5</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">Periodic Updates</h4>
+                          <p class="text-neutral-600 mt-1">KYC needs to be updated periodically as per regulations.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-primary-50 p-4 rounded-lg mt-6">
+                    <h4 class="font-medium text-primary-900 mb-2">Central KYC (CKYC)</h4>
+                    <p class="text-primary-700">
+                      Central KYC Registry is a centralized repository of KYC records across the financial sector. Once your CKYC is done, you can use the same KYC for opening accounts with different financial institutions without repeating the entire process.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="investment-guide" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Investment Guide</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Investment Options in India</h3>
+                  <p class="text-neutral-600 mb-6">
+                    India offers a wide range of investment options catering to different risk appetites, time horizons, and financial goals. Understanding these options is crucial for building a diversified portfolio.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Fixed Income</h4>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Fixed Deposits</li>
+                        <li>Public Provident Fund (PPF)</li>
+                        <li>National Savings Certificate</li>
+                        <li>Government Bonds</li>
+                        <li>Corporate Bonds</li>
+                      </ul>
+                      <p class="text-xs text-neutral-500 mt-2">Risk: Low | Returns: 5-8%</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Equity</h4>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Direct Stocks</li>
+                        <li>Equity Mutual Funds</li>
+                        <li>Index Funds</li>
+                        <li>Exchange Traded Funds (ETFs)</li>
+                        <li>IPOs</li>
+                      </ul>
+                      <p class="text-xs text-neutral-500 mt-2">Risk: High | Returns: 10-15%</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Alternative Investments</h4>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Real Estate</li>
+                        <li>Gold & Silver</li>
+                        <li>REITs & InvITs</li>
+                        <li>P2P Lending</li>
+                        <li>Cryptocurrency (regulated)</li>
+                      </ul>
+                      <p class="text-xs text-neutral-500 mt-2">Risk: Varies | Returns: 8-20%</p>
+                    </div>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Investment Strategies by Goal</h3>
+                  <div class="overflow-x-auto mb-6">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Goal</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time Horizon</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Recommended Investments</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Emergency Fund</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0-1 year</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Savings Account, Liquid Funds</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Short-term Goals</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1-3 years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">FDs, Short-term Debt Funds, RDs</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Medium-term Goals</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3-7 years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Hybrid Funds, Balanced Funds, Corporate Bonds</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Long-term Goals</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7+ years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Equity Funds, Index Funds, PPF, NPS</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Retirement</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15+ years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">NPS, EPF, Equity Funds, PPF</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Tax Saving</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Varies</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ELSS, PPF, NPS, Tax-saving FDs</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Mutual Fund Investment Process</h3>
+                  <div class="relative">
+                    <div class="absolute left-4 inset-y-0 w-0.5 bg-gray-200"></div>
+                    <div class="space-y-6 relative">
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">1</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">KYC Completion</h4>
+                          <p class="text-neutral-600 mt-1">Complete your KYC process through a KYC Registration Agency (KRA).</p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">2</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">Choose Investment Platform</h4>
+                          <p class="text-neutral-600 mt-1">Select a platform: AMC website, broker, or investment app.</p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">3</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">Select Funds</h4>
+                          <p class="text-neutral-600 mt-1">Research and choose funds based on your goals and risk appetite.</p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">4</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">SIP or Lumpsum</h4>
+                          <p class="text-neutral-600 mt-1">Decide between regular investments (SIP) or one-time investment (lumpsum).</p>
+                        </div>
+                      </div>
+                      <div class="flex">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center z-10 mr-4">5</div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900">Monitor & Rebalance</h4>
+                          <p class="text-neutral-600 mt-1">Regularly review your investments and adjust as needed.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="loan-comparison" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Loan Comparison</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Types of Loans in India</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Understanding different loan types, their features, and eligibility criteria can help you make informed borrowing decisions.
+                  </p>
+                  
+                  <div class="overflow-x-auto mb-8">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Loan Type</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Interest Rate Range</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Typical Tenure</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Key Features</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Home Loan</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6.5% - 9.5%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5-30 years</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Tax benefits, high loan amount, property as collateral</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Personal Loan</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10.5% - 24%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1-5 years</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">No collateral, quick disbursal, flexible usage</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Car Loan</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7.5% - 12%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1-7 years</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Vehicle as collateral, up to 100% financing</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Education Loan</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8% - 15%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5-15 years</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Tax benefits, moratorium period, covers tuition & living expenses</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Business Loan</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">11% - 30%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1-5 years</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Secured/unsecured options, business expansion, working capital</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Gold Loan</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7% - 29%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 months - 3 years</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Gold as collateral, quick disbursal, minimal documentation</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Factors to Consider When Comparing Loans</h3>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Interest Rate</h4>
+                      <p class="text-sm text-neutral-600">Compare both advertised and effective rates. Check if fixed or floating.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Processing Fee</h4>
+                      <p class="text-sm text-neutral-600">One-time fee ranging from 0.5% to 2% of loan amount. Negotiate for lower fees.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Prepayment Penalties</h4>
+                      <p class="text-sm text-neutral-600">Charges for paying off loan early. Some loans have zero prepayment charges.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Loan Tenure</h4>
+                      <p class="text-sm text-neutral-600">Longer tenure means lower EMI but higher total interest cost.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Hidden Charges</h4>
+                      <p class="text-sm text-neutral-600">Documentation fees, insurance, late payment fees, etc. Read the fine print.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Loan-to-Value Ratio</h4>
+                      <p class="text-sm text-neutral-600">For secured loans, percentage of asset value that can be financed.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-primary-50 p-4 rounded-lg">
+                    <h4 class="font-medium text-primary-900 mb-2">Pro Tip: Calculate the Total Cost of Loan</h4>
+                    <p class="text-primary-700">
+                      Don't just compare EMIs. Calculate the total amount you'll pay over the loan tenure (EMI × Number of Months + Processing Fee + Other Charges). This gives you the true cost of borrowing.
+                    </p>
+                    <p class="text-primary-700 mt-2">
+                      Use our <a href="/calculators/loan-comparison-calculator" class="text-primary-600 underline">Loan Comparison Calculator</a> to easily compare different loan offers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="tax-planning" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Tax Planning</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Understanding Indian Tax System</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Effective tax planning can help you legally minimize your tax liability while ensuring compliance with tax laws. Understanding the tax system is the first step toward optimizing your tax situation.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                      <h4 class="font-medium text-neutral-900 mb-3">Old vs. New Tax Regime</h4>
+                      <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                          <thead class="bg-gray-50">
+                            <tr>
+                              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature</th>
+                              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Old Regime</th>
+                              <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">New Regime</th>
+                            </tr>
+                          </thead>
+                          <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                              <td class="px-4 py-2 text-sm font-medium text-gray-900">Tax Rates</td>
+                              <td class="px-4 py-2 text-sm text-gray-500">Higher</td>
+                              <td class="px-4 py-2 text-sm text-gray-500">Lower</td>
+                            </tr>
+                            <tr>
+                              <td class="px-4 py-2 text-sm font-medium text-gray-900">Deductions</td>
+                              <td class="px-4 py-2 text-sm text-gray-500">Available</td>
+                              <td class="px-4 py-2 text-sm text-gray-500">Limited</td>
+                            </tr>
+                            <tr>
+                              <td class="px-4 py-2 text-sm font-medium text-gray-900">Exemptions</td>
+                              <td class="px-4 py-2 text-sm text-gray-500">Available</td>
+                              <td class="px-4 py-2 text-sm text-gray-500">Limited</td>
+                            </tr>
+                            <tr>
+                              <td class="px-4 py-2 text-sm font-medium text-gray-900">Best For</td>
+                              <td class="px-4 py-2 text-sm text-gray-500">Those with many investments & deductions</td>
+                              <td class="px-4 py-2 text-sm text-gray-500">Those with few deductions</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-neutral-900 mb-3">Key Tax-Saving Sections</h4>
+                      <ul class="list-disc list-inside space-y-2 text-neutral-600">
+                        <li><strong>Section 80C:</strong> Up to ₹1.5 lakh deduction for investments in PPF, ELSS, life insurance, etc.</li>
+                        <li><strong>Section 80D:</strong> Up to ₹1 lakh deduction for health insurance premiums</li>
+                        <li><strong>Section 80G:</strong> Deduction for donations to charitable organizations</li>
+                        <li><strong>Section 24:</strong> Up to ₹2 lakh deduction on home loan interest</li>
+                        <li><strong>Section 80CCD(1B):</strong> Additional ₹50,000 deduction for NPS contribution</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Tax-Saving Investment Options</h3>
+                  <div class="overflow-x-auto mb-6">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Investment</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lock-in Period</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Expected Returns</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Risk Level</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tax Section</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ELSS Mutual Funds</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10-12%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">High</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">80C</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">PPF</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15 years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7-8%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Low</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">80C</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">NPS</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Until retirement</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8-10%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Moderate</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">80C, 80CCD(1B)</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Tax-Saving FD</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5 years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5-6%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Low</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">80C</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Sukanya Samriddhi</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">21 years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7-8%</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Low</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">80C</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Health Insurance</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 year</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">N/A</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">N/A</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">80D</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Tax Planning Tips</h3>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Start Early</h4>
+                      <p class="text-sm text-neutral-600">Begin tax planning at the start of the financial year, not just before the deadline.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Choose the Right Regime</h4>
+                      <p class="text-sm text-neutral-600">Compare old vs. new tax regime to see which is more beneficial for you.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Maximize Deductions</h4>
+                      <p class="text-sm text-neutral-600">Fully utilize available deductions under various sections of the Income Tax Act.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">HRA Optimization</h4>
+                      <p class="text-sm text-neutral-600">If you pay rent, claim HRA exemption to reduce taxable income.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Tax-Efficient Investments</h4>
+                      <p class="text-sm text-neutral-600">Consider post-tax returns rather than just tax savings when choosing investments.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Keep Documentation</h4>
+                      <p class="text-sm text-neutral-600">Maintain proper records of all tax-saving investments and expenses.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="retirement-planning" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Retirement Planning</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Why Retirement Planning is Crucial</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Retirement planning ensures financial independence in your golden years. With increasing life expectancy and rising healthcare costs, having a solid retirement strategy is more important than ever.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                      <h4 class="font-medium text-neutral-900 mb-3">Retirement Planning Steps</h4>
+                      <ol class="list-decimal list-inside space-y-2 text-neutral-600">
+                        <li>Determine your retirement age goal</li>
+                        <li>Estimate your post-retirement expenses</li>
+                        <li>Calculate the corpus needed</li>
+                        <li>Assess your current savings</li>
+                        <li>Create a savings & investment plan</li>
+                        <li>Review and adjust regularly</li>
+                      </ol>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-neutral-900 mb-3">Factors to Consider</h4>
+                      <ul class="list-disc list-inside space-y-2 text-neutral-600">
+                        <li>Inflation (typically 6-7% in India)</li>
+                        <li>Life expectancy (increasing trend)</li>
+                        <li>Healthcare costs (rising faster than inflation)</li>
+                        <li>Lifestyle expectations</li>
+                        <li>Dependent family members</li>
+                        <li>Emergency funds</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Retirement Investment Options in India</h3>
+                  <div class="overflow-x-auto mb-6">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Investment Option</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Features</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Expected Returns</th>
+                          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tax Benefits</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">National Pension System (NPS)</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Government-backed, market-linked, partial withdrawal at 60</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8-10%</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Deduction under 80C (₹1.5L) & 80CCD(1B) (additional ₹50K)</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Employee Provident Fund (EPF)</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Employer contribution, fixed returns, low risk</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8-8.5%</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">EEE status (tax-free at all stages)</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Public Provident Fund (PPF)</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Government-backed, 15-year lock-in, partial withdrawal after 7 years</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7-8%</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Deduction under 80C, EEE status</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Equity Mutual Funds</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Market-linked, high growth potential, higher risk</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12-15%</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">ELSS funds eligible for 80C deduction</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Senior Citizen Savings Scheme</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">For those above 60, 5-year tenure, quarterly interest payout</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7.4-8%</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Deduction under 80C</td>
+                        </tr>
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Pradhan Mantri Vaya Vandana Yojana</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Pension scheme for senior citizens, guaranteed returns</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">7.4%</td>
+                          <td class="px-6 py-4 text-sm text-gray-500">Tax benefits under Section 10(10D)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Retirement Corpus Calculator</h3>
+                  <p class="text-neutral-600 mb-4">
+                    Use our <a href="/calculators/retirement-calculator" class="text-primary-600 underline">Retirement Calculator</a> to estimate how much you need to save for a comfortable retirement.
+                  </p>
+                  
+                  <div class="bg-primary-50 p-4 rounded-lg">
+                    <h4 class="font-medium text-primary-900 mb-2">The Power of Early Start</h4>
+                    <p class="text-primary-700 mb-2">
+                      Starting early dramatically reduces the monthly investment needed to reach your retirement goals:
+                    </p>
+                    <div class="overflow-x-auto">
+                      <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-primary-100">
+                          <tr>
+                            <th class="px-4 py-2 text-left text-xs font-medium text-primary-800 uppercase tracking-wider">Starting Age</th>
+                            <th class="px-4 py-2 text-left text-xs font-medium text-primary-800 uppercase tracking-wider">Monthly Investment</th>
+                            <th class="px-4 py-2 text-left text-xs font-medium text-primary-800 uppercase tracking-wider">Retirement Corpus at 60</th>
+                          </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                          <tr>
+                            <td class="px-4 py-2 text-sm font-medium text-primary-900">25 years</td>
+                            <td class="px-4 py-2 text-sm text-primary-700">₹5,000</td>
+                            <td class="px-4 py-2 text-sm text-primary-700">₹1.58 Crore</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 py-2 text-sm font-medium text-primary-900">35 years</td>
+                            <td class="px-4 py-2 text-sm text-primary-700">₹15,000</td>
+                            <td class="px-4 py-2 text-sm text-primary-700">₹1.58 Crore</td>
+                          </tr>
+                          <tr>
+                            <td class="px-4 py-2 text-sm font-medium text-primary-900">45 years</td>
+                            <td class="px-4 py-2 text-sm text-primary-700">₹50,000</td>
+                            <td class="px-4 py-2 text-sm text-primary-700">₹1.58 Crore</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="text-xs text-primary-600 mt-2">
+                      *Assuming 12% annual returns, retirement at 60, and a target corpus of ₹1.58 Crore
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="insurance-guide" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Insurance Guide</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Types of Insurance Everyone Should Consider</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Insurance is a crucial part of financial planning that protects you and your family from unexpected financial burdens. Here are the essential insurance types to consider:
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                      <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                          </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-neutral-900">Health Insurance</h4>
+                      </div>
+                      <p class="text-neutral-600 mb-3">
+                        Covers medical expenses for hospitalization, treatments, and procedures. Essential for managing healthcare costs.
+                      </p>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Recommended coverage: 5-10 lakhs per person</li>
+                        <li>Consider family floater plans for better value</li>
+                        <li>Check for coverage of pre-existing conditions</li>
+                        <li>Look for cashless hospital network</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                      <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                            <path d="M4 22h16"></path>
+                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                          </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-neutral-900">Term Life Insurance</h4>
+                      </div>
+                      <p class="text-neutral-600 mb-3">
+                        Provides financial protection to your family in case of your untimely death. Pure risk coverage without investment component.
+                      </p>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Recommended coverage: 10-15 times annual income</li>
+                        <li>Choose adequate tenure (until retirement)</li>
+                        <li>Compare premium rates across insurers</li>
+                        <li>Check claim settlement ratio of insurer</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                      <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+                            <path d="M19 5H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z"></path>
+                            <path d="M12 13V7"></path>
+                            <path d="M9 10h6"></path>
+                            <path d="M9 17h6"></path>
+                          </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-neutral-900">Motor Insurance</h4>
+                      </div>
+                      <p class="text-neutral-600 mb-3">
+                        Mandatory for all vehicles. Protects against financial loss due to vehicle damage or third-party liability.
+                      </p>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Third-party liability is mandatory by law</li>
+                        <li>Comprehensive coverage recommended for new vehicles</li>
+                        <li>Check for add-ons like zero depreciation, roadside assistance</li>
+                        <li>Compare IDV (Insured Declared Value) across insurers</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                      <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                          </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-neutral-900">Home Insurance</h4>
+                      </div>
+                      <p class="text-neutral-600 mb-3">
+                        Protects your home and belongings against damage from natural disasters, theft, and other perils.
+                      </p>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Structure coverage for building damage</li>
+                        <li>Contents coverage for belongings</li>
+                        <li>Check for exclusions and sub-limits</li>
+                        <li>Consider liability coverage for third-party injuries</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Insurance Buying Tips</h3>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Buy Adequate Coverage</h4>
+                      <p class="text-sm text-neutral-600">Don't underinsure to save on premiums. Ensure coverage meets your actual needs.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Compare Before Buying</h4>
+                      <p class="text-sm text-neutral-600">Compare premiums, coverage, exclusions, and claim settlement ratios across insurers.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Disclose Everything</h4>
+                      <p class="text-sm text-neutral-600">Be transparent about pre-existing conditions, habits, etc. Non-disclosure can lead to claim rejection.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Read the Fine Print</h4>
+                      <p class="text-sm text-neutral-600">Understand exclusions, waiting periods, sub-limits, and co-payment clauses.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Review Periodically</h4>
+                      <p class="text-sm text-neutral-600">Reassess your insurance needs as your life circumstances change.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Avoid Over-Insurance</h4>
+                      <p class="text-sm text-neutral-600">Don't buy multiple policies with overlapping coverage. Consolidate for better value.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-primary-50 p-4 rounded-lg">
+                    <h4 class="font-medium text-primary-900 mb-2">Insurance Calculators</h4>
+                    <p class="text-primary-700 mb-3">
+                      Use our calculators to determine the right coverage amount for your needs:
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <a href="/calculators/term-insurance-calculator" class="text-primary-600 hover:text-primary-800 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5v14"></path>
+                        </svg>
+                        Term Insurance Calculator
+                      </a>
+                      <a href="/calculators/health-insurance-calculator" class="text-primary-600 hover:text-primary-800 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5v14"></path>
+                        </svg>
+                        Health Insurance Calculator
+                      </a>
+                      <a href="/calculators/human-life-value-calculator" class="text-primary-600 hover:text-primary-800 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5v14"></path>
+                        </svg>
+                        Human Life Value Calculator
+                      </a>
+                      <a href="/calculators/car-insurance-calculator" class="text-primary-600 hover:text-primary-800 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5v14"></path>
+                        </svg>
+                        Car Insurance Calculator
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="scam-detection" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Financial Scam Detection</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Common Financial Scams in India</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Financial scams are increasingly sophisticated. Being aware of common scams can help you protect your hard-earned money.
+                  </p>
+                  
+                  <div class="space-y-6 mb-8">
+                    <div class="bg-error-50 border-l-4 border-error-500 p-4 rounded-r-lg">
+                      <div class="flex">
+                        <div class="flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error-500">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                          </svg>
+                        </div>
+                        <div class="ml-3">
+                          <h4 class="text-lg font-medium text-error-800">Phishing Scams</h4>
+                          <p class="mt-2 text-error-700">
+                            Fraudsters pose as banks or financial institutions to trick you into revealing sensitive information like passwords, OTPs, or card details.
+                          </p>
+                          <div class="mt-3">
+                            <h5 class="font-medium text-error-800">Red Flags:</h5>
+                            <ul class="list-disc list-inside text-sm text-error-700 mt-1">
+                              <li>Emails or messages with urgent requests for information</li>
+                              <li>Links to suspicious websites that mimic legitimate ones</li>
+                              <li>Poor grammar or spelling in official communications</li>
+                              <li>Requests for OTP, PIN, CVV, or password</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="bg-error-50 border-l-4 border-error-500 p-4 rounded-r-lg">
+                      <div class="flex">
+                        <div class="flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error-500">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                          </svg>
+                        </div>
+                        <div class="ml-3">
+                          <h4 class="text-lg font-medium text-error-800">Investment Scams</h4>
+                          <p class="mt-2 text-error-700">
+                            Promises of unrealistically high returns with little or no risk. These include Ponzi schemes, fake cryptocurrency investments, and unregistered chit funds.
+                          </p>
+                          <div class="mt-3">
+                            <h5 class="font-medium text-error-800">Red Flags:</h5>
+                            <ul class="list-disc list-inside text-sm text-error-700 mt-1">
+                              <li>Guaranteed high returns (anything above 15% should raise suspicion)</li>
+                              <li>Pressure to invest quickly</li>
+                              <li>Lack of proper documentation or registration</li>
+                              <li>Complicated investment structures that are hard to understand</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="bg-error-50 border-l-4 border-error-500 p-4 rounded-r-lg">
+                      <div class="flex">
+                        <div class="flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-error-500">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                          </svg>
+                        </div>
+                        <div class="ml-3">
+                          <h4 class="text-lg font-medium text-error-800">KYC Update Scams</h4>
+                          <p class="mt-2 text-error-700">
+                            Scammers claim your KYC needs updating and ask for personal information or remote access to your device.
+                          </p>
+                          <div class="mt-3">
+                            <h5 class="font-medium text-error-800">Red Flags:</h5>
+                            <ul class="list-disc list-inside text-sm text-error-700 mt-1">
+                              <li>Threatening messages about account suspension</li>
+                              <li>Requests to download screen-sharing apps</li>
+                              <li>Links to fake KYC update portals</li>
+                              <li>Calls from unknown numbers claiming to be bank officials</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">How to Protect Yourself</h3>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Verify Before Trusting</h4>
+                      <p class="text-sm text-neutral-600">Always verify the identity of anyone requesting financial information by calling official numbers.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Never Share OTPs</h4>
+                      <p class="text-sm text-neutral-600">Banks never ask for OTPs, PINs, or passwords over phone or email.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Check for SEBI/RBI Registration</h4>
+                      <p class="text-sm text-neutral-600">Verify if investment companies are registered with regulatory bodies.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Be Skeptical of "Too Good" Offers</h4>
+                      <p class="text-sm text-neutral-600">If it sounds too good to be true, it probably is.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Use Official Apps & Websites</h4>
+                      <p class="text-sm text-neutral-600">Download financial apps only from official app stores.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Enable 2-Factor Authentication</h4>
+                      <p class="text-sm text-neutral-600">Add an extra layer of security to all your financial accounts.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-primary-50 p-4 rounded-lg">
+                    <h4 class="font-medium text-primary-900 mb-2">What to Do If You're Scammed</h4>
+                    <ol class="list-decimal list-inside text-primary-700 space-y-2">
+                      <li>Report to your bank immediately to block transactions</li>
+                      <li>File a complaint on the National Cyber Crime Reporting Portal (cybercrime.gov.in)</li>
+                      <li>Report to local police with all evidence</li>
+                      <li>If related to investments, report to SEBI</li>
+                      <li>Monitor your credit report for unauthorized activities</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="digital-banking" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Digital Banking</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Digital Banking Ecosystem in India</h3>
+                  <p class="text-neutral-600 mb-6">
+                    India's digital banking landscape has evolved rapidly, offering convenient, efficient, and accessible financial services. Understanding the various digital banking tools can help you manage your finances more effectively.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                      <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                          </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-neutral-900">Mobile Banking</h4>
+                      </div>
+                      <p class="text-neutral-600 mb-3">
+                        Bank-specific apps that provide access to your accounts, transfers, bill payments, and more.
+                      </p>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>24/7 account access</li>
+                        <li>Fund transfers (IMPS, NEFT, RTGS)</li>
+                        <li>Bill payments and recharges</li>
+                        <li>Investment services</li>
+                        <li>Loan applications</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                      <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                          </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-neutral-900">Internet Banking</h4>
+                      </div>
+                      <p class="text-neutral-600 mb-3">
+                        Web-based banking platforms accessible from any browser, offering comprehensive banking services.
+                      </p>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Detailed account statements</li>
+                        <li>Higher transaction limits than mobile</li>
+                        <li>Tax payment services</li>
+                        <li>Fixed deposit creation</li>
+                        <li>Cheque book requests</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                      <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                          </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-neutral-900">Digital Wallets</h4>
+                      </div>
+                      <p class="text-neutral-600 mb-3">
+                        Mobile-based payment systems that store funds and enable quick transactions.
+                      </p>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Quick peer-to-peer transfers</li>
+                        <li>Merchant payments</li>
+                        <li>Bill payments and recharges</li>
+                        <li>Rewards and cashbacks</li>
+                        <li>Examples: Paytm, PhonePe, Amazon Pay</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                      <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <line x1="22" y1="10" x2="2" y2="10"></line>
+                          </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-neutral-900">Digital Payment Cards</h4>
+                      </div>
+                      <p class="text-neutral-600 mb-3">
+                        Virtual debit and credit cards for online transactions without physical cards.
+                      </p>
+                      <ul class="list-disc list-inside text-sm text-neutral-600 space-y-1">
+                        <li>Enhanced security for online shopping</li>
+                        <li>One-time use options available</li>
+                        <li>Instant issuance</li>
+                        <li>Customizable spending limits</li>
+                        <li>Examples: RuPay, Visa, Mastercard virtual cards</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Digital Banking Security Best Practices</h3>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Use Strong Passwords</h4>
+                      <p class="text-sm text-neutral-600">Create complex passwords with a mix of letters, numbers, and special characters. Never reuse passwords.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Enable Two-Factor Authentication</h4>
+                      <p class="text-sm text-neutral-600">Add an extra layer of security beyond just passwords for all financial accounts.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Use Secure Networks</h4>
+                      <p class="text-sm text-neutral-600">Avoid public Wi-Fi for banking. Use mobile data or secure home networks instead.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Keep Apps Updated</h4>
+                      <p class="text-sm text-neutral-600">Regularly update banking apps and operating systems to get the latest security patches.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Monitor Accounts Regularly</h4>
+                      <p class="text-sm text-neutral-600">Check your accounts frequently to spot unauthorized transactions early.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                      <h4 class="font-medium text-neutral-900 mb-2">Set Transaction Limits</h4>
+                      <p class="text-sm text-neutral-600">Configure daily transaction limits to minimize potential losses if compromised.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-primary-50 p-4 rounded-lg">
+                    <h4 class="font-medium text-primary-900 mb-2">Digital Banking Tools Comparison</h4>
+                    <p class="text-primary-700 mb-3">
+                      Use our <a href="/calculators/upi-failure-troubleshooter" class="text-primary-600 underline">UPI Failure Troubleshooter</a> and <a href="/calculators/bank-ifsc-finder" class="text-primary-600 underline">Bank IFSC Finder</a> to enhance your digital banking experience.
+                    </p>
+                    <p class="text-primary-700">
+                      For more banking tools and resources, visit our <a href="/calculators/banking-knowledge" class="text-primary-600 underline">Banking Knowledge</a> section.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="astro-finance" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Astro-Finance Insights Hub</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <div class="flex flex-col md:flex-row items-center gap-6 mb-8">
+                    <div class="md:w-1/2">
+                      <h3 class="text-xl font-semibold text-neutral-900 mb-4">Where Astrology Meets Finance</h3>
+                      <p class="text-neutral-600 mb-4">
+                        Explore our unique Astro-Finance Insights Hub, where traditional astrological wisdom meets modern financial planning. Discover how cosmic influences might align with your financial decisions and life path.
+                      </p>
+                      <p class="text-neutral-600 mb-4">
+                        While we emphasize that financial decisions should always be based on sound financial principles, many in India also consider astrological insights as a complementary perspective.
+                      </p>
+                      <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Daily Finance Horoscopes</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Zodiac Compatibility</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Lucky Numbers</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Auspicious Timing</span>
+                      </div>
+                      <a 
+                        href="/astro-finance-insights.html" 
+                        class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
+                      >
+                        Explore Astro-Finance Insights
+                        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="md:w-1/2">
+                      <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                          <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-2">🌙</span>
+                            <h4 class="font-medium text-purple-800">Moon Sign Calculator</h4>
+                          </div>
+                          <p class="text-sm text-purple-700">Find your Vedic Moon Sign (Janma Rashi) and its financial implications</p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                          <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-2">💰</span>
+                            <h4 class="font-medium text-indigo-800">Finance Horoscope</h4>
+                          </div>
+                          <p class="text-sm text-indigo-700">Daily and monthly financial predictions for your zodiac sign</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                          <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-2">⏰</span>
+                            <h4 class="font-medium text-blue-800">Muhurat Finder</h4>
+                          </div>
+                          <p class="text-sm text-blue-700">Find auspicious times for important financial decisions</p>
+                        </div>
+                        <div class="bg-pink-50 p-4 rounded-lg">
+                          <div class="flex items-center mb-2">
+                            <span class="text-2xl mr-2">🔢</span>
+                            <h4 class="font-medium text-pink-800">Numerology</h4>
+                          </div>
+                          <p class="text-sm text-pink-700">Discover your lucky numbers for financial decisions</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Featured Astro-Finance Tools</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <a href="/astro-finance-insights.html#daily-finance-horoscope" class="bg-white border border-purple-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-2">💸</span>
+                        <h4 class="font-medium text-neutral-900">Daily Finance Horoscope</h4>
+                      </div>
+                      <p class="text-sm text-neutral-600">Get daily financial predictions tailored to your zodiac sign</p>
+                    </a>
+                    <a href="/astro-finance-insights.html#stock-market-astrology" class="bg-white border border-purple-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-2">📈</span>
+                        <h4 class="font-medium text-neutral-900">Stock Market Astrology</h4>
+                      </div>
+                      <p class="text-sm text-neutral-600">Explore astrological insights for stock market timing</p>
+                    </a>
+                    <a href="/astro-finance-insights.html#auspicious-time-finder" class="bg-white border border-purple-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                      <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-2">⏰</span>
+                        <h4 class="font-medium text-neutral-900">Auspicious Time Finder</h4>
+                      </div>
+                      <p class="text-sm text-neutral-600">Find favorable times for business launches and major purchases</p>
+                    </a>
+                  </div>
+                  
+                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <div class="ml-3">
+                        <h3 class="text-sm font-medium text-yellow-800">Important Disclaimer</h3>
+                        <div class="mt-2 text-sm text-yellow-700">
+                          <p>The astrological insights provided are for entertainment and cultural interest only. Financial decisions should always be based on sound financial principles, research, and professional advice when needed.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="section" id="digital-banking">
-    <div class="container">
-      <div class="section-title">
-        <h2>Digital Banking Guide</h2>
-        <p>Master online and mobile banking with our comprehensive tutorials and security best practices</p>
-      </div>
-      
-      <div class="card-grid">
-        <!-- Mobile Banking Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                <line x1="12" y1="18" x2="12" y2="18"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Mobile Banking Essentials</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Learn how to safely and effectively use mobile banking apps for your day-to-day financial needs.</p>
-            <ul class="card-features">
-              <li>Setting up and securing your mobile banking app</li>
-              <li>Common features and transactions</li>
-              <li>Troubleshooting login and transaction issues</li>
-              <li>Security best practices for mobile banking</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#mobile-banking" class="card-link">
-              Explore Mobile Banking
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Net Banking Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <h3 class="card-title">Net Banking Guide</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Master online banking through your computer with our comprehensive guide to features, security, and troubleshooting.</p>
-            <ul class="card-features">
-              <li>First-time login and setup process</li>
-              <li>Advanced features like RTGS, NEFT, and IMPS</li>
-              <li>Managing beneficiaries and scheduled payments</li>
-              <li>Secure browsing practices</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#net-banking" class="card-link">
-              Learn Net Banking
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Digital Security Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-            </div>
-            <h3 class="card-title">Digital Banking Security</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description">Protect your financial information and accounts with essential security practices for the digital age.</p>
-            <ul class="card-features">
-              <li>Creating and managing strong passwords</li>
-              <li>Recognizing phishing attempts</li>
-              <li>Secure device management</li>
-              <li>What to do if your account is compromised</li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <a href="#digital-security" class="card-link">
-              Enhance Your Security
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="interactive-demo">
-        <h3>Mobile Banking App Simulator</h3>
-        <p>Practice using a mobile banking app in our safe, simulated environment.</p>
-        
-        <div class="demo-tabs">
-          <div class="demo-tab active" data-tab="login">Login & Dashboard</div>
-          <div class="demo-tab" data-tab="transfer">Fund Transfer</div>
-          <div class="demo-tab" data-tab="bill-pay">Bill Payment</div>
-        </div>
-        
-        <div class="demo-content active" id="login">
-          <div class="demo-screen">
-            <h4>Mobile Banking Login</h4>
-            <p>1. Open your banking app and enter your User ID</p>
-            <p>2. Enter your password or use biometric authentication if enabled</p>
-            <p>3. Some banks may require an additional OTP for verification</p>
-            <p>4. Review your dashboard for account summary, recent transactions, and quick actions</p>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button">Next: Fund Transfer</button>
-          </div>
-        </div>
-        
-        <div class="demo-content" id="transfer">
-          <div class="demo-screen">
-            <h4>Fund Transfer Process</h4>
-            <p>1. Select "Fund Transfer" or "Send Money" from the menu</p>
-            <p>2. Choose transfer method (IMPS/NEFT/RTGS) or select from saved beneficiaries</p>
-            <p>3. Enter amount and purpose of transfer</p>
-            <p>4. Verify details and confirm with password/OTP</p>
-            <p>5. Save transaction receipt for your records</p>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button secondary">Back</button>
-            <button class="demo-button">Next: Bill Payment</button>
-          </div>
-        </div>
-        
-        <div class="demo-content" id="bill-pay">
-          <div class="demo-screen">
-            <h4>Bill Payment Process</h4>
-            <p>1. Select "Bill Payment" from the menu</p>
-            <p>2. Choose biller category (electricity, water, mobile, etc.)</p>
-            <p>3. Select your service provider</p>
-            <p>4. Enter consumer/account number and verify details</p>
-            <p>5. Enter amount and proceed to payment</p>
-            <p>6. Confirm with password/OTP and save receipt</p>
-          </div>
-          <div class="demo-actions">
-            <button class="demo-button secondary">Back</button>
-            <button class="demo-button">Finish Tutorial</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonial-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>User Success Stories</h2>
-        <p>See how our Financial Navigator has helped people across India improve their financial literacy</p>
-      </div>
-      
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            "The UPI Explainer helped me understand how digital payments work. Now I confidently use UPI for all my transactions and even helped my parents set it up. The security tips were especially useful!"
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">
-              <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Rajesh from Mumbai">
-            </div>
-            <div class="testimonial-info">
-              <h4>Rajesh Sharma</h4>
-              <p>Mumbai, Maharashtra</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            "Thanks to the Loan Comparison Tool, I saved over ₹2 lakhs on my home loan by identifying hidden charges and negotiating better terms. The jargon decoder made it easy to understand complex loan agreements."
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">
-              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Priya from Bangalore">
-            </div>
-            <div class="testimonial-info">
-              <h4>Priya Nair</h4>
-              <p>Bangalore, Karnataka</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            "The Financial Scam Detector was a lifesaver! I almost fell for an investment scheme promising 24% returns, but the red flags section helped me identify it as a potential Ponzi scheme. Saved my hard-earned money!"
-          </div>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">
-              <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Vikram from Delhi">
-            </div>
-            <div class="testimonial-info">
-              <h4>Vikram Singh</h4>
-              <p>Delhi, NCR</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Frequently Asked Questions</h2>
-        <p>Find answers to common questions about our Financial Navigator tools</p>
-      </div>
-      
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Is the Financial Navigator free to use?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m6 9 6 6 6-6"></path>
+  <footer class="bg-neutral-800 text-neutral-100 py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center space-x-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-400">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
             </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Yes, all tools and resources in the Financial Navigator are completely free to use. We believe financial education should be accessible to everyone. There are no hidden charges or premium features.</p>
-          </div>
+            <span class="text-xl font-bold text-white">FinCalc India</span>
+          </a>
+          <p class="text-neutral-300 mb-4">
+            Your trusted source for all financial calculations and guidance tailored for the Indian context.
+          </p>
         </div>
         
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>How accurate is the information provided?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>We strive to provide the most accurate and up-to-date information possible. Our content is regularly reviewed and updated to reflect the latest regulations, practices, and market conditions in India. However, financial regulations can change rapidly, so we always recommend verifying critical information with official sources.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Is my personal information safe when using these tools?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>Absolutely. Our Financial Navigator tools are designed to be educational and don't require you to input sensitive personal or financial information. All simulations and demonstrations are conducted in a secure, sandboxed environment. We do not store any personal data entered during tool usage.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Can I get personalized financial advice through these tools?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>The Financial Navigator is designed for educational purposes and provides general information rather than personalized financial advice. For advice tailored to your specific financial situation, we recommend consulting with a qualified financial advisor. Our tools can help you become more informed and ask better questions when seeking professional guidance.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>How often is the content updated?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </div>
-          <div class="faq-answer">
-            <p>We update our content regularly to ensure accuracy and relevance. Major updates occur quarterly, with minor updates and corrections implemented as needed. Each tool displays its last update date at the bottom, so you can see when the information was last reviewed.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Take Control of Your Financial Journey?</h2>
-      <p>Explore our comprehensive suite of financial calculators to complement your newfound knowledge</p>
-      <a href="/" class="cta-button">Explore FinCalc India</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h3>FinCalc India</h3>
-          <ul class="footer-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about-us">About Us</a></li>
-            <li><a href="/contact-us">Contact Us</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/sitemap">Sitemap</a></li>
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-neutral-300 hover:text-white transition-colors">Home</a></li>
+            <li><a href="/blog" class="text-neutral-300 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/about-us" class="text-neutral-300 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="/contact-us" class="text-neutral-300 hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="/privacy-policy" class="text-neutral-300 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions" class="text-neutral-300 hover:text-white transition-colors">Terms & Conditions</a></li>
           </ul>
         </div>
         
-        <div class="footer-column">
-          <h3>Popular Calculators</h3>
-          <ul class="footer-links">
-            <li><a href="/calculators/emi-calculator">EMI Calculator</a></li>
-            <li><a href="/calculators/sip-calculator">SIP Calculator</a></li>
-            <li><a href="/calculators/income-tax-calculator">Income Tax Calculator</a></li>
-            <li><a href="/calculators/ppf-calculator">PPF Calculator</a></li>
-            <li><a href="/calculators/gst-calculator">GST Calculator</a></li>
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Popular Tools</h3>
+          <ul class="space-y-2">
+            <li><a href="/calculators/emi-calculator" class="text-neutral-300 hover:text-white transition-colors">EMI Calculator</a></li>
+            <li><a href="/calculators/sip-calculator" class="text-neutral-300 hover:text-white transition-colors">SIP Calculator</a></li>
+            <li><a href="/calculators/income-tax-calculator" class="text-neutral-300 hover:text-white transition-colors">Income Tax Calculator</a></li>
+            <li><a href="/calculators/ppf-calculator" class="text-neutral-300 hover:text-white transition-colors">PPF Calculator</a></li>
+            <li><a href="/calculators/gst-calculator" class="text-neutral-300 hover:text-white transition-colors">GST Calculator</a></li>
           </ul>
         </div>
         
-        <div class="footer-column">
-          <h3>Financial Tools</h3>
-          <ul class="footer-links">
-            <li><a href="/calculators/bank-ifsc-finder">Bank IFSC Finder</a></li>
-            <li><a href="/calculators/upi-failure-troubleshooter">UPI Troubleshooter</a></li>
-            <li><a href="/calculators/atm-locator">ATM Locator</a></li>
-            <li><a href="/calculators/bank-holiday-calendar">Bank Holiday Calendar</a></li>
-            <li><a href="/calculators/interest-rates-comparison">Interest Rates Comparison</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Legal</h3>
-          <ul class="footer-links">
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
-            <li><a href="/disclaimer">Disclaimer</a></li>
-          </ul>
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Connect With Us</h3>
+          <div class="flex space-x-4 mb-4">
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+          <p class="text-neutral-300">
+            Email: info@fincalcindia.com<br>
+            Phone: +91 1234567890
+          </p>
         </div>
       </div>
       
-      <div class="footer-bottom">
+      <div class="border-t border-neutral-700 pt-6 text-center text-neutral-400 text-sm">
         <p>© 2025 FinCalc India. All rights reserved.</p>
-        <p>Disclaimer: The information provided is for educational purposes only and does not constitute financial advice.</p>
+        <p class="mt-2">Disclaimer: The information provided is for educational purposes only and does not constitute financial advice.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // Simple tab functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      // Demo tabs
-      const demoTabs = document.querySelectorAll('.demo-tab');
-      demoTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-          const tabId = this.getAttribute('data-tab');
-          const tabContent = document.getElementById(tabId);
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
           
-          // Remove active class from all tabs and content
-          document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
-          document.querySelectorAll('.demo-content').forEach(c => c.classList.remove('active'));
-          
-          // Add active class to clicked tab and corresponding content
-          this.classList.add('active');
-          tabContent.classList.add('active');
-        });
-      });
-      
-      // FAQ accordion
-      const faqQuestions = document.querySelectorAll('.faq-question');
-      faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-          const faqItem = this.parentElement;
-          faqItem.classList.toggle('active');
-        });
+          // Close mobile menu if open
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
       });
     });
   </script>

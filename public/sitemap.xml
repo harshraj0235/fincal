@@ -55,6 +55,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://moneycal.in/astro-finance-insights.html</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Blog Posts -->
   <url>
@@ -556,131 +562,131 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Astro-Finance Insights Hub -->
+  <!-- Astro-Finance Insights Pages -->
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#daily-horoscope</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#weekly-horoscope</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#monthly-yearly-horoscope</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#kundli-generator</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#moon-sign-calculator</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#nakshatra-calculator</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#ascendant-calculator</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#life-path-numerology</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#lucky-number-calculator</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#gemstone-finder</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#zodiac-compatibility</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#kundli-matching</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#manglik-checker</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#panchang-muhurat</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#auspicious-time-finder</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#stock-market-astrology</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#baby-name-finder</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#daily-finance-horoscope</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#career-horoscope</loc>
     <lastmod>2025-06-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://moneycal.in/astro-finance-insights.html#zodiac-sign-finder</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
