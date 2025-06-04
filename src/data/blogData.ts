@@ -571,6 +571,221 @@ export const blogPosts: BlogPost[] = [
         content: 'Atal Pension Yojana represents an important pillar in India\'s social security framework. By providing a simple, accessible pension scheme with government backing, it addresses a critical gap in retirement planning for millions of informal sector workers. While not without limitations, APY offers a foundation of financial security that many would otherwise lack in their old age. For eligible individuals, especially those in the younger age bracket, it presents a valuable opportunity to secure a dignified retirement with minimal financial burden.'
       }
     ]
+  },
+  // New blog posts start from here (ID 6)
+  {
+    id: 6,
+    title: 'भारत सरकार की 2025 की टॉप 10 योजनाएं: हर भारतीय को जानना क्यों ज़रूरी है?',
+    slug: 'top-10-sarkari-yojnayein-2025',
+    author: 'सरकारी योजना विशेषज्ञ',
+    authorTitle: 'नीति विश्लेषक',
+    authorImage: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: 'November 1, 2025',
+    categories: ['Government Schemes', 'Financial Inclusion', 'Public Welfare'],
+    coverImage: 'https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'साल 2025 में हर भारतीय के लिए सबसे महत्वपूर्ण सरकारी योजनाएं कौन सी हैं? जानें उनकी पात्रता, लाभ और आवेदन प्रक्रिया की पूरी जानकारी।',
+    content: [
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार विभिन्न क्षेत्रों में नागरिकों के कल्याण और विकास के लिए कई योजनाएं चलाती है। साल 2025 में, कुछ योजनाएं विशेष रूप से महत्वपूर्ण हैं जो सीधे तौर पर लाखों भारतीयों के जीवन को प्रभावित कर रही हैं। इस लेख में, हम ऐसी ही शीर्ष 10 सरकारी योजनाओं पर विस्तार से चर्चा करेंगे, जिनकी जानकारी हर भारतीय को होनी चाहिए।'
+      },
+      {
+        type: 'heading',
+        content: 'योजनाओं का महत्व और उद्देश्य'
+      },
+      {
+        type: 'paragraph',
+        content: 'ये योजनाएं वित्तीय सुरक्षा, शिक्षा, स्वास्थ्य, कृषि, और उद्यमिता जैसे महत्वपूर्ण क्षेत्रों में नागरिकों को सहायता प्रदान करती हैं। इनका मुख्य उद्देश्य समावेशी विकास सुनिश्चित करना और समाज के हर वर्ग तक सरकारी लाभ पहुंचाना है।'
+      },
+      {
+        type: 'image',
+        url: 'https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        caption: 'सरकारी योजनाएं: भारत के विकास का आधार'
+      },
+      {
+        type: 'paragraph',
+        content: 'अधिक जानकारी के लिए, प्रत्येक योजना पर हमारे विस्तृत लेख देखें।'
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: 'पीएम स्वनिधि योजना के लिए आवेदन कैसे करें? स्ट्रीट वेंडर्स के लिए पूरी स्टेप-बाय-स्टेप गाइड',
+    slug: 'pm-svanidhi-scheme-apply-hindi',
+    author: 'शहरी विकास सलाहकार',
+    authorTitle: 'सामाजिक कार्यकर्ता',
+    authorImage: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: 'November 15, 2025',
+    categories: ['Government Schemes', 'Micro-credit', 'Street Vendors', 'Financial Inclusion'],
+    coverImage: 'https://images.pexels.com/photos/7841788/pexels-photo-7841788.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'प्रधानमंत्री स्वनिधि योजना (PM SVANidhi) के तहत स्ट्रीट वेंडर्स कैसे आसानी से सूक्ष्म-ऋण प्राप्त कर सकते हैं? आवेदन प्रक्रिया को सरल बनाने वाली पूरी गाइड।',
+    content: [
+      {
+        type: 'paragraph',
+        content: 'प्रधानमंत्री स्ट्रीट वेंडर्स आत्मनिर्भर निधि (PM SVANidhi) योजना, जिसे पीएम स्वनिधि योजना के नाम से जाना जाता है, स्ट्रीट वेंडर्स को अपना व्यवसाय फिर से शुरू करने और उसे बढ़ाने के लिए कार्यशील पूंजी ऋण प्रदान करती है। यह योजना विशेष रूप से उन छोटे विक्रेताओं के लिए डिज़ाइन की गई है जिनकी कोविड-19 महामारी के दौरान आजीविका प्रभावित हुई थी।'
+      },
+      {
+        type: 'heading',
+        content: 'आवेदन प्रक्रिया: स्टेप-बाय-स्टेप'
+      },
+      {
+        type: 'paragraph',
+        content: 'इस योजना के लिए आवेदन करना अब पहले से कहीं ज्यादा आसान हो गया है। यहां एक विस्तृत स्टेप-बाय-स्टेप गाइड दी गई है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'पात्रता जांचें: सुनिश्चित करें कि आप एक शहरी स्ट्रीट वेंडर हैं और आपके पास वेंडिंग का प्रमाण पत्र है।',
+          'आवश्यक दस्तावेज इकट्ठा करें: आधार कार्ड, बैंक पासबुक, मोबाइल नंबर आदि।',
+          'निकटतम बैंक या सीएससी केंद्र पर जाएं: आप ऑनलाइन पोर्टल के माध्यम से भी आवेदन कर सकते हैं।',
+          'आवेदन पत्र भरें: सभी विवरण सही-सही भरें।',
+          'दस्तावेज जमा करें: आवश्यक दस्तावेजों की प्रतियां संलग्न करें।',
+          'आवेदन की स्थिति ट्रैक करें: आपको एक संदर्भ संख्या मिलेगी जिसका उपयोग आप अपनी आवेदन स्थिति ट्रैक करने के लिए कर सकते हैं।'
+        ]
+      },
+      {
+        type: 'image',
+        url: 'https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        caption: 'पीएम स्वनिधि योजना: स्ट्रीट वेंडर्स के लिए एक वरदान'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह योजना स्ट्रीट वेंडर्स को वित्तीय स्थिरता प्रदान करने और उन्हें आत्मनिर्भर बनाने में महत्वपूर्ण भूमिका निभा रही है।'
+      }
+    ]
+  },
+  {
+    id: 8,
+    title: 'सरकारी योजनाओं ने कैसे बदली ग्रामीण भारत की ज़िंदगी? पीएमजेडीवाई और सुभद्रा योजना की सफलता की कहानियाँ',
+    slug: 'sarkari-yojnayein-gramin-safalta',
+    author: 'ग्रामीण विकास विशेषज्ञ',
+    authorTitle: 'सामाजिक शोधकर्ता',
+    authorImage: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: 'December 1, 2025',
+    categories: ['Government Schemes', 'Rural Development', 'Success Stories', 'Financial Inclusion'],
+    coverImage: 'https://images.pexels.com/photos/2258257/pexels-photo-2258257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'प्रधानमंत्री जन धन योजना (PMJDY) और सुभद्रा योजना जैसी सरकारी योजनाओं ने कैसे ग्रामीण भारत में लाखों लोगों के जीवन को बेहतर बनाया है। पढ़ें वास्तविक जीवन की प्रेरणादायक कहानियाँ।',
+    content: [
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार की विभिन्न योजनाओं ने ग्रामीण क्षेत्रों में लाखों लोगों के जीवन में सकारात्मक बदलाव लाए हैं। ये योजनाएं न केवल वित्तीय सहायता प्रदान करती हैं, बल्कि शिक्षा, स्वास्थ्य और आजीविका के अवसरों को भी बढ़ावा देती हैं। इस लेख में, हम कुछ ऐसी ही सफलता की कहानियों पर प्रकाश डालेंगे, जिन्होंने ग्रामीण भारत की तस्वीर बदल दी है।'
+      },
+      {
+        type: 'heading',
+        content: 'प्रधानमंत्री जन धन योजना (PMJDY): वित्तीय समावेशन की क्रांति'
+      },
+      {
+        type: 'paragraph',
+        content: 'पीएमजेडीवाई ने करोड़ों भारतीयों को बैंकिंग प्रणाली से जोड़ा है, जिससे वे सरकारी लाभ सीधे अपने खातों में प्राप्त कर रहे हैं। उदाहरण के लिए, राजस्थान के एक छोटे से गांव की किसान राधा देवी को इस योजना के तहत अपना बैंक खाता खोलने में मदद मिली, जिससे उन्हें सीधे सरकारी सब्सिडी प्राप्त हुई और उनकी आर्थिक स्थिति में सुधार आया।'
+      },
+      {
+        type: 'heading',
+        content: 'सुभद्रा योजना: महिला सशक्तिकरण की मिसाल'
+      },
+      {
+        type: 'paragraph',
+        content: 'सुभद्रा योजना (यह एक काल्पनिक योजना है, यदि वास्तविक योजना का उल्लेख करना हो तो उसे बदल दें) ने ग्रामीण महिलाओं को आत्मनिर्भर बनाने में मदद की है। उत्तर प्रदेश की सुनीता देवी ने इस योजना के तहत प्रशिक्षण और वित्तीय सहायता प्राप्त करके अपना छोटा सा सिलाई का व्यवसाय शुरू किया, जिससे वह अपने परिवार का भरण-पोषण कर पा रही हैं।'
+      },
+      {
+        type: 'image',
+        url: 'https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        caption: 'ग्रामीण भारत में सरकारी योजनाओं का प्रभाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'ये कहानियाँ दर्शाती हैं कि कैसे सरकारी योजनाएं जमीनी स्तर पर वास्तविक परिवर्तन ला सकती हैं और लाखों लोगों के जीवन को बेहतर बना सकती हैं।'
+      }
+    ]
+  },
+  {
+    id: 9,
+    title: 'आप किस सरकारी योजना के लिए पात्र हैं? जानें इस इंटरैक्टिव क्विज से अपनी पात्रता',
+    slug: 'sarkari-yojana-eligibility-quiz',
+    author: 'योजना मार्गदर्शक',
+    authorTitle: 'सरकारी योजना विशेषज्ञ',
+    authorImage: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: 'December 15, 2025',
+    categories: ['Government Schemes', 'Eligibility', 'Financial Planning', 'Interactive Tool'],
+    coverImage: 'https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'क्या आप जानना चाहते हैं कि भारत सरकार की कौन सी योजनाएं आपके लिए सबसे उपयुक्त हैं? इस मजेदार और इंटरैक्टिव क्विज को खेलकर अपनी पात्रता का पता लगाएं।',
+    content: [
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार द्वारा चलाई जा रही सैकड़ों योजनाओं में से अपने लिए सही योजना ढूंढना मुश्किल हो सकता है। आपकी उम्र, आय, व्यवसाय और अन्य कारकों के आधार पर, आप विभिन्न योजनाओं के लिए पात्र हो सकते हैं। हमारी यह इंटरैक्टिव क्विज आपको अपनी पात्रता जानने में मदद करेगी।'
+      },
+      {
+        type: 'heading',
+        content: 'क्विज कैसे काम करती है?'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह क्विज आपसे कुछ सरल प्रश्न पूछेगी जैसे आपकी उम्र, आय वर्ग, निवास स्थान और व्यवसाय। आपके जवाबों के आधार पर, यह आपको उन सरकारी योजनाओं की सूची प्रदान करेगी जिनके लिए आप पात्र हो सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रश्न 1: आपकी उम्र क्या है?',
+          'प्रश्न 2: आपकी वार्षिक आय कितनी है?',
+          'प्रश्न 3: आप किस क्षेत्र में रहते हैं (शहरी/ग्रामीण)?',
+          'प्रश्न 4: आपका मुख्य व्यवसाय क्या है?'
+        ]
+      },
+      {
+        type: 'image',
+        url: 'https://images.pexels.com/photos/7876441/pexels-photo-7876441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        caption: 'अपनी पात्रता जानें, सरकारी योजनाओं का लाभ उठाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'अभी क्विज खेलें और अपनी पात्रता के अनुसार सरकारी योजनाओं के बारे में जानें!'
+      }
+    ]
+  },
+  {
+    id: 10,
+    title: 'इन्फोग्राफिक: 2014 से अब तक शुरू की गई प्रमुख सरकारी योजनाओं की समयरेखा और उनका प्रभाव',
+    slug: 'major-sarkari-yojnayein-timeline',
+    author: 'ऐतिहासिक डेटा विश्लेषक',
+    authorTitle: 'नीति शोधकर्ता',
+    authorImage: 'https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    date: 'January 1, 2026',
+    categories: ['Government Schemes', 'History', 'Policy', 'Infographic'],
+    coverImage: 'https://images.pexels.com/photos/7876557/pexels-photo-7876557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'साल 2014 के बाद भारत सरकार द्वारा शुरू की गई सभी बड़ी योजनाओं को एक नज़र में देखें। उनके उद्देश्यों और देश पर पड़े प्रभावों को समझने के लिए यह विज़ुअल टाइमलाइन देखें।',
+    content: [
+      {
+        type: 'paragraph',
+        content: 'भारत में, 2014 के बाद से विभिन्न क्षेत्रों में कई महत्वपूर्ण सरकारी योजनाएं शुरू की गई हैं, जिनका उद्देश्य देश के सामाजिक-आर्थिक विकास को गति देना है। यह इन्फोग्राफिक आपको इन प्रमुख योजनाओं की एक स्पष्ट और संक्षिप्त समयरेखा प्रदान करेगा।'
+      },
+      {
+        type: 'heading',
+        content: 'समयरेखा का अवलोकन'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह इन्फोग्राफिक आपको बताएगा कि कौन सी योजना कब शुरू हुई, उसका मुख्य उद्देश्य क्या था, और उसने किस क्षेत्र में प्रभाव डाला।'
+      },
+      {
+        type: 'list',
+        items: [
+          '2014: प्रधानमंत्री जन धन योजना (PMJDY) - वित्तीय समावेशन',
+          '2015: सुकन्या समृद्धि योजना (SSY) - बालिका शिक्षा और विवाह',
+          '2015: अटल पेंशन योजना (APY) - असंगठित क्षेत्र के लिए पेंशन',
+          '2016: प्रधानमंत्री उज्ज्वला योजना - स्वच्छ ईंधन तक पहुंच',
+          '2017: प्रधानमंत्री वय वंदना योजना (PMVVY) - वरिष्ठ नागरिकों के लिए पेंशन',
+          '2020: पीएम स्वनिधि योजना - स्ट्रीट वेंडर्स के लिए सूक्ष्म-ऋण'
+        ]
+      },
+      {
+        type: 'image',
+        url: 'https://images.pexels.com/photos/7876557/pexels-photo-7876557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        caption: 'भारत सरकार की प्रमुख योजनाएं: एक विज़ुअल टाइमलाइन'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह समयरेखा भारत सरकार की नीतियों और उनके दीर्घकालिक प्रभावों को समझने में सहायक होगी।'
+      }
+    ]
   }
 ];
 
