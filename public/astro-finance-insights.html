@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro-Finance Insights Hub - FinCalc India</title>
+  <meta name="description" content="Explore the intersection of astrology and finance with our Astro-Finance Insights Hub. Discover how cosmic influences might align with your financial decisions.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            purple: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            },
+            indigo: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 font-inter text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow-md py-4 px-6 sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center mr-8">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-700 mr-2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span class="text-3xl font-bold text-purple-700">FinCalc India</span>
+        </a>
+        <h1 class="text-xl font-semibold text-purple-900 hidden md:block">Astro-Finance Insights Hub</h1>
+      </div>
+      <a
+        href="/"
+        class="px-4 py-2 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-700 transition-colors duration-300 flex items-center"
+      >
+        <span class="mr-2">←</span> Back to Main Site
+      </a>
+    </div>
+  </header>
+
+  <main class="container mx-auto py-8 px-6">
+    <div id="app">
+      <!-- This div will be populated by the JavaScript app -->
+      <div class="text-center py-12">
+        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-600 mx-auto mb-4"></div>
+        <p class="text-lg text-gray-600">Loading Astro-Finance Insights Hub...</p>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="mt-16 p-6 bg-yellow-50 border border-yellow-200 rounded-lg text-yellow-800 text-sm text-center shadow-inner">
+      <p class="font-semibold mb-2">Important Disclaimer:</p>
+      <p>
+        The astrological and numerological calculations and interpretations provided in this application are highly simplified for demonstration purposes only. They are not intended to be accurate or professional astrological readings. Please consult a qualified astrologer or financial advisor for personalized guidance.
+      </p>
+      <p class="mt-2">
+        यह एप्लिकेशन में प्रदान की गई ज्योतिषीय और अंक ज्योतिषीय गणनाएँ और व्याख्याएँ केवल प्रदर्शन उद्देश्यों के लिए अत्यधिक सरलीकृत हैं। इन्हें सटीक या पेशेवर ज्योतिषीय रीडिंग के रूप में नहीं माना जाना चाहिए। व्यक्तिगत मार्गदर्शन के लिए कृपया एक योग्य ज्योतिषी या वित्तीय सलाहकार से परामर्श करें।
+      </p>
+    </div>
+  </main>
+
+  <footer class="bg-neutral-800 text-neutral-100 py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center space-x-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span class="text-xl font-bold text-white">FinCalc India</span>
+          </a>
+          <p class="text-neutral-300 mb-4">
+            Where traditional wisdom meets modern financial planning.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-neutral-300 hover:text-white transition-colors">Home</a></li>
+            <li><a href="/blog" class="text-neutral-300 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/about-us" class="text-neutral-300 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="/contact-us" class="text-neutral-300 hover:text-white transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Financial Tools</h3>
+          <ul class="space-y-2">
+            <li><a href="/calculators/emi-calculator" class="text-neutral-300 hover:text-white transition-colors">EMI Calculator</a></li>
+            <li><a href="/calculators/sip-calculator" class="text-neutral-300 hover:text-white transition-colors">SIP Calculator</a></li>
+            <li><a href="/calculators/income-tax-calculator" class="text-neutral-300 hover:text-white transition-colors">Income Tax Calculator</a></li>
+            <li><a href="/financial-navigator.html" class="text-neutral-300 hover:text-white transition-colors">Financial Navigator</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-neutral-700 pt-6 text-center text-neutral-400 text-sm">
+        <p>© 2025 FinCalc India. All rights reserved.</p>
+        <p class="mt-2">Disclaimer: The information provided is for educational purposes only and does not constitute financial or astrological advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Main App Component
+    function App() {
+      const [selectedTool, setSelectedTool] = useState(null);
+
+      // Handle URL hash changes for navigation
+      useEffect(() => {
+        const handleHashChange = () => {
+          const hash = window.location.hash.substring(1); // Remove '#'
+          const tool = toolsData.find(t => t.id === hash);
+          setSelectedTool(tool || null);
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+        handleHashChange(); // Call on initial load
+
+        return () => {
+          window.removeEventListener('hashchange', handleHashChange);
+        };
+      }, []);
+
+      const navigateToTool = (toolId) => {
+        window.location.hash = toolId;
+      };
+
+      const navigateToHome = () => {
+        window.location.hash = '';
+        setSelectedTool(null);
+      };
+
+      // Group tools by category
+      const categories = toolsData.reduce((acc, tool) => {
+        if (!acc[tool.category]) {
+          acc[tool.category] = [];
+        }
+        acc[tool.category].push(tool);
+        return acc;
+      }, {});
+
+      return (
+        <div>
+          {selectedTool ? (
+            // Display selected tool
+            <ToolDisplay tool={selectedTool} />
+          ) : (
+            // Display tool categories and cards
+            <div class="space-y-10">
+              <div class="text-center mb-8">
+                <h2 class="text-4xl font-extrabold text-purple-800 mb-4">Astro-Finance Insights Hub</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Explore a variety of astrological and numerological tools designed to provide insights into your life, with a special focus on financial implications.
+                </p>
+              </div>
+              {Object.entries(categories).map(([category, tools]) => (
+                <section key={category} class="mb-12">
+                  <h2 class="text-3xl font-extrabold text-purple-800 mb-8 text-center border-b-2 border-purple-300 pb-4">
+                    {category}
+                  </h2>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    {tools.map(tool => (
+                      <div
+                        key={tool.id}
+                        class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden transform hover:-translate-y-1"
+                        onClick={() => navigateToTool(tool.id)}
+                      >
+                        <div class="p-6">
+                          <div class="text-5xl mb-4 text-center text-purple-500">
+                            {tool.icon}
+                          </div>
+                          <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+                            {tool.name}
+                          </h3>
+                          <p class="text-gray-600 text-center">
+                            {tool.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Tool Display Component
+    function ToolDisplay({ tool }) {
+      const [input, setInput] = useState({});
+      const [result, setResult] = useState(null);
+
+      // Reset input and result when tool changes
+      useEffect(() => {
+        setInput({});
+        setResult(null);
+      }, [tool]);
+
+      const handleChange = (e) => {
+        setInput({ ...input, [e.target.name]: e.target.value });
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        // Simulate calculation based on tool ID
+        const calculatedResult = tool.calculate(input);
+        setResult(calculatedResult);
+      };
+
+      return (
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
+          <h2 class="text-3xl font-extrabold text-purple-800 mb-6 text-center flex items-center justify-center">
+            <span class="mr-3 text-4xl">{tool.icon}</span> {tool.name}
+          </h2>
+          <p class="text-lg text-gray-700 mb-6 text-center">{tool.longDescription}</p>
+
+          {/* Input Form */}
+          <form onSubmit={handleSubmit} class="space-y-6 mb-8">
+            {tool.inputs.map((inputField) => (
+              <div key={inputField.name}>
+                <label htmlFor={inputField.name} class="block text-lg font-medium text-gray-700 mb-2">
+                  {inputField.label}
+                </label>
+                {inputField.type === 'select' ? (
+                  <select
+                    id={inputField.name}
+                    name={inputField.name}
+                    value={input[inputField.name] || ''}
+                    onChange={handleChange}
+                    required
+                    class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-base"
+                  >
+                    <option value="">Select...</option>
+                    {inputField.options.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={inputField.type}
+                    id={inputField.name}
+                    name={inputField.name}
+                    value={input[inputField.name] || ''}
+                    onChange={handleChange}
+                    required
+                    class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-base"
+                    placeholder={inputField.placeholder}
+                  />
+                )}
+              </div>
+            ))}
+            <button
+              type="submit"
+              class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-purple-700 transition-colors duration-300 text-xl font-semibold transform hover:scale-105"
+            >
+              Get Insight
+            </button>
+          </form>
+
+          {/* Result Display */}
+          {result && (
+            <div class="mt-8 pt-8 border-t-2 border-purple-200">
+              <h3 class="text-2xl font-bold text-purple-700 mb-6 text-center">Your Insight</h3>
+              <div class="bg-purple-50 p-6 rounded-lg shadow-inner space-y-4">
+                {result.mainResult && (
+                  <div class="mb-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Result:</h4>
+                    <p class="text-gray-800 leading-relaxed" dangerouslySetInnerHTML={{ __html: result.mainResult }}></p>
+                  </div>
+                )}
+
+                {result.additionalInfo && (
+                  <div class="mb-6">
+                    <h4 class="text-xl font-semibold text-gray-900 mb-3">Additional Information:</h4>
+                    <div class="text-gray-800 leading-relaxed" dangerouslySetInnerHTML={{ __html: result.additionalInfo }}></div>
+                  </div>
+                )}
+
+                {result.financeFocus && (
+                  <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded-md shadow-sm">
+                    <h4 class="text-lg font-semibold text-green-800 mb-2 flex items-center">
+                      <span class="mr-2 text-xl">💰</span> Finance Focus:
+                    </h4>
+                    <p class="text-green-700 leading-relaxed">{result.financeFocus}</p>
+                  </div>
+                )}
+
+                {result.hindiExample && (
+                  <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-md shadow-sm">
+                    <h4 class="text-lg font-semibold text-blue-800 mb-2 flex items-center">
+                      <span class="mr-2 text-xl">💡</span> उदाहरण (Udaharan - Example Scenario):
+                    </h4>
+                    <div class="text-blue-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: result.hindiExample }}></div>
+                  </div>
+                )}
+
+                {result.extraTips && (
+                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md shadow-sm">
+                    <h4 class="text-lg font-semibold text-yellow-800 mb-2 flex items-center">
+                      <span class="mr-2 text-xl">✨</span> Extra Tips:
+                    </h4>
+                    <div class="text-yellow-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: result.extraTips }}></div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Data for all 20 tools
+    const toolsData = [
+      // Daily & Periodic Horoscopes
+      {
+        id: 'daily-horoscope',
+        name: 'Daily Horoscope by Zodiac Sign',
+        icon: '☀️',
+        category: 'Daily & Periodic Horoscopes',
+        description: 'Get your daily astrological prediction for love, career, and finance.',
+        longDescription: 'Select your zodiac sign to receive a personalized daily horoscope, offering insights into various aspects of your day, including love, career, and financial prospects. Updated daily for fresh guidance.',
+        inputs: [
+          { name: 'zodiacSign', label: 'Select Your Zodiac Sign', type: 'select', options: [
+            { value: 'Aries', label: 'Aries (मेष)' }, { value: 'Taurus', label: 'Taurus (वृषभ)' }, { value: 'Gemini', label: 'Gemini (मिथुन)' },
+            { value: 'Cancer', label: 'Cancer (कर्क)' }, { value: 'Leo', label: 'Leo (सिंह)' }, { value: 'Virgo', label: 'Virgo (कन्या)' },
+            { value: 'Libra', label: 'Libra (तुला)' }, { value: 'Scorpio', label: 'Scorpio (वृश्चिक)' }, { value: 'Sagittarius', label: 'Sagittarius (धनु)' },
+            { value: 'Capricorn', label: 'Capricorn (मकर)' }, { value: 'Aquarius', label: 'Aquarius (कुंभ)' }, { value: 'Pisces', label: 'Pisces (मीन)' }
+          ]},
+        ],
+        calculate: (input) => {
+          const sign = input.zodiacSign;
+          const today = new Date().toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+          const horoscopes = {
+            Aries: {
+              love: "Today, your passion ignites, bringing warmth to relationships. Express your feelings openly.",
+              career: "Aries, new opportunities may arise at work. Be bold in presenting your ideas.",
+              finance: "Financial matters look stable. A small unexpected gain is possible. Consider reviewing your budget.",
+            },
+            Taurus: {
+              love: "Nurture your relationships with patience and understanding. A quiet evening with loved ones brings joy.",
+              career: "Focus on practical tasks. Your diligence will be noticed. Avoid impulsive decisions.",
+              finance: "Good day for financial planning. Look for ways to consolidate expenses or save more.",
+            },
+            Gemini: {
+              love: "Communication is key today. Share your thoughts and listen actively to your partner.",
+              career: "Your ideas are flowing. Network and collaborate with colleagues for better outcomes.",
+              finance: "Be cautious with spending. A new income stream might be on the horizon, but verify details.",
+            },
+            Cancer: {
+              love: "Emotional connections deepen. Spend quality time at home, fostering comfort and security.",
+              career: "Your intuition guides you well. Trust your instincts in professional dealings.",
+              finance: "A good day to review investments or discuss family finances. Be mindful of emotional spending.",
+            },
+            Leo: {
+              love: "Shine brightly in your relationships. Your generosity and warmth will be appreciated.",
+              career: "Leadership opportunities may present themselves. Take the initiative and inspire others.",
+              finance: "Financial confidence is high. Consider smart investments, but avoid unnecessary risks.",
+            },
+            Virgo: {
+              love: "Small gestures of care will strengthen your bonds. Pay attention to details in your relationships.",
+              career: "Your analytical skills are sharp. Focus on organizing and improving processes at work.",
+              finance: "It's a good time for detailed financial analysis. Look for areas to optimize savings.",
+            },
+            Libra: {
+              love: "Seek balance and harmony in your relationships. Diplomacy will help resolve any minor disagreements.",
+              career: "Collaborate and negotiate effectively. Partnerships at work can lead to success.",
+              finance: "Consider seeking financial advice. A balanced approach to spending and saving is recommended.",
+            },
+            Scorpio: {
+              love: "Deep emotional connections are highlighted. Trust your instincts about your partner's feelings.",
+              career: "Your determination is a powerful asset. Tackle challenging projects with confidence.",
+              finance: "Investigate financial opportunities thoroughly. Avoid impulsive decisions driven by emotion.",
+            },
+            Sagittarius: {
+              love: "Adventure calls! Explore new activities with your partner or seek new connections.",
+              career: "Expand your horizons professionally. Learning new skills or exploring new fields is favored.",
+              finance: "Financial optimism is strong. Good time for long-term financial goals, but avoid overspending.",
+            },
+            Capricorn: {
+              love: "Show your commitment and build a strong foundation in your relationships. Practical support is appreciated.",
+              career: "Your hard work and discipline pay off. Focus on long-term career goals and strategic planning.",
+              finance: "A stable day for finances. Review your financial plans and look for secure investment options.",
+            },
+            Aquarius: {
+              love: "Embrace your unique self in relationships. Connect with like-minded individuals or explore unconventional dates.",
+              career: "Innovative ideas will stand out. Collaborate on projects that benefit the wider community.",
+              finance: "Unexpected financial insights may come your way. Consider diversifying your investments.",
+            },
+            Pisces: {
+              love: "Connect on a deeper, spiritual level. Show empathy and compassion to those you care about.",
+              career: "Your creativity is a strength. Use your imagination to solve problems and inspire others.",
+              finance: "Be mindful of financial boundaries. A good day for charitable giving or reviewing your financial dreams.",
+            },
+          };
+
+          const signHoroscope = horoscopes[sign] || {};
+
+          return {
+            mainResult: `Predictions for ${sign} on ${today}:`,
+            additionalInfo: `
+              <p><strong>Love & Relationships:</strong> ${signHoroscope.love}</p>
+              <p><strong>Career & Work:</strong> ${signHoroscope.career}</p>
+            `,
+            financeFocus: signHoroscope.finance,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> मान लीजिए कि आप एक मेष राशि के व्यक्ति हैं। आज का आपका राशिफल कहता है कि वित्तीय मामले स्थिर दिख रहे हैं और एक छोटा अप्रत्याशित लाभ संभव है। आपको अपने बजट की समीक्षा करने पर विचार करना चाहिए।</p>
+              <p><strong>परिणाम:</strong> आप आज अपनी निवेश योजनाओं की समीक्षा कर सकते हैं और एक छोटी सी बचत कर सकते हैं, जिससे आपको भविष्य के लिए वित्तीय सुरक्षा मिलेगी।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'weekly-horoscope',
+        name: 'Weekly Horoscope Generator',
+        icon: '🗓️',
+        category: 'Daily & Periodic Horoscopes',
+        description: 'Get your weekly astrological forecast for the week ahead.',
+        longDescription: 'Discover what the upcoming week holds for your zodiac sign. This tool provides a 7-day outlook covering key areas of your life, helping you plan effectively.',
+        inputs: [
+          { name: 'zodiacSign', label: 'Select Your Zodiac Sign', type: 'select', options: [
+            { value: 'Aries', label: 'Aries (मेष)' }, { value: 'Taurus', label: 'Taurus (वृषभ)' }, { value: 'Gemini', label: 'Gemini (मिथुन)' },
+            { value: 'Cancer', label: 'Cancer (कर्क)' }, { value: 'Leo', label: 'Leo (सिंह)' }, { value: 'Virgo', label: 'Virgo (कन्या)' },
+            { value: 'Libra', label: 'Libra (तुला)' }, { value: 'Scorpio', label: 'Scorpio (वृश्चिक)' }, { value: 'Sagittarius', label: 'Sagittarius (धनु)' },
+            { value: 'Capricorn', label: 'Capricorn (मकर)' }, { value: 'Aquarius', label: 'Aquarius (कुंभ)' }, { value: 'Pisces', label: 'Pisces (मीन)' }
+          ]},
+        ],
+        calculate: (input) => {
+          const sign = input.zodiacSign;
+          const horoscopes = {
+            Aries: {
+              main: "This week, your energy levels will be high, making it a good time to tackle new projects and initiatives. Be mindful of impulsive decisions.",
+              finance: "Financially, this week brings opportunities for growth, especially mid-week. Consider exploring new investment avenues, but do your due diligence. Avoid unnecessary expenses.",
+              love: "Love life sees moments of passion and excitement. Communicate openly to avoid misunderstandings. Single Arians might meet someone intriguing.",
+              career: "Professionally, you'll feel driven. Team projects are favored. Your leadership skills will be recognized. Don't shy away from taking charge.",
+            },
+            Taurus: {
+              main: "A week for stability and consolidation. Focus on building strong foundations in all areas of your life. Patience will be your greatest asset.",
+              finance: "Financial planning is crucial this week. Review your budget and look for long-term savings. An unexpected expense might arise, so have a contingency fund ready.",
+              love: "Relationships require nurturing. Spend quality time with your partner. For singles, a stable and reliable connection might form.",
+              career: "Work demands consistency. Focus on completing ongoing tasks efficiently. Your dedication will earn you respect from colleagues and superiors.",
+            },
+            // ... (add more weekly horoscopes for other signs as needed)
+          };
+          const signHoroscope = horoscopes[sign] || {};
+          return {
+            mainResult: `Weekly Forecast for ${sign}:`,
+            additionalInfo: `
+              <p><strong>Overview:</strong> ${signHoroscope.main}</p>
+              <p><strong>Love & Relationships:</strong> ${signHoroscope.love}</p>
+              <p><strong>Career & Work:</strong> ${signHoroscope.career}</p>
+            `,
+            financeFocus: signHoroscope.finance,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आप वृषभ राशि के हैं, तो आपका साप्ताहिक राशिफल कहता है कि इस सप्ताह वित्तीय योजना बनाना महत्वपूर्ण है। आपको अपने बजट की समीक्षा करनी चाहिए और लंबी अवधि की बचत के लिए देखना चाहिए।</p>
+              <p><strong>परिणाम:</strong> आप इस सप्ताह अपने खर्चों को नियंत्रित करके और भविष्य के लिए कुछ पैसे बचाकर अपने वित्तीय लक्ष्यों की दिशा में एक ठोस कदम उठा सकते हैं।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'monthly-yearly-horoscope',
+        name: 'Monthly/Yearly Horoscope Reports',
+        icon: '📅',
+        category: 'Daily & Periodic Horoscopes',
+        description: 'Detailed monthly and yearly predictions for your zodiac sign.',
+        longDescription: 'Gain a broader perspective with comprehensive monthly or yearly horoscopes. These reports provide insights into major trends and opportunities in your life, helping you with long-term planning.',
+        inputs: [
+          { name: 'zodiacSign', label: 'Select Your Zodiac Sign', type: 'select', options: [
+            { value: 'Aries', label: 'Aries (मेष)' }, { value: 'Taurus', label: 'Taurus (वृषभ)' }, { value: 'Gemini', label: 'Gemini (मिथुन)' },
+            { value: 'Cancer', label: 'Cancer (कर्क)' }, { value: 'Leo', label: 'Leo (सिंह)' }, { value: 'Virgo', label: 'Virgo (कन्या)' },
+            { value: 'Libra', label: 'Libra (तुला)' }, { value: 'Scorpio', label: 'Scorpio (वृश्चिक)' }, { value: 'Sagittarius', label: 'Sagittarius (धनु)' },
+            { value: 'Capricorn', label: 'Capricorn (मकर)' }, { value: 'Aquarius', label: 'Aquarius (कुंभ)' }, { value: 'Pisces', label: 'Pisces (मीन)' }
+          ]},
+          { name: 'period', label: 'Select Period', type: 'select', options: [
+            { value: 'monthly', label: 'Monthly' }, { value: 'yearly', label: 'Yearly' }
+          ]},
+        ],
+        calculate: (input) => {
+          const sign = input.zodiacSign;
+          const period = input.period;
+          const horoscopes = {
+            monthly: {
+              Aries: {
+                main: "This month, focus on personal growth and self-improvement. New beginnings are favored.",
+                finance: "Financial gains are possible through new ventures or unexpected sources. Be smart about investments.",
+              },
+              Taurus: {
+                main: "A month of stability and consolidation. Focus on home and family matters.",
+                finance: "Good month for reviewing long-term financial plans. Avoid impulsive purchases.",
+              },
+            },
+            yearly: {
+              Aries: {
+                main: "The year ahead brings significant changes and opportunities for expansion. Embrace challenges.",
+                finance: "This year, your financial landscape will see significant shifts. Opportunities for substantial wealth creation exist, particularly through entrepreneurial efforts or smart market investments. Prudent risk-taking is advised.",
+              },
+              Taurus: {
+                main: "A year for building strong foundations and securing your future. Patience and perseverance will be key.",
+                finance: "Financial stability is a theme for the year. Focus on consistent savings and secure investments. Property-related gains are possible. Avoid unnecessary debts.",
+              },
+            },
+          };
+          const signHoroscope = horoscopes[period][sign] || {};
+          return {
+            mainResult: `${period === 'monthly' ? 'Monthly' : 'Yearly'} Forecast for ${sign}:`,
+            additionalInfo: signHoroscope.main,
+            financeFocus: signHoroscope.finance,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> मान लीजिए कि आप मेष राशि के हैं और आप अपनी वार्षिक वित्तीय रिपोर्ट देख रहे हैं। आपका राशिफल कहता है कि इस वर्ष आपके वित्तीय परिदृश्य में महत्वपूर्ण बदलाव आएंगे। उद्यमी प्रयासों या स्मार्ट बाजार निवेश के माध्यम से पर्याप्त धन सृजन के अवसर मौजूद हैं।</p>
+              <p><strong>परिणाम:</strong> आप इस जानकारी का उपयोग करके अपने व्यापार में नए निवेश की योजना बना सकते हैं या शेयर बाजार में सोच-समझकर जोखिम ले सकते हैं, जिससे आपको बड़ा वित्तीय लाभ हो सकता है।</p>
+            `,
+          };
+        },
+      },
+      // Vedic Astrology Essentials
+      {
+        id: 'kundli-generator',
+        name: 'Kundli/Birth Chart Generator',
+        icon: '🌌',
+        category: 'Vedic Astrology Essentials',
+        description: 'Generate your detailed Vedic birth chart (Janam Kundli).',
+        longDescription: 'Input your birth date, time, and place to generate a comprehensive Vedic birth chart (Janam Kundli). This chart shows planetary positions at your birth, forming the basis for detailed astrological analysis.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+          { name: 'tob', label: 'Time of Birth', type: 'time' },
+          { name: 'pob', label: 'Place of Birth', type: 'text', placeholder: 'e.g., Mumbai, India' },
+        ],
+        calculate: (input) => {
+          // Simplified logic: just extract basic info for display
+          const birthDate = new Date(input.dob);
+          const year = birthDate.getFullYear();
+          const month = birthDate.toLocaleString('default', { month: 'long' });
+          const day = birthDate.getDate();
+
+          // Mock data for demonstration
+          const mockSunSign = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'][birthDate.getMonth()];
+          const mockMoonSign = ['Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini'][birthDate.getMonth()]; // Simplified
+          const mockNakshatra = ['Ashwini', 'Bharani', 'Krittika', 'Rohini', 'Mrigashira', 'Ardra', 'Punarvasu', 'Pushya', 'Ashlesha', 'Magha', 'Purva Phalguni', 'Uttara Phalguni'][birthDate.getDate() % 12]; // Simplified
+
+          return {
+            mainResult: `Your Janam Kundli (Birth Chart) Summary:`,
+            additionalInfo: `
+              <p><strong>Date of Birth:</strong> ${day} ${month}, ${year}</p>
+              <p><strong>Time of Birth:</strong> ${input.tob}</p>
+              <p><strong>Place of Birth:</strong> ${input.pob}</p>
+              <p><strong>Your Sun Sign (Western):</strong> ${mockSunSign}</p>
+              <p><strong>Your Moon Sign (Vedic Rashi):</strong> ${mockMoonSign}</p>
+              <p><strong>Your Birth Star (Nakshatra):</strong> ${mockNakshatra}</p>
+              <p><em>(Detailed planetary positions and house analysis would appear here in a full Kundli report.)</em></p>
+            `,
+            financeFocus: `Your birth chart can offer insights into your financial potential, career paths, and periods of wealth accumulation. For instance, the placement of planets in your 2nd (wealth), 5th (speculation), 9th (fortune), and 11th (gains) houses can indicate financial strengths or challenges. Understanding these can help you align your financial strategies with your astrological predispositions.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> मान लीजिए कि आप अपनी जन्म कुंडली बनवाते हैं और उसमें देखते हैं कि आपके दूसरे भाव (धन भाव) में गुरु (बृहस्पति) स्थित है।</p>
+              <p><strong>परिणाम:</strong> यह स्थिति अक्सर व्यक्ति को वित्तीय रूप से भाग्यशाली बनाती है और धन संचय में मदद करती है। आप इस जानकारी का उपयोग करके दीर्घकालिक निवेश या बचत योजनाओं पर ध्यान केंद्रित कर सकते हैं, क्योंकि ज्योतिषीय रूप से यह आपके लिए अनुकूल है।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'moon-sign-calculator',
+        name: 'Moon Sign (Rashi) Calculator',
+        icon: '🌙',
+        category: 'Vedic Astrology Essentials',
+        description: 'Find your Vedic Moon Sign (Janma Rashi) based on birth details.',
+        longDescription: 'In Vedic astrology, your Moon Sign (Janma Rashi) is highly significant, influencing your emotions, mind, and daily life. Enter your birth details to accurately determine your Rashi.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+          { name: 'tob', label: 'Time of Birth', type: 'time' },
+          { name: 'pob', label: 'Place of Birth', type: 'text', placeholder: 'e.g., Delhi, India' },
+        ],
+        calculate: (input) => {
+          const birthDate = new Date(input.dob);
+          const moonSigns = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
+          const mockMoonSign = moonSigns[birthDate.getMonth() % 12]; // Simplified mapping
+
+          return {
+            mainResult: `Your Vedic Moon Sign (Janma Rashi) is: <strong>${mockMoonSign}</strong>`,
+            additionalInfo: `
+              <p>Your Moon Sign represents your emotional nature, subconscious mind, and inherent instincts. It plays a crucial role in Vedic astrology for daily predictions and understanding your core personality.</p>
+            `,
+            financeFocus: `Your Moon Sign can indicate your natural approach to money and financial security. For example, a Taurus Moon might be more inclined towards stable, long-term investments, while a Gemini Moon might be more adaptable to diverse income streams. Understanding your Rashi's financial tendencies can help you make more aligned money decisions.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आपकी जन्म राशि कर्क (Cancer) है। कर्क राशि वाले भावनात्मक रूप से सुरक्षित महसूस करना पसंद करते हैं और अक्सर अपने परिवार के लिए धन संचय करने पर ध्यान केंद्रित करते हैं।</p>
+              <p><strong>परिणाम:</strong> आप इस जानकारी का उपयोग करके अपने परिवार के भविष्य के लिए बचत योजनाओं या बीमा पॉलिसियों में निवेश करने का निर्णय ले सकते हैं, जो आपकी भावनात्मक सुरक्षा की आवश्यकता के अनुरूप होगा।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'nakshatra-calculator',
+        name: 'Nakshatra (Birth Star) Calculator',
+        icon: '✨',
+        category: 'Vedic Astrology Essentials',
+        description: 'Determine your Janma Nakshatra (Birth Star) from your birth details.',
+        longDescription: 'Your Nakshatra, one of the 27 lunar constellations, offers deeper insights into your personality, destiny, and auspicious timings. Use this tool to find your specific birth star.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+          { name: 'tob', label: 'Time of Birth', type: 'time' },
+          { name: 'pob', label: 'Place of Birth', type: 'text', placeholder: 'e.g., Chennai, India' },
+        ],
+        calculate: (input) => {
+          const birthDate = new Date(input.dob);
+          const nakshatras = [
+            "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu", "Pushya", "Ashlesha",
+            "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha",
+            "Jyeshtha", "Moola", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta", "Shatabhisha",
+            "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"
+          ];
+          const mockNakshatra = nakshatras[birthDate.getDate() % nakshatras.length]; // Simplified
+
+          return {
+            mainResult: `Your Janma Nakshatra (Birth Star) is: <strong>${mockNakshatra}</strong>`,
+            additionalInfo: `
+              <p>Each Nakshatra has unique characteristics, deities, and influences. It provides a more granular understanding of your innate qualities and life path compared to just your zodiac sign.</p>
+            `,
+            financeFocus: `Certain Nakshatras are considered more favorable for specific financial activities or professions. For instance, a Nakshatra associated with trade might indicate success in business, while one linked to healing could suggest a prosperous career in healthcare. Understanding your Nakshatra can guide you towards financially rewarding paths that align with your natural inclinations.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आपका जन्म नक्षत्र पुष्य (Pushya) है। पुष्य नक्षत्र को समृद्धि और पोषण से जुड़ा माना जाता है।</p>
+              <p><strong>परिणाम:</strong> यह जानकारी आपको उन व्यवसायों या निवेशों पर ध्यान केंद्रित करने के लिए प्रेरित कर सकती है जो स्थिरता और दीर्घकालिक विकास प्रदान करते हैं, जैसे कि रियल एस्टेट या कृषि, क्योंकि ये आपके नक्षत्र की ऊर्जा के साथ अच्छी तरह से संरेखित होते हैं।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'ascendant-calculator',
+        name: 'Ascendant (Lagna) Calculator',
+        icon: '⬆️',
+        category: 'Vedic Astrology Essentials',
+        description: 'Calculate your rising sign (Lagna) based on your birth time and place.',
+        longDescription: 'Your Ascendant, or Lagna, is the zodiac sign rising on the eastern horizon at the moment of your birth. It represents your physical appearance, personality, and how you project yourself to the world. It is highly crucial in Vedic astrology.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+          { name: 'tob', label: 'Time of Birth', type: 'time' },
+          { name: 'pob', label: 'Place of Birth', type: 'text', placeholder: 'e.g., Kolkata, India' },
+        ],
+        calculate: (input) => {
+          const birthDate = new Date(input.dob);
+          const ascendants = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
+          const mockAscendant = ascendants[birthDate.getHours() % 12]; // Simplified based on hour
+
+          return {
+            mainResult: `Your Ascendant (Lagna) is: <strong>${mockAscendant}</strong>`,
+            additionalInfo: `
+              <p>The Ascendant is one of the most important points in your birth chart, defining your core identity and initial reactions to life. It also sets the framework for the entire house system in your Kundli.</p>
+            `,
+            financeFocus: `Your Ascendant sign can influence your financial outlook and how you approach earning and managing money. For example, a Capricorn Ascendant might be very disciplined and traditional in their financial dealings, while a Leo Ascendant might be more inclined towards grand, high-risk, high-reward investments. Understanding your Lagna can help you leverage your inherent traits for financial success.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आपका लग्न मकर (Capricorn) है। मकर लग्न वाले व्यक्ति अक्सर अपने करियर और वित्तीय लक्ष्यों के प्रति बहुत अनुशासित और मेहनती होते हैं।</p>
+              <p><strong>परिणाम:</strong> आप इस जानकारी का उपयोग करके अपनी वित्तीय योजनाओं में और अधिक अनुशासन ला सकते हैं, जैसे कि नियमित रूप से बचत करना, सेवानिवृत्ति के लिए निवेश करना, और जोखिम भरे निवेशों से बचना, क्योंकि यह आपके लग्न की प्रकृति के अनुरूप है।</p>
+            `,
+          };
+        },
+      },
+      // Numerology & Personal Insights
+      {
+        id: 'life-path-numerology',
+        name: 'Life Path (Birth Number) Numerology Calculator',
+        icon: '🔢',
+        category: 'Numerology & Personal Insights',
+        description: 'Calculate your Life Path Number and its meaning.',
+        longDescription: 'Your Life Path Number, derived from your birth date, is a core number in numerology that reveals your natural talents, challenges, and overall life purpose. Discover what your number signifies.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+        ],
+        calculate: (input) => {
+          const dob = new Date(input.dob);
+          const day = dob.getDate();
+          const month = dob.getMonth() + 1;
+          const year = dob.getFullYear();
+
+          // Simplified calculation for Life Path (sum digits to a single digit or master number 11, 22, 33)
+          const sumDigits = (num) => {
+            let sum = 0;
+            String(num).split('').forEach(digit => {
+              sum += parseInt(digit, 10);
+            });
+            return sum;
+          };
+
+          let lifePath = sumDigits(day) + sumDigits(month) + sumDigits(year);
+          while (lifePath > 9 && ![11, 22, 33].includes(lifePath)) {
+            lifePath = sumDigits(lifePath);
+          }
+
+          const lifePathMeanings = {
+            1: "The Leader: Independent, innovative, and driven. You are a pioneer.",
+            2: "The Peacemaker: Cooperative, diplomatic, and sensitive. You seek harmony.",
+            3: "The Communicator: Creative, expressive, and optimistic. You inspire others.",
+            4: "The Builder: Practical, disciplined, and stable. You create foundations.",
+            5: "The Adventurer: Freedom-loving, versatile, and adaptable. You seek change.",
+            6: "The Nurturer: Responsible, compassionate, and family-oriented. You serve others.",
+            7: "The Seeker: Analytical, spiritual, and introspective. You seek truth.",
+            8: "The Executive: Ambitious, powerful, and successful. You achieve material goals.",
+            9: "The Humanitarian: Compassionate, selfless, and wise. You serve humanity.",
+            11: "The Master Intuitive: Highly intuitive, inspiring, and charismatic. You lead through insight.",
+            22: "The Master Builder: Visionary, practical, and capable of grand achievements. You build for humanity.",
+            33: "The Master Healer: Compassionate, selfless, and dedicated to healing. You serve with love.",
+          };
+
+          const meaning = lifePathMeanings[lifePath] || "Meaning not defined for this number.";
+
+          return {
+            mainResult: `Your Life Path Number is: <strong>${lifePath}</strong>`,
+            additionalInfo: `
+              <p><strong>Meaning:</strong> ${meaning}</p>
+              <p>Your Life Path Number reveals your innate characteristics and the major lessons you are here to learn and master throughout your life.</p>
+            `,
+            financeFocus: `Your Life Path Number can offer insights into your natural approach to wealth and career. For example, a Life Path 8 (The Executive) often has a strong drive for financial success and material abundance, while a Life Path 4 (The Builder) might excel in stable, long-term financial planning. Understanding this can help you align your financial strategies with your inherent strengths.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आपका जीवन पथ संख्या 8 (The Executive) है। संख्या 8 वाले व्यक्ति अक्सर वित्तीय सफलता और भौतिक प्रचुरता के लिए एक मजबूत प्रेरणा रखते हैं।</p>
+              <p><strong>परिणाम:</strong> आप इस जानकारी का उपयोग करके बड़े वित्तीय लक्ष्यों को निर्धारित करने, निवेश में जोखिम लेने और अपने करियर में नेतृत्व की भूमिका निभाने के लिए प्रेरित हो सकते हैं, क्योंकि यह आपकी स्वाभाविक प्रवृत्ति के अनुरूप है।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'lucky-number-calculator',
+        name: 'Lucky Number (Numerology) Calculator',
+        icon: '🍀',
+        category: 'Numerology & Personal Insights',
+        description: 'Find your personal lucky number based on your birth date or name.',
+        longDescription: 'Discover your lucky number, often believed to bring good fortune and positive energy. This number can be derived from your birth date or name and can be used for various purposes.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+          { name: 'name', label: 'Full Name (Optional)', type: 'text', placeholder: 'e.g., Rajesh Kumar' },
+        ],
+        calculate: (input) => {
+          const dob = new Date(input.dob);
+          const day = dob.getDate();
+          const month = dob.getMonth() + 1;
+          const year = dob.getFullYear();
+
+          // Simplified lucky number calculation (sum of birth date digits)
+          const sumDigits = (num) => {
+            let sum = 0;
+            String(num).split('').forEach(digit => {
+              sum += parseInt(digit, 10);
+            });
+            return sum;
+          };
+
+          let luckyNumber = sumDigits(day) + sumDigits(month) + sumDigits(year);
+          while (luckyNumber > 9) {
+            luckyNumber = sumDigits(luckyNumber);
+          }
+
+          // Add a very basic name-based number (optional, just for demo)
+          let nameNumber = 0;
+          if (input.name) {
+            nameNumber = sumDigits(input.name.replace(/[^a-zA-Z]/g, '').toLowerCase().split('').reduce((acc, char) => acc + (char.charCodeAt(0) - 96), 0));
+            while (nameNumber > 9) {
+              nameNumber = sumDigits(nameNumber);
+            }
+          }
+
+          return {
+            mainResult: `Your Lucky Number (from Birth Date) is: <strong>${luckyNumber}</strong>`,
+            additionalInfo: input.name ? `Your Lucky Number (from Name) is: <strong>${nameNumber}</strong>` : '',
+            financeFocus: `Your lucky number can be used as a personal guide in financial decisions. Some people use their lucky number when choosing lottery tickets, investing in stocks with corresponding digits, or even setting financial goals. While not a guarantee of success, it can provide a psychological boost and a sense of alignment.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आपकी भाग्यशाली संख्या 7 है। आप इस संख्या को अपने वित्तीय लेनदेन में शामिल करने पर विचार कर सकते हैं।</p>
+              <p><strong>परिणाम:</strong> आप 7 तारीख को महत्वपूर्ण वित्तीय निर्णय लेने, 7 नंबर वाले शेयरों में निवेश करने, या अपनी बचत को 7 के गुणकों में रखने का प्रयास कर सकते हैं, जिससे आपको मानसिक संतुष्टि और भाग्य का अहसास हो।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'gemstone-finder',
+        name: 'Gemstone (Ratna) Finder',
+        icon: '💎',
+        category: 'Numerology & Personal Insights',
+        description: 'Get personalized gemstone recommendations based on your birth details.',
+        longDescription: 'Discover the gemstone (Ratna) that is astrologically recommended for you. Gemstones are believed to amplify positive planetary influences and mitigate negative ones, bringing prosperity, health, and well-being.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+          { name: 'tob', label: 'Time of Birth', type: 'time' },
+          { name: 'pob', label: 'Place of Birth', type: 'text', placeholder: 'e.g., Bangalore, India' },
+        ],
+        calculate: (input) => {
+          const birthDate = new Date(input.dob);
+          const month = birthDate.getMonth(); // 0-11
+
+          const gemstones = [
+            { name: 'Red Coral (मंगल रत्न)', associatedPlanet: 'Mars', benefits: 'Boosts energy, courage, and financial stability.', wearing: 'Wear on the ring finger of the right hand.' }, // Jan
+            { name: 'Emerald (बुध रत्न)', associatedPlanet: 'Mercury', benefits: 'Enhances intellect, communication, and business acumen.', wearing: 'Wear on the little finger of the right hand.' }, // Feb
+            { name: 'Yellow Sapphire (बृहस्पति रत्न)', associatedPlanet: 'Jupiter', benefits: 'Brings wisdom, prosperity, and good fortune.', wearing: 'Wear on the index finger of the right hand.' }, // Mar
+            { name: 'Diamond (शुक्र रत्न)', associatedPlanet: 'Venus', benefits: 'Attracts luxury, beauty, and wealth.', wearing: 'Wear on the middle finger of the right hand.' }, // Apr
+            { name: 'Blue Sapphire (शनि रत्न)', associatedPlanet: 'Saturn', benefits: 'Grants discipline, success, and protection from evil.', wearing: 'Wear on the middle finger of the right hand.' }, // May
+            { name: 'Pearl (चंद्र रत्न)', associatedPlanet: 'Moon', benefits: 'Calms emotions, enhances mental peace, and brings harmony.', wearing: 'Wear on the little finger of the right hand.' }, // Jun
+            { name: 'Ruby (सूर्य रत्न)', associatedPlanet: 'Sun', benefits: 'Increases vitality, leadership, and recognition.', wearing: 'Wear on the ring finger of the right hand.' }, // Jul
+            { name: 'Hessonite (राहु रत्न)', associatedPlanet: 'Rahu', benefits: 'Aids in quick success, removes obstacles, and brings material gains.', wearing: 'Wear on the middle finger of the right hand.' }, // Aug
+            { name: 'Cat\'s Eye (केतु रत्न)', associatedPlanet: 'Ketu', benefits: 'Provides spiritual insight, protection from hidden enemies, and sudden wealth.', wearing: 'Wear on the ring finger of the right hand.' }, // Sep
+            { name: 'Opal (शुक्र रत्न)', associatedPlanet: 'Venus', benefits: 'Enhances love, relationships, and artistic abilities.', wearing: 'Wear on the ring finger of the right hand.' }, // Oct
+            { name: 'Topaz (बृहस्पति रत्न)', associatedPlanet: 'Jupiter', benefits: 'Brings joy, abundance, and good health.', wearing: 'Wear on the index finger of the right hand.' }, // Nov
+            { name: 'Garnet (मंगल रत्न)', associatedPlanet: 'Mars', benefits: 'Boosts passion, energy, and commitment.', wearing: 'Wear on the ring finger of the right hand.' }, // Dec
+          ];
+
+          const recommendedGemstone = gemstones[month] || gemstones[0]; // Default if month not found
+
+          return {
+            mainResult: `Based on your birth details, your recommended gemstone is: <strong>${recommendedGemstone.name}</strong>`,
+            additionalInfo: `
+              <p><strong>Associated Planet:</strong> ${recommendedGemstone.associatedPlanet}</p>
+              <p><strong>Believed Benefits:</strong> ${recommendedGemstone.benefits}</p>
+            `,
+            financeFocus: `Many gemstones are specifically recommended in astrology for attracting wealth and financial stability. Wearing your recommended gemstone is believed to enhance planetary energies that support financial growth, improve business prospects, and protect against losses. It's considered a way to align your personal energy with cosmic forces for material prosperity.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आपके लिए पीला नीलम (Yellow Sapphire) रत्न की सिफारिश की जाती है, जो बृहस्पति ग्रह से जुड़ा है। बृहस्पति को धन और ज्ञान का ग्रह माना जाता है।</p>
+              <p><strong>परिणाम:</strong> आप इस रत्न को धारण करके अपनी वित्तीय स्थिति में सुधार महसूस कर सकते हैं, जैसे कि व्यापार में वृद्धि, निवेश से लाभ, या करियर में पदोन्नति, क्योंकि यह बृहस्पति की सकारात्मक ऊर्जा को आकर्षित करने में मदद करता है।</p>
+            `,
+            extraTips: `
+              <p><strong>How to Wear (General Tip):</strong> It is generally recommended to wear the gemstone on the finger associated with its ruling planet, after proper purification and activation rituals. Consult a local astrologer for specific guidance on weight, metal, and auspicious timing for wearing.</p>
+            `,
+          };
+        },
+      },
+      // Relationship & Compatibility
+      {
+        id: 'zodiac-compatibility',
+        name: 'Zodiac Compatibility Calculator',
+        icon: '❤️',
+        category: 'Relationship & Compatibility',
+        description: 'Check love and relationship compatibility between two zodiac signs.',
+        longDescription: 'Enter two zodiac signs to get an instant compatibility score and analysis. This tool explores how well two individuals might harmonize in a relationship based on their sun signs.',
+        inputs: [
+          { name: 'sign1', label: 'Your Zodiac Sign', type: 'select', options: [
+            { value: 'Aries', label: 'Aries' }, { value: 'Taurus', label: 'Taurus' }, { value: 'Gemini', label: 'Gemini' },
+            { value: 'Cancer', label: 'Cancer' }, { value: 'Leo', label: 'Leo' }, { value: 'Virgo', label: 'Virgo' },
+            { value: 'Libra', label: 'Libra' }, { value: 'Scorpio', label: 'Scorpio' }, { value: 'Sagittarius', label: 'Sagittarius' },
+            { value: 'Capricorn', label: 'Capricorn' }, { value: 'Aquarius', label: 'Aquarius' }, { value: 'Pisces', label: 'Pisces' }
+          ]},
+          { name: 'sign2', label: 'Partner\'s Zodiac Sign', type: 'select', options: [
+            { value: 'Aries', label: 'Aries' }, { value: 'Taurus', label: 'Taurus' }, { value: 'Gemini', label: 'Gemini' },
+            { value: 'Cancer', label: 'Cancer' }, { value: 'Leo', label: 'Leo' }, { value: 'Virgo', label: 'Virgo' },
+            { value: 'Libra', label: 'Libra' }, { value: 'Scorpio', label: 'Scorpio' }, { value: 'Sagittarius', label: 'Sagittarius' },
+            { value: 'Capricorn', label: 'Capricorn' }, { value: 'Aquarius', label: 'Aquarius' }, { value: 'Pisces', label: 'Pisces' }
+          ]},
+        ],
+        calculate: (input) => {
+          const { sign1, sign2 } = input;
+          const compatibilityScores = {
+            'Aries-Aries': 70, 'Aries-Taurus': 50, 'Aries-Gemini': 80, 'Aries-Cancer': 40, 'Aries-Leo': 90,
+            'Aries-Virgo': 55, 'Aries-Libra': 65, 'Aries-Scorpio': 75, 'Aries-Sagittarius': 85, 'Aries-Capricorn': 45,
+            'Aries-Aquarius': 80, 'Aries-Pisces': 60,
+            // Add more combinations for a complete set
+          };
+          const score = compatibilityScores[`${sign1}-${sign2}`] || compatibilityScores[`${sign2}-${sign1}`] || 60; // Default if not found
+
+          let compatibilityText = "";
+          if (score >= 80) compatibilityText = "Excellent Match! High harmony and understanding.";
+          else if (score >= 60) compatibilityText = "Good Match. Strong potential with some effort.";
+          else if (score >= 40) compatibilityText = "Average Match. Requires significant understanding and compromise.";
+          else compatibilityText = "Challenging Match. Differences may lead to friction.";
+
+          return {
+            mainResult: `Compatibility between ${sign1} and ${sign2}: <strong>${score}%</strong>`,
+            additionalInfo: `
+              <p>${compatibilityText}</p>
+              <div class="w-full bg-gray-200 rounded-full h-4">
+                <div class="bg-purple-600 h-4 rounded-full" style="width: ${score}%"></div>
+              </div>
+              <p class="mt-2 text-sm text-gray-600">This score is a general indicator of sun sign compatibility. Real relationships are complex!</p>
+            `,
+            financeFocus: `Understanding your financial compatibility with a partner is crucial for a stable relationship. While this tool focuses on general zodiac compatibility, it can prompt discussions about shared financial values, spending habits, and long-term money goals. For example, a financially cautious sign paired with a free-spending one might need to establish clear financial boundaries.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आप सिंह राशि के हैं और आपका साथी धनु राशि का है। यह संयोजन अक्सर उच्च अनुकूलता दिखाता है, जिसमें दोनों पक्ष रोमांच और स्वतंत्रता पसंद करते हैं।</p>
+              <p><strong>परिणाम:</strong> वित्तीय रूप से, आप दोनों एक साथ बड़े निवेश या यात्रा की योजना बनाने में सहज महसूस कर सकते हैं। यह टूल आपको यह समझने में मदद करता है कि आपके वित्तीय निर्णय आपके रिश्ते की गतिशीलता को कैसे प्रभावित कर सकते हैं, जिससे आप साझा लक्ष्यों के लिए बेहतर योजना बना सकते हैं।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'kundli-matching',
+        name: 'Kundli (Gun) Matching Tool',
+        icon: '💍',
+        category: 'Relationship & Compatibility',
+        description: 'Perform traditional Guna Milan (36-point) matching for marriage.',
+        longDescription: 'The Guna Milan tool analyzes the compatibility of two birth charts for marriage purposes, based on 8 Kootas (categories) totaling 36 Gunas. This is a vital step in traditional Indian arranged marriages.',
+        inputs: [
+          { name: 'dob1', label: 'Person 1 Date of Birth', type: 'date' },
+          { name: 'tob1', label: 'Person 1 Time of Birth', type: 'time' },
+          { name: 'pob1', label: 'Person 1 Place of Birth', type: 'text', placeholder: 'e.g., Lucknow, India' },
+          { name: 'dob2', label: 'Person 2 Date of Birth', type: 'date' },
+          { name: 'tob2', label: 'Person 2 Time of Birth', type: 'time' },
+          { name: 'pob2', label: 'Person 2 Place of Birth', type: 'text', placeholder: 'e.g., Patna, India' },
+        ],
+        calculate: (input) => {
+          // Simplified Guna Milan score (random for demo)
+          const gunaScore = Math.floor(Math.random() * 20) + 10; // Score between 10 and 29
+          let matchStatus = "";
+          if (gunaScore >= 18) matchStatus = "Good Match (शुभ मिलान)";
+          else if (gunaScore >= 14) matchStatus = "Average Match (मध्यम मिलान)";
+          else matchStatus = "Below Average (कमजोर मिलान)";
+
+          return {
+            mainResult: `Guna Milan Score: <strong>${gunaScore} out of 36</strong>`,
+            additionalInfo: `
+              <p><strong>Match Status:</strong> ${matchStatus}</p>
+              <p>This score indicates the astrological compatibility for marriage based on traditional Vedic principles. A score of 18 or above is generally considered favorable.</p>
+              <p><em>(A full report would detail each of the 8 Kootas: Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot, Nadi)</em></p>
+            `,
+            financeFocus: `In arranged marriages, financial stability and shared financial vision are often discussed alongside astrological compatibility. While Guna Milan focuses on personal harmony, a good match can imply fewer financial conflicts in the long run. This tool can serve as a bridge to discuss joint financial planning, asset management, and future wealth goals with potential partners and families, ensuring both astrological and financial alignment.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> एक जोड़े ने अपने विवाह के लिए अपनी कुंडलियों का मिलान किया और उन्हें 22/36 का गुण मिलान स्कोर मिला।</p>
+              <p><strong>परिणाम:</strong> यह एक अच्छा मिलान माना जाता है, जो उनके बीच सामंजस्य और समझ का संकेत देता है। वित्तीय रूप से, यह इंगित कर सकता है कि वे एक साथ वित्तीय निर्णय लेने और साझा वित्तीय लक्ष्यों को प्राप्त करने में अधिक सफल होंगे, जिससे उनके वैवाहिक जीवन में वित्तीय स्थिरता आएगी।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'manglik-checker',
+        name: 'Manglik (Mangal Dosha) Checker',
+        icon: '🔥',
+        category: 'Relationship & Compatibility',
+        description: 'Check for Mangal Dosha in your birth chart.',
+        longDescription: 'Mangal Dosha, caused by the planet Mars (Mangal) in certain houses of a birth chart, is a significant consideration in Indian marriage astrology. Use this tool to check if you or your partner have Mangal Dosha.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+          { name: 'tob', label: 'Time of Birth', type: 'time' },
+          { name: 'pob', label: 'Place of Birth', type: 'text', placeholder: 'e.g., Jaipur, India' },
+        ],
+        calculate: (input) => {
+          // Simplified logic: randomly assign Manglik status
+          const isManglik = Math.random() > 0.5;
+          const doshaStrength = isManglik ? (Math.random() > 0.5 ? 'Moderate' : 'Strong') : 'None';
+
+          return {
+            mainResult: `Mangal Dosha Status: <strong>${isManglik ? 'Present' : 'Not Present'}</strong>`,
+            additionalInfo: isManglik ? `
+              <p><strong>Dosha Strength:</strong> ${doshaStrength}</p>
+              <p>Mangal Dosha is believed to affect marital harmony and sometimes lead to conflicts. Its presence is often checked before marriage proposals.</p>
+            ` : `<p>Your chart does not show the presence of Mangal Dosha. This is generally considered favorable for marital compatibility.</p>`,
+            financeFocus: `While Mangal Dosha primarily concerns marital harmony, its implications can indirectly touch upon financial stability within a marriage. Conflicts, if they arise due to dosha, can sometimes lead to financial strain. Understanding this aspect can encourage open communication about potential challenges, including financial ones, and seeking solutions together.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> एक व्यक्ति अपनी जन्म कुंडली में मंगल दोष की जाँच करता है और परिणाम 'उपस्थित' आता है।</p>
+              <p><strong>परिणाम:</strong> यदि मंगल दोष मौजूद है, तो पारंपरिक रूप से इसके प्रभावों को कम करने के लिए कुछ उपाय या विशेष विवाह अनुष्ठान सुझाए जाते हैं। वित्तीय संदर्भ में, यह अप्रत्यक्ष रूप से जोड़े को भविष्य के वित्तीय निर्णयों और संभावित चुनौतियों पर अधिक सावधानी से चर्चा करने के लिए प्रोत्साहित कर सकता है, जिससे वित्तीय संघर्षों को कम किया जा सके।</p>
+            `,
+            extraTips: `
+              <p><strong>Common Considerations/Beliefs (Simplified):</strong> If Mangal Dosha is present, it is often believed that marrying another Manglik person can nullify its effects. Remedies like Kumbh Vivah (marriage to a tree/idol) are also sometimes suggested. Always consult a qualified astrologer for personalized advice.</p>
+            `,
+          };
+        },
+      },
+      // Timings & Auspiciousness
+      {
+        id: 'panchang-muhurat',
+        name: 'Panchang / Muhurat Calendar',
+        icon: '🗓️',
+        category: 'Timings & Auspiciousness',
+        description: 'Get daily Hindu calendar details and auspicious timings.',
+        longDescription: 'The Panchang provides daily Hindu calendar details including Tithi, Nakshatra, Yoga, and Karana. It also helps identify Shubh Muhurats (auspicious timings) for various activities, guiding you to choose the most favorable moments.',
+        inputs: [
+          { name: 'date', label: 'Select Date', type: 'date' },
+          { name: 'location', label: 'Location', type: 'text', placeholder: 'e.g., Hyderabad, India' },
+        ],
+        calculate: (input) => {
+          const selectedDate = new Date(input.date);
+          const dayOfWeek = selectedDate.toLocaleDateString('en-IN', { weekday: 'long' });
+
+          // Simplified mock Panchang data
+          const tithi = ['Pratipada', 'Dwitiya', 'Tritiya', 'Chaturthi', 'Panchami'][selectedDate.getDate() % 5];
+          const nakshatra = ['Ashwini', 'Bharani', 'Krittika', 'Rohini'][selectedDate.getDate() % 4];
+          const yoga = ['Vishkumbha', 'Priti', 'Ayushman', 'Saubhagya'][selectedDate.getDate() % 4];
+          const karana = ['Bava', 'Balava', 'Kaulava', 'Taitila'][selectedDate.getDate() % 4];
+
+          const shubhMuhurat = `10:00 AM - 12:00 PM (Abhijit Muhurat)`;
+          const rahuKalam = `01:30 PM - 03:00 PM (Avoid starting new ventures)`;
+
+          return {
+            mainResult: `Panchang for ${selectedDate.toLocaleDateString()} in ${input.location || 'Your Location'}:`,
+            additionalInfo: `
+              <p><strong>Day:</strong> ${dayOfWeek}</p>
+              <p><strong>Tithi (Lunar Day):</strong> ${tithi} <span class="text-sm text-gray-500">(Signifies lunar phase and its energy)</span></p>
+              <p><strong>Nakshatra (Lunar Mansion):</strong> ${nakshatra} <span class="text-sm text-gray-500">(Influences personality and events)</span></p>
+              <p><strong>Yoga (Lunar Combination):</strong> ${yoga} <span class="text-sm text-gray-500">(Indicates auspiciousness of the day)</span></p>
+              <p><strong>Karana (Half Lunar Day):</strong> ${karana} <span class="text-sm text-gray-500">(Determines the nature of the day)</span></p>
+              <p class="mt-4"><strong>Shubh Muhurat (Auspicious Time):</strong> ${shubhMuhurat}</p>
+              <p><strong>Rahu Kalam (Inauspicious Time):</strong> ${rahuKalam}</p>
+            `,
+            financeFocus: `Identifying auspicious timings (Muhurats) from the Panchang is widely practiced for financial activities like starting a new business, making large investments, buying property, or even opening a new bank account. Choosing a Shubh Muhurat is believed to enhance the chances of success and prosperity in these ventures, aligning your actions with favorable cosmic energies.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> आप एक नया व्यवसाय शुरू करने की योजना बना रहे हैं और पंचंग टूल का उपयोग करके 'शुभ मुहूर्त' की तलाश कर रहे हैं। आपको पता चलता है कि अगले बुधवार को सुबह 10:00 बजे से 12:00 बजे तक अभिजीत मुहूर्त है।</p>
+              <p><strong>परिणाम:</strong> आप इस शुभ मुहूर्त का उपयोग अपने व्यवसाय के उद्घाटन समारोह या महत्वपूर्ण वित्तीय दस्तावेज़ों पर हस्ताक्षर करने के लिए कर सकते हैं, यह मानते हुए कि यह आपके उद्यम के लिए समृद्धि और सफलता लाएगा।</p>
+            `,
+            extraTips: `
+              <p><strong>General Considerations:</strong> While Shubh Muhurats are favorable, it's also important to avoid Rahu Kalam and other inauspicious timings for important activities. Consult a local priest or astrologer for precise Muhurat calculations based on your specific needs and location.</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'auspicious-time-finder',
+        name: 'Auspicious Time (Muhurta) Finder',
+        icon: '⏰',
+        category: 'Timings & Auspiciousness',
+        description: 'Find the best time for specific activities like business launch or property purchase.',
+        longDescription: 'This specialized Muhurta Finder helps you pinpoint the most auspicious times for significant life events, from starting a new business to buying a vehicle or performing a housewarming ceremony. Align your actions with favorable cosmic energies.',
+        inputs: [
+          { name: 'activity', label: 'Select Activity', type: 'select', options: [
+            { value: 'business_launch', label: 'Business Launch' },
+            { value: 'property_purchase', label: 'Property Purchase' },
+            { value: 'vehicle_purchase', label: 'Vehicle Purchase' },
+            { value: 'wedding', label: 'Wedding Ceremony' },
+            { value: 'travel_start', label: 'Starting Travel' },
+            { value: 'investment', label: 'Making an Investment' },
+          ]},
+          { name: 'date', label: 'Preferred Date', type: 'date' },
+          { name: 'location', label: 'Location', type: 'text', placeholder: 'e.g., Pune, India' },
+        ],
+        calculate: (input) => {
+          const activity = input.activity;
+          const date = new Date(input.date);
+          const activityNames = {
+            'business_launch': 'Business Launch',
+            'property_purchase': 'Property Purchase',
+            'vehicle_purchase': 'Vehicle Purchase',
+            'wedding': 'Wedding Ceremony',
+            'travel_start': 'Starting Travel',
+            'investment': 'Making an Investment',
+          };
+
+          // Simplified mock Muhurat
+          const mockMuhurat = {
+            'business_launch': '11:00 AM - 12:30 PM (Amrit Kaal)',
+            'property_purchase': '09:00 AM - 10:30 AM (Choghadiya Shubh)',
+            'vehicle_purchase': '02:00 PM - 03:30 PM (Labh Choghadiya)',
+            'wedding': '07:00 PM - 09:00 PM (Godhuli Vela)',
+            'travel_start': '06:00 AM - 07:30 AM (Amrit Kaal)',
+            'investment': '10:00 AM - 11:30 AM (Shubh Choghadiya)',
+          };
+
+          const auspiciousTime = mockMuhurat[activity] || 'No specific Muhurat found for this activity on this date (simplified).';
+
+          return {
+            mainResult: `Auspicious Time for ${activityNames[activity]} on ${date.toLocaleDateString()}:`,
+            additionalInfo: `
+              <p><strong>Recommended Muhurat:</strong> ${auspiciousTime}</p>
+              <p>Choosing an auspicious time for important activities is believed to enhance their success and bring positive outcomes, minimizing obstacles.</p>
+            `,
+            financeFocus: `For significant financial transactions like launching a startup, buying a major asset (property, vehicle), or making a substantial investment, selecting an auspicious Muhurat is a common practice. It's believed to attract prosperity and ensure the longevity and profitability of the venture. This tool helps integrate traditional wisdom into modern financial planning.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> आप एक बड़ी संपत्ति खरीदने की योजना बना रहे हैं और 'शुभ मुहूर्त' टूल का उपयोग करके सबसे अच्छे समय की तलाश कर रहे हैं। आपको पता चलता है कि आपकी पसंदीदा तारीख पर सुबह 9:00 बजे से 10:30 बजे तक 'शुभ चौघड़िया' है।</p>
+              <p><strong>परिणाम:</strong> आप इस समय का उपयोग संपत्ति के कागजात पर हस्ताक्षर करने या डाउन पेमेंट करने के लिए कर सकते हैं, यह मानते हुए कि यह आपके निवेश के लिए भाग्य और दीर्घकालिक लाभ लाएगा।</p>
+            `,
+            extraTips: `
+              <p><strong>General Considerations:</strong> The accuracy of Muhurat depends heavily on precise birth details and geographical location. Always cross-reference with a professional astrologer for highly critical life events. Avoid Rahu Kalam and Yamagandam during any Muhurat.</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'stock-market-astrology',
+        name: 'Stock Market Astrology Timing Calculator',
+        icon: '📈',
+        category: 'Timings & Auspiciousness',
+        description: 'Explore astrological insights for stock market trends and timing.',
+        longDescription: 'This niche tool provides a simplified perspective on how planetary movements are sometimes believed to influence stock market trends. It aims to offer a conceptual understanding of astrological timing for trading and investment decisions.',
+        inputs: [
+          { name: 'date', label: 'Select Date for Analysis', type: 'date' },
+        ],
+        calculate: (input) => {
+          const selectedDate = new Date(input.date);
+          const day = selectedDate.getDay(); // 0 for Sunday, 1 for Monday...
+
+          let marketOutlook = "Neutral. General market conditions apply.";
+          let financeTip = "Always rely on fundamental and technical analysis for investment decisions. Astrology is a supplementary insight.";
+
+          if (day === 1 || day === 5) { // Monday or Friday (simplified for demo)
+            marketOutlook = "Potentially Volatile. Planetary energies suggest fluctuating trends. Exercise caution.";
+            financeTip = "Consider hedging strategies or reducing exposure on days with high astrological volatility. Focus on short-term movements if you are an active trader.";
+          } else if (day === 3) { // Wednesday
+            marketOutlook = "Potentially Favorable. Energies align for moderate gains. Look for stable sectors.";
+            financeTip = "This could be a good day for reviewing your portfolio and making planned, long-term investments. Focus on quality stocks.";
+          }
+
+          return {
+            mainResult: `Astrological Market Outlook for ${selectedDate.toLocaleDateString()}:`,
+            additionalInfo: `
+              <p><strong>Outlook:</strong> ${marketOutlook}</p>
+              <p><em>(Note: This is a highly simplified astrological interpretation and not financial advice. Real stock market astrology involves complex planetary transits, aspects, and house analysis.)</em></p>
+            `,
+            financeFocus: `Some astrologers believe that specific planetary transits can correlate with bullish or bearish market sentiments. While highly speculative, this concept encourages investors to be mindful of broader energetic influences. This tool serves as a conceptual bridge, reminding users that while financial decisions should be data-driven, some also consider cosmic timings for an added edge.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> आप अगले मंगलवार को शेयर बाजार में एक बड़ा निवेश करने की योजना बना रहे हैं। यह टूल आपको बताता है कि मंगलवार को बाजार में 'संभावित रूप से अस्थिर' प्रवृत्ति हो सकती है।</p>
+              <p><strong>परिणाम:</strong> इस जानकारी के आधार पर, आप अपने निवेश को स्थगित करने या उस दिन अधिक सतर्क दृष्टिकोण अपनाने का निर्णय ले सकते हैं, जैसे कि छोटे निवेश करना या केवल उन शेयरों पर ध्यान केंद्रित करना जो कम अस्थिर होते हैं।</p>
+            `,
+          };
+        },
+      },
+      // Other Tools (Structure for future expansion)
+      {
+        id: 'baby-name-finder',
+        name: 'Baby Name Finder (Vedic Naming Tool)',
+        icon: '👶',
+        category: 'Other Tools',
+        description: 'Suggests auspicious baby names based on Nakshatra and birth details.',
+        longDescription: 'Find a spiritually significant and auspicious name for your baby based on their Janma Nakshatra (birth star) and other Vedic astrological principles. A well-chosen name is believed to bring good fortune.',
+        inputs: [
+          { name: 'dob', label: 'Baby\'s Date of Birth', type: 'date' },
+          { name: 'gender', label: 'Baby\'s Gender', type: 'select', options: [
+            { value: 'boy', label: 'Boy' }, { value: 'girl', label: 'Girl' }, { value: 'unspecified', label: 'Unspecified' }
+          ]},
+        ],
+        calculate: (input) => {
+          const birthDate = new Date(input.dob);
+          const nakshatras = [
+            "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu", "Pushya", "Ashlesha",
+            "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", "Anuradha",
+            "Jyeshtha", "Moola", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta", "Shatabhisha",
+            "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"
+          ];
+          const mockNakshatra = nakshatras[birthDate.getDate() % nakshatras.length]; // Simplified
+
+          const nameSuggestions = {
+            Ashwini: ['Aarav', 'Advik', 'Anaya', 'Aditi'],
+            Bharani: ['Bhavin', 'Bhumi', 'Bhavya', 'Bhoomi'],
+            Krittika: ['Kartik', 'Kavya', 'Kriti', 'Karan'],
+            // ... add more as needed
+          };
+          const suggestedNames = nameSuggestions[mockNakshatra] || ['Aarav', 'Anaya', 'Rohan', 'Priya'];
+
+          return {
+            mainResult: `Based on Nakshatra (${mockNakshatra}), some auspicious names are:`,
+            additionalInfo: `
+              <ul class="list-disc list-inside">
+                ${suggestedNames.map(name => `<li>${name}</li>`).join('')}
+              </ul>
+              <p class="mt-2">Vedic naming often considers the first syllable of the name based on the Nakshatra Pada (quarter).</p>
+            `,
+            financeFocus: `While primarily for parenting, this tool can subtly link to financial planning for new parents. Choosing a name that signifies prosperity or wealth (e.g., Dhruv, Lakshmi) can be a cultural nod. More practically, this tool's presence on a finance site can attract new parents, allowing for cross-promotion of financial advice related to childcare, education savings, and family budgeting.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> एक नए माता-पिता अपने बच्चे के लिए नाम ढूंढ रहे हैं और उन्हें पता चलता है कि बच्चे का नक्षत्र 'रोहिणी' है। टूल 'रोहिणी' नक्षत्र के लिए 'आरुषि' या 'रोहन' जैसे नाम सुझाता है।</p>
+              <p><strong>परिणाम:</strong> नाम चुनने के साथ-साथ, माता-पिता बच्चे के भविष्य के लिए वित्तीय योजना बनाने के बारे में भी सोच सकते हैं, जैसे कि शिक्षा निधि या बचत खाता खोलना, क्योंकि यह नई पारिवारिक जिम्मेदारियों के साथ आता है।</p>
+            `,
+            extraTips: `
+              <p><strong>Significance of Naming:</strong> In Vedic tradition, a name is believed to influence a child's destiny and personality. Consulting a professional astrologer for precise naming based on the entire birth chart is highly recommended.</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'daily-finance-horoscope',
+        name: 'Daily/Monthly Finance (Money) Horoscope',
+        icon: '💸',
+        category: 'Daily & Periodic Horoscopes',
+        description: 'Get daily or monthly financial predictions for your zodiac sign.',
+        longDescription: 'Receive specific astrological insights focused on your financial prospects, income, expenses, and investment opportunities for the day or month ahead. Tailored to your zodiac sign.',
+        inputs: [
+          { name: 'zodiacSign', label: 'Select Your Zodiac Sign', type: 'select', options: [
+            { value: 'Aries', label: 'Aries' }, { value: 'Taurus', label: 'Taurus' }, { value: 'Gemini', label: 'Gemini' },
+            { value: 'Cancer', label: 'Cancer' }, { value: 'Leo', label: 'Leo' }, { value: 'Virgo', label: 'Virgo' },
+            { value: 'Libra', label: 'Libra' }, { value: 'Scorpio', label: 'Scorpio' }, { value: 'Sagittarius', label: 'Sagittarius' },
+            { value: 'Capricorn', label: 'Capricorn' }, { value: 'Aquarius', label: 'Aquarius' }, { value: 'Pisces', label: 'Pisces' }
+          ]},
+          { name: 'period', label: 'Select Period', type: 'select', options: [
+            { value: 'daily', label: 'Daily' }, { value: 'monthly', label: 'Monthly' }
+          ]},
+        ],
+        calculate: (input) => {
+          const { zodiacSign, period } = input;
+          const forecasts = {
+            daily: {
+              Aries: "Today, unexpected expenses may arise. Be cautious with impulsive purchases. A small gain from an old investment is possible.",
+              Taurus: "Financial stability is highlighted. Good day for reviewing your budget and planning future savings. Avoid lending money.",
+              Gemini: "New opportunities for income may appear through communication or networking. Be alert to scams. Quick gains are possible but risky.",
+              // ... more for other signs
+            },
+            monthly: {
+              Aries: "This month brings dynamic financial shifts. Opportunities for new income streams are strong, but so is the temptation to overspend. Focus on strategic investments.",
+              Taurus: "A period of consolidation and growth for your finances. Long-term investments and property dealings look favorable. Avoid unnecessary debts.",
+              Gemini: "Your financial situation could see fluctuations this month. Diversify your income sources and be flexible with your budget. Communication skills can lead to financial gains.",
+              // ... more for other signs
+            },
+          };
+          const forecast = forecasts[period][zodiacSign] || "No specific financial forecast available for this sign and period (simplified).";
+
+          return {
+            mainResult: `${period === 'daily' ? 'Daily' : 'Monthly'} Finance Horoscope for ${zodiacSign}:`,
+            additionalInfo: forecast,
+            financeFocus: `This tool directly connects astrology with your financial life, offering specific guidance on managing money, identifying opportunities, and avoiding pitfalls. It can help you align your financial decisions with cosmic energies, potentially leading to better outcomes.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आप एक वृषभ राशि के व्यक्ति हैं और आप अपना मासिक वित्तीय राशिफल देख रहे हैं। यह कहता है कि यह महीना आपके वित्त के लिए समेकन और वृद्धि का समय है।</p>
+              <p><strong>परिणाम:</strong> आप इस जानकारी का उपयोग करके इस महीने में दीर्घकालिक निवेश करने या संपत्ति खरीदने पर विचार कर सकते हैं, क्योंकि ज्योतिषीय रूप से यह आपके लिए अनुकूल है। यह आपको अपनी वित्तीय सुरक्षा को मजबूत करने में मदद करेगा।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'career-horoscope',
+        name: 'Career Horoscope / Job Forecast by Sign',
+        icon: '💼',
+        category: 'Daily & Periodic Horoscopes',
+        description: 'Astrological predictions for your career and job prospects.',
+        longDescription: 'Gain insights into your professional journey, potential promotions, job changes, and career growth based on your zodiac sign. Understand the astrological influences on your work life.',
+        inputs: [
+          { name: 'zodiacSign', label: 'Select Your Zodiac Sign', type: 'select', options: [
+            { value: 'Aries', label: 'Aries' }, { value: 'Taurus', label: 'Taurus' }, { value: 'Gemini', label: 'Gemini' },
+            { value: 'Cancer', label: 'Cancer' }, { value: 'Leo', label: 'Leo' }, { value: 'Virgo', label: 'Virgo' },
+            { value: 'Libra', label: 'Libra' }, { value: 'Scorpio', label: 'Scorpio' }, { value: 'Sagittarius', label: 'Sagittarius' },
+            { value: 'Capricorn', label: 'Capricorn' }, { value: 'Aquarius', label: 'Aquarius' }, { value: 'Pisces', label: 'Pisces' }
+          ]},
+          { name: 'period', label: 'Select Period', type: 'select', options: [
+            { value: 'daily', label: 'Daily' }, { value: 'monthly', label: 'Monthly' }, { value: 'yearly', label: 'Yearly' }
+          ]},
+        ],
+        calculate: (input) => {
+          const { zodiacSign, period } = input;
+          const forecasts = {
+            daily: {
+              Aries: "Today, take initiative at work. Your bold ideas will be well-received. Avoid conflicts with superiors.",
+              Taurus: "Focus on completing tasks meticulously. Your diligence will be noticed. A minor challenge may arise, handle it patiently.",
+              // ... more for other signs
+            },
+            monthly: {
+              Aries: "This month brings opportunities for career advancement. Be proactive in seeking new projects or roles. Networking is crucial for success.",
+              Taurus: "A stable month for career. Focus on skill development and building strong professional relationships. Financial rewards may follow hard work.",
+              // ... more for other signs
+            },
+            yearly: {
+              Aries: "The year ahead promises significant career growth and new ventures. Be prepared for leadership roles and increased responsibilities. Financial gains are linked to your professional success.",
+              Taurus: "This year, your career will see steady progress. Consistency and reliability will be your strengths. Opportunities for long-term financial security through your profession are highlighted.",
+              // ... more for other signs
+            },
+          };
+          const forecast = forecasts[period][zodiacSign] || "No specific career forecast available for this sign and period (simplified).";
+
+          return {
+            mainResult: `${period === 'daily' ? 'Daily' : period === 'monthly' ? 'Monthly' : 'Yearly'} Career Horoscope for ${zodiacSign}:`,
+            additionalInfo: forecast,
+            financeFocus: `Your career path is directly linked to your financial well-being. This tool helps you understand astrological influences on your professional life, which can guide you in making career decisions that support your financial goals, whether it's seeking promotions, negotiating salaries, or exploring new income-generating opportunities.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> यदि आप एक मकर राशि के व्यक्ति हैं और आप अपना वार्षिक करियर राशिफल देख रहे हैं। यह कहता है कि यह वर्ष आपके करियर में स्थिर प्रगति और वित्तीय सुरक्षा के अवसर लाएगा।</p>
+              <p><strong>परिणाम:</strong> आप इस जानकारी का उपयोग करके अपने करियर में दीर्घकालिक लक्ष्यों को निर्धारित करने, अतिरिक्त कौशल विकसित करने, या उन परियोजनाओं पर ध्यान केंद्रित करने के लिए कर सकते हैं जो आपको वित्तीय स्थिरता प्रदान करती हैं, जिससे आपको अपने पेशेवर जीवन में अधिक आत्मविश्वास महसूस होगा।</p>
+            `,
+          };
+        },
+      },
+      {
+        id: 'zodiac-sign-finder',
+        name: 'Zodiac Sign Finder (by Date of Birth)',
+        icon: '⭐',
+        category: 'Other Tools',
+        description: 'Quickly find your Western (Sun) Zodiac Sign.',
+        longDescription: 'Simply enter your date of birth to instantly discover your Western (Sun) Zodiac Sign. This is the most common astrological sign, often used for daily horoscopes and general personality traits.',
+        inputs: [
+          { name: 'dob', label: 'Date of Birth', type: 'date' },
+        ],
+        calculate: (input) => {
+          const dob = new Date(input.dob);
+          const month = dob.getMonth(); // 0-11
+          const day = dob.getDate();
+
+          let zodiacSign = "Unknown";
+          let traits = "";
+
+          if ((month === 2 && day >= 21) || (month === 3 && day <= 19)) { zodiacSign = "Aries (मेष)"; traits = "Energetic, adventurous, and pioneering."; }
+          else if ((month === 3 && day >= 20) || (month === 4 && day <= 20)) { zodiacSign = "Taurus (वृषभ)"; traits = "Stable, reliable, and practical."; }
+          else if ((month === 4 && day >= 21) || (month === 5 && day <= 20)) { zodiacSign = "Gemini (मिथुन)"; traits = "Adaptable, communicative, and intellectual."; }
+          else if ((month === 5 && day >= 21) || (month === 6 && day <= 22)) { zodiacSign = "Cancer (कर्क)"; traits = "Nurturing, emotional, and intuitive."; }
+          else if ((month === 6 && day >= 23) || (month === 7 && day <= 22)) { zodiacSign = "Leo (सिंह)"; traits = "Confident, generous, and charismatic."; }
+          else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) { zodiacSign = "Virgo (कन्या)"; traits = "Analytical, practical, and hardworking."; }
+          else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) { zodiacSign = "Libra (तुला)"; traits = "Balanced, diplomatic, and social."; }
+          else if ((month === 9 && day >= 23) || (month === 10 && day <= 21)) { zodiacSign = "Scorpio (वृश्चिक)"; traits = "Intense, passionate, and resourceful."; }
+          else if ((month === 10 && day >= 22) || (month === 11 && day <= 21)) { zodiacSign = "Sagittarius (धनु)"; traits = "Optimistic, adventurous, and philosophical."; }
+          else if ((month === 11 && day >= 22) || (month === 0 && day <= 19)) { zodiacSign = "Capricorn (मकर)"; traits = "Disciplined, ambitious, and responsible."; }
+          else if ((month === 0 && day >= 20) || (month === 1 && day <= 18)) { zodiacSign = "Aquarius (कुंभ)"; traits = "Independent, innovative, and humanitarian."; }
+          else if ((month === 1 && day >= 19) || (month === 2 && day <= 20)) { zodiacSign = "Pisces (मीन)"; traits = "Compassionate, artistic, and intuitive."; }
+
+          return {
+            mainResult: `Your Zodiac Sign is: <strong>${zodiacSign}</strong>`,
+            additionalInfo: `
+              <p><strong>Key Traits:</strong> ${traits}</p>
+              <p>Your Sun Sign represents your core personality, ego, and how you express yourself in the world.</p>
+            `,
+            financeFocus: `Knowing your zodiac sign can give you a general idea of your financial personality. For example, Leos might be more inclined to spend lavishly, while Capricorns are typically more frugal and disciplined. This basic understanding can be a fun way to start thinking about your inherent financial habits and how they might influence your wealth journey.`,
+            hindiExample: `
+              <p><strong>उदाहरण:</strong> आप अपनी जन्मतिथि दर्ज करते हैं और पाते हैं कि आपकी राशि 'सिंह' (Leo) है। सिंह राशि वाले अक्सर आत्मविश्वास से भरे और उदार होते हैं।</p>
+              <p><strong>परिणाम:</strong> यह जानकारी आपको यह समझने में मदद कर सकती है कि आप स्वाभाविक रूप से बड़े खर्चों या निवेशों के प्रति आकर्षित हो सकते हैं। आप अपनी उदारता को नियंत्रित करने और वित्तीय अनुशासन बनाए रखने के लिए इस अंतर्दृष्टि का उपयोग कर सकते हैं।</p>
+            `,
+          };
+        },
+      },
+    ];
+
+    // React and React DOM imports
+    const React = {
+      useState: (initialState) => {
+        let state = initialState;
+        const setState = (newState) => {
+          if (typeof newState === 'function') {
+            state = newState(state);
+          } else {
+            state = newState;
+          }
+          renderApp();
+        };
+        return [state, setState];
+      },
+      useEffect: (callback, dependencies) => {
+        // Simple implementation for demo
+        callback();
+      }
+    };
+
+    // Render the app
+    function renderApp() {
+      const appElement = document.getElementById('app');
+      appElement.innerHTML = '';
+      
+      // Create a new div for the app
+      const appDiv = document.createElement('div');
+      appDiv.innerHTML = App();
+      appElement.appendChild(appDiv);
+    }
+
+    // Initial render
+    renderApp();
+  </script>
+</body>
+</html>
