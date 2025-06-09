@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
 import { blogPosts } from '../data/blogData';
-import { SEOHead } from '../components/SEOHead';
 
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,13 +26,6 @@ export const Blog: React.FC = () => {
   
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <SEOHead 
-        title="Finance Blog | Expert Financial Insights & Tips | FinCalc India"
-        description="Expert insights, tips, and guides to help you make better financial decisions. Read our latest articles on investments, taxes, loans, and more."
-        canonicalUrl="/blog"
-        keywords="finance blog, financial tips, investment advice, tax planning, retirement planning, personal finance, India"
-      />
-      
       <div className="text-center mb-12">
         <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">Finance Blog</h1>
         <p className="text-lg text-neutral-600 max-w-2xl mx-auto">

@@ -1,19 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SEOHead } from '../components/SEOHead';
 import { CategorySection } from '../components/CategorySection';
 import { calculatorCategories } from '../data/calculatorData';
 
 export const Home: React.FC = () => {
   return (
     <>
-      <SEOHead 
-        title="Indian Financial Calculators | EMI, SIP, PPF, Income Tax & More"
-        description="Comprehensive financial calculators for Indian users - EMI, SIP, PPF, Income Tax, Loan Comparison and more. Make informed financial decisions with accurate calculations."
-        canonicalUrl="/"
-        keywords="financial calculator, EMI calculator, SIP calculator, PPF calculator, income tax calculator, loan calculator, India"
-      />
-      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-
-# Provide sitemap location
 Sitemap: https://moneycal.in/sitemap.xml
 
 # Disallow admin areas
