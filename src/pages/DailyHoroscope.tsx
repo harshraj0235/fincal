@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, Star, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Calendar, Star, ChevronRight, Globe } from 'lucide-react';
 
 export const DailyHoroscope: React.FC = () => {
   const navigate = useNavigate();
   const [currentDate, setCurrentDate] = useState<string>('');
   const [selectedZodiac, setSelectedZodiac] = useState<string | null>(null);
+  const [language, setLanguage] = useState<'en' | 'hi'>('en');
   
   useEffect(() => {
     // Set current date
@@ -18,6 +19,21 @@ export const DailyHoroscope: React.FC = () => {
     setCurrentDate(today.toLocaleDateString('en-US', options));
   }, []);
   
+  const zodiacSigns = [
+    { sign: 'aries', symbol: '♈', name: 'Aries', nameHindi: 'मेष', date: 'Mar 21 - Apr 19', dateHindi: '21 मार्च - 19 अप्रैल' },
+    { sign: 'taurus', symbol: '♉', name: 'Taurus', nameHindi: 'वृषभ', date: 'Apr 20 - May 20', dateHindi: '20 अप्रैल - 20 मई' },
+    { sign: 'gemini', symbol: '♊', name: 'Gemini', nameHindi: 'मिथुन', date: 'May 21 - Jun 20', dateHindi: '21 मई - 20 जून' },
+    { sign: 'cancer', symbol: '♋', name: 'Cancer', nameHindi: 'कर्क', date: 'Jun 21 - Jul 22', dateHindi: '21 जून - 22 जुलाई' },
+    { sign: 'leo', symbol: '♌', name: 'Leo', nameHindi: 'सिंह', date: 'Jul 23 - Aug 22', dateHindi: '23 जुलाई - 22 अगस्त' },
+    { sign: 'virgo', symbol: '♍', name: 'Virgo', nameHindi: 'कन्या', date: 'Aug 23 - Sep 22', dateHindi: '23 अगस्त - 22 सितंबर' },
+    { sign: 'libra', symbol: '♎', name: 'Libra', nameHindi: 'तुला', date: 'Sep 23 - Oct 22', dateHindi: '23 सितंबर - 22 अक्टूबर' },
+    { sign: 'scorpio', symbol: '♏', name: 'Scorpio', nameHindi: 'वृश्चिक', date: 'Oct 23 - Nov 21', dateHindi: '23 अक्टूबर - 21 नवंबर' },
+    { sign: 'sagittarius', symbol: '♐', name: 'Sagittarius', nameHindi: 'धनु', date: 'Nov 22 - Dec 21', dateHindi: '22 नवंबर - 21 दिसंबर' },
+    { sign: 'capricorn', symbol: '♑', name: 'Capricorn', nameHindi: 'मकर', date: 'Dec 22 - Jan 19', dateHindi: '22 दिसंबर - 19 जनवरी' },
+    { sign: 'aquarius', symbol: '♒', name: 'Aquarius', nameHindi: 'कुंभ', date: 'Jan 20 - Feb 18', dateHindi: '20 जनवरी - 18 फरवरी' },
+    { sign: 'pisces', symbol: '♓', name: 'Pisces', nameHindi: 'मीन', date: 'Feb 19 - Mar 20', dateHindi: '19 फरवरी - 20 मार्च' }
+  ];
+  
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
@@ -26,18 +42,61 @@ export const DailyHoroscope: React.FC = () => {
           className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
         >
           <ArrowLeft className="h-4 w-4 mr-1" />
-          <span>Back to Astro-Finance Hub</span>
+          <span>{language === 'en' ? 'Back to Astro-Finance Hub' : 'वित्तीय ज्योतिष केंद्र पर वापस जाएं'}</span>
         </button>
+      </div>
+      
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold text-neutral-900 mb-4">
+          {language === 'en' ? 'Daily Financial Horoscope' : 'दैनिक वित्तीय राशिफल'}
+        </h1>
+        <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          {language === 'en' 
+            ? 'Discover how cosmic energies may influence your financial decisions today' 
+            : 'जानें कि कैसे ब्रह्मांडीय ऊर्जाएं आज आपके वित्तीय निर्णयों को प्रभावित कर सकती हैं'}
+        </p>
+        <div className="mt-4 flex justify-center space-x-4">
+          <button 
+            onClick={() => setLanguage('en')}
+            className={`inline-flex items-center px-4 py-2 rounded-lg ${
+              language === 'en' 
+                ? 'bg-primary-100 text-primary-800' 
+                : 'bg-neutral-100 text-neutral-600'
+            } hover:bg-primary-200 transition-colors`}
+          >
+            <Globe className="h-4 w-4 mr-2" />
+            English
+          </button>
+          <button 
+            onClick={() => setLanguage('hi')}
+            className={`inline-flex items-center px-4 py-2 rounded-lg ${
+              language === 'hi' 
+                ? 'bg-primary-100 text-primary-800' 
+                : 'bg-neutral-100 text-neutral-600'
+            } hover:bg-primary-200 transition-colors`}
+          >
+            <Globe className="h-4 w-4 mr-2" />
+            हिंदी
+          </button>
+        </div>
       </div>
       
       {/* Hero Section */}
       <section className="cosmic-bg text-white py-12 md:py-16 star-bg rounded-2xl mb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Daily Financial Horoscope</h1>
-            <p className="text-lg mb-6 text-purple-100">Discover how cosmic energies may influence your financial decisions today</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {language === 'en' ? 'Daily Financial Horoscope' : 'दैनिक वित्तीय राशिफल'}
+            </h2>
+            <p className="text-lg mb-6 text-purple-100">
+              {language === 'en' 
+                ? 'Discover how cosmic energies may influence your financial decisions today' 
+                : 'जानें कि कैसे ब्रह्मांडीय ऊर्जाएं आज आपके वित्तीय निर्णयों को प्रभावित कर सकती हैं'}
+            </p>
             <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg text-sm">
-              <span className="text-white/80">Today's Date:</span>
+              <span className="text-white/80">
+                {language === 'en' ? 'Today\'s Date:' : 'आज की तारीख:'}
+              </span>
               <span className="text-white font-medium ml-2" id="current-date">{currentDate}</span>
             </div>
           </div>
@@ -48,131 +107,67 @@ export const DailyHoroscope: React.FC = () => {
       <section className="py-12 bg-white rounded-xl shadow-md mb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-8">Select Your Zodiac Sign</h2>
+            <h2 className="text-2xl font-bold text-center mb-8">
+              {language === 'en' ? 'Select Your Zodiac Sign' : 'अपनी राशि चुनें'}
+            </h2>
             
             <div className="zodiac-grid mb-8">
-              <button 
-                onClick={() => setSelectedZodiac('aries')}
-                className={`zodiac-item ${selectedZodiac === 'aries' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♈</div>
-                <span className="font-medium text-neutral-900">Aries</span>
-                <span className="text-xs text-neutral-500">Mar 21 - Apr 19</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('taurus')}
-                className={`zodiac-item ${selectedZodiac === 'taurus' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♉</div>
-                <span className="font-medium text-neutral-900">Taurus</span>
-                <span className="text-xs text-neutral-500">Apr 20 - May 20</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('gemini')}
-                className={`zodiac-item ${selectedZodiac === 'gemini' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♊</div>
-                <span className="font-medium text-neutral-900">Gemini</span>
-                <span className="text-xs text-neutral-500">May 21 - Jun 20</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('cancer')}
-                className={`zodiac-item ${selectedZodiac === 'cancer' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♋</div>
-                <span className="font-medium text-neutral-900">Cancer</span>
-                <span className="text-xs text-neutral-500">Jun 21 - Jul 22</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('leo')}
-                className={`zodiac-item ${selectedZodiac === 'leo' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♌</div>
-                <span className="font-medium text-neutral-900">Leo</span>
-                <span className="text-xs text-neutral-500">Jul 23 - Aug 22</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('virgo')}
-                className={`zodiac-item ${selectedZodiac === 'virgo' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♍</div>
-                <span className="font-medium text-neutral-900">Virgo</span>
-                <span className="text-xs text-neutral-500">Aug 23 - Sep 22</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('libra')}
-                className={`zodiac-item ${selectedZodiac === 'libra' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♎</div>
-                <span className="font-medium text-neutral-900">Libra</span>
-                <span className="text-xs text-neutral-500">Sep 23 - Oct 22</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('scorpio')}
-                className={`zodiac-item ${selectedZodiac === 'scorpio' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♏</div>
-                <span className="font-medium text-neutral-900">Scorpio</span>
-                <span className="text-xs text-neutral-500">Oct 23 - Nov 21</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('sagittarius')}
-                className={`zodiac-item ${selectedZodiac === 'sagittarius' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♐</div>
-                <span className="font-medium text-neutral-900">Sagittarius</span>
-                <span className="text-xs text-neutral-500">Nov 22 - Dec 21</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('capricorn')}
-                className={`zodiac-item ${selectedZodiac === 'capricorn' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♑</div>
-                <span className="font-medium text-neutral-900">Capricorn</span>
-                <span className="text-xs text-neutral-500">Dec 22 - Jan 19</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('aquarius')}
-                className={`zodiac-item ${selectedZodiac === 'aquarius' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♒</div>
-                <span className="font-medium text-neutral-900">Aquarius</span>
-                <span className="text-xs text-neutral-500">Jan 20 - Feb 18</span>
-              </button>
-              <button 
-                onClick={() => setSelectedZodiac('pisces')}
-                className={`zodiac-item ${selectedZodiac === 'pisces' ? 'ring-2 ring-purple-500' : ''}`}
-              >
-                <div className="text-3xl mb-2">♓</div>
-                <span className="font-medium text-neutral-900">Pisces</span>
-                <span className="text-xs text-neutral-500">Feb 19 - Mar 20</span>
-              </button>
+              {zodiacSigns.map((zodiac) => (
+                <button 
+                  key={zodiac.sign}
+                  onClick={() => setSelectedZodiac(zodiac.sign)}
+                  className={`zodiac-item ${selectedZodiac === zodiac.sign ? 'ring-2 ring-purple-500' : ''}`}
+                >
+                  <div className="text-3xl mb-2">{zodiac.symbol}</div>
+                  <span className="font-medium text-neutral-900">
+                    {language === 'en' ? zodiac.name : zodiac.nameHindi}
+                  </span>
+                  <span className="text-xs text-neutral-500">
+                    {language === 'en' ? zodiac.date : zodiac.dateHindi}
+                  </span>
+                </button>
+              ))}
             </div>
             
             {selectedZodiac && (
               <div className="text-center">
-                <a 
-                  href={`/astro-finance-insights/daily-horoscope/${selectedZodiac}`}
+                <Link 
+                  to={`/astro-finance-insights/${language === 'en' ? '' : 'hi/'}daily-horoscope/${selectedZodiac}`}
                   className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors inline-flex items-center"
                 >
-                  View {selectedZodiac.charAt(0).toUpperCase() + selectedZodiac.slice(1)} Horoscope
+                  {language === 'en' 
+                    ? `View ${zodiacSigns.find(z => z.sign === selectedZodiac)?.name} Horoscope`
+                    : `${zodiacSigns.find(z => z.sign === selectedZodiac)?.nameHindi} राशिफल देखें`}
                   <ChevronRight className="h-4 w-4 ml-1" />
-                </a>
+                </Link>
               </div>
             )}
             
             <div className="text-center mt-8">
-              <p className="text-neutral-600 mb-6">Looking for a longer-term financial outlook?</p>
+              <p className="text-neutral-600 mb-6">
+                {language === 'en' 
+                  ? 'Looking for a longer-term financial outlook?' 
+                  : 'क्या आप दीर्घकालिक वित्तीय दृष्टिकोण की तलाश कर रहे हैं?'}
+              </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="/astro-finance-insights/weekly-horoscope" className="bg-white border border-purple-200 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors">
-                  Weekly Horoscope
-                </a>
-                <a href="/astro-finance-insights/monthly-horoscope" className="bg-white border border-purple-200 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors">
-                  Monthly Horoscope
-                </a>
-                <a href="/astro-finance-insights/yearly-horoscope" className="bg-white border border-purple-200 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors">
-                  Yearly Horoscope
-                </a>
+                <Link 
+                  to={`/astro-finance-insights/${language === 'en' ? '' : 'hi/'}weekly-horoscope`} 
+                  className="bg-white border border-purple-200 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors"
+                >
+                  {language === 'en' ? 'Weekly Horoscope' : 'साप्ताहिक राशिफल'}
+                </Link>
+                <Link 
+                  to={`/astro-finance-insights/${language === 'en' ? '' : 'hi/'}monthly-horoscope`} 
+                  className="bg-white border border-purple-200 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors"
+                >
+                  {language === 'en' ? 'Monthly Horoscope' : 'मासिक राशिफल'}
+                </Link>
+                <Link 
+                  to={`/astro-finance-insights/${language === 'en' ? '' : 'hi/'}yearly-horoscope`} 
+                  className="bg-white border border-purple-200 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors"
+                >
+                  {language === 'en' ? 'Yearly Horoscope' : 'वार्षिक राशिफल'}
+                </Link>
               </div>
             </div>
           </div>
@@ -183,17 +178,25 @@ export const DailyHoroscope: React.FC = () => {
       <section className="py-12 bg-gray-50 rounded-xl mb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-8">Today's Featured Financial Horoscope</h2>
+            <h2 className="text-2xl font-bold text-center mb-8">
+              {language === 'en' ? 'Today\'s Featured Financial Horoscope' : 'आज का विशेष वित्तीय राशिफल'}
+            </h2>
             
             <div className="bg-white rounded-xl shadow-md p-8">
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-1/3">
                   <div className="bg-purple-50 rounded-xl p-6 text-center">
                     <div className="text-5xl mb-4">♌</div>
-                    <h3 className="text-xl font-semibold text-neutral-900 mb-2">Leo</h3>
-                    <p className="text-sm text-neutral-500">July 23 - August 22</p>
+                    <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                      {language === 'en' ? 'Leo' : 'सिंह'}
+                    </h3>
+                    <p className="text-sm text-neutral-500">
+                      {language === 'en' ? 'July 23 - August 22' : '23 जुलाई - 22 अगस्त'}
+                    </p>
                     <div className="mt-4 pt-4 border-t border-purple-100">
-                      <p className="text-sm text-purple-700 font-medium">Today's Financial Rating</p>
+                      <p className="text-sm text-purple-700 font-medium">
+                        {language === 'en' ? 'Today\'s Financial Rating' : 'आज की वित्तीय रेटिंग'}
+                      </p>
                       <div className="flex justify-center mt-2">
                         <span className="text-yellow-500">★★★★</span><span className="text-gray-300">★</span>
                       </div>
@@ -202,37 +205,51 @@ export const DailyHoroscope: React.FC = () => {
                 </div>
                 
                 <div className="md:w-2/3">
-                  <h3 className="text-xl font-semibold text-neutral-900 mb-4">Today's Financial Outlook</h3>
+                  <h3 className="text-xl font-semibold text-neutral-900 mb-4">
+                    {language === 'en' ? 'Today\'s Financial Outlook' : 'आज का वित्तीय दृष्टिकोण'}
+                  </h3>
                   <p className="text-neutral-600 mb-4">
-                    With Mercury forming a favorable aspect to Jupiter, today is excellent for financial planning and investment research. Your analytical abilities are heightened, making it a good time to review your portfolio or explore new investment opportunities.
+                    {language === 'en' 
+                      ? 'With Mercury forming a favorable aspect to Jupiter, today is excellent for financial planning and investment research. Your analytical abilities are heightened, making it a good time to review your portfolio or explore new investment opportunities.'
+                      : 'बुध के बृहस्पति के साथ अनुकूल पहलू बनाने से, आज वित्तीय नियोजन और निवेश अनुसंधान के लिए उत्कृष्ट है। आपकी विश्लेषणात्मक क्षमताएं बढ़ जाती हैं, जिससे यह आपके पोर्टफोलियो की समीक्षा करने या नए निवेश अवसरों का पता लगाने का अच्छा समय बन जाता है।'}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <div className="bg-green-50 rounded-lg p-3">
-                      <h4 className="font-medium text-green-800 mb-1">Favorable For</h4>
+                      <h4 className="font-medium text-green-800 mb-1">
+                        {language === 'en' ? 'Favorable For' : 'इनके लिए अनुकूल'}
+                      </h4>
                       <ul className="text-sm text-green-700 space-y-1">
-                        <li>• Long-term investments</li>
-                        <li>• Financial planning</li>
-                        <li>• Networking with mentors</li>
+                        <li>• {language === 'en' ? 'Long-term investments' : 'दीर्घकालिक निवेश'}</li>
+                        <li>• {language === 'en' ? 'Financial planning' : 'वित्तीय नियोजन'}</li>
+                        <li>• {language === 'en' ? 'Networking with mentors' : 'मेंटर्स के साथ नेटवर्किंग'}</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 rounded-lg p-3">
-                      <h4 className="font-medium text-red-800 mb-1">Avoid Today</h4>
+                      <h4 className="font-medium text-red-800 mb-1">
+                        {language === 'en' ? 'Avoid Today' : 'आज इनसे बचें'}
+                      </h4>
                       <ul className="text-sm text-red-700 space-y-1">
-                        <li>• Impulsive purchases</li>
-                        <li>• Lending money to friends</li>
-                        <li>• High-risk trading</li>
+                        <li>• {language === 'en' ? 'Impulsive purchases' : 'आवेगपूर्ण खरीदारी'}</li>
+                        <li>• {language === 'en' ? 'Lending money to friends' : 'दोस्तों को पैसे उधार देना'}</li>
+                        <li>• {language === 'en' ? 'High-risk trading' : 'उच्च जोखिम वाला ट्रेडिंग'}</li>
                       </ul>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-4">
                     <div className="bg-purple-50 rounded-lg px-4 py-2 text-sm">
-                      <span className="font-medium text-purple-700">Lucky Number:</span> 8
+                      <span className="font-medium text-purple-700">
+                        {language === 'en' ? 'Lucky Number:' : 'भाग्यशाली अंक:'}
+                      </span> 8
                     </div>
                     <div className="bg-purple-50 rounded-lg px-4 py-2 text-sm">
-                      <span className="font-medium text-purple-700">Lucky Color:</span> Gold
+                      <span className="font-medium text-purple-700">
+                        {language === 'en' ? 'Lucky Color:' : 'भाग्यशाली रंग:'}
+                      </span> {language === 'en' ? 'Gold' : 'सोनहरा'}
                     </div>
                     <div className="bg-purple-50 rounded-lg px-4 py-2 text-sm">
-                      <span className="font-medium text-purple-700">Favorable Time:</span> 2-4 PM
+                      <span className="font-medium text-purple-700">
+                        {language === 'en' ? 'Favorable Time:' : 'अनुकूल समय:'}
+                      </span> 2-4 PM
                     </div>
                   </div>
                 </div>
@@ -255,7 +272,9 @@ export const DailyHoroscope: React.FC = () => {
                 </div>
                 <div className="ml-3">
                   <p className="text-sm text-yellow-700">
-                    The financial horoscopes provided are for entertainment and cultural interest only. Financial decisions should always be based on sound financial principles, thorough research, and professional advice when needed.
+                    {language === 'en' 
+                      ? 'The financial horoscopes provided are for entertainment and cultural interest only. Financial decisions should always be based on sound financial principles, thorough research, and professional advice when needed.'
+                      : 'प्रदान किए गए वित्तीय राशिफल केवल मनोरंजन और सांस्कृतिक रुचि के लिए हैं। वित्तीय निर्णय हमेशा ठोस वित्तीय सिद्धांतों, विस्तृत शोध और आवश्यकता पड़ने पर पेशेवर सलाह पर आधारित होने चाहिए।'}
                   </p>
                 </div>
               </div>

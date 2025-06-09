@@ -16,6 +16,12 @@ import { Sitemap } from './pages/Sitemap';
 import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { AstroFinanceInsights } from './pages/AstroFinanceInsights';
+import { AstroFinanceInsightsHindi } from './pages/AstroFinanceInsightsHindi';
+import { ZodiacTraits } from './pages/ZodiacTraits';
+import { ZodiacTraitsDetail } from './pages/ZodiacTraitsDetail';
+import { DailyHoroscope } from './pages/DailyHoroscope';
+import { DailyHoroscopeDetail } from './pages/DailyHoroscopeDetail';
+import { MuhuratFinder } from './pages/MuhuratFinder';
 
 function App() {
   return (
@@ -42,7 +48,34 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap.xml" element={<SitemapXml />} />
+        
+        {/* Astro-Finance Routes */}
         <Route path="/astro-finance-insights" element={<AstroFinanceInsights />} />
+        <Route path="/astro-finance-insights/en" element={<AstroFinanceInsights />} />
+        <Route path="/astro-finance-insights/hi" element={<AstroFinanceInsightsHindi />} />
+        
+        {/* Zodiac Traits Routes */}
+        <Route path="/astro-finance-insights/zodiac-traits" element={<ZodiacTraits />} />
+        <Route path="/astro-finance-insights/hi/zodiac-traits" element={<ZodiacTraits />} />
+        <Route path="/astro-finance-insights/zodiac-traits/:sign" element={<ZodiacTraitsDetail />} />
+        <Route path="/astro-finance-insights/hi/zodiac-traits/:sign" element={<ZodiacTraitsDetail />} />
+        
+        {/* Daily Horoscope Routes */}
+        <Route path="/astro-finance-insights/daily-horoscope" element={<DailyHoroscope />} />
+        <Route path="/astro-finance-insights/hi/daily-horoscope" element={<DailyHoroscope />} />
+        <Route path="/astro-finance-insights/daily-horoscope/:sign" element={<DailyHoroscopeDetail />} />
+        <Route path="/astro-finance-insights/hi/daily-horoscope/:sign" element={<DailyHoroscopeDetail />} />
+        
+        {/* Muhurat Finder Routes */}
+        <Route path="/astro-finance-insights/muhurat-finder" element={<MuhuratFinder />} />
+        <Route path="/astro-finance-insights/hi/muhurat-finder" element={<MuhuratFinder />} />
+        
+        {/* Add routes for other tools */}
+        <Route path="/astro-finance-insights/numerology" element={<Navigate to="/astro-finance-insights" />} />
+        <Route path="/astro-finance-insights/gemstone-finder" element={<Navigate to="/astro-finance-insights" />} />
+        <Route path="/astro-finance-insights/zodiac-compatibility" element={<Navigate to="/astro-finance-insights" />} />
+        <Route path="/astro-finance-insights/moon-sign-calculator" element={<Navigate to="/astro-finance-insights" />} />
+        
         <Route path="*" element={<Navigate to="/\" replace />} />
       </Routes>
     </Layout>

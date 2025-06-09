@@ -1,27 +1,25 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Star, Moon, Calendar, Calculator, Clock, Gem, Hash, Users, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Star, Moon, Calendar, Calculator, Clock, Gem, Hash, Users, ChevronRight, Globe } from 'lucide-react';
 
 export const AstroFinanceInsights: React.FC = () => {
-  const navigate = useNavigate();
-  
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-8">
-        <button 
-          onClick={() => navigate(-1)} 
-          className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4 mr-1" />
-          <span>Back</span>
-        </button>
-      </div>
-      
       <div className="text-center mb-16">
         <h1 className="text-4xl font-bold text-neutral-900 mb-4">Astro-Finance Insights Hub</h1>
         <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
           Explore the intersection of astrology and finance with our comprehensive Astro-Finance tools. Discover financial horoscopes, numerology insights, and auspicious timing for financial decisions.
         </p>
+        <div className="mt-4 flex justify-center space-x-4">
+          <Link to="/astro-finance-insights/en" className="inline-flex items-center px-4 py-2 rounded-lg bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+            <Globe className="h-4 w-4 mr-2" />
+            English
+          </Link>
+          <Link to="/astro-finance-insights/hi" className="inline-flex items-center px-4 py-2 rounded-lg bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+            <Globe className="h-4 w-4 mr-2" />
+            हिंदी
+          </Link>
+        </div>
       </div>
       
       {/* Hero Section */}
@@ -41,13 +39,13 @@ export const AstroFinanceInsights: React.FC = () => {
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm">Lucky Numbers</span>
               <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm">Auspicious Timing</span>
             </div>
-            <a 
-              href="/astro-finance-insights/daily-horoscope" 
+            <Link 
+              to="/astro-finance-insights/daily-horoscope" 
               className="inline-flex items-center bg-white text-purple-800 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors"
             >
               View Today's Financial Horoscope
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
           <div className="hidden md:block">
             <div className="relative">
@@ -102,13 +100,13 @@ export const AstroFinanceInsights: React.FC = () => {
                   <span className="px-2 py-0.5 bg-purple-100 text-purple-800 rounded-full text-xs">Zodiac</span>
                   <span className="px-2 py-0.5 bg-purple-100 text-purple-800 rounded-full text-xs">Daily</span>
                 </div>
-                <a 
-                  href="/astro-finance-insights/daily-horoscope" 
+                <Link 
+                  to="/astro-finance-insights/daily-horoscope" 
                   className="text-purple-600 hover:text-purple-800 font-medium flex items-center text-sm"
                 >
                   View Horoscope
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -132,13 +130,13 @@ export const AstroFinanceInsights: React.FC = () => {
                   <span className="px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs">Vedic</span>
                   <span className="px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs">Personality</span>
                 </div>
-                <a 
-                  href="/astro-finance-insights/moon-sign-calculator" 
+                <Link 
+                  to="/astro-finance-insights/moon-sign-calculator" 
                   className="text-blue-600 hover:text-blue-800 font-medium flex items-center text-sm"
                 >
                   Calculate Now
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -162,13 +160,13 @@ export const AstroFinanceInsights: React.FC = () => {
                   <span className="px-2 py-0.5 bg-green-100 text-green-800 rounded-full text-xs">Timing</span>
                   <span className="px-2 py-0.5 bg-green-100 text-green-800 rounded-full text-xs">Panchang</span>
                 </div>
-                <a 
-                  href="/astro-finance-insights/muhurat-finder" 
+                <Link 
+                  to="/astro-finance-insights/muhurat-finder" 
                   className="text-green-600 hover:text-green-800 font-medium flex items-center text-sm"
                 >
                   Find Muhurat
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -192,13 +190,13 @@ export const AstroFinanceInsights: React.FC = () => {
                   <span className="px-2 py-0.5 bg-pink-100 text-pink-800 rounded-full text-xs">Numbers</span>
                   <span className="px-2 py-0.5 bg-pink-100 text-pink-800 rounded-full text-xs">Destiny</span>
                 </div>
-                <a 
-                  href="/astro-finance-insights/numerology" 
+                <Link 
+                  to="/astro-finance-insights/numerology" 
                   className="text-pink-600 hover:text-pink-800 font-medium flex items-center text-sm"
                 >
                   Calculate Numbers
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -222,13 +220,13 @@ export const AstroFinanceInsights: React.FC = () => {
                   <span className="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-full text-xs">Gemstones</span>
                   <span className="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-full text-xs">Prosperity</span>
                 </div>
-                <a 
-                  href="/astro-finance-insights/gemstone-finder" 
+                <Link 
+                  to="/astro-finance-insights/gemstone-finder" 
                   className="text-amber-600 hover:text-amber-800 font-medium flex items-center text-sm"
                 >
                   Find Gemstones
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -252,13 +250,13 @@ export const AstroFinanceInsights: React.FC = () => {
                   <span className="px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-full text-xs">Relationships</span>
                   <span className="px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-full text-xs">Business</span>
                 </div>
-                <a 
-                  href="/astro-finance-insights/zodiac-compatibility" 
+                <Link 
+                  to="/astro-finance-insights/zodiac-compatibility" 
                   className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center text-sm"
                 >
                   Check Compatibility
                   <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -270,76 +268,76 @@ export const AstroFinanceInsights: React.FC = () => {
         <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Financial Traits by Zodiac Sign</h2>
         
         <div className="zodiac-grid mb-8">
-          <a href="/astro-finance-insights/zodiac-traits/aries" className="zodiac-item">
+          <Link to="/astro-finance-insights/zodiac-traits/aries" className="zodiac-item">
             <div className="text-3xl mb-2">♈</div>
             <span className="font-medium text-neutral-900">Aries</span>
             <span className="text-xs text-neutral-500">Mar 21 - Apr 19</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/taurus" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/taurus" className="zodiac-item">
             <div className="text-3xl mb-2">♉</div>
             <span className="font-medium text-neutral-900">Taurus</span>
             <span className="text-xs text-neutral-500">Apr 20 - May 20</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/gemini" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/gemini" className="zodiac-item">
             <div className="text-3xl mb-2">♊</div>
             <span className="font-medium text-neutral-900">Gemini</span>
             <span className="text-xs text-neutral-500">May 21 - Jun 20</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/cancer" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/cancer" className="zodiac-item">
             <div className="text-3xl mb-2">♋</div>
             <span className="font-medium text-neutral-900">Cancer</span>
             <span className="text-xs text-neutral-500">Jun 21 - Jul 22</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/leo" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/leo" className="zodiac-item">
             <div className="text-3xl mb-2">♌</div>
             <span className="font-medium text-neutral-900">Leo</span>
             <span className="text-xs text-neutral-500">Jul 23 - Aug 22</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/virgo" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/virgo" className="zodiac-item">
             <div className="text-3xl mb-2">♍</div>
             <span className="font-medium text-neutral-900">Virgo</span>
             <span className="text-xs text-neutral-500">Aug 23 - Sep 22</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/libra" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/libra" className="zodiac-item">
             <div className="text-3xl mb-2">♎</div>
             <span className="font-medium text-neutral-900">Libra</span>
             <span className="text-xs text-neutral-500">Sep 23 - Oct 22</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/scorpio" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/scorpio" className="zodiac-item">
             <div className="text-3xl mb-2">♏</div>
             <span className="font-medium text-neutral-900">Scorpio</span>
             <span className="text-xs text-neutral-500">Oct 23 - Nov 21</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/sagittarius" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/sagittarius" className="zodiac-item">
             <div className="text-3xl mb-2">♐</div>
             <span className="font-medium text-neutral-900">Sagittarius</span>
             <span className="text-xs text-neutral-500">Nov 22 - Dec 21</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/capricorn" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/capricorn" className="zodiac-item">
             <div className="text-3xl mb-2">♑</div>
             <span className="font-medium text-neutral-900">Capricorn</span>
             <span className="text-xs text-neutral-500">Dec 22 - Jan 19</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/aquarius" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/aquarius" className="zodiac-item">
             <div className="text-3xl mb-2">♒</div>
             <span className="font-medium text-neutral-900">Aquarius</span>
             <span className="text-xs text-neutral-500">Jan 20 - Feb 18</span>
-          </a>
-          <a href="/astro-finance-insights/zodiac-traits/pisces" className="zodiac-item">
+          </Link>
+          <Link to="/astro-finance-insights/zodiac-traits/pisces" className="zodiac-item">
             <div className="text-3xl mb-2">♓</div>
             <span className="font-medium text-neutral-900">Pisces</span>
             <span className="text-xs text-neutral-500">Feb 19 - Mar 20</span>
-          </a>
+          </Link>
         </div>
         
         <div className="text-center">
-          <a 
-            href="/astro-finance-insights/zodiac-traits" 
+          <Link 
+            to="/astro-finance-insights/zodiac-traits" 
             className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
           >
             View Detailed Financial Traits for All Zodiac Signs
             <ChevronRight className="h-4 w-4 ml-1" />
-          </a>
+          </Link>
         </div>
       </div>
       
@@ -353,13 +351,13 @@ export const AstroFinanceInsights: React.FC = () => {
             <p className="text-neutral-600 mb-4">
               Natural leaders and entrepreneurs. Tend to be innovative with money and take calculated risks. Good at creating wealth through independent ventures.
             </p>
-            <a 
-              href="/astro-finance-insights/numerology/life-path-1" 
+            <Link 
+              to="/astro-finance-insights/numerology/life-path-1" 
               className="text-purple-600 hover:text-purple-800 font-medium flex items-center text-sm"
             >
               Read More
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
           
           <div className="number-card bg-white rounded-xl shadow-md p-6" data-number="2">
@@ -367,13 +365,13 @@ export const AstroFinanceInsights: React.FC = () => {
             <p className="text-neutral-600 mb-4">
               Cooperative and diplomatic with finances. Excel in partnerships and collaborative investments. Patient with long-term financial growth.
             </p>
-            <a 
-              href="/astro-finance-insights/numerology/life-path-2" 
+            <Link 
+              to="/astro-finance-insights/numerology/life-path-2" 
               className="text-purple-600 hover:text-purple-800 font-medium flex items-center text-sm"
             >
               Read More
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
           
           <div className="number-card bg-white rounded-xl shadow-md p-6" data-number="3">
@@ -381,24 +379,24 @@ export const AstroFinanceInsights: React.FC = () => {
             <p className="text-neutral-600 mb-4">
               Creative with financial solutions. May earn through artistic or communication-based ventures. Need to guard against impulsive spending.
             </p>
-            <a 
-              href="/astro-finance-insights/numerology/life-path-3" 
+            <Link 
+              to="/astro-finance-insights/numerology/life-path-3" 
               className="text-purple-600 hover:text-purple-800 font-medium flex items-center text-sm"
             >
               Read More
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
         </div>
         
         <div className="text-center">
-          <a 
-            href="/astro-finance-insights/numerology/all-life-paths" 
+          <Link 
+            to="/astro-finance-insights/numerology/all-life-paths" 
             className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
           >
             Explore All Life Path Numbers and Their Financial Implications
             <ChevronRight className="h-4 w-4 ml-1" />
-          </a>
+          </Link>
         </div>
       </div>
       
@@ -407,46 +405,46 @@ export const AstroFinanceInsights: React.FC = () => {
         <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Gemstones for Financial Prosperity</h2>
         
         <div className="gemstone-grid mb-8">
-          <a href="/astro-finance-insights/gemstones/yellow-sapphire" className="gemstone-item">
+          <Link to="/astro-finance-insights/gemstones/yellow-sapphire" className="gemstone-item">
             <div className="text-3xl mb-2">💎</div>
             <span className="font-medium text-neutral-900">Yellow Sapphire</span>
             <span className="text-xs text-neutral-500">Jupiter</span>
-          </a>
-          <a href="/astro-finance-insights/gemstones/emerald" className="gemstone-item">
+          </Link>
+          <Link to="/astro-finance-insights/gemstones/emerald" className="gemstone-item">
             <div className="text-3xl mb-2">💎</div>
             <span className="font-medium text-neutral-900">Emerald</span>
             <span className="text-xs text-neutral-500">Mercury</span>
-          </a>
-          <a href="/astro-finance-insights/gemstones/ruby" className="gemstone-item">
+          </Link>
+          <Link to="/astro-finance-insights/gemstones/ruby" className="gemstone-item">
             <div className="text-3xl mb-2">💎</div>
             <span className="font-medium text-neutral-900">Ruby</span>
             <span className="text-xs text-neutral-500">Sun</span>
-          </a>
-          <a href="/astro-finance-insights/gemstones/pearl" className="gemstone-item">
+          </Link>
+          <Link to="/astro-finance-insights/gemstones/pearl" className="gemstone-item">
             <div className="text-3xl mb-2">💎</div>
             <span className="font-medium text-neutral-900">Pearl</span>
             <span className="text-xs text-neutral-500">Moon</span>
-          </a>
-          <a href="/astro-finance-insights/gemstones/red-coral" className="gemstone-item">
+          </Link>
+          <Link to="/astro-finance-insights/gemstones/red-coral" className="gemstone-item">
             <div className="text-3xl mb-2">💎</div>
             <span className="font-medium text-neutral-900">Red Coral</span>
             <span className="text-xs text-neutral-500">Mars</span>
-          </a>
-          <a href="/astro-finance-insights/gemstones/diamond" className="gemstone-item">
+          </Link>
+          <Link to="/astro-finance-insights/gemstones/diamond" className="gemstone-item">
             <div className="text-3xl mb-2">💎</div>
             <span className="font-medium text-neutral-900">Diamond</span>
             <span className="text-xs text-neutral-500">Venus</span>
-          </a>
+          </Link>
         </div>
         
         <div className="text-center">
-          <a 
-            href="/astro-finance-insights/gemstones/financial-prosperity" 
+          <Link 
+            to="/astro-finance-insights/gemstones/financial-prosperity" 
             className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
           >
             View All Gemstones for Financial Prosperity
             <ChevronRight className="h-4 w-4 ml-1" />
-          </a>
+          </Link>
         </div>
       </div>
       
@@ -457,51 +455,53 @@ export const AstroFinanceInsights: React.FC = () => {
         <div className="bg-white rounded-xl shadow-md p-6 mb-8">
           <h3 className="text-xl font-semibold text-neutral-900 mb-4">Today's Auspicious Timings</h3>
           
-          <table className="w-full muhurat-table">
-            <thead>
-              <tr>
-                <th>Activity</th>
-                <th>Auspicious Time</th>
-                <th>Ruling Planet</th>
-                <th>Significance</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>New Investments</td>
-                <td>10:30 AM - 12:00 PM</td>
-                <td>Jupiter</td>
-                <td>Growth and expansion of wealth</td>
-              </tr>
-              <tr>
-                <td>Signing Contracts</td>
-                <td>2:15 PM - 3:45 PM</td>
-                <td>Mercury</td>
-                <td>Clear communication and favorable terms</td>
-              </tr>
-              <tr>
-                <td>Property Purchase</td>
-                <td>9:00 AM - 10:15 AM</td>
-                <td>Venus</td>
-                <td>Value appreciation and harmony</td>
-              </tr>
-              <tr>
-                <td>Starting Business</td>
-                <td>8:15 AM - 9:30 AM</td>
-                <td>Sun</td>
-                <td>Leadership and success</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="overflow-x-auto">
+            <table className="w-full muhurat-table">
+              <thead>
+                <tr>
+                  <th>Activity</th>
+                  <th>Auspicious Time</th>
+                  <th>Ruling Planet</th>
+                  <th>Significance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>New Investments</td>
+                  <td>10:30 AM - 12:00 PM</td>
+                  <td>Jupiter</td>
+                  <td>Growth and expansion of wealth</td>
+                </tr>
+                <tr>
+                  <td>Signing Contracts</td>
+                  <td>2:15 PM - 3:45 PM</td>
+                  <td>Mercury</td>
+                  <td>Clear communication and favorable terms</td>
+                </tr>
+                <tr>
+                  <td>Property Purchase</td>
+                  <td>9:00 AM - 10:15 AM</td>
+                  <td>Venus</td>
+                  <td>Value appreciation and harmony</td>
+                </tr>
+                <tr>
+                  <td>Starting Business</td>
+                  <td>8:15 AM - 9:30 AM</td>
+                  <td>Sun</td>
+                  <td>Leadership and success</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           
           <div className="text-center mt-6">
-            <a 
-              href="/astro-finance-insights/muhurat-finder" 
+            <Link 
+              to="/astro-finance-insights/muhurat-finder" 
               className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
             >
               Find Auspicious Times for Other Dates
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -516,13 +516,13 @@ export const AstroFinanceInsights: React.FC = () => {
             <p className="text-neutral-600 mb-3">
               Ruled by Ketu. Favorable for quick investments with short-term gains. Good for starting new financial ventures.
             </p>
-            <a 
-              href="/astro-finance-insights/nakshatra/ashwini" 
+            <Link 
+              to="/astro-finance-insights/nakshatra/ashwini" 
               className="text-purple-600 hover:text-purple-800 font-medium flex items-center text-sm"
             >
               Read More
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
           
           <div className="bg-white rounded-xl shadow-md p-6">
@@ -530,13 +530,13 @@ export const AstroFinanceInsights: React.FC = () => {
             <p className="text-neutral-600 mb-3">
               Ruled by Venus. Good for luxury investments and assets that appreciate over time. Favorable for real estate.
             </p>
-            <a 
-              href="/astro-finance-insights/nakshatra/bharani" 
+            <Link 
+              to="/astro-finance-insights/nakshatra/bharani" 
               className="text-purple-600 hover:text-purple-800 font-medium flex items-center text-sm"
             >
               Read More
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
           
           <div className="bg-white rounded-xl shadow-md p-6">
@@ -544,24 +544,24 @@ export const AstroFinanceInsights: React.FC = () => {
             <p className="text-neutral-600 mb-3">
               Ruled by Sun. Excellent for gold investments and government bonds. Brings clarity to financial decisions.
             </p>
-            <a 
-              href="/astro-finance-insights/nakshatra/krittika" 
+            <Link 
+              to="/astro-finance-insights/nakshatra/krittika" 
               className="text-purple-600 hover:text-purple-800 font-medium flex items-center text-sm"
             >
               Read More
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
         </div>
         
         <div className="text-center">
-          <a 
-            href="/astro-finance-insights/nakshatra/view-all" 
+          <Link 
+            to="/astro-finance-insights/nakshatra/view-all" 
             className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
           >
             Explore All 27 Nakshatras and Their Financial Influences
             <ChevronRight className="h-4 w-4 ml-1" />
-          </a>
+          </Link>
         </div>
       </div>
       
@@ -623,24 +623,24 @@ export const AstroFinanceInsights: React.FC = () => {
           </div>
           
           <div className="text-center mt-8">
-            <a 
-              href="/astro-finance-insights/stock-market/detailed-outlook" 
+            <Link 
+              to="/astro-finance-insights/stock-market/detailed-outlook" 
               className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
             >
               View Detailed Market Outlook
               <ChevronRight className="h-4 w-4 ml-1" />
-            </a>
+            </Link>
           </div>
         </div>
         
         <div className="text-center">
-          <a 
-            href="/astro-finance-insights/stock-market/cycles" 
+          <Link 
+            to="/astro-finance-insights/stock-market/cycles" 
             className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
           >
             Learn About Astrological Market Cycles
             <ChevronRight className="h-4 w-4 ml-1" />
-          </a>
+          </Link>
         </div>
       </div>
       
@@ -804,7 +804,7 @@ export const AstroFinanceInsights: React.FC = () => {
         <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Related Financial Tools</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <a href="/calculators/sip-calculator" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+          <Link to="/calculators/sip-calculator" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
                 <Calculator className="h-5 w-5 text-blue-600" />
@@ -813,9 +813,9 @@ export const AstroFinanceInsights: React.FC = () => {
             </div>
             <p className="text-sm text-neutral-600 mb-3">Calculate returns on your systematic investment plans with our powerful SIP calculator.</p>
             <span className="text-sm text-blue-600 font-medium">Calculate Returns</span>
-          </a>
+          </Link>
           
-          <a href="/calculators/gold-investment-calculator" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+          <Link to="/calculators/gold-investment-calculator" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center mr-3">
                 <Calculator className="h-5 w-5 text-amber-600" />
@@ -824,9 +824,9 @@ export const AstroFinanceInsights: React.FC = () => {
             </div>
             <p className="text-sm text-neutral-600 mb-3">Calculate returns on gold investments including physical gold, digital gold, and Sovereign Gold Bonds.</p>
             <span className="text-sm text-amber-600 font-medium">Calculate Returns</span>
-          </a>
+          </Link>
           
-          <a href="/calculators/retirement-calculator" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+          <Link to="/calculators/retirement-calculator" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
                 <Calculator className="h-5 w-5 text-green-600" />
@@ -835,7 +835,7 @@ export const AstroFinanceInsights: React.FC = () => {
             </div>
             <p className="text-sm text-neutral-600 mb-3">Plan your retirement corpus and monthly investments needed to achieve your retirement goals.</p>
             <span className="text-sm text-green-600 font-medium">Plan Retirement</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
