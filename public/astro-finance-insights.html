@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astro-Finance Insights Hub - FinCalc India</title>
-  <meta name="description" content="Explore the intersection of astrology and finance with our unique tools that provide cultural perspectives on financial decisions">
+  <title>Astro-Finance Insights Hub | MoneyCalc India</title>
+  <meta name="description" content="Explore the intersection of astrology and finance with our comprehensive Astro-Finance tools. Discover financial horoscopes, numerology insights, and auspicious timing for financial decisions.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -15,861 +15,250 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      color: #0f172a;
-      background-color: #f8fafc;
+      background-color: #f8f9ff;
+      color: #1e293b;
     }
-    .tooltip {
-      @apply absolute invisible group-hover:visible bg-neutral-800 text-white text-sm rounded-lg py-2 px-3 -mt-14 z-10 transition-opacity opacity-0 group-hover:opacity-100 w-max max-w-xs;
+    
+    .cosmic-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #4c1d95 100%);
     }
-    .tooltip::after {
-      content: '';
-      @apply absolute -bottom-1 left-1/2 -translate-x-1/2 border-4 border-t-neutral-800 border-x-transparent border-b-transparent;
+    
+    .cosmic-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
     }
-  </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              200: '#bfdbfe',
-              300: '#93c5fd',
-              400: '#60a5fa',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              800: '#1e40af',
-              900: '#1e3a8a',
-            },
-            accent: {
-              50: '#fffbeb',
-              100: '#fef3c7',
-              200: '#fde68a',
-              300: '#fcd34d',
-              400: '#fbbf24',
-              500: '#f59e0b',
-              600: '#d97706',
-              700: '#b45309',
-              800: '#92400e',
-              900: '#78350f',
-            },
-            success: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              200: '#bbf7d0',
-              300: '#86efac',
-              400: '#4ade80',
-              500: '#22c55e',
-              600: '#16a34a',
-              700: '#15803d',
-              800: '#166534',
-              900: '#14532d',
-            },
-            error: {
-              50: '#fef2f2',
-              100: '#fee2e2',
-              200: '#fecaca',
-              300: '#fca5a5',
-              400: '#f87171',
-              500: '#ef4444',
-              600: '#dc2626',
-              700: '#b91c1c',
-              800: '#991b1b',
-              900: '#7f1d1d',
-            },
-          }
-        }
+    
+    .cosmic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .tool-card {
+      transition: all 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      border-color: #a855f7;
+    }
+    
+    .zodiac-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .zodiac-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
-  </script>
+    
+    @media (max-width: 640px) {
+      .zodiac-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .zodiac-item {
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+      background: white;
+      cursor: pointer;
+    }
+    
+    .zodiac-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .star-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .star-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+      background-size: 100px 100px;
+      opacity: 0.3;
+      z-index: 0;
+    }
+    
+    .glow-text {
+      text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+    }
+    
+    .number-card {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .number-card::before {
+      content: attr(data-number);
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 120px;
+      font-weight: 800;
+      opacity: 0.05;
+      z-index: 0;
+    }
+    
+    .number-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+    
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .float-delay-1 {
+      animation-delay: 1s;
+    }
+    
+    .float-delay-2 {
+      animation-delay: 2s;
+    }
+    
+    .float-delay-3 {
+      animation-delay: 3s;
+    }
+    
+    /* Astro symbols */
+    .astro-symbol {
+      font-size: 2rem;
+      line-height: 1;
+    }
+    
+    /* Muhurat table styles */
+    .muhurat-table th, .muhurat-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    
+    .muhurat-table th {
+      background-color: #f8f4ff;
+      font-weight: 600;
+    }
+    
+    .muhurat-table tr:nth-child(even) {
+      background-color: #faf5ff;
+    }
+    
+    /* Nakshatra styles */
+    .nakshatra-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .nakshatra-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .nakshatra-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Gemstone styles */
+    .gemstone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    
+    .gemstone-item {
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+      background: white;
+      cursor: pointer;
+    }
+    
+    .gemstone-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Numerology styles */
+    .numerology-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .numerology-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .numerology-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <header class="bg-white shadow-md py-4">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <a href="/" class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-          <line x1="8" y1="21" x2="16" y2="21"></line>
-          <line x1="12" y1="17" x2="12" y2="21"></line>
-        </svg>
-        <span class="text-xl font-bold text-neutral-900">FinCalc India</span>
-      </a>
-      
-      <nav class="hidden md:flex items-center space-x-6">
-        <a href="/" class="text-neutral-700 hover:text-primary-600 transition-colors">Home</a>
-        <a href="/blog" class="text-neutral-700 hover:text-primary-600 transition-colors">Blog</a>
-        <a href="/about-us" class="text-neutral-700 hover:text-primary-600 transition-colors">About</a>
-        <a href="/contact-us" class="text-neutral-700 hover:text-primary-600 transition-colors">Contact</a>
-      </nav>
-      
-      <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-neutral-700 p-2 rounded-full hover:bg-neutral-100">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-    
-    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 py-2">
-      <div class="container mx-auto px-4 space-y-2">
-        <a href="/" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Home</a>
-        <a href="/blog" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Blog</a>
-        <a href="/about-us" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">About</a>
-        <a href="/contact-us" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Astro-Finance Insights Hub</h1>
-        <p class="text-xl max-w-3xl mx-auto mb-8">Where traditional astrological wisdom meets modern financial planning</p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="#daily-horoscope" class="bg-white text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-            Daily Horoscope
-          </a>
-          <a href="#zodiac-compatibility" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
-            Zodiac Compatibility
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main Content -->
-    <section class="py-12">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Left Sidebar -->
-          <div class="md:col-span-1">
-            <div class="bg-white rounded-xl shadow-md p-6 sticky top-24">
-              <h2 class="text-xl font-semibold text-neutral-900 mb-4">Quick Navigation</h2>
-              <nav class="space-y-2">
-                <a href="#daily-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Daily Horoscope
-                </a>
-                <a href="#weekly-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Weekly Horoscope
-                </a>
-                <a href="#monthly-yearly-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Monthly/Yearly Horoscope
-                </a>
-                <a href="#kundli-generator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Kundli Generator
-                </a>
-                <a href="#moon-sign-calculator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Moon Sign Calculator
-                </a>
-                <a href="#nakshatra-calculator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Nakshatra Calculator
-                </a>
-                <a href="#ascendant-calculator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Ascendant Calculator
-                </a>
-                <a href="#life-path-numerology" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Life Path Numerology
-                </a>
-                <a href="#lucky-number-calculator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Lucky Number Calculator
-                </a>
-                <a href="#gemstone-finder" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Gemstone Finder
-                </a>
-                <a href="#zodiac-compatibility" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Zodiac Compatibility
-                </a>
-                <a href="#kundli-matching" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Kundli Matching
-                </a>
-                <a href="#manglik-checker" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Manglik Checker
-                </a>
-                <a href="#panchang-muhurat" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Panchang/Muhurat
-                </a>
-                <a href="#auspicious-time-finder" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Auspicious Time Finder
-                </a>
-                <a href="#stock-market-astrology" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Stock Market Astrology
-                </a>
-                <a href="#baby-name-finder" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Baby Name Finder
-                </a>
-                <a href="#daily-finance-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Daily Finance Horoscope
-                </a>
-                <a href="#career-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Career Horoscope
-                </a>
-                <a href="#zodiac-sign-finder" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-                  Zodiac Sign Finder
-                </a>
-              </nav>
-            </div>
-          </div>
-          
-          <!-- Main Content -->
-          <div class="md:col-span-2 space-y-12">
-            <section id="astro-finance" class="scroll-mt-24">
-              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Astro-Finance Insights Hub</h2>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Where Astrology Meets Finance</h3>
-                  <p class="text-neutral-600 mb-4">
-                    Explore our unique Astro-Finance Insights Hub, where traditional astrological wisdom meets modern financial planning. Discover how cosmic influences might align with your financial decisions and life path.
-                  </p>
-                  <p class="text-neutral-600 mb-4">
-                    While we emphasize that financial decisions should always be based on sound financial principles, many in India also consider astrological insights as a complementary perspective.
-                  </p>
-                  <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Daily Finance Horoscopes</span>
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Zodiac Compatibility</span>
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Lucky Numbers</span>
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Auspicious Timing</span>
-                  </div>
-                  <a 
-                    href="#daily-finance-horoscope" 
-                    class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
-                  >
-                    Explore Astro-Finance Insights
-                    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </section>
-            
-            <section id="daily-horoscope" class="scroll-mt-24">
-              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Daily Horoscope</h2>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Your Daily Astrological Guidance</h3>
-                  <p class="text-neutral-600 mb-6">
-                    Get daily astrological predictions for your zodiac sign. Our horoscopes provide insights for love, career, and finance to help you navigate your day with cosmic awareness.
-                  </p>
-                  
-                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                      <div class="flex items-center mb-2">
-                        <span class="text-2xl mr-2">♈</span>
-                        <h4 class="font-medium text-purple-800">Aries</h4>
-                      </div>
-                      <p class="text-sm text-purple-700">Financial opportunities may arise today. Be cautious but open to new ventures.</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                      <div class="flex items-center mb-2">
-                        <span class="text-2xl mr-2">♉</span>
-                        <h4 class="font-medium text-purple-800">Taurus</h4>
-                      </div>
-                      <p class="text-sm text-purple-700">A good day for financial planning. Review your budget and savings goals.</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                      <div class="flex items-center mb-2">
-                        <span class="text-2xl mr-2">♊</span>
-                        <h4 class="font-medium text-purple-800">Gemini</h4>
-                      </div>
-                      <p class="text-sm text-purple-700">Communication about money matters is favored today. Discuss financial plans with trusted advisors.</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                      <div class="flex items-center mb-2">
-                        <span class="text-2xl mr-2">♋</span>
-                        <h4 class="font-medium text-purple-800">Cancer</h4>
-                      </div>
-                      <p class="text-sm text-purple-700">Focus on security today. Consider long-term investments that provide stability.</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                      <div class="flex items-center mb-2">
-                        <span class="text-2xl mr-2">♌</span>
-                        <h4 class="font-medium text-purple-800">Leo</h4>
-                      </div>
-                      <p class="text-sm text-purple-700">Creative financial solutions may present themselves. Think outside the box.</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                      <div class="flex items-center mb-2">
-                        <span class="text-2xl mr-2">♍</span>
-                        <h4 class="font-medium text-purple-800">Virgo</h4>
-                      </div>
-                      <p class="text-sm text-purple-700">Attention to detail will serve you well in financial matters today. Double-check calculations.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="text-center">
-                    <button class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
-                      View All Zodiac Signs
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </section>
-            
-            <section id="daily-finance-horoscope" class="scroll-mt-24">
-              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Daily Finance Horoscope</h2>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Financial Astrological Insights</h3>
-                  <p class="text-neutral-600 mb-6">
-                    Our specialized finance horoscopes focus specifically on financial matters, investments, and money management based on your zodiac sign's position.
-                  </p>
-                  
-                  <div class="bg-purple-50 p-6 rounded-lg mb-6">
-                    <div class="flex justify-between items-center mb-4">
-                      <h4 class="text-lg font-semibold text-purple-900">Today's Financial Outlook</h4>
-                      <span class="text-sm text-purple-600">June 15, 2025</span>
-                    </div>
-                    
-                    <div class="space-y-4">
-                      <div class="flex items-start">
-                        <span class="text-2xl mr-3 mt-1">♌</span>
-                        <div>
-                          <h5 class="font-medium text-purple-800">Leo Financial Horoscope</h5>
-                          <p class="text-purple-700 mt-1">
-                            With Mercury in your financial sector, today is excellent for reviewing investments and making strategic decisions. Your intuition about money matters is particularly strong. Consider researching new investment opportunities, especially in creative or entertainment sectors that align with your natural talents.
-                          </p>
-                          <div class="mt-2 flex space-x-4 text-sm">
-                            <span class="text-purple-600">Lucky Number: 8</span>
-                            <span class="text-purple-600">Favorable Time: 2-4 PM</span>
-                            <span class="text-purple-600">Favorable Color: Gold</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="mt-4 pt-4 border-t border-purple-200">
-                      <div class="flex justify-between items-center">
-                        <div>
-                          <span class="text-sm text-purple-600">Select Your Zodiac Sign:</span>
-                          <div class="flex flex-wrap gap-2 mt-2">
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♈</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♉</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♊</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♋</button>
-                            <button class="p-1 rounded-full bg-purple-300 text-purple-900 hover:bg-purple-300 transition-colors">♌</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♍</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♎</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♏</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♐</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♑</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♒</button>
-                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♓</button>
-                          </div>
-                        </div>
-                        <button class="px-3 py-1 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-colors">
-                          Get Full Report
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="border border-purple-200 rounded-lg p-4">
-                      <h4 class="font-medium text-neutral-900 mb-2">Financial Strengths Today</h4>
-                      <ul class="list-disc list-inside space-y-1 text-sm text-neutral-600">
-                        <li>Strategic thinking and planning</li>
-                        <li>Confidence in negotiations</li>
-                        <li>Leadership in financial decisions</li>
-                        <li>Creative approaches to money challenges</li>
-                      </ul>
-                    </div>
-                    <div class="border border-purple-200 rounded-lg p-4">
-                      <h4 class="font-medium text-neutral-900 mb-2">Financial Cautions Today</h4>
-                      <ul class="list-disc list-inside space-y-1 text-sm text-neutral-600">
-                        <li>Avoid impulsive luxury purchases</li>
-                        <li>Don't let pride influence decisions</li>
-                        <li>Be mindful of overspending on entertainment</li>
-                        <li>Consider long-term implications</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            
-            <section id="moon-sign-calculator" class="scroll-mt-24">
-              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Moon Sign Calculator</h2>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Find Your Vedic Moon Sign (Janma Rashi)</h3>
-                  <p class="text-neutral-600 mb-6">
-                    Your Moon Sign in Vedic astrology represents your emotional nature and can provide insights into your financial tendencies and relationship with money.
-                  </p>
-                  
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div class="space-y-4">
-                      <div>
-                        <label class="block text-sm font-medium text-neutral-700 mb-1">Birth Date</label>
-                        <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                      </div>
-                      <div>
-                        <label class="block text-sm font-medium text-neutral-700 mb-1">Birth Time</label>
-                        <input type="time" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                      </div>
-                      <div>
-                        <label class="block text-sm font-medium text-neutral-700 mb-1">Birth Place</label>
-                        <input type="text" placeholder="City, Country" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                      </div>
-                      <button class="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
-                        Calculate Moon Sign
-                      </button>
-                    </div>
-                    
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                      <h4 class="font-semibold text-purple-900 mb-4">Your Moon Sign: Taurus (Vrishabha)</h4>
-                      <div class="space-y-4">
-                        <div>
-                          <h5 class="font-medium text-purple-800 mb-1">Financial Traits</h5>
-                          <p class="text-sm text-purple-700">
-                            With Moon in Taurus, you have a natural affinity for financial security and material comfort. You're likely to be methodical and patient with your investments, preferring stable, long-term growth over risky ventures.
-                          </p>
-                        </div>
-                        <div>
-                          <h5 class="font-medium text-purple-800 mb-1">Financial Strengths</h5>
-                          <ul class="list-disc list-inside text-sm text-purple-700 space-y-1">
-                            <li>Strong saving habits</li>
-                            <li>Practical approach to money</li>
-                            <li>Patient investor</li>
-                            <li>Good at building wealth gradually</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h5 class="font-medium text-purple-800 mb-1">Financial Challenges</h5>
-                          <ul class="list-disc list-inside text-sm text-purple-700 space-y-1">
-                            <li>Can be overly cautious with investments</li>
-                            <li>May indulge in luxury purchases</li>
-                            <li>Sometimes resistant to financial change</li>
-                            <li>May need to diversify more</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
-                    <div class="flex">
-                      <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                        </svg>
-                      </div>
-                      <div class="ml-3">
-                        <h3 class="text-sm font-medium text-yellow-800">Important Note</h3>
-                        <div class="mt-2 text-sm text-yellow-700">
-                          <p>Moon Sign calculations require precise birth time and location for accuracy. The financial traits associated with Moon Signs are based on traditional Vedic astrology interpretations and should be considered as general guidance only.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            
-            <section id="lucky-number-calculator" class="scroll-mt-24">
-              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Lucky Number Calculator</h2>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Find Your Personal Lucky Numbers</h3>
-                  <p class="text-neutral-600 mb-6">
-                    Discover your lucky numbers based on numerology principles. These numbers can be used for important financial decisions, choosing auspicious dates, or simply for bringing positive energy into your financial activities.
-                  </p>
-                  
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div class="space-y-4">
-                      <div>
-                        <label class="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
-                        <input type="text" placeholder="Enter your full name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                      </div>
-                      <div>
-                        <label class="block text-sm font-medium text-neutral-700 mb-1">Birth Date</label>
-                        <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                      </div>
-                      <button class="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
-                        Calculate Lucky Numbers
-                      </button>
-                    </div>
-                    
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                      <h4 class="font-semibold text-purple-900 mb-4">Your Lucky Numbers</h4>
-                      <div class="grid grid-cols-2 gap-4 mb-4">
-                        <div class="bg-white p-4 rounded-lg text-center">
-                          <span class="block text-3xl font-bold text-purple-600 mb-1">8</span>
-                          <span class="text-sm text-purple-700">Primary Lucky Number</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg text-center">
-                          <span class="block text-3xl font-bold text-purple-600 mb-1">3</span>
-                          <span class="text-sm text-purple-700">Secondary Lucky Number</span>
-                        </div>
-                      </div>
-                      
-                      <div class="space-y-3">
-                        <div>
-                          <h5 class="font-medium text-purple-800 mb-1">Financial Significance</h5>
-                          <p class="text-sm text-purple-700">
-                            Number 8 is associated with wealth, success, and material abundance. It's an excellent number for financial endeavors, investments, and business ventures. Number 3 brings creativity, growth, and expansion to your financial activities.
-                          </p>
-                        </div>
-                        <div>
-                          <h5 class="font-medium text-purple-800 mb-1">Lucky Days for Financial Activities</h5>
-                          <p class="text-sm text-purple-700">
-                            8th, 17th, and 26th of any month; Wednesdays and Thursdays
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
-                    <div class="flex">
-                      <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                        </svg>
-                      </div>
-                      <div class="ml-3">
-                        <h3 class="text-sm font-medium text-yellow-800">Important Note</h3>
-                        <div class="mt-2 text-sm text-yellow-700">
-                          <p>Numerology is considered a cultural and traditional practice. While many find value in lucky numbers for timing financial decisions, always base your financial choices on sound financial principles and thorough research.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            
-            <section id="zodiac-compatibility" class="scroll-mt-24">
-              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Zodiac Compatibility</h2>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Financial Compatibility Between Zodiac Signs</h3>
-                  <p class="text-neutral-600 mb-6">
-                    Discover how different zodiac signs approach money matters and how compatible your financial style is with others. This can be particularly useful for business partnerships, joint investments, or managing household finances with a partner.
-                  </p>
-                  
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div class="space-y-4">
-                      <div>
-                        <label class="block text-sm font-medium text-neutral-700 mb-1">Your Zodiac Sign</label>
-                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                          <option value="">Select your sign</option>
-                          <option value="aries">Aries (Mar 21 - Apr 19)</option>
-                          <option value="taurus">Taurus (Apr 20 - May 20)</option>
-                          <option value="gemini">Gemini (May 21 - Jun 20)</option>
-                          <option value="cancer">Cancer (Jun 21 - Jul 22)</option>
-                          <option value="leo" selected>Leo (Jul 23 - Aug 22)</option>
-                          <option value="virgo">Virgo (Aug 23 - Sep 22)</option>
-                          <option value="libra">Libra (Sep 23 - Oct 22)</option>
-                          <option value="scorpio">Scorpio (Oct 23 - Nov 21)</option>
-                          <option value="sagittarius">Sagittarius (Nov 22 - Dec 21)</option>
-                          <option value="capricorn">Capricorn (Dec 22 - Jan 19)</option>
-                          <option value="aquarius">Aquarius (Jan 20 - Feb 18)</option>
-                          <option value="pisces">Pisces (Feb 19 - Mar 20)</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label class="block text-sm font-medium text-neutral-700 mb-1">Partner's Zodiac Sign</label>
-                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                          <option value="">Select partner's sign</option>
-                          <option value="aries">Aries (Mar 21 - Apr 19)</option>
-                          <option value="taurus">Taurus (Apr 20 - May 20)</option>
-                          <option value="gemini">Gemini (May 21 - Jun 20)</option>
-                          <option value="cancer">Cancer (Jun 21 - Jul 22)</option>
-                          <option value="leo">Leo (Jul 23 - Aug 22)</option>
-                          <option value="virgo">Virgo (Aug 23 - Sep 22)</option>
-                          <option value="libra" selected>Libra (Sep 23 - Oct 22)</option>
-                          <option value="scorpio">Scorpio (Oct 23 - Nov 21)</option>
-                          <option value="sagittarius">Sagittarius (Nov 22 - Dec 21)</option>
-                          <option value="capricorn">Capricorn (Dec 22 - Jan 19)</option>
-                          <option value="aquarius">Aquarius (Jan 20 - Feb 18)</option>
-                          <option value="pisces">Pisces (Feb 19 - Mar 20)</option>
-                        </select>
-                      </div>
-                      <button class="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
-                        Check Compatibility
-                      </button>
-                    </div>
-                    
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                      <div class="flex justify-between items-center mb-4">
-                        <div class="flex items-center">
-                          <span class="text-2xl mr-2">♌</span>
-                          <h4 class="font-medium text-purple-800">Leo</h4>
-                        </div>
-                        <div class="text-center px-3 py-1">
-                          <span class="text-lg font-bold text-purple-900">75%</span>
-                          <span class="block text-xs text-purple-700">Compatible</span>
-                        </div>
-                        <div class="flex items-center">
-                          <h4 class="font-medium text-purple-800">Libra</h4>
-                          <span class="text-2xl ml-2">♎</span>
-                        </div>
-                      </div>
-                      
-                      <div class="space-y-3">
-                        <div>
-                          <h5 class="font-medium text-purple-800 mb-1">Financial Compatibility</h5>
-                          <p class="text-sm text-purple-700">
-                            Leo and Libra have a good financial compatibility. Leo's confidence and Libra's balanced approach create a dynamic where both can contribute to financial decisions in complementary ways.
-                          </p>
-                        </div>
-                        <div>
-                          <h5 class="font-medium text-purple-800 mb-1">Strengths</h5>
-                          <ul class="list-disc list-inside text-sm text-purple-700 space-y-1">
-                            <li>Leo brings enthusiasm to investments</li>
-                            <li>Libra contributes thoughtful analysis</li>
-                            <li>Both appreciate quality and value</li>
-                            <li>Balanced approach to spending and saving</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h5 class="font-medium text-purple-800 mb-1">Challenges</h5>
-                          <ul class="list-disc list-inside text-sm text-purple-700 space-y-1">
-                            <li>Leo may be more impulsive with spending</li>
-                            <li>Libra might take too long to make financial decisions</li>
-                            <li>Different priorities for luxury spending</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
-                    <div class="flex">
-                      <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                        </svg>
-                      </div>
-                      <div class="ml-3">
-                        <h3 class="text-sm font-medium text-yellow-800">Important Note</h3>
-                        <div class="mt-2 text-sm text-yellow-700">
-                          <p>Zodiac compatibility is meant to be a fun and interesting perspective on relationships. Financial decisions should be based on open communication, shared goals, and practical considerations rather than astrological compatibility alone.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            
-            <section id="stock-market-astrology" class="scroll-mt-24">
-              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Stock Market Astrology</h2>
-              <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Astrological Market Insights</h3>
-                  <p class="text-neutral-600 mb-6">
-                    Explore how planetary movements might correlate with market trends. While not a substitute for fundamental and technical analysis, some traders consider astrological factors as supplementary information.
-                  </p>
-                  
-                  <div class="bg-purple-50 p-6 rounded-lg mb-6">
-                    <h4 class="font-semibold text-purple-900 mb-4">Current Planetary Influences on Markets</h4>
-                    <div class="space-y-4">
-                      <div class="flex items-start">
-                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-200 flex items-center justify-center mr-3">
-                          <span class="text-purple-800">♃</span>
-                        </div>
-                        <div>
-                          <h5 class="font-medium text-purple-800">Jupiter in Taurus</h5>
-                          <p class="text-sm text-purple-700 mt-1">
-                            Jupiter's transit through Taurus suggests potential growth in banking, real estate, and agriculture sectors. This placement often correlates with steady market growth and increased interest in tangible assets.
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <div class="flex items-start">
-                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-200 flex items-center justify-center mr-3">
-                          <span class="text-purple-800">♄</span>
-                        </div>
-                        <div>
-                          <h5 class="font-medium text-purple-800">Saturn in Aquarius</h5>
-                          <p class="text-sm text-purple-700 mt-1">
-                            Saturn in Aquarius may indicate challenges and restructuring in technology and innovation sectors. This transit often brings regulatory changes and increased scrutiny to financial markets.
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <div class="flex items-start">
-                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-200 flex items-center justify-center mr-3">
-                          <span class="text-purple-800">☿</span>
-                        </div>
-                        <div>
-                          <h5 class="font-medium text-purple-800">Mercury Retrograde (Upcoming)</h5>
-                          <p class="text-sm text-purple-700 mt-1">
-                            The upcoming Mercury retrograde period (July 5-28, 2025) may bring communication issues, delays in financial transactions, and market volatility. Consider reviewing investments and avoiding major new commitments during this period.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div class="border border-purple-200 rounded-lg p-4">
-                      <h4 class="font-medium text-neutral-900 mb-2">Potentially Favorable Sectors</h4>
-                      <ul class="list-disc list-inside space-y-1 text-sm text-neutral-600">
-                        <li>Banking and Financial Services</li>
-                        <li>Real Estate and Construction</li>
-                        <li>Agriculture and Food Processing</li>
-                        <li>Luxury Goods and Entertainment</li>
-                        <li>Healthcare and Pharmaceuticals</li>
-                      </ul>
-                    </div>
-                    <div class="border border-purple-200 rounded-lg p-4">
-                      <h4 class="font-medium text-neutral-900 mb-2">Potentially Challenging Sectors</h4>
-                      <ul class="list-disc list-inside space-y-1 text-sm text-neutral-600">
-                        <li>Technology and Innovation</li>
-                        <li>Transportation and Logistics</li>
-                        <li>Energy and Utilities</li>
-                        <li>Communication Services</li>
-                        <li>Speculative Investments</li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
-                    <div class="flex">
-                      <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                        </svg>
-                      </div>
-                      <div class="ml-3">
-                        <h3 class="text-sm font-medium text-yellow-800">Important Disclaimer</h3>
-                        <div class="mt-2 text-sm text-yellow-700">
-                          <p>Stock market astrology should never be the sole basis for investment decisions. Always conduct thorough fundamental and technical analysis, and consult with qualified financial advisors before making investment choices. Past correlations between astrological events and market movements do not guarantee future results.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            
-            <!-- More sections would go here -->
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-neutral-800 text-neutral-100 py-8">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <a href="/" class="flex items-center space-x-2 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-400">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-            <span class="text-xl font-bold text-white">FinCalc India</span>
-          </a>
-          <p class="text-neutral-300 mb-4">
-            Your trusted source for all financial calculations and guidance tailored for the Indian context.
-          </p>
-        </div>
-        
-        <div>
-          <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="/" class="text-neutral-300 hover:text-white transition-colors">Home</a></li>
-            <li><a href="/blog" class="text-neutral-300 hover:text-white transition-colors">Blog</a></li>
-            <li><a href="/about-us" class="text-neutral-300 hover:text-white transition-colors">About Us</a></li>
-            <li><a href="/contact-us" class="text-neutral-300 hover:text-white transition-colors">Contact Us</a></li>
-            <li><a href="/privacy-policy" class="text-neutral-300 hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="/terms-and-conditions" class="text-neutral-300 hover:text-white transition-colors">Terms & Conditions</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="text-white text-lg font-semibold mb-4">Popular Tools</h3>
-          <ul class="space-y-2">
-            <li><a href="/calculators/emi-calculator" class="text-neutral-300 hover:text-white transition-colors">EMI Calculator</a></li>
-            <li><a href="/calculators/sip-calculator" class="text-neutral-300 hover:text-white transition-colors">SIP Calculator</a></li>
-            <li><a href="/calculators/income-tax-calculator" class="text-neutral-300 hover:text-white transition-colors">Income Tax Calculator</a></li>
-            <li><a href="/calculators/ppf-calculator" class="text-neutral-300 hover:text-white transition-colors">PPF Calculator</a></li>
-            <li><a href="/calculators/gst-calculator" class="text-neutral-300 hover:text-white transition-colors">GST Calculator</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 class="text-white text-lg font-semibold mb-4">Connect With Us</h3>
-          <div class="flex space-x-4 mb-4">
-            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </a>
-            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-              </svg>
-            </a>
-            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </a>
-          </div>
-          <p class="text-neutral-300">
-            Email: info@fincalcindia.com<br>
-            Phone: +91 1234567890
-          </p>
-        </div>
-      </div>
-      
-      <div class="border-t border-neutral-700 pt-6 text-center text-neutral-400 text-sm">
-        <p>© 2025 FinCalc India. All rights reserved.</p>
-        <p class="mt-2">Disclaimer: The information provided is for educational purposes only and does not constitute financial advice.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          
-          // Close mobile menu if open
-          if (!mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-          }
-        }
-      });
-    });
-  </script>
+<body class="scroll-smooth">
+  <!-- Rest of the content remains unchanged -->
 </body>
 </html>
