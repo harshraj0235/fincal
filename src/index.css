@@ -158,134 +158,53 @@ body {
   background: var(--neutral-400);
 }
 
-/* SEO-friendly heading styles */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--neutral-900);
-  margin-bottom: 0.5em;
-  line-height: 1.2;
+/* Fix for text visibility */
+.text-neutral-600, .text-neutral-700, .text-neutral-800, .text-neutral-900 {
+  color: var(--foreground);
 }
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+.bg-white {
+  background-color: var(--background);
 }
 
-h2 {
-  font-size: 2rem;
-  font-weight: 700;
+/* Ensure high contrast for all text */
+p, h1, h2, h3, h4, h5, h6, span, a, button, li {
+  color: var(--foreground);
 }
 
-h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
+/* Ensure buttons have visible text */
+.btn-primary, .btn-secondary {
+  color: white !important;
 }
 
-h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-h5 {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-h6 {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* Improve text readability */
-p, li, td, th {
-  line-height: 1.6;
-}
-
-/* Improve link accessibility */
+/* Ensure links are visible */
 a {
   color: var(--primary-600);
-  text-decoration: none;
-  transition: color 0.2s;
 }
 
 a:hover {
-  color: var(--primary-700);
+  color: var(--primary-800);
 }
 
-a:focus {
-  outline: 2px solid var(--primary-300);
-  outline-offset: 2px;
+/* Improved card styling for better visibility */
+.card {
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--neutral-200);
 }
 
-/* Improve image accessibility */
-img {
-  max-width: 100%;
-  height: auto;
+/* Improved section styling */
+section {
+  background-color: white;
+  color: var(--foreground);
 }
 
-/* Add focus styles for better accessibility */
-button:focus, 
-input:focus, 
-select:focus, 
-textarea:focus {
-  outline: 2px solid var(--primary-300);
-  outline-offset: 2px;
+/* Ensure all headings are visible */
+.text-2xl, .text-3xl, .text-4xl, .text-5xl {
+  color: var(--neutral-900);
 }
 
-/* Skip to content link for accessibility */
-.skip-to-content {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.skip-to-content:focus {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-  padding: 0.5rem 1rem;
-  background: var(--primary-600);
-  color: white;
-  z-index: 9999;
-}
-
-/* Animations for better UX */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.animate-slide-up {
-  animation: slideUp 0.5s ease-out;
-}
-
-/* Improved card hover effects */
-.hover-card-effect {
-  transition: all 0.3s ease;
-}
-
-.hover-card-effect:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* Gradient text for special headings */
-.gradient-text {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(to right, var(--primary-600), var(--primary-500));
+/* Ensure all paragraphs are visible */
+p {
+  color: var(--neutral-800);
 }
