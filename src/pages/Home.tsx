@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
-import { Calculator, ArrowRight, ChevronRight, BookOpen, MapPin, Check, Star, TrendingUp, DollarSign, Shield, Zap, Award, BarChart4, PieChart } from 'lucide-react';
+import { Calculator, ArrowRight, ChevronRight, BookOpen, MapPin, Check, Star, TrendingUp, DollarSign, Shield, Zap, Award, BarChart4, PieChart, Calendar, Home } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 export const Home: React.FC = () => {
