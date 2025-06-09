@@ -133,6 +133,13 @@ export const Header: React.FC = () => {
               <FileText className="h-4 w-4 mr-1" />
               Blog
             </Link>
+            <Link 
+              to="/astro-finance-insights" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
+            >
+              <BookOpen className="h-4 w-4 mr-1" />
+              Astro-Finance
+            </Link>
             <a 
               href="/financial-navigator.html" 
               target="_blank"
@@ -152,13 +159,6 @@ export const Header: React.FC = () => {
               className="text-neutral-700 hover:text-primary-600 transition-colors"
             >
               Contact
-            </Link>
-            <Link 
-              to="/sitemap" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
-            >
-              <Map className="h-4 w-4 mr-1" />
-              Sitemap
             </Link>
             <Link 
               to="/calculators/income-tax-calculator" 

@@ -79,6 +79,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             Blog
           </Link>
           
+          <Link 
+            to="/astro-finance-insights" 
+            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg flex items-center"
+            onClick={onClose}
+          >
+            <BookOpen className="h-4 w-4 mr-2" />
+            Astro-Finance
+          </Link>
+          
           <a 
             href="/financial-navigator.html" 
             target="_blank"

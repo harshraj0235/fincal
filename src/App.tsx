@@ -15,6 +15,7 @@ import { ContactUs } from './pages/ContactUs';
 import { Sitemap } from './pages/Sitemap';
 import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
+import { AstroFinanceInsights } from './pages/AstroFinanceInsights';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap.xml" element={<SitemapXml />} />
+        <Route path="/astro-finance-insights" element={<AstroFinanceInsights />} />
         <Route path="*" element={<Navigate to="/\" replace />} />
       </Routes>
     </Layout>
