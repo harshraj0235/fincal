@@ -318,7 +318,7 @@ export const DailyHoroscopeDetail: React.FC = () => {
               <div className="flex flex-wrap gap-2">
                 {sign === 'aries' && (
                   <>
-                    <Link to="/astro-finance-insights/daily-horoscope/leo" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+                    <Link to="/astro-finance-insights/daily-horoscope/leo\" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
                       <span className="mr-1">♌</span> {language === 'en' ? 'Leo' : 'सिंह'}
                     </Link>
                     <Link to="/astro-finance-insights/daily-horoscope/sagittarius" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
@@ -346,7 +346,7 @@ export const DailyHoroscopeDetail: React.FC = () => {
               <div className="flex flex-wrap gap-2">
                 {sign === 'aries' && (
                   <>
-                    <Link to="/astro-finance-insights/daily-horoscope/cancer" className="px-3 py-1 bg-neutral-100 text-neutral-800 rounded-full text-sm flex items-center">
+                    <Link to="/astro-finance-insights/daily-horoscope/cancer\" className="px-3 py-1 bg-neutral-100 text-neutral-800 rounded-full text-sm flex items-center">
                       <span className="mr-1">♋</span> {language === 'en' ? 'Cancer' : 'कर्क'}
                     </Link>
                     <Link to="/astro-finance-insights/daily-horoscope/capricorn" className="px-3 py-1 bg-neutral-100 text-neutral-800 rounded-full text-sm flex items-center">
