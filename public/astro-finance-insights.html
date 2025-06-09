@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astro-Finance Insights Hub - FinCalc India</title>
-  <meta name="description" content="Explore the Astro-Finance Insights Hub where traditional astrological wisdom meets modern financial planning. Discover how cosmic influences might align with your financial decisions.">
+  <meta name="description" content="Explore the intersection of astrology and finance with our unique tools that provide cultural perspectives on financial decisions">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -15,64 +15,15 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      color: #0f172a;
+      background-color: #f8fafc;
     }
     .tooltip {
-      position: absolute;
-      visibility: hidden;
-      background-color: #1e293b;
-      color: white;
-      text-align: center;
-      padding: 8px 12px;
-      border-radius: 6px;
-      z-index: 1;
-      opacity: 0;
-      transition: opacity 0.3s;
-      width: max-content;
-      max-width: 250px;
-      top: -56px;
-      left: 50%;
-      transform: translateX(-50%);
+      @apply absolute invisible group-hover:visible bg-neutral-800 text-white text-sm rounded-lg py-2 px-3 -mt-14 z-10 transition-opacity opacity-0 group-hover:opacity-100 w-max max-w-xs;
     }
     .tooltip::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #1e293b transparent transparent transparent;
-    }
-    .group:hover .tooltip {
-      visibility: visible;
-      opacity: 1;
-    }
-    .tool-card {
-      transition: all 0.3s ease;
-    }
-    .tool-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    .loader {
-      border: 3px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 3px solid #7e22ce;
-      width: 24px;
-      height: 24px;
-      animation: spin 1s linear infinite;
-      margin: 0 auto;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .fade-in {
-      animation: fadeIn 0.5s ease-in;
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      content: '';
+      @apply absolute -bottom-1 left-1/2 -translate-x-1/2 border-4 border-t-neutral-800 border-x-transparent border-b-transparent;
     }
   </style>
   <script>
@@ -92,18 +43,6 @@
               800: '#1e40af',
               900: '#1e3a8a',
             },
-            purple: {
-              50: '#faf5ff',
-              100: '#f3e8ff',
-              200: '#e9d5ff',
-              300: '#d8b4fe',
-              400: '#c084fc',
-              500: '#a855f7',
-              600: '#9333ea',
-              700: '#7e22ce',
-              800: '#6b21a8',
-              900: '#581c87',
-            },
             accent: {
               50: '#fffbeb',
               100: '#fef3c7',
@@ -116,1588 +55,821 @@
               800: '#92400e',
               900: '#78350f',
             },
+            success: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            error: {
+              50: '#fef2f2',
+              100: '#fee2e2',
+              200: '#fecaca',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c',
+              800: '#991b1b',
+              900: '#7f1d1d',
+            },
           }
         }
       }
     }
   </script>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 font-inter text-gray-800">
-  <!-- Header -->
-  <header class="bg-white shadow-md py-4 px-6 sticky top-0 z-10">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-3xl font-bold text-purple-700 cursor-pointer hover:text-purple-900 transition-colors duration-300" id="home-link">
-        Astro-Finance Insights Hub
-      </h1>
-      <a href="/" class="px-4 py-2 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-700 transition-colors duration-300 flex items-center">
-        <span class="mr-2">←</span> Back to FinCalc India
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow-md py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="/" class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-600">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <span class="text-xl font-bold text-neutral-900">FinCalc India</span>
       </a>
+      
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-neutral-700 hover:text-primary-600 transition-colors">Home</a>
+        <a href="/blog" class="text-neutral-700 hover:text-primary-600 transition-colors">Blog</a>
+        <a href="/about-us" class="text-neutral-700 hover:text-primary-600 transition-colors">About</a>
+        <a href="/contact-us" class="text-neutral-700 hover:text-primary-600 transition-colors">Contact</a>
+      </nav>
+      
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-neutral-700 p-2 rounded-full hover:bg-neutral-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 py-2">
+      <div class="container mx-auto px-4 space-y-2">
+        <a href="/" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Home</a>
+        <a href="/blog" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Blog</a>
+        <a href="/about-us" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">About</a>
+        <a href="/contact-us" class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">Contact</a>
+      </div>
     </div>
   </header>
 
-  <main class="container mx-auto py-8 px-6">
-    <div id="tool-display" class="hidden">
-      <!-- Tool content will be displayed here -->
-    </div>
-    
-    <div id="home-content">
-      <p class="text-center text-lg text-gray-600 mb-8">
-        Explore a variety of astrological and numerological tools designed to provide insights into your life, with a special focus on financial implications.
-      </p>
-      
-      <!-- Daily & Periodic Horoscopes -->
-      <section class="mb-12">
-        <h2 class="text-4xl font-extrabold text-purple-800 mb-8 text-center border-b-2 border-purple-300 pb-4">
-          Daily & Periodic Horoscopes
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="daily-horoscope">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                ☀️
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Daily Horoscope by Zodiac Sign
-              </h3>
-              <p class="text-gray-600 text-center">
-                Get your daily astrological prediction for love, career, and finance.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="weekly-horoscope">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                🗓️
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Weekly Horoscope Generator
-              </h3>
-              <p class="text-gray-600 text-center">
-                Get your weekly astrological forecast for the week ahead.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="monthly-yearly-horoscope">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                📅
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Monthly/Yearly Horoscope Reports
-              </h3>
-              <p class="text-gray-600 text-center">
-                Detailed monthly and yearly predictions for your zodiac sign.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="daily-finance-horoscope">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                💸
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Daily/Monthly Finance Horoscope
-              </h3>
-              <p class="text-gray-600 text-center">
-                Get daily or monthly financial predictions for your zodiac sign.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="career-horoscope">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                💼
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Career Horoscope / Job Forecast
-              </h3>
-              <p class="text-gray-600 text-center">
-                Astrological predictions for your career and job prospects.
-              </p>
-            </div>
-          </div>
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Astro-Finance Insights Hub</h1>
+        <p class="text-xl max-w-3xl mx-auto mb-8">Where traditional astrological wisdom meets modern financial planning</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#daily-horoscope" class="bg-white text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+            Daily Horoscope
+          </a>
+          <a href="#zodiac-compatibility" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+            Zodiac Compatibility
+          </a>
         </div>
-      </section>
-      
-      <!-- Vedic Astrology Essentials -->
-      <section class="mb-12">
-        <h2 class="text-4xl font-extrabold text-purple-800 mb-8 text-center border-b-2 border-purple-300 pb-4">
-          Vedic Astrology Essentials
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="kundli-generator">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                🌌
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Kundli/Birth Chart Generator
-              </h3>
-              <p class="text-gray-600 text-center">
-                Generate your detailed Vedic birth chart (Janam Kundli).
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="moon-sign-calculator">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                🌙
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Moon Sign (Rashi) Calculator
-              </h3>
-              <p class="text-gray-600 text-center">
-                Find your Vedic Moon Sign (Janma Rashi) based on birth details.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="nakshatra-calculator">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                ✨
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Nakshatra (Birth Star) Calculator
-              </h3>
-              <p class="text-gray-600 text-center">
-                Determine your Janma Nakshatra (Birth Star) from your birth details.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="ascendant-calculator">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                ⬆️
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Ascendant (Lagna) Calculator
-              </h3>
-              <p class="text-gray-600 text-center">
-                Calculate your rising sign (Lagna) based on your birth time and place.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Numerology & Personal Insights -->
-      <section class="mb-12">
-        <h2 class="text-4xl font-extrabold text-purple-800 mb-8 text-center border-b-2 border-purple-300 pb-4">
-          Numerology & Personal Insights
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="life-path-numerology">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                🔢
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Life Path Numerology Calculator
-              </h3>
-              <p class="text-gray-600 text-center">
-                Calculate your Life Path Number and its meaning.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="lucky-number-calculator">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                🍀
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Lucky Number Calculator
-              </h3>
-              <p class="text-gray-600 text-center">
-                Find your personal lucky number based on your birth date or name.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="gemstone-finder">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                💎
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Gemstone (Ratna) Finder
-              </h3>
-              <p class="text-gray-600 text-center">
-                Get personalized gemstone recommendations based on your birth details.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Relationship & Compatibility -->
-      <section class="mb-12">
-        <h2 class="text-4xl font-extrabold text-purple-800 mb-8 text-center border-b-2 border-purple-300 pb-4">
-          Relationship & Compatibility
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="zodiac-compatibility">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                ❤️
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Zodiac Compatibility Calculator
-              </h3>
-              <p class="text-gray-600 text-center">
-                Check love and relationship compatibility between two zodiac signs.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="kundli-matching">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                💍
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Kundli (Gun) Matching Tool
-              </h3>
-              <p class="text-gray-600 text-center">
-                Perform traditional Guna Milan (36-point) matching for marriage.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="manglik-checker">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                🔥
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Manglik (Mangal Dosha) Checker
-              </h3>
-              <p class="text-gray-600 text-center">
-                Check for Mangal Dosha in your birth chart.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Timings & Auspiciousness -->
-      <section class="mb-12">
-        <h2 class="text-4xl font-extrabold text-purple-800 mb-8 text-center border-b-2 border-purple-300 pb-4">
-          Timings & Auspiciousness
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="panchang-muhurat">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                🗓️
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Panchang / Muhurat Calendar
-              </h3>
-              <p class="text-gray-600 text-center">
-                Get daily Hindu calendar details and auspicious timings.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="auspicious-time-finder">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                ⏰
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Auspicious Time Finder
-              </h3>
-              <p class="text-gray-600 text-center">
-                Find the best time for specific activities like business launch or property purchase.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="stock-market-astrology">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                📈
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Stock Market Astrology Timing
-              </h3>
-              <p class="text-gray-600 text-center">
-                Explore astrological insights for stock market trends and timing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Other Tools -->
-      <section class="mb-12">
-        <h2 class="text-4xl font-extrabold text-purple-800 mb-8 text-center border-b-2 border-purple-300 pb-4">
-          Other Tools
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="baby-name-finder">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                👶
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Baby Name Finder
-              </h3>
-              <p class="text-gray-600 text-center">
-                Suggests auspicious baby names based on Nakshatra and birth details.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-lg tool-card cursor-pointer overflow-hidden" data-tool="zodiac-sign-finder">
-            <div class="p-6">
-              <div class="text-5xl mb-4 text-center text-purple-500">
-                ⭐
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-900 mb-3 text-center">
-                Zodiac Sign Finder
-              </h3>
-              <p class="text-gray-600 text-center">
-                Quickly find your Western (Sun) Zodiac Sign.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Disclaimer -->
-      <div class="mt-16 p-6 bg-yellow-50 border border-yellow-200 rounded-lg text-yellow-800 text-sm text-center shadow-inner">
-        <p class="font-semibold mb-2">Important Disclaimer:</p>
-        <p>
-          The astrological and numerological calculations and interpretations provided in this application are highly simplified for demonstration purposes only. They are not intended to be accurate or professional astrological readings. Please consult a qualified astrologer or financial advisor for personalized guidance.
-        </p>
-        <p class="mt-2">
-          यह एप्लिकेशन में प्रदान की गई ज्योतिषीय और अंक ज्योतिषीय गणनाएँ और व्याख्याएँ केवल प्रदर्शन उद्देश्यों के लिए अत्यधिक सरलीकृत हैं। इन्हें सटीक या पेशेवर ज्योतिषीय रीडिंग के रूप में नहीं माना जाना चाहिए। व्यक्तिगत मार्गदर्शन के लिए कृपया एक योग्य ज्योतिषी या वित्तीय सलाहकार से परामर्श करें।
-        </p>
       </div>
-    </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Left Sidebar -->
+          <div class="md:col-span-1">
+            <div class="bg-white rounded-xl shadow-md p-6 sticky top-24">
+              <h2 class="text-xl font-semibold text-neutral-900 mb-4">Quick Navigation</h2>
+              <nav class="space-y-2">
+                <a href="#daily-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Daily Horoscope
+                </a>
+                <a href="#weekly-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Weekly Horoscope
+                </a>
+                <a href="#monthly-yearly-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Monthly/Yearly Horoscope
+                </a>
+                <a href="#kundli-generator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Kundli Generator
+                </a>
+                <a href="#moon-sign-calculator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Moon Sign Calculator
+                </a>
+                <a href="#nakshatra-calculator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Nakshatra Calculator
+                </a>
+                <a href="#ascendant-calculator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Ascendant Calculator
+                </a>
+                <a href="#life-path-numerology" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Life Path Numerology
+                </a>
+                <a href="#lucky-number-calculator" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Lucky Number Calculator
+                </a>
+                <a href="#gemstone-finder" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Gemstone Finder
+                </a>
+                <a href="#zodiac-compatibility" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Zodiac Compatibility
+                </a>
+                <a href="#kundli-matching" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Kundli Matching
+                </a>
+                <a href="#manglik-checker" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Manglik Checker
+                </a>
+                <a href="#panchang-muhurat" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Panchang/Muhurat
+                </a>
+                <a href="#auspicious-time-finder" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Auspicious Time Finder
+                </a>
+                <a href="#stock-market-astrology" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Stock Market Astrology
+                </a>
+                <a href="#baby-name-finder" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Baby Name Finder
+                </a>
+                <a href="#daily-finance-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Daily Finance Horoscope
+                </a>
+                <a href="#career-horoscope" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Career Horoscope
+                </a>
+                <a href="#zodiac-sign-finder" class="block py-2 px-3 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
+                  Zodiac Sign Finder
+                </a>
+              </nav>
+            </div>
+          </div>
+          
+          <!-- Main Content -->
+          <div class="md:col-span-2 space-y-12">
+            <section id="astro-finance" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Astro-Finance Insights Hub</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Where Astrology Meets Finance</h3>
+                  <p class="text-neutral-600 mb-4">
+                    Explore our unique Astro-Finance Insights Hub, where traditional astrological wisdom meets modern financial planning. Discover how cosmic influences might align with your financial decisions and life path.
+                  </p>
+                  <p class="text-neutral-600 mb-4">
+                    While we emphasize that financial decisions should always be based on sound financial principles, many in India also consider astrological insights as a complementary perspective.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Daily Finance Horoscopes</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Zodiac Compatibility</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Lucky Numbers</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Auspicious Timing</span>
+                  </div>
+                  <a 
+                    href="#daily-finance-horoscope" 
+                    class="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
+                  >
+                    Explore Astro-Finance Insights
+                    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </section>
+            
+            <section id="daily-horoscope" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Daily Horoscope</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Your Daily Astrological Guidance</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Get daily astrological predictions for your zodiac sign. Our horoscopes provide insights for love, career, and finance to help you navigate your day with cosmic awareness.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                      <div class="flex items-center mb-2">
+                        <span class="text-2xl mr-2">♈</span>
+                        <h4 class="font-medium text-purple-800">Aries</h4>
+                      </div>
+                      <p class="text-sm text-purple-700">Financial opportunities may arise today. Be cautious but open to new ventures.</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                      <div class="flex items-center mb-2">
+                        <span class="text-2xl mr-2">♉</span>
+                        <h4 class="font-medium text-purple-800">Taurus</h4>
+                      </div>
+                      <p class="text-sm text-purple-700">A good day for financial planning. Review your budget and savings goals.</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                      <div class="flex items-center mb-2">
+                        <span class="text-2xl mr-2">♊</span>
+                        <h4 class="font-medium text-purple-800">Gemini</h4>
+                      </div>
+                      <p class="text-sm text-purple-700">Communication about money matters is favored today. Discuss financial plans with trusted advisors.</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                      <div class="flex items-center mb-2">
+                        <span class="text-2xl mr-2">♋</span>
+                        <h4 class="font-medium text-purple-800">Cancer</h4>
+                      </div>
+                      <p class="text-sm text-purple-700">Focus on security today. Consider long-term investments that provide stability.</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                      <div class="flex items-center mb-2">
+                        <span class="text-2xl mr-2">♌</span>
+                        <h4 class="font-medium text-purple-800">Leo</h4>
+                      </div>
+                      <p class="text-sm text-purple-700">Creative financial solutions may present themselves. Think outside the box.</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                      <div class="flex items-center mb-2">
+                        <span class="text-2xl mr-2">♍</span>
+                        <h4 class="font-medium text-purple-800">Virgo</h4>
+                      </div>
+                      <p class="text-sm text-purple-700">Attention to detail will serve you well in financial matters today. Double-check calculations.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="text-center">
+                    <button class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+                      View All Zodiac Signs
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="daily-finance-horoscope" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Daily Finance Horoscope</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Financial Astrological Insights</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Our specialized finance horoscopes focus specifically on financial matters, investments, and money management based on your zodiac sign's position.
+                  </p>
+                  
+                  <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                      <h4 class="text-lg font-semibold text-purple-900">Today's Financial Outlook</h4>
+                      <span class="text-sm text-purple-600">June 15, 2025</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                      <div class="flex items-start">
+                        <span class="text-2xl mr-3 mt-1">♌</span>
+                        <div>
+                          <h5 class="font-medium text-purple-800">Leo Financial Horoscope</h5>
+                          <p class="text-purple-700 mt-1">
+                            With Mercury in your financial sector, today is excellent for reviewing investments and making strategic decisions. Your intuition about money matters is particularly strong. Consider researching new investment opportunities, especially in creative or entertainment sectors that align with your natural talents.
+                          </p>
+                          <div class="mt-2 flex space-x-4 text-sm">
+                            <span class="text-purple-600">Lucky Number: 8</span>
+                            <span class="text-purple-600">Favorable Time: 2-4 PM</span>
+                            <span class="text-purple-600">Favorable Color: Gold</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="mt-4 pt-4 border-t border-purple-200">
+                      <div class="flex justify-between items-center">
+                        <div>
+                          <span class="text-sm text-purple-600">Select Your Zodiac Sign:</span>
+                          <div class="flex flex-wrap gap-2 mt-2">
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♈</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♉</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♊</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♋</button>
+                            <button class="p-1 rounded-full bg-purple-300 text-purple-900 hover:bg-purple-300 transition-colors">♌</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♍</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♎</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♏</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♐</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♑</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♒</button>
+                            <button class="p-1 rounded-full bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors">♓</button>
+                          </div>
+                        </div>
+                        <button class="px-3 py-1 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-colors">
+                          Get Full Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="border border-purple-200 rounded-lg p-4">
+                      <h4 class="font-medium text-neutral-900 mb-2">Financial Strengths Today</h4>
+                      <ul class="list-disc list-inside space-y-1 text-sm text-neutral-600">
+                        <li>Strategic thinking and planning</li>
+                        <li>Confidence in negotiations</li>
+                        <li>Leadership in financial decisions</li>
+                        <li>Creative approaches to money challenges</li>
+                      </ul>
+                    </div>
+                    <div class="border border-purple-200 rounded-lg p-4">
+                      <h4 class="font-medium text-neutral-900 mb-2">Financial Cautions Today</h4>
+                      <ul class="list-disc list-inside space-y-1 text-sm text-neutral-600">
+                        <li>Avoid impulsive luxury purchases</li>
+                        <li>Don't let pride influence decisions</li>
+                        <li>Be mindful of overspending on entertainment</li>
+                        <li>Consider long-term implications</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="moon-sign-calculator" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Moon Sign Calculator</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Find Your Vedic Moon Sign (Janma Rashi)</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Your Moon Sign in Vedic astrology represents your emotional nature and can provide insights into your financial tendencies and relationship with money.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="space-y-4">
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Birth Date</label>
+                        <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Birth Time</label>
+                        <input type="time" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Birth Place</label>
+                        <input type="text" placeholder="City, Country" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                      </div>
+                      <button class="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+                        Calculate Moon Sign
+                      </button>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                      <h4 class="font-semibold text-purple-900 mb-4">Your Moon Sign: Taurus (Vrishabha)</h4>
+                      <div class="space-y-4">
+                        <div>
+                          <h5 class="font-medium text-purple-800 mb-1">Financial Traits</h5>
+                          <p class="text-sm text-purple-700">
+                            With Moon in Taurus, you have a natural affinity for financial security and material comfort. You're likely to be methodical and patient with your investments, preferring stable, long-term growth over risky ventures.
+                          </p>
+                        </div>
+                        <div>
+                          <h5 class="font-medium text-purple-800 mb-1">Financial Strengths</h5>
+                          <ul class="list-disc list-inside text-sm text-purple-700 space-y-1">
+                            <li>Strong saving habits</li>
+                            <li>Practical approach to money</li>
+                            <li>Patient investor</li>
+                            <li>Good at building wealth gradually</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 class="font-medium text-purple-800 mb-1">Financial Challenges</h5>
+                          <ul class="list-disc list-inside text-sm text-purple-700 space-y-1">
+                            <li>Can be overly cautious with investments</li>
+                            <li>May indulge in luxury purchases</li>
+                            <li>Sometimes resistant to financial change</li>
+                            <li>May need to diversify more</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <div class="ml-3">
+                        <h3 class="text-sm font-medium text-yellow-800">Important Note</h3>
+                        <div class="mt-2 text-sm text-yellow-700">
+                          <p>Moon Sign calculations require precise birth time and location for accuracy. The financial traits associated with Moon Signs are based on traditional Vedic astrology interpretations and should be considered as general guidance only.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="lucky-number-calculator" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Lucky Number Calculator</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Find Your Personal Lucky Numbers</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Discover your lucky numbers based on numerology principles. These numbers can be used for important financial decisions, choosing auspicious dates, or simply for bringing positive energy into your financial activities.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="space-y-4">
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
+                        <input type="text" placeholder="Enter your full name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Birth Date</label>
+                        <input type="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                      </div>
+                      <button class="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+                        Calculate Lucky Numbers
+                      </button>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                      <h4 class="font-semibold text-purple-900 mb-4">Your Lucky Numbers</h4>
+                      <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div class="bg-white p-4 rounded-lg text-center">
+                          <span class="block text-3xl font-bold text-purple-600 mb-1">8</span>
+                          <span class="text-sm text-purple-700">Primary Lucky Number</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg text-center">
+                          <span class="block text-3xl font-bold text-purple-600 mb-1">3</span>
+                          <span class="text-sm text-purple-700">Secondary Lucky Number</span>
+                        </div>
+                      </div>
+                      
+                      <div class="space-y-3">
+                        <div>
+                          <h5 class="font-medium text-purple-800 mb-1">Financial Significance</h5>
+                          <p class="text-sm text-purple-700">
+                            Number 8 is associated with wealth, success, and material abundance. It's an excellent number for financial endeavors, investments, and business ventures. Number 3 brings creativity, growth, and expansion to your financial activities.
+                          </p>
+                        </div>
+                        <div>
+                          <h5 class="font-medium text-purple-800 mb-1">Lucky Days for Financial Activities</h5>
+                          <p class="text-sm text-purple-700">
+                            8th, 17th, and 26th of any month; Wednesdays and Thursdays
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <div class="ml-3">
+                        <h3 class="text-sm font-medium text-yellow-800">Important Note</h3>
+                        <div class="mt-2 text-sm text-yellow-700">
+                          <p>Numerology is considered a cultural and traditional practice. While many find value in lucky numbers for timing financial decisions, always base your financial choices on sound financial principles and thorough research.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="zodiac-compatibility" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Zodiac Compatibility</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Financial Compatibility Between Zodiac Signs</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Discover how different zodiac signs approach money matters and how compatible your financial style is with others. This can be particularly useful for business partnerships, joint investments, or managing household finances with a partner.
+                  </p>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="space-y-4">
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Your Zodiac Sign</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                          <option value="">Select your sign</option>
+                          <option value="aries">Aries (Mar 21 - Apr 19)</option>
+                          <option value="taurus">Taurus (Apr 20 - May 20)</option>
+                          <option value="gemini">Gemini (May 21 - Jun 20)</option>
+                          <option value="cancer">Cancer (Jun 21 - Jul 22)</option>
+                          <option value="leo" selected>Leo (Jul 23 - Aug 22)</option>
+                          <option value="virgo">Virgo (Aug 23 - Sep 22)</option>
+                          <option value="libra">Libra (Sep 23 - Oct 22)</option>
+                          <option value="scorpio">Scorpio (Oct 23 - Nov 21)</option>
+                          <option value="sagittarius">Sagittarius (Nov 22 - Dec 21)</option>
+                          <option value="capricorn">Capricorn (Dec 22 - Jan 19)</option>
+                          <option value="aquarius">Aquarius (Jan 20 - Feb 18)</option>
+                          <option value="pisces">Pisces (Feb 19 - Mar 20)</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Partner's Zodiac Sign</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                          <option value="">Select partner's sign</option>
+                          <option value="aries">Aries (Mar 21 - Apr 19)</option>
+                          <option value="taurus">Taurus (Apr 20 - May 20)</option>
+                          <option value="gemini">Gemini (May 21 - Jun 20)</option>
+                          <option value="cancer">Cancer (Jun 21 - Jul 22)</option>
+                          <option value="leo">Leo (Jul 23 - Aug 22)</option>
+                          <option value="virgo">Virgo (Aug 23 - Sep 22)</option>
+                          <option value="libra" selected>Libra (Sep 23 - Oct 22)</option>
+                          <option value="scorpio">Scorpio (Oct 23 - Nov 21)</option>
+                          <option value="sagittarius">Sagittarius (Nov 22 - Dec 21)</option>
+                          <option value="capricorn">Capricorn (Dec 22 - Jan 19)</option>
+                          <option value="aquarius">Aquarius (Jan 20 - Feb 18)</option>
+                          <option value="pisces">Pisces (Feb 19 - Mar 20)</option>
+                        </select>
+                      </div>
+                      <button class="w-full py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+                        Check Compatibility
+                      </button>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                      <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center">
+                          <span class="text-2xl mr-2">♌</span>
+                          <h4 class="font-medium text-purple-800">Leo</h4>
+                        </div>
+                        <div class="text-center px-3 py-1">
+                          <span class="text-lg font-bold text-purple-900">75%</span>
+                          <span class="block text-xs text-purple-700">Compatible</span>
+                        </div>
+                        <div class="flex items-center">
+                          <h4 class="font-medium text-purple-800">Libra</h4>
+                          <span class="text-2xl ml-2">♎</span>
+                        </div>
+                      </div>
+                      
+                      <div class="space-y-3">
+                        <div>
+                          <h5 class="font-medium text-purple-800 mb-1">Financial Compatibility</h5>
+                          <p class="text-sm text-purple-700">
+                            Leo and Libra have a good financial compatibility. Leo's confidence and Libra's balanced approach create a dynamic where both can contribute to financial decisions in complementary ways.
+                          </p>
+                        </div>
+                        <div>
+                          <h5 class="font-medium text-purple-800 mb-1">Strengths</h5>
+                          <ul class="list-disc list-inside text-sm text-purple-700 space-y-1">
+                            <li>Leo brings enthusiasm to investments</li>
+                            <li>Libra contributes thoughtful analysis</li>
+                            <li>Both appreciate quality and value</li>
+                            <li>Balanced approach to spending and saving</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h5 class="font-medium text-purple-800 mb-1">Challenges</h5>
+                          <ul class="list-disc list-inside text-sm text-purple-700 space-y-1">
+                            <li>Leo may be more impulsive with spending</li>
+                            <li>Libra might take too long to make financial decisions</li>
+                            <li>Different priorities for luxury spending</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <div class="ml-3">
+                        <h3 class="text-sm font-medium text-yellow-800">Important Note</h3>
+                        <div class="mt-2 text-sm text-yellow-700">
+                          <p>Zodiac compatibility is meant to be a fun and interesting perspective on relationships. Financial decisions should be based on open communication, shared goals, and practical considerations rather than astrological compatibility alone.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="stock-market-astrology" class="scroll-mt-24">
+              <h2 class="text-3xl font-bold text-neutral-900 mb-6">Stock Market Astrology</h2>
+              <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 mb-4">Astrological Market Insights</h3>
+                  <p class="text-neutral-600 mb-6">
+                    Explore how planetary movements might correlate with market trends. While not a substitute for fundamental and technical analysis, some traders consider astrological factors as supplementary information.
+                  </p>
+                  
+                  <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                    <h4 class="font-semibold text-purple-900 mb-4">Current Planetary Influences on Markets</h4>
+                    <div class="space-y-4">
+                      <div class="flex items-start">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-200 flex items-center justify-center mr-3">
+                          <span class="text-purple-800">♃</span>
+                        </div>
+                        <div>
+                          <h5 class="font-medium text-purple-800">Jupiter in Taurus</h5>
+                          <p class="text-sm text-purple-700 mt-1">
+                            Jupiter's transit through Taurus suggests potential growth in banking, real estate, and agriculture sectors. This placement often correlates with steady market growth and increased interest in tangible assets.
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div class="flex items-start">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-200 flex items-center justify-center mr-3">
+                          <span class="text-purple-800">♄</span>
+                        </div>
+                        <div>
+                          <h5 class="font-medium text-purple-800">Saturn in Aquarius</h5>
+                          <p class="text-sm text-purple-700 mt-1">
+                            Saturn in Aquarius may indicate challenges and restructuring in technology and innovation sectors. This transit often brings regulatory changes and increased scrutiny to financial markets.
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div class="flex items-start">
+                        <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-200 flex items-center justify-center mr-3">
+                          <span class="text-purple-800">☿</span>
+                        </div>
+                        <div>
+                          <h5 class="font-medium text-purple-800">Mercury Retrograde (Upcoming)</h5>
+                          <p class="text-sm text-purple-700 mt-1">
+                            The upcoming Mercury retrograde period (July 5-28, 2025) may bring communication issues, delays in financial transactions, and market volatility. Consider reviewing investments and avoiding major new commitments during this period.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="border border-purple-200 rounded-lg p-4">
+                      <h4 class="font-medium text-neutral-900 mb-2">Potentially Favorable Sectors</h4>
+                      <ul class="list-disc list-inside space-y-1 text-sm text-neutral-600">
+                        <li>Banking and Financial Services</li>
+                        <li>Real Estate and Construction</li>
+                        <li>Agriculture and Food Processing</li>
+                        <li>Luxury Goods and Entertainment</li>
+                        <li>Healthcare and Pharmaceuticals</li>
+                      </ul>
+                    </div>
+                    <div class="border border-purple-200 rounded-lg p-4">
+                      <h4 class="font-medium text-neutral-900 mb-2">Potentially Challenging Sectors</h4>
+                      <ul class="list-disc list-inside space-y-1 text-sm text-neutral-600">
+                        <li>Technology and Innovation</li>
+                        <li>Transportation and Logistics</li>
+                        <li>Energy and Utilities</li>
+                        <li>Communication Services</li>
+                        <li>Speculative Investments</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md">
+                    <div class="flex">
+                      <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <div class="ml-3">
+                        <h3 class="text-sm font-medium text-yellow-800">Important Disclaimer</h3>
+                        <div class="mt-2 text-sm text-yellow-700">
+                          <p>Stock market astrology should never be the sole basis for investment decisions. Always conduct thorough fundamental and technical analysis, and consult with qualified financial advisors before making investment choices. Past correlations between astrological events and market movements do not guarantee future results.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <!-- More sections would go here -->
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    // Tool data
-    const toolsData = [
-      // Daily & Periodic Horoscopes
-      {
-        id: 'daily-horoscope',
-        name: 'Daily Horoscope by Zodiac Sign',
-        icon: '☀️',
-        category: 'Daily & Periodic Horoscopes',
-        description: 'Get your daily astrological prediction for love, career, and finance.',
-        longDescription: 'Select your zodiac sign to receive a personalized daily horoscope, offering insights into various aspects of your day, including love, career, and financial prospects. Updated daily for fresh guidance.',
-        inputs: [
-          { name: 'zodiacSign', label: 'Select Your Zodiac Sign', type: 'select', options: [
-            { value: 'Aries', label: 'Aries (मेष)' }, { value: 'Taurus', label: 'Taurus (वृषभ)' }, { value: 'Gemini', label: 'Gemini (मिथुन)' },
-            { value: 'Cancer', label: 'Cancer (कर्क)' }, { value: 'Leo', label: 'Leo (सिंह)' }, { value: 'Virgo', label: 'Virgo (कन्या)' },
-            { value: 'Libra', label: 'Libra (तुला)' }, { value: 'Scorpio', label: 'Scorpio (वृश्चिक)' }, { value: 'Sagittarius', label: 'Sagittarius (धनु)' },
-            { value: 'Capricorn', label: 'Capricorn (मकर)' }, { value: 'Aquarius', label: 'Aquarius (कुंभ)' }, { value: 'Pisces', label: 'Pisces (मीन)' }
-          ]},
-        ],
-        calculate: function(input) {
-          const sign = input.zodiacSign;
-          const today = new Date().toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-          const horoscopes = {
-            Aries: {
-              love: "Today, your passion ignites, bringing warmth to relationships. Express your feelings openly.",
-              career: "Aries, new opportunities may arise at work. Be bold in presenting your ideas.",
-              finance: "Financial matters look stable. A small unexpected gain is possible. Consider reviewing your budget.",
-            },
-            Taurus: {
-              love: "Nurture your relationships with patience and understanding. A quiet evening with loved ones brings joy.",
-              career: "Focus on practical tasks. Your diligence will be noticed. Avoid impulsive decisions.",
-              finance: "Good day for financial planning. Look for ways to consolidate expenses or save more.",
-            },
-            Gemini: {
-              love: "Communication is key today. Share your thoughts and listen actively to your partner.",
-              career: "Your ideas are flowing. Network and collaborate with colleagues for better outcomes.",
-              finance: "Be cautious with spending. A new income stream might be on the horizon, but verify details.",
-            },
-            Cancer: {
-              love: "Emotional connections deepen. Spend quality time at home, fostering comfort and security.",
-              career: "Your intuition guides you well. Trust your instincts in professional dealings.",
-              finance: "A good day to review investments or discuss family finances. Be mindful of emotional spending.",
-            },
-            Leo: {
-              love: "Shine brightly in your relationships. Your generosity and warmth will be appreciated.",
-              career: "Leadership opportunities may present themselves. Take the initiative and inspire others.",
-              finance: "Financial confidence is high. Consider smart investments, but avoid unnecessary risks.",
-            },
-            Virgo: {
-              love: "Small gestures of care will strengthen your bonds. Pay attention to details in your relationships.",
-              career: "Your analytical skills are sharp. Focus on organizing and improving processes at work.",
-              finance: "It's a good time for detailed financial analysis. Look for areas to optimize savings.",
-            },
-            Libra: {
-              love: "Seek balance and harmony in your relationships. Diplomacy will help resolve any minor disagreements.",
-              career: "Collaborate and negotiate effectively. Partnerships at work can lead to success.",
-              finance: "Consider seeking financial advice. A balanced approach to spending and saving is recommended.",
-            },
-            Scorpio: {
-              love: "Deep emotional connections are highlighted. Trust your instincts about your partner's feelings.",
-              career: "Your determination is a powerful asset. Tackle challenging projects with confidence.",
-              finance: "Investigate financial opportunities thoroughly. Avoid impulsive decisions driven by emotion.",
-            },
-            Sagittarius: {
-              love: "Adventure calls! Explore new activities with your partner or seek new connections.",
-              career: "Expand your horizons professionally. Learning new skills or exploring new fields is favored.",
-              finance: "Financial optimism is strong. Good time for long-term financial goals, but avoid overspending.",
-            },
-            Capricorn: {
-              love: "Show your commitment and build a strong foundation in your relationships. Practical support is appreciated.",
-              career: "Your hard work and discipline pay off. Focus on long-term career goals and strategic planning.",
-              finance: "A stable day for finances. Review your financial plans and look for secure investment options.",
-            },
-            Aquarius: {
-              love: "Embrace your unique self in relationships. Connect with like-minded individuals or explore unconventional dates.",
-              career: "Innovative ideas will stand out. Collaborate on projects that benefit the wider community.",
-              finance: "Unexpected financial insights may come your way. Consider diversifying your investments.",
-            },
-            Pisces: {
-              love: "Connect on a deeper, spiritual level. Show empathy and compassion to those you care about.",
-              career: "Your creativity is a strength. Use your imagination to solve problems and inspire others.",
-              finance: "Be mindful of financial boundaries. A good day for charitable giving or reviewing your financial dreams.",
-            },
-          };
-
-          const signHoroscope = horoscopes[sign] || {};
-
-          return {
-            mainResult: `Predictions for ${sign} on ${today}:`,
-            additionalInfo: `
-              <p><strong>Love & Relationships:</strong> ${signHoroscope.love}</p>
-              <p><strong>Career & Work:</strong> ${signHoroscope.career}</p>
-            `,
-            financeFocus: signHoroscope.finance,
-            hindiExample: `
-              <p><strong>उदाहरण:</strong> मान लीजिए कि आप एक ${sign} राशि के व्यक्ति हैं। आज का आपका राशिफल कहता है कि ${signHoroscope.finance}</p>
-              <p><strong>परिणाम:</strong> आप आज अपनी निवेश योजनाओं की समीक्षा कर सकते हैं और एक छोटी सी बचत कर सकते हैं, जिससे आपको भविष्य के लिए वित्तीय सुरक्षा मिलेगी।</p>
-            `,
-          };
-        },
-      },
-      // Weekly Horoscope Generator
-      {
-        id: 'weekly-horoscope',
-        name: 'Weekly Horoscope Generator',
-        icon: '🗓️',
-        category: 'Daily & Periodic Horoscopes',
-        description: 'Get your weekly astrological forecast for the week ahead.',
-        longDescription: 'Receive a comprehensive weekly horoscope tailored to your zodiac sign, covering various aspects of your life including career, relationships, and financial outlook for the coming week.',
-        inputs: [
-          { name: 'zodiacSign', label: 'Select Your Zodiac Sign', type: 'select', options: [
-            { value: 'Aries', label: 'Aries (मेष)' }, { value: 'Taurus', label: 'Taurus (वृषभ)' }, { value: 'Gemini', label: 'Gemini (मिथुन)' },
-            { value: 'Cancer', label: 'Cancer (कर्क)' }, { value: 'Leo', label: 'Leo (सिंह)' }, { value: 'Virgo', label: 'Virgo (कन्या)' },
-            { value: 'Libra', label: 'Libra (तुला)' }, { value: 'Scorpio', label: 'Scorpio (वृश्चिक)' }, { value: 'Sagittarius', label: 'Sagittarius (धनु)' },
-            { value: 'Capricorn', label: 'Capricorn (मकर)' }, { value: 'Aquarius', label: 'Aquarius (कुंभ)' }, { value: 'Pisces', label: 'Pisces (मीन)' }
-          ]},
-        ],
-        calculate: function(input) {
-          const sign = input.zodiacSign;
-          const weekStart = new Date();
-          const weekEnd = new Date();
-          weekEnd.setDate(weekEnd.getDate() + 6);
-          
-          const weekRange = `${weekStart.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })} - ${weekEnd.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })}`;
-          
-          const weeklyHoroscopes = {
-            Aries: {
-              overview: "This week brings a surge of energy and motivation. You'll feel driven to start new projects and take initiative in various aspects of your life.",
-              career: "Professional opportunities may arise midweek. Your leadership skills will be recognized, possibly leading to new responsibilities.",
-              finance: "Financial prospects look promising, especially for investments made earlier. Consider setting aside funds for a future project. Avoid impulsive purchases on Wednesday and Thursday.",
-              relationships: "Relationships may experience some tension due to your increased focus on personal goals. Make time for loved ones to maintain balance.",
-              health: "Your energy levels are high, but don't overexert yourself. Balance physical activity with adequate rest."
-            },
-            Taurus: {
-              overview: "A week of stability and gradual progress. Your practical approach helps you navigate challenges with ease.",
-              career: "Work responsibilities may increase, but your methodical approach ensures everything gets done efficiently. A senior colleague might offer valuable advice.",
-              finance: "Financial stability continues. A good week to review your budget and make adjustments for long-term security. Property-related investments look favorable.",
-              relationships: "Harmony in relationships prevails. Your reliability strengthens bonds with loved ones. Single Taureans might meet someone through mutual friends.",
-              health: "Focus on maintaining your routine. Pay attention to throat and neck areas."
-            },
-            Gemini: {
-              overview: "A dynamic week filled with communication and social interactions. Your versatility helps you adapt to changing circumstances.",
-              career: "Your communication skills shine at work. Collaborative projects thrive under your input. Consider proposing new ideas to superiors.",
-              finance: "Variable financial energy this week. Unexpected expenses might arise, but so might additional income opportunities. Keep track of all transactions.",
-              relationships: "Social connections flourish. Existing relationships benefit from open communication. New acquaintances may become important connections.",
-              health: "Mental stimulation is important. Balance intellectual activities with physical movement to maintain overall well-being."
-            },
-            Cancer: {
-              overview: "An emotionally significant week. Your intuition guides you through important decisions and helps you connect with others on a deeper level.",
-              career: "Work environment may feel emotionally charged. Your empathetic nature helps mediate tensions. A project close to your heart progresses well.",
-              finance: "Financial matters require careful attention. Trust your instincts about investments, especially those related to home or family. Avoid emotional spending.",
-              relationships: "Deep emotional connections are highlighted. Family relationships strengthen through shared experiences. Partners appreciate your nurturing nature.",
-              health: "Emotional well-being affects your physical health. Practice self-care and set healthy boundaries."
-            },
-            Leo: {
-              overview: "A week to shine and showcase your talents. Your confidence attracts positive attention and opens doors to new opportunities.",
-              career: "Professional recognition is likely. Your creative ideas and leadership abilities impress those in authority. A promotion or special assignment may be offered.",
-              finance: "Financial outlook is bright. Investments in creative ventures or personal projects yield good returns. Consider setting aside funds for future leisure activities.",
-              relationships: "Your charisma draws people to you. Existing relationships thrive with added warmth and generosity. New romantic possibilities emerge for single Leos.",
-              health: "Vitality is high, but avoid overexertion. Pay attention to heart and spine health."
-            },
-            Virgo: {
-              overview: "A week focused on details and improvement. Your analytical skills help you refine processes and solve complex problems.",
-              career: "Your attention to detail is particularly valuable this week. Colleagues seek your input on important projects. Document your achievements for future reference.",
-              finance: "Practical financial decisions serve you well. A methodical approach to budgeting helps identify areas for savings. Consider consulting a financial advisor for optimization.",
-              relationships: "Relationships benefit from your helpful nature. Small acts of service strengthen bonds. Communication about expectations improves understanding.",
-              health: "Digestive health requires attention. Incorporate more fiber and stay hydrated."
-            },
-            Libra: {
-              overview: "Balance and harmony are themes this week. Your diplomatic skills help resolve conflicts and create peaceful environments.",
-              career: "Workplace relationships improve through your mediation. Collaborative projects thrive under your guidance. Artistic or design-related work receives positive feedback.",
-              finance: "Financial balance is achievable. Consider both short-term needs and long-term goals when making decisions. Partnerships may offer financial benefits.",
-              relationships: "Relationships flourish with your fair and balanced approach. Couples find renewed harmony. Single Libras attract potential partners through genuine interactions.",
-              health: "Kidney and lower back areas need care. Balance activity with rest."
-            },
-            Scorpio: {
-              overview: "A week of transformation and deep insights. Your investigative nature uncovers hidden opportunities and solutions to persistent problems.",
-              career: "Professional situations requiring research or investigation benefit from your skills. Trust your instincts about workplace dynamics. A powerful ally may emerge.",
-              finance: "Financial matters involve shared resources or investments. Insurance, taxes, or inheritance issues may require attention. Your strategic approach leads to financial gains.",
-              relationships: "Intimate relationships deepen through honest communication. Trust issues may surface for healing. New connections form on profound levels.",
-              health: "Reproductive and elimination systems need attention. Detoxification practices are beneficial."
-            },
-            Sagittarius: {
-              overview: "An expansive week filled with learning and new experiences. Your optimistic outlook attracts favorable circumstances and interesting people.",
-              career: "Professional growth through education or travel is highlighted. International connections benefit your career. Publishing or teaching opportunities may arise.",
-              finance: "Financial expansion is possible. Foreign investments or education-related expenses feature prominently. A generous attitude brings unexpected returns.",
-              relationships: "Relationships benefit from shared adventures and philosophical discussions. Cultural differences enrich your connections. Long-distance relationships receive positive energy.",
-              health: "Hip and thigh areas need care. Outdoor activities boost your well-being."
-            },
-            Capricorn: {
-              overview: "A week focused on achievement and responsibility. Your disciplined approach helps you reach important milestones and gain recognition.",
-              career: "Professional advancement through hard work and strategic planning. Authority figures notice your contributions. Long-term career goals progress steadily.",
-              finance: "Financial discipline pays off. Investments in real estate or long-term securities show promise. Business expenses may be higher than usual but necessary for growth.",
-              relationships: "Relationships require practical demonstrations of commitment. Family responsibilities may increase. Established relationships deepen through shared goals.",
-              health: "Knee and skeletal system need attention. Calcium-rich foods and weight-bearing exercises are beneficial."
-            },
-            Aquarius: {
-              overview: "An innovative week filled with unique ideas and social connections. Your visionary thinking helps you see possibilities others miss.",
-              career: "Workplace innovation is highlighted. Technological solutions to ongoing problems gain support. Networking expands your professional opportunities.",
-              finance: "Unconventional financial approaches may yield surprising results. Group investments or crowdfunding ventures show promise. Technology-related expenses may increase.",
-              relationships: "Friendships and community connections strengthen. Relationships thrive when given space and independence. Intellectual compatibility drives romantic attractions.",
-              health: "Circulation and ankle areas need care. Stay hydrated and practice stress-reduction techniques."
-            },
-            Pisces: {
-              overview: "A spiritually significant week. Your intuition and compassion guide you through complex situations and help you connect with others on a soul level.",
-              career: "Creative and helping professions receive positive energy. Your empathetic approach resolves workplace tensions. Artistic projects progress beautifully.",
-              finance: "Financial intuition serves you well. Charitable giving brings unexpected returns. Avoid confusion in financial documentation. Creative ventures may bring additional income.",
-              relationships: "Spiritual and emotional connections deepen. Partners appreciate your compassionate nature. Boundaries in relationships need conscious attention.",
-              health: "Feet and immune system need care. Adequate sleep and meditation improve overall well-being."
-            }
-          };
-
-          const signHoroscope = weeklyHoroscopes[sign] || {};
-
-          return {
-            mainResult: `Weekly Horoscope for ${sign}: ${weekRange}`,
-            additionalInfo: `
-              <p><strong>Overview:</strong> ${signHoroscope.overview}</p>
-              <p><strong>Career:</strong> ${signHoroscope.career}</p>
-              <p><strong>Relationships:</strong> ${signHoroscope.relationships}</p>
-              <p><strong>Health:</strong> ${signHoroscope.health}</p>
-            `,
-            financeFocus: signHoroscope.finance,
-            extraTips: "Remember that astrology provides guidance, but you always have free will to make your own choices. Use this horoscope as a tool for reflection rather than strict prediction."
-          };
-        },
-      },
-      // Life Path Numerology
-      {
-        id: 'life-path-numerology',
-        name: 'Life Path Numerology Calculator',
-        icon: '🔢',
-        category: 'Numerology & Personal Insights',
-        description: 'Calculate your Life Path Number and its meaning.',
-        longDescription: 'Discover your Life Path Number based on your birth date and learn what it reveals about your personality, strengths, challenges, and life purpose according to numerology principles.',
-        inputs: [
-          { name: 'birthDay', label: 'Day of Birth', type: 'number', placeholder: 'DD', min: 1, max: 31 },
-          { name: 'birthMonth', label: 'Month of Birth', type: 'number', placeholder: 'MM', min: 1, max: 12 },
-          { name: 'birthYear', label: 'Year of Birth', type: 'number', placeholder: 'YYYY', min: 1900, max: 2025 },
-        ],
-        calculate: function(input) {
-          // Validate inputs
-          const day = parseInt(input.birthDay);
-          const month = parseInt(input.birthMonth);
-          const year = parseInt(input.birthYear);
-          
-          if (isNaN(day) || isNaN(month) || isNaN(year) || 
-              day < 1 || day > 31 || month < 1 || month > 12 || year < 1900) {
-            return {
-              mainResult: "Please enter a valid birth date",
-              additionalInfo: "<p>The date you entered appears to be invalid. Please check and try again.</p>"
-            };
-          }
-          
-          // Calculate Life Path Number
-          function reduceToSingleDigit(num) {
-            if (num === 11 || num === 22 || num === 33) {
-              return num; // Master numbers are not reduced
-            }
-            
-            while (num > 9) {
-              num = num.toString().split('').reduce((sum, digit) => sum + parseInt(digit), 0);
-            }
-            return num;
-          }
-          
-          const dayNumber = reduceToSingleDigit(day);
-          const monthNumber = reduceToSingleDigit(month);
-          const yearNumber = reduceToSingleDigit(year);
-          
-          let lifePathNumber = reduceToSingleDigit(dayNumber + monthNumber + yearNumber);
-          
-          // Life Path Number meanings
-          const meanings = {
-            1: {
-              personality: "Independent, individualistic, creative, and original. Natural leaders who are determined and self-reliant.",
-              strengths: "Leadership, innovation, self-confidence, ambition, and pioneering spirit.",
-              challenges: "May struggle with stubbornness, dominance, and being overly self-focused.",
-              career: "Entrepreneurship, leadership positions, self-employment, creative fields, and innovation-driven roles.",
-              finance: "Often good at making money but may need to work on saving it. Entrepreneurial ventures can be particularly profitable."
-            },
-            2: {
-              personality: "Cooperative, diplomatic, sensitive, and intuitive. Natural mediators who value harmony and relationships.",
-              strengths: "Diplomacy, cooperation, patience, attention to detail, and emotional intelligence.",
-              challenges: "May struggle with oversensitivity, indecisiveness, and dependency on others.",
-              career: "Counseling, HR, teaching, customer service, team-based roles, and supportive positions.",
-              finance: "May prioritize security over risk. Partnerships and collaborative ventures often bring financial success."
-            },
-            3: {
-              personality: "Expressive, creative, social, and optimistic. Natural communicators who bring joy and inspiration to others.",
-              strengths: "Communication, creativity, self-expression, enthusiasm, and social skills.",
-              challenges: "May struggle with focus, discipline, and emotional superficiality.",
-              career: "Arts, entertainment, communication, writing, speaking, teaching, and creative fields.",
-              finance: "May experience financial ups and downs. Creative ventures and communication-based work can be lucrative."
-            },
-            4: {
-              personality: "Practical, reliable, organized, and hardworking. Natural builders who value stability and order.",
-              strengths: "Organization, reliability, practicality, attention to detail, and strong work ethic.",
-              challenges: "May struggle with rigidity, resistance to change, and overwork.",
-              career: "Management, administration, finance, engineering, construction, and systems-oriented roles.",
-              finance: "Typically good at managing money and building wealth steadily through disciplined saving and practical investments."
-            },
-            5: {
-              personality: "Adaptable, freedom-loving, adventurous, and versatile. Natural explorers who embrace change and variety.",
-              strengths: "Adaptability, resourcefulness, versatility, communication, and progressive thinking.",
-              challenges: "May struggle with restlessness, inconsistency, and overindulgence.",
-              career: "Sales, marketing, travel, entertainment, media, and roles involving variety and change.",
-              finance: "May experience variable income. Needs to balance spending on experiences with saving for the future."
-            },
-            6: {
-              personality: "Responsible, nurturing, compassionate, and harmonious. Natural caregivers who value family and community.",
-              strengths: "Nurturing, responsibility, creativity, problem-solving, and creating harmony.",
-              challenges: "May struggle with self-sacrifice, perfectionism, and interference.",
-              career: "Healthcare, counseling, teaching, community service, arts, and family-oriented businesses.",
-              finance: "Often financially responsible, especially when supporting others. May need to balance giving with self-care."
-            },
-            7: {
-              personality: "Analytical, introspective, perfectionist, and spiritual. Natural seekers who value knowledge and truth.",
-              strengths: "Analysis, research, technical skills, intuition, and spiritual awareness.",
-              challenges: "May struggle with isolation, overthinking, and skepticism.",
-              career: "Research, academia, science, technology, spiritual pursuits, and specialized fields.",
-              finance: "May prioritize purpose over profit. Research, analysis, and specialized knowledge can lead to financial success."
-            },
-            8: {
-              personality: "Ambitious, authoritative, goal-oriented, and practical. Natural executives who value achievement and material success.",
-              strengths: "Leadership, organization, practicality, financial acumen, and manifestation abilities.",
-              challenges: "May struggle with workaholic tendencies, materialism, and control issues.",
-              career: "Business, finance, real estate, law, management, and executive positions.",
-              finance: "Often skilled at creating wealth and managing large-scale finances. Material success is a key life theme."
-            },
-            9: {
-              personality: "Compassionate, idealistic, humanitarian, and creative. Natural humanitarians who value service and universal love.",
-              strengths: "Compassion, creativity, wisdom, generosity, and global perspective.",
-              challenges: "May struggle with detachment, martyrdom, and emotional intensity.",
-              career: "Humanitarian work, arts, healing professions, international relations, and service-oriented roles.",
-              finance: "May experience financial flow through giving and service. Learning to receive is as important as giving."
-            },
-            11: {
-              personality: "Intuitive, inspirational, idealistic, and visionary. Natural illuminators who bridge the material and spiritual worlds.",
-              strengths: "Intuition, inspiration, idealism, spiritual insight, and healing abilities.",
-              challenges: "May struggle with nervous tension, impracticality, and high expectations.",
-              career: "Spiritual teaching, counseling, healing arts, inspirational speaking, and visionary leadership.",
-              finance: "May experience financial fluctuations. Success often comes through following intuition rather than conventional paths."
-            },
-            22: {
-              personality: "Practical visionary, master builder, powerful, and ambitious. Natural architects who can manifest large-scale dreams.",
-              strengths: "Practical vision, organizational ability, leadership, manifestation power, and global perspective.",
-              challenges: "May struggle with enormous pressure, perfectionism, and difficulty delegating.",
-              career: "Architecture, engineering, large-scale business, politics, and transformative leadership roles.",
-              finance: "Potential for significant wealth through large-scale projects and practical implementation of visionary ideas."
-            },
-            33: {
-              personality: "Compassionate teacher, nurturing, selfless, and spiritually influential. Natural healers who elevate others.",
-              strengths: "Compassion, teaching ability, healing power, creativity, and spiritual wisdom.",
-              challenges: "May struggle with self-sacrifice, martyrdom, and taking on others' burdens.",
-              career: "Teaching, healing, counseling, spiritual leadership, and transformative arts.",
-              finance: "Material wealth often comes as a byproduct of service. Learning to receive abundance while giving is key."
-            }
-          };
-          
-          const meaning = meanings[lifePathNumber] || {
-            personality: "Information not available",
-            strengths: "Information not available",
-            challenges: "Information not available",
-            career: "Information not available",
-            finance: "Information not available"
-          };
-
-          return {
-            mainResult: `Your Life Path Number is ${lifePathNumber}`,
-            additionalInfo: `
-              <p><strong>Personality:</strong> ${meaning.personality}</p>
-              <p><strong>Strengths:</strong> ${meaning.strengths}</p>
-              <p><strong>Challenges:</strong> ${meaning.challenges}</p>
-              <p><strong>Career Paths:</strong> ${meaning.career}</p>
-            `,
-            financeFocus: meaning.finance,
-            hindiExample: `
-              <p>जीवन पथ संख्या ${lifePathNumber} वाले व्यक्ति अक्सर ${meaning.personality.split('.')[0]} होते हैं।</p>
-              <p>वित्तीय दृष्टिकोण: ${meaning.finance}</p>
-            `
-          };
-        },
-      },
-      // Lucky Number Calculator
-      {
-        id: 'lucky-number-calculator',
-        name: 'Lucky Number Calculator',
-        icon: '🍀',
-        category: 'Numerology & Personal Insights',
-        description: 'Find your personal lucky number based on your birth date or name.',
-        longDescription: 'Discover your personal lucky number derived from your birth date or name using numerological principles. Learn how this number might influence favorable outcomes in your life and financial decisions.',
-        inputs: [
-          { name: 'calculationType', label: 'Calculate Based On', type: 'select', options: [
-            { value: 'birthdate', label: 'Birth Date' },
-            { value: 'name', label: 'Full Name' }
-          ]},
-          { name: 'birthDay', label: 'Day of Birth', type: 'number', placeholder: 'DD', min: 1, max: 31, condition: 'calculationType === "birthdate"' },
-          { name: 'birthMonth', label: 'Month of Birth', type: 'number', placeholder: 'MM', min: 1, max: 12, condition: 'calculationType === "birthdate"' },
-          { name: 'birthYear', label: 'Year of Birth', type: 'number', placeholder: 'YYYY', min: 1900, max: 2025, condition: 'calculationType === "birthdate"' },
-          { name: 'fullName', label: 'Full Name', type: 'text', placeholder: 'Enter your full name', condition: 'calculationType === "name"' },
-        ],
-        calculate: function(input) {
-          // Function to reduce to single digit (except master numbers)
-          function reduceToSingleDigit(num) {
-            if (num === 11 || num === 22 || num === 33) {
-              return num; // Master numbers are not reduced
-            }
-            
-            while (num > 9) {
-              num = num.toString().split('').reduce((sum, digit) => sum + parseInt(digit), 0);
-            }
-            return num;
-          }
-          
-          let luckyNumber;
-          let calculationMethod;
-          
-          if (input.calculationType === 'birthdate') {
-            // Calculate from birthdate
-            const day = parseInt(input.birthDay);
-            const month = parseInt(input.birthMonth);
-            const year = parseInt(input.birthYear);
-            
-            if (isNaN(day) || isNaN(month) || isNaN(year) || 
-                day < 1 || day > 31 || month < 1 || month > 12 || year < 1900) {
-              return {
-                mainResult: "Please enter a valid birth date",
-                additionalInfo: "<p>The date you entered appears to be invalid. Please check and try again.</p>"
-              };
-            }
-            
-            // Sum all digits in the birth date
-            const dateSum = day + month + year;
-            luckyNumber = reduceToSingleDigit(dateSum);
-            calculationMethod = "birth date";
-            
-          } else {
-            // Calculate from name
-            if (!input.fullName || input.fullName.trim() === '') {
-              return {
-                mainResult: "Please enter your full name",
-                additionalInfo: "<p>Name field cannot be empty. Please enter your full name and try again.</p>"
-              };
-            }
-            
-            // Numerology alphabet values (A=1, B=2, ..., Z=26)
-            const alphabetValues = {
-              'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9,
-              'j': 1, 'k': 2, 'l': 3, 'm': 4, 'n': 5, 'o': 6, 'p': 7, 'q': 8, 'r': 9,
-              's': 1, 't': 2, 'u': 3, 'v': 4, 'w': 5, 'x': 6, 'y': 7, 'z': 8
-            };
-            
-            // Calculate name number
-            const name = input.fullName.toLowerCase().replace(/[^a-z]/g, '');
-            let nameSum = 0;
-            
-            for (let i = 0; i < name.length; i++) {
-              nameSum += alphabetValues[name[i]] || 0;
-            }
-            
-            luckyNumber = reduceToSingleDigit(nameSum);
-            calculationMethod = "name";
-          }
-          
-          // Lucky number meanings
-          const meanings = {
-            1: {
-              traits: "Independent, creative, original, and ambitious",
-              lucky: "Mondays, the colors red and yellow, the number 10",
-              unlucky: "The number 4, the color black",
-              finance: "Number 1 individuals often excel in leadership roles and entrepreneurial ventures. They're natural pioneers in business and can create wealth through innovation and taking initiative. Financial independence is important to them."
-            },
-            2: {
-              traits: "Cooperative, diplomatic, sensitive, and patient",
-              lucky: "Mondays, the color white, the numbers 11 and 20",
-              unlucky: "The number 7, the color red",
-              finance: "Number 2 individuals thrive in partnerships and collaborative financial ventures. They often find success through patient, long-term investments rather than high-risk opportunities. Their diplomatic nature can be valuable in negotiations."
-            },
-            3: {
-              traits: "Expressive, creative, social, and optimistic",
-              lucky: "Wednesdays, the colors yellow and pink, the number 21",
-              unlucky: "The number 5, the color black",
-              finance: "Number 3 individuals may find financial success through creative pursuits, communication, and social networking. Their natural optimism helps them bounce back from financial setbacks. They should be careful of impulsive spending."
-            },
-            4: {
-              traits: "Practical, reliable, organized, and hardworking",
-              lucky: "Saturdays, the colors green and blue, the number 13",
-              unlucky: "The number 8, the color red",
-              finance: "Number 4 individuals build wealth through disciplined saving, practical investments, and methodical planning. They excel at managing budgets and creating financial stability through consistent effort rather than get-rich-quick schemes."
-            },
-            5: {
-              traits: "Versatile, adventurous, freedom-loving, and adaptable",
-              lucky: "Wednesdays, the colors light blue and light green, the number 14",
-              unlucky: "The number 2, the color yellow",
-              finance: "Number 5 individuals may experience financial fluctuations due to their love of freedom and variety. They often succeed in sales, marketing, or travel-related businesses. Their adaptability helps them spot unique financial opportunities."
-            },
-            6: {
-              traits: "Responsible, nurturing, compassionate, and harmonious",
-              lucky: "Fridays, the colors white and light blue, the number 15",
-              unlucky: "The number 3, the color red",
-              finance: "Number 6 individuals often find financial security through service-oriented professions or businesses that help others. They're responsible with money and may support family members financially. Real estate investments often work well for them."
-            },
-            7: {
-              traits: "Analytical, introspective, perfectionist, and spiritual",
-              lucky: "Mondays, the colors white and yellow, the number 16",
-              unlucky: "The number 1, the color red",
-              finance: "Number 7 individuals may prioritize knowledge and spiritual growth over material wealth. When they do focus on finances, their analytical nature helps them make shrewd investments, particularly in technology or education-related fields."
-            },
-            8: {
-              traits: "Ambitious, authoritative, goal-oriented, and practical",
-              lucky: "Thursdays, the colors blue and black, the number 17",
-              unlucky: "The number 2, the color white",
-              finance: "Number 8 individuals have strong potential for material success and wealth accumulation. They excel in business, finance, and management roles. Their practical approach to money and natural authority often lead to financial abundance."
-            },
-            9: {
-              traits: "Compassionate, idealistic, humanitarian, and creative",
-              lucky: "Tuesdays, the colors red and green, the number 18",
-              unlucky: "The number 4, the color orange",
-              finance: "Number 9 individuals may find that money flows to them when they focus on serving humanity. Their idealistic nature can lead to success in non-profits, healing professions, or global businesses. They should balance giving with receiving."
-            },
-            11: {
-              traits: "Intuitive, inspirational, idealistic, and visionary",
-              lucky: "Sundays, the colors violet and silver, the number 29",
-              unlucky: "The number 6, the color green",
-              finance: "Number 11 individuals may experience financial success through intuitive insights rather than conventional planning. Their inspirational qualities can lead to success in teaching, counseling, or spiritual businesses."
-            },
-            22: {
-              traits: "Practical visionary, master builder, powerful, and ambitious",
-              lucky: "Thursdays, the colors blue and gold, the number 31",
-              unlucky: "The number 7, the color brown",
-              finance: "Number 22 individuals have exceptional potential for large-scale financial success. They can transform visionary ideas into practical realities, often creating substantial wealth through major business ventures or investments."
-            },
-            33: {
-              traits: "Compassionate teacher, nurturing, selfless, and spiritually influential",
-              lucky: "Fridays, the colors pink and light blue, the number 42",
-              unlucky: "The number 5, the color black",
-              finance: "Number 33 individuals often find that financial abundance comes through teaching, healing, or nurturing others. Their focus is rarely on wealth accumulation, but their service-oriented approach often attracts prosperity."
-            }
-          };
-          
-          const meaning = meanings[luckyNumber] || {
-            traits: "Information not available",
-            lucky: "Information not available",
-            unlucky: "Information not available",
-            finance: "Information not available"
-          };
-
-          return {
-            mainResult: `Your lucky number based on your ${calculationMethod} is ${luckyNumber}`,
-            additionalInfo: `
-              <p><strong>Personality Traits:</strong> ${meaning.traits}</p>
-              <p><strong>Lucky Influences:</strong> ${meaning.lucky}</p>
-              <p><strong>Less Favorable:</strong> ${meaning.unlucky}</p>
-            `,
-            financeFocus: meaning.finance,
-            extraTips: `Try incorporating your lucky number ${luckyNumber} into important decisions, especially financial ones. For example, you might consider making important investments or starting new ventures on dates that reduce to ${luckyNumber}, or in months that align with your number.`
-          };
-        },
-      },
-      // Zodiac Compatibility
-      {
-        id: 'zodiac-compatibility',
-        name: 'Zodiac Compatibility Calculator',
-        icon: '❤️',
-        category: 'Relationship & Compatibility',
-        description: 'Check love and relationship compatibility between two zodiac signs.',
-        longDescription: 'Explore the astrological compatibility between two zodiac signs to understand relationship dynamics, strengths, challenges, and potential for harmony in love, friendship, and business relationships.',
-        inputs: [
-          { name: 'sign1', label: 'Your Zodiac Sign', type: 'select', options: [
-            { value: 'Aries', label: 'Aries (मेष)' }, { value: 'Taurus', label: 'Taurus (वृषभ)' }, { value: 'Gemini', label: 'Gemini (मिथुन)' },
-            { value: 'Cancer', label: 'Cancer (कर्क)' }, { value: 'Leo', label: 'Leo (सिंह)' }, { value: 'Virgo', label: 'Virgo (कन्या)' },
-            { value: 'Libra', label: 'Libra (तुला)' }, { value: 'Scorpio', label: 'Scorpio (वृश्चिक)' }, { value: 'Sagittarius', label: 'Sagittarius (धनु)' },
-            { value: 'Capricorn', label: 'Capricorn (मकर)' }, { value: 'Aquarius', label: 'Aquarius (कुंभ)' }, { value: 'Pisces', label: 'Pisces (मीन)' }
-          ]},
-          { name: 'sign2', label: 'Partner\'s Zodiac Sign', type: 'select', options: [
-            { value: 'Aries', label: 'Aries (मेष)' }, { value: 'Taurus', label: 'Taurus (वृषभ)' }, { value: 'Gemini', label: 'Gemini (मिथुन)' },
-            { value: 'Cancer', label: 'Cancer (कर्क)' }, { value: 'Leo', label: 'Leo (सिंह)' }, { value: 'Virgo', label: 'Virgo (कन्या)' },
-            { value: 'Libra', label: 'Libra (तुला)' }, { value: 'Scorpio', label: 'Scorpio (वृश्चिक)' }, { value: 'Sagittarius', label: 'Sagittarius (धनु)' },
-            { value: 'Capricorn', label: 'Capricorn (मकर)' }, { value: 'Aquarius', label: 'Aquarius (कुंभ)' }, { value: 'Pisces', label: 'Pisces (मीन)' }
-          ]},
-        ],
-        calculate: function(input) {
-          const sign1 = input.sign1;
-          const sign2 = input.sign2;
-          
-          // Element compatibility
-          const elements = {
-            'Aries': 'Fire', 'Leo': 'Fire', 'Sagittarius': 'Fire',
-            'Taurus': 'Earth', 'Virgo': 'Earth', 'Capricorn': 'Earth',
-            'Gemini': 'Air', 'Libra': 'Air', 'Aquarius': 'Air',
-            'Cancer': 'Water', 'Scorpio': 'Water', 'Pisces': 'Water'
-          };
-          
-          const element1 = elements[sign1];
-          const element2 = elements[sign2];
-          
-          let elementCompatibility = "";
-          let elementScore = 0;
-          
-          if (element1 === element2) {
-            elementCompatibility = `Both ${sign1} and ${sign2} are ${element1} signs, creating natural harmony and understanding.`;
-            elementScore = 5;
-          } else if (
-            (element1 === 'Fire' && element2 === 'Air') || 
-            (element1 === 'Air' && element2 === 'Fire') ||
-            (element1 === 'Earth' && element2 === 'Water') || 
-            (element1 === 'Water' && element2 === 'Earth')
-          ) {
-            elementCompatibility = `${element1} and ${element2} elements complement each other well, creating a balanced relationship.`;
-            elementScore = 4;
-          } else if (
-            (element1 === 'Fire' && element2 === 'Earth') || 
-            (element1 === 'Earth' && element2 === 'Fire') ||
-            (element1 === 'Air' && element2 === 'Water') || 
-            (element1 === 'Water' && element2 === 'Air')
-          ) {
-            elementCompatibility = `${element1} and ${element2} elements can challenge each other, requiring effort to find balance.`;
-            elementScore = 2;
-          } else {
-            elementCompatibility = `${element1} and ${element2} elements have a neutral influence on each other, neither strongly harmonious nor challenging.`;
-            elementScore = 3;
-          }
-          
-          // Modality compatibility
-          const modalities = {
-            'Aries': 'Cardinal', 'Cancer': 'Cardinal', 'Libra': 'Cardinal', 'Capricorn': 'Cardinal',
-            'Taurus': 'Fixed', 'Leo': 'Fixed', 'Scorpio': 'Fixed', 'Aquarius': 'Fixed',
-            'Gemini': 'Mutable', 'Virgo': 'Mutable', 'Sagittarius': 'Mutable', 'Pisces': 'Mutable'
-          };
-          
-          const modality1 = modalities[sign1];
-          const modality2 = modalities[sign2];
-          
-          let modalityCompatibility = "";
-          let modalityScore = 0;
-          
-          if (modality1 === modality2) {
-            modalityCompatibility = `Both being ${modality1} signs, you share similar approaches to life, which can create understanding but might also lead to power struggles.`;
-            modalityScore = 3;
-          } else if (
-            (modality1 === 'Cardinal' && modality2 === 'Fixed') || 
-            (modality1 === 'Fixed' && modality2 === 'Cardinal') ||
-            (modality1 === 'Mutable' && modality2 === 'Cardinal') || 
-            (modality1 === 'Cardinal' && modality2 === 'Mutable')
-          ) {
-            modalityCompatibility = `${modality1} and ${modality2} modalities can complement each other, with one initiating and the other stabilizing or adapting.`;
-            modalityScore = 4;
-          } else {
-            modalityCompatibility = `${modality1} and ${modality2} modalities offer a balanced dynamic, helping you navigate life's challenges together.`;
-            modalityScore = 5;
-          }
-          
-          // Specific sign compatibility
-          const compatibilityData = {
-            'Aries-Aries': { score: 70, description: "Two Aries create a passionate but potentially competitive relationship. Both are energetic, initiative-taking, and independent, which can lead to exciting dynamics but also power struggles." },
-            'Aries-Taurus': { score: 55, description: "Aries and Taurus can create a complementary relationship if they respect their differences. Aries brings excitement and initiative, while Taurus offers stability and practicality." },
-            'Aries-Gemini': { score: 85, description: "This is a highly compatible match with shared enthusiasm for new experiences. Aries provides the energy and initiative, while Gemini contributes intellectual stimulation and adaptability." },
-            'Aries-Cancer': { score: 60, description: "This combination requires understanding and compromise. Aries' directness may clash with Cancer's sensitivity, but Aries' protection and Cancer's nurturing can create balance." },
-            'Aries-Leo': { score: 90, description: "A dynamic and passionate match! Both signs are confident, energetic, and enjoy being in the spotlight. They understand each other's need for independence and admiration." },
-            'Aries-Virgo': { score: 45, description: "This relationship requires work. Aries' impulsiveness may clash with Virgo's methodical approach, but they can learn valuable lessons from each other about balance." },
-            'Aries-Libra': { score: 70, description: "Opposites attract in this pairing. Aries' independence complements Libra's partnership orientation, creating a balanced relationship if both respect their differences." },
-            'Aries-Scorpio': { score: 65, description: "A passionate but potentially volatile combination. Both signs are intense and determined, which can create deep connection but also power struggles." },
-            'Aries-Sagittarius': { score: 90, description: "Excellent compatibility based on shared enthusiasm for adventure and independence. Both signs are straightforward, energetic, and value freedom." },
-            'Aries-Capricorn': { score: 50, description: "This combination faces challenges due to different approaches to life. Aries is spontaneous while Capricorn is calculated, but they can balance each other if respectful." },
-            'Aries-Aquarius': { score: 80, description: "A stimulating and freedom-loving match. Both value independence and have forward-thinking mindsets, though Aries is more passionate while Aquarius is more detached." },
-            'Aries-Pisces': { score: 60, description: "An intriguing combination of fire and water. Aries' protection complements Pisces' sensitivity, but they must work to understand their very different emotional languages." },
-            
-            'Taurus-Taurus': { score: 90, description: "Two Taurus individuals create a stable, sensual, and loyal relationship. They share values of security, comfort, and appreciation for life's pleasures." },
-            'Taurus-Gemini': { score: 45, description: "This combination requires adaptation. Taurus' desire for stability may clash with Gemini's need for variety, but they can balance each other's extremes." },
-            'Taurus-Cancer': { score: 85, description: "A harmonious match based on shared values of security and comfort. Both are nurturing and home-oriented, creating a stable and loving relationship." },
-            'Taurus-Leo': { score: 70, description: "Both signs are loyal and pleasure-seeking, which creates common ground. However, Leo's need for attention may clash with Taurus' desire for tranquility." },
-            'Taurus-Virgo': { score: 95, description: "Excellent earth sign compatibility based on shared practicality and attention to detail. Both value stability, routine, and show love through practical actions." },
-            'Taurus-Libra': { score: 80, description: "Both ruled by Venus, these signs share an appreciation for beauty, harmony, and pleasure. Taurus brings stability while Libra contributes social grace." },
-            'Taurus-Scorpio': { score: 75, description: "Opposite signs with a magnetic attraction. Both are determined and sensual, creating a powerful bond, though power struggles may emerge." },
-            'Taurus-Sagittarius': { score: 40, description: "This combination faces challenges due to different values. Taurus seeks stability while Sagittarius craves freedom and adventure." },
-            'Taurus-Capricorn': { score: 95, description: "Highly compatible earth signs who share values of tradition, hard work, and material security. They create a stable and mutually supportive relationship." },
-            'Taurus-Aquarius': { score: 35, description: "This pairing requires significant compromise. Taurus' traditional values may clash with Aquarius' progressive and unconventional approach." },
-            'Taurus-Pisces': { score: 85, description: "A harmonious match combining earth and water elements. Taurus provides stability for Pisces' dreams, while Pisces adds emotional depth to Taurus' life." },
-            
-            // Add more sign combinations as needed
-          };
-          
-          // Ensure we get the right combination regardless of order
-          let compatibilityKey = `${sign1}-${sign2}`;
-          if (!compatibilityData[compatibilityKey]) {
-            compatibilityKey = `${sign2}-${sign1}`;
-          }
-          
-          const compatibility = compatibilityData[compatibilityKey] || { 
-            score: 65, 
-            description: "These signs have both strengths and challenges in their relationship. Understanding and communication will be key to harmony."
-          };
-          
-          // Financial compatibility
-          const financialCompatibility = {
-            'Aries-Taurus': "Aries' risk-taking approach may clash with Taurus' security-focused financial style. Compromise is needed for financial harmony.",
-            'Aries-Gemini': "Both may enjoy spending on experiences, but should establish clear financial goals to avoid impulsive decisions.",
-            'Aries-Cancer': "Cancer's saving tendencies can balance Aries' spending impulses, creating financial stability if they communicate openly.",
-            'Aries-Leo': "Both enjoy luxury and experiences, which can lead to overspending. Setting a budget together is essential.",
-            'Aries-Virgo': "Virgo's analytical approach to finances can help channel Aries' earning potential into smart investments and savings.",
-            'Aries-Libra': "Both appreciate quality and beauty, which can lead to overspending. Libra's balance can help moderate Aries' impulsiveness.",
-            'Aries-Scorpio': "A potentially powerful financial team. Aries' earning drive combined with Scorpio's strategic investment approach can build wealth.",
-            'Aries-Sagittarius': "Both may prioritize experiences over saving. They'll need to consciously plan for future financial security.",
-            'Aries-Capricorn': "Capricorn's disciplined approach to finances can help harness Aries' earning potential for long-term security.",
-            'Aries-Aquarius': "An innovative financial team. Aries' initiative combined with Aquarius' unconventional thinking can lead to unique opportunities.",
-            'Aries-Pisces': "Aries' practical approach can ground Pisces' financial dreams, while Pisces can help Aries see beyond immediate gains.",
-            
-            'Taurus-Taurus': "A financially stable match with shared values around security and quality. Together they build wealth steadily and enjoy life's comforts.",
-            'Taurus-Gemini': "Taurus' saving habits may feel restrictive to Gemini, while Gemini's variable spending can worry Taurus. Communication is key.",
-            'Taurus-Cancer': "Excellent financial compatibility based on shared security values. Both prioritize saving and creating comfortable home environments.",
-            'Taurus-Leo': "Both appreciate quality and luxury, which can lead to financial strain. Taurus' practicality can balance Leo's generous spending.",
-            'Taurus-Virgo': "Outstanding financial compatibility. Both are practical, detail-oriented, and security-focused, creating excellent money management.",
-            'Taurus-Libra': "Both appreciate beauty and comfort, which can lead to overspending. Taurus brings financial discipline to balance Libra's indulgences.",
-            'Taurus-Scorpio': "Both value financial security but may have different approaches. Their combined determination can create substantial wealth.",
-            'Taurus-Sagittarius': "Challenging financial compatibility. Taurus' saving conflicts with Sagittarius' spending on experiences and adventures.",
-            'Taurus-Capricorn': "Excellent financial match based on shared long-term perspective. Together they create security through disciplined planning.",
-            'Taurus-Aquarius': "Taurus' traditional approach to finances may conflict with Aquarius' unconventional ideas. Compromise is essential.",
-            'Taurus-Pisces': "Taurus provides financial structure while Pisces brings creative money-making ideas. A balanced financial partnership.",
-            
-            // Add more financial compatibility descriptions as needed
-          };
-          
-          // Ensure we get the right combination regardless of order
-          let financialKey = `${sign1}-${sign2}`;
-          if (!financialCompatibility[financialKey]) {
-            financialKey = `${sign2}-${sign1}`;
-          }
-          
-          const financialAdvice = financialCompatibility[financialKey] || 
-            "Understanding each other's financial values and communication about money matters will be essential for financial harmony in this relationship.";
-          
-          // Calculate overall compatibility percentage
-          const overallScore = Math.round((elementScore * 20) + (modalityScore * 10) + compatibility.score);
-          
-          return {
-            mainResult: `${sign1} and ${sign2} Compatibility: ${overallScore}%`,
-            additionalInfo: `
-              <p><strong>Overall Dynamics:</strong> ${compatibility.description}</p>
-              <p><strong>Element Compatibility:</strong> ${elementCompatibility}</p>
-              <p><strong>Modality Interaction:</strong> ${modalityCompatibility}</p>
-            `,
-            financeFocus: financialAdvice,
-            extraTips: "Remember that astrology provides general tendencies, but individual relationships are influenced by many factors including personal growth, communication skills, and shared values. Even challenging astrological matches can thrive with mutual respect and understanding."
-          };
-        },
-      },
-      // Zodiac Sign Finder
-      {
-        id: 'zodiac-sign-finder',
-        name: 'Zodiac Sign Finder',
-        icon: '⭐',
-        category: 'Other Tools',
-        description: 'Quickly find your Western (Sun) Zodiac Sign.',
-        longDescription: 'Discover your Western (Sun) zodiac sign based on your birth date. Learn about your sign\'s characteristics, strengths, challenges, and financial tendencies according to astrology.',
-        inputs: [
-          { name: 'birthDay', label: 'Day of Birth', type: 'number', placeholder: 'DD', min: 1, max: 31 },
-          { name: 'birthMonth', label: 'Month of Birth', type: 'number', placeholder: 'MM', min: 1, max: 12 },
-        ],
-        calculate: function(input) {
-          // Validate inputs
-          const day = parseInt(input.birthDay);
-          const month = parseInt(input.birthMonth);
-          
-          if (isNaN(day) || isNaN(month) || 
-              day < 1 || day > 31 || month < 1 || month > 12) {
-            return {
-              mainResult: "Please enter a valid birth date",
-              additionalInfo: "<p>The date you entered appears to be invalid. Please check and try again.</p>"
-            };
-          }
-          
-          // Determine zodiac sign
-          let sign = "";
-          let element = "";
-          let ruling = "";
-          
-          if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-            sign = "Aries";
-            element = "Fire";
-            ruling = "Mars";
-          } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-            sign = "Taurus";
-            element = "Earth";
-            ruling = "Venus";
-          } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
-            sign = "Gemini";
-            element = "Air";
-            ruling = "Mercury";
-          } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
-            sign = "Cancer";
-            element = "Water";
-            ruling = "Moon";
-          } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-            sign = "Leo";
-            element = "Fire";
-            ruling = "Sun";
-          } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-            sign = "Virgo";
-            element = "Earth";
-            ruling = "Mercury";
-          } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
-            sign = "Libra";
-            element = "Air";
-            ruling = "Venus";
-          } else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) {
-            sign = "Scorpio";
-            element = "Water";
-            ruling = "Pluto/Mars";
-          } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-            sign = "Sagittarius";
-            element = "Fire";
-            ruling = "Jupiter";
-          } else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
-            sign = "Capricorn";
-            element = "Earth";
-            ruling = "Saturn";
-          } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-            sign = "Aquarius";
-            element = "Air";
-            ruling = "Uranus/Saturn";
-          } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-            sign = "Pisces";
-            element = "Water";
-            ruling = "Neptune/Jupiter";
-          }
-          
-          // Zodiac sign characteristics
-          const characteristics = {
-            'Aries': {
-              traits: "Energetic, courageous, confident, competitive, and impulsive",
-              strengths: "Leadership, courage, determination, enthusiasm, and confidence",
-              challenges: "Impatience, aggressiveness, short temper, and impulsiveness",
-              finance: "Aries tends to be impulsive with money and may take financial risks. They're good at earning but should work on saving and long-term planning. Their competitive nature can drive financial success, especially in entrepreneurial ventures."
-            },
-            'Taurus': {
-              traits: "Reliable, patient, practical, devoted, and sensual",
-              strengths: "Determination, reliability, patience, practicality, and sensuality",
-              challenges: "Stubbornness, possessiveness, materialism, and resistance to change",
-              finance: "Taurus excels at financial stability and security. They're natural savers who appreciate quality investments and tangible assets like real estate. Their patience allows for steady wealth building over time."
-            },
-            'Gemini': {
-              traits: "Adaptable, outgoing, intelligent, curious, and dual-natured",
-              strengths: "Communication, adaptability, intelligence, curiosity, and versatility",
-              challenges: "Inconsistency, indecisiveness, nervousness, and superficiality",
-              finance: "Gemini's financial approach can be variable. They're quick to learn about investment opportunities but may lack follow-through. Their communication skills can lead to success in sales or trading, but they should guard against impulsive financial decisions."
-            },
-            'Cancer': {
-              traits: "Emotional, intuitive, protective, nurturing, and moody",
-              strengths: "Emotional intelligence, intuition, tenacity, loyalty, and nurturing",
-              challenges: "Moodiness, oversensitivity, clinginess, and emotional manipulation",
-              finance: "Cancer is security-focused with money, often saving for family needs and emergencies. They have good financial intuition and tend to be conservative investors. Real estate often appeals to their desire for security."
-            },
-            'Leo': {
-              traits: "Confident, dramatic, generous, loyal, and proud",
-              strengths: "Confidence, leadership, generosity, creativity, and warmth",
-              challenges: "Arrogance, stubbornness, self-centeredness, and inflexibility",
-              finance: "Leo enjoys luxury and may spend generously, sometimes to impress others. They can be excellent at earning money, especially in leadership roles. Their confidence helps in financial negotiations, but they should guard against excessive spending."
-            },
-            'Virgo': {
-              traits: "Analytical, practical, diligent, health-conscious, and critical",
-              strengths: "Analytical thinking, attention to detail, practicality, reliability, and problem-solving",
-              challenges: "Criticism, perfectionism, worry, and overthinking",
-              finance: "Virgo excels at detailed financial planning and budgeting. They're typically frugal and make careful investment decisions based on thorough research. Their analytical skills help them avoid financial pitfalls."
-            },
-            'Libra': {
-              traits: "Diplomatic, fair-minded, social, cooperative, and idealistic",
-              strengths: "Diplomacy, fairness, sociability, cooperation, and charm",
-              challenges: "Indecisiveness, avoidance of confrontation, self-pity, and carrying grudges",
-              finance: "Libra seeks balance in finances, often spending on beauty and comfort while maintaining savings. They may excel at partnership investments and negotiations. Their desire for harmony can sometimes lead to financial compromises."
-            },
-            'Scorpio': {
-              traits: "Passionate, resourceful, brave, stubborn, and secretive",
-              strengths: "Determination, passion, resourcefulness, emotional intelligence, and loyalty",
-              challenges: "Jealousy, secretiveness, manipulation, and vengefulness",
-              finance: "Scorpio has strong financial instincts and can be strategic with money. They're often drawn to investments involving research or mystery, like stocks or cryptocurrency. Their determination helps them recover from financial setbacks."
-            },
-            'Sagittarius': {
-              traits: "Optimistic, freedom-loving, philosophical, adventurous, and honest",
-              strengths: "Optimism, honesty, enthusiasm, adaptability, and generosity",
-              challenges: "Restlessness, impatience, bluntness, and overconfidence",
-              finance: "Sagittarius tends to be optimistic about finances and may take risks. They often earn through travel, education, or international ventures. Their expansive nature can lead to financial growth, but they should guard against overconfidence."
-            },
-            'Capricorn': {
-              traits: "Responsible, disciplined, self-controlled, practical, and ambitious",
-              strengths: "Discipline, responsibility, self-control, good management, and patience",
-              challenges: "Pessimism, rigidity, expecting the worst, and unforgiving nature",
-              finance: "Capricorn excels at long-term financial planning and discipline. They're natural at building wealth through consistent effort and wise investments. Their practical approach helps them create lasting financial security."
-            },
-            'Aquarius': {
-              traits: "Progressive, original, independent, humanitarian, and intellectual",
-              strengths: "Originality, independence, humanitarianism, intellectual thinking, and inventiveness",
-              challenges: "Emotional detachment, stubbornness, uncompromising attitudes, and aloof behavior",
-              finance: "Aquarius often has unconventional financial approaches and may be drawn to innovative investments or technologies. They balance material needs with humanitarian values and may support social causes financially."
-            },
-            'Pisces': {
-              traits: "Compassionate, artistic, intuitive, gentle, and wise",
-              strengths: "Compassion, artistic talent, intuition, gentleness, and wisdom",
-              challenges: "Escapism, idealism, victim mentality, and emotional confusion",
-              finance: "Pisces may have an intuitive approach to finances rather than analytical. They can be generous to a fault and should guard against financial manipulation. Creative financial opportunities often work well for them."
-            }
-          };
-          
-          const signInfo = characteristics[sign] || {
-            traits: "Information not available",
-            strengths: "Information not available",
-            challenges: "Information not available",
-            finance: "Information not available"
-          };
-          
-          // Get Hindi name for the sign
-          const hindiNames = {
-            'Aries': 'मेष (Mesh)',
-            'Taurus': 'वृषभ (Vrishabh)',
-            'Gemini': 'मिथुन (Mithun)',
-            'Cancer': 'कर्क (Kark)',
-            'Leo': 'सिंह (Singh)',
-            'Virgo': 'कन्या (Kanya)',
-            'Libra': 'तुला (Tula)',
-            'Scorpio': 'वृश्चिक (Vrishchik)',
-            'Sagittarius': 'धनु (Dhanu)',
-            'Capricorn': 'मकर (Makar)',
-            'Aquarius': 'कुंभ (Kumbh)',
-            'Pisces': 'मीन (Meen)'
-          };
-          
-          const hindiName = hindiNames[sign] || sign;
-
-          return {
-            mainResult: `Your Zodiac Sign is ${sign} (${hindiName})`,
-            additionalInfo: `
-              <p><strong>Element:</strong> ${element}</p>
-              <p><strong>Ruling Planet:</strong> ${ruling}</p>
-              <p><strong>Personality Traits:</strong> ${signInfo.traits}</p>
-              <p><strong>Strengths:</strong> ${signInfo.strengths}</p>
-              <p><strong>Challenges:</strong> ${signInfo.challenges}</p>
-            `,
-            financeFocus: signInfo.finance,
-            hindiExample: `
-              <p>आपकी राशि ${hindiName} है। ${element} तत्व और ${ruling} ग्रह के प्रभाव में, आप अक्सर ${signInfo.traits.split(',')[0]} और ${signInfo.traits.split(',')[1]} होते हैं।</p>
-            `
-          };
-        },
-      },
-      // Add more tools as needed
-    ];
-
-    // DOM elements
-    const homeContent = document.getElementById('home-content');
-    const toolDisplay = document.getElementById('tool-display');
-    const homeLink = document.getElementById('home-link');
-    
-    // Tool cards
-    const toolCards = document.querySelectorAll('.tool-card');
-    
-    // Handle tool card clicks
-    toolCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const toolId = card.getAttribute('data-tool');
-        window.location.hash = toolId;
-      });
-    });
-    
-    // Handle home link click
-    homeLink.addEventListener('click', () => {
-      window.location.hash = '';
-    });
-    
-    // Handle hash changes
-    function handleHashChange() {
-      const hash = window.location.hash.substring(1);
-      
-      if (hash) {
-        const tool = toolsData.find(t => t.id === hash);
-        if (tool) {
-          displayTool(tool);
-        } else {
-          // If tool not found, go back to home
-          window.location.hash = '';
-        }
-      } else {
-        // Show home content
-        homeContent.style.display = 'block';
-        toolDisplay.style.display = 'none';
-      }
-    }
-    
-    // Display tool
-    function displayTool(tool) {
-      homeContent.style.display = 'none';
-      toolDisplay.style.display = 'block';
-      
-      // Create tool content
-      toolDisplay.innerHTML = `
-        <div class="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-          <h2 class="text-4xl font-extrabold text-purple-800 mb-6 text-center flex items-center justify-center">
-            <span class="mr-3 text-5xl">${tool.icon}</span> ${tool.name}
-          </h2>
-          <p class="text-lg text-gray-700 mb-6 text-center">${tool.longDescription}</p>
-
-          <!-- Input Form -->
-          <form id="tool-form" class="space-y-6 mb-8">
-            ${tool.inputs.map(inputField => {
-              // Check if this input has a condition
-              const conditionAttr = inputField.condition ? `data-condition="${inputField.condition}"` : '';
-              
-              return `
-                <div class="input-field" ${conditionAttr}>
-                  <label for="${inputField.name}" class="block text-lg font-medium text-gray-700 mb-2">
-                    ${inputField.label}
-                  </label>
-                  ${inputField.type === 'select' ? `
-                    <select
-                      id="${inputField.name}"
-                      name="${inputField.name}"
-                      required
-                      class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-base"
-                    >
-                      <option value="">Select...</option>
-                      ${inputField.options.map(option => `
-                        <option value="${option.value}">${option.label}</option>
-                      `).join('')}
-                    </select>
-                  ` : inputField.type === 'number' ? `
-                    <input
-                      type="number"
-                      id="${inputField.name}"
-                      name="${inputField.name}"
-                      required
-                      class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-base"
-                      placeholder="${inputField.placeholder || ''}"
-                      min="${inputField.min || ''}"
-                      max="${inputField.max || ''}"
-                    />
-                  ` : `
-                    <input
-                      type="${inputField.type}"
-                      id="${inputField.name}"
-                      name="${inputField.name}"
-                      required
-                      class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-base"
-                      placeholder="${inputField.placeholder || ''}"
-                    />
-                  `}
-                </div>
-              `;
-            }).join('')}
-            <button
-              type="submit"
-              class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-purple-700 transition-colors duration-300 text-xl font-semibold transform hover:scale-105"
-            >
-              Get Insight
-            </button>
-          </form>
-
-          <!-- Result Display -->
-          <div id="result-display" class="hidden mt-8 pt-8 border-t-2 border-purple-200">
-            <h3 class="text-3xl font-bold text-purple-700 mb-6 text-center">Your Insight</h3>
-            <div class="bg-purple-50 p-6 rounded-lg shadow-inner space-y-4">
-              <div id="main-result" class="mb-6"></div>
-              <div id="additional-info" class="mb-6"></div>
-              <div id="finance-focus" class="bg-green-50 border-l-4 border-green-400 p-4 rounded-md shadow-sm hidden">
-                <h4 class="text-xl font-semibold text-green-800 mb-2 flex items-center">
-                  <span class="mr-2 text-2xl">💰</span> Finance Focus:
-                </h4>
-                <p id="finance-focus-content" class="text-green-700 leading-relaxed"></p>
-              </div>
-              <div id="hindi-example" class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-md shadow-sm hidden">
-                <h4 class="text-xl font-semibold text-blue-800 mb-2 flex items-center">
-                  <span class="mr-2 text-2xl">💡</span> उदाहरण (Udaharan - Example Scenario):
-                </h4>
-                <div id="hindi-example-content" class="text-blue-700 leading-relaxed"></div>
-              </div>
-              <div id="extra-tips" class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md shadow-sm hidden">
-                <h4 class="text-xl font-semibold text-yellow-800 mb-2 flex items-center">
-                  <span class="mr-2 text-2xl">✨</span> Extra Tips:
-                </h4>
-                <p id="extra-tips-content" class="text-yellow-700 leading-relaxed"></p>
-              </div>
-            </div>
-          </div>
+  <footer class="bg-neutral-800 text-neutral-100 py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="/" class="flex items-center space-x-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-400">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span class="text-xl font-bold text-white">FinCalc India</span>
+          </a>
+          <p class="text-neutral-300 mb-4">
+            Your trusted source for all financial calculations and guidance tailored for the Indian context.
+          </p>
         </div>
-      `;
-      
-      // Handle conditional fields
-      const conditionalFields = document.querySelectorAll('[data-condition]');
-      conditionalFields.forEach(field => {
-        const condition = field.getAttribute('data-condition');
-        updateFieldVisibility(field, condition);
-      });
-      
-      // Add event listeners to update conditional fields
-      document.querySelectorAll('select, input').forEach(input => {
-        input.addEventListener('change', () => {
-          conditionalFields.forEach(field => {
-            const condition = field.getAttribute('data-condition');
-            updateFieldVisibility(field, condition);
-          });
-        });
-      });
-      
-      // Function to evaluate conditions and update field visibility
-      function updateFieldVisibility(field, conditionStr) {
-        if (!conditionStr) return;
         
-        try {
-          // Get all form field values
-          const formValues = {};
-          document.querySelectorAll('select, input').forEach(input => {
-            formValues[input.id] = input.value;
-          });
-          
-          // Create a function that evaluates the condition with the form values
-          const conditionFn = new Function(...Object.keys(formValues), `return ${conditionStr};`);
-          const result = conditionFn(...Object.values(formValues));
-          
-          // Update visibility based on condition result
-          field.style.display = result ? 'block' : 'none';
-          
-          // If hidden, remove required attribute temporarily
-          const inputs = field.querySelectorAll('input, select');
-          inputs.forEach(input => {
-            if (result) {
-              input.setAttribute('required', '');
-            } else {
-              input.removeAttribute('required');
-            }
-          });
-        } catch (error) {
-          console.error('Error evaluating condition:', error);
-        }
-      }
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-neutral-300 hover:text-white transition-colors">Home</a></li>
+            <li><a href="/blog" class="text-neutral-300 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/about-us" class="text-neutral-300 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="/contact-us" class="text-neutral-300 hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="/privacy-policy" class="text-neutral-300 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions" class="text-neutral-300 hover:text-white transition-colors">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Popular Tools</h3>
+          <ul class="space-y-2">
+            <li><a href="/calculators/emi-calculator" class="text-neutral-300 hover:text-white transition-colors">EMI Calculator</a></li>
+            <li><a href="/calculators/sip-calculator" class="text-neutral-300 hover:text-white transition-colors">SIP Calculator</a></li>
+            <li><a href="/calculators/income-tax-calculator" class="text-neutral-300 hover:text-white transition-colors">Income Tax Calculator</a></li>
+            <li><a href="/calculators/ppf-calculator" class="text-neutral-300 hover:text-white transition-colors">PPF Calculator</a></li>
+            <li><a href="/calculators/gst-calculator" class="text-neutral-300 hover:text-white transition-colors">GST Calculator</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Connect With Us</h3>
+          <div class="flex space-x-4 mb-4">
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-300 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+          <p class="text-neutral-300">
+            Email: info@fincalcindia.com<br>
+            Phone: +91 1234567890
+          </p>
+        </div>
+      </div>
       
-      // Handle form submission
-      const form = document.getElementById('tool-form');
-      form.addEventListener('submit', function(e) {
+      <div class="border-t border-neutral-700 pt-6 text-center text-neutral-400 text-sm">
+        <p>© 2025 FinCalc India. All rights reserved.</p>
+        <p class="mt-2">Disclaimer: The information provided is for educational purposes only and does not constitute financial advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
         
-        // Show loading indicator
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.innerHTML;
-        submitButton.innerHTML = '<div class="loader"></div>';
-        submitButton.disabled = true;
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
         
-        // Get form data
-        const formData = {};
-        tool.inputs.forEach(input => {
-          const element = document.getElementById(input.name);
-          if (element && (!element.parentElement.hasAttribute('data-condition') || 
-              element.parentElement.style.display !== 'none')) {
-            formData[input.name] = element.value;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Close mobile menu if open
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
           }
-        });
-        
-        // Simulate processing delay
-        setTimeout(() => {
-          // Calculate result
-          const result = tool.calculate(formData);
-          
-          // Display result
-          const resultDisplay = document.getElementById('result-display');
-          const mainResult = document.getElementById('main-result');
-          const additionalInfo = document.getElementById('additional-info');
-          const financeFocus = document.getElementById('finance-focus');
-          const financeFocusContent = document.getElementById('finance-focus-content');
-          const hindiExample = document.getElementById('hindi-example');
-          const hindiExampleContent = document.getElementById('hindi-example-content');
-          const extraTips = document.getElementById('extra-tips');
-          const extraTipsContent = document.getElementById('extra-tips-content');
-          
-          mainResult.innerHTML = `<h4 class="text-2xl font-semibold text-gray-900 mb-3">Result:</h4><p class="text-gray-800 leading-relaxed">${result.mainResult}</p>`;
-          additionalInfo.innerHTML = result.additionalInfo;
-          
-          if (result.financeFocus) {
-            financeFocus.classList.remove('hidden');
-            financeFocusContent.textContent = result.financeFocus;
-          } else {
-            financeFocus.classList.add('hidden');
-          }
-          
-          if (result.hindiExample) {
-            hindiExample.classList.remove('hidden');
-            hindiExampleContent.innerHTML = result.hindiExample;
-          } else {
-            hindiExample.classList.add('hidden');
-          }
-          
-          if (result.extraTips) {
-            extraTips.classList.remove('hidden');
-            extraTipsContent.innerHTML = result.extraTips;
-          } else {
-            extraTips.classList.add('hidden');
-          }
-          
-          resultDisplay.classList.remove('hidden');
-          resultDisplay.classList.add('fade-in');
-          
-          // Restore button
-          submitButton.innerHTML = originalButtonText;
-          submitButton.disabled = false;
-          
-          // Scroll to result
-          resultDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 1500);
+        }
       });
-    }
-    
-    // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-    
-    // Initial load
-    handleHashChange();
+    });
   </script>
 </body>
 </html>

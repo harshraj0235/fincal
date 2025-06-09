@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
   return (
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -189,7 +189,7 @@ export const Header: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20">
           <div className="bg-white rounded-lg w-full max-w-2xl mx-4 p-4 shadow-xl">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold">Search Calculators</h2>
+              <h2 className="text-lg font-semibold text-neutral-900">Search Calculators</h2>
               <button 
                 onClick={() => setSearchOpen(false)}
                 className="text-neutral-500 hover:text-neutral-700"

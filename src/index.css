@@ -157,3 +157,46 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--neutral-400);
 }
+
+/* Fix for text visibility */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-black, .text-neutral-900 {
+  color: #0f172a !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+/* Ensure proper contrast for all text elements */
+p, h1, h2, h3, h4, h5, h6, span, a, button, li {
+  color: inherit;
+}
+
+/* Ensure all text in cards is visible */
+.card, .bg-white {
+  color: var(--neutral-900);
+}
+
+/* Ensure text in colored backgrounds has proper contrast */
+.bg-primary-600, .bg-primary-700, .bg-primary-800, 
+.bg-secondary-600, .bg-secondary-700, .bg-secondary-800,
+.bg-accent-600, .bg-accent-700, .bg-accent-800,
+.bg-success-600, .bg-success-700, .bg-success-800,
+.bg-warning-600, .bg-warning-700, .bg-warning-800,
+.bg-error-600, .bg-error-700, .bg-error-800,
+.bg-neutral-600, .bg-neutral-700, .bg-neutral-800, .bg-neutral-900 {
+  color: #ffffff;
+}
+
+/* Ensure links are visible */
+a:not(.btn) {
+  color: var(--primary-600);
+}
+
+a:hover:not(.btn) {
+  color: var(--primary-700);
+}
