@@ -17,6 +17,7 @@ import {
   Search
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
+import { SEOHead } from '../components/SEOHead';
 
 export const Home: React.FC = () => {
   // Structured data for homepage
@@ -35,6 +36,14 @@ export const Home: React.FC = () => {
 
   return (
     <div className="bg-white text-neutral-900">
+      <SEOHead 
+        title="Indian Financial Calculators | EMI, SIP, PPF, Income Tax & More"
+        description="Comprehensive financial calculators for Indian users - EMI, SIP, PPF, Income Tax, Loan Comparison and more. Make informed financial decisions with accurate calculations."
+        canonicalUrl="/"
+        keywords="financial calculator, EMI calculator, SIP calculator, PPF calculator, income tax calculator, loan calculator, India, financial planning"
+        structuredData={structuredData}
+      />
+      
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-800 py-20">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-800 opacity-90"></div>
@@ -54,116 +63,8 @@ export const Home: React.FC = () => {
                 SIP Calculator
               </Link>
               <Link to="/financial-navigator.html" className="btn bg-transparent border-2 border-white text-white hover:bg-white/10">
-                Financial Navigator
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Financial Navigator Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-              Financial Navigator: Your Guide to Indian Finance
-            </h2>
-            <p className="text-lg text-neutral-700 max-w-3xl mx-auto">
-              Navigate the complex world of banking and finance with our comprehensive educational tools designed to improve your financial literacy
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-neutral-200">
-              <h3 className="text-2xl font-bold text-neutral-900 mb-4">Financial Literacy Hub</h3>
-              <p className="text-neutral-700 mb-6">
-                Our Financial Navigator is a comprehensive guide to help you understand and navigate the Indian financial system. From UPI payments to KYC processes, loan comparisons to scam detection, we've got you covered with practical knowledge and interactive tools.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
-                    <DollarSign className="h-5 w-5 text-primary-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-neutral-900">UPI Explainer</h4>
-                    <p className="text-sm text-neutral-700">Understand how UPI works with our interactive simulator</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
-                    <Shield className="h-5 w-5 text-primary-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-neutral-900">KYC Help</h4>
-                    <p className="text-sm text-neutral-700">Step-by-step guidance for completing KYC processes</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
-                    <Calculator className="h-5 w-5 text-primary-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-neutral-900">EMI Calculator</h4>
-                    <p className="text-sm text-neutral-700">Visual calculator to understand loan payments</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center mr-3">
-                    <Shield className="h-5 w-5 text-primary-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-neutral-900">Scam Detector</h4>
-                    <p className="text-sm text-neutral-700">Identify and avoid common financial scams</p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-neutral-700 mb-6">
-                Our Financial Navigator is designed to simplify complex financial concepts and empower you with the knowledge to make informed decisions.
-              </p>
-              <a 
-                href="/financial-navigator.html" 
-                className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
-              >
                 Explore Financial Navigator
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-neutral-200">
-              <h3 className="text-2xl font-bold text-neutral-900 mb-4">Astro-Finance Insights Hub</h3>
-              <p className="text-neutral-700 mb-6">
-                Where traditional astrological wisdom meets modern financial planning, offering a unique perspective on your financial journey
-              </p>
-              
-              <div className="flex flex-col space-y-6 mb-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 text-3xl mr-4">🌟</div>
-                  <div>
-                    <h4 className="font-semibold text-neutral-900">Where Astrology Meets Finance</h4>
-                    <p className="text-sm text-neutral-700">
-                      Explore our unique Astro-Finance Insights Hub, where traditional astrological wisdom meets modern financial planning. Discover how cosmic influences might align with your financial decisions and life path.
-                    </p>
-                    <p className="text-sm text-neutral-700 mt-2">
-                      While we emphasize that financial decisions should always be based on sound financial principles, many in India also consider astrological insights as a complementary perspective.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Daily Finance Horoscopes</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Zodiac Compatibility</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Lucky Numbers</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Auspicious Timing</span>
-                </div>
-              </div>
-              
-              <a 
-                href="/astro-finance-insights.html" 
-                className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
-              >
-                Explore Astro-Finance Insights
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -291,60 +192,7 @@ export const Home: React.FC = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">Bank Holiday Calendar</h3>
-                <p className="text-neutral-700 mb-4">
-                  Comprehensive calendar of bank holidays across all Indian states to help plan your banking activities.
-                </p>
-                <Link 
-                  to="/calculators/bank-holiday-calendar" 
-                  className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
-                >
-                  View Bank Holidays
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">Best Interest Rates</h3>
-                <p className="text-neutral-700 mb-4">
-                  Compare current interest rates across banks for loans, deposits, and savings accounts to find the best deals.
-                </p>
-                <Link 
-                  to="/calculators/interest-rates-comparison" 
-                  className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
-                >
-                  Compare Rates
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">Astro-Finance Insights</h3>
-                <p className="text-neutral-700 mb-4">
-                  Explore astrological perspectives on financial decisions, lucky numbers, and auspicious timing for investments.
-                </p>
-                <a 
-                  href="/astro-finance-insights.html" 
-                  className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700"
-                >
-                  Explore Astro-Finance Tools
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-          
           <div className="text-center">
-            <p className="text-lg text-neutral-700 mb-6">
-              Our banking tools are designed to simplify your financial transactions and provide quick access to essential banking information.
-            </p>
             <Link 
               to="/calculators/banking-knowledge" 
               className="btn btn-primary"
@@ -534,7 +382,7 @@ export const Home: React.FC = () => {
               Browse by Category
             </h2>
             <p className="text-lg text-neutral-700 max-w-3xl mx-auto">
-              Find the perfect calculator for your financial needs
+              Our calculators help you plan loans, investments, taxes, and more with precision and ease.
             </p>
           </div>
           
@@ -598,112 +446,6 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Category Section */}
-      <section className="py-16 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">
-              Finance & Banking Tools
-            </h2>
-            <p className="text-lg text-neutral-700 max-w-3xl mx-auto">
-              Essential tools for everyday banking needs, transaction troubleshooting, and financial information
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">Bank IFSC/MICR Finder</h3>
-                <p className="text-neutral-700 mb-4">
-                  Quickly find IFSC and MICR codes for any bank branch in India for seamless fund transfers and banking operations
-                </p>
-                <Link 
-                  to="/calculators/bank-ifsc-finder" 
-                  className="btn btn-primary w-full"
-                >
-                  Use Calculator
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">UPI Failure Troubleshooter</h3>
-                <p className="text-neutral-700 mb-4">
-                  Diagnose and resolve UPI transaction failures with step-by-step guidance and recover your stuck payments
-                </p>
-                <Link 
-                  to="/calculators/upi-failure-troubleshooter" 
-                  className="btn btn-primary w-full"
-                >
-                  Use Calculator
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">ATM Locator</h3>
-                <p className="text-neutral-700 mb-4">
-                  Find nearby ATMs with real-time status information on cash availability and operational conditions
-                </p>
-                <Link 
-                  to="/calculators/atm-locator" 
-                  className="btn btn-primary w-full"
-                >
-                  Use Calculator
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">Bank Holiday Calendar</h3>
-                <p className="text-neutral-700 mb-4">
-                  Comprehensive calendar of bank holidays across all Indian states to help plan your banking activities
-                </p>
-                <Link 
-                  to="/calculators/bank-holiday-calendar" 
-                  className="btn btn-primary w-full"
-                >
-                  Use Calculator
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">Best Interest Rates</h3>
-                <p className="text-neutral-700 mb-4">
-                  Compare current interest rates across banks for loans, deposits, and savings accounts to find the best deals
-                </p>
-                <Link 
-                  to="/calculators/interest-rates-comparison" 
-                  className="btn btn-primary w-full"
-                >
-                  Use Calculator
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-200">
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">Astro-Finance Insights</h3>
-                <p className="text-neutral-700 mb-4">
-                  Explore astrological perspectives on financial decisions, lucky numbers, and auspicious timing for investments
-                </p>
-                <a 
-                  href="/astro-finance-insights.html" 
-                  className="btn btn-primary w-full"
-                >
-                  Explore Astro-Finance Tools
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -719,12 +461,6 @@ export const Home: React.FC = () => {
           </Link>
         </div>
       </section>
-
-      {/* Schema.org structured data */}
-      <script 
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
     </div>
   );
 };
