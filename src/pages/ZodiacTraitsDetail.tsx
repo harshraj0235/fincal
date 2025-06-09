@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ChevronRight, DollarSign, TrendingUp, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
+import { ArrowLeft, ChevronRight, DollarSign, TrendingUp, AlertTriangle, CheckCircle, XCircle, Star, Users, Clock } from 'lucide-react';
 
 export const ZodiacTraitsDetail: React.FC = () => {
   const { sign } = useParams<{ sign: string }>();
