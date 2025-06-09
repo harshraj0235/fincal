@@ -425,7 +425,7 @@ export const ZodiacTraitsDetail: React.FC = () => {
                   <div className="flex flex-wrap gap-2">
                     {sign === 'aries' && (
                       <>
-                        <Link to="/astro-finance-insights/zodiac-traits/leo" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+                        <Link to="/astro-finance-insights/zodiac-traits/leo\" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
                           <span className="mr-1">♌</span> Leo
                         </Link>
                         <Link to="/astro-finance-insights/zodiac-traits/sagittarius" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
@@ -457,7 +457,7 @@ export const ZodiacTraitsDetail: React.FC = () => {
                   <div className="flex flex-wrap gap-2">
                     {sign === 'aries' && (
                       <>
-                        <Link to="/astro-finance-insights/zodiac-traits/cancer" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+                        <Link to="/astro-finance-insights/zodiac-traits/cancer\" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
                           <span className="mr-1">♋</span> Cancer
                         </Link>
                         <Link to="/astro-finance-insights/zodiac-traits/capricorn" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
