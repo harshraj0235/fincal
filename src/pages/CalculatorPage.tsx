@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, X, Calculator, Search, ArrowLeft, Share2, Bookmark, Info } from 'lucide-react';
 import { getCalculatorById } from '../data/calculatorData';
+import { SEOHead } from '../components/SEOHead';
 import { EmiCalculator } from '../calculators/EmiCalculator';
 import { SipCalculator } from '../calculators/SipCalculator';
 import { GstCalculator } from '../calculators/GstCalculator';
@@ -79,6 +80,11 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
   if (!calculator) {
     return (
       <div className="text-center py-16">
+        <SEOHead 
+          title="Calculator Not Found | FinCalc India"
+          description="The calculator you're looking for doesn't exist or may have been moved."
+          canonicalUrl="/404"
+        />
         <h2 className="text-2xl font-bold text-neutral-900 mb-4">Calculator Not Found</h2>
         <p className="text-lg text-neutral-600 mb-8">
           The calculator you're looking for doesn't exist or may have been moved.
@@ -244,6 +250,13 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
   
   return (
     <div className="max-w-4xl mx-auto">
+      <SEOHead 
+        title={`${calculator.name} | FinCalc India`}
+        description={calculator.description}
+        canonicalUrl={`/calculators/${calculatorId}`}
+        keywords={calculator.keywords?.join(', ')}
+      />
+      
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 

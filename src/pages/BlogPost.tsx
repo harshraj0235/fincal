@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Tag, Share2, Bookmark, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { getBlogPostBySlug, getRelatedPosts } from '../data/blogData';
+import { SEOHead } from '../components/SEOHead';
 
 export const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,6 +14,11 @@ export const BlogPost: React.FC = () => {
   if (!post) {
     return (
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <SEOHead 
+          title="Blog Post Not Found | FinCalc India"
+          description="The blog post you're looking for doesn't exist or may have been moved."
+          canonicalUrl="/404"
+        />
         <h1 className="text-2xl font-bold text-neutral-900 mb-4">Blog Post Not Found</h1>
         <p className="text-neutral-600 mb-8">The blog post you're looking for doesn't exist or may have been moved.</p>
         <button 
@@ -27,6 +33,15 @@ export const BlogPost: React.FC = () => {
   
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <SEOHead 
+        title={`${post.title} | FinCalc India Blog`}
+        description={post.excerpt}
+        canonicalUrl={`/blog/${slug}`}
+        keywords={post.categories.join(', ')}
+        ogImage={post.coverImage}
+        ogType="article"
+      />
+      
       <div className="mb-8">
         <button 
           onClick={() => navigate('/blog')} 
