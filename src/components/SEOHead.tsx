@@ -29,7 +29,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
+      {keywords && <meta name="keywords\" content={keywords} />}
       
       {/* Canonical URL */}
       {fullCanonicalUrl && <link rel="canonical" href={fullCanonicalUrl} />}
@@ -38,7 +38,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:type" content={ogType} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      {fullCanonicalUrl && <meta property="og:url" content={fullCanonicalUrl} />}
+      {fullCanonicalUrl && <meta property="og:url\" content={fullCanonicalUrl} />}
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content="FinCalc India" />
       
