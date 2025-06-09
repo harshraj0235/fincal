@@ -3,33 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Search, FileText, CheckSquare, AlertTriangle, ExternalLink, Code, Copy, Check } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { blogPosts } from '../data/blogData';
-import { SEOHead } from '../components/SEOHead';
 
 export const SitemapXml: React.FC = () => {
   const navigate = useNavigate();
   const [copiedText, setCopiedText] = useState<string | null>(null);
-  
-  // Structured data for sitemap page
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": "XML Sitemap & Google Search Console Guide",
-    "description": "Learn how to use XML sitemaps and Google Search Console to improve your website's indexing and search visibility.",
-    "author": {
-      "@type": "Organization",
-      "name": "FinCalc India"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "FinCalc India",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://moneycal.in/logo.png"
-      }
-    },
-    "datePublished": "2025-06-15",
-    "dateModified": "2025-06-15"
-  };
   
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -53,14 +30,6 @@ export const SitemapXml: React.FC = () => {
   
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <SEOHead 
-        title="XML Sitemap & Google Search Console Guide | FinCalc India"
-        description="Learn how to use XML sitemaps and Google Search Console to improve your website's indexing and search visibility. Complete guide with examples and best practices."
-        canonicalUrl="/sitemap.xml"
-        keywords="XML sitemap, Google Search Console, website indexing, SEO, search engine optimization"
-        structuredData={structuredData}
-      />
-      
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 

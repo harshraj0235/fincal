@@ -2,33 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { SEOHead } from '../components/SEOHead';
 
 export const ContactUs: React.FC = () => {
   const navigate = useNavigate();
   const [formSubmitted, setFormSubmitted] = useState(false);
-  
-  // Structured data for contact page
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact FinCalc India",
-    "description": "Get in touch with FinCalc India for questions, feedback, or suggestions about our financial calculators.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "FinCalc India",
-      "telephone": "+91-1234567890",
-      "email": "info@fincalcindia.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Financial District, Bandra Kurla Complex",
-        "addressLocality": "Mumbai",
-        "addressRegion": "Maharashtra",
-        "postalCode": "400051",
-        "addressCountry": "IN"
-      }
-    }
-  };
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,14 +15,6 @@ export const ContactUs: React.FC = () => {
   
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <SEOHead 
-        title="Contact Us | FinCalc India | Financial Calculators"
-        description="Have questions, feedback, or suggestions? Get in touch with FinCalc India. We'd love to hear from you and help with your financial calculation needs."
-        canonicalUrl="/contact-us"
-        keywords="contact FinCalc India, financial calculator support, financial questions, feedback"
-        structuredData={structuredData}
-      />
-      
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 

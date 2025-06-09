@@ -2,46 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Award, Target, Calculator } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { SEOHead } from '../components/SEOHead';
 
 export const AboutUs: React.FC = () => {
   const navigate = useNavigate();
   
-  // Structured data for about page
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "FinCalc India",
-    "url": "https://moneycal.in",
-    "logo": "https://moneycal.in/logo.png",
-    "description": "Empowering Indians to make informed financial decisions through accurate calculations and educational resources",
-    "foundingDate": "2023",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Financial District, Bandra Kurla Complex",
-      "addressLocality": "Mumbai",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400051",
-      "addressCountry": "IN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-1234567890",
-      "contactType": "customer service",
-      "email": "info@fincalcindia.com"
-    }
-  };
-  
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <SEOHead 
-        title="About Us | FinCalc India | Financial Calculators"
-        description="Learn about FinCalc India's mission to empower Indians with financial literacy through accurate calculators and educational resources."
-        canonicalUrl="/about-us"
-        keywords="about FinCalc India, financial calculators, financial literacy, Indian finance, financial education"
-        structuredData={structuredData}
-      />
-      
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 

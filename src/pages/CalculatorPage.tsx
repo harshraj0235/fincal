@@ -99,22 +99,6 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
     );
   }
   
-  // Create structured data for calculator
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": calculator.name,
-    "description": calculator.description,
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "INR"
-    },
-    "url": `https://moneycal.in/calculators/${calculatorId}`
-  };
-  
   const renderCalculator = () => {
     switch (calculatorId) {
       case 'emi-calculator':
@@ -267,11 +251,10 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
   return (
     <div className="max-w-4xl mx-auto">
       <SEOHead 
-        title={`${calculator.name} | Free Online Calculator | FinCalc India`}
+        title={`${calculator.name} | FinCalc India`}
         description={calculator.description}
         canonicalUrl={`/calculators/${calculatorId}`}
         keywords={calculator.keywords?.join(', ')}
-        structuredData={structuredData}
       />
       
       <div className="mb-8">

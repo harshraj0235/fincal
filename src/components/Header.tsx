@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
   return (
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'
+        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
               </button>
               
               {categoriesOpen && (
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg z-10 py-2 border border-neutral-200">
+                <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg z-10 py-2">
                   {calculatorCategories.map(category => (
                     <div key={category.id} className="relative group">
                       <Link
@@ -92,7 +92,7 @@ export const Header: React.FC = () => {
                         {category.name}
                         <ChevronRight className="h-4 w-4 absolute right-4 top-3 text-neutral-400 group-hover:text-primary-600" />
                       </Link>
-                      <div className="absolute left-full top-0 ml-2 w-64 bg-white rounded-lg shadow-lg hidden group-hover:block border border-neutral-200">
+                      <div className="absolute left-full top-0 ml-2 w-64 bg-white rounded-lg shadow-lg hidden group-hover:block">
                         <div className="py-2">
                           {category.calculators.slice(0, 8).map(calculator => (
                             <button
@@ -189,7 +189,7 @@ export const Header: React.FC = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20">
           <div className="bg-white rounded-lg w-full max-w-2xl mx-4 p-4 shadow-xl">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold text-neutral-900">Search Calculators</h2>
+              <h2 className="text-lg font-semibold">Search Calculators</h2>
               <button 
                 onClick={() => setSearchOpen(false)}
                 className="text-neutral-500 hover:text-neutral-700"

@@ -9,7 +9,6 @@ interface SEOHeadProps {
   ogImage?: string;
   ogType?: string;
   twitterCard?: string;
-  structuredData?: Record<string, any>;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -19,8 +18,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   keywords,
   ogImage = 'https://moneycal.in/og-image.jpg',
   ogType = 'website',
-  twitterCard = 'summary_large_image',
-  structuredData
+  twitterCard = 'summary_large_image'
 }) => {
   const siteUrl = 'https://moneycal.in';
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : undefined;
@@ -40,7 +38,6 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:description" content={description} />
       {fullCanonicalUrl && <meta property="og:url\" content={fullCanonicalUrl} />}
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="FinCalc India" />
       
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
@@ -50,16 +47,6 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Additional SEO tags */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-      <meta name="author" content="FinCalc India" />
-      <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
-      
-      {/* Structured data for rich results */}
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      )}
     </Helmet>
   );
 };
