@@ -76,7 +76,7 @@ function App() {
         <Route path="/astro-finance-insights/zodiac-compatibility" element={<Navigate to="/astro-finance-insights" />} />
         <Route path="/astro-finance-insights/moon-sign-calculator" element={<Navigate to="/astro-finance-insights" />} />
         
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/\" replace />} />
       </Routes>
     </Layout>
   );
