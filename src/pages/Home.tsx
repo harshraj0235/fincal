@@ -29,17 +29,17 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
                 Make Smarter Financial Decisions with Precision
               </h1>
-              <p className="text-xl mb-8 text-primary-100">
+              <p className="text-xl mb-8 text-white">
                 Comprehensive financial calculators tailored for Indian users. Plan loans, investments, taxes, and more with confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/calculators/emi-calculator" className="btn bg-white text-primary-700 hover:bg-primary-50">
                   EMI Calculator
                 </Link>
-                <Link to="/calculators/income-tax-calculator" className="btn bg-primary-500 text-white hover:bg-primary-400 border border-primary-400">
+                <Link to="/calculators/income-tax-calculator" className="btn bg-green-600 text-white hover:bg-green-700 border border-green-500">
                   Income Tax Calculator
                 </Link>
               </div>
@@ -549,8 +549,8 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Astro-Finance Insights Hub</h2>
-              <p className="text-lg mb-6 text-purple-100">
+              <h2 className="text-3xl font-bold mb-6 text-white">Astro-Finance Insights Hub</h2>
+              <p className="text-lg mb-6 text-white">
                 Explore our unique blend of astrology and finance. Discover how cosmic influences might align with your financial decisions.
               </p>
               <div className="space-y-4 mb-8">
@@ -560,7 +560,7 @@ export const Home: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white">Daily Finance Horoscope</h3>
-                    <p className="text-sm text-purple-200">Get daily financial predictions for your zodiac sign</p>
+                    <p className="text-sm text-white">Get daily financial predictions for your zodiac sign</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -569,7 +569,7 @@ export const Home: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white">Life Path Numerology</h3>
-                    <p className="text-sm text-purple-200">Discover your financial tendencies based on numerology</p>
+                    <p className="text-sm text-white">Discover your financial tendencies based on numerology</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -578,7 +578,7 @@ export const Home: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white">Zodiac Compatibility</h3>
-                    <p className="text-sm text-purple-200">Check financial compatibility between zodiac signs</p>
+                    <p className="text-sm text-white">Check financial compatibility between zodiac signs</p>
                   </div>
                 </div>
               </div>
