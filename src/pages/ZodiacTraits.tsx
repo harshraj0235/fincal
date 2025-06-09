@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Globe } from 'lucide-react';
 
 export const ZodiacTraits: React.FC = () => {
   const navigate = useNavigate();
+  const [language, setLanguage] = useState<'en' | 'hi'>('en');
   
   const zodiacSigns = [
     {
@@ -280,22 +281,42 @@ export const ZodiacTraits: React.FC = () => {
           className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
         >
           <ArrowLeft className="h-4 w-4 mr-1" />
-          <span>Back to Astro-Finance Hub</span>
+          <span>{language === 'en' ? 'Back to Astro-Finance Hub' : 'वित्तीय ज्योतिष केंद्र पर वापस जाएं'}</span>
         </button>
       </div>
       
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-neutral-900 mb-4">Financial Traits by Zodiac Sign</h1>
+        <h1 className="text-4xl font-bold text-neutral-900 mb-4">
+          {language === 'en' ? 'Financial Traits by Zodiac Sign' : 'राशि अनुसार वित्तीय विशेषताएं'}
+        </h1>
         <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-          Discover how your zodiac sign may influence your approach to money, investments, and financial decision-making
+          {language === 'en' 
+            ? 'Discover how your zodiac sign may influence your approach to money, investments, and financial decision-making' 
+            : 'जानें कि आपकी राशि धन, निवेश और वित्तीय निर्णय लेने के प्रति आपके दृष्टिकोण को कैसे प्रभावित कर सकती है'}
         </p>
         <div className="mt-4 flex justify-center space-x-4">
-          <Link to="/astro-finance-insights/zodiac-traits" className="inline-flex items-center px-4 py-2 rounded-lg bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+          <button 
+            onClick={() => setLanguage('en')}
+            className={`inline-flex items-center px-4 py-2 rounded-lg ${
+              language === 'en' 
+                ? 'bg-primary-100 text-primary-800' 
+                : 'bg-neutral-100 text-neutral-600'
+            } hover:bg-primary-200 transition-colors`}
+          >
+            <Globe className="h-4 w-4 mr-2" />
             English
-          </Link>
-          <Link to="/astro-finance-insights/hi/zodiac-traits" className="inline-flex items-center px-4 py-2 rounded-lg bg-primary-100 text-primary-800 hover:bg-primary-200 transition-colors">
+          </button>
+          <button 
+            onClick={() => setLanguage('hi')}
+            className={`inline-flex items-center px-4 py-2 rounded-lg ${
+              language === 'hi' 
+                ? 'bg-primary-100 text-primary-800' 
+                : 'bg-neutral-100 text-neutral-600'
+            } hover:bg-primary-200 transition-colors`}
+          >
+            <Globe className="h-4 w-4 mr-2" />
             हिंदी
-          </Link>
+          </button>
         </div>
       </div>
       
@@ -310,12 +331,18 @@ export const ZodiacTraits: React.FC = () => {
               <div className="text-5xl text-white">{zodiac.symbol}</div>
             </div>
             <div className="p-6">
-              <h2 className="text-xl font-semibold text-neutral-900 mb-1 group-hover:text-purple-600 transition-colors">{zodiac.name}</h2>
-              <p className="text-sm text-neutral-500 mb-4">{zodiac.date}</p>
+              <h2 className="text-xl font-semibold text-neutral-900 mb-1 group-hover:text-purple-600 transition-colors">
+                {language === 'en' ? zodiac.name : zodiac.nameHindi}
+              </h2>
+              <p className="text-sm text-neutral-500 mb-4">
+                {language === 'en' ? zodiac.date : zodiac.dateHindi}
+              </p>
               
-              <h3 className="text-sm font-medium text-neutral-700 mb-2">Key Financial Traits:</h3>
+              <h3 className="text-sm font-medium text-neutral-700 mb-2">
+                {language === 'en' ? 'Key Financial Traits:' : 'प्रमुख वित्तीय विशेषताएं:'}
+              </h3>
               <ul className="space-y-1 mb-4">
-                {zodiac.traits.slice(0, 3).map((trait, index) => (
+                {(language === 'en' ? zodiac.traits : zodiac.traitsHindi).slice(0, 3).map((trait, index) => (
                   <li key={index} className="text-sm text-neutral-600 flex items-start">
                     <span className="text-purple-500 mr-2">•</span>
                     <span>{trait}</span>
@@ -325,7 +352,7 @@ export const ZodiacTraits: React.FC = () => {
               
               <div className="flex justify-end">
                 <span className="text-purple-600 group-hover:text-purple-800 font-medium text-sm flex items-center">
-                  Read Full Profile
+                  {language === 'en' ? 'Read Full Profile' : 'पूरा प्रोफ़ाइल पढ़ें'}
                   <ChevronRight className="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
@@ -335,101 +362,151 @@ export const ZodiacTraits: React.FC = () => {
       </div>
       
       <div className="bg-purple-50 rounded-xl p-8 border border-purple-100 mb-16">
-        <h2 className="text-2xl font-bold text-purple-900 mb-6 text-center">Understanding Zodiac Elements and Financial Tendencies</h2>
+        <h2 className="text-2xl font-bold text-purple-900 mb-6 text-center">
+          {language === 'en' ? 'Understanding Zodiac Elements and Financial Tendencies' : 'राशि तत्वों और वित्तीय प्रवृत्तियों को समझना'}
+        </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-xl font-semibold text-purple-800 mb-4">Fire Signs (Aries, Leo, Sagittarius)</h3>
+            <h3 className="text-xl font-semibold text-purple-800 mb-4">
+              {language === 'en' ? 'Fire Signs (Aries, Leo, Sagittarius)' : 'अग्नि राशियां (मेष, सिंह, धनु)'}
+            </h3>
             <p className="text-purple-700 mb-3">
-              Fire signs tend to be dynamic and enthusiastic with their finances. They often have an entrepreneurial spirit and are willing to take calculated risks for potential high returns.
+              {language === 'en'
+                ? 'Fire signs tend to be dynamic and enthusiastic with their finances. They often have an entrepreneurial spirit and are willing to take calculated risks for potential high returns.'
+                : 'अग्नि राशियां अपने वित्त के साथ गतिशील और उत्साही होती हैं। उनमें अक्सर उद्यमी भावना होती है और वे संभावित उच्च रिटर्न के लिए सोच-समझकर जोखिम लेने के लिए तैयार होते हैं।'}
             </p>
             <ul className="space-y-2 text-purple-700">
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">•</span>
-                <span>Strengths: Confidence, leadership in financial ventures, ability to seize opportunities</span>
+                <span>
+                  {language === 'en'
+                    ? 'Strengths: Confidence, leadership in financial ventures, ability to seize opportunities'
+                    : 'ताकत: आत्मविश्वास, वित्तीय उद्यमों में नेतृत्व, अवसरों को पकड़ने की क्षमता'}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">•</span>
-                <span>Challenges: Impulsiveness, may need to focus more on long-term planning</span>
+                <span>
+                  {language === 'en'
+                    ? 'Challenges: Impulsiveness, may need to focus more on long-term planning'
+                    : 'चुनौतियां: आवेगशीलता, दीर्घकालिक योजना पर अधिक ध्यान देने की आवश्यकता हो सकती है'}
+                </span>
               </li>
             </ul>
             <Link 
               to="/astro-finance-insights/zodiac-elements/fire" 
               className="mt-4 inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
             >
-              Learn more about Fire signs and money
+              {language === 'en' ? 'Learn more about Fire signs and money' : 'अग्नि राशियों और धन के बारे में अधिक जानें'}
               <ChevronRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
           
           <div>
-            <h3 className="text-xl font-semibold text-purple-800 mb-4">Earth Signs (Taurus, Virgo, Capricorn)</h3>
+            <h3 className="text-xl font-semibold text-purple-800 mb-4">
+              {language === 'en' ? 'Earth Signs (Taurus, Virgo, Capricorn)' : 'पृथ्वी राशियां (वृषभ, कन्या, मकर)'}
+            </h3>
             <p className="text-purple-700 mb-3">
-              Earth signs are typically the most financially grounded of the zodiac. They value security, take a practical approach to money management, and excel at building wealth steadily over time.
+              {language === 'en'
+                ? 'Earth signs are typically the most financially grounded of the zodiac. They value security, take a practical approach to money management, and excel at building wealth steadily over time.'
+                : 'पृथ्वी राशियां आमतौर पर राशिचक्र की सबसे वित्तीय रूप से जमीनी होती हैं। वे सुरक्षा को महत्व देते हैं, धन प्रबंधन के प्रति व्यावहारिक दृष्टिकोण अपनाते हैं, और समय के साथ स्थिर रूप से धन निर्माण में उत्कृष्ट होते हैं।'}
             </p>
             <ul className="space-y-2 text-purple-700">
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">•</span>
-                <span>Strengths: Discipline, patience, practical financial planning</span>
+                <span>
+                  {language === 'en'
+                    ? 'Strengths: Discipline, patience, practical financial planning'
+                    : 'ताकत: अनुशासन, धैर्य, व्यावहारिक वित्तीय नियोजन'}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">•</span>
-                <span>Challenges: May be too conservative, missing growth opportunities</span>
+                <span>
+                  {language === 'en'
+                    ? 'Challenges: May be too conservative, missing growth opportunities'
+                    : 'चुनौतियां: बहुत रूढ़िवादी हो सकते हैं, विकास के अवसरों को याद कर सकते हैं'}
+                </span>
               </li>
             </ul>
             <Link 
               to="/astro-finance-insights/zodiac-elements/earth" 
               className="mt-4 inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
             >
-              Learn more about Earth signs and money
+              {language === 'en' ? 'Learn more about Earth signs and money' : 'पृथ्वी राशियों और धन के बारे में अधिक जानें'}
               <ChevronRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
           
           <div>
-            <h3 className="text-xl font-semibold text-purple-800 mb-4">Air Signs (Gemini, Libra, Aquarius)</h3>
+            <h3 className="text-xl font-semibold text-purple-800 mb-4">
+              {language === 'en' ? 'Air Signs (Gemini, Libra, Aquarius)' : 'वायु राशियां (मिथुन, तुला, कुंभ)'}
+            </h3>
             <p className="text-purple-700 mb-3">
-              Air signs bring intellectual curiosity to financial matters. They enjoy learning about different investment strategies, are adaptable to changing financial landscapes, and often have innovative approaches to money.
+              {language === 'en'
+                ? 'Air signs bring intellectual curiosity to financial matters. They enjoy learning about different investment strategies, are adaptable to changing financial landscapes, and often have innovative approaches to money.'
+                : 'वायु राशियां वित्तीय मामलों में बौद्धिक जिज्ञासा लाती हैं। वे विभिन्न निवेश रणनीतियों के बारे में जानना पसंद करते हैं, बदलते वित्तीय परिदृश्यों के अनुकूल होते हैं, और अक्सर धन के प्रति नवीन दृष्टिकोण रखते हैं।'}
             </p>
             <ul className="space-y-2 text-purple-700">
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">•</span>
-                <span>Strengths: Adaptability, innovative financial thinking, communication skills</span>
+                <span>
+                  {language === 'en'
+                    ? 'Strengths: Adaptability, innovative financial thinking, communication skills'
+                    : 'ताकत: अनुकूलनशीलता, नवीन वित्तीय सोच, संचार कौशल'}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">•</span>
-                <span>Challenges: May overthink decisions, need help with implementation</span>
+                <span>
+                  {language === 'en'
+                    ? 'Challenges: May overthink decisions, need help with implementation'
+                    : 'चुनौतियां: निर्णयों पर अधिक सोच सकते हैं, कार्यान्वयन में मदद की आवश्यकता हो सकती है'}
+                </span>
               </li>
             </ul>
             <Link 
               to="/astro-finance-insights/zodiac-elements/air" 
               className="mt-4 inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
             >
-              Learn more about Air signs and money
+              {language === 'en' ? 'Learn more about Air signs and money' : 'वायु राशियों और धन के बारे में अधिक जानें'}
               <ChevronRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
           
           <div>
-            <h3 className="text-xl font-semibold text-purple-800 mb-4">Water Signs (Cancer, Scorpio, Pisces)</h3>
+            <h3 className="text-xl font-semibold text-purple-800 mb-4">
+              {language === 'en' ? 'Water Signs (Cancer, Scorpio, Pisces)' : 'जल राशियां (कर्क, वृश्चिक, मीन)'}
+            </h3>
             <p className="text-purple-700 mb-3">
-              Water signs have an intuitive and emotional approach to finances. They often have good financial instincts and may make decisions based on feelings as well as facts.
+              {language === 'en'
+                ? 'Water signs have an intuitive and emotional approach to finances. They often have good financial instincts and may make decisions based on feelings as well as facts.'
+                : 'जल राशियों का वित्त के प्रति अंतर्ज्ञानी और भावनात्मक दृष्टिकोण होता है। उनके पास अक्सर अच्छी वित्तीय अंतर्ज्ञान होती है और वे तथ्यों के साथ-साथ भावनाओं के आधार पर भी निर्णय ले सकते हैं।'}
             </p>
             <ul className="space-y-2 text-purple-700">
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">•</span>
-                <span>Strengths: Financial intuition, emotional intelligence with money, resourcefulness</span>
+                <span>
+                  {language === 'en'
+                    ? 'Strengths: Financial intuition, emotional intelligence with money, resourcefulness'
+                    : 'ताकत: वित्तीय अंतर्ज्ञान, धन के साथ भावनात्मक बुद्धिमत्ता, संसाधनशीलता'}
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-purple-500 mr-2">•</span>
-                <span>Challenges: Emotional financial decisions, may need more structure</span>
+                <span>
+                  {language === 'en'
+                    ? 'Challenges: Emotional financial decisions, may need more structure'
+                    : 'चुनौतियां: भावनात्मक वित्तीय निर्णय, अधिक संरचना की आवश्यकता हो सकती है'}
+                </span>
               </li>
             </ul>
             <Link 
               to="/astro-finance-insights/zodiac-elements/water" 
               className="mt-4 inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
             >
-              Learn more about Water signs and money
+              {language === 'en' ? 'Learn more about Water signs and money' : 'जल राशियों और धन के बारे में अधिक जानें'}
               <ChevronRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
@@ -437,16 +514,26 @@ export const ZodiacTraits: React.FC = () => {
       </div>
       
       <div className="bg-white rounded-xl shadow-md p-8 mb-16">
-        <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">Zodiac Signs and Investment Preferences</h2>
+        <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">
+          {language === 'en' ? 'Zodiac Signs and Investment Preferences' : 'राशियां और निवेश प्राथमिकताएं'}
+        </h2>
         
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-neutral-200">
             <thead className="bg-neutral-50">
               <tr>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Zodiac Sign</th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Risk Tolerance</th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Preferred Investments</th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Financial Strengths</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                  {language === 'en' ? 'Zodiac Sign' : 'राशि'}
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                  {language === 'en' ? 'Risk Tolerance' : 'जोखिम सहनशीलता'}
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                  {language === 'en' ? 'Preferred Investments' : 'पसंदीदा निवेश'}
+                </th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                  {language === 'en' ? 'Financial Strengths' : 'वित्तीय ताकत'}
+                </th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-neutral-200">
@@ -454,56 +541,116 @@ export const ZodiacTraits: React.FC = () => {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="text-2xl mr-2">♈</div>
-                    <div className="text-sm font-medium text-neutral-900">Aries</div>
+                    <div className="text-sm font-medium text-neutral-900">
+                      {language === 'en' ? 'Aries' : 'मेष'}
+                    </div>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">High</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Startups, high-growth stocks, entrepreneurial ventures</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Quick decision-making, spotting opportunities</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' ? 'High' : 'उच्च'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Startups, high-growth stocks, entrepreneurial ventures' 
+                    : 'स्टार्टअप, उच्च विकास वाले स्टॉक, उद्यमी उद्यम'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Quick decision-making, spotting opportunities' 
+                    : 'त्वरित निर्णय लेना, अवसरों को पहचानना'}
+                </td>
               </tr>
               <tr>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="text-2xl mr-2">♉</div>
-                    <div className="text-sm font-medium text-neutral-900">Taurus</div>
+                    <div className="text-sm font-medium text-neutral-900">
+                      {language === 'en' ? 'Taurus' : 'वृषभ'}
+                    </div>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Low to Medium</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Real estate, blue-chip stocks, precious metals</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Patience, steady wealth building</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' ? 'Low to Medium' : 'कम से मध्यम'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Real estate, blue-chip stocks, precious metals' 
+                    : 'रियल एस्टेट, ब्लू-चिप स्टॉक, कीमती धातुएं'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Patience, steady wealth building' 
+                    : 'धैर्य, स्थिर धन निर्माण'}
+                </td>
               </tr>
               <tr>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="text-2xl mr-2">♊</div>
-                    <div className="text-sm font-medium text-neutral-900">Gemini</div>
+                    <div className="text-sm font-medium text-neutral-900">
+                      {language === 'en' ? 'Gemini' : 'मिथुन'}
+                    </div>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Medium to High</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Tech stocks, diversified portfolios, trading</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Adaptability, information gathering</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' ? 'Medium to High' : 'मध्यम से उच्च'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Tech stocks, diversified portfolios, trading' 
+                    : 'टेक स्टॉक, विविध पोर्टफोलियो, ट्रेडिंग'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Adaptability, information gathering' 
+                    : 'अनुकूलनशीलता, जानकारी एकत्र करना'}
+                </td>
               </tr>
               <tr>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="text-2xl mr-2">♋</div>
-                    <div className="text-sm font-medium text-neutral-900">Cancer</div>
+                    <div className="text-sm font-medium text-neutral-900">
+                      {language === 'en' ? 'Cancer' : 'कर्क'}
+                    </div>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Low</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Family homes, savings accounts, insurance</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Budgeting, financial security planning</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' ? 'Low' : 'कम'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Family homes, savings accounts, insurance' 
+                    : 'पारिवारिक घर, बचत खाते, बीमा'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Budgeting, financial security planning' 
+                    : 'बजट बनाना, वित्तीय सुरक्षा योजना'}
+                </td>
               </tr>
               <tr>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="text-2xl mr-2">♌</div>
-                    <div className="text-sm font-medium text-neutral-900">Leo</div>
+                    <div className="text-sm font-medium text-neutral-900">
+                      {language === 'en' ? 'Leo' : 'सिंह'}
+                    </div>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Medium to High</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Luxury assets, high-profile stocks, gold</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">Leadership, confidence in investments</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' ? 'Medium to High' : 'मध्यम से उच्च'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Luxury assets, high-profile stocks, gold' 
+                    : 'विलासिता संपत्ति, उच्च-प्रोफाइल स्टॉक, सोना'}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-600">
+                  {language === 'en' 
+                    ? 'Leadership, confidence in investments' 
+                    : 'नेतृत्व, निवेश में आत्मविश्वास'}
+                </td>
               </tr>
             </tbody>
           </table>
@@ -514,7 +661,7 @@ export const ZodiacTraits: React.FC = () => {
             to="/astro-finance-insights/zodiac-investment-guide" 
             className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium"
           >
-            View Complete Zodiac Investment Guide
+            {language === 'en' ? 'View Complete Zodiac Investment Guide' : 'पूर्ण राशि निवेश गाइड देखें'}
             <ChevronRight className="h-4 w-4 ml-1" />
           </Link>
         </div>
@@ -528,13 +675,19 @@ export const ZodiacTraits: React.FC = () => {
             </svg>
           </div>
           <div className="ml-3">
-            <h3 className="text-lg font-medium text-yellow-800">Important Disclaimer</h3>
+            <h3 className="text-lg font-medium text-yellow-800">
+              {language === 'en' ? 'Important Disclaimer' : 'महत्वपूर्ण अस्वीकरण'}
+            </h3>
             <div className="mt-2 text-yellow-700">
               <p>
-                The zodiac traits and financial characteristics described here are based on traditional astrological interpretations and are provided for entertainment and cultural interest only. Individual financial behaviors are influenced by many factors beyond astrological signs.
+                {language === 'en' 
+                  ? 'The zodiac traits and financial characteristics described here are based on traditional astrological interpretations and are provided for entertainment and cultural interest only. Individual financial behaviors are influenced by many factors beyond astrological signs.'
+                  : 'यहां वर्णित राशि लक्षण और वित्तीय विशेषताएं पारंपरिक ज्योतिषीय व्याख्याओं पर आधारित हैं और केवल मनोरंजन और सांस्कृतिक रुचि के लिए प्रदान की जाती हैं। व्यक्तिगत वित्तीय व्यवहार ज्योतिषीय संकेतों के अलावा कई कारकों से प्रभावित होते हैं।'}
               </p>
               <p className="mt-2">
-                Always base your financial decisions on sound financial principles, thorough research, and professional advice when needed, rather than astrological guidance alone.
+                {language === 'en'
+                  ? 'Always base your financial decisions on sound financial principles, thorough research, and professional advice when needed, rather than astrological guidance alone.'
+                  : 'अपने वित्तीय निर्णयों को हमेशा ठोस वित्तीय सिद्धांतों, विस्तृत शोध और आवश्यकता पड़ने पर पेशेवर सलाह पर आधारित करें, न कि केवल ज्योतिषीय मार्गदर्शन पर।'}
               </p>
             </div>
           </div>
@@ -542,7 +695,9 @@ export const ZodiacTraits: React.FC = () => {
       </div>
       
       <div>
-        <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Related Astro-Finance Tools</h2>
+        <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">
+          {language === 'en' ? 'Related Astro-Finance Tools' : 'संबंधित वित्तीय ज्योतिष उपकरण'}
+        </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Link to="/astro-finance-insights/daily-horoscope" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
@@ -550,10 +705,18 @@ export const ZodiacTraits: React.FC = () => {
               <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
                 <Star className="h-5 w-5 text-purple-600" />
               </div>
-              <h3 className="text-lg font-semibold text-neutral-900">Daily Financial Horoscope</h3>
+              <h3 className="text-lg font-semibold text-neutral-900">
+                {language === 'en' ? 'Daily Financial Horoscope' : 'दैनिक वित्तीय राशिफल'}
+              </h3>
             </div>
-            <p className="text-sm text-neutral-600 mb-3">Get daily financial predictions and guidance based on your zodiac sign.</p>
-            <span className="text-sm text-purple-600 font-medium">View Horoscope</span>
+            <p className="text-sm text-neutral-600 mb-3">
+              {language === 'en'
+                ? 'Get daily financial predictions and guidance based on your zodiac sign.'
+                : 'अपनी राशि के आधार पर दैनिक वित्तीय भविष्यवाणियां और मार्गदर्शन प्राप्त करें।'}
+            </p>
+            <span className="text-sm text-purple-600 font-medium">
+              {language === 'en' ? 'View Horoscope' : 'राशिफल देखें'}
+            </span>
           </Link>
           
           <Link to="/astro-finance-insights/zodiac-compatibility" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
@@ -561,10 +724,18 @@ export const ZodiacTraits: React.FC = () => {
               <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
                 <Users className="h-5 w-5 text-indigo-600" />
               </div>
-              <h3 className="text-lg font-semibold text-neutral-900">Zodiac Compatibility</h3>
+              <h3 className="text-lg font-semibold text-neutral-900">
+                {language === 'en' ? 'Zodiac Compatibility' : 'राशि संगतता'}
+              </h3>
             </div>
-            <p className="text-sm text-neutral-600 mb-3">Check financial compatibility between different zodiac signs for business and investment partnerships.</p>
-            <span className="text-sm text-indigo-600 font-medium">Check Compatibility</span>
+            <p className="text-sm text-neutral-600 mb-3">
+              {language === 'en'
+                ? 'Check financial compatibility between different zodiac signs for business and investment partnerships.'
+                : 'व्यापार और निवेश साझेदारी के लिए विभिन्न राशियों के बीच वित्तीय संगतता की जांच करें।'}
+            </p>
+            <span className="text-sm text-indigo-600 font-medium">
+              {language === 'en' ? 'Check Compatibility' : 'संगतता जांचें'}
+            </span>
           </Link>
           
           <Link to="/astro-finance-insights/numerology" className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
@@ -572,10 +743,18 @@ export const ZodiacTraits: React.FC = () => {
               <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mr-3">
                 <Hash className="h-5 w-5 text-pink-600" />
               </div>
-              <h3 className="text-lg font-semibold text-neutral-900">Numerology Calculator</h3>
+              <h3 className="text-lg font-semibold text-neutral-900">
+                {language === 'en' ? 'Numerology Calculator' : 'अंकशास्त्र कैलकुलेटर'}
+              </h3>
             </div>
-            <p className="text-sm text-neutral-600 mb-3">Discover your life path number and its financial implications.</p>
-            <span className="text-sm text-pink-600 font-medium">Calculate Numbers</span>
+            <p className="text-sm text-neutral-600 mb-3">
+              {language === 'en'
+                ? 'Discover your life path number and its financial implications.'
+                : 'अपना जीवन पथ संख्या और इसके वित्तीय प्रभावों की खोज करें।'}
+            </p>
+            <span className="text-sm text-pink-600 font-medium">
+              {language === 'en' ? 'Calculate Numbers' : 'अंक गणना करें'}
+            </span>
           </Link>
         </div>
       </div>

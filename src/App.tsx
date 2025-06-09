@@ -22,6 +22,7 @@ import { ZodiacTraitsDetail } from './pages/ZodiacTraitsDetail';
 import { DailyHoroscope } from './pages/DailyHoroscope';
 import { DailyHoroscopeDetail } from './pages/DailyHoroscopeDetail';
 import { MuhuratFinder } from './pages/MuhuratFinder';
+import { DeploymentPage } from './pages/DeploymentPage';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap.xml" element={<SitemapXml />} />
+        <Route path="/deploy" element={<DeploymentPage />} />
         
         {/* Astro-Finance Routes */}
         <Route path="/astro-finance-insights" element={<AstroFinanceInsights />} />
