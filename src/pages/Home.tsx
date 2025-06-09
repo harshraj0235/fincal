@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
-import { Calculator, ArrowRight, ChevronRight, BookOpen, MapPin, Check, Star, TrendingUp, DollarSign, Shield, Zap, Award, BarChart4, PieChart, Calendar, Home } from 'lucide-react';
+import { Calculator, ArrowRight, ChevronRight, BookOpen, MapPin, Check, Star, TrendingUp, DollarSign, Shield, Zap, Award, BarChart4, PieChart, Calendar, Home as HomeIcon } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 export const Home: React.FC = () => {
@@ -691,7 +691,7 @@ export const Home: React.FC = () => {
             
             <div className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-semibold text-neutral-900 mb-6 pb-2 border-b border-neutral-200 flex items-center">
-                <Home className="h-5 w-5 text-primary-600 mr-2" />
+                <HomeIcon className="h-5 w-5 text-primary-600 mr-2" />
                 Housing & Property
               </h3>
               <ul className="space-y-4">
