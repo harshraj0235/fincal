@@ -80,7 +80,7 @@
   --neutral-800: #1e293b;
   --neutral-900: #0f172a;
   
-  --background: #f8fafc;
+  --background: #ffffff;
   --foreground: #0f172a;
 }
 
@@ -156,4 +156,99 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--neutral-400);
+}
+
+/* SEO-friendly heading styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--neutral-900);
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Improve text readability */
+p, li, td, th {
+  line-height: 1.6;
+}
+
+/* Improve link accessibility */
+a {
+  color: var(--primary-600);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-700);
+}
+
+a:focus {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 2px;
+}
+
+/* Improve image accessibility */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add focus styles for better accessibility */
+button:focus, 
+input:focus, 
+select:focus, 
+textarea:focus {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: var(--primary-600);
+  color: white;
+  z-index: 9999;
 }

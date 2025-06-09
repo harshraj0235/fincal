@@ -5,13 +5,28 @@ import { CategorySection } from '../components/CategorySection';
 import { calculatorCategories } from '../data/calculatorData';
 
 export const Home: React.FC = () => {
+  // Structured data for homepage
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FinCalc India",
+    "url": "https://moneycal.in/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://moneycal.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "description": "Comprehensive financial calculators for Indian users - EMI, SIP, PPF, Income Tax, Loan Comparison and more."
+  };
+
   return (
     <>
       <SEOHead 
-        title="Indian Financial Calculators | EMI, SIP, PPF, Income Tax & More"
-        description="Comprehensive financial calculators for Indian users - EMI, SIP, PPF, Income Tax, Loan Comparison and more. Make informed financial decisions with accurate calculations."
+        title="Indian Financial Calculators | EMI, SIP, PPF, Income Tax & More | FinCalc India"
+        description="Comprehensive financial calculators for Indian users - EMI, SIP, PPF, Income Tax, Loan Comparison and more. Make informed financial decisions with accurate calculations tailored for Indian financial products."
         canonicalUrl="/"
-        keywords="financial calculator, EMI calculator, SIP calculator, PPF calculator, income tax calculator, loan calculator, India"
+        keywords="financial calculator, EMI calculator, SIP calculator, PPF calculator, income tax calculator, loan calculator, India, financial planning, investment calculator"
+        structuredData={structuredData}
       />
       
       {/* Hero Section */}
@@ -33,8 +48,10 @@ export const Home: React.FC = () => {
             <div className="hidden md:block">
               <img 
                 src="https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="Financial planning" 
+                alt="Financial planning with calculators and charts"
                 className="rounded-lg shadow-lg"
+                width="600"
+                height="400"
               />
             </div>
           </div>
@@ -109,6 +126,47 @@ export const Home: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Government Schemes Section */}
+      <section className="py-16 bg-success-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-success-900 mb-8 text-center">
+            Government Scheme Calculators
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <Link to="/calculators/sukanya-samriddhi-calculator" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">Sukanya Samriddhi</h3>
+              <p className="text-neutral-600 mb-4">Calculate returns on investments for your girl child's future</p>
+              <span className="text-success-600 font-medium">Calculate Now →</span>
+            </Link>
+            
+            <Link to="/calculators/ppf-calculator" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">PPF Calculator</h3>
+              <p className="text-neutral-600 mb-4">Plan your Public Provident Fund investments and returns</p>
+              <span className="text-success-600 font-medium">Calculate Now →</span>
+            </Link>
+            
+            <Link to="/calculators/nps-calculator" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">NPS Calculator</h3>
+              <p className="text-neutral-600 mb-4">Estimate your National Pension System returns and benefits</p>
+              <span className="text-success-600 font-medium">Calculate Now →</span>
+            </Link>
+            
+            <Link to="/calculators/post-office-schemes-calculator" className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">Post Office Schemes</h3>
+              <p className="text-neutral-600 mb-4">Calculate returns on various post office savings schemes</p>
+              <span className="text-success-600 font-medium">Calculate Now →</span>
+            </Link>
+          </div>
+          
+          <div className="text-center">
+            <Link to="/blog/category/government-schemes" className="btn bg-success-600 text-white hover:bg-success-700">
+              Explore Government Scheme Guides
+            </Link>
           </div>
         </div>
       </section>

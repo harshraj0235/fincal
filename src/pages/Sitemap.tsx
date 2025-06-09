@@ -3,12 +3,47 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calculator, FileText } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { blogPosts } from '../data/blogData';
+import { SEOHead } from '../components/SEOHead';
 
 export const Sitemap: React.FC = () => {
   const navigate = useNavigate();
   
+  // Structured data for sitemap page
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Sitemap | FinCalc India",
+    "description": "A complete overview of all pages and resources available on FinCalc India",
+    "url": "https://moneycal.in/sitemap",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://moneycal.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sitemap",
+          "item": "https://moneycal.in/sitemap"
+        }
+      ]
+    }
+  };
+  
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <SEOHead 
+        title="Sitemap | FinCalc India | Financial Calculators"
+        description="A complete overview of all pages and resources available on FinCalc India. Browse our financial calculators, blog posts, and tools."
+        canonicalUrl="/sitemap"
+        keywords="sitemap, financial calculators, finance blog, financial tools, FinCalc India"
+        structuredData={structuredData}
+      />
+      
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 
@@ -94,13 +129,20 @@ export const Sitemap: React.FC = () => {
                 Write for Us
               </Link>
             </li>
-            {blogPosts.map(post => (
+            {blogPosts.slice(0, 5).map(post => (
               <li key={post.id}>
                 <Link to={`/blog/${post.slug}`} className="text-neutral-700 hover:text-[--primary-600] transition-colors">
                   {post.title}
                 </Link>
               </li>
             ))}
+            {blogPosts.length > 5 && (
+              <li>
+                <Link to="/blog" className="text-[--primary-600] hover:text-[--primary-800] font-medium">
+                  View all {blogPosts.length} blog posts
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
         
@@ -161,13 +203,20 @@ export const Sitemap: React.FC = () => {
                 {category.name}
               </h3>
               <ul className="space-y-2">
-                {category.calculators.map(calculator => (
+                {category.calculators.slice(0, 8).map(calculator => (
                   <li key={calculator.id}>
                     <Link to={`/calculators/${calculator.id}`} className="text-neutral-700 hover:text-[--primary-600] transition-colors">
                       {calculator.name}
                     </Link>
                   </li>
                 ))}
+                {category.calculators.length > 8 && (
+                  <li>
+                    <Link to={`/#${category.id}`} className="text-[--primary-600] hover:text-[--primary-800] font-medium">
+                      View all {category.calculators.length} calculators
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           ))}
