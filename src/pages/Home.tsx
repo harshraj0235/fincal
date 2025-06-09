@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Calculator, ArrowRight, Search, TrendingUp, DollarSign, PieChart, Building, Shield } from 'lucide-react';
+import { Menu, X, Calculator, ArrowRight, Search, TrendingUp, DollarSign, PieChart, Building, Shield } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
@@ -202,12 +202,12 @@ export const Home: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-lg transition-shadow">
-              <div className="h-48 bg-primary-600 relative overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Building className="h-20 w-20 text-white opacity-20" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-primary-900 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-blue-900 to-transparent">
                   <h3 className="text-xl font-semibold text-white">Banking Tools</h3>
                 </div>
               </div>
@@ -237,17 +237,17 @@ export const Home: React.FC = () => {
                 </ul>
                 <Link to="/calculators/banking-knowledge" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
                   Explore All Banking Tools
-                  <ArrowRight className="h-4 w-4 ml-1" />
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
             
-            <div className="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-lg transition-shadow">
-              <div className="h-48 bg-secondary-600 relative overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-teal-500 to-teal-700 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <DollarSign className="h-20 w-20 text-white opacity-20" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-secondary-900 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-teal-900 to-transparent">
                   <h3 className="text-xl font-semibold text-white">Financial Navigator</h3>
                 </div>
               </div>
@@ -277,20 +277,20 @@ export const Home: React.FC = () => {
                 </ul>
                 <a href="/financial-navigator.html" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
                   Explore Financial Navigator
-                  <ArrowRight className="h-4 w-4 ml-1" />
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
             
-            <div className="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-lg transition-shadow">
-              <div className="h-48 bg-accent-600 relative overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-700 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white opacity-20">
                     <circle cx="12" cy="12" r="10"></circle>
                     <path d="M12 6v6l4 2"></path>
                   </svg>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-accent-900 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-purple-900 to-transparent">
                   <h3 className="text-xl font-semibold text-white">Astro-Finance Insights</h3>
                 </div>
               </div>
@@ -320,8 +320,56 @@ export const Home: React.FC = () => {
                 </ul>
                 <a href="/astro-finance-insights.html" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
                   Explore Astro-Finance Insights
-                  <ArrowRight className="h-4 w-4 ml-1" />
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </a>
+              </div>
+            </div>
+            
+            {/* Loan App Directory Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100 md:col-span-3">
+              <div className="h-48 bg-gradient-to-br from-green-500 to-green-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white opacity-20">
+                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                    <line x1="2" x2="22" y1="10" y2="10"></line>
+                  </svg>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-green-900 to-transparent">
+                  <h3 className="text-2xl font-semibold text-white">Indian Loan App Directory</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div>
+                    <p className="text-neutral-600 mb-4">
+                      Compare trusted loan apps in India, understand eligibility criteria, and learn how to apply for personal, student, and business loans through mobile applications.
+                    </p>
+                    <ul className="space-y-2 mb-4 md:mb-0">
+                      <li>
+                        <a href="/loan-app-directory.html#personal-loans" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                          <ArrowRight className="h-3 w-3 mr-1" />
+                          Personal Loan Apps
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/loan-app-directory.html#business-loans" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                          <ArrowRight className="h-3 w-3 mr-1" />
+                          Business Loan Apps
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/loan-app-directory.html#student-loans" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                          <ArrowRight className="h-3 w-3 mr-1" />
+                          Student Loan Apps
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="/loan-app-directory.html" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-flex items-center whitespace-nowrap">
+                    Explore Loan Apps
+                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -609,6 +657,101 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Loan App Directory Promo Section */}
+      <section className="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="hidden md:block">
+              <div className="relative">
+                <div className="absolute -top-16 -left-16 w-32 h-32 bg-green-400 rounded-full opacity-20"></div>
+                <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-green-300 rounded-full opacity-20"></div>
+                <div className="bg-white p-8 rounded-2xl shadow-xl transform rotate-2 z-10">
+                  <div className="transform -rotate-2">
+                    <div className="flex justify-between items-center mb-6">
+                      <h3 className="text-xl font-bold text-green-800">Loan App Comparison</h3>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-600">
+                        <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                        <line x1="2" x2="22" y1="10" y2="10"></line>
+                      </svg>
+                    </div>
+                    <div className="space-y-3 mb-4">
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium">Bajaj Finserv</span>
+                        <span className="text-green-600">★★★★★</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium">HDFC Bank</span>
+                        <span className="text-green-600">★★★★★</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium">mPokket</span>
+                        <span className="text-green-600">★★★★☆</span>
+                      </div>
+                    </div>
+                    <div className="text-sm text-green-700 italic">
+                      Compare 10+ trusted loan apps in India
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-6 text-white">Indian Loan App Directory</h2>
+              <p className="text-lg mb-6 text-white">
+                Find and compare the best loan apps in India. Get detailed information on interest rates, eligibility criteria, and application processes for various types of loans.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center">
+                  <div className="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Personal Loan Apps</h3>
+                    <p className="text-sm text-white">Compare apps offering personal loans with quick approval</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Student Loan Apps</h3>
+                    <p className="text-sm text-white">Find apps specializing in education financing</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                      <path d="M16 7h.01"></path>
+                      <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path>
+                      <path d="m20 7 2 .5-2 .5"></path>
+                      <path d="M10 18v3"></path>
+                      <path d="M14 17.75V21"></path>
+                      <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-white">Business Loan Apps</h3>
+                    <p className="text-sm text-white">Discover apps for entrepreneurs and small businesses</p>
+                  </div>
+                </div>
+              </div>
+              <a 
+                href="/loan-app-directory.html" 
+                className="btn bg-white text-green-700 hover:bg-green-50"
+              >
+                Explore Loan App Directory
+              </a>
             </div>
           </div>
         </div>
