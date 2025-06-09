@@ -29,12 +29,12 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-                Make Smarter Financial Decisions with Precision
-              </h1>
-              <p className="text-xl mb-8 text-white">
-                Comprehensive financial calculators tailored for Indian users. Plan loans, investments, taxes, and more with confidence.
-              </p>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-green-800">
+  Make Smarter Financial Decisions with Precision
+</h1>
+<p className="text-xl mb-8 text-green-800">
+  Comprehensive financial calculators tailored for Indian users. Plan loans, investments, taxes, and more with confidence.
+</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/calculators/emi-calculator" className="btn bg-white text-primary-700 hover:bg-primary-50">
                   EMI Calculator
