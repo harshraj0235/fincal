@@ -1,5 +1,23 @@
-// Update the calculatorData.ts file to include the new calculators
-// This is a partial update showing only the new category and calculators
+// Function to get all calculators in a flat array
+export const getAllCalculators = (): Array<{id: string; name: string; category: string; keywords: string[]}> => {
+  return calculatorCategories.flatMap(category => 
+    category.calculators.map(calculator => ({
+      id: calculator.id,
+      name: calculator.name,
+      category: category.name,
+      keywords: calculator.keywords
+    }))
+  );
+};
+
+// Function to get a calculator by ID
+export const getCalculatorById = (id: string): Calculator | undefined => {
+  for (const category of calculatorCategories) {
+    const calculator = category.calculators.find(calc => calc.id === id);
+    if (calculator) return calculator;
+  }
+  return undefined;
+};
 
 export interface CalculatorFAQ {
   question: string;
@@ -25,6 +43,534 @@ export interface CalculatorCategory {
 }
 
 export const calculatorCategories: CalculatorCategory[] = [
+  {
+    id: 'loan-calculators',
+    name: 'Loan Calculators',
+    description: 'Calculate EMIs, compare loans, and plan your borrowing with our comprehensive loan calculators',
+    calculators: [
+      {
+        id: 'emi-calculator',
+        name: 'EMI Calculator',
+        description: 'Calculate your loan EMI, total interest, and payment schedule',
+        keywords: ['emi', 'loan', 'interest', 'payment', 'monthly installment'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['loan-comparison-calculator', 'home-loan-calculator', 'personal-loan-calculator']
+      },
+      {
+        id: 'home-loan-calculator',
+        name: 'Home Loan Calculator',
+        description: 'Calculate EMI, total interest, and amortization for home loans',
+        keywords: ['home loan', 'mortgage', 'property loan', 'housing loan', 'real estate'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'loan-comparison-calculator', 'loan-prepayment-calculator']
+      },
+      {
+        id: 'personal-loan-calculator',
+        name: 'Personal Loan Calculator',
+        description: 'Calculate EMI and total payments for personal loans',
+        keywords: ['personal loan', 'unsecured loan', 'consumer loan'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'loan-comparison-calculator', 'loan-affordability-calculator']
+      },
+      {
+        id: 'car-loan-calculator',
+        name: 'Car Loan Calculator',
+        description: 'Calculate EMI and total payments for auto loans',
+        keywords: ['car loan', 'auto loan', 'vehicle financing'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'loan-comparison-calculator']
+      },
+      {
+        id: 'business-loan-calculator',
+        name: 'Business Loan Calculator',
+        description: 'Calculate EMI and total payments for business loans',
+        keywords: ['business loan', 'commercial loan', 'enterprise financing'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'loan-comparison-calculator']
+      },
+      {
+        id: 'loan-comparison-calculator',
+        name: 'Loan Comparison Calculator',
+        description: 'Compare different loan offers side by side',
+        keywords: ['loan comparison', 'compare loans', 'best loan', 'loan options'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'home-loan-calculator', 'personal-loan-calculator']
+      },
+      {
+        id: 'loan-prepayment-calculator',
+        name: 'Loan Prepayment Calculator',
+        description: 'Calculate savings from loan prepayment',
+        keywords: ['loan prepayment', 'part payment', 'foreclosure', 'early repayment'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'home-loan-calculator']
+      },
+      {
+        id: 'loan-refinance-calculator',
+        name: 'Loan Refinance Calculator',
+        description: 'Calculate savings from refinancing your loan',
+        keywords: ['loan refinance', 'balance transfer', 'loan switch', 'refinancing'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'loan-comparison-calculator']
+      },
+      {
+        id: 'loan-affordability-calculator',
+        name: 'Loan Affordability Calculator',
+        description: 'Calculate how much loan you can afford based on your income',
+        keywords: ['loan affordability', 'borrowing capacity', 'loan eligibility'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'home-loan-calculator']
+      },
+      {
+        id: 'loan-tenure-converter',
+        name: 'Loan Tenure Converter',
+        description: 'Convert loan tenure between years and months',
+        keywords: ['loan tenure', 'loan term', 'years to months', 'months to years'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'loan-comparison-calculator']
+      },
+      {
+        id: 'credit-card-emi-calculator',
+        name: 'Credit Card EMI Calculator',
+        description: 'Calculate EMI for credit card payments',
+        keywords: ['credit card emi', 'card payment', 'emi conversion'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['emi-calculator', 'personal-loan-calculator']
+      }
+    ]
+  },
+  {
+    id: 'investment-calculators',
+    name: 'Investment Calculators',
+    description: 'Plan your investments and calculate returns with our comprehensive investment calculators',
+    calculators: [
+      {
+        id: 'sip-calculator',
+        name: 'SIP Calculator',
+        description: 'Calculate returns on your Systematic Investment Plan',
+        keywords: ['sip', 'mutual fund', 'investment', 'returns', 'wealth creation'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['step-up-sip-calculator', 'mutual-fund-returns-calculator', 'lumpsum-calculator']
+      },
+      {
+        id: 'mutual-fund-returns-calculator',
+        name: 'Mutual Fund Returns Calculator',
+        description: 'Calculate returns on your mutual fund investments',
+        keywords: ['mutual fund', 'returns', 'investment', 'nav', 'cagr'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['sip-calculator', 'xirr-tracker', 'mutual-fund-cost-calculator']
+      },
+      {
+        id: 'mutual-fund-cost-calculator',
+        name: 'Mutual Fund Cost Calculator',
+        description: 'Calculate the impact of expense ratio on your mutual fund returns',
+        keywords: ['expense ratio', 'mutual fund', 'cost', 'direct plan', 'regular plan'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['mutual-fund-returns-calculator', 'sip-calculator']
+      },
+      {
+        id: 'ppf-calculator',
+        name: 'PPF Calculator',
+        description: 'Calculate returns on your Public Provident Fund investments',
+        keywords: ['ppf', 'public provident fund', 'tax saving', 'government scheme'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['sukanya-samriddhi-calculator', 'nps-calculator', 'tax-saving-investment-calculator']
+      },
+      {
+        id: 'sukanya-samriddhi-calculator',
+        name: 'Sukanya Samriddhi Calculator',
+        description: 'Calculate returns on Sukanya Samriddhi Yojana investments',
+        keywords: ['sukanya samriddhi', 'ssy', 'girl child', 'government scheme'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['ppf-calculator', 'post-office-calculator', 'tax-saving-investment-calculator']
+      },
+      {
+        id: 'nps-calculator',
+        name: 'NPS Calculator',
+        description: 'Calculate returns on National Pension System investments',
+        keywords: ['nps', 'national pension system', 'retirement', 'pension'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['nps-tier2-calculator', 'retirement-calculator', 'pension-calculator']
+      },
+      {
+        id: 'nps-tier2-calculator',
+        name: 'NPS Tier 2 Calculator',
+        description: 'Calculate returns on NPS Tier 2 account investments',
+        keywords: ['nps tier 2', 'national pension system', 'flexible withdrawal'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['nps-calculator', 'mutual-fund-returns-calculator']
+      },
+      {
+        id: 'post-office-calculator',
+        name: 'Post Office Schemes Calculator',
+        description: 'Calculate returns on various post office savings schemes',
+        keywords: ['post office', 'kvp', 'nsc', 'mis', 'scss', 'td'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['ppf-calculator', 'sukanya-samriddhi-calculator']
+      },
+      {
+        id: 'gold-investment-calculator',
+        name: 'Gold Investment Calculator',
+        description: 'Calculate returns on gold investments',
+        keywords: ['gold', 'investment', 'returns', 'precious metal'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['gold-etf-vs-physical-calculator', 'sip-calculator']
+      },
+      {
+        id: 'compound-interest-calculator',
+        name: 'Compound Interest Calculator',
+        description: 'Calculate the power of compound interest on your investments',
+        keywords: ['compound interest', 'investment growth', 'compounding'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['simple-interest-calculator', 'sip-calculator']
+      },
+      {
+        id: 'simple-interest-calculator',
+        name: 'Simple Interest Calculator',
+        description: 'Calculate simple interest on your investments',
+        keywords: ['simple interest', 'investment', 'returns'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['compound-interest-calculator', 'fd-calculator']
+      },
+      {
+        id: 'future-value-calculator',
+        name: 'Future Value Calculator',
+        description: 'Calculate the future value of your investments',
+        keywords: ['future value', 'investment growth', 'time value of money'],
+        category: 'Investment Calculators',
+        relatedCalculators: ['compound-interest-calculator', 'sip-calculator']
+      }
+    ]
+  },
+  {
+    id: 'tax-calculators',
+    name: 'Tax Calculators',
+    description: 'Calculate your tax liability and plan your taxes with our comprehensive tax calculators',
+    calculators: [
+      {
+        id: 'income-tax-calculator',
+        name: 'Income Tax Calculator',
+        description: 'Calculate your income tax liability under old and new tax regimes',
+        keywords: ['income tax', 'tax calculation', 'tax liability', 'tax planning'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['income-tax-regime-comparison-calculator', 'tax-saving-investment-calculator', 'advance-tax-calculator']
+      },
+      {
+        id: 'income-tax-regime-comparison-calculator',
+        name: 'Income Tax Regime Comparison Calculator',
+        description: 'Compare tax liability under old and new tax regimes',
+        keywords: ['income tax', 'old regime', 'new regime', 'tax comparison', 'tax planning'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['income-tax-calculator', 'tax-saving-investment-calculator', 'section-80c-calculator']
+      },
+      {
+        id: 'advance-tax-calculator',
+        name: 'Advance Tax Calculator',
+        description: 'Calculate your advance tax liability and payment schedule',
+        keywords: ['advance tax', 'tax installment', 'quarterly tax', 'tax planning'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['income-tax-calculator', 'tds-calculator']
+      },
+      {
+        id: 'gst-calculator',
+        name: 'GST Calculator',
+        description: 'Calculate GST inclusive and exclusive amounts with breakdown',
+        keywords: ['gst', 'goods and services tax', 'tax calculation', 'input tax credit'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['gst-seller-calculator', 'income-tax-calculator']
+      },
+      {
+        id: 'gst-seller-calculator',
+        name: 'GST Calculator for Sellers',
+        description: 'Calculate GST for business transactions with invoice generation',
+        keywords: ['gst', 'seller', 'invoice', 'business', 'tax compliance'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['gst-calculator', 'profit-margin-calculator', 'break-even-calculator']
+      },
+      {
+        id: 'tds-calculator',
+        name: 'TDS Calculator',
+        description: 'Calculate TDS (Tax Deducted at Source) for various income types',
+        keywords: ['tds', 'tax deducted at source', 'withholding tax'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['income-tax-calculator', 'advance-tax-calculator']
+      },
+      {
+        id: 'capital-gains-tax-calculator',
+        name: 'Capital Gains Tax Calculator',
+        description: 'Calculate tax on your capital gains',
+        keywords: ['capital gains', 'ltcg', 'stcg', 'tax on investments'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['capital-gains-tax-advanced-calculator', 'income-tax-calculator']
+      },
+      {
+        id: 'capital-gains-tax-advanced-calculator',
+        name: 'Capital Gains Tax Advanced Calculator',
+        description: 'Calculate tax on capital gains with indexation benefits and asset-specific rules',
+        keywords: ['capital gains', 'ltcg', 'stcg', 'indexation', 'tax planning'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['capital-gains-tax-calculator', 'income-tax-calculator', 'gold-etf-vs-physical-calculator']
+      },
+      {
+        id: 'tax-saving-investment-calculator',
+        name: 'Tax Saving Investment Calculator',
+        description: 'Calculate tax savings from various tax-saving investments',
+        keywords: ['tax saving', 'section 80c', 'section 80d', 'tax deduction'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['section-80c-calculator', 'section-80d-calculator', 'income-tax-calculator']
+      },
+      {
+        id: 'section-80c-calculator',
+        name: 'Section 80C Calculator',
+        description: 'Calculate tax deductions under Section 80C',
+        keywords: ['section 80c', 'tax deduction', 'tax saving', 'ppf', 'elss'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['tax-saving-investment-calculator', 'income-tax-calculator']
+      },
+      {
+        id: 'section-80d-calculator',
+        name: 'Section 80D Calculator',
+        description: 'Calculate tax deductions under Section 80D for health insurance',
+        keywords: ['section 80d', 'health insurance', 'tax deduction', 'medical insurance'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['tax-saving-investment-calculator', 'income-tax-calculator']
+      },
+      {
+        id: 'hra-exemption-calculator',
+        name: 'HRA Exemption Calculator',
+        description: 'Calculate HRA exemption for income tax',
+        keywords: ['hra', 'house rent allowance', 'tax exemption', 'rent'],
+        category: 'Tax Calculators',
+        relatedCalculators: ['income-tax-calculator', 'tax-saving-investment-calculator']
+      }
+    ]
+  },
+  {
+    id: 'retirement-calculators',
+    name: 'Retirement Calculators',
+    description: 'Plan your retirement with our comprehensive retirement calculators',
+    calculators: [
+      {
+        id: 'retirement-calculator',
+        name: 'Retirement Calculator',
+        description: 'Calculate how much you need to save for retirement',
+        keywords: ['retirement', 'retirement planning', 'retirement corpus', 'retirement savings'],
+        category: 'Retirement Calculators',
+        relatedCalculators: ['pension-calculator', 'nps-calculator', 'inflation-adjusted-sip-calculator']
+      },
+      {
+        id: 'pension-calculator',
+        name: 'Pension Calculator',
+        description: 'Calculate your pension amount and corpus required',
+        keywords: ['pension', 'retirement income', 'annuity', 'monthly pension'],
+        category: 'Retirement Calculators',
+        relatedCalculators: ['retirement-calculator', 'nps-calculator']
+      },
+      {
+        id: 'inflation-adjusted-sip-calculator',
+        name: 'Inflation-Adjusted SIP & Retirement Planner',
+        description: 'Plan your retirement with inflation-adjusted SIP investments',
+        keywords: ['inflation', 'retirement', 'corpus', 'sip', 'real returns'],
+        category: 'Retirement Calculators',
+        relatedCalculators: ['retirement-calculator', 'step-up-sip-calculator', 'sip-calculator']
+      },
+      {
+        id: 'human-life-value-calculator',
+        name: 'Human Life Value Calculator',
+        description: 'Calculate your human life value for insurance planning',
+        keywords: ['human life value', 'hlv', 'insurance', 'life insurance', 'financial protection'],
+        category: 'Retirement Calculators',
+        relatedCalculators: ['term-insurance-calculator', 'retirement-calculator']
+      }
+    ]
+  },
+  {
+    id: 'business-calculators',
+    name: 'Business Calculators',
+    description: 'Calculate business metrics and financial ratios with our comprehensive business calculators',
+    calculators: [
+      {
+        id: 'break-even-calculator',
+        name: 'Break-Even Calculator',
+        description: 'Calculate your business break-even point',
+        keywords: ['break-even', 'business', 'profit', 'loss', 'fixed costs', 'variable costs'],
+        category: 'Business Calculators',
+        relatedCalculators: ['profit-margin-calculator', 'inventory-turnover-calculator']
+      },
+      {
+        id: 'profit-margin-calculator',
+        name: 'Profit Margin Calculator',
+        description: 'Calculate gross, operating, and net profit margins',
+        keywords: ['profit margin', 'gross margin', 'operating margin', 'net margin', 'profitability'],
+        category: 'Business Calculators',
+        relatedCalculators: ['break-even-calculator', 'inventory-turnover-calculator']
+      },
+      {
+        id: 'inventory-turnover-calculator',
+        name: 'Inventory Turnover Calculator',
+        description: 'Calculate inventory turnover ratio and days inventory outstanding',
+        keywords: ['inventory turnover', 'stock turnover', 'inventory management', 'days inventory outstanding'],
+        category: 'Business Calculators',
+        relatedCalculators: ['break-even-calculator', 'profit-margin-calculator']
+      },
+      {
+        id: 'debt-equity-calculator',
+        name: 'Debt-Equity Calculator',
+        description: 'Calculate debt-equity ratio and financial leverage',
+        keywords: ['debt-equity', 'financial leverage', 'capital structure', 'financial ratio'],
+        category: 'Business Calculators',
+        relatedCalculators: ['break-even-calculator', 'profit-margin-calculator']
+      }
+    ]
+  },
+  {
+    id: 'property-calculators',
+    name: 'Property Calculators',
+    description: 'Calculate property-related costs and returns with our comprehensive property calculators',
+    calculators: [
+      {
+        id: 'rent-vs-buy-calculator',
+        name: 'Rent vs Buy Calculator',
+        description: 'Compare the costs of renting versus buying a property',
+        keywords: ['rent vs buy', 'property', 'real estate', 'housing', 'home ownership'],
+        category: 'Property Calculators',
+        relatedCalculators: ['rent-vs-buy-advanced-calculator', 'home-loan-calculator', 'property-investment-calculator']
+      },
+      {
+        id: 'rent-vs-buy-advanced-calculator',
+        name: 'Rent vs Buy Advanced Calculator',
+        description: 'Comprehensive analysis of renting versus buying property with HRA benefits',
+        keywords: ['rent vs buy', 'hra', 'property', 'real estate', 'tax benefits'],
+        category: 'Property Calculators',
+        relatedCalculators: ['rent-vs-buy-calculator', 'hra-exemption-calculator', 'home-loan-calculator']
+      },
+      {
+        id: 'property-investment-calculator',
+        name: 'Property Investment Calculator',
+        description: 'Calculate returns on property investments',
+        keywords: ['property investment', 'real estate investment', 'rental yield', 'property returns'],
+        category: 'Property Calculators',
+        relatedCalculators: ['rent-vs-buy-calculator', 'home-loan-calculator']
+      },
+      {
+        id: 'stamp-duty-calculator',
+        name: 'Stamp Duty Calculator',
+        description: 'Calculate stamp duty and registration charges for property',
+        keywords: ['stamp duty', 'registration charges', 'property registration', 'property transfer'],
+        category: 'Property Calculators',
+        relatedCalculators: ['property-registration-calculator', 'home-loan-calculator']
+      },
+      {
+        id: 'property-registration-calculator',
+        name: 'Property Registration Calculator',
+        description: 'Calculate all costs involved in property registration',
+        keywords: ['property registration', 'registration charges', 'legal fees', 'property transfer'],
+        category: 'Property Calculators',
+        relatedCalculators: ['stamp-duty-calculator', 'home-loan-calculator']
+      }
+    ]
+  },
+  {
+    id: 'insurance-calculators',
+    name: 'Insurance Calculators',
+    description: 'Calculate insurance premiums and coverage with our comprehensive insurance calculators',
+    calculators: [
+      {
+        id: 'term-insurance-calculator',
+        name: 'Term Insurance Calculator',
+        description: 'Calculate term insurance premium and coverage',
+        keywords: ['term insurance', 'life insurance', 'premium', 'coverage', 'sum assured'],
+        category: 'Insurance Calculators',
+        relatedCalculators: ['human-life-value-calculator', 'health-insurance-calculator']
+      },
+      {
+        id: 'health-insurance-calculator',
+        name: 'Health Insurance Calculator',
+        description: 'Calculate health insurance premium and coverage',
+        keywords: ['health insurance', 'medical insurance', 'premium', 'coverage', 'sum insured'],
+        category: 'Insurance Calculators',
+        relatedCalculators: ['term-insurance-calculator', 'section-80d-calculator']
+      },
+      {
+        id: 'life-insurance-calculator',
+        name: 'Life Insurance Calculator',
+        description: 'Calculate life insurance premium and returns',
+        keywords: ['life insurance', 'insurance premium', 'insurance returns', 'endowment', 'ulip'],
+        category: 'Insurance Calculators',
+        relatedCalculators: ['term-insurance-calculator', 'human-life-value-calculator']
+      }
+    ]
+  },
+  {
+    id: 'banking-calculators',
+    name: 'Banking & Finance Tools',
+    description: 'Essential banking tools and calculators for everyday financial needs',
+    calculators: [
+      {
+        id: 'bank-ifsc-finder',
+        name: 'Bank IFSC/MICR Finder',
+        description: 'Find IFSC and MICR codes for any bank branch in India',
+        keywords: ['ifsc', 'micr', 'bank code', 'branch code', 'bank transfer'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['atm-locator', 'bank-holiday-calendar']
+      },
+      {
+        id: 'atm-locator',
+        name: 'ATM Locator',
+        description: 'Find ATMs near you with real-time information on cash availability',
+        keywords: ['atm', 'cash withdrawal', 'bank', 'cash availability', 'atm finder'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['bank-ifsc-finder', 'bank-holiday-calendar']
+      },
+      {
+        id: 'bank-holiday-calendar',
+        name: 'Bank Holiday Calendar',
+        description: 'Check bank holidays across all states in India',
+        keywords: ['bank holiday', 'bank closed', 'holiday calendar', 'banking hours'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['bank-ifsc-finder', 'atm-locator']
+      },
+      {
+        id: 'interest-rates-comparison',
+        name: 'Interest Rates Comparison',
+        description: 'Compare interest rates across banks for various financial products',
+        keywords: ['interest rates', 'bank rates', 'fd rates', 'loan rates', 'savings rates'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['fd-calculator', 'savings-account-calculator']
+      },
+      {
+        id: 'savings-account-calculator',
+        name: 'Savings Account Calculator',
+        description: 'Calculate interest earned on your savings account',
+        keywords: ['savings account', 'interest calculation', 'bank interest', 'savings interest'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['fd-calculator', 'interest-rates-comparison']
+      },
+      {
+        id: 'currency-converter',
+        name: 'Currency Converter',
+        description: 'Convert between Indian Rupee and other major currencies',
+        keywords: ['currency converter', 'exchange rate', 'forex', 'foreign exchange'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['interest-rates-comparison', 'forex-margin-calculator']
+      },
+      {
+        id: 'upi-failure-troubleshooter',
+        name: 'UPI Failure Troubleshooter',
+        description: 'Diagnose and fix UPI transaction failures',
+        keywords: ['upi', 'upi failure', 'payment failure', 'transaction failure', 'troubleshoot'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['bank-ifsc-finder', 'atm-locator']
+      },
+      {
+        id: 'gratuity-calculator',
+        name: 'Gratuity Calculator',
+        description: 'Calculate gratuity amount based on salary and service period',
+        keywords: ['gratuity', 'employee benefit', 'retirement benefit', 'service reward'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['retirement-calculator', 'pension-calculator']
+      }
+    ]
+  },
   {
     id: 'fintech-payments',
     name: 'FinTech & Payments',
@@ -179,7 +725,7 @@ export const calculatorCategories: CalculatorCategory[] = [
         description: 'Compare and find the best fixed income investment options across banks and financial institutions',
         keywords: ['fixed income', 'debt', 'bonds', 'fd', 'stable returns'],
         category: 'Investments & Wealth Management',
-        relatedCalculators: ['fd-calculator', 'post-office-schemes-calculator', 'ppf-calculator']
+        relatedCalculators: ['fd-calculator', 'post-office-calculator', 'ppf-calculator']
       },
       {
         id: 'crypto-tax-estimator',
@@ -196,29 +742,102 @@ export const calculatorCategories: CalculatorCategory[] = [
         keywords: ['nri', 'us stocks', 'international investing', 'foreign investment', 'portfolio tracking'],
         category: 'Investments & Wealth Management',
         relatedCalculators: ['capital-gains-tax-advanced-calculator', 'currency-converter', 'asset-allocation-planner']
+      },
+      {
+        id: 'brokerage-calculator',
+        name: 'Brokerage Calculator',
+        description: 'Calculate brokerage charges, taxes, and other trading costs',
+        keywords: ['brokerage', 'trading', 'stock market', 'transaction charges', 'stt'],
+        category: 'Investments & Wealth Management',
+        relatedCalculators: ['capital-gains-tax-calculator', 'margin-trading-calculator']
+      },
+      {
+        id: 'margin-trading-calculator',
+        name: 'Margin Trading Calculator',
+        description: 'Calculate margin requirements and potential returns for leveraged trading',
+        keywords: ['margin trading', 'leverage', 'trading', 'stock market', 'margin requirement'],
+        category: 'Investments & Wealth Management',
+        relatedCalculators: ['brokerage-calculator', 'forex-margin-calculator']
+      },
+      {
+        id: 'commodity-margin-calculator',
+        name: 'Commodity Margin Calculator',
+        description: 'Calculate margin requirements for commodity trading',
+        keywords: ['commodity', 'margin', 'trading', 'mcx', 'futures'],
+        category: 'Investments & Wealth Management',
+        relatedCalculators: ['margin-trading-calculator', 'brokerage-calculator']
+      },
+      {
+        id: 'forex-margin-calculator',
+        name: 'Forex Margin Calculator',
+        description: 'Calculate margin requirements for forex trading',
+        keywords: ['forex', 'margin', 'trading', 'currency', 'leverage'],
+        category: 'Investments & Wealth Management',
+        relatedCalculators: ['margin-trading-calculator', 'forex-pip-calculator']
+      },
+      {
+        id: 'forex-pip-calculator',
+        name: 'Forex Pip Calculator',
+        description: 'Calculate the value of a pip in forex trading',
+        keywords: ['forex', 'pip', 'trading', 'currency', 'exchange rate'],
+        category: 'Investments & Wealth Management',
+        relatedCalculators: ['forex-margin-calculator', 'currency-converter']
       }
     ]
   },
-  // Other existing categories...
-];
-
-// Function to get all calculators in a flat array
-export const getAllCalculators = (): Array<{id: string; name: string; category: string; keywords: string[]}> => {
-  return calculatorCategories.flatMap(category => 
-    category.calculators.map(calculator => ({
-      id: calculator.id,
-      name: calculator.name,
-      category: category.name,
-      keywords: calculator.keywords
-    }))
-  );
-};
-
-// Function to get a calculator by ID
-export const getCalculatorById = (id: string): Calculator | undefined => {
-  for (const category of calculatorCategories) {
-    const calculator = category.calculators.find(calc => calc.id === id);
-    if (calculator) return calculator;
+  {
+    id: 'personal-finance',
+    name: 'Personal Finance',
+    description: 'Manage your personal finances with our comprehensive calculators',
+    calculators: [
+      {
+        id: 'budget-calculator',
+        name: 'Budget Calculator',
+        description: 'Create a personal budget and track your expenses',
+        keywords: ['budget', 'personal finance', 'expense tracking', 'income management'],
+        category: 'Personal Finance',
+        relatedCalculators: ['emergency-fund-calculator', 'financial-goal-calculator']
+      },
+      {
+        id: 'emergency-fund-calculator',
+        name: 'Emergency Fund Calculator',
+        description: 'Calculate how much emergency fund you need',
+        keywords: ['emergency fund', 'financial safety', 'rainy day fund', 'financial security'],
+        category: 'Personal Finance',
+        relatedCalculators: ['budget-calculator', 'financial-goal-calculator']
+      },
+      {
+        id: 'financial-goal-calculator',
+        name: 'Financial Goal Calculator',
+        description: 'Calculate how much you need to save for your financial goals',
+        keywords: ['financial goal', 'goal planning', 'savings target', 'financial planning'],
+        category: 'Personal Finance',
+        relatedCalculators: ['budget-calculator', 'sip-calculator']
+      },
+      {
+        id: 'net-worth-calculator',
+        name: 'Net Worth Calculator',
+        description: 'Calculate your net worth by listing assets and liabilities',
+        keywords: ['net worth', 'assets', 'liabilities', 'financial health', 'wealth tracking'],
+        category: 'Personal Finance',
+        relatedCalculators: ['budget-calculator', 'debt-equity-calculator']
+      },
+      {
+        id: 'inflation-calculator',
+        name: 'Inflation Calculator',
+        description: 'Calculate the impact of inflation on your money over time',
+        keywords: ['inflation', 'purchasing power', 'time value of money', 'cost increase'],
+        category: 'Personal Finance',
+        relatedCalculators: ['retirement-calculator', 'inflation-adjusted-sip-calculator']
+      },
+      {
+        id: 'interest-rate-converter',
+        name: 'Interest Rate Converter',
+        description: 'Convert between different types of interest rates',
+        keywords: ['interest rate', 'flat rate', 'reducing rate', 'apr', 'eir'],
+        category: 'Personal Finance',
+        relatedCalculators: ['emi-calculator', 'loan-comparison-calculator']
+      }
+    ]
   }
-  return undefined;
-};
+];
