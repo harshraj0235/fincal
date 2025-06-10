@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Calculator } from 'lucide-react';
 
-const SimpleInterestCalculator: React.FC = () => {
+export const SimpleInterestCalculator: React.FC = () => {
   const [principal, setPrincipal] = useState<number>(0);
   const [rate, setRate] = useState<number>(0);
   const [time, setTime] = useState<number>(0);
@@ -90,5 +90,3 @@ const SimpleInterestCalculator: React.FC = () => {
     </div>
   );
 };
-
-export default SimpleInterestCalculator;
