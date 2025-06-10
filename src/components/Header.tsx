@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Calculator, Search, ChevronRight, FileText, Map, BookOpen, Server } from 'lucide-react';
+import { Menu, X, Calculator, Search, ChevronRight, FileText, Map } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { SearchBar } from './SearchBar';
 import { calculatorCategories } from '../data/calculatorData';
@@ -74,7 +74,8 @@ export const Header: React.FC = () => {
                   className={`ml-1 h-4 w-4 transition-transform ${categoriesOpen ? 'rotate-180' : ''}`} 
                   fill="none" 
                   stroke="currentColor" 
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -134,21 +135,6 @@ export const Header: React.FC = () => {
               Blog
             </Link>
             <Link 
-              to="/astro-finance-insights" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
-            >
-              <BookOpen className="h-4 w-4 mr-1" />
-              Astro-Finance
-            </Link>
-            <a 
-              href="/financial-navigator.html" 
-              target="_blank"
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
-            >
-              <BookOpen className="h-4 w-4 mr-1" />
-              Financial Navigator
-            </a>
-            <Link 
               to="/about-us" 
               className="text-neutral-700 hover:text-primary-600 transition-colors"
             >
@@ -159,13 +145,6 @@ export const Header: React.FC = () => {
               className="text-neutral-700 hover:text-primary-600 transition-colors"
             >
               Contact
-            </Link>
-            <Link 
-              to="/deploy" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
-            >
-              <Server className="h-4 w-4 mr-1" />
-              Deploy
             </Link>
             <Link 
               to="/calculators/income-tax-calculator" 
