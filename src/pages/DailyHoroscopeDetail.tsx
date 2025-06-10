@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, DollarSign, TrendingUp, TrendingDown, Globe } from 'lucide-react';
+import { ArrowLeft, Calendar, DollarSign, TrendingUp, TrendingDown, Globe, Users, CheckCircle, XCircle } from 'lucide-react';
 
 export const DailyHoroscopeDetail: React.FC = () => {
   const { sign } = useParams<{ sign: string }>();
@@ -121,6 +121,88 @@ export const DailyHoroscopeDetail: React.FC = () => {
       luckyNumber: 6,
       luckyColor: 'Green',
       luckyColorHindi: 'हरा',
+      favorableTime: '2 PM - 4 PM'
+    },
+    'gemini': {
+      symbol: '♊',
+      name: 'Gemini',
+      nameHindi: 'मिथुन',
+      date: 'May 21 - June 20',
+      dateHindi: '21 मई - 20 जून',
+      element: 'Air',
+      elementHindi: 'वायु',
+      ruling: 'Mercury',
+      rulingHindi: 'बुध',
+      horoscope: 'Mercury, your ruling planet, is particularly active today, enhancing your communication skills and mental agility in financial matters. This is an excellent day for researching investment options, comparing financial products, or networking with potential business partners. Your ability to process information quickly gives you an edge in negotiations or market analysis. Consider diversifying your portfolio or exploring multiple income streams that align with your versatile nature.',
+      horoscopeHindi: 'आपका शासक ग्रह बुध आज विशेष रूप से सक्रिय है, जिससे वित्तीय मामलों में आपके संचार कौशल और मानसिक चपलता बढ़ जाती है। यह निवेश विकल्पों का अनुसंधान करने, वित्तीय उत्पादों की तुलना करने, या संभावित व्यावसायिक भागीदारों के साथ नेटवर्किंग करने का एक उत्कृष्ट दिन है। जानकारी को जल्दी से संसाधित करने की आपकी क्षमता आपको बातचीत या बाजार विश्लेषण में एक बढ़त देती है। अपने पोर्टफोलियो को विविधतापूर्ण बनाने या अपनी बहुमुखी प्रकृति के अनुरूप कई आय स्रोतों का पता लगाने पर विचार करें।',
+      favorable: [
+        'Financial research and analysis',
+        'Networking for business opportunities',
+        'Diversifying investments',
+        'Learning new financial strategies'
+      ],
+      favorableHindi: [
+        'वित्तीय अनुसंधान और विश्लेषण',
+        'व्यावसायिक अवसरों के लिए नेटवर्किंग',
+        'निवेश विविधीकरण',
+        'नई वित्तीय रणनीतियों को सीखना'
+      ],
+      avoid: [
+        'Overthinking financial decisions',
+        'Spreading investments too thin',
+        'Getting distracted by too many options',
+        'Making commitments without reading the fine print'
+      ],
+      avoidHindi: [
+        'वित्तीय निर्णयों पर अधिक सोचना',
+        'निवेश को बहुत पतला फैलाना',
+        'बहुत सारे विकल्पों से विचलित होना',
+        'सूक्ष्म प्रिंट को पढ़े बिना प्रतिबद्धताएं बनाना'
+      ],
+      luckyNumber: 5,
+      luckyColor: 'Yellow',
+      luckyColorHindi: 'पीला',
+      favorableTime: '9 AM - 11 AM'
+    },
+    'leo': {
+      symbol: '♌',
+      name: 'Leo',
+      nameHindi: 'सिंह',
+      date: 'July 23 - August 22',
+      dateHindi: '23 जुलाई - 22 अगस्त',
+      element: 'Fire',
+      elementHindi: 'अग्नि',
+      ruling: 'Sun',
+      rulingHindi: 'सूर्य',
+      horoscope: 'With Mercury forming a favorable aspect to Jupiter, today is excellent for financial planning and investment research. Your analytical abilities are heightened, making it a good time to review your portfolio or explore new investment opportunities. Your natural leadership qualities are enhanced, allowing you to take charge of group financial decisions or guide others in money matters. Consider long-term investments that align with your values and vision for the future.',
+      horoscopeHindi: 'बुध के बृहस्पति के साथ अनुकूल पहलू बनाने से, आज वित्तीय नियोजन और निवेश अनुसंधान के लिए उत्कृष्ट है। आपकी विश्लेषणात्मक क्षमताएं बढ़ जाती हैं, जिससे यह आपके पोर्टफोलियो की समीक्षा करने या नए निवेश अवसरों का पता लगाने का अच्छा समय बन जाता है। आपके प्राकृतिक नेतृत्व गुण बढ़ जाते हैं, जिससे आप समूह वित्तीय निर्णयों का प्रभार ले सकते हैं या धन के मामलों में दूसरों का मार्गदर्शन कर सकते हैं। ऐसे दीर्घकालिक निवेशों पर विचार करें जो आपके मूल्यों और भविष्य के लिए आपके दृष्टिकोण के अनुरूप हों।',
+      favorable: [
+        'Long-term investments',
+        'Financial planning',
+        'Networking with mentors',
+        'Leadership in financial ventures'
+      ],
+      favorableHindi: [
+        'दीर्घकालिक निवेश',
+        'वित्तीय नियोजन',
+        'मेंटर्स के साथ नेटवर्किंग',
+        'वित्तीय उद्यमों में नेतृत्व'
+      ],
+      avoid: [
+        'Impulsive purchases',
+        'Lending money to friends',
+        'High-risk trading',
+        'Showing off with extravagant spending'
+      ],
+      avoidHindi: [
+        'आवेगपूर्ण खरीदारी',
+        'दोस्तों को पैसे उधार देना',
+        'उच्च जोखिम वाला ट्रेडिंग',
+        'अत्यधिक खर्च के साथ दिखावा करना'
+      ],
+      luckyNumber: 8,
+      luckyColor: 'Gold',
+      luckyColorHindi: 'सोनहरा',
       favorableTime: '2 PM - 4 PM'
     },
     // Add more zodiac signs as needed
@@ -336,6 +418,26 @@ export const DailyHoroscopeDetail: React.FC = () => {
                     </Link>
                   </>
                 )}
+                {sign === 'gemini' && (
+                  <>
+                    <Link to="/astro-finance-insights/daily-horoscope/libra" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+                      <span className="mr-1">♎</span> {language === 'en' ? 'Libra' : 'तुला'}
+                    </Link>
+                    <Link to="/astro-finance-insights/daily-horoscope/aquarius" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+                      <span className="mr-1">♒</span> {language === 'en' ? 'Aquarius' : 'कुंभ'}
+                    </Link>
+                  </>
+                )}
+                {sign === 'leo' && (
+                  <>
+                    <Link to="/astro-finance-insights/daily-horoscope/aries" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+                      <span className="mr-1">♈</span> {language === 'en' ? 'Aries' : 'मेष'}
+                    </Link>
+                    <Link to="/astro-finance-insights/daily-horoscope/sagittarius" className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm flex items-center">
+                      <span className="mr-1">♐</span> {language === 'en' ? 'Sagittarius' : 'धनु'}
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
             
@@ -364,6 +466,26 @@ export const DailyHoroscopeDetail: React.FC = () => {
                     </Link>
                   </>
                 )}
+                {sign === 'gemini' && (
+                  <>
+                    <Link to="/astro-finance-insights/daily-horoscope/virgo" className="px-3 py-1 bg-neutral-100 text-neutral-800 rounded-full text-sm flex items-center">
+                      <span className="mr-1">♍</span> {language === 'en' ? 'Virgo' : 'कन्या'}
+                    </Link>
+                    <Link to="/astro-finance-insights/daily-horoscope/pisces" className="px-3 py-1 bg-neutral-100 text-neutral-800 rounded-full text-sm flex items-center">
+                      <span className="mr-1">♓</span> {language === 'en' ? 'Pisces' : 'मीन'}
+                    </Link>
+                  </>
+                )}
+                {sign === 'leo' && (
+                  <>
+                    <Link to="/astro-finance-insights/daily-horoscope/taurus" className="px-3 py-1 bg-neutral-100 text-neutral-800 rounded-full text-sm flex items-center">
+                      <span className="mr-1">♉</span> {language === 'en' ? 'Taurus' : 'वृषभ'}
+                    </Link>
+                    <Link to="/astro-finance-insights/daily-horoscope/scorpio" className="px-3 py-1 bg-neutral-100 text-neutral-800 rounded-full text-sm flex items-center">
+                      <span className="mr-1">♏</span> {language === 'en' ? 'Scorpio' : 'वृश्चिक'}
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
             
@@ -372,7 +494,7 @@ export const DailyHoroscopeDetail: React.FC = () => {
               className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium text-sm"
             >
               {language === 'en' ? 'View detailed compatibility' : 'विस्तृत संगतता देखें'}
-              <ArrowLeft className="h-4 w-4 ml-1 rotate-180" />
+              <ChevronRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
         </div>
@@ -416,7 +538,7 @@ export const DailyHoroscopeDetail: React.FC = () => {
               className="inline-flex items-center text-purple-600 hover:text-purple-800 font-medium text-sm"
             >
               {language === 'en' ? 'View monthly horoscope' : 'मासिक राशिफल देखें'}
-              <ArrowLeft className="h-4 w-4 ml-1 rotate-180" />
+              <ChevronRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
         </div>
