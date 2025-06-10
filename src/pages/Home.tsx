@@ -14,9 +14,9 @@ export const Home: React.FC = () => {
       { id: 'emi-calculator', name: 'EMI Calculator', description: 'Calculate your loan EMI, total interest, and payment schedule', category: 'Loan Calculators' },
       { id: 'sip-calculator', name: 'SIP Calculator', description: 'Plan your investments and calculate returns on SIP investments', category: 'Investment Calculators' },
       { id: 'income-tax-calculator', name: 'Income Tax Calculator', description: 'Calculate your income tax liability under old and new tax regimes', category: 'Tax Calculators' },
-      { id: 'ppf-calculator', name: 'PPF Calculator', description: 'Calculate returns on your Public Provident Fund investments', category: 'Investment Calculators' },
-      { id: 'gst-calculator', name: 'GST Calculator', description: 'Calculate GST inclusive and exclusive amounts with breakdown', category: 'Tax Calculators' },
-      { id: 'home-loan-calculator', name: 'Home Loan Calculator', description: 'Calculate EMI, total interest, and amortization for home loans', category: 'Loan Calculators' }
+      { id: 'mutual-fund-overlap-checker', name: 'Mutual Fund Overlap Checker', description: 'Check portfolio overlap between mutual funds to optimize diversification', category: 'Investments & Wealth Management' },
+      { id: 'asset-allocation-planner', name: 'Asset Allocation Planner', description: 'Create a balanced portfolio based on your risk profile', category: 'Investments & Wealth Management' },
+      { id: 'nri-stock-investment-dashboard', name: 'NRI Stock Investment Dashboard', description: 'Track and manage your US and Indian stock investments', category: 'Investments & Wealth Management' }
     ];
     
     setPopularCalculators(popular);
@@ -191,8 +191,142 @@ export const Home: React.FC = () => {
         <CategorySection />
       </section>
       
-      {/* Financial Tools Section */}
+      {/* Investment & Wealth Management Section */}
       <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Investment & Wealth Management Tools</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Advanced tools to optimize your portfolio, track investments, and manage your wealth effectively
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <PieChart className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-purple-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Portfolio Optimization</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Optimize your investment portfolio with tools for diversification, risk assessment, and performance tracking.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li>
+                    <Link to="/calculators/mutual-fund-overlap-checker" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Mutual Fund Overlap Checker
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/asset-allocation-planner" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Asset Allocation Planner
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/risk-appetite-assessment" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Risk Appetite Assessment
+                    </Link>
+                  </li>
+                </ul>
+                <Link to="/calculators/investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                  Explore All Portfolio Tools
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-green-500 to-green-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <TrendingUp className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-green-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Investment Tracking</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Track your investments with advanced tools for calculating returns, analyzing performance, and monitoring dividends.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li>
+                    <Link to="/calculators/xirr-tracker" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      XIRR Tracker
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/dividend-yield-calculator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Dividend Yield Calculator
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/nri-stock-investment-dashboard" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      NRI Stock Investment Dashboard
+                    </Link>
+                  </li>
+                </ul>
+                <Link to="/calculators/investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                  Explore All Tracking Tools
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <DollarSign className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-blue-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Alternative Investments</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Explore alternative investment options with tools for evaluating startups, fixed income, and digital assets.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li>
+                    <Link to="/calculators/crowdfunding-investment-portal" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Crowdfunding Investment Portal
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/stable-return-fixed-income-aggregator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Fixed Income Aggregator
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/crypto-tax-estimator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Crypto Tax Estimator
+                    </Link>
+                  </li>
+                </ul>
+                <Link to="/calculators/investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                  Explore All Alternative Investments
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Financial Tools Section */}
+      <section className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-neutral-900 mb-4">Financial Tools & Resources</h2>

@@ -57,23 +57,23 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/calculators/ppf-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  PPF Calculator
+                <Link to="/calculators/mutual-fund-overlap-checker" className="text-neutral-300 hover:text-white transition-colors">
+                  Mutual Fund Overlap Checker
                 </Link>
               </li>
               <li>
-                <Link to="/calculators/sukanya-samriddhi-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  Sukanya Samriddhi Calculator
+                <Link to="/calculators/asset-allocation-planner" className="text-neutral-300 hover:text-white transition-colors">
+                  Asset Allocation Planner
                 </Link>
               </li>
               <li>
-                <Link to="/calculators/nps-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  NPS Calculator
+                <Link to="/calculators/risk-appetite-assessment" className="text-neutral-300 hover:text-white transition-colors">
+                  Risk Appetite Assessment
                 </Link>
               </li>
               <li>
-                <Link to="/calculators/post-office-schemes-calculator" className="text-neutral-300 hover:text-white transition-colors">
-                  Post Office Schemes Calculator
+                <Link to="/calculators/crypto-tax-estimator" className="text-neutral-300 hover:text-white transition-colors">
+                  Crypto Tax Estimator
                 </Link>
               </li>
             </ul>
