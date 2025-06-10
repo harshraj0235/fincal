@@ -285,11 +285,11 @@ export const CryptoTaxEstimator: React.FC = () => {
               onChange={(e) => setSurcharge(Number(e.target.value))}
               className="input w-full"
             >
-              <option value="0">No Surcharge (Income ≤ ₹50 Lakhs)</option>
-              <option value="10">10% (Income > ₹50 Lakhs to ₹1 Cr)</option>
-              <option value="15">15% (Income > ₹1 Cr to ₹2 Cr)</option>
-              <option value="25">25% (Income > ₹2 Cr to ₹5 Cr)</option>
-              <option value="37">37% (Income > ₹5 Cr)</option>
+              <option value="0"'>'No Surcharge (Income ≤ ₹50 Lakhs)</option>
+              <option value="10"'>'10% (Income > ₹50 Lakhs to ₹1 Cr)</option>
+              <option value="15"'>'15% (Income > ₹1 Cr to ₹2 Cr)</option>
+              <option value="25"'>'25% (Income > ₹2 Cr to ₹5 Cr)</option>
+              <option value="37"'>'37% (Income > ₹5 Cr)</option>
             </select>
           </div>
         </div>
