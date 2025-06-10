@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface CalculatorFAQ {
   question: string;
   answer: string;
@@ -22,6 +24,93 @@ export interface CalculatorCategory {
 }
 
 export const calculatorCategories: CalculatorCategory[] = [
+  {
+    id: 'fintech-payments',
+    name: 'FinTech & Payments',
+    description: 'Modern financial technology tools for digital payments, virtual cards, and innovative lending solutions',
+    calculators: [
+      {
+        id: 'step-up-sip-calculator',
+        name: 'Step-Up SIP Calculator',
+        description: 'Calculate returns on SIP with annual increment for salaried professionals',
+        keywords: ['step-up sip', 'increasing sip', 'growing sip', 'salary increment', 'top-up sip'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['sip-calculator', 'mutual-fund-returns-calculator', 'inflation-adjusted-sip-calculator']
+      },
+      {
+        id: 'inflation-adjusted-sip-calculator',
+        name: 'Inflation-Adjusted SIP & Retirement Planner',
+        description: 'Plan your retirement with inflation-adjusted SIP investments',
+        keywords: ['inflation', 'retirement', 'corpus', 'sip', 'real returns'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['retirement-calculator', 'step-up-sip-calculator', 'sip-calculator']
+      },
+      {
+        id: 'rent-vs-buy-advanced-calculator',
+        name: 'Rent vs Buy Advanced Calculator',
+        description: 'Comprehensive analysis of renting versus buying property with HRA benefits',
+        keywords: ['rent vs buy', 'hra', 'property', 'real estate', 'tax benefits'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['rent-vs-buy-calculator', 'hra-exemption-calculator', 'home-loan-calculator']
+      },
+      {
+        id: 'gold-etf-vs-physical-calculator',
+        name: 'Gold ETF vs Physical Gold ROI Calculator',
+        description: 'Compare returns on investment between Gold ETF and physical gold',
+        keywords: ['gold etf', 'physical gold', 'gold investment', 'roi', 'tax implications'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['gold-investment-calculator', 'capital-gains-tax-advanced-calculator', 'mutual-fund-returns-calculator']
+      },
+      {
+        id: 'income-tax-regime-comparison-calculator',
+        name: 'Income Tax Regime Comparison Calculator',
+        description: 'Compare tax liability under old and new tax regimes',
+        keywords: ['income tax', 'old regime', 'new regime', 'tax comparison', 'tax planning'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['income-tax-calculator', 'tax-saving-investment-calculator', 'section-80c-calculator']
+      },
+      {
+        id: 'capital-gains-tax-advanced-calculator',
+        name: 'Capital Gains Tax Advanced Calculator',
+        description: 'Calculate tax on capital gains with indexation benefits and asset-specific rules',
+        keywords: ['capital gains', 'ltcg', 'stcg', 'indexation', 'tax planning'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['capital-gains-tax-calculator', 'income-tax-calculator', 'gold-etf-vs-physical-calculator']
+      },
+      {
+        id: 'gst-seller-calculator',
+        name: 'GST Calculator for Sellers',
+        description: 'Calculate GST for business transactions with invoice generation',
+        keywords: ['gst', 'seller', 'invoice', 'business', 'tax compliance'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['gst-calculator', 'profit-margin-calculator', 'break-even-calculator']
+      },
+      {
+        id: 'virtual-card-issuer',
+        name: 'Virtual Card Issuer',
+        description: 'Generate virtual cards for secure online transactions',
+        keywords: ['virtual card', 'online payment', 'secure transaction', 'digital card', 'e-commerce'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['credit-card-emi-calculator', 'bnpl-calculator']
+      },
+      {
+        id: 'bnpl-calculator',
+        name: 'Buy Now Pay Later (BNPL) Calculator',
+        description: 'Calculate installments and costs for Buy Now Pay Later services',
+        keywords: ['bnpl', 'buy now pay later', 'emi', 'installment', 'no cost emi'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['credit-card-emi-calculator', 'personal-loan-calculator', 'virtual-card-issuer']
+      },
+      {
+        id: 'p2p-lending-calculator',
+        name: 'Peer-to-Peer Lending Calculator',
+        description: 'Calculate returns and risks for P2P lending investments',
+        keywords: ['p2p lending', 'peer to peer', 'alternative investment', 'lending', 'borrowing'],
+        category: 'FinTech & Payments',
+        relatedCalculators: ['personal-loan-calculator', 'loan-affordability-calculator', 'bnpl-calculator']
+      }
+    ]
+  },
   {
     id: 'loan-calculators',
     name: 'Loan Calculators',

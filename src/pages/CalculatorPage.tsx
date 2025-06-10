@@ -67,6 +67,16 @@ import { UpiFailureTroubleshooter } from '../calculators/UpiFailureTroubleshoote
 import { AtmLocator } from '../calculators/AtmLocator';
 import { BankHolidayCalendar } from '../calculators/BankHolidayCalendar';
 import { InterestRatesComparison } from '../calculators/InterestRatesComparison';
+import { StepUpSipCalculator } from '../calculators/StepUpSipCalculator';
+import { InflationAdjustedSipCalculator } from '../calculators/InflationAdjustedSipCalculator';
+import { RentVsBuyAdvancedCalculator } from '../calculators/RentVsBuyAdvancedCalculator';
+import { GoldEtfVsPhysicalCalculator } from '../calculators/GoldEtfVsPhysicalCalculator';
+import { IncomeTaxRegimeComparisonCalculator } from '../calculators/IncomeTaxRegimeComparisonCalculator';
+import { CapitalGainsTaxAdvancedCalculator } from '../calculators/CapitalGainsTaxAdvancedCalculator';
+import { GstSellerCalculator } from '../calculators/GstSellerCalculator';
+import { VirtualCardIssuer } from '../calculators/VirtualCardIssuer';
+import { BnplCalculator } from '../calculators/BnplCalculator';
+import { P2PLendingCalculator } from '../calculators/P2PLendingCalculator';
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -95,16 +105,31 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
   
   const renderCalculator = () => {
     switch (calculatorId) {
+      // FinTech & Payments Calculators
+      case 'step-up-sip-calculator':
+        return <StepUpSipCalculator />;
+      case 'inflation-adjusted-sip-calculator':
+        return <InflationAdjustedSipCalculator />;
+      case 'rent-vs-buy-advanced-calculator':
+        return <RentVsBuyAdvancedCalculator />;
+      case 'gold-etf-vs-physical-calculator':
+        return <GoldEtfVsPhysicalCalculator />;
+      case 'income-tax-regime-comparison-calculator':
+        return <IncomeTaxRegimeComparisonCalculator />;
+      case 'capital-gains-tax-advanced-calculator':
+        return <CapitalGainsTaxAdvancedCalculator />;
+      case 'gst-seller-calculator':
+        return <GstSellerCalculator />;
+      case 'virtual-card-issuer':
+        return <VirtualCardIssuer />;
+      case 'bnpl-calculator':
+        return <BnplCalculator />;
+      case 'p2p-lending-calculator':
+        return <P2PLendingCalculator />;
+        
+      // Loan Calculators
       case 'emi-calculator':
         return <EmiCalculator />;
-      case 'sip-calculator':
-        return <SipCalculator />;
-      case 'gst-calculator':
-        return <GstCalculator />;
-      case 'ppf-calculator':
-        return <PpfCalculator />;
-      case 'income-tax-calculator':
-        return <IncomeTaxCalculator />;
       case 'home-loan-calculator':
         return <HomeLoanCalculator />;
       case 'car-loan-calculator':
@@ -117,6 +142,42 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <LoanPrepaymentCalculator />;
       case 'loan-refinance-calculator':
         return <LoanRefinanceCalculator />;
+      case 'loan-affordability-calculator':
+        return <LoanAffordabilityCalculator />;
+      case 'business-loan-calculator':
+        return <BusinessLoanCalculator />;
+      case 'credit-card-emi-calculator':
+        return <CreditCardEmiCalculator />;
+      case 'loan-tenure-converter':
+        return <LoanTenureConverter />;
+        
+      // Investment Calculators
+      case 'sip-calculator':
+        return <SipCalculator />;
+      case 'ppf-calculator':
+        return <PpfCalculator />;
+      case 'mutual-fund-returns-calculator':
+        return <MutualFundReturnsCalculator />;
+      case 'mutual-fund-cost-calculator':
+        return <MutualFundCostCalculator />;
+      case 'sukanya-samriddhi-calculator':
+        return <SukanyaSamriddhiCalculator />;
+      case 'nps-calculator':
+        return <NpsCalculator />;
+      case 'nps-tier-2-calculator':
+        return <NpsTier2Calculator />;
+      case 'post-office-schemes-calculator':
+        return <PostOfficeCalculator />;
+      case 'gold-investment-calculator':
+        return <GoldInvestmentCalculator />;
+      case 'property-investment-calculator':
+        return <PropertyInvestmentCalculator />;
+        
+      // Tax Calculators
+      case 'income-tax-calculator':
+        return <IncomeTaxCalculator />;
+      case 'gst-calculator':
+        return <GstCalculator />;
       case 'capital-gains-tax-calculator':
         return <CapitalGainsTaxCalculator />;
       case 'tds-calculator':
@@ -127,12 +188,20 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <Section80CCalculator />;
       case 'section-80d-calculator':
         return <Section80DCalculator />;
+      case 'tax-saving-investment-calculator':
+        return <TaxSavingInvestmentCalculator />;
+      case 'advance-tax-calculator':
+        return <AdvanceTaxCalculator />;
+        
+      // Retirement Calculators
       case 'retirement-calculator':
         return <RetirementCalculator />;
       case 'pension-calculator':
         return <PensionCalculator />;
       case 'gratuity-calculator':
         return <GratuityCalculator />;
+        
+      // Insurance Calculators
       case 'term-insurance-calculator':
         return <TermInsuranceCalculator />;
       case 'health-insurance-calculator':
@@ -141,6 +210,8 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <LifeInsuranceCalculator />;
       case 'human-life-value-calculator':
         return <HumanLifeValueCalculator />;
+        
+      // Personal Finance Calculators
       case 'net-worth-calculator':
         return <NetWorthCalculator />;
       case 'emergency-fund-calculator':
@@ -157,6 +228,8 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <CompoundInterestCalculator />;
       case 'simple-interest-calculator':
         return <SimpleInterestCalculator />;
+        
+      // Property Calculators
       case 'stamp-duty-calculator':
         return <StampDutyCalculator />;
       case 'property-registration-calculator':
@@ -165,20 +238,14 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <PropertyInvestmentCalculator />;
       case 'rent-vs-buy-calculator':
         return <RentVsBuyCalculator />;
+        
+      // Conversion Calculators
       case 'currency-converter':
         return <CurrencyConverter />;
       case 'interest-rate-converter':
         return <InterestRateConverter />;
-      case 'loan-tenure-converter':
-        return <LoanTenureConverter />;
-      case 'credit-card-emi-calculator':
-        return <CreditCardEmiCalculator />;
-      case 'savings-account-calculator':
-        return <SavingsAccountCalculator />;
-      case 'loan-affordability-calculator':
-        return <LoanAffordabilityCalculator />;
-      case 'business-loan-calculator':
-        return <BusinessLoanCalculator />;
+        
+      // Business Calculators
       case 'profit-margin-calculator':
         return <ProfitMarginCalculator />;
       case 'break-even-calculator':
@@ -187,34 +254,20 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <InventoryTurnoverCalculator />;
       case 'debt-equity-calculator':
         return <DebtEquityCalculator />;
-      case 'tax-saving-investment-calculator':
-        return <TaxSavingInvestmentCalculator />;
-      case 'advance-tax-calculator':
-        return <AdvanceTaxCalculator />;
+        
+      // Trading Calculators
+      case 'brokerage-calculator':
+        return <BrokerageCalculator />;
+      case 'margin-trading-calculator':
+        return <MarginTradingCalculator />;
       case 'forex-margin-calculator':
         return <ForexMarginCalculator />;
       case 'forex-pip-calculator':
         return <ForexPipCalculator />;
       case 'commodity-margin-calculator':
         return <CommodityMarginCalculator />;
-      case 'gold-investment-calculator':
-        return <GoldInvestmentCalculator />;
-      case 'brokerage-calculator':
-        return <BrokerageCalculator />;
-      case 'margin-trading-calculator':
-        return <MarginTradingCalculator />;
-      case 'mutual-fund-returns-calculator':
-        return <MutualFundReturnsCalculator />;
-      case 'mutual-fund-cost-calculator':
-        return <MutualFundCostCalculator />;
-      case 'sukanya-samriddhi-calculator':
-        return <SukanyaSamriddhiCalculator />;
-      case 'nps-calculator':
-        return <NpsCalculator />;
-      case 'nps-tier-2-calculator':
-        return <NpsTier2Calculator />;
-      case 'post-office-schemes-calculator':
-        return <PostOfficeCalculator />;
+        
+      // Banking Tools
       case 'bank-ifsc-finder':
         return <BankIfscFinder />;
       case 'upi-failure-troubleshooter':
