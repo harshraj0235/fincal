@@ -75,7 +75,7 @@ export const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 md:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-20 md:py-28 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full">
@@ -93,10 +93,10 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-black">
                 Smart Financial Decisions Start Here
               </h1>
-              <p className="text-xl mb-8 text-primary-100">
+              <p className="text-xl mb-8 text-black">
                 Comprehensive financial calculators tailored for Indian users. Plan loans, investments, taxes, and more with confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -104,7 +104,7 @@ export const Home: React.FC = () => {
                   EMI Calculator
                 </Link>
                 <Link to="/calculators/income-tax-calculator" className="btn bg-primary-500 text-white hover:bg-primary-400 border border-primary-400 shadow-lg hover:shadow-xl transition-all">
-                  Income Tax Calculator
+                  Income Tax
                 </Link>
               </div>
             </div>
@@ -611,9 +611,9 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="p-8 md:p-12 text-white">
-                <h2 className="text-3xl font-bold mb-4">Stay Updated with Financial Insights</h2>
-                <p className="text-lg text-primary-100 mb-6">
+              <div className="p-8 md:p-12">
+                <h2 className="text-3xl font-bold mb-4 text-black">Stay Updated with Financial Insights</h2>
+                <p className="text-lg mb-6 text-black">
                   Subscribe to our newsletter for the latest updates on financial tools, tax changes, investment strategies, and more.
                 </p>
                 <form className="space-y-4">
@@ -631,7 +631,7 @@ export const Home: React.FC = () => {
                     Subscribe
                   </button>
                 </form>
-                <p className="text-xs text-primary-200 mt-4">
+                <p className="text-xs text-black mt-4">
                   By subscribing, you agree to our <Link to="/privacy-policy" className="underline text-white">Privacy Policy</Link> and consent to receive financial updates and marketing communications from us.
                 </p>
               </div>
