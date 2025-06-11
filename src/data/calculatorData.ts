@@ -568,6 +568,14 @@ export const calculatorCategories: CalculatorCategory[] = [
         keywords: ['gratuity', 'employee benefit', 'retirement benefit', 'service reward'],
         category: 'Banking & Finance Tools',
         relatedCalculators: ['retirement-calculator', 'pension-calculator']
+      },
+      {
+        id: 'credit-card-finder',
+        name: 'Credit Card Finder & Score Estimator',
+        description: 'Find the best credit card based on your spending patterns and estimate your credit score',
+        keywords: ['credit card', 'credit score', 'rewards', 'cashback', 'eligibility', 'cibil score', 'credit rating'],
+        category: 'Banking & Finance Tools',
+        relatedCalculators: ['credit-card-emi-calculator', 'loan-affordability-calculator', 'emi-calculator']
       }
     ]
   },

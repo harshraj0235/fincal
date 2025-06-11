@@ -95,6 +95,7 @@ import { BankHolidayCalendar } from '../calculators/BankHolidayCalendar';
 import { InterestRatesComparison } from '../calculators/InterestRatesComparison';
 import { UpiFailureTroubleshooter } from '../calculators/UpiFailureTroubleshooter';
 import { AdvanceTaxCalculator } from '../calculators/AdvanceTaxCalculator';
+import { CreditCardFinder } from '../calculators/CreditCardFinder';
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -272,6 +273,8 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <InterestRatesComparison />;
       case 'upi-failure-troubleshooter':
         return <UpiFailureTroubleshooter />;
+      case 'credit-card-finder':
+        return <CreditCardFinder />;
         
       // FinTech & Payments Calculators
       case 'step-up-sip-calculator':

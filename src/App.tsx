@@ -16,6 +16,7 @@ import { Sitemap } from './pages/Sitemap';
 import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
+import { CreditCardFinder } from './calculators/CreditCardFinder';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap.xml" element={<SitemapXml />} />
+        <Route path="/credit-card-finder" element={<CreditCardFinder />} />
         
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
