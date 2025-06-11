@@ -461,6 +461,46 @@ export const Home: React.FC = () => {
                 </Link>
               </div>
             </div>
+            
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100">
+              <div className="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <CreditCard className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-indigo-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Credit Card Tools</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Compare credit cards, calculate EMIs, and find the best card for your spending patterns.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li>
+                    <Link to="/credit-card-finder-roadmap" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Credit Card Finder (Coming Soon)
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/credit-card-emi-calculator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Credit Card EMI Calculator
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/bnpl-calculator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ArrowRight className="h-3 w-3 mr-1" />
+                      Buy Now Pay Later Calculator
+                    </Link>
+                  </li>
+                </ul>
+                <Link to="/credit-card-finder-roadmap" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                  View Credit Card Finder Roadmap
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
