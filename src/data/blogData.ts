@@ -249,16 +249,16 @@ export const blogPosts: BlogPost[] = [
     authorTitle: 'Credit Analyst',
     categories: ['Banking', 'Personal Finance'],
     tags: ['credit score', 'CIBIL', 'credit improvement', 'financial health'],
-    excerpt: 'Your credit score is more than just a three-digit number—it\'s the key that unlocks financial opportunities in India's growing credit ecosystem. Learn proven strategies to boost your score.',
+    excerpt: 'Your credit score is more than just a three-digit number—it\'s the key that unlocks financial opportunities in India\'s growing credit ecosystem. Learn proven strategies to boost your score.',
     coverImage: 'https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     content: [
       {
         type: 'paragraph',
-        content: 'Your credit score is more than just a three-digit number—it\'s the key that unlocks financial opportunities in India's growing credit ecosystem. Whether you\'re planning to apply for a home loan, looking for a premium credit card, or negotiating better interest rates, a strong credit score can save you lakhs of rupees over your lifetime and open doors to exclusive financial products.'
+        content: 'Your credit score is more than just a three-digit number—it\'s the key that unlocks financial opportunities in India\'s growing credit ecosystem. Whether you\'re planning to apply for a home loan, looking for a premium credit card, or negotiating better interest rates, a strong credit score can save you lakhs of rupees over your lifetime and open doors to exclusive financial products.'
       },
       {
         type: 'paragraph',
-        content: 'In this comprehensive guide, we\'ll explore actionable strategies specifically tailored for Indian consumers to boost their credit scores in 2025, taking into account the unique aspects of India's credit reporting system.'
+        content: 'In this comprehensive guide, we\'ll explore actionable strategies specifically tailored for Indian consumers to boost their credit scores in 2025, taking into account the unique aspects of India\'s credit reporting system.'
       }
     ]
   },
