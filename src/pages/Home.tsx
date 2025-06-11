@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Calculator, ArrowRight, Search, TrendingUp, DollarSign, PieChart, Building, Shield } from 'lucide-react';
+import { Menu, X, Calculator, ArrowRight, Search, TrendingUp, DollarSign, PieChart, Building, Shield, CreditCard } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
@@ -151,6 +151,78 @@ export const Home: React.FC = () => {
         </div>
       </section>
       
+      {/* Credit Card Finder Roadmap Button */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl p-8 shadow-lg text-white">
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="mb-6 md:mb-0 md:mr-8">
+                <div className="flex items-center mb-3">
+                  <CreditCard className="h-8 w-8 mr-3" />
+                  <h2 className="text-2xl font-bold">Credit Card Finder & Score Estimator</h2>
+                </div>
+                <p className="text-white/90 text-lg mb-4">
+                  Explore our detailed roadmap for building a comprehensive Credit Card Finder and Credit Score Estimator tool for Indian users.
+                </p>
+                <ul className="list-disc list-inside text-white/80 mb-6">
+                  <li>Compare credit cards based on rewards, fees, and eligibility</li>
+                  <li>Estimate your credit score and get personalized improvement tips</li>
+                  <li>Find the best credit card for your spending patterns</li>
+                </ul>
+              </div>
+              <div>
+                <Link 
+                  to="/credit-card-finder-roadmap" 
+                  className="inline-flex items-center px-6 py-3 bg-white text-indigo-700 rounded-lg font-medium shadow-md hover:bg-indigo-50 transition-colors"
+                >
+                  View Detailed Roadmap
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* All Calculators Section */}
+      <div id="categories" ref={allCalculatorsRef} className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">All Calculators</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Browse our comprehensive collection of financial calculators organized by category
+            </p>
+          </div>
+          
+          <div className="space-y-12">
+            {calculatorCategories.map(category => (
+              <div key={category.id} id={category.id} className="bg-white rounded-xl p-8 shadow-md">
+                <h3 className="text-2xl font-bold text-neutral-900 mb-4">{category.name}</h3>
+                <p className="text-neutral-600 mb-6">{category.description}</p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {category.calculators.map(calculator => (
+                    <Link 
+                      key={calculator.id}
+                      to={`/calculators/${calculator.id}`}
+                      className="p-4 border border-neutral-200 rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-colors"
+                    >
+                      <h4 className="font-medium text-neutral-900 hover:text-primary-600 transition-colors">{calculator.name}</h4>
+                      <p className="text-sm text-neutral-600 mt-1 line-clamp-2">{calculator.description}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* Categories Section */}
+      <section ref={categoriesRef} id="categories-section" className="py-16 bg-neutral-50">
+        <CategorySection />
+      </section>
+      
       {/* Features Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -203,45 +275,6 @@ export const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-      
-      {/* All Calculators Section */}
-      <div id="categories" ref={allCalculatorsRef} className="py-16 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">All Calculators</h2>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              Browse our comprehensive collection of financial calculators organized by category
-            </p>
-          </div>
-          
-          <div className="space-y-12">
-            {calculatorCategories.map(category => (
-              <div key={category.id} id={category.id} className="bg-white rounded-xl p-8 shadow-md">
-                <h3 className="text-2xl font-bold text-neutral-900 mb-4">{category.name}</h3>
-                <p className="text-neutral-600 mb-6">{category.description}</p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {category.calculators.map(calculator => (
-                    <Link 
-                      key={calculator.id}
-                      to={`/calculators/${calculator.id}`}
-                      className="p-4 border border-neutral-200 rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-colors"
-                    >
-                      <h4 className="font-medium text-neutral-900 hover:text-primary-600 transition-colors">{calculator.name}</h4>
-                      <p className="text-sm text-neutral-600 mt-1 line-clamp-2">{calculator.description}</p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      
-      {/* Categories Section */}
-      <section ref={categoriesRef} id="categories-section" className="py-16 bg-neutral-50">
-        <CategorySection />
       </section>
       
       {/* Investment & Wealth Management Section */}
