@@ -15,6 +15,7 @@ import { ContactUs } from './pages/ContactUs';
 import { Sitemap } from './pages/Sitemap';
 import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
+import { CategoryPage } from './pages/CategoryPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             />
           ))
         )}
+        <Route path="/category/:categoryId" element={<CategoryPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/blog/write" element={<WriteBlog />} />

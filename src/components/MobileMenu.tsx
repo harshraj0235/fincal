@@ -128,7 +128,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   ))}
                   {category.calculators.length > 5 && (
                     <Link
-                      to={`/#${category.id}`}
+                      to={`/category/${category.id}`}
                       className="block py-2 px-4 text-primary-600 hover:bg-neutral-100 rounded-lg text-sm font-medium"
                       onClick={onClose}
                     >

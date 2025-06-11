@@ -34,7 +34,7 @@ export const CategorySection: React.FC = () => {
               
               {category.calculators.length > 3 && (
                 <Link 
-                  to={`/#${category.id}`}
+                  to={`/category/${category.id}`}
                   className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center"
                 >
                   View all {category.calculators.length} calculators
