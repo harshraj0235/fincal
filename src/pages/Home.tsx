@@ -103,7 +103,7 @@ export const Home: React.FC = () => {
                 <Link to="/calculators/emi-calculator" className="btn bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all">
                   EMI Calculator
                 </Link>
-                <Link to="/calculators/income-tax-calculator" className="btn bg-primary-500 text-white hover:bg-primary-400 border border-primary-400 shadow-lg hover:shadow-xl transition-all">
+                <Link to="/calculators/income-tax-calculator" className="btn bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all">
                   Income Tax
                 </Link>
               </div>
