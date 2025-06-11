@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
                 Comprehensive financial calculators tailored for Indian users. Plan loans, investments, taxes, and more with confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/calculators/emi-calculator" className="btn bg-white text-primary-700 hover:bg-primary-50 shadow-lg hover:shadow-xl transition-all">
+                <Link to="/calculators/emi-calculator" className="btn bg-white text-primary-700 hover:bg-primary-50 shadow-lg hover:shadow-xl transition-all text -black">
                   EMI Calculator
                 </Link>
                 <Link to="/calculators/income-tax-calculator" className="btn bg-primary-500 text-white hover:bg-primary-400 border border-primary-400 shadow-lg hover:shadow-xl transition-all">
