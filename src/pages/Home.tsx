@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Calculator, ArrowRight, Search, TrendingUp, DollarSign, PieChart, Building, Shield } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
@@ -7,6 +7,9 @@ import { SearchBar } from '../components/SearchBar';
 
 export const Home: React.FC = () => {
   const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
+  const location = useLocation();
+  const categoriesRef = useRef<HTMLElement>(null);
+  const allCalculatorsRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     // Get popular calculators from different categories
@@ -21,6 +24,22 @@ export const Home: React.FC = () => {
     
     setPopularCalculators(popular);
   }, []);
+  
+  // Scroll to categories section if hash is present
+  useEffect(() => {
+    if (location.hash) {
+      const hash = location.hash.substring(1);
+      
+      if (hash === 'categories' && allCalculatorsRef.current) {
+        allCalculatorsRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (categoriesRef.current) {
+        const categoryElement = document.getElementById(hash);
+        if (categoryElement) {
+          categoryElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  }, [location.hash]);
   
   return (
     <div className="min-h-screen">
@@ -186,8 +205,42 @@ export const Home: React.FC = () => {
         </div>
       </section>
       
+      {/* All Calculators Section */}
+      <div id="categories" ref={allCalculatorsRef} className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">All Calculators</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Browse our comprehensive collection of financial calculators organized by category
+            </p>
+          </div>
+          
+          <div className="space-y-12">
+            {calculatorCategories.map(category => (
+              <div key={category.id} id={category.id} className="bg-white rounded-xl p-8 shadow-md">
+                <h3 className="text-2xl font-bold text-neutral-900 mb-4">{category.name}</h3>
+                <p className="text-neutral-600 mb-6">{category.description}</p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {category.calculators.map(calculator => (
+                    <Link 
+                      key={calculator.id}
+                      to={`/calculators/${calculator.id}`}
+                      className="p-4 border border-neutral-200 rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-colors"
+                    >
+                      <h4 className="font-medium text-neutral-900 hover:text-primary-600 transition-colors">{calculator.name}</h4>
+                      <p className="text-sm text-neutral-600 mt-1 line-clamp-2">{calculator.description}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
       {/* Categories Section */}
-      <section id="categories" className="py-16 bg-neutral-50">
+      <section ref={categoriesRef} id="categories-section" className="py-16 bg-neutral-50">
         <CategorySection />
       </section>
       

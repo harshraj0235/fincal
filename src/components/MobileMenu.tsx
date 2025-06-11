@@ -104,6 +104,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             Sitemap
           </Link>
           
+          <Link 
+            to="/#categories" 
+            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg font-medium mt-2"
+            onClick={onClose}
+          >
+            View All Calculators
+          </Link>
+          
           <div className="mt-4">
             <h3 className="font-medium text-neutral-500 px-4 py-2">Calculator Categories</h3>
             {calculatorCategories.map(category => (

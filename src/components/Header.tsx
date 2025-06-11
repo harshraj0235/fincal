@@ -117,6 +117,13 @@ export const Header: React.FC = () => {
                       </div>
                     </div>
                   ))}
+                  <Link
+                    to="/#categories"
+                    className="block px-4 py-2 text-primary-600 hover:bg-neutral-100 font-medium border-t border-neutral-100 mt-1 pt-1"
+                    onClick={() => setCategoriesOpen(false)}
+                  >
+                    View all calculators
+                  </Link>
                 </div>
               )}
             </div>
