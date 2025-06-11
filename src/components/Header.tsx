@@ -106,7 +106,7 @@ export const Header: React.FC = () => {
                           ))}
                           {category.calculators.length > 8 && (
                             <Link
-                              to={`/category/${category.id}`}
+                              to={`/#${category.id}`}
                               className="block px-4 py-2 text-primary-600 hover:bg-neutral-100 font-medium"
                               onClick={() => setCategoriesOpen(false)}
                             >

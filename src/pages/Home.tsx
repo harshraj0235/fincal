@@ -235,7 +235,7 @@ export const Home: React.FC = () => {
                     </Link>
                   </li>
                 </ul>
-                <Link to="/calculators/investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                <Link to="/#investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
                   Explore All Portfolio Tools
                   <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -275,7 +275,7 @@ export const Home: React.FC = () => {
                     </Link>
                   </li>
                 </ul>
-                <Link to="/calculators/investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                <Link to="/#investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
                   Explore All Tracking Tools
                   <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -315,7 +315,7 @@ export const Home: React.FC = () => {
                     </Link>
                   </li>
                 </ul>
-                <Link to="/calculators/investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                <Link to="/#investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
                   Explore All Alternative Investments
                   <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -369,7 +369,7 @@ export const Home: React.FC = () => {
                     </Link>
                   </li>
                 </ul>
-                <Link to="/calculators/banking-knowledge" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                <Link to="/#banking-calculators" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
                   Explore All Banking Tools
                   <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Link>
