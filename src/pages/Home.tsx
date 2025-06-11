@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Calculator, ArrowRight, Search, TrendingUp, DollarSign, PieChart, Building, Shield, CreditCard } from 'lucide-react';
+import { Menu, X, Calculator, ArrowRight, Search, TrendingUp, DollarSign, PieChart, Building, Shield } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
@@ -147,39 +147,6 @@ export const Home: React.FC = () => {
             <Link to="/#categories" className="btn btn-outline">
               View All Calculators
             </Link>
-          </div>
-        </div>
-      </section>
-      
-      {/* Credit Card Finder Roadmap Button */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl p-8 shadow-lg text-white">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <div className="mb-6 md:mb-0 md:mr-8">
-                <div className="flex items-center mb-3">
-                  <CreditCard className="h-8 w-8 mr-3" />
-                  <h2 className="text-2xl font-bold">Credit Card Finder & Score Estimator</h2>
-                </div>
-                <p className="text-white/90 text-lg mb-4">
-                  Explore our detailed roadmap for building a comprehensive Credit Card Finder and Credit Score Estimator tool for Indian users.
-                </p>
-                <ul className="list-disc list-inside text-white/80 mb-6">
-                  <li>Compare credit cards based on rewards, fees, and eligibility</li>
-                  <li>Estimate your credit score and get personalized improvement tips</li>
-                  <li>Find the best credit card for your spending patterns</li>
-                </ul>
-              </div>
-              <div>
-                <Link 
-                  to="/credit-card-finder-roadmap" 
-                  className="inline-flex items-center px-6 py-3 bg-white text-indigo-700 rounded-lg font-medium shadow-md hover:bg-indigo-50 transition-colors"
-                >
-                  View Detailed Roadmap
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -457,46 +424,6 @@ export const Home: React.FC = () => {
                 </ul>
                 <Link to="/#banking-calculators" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
                   Explore All Banking Tools
-                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100">
-              <div className="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <CreditCard className="h-20 w-20 text-white opacity-20" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-indigo-900 to-transparent">
-                  <h3 className="text-xl font-semibold text-white">Credit Card Tools</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-neutral-600 mb-4">
-                  Compare credit cards, calculate EMIs, and find the best card for your spending patterns.
-                </p>
-                <ul className="space-y-2 mb-4">
-                  <li>
-                    <Link to="/credit-card-finder-roadmap" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
-                      <ArrowRight className="h-3 w-3 mr-1" />
-                      Credit Card Finder (Coming Soon)
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/calculators/credit-card-emi-calculator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
-                      <ArrowRight className="h-3 w-3 mr-1" />
-                      Credit Card EMI Calculator
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/calculators/bnpl-calculator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
-                      <ArrowRight className="h-3 w-3 mr-1" />
-                      Buy Now Pay Later Calculator
-                    </Link>
-                  </li>
-                </ul>
-                <Link to="/credit-card-finder-roadmap" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
-                  View Credit Card Finder Roadmap
                   <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
