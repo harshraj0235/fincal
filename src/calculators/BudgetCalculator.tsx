@@ -16,7 +16,12 @@ import {
   Shirt,
   Edit2,
   Trash2,
-  Target
+  Target,
+  Calculator,
+  ExternalLink,
+  Info,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
 interface BudgetItem {
@@ -62,6 +67,7 @@ export const BudgetCalculator: React.FC = () => {
   const [items, setItems] = useState<BudgetItem[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [editingItem, setEditingItem] = useState<BudgetItem | null>(null);
+  const [showSEOContent, setShowSEOContent] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     amount: '',
@@ -157,13 +163,45 @@ export const BudgetCalculator: React.FC = () => {
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
+        {/* SEO Header Section */}
+        <header className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl mb-4">
-            <Wallet className="w-8 h-8 text-white" />
+            <Calculator className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Smart Budget Tracker</h1>
-          <p className="text-gray-600 text-lg">Take control of your finances with intelligent insights</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">Free Budget Calculator & Investment Planner</h1>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Take control of your finances with our comprehensive budget calculator. Track expenses, plan investments, 
+            and achieve your financial goals with intelligent insights and real-time calculations.
+          </p>
+          
+          {/* SEO Keywords Section */}
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">Budget Calculator</span>
+            <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Investment Calculator</span>
+            <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Financial Planning</span>
+            <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Expense Tracker</span>
+          </div>
+        </header>
+
+        {/* Investment Calculator Link Section */}
+        <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-2xl p-6 mb-8 border border-emerald-200">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <PieChart className="w-8 h-8 text-emerald-600 mr-3" />
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">Advanced Investment Calculators</h3>
+                <p className="text-gray-600">Calculate SIP returns, compound interest, and investment growth</p>
+              </div>
+            </div>
+            <a 
+              href="https://moneycal.in/#investment-calculators" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-600 transition-colors"
+            >
+              Try Now <ExternalLink className="w-4 h-4 ml-2" />
+            </a>
+          </div>
         </div>
 
         {/* Summary Cards */}
@@ -198,7 +236,7 @@ export const BudgetCalculator: React.FC = () => {
                 }`} />
               </div>
             </div>
-            <h3 className="text-sm font-medium text-gray-500 mb-1">Remaining</h3>
+            <h3 className="text-sm font-medium text-gray-500 mb-1">Available for Investment</h3>
             <p className={`text-2xl font-bold ${
               remainingBudget >= 0 ? 'text-green-600' : 'text-red-600'
             }`}>
@@ -223,6 +261,48 @@ export const BudgetCalculator: React.FC = () => {
               ></div>
             </div>
           </div>
+        </div>
+
+        {/* Financial Tips Section */}
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-xl font-bold text-gray-900 flex items-center">
+              <Info className="w-6 h-6 text-blue-500 mr-2" />
+              Smart Financial Planning Tips
+            </h3>
+            <button
+              onClick={() => setShowSEOContent(!showSEOContent)}
+              className="flex items-center text-blue-500 hover:text-blue-600 transition-colors"
+            >
+              {showSEOContent ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+            </button>
+          </div>
+          
+          {showSEOContent && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              <div className="space-y-4">
+                <h4 className="font-semibold text-gray-900">Budget Calculator Best Practices</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Track all income sources including salary, freelance, and investment returns</li>
+                  <li>• Categorize expenses to identify spending patterns and optimization opportunities</li>
+                  <li>• Set realistic budget limits for each category based on historical data</li>
+                  <li>• Review and adjust your budget monthly to stay on track with financial goals</li>
+                  <li>• Use the 50/30/20 rule: 50% needs, 30% wants, 20% savings and investments</li>
+                </ul>
+              </div>
+              
+              <div className="space-y-4">
+                <h4 className="font-semibold text-gray-900">Investment Planning Strategies</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Start investing early to benefit from compound interest growth</li>
+                  <li>• Diversify your portfolio across different asset classes and sectors</li>
+                  <li>• Consider SIP (Systematic Investment Plan) for regular investment discipline</li>
+                  <li>• Use our <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">investment calculators</a> to project returns</li>
+                  <li>• Maintain an emergency fund covering 6-12 months of expenses</li>
+                </ul>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Add New Item Button */}
@@ -359,7 +439,7 @@ export const BudgetCalculator: React.FC = () => {
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
               <TrendingUp className="w-6 h-6 text-emerald-500 mr-2" />
-              Income Sources
+              Income Sources & Investment Returns
             </h3>
             <div className="space-y-3">
               {items.filter(item => item.type === 'income').map((item) => {
@@ -396,7 +476,10 @@ export const BudgetCalculator: React.FC = () => {
                 );
               })}
               {items.filter(item => item.type === 'income').length === 0 && (
-                <p className="text-gray-500 text-center py-8">No income sources added yet</p>
+                <div className="text-center py-8">
+                  <p className="text-gray-500 mb-4">No income sources added yet</p>
+                  <p className="text-sm text-gray-400">Add your salary, freelance income, or investment returns to get started</p>
+                </div>
               )}
             </div>
           </div>
@@ -405,7 +488,7 @@ export const BudgetCalculator: React.FC = () => {
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
               <TrendingDown className="w-6 h-6 text-red-500 mr-2" />
-              Expense Categories
+              Expense Categories & Budget Tracking
             </h3>
             <div className="space-y-4">
               {Object.entries(expenseCategories).map(([category, data]) => {
@@ -471,11 +554,61 @@ export const BudgetCalculator: React.FC = () => {
                 );
               })}
               {Object.keys(expenseCategories).length === 0 && (
-                <p className="text-gray-500 text-center py-8">No expenses added yet</p>
+                <div className="text-center py-8">
+                  <p className="text-gray-500 mb-4">No expenses added yet</p>
+                  <p className="text-sm text-gray-400">Start tracking your expenses to see detailed budget analysis</p>
+                </div>
               )}
             </div>
           </div>
         </div>
+
+        {/* SEO Footer Content */}
+        <footer className="mt-12 bg-gray-50 rounded-2xl p-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h4 className="font-bold text-gray-900 mb-4">Budget Calculator Features</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• Real-time expense tracking and categorization</li>
+                <li>• Budget vs actual spending analysis</li>
+                <li>• Investment planning and goal setting</li>
+                <li>• Visual progress indicators and charts</li>
+                <li>• Data persistence with local storage</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-bold text-gray-900 mb-4">Financial Planning Tools</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">SIP Calculator</a></li>
+                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Compound Interest Calculator</a></li>
+                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Retirement Planning Calculator</a></li>
+                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">EMI Calculator</a></li>
+                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Tax Calculator</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-bold text-gray-900 mb-4">Why Use Our Calculator?</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>• Free and easy to use budget planner</li>
+                <li>• No registration or personal data required</li>
+                <li>• Mobile-responsive design for all devices</li>
+                <li>• Secure local data storage</li>
+                <li>• Professional financial planning insights</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+            <p className="text-sm text-gray-500">
+              Start your financial journey today with our comprehensive budget calculator and 
+              <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline ml-1">
+                investment planning tools
+              </a>
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
   );
