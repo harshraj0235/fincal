@@ -70,31 +70,31 @@
 
   <!-- Blog Categories -->
   <url>
-    <loc>https://moneycal.in/blog/category/government-schemes</loc>
+    <loc>https://moneycal.in/#personal-finance</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/category/investment</loc>
+    <loc>https://moneycal.in/#investment-calculators</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/category/tax-planning</loc>
+    <loc>https://moneycal.in/#tax-calculators</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/category/retirement-planning</loc>
+    <loc>https://moneycal.in/#retirement-calculators</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/category/financial-inclusion</loc>
+    <loc>https://moneycal.in/blog</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -108,19 +108,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/nps-tier1-vs-tier2-comparison</loc>
+    <loc>https://moneycal.in/blog/national-pension-system-guide</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/post-office-savings-schemes-comparison</loc>
+    <loc>https://moneycal.in/blog/kisan-vikas-patra-explained</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/pm-vaya-vandana-yojana-guide</loc>
+    <loc>https://moneycal.in/blog/pradhan-mantri-vaya-vandana-yojana-guide</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -132,36 +132,311 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/tax-saving-investment-options</loc>
+    <loc>https://moneycal.in/blog/atal-pension-yojana-guide</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/financial-scams-awareness</loc>
+    <loc>https://moneycal.in/blog/home-loan-emi-prepayment-calculator-india</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/credit-card-comparison-guide</loc>
+    <loc>https://moneycal.in/blog/sip-vs-lumpsum-investment-strategy</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/improve-credit-score-tips</loc>
+    <loc>https://moneycal.in/blog/calculating-retirement-corpus-guide</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moneycal.in/blog/best-credit-cards-for-beginners</loc>
+    <loc>https://moneycal.in/blog/income-tax-calculator-india</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+   <url>
+    <loc>https://moneycal.in/blog/pmjjby-benefits-estimation</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+ <url>
+    <loc>https://moneycal.in/blog/top-10-government-schemes-indian-2025-guide</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/top-investment-opportunities-2025-key-sectors-india</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/india-new-income-tax-bill-2025-key-changes-implications</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/budget-2025-senior-citizens-top-5-expectations-financial-planning</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/rural-ministry-mgnregs-12-percent-hike-rural-economy-impact</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/mgnrega-2025-new-benefits-rural-india-guide</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/indian-pharma-sector-2025-investment-opportunity</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/effective-tax-planning-strategies-2025-maximize-savings</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/budget-2025-rural-development-priority-highlights</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/senior-citizen-fd-interest-rates-2025-highest-returns</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/interest-rates-falling-switch-home-loan-emi-savings-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/bank-of-india-home-loan-interest-rates-2025-new-existing-customers</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/nai-electric-vahan-nirman-yojana-labh-protsahan-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/mgnrega-budget-hike-rural-employment-impact-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/sip-fd-se-aage-nivesh-vichar-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/bhartiya-tech-fund-silicon-valley-opportunity-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/top-investment-opportunities-2025-green-energy-real-estate-ev-tech</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/mutual-funds-turned-1-lakh-to-7-lakh-icici-schemes</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/rise-of-etfs-india-genz-no-to-fees-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/interest-support-farm-loans-extended-farmers-relief-2025-26</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/budget-2025-transforming-agriculture-empowering-rural-businesses</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/bharat-mein-jaldi-retirement-plans-vittiya-swatantrata</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/budget-2025-senior-citizens-expectations</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/top-10-government-schemes-india-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/union-budget-2025-benefits-senior-citizens</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/best-tax-saving-investments-millennials-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/financial-planning-young-professionals-india</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/top-10-government-schemes-india-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/india-electric-vehicle-manufacturing-scheme-spmepci</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/sip-fd-se-aage-nivesh-vichar-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/gen-z-embracing-etfs-india-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/top-investment-opportunities-india-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/1-lakh-to-7-lakh-mutual-fund-success-stories</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/ai-focused-etfs-india-tech-investments</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/varishth-nagarikon-fd-may-2025-uchch-return-antim-avasar</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/budget-2025-senior-citizen-expectations-kya-milega-khas</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/senior-citizen-fd-options-banks-9-1-percent-biyaj-daren</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/maximize-tax-benefits-senior-citizen-2025-vistrit-margdarshika</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/understanding-scss-benefits-senior-citizen-savings-scheme</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/health-insurance-senior-citizens-guide-sahi-yojana-kaise-chunain</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/home-loan-emi-kam-karen-banks-ghatai-biyaj-daren-april-2025</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/biyaz-daren-gir-rahi-hain-home-loan-regime-badal-kar-bachat-karen</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/budget-2025-ghar-kharidaron-ki-3-pramukh-apekshaen</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/clss-yojana-home-loan-biyaj-subsidy-kaise-len</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/home-loan-emi-calculator-punarbhuktan-yojana</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Loan Calculators -->
   <url>
     <loc>https://moneycal.in/calculators/emi-calculator</loc>
