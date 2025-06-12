@@ -530,138 +530,263 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
-  {
+ {
     id: 4,
-    title: "Understanding the Pradhan Mantri Vaya Vandana Yojana (PMVVY) for Senior Citizens",
-    slug: "pradhan-mantri-vaya-vandana-yojana-guide",
-    date: "june 12, 2025",
-    coverImage: "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    excerpt: "Pradhan Mantri Vaya Vandana Yojana (PMVVY) is a pension scheme specifically designed for senior citizens aged 60 years and above. Learn about its features, benefits, and how it can provide financial security during retirement.",
-    categories: ["Government Schemes", "Retirement Planning", "Senior Citizens"],
-    content: `
----
-# Pradhan Mantri Vaya Vandana Yojana (PMVVY): A Lifeline for Senior Citizens
-
-The **Pradhan Mantri Vaya Vandana Yojana (PMVVY)** is a remarkable pension scheme introduced by the Government of India, managed by the Life Insurance Corporation of India (LIC). It's specifically crafted to offer social security and financial independence to senior citizens during their golden years. If you're 60 years or older, this scheme is designed to provide you with a regular, assured pension, safeguarding you from the uncertainties of market fluctuations and helping you maintain a stable income stream.
-
----
-## Who Can Benefit? (Eligibility Criteria)
-
-* **Age:** You must be 60 years of age or above to subscribe to this scheme. There's no maximum age limit for entry.
-* **Citizenship:** The scheme is open to Indian citizens.
-
----
-## What Makes PMVVY Unique? (Key Features)
-
-PMVVY stands out due to its simplicity and guaranteed returns. Here's a breakdown of its core features:
-
-* **Assured Pension:** The most attractive feature is the guaranteed pension. For the entire policy term, you receive a fixed pension at a pre-determined rate.
-* **Policy Term:** The scheme has a fixed policy term of **10 years**. This means you receive your pension for a decade from the date of purchase.
-* **Investment Limit:** There's a maximum purchase price you can invest, which dictates the maximum pension you can receive. This limit is regularly updated by the government.
-* **Pension Frequency:** You have the flexibility to choose how frequently you'd like to receive your pension:
-    * Monthly
-    * Quarterly
-    * Half-yearly
-    * Annually
-    The pension payment begins one year, six months, three months, or one month from the date of purchase, depending on the mode chosen.
-* **No GST:** This scheme is exempt from Goods and Services Tax (GST).
-
----
-## Why Choose PMVVY? (Benefits)
-
-The benefits of PMVVY are designed to provide peace of mind and financial stability:
-
-* **Guaranteed Income:** The primary advantage is the assurance of a regular and fixed pension. This is invaluable, especially for senior citizens who rely on consistent income.
-* **Safety of Capital:** Your invested capital is safe, as the scheme is backed by the Government of India.
-* **Death Benefit:** In the unfortunate event of the subscriber's demise during the policy term, the full purchase price is refunded to the nominee.
-* **Maturity Benefit:** If the subscriber survives the 10-year policy term, the purchase price, along with the final pension installment, is returned.
-* **Loan Facility:** After three policy years, you can avail a loan against the scheme. The maximum loan amount can be up to 75% of the purchase price.
-* **Premature Exit:** While not ideal, premature exit is allowed under exceptional circumstances, such as critical illness of the subscriber or their spouse. In such cases, 98% of the purchase price is refunded.
-
----
-## How to Get Started (Application Process)
-
-Applying for PMVVY is straightforward:
-
-1.  **Offline:** You can purchase the scheme directly from any LIC branch office.
-2.  **Online:** It's also available for purchase through the official LIC website.
-
-You will need to provide necessary documents like your Aadhaar card, PAN card, address proof, and bank account details.
-
----
-## Your Secure Retirement Starts Here
-
-The Pradhan Mantri Vaya Vandana Yojana is more than just a pension scheme; it's a testament to financial security for senior citizens. With its guaranteed returns, flexible pension options, and government backing, it offers a reliable way to ensure a stable and dignified retirement, free from financial worries. If you meet the eligibility criteria, PMVVY is definitely worth considering as a cornerstone of your retirement planning.
-    `
+    title: "How to Calculate Home Loan EMI with Prepayment Options in India",
+    slug: "home-loan-emi-prepayment-calculator-india",
+    date: "May 28, 2025",
+    coverImage: "https://images.pexels.com/photos/2677387/pexels-photo-2677387.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Understanding your Home Loan EMI is crucial, but did you know prepayment can save you lakhs? This comprehensive guide explains EMI calculation and how strategic prepayments can significantly reduce your interest burden and loan tenure in India.",
+    categories: ["Home Loans", "Real Estate", "EMI Calculation", "Financial Planning"],
+    content: [
+      {
+        type: "paragraph",
+        content: "Taking a home loan is a significant financial commitment, often spanning decades. The Equated Monthly Installment (EMI) is the fixed amount you pay to the bank each month, comprising both principal and interest. While understanding EMI is fundamental, mastering prepayment strategies can be a game-changer, allowing you to become debt-free faster and save a substantial amount on interest."
+      },
+      {
+        type: "heading",
+        content: "Understanding Home Loan EMI Calculation"
+      },
+      {
+        type: "paragraph",
+        content: "The EMI for a home loan is calculated using a specific formula that takes into account the principal loan amount, the interest rate, and the loan tenure. The formula is:"
+      },
+      {
+        type: "paragraph",
+        content: "$\text{EMI} = P \times \frac{r \times (1+r)^n}{(1+r)^n - 1}$"
+      },
+      {
+        type: "list",
+        items: [
+          "P = Principal Loan Amount",
+          "r = Monthly Interest Rate (Annual Rate / 12 / 100)",
+          "n = Loan Tenure in Months (Years x 12)"
+        ]
+      },
+      {
+        type: "paragraph",
+        content: "Let's say you take a loan of ₹50 Lakhs at an annual interest rate of 8.5% for 20 years. Here's how it would break down:"
+      },
+      {
+        type: "list",
+        items: [
+          "P = ₹50,00,000",
+          "Annual Interest Rate = 8.5%",
+          "Monthly Interest Rate (r) = 8.5 / 12 / 100 = 0.0070833",
+          "Loan Tenure (n) = 20 years * 12 months/year = 240 months"
+        ]
+      },
+      {
+        type: "paragraph",
+        content: "Plugging these values into an EMI calculator will give you the exact monthly payment. Online EMI calculators are readily available and highly recommended for quick and accurate calculations."
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "A well-planned home loan can lead to financial freedom."
+      },
+      {
+        type: "heading",
+        content: "The Power of Prepayment: Why It Matters"
+      },
+      {
+        type: "paragraph",
+        content: "Prepayment involves paying an amount over and above your regular EMI. This extra payment directly reduces your outstanding principal, leading to a recalculation of your future EMIs or a reduction in your loan tenure. The magic of prepayment lies in its ability to save a significant amount of interest over the loan's lifetime, especially in the initial years when the interest component of your EMI is highest."
+      },
+      {
+        type: "subheading",
+        content: "How Prepayment Reduces Interest Outflow"
+      },
+      {
+        type: "paragraph",
+        content: "When you make a prepayment, the principal amount on which interest is calculated decreases. Since interest is charged on the outstanding principal, a lower principal means lower interest payments going forward. Over a long loan tenure, even small, consistent prepayments can translate into substantial savings."
+      },
+      {
+        type: "quote",
+        content: "Every extra rupee you pay towards your home loan principal is a rupee saved on future interest, accelerating your journey to debt-free homeownership.",
+        author: "Financial Planning Expert"
+      },
+      {
+        type: "heading",
+        content: "Types of Prepayment Options"
+      },
+      {
+        type: "list",
+        items: [
+          "**Lump Sum Prepayment:** Making a one-time large payment whenever you have surplus funds (e.g., bonus, maturity of an investment).",
+          "**Increased EMI:** Opting to pay a slightly higher EMI than your calculated amount each month. Even a small increase can have a big impact over time.",
+          "**Ad-hoc Payments:** Making smaller, irregular payments whenever feasible, which can be done through your bank's online portal or by visiting a branch."
+        ]
+      },
+      {
+        type: "heading",
+        content: "Factors to Consider Before Prepaying"
+      },
+      {
+        type: "list",
+        items: [
+          "**Prepayment Penalties:** Check with your bank if there are any prepayment penalties. As per RBI guidelines, floating rate home loans generally do not have prepayment penalties for individual borrowers.",
+          "**Emergency Fund:** Ensure you have a robust emergency fund (6-12 months of expenses) before directing surplus funds towards prepayment.",
+          "**Other High-Interest Debts:** Prioritize clearing other high-interest debts (e.g., credit card debt, personal loans) before prepaying your home loan.",
+          "**Investment Opportunities:** Evaluate if the returns from alternative investments (e.g., mutual funds, stocks) are significantly higher than your home loan interest rate. If so, investing might be more beneficial than prepaying, considering your risk appetite."
+        ]
+      },
+      {
+        type: "heading",
+        content: "Using a Home Loan Prepayment Calculator"
+      },
+      {
+        type: "paragraph",
+        content: "Many online financial portals offer home loan prepayment calculators. These tools allow you to input your current loan details and then simulate the impact of various prepayment scenarios (e.g., a one-time lump sum, a monthly increase in EMI). They will show you:"
+      },
+      {
+        type: "list",
+        items: [
+          "How much interest you will save.",
+          "How many months/years your loan tenure will be reduced by.",
+          "The revised EMI (if you choose to keep the tenure same and reduce EMI)."
+        ]
+      },
+      {
+        type: "paragraph",
+        content: "These calculators are invaluable for visualizing the long-term benefits and planning your prepayment strategy effectively."
+      },
+      {
+        type: "heading",
+        content: "Impact of Interest Rate Changes on EMI and Prepayment"
+      },
+      {
+        type: "paragraph",
+        content: "Home loan interest rates in India can be floating or fixed. Floating rates are linked to external benchmarks (like repo rate) and can change. When interest rates increase, your EMI might remain the same, but the tenure increases, or your EMI might increase to keep the tenure constant. Conversely, a decrease in rates can reduce your EMI or tenure."
+      },
+      {
+        type: "paragraph",
+        content: "Prepayment becomes even more critical during periods of rising interest rates, as it helps mitigate the impact of increased interest outflow and keeps your loan tenure in check."
+      },
+      {
+        type: "heading",
+        content: "Conclusion: Smart Home Loan Management"
+      },
+      {
+        type: "paragraph",
+        content: "Effectively managing your home loan goes beyond just paying your EMIs on time. By understanding the mechanics of EMI calculation and strategically utilizing prepayment options, you can significantly reduce your overall interest burden and achieve financial freedom much sooner. Always use reliable online calculators to plan your moves and consult with a financial advisor to align your home loan strategy with your broader financial goals."
+      },
+      {
+        type: "paragraph",
+        content: "Start exploring our Home Loan EMI and Prepayment Calculator today to see how much you can save!"
+      }
+    ]
   },
-  {
+ {
     id: 5,
     title: "Atal Pension Yojana: Securing Retirement for the Unorganized Sector",
     slug: "atal-pension-yojana-guide",
     date: "june 8, 2025",
     excerpt: "Atal Pension Yojana (APY) is a government-backed pension scheme primarily aimed at workers in the unorganized sector. Discover how this scheme works, its benefits, and how to maximize your pension amount.",
     categories: ["Government Schemes", "Retirement Planning", "Financial Inclusion"],
-    content: `
----
-# Atal Pension Yojana (APY): Building a Retirement Foundation for Everyone
-
-The **Atal Pension Yojana (APY)** is a groundbreaking social security scheme launched by the Government of India, with a specific focus on bringing workers from the unorganized sector into the fold of retirement planning. For millions who don't have access to traditional pension benefits, APY offers a much-needed lifeline, guaranteeing a minimum pension after retirement. It's a powerful tool for financial inclusion, ensuring that a secure future isn't just a dream, but a tangible reality.
-
----
-## Who Can Join APY? (Eligibility Criteria)
-
-APY is designed to be accessible to a wide range of individuals:
-
-* **Age:** You must be between **18 and 40 years** of age to enroll.
-* **Bank Account:** You need to have a savings bank account (or a post office savings account).
-* **No Existing Statutory Social Security Scheme:** You should not be a beneficiary of any other statutory social security scheme (like EPF or EPS).
-
----
-## How APY Works (Key Features)
-
-APY's structure is simple and contributor-friendly:
-
-* **Fixed Pension:** Upon attaining 60 years of age, subscribers will receive a fixed minimum pension of Rs. 1,000, Rs. 2,000, Rs. 3,000, Rs. 4,000, or Rs. 5,000 per month, depending on their contributions.
-* **Contribution Period:** Contributions are made until the subscriber reaches 60 years of age. The earlier you start, the lower your monthly contribution will be for the same pension amount.
-* **Government Co-contribution:** For eligible subscribers who enrolled before March 31, 2016, the government co-contributes 50% of the subscriber's contribution or Rs. 1,000 per annum, whichever is lower, for a period of 5 years.
-* **Contribution Frequency:** You have the flexibility to make contributions monthly, quarterly, or half-yearly, as per your convenience.
-* **Auto-Debit Facility:** Contributions are automatically debited from your savings bank account, ensuring consistency and ease of payment.
-
----
-## The Power of APY (Benefits)
-
-APY offers a robust set of benefits, making it an attractive option for long-term financial security:
-
-* **Guaranteed Minimum Pension:** This is the cornerstone benefit. Regardless of market fluctuations, you are guaranteed to receive your chosen pension amount.
-* **Lifelong Income:** The pension is paid to the subscriber for their entire life after 60.
-* **Spouse's Benefit:** In case of the subscriber's demise, the same pension amount is paid to the spouse for their lifetime.
-* **Nominee's Benefit:** If both the subscriber and spouse pass away, the accumulated corpus (the total amount accumulated, adjusted for market returns) is returned to the nominee.
-* **Tax Benefits:** Contributions to APY are eligible for tax deduction under Section 80CCD (1B) of the Income Tax Act, 1961, up to a certain limit.
-
----
-## Maximizing Your APY Pension
-
-To get the most out of your Atal Pension Yojana:
-
-* **Start Early:** The younger you start, the lower your monthly contributions will be for the same pension amount, leveraging the power of compounding.
-* **Choose a Higher Pension Tier:** If your financial situation allows, opt for a higher guaranteed pension amount (e.g., Rs. 5,000) by making slightly higher contributions.
-* **Ensure Regular Contributions:** Consistency is key. Make sure your bank account has sufficient funds for auto-debits to avoid penalties for missed payments.
-
----
-## Enrolling in APY: A Step-by-Step Guide
-
-Subscribing to APY is a simple process:
-
-1.  **Visit Your Bank:** Approach your bank branch where you have a savings account.
-2.  **Fill the APY Application Form:** Request and fill out the APY application form.
-3.  **Provide KYC:** Submit necessary KYC documents like Aadhaar card and PAN card.
-4.  **Authorize Auto-Debit:** Provide authorization for auto-debit of contributions from your account.
-
----
-## Building a Secure Future
-
-The Atal Pension Yojana is a vital step towards ensuring that every Indian, especially those in the unorganized sector, can look forward to a dignified and financially secure retirement. By providing a guaranteed minimum pension and easy enrollment, APY empowers individuals to take control of their future and build a strong financial foundation. Don't wait; secure your tomorrow, today!
-    `
+    content: [
+      {
+        type: "heading",
+        content: "Atal Pension Yojana (APY): Building a Retirement Foundation for Everyone"
+      },
+      {
+        type: "paragraph",
+        content: "The **Atal Pension Yojana (APY)** is a groundbreaking social security scheme launched by the Government of India, with a specific focus on bringing workers from the unorganized sector into the fold of retirement planning. For millions who don't have access to traditional pension benefits, APY offers a much-needed lifeline, guaranteeing a minimum pension after retirement. It's a powerful tool for financial inclusion, ensuring that a secure future isn't just a dream, but a tangible reality."
+      },
+      {
+        type: "heading",
+        content: "Who Can Join APY? (Eligibility Criteria)"
+      },
+      {
+        type: "paragraph",
+        content: "APY is designed to be accessible to a wide range of individuals:"
+      },
+      {
+        type: "list",
+        items: [
+          "**Age:** You must be between **18 and 40 years** of age to enroll.",
+          "**Bank Account:** You need to have a savings bank account (or a post office savings account).",
+          "**No Existing Statutory Social Security Scheme:** You should not be a beneficiary of any other statutory social security scheme (like EPF or EPS)."
+        ]
+      },
+      {
+        type: "heading",
+        content: "How APY Works (Key Features)"
+      },
+      {
+        type: "paragraph",
+        content: "APY's structure is simple and contributor-friendly:"
+      },
+      {
+        type: "list",
+        items: [
+          "**Fixed Pension:** Upon attaining 60 years of age, subscribers will receive a fixed minimum pension of Rs. 1,000, Rs. 2,000, Rs. 3,000, Rs. 4,000, or Rs. 5,000 per month, depending on their contributions.",
+          "**Contribution Period:** Contributions are made until the subscriber reaches 60 years of age. The earlier you start, the lower your monthly contribution will be for the same pension amount.",
+          "**Government Co-contribution:** For eligible subscribers who enrolled before March 31, 2016, the government co-contributes 50% of the subscriber's contribution or Rs. 1,000 per annum, whichever is lower, for a period of 5 years.",
+          "**Contribution Frequency:** You have the flexibility to make contributions monthly, quarterly, or half-yearly, as per your convenience.",
+          "**Auto-Debit Facility:** Contributions are automatically debited from your savings bank account, ensuring consistency and ease of payment."
+        ]
+      },
+      {
+        type: "heading",
+        content: "The Power of APY (Benefits)"
+      },
+      {
+        type: "paragraph",
+        content: "APY offers a robust set of benefits, making it an attractive option for long-term financial security:"
+      },
+      {
+        type: "list",
+        items: [
+          "**Guaranteed Minimum Pension:** This is the cornerstone benefit. Regardless of market fluctuations, you are guaranteed to receive your chosen pension amount.",
+          "**Lifelong Income:** The pension is paid to the subscriber for their entire life after 60.",
+          "**Spouse's Benefit:** In case of the subscriber's demise, the same pension amount is paid to the spouse for their lifetime.",
+          "**Nominee's Benefit:** If both the subscriber and spouse pass away, the accumulated corpus (the total amount accumulated, adjusted for market returns) is returned to the nominee.",
+          "**Tax Benefits:** Contributions to APY are eligible for tax deduction under Section 80CCD (1B) of the Income Tax Act, 1961, up to a certain limit."
+        ]
+      },
+      {
+        type: "heading",
+        content: "Maximizing Your APY Pension"
+      },
+      {
+        type: "paragraph",
+        content: "To get the most out of your Atal Pension Yojana:"
+      },
+      {
+        type: "list",
+        items: [
+          "**Start Early:** The younger you start, the lower your monthly contributions will be for the same pension amount, leveraging the power of compounding.",
+          "**Choose a Higher Pension Tier:** If your financial situation allows, opt for a higher guaranteed pension amount (e.g., Rs. 5,000) by making slightly higher contributions.",
+          "**Ensure Regular Contributions:** Consistency is key. Make sure your bank account has sufficient funds for auto-debits to avoid penalties for missed payments."
+        ]
+      },
+      {
+        type: "heading",
+        content: "Enrolling in APY: A Step-by-Step Guide"
+      },
+      {
+        type: "paragraph",
+        content: "Subscribing to APY is a simple process:"
+      },
+      {
+        type: "list",
+        items: [
+          "**Visit Your Bank:** Approach your bank branch where you have a savings account.",
+          "**Fill the APY Application Form:** Request and fill out the APY application form.",
+          "**Provide KYC:** Submit necessary KYC documents like Aadhaar card and PAN card.",
+          "**Authorize Auto-Debit:** Provide authorization for auto-debit of contributions from your account."
+        ]
+      },
+      {
+        type: "heading",
+        content: "Building a Secure Future"
+      },
+      {
+        type: "paragraph",
+        content: "The Atal Pension Yojana is a vital step towards ensuring that every Indian, especially those in the unorganized sector, can look forward to a dignified and financially secure retirement. By providing a guaranteed minimum pension and easy enrollment, APY empowers individuals to take control of their future and build a strong financial foundation. Don't wait; secure your tomorrow, today!"
+      }
+    ]
   },
   {
     id: 6,
