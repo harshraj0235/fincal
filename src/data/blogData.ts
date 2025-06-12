@@ -538,7 +538,61 @@ export const blogPosts: BlogPost[] = [
     coverImage: "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     excerpt: "Pradhan Mantri Vaya Vandana Yojana (PMVVY) is a pension scheme specifically designed for senior citizens aged 60 years and above. Learn about its features, benefits, and how it can provide financial security during retirement.",
     categories: ["Government Schemes", "Retirement Planning", "Senior Citizens"],
-    content: []
+    content: `
+---
+# Pradhan Mantri Vaya Vandana Yojana (PMVVY): A Lifeline for Senior Citizens
+
+The **Pradhan Mantri Vaya Vandana Yojana (PMVVY)** is a remarkable pension scheme introduced by the Government of India, managed by the Life Insurance Corporation of India (LIC). It's specifically crafted to offer social security and financial independence to senior citizens during their golden years. If you're 60 years or older, this scheme is designed to provide you with a regular, assured pension, safeguarding you from the uncertainties of market fluctuations and helping you maintain a stable income stream.
+
+---
+## Who Can Benefit? (Eligibility Criteria)
+
+* **Age:** You must be 60 years of age or above to subscribe to this scheme. There's no maximum age limit for entry.
+* **Citizenship:** The scheme is open to Indian citizens.
+
+---
+## What Makes PMVVY Unique? (Key Features)
+
+PMVVY stands out due to its simplicity and guaranteed returns. Here's a breakdown of its core features:
+
+* **Assured Pension:** The most attractive feature is the guaranteed pension. For the entire policy term, you receive a fixed pension at a pre-determined rate.
+* **Policy Term:** The scheme has a fixed policy term of **10 years**. This means you receive your pension for a decade from the date of purchase.
+* **Investment Limit:** There's a maximum purchase price you can invest, which dictates the maximum pension you can receive. This limit is regularly updated by the government.
+* **Pension Frequency:** You have the flexibility to choose how frequently you'd like to receive your pension:
+    * Monthly
+    * Quarterly
+    * Half-yearly
+    * Annually
+    The pension payment begins one year, six months, three months, or one month from the date of purchase, depending on the mode chosen.
+* **No GST:** This scheme is exempt from Goods and Services Tax (GST).
+
+---
+## Why Choose PMVVY? (Benefits)
+
+The benefits of PMVVY are designed to provide peace of mind and financial stability:
+
+* **Guaranteed Income:** The primary advantage is the assurance of a regular and fixed pension. This is invaluable, especially for senior citizens who rely on consistent income.
+* **Safety of Capital:** Your invested capital is safe, as the scheme is backed by the Government of India.
+* **Death Benefit:** In the unfortunate event of the subscriber's demise during the policy term, the full purchase price is refunded to the nominee.
+* **Maturity Benefit:** If the subscriber survives the 10-year policy term, the purchase price, along with the final pension installment, is returned.
+* **Loan Facility:** After three policy years, you can avail a loan against the scheme. The maximum loan amount can be up to 75% of the purchase price.
+* **Premature Exit:** While not ideal, premature exit is allowed under exceptional circumstances, such as critical illness of the subscriber or their spouse. In such cases, 98% of the purchase price is refunded.
+
+---
+## How to Get Started (Application Process)
+
+Applying for PMVVY is straightforward:
+
+1.  **Offline:** You can purchase the scheme directly from any LIC branch office.
+2.  **Online:** It's also available for purchase through the official LIC website.
+
+You will need to provide necessary documents like your Aadhaar card, PAN card, address proof, and bank account details.
+
+---
+## Your Secure Retirement Starts Here
+
+The Pradhan Mantri Vaya Vandana Yojana is more than just a pension scheme; it's a testament to financial security for senior citizens. With its guaranteed returns, flexible pension options, and government backing, it offers a reliable way to ensure a stable and dignified retirement, free from financial worries. If you meet the eligibility criteria, PMVVY is definitely worth considering as a cornerstone of your retirement planning.
+    `
   },
   {
     id: 5,
@@ -547,7 +601,67 @@ export const blogPosts: BlogPost[] = [
     date: "june 8, 2025",
     excerpt: "Atal Pension Yojana (APY) is a government-backed pension scheme primarily aimed at workers in the unorganized sector. Discover how this scheme works, its benefits, and how to maximize your pension amount.",
     categories: ["Government Schemes", "Retirement Planning", "Financial Inclusion"],
-    content: []
+    content: `
+---
+# Atal Pension Yojana (APY): Building a Retirement Foundation for Everyone
+
+The **Atal Pension Yojana (APY)** is a groundbreaking social security scheme launched by the Government of India, with a specific focus on bringing workers from the unorganized sector into the fold of retirement planning. For millions who don't have access to traditional pension benefits, APY offers a much-needed lifeline, guaranteeing a minimum pension after retirement. It's a powerful tool for financial inclusion, ensuring that a secure future isn't just a dream, but a tangible reality.
+
+---
+## Who Can Join APY? (Eligibility Criteria)
+
+APY is designed to be accessible to a wide range of individuals:
+
+* **Age:** You must be between **18 and 40 years** of age to enroll.
+* **Bank Account:** You need to have a savings bank account (or a post office savings account).
+* **No Existing Statutory Social Security Scheme:** You should not be a beneficiary of any other statutory social security scheme (like EPF or EPS).
+
+---
+## How APY Works (Key Features)
+
+APY's structure is simple and contributor-friendly:
+
+* **Fixed Pension:** Upon attaining 60 years of age, subscribers will receive a fixed minimum pension of Rs. 1,000, Rs. 2,000, Rs. 3,000, Rs. 4,000, or Rs. 5,000 per month, depending on their contributions.
+* **Contribution Period:** Contributions are made until the subscriber reaches 60 years of age. The earlier you start, the lower your monthly contribution will be for the same pension amount.
+* **Government Co-contribution:** For eligible subscribers who enrolled before March 31, 2016, the government co-contributes 50% of the subscriber's contribution or Rs. 1,000 per annum, whichever is lower, for a period of 5 years.
+* **Contribution Frequency:** You have the flexibility to make contributions monthly, quarterly, or half-yearly, as per your convenience.
+* **Auto-Debit Facility:** Contributions are automatically debited from your savings bank account, ensuring consistency and ease of payment.
+
+---
+## The Power of APY (Benefits)
+
+APY offers a robust set of benefits, making it an attractive option for long-term financial security:
+
+* **Guaranteed Minimum Pension:** This is the cornerstone benefit. Regardless of market fluctuations, you are guaranteed to receive your chosen pension amount.
+* **Lifelong Income:** The pension is paid to the subscriber for their entire life after 60.
+* **Spouse's Benefit:** In case of the subscriber's demise, the same pension amount is paid to the spouse for their lifetime.
+* **Nominee's Benefit:** If both the subscriber and spouse pass away, the accumulated corpus (the total amount accumulated, adjusted for market returns) is returned to the nominee.
+* **Tax Benefits:** Contributions to APY are eligible for tax deduction under Section 80CCD (1B) of the Income Tax Act, 1961, up to a certain limit.
+
+---
+## Maximizing Your APY Pension
+
+To get the most out of your Atal Pension Yojana:
+
+* **Start Early:** The younger you start, the lower your monthly contributions will be for the same pension amount, leveraging the power of compounding.
+* **Choose a Higher Pension Tier:** If your financial situation allows, opt for a higher guaranteed pension amount (e.g., Rs. 5,000) by making slightly higher contributions.
+* **Ensure Regular Contributions:** Consistency is key. Make sure your bank account has sufficient funds for auto-debits to avoid penalties for missed payments.
+
+---
+## Enrolling in APY: A Step-by-Step Guide
+
+Subscribing to APY is a simple process:
+
+1.  **Visit Your Bank:** Approach your bank branch where you have a savings account.
+2.  **Fill the APY Application Form:** Request and fill out the APY application form.
+3.  **Provide KYC:** Submit necessary KYC documents like Aadhaar card and PAN card.
+4.  **Authorize Auto-Debit:** Provide authorization for auto-debit of contributions from your account.
+
+---
+## Building a Secure Future
+
+The Atal Pension Yojana is a vital step towards ensuring that every Indian, especially those in the unorganized sector, can look forward to a dignified and financially secure retirement. By providing a guaranteed minimum pension and easy enrollment, APY empowers individuals to take control of their future and build a strong financial foundation. Don't wait; secure your tomorrow, today!
+    `
   },
   {
     id: 6,
