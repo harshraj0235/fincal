@@ -194,7 +194,7 @@ export const BudgetCalculator: React.FC = () => {
               </div>
             </div>
             <a 
-              href="https://moneycal.in/#investment-calculators" 
+              href="https://moneycal.in/calculators/sip-calculator" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 bg-emerald-500 text-white rounded-xl font-semibold hover:bg-emerald-600 transition-colors"
@@ -580,11 +580,11 @@ export const BudgetCalculator: React.FC = () => {
             <div>
               <h4 className="font-bold text-gray-900 mb-4">Financial Planning Tools</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">SIP Calculator</a></li>
-                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Compound Interest Calculator</a></li>
-                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Retirement Planning Calculator</a></li>
-                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">EMI Calculator</a></li>
-                <li>• <a href="https://moneycal.in/#investment-calculators" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Tax Calculator</a></li>
+                <li>• <a href="https://moneycal.in/calculators/sip-calculator" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">SIP Calculator</a></li>
+                <li>• <a href="https://moneycal.in/calculators/compound-interest-calculator" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Compound Interest Calculator</a></li>
+                <li>• <a href="https://moneycal.in/calculators/retirement-calculator" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Retirement Planning Calculator</a></li>
+                <li>• <a href="https://moneycal.in/calculators/emi-calculator" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">EMI Calculator</a></li>
+                <li>• <a href="https://moneycal.in/calculators/income-tax-calculator" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Tax Calculator</a></li>
               </ul>
             </div>
             
