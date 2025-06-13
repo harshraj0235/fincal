@@ -12856,6 +12856,736 @@ export const blogPosts: BlogPost[] = [
         content: "Success in ESG investing requires patience, discipline, and a long-term perspective. By following a systematic approach, diversifying across ESG themes, and maintaining regular investments through SIPs, you can build a robust green investment portfolio that aligns with your values while delivering competitive returns. Remember to review your portfolio regularly and consult with financial advisors to optimize your ESG investment strategy."
       }
     ]
+  },
+  {
+    id: 100,
+    title: "How to Invest in ESG & Green Funds: Complete Beginner's Guide for Indians 2025",
+    slug: "invest-esg-green-funds-guide-india-beginners",
+    date: "June 13, 2025",
+    coverImage: "https://images.pexels.com/photos/9641214/pexels-photo-9641214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Discover how to invest in ESG and green funds in India. Learn about sustainable investing, best ESG mutual funds, tax benefits, and step-by-step investment strategies for beginners.",
+    categories: ["Investment", "Financial Planning", "Tax Planning"],
+    content: [
+      {
+        type: "paragraph",
+        content: "Environmental, Social, and Governance (ESG) investing has emerged as one of the fastest-growing investment trends in India, with assets under management crossing ₹50,000 crores in 2024. As climate change concerns rise and younger investors seek purpose-driven investments, ESG and green funds offer an opportunity to generate returns while contributing to sustainable development."
+      },
+      {
+        type: "heading",
+        content: "What are ESG and Green Funds?"
+      },
+      {
+        type: "paragraph",
+        content: "ESG funds are mutual funds that invest in companies following strong Environmental, Social, and Governance practices. Green funds specifically focus on companies involved in renewable energy, clean technology, and environmental conservation. These funds screen investments based on sustainability criteria while aiming for competitive financial returns."
+      },
+      {
+        type: "subheading",
+        content: "Key Components of ESG Investing"
+      },
+      {
+        type: "list",
+        items: [
+          "Environmental: Companies with low carbon footprints, renewable energy focus, and sustainable resource management",
+          "Social: Fair labor practices, community development, and customer satisfaction",
+          "Governance: Transparent management, ethical business practices, and strong board oversight",
+          "Impact measurement: Quantifiable positive environmental and social outcomes"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Top ESG and Green Funds in India for 2025"
+      },
+      {
+        type: "paragraph",
+        content: "Here are the best-performing ESG funds available to Indian investors, based on performance, fund size, and sustainability ratings:"
+      },
+      {
+        type: "list",
+        items: [
+          "SBI Magnum Equity ESG Fund: ₹2,847 crores AUM, focuses on large-cap ESG compliant companies",
+          "Aditya Birla Sun Life ESG Fund: Strong track record in mid and large-cap sustainable investments",
+          "ICICI Prudential ESG Fund: Diversified portfolio with focus on governance-strong companies",
+          "Axis ESG Equity Fund: New fund with promising strategy and experienced fund management",
+          "DSP Natural Resources & New Energy Fund: Specialized in renewable energy and clean technology"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/9641214/pexels-photo-9641214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "ESG investing combines financial returns with environmental and social impact"
+      },
+      {
+        type: "heading",
+        content: "How to Start Investing in ESG Funds: Step-by-Step Guide"
+      },
+      {
+        type: "subheading",
+        content: "Step 1: Assess Your Investment Goals"
+      },
+      {
+        type: "paragraph",
+        content: "Before investing in ESG funds, define your investment timeline, risk tolerance, and sustainability priorities. ESG funds work best for long-term investors (5+ years) who want to align their investments with their values while seeking competitive returns."
+      },
+      {
+        type: "subheading",
+        content: "Step 2: Research Fund Performance and Holdings"
+      },
+      {
+        type: "list",
+        items: [
+          "Check 3-year and 5-year returns compared to benchmark indices",
+          "Review top holdings to ensure they align with your ESG values",
+          "Analyze expense ratios (aim for funds with expense ratios below 2%)",
+          "Read sustainability reports and ESG screening methodologies"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Step 3: Choose Your Investment Platform"
+      },
+      {
+        type: "paragraph",
+        content: "You can invest in ESG funds through various platforms:"
+      },
+      {
+        type: "list",
+        items: [
+          "Direct fund house websites: Lowest expense ratios, best for experienced investors",
+          "Mutual fund apps: Groww, Kuvera, Paytm Money offer easy ESG fund selection",
+          "Bank platforms: Most banks now offer ESG fund investment options",
+          "Demat accounts: Invest through your existing trading account"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Tax Benefits and Implications of ESG Investing"
+      },
+      {
+        type: "paragraph",
+        content: "ESG equity funds follow the same tax treatment as regular equity mutual funds:"
+      },
+      {
+        type: "list",
+        items: [
+          "Short-term capital gains (STCG): 15% tax on profits from units sold within 1 year",
+          "Long-term capital gains (LTCG): 10% tax on profits above ₹1 lakh from units held over 1 year",
+          "Dividend income: Taxed as per your income tax slab",
+          "SIP investments: Each SIP installment has its own 1-year holding period for LTCG calculation"
+        ]
+      },
+      {
+        type: "quote",
+        content: "ESG investing allows you to earn competitive returns while contributing to a sustainable future. The key is choosing funds with strong ESG screening processes and proven track records.",
+        author: "Sustainable Finance Expert"
+      },
+      {
+        type: "heading",
+        content: "Common Mistakes to Avoid in ESG Investing"
+      },
+      {
+        type: "list",
+        items: [
+          "Greenwashing: Avoid funds that claim to be sustainable without rigorous ESG screening",
+          "Overconcentration: Don't put all your money in ESG funds; maintain portfolio diversification",
+          "Short-term expectations: ESG investing requires patience for optimal returns",
+          "Ignoring performance: Don't sacrifice returns completely for sustainability",
+          "Not reading fund factsheets: Always understand the fund's ESG methodology"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Future of ESG Investing in India"
+      },
+      {
+        type: "paragraph",
+        content: "The Indian ESG investing market is expected to grow significantly, driven by regulatory support, increasing climate awareness, and generational wealth transfer to younger investors. SEBI has introduced sustainability disclosure norms, and more fund houses are launching ESG products."
+      },
+      {
+        type: "subheading",
+        content: "Emerging Trends"
+      },
+      {
+        type: "list",
+        items: [
+          "Thematic green funds focusing on specific sectors like renewable energy",
+          "ESG integration in traditional funds rather than separate ESG funds",
+          "Impact measurement and reporting becoming more standardized",
+          "Retail investor awareness increasing through financial literacy programs"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "ESG and green fund investing offers Indian investors an opportunity to align their financial goals with environmental and social values. While these funds may show slightly different performance patterns compared to traditional funds, they provide excellent long-term wealth creation potential while contributing to sustainable development."
+      },
+      {
+        type: "paragraph",
+        content: "Start your ESG investing journey today by researching fund options, understanding your risk tolerance, and beginning with small SIP amounts. Use our mutual fund calculator to plan your ESG investment strategy and track your sustainable investing journey."
+      }
+    ]
+  },
+  {
+    id: 101,
+    title: "Digital Rupee Explained: RBI's Central Bank Digital Currency (CBDC) Complete Guide 2025",
+    slug: "digital-rupee-rbi-cbdc-explained-india-guide",
+    date: "June 13, 2025",
+    coverImage: "https://images.pexels.com/photos/6772076/pexels-photo-6772076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Complete guide to India's Digital Rupee (e₹). Learn how RBI's CBDC works, benefits, risks, how to use digital rupee, and its impact on your daily transactions and savings.",
+    categories: ["Financial Inclusion", "Investment", "Financial Planning"],
+    content: [
+      {
+        type: "paragraph",
+        content: "The Reserve Bank of India (RBI) launched the Digital Rupee (e₹) as India's Central Bank Digital Currency (CBDC) in December 2022. As of 2025, over 5 million users actively use digital rupee for transactions, making it one of the world's most successful CBDC implementations. Understanding the digital rupee is crucial for every Indian as it represents the future of money and payments."
+      },
+      {
+        type: "heading",
+        content: "What is Digital Rupee (e₹)?"
+      },
+      {
+        type: "paragraph",
+        content: "Digital Rupee is the electronic version of physical cash issued by the RBI. Unlike cryptocurrencies, it's backed by the Indian government and has the same value as physical rupee notes. Think of it as digital cash that you can store in a digital wallet and use for transactions without needing a bank account."
+      },
+      {
+        type: "subheading",
+        content: "Key Features of Digital Rupee"
+      },
+      {
+        type: "list",
+        items: [
+          "Legal tender status: Same as physical currency notes and coins",
+          "Offline transactions: Works without internet connectivity using NFC technology",
+          "Direct liability of RBI: Government-backed digital currency",
+          "Programmable money: Can be programmed for specific use cases",
+          "Privacy features: Transactions can be anonymous for small amounts"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Types of Digital Rupee: Wholesale vs Retail"
+      },
+      {
+        type: "subheading",
+        content: "Wholesale CBDC (e₹-W)"
+      },
+      {
+        type: "paragraph",
+        content: "Used by banks and financial institutions for interbank settlements and government securities transactions. This improves efficiency in the financial system and reduces settlement risks."
+      },
+      {
+        type: "subheading",
+        content: "Retail CBDC (e₹-R)"
+      },
+      {
+        type: "paragraph",
+        content: "Designed for general public use in daily transactions. Available through participating banks and can be used for person-to-person transfers, merchant payments, and utility bill payments."
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/6772076/pexels-photo-6772076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "Digital Rupee represents the future of money in India's digital economy"
+      },
+      {
+        type: "heading",
+        content: "How to Get and Use Digital Rupee"
+      },
+      {
+        type: "subheading",
+        content: "Step 1: Download Digital Rupee App"
+      },
+      {
+        type: "paragraph",
+        content: "Download the official Digital Rupee app from your participating bank. Currently, major banks like SBI, HDFC Bank, ICICI Bank, and others offer digital rupee wallets."
+      },
+      {
+        type: "subheading",
+        content: "Step 2: KYC Verification"
+      },
+      {
+        type: "list",
+        items: [
+          "Complete KYC using Aadhaar and PAN card",
+          "Link your existing bank account for funding",
+          "Set up secure PIN and biometric authentication",
+          "Verify mobile number for transaction alerts"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Step 3: Load Money"
+      },
+      {
+        type: "paragraph",
+        content: "Transfer money from your bank account to the digital rupee wallet. The money gets converted to e₹ tokens that you can use for transactions."
+      },
+      {
+        type: "subheading",
+        content: "Step 4: Make Transactions"
+      },
+      {
+        type: "list",
+        items: [
+          "Scan QR codes at merchant locations",
+          "Send money to other digital rupee users",
+          "Pay utility bills and government fees",
+          "Use offline for small transactions"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Benefits of Digital Rupee for Indian Users"
+      },
+      {
+        type: "list",
+        items: [
+          "Financial inclusion: Banking services without traditional bank accounts",
+          "Reduced transaction costs: Lower fees compared to card payments and digital wallets",
+          "Offline functionality: Works without internet for small transactions",
+          "Security: Blockchain-based technology with government backing",
+          "Faster settlements: Instant transaction clearing and settlement",
+          "Programmable features: Money can be programmed for specific purposes like subsidies",
+          "Reduced cash handling: Eliminates need for physical cash management"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Digital Rupee vs Other Payment Methods"
+      },
+      {
+        type: "paragraph",
+        content: "Here's how digital rupee compares with existing payment options:"
+      },
+      {
+        type: "subheading",
+        content: "Digital Rupee vs UPI"
+      },
+      {
+        type: "list",
+        items: [
+          "UPI requires bank account; Digital Rupee doesn't",
+          "UPI needs internet; Digital Rupee works offline",
+          "UPI has transaction limits; Digital Rupee limits are different",
+          "Both are instant and secure payment methods"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Digital Rupee vs Physical Cash"
+      },
+      {
+        type: "list",
+        items: [
+          "Digital storage vs physical storage",
+          "Trackable transactions vs anonymous cash",
+          "No wear and tear vs physical deterioration",
+          "Programmable features vs static cash"
+        ]
+      },
+      {
+        type: "quote",
+        content: "Digital Rupee represents a paradigm shift in how we think about money. It combines the trust of government-backed currency with the convenience of digital payments.",
+        author: "RBI Official"
+      },
+      {
+        type: "heading",
+        content: "Challenges and Concerns"
+      },
+      {
+        type: "subheading",
+        content: "Privacy Concerns"
+      },
+      {
+        type: "paragraph",
+        content: "While small transactions can be anonymous, larger transactions are traceable. This balance between privacy and regulatory compliance is still being refined."
+      },
+      {
+        type: "subheading",
+        content: "Technology Adoption"
+      },
+      {
+        type: "list",
+        items: [
+          "Digital literacy requirements for users",
+          "Smartphone and internet penetration",
+          "Merchant acceptance and infrastructure",
+          "Integration with existing payment systems"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Economic Implications"
+      },
+      {
+        type: "list",
+        items: [
+          "Impact on banking system and deposits",
+          "Monetary policy transmission mechanisms",
+          "Effect on informal economy",
+          "International remittances and cross-border payments"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Impact on Your Savings and Investments"
+      },
+      {
+        type: "paragraph",
+        content: "Digital Rupee primarily affects your transaction behavior rather than savings and investments. However, it may influence:"
+      },
+      {
+        type: "list",
+        items: [
+          "Reduced need for maintaining cash reserves",
+          "Better tracking of expenses and budgeting",
+          "Potential integration with investment platforms",
+          "Enhanced financial planning through digital records"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Future Roadmap of Digital Rupee"
+      },
+      {
+        type: "paragraph",
+        content: "RBI plans to expand digital rupee functionality with features like:"
+      },
+      {
+        type: "list",
+        items: [
+          "Cross-border payments and remittances",
+          "Integration with government subsidy distribution",
+          "Smart contracts for automated payments",
+          "Enhanced offline capabilities",
+          "Interoperability with international CBDCs"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Security Best Practices"
+      },
+      {
+        type: "list",
+        items: [
+          "Keep your digital wallet PIN secure and don't share it",
+          "Enable biometric authentication for added security",
+          "Regularly update the digital rupee app",
+          "Monitor transaction history for unauthorized activities",
+          "Use only official bank apps for digital rupee access",
+          "Report suspicious activities immediately to your bank"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "Digital Rupee represents a significant step toward India's digital economy goals. While still in early adoption phase, it offers unique benefits like offline transactions and financial inclusion. As the ecosystem matures, digital rupee is likely to become an integral part of India's payment landscape."
+      },
+      {
+        type: "paragraph",
+        content: "Stay updated with the latest digital rupee developments and consider trying it for small transactions to familiarize yourself with this revolutionary payment method. Use our financial planning tools to understand how digital payments can enhance your money management strategies."
+      }
+    ]
+  },
+  {
+    id: 102,
+    title: "How Gen Z Indians Use Social Media to Learn and Invest Smarter: Complete Guide 2025",
+    slug: "gen-z-social-media-investing-india-guide",
+    date: "June 13, 2025",
+    coverImage: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Discover how Gen Z Indians are revolutionizing investing through social media. Learn about finfluencers, best platforms, red flags to avoid, and smart investing strategies for young Indians.",
+    categories: ["Investment", "Financial Planning", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "Gen Z Indians (born 1997-2012) are reshaping the investment landscape through social media learning. With over 65% of Gen Z investors getting financial advice from social platforms, and the average age of new Demat account holders dropping to 23 years, this generation is democratizing investment knowledge through Instagram, YouTube, and Twitter."
+      },
+      {
+        type: "heading",
+        content: "The Social Media Investment Revolution"
+      },
+      {
+        type: "paragraph",
+        content: "Traditional financial advisory services often required high minimum investments and complex jargon. Social media has changed this by making investment education accessible, engaging, and relatable. Gen Z Indians now learn about stocks, mutual funds, and crypto through 60-second Instagram reels and YouTube tutorials."
+      },
+      {
+        type: "subheading",
+        content: "Why Gen Z Prefers Social Media Learning"
+      },
+      {
+        type: "list",
+        items: [
+          "Bite-sized content: Complex financial concepts explained in simple, short videos",
+          "Visual learning: Charts, graphs, and infographics make data easier to understand",
+          "Peer validation: Seeing other young people succeed in investing builds confidence",
+          "Real-time updates: Market news and trends delivered instantly",
+          "Free education: No cost for basic financial literacy content"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Top Social Media Platforms for Investment Learning"
+      },
+      {
+        type: "subheading",
+        content: "YouTube: The Educational Powerhouse"
+      },
+      {
+        type: "paragraph",
+        content: "YouTube dominates long-form financial education with channels like:"
+      },
+      {
+        type: "list",
+        items: [
+          "CA Rachana Ranade: Simplified investment concepts with over 3M subscribers",
+          "Akshat Shrivastava: Business and investment analysis",
+          "Pranjal Kamra: Mutual funds and financial planning",
+          "FinnovationZ: Stock analysis and market updates",
+          "Asset Yogi: Personal finance and investment strategies"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Instagram: Quick Tips and Trends"
+      },
+      {
+        type: "paragraph",
+        content: "Instagram's visual format makes it perfect for:"
+      },
+      {
+        type: "list",
+        items: [
+          "Investment infographics and carousel posts",
+          "Stock performance charts and analysis",
+          "Personal finance tips in story format",
+          "Live sessions with financial experts",
+          "Community building through investment-focused accounts"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "Gen Z Indians learning investment strategies through social media platforms"
+      },
+      {
+        type: "subheading",
+        content: "Twitter/X: Real-time Market Updates"
+      },
+      {
+        type: "list",
+        items: [
+          "Breaking market news and analysis",
+          "Expert opinions on stock movements",
+          "Economic policy discussions",
+          "Crypto and startup ecosystem updates",
+          "Live-tweeting of market events"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Popular Indian Finfluencers and Their Specialties"
+      },
+      {
+        type: "list",
+        items: [
+          "Sharan Hegde (@sharan.hedge): Personal finance and wealth building for millennials",
+          "Ankur Warikoo (@ankurwarikoo): Entrepreneurship and investment mindset",
+          "Rachana Ranade (@rachanaranade): Technical analysis and stock selection",
+          "Pranjal Kamra (@pranjalkamra): Mutual fund investing and SIP strategies",
+          "Anushka Rathod (@anushkarathod): Budget-friendly investing for beginners"
+        ]
+      },
+      {
+        type: "heading",
+        content: "How Gen Z Investors Research Before Investing"
+      },
+      {
+        type: "subheading",
+        content: "The Modern Research Process"
+      },
+      {
+        type: "list",
+        items: [
+          "Follow multiple finfluencers for diverse perspectives",
+          "Cross-verify information across platforms and sources",
+          "Use stock analysis apps like Groww, Zerodha Kite, and Tickertape",
+          "Join WhatsApp and Telegram groups for community discussions",
+          "Watch company analysis videos before stock purchases"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Popular Investment Apps Among Gen Z"
+      },
+      {
+        type: "list",
+        items: [
+          "Groww: User-friendly interface and educational content",
+          "Zerodha: Advanced charting and low brokerage fees",
+          "Upstox: Social features and community discussions",
+          "Angel One: Research reports and stock recommendations",
+          "Paytm Money: Integrated with digital wallet ecosystem"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Red Flags: Avoiding Social Media Investment Scams"
+      },
+      {
+        type: "paragraph",
+        content: "While social media democratizes financial education, it also creates risks. Here are warning signs to watch for:"
+      },
+      {
+        type: "subheading",
+        content: "Common Scam Tactics"
+      },
+      {
+        type: "list",
+        items: [
+          "Guaranteed returns promises (20%+ assured returns)",
+          "Pressure to join paid premium groups immediately",
+          "Stock tips without proper analysis or reasoning",
+          "Asking for money transfer to personal accounts",
+          "Promoting penny stocks or unknown cryptocurrencies",
+          "Creating urgency with 'limited time offers'"
+        ]
+      },
+      {
+        type: "quote",
+        content: "Social media has democratized financial education, but investors must maintain critical thinking and verify information from multiple sources before making investment decisions.",
+        author: "SEBI Financial Literacy Expert"
+      },
+      {
+        type: "subheading",
+        content: "How to Verify Finfluencer Credibility"
+      },
+      {
+        type: "list",
+        items: [
+          "Check their professional qualifications and certifications",
+          "Look for SEBI registration if they provide specific stock advice",
+          "Verify their investment track record and transparency",
+          "Read comments and reviews from long-term followers",
+          "Ensure they disclose conflicts of interest",
+          "Avoid those who only promote specific brokers or products"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Smart Investing Strategies for Gen Z"
+      },
+      {
+        type: "subheading",
+        content: "Start Small, Think Long-term"
+      },
+      {
+        type: "list",
+        items: [
+          "Begin with SIPs of ₹500-1,000 per month in index funds",
+          "Allocate 70% to equity funds, 30% to debt for long-term goals",
+          "Use the 50-30-20 budgeting rule (needs-wants-savings)",
+          "Focus on learning before trying advanced strategies",
+          "Build emergency fund before aggressive investing"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Diversification for Beginners"
+      },
+      {
+        type: "list",
+        items: [
+          "Don't put all money in trending stocks or sectors",
+          "Mix large-cap, mid-cap, and international funds",
+          "Consider gold ETFs for portfolio stability",
+          "Avoid putting more than 5% in any single stock",
+          "Rebalance portfolio quarterly based on performance"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Building Financial Discipline Through Social Media"
+      },
+      {
+        type: "subheading",
+        content: "Positive Social Media Habits"
+      },
+      {
+        type: "list",
+        items: [
+          "Follow budgeting and expense tracking accounts",
+          "Join investment challenge groups for motivation",
+          "Share your financial goals for accountability",
+          "Participate in financial literacy discussions",
+          "Document your investment journey for reflection"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Avoiding FOMO and Emotional Investing"
+      },
+      {
+        type: "list",
+        items: [
+          "Unfollow accounts that promote get-rich-quick schemes",
+          "Set specific times for checking investment content",
+          "Focus on your personal financial goals, not others' success",
+          "Take social media breaks during market volatility",
+          "Maintain a long-term perspective despite short-term noise"
+        ]
+      },
+      {
+        type: "heading",
+        content: "The Future of Social Media Investing"
+      },
+      {
+        type: "paragraph",
+        content: "As Gen Z matures, social media investing education will likely evolve with:"
+      },
+      {
+        type: "list",
+        items: [
+          "AI-powered personalized investment recommendations",
+          "Virtual reality investment simulations",
+          "Blockchain-verified investment advice and credentials",
+          "Integration of social trading with educational content",
+          "Gamification of investment learning processes"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Regulatory Developments"
+      },
+      {
+        type: "paragraph",
+        content: "SEBI is working on guidelines for social media financial influencers, including:"
+      },
+      {
+        type: "list",
+        items: [
+          "Mandatory disclosures for paid promotions",
+          "Registration requirements for investment advisors",
+          "Standardized warnings about investment risks",
+          "Penalties for misleading financial advice",
+          "Protection measures for retail investors"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "Gen Z Indians are pioneering a new era of social media-driven investment learning. While this democratization of financial education is positive, it requires careful navigation to avoid scams and misinformation. The key is to use social media as a starting point for learning, not the sole source of investment decisions."
+      },
+      {
+        type: "paragraph",
+        content: "Combine social media insights with traditional research, maintain healthy skepticism, and focus on long-term wealth building rather than quick gains. Use our investment calculator tools to validate social media advice and create personalized investment strategies."
+      }
+    ]
   }
 ];
 
