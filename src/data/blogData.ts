@@ -11447,7 +11447,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 91,
     title: "NPS टियर 1 बनाम टियर 2: आपके रिटायरमेंट के लिए कौन सा बेहतर?",
-    slug: "nps-tier1-vs-tier2-retirement-guide",
+    slug: "nps-tier1-vs-tier2-comparison",
     date: "June 13, 2025",
     coverImage: "https://images.pexels.com/photos/4166760/pexels-photo-4166760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     excerpt: "नेशनल पेंशन सिस्टम (NPS) में टियर 1 और टियर 2 अकाउंट के बीच का अंतर जानें। अपने रिटायरमेंट प्लानिंग और टैक्स लाभ के लिए सही विकल्प चुनें।",
@@ -11601,7 +11601,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 93,
     title: "पीएम वय वंदना योजना: वरिष्ठ नागरिकों के लिए एक सुरक्षित रिटायरमेंट सहारा",
-    slug: "pm-vaya-vandana-yojana-senior-citizens",
+    slug: "pm-vaya-vandana-yojana-guide",
     date: "June 13, 2025",
     coverImage: "https://images.pexels.com/photos/4099236/pexels-photo-4099236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     excerpt: "प्रधानमंत्री वय वंदना योजना (PMVVY) वरिष्ठ नागरिकों के लिए एक सरकारी-समर्थित पेंशन योजना है। जानें इसकी पात्रता, लाभ, ब्याज दरें और आवेदन प्रक्रिया।",
