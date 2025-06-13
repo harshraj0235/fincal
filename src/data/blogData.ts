@@ -12402,6 +12402,460 @@ export const blogPosts: BlogPost[] = [
         content: "The key is to use both responsibly, focusing on timely payments and avoiding debt accumulation. Start with a basic credit card to build credit history, and use BNPL selectively for specific needs. Remember, the safest approach is the one that aligns with your financial discipline and long-term goals."
       }
     ]
+  },
+  {
+    id: 98,
+    title: "Digital Rupee vs Cryptocurrency: Complete Investment Guide for Indians in 2025",
+    slug: "digital-rupee-vs-cryptocurrency-investment-guide-india-2025",
+    date: "June 13, 2025",
+    coverImage: "https://images.pexels.com/photos/7567529/pexels-photo-7567529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Confused between Digital Rupee and Cryptocurrency? Get expert insights on RBI's digital currency vs crypto investments, tax implications, and which option suits Indian investors in 2025.",
+    categories: ["Investment", "Financial Planning", "Tax Planning"],
+    content: [
+      {
+        type: "paragraph",
+        content: "The Indian financial landscape is witnessing a digital revolution with the Reserve Bank of India's Digital Rupee (e-Rupee) making headlines alongside the ongoing cryptocurrency debate. As millions of Indian investors navigate between traditional investments and digital assets, understanding the key differences between Digital Rupee and cryptocurrency has become crucial for making informed investment decisions in 2025."
+      },
+      {
+        type: "heading",
+        content: "What is Digital Rupee (e-Rupee)? Complete Overview"
+      },
+      {
+        type: "paragraph",
+        content: "The Digital Rupee, officially known as Central Bank Digital Currency (CBDC), is India's official digital version of the Indian Rupee issued by the Reserve Bank of India. Unlike cryptocurrencies, the Digital Rupee is backed by the government and maintains the same value as physical currency, making it a stable digital payment method."
+      },
+      {
+        type: "list",
+        items: [
+          "Government-backed digital currency with full legal tender status",
+          "Maintains 1:1 value with Indian Rupee - no price volatility",
+          "Uses blockchain technology but controlled by RBI",
+          "Available through authorized banks and payment service providers",
+          "Supports both retail and wholesale transactions",
+          "Offers offline functionality for areas with poor internet connectivity"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Understanding Cryptocurrency: Bitcoin, Ethereum, and Indian Crypto Market"
+      },
+      {
+        type: "paragraph",
+        content: "Cryptocurrencies are decentralized digital assets that operate on blockchain technology without government control. Popular cryptocurrencies like Bitcoin, Ethereum, and Dogecoin have gained significant traction among Indian investors despite regulatory uncertainties."
+      },
+      {
+        type: "list",
+        items: [
+          "Decentralized digital assets with no central authority",
+          "Highly volatile prices - can offer high returns or significant losses",
+          "Limited regulatory framework in India",
+          "30% tax on cryptocurrency gains as per Budget 2022",
+          "1% TDS on crypto transactions above ₹10,000",
+          "Cannot be used for legal tender or payment purposes in India"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "Digital Rupee vs Cryptocurrency: Understanding the key differences for Indian investors"
+      },
+      {
+        type: "heading",
+        content: "Digital Rupee vs Cryptocurrency: Key Differences for Indian Investors"
+      },
+      {
+        type: "subheading",
+        content: "1. Regulatory Status and Legal Framework"
+      },
+      {
+        type: "paragraph",
+        content: "The most significant difference lies in regulatory acceptance. Digital Rupee enjoys full government backing and legal tender status, while cryptocurrencies remain in a regulatory gray area with the Indian government maintaining a cautious approach."
+      },
+      {
+        type: "subheading",
+        content: "2. Price Stability and Investment Risk"
+      },
+      {
+        type: "paragraph",
+        content: "Digital Rupee maintains stable value equivalent to physical currency, making it ideal for transactions and savings. Cryptocurrencies offer potential for high returns but come with extreme volatility and investment risks that can result in significant losses."
+      },
+      {
+        type: "subheading",
+        content: "3. Tax Implications and Financial Planning"
+      },
+      {
+        type: "paragraph",
+        content: "Digital Rupee transactions are treated like regular currency with standard tax implications. Cryptocurrency investments face a flat 30% tax on gains with no set-off against losses, making tax planning crucial for crypto investors."
+      },
+      {
+        type: "heading",
+        content: "Investment Strategies: How to Approach Digital Assets in 2025"
+      },
+      {
+        type: "paragraph",
+        content: "For conservative Indian investors, Digital Rupee offers a safe entry into digital payments without investment risks. It's perfect for everyday transactions, international remittances, and digital savings accounts."
+      },
+      {
+        type: "list",
+        items: [
+          "Use Digital Rupee for regular transactions and salary payments",
+          "Consider it as a digital alternative to cash and bank transfers",
+          "Leverage its offline functionality for rural and remote transactions",
+          "Integrate with existing UPI and digital payment ecosystem"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Cryptocurrency Investment: High Risk, High Reward Approach"
+      },
+      {
+        type: "paragraph",
+        content: "Cryptocurrency investment requires careful research, risk management, and understanding of market dynamics. Indian investors should allocate only a small percentage of their portfolio to crypto assets."
+      },
+      {
+        type: "list",
+        items: [
+          "Invest only surplus funds you can afford to lose completely",
+          "Start with established cryptocurrencies like Bitcoin and Ethereum",
+          "Use dollar-cost averaging to reduce volatility impact",
+          "Maintain detailed records for tax compliance",
+          "Consider crypto as a speculative investment, not a replacement for traditional assets",
+          "Stay updated with regulatory changes and government policies"
+        ]
+      },
+      {
+        type: "quote",
+        content: "The Digital Rupee represents the future of secure, government-backed digital payments, while cryptocurrencies remain a speculative investment class requiring careful risk management and regulatory compliance.",
+        author: "Financial Planning Expert"
+      },
+      {
+        type: "heading",
+        content: "Future Outlook: What 2025 Holds for Digital Assets in India"
+      },
+      {
+        type: "paragraph",
+        content: "The Indian government's approach to digital assets is evolving rapidly. While Digital Rupee implementation is accelerating with pilot programs expanding nationwide, cryptocurrency regulations are expected to become clearer with potential framework announcements."
+      },
+      {
+        type: "list",
+        items: [
+          "Digital Rupee adoption likely to increase with government initiatives",
+          "Integration with existing payment systems like UPI and NEFT",
+          "Potential cryptocurrency regulation framework by end of 2025",
+          "Increased financial inclusion through digital currency adoption",
+          "Growing institutional interest in blockchain technology applications"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Making the Right Choice: Digital Rupee or Cryptocurrency?"
+      },
+      {
+        type: "paragraph",
+        content: "The choice between Digital Rupee and cryptocurrency depends on your financial goals, risk tolerance, and investment timeline. Digital Rupee serves as a practical payment solution and digital cash alternative, while cryptocurrency represents a speculative investment opportunity with high risks and potential rewards."
+      },
+      {
+        type: "paragraph",
+        content: "For most Indian investors, Digital Rupee should be viewed as a payment tool and transaction medium, while cryptocurrency allocation should be limited to a small percentage of the overall investment portfolio as part of alternative investments."
+      },
+      {
+        type: "heading",
+        content: "Conclusion: Navigating India's Digital Currency Landscape"
+      },
+      {
+        type: "paragraph",
+        content: "Understanding the fundamental differences between Digital Rupee and cryptocurrency is essential for making informed financial decisions in 2025. While Digital Rupee offers stability and government backing for everyday transactions, cryptocurrency requires careful consideration of risks, regulations, and tax implications."
+      },
+      {
+        type: "paragraph",
+        content: "As India's digital payment ecosystem continues to evolve, staying informed about regulatory changes and emerging opportunities will help you make the most of both traditional and digital investment options. Consider consulting with a qualified financial advisor to develop a comprehensive investment strategy that aligns with your financial goals and risk profile."
+      }
+    ]
+  },
+  {
+    id: 99,
+    title: "ESG Funds India 2025: Complete Guide to Green Investment Portfolio Building",
+    slug: "esg-funds-india-2025-green-investment-portfolio-guide",
+    date: "June 13, 2025",
+    coverImage: "https://images.pexels.com/photos/9555847/pexels-photo-9555847.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Build a sustainable investment portfolio with top ESG funds in India. Discover best green mutual funds, SIP strategies, tax benefits, and environmental impact investing for 2025.",
+    categories: ["Investment", "Financial Planning", "Tax Planning"],
+    content: [
+      {
+        type: "paragraph",
+        content: "Environmental, Social, and Governance (ESG) investing has emerged as a game-changer for Indian investors who want to align their financial goals with sustainable values. With climate change concerns and corporate responsibility gaining prominence, ESG funds offer a compelling opportunity to build wealth while contributing to positive environmental and social impact. This comprehensive guide explores the best ESG funds available in India for 2025 and how to construct a green investment portfolio."
+      },
+      {
+        type: "heading",
+        content: "What are ESG Funds? Understanding Sustainable Investing in India"
+      },
+      {
+        type: "paragraph",
+        content: "ESG funds are mutual funds that invest in companies following strong Environmental, Social, and Governance practices. These funds screen investments based on sustainability criteria, excluding companies involved in harmful activities while focusing on businesses contributing to positive social and environmental outcomes."
+      },
+      {
+        type: "list",
+        items: [
+          "Environmental: Companies with clean energy, waste management, and carbon reduction initiatives",
+          "Social: Businesses promoting employee welfare, community development, and social responsibility",
+          "Governance: Organizations with transparent management, ethical practices, and strong leadership",
+          "Negative screening: Avoiding tobacco, alcohol, weapons, and polluting industries",
+          "Positive screening: Actively selecting companies with strong ESG ratings",
+          "Impact investing: Targeting measurable social and environmental benefits"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Top ESG Mutual Funds in India for 2025: Performance and Analysis"
+      },
+      {
+        type: "paragraph",
+        content: "The Indian ESG fund landscape has expanded significantly, offering diverse options for sustainable investors. Here are the leading ESG funds based on performance, portfolio quality, and investment approach:"
+      },
+      {
+        type: "subheading",
+        content: "1. Axis ESG Equity Fund"
+      },
+      {
+        type: "list",
+        items: [
+          "Asset Under Management: ₹1,200+ crores",
+          "3-year CAGR: 15.2% (as of 2025)",
+          "Expense ratio: 1.85%",
+          "Focus on large-cap companies with strong ESG credentials",
+          "Minimum SIP: ₹1,000 per month"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "2. SBI Magnum Equity ESG Fund"
+      },
+      {
+        type: "list",
+        items: [
+          "Asset Under Management: ₹850+ crores",
+          "3-year CAGR: 14.8%",
+          "Expense ratio: 1.75%",
+          "Diversified approach across sectors with ESG compliance",
+          "Minimum SIP: ₹500 per month"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "3. ICICI Prudential ESG Fund"
+      },
+      {
+        type: "list",
+        items: [
+          "Asset Under Management: ₹650+ crores",
+          "3-year CAGR: 14.5%",
+          "Expense ratio: 1.90%",
+          "Focus on mid and large-cap ESG-compliant companies",
+          "Minimum SIP: ₹1,000 per month"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/9980715/pexels-photo-9980715.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "Building a sustainable investment portfolio with ESG funds for long-term wealth creation"
+      },
+      {
+        type: "heading",
+        content: "How to Build a Green Investment Portfolio: Step-by-Step Strategy"
+      },
+      {
+        type: "paragraph",
+        content: "Creating a successful ESG investment portfolio requires careful planning, diversification, and long-term commitment. Here's a comprehensive approach to building your green investment portfolio:"
+      },
+      {
+        type: "subheading",
+        content: "Step 1: Define Your ESG Investment Goals"
+      },
+      {
+        type: "list",
+        items: [
+          "Determine your risk tolerance and investment timeline",
+          "Identify specific ESG themes that align with your values",
+          "Set clear financial targets and expected returns",
+          "Decide on portfolio allocation percentage for ESG investments"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Step 2: Asset Allocation Strategy for ESG Portfolio"
+      },
+      {
+        type: "paragraph",
+        content: "A well-balanced ESG portfolio should include different asset classes and investment approaches to optimize returns while maintaining sustainability focus."
+      },
+      {
+        type: "list",
+        items: [
+          "ESG Equity Funds: 60-70% allocation for growth potential",
+          "ESG Debt Funds: 20-25% for stability and regular income",
+          "ESG Hybrid Funds: 10-15% for balanced approach",
+          "International ESG Funds: 5-10% for global diversification"
+        ]
+      },
+      {
+        type: "heading",
+        content: "SIP Strategy for ESG Funds: Maximizing Returns Through Systematic Investment"
+      },
+      {
+        type: "paragraph",
+        content: "Systematic Investment Plans (SIPs) are particularly effective for ESG fund investments, allowing you to benefit from rupee cost averaging while building a sustainable portfolio over time."
+      },
+      {
+        type: "list",
+        items: [
+          "Start with ₹5,000-10,000 monthly SIP across 2-3 ESG funds",
+          "Increase SIP amount annually by 10-15% (step-up SIP)",
+          "Choose different ESG themes for diversification",
+          "Maintain SIP discipline for minimum 5-7 years",
+          "Review and rebalance portfolio annually"
+        ]
+      },
+      {
+        type: "quote",
+        content: "ESG investing is not just about financial returns; it's about creating a positive impact on society and environment while building long-term wealth. The key is to maintain discipline and think beyond short-term market fluctuations.",
+        author: "Sustainable Investment Expert"
+      },
+      {
+        type: "heading",
+        content: "Tax Benefits and Implications of ESG Fund Investments"
+      },
+      {
+        type: "paragraph",
+        content: "ESG funds enjoy the same tax treatment as regular mutual funds, offering several advantages for tax-conscious investors:"
+      },
+      {
+        type: "subheading",
+        content: "Equity ESG Funds Tax Benefits"
+      },
+      {
+        type: "list",
+        items: [
+          "Long-term capital gains (LTCG): 10% tax on gains above ₹1 lakh",
+          "Short-term capital gains (STCG): 15% tax on gains",
+          "No tax on dividends received from equity ESG funds",
+          "Tax-saving ESG funds available under Section 80C (ELSS category)"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Debt ESG Funds Tax Structure"
+      },
+      {
+        type: "list",
+        items: [
+          "Gains taxed as per income tax slab rates",
+          "Indexation benefits for investments held over 3 years",
+          "Dividend distribution tax applicable"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Sector-wise ESG Investment Opportunities in India"
+      },
+      {
+        type: "paragraph",
+        content: "Understanding sector-specific ESG opportunities helps in building a focused and effective green investment portfolio:"
+      },
+      {
+        type: "subheading",
+        content: "Renewable Energy and Clean Technology"
+      },
+      {
+        type: "list",
+        items: [
+          "Solar and wind energy companies",
+          "Electric vehicle manufacturers and battery technology",
+          "Energy storage and grid infrastructure",
+          "Green hydrogen and fuel cell technology"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Sustainable Consumer Products"
+      },
+      {
+        type: "list",
+        items: [
+          "Organic food and beverage companies",
+          "Eco-friendly packaging and materials",
+          "Sustainable fashion and textiles",
+          "Water conservation and treatment technologies"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Performance Comparison: ESG Funds vs Traditional Funds"
+      },
+      {
+        type: "paragraph",
+        content: "Contrary to popular belief, ESG funds have demonstrated competitive performance compared to traditional funds while offering additional benefits of sustainable investing:"
+      },
+      {
+        type: "list",
+        items: [
+          "ESG funds have shown 12-16% CAGR over 3-5 years",
+          "Lower volatility due to quality company selection",
+          "Better risk-adjusted returns in long-term investments",
+          "Reduced exposure to companies with governance issues",
+          "Growing institutional support and inflows"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Mistakes to Avoid in ESG Fund Investing"
+      },
+      {
+        type: "paragraph",
+        content: "Successful ESG investing requires avoiding these common pitfalls that can impact your portfolio performance:"
+      },
+      {
+        type: "list",
+        items: [
+          "Choosing funds based only on ESG label without analyzing portfolio",
+          "Ignoring expense ratios and fund management quality",
+          "Expecting immediate returns from ESG investments",
+          "Not diversifying across different ESG themes and sectors",
+          "Falling for greenwashing - superficial ESG marketing",
+          "Investing without understanding fund's ESG methodology"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Future of ESG Investing in India: Trends and Opportunities"
+      },
+      {
+        type: "paragraph",
+        content: "The ESG investment landscape in India is rapidly evolving with increasing awareness, regulatory support, and corporate adoption of sustainable practices:"
+      },
+      {
+        type: "list",
+        items: [
+          "SEBI's increased focus on ESG disclosure requirements",
+          "Growing institutional investor interest in ESG funds",
+          "Corporate India's commitment to net-zero emissions",
+          "Government's push for renewable energy and clean technology",
+          "Increased ESG fund launches and product innovation",
+          "Integration of ESG factors in credit ratings and lending"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Conclusion: Building Wealth Through Sustainable Investing"
+      },
+      {
+        type: "paragraph",
+        content: "ESG funds represent a powerful tool for Indian investors to build long-term wealth while contributing to positive environmental and social impact. With the growing awareness of sustainability issues and regulatory support, ESG investing is positioned to become mainstream in the Indian investment landscape."
+      },
+      {
+        type: "paragraph",
+        content: "Success in ESG investing requires patience, discipline, and a long-term perspective. By following a systematic approach, diversifying across ESG themes, and maintaining regular investments through SIPs, you can build a robust green investment portfolio that aligns with your values while delivering competitive returns. Remember to review your portfolio regularly and consult with financial advisors to optimize your ESG investment strategy."
+      }
+    ]
   }
 ];
 
