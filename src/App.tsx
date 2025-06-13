@@ -14,6 +14,7 @@ import { CalculatorPage } from './pages/CalculatorPage';
 
 import { Blog } from './pages/Blog';
 
+import { Blog } from './pages/influencers';
 import { BlogPost } from './pages/BlogPost';
 
 import { WriteBlog } from './pages/WriteBlog';
@@ -71,6 +72,7 @@ function App() {
         <Route path="/category/:categoryId" element={<CategoryPage />} />
 
         <Route path="/blog" element={<Blog />} />
+         <Route path="/blog" element={<influencers />} />
 
         <Route path="/blog/:slug" element={<BlogPost />} />
 
