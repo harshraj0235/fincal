@@ -74,6 +74,16 @@ export const Home: React.FC = () => {
   
   return (
     <div className="min-h-screen">
+      <div className="w-full flex justify-end p-4">
+  <a
+    href="https://github.com/harshraj0235/fincal/blob/main/src/data/influencers.ts"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn bg-blue-600 text-white hover:bg-blue-700 shadow-md transition-all"
+  >
+    View Influencers Data
+  </a>
+</div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-20 md:py-28 overflow-hidden">
         {/* Background pattern */}
