@@ -20,7 +20,76 @@ export interface BlogPost {
   excerpt: string;
   categories: string[];
   content: BlogPostSection[];
+  readTime?: string;
+  featured?: boolean;
+  trending?: boolean;
+  seoTitle?: string;
+  seoDescription?: string;
+  keywords?: string[];
 }
+
+export interface BlogCategory {
+  id: string;
+  name: string;
+  description: string;
+  slug: string;
+  icon: string;
+  color: string;
+  postCount: number;
+  featured?: boolean;
+  parentCategory?: string;
+}
+
+export const blogCategories: BlogCategory[] = [
+  { id: 'government-schemes', name: 'Government Schemes', description: 'Comprehensive guides on Indian government financial schemes and benefits', slug: 'government-schemes', icon: '🏛️', color: 'bg-blue-100 text-blue-800', postCount: 12, featured: true },
+  { id: 'investment', name: 'Investment', description: 'Investment strategies, tips, and market insights for building wealth', slug: 'investment', icon: '📈', color: 'bg-green-100 text-green-800', postCount: 25, featured: true },
+  { id: 'tax-planning', name: 'Tax Planning', description: 'Tax-saving strategies, deductions, and compliance guides', slug: 'tax-planning', icon: '💰', color: 'bg-purple-100 text-purple-800', postCount: 18, featured: true },
+  { id: 'retirement-planning', name: 'Retirement Planning', description: 'Plan for a secure retirement with pension schemes and strategies', slug: 'retirement-planning', icon: '🏖️', color: 'bg-orange-100 text-orange-800', postCount: 15 },
+  { id: 'rural-finance', name: 'Rural Finance', description: 'Financial services and schemes for rural communities', slug: 'rural-finance', icon: '🌾', color: 'bg-emerald-100 text-emerald-800', postCount: 8 },
+  { id: 'senior-citizens', name: 'Senior Citizens', description: 'Financial planning and schemes specifically for senior citizens', slug: 'senior-citizens', icon: '👴', color: 'bg-indigo-100 text-indigo-800', postCount: 10 },
+  { id: 'financial-inclusion', name: 'Financial Inclusion', description: 'Banking and financial services for underserved communities', slug: 'financial-inclusion', icon: '🤝', color: 'bg-pink-100 text-pink-800', postCount: 6 },
+  { id: 'home-loans', name: 'Home Loans', description: 'Home loan guides, interest rates, and approval tips', slug: 'home-loans', icon: '🏠', color: 'bg-red-100 text-red-800', postCount: 14, featured: true },
+  { id: 'real-estate', name: 'Real Estate', description: 'Real estate investment, market trends, and property insights', slug: 'real-estate', icon: '🏘️', color: 'bg-yellow-100 text-yellow-800', postCount: 12 },
+  { id: 'emi-calculation', name: 'EMI Calculation', description: 'Understanding EMIs, loan calculations, and repayment strategies', slug: 'emi-calculation', icon: '🧮', color: 'bg-cyan-100 text-cyan-800', postCount: 9 },
+  { id: 'financial-planning', name: 'Financial Planning', description: 'Comprehensive financial planning guides and strategies', slug: 'financial-planning', icon: '📊', color: 'bg-teal-100 text-teal-800', postCount: 20, featured: true },
+  { id: 'mutual-funds', name: 'Mutual Funds', description: 'Mutual fund selection, analysis, and investment strategies', slug: 'mutual-funds', icon: '📈', color: 'bg-green-100 text-green-800', postCount: 22 },
+  { id: 'sip', name: 'SIP', description: 'Systematic Investment Plan guides and calculators', slug: 'sip', icon: '🔄', color: 'bg-blue-100 text-blue-800', postCount: 16 },
+  { id: 'lumpsum', name: 'Lumpsum', description: 'Lumpsum investment strategies and planning', slug: 'lumpsum', icon: '💎', color: 'bg-purple-100 text-purple-800', postCount: 11 },
+  { id: 'wealth-management', name: 'Wealth Management', description: 'Advanced wealth management strategies for high net worth individuals', slug: 'wealth-management', icon: '👑', color: 'bg-amber-100 text-amber-800', postCount: 13 },
+  { id: 'corpus-calculation', name: 'Corpus Calculation', description: 'Calculate retirement corpus, education funds, and financial goals', slug: 'corpus-calculation', icon: '🎯', color: 'bg-rose-100 text-rose-800', postCount: 7 },
+  { id: 'income-tax', name: 'Income Tax', description: 'Income tax guides, calculations, and filing tips', slug: 'income-tax', icon: '📋', color: 'bg-slate-100 text-slate-800', postCount: 19 },
+  { id: 'government-regulations', name: 'Government Regulations', description: 'Latest government financial regulations and policy updates', slug: 'government-regulations', icon: '⚖️', color: 'bg-stone-100 text-stone-800', postCount: 8 },
+  { id: 'insurance', name: 'Insurance', description: 'Life, health, and general insurance guides and comparisons', slug: 'insurance', icon: '🛡️', color: 'bg-sky-100 text-sky-800', postCount: 17, featured: true },
+  { id: 'social-security', name: 'Social Security', description: 'Social security schemes and employee benefits', slug: 'social-security', icon: '🏥', color: 'bg-violet-100 text-violet-800', postCount: 9 },
+  { id: 'stock-market', name: 'Stock Market', description: 'Stock market analysis, trading strategies, and market insights', slug: 'stock-market', icon: '📊', color: 'bg-green-100 text-green-800', postCount: 24 },
+  { id: 'automotive', name: 'Automotive', description: 'Car loans, vehicle insurance, and automotive finance', slug: 'automotive', icon: '🚗', color: 'bg-gray-100 text-gray-800', postCount: 6 },
+  { id: 'sustainable-energy', name: 'Sustainable Energy', description: 'Green energy investments and sustainable finance', slug: 'sustainable-energy', icon: '🌱', color: 'bg-lime-100 text-lime-800', postCount: 5 },
+  { id: 'rural-development', name: 'Rural Development', description: 'Rural development schemes and agricultural finance', slug: 'rural-development', icon: '🏞️', color: 'bg-emerald-100 text-emerald-800', postCount: 7 },
+  { id: 'employment', name: 'Employment', description: 'Employment schemes, job benefits, and career finance', slug: 'employment', icon: '💼', color: 'bg-blue-100 text-blue-800', postCount: 8 },
+  { id: 'economy', name: 'Economy', description: 'Economic trends, policy impacts, and market analysis', slug: 'economy', icon: '🌍', color: 'bg-indigo-100 text-indigo-800', postCount: 12 },
+  { id: 'etfs', name: 'ETFs', description: 'Exchange Traded Funds guides and investment strategies', slug: 'etfs', icon: '📊', color: 'bg-teal-100 text-teal-800', postCount: 14 },
+  { id: 'cryptocurrency', name: 'Cryptocurrency', description: 'Cryptocurrency investment, taxation, and regulations in India', slug: 'cryptocurrency', icon: '₿', color: 'bg-orange-100 text-orange-800', postCount: 10 },
+  { id: 'green-bonds', name: 'Green Bonds', description: 'Sustainable investing through green bonds and ESG funds', slug: 'green-bonds', icon: '🌿', color: 'bg-green-100 text-green-800', postCount: 4 },
+  { id: 'technology', name: 'Technology', description: 'Fintech innovations, digital banking, and financial technology', slug: 'technology', icon: '💻', color: 'bg-blue-100 text-blue-800', postCount: 11 },
+  { id: 'startups', name: 'Startups', description: 'Startup funding, business finance, and entrepreneurship', slug: 'startups', icon: '🚀', color: 'bg-purple-100 text-purple-800', postCount: 9 },
+  { id: 'green-energy', name: 'Green Energy', description: 'Solar, wind, and renewable energy investments', slug: 'green-energy', icon: '☀️', color: 'bg-yellow-100 text-yellow-800', postCount: 6 },
+  { id: 'electric-vehicles', name: 'Electric Vehicles', description: 'EV loans, subsidies, and sustainable transportation finance', slug: 'electric-vehicles', icon: '🔋', color: 'bg-green-100 text-green-800', postCount: 7 },
+  { id: 'wealth-creation', name: 'Wealth Creation', description: 'Long-term wealth building strategies and tips', slug: 'wealth-creation', icon: '💰', color: 'bg-gold-100 text-amber-800', postCount: 16 },
+  { id: 'gen-z', name: 'Gen Z', description: 'Financial planning and investment tips for Generation Z', slug: 'gen-z', icon: '👨‍💻', color: 'bg-pink-100 text-pink-800', postCount: 8 },
+  { id: 'cost-effective-investing', name: 'Cost-Effective Investing', description: 'Low-cost investment strategies and budget-friendly options', slug: 'cost-effective-investing', icon: '💡', color: 'bg-cyan-100 text-cyan-800', postCount: 9 },
+  { id: 'agriculture', name: 'Agriculture', description: 'Agricultural finance, crop loans, and farming subsidies', slug: 'agriculture', icon: '🌾', color: 'bg-green-100 text-green-800', postCount: 10 },
+  { id: 'farm-loans', name: 'Farm Loans', description: 'Agricultural loan schemes, eligibility, and application process', slug: 'farm-loans', icon: '🚜', color: 'bg-emerald-100 text-emerald-800', postCount: 6 },
+  { id: 'budget', name: 'Budget', description: 'Personal budgeting, expense tracking, and financial planning', slug: 'budget', icon: '📊', color: 'bg-blue-100 text-blue-800', postCount: 12 },
+  { id: 'sme', name: 'SME', description: 'Small and Medium Enterprise finance and business loans', slug: 'sme', icon: '🏢', color: 'bg-indigo-100 text-indigo-800', postCount: 8 },
+  { id: 'financial-freedom', name: 'Financial Freedom', description: 'Achieve financial independence and early retirement', slug: 'financial-freedom', icon: '🗽', color: 'bg-purple-100 text-purple-800', postCount: 14 },
+  { id: 'social-welfare', name: 'Social Welfare', description: 'Government welfare schemes and social benefits', slug: 'social-welfare', icon: '🤲', color: 'bg-rose-100 text-rose-800', postCount: 7 },
+  { id: 'government-policies', name: 'Government Policies', description: 'Financial policy updates and regulatory changes', slug: 'government-policies', icon: '📜', color: 'bg-slate-100 text-slate-800', postCount: 9 },
+  { id: 'millennials', name: 'Millennials', description: 'Financial planning guides specifically for millennials', slug: 'millennials', icon: '👩‍💼', color: 'bg-teal-100 text-teal-800', postCount: 11 },
+  { id: 'young-professionals', name: 'Young Professionals', description: 'Career finance, salary planning, and investment for young professionals', slug: 'young-professionals', icon: '👨‍💼', color: 'bg-cyan-100 text-cyan-800', postCount: 10 },
+  { id: 'etf', name: 'ETF', description: 'Exchange Traded Fund analysis and investment strategies', slug: 'etf', icon: '📈', color: 'bg-green-100 text-green-800', postCount: 13 },
+  { id: 'bank', name: 'Bank', description: 'Banking services, account types, and financial products', slug: 'bank', icon: '🏦', color: 'bg-blue-100 text-blue-800', postCount: 15 },
+  { id: 'pmay', name: 'PMAY', description: 'Pradhan Mantri Awas Yojana - affordable housing scheme guide', slug: 'pmay', icon: '🏠', color: 'bg-orange-100 text-orange-800', postCount: 5 }
+];
 
 export const blogPosts: BlogPost[] = [
   {
@@ -13607,4 +13676,25 @@ export const getRelatedPosts = (slug: string, count: number): BlogPost[] => {
     .slice(0, count);
 
   return relatedPosts;
+};
+
+export const getPostsByCategory = (categorySlug: string): BlogPost[] => {
+  const category = blogCategories.find(cat => cat.slug === categorySlug);
+  if (!category) return [];
+
+  return blogPosts.filter(post => 
+    post.categories.some(cat => cat.toLowerCase().replace(/\s+/g, '-') === categorySlug)
+  );
+};
+
+export const getFeaturedPosts = (): BlogPost[] => {
+  return blogPosts.filter(post => post.featured).slice(0, 6);
+};
+
+export const getTrendingPosts = (): BlogPost[] => {
+  return blogPosts.filter(post => post.trending).slice(0, 5);
+};
+
+export const getCategoryBySlug = (slug: string): BlogCategory | undefined => {
+  return blogCategories.find(category => category.slug === slug);
 };
