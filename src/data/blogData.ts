@@ -20960,7 +20960,1278 @@ export const blogPosts: BlogPost[] = [
         content: "Tribal communities को इस scheme का maximum benefit उठाने के लिए active participation करनी चाहिए। अपने area में scheme implementation के लिए local authorities से संपर्क करें और अपने village के development में contribute करें।"
       }
     ]
+  },
+  
+
+  {
+    id: 131,
+    title: "Credit Guarantee Scheme for MSMEs: Complete Guide to Get Guarantee Cover in India",
+    slug: "credit-guarantee-scheme-msmes-how-to-get-guarantee-cover-india",
+    date: "June 14, 2024",
+    coverImage: "https://images.pexels.com/photos/3182762/pexels-photo-3182762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Credit Guarantee Scheme for MSMEs में कैसे करें आवेदन और कैसे मिलेगा guarantee cover? जानिए eligibility, benefits, और complete application process के बारे में विस्तार से।",
+    categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
+    readTime: "8 min read",
+    keywords: ["Credit Guarantee Scheme MSME", "MSME loan guarantee", "credit guarantee fund trust", "CGFMU scheme", "small business loan guarantee"],
+    content: [
+      {
+        type: "paragraph",
+        content: "Credit Guarantee Scheme for MSMEs भारत सरकार की एक महत्वपूर्ण पहल है जो छोटे और मध्यम उद्यमों (MSMEs) को बिना किसी गारंटी या security के loan दिलाने में मदद करती है। यह scheme Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) के द्वारा संचालित की जाती है।"
+      },
+      {
+        type: "heading",
+        content: "Credit Guarantee Scheme for MSMEs क्या है?"
+      },
+      {
+        type: "paragraph",
+        content: "यह scheme उन MSMEs के लिए बनाई गई है जिनके पास पर्याप्त collateral security नहीं है। CGTMSE banks और financial institutions को guarantee cover प्रदान करता है ताकि वे बिना किसी चिंता के MSMEs को loan दे सकें।"
+      },
+      {
+        type: "heading",
+        content: "Credit Guarantee Scheme की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "Maximum loan limit: ₹2 करोड़ तक",
+          "Guarantee cover: 85% तक (नए उद्यमों के लिए) और 75% तक (existing units के लिए)",
+          "No collateral security required",
+          "Processing fee: loan amount का 0.75% से 1.5% तक",
+          "Annual guarantee fee: guaranteed amount का 0.75% से 1.5% तक",
+          "Loan repayment period: 7 साल तक",
+          "Interest rate: bank के अनुसार (generally 9-12% per annum)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "MSME Credit Guarantee Scheme के लिए Eligibility Criteria"
+      },
+      {
+        type: "paragraph",
+        content: "Credit Guarantee Scheme का लाभ उठाने के लिए निम्नलिखित eligibility criteria को पूरा करना होगा:"
+      },
+      {
+        type: "list",
+        items: [
+          "Business should be registered as MSME",
+          "Manufacturing units: Plant और machinery की investment ₹2 करोड़ से कम",
+          "Service units: Equipment की investment ₹50 लाख से कम",
+          "Annual turnover: ₹5 करोड़ से कम",
+          "Proprietorship, partnership, private limited company, या cooperative society हो सकती है",
+          "Business में कम से कम 51% Indian ownership होना चाहिए",
+          "पहले से कोई NPA या willful defaulter नहीं होना चाहिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Credit Guarantee Scheme में कैसे करें आवेदन?"
+      },
+      {
+        type: "paragraph",
+        content: "MSME Credit Guarantee Scheme के लिए आवेदन करने की step-by-step प्रक्रिया:"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले CGTMSE approved bank या NBFC का चयन करें",
+          "Business plan और project report तैयार करें",
+          "Required documents collect करें",
+          "Loan application form भरें",
+          "Bank में सभी documents के साथ application submit करें",
+          "Bank द्वारा evaluation और approval के बाद CGTMSE को guarantee cover के लिए भेजा जाता है",
+          "CGTMSE approval के बाद loan disburse होता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Required Documents for MSME Credit Guarantee"
+      },
+      {
+        type: "list",
+        items: [
+          "MSME registration certificate (Udyam registration)",
+          "Business license और permits",
+          "PAN card और Aadhaar card",
+          "Bank statements (last 12 months)",
+          "Income tax returns (last 3 years)",
+          "Project report और cost estimates",
+          "Partnership deed या MOA (यदि applicable हो)",
+          "GST registration certificate",
+          "Audited financial statements",
+          "Insurance policies (यदि कोई हो)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Credit Guarantee Scheme के Benefits"
+      },
+      {
+        type: "list",
+        items: [
+          "Collateral-free loans: कोई security या guarantee की जरूरत नहीं",
+          "Easy loan approval: banks को guarantee cover मिलने से loan approval आसान",
+          "Lower interest rates: competitive interest rates",
+          "Flexible repayment: business cash flow के अनुसार repayment schedule",
+          "Business expansion: working capital और term loan दोनों के लिए उपलब्ध",
+          "Credit history building: proper repayment से credit score improve होता है",
+          "Government support: सरकारी backing से financial security"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Loan Types Covered Under Credit Guarantee Scheme"
+      },
+      {
+        type: "list",
+        items: [
+          "Term loans for machinery और equipment",
+          "Working capital loans",
+          "Composite loans (term loan + working capital)",
+          "Equipment finance",
+          "Vehicle loans for commercial use",
+          "Technology upgradation loans",
+          "Export finance"
+        ]
+      },
+      {
+        type: "heading",
+        content: "CGTMSE Approved Banks और Financial Institutions"
+      },
+      {
+        type: "paragraph",
+        content: "निम्नलिखित banks और financial institutions CGTMSE scheme के तहत loans प्रदान करते हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "Public sector banks (SBI, PNB, BOI, Canara Bank, आदि)",
+          "Private sector banks (HDFC, ICICI, Axis Bank, आदि)",
+          "Regional rural banks",
+          "Cooperative banks",
+          "NBFCs registered with RBI",
+          "Small finance banks"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Credit Guarantee Fees Structure"
+      },
+      {
+        type: "paragraph",
+        content: "CGTMSE scheme में दो प्रकार की fees हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "One-time guarantee fee: 1.5% (micro enterprises के लिए 1%) loan amount का",
+          "Annual service fee: 0.75% guaranteed amount का",
+          "Processing fee: banks अपने अनुसार charge करते हैं",
+          "छोटे loans (₹5 लाख तक) के लिए fees में छूट",
+          "Women entrepreneurs के लिए special rates"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Reasons for Loan Rejection"
+      },
+      {
+        type: "list",
+        items: [
+          "Incomplete या incorrect documentation",
+          "Poor credit history या past defaults",
+          "Insufficient business experience",
+          "Weak project viability",
+          "Non-compliance with MSME definition",
+          "Inadequate financial statements",
+          "Lack of proper business plan"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Tips for Successful Loan Application"
+      },
+      {
+        type: "list",
+        items: [
+          "Complete और accurate documentation तैयार करें",
+          "Detailed business plan बनाएं",
+          "Financial projections realistic रखें",
+          "Good credit score maintain करें",
+          "Bank relationship अच्छा रखें",
+          "Professional help लें यदि जरूरत हो",
+          "Follow up regularly करें",
+          "Alternative financing options भी explore करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "Credit Guarantee Scheme for MSMEs एक excellent opportunity है छोटे business owners के लिए। यह scheme collateral-free loans प्रदान करके MSMEs की growth में महत्वपूर्ण भूमिका निभाती है। Proper documentation और good business plan के साथ आप आसानी से इस scheme का लाभ उठा सकते हैं।"
+      }
+    ]
+  },
+  {
+    id: 132,
+    title: "Credit Support to MSMEs During Stress Periods: Complete Guide for Business Recovery",
+    slug: "credit-support-msmes-stress-periods-business-recovery-guide",
+    date: "June 13, 2024",
+    coverImage: "https://images.pexels.com/photos/3182752/pexels-photo-3182752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "MSMEs को stress periods में मिलने वाली credit support schemes के बारे में जानिए। COVID-19 के बाद business recovery के लिए उपलब्ध loan facilities और government initiatives।",
+    categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
+    readTime: "9 min read",
+    keywords: ["MSME credit support", "business recovery loan", "stress period financing", "COVID support schemes", "emergency business loan"],
+    content: [
+      {
+        type: "paragraph",
+        content: "MSMEs को stress periods में विशेष credit support की जरूरत होती है। COVID-19 pandemic के बाद भारत सरकार ने कई schemes launch की हैं जो MSMEs को financial crisis से बाहर निकलने में मदद करती हैं।"
+      },
+      {
+        type: "heading",
+        content: "Stress Period में Credit Support क्यों जरूरी है?"
+      },
+      {
+        type: "paragraph",
+        content: "Economic downturns, natural disasters, या pandemic जैसी situations में MSMEs को cash flow problems, reduced demand, और operational challenges का सामना करना पड़ता है। ऐसे समय में timely credit support business continuity के लिए अत्यंत महत्वपूर्ण है।"
+      },
+      {
+        type: "heading",
+        content: "Government Credit Support Schemes for MSMEs"
+      },
+      {
+        type: "list",
+        items: [
+          "Emergency Credit Line Guarantee Scheme (ECLGS)",
+          "Distressed Assets Fund for MSMEs",
+          "Subordinate Debt Scheme",
+          "Equity Infusion Scheme",
+          "Fund of Funds Scheme",
+          "Credit Guarantee Scheme enhancements",
+          "Restructuring और rehabilitation schemes"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Emergency Credit Line Guarantee Scheme (ECLGS)"
+      },
+      {
+        type: "paragraph",
+        content: "ECLGS COVID-19 के response में शुरू की गई सबसे महत्वपूर्ण scheme है:"
+      },
+      {
+        type: "list",
+        items: [
+          "100% guarantee cover by government",
+          "Maximum loan: ₹5 करोड़ तक",
+          "Interest rate: 9.25% per annum (maximum)",
+          "Moratorium period: 12 months",
+          "Repayment tenure: 4-6 years",
+          "No additional collateral required",
+          "Automatic sanction for eligible MSMEs"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Distressed Assets Fund for MSMEs"
+      },
+      {
+        type: "paragraph",
+        content: "यह fund उन MSMEs के लिए है जो NPA बन गए हैं या financial stress में हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "Fund size: ₹10,000 करोड़",
+          "Target: Stressed MSMEs का revival",
+          "Equity और debt दोनों support",
+          "Professional management team",
+          "Turnaround specialists की involvement",
+          "Asset reconstruction और restructuring"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Subordinate Debt Scheme for MSMEs"
+      },
+      {
+        type: "list",
+        items: [
+          "Promoter equity के रूप में treat होता है",
+          "Stressed MSMEs के लिए ₹20,000 करोड़ का provision",
+          "2% interest rate per annum",
+          "Banks द्वारा quasi-equity के रूप में count",
+          "Debt-to-equity ratio में improvement",
+          "Revival के लिए additional funding capacity"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Eligibility Criteria for Stress Period Credit Support"
+      },
+      {
+        type: "list",
+        items: [
+          "MSME classification के अनुसार registered",
+          "Account should be standard या SMA categories में",
+          "Minimum business vintage: 1 year",
+          "Audited financial statements available",
+          "No wilful default history",
+          "Viable business model with recovery potential",
+          "Proper documentation और compliance"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Application Process for Stress Period Credit"
+      },
+      {
+        type: "list",
+        items: [
+          "Identify appropriate scheme for your situation",
+          "Prepare detailed revival plan",
+          "Collect required documents",
+          "Approach designated banks या financial institutions",
+          "Submit application with supporting documents",
+          "Bank evaluation और due diligence",
+          "Scheme approval और fund disbursement",
+          "Regular monitoring और compliance"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Required Documents"
+      },
+      {
+        type: "list",
+        items: [
+          "MSME registration certificate",
+          "Financial statements (last 3 years)",
+          "Bank statements और cash flow analysis",
+          "Business revival plan",
+          "Asset valuation reports",
+          "Market analysis और demand projection",
+          "Management team details",
+          "Previous loan history और repayment track record"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Banks Participating in Stress Support Schemes"
+      },
+      {
+        type: "list",
+        items: [
+          "All public sector banks",
+          "Major private sector banks",
+          "Regional rural banks",
+          "Small finance banks",
+          "Select NBFCs",
+          "Cooperative banks (for specific schemes)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Key Benefits of Stress Period Credit Support"
+      },
+      {
+        type: "list",
+        items: [
+          "Lower interest rates compared to market",
+          "Flexible repayment terms",
+          "Moratorium periods available",
+          "Government guarantee reduces collateral requirements",
+          "Quick processing और approval",
+          "Working capital और term loan options",
+          "Technical assistance और handholding support"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Business Recovery Strategy"
+      },
+      {
+        type: "paragraph",
+        content: "Credit support के साथ-साथ proper business recovery strategy भी जरूरी है:"
+      },
+      {
+        type: "list",
+        items: [
+          "Cost optimization और efficiency improvement",
+          "Market diversification और new product development",
+          "Digital transformation और online presence",
+          "Supply chain optimization",
+          "Employee skill development",
+          "Customer relationship management",
+          "Financial planning और cash flow management"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Challenges in Availing Stress Credit"
+      },
+      {
+        type: "list",
+        items: [
+          "Complex documentation requirements",
+          "Lengthy approval process",
+          "Lack of awareness about available schemes",
+          "Inadequate business planning",
+          "Poor financial record keeping",
+          "Limited technical expertise",
+          "Coordination between multiple agencies"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Success Stories और Case Studies"
+      },
+      {
+        type: "paragraph",
+        content: "कई MSMEs ने stress period credit support का सफल उपयोग करके अपना business recover किया है। Textile, manufacturing, और service sectors में numerous success stories हैं जहाँ timely credit support ने business continuity ensure की है।"
+      },
+      {
+        type: "heading",
+        content: "Future Outlook"
+      },
+      {
+        type: "paragraph",
+        content: "Government continuously monitor करती है MSMEs की जरूरतों को और नई schemes launch करती रहती है। Digital lending platforms, AI-based credit assessment, और faster approval processes के माध्यम से stress period credit support और भी efficient बनेगा।"
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "Stress periods में credit support MSMEs की survival और growth के लिए crucial है। Available schemes का proper utilization करके businesses न केवल crisis से बाहर निकल सकते हैं बल्कि stronger भी बन सकते हैं। Early identification of stress signals और timely action लेना success का key factor है।"
+      }
+    ]
+  },
+  {
+    id: 133,
+    title: "Comprehensive Internship Opportunities: 1 Crore Internships - Complete Guide for Students",
+    slug: "comprehensive-internship-opportunities-1-crore-internships-students-guide",
+    date: "June 12, 2024",
+    coverImage: "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "1 करोड़ internships का massive program क्या है? Students के लिए comprehensive internship opportunities, eligibility, application process, और career benefits के बारे में complete guide।",
+    categories: ["Government Schemes", "Financial Planning"],
+    readTime: "10 min read",
+    keywords: ["1 crore internships", "student internship program", "government internship scheme", "PM internship yojana", "career development program"],
+    content: [
+      {
+        type: "paragraph",
+        content: "भारत सरकार का 1 करोड़ internships का ambitious program युवाओं के लिए career development का एक revolutionary step है। यह program students को real-world experience देने और employability skills develop करने का unique opportunity प्रदान करता है।"
+      },
+      {
+        type: "heading",
+        content: "1 Crore Internships Program क्या है?"
+      },
+      {
+        type: "paragraph",
+        content: "यह एक comprehensive internship program है जो 5 साल की अवधि में 1 करोड़ young Indians को quality internship opportunities प्रदान करने का लक्ष्य रखता है। यह program various sectors में practical experience देकर skill development और employment readiness को बढ़ावा देता है।"
+      },
+      {
+        type: "heading",
+        content: "Program की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "Target: 1 crore internships in 5 years",
+          "Sectors: IT, manufacturing, healthcare, finance, retail, और अन्य",
+          "Duration: 3 से 12 महीने तक",
+          "Stipend: Monthly stipend up to ₹10,000",
+          "Certificate: Completion certificate और skill assessment",
+          "Job guarantee: Performance based permanent job opportunities",
+          "Training: Soft skills और technical skills training"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Internship Program के Types"
+      },
+      {
+        type: "list",
+        items: [
+          "Corporate Internships: Private companies में placement",
+          "Government Internships: Public sector organizations में",
+          "Startup Internships: Growing startups में opportunities",
+          "NGO Internships: Social sector में work experience",
+          "Research Internships: Universities और research institutes में",
+          "International Internships: Global exposure programs",
+          "Virtual Internships: Remote work opportunities"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Eligibility Criteria for 1 Crore Internships"
+      },
+      {
+        type: "list",
+        items: [
+          "Age: 18-28 years",
+          "Education: 12th pass या higher qualification",
+          "Indian citizenship required",
+          "Basic English communication skills",
+          "Computer literacy (basic level)",
+          "No prior work experience required",
+          "Willingness to learn और adapt",
+          "Commitment for full internship duration"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Application Process Step-by-Step"
+      },
+      {
+        type: "list",
+        items: [
+          "Visit official internship portal",
+          "Create profile with personal details",
+          "Upload resume और educational certificates",
+          "Take online aptitude test",
+          "Choose preferred sectors और locations",
+          "Apply for suitable internship positions",
+          "Attend virtual या physical interviews",
+          "Complete onboarding process after selection"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Participating Companies और Organizations"
+      },
+      {
+        type: "paragraph",
+        content: "Program में 1000+ companies participate कर रही हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "Fortune 500 companies",
+          "Indian MNCs और unicorns",
+          "Government departments और PSUs",
+          "Banks और financial institutions",
+          "Healthcare organizations",
+          "Educational institutions",
+          "Technology companies",
+          "Manufacturing units"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Sectors में Internship Opportunities"
+      },
+      {
+        type: "list",
+        items: [
+          "Information Technology: Software development, data analysis, cybersecurity",
+          "Finance: Banking, insurance, investment analysis",
+          "Healthcare: Hospital administration, pharmaceutical research",
+          "Manufacturing: Production, quality control, supply chain",
+          "Retail: E-commerce, customer service, inventory management",
+          "Media: Content creation, digital marketing, journalism",
+          "Government: Public administration, policy research"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Stipend और Benefits Structure"
+      },
+      {
+        type: "list",
+        items: [
+          "Minimum stipend: ₹5,000 per month",
+          "Maximum stipend: ₹10,000 per month",
+          "Performance bonus: Additional rewards for excellence",
+          "Transportation allowance: Local travel support",
+          "Learning resources: Free access to online courses",
+          "Mentorship: Experienced professionals की guidance",
+          "Networking: Industry connections और professional network"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Skills Development Components"
+      },
+      {
+        type: "list",
+        items: [
+          "Technical Skills: Job-specific technical training",
+          "Soft Skills: Communication, teamwork, leadership",
+          "Digital Literacy: Advanced computer skills",
+          "Problem Solving: Critical thinking और analytical skills",
+          "Professional Ethics: Workplace behavior और values",
+          "Industry Knowledge: Sector-specific understanding",
+          "Language Skills: English और regional languages"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Assessment और Certification Process"
+      },
+      {
+        type: "list",
+        items: [
+          "Regular performance evaluations",
+          "Project-based assessments",
+          "Skill competency tests",
+          "360-degree feedback from mentors",
+          "Industry-recognized certifications",
+          "Digital badges for achievements",
+          "Portfolio development support"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Career Progression Opportunities"
+      },
+      {
+        type: "list",
+        items: [
+          "Direct recruitment: Top performers को permanent jobs",
+          "Higher education: Scholarship opportunities",
+          "Entrepreneurship: Startup funding support",
+          "International opportunities: Global placement programs",
+          "Skill upgradation: Advanced training programs",
+          "Career counseling: Professional guidance",
+          "Alumni network: Lifelong professional connections"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Success Stories और Impact"
+      },
+      {
+        type: "paragraph",
+        content: "Program के pilot phase में 75% interns को permanent job offers मिले हैं। Rural areas से आने वाले students के लिए यह especially beneficial है क्योंकि उन्हें urban job market में entry का मौका मिलता है।"
+      },
+      {
+        type: "heading",
+        content: "Challenges और Solutions"
+      },
+      {
+        type: "list",
+        items: [
+          "Geographic distribution: Remote locations में भी opportunities",
+          "Language barriers: Regional language support",
+          "Digital divide: Basic digital literacy training",
+          "Quality assurance: Regular monitoring और feedback",
+          "Placement challenges: Multiple pathways for career progression"
+        ]
+      },
+      {
+        type: "heading",
+        content: "How to Maximize Internship Benefits"
+      },
+      {
+        type: "list",
+        items: [
+          "Be proactive और curious",
+          "Build strong relationships with mentors",
+          "Document your learning journey",
+          "Seek feedback regularly",
+          "Participate in additional training programs",
+          "Network with fellow interns",
+          "Prepare for post-internship opportunities"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Future Expansion Plans"
+      },
+      {
+        type: "paragraph",
+        content: "Government plans to expand the program to include international internships, specialized technology tracks, और entrepreneurship incubation programs। AI और emerging technologies में नए opportunities भी add किए जाएंगे।"
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "1 Crore Internships program India के youth के लिए game-changing initiative है। यह न केवल practical experience देता है बल्कि career development के लिए solid foundation भी provide करता है। Students को इस opportunity का maximum benefit उठाना चाहिए।"
+      }
+    ]
+  },
+  {
+    id: 134,
+    title: "PM Awas Yojana 2024: New Target for Rural and Urban Houses - Complete Eligibility Guide",
+    slug: "pm-awas-yojana-new-target-rural-urban-houses-eligibility-guide",
+    date: "June 11, 2024",
+    coverImage: "https://images.pexels.com/photos/1693085/pexels-photo-1693085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "PM Awas Yojana के नए targets क्या हैं? Rural और urban areas में houses के लिए updated eligibility criteria, benefits, और application process की complete जानकारी।",
+    categories: ["Government Schemes", "Home Loans", "Real Estate"],
+    readTime: "11 min read",
+    keywords: ["PM Awas Yojana 2024", "pradhan mantri awas yojana", "housing scheme", "affordable housing", "gramin awas yojana"],
+    content: [
+      {
+        type: "paragraph",
+        content: "PM Awas Yojana भारत सरकार की flagship housing scheme है जिसका उद्देश्य 'Housing for All' का vision पूरा करना है। 2024 में इस scheme के नए targets और enhanced benefits के साथ millions of families को affordable housing प्रदान करने का लक्ष्य है।"
+      },
+      {
+        type: "heading",
+        content: "PM Awas Yojana 2024 के New Targets"
+      },
+      {
+        type: "list",
+        items: [
+          "Total target: 3 करोड़ houses by 2024",
+          "Rural component: 1.95 करोड़ houses under PMAY-G",
+          "Urban component: 1.05 करोड़ houses under PMAY-U",
+          "Budget allocation: ₹2.17 लाख करोड़ (enhanced from previous years)",
+          "Completion timeline: Extended to March 2024",
+          "Special focus: Women ownership और differently-abled individuals"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PM Awas Yojana के Components"
+      },
+      {
+        type: "paragraph",
+        content: "PM Awas Yojana दो main components में divided है:"
+      },
+      {
+        type: "list",
+        items: [
+          "PMAY-Gramin (PMAY-G): Rural areas के लिए",
+          "PMAY-Urban (PMAY-U): Urban areas के लिए",
+          "Credit Linked Subsidy Scheme (CLSS): Home loan पर interest subsidy",
+          "Affordable Housing in Partnership (AHP): Private sector partnership",
+          "Beneficiary-led Construction (BLC): Individual house construction",
+          "In-Situ Slum Redevelopment (ISSR): Slum rehabilitation"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PMAY-Gramin (Rural) Eligibility Criteria 2024"
+      },
+      {
+        type: "list",
+        items: [
+          "Family should be houseless या living in kutcha house",
+          "Annual income: Up to ₹2 lakh",
+          "SC/ST/OBC/Minorities को priority",
+          "Women should be owner या co-owner",
+          "Family में कोई पक्का मकान नहीं होना चाहिए",
+          "16-59 years age group में adult member होना चाहिए",
+          "Land ownership: कम से कम homestead land होना चाहिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PMAY-Urban Eligibility Criteria 2024"
+      },
+      {
+        type: "list",
+        items: [
+          "EWS (Economically Weaker Section): Annual income up to ₹3 lakh",
+          "LIG (Lower Income Group): Annual income ₹3-6 lakh",
+          "MIG-I (Middle Income Group): Annual income ₹6-12 lakh",
+          "MIG-II: Annual income ₹12-18 lakh",
+          "कोई भी family member का pucca house नहीं होना चाहिए",
+          "Women ownership preferred",
+          "First-time homebuyers को priority"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Financial Assistance Amount 2024"
+      },
+      {
+        type: "paragraph",
+        content: "Updated financial assistance amounts:"
+      },
+      {
+        type: "list",
+        items: [
+          "PMAY-Gramin: ₹1.20 लाख (plain areas), ₹1.30 लाख (hilly/difficult areas)",
+          "PMAY-Urban EWS: Up to ₹2.67 लाख interest subsidy",
+          "PMAY-Urban LIG: Up to ₹2.67 लाख interest subsidy",
+          "PMAY-Urban MIG-I: Up to ₹2.35 लाख interest subsidy",
+          "PMAY-Urban MIG-II: Up to ₹2.30 लाख interest subsidy",
+          "Additional state contribution: States add their share"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PMAY-Gramin Application Process"
+      },
+      {
+        type: "list",
+        items: [
+          "Visit pmayg.nic.in portal",
+          "Click on 'Awaassoft' section",
+          "Select 'Data Entry' option",
+          "Fill registration form with details",
+          "Upload required documents",
+          "Submit application online",
+          "Take printout of application",
+          "Track status using registration number"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PMAY-Urban Application Process"
+      },
+      {
+        type: "list",
+        items: [
+          "Visit pmaymis.gov.in portal",
+          "Click on 'Citizen Assessment'",
+          "Choose relevant category",
+          "Fill online application form",
+          "Upload necessary documents",
+          "Submit application",
+          "Note down application ID",
+          "Regular status checking"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Required Documents for PMAY"
+      },
+      {
+        type: "list",
+        items: [
+          "Aadhaar card (mandatory)",
+          "Income certificate",
+          "Caste certificate (if applicable)",
+          "Bank account details",
+          "Passport size photographs",
+          "Address proof",
+          "Land ownership documents (for rural)",
+          "No-objection certificate from spouse",
+          "Swachh Bharat Mission toilet proof"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Credit Linked Subsidy Scheme (CLSS) Benefits"
+      },
+      {
+        type: "list",
+        items: [
+          "Interest subsidy: 6.5% (EWS/LIG), 4% (MIG-I), 3% (MIG-II)",
+          "Loan amount: Up to ₹6 lakh (EWS/LIG), ₹9 lakh (MIG-I), ₹12 lakh (MIG-II)",
+          "Subsidy tenure: 20 years या loan tenure (whichever is lower)",
+          "Processing: Directly credited to loan account",
+          "Applicable: All approved banks और HFCs"
+        ]
+      },
+      {
+        type: "heading",
+        content: "House Specifications Under PMAY"
+      },
+      {
+        type: "list",
+        items: [
+          "Minimum area: 25 sq. meters (PMAY-G), 30 sq. meters (PMAY-U)",
+          "Construction quality: Disaster-resistant design",
+          "Basic amenities: Toilet, cooking area, living space",
+          "Eco-friendly: Use of local materials encouraged",
+          "Technology: Prefab, green buildings promoted",
+          "Accessibility: Ramp for differently-abled if required"
+        ]
+      },
+      {
+        type: "heading",
+        content: "State-wise Performance और Targets"
+      },
+      {
+        type: "paragraph",
+        content: "Different states have different targets based on housing demand:"
+      },
+      {
+        type: "list",
+        items: [
+          "Uttar Pradesh: Highest target with 15+ lakh houses",
+          "Bihar: 12+ lakh houses targeted",
+          "West Bengal: 10+ lakh houses",
+          "Madhya Pradesh: 8+ lakh houses",
+          "Other states: Proportional allocation based on demand survey"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Technology Integration in PMAY"
+      },
+      {
+        type: "list",
+        items: [
+          "Awaassoft platform: Complete MIS for rural component",
+          "PMAY-U MIS: Urban component management",
+          "Mobile apps: Beneficiary tracking और grievance",
+          "Geo-tagging: House location verification",
+          "Digital payments: DBT for fund transfer",
+          "Quality monitoring: Photo uploads at various stages"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Reasons for Application Rejection"
+      },
+      {
+        type: "list",
+        items: [
+          "Income exceeds eligibility limit",
+          "Already owns a pucca house",
+          "Incomplete या incorrect documentation",
+          "Aadhaar linking issues",
+          "Duplicate applications",
+          "Invalid bank account details",
+          "Non-compliance with scheme guidelines"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Additional Benefits for Beneficiaries"
+      },
+      {
+        type: "list",
+        items: [
+          "Swachh Bharat Mission: Toilet construction support",
+          "MGNREGA: Unskilled labor assistance",
+          "Ujjwala Yojana: LPG connection",
+          "Saubhagya Scheme: Electricity connection",
+          "Jan Aushadhi: Nearby pharmacy access",
+          "Skill development: Construction skill training"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Challenges और Solutions"
+      },
+      {
+        type: "list",
+        items: [
+          "Land availability: Flexible land norms",
+          "Construction delays: Enhanced monitoring",
+          "Quality issues: Third-party inspections",
+          "Beneficiary identification: Socio-economic surveys",
+          "Fund utilization: Direct benefit transfer",
+          "Awareness: Extensive IEC campaigns"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Impact और Success Stories"
+      },
+      {
+        type: "paragraph",
+        content: "PMAY ने 2.5 करोड़+ houses complete किए हैं। Rural women empowerment, urban slum transformation, और overall quality of life में significant improvement देखी गई है।"
+      },
+      {
+        type: "heading",
+        content: "Future Roadmap"
+      },
+      {
+        type: "paragraph",
+        content: "Post-2024 plans include sustainable housing, smart city integration, और affordable rental housing की development। Technology adoption और public-private partnerships को further strengthen किया जाएगा।"
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "PM Awas Yojana 2024 targets भारत को 'Housing for All' के vision के closer ले जाएंगे। Eligible families को इस golden opportunity का benefit उठाना चाहिए और अपने dream home का सपना पूरा करना चाहिए।"
+      }
+    ]
+  },
+  {
+    id: 135,
+    title: "Skill Loan Scheme: Up to Rs.7.5 Lakh for Students - Complete Education Loan Guide",
+    slug: "skill-loan-scheme-75-lakh-students-education-loan-guide",
+    date: "June 10, 2024",
+    coverImage: "https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Skill Loan Scheme से students को ₹7.5 लाख तक का education loan मिल सकता है। Complete eligibility criteria, application process, और benefits की detailed जानकारी।",
+    categories: ["Government Schemes", "Financial Planning"],
+    readTime: "9 min read",
+    keywords: ["skill loan scheme", "education loan 7.5 lakh", "student loan scheme", "skill development loan", "career advancement loan"],
+    content: [
+      {
+        type: "paragraph",
+        content: "Skill Loan Scheme भारत सरकार की एक महत्वपूर्ण initiative है जो students को skill development और professional courses के लिए affordable education loan प्रदान करती है। यह scheme up to ₹7.5 लाख तक का loan देती है।"
+      },
+      {
+        type: "heading",
+        content: "Skill Loan Scheme क्या है?"
+      },
+      {
+        type: "paragraph",
+        content: "यह scheme उन students के लिए design की गई है जो skill-based courses, professional training, या vocational education pursue करना चाहते हैं। इसका उद्देश्य youth को employable skills develop करने में financial support प्रदान करना है।"
+      },
+      {
+        type: "heading",
+        content: "Skill Loan Scheme की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "Maximum loan amount: ₹7.5 लाख",
+          "Interest rate: 8-12% per annum (bank dependent)",
+          "No collateral required: Up to ₹4 लाख",
+          "Repayment period: 3-7 years",
+          "Moratorium period: Course duration + 6 months",
+          "Processing fee: Minimal या zero",
+          "Government backing: Credit guarantee fund support"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Eligible Courses for Skill Loan"
+      },
+      {
+        type: "list",
+        items: [
+          "Technical courses: ITI, Polytechnic, Engineering diploma",
+          "Healthcare: Nursing, Paramedical, Physiotherapy",
+          "Hospitality: Hotel management, Culinary arts",
+          "IT & Software: Programming, Data science, Cybersecurity",
+          "Financial services: Banking, Insurance, Accounting",
+          "Automotive: Automobile technology, Mechanical training",
+          "Beauty & Wellness: Cosmetology, Spa management",
+          "Retail: Sales, Marketing, Customer service",
+          "Agriculture: Modern farming, Dairy technology",
+          "Construction: Plumbing, Electrical, Carpentry"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Eligibility Criteria for Skill Loan"
+      },
+      {
+        type: "list",
+        items: [
+          "Age: 18-35 years",
+          "Citizenship: Indian national",
+          "Education: Minimum 10th pass",
+          "Course recognition: From recognized institutions",
+          "Income limit: Family income up to ₹6 lakh per annum",
+          "Admission: Confirmed admission in eligible course",
+          "Good academic record: Minimum 50% marks",
+          "No previous loan defaults"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Loan Amount और Coverage"
+      },
+      {
+        type: "list",
+        items: [
+          "Tuition fees: 100% coverage",
+          "Hostel fees: Up to ₹2 लाख",
+          "Living expenses: Monthly allowance for outstation students",
+          "Books & study materials: Up to ₹50,000",
+          "Equipment & tools: Course-specific requirements",
+          "Examination fees: Certification costs",
+          "Travel expenses: For practical training",
+          "Insurance: Student insurance premium"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Application Process Step-by-Step"
+      },
+      {
+        type: "list",
+        items: [
+          "Choose eligible course और institution",
+          "Secure admission confirmation",
+          "Gather required documents",
+          "Visit participating bank या NBFC",
+          "Fill loan application form",
+          "Submit documents for verification",
+          "Attend interview if required",
+          "Await approval और sanction letter",
+          "Complete loan agreement",
+          "Receive fund disbursement"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Required Documents"
+      },
+      {
+        type: "list",
+        items: [
+          "Application form (duly filled)",
+          "Admission letter from institution",
+          "Academic certificates (10th, 12th, graduation)",
+          "Identity proof (Aadhaar, PAN, Passport)",
+          "Address proof (recent utility bills)",
+          "Income certificate (family income)",
+          "Caste certificate (if applicable)",
+          "Passport size photographs",
+          "Course fee structure",
+          "Bank statements (last 6 months)",
+          "Co-applicant documents (if any)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Participating Banks और Financial Institutions"
+      },
+      {
+        type: "list",
+        items: [
+          "Public Sector Banks: SBI, PNB, BOI, Canara Bank",
+          "Private Banks: HDFC, ICICI, Axis Bank, Kotak Mahindra",
+          "Regional Rural Banks: State-specific RRBs",
+          "NBFCs: Bajaj Finserv, Tata Capital, L&T Finance",
+          "Cooperative Banks: Urban और rural cooperatives",
+          "Microfinance Institutions: Select MFIs",
+          "Online Lenders: Fintech companies with RBI approval"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Interest Rates और Repayment Terms"
+      },
+      {
+        type: "list",
+        items: [
+          "Base rate: 8-12% per annum",
+          "Floating rate: Linked to MCLR या repo rate",
+          "Gender benefit: 0.5% concession for girl students",
+          "Early repayment: No prepayment charges",
+          "EMI options: Fixed या step-up EMIs",
+          "Grace period: 6 months post-course completion",
+          "Repayment tenure: 3-7 years (extendable)",
+          "Payment methods: Auto-debit, online, branch"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Loan Processing Time"
+      },
+      {
+        type: "list",
+        items: [
+          "Document verification: 3-5 working days",
+          "Credit appraisal: 5-7 working days",
+          "Approval decision: 2-3 working days",
+          "Sanction letter: 1-2 working days",
+          "Disbursement: 3-5 working days",
+          "Total process time: 15-20 working days",
+          "Fast-track processing: For premium institutions",
+          "Digital processing: Reduces timeline significantly"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Collateral और Guarantee Requirements"
+      },
+      {
+        type: "list",
+        items: [
+          "Up to ₹4 lakh: No collateral required",
+          "₹4-7.5 lakh: Third-party guarantee या collateral",
+          "Acceptable collateral: Property, FD, Insurance policies",
+          "Guarantee: Family member या friend as guarantor",
+          "Credit guarantee: Government scheme backing",
+          "Alternative security: Future salary assignment",
+          "Co-borrower: Parent या spouse as co-applicant"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Benefits of Skill Loan Scheme"
+      },
+      {
+        type: "list",
+        items: [
+          "Affordable interest rates compared to personal loans",
+          "No immediate repayment pressure during studies",
+          "Comprehensive coverage of education expenses",
+          "Government support और backing",
+          "Flexible repayment options",
+          "Career advancement opportunities",
+          "Skill development focus",
+          "Employment-oriented courses priority",
+          "Digital application process",
+          "Quick approval और disbursement"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Tax Benefits on Education Loans"
+      },
+      {
+        type: "list",
+        items: [
+          "Interest deduction: Up to ₹1.5 lakh under Section 80E",
+          "No time limit: Deduction available for entire repayment period",
+          "Individual benefit: Student या parent can claim",
+          "No maximum limit: On principal repayment",
+          "Documentation required: Interest certificate from bank",
+          "ITR filing: Mandatory for claiming benefits"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Challenges और Solutions"
+      },
+      {
+        type: "list",
+        items: [
+          "Complex documentation: Seek bank guidance",
+          "Course recognition: Check approved institution list",
+          "Income proof: Alternative income documentation",
+          "Guarantor requirement: Explore government guarantee schemes",
+          "Processing delays: Follow up regularly",
+          "High interest rates: Compare multiple lenders",
+          "Repayment burden: Plan EMIs carefully"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Success Stories और Impact"
+      },
+      {
+        type: "paragraph",
+        content: "Skill Loan Scheme ने lakhs of students को career advancement में help की है। Manufacturing, healthcare, IT, और service sectors में trained professionals की demand को पूरा करने में यह scheme crucial role play कर रही है।"
+      },
+      {
+        type: "heading",
+        content: "Tips for Successful Loan Application"
+      },
+      {
+        type: "list",
+        items: [
+          "Research thoroughly about course और institution",
+          "Maintain good academic record",
+          "Prepare complete documentation",
+          "Compare different lenders",
+          "Understand terms और conditions",
+          "Plan repayment strategy",
+          "Keep track of application status",
+          "Maintain relationship with bank"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Future Expansion Plans"
+      },
+      {
+        type: "paragraph",
+        content: "Government plans to expand the scheme to include more vocational courses, increase loan limits, और include international skill development programs। Digital platforms और AI-based processing भी integrate किया जाएगा।"
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "Skill Loan Scheme एक excellent opportunity है उन students के लिए जो skill development के through अपना career advance करना चाहते हैं। Up to ₹7.5 लाख का loan affordable terms पर मिल सकता है। Proper planning और documentation के साथ आप आसानी से इस scheme का benefit उठा सकते हैं।"
+      }
+    ]
   }
+
 ];
 
 // Helper functions
