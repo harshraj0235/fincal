@@ -7,8 +7,6 @@ import {
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
- 
-import { InfluencerProfile } from '../data/influencers';
 
 export const Home: React.FC = () => {
   const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
