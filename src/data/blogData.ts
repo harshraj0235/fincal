@@ -18247,9 +18247,542 @@ export const blogPosts: BlogPost[] = [
           content: "उड़ान योजना आत्मनिर्भर भारत के विजन को साकार करने में एक महत्वपूर्ण कदम है। यह न केवल transportation revolution लाती है बल्कि economic development, job creation, tourism promotion और social inclusion में भी योगदान देती है। आने वाले वर्षों में यह योजना भारत को विश्व के aviation map पर एक मजबूत स्थान दिलाने में सहायक होगी।"
         }
       ]
-    }
-
-
+    },
+   {
+    id: 122,
+    title: "NPS for Minors: NPS Vatsalya Scheme Details - Complete Guide for Parents 2025",
+    slug: "nps-vatsalya-scheme-minors-complete-guide-parents-2025",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "NPS Vatsalya Scheme माता-पिता के लिए एक नई पेंशन योजना है। जानें कैसे अपने बच्चों के लिए NPS Vatsalya में निवेश करें और उनका भविष्य सुरक्षित करें।",
+    categories: ["Government Schemes", "Investment", "Retirement Planning"],
+    metaTitle: "NPS Vatsalya Scheme 2025: Complete Guide for Parents | NPS for Minors",
+    metaDescription: "NPS Vatsalya Scheme के बारे में पूरी जानकारी। जानें कैसे अपने बच्चों के लिए NPS में निवेश करें, eligibility criteria, benefits और application process।",
+    keywords: ["NPS Vatsalya", "NPS for minors", "pension scheme for children", "NPS बच्चों के लिए", "Vatsalya Scheme benefits"],
+    content: [
+      {
+        type: "paragraph",
+        content: "NPS Vatsalya Scheme भारत सरकार की एक नई पहल है जो माता-पिता को अपने नाबालिग बच्चों के लिए पेंशन खाता खोलने की सुविधा देती है। यह National Pension System (NPS) का एक विशेष रूप है जो विशेष रूप से बच्चों के भविष्य की वित्तीय सुरक्षा के लिए डिज़ाइन किया गया है।"
+      },
+      {
+        type: "heading",
+        content: "NPS Vatsalya Scheme क्या है?"
+      },
+      {
+        type: "paragraph",
+        content: "NPS Vatsalya एक long-term retirement planning scheme है जो माता-पिता या अभिभावकों को अपने नाबालिग बच्चों के नाम पर NPS खाता खोलने की अनुमति देती है। यह scheme बच्चों के 18 साल के होने तक माता-पिता के नियंत्रण में रहती है, उसके बाद खाता automatically बच्चे के नाम transfer हो जाता है।"
+      },
+      {
+        type: "heading",
+        content: "NPS Vatsalya Scheme की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "0-18 साल की उम्र के बच्चों के लिए eligible",
+          "Minimum investment ₹1,000 per year",
+          "Maximum investment limit नहीं",
+          "Tax benefits under Section 80C और 80CCD(1B)",
+          "Professional fund management",
+          "18 साल की उम्र में automatic transfer",
+          "Flexible investment options - Tier I और Tier II accounts",
+          "Low cost fund management charges"
+        ]
+      },
+      {
+        type: "heading",
+        content: "NPS Vatsalya Account कैसे खोलें?"
+      },
+      {
+        type: "paragraph",
+        content: "NPS Vatsalya account खोलना एक simple process है। यहाँ step-by-step guide है:"
+      },
+      {
+        type: "subheading",
+        content: "Required Documents:"
+      },
+      {
+        type: "list",
+        items: [
+          "बच्चे का birth certificate",
+          "Parent/Guardian का Aadhaar card",
+          "Parent/Guardian का PAN card",
+          "Address proof (Aadhaar, passport, utility bills)",
+          "Bank account details और cancelled cheque",
+          "Recent passport size photographs"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Application Process:"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी NPS Point of Presence (PoP) branch पर जाएं",
+          "NPS Vatsalya application form भरें",
+          "Required documents submit करें",
+          "Initial contribution amount deposit करें",
+          "PRAN (Permanent Retirement Account Number) receive करें",
+          "Online account access के लिए login credentials मिलेंगे"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Investment Options और Asset Allocation"
+      },
+      {
+        type: "paragraph",
+        content: "NPS Vatsalya में विभिन्न investment options उपलब्ध हैं:"
+      },
+      {
+        type: "subheading",
+        content: "Asset Classes:"
+      },
+      {
+        type: "list",
+        items: [
+          "Equity (Class E) - Maximum 75% allocation",
+          "Corporate Bonds (Class C) - Maximum 100% allocation",
+          "Government Securities (Class G) - Maximum 100% allocation",
+          "Alternative Investment Funds (Class A) - Maximum 5% allocation"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Investment Strategies:"
+      },
+      {
+        type: "list",
+        items: [
+          "Active Choice - आप खुद asset allocation decide करें",
+          "Auto Choice - Life Cycle Fund के through automatic allocation",
+          "Tax Saver - Section 80C benefits के साथ conservative approach"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Tax Benefits और Returns"
+      },
+      {
+        type: "paragraph",
+        content: "NPS Vatsalya significant tax benefits प्रदान करती है:"
+      },
+      {
+        type: "subheading",
+        content: "Tax Deductions:"
+      },
+      {
+        type: "list",
+        items: [
+          "Section 80C के तहत ₹1.5 lakh तक deduction",
+          "Section 80CCD(1B) के तहत additional ₹50,000 deduction",
+          "Total tax saving potential: ₹2 lakh per year",
+          "Employer contribution भी tax deductible (applicable cases में)"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Expected Returns:"
+      },
+      {
+        type: "list",
+        items: [
+          "Historical returns: 8-12% annually (market-linked)",
+          "Government securities: 6-8% returns",
+          "Equity exposure: Higher growth potential",
+          "Long-term compounding benefits"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Withdrawal Rules और Maturity Benefits"
+      },
+      {
+        type: "paragraph",
+        content: "NPS Vatsalya में specific withdrawal rules हैं:"
+      },
+      {
+        type: "subheading",
+        content: "Premature Withdrawal:"
+      },
+      {
+        type: "list",
+        items: [
+          "18 साल से पहले withdrawal नहीं allowed",
+          "Emergency situations में partial withdrawal possible",
+          "Serious illness या higher education के लिए withdrawal",
+          "Documentation और approval required"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Maturity Benefits:"
+      },
+      {
+        type: "list",
+        items: [
+          "60 साल की उम्र में maturity",
+          "60% amount lump sum withdrawal",
+          "40% amount annuity purchase mandatory",
+          "Pension income tax-free (EET taxation)",
+          "Nominee benefits available"
+        ]
+      },
+      {
+        type: "heading",
+        content: "NPS Vatsalya vs Other Children Investment Plans"
+      },
+      {
+        type: "paragraph",
+        content: "अन्य investment options के साथ comparison:"
+      },
+      {
+        type: "subheading",
+        content: "vs Sukanya Samriddhi Yojana:"
+      },
+      {
+        type: "list",
+        items: [
+          "SSY केवल girl child के लिए, NPS Vatsalya सभी बच्चों के लिए",
+          "SSY में fixed returns, NPS में market-linked returns",
+          "SSY 21 साल maturity, NPS 60 साल maturity",
+          "Tax benefits अलग structure में"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "vs Child Insurance Plans:"
+      },
+      {
+        type: "list",
+        items: [
+          "NPS में lower charges",
+          "Better long-term returns potential",
+          "Separate term insurance recommend करते हैं",
+          "More transparency और flexibility"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Mistakes to Avoid"
+      },
+      {
+        type: "list",
+        items: [
+          "Asset allocation को ignore न करें",
+          "Regular contribution maintain करें",
+          "Tax benefits को maximize करें",
+          "Nominee details update रखें",
+          "Statement regularly check करें",
+          "18 साल के बाद account transfer process समझें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "NPS Vatsalya Scheme एक excellent long-term investment option है जो आपके बच्चों के retirement planning के लिए perfect है। Early start, regular contributions, और proper asset allocation के साथ, यह scheme significant wealth creation में help कर सकती है। बच्चों के भविष्य की financial security के लिए यह एक smart choice है।"
+      }
+    ]
+  },
+  {
+    id: 123,
+    title: "Atmanirbhar Oil Seeds Abhiyan: Modern Farming Techniques for Self-Reliant India 2025",
+    slug: "atmanirbhar-oil-seeds-abhiyan-modern-farming-techniques-2025",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Atmanirbhar Oil Seeds Abhiyan के तहत modern farming techniques और government support। जानें कैसे किसान oil seeds production में increase कर सकते हैं।",
+    categories: ["Government Schemes", "Rural Finance"],
+    metaTitle: "Atmanirbhar Oil Seeds Abhiyan 2025: Modern Farming Guide for Farmers",
+    metaDescription: "Atmanirbhar Oil Seeds Abhiyan की complete information। Modern farming techniques, government benefits, subsidies और oil seeds cultivation guide।",
+    keywords: ["Atmanirbhar Oil Seeds Abhiyan", "oil seeds farming", "modern farming techniques", "government subsidy", "किसान योजना"],
+    content: [
+      {
+        type: "paragraph",
+        content: "Atmanirbhar Oil Seeds Abhiyan भारत सरकार की एक महत्वाकांक्षी योजना है जो देश को edible oil के मामले में self-reliant बनाने के लिए शुरू की गई है। यह abhiyan किसानों को modern farming techniques के साथ oil seeds production बढ़ाने के लिए comprehensive support प्रदान करती है।"
+      },
+      {
+        type: "heading",
+        content: "Atmanirbhar Oil Seeds Abhiyan का परिचय"
+      },
+      {
+        type: "paragraph",
+        content: "भारत अपनी edible oil requirements का लगभग 60% import करता है, जो एक बड़ी चुनौती है। इस समस्या को हल करने के लिए सरकार ने Atmanirbhar Oil Seeds Abhiyan launch किया है। इस योजना का मुख्य उद्देश्य domestic oil seeds production को बढ़ाना और किसानों की आय में वृद्धि करना है।"
+      },
+      {
+        type: "heading",
+        content: "Scheme की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "Oil seeds cultivation area में 40% increase का target",
+          "Modern farming equipment की subsidized उपलब्धता",
+          "High-yield variety seeds का free distribution",
+          "Technical training और skill development programs",
+          "Market linkage और price support mechanism",
+          "Crop insurance coverage",
+          "Storage facility development",
+          "Processing units establishment support"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Covered Oil Seeds Crops"
+      },
+      {
+        type: "paragraph",
+        content: "यह abhiyan निम्नलिखित oil seeds crops को cover करती है:"
+      },
+      {
+        type: "list",
+        items: [
+          "Groundnut (मूंगफली)",
+          "Mustard (सरसों)",
+          "Sunflower (सूरजमुखी)",
+          "Soybean (सोयाबीन)",
+          "Safflower (कुसुम)",
+          "Niger (राम तिल)",
+          "Linseed (अलसी)",
+          "Castor (अरंडी)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Modern Farming Techniques"
+      },
+      {
+        type: "subheading",
+        content: "1. Precision Agriculture"
+      },
+      {
+        type: "list",
+        items: [
+          "GPS-guided tractors का use",
+          "Soil testing और nutrient management",
+          "Variable rate application technology",
+          "Satellite imagery के through crop monitoring",
+          "Drone technology for spraying",
+          "IoT sensors for real-time data"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "2. Advanced Irrigation Systems"
+      },
+      {
+        type: "list",
+        items: [
+          "Drip irrigation system installation",
+          "Sprinkler irrigation setup",
+          "Micro-irrigation techniques",
+          "Water conservation methods",
+          "Mulching practices",
+          "Rainwater harvesting systems"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "3. Improved Seed Varieties"
+      },
+      {
+        type: "list",
+        items: [
+          "High-yielding variety (HYV) seeds",
+          "Disease-resistant varieties",
+          "Drought-tolerant cultivars",
+          "Hybrid seeds का use",
+          "Certified seed program",
+          "Seed treatment techniques"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Government Support और Subsidies"
+      },
+      {
+        type: "subheading",
+        content: "Financial Assistance:"
+      },
+      {
+        type: "list",
+        items: [
+          "Farm machinery पर 50% subsidy",
+          "Irrigation equipment पर 60% subsidy",
+          "Seed cost पर 50% assistance",
+          "Fertilizer subsidy benefits",
+          "Crop insurance premium subsidy",
+          "Storage facility construction support"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Technical Support:"
+      },
+      {
+        type: "list",
+        items: [
+          "Free soil testing facilities",
+          "Expert consultation services",
+          "Training programs और workshops",
+          "Demonstration plots establishment",
+          "Mobile advisory services",
+          "Digital farming apps"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Application Process"
+      },
+      {
+        type: "paragraph",
+        content: "Atmanirbhar Oil Seeds Abhiyan के benefits के लिए apply करने की process:"
+      },
+      {
+        type: "subheading",
+        content: "Required Documents:"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड",
+          "Land ownership documents",
+          "Bank account details",
+          "Passport size photographs",
+          "Caste certificate (if applicable)",
+          "Mobile number और email ID"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Step-by-Step Process:"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी कृषि विभाग office में जाएं",
+          "Application form भरें",
+          "Required documents submit करें",
+          "Land verification कराएं",
+          "Approval letter receive करें",
+          "Benefits claim करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Expected Benefits और Returns"
+      },
+      {
+        type: "subheading",
+        content: "Productivity Increase:"
+      },
+      {
+        type: "list",
+        items: [
+          "25-30% yield increase expected",
+          "Better quality oil seeds",
+          "Reduced farming costs",
+          "Improved soil health",
+          "Water conservation benefits",
+          "Sustainable farming practices"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Income Enhancement:"
+      },
+      {
+        type: "list",
+        items: [
+          "Higher market prices for quality produce",
+          "Reduced input costs",
+          "Multiple cropping opportunities",
+          "Value addition through processing",
+          "Direct market access",
+          "Export opportunities"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Success Stories और Case Studies"
+      },
+      {
+        type: "paragraph",
+        content: "कई किसानों ने इस abhiyan के through अपनी आय में significant increase देखी है:"
+      },
+      {
+        type: "list",
+        items: [
+          "Rajasthan के farmers ने mustard yield में 40% increase achieve किया",
+          "Gujarat में groundnut farmers ने modern techniques से double income प्राप्त की",
+          "Maharashtra के soybean growers ने precision farming से बेहतर results पाए",
+          "Haryana में sunflower cultivation में remarkable success मिली"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Challenges और Solutions"
+      },
+      {
+        type: "subheading",
+        content: "Challenges:"
+      },
+      {
+        type: "list",
+        items: [
+          "Initial investment की high cost",
+          "Technical knowledge की कमी",
+          "Market price fluctuations",
+          "Weather dependency",
+          "Pest और disease management"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Solutions:"
+      },
+      {
+        type: "list",
+        items: [
+          "Government subsidies का proper utilization",
+          "Regular training programs में participation",
+          "Crop insurance coverage",
+          "Weather-based advisories का follow",
+          "Integrated pest management practices"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Future Prospects"
+      },
+      {
+        type: "paragraph",
+        content: "Atmanirbhar Oil Seeds Abhiyan के long-term benefits:"
+      },
+      {
+        type: "list",
+        items: [
+          "Import dependency में कमी",
+          "Rural economy strengthening",
+          "Employment opportunities creation",
+          "Environmental sustainability",
+          "Export potential development",
+          "Food security enhancement"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Conclusion"
+      },
+      {
+        type: "paragraph",
+        content: "Atmanirbhar Oil Seeds Abhiyan एक game-changing initiative है जो भारतीय agriculture को modern बनाने और किसानों की आय बढ़ाने में महत्वपूर्ण role play कर रही है। Modern farming techniques, government support, और proper planning के साथ, यह scheme oil seeds sector में revolution ला सकती है। किसानों को इस opportunity को grab करना चाहिए और अपने farming practices को modernize करना चाहिए।"
+      }
+    ]
+  }
 ];
 
 // Helper functions
