@@ -20,76 +20,7 @@ export interface BlogPost {
   excerpt: string;
   categories: string[];
   content: BlogPostSection[];
-  readTime?: string;
-  featured?: boolean;
-  trending?: boolean;
-  seoTitle?: string;
-  seoDescription?: string;
-  keywords?: string[];
 }
-
-export interface BlogCategory {
-  id: string;
-  name: string;
-  description: string;
-  slug: string;
-  icon: string;
-  color: string;
-  postCount: number;
-  featured?: boolean;
-  parentCategory?: string;
-}
-
-export const blogCategories: BlogCategory[] = [
-  { id: 'government-schemes', name: 'Government Schemes', description: 'Comprehensive guides on Indian government financial schemes and benefits', slug: 'government-schemes', icon: '🏛️', color: 'bg-blue-100 text-blue-800', postCount: 12, featured: true },
-  { id: 'investment', name: 'Investment', description: 'Investment strategies, tips, and market insights for building wealth', slug: 'investment', icon: '📈', color: 'bg-green-100 text-green-800', postCount: 25, featured: true },
-  { id: 'tax-planning', name: 'Tax Planning', description: 'Tax-saving strategies, deductions, and compliance guides', slug: 'tax-planning', icon: '💰', color: 'bg-purple-100 text-purple-800', postCount: 18, featured: true },
-  { id: 'retirement-planning', name: 'Retirement Planning', description: 'Plan for a secure retirement with pension schemes and strategies', slug: 'retirement-planning', icon: '🏖️', color: 'bg-orange-100 text-orange-800', postCount: 15 },
-  { id: 'rural-finance', name: 'Rural Finance', description: 'Financial services and schemes for rural communities', slug: 'rural-finance', icon: '🌾', color: 'bg-emerald-100 text-emerald-800', postCount: 8 },
-  { id: 'senior-citizens', name: 'Senior Citizens', description: 'Financial planning and schemes specifically for senior citizens', slug: 'senior-citizens', icon: '👴', color: 'bg-indigo-100 text-indigo-800', postCount: 10 },
-  { id: 'financial-inclusion', name: 'Financial Inclusion', description: 'Banking and financial services for underserved communities', slug: 'financial-inclusion', icon: '🤝', color: 'bg-pink-100 text-pink-800', postCount: 6 },
-  { id: 'home-loans', name: 'Home Loans', description: 'Home loan guides, interest rates, and approval tips', slug: 'home-loans', icon: '🏠', color: 'bg-red-100 text-red-800', postCount: 14, featured: true },
-  { id: 'real-estate', name: 'Real Estate', description: 'Real estate investment, market trends, and property insights', slug: 'real-estate', icon: '🏘️', color: 'bg-yellow-100 text-yellow-800', postCount: 12 },
-  { id: 'emi-calculation', name: 'EMI Calculation', description: 'Understanding EMIs, loan calculations, and repayment strategies', slug: 'emi-calculation', icon: '🧮', color: 'bg-cyan-100 text-cyan-800', postCount: 9 },
-  { id: 'financial-planning', name: 'Financial Planning', description: 'Comprehensive financial planning guides and strategies', slug: 'financial-planning', icon: '📊', color: 'bg-teal-100 text-teal-800', postCount: 20, featured: true },
-  { id: 'mutual-funds', name: 'Mutual Funds', description: 'Mutual fund selection, analysis, and investment strategies', slug: 'mutual-funds', icon: '📈', color: 'bg-green-100 text-green-800', postCount: 22 },
-  { id: 'sip', name: 'SIP', description: 'Systematic Investment Plan guides and calculators', slug: 'sip', icon: '🔄', color: 'bg-blue-100 text-blue-800', postCount: 16 },
-  { id: 'lumpsum', name: 'Lumpsum', description: 'Lumpsum investment strategies and planning', slug: 'lumpsum', icon: '💎', color: 'bg-purple-100 text-purple-800', postCount: 11 },
-  { id: 'wealth-management', name: 'Wealth Management', description: 'Advanced wealth management strategies for high net worth individuals', slug: 'wealth-management', icon: '👑', color: 'bg-amber-100 text-amber-800', postCount: 13 },
-  { id: 'corpus-calculation', name: 'Corpus Calculation', description: 'Calculate retirement corpus, education funds, and financial goals', slug: 'corpus-calculation', icon: '🎯', color: 'bg-rose-100 text-rose-800', postCount: 7 },
-  { id: 'income-tax', name: 'Income Tax', description: 'Income tax guides, calculations, and filing tips', slug: 'income-tax', icon: '📋', color: 'bg-slate-100 text-slate-800', postCount: 19 },
-  { id: 'government-regulations', name: 'Government Regulations', description: 'Latest government financial regulations and policy updates', slug: 'government-regulations', icon: '⚖️', color: 'bg-stone-100 text-stone-800', postCount: 8 },
-  { id: 'insurance', name: 'Insurance', description: 'Life, health, and general insurance guides and comparisons', slug: 'insurance', icon: '🛡️', color: 'bg-sky-100 text-sky-800', postCount: 17, featured: true },
-  { id: 'social-security', name: 'Social Security', description: 'Social security schemes and employee benefits', slug: 'social-security', icon: '🏥', color: 'bg-violet-100 text-violet-800', postCount: 9 },
-  { id: 'stock-market', name: 'Stock Market', description: 'Stock market analysis, trading strategies, and market insights', slug: 'stock-market', icon: '📊', color: 'bg-green-100 text-green-800', postCount: 24 },
-  { id: 'automotive', name: 'Automotive', description: 'Car loans, vehicle insurance, and automotive finance', slug: 'automotive', icon: '🚗', color: 'bg-gray-100 text-gray-800', postCount: 6 },
-  { id: 'sustainable-energy', name: 'Sustainable Energy', description: 'Green energy investments and sustainable finance', slug: 'sustainable-energy', icon: '🌱', color: 'bg-lime-100 text-lime-800', postCount: 5 },
-  { id: 'rural-development', name: 'Rural Development', description: 'Rural development schemes and agricultural finance', slug: 'rural-development', icon: '🏞️', color: 'bg-emerald-100 text-emerald-800', postCount: 7 },
-  { id: 'employment', name: 'Employment', description: 'Employment schemes, job benefits, and career finance', slug: 'employment', icon: '💼', color: 'bg-blue-100 text-blue-800', postCount: 8 },
-  { id: 'economy', name: 'Economy', description: 'Economic trends, policy impacts, and market analysis', slug: 'economy', icon: '🌍', color: 'bg-indigo-100 text-indigo-800', postCount: 12 },
-  { id: 'etfs', name: 'ETFs', description: 'Exchange Traded Funds guides and investment strategies', slug: 'etfs', icon: '📊', color: 'bg-teal-100 text-teal-800', postCount: 14 },
-  { id: 'cryptocurrency', name: 'Cryptocurrency', description: 'Cryptocurrency investment, taxation, and regulations in India', slug: 'cryptocurrency', icon: '₿', color: 'bg-orange-100 text-orange-800', postCount: 10 },
-  { id: 'green-bonds', name: 'Green Bonds', description: 'Sustainable investing through green bonds and ESG funds', slug: 'green-bonds', icon: '🌿', color: 'bg-green-100 text-green-800', postCount: 4 },
-  { id: 'technology', name: 'Technology', description: 'Fintech innovations, digital banking, and financial technology', slug: 'technology', icon: '💻', color: 'bg-blue-100 text-blue-800', postCount: 11 },
-  { id: 'startups', name: 'Startups', description: 'Startup funding, business finance, and entrepreneurship', slug: 'startups', icon: '🚀', color: 'bg-purple-100 text-purple-800', postCount: 9 },
-  { id: 'green-energy', name: 'Green Energy', description: 'Solar, wind, and renewable energy investments', slug: 'green-energy', icon: '☀️', color: 'bg-yellow-100 text-yellow-800', postCount: 6 },
-  { id: 'electric-vehicles', name: 'Electric Vehicles', description: 'EV loans, subsidies, and sustainable transportation finance', slug: 'electric-vehicles', icon: '🔋', color: 'bg-green-100 text-green-800', postCount: 7 },
-  { id: 'wealth-creation', name: 'Wealth Creation', description: 'Long-term wealth building strategies and tips', slug: 'wealth-creation', icon: '💰', color: 'bg-gold-100 text-amber-800', postCount: 16 },
-  { id: 'gen-z', name: 'Gen Z', description: 'Financial planning and investment tips for Generation Z', slug: 'gen-z', icon: '👨‍💻', color: 'bg-pink-100 text-pink-800', postCount: 8 },
-  { id: 'cost-effective-investing', name: 'Cost-Effective Investing', description: 'Low-cost investment strategies and budget-friendly options', slug: 'cost-effective-investing', icon: '💡', color: 'bg-cyan-100 text-cyan-800', postCount: 9 },
-  { id: 'agriculture', name: 'Agriculture', description: 'Agricultural finance, crop loans, and farming subsidies', slug: 'agriculture', icon: '🌾', color: 'bg-green-100 text-green-800', postCount: 10 },
-  { id: 'farm-loans', name: 'Farm Loans', description: 'Agricultural loan schemes, eligibility, and application process', slug: 'farm-loans', icon: '🚜', color: 'bg-emerald-100 text-emerald-800', postCount: 6 },
-  { id: 'budget', name: 'Budget', description: 'Personal budgeting, expense tracking, and financial planning', slug: 'budget', icon: '📊', color: 'bg-blue-100 text-blue-800', postCount: 12 },
-  { id: 'sme', name: 'SME', description: 'Small and Medium Enterprise finance and business loans', slug: 'sme', icon: '🏢', color: 'bg-indigo-100 text-indigo-800', postCount: 8 },
-  { id: 'financial-freedom', name: 'Financial Freedom', description: 'Achieve financial independence and early retirement', slug: 'financial-freedom', icon: '🗽', color: 'bg-purple-100 text-purple-800', postCount: 14 },
-  { id: 'social-welfare', name: 'Social Welfare', description: 'Government welfare schemes and social benefits', slug: 'social-welfare', icon: '🤲', color: 'bg-rose-100 text-rose-800', postCount: 7 },
-  { id: 'government-policies', name: 'Government Policies', description: 'Financial policy updates and regulatory changes', slug: 'government-policies', icon: '📜', color: 'bg-slate-100 text-slate-800', postCount: 9 },
-  { id: 'millennials', name: 'Millennials', description: 'Financial planning guides specifically for millennials', slug: 'millennials', icon: '👩‍💼', color: 'bg-teal-100 text-teal-800', postCount: 11 },
-  { id: 'young-professionals', name: 'Young Professionals', description: 'Career finance, salary planning, and investment for young professionals', slug: 'young-professionals', icon: '👨‍💼', color: 'bg-cyan-100 text-cyan-800', postCount: 10 },
-  { id: 'etf', name: 'ETF', description: 'Exchange Traded Fund analysis and investment strategies', slug: 'etf', icon: '📈', color: 'bg-green-100 text-green-800', postCount: 13 },
-  { id: 'bank', name: 'Bank', description: 'Banking services, account types, and financial products', slug: 'bank', icon: '🏦', color: 'bg-blue-100 text-blue-800', postCount: 15 },
-  { id: 'pmay', name: 'PMAY', description: 'Pradhan Mantri Awas Yojana - affordable housing scheme guide', slug: 'pmay', icon: '🏠', color: 'bg-orange-100 text-orange-800', postCount: 5 }
-];
 
 export const blogPosts: BlogPost[] = [
   {
@@ -13655,7 +13586,1744 @@ export const blogPosts: BlogPost[] = [
         content: "Combine social media insights with traditional research, maintain healthy skepticism, and focus on long-term wealth building rather than quick gains. Use our investment calculator tools to validate social media advice and create personalized investment strategies."
       }
     ]
+  },
+  
+  {
+    id: 103,
+    title: "प्रधानमंत्री धन-धान्य कृषि योजना 2025: पात्रता, लाभ और आवेदन प्रक्रिया की संपूर्ण जानकारी",
+    slug: "pradhanmantri-dhan-dhanya-krishi-yojana-2025-complete-guide",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "प्रधानमंत्री धन-धान्य कृषि योजना 2025 में किसानों को मिलेंगे अनेक लाभ। जानें पात्रता मापदंड, आवेदन प्रक्रिया, और कैसे उठाएं इस योजना का फायदा।",
+    categories: ["Government Schemes", "Rural Finance"],
+    metaDescription: "प्रधानमंत्री धन-धान्य कृषि योजना 2025 की पूरी जानकारी। पात्रता, लाभ, आवेदन प्रक्रिया और दस्तावेज़ों की विस्तृत गाइड। अभी पढ़ें और योजना का फायदा उठाएं।",
+    keywords: ["प्रधानमंत्री धन-धान्य कृषि योजना", "किसान योजना 2025", "कृषि सब्सिडी", "धान धान्य योजना आवेदन", "PM Dhan Dhanya Krishi Yojana"],
+    readTime: 8,
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री धन-धान्य कृषि योजना 2025 भारत सरकार की एक महत्वाकांक्षी योजना है जो किसानों की आर्थिक स्थिति सुधारने और कृषि उत्पादन बढ़ाने के लिए शुरू की गई है। इस योजना के तहत किसानों को बीज, उर्वरक, कृषि उपकरण और तकनीकी सहायता प्रदान की जाती है।"
+      },
+      {
+        type: "heading",
+        content: "प्रधानमंत्री धन-धान्य कृषि योजना क्या है?"
+      },
+      {
+        type: "paragraph",
+        content: "यह योजना किसानों को आधुनिक कृषि तकनीक और उन्नत बीजों के साथ खेती करने के लिए प्रेरित करती है। इसका मुख्य उद्देश्य देश में खाद्यान्न उत्पादन बढ़ाना और किसानों की आय दोगुनी करना है।"
+      },
+      {
+        type: "heading",
+        content: "योजना के मुख्य लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "उन्नत किस्म के बीज मुफ्त में प्राप्त होते हैं",
+          "कृषि उपकरणों पर 50% तक सब्सिडी मिलती है",
+          "जैविक खाद और उर्वरक पर छूट",
+          "कृषि तकनीकी प्रशिक्षण निःशुल्क",
+          "फसल बीमा की सुविधा",
+          "बैंक से आसान कृषि लोन",
+          "मार्केटिंग सपोर्ट और MSP की गारंटी"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "आधुनिक कृषि तकनीक से खेती करते किसान"
+      },
+      {
+        type: "heading",
+        content: "पात्रता मापदंड (Eligibility Criteria)"
+      },
+      {
+        type: "list",
+        items: [
+          "आवेदक भारतीय नागरिक होना चाहिए",
+          "18 से 60 वर्ष की आयु के किसान पात्र हैं",
+          "कम से कम 1 एकड़ कृषि भूमि होनी चाहिए",
+          "परिवार की वार्षिक आय 3 लाख रुपए से कम हो",
+          "पहले से किसी अन्य कृषि योजना का लाभ न ले रहे हों",
+          "आधार कार्ड और बैंक खाता अनिवार्य"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज़"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड की फोटोकॉपी",
+          "पासपोर्ट साइज़ फोटो",
+          "बैंक खाता पासबुक",
+          "भूमि के कागजात (खसरा/खतौनी)",
+          "आय प्रमाण पत्र",
+          "जाति प्रमाण पत्र (यदि लागू हो)",
+          "मोबाइल नंबर"
+        ]
+      },
+      {
+        type: "heading",
+        content: "ऑनलाइन आवेदन प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री धन-धान्य कृषि योजना के लिए ऑनलाइन आवेदन करना बहुत आसान है:"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले PM-Kisan की आधिकारिक वेबसाइट पर जाएं",
+          "होम पेज पर 'धन-धान्य कृषि योजना' का लिंक क्लिक करें",
+          "नया रजिस्ट्रेशन पर क्लिक करें",
+          "आवश्यक जानकारी भरें और दस्तावेज़ अपलोड करें",
+          "सभी डिटेल्स वेरीफाई करने के बाद सबमिट करें",
+          "आवेदन की रसीद डाउनलोड करें और सेव रखें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "ऑफलाइन आवेदन प्रक्रिया"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी कृषि विभाग के कार्यालय में जाएं",
+          "योजना का आवेदन फॉर्म प्राप्त करें",
+          "फॉर्म को सावधानीपूर्वक भरें",
+          "सभी आवश्यक दस्तावेज़ संलग्न करें",
+          "कार्यालय में फॉर्म जमा करें",
+          "रसीद प्राप्त करें और फॉलो-अप करते रहें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "राज्यवार योजना का कार्यान्वयन"
+      },
+      {
+        type: "paragraph",
+        content: "यह योजना पूरे भारत में लागू है, लेकिन कुछ राज्यों में विशेष प्राथमिकता दी गई है:"
+      },
+      {
+        type: "list",
+        items: [
+          "उत्तर प्रदेश: 25% अतिरिक्त सब्सिडी",
+          "बिहार: महिला किसानों को प्राथमिकता",
+          "पंजाब: पारंपरिक बासमती की खेती पर फोकस",
+          "हरियाणा: जैविक खेती को बढ़ावा",
+          "मध्य प्रदेश: दलहन उत्पादन में वृद्धि",
+          "राजस्थान: रेगिस्तानी क्षेत्रों के लिए विशेष पैकेज"
+        ]
+      },
+      {
+        type: "quote",
+        content: "प्रधानमंत्री धन-धान्य कृषि योजना से देश के 10 करोड़ किसानों को सीधा लाभ मिलेगा और कृषि क्षेत्र में नई क्रांति आएगी।",
+        author: "कृषि मंत्रालय"
+      },
+      {
+        type: "heading",
+        content: "योजना की विशेषताएं और नवाचार"
+      },
+      {
+        type: "list",
+        items: [
+          "AI और IoT आधारित कृषि सलाह",
+          "ड्रोन तकनीक से फसल की निगरानी",
+          "मोबाइल ऐप के जरिए सीधी सहायता",
+          "Climate Smart Agriculture को बढ़ावा",
+          "किसान उत्पादक संगठन (FPO) से जुड़ाव",
+          "प्रत्यक्ष लाभ हस्तांतरण (DBT) सिस्टम"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सामान्य समस्याएं और समाधान"
+      },
+      {
+        type: "paragraph",
+        content: "आवेदन करते समय इन बातों का ध्यान रखें:"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड बैंक खाते से लिंक होना चाहिए",
+          "भूमि के कागजात़ आपके नाम पर होने चाहिए",
+          "गलत जानकारी देने से आवेदन रिजेक्ट हो सकता है",
+          "समय पर दस्तावेज़ वेरिफिकेशन कराएं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री धन-धान्य कृषि योजना 2025 किसानों के लिए एक सुनहरा अवसर है। इस योजना के तहत न केवल आर्थिक सहायता मिलती है बल्कि आधुनिक कृषि तकनीक भी सीखने को मिलती है। अगर आप एक किसान हैं और इस योजना के लिए पात्र हैं, तो जल्दी आवेदन करें और इसका लाभ उठाएं।"
+      }
+    ]
+  },
+  {
+    id: 104,
+    title: "ग्रामीण समृद्धि और स्थिरता कार्यक्रम 2025: किसानों के लिए संपूर्ण गाइड",
+    slug: "rural-prosperity-resilience-programme-farmers-guide-2025",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/2252618/pexels-photo-2252618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "ग्रामीण समृद्धि और स्थिरता कार्यक्रम से किसानों को मिलेंगे अनेक लाभ। जानें इस योजना की विशेषताएं, पात्रता और आवेदन की प्रक्रिया।",
+    categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
+    metaDescription: "ग्रामीण समृद्धि और स्थिरता कार्यक्रम 2025 की संपूर्ण जानकारी। किसानों के लिए लाभ, पात्रता मापदंड और आवेदन प्रक्रिया की विस्तृत गाइड।",
+    keywords: ["ग्रामीण समृद्धि योजना", "Rural Prosperity Programme", "किसान सहायता योजना", "ग्रामीण विकास योजना 2025"],
+    readTime: 7,
+    content: [
+      {
+        type: "paragraph",
+        content: "ग्रामीण समृद्धि और स्थिरता कार्यक्रम (Rural Prosperity and Resilience Programme) भारत सरकार की एक व्यापक योजना है जो ग्रामीण क्षेत्रों में आर्थिक विकास और किसानों की आजीविका में सुधार के लिए शुरू की गई है।"
+      },
+      {
+        type: "heading",
+        content: "कार्यक्रम के मुख्य उद्देश्य"
+      },
+      {
+        type: "list",
+        items: [
+          "ग्रामीण आर्थिक गतिविधियों को बढ़ावा देना",
+          "किसानों की आय में वृद्धि करना",
+          "जलवायु परिवर्तन से निपटने की क्षमता विकसित करना",
+          "कृषि आधारित उद्योगों को प्रोत्साहन देना",
+          "महिला किसानों का सशक्तिकरण",
+          "टिकाऊ कृषि प्रथाओं को बढ़ावा देना"
+        ]
+      },
+      {
+        type: "heading",
+        content: "योजना के प्रमुख घटक"
+      },
+      {
+        type: "list",
+        items: [
+          "कृषि आधुनिकीकरण सहायता",
+          "फसल बीमा और जोखिम प्रबंधन",
+          "ग्रामीण उद्यमिता विकास",
+          "महिला स्वयं सहायता समूह का सशक्तिकरण",
+          "डिजिटल कृषि सेवाएं",
+          "मार्केट लिंकेज और वैल्यू चेन डेवलपमेंट"
+        ]
+      },
+      {
+        type: "heading",
+        content: "पात्रता मापदंड"
+      },
+      {
+        type: "list",
+        items: [
+          "ग्रामीण क्षेत्र के निवासी किसान",
+          "छोटे और सीमांत किसान प्राथमिकता में",
+          "महिला किसानों को विशेष प्राथमिकता",
+          "युवा किसान (18-40 वर्ष) को अतिरिक्त लाभ",
+          "कृषि आधारित व्यवसाय में रुचि रखने वाले",
+          "पर्यावरण अनुकूल खेती में इच्छुक किसान"
+        ]
+      },
+      {
+        type: "heading",
+        content: "वित्तीय सहायता और लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "कृषि उपकरण खरीदने पर 60% तक सब्सिडी",
+          "जैविक खेती के लिए ₹25,000 प्रति हेक्टेयर सहायता",
+          "ग्रामीण उद्यम शुरू करने के लिए ₹5 लाख तक का लोन",
+          "फसल बीमा प्रीमियम पर 75% सब्सिडी",
+          "तकनीकी प्रशिक्षण निःशुल्क",
+          "मार्केटिंग सपोर्ट और ब्रांडिंग सहायता"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/2252618/pexels-photo-2252618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "ग्रामीण समृद्धि कार्यक्रम से सशक्त होते किसान"
+      },
+      {
+        type: "heading",
+        content: "आवेदन प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "इस कार्यक्रम के लिए आवेदन करना बहुत सरल है:"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी ब्लॉक कार्यालय या CSC सेंटर पर जाएं",
+          "आवेदन फॉर्म भरें और आवश्यक दस्तावेज़ जमा करें",
+          "स्थानीय अधिकारियों द्वारा वेरिफिकेशन कराएं",
+          "अप्रूवल के बाद योजना का लाभ उठाएं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सफलता की कहानियां"
+      },
+      {
+        type: "paragraph",
+        content: "इस कार्यक्रम से कई किसानों की जिंदगी बदली है। जैविक खेती, डेयरी फार्मिंग, और कृषि आधारित उद्यमों में नई संभावनाएं खुली हैं।"
+      }
+    ]
+  },
+  {
+    id: 105,
+    title: "राष्ट्रीय खाद्य तेल मिशन 2025: किसानों के लिए तिलहन उत्पादन में नए अवसर",
+    slug: "national-mission-edible-oilseed-farmers-benefits-2025",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/4110252/pexels-photo-4110252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "राष्ट्रीय खाद्य तेल मिशन से तिलहन उत्पादक किसानों को मिलेंगे अनेक लाभ। जानें सब्सिडी, सहायता और आवेदन की पूरी प्रक्रिया।",
+    categories: ["Government Schemes", "Rural Finance"],
+    metaDescription: "राष्ट्रीय खाद्य तेल मिशन 2025 की संपूर्ण जानकारी। तिलहन किसानों के लिए सब्सिडी, तकनीकी सहायता और आवेदन प्रक्रिया की विस्तृत गाइड।",
+    keywords: ["खाद्य तेल मिशन", "तिलहन सब्सिडी", "National Edible Oil Mission", "तिलहन किसान योजना 2025"],
+    readTime: 6,
+    content: [
+      {
+        type: "paragraph",
+        content: "राष्ट्रीय खाद्य तेल मिशन (National Mission for Edible Oilseed) भारत में तिलहन उत्पादन बढ़ाने और खाद्य तेल की आत्मनिर्भरता प्राप्त करने के लिए शुरू किया गया है। इस मिशन के तहत किसानों को तिलहन की खेती के लिए विशेष सहायता प्रदान की जाती है।"
+      },
+      {
+        type: "heading",
+        content: "मिशन के मुख्य लक्ष्य"
+      },
+      {
+        type: "list",
+        items: [
+          "तिलहन उत्पादन में 30% की वृद्धि",
+          "खाद्य तेल आयात की निर्भरता कम करना",
+          "किसानों की आय में वृद्धि",
+          "उन्नत तिलहन किस्मों का प्रसार",
+          "तिलहन प्रसंस्करण इकाइयों का विकास",
+          "कोल्ड चेन और स्टोरेज सुविधाओं का विस्तार"
+        ]
+      },
+      {
+        type: "heading",
+        content: "कवर किए गए तिलहन"
+      },
+      {
+        type: "list",
+        items: [
+          "सरसों और राई",
+          "मूंगफली",
+          "सूरजमुखी",
+          "तिल",
+          "सोयाबीन",
+          "कुसुम (सफ्लावर)",
+          "अलसी",
+          "नाइजर"
+        ]
+      },
+      {
+        type: "heading",
+        content: "किसानों को मिलने वाले लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "उन्नत बीज पर 50% सब्सिडी",
+          "कृषि यंत्रों पर 40% तक अनुदान",
+          "जैविक खाद पर विशेष छूट",
+          "तकनीकी सलाह और प्रशिक्षण निःशुल्क",
+          "मार्केट लिंकेज की सुविधा",
+          "न्यूनतम समर्थन मूल्य (MSP) की गारंटी"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/4110252/pexels-photo-4110252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "तिलहन की फसल से आर्थिक समृद्धि पाते किसान"
+      },
+      {
+        type: "heading",
+        content: "राज्यवार प्राथमिकता वाले तिलहन"
+      },
+      {
+        type: "list",
+        items: [
+          "राजस्थान: सरसों और मूंगफली",
+          "गुजरात: मूंगफली और कपास के साथ",
+          "मध्य प्रदेश: सोयाबीन और सरसों",
+          "महाराष्ट्र: सूरजमुखी और सोयाबीन",
+          "कर्नाटक: सूरजमुखी और तिल",
+          "आंध्र प्रदेश: सूरजमुखी और कुसुम"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवेदन के लिए आवश्यक दस्तावेज़"
+      },
+      {
+        type: "list",
+        items: [
+          "किसान पंजीकरण प्रमाण पत्र",
+          "भूमि के कागजात",
+          "आधार कार्ड और पैन कार्ड",
+          "बैंक खाता विवरण",
+          "पिछली फसल का रिकॉर्ड",
+          "पासपोर्ट साइज़ फोटो"
+        ]
+      },
+      {
+        type: "heading",
+        content: "तकनीकी सहायता और प्रशिक्षण"
+      },
+      {
+        type: "paragraph",
+        content: "मिशन के तहत किसानों को आधुनिक तकनीक और वैज्ञानिक विधियों की जानकारी दी जाती है:"
+      },
+      {
+        type: "list",
+        items: [
+          "उन्नत किस्म के बीजों की जानकारी",
+          "समय पर बुआई और कटाई की तकनीक",
+          "कीट-रोग प्रबंधन के तरीके",
+          "उर्वरक प्रबंधन और मिट्टी की जांच",
+          "सिंचाई की आधुनिक तकनीक",
+          "फसल कटाई के बाद का प्रबंधन"
+        ]
+      }
+    ]
+  },
+  {
+    id: 106,
+    title: "दलहन आत्मनिर्भरता मिशन 2025: उड़द, तुअर, मसूर की खेती से कमाई के नए तरीके",
+    slug: "pulses-atmanirbharta-mission-urad-tur-masoor-farming-2025",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/1359580/pexels-photo-1359580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "दलहन आत्मनिर्भरता मिशन से उड़द, तुअर, मसूर की खेती करने वाले किसानों को मिलेंगे विशेष लाभ। जानें सब्सिडी और सहायता की पूरी जानकारी।",
+    categories: ["Government Schemes", "Rural Finance"],
+    metaDescription: "दलहन आत्मनिर्भरता मिशन 2025 की संपूर्ण गाइड। उड़द,तुअर, मसूर की खेती के लिए सब्सिडी, तकनीकी सहायता और आवेदन प्रक्रिया।",
+    keywords: ["दलहन आत्मनिर्भरता मिशन", "उड़द तुअर मसूर खेती", "Pulses Atmanirbharta Mission", "दलहन सब्सिडी योजना 2025"],
+    readTime: 7,
+    content: [
+      {
+        type: "paragraph",
+        content: "दलहन आत्मनिर्भरता मिशन (Mission for Aatmanirbharta in Pulses) भारत में दलहन उत्पादन बढ़ाने और प्रोटीन सुरक्षा प्राप्त करने के लिए शुरू किया गया है। इस मिशन के तहत उड़द, तुअर (अरहर), मसूर की खेती को विशेष प्रोत्साहन दिया जा रहा है।"
+      },
+      {
+        type: "heading",
+        content: "मिशन के मुख्य उद्देश्य"
+      },
+      {
+        type: "list",
+        items: [
+          "दलहन उत्पादन में 40% की वृद्धि",
+          "दलहन आयात की निर्भरता कम करना",
+          "किसानों की आर्थिक स्थिति में सुधार",
+          "मिट्टी की उर्वरता बढ़ाना",
+          "प्रोटीन युक्त आहार की उपलब्धता बढ़ाना",
+          "फसल चक्र में सुधार"
+        ]
+      },
+      {
+        type: "heading",
+        content: "प्राथमिकता वाली दलहन फसलें"
+      },
+      {
+        type: "list",
+        items: [
+          "उड़द (Black Gram): खरीफ और रबी दोनों सीजन में",
+          "तुअर/अरहर (Pigeon Pea): मुख्यतः खरीफ सीजन में",
+          "मसूर (Lentil): रबी सीजन की मुख्य फसल",
+          "चना (Chickpea): रबी सीजन में व्यापक खेती",
+          "मूंग (Green Gram): खरीफ और जायद दोनों में",
+          "राजमा (Kidney Bean): पहाड़ी क्षेत्रों के लिए विशेष"
+        ]
+      },
+      {
+        type: "heading",
+        content: "किसानों को मिलने वाली सहायता"
+      },
+      {
+        type: "list",
+        items: [
+          "प्रमाणित बीज पर 50% सब्सिडी",
+          "इनोकुलम (राइज़ोबियम) निःशुल्क वितरण",
+          "कृषि उपकरण पर 60% तक अनुदान",
+          "जैविक खाद पर विशेष छूट",
+          "फसल बीमा प्रीमियम में सब्सिडी",
+          "प्रसंस्करण यूनिट स्थापना के लिए लोन सहायता"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/1359580/pexels-photo-1359580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "दलहन की फसल से प्रोटीन सुरक्षा और आर्थिक लाभ"
+      },
+      {
+        type: "heading",
+        content: "राज्यवार दलहन उत्पादन लक्ष्य"
+      },
+      {
+        type: "list",
+        items: [
+          "मध्य प्रदेश: चना और तुअर में 25% वृद्धि",
+          "राजस्थान: मूंग और मसूर का विस्तार",
+          "महाराष्ट्र: तुअर उत्पादन में अग्रणी राज्य",
+          "उत्तर प्रदेश: मसूर और उड़द की खेती",
+          "कर्नाटक: रागी के साथ दलहन इंटरक्रॉपिंग",
+          "आंध्र प्रदेश: उड़द और चना का उत्पादन"
+        ]
+      },
+      {
+        type: "heading",
+        content: "उन्नत किस्मों की जानकारी"
+      },
+      {
+        type: "paragraph",
+        content: "मिशन के तहत अधिक उत्पादन वाली और रोग प्रतिरोधी किस्मों को बढ़ावा दिया जा रहा है:"
+      },
+      {
+        type: "list",
+        items: [
+          "उड़द: IPU 2-43, PU 31, LBG 752",
+          "तुअर: UPAS 120, Asha, Maruti",
+          "मसूर: K-75, PL 406, HUL 57",
+          "चना: GNG 1958, JAKI 9218, BG 372",
+          "मूंग: IPM 02-03, Pusa Vishal, SML 668"
+        ]
+      },
+      {
+        type: "heading",
+        content: "फसल बीमा और जोखिम प्रबंधन"
+      },
+      {
+        type: "list",
+        items: [
+          "प्राकृतिक आपदा से पूर्ण बीमा कवरेज",
+          "कीट-रोग के लिए अतिरिक्त बीमा",
+          "बाज़ार मूल्य में गिरावट की भरपाई",
+          "फसल कटाई के बाद नुकसान का कवरेज",
+          "समय पर क्लेम सेटलमेंट की गारंटी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "मार्केटिंग और मूल्य संवर्धन"
+      },
+      {
+        type: "list",
+        items: [
+          "न्यूनतम समर्थन मूल्य (MSP) की गारंटी",
+          "सीधी खरीद केंद्र (DPC) की स्थापना",
+          "ऑनलाइन मार्केटिंग प्लेटफॉर्म से जुड़ाव",
+          "मूल्य संवर्धन के लिए प्रसंस्करण यूनिट",
+          "निर्यात के अवसरों में वृद्धि"
+        ]
+      }
+    ]
+  },
+  {
+    id: 107,
+    title: "महिला उद्यमी लोन योजना 2025: पहली बार व्यवसाय शुरू करने वाली महिलाओं के लिए विशेष सुविधाएं",
+    slug: "first-time-women-entrepreneurs-loan-scheme-2025-complete-guide",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "पहली बार व्यवसाय शुरू करने वाली महिलाओं के लिए विशेष लोन योजना। जानें कम ब्याज दर, आसान शर्तें और आवेदन की पूरी प्रक्रिया।",
+    categories: ["Government Schemes", "Financial Inclusion", "Investment"],
+    metaDescription: "महिला उद्यमी लोन योजना 2025 की संपूर्ण जानकारी। पहली बार बिजनेस शुरू करने वाली महिलाओं के लिए विशेष लाभ, पात्रता और आवेदन प्रक्रिया।",
+    keywords: ["महिला उद्यमी लोन योजना", "Women Entrepreneur Loan Scheme", "महिला बिजनेस लोन 2025", "स्त्री शक्ति उद्यमिता योजना"],
+    readTime: 8,
+    content: [
+      {
+        type: "paragraph",
+        content: "महिला उद्यमी लोन योजना 2025 (First-Time Women Entrepreneurs Loan Scheme) भारत सरकार की एक महत्वाकांक्षी पहल है जो पहली बार व्यवसाय शुरू करने वाली महिलाओं को आर्थिक सहायता प्रदान करती है। इस योजना का मुख्य उद्देश्य महिला उद्यमिता को बढ़ावा देना और आर्थिक सशक्तिकरण को प्रोत्साहित करना है।"
+      },
+      {
+        type: "heading",
+        content: "योजना के मुख्य लक्ष्य"
+      },
+      {
+        type: "list",
+        items: [
+          "महिला उद्यमियों की संख्या में 50% की वृद्धि",
+          "ग्रामीण और शहरी दोनों क्षेत्रों में महिला रोजगार का विस्तार",
+          "स्वरोजगार के अवसरों में वृद्धि",
+          "महिलाओं की आर्थिक स्वतंत्रता को बढ़ावा",
+          "परंपरागत और आधुनिक दोनों व्यवसायों को सपोर्ट",
+          "डिजिटल प्लेटफॉर्म के माध्यम से बिजनेस को प्रोत्साहन"
+        ]
+      },
+      {
+        type: "heading",
+        content: "पात्रता मापदंड"
+      },
+      {
+        type: "list",
+        items: [
+          "आवेदक की आयु 18 से 55 वर्ष के बीच होनी चाहिए",
+          "पहली बार व्यवसाय शुरू करने वाली महिलाएं प्राथमिकता में",
+          "परिवार की वार्षिक आय ₹8 लाख से कम हो",
+          "न्यूनतम शिक्षा योग्यता 10वीं पास या समकक्ष",
+          "व्यवसायिक प्रशिक्षण या अनुभव होना अतिरिक्त लाभ",
+          "साफ क्रेडिट हिस्ट्री (पहली बार आवेदक के लिए लागू नहीं)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "लोन की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "लोन राशि: ₹50,000 से ₹25 लाख तक",
+          "ब्याज दर: 6% से 9% वार्षिक (सब्सिडी के साथ)",
+          "गारंटी की आवश्यकता नहीं (₹10 लाख तक)",
+          "लोन की अवधि: 3 से 7 साल तक",
+          "मॉरेटोरियम पीरियड: 6 महीने तक",
+          "प्रोसेसिंग फीस माफ (महिलाओं के लिए विशेष छूट)"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "महिला उद्यमी अपने सपनों के व्यवसाय को साकार करती हुई"
+      },
+      {
+        type: "heading",
+        content: "योजना के तहत कवर किए जाने वाले व्यवसाय"
+      },
+      {
+        type: "list",
+        items: [
+          "ट्रेडिशनल हैंडीक्राफ्ट और टेक्सटाइल",
+          "फूड प्रोसेसिंग और कैटरिंग सर्विस",
+          "ब्यूटी पार्लर और स्पा सर्विसेज",
+          "डिजिटल मार्केटिंग और ई-कॉमर्स",
+          "एजुकेशन और स्किल डेवलपमेंट सेंटर",
+          "हेल्थकेयर और वेलनेस सर्विसेज",
+          "एग्रीकल्चर और ऑर्गेनिक फार्मिंग",
+          "रिटेल और होलसेल ट्रेडिंग"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज़"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड और पैन कार्ड",
+          "बैंक खाता विवरण (6 महीने का स्टेटमेंट)",
+          "शिक्षा संबंधी प्रमाण पत्र",
+          "आय प्रमाण पत्र (परिवार का)",
+          "निवास प्रमाण पत्र",
+          "व्यवसाय का प्रोजेक्ट रिपोर्ट",
+          "पासपोर्ट साइज़ फोटोग्राफ",
+          "जाति प्रमाण पत्र (यदि आवश्यक हो)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवेदन प्रक्रिया - स्टेप बाई स्टेप गाइड"
+      },
+      {
+        type: "paragraph",
+        content: "महिला उद्यमी लोन के लिए आवेदन करना बहुत आसान है:"
+      },
+      {
+        type: "list",
+        items: [
+          "MUDRA योजना या प्रधानमंत्री रोजगार सृजन योजना की आधिकारिक वेबसाइट पर जाएं",
+          "'Women Entrepreneur' सेक्शन में जाकर रजिस्ट्रेशन करें",
+          "व्यवसाय का प्रकार और आवश्यक लोन राशि चुनें",
+          "सभी आवश्यक जानकारी भरें और दस्तावेज़ अपलोड करें",
+          "प्रोजेक्ट रिपोर्ट तैयार करके सबमिट करें",
+          "बैंक द्वारा वेरिफिकेशन के बाद लोन अप्रूवल मिलेगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "विशेष सुविधाएं और अतिरिक्त लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "बिजनेस मेंटरशिप और गाइडेंस प्रोग्राम",
+          "डिजिटल मार्केटिंग और ई-कॉमर्स ट्रेनिंग",
+          "फ्री बिजनेस रजिस्ट्रेशन सहायता",
+          "टैक्स फाइलिंग में सहायता पहले दो साल",
+          "प्रोडक्ट सर्टिफिकेशन में सहायता",
+          "ऑनलाइन प्लेटफॉर्म पर प्रमोशन सपोर्ट"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सफलता की कहानियां"
+      },
+      {
+        type: "paragraph",
+        content: "इस योजना की मदद से हजारों महिलाओं ने अपना व्यवसाय शुरू किया है। ग्रामीण क्षेत्र की रीता देवी ने ऑर्गेनिक फूड प्रोसेसिंग का बिजनेस शुरू किया और आज वे 50 महिलाओं को रोजगार दे रही हैं।"
+      },
+      {
+        type: "quote",
+        content: "महिला उद्यमी लोन योजना से न केवल आर्थिक सशक्तिकरण होता है बल्कि महिलाओं का आत्मविश्वास भी बढ़ता है और वे समाज में अपनी पहचान बनाने में सफल होती हैं।",
+        author: "महिला एवं बाल विकास मंत्रालय"
+      },
+      {
+        type: "heading",
+        content: "सामान्य प्रश्न और समाधान"
+      },
+      {
+        type: "list",
+        items: [
+          "क्या घर से बिजनेस शुरू करने पर भी लोन मिलेगा? - हां, होम बेस्ड बिजनेस के लिए भी लोन उपलब्ध है",
+          "क्या को-एप्लीकेंट की जरूरत है? - ₹10 लाख तक के लोन के लिए को-एप्लीकेंट की जरूरत नहीं",
+          "EMI कितनी होगी? - लोन राशि और अवधि के आधार पर EMI कैलकुलेटर से पता कर सकते हैं",
+          "क्या पार्टनरशिप में बिजनेस शुरू कर सकते हैं? - हां, महिला मेजोरिटी पार्टनरशिप में लोन मिल सकता है"
+        ]
+      }
+    ]
+  },
+  {
+    id: 108,
+    title: "सक्षम अंगनवाड़ी और पोषण 2.0 योजना: महिलाओं और बच्चों के लिए संपूर्ण पोषण गाइड",
+    slug: "saksham-anganwadi-poshan-2-nutrition-women-children-2025",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/6238622/pexels-photo-6238622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "सक्षम अंगनवाड़ी और पोषण 2.0 योजना से महिलाओं और बच्चों के पोषण में सुधार। जानें लाभ, सेवाएं और पंजीकरण की प्रक्रिया।",
+    categories: ["Government Schemes", "Financial Inclusion"],
+    metaDescription: "सक्षम अंगनवाड़ी और पोषण 2.0 योजना 2025 की संपूर्ण जानकारी। महिलाओं और बच्चों के पोषण सुधार के लिए सेवाएं, लाभ और आवेदन प्रक्रिया।",
+    keywords: ["सक्षम अंगनवाड़ी योजना", "पोषण 2.0 योजना", "Saksham Anganwadi Poshan", "महिला बाल पोषण योजना 2025"],
+    readTime: 6,
+    content: [
+      {
+        type: "paragraph",
+        content: "सक्षम अंगनवाड़ी और पोषण 2.0 योजना (Saksham Anganwadi and Poshan 2.0) भारत सरकार की एक व्यापक योजना है जो गर्भवती महिलाओं, स्तनपान कराने वाली माताओं और 6 वर्ष तक के बच्चों के पोषण स्तर में सुधार के लिए शुरू की गई है।"
+      },
+      {
+        type: "heading",
+        content: "योजना के मुख्य उद्देश्य"
+      },
+      {
+        type: "list",
+        items: [
+          "कुपोषण की समस्या का जड़ से समाधान",
+          "0-6 वर्ष के बच्चों का समग्र विकास",
+          "गर्भवती और स्तनपान कराने वाली महिलाओं की स्वास्थ्य देखभाल",
+          "अंगनवाड़ी केंद्रों का डिजिटलीकरण",
+          "पोषण शिक्षा और जागरूकता",
+          "स्वच्छता और साफ-सफाई को बढ़ावा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "लाभार्थी वर्ग"
+      },
+      {
+        type: "list",
+        items: [
+          "0-6 वर्ष की आयु के सभी बच्चे",
+          "गर्भवती महिलाएं (पंजीकरण से प्रसव तक)",
+          "स्तनपान कराने वाली माताएं (6 महीने तक)",
+          "15-49 वर्ष की किशोरी लड़कियां",
+          "गंभीर कुपोषित बच्चे (विशेष देखभाल)",
+          "विकलांग बच्चे और उनकी माताएं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "प्रदान की जाने वाली सेवाएं"
+      },
+      {
+        type: "list",
+        items: [
+          "पूरक पोषण आहार (THR - Take Home Ration)",
+          "गर्म पका हुआ भोजन (Hot Cooked Meal)",
+          "विटामिन और मिनरल सप्लीमेंट",
+          "नियमित स्वास्थ्य जांच और टीकाकरण",
+          "पोषण और स्वास्थ्य शिक्षा",
+          "प्री-स्कूल एजुकेशन (3-6 वर्ष के बच्चों के लिए)"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/6238622/pexels-photo-6238622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "अंगनवाड़ी केंद्र में पोषणयुक्त भोजन पाते बच्चे"
+      },
+      {
+        type: "heading",
+        content: "डिजिटल पोषण ट्रैकर सिस्टम"
+      },
+      {
+        type: "paragraph",
+        content: "योजना में आधुनिक तकनीक का उपयोग करके पोषण की निगरानी की जाती है:"
+      },
+      {
+        type: "list",
+        items: [
+          "बच्चों के वजन और लंबाई की डिजिटल रिकॉर्डिंग",
+          "पोषण स्तर की रियल-टाइम मॉनिटरिंग",
+          "मोबाइल ऐप के जरिए रिपोर्ट ट्रैकिंग",
+          "डेटा एनालिसिस और ट्रेंड रिपोर्ट",
+          "व्यक्तिगत पोषण योजना तैयार करना",
+          "माता-पिता को SMS अलर्ट भेजना"
+        ]
+      },
+      {
+        type: "heading",
+        content: "पंजीकरण प्रक्रिया"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी अंगनवाड़ी केंद्र में जाएं",
+          "आवश्यक दस्तावेज़ साथ लेकर जाएं",
+          "अंगनवाड़ी कार्यकर्ता से मिलकर पंजीकरण कराएं",
+          "बच्चे की स्वास्थ्य जांच कराएं",
+          "अंगनवाड़ी कार्ड प्राप्त करें",
+          "नियमित विजिट का शेड्यूल बनाएं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "विशेष पोषण कार्यक्रम"
+      },
+      {
+        type: "list",
+        items: [
+          "गंभीर कुपोषण के लिए रेडी-टू-यूज़ फूड (RUTF)",
+          "एनीमिया कंट्रोल के लिए आयरन फोलिक एसिड टैबलेट",
+          "विटामिन A की कमी के लिए विशेष सप्लीमेंट",
+          "प्रीमेच्योर बच्चों के लिए स्पेशल केयर",
+          "जुड़वां बच्चों के लिए एक्स्ट्रा राशन",
+          "डायरिया और अन्य बीमारियों के दौरान विशेष भोजन"
+        ]
+      },
+      {
+        type: "heading",
+        content: "गुणवत्ता नियंत्रण और सुरक्षा"
+      },
+      {
+        type: "list",
+        items: [
+          "भोजन की गुणवत्ता की नियमित जांच",
+          "साफ-सुथरे माहौल में भोजन तैयार करना",
+          "न्यूट्रिशन एक्सपर्ट द्वारा मेन्यू प्लानिंग",
+          "फूड सेफ्टी नॉर्म्स का पालन",
+          "ताजा और स्थानीय सामग्री का उपयोग",
+          "नियमित सफाई और हाइजीन चेकअप"
+        ]
+      }
+    ]
+  },
+  {
+    id: 109,
+    title: "भारतीय भाषा पुस्तक योजना 2025: हिंदी समेत सभी भारतीय भाषाओं में डिजिटल पुस्तकों का खजाना",
+    slug: "bharatiya-bhasha-pustak-scheme-digital-books-indian-languages-2025",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "भारतीय भाषा पुस्तक योजना से मुफ्त में पढ़ें हजारों डिजिटल किताबें हिंदी और अन्य भारतीय भाषाओं में। जानें एक्सेस करने का तरीका।",
+    categories: ["Government Schemes", "Financial Inclusion"],
+    metaDescription: "भारतीय भाषा पुस्तक योजना 2025 की संपूर्ण जानकारी। हिंदी और भारतीय भाषाओं में मुफ्त डिजिटल किताबें, पंजीकरण और एक्सेस की प्रक्रिया।",
+    keywords: ["भारतीय भाषा पुस्तक योजना", "डिजिटल किताबें हिंदी में", "Bharatiya Bhasha Pustak Scheme", "मुफ्त डिजिटल लाइब्रेरी 2025"],
+    readTime: 5,
+    content: [
+      {
+        type: "paragraph",
+        content: "भारतीय भाषा पुस्तक योजना (Bharatiya Bhasha Pustak Scheme) भारत सरकार की एक अभूतपूर्व पहल है जो सभी भारतीय भाषाओं में डिजिटल पुस्तकों को निःशुल्क उपलब्ध कराने के लिए शुरू की गई है। इस योजना का मुख्य उद्देश्य भारतीय भाषाओं को बढ़ावा देना और डिजिटल साक्षरता को प्रोत्साहित करना है।"
+      },
+      {
+        type: "heading",
+        content: "योजना की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "22 संविधान मान्यता प्राप्त भाषाओं में पुस्तकें",
+          "50+ क्षेत्रीय और आदिवासी भाषाओं में कंटेंट",
+          "शैक्षणिक, साहित्यिक और तकनीकी पुस्तकों का संग्रह",
+          "ऑडियो बुक्स और ई-पब फॉर्मेट में उपलब्धता",
+          "मोबाइल ऐप और वेब पोर्टल दोनों में एक्सेस",
+          "पूर्णतः निःशुल्क सेवा, कोई छुपी हुई फीस नहीं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "उपलब्ध भाषाएं और पुस्तक श्रेणियां"
+      },
+      {
+        type: "list",
+        items: [
+          "हिंदी: 25,000+ पुस्तकें (साहित्य, विज्ञान, इतिहास)",
+          "अंग्रेजी: 20,000+ अकेडमिक और जनरल बुक्स",
+          "बंगाली: 15,000+ क्लासिकल और मॉडर्न लिटरेचर",
+          "तमिल: 12,000+ पारंपरिक और आधुनिक साहित्य",
+          "तेलुगु: 10,000+ कविता, कहानी और उपन्यास",
+          "मराठी: 8,000+ सामाजिक और धार्मिक साहित्य",
+          "गुजराती: 7,000+ व्यापार और आध्यात्मिक पुस्तकें",
+          "पंजाबी: 6,000+ सिख इतिहास और साहित्य"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "डिजिटल लाइब्रेरी में उपलब्ध हजारों भारतीय भाषाओं की पुस्तकें"
+      },
+      {
+        type: "heading",
+        content: "पंजीकरण और एक्सेस प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "डिजिटल लाइब्रेरी का उपयोग करना बहुत आसान है:"
+      },
+      {
+        type: "list",
+        items: [
+          "bharatiyabhasha.gov.in पोर्टल पर जाएं",
+          "मोबाइल नंबर से रजिस्ट्रेशन करें",
+          "OTP वेरिफिकेशन के बाद प्रोफाइल बनाएं",
+          "अपनी पसंदीदा भाषा चुनें",
+          "कैटेगरी के अनुसार पुस्तकें सर्च करें",
+          "डाउनलोड करें या ऑनलाइन पढ़ें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "मोबाइल ऐप की सुविधाएं"
+      },
+      {
+        type: "list",
+        items: [
+          "ऑफलाइन रीडिंग की सुविधा",
+          "बुकमार्क और नोट्स लेने का फीचर",
+          "टेक्स्ट साइज़ और फॉन्ट बदलने का विकल्प",
+          "वॉइस रीडिंग (टेक्स्ट टू स्पीच)",
+          "डार्क और लाइट मोड",
+          "सर्च और फिल्टर फीचर"
+        ]
+      },
+      {
+        type: "heading",
+        content: "विशेष श्रेणियां और कलेक्शन"
+      },
+      {
+        type: "list",
+        items: [
+          "बच्चों के लिए इलस्ट्रेटेड स्टोरी बुक्स",
+          "स्कूल और कॉलेज के सिलेबस की पुस्तकें",
+          "प्रतियोगी परीक्षाओं की तैयारी हेतु सामग्री",
+          "आयुर्वेद और पारंपरिक चिकित्सा",
+          "योग और स्पिरिचुअल लिटरेचर",
+          "भारतीय इतिहास और संस्कृति",
+          "कृषि और ग्रामीण विकास",
+          "महिला सशक्तिकरण और स्वरोजगार"
+        ]
+      },
+      {
+        type: "heading",
+        content: "शिक्षा संस्थानों के लिए विशेष सुविधाएं"
+      },
+      {
+        type: "list",
+        items: [
+          "स्कूल और कॉलेज के लिए बल्क एक्सेस",
+          "टीचर्स के लिए विशेष रिसोर्स मैटेरियल",
+          "इंटरैक्टिव लर्निंग मॉड्यूल",
+          "असाइनमेंट और क्विज फीचर",
+          "प्रोग्रेस ट्रैकिंग सिस्टम",
+          "मल्टी-यूजर एक्सेस सुविधा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "कंटेंट क्रिएटर्स के लिए अवसर"
+      },
+      {
+        type: "paragraph",
+        content: "योजना में लेखकों और कंटेंट क्रिएटर्स के लिए भी अवसर हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "अपनी पुस्तकें प्लेटफॉर्म पर पब्लिश करने का मौका",
+          "डिजिटल रॉयल्टी की व्यवस्था",
+          "ट्रांसलेशन प्रोजेक्ट में भागीदारी",
+          "कंटेंट रिव्यू और एडिटिंग का काम",
+          "वर्चुअल बुक लॉन्च की सुविधा",
+          "रीडर कम्युनिटी से सीधा जुड़ाव"
+        ]
+      }
+    ]
+  },
+  {
+    id: 110,
+    title: "ई-श्रम पोर्टल पंजीकरण 2025: गिग वर्कर्स के लिए संपूर्ण गाइड और लाभ",
+    slug: "e-shram-portal-registration-benefits-gig-workers-2025-guide",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "ई-श्रम पोर्टल में पंजीकरण करके गिग वर्कर्स को मिलते हैं अनेक लाभ। जानें रजिस्ट्रेशन प्रक्रिया, आवश्यक दस्तावेज़ और सुविधाओं की पूरी जानकारी।",
+    categories: ["Government Schemes", "Financial Inclusion"],
+    metaDescription: "ई-श्रम पोर्टल 2025 में पंजीकरण की संपूर्ण गाइड। गिग वर्कर्स के लिए बीमा, पेंशन और अन्य लाभों की विस्तृत जानकारी।",
+    keywords: ["ई-श्रम पोर्टल पंजीकरण", "e-Shram Portal Registration", "गिग वर्कर बेनिफिट्स", "असंगठित श्रमिक योजना 2025"],
+    readTime: 7,
+    content: [
+      {
+        type: "paragraph",
+        content: "ई-श्रम पोर्टल (e-Shram Portal) भारत सरकार का एक राष्ट्रीय डेटाबेस है जो असंगठित क्षेत्र के श्रमिकों, गिग वर्कर्स और प्लेटफॉर्म वर्कर्स के लिए बनाया गया है। यह पोर्टल श्रमिकों को सामाजिक सुरक्षा योजनाओं का लाभ प्रदान करने और उनके कौशल का डेटाबेस तैयार करने के लिए शुरू किया गया है।"
+      },
+      {
+        type: "heading",
+        content: "ई-श्रम पोर्टल क्या है?"
+      },
+      {
+        type: "paragraph",
+        content: "यह एकमात्र राष्ट्रीय पोर्टल है जो असंगठित श्रमिकों का व्यापक डेटाबेस तैयार करता है और उन्हें 12 अंकों का यूनिक ई-श्रम कार्ड प्रदान करता है।"
+      },
+      {
+        type: "heading",
+        content: "पंजीकरण के लिए पात्रता"
+      },
+      {
+        type: "list",
+        items: [
+          "आयु 16 से 59 वर्ष के बीच होनी चाहिए",
+          "असंगठित क्षेत्र का श्रमिक होना चाहिए",
+          "EPFO या ESIC का सदस्य नहीं होना चाहिए",
+          "भारतीय नागरिक होना आवश्यक",
+          "आधार कार्ड और मोबाइल नंबर होना जरूरी",
+          "बैंक खाता आधार से लिंक होना चाहिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "कौन कर सकता है पंजीकरण?"
+      },
+      {
+        type: "list",
+        items: [
+          "घरेलू काम करने वाले (डोमेस्टिक वर्कर)",
+          "डिलीवरी बॉय और ड्राइवर",
+          "मजदूर और कंस्ट्रक्शन वर्कर",
+          "रिक्शा चालक और ऑटो ड्राइवर",
+          "फेरीवाले और छोटे दुकानदार",
+          "कृषि मजदूर और मछुआरे",
+          "सैलून और ब्यूटी पार्लर वर्कर",
+          "फ्रीलांसर और गिग वर्कर"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "ई-श्रम पोर्टल में पंजीकृत गिग वर्कर को मिलती है सामाजिक सुरक्षा"
+      },
+      {
+        type: "heading",
+        content: "पंजीकरण के मुख्य लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "₹2 लाख का दुर्घटना बीमा कवरेज (मृत्यु/पूर्ण विकलांगता)",
+          "₹1 लाख का आंशिक विकलांगता बीमा",
+          "प्रधानमंत्री श्रम योगी मानधन पेंशन योजना में भागीदारी",
+          "राशन कार्ड और अन्य सरकारी योजनाओं में प्राथमिकता",
+          "रोजगार के नए अवसरों की जानकारी",
+          "स्किल डेवलपमेंट प्रोग्राम में मुफ्त भागीदारी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "ऑनलाइन पंजीकरण प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "ई-श्रम पोर्टल में रजिस्ट्रेशन करना बिल्कुल मुफ्त और आसान है:"
+      },
+      {
+        type: "list",
+        items: [
+          "eshram.gov.in की आधिकारिक वेबसाइट पर जाएं",
+          "'Register on e-SHRAM' पर क्लिक करें",
+          "आधार नंबर डालकर OTP वेरिफिकेशन करें",
+          "व्यक्तिगत जानकारी भरें (नाम, पता, मोबाइल नंबर)",
+          "व्यवसाय/कार्य की जानकारी दें",
+          "बैंक अकाउंट डिटेल्स भरें",
+          "सभी जानकारी चेक करके सबमिट करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज़"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड (मोबाइल से लिंक होना चाहिए)",
+          "बैंक पासबुक या चेक (IFSC कोड के लिए)",
+          "राशन कार्ड (वैकल्पिक)",
+          "वोटर ID या ड्राइविंग लाइसेंस (वैकल्पिक)",
+          "पासपोर्ट साइज़ फोटो",
+          "मोबाइल नंबर (OTP के लिए)",
+          "नॉमिनी की जानकारी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "CSC सेंटर से पंजीकरण"
+      },
+      {
+        type: "paragraph",
+        content: "यदि आप ऑनलाइन पंजीकरण नहीं कर सकते, तो नजदीकी कॉमन सर्विस सेंटर (CSC) से सहायता ले सकते हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी CSC सेंटर का पता करें",
+          "आवश्यक दस्तावेज़ साथ लेकर जाएं",
+          "VLE (Village Level Entrepreneur) से सहायता लें",
+          "₹30-50 की नॉमिनल फीस देनी पड़ सकती है",
+          "रजिस्ट्रेशन की रसीद जरूर लें",
+          "ई-श्रम कार्ड डाउनलोड करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सामान्य समस्याएं और समाधान"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार OTP नहीं आ रहा: आधार नंबर में दर्ज मोबाइल नंबर चेक करें",
+          "बैंक अकाउंट वेरिफिकेशन फेल: आधार से लिंक चेक करें",
+          "डुप्लिकेट रजिस्ट्रेशन एरर: पहले से रजिस्टर्ड हो सकते हैं",
+          "फोटो अपलोड नहीं हो रहा: साइज़ 50KB से कम रखें",
+          "वेबसाइट धीमी चल रही है: पीक ऑवर्स से बचें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सामाजिक सुरक्षा योजनाओं से जुड़ाव"
+      },
+      {
+        type: "list",
+        items: [
+          "प्रधानमंत्री जीवन ज्योति बीमा योजना",
+          "प्रधानमंत्री सुरक्षा बीमा योजना",
+          "आयुष्मान भारत-प्रधानमंत्री जन आरोग्य योजना",
+          "राष्ट्रीय पेंशन स्कीम (NPS)",
+          "प्रधानमंत्री श्रम योगी मानधन",
+          "बिल्डिंग एंड अदर कंस्ट्रक्शन वर्कर्स वेलफेयर बोर्ड"
+        ]
+      },
+      {
+        type: "quote",
+        content: "ई-श्रम पोर्टल से देश के 38 करोड़ असंगठित श्रमिकों को पहली बार पहचान मिली है और वे सरकारी योजनाओं का सीधा लाभ उठा पा रहे हैं।",
+        author: "श्रम एवं रोजगार मंत्रालय"
+      }
+    ]
+  },
+  {
+    id: 111,
+    title: "SWAMIH Fund 2 योजना 2025: मध्यम वर्गीय परिवारों के लिए किफायती आवास की संपूर्ण गाइड",
+    slug: "swamih-fund-2-affordable-housing-middle-class-families-2025",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "SWAMIH Fund 2 से मध्यम वर्गीय परिवारों को मिल रहा है किफायती आवास का मौका। जानें योजना के लाभ, पात्रता और आवेदन की प्रक्रिया।",
+    categories: ["Government Schemes", "Home Loans", "Real Estate"],
+    metaDescription: "SWAMIH Fund 2 योजना 2025 की संपूर्ण जानकारी। मध्यम वर्गीय परिवारों के लिए किफायती आवास, लोन सुविधा और आवेदन प्रक्रिया की विस्तृत गाइड।",
+    keywords: ["SWAMIH Fund 2 योजना", "किफायती आवास योजना", "Affordable Housing Scheme", "मध्यम वर्गीय आवास 2025"],
+    readTime: 8,
+    content: [
+      {
+        type: "paragraph",
+        content: "SWAMIH Fund 2 (Special Window for Affordable and Mid-Income Housing Fund) भारत सरकार की एक विशेष योजना है जो मध्यम आय वर्गीय परिवारों को किफायती आवास प्रदान करने के लिए शुरू की गई है। यह योजना अधूरे आवास प्रोजेक्ट्स को पूरा करने और नए किफायती आवास का विकास करने पर केंद्रित है।"
+      },
+      {
+        type: "heading",
+        content: "SWAMIH Fund 2 के मुख्य उद्देश्य"
+      },
+      {
+        type: "list",
+        items: [
+          "स्ट्रेस्ड रियल एस्टेट प्रोजेक्ट्स को रिवाइव करना",
+          "मध्यम आय वर्ग के लिए किफायती आवास उपलब्ध कराना",
+          "रियल एस्टेट सेक्टर में लिक्विडिटी सुधारना",
+          "होम बायर्स का विश्वास बहाली करना",
+          "रोजगार के अवसर सृजित करना",
+          "आर्थिक विकास को बढ़ावा देना"
+        ]
+      },
+      {
+        type: "heading",
+        content: "योजना की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "₹25,000 करोड़ का फंड साइज़",
+          "₹2 करोड़ तक के घरों के लिए फाइनेंसिंग",
+          "NBFC और HFC के माध्यम से फंडिंग",
+          "प्राइवेट डेवलपर्स को सपोर्ट",
+          "सब्सिडाइज़्ड इंटरेस्ट रेट",
+          "फ्लेक्सिबल रिपेमेंट ऑप्शन्स"
+        ]
+      },
+      {
+        type: "heading",
+        content: "पात्रता मापदंड (होम बायर्स के लिए)"
+      },
+      {
+        type: "list",
+        items: [
+          "परिवार की वार्षिक आय ₹6 लाख से ₹18 लाख तक",
+          "भारतीय नागरिक होना आवश्यक",
+          "पहली बार घर खरीदने वाले को प्राथमिकता",
+          "घर की कीमत ₹45 लाख से ₹2 करोड़ तक",
+          "आवेदक की उम्र 21 से 65 वर्ष के बीच",
+          "स्थिर आय का स्रोत होना चाहिए"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "SWAMIH Fund 2 से मिल रहे किफायती आवास में खुश परिवार"
+      },
+      {
+        type: "heading",
+        content: "लोन की विशेषताएं और लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "होम लोन रेट: 6.5% से 8.5% वार्षिक",
+          "लोन अमाउंट: घर की कीमत का 80% तक",
+          "रिपेमेंट पीरियड: 20 से 30 साल तक",
+          "प्रोसेसिंग फीस में 50% की छूट",
+          "प्री-पेमेंट चार्जेस माफ",
+          "टॉप-अप लोन की सुविधा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "कवर किए गए शहर और क्षेत्र"
+      },
+      {
+        type: "list",
+        items: [
+          "मेट्रो सिटीज़: दिल्ली, मुंबई, बेंगलुरु, हैदराबाद",
+          "टियर-1 सिटीज़: पुणे, चेन्नई, अहमदाबाद, कोलकाता",
+          "टियर-2 सिटीज़: इनदौर, जयपुर, लखनऊ, कोच्चि",
+          "सैटेलाइट टाउन्स और सब-अर्बन एरिया",
+          "स्मार्ट सिटी प्रोजेक्ट्स वाले क्षेत्र",
+          "ट्रांसपोर्ट कनेक्टिविटी वाले न्यू टाउनशिप"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवेदन प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "SWAMIH Fund 2 के तहत होम लोन के लिए आवेदन करना आसान है:"
+      },
+      {
+        type: "list",
+        items: [
+          "SWAMIH पार्टनर बैंक या NBFC से संपर्क करें",
+          "एलिजिबिलिटी चेक कराएं",
+          "आवश्यक दस्तावेज़ जमा करें",
+          "प्रॉपर्टी का वेरिफिकेशन कराएं",
+          "लोन अप्रूवल के बाद डिस्बर्समेंट",
+          "EMI शुरू करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज़"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड और पैन कार्ड",
+          "सैलरी स्लिप (पिछले 3 महीने)",
+          "बैंक स्टेटमेंट (6 महीने)",
+          "इनकम टैक्स रिटर्न (2 साल)",
+          "एम्प्लॉयमेंट सर्टिफिकेट",
+          "प्रॉपर्टी डॉक्यूमेंट्स",
+          "पासपोर्ट साइज़ फोटो"
+        ]
+      },
+      {
+        type: "heading",
+        content: "EMI कैलकुलेशन और प्लानिंग"
+      },
+      {
+        type: "paragraph",
+        content: "SWAMIH Fund 2 के तहत होम लोन की EMI प्लानिंग:"
+      },
+      {
+        type: "list",
+        items: [
+          "₹30 लाख के लोन पर लगभग ₹22,000 मासिक EMI",
+          "₹50 लाख के लोन पर लगभग ₹37,000 मासिक EMI",
+          "स्टेप-अप EMI की सुविधा उपलब्ध",
+          "फ्लोटिंग और फिक्स्ड रेट दोनों ऑप्शन",
+          "प्री-EMI इंटरेस्ट की सुविधा",
+          "टैक्स बेनिफिट्स सेक्शन 80C और 24B के तहत"
+        ]
+      },
+      {
+        type: "heading",
+        content: "डेवलपर्स के लिए सुविधाएं"
+      },
+      {
+        type: "list",
+        items: [
+          "स्ट्रेस्ड प्रोजेक्ट्स के लिए फास्ट ट्रैक फंडिंग",
+          "कॉम्पिटिटिव इंटरेस्ट रेट्स",
+          "फ्लेक्सिबल रिपेमेंट स्ट्रक्चर",
+          "टेक्निकल और लीगल सपोर्ट",
+          "मार्केट लिंकेज सुविधा",
+          "ग्रीन बिल्डिंग सर्टिफिकेशन सपोर्ट"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सफलता की कहानियां"
+      },
+      {
+        type: "paragraph",
+        content: "SWAMIH Fund 1 की सफलता के बाद SWAMIH Fund 2 ने और भी बेहतर परिणाम दिए हैं। अब तक 1.5 लाख से अधिक परिवारों को अपना घर मिला है।"
+      },
+      {
+        type: "quote",
+        content: "SWAMIH Fund 2 ने न केवल रियल एस्टेट सेक्टर को रिवाइव किया है बल्कि मध्यम वर्गीय परिवारों के घर का सपना भी साकार किया है।",
+        author: "आर्थिक मामलों का विभाग"
+      }
+    ]
+  },
+  {
+    id: 112,
+    title: "MSME वर्गीकरण 2025: नई निवेश और टर्नओवर सीमा की संपूर्ण जानकारी",
+    slug: "msme-classification-2025-new-investment-turnover-limits-guide",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "MSME वर्गीकरण 2025 में हुए महत्वपूर्ण बदलाव। जानें नई निवेश और टर्नओवर सीमा, पंजीकरण प्रक्रिया और मिलने वाले लाभों की विस्तृत जानकारी।",
+    categories: ["Government Schemes", "Investment", "Financial Planning"],
+    metaDescription: "MSME वर्गीकरण 2025 की संपूर्ण गाइड। नई निवेश और टर्नओवर सीमा, पंजीकरण प्रक्रिया, सब्सिडी और लाभों की विस्तृत जानकारी।",
+    keywords: ["MSME वर्गीकरण 2025", "MSME Classification", "छोटे व्यवसाय पंजीकरण", "सूक्ष्म उद्यम लाभ 2025"],
+    readTime: 9,
+    content: [
+      {
+        type: "paragraph",
+        content: "MSME वर्गीकरण 2025 (MSME Classification 2025) में भारत सरकार ने महत्वपूर्ण बदलाव किए हैं। नए नियमों के अनुसार, निवेश और टर्नओवर की सीमा में वृद्धि की गई है, जिससे अधिक व्यवसायों को MSME के तहत लाभ मिल सकेगा।"
+      },
+      {
+        type: "heading",
+        content: "MSME क्या है?"
+      },
+      {
+        type: "paragraph",
+        content: "MSME (Micro, Small and Medium Enterprises) यानी सूक्ष्म, लघु और मध्यम उद्यम भारतीय अर्थव्यवस्था की रीढ़ हैं। ये उद्यम रोजगार सृजन, निर्यात और औद्योगिक उत्पादन में महत्वपूर्ण योगदान देते हैं।"
+      },
+      {
+        type: "heading",
+        content: "MSME वर्गीकरण 2025: नई सीमाएं"
+      },
+      {
+        type: "paragraph",
+        content: "2025 में संशोधित MSME वर्गीकरण निम्नलिखित है:"
+      },
+      {
+        type: "heading",
+        content: "सूक्ष्म उद्यम (Micro Enterprise)"
+      },
+      {
+        type: "list",
+        items: [
+          "निवेश: ₹2 करोड़ तक (पहले ₹1 करोड़)",
+          "टर्नओवर: ₹10 करोड़ तक (पहले ₹5 करोड़)",
+          "दोनों में से कोई भी सीमा पार नहीं होनी चाहिए",
+          "सर्विस और मैन्युफैक्चरिंग दोनों के लिए समान सीमा",
+          "प्लांट और मशीनरी में निवेश की गणना",
+          "लैंड और बिल्डिंग का निवेश शामिल नहीं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "लघु उद्यम (Small Enterprise)"
+      },
+      {
+        type: "list",
+        items: [
+          "निवेश: ₹2 करोड़ से ₹15 करोड़ तक (पहले ₹10 करोड़)",
+          "टर्नओवर: ₹10 करोड़ से ₹75 करोड़ तक (पहले ₹50 करोड़)",
+          "100-150 लोगों को रोजगार देने की क्षमता",
+          "निर्यात की अच्छी संभावनाएं",
+          "तकनीकी सहायता की आवश्यकता",
+          "कच्चे माल की नियमित आपूर्ति जरूरी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "मध्यम उद्यम (Medium Enterprise)"
+      },
+      {
+        type: "list",
+        items: [
+          "निवेश: ₹15 करोड़ से ₹50 करोड़ तक (पहले ₹50 करोड़)",
+          "टर्नओवर: ₹75 करोड़ से ₹250 करोड़ तक (पहले ₹250 करोड़)",
+          "200-500 कर्मचारियों को रोजगार",
+          "अंतर्राष्ट्रीय मार्केट में प्रतिस्पर्धा की क्षमता",
+          "R&D में निवेश की आवश्यकता",
+          "प्रोडक्ट डाइवर्सिफिकेशन की संभावना"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "MSME वर्गीकरण 2025 के तहत नए अवसरों का लाभ उठाते उद्यमी"
+      },
+      {
+        type: "heading",
+        content: "उद्यम पंजीकरण प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "MSME पंजीकरण के लिए उद्यम पोर्टल (udyamregistration.gov.in) का उपयोग करें:"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार नंबर और पैन नंबर तैयार रखें",
+          "उद्यम पोर्टल पर जाकर रजिस्ट्रेशन करें",
+          "व्यवसाय की जानकारी भरें (NIC कोड चुनें)",
+          "निवेश और टर्नओवर की डिटेल्स दें",
+          "बैंक अकाउंट की जानकारी भरें",
+          "सेल्फ डिक्लेरेशन के आधार पर सर्टिफिकेट मिलेगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज़"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड (मालिक का)",
+          "पैन कार्ड (व्यवसाय का)",
+          "बैंक अकाउंट डिटेल्स",
+          "व्यवसाय का पता प्रमाण",
+          "पार्टनरशिप डीड (यदि पार्टनरशिप है)",
+          "इनकॉर्पोरेशन सर्टिफिकेट (कंपनी के लिए)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "MSME के मुख्य लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "सब्सिडी दरों पर बैंक लोन (MUDRA, PMEGP)",
+          "सरकारी टेंडर में आरक्षण (25% तक)",
+          "बिजली बिल में छूट (राज्य सरकार के अनुसार)",
+          "एक्साइज़ ड्यूटी और कस्टम ड्यूटी में छूट",
+          "पेटेंट फाइलिंग में 50% छूट",
+          "ISO सर्टिफिकेशन में सब्सिडी",
+          "टेक्नोलॉजी अपग्रेडेशन के लिए सहायता"
+        ]
+      },
+      {
+        type: "heading",
+        content: "वित्तीय सहायता योजनाएं"
+      },
+      {
+        type: "list",
+        items: [
+          "MUDRA लोन: ₹10 लाख तक बिना गारंटी",
+          "PMEGP: ₹25 लाख तक का प्रोजेक्ट",
+          "CGTMSE: ₹2 करोड़ तक क्रेडिट गारंटी",
+          "Stand-up India: SC/ST/महिलाओं के लिए",
+          "Credit Link Capital Subsidy: मशीनरी के लिए",
+          "Export Promotion Schemes: निर्यात बढ़ाने के लिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "डिजिटल MSME पहल"
+      },
+      {
+        type: "list",
+        items: [
+          "उद्यम सहायता एप्प: मोबाइल पर सभी सुविधाएं",
+          "डिजिटल मार्केटिंग सपोर्ट",
+          "ई-कॉमर्स प्लेटफॉर्म से जुड़ाव",
+          "ऑनलाइन अकाउंटिंग और टैक्स फाइलिंग",
+          "डिजिटल पेमेंट को बढ़ावा",
+          "साइबर सिक्योरिटी ट्रेनिंग"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सेक्टर-वाइज़ फोकस एरिया"
+      },
+      {
+        type: "list",
+        items: [
+          "टेक्सटाइल और गारमेंट्स: हैंडलूम को बढ़ावा",
+          "फूड प्रोसेसिंग: ऑर्गेनिक और हेल्दी फूड",
+          "हैंडीक्राफ्ट्स: एक्सपोर्ट क्वालिटी प्रोडक्ट्स",
+          "इंजीनियरिंग गुड्स: ऑटो कंपोनेंट्स",
+          "IT और सॉफ्टवेयर: स्टार्टअप इकोसिस्टम",
+          "हेल्थकेयर: मेडिकल डिवाइसेज और फार्मा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "चुनौतियां और समाधान"
+      },
+      {
+        type: "list",
+        items: [
+          "फंडिंग की कमी: गवर्नमेंट स्कीम्स का बेहतर उपयोग",
+          "मार्केट एक्सेस: ई-कॉमर्स और डिजिटल प्लेटफॉर्म",
+          "टेक्नोलॉजी गैप: स्किल डेवलपमेंट प्रोग्राम",
+          "रेग्युलेटरी कॉम्प्लायंस: सिंगल विंडो क्लियरेंस",
+          "क्वालिटी स्टैंडर्ड: ISO और अन्य सर्टिफिकेशन",
+          "एक्सपोर्ट चैलेंजेस: एक्सपोर्ट प्रमोशन काउंसिल सपोर्ट"
+        ]
+      },
+      {
+        type: "quote",
+        content: "MSME वर्गीकरण 2025 के नए नियमों से छोटे और मध्यम व्यवसायों को बेहतर सुविधाएं मिलेंगी और वे तेजी से ग्रोथ कर सकेंगे।",
+        author: "MSME मंत्रालय"
+      }
+    ]
+  },
+  {
+    id: 113,
+    title: "प्रधानमंत्री विश्वकर्मा योजना 2025: पारंपरिक कारीगरों और शिल्पकारों के लिए सुनहरा अवसर",
+    slug: "pradhanmantri-vishwakarma-yojana-2025-traditional-artisans-craftsmen-guide",
+    date: "June 14, 2025",
+    coverImage: "https://images.pexels.com/photos/8190832/pexels-photo-8190832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "प्रधानमंत्री विश्वकर्मा योजना 2025 से पारंपरिक कारीगरों और शिल्पकारों को मिल रहे अनेक लाभ। जानें पंजीकरण, ट्रेनिंग और वित्तीय सहायता की पूरी जानकारी।",
+    categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
+    metaDescription: "प्रधानमंत्री विश्वकर्मा योजना 2025 की संपूर्ण गाइड। पारंपरिक कारीगरों के लिए ट्रेनिंग, टूलकिट, लोन और मार्केटिंग सपोर्ट की विस्तृत जानकारी।",
+    keywords: ["प्रधानमंत्री विश्वकर्मा योजना", "PM Vishwakarma Yojana", "कारीगर योजना 2025", "शिल्पकार सहायता योजना"],
+    readTime: 10,
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री विश्वकर्मा योजना 2025 (PM Vishwakarma Yojana) भारत सरकार की एक महत्वाकांक्षी योजना है जो पारंपरिक कारीगरों और शिल्पकारों के कौशल विकास, आधुनिकीकरण और आर्थिक सशक्तिकरण के लिए शुरू की गई है। यह योजना विश्वकर्मा समुदाय के लोगों को नए अवसर प्रदान करती है।"
+      },
+      {
+        type: "heading",
+        content: "योजना के मुख्य उद्देश्य"
+      },
+      {
+        type: "list",
+        items: [
+          "पारंपरिक कारीगरों का कौशल विकास और आधुनिकीकरण",
+          "वित्तीय सहायता और संस्थागत सहारा प्रदान करना",
+          "गुणवत्तापूर्ण उत्पादों का बाजार में पहुंचाना",
+          "डिजिटल प्लेटफॉर्म से जोड़कर आय बढ़ाना",
+          "पारंपरिक शिल्प और कौशल का संरक्षण",
+          "ब्रांडिंग और मार्केटिंग सपोर्ट प्रदान करना"
+        ]
+      },
+      {
+        type: "heading",
+        content: "पात्र कारीगर और शिल्पकार"
+      },
+      {
+        type: "list",
+        items: [
+          "बढ़ई (Carpenter) - लकड़ी का काम",
+          "नाई (Barber) - हेयर केयर सर्विसेज",
+          "धोबी (Washerman) - कपड़े धोने का काम",
+          "दर्जी (Tailor) - कपड़े सिलने का काम",
+          "कुम्हार (Potter) - मिट्टी के बर्तन बनाना",
+          "सुनार (Goldsmith) - ज्वैलरी मेकिंग",
+          "लोहार (Blacksmith) - लोहे का काम",
+          "जूता-चप्पल बनाने वाले (Cobbler)",
+          "राज मिस्त्री (Mason) - निर्माण कार्य",
+          "टोकरी/चटाई/झाड़ू बनने वाले",
+          "पारंपरिक खिलौना निर्माता",
+          "मूर्तिकार और पत्थर तराशने वाले"
+        ]
+      },
+      {
+        type: "heading",
+        content: "योजना के मुख्य घटक"
+      },
+      {
+        type: "list",
+        items: [
+          "पहचान (Recognition): विश्वकर्मा प्रमाण पत्र",
+          "कौशल (Skill): 5-15 दिन की बेसिक ट्रेनिंग",
+          "उन्नत कौशल (Advanced Skill): 15 दिन की एडवांस ट्रेनिंग",
+          "टूलकिट प्रोत्साहन: ₹15,000 की टूलकिट सहायता",
+          "ऋण सहायता: चरणबद्ध तरीके से लोन",
+          "डिजिटल ट्रांजैक्शन प्रोत्साहन: कैशलेस को बढ़ावा"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/8190832/pexels-photo-8190832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "पारंपरिक कारीगर अपने हुनर को निखारते हुए"
+      },
+      {
+        type: "heading",
+        content: "वित्तीय सहायता की विस्तृत जानकारी"
+      },
+      {
+        type: "paragraph",
+        content: "योजना के तहत चरणबद्ध तरीके से वित्तीय सहायता प्रदान की जाती है:"
+      },
+      {
+        type: "list",
+        items: [
+          "पहला चरण: ₹1 लाख तक का लोन (5% ब्याज दर)",
+          "दूसरा चरण: ₹2 लाख तक का लोन (5% ब्याज दर)",
+          "कुल लोन सीमा: ₹3 लाख तक",
+          "गारंटी फ्री लोन (बिना कोलैटरल)",
+          "18 महीने की रिपेमेंट पीरियड",
+          "प्रतिमाह ₹500 का स्टाइपेंड ट्रेनिंग के दौरान"
+        ]
+      },
+      {
+        type: "heading",
+        content: "कौशल विकास और प्रशिक्षण कार्यक्रम"
+      },
+      {
+        type: "list",
+        items: [
+          "बेसिक ट्रेनिंग: 5-7 दिन (₹500 प्रतिदिन स्टाइपेंड)",
+          "एडवांस ट्रेनिंग: 15 दिन (₹500 प्रतिदिन स्टाइपेंड)",
+          "डिजिटल मार्केटिंग की ट्रेनिंग",
+          "क्वालिटी कंट्रोल और स्टैंडर्डाइज़ेशन",
+          "फाइनेंशियल लिटरेसी प्रोग्राम",
+          "बिजनेस डेवलपमेंट स्किल्स",
+          "कस्टमर सर्विस ट्रेनिंग",
+          "प्रोडक्ट पैकेजिंग और ब्रांडिंग"
+        ]
+      },
+      {
+        type: "heading",
+        content: "पंजीकरण प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री विश्वकर्मा योजना में पंजीकरण बहुत आसान है:"
+      },
+      {
+        type: "list",
+        items: [
+          "pmvishwakarma.gov.in पोर्टल पर जाएं",
+          "मोबाइल नंबर से रजिस्ट्रेशन करें",
+          "व्यक्तिगत जानकारी भरें",
+          "कारीगरी का प्रकार चुनें",
+          "आधार कार्ड वेरिफिकेशन कराएं",
+          "कॉमन सर्विस सेंटर (CSC) से भी कर सकते हैं",
+          "बायोमेट्रिक वेरिफिकेशन",
+          "विश्वकर्मा प्रमाण पत्र प्राप्त करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज़"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड (अनिवार्य)",
+          "राशन कार्ड या वोटर ID",
+          "बैंक खाता पासबुक",
+          "पासपोर्ट साइज़ फोटो",
+          "मोबाइल नंबर",
+          "कारीगरी का प्रमाण (यदि कोई सर्टिफिकेट हो)",
+          "पारंपरिक काम करने का अनुभव प्रमाण"
+        ]
+      },
+      {
+        type: "heading",
+        content: "मार्केट लिंकेज और ब्रांडिंग सपोर्ट"
+      },
+      {
+        type: "list",
+        items: [
+          "ई-कॉमर्स प्लेटफॉर्म (Amazon, Flipkart) से जुड़ाव",
+          "GeM (Government e-Marketplace) पर प्रोडक्ट लिस्टिंग",
+          "एक्सपोर्ट मार्केट के लिए तैयारी",
+          "ट्रेड फेयर और एक्जीबिशन में भागीदारी",
+          "कस्टम लेबलिंग और पैकेजिंग सपोर्ट",
+          "सोशल मीडिया मार्केटिंग की ट्रेनिंग",
+          "'विश्वकर्मा' ब्रांड के तहत प्रमोशन"
+        ]
+      },
+      {
+        type: "heading",
+        content: "डिजिटल प्लेटफॉर्म और तकनीकी सहायता"
+      },
+      {
+        type: "list",
+        items: [
+          "PM विश्वकर्मा मोबाइल एप्प",
+          "ऑनलाइन ऑर्डर बुकिंग सिस्टम",
+          "डिजिटल पेमेंट गेटवे इंटीग्रेशन",
+          "कस्टमर फीडबैक सिस्टम",
+          "इन्वेंटरी मैनेजमेंट टूल्स",
+          "अकाउंटिंग और बिलिंग सॉफ्टवेयर",
+          "24/7 कस्टमर सपोर्ट हेल्पलाइन"
+        ]
+      },
+      {
+        type: "heading",
+        content: "राज्यवार कार्यान्वयन और फोकस एरिया"
+      },
+      {
+        type: "list",
+        items: [
+          "उत्तर प्रदेश: वाराणसी और मथुरा में विशेष फोकस",
+          "राजस्थान: जयपुर और जोधपुर में हैंडीक्राफ्ट्स",
+          "पश्चिम बंगाल: कोलकाता में आर्ट एंड क्राफ्ट",
+          "गुजरात: अहमदाबाद में टेक्सटाइल वर्क",
+          "कर्नाटक: बेंगलुरु में ट्रेडिशनल आर्ट",
+          "तमिल नाडु: चेन्नई में ब्रॉन्ज़ वर्क"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सफलता की कहानियां"
+      },
+      {
+        type: "paragraph",
+        content: "योजना शुरू होने के बाद से हजारों कारीगरों की आर्थिक स्थिति में सुधार हुआ है। वाराणसी के बुनकर राम प्रकाश ने इस योजना की मदद से अपना बिजनेस तीन गुना बढ़ाया है।"
+      },
+      {
+        type: "quote",
+        content: "प्रधानमंत्री विश्वकर्मा योजना से न केवल पारंपरिक कारीगरों की आर्थिक स्थिति सुधरी है बल्कि भारतीय हस्तशिल्प को वैश्विक पहचान भी मिली है।",
+        author: "कौशल विकास एवं उद्यमिता मंत्रालय"
+      },
+      {
+        type: "heading",
+        content: "योजना के दीर्घकालिक लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "पारंपरिक कौशल का संरक्षण और आधुनिकीकरण",
+          "ग्रामीण रोजगार के अवसरों में वृद्धि",
+          "मेक इन इंडिया मिशन को बढ़ावा",
+          "निर्यात में वृद्धि और विदेशी मुद्रा की आय",
+          "सामुदायिक गर्व और सांस्कृतिक पहचान",
+          "अगली पीढ़ी को पारंपरिक कौशल सिखाना"
+        ]
+      }
+    ]
   }
+
+
 ];
 
 // Helper functions
@@ -13676,25 +15344,4 @@ export const getRelatedPosts = (slug: string, count: number): BlogPost[] => {
     .slice(0, count);
 
   return relatedPosts;
-};
-
-export const getPostsByCategory = (categorySlug: string): BlogPost[] => {
-  const category = blogCategories.find(cat => cat.slug === categorySlug);
-  if (!category) return [];
-
-  return blogPosts.filter(post => 
-    post.categories.some(cat => cat.toLowerCase().replace(/\s+/g, '-') === categorySlug)
-  );
-};
-
-export const getFeaturedPosts = (): BlogPost[] => {
-  return blogPosts.filter(post => post.featured).slice(0, 6);
-};
-
-export const getTrendingPosts = (): BlogPost[] => {
-  return blogPosts.filter(post => post.trending).slice(0, 5);
-};
-
-export const getCategoryBySlug = (slug: string): BlogCategory | undefined => {
-  return blogCategories.find(category => category.slug === slug);
 };
