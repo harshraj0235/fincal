@@ -22230,6 +22230,97 @@ export const blogPosts: BlogPost[] = [
         content: "Skill Loan Scheme एक excellent opportunity है उन students के लिए जो skill development के through अपना career advance करना चाहते हैं। Up to ₹7.5 लाख का loan affordable terms पर मिल सकता है। Proper planning और documentation के साथ आप आसानी से इस scheme का benefit उठा सकते हैं।"
       }
     ]
+  },
+  {
+    id: 136,
+    slug: 'mudra-yojana-loan-for-entrepreneurs-hindi-guide',
+    title: 'Mudra Yojana: Business Loan कैसे लें? पूरी जानकारी',
+    date: 'June 10, 2024',
+    categories: ['Government Schemes', 'Business Loan', 'Financial Inclusion'],
+    coverImage: 'https://images.pexels.com/photos/8867432/pexels-photo-8867432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'प्रधानमंत्री मुद्रा योजना (PMMY) के तहत अपना नया کاروبار शुरू करने या मौजूदा کاروبار को बढ़ाने के लिए 10 लाख रुपये तक का लोन कैसे प्राप्त करें, जानें।',
+    content: [
+      {
+        type: 'paragraph',
+        content: 'Pradhan Mantri Mudra Yojana (PMMY) is a flagship scheme of the Government of India to extend affordable credit to non-corporate, non-farm small/micro-enterprises. This guide will walk you through everything you need to know to get a MUDRA loan in 2024.'
+      },
+      {
+        type: 'heading',
+        content: 'What are the types of MUDRA loans?'
+      },
+      {
+        type: 'paragraph',
+        content: 'MUDRA loans are offered in three categories:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Shishu: Loans up to ₹50,000 for new businesses.',
+          'Kishor: Loans from ₹50,001 to ₹5,00,000 for established businesses looking to expand.',
+          'Tarun: Loans from ₹5,00,001 to ₹10,00,000 for further expansion and upgrades.',
+        ],
+      },
+      {
+        type: 'image',
+        url: 'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        caption: 'Empowering small business owners across India.'
+      },
+      {
+        type: 'heading',
+        content: 'Eligibility Criteria for MUDRA Loan'
+      },
+      {
+        type: 'paragraph',
+        content: 'Any Indian citizen who has a business plan for a non-farm sector income-generating activity such as manufacturing, processing, trading, or service sector can apply for a MUDRA loan. The business should be a small or micro-enterprise.'
+      },
+      {
+        type: 'quote',
+        content: 'The MUDRA scheme is designed to bring small entrepreneurs into the formal financial system and help them grow their businesses.',
+        author: 'Finance Ministry Official'
+      },
+    ],
+  },
+  {
+    id: 142,
+    slug: 'sukanya-samriddhi-yojana-invest-for-girl-child-future',
+    title: 'Sukanya Samriddhi Yojana: A Smart Investment for Your Daughter’s Future',
+    date: 'June 05, 2024',
+    categories: ['Government Schemes', 'Investment', 'Tax Planning'],
+    coverImage: 'https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Discover how Sukanya Samriddhi Yojana (SSY) can secure your daughter’s future with high interest rates and tax benefits. This is a complete guide for parents.',
+    content: [
+      {
+        type: 'paragraph',
+        content: 'Sukanya Samriddhi Yojana (SSY) is a small savings scheme by the Government of India as part of the "Beti Bachao, Beti Padhao" campaign. It aims to provide financial security for a girl child’s education and marriage expenses.'
+      },
+      {
+        type: 'heading',
+        content: 'Key Features of Sukanya Samriddhi Yojana'
+      },
+      {
+        type: 'list',
+        items: [
+          'Account can be opened for a girl child below 10 years of age.',
+          'Minimum deposit of ₹250 and maximum of ₹1.5 lakh per financial year.',
+          'Offers a high interest rate, currently one of the best among small savings schemes.',
+          'Full tax exemption under Section 80C (EEE status).',
+          'Account matures when the girl turns 21.',
+        ],
+      },
+      {
+        type: 'image',
+        url: 'https://images.pexels.com/photos/3755511/pexels-photo-3755511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        caption: 'Planning for your daughter\'s bright future.'
+      },
+      {
+        type: 'heading',
+        content: 'Why should you invest in SSY?'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSY is a risk-free investment backed by the government. The Exempt-Exempt-Exempt (EEE) status means the investment, interest earned, and maturity amount are all tax-free, making it a highly efficient long-term investment for your daughter.'
+      }
+    ]
   }
 
 ];
