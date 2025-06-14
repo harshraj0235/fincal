@@ -752,6 +752,37 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+   <url>
+    <loc>https://moneycal.in/blog/atal-pension-yojana-guide</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/kisan-credit-card-5-lakh-loan-guide</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/credit-guarantee-fund-msme-collateral-free-loans</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/udyam-portal-customized-credit-cards-micro-enterprises</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/startup-fund-of-funds-10000-crore-support-guide</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Loan Calculators -->
   <url>
     <loc>https://moneycal.in/calculators/emi-calculator</loc>
