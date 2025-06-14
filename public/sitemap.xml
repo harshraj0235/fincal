@@ -924,7 +924,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+ <url>
+    <loc>https://moneycal.in/blog/atal-pension-yojana-guide</loc>
+    <lastmod>2025-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/nps-vatsalya-scheme-minors-complete-guide-parents-2025</loc>
+    <lastmod>2025-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/atmanirbhar-oil-seeds-abhiyan-modern-farming-techniques-2025</loc>
+    <lastmod>2025-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Investment Calculators -->
   <url>
     <loc>https://moneycal.in/calculators/sip-calculator</loc>
