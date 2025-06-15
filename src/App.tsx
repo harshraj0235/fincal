@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { Layout } from './components/Layout';
 import { Routes, Route, Navigate } from 'react-router-dom';
+
 import { Home } from './pages/Home';
 import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
@@ -17,8 +19,10 @@ import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
-import { MoneyBlog } from './pages/MoneyBlog';
-import { MoneyTool } from './pages/MoneyTool';
+
+// Import your MoneyBlog and MoneyTool pages
+import MoneyBlog from './pages/MoneyBlog';
+import MoneyTool from './pages/MoneyTool';
 
 function App() {
   return (
@@ -26,22 +30,23 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        {calculatorCategories.flatMap(category => 
+
+        {/* Dynamically create calculator routes */}
+        {calculatorCategories.flatMap(category =>
           category.calculators.map(calculator => (
-            <Route 
+            <Route
               key={calculator.id}
-              path={`/calculators/${calculator.id}`} 
-              element={<CalculatorPage calculatorId={calculator.id} />} 
+              path={`/calculators/${calculator.id}`}
+              element={<CalculatorPage calculatorId={calculator.id} />}
             />
           ))
         )}
+
         <Route path="/category/:categoryId" element={<CategoryPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/blog/write" element={<WriteBlog />} />
         <Route path="/blog/category/banking" element={<BankingKnowledge />} />
-        <Route path="/money/blog" element={<MoneyBlog />} />
-        <Route path="/money/tool" element={<MoneyTool />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/about-us" element={<AboutUs />} />
@@ -49,7 +54,11 @@ function App() {
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap.xml" element={<SitemapXml />} />
         <Route path="/credit-card-finder" element={<CreditCardFinder />} />
-        
+
+        {/* Add MoneyBlog and MoneyTool routes */}
+        <Route path="/money/blog" element={<MoneyBlog />} />
+        <Route path="/money/tool" element={<MoneyTool />} />
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>
