@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 type Blog = {
   id: string;
@@ -7,18 +7,14 @@ type Blog = {
   date: string;
 };
 
-// Webpack's require.context to dynamically import all blog files
-const importAllBlogs = (): Blog[] => {
-  // @ts-ignore
-  const context = require.context("../blogs", false, /\.json$/);
-  return context.keys().map((key: string) => context(key));
-};
-
-const MoneyBlog = () => {
+const MoneyBlog: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
-    setBlogs(importAllBlogs());
+    // Dynamically import all blogs in the blogs folder
+    const blogModules = import.meta.glob('../blogs/*.json', { eager: true });
+    const importedBlogs: Blog[] = Object.values(blogModules) as Blog[];
+    setBlogs(importedBlogs);
   }, []);
 
   return (
