@@ -21177,7 +21177,7 @@ export const blogPosts: BlogPost[] = [
     id: 132,
     title: "Credit Support to MSMEs During Stress Periods: Complete Guide for Business Recovery",
     slug: "credit-support-msmes-stress-periods-business-recovery-guide",
-    date: "June 13, 2024",
+    date: "June 13, 2025",
     coverImage: "https://images.pexels.com/photos/3182752/pexels-photo-3182752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     excerpt: "MSMEs को stress periods में मिलने वाली credit support schemes के बारे में जानिए। COVID-19 के बाद business recovery के लिए उपलब्ध loan facilities और government initiatives।",
     categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
@@ -21413,7 +21413,7 @@ export const blogPosts: BlogPost[] = [
     id: 133,
     title: "Comprehensive Internship Opportunities: 1 Crore Internships - Complete Guide for Students",
     slug: "comprehensive-internship-opportunities-1-crore-internships-students-guide",
-    date: "June 12, 2024",
+    date: "June 12, 2025",
     coverImage: "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     excerpt: "1 करोड़ internships का massive program क्या है? Students के लिए comprehensive internship opportunities, eligibility, application process, और career benefits के बारे में complete guide।",
     categories: ["Government Schemes", "Financial Planning"],
@@ -22322,7 +22322,6 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
-  
   {
     id: 143,
     title: "Financial Independence कैसे प्राप्त करें: Complete Guide for Indians",
@@ -26380,8 +26379,6 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   }
-
-
 ];
 
 // Helper functions
