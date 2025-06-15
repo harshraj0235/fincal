@@ -26324,7 +26324,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "heading",
-        content": "Post-Approval Best Practices"
+        content : "Post-Approval Best Practices"
       },
       {
         type: "subheading",
