@@ -48,7 +48,9 @@ export const CompoundInterestCalculator: React.FC = () => {
   };
 
   return (
-  
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100 flex items-center justify-center p-4 sm:p-6 font-inter">
+      <div className="bg-white shadow-2xl rounded-xl p-6 sm:p-8 w-full max-w-4xl border border-gray-200">
+        {/* The main title of the page was here, now removed as per request */}
 
         {/* Calculator Inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 bg-gray-50 p-6 rounded-lg shadow-inner border border-gray-100">
