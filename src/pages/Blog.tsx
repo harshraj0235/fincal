@@ -1,35 +1,29 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
-
-// Dynamically import all blog JSON files from src/blogs (Vite only)
-const blogModules = import.meta.glob('../blogs/*.json', { eager: true });
-const blogPosts: Array<any> = Object.values(blogModules);
+import { blogPosts } from '../data/blogData';
 
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  // Get unique categories, skipping those with missing categories
+  
+  // Get unique categories
   const categories = Array.from(
-    new Set(
-      blogPosts.flatMap(post => Array.isArray(post.categories) ? post.categories : [])
-    )
+    new Set(blogPosts.flatMap(post => post.categories))
   );
-
+  
   // Filter posts based on search and category
   const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = searchTerm === '' ||
+    const matchesSearch = searchTerm === '' || 
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (post.content && post.content.toLowerCase().includes(searchTerm.toLowerCase()));
-
-    const matchesCategory = selectedCategory === null ||
-      (Array.isArray(post.categories) && post.categories.includes(selectedCategory));
-
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      
+    const matchesCategory = selectedCategory === null || 
+      post.categories.includes(selectedCategory);
+      
     return matchesSearch && matchesCategory;
   });
-
+  
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
@@ -135,39 +129,28 @@ export const Blog: React.FC = () => {
               {filteredPosts.map(post => (
                 <Link 
                   key={post.id} 
-                  to={`/blog/${post.id}`}
+                  to={`/blog/${post.slug}`}
                   className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                 >
-                  <div className="h-48 overflow-hidden flex items-center justify-center bg-neutral-100">
-                    {/* Show coverImage if exists, otherwise a placeholder */}
-                    {post.coverImage ? (
-                      <img 
-                        src={post.coverImage} 
-                        alt={post.title} 
-                        className="w-full h-full object-cover transition-transform hover:scale-105"
-                      />
-                    ) : (
-                      <span className="text-neutral-300 text-4xl">📝</span>
-                    )}
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={post.coverImage} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover transition-transform hover:scale-105"
+                    />
                   </div>
                   <div className="p-5">
                     <div className="flex items-center text-xs text-neutral-500 mb-3">
                       <Calendar className="h-3 w-3 mr-1" />
                       <span>{post.date}</span>
-                      {post.author && (
-                        <>
-                          <span className="mx-2">•</span>
-                          <User className="h-3 w-3 mr-1" />
-                          <span>{post.author}</span>
-                        </>
-                      )}
+                      <span className="mx-2">•</span>
+                      <User className="h-3 w-3 mr-1" />
+                      <span>{post.author}</span>
                     </div>
                     <h3 className="text-lg font-semibold text-neutral-900 mb-2 line-clamp-2">{post.title}</h3>
-                    <p className="text-neutral-600 text-sm mb-3 line-clamp-3">
-                      {post.excerpt ? post.excerpt : (post.content ? post.content.slice(0, 120) + "..." : "")}
-                    </p>
+                    <p className="text-neutral-600 text-sm mb-3 line-clamp-3">{post.excerpt}</p>
                     <div className="flex flex-wrap gap-2">
-                      {(Array.isArray(post.categories) ? post.categories.slice(0, 2) : []).map(category => (
+                      {post.categories.slice(0, 2).map(category => (
                         <span 
                           key={category} 
                           className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
@@ -180,6 +163,89 @@ export const Blog: React.FC = () => {
                   </div>
                 </Link>
               ))}
+            </div>
+          )}
+          
+          {/* Government Scheme Articles Section */}
+          <div className="mt-12 bg-[--success-50] rounded-xl p-6 border border-[--success-200]">
+            <h2 className="text-2xl font-bold text-[--success-900] mb-4">Government Scheme Guides</h2>
+            <p className="text-[--success-700] mb-6">
+              Comprehensive guides to help you understand and maximize benefits from various government financial schemes in India.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-neutral-900 mb-2">Sukanya Samriddhi Yojana: Complete Guide</h3>
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
+                  Everything you need to know about SSY - eligibility, benefits, tax advantages, and how to maximize returns.
+                </p>
+                <Link to="/blog/sukanya-samriddhi-yojana-guide" className="text-xs text-[--success-600] font-medium hover:underline">
+                  Read More →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-neutral-900 mb-2">National Pension System: Tier 1 vs Tier 2</h3>
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
+                  Detailed comparison of NPS Tier 1 and Tier 2 accounts - features, benefits, tax implications, and investment strategies.
+                </p>
+                <Link to="/blog/nps-tier1-vs-tier2-comparison" className="text-xs text-[--success-600] font-medium hover:underline">
+                  Read More →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-neutral-900 mb-2">Post Office Savings Schemes: Which One is Right for You?</h3>
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
+                  Compare KVP, NSC, SCSS, MIS, and other post office schemes to find the best option for your financial goals.
+                </p>
+                <Link to="/blog/post-office-savings-schemes-comparison" className="text-xs text-[--success-600] font-medium hover:underline">
+                  Read More →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <h3 className="font-semibold text-neutral-900 mb-2">PM Vaya Vandana Yojana: Pension Scheme for Senior Citizens</h3>
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
+                  A detailed look at PMVVY - benefits, eligibility, comparison with other senior citizen schemes, and application process.
+                </p>
+                <Link to="/blog/pm-vaya-vandana-yojana-guide" className="text-xs text-[--success-600] font-medium hover:underline">
+                  Read More →
+                </Link>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <Link 
+                to="/blog/category/government-schemes" 
+                className="inline-flex items-center text-[--success-700] hover:text-[--success-800] font-medium"
+              >
+                View all government scheme guides
+                <ArrowRight className="h-4 w-4 ml-1" />
+              </Link>
+            </div>
+          </div>
+          
+          {/* Pagination */}
+          {filteredPosts.length > 0 && (
+            <div className="mt-12 flex justify-center">
+              <nav className="inline-flex rounded-md shadow">
+                <a href="#" className="px-4 py-2 rounded-l-md border border-neutral-300 bg-white text-sm font-medium text-neutral-500 hover:bg-neutral-50">
+                  Previous
+                </a>
+                <a href="#" className="px-4 py-2 border-t border-b border-neutral-300 bg-white text-sm font-medium text-primary-600 hover:bg-primary-50">
+                  1
+                </a>
+                <a href="#" className="px-4 py-2 border-t border-b border-neutral-300 bg-white text-sm font-medium text-neutral-500 hover:bg-neutral-50">
+                  2
+                </a>
+                <a href="#" className="px-4 py-2 border-t border-b border-neutral-300 bg-white text-sm font-medium text-neutral-500 hover:bg-neutral-50">
+                  3
+                </a>
+                <a href="#" className="px-4 py-2 rounded-r-md border border-neutral-300 bg-white text-sm font-medium text-neutral-500 hover:bg-neutral-50">
+                  Next
+                </a>
+              </nav>
             </div>
           )}
         </div>
