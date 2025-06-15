@@ -1,503 +1,205 @@
-
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Separator } from '@/components/ui/separator';
-import { Calculator, TrendingUp, DollarSign, Clock, PiggyBank, Target, BookOpen, Lightbulb } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
-
-interface CalculationResult {
-  futureValue: number;
-  totalContributions: number;
-  totalInterest: number;
-  yearlyBreakdown: Array<{
-    year: number;
-    principal: number;
-    interest: number;
-    total: number;
-  }>;
-}
 
 export const CompoundInterestCalculator: React.FC = () => {
-  const [principal, setPrincipal] = useState<string>('10000');
-  const [monthlyContribution, setMonthlyContribution] = useState<string>('500');
-  const [annualRate, setAnnualRate] = useState<string>('7');
-  const [years, setYears] = useState<string>('10');
-  const [compoundFrequency, setCompoundFrequency] = useState<string>('12');
-  const [result, setResult] = useState<CalculationResult | null>(null);
+  // State variables for inputs
+  const [principal, setPrincipal] = useState<number>(10000); // Initial investment
+  const [rate, setRate] = useState<number>(5);           // Annual interest rate (%)
+  const [time, setTime] = useState<number>(10);           // Time in years
+  const [compoundingFrequency, setCompoundingFrequency] = useState<number>(12); // Compounding periods per year (e.g., 12 for monthly)
 
+  // State variables for results
+  const [futureValue, setFutureValue] = useState<number>(0);
+  const [totalInterest, setTotalInterest] = useState<number>(0);
+
+  // Function to calculate compound interest
   const calculateCompoundInterest = () => {
-    const P = parseFloat(principal) || 0;
-    const PMT = parseFloat(monthlyContribution) || 0;
-    const r = (parseFloat(annualRate) || 0) / 100;
-    const n = parseInt(compoundFrequency) || 12;
-    const t = parseInt(years) || 1;
+    // Convert rate from percentage to decimal
+    const r = rate / 100;
+    // Number of times interest is compounded per year (n)
+    const n = compoundingFrequency;
+    // Number of years the money is invested (t)
+    const t = time;
 
-    const yearlyBreakdown: Array<{
-      year: number;
-      principal: number;
-      interest: number;
-      total: number;
-    }> = [];
+    // Compound Interest Formula: A = P (1 + r/n)^(nt)
+    // A = Future value
+    // P = Principal
+    const A = principal * Math.pow((1 + r / n), (n * t));
 
-    let currentPrincipal = P;
-    let totalContributions = P;
+    // Calculate total interest earned
+    const interest = A - principal;
 
-    for (let year = 1; year <= t; year++) {
-      // Calculate compound interest for the year
-      const yearlyContributions = PMT * 12;
-      const avgPrincipal = currentPrincipal + (yearlyContributions / 2);
-      const interestEarned = avgPrincipal * r;
-      
-      currentPrincipal += yearlyContributions + interestEarned;
-      totalContributions += yearlyContributions;
-
-      yearlyBreakdown.push({
-        year,
-        principal: totalContributions,
-        interest: currentPrincipal - totalContributions,
-        total: currentPrincipal
-      });
-    }
-
-    const finalResult: CalculationResult = {
-      futureValue: currentPrincipal,
-      totalContributions,
-      totalInterest: currentPrincipal - totalContributions,
-      yearlyBreakdown
-    };
-
-    setResult(finalResult);
+    setFutureValue(A);
+    setTotalInterest(interest);
   };
 
+  // Recalculate whenever inputs change
   useEffect(() => {
     calculateCompoundInterest();
-  }, [principal, monthlyContribution, annualRate, years, compoundFrequency]);
+  }, [principal, rate, time, compoundingFrequency]);
 
+  // Helper function for formatting currency
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('en-IN', {
       style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
+      currency: 'INR', // Using Indian Rupee for example, can be changed
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     }).format(amount);
   };
 
-  const formatPercentage = (value: number) => {
-    return `${value.toFixed(1)}%`;
-  };
-
-  const chartData = result?.yearlyBreakdown || [];
-  const pieData = result ? [
-    { name: 'Principal & Contributions', value: result.totalContributions, color: '#3b82f6' },
-    { name: 'Interest Earned', value: result.totalInterest, color: '#10b981' }
-  ] : [];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 p-4">
-      <div className="max-w-7xl mx-auto">
-        {/* SEO Header Section */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-            Compound Interest Calculator
-          </h1>
-          <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-            Free online compound interest calculator to calculate investment growth, retirement planning, and savings goals. 
-            Discover the power of compound interest with our advanced financial calculator tool.
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100 flex items-center justify-center p-4 sm:p-6 font-inter">
+      <div className="bg-white shadow-2xl rounded-xl p-6 sm:p-8 w-full max-w-4xl border border-gray-200">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-8 leading-tight">
+          Compound Interest Calculator: Grow Your Wealth
+        </h1>
+
+        {/* SEO Content */}
+        <section className="mb-8 text-gray-700 text-lg">
+          <p className="mb-4">
+            Welcome to our free online <strong className="font-semibold text-indigo-600">Compound Interest Calculator</strong>. This powerful tool helps you visualize how your investments can grow over time, thanks to the magic of <strong className="font-semibold text-purple-600">compounding</strong>. Whether you're planning for retirement, saving for a down payment, or just curious about financial growth, understanding compound interest is key to smart <strong className="font-semibold text-teal-600">financial planning</strong> and <strong className="font-semibold text-pink-600">wealth accumulation</strong>.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            <span className="flex items-center gap-1">
-              <Calculator className="w-4 h-4" />
-              Financial Calculator
-            </span>
-            <span className="flex items-center gap-1">
-              <TrendingUp className="w-4 h-4" />
-              Investment Calculator
-            </span>
-            <span className="flex items-center gap-1">
-              <PiggyBank className="w-4 h-4" />
-              Savings Calculator
-            </span>
-            <span className="flex items-center gap-1">
-              <Target className="w-4 h-4" />
-              Retirement Planner
-            </span>
-          </div>
-        </header>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 mt-6">What is Compound Interest?</h2>
+          <p className="mb-4">
+            <strong className="font-semibold">Compound interest</strong> is interest on interest. It's the process where the interest you earn on your initial principal (the amount you invest) is reinvested, and then that reinvested interest also starts earning interest. This creates an accelerating growth effect, often described as the "eighth wonder of the world" by Albert Einstein. Unlike simple interest, which is calculated only on the principal amount, compound interest allows your money to grow exponentially over time.
+          </p>
+          <p className="mb-4">
+            This calculator is an essential <strong className="font-semibold text-green-600">investment tool</strong> for anyone looking to understand the potential returns on their <strong className="font-semibold text-blue-600">savings</strong> or <strong className="font-semibold text-red-600">investment strategies</strong>.
+          </p>
+        </section>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Calculator Input Section */}
-          <div className="lg:col-span-1">
-            <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm">
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-2 text-2xl">
-                  <Calculator className="w-6 h-6 text-blue-600" />
-                  Calculator Settings
-                </CardTitle>
-                <CardDescription>
-                  Enter your investment details to calculate compound interest growth
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="principal" className="text-sm font-medium">
-                    Initial Investment (Principal)
-                  </Label>
-                  <div className="relative">
-                    <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <Input
-                      id="principal"
-                      type="number"
-                      value={principal}
-                      onChange={(e) => setPrincipal(e.target.value)}
-                      className="pl-10 h-12 text-lg"
-                      placeholder="10000"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="monthly" className="text-sm font-medium">
-                    Monthly Contribution
-                  </Label>
-                  <div className="relative">
-                    <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <Input
-                      id="monthly"
-                      type="number"
-                      value={monthlyContribution}
-                      onChange={(e) => setMonthlyContribution(e.target.value)}
-                      className="pl-10 h-12 text-lg"
-                      placeholder="500"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="rate" className="text-sm font-medium">
-                    Annual Interest Rate (%)
-                  </Label>
-                  <Input
-                    id="rate"
-                    type="number"
-                    step="0.1"
-                    value={annualRate}
-                    onChange={(e) => setAnnualRate(e.target.value)}
-                    className="h-12 text-lg"
-                    placeholder="7"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="years" className="text-sm font-medium">
-                    Investment Period (Years)
-                  </Label>
-                  <div className="relative">
-                    <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <Input
-                      id="years"
-                      type="number"
-                      value={years}
-                      onChange={(e) => setYears(e.target.value)}
-                      className="pl-10 h-12 text-lg"
-                      placeholder="10"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="compound" className="text-sm font-medium">
-                    Compounding Frequency
-                  </Label>
-                  <Select value={compoundFrequency} onValueChange={setCompoundFrequency}>
-                    <SelectTrigger className="h-12 text-lg">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="1">Annually</SelectItem>
-                      <SelectItem value="2">Semi-annually</SelectItem>
-                      <SelectItem value="4">Quarterly</SelectItem>
-                      <SelectItem value="12">Monthly</SelectItem>
-                      <SelectItem value="365">Daily</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <Button 
-                  onClick={calculateCompoundInterest}
-                  className="w-full h-12 text-lg bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
-                >
-                  Calculate Growth
-                </Button>
-              </CardContent>
-            </Card>
+        {/* Calculator Inputs */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 bg-gray-50 p-6 rounded-lg shadow-inner border border-gray-100">
+          <div className="flex flex-col">
+            <label htmlFor="principal" className="text-sm font-medium text-gray-700 mb-2">
+              Initial Investment (Principal)
+            </label>
+            <input
+              type="number"
+              id="principal"
+              value={principal}
+              onChange={(e) => setPrincipal(Number(e.target.value))}
+              className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full transition duration-150 ease-in-out"
+              placeholder="e.g., 10000"
+              aria-label="Initial Investment"
+            />
           </div>
 
-          {/* Results and Charts Section */}
-          <div className="lg:col-span-2 space-y-8">
-            {result && (
-              <>
-                {/* Key Results */}
-                <div className="grid md:grid-cols-3 gap-4">
-                  <Card className="shadow-lg border-0 bg-gradient-to-br from-blue-500 to-blue-600 text-white">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-blue-100 text-sm font-medium">Future Value</p>
-                          <p className="text-2xl font-bold">{formatCurrency(result.futureValue)}</p>
-                        </div>
-                        <TrendingUp className="w-8 h-8 text-blue-200" />
-                      </div>
-                    </CardContent>
-                  </Card>
+          <div className="flex flex-col">
+            <label htmlFor="rate" className="text-sm font-medium text-gray-700 mb-2">
+              Annual Interest Rate (%)
+            </label>
+            <input
+              type="number"
+              id="rate"
+              value={rate}
+              onChange={(e) => setRate(Number(e.target.value))}
+              className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full transition duration-150 ease-in-out"
+              placeholder="e.g., 5"
+              step="0.1"
+              aria-label="Annual Interest Rate"
+            />
+          </div>
 
-                  <Card className="shadow-lg border-0 bg-gradient-to-br from-green-500 to-green-600 text-white">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-green-100 text-sm font-medium">Total Interest</p>
-                          <p className="text-2xl font-bold">{formatCurrency(result.totalInterest)}</p>
-                        </div>
-                        <DollarSign className="w-8 h-8 text-green-200" />
-                      </div>
-                    </CardContent>
-                  </Card>
+          <div className="flex flex-col">
+            <label htmlFor="time" className="text-sm font-medium text-gray-700 mb-2">
+              Time Period (Years)
+            </label>
+            <input
+              type="number"
+              id="time"
+              value={time}
+              onChange={(e) => setTime(Number(e.target.value))}
+              className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full transition duration-150 ease-in-out"
+              placeholder="e.g., 10"
+              aria-label="Time Period in Years"
+            />
+          </div>
 
-                  <Card className="shadow-lg border-0 bg-gradient-to-br from-purple-500 to-purple-600 text-white">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-purple-100 text-sm font-medium">Total Contributions</p>
-                          <p className="text-2xl font-bold">{formatCurrency(result.totalContributions)}</p>
-                        </div>
-                        <PiggyBank className="w-8 h-8 text-purple-200" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                {/* Growth Chart */}
-                <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle>Investment Growth Over Time</CardTitle>
-                    <CardDescription>
-                      Visual representation of your compound interest growth
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="h-80 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <LineChart data={chartData}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#e0e7ff" />
-                          <XAxis 
-                            dataKey="year" 
-                            stroke="#6b7280"
-                            fontSize={12}
-                          />
-                          <YAxis 
-                            stroke="#6b7280"
-                            fontSize={12}
-                            tickFormatter={(value) => formatCurrency(value)}
-                          />
-                          <Tooltip 
-                            formatter={(value: number) => [formatCurrency(value), '']}
-                            labelStyle={{ color: '#374151' }}
-                            contentStyle={{ 
-                              backgroundColor: 'white', 
-                              border: '1px solid #e5e7eb',
-                              borderRadius: '8px'
-                            }}
-                          />
-                          <Line 
-                            type="monotone" 
-                            dataKey="total" 
-                            stroke="#3b82f6" 
-                            strokeWidth={3}
-                            name="Total Value"
-                            dot={{ fill: '#3b82f6', strokeWidth: 2, r: 4 }}
-                          />
-                          <Line 
-                            type="monotone" 
-                            dataKey="principal" 
-                            stroke="#10b981" 
-                            strokeWidth={2}
-                            name="Contributions"
-                            strokeDasharray="5 5"
-                          />
-                        </LineChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Breakdown Charts */}
-                <div className="grid md:grid-cols-2 gap-8">
-                  <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm">
-                    <CardHeader>
-                      <CardTitle>Investment Composition</CardTitle>
-                      <CardDescription>Principal vs Interest Earned</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="h-64 w-full">
-                        <ResponsiveContainer width="100%" height="100%">
-                          <PieChart>
-                            <Pie
-                              data={pieData}
-                              cx="50%"
-                              cy="50%"
-                              outerRadius={80}
-                              dataKey="value"
-                              label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(1)}%`}
-                            >
-                              {pieData.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={entry.color} />
-                              ))}
-                            </Pie>
-                            <Tooltip formatter={(value: number) => formatCurrency(value)} />
-                          </PieChart>
-                        </ResponsiveContainer>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm">
-                    <CardHeader>
-                      <CardTitle>Annual Breakdown</CardTitle>
-                      <CardDescription>Year-by-year growth analysis</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="h-64 w-full">
-                        <ResponsiveContainer width="100%" height="100%">
-                          <BarChart data={chartData.slice(-5)}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="#e0e7ff" />
-                            <XAxis dataKey="year" stroke="#6b7280" fontSize={12} />
-                            <YAxis stroke="#6b7280" fontSize={12} tickFormatter={(value) => formatCurrency(value)} />
-                            <Tooltip formatter={(value: number) => formatCurrency(value)} />
-                            <Bar dataKey="principal" stackId="a" fill="#10b981" name="Contributions" />
-                            <Bar dataKey="interest" stackId="a" fill="#3b82f6" name="Interest" />
-                          </BarChart>
-                        </ResponsiveContainer>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </>
-            )}
+          <div className="flex flex-col">
+            <label htmlFor="compoundingFrequency" className="text-sm font-medium text-gray-700 mb-2">
+              Compounding Frequency (Times per Year)
+            </label>
+            <select
+              id="compoundingFrequency"
+              value={compoundingFrequency}
+              onChange={(e) => setCompoundingFrequency(Number(e.target.value))}
+              className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full bg-white transition duration-150 ease-in-out"
+              aria-label="Compounding Frequency"
+            >
+              <option value={1}>Annually (1)</option>
+              <option value={2}>Semi-Annually (2)</option>
+              <option value={4}>Quarterly (4)</option>
+              <option value={12}>Monthly (12)</option>
+              <option value={365}>Daily (365)</option>
+            </select>
           </div>
         </div>
 
-        {/* SEO Content Section */}
-        <div className="mt-16 space-y-12">
-          <Separator className="my-8" />
-          
-          {/* Educational Content */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-blue-600" />
-                  What is Compound Interest?
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="prose prose-sm text-gray-600">
-                <p>
-                  Compound interest is the interest calculated on the initial principal and the accumulated interest 
-                  from previous periods. It's often called "interest on interest" and is one of the most powerful 
-                  concepts in finance and investing.
-                </p>
-                <p>
-                  Our compound interest calculator helps you understand how your investments can grow exponentially 
-                  over time through the power of compounding. Whether you're planning for retirement, saving for 
-                  a house, or building wealth, this financial calculator provides accurate projections.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Lightbulb className="w-5 h-5 text-green-600" />
-                  Tips for Maximizing Growth
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="prose prose-sm text-gray-600">
-                <ul className="space-y-2">
-                  <li>• Start investing early to take advantage of time</li>
-                  <li>• Make regular monthly contributions to boost growth</li>
-                  <li>• Choose investments with higher compound frequencies</li>
-                  <li>• Reinvest dividends and interest payments</li>
-                  <li>• Stay consistent with your investment strategy</li>
-                  <li>• Use tax-advantaged accounts when possible</li>
-                </ul>
-              </CardContent>
-            </Card>
+        {/* Calculator Results */}
+        <div className="bg-indigo-600 text-white p-6 sm:p-8 rounded-lg shadow-xl text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Your Investment Growth:</h2>
+          <div className="flex flex-col sm:flex-row justify-around items-center gap-4 sm:gap-8">
+            <div className="bg-white text-indigo-800 p-4 rounded-lg shadow-md flex-1 w-full sm:w-auto">
+              <p className="text-sm font-medium opacity-90 mb-1">Future Value</p>
+              <p className="text-3xl sm:text-4xl font-extrabold">
+                {formatCurrency(futureValue)}
+              </p>
+            </div>
+            <div className="bg-white text-indigo-800 p-4 rounded-lg shadow-md flex-1 w-full sm:w-auto">
+              <p className="text-sm font-medium opacity-90 mb-1">Total Interest Earned</p>
+              <p className="text-3xl sm:text-4xl font-extrabold">
+                {formatCurrency(totalInterest)}
+              </p>
+            </div>
           </div>
-
-          {/* FAQ Section */}
-          <Card className="shadow-xl border-0 bg-white/80 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
-              <CardDescription>Common questions about compound interest and investment calculations</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">How does compound interest work?</h3>
-                  <p className="text-gray-600 text-sm">
-                    Compound interest works by adding earned interest back to the principal, so future interest 
-                    calculations are based on both the original amount and previously earned interest.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">What's the difference between simple and compound interest?</h3>
-                  <p className="text-gray-600 text-sm">
-                    Simple interest is calculated only on the principal amount, while compound interest is calculated 
-                    on both principal and accumulated interest from previous periods.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">How often should interest compound?</h3>
-                  <p className="text-gray-600 text-sm">
-                    More frequent compounding (daily vs. annually) results in higher returns. However, the difference 
-                    becomes less significant as the frequency increases beyond monthly compounding.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Is this calculator accurate for all investments?</h3>
-                  <p className="text-gray-600 text-sm">
-                    This calculator provides estimates based on consistent returns. Real investments may have variable 
-                    returns, so use this as a planning tool rather than a guarantee.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Keywords Section */}
-          <Card className="shadow-lg border-0 bg-gradient-to-r from-blue-50 to-green-50">
-            <CardContent className="p-8">
-              <h2 className="text-xl font-semibold mb-4 text-center">Related Financial Calculators & Tools</h2>
-              <div className="flex flex-wrap justify-center gap-2 text-sm">
-                {[
-                  'Investment Calculator', 'Retirement Calculator', 'Savings Calculator', 'Interest Calculator',
-                  'Financial Planning Tool', 'ROI Calculator', 'Future Value Calculator', 'Present Value Calculator',
-                  'Annuity Calculator', 'Mortgage Calculator', 'Loan Calculator', 'Budget Calculator',
-                  'Tax Calculator', 'Inflation Calculator', 'Portfolio Calculator', 'Dividend Calculator'
-                ].map((keyword, index) => (
-                  <span key={index} className="px-3 py-1 bg-white rounded-full text-gray-600 shadow-sm">
-                    {keyword}
-                  </span>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
+
+        {/* More SEO Content & FAQs */}
+        <section className="mt-8 text-gray-700 text-lg">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 mt-6">Why Use a Compound Interest Calculator?</h2>
+          <ul className="list-disc pl-5 mb-4 space-y-2">
+            <li><strong className="font-semibold">Financial Planning:</strong> Plan for long-term goals like retirement, education, or a down payment.</li>
+            <li><strong className="font-semibold">Investment Analysis:</strong> Compare different investment scenarios by adjusting rates and timeframes.</li>
+            <li><strong className="font-semibold">Savings Growth:</strong> See how consistent savings, even small amounts, can grow significantly over decades.</li>
+            <li><strong className="font-semibold">Debt Management:</strong> Understand how compounding can work against you with loans, highlighting the importance of paying off high-interest debt.</li>
+          </ul>
+
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 mt-6">How to Use This Calculator</h2>
+          <p className="mb-4">
+            Simply input your desired values into the fields above:
+          </p>
+          <ul className="list-disc pl-5 mb-4 space-y-2">
+            <li><strong className="font-semibold">Initial Investment (Principal):</strong> The starting amount you invest.</li>
+            <li><strong className="font-semibold">Annual Interest Rate (%):</strong> The percentage rate your investment will earn annually.</li>
+            <li><strong className="font-semibold">Time Period (Years):</strong> How many years you plan to keep your money invested.</li>
+            <li><strong className="font-semibold">Compounding Frequency:</strong> How often the interest is added to your principal (e.g., monthly, quarterly, annually).</li>
+          </ul>
+          <p className="mb-4">
+            Our calculator will instantly display the <strong className="font-semibold text-purple-600">future value</strong> of your investment and the <strong className="font-semibold text-indigo-600">total interest earned</strong>, giving you a clear picture of your potential returns.
+          </p>
+
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 mt-6">Frequently Asked Questions (FAQs)</h2>
+          <div className="space-y-4">
+            <div className="bg-gray-50 p-4 rounded-md shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">Q: How does compounding frequency affect my returns?</h3>
+              <p>A: The more frequently your interest compounds (e.g., daily vs. annually), the faster your money will grow, as interest is added and starts earning interest more often. This is a crucial factor in maximizing your <strong className="font-semibold">investment growth</strong>.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-md shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">Q: Is this calculator suitable for mortgage or loan calculations?</h3>
+              <p>A: While the principle of compounding applies to loans, this calculator is primarily designed for investment growth. Loan interest calculations often involve different amortization schedules and fees. For specific loan calculations, a dedicated <strong className="font-semibold">loan calculator</strong> would be more appropriate.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-md shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">Q: What is a good interest rate for compound interest?</h3>
+              <p>A: A "good" interest rate depends on the type of investment and associated risks. High-yield savings accounts might offer 4-5%, while stock market investments could average 7-10% historically, but with higher volatility. Always consider your risk tolerance and <strong className="font-semibold">financial goals</strong> when evaluating rates.</p>
+            </div>
+          </div>
+        </section>
+
+        <footer className="text-center text-gray-500 text-sm mt-10 pt-6 border-t border-gray-200">
+          <p>&copy; {new Date().getFullYear()} Compound Interest Calculator. All rights reserved.</p>
+          <p className="mt-2">Disclaimer: This calculator is for educational purposes only and should not be considered financial advice. Please consult with a financial professional for personalized guidance.</p>
+        </footer>
       </div>
     </div>
   );
