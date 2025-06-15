@@ -54,20 +54,6 @@ export const CompoundInterestCalculator: React.FC = () => {
           Compound Interest Calculator: Grow Your Wealth
         </h1>
 
-        {/* SEO Content */}
-        <section className="mb-8 text-gray-700 text-lg">
-          <p className="mb-4">
-            Welcome to our free online <strong className="font-semibold text-indigo-600">Compound Interest Calculator</strong>. This powerful tool helps you visualize how your investments can grow over time, thanks to the magic of <strong className="font-semibold text-purple-600">compounding</strong>. Whether you're planning for retirement, saving for a down payment, or just curious about financial growth, understanding compound interest is key to smart <strong className="font-semibold text-teal-600">financial planning</strong> and <strong className="font-semibold text-pink-600">wealth accumulation</strong>.
-          </p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 mt-6">What is Compound Interest?</h2>
-          <p className="mb-4">
-            <strong className="font-semibold">Compound interest</strong> is interest on interest. It's the process where the interest you earn on your initial principal (the amount you invest) is reinvested, and then that reinvested interest also starts earning interest. This creates an accelerating growth effect, often described as the "eighth wonder of the world" by Albert Einstein. Unlike simple interest, which is calculated only on the principal amount, compound interest allows your money to grow exponentially over time.
-          </p>
-          <p className="mb-4">
-            This calculator is an essential <strong className="font-semibold text-green-600">investment tool</strong> for anyone looking to understand the potential returns on their <strong className="font-semibold text-blue-600">savings</strong> or <strong className="font-semibold text-red-600">investment strategies</strong>.
-          </p>
-        </section>
-
         {/* Calculator Inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 bg-gray-50 p-6 rounded-lg shadow-inner border border-gray-100">
           <div className="flex flex-col">
@@ -137,7 +123,7 @@ export const CompoundInterestCalculator: React.FC = () => {
         </div>
 
         {/* Calculator Results */}
-        <div className="bg-indigo-600 text-white p-6 sm:p-8 rounded-lg shadow-xl text-center">
+        <div className="bg-indigo-600 text-white p-6 sm:p-8 rounded-lg shadow-xl text-center mb-8"> {/* Added mb-8 for spacing before SEO content */}
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Your Investment Growth:</h2>
           <div className="flex flex-col sm:flex-row justify-around items-center gap-4 sm:gap-8">
             <div className="bg-white text-indigo-800 p-4 rounded-lg shadow-md flex-1 w-full sm:w-auto">
@@ -154,6 +140,20 @@ export const CompoundInterestCalculator: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* SEO Content */}
+        <section className="mb-8 text-gray-700 text-lg">
+          <p className="mb-4">
+            Welcome to our free online <strong className="font-semibold text-indigo-600">Compound Interest Calculator</strong>. This powerful tool helps you visualize how your investments can grow over time, thanks to the magic of <strong className="font-semibold text-purple-600">compounding</strong>. Whether you're planning for retirement, saving for a down payment, or just curious about financial growth, understanding compound interest is key to smart <strong className="font-semibold text-teal-600">financial planning</strong> and <strong className="font-semibold text-pink-600">wealth accumulation</strong>.
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 mt-6">What is Compound Interest?</h2>
+          <p className="mb-4">
+            <strong className="font-semibold">Compound interest</strong> is interest on interest. It's the process where the interest you earn on your initial principal (the amount you invest) is reinvested, and then that reinvested interest also starts earning interest. This creates an accelerating growth effect, often described as the "eighth wonder of the world" by Albert Einstein. Unlike simple interest, which is calculated only on the principal amount, compound interest allows your money to grow exponentially over time.
+          </p>
+          <p className="mb-4">
+            This calculator is an essential <strong className="font-semibold text-green-600">investment tool</strong> for anyone looking to understand the potential returns on their <strong className="font-semibold text-blue-600">savings</strong> or <strong className="font-semibold text-red-600">investment strategies</strong>.
+          </p>
+        </section>
 
         {/* More SEO Content & FAQs */}
         <section className="mt-8 text-gray-700 text-lg">
