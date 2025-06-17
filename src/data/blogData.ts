@@ -52834,7 +52834,6 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   }
-
 ];
 
 // Helper functions
