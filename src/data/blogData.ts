@@ -34590,6 +34590,3021 @@ export const blogPosts: BlogPost[] = [
         content: "Remember that prevention is always better than cure when it comes to financial fraud. By implementing robust security practices, staying informed about emerging threats, and educating our family and community, we can create a safer financial environment for everyone. Your vigilance not only protects your own finances but also helps in the broader fight against financial crime in India. Stay alert, stay informed, and always verify before you trust."
       }
     ]
+  },
+  
+  {
+    id: 173,
+    title: "PM Fasal Bima Yojana Online Apply 2024: किसानों के लिए संपूर्ण गाइड - फसल बीमा योजना आवेदन प्रक्रिया",
+    slug: "pm-fasal-bima-yojana-online-apply-complete-guide-farmers",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "प्रधानमंत्री फसल बीमा योजना 2024 में ऑनलाइन आवेदन कैसे करें? जानें पूरी प्रक्रिया, आवश्यक दस्तावेज, पात्रता मानदंड और फसल बीमा के फायदे।",
+    categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री फसल बीमा योजना (PM Fasal Bima Yojana) भारत सरकार की एक महत्वपूर्ण योजना है जो किसानों को प्राकृतिक आपदाओं से होने वाले नुकसान से बचाने के लिए शुरू की गई है। इस योजना के तहत किसानों को फसल बीमा कवरेज प्रदान किया जाता है, जिससे वे मौसम की मार, बाढ़, सूखा, कीट-पतंगों के हमले से अपनी फसल को सुरक्षित रख सकते हैं।"
+      },
+      {
+        type: "heading",
+        content: "PM Fasal Bima Yojana क्या है और इसके मुख्य उद्देश्य"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री फसल बीमा योजना का मुख्य उद्देश्य किसानों की आर्थिक स्थिति को मजबूत बनाना और उन्हें प्राकृतिक आपदाओं से होने वाले नुकसान की भरपाई करना है। यह योजना 2016 में शुरू की गई थी और तब से लाखों किसानों को इसका फायदा मिल रहा है।"
+      },
+      {
+        type: "list",
+        items: [
+          "खरीफ सीजन के लिए किसान को केवल 2% प्रीमियम देना होता है",
+          "रबी सीजन के लिए 1.5% प्रीमियम दर निर्धारित है",
+          "वार्षिक वाणिज्यिक और बागवानी फसलों के लिए 5% प्रीमियम",
+          "बाकी प्रीमियम राशि सरकार द्वारा सब्सिडी के रूप में दी जाती है",
+          "तुरंत क्लेम सेटलमेंट की सुविधा उपलब्ध है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PM Fasal Bima Yojana के लिए पात्रता मानदंड"
+      },
+      {
+        type: "paragraph",
+        content: "इस योजना का लाभ उठाने के लिए किसानों को निम्नलिखित पात्रता मानदंडों को पूरा करना होगा:"
+      },
+      {
+        type: "list",
+        items: [
+          "आवेदक भारत का नागरिक होना चाहिए",
+          "वह व्यक्ति किसान होना चाहिए जो खेती का काम करता है",
+          "स्वयं की जमीन हो या किराए पर ली गई जमीन दोनों के लिए आवेदन कर सकते हैं",
+          "पहले से कोई अन्य फसल बीमा योजना का लाभ न ले रहा हो",
+          "आवेदन फसल बुआई के 10 दिन के अंदर करना जरूरी है",
+          "बैंक खाता आधार कार्ड से लिंक होना चाहिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज - PM Fasal Bima Yojana Apply करने के लिए"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड (Aadhaar Card) - अनिवार्य दस्तावेज",
+          "राशन कार्ड या वोटर ID कार्ड",
+          "बैंक पासबुक की फोटोकॉपी",
+          "खेत का खसरा नंबर और खतौनी",
+          "जमीन के कागजात (खुद की जमीन के लिए)",
+          "बटाईदारी की रसीद (किराए की जमीन के लिए)",
+          "फसल बुआई का प्रमाण पत्र",
+          "पासपोर्ट साइज फोटो",
+          "मोबाइल नंबर"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PM Fasal Bima Yojana Online Apply कैसे करें - Step by Step प्रक्रिया"
+      },
+      {
+        type: "subheading",
+        content: "ऑनलाइन आवेदन की पूरी प्रक्रिया:"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले PM Fasal Bima Yojana की आधिकारिक वेबसाइट pmfby.gov.in पर जाएं",
+          "होम पेज पर 'Farmer Corner' सेक्शन में जाकर 'Guest Farmer' पर क्लिक करें",
+          "नए रजिस्ट्रेशन के लिए अपना मोबाइल नंबर, नाम और राज्य का चुनाव करें",
+          "OTP वेरिफिकेशन के बाद अपना पासवर्ड सेट करें",
+          "लॉगिन करने के बाद 'Apply for Crop Insurance' पर क्लिक करें",
+          "अपनी व्यक्तिगत जानकारी भरें (नाम, पिता का नाम, जन्म तिथि आदि)",
+          "बैंक डिटेल्स भरें और आधार नंबर वेरिफाई करें",
+          "फार्म की जानकारी भरें (राज्य, जिला, तहसील, गांव)",
+          "फसल का चुनाव करें और बुआई की तारीख डालें",
+          "बीमा राशि और प्रीमियम की जांच करें",
+          "आवश्यक दस्तावेज अपलोड करें",
+          "सभी जानकारी चेक करके Submit करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Offline आवेदन प्रक्रिया - बैंक और CSC के माध्यम से"
+      },
+      {
+        type: "paragraph",
+        content: "जो किसान ऑनलाइन आवेदन नहीं कर सकते, वे निम्नलिखित तरीकों से offline आवेदन कर सकते हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी बैंक शाखा में जाकर फसल बीमा का फॉर्म भरें",
+          "Common Service Center (CSC) की सहायता ले सकते हैं",
+          "कृषि विभाग के कार्यालय में भी आवेदन कर सकते हैं",
+          "बीमा कंपनी के एजेंट से संपर्क करें",
+          "सभी आवश्यक दस्तावेज साथ ले जाना जरूरी है",
+          "फॉर्म भरने के बाद प्रीमियम राशि जमा करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PM Fasal Bima Yojana के तहत कवर होने वाली फसलें"
+      },
+      {
+        type: "subheading",
+        content: "खरीफ फसलें:"
+      },
+      {
+        type: "list",
+        items: [
+          "धान (Rice)",
+          "मक्का (Maize)",
+          "ज्वार (Sorghum)",
+          "बाजरा (Pearl Millet)",
+          "गन्ना (Sugarcane)",
+          "कपास (Cotton)",
+          "अरहर (Pigeon Pea)",
+          "मूंग (Green Gram)",
+          "उड़द (Black Gram)"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "रबी फसलें:"
+      },
+      {
+        type: "list",
+        items: [
+          "गेहूं (Wheat)",
+          "जौ (Barley)",
+          "चना (Chickpea)",
+          "मसूर (Lentil)",
+          "मटर (Pea)",
+          "राई (Mustard)",
+          "सरसों (Mustard)",
+          "तिल (Sesame)",
+          "कुसुम (Safflower)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "प्रीमियम दरें और सब्सिडी की जानकारी"
+      },
+      {
+        type: "paragraph",
+        content: "PM Fasal Bima Yojana में प्रीमियम दरें बहुत ही किफायती रखी गई हैं। किसानों को केवल एक छोटा सा हिस्सा देना होता है:"
+      },
+      {
+        type: "list",
+        items: [
+          "खरीफ फसलों के लिए केवल 2% प्रीमियम दर",
+          "रबी फसलों के लिए 1.5% प्रीमियम दर",
+          "वाणिज्यिक और बागवानी फसलों के लिए 5% प्रीमियम",
+          "बाकी प्रीमियम राशि केंद्र और राज्य सरकार मिलकर देती है",
+          "अधिकतम प्रीमियम राशि की कोई सीमा नहीं है",
+          "पूरी बीमा राशि का क्लेम मिलता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "क्लेम सेटलमेंट की प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "फसल में नुकसान होने पर क्लेम के लिए निम्नलिखित प्रक्रिया अपनाएं:"
+      },
+      {
+        type: "list",
+        items: [
+          "फसल में नुकसान होने पर तुरंत बीमा कंपनी को सूचित करें",
+          "72 घंटे के अंदर Crop Loss Intimation देना जरूरी है",
+          "टोल फ्री नंबर 14447 पर कॉल करके रिपोर्ट करें",
+          "PMFBY Mobile App का उपयोग करके भी रिपोर्ट कर सकते हैं",
+          "नुकसान की फोटो और वीडियो बनाकर रखें",
+          "बीमा कंपनी का सर्वेयर खेत का निरीक्षण करेगा",
+          "Yield Data के आधार पर क्लेम की राशि तय होगी",
+          "डायरेक्ट बैंक ट्रांसफर के जरिए पैसा मिलेगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "मोबाइल एप्प के फायदे - PMFBY Crop Insurance App"
+      },
+      {
+        type: "paragraph",
+        content: "सरकार ने किसानों की सुविधा के लिए PMFBY Mobile App लॉन्च किया है जिसके फायदे हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "घर बैठे फसल बीमा के लिए आवेदन कर सकते हैं",
+          "अपनी पॉलिसी की स्थिति चेक कर सकते हैं",
+          "फसल नुकसान की रिपोर्ट कर सकते हैं",
+          "Weather Advisory की सुविधा मिलती है",
+          "Insurance Calculator का उपयोग कर सकते हैं",
+          "Nearest Insurance Company का पता लगा सकते हैं",
+          "Helpline Number की सुविधा मिलती है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सामान्य समस्याएं और समाधान"
+      },
+      {
+        type: "subheading",
+        content: "आवेदन संबंधी समस्याएं:"
+      },
+      {
+        type: "list",
+        items: [
+          "समस्या: OTP नहीं आ रहा - समाधान: नेटवर्क चेक करें या बाद में try करें",
+          "समस्या: आधार नंबर verify नहीं हो रहा - समाधान: UIDAI की वेबसाइट से आधार status चेक करें",
+          "समस्या: बैंक अकाउंट link नहीं हो रहा - समाधान: IFSC Code सही भरें",
+          "समस्या: Document upload नहीं हो रहे - समाधान: 2MB से कम size का फाइल अपलोड करें",
+          "समस्या: Payment fail हो रहा है - समाधान: Internet Banking या UPI से try करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "महत्वपूर्ण तारीखें और अंतिम तिथि"
+      },
+      {
+        type: "list",
+        items: [
+          "खरीफ सीजन: अप्रैल से जुलाई तक आवेदन कर सकते हैं",
+          "रबी सीजन: अक्टूबर से दिसंबर तक आवेदन की जा सकती है",
+          "फसल बुआई के 10 दिन के अंदर आवेदन जरूरी है",
+          "देर से आवेदन करने पर Late Fee लग सकती है",
+          "Cut-off Date के बाद आवेदन accept नहीं होता",
+          "Premium Payment भी समय पर करना जरूरी है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन नंबर और कस्टमर सपोर्ट"
+      },
+      {
+        type: "list",
+        items: [
+          "PMFBY Helpline: 14447 (टोल फ्री)",
+          "Email Support: support@pmfby.gov.in",
+          "Technical Support: 011-23382012",
+          "WhatsApp Support: 8700922729",
+          "Kisan Call Center: 1551",
+          "समय: सुबह 9 बजे से शाम 6 बजे तक"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री फसल बीमा योजना किसानों के लिए एक वरदान साबित हुई है। यह योजना न केवल फसल के नुकसान की भरपाई करती है बल्कि किसानों में आत्मविश्वास भी बढ़ाती है। कम प्रीमियम में बेहतर कवरेज और तुरंत क्लेम सेटलमेंट इस योजना की खासियत है। सभी पात्र किसानों को इस योजना का लाभ उठाना चाहिए और अपनी फसल को सुरक्षित रखना चाहिए।"
+      }
+    ]
+  },
+  {
+    id: 174,
+    title: "Free Gas Connection कैसे मिलेगा 2024: Ujjwala Yojana से फ्री गैस कनेक्शन पाने की पूरी जानकारी",
+    slug: "free-gas-connection-ujjwala-yojana-complete-guide",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Pradhan Mantri Ujjwala Yojana के तहत फ्री गैस कनेक्शन कैसे पाएं? जानें आवेदन प्रक्रिया, पात्रता, आवश्यक दस्तावेज और योजना के फायदे।",
+    categories: ["Government Schemes", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री उज्ज्वला योजना (Pradhan Mantri Ujjwala Yojana) भारत सरकार की एक महत्वपूर्ण योजना है जो गरीब परिवारों की महिलाओं को मुफ्त LPG गैस कनेक्शन प्रदान करती है। इस योजना का मुख्य उद्देश्य महिलाओं को स्वच्छ खाना पकाने के लिए ईंधन उपलब्ध कराना और उनके स्वास्थ्य की सुरक्षा करना है।"
+      },
+      {
+        type: "heading",
+        content: "उज्ज्वला योजना क्या है और इसके फायदे"
+      },
+      {
+        type: "paragraph",
+        content: "उज्ज्वला योजना 2016 में शुरू की गई थी और अब तक करोड़ों महिलाओं को इसका फायदा मिल चुका है। इस योजना के तहत BPL परिवारों की महिलाओं को मुफ्त में LPG कनेक्शन दिया जाता है।"
+      },
+      {
+        type: "list",
+        items: [
+          "पूरी तरह से मुफ्त LPG कनेक्शन मिलता है",
+          "Security Deposit की जरूरत नहीं होती",
+          "Gas Stove और Regulator भी मुफ्त मिलता है",
+          "EMI की सुविधा भी उपलब्ध है",
+          "Online और Offline दोनों तरीकों से आवेदन कर सकते हैं",
+          "धुआं रहित चूल्हे से महिलाओं के स्वास्थ्य में सुधार",
+          "पर्यावरण की सुरक्षा में योगदान"
+        ]
+      },
+      {
+        type: "heading",
+        content: "उज्ज्वला योजना की पात्रता - कौन ले सकता है फायदा"
+      },
+      {
+        type: "list",
+        items: [
+          "आवेदक महिला होनी चाहिए और 18 साल से अधिक उम्र होनी चाहिए",
+          "BPL परिवार से होना जरूरी है",
+          "SECC-2011 में नाम होना चाहिए",
+          "पहले से कोई LPG कनेक्शन नहीं होना चाहिए",
+          "परिवार के किसी सदस्य के नाम कोई LPG कनेक्शन नहीं होना चाहिए",
+          "आधार कार्ड बैंक अकाउंट से लिंक होना चाहिए",
+          "BPL राशन कार्ड होना जरूरी है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज - Documents Required for Ujjwala Yojana"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड (अनिवार्य)",
+          "BPL राशन कार्ड",
+          "बैंक पासबुक",
+          "Address Proof (राशन कार्ड, वोटर ID, बिजली बिल)",
+          "पासपोर्ट साइज फोटो",
+          "Mobile Number (OTP के लिए)",
+          "SECC-2011 की लिस्ट में नाम का प्रमाण",
+          "Jan Dhan Bank Account (अगर है तो)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Ujjwala Yojana Online Apply कैसे करें - Step by Step"
+      },
+      {
+        type: "subheading",
+        content: "ऑनलाइन आवेदन की पूरी प्रक्रिया:"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले pmuy.gov.in (आधिकारिक वेबसाइट) पर जाएं",
+          "होम पेज पर 'Apply for New Connection' पर क्लिक करें",
+          "अपना राज्य और Oil Marketing Company का चुनाव करें (IOC, BPCL, HPCL)",
+          "'Download Form' पर क्लिक करके KYC Form डाउनलोड करें",
+          "Form को सही तरीके से भरें (हिंदी या अंग्रेजी में)",
+          "सभी जरूरी दस्तावेज attach करें",
+          "Distributor की सूची देखकर नजदीकी distributor चुनें",
+          "भरा हुआ फॉर्म distributor के पास जमा करें",
+          "Verification के बाद connection मिल जाएगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Offline आवेदन प्रक्रिया - Direct डिस्ट्रिब्यूटर से"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी LPG Distributor (HP, Bharat Gas, Indane) के पास जाएं",
+          "उज्ज्वला योजना का Application Form मांगें",
+          "Form को सही तरीके से भरें",
+          "सभी Documents की फोटोकॉपी attach करें",
+          "Distributor को form submit करें",
+          "Receipt जरूर ले लें",
+          "Verification के लिए officer आपके घर आएगा",
+          "10-15 दिन में connection मिल जाएगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "उज्ज्वला योजना 2.0 की नई सुविधाएं"
+      },
+      {
+        type: "paragraph",
+        content: "सरकार ने उज्ज्वला योजना का दूसरा चरण भी शुरू किया है जिसमें नई सुविधाएं जोड़ी गई हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "Migration Certificate की सुविधा मिली है",
+          "Safety Training और Awareness Program",
+          "अब SC/ST और OBC categories भी शामिल हैं",
+          "Pradhan Mantri Awas Yojana के beneficiaries को भी मिलेगा",
+          "Tea Garden और Forest में रहने वाले लोग भी eligible हैं",
+          "Islands और River Island के निवासी भी apply कर सकते हैं",
+          "Safety kit भी मुफ्त में मिलती है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवेदन की स्थिति कैसे चेक करें - Application Status"
+      },
+      {
+        type: "list",
+        items: [
+          "PMUY की official website pmuy.gov.in पर जाएं",
+          "'Track Your Application' section में जाएं",
+          "Application Number या Registration Number डालें",
+          "Mobile Number भी verify करना होगा",
+          "'Submit' पर click करें",
+          "आपकी application का status दिख जाएगा",
+          "SMS के जरिए भी updates मिलती रहती हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "गैस कनेक्शन मिलने के बाद क्या करें"
+      },
+      {
+        type: "subheading",
+        content: "Safety और Maintenance Tips:"
+      },
+      {
+        type: "list",
+        items: [
+          "Gas cylinder को हमेशा खड़ा (upright) रखें",
+          "किसी भी leak की smell आने पर तुरंत गैस बंद करें",
+          "Regular servicing कराते रहें",
+          "Rubber tube को समय-समय पर change करें",
+          "Safety training जरूर लें",
+          "Emergency numbers को याद रखें",
+          "Fire extinguisher का इस्तेमाल सीखें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Refill Booking और Subsidy की जानकारी"
+      },
+      {
+        type: "list",
+        items: [
+          "IVRS Number (HP: 2233, Bharat Gas: 2244, Indane: 2255) से book करें",
+          "Mobile app से भी refill book कर सकते हैं",
+          "Online payment की सुविधा है",
+          "Subsidy amount directly bank account में आती है",
+          "9 cylinder तक subsidy मिलती है per year",
+          "DBT (Direct Benefit Transfer) के जरिए पैसा मिलता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "समस्या निवारण - Common Problems और Solutions"
+      },
+      {
+        type: "subheading",
+        content: "आम समस्याएं:"
+      },
+      {
+        type: "list",
+        items: [
+          "समस्या: BPL list में नाम नहीं है - Solution: Gram Panchayat से verification कराएं",
+          "समस्या: Documents reject हो रहे हैं - Solution: सभी papers clearly visible हों",
+          "समस्या: Distributor cooperation नहीं कर रहा - Solution: District Collector से complaint करें",
+          "समस्या: Connection delay हो रहा है - Solution: Helpline number पर call करें",
+          "समस्या: KYC update नहीं हो रहा - Solution: Aadhaar center जाकर update कराएं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "राज्यवार implementation और statistics"
+      },
+      {
+        type: "paragraph",
+        content: "उज्ज्वला योजना देश के सभी राज्यों में सफलतापूर्वक चल रही है। अब तक 9 करोड़ से अधिक महिलाओं को इसका फायदा मिल चुका है।"
+      },
+      {
+        type: "list",
+        items: [
+          "उत्तर प्रदेश: सबसे ज्यादा connections distributed हुए हैं",
+          "बिहार: Rural areas में 95% coverage मिल गया है",
+          "मध्य प्रदेश: Tribal areas में special focus",
+          "राजस्थान: Desert areas में भी पहुंच गई योजना",
+          "पश्चिम बंगाल: Islands में भी connections दिए गए हैं",
+          "असम: Tea garden workers को विशेष लाभ मिला है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन नंबर और कस्टमर केयर"
+      },
+      {
+        type: "list",
+        items: [
+          "उज्ज्वला योजना हेल्पलाइन: 1906",
+          "HP Gas: 1906",
+          "Bharat Gas: 1906",
+          "Indane Gas: 1906",
+          "Email: info@pmuy.gov.in",
+          "समय: 24x7 उपलब्ध",
+          "Multi-language support available"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री उज्ज्वला योजना महिला सशक्तिकरण और स्वास्थ्य सुधार की दिशा में एक क्रांतिकारी कदम है। इस योजना ने न केवल गरीब परिवारों को स्वच्छ ईंधन उपलब्ध कराया है बल्कि पर्यावरण संरक्षण में भी योगदान दिया है। सभी पात्र महिलाओं को इस योजना का लाभ उठाना चाहिए और अपने जीवन स्तर को बेहतर बनाना चाहिए।"
+      }
+    ]
+  },
+  {
+    id: 175,
+    title: "PM Kisan Credit Card Apply Online 2024: किसान क्रेडिट कार्ड के लिए आवेदन कैसे करें - संपूर्ण गाइड",
+    slug: "pm-kisan-credit-card-apply-online-complete-guide",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "PM Kisan Credit Card के लिए online आवेदन कैसे करें? जानें पात्रता, benefits, interest rates, और apply करने की पूरी process step by step।",
+    categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री किसान क्रेडिट कार्ड (PM Kisan Credit Card) योजना भारतीय किसानों के लिए एक महत्वपूर्ण financial tool है जो कृषि और संबंधित गतिविधियों के लिए credit सुविधा प्रदान करता है। यह scheme किसानों को बेहतर farming के लिए आसान loan और कम interest rates पर पैसा उपलब्ध कराती है।"
+      },
+      {
+        type: "heading",
+        content: "PM Kisan Credit Card क्या है और इसके फायदे"
+      },
+      {
+        type: "paragraph",
+        content: "किसान क्रेडिट कार्ड (KCC) एक credit facility है जो किसानों को crop production, harvesting, marketing और अन्य agriculture related expenses के लिए पैसा उपलब्ध कराती है। यह 1998 में शुरू की गई थी और अब PM Kisan योजना के साथ जुड़कर और भी बेहतर हो गई है।"
+      },
+      {
+        type: "list",
+        items: [
+          "कम interest rate (7% per annum) पर loan मिलता है",
+          "3 लाख रुपए तक बिना गारंटी के loan",
+          "Flexible repayment options उपलब्ध हैं",
+          "Crop insurance की automatic coverage",
+          "ATM और POS की सुविधा मिलती है",
+          "Online banking और mobile banking की सुविधा",
+          "Emergency के समय instant cash withdrawal",
+          "Personal accident insurance cover भी मिलता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PM Kisan Credit Card की पात्रता - Eligibility Criteria"
+      },
+      {
+        type: "list",
+        items: [
+          "आवेदक भारत का नागरिक होना चाहिए",
+          "18 से 75 साल की उम्र होनी चाहिए",
+          "खुद की जमीन होनी चाहिए या बटाईदारी करते हों",
+          "PM Kisan योजना का beneficiary होना जरूरी है",
+          "कृषि या संबंधित काम करते हों",
+          "Good credit history होनी चाहिए",
+          "आधार कार्ड bank account से linked होना चाहिए",
+          "सभी KYC documents complete होने चाहिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज - Required Documents"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड (Aadhaar Card) - मुख्य document",
+          "PAN Card (अगर उपलब्ध हो)",
+          "Land ownership documents (जमीन के कागजात)",
+          "Khatauni/Khesra की नकल",
+          "Bank passbook और bank statements",
+          "PM Kisan registration certificate",
+          "Passport size photographs",
+          "Address proof (राशन कार्ड, वोटर ID, utility bills)",
+          "Mobile number (registered with Aadhaar)",
+          "किसी co-applicant के documents (अगर जरूरत हो)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PM Kisan Credit Card के लिए Online Apply कैसे करें"
+      },
+      {
+        type: "subheading",
+        content: "Step by Step Online Application Process:"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले अपने bank की official website पर जाएं",
+          "Agriculture section में 'Kisan Credit Card' option find करें",
+          "'Apply Online' पर click करें",
+          "अपना mobile number और OTP verification करें",
+          "Personal details भरें (Name, Father's name, DOB)",
+          "Address details और Aadhaar number डालें",
+          "Land details भरें (खेत का area, crop type)",
+          "PM Kisan registration number enter करें",
+          "Bank account details provide करें",
+          "Required documents upload करें",
+          "Application form review करके submit करें",
+          "Application number note कर लें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Bank Branch के माध्यम से Offline Apply करना"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी bank branch में जाएं जहां आपका account है",
+          "KCC application form मांगें",
+          "Form को सही तरीके से भरें",
+          "सभी required documents attach करें",
+          "Bank officer के साथ form review करें",
+          "Form submit करने के बाद receipt ले लें",
+          "Field verification के लिए bank officer आएगा",
+          "Document verification के बाद approval मिलेगा",
+          "7-15 दिन में KCC issue हो जाएगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PM Kisan Credit Card Interest Rates और Charges"
+      },
+      {
+        type: "subheading",
+        content: "Interest Rates (2024):"
+      },
+      {
+        type: "list",
+        items: [
+          "3 लाख रुपए तक: 7% per annum (subsidy के साथ 4%)",
+          "3 लाख से ऊपर: Bank के अनुसार variable rate",
+          "Prompt repayment पर 3% subsidy मिलती है",
+          "Processing fee: Usually NIL या nominal",
+          "Annual maintenance charges: बहुत कम या free",
+          "Late payment charges: 2% extra interest",
+          "Renewal charges: Generally free"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Credit Limit कैसे तय होती है"
+      },
+      {
+        type: "paragraph",
+        content: "KCC की credit limit निम्नलिखित factors के आधार पर तय होती है:"
+      },
+      {
+        type: "list",
+        items: [
+          "Land holding का size (एकड़ में)",
+          "Crop type और उसकी market value",
+          "Local crop pattern और seasonality",
+          "Farmer की repayment capacity",
+          "Previous credit history",
+          "PM Kisan installments की regularity",
+          "Insurance coverage और risk assessment",
+          "Bank के internal norms के अनुसार"
+        ]
+      },
+      {
+        type: "heading",
+        content: "KCC का Use कहां कर सकते हैं"
+      },
+      {
+        type: "subheading",
+        content: "Permitted Uses:"
+      },
+      {
+        type: "list",
+        items: [
+          "Seeds, fertilizers, pesticides की खरीद",
+          "Agricultural equipment और machinery",
+          "Farm maintenance और development",
+          "Harvesting और post-harvest expenses",
+          "Marketing और transportation costs",
+          "Working capital for crop production",
+          "Dairy, poultry, fishery activities",
+          "Storage और warehouse related expenses"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Repayment Schedule और Terms"
+      },
+      {
+        type: "list",
+        items: [
+          "Crop cycle के अनुसार repayment schedule",
+          "Usually 12 months का repayment period",
+          "Harvest के बाद principal amount चुकाना होता है",
+          "Interest monthly या quarterly pay कर सकते हैं",
+          "Renewal annually करना होता है",
+          "Good repayment history पर limit बढ़ सकती है",
+          "Default की स्थिति में legal action हो सकता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Mobile Banking और Digital Services"
+      },
+      {
+        type: "list",
+        items: [
+          "Mobile app के जरिए balance check कर सकते हैं",
+          "UPI payments कर सकते हैं",
+          "USSD code (*99#) से banking services",
+          "ATM से cash withdrawal की सुविधा",
+          "POS machine से merchant payments",
+          "Online fund transfer कर सकते हैं",
+          "E-statements और transaction history देख सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Application Status कैसे Track करें"
+      },
+      {
+        type: "list",
+        items: [
+          "Bank की website पर 'Track Application' section में जाएं",
+          "Application reference number डालें",
+          "Mobile number verify करें",
+          "Current status check कर सकते हैं",
+          "SMS alerts भी मिलते रहते हैं",
+          "Bank के customer care से भी पूछ सकते हैं",
+          "Branch में जाकर personally भी check कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Problems और Solutions"
+      },
+      {
+        type: "subheading",
+        content: "आम समस्याएं और समाधान:"
+      },
+      {
+        type: "list",
+        items: [
+          "समस्या: PM Kisan number verify नहीं हो रहा - Solution: DBT portal पर status check करें",
+          "समस्या: Land documents accept नहीं हो रहे - Solution: Revenue department से updated records लें",
+          "समस्या: Credit limit कम मिली है - Solution: Additional documents submit करें",
+          "समस्या: Application reject हो गई - Solution: Reason पूछकर fresh application करें",
+          "समस्या: Card activate नहीं हो रहा - Solution: Branch में जाकर PIN generation करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Insurance Benefits with KCC"
+      },
+      {
+        type: "list",
+        items: [
+          "Personal Accident Insurance Cover: 50,000 रुपए तक",
+          "Permanent Disability Cover: 50,000 रुपए",
+          "Crop Insurance automatic linked (PMFBY)",
+          "Asset insurance भी available है",
+          "Premium cost बहुत कम होती है",
+          "Natural death की स्थिति में cover मिलता है",
+          "Claim settlement process आसान है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Renewal Process - KCC Renewal कैसे करें"
+      },
+      {
+        type: "list",
+        items: [
+          "Annual renewal जरूरी होती है",
+          "Previous year की repayment clear करनी होती है",
+          "Updated land documents submit करने होते हैं",
+          "Fresh crop plan provide करना होता है",
+          "Bank officer field visit करता है",
+          "Good track record पर auto-renewal भी मिलती है",
+          "Renewal fees बहुत कम या free होती है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन नंबर और Support"
+      },
+      {
+        type: "list",
+        items: [
+          "PM Kisan Helpline: 155261",
+          "Banking Helpline: अपने bank के customer care numbers",
+          "Kisan Call Center: 1551",
+          "DBT Agriculture Portal Support: dbtagriculture.nic.in",
+          "Email Support: pmkisan-ict@gov.in",
+          "समय: सुबह 9 बजे से शाम 6 बजे तक"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "PM Kisan Credit Card scheme किसानों के लिए एक वरदान है जो उन्हें आसान terms पर credit provide करती है। इस scheme से किसान अपनी farming activities को बेहतर बना सकते हैं और आर्थिक स्थिति में सुधार ला सकते हैं। सभी eligible किसानों को इस योजना का लाभ उठाना चाहिए और अपनी कृषि productivity बढ़ानी चाहिए।"
+      }
+    ]
+  },
+  {
+    id: 176,
+    title: "New Ration Card Online Apply 2024: नया राशन कार्ड कैसे बनवाएं - Complete Guide हिंदी में",
+    slug: "new-ration-card-online-apply-complete-guide-hindi",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "New Ration Card के लिए online apply कैसे करें? जानें complete process, required documents, eligibility criteria और benefits step by step।",
+    categories: ["Government Schemes", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "राशन कार्ड (Ration Card) भारत में एक महत्वपूर्ण document है जो Public Distribution System (PDS) के तहत subsidized food grains प्राप्त करने के लिए जरूरी है। यह card न केवल सब्सिडी वाला राशन दिलाता है बल्कि identity proof और address proof के रूप में भी काम आता है।"
+      },
+      {
+        type: "heading",
+        content: "राशन कार्ड के प्रकार - Types of Ration Cards"
+      },
+      {
+        type: "paragraph",
+        content: "भारत में मुख्यतः तीन प्रकार के राशन कार्ड जारी किए जाते हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "APL (Above Poverty Line) - गुलाबी रंग का कार्ड गरीबी रेखा से ऊपर के परिवारों के लिए",
+          "BPL (Below Poverty Line) - लाल रंग का कार्ड गरीबी रेखा से नीचे के परिवारों के लिए",
+          "AAY (Antyodaya Anna Yojana) - पीला रंग का कार्ड सबसे गरीब परिवारों के लिए",
+          "PHH (Priority Household) - नीला रंग का कार्ड प्राथमिकता वाले परिवारों के लिए",
+          "NFSA (National Food Security Act) - नया categorization system"
+        ]
+      },
+      {
+        type: "heading",
+        content: "राशन कार्ड की पात्रता - Eligibility Criteria"
+      },
+      {
+        type: "list",
+        items: [
+          "आवेदक भारत का स्थायी निवासी होना चाहिए",
+          "परिवार का मुखिया 18 साल से अधिक उम्र का होना चाहिए",
+          "पहले से कोई राशन कार्ड नहीं होना चाहिए",
+          "Annual income certificate जरूरी है",
+          "Same state में 6 महीने से continuous निवास प्रमाण",
+          "Valid address proof होना जरूरी है",
+          "Family composition की proper details होनी चाहिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज - Required Documents List"
+      },
+      {
+        type: "subheading",
+        content: "Identity Proof:"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड (सभी family members का)",
+          "Voter ID Card",
+          "Passport (अगर उपलब्ध हो)",
+          "Driving License",
+          "PAN Card",
+          "School/College ID (students के लिए)"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Address Proof:"
+      },
+      {
+        type: "list",
+        items: [
+          "बिजली का बिल (Electricity Bill)",
+          "पानी का बिल (Water Bill)",
+          "House Tax Receipt",
+          "Rent Agreement (किराएदारों के लिए)",
+          "Bank Passbook",
+          "Telephone Bill"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Income Proof:"
+      },
+      {
+        type: "list",
+        items: [
+          "Income Certificate (तहसीलदार से जारी)",
+          "Salary Certificate (सरकारी employees के लिए)",
+          "ITR (Income Tax Returns)",
+          "Bank statements (last 6 months)",
+          "Employment Certificate",
+          "Pension Certificate (pensioners के लिए)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Online Ration Card Apply कैसे करें - Step by Step Process"
+      },
+      {
+        type: "subheading",
+        content: "State के अनुसार अलग-अलग portals हैं, यहां general process है:"
+      },
+      {
+        type: "list",
+        items: [
+          "अपने राज्य के Food & Civil Supplies Department की website पर जाएं",
+          "'Apply for New Ration Card' option पर click करें",
+          "Registration करें (Mobile number और email के साथ)",
+          "OTP verification complete करें",
+          "Application form को carefully भरें",
+          "Family members की details add करें",
+          "Category selection करें (APL/BPL/AAY)",
+          "Address details properly भरें",
+          "Income details accurately provide करें",
+          "सभी required documents upload करें",
+          "Application preview करके submit करें",
+          "Application reference number save करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "राज्यवार Online Portal Links"
+      },
+      {
+        type: "subheading",
+        content: "Major States के portals:"
+      },
+      {
+        type: "list",
+        items: [
+          "उत्तर प्रदेश: fcs.up.gov.in",
+          "महाराष्ट्र: mahafood.gov.in",
+          "राजस्थान: food.raj.nic.in",
+          "गुजरात: digitalgujarat.gov.in",
+          "मध्य प्रदेश: samagra.gov.in",
+          "बिहार: sfc.bihar.gov.in",
+          "पंजाब: epos.punjab.gov.in",
+          "हरियाणा: hr.gov.in",
+          "दिल्ली: edistrict.delhigovt.nic.in"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Offline Application Process - Manual Method"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी Tehsil Office या Block Office में जाएं",
+          "Ration Card application form मांगें",
+          "Form को सही तरीके से भरें (हिंदी या English में)",
+          "सभी required documents attach करें",
+          "Passport size photographs लगाएं",
+          "Form के साथ application fee जमा करें",
+          "Receipt जरूर ले लें",
+          "Verification के लिए officer आपके घर आएगा",
+          "15-30 दिन में card मिल जाएगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Application Fees और Charges"
+      },
+      {
+        type: "list",
+        items: [
+          "APL Category: 15-25 रुपए (state के अनुसार)",
+          "BPL Category: 10-15 रुपए या free",
+          "AAY Category: Usually free",
+          "Duplicate card के लिए: 25-50 रुपए",
+          "Correction charges: 10-20 रुपए",
+          "Online application fee: Usually free या nominal"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Application Status Track कैसे करें"
+      },
+      {
+        type: "list",
+        items: [
+          "राज्य के official portal पर जाएं",
+          "'Track Application Status' section में जाएं",
+          "Application reference number enter करें",
+          "Mobile number verification करें",
+          "Current status check करें",
+          "SMS updates भी मिलते रहते हैं",
+          "Helpline number पर भी call कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Verification Process - सत्यापन प्रक्रिया"
+      },
+      {
+        type: "list",
+        items: [
+          "Application submit करने के बाद field verification होता है",
+          "Block/Tehsil का officer आपके घर आएगा",
+          "सभी family members की presence जरूरी है",
+          "Original documents की checking होगी",
+          "Neighborhood inquiry भी हो सकती है",
+          "Income और address verification होगा",
+          "Report submit करने के बाद approval मिलेगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "राशन कार्ड के फायदे - Benefits"
+      },
+      {
+        type: "subheading",
+        content: "PDS Benefits:"
+      },
+      {
+        type: "list",
+        items: [
+          "सब्सिडी दर पर चावल (3 रुपए प्रति किलो)",
+          "सब्सिडी दर पर गेहूं (2 रुपए प्रति किलो)",
+          "Sugar, Oil और अन्य commodities भी सब्सिडी पर",
+          "Monthly quota fixed होता है category के अनुसार",
+          "Fair Price Shop से convenient purchase"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Document Benefits:"
+      },
+      {
+        type: "list",
+        items: [
+          "Identity proof के रूप में use कर सकते हैं",
+          "Address proof के लिए भी valid है",
+          "Bank account opening में helpful",
+          "Passport apply करने में use होता है",
+          "Various government schemes के लिए जरूरी",
+          "LPG connection के लिए required",
+          "School admission में भी काम आता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Digital Ration Card - e-Ration Card"
+      },
+      {
+        type: "list",
+        items: [
+          "अब digital format में भी ration card मिलता है",
+          "Mobile app से download कर सकते हैं",
+          "QR code के साथ verification आसान है",
+          "Online transactions में use कर सकते हैं",
+          "Paper card की जरूरत कम हो गई है",
+          "National portability की सुविधा मिलती है",
+          "Real-time stock और transaction status देख सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Problems और Solutions"
+      },
+      {
+        type: "subheading",
+        content: "Application संबंधी समस्याएं:"
+      },
+      {
+        type: "list",
+        items: [
+          "समस्या: Documents reject हो रहे हैं - Solution: Clear scan/photo upload करें",
+          "समस्या: Income proof accept नहीं हो रहा - Solution: Latest certificate provide करें",
+          "समस्या: Address verification fail हो रहा - Solution: Multiple address proofs submit करें",
+          "समस्या: Duplicate application error - Solution: Previous application status check करें",
+          "समस्या: Category selection confusion - Solution: Income criteria properly check करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Ration Card Update और Correction"
+      },
+      {
+        type: "list",
+        items: [
+          "Name correction के लिए separate application करें",
+          "Address change करने के लिए new address proof जरूरी",
+          "Family member add/remove करने की facility है",
+          "Category change भी possible है income change के साथ",
+          "Photo update करवा सकते हैं",
+          "Mobile number भी update कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन नंबर और Customer Support"
+      },
+      {
+        type: "list",
+        items: [
+          "National Helpline: 1967 (24x7 available)",
+          "State helplines: अपने राज्य के अनुसार different numbers",
+          "Toll-free numbers: 1800 से शुरू होने वाले numbers",
+          "Email support: राज्य के portal पर available",
+          "WhatsApp support: कुछ states में available है",
+          "Live chat: Official websites पर facility"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "राशन कार्ड एक अत्यंत महत्वपूर्ण document है जो न केवल subsidized food grains प्रदान करता है बल्कि अन्य कई सरकारी योजनाओं का लाभ उठाने में भी सहायक है। Online application process को अपनाकर आप आसानी से घर बैठे ही नया राशन कार्ड बनवा सकते हैं। सभी जरूरी documents तैयार रखें और सही process follow करके अपना राशन कार्ड जल्दी बनवाएं।"
+      }
+    ]
+  },
+  {
+    id: 177,
+    title: "Scholarship Status Check Online 2024: स्कॉलरशिप स्टेटस कैसे चेक करें - All Portals Complete Guide",
+    slug: "scholarship-status-check-online-complete-guide-all-portals",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/5940844/pexels-photo-5940844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Scholarship status online कैसे check करें? NSP, State portals, Private scholarships की status track करने की complete process जानें।",
+    categories: ["Government Schemes", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "स्कॉलरशिप स्टेटस चेक करना students और उनके parents के लिए बहुत महत्वपूर्ण है। भारत में विभिन्न government और private scholarships उपलब्ध हैं जिनकी status को online track किया जा सकता है। इस comprehensive guide में आप सभी major scholarship portals पर अपना status check करना सीखेंगे।"
+      },
+      {
+        type: "heading",
+        content: "Major Scholarship Portals की List"
+      },
+      {
+        type: "paragraph",
+        content: "भारत में मुख्य scholarship portals जिनकी status check कर सकते हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "NSP (National Scholarship Portal) - scholarships.gov.in",
+          "State Scholarship Portals - राज्य के अनुसार अलग-अलग",
+          "UGC Scholarships - ugc.ac.in",
+          "AICTE Scholarships - aicte-india.org",
+          "Minority Scholarships - minorityaffairs.gov.in",
+          "SC/ST Scholarships - socialjustice.nic.in",
+          "PFMS Portal - pfms.nic.in",
+          "Private Scholarship Portals - विभिन्न organizations की websites"
+        ]
+      },
+      {
+        type: "heading",
+        content: "NSP Scholarship Status Check कैसे करें - Step by Step"
+      },
+      {
+        type: "subheading",
+        content: "National Scholarship Portal पर status check करने की process:"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले scholarships.gov.in पर जाएं",
+          "Homepage पर 'Student Login' section में जाएं",
+          "अपना Application ID और Password डालें",
+          "Captcha code correctly भरें",
+          "'Sign In' पर click करें",
+          "Dashboard पर 'My Application' section में जाएं",
+          "Application status और details देख सकते हैं",
+          "Payment status भी check कर सकते हैं",
+          "Documents verification status भी दिखेगी",
+          "Renewal status भी track कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PFMS Portal से Payment Status Check करना"
+      },
+      {
+        type: "list",
+        items: [
+          "PFMS Portal (pfms.nic.in) पर जाएं",
+          "'Know Your Payment' section पर click करें",
+          "Bank Account Number या Aadhaar Number enter करें",
+          "Captcha verify करें और submit करें",
+          "Payment details और transaction history मिलेगी",
+          "Scholarship amount की details देख सकते हैं",
+          "Payment date और UTR number भी मिलेगा",
+          "यह portal सभी DBT payments track करता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "State Scholarship Portals - राज्यवार Status Check"
+      },
+      {
+        type: "subheading",
+        content: "Major States के scholarship portals:"
+      },
+      {
+        type: "list",
+        items: [
+          "उत्तर प्रदेश: scholarship.up.gov.in",
+          "महाराष्ट्र: mahadbtmahait.gov.in",
+          "राजस्थान: sje.rajasthan.gov.in",
+          "मध्य प्रदेश: scholarshipportal.mp.nic.in",
+          "बिहार: medhasoft.bih.nic.in",
+          "पंजाब: punjabscholarships.gov.in",
+          "हरियाणा: haryanascbc.gov.in",
+          "गुजरात: digitalgujarat.gov.in",
+          "तमिलनाडु: tnscholarship.gov.in",
+          "कर्नाटक: ssakarnataka.gov.in"
+        ]
+      },
+      {
+        type: "heading",
+        content: "UGC Scholarship Status Check Process"
+      },
+      {
+        type: "list",
+        items: [
+          "UGC की official website ugc.ac.in पर जाएं",
+          "'Scholarships' section में जाएं",
+          "Concerned scholarship scheme select करें",
+          "Application portal link पर click करें",
+          "Login credentials के साथ sign in करें",
+          "Dashboard पर application status देखें",
+          "Selection list भी check कर सकते हैं",
+          "Fellowship amount की details भी मिलेगी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "AICTE Scholarship Status Check करना"
+      },
+      {
+        type: "list",
+        items: [
+          "AICTE Portal (aicte-india.org) पर visit करें",
+          "'Student Services' में जाकर 'Scholarships' पर click करें",
+          "Concerned scheme select करें",
+          "Student login portal पर जाएं",
+          "Registration number और password enter करें",
+          "Application dashboard access करें",
+          "Status, payment details सब check कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Minority Scholarship Status Check करना"
+      },
+      {
+        type: "list",
+        items: [
+          "Ministry of Minority Affairs portal पर जाएं",
+          "minorityaffairs.gov.in/scholarships पर click करें",
+          "Maulana Azad Education Foundation portal access करें",
+          "Student login section में जाएं",
+          "Application ID और password से login करें",
+          "Pre-matric और Post-matric दोनों schemes check कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "SC/ST Scholarship Status Check Process"
+      },
+      {
+        type: "list",
+        items: [
+          "Social Justice Department portal पर जाएं",
+          "socialjustice.nic.in पर scholarship section में जाएं",
+          "State wise portal access करें",
+          "Student credentials से login करें",
+          "Pre-matric, Post-matric और Top Class schemes की status check करें",
+          "DBT status भी verify कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Mobile App से Scholarship Status Check करना"
+      },
+      {
+        type: "list",
+        items: [
+          "NSP Mobile App download करें (Play Store से)",
+          "App install करके open करें",
+          "Student login option select करें",
+          "Credentials enter करके login करें",
+          "Dashboard से application status check करें",
+          "Push notifications भी मिलती रहती हैं",
+          "Offline mode में भी कुछ details देख सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Scholarship Status के Different Stages"
+      },
+      {
+        type: "subheading",
+        content: "Application processing के विभिन्न stages:"
+      },
+      {
+        type: "list",
+        items: [
+          "Application Submitted - आवेदन जमा हो गया है",
+          "Under Institute Verification - संस्थान में verification चल रहा है",
+          "Institute Verified - संस्थान द्वारा verify हो गया",
+          "Under State/Central Verification - राज्य/केंद्र में verification",
+          "State/Central Verified - राज्य/केंद्र द्वारा approved",
+          "Under Sanction - मंजूरी की प्रक्रिया चल रही है",
+          "Sanctioned - मंजूरी मिल गई",
+          "Under Payment Process - भुगतान की प्रक्रिया चल रही है",
+          "Payment Released - भुगतान हो गया"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Status में Delay के Common Reasons"
+      },
+      {
+        type: "list",
+        items: [
+          "Incomplete documents या wrong information",
+          "Bank account details incorrect या inactive",
+          "Aadhaar linking issues या verification pending",
+          "Institute verification delay",
+          "Income certificate या caste certificate issues",
+          "Duplicate applications या beneficiary conflict",
+          "PFMS registration या DBT onboarding pending",
+          "Technical issues या server problems"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Scholarship Rejected होने के Reasons"
+      },
+      {
+        type: "list",
+        items: [
+          "Income limit exceed कर गई है",
+          "Age criteria को meet नहीं कर रहे",
+          "Required documents missing या invalid हैं",
+          "Previous year के marks insufficient हैं",
+          "Category certificate invalid या expired है",
+          "Bank account Aadhaar से linked नहीं है",
+          "Duplicate application submit की गई है",
+          "Course या institution eligible नहीं है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Payment Delay होने पर क्या करें"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले PFMS portal पर payment status check करें",
+          "Bank account में sufficient balance और active status verify करें",
+          "Aadhaar-Bank linking status check करें",
+          "NSP portal पर complaint/grievance submit करें",
+          "State scholarship cell से contact करें",
+          "Institute के scholarship nodal officer से बात करें",
+          "Helpline numbers पर call करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Renewal Scholarship Status Check करना"
+      },
+      {
+        type: "list",
+        items: [
+          "Previous year की scholarship complete होनी चाहिए",
+          "Academic performance satisfactory होनी चाहिए",
+          "Same portal पर renewal application submit करें",
+          "New academic year के documents update करें",
+          "Fee receipt और mark sheets upload करें",
+          "Renewal status separately track करें",
+          "Timeline generally fresh application से faster होती है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Grievance और Complaint Process"
+      },
+      {
+        type: "subheading",
+        content: "अगर status में problem है तो complaint कैसे करें:"
+      },
+      {
+        type: "list",
+        items: [
+          "NSP portal पर 'Grievance' section में जाएं",
+          "Student login करके complaint submit करें",
+          "Problem की category select करें",
+          "Detailed description provide करें",
+          "Supporting documents attach करें",
+          "Complaint tracking number note करें",
+          "Regular follow-up करते रहें",
+          "Escalation matrix के अनुसार higher authority को contact करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन Numbers और Contact Details"
+      },
+      {
+        type: "subheading",
+        content: "Major scholarship helplines:"
+      },
+      {
+        type: "list",
+        items: [
+          "NSP Helpline: 0120-6619540",
+          "UGC Helpline: 011-23604446",
+          "AICTE Helpline: 011-29581071",
+          "Minority Affairs: 011-23061915",
+          "SC/ST Helpline: 011-20892303",
+          "Email Support: helpdesk@nsp.gov.in",
+          "State helplines: अपने राज्य के scholarship portal पर available"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Tips for Faster Processing"
+      },
+      {
+        type: "list",
+        items: [
+          "सभी documents clearly scan करके upload करें",
+          "Information absolutely correct भरें",
+          "Bank account active रखें और sufficient balance maintain करें",
+          "Aadhaar linking जरूर complete करें",
+          "Regular status check करते रहें",
+          "Institute verification में cooperation करें",
+          "Required documents की multiple copies ready रखें",
+          "Renewal applications early submit करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "Scholarship status check करना एक simple process है अगर आप right portals और methods का उपयोग करें। Regular monitoring और proper documentation के साथ आप अपनी scholarship की status को effectively track कर सकते हैं। किसी भी problem की स्थिति में तुरंत concerned authorities से contact करें और अपने educational goals को achieve करने के लिए इन financial supports का भरपूर फायदा उठाएं।"
+      }
+    ]
+  },
+  {
+    id: 178,
+    title: "Sukanya Samriddhi Yojana Apply Online 2024: सुकन्या समृद्धि योजना में निवेश कैसे करें - Complete Guide",
+    slug: "sukanya-samriddhi-yojana-apply-online-investment-guide",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Sukanya Samriddhi Yojana में online apply कैसे करें? जानें interest rates, tax benefits, maturity calculator और investment strategy।",
+    categories: ["Government Schemes", "Investment", "Tax Planning"],
+    content: [
+      {
+        type: "paragraph",
+        content: "सुकन्या समृद्धि योजना (Sukanya Samriddhi Yojana) भारत सरकार की एक महत्वपूर्ण small savings scheme है जो विशेष रूप से बेटियों के भविष्य के लिए design की गई है। यह scheme 'Beti Bachao, Beti Padhao' campaign का हिस्सा है और girl child की education और marriage के लिए financial security प्रदान करती है।"
+      },
+      {
+        type: "heading",
+        content: "Sukanya Samriddhi Yojana की Key Features"
+      },
+      {
+        type: "list",
+        items: [
+          "10 साल तक की बेटी के नाम पर account open कर सकते हैं",
+          "Current interest rate: 8.0% per annum (quarterly compounded)",
+          "Minimum deposit: ₹250 per year, Maximum: ₹1.5 lakh per year",
+          "15 साल तक premium payment करना होता है",
+          "21 साल की age में account mature होता है",
+          "Complete tax exemption (EEE status)",
+          "18 साल की age के बाद 50% withdrawal allowed for education",
+          "Account transfer facility across India available"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Eligibility Criteria - पात्रता मानदंड"
+      },
+      {
+        type: "list",
+        items: [
+          "बेटी की उम्र 10 साल या उससे कम होनी चाहिए",
+          "Parents या legal guardian के द्वारा account open किया जा सकता है",
+          "एक बेटी के नाम पर केवल एक ही account हो सकता है",
+          "Maximum 2 accounts per family (2 बेटियों के लिए)",
+          "Girl child का birth certificate जरूरी है",
+          "Indian citizen होना mandatory है",
+          "NRI status वाली बेटियों के लिए eligible नहीं है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Required Documents - आवश्यक दस्तावेज"
+      },
+      {
+        type: "list",
+        items: [
+          "Girl child का birth certificate (mandatory)",
+          "Parent/Guardian के identity proof (Aadhaar, PAN, Voter ID)",
+          "Address proof (Aadhaar, Utility bills, Passport)",
+          "Passport size photographs (child और parent दोनों के)",
+          "Initial deposit amount (minimum ₹250)",
+          "KYC documents of parent/guardian",
+          "Income proof (if required by bank/post office)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Online Account Opening Process - ऑनलाइन खाता कैसे खोलें"
+      },
+      {
+        type: "subheading",
+        content: "Bank के माध्यम से online application:"
+      },
+      {
+        type: "list",
+        items: [
+          "Authorized bank की website पर जाएं (SBI, PNB, BOI, ICICI आदि)",
+          "Investment/Savings section में जाकर 'Sukanya Samriddhi Account' select करें",
+          "'Open Online' या 'Apply Now' पर click करें",
+          "Parent/Guardian की details भरें",
+          "Girl child की information provide करें",
+          "KYC verification complete करें",
+          "Required documents upload करें",
+          "Initial deposit amount transfer करें",
+          "Application submit करने के बाद reference number save करें",
+          "Physical verification के लिए branch visit required हो सकती है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Post Office में Account Opening"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी post office branch में जाएं",
+          "Sukanya Samriddhi Account opening form मांगें",
+          "Form को properly भरें",
+          "सभी required documents attach करें",
+          "Initial deposit के साथ form submit करें",
+          "Receipt और passbook collect करें",
+          "Pin code भी set करना होगा",
+          "Online access के लिए separate registration करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Interest Rate और Calculation Details"
+      },
+      {
+        type: "paragraph",
+        content: "सुकन्या समृद्धि योजना की interest rate quarterly review होती है और currently यह 8.0% per annum है:"
+      },
+      {
+        type: "list",
+        items: [
+          "Interest rate: 8.0% per annum (FY 2024-24)",
+          "Compounding: Quarterly basis पर compound होता है",
+          "Interest calculation: Monthly basis पर calculate होता है",
+          "Interest credit: Annually account में credit होता है",
+          "Rate revision: Government द्वारा quarterly review",
+          "Historical rates: 2016 से अब तक 7.6% से 8.6% के बीच रहा है",
+          "Guaranteed returns: Government backing के साथ safe investment"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Investment और Tax Benefits"
+      },
+      {
+        type: "subheading",
+        content: "Tax advantages की complete details:"
+      },
+      {
+        type: "list",
+        items: [
+          "Section 80C: ₹1.5 lakh तक annual investment पर tax deduction",
+          "Interest income: Completely tax-free throughout the tenure",
+          "Maturity amount: पूरी maturity amount tax-free मिलती है",
+          "EEE Status: Exempt-Exempt-Exempt tax treatment",
+          "No TDS: कोई भी TDS deduction नहीं होता",
+          "LTCG: Long term capital gains tax भी नहीं लगता",
+          "Best tax-saving option: Fixed income investments में सबसे अच्छा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Maturity Calculator - Returns Calculation"
+      },
+      {
+        type: "paragraph",
+        content: "अगर आप हर साल ₹1.5 lakh invest करते हैं तो 21 साल बाद approximate maturity amount:"
+      },
+      {
+        type: "list",
+        items: [
+          "Total investment: ₹22.5 lakh (15 years × ₹1.5 lakh)",
+          "Maturity amount: लगभग ₹65-70 lakh (8% interest rate के साथ)",
+          "Interest earned: लगभग ₹42-47 lakh",
+          "Monthly SIP equivalent: ₹12,500 per month",
+          "Effective annual return: बेहतर than most fixed deposits",
+          "Inflation protection: Long-term wealth creation के लिए suitable"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Partial Withdrawal Rules - 18 साल बाद निकासी"
+      },
+      {
+        type: "list",
+        items: [
+          "18 साल की age के बाद partial withdrawal allowed है",
+          "Maximum 50% balance का withdrawal कर सकते हैं",
+          "Education purpose के लिए specifically allowed है",
+          "Higher education fees, course fees, hostel fees के लिए use कर सकते हैं",
+          "Required documents: Admission proof, fee structure, educational institution details",
+          "Online application: Internet banking या branch visit से apply करें",
+          "Processing time: Usually 7-15 days लगते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Account Transfer और Migration"
+      },
+      {
+        type: "list",
+        items: [
+          "India में कहीं भी account transfer कर सकते हैं",
+          "Location change पर easy transfer facility",
+          "Post office से bank या bank से post office transfer possible",
+          "No charges for account transfer",
+          "Documents required: Transfer application, identity proof, new address proof",
+          "Online transfer facility भी available है कुछ banks में",
+          "KYC update भी साथ में हो जाता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Online Account Management"
+      },
+      {
+        type: "subheading",
+        content: "Digital services और features:"
+      },
+      {
+        type: "list",
+        items: [
+          "Internet banking से balance check कर सकते हैं",
+          "Mobile banking app से transactions possible हैं",
+          "Online deposit कर सकते हैं through net banking",
+          "Account statement download कर सकते हैं",
+          "Interest certificate online generate होता है",
+          "Maturity calculator use कर सकते हैं",
+          "Renewal और continuation automatic होती है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Mistakes to Avoid"
+      },
+      {
+        type: "list",
+        items: [
+          "10 साल की age के बाद account opening नहीं करें",
+          "Minimum ₹250 annual deposit भूलकर skip न करें",
+          "Maximum ₹1.5 lakh की limit exceed न करें",
+          "Documents की copies clear और readable होनी चाहिए",
+          "Nomination facility का उपयोग जरूर करें",
+          "Address change की information timely update करें",
+          "Default penalties से बचने के लिए regular deposits करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Account Closure Rules"
+      },
+      {
+        type: "list",
+        items: [
+          "Premature closure generally allowed नहीं है",
+          "Life-threatening disease की condition में closure possible",
+          "Girl child की death के case में closure होता है",
+          "NRI status पर account close करना पड़ता है",
+          "21 साल complete होने पर automatic maturity",
+          "Closure के लिए proper documentation required",
+          "Penalties applicable हो सकती हैं premature closure पर"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Default और Penalty Rules"
+      },
+      {
+        type: "list",
+        items: [
+          "Annual minimum ₹250 deposit करना mandatory है",
+          "Default case में account discontinue हो जाता है",
+          "Revival के लिए ₹50 penalty + due amount जमा करना होता है",
+          "15 साल के बाद default account में interest नहीं मिलता",
+          "Revival 21 साल complete होने तक possible है",
+          "Penalty payment के बाद normal interest rate मिलता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Best Investment Strategy"
+      },
+      {
+        type: "list",
+        items: [
+          "Early start करें - बेटी के birth के time पर account open करें",
+          "Maximum investment करें - हर साल ₹1.5 lakh invest करने की कोशिश करें",
+          "SIP approach अपनाएं - monthly ₹12,500 का systematic investment",
+          "Tax planning करें - 80C limit को effectively utilize करें",
+          "Long-term vision रखें - 21 साल का patience रखें",
+          "Goal-based planning करें - education और marriage के लिए separate planning",
+          "Regular monitoring करें - interest rates और policy changes को track करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन Numbers और Support"
+      },
+      {
+        type: "list",
+        items: [
+          "Post Office Helpline: 1800-266-6868",
+          "SBI Customer Care: 1800-11-2211",
+          "ICICI Helpline: 1860-120-7777",
+          "PNB Customer Care: 1800-180-2222",
+          "General Banking Helpline: 1800-425-0018",
+          "Email Support: अपने bank के customer service email पर",
+          "Branch Support: Nearest branch से direct contact करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "सुकन्या समृद्धि योजना बेटियों के bright future के लिए एक excellent investment option है। इसकी high interest rate, complete tax exemption और government guarantee इसे एक ideal choice बनाती है। Early start करके और disciplined approach अपनाकर आप अपनी बेटी के लिए substantial corpus create कर सकते हैं जो उसकी education और marriage में काम आएगा।"
+      }
+    ]
+  },
+  {
+    id: 179,
+    title: "New Aadhaar Card Apply Online 2024: नया आधार कार्ड कैसे बनवाएं - Complete Process Guide",
+    slug: "new-aadhaar-card-apply-online-complete-process-guide",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "New Aadhaar Card के लिए online apply कैसे करें? जानें documents, fees, appointment booking और e-Aadhaar download की complete process।",
+    categories: ["Government Schemes", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "आधार कार्ड (Aadhaar Card) भारत में सबसे महत्वपूर्ण identity document है जो UIDAI (Unique Identification Authority of India) द्वारा जारी किया जाता है। यह एक 12-digit unique number है जो biometric और demographic data के साथ link होता है। आज के समय में लगभग सभी government schemes और financial services के लिए Aadhaar mandatory है।"
+      },
+      {
+        type: "heading",
+        content: "Aadhaar Card क्यों जरूरी है - Importance"
+      },
+      {
+        type: "list",
+        items: [
+          "सभी government schemes का लाभ लेने के लिए mandatory",
+          "Bank account opening के लिए KYC document",
+          "Mobile SIM card activation के लिए जरूरी",
+          "IT Return filing और PAN linking के लिए required",
+          "LPG subsidy और other DBT benefits के लिए essential",
+          "Digital identity proof के रूप में use होता है",
+          "Address proof के रूप में भी काम आता है",
+          "Various online services में authentication के लिए use होता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "New Aadhaar Enrollment की Eligibility"
+      },
+      {
+        type: "list",
+        items: [
+          "भारत का निवासी (resident) होना चाहिए",
+          "कोई भी age limit नहीं है - newborn से लेकर elderly तक",
+          "Biometric data provide करना जरूरी है (fingerprints, iris scan)",
+          "Demographic information accurate होनी चाहिए",
+          "Supporting documents valid होने चाहिए",
+          "Previous Aadhaar number नहीं होना चाहिए (duplicate नहीं बन सकता)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Required Documents - आवश्यक दस्तावेज"
+      },
+      {
+        type: "subheading",
+        content: "Proof of Identity (POI):"
+      },
+      {
+        type: "list",
+        items: [
+          "Passport (valid या expired)",
+          "PAN Card",
+          "Voter ID Card",
+          "Driving License",
+          "Service Identity Card (government employee)",
+          "Student ID Card (recognized educational institution से)",
+          "Arms License",
+          "Pensioner Card"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Proof of Address (POA):"
+      },
+      {
+        type: "list",
+        items: [
+          "Passport (current address के साथ)",
+          "Bank/Post Office Account Statement",
+          "Telephone Bill (landline/mobile)",
+          "Electricity Bill",
+          "Water Bill",
+          "Gas Connection Bill",
+          "Property Tax Receipt",
+          "Rent Agreement (notarized)"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "Proof of Date of Birth (POB):"
+      },
+      {
+        type: "list",
+        items: [
+          "Birth Certificate (Registrar of Births & Deaths से)",
+          "SSLC/10th Standard Certificate",
+          "Passport",
+          "PAN Card",
+          "Matriculation Certificate",
+          "Pension Payment Order (DOB mentioned के साथ)",
+          "Central/State Government issued service ID"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Online Appointment Booking Process"
+      },
+      {
+        type: "subheading",
+        content: "UIDAI Portal से appointment book करना:"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले resident.uidai.gov.in पर जाएं",
+          "'Book an Appointment' section पर click करें",
+          "अपना State और District select करें",
+          "Nearest Aadhaar Enrollment Center choose करें",
+          "Available date और time slot select करें",
+          "Personal details भरें (Name, Mobile, Email)",
+          "Required documents की list check करें",
+          "Appointment confirm करके booking ID save करें",
+          "SMS confirmation भी मिलेगा",
+          "Appointment के दिन center पर समय पर पहुंचें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Walk-in Enrollment Process"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी Aadhaar Enrollment Center पर जाएं",
+          "Token number ले लें (first come first serve basis)",
+          "Enrollment form भरें (operator की help से)",
+          "Required documents की verification कराएं",
+          "Biometric capture कराएं (10 fingerprints, both iris)",
+          "Photo capture कराएं (live photograph)",
+          "Demographic data confirm करें",
+          "Enrollment slip collect करें (14-digit acknowledgment number के साथ)",
+          "SMS confirmation भी मिलेगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Aadhaar Enrollment Fees"
+      },
+      {
+        type: "list",
+        items: [
+          "Fresh Enrollment: Completely Free (कोई charges नहीं)",
+          "Update Services: Demographic updates free, Biometric updates ₹50",
+          "Duplicate Aadhaar: ₹50 (if original is lost)",
+          "PVC Card: ₹50 (optional, premium card)",
+          "Mobile Update: Free (once per year)",
+          "Address Update: Free (with valid documents)",
+          "Private Enrollment Centers: कुछ convenience fee charge कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Biometric Capture Process"
+      },
+      {
+        type: "subheading",
+        content: "Enrollment center पर biometric capture की process:"
+      },
+      {
+        type: "list",
+        items: [
+          "10 fingerprints capture होंगे (both hands की सभी fingers)",
+          "Both eyes के iris scan होंगे",
+          "Face photograph click होगी (live capture)",
+          "Quality check होगा सभी biometrics का",
+          "कई बार re-capture भी करना पड़ सकता है",
+          "Operator guidance के अनुसार cooperate करें",
+          "Clean hands और clear eyes रखें capture के समय"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Enrollment Status Check कैसे करें"
+      },
+      {
+        type: "list",
+        items: [
+          "UIDAI website (uidai.gov.in) पर जाएं",
+          "'Check Aadhaar Status' section में जाएं",
+          "14-digit Enrollment ID enter करें",
+          "Security code (captcha) भरें",
+          "'Check Status' पर click करें",
+          "Current status display होगा",
+          "SMS पर भी status updates मिलते रहते हैं",
+          "Usually 60-90 दिन लगते हैं generation में"
+        ]
+      },
+      {
+        type: "heading",
+        content: "e-Aadhaar Download Process"
+      },
+      {
+        type: "list",
+        items: [
+          "uidai.gov.in पर 'Download Aadhaar' section में जाएं",
+          "Aadhaar Number, VID या Enrollment ID enter करें",
+          "Mobile number या email provide करें",
+          "OTP verification complete करें",
+          "Security code भरें",
+          "'Download' पर click करें",
+          "Password-protected PDF file download होगी",
+          "Password: CAPITAL letters में name के first 4 letters + birth year"
+        ]
+      },
+      {
+        type: "heading",
+        content: "mAadhaar Mobile App"
+      },
+      {
+        type: "list",
+        items: [
+          "Play Store से 'mAadhaar' app download करें",
+          "Mobile number verification करें",
+          "Aadhaar number add करें",
+          "OTP के साथ verify करें",
+          "Digital Aadhaar card access करें",
+          "QR code scanner feature भी available",
+          "Offline verification की facility मिलती है",
+          "Update requests भी app से submit कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Children के लिए Aadhaar (Baal Aadhaar)"
+      },
+      {
+        type: "list",
+        items: [
+          "5 साल से कम उम्र के बच्चों के लिए Baal Aadhaar",
+          "Parents के साथ जाना जरूरी है",
+          "Birth certificate mandatory document है",
+          "Biometric capture नहीं होता (only photo)",
+          "5 साल की age के बाद biometric update करना होता है",
+          "15 साल की age के बाद mandatory biometric update",
+          "Parents के Aadhaar documents भी जरूरी हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Aadhaar Security Features"
+      },
+      {
+        type: "list",
+        items: [
+          "2048-bit PKI encryption technology",
+          "Secure QR code with encrypted data",
+          "Tamper-proof design और security features",
+          "Unique 12-digit number generation algorithm",
+          "Biometric authentication करने से पहले verification",
+          "Regular security audits और updates",
+          "Data privacy protection measures"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Problems और Solutions"
+      },
+      {
+        type: "subheading",
+        content: "Enrollment के दौरान आने वाली समस्याएं:"
+      },
+      {
+        type: "list",
+        items: [
+          "समस्या: Biometric capture नहीं हो रहा - Solution: Clean hands और proper positioning",
+          "समस्या: Documents reject हो रहे - Solution: Clear copies और valid documents ले जाएं",
+          "समस्या: Appointment cancel हो गई - Solution: Fresh booking करें या walk-in try करें",
+          "समस्या: Status में delay - Solution: 90 दिन तक wait करें, फिर inquiry करें",
+          "समस्या: e-Aadhaar download नहीं हो रहा - Solution: Correct details और stable internet connection"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Aadhaar Center Locator"
+      },
+      {
+        type: "list",
+        items: [
+          "UIDAI website पर 'Locate Enrolment Centre' use करें",
+          "State, District, Sub-district select करें",
+          "Nearest centers की list मिलेगी",
+          "Address, timings और contact details available होंगी",
+          "Google Maps integration भी है",
+          "Center type भी mention होता है (Permanent/Temporary)",
+          "Real-time availability status भी check कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Aadhaar Update Services"
+      },
+      {
+        type: "list",
+        items: [
+          "Address Update: ₹50 fee (supporting documents के साथ)",
+          "Mobile Number Update: Free (OTP verification के साथ)",
+          "Email Update: Free service",
+          "Name Correction: ₹50 (supporting documents required)",
+          "Date of Birth Update: ₹50 (valid DOB proof required)",
+          "Gender Correction: ₹50 (medical certificate required)",
+          "Photo Update: ₹50 (fresh photo capture)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन Numbers और Support"
+      },
+      {
+        type: "list",
+        items: [
+          "UIDAI Helpline: 1947 (24x7 available)",
+          "Email Support: help@uidai.gov.in",
+          "Regional Helplines: Regional languages में support",
+          "Online Grievance: uidai.gov.in पर grievance portal",
+          "SMS Helpline: Specific codes से information मिलती है",
+          "Social Media: Twitter @UIDAI पर भी support मिलता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "आधार कार्ड आज के डिजिटल युग में एक अत्यंत महत्वपूर्ण document है। New Aadhaar enrollment एक simple और straightforward process है अगर आप सही documents और procedure follow करें। Online appointment booking से लेकर e-Aadhaar download तक की पूरी process digital और user-friendly बनाई गई है। सभी Indian residents को अपना Aadhaar card जरूर बनवाना चाहिए।"
+      }
+    ]
+  },
+  {
+    id: 180,
+    title: "PM Kisan Beneficiary Status Check 2024: किसान सम्मान निधि योजना स्टेटस कैसे चेक करें",
+    slug: "pm-kisan-beneficiary-status-check-complete-guide",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "PM Kisan Samman Nidhi Yojana का beneficiary status कैसे check करें? जानें payment status, rejection reasons और problem solving की complete process।",
+    categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री किसान सम्मान निधि योजना (PM Kisan Samman Nidhi Yojana) भारत सरकार की एक महत्वपूर्ण Direct Benefit Transfer scheme है जो eligible farmers को हर साल ₹6,000 की financial assistance प्रदान करती है। यह amount तीन equal installments में ₹2,000 प्रत्येक के रूप में directly bank account में transfer होती है।"
+      },
+      {
+        type: "heading",
+        content: "PM Kisan Beneficiary Status Check के Methods"
+      },
+      {
+        type: "paragraph",
+        content: "अपना PM Kisan beneficiary status check करने के कई तरीके हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "Official website pmkisan.gov.in से check करें",
+          "Mobile App 'PMKISAN GoI' से status देखें",
+          "Aadhaar number के साथ verification करें",
+          "Registration number या account number से search करें",
+          "Mobile number के द्वारा भी check कर सकते हैं",
+          "CSC (Common Service Center) की मदद से",
+          "Bank branch में जाकर भी पूछ सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Online Status Check Process - Step by Step"
+      },
+      {
+        type: "subheading",
+        content: "Official website से status check करना:"
+      },
+      {
+        type: "list",
+        items: [
+          "सबसे पहले pmkisan.gov.in पर जाएं",
+          "Homepage पर 'Beneficiary Status' option पर click करें",
+          "Search method choose करें (Aadhaar, Account Number, Mobile, Registration Number)",
+          "Selected option के अनुसार details भरें",
+          "Captcha code correctly enter करें",
+          "'Get Data' या 'Search' पर click करें",
+          "आपका beneficiary status display हो जाएगा",
+          "Payment history भी देख सकते हैं",
+          "Installment details भी available होंगी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Mobile App से Status Check करना"
+      },
+      {
+        type: "list",
+        items: [
+          "Play Store से 'PMKISAN GoI' app download करें",
+          "App install करके open करें",
+          "'Know Your Status' option select करें",
+          "Aadhaar number या registration number enter करें",
+          "'Check Status' पर tap करें",
+          "Complete beneficiary details देख सकते हैं",
+          "Payment status और dates भी मिलेंगी",
+          "App से other services भी access कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Different Status Types - विभिन्न प्रकार के Status"
+      },
+      {
+        type: "subheading",
+        content: "Status check करने पर मिलने वाले different statuses:"
+      },
+      {
+        type: "list",
+        items: [
+          "Approved/Active: आपका registration successful है और payments मिल रही हैं",
+          "Pending for Approval: आवेदन verify हो रहा है",
+          "Under Verification: Documents की checking चल रही है",
+          "Rejected: आवेदन reject हो गया है (reason के साथ)",
+          "Payment Failed: Bank details में problem के कारण payment fail",
+          "Account Deactivated: कोई technical issue या policy violation",
+          "Not Eligible: Eligibility criteria को meet नहीं कर रहे"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Payment Status और Installment Details"
+      },
+      {
+        type: "list",
+        items: [
+          "1st Installment: April-July (₹2,000)",
+          "2nd Installment: August-November (₹2,000)",
+          "3rd Installment: December-March (₹2,000)",
+          "Payment dates vary हो सकती हैं state के अनुसार",
+          "Failed payments का reason भी mention होता है",
+          "UTR number भी मिलता है successful payments के लिए",
+          "Total amount received का summary भी available होता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Rejection Reasons और Common Issues"
+      },
+      {
+        type: "subheading",
+        content: "PM Kisan rejection के main reasons:"
+      },
+      {
+        type: "list",
+        items: [
+          "Land Records में discrepancy या mismatch",
+          "Income Tax payee होना (income limit exceed)",
+          "Government employee या pensioner होना",
+          "Constitutional post holder होना",
+          "Professional degree holder होना (Doctor, Engineer, CA, Advocate)",
+          "Aadhaar number invalid या duplicate",
+          "Bank account details incorrect या inactive",
+          "Land ownership proof incomplete या invalid"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Bank Account Related Issues"
+      },
+      {
+        type: "list",
+        items: [
+          "Bank account number गलत होना",
+          "IFSC code incorrect होना",
+          "Account holder name mismatch",
+          "Account dormant या inactive होना",
+          "KYC incomplete होना bank में",
+          "Aadhaar linking pending होना bank account के साथ",
+          "Joint account की जगह individual account चाहिए",
+          "Current account की जगह savings account prefer होता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Aadhaar Related Problems"
+      },
+      {
+        type: "list",
+        items: [
+          "Aadhaar seeding pending होना database में",
+          "Aadhaar number incorrect या invalid",
+          "Name spelling mismatch between Aadhaar और land records",
+          "Aadhaar authentication failure during verification",
+          "Duplicate Aadhaar numbers का issue",
+          "Aadhaar demographic mismatch",
+          "Biometric authentication issues"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Self Registration Process - खुद से Registration"
+      },
+      {
+        type: "list",
+        items: [
+          "pmkisan.gov.in पर 'New Farmer Registration' पर click करें",
+          "Aadhaar number और captcha enter करें",
+          "State और district select करें",
+          "Personal details भरें accurately",
+          "Bank account details provide करें",
+          "Land details भरें (Khata, Khasra numbers)",
+          "Required documents upload करें",
+          "Declaration accept करके submit करें",
+          "Registration number save करें for future reference"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Correction और Update Process"
+      },
+      {
+        type: "subheading",
+        content: "Details में correction कैसे करें:"
+      },
+      {
+        type: "list",
+        items: [
+          "PM Kisan website पर 'Edit Aadhaar Details' section में जाएं",
+          "Aadhaar number और captcha enter करें",
+          "गलत details को correct करें",
+          "Bank details update कर सकते हैं",
+          "Supporting documents upload करें",
+          "Submit करने के बाद verification होगा",
+          "Approval के बाद next installment मिलेगी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "State Wise Implementation Status"
+      },
+      {
+        type: "list",
+        items: [
+          "सभी states और UTs में scheme implemented है",
+          "कुछ states में अलग portal भी है",
+          "Verification process state के अनुसार vary होता है",
+          "Payment timeline भी state wise different हो सकता है",
+          "Land records integration level अलग-अलग है",
+          "Some states have better digital infrastructure",
+          "Rural connectivity issues भी affect करते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Grievance Redressal - शिकायत निवारण"
+      },
+      {
+        type: "list",
+        items: [
+          "PM Kisan website पर 'Grievance' section में जाएं",
+          "Problem category select करें",
+          "Detailed description provide करें",
+          "Supporting documents attach करें",
+          "Grievance number note करें",
+          "Regular follow-up करते रहें",
+          "Helpline number पर भी call कर सकते हैं",
+          "District level officers से भी contact करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PFMS Portal से Payment Verification"
+      },
+      {
+        type: "list",
+        items: [
+          "PFMS (pfms.nic.in) portal पर जाएं",
+          "'Know Your Payment' section में click करें",
+          "Bank account number या Aadhaar enter करें",
+          "Captcha verify करके submit करें",
+          "सभी DBT payments की details मिलेंगी",
+          "PM Kisan payments भी track कर सकते हैं",
+          "Transaction ID और payment dates भी मिलेंगी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Service Center (CSC) की सहायता"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी CSC center पर जाएं",
+          "VLE (Village Level Entrepreneur) से help लें",
+          "Status check करने के साथ-साथ registration भी करा सकते हैं",
+          "Documents की scanning और uploading में help मिलेगी",
+          "Small service charge लग सकता है",
+          "Technical problems का solution भी मिलेगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "PM Kisan Credit Card Linkage"
+      },
+      {
+        type: "list",
+        items: [
+          "PM Kisan beneficiaries को KCC की facility मिलती है",
+          "Status check करते समय KCC eligibility भी देख सकते हैं",
+          "Same portal से KCC के लिए भी apply कर सकते हैं",
+          "Credit limit PM Kisan status के basis पर मिलती है",
+          "Good payment history beneficial होती है KCC के लिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन Numbers और Contact Details"
+      },
+      {
+        type: "list",
+        items: [
+          "PM Kisan Helpline: 155261 / 1800115526",
+          "Technical Support: 011-23381092",
+          "Email Support: pmkisan-ict@gov.in",
+          "Kisan Call Center: 1551",
+          "Control Room: 011-23382401",
+          "समय: सोमवार से शुक्रवार (9 AM to 6 PM)",
+          "Saturday: 9 AM to 1 PM"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Future Prospects और Updates"
+      },
+      {
+        type: "list",
+        items: [
+          "Digital India initiative के तहत और भी improvements planned हैं",
+          "Face authentication technology integration हो सकती है",
+          "Satellite imagery से land verification improve होगा",
+          "AI और ML का use करके better targeting होगी",
+          "Mobile app में और भी features add होंगे",
+          "Real-time status updates की facility बेहतर होगी"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "PM Kisan Beneficiary Status check करना एक simple process है जो farmers को अपनी payment status के बारे में updated रखती है। Regular status check करने से किसी भी problem का early detection हो जाता है और timely action ले सकते हैं। सभी eligible farmers को इस scheme का भरपूर फायदा उठाना चाहिए और अपनी agricultural activities को बेहतर बनाना चाहिए।"
+      }
+    ]
+  },
+  {
+    id: 181,
+    title: "PM Vaya Vandana Yojana Apply 2024: पेंशन योजना में निवेश कैसे करें - Complete Guide Senior Citizens",
+    slug: "pm-vaya-vandana-yojana-apply-pension-investment-guide",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "PM Vaya Vandana Yojana में कैसे invest करें? जानें pension calculator, returns, tax benefits और senior citizens के लिए best features।",
+    categories: ["Government Schemes", "Senior Citizens", "Retirement Planning"],
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री वय वंदना योजना (PM Vaya Vandana Yojana) भारत सरकार द्वारा 60 साल या उससे अधिक उम्र के senior citizens के लिए शुरू की गई एक guaranteed pension scheme है। यह scheme Life Insurance Corporation of India (LIC) के माध्यम से operate होती है और senior citizens को regular pension income प्रदान करती है।"
+      },
+      {
+        type: "heading",
+        content: "PM Vaya Vandana Yojana की Key Features"
+      },
+      {
+        type: "list",
+        items: [
+          "Minimum entry age: 60 साल, Maximum: 80 साल",
+          "Guaranteed pension rate: 7.40% per annum (currently)",
+          "Minimum investment: ₹1,62,162, Maximum: ₹15 lakh",
+          "Monthly pension: ₹1,000 से ₹9,250 तक",
+          "Policy term: 10 साल (pension period)",
+          "100% return of purchase price on maturity या death",
+          "Loan facility: 75% तक purchase price का",
+          "No medical examination required"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Eligibility Criteria - पात्रता मानदंड"
+      },
+      {
+        type: "list",
+        items: [
+          "Minimum age: 60 साल (completed)",
+          "Maximum age: 80 साल तक entry allowed",
+          "Indian citizen होना mandatory है",
+          "Good health condition (no medical test, but declaration required)",
+          "Income source की कोई specific requirement नहीं",
+          "Previous pension schemes से independent है",
+          "Joint life option भी available है couples के लिए"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Investment Options और Pension Modes"
+      },
+      {
+        type: "subheading",
+        content: "Pension Frequency Options:"
+      },
+      {
+        type: "list",
+        items: [
+          "Monthly Pension: हर महीने regular income",
+          "Quarterly Pension: तीन महीने में एक बार",
+          "Half-yearly Pension: छह महीने में एक बार",
+          "Annual Pension: साल में एक बार",
+          "Deferred pension option भी available है",
+          "First pension: Purchase के एक month/quarter/half-year/year बाद"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Pension Calculator - Returns Calculation"
+      },
+      {
+        type: "subheading",
+        content: "Investment amount के अनुसार monthly pension:"
+      },
+      {
+        type: "list",
+        items: [
+          "₹1,62,162 investment = ₹1,000 monthly pension",
+          "₹3,24,324 investment = ₹2,000 monthly pension",
+          "₹8,10,810 investment = ₹5,000 monthly pension",
+          "₹15,00,000 investment = ₹9,250 monthly pension (maximum)",
+          "₹10 साल तक guaranteed pension मिलेगी",
+          "Total pension amount + original investment amount mature होने पर"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Online Application Process"
+      },
+      {
+        type: "subheading",
+        content: "LIC Portal से online apply करना:"
+      },
+      {
+        type: "list",
+        items: [
+          "LIC India की official website licindia.in पर जाएं",
+          "'Buy Online' section में जाकर 'PM Vaya Vandana Yojana' select करें",
+          "Personal details भरें (Name, DOB, Address)",
+          "Pension mode select करें (Monthly/Quarterly/Half-yearly/Annual)",
+          "Investment amount choose करें",
+          "Nominee details provide करें",
+          "Payment method select करें (Net banking/Credit card/Debit card)",
+          "Proposal form को carefully review करें",
+          "Payment complete करके policy document download करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Offline Application Process"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी LIC branch office में जाएं",
+          "PM Vaya Vandana Yojana का proposal form मांगें",
+          "Form को completely और accurately भरें",
+          "Required documents attach करें",
+          "Cheque या DD के साथ premium payment करें",
+          "Medical declaration form भरें",
+          "Agent के साथ form review करें",
+          "Receipt और acknowledgment collect करें",
+          "Policy document 15-20 दिन में मिलेगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Required Documents - आवश्यक दस्तावेज"
+      },
+      {
+        type: "list",
+        items: [
+          "Age proof: Birth certificate, Passport, Matriculation certificate",
+          "Identity proof: Aadhaar card, PAN card, Voter ID",
+          "Address proof: Utility bills, Aadhaar, Bank statements",
+          "Income proof: Bank statements, Pension certificate",
+          "Passport size photographs (recent)",
+          "Bank account details (for pension credit)",
+          "Nominee documents (identity और address proof)",
+          "Medical declaration form (self-declaration)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Tax Benefits और Implications"
+      },
+      {
+        type: "subheading",
+        content: "Tax treatment की details:"
+      },
+      {
+        type: "list",
+        items: [
+          "Purchase price: Section 80C के तहत ₹1.5 lakh तक deduction",
+          "Pension income: Taxable as 'Income from Other Sources'",
+          "Maturity benefit: Purchase price return tax-free होता है",
+          "Death benefit: भी tax-free मिलता है nominees को",
+          "TDS: Pension amount पर applicable rate से TDS कटेगा",
+          "Senior citizen exemption limits apply होती हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Loan और Surrender Options"
+      },
+      {
+        type: "list",
+        items: [
+          "Loan facility: 3rd year से available, 75% तक purchase price",
+          "Loan interest rate: Market rate के अनुसार",
+          "Surrender option: 15 साल बाद surrender कर सकते हैं",
+          "Surrender value: 98% of purchase price मिलेगा",
+          "Partial withdrawal: कोई facility नहीं है",
+          "Loan repayment: Pension amount से auto adjustment हो सकता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Nominee और Death Benefits"
+      },
+      {
+        type: "list",
+        items: [
+          "100% nominee को purchase price return होता है",
+          "Pending pension amounts भी nominee को मिलते हैं",
+          "Nominee change कर सकते हैं policy के दौरान",
+          "Multiple nominees भी assign कर सकते हैं percentage के साथ",
+          "Minor nominee के लिए guardian appointment जरूरी",
+          "Succession certificate की जरूरत नहीं होती"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Policy Services और Customer Support"
+      },
+      {
+        type: "list",
+        items: [
+          "Online policy status check कर सकते हैं",
+          "Pension payment mode change कर सकते हैं",
+          "Address update online possible है",
+          "Duplicate policy certificate मिल सकता है",
+          "Premium payment receipt download कर सकते हैं",
+          "Claim settlement online भी हो सकती है",
+          "Customer portal पर सभी services available हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Advantages और Benefits"
+      },
+      {
+        type: "list",
+        items: [
+          "Guaranteed returns: Market fluctuations से protection",
+          "Regular income: Monthly pension guaranteed होती है",
+          "No medical test: Easy entry without health checkup",
+          "Government backing: LIC के through सरकारी guarantee",
+          "Inflation hedge: Fixed pension amount हर महीने",
+          "Peace of mind: Secure investment for senior citizens",
+          "Family protection: Nominee को full amount मिलता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Comparison with Other Pension Schemes"
+      },
+      {
+        type: "subheading",
+        content: "अन्य pension schemes के साथ comparison:"
+      },
+      {
+        type: "list",
+        items: [
+          "SCSS vs PMVVY: PMVVY में higher guaranteed rate मिलता है",
+          "FD vs PMVVY: FD में interest rate fluctuate होता है",
+          "Post Office MIS vs PMVVY: PMVVY में better returns",
+          "Private pension plans vs PMVVY: Government guarantee PMVVY में",
+          "Annuity schemes vs PMVVY: Competitive returns PMVVY में",
+          "NSC vs PMVVY: PMVVY immediate pension देती है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Policy Renewal और Extension"
+      },
+      {
+        type: "list",
+        items: [
+          "10 साल बाद policy mature हो जाती है",
+          "Renewal option currently available नहीं है",
+          "Maturity के बाद fresh policy ले सकते हैं (age permitting)",
+          "Extension facility government की policy के अनुसार",
+          "Alternative options भी explore कर सकते हैं maturity पर"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Queries और Clarifications"
+      },
+      {
+        type: "list",
+        items: [
+          "Q: क्या NRI apply कर सकते हैं? A: हां, लेकिन Indian bank account चाहिए",
+          "Q: Joint life option क्या है? A: Husband-wife दोनों के लिए combined policy",
+          "Q: Medical test जरूरी है? A: नहीं, केवल health declaration",
+          "Q: Pension increase होगी? A: नहीं, fixed amount throughout term",
+          "Q: Early exit possible है? A: 15 साल बाद surrender option",
+          "Q: Tax certificate मिलेगा? A: हां, 80C के लिए certificate मिलता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन Numbers और Contact"
+      },
+      {
+        type: "list",
+        items: [
+          "LIC Customer Care: 022-68276827/28",
+          "Toll Free: 1251 (BSNL/MTNL users only)",
+          "Email: customercare@licindia.com",
+          "Online Chat: LIC website पर live chat facility",
+          "Branch Locator: licindia.in पर branch finder",
+          "Mobile App: LIC Customer Portal app",
+          "Regional Office Contact: Website पर state wise numbers"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "PM Vaya Vandana Yojana senior citizens के लिए एक excellent pension option है जो guaranteed returns और regular income provide करती है। Government backing और LIC की reliability के साथ यह scheme retirement planning के लिए ideal है। Fixed returns और no market risk के साथ यह conservative investors के लिए perfect choice है जो अपने golden years में financial security चाहते हैं।"
+      }
+    ]
+  },
+  {
+    id: 182,
+    title: "Free Electricity Connection कैसे मिलेगा 2024: मुफ्त बिजली कनेक्शन योजनाओं की Complete Guide",
+    slug: "free-electricity-connection-government-schemes-complete-guide",
+    date: "June 17, 2024",
+    coverImage: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "Free electricity connection कैसे पाएं? जानें सभी राज्यों की योजनाएं, eligibility criteria, application process और benefits की complete details।",
+    categories: ["Government Schemes", "Financial Inclusion"],
+    content: [
+      {
+        type: "paragraph",
+        content: "मुफ्त बिजली कनेक्शन (Free Electricity Connection) भारत सरकार और विभिन्न राज्य सरकारों की योजनाओं के तहत गरीब और BPL परिवारों को प्रदान किया जाता है। इन योजनाओं का मुख्य उद्देश्य हर घर तक बिजली पहुंचाना और ऊर्जा सुरक्षा प्रदान करना है।"
+      },
+      {
+        type: "heading",
+        content: "Major Free Electricity Connection Schemes"
+      },
+      {
+        type: "list",
+        items: [
+          "Pradhanaj Bijli Har Ghar Yojana (Saubhagya Yojana)",
+          "Deen Dayal Upadhyaya Gram Jyoti Yojana (DDUGJY)",
+          "Integrated Power Development Scheme (IPDS)",
+          "State specific schemes जैसे Delhi Free Electricity",
+          "Rajiv Gandhi Grameen Vidyutikaran Yojana (RGGVY)",
+          "Rural Electrification schemes विभिन्न राज्यों में",
+          "Solar power connection schemes भी available हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Saubhagya Yojana - सबसे Popular Free Connection Scheme"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री सहज बिजली हर घर योजना (Saubhagya) केंद्र सरकार की flagship scheme है:"
+      },
+      {
+        type: "list",
+        items: [
+          "सभी rural और urban areas के लिए applicable",
+          "BPL families को completely free connection",
+          "APL families को भी subsidized rates पर connection",
+          "Solar based standalone system भी provide की जाती है",
+          "Remote areas के लिए special provisions हैं",
+          "Target: 100% household electrification का goal",
+          "Implementation: State electricity boards के through"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Eligibility Criteria - पात्रता मानदंड"
+      },
+      {
+        type: "subheading",
+        content: "General eligibility requirements:"
+      },
+      {
+        type: "list",
+        items: [
+          "BPL family होना (Below Poverty Line)",
+          "SECC-2011 database में listed होना जरूरी",
+          "पहले से electricity connection नहीं होना चाहिए",
+          "Valid identity documents होने चाहिए",
+          "Own house या valid rent agreement होना चाहिए",
+          "Income limit criteria meet करनी चाहिए (state के अनुसार)",
+          "Rural या urban area के अनुसार different criteria हो सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Required Documents - आवश्यक दस्तावेज"
+      },
+      {
+        type: "list",
+        items: [
+          "BPL certificate (mandatory document)",
+          "Aadhaar card (identity proof)",
+          "Ration card (preferably BPL/AAY)",
+          "Address proof (utility bills, rent agreement)",
+          "Income certificate (if required)",
+          "House ownership documents या rent agreement",
+          "Passport size photographs",
+          "Bank account details (for subsidy transfer)",
+          "SECC-2011 enrollment details"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Online Application Process"
+      },
+      {
+        type: "subheading",
+        content: "Digital application की step by step process:"
+      },
+      {
+        type: "list",
+        items: [
+          "अपने state की electricity board की website पर जाएं",
+          "'New Connection' या 'Saubhagya Yojana' section में जाएं",
+          "Application form को carefully भरें",
+          "Personal details और address information provide करें",
+          "BPL category select करें",
+          "Required documents upload करें",
+          "Load requirement specify करें (usually 1-2 KW)",
+          "Submit application और reference number save करें",
+          "SMS confirmation भी मिलेगा"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Offline Application Method"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी electricity board office में जाएं",
+          "Free connection के लिए application form मांगें",
+          "Form को properly भरें सभी details के साथ",
+          "सभी required documents attach करें",
+          "BPL certificate की attested copy जरूर लगाएं",
+          "Application submit करके receipt ले लें",
+          "Technical survey के लिए contact number provide करें",
+          "Follow-up के लिए reference number note करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "State Wise Free Electricity Schemes"
+      },
+      {
+        type: "subheading",
+        content: "Major states की specific schemes:"
+      },
+      {
+        type: "list",
+        items: [
+          "Delhi: 200 units तक free electricity + free connection for BPL",
+          "Punjab: Free connection + subsidized tariff for agriculture",
+          "Rajasthan: Mukhyamantri Ghar Ghar Bijli Yojana",
+          "Uttar Pradesh: Free connection under Saubhagya + state subsidy",
+          "Bihar: Har Ghar Bijli scheme with free connections",
+          "Madhya Pradesh: Mukhyamantri Solar Pump Yojana भी available",
+          "Tamil Nadu: Free electricity for BPL families with certain limits"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Solar Connection Options"
+      },
+      {
+        type: "list",
+        items: [
+          "Remote areas के लिए solar-based standalone systems",
+          "Grid connection feasible नहीं है तो solar option मिलता है",
+          "Solar panel + battery + inverter complete system",
+          "5 LED lights + 1 DC fan + mobile charging point",
+          "Maintenance free system for 5 years guaranteed",
+          "Grid extension के बाद conventional connection भी मिल सकता है"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Connection Process Timeline"
+      },
+      {
+        type: "subheading",
+        content: "Application से connection तक की timeline:"
+      },
+      {
+        type: "list",
+        items: [
+          "Application submission के बाद acknowledgment मिलेगा",
+          "Document verification: 7-10 दिन लगते हैं",
+          "Technical survey: 10-15 दिन में complete होता है",
+          "Estimate preparation: Survey के बाद 5-7 दिन",
+          "Material procurement: 15-20 दिन लग सकते हैं",
+          "Installation work: 7-10 दिन में complete",
+          "Total timeline: 45-60 दिन approximate (normal cases में)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Cost Components और Subsidies"
+      },
+      {
+        type: "list",
+        items: [
+          "BPL families: 100% free connection (government subsidy)",
+          "APL families: Partial subsidy मिलती है",
+          "Connection charges: Usually ₹500-1500 (without subsidy)",
+          "Security deposit: भी waived होता है BPL के लिए",
+          "Meter cost: Free installation BPL families के लिए",
+          "Internal wiring: Basic wiring भी free में included",
+          "Service line: Pole से house तक free connection"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Benefits और Features"
+      },
+      {
+        type: "list",
+        items: [
+          "Complete free electricity connection मिलता है",
+          "Basic internal wiring भी included होती है",
+          "Metered connection with proper billing system",
+          "Quality assurance और safety standards maintain किए जाते हैं",
+          "24x7 electricity supply (grid availability के अनुसार)",
+          "Customer service और complaint redressal facility",
+          "Load enhancement की facility भी बाद में available"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Application Status Track करना"
+      },
+      {
+        type: "list",
+        items: [
+          "Electricity board की website पर 'Track Application' section use करें",
+          "Application reference number enter करें",
+          "Mobile number verification करें",
+          "Current status check कर सकते हैं",
+          "SMS updates भी regularly मिलते रहते हैं",
+          "Customer care helpline पर भी call कर सकते हैं"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Common Problems और Solutions"
+      },
+      {
+        type: "subheading",
+        content: "Application के दौरान आने वाली समस्याएं:"
+      },
+      {
+        type: "list",
+        items: [
+          "समस्या: BPL certificate verify नहीं हो रहा - Solution: Tehsil office से updated certificate लें",
+          "समस्या: SECC list में name नहीं है - Solution: Gram Panchayat से verification कराएं",
+          "समस्या: Technical survey में delay - Solution: Electricity board office में complaint करें",
+          "समस्या: Documents reject हो रहे - Solution: Clear copies और valid documents provide करें",
+          "समस्या: Connection delay हो रहा है - Solution: Higher authority में escalate करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Post Connection Services"
+      },
+      {
+        type: "list",
+        items: [
+          "Monthly electricity bill regular आएगा",
+          "Subsidized tariff rates applicable होंगे (if any)",
+          "Complaint registration के लिए helpline numbers",
+          "Load enhancement request कर सकते हैं",
+          "Meter related issues के लिए separate support",
+          "Power cut complaints के लिए dedicated numbers",
+          "Online bill payment की facility भी available"
+        ]
+      },
+      {
+        type: "heading",
+        content: "Safety Guidelines और Precautions"
+      },
+      {
+        type: "list",
+        items: [
+          "Electrical safety rules को follow करें",
+          "Authorized electrician से ही internal wiring कराएं",
+          "Overloading से बचें - capacity के अनुसार use करें",
+          "Regular maintenance और checking जरूरी है",
+          "Faulty appliances immediately disconnect करें",
+          "Children को electrical safety के बारे में educate करें",
+          "Emergency contact numbers हमेशा handy रखें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "हेल्पलाइन Numbers और Customer Support"
+      },
+      {
+        type: "subheading",
+        content: "Major electricity boards के helpline numbers:"
+      },
+      {
+        type: "list",
+        items: [
+          "National Helpline: 1912 (Power sector grievances)",
+          "State electricity boards के अपने specific numbers हैं",
+          "Saubhagya Helpline: 1800-110-003",
+          "Emergency power cuts: 1800-180-1500 (some states)",
+          "Online grievance portals भी available हैं",
+          "Email support: सभी state boards की अपनी email IDs",
+          "Social media support भी कुछ states में available"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "Free electricity connection schemes भारत में energy inclusion को बढ़ावा देने की महत्वपूर्ण पहल हैं। सरकार का लक्ष्य है कि हर घर तक बिजली पहुंचे और सभी परिवार modern life की basic amenities का लाभ उठा सकें। BPL families को इन schemes का भरपूर फायदा उठाना चाहिए और अपने जीवन स्तर को बेहतर बनाना चाहिए। Proper documentation और सही process follow करके आसानी से free electricity connection प्राप्त किया जा सकता है।"
+      }
+    ]
   }
 ];
 
