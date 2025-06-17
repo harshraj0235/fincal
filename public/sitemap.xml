@@ -1349,6 +1349,73 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+    <loc>https://moneycal.in/blog/top-upcoming-ipos-india-investment-guide</loc>
+    <lastmod>2025-06-17</lastmod> <changefreq>daily</changefreq> <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/track-analyze-drhp-filings-new-ipos-guide</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/ipo-grey-market-premium-guide-indian-investors</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/anchor-investors-ipos-complete-guide-role-impact</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/sme-ipos-vs-mainboard-ipos-alpha-investment-comparison</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/ipo-allotment-strategies-maximize-chances-getting-shares</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/ipo-listing-gains-strategy-sell-hold-maximum-returns</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/evaluate-ipo-valuations-key-metrics-analysis-methods</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/fintech-sector-ipos-disrupting-traditional-finance</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/blog/renewable-energy-ipos-future-proof-sustainable-investments</loc>
+    <lastmod>2025-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <!-- Investment Calculators -->
   <url>
     <loc>https://moneycal.in/calculators/sip-calculator</loc>
