@@ -78,6 +78,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             <FileText className="h-4 w-4 mr-2" />
             Blog
           </Link>
+           <Link 
+            to="/excel" 
+            className="block py-2 px-4 text-neutral-900 hover:bg-neutral-100 rounded-lg flex items-center"
+            onClick={onClose}
+          >
+            <FileText className="h-4 w-4 mr-2" />
+            excel Tool
+          </Link>
           
           <Link 
             to="/about-us" 
