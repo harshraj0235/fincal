@@ -1,11 +1,13 @@
+import React, { useState, useEffect } from 'react';
 
+// Interfaces for the blog post data
 export interface ExcelToolBlogPostSection {
   type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'image' | 'quote' | 'download';
   content?: string;
   items?: string[];
   url?: string;
   caption?: string;
-  author?: string;
+  author?: string; // For quotes
   downloadUrl?: string;
   fileName?: string;
 }
@@ -30,6 +32,7 @@ export interface ExcelToolBlogPost {
   seoKeywords: string[];
 }
 
+// Provided blog post data
 export const excelToolBlogPosts: ExcelToolBlogPost[] = [
   {
     id: '1',
@@ -709,245 +712,376 @@ export const excelToolBlogPosts: ExcelToolBlogPost[] = [
       },
       {
         type: 'paragraph',
-        content: 'Write a clear subject line indicating the purpose of NOC, such as "NOC for Job Change" or "NOC for Property Sale".'
+        content: 'Make the subject line concise and clear, for example, "No Objection Certificate for Property Sale".'
       },
       {
         type: 'subheading',
-        content: 'Step 4: Main Content'
-      },
-      {
-        type: 'paragraph',
-        content: 'State clearly that the organization has no objection to the specified action. Include relevant details like employee ID, property details, or specific conditions.'
-      }
-    ]
-  },
-  {
-    id: '8',
-    slug: 'business-card-template-download-professional-design-india',
-    title: 'Professional Business Card Template Download - Modern Designs for Indian Professionals',
-    metaTitle: 'Business Card Template Download India | Professional Card Design',
-    metaDescription: 'Download professional business card templates designed for Indian professionals. Modern, print-ready formats with Indian contact details and professional layouts.',
-    excerpt: 'Create impressive business cards with our professional templates. Designed specifically for Indian businesses with modern layouts and print-ready formats.',
-    coverImage: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=400&fit=crop',
-    date: '2024-12-18',
-    author: 'Arjun Malhotra',
-    authorImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-    authorTitle: 'Graphic Design Specialist',
-    authorBio: 'Professional graphic designer with 10+ years experience creating brand identities for Indian businesses.',
-    categories: ['Productivity & Office Tools'],
-    tags: ['business card template', 'professional design', 'print ready', 'indian business', 'office tools'],
-    readTime: 8,
-    seoKeywords: ['business card template download', 'professional business card design', 'indian business card format', 'print ready business cards'],
-    content: [
-      {
-        type: 'paragraph',
-        content: 'A professional business card is your first impression in the business world. Our carefully designed templates combine modern aesthetics with practical functionality, perfect for Indian professionals across all industries.'
-      },
-      {
-        type: 'heading',
-        content: 'Why Professional Business Cards Matter in India'
-      },
-      {
-        type: 'paragraph',
-        content: 'In India\'s relationship-driven business culture, exchanging business cards remains a crucial networking ritual. A well-designed card reflects professionalism and attention to detail.'
-      },
-      {
-        type: 'download',
-        content: 'Download Business Card Templates',
-        downloadUrl: '/downloads/business-card-templates.zip',
-        fileName: 'Professional-Business-Card-Templates.zip'
-      },
-      {
-        type: 'heading',
-        content: 'Template Collection Features'
+        content: 'Step 4: Body of the NOC'
       },
       {
         type: 'list',
         items: [
-          'Multiple design variations (minimalist, corporate, creative)',
-          'Standard Indian business card size (3.5" x 2")',
-          'High-resolution print-ready files (300 DPI)',
-          'CMYK color mode for professional printing',
-          'Editable text fields for customization',
-          'Font recommendations and color schemes',
-          'Both horizontal and vertical orientations'
+          'Start with "This is to certify that..." or "We hereby confirm that..."',
+          'Clearly state the purpose for which the NOC is being issued.',
+          'Include all relevant details about the entity/person for whom the NOC is being issued (name, address, ID, etc.).',
+          'State that there are no dues, objections, or liabilities from the issuing party.',
+          'Mention any specific conditions or validity period if applicable.'
         ]
       },
       {
+        type: 'subheading',
+        content: 'Step 5: Closing and Signature'
+      },
+      {
+        type: 'paragraph',
+        content: 'End with a professional closing like "Yours faithfully" or "Sincerely". Include the name, designation, and signature of the authorized signatory. Affix the official seal or stamp of the organization.'
+      },
+      {
+        type: 'quote',
+        content: 'Clear documentation is the backbone of smooth transactions and legal compliance.',
+        author: 'Legal Documentation Expert'
+      },
+      {
         type: 'heading',
-        content: 'Essential Information for Indian Business Cards'
+        content: 'Why Download Our NOC Format Templates?'
       },
       {
         type: 'list',
         items: [
-          'Full name and professional designation',
-          'Company name and logo',
-          'Complete office address with PIN code',
-          'Mobile number with country code (+91)',
-          'Email address (professional domain preferred)',
-          'Website URL and social media handles',
-          'WhatsApp Business number (increasingly popular)',
-          'LinkedIn profile for professional networking'
-        ]
-      }
-    ]
-  },
-  {
-    id: '9',
-    slug: 'cryptocurrency-portfolio-tracker-excel-indian-investors',
-    title: 'Cryptocurrency Portfolio Tracker Excel Template - Complete Guide for Indian Crypto Investors',
-    metaTitle: 'Crypto Portfolio Tracker Excel India | Cryptocurrency Investment Calculator',
-    metaDescription: 'Track cryptocurrency investments with our Excel template. Monitor Bitcoin, Ethereum, Indian crypto exchanges, calculate gains/losses, and manage crypto portfolio effectively.',
-    excerpt: 'Manage your cryptocurrency investments like a pro with our comprehensive portfolio tracker. Monitor all Indian crypto exchanges and calculate tax implications.',
-    coverImage: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&h=400&fit=crop',
-    date: '2024-12-18',
-    author: 'Karan Crypto',
-    authorImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-    authorTitle: 'Crypto Investment Analyst',
-    authorBio: 'Blockchain enthusiast and crypto analyst helping Indian investors navigate the digital asset landscape safely.',
-    categories: ['Cryptocurrency & Digital Finance'],
-    tags: ['cryptocurrency tracker', 'crypto portfolio', 'bitcoin investment', 'indian crypto', 'digital assets'],
-    readTime: 11,
-    seoKeywords: ['cryptocurrency portfolio tracker excel', 'crypto investment calculator india', 'bitcoin portfolio tracker', 'indian crypto tax calculator'],
-    content: [
-      {
-        type: 'paragraph',
-        content: 'Cryptocurrency investing in India has gained tremendous momentum despite regulatory uncertainties. Our comprehensive portfolio tracker helps Indian crypto investors monitor their digital assets, calculate gains/losses, and stay compliant with tax regulations.'
-      },
-      {
-        type: 'heading',
-        content: 'Current Crypto Landscape in India (December 2024)'
-      },
-      {
-        type: 'paragraph',
-        content: 'The Indian government has imposed a 30% tax on crypto gains and 1% TDS on crypto transactions. Despite challenges, millions of Indians continue investing in digital assets through regulated exchanges.'
-      },
-      {
-        type: 'download',
-        content: 'Download Crypto Portfolio Tracker',
-        downloadUrl: '/downloads/crypto-portfolio-tracker.xlsx',
-        fileName: 'Cryptocurrency-Portfolio-Tracker.xlsx'
-      },
-      {
-        type: 'heading',
-        content: 'Popular Indian Crypto Exchanges Integration'
-      },
-      {
-        type: 'list',
-        items: [
-          'WazirX - India\'s largest crypto exchange',
-          'CoinDCX - Professional trading platform',
-          'Zebpay - User-friendly interface',
-          'Bitbns - Comprehensive crypto services',
-          'CoinSwitch Kuber - Simplified crypto investing',
-          'Unocoin - India\'s pioneer crypto exchange'
+          'Legally sound and compliant with Indian requirements',
+          'Easy to customize for various scenarios',
+          'Professional and structured format',
+          'Time-saving and error-free drafting'
         ]
       },
       {
-        type: 'heading',
-        content: 'Key Features of Our Crypto Tracker'
-      },
-      {
-        type: 'list',
-        items: [
-          'Real-time portfolio valuation in INR',
-          'Automatic profit/loss calculations',
-          'DCA (Dollar Cost Averaging) analysis',
-          'Tax calculation for Indian crypto investors',
-          'Multi-exchange portfolio consolidation',
-          'Historical performance tracking',
-          'Risk management tools and alerts'
-        ]
-      },
-      {
-        type: 'heading',
-        content: 'Understanding Crypto Taxation in India'
-      },
-      {
         type: 'paragraph',
-        content: 'Indian crypto investors must pay 30% tax on profits and cannot offset losses. Our tracker helps calculate exact tax liability and maintains records for compliance.'
-      }
-    ]
-  },
-  {
-    id: '10',
-    slug: 'universal-budget-planner-excel-template-worldwide-users',
-    title: 'Universal Budget Planner Excel Template - Comprehensive Financial Planning for Global Users',
-    metaTitle: 'Universal Budget Planner Excel Template | Global Financial Planning Tool',
-    metaDescription: 'Download universal budget planner Excel template suitable for users worldwide. Multi-currency support, comprehensive expense tracking, and financial goal planning.',
-    excerpt: 'Plan your finances globally with our universal budget planner. Supports multiple currencies and adapts to different financial systems worldwide.',
-    coverImage: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
-    date: '2024-12-18',
-    author: 'Sarah International',
-    authorImage: 'https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=150&h=150&fit=crop&crop=face',
-    authorTitle: 'Global Financial Planner',
-    authorBio: 'International financial consultant helping individuals worldwide achieve financial independence through structured planning.',
-    categories: ['Worldwide & General Audience'],
-    tags: ['universal budget planner', 'global finance', 'multi currency', 'international budgeting', 'financial planning'],
-    readTime: 10,
-    seoKeywords: ['universal budget planner excel', 'global budget template', 'multi currency budget planner', 'international financial planning'],
-    content: [
-      {
-        type: 'paragraph',
-        content: 'Financial planning principles are universal, but implementation varies across countries and currencies. Our universal budget planner accommodates different financial systems, currencies, and cultural spending patterns used worldwide.'
-      },
-      {
-        type: 'heading',
-        content: 'Global Financial Planning Challenges'
-      },
-      {
-        type: 'paragraph',
-        content: 'Managing finances across different countries involves currency conversions, varying tax systems, and different financial instruments. Our template addresses these complexities with flexible structures.'
-      },
-      {
-        type: 'download',
-        content: 'Download Universal Budget Planner',
-        downloadUrl: '/downloads/universal-budget-planner.xlsx',
-        fileName: 'Universal-Budget-Planner-Template.xlsx'
-      },
-      {
-        type: 'heading',
-        content: 'Multi-Currency Features'
-      },
-      {
-        type: 'list',
-        items: [
-          'Support for 50+ major world currencies',
-          'Automatic currency conversion rates',
-          'Multi-country expense tracking',
-          'International investment portfolio tracking',
-          'Cross-border remittance planning',
-          'Travel budget and expense management'
-        ]
-      },
-      {
-        type: 'heading',
-        content: 'Adaptable Financial Categories'
-      },
-      {
-        type: 'paragraph',
-        content: 'Different cultures have varying spending priorities. Our template includes customizable categories that work across different financial systems and cultural contexts.'
+        content: 'Ensure your official processes are seamless with our professionally drafted No Objection Certificate templates. Download now and simplify your documentation needs.'
       }
     ]
   }
 ];
 
-export function getExcelToolBlogPostBySlug(slug: string): ExcelToolBlogPost | undefined {
-  return excelToolBlogPosts.find(post => post.slug === slug);
-}
-
-export function getRelatedExcelToolBlogPosts(slug: string, count: number = 3): ExcelToolBlogPost[] {
-  const post = getExcelToolBlogPostBySlug(slug);
-  if (!post) return [];
-  
-  const related = excelToolBlogPosts.filter(
-    p => p.slug !== slug && p.categories.some(cat => post.categories.includes(cat))
+// Component to display a single blog post card
+const BlogPostCard: React.FC<{ post: ExcelToolBlogPost; onClick: (id: string) => void }> = ({ post, onClick }) => {
+  return (
+    <div
+      className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer flex flex-col h-full"
+      onClick={() => onClick(post.id)}
+    >
+      <img
+        src={post.coverImage}
+        alt={post.title}
+        className="w-full h-48 object-cover rounded-t-xl"
+        onError={(e) => {
+          e.currentTarget.src = `https://placehold.co/800x400/CCCCCC/333333?text=Image+Error`;
+          e.currentTarget.onerror = null;
+        }}
+      />
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
+          {post.title}
+        </h3>
+        <p className="text-gray-700 text-sm mb-4 flex-grow">
+          {post.excerpt}
+        </p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {post.categories.map((category, index) => (
+            <span
+              key={index}
+              className="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
+            >
+              {category}
+            </span>
+          ))}
+        </div>
+        <div className="flex items-center text-gray-600 text-sm">
+          {post.authorImage && (
+            <img
+              src={post.authorImage}
+              alt={post.author}
+              className="w-8 h-8 rounded-full mr-2 object-cover"
+              onError={(e) => {
+                e.currentTarget.src = `https://placehold.co/150x150/CCCCCC/333333?text=Author`;
+                e.currentTarget.onerror = null;
+              }}
+            />
+          )}
+          <span>{post.author}</span>
+          <span className="mx-2">•</span>
+          <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+          <span className="mx-2">•</span>
+          <span>{post.readTime} min read</span>
+        </div>
+      </div>
+    </div>
   );
-  
-  if (related.length < count) {
-    const others = excelToolBlogPosts.filter(p => p.slug !== slug && !related.includes(p));
-    return [...related, ...others].slice(0, count);
+};
+
+// Component to display the full blog post
+const BlogPostDetail: React.FC<{ post: ExcelToolBlogPost; onBack: () => void }> = ({ post, onBack }) => {
+  if (!post) {
+    return (
+      <div className="text-center py-10">
+        <p className="text-gray-600">Blog post not found.</p>
+        <button
+          onClick={onBack}
+          className="mt-6 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        >
+          Back to all posts
+        </button>
+      </div>
+    );
   }
-  
-  return related.slice(0, count);
-}
+
+  return (
+    <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 lg:p-10 max-w-4xl mx-auto my-8 font-['Inter']">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="mb-6 flex items-center text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-medium"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+        </svg>
+        Back to all posts
+      </button>
+
+      {/* Cover Image */}
+      <img
+        src={post.coverImage}
+        alt={post.title}
+        className="w-full h-64 md:h-96 object-cover rounded-lg mb-8 shadow-md"
+        onError={(e) => {
+          e.currentTarget.src = `https://placehold.co/800x400/CCCCCC/333333?text=Image+Error`;
+          e.currentTarget.onerror = null;
+        }}
+      />
+
+      {/* Title */}
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+        {post.title}
+      </h1>
+
+      {/* Author and Meta Info */}
+      <div className="flex items-center text-gray-600 text-sm md:text-base mb-8">
+        {post.authorImage && (
+          <img
+            src={post.authorImage}
+            alt={post.author}
+            className="w-12 h-12 rounded-full mr-4 object-cover ring-2 ring-indigo-300"
+            onError={(e) => {
+              e.currentTarget.src = `https://placehold.co/150x150/CCCCCC/333333?text=Author`;
+              e.currentTarget.onerror = null;
+            }}
+          />
+        )}
+        <div>
+          <p className="font-semibold text-gray-800">{post.author}</p>
+          {post.authorTitle && <p className="text-xs text-gray-500">{post.authorTitle}</p>}
+          <p className="mt-1">
+            <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            <span className="mx-2">•</span>
+            <span>{post.readTime} min read</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Content Sections */}
+      <div className="prose prose-indigo max-w-none text-gray-800">
+        {post.content.map((section, index) => (
+          <div key={index} className="my-6">
+            {section.type === 'paragraph' && (
+              <p className="mb-4 text-base leading-relaxed">{section.content}</p>
+            )}
+            {section.type === 'heading' && (
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 mt-8 border-b-2 border-indigo-200 pb-2">
+                {section.content}
+              </h2>
+            )}
+            {section.type === 'subheading' && (
+              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3 mt-6">
+                {section.content}
+              </h3>
+            )}
+            {section.type === 'list' && section.items && (
+              <ul className="list-disc list-inside space-y-2 mb-4 pl-5">
+                {section.items.map((item, i) => (
+                  <li key={i} className="text-base">{item}</li>
+                ))}
+              </ul>
+            )}
+            {section.type === 'image' && section.url && (
+              <figure className="my-8">
+                <img
+                  src={section.url}
+                  alt={section.caption || 'Blog image'}
+                  className="w-full rounded-lg shadow-md"
+                  onError={(e) => {
+                    e.currentTarget.src = `https://placehold.co/800x400/CCCCCC/333333?text=Image+Error`;
+                    e.currentTarget.onerror = null;
+                  }}
+                />
+                {section.caption && (
+                  <figcaption className="text-center text-sm text-gray-500 mt-2">
+                    {section.caption}
+                  </figcaption>
+                )}
+              </figure>
+            )}
+            {section.type === 'quote' && section.content && (
+              <blockquote className="border-l-4 border-indigo-500 pl-4 py-2 my-6 italic text-lg text-gray-700 bg-indigo-50 rounded-r-md">
+                <p className="mb-2">"{section.content}"</p>
+                {section.author && (
+                  <footer className="text-right text-sm not-italic text-gray-600">
+                    — {section.author}
+                  </footer>
+                )}
+              </blockquote>
+            )}
+            {section.type === 'download' && section.downloadUrl && section.fileName && (
+              <div className="my-8 text-center">
+                <a
+                  href={section.downloadUrl}
+                  download={section.fileName}
+                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-700 text-white font-bold text-lg rounded-full shadow-xl hover:from-indigo-700 hover:to-purple-800 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l3-3m-3 3l-3-3m-2 8h10a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  {section.content || 'Download File'}
+                </a>
+                <p className="text-gray-500 text-sm mt-2">
+                  (Note: Actual download requires file to be hosted at the specified URL.)
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Tags */}
+      {post.tags && post.tags.length > 0 && (
+        <div className="mt-10 pt-6 border-t border-gray-200">
+          <h4 className="text-lg font-semibold text-gray-800 mb-3">Tags:</h4>
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map((tag, index) => (
+              <span
+                key={index}
+                className="bg-gray-100 text-gray-700 text-sm font-medium px-3 py-1 rounded-full hover:bg-gray-200 transition-colors duration-200"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Author Bio */}
+      {post.authorBio && (
+        <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center md:items-start bg-indigo-50 p-6 rounded-lg shadow-inner">
+          {post.authorImage && (
+            <img
+              src={post.authorImage}
+              alt={post.author}
+              className="w-24 h-24 rounded-full mr-6 object-cover mb-4 md:mb-0 ring-4 ring-indigo-200"
+              onError={(e) => {
+                e.currentTarget.src = `https://placehold.co/150x150/CCCCCC/333333?text=Author`;
+                e.currentTarget.onerror = null;
+              }}
+            />
+          )}
+          <div>
+            <h4 className="text-xl font-bold text-gray-900 mb-2">About {post.author}</h4>
+            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+              {post.authorBio}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Simulated SEO Information */}
+      <div className="mt-10 pt-6 border-t border-gray-200 bg-gray-50 p-6 rounded-lg text-sm text-gray-700 shadow-inner">
+        <h4 className="text-lg font-semibold text-gray-800 mb-3">Simulated SEO & Social Media Information:</h4>
+        <p className="mb-2"><span className="font-bold">Meta Title:</span> {post.metaTitle}</p>
+        <p className="mb-2"><span className="font-bold">Meta Description:</span> {post.metaDescription}</p>
+        <p className="mb-2"><span className="font-bold">SEO Keywords:</span> {post.seoKeywords.join(', ')}</p>
+        <p className="mb-2"><span className="font-bold">Canonical URL:</span> `https://yourwebsite.com/blog/{post.slug}`</p>
+        <p className="mb-2"><span className="font-bold">Open Graph Title (for social media):</span> {post.title}</p>
+        <p className="mb-2"><span className="font-bold">Open Graph Description:</span> {post.excerpt}</p>
+        <p className="mb-2"><span className="font-bold">Open Graph Image:</span> {post.coverImage}</p>
+        <p className="text-gray-500 mt-4">
+          <em>Note: In a real web application, these would be dynamically inserted into the document's `&lt;head&gt;` section for actual SEO and social media sharing.</em>
+        </p>
+      </div>
+
+      {/* Back Button at bottom */}
+      <div className="text-center mt-10">
+        <button
+          onClick={onBack}
+          className="inline-flex items-center px-8 py-4 bg-indigo-600 text-white font-bold text-lg rounded-full shadow-md hover:bg-indigo-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+          </svg>
+          Back to all posts
+        </button>
+      </div>
+    </div>
+  );
+};
+
+// Main App component
+const App: React.FC = () => {
+  const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
+  const selectedPost = excelToolBlogPosts.find(post => post.id === selectedPostId);
+
+  // Apply Inter font globally
+  useEffect(() => {
+    document.body.style.fontFamily = 'Inter, sans-serif';
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gray-100 p-4 sm:p-6 md:p-8">
+      <style>
+        {`
+        @import url('https://rsms.me/inter/inter.css');
+        html { font-family: 'Inter', sans-serif; }
+        @supports (font-variation-settings: normal) {
+          html { font-family: 'Inter var', sans-serif; }
+        }
+        `}
+      </style>
+      <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-8 px-6 rounded-b-xl shadow-lg mb-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 leading-tight">
+            Excel Tools & Financial Guides
+          </h1>
+          <p className="text-lg md:text-xl font-light opacity-90">
+            Comprehensive resources for Indian households and businesses.
+          </p>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto py-8">
+        {selectedPostId ? (
+          <BlogPostDetail post={selectedPost!} onBack={() => setSelectedPostId(null)} />
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {excelToolBlogPosts.map(post => (
+              <BlogPostCard key={post.id} post={post} onClick={setSelectedPostId} />
+            ))}
+          </div>
+        )}
+      </main>
+
+      <footer className="bg-gray-800 text-white py-6 mt-8 rounded-t-xl shadow-inner">
+        <div className="max-w-7xl mx-auto text-center text-sm opacity-80">
+          &copy; {new Date().getFullYear()} ExcelTools. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
