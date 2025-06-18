@@ -1,11 +1,11 @@
-// src/pages/excelpost.tsx
+// src/pages/ExcelPost.tsx
 
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Tag, Share2, Bookmark, Facebook, Twitter, Linkedin } from 'lucide-react';
-import { getBlogPostBySlug, getRelatedPosts } from '../data/exceldata'; // Correct import
+import { getBlogPostBySlug, getRelatedPosts } from '../data/exceldata';
 
-export const ExcelPost: React.FC = () => {
+const ExcelPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const post = getBlogPostBySlug(slug || '');
