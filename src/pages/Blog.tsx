@@ -3,21 +3,73 @@ import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
 import { blogPosts } from '../data/blogData';
 
+// Updated category list
+const categories = [
+  'All Categories',
+  'Government Schemes',
+  'Investment',
+  'Tax Planning',
+  'Retirement Planning',
+  'Rural Finance',
+  'Senior Citizens',
+  'Financial Inclusion',
+  'Home Loans',
+  'Real Estate',
+  'EMI Calculation',
+  'Financial Planning',
+  'Mutual Funds',
+  'SIP',
+  'Lumpsum',
+  'Wealth Management',
+  'Corpus Calculation',
+  'Income Tax',
+  'Government Regulations',
+  'Insurance',
+  'Social Security',
+  'Stock Market',
+  'Automotive',
+  'Sustainable Energy',
+  'Rural Development',
+  'Employment',
+  'Economy',
+  'ETFs',
+  'Cryptocurrency',
+  'Green Bonds',
+  'Technology',
+  'Startups',
+  'Green Energy',
+  'Electric Vehicles',
+  'Wealth Creation',
+  'Gen Z',
+  'Cost-Effective Investing',
+  'Agriculture',
+  'Farm Loans',
+  'Budget',
+  'SME',
+  'Financial Freedom',
+  'Social Welfare',
+  'Government Policies',
+  'Millennials',
+  'Young Professionals',
+  'ETF',
+  'Bank',
+  'PMAY',
+  'Business Loan',
+  'Infrastructure',
+  'Defence',
+  'Export'
+];
+
 const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  // Get unique categories
-  const categories = Array.from(
-    new Set(blogPosts.flatMap(post => post.categories))
-  );
+  const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
 
   // Filter posts based on search and category
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = searchTerm === '' ||
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === null ||
+    const matchesCategory = selectedCategory === 'All Categories' ||
       post.categories.includes(selectedCategory);
     return matchesSearch && matchesCategory;
   });
@@ -51,17 +103,7 @@ const Blog: React.FC = () => {
 
           <div>
             <h3 className="text-lg font-semibold text-neutral-900 mb-3">Categories</h3>
-            <div className="space-y-2">
-              <button
-                onClick={() => setSelectedCategory(null)}
-                className={`block w-full text-left px-3 py-2 rounded-lg text-sm ${
-                  selectedCategory === null
-                    ? 'bg-primary-100 text-primary-800 font-medium'
-                    : 'text-neutral-700 hover:bg-neutral-100'
-                }`}
-              >
-                All Categories
-              </button>
+            <div className="space-y-2 max-h-96 overflow-y-auto">
               {categories.map(category => (
                 <button
                   key={category}
@@ -115,7 +157,7 @@ const Blog: React.FC = () => {
               <button
                 onClick={() => {
                   setSearchTerm('');
-                  setSelectedCategory(null);
+                  setSelectedCategory('All Categories');
                 }}
                 className="mt-4 text-primary-600 hover:text-primary-700 font-medium"
               >
@@ -163,8 +205,6 @@ const Blog: React.FC = () => {
               ))}
             </div>
           )}
-
-          {/* Add more sections here if needed, similar to Excel Tool if you want */}
         </div>
       </div>
     </div>
