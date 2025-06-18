@@ -142,7 +142,7 @@ export const Header: React.FC = () => {
               Blog
             </Link>
              <Link 
-              to="/excel" 
+              to="/ExcelTool" 
               className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
             >
               <FileText className="h-4 w-4 mr-1" />
