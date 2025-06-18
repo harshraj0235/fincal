@@ -6,8 +6,8 @@ import { Home } from './pages/Home';
 import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
 import { CalculatorPage } from './pages/CalculatorPage';
-import { Blog } from './pages/Blog';
-import { BlogPost } from './pages/BlogPost';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import { WriteBlog } from './pages/WriteBlog';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsAndConditions } from './pages/TermsAndConditions';
@@ -19,7 +19,7 @@ import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
 
-// Import your Excel Tool section pages
+// Excel Tool blog section
 import ExcelTool from './pages/ExcelTool';
 import ExcelToolPost from './pages/ExcelToolPost';
 
