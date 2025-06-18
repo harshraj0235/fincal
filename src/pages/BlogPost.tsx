@@ -10,6 +10,63 @@ const BlogPost: React.FC = () => {
   const post = getBlogPostBySlug(slug || '');
   const relatedPosts = getRelatedPosts(slug || '', 3);
 
+  // The same categories array as in Blog.tsx, so you can use for tags if needed
+  const categories = [
+    'All Categories',
+    'Government Schemes',
+    'Investment',
+    'Tax Planning',
+    'Retirement Planning',
+    'Rural Finance',
+    'Senior Citizens',
+    'Financial Inclusion',
+    'Home Loans',
+    'Real Estate',
+    'EMI Calculation',
+    'Financial Planning',
+    'Mutual Funds',
+    'SIP',
+    'Lumpsum',
+    'Wealth Management',
+    'Corpus Calculation',
+    'Income Tax',
+    'Government Regulations',
+    'Insurance',
+    'Social Security',
+    'Stock Market',
+    'Automotive',
+    'Sustainable Energy',
+    'Rural Development',
+    'Employment',
+    'Economy',
+    'ETFs',
+    'Cryptocurrency',
+    'Green Bonds',
+    'Technology',
+    'Startups',
+    'Green Energy',
+    'Electric Vehicles',
+    'Wealth Creation',
+    'Gen Z',
+    'Cost-Effective Investing',
+    'Agriculture',
+    'Farm Loans',
+    'Budget',
+    'SME',
+    'Financial Freedom',
+    'Social Welfare',
+    'Government Policies',
+    'Millennials',
+    'Young Professionals',
+    'ETF',
+    'Bank',
+    'PMAY',
+    'Business Loan',
+    'Infrastructure',
+    'Defence',
+    'Export'
+  ];
+
   if (!post) {
     return (
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -189,7 +246,7 @@ const BlogPost: React.FC = () => {
                 ))}
               </div>
             </div>
-            {/* Add additional sections if needed, similar to ExcelToolPost */}
+            {/* Add additional sections if needed */}
           </div>
         </div>
       </div>
