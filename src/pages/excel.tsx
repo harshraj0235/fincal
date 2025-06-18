@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
-import { blogPosts } from 'src/data/excel';
+import { blogPosts } from 'src/data/exceldata';
 
 export const excel: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
