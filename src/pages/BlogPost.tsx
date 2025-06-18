@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, User, Tag, Share2, Bookmark, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Tag, Bookmark, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { getBlogPostBySlug, getRelatedPosts } from '../data/blogData';
 
 const BlogPost: React.FC = () => {
@@ -9,63 +9,6 @@ const BlogPost: React.FC = () => {
 
   const post = getBlogPostBySlug(slug || '');
   const relatedPosts = getRelatedPosts(slug || '', 3);
-
-  // The same categories array as in Blog.tsx, so you can use for tags if needed
-  const categories = [
-    'All Categories',
-    'Government Schemes',
-    'Investment',
-    'Tax Planning',
-    'Retirement Planning',
-    'Rural Finance',
-    'Senior Citizens',
-    'Financial Inclusion',
-    'Home Loans',
-    'Real Estate',
-    'EMI Calculation',
-    'Financial Planning',
-    'Mutual Funds',
-    'SIP',
-    'Lumpsum',
-    'Wealth Management',
-    'Corpus Calculation',
-    'Income Tax',
-    'Government Regulations',
-    'Insurance',
-    'Social Security',
-    'Stock Market',
-    'Automotive',
-    'Sustainable Energy',
-    'Rural Development',
-    'Employment',
-    'Economy',
-    'ETFs',
-    'Cryptocurrency',
-    'Green Bonds',
-    'Technology',
-    'Startups',
-    'Green Energy',
-    'Electric Vehicles',
-    'Wealth Creation',
-    'Gen Z',
-    'Cost-Effective Investing',
-    'Agriculture',
-    'Farm Loans',
-    'Budget',
-    'SME',
-    'Financial Freedom',
-    'Social Welfare',
-    'Government Policies',
-    'Millennials',
-    'Young Professionals',
-    'ETF',
-    'Bank',
-    'PMAY',
-    'Business Loan',
-    'Infrastructure',
-    'Defence',
-    'Export'
-  ];
 
   if (!post) {
     return (
@@ -215,7 +158,6 @@ const BlogPost: React.FC = () => {
             </div>
           </article>
         </div>
-
         <div className="lg:col-span-1">
           <div className="sticky top-24">
             <div className="bg-white rounded-xl shadow-md p-6 mb-8">
@@ -246,7 +188,7 @@ const BlogPost: React.FC = () => {
                 ))}
               </div>
             </div>
-            {/* Add additional sections if needed */}
+            {/* Additional sidebar widgets can go here */}
           </div>
         </div>
       </div>
