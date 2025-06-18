@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
 import { blogPosts } from '../data/blogData';
 
-// Updated category list
+// Full categories list
 const categories = [
   'All Categories',
   'Government Schemes',
@@ -64,12 +64,13 @@ const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All Categories');
 
-  // Filter posts based on search and category
   const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = searchTerm === '' ||
+    const matchesSearch =
+      searchTerm === '' ||
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'All Categories' ||
+    const matchesCategory =
+      selectedCategory === 'All Categories' ||
       post.categories.includes(selectedCategory);
     return matchesSearch && matchesCategory;
   });
@@ -82,9 +83,7 @@ const Blog: React.FC = () => {
           Expert insights, tips, and guides to help you make better financial decisions
         </p>
       </div>
-
       <div className="flex flex-col md:flex-row gap-8 mb-12">
-        {/* Sidebar with search and categories */}
         <div className="w-full md:w-1/3 lg:w-1/4 space-y-6">
           <div>
             <div className="relative">
@@ -95,12 +94,11 @@ const Blog: React.FC = () => {
                 type="text"
                 placeholder="Search articles..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={e => setSearchTerm(e.target.value)}
                 className="input pl-10"
               />
             </div>
           </div>
-
           <div>
             <h3 className="text-lg font-semibold text-neutral-900 mb-3">Categories</h3>
             <div className="space-y-2 max-h-96 overflow-y-auto">
@@ -119,7 +117,6 @@ const Blog: React.FC = () => {
               ))}
             </div>
           </div>
-
           <div className="p-4 bg-primary-50 rounded-lg border border-primary-100">
             <h3 className="text-lg font-semibold text-primary-900 mb-2">Government Scheme Guides</h3>
             <p className="text-sm text-primary-700 mb-3">
@@ -133,7 +130,6 @@ const Blog: React.FC = () => {
               <ArrowRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
-
           <div className="p-4 bg-primary-50 rounded-lg border border-primary-100">
             <h3 className="text-lg font-semibold text-primary-900 mb-2">Write for Us</h3>
             <p className="text-sm text-primary-700 mb-3">
@@ -148,8 +144,6 @@ const Blog: React.FC = () => {
             </Link>
           </div>
         </div>
-
-        {/* Blog posts grid */}
         <div className="w-full md:w-2/3 lg:w-3/4">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-12 bg-neutral-50 rounded-lg">
