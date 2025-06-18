@@ -1,15 +1,16 @@
+// src/pages/excelpost.tsx
+
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Tag, Share2, Bookmark, Facebook, Twitter, Linkedin } from 'lucide-react';
-import { getBlogPostBySlug, getRelatedPosts } from '../data/excel';
+import { getBlogPostBySlug, getRelatedPosts } from '../data/exceldata'; // Correct import
 
 export const ExcelPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  
   const post = getBlogPostBySlug(slug || '');
   const relatedPosts = getRelatedPosts(slug || '', 3);
-  
+
   if (!post) {
     return (
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -24,7 +25,7 @@ export const ExcelPost: React.FC = () => {
       </div>
     );
   }
-  
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
@@ -82,7 +83,7 @@ export const ExcelPost: React.FC = () => {
                   {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{section.content}</h3>}
                   {section.type === 'list' && (
                     <ul className="list-disc pl-6 space-y-2">
-                      {section.items.map((item, i) => (
+                      {section.items?.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
@@ -190,43 +191,10 @@ export const ExcelPost: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-[--success-50] rounded-xl p-6 border border-[--success-100] mb-8">
-              <h3 className="text-xl font-semibold text-[--success-900] mb-4">Government Scheme Calculators</h3>
-              <p className="text-sm text-[--success-700] mb-4">
-                Use our calculators to plan your investments in government schemes and maximize your returns.
-              </p>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/calculators/sukanya-samriddhi-calculator" className="text-sm text-[--success-800] hover:text-[--success-900] font-medium flex items-center">
-                    <span className="h-5 w-5 rounded-full bg-[--success-200] text-[--success-700] flex items-center justify-center flex-shrink-0 mr-2">→</span>
-                    Sukanya Samriddhi Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/calculators/nps-calculator" className="text-sm text-[--success-800] hover:text-[--success-900] font-medium flex items-center">
-                    <span className="h-5 w-5 rounded-full bg-[--success-200] text-[--success-700] flex items-center justify-center flex-shrink-0 mr-2">→</span>
-                    NPS Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/calculators/post-office-schemes-calculator" className="text-sm text-[--success-800] hover:text-[--success-900] font-medium flex items-center">
-                    <span className="h-5 w-5 rounded-full bg-[--success-200] text-[--success-700] flex items-center justify-center flex-shrink-0 mr-2">→</span>
-                    Post Office Schemes Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/calculators/ppf-calculator" className="text-sm text-[--success-800] hover:text-[--success-900] font-medium flex items-center">
-                    <span className="h-5 w-5 rounded-full bg-[--success-200] text-[--success-700] flex items-center justify-center flex-shrink-0 mr-2">→</span>
-                    PPF Calculator
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
             <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
               <h3 className="text-xl font-semibold text-primary-900 mb-4">Subscribe to Our Newsletter</h3>
               <p className="text-sm text-primary-700 mb-4">
-                Get the latest financial tips and insights delivered straight to your inbox.
+                Get the latest Excel tips and templates delivered straight to your inbox.
               </p>
               <form className="space-y-3">
                 <input 
