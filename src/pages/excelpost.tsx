@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Tag, Share2, Bookmark, Facebook, Twitter, Linkedin } from 'lucide-react';
-import { getBlogPostBySlug, getRelatedPosts } from '../data/blogData';
+import { getBlogPostBySlug, getRelatedPosts } from '../data/excel';
 
-export const BlogPost: React.FC = () => {
+export const ExcelPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   
@@ -16,7 +16,7 @@ export const BlogPost: React.FC = () => {
         <h1 className="text-2xl font-bold text-neutral-900 mb-4">Blog Post Not Found</h1>
         <p className="text-neutral-600 mb-8">The blog post you're looking for doesn't exist or may have been moved.</p>
         <button 
-          onClick={() => navigate('/blog')}
+          onClick={() => navigate('/excel')}
           className="btn btn-primary"
         >
           Back to Blog
@@ -29,7 +29,7 @@ export const BlogPost: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
         <button 
-          onClick={() => navigate('/blog')} 
+          onClick={() => navigate('/excel')} 
           className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
         >
           <ArrowLeft className="h-4 w-4 mr-1" />
@@ -167,7 +167,7 @@ export const BlogPost: React.FC = () => {
                 {relatedPosts.map(relatedPost => (
                   <Link 
                     key={relatedPost.id} 
-                    to={`/blog/${relatedPost.slug}`}
+                    to={`/excel/${relatedPost.slug}`}
                     className="block group"
                   >
                     <div className="flex items-start">
@@ -249,4 +249,4 @@ export const BlogPost: React.FC = () => {
   );
 };
 
-export default BlogPost;
+export default ExcelPost;
