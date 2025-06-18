@@ -12,7 +12,7 @@ export interface ExcelToolBlogPostSection {
   fileName?: string;
 }
 
-export interface ExcelToolBlogPost {
+export interface ExcelToolPost {
   id: string;
   slug: string;
   title: string;
