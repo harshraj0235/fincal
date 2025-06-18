@@ -33,7 +33,7 @@ export interface ExcelToolPost {
 }
 
 // Provided blog post data
-export const excelToolBlogPosts: ExcelToolBlogPost[] = [
+export const excelToolBlogPosts: ExcelToolPost[] = [
   {
     id: '1',
     slug: 'free-budget-planner-excel-template-download-indian-households',
