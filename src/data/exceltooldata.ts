@@ -1,6 +1,6 @@
-// src/data/exceldata.ts
+// src/data/exceltooldata.ts
 
-export interface PostSection {
+export interface ExcelToolBlogPostSection {
   type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'image' | 'quote';
   content?: string;
   items?: string[];
@@ -9,7 +9,7 @@ export interface PostSection {
   author?: string;
 }
 
-export interface ExcelBlogPost {
+export interface ExcelToolBlogPost {
   id: string;
   slug: string;
   title: string;
@@ -21,64 +21,61 @@ export interface ExcelBlogPost {
   authorTitle?: string;
   authorBio?: string;
   categories: string[];
-  content: PostSection[];
+  content: ExcelToolBlogPostSection[];
 }
 
-export const blogPosts: ExcelBlogPost[] = [
+export const excelToolBlogPosts: ExcelToolBlogPost[] = [
   {
     id: '1',
-    slug: 'excel-formula-tips',
-    title: 'Top 10 Excel Formula Tips for Financial Analysis',
-    excerpt: 'Master these Excel formulas to boost your speed and accuracy in financial analysis.',
+    slug: 'excel-formula-shortcuts',
+    title: 'Essential Excel Formula Shortcuts',
+    excerpt: 'Boost your productivity with these essential Excel formula shortcuts.',
     coverImage: '/images/excel-formulas.jpg',
-    date: '2025-06-10',
-    author: 'John Doe',
+    date: '2025-06-18',
+    author: 'John Excel',
     authorImage: '',
-    authorTitle: 'Finance Analyst',
-    authorBio: 'Excel enthusiast and finance professional.',
-    categories: ['Excel', 'Financial Analysis'],
+    authorTitle: 'Excel Expert',
+    authorBio: 'John has 10+ years experience with Excel for finance.',
+    categories: ['Formulas', 'Shortcuts'],
     content: [
-      { type: 'paragraph', content: 'Learn the most useful Excel formulas for financial modeling and data analysis.' },
-      { type: 'heading', content: '1. SUM, AVERAGE, COUNT' },
+      { type: 'paragraph', content: 'Discover time-saving formula shortcuts in Excel that every pro should know!' },
+      { type: 'heading', content: 'SUM, AVERAGE, and COUNT' },
       { type: 'list', items: ['SUM(range)', 'AVERAGE(range)', 'COUNT(range)'] },
-      { type: 'paragraph', content: 'These basic functions help you quickly summarize data.' }
+      { type: 'paragraph', content: 'Use these to quickly summarize data ranges.' },
     ]
   },
   {
     id: '2',
-    slug: 'pivot-tables-guide',
-    title: 'Pivot Tables: The Ultimate Guide',
-    excerpt: 'An in-depth guide on using Pivot Tables in Excel for dynamic data analysis.',
+    slug: 'excel-pivot-tables',
+    title: 'Mastering Pivot Tables in Excel',
+    excerpt: 'Unlock the true power of your data with pivot tables.',
     coverImage: '/images/excel-pivot.jpg',
-    date: '2025-06-12',
-    author: 'Jane Smith',
+    date: '2025-06-19',
+    author: 'Jane Sheet',
     authorImage: '',
-    authorTitle: 'Excel Trainer',
-    authorBio: 'Jane loves teaching Excel to beginners and pros alike.',
-    categories: ['Excel', 'Data Analysis'],
+    authorTitle: 'Data Analyst',
+    authorBio: 'Jane loves simplifying data analysis for everyone.',
+    categories: ['Pivot Tables', 'Analysis'],
     content: [
-      { type: 'paragraph', content: 'Pivot Tables are one of the most powerful features in Excel.' },
+      { type: 'paragraph', content: 'Pivot Tables make it easy to analyze complex data.' },
       { type: 'heading', content: 'Getting Started' },
-      { type: 'paragraph', content: 'To insert a Pivot Table, select your data and go to Insert > Pivot Table.' }
+      { type: 'paragraph', content: 'Select your data, then Insert > Pivot Table.' }
     ]
   }
-  // Add more posts as needed
 ];
 
-// Find post by slug
-export function getBlogPostBySlug(slug: string): ExcelBlogPost | undefined {
-  return blogPosts.find(post => post.slug === slug);
+export function getExcelToolBlogPostBySlug(slug: string): ExcelToolBlogPost | undefined {
+  return excelToolBlogPosts.find(post => post.slug === slug);
 }
 
-// Get related posts (by shared category, fallback to others)
-export function getRelatedPosts(slug: string, count: number = 3): ExcelBlogPost[] {
-  const post = getBlogPostBySlug(slug);
+export function getRelatedExcelToolBlogPosts(slug: string, count: number = 3): ExcelToolBlogPost[] {
+  const post = getExcelToolBlogPostBySlug(slug);
   if (!post) return [];
-  const related = blogPosts.filter(
+  const related = excelToolBlogPosts.filter(
     p => p.slug !== slug && p.categories.some(cat => post.categories.includes(cat))
   );
   if (related.length < count) {
-    const others = blogPosts.filter(p => p.slug !== slug && !related.includes(p));
+    const others = excelToolBlogPosts.filter(p => p.slug !== slug && !related.includes(p));
     return [...related, ...others].slice(0, count);
   }
   return related.slice(0, count);
