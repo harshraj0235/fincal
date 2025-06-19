@@ -1897,7 +1897,42 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+ <url>
+    <loc>https://moneycal.in/blog/young-indians-using-ai-money-management-guide</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/free-budget-templates-indian-families-download-guide</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/latest-rbi-policy-impact-savings-investment-strategy</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/indians-paid-off-debt-digital-tools-success-stories</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/digital-gold-trending-indian-investors-complete-guide</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/income-tax-filing-online-complete-itr-guide-indians</loc>
+    <lastmod>2025-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Tax Calculators -->
   <url>
     <loc>https://moneycal.in/calculators/income-tax-calculator</loc>
