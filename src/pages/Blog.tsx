@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
-import { blogPosts } from '../data/blogData';
-import { blogPosts } from '../data/blogData1';
- 
+//import { blogPosts } from '../data/blogData';
+  import { blogPosts as blogPosts0 } from '../data/blogData';
+import { blogPosts as blogPosts1 } from '../data/blogData1';
+
+const allPosts = [...blogPosts0, ...blogPosts1];
+
 
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
