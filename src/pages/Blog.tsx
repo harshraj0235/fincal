@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
-import { blogPosts } from '../data/blogData';
- 
- 
+import { blogPosts as oldPosts } from '../data/blogData';
+import { blogPosts as newPosts } from '../data/blogData1';
+
 const allBlogPosts = [...oldPosts, ...newPosts];
 
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  
+
   // Get unique categories
   const categories = Array.from(
-    new Set(blogPosts.flatMap(post => post.categories))
+    new Set(allBlogPosts.flatMap(post => post.categories))
   );
-  
+
   // Filter posts based on search and category
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = searchTerm === '' || 
+  const filteredPosts = allBlogPosts.filter(post => {
+    const matchesSearch = searchTerm === '' ||
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      
-    const matchesCategory = selectedCategory === null || 
+
+    const matchesCategory = selectedCategory === null ||
       post.categories.includes(selectedCategory);
-      
+
     return matchesSearch && matchesCategory;
   });
-  
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
@@ -35,7 +35,7 @@ export const Blog: React.FC = () => {
           Expert insights, tips, and guides to help you make better financial decisions
         </p>
       </div>
-      
+
       <div className="flex flex-col md:flex-row gap-8 mb-12">
         {/* Search and filters */}
         <div className="w-full md:w-1/3 lg:w-1/4 space-y-6">
@@ -53,7 +53,7 @@ export const Blog: React.FC = () => {
               />
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-semibold text-neutral-900 mb-3">Categories</h3>
             <div className="space-y-2">
@@ -82,7 +82,7 @@ export const Blog: React.FC = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="p-4 bg-primary-50 rounded-lg border border-primary-100">
             <h3 className="text-lg font-semibold text-primary-900 mb-2">Government Scheme Guides</h3>
             <p className="text-sm text-primary-700 mb-3">
@@ -96,7 +96,7 @@ export const Blog: React.FC = () => {
               <ArrowRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
-          
+
           <div className="p-4 bg-primary-50 rounded-lg border border-primary-100">
             <h3 className="text-lg font-semibold text-primary-900 mb-2">Write for Us</h3>
             <p className="text-sm text-primary-700 mb-3">
@@ -111,7 +111,7 @@ export const Blog: React.FC = () => {
             </Link>
           </div>
         </div>
-        
+
         {/* Blog posts */}
         <div className="w-full md:w-2/3 lg:w-3/4">
           {filteredPosts.length === 0 ? (
@@ -168,14 +168,14 @@ export const Blog: React.FC = () => {
               ))}
             </div>
           )}
-          
+
           {/* Government Scheme Articles Section */}
           <div className="mt-12 bg-[--success-50] rounded-xl p-6 border border-[--success-200]">
             <h2 className="text-2xl font-bold text-[--success-900] mb-4">Government Scheme Guides</h2>
             <p className="text-[--success-700] mb-6">
               Comprehensive guides to help you understand and maximize benefits from various government financial schemes in India.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <h3 className="font-semibold text-neutral-900 mb-2">Sukanya Samriddhi Yojana: Complete Guide</h3>
@@ -186,7 +186,7 @@ export const Blog: React.FC = () => {
                   Read More →
                 </Link>
               </div>
-              
+
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <h3 className="font-semibold text-neutral-900 mb-2">National Pension System: Tier 1 vs Tier 2</h3>
                 <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
@@ -196,7 +196,7 @@ export const Blog: React.FC = () => {
                   Read More →
                 </Link>
               </div>
-              
+
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <h3 className="font-semibold text-neutral-900 mb-2">Post Office Savings Schemes: Which One is Right for You?</h3>
                 <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
@@ -206,7 +206,7 @@ export const Blog: React.FC = () => {
                   Read More →
                 </Link>
               </div>
-              
+
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <h3 className="font-semibold text-neutral-900 mb-2">PM Vaya Vandana Yojana: Pension Scheme for Senior Citizens</h3>
                 <p className="text-sm text-neutral-600 mb-3 line-clamp-2">
@@ -217,7 +217,7 @@ export const Blog: React.FC = () => {
                 </Link>
               </div>
             </div>
-            
+
             <div className="text-center">
               <Link 
                 to="/blog/category/government-schemes" 
@@ -228,7 +228,7 @@ export const Blog: React.FC = () => {
               </Link>
             </div>
           </div>
-          
+
           {/* Pagination */}
           {filteredPosts.length > 0 && (
             <div className="mt-12 flex justify-center">
