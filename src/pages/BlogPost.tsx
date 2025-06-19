@@ -1,10 +1,8 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Tag, Share2, Bookmark, Facebook, Twitter, Linkedin } from 'lucide-react';
-// import { getBlogPostBySlug, getRelatedPosts } from '../data/blogData';
-import { getBlogPostBySlug as getBlogPostBySlug0 } from '../data/blogData';
-import { getBlogPostBySlug as getBlogPostBySlug1 } from '../data/blogData1';
-
+ import { getBlogPostBySlug, getRelatedPosts } from '../data/blogData';
+ 
 
 
 export const BlogPost: React.FC = () => {
