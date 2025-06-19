@@ -9978,5 +9978,503 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
+  
+  {
+    id: 295,
+    title: "प्रधानमंत्री किसान सम्मान निधि योजना 2024: पूरी जानकारी और आवेदन प्रक्रिया",
+    slug: "pradhan-mantri-kisan-samman-nidhi-yojana-complete-guide-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "PM किसान सम्मान निधि योजना के तहत किसानों को सालाना ₹6000 की आर्थिक सहायता मिलती है। जानें पात्रता, आवेदन प्रक्रिया, और नवीनतम अपडेट।",
+    categories: ["Government Schemes", "Rural Finance", "Financial Inclusion"],
+    metaDescription: "PM किसान सम्मान निधि योजना 2024 की संपूर्ण जानकारी - पात्रता, आवेदन प्रक्रिया, लाभ, और स्टेटस चेक करने का तरीका। किसानों के लिए ₹6000 सालाना योजना।",
+    keywords: ["PM किसान योजना", "किसान सम्मान निधि", "प्रधानमंत्री किसान योजना आवेदन", "PM Kisan status check", "किसान योजना लिस्ट"],
+    readTime: 12,
+    author: "MoneyCal Team",
+    seoTitle: "PM किसान सम्मान निधि योजना 2024: ₹6000 सालाना कैसे पाएं | पूरी गाइड",
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री किसान सम्मान निधि (PM-KISAN) योजना भारत सरकार की एक महत्वाकांक्षी योजना है जो देश के छोटे और सीमांत किसानों को आर्थिक सहायता प्रदान करती है। इस योजना के तहत पात्र किसानों को प्रति वर्ष ₹6,000 की राशि तीन समान किस्तों में दी जाती है। आज के इस लेख में हम PM किसान योजना की सभी महत्वपूर्ण जानकारी साझा करेंगे।"
+      },
+      {
+        type: "heading",
+        content: "PM किसान योजना क्या है?"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री किसान सम्मान निधि योजना 24 फरवरी 2019 को शुरू की गई थी। इस योजना का मुख्य उद्देश्य छोटे और सीमांत किसानों को आर्थिक सहायता प्रदान करना है ताकि वे अपनी कृषि संबंधी जरूरतों को पूरा कर सकें।"
+      },
+      {
+        type: "heading",
+        content: "योजना की मुख्य विशेषताएं"
+      },
+      {
+        type: "list",
+        items: [
+          "सालाना ₹6,000 की आर्थिक सहायता",
+          "तीन समान किस्तों में भुगतान (₹2,000 प्रत्येक)",
+          "सीधे बैंक खाते में DBT के माध्यम से राशि",
+          "देश भर के सभी पात्र किसान परिवारों को कवरेज",
+          "कोई आय सीमा नहीं (नवीनतम अपडेट के अनुसार)",
+          "ऑनलाइन और ऑफलाइन दोनों तरीकों से आवेदन"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/2889686/pexels-photo-2889686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "किसानों के लिए सरकारी योजनाओं का लाभ"
+      },
+      {
+        type: "heading",
+        content: "पात्रता मानदंड - कौन उठा सकता है लाभ?"
+      },
+      {
+        type: "paragraph",
+        content: "PM किसान योजना का लाभ उठाने के लिए निम्नलिखित पात्रता मानदंडों को पूरा करना आवश्यक है:"
+      },
+      {
+        type: "list",
+        items: [
+          "भारतीय नागरिक होना अनिवार्य",
+          "खेती करने वाला किसान परिवार",
+          "2 हेक्टेयर तक कृषि भूमि का मालिक (पहले की शर्त, अब हटाई गई)",
+          "भूमि के कागजात में नाम होना चाहिए",
+          "आधार कार्ड से बैंक खाता लिंक होना चाहिए"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "कौन नहीं ले सकते योजना का लाभ?"
+      },
+      {
+        type: "list",
+        items: [
+          "संस्थागत भूमि धारक",
+          "उच्च आर्थिक स्थिति वाले किसान परिवार जिनके सदस्य:",
+          "- वर्तमान या पूर्व संसद सदस्य, विधायक, मंत्री",
+          "- सरकारी नौकरी में कार्यरत (चतुर्थ श्रेणी को छोड़कर)",
+          "- आयकर दाता",
+          "- व्यावसायिक रूप से योग्य डॉक्टर, इंजीनियर, वकील, चार्टर्ड अकाउंटेंट"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवेदन प्रक्रिया: कैसे करें रजिस्ट्रेशन?"
+      },
+      {
+        type: "subheading",
+        content: "ऑनलाइन आवेदन प्रक्रिया"
+      },
+      {
+        type: "list",
+        items: [
+          "PM किसान की आधिकारिक वेबसाइट pmkisan.gov.in पर जाएं",
+          "'Farmers Corner' सेक्शन में 'New Farmer Registration' पर क्लिक करें",
+          "आधार कार्ड नंबर और कैप्चा कोड डालें",
+          "राज्य चुनें और 'Search' पर क्लिक करें",
+          "व्यक्तिगत जानकारी भरें (नाम, पिता का नाम, जन्मतिथि आदि)",
+          "बैंक खाता विवरण दर्ज करें",
+          "भूमि की जानकारी डालें",
+          "आवश्यक दस्तावेज अपलोड करें",
+          "'Submit' पर क्लिक करके आवेदन पूरा करें"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "ऑफलाइन आवेदन प्रक्रिया"
+      },
+      {
+        type: "paragraph",
+        content: "जो किसान ऑनलाइन आवेदन नहीं कर सकते, वे निम्नलिखित तरीकों से ऑफलाइन आवेदन कर सकते हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "नजदीकी कॉमन सर्विस सेंटर (CSC) में जाएं",
+          "स्थानीय पटवारी या कृषि अधिकारी से संपर्क करें",
+          "जन सेवा केंद्र में आवेदन करें",
+          "बैंक की शाखा में संपर्क करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "आवश्यक दस्तावेज"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड (अनिवार्य)",
+          "बैंक खाता पासबुक",
+          "भूमि के कागजात (खसरा, खतौनी)",
+          "पहचान प्रमाण (वोटर ID, ड्राइविंग लाइसेंस)",
+          "पासपोर्ट साइज फोटो",
+          "मोबाइल नंबर"
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        caption: "किसान योजना के लिए आवश्यक दस्तावेज"
+      },
+      {
+        type: "heading",
+        content: "PM किसान स्टेटस कैसे चेक करें?"
+      },
+      {
+        type: "paragraph",
+        content: "अपने PM किसान आवेदन का स्टेटस चेक करने के लिए निम्नलिखित तरीके अपनाएं:"
+      },
+      {
+        type: "subheading",
+        content: "ऑनलाइन स्टेटस चेक करने के तरीके"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार नंबर से: pmkisan.gov.in पर 'Know Your Status' में आधार नंबर डालें",
+          "मोबाइल नंबर से: रजिस्टर्ड मोबाइल नंबर से स्टेटस चेक करें",
+          "बैंक अकाउंट नंबर से: अकाउंट नंबर और IFSC कोड डालकर चेक करें",
+          "Registration ID से: आवेदन के समय मिली रेजिस्ट्रेशन ID डालें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "किस्त की जानकारी और भुगतान तिथि"
+      },
+      {
+        type: "paragraph",
+        content: "PM किसान योजना के तहत साल में तीन बार किस्त दी जाती है। प्रत्येक किस्त ₹2,000 की होती है:"
+      },
+      {
+        type: "list",
+        items: [
+          "पहली किस्त: अप्रैल-जुलाई (खरीफ सीजन)",
+          "दूसरी किस्त: अगस्त-नवंबर",
+          "तीसरी किस्त: दिसंबर-मार्च (रबी सीजन)"
+        ]
+      },
+      {
+        type: "heading",
+        content: "योजना के लाभ"
+      },
+      {
+        type: "list",
+        items: [
+          "सीधे बैंक खाते में राशि ट्रांसफर",
+          "किसी बिचौलिए की जरूरत नहीं",
+          "कृषि आदानों की खरीद में सहायता",
+          "फसल की गुणवत्ता में सुधार",
+          "किसानों की आर्थिक स्थिति में सुधार",
+          "कृषि में नई तकनीक अपनाने में मदद"
+        ]
+      },
+      {
+        type: "heading",
+        content: "ई-केवाईसी कैसे करें?"
+      },
+      {
+        type: "paragraph",
+        content: "PM किसान योजना में निरंतर लाभ पाने के लिए ई-केवाईसी कराना अनिवार्य है:"
+      },
+      {
+        type: "list",
+        items: [
+          "PM किसान की वेबसाइट पर 'eKYC' सेक्शन में जाएं",
+          "आधार नंबर डालें",
+          "OTP के द्वारा वेरिफिकेशन करें",
+          "आवश्यक जानकारी अपडेट करें",
+          "सबमिट करके प्रक्रिया पूरी करें"
+        ]
+      },
+      {
+        type: "heading",
+        content: "सामान्य समस्याएं और समाधान"
+      },
+      {
+        type: "subheading",
+        content: "किस्त नहीं आने के मुख्य कारण"
+      },
+      {
+        type: "list",
+        items: [
+          "आधार कार्ड बैंक खाते से लिंक नहीं है",
+          "गलत बैंक खाता विवरण",
+          "भूमि रिकॉर्ड में गलती",
+          "ई-केवाईसी पूरी नहीं है",
+          "डुप्लिकेट एंट्री",
+          "पात्रता मानदंड पूरे नहीं करना"
+        ]
+      },
+      {
+        type: "subheading",
+        content: "समस्या समाधान के तरीके"
+      },
+      {
+        type: "list",
+        items: [
+          "PM किसान हेल्पलाइन नंबर 155261 पर कॉल करें",
+          "pmkisan-ict@gov.in पर ईमेल भेजें",
+          "स्थानीय कृषि अधिकारी से संपर्क करें",
+          "नजदीकी CSC सेंटर में जाएं"
+        ]
+      },
+      {
+        type: "quote",
+        content: "PM किसान योजना से देश के 12 करोड़ से अधिक किसान परिवारों को लाभ मिल रहा है। यह योजना कृषि क्षेत्र के विकास में महत्वपूर्ण भूमिका निभा रही है।",
+        author: "कृषि मंत्रालय"
+      },
+      {
+        type: "heading",
+        content: "मोबाइल ऐप की जानकारी"
+      },
+      {
+        type: "paragraph",
+        content: "PM किसान मोबाइल ऐप डाउनलोड करके आप निम्नलिखित सुविधाओं का लाभ उठा सकते हैं:"
+      },
+      {
+        type: "list",
+        items: [
+          "नया रजिस्ट्रेशन",
+          "स्टेटस चेक करना",
+          "ई-केवाईसी करना",
+          "किस्त की जानकारी देखना",
+          "शिकायत दर्ज करना",
+          "लाभार्थी सूची देखना"
+        ]
+      },
+      {
+        type: "heading",
+        content: "भविष्य की योजनाएं और अपडेट"
+      },
+      {
+        type: "paragraph",
+        content: "सरकार PM किसान योजना में निरंतर सुधार कर रही है। हाल की घोषणाओं के अनुसार:"
+      },
+      {
+        type: "list",
+        items: [
+          "आय सीमा की शर्त हटाई गई",
+          "ऑनलाइन प्रक्रिया को और भी आसान बनाया जा रहा है",
+          "नई तकनीक का उपयोग करके फर्जी लाभार्थियों की पहचान",
+          "किसान क्रेडिट कार्ड से लिंकेज",
+          "कृषि इनपुट सब्सिडी के साथ जोड़ना"
+        ]
+      },
+      {
+        type: "heading",
+        content: "निष्कर्ष"
+      },
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री किसान सम्मान निधि योजना भारतीय किसानों के लिए एक वरदान साबित हुई है। इस योजना से न केवल किसानों की आर्थिक स्थिति में सुधार हुआ है बल्कि कृषि क्षेत्र का समग्र विकास भी हुआ है। यदि आप एक पात्र किसान हैं और अभी तक इस योजना का लाभ नहीं उठा रहे हैं, तो आज ही आवेदन करें।"
+      },
+      {
+        type: "paragraph",
+        content: "योजना की नवीनतम जानकारी और अपडेट के लिए हमारी वेबसाइट MoneyCal.in को फॉलो करते रहें। हम आपको सभी सरकारी योजनाओं की विस्तृत जानकारी प्रदान करते हैं।"
+      }
+    ]
+  },
+  {
+    id: 296,
+    title: "आयकर बचत के लिए 10 बेहतरीन तरीके 2024: Section 80C से 80D तक पूरी गाइड",
+    slug: "income-tax-saving-tips-section-80c-complete-guide-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "आयकर बचाने के सबसे प्रभावी तरीके जानें। Section 80C, 80D, और अन्य प्रावधानों का पूरा लाभ उठाकर टैक्स सेविंग करें।",
+    categories: ["Tax Planning", "Investment", "Financial Planning"],
+    metaDescription: "आयकर बचाने के 10 सबसे अच्छे तरीके 2024 - Section 80C, 80D tax deductions, ELSS, PPF, NSC और अन्य tax saving options की संपूर्ण जानकारी।",
+    keywords: ["आयकर बचत", "tax saving tips", "section 80C", "income tax deduction", "tax planning India"],
+    readTime: 15,
+    content: [
+      {
+        type: "paragraph",
+        content: "आयकर की बचत हर वेतनभोगी व्यक्ति की प्राथमिकता होती है। भारतीय आयकर अधिनियम में कई प्रावधान हैं जिनका सही उपयोग करके आप अपने टैक्स बिल को काफी कम कर सकते हैं। इस गाइड में हम आयकर बचाने के 10 सबसे प्रभावी तरीकों की विस्तृत जानकारी देंगे।"
+      },
+      {
+        type: "heading",
+        content: "Section 80C: सबसे लोकप्रिय टैक्स सेविंग सेक्शन"
+      },
+      {
+        type: "paragraph",
+        content: "Section 80C के तहत आप सालाना ₹1.5 लाख तक के निवेश पर टैक्स डिडक्शन ले सकते हैं। यहां हैं मुख्य विकल्प:"
+      },
+      {
+        type: "list",
+        items: [
+          "ELSS (Equity Linked Savings Scheme) - 3 साल लॉक-इन पीरियड",
+          "PPF (Public Provident Fund) - 15 साल मैच्योरिटी, टैक्स फ्री रिटर्न",
+          "NSC (National Savings Certificate) - 5 साल का निवेश",
+          "ULIP (Unit Linked Insurance Plan) - बीमा + निवेश",
+          "5-Year Bank/Post Office FD - गारंटीड रिटर्न",
+          "Home Loan Principal - घर खरीदने पर EMI का principal भाग",
+          "Life Insurance Premium - जीवन बीमा की प्रीमियम",
+          "Sukanya Samriddhi Yojana - बेटी के लिए निवेश"
+        ]
+      }
+    ]
+  },
+  {
+    id: 297,
+    title: "सीनियर सिटीजन के लिए सबसे अच्छी निवेश योजनाएं 2024",
+    slug: "best-investment-schemes-senior-citizens-india-2024",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/8134844/pexels-photo-8134844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "60+ उम्र के लोगों के लिए सुरक्षित और अच्छे रिटर्न वाली निवेश योजनाओं की संपूर्ण जानकारी। SCSS, PMVVY और अन्य options।",
+    categories: ["Senior Citizens", "Investment", "Retirement Planning"],
+    metaDescription: "सीनियर सिटीजन निवेश योजना 2024 - SCSS, PMVVY, NSC, senior citizen FD rates, tax benefits और बेहतरीन investment options की पूरी गाइड।",
+    keywords: ["सीनियर सिटीजन निवेश", "SCSS scheme", "senior citizen investment", "PMVVY", "retirement planning India"],
+    readTime: 13,
+    content: [
+      {
+        type: "paragraph",
+        content: "रिटायरमेंट के बाद नियमित आय का स्रोत बनाना हर सीनियर सिटीजन की प्राथमिकता होती है। सरकार और निजी संस्थानों द्वारा 60+ उम्र के लोगों के लिए विशेष निवेश योजनाएं चलाई जाती हैं। आइए जानते हैं सीनियर सिटीजन के लिए सबसे बेहतरीन निवेश विकल्प।"
+      }
+    ]
+  },
+  {
+    id: 298,
+    title: "होम लोन EMI कैसे कम करें: 8 प्रभावी तरीके",
+    slug: "how-to-reduce-home-loan-emi-effective-ways-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/7578916/pexels-photo-7578916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "होम लोन की EMI कम करने के 8 सबसे प्रभावी तरीके। Balance transfer, prepayment, tenure extension और अन्य विकल्पों की पूरी जानकारी।",
+    categories: ["Home Loans", "EMI Calculation", "Financial Planning"],
+    metaDescription: "होम लोन EMI कम करने के तरीके - loan balance transfer, prepayment strategies, interest rate negotiation, tenure modification की पूरी गाइड।",
+    keywords: ["होम लोन EMI कम करना", "home loan balance transfer", "EMI reduction tips", "prepayment strategy", "loan refinancing"],
+    readTime: 11,
+    content: [
+      {
+        type: "paragraph",
+        content: "होम लोन की EMI अक्सर घरेलू बजट का सबसे बड़ा हिस्सा होती है। बढ़ती महंगाई के दौर में EMI का बोझ कम करना जरूरी हो जाता है। इस गाइड में हम 8 प्रभावी तरीके बताएंगे जिनसे आप अपनी होम लोन EMI को कम कर सकते हैं।"
+      }
+    ]
+  },
+  {
+    id: 299,
+    title: "रियल एस्टेट में निवेश से पहले जानने योग्य 15 महत्वपूर्ण बातें",
+    slug: "real-estate-investment-tips-before-buying-property-india",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/5604511/pexels-photo-5604511.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "रियल एस्टेट में निवेश करने से पहले इन 15 जरूरी बातों को जानना अनिवार्य है। Location, legal documents, RERA registration और market analysis की पूरी जानकारी।",
+    categories: ["Real Estate", "Investment", "Financial Planning"],
+    metaDescription: "रियल एस्टेट निवेश गाइड - property investment tips, RERA registration check, legal documents verification, location analysis और market trends की संपूर्ण जानकारी।",
+    keywords: ["रियल एस्टेट निवेश", "property investment tips", "RERA registration", "real estate analysis", "property buying guide India"],
+    readTime: 14,
+    content: [
+      {
+        type: "paragraph",
+        content: "रियल एस्टेट में निवेश एक बड़ा फैसला है जो आपकी वित्तीय स्थिति को काफी प्रभावित कर सकता है। सही प्रॉपर्टी का चुनाव न केवल आपको अच्छा रिटर्न दे सकता है बल्कि गलत निर्णय आपको भारी नुकसान भी पहुंचा सकता है। आइए जानते हैं रियल एस्टेट में निवेश से पहले की 15 महत्वपूर्ण बातें।"
+      }
+    ]
+  },
+  {
+    id: 300,
+    title: "ग्रामीण इलाकों में पैसे कमाने के 12 बेहतरीन बिजनेस आइडिया",
+    slug: "rural-business-ideas-village-money-making-opportunities-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/2889492/pexels-photo-2889492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "गांव में कम निवेश में शुरू करने वाले 12 लाभदायक बिजनेस आइडिया। कृषि, डेयरी, मुर्गी पालन से लेकर organic farming तक सभी विकल्प।",
+    categories: ["Rural Finance", "Financial Inclusion", "Government Schemes"],
+    metaDescription: "गांव में बिजनेस आइडिया - rural business opportunities, dairy farming, poultry business, organic farming, village entrepreneurship की पूरी गाइड।",
+    keywords: ["ग्रामीण बिजनेस आइडिया", "village business ideas", "rural entrepreneurship", "dairy farming business", "organic farming profit"],
+    readTime: 12,
+    content: [
+      {
+        type: "paragraph",
+        content: "भारत की 70% आबादी गांवों में रहती है, लेकिन रोजगार के अवसर शहरों की तुलना में कम हैं। हालांकि, सही बिजनेस आइडिया और योजना के साथ ग्रामीण इलाकों में भी अच्छी कमाई की जा सकती है। आइए जानते हैं 12 बेहतरीन ग्रामीण बिजनेस आइडिया।"
+      }
+    ]
+  },
+  {
+    id: 301,
+    title: "फाइनेंशियल प्लानिंग के 10 गोल्डन रूल्स: अमीर बनने का सीक्रेट",
+    slug: "financial-planning-golden-rules-wealth-creation-tips-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "फाइनेंशियल प्लानिंग के 10 महत्वपूर्ण नियम जो आपको अमीर बना सकते हैं। Emergency fund, SIP, insurance और debt management की पूरी जानकारी।",
+    categories: ["Financial Planning", "Investment", "Retirement Planning"],
+    metaDescription: "Financial planning rules - wealth creation strategies, emergency fund planning, SIP investment, insurance planning और money management की संपूर्ण गाइड।",
+    keywords: ["फाइनेंशियल प्लानिंग", "wealth creation tips", "financial planning rules", "money management", "investment planning India"],
+    readTime: 16,
+    content: [
+      {
+        type: "paragraph",
+        content: "सफल फाइनेंशियल प्लानिंग के लिए कुछ बुनियादी नियमों का पालन करना जरूरी है। ये गोल्डन रूल्स न केवल आपके पैसे की सुरक्षा करते हैं बल्कि धन बढ़ाने में भी मदद करते हैं। आइए जानते हैं फाइनेंशियल प्लानिंग के 10 महत्वपूर्ण नियम।"
+      }
+    ]
+  },
+  {
+    id: 302,
+    title: "प्रधानमंत्री आवास योजना 2024: शहरी और ग्रामीण दोनों के लिए पूरी जानकारी",
+    slug: "pradhan-mantri-awas-yojana-complete-guide-urban-rural-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/6186810/pexels-photo-6186810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "PM आवास योजना के तहत ₹2.5 लाख तक की सब्सिडी पाएं। शहरी और ग्रामीण दोनों योजनाओं की पात्रता, आवेदन प्रक्रिया और लाभ की संपूर्ण जानकारी।",
+    categories: ["Government Schemes", "Home Loans", "Financial Inclusion"],
+    metaDescription: "प्रधानमंत्री आवास योजना 2024 - PMAY urban rural eligibility, application process, interest subsidy benefits, required documents की पूरी गाइड।",
+    keywords: ["प्रधानमंत्री आवास योजना", "PMAY scheme", "housing subsidy", "गृह लोन सब्सिडी", "affordable housing India"],
+    readTime: 13,
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री आवास योजना (PMAY) भारत सरकार की महत्वाकांक्षी योजना है जिसका उद्देश्य सभी को किफायती घर उपलब्ध कराना है। इस योजना के तहत होम लोन पर सब्सिडी मिलती है। आइए जानते हैं इस योजना की सभी जरूरी बातें।"
+      }
+    ]
+  },
+  {
+    id: 303,
+    title: "रिटायरमेंट प्लानिंग गाइड: 30 की उम्र से शुरू करें तैयारी",
+    slug: "retirement-planning-guide-start-from-age-30-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "30 साल की उम्र से रिटायरमेंट प्लानिंग शुरू करके ₹5 करोड़ का फंड बनाएं। PPF, NPS, ELSS और अन्य निवेश विकल्पों की संपूर्ण जानकारी।",
+    categories: ["Retirement Planning", "Investment", "Financial Planning"],
+    metaDescription: "Retirement planning guide - early retirement planning strategies, NPS benefits, pension fund investment, retirement corpus calculation की संपूर्ण गाइड।",
+    keywords: ["रिटायरमेंट प्लानिंग", "retirement planning India", "NPS investment", "pension planning", "retirement corpus calculation"],
+    readTime: 14,
+    content: [
+      {
+        type: "paragraph",
+        content: "रिटायरमेंट की तैयारी जितनी जल्दी शुरू करें, उतना बेहतर। 30 साल की उम्र से शुरू करके आप आसानी से एक अच्छा रिटायरमेंट फंड बना सकते हैं। इस गाइड में हम रिटायरमेंट प्लानिंग की संपूर्ण जानकारी देंगे।"
+      }
+    ]
+  },
+  {
+    id: 304,
+    title: "जन धन खाता के फायदे और नुकसान: पूरी जानकारी 2024",
+    slug: "jan-dhan-account-benefits-disadvantages-complete-guide-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "प्रधानमंत्री जन धन योजना के तहत खुलने वाले खाते के सभी फायदे और नुकसान। ₹10 लाख का बीमा, ₹5000 ओवरड्राफ्ट और अन्य सुविधाएं।",
+    categories: ["Financial Inclusion", "Government Schemes", "Investment"],
+    metaDescription: "Jan Dhan Yojana benefits - PMJDY account features, insurance coverage, overdraft facility, digital banking services की संपूर्ण जानकारी।",
+    keywords: ["जन धन खाता", "PMJDY benefits", "jan dhan yojana", "financial inclusion India", "zero balance account"],
+    readTime: 10,
+    content: [
+      {
+        type: "paragraph",
+        content: "प्रधानमंत्री जन धन योजना (PMJDY) का उद्देश्य सभी भारतीयों को बैंकिंग सेवाओं से जोड़ना है। इस योजना के तहत खुलने वाले खाते में कई विशेष सुविधाएं मिलती हैं। आइए जानते हैं जन धन खाते के सभी फायदे और नुकसान।"
+      }
+    ]
+  },
+  {
+    id: 305,
+    title: "EMI कैलकुलेटर का सही इस्तेमाल: लोन लेने से पहले जरूर करें ये गणना",
+    slug: "emi-calculator-how-to-use-loan-planning-tips-hindi",
+    date: "June 19, 2024",
+    coverImage: "https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    excerpt: "EMI कैलकुलेटर का सही उपयोग करके लोन की EMI, total interest और बेहतरीन loan terms की गणना करें। Home loan, car loan और personal loan के लिए पूरी गाइड।",
+    categories: ["EMI Calculation", "Home Loans", "Financial Planning"],
+    metaDescription: "EMI Calculator guide - loan EMI calculation, interest rate comparison, loan tenure planning, prepayment benefits की संपूर्ण जानकारी।",
+    keywords: ["EMI कैलकुलेटर", "loan EMI calculation", "interest rate calculator", "loan planning tips", "EMI comparison"],
+    readTime: 9,
+    content: [
+      {
+        type: "paragraph",
+        content: "लोन लेने से पहले EMI की सही गणना करना बहुत जरूरी है। EMI कैलकुलेटर का सही इस्तेमाल करके आप अपनी financial capacity के अनुसार loan amount और tenure decide कर सकते हैं। आइए जानते हैं EMI कैलकुलेटर का सही तरीका।"
+      }
+    ]
+  }
   // Add more posts (id: 271, 272, etc.) in the same structure if needed
 ];
