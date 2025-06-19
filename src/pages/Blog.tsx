@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag } from 'lucide-react';
-//import { blogPosts } from '../data/blogData';
+import { blogPosts } from '../data/blogData';
  
-import { blogPosts as oldPosts } from './blogData';
-import { blogPosts as newPosts } from './blogData1';
-
+ 
 const allBlogPosts = [...oldPosts, ...newPosts];
 
 export const Blog: React.FC = () => {
