@@ -75691,8 +75691,12 @@ export const blogPosts: BlogPost[] = [
 ];
 
 // Helper functions
+import { blogPosts1 } from './blogData1'; // Step 1
+
+export const allBlogPosts = [...blogPosts, ...blogPosts1]; // Step 2
+
 export const getBlogPostBySlug = (slug: string): BlogPost | undefined => {
-  return blogPosts.find(post => post.slug === slug);
+  return allBlogPosts.find(post => post.slug === slug); // Step 3
 };
 
 export const getRelatedPosts = (slug: string, count: number): BlogPost[] => {
@@ -75700,7 +75704,7 @@ export const getRelatedPosts = (slug: string, count: number): BlogPost[] => {
   if (!currentPost) return [];
 
   // Find posts with matching categories
-  const relatedPosts = blogPosts
+  const relatedPosts = allBlogPosts
     .filter(post => post.slug !== slug) // Exclude current post
     .filter(post => post.categories.some(category =>
       currentPost.categories.includes(category)
