@@ -18279,7 +18279,7 @@ export const blogPosts: BlogPost[] = [
     id: 318,
     title: "SIP for Child's Future: How Much to Invest Monthly for Best Returns",
     slug: "sip-childs-future-monthly-investment-best-returns",
-    date: "June 21, 2024",
+    date: "June 21, 2025",
     coverImage: "https://images.pexels.com/photos/5849595/pexels-photo-5849595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     excerpt: "Discover the perfect SIP amount for your child's future planning. Learn investment strategies, calculate monthly SIP requirements, and build a strong financial foundation for your child's education and marriage.",
     categories: ["Investment", "Financial Planning", "EMI Calculation"],
@@ -18635,8 +18635,6 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
-   
- 
   {
     id: 319,
     title: "How to Interpret Calculator Results for Better Financial Decisions",
