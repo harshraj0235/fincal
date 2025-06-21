@@ -20291,9 +20291,7 @@ export const blogPosts: BlogPost[] = [
     author: "Investment Strategy Expert",
     metaDescription: "SIP vs Lump Sum investment strategy comparison with real performance data. Learn when to use SIP, when to invest lump sum, and hybrid strategies for better returns.",
     keywords: ["SIP vs lump sum", "mutual fund investment strategy", "rupee cost averaging", "systematic investment plan", "investment timing", "market volatility strategy"]
-  }
-]
-}, 
+  }, 
   {
     id: 326,
     title: "How UPI 3.0 and Digital Rupee Are Revolutionizing Payment Systems for Indian Consumers",
