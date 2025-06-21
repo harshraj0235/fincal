@@ -20293,8 +20293,7 @@ export const blogPosts: BlogPost[] = [
     keywords: ["SIP vs lump sum", "mutual fund investment strategy", "rupee cost averaging", "systematic investment plan", "investment timing", "market volatility strategy"]
   }
 ]
-},
-  
+}, 
   {
     id: 326,
     title: "How UPI 3.0 and Digital Rupee Are Revolutionizing Payment Systems for Indian Consumers",
