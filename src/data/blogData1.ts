@@ -27157,7 +27157,7 @@ export const blogPosts: BlogPost[] = [
         content: "Global geopolitical developments Indian stock market sentiment को significantly influence करते हैं। While short-term volatility inevitable है, long-term investors को India की strong fundamentals और strategic positioning पर focus करना चाहिए। Diversification, risk management, और disciplined approach के साथ geopolitical challenges navigate करना possible है। Remember करें कि uncertainty के times में opportunities भी create होती हैं informed investors के लिए।"
       }
     ]
-  }.
+  },
   
   {
     id: 351,
