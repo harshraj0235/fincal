@@ -18,7 +18,7 @@ import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
-import { AstroFinance } from './pages/AstroFinance';
+import AstroFinance from './pages/AstroFinance';
 
 // Excel Tool blog section
 import ExcelTool from './pages/ExcelTool';

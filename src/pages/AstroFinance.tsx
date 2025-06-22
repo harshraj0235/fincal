@@ -684,4 +684,6 @@ export const AstroFinance: React.FC = () => {
       </div>
     </>
   );
-}; 
+};
+
+export default AstroFinance; 

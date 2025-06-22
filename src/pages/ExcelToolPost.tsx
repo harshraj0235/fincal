@@ -35,6 +35,19 @@ const ExcelToolPost: React.FC = () => {
           </span>
         ))}
       </div>
+      {post.downloadLink && (
+        <div className="mb-6">
+          <a
+            href={post.downloadLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+          >
+            Download Excel Template
+          </a>
+        </div>
+      )}
       <img src={post.coverImage} alt={post.title} className="w-full rounded mb-6" />
       <div className="prose prose-lg">
         {post.content.map((section, idx) => {
