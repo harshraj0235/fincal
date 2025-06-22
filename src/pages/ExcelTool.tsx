@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, User, Tag, Download, Calculator, TrendingUp, DollarSign, FileText, ArrowRight } from 'lucide-react';
+import { Calendar, User, Tag, Download, Calculator, FileText } from 'lucide-react';
 import { excelToolBlogPosts } from '../data/exceltooldata';
 
 const FAQ_SCHEMA = {
@@ -171,8 +171,8 @@ const ExcelTool: React.FC = () => {
         <h3>2. IF Function</h3>
         <p>Create conditional calculations for your budget:</p>
         <div className="bg-gray-100 p-4 rounded-lg my-4">
-          <code>=IF(B2>C2,"Overspent","Within Budget")</code> - Shows status based on spending<br/>
-          <code>=IF(B2>10000,B2*0.1,B2*0.05)</code> - Different calculations based on amount
+          <code>=IF(B2&gt;C2,"Overspent","Within Budget")</code> - Shows status based on spending<br/>
+          <code>=IF(B2&gt;10000,B2*0.1,B2*0.05)</code> - Different calculations based on amount
         </div>
 
         <h3>3. VLOOKUP Function</h3>
@@ -185,7 +185,7 @@ const ExcelTool: React.FC = () => {
         <p>Sum values based on specific criteria:</p>
         <div className="bg-gray-100 p-4 rounded-lg my-4">
           <code>=SUMIF(B:B,"Groceries",C:C)</code> - Sums all grocery expenses<br/>
-          <code>=SUMIF(A:A,">="&DATE(2024,1,1),C:C)</code> - Sums expenses from 2024 onwards
+          <code>=SUMIF(A:A,"&gt;="&DATE(2024,1,1),C:C)</code> - Sums expenses from 2024 onwards
         </div>
 
         <h3>5. PMT Function</h3>
