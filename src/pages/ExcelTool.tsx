@@ -1,8 +1,8 @@
 // src/pages/ExcelTool.tsx
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, User, Tag } from 'lucide-react';
+import { Search, Calendar, User, Tag, Download, Clock, TrendingUp, BookOpen } from 'lucide-react';
 import { excelToolBlogPosts } from '../data/exceltooldata';
 
 const FAQ_SCHEMA = {
@@ -39,123 +39,383 @@ const FAQ_SCHEMA = {
 const ExcelTool: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [sortBy, setSortBy] = useState<'date' | 'title' | 'popularity'>('date');
 
-  const categories = Array.from(new Set(excelToolBlogPosts.flatMap(post => post.categories)));
+  // Get all unique categories
+  const categories = useMemo(() => {
+    const allCategories = Array.from(new Set(excelToolBlogPosts.flatMap(post => post.categories)));
+    return allCategories.sort();
+  }, []);
 
-  const filteredPosts = excelToolBlogPosts.filter(post => {
-    const matchesSearch =
-      searchTerm === '' ||
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory =
-      selectedCategory === null ||
-      post.categories.includes(selectedCategory);
-    return matchesSearch && matchesCategory;
-  });
+  // Get category counts
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    categories.forEach(cat => {
+      counts[cat] = excelToolBlogPosts.filter(post => post.categories.includes(cat)).length;
+    });
+    return counts;
+  }, [categories]);
+
+  // Filter and sort posts
+  const filteredPosts = useMemo(() => {
+    let filtered = excelToolBlogPosts.filter(post => {
+      const matchesSearch =
+        searchTerm === '' ||
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.categories.some(cat => cat.toLowerCase().includes(searchTerm.toLowerCase()));
+      
+      const matchesCategory =
+        selectedCategory === null ||
+        post.categories.includes(selectedCategory);
+      
+      return matchesSearch && matchesCategory;
+    });
+
+    // Sort posts
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'date':
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        case 'title':
+          return a.title.localeCompare(b.title);
+        case 'popularity':
+          return (b.readingTime || 0) - (a.readingTime || 0);
+        default:
+          return 0;
+      }
+    });
+
+    return filtered;
+  }, [searchTerm, selectedCategory, sortBy]);
+
+  // Group posts by category for the category view
+  const postsByCategory = useMemo(() => {
+    const grouped: Record<string, typeof excelToolBlogPosts> = {};
+    categories.forEach(cat => {
+      grouped[cat] = excelToolBlogPosts.filter(post => post.categories.includes(cat));
+    });
+    return grouped;
+  }, [categories]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      {/* SEO Article Section */}
-      <article className="prose lg:prose-xl max-w-none mb-12">
-        <h1>Best Excel Tools & Templates for Personal Finance in India (2024 Guide)</h1>
-        <p><strong>Trending on Google Discover:</strong> Excel is making a huge comeback for Indian personal finance in 2024! From AI-powered templates to classic budget planners, discover why Excel is the #1 tool for money management, savings, and investments in India.</p>
-        <h2>Why Excel is Still the #1 Tool for Indian Money Management</h2>
-        <ul>
-          <li>Customizable for Indian banks, tax rules, and formats</li>
-          <li>Works offline and on any device</li>
-          <li>Supports advanced formulas, charts, and automation</li>
-          <li>Free and easy to download templates</li>
-        </ul>
-        <h2>Top Trending Excel Templates for 2024</h2>
-        <ol>
-          <li><strong>Budget Planner:</strong> Track monthly income, expenses, and savings goals</li>
-          <li><strong>Daily Expense Tracker:</strong> Record every rupee spent, spot leaks, and control spending</li>
-          <li><strong>Loan & EMI Calculator:</strong> Calculate EMIs, compare loans, and plan repayments</li>
-          <li><strong>Investment Tracker:</strong> Monitor SIPs, stocks, mutual funds, and gold</li>
-          <li><strong>Tax Planning Sheet:</strong> Estimate taxes, optimize deductions, and plan for Section 80C/80D</li>
-        </ol>
-        <h2>How to Automate Your Savings & Budget in Excel</h2>
-        <ol>
-          <li>Use <strong>SUM</strong>, <strong>IF</strong>, and <strong>VLOOKUP</strong> formulas for calculations</li>
-          <li>Apply <strong>conditional formatting</strong> to highlight overspending</li>
-          <li>Create <strong>charts</strong> to visualize savings and expenses</li>
-          <li>Set up <strong>data validation</strong> for error-free entries</li>
-        </ol>
-        <p><strong>Download a free sample:</strong> <a href="/excel-templates/savings-automation-planner.xlsx" download>Excel Savings Automation Template</a></p>
-        <h2>Excel vs Google Sheets: Which is Better for Indian Users?</h2>
-        <ul>
-          <li><strong>Excel:</strong> Best for advanced features, offline use, and compatibility with Indian formats</li>
-          <li><strong>Google Sheets:</strong> Best for collaboration and cloud access</li>
-        </ul>
-        <h2>Download Free Excel Templates (2024 Edition)</h2>
-        <ul>
-          <li><a href="/excel-templates/monthly-budget-template.xlsx" download>Monthly Budget Planner</a></li>
-          <li><a href="/excel-templates/daily-expense-tracker.xlsx" download>Daily Expense Tracker</a></li>
-          <li><a href="/excel-templates/loan-emi-calculator.xlsx" download>Loan & EMI Calculator</a></li>
-          <li><a href="/excel-templates/investment-tracker.xlsx" download>Investment Tracker</a></li>
-          <li><a href="/excel-templates/tax-planning-sheet.xlsx" download>Tax Planning Sheet</a></li>
-        </ul>
-        <h2>FAQs: Excel for Personal Finance in India</h2>
-        <h3>What are the best Excel templates for personal finance in India?</h3>
-        <p>The best templates include budget planners, expense trackers, loan calculators, investment trackers, and tax planning sheets. Download them above for free!</p>
-        <h3>How can I automate my savings in Excel?</h3>
-        <p>Use formulas, conditional formatting, and charts to automate calculations and visualize your progress. Download our free template to get started.</p>
-        <h3>Is Excel better than Google Sheets for budgeting in India?</h3>
-        <p>Excel is preferred for its advanced features and offline access, while Google Sheets is great for collaboration. Most Indian users choose Excel for personal finance.</p>
-        <h2>How to Get Featured on Google Discover with Your Own Excel Tools</h2>
-        <ul>
-          <li>Write long-form, helpful content with trending keywords</li>
-          <li>Use clear headings, lists, and FAQs</li>
-          <li>Add structured data (FAQ schema) for SEO</li>
-          <li>Update your content regularly with new templates and tips</li>
-        </ul>
-        <h2>Conclusion</h2>
-        <p>Excel is future-proof for Indian money management. Download our free templates, share with friends, and subscribe for more updates!</p>
-        {/* FAQ Schema for SEO */}
-        <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
-      </article>
-
-      {/* Existing Search/Filter UI and Blog Grid */}
-      <div className="mb-6 flex gap-4">
-        <input
-          type="text"
-          placeholder="Search articles..."
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-          className="input"
-        />
-        <select
-          value={selectedCategory ?? ''}
-          onChange={e => setSelectedCategory(e.target.value || null)}
-          className="input"
-        >
-          <option value="">All Categories</option>
-          {categories.map(cat => (
-            <option key={cat} value={cat}>{cat}</option>
-          ))}
-        </select>
+    <div className="min-h-screen bg-gray-50">
+      {/* Header Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Excel Tools & Templates Hub
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 opacity-90">
+              Master Personal Finance with Professional Excel Templates
+            </p>
+            
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <input
+                  type="text"
+                  placeholder="Search templates, guides, or categories..."
+                  value={searchTerm}
+                  onChange={e => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredPosts.map(post => (
-          <Link key={post.id} to={`/exceltool/${post.slug}`} className="block bg-white shadow p-4 rounded">
-            <img src={post.coverImage} alt={post.title} className="w-full h-40 object-cover rounded mb-3" />
-            <div className="text-xs text-gray-500 flex gap-2 mb-2">
-              <Calendar className="h-3 w-3" /> {post.date}
-              <User className="h-3 w-3" /> {post.author}
+
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        {/* Category Navigation */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">Browse by Category</h2>
+            <div className="flex items-center gap-4">
+              <select
+                value={sortBy}
+                onChange={e => setSortBy(e.target.value as 'date' | 'title' | 'popularity')}
+                className="px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="date">Sort by Date</option>
+                <option value="title">Sort by Title</option>
+                <option value="popularity">Sort by Popularity</option>
+              </select>
             </div>
-            <h2 className="font-semibold text-lg">{post.title}</h2>
-            <p className="text-sm text-gray-600">{post.excerpt}</p>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {post.categories.map(cat => (
-                <span key={cat} className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs flex items-center">
-                  <Tag className="h-3 w-3 mr-1" />{cat}
-                </span>
-              ))}
+          </div>
+
+          {/* Category Pills */}
+          <div className="flex flex-wrap gap-3 mb-6">
+            <button
+              onClick={() => setSelectedCategory(null)}
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+                selectedCategory === null
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+              }`}
+            >
+              All Categories ({excelToolBlogPosts.length})
+            </button>
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 flex items-center gap-2 ${
+                  selectedCategory === cat
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                }`}
+              >
+                <Tag className="h-4 w-4" />
+                {cat} ({categoryCounts[cat]})
+              </button>
+            ))}
+          </div>
+
+          {/* Quick Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="bg-white p-4 rounded-lg shadow-sm border">
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-blue-600" />
+                <span className="font-semibold text-gray-900">Total Posts</span>
+              </div>
+              <p className="text-2xl font-bold text-blue-600">{excelToolBlogPosts.length}</p>
             </div>
-          </Link>
-        ))}
+            <div className="bg-white p-4 rounded-lg shadow-sm border">
+              <div className="flex items-center gap-2">
+                <Tag className="h-5 w-5 text-green-600" />
+                <span className="font-semibold text-gray-900">Categories</span>
+              </div>
+              <p className="text-2xl font-bold text-green-600">{categories.length}</p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border">
+              <div className="flex items-center gap-2">
+                <Download className="h-5 w-5 text-purple-600" />
+                <span className="font-semibold text-gray-900">Templates</span>
+              </div>
+              <p className="text-2xl font-bold text-purple-600">
+                {excelToolBlogPosts.filter(p => p.downloadLink).length}
+              </p>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border">
+              <div className="flex items-center gap-2">
+                <TrendingUp className="h-5 w-5 text-orange-600" />
+                <span className="font-semibold text-gray-900">Trending</span>
+              </div>
+              <p className="text-2xl font-bold text-orange-600">2024</p>
+            </div>
+          </div>
+        </div>
+
+        {/* SEO Article Section */}
+        {!selectedCategory && searchTerm === '' && (
+          <article className="prose lg:prose-xl max-w-none mb-12 bg-white p-8 rounded-lg shadow-sm border">
+            <h1 className="text-3xl font-bold text-gray-900 mb-6">Best Excel Tools & Templates for Personal Finance in India (2024 Guide)</h1>
+            <p className="text-lg text-gray-700 mb-4">
+              <strong>Trending on Google Discover:</strong> Excel is making a huge comeback for Indian personal finance in 2024! From AI-powered templates to classic budget planners, discover why Excel is the #1 tool for money management, savings, and investments in India.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 my-8">
+              <div>
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">Why Excel is Still the #1 Tool</h2>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    Customizable for Indian banks, tax rules, and formats
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    Works offline and on any device
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    Supports advanced formulas, charts, and automation
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    Free and easy to download templates
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">Top Trending Templates</h2>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                      <span className="text-blue-600 font-bold">1</span>
+                    </div>
+                    <div>
+                      <p className="font-medium">Budget Planner</p>
+                      <p className="text-sm text-gray-600">Track income, expenses, and savings</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-600 font-bold">2</span>
+                    </div>
+                    <div>
+                      <p className="font-medium">Loan & EMI Calculator</p>
+                      <p className="text-sm text-gray-600">Calculate EMIs and compare loans</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                      <span className="text-purple-600 font-bold">3</span>
+                    </div>
+                    <div>
+                      <p className="font-medium">Investment Tracker</p>
+                      <p className="text-sm text-gray-600">Monitor SIPs, stocks, and mutual funds</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+              <h3 className="text-lg font-semibold text-blue-900 mb-3">Download Free Templates (2024 Edition)</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <a href="/excel-templates/monthly-budget-template.xlsx" download className="flex items-center gap-2 p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors">
+                  <Download className="h-5 w-5 text-blue-600" />
+                  <span>Monthly Budget Planner</span>
+                </a>
+                <a href="/excel-templates/daily-expense-tracker.xlsx" download className="flex items-center gap-2 p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors">
+                  <Download className="h-5 w-5 text-blue-600" />
+                  <span>Daily Expense Tracker</span>
+                </a>
+                <a href="/excel-templates/loan-emi-calculator.xlsx" download className="flex items-center gap-2 p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors">
+                  <Download className="h-5 w-5 text-blue-600" />
+                  <span>Loan & EMI Calculator</span>
+                </a>
+                <a href="/excel-templates/investment-tracker.xlsx" download className="flex items-center gap-2 p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors">
+                  <Download className="h-5 w-5 text-blue-600" />
+                  <span>Investment Tracker</span>
+                </a>
+              </div>
+            </div>
+            
+            {/* FAQ Schema for SEO */}
+            <script type="application/ld+json">{JSON.stringify(FAQ_SCHEMA)}</script>
+          </article>
+        )}
+
+        {/* Category View */}
+        {selectedCategory && (
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <Tag className="h-6 w-6 text-blue-600" />
+              <h2 className="text-2xl font-bold text-gray-900">{selectedCategory}</h2>
+              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                {categoryCounts[selectedCategory]} posts
+              </span>
+            </div>
+          </div>
+        )}
+
+        {/* Blog Posts Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredPosts.map(post => (
+            <Link 
+              key={post.id} 
+              to={`/exceltool/${post.slug}`} 
+              className="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="relative">
+                <img 
+                  src={post.coverImage} 
+                  alt={post.title} 
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" 
+                />
+                {post.downloadLink && (
+                  <div className="absolute top-3 right-3">
+                    <div className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                      <Download className="h-3 w-3" />
+                      Template
+                    </div>
+                  </div>
+                )}
+                <div className="absolute bottom-3 left-3">
+                  <div className="bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs">
+                    {post.readingTime || 5} min read
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-3 w-3" />
+                    {new Date(post.date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'short', 
+                      day: 'numeric' 
+                    })}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <User className="h-3 w-3" />
+                    {post.author}
+                  </div>
+                </div>
+                
+                <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+                
+                <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {post.categories.slice(0, 2).map(cat => (
+                    <span 
+                      key={cat} 
+                      className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium hover:bg-blue-100 hover:text-blue-700 transition-colors"
+                    >
+                      {cat}
+                    </span>
+                  ))}
+                  {post.categories.length > 2 && (
+                    <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium">
+                      +{post.categories.length - 2} more
+                    </span>
+                  )}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* No Results */}
         {filteredPosts.length === 0 && (
-          <div>No articles found.</div>
+          <div className="text-center py-12">
+            <div className="max-w-md mx-auto">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="h-8 w-8 text-gray-400" />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">No articles found</h3>
+              <p className="text-gray-500 mb-4">
+                Try adjusting your search terms or browse all categories
+              </p>
+              <button
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedCategory(null);
+                }}
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                View All Posts
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Results Count */}
+        {filteredPosts.length > 0 && (
+          <div className="mt-8 text-center text-gray-500">
+            Showing {filteredPosts.length} of {excelToolBlogPosts.length} posts
+          </div>
         )}
       </div>
     </div>
