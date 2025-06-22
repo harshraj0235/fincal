@@ -70,7 +70,7 @@ export const Header: React.FC = () => {
           {/* Logo - Improved for mobile */}
           <Link to="/" className="flex items-center space-x-2 min-w-0 flex-shrink-0">
             <Calculator className="h-7 w-7 md:h-8 md:w-8 text-primary-600 flex-shrink-0" />
-            <span className="text-lg md:text-xl font-bold text-neutral-900 truncate">FinCalc India</span>
+            <span className="text-lg md:text-xl font-bold text-neutral-900 truncate">MoneyCal</span>
           </Link>
           
           {/* Desktop Navigation */}
