@@ -151,7 +151,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-black">
                 Smart Financial Decisions Start Here
               </h1>
               <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-white/90 max-w-2xl mx-auto lg:mx-0">
@@ -289,7 +289,7 @@ export const Home: React.FC = () => {
           </div>
           
           <div className="text-center mt-10">
-            <Link to="/#categories" className="btn bg-primary-600 text-white hover:bg-primary-700 shadow-md hover:shadow-lg transition-all">
+            <Link to="/#categories" className="btn bg-primary-600 text-black hover:bg-primary-700 shadow-md hover:shadow-lg transition-all">
               View All Calculators
             </Link>
           </div>
@@ -781,7 +781,7 @@ export const Home: React.FC = () => {
           </div>
           
           <div className="text-center mt-10">
-            <Link to="/blog" className="btn bg-primary-600 text-white hover:bg-primary-700 shadow-md hover:shadow-lg transition-all">
+            <Link to="/blog" className="btn bg-primary-600 text-black hover:bg-primary-700 shadow-md hover:shadow-lg transition-all">
               View All Articles
             </Link>
           </div>
