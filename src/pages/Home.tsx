@@ -367,6 +367,72 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Excel Tools & Government Schemes Section */}
+      <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Excel Tools & Government Schemes</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Professional Excel templates and comprehensive government scheme information
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Excel Tools Card */}
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all border border-neutral-100">
+              <div className="h-48 bg-gradient-to-br from-orange-500 to-orange-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Calculator className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-orange-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Excel Tools & Templates</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Professional Excel templates for personal finance, budgeting, investment tracking, and financial analysis. Download ready-to-use templates.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li className="text-sm text-neutral-600">• Monthly Budget Templates</li>
+                  <li className="text-sm text-neutral-600">• Investment Tracking Sheets</li>
+                  <li className="text-sm text-neutral-600">• Tax Planning Tools</li>
+                  <li className="text-sm text-neutral-600">• Business Financial Models</li>
+                </ul>
+                <Link to="/exceltool" className="btn bg-orange-600 text-white hover:bg-orange-700 shadow-md hover:shadow-lg transition-all w-full text-center">
+                  Explore Excel Tools
+                </Link>
+              </div>
+            </div>
+            
+            {/* Government Schemes Card */}
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all border border-neutral-100">
+              <div className="h-48 bg-gradient-to-br from-green-500 to-green-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Shield className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-green-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Government Schemes</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Complete information on 100+ government schemes - eligibility, benefits, application process, and latest updates in Hindi and English.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li className="text-sm text-neutral-600">• 100+ Government Schemes</li>
+                  <li className="text-sm text-neutral-600">• Detailed Application Guides</li>
+                  <li className="text-sm text-neutral-600">• Eligibility & Benefits</li>
+                  <li className="text-sm text-neutral-600">• Latest Updates & News</li>
+                </ul>
+                <Link to="/government-schemes" className="btn bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg transition-all w-full text-center">
+                  View All Schemes
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* Government Schemes Section */}
       <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
