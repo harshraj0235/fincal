@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Calendar, Tag, ArrowLeft, Download, Share2, ChevronRight, Users, TrendingUp, Phone, Globe } from 'lucide-react';
+import { Calendar, ArrowLeft, Share2, ChevronRight } from 'lucide-react';
 import { getGovernmentSchemeBySlug, getRelatedGovernmentSchemes } from '../data/governmentSchemesData';
-import { SEOHelmet } from '../components/SEOHelmet';
+import SEOHelmet from '../components/SEOHelmet';
 
 interface TocItem {
   idx: number;
