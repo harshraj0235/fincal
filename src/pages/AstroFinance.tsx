@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SEOHelmet } from '../components/SEOHelmet';
-import { 
-  Star, Moon, Sun, TrendingUp, DollarSign, Calendar, 
-  Download, ArrowRight, ChevronDown, ChevronUp,
-  Zodiac, Calculator, BookOpen, Users, Clock
-} from 'lucide-react';
+import SEOHelmet from '../components/SEOHelmet';
+import { Star, Moon, Sun, TrendingUp, DollarSign, Calendar, Download, ChevronDown, ChevronUp, Calculator } from 'lucide-react';
 
 interface ZodiacSign {
   name: string;
@@ -127,7 +123,7 @@ const zodiacSigns: ZodiacSign[] = [
     financialChallenges: ['Over-optimism', 'Lack of follow-through'],
     investmentAdvice: 'Invest in international markets, travel, education, and publishing. Your optimistic nature helps you see opportunities others miss.',
     bestInvestmentPeriods: ['November-December', 'March-April', 'July-August'],
-    moneyMindset: 'Optimistic and adventurous - you're willing to take calculated risks for growth'
+    moneyMindset: 'Optimistic and adventurous - you\'re willing to take calculated risks for growth',
   },
   {
     name: 'Capricorn',
@@ -240,8 +236,8 @@ export const AstroFinance: React.FC = () => {
         title="Astro Finance: Align Your Wealth with the Stars | 2025 Financial Horoscope"
         description="Discover how astrology influences financial decisions. Get personalized 2025 financial horoscopes, investment timing based on planetary transits, and practical money management tips for each zodiac sign."
         keywords="astro finance, financial horoscope 2025, zodiac money advice, astrology investment timing, planetary transits finance, lucky numbers investment, moon phases money, financial astrology India"
-        ogImage="https://images.pexels.com/photos/7947662/pexels-photo-7947662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        ogUrl="https://fincal.in/astro-finance"
+        image="https://images.pexels.com/photos/7947662/pexels-photo-7947662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        url="/astro-finance"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
@@ -325,7 +321,7 @@ export const AstroFinance: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-lg">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <Zodiac className="h-8 w-8 text-purple-600" />
+                  <Star className="h-8 w-8 text-purple-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Zodiac-Based Guidance</h3>
                 <p className="text-gray-600 text-center">
