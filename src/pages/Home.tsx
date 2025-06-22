@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
-  Calculator, ArrowRight, Search, TrendingUp, DollarSign, PieChart, 
+  Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, 
   Building, Shield, ChevronRight
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
+import { governmentSchemes } from '../data/governmentSchemesData';
 
 export const Home: React.FC = () => {
   const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
@@ -363,6 +364,58 @@ export const Home: React.FC = () => {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Government Schemes Section */}
+      <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-green-900 mb-4">भारत सरकार की योजनाएं</h2>
+            <p className="text-lg text-green-700 max-w-3xl mx-auto">
+              सभी सरकारी योजनाओं की पूरी जानकारी - आवेदन से लेकर लाभ तक, हिंदी में।
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {governmentSchemes.slice(0, 6).map(scheme => (
+              <Link
+                key={scheme.id}
+                to={`/government-schemes/${scheme.slug}`}
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl border border-green-100 group overflow-hidden transition-all"
+              >
+                <div className="h-44 overflow-hidden relative">
+                  <img
+                    src={scheme.coverImage}
+                    alt={scheme.titleHindi}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-green-600 text-white shadow">
+                    {scheme.categoryHindi}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-green-900 mb-2 group-hover:text-green-700 transition-colors line-clamp-2">
+                    {scheme.titleHindi}
+                  </h3>
+                  <p className="text-green-800 text-sm mb-4 line-clamp-3">{scheme.excerptHindi}</p>
+                  <div className="flex items-center gap-2 text-xs text-green-600 mb-2">
+                    <span>लाभार्थी: {scheme.beneficiaries || 'लाखों'}</span>
+                    <span>•</span>
+                    <span>{scheme.status === 'active' ? 'सक्रिय' : scheme.status === 'upcoming' ? 'आगामी' : 'पुरानी'}</span>
+                  </div>
+                  <div className="flex justify-between items-center mt-2">
+                    <span className="text-xs text-green-700">{scheme.benefits.length} लाभ</span>
+                    <span className="text-green-600 font-medium flex items-center">विवरण <ArrowRight className="h-4 w-4 ml-1" /></span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <Link to="/government-schemes" className="btn bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg transition-all">
+              सभी योजनाएं देखें
+            </Link>
           </div>
         </div>
       </section>
