@@ -23,6 +23,10 @@ import { CreditCardFinder } from './calculators/CreditCardFinder';
 import ExcelTool from './pages/ExcelTool';
 import ExcelToolPost from './pages/ExcelToolPost';
 
+// Government Schemes section
+import GovernmentSchemes from './pages/GovernmentSchemes';
+import GovernmentSchemePost from './pages/GovernmentSchemePost';
+
 function App() {
   return (
     <Layout>
@@ -50,6 +54,10 @@ function App() {
         {/* Excel Tool blog section routes */}
         <Route path="/exceltool" element={<ExcelTool />} />
         <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
+
+        {/* Government Schemes routes */}
+        <Route path="/government-schemes" element={<GovernmentSchemes />} />
+        <Route path="/government-schemes/:slug" element={<GovernmentSchemePost />} />
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
