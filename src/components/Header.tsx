@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Calculator, Search, ChevronRight, FileText, Star } from 'lucide-react';
+import { Menu, X, Calculator, Search, ChevronRight, FileText } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { SearchBar } from './SearchBar';
 import { calculatorCategories } from '../data/calculatorData';
@@ -147,13 +147,6 @@ export const Header: React.FC = () => {
             >
               <FileText className="h-4 w-4 mr-1" />
               Excel Tool
-            </Link>
-            <Link 
-              to="/astro-finance" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
-            >
-              <Star className="h-4 w-4 mr-1" />
-              Astro Finance
             </Link>
             <Link 
               to="/about-us" 
