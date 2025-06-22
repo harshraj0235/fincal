@@ -10,14 +10,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Comprehensive financial calculators for Indian users - EMI, SIP, PPF, Income Tax, Loan Comparison and more" />
     <title>Indian Financial Calculators</title>
+    
     <!-- Preload critical assets -->
     <link rel="preload" href="/src/main.tsx" as="script" type="module" />
     <link rel="preload" href="/src/index.css" as="style" />
-    <!-- Preconnect to external domains -->
+    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+    <link rel="preload" href="/images/hero-bg.jpg" as="image" />
+    
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//images.pexels.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    
+    <!-- Preconnect for critical domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
     <link rel="preconnect" href="https://images.pexels.com" />
-    <link rel="dns-prefetch" href="https://images.pexels.com" />
+    
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+    
+    <!-- Service Worker registration for PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    
+    <!-- Performance monitoring -->
+    <script>
+      // Core Web Vitals monitoring
+      if ('PerformanceObserver' in window) {
+        // LCP (Largest Contentful Paint)
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            if (entry.value > 2500) {
+              console.warn('LCP is too slow:', entry.value);
+            }
+          }
+        }).observe({entryTypes: ['largest-contentful-paint']});
+        
+        // FID (First Input Delay)
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            if (entry.processingStart - entry.startTime > 100) {
+              console.warn('FID is too slow:', entry.processingStart - entry.startTime);
+            }
+          }
+        }).observe({entryTypes: ['first-input']});
+        
+        // CLS (Cumulative Layout Shift)
+        new PerformanceObserver((entryList) => {
+          let clsValue = 0;
+          for (const entry of entryList.getEntries()) {
+            if (!entry.hadRecentInput) {
+              clsValue += entry.value;
+            }
+          }
+          if (clsValue > 0.1) {
+            console.warn('CLS is too high:', clsValue);
+          }
+        }).observe({entryTypes: ['layout-shift']});
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
