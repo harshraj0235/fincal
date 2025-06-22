@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Calendar, Tag, ArrowLeft, Download, Share2, ChevronRight, Users, TrendingUp, Phone, Globe } from 'lucide-react';
 import { getGovernmentSchemeBySlug, getRelatedGovernmentSchemes } from '../data/governmentSchemesData';
+import { SEOHelmet } from '../components/SEOHelmet';
 
 interface TocItem {
   idx: number;
@@ -52,13 +53,13 @@ const GovernmentSchemePost: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHelmet title={scheme.seoTitle} description={scheme.seoDescription} />
       {/* Header Section */}
       <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <button onClick={() => navigate('/government-schemes')} className="flex items-center text-white mb-6 hover:underline">
             <ArrowLeft className="h-4 w-4 mr-1" /> सभी योजनाएं
           </button>
-          
           <div className="flex items-center gap-4 mb-4">
             <div className={`px-3 py-1 rounded-full text-sm font-medium ${
               scheme.status === 'active' ? 'bg-green-500' :
@@ -72,30 +73,22 @@ const GovernmentSchemePost: React.FC = () => {
             </div>
             <div className="flex items-center gap-1 text-sm">
               <Calendar className="h-4 w-4" />
-              {new Date(scheme.launchDate).toLocaleDateString('hi-IN', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
+              {new Date(scheme.launchDate).toLocaleDateString('hi-IN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
               })}
             </div>
           </div>
-          
           <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{scheme.titleHindi}</h1>
           <p className="text-xl opacity-90 mb-6">{scheme.excerptHindi}</p>
-          
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
-              {scheme.categoryHindi}
-            </span>
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">{scheme.categoryHindi}</span>
             {scheme.budget && (
-              <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
-                बजट: {scheme.budget}
-              </span>
+              <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">बजट: {scheme.budget}</span>
             )}
             {scheme.beneficiaries && (
-              <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">
-                {scheme.beneficiaries} लाभार्थी
-              </span>
+              <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">{scheme.beneficiaries} लाभार्थी</span>
             )}
             <button onClick={handleShare} className="ml-auto flex items-center gap-1 px-3 py-1 rounded bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors">
               <Share2 className="h-4 w-4" /> शेयर करें
@@ -104,55 +97,8 @@ const GovernmentSchemePost: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Quick Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
-            <div className="flex items-center gap-3 mb-3">
-              <Users className="h-6 w-6 text-green-600" />
-              <h3 className="font-semibold text-gray-900">लक्षित समूह</h3>
-            </div>
-            <div className="space-y-2">
-              {scheme.targetAudience.slice(0, 3).map(audience => (
-                <div key={audience} className="text-sm text-gray-600">• {audience}</div>
-              ))}
-              {scheme.targetAudience.length > 3 && (
-                <div className="text-sm text-green-600">+{scheme.targetAudience.length - 3} और</div>
-              )}
-            </div>
-          </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
-            <div className="flex items-center gap-3 mb-3">
-              <TrendingUp className="h-6 w-6 text-blue-600" />
-              <h3 className="font-semibold text-gray-900">मुख्य लाभ</h3>
-            </div>
-            <div className="space-y-2">
-              {scheme.benefits.slice(0, 3).map(benefit => (
-                <div key={benefit} className="text-sm text-gray-600">• {benefit}</div>
-              ))}
-              {scheme.benefits.length > 3 && (
-                <div className="text-sm text-blue-600">+{scheme.benefits.length - 3} और</div>
-              )}
-            </div>
-          </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
-            <div className="flex items-center gap-3 mb-3">
-              <Tag className="h-6 w-6 text-purple-600" />
-              <h3 className="font-semibold text-gray-900">पात्रता</h3>
-            </div>
-            <div className="space-y-2">
-              {scheme.eligibility.slice(0, 3).map(eligibility => (
-                <div key={eligibility} className="text-sm text-gray-600">• {eligibility}</div>
-              ))}
-              {scheme.eligibility.length > 3 && (
-                <div className="text-sm text-purple-600">+{scheme.eligibility.length - 3} और</div>
-              )}
-            </div>
-          </div>
-        </div>
-
+      {/* Main Blog Content */}
+      <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Table of Contents */}
         {toc.length > 2 && (
           <div className="mb-8 bg-white p-6 rounded-lg shadow-sm border">
@@ -177,161 +123,111 @@ const GovernmentSchemePost: React.FC = () => {
           </div>
         )}
 
-        {/* Scheme Content */}
-        <article className="prose prose-lg max-w-none bg-white p-8 rounded-lg shadow-sm border">
+        {/* Blog Content Rendering */}
+        <article className="prose prose-lg max-w-none">
           {scheme.content.map((section, idx) => {
-            if (section.type === 'paragraph') return <p key={idx} id={`section-${idx}`}>{section.content}</p>;
-            if (section.type === 'heading') return <h2 key={idx} id={`section-${idx}`}>{section.content}</h2>;
-            if (section.type === 'subheading') return <h3 key={idx} id={`section-${idx}`}>{section.content}</h3>;
-            if (section.type === 'list') return <ul key={idx} id={`section-${idx}`}>{section.items?.map((item, i) => <li key={i}>{item}</li>)}</ul>;
-            if (section.type === 'image') return (
-              <figure key={idx} id={`section-${idx}`} className="my-8">
-                <img src={section.url} alt={section.caption || ''} className="rounded-lg shadow" />
-                {section.caption && <figcaption className="text-center text-gray-500 text-sm mt-2">{section.caption}</figcaption>}
-              </figure>
-            );
-            if (section.type === 'quote') return (
-              <blockquote key={idx} id={`section-${idx}`} className="border-l-4 border-green-400 pl-4 italic text-lg my-6">
-                "{section.content}"
-                {section.author && <div className="text-right text-sm text-green-700 mt-2">— {section.author}</div>}
-              </blockquote>
-            );
-            if (section.type === 'table' && section.tableData) return (
-              <div key={idx} id={`section-${idx}`} className="my-8 overflow-x-auto">
-                <table className="min-w-full border border-gray-300">
-                  <thead>
-                    <tr>
-                      {section.tableData.headers.map((header, i) => (
-                        <th key={i} className="border border-gray-300 px-4 py-2 bg-gray-100 font-semibold">{header}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {section.tableData.rows.map((row, i) => (
-                      <tr key={i}>
-                        {row.map((cell, j) => (
-                          <td key={j} className="border border-gray-300 px-4 py-2">{cell}</td>
+            switch (section.type) {
+              case 'heading':
+                return <h2 id={`section-${idx}`} key={idx} className="text-3xl font-bold mt-12 mb-4 text-green-800">{section.content}</h2>;
+              case 'subheading':
+                return <h3 id={`section-${idx}`} key={idx} className="text-xl font-semibold mt-8 mb-3 text-green-700">{section.content}</h3>;
+              case 'paragraph':
+                return <p key={idx} className="mb-5 text-lg leading-relaxed text-gray-800">{section.content}</p>;
+              case 'list':
+                return (
+                  <ul key={idx} className="list-disc pl-6 mb-5 text-gray-800">
+                    {section.items?.map((item, i) => <li key={i} className="mb-2">{item}</li>)}
+                  </ul>
+                );
+              case 'image':
+                return (
+                  <div key={idx} className="my-8 text-center">
+                    <img src={section.url} alt={section.caption || ''} className="mx-auto rounded-lg shadow-lg max-h-96 object-contain" />
+                    {section.caption && <div className="text-sm text-gray-500 mt-2">{section.caption}</div>}
+                  </div>
+                );
+              case 'quote':
+                return (
+                  <blockquote key={idx} className="border-l-4 border-green-500 pl-4 italic text-lg my-8 bg-green-50 py-4 px-6 rounded">
+                    “{section.content}”
+                    {section.author && <div className="text-sm text-green-700 mt-2">— {section.author}</div>}
+                  </blockquote>
+                );
+              case 'table':
+                return (
+                  <div key={idx} className="overflow-x-auto my-8">
+                    <table className="min-w-full border text-left">
+                      <thead>
+                        <tr>
+                          {section.tableData?.headers.map((header, i) => (
+                            <th key={i} className="border px-4 py-2 bg-gray-100 text-green-800">{header}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {section.tableData?.rows.map((row, i) => (
+                          <tr key={i}>
+                            {row.map((cell, j) => (
+                              <td key={j} className="border px-4 py-2">{cell}</td>
+                            ))}
+                          </tr>
                         ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            );
-            if (section.type === 'highlight') return (
-              <div key={idx} id={`section-${idx}`} className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
-                <div className="font-semibold text-yellow-800 mb-2">महत्वपूर्ण जानकारी</div>
-                <div className="text-yellow-700">{section.content}</div>
-              </div>
-            );
-            return null;
+                      </tbody>
+                    </table>
+                  </div>
+                );
+              default:
+                return null;
+            }
           })}
         </article>
 
-        {/* Application Process */}
-        <div className="mt-8 bg-white p-6 rounded-lg shadow-sm border">
-          <h3 className="font-semibold text-xl mb-4 text-gray-900">आवेदन प्रक्रिया</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-medium text-gray-900 mb-3">आवश्यक दस्तावेज</h4>
-              <ul className="space-y-2">
-                {scheme.documents.map((doc, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    {doc}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium text-gray-900 mb-3">आवेदन के चरण</h4>
-              <ol className="space-y-2">
-                {scheme.applicationProcess.map((step, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                    <span className="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-medium min-w-fit">
-                      {idx + 1}
-                    </span>
-                    {step}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </div>
-
-        {/* Contact Information */}
-        {(scheme.officialWebsite || scheme.helpline) && (
-          <div className="mt-8 bg-white p-6 rounded-lg shadow-sm border">
-            <h3 className="font-semibold text-xl mb-4 text-gray-900">संपर्क जानकारी</h3>
-            <div className="flex flex-wrap gap-4">
-              {scheme.officialWebsite && (
-                <a
-                  href={scheme.officialWebsite}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors"
-                >
-                  <Globe className="h-4 w-4" />
-                  आधिकारिक वेबसाइट
-                </a>
-              )}
-              {scheme.helpline && (
-                <a
-                  href={`tel:${scheme.helpline}`}
-                  className="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors"
-                >
-                  <Phone className="h-4 w-4" />
-                  हेल्पलाइन: {scheme.helpline}
-                </a>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* FAQ Schema */}
-        {scheme.faqSchema.length > 0 && (
-          <div className="mt-8 bg-white p-6 rounded-lg shadow-sm border">
-            <h3 className="font-semibold text-xl mb-4 text-gray-900">अक्सर पूछे जाने वाले प्रश्न</h3>
-            <div className="space-y-4">
+        {/* FAQ Section */}
+        {scheme.faqSchema && scheme.faqSchema.length > 0 && (
+          <div className="mt-12 bg-white p-6 rounded-lg shadow-sm border">
+            <h2 className="text-2xl font-bold mb-6 text-green-800">अक्सर पूछे जाने वाले सवाल (FAQs)</h2>
+            <ul className="space-y-4">
               {scheme.faqSchema.map((faq, idx) => (
-                <div key={idx} className="border-b border-gray-200 pb-4 last:border-b-0">
-                  <h4 className="font-medium text-gray-900 mb-2">{faq.question}</h4>
-                  <p className="text-gray-600 text-sm">{faq.answer}</p>
-                </div>
+                <li key={idx}>
+                  <h3 className="font-semibold text-green-700 mb-2">{faq.question}</h3>
+                  <p className="text-gray-800">{faq.answer}</p>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         )}
 
         {/* Related Schemes */}
-        <div className="mt-12">
-          <h3 className="font-semibold mb-6 text-xl text-gray-900">संबंधित योजनाएं</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedSchemes.map(relatedScheme => (
-              <Link 
-                key={relatedScheme.id} 
-                to={`/government-schemes/${relatedScheme.slug}`} 
-                className="block bg-white border rounded-lg shadow hover:shadow-lg transition overflow-hidden"
-              >
-                <img src={relatedScheme.coverImage} alt={relatedScheme.title} className="h-32 w-full object-cover" />
-                <div className="p-4">
-                  <div className="font-medium text-gray-900 line-clamp-2 mb-2">{relatedScheme.titleHindi}</div>
-                  <div className="text-xs text-gray-500 mb-2">{relatedScheme.categoryHindi}</div>
-                  <div className="flex items-center gap-2">
-                    <span className={`px-2 py-1 rounded text-xs ${
-                      relatedScheme.status === 'active' ? 'bg-green-100 text-green-700' :
-                      relatedScheme.status === 'upcoming' ? 'bg-blue-100 text-blue-700' :
-                      'bg-gray-100 text-gray-700'
-                    }`}>
-                      {relatedScheme.status === 'active' ? 'सक्रिय' :
-                       relatedScheme.status === 'upcoming' ? 'आगामी' : 'पुरानी'}
-                    </span>
+        {relatedSchemes.length > 0 && (
+          <div className="mt-12">
+            <h2 className="text-xl font-bold mb-4 text-green-800">संबंधित योजनाएं</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedSchemes.map(relatedScheme => (
+                <Link
+                  key={relatedScheme.id}
+                  to={`/government-schemes/${relatedScheme.slug}`}
+                  className="block bg-white border rounded-lg shadow hover:shadow-lg transition overflow-hidden"
+                >
+                  <img src={relatedScheme.coverImage} alt={relatedScheme.title} className="h-32 w-full object-cover" />
+                  <div className="p-4">
+                    <div className="font-medium text-gray-900 line-clamp-2 mb-2">{relatedScheme.titleHindi}</div>
+                    <div className="text-xs text-gray-500 mb-2">{relatedScheme.categoryHindi}</div>
+                    <div className="flex items-center gap-2">
+                      <span className={`px-2 py-1 rounded text-xs ${
+                        relatedScheme.status === 'active' ? 'bg-green-100 text-green-700' :
+                        relatedScheme.status === 'upcoming' ? 'bg-blue-100 text-blue-700' :
+                        'bg-gray-100 text-gray-700'
+                      }`}>
+                        {relatedScheme.status === 'active' ? 'सक्रिय' :
+                         relatedScheme.status === 'upcoming' ? 'आगामी' : 'पुरानी'}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

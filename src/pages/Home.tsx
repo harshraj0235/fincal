@@ -425,7 +425,7 @@ export const Home: React.FC = () => {
                   <li className="text-sm text-neutral-600">• Eligibility & Benefits</li>
                   <li className="text-sm text-neutral-600">• Latest Updates & News</li>
                 </ul>
-                <Link to="/government-schemes" className="btn bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg transition-all w-full text-center">
+                <Link to="/government-schemes" className="btn bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg transition-all w-full text-center" onClick={() => console.log('View All Schemes clicked')}>
                   View All Schemes
                 </Link>
               </div>

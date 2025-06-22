@@ -59,18 +59,18 @@ const ExcelTool: React.FC = () => {
   // Filter and sort posts
   const filteredPosts = useMemo(() => {
     let filtered = excelToolBlogPosts.filter(post => {
-      const matchesSearch =
-        searchTerm === '' ||
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch =
+      searchTerm === '' ||
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.categories.some(cat => cat.toLowerCase().includes(searchTerm.toLowerCase()));
       
-      const matchesCategory =
-        selectedCategory === null ||
-        post.categories.includes(selectedCategory);
+    const matchesCategory =
+      selectedCategory === null ||
+      post.categories.includes(selectedCategory);
       
-      return matchesSearch && matchesCategory;
-    });
+    return matchesSearch && matchesCategory;
+  });
 
     // Sort posts
     filtered.sort((a, b) => {
@@ -102,7 +102,7 @@ const ExcelTool: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Excel Tools & Templates Hub
@@ -115,11 +115,11 @@ const ExcelTool: React.FC = () => {
             <div className="max-w-2xl mx-auto">
               <div className="relative">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <input
-                  type="text"
+        <input
+          type="text"
                   placeholder="Search templates, guides, or categories..."
-                  value={searchTerm}
-                  onChange={e => setSearchTerm(e.target.value)}
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 />
               </div>
@@ -134,7 +134,7 @@ const ExcelTool: React.FC = () => {
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-gray-900">Browse by Category</h2>
             <div className="flex items-center gap-4">
-              <select
+        <select
                 value={sortBy}
                 onChange={e => setSortBy(e.target.value as 'date' | 'title' | 'popularity')}
                 className="px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -142,8 +142,8 @@ const ExcelTool: React.FC = () => {
                 <option value="date">Sort by Date</option>
                 <option value="title">Sort by Title</option>
                 <option value="popularity">Sort by Popularity</option>
-              </select>
-            </div>
+        </select>
+      </div>
           </div>
 
           {/* Category Pills */}
@@ -309,7 +309,7 @@ const ExcelTool: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-900">{selectedCategory}</h2>
               <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                 {categoryCounts[selectedCategory]} posts
-              </span>
+                </span>
             </div>
           </div>
         )}
@@ -382,9 +382,9 @@ const ExcelTool: React.FC = () => {
                     </span>
                   )}
                 </div>
-              </div>
-            </Link>
-          ))}
+            </div>
+          </Link>
+        ))}
         </div>
 
         {/* No Results */}

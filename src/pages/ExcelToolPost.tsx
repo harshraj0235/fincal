@@ -90,12 +90,12 @@ const ExcelToolPost: React.FC = () => {
           {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
         </div>
         <div className="flex flex-wrap gap-2">
-          {post.categories.map(cat => (
-            <span key={cat} className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded flex items-center">
-              <Tag className="h-3 w-3 mr-1" />{cat}
-            </span>
-          ))}
-        </div>
+        {post.categories.map(cat => (
+          <span key={cat} className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded flex items-center">
+            <Tag className="h-3 w-3 mr-1" />{cat}
+          </span>
+        ))}
+      </div>
         <button onClick={handleShare} className="ml-auto flex items-center gap-1 px-3 py-1 rounded bg-gray-100 hover:bg-blue-100 text-blue-700 text-xs font-medium">
           <Share2 className="h-4 w-4" /> Share
         </button>

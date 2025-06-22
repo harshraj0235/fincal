@@ -39,6 +39,19 @@ const GovernmentSchemes: React.FC = () => {
     });
   }, [searchTerm, selectedCategory, selectedStatus]);
 
+  // Add error handling for data
+  if (!governmentSchemes || governmentSchemes.length === 0) {
+    console.error('No government schemes data found');
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Error Loading Government Schemes</h1>
+          <p className="text-gray-600">No data available. Please try again later.</p>
+        </div>
+      </div>
+    );
+  }
+
   const statusOptions = [
     { value: 'active', label: 'Active Schemes', labelHindi: 'सक्रिय योजनाएं' },
     { value: 'upcoming', label: 'Upcoming Schemes', labelHindi: 'आगामी योजनाएं' },

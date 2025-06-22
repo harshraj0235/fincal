@@ -44,135 +44,74 @@ export const governmentSchemes: GovernmentScheme[] = [
   {
     id: '1',
     slug: 'pm-kisan-samman-nidhi-yojana-2025',
-    title: 'PM Kisan Samman Nidhi Yojana 2025: Complete Guide for Farmers',
-    titleHindi: 'पीएम किसान सम्मान निधि योजना 2025: किसानों के लिए पूर्ण गाइड',
+    title: 'PM Kisan Samman Nidhi Yojana 2025: Complete Guide for Farmers - ₹6000 Annual Support',
+    titleHindi: 'पीएम किसान सम्मान निधि योजना 2025: किसानों के लिए पूर्ण गाइड - ₹6000 वार्षिक सहायता',
     category: 'Agriculture & Farmers',
     categoryHindi: 'कृषि और किसान',
     status: 'active',
     launchDate: '2019-02-01',
     lastUpdated: '2025-01-15',
-    targetAudience: ['Small and Marginal Farmers', 'Landholding Farmers', 'Agricultural Families'],
+    targetAudience: ['Small and Marginal Farmers', 'Landholding Farmers', 'Agricultural Families', 'Rural Households'],
     benefits: [
-      '₹6,000 per year financial assistance',
-      'Direct bank transfer in 3 installments',
-      'No middleman involvement',
-      'Support for agricultural inputs',
-      'Improved farming practices'
+      '₹6,000 per year financial assistance in 3 installments',
+      'Direct bank transfer - no middleman involvement',
+      'Support for agricultural inputs and farming expenses',
+      'Improved farming practices and crop diversification',
+      'Financial security for farming families',
+      'Reduced dependency on money lenders'
     ],
     eligibility: [
-      'Small and marginal farmers',
-      'Landholding up to 2 hectares',
-      'Valid bank account',
-      'Aadhaar linked bank account',
-      'Not employed in government sector'
+      'Small and marginal farmers with landholding up to 2 hectares',
+      'Valid bank account linked with Aadhaar',
+      'Not employed in government sector or receiving pension',
+      'Should be the actual cultivator of the land',
+      'Family should not have institutional landholding'
     ],
     documents: [
-      'Aadhaar Card',
+      'Aadhaar Card (mandatory)',
       'Land Records (Khasra/Khatauni)',
-      'Bank Passbook',
-      'Passport Size Photos',
-      'Income Certificate'
+      'Bank Passbook with IFSC code',
+      'Passport Size Photographs',
+      'Income Certificate (if applicable)',
+      'Caste Certificate (for SC/ST farmers)'
     ],
     applicationProcess: [
-      'Visit nearest Common Service Centre (CSC)',
-      'Fill PM-KISAN application form',
-      'Submit required documents',
-      'Get application number',
-      'Track status online'
+      'Visit nearest Common Service Centre (CSC) or Gram Panchayat',
+      'Fill PM-KISAN application form with accurate details',
+      'Submit all required documents for verification',
+      'Get application number and acknowledgment receipt',
+      'Track application status online at pmkisan.gov.in',
+      'Receive first installment within 30-45 days'
     ],
     officialWebsite: 'https://pmkisan.gov.in',
     helpline: '155261',
     coverImage: 'https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Kisan Samman Nidhi Yojana provides ₹6,000 annual financial assistance to small and marginal farmers. Learn complete application process, eligibility, and benefits for 2025.',
-    excerptHindi: 'पीएम किसान सम्मान निधि योजना छोटे और सीमांत किसानों को ₹6,000 वार्षिक वित्तीय सहायता प्रदान करती है। 2025 के लिए पूर्ण आवेदन प्रक्रिया, पात्रता और लाभ जानें।',
-    keywords: ['PM Kisan', 'किसान सम्मान निधि', 'farmer scheme', 'agriculture subsidy', 'PM Kisan 2025', 'किसान योजना', 'farmer financial assistance', 'agriculture support'],
-    seoTitle: 'PM Kisan Samman Nidhi Yojana 2025: ₹6000 for Farmers | Complete Guide',
-    seoDescription: 'PM Kisan Samman Nidhi Yojana 2025: Get ₹6000 annually for farming. Complete application process, eligibility, documents required. Apply online at pmkisan.gov.in',
+    excerpt: 'PM Kisan Samman Nidhi Yojana 2025 provides ₹6,000 annual financial assistance to small and marginal farmers. Complete guide with application process, eligibility criteria, and latest updates for 2025.',
+    excerptHindi: 'पीएम किसान सम्मान निधि योजना 2025 छोटे और सीमांत किसानों को ₹6,000 वार्षिक वित्तीय सहायता प्रदान करती है। 2025 के लिए पूर्ण गाइड, आवेदन प्रक्रिया और नवीनतम अपडेट।',
+    keywords: [
+      'PM Kisan 2025', 'किसान सम्मान निधि', 'farmer scheme 2025', 'agriculture subsidy india',
+      'PM Kisan application', 'किसान योजना आवेदन', 'farmer financial assistance',
+      'agriculture support scheme', 'PM Kisan eligibility', 'किसान पैसा कैसे मिलेगा',
+      'PM Kisan status check', 'farmer subsidy 2025', 'किसान सहायता योजना'
+    ],
+    seoTitle: 'PM Kisan Samman Nidhi Yojana 2025: ₹6000 for Farmers | Complete Application Guide',
+    seoDescription: 'PM Kisan Samman Nidhi Yojana 2025: Get ₹6000 annually for farming. Complete application process, eligibility, documents required. Apply online at pmkisan.gov.in. Latest updates for 2025.',
     content: [
       {
         type: 'heading',
-        content: 'PM Kisan Samman Nidhi Yojana 2025: किसानों के लिए वित्तीय सहायता'
+        content: 'PM Kisan Samman Nidhi Yojana 2025: किसानों के लिए वित्तीय सहायता का पूर्ण गाइड'
       },
       {
         type: 'paragraph',
-        content: 'प्रधानमंत्री किसान सम्मान निधि योजना (PM-KISAN) भारत सरकार की एक महत्वाकांक्षी योजना है जो छोटे और सीमांत किसानों को वित्तीय सहायता प्रदान करती है। यह योजना 2019 में शुरू की गई थी और 2025 में भी जारी है।'
+        content: 'प्रधानमंत्री किसान सम्मान निधि योजना (PM-KISAN) भारत सरकार की एक महत्वाकांक्षी योजना है जो छोटे और सीमांत किसानों को वित्तीय सहायता प्रदान करती है। यह योजना 2019 में शुरू की गई थी और 2025 में भी जारी है। इस योजना का मुख्य उद्देश्य किसानों को खेती के लिए आवश्यक वित्तीय सहायता प्रदान करना है ताकि वे बेहतर फसल उत्पादन कर सकें और अपनी आय में वृद्धि कर सकें।'
       },
       {
         type: 'subheading',
-        content: 'योजना का उद्देश्य'
+        content: 'PM Kisan योजना 2025 में क्या नया है?'
       },
       {
         type: 'paragraph',
-        content: 'इस योजना का मुख्य उद्देश्य किसानों को खेती के लिए आवश्यक वित्तीय सहायता प्रदान करना है ताकि वे बेहतर फसल उत्पादन कर सकें और अपनी आय में वृद्धि कर सकें।'
-      },
-      {
-        type: 'subheading',
-        content: 'योजना के लाभ'
-      },
-      {
-        type: 'list',
-        items: [
-          'प्रति वर्ष ₹6,000 की वित्तीय सहायता',
-          'तीन किश्तों में सीधा बैंक ट्रांसफर',
-          'कोई बिचौलिया नहीं',
-          'कृषि इनपुट के लिए समर्थन',
-          'बेहतर खेती प्रथाओं को बढ़ावा'
-        ]
-      },
-      {
-        type: 'subheading',
-        content: 'पात्रता मानदंड'
-      },
-      {
-        type: 'list',
-        items: [
-          'छोटे और सीमांत किसान',
-          '2 हेक्टेयर तक की जमीन',
-          'वैध बैंक खाता',
-          'आधार से जुड़ा बैंक खाता',
-          'सरकारी क्षेत्र में नियोजित नहीं'
-        ]
-      },
-      {
-        type: 'subheading',
-        content: 'आवश्यक दस्तावेज'
-      },
-      {
-        type: 'list',
-        items: [
-          'आधार कार्ड',
-          'जमीन के कागजात (खसरा/खतौनी)',
-          'बैंक पासबुक',
-          'पासपोर्ट साइज फोटो',
-          'आय प्रमाण पत्र'
-        ]
-      },
-      {
-        type: 'subheading',
-        content: 'आवेदन प्रक्रिया 2025'
-      },
-      {
-        type: 'list',
-        items: [
-          'निकटतम कॉमन सर्विस सेंटर (CSC) पर जाएं',
-          'PM-KISAN आवेदन फॉर्म भरें',
-          'आवश्यक दस्तावेज जमा करें',
-          'आवेदन संख्या प्राप्त करें',
-          'ऑनलाइन स्थिति की जांच करें'
-        ]
-      },
-      {
-        type: 'image',
-        url: 'https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-        caption: 'PM Kisan Samman Nidhi Yojana - किसानों के लिए वित्तीय सहायता'
-      },
-      {
-        type: 'subheading',
-        content: '2025 में नई सुविधाएं'
-      },
-      {
-        type: 'paragraph',
-        content: '2025 में PM-KISAN योजना में कई नई सुविधाएं जोड़ी गई हैं:'
+        content: '2025 में PM-KISAN योजना में कई महत्वपूर्ण बदलाव किए गए हैं। सरकार ने डिजिटल इंफ्रास्ट्रक्चर को मजबूत किया है, आवेदन प्रक्रिया को सरल बनाया है, और पारदर्शिता बढ़ाई है। नई तकनीक के साथ, किसान अब मोबाइल ऐप के माध्यम से भी आवेदन कर सकते हैं।'
       },
       {
         type: 'list',
@@ -181,738 +120,605 @@ export const governmentSchemes: GovernmentScheme[] = [
           'मोबाइल ऐप के माध्यम से आवेदन',
           'बेहतर ग्रिवेंस रिड्रेसल सिस्टम',
           'AI आधारित पात्रता सत्यापन',
-          'ब्लॉकचेन आधारित पारदर्शिता'
+          'ब्लॉकचेन आधारित पारदर्शिता',
+          'रियल-टाइम स्टेटस अपडेट'
         ]
       },
       {
-        type: 'quote',
-        content: 'PM-KISAN योजना ने लाखों किसानों की जिंदगी बदल दी है और कृषि क्षेत्र को मजबूत बनाया है।',
-        author: 'कृषि मंत्रालय, भारत सरकार'
+        type: 'subheading',
+        content: 'योजना के मुख्य लाभ और विशेषताएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM-KISAN योजना किसानों को कई महत्वपूर्ण लाभ प्रदान करती है। यह योजना न केवल वित्तीय सहायता देती है बल्कि किसानों को आत्मनिर्भर बनाने में भी मदद करती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रति वर्ष ₹6,000 की वित्तीय सहायता',
+          'तीन किश्तों में सीधा बैंक ट्रांसफर',
+          'कोई बिचौलिया नहीं - पारदर्शी प्रक्रिया',
+          'कृषि इनपुट के लिए समर्थन',
+          'बेहतर खेती प्रथाओं को बढ़ावा',
+          'किसानों की आय में वृद्धि',
+          'ग्रामीण अर्थव्यवस्था का विकास'
+        ]
       },
       {
         type: 'subheading',
-        content: 'किश्तों का विवरण'
+        content: 'किश्तों का विस्तृत विवरण'
       },
       {
         type: 'table',
         tableData: {
-          headers: ['किश्त', 'राशि', 'भुगतान माह'],
+          headers: ['किश्त', 'राशि', 'भुगतान माह', 'उद्देश्य'],
           rows: [
-            ['पहली किश्त', '₹2,000', 'अप्रैल-जुलाई'],
-            ['दूसरी किश्त', '₹2,000', 'अगस्त-नवंबर'],
-            ['तीसरी किश्त', '₹2,000', 'दिसंबर-मार्च']
+            ['पहली किश्त', '₹2,000', 'अप्रैल-जुलाई', 'खरीफ फसल के लिए'],
+            ['दूसरी किश्त', '₹2,000', 'अगस्त-नवंबर', 'रबी फसल के लिए'],
+            ['तीसरी किश्त', '₹2,000', 'दिसंबर-मार्च', 'ग्रीष्मकालीन फसल के लिए']
           ]
         }
       },
       {
         type: 'subheading',
-        content: 'ऑनलाइन आवेदन कैसे करें'
-      },
-      {
-        type: 'list',
-        items: [
-          'pmkisan.gov.in पर जाएं',
-          '"New Farmer Registration" पर क्लिक करें',
-          'आधार नंबर दर्ज करें',
-          'पात्रता की जांच करें',
-          'फॉर्म भरें और दस्तावेज अपलोड करें',
-          'आवेदन जमा करें'
-        ]
-      },
-      {
-        type: 'subheading',
-        content: 'स्थिति की जांच कैसे करें'
-      },
-      {
-        type: 'list',
-        items: [
-          'आधार नंबर से स्थिति जांचें',
-          'मोबाइल नंबर से स्थिति जांचें',
-          'बैंक खाता नंबर से स्थिति जांचें',
-          'आवेदन संख्या से स्थिति जांचें'
-        ]
-      },
-      {
-        type: 'subheading',
-        content: 'समस्याओं का समाधान'
+        content: 'पात्रता मानदंड और आवश्यक शर्तें'
       },
       {
         type: 'paragraph',
-        content: 'यदि आपको PM-KISAN योजना में कोई समस्या आ रही है, तो निम्नलिखित तरीकों से संपर्क कर सकते हैं:'
+        content: 'PM-KISAN योजना के लिए कुछ विशिष्ट पात्रता मानदंड हैं। इन मानदंडों को पूरा करने वाले किसान ही इस योजना का लाभ उठा सकते हैं।'
       },
       {
         type: 'list',
         items: [
-          'हेल्पलाइन: 155261',
-          'ईमेल: pmkisan-ict@gov.in',
-          'टोल-फ्री नंबर: 1800-180-1551',
-          'निकटतम कृषि कार्यालय में जाएं'
+          'छोटे और सीमांत किसान (2 हेक्टेयर तक की जमीन)',
+          'वैध बैंक खाता जो आधार से जुड़ा है',
+          'सरकारी क्षेत्र में नियोजित नहीं होना चाहिए',
+          'पेंशन प्राप्तकर्ता नहीं होना चाहिए',
+          'जमीन का वास्तविक काश्तकार होना चाहिए',
+          'संस्थागत जमीन नहीं होनी चाहिए'
         ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवश्यक दस्तावेज और प्रमाण'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM-KISAN योजना के लिए आवेदन करते समय कुछ महत्वपूर्ण दस्तावेज आवश्यक हैं। इन दस्तावेजों के बिना आवेदन स्वीकार नहीं किया जाएगा।'
+      },
+      {
+        type: 'list',
+        items: [
+          'आधार कार्ड (अनिवार्य)',
+          'जमीन के कागजात',
+          'बैंक पासबुक (IFSC कोड के साथ)',
+          'पासपोर्ट साइज फोटो',
+          'आय प्रमाण पत्र (यदि आवश्यक हो)',
+          'जाति प्रमाण पत्र (SC/ST किसानों के लिए)',
+          'पता प्रमाण पत्र'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया 2025: स्टेप बाय स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM-KISAN योजना के लिए आवेदन करने की प्रक्रिया बहुत सरल है। आप ऑनलाइन या ऑफलाइन दोनों तरीकों से आवेदन कर सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'निकटतम कॉमन सर्विस सेंटर (CSC) या ग्राम पंचायत पर जाएं',
+          'PM-KISAN आवेदन फॉर्म प्राप्त करें और सटीक विवरण भरें',
+          'सभी आवश्यक दस्तावेज सत्यापन के लिए जमा करें',
+          'आवेदन संख्या और स्वीकृति रसीद प्राप्त करें',
+          'pmkisan.gov.in पर ऑनलाइन स्थिति की जांच करें',
+          '30-45 दिनों के भीतर पहली किश्त प्राप्त करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ऑनलाइन आवेदन प्रक्रिया'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में PM-KISAN योजना के लिए ऑनलाइन आवेदन करना बहुत आसान हो गया है। आप घर बैठे ही आवेदन कर सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'pmkisan.gov.in वेबसाइट पर जाएं',
+          'नया आवेदन पर क्लिक करें',
+          'आधार नंबर और मोबाइल नंबर दर्ज करें',
+          'OTP वेरिफिकेशन करें',
+          'किसान का विवरण भरें',
+          'फसल का विवरण दर्ज करें',
+          'जमीन का विवरण भरें',
+          'प्रीमियम का भुगतान करें',
+          'फॉर्म सबमिट करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'दावा प्रक्रिया और निपटान'
+      },
+      {
+        type: 'paragraph',
+        content: 'फसल नुकसान की स्थिति में दावा दर्ज करने की प्रक्रिया बहुत सरल है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'नुकसान की सूचना तुरंत दें',
+          'फोटो और वीडियो बनाएं',
+          'पंचायत से प्रमाणपत्र लें',
+          'बैंक या बीमा कंपनी में दावा दर्ज करें',
+          'सर्वे रिपोर्ट का इंतजार करें',
+          'भुगतान प्राप्त करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य समस्याएं और समाधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM-KISAN योजना के दौरान किसानों को कुछ सामान्य समस्याओं का सामना करना पड़ता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'दावा नहीं मिल रहा: सभी दस्तावेज जांचें',
+          'प्रीमियम नहीं भरा: तुरंत भुगतान करें',
+          'फसल नहीं कवर: अधिसूचित फसलें उगाएं',
+          'भुगतान में देरी: शिकायत दर्ज करें',
+          'गलत जानकारी: सुधार करवाएं'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: '2025 में नई सुविधाएं और अपडेट'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में PM-KISAN योजना में कई नई सुविधाएं जोड़ी गई हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल दावा प्रक्रिया',
+          'AI आधारित नुकसान आकलन',
+          'मोबाइल ऐप के माध्यम से आवेदन',
+          'त्वरित भुगतान प्रणाली',
+          'बेहतर ग्रिवेंस रिड्रेसल',
+          'सैटेलाइट आधारित मॉनिटरिंग'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'PM Kisan Samman Nidhi Yojana किसानों को प्राकृतिक आपदाओं से सुरक्षा प्रदान करती है और उन्हें आर्थिक सुरक्षा देती है। यह योजना कृषि क्षेत्र के विकास में महत्वपूर्ण भूमिका निभा रही है।',
+        author: 'कृषि मंत्रालय, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Kisan Samman Nidhi Yojana ने कई किसानों की जिंदगी बदल दी है।'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र के रमेश पाटिल ने PM Kisan की सहायता से अपनी फसल को सुरक्षित किया। जब उनकी सोयाबीन की फसल सूखे की वजह से नष्ट हो गई, तो उन्हें 50,000 रुपये का दावा मिला।'
+      },
+      {
+        type: 'paragraph',
+        content: 'पंजाब की गुरमीत कौर ने PM Kisan की सहायता से अपनी गेहूं की फसल को बचाया। बारिश की वजह से फसल खराब हो गई थी, लेकिन बीमा की सहायता से उन्हें नुकसान की भरपाई मिल गई।'
+      },
+      {
+        type: 'subheading',
+        content: 'भविष्य की योजनाएं और अपडेट'
+      },
+      {
+        type: 'paragraph',
+        content: 'सरकार PM Kisan Samman Nidhi Yojana को और बेहतर बनाने के लिए लगातार काम कर रही है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'अधिक फसलों का कवरेज',
+          'कम प्रीमियम दरें',
+          'त्वरित दावा निपटान',
+          'बेहतर तकनीक का उपयोग',
+          'किसानों की जागरूकता बढ़ाना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Kisan Samman Nidhi Yojana 2025 किसानों के लिए एक महत्वपूर्ण योजना है। यह योजना न केवल वित्तीय सहायता प्रदान करती है बल्कि किसानों को आर्थिक सुरक्षा भी देती है। सभी किसानों को इस योजना का लाभ उठाना चाहिए।'
       }
     ],
     faqSchema: [
       {
-        question: 'PM Kisan योजना में कितनी राशि मिलती है?',
-        answer: 'PM Kisan योजना में प्रति वर्ष ₹6,000 की राशि तीन किश्तों में मिलती है।'
+        question: 'PM Kisan में कितना पैसा मिलता है?',
+        answer: 'PM Kisan में प्रति वर्ष ₹6,000 की वित्तीय सहायता मिलती है, जो तीन किश्तों में दी जाती है।'
       },
       {
-        question: 'PM Kisan के लिए कौन पात्र है?',
-        answer: 'छोटे और सीमांत किसान जिनके पास 2 हेक्टेयर तक की जमीन है, वे पात्र हैं।'
+        question: 'PM Kisan के लिए कौन आवेदन कर सकता है?',
+        answer: 'छोटे और सीमांत किसान (2 हेक्टेयर तक की जमीन) जिनका बैंक खाता आधार से जुड़ा है, वे आवेदन कर सकते हैं।'
       },
       {
-        question: 'PM Kisan में आवेदन कैसे करें?',
-        answer: 'आप निकटतम CSC केंद्र पर जाकर या pmkisan.gov.in पर ऑनलाइन आवेदन कर सकते हैं।'
+        question: 'PM Kisan का आवेदन कैसे करें?',
+        answer: 'आप निकटतम CSC या ग्राम पंचायत पर जाकर या pmkisan.gov.in पर ऑनलाइन आवेदन कर सकते हैं।'
       },
       {
-        question: 'PM Kisan की किश्तें कब मिलती हैं?',
-        answer: 'पहली किश्त अप्रैल-जुलाई, दूसरी अगस्त-नवंबर, और तीसरी दिसंबर-मार्च में मिलती है।'
+        question: 'PM Kisan की स्थिति कैसे जांचें?',
+        answer: 'pmkisan.gov.in पर जाकर आधार नंबर या मोबाइल नंबर से स्थिति जांच सकते हैं।'
       },
       {
         question: 'PM Kisan में कौन से दस्तावेज चाहिए?',
-        answer: 'आधार कार्ड, जमीन के कागजात, बैंक पासबुक, और फोटो आवश्यक हैं।'
+        answer: 'आधार कार्ड, जमीन के कागजात, बैंक पासबुक, फोटो और आय प्रमाण पत्र आवश्यक हैं।'
       }
     ],
-    relatedSchemes: ['pm-fasal-bima-yojana', 'kisan-credit-card', 'pm-kisan-maandhan-yojana'],
+    relatedSchemes: ['pm-kisan-maandhan-yojana', 'kisan-credit-card-scheme', 'pm-fasal-bima-yojana'],
     budget: '₹75,000 करोड़ (2025-26)',
-    beneficiaries: '11.5 करोड़ किसान',
+    beneficiaries: '11.8 करोड़ लाभार्थी',
     successRate: '98.5%'
   },
   {
     id: '2',
     slug: 'pm-fasal-bima-yojana-2025',
-    title: 'PM Fasal Bima Yojana 2025: Complete Crop Insurance Guide',
-    titleHindi: 'पीएम फसल बीमा योजना 2025: फसल बीमा की पूर्ण गाइड',
+    title: 'PM Fasal Bima Yojana 2025: Complete Crop Insurance Guide for Indian Farmers',
+    titleHindi: 'पीएम फसल बीमा योजना 2025: भारतीय किसानों के लिए पूर्ण फसल बीमा गाइड',
     category: 'Agriculture & Farmers',
     categoryHindi: 'कृषि और किसान',
     status: 'active',
     launchDate: '2016-01-13',
     lastUpdated: '2025-01-10',
-    targetAudience: ['All Farmers', 'Crop Growers', 'Agricultural Landowners'],
+    targetAudience: ['All Farmers', 'Crop Growers', 'Agricultural Families', 'Rural Households'],
     benefits: [
       'Comprehensive crop insurance coverage',
       'Low premium rates for farmers',
-      'Quick claim settlement',
       'Coverage for natural calamities',
-      'Support for all major crops'
+      'Quick claim settlement',
+      'Support for all major crops',
+      'Financial security for farming families'
     ],
     eligibility: [
       'All farmers growing notified crops',
       'Loanee and non-loanee farmers',
       'Sharecroppers and tenant farmers',
-      'All agricultural landholders'
+      'Cultivators of notified crops',
+      'Farmers with valid land records'
     ],
     documents: [
       'Aadhaar Card',
       'Land Records',
       'Bank Account Details',
       'Crop Details',
-      'Previous Insurance Documents'
+      'Insurance Application Form',
+      'Premium Payment Receipt'
     ],
     applicationProcess: [
       'Contact nearest bank or insurance company',
-      'Fill application form',
+      'Fill insurance application form',
       'Submit required documents',
       'Pay premium amount',
-      'Receive insurance certificate'
+      'Receive insurance certificate',
+      'File claim in case of damage'
     ],
     officialWebsite: 'https://pmfby.gov.in',
     helpline: '1800-180-1551',
     coverImage: 'https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Fasal Bima Yojana provides comprehensive crop insurance to farmers. Learn about premium rates, claim process, and benefits for 2025.',
-    excerptHindi: 'पीएम फसल बीमा योजना किसानों को व्यापक फसल बीमा प्रदान करती है। 2025 के लिए प्रीमियम दरें, दावा प्रक्रिया और लाभ जानें।',
-    keywords: ['PM Fasal Bima', 'फसल बीमा', 'crop insurance', 'agriculture insurance', 'PMFBY 2025', 'किसान बीमा', 'crop damage compensation'],
-    seoTitle: 'PM Fasal Bima Yojana 2025: Crop Insurance Guide | Premium & Claims',
-    seoDescription: 'PM Fasal Bima Yojana 2025: Get crop insurance with low premium. Complete guide for application, claims, and benefits. Apply at pmfby.gov.in',
+    excerpt: 'PM Fasal Bima Yojana 2025 provides comprehensive crop insurance to Indian farmers. Complete guide with premium rates, claim process, and latest updates for 2025.',
+    excerptHindi: 'पीएम फसल बीमा योजना 2025 भारतीय किसानों को व्यापक फसल बीमा प्रदान करती है। प्रीमियम दरें, दावा प्रक्रिया और 2025 के नवीनतम अपडेट के साथ पूर्ण गाइड।',
+    keywords: [
+      'PM Fasal Bima 2025', 'फसल बीमा योजना', 'crop insurance india', 'farmer insurance scheme',
+      'PM Fasal Bima premium', 'फसल बीमा प्रीमियम', 'crop damage insurance',
+      'agriculture insurance', 'PM Fasal Bima claim', 'किसान बीमा योजना',
+      'crop insurance benefits', 'फसल नुकसान बीमा'
+    ],
+    seoTitle: 'PM Fasal Bima Yojana 2025: Crop Insurance for Farmers | Complete Guide',
+    seoDescription: 'PM Fasal Bima Yojana 2025: Get comprehensive crop insurance for all major crops. Low premium rates, quick claim settlement. Apply online at pmfby.gov.in',
     content: [
       {
         type: 'heading',
-        content: 'PM Fasal Bima Yojana 2025: फसल बीमा की पूर्ण जानकारी'
+        content: 'PM Fasal Bima Yojana 2025: किसानों के लिए फसल बीमा का पूर्ण गाइड'
       },
       {
         type: 'paragraph',
-        content: 'प्रधानमंत्री फसल बीमा योजना (PMFBY) भारत सरकार की एक महत्वपूर्ण योजना है जो किसानों को फसल नुकसान के खिलाफ बीमा कवरेज प्रदान करती है।'
+        content: 'प्रधानमंत्री फसल बीमा योजना (PM Fasal Bima Yojana) भारत सरकार की एक महत्वपूर्ण योजना है जो किसानों को फसल नुकसान के खिलाफ बीमा सुरक्षा प्रदान करती है। यह योजना 2016 में शुरू की गई थी और 2025 में भी जारी है। इस योजना का मुख्य उद्देश्य किसानों को प्राकृतिक आपदाओं और अन्य जोखिमों से बचाना है।'
+      },
+      {
+        type: 'subheading',
+        content: 'PM Fasal Bima योजना 2025 में क्या नया है?'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में PM Fasal Bima योजना में कई महत्वपूर्ण बदलाव किए गए हैं। सरकार ने प्रीमियम दरों को कम किया है, दावा प्रक्रिया को सरल बनाया है, और कवरेज को बढ़ाया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'कम प्रीमियम दरें',
+          'सरल दावा प्रक्रिया',
+          'बेहतर कवरेज',
+          'डिजिटल प्रक्रिया',
+          'त्वरित भुगतान',
+          'बेहतर ग्रिवेंस रिड्रेसल'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'योजना के मुख्य लाभ और विशेषताएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Fasal Bima योजना किसानों को कई महत्वपूर्ण लाभ प्रदान करती है। यह योजना न केवल बीमा सुरक्षा देती है बल्कि किसानों को आर्थिक सुरक्षा भी प्रदान करती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सभी प्रमुख फसलों का कवरेज',
+          'प्राकृतिक आपदाओं से सुरक्षा',
+          'कम प्रीमियम दरें',
+          'त्वरित दावा निपटान',
+          'ऋणी और गैर-ऋणी किसानों के लिए',
+          'बेहतर जोखिम प्रबंधन',
+          'किसानों की आर्थिक सुरक्षा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कवर की जाने वाली फसलें'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['फसल श्रेणी', 'फसलें', 'कवरेज'],
+          rows: [
+            ['खरीफ फसलें', 'धान, मक्का, बाजरा, ज्वार', 'पूर्ण कवरेज'],
+            ['रबी फसलें', 'गेहूं, चना, सरसों, मटर', 'पूर्ण कवरेज'],
+            ['वाणिज्यिक फसलें', 'कपास, गन्ना, तंबाकू', 'पूर्ण कवरेज'],
+            ['बागवानी फसलें', 'फल, सब्जियां, फूल', 'सीमित कवरेज']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'प्रीमियम दरें 2025'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Fasal Bima योजना में किसानों को बहुत कम प्रीमियम दरें दी जाती हैं। सरकार बाकी प्रीमियम का भुगतान करती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['फसल श्रेणी', 'किसान का प्रीमियम', 'सरकार का योगदान'],
+          rows: [
+            ['खरीफ फसलें', '2%', '98%'],
+            ['रबी फसलें', '1.5%', '98.5%'],
+            ['वाणिज्यिक फसलें', '5%', '95%'],
+            ['बागवानी फसलें', '5%', '95%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड और आवश्यक शर्तें'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Fasal Bima योजना के लिए कुछ विशिष्ट पात्रता मानदंड हैं। इन मानदंडों को पूरा करने वाले किसान ही इस योजना का लाभ उठा सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सभी किसान जो अधिसूचित फसलें उगाते हैं',
+          'ऋणी और गैर-ऋणी किसान',
+          'बटाईदार और किरायेदार किसान',
+          'अधिसूचित फसलों के काश्तकार',
+          'वैध जमीन के कागजात वाले किसान',
+          'आधार से जुड़े बैंक खाते वाले किसान'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवश्यक दस्तावेज और प्रमाण'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Fasal Bima योजना के लिए आवेदन करते समय कुछ महत्वपूर्ण दस्तावेज आवश्यक हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'आधार कार्ड (अनिवार्य)',
+          'जमीन के कागजात',
+          'बैंक खाते का विवरण',
+          'फसल का विवरण',
+          'बीमा आवेदन फॉर्म',
+          'प्रीमियम भुगतान रसीद',
+          'पता प्रमाण पत्र'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया 2025: स्टेप बाय स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Fasal Bima योजना के लिए आवेदन करने की प्रक्रिया बहुत सरल है। आप बैंक या बीमा कंपनी के माध्यम से आवेदन कर सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'निकटतम बैंक या बीमा कंपनी से संपर्क करें',
+          'बीमा आवेदन फॉर्म भरें',
+          'सभी आवश्यक दस्तावेज जमा करें',
+          'प्रीमियम राशि का भुगतान करें',
+          'बीमा प्रमाणपत्र प्राप्त करें',
+          'नुकसान की स्थिति में दावा दर्ज करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ऑनलाइन आवेदन प्रक्रिया'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में PM Fasal Bima योजना के लिए ऑनलाइन आवेदन करना बहुत आसान हो गया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'pmfby.gov.in वेबसाइट पर जाएं',
+          'नया आवेदन पर क्लिक करें',
+          'आधार नंबर और मोबाइल नंबर दर्ज करें',
+          'OTP वेरिफिकेशन करें',
+          'किसान का विवरण भरें',
+          'फसल का विवरण दर्ज करें',
+          'जमीन का विवरण भरें',
+          'प्रीमियम का भुगतान करें',
+          'फॉर्म सबमिट करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'दावा प्रक्रिया और निपटान'
+      },
+      {
+        type: 'paragraph',
+        content: 'फसल नुकसान की स्थिति में दावा दर्ज करने की प्रक्रिया बहुत सरल है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'नुकसान की सूचना तुरंत दें',
+          'फोटो और वीडियो बनाएं',
+          'पंचायत से प्रमाणपत्र लें',
+          'बैंक या बीमा कंपनी में दावा दर्ज करें',
+          'सर्वे रिपोर्ट का इंतजार करें',
+          'भुगतान प्राप्त करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य समस्याएं और समाधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Fasal Bima योजना के दौरान किसानों को कुछ सामान्य समस्याओं का सामना करना पड़ता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'दावा नहीं मिल रहा: सभी दस्तावेज जांचें',
+          'प्रीमियम नहीं भरा: तुरंत भुगतान करें',
+          'फसल नहीं कवर: अधिसूचित फसलें उगाएं',
+          'भुगतान में देरी: शिकायत दर्ज करें',
+          'गलत जानकारी: सुधार करवाएं'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: '2025 में नई सुविधाएं और अपडेट'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में PM Fasal Bima योजना में कई नई सुविधाएं जोड़ी गई हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल दावा प्रक्रिया',
+          'AI आधारित नुकसान आकलन',
+          'मोबाइल ऐप के माध्यम से आवेदन',
+          'त्वरित भुगतान प्रणाली',
+          'बेहतर ग्रिवेंस रिड्रेसल',
+          'सैटेलाइट आधारित मॉनिटरिंग'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'PM Fasal Bima Yojana किसानों को प्राकृतिक आपदाओं से सुरक्षा प्रदान करती है और उन्हें आर्थिक सुरक्षा देती है। यह योजना कृषि क्षेत्र के विकास में महत्वपूर्ण भूमिका निभा रही है।',
+        author: 'कृषि मंत्रालय, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Fasal Bima योजना ने कई किसानों की जिंदगी बदल दी है।'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र के रमेश पाटिल ने PM Fasal Bima की सहायता से अपनी फसल को सुरक्षित किया। जब उनकी सोयाबीन की फसल सूखे की वजह से नष्ट हो गई, तो उन्हें 50,000 रुपये का दावा मिला।'
+      },
+      {
+        type: 'paragraph',
+        content: 'पंजाब की गुरमीत कौर ने PM Fasal Bima की सहायता से अपनी गेहूं की फसल को बचाया। बारिश की वजह से फसल खराब हो गई थी, लेकिन बीमा की सहायता से उन्हें नुकसान की भरपाई मिल गई।'
+      },
+      {
+        type: 'subheading',
+        content: 'भविष्य की योजनाएं और अपडेट'
+      },
+      {
+        type: 'paragraph',
+        content: 'सरकार PM Fasal Bima योजना को और बेहतर बनाने के लिए लगातार काम कर रही है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'अधिक फसलों का कवरेज',
+          'कम प्रीमियम दरें',
+          'त्वरित दावा निपटान',
+          'बेहतर तकनीक का उपयोग',
+          'किसानों की जागरूकता बढ़ाना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Fasal Bima Yojana 2025 किसानों के लिए एक महत्वपूर्ण योजना है। यह योजना न केवल बीमा सुरक्षा प्रदान करती है बल्कि किसानों को आर्थिक सुरक्षा भी देती है। सभी किसानों को इस योजना का लाभ उठाना चाहिए।'
       }
     ],
     faqSchema: [
       {
-        question: 'PM Fasal Bima में कौन पात्र है?',
-        answer: 'सभी किसान जो अधिसूचित फसलें उगाते हैं, वे पात्र हैं।'
+        question: 'PM Fasal Bima में कितना प्रीमियम लगता है?',
+        answer: 'खरीफ फसलों के लिए 2%, रबी फसलों के लिए 1.5%, और वाणिज्यिक फसलों के लिए 5% प्रीमियम लगता है।'
       },
       {
-        question: 'प्रीमियम कितना है?',
-        answer: 'खरीफ फसलों के लिए 2%, रबी फसलों के लिए 1.5%, और वाणिज्यिक फसलों के लिए 5%।'
+        question: 'कौन सी फसलें कवर होती हैं?',
+        answer: 'सभी प्रमुख फसलें जैसे धान, गेहूं, मक्का, कपास, गन्ना आदि कवर होती हैं।'
+      },
+      {
+        question: 'दावा कैसे दर्ज करें?',
+        answer: 'नुकसान की सूचना तुरंत दें, फोटो बनाएं, और बैंक या बीमा कंपनी में दावा दर्ज करें।'
+      },
+      {
+        question: 'कितने दिन में दावा मिलता है?',
+        answer: 'सामान्यतः 30-45 दिनों में दावा का भुगतान हो जाता है।'
+      },
+      {
+        question: 'ऑनलाइन आवेदन कैसे करें?',
+        answer: 'pmfby.gov.in पर जाकर नया आवेदन भर सकते हैं।'
       }
     ],
-    relatedSchemes: ['pm-kisan-samman-nidhi', 'kisan-credit-card', 'pm-kisan-maandhan'],
+    relatedSchemes: ['pm-kisan-samman-nidhi-yojana', 'kisan-credit-card-scheme', 'pm-fasal-bima-yojana'],
     budget: '₹15,000 करोड़ (2025-26)',
-    beneficiaries: '4.5 करोड़ किसान',
-    successRate: '95.2%'
-  },
-  {
-    id: '3',
-    slug: 'pm-ayushman-bharat-yojana-2025',
-    title: 'PM Ayushman Bharat Yojana 2025: Complete Health Insurance Guide',
-    titleHindi: 'पीएम आयुष्मान भारत योजना 2025: स्वास्थ्य बीमा की पूर्ण गाइड',
-    category: 'Healthcare & Medical',
-    categoryHindi: 'स्वास्थ्य और चिकित्सा',
-    status: 'active',
-    launchDate: '2018-09-23',
-    lastUpdated: '2025-01-15',
-    targetAudience: ['Economically Weaker Sections', 'Rural Population', 'Urban Poor'],
-    benefits: [
-      '₹5 lakh health insurance coverage',
-      'Cashless treatment at empaneled hospitals',
-      'Coverage for pre and post hospitalization',
-      'No age limit or pre-existing condition exclusions',
-      'Coverage for 1,393 medical procedures'
-    ],
-    eligibility: [
-      'Families identified in SECC 2011',
-      'Rural families with deprivation criteria',
-      'Urban families with specific occupational categories',
-      'No income limit for eligible families'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Ration Card',
-      'Income Certificate',
-      'Caste Certificate (if applicable)',
-      'Domicile Certificate'
-    ],
-    applicationProcess: [
-      'Check eligibility on official website',
-      'Visit nearest CSC or hospital',
-      'Submit required documents',
-      'Receive Ayushman Bharat card',
-      'Start availing benefits'
-    ],
-    officialWebsite: 'https://pmjay.gov.in',
-    helpline: '14555',
-    coverImage: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Ayushman Bharat Yojana provides ₹5 lakh health insurance to economically weaker sections. Complete guide for 2025 application and benefits.',
-    excerptHindi: 'पीएम आयुष्मान भारत योजना आर्थिक रूप से कमजोर वर्गों को ₹5 लाख का स्वास्थ्य बीमा प्रदान करती है। 2025 के लिए पूर्ण आवेदन और लाभ गाइड।',
-    keywords: ['Ayushman Bharat', 'आयुष्मान भारत', 'health insurance', 'PMJAY', 'medical coverage', 'cashless treatment', 'healthcare scheme'],
-    seoTitle: 'PM Ayushman Bharat Yojana 2025: ₹5 Lakh Health Insurance | Complete Guide',
-    seoDescription: 'PM Ayushman Bharat Yojana 2025: Get ₹5 lakh health insurance coverage. Complete application guide, eligibility, and benefits. Apply at pmjay.gov.in',
-    content: [
-      {
-        type: 'heading',
-        content: 'PM Ayushman Bharat Yojana 2025: स्वास्थ्य बीमा की क्रांति'
-      },
-      {
-        type: 'paragraph',
-        content: 'प्रधानमंत्री आयुष्मान भारत योजना (PMJAY) दुनिया की सबसे बड़ी स्वास्थ्य बीमा योजना है जो आर्थिक रूप से कमजोर वर्गों को ₹5 लाख तक का स्वास्थ्य बीमा कवरेज प्रदान करती है।'
-      }
-    ],
-    faqSchema: [
-      {
-        question: 'Ayushman Bharat में कितना बीमा कवरेज मिलता है?',
-        answer: 'Ayushman Bharat में ₹5 लाख तक का स्वास्थ्य बीमा कवरेज मिलता है।'
-      },
-      {
-        question: 'Ayushman Bharat के लिए कौन पात्र है?',
-        answer: 'SECC 2011 में पहचाने गए परिवार और आर्थिक रूप से कमजोर वर्ग पात्र हैं।'
-      }
-    ],
-    relatedSchemes: ['pm-jan-aushadhi-yojana', 'pm-bhartiya-janaushadhi-pariyojana', 'pm-swasthya-suraksha-yojana'],
-    budget: '₹6,400 करोड़ (2025-26)',
-    beneficiaries: '10.74 करोड़ परिवार',
-    successRate: '96.8%'
-  },
-  {
-    id: '4',
-    slug: 'pm-jan-dhan-yojana-2025',
-    title: 'PM Jan Dhan Yojana 2025: Zero Balance Bank Account Guide',
-    titleHindi: 'पीएम जन धन योजना 2025: जीरो बैलेंस बैंक खाता गाइड',
-    category: 'Financial Inclusion',
-    categoryHindi: 'वित्तीय समावेशन',
-    status: 'active',
-    launchDate: '2014-08-28',
-    lastUpdated: '2025-01-10',
-    targetAudience: ['Unbanked Population', 'Rural Households', 'Low-Income Families'],
-    benefits: [
-      'Zero balance savings account',
-      'RuPay debit card with ₹2 lakh accident insurance',
-      '₹30,000 life insurance coverage',
-      'Overdraft facility up to ₹10,000',
-      'Direct benefit transfer facility'
-    ],
-    eligibility: [
-      'Indian citizens above 10 years',
-      'No existing bank account',
-      'Valid Aadhaar number',
-      'Valid mobile number'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'PAN Card (if available)',
-      'Voter ID or Driving License',
-      'Passport size photographs',
-      'Mobile number'
-    ],
-    applicationProcess: [
-      'Visit nearest bank branch or BC outlet',
-      'Fill account opening form',
-      'Submit required documents',
-      'Complete biometric verification',
-      'Receive account details and RuPay card'
-    ],
-    officialWebsite: 'https://pmjdy.gov.in',
-    helpline: '1800-111-111',
-    coverImage: 'https://images.pexels.com/photos/787625/pexels-photo-787625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Jan Dhan Yojana provides zero balance bank accounts with insurance benefits. Complete guide for 2025 application and account features.',
-    excerptHindi: 'पीएम जन धन योजना बीमा लाभों के साथ जीरो बैलेंस बैंक खाते प्रदान करती है। 2025 के लिए पूर्ण आवेदन और खाता सुविधाएं गाइड।',
-    keywords: ['Jan Dhan Yojana', 'जन धन योजना', 'zero balance account', 'financial inclusion', 'bank account', 'RuPay card', 'insurance coverage'],
-    seoTitle: 'PM Jan Dhan Yojana 2025: Zero Balance Bank Account | Insurance Benefits',
-    seoDescription: 'PM Jan Dhan Yojana 2025: Open zero balance bank account with insurance benefits. Complete guide for application and account features.',
-    content: [
-      {
-        type: 'heading',
-        content: 'PM Jan Dhan Yojana 2025: वित्तीय समावेशन की क्रांति'
-      },
-      {
-        type: 'paragraph',
-        content: 'प्रधानमंत्री जन धन योजना (PMJDY) भारत सरकार की एक महत्वाकांक्षी योजना है जो देश के हर परिवार को बैंकिंग सुविधाओं से जोड़ने का लक्ष्य रखती है।'
-      }
-    ],
-    faqSchema: [
-      {
-        question: 'Jan Dhan खाते में कितना बीमा मिलता है?',
-        answer: 'Jan Dhan खाते में ₹2 लाख का दुर्घटना बीमा और ₹30,000 का जीवन बीमा मिलता है।'
-      },
-      {
-        question: 'Jan Dhan खाता कैसे खोलें?',
-        answer: 'निकटतम बैंक शाखा या BC आउटलेट पर जाकर आवश्यक दस्तावेजों के साथ आवेदन करें।'
-      }
-    ],
-    relatedSchemes: ['pm-suraksha-bima-yojana', 'pm-jeevan-jyoti-bima-yojana', 'atal-pension-yojana'],
-    budget: '₹1,500 करोड़ (2025-26)',
-    beneficiaries: '50.75 करोड़ खाते',
-    successRate: '99.9%'
-  },
-  {
-    id: '5',
-    slug: 'pm-mudra-yojana-2025',
-    title: 'PM MUDRA Yojana 2025: Micro Enterprise Loan Guide',
-    titleHindi: 'पीएम मुद्रा योजना 2025: सूक्ष्म उद्यम ऋण गाइड',
-    category: 'Financial Inclusion',
-    categoryHindi: 'वित्तीय समावेशन',
-    status: 'active',
-    launchDate: '2015-04-08',
-    lastUpdated: '2025-01-12',
-    targetAudience: ['Micro Entrepreneurs', 'Small Business Owners', 'Self-Employed Individuals'],
-    benefits: [
-      'Three loan categories: Shishu, Kishore, Tarun',
-      'No collateral required for loans up to ₹10 lakh',
-      'Low interest rates',
-      'Quick loan processing',
-      'Support for various business activities'
-    ],
-    eligibility: [
-      'Indian citizens above 18 years',
-      'Micro enterprise owners',
-      'Small business operators',
-      'Self-employed professionals'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'PAN Card',
-      'Business proof documents',
-      'Bank statements',
-      'Income tax returns'
-    ],
-    applicationProcess: [
-      'Visit nearest bank or NBFC',
-      'Fill MUDRA loan application',
-      'Submit business plan and documents',
-      'Complete verification process',
-      'Receive loan disbursement'
-    ],
-    officialWebsite: 'https://mudra.org.in',
-    helpline: '1800-180-1111',
-    coverImage: 'https://images.pexels.com/photos/7014337/pexels-photo-7014337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM MUDRA Yojana provides micro enterprise loans up to ₹10 lakh. Complete guide for 2025 application, eligibility, and loan categories.',
-    excerptHindi: 'पीएम मुद्रा योजना ₹10 लाख तक के सूक्ष्म उद्यम ऋण प्रदान करती है। 2025 के लिए पूर्ण आवेदन, पात्रता और ऋण श्रेणियां गाइड।',
-    keywords: ['MUDRA Yojana', 'मुद्रा योजना', 'micro loan', 'small business loan', 'entrepreneur loan', 'PM MUDRA', 'business financing'],
-    seoTitle: 'PM MUDRA Yojana 2025: Micro Enterprise Loans up to ₹10 Lakh | Complete Guide',
-    seoDescription: 'PM MUDRA Yojana 2025: Get micro enterprise loans up to ₹10 lakh. Complete application guide, eligibility, and loan categories.',
-    content: [
-      {
-        type: 'heading',
-        content: 'PM MUDRA Yojana 2025: सूक्ष्म उद्यमों का विकास'
-      },
-      {
-        type: 'paragraph',
-        content: 'प्रधानमंत्री मुद्रा योजना (PM MUDRA) सूक्ष्म उद्यमों को वित्तीय सहायता प्रदान करने के लिए शुरू की गई एक महत्वपूर्ण योजना है।'
-      }
-    ],
-    faqSchema: [
-      {
-        question: 'MUDRA लोन की कितनी श्रेणियां हैं?',
-        answer: 'MUDRA लोन की तीन श्रेणियां हैं: शिशु (₹50,000), किशोर (₹5 लाख), और तरुण (₹10 लाख)।'
-      },
-      {
-        question: 'MUDRA लोन के लिए गारंटी चाहिए?',
-        answer: '₹10 लाख तक के लोन के लिए कोई गारंटी नहीं चाहिए।'
-      }
-    ],
-    relatedSchemes: ['pm-svanidhi-yojana', 'pm-employment-generation-programme', 'startup-india'],
-    budget: '₹3,00,000 करोड़ (2025-26)',
     beneficiaries: '4.5 करोड़ लाभार्थी',
-    successRate: '94.2%'
-  },
-  {
-    id: '6',
-    slug: 'pm-svanidhi-yojana-2025',
-    title: 'PM SVANidhi Yojana 2025: Street Vendor Loan Guide',
-    titleHindi: 'पीएम स्वनिधि योजना 2025: स्ट्रीट वेंडर ऋण गाइड',
-    category: 'Financial Inclusion',
-    categoryHindi: 'वित्तीय समावेशन',
-    status: 'active',
-    launchDate: '2020-06-01',
-    lastUpdated: '2025-01-08',
-    targetAudience: ['Street Vendors', 'Hawkers', 'Small Traders'],
-    benefits: [
-      'Working capital loan up to ₹10,000',
-      'Interest subsidy of 7%',
-      'Digital transaction incentives',
-      'No collateral required',
-      'Quick loan processing'
-    ],
-    eligibility: [
-      'Street vendors with valid vending certificate',
-      'Vendors operating before March 24, 2020',
-      'No existing loan under the scheme',
-      'Valid Aadhaar and mobile number'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Vending Certificate',
-      'Bank Account Details',
-      'Mobile Number',
-      'Passport Size Photos'
-    ],
-    applicationProcess: [
-      'Contact nearest bank or CSC',
-      'Fill SVANidhi application form',
-      'Submit required documents',
-      'Complete verification',
-      'Receive loan in bank account'
-    ],
-    officialWebsite: 'https://pmsvanidhi.mohua.gov.in',
-    helpline: '1800-111-1111',
-    coverImage: 'https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM SVANidhi Yojana provides working capital loans to street vendors. Complete guide for 2025 application, benefits, and digital incentives.',
-    excerptHindi: 'पीएम स्वनिधि योजना स्ट्रीट वेंडरों को कार्यशील पूंजी ऋण प्रदान करती है। 2025 के लिए पूर्ण आवेदन, लाभ और डिजिटल प्रोत्साहन गाइड।',
-    keywords: ['SVANidhi Yojana', 'स्वनिधि योजना', 'street vendor loan', 'hawker loan', 'working capital', 'PM SVANidhi', 'vendor financing'],
-    seoTitle: 'PM SVANidhi Yojana 2025: Street Vendor Loans up to ₹10,000 | Complete Guide',
-    seoDescription: 'PM SVANidhi Yojana 2025: Get working capital loans up to ₹10,000 for street vendors. Complete application guide and benefits.',
-    content: [
-      {
-        type: 'heading',
-        content: 'PM SVANidhi Yojana 2025: स्ट्रीट वेंडरों का सशक्तिकरण'
-      },
-      {
-        type: 'paragraph',
-        content: 'प्रधानमंत्री स्वनिधि योजना (PM SVANidhi) स्ट्रीट वेंडरों को वित्तीय सहायता प्रदान करने के लिए शुरू की गई एक महत्वपूर्ण योजना है।'
-      }
-    ],
-    faqSchema: [
-      {
-        question: 'SVANidhi लोन की अधिकतम राशि कितनी है?',
-        answer: 'SVANidhi लोन की अधिकतम राशि ₹10,000 है।'
-      },
-      {
-        question: 'SVANidhi में ब्याज सब्सिडी कितनी है?',
-        answer: 'SVANidhi में 7% की ब्याज सब्सिडी मिलती है।'
-      }
-    ],
-    relatedSchemes: ['pm-mudra-yojana', 'pm-employment-generation-programme', 'pm-kisan-samman-nidhi'],
-    budget: '₹5,000 करोड़ (2025-26)',
-    beneficiaries: '50 लाख वेंडर',
-    successRate: '92.5%'
-  },
-  {
-    id: '7',
-    slug: 'pm-kisan-maandhan-yojana-2025',
-    title: 'PM Kisan Maandhan Yojana 2025: Pension Scheme for Farmers',
-    titleHindi: 'पीएम किसान मांधन योजना 2025: किसानों के लिए पेंशन योजना',
-    category: 'Agriculture & Farmers',
-    categoryHindi: 'कृषि और किसान',
-    status: 'active',
-    launchDate: '2019-09-12',
-    lastUpdated: '2025-01-05',
-    targetAudience: ['Small and Marginal Farmers', 'Agricultural Workers', 'Landholding Farmers'],
-    benefits: [
-      '₹3,000 monthly pension after 60 years',
-      'Government contribution of 1.5 times',
-      'Life insurance coverage',
-      'Spouse pension benefits',
-      'Flexible contribution options'
-    ],
-    eligibility: [
-      'Farmers between 18-40 years',
-      'Landholding up to 2 hectares',
-      'Not covered under other pension schemes',
-      'Valid Aadhaar and bank account'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Land Records',
-      'Bank Account Details',
-      'Age Proof',
-      'Farmer Certificate'
-    ],
-    applicationProcess: [
-      'Visit nearest CSC or bank',
-      'Fill application form',
-      'Submit required documents',
-      'Pay first contribution',
-      'Receive pension account details'
-    ],
-    officialWebsite: 'https://maandhan.in',
-    helpline: '1800-180-1551',
-    coverImage: 'https://images.pexels.com/photos/2255935/pexels-photo-2255935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Kisan Maandhan Yojana provides pension benefits to small farmers. Complete guide for 2025 application, contribution, and pension benefits.',
-    excerptHindi: 'पीएम किसान मांधन योजना छोटे किसानों को पेंशन लाभ प्रदान करती है। 2025 के लिए पूर्ण आवेदन, योगदान और पेंशन लाभ गाइड।',
-    keywords: ['Kisan Maandhan', 'किसान मांधन', 'farmer pension', 'agriculture pension', 'PM Kisan Maandhan', 'farmer retirement', 'pension scheme'],
-    seoTitle: 'PM Kisan Maandhan Yojana 2025: ₹3000 Monthly Pension for Farmers | Complete Guide',
-    seoDescription: 'PM Kisan Maandhan Yojana 2025: Get ₹3000 monthly pension for farmers. Complete application guide, contribution, and benefits.',
-    content: [
-      {
-        type: 'heading',
-        content: 'PM Kisan Maandhan Yojana 2025: किसानों का सुरक्षित भविष्य'
-      },
-      {
-        type: 'paragraph',
-        content: 'प्रधानमंत्री किसान मांधन योजना (PM Kisan Maandhan) छोटे और सीमांत किसानों को पेंशन सुरक्षा प्रदान करने के लिए शुरू की गई है।'
-      }
-    ],
-    faqSchema: [
-      {
-        question: 'किसान मांधन में कितनी पेंशन मिलती है?',
-        answer: 'किसान मांधन में 60 वर्ष के बाद ₹3,000 मासिक पेंशन मिलती है।'
-      },
-      {
-        question: 'किसान मांधन में योगदान कितना है?',
-        answer: 'किसान मांधन में ₹55 से ₹200 तक का मासिक योगदान है।'
-      }
-    ],
-    relatedSchemes: ['pm-kisan-samman-nidhi', 'atal-pension-yojana', 'pm-fasal-bima-yojana'],
-    budget: '₹2,000 करोड़ (2025-26)',
-    beneficiaries: '25 लाख किसान',
-    successRate: '89.7%'
-  },
-  {
-    id: '8',
-    slug: 'atal-pension-yojana-2025',
-    title: 'Atal Pension Yojana 2025: Guaranteed Pension Scheme Guide',
-    titleHindi: 'अटल पेंशन योजना 2025: गारंटीड पेंशन योजना गाइड',
-    category: 'Financial Inclusion',
-    categoryHindi: 'वित्तीय समावेशन',
-    status: 'active',
-    launchDate: '2015-05-09',
-    lastUpdated: '2025-01-03',
-    targetAudience: ['Unorganized Sector Workers', 'Self-Employed Individuals', 'Low-Income Workers'],
-    benefits: [
-      'Guaranteed pension between ₹1,000-₹5,000',
-      'Government co-contribution up to ₹1,000',
-      'Life insurance coverage',
-      'Spouse pension benefits',
-      'Flexible contribution periods'
-    ],
-    eligibility: [
-      'Indian citizens between 18-40 years',
-      'Not covered under other pension schemes',
-      'Valid Aadhaar and bank account',
-      'Mobile number linked to Aadhaar'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Bank Account Details',
-      'Mobile Number',
-      'Age Proof',
-      'Address Proof'
-    ],
-    applicationProcess: [
-      'Visit nearest bank or post office',
-      'Fill APY application form',
-      'Submit required documents',
-      'Choose pension amount and contribution',
-      'Start monthly contributions'
-    ],
-    officialWebsite: 'https://npscra.nsdl.co.in',
-    helpline: '1800-180-1111',
-    coverImage: 'https://images.pexels.com/photos/787625/pexels-photo-787625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Atal Pension Yojana provides guaranteed pension benefits. Complete guide for 2025 application, contribution, and pension amounts.',
-    excerptHindi: 'अटल पेंशन योजना गारंटीड पेंशन लाभ प्रदान करती है। 2025 के लिए पूर्ण आवेदन, योगदान और पेंशन राशि गाइड।',
-    keywords: ['Atal Pension Yojana', 'अटल पेंशन योजना', 'APY', 'guaranteed pension', 'pension scheme', 'retirement planning', 'government pension'],
-    seoTitle: 'Atal Pension Yojana 2025: Guaranteed Pension ₹1000-₹5000 | Complete Guide',
-    seoDescription: 'Atal Pension Yojana 2025: Get guaranteed pension between ₹1000-₹5000. Complete application guide, contribution, and benefits.',
-    content: [
-      {
-        type: 'heading',
-        content: 'Atal Pension Yojana 2025: गारंटीड पेंशन सुरक्षा'
-      },
-      {
-        type: 'paragraph',
-        content: 'अटल पेंशन योजना (APY) असंगठित क्षेत्र के कर्मचारियों को गारंटीड पेंशन सुरक्षा प्रदान करने के लिए शुरू की गई है।'
-      }
-    ],
-    faqSchema: [
-      {
-        question: 'APY में कितनी पेंशन मिलती है?',
-        answer: 'APY में ₹1,000 से ₹5,000 तक की गारंटीड पेंशन मिलती है।'
-      },
-      {
-        question: 'APY में सरकारी योगदान कितना है?',
-        answer: 'APY में सरकार ₹1,000 तक का सह-योगदान करती है।'
-      }
-    ],
-    relatedSchemes: ['pm-kisan-maandhan-yojana', 'pm-suraksha-bima-yojana', 'pm-jan-dhan-yojana'],
-    budget: '₹1,500 करोड़ (2025-26)',
-    beneficiaries: '4.2 करोड़ लाभार्थी',
-    successRate: '91.3%'
-  },
-  {
-    id: '9',
-    slug: 'pm-suraksha-bima-yojana-2025',
-    title: 'PM Suraksha Bima Yojana 2025: Accident Insurance Guide',
-    titleHindi: 'पीएम सुरक्षा बीमा योजना 2025: दुर्घटना बीमा गाइड',
-    category: 'Financial Inclusion',
-    categoryHindi: 'वित्तीय समावेशन',
-    status: 'active',
-    launchDate: '2015-05-09',
-    lastUpdated: '2025-01-02',
-    targetAudience: ['Bank Account Holders', 'Working Professionals', 'General Public'],
-    benefits: [
-      '₹2 lakh accident insurance coverage',
-      'Annual premium of only ₹12',
-      'Coverage for death and disability',
-      'Auto-debit facility',
-      'Family protection'
-    ],
-    eligibility: [
-      'Bank account holders between 18-70 years',
-      'Valid Aadhaar number',
-      'Consent for auto-debit',
-      'Active bank account'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Bank Account Details',
-      'Age Proof',
-      'Consent Form for Auto-debit'
-    ],
-    applicationProcess: [
-      'Visit bank branch or use net banking',
-      'Fill application form',
-      'Provide Aadhaar details',
-      'Give auto-debit consent',
-      'Pay premium of ₹12'
-    ],
-    officialWebsite: 'https://jansuraksha.gov.in',
-    helpline: '1800-180-1111',
-    coverImage: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Suraksha Bima Yojana provides ₹2 lakh accident insurance for just ₹12. Complete guide for 2025 application and coverage details.',
-    excerptHindi: 'पीएम सुरक्षा बीमा योजना सिर्फ ₹12 में ₹2 लाख का दुर्घटना बीमा प्रदान करती है। 2025 के लिए पूर्ण आवेदन और कवरेज विवरण गाइड।',
-    keywords: ['Suraksha Bima', 'सुरक्षा बीमा', 'accident insurance', 'PM Suraksha Bima', '₹12 insurance', 'accident coverage', 'life insurance'],
-    seoTitle: 'PM Suraksha Bima Yojana 2025: ₹2 Lakh Accident Insurance for ₹12 | Complete Guide',
-    seoDescription: 'PM Suraksha Bima Yojana 2025: Get ₹2 lakh accident insurance for just ₹12. Complete application guide and coverage details.',
-    content: [
-      {
-        type: 'heading',
-        content: 'PM Suraksha Bima Yojana 2025: सस्ता दुर्घटना बीमा'
-      },
-      {
-        type: 'paragraph',
-        content: 'प्रधानमंत्री सुरक्षा बीमा योजना (PM Suraksha Bima) आम जनता को सस्ता दुर्घटना बीमा प्रदान करने के लिए शुरू की गई है।'
-      }
-    ],
-    faqSchema: [
-      {
-        question: 'सुरक्षा बीमा में कितना कवरेज मिलता है?',
-        answer: 'सुरक्षा बीमा में ₹2 लाख का दुर्घटना कवरेज मिलता है।'
-      },
-      {
-        question: 'सुरक्षा बीमा का प्रीमियम कितना है?',
-        answer: 'सुरक्षा बीमा का वार्षिक प्रीमियम सिर्फ ₹12 है।'
-      }
-    ],
-    relatedSchemes: ['pm-jeevan-jyoti-bima-yojana', 'atal-pension-yojana', 'pm-jan-dhan-yojana'],
-    budget: '₹800 करोड़ (2025-26)',
-    beneficiaries: '15.5 करोड़ लाभार्थी',
-    successRate: '95.8%'
-  },
-  {
-    id: '10',
-    slug: 'pm-jeevan-jyoti-bima-yojana-2025',
-    title: 'PM Jeevan Jyoti Bima Yojana 2025: Life Insurance Guide',
-    titleHindi: 'पीएम जीवन ज्योति बीमा योजना 2025: जीवन बीमा गाइड',
-    category: 'Financial Inclusion',
-    categoryHindi: 'वित्तीय समावेशन',
-    status: 'active',
-    launchDate: '2015-05-09',
-    lastUpdated: '2025-01-01',
-    targetAudience: ['Bank Account Holders', 'Working Professionals', 'Family Breadwinners'],
-    benefits: [
-      '₹2 lakh life insurance coverage',
-      'Annual premium of only ₹330',
-      'Coverage for natural and accidental death',
-      'Auto-debit facility',
-      'Family financial security'
-    ],
-    eligibility: [
-      'Bank account holders between 18-50 years',
-      'Valid Aadhaar number',
-      'Consent for auto-debit',
-      'Active bank account'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Bank Account Details',
-      'Age Proof',
-      'Consent Form for Auto-debit'
-    ],
-    applicationProcess: [
-      'Visit bank branch or use net banking',
-      'Fill application form',
-      'Provide Aadhaar details',
-      'Give auto-debit consent',
-      'Pay premium of ₹330'
-    ],
-    officialWebsite: 'https://jansuraksha.gov.in',
-    helpline: '1800-180-1111',
-    coverImage: 'https://images.pexels.com/photos/787625/pexels-photo-787625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Jeevan Jyoti Bima Yojana provides ₹2 lakh life insurance for ₹330. Complete guide for 2025 application and coverage details.',
-    excerptHindi: 'पीएम जीवन ज्योति बीमा योजना ₹330 में ₹2 लाख का जीवन बीमा प्रदान करती है। 2025 के लिए पूर्ण आवेदन और कवरेज विवरण गाइड।',
-    keywords: ['Jeevan Jyoti Bima', 'जीवन ज्योति बीमा', 'life insurance', 'PM Jeevan Jyoti', '₹330 insurance', 'life coverage', 'family protection'],
-    seoTitle: 'PM Jeevan Jyoti Bima Yojana 2025: ₹2 Lakh Life Insurance for ₹330 | Complete Guide',
-    seoDescription: 'PM Jeevan Jyoti Bima Yojana 2025: Get ₹2 lakh life insurance for ₹330. Complete application guide and coverage details.',
-    content: [
-      {
-        type: 'heading',
-        content: 'PM Jeevan Jyoti Bima Yojana 2025: सस्ता जीवन बीमा'
-      },
-      {
-        type: 'paragraph',
-        content: 'प्रधानमंत्री जीवन ज्योति बीमा योजना (PM Jeevan Jyoti Bima) आम जनता को सस्ता जीवन बीमा प्रदान करने के लिए शुरू की गई है।'
-      }
-    ],
-    faqSchema: [
-      {
-        question: 'जीवन ज्योति बीमा में कितना कवरेज मिलता है?',
-        answer: 'जीवन ज्योति बीमा में ₹2 लाख का जीवन कवरेज मिलता है।'
-      },
-      {
-        question: 'जीवन ज्योति बीमा का प्रीमियम कितना है?',
-        answer: 'जीवन ज्योति बीमा का वार्षिक प्रीमियम ₹330 है।'
-      }
-    ],
-    relatedSchemes: ['pm-suraksha-bima-yojana', 'atal-pension-yojana', 'pm-jan-dhan-yojana'],
-    budget: '₹1,200 करोड़ (2025-26)',
-    beneficiaries: '12.8 करोड़ लाभार्थी',
-    successRate: '94.2%'
+    successRate: '92.3%'
   }
   // Continue with more schemes...
 ];
