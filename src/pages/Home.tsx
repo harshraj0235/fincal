@@ -133,7 +133,7 @@ export const Home: React.FC = () => {
     <div className="min-h-screen">
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-20 md:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full">
@@ -149,44 +149,50 @@ export const Home: React.FC = () => {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-black">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-white">
                 Smart Financial Decisions Start Here
               </h1>
-              <p className="text-xl mb-8 text-black">
+              <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-white/90 max-w-2xl mx-auto lg:mx-0">
                 Comprehensive financial calculators tailored for Indian users. Plan loans, investments, taxes, and more with confidence.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/calculators/emi-calculator" className="btn bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <Link 
+                  to="/calculators/emi-calculator" 
+                  className="btn bg-white text-primary-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all px-6 py-3 text-base font-medium rounded-xl"
+                >
                   EMI Calculator
                 </Link>
-                <Link to="/calculators/income-tax-calculator" className="btn bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all">
+                <Link 
+                  to="/calculators/income-tax-calculator" 
+                  className="btn bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all px-6 py-3 text-base font-medium rounded-xl"
+                >
                   Income Tax
                 </Link>
               </div>
             </div>
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <div className="relative">
                 <div className="absolute -top-16 -left-16 w-32 h-32 bg-primary-400 rounded-full opacity-20 animate-pulse"></div>
                 <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-primary-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                <div className="bg-white p-8 rounded-2xl shadow-2xl transform rotate-3 z-10 backdrop-blur-sm bg-opacity-95">
+                <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl transform rotate-3 z-10 backdrop-blur-sm bg-opacity-95">
                   <div className="transform -rotate-3">
                     <div className="mb-4">
-                      <div className="text-primary-600 font-semibold mb-1">Loan Amount</div>
-                      <div className="text-2xl font-bold text-neutral-900">₹25,00,000</div>
+                      <div className="text-primary-600 font-semibold mb-1 text-sm">Loan Amount</div>
+                      <div className="text-xl sm:text-2xl font-bold text-neutral-900">₹25,00,000</div>
                     </div>
                     <div className="mb-4">
-                      <div className="text-primary-600 font-semibold mb-1">Interest Rate</div>
-                      <div className="text-2xl font-bold text-neutral-900">8.5%</div>
+                      <div className="text-primary-600 font-semibold mb-1 text-sm">Interest Rate</div>
+                      <div className="text-xl sm:text-2xl font-bold text-neutral-900">8.5%</div>
                     </div>
                     <div className="mb-4">
-                      <div className="text-primary-600 font-semibold mb-1">Loan Tenure</div>
-                      <div className="text-2xl font-bold text-neutral-900">20 Years</div>
+                      <div className="text-primary-600 font-semibold mb-1 text-sm">Loan Tenure</div>
+                      <div className="text-xl sm:text-2xl font-bold text-neutral-900">20 Years</div>
                     </div>
                     <div className="pt-4 border-t border-neutral-200">
-                      <div className="text-primary-600 font-semibold mb-1">Monthly EMI</div>
-                      <div className="text-3xl font-bold text-neutral-900">₹21,761</div>
+                      <div className="text-primary-600 font-semibold mb-1 text-sm">Monthly EMI</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-neutral-900">₹21,761</div>
                     </div>
                   </div>
                 </div>

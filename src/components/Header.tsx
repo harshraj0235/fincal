@@ -41,6 +41,18 @@ export const Header: React.FC = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
   
   const handleCalculatorClick = (calculatorId: string) => {
     navigate(`/calculators/${calculatorId}`);
@@ -50,24 +62,26 @@ export const Header: React.FC = () => {
   return (
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' : 'bg-white py-3 md:py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <Calculator className="h-8 w-8 text-primary-600" />
-            <span className="text-xl font-bold text-neutral-900">FinCalc India</span>
+          {/* Logo - Improved for mobile */}
+          <Link to="/" className="flex items-center space-x-2 min-w-0 flex-shrink-0">
+            <Calculator className="h-7 w-7 md:h-8 md:w-8 text-primary-600 flex-shrink-0" />
+            <span className="text-lg md:text-xl font-bold text-neutral-900 truncate">FinCalc India</span>
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-neutral-700 hover:text-primary-600 transition-colors">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <Link to="/" className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium">
               Home
             </Link>
             <div className="relative" ref={categoriesRef}>
               <button 
                 onClick={() => setCategoriesOpen(!categoriesOpen)}
-                className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
+                className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
               >
                 Categories
                 <svg 
@@ -82,24 +96,26 @@ export const Header: React.FC = () => {
               </button>
               
               {categoriesOpen && (
-                <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg z-10 py-2">
+                <div className="absolute left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-10 py-2">
                   {calculatorCategories.map(category => (
                     <div key={category.id} className="relative group">
                       <Link
                         to={`/#${category.id}`}
-                        className="block px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600 group"
+                        className="block px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 group transition-colors"
                         onClick={() => setCategoriesOpen(false)}
                       >
-                        {category.name}
-                        <ChevronRight className="h-4 w-4 absolute right-4 top-3 text-neutral-400 group-hover:text-primary-600" />
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium">{category.name}</span>
+                          <ChevronRight className="h-4 w-4 text-neutral-400 group-hover:text-primary-600 transition-colors" />
+                        </div>
                       </Link>
-                      <div className="absolute left-full top-0 ml-2 w-64 bg-white rounded-lg shadow-lg hidden group-hover:block">
+                      <div className="absolute left-full top-0 ml-1 w-72 bg-white rounded-xl shadow-xl border border-gray-100 hidden group-hover:block">
                         <div className="py-2">
                           {category.calculators.slice(0, 8).map(calculator => (
                             <button
                               key={calculator.id}
                               onClick={() => handleCalculatorClick(calculator.id)}
-                              className="block w-full text-left px-4 py-2 text-neutral-700 hover:bg-neutral-100 hover:text-primary-600"
+                              className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 transition-colors"
                             >
                               {calculator.name}
                             </button>
@@ -107,7 +123,7 @@ export const Header: React.FC = () => {
                           {category.calculators.length > 8 && (
                             <Link
                               to={`/#${category.id}`}
-                              className="block px-4 py-2 text-primary-600 hover:bg-neutral-100 font-medium"
+                              className="block px-4 py-3 text-primary-600 hover:bg-neutral-50 font-medium transition-colors"
                               onClick={() => setCategoriesOpen(false)}
                             >
                               View all {category.calculators.length} calculators
@@ -119,7 +135,7 @@ export const Header: React.FC = () => {
                   ))}
                   <Link
                     to="/#categories"
-                    className="block px-4 py-2 text-primary-600 hover:bg-neutral-100 font-medium border-t border-neutral-100 mt-1 pt-1"
+                    className="block px-4 py-3 text-primary-600 hover:bg-neutral-50 font-medium border-t border-neutral-100 mt-1 transition-colors"
                     onClick={() => setCategoriesOpen(false)}
                   >
                     View all calculators
@@ -129,62 +145,67 @@ export const Header: React.FC = () => {
             </div>
             <button 
               onClick={() => setSearchOpen(true)}
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center space-x-1"
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium"
             >
               <Search className="h-4 w-4" />
               <span>Search</span>
             </button>
             <Link 
               to="/blog" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
             >
               <FileText className="h-4 w-4 mr-1" />
               Blog
             </Link>
             <Link 
               to="/government-schemes" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
             >
               <Shield className="h-4 w-4 mr-1" />
-              Government Schemes
+              <span className="hidden xl:inline">Government Schemes</span>
+              <span className="xl:hidden">Schemes</span>
             </Link>
-             <Link 
-              to="/ExcelTool" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center"
+            <Link 
+              to="/exceltool" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
             >
               <FileText className="h-4 w-4 mr-1" />
-              Excel Tool
+              <span className="hidden xl:inline">Excel Tools</span>
+              <span className="xl:hidden">Excel</span>
             </Link>
             <Link 
               to="/about-us" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors"
+              className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium"
             >
               About
             </Link>
             <Link 
               to="/contact-us" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors"
+              className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium"
             >
               Contact
             </Link>
             <Link 
               to="/calculators/income-tax-calculator" 
-              className="btn btn-primary"
+              className="btn btn-primary text-sm px-4 py-2"
             >
-              Income Tax Calculator
+              Tax Calculator
             </Link>
           </nav>
           
-          <div className="flex md:hidden items-center space-x-4">
+          {/* Mobile Navigation */}
+          <div className="flex lg:hidden items-center space-x-2">
             <button 
               onClick={() => setSearchOpen(true)}
-              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100"
+              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation"
+              aria-label="Search"
             >
               <Search className="h-5 w-5" />
             </button>
             <button 
               onClick={() => setMobileMenuOpen(true)}
-              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100"
+              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation"
+              aria-label="Open menu"
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -192,14 +213,16 @@ export const Header: React.FC = () => {
         </div>
       </div>
       
+      {/* Search Modal */}
       {searchOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20">
-          <div className="bg-white rounded-lg w-full max-w-2xl mx-4 p-4 shadow-xl">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center pt-16 sm:pt-20">
+          <div className="bg-white rounded-xl w-full max-w-2xl mx-4 p-4 shadow-2xl">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-semibold text-neutral-900">Search Calculators</h2>
               <button 
                 onClick={() => setSearchOpen(false)}
-                className="text-neutral-500 hover:text-neutral-700"
+                className="text-neutral-500 hover:text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors"
+                aria-label="Close search"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -209,7 +232,10 @@ export const Header: React.FC = () => {
         </div>
       )}
       
-      <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+      )}
     </header>
   );
 };
