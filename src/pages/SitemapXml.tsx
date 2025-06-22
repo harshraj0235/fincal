@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Search, FileText, CheckSquare, AlertTriangle, ExternalLink, Code, Copy, Check } from 'lucide-react';
+import { ArrowLeft, CheckSquare, AlertTriangle, ExternalLink, Code, Copy, Check } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { blogPosts } from '../data/blogData';
 
@@ -503,10 +503,6 @@ Disallow: /blog/tag/*/page/`}</code>
           <div className="bg-white p-4 rounded-lg shadow-sm">
             <p className="text-sm text-neutral-500 mb-1">Blog Posts</p>
             <p className="text-2xl font-bold text-primary-900">{blogUrls.length}</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm">
-            <p className="text-sm text-neutral-500 mb-1">Astro-Finance Pages</p>
-            <p className="text-2xl font-bold text-primary-900">20</p>
           </div>
         </div>
       </div>
