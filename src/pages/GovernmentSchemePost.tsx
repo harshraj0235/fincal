@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Calendar, ArrowLeft, Share2, ChevronRight } from 'lucide-react';
 import { getGovernmentSchemeBySlug, getRelatedGovernmentSchemes } from '../data/governmentSchemesData';
-import SEOHelmet from '../components/SEOHelmet';
+import SEOHelmet from '../components/SEOHelmet'; // FIXED: Default import
 
 interface TocItem {
   idx: number;
@@ -233,4 +233,4 @@ const GovernmentSchemePost: React.FC = () => {
   );
 };
 
-export default GovernmentSchemePost; 
+export default GovernmentSchemePost;
