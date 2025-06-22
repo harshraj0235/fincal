@@ -18,6 +18,7 @@ import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
+import { AstroFinance } from './pages/AstroFinance';
 
 // Excel Tool blog section
 import ExcelTool from './pages/ExcelTool';
@@ -58,6 +59,7 @@ function App() {
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap.xml" element={<SitemapXml />} />
         <Route path="/credit-card-finder" element={<CreditCardFinder />} />
+        <Route path="/astro-finance" element={<AstroFinance />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
