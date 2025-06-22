@@ -22,7 +22,6 @@ import { CreditCardFinder } from './calculators/CreditCardFinder';
 // Excel Tool blog section
 import ExcelTool from './pages/ExcelTool';
 import ExcelToolPost from './pages/ExcelToolPost';
-
 // ADD THIS IMPORT
 import ResumeBuilder from './pages/ResumeBuilder';
 
@@ -55,7 +54,7 @@ function App() {
         <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
 
         {/* ADD THIS ROUTE */}
-        <Route path="/resume-builder" element={<ResumeBuilder />} />
+        <Route path="/resume-builder" element={<ResumeBuilder />} />   
 
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
