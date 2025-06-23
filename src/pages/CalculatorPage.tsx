@@ -98,11 +98,15 @@ import { UpiFailureTroubleshooter } from '../calculators/UpiFailureTroubleshoote
 import { AdvanceTaxCalculator } from '../calculators/AdvanceTaxCalculator';
 import { CreditCardFinder } from '../calculators/CreditCardFinder';
 
+import GoldLoanEmiCalculator from '../calculators/GoldLoanEmiCalculator';
+import NpsReturnCalculator from '../calculators/NpsReturnCalculator';
+
 interface CalculatorPageProps {
   calculatorId: string;
 }
 
 export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) => {
+  console.log('DEBUG: calculatorId =', calculatorId);
   const navigate = useNavigate();
   const calculator = getCalculatorById(calculatorId);
   
@@ -218,7 +222,10 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <LoanTenureConverter />;
       case 'credit-card-emi-calculator':
         return <CreditCardEmiCalculator />;
-      
+      case 'gold-loan-emi-calculator':
+        return <GoldLoanEmiCalculator />;
+      case 'nps-return-calculator':
+        return <NpsReturnCalculator />;
         
       // Investment Calculators
       case 'sip-calculator':
