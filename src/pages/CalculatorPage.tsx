@@ -20,8 +20,8 @@ import { LoanRefinanceCalculator } from '../calculators/LoanRefinanceCalculator'
 import { LoanAffordabilityCalculator } from '../calculators/LoanAffordabilityCalculator';
 import { LoanTenureConverter } from '../calculators/LoanTenureConverter';
 import { CreditCardEmiCalculator } from '../calculators/CreditCardEmiCalculator';
-import GoldLoanEmiCalculator from '../calculators/GoldLoanEmiCalculator';
-import NpsReturnCalculator from '../calculators/NpsReturnCalculator';
+import { GoldLoanEmiCalculator } from '../calculators/GoldLoanEmiCalculator';
+import { NpsReturnCalculator } from '../calculators/NpsReturnCalculator';
 import { MutualFundReturnsCalculator } from '../calculators/MutualFundReturnsCalculator';
 import { MutualFundCostCalculator } from '../calculators/MutualFundCostCalculator';
 import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalculator';
