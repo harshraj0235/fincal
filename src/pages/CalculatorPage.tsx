@@ -20,7 +20,7 @@ import { LoanRefinanceCalculator } from '../calculators/LoanRefinanceCalculator'
 import { LoanAffordabilityCalculator } from '../calculators/LoanAffordabilityCalculator';
 import { LoanTenureConverter } from '../calculators/LoanTenureConverter';
 import { CreditCardEmiCalculator } from '../calculators/CreditCardEmiCalculator';
-import { GoldLoanEmiCalculator } from '../calculators/GoldLoanEmiCalculator';
+import { GoldLoanEmiCalculator } from '../calculators/GoldLoanEmiCalculator'; // <== Make sure this exists!
 import { MutualFundReturnsCalculator } from '../calculators/MutualFundReturnsCalculator';
 import { MutualFundCostCalculator } from '../calculators/MutualFundCostCalculator';
 import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalculator';
@@ -174,8 +174,6 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
       'free calculator',
       'online calculator'
     ];
-    
-    // Add category-specific keywords
     if (calculator.category.includes('loan')) {
       baseKeywords.push('loan calculator', 'emi calculator', 'loan emi', 'loan repayment');
     }
@@ -185,11 +183,9 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
     if (calculator.category.includes('investment')) {
       baseKeywords.push('investment calculator', 'investment planning', 'returns calculator');
     }
-    
     return baseKeywords.join(', ');
   };
 
-  // Generate description
   const generateDescription = () => {
     return `${calculator.name} - Free online ${calculator.name.toLowerCase()} for Indian users. ${calculator.description} Get accurate calculations instantly. No registration required.`;
   };
@@ -197,203 +193,116 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
   const renderCalculator = () => {
     switch (calculatorId) {
       // Loan Calculators
-      case 'emi-calculator':
-        return <EmiCalculator />;
-      case 'home-loan-calculator':
-        return <HomeLoanCalculator />;
-      case 'personal-loan-calculator':
-        return <PersonalLoanCalculator />;
-      case 'car-loan-calculator':
-        return <CarLoanCalculator />;
-      case 'business-loan-calculator':
-        return <BusinessLoanCalculator />;
-      case 'loan-comparison-calculator':
-        return <LoanComparisonCalculator />;
-      case 'loan-prepayment-calculator':
-        return <LoanPrepaymentCalculator />;
-      case 'loan-refinance-calculator':
-        return <LoanRefinanceCalculator />;
-      case 'loan-affordability-calculator':
-        return <LoanAffordabilityCalculator />;
-      case 'loan-tenure-converter':
-        return <LoanTenureConverter />;
-      case 'credit-card-emi-calculator':
-        return <CreditCardEmiCalculator />;
-        case 'gold-loan-emi-calculator':
-  return <GoldLoanEmiCalculator />;
-        
+      case 'emi-calculator': return <EmiCalculator />;
+      case 'home-loan-calculator': return <HomeLoanCalculator />;
+      case 'personal-loan-calculator': return <PersonalLoanCalculator />;
+      case 'car-loan-calculator': return <CarLoanCalculator />;
+      case 'business-loan-calculator': return <BusinessLoanCalculator />;
+      case 'loan-comparison-calculator': return <LoanComparisonCalculator />;
+      case 'loan-prepayment-calculator': return <LoanPrepaymentCalculator />;
+      case 'loan-refinance-calculator': return <LoanRefinanceCalculator />;
+      case 'loan-affordability-calculator': return <LoanAffordabilityCalculator />;
+      case 'loan-tenure-converter': return <LoanTenureConverter />;
+      case 'credit-card-emi-calculator': return <CreditCardEmiCalculator />;
+      case 'gold-loan-emi-calculator': return <GoldLoanEmiCalculator />; // <-- Properly placed
+
       // Investment Calculators
-      case 'sip-calculator':
-        return <SipCalculator />;
-      case 'mutual-fund-returns-calculator':
-        return <MutualFundReturnsCalculator />;
-      case 'mutual-fund-cost-calculator':
-        return <MutualFundCostCalculator />;
-      case 'ppf-calculator':
-        return <PpfCalculator />;
-      case 'sukanya-samriddhi-calculator':
-        return <SukanyaSamriddhiCalculator />;
-      case 'nps-calculator':
-        return <NpsCalculator />;
-      case 'nps-tier2-calculator':
-        return <NpsTier2Calculator />;
-      case 'post-office-calculator':
-        return <PostOfficeCalculator />;
-      case 'gold-investment-calculator':
-        return <GoldInvestmentCalculator />;
-      case 'compound-interest-calculator':
-        return <CompoundInterestCalculator />;
-      case 'simple-interest-calculator':
-        return <SimpleInterestCalculator />;
-      case 'future-value-calculator':
-        return <FutureValueCalculator />;
-        
+      case 'sip-calculator': return <SipCalculator />;
+      case 'mutual-fund-returns-calculator': return <MutualFundReturnsCalculator />;
+      case 'mutual-fund-cost-calculator': return <MutualFundCostCalculator />;
+      case 'ppf-calculator': return <PpfCalculator />;
+      case 'sukanya-samriddhi-calculator': return <SukanyaSamriddhiCalculator />;
+      case 'nps-calculator': return <NpsCalculator />;
+      case 'nps-tier2-calculator': return <NpsTier2Calculator />;
+      case 'post-office-calculator': return <PostOfficeCalculator />;
+      case 'gold-investment-calculator': return <GoldInvestmentCalculator />;
+      case 'compound-interest-calculator': return <CompoundInterestCalculator />;
+      case 'simple-interest-calculator': return <SimpleInterestCalculator />;
+      case 'future-value-calculator': return <FutureValueCalculator />;
+
       // Tax Calculators
-      case 'income-tax-calculator':
-        return <IncomeTaxCalculator />;
-      case 'gst-calculator':
-        return <GstCalculator />;
-      case 'tds-calculator':
-        return <TdsCalculator />;
-      case 'capital-gains-tax-calculator':
-        return <CapitalGainsTaxCalculator />;
-      case 'tax-saving-investment-calculator':
-        return <TaxSavingInvestmentCalculator />;
-      case 'section-80c-calculator':
-        return <Section80CCalculator />;
-      case 'section-80d-calculator':
-        return <Section80DCalculator />;
-      case 'hra-exemption-calculator':
-        return <HraExemptionCalculator />;
-      case 'advance-tax-calculator':
-        return <AdvanceTaxCalculator />;
-        
+      case 'income-tax-calculator': return <IncomeTaxCalculator />;
+      case 'gst-calculator': return <GstCalculator />;
+      case 'tds-calculator': return <TdsCalculator />;
+      case 'capital-gains-tax-calculator': return <CapitalGainsTaxCalculator />;
+      case 'tax-saving-investment-calculator': return <TaxSavingInvestmentCalculator />;
+      case 'section-80c-calculator': return <Section80CCalculator />;
+      case 'section-80d-calculator': return <Section80DCalculator />;
+      case 'hra-exemption-calculator': return <HraExemptionCalculator />;
+      case 'advance-tax-calculator': return <AdvanceTaxCalculator />;
+
       // Retirement Calculators
-      case 'retirement-calculator':
-        return <RetirementCalculator />;
-      case 'pension-calculator':
-        return <PensionCalculator />;
-      case 'human-life-value-calculator':
-        return <HumanLifeValueCalculator />;
-        
+      case 'retirement-calculator': return <RetirementCalculator />;
+      case 'pension-calculator': return <PensionCalculator />;
+      case 'human-life-value-calculator': return <HumanLifeValueCalculator />;
+
       // Business Calculators
-      case 'break-even-calculator':
-        return <BreakEvenCalculator />;
-      case 'profit-margin-calculator':
-        return <ProfitMarginCalculator />;
-      case 'inventory-turnover-calculator':
-        return <InventoryTurnoverCalculator />;
-      case 'debt-equity-calculator':
-        return <DebtEquityCalculator />;
-        
+      case 'break-even-calculator': return <BreakEvenCalculator />;
+      case 'profit-margin-calculator': return <ProfitMarginCalculator />;
+      case 'inventory-turnover-calculator': return <InventoryTurnoverCalculator />;
+      case 'debt-equity-calculator': return <DebtEquityCalculator />;
+
       // Property Calculators
-      case 'rent-vs-buy-calculator':
-        return <RentVsBuyCalculator />;
-      case 'property-investment-calculator':
-        return <PropertyInvestmentCalculator />;
-      case 'stamp-duty-calculator':
-        return <StampDutyCalculator />;
-      case 'property-registration-calculator':
-        return <PropertyRegistrationCalculator />;
-        
+      case 'rent-vs-buy-calculator': return <RentVsBuyCalculator />;
+      case 'property-investment-calculator': return <PropertyInvestmentCalculator />;
+      case 'stamp-duty-calculator': return <StampDutyCalculator />;
+      case 'property-registration-calculator': return <PropertyRegistrationCalculator />;
+
       // Insurance Calculators
-      case 'term-insurance-calculator':
-        return <TermInsuranceCalculator />;
-      case 'health-insurance-calculator':
-        return <HealthInsuranceCalculator />;
-      case 'life-insurance-calculator':
-        return <LifeInsuranceCalculator />;
-        
+      case 'term-insurance-calculator': return <TermInsuranceCalculator />;
+      case 'health-insurance-calculator': return <HealthInsuranceCalculator />;
+      case 'life-insurance-calculator': return <LifeInsuranceCalculator />;
+
       // Personal Finance
-      case 'budget-calculator':
-        return <BudgetCalculator />;
-      case 'emergency-fund-calculator':
-        return <EmergencyFundCalculator />;
-      case 'financial-goal-calculator':
-        return <FinancialGoalCalculator />;
-      case 'net-worth-calculator':
-        return <NetWorthCalculator />;
-      case 'inflation-calculator':
-        return <InflationCalculator />;
-      case 'interest-rate-converter':
-        return <InterestRateConverter />;
-      case 'gratuity-calculator':
-        return <GratuityCalculator />;
-        
+      case 'budget-calculator': return <BudgetCalculator />;
+      case 'emergency-fund-calculator': return <EmergencyFundCalculator />;
+      case 'financial-goal-calculator': return <FinancialGoalCalculator />;
+      case 'net-worth-calculator': return <NetWorthCalculator />;
+      case 'inflation-calculator': return <InflationCalculator />;
+      case 'interest-rate-converter': return <InterestRateConverter />;
+      case 'gratuity-calculator': return <GratuityCalculator />;
+
       // Investment & Trading
-      case 'brokerage-calculator':
-        return <BrokerageCalculator />;
-      case 'margin-trading-calculator':
-        return <MarginTradingCalculator />;
-      case 'commodity-margin-calculator':
-        return <CommodityMarginCalculator />;
-      case 'forex-margin-calculator':
-        return <ForexMarginCalculator />;
-      case 'forex-pip-calculator':
-        return <ForexPipCalculator />;
-        
+      case 'brokerage-calculator': return <BrokerageCalculator />;
+      case 'margin-trading-calculator': return <MarginTradingCalculator />;
+      case 'commodity-margin-calculator': return <CommodityMarginCalculator />;
+      case 'forex-margin-calculator': return <ForexMarginCalculator />;
+      case 'forex-pip-calculator': return <ForexPipCalculator />;
+
       // Banking & Finance Tools
-      case 'savings-account-calculator':
-        return <SavingsAccountCalculator />;
-      case 'currency-converter':
-        return <CurrencyConverter />;
-      case 'bank-ifsc-finder':
-        return <BankIfscFinder />;
-      case 'atm-locator':
-        return <AtmLocator />;
-      case 'bank-holiday-calendar':
-        return <BankHolidayCalendar />;
-      case 'interest-rates-comparison':
-        return <InterestRatesComparison />;
-      case 'upi-failure-troubleshooter':
-        return <UpiFailureTroubleshooter />;
-      case 'credit-card-finder':
-        return <CreditCardFinder />;
-        
+      case 'savings-account-calculator': return <SavingsAccountCalculator />;
+      case 'currency-converter': return <CurrencyConverter />;
+      case 'bank-ifsc-finder': return <BankIfscFinder />;
+      case 'atm-locator': return <AtmLocator />;
+      case 'bank-holiday-calendar': return <BankHolidayCalendar />;
+      case 'interest-rates-comparison': return <InterestRatesComparison />;
+      case 'upi-failure-troubleshooter': return <UpiFailureTroubleshooter />;
+      case 'credit-card-finder': return <CreditCardFinder />;
+
       // FinTech & Payments Calculators
-      case 'step-up-sip-calculator':
-        return <StepUpSipCalculator />;
-      case 'inflation-adjusted-sip-calculator':
-        return <InflationAdjustedSipCalculator />;
-      case 'rent-vs-buy-advanced-calculator':
-        return <RentVsBuyAdvancedCalculator />;
-      case 'gold-etf-vs-physical-calculator':
-        return <GoldEtfVsPhysicalCalculator />;
-      case 'income-tax-regime-comparison-calculator':
-        return <IncomeTaxRegimeComparisonCalculator />;
-      case 'capital-gains-tax-advanced-calculator':
-        return <CapitalGainsTaxAdvancedCalculator />;
-      case 'gst-seller-calculator':
-        return <GstSellerCalculator />;
-      case 'virtual-card-issuer':
-        return <VirtualCardIssuer />;
-      case 'bnpl-calculator':
-        return <BnplCalculator />;
-      case 'p2p-lending-calculator':
-        return <P2PLendingCalculator />;
-        
+      case 'step-up-sip-calculator': return <StepUpSipCalculator />;
+      case 'inflation-adjusted-sip-calculator': return <InflationAdjustedSipCalculator />;
+      case 'rent-vs-buy-advanced-calculator': return <RentVsBuyAdvancedCalculator />;
+      case 'gold-etf-vs-physical-calculator': return <GoldEtfVsPhysicalCalculator />;
+      case 'income-tax-regime-comparison-calculator': return <IncomeTaxRegimeComparisonCalculator />;
+      case 'capital-gains-tax-advanced-calculator': return <CapitalGainsTaxAdvancedCalculator />;
+      case 'gst-seller-calculator': return <GstSellerCalculator />;
+      case 'virtual-card-issuer': return <VirtualCardIssuer />;
+      case 'bnpl-calculator': return <BnplCalculator />;
+      case 'p2p-lending-calculator': return <P2PLendingCalculator />;
+
       // Investments & Wealth Management Calculators
-      case 'mutual-fund-overlap-checker':
-        return <MutualFundOverlapChecker />;
-      case 'xirr-tracker':
-        return <XirrTracker />;
-      case 'dividend-yield-calculator':
-        return <DividendYieldCalculator />;
-      case 'asset-allocation-planner':
-        return <AssetAllocationPlanner />;
-      case 'risk-appetite-assessment':
-        return <RiskAppetiteAssessment />;
-      case 'crowdfunding-investment-portal':
-        return <CrowdfundingInvestmentPortal />;
-      case 'digital-wealth-robo-advisor':
-        return <DigitalWealthRoboAdvisor />;
-      case 'stable-return-fixed-income-aggregator':
-        return <StableReturnFixedIncomeAggregator />;
-      case 'crypto-tax-estimator':
-        return <CryptoTaxEstimator />;
-      case 'nri-stock-investment-dashboard':
-        return <NriStockInvestmentDashboard />;
-        
+      case 'mutual-fund-overlap-checker': return <MutualFundOverlapChecker />;
+      case 'xirr-tracker': return <XirrTracker />;
+      case 'dividend-yield-calculator': return <DividendYieldCalculator />;
+      case 'asset-allocation-planner': return <AssetAllocationPlanner />;
+      case 'risk-appetite-assessment': return <RiskAppetiteAssessment />;
+      case 'crowdfunding-investment-portal': return <CrowdfundingInvestmentPortal />;
+      case 'digital-wealth-robo-advisor': return <DigitalWealthRoboAdvisor />;
+      case 'stable-return-fixed-income-aggregator': return <StableReturnFixedIncomeAggregator />;
+      case 'crypto-tax-estimator': return <CryptoTaxEstimator />;
+      case 'nri-stock-investment-dashboard': return <NriStockInvestmentDashboard />;
+
       default:
         return (
           <div className="text-center py-8">
@@ -421,7 +330,6 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
           'hi-IN': `https://financegurus.directory/hi/calculators/${calculatorId}`
         }}
       />
-      
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
         <button 
@@ -432,12 +340,10 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
           <span>Back</span>
         </button>
       </div>
-      
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-neutral-900 mb-3">{calculator.name}</h1>
         <p className="text-lg text-neutral-600">{calculator.description}</p>
       </div>
-      
       <div className="flex justify-end space-x-3 mb-6">
         <button className="btn btn-outline flex items-center">
           <Share2 className="h-4 w-4 mr-2" />
@@ -448,11 +354,9 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
           <span>Save</span>
         </button>
       </div>
-      
       <div className="card mb-8">
         {renderCalculator()}
       </div>
-      
       {calculator.info && (
         <div className="bg-[--primary-50] border border-[--primary-200] rounded-lg p-6 mb-8">
           <div className="flex items-start">
@@ -470,7 +374,6 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
           </div>
         </div>
       )}
-      
       {calculator.faqs && (
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-neutral-900 mb-6">Frequently Asked Questions</h2>
@@ -491,7 +394,6 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
           </div>
         </div>
       )}
-      
       {calculator.relatedCalculators && (
         <div>
           <h2 className="text-2xl font-bold text-neutral-900 mb-6">Related Calculators</h2>
@@ -499,7 +401,6 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
             {calculator.relatedCalculators.map(id => {
               const related = getCalculatorById(id);
               if (!related) return null;
-              
               return (
                 <button 
                   key={id}
