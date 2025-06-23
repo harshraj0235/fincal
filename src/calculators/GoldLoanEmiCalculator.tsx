@@ -249,4 +249,5 @@ const GoldLoanEmiCalculator: React.FC = () => {
     </>
   );
 };
+
 export default GoldLoanEmiCalculator;
