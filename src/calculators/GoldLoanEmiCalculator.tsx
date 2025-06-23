@@ -1,146 +1,242 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useState, useMemo } from 'react';
+import { Calculator, Info } from 'lucide-react';
+import SEOHelmet from '../components/SEOHelmet';
+import { formatCurrency } from '../utils/calculatorUtils';
 
-// Category tag for internal linking/SEO
-const CATEGORY = 'Loans';
+const FAQS = [
+  {
+    question: 'How is Gold Loan EMI calculated?',
+    answer:
+      'Gold Loan EMI is calculated using the principal amount, interest rate, and tenure. The formula used is the standard loan amortization formula, ensuring equal monthly payments throughout the tenure.'
+  },
+  {
+    question: 'What is the typical tenure for a gold loan in India?',
+    answer:
+      'Most gold loan tenures in India range from 3 months to 36 months. Some lenders may allow up to 48 or 60 months.'
+  },
+  {
+    question: 'Is there any processing fee on gold loans?',
+    answer:
+      'Many banks and NBFCs charge a processing fee, usually a small percentage of the loan amount. It varies by lender.'
+  }
+];
 
-const defaultInterest = 10.5;
-const defaultTenure = 12;
-const defaultGoldValue = 50000;
-const defaultLoanAmount = 200000;
+const INFO_PARAGRAPHS = [
+  'A Gold Loan EMI Calculator helps you estimate your monthly repayments, total interest, and total payment for your gold loan. Enter the loan amount (based on the value of your gold), interest rate, and desired tenure.',
+  'Gold loan interest rates and terms may vary based on your lender, gold purity, and loan-to-value ratio. Always check with the lender for the latest rates and policies.'
+];
 
-function calculateEMI(P: number, r: number, n: number) {
-  const monthlyRate = r / 12 / 100;
-  return (P * monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
-}
+const SCHEMA_ORG = {
+  "@context": "https://schema.org",
+  "@type": "FinancialProduct",
+  "name": "Gold Loan EMI Calculator",
+  "description":
+    "Free online Gold Loan EMI Calculator for India. Calculate your gold loan EMI, total interest, and repayment schedule instantly. Mobile-friendly and accurate.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "provider": {
+    "@type": "Organization",
+    "name": "FinanceGurus Directory",
+    "url": "https://financegurus.directory"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "featureList": [
+    "Gold Loan EMI calculation",
+    "Indian gold loan rates",
+    "EMI, interest, repayment schedule",
+    "Mobile responsive",
+    "Free, no registration"
+  ],
+  "url": "https://financegurus.directory/calculators/gold-loan-emi-calculator",
+  "softwareVersion": "1.0"
+};
 
 const GoldLoanEmiCalculator: React.FC = () => {
-  const [loanAmount, setLoanAmount] = useState(defaultLoanAmount);
-  const [interestRate, setInterestRate] = useState(defaultInterest);
-  const [tenure, setTenure] = useState(defaultTenure);
-  const [goldValue, setGoldValue] = useState(defaultGoldValue);
-  const [goldWeight, setGoldWeight] = useState(20);
-  const [goldPurity, setGoldPurity] = useState(22);
+  // Form state
+  const [loanAmount, setLoanAmount] = useState<number>(100000);
+  const [interestRate, setInterestRate] = useState<number>(11);
+  const [tenure, setTenure] = useState<number>(12); // months
 
-  const emi = calculateEMI(loanAmount, interestRate, tenure);
-  const totalPayment = emi * tenure;
-  const totalInterest = totalPayment - loanAmount;
-  const maxEligibleLoan = goldWeight * goldValue * (goldPurity / 24) * 0.75;
+  // Calculation
+  const { emi, totalPayment, totalInterest } = useMemo(() => {
+    const principal = loanAmount;
+    const monthlyRate = interestRate / 12 / 100;
+    const n = tenure;
+    let emi = 0;
+    if (monthlyRate > 0 && n > 0) {
+      emi =
+        principal *
+        monthlyRate *
+        Math.pow(1 + monthlyRate, n) /
+        (Math.pow(1 + monthlyRate, n) - 1);
+    }
+    const totalPayment = emi * n;
+    const totalInterest = totalPayment - principal;
+    return {
+      emi: emi || 0,
+      totalPayment: totalPayment || 0,
+      totalInterest: totalInterest || 0
+    };
+  }, [loanAmount, interestRate, tenure]);
+
+  // For SEO meta description and keywords
+  const metaDescription =
+    'Gold Loan EMI Calculator (India) - Instantly calculate your gold loan EMI, total interest, and repayment schedule. Free, mobile-friendly, and accurate.';
+
+  const metaKeywords =
+    'gold loan emi calculator, gold loan calculator india, emi calculator, gold loan interest, monthly installment, gold loan repayment, financegurus';
 
   return (
-    <div className="max-w-2xl mx-auto p-4 bg-white rounded shadow mt-6">
-      <Helmet>
-        <title>Gold Loan EMI Calculator India – Calculate Gold Loan Repayment Online</title>
-        <meta name="description" content="Instantly calculate your gold loan EMI, interest, and repayment schedule. Use our Gold Loan EMI Calculator tailored for India. Fast, accurate, and free!" />
-        <link rel="canonical" href="https://moneycal.in/calculators/gold-loan-emi-calculator" />
-        <meta property="og:title" content="Gold Loan EMI Calculator India – Calculate Gold Loan Repayment Online" />
-        <meta property="og:description" content="Instantly calculate your gold loan EMI, interest, and repayment schedule. Use our Gold Loan EMI Calculator tailored for India. Fast, accurate, and free!" />
-      </Helmet>
-      <h1 className="text-2xl font-bold mb-2">Gold Loan EMI Calculator India</h1>
-      <p className="mb-4 text-gray-700">Calculate your gold loan EMI, interest, and repayment schedule instantly. Tailored for Indian users with local gold rates and purity options.</p>
-      <form className="grid grid-cols-1 gap-4 mb-6">
-        <label>
-          Gold Weight (grams)
-          <input type="number" min={1} value={goldWeight} onChange={e => setGoldWeight(Number(e.target.value))} className="input input-bordered w-full" />
-        </label>
-        <label>
-          Gold Purity (carat)
-          <select value={goldPurity} onChange={e => setGoldPurity(Number(e.target.value))} className="input input-bordered w-full">
-            <option value={24}>24K</option>
-            <option value={22}>22K</option>
-            <option value={18}>18K</option>
-          </select>
-        </label>
-        <label>
-          Gold Value per Gram (₹)
-          <input type="number" min={1000} value={goldValue} onChange={e => setGoldValue(Number(e.target.value))} className="input input-bordered w-full" />
-        </label>
-        <label>
-          Loan Amount (₹) <span className="text-xs text-gray-500">(Max eligible: ₹{maxEligibleLoan.toLocaleString()})</span>
-          <input type="number" min={1000} max={maxEligibleLoan} value={loanAmount} onChange={e => setLoanAmount(Number(e.target.value))} className="input input-bordered w-full" />
-        </label>
-        <label>
-          Interest Rate (% p.a.)
-          <input type="number" min={5} max={30} step={0.1} value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="input input-bordered w-full" />
-        </label>
-        <label>
-          Tenure (months)
-          <input type="number" min={1} max={60} value={tenure} onChange={e => setTenure(Number(e.target.value))} className="input input-bordered w-full" />
-        </label>
-      </form>
-      <div className="bg-gray-50 p-4 rounded mb-6">
-        <h2 className="font-semibold mb-2">Results</h2>
-        <p><strong>Monthly EMI:</strong> ₹{emi ? emi.toLocaleString(undefined, { maximumFractionDigits: 2 }) : 0}</p>
-        <p><strong>Total Interest Payable:</strong> ₹{totalInterest ? totalInterest.toLocaleString(undefined, { maximumFractionDigits: 2 }) : 0}</p>
-        <p><strong>Total Payment (Principal + Interest):</strong> ₹{totalPayment ? totalPayment.toLocaleString(undefined, { maximumFractionDigits: 2 }) : 0}</p>
-      </div>
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">About Gold Loan EMI Calculator</h2>
-        <p className="mb-2">A gold loan is a secured loan where you pledge your gold ornaments as collateral to get quick funds. In India, gold loans are popular due to their fast processing, minimal documentation, and flexible repayment options. The <strong>Gold Loan EMI Calculator</strong> helps you estimate your monthly repayments, total interest, and overall cost, so you can plan your finances better.</p>
-        <p className="mb-2">To use this calculator, enter the weight and purity of your gold, current gold value per gram, desired loan amount, interest rate, and tenure. The tool instantly shows your EMI and total repayment, making it easy to compare offers from different banks and NBFCs.</p>
-        <p className="mb-2">Factors affecting your gold loan EMI include the loan amount, interest rate, tenure, and the value/purity of your gold. Most Indian lenders offer up to 75% of the gold's value as a loan. Always check the latest gold rates and compare interest rates before applying.</p>
-        <p className="mb-2">Use this calculator to make informed decisions, avoid over-borrowing, and choose the best gold loan for your needs. For more tips, read our guide on <a href="/blog/how-to-choose-best-gold-loan" className="text-blue-600 underline">how to choose the best gold loan in India</a>.</p>
-      </div>
-      <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-2">Frequently Asked Questions (FAQ)</h2>
-        <details className="mb-2"><summary>How is gold loan EMI calculated?</summary><div className="pl-4">Gold loan EMI is calculated using the principal amount, interest rate, and tenure. The EMI formula is the same as other loans: <code>EMI = [P x r x (1+r)^n] / [(1+r)^n-1]</code>, where P = principal, r = monthly interest rate, n = number of months.</div></details>
-        <details className="mb-2"><summary>What is the interest rate for gold loans in India?</summary><div className="pl-4">Interest rates for gold loans in India typically range from 7% to 24% p.a., depending on the lender, loan amount, and tenure.</div></details>
-        <details className="mb-2"><summary>Can I prepay my gold loan?</summary><div className="pl-4">Yes, most lenders allow prepayment or foreclosure of gold loans, sometimes with minimal or no charges. Check with your lender for specific terms.</div></details>
-        <details className="mb-2"><summary>How does gold purity affect my loan amount?</summary><div className="pl-4">Higher gold purity (e.g., 24K) increases the eligible loan amount, as lenders offer loans based on the value and purity of the pledged gold.</div></details>
-      </div>
-      <div className="mb-8">
-        <h3 className="font-semibold">Related Calculators</h3>
-        <ul className="list-disc list-inside">
-          <li><a href="/calculators/home-loan-emi-calculator" className="text-blue-600 underline">Home Loan EMI Calculator</a></li>
-          <li><a href="/calculators/personal-loan-emi-calculator" className="text-blue-600 underline">Personal Loan EMI Calculator</a></li>
-          <li><a href="/calculators/gold-investment-calculator" className="text-blue-600 underline">Gold Investment Calculator</a></li>
-        </ul>
-      </div>
-      {/* FAQ Schema for SEO */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          'mainEntity': [
-            {
-              '@type': 'Question',
-              'name': 'How is gold loan EMI calculated?',
-              'acceptedAnswer': {
-                '@type': 'Answer',
-                'text': 'Gold loan EMI is calculated using the principal amount, interest rate, and tenure. The EMI formula is the same as other loans: EMI = [P x r x (1+r)^n] / [(1+r)^n-1], where P = principal, r = monthly interest rate, n = number of months.'
-              }
-            },
-            {
-              '@type': 'Question',
-              'name': 'What is the interest rate for gold loans in India?',
-              'acceptedAnswer': {
-                '@type': 'Answer',
-                'text': 'Interest rates for gold loans in India typically range from 7% to 24% p.a., depending on the lender, loan amount, and tenure.'
-              }
-            },
-            {
-              '@type': 'Question',
-              'name': 'Can I prepay my gold loan?',
-              'acceptedAnswer': {
-                '@type': 'Answer',
-                'text': 'Yes, most lenders allow prepayment or foreclosure of gold loans, sometimes with minimal or no charges. Check with your lender for specific terms.'
-              }
-            },
-            {
-              '@type': 'Question',
-              'name': 'How does gold purity affect my loan amount?',
-              'acceptedAnswer': {
-                '@type': 'Answer',
-                'text': 'Higher gold purity (e.g., 24K) increases the eligible loan amount, as lenders offer loans based on the value and purity of the pledged gold.'
-              }
-            }
-          ]
-        })}
-      </script>
-      {/* Category tag for SEO */}
-      <meta name="category" content={CATEGORY} />
-    </div>
+    <>
+      <SEOHelmet
+        title="Gold Loan EMI Calculator (India) – Free, Accurate, Online | FinanceGurus"
+        description={metaDescription}
+        keywords={metaKeywords}
+        url="/calculators/gold-loan-emi-calculator"
+        image="/images/calculator-default.jpg"
+        type="website"
+        structuredData={SCHEMA_ORG}
+        tags={['gold loan emi calculator', 'india', 'financegurus']}
+        alternateLanguages={{
+          'en-IN': "https://financegurus.directory/calculators/gold-loan-emi-calculator",
+          'hi-IN': "https://financegurus.directory/hi/calculators/gold-loan-emi-calculator"
+        }}
+      />
+
+      <article className="max-w-2xl mx-auto p-4">
+        <header>
+          <h1 className="text-3xl font-bold text-neutral-900 mb-2">
+            Gold Loan EMI Calculator
+          </h1>
+          <p className="text-neutral-700 mb-4">
+            Instantly estimate your monthly EMI, total interest, and total payment for your gold loan in India. Enter your loan details below.
+          </p>
+        </header>
+
+        <form
+          className="bg-white rounded-lg border border-neutral-200 p-6 mb-8 grid gap-4"
+          itemScope
+          itemType="https://schema.org/FinancialProduct"
+          aria-label="Gold Loan EMI Calculator Form"
+        >
+          <div>
+            <label htmlFor="loan-amount" className="block text-sm font-medium text-neutral-700 mb-1">
+              Loan Amount (₹)
+            </label>
+            <input
+              id="loan-amount"
+              name="loan-amount"
+              type="number"
+              min="5000"
+              max="5000000"
+              step="500"
+              value={loanAmount}
+              onChange={e => setLoanAmount(Number(e.target.value))}
+              required
+              className="input"
+              autoComplete="off"
+              inputMode="numeric"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="interest-rate" className="block text-sm font-medium text-neutral-700 mb-1">
+              Interest Rate (% per annum)
+            </label>
+            <input
+              id="interest-rate"
+              name="interest-rate"
+              type="number"
+              min="6"
+              max="36"
+              step="0.1"
+              value={interestRate}
+              onChange={e => setInterestRate(Number(e.target.value))}
+              required
+              className="input"
+              autoComplete="off"
+              inputMode="decimal"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="tenure" className="block text-sm font-medium text-neutral-700 mb-1">
+              Tenure (months)
+            </label>
+            <input
+              id="tenure"
+              name="tenure"
+              type="number"
+              min="1"
+              max="60"
+              step="1"
+              value={tenure}
+              onChange={e => setTenure(Number(e.target.value))}
+              required
+              className="input"
+              autoComplete="off"
+              inputMode="numeric"
+            />
+          </div>
+        </form>
+
+        <section className="bg-[--primary-50] border border-[--primary-200] rounded-lg p-6 mb-8" aria-label="Gold Loan EMI Results">
+          <h2 className="text-lg font-semibold text-[--primary-900] mb-4 flex items-center">
+            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+            EMI Results
+          </h2>
+          <dl className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <dt className="text-sm text-neutral-500 mb-1">Monthly EMI</dt>
+              <dd className="text-xl font-bold text-neutral-900" itemProp="monthlyRepayment">{formatCurrency(emi)}</dd>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <dt className="text-sm text-neutral-500 mb-1">Total Interest</dt>
+              <dd className="text-xl font-bold text-[--error-600]" itemProp="interestRate">{formatCurrency(totalInterest)}</dd>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <dt className="text-sm text-neutral-500 mb-1">Total Payment</dt>
+              <dd className="text-xl font-bold text-[--primary-600]" itemProp="totalPayment">{formatCurrency(totalPayment)}</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section className="mb-8" aria-label="About this Calculator">
+          <div className="bg-[--primary-50] border border-[--primary-200] rounded-lg p-6 flex items-start">
+            <Info className="h-5 w-5 text-[--primary-600] mt-0.5" />
+            <div className="ml-3">
+              <h2 className="text-lg font-semibold text-[--primary-900] mb-2">About Gold Loan EMI Calculator</h2>
+              <div className="text-[--primary-800] space-y-2">
+                {INFO_PARAGRAPHS.map((text, i) => (<p key={i}>{text}</p>))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-8" aria-label="Frequently Asked Questions">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {FAQS.map((faq, idx) => (
+              <details key={idx} className="group bg-white border border-neutral-200 rounded-lg">
+                <summary className="flex justify-between items-center cursor-pointer py-4 px-6">
+                  <h3 className="text-lg font-medium text-neutral-900">{faq.question}</h3>
+                  <span className="transition-transform duration-300 group-open:rotate-180">
+                    <svg className="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </span>
+                </summary>
+                <div className="px-6 pb-4 text-neutral-600">{faq.answer}</div>
+              </details>
+            ))}
+          </div>
+        </section>
+      </article>
+    </>
   );
 };
 
-export default GoldLoanEmiCalculator; 
+export { GoldLoanEmiCalculator };
+export default GoldLoanEmiCalculator;
