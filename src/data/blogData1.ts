@@ -38641,9 +38641,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "list",
         items: [
-          "कम से क
-
-म 4-5 lenders से quotes लें",
+          "कम से कम 4-5 lenders से quotes लें",
           "Total cost of borrowing calculate करें",
           "Hidden charges की detailed list मांगें",
           "Prepayment flexibility को prioritize करें",
