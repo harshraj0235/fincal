@@ -3,7 +3,6 @@ import { Calculator, Info } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { formatCurrency } from '../utils/calculatorUtils';
 import { Link } from 'react-router-dom';
-
 const FAQS = [
   {
     question: 'How is NPS maturity amount calculated?',
