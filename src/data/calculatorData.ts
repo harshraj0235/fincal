@@ -143,9 +143,7 @@ export const calculatorCategories: CalculatorCategory[] = [
         keywords: ['gold loan emi calculator india', 'gold loan repayment calculator', 'gold loan interest calculator', 'gold loan india', 'gold loan emi'],
         category: 'Loan Calculators',
         relatedCalculators: ['home-loan-calculator', 'personal-loan-calculator', 'gold-investment-calculator']
-      }
-    ]
-  },
+      },
   {
     id: 'investment-calculators',
     name: 'Investment Calculators',
@@ -396,9 +394,7 @@ export const calculatorCategories: CalculatorCategory[] = [
         keywords: ['nps return calculator india', 'nps calculator tier 1', 'nps calculator tier 2', 'nps maturity calculator', 'national pension system calculator'],
         category: 'Retirement Calculators',
         relatedCalculators: ['retirement-calculator', 'pension-calculator', 'ppf-calculator']
-      }
-    ]
-  },
+      },
   {
     id: 'business-calculators',
     name: 'Business Calculators',
