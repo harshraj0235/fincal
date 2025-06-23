@@ -2,36 +2,33 @@ import React, { useState, useMemo } from 'react';
 import { Calculator, Info } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { formatCurrency } from '../utils/calculatorUtils';
+import { Link } from 'react-router-dom';
 
 const FAQS = [
   {
     question: 'How is Gold Loan EMI calculated?',
-    answer:
-      'Gold Loan EMI is calculated using the principal amount, interest rate, and tenure. The formula used is the standard loan amortization formula, ensuring equal monthly payments throughout the tenure.'
+    answer: 'Gold Loan EMI is calculated using the principal amount, interest rate, and tenure. The formula used is the standard loan amortization formula, ensuring equal monthly payments throughout the tenure.',
   },
   {
     question: 'What is the typical tenure for a gold loan in India?',
-    answer:
-      'Most gold loan tenures in India range from 3 months to 36 months. Some lenders may allow up to 48 or 60 months.'
+    answer: 'Most gold loan tenures in India range from 3 months to 36 months. Some lenders may allow up to 48 or 60 months.',
   },
   {
     question: 'Is there any processing fee on gold loans?',
-    answer:
-      'Many banks and NBFCs charge a processing fee, usually a small percentage of the loan amount. It varies by lender.'
-  }
+    answer: 'Many banks and NBFCs charge a processing fee, usually a small percentage of the loan amount. It varies by lender.',
+  },
 ];
 
 const INFO_PARAGRAPHS = [
   'A Gold Loan EMI Calculator helps you estimate your monthly repayments, total interest, and total payment for your gold loan. Enter the loan amount (based on the value of your gold), interest rate, and desired tenure.',
-  'Gold loan interest rates and terms may vary based on your lender, gold purity, and loan-to-value ratio. Always check with the lender for the latest rates and policies.'
+  'Gold loan interest rates and terms may vary based on your lender, gold purity, and loan-to-value ratio. Always check with the lender for the latest rates and policies.',
 ];
 
 const SCHEMA_ORG = {
   "@context": "https://schema.org",
   "@type": "FinancialProduct",
   "name": "Gold Loan EMI Calculator",
-  "description":
-    "Free online Gold Loan EMI Calculator for India. Calculate your gold loan EMI, total interest, and repayment schedule instantly. Mobile-friendly and accurate.",
+  "description": "Free online Gold Loan EMI Calculator for India. Calculate your gold loan EMI, total interest, and repayment schedule instantly. Mobile-friendly and accurate.",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web Browser",
   "provider": {
@@ -79,7 +76,7 @@ const GoldLoanEmiCalculator: React.FC = () => {
     return {
       emi: emi || 0,
       totalPayment: totalPayment || 0,
-      totalInterest: totalInterest || 0
+      totalInterest: totalInterest || 0,
     };
   }, [loanAmount, interestRate, tenure]);
 
@@ -231,6 +228,25 @@ const GoldLoanEmiCalculator: React.FC = () => {
                 <div className="px-6 pb-4 text-neutral-600">{faq.answer}</div>
               </details>
             ))}
+          </div>
+        </section>
+
+        {/* Internal links for SEO and user engagement */}
+        <section className="mt-8">
+          <h2 className="text-xl font-semibold mb-4">Related Calculators</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Link to="/calculators/emi-calculator" className="block p-4 bg-white rounded border hover:shadow">
+              <strong>Personal Loan EMI Calculator</strong>
+              <p className="text-sm text-neutral-600">Calculate EMI for personal loans in India.</p>
+            </Link>
+            <Link to="/calculators/home-loan-calculator" className="block p-4 bg-white rounded border hover:shadow">
+              <strong>Home Loan EMI Calculator</strong>
+              <p className="text-sm text-neutral-600">Estimate home loan EMIs and repayment.</p>
+            </Link>
+            <Link to="/calculators/business-loan-calculator" className="block p-4 bg-white rounded border hover:shadow">
+              <strong>Business Loan EMI Calculator</strong>
+              <p className="text-sm text-neutral-600">Plan your business loan repayments.</p>
+            </Link>
           </div>
         </section>
       </article>
