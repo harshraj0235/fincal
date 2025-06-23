@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // Old
 
 // New
-import { Helmet } from 'react-helmet-async';
+
 const FAQS = [
   {
     question: 'How is NPS maturity amount calculated?',
