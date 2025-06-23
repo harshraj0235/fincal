@@ -20,7 +20,7 @@ import { LoanRefinanceCalculator } from '../calculators/LoanRefinanceCalculator'
 import { LoanAffordabilityCalculator } from '../calculators/LoanAffordabilityCalculator';
 import { LoanTenureConverter } from '../calculators/LoanTenureConverter';
 import { CreditCardEmiCalculator } from '../calculators/CreditCardEmiCalculator';
-import { GoldLoanEmiCalculator } from '../calculators/GoldLoanEmiCalculator'; // <== Make sure this exists!
+import { GoldLoanEmiCalculator } from '../calculators/GoldLoanEmiCalculator';
 import { MutualFundReturnsCalculator } from '../calculators/MutualFundReturnsCalculator';
 import { MutualFundCostCalculator } from '../calculators/MutualFundCostCalculator';
 import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalculator';
@@ -116,23 +116,22 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
           url={`/calculators/${calculatorId}`}
           noIndex={true}
         />
-      <div className="text-center py-16">
-        <h2 className="text-2xl font-bold text-neutral-900 mb-4">Calculator Not Found</h2>
-        <p className="text-lg text-neutral-600 mb-8">
-          The calculator you're looking for doesn't exist or may have been moved.
-        </p>
-        <button 
-          onClick={() => navigate('/')}
-          className="btn btn-primary"
-        >
-          Go to Home
-        </button>
-      </div>
+        <div className="text-center py-16">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-4">Calculator Not Found</h2>
+          <p className="text-lg text-neutral-600 mb-8">
+            The calculator you're looking for doesn't exist or may have been moved.
+          </p>
+          <button 
+            onClick={() => navigate('/')}
+            className="btn btn-primary"
+          >
+            Go to Home
+          </button>
+        </div>
       </>
     );
   }
 
-  // Generate structured data for the calculator
   const calculatorStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -164,7 +163,6 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
     "dateModified": new Date().toISOString().split('T')[0]
   };
 
-  // Generate keywords based on calculator type
   const generateKeywords = () => {
     const baseKeywords = [
       calculator.name.toLowerCase(),
@@ -204,7 +202,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
       case 'loan-affordability-calculator': return <LoanAffordabilityCalculator />;
       case 'loan-tenure-converter': return <LoanTenureConverter />;
       case 'credit-card-emi-calculator': return <CreditCardEmiCalculator />;
-      case 'gold-loan-emi-calculator': return <GoldLoanEmiCalculator />; // <-- Properly placed
+      case 'gold-loan-emi-calculator': return <GoldLoanEmiCalculator />;
 
       // Investment Calculators
       case 'sip-calculator': return <SipCalculator />;
@@ -330,92 +328,92 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
           'hi-IN': `https://financegurus.directory/hi/calculators/${calculatorId}`
         }}
       />
-    <div className="max-w-4xl mx-auto">
-      <div className="mb-8">
-        <button 
-          onClick={() => navigate(-1)} 
-          className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4 mr-1" />
-          <span>Back</span>
-        </button>
-      </div>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-neutral-900 mb-3">{calculator.name}</h1>
-        <p className="text-lg text-neutral-600">{calculator.description}</p>
-      </div>
-      <div className="flex justify-end space-x-3 mb-6">
-        <button className="btn btn-outline flex items-center">
-          <Share2 className="h-4 w-4 mr-2" />
-          <span>Share</span>
-        </button>
-        <button className="btn btn-outline flex items-center">
-          <Bookmark className="h-4 w-4 mr-2" />
-          <span>Save</span>
-        </button>
-      </div>
-      <div className="card mb-8">
-        {renderCalculator()}
-      </div>
-      {calculator.info && (
-        <div className="bg-[--primary-50] border border-[--primary-200] rounded-lg p-6 mb-8">
-          <div className="flex items-start">
-            <div className="flex-shrink-0 mt-0.5">
-              <Info className="h-5 w-5 text-[--primary-600]" />
-            </div>
-            <div className="ml-3">
-              <h3 className="text-lg font-semibold text-[--primary-900] mb-2">About this calculator</h3>
-              <div className="text-[--primary-800] space-y-2">
-                {calculator.info.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
+      <div className="max-w-4xl mx-auto">
+        <div className="mb-8">
+          <button 
+            onClick={() => navigate(-1)} 
+            className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4 mr-1" />
+            <span>Back</span>
+          </button>
+        </div>
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-neutral-900 mb-3">{calculator.name}</h1>
+          <p className="text-lg text-neutral-600">{calculator.description}</p>
+        </div>
+        <div className="flex justify-end space-x-3 mb-6">
+          <button className="btn btn-outline flex items-center">
+            <Share2 className="h-4 w-4 mr-2" />
+            <span>Share</span>
+          </button>
+          <button className="btn btn-outline flex items-center">
+            <Bookmark className="h-4 w-4 mr-2" />
+            <span>Save</span>
+          </button>
+        </div>
+        <div className="card mb-8">
+          {renderCalculator()}
+        </div>
+        {calculator.info && (
+          <div className="bg-[--primary-50] border border-[--primary-200] rounded-lg p-6 mb-8">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 mt-0.5">
+                <Info className="h-5 w-5 text-[--primary-600]" />
+              </div>
+              <div className="ml-3">
+                <h3 className="text-lg font-semibold text-[--primary-900] mb-2">About this calculator</h3>
+                <div className="text-[--primary-800] space-y-2">
+                  {calculator.info.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
-      {calculator.faqs && (
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {calculator.faqs.map((faq, index) => (
-              <details key={index} className="group bg-white border border-neutral-200 rounded-lg">
-                <summary className="flex justify-between items-center cursor-pointer py-4 px-6">
-                  <h3 className="text-lg font-medium text-neutral-900">{faq.question}</h3>
-                  <span className="transition-transform duration-300 group-open:rotate-180">
-                    <svg className="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                  </span>
-                </summary>
-                <div className="px-6 pb-4 text-neutral-600">{faq.answer}</div>
-              </details>
-            ))}
+        )}
+        {calculator.faqs && (
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-neutral-900 mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {calculator.faqs.map((faq, index) => (
+                <details key={index} className="group bg-white border border-neutral-200 rounded-lg">
+                  <summary className="flex justify-between items-center cursor-pointer py-4 px-6">
+                    <h3 className="text-lg font-medium text-neutral-900">{faq.question}</h3>
+                    <span className="transition-transform duration-300 group-open:rotate-180">
+                      <svg className="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="px-6 pb-4 text-neutral-600">{faq.answer}</div>
+                </details>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-      {calculator.relatedCalculators && (
-        <div>
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Related Calculators</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {calculator.relatedCalculators.map(id => {
-              const related = getCalculatorById(id);
-              if (!related) return null;
-              return (
-                <button 
-                  key={id}
-                  onClick={() => navigate(`/calculators/${id}`)}
-                  className="bg-white border border-neutral-200 rounded-lg p-4 hover:shadow-md transition-shadow text-left"
-                >
-                  <h3 className="text-lg font-medium text-neutral-900 mb-1">{related.name}</h3>
-                  <p className="text-sm text-neutral-600 line-clamp-2">{related.description}</p>
-                </button>
-              );
-            })}
+        )}
+        {calculator.relatedCalculators && (
+          <div>
+            <h2 className="text-2xl font-bold text-neutral-900 mb-6">Related Calculators</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {calculator.relatedCalculators.map(id => {
+                const related = getCalculatorById(id);
+                if (!related) return null;
+                return (
+                  <button 
+                    key={id}
+                    onClick={() => navigate(`/calculators/${id}`)}
+                    className="bg-white border border-neutral-200 rounded-lg p-4 hover:shadow-md transition-shadow text-left"
+                  >
+                    <h3 className="text-lg font-medium text-neutral-900 mb-1">{related.name}</h3>
+                    <p className="text-sm text-neutral-600 line-clamp-2">{related.description}</p>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
     </>
   );
 };
