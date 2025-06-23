@@ -135,6 +135,14 @@ export const calculatorCategories: CalculatorCategory[] = [
         keywords: ['credit card emi', 'card payment', 'emi conversion'],
         category: 'Loan Calculators',
         relatedCalculators: ['emi-calculator', 'personal-loan-calculator']
+      },
+      {
+        id: 'gold-loan-emi-calculator',
+        name: 'Gold Loan EMI Calculator',
+        description: 'Calculate your gold loan EMI, interest, and repayment schedule. Tailored for India with gold value, purity, and local rates.',
+        keywords: ['gold loan emi calculator india', 'gold loan repayment calculator', 'gold loan interest calculator', 'gold loan india', 'gold loan emi'],
+        category: 'Loan Calculators',
+        relatedCalculators: ['home-loan-calculator', 'personal-loan-calculator', 'gold-investment-calculator']
       }
     ]
   },
@@ -380,6 +388,14 @@ export const calculatorCategories: CalculatorCategory[] = [
         keywords: ['human life value', 'hlv', 'insurance', 'life insurance', 'financial protection'],
         category: 'Retirement Calculators',
         relatedCalculators: ['term-insurance-calculator', 'retirement-calculator']
+      },
+      {
+        id: 'nps-return-calculator',
+        name: 'NPS Return Calculator',
+        description: 'Estimate your National Pension System (NPS) maturity amount, total investment, and returns for Tier I & II accounts. India-specific.',
+        keywords: ['nps return calculator india', 'nps calculator tier 1', 'nps calculator tier 2', 'nps maturity calculator', 'national pension system calculator'],
+        category: 'Retirement Calculators',
+        relatedCalculators: ['retirement-calculator', 'pension-calculator', 'ppf-calculator']
       }
     ]
   },
