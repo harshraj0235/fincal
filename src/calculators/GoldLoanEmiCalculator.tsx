@@ -53,10 +53,12 @@ const SCHEMA_ORG = {
 };
 
 const GoldLoanEmiCalculator: React.FC = () => {
+  // Form state
   const [loanAmount, setLoanAmount] = useState<number>(100000);
   const [interestRate, setInterestRate] = useState<number>(11);
-  const [tenure, setTenure] = useState<number>(12);
+  const [tenure, setTenure] = useState<number>(12); // months
 
+  // Calculation
   const { emi, totalPayment, totalInterest } = useMemo(() => {
     const principal = loanAmount;
     const monthlyRate = interestRate / 12 / 100;
@@ -78,6 +80,7 @@ const GoldLoanEmiCalculator: React.FC = () => {
     };
   }, [loanAmount, interestRate, tenure]);
 
+  // For SEO meta description and keywords
   const metaDescription =
     'Gold Loan EMI Calculator (India) - Instantly calculate your gold loan EMI, total interest, and repayment schedule. Free, mobile-friendly, and accurate.';
 
@@ -186,15 +189,15 @@ const GoldLoanEmiCalculator: React.FC = () => {
           <dl className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <dt className="text-sm text-neutral-500 mb-1">Monthly EMI</dt>
-              <dd className="text-xl font-bold text-neutral-900">{formatCurrency(emi)}</dd>
+              <dd className="text-xl font-bold text-neutral-900" itemProp="monthlyRepayment">{formatCurrency(emi)}</dd>
             </div>
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <dt className="text-sm text-neutral-500 mb-1">Total Interest</dt>
-              <dd className="text-xl font-bold text-[--error-600]">{formatCurrency(totalInterest)}</dd>
+              <dd className="text-xl font-bold text-[--error-600]" itemProp="interestRate">{formatCurrency(totalInterest)}</dd>
             </div>
             <div className="p-4 bg-white rounded-lg shadow-sm">
               <dt className="text-sm text-neutral-500 mb-1">Total Payment</dt>
-              <dd className="text-xl font-bold text-[--primary-600]">{formatCurrency(totalPayment)}</dd>
+              <dd className="text-xl font-bold text-[--primary-600]" itemProp="totalPayment">{formatCurrency(totalPayment)}</dd>
             </div>
           </dl>
         </section>
@@ -228,6 +231,7 @@ const GoldLoanEmiCalculator: React.FC = () => {
           </div>
         </section>
 
+        {/* Internal links for SEO and user engagement */}
         <section className="mt-8">
           <h2 className="text-xl font-semibold mb-4">Related Calculators</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -250,4 +254,5 @@ const GoldLoanEmiCalculator: React.FC = () => {
   );
 };
 
+export { GoldLoanEmiCalculator };
 export default GoldLoanEmiCalculator;
