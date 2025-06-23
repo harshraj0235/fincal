@@ -41728,9 +41728,7 @@ export const blogPosts: BlogPost[] = [
         items: [
           "Tax saved in year 1: ₹48,360",
           "Net investment cost: ₹1,01,640",
-          "3 साल बा
-
-द value (15% CAGR assumed): ₹2,28,154",
+          "3 साल बाद value (15% CAGR assumed): ₹2,28,154",
           "LTCG: ₹78,154 (₹1 lakh से कम, so tax-free)",
           "Total effective return: 33.8% CAGR (tax benefits included)"
         ]
