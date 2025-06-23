@@ -59,7 +59,6 @@ const SCHEMA_ORG = {
 };
 
 function calculateNpsMaturity(P: number, r: number, n: number) {
-  // P = monthly contribution, r = annual return %, n = years
   const months = n * 12;
   const monthlyRate = r / 12 / 100;
   if (monthlyRate === 0) return P * months;
