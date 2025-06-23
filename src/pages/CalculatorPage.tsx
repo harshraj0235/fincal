@@ -20,6 +20,7 @@ import { LoanRefinanceCalculator } from '../calculators/LoanRefinanceCalculator'
 import { LoanAffordabilityCalculator } from '../calculators/LoanAffordabilityCalculator';
 import { LoanTenureConverter } from '../calculators/LoanTenureConverter';
 import { CreditCardEmiCalculator } from '../calculators/CreditCardEmiCalculator';
+import { GoldLoanEmiCalculator } from '../calculators/GoldLoanEmiCalculator';
 import { MutualFundReturnsCalculator } from '../calculators/MutualFundReturnsCalculator';
 import { MutualFundCostCalculator } from '../calculators/MutualFundCostCalculator';
 import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalculator';
@@ -218,6 +219,8 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <LoanTenureConverter />;
       case 'credit-card-emi-calculator':
         return <CreditCardEmiCalculator />;
+      case 'gold-loan-emi-calculator':
+        return <GoldLoanEmiCalculator />;  
       
         
       // Investment Calculators
