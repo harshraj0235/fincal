@@ -62,25 +62,25 @@ export const BlogPost: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
       {/* Sticky Category Bar & Search */}
-      <div className="sticky top-[56px] z-[20] bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100 mb-6">
-        <div className="overflow-x-auto scrollbar-hide py-2">
-          <div className="flex gap-3 px-2 w-max min-w-full">
+      <div className="sticky top-[48px] z-[20] bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100 mb-4">
+        <div className="overflow-x-auto scrollbar-hide py-1">
+          <div className="flex gap-2 sm:gap-3 px-1 w-max min-w-full">
             <form onSubmit={handleSearch} className="flex items-center gap-2">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 h-5 w-5" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 h-4 sm:h-5 w-4 sm:w-5" />
                 <input
                   type="text"
                   placeholder="Search articles..."
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 rounded-full text-base bg-white border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-primary-300 shadow-sm min-w-[180px]"
+                  className="pl-10 pr-3 py-2 sm:py-3 rounded-full text-sm sm:text-base bg-white border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-primary-300 shadow-sm min-w-[120px] sm:min-w-[180px]"
                   aria-label="Search Blog Articles"
                 />
               </div>
             </form>
             <button
               onClick={() => navigate('/blog')}
-              className="flex items-center px-5 py-2.5 rounded-full font-semibold text-base whitespace-nowrap transition-all duration-200 border shadow-sm bg-primary-600 text-white"
+              className="flex items-center px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-200 border shadow-sm bg-primary-600 text-white"
             >
               All
             </button>
@@ -88,16 +88,16 @@ export const BlogPost: React.FC = () => {
               <button
                 key={category}
                 onClick={() => handleCategoryClick(category)}
-                className="flex items-center px-5 py-2.5 rounded-full font-semibold text-base whitespace-nowrap transition-all duration-200 border shadow-sm bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200"
+                className="flex items-center px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-200 border shadow-sm bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200"
               >
-                {categoryIcons[category] || <Tag className="h-5 w-5 mr-1 text-gray-400" />} {category}
+                {categoryIcons[category] || <Tag className="h-4 sm:h-5 w-4 sm:w-5 mr-1 text-gray-400" />} {category}
               </button>
             ))}
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div className="mb-6">
           <button 
             onClick={() => navigate('/blog')} 
             className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
@@ -106,27 +106,25 @@ export const BlogPost: React.FC = () => {
             <span>Back to Blog</span>
           </button>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
             <article>
-              <div className="mb-8">
-                <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">{post.title}</h1>
-                
-                <div className="flex flex-wrap items-center text-sm text-neutral-500 mb-6">
-                  <div className="flex items-center mr-6">
-                    <User className="h-4 w-4 mr-1" />
+              <div className="mb-6">
+                <h1 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-3 sm:mb-4">{post.title}</h1>
+                <div className="flex flex-wrap items-center text-xs sm:text-sm text-neutral-500 mb-4 sm:mb-6 gap-x-4 gap-y-2">
+                  <div className="flex items-center">
+                    <User className="h-3 sm:h-4 w-3 sm:w-4 mr-1" />
                     <span>{post.author}</span>
                   </div>
-                  <div className="flex items-center mr-6">
-                    <Calendar className="h-4 w-4 mr-1" />
+                  <div className="flex items-center">
+                    <Calendar className="h-3 sm:h-4 w-3 sm:w-4 mr-1" />
                     <span>{post.date}</span>
                   </div>
-                  <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
+                  <div className="flex flex-wrap gap-1 mt-2 sm:mt-0">
                     {post.categories.map(category => (
                       <span 
                         key={category} 
-                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
+                        className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
                       >
                         <Tag className="h-3 w-3 mr-1" />
                         {category}
@@ -134,68 +132,65 @@ export const BlogPost: React.FC = () => {
                     ))}
                   </div>
                 </div>
-                
-                <div className="rounded-xl overflow-hidden mb-8">
+                <div className="rounded-xl overflow-hidden mb-6">
                   <img 
                     src={post.coverImage} 
                     alt={post.title} 
-                    className="w-full h-auto"
+                    className="w-full h-auto max-h-56 sm:max-h-96 object-cover"
                   />
                 </div>
               </div>
-              
-              <div className="prose prose-lg max-w-none">
+              <div className="prose prose-sm sm:prose-lg max-w-none">
                 {post.content.map((section, index) => (
-                  <div key={index} className="mb-8">
+                  <div key={index} className="mb-6 sm:mb-8">
                     {section.type === 'paragraph' && <p>{section.content}</p>}
-                    {section.type === 'heading' && <h2 className="text-2xl font-bold mt-8 mb-4">{section.content}</h2>}
-                    {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{section.content}</h3>}
+                    {section.type === 'heading' && <h2 className="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">{section.content}</h2>}
+                    {section.type === 'subheading' && <h3 className="text-lg sm:text-xl font-semibold mt-4 sm:mt-6 mb-2 sm:mb-3">{section.content}</h3>}
                     {section.type === 'list' && (
-                      <ul className="list-disc pl-6 space-y-2">
+                      <ul className="list-disc pl-5 sm:pl-6 space-y-1 sm:space-y-2">
                         {section.items?.map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
                       </ul>
                     )}
                     {section.type === 'image' && (
-                      <figure className="my-6">
+                      <figure className="my-4 sm:my-6">
                         <img 
                           src={section.url} 
                           alt={section.caption || ''} 
                           className="w-full rounded-lg"
                         />
                         {section.caption && (
-                          <figcaption className="text-sm text-neutral-500 text-center mt-2">
+                          <figcaption className="text-xs sm:text-sm text-neutral-500 text-center mt-1 sm:mt-2">
                             {section.caption}
                           </figcaption>
                         )}
                       </figure>
                     )}
                     {section.type === 'quote' && (
-                      <blockquote className="border-l-4 border-primary-500 pl-4 py-2 my-6 text-neutral-700 italic">
+                      <blockquote className="border-l-4 border-primary-500 pl-3 sm:pl-4 py-2 my-4 sm:my-6 text-neutral-700 italic">
                         {section.content}
                         {section.author && (
-                          <footer className="text-sm text-neutral-500 mt-2">— {section.author}</footer>
+                          <footer className="text-xs sm:text-sm text-neutral-500 mt-1 sm:mt-2">— {section.author}</footer>
                         )}
                       </blockquote>
                     )}
                   </div>
                 ))}
               </div>
-              
-              <div className="border-t border-b border-neutral-200 py-6 my-8">
-                <div className="flex justify-between items-center">
+              <div className="border-t border-b border-neutral-200 py-4 sm:py-6 my-6 sm:my-8">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                   <div>
-                    <h4 className="text-sm font-medium text-neutral-700 mb-2">Share this article</h4>
-                    <div className="flex space-x-4">
-                      <button className="text-neutral-600 hover:text-[#1877F2]">
-                        <Facebook className="h-5 w-5" />
+                    <h4 className="text-xs sm:text-sm font-medium text-neutral-700 mb-1 sm:mb-2">Share this article</h4>
+                    <div className="flex space-x-3 sm:space-x-4">
+                      <button className="text-neutral-600 hover:text-[#1877F2] p-2 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors">
+                        <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
                       </button>
-                      <button className="text-neutral-600 hover:text-[#1DA1F2]">
-                        <Twitter className="h-5 w-5" />
+                      <button className="text-neutral-600 hover:text-[#1DA1F2] p-2 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors">
+                        <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />
                       </button>
-                      <button className="text-neutral-600 hover:text-[#0A66C2]">
-                        <Linkedin className="h-5 w-5" />
+                      <button className="text-neutral-600 hover:text-[#0A66C2] p-2 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors">
+                        <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                       </button>
                     </div>
                   </div>
@@ -207,7 +202,6 @@ export const BlogPost: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
               <div className="bg-neutral-50 rounded-xl p-6 mb-8">
                 <div className="flex items-center mb-4">
                   <div className="h-12 w-12 rounded-full bg-neutral-300 overflow-hidden mr-4">
