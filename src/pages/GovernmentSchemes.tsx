@@ -135,9 +135,9 @@ const GovernmentSchemes: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8">
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <div className="bg-white p-4 rounded-lg shadow-sm border">
             <div className="flex items-center gap-2">
               <BookOpen className="h-5 w-5 text-green-600" />
@@ -174,15 +174,13 @@ const GovernmentSchemes: React.FC = () => {
 
         {/* Filters */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
             <h2 className="text-2xl font-bold text-gray-900">योजनाएं ब्राउज़ करें</h2>
             <div className="flex items-center gap-4">
               <select
                 value={selectedStatus ?? ''}
-                onChange={(e) =>
-                  setSelectedStatus(e.target.value || null)
-                }
-                className="px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-green-500"
+                onChange={(e) => setSelectedStatus(e.target.value || null)}
+                className="px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-green-500 text-base"
                 aria-label="Filter by Status"
               >
                 <option value="">सभी स्थिति</option>
@@ -195,14 +193,10 @@ const GovernmentSchemes: React.FC = () => {
             </div>
           </div>
           {/* Category Pills */}
-          <div className="flex flex-wrap gap-3 mb-6">
+          <div className="flex flex-wrap gap-2 mb-6">
             <button
               onClick={() => setSelectedCategory(null)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                selectedCategory === null
-                  ? 'bg-green-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-              }`}
+              className={`px-4 py-2 rounded-full font-medium transition-all duration-200 text-sm ${selectedCategory === null ? 'bg-green-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'}`}
               aria-pressed={selectedCategory === null}
             >
               सभी श्रेणियां ({schemes.length})
@@ -211,11 +205,7 @@ const GovernmentSchemes: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.name)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-200 flex items-center gap-2 ${
-                  selectedCategory === cat.name
-                    ? 'bg-green-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                }`}
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-200 flex items-center gap-2 text-sm ${selectedCategory === cat.name ? 'bg-green-600 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'}`}
                 aria-pressed={selectedCategory === cat.name}
               >
                 <Filter className="h-4 w-4" />
@@ -226,18 +216,18 @@ const GovernmentSchemes: React.FC = () => {
         </div>
 
         {/* Schemes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredSchemes.map((scheme) => (
             <Link
               key={scheme.id}
               to={`/government-schemes/${scheme.slug}`}
-              className="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               <div className="relative">
                 <img
                   src={scheme.coverImage}
                   alt={scheme.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div className="absolute top-3 left-3">
@@ -267,7 +257,7 @@ const GovernmentSchemes: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-4 sm:p-6 flex-1 flex flex-col">
                 <div className="flex items-center gap-2 text-xs text-gray-500 mb-3">
                   <Calendar className="h-3 w-3" />
                   {new Date(scheme.launchDate).toLocaleDateString('hi-IN', {
@@ -315,12 +305,8 @@ const GovernmentSchemes: React.FC = () => {
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Search className="h-8 w-8 text-gray-400" />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
-                कोई योजना नहीं मिली
-              </h3>
-              <p className="text-gray-500 mb-4">
-                अपने खोज शब्दों को बदलें या सभी श्रेणियां देखें
-              </p>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">कोई योजना नहीं मिली</h3>
+              <p className="text-gray-500 mb-4">अपने खोज शब्दों को बदलें या सभी श्रेणियां देखें</p>
               <button
                 onClick={() => {
                   setSearchTerm('');
@@ -337,7 +323,7 @@ const GovernmentSchemes: React.FC = () => {
 
         {/* Results Count */}
         {filteredSchemes.length > 0 && (
-          <div className="mt-8 text-center text-gray-500">
+          <div className="mt-8 text-center text-gray-500 text-sm">
             {filteredSchemes.length} में से {filteredSchemes.length} योजनाएं दिखा रहा है
           </div>
         )}

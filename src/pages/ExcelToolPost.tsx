@@ -53,22 +53,22 @@ const ExcelToolPost: React.FC = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-2 md:px-0 py-8">
+    <div className="max-w-3xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
       {/* Back Button */}
-      <button onClick={() => navigate('/exceltool')} className="flex items-center text-gray-600 mb-6 hover:underline">
+      <button onClick={() => navigate('/exceltool')} className="flex items-center text-gray-600 mb-6 hover:underline text-base sm:text-lg">
         <ArrowLeft className="h-4 w-4 mr-1" /> Back to Excel Tool
       </button>
 
       {/* Cover Image */}
       <div className="relative mb-6">
-        <img src={post.coverImage} alt={post.title} className="w-full h-64 md:h-80 object-cover rounded-xl shadow" />
+        <img src={post.coverImage} alt={post.title} className="w-full h-48 sm:h-64 md:h-80 object-cover rounded-xl shadow" />
         {post.downloadLink && (
           <a
             href={post.downloadLink}
             target="_blank"
             rel="noopener noreferrer"
             download
-            className="absolute bottom-4 right-4 bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full shadow-lg flex items-center gap-2 z-10"
+            className="absolute bottom-4 right-4 bg-green-600 hover:bg-green-700 text-white px-4 sm:px-5 py-2 rounded-full shadow-lg flex items-center gap-2 z-10 text-xs sm:text-base"
           >
             <Download className="h-4 w-4" /> Download Excel
           </a>
@@ -76,13 +76,13 @@ const ExcelToolPost: React.FC = () => {
       </div>
 
       {/* Title & Meta */}
-      <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">{post.title}</h1>
-      <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-500">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 leading-tight">{post.title}</h1>
+      <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6 text-xs sm:text-sm text-gray-500">
         {post.authorImage && (
-          <img src={post.authorImage} alt={post.author} className="h-10 w-10 rounded-full border object-cover" />
+          <img src={post.authorImage} alt={post.author} className="h-8 sm:h-10 w-8 sm:w-10 rounded-full border object-cover" />
         )}
         <div>
-          <div className="font-semibold text-gray-800">{post.author}</div>
+          <div className="font-semibold text-gray-800 text-xs sm:text-sm">{post.author}</div>
           {post.authorTitle && <div className="text-xs text-gray-500">{post.authorTitle}</div>}
         </div>
         <div className="flex items-center gap-1">
@@ -103,14 +103,14 @@ const ExcelToolPost: React.FC = () => {
 
       {/* Table of Contents */}
       {toc.length > 2 && (
-        <div className="mb-8 bg-gray-50 border-l-4 border-blue-500 p-4 rounded">
-          <div className="font-semibold mb-2 text-blue-700">Table of Contents</div>
+        <div className="mb-8 bg-gray-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded">
+          <div className="font-semibold mb-2 text-blue-700 text-sm sm:text-base">Table of Contents</div>
           <ul className="space-y-1">
             {toc.map(item => item && (
               <li key={item.idx}>
                 <a
                   href={`#section-${item.idx}`}
-                  className="text-blue-700 hover:underline text-sm"
+                  className="text-blue-700 hover:underline text-xs sm:text-sm"
                   onClick={e => {
                     e.preventDefault();
                     const el = document.getElementById(`section-${item.idx}`);
@@ -126,7 +126,7 @@ const ExcelToolPost: React.FC = () => {
       )}
 
       {/* Blog Content */}
-      <article className="prose prose-lg max-w-none">
+      <article className="prose prose-base sm:prose-lg max-w-none">
         {post.content.map((section, idx) => {
           if (section.type === 'paragraph') return <p key={idx} id={`section-${idx}`}>{section.content}</p>;
           if (section.type === 'heading') return <h2 key={idx} id={`section-${idx}`}>{section.content}</h2>;
@@ -134,14 +134,14 @@ const ExcelToolPost: React.FC = () => {
           if (section.type === 'list') return <ul key={idx} id={`section-${idx}`}>{section.items?.map((item, i) => <li key={i}>{item}</li>)}</ul>;
           if (section.type === 'image') return (
             <figure key={idx} id={`section-${idx}`} className="my-8">
-              <img src={section.url} alt={section.caption || ''} className="rounded-lg shadow" />
-              {section.caption && <figcaption className="text-center text-gray-500 text-sm mt-2">{section.caption}</figcaption>}
+              <img src={section.url} alt={section.caption || ''} className="rounded-lg shadow max-h-60 sm:max-h-80 mx-auto" />
+              {section.caption && <figcaption className="text-center text-gray-500 text-xs sm:text-sm mt-2">{section.caption}</figcaption>}
             </figure>
           );
           if (section.type === 'quote') return (
-            <blockquote key={idx} id={`section-${idx}`} className="border-l-4 border-blue-400 pl-4 italic text-lg my-6">
+            <blockquote key={idx} id={`section-${idx}`} className="border-l-4 border-blue-400 pl-4 italic text-base sm:text-lg my-6">
               “{section.content}”
-              {section.author && <div className="text-right text-sm text-blue-700 mt-2">— {section.author}</div>}
+              {section.author && <div className="text-right text-xs sm:text-sm text-blue-700 mt-2">— {section.author}</div>}
             </blockquote>
           );
           return null;
@@ -149,14 +149,14 @@ const ExcelToolPost: React.FC = () => {
       </article>
 
       {/* Related Articles */}
-      <div className="mt-16">
-        <h3 className="font-semibold mb-4 text-xl">Related Articles</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mt-12 sm:mt-16">
+        <h3 className="font-semibold mb-4 text-lg sm:text-xl">Related Articles</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {relatedPosts.map(rp => (
             <Link key={rp.id} to={`/exceltool/${rp.slug}`} className="block bg-white border rounded-lg shadow hover:shadow-lg transition overflow-hidden">
-              <img src={rp.coverImage} alt={rp.title} className="h-32 w-full object-cover" />
+              <img src={rp.coverImage} alt={rp.title} className="h-24 sm:h-32 w-full object-cover" />
               <div className="p-3">
-                <div className="font-medium text-gray-900 line-clamp-2 mb-1">{rp.title}</div>
+                <div className="font-medium text-gray-900 line-clamp-2 mb-1 text-xs sm:text-base">{rp.title}</div>
                 <div className="text-xs text-gray-500 mb-1">{new Date(rp.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</div>
                 <div className="flex flex-wrap gap-1">
                   {rp.categories.slice(0, 2).map(cat => (
