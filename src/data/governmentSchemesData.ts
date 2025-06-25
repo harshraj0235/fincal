@@ -13990,7 +13990,7 @@ export const governmentSchemes: GovernmentScheme[] = [
     faqSchema: [
       {
         question: 'महिला उद्यमियों के लिए कौन से special benefits हैं?',
-        answer: 'महिला उद्यमियों को interest rate concessions, priority processing, skill development support, और mentorship programs म
+        answer: 'महिला उद्यमियों को interest rate concessions, priority processing, skill development support, और mentorship programs मिलते हैं।'
       },
       {
         question: 'क्या महिलाओं के लिए अलग से कोई MUDRA scheme है?',
