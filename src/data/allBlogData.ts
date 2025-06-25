@@ -5,7 +5,8 @@ export const allBlogPosts = [...blogPosts0, ...blogPosts1];
 
 // If you have getBlogPostBySlug and getRelatedPosts, re-export or adjust them to use allBlogPosts:
 export function getBlogPostBySlug(slug: string) {
-  return allBlogPosts.find(post => post.slug === slug);
+  const normalizedSlug = slug.trim().toLowerCase();
+  return allBlogPosts.find(post => post.slug.trim().toLowerCase() === normalizedSlug);
 }
 
 export function getRelatedPosts(slug: string, count: number) {
