@@ -43,23 +43,25 @@ export const Blog: React.FC = () => {
       </div>
 
       {/* Category Bar - horizontally scrollable on mobile */}
-      <div className="mb-8 overflow-x-auto scrollbar-hide">
-        <div className="flex gap-2 sm:gap-3 md:gap-4 w-max min-w-full">
-          <button
-            onClick={() => setSelectedCategory(null)}
-            className={`flex items-center px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-200 border ${selectedCategory === null ? 'bg-primary-600 text-white shadow' : 'bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200'}`}
-          >
-            All
-          </button>
-          {categories.map(category => (
+      <div className="mb-8 sticky top-[56px] z-[20] bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100">
+        <div className="overflow-x-auto scrollbar-hide py-2">
+          <div className="flex gap-3 px-2 w-max min-w-full">
             <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`flex items-center px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-200 border ${selectedCategory === category ? 'bg-primary-600 text-white shadow' : 'bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200'}`}
+              onClick={() => setSelectedCategory(null)}
+              className={`flex items-center px-5 py-2.5 rounded-full font-semibold text-base whitespace-nowrap transition-all duration-200 border shadow-sm ${selectedCategory === null ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200'}`}
             >
-              {categoryIcons[category] || <Tag className="h-4 w-4 mr-1 text-gray-400" />} {category}
+              All
             </button>
-          ))}
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`flex items-center px-5 py-2.5 rounded-full font-semibold text-base whitespace-nowrap transition-all duration-200 border shadow-sm ${selectedCategory === category ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200'}`}
+              >
+                {categoryIcons[category] || <Tag className="h-5 w-5 mr-1 text-gray-400" />} {category}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
