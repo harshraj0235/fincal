@@ -18,6 +18,8 @@ interface BlogPost {
 
 const allBlogPosts: BlogPost[] = [...oldPosts, ...newPosts];
 
+console.log('DEBUG: allBlogPosts count:', allBlogPosts.length, 'First post:', allBlogPosts[0]?.title);
+
 const categoryIcons: Record<string, JSX.Element> = {
   'All': <Tag className="h-5 w-5" />, // for bottom nav
   'Investing': <TrendingUp className="h-5 w-5 text-blue-600" />,
