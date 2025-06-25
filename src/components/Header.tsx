@@ -73,7 +73,7 @@ export const Header: React.FC = () => {
 
   return (
     <header 
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-[999] pointer-events-auto transition-all duration-300 ${
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' : 'bg-white py-3 md:py-4'
       }`}
     >
@@ -209,14 +209,14 @@ export const Header: React.FC = () => {
           <div className="flex lg:hidden items-center space-x-2">
             <button 
               onClick={() => setSearchOpen(true)}
-              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation"
+              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation z-[1000] pointer-events-auto"
               aria-label="Search"
             >
               <Search className="h-5 w-5" />
             </button>
             <button 
               onClick={handleOpenMobileMenu}
-              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation"
+              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation z-[1000] pointer-events-auto"
               aria-label="Open menu"
             >
               <Menu className="h-6 w-6" />
