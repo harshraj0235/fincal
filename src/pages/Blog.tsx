@@ -1,20 +1,15 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag, Filter, X } from 'lucide-react';
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const allBlogPosts = [...oldPosts, ...newPosts];
 
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
 
   // Get unique categories
   const categories = Array.from(
@@ -33,6 +28,7 @@ export const Blog: React.FC = () => {
     return matchesSearch && matchesCategory;
   });
 
+  // Filter sidebar/modal content
   const FilterContent = () => (
     <div className="space-y-6">
       <div>
@@ -41,7 +37,7 @@ export const Blog: React.FC = () => {
           <button
             onClick={() => {
               setSelectedCategory(null);
-              setIsFilterOpen(false);
+              setShowFilter(false);
             }}
             className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
               selectedCategory === null 
@@ -56,7 +52,7 @@ export const Blog: React.FC = () => {
               key={category}
               onClick={() => {
                 setSelectedCategory(category);
-                setIsFilterOpen(false);
+                setShowFilter(false);
               }}
               className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                 selectedCategory === category 
@@ -70,37 +66,33 @@ export const Blog: React.FC = () => {
         </div>
       </div>
 
-      <Card className="bg-blue-50 border-blue-200">
-        <CardContent className="p-4">
-          <h3 className="font-semibold text-blue-900 mb-2">Government Schemes</h3>
-          <p className="text-sm text-blue-700 mb-3">
-            Explore comprehensive guides on government financial schemes.
-          </p>
-          <Link 
-            to="/blog/category/government-schemes" 
-            className="text-sm font-medium text-blue-700 hover:text-blue-800 flex items-center gap-1"
-          >
-            View all guides
-            <ArrowRight className="h-3 w-3" />
-          </Link>
-        </CardContent>
-      </Card>
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <h3 className="font-semibold text-blue-900 mb-2">Government Schemes</h3>
+        <p className="text-sm text-blue-700 mb-3">
+          Explore comprehensive guides on government financial schemes.
+        </p>
+        <Link 
+          to="/blog/category/government-schemes" 
+          className="text-sm font-medium text-blue-700 hover:text-blue-800 flex items-center gap-1"
+        >
+          View all guides
+          <ArrowRight className="h-3 w-3" />
+        </Link>
+      </div>
 
-      <Card className="bg-green-50 border-green-200">
-        <CardContent className="p-4">
-          <h3 className="font-semibold text-green-900 mb-2">Write for Us</h3>
-          <p className="text-sm text-green-700 mb-3">
-            Share your financial expertise with our community.
-          </p>
-          <Link 
-            to="/blog/write" 
-            className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1"
-          >
-            Learn more
-            <ArrowRight className="h-3 w-3" />
-          </Link>
-        </CardContent>
-      </Card>
+      <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+        <h3 className="font-semibold text-green-900 mb-2">Write for Us</h3>
+        <p className="text-sm text-green-700 mb-3">
+          Share your financial expertise with our community.
+        </p>
+        <Link 
+          to="/blog/write" 
+          className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1"
+        >
+          Learn more
+          <ArrowRight className="h-3 w-3" />
+        </Link>
+      </div>
     </div>
   );
 
@@ -134,47 +126,25 @@ export const Blog: React.FC = () => {
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
-            
             {/* Mobile Filter Toggle */}
             <div className="sm:hidden">
-              <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="outline" className="w-full flex items-center gap-2">
-                    <Filter className="h-4 w-4" />
-                    Filters
-                    {selectedCategory && (
-                      <Badge variant="secondary" className="ml-2">
-                        {selectedCategory}
-                      </Badge>
-                    )}
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="left" className="w-80">
-                  <SheetHeader>
-                    <SheetTitle className="flex items-center justify-between">
-                      Filters
-                      <Button 
-                        variant="ghost" 
-                        size="sm"
-                        onClick={() => setIsFilterOpen(false)}
-                      >
-                        <X className="h-4 w-4" />
-                      </Button>
-                    </SheetTitle>
-                  </SheetHeader>
-                  <div className="mt-6">
-                    <FilterContent />
-                  </div>
-                </SheetContent>
-              </Sheet>
+              <button
+                className="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-700"
+                onClick={() => setShowFilter(true)}
+              >
+                <Filter className="h-4 w-4" />
+                Filters
+                {selectedCategory && (
+                  <span className="ml-2 px-2 py-0.5 bg-gray-100 text-xs rounded-full">{selectedCategory}</span>
+                )}
+              </button>
             </div>
           </div>
-          
           {/* Active Filters */}
           {(selectedCategory || searchTerm) && (
             <div className="flex flex-wrap gap-2 mt-4">
               {selectedCategory && (
-                <Badge variant="secondary" className="flex items-center gap-1">
+                <span className="inline-flex items-center gap-1 bg-gray-200 px-2 py-1 rounded text-xs">
                   {selectedCategory}
                   <button
                     onClick={() => setSelectedCategory(null)}
@@ -182,10 +152,10 @@ export const Blog: React.FC = () => {
                   >
                     <X className="h-3 w-3" />
                   </button>
-                </Badge>
+                </span>
               )}
               {searchTerm && (
-                <Badge variant="secondary" className="flex items-center gap-1">
+                <span className="inline-flex items-center gap-1 bg-gray-200 px-2 py-1 rounded text-xs">
                   Search: "{searchTerm}"
                   <button
                     onClick={() => setSearchTerm('')}
@@ -193,11 +163,27 @@ export const Blog: React.FC = () => {
                   >
                     <X className="h-3 w-3" />
                   </button>
-                </Badge>
+                </span>
               )}
             </div>
           )}
         </div>
+
+        {/* Filter Modal (mobile only) */}
+        {showFilter && (
+          <div className="fixed inset-0 z-40 bg-black/40 flex justify-start sm:hidden">
+            <div className="bg-white w-80 max-w-full h-full p-6 overflow-y-auto shadow-lg relative animate-slide-in-left">
+              <button
+                className="absolute top-4 right-4 text-gray-500 hover:text-red-500"
+                onClick={() => setShowFilter(false)}
+              >
+                <X className="h-5 w-5" />
+              </button>
+              <FilterContent />
+            </div>
+            <div className="flex-1" onClick={() => setShowFilter(false)} />
+          </div>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Desktop Sidebar */}
@@ -210,20 +196,18 @@ export const Blog: React.FC = () => {
           {/* Main Content */}
           <div className="lg:col-span-3">
             {filteredPosts.length === 0 ? (
-              <Card className="text-center py-12">
-                <CardContent>
-                  <p className="text-lg text-gray-600 mb-4">No articles found matching your criteria.</p>
-                  <Button 
-                    onClick={() => {
-                      setSearchTerm('');
-                      setSelectedCategory(null);
-                    }}
-                    variant="outline"
-                  >
-                    Clear filters
-                  </Button>
-                </CardContent>
-              </Card>
+              <div className="bg-white rounded-lg shadow p-8 text-center">
+                <p className="text-lg text-gray-600 mb-4">No articles found matching your criteria.</p>
+                <button 
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedCategory(null);
+                  }}
+                  className="px-4 py-2 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
+                >
+                  Clear filters
+                </button>
+              </div>
             ) : (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
@@ -231,114 +215,108 @@ export const Blog: React.FC = () => {
                     <Link 
                       key={post.id} 
                       to={`/blog/${post.slug}`}
-                      className="group"
+                      className="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow"
                     >
-                      <Card className="h-full hover:shadow-lg transition-shadow duration-200">
-                        <div className="h-48 overflow-hidden rounded-t-lg">
-                          <img 
-                            src={post.coverImage} 
-                            alt={post.title} 
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                          />
+                      <div className="h-48 overflow-hidden rounded-t-lg">
+                        <img 
+                          src={post.coverImage} 
+                          alt={post.title} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                        />
+                      </div>
+                      <div className="p-5">
+                        <div className="flex items-center text-xs text-gray-500 mb-3">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          <span>{post.date}</span>
+                          <span className="mx-2">•</span>
+                          <User className="h-3 w-3 mr-1" />
+                          <span>{post.author}</span>
                         </div>
-                        <CardContent className="p-5">
-                          <div className="flex items-center text-xs text-gray-500 mb-3">
-                            <Calendar className="h-3 w-3 mr-1" />
-                            <span>{post.date}</span>
-                            <span className="mx-2">•</span>
-                            <User className="h-3 w-3 mr-1" />
-                            <span>{post.author}</span>
-                          </div>
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                            {post.title}
-                          </h3>
-                          <p className="text-gray-600 text-sm mb-3 line-clamp-3">{post.excerpt}</p>
-                          <div className="flex flex-wrap gap-2">
-                            {post.categories.slice(0, 2).map(category => (
-                              <Badge key={category} variant="secondary" className="text-xs">
-                                {category}
-                              </Badge>
-                            ))}
-                          </div>
-                        </CardContent>
-                      </Card>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-3 line-clamp-3">{post.excerpt}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {post.categories.slice(0, 2).map(category => (
+                            <span key={category} className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs">
+                              {category}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </Link>
                   ))}
                 </div>
 
                 {/* Government Schemes Section */}
-                <Card className="bg-green-50 border-green-200 mb-12">
-                  <CardContent className="p-6">
-                    <h2 className="text-2xl font-bold text-green-900 mb-4">Government Scheme Guides</h2>
-                    <p className="text-green-700 mb-6">
-                      Comprehensive guides to help you understand and maximize benefits from various government financial schemes in India.
-                    </p>
+                <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-12">
+                  <h2 className="text-2xl font-bold text-green-900 mb-4">Government Scheme Guides</h2>
+                  <p className="text-green-700 mb-6">
+                    Comprehensive guides to help you understand and maximize benefits from various government financial schemes in India.
+                  </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                      {[
-                        {
-                          title: "Sukanya Samriddhi Yojana: Complete Guide",
-                          description: "Everything you need to know about SSY - eligibility, benefits, tax advantages, and how to maximize returns.",
-                          link: "/blog/sukanya-samriddhi-yojana-guide"
-                        },
-                        {
-                          title: "National Pension System: Tier 1 vs Tier 2",
-                          description: "Detailed comparison of NPS Tier 1 and Tier 2 accounts - features, benefits, tax implications, and investment strategies.",
-                          link: "/blog/nps-tier1-vs-tier2-comparison"
-                        },
-                        {
-                          title: "Post Office Savings Schemes: Which One is Right for You?",
-                          description: "Compare KVP, NSC, SCSS, MIS, and other post office schemes to find the best option for your financial goals.",
-                          link: "/blog/post-office-savings-schemes-comparison"
-                        },
-                        {
-                          title: "PM Vaya Vandana Yojana: Pension Scheme for Senior Citizens",
-                          description: "A detailed look at PMVVY - benefits, eligibility, comparison with other senior citizen schemes, and application process.",
-                          link: "/blog/pm-vaya-vandana-yojana-guide"
-                        }
-                      ].map((scheme, index) => (
-                        <Card key={index} className="bg-white">
-                          <CardContent className="p-4">
-                            <h3 className="font-semibold text-gray-900 mb-2">{scheme.title}</h3>
-                            <p className="text-sm text-gray-600 mb-3 line-clamp-2">{scheme.description}</p>
-                            <Link to={scheme.link} className="text-xs text-green-600 font-medium hover:underline">
-                              Read More →
-                            </Link>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    {[
+                      {
+                        title: "Sukanya Samriddhi Yojana: Complete Guide",
+                        description: "Everything you need to know about SSY - eligibility, benefits, tax advantages, and how to maximize returns.",
+                        link: "/blog/sukanya-samriddhi-yojana-guide"
+                      },
+                      {
+                        title: "National Pension System: Tier 1 vs Tier 2",
+                        description: "Detailed comparison of NPS Tier 1 and Tier 2 accounts - features, benefits, tax implications, and investment strategies.",
+                        link: "/blog/nps-tier1-vs-tier2-comparison"
+                      },
+                      {
+                        title: "Post Office Savings Schemes: Which One is Right for You?",
+                        description: "Compare KVP, NSC, SCSS, MIS, and other post office schemes to find the best option for your financial goals.",
+                        link: "/blog/post-office-savings-schemes-comparison"
+                      },
+                      {
+                        title: "PM Vaya Vandana Yojana: Pension Scheme for Senior Citizens",
+                        description: "A detailed look at PMVVY - benefits, eligibility, comparison with other senior citizen schemes, and application process.",
+                        link: "/blog/pm-vaya-vandana-yojana-guide"
+                      }
+                    ].map((scheme, index) => (
+                      <div key={index} className="bg-white rounded-lg p-4 shadow">
+                        <h3 className="font-semibold text-gray-900 mb-2">{scheme.title}</h3>
+                        <p className="text-sm text-gray-600 mb-3 line-clamp-2">{scheme.description}</p>
+                        <Link to={scheme.link} className="text-xs text-green-600 font-medium hover:underline">
+                          Read More →
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
 
-                    <div className="text-center">
-                      <Link 
-                        to="/blog/category/government-schemes"
-                        className="inline-flex items-center text-green-700 hover:text-green-800 font-medium"
-                      >
-                        View all government scheme guides
-                        <ArrowRight className="h-4 w-4 ml-1" />
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
+                  <div className="text-center">
+                    <Link 
+                      to="/blog/category/government-schemes"
+                      className="inline-flex items-center text-green-700 hover:text-green-800 font-medium"
+                    >
+                      View all government scheme guides
+                      <ArrowRight className="h-4 w-4 ml-1" />
+                    </Link>
+                  </div>
+                </div>
 
-                {/* Pagination */}
+                {/* Pagination (static) */}
                 <div className="flex justify-center">
                   <nav className="inline-flex rounded-lg shadow-sm" aria-label="Pagination">
-                    <Button variant="outline" className="rounded-r-none">
+                    <button className="px-4 py-2 rounded-l border border-gray-300 bg-white text-gray-500 hover:bg-gray-100">
                       Previous
-                    </Button>
-                    <Button variant="outline" className="rounded-none border-l-0 bg-blue-50 text-blue-600">
+                    </button>
+                    <button className="px-4 py-2 border-t border-b border-gray-300 bg-blue-50 text-blue-600 font-bold">
                       1
-                    </Button>
-                    <Button variant="outline" className="rounded-none border-l-0">
+                    </button>
+                    <button className="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-100">
                       2
-                    </Button>
-                    <Button variant="outline" className="rounded-none border-l-0">
+                    </button>
+                    <button className="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-100">
                       3
-                    </Button>
-                    <Button variant="outline" className="rounded-l-none border-l-0">
+                    </button>
+                    <button className="px-4 py-2 rounded-r border border-gray-300 bg-white text-gray-500 hover:bg-gray-100">
                       Next
-                    </Button>
+                    </button>
                   </nav>
                 </div>
               </>
