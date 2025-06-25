@@ -13,6 +13,7 @@ export const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const categoriesRef = useRef<HTMLDivElement>(null);
+  const justOpenedMenu = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,11 +24,16 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Only close mobile menu on actual route change, not on every location change
   useEffect(() => {
+    if (justOpenedMenu.current) {
+      justOpenedMenu.current = false;
+      return;
+    }
     setMobileMenuOpen(false);
     setSearchOpen(false);
     setCategoriesOpen(false);
-  }, [location]);
+  }, [location.pathname]);
   
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -57,6 +63,12 @@ export const Header: React.FC = () => {
   const handleCalculatorClick = (calculatorId: string) => {
     navigate(`/calculators/${calculatorId}`);
     setCategoriesOpen(false);
+  };
+
+  // Fix: When opening the mobile menu, set a flag to prevent immediate closing
+  const handleOpenMobileMenu = () => {
+    justOpenedMenu.current = true;
+    setMobileMenuOpen(true);
   };
 
   return (
@@ -203,7 +215,7 @@ export const Header: React.FC = () => {
               <Search className="h-5 w-5" />
             </button>
             <button 
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={handleOpenMobileMenu}
               className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation"
               aria-label="Open menu"
             >
