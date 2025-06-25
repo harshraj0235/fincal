@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, User, Tag, TrendingUp, BookOpen, DollarSign, Shield, X } from 'lucide-react';
+import { Search, Calendar, User, Tag, TrendingUp, BookOpen, DollarSign, Shield } from 'lucide-react';
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
 
@@ -17,7 +17,6 @@ const categoryIcons: Record<string, JSX.Element> = {
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   // Get unique categories
   const categories = Array.from(
@@ -37,19 +36,19 @@ export const Blog: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-2">Finance Blog</h1>
-        <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+        <h1 className="text-2xl sm:text-4xl font-bold text-neutral-900 mb-2">Finance Blog</h1>
+        <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto">
           Expert insights, tips, and guides to help you make better financial decisions
         </p>
       </div>
 
-      {/* Sticky Category Bar - always visible, with shadow and separation */}
-      <div className="mb-8 sticky top-[56px] z-[30] bg-white/95 backdrop-blur-md shadow-md border-b border-neutral-100">
-        <div className="overflow-x-auto scrollbar-hide py-2">
-          <div className="flex gap-3 px-2 w-max min-w-full">
+      {/* Category Bar - horizontally scrollable on mobile */}
+      <div className="mb-6 sticky top-[48px] z-[20] bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100">
+        <div className="overflow-x-auto scrollbar-hide py-1">
+          <div className="flex gap-2 sm:gap-3 px-1 w-max min-w-full">
             <button
               onClick={() => setSelectedCategory(null)}
-              className={`flex items-center px-5 py-2.5 rounded-full font-semibold text-base whitespace-nowrap transition-all duration-200 border shadow-sm ${selectedCategory === null ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200'}`}
+              className={`flex items-center px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-200 border shadow-sm ${selectedCategory === null ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200'}`}
             >
               All
             </button>
@@ -57,61 +56,25 @@ export const Blog: React.FC = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`flex items-center px-5 py-2.5 rounded-full font-semibold text-base whitespace-nowrap transition-all duration-200 border shadow-sm ${selectedCategory === category ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200'}`}
+                className={`flex items-center px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-200 border shadow-sm ${selectedCategory === category ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700 hover:bg-neutral-100 border-neutral-200'}`}
               >
-                {categoryIcons[category] || <Tag className="h-5 w-5 mr-1 text-gray-400" />} {category}
+                {categoryIcons[category] || <Tag className="h-4 sm:h-5 w-4 sm:w-5 mr-1 text-gray-400" />} {category}
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Floating Search Button for Mobile */}
-      <button
-        className="fixed bottom-6 right-6 z-[40] bg-primary-600 text-white p-4 rounded-full shadow-lg lg:hidden flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-400"
-        onClick={() => setShowMobileSearch(true)}
-        aria-label="Open search"
-        style={{ display: showMobileSearch ? 'none' : 'flex' }}
-      >
-        <Search className="h-6 w-6" />
-      </button>
-
-      {/* Mobile Search Modal */}
-      {showMobileSearch && (
-        <div className="fixed inset-0 z-[50] bg-black/40 flex items-center justify-center lg:hidden">
-          <div className="bg-white rounded-xl w-full max-w-md mx-4 p-4 shadow-2xl relative">
-            <button
-              className="absolute top-3 right-3 text-neutral-500 hover:text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors"
-              onClick={() => setShowMobileSearch(false)}
-              aria-label="Close search"
-            >
-              <X className="h-5 w-5" />
-            </button>
-            <div className="mb-2">
-              <input
-                type="text"
-                placeholder="Search articles..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-4 pr-4 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-300 bg-white shadow"
-                aria-label="Search Blog Articles"
-                autoFocus
-              />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Desktop Search Bar (always visible) */}
-      <div className="mb-8 max-w-lg mx-auto hidden lg:block">
+      {/* Search Bar */}
+      <div className="mb-6 max-w-lg mx-auto">
         <div className="relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400 h-5 w-5" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 h-4 sm:h-5 w-4 sm:w-5" />
           <input
             type="text"
             placeholder="Search articles..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-12 pr-4 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-300 bg-white shadow"
+            className="w-full pl-10 pr-3 py-2 sm:py-4 rounded-lg text-sm sm:text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-300 bg-white shadow"
             aria-label="Search Blog Articles"
           />
         </div>
@@ -133,37 +96,37 @@ export const Blog: React.FC = () => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {filteredPosts.map(post => (
               <Link 
                 key={post.id} 
                 to={`/blog/${post.slug}`}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col h-full group"
+                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full border border-neutral-100"
               >
-                <div className="h-44 sm:h-48 overflow-hidden">
+                <div className="h-32 sm:h-44 overflow-hidden border-b border-neutral-100">
                   <img 
                     src={post.coverImage} 
                     alt={post.title} 
-                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform hover:scale-105"
                   />
                 </div>
-                <div className="p-4 sm:p-5 flex-1 flex flex-col">
-                  <div className="flex items-center text-xs text-neutral-500 mb-2">
+                <div className="p-3 sm:p-4 flex-1 flex flex-col">
+                  <div className="flex items-center text-xs text-neutral-500 mb-1 sm:mb-2">
                     <Calendar className="h-3 w-3 mr-1" />
                     <span>{post.date}</span>
-                    <span className="mx-2">•</span>
+                    <span className="mx-1 sm:mx-2">•</span>
                     <User className="h-3 w-3 mr-1" />
                     <span>{post.author}</span>
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-neutral-900 mb-1 line-clamp-2 group-hover:text-primary-700 transition-colors">{post.title}</h3>
-                  <p className="text-neutral-600 text-sm mb-2 line-clamp-3">{post.excerpt}</p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
+                  <h3 className="text-sm sm:text-base font-semibold text-neutral-900 mb-1 line-clamp-2">{post.title}</h3>
+                  <p className="text-neutral-600 text-xs sm:text-sm mb-1 sm:mb-2 line-clamp-3">{post.excerpt}</p>
+                  <div className="flex flex-wrap gap-1 sm:gap-2 mt-auto">
                     {post.categories.slice(0, 2).map(category => (
                       <span 
                         key={category} 
-                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
+                        className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
                       >
-                        {categoryIcons[category] || <Tag className="h-5 w-5 mr-1 text-gray-400" />} {category}
+                        {categoryIcons[category] || <Tag className="h-3 w-3 mr-1 text-gray-400" />} {category}
                       </span>
                     ))}
                   </div>
