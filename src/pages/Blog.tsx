@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, User, Tag, TrendingUp, BookOpen, DollarSign, Shield } from 'lucide-react';
+import { Search, Calendar, User, Tag, TrendingUp, BookOpen, DollarSign, Shield, X } from 'lucide-react';
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
 
@@ -17,6 +17,7 @@ const categoryIcons: Record<string, JSX.Element> = {
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   // Get unique categories
   const categories = Array.from(
@@ -42,8 +43,8 @@ export const Blog: React.FC = () => {
         </p>
       </div>
 
-      {/* Category Bar - horizontally scrollable on mobile */}
-      <div className="mb-8 sticky top-[56px] z-[20] bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100">
+      {/* Sticky Category Bar - always visible, with shadow and separation */}
+      <div className="mb-8 sticky top-[56px] z-[30] bg-white/95 backdrop-blur-md shadow-md border-b border-neutral-100">
         <div className="overflow-x-auto scrollbar-hide py-2">
           <div className="flex gap-3 px-2 w-max min-w-full">
             <button
@@ -65,8 +66,44 @@ export const Blog: React.FC = () => {
         </div>
       </div>
 
-      {/* Search Bar */}
-      <div className="mb-8 max-w-lg mx-auto">
+      {/* Floating Search Button for Mobile */}
+      <button
+        className="fixed bottom-6 right-6 z-[40] bg-primary-600 text-white p-4 rounded-full shadow-lg lg:hidden flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-400"
+        onClick={() => setShowMobileSearch(true)}
+        aria-label="Open search"
+        style={{ display: showMobileSearch ? 'none' : 'flex' }}
+      >
+        <Search className="h-6 w-6" />
+      </button>
+
+      {/* Mobile Search Modal */}
+      {showMobileSearch && (
+        <div className="fixed inset-0 z-[50] bg-black/40 flex items-center justify-center lg:hidden">
+          <div className="bg-white rounded-xl w-full max-w-md mx-4 p-4 shadow-2xl relative">
+            <button
+              className="absolute top-3 right-3 text-neutral-500 hover:text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors"
+              onClick={() => setShowMobileSearch(false)}
+              aria-label="Close search"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="mb-2">
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-4 pr-4 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-300 bg-white shadow"
+                aria-label="Search Blog Articles"
+                autoFocus
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Desktop Search Bar (always visible) */}
+      <div className="mb-8 max-w-lg mx-auto hidden lg:block">
         <div className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400 h-5 w-5" />
           <input
@@ -101,13 +138,13 @@ export const Blog: React.FC = () => {
               <Link 
                 key={post.id} 
                 to={`/blog/${post.slug}`}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col h-full"
+                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col h-full group"
               >
                 <div className="h-44 sm:h-48 overflow-hidden">
                   <img 
                     src={post.coverImage} 
                     alt={post.title} 
-                    className="w-full h-full object-cover transition-transform hover:scale-105"
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
                 <div className="p-4 sm:p-5 flex-1 flex flex-col">
@@ -118,7 +155,7 @@ export const Blog: React.FC = () => {
                     <User className="h-3 w-3 mr-1" />
                     <span>{post.author}</span>
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-neutral-900 mb-1 line-clamp-2">{post.title}</h3>
+                  <h3 className="text-base sm:text-lg font-semibold text-neutral-900 mb-1 line-clamp-2 group-hover:text-primary-700 transition-colors">{post.title}</h3>
                   <p className="text-neutral-600 text-sm mb-2 line-clamp-3">{post.excerpt}</p>
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {post.categories.slice(0, 2).map(category => (
@@ -126,7 +163,7 @@ export const Blog: React.FC = () => {
                         key={category} 
                         className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
                       >
-                        {categoryIcons[category] || <Tag className="h-3 w-3 mr-1 text-gray-400" />} {category}
+                        {categoryIcons[category] || <Tag className="h-5 w-5 mr-1 text-gray-400" />} {category}
                       </span>
                     ))}
                   </div>
