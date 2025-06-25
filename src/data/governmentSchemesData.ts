@@ -12810,7 +12810,7 @@ export const governmentSchemes: GovernmentScheme[] = [
           'Income Certificate from Tehsildar',
           'Caste Certificate (SC/ST/OBC के लिए)',
           'Project Report या Business Plan'
-        }
+        ]
       },
       {
         type: 'subheading',
