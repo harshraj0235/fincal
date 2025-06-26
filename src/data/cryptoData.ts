@@ -492,7 +492,7 @@ export const cryptoArticles: CryptoArticle[] = [
     ],
     keywords: ['cbdc india', 'digital rupee india', 'future of cbdc', 'rbi digital currency', 'cbdc guide india'],
     seoTitle: 'The Future of CBDC (Digital Rupee) in India (2024): Guide & Analysis',
-    seoDescription: 'A deep dive into India's CBDC initiative. Learn about the digital rupee, its benefits, challenges, and what it means for Indian users.',
+    seoDescription: 'A deep dive into India CBDC initiative. Learn about the digital rupee, its benefits, challenges, and what it means for Indian users.',
     faqSchema: [
       { question: 'What is CBDC?', answer: 'Central Bank Digital Currency, a digital form of fiat money issued by RBI.' },
       { question: 'Is digital rupee legal tender?', answer: 'Yes, it is legal tender in India.' },
