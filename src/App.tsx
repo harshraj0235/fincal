@@ -29,6 +29,7 @@ import GovernmentSchemePost from './pages/GovernmentSchemePost';
 
 // Crypto Section
 import CryptoSection from './pages/CryptoSection';
+import CryptoArticlePost from './pages/CryptoArticlePost';
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
 
         {/* Crypto Section route */}
         <Route path="/crypto" element={<CryptoSection />} />
+        <Route path="/crypto/:slug" element={<CryptoArticlePost />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
