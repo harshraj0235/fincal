@@ -459,7 +459,7 @@ export const cryptoArticles: CryptoArticle[] = [
     id: '10',
     slug: 'future-of-cbdc-digital-rupee-india',
     title: 'The Future of CBDC (Digital Rupee) in India (2024)',
-    excerpt: 'A deep dive into India's Central Bank Digital Currency (CBDC) initiative. Learn about the digital rupee, its benefits, challenges, and what it means for Indian users.',
+    excerpt: 'A deep dive into Indias Central Bank Digital Currency (CBDC) initiative. Learn about the digital rupee, its benefits, challenges, and what it means for Indian users.',
     category: 'CBDC',
     status: 'active',
     launchDate: '2024-06-10',
