@@ -1,3 +1,4 @@
+
 export interface CryptoArticle {
   id: string;
   slug: string;
@@ -37,36 +38,224 @@ export const cryptoArticles: CryptoArticle[] = [
     launchDate: '2024-06-01',
     coverImage: 'https://images.unsplash.com/photo-1518544801345-7d8b7c7c7c7c?auto=format&fit=crop&w=800&q=80',
     content: [
-      { type: 'heading', content: 'Crypto Regulation in India: 2024 Overview' },
-      { type: 'paragraph', content: 'Cryptocurrency has seen explosive growth in India, with millions of investors entering the market. However, the regulatory landscape remains complex and rapidly evolving. In 2024, the Indian government has taken significant steps to clarify the legal status of crypto assets, introduce taxation rules, and ensure investor protection.' },
-      { type: 'subheading', content: 'Is Crypto Legal in India?' },
-      { type: 'paragraph', content: 'As of 2024, cryptocurrencies are not illegal in India, but they are not recognized as legal tender. The Reserve Bank of India (RBI) has lifted its earlier banking ban, allowing crypto exchanges to operate. However, the government has introduced strict KYC (Know Your Customer) and AML (Anti-Money Laundering) requirements for all crypto platforms.' },
-      { type: 'subheading', content: 'Crypto Taxation in India' },
-      { type: 'paragraph', content: 'The 2022 Union Budget introduced a 30% tax on income from the transfer of virtual digital assets (VDAs), including cryptocurrencies and NFTs. Additionally, a 1% TDS (Tax Deducted at Source) is applicable on all crypto transactions above a certain threshold. Losses from crypto cannot be offset against other income. It is crucial for investors to maintain detailed records of all transactions for tax filing.' },
+      { type: 'heading', content: 'Crypto Regulation in India: Complete 2024 Guide' },
+      { type: 'paragraph', content: 'The cryptocurrency landscape in India has undergone dramatic changes over the past few years. From initial skepticism and regulatory uncertainty to a more structured approach, 2024 marks a pivotal year for crypto adoption in the country. With over 100 million Indians now holding some form of cryptocurrency, understanding the regulatory framework has become crucial for both new and experienced investors.' },
+      
+      { type: 'paragraph', content: 'This comprehensive guide will walk you through everything you need to know about crypto regulation in India, including the latest legal developments, taxation rules, compliance requirements, and practical tips for staying on the right side of the law while maximizing your investment potential.' },
+
+      { type: 'subheading', content: 'Current Legal Status of Cryptocurrency in India' },
+      { type: 'paragraph', content: 'The most frequently asked question among Indian crypto enthusiasts is: "Is cryptocurrency legal in India?" The answer is nuanced but reassuring. As of 2024, cryptocurrencies are not illegal in India, though they are not recognized as legal tender either. This means you cannot use Bitcoin or other cryptocurrencies to pay for goods and services in the same way you would use Indian Rupees.' },
+      
+      { type: 'paragraph', content: 'The Reserve Bank of India (RBI) previously imposed a banking ban on crypto-related transactions in 2018, but this was overturned by the Supreme Court of India in March 2020. Since then, the regulatory environment has become increasingly supportive, with the government focusing on creating a framework that protects investors while preventing misuse.' },
+
+      { type: 'highlight', content: 'Key Point: Cryptocurrency trading, holding, and investing is completely legal in India as of 2024, but cryptocurrencies are not considered legal tender.' },
+
+      { type: 'subheading', content: 'The Evolution of Crypto Regulation in India' },
+      { type: 'paragraph', content: 'To understand the current regulatory landscape, it\'s important to look at how we got here. In 2017-2018, India experienced its first crypto boom, followed by the RBI banking ban. The period from 2018-2020 was marked by uncertainty, with many exchanges shutting down or moving operations overseas.' },
+      
+      { type: 'paragraph', content: 'The Supreme Court\'s landmark judgment in March 2020 changed everything. The court ruled that the RBI\'s circular was unconstitutional as it violated the fundamental right to trade and business. This decision paved the way for the current regulatory framework we see today.' },
+
+      { type: 'paragraph', content: 'In 2022, the government took a decisive step by introducing taxation rules for cryptocurrencies, treating them as "Virtual Digital Assets" (VDAs). This move was seen as implicit recognition of the crypto industry\'s legitimacy.' },
+
+      { type: 'subheading', content: 'Understanding Virtual Digital Assets (VDA) Classification' },
+      { type: 'paragraph', content: 'The Indian government has coined the term "Virtual Digital Assets" or VDAs to refer to cryptocurrencies, NFTs, and other blockchain-based digital assets. This classification is important because it determines how these assets are taxed and regulated.' },
+
+      { type: 'paragraph', content: 'VDAs include:' },
       { type: 'list', items: [
-        '30% tax on profits from crypto trading',
-        '1% TDS on transactions above ₹10,000',
-        'No set-off of losses against other income',
-        'Gifts of crypto assets are taxable',
-        'Detailed record-keeping is mandatory'
+        'Cryptocurrencies like Bitcoin, Ethereum, and altcoins',
+        'Non-Fungible Tokens (NFTs)',
+        'Any other digital asset that derives value from cryptographic tokens',
+        'Tokens used in decentralized finance (DeFi) applications'
       ] },
-      { type: 'subheading', content: 'How to Stay Compliant' },
-      { type: 'paragraph', content: 'To stay compliant, use only registered Indian exchanges, complete KYC verification, and report all crypto income in your ITR (Income Tax Return). Use tools to track your trades and calculate taxes accurately.' },
-      { type: 'subheading', content: 'Future of Crypto Regulation' },
-      { type: 'paragraph', content: 'The government is working on a comprehensive crypto bill, which may introduce further regulations on exchanges, stablecoins, and DeFi platforms. Investors should stay updated with the latest announcements from the Ministry of Finance and RBI.' },
-      { type: 'subheading', content: 'Conclusion' },
-      { type: 'paragraph', content: 'Crypto regulation in India is evolving. By staying informed and compliant, investors can participate in this exciting asset class while minimizing legal risks.' },
+
+      { type: 'subheading', content: 'Comprehensive Crypto Taxation Rules in India' },
+      { type: 'paragraph', content: 'Understanding crypto taxation is crucial for every Indian investor. The tax framework introduced in the 2022 Union Budget has been refined and clarified through various notifications and circulars throughout 2023 and 2024.' },
+
+      { type: 'paragraph', content: 'Tax on Crypto Profits (Capital Gains):' },
+      { type: 'paragraph', content: 'All profits from the sale, transfer, or exchange of cryptocurrencies are subject to a flat 30% tax rate. This is significantly higher than the long-term capital gains tax on stocks (10% above ₹1 lakh) and reflects the government\'s cautious approach to crypto investments.' },
+
+      { type: 'highlight', content: 'Important: The 30% tax applies to all crypto profits regardless of the holding period. There is no distinction between short-term and long-term capital gains for cryptocurrencies.' },
+
+      { type: 'paragraph', content: 'Tax Deducted at Source (TDS):' },
+      { type: 'paragraph', content: 'A 1% TDS is applicable on all crypto transactions above ₹10,000 in a financial year. This means that if you trade cryptocurrencies worth more than ₹10,000 annually on any exchange, the platform will automatically deduct 1% as TDS and deposit it with the government.' },
+
+      { type: 'paragraph', content: 'Key aspects of crypto TDS:' },
+      { type: 'list', items: [
+        'TDS applies to the gross transaction value, not just profits',
+        'Both buyer and seller transactions are counted towards the ₹10,000 limit',
+        'TDS can be claimed as a refund when filing your income tax return',
+        'Failure to deduct TDS can result in penalties for exchanges'
+      ] },
+
+      { type: 'paragraph', content: 'Set-off and Carry Forward Rules:' },
+      { type: 'paragraph', content: 'One of the most challenging aspects of crypto taxation in India is that losses from cryptocurrency transactions cannot be set off against any other income. This means if you lose money on crypto investments, you cannot use those losses to reduce your tax liability from salary, business income, or even other capital gains.' },
+
+      { type: 'paragraph', content: 'Additionally, crypto losses cannot be carried forward to subsequent years, unlike losses from equity investments or business activities.' },
+
+      { type: 'subheading', content: 'Gifting and Inheritance of Cryptocurrencies' },
+      { type: 'paragraph', content: 'The taxation of crypto gifts and inheritance follows specific rules that every Indian crypto holder should understand:' },
+
+      { type: 'paragraph', content: 'Crypto Gifts:' },
+      { type: 'list', items: [
+        'If you receive crypto as a gift, it\'s taxable in your hands if the value exceeds ₹50,000 per year',
+        'The tax is calculated at your applicable income tax slab rate',
+        'Gifts from specified relatives (spouse, parents, siblings, etc.) are exempt',
+        'The person giving the gift doesn\'t face any tax implications'
+      ] },
+
+      { type: 'paragraph', content: 'Inheritance:' },
+      { type: 'paragraph', content: 'Cryptocurrencies received through inheritance are not immediately taxable. However, when you eventually sell or transfer the inherited crypto, you\'ll need to pay the 30% tax on any gains calculated from the original purchase price by the deceased person.' },
+
+      { type: 'subheading', content: 'KYC and AML Compliance Requirements' },
+      { type: 'paragraph', content: 'All cryptocurrency exchanges operating in India are required to implement robust Know Your Customer (KYC) and Anti-Money Laundering (AML) procedures. These requirements are designed to prevent financial crimes and ensure transparency in crypto transactions.' },
+
+      { type: 'paragraph', content: 'Standard KYC Requirements:' },
+      { type: 'list', items: [
+        'PAN Card (mandatory for all Indian residents)',
+        'Aadhaar Card or other government-issued photo ID',
+        'Address proof (utility bill, bank statement, or Aadhaar)',
+        'Bank account details for INR deposits and withdrawals',
+        'Phone number verification through OTP',
+        'Email verification'
+      ] },
+
+      { type: 'paragraph', content: 'Enhanced Due Diligence:' },
+      { type: 'paragraph', content: 'For high-value transactions (typically above ₹2 lakh), exchanges may require additional documentation such as income proof, source of funds declaration, and enhanced verification procedures.' },
+
+      { type: 'subheading', content: 'Compliance Best Practices for Indian Crypto Investors' },
+      { type: 'paragraph', content: 'Staying compliant with Indian crypto regulations requires diligent record-keeping and understanding of your obligations as an investor. Here are the best practices every Indian crypto investor should follow:' },
+
+      { type: 'paragraph', content: '1. Maintain Detailed Transaction Records:' },
+      { type: 'list', items: [
+        'Date and time of each transaction',
+        'Type of transaction (buy, sell, transfer, exchange)',
+        'Cryptocurrency involved and quantity',
+        'INR value at the time of transaction',
+        'Exchange or platform used',
+        'Transaction fees paid',
+        'Reason for the transaction'
+      ] },
+
+      { type: 'paragraph', content: '2. Use Only Compliant Exchanges:' },
+      { type: 'paragraph', content: 'Stick to well-established Indian exchanges that comply with local regulations. These platforms automatically handle TDS deduction and provide detailed transaction statements that make tax filing easier.' },
+
+      { type: 'paragraph', content: '3. Regular Portfolio Review:' },
+      { type: 'paragraph', content: 'Conduct quarterly reviews of your crypto portfolio to assess gains/losses and plan your tax strategy. This helps you make informed decisions about when to book profits or losses.' },
+
+      { type: 'subheading', content: 'Income Tax Return Filing for Crypto Investors' },
+      { type: 'paragraph', content: 'Filing your income tax return (ITR) correctly when you have crypto investments requires careful attention to detail. Here\'s a step-by-step guide:' },
+
+      { type: 'paragraph', content: 'Choosing the Right ITR Form:' },
+      { type: 'list', items: [
+        'ITR-2: For individuals with capital gains (most crypto investors)',
+        'ITR-3: For individuals with business income from crypto trading',
+        'ITR-1 (Sahaj): Cannot be used if you have crypto income'
+      ] },
+
+      { type: 'paragraph', content: 'Reporting Crypto Income:' },
+      { type: 'paragraph', content: 'Crypto gains should be reported under "Income from Other Sources" in your ITR. Provide details of each significant transaction and calculate the total taxable income from crypto activities.' },
+
+      { type: 'paragraph', content: 'Required Documentation:' },
+      { type: 'list', items: [
+        'TDS certificates (Form 16A) from exchanges',
+        'Detailed transaction statements from all platforms used',
+        'Bank statements showing INR deposits and withdrawals',
+        'Calculation worksheets for gains and losses'
+      ] },
+
+      { type: 'subheading', content: 'State-wise Considerations and Local Regulations' },
+      { type: 'paragraph', content: 'While cryptocurrency regulation is primarily governed by central government policies, some states have issued additional guidelines or cautionary notices. It\'s important to be aware of any state-specific considerations:' },
+
+      { type: 'list', items: [
+        'Karnataka: Has been crypto-friendly and is home to many blockchain startups',
+        'Telangana: Actively promotes blockchain technology development',
+        'Maharashtra: Mumbai remains a major crypto trading hub',
+        'Gujarat: Has shown interest in blockchain applications for governance'
+      ] },
+
+      { type: 'subheading', content: 'Future Regulatory Developments and What to Expect' },
+      { type: 'paragraph', content: 'The Indian government continues to work on comprehensive cryptocurrency legislation. Here\'s what we can expect in the coming months and years:' },
+
+      { type: 'paragraph', content: 'The Cryptocurrency Bill:' },
+      { type: 'paragraph', content: 'The government has been working on a comprehensive cryptocurrency bill that aims to provide a complete regulatory framework. While the exact details remain under wraps, industry experts expect it to cover:' },
+      { type: 'list', items: [
+        'Licensing requirements for crypto exchanges',
+        'Consumer protection measures',
+        'Guidelines for stablecoins and CBDCs',
+        'Regulations for DeFi and NFT platforms',
+        'International cooperation frameworks'
+      ] },
+
+      { type: 'paragraph', content: 'Central Bank Digital Currency (CBDC):' },
+      { type: 'paragraph', content: 'The RBI is actively piloting the Digital Rupee (e₹), India\'s CBDC. This could significantly impact the private cryptocurrency ecosystem and may lead to new regulations governing the interaction between CBDCs and private digital assets.' },
+
+      { type: 'subheading', content: 'International Compliance and Cross-border Transactions' },
+      { type: 'paragraph', content: 'For Indian crypto investors engaged in international transactions, understanding cross-border compliance is crucial:' },
+
+      { type: 'paragraph', content: 'Foreign Exchange Management Act (FEMA) Considerations:' },
+      { type: 'list', items: [
+        'Large crypto transfers abroad may require FEMA compliance',
+        'Reporting requirements for foreign crypto exchange accounts',
+        'Tax implications of international crypto trading',
+        'Documentation for cross-border crypto transactions'
+      ] },
+
+      { type: 'subheading', content: 'Common Compliance Mistakes to Avoid' },
+      { type: 'paragraph', content: 'Based on interactions with tax professionals and regulatory guidance, here are common mistakes Indian crypto investors should avoid:' },
+
+      { type: 'list', items: [
+        'Not reporting small transactions (even ₹100 gains are taxable)',
+        'Using non-compliant or foreign exchanges without proper documentation',
+        'Failing to maintain transaction records for over 6 years',
+        'Not declaring crypto assets in wealth statements when required',
+        'Ignoring TDS certificates and not claiming refunds',
+        'Treating crypto trading as a hobby rather than investment activity'
+      ] },
+
+      { type: 'subheading', content: 'Professional Help and Resources' },
+      { type: 'paragraph', content: 'Given the complexity of crypto taxation and regulation, many investors benefit from professional assistance:' },
+
+      { type: 'paragraph', content: 'When to Consult a Professional:' },
+      { type: 'list', items: [
+        'Annual crypto gains exceeding ₹5 lakh',
+        'Complex trading strategies involving multiple exchanges',
+        'International crypto transactions',
+        'Business income from crypto trading',
+        'Uncertainty about specific transaction classifications'
+      ] },
+
+      { type: 'paragraph', content: 'Useful Resources:' },
+      { type: 'list', items: [
+        'Income Tax Department official website and circulars',
+        'RBI guidelines and notifications',
+        'Crypto tax calculation tools and software',
+        'Professional chartered accountants specializing in crypto',
+        'Industry associations and advocacy groups'
+      ] },
+
+      { type: 'subheading', content: 'Conclusion: Navigating India\'s Crypto Regulatory Landscape' },
+      { type: 'paragraph', content: 'The cryptocurrency regulatory environment in India has matured significantly since the early days of uncertainty. While the 30% tax rate and 1% TDS may seem high, they provide clarity and legitimacy to the crypto ecosystem. The key to successful crypto investing in India lies in understanding and complying with these regulations while staying informed about ongoing developments.' },
+
+      { type: 'paragraph', content: 'As the industry continues to evolve, Indian crypto investors who maintain good compliance practices, keep detailed records, and stay updated with regulatory changes will be best positioned to benefit from this exciting asset class. The government\'s approach suggests a desire to balance innovation with investor protection, which bodes well for the long-term growth of the crypto ecosystem in India.' },
+
+      { type: 'paragraph', content: 'Remember, regulations can change, and this guide provides information based on the current regulatory framework as of 2024. Always consult with qualified professionals for personalized advice and stay updated with official government communications for the latest developments.' },
+
+      { type: 'highlight', content: 'Stay Informed: Bookmark official government websites and trusted news sources to stay updated on crypto regulation changes in India.' },
     ],
-    keywords: ['crypto regulation india', 'crypto tax india', 'cryptocurrency law india', 'VDA tax', 'crypto compliance', 'crypto KYC', 'crypto AML', 'crypto bill india'],
-    seoTitle: 'Crypto Regulation in India 2024: Laws, Tax, Compliance Guide',
-    seoDescription: 'Learn about the latest crypto regulation, tax rules, and compliance requirements for Indian investors in 2024. Stay legal and informed with our complete guide.',
+    keywords: ['crypto regulation india', 'crypto tax india', 'cryptocurrency law india', 'VDA tax', 'crypto compliance', 'crypto KYC', 'crypto AML', 'crypto bill india', 'digital rupee', 'crypto TDS', 'crypto ITR filing'],
+    seoTitle: 'Crypto Regulation in India 2024: Complete Laws, Tax & Compliance Guide',
+    seoDescription: 'Comprehensive guide to crypto regulation, taxation, and compliance in India for 2024. Learn about legal status, 30% tax, TDS, KYC requirements, and how to stay compliant as an Indian crypto investor.',
     faqSchema: [
-      { question: 'Is crypto legal in India in 2024?', answer: 'Crypto is not illegal in India, but it is not legal tender. Trading is allowed with strict KYC/AML compliance.' },
-      { question: 'How is crypto taxed in India?', answer: 'Profits are taxed at 30%, with 1% TDS on transactions. Losses cannot be offset against other income.' },
-      { question: 'What are the KYC requirements for crypto in India?', answer: 'All users must complete KYC on registered exchanges as per government rules.' }
+      { question: 'Is crypto legal in India in 2024?', answer: 'Yes, crypto is legal in India as of 2024, but it is not recognized as legal tender. Trading, holding, and investing in cryptocurrencies is completely legal with proper compliance.' },
+      { question: 'How is crypto taxed in India?', answer: 'Crypto profits are taxed at a flat 30% rate with 1% TDS on transactions above ₹10,000 annually. Losses cannot be offset against other income or carried forward.' },
+      { question: 'What are the KYC requirements for crypto in India?', answer: 'KYC requires PAN card, Aadhaar or photo ID, address proof, bank account details, and phone/email verification. Enhanced due diligence may be required for large transactions.' },
+      { question: 'Do I need to file ITR for crypto income?', answer: 'Yes, all crypto income must be reported in your ITR under "Income from Other Sources" using ITR-2 or ITR-3 forms.' },
+      { question: 'What is TDS in crypto transactions?', answer: '1% Tax Deducted at Source applies to crypto transactions above ₹10,000 annually. This can be claimed as refund during ITR filing.' },
+      { question: 'Can I gift cryptocurrency in India?', answer: 'Yes, crypto gifts are allowed but taxable for the recipient if value exceeds ₹50,000 annually, except from specified relatives.' }
     ],
-    relatedArticles: [],
+    relatedArticles: ['2', '3', '4', '10'],
   },
+  // ... keep existing code (rest of the crypto articles array remains unchanged)
   {
     id: '2',
     slug: 'how-to-buy-bitcoin-crypto-india-2024',
@@ -500,4 +689,4 @@ export const cryptoArticles: CryptoArticle[] = [
     ],
     relatedArticles: ['9'],
   },
-]; 
+];
