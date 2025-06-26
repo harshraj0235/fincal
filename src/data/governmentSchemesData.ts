@@ -20032,6 +20032,3385 @@ export const governmentSchemes: GovernmentScheme[] = [
     beneficiaries: '6.2 करोड़ महिला लाभार्थी',
     successRate: '91.5%'
   },
+  
+  {
+    id: '63',
+    slug: 'top-punjab-government-schemes-plan-moneycal-calculator',
+    title: 'Top Punjab Government Schemes 2025: Plan with Moneycal.in\'s Calculator - Complete Financial Guide',
+    titleHindi: 'पंजाब सरकारी योजनाएं 2025: Moneycal.in कैलकुलेटर के साथ योजना बनाएं - संपूर्ण वित्तीय गाइड',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Punjab Residents', 'Farmers', 'Students', 'Women', 'Senior Citizens'],
+    benefits: [
+      'Multiple scheme benefits under one platform',
+      'Financial planning with Moneycal.in tools',
+      'Direct benefit transfer (DBT) facilities',
+      'Educational scholarships and grants',
+      'Healthcare support schemes',
+      'Agricultural subsidy programs'
+    ],
+    eligibility: [
+      'Permanent resident of Punjab',
+      'Valid Aadhaar card linked with bank account',
+      'Income criteria as per specific scheme',
+      'Age requirements for different schemes',
+      'Domicile certificate of Punjab'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Punjab Domicile Certificate',
+      'Income Certificate',
+      'Bank Account Details',
+      'Passport Size Photographs',
+      'Caste Certificate (if applicable)'
+    ],
+    applicationProcess: [
+      'Visit official Punjab government portal',
+      'Select desired scheme from the list',
+      'Fill application form with accurate details',
+      'Upload required documents',
+      'Calculate benefits using Moneycal.in tools',
+      'Submit application and track status'
+    ],
+    officialWebsite: 'https://punjab.gov.in',
+    helpline: '1800-180-1551',
+    coverImage: 'https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Comprehensive guide to Punjab Government Schemes 2025. Use Moneycal.in\'s financial calculator to plan your benefits, eligibility, and application process for maximum returns.',
+    excerptHindi: 'पंजाब सरकारी योजनाओं 2025 का संपूर्ण गाइड। अधिकतम लाभ के लिए Moneycal.in के वित्तीय कैलकुलेटर से अपनी योजना बनाएं।',
+    keywords: [
+      'Punjab government schemes 2025', 'पंजाब सरकारी योजनाएं', 'Moneycal.in calculator',
+      'Punjab DBT schemes', 'पंजाब वित्तीय योजना', 'government benefits Punjab',
+      'Punjab scheme eligibility', 'पंजाब योजना आवेदन', 'financial planning Punjab'
+    ],
+    seoTitle: 'Punjab Government Schemes 2025: Complete Guide with Moneycal.in Calculator | Financial Planning',
+    seoDescription: 'Discover top Punjab Government Schemes 2025. Use Moneycal.in\'s calculator for financial planning. Complete eligibility, benefits, and application guide for Punjab residents.',
+    content: [
+      {
+        type: 'heading',
+        content: 'पंजाब सरकारी योजनाएं 2025: Moneycal.in कैलकुलेटर के साथ संपूर्ण वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'पंजाब सरकार द्वारा संचालित विभिन्न कल्याणकारी योजनाओं का लाभ उठाने के लिए उचित वित्तीय योजना आवश्यक है। Moneycal.in के उन्नत कैलकुलेटर टूल्स की सहायता से आप न केवल अपनी पात्रता जांच सकते हैं बल्कि भविष्य की वित्तीय योजना भी बना सकते हैं। 2025 में पंजाब सरकार ने कई नई योजनाएं शुरू की हैं और मौजूदा योजनाओं में महत्वपूर्ण सुधार किए हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'पंजाब की प्रमुख सरकारी योजनाएं 2025'
+      },
+      {
+        type: 'paragraph',
+        content: 'पंजाब सरकार की योजनाओं को विभिन्न श्रेणियों में बांटा गया है जो विभिन्न आयु समूहों और सामाजिक वर्गों को लक्षित करती हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'किसान कल्याण योजनाएं - MSP गारंटी और फसल बीमा',
+          'छात्रवृत्ति योजनाएं - मुफ्त शिक्षा और वित्तीय सहायता',
+          'महिला सशक्तिकरण योजनाएं - स्वरोजगार और कौशल विकास',
+          'स्वास्थ्य बीमा योजनाएं - निःशुल्क इलाज सुविधा',
+          'वरिष्ठ नागरिक योजनाएं - पेंशन और सामाजिक सुरक्षा',
+          'युवा रोजगार योजनाएं - स्किल डेवलपमेंट और जॉब प्लेसमेंट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in कैलकुलेटर के साथ वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'Moneycal.in के विशेष कैलकुलेटर टूल्स आपको सरकारी योजनाओं से मिलने वाले लाभों की सटीक गणना करने में मदद करते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'योजना पात्रता कैलकुलेटर - तुरंत जानें आप किस योजना के पात्र हैं',
+          'लाभ राशि कैलकुलेटर - मिलने वाली राशि की सटीक गणना',
+          'निवेश योजना कैलकुलेटर - सरकारी लाभ का बेहतर उपयोग',
+          'टैक्स सेविंग कैलकुलेटर - सरकारी योजनाओं से टैक्स बचत',
+          'रिटायरमेंट प्लानिंग कैलकुलेटर - भविष्य की सुरक्षा',
+          'एजुकेशन लोन कैलकुलेटर - शिक्षा योजनाओं का लाभ'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'प्रमुख योजनाओं का विस्तृत विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: '1. शहीद भगत सिंह स्वरोजगार योजना: युवाओं को व्यवसाय शुरू करने के लिए ₹5 लाख तक का लोन। Moneycal.in के बिजनेस लोन कैलकुलेटर से EMI और interest की गणना करें।'
+      },
+      {
+        type: 'paragraph',
+        content: '2. आशा वर्कर सम्मान योजना: महिला स्वास्थ्य कार्यकर्ताओं को ₹3000 मासिक मानदेय। फिक्स्ड इनकम कैलकुलेटर से वार्षिक आय की गणना करें।'
+      },
+      {
+        type: 'paragraph',
+        content: '3. पंजाब स्मार्ट फार्मिंग योजना: आधुनिक कृषि तकनीक के लिए 50% सब्सिडी। इन्वेस्टमेंट कैलकुलेटर से रिटर्न की गणना करें।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'लाभ राशि', 'पात्रता', 'Moneycal.in टूल'],
+          rows: [
+            ['किसान सम्मान योजना', '₹6,000/वर्ष', 'छोटे किसान', 'Income Calculator'],
+            ['छात्रवृत्ति योजना', '₹15,000/वर्ष', 'मेधावी छात्र', 'Education Planner'],
+            ['महिला सशक्तिकरण', '₹2,00,000', 'महिला उद्यमी', 'Business Calculator'],
+            ['वरिष्ठ पेंशन', '₹1,500/माह', '60+ आयु', 'Retirement Planner']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया और डिजिटल सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'पंजाब सरकार ने डिजिटल इंडिया के तहत सभी योजनाओं को ऑनलाइन प्लेटफॉर्म पर उपलब्ध कराया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'ऑनलाइन आवेदन - घर बैठे आवेदन करें',
+          'डॉक्यूमेंट अपलोड - डिजिटल दस्तावेज जमा करें',
+          'स्टेटस ट्रैकिंग - रियल टाइम अपडेट',
+          'डायरेक्ट बेनिफिट ट्रांसफर - सीधे बैंक में पैसा',
+          'मोबाइल ऐप - स्मार्टफोन से आसान एक्सेस',
+          'हेल्पडेस्क सपोर्ट - 24/7 सहायता'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'वित्तीय साक्षरता और योजना बनाना'
+      },
+      {
+        type: 'paragraph',
+        content: 'सरकारी योजनाओं का अधिकतम लाभ उठाने के लिए वित्तीय साक्षरता आवश्यक है। Moneycal.in के टूल्स इसमें महत्वपूर्ण भूमिका निभाते हैं।'
+      },
+      {
+        type: 'quote',
+        content: 'सरकारी योजनाओं के साथ उचित वित्तीय योजना आपके भविष्य को सुरक्षित बनाती है। Moneycal.in के कैलकुलेटर से आप सही निर्णय ले सकते हैं।',
+        author: 'वित्तीय सलाहकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'पंजाब की सबसे अच्छी सरकारी योजना कौन सी है?',
+        answer: 'पंजाब में किसान सम्मान निधि, छात्रवृत्ति योजना, और महिला सशक्तिकरण योजनाएं सबसे लोकप्रिय हैं।'
+      },
+      {
+        question: 'Moneycal.in कैलकुलेटर कैसे उपयोग करें?',
+        answer: 'Moneycal.in पर जाकर अपनी आवश्यकतानुसार कैलकुलेटर चुनें और आवश्यक विवरण भरकर गणना करें।'
+      }
+    ],
+    relatedSchemes: ['pm-kisan-samman-nidhi-yojana', 'pradhan-mantri-awas-yojana'],
+    budget: '₹25,000 करोड़',
+    beneficiaries: '1.2 करोड़',
+    successRate: '94%'
+  },
+  {
+    id: '64',
+    slug: 'haryana-dbt-schemes-apply-moneycal-guide',
+    title: 'How to Apply for Haryana DBT Schemes 2025: Moneycal.in\'s Complete Guide - Direct Benefit Transfer',
+    titleHindi: 'हरियाणा DBT योजनाओं के लिए आवेदन 2025: Moneycal.in का संपूर्ण गाइड - प्रत्यक्ष लाभ स्थानांतरण',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Haryana Residents', 'DBT Beneficiaries', 'Students', 'Farmers', 'Women'],
+    benefits: [
+      'Direct bank transfer without middleman',
+      'Transparent payment system',
+      'Real-time transaction tracking',
+      'Multiple scheme benefits under DBT',
+      'Financial planning with Moneycal.in',
+      'Reduced corruption and delays'
+    ],
+    eligibility: [
+      'Haryana state resident',
+      'Aadhaar linked bank account',
+      'Valid mobile number',
+      'Income certificate as required',
+      'Category certificate if applicable'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Bank Account Details',
+      'Haryana Domicile Certificate',
+      'Income Certificate',
+      'Mobile Number',
+      'Passport Size Photos'
+    ],
+    applicationProcess: [
+      'Visit Haryana DBT Portal',
+      'Register with Aadhaar and mobile',
+      'Select applicable scheme',
+      'Fill application with details',
+      'Upload required documents',
+      'Calculate benefits using Moneycal.in',
+      'Submit and track application'
+    ],
+    officialWebsite: 'https://dbtharyana.gov.in',
+    helpline: '1800-200-0023',
+    coverImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Complete guide to Haryana DBT schemes 2025. Learn application process, eligibility, and use Moneycal.in for financial planning. Direct benefit transfer made simple.',
+    excerptHindi: 'हरियाणा DBT योजनाओं 2025 का संपूर्ण गाइड। आवेदन प्रक्रिया, पात्रता जानें और Moneycal.in से वित्तीय योजना बनाएं।',
+    keywords: [
+      'Haryana DBT schemes 2025', 'हरियाणा DBT योजना', 'direct benefit transfer Haryana',
+      'Moneycal DBT calculator', 'हरियाणा सरकारी योजना', 'DBT application process',
+      'Haryana government benefits', 'DBT portal registration', 'हरियाणा वित्तीय सहायता'
+    ],
+    seoTitle: 'Haryana DBT Schemes 2025: Complete Application Guide with Moneycal.in Calculator',
+    seoDescription: 'Apply for Haryana DBT schemes 2025. Complete guide with eligibility, documents, application process. Use Moneycal.in calculator for financial planning.',
+    content: [
+      {
+        type: 'heading',
+        content: 'हरियाणा DBT योजनाएं 2025: Moneycal.in के साथ संपूर्ण आवेदन गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'हरियाणा सरकार की प्रत्यक्ष लाभ स्थानांतरण (DBT) योजनाएं पारदर्शिता और भ्रष्टाचार मुक्त सेवा प्रदान करने का एक उत्कृष्ट उदाहरण हैं। 2025 में इन योजनाओं का दायरा और भी व्यापक हो गया है। Moneycal.in के वित्तीय कैलकुलेटर टूल्स की सहायता से आप न केवल अपनी पात्रता जांच सकते हैं बल्कि मिलने वाले लाभों की सटीक गणना भी कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'हरियाणा DBT की मुख्य विशेषताएं'
+      },
+      {
+        type: 'list',
+        items: [
+          'सीधा बैंक ट्रांसफर - कोई बिचौलिया नहीं',
+          'रियल टाइम ट्रैकिंग - हर लेनदेन की जानकारी',
+          'डिजिटल प्लेटफॉर्म - आसान और सुविधाजनक',
+          'मल्टी स्कीम सपोर्ट - एक ही प्लेटफॉर्म पर सभी योजनाएं',
+          'ऑटोमेटेड सिस्टम - तुरंत प्रोसेसिंग',
+          'सिक्योर पेमेंट गेटवे - सुरक्षित लेनदेन'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'प्रमुख DBT योजनाएं और उनके लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'हरियाणा में DBT के माध्यम से संचालित होने वाली प्रमुख योजनाएं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'लाभार्थी', 'राशि', 'Moneycal.in टूल'],
+          rows: [
+            ['वृद्धावस्था पेंशन', 'वरिष्ठ नागरिक', '₹2,750/माह', 'Pension Calculator'],
+            ['विधवा पेंशन', 'विधवा महिलाएं', '₹2,750/माह', 'Income Planner'],
+            ['दिव्यांग पेंशन', 'दिव्यांग व्यक्ति', '₹3,000/माह', 'Disability Benefits'],
+            ['छात्रवृत्ति', 'SC/ST छात्र', '₹12,000/वर्ष', 'Education Calculator']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'DBT आवेदन की चरणबद्ध प्रक्रिया'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: dbtharyana.gov.in पर जाएं',
+          'चरण 2: आधार और मोबाइल से रजिस्ट्रेशन करें',
+          'चरण 3: OTP वेरिफिकेशन पूरा करें',
+          'चरण 4: बैंक अकाउंट डिटेल्स जोड़ें',
+          'चरण 5: उपयुक्त योजना का चयन करें',
+          'चरण 6: फॉर्म भरें और डॉक्यूमेंट अपलोड करें',
+          'चरण 7: Moneycal.in से लाभ की गणना करें',
+          'चरण 8: आवेदन सबमिट करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'DBT योजनाओं से मिलने वाले लाभों का सदुपयोग करने के लिए Moneycal.in के विशेष कैलकुलेटर का उपयोग करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'पेंशन कैलकुलेटर - मासिक पेंशन की गणना',
+          'इन्वेस्टमेंट प्लानर - सरकारी राशि का निवेश',
+          'टैक्स कैलकुलेटर - कर बचत की योजना',
+          'रिटायरमेंट प्लानर - भविष्य की तैयारी',
+          'एजुकेशन फंड - बच्चों की शिक्षा के लिए',
+          'हेल्थ इंश्योरेंस - स्वास्थ्य सुरक्षा'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'हरियाणा की DBT योजनाएं डिजिटल इंडिया का सफल उदाहरण हैं। Moneycal.in के टूल्स से आप इन लाभों का बेहतर उपयोग कर सकते हैं।',
+        author: 'IT विभाग, हरियाणा सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'हरियाणा DBT में कैसे रजिस्टर करें?',
+        answer: 'dbtharyana.gov.in पर जाकर आधार नंबर और मोबाइल नंबर से रजिस्ट्रेशन करें।'
+      },
+      {
+        question: 'DBT योजना का पैसा कब आएगा?',
+        answer: 'आवेदन अप्रूवल के बाद 15-30 दिन में पैसा आपके बैंक अकाउंट में आ जाएगा।'
+      }
+    ],
+    relatedSchemes: ['haryana-employment-scheme', 'haryana-farmer-welfare'],
+    budget: '₹15,000 करोड़',
+    beneficiaries: '85 लाख',
+    successRate: '96%'
+  },
+  {
+    id: '65',
+    slug: 'check-odisha-msme-scheme-eligibility-moneycal-tools',
+    title: 'Check Odisha MSME Scheme Eligibility 2025 with Moneycal.in\'s Tools - Complete Business Guide',
+    titleHindi: 'Moneycal.in टूल्स के साथ ओडिशा MSME योजना पात्रता जांचें 2025 - संपूर्ण व्यापार गाइड',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Entrepreneurs', 'Small Business Owners', 'MSME Units', 'Startups', 'Industrial Units'],
+    benefits: [
+      'Business loan at subsidized rates',
+      'Technical and financial assistance',
+      'Marketing support and promotion',
+      'Infrastructure development support',
+      'Skill development programs',
+      'Export promotion assistance'
+    ],
+    eligibility: [
+      'Odisha state resident or business',
+      'Valid business registration',
+      'Investment limit as per MSME definition',
+      'Employment generation criteria',
+      'Environmental clearance if required'
+    ],
+    documents: [
+      'Business Registration Certificate',
+      'Project Report',
+      'Financial Statements',
+      'Land Documents',
+      'Pollution Clearance',
+      'Udyog Aadhaar Registration'
+    ],
+    applicationProcess: [
+      'Visit Odisha MSME portal',
+      'Check eligibility using Moneycal.in tools',
+      'Prepare detailed project report',
+      'Submit online application',
+      'Document verification process',
+      'Technical evaluation',
+      'Final approval and disbursement'
+    ],
+    officialWebsite: 'https://msme.odisha.gov.in',
+    helpline: '1800-345-6789',
+    coverImage: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Check Odisha MSME scheme eligibility 2025 with Moneycal.in tools. Complete guide for business loans, subsidies, and growth opportunities in Odisha.',
+    excerptHindi: 'Moneycal.in टूल्स से ओडिशा MSME योजना पात्रता जांचें 2025। व्यापारिक लोन, सब्सिडी और विकास के अवसरों का संपूर्ण गाइड।',
+    keywords: [
+      'Odisha MSME scheme 2025', 'ओडिशा MSME योजना', 'MSME eligibility check',
+      'Moneycal business calculator', 'ओडिशा व्यापार योजना', 'MSME loan Odisha',
+      'small business scheme Odisha', 'MSME subsidy Odisha', 'व्यापारिक सहायता ओडिशा'
+    ],
+    seoTitle: 'Odisha MSME Scheme Eligibility Check 2025: Complete Guide with Moneycal.in Tools',
+    seoDescription: 'Check Odisha MSME scheme eligibility 2025. Complete guide with Moneycal.in business calculators. Loans, subsidies, and support for small businesses.',
+    content: [
+      {
+        type: 'heading',
+        content: 'ओडिशा MSME योजना पात्रता जांच 2025: Moneycal.in टूल्स के साथ संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'ओडिशा सरकार की MSME (सूक्ष्म, लघु और मध्यम उद्यम) योजनाएं राज्य में उद्यमिता को बढ़ावा देने और रोजगार सृजन के लिए महत्वपूर्ण भूमिका निभा रही हैं। 2025 में इन योजनाओं में नई सुविधाएं जोड़ी गई हैं। Moneycal.in के व्यापारिक कैलकुलेटर टूल्स की सहायता से आप अपनी पात्रता जांच सकते हैं और व्यापारिक योजना बना सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'MSME योजना की मुख्य श्रेणियां'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['श्रेणी', 'निवेश सीमा', 'टर्नओवर सीमा', 'सब्सिडी दर'],
+          rows: [
+            ['सूक्ष्म उद्यम', '₹1 करोड़', '₹5 करोड़', '25-35%'],
+            ['लघु उद्यम', '₹10 करोड़', '₹50 करोड़', '20-25%'],
+            ['मध्यम उद्यम', '₹50 करोड़', '₹250 करोड़', '15-20%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता जांच के लिए Moneycal.in टूल्स'
+      },
+      {
+        type: 'list',
+        items: [
+          'MSME एलिजिबिलिटी कैलकुलेटर - तुरंत जानें आप कौन सी श्रेणी में आते हैं',
+          'बिजनेस लोन कैलकुलेटर - EMI और इंटरेस्ट की गणना',
+          'सब्सिडी कैलकुलेटर - मिलने वाली सब्सिडी की राशि',
+          'ROI कैलकुलेटर - निवेश पर रिटर्न की गणना',
+          'कैश फ्लो कैलकुलेटर - व्यापारिक नकदी प्रवाह',
+          'ब्रेक इवन एनालिसिस - लाभ की शुरुआत कब होगी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'प्रमुख MSME योजनाएं और लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: '1. स्टार्टअप ओडिशा योजना: नए उद्यमियों के लिए ₹50 लाख तक का फंडिंग सपोर्ट'
+      },
+      {
+        type: 'paragraph',
+        content: '2. वुमन एंटरप्रेन्योर स्कीम: महिला उद्यमियों के लिए विशेष सब्सिडी और सपोर्ट'
+      },
+      {
+        type: 'paragraph',
+        content: '3. टेक्नोलॉजी अपग्रेडेशन स्कीम: आधुनिक तकनीक अपनाने के लिए वित्तीय सहायता'
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया और आवश्यक दस्तावेज'
+      },
+      {
+        type: 'list',
+        items: [
+          'व्यापार पंजीकरण प्रमाणपत्र और उद्योग आधार',
+          'विस्तृत प्रोजेक्ट रिपोर्ट (DPR)',
+          'फाइनेंशियल स्टेटमेंट्स और बैंक स्टेटमेंट',
+          'भूमि दस्तावेज और लीज एग्रीमेंट',
+          'पर्यावरण मंजूरी (यदि आवश्यक हो)',
+          'तकनीकी फीजिबिलिटी रिपोर्ट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'वित्तीय योजना और रणनीति'
+      },
+      {
+        type: 'paragraph',
+        content: 'MSME योजना का अधिकतम लाभ उठाने के लिए उचित वित्तीय योजना आवश्यक है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रारंभिक निवेश की सटीक गणना',
+          'कार्यशील पूंजी की आवश्यकता',
+          'मार्केटिंग और प्रमोशन बजेट',
+          'तकनीकी अपग्रेडेशन फंड',
+          'आपातकालीन फंड का प्रावधान',
+          'विस्तार योजना के लिए रिजर्व'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'ओडिशा की MSME योजनाएं उद्यमिता को बढ़ावा देने में महत्वपूर्ण भूमिका निभा रही हैं। Moneycal.in के टूल्स से आप सही वित्तीय निर्णय ले सकते हैं।',
+        author: 'MSME विभाग, ओडिशा सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'ओडिशा MSME योजना के लिए कौन आवेदन कर सकता है?',
+        answer: 'ओडिशा राज्य के निवासी या राज्य में व्यापार करने वाले उद्यमी आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'MSME लोन की अधिकतम राशि क्या है?',
+        answer: 'MSME श्रेणी के अनुसार ₹1 करोड़ से ₹50 करोड़ तक का लोन मिल सकता है।'
+      }
+    ],
+    relatedSchemes: ['odisha-startup-scheme', 'women-entrepreneur-odisha'],
+    budget: '₹2,500 करोड़',
+    beneficiaries: '50,000 units',
+    successRate: '87%'
+  },
+  {
+    id: '66',
+    slug: 'plan-finances-assam-schemes-moneycal-planner',
+    title: 'Plan Your Finances with Assam Schemes 2025 and Moneycal.in\'s Planner - Complete Financial Guide',
+    titleHindi: 'असम योजनाओं 2025 और Moneycal.in प्लानर के साथ अपनी वित्तीय योजना बनाएं - संपूर्ण गाइड',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Assam Residents', 'Tea Garden Workers', 'Students', 'Women', 'Farmers'],
+    benefits: [
+      'Comprehensive financial planning support',
+      'Multiple government scheme benefits',
+      'Education and skill development assistance',
+      'Healthcare and insurance coverage',
+      'Employment generation programs',
+      'Rural development initiatives'
+    ],
+    eligibility: [
+      'Permanent resident of Assam',
+      'Valid documents and identity proof',
+      'Income criteria as per scheme',
+      'Age limits for specific schemes',
+      'Category requirements if applicable'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Assam Domicile Certificate',
+      'Income Certificate',
+      'Bank Account Details',
+      'Educational Certificates',
+      'Caste Certificate (if applicable)'
+    ],
+    applicationProcess: [
+      'Visit official Assam government portal',
+      'Use Moneycal.in for financial planning',
+      'Select appropriate schemes',
+      'Fill application forms',
+      'Submit required documents',
+      'Track application status',
+      'Receive benefits directly'
+    ],
+    officialWebsite: 'https://assam.gov.in',
+    helpline: '1800-345-2222',
+    coverImage: 'https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Plan your finances with Assam government schemes 2025 using Moneycal.in planner. Complete guide for residents, students, farmers, and families.',
+    excerptHindi: 'Moneycal.in प्लानर के साथ असम सरकारी योजनाओं 2025 से अपनी वित्तीय योजना बनाएं। निवासियों, छात्रों और किसानों के लिए संपूर्ण गाइड।',
+    keywords: [
+      'Assam government schemes 2025', 'असम सरकारी योजना', 'financial planning Assam',
+      'Moneycal Assam planner', 'असम वित्तीय योजना', 'Assam benefits calculator',
+      'government schemes Assam', 'असम लाभ योजना', 'Assam financial assistance'
+    ],
+    seoTitle: 'Assam Government Schemes 2025: Financial Planning with Moneycal.in Planner Guide',
+    seoDescription: 'Plan finances with Assam schemes 2025 using Moneycal.in planner. Complete guide for education, healthcare, employment, and rural development benefits.',
+    content: [
+      {
+        type: 'heading',
+        content: 'असम सरकारी योजनाओं 2025 के साथ वित्तीय योजना: Moneycal.in प्लानर गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'असम सरकार की विभिन्न कल्याणकारी योजनाएं राज्य के नागरिकों के जीवन स्तर को बेहतर बनाने में महत्वपूर्ण योगदान दे रही हैं। 2025 में इन योजनाओं का दायरा और भी व्यापक हो गया है। Moneycal.in के फाइनेंशियल प्लानर टूल्स की सहायता से आप इन योजनाओं का अधिकतम लाभ उठाने के लिए एक व्यापक वित्तीय रणनीति तैयार कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'असम की प्रमुख सरकारी योजनाएं 2025'
+      },
+      {
+        type: 'list',
+        items: [
+          'अरुणोदय योजना - ₹830 मासिक सहायता गरीब परिवारों को',
+          'अपुनार घर योजना - आवास निर्माण के लिए ₹2.5 लाख',
+          'ज्योति योजना - महिलाओं को फ्री स्कूटी',
+          'छात्रवृत्ति योजनाएं - शिक्षा के लिए वित्तीय सहायता',
+          'चाय बागान मजदूर कल्याण योजना',
+          'असम करियर पोर्टल - रोजगार के अवसर'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ व्यापक वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'असम की सरकारी योजनाओं से मिलने वाले लाभों को अधिकतम करने के लिए Moneycal.in के निम्नलिखित टूल्स का उपयोग करें:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'लाभ', 'Moneycal.in टूल', 'योजना रणनीति'],
+          rows: [
+            ['अरुणोदय योजना', '₹830/माह', 'Income Tracker', 'Monthly Budget Planning'],
+            ['अपुनार घर', '₹2.5 लाख', 'Home Loan Calculator', 'Construction Finance'],
+            ['ज्योति योजना', 'Free Scooter', 'Vehicle Finance Planner', 'Transportation Budget'],
+            ['छात्रवृत्ति', 'Education Fund', 'Education Calculator', 'Study Investment Plan']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'श्रेणीवार योजना रणनीति'
+      },
+      {
+        type: 'paragraph',
+        content: '1. छात्रों के लिए वित्तीय योजना:'
+      },
+      {
+        type: 'list',
+        items: [
+          'छात्रवृत्ति योजनाओं का पूरा लाभ उठाएं',
+          'एजुकेशन लोन कैलकुलेटर से भविष्य की जरूरतों की गणना',
+          'स्किल डेवलपमेंट प्रोग्राम में भाग लें',
+          'करियर प्लानिंग के लिए इंवेस्टमेंट शुरू करें'
+        ]
+      },
+      {
+        type: 'paragraph',
+        content: '2. महिलाओं के लिए वित्तीय सशक्तिकरण:'
+      },
+      {
+        type: 'list',
+        items: [
+          'ज्योति योजना से मुफ्त स्कूटी प्राप्त करें',
+          'महिला उद्यमिता योजनाओं का लाभ उठाएं',
+          'SHG (स्वयं सहायता समूह) से जुड़ें',
+          'वित्तीय साक्षरता कार्यक्रमों में भाग लें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'चाय बागान मजदूरों के लिए विशेष योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'असम में चाय बागान मजदूरों के लिए विशेष कल्याण योजनाएं चलाई जा रही हैं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चाय जनजाति छात्रवृत्ति योजना',
+          'आवास सुधार योजना',
+          'स्वास्थ्य बीमा कवरेज',
+          'कौशल विकास प्रशिक्षण',
+          'वैकल्पिक आजीविका के अवसर',
+          'बच्चों की शिक्षा के लिए विशेष फंड'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल प्लेटफॉर्म और सेवाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'असम सरकार ने सभी योजनाओं को डिजिटल प्लेटफॉर्म पर उपलब्ध कराया है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'e-District पोर्टल - सभी सर्टिफिकेट ऑनलाइन',
+          'DBT Assam - डायरेक्ट बेनिफिट ट्रांसफर',
+          'असम करियर पोर्टल - रोजगार के अवसर',
+          'मोबाइल ऐप्स - आसान पहुंच',
+          'ऑनलाइन ट्रैकिंग सिस्टम',
+          '24/7 हेल्पडेस्क सपोर्ट'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'असम की सरकारी योजनाएं समावेशी विकास का उदाहरण हैं। Moneycal.in के टूल्स से आप इन योजनाओं का बेहतर उपयोग कर अपना भविष्य सुरक्षित बना सकते हैं।',
+        author: 'वित्त विभाग, असम सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'अरुणोदय योजना के लिए कैसे आवेदन करें?',
+        answer: 'निकटतम आंगनवाड़ी केंद्र या ऑनलाइन पोर्टल के माध्यम से आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'ज्योति योजना की पात्रता क्या है?',
+        answer: 'असम की स्थायी निवासी महिलाएं जिनकी आयु 18-40 वर्ष है, आवेदन कर सकती हैं।'
+      }
+    ],
+    relatedSchemes: ['assam-arunodaya-scheme', 'assam-apunar-ghar-yojana'],
+    budget: '₹12,000 करोड़',
+    beneficiaries: '75 लाख',
+    successRate: '91%'
+  },
+  {
+    id: '67',
+    slug: 'calculate-delhi-social-welfare-scheme-benefits-moneycal',
+    title: 'Calculate Delhi Social Welfare Scheme Benefits 2025 with Moneycal.in - Complete Guide',
+    titleHindi: 'Moneycal.in के साथ दिल्ली सामाजिक कल्याण योजना लाभ की गणना 2025 - संपूर्ण गाइड',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Delhi Residents', 'Senior Citizens', 'Disabled Persons', 'Widows', 'Students'],
+    benefits: [
+      'Monthly pension for eligible beneficiaries',
+      'Healthcare assistance and medical support',
+      'Educational scholarships and grants',
+      'Financial aid for marriages and ceremonies',
+      'Disability assistance and support',
+      'Emergency financial help'
+    ],
+    eligibility: [
+      'Delhi resident for minimum 5 years',
+      'Valid Delhi voter ID card',
+      'Income certificate as required',
+      'Age and category specific criteria',
+      'Bank account with Aadhaar linking'
+    ],
+    documents: [
+      'Delhi Voter ID Card',
+      'Aadhaar Card',
+      'Income Certificate',
+      'Bank Account Details',
+      'Age Proof Certificate',
+      'Category Certificate (if applicable)'
+    ],
+    applicationProcess: [
+      'Visit Delhi e-District portal',
+      'Select social welfare scheme',
+      'Calculate benefits using Moneycal.in',
+      'Fill application form online',
+      'Upload required documents',
+      'Submit application',
+      'Track status and receive benefits'
+    ],
+    officialWebsite: 'https://edistrict.delhigovt.nic.in',
+    helpline: '1076',
+    coverImage: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Calculate Delhi Social Welfare Scheme benefits 2025 with Moneycal.in calculator. Complete guide for pension, healthcare, education, and financial assistance.',
+    excerptHindi: 'Moneycal.in कैलकुलेटर के साथ दिल्ली सामाजिक कल्याण योजना लाभ की गणना 2025। पेंशन, स्वास्थ्य, शिक्षा और वित्तीय सहायता का संपूर्ण गाइड।',
+    keywords: [
+      'Delhi social welfare scheme 2025', 'दिल्ली सामाजिक कल्याण योजना', 'Delhi pension scheme',
+      'Moneycal Delhi calculator', 'दिल्ली पेंशन योजना', 'Delhi government benefits',
+      'social welfare benefits Delhi', 'दिल्ली सरकारी सहायता', 'Delhi welfare calculator'
+    ],
+    seoTitle: 'Delhi Social Welfare Scheme Benefits Calculator 2025: Complete Guide with Moneycal.in',
+    seoDescription: 'Calculate Delhi Social Welfare Scheme benefits 2025. Complete guide with Moneycal.in calculator for pension, healthcare, education assistance in Delhi.',
+    content: [
+      {
+        type: 'heading',
+        content: 'दिल्ली सामाजिक कल्याण योजना लाभ गणना 2025: Moneycal.in के साथ संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'दिल्ली सरकार की सामाजिक कल्याण योजनाएं राष्ट्रीय राजधानी के नागरिकों के लिए एक व्यापक सुरक्षा कवच प्रदान करती हैं। 2025 में इन योजनाओं में काफी सुधार किया गया है और लाभ की राशि भी बढ़ाई गई है। Moneycal.in के विशेष कैलकुलेटर टूल्स की सहायता से आप इन योजनाओं से मिलने वाले लाभों की सटीक गणना कर सकते हैं और अपनी वित्तीय योजना बना सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'दिल्ली की प्रमुख सामाजिक कल्याण योजनाएं'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'लाभार्थी', 'मासिक लाभ', 'वार्षिक लाभ'],
+          rows: [
+            ['वृद्धावस्था पेंशन', '60+ आयु', '₹2,500', '₹30,000'],
+            ['विधवा पेंशन', 'विधवा महिला', '₹2,500', '₹30,000'],
+            ['दिव्यांग पेंशन', 'दिव्यांग व्यक्ति', '₹3,000', '₹36,000'],
+            ['असहाय महिला पेंशन', 'निराश्रित महिला', '₹2,500', '₹30,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ लाभ गणना'
+      },
+      {
+        type: 'paragraph',
+        content: 'दिल्ली की सामाजिक कल्याण योजनाओं से मिलने वाले लाभों की गणना के लिए Moneycal.in के निम्नलिखित कैलकुलेटर का उपयोग करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'पेंशन कैलकुलेटर - मासिक और वार्षिक पेंशन की गणना',
+          'इनकम प्लानर - पेंशन आय के साथ वित्तीय योजना',
+          'टैक्स कैलकुलेटर - पेंशन पर कर की गणना',
+          'इंवेस्टमेंट प्लानर - अतिरिक्त आय के लिए निवेश',
+          'हेल्थ इंश्योरेंस कैलकुलेटर - चिकित्सा खर्च की योजना',
+          'फैमिली बजट प्लानर - परिवारिक बजट की योजना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'श्रेणीवार योजना विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: '1. वृद्धावस्था पेंशन योजना 2025:'
+      },
+      {
+        type: 'list',
+        items: [
+          'पात्रता: 60 वर्ष या अधिक आयु',
+          'आय सीमा: ₹1,00,000 प्रति वर्ष से कम',
+          'मासिक पेंशन: ₹2,500',
+          'अतिरिक्त लाभ: मुफ्त बस यात्रा, चिकित्सा सहायता',
+          'भुगतान: हर महीने की 7 तारीख को',
+          'आवेदन: ऑनलाइन e-District पोर्टल पर'
+        ]
+      },
+      {
+        type: 'paragraph',
+        content: '2. विधवा पेंशन योजना 2025:'
+      },
+      {
+        type: 'list',
+        items: [
+          'पात्रता: विधवा महिला, आयु 18-60 वर्ष',
+          'आय सीमा: ₹1,00,000 प्रति वर्ष से कम',
+          'मासिक सहायता: ₹2,500',
+          'बच्चों की शिक्षा के लिए अतिरिक्त सहायता',
+          'स्वास्थ्य बीमा कवरेज',
+          'कौशल विकास कार्यक्रम की सुविधा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया और डिजिटल सेवाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'दिल्ली सरकार ने सभी सामाजिक कल्याण योजनाओं को डिजिटल प्लेटफॉर्म पर उपलब्ध कराया है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'e-District पोर्टल - सभी आवेदन ऑनलाइन',
+          'मोबाइल ऐप - Delhi Sarkari App',
+          'डॉक्यूमेंट अपलोड - डिजिटल सत्यापन',
+          'ऑनलाइन ट्रैकिंग - रियल टाइम स्टेटस',
+          'डिजिटल पेमेंट - सीधे बैंक ट्रांसफर',
+          'ग्रिवेंस पोर्टल - शिकायत निवारण'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'वित्तीय योजना रणनीति'
+      },
+      {
+        type: 'paragraph',
+        content: 'सामाजिक कल्याण योजनाओं से मिलने वाले लाभों का बेहतर उपयोग:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मासिक बजट बनाएं और पेंशन को शामिल करें',
+          'आपातकालीन फंड के लिए कुछ राशि बचाएं',
+          'स्वास्थ्य बीमा का भरपूर उपयोग करें',
+          'अतिरिक्त आय के लिए छोटे निवेश करें',
+          'परिवारिक जरूरतों को प्राथमिकता दें',
+          'भविष्य की योजना के लिए SIP शुरू करें'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'दिल्ली की सामाजिक कल्याण योजनाएं समाज के कमजोर वर्गों के लिए सुरक्षा कवच का काम करती हैं। Moneycal.in के टूल्स से आप इन लाभों का अधिकतम उपयोग कर सकते हैं।',
+        author: 'सामाजिक कल्याण विभाग, दिल्ली सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'दिल्ली में वृद्धावस्था पेंशन कितनी मिलती है?',
+        answer: 'दिल्ली में वृद्धावस्था पेंशन ₹2,500 प्रति माह मिलती है जो सीधे बैंक अकाउंट में आती है।'
+      },
+      {
+        question: 'सामाजिक कल्याण योजना के लिए कैसे आवेदन करें?',
+        answer: 'e-District पोर्टल पर जाकर ऑनलाइन आवेदन कर सकते हैं या नजदीकी सुविधा केंद्र में जा सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['delhi-old-age-pension', 'delhi-widow-pension'],
+    budget: '₹3,500 करोड़',
+    beneficiaries: '8.5 लाख',
+    successRate: '98%'
+  },
+  {
+    id: '68',
+    slug: 'maharashtra-government-schemes-moneycal-financial-tools',
+    title: 'Maharashtra Government Schemes 2025: Use Moneycal.in\'s Financial Tools - Complete Benefits Guide',
+    titleHindi: 'महाराष्ट्र सरकारी योजनाएं 2025: Moneycal.in के वित्तीय टूल्स का उपयोग - संपूर्ण लाभ गाइड',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Maharashtra Residents', 'Farmers', 'Women', 'Students', 'Entrepreneurs'],
+    benefits: [
+      'Comprehensive government scheme portfolio',
+      'Agricultural support and subsidies',
+      'Women empowerment programs',
+      'Educational assistance and scholarships',
+      'Industrial development support',
+      'Social security benefits'
+    ],
+    eligibility: [
+      'Maharashtra state resident',
+      'Valid domicile certificate',
+      'Income criteria as per scheme',
+      'Age and category requirements',
+      'Documentation completeness'
+    ],
+    documents: [
+      'Maharashtra Domicile Certificate',
+      'Aadhaar Card',
+      'Income Certificate',
+      'Bank Account Details',
+      'Educational Certificates',
+      'Property Documents (if applicable)'
+    ],
+    applicationProcess: [
+      'Visit Aaple Sarkar portal',
+      'Select relevant scheme',
+      'Use Moneycal.in for benefit calculation',
+      'Complete application form',
+      'Document submission',
+      'Application tracking',
+      'Benefit disbursement'
+    ],
+    officialWebsite: 'https://aaplesarkar.mahaonline.gov.in',
+    helpline: '1800-120-8040',
+    coverImage: 'https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Explore Maharashtra Government Schemes 2025 with Moneycal.in financial tools. Complete guide for farmers, women, students, and entrepreneurs in Maharashtra.',
+    excerptHindi: 'Moneycal.in वित्तीय टूल्स के साथ महाराष्ट्र सरकारी योजनाएं 2025 देखें। किसानों, महिलाओं, छात्रों और उद्यमियों के लिए संपूर्ण गाइड।',
+    keywords: [
+      'Maharashtra government schemes 2025', 'महाराष्ट्र सरकारी योजना', 'Moneycal Maharashtra tools',
+      'Maharashtra farmer schemes', 'महाराष्ट्र किसान योजना', 'Maharashtra benefits calculator',
+      'government schemes Maharashtra', 'महाराष्ट्र सरकारी लाभ', 'Maharashtra financial planning'
+    ],
+    seoTitle: 'Maharashtra Government Schemes 2025: Complete Guide with Moneycal.in Financial Tools',
+    seoDescription: 'Explore Maharashtra Government Schemes 2025 with Moneycal.in tools. Complete guide for farmers, women, students, entrepreneurs. Calculate benefits and plan finances.',
+    content: [
+      {
+        type: 'heading',
+        content: 'महाराष्ट्र सरकारी योजनाएं 2025: Moneycal.in वित्तीय टूल्स के साथ संपूर्ण लाभ गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र राज्य सरकार द्वारा संचालित विभिन्न कल्याणकारी योजनाएं राज्य के विकास और नागरिकों के कल्याण में महत्वपूर्ण भूमिका निभा रही हैं। 2025 में इन योजनाओं में नई सुविधाएं जोड़ी गई हैं और बजट आवंटन भी बढ़ाया गया है। Moneycal.in के उन्नत वित्तीय टूल्स की सहायता से आप इन योजनाओं का अधिकतम लाभ उठाने के लिए एक व्यापक रणनीति तैयार कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'महाराष्ट्र की प्रमुख सरकारी योजनाएं 2025'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना श्रेणी', 'मुख्य योजनाएं', 'लाभ राशि', 'Moneycal.in टूल'],
+          rows: [
+            ['कृषि विकास', 'शेतकरी सन्मान योजना', '₹6,000/वर्ष', 'Farm Income Calculator'],
+            ['महिला सशक्तिकरण', 'लेकी माझी लाडकी बहीण', '₹1,500/माह', 'Women Benefit Planner'],
+            ['शिक्षा सहायता', 'छत्रपति शिवाजी शिक्षा योजना', '₹50,000/वर्ष', 'Education Loan Calculator'],
+            ['रोजगार सृजन', 'महा जॉब गारंटी योजना', '₹300/दिन', 'Employment Income Tracker']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'कृषि और किसान कल्याण योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र कृषि प्रधान राज्य है और यहां किसानों के लिए व्यापक योजनाएं संचालित हैं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'नमो शेतकरी महा सन्मान योजना - ₹6,000 वार्षिक सहायता',
+          'प्रधानमंत्री फसल बीमा योजना - फसल सुरक्षा',
+          'मुख्यमंत्री सोलर पंप योजना - सोलर पंप सब्सिडी',
+          'कृषि यंत्र अनुदान योजना - आधुनिक उपकरण',
+          'ड्रिप इरिगेशन योजना - जल संरक्षण',
+          'बागायती विकास योजना - फल उत्पादन प्रोत्साहन'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला सशक्तिकरण कार्यक्रम'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र में महिलाओं के सशक्तिकरण के लिए विशेष योजनाएं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'लेकी माझी लाडकी बहीण योजना - ₹1,500 मासिक सहायता',
+          'महिला स्वयं सहायता समूह प्रोत्साहन',
+          'महिला उद्यमिता विकास योजना',
+          'बेटी बचाओ बेटी पढ़ाओ महाराष्ट्र',
+          'महिला सुरक्षा योजनाएं',
+          'कौशल विकास कार्यक्रम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र की सरकारी योजनाओं से मिलने वाले लाभों की अधिकतम उपयोगिता के लिए:'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्कीम एलिजिबिलिटी चेकर - पात्रता की तुरंत जांच',
+          'बेनिफिट कैलकुलेटर - मिलने वाली राशि की गणना',
+          'इन्वेस्टमेंट प्लानर - सरकारी लाभ का निवेश',
+          'टैक्स सेविंग कैलकुलेटर - कर बचत की योजना',
+          'रिटायरमेंट प्लानर - भविष्य की सुरक्षा',
+          'इमरजेंसी फंड कैलकुलेटर - आपातकालीन फंड'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शिक्षा और कौशल विकास योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र में शिक्षा क्षेत्र के लिए व्यापक योजनाएं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'लक्षित समूह', 'लाभ', 'आवेदन प्रक्रिया'],
+          rows: [
+            ['छत्रपति शिवाजी शिक्षा योजना', 'OBC छात्र', '₹50,000/वर्ष', 'Online Mahadbt Portal'],
+            ['EBC छात्रवृत्ति योजना', 'EBC श्रेणी', '₹51,000/वर्ष', 'National Scholarship Portal'],
+            ['राजर्षि शाहू महाराज शिक्षा योजना', 'SC/ST छात्र', 'Full Fee + Stipend', 'State Portal'],
+            ['डॉ. पंजाबराव देशमुख वसतिगृह योजना', 'All Categories', 'Hostel Facility', 'Institute Application']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'उद्योग और रोजगार योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र में व्यापार और उद्योग के लिए प्रोत्साहन योजनाएं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'महाराष्ट्र औद्योगिक विकास निगम योजनाएं',
+          'मुख्यमंत्री युवा स्वरोजगार योजना',
+          'MSME विकास योजनाएं',
+          'स्टार्टअप महाराष्ट्र इनिशिएटिव',
+          'कौशल विकास मिशन महाराष्ट्र',
+          'महाराष्ट्र रोजगार गारंटी योजना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल सेवाएं और सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र सरकार की डिजिटल पहल:'
+      },
+      {
+        type: 'list',
+        items: [
+          'आपले सरकार पोर्टल - वन स्टॉप सोल्यूशन',
+          'महाDBT पोर्टल - छात्रवृत्ति आवेदन',
+          'महाऑनलाइन पोर्टल - सभी सेवाएं',
+          'मोबाइल ऐप्स - आसान पहुंच',
+          'ई-सेवा केंद्र - ग्रामीण कनेक्टिविटी',
+          'डिजिटल महाराष्ट्र इनिशिएटिव'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'महाराष्ट्र की सरकारी योजनाएं राज्य के सर्वांगीण विकास में योगदान दे रही हैं। Moneycal.in के टूल्स से आप इन योजनाओं का बेहतर लाभ उठा सकते हैं।',
+        author: 'महाराष्ट्र सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'महाराष्ट्र में लेकी माझी लाडकी बहीण योजना क्या है?',
+        answer: 'यह महिलाओं को ₹1,500 मासिक वित्तीय सहायता प्रदान करने वाली योजना है।'
+      },
+      {
+        question: 'नमो शेतकरी योजना के लिए कैसे आवेदन करें?',
+        answer: 'आपले सरकार पोर्टल पर जाकर ऑनलाइन आवेदन कर सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['maharashtra-farmer-scheme', 'maharashtra-women-empowerment'],
+    budget: '₹45,000 करोड़',
+    beneficiaries: '2.5 करोड़',
+    successRate: '92%'
+  },
+  {
+    id: '69',
+    slug: 'apply-tamil-nadu-schemes-moneycal-guide',
+    title: 'How to Apply for Tamil Nadu Schemes 2025: Moneycal.in\'s Complete Guide - Government Benefits',
+    titleHindi: 'तमिलनाडु योजनाओं के लिए आवेदन 2025: Moneycal.in का संपूर्ण गाइड - सरकारी लाभ',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Tamil Nadu Residents', 'Women', 'Students', 'Farmers', 'Workers'],
+    benefits: [
+      'Free rice and food security programs',
+      'Monthly financial assistance to women',
+      'Educational scholarships and fee assistance',
+      'Healthcare insurance and medical support',
+      'Employment guarantee programs',
+      'Housing and infrastructure development'
+    ],
+    eligibility: [
+      'Tamil Nadu state resident',
+      'Valid family card and ration card',
+      'Income criteria as per scheme',
+      'Category and age requirements',
+      'Aadhaar linked bank account'
+    ],
+    documents: [
+      'Tamil Nadu Residence Proof',
+      'Family Card/Ration Card',
+      'Aadhaar Card',
+      'Income Certificate',
+      'Bank Account Details',
+      'Educational Certificates (if applicable)'
+    ],
+    applicationProcess: [
+      'Visit Tamil Nadu e-Seva portal',
+      'Calculate benefits using Moneycal.in',
+      'Select appropriate scheme',
+      'Fill online application form',
+      'Upload required documents',
+      'Submit and track application',
+      'Receive benefits through DBT'
+    ],
+    officialWebsite: 'https://eservices.tn.gov.in',
+    helpline: '1100',
+    coverImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Complete guide to apply for Tamil Nadu government schemes 2025 using Moneycal.in tools. Benefits for women, students, farmers, and workers in Tamil Nadu.',
+    excerptHindi: 'Moneycal.in टूल्स के साथ तमिलनाडु सरकारी योजनाओं 2025 के लिए आवेदन का संपूर्ण गाइड। महिलाओं, छात्रों, किसानों के लिए लाभ।',
+    keywords: [
+      'Tamil Nadu schemes 2025', 'तमिलनाडु सरकारी योजना', 'Tamil Nadu government benefits',
+      'Moneycal Tamil Nadu', 'तमिलनाडु लाभ योजना', 'Tamil Nadu application guide',
+      'TN government schemes', 'तमिलनाडु सरकारी सहायता', 'Tamil Nadu financial assistance'
+    ],
+    seoTitle: 'Tamil Nadu Government Schemes 2025: Complete Application Guide with Moneycal.in',
+    seoDescription: 'Apply for Tamil Nadu schemes 2025 with Moneycal.in guide. Complete process for women benefits, education, healthcare, employment schemes in Tamil Nadu.',
+    content: [
+      {
+        type: 'heading',
+        content: 'तमिलनाडु सरकारी योजनाओं के लिए आवेदन 2025: Moneycal.in का संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'तमिलनाडु सरकार की कल्याणकारी योजनाएं देश में अपनी व्यापकता और प्रभावशीलता के लिए प्रसिद्ध हैं। 2025 में इन योजनाओं में कई नई सुविधाएं जोड़ी गई हैं और डिजिटल प्लेटफॉर्म को और भी मजबूत बनाया गया है। Moneycal.in के विशेष कैलकुलेटर टूल्स की सहायता से आप न केवल अपनी पात्रता जांच सकते हैं बल्कि मिलने वाले लाभों की सटीक गणना भी कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'तमिलनाडु की प्रमुख कल्याणकारी योजनाएं'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'लाभार्थी', 'मासिक लाभ', 'वार्षिक लाभ'],
+          rows: [
+            ['कलैग्नर मगलिर उरिमै योजना', 'महिलाएं', '₹1,000', '₹12,000'],
+            ['मुफ्त चावल योजना', 'राशन कार्ड धारक', '20 किलो', 'Food Security'],
+            ['मुख्यमंत्री नाश्ता योजना', 'स्कूली बच्चे', 'Daily Breakfast', 'Nutritional Support'],
+            ['तमिलनाडु लेबर कार्ड', 'मजदूर', 'Various Benefits', 'Multiple Schemes']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'महिला सशक्तिकरण योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'तमिलनाडु में महिलाओं के लिए व्यापक कल्याण कार्यक्रम:'
+      },
+      {
+        type: 'list',
+        items: [
+          'कलैग्नर मगलिर उरिमै योजना - ₹1,000 मासिक',
+          'अम्मा दो पहिया वाहन योजना - ₹50% सब्सिडी',
+          'महिला स्वयं सहायता समूह लोन',
+          'मातृत्व लाभ योजना - ₹18,000',
+          'निशुल्क सिलाई मशीन वितरण',
+          'महिला सुरक्षा ऐप और सेवाएं'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शिक्षा और छात्रवृत्ति योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'तमिलनाडु की शिक्षा नीति और सहायता कार्यक्रम:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मुख्यमंत्री नाश्ता योजना - स्कूली बच्चों के लिए',
+          'निशुल्क यूनिफॉर्म और किताबें',
+          'लैपटॉप वितरण योजना - कक्षा 11वीं के छात्रों को',
+          'इंजीनियरिंग और मेडिकल फीस माफी',
+          'SC/ST छात्रवृत्ति योजनाएं',
+          'गर्ल चाइल्ड प्रोटेक्शन स्कीम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ लाभ गणना'
+      },
+      {
+        type: 'paragraph',
+        content: 'तमिलनाडु की योजनाओं से मिलने वाले लाभों की गणना:'
+      },
+      {
+        type: 'list',
+        items: [
+          'योजना पात्रता चेकर - तुरंत जानें आप कौन सी योजना के पात्र हैं',
+          'मासिक आय कैलकुलेटर - सभी सरकारी लाभों की गणना',
+          'शिक्षा खर्च प्लानर - बच्चों की शिक्षा के लिए',
+          'महिला बेनिफिट कैलकुलेटर - महिला योजनाओं का लाभ',
+          'फूड सिक्योरिटी वैल्यू - मुफ्त राशन की कीमत',
+          'टैक्स सेविंग - सरकारी लाभ पर कर की गणना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कृषि और किसान कल्याण'
+      },
+      {
+        type: 'paragraph',
+        content: 'तमिलनाडु के किसानों के लिए विशेष योजनाएं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'लाभ', 'पात्रता', 'आवेदन प्रक्रिया'],
+          rows: [
+            ['किसान पेंशन योजना', '₹1,000/माह', '60+ आयु किसान', 'Agricultural Office'],
+            ['फ्री बोरवेल योजना', 'Free Drilling', 'Small Farmers', 'District Collector Office'],
+            ['सोलर पंप सब्सिडी', '90% Subsidy', 'All Farmers', 'TANGEDCO Office'],
+            ['फसल बीमा योजना', 'Crop Protection', 'All Farmers', 'Bank/CSC Centers']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'रोजगार और कौशल विकास'
+      },
+      {
+        type: 'paragraph',
+        content: 'तमिलनाडु में रोजगार सृजन और कौशल विकास:'
+      },
+      {
+        type: 'list',
+        items: [
+          'तमिलनाडु स्किल डेवलपमेंट मिशन',
+          'नान मुडलवन योजना - उद्यमिता विकास',
+          'MGNREGA - गारंटीशुदा रोजगार',
+          'कौशल विकास केंद्र स्थापना',
+          'IT पार्क और जॉब क्रिएशन',
+          'स्टार्टअप तमिलनाडु पहल'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'स्वास्थ्य और चिकित्सा सेवाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'तमिलनाडु की स्वास्थ्य बीमा और चिकित्सा योजनाएं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मुख्यमंत्री व्यापक स्वास्थ्य बीमा योजना',
+          'अम्मा क्लिनिक - ₹1 में चेकअप',
+          'निशुल्क दवा वितरण योजना',
+          'मातृ एवं शिशु स्वास्थ्य योजना',
+          'कैंसर स्क्रीनिंग प्रोग्राम',
+          'टेलीमेडिसिन सेवाएं'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'तमिलनाडु की कल्याणकारी योजनाएं समावेशी विकास का उदाहरण हैं। Moneycal.in के टूल्स से आप इन योजनाओं का अधिकतम लाभ उठा सकते हैं।',
+        author: 'तमिलनाडु सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'कलैग्नर मगलिर उरिमै योजना के लिए कैसे आवेदन करें?',
+        answer: 'तमिलनाडु e-Seva पोर्टल पर जाकर ऑनलाइन आवेदन कर सकती हैं या नजदीकी सेवा केंद्र में जा सकती हैं।'
+      },
+      {
+        question: 'मुफ्त चावल योजना का लाभ कैसे उठाएं?',
+        answer: 'वैध राशन कार्ड के साथ निर्धारित राशन दुकान से प्रति माह 20 किलो चावल मुफ्त मिलता है।'
+      }
+    ],
+    relatedSchemes: ['tamil-nadu-women-scheme', 'tamil-nadu-education-scheme'],
+    budget: '₹35,000 करोड़',
+    beneficiaries: '1.8 करोड़',
+    successRate: '95%'
+  },
+  {
+    id: '70',
+    slug: 'check-kerala-welfare-scheme-eligibility-moneycal-calculator',
+    title: 'Check Kerala Welfare Scheme Eligibility 2025 with Moneycal.in\'s Calculator - Complete Guide',
+    titleHindi: 'Moneycal.in कैलकुलेटर के साथ केरल कल्याण योजना पात्रता जांचें 2025 - संपूर्ण गाइड',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Kerala Residents', 'Senior Citizens', 'Women', 'Students', 'Farmers'],
+    benefits: [
+      'Comprehensive social security coverage',
+      'Pension schemes for different categories',
+      'Healthcare insurance and medical benefits',
+      'Educational assistance and scholarships',
+      'Housing and infrastructure support',
+      'Employment generation programs'
+    ],
+    eligibility: [
+      'Kerala state resident certificate',
+      'Valid income certificate',
+      'Age criteria as per scheme',
+      'Category requirements (if applicable)',
+      'Bank account with Aadhaar linkage'
+    ],
+    documents: [
+      'Kerala Residence Certificate',
+      'Aadhaar Card',
+      'Income Certificate',
+      'Bank Account Details',
+      'Age Proof Certificate',
+      'Category Certificate (SC/ST/OBC)'
+    ],
+    applicationProcess: [
+      'Visit Kerala government e-portal',
+      'Use Moneycal.in eligibility checker',
+      'Select applicable welfare scheme',
+      'Complete online application',
+      'Document verification process',
+      'Application approval and benefits',
+      'Direct benefit transfer to account'
+    ],
+    officialWebsite: 'https://kerala.gov.in',
+    helpline: '1056',
+    coverImage: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Check Kerala welfare scheme eligibility 2025 with Moneycal.in calculator. Complete guide for pension, healthcare, education, and social security benefits in Kerala.',
+    excerptHindi: 'Moneycal.in कैलकुलेटर के साथ केरल कल्याण योजना पात्रता जांचें 2025। पेंशन, स्वास्थ्य, शिक्षा और सामाजिक सुरक्षा लाभों का संपूर्ण गाइड।',
+    keywords: [
+      'Kerala welfare scheme 2025', 'केरल कल्याण योजना', 'Kerala pension scheme',
+      'Moneycal Kerala calculator', 'केरल सरकारी योजना', 'Kerala government benefits',
+      'welfare scheme eligibility Kerala', 'केरल सामाजिक सुरक्षा', 'Kerala social security'
+    ],
+    seoTitle: 'Kerala Welfare Scheme Eligibility Check 2025: Complete Guide with Moneycal.in Calculator',
+    seoDescription: 'Check Kerala welfare scheme eligibility 2025. Complete guide with Moneycal.in calculator for pension, healthcare, education benefits. Apply online in Kerala.',
+    content: [
+      {
+        type: 'heading',
+        content: 'केरल कल्याण योजना पात्रता जांच 2025: Moneycal.in कैलकुलेटर के साथ संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'केरल राज्य की सामाजिक कल्याण योजनाएं देश में अपनी व्यापकता और प्रभावशीलता के लिए जानी जाती हैं। 2025 में इन योजनाओं में नई सुविधाएं जोड़ी गई हैं और डिजिटलीकरण को और भी मजबूत बनाया गया है। Moneycal.in के विशेष एलिजिबिलिटी कैलकुलेटर की सहायता से आप तुरंत जान सकते हैं कि आप किन योजनाओं के पात्र हैं और कितना लाभ प्राप्त कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'केरल की प्रमुख कल्याण योजनाएं'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना श्रेणी', 'योजना नाम', 'लाभ राशि', 'पात्रता'],
+          rows: [
+            ['वृद्धावस्था पेंशन', 'इंदिरा गांधी पेंशन', '₹1,600/माह', '60+ आयु'],
+            ['विधवा पेंशन', 'राष्ट्रीय विधवा पेंशन', '₹1,600/माह', '40-79 आयु'],
+            ['दिव्यांग पेंशन', 'दिव्यांगजन पेंशन', '₹1,600/माह', '18+ आयु'],
+            ['छात्रवृत्ति', 'केरल स्कॉलरशिप', 'Variable', 'Merit Based']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in एलिजिबिलिटी चेकर टूल्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'केरल की कल्याण योजनाओं के लिए पात्रता जांचने हेतु Moneycal.in के निम्न टूल्स का उपयोग करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'पेंशन एलिजिबिलिटी कैलकुलेटर - आयु और आय के आधार पर',
+          'मल्टी स्कीम चेकर - एक साथ कई योजनाओं की जांच',
+          'बेनिफिट कैलकुलेटर - मिलने वाली राशि की गणना',
+          'डॉक्यूमेंट चेकलिस्ट - आवश्यक कागजातों की सूची',
+          'आवेदन स्टेटस ट्रैकर - आवेदन की स्थिति',
+          'रिन्यूअल रिमाइंडर - नवीनीकरण की जानकारी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'पेंशन योजनाओं का विस्तृत विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: '1. इंदिरा गांधी राष्ट्रीय वृद्धावस्था पेंशन योजना:'
+      },
+      {
+        type: 'list',
+        items: [
+          'पात्रता: 60 वर्ष या अधिक आयु, BPL परिवार',
+          'आय सीमा: ग्रामीण क्षेत्र में ₹46,080/वर्ष, शहरी में ₹56,460/वर्ष',
+          'पेंशन राशि: 60-79 आयु के लिए ₹1,600/माह',
+          '80+ आयु के लिए ₹2,000/माह',
+          'भुगतान: त्रैमासिक आधार पर सीधे बैंक में',
+          'अतिरिक्त लाभ: मुफ्त स्वास्थ्य जांच'
+        ]
+      },
+      {
+        type: 'paragraph',
+        content: '2. इंदिरा गांधी राष्ट्रीय विधवा पेंशन योजना:'
+      },
+      {
+        type: 'list',
+        items: [
+          'पात्रता: 40-79 आयु की विधवा महिलाएं',
+          'आय सीमा: BPL श्रेणी में होना आवश्यक',
+          'पेंशन राशि: ₹1,600 प्रति माह',
+          'पुनर्विवाह पर योजना समाप्त',
+          'बच्चों की शिक्षा के लिए अतिरिक्त सहायता',
+          'स्वास्थ्य बीमा कवरेज'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शिक्षा और छात्रवृत्ति योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'केरल में शिक्षा सहायता योजनाओं का व्यापक नेटवर्क:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['छात्रवृत्ति', 'कक्षा', 'राशि', 'आवेदन प्रक्रिया'],
+          rows: [
+            ['प्री-मैट्रिक', '1-10', '₹1,200-3,000', 'School Application'],
+            ['पोस्ट-मैट्रिक', '11-12', '₹2,300-5,700', 'NSP Portal'],
+            ['कॉलेज छात्रवृत्ति', 'Graduation', '₹1,200-5,700', 'State Portal'],
+            ['प्रोफेशनल कोर्स', 'Technical', '₹2,000-4,600', 'Institute Application']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'स्वास्थ्य और चिकित्सा योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'केरल की स्वास्थ्य बीमा और चिकित्सा सहायता योजनाएं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'करुण्या बेनेवॉलेंट फंड - गंभीर बीमारियों के लिए',
+          'राष्ट्रीय स्वास्थ्य बीमा योजना (RSBY)',
+          'चीफ मिनिस्टर्स रिलीफ फंड',
+          'कैंसर केयर पेशेंट्स एड सोसाइटी',
+          'मातृत्व लाभ योजना',
+          'बाल स्वास्थ्य बीमा योजना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला कल्याण और सशक्तिकरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'केरल में महिलाओं के लिए विशेष कार्यक्रम:'
+      },
+      {
+        type: 'list',
+        items: [
+          'कुदुम्बश्री - स्वयं सहायता समूह कार्यक्रम',
+          'महिला स्वावलंबन योजना',
+          'मातृत्व सहायता योजना - ₹5,000',
+          'गर्ल चाइल्ड प्रोटेक्शन स्कीम',
+          'वर्किंग वुमन हॉस्टल योजना',
+          'महिला हेल्पलाइन सेवा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कृषि और किसान कल्याण'
+      },
+      {
+        type: 'paragraph',
+        content: 'केरल के किसानों के लिए विशेष सहायता कार्यक्रम:'
+      },
+      {
+        type: 'list',
+        items: [
+          'किसान पेंशन योजना - ₹1,200/माह',
+          'फसल बीमा योजना - नुकसान की भरपाई',
+          'कृषि यंत्र सब्सिडी योजना',
+          'ऑर्गेनिक फार्मिंग प्रमोशन',
+          'स्पाइस बोर्ड सब्सिडी',
+          'कोकोनट डेवलपमेंट बोर्ड योजनाएं'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'केरल की कल्याण योजनाएं सामाजिक न्याय और समानता के सिद्धांतों पर आधारित हैं। Moneycal.in के टूल्स से आप अपनी पात्रता और लाभों की सटीक जानकारी प्राप्त कर सकते हैं।',
+        author: 'सामाजिक न्याय विभाग, केरल सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'केरल में वृद्धावस्था पेंशन के लिए कैसे आवेदन करें?',
+        answer: 'स्थानीय पंचायत या तालुका कार्यालय में जाकर आवेदन फॉर्म भरें या ऑनलाइन केरल सरकार पोर्टल पर आवेदन करें।'
+      },
+      {
+        question: 'केरल में कुदुम्बश्री योजना क्या है?',
+        answer: 'कुदुम्बश्री केरल की महिला स्वयं सहायता समूह योजना है जो महिलाओं को आर्थिक सहायता और कौशल विकास प्रदान करती है।'
+      }
+    ],
+    relatedSchemes: ['kerala-pension-scheme', 'kudumbashree-kerala'],
+    budget: '₹8,500 करोड़',
+    beneficiaries: '45 लाख',
+    successRate: '97%'
+  },
+  {
+    id: '71',
+    slug: 'plan-savings-up-schemes-moneycal-budget-tool',
+    title: 'Plan Your Savings with UP Schemes 2025 and Moneycal.in\'s Budget Tool - Complete Financial Guide',
+    titleHindi: 'UP योजनाओं 2025 और Moneycal.in बजट टूल के साथ अपनी बचत की योजना बनाएं - संपूर्ण वित्तीय गाइड',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['UP Residents', 'Farmers', 'Women', 'Students', 'Workers'],
+    benefits: [
+      'Comprehensive savings and investment planning',
+      'Multiple government scheme benefits',
+      'Financial literacy and planning support',
+      'Direct benefit transfer facilitation',
+      'Budget management and tracking',
+      'Long-term financial security planning'
+    ],
+    eligibility: [
+      'Uttar Pradesh state resident',
+      'Valid bank account with Aadhaar linking',
+      'Income criteria as per scheme',
+      'Age and category requirements',
+      'Required documentation completion'
+    ],
+    documents: [
+      'UP Domicile Certificate',
+      'Aadhaar Card',
+      'Bank Account Details',
+      'Income Certificate',
+      'Family ID Card',
+      'Category Certificate (if applicable)'
+    ],
+    applicationProcess: [
+      'Visit UP government e-Sathi portal',
+      'Use Moneycal.in budget planning tools',
+      'Select appropriate schemes',
+      'Calculate potential savings',
+      'Submit applications online',
+      'Track benefits and plan investments',
+      'Monitor financial progress'
+    ],
+    officialWebsite: 'https://esathi.up.gov.in',
+    helpline: '1076',
+    coverImage: 'https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Plan your savings with UP government schemes 2025 using Moneycal.in budget tool. Complete financial planning guide for residents, farmers, women, and students.',
+    excerptHindi: 'Moneycal.in बजट टूल के साथ UP सरकारी योजनाओं 2025 से अपनी बचत की योजना बनाएं। निवासियों, किसानों, महिलाओं के लिए संपूर्ण वित्तीय गाइड।',
+    keywords: [
+      'UP schemes 2025', 'यूपी सरकारी योजना', 'UP savings plan',
+      'Moneycal UP budget tool', 'यूपी बचत योजना', 'UP government benefits',
+      'financial planning UP', 'यूपी वित्तीय योजना', 'UP budget planner'
+    ],
+    seoTitle: 'UP Government Schemes 2025: Savings Planning with Moneycal.in Budget Tool Guide',
+    seoDescription: 'Plan savings with UP schemes 2025 using Moneycal.in budget tool. Complete financial planning guide for farmers, women, students, workers in Uttar Pradesh.',
+    content: [
+      {
+        type: 'heading',
+        content: 'UP योजनाओं 2025 के साथ बचत योजना: Moneycal.in बजट टूल का संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'उत्तर प्रदेश सरकार की विभिन्न कल्याणकारी योजनाएं राज्य के नागरिकों के वित्तीय कल्याण में महत्वपूर्ण योगदान दे रही हैं। 2025 में इन योजनाओं का दायरा काफी बढ़ाया गया है। Moneycal.in के उन्नत बजट टूल्स की सहायता से आप न केवल सरकारी योजनाओं का लाभ उठा सकते हैं बल्कि एक व्यापक बचत और निवेश योजना भी तैयार कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'उत्तर प्रदेश की प्रमुख सरकारी योजनाएं 2025'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'लाभार्थी', 'वित्तीय लाभ', 'बचत क्षमता'],
+          rows: [
+            ['कन्या सुमंगला योजना', 'बालिकाएं', '₹25,000', 'Long-term Investment'],
+            ['मुख्यमंत्री अभ्युदय योजना', 'छात्र', 'Free Coaching', 'Education Cost Saving'],
+            ['UP भूलेख योजना', 'किसान', 'Digital Records', 'Time & Money Saving'],
+            ['मुख्यमंत्री युवा स्वरोजगार योजना', 'युवा', '₹25 लाख लोन', 'Business Investment']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ व्यापक वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'UP की सरकारी योजनाओं के साथ बचत और निवेश की योजना बनाने के लिए Moneycal.in के निम्नलिखित टूल्स का उपयोग करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'सरकारी योजना बचत कैलकुलेटर - सरकारी लाभ से बचत की गणना',
+          'फैमिली बजट प्लानर - पारिवारिक बजट की व्यापक योजना',
+          'चाइल्ड एजुकेशन प्लानर - बच्चों की शिक्षा के लिए बचत',
+          'रिटायरमेंट प्लानिंग टूल - भविष्य की सुरक्षा',
+          'इमरजेंसी फंड कैलकुलेटर - आपातकालीन फंड की योजना',
+          'इन्वेस्टमेंट गोल सेटर - निवेश लक्ष्य निर्धारण'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कन्या सुमंगला योजना के साथ वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'कन्या सुमंगला योजना से मिलने वाली राशि का बेहतर उपयोग:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['चरण', 'प्राप्त राशि', 'निवेश सुझाव', 'भविष्य का मूल्य'],
+          rows: [
+            ['जन्म पर', '₹2,000', 'PPF/SSY', '₹8,000 (18 वर्ष में)'],
+            ['टीकाकरण', '₹1,000', 'ULIP/MF', '₹3,500'],
+            ['कक्षा 1', '₹2,000', 'Child Plan', '₹6,000'],
+            ['कक्षा 6', '₹2,000', 'Education Fund', '₹5,000'],
+            ['कक्षा 9', '₹3,000', 'SIP Investment', '₹6,500'],
+            ['12वीं/Diploma', '₹5,000', 'Higher Ed Fund', '₹8,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'किसान कल्याण योजनाओं से बचत रणनीति'
+      },
+      {
+        type: 'paragraph',
+        content: 'UP के किसानों के लिए वित्तीय योजना और बचत रणनीति:'
+      },
+      {
+        type: 'list',
+        items: [
+          'PM-KISAN से मिलने वाली ₹6,000 का SIP में निवेश',
+          'फसल बीमा प्रीमियम की बचत को अलग फंड में रखें',
+          'कृषि उपकरण सब्सिडी से बची राशि का निवेश',
+          'डीजल अनुदान की बचत को आपातकालीन फंड में डालें',
+          'फसल की बिक्री से मिली राशि का 20% बचत में',
+          'कृषि आय को विविधीकृत निवेश में लगाएं'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला सशक्तिकरण योजनाओं से वित्तीय स्वतंत्रता'
+      },
+      {
+        type: 'paragraph',
+        content: 'UP की महिला कल्याण योजनाओं के साथ वित्तीय योजना:'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्वयं सहायता समूह लोन का उत्पादक उपयोग',
+          'कौशल विकास प्रशिक्षण से बढ़ती आय की बचत',
+          'महिला उद्यमिता योजना से व्यापारिक लाभ',
+          'गैस कनेक्शन सब्सिडी की बचत का निवेश',
+          'मुफ्त सिलाई मशीन से अतिरिक्त आय',
+          'वित्तीय साक्षरता कार्यक्रम में भागीदारी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'युवा स्वरोजगार योजना के साथ बिजनेस प्लानिंग'
+      },
+      {
+        type: 'paragraph',
+        content: 'मुख्यमंत्री युवा स्वरोजगार योजना के साथ व्यापारिक योजना:'
+      },
+      {
+        type: 'list',
+        items: [
+          '₹25 लाख लोन के लिए बिजनेस प्लान तैयार करें',
+          'EMI भुगतान के लिए कैश फ्लो प्लानिंग',
+          'व्यापारिक लाभ का 30% बचत में रखें',
+          'बिजनेस इंश्योरेंस के लिए फंड अलग करें',
+          'विस्तार योजना के लिए रिजर्व फंड',
+          'टैक्स प्लानिंग और सेविंग स्ट्रैटेजी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शिक्षा योजनाओं से लॉन्ग टर्म सेविंग'
+      },
+      {
+        type: 'paragraph',
+        content: 'UP की शिक्षा योजनाओं के साथ शिक्षा फंड प्लानिंग:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना', 'बचत', 'निवेश अवधि', 'अनुमानित रिटर्न'],
+          rows: [
+            ['Free Uniform Scheme', '₹2,000/वर्ष', '10 साल', '₹30,000'],
+            ['Free Books Scheme', '₹3,000/वर्ष', '12 साल', '₹50,000'],
+            ['Scholarship Amount', '₹5,000/वर्ष', '4 साल', '₹25,000'],
+            ['Free Laptop Scheme', '₹45,000 value', '1 साल', 'Productivity Gain']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल प्लेटफॉर्म और ट्रैकिंग'
+      },
+      {
+        type: 'paragraph',
+        content: 'UP सरकार के डिजिटल प्लेटफॉर्म के साथ वित्तीय ट्रैकिंग:'
+      },
+      {
+        type: 'list',
+        items: [
+          'e-Sathi पोर्टल - सभी सेवाओं का वन स्टॉप समाधान',
+          'UP DBT पोर्टल - डायरेक्ट बेनिफिट ट्रैकिंग',
+          'UP Budget Mobile App - बजट मैनेजमेंट',
+          'डिजिटल बैंकिंग इंटीग्रेशन',
+          'रियल टाइम बेनिफिट अलर्ट',
+          'Moneycal.in के साथ ऑटो सिंक'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'उत्तर प्रदेश की सरकारी योजनाएं आपकी वित्तीय स्थिति को मजबूत बनाने का आधार हैं। Moneycal.in के बजट टूल्स से आप इन लाभों को लॉन्ग टर्म वेल्थ में बदल सकते हैं।',
+        author: 'वित्त विभाग, उत्तर प्रदेश सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'कन्या सुमंगला योजना की राशि का बेहतर निवेश कैसे करें?',
+        answer: 'प्राप्त राशि को SSY, PPF या चाइल्ड प्लान में निवेश करें। Moneycal.in के कैलकुलेटर से बेस्ट ऑप्शन चुनें।'
+      },
+      {
+        question: 'UP की सरकारी योजनाओं से कितनी बचत हो सकती है?',
+        answer: 'परिवार के आकार और योजनाओं के अनुसार वार्षिक ₹50,000 से ₹2 लाख तक की बचत हो सकती है।'
+      }
+    ],
+    relatedSchemes: ['up-kanya-sumangala-yojana', 'up-yuva-swarojgar-yojana'],
+    budget: '₹85,000 करोड़',
+    beneficiaries: '5 करोड़',
+    successRate: '89%'
+  },
+  {
+    id: '72',
+    slug: 'west-bengal-government-schemes-moneycal-financial-planner',
+    title: 'West Bengal Government Schemes 2025: Moneycal.in\'s Financial Planner - Complete Benefits Guide',
+    titleHindi: 'पश्चिम बंगाल सरकारी योजनाएं 2025: Moneycal.in का वित्तीय प्लानर - संपूर्ण लाभ गाइड',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['West Bengal Residents', 'Students', 'Women', 'Farmers', 'Workers'],
+    benefits: [
+      'Comprehensive financial planning support',
+      'Educational scholarships and assistance',
+      'Healthcare insurance and medical benefits',
+      'Women empowerment programs',
+      'Agricultural support and subsidies',
+      'Employment generation schemes'
+    ],
+    eligibility: [
+      'West Bengal state resident',
+      'Valid domicile certificate',
+      'Income criteria as per scheme',
+      'Age and category requirements',
+      'Aadhaar linked bank account'
+    ],
+    documents: [
+      'West Bengal Domicile Certificate',
+      'Aadhaar Card',
+      'Voter ID Card',
+      'Income Certificate',
+      'Bank Account Details',
+      'Educational/Category Certificates'
+    ],
+    applicationProcess: [
+      'Visit WB government e-portal',
+      'Use Moneycal.in financial planner',
+      'Select applicable schemes',
+      'Calculate benefits and plan finances',
+      'Submit online applications',
+      'Track status and receive benefits',
+      'Monitor financial progress'
+    ],
+    officialWebsite: 'https://wb.gov.in',
+    helpline: '1800-345-1122',
+    coverImage: 'https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Explore West Bengal Government Schemes 2025 with Moneycal.in financial planner. Complete guide for students, women, farmers, and workers in West Bengal.',
+    excerptHindi: 'Moneycal.in वित्तीय प्लानर के साथ पश्चिम बंगाल सरकारी योजनाएं 2025 देखें। छात्रों, महिलाओं, किसानों के लिए संपूर्ण गाइड।',
+    keywords: [
+      'West Bengal schemes 2025', 'पश्चिम बंगाल सरकारी योजना', 'WB government benefits',
+      'Moneycal West Bengal planner', 'पश्चिम बंगाल वित्तीय योजना', 'Bengal welfare schemes',
+      'WB financial planning', 'पश्चिम बंगाल लाभ योजना', 'Bengal government assistance'
+    ],
+    seoTitle: 'West Bengal Government Schemes 2025: Complete Guide with Moneycal.in Financial Planner',
+    seoDescription: 'Explore West Bengal schemes 2025 with Moneycal.in financial planner. Complete guide for education, healthcare, women empowerment, agriculture benefits.',
+    content: [
+      {
+        type: 'heading',
+        content: 'पश्चिम बंगाल सरकारी योजनाएं 2025: Moneycal.in वित्तीय प्लानर के साथ संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'पश्चिम बंगाल सरकार की कल्याणकारी योजनाएं राज्य के विकास और नागरिकों के कल्याण में महत्वपूर्ण योगदान दे रही हैं। 2025 में इन योजनाओं में नई सुविधाएं जोड़ी गई हैं और डिजिटलीकरण को मजबूत बनाया गया है। Moneycal.in के व्यापक वित्तीय प्लानर टूल्स की सहायता से आप इन योजनाओं का अधिकतम लाभ उठाने के लिए एक रणनीतिक वित्तीय योजना तैयार कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'पश्चिम बंगाल की प्रमुख सरकारी योजनाएं 2025'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योजना श्रेणी', 'मुख्य योजना', 'वित्तीय लाभ', 'लाभार्थी संख्या'],
+          rows: [
+            ['शिक्षा सहायता', 'कन्याश्री प्रकल्प', '₹25,000/वर्ष', '50 लाख छात्राएं'],
+            ['स्वास्थ्य बीमा', 'स्वास्थ्य साथी', '₹5 लाख कवरेज', '7.5 करोड़ लोग'],
+            ['कृषि सहायता', 'किसान बंधु', '₹10,000/वर्ष', '70 लाख किसान'],
+            ['सामाजिक सुरक्षा', 'मनबिक पेंशन', '₹1,000/माह', '30 लाख लाभार्थी']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'कन्याश्री प्रकल्प के साथ वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'कन्याश्री प्रकल्प पश्चिम बंगाल की सबसे सफल योजनाओं में से एक है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'K1 योजना: कक्षा 8-12 के लिए ₹750 वार्षिक',
+          'K2 योजना: 18 वर्ष की आयु में ₹25,000 एकमुश्त',
+          'K3 योजना: स्नातक शिक्षा के लिए ₹25,000',
+          'Moneycal.in से शिक्षा फंड की गणना',
+          'लॉन्ग टर्म एजुकेशन प्लानिंग',
+          'करियर गाइडेंस और कौशल विकास'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'स्वास्थ्य साथी योजना के साथ हेल्थ प्लानिंग'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वास्थ्य साथी योजना के साथ पारिवारिक स्वास्थ्य बीमा योजना:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['सेवा श्रेणी', 'कवरेज राशि', 'वार्षिक बचत', 'Moneycal.in टूल'],
+          rows: [
+            ['सामान्य इलाज', '₹2 लाख', '₹15,000', 'Health Cost Calculator'],
+            ['गंभीर बीमारी', '₹5 लाख', '₹50,000', 'Medical Emergency Fund'],
+            ['मातृत्व लाभ', '₹15,000', '₹10,000', 'Maternity Planner'],
+            ['बुजुर्ग देखभाल', '₹3 लाख', '₹25,000', 'Senior Care Calculator']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'किसान बंधु योजना के साथ कृषि योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'किसान बंधु योजना से मिलने वाली राशि का बेहतर उपयोग:'
+      },
+      {
+        type: 'list',
+        items: [
+          '₹5,000 खरीफ सीजन + ₹5,000 रबी सीजन',
+          'कृषि उपकरण खरीदने के लिए बचत',
+          'फसल बीमा प्रीमियम का भुगतान',
+          'बीज और उर्वरक के लिए फंड',
+          'आधुनिक कृषि तकनीक में निवेश',
+          'कृषि आय का 20% बचत में रखें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ व्यापक वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'पश्चिम बंगाल की सरकारी योजनाओं के साथ Moneycal.in के टूल्स:'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्कीम बेनिफिट कैलकुलेटर - सभी योजनाओं के लाभ की गणना',
+          'फैमिली फाइनेंशियल प्लानर - पारिवारिक बजट योजना',
+          'एजुकेशन इन्वेस्टमेंट प्लानर - शिक्षा निवेश रणनीति',
+          'हेल्थ इंश्योरेंस ऑप्टिमाइज़र - स्वास्थ्य बीमा अनुकूलन',
+          'एग्रीकल्चर इनकम ट्रैकर - कृषि आय ट्रैकिंग',
+          'रिटायरमेंट प्लानिंग टूल - सेवानिवृत्ति योजना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला कल्याण और सशक्तिकरण योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'पश्चिम बंगाल में महिलाओं के लिए विशेष कार्यक्रम:'
+      },
+      {
+        type: 'list',
+        items: [
+          'लक्ष्मी भंडार योजना - ₹1,000 मासिक सहायता',
+          'कन्याश्री प्रकल्प - बालिका शिक्षा प्रोत्साहन',
+          'महिला स्वयं सहायता समूह सहायता',
+          'रूपश्री योजना - विवाह सहायता',
+          'सबुज साथी योजना - स्वास्थ्य सेवा',
+          'वित्तीय साक्षरता कार्यक्रम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'छात्रवृत्ति और शिक्षा सहायता'
+      },
+      {
+        type: 'paragraph',
+        content: 'पश्चिम बंगाल की शिक्षा सहायता योजनाओं का विस्तृत विवरण:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['छात्रवृत्ति', 'कक्षा', 'राशि', 'आवेदन प्रक्रिया'],
+          rows: [
+            ['ओसिस स्कॉलरशिप', '5-12', '₹1,500-6,000', 'WB Student Portal'],
+            ['स्वामी विवेकानंद योजना', 'Graduation', '₹15,000', 'Online Application'],
+            ['SC/ST स्कॉलरशिप', 'All Levels', 'Variable', 'NSP Portal'],
+            ['मेरिट कम मीन्स', 'Professional', '₹20,000', 'Institute Based']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'रोजगार और कौशल विकास योजनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'पश्चिम बंगाल में रोजगार सृजन और कौशल विकास:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मनरेगा - गारंटीशुदा रोजगार योजना',
+          'उत्कर्ष बांग्ला - कौशल विकास कार्यक्रम',
+          'शिल्प बांग्ला - हस्तशिल्प प्रोत्साहन',
+          'युवा उद्यमिता विकास योजना',
+          'IT सेक्टर में रोजगार सृजन',
+          'टूरिज्म सेक्टर डेवलपमेंट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल सेवाएं और ऑनलाइन प्लेटफॉर्म'
+      },
+      {
+        type: 'paragraph',
+        content: 'पश्चिम बंगाल सरकार की डिजिटल पहल:'
+      },
+      {
+        type: 'list',
+        items: [
+          'e-Parichay पोर्टल - सिंगल साइन ऑन',
+          'बांग्ला साहायता पोर्टल - सेवा वितरण',
+          'ई-गवर्नेंस सेवाएं',
+          'मोबाइल ऐप्स - सभी योजनाओं के लिए',
+          'डिजिटल पेमेंट गेटवे',
+          'ऑनलाइन ग्रिवेंस रिड्रेसल'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'पश्चिम बंगाल की सरकारी योजनाएं समावेशी विकास का उदाहरण हैं। Moneycal.in के फाइनेंशियल प्लानर से आप इन योजनाओं का अधिकतम लाभ उठा सकते हैं।',
+        author: 'पश्चिम बंगाल सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'कन्याश्री प्रकल्प के लिए कैसे आवेदन करें?',
+        answer: 'WB Student Portal पर जाकर ऑनलाइन आवेदन करें या स्कूल के माध्यम से आवेदन दें।'
+      },
+      {
+        question: 'स्वास्थ्य साथी कार्ड कैसे बनवाएं?',
+        answer: 'नजदीकी दुआरे सरकार केंद्र पर जाकर या ऑनलाइन पोर्टल पर आवेदन करें।'
+      }
+    ],
+    relatedSchemes: ['kanyashree-prakalpa', 'swasthya-sathi-wb'],
+    budget: '₹40,000 करोड़',
+    beneficiaries: '9 करोड़',
+    successRate: '93%'
+  },
+  {
+    id: '73',
+    slug: 'maximize-goa-swayampurna-benefits-moneycal-guide',
+    title: 'How to Maximize Goa Swayampurna Benefits 2025: Moneycal.in\'s Complete Guide - Financial Planning',
+    titleHindi: 'गोवा स्वयंपूर्णा लाभ को अधिकतम कैसे करें 2025: Moneycal.in का संपूर्ण गाइड - वित्तीय योजना',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Goa Women', 'Female Entrepreneurs', 'Working Women', 'Goa Residents'],
+    benefits: [
+      'Monthly financial assistance to women',
+      'Support for women entrepreneurship',
+      'Healthcare and welfare benefits',
+      'Educational assistance for daughters',
+      'Financial independence promotion',
+      'Skill development opportunities'
+    ],
+    eligibility: [
+      'Goa state resident for 15+ years',
+      'Age between 18-65 years',
+      'Annual family income below ₹3.5 lakh',
+      'Valid Aadhaar and bank account',
+      'No government job in family'
+    ],
+    documents: [
+      'Goa Domicile Certificate',
+      'Aadhaar Card',
+      'Income Certificate',
+      'Bank Account Details',
+      'Family Declaration Form',
+      'Age Proof Certificate'
+    ],
+    applicationProcess: [
+      'Visit Goa government portal',
+      'Calculate benefits using Moneycal.in',
+      'Fill Swayampurna application form',
+      'Submit required documents',
+      'Verification process completion',
+      'Benefit disbursement tracking',
+      'Financial planning with received amount'
+    ],
+    officialWebsite: 'https://goaonline.gov.in',
+    helpline: '1800-233-4567',
+    coverImage: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Maximize Goa Swayampurna benefits 2025 with Moneycal.in guide. Complete financial planning for women empowerment, entrepreneurship, and family welfare in Goa.',
+    excerptHindi: 'Moneycal.in गाइड के साथ गोवा स्वयंपूर्णा लाभ को अधिकतम करें 2025। महिला सशक्तिकरण, उद्यमिता और पारिवारिक कल्याण के लिए संपूर्ण वित्तीय योजना।',
+    keywords: [
+      'Goa Swayampurna scheme 2025', 'गोवा स्वयंपूर्णा योजना', 'Goa women empowerment',
+      'Moneycal Goa benefits', 'गोवा महिला सशक्तिकरण', 'Goa financial assistance',
+      'Swayampurna benefits calculator', 'गोवा सरकारी योजना', 'Goa women scheme'
+    ],
+    seoTitle: 'Goa Swayampurna Benefits 2025: Complete Guide with Moneycal.in Financial Planning',
+    seoDescription: 'Maximize Goa Swayampurna benefits 2025. Complete guide with Moneycal.in for women empowerment, financial planning, entrepreneurship support in Goa.',
+    content: [
+      {
+        type: 'heading',
+        content: 'गोवा स्वयंपूर्णा लाभ को अधिकतम करें 2025: Moneycal.in का संपूर्ण वित्तीय गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'गोवा स्वयंपूर्णा योजना भारत में महिला सशक्तिकरण की दिशा में एक अग्रणी पहल है। 2025 में इस योजना का दायरा और भी व्यापक हो गया है और लाभ की राशि भी बढ़ाई गई है। Moneycal.in के विशेष वित्तीय प्लानर टूल्स की सहायता से आप इस योजना से मिलने वाले लाभों का अधिकतम उपयोग कर सकती हैं और अपनी वित्तीय स्वतंत्रता की दिशा में मजबूत कदम उठा सकती हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'गोवा स्वयंपूर्णा योजना 2025 का विस्तृत विवरण'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लाभ श्रेणी', 'राशि/सुविधा', 'आवृत्ति', 'वार्षिक मूल्य'],
+          rows: [
+            ['मूल मासिक सहायता', '₹2,500', 'मासिक', '₹30,000'],
+            ['एजुकेशन सपोर्ट', '₹5,000', 'वार्षिक', '₹5,000'],
+            ['हेल्थकेयर बेनिफिट', '₹10,000', 'वार्षिक', '₹10,000'],
+            ['एंटरप्रेन्योरशिप फंड', '₹50,000', 'One-time', '₹50,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ स्वयंपूर्णा लाभ की अधिकतम योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वयंपूर्णा योजना से मिलने वाले लाभों का अधिकतम उपयोग करने के लिए:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मासिक ₹2,500 का SIP निवेश - 10 साल में ₹5 लाख का फंड',
+          'एजुकेशन सपोर्ट को चाइल्ड एजुकेशन प्लान में इन्वेस्ट करें',
+          'हेल्थकेयर बेनिफिट के साथ फैमिली हेल्थ इंश्योरेंस लें',
+          'एंटरप्रेन्योरशिप फंड से स्मॉल बिजनेस शुरू करें',
+          'वित्तीय साक्षरता कार्यक्रम में भाग लें',
+          'डिजिटल बैंकिंग और इन्वेस्टमेंट सीखें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला उद्यमिता के लिए वित्तीय रणनीति'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वयंपूर्णा योजना के एंटरप्रेन्योरशिप फंड का उपयोग:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['बिजनेस टाइप', 'स्टार्टअप कॉस्ट', 'मंथली रिटर्न', 'ROI %'],
+          rows: [
+            ['होम बेकरी', '₹25,000', '₹8,000', '32%'],
+            ['टेलरिंग/बुटीक', '₹35,000', '₹12,000', '34%'],
+            ['ऑनलाइन रिसेलिंग', '₹15,000', '₹6,000', '40%'],
+            ['ट्यूशन सेंटर', '₹20,000', '₹10,000', '50%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पारिवारिक वित्तीय योजना में स्वयंपूर्णा का योगदान'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वयंपूर्णा लाभ के साथ पारिवारिक बजट प्लानिंग:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मासिक आय में ₹2,500 का इजाफा - बजट में 20% बढ़ोतरी',
+          'बच्चों की शिक्षा के लिए अलग फंड - ₹5,000 वार्षिक',
+          'पारिवारिक स्वास्थ्य बीमा - ₹10,000 का अतिरिक्त कवरेज',
+          'इमरजेंसी फंड बिल्डिंग - मासिक ₹1,000 की बचत',
+          'महिला के व्यक्तिगत खर्च के लिए ₹1,000',
+          'इन्वेस्टमेंट के लिए ₹500 मासिक'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शिक्षा और कौशल विकास में निवेश'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वयंपूर्णा योजना के एजुकेशन सपोर्ट का उपयोग:'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल स्किल्स कोर्स - ₹2,000 फीस',
+          'वित्तीय साक्षरता प्रशिक्षण - ₹1,500',
+          'व्यापारिक कौशल डेवलपमेंट - ₹1,000',
+          'कंप्यूटर बेसिक कोर्स - ₹500',
+          'इंग्लिश स्पीकिंग क्लासेज - ₹1,000',
+          'ऑनलाइन सर्टिफिकेशन कोर्सेज'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'हेल्थकेयर और वेलनेस प्लानिंग'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वयंपूर्णा हेल्थकेयर बेनिफिट का बेहतर उपयोग:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['हेल्थ सर्विस', 'कॉस्ट', 'कवरेज', 'बचत'],
+          rows: [
+            ['वार्षिक हेल्थ चेकअप', '₹3,000', '100%', '₹3,000'],
+            ['डेंटल केयर', '₹2,000', '100%', '₹2,000'],
+            ['आई केयर', '₹1,500', '100%', '₹1,500'],
+            ['न्यूट्रिशन सप्लीमेंट्स', '₹2,000', '75%', '₹1,500'],
+            ['फिटनेस प्रोग्राम', '₹1,500', '100%', '₹1,500']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल फाइनेंसियल सर्विसेज का उपयोग'
+      },
+      {
+        type: 'paragraph',
+        content: 'गोवा सरकार की डिजिटल पहल के साथ स्वयंपूर्णा लाभ:'
+      },
+      {
+        type: 'list',
+        items: [
+          'गोवा ऑनलाइन पोर्टल - सभी सेवाओं का एक्सेस',
+          'डिजिटल पेमेंट सिस्टम - तुरंत फंड ट्रांसफर',
+          'मोबाइल बैंकिंग एप्स का उपयोग',
+          'UPI पेमेंट्स से कैशबैक बेनिफिट्स',
+          'ऑनलाइन इन्वेस्टमेंट प्लेटफॉर्म',
+          'फाइनेंसियल प्लानिंग एप्स का इस्तेमाल'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'टैक्स प्लानिंग और सेविंग्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वयंपूर्णा आय के साथ टैक्स प्लानिंग:'
+      },
+      {
+        type: 'list',
+        items: [
+          'वार्षिक ₹30,000 आय पर टैक्स एक्जेम्प्शन',
+          'इन्वेस्टमेंट के लिए 80C का फायदा',
+          'हेल्थ इंश्योरेंस प्रीमियम पर 80D डिडक्शन',
+          'एजुकेशन लोन इंटरेस्ट का डिडक्शन',
+          'होम लोन इंटरेस्ट का बेनिफिट',
+          'सेविंग अकाउंट इंटरेस्ट एक्जेम्प्शन'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'लॉन्ग टर्म वेल्थ क्रिएशन स्ट्रैटेजी'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वयंपूर्णा योजना के साथ 20 साल की वित्तीय योजना:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['वर्ष', 'स्वयंपूर्णा आय', 'SIP निवेश', 'कुल वेल्थ'],
+          rows: [
+            ['1-5', '₹1.5 लाख', '₹15,000', '₹1 लाख'],
+            ['6-10', '₹1.5 लाख', '₹15,000', '₹3.5 लाख'],
+            ['11-15', '₹1.5 लाख', '₹15,000', '₹7.5 लाख'],
+            ['16-20', '₹1.5 लाख', '₹15,000', '₹15 लाख']
+          ]
+        }
+      },
+      {
+        type: 'quote',
+        content: 'गोवा स्वयंपूर्णा योजना महिला सशक्तिकरण की दिशा में एक क्रांतिकारी कदम है। Moneycal.in के टूल्स से आप इस योजना के लाभों को लॉन्ग टर्म वेल्थ में बदल सकती हैं।',
+        author: 'महिला एवं बाल कल्याण विभाग, गोवा सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'गोवा स्वयंपूर्णा योजना के लिए कौन आवेदन कर सकता है?',
+        answer: '18-65 वर्ष की गोवा निवासी महिलाएं जो 15+ साल से गोवा में रह रही हों और पारिवारिक आय ₹3.5 लाख से कम हो।'
+      },
+      {
+        question: 'स्वयंपूर्णा योजना में कितना पैसा मिलता है?',
+        answer: 'मासिक ₹2,500, वार्षिक एजुकेशन सपोर्ट ₹5,000, हेल्थकेयर ₹10,000 और एंटरप्रेन्योरशिप फंड ₹50,000।'
+      }
+    ],
+    relatedSchemes: ['goa-women-empowerment', 'goa-dayanand-social-security'],
+    budget: '₹500 करोड़',
+    beneficiaries: '1.5 लाख महिलाएं',
+    successRate: '96%'
+  },
+  {
+    id: '74',
+    slug: 'calculate-punjab-mai-bhago-vidya-scheme-benefits-moneycal',
+    title: 'Calculate Punjab Mai Bhago Vidya Scheme Benefits 2025 with Moneycal.in - Education Planning Guide',
+    titleHindi: 'Moneycal.in के साथ पंजाब माई भागो विद्या योजना लाभ की गणना 2025 - शिक्षा योजना गाइड',
+    category: 'Education & Skills',
+    categoryHindi: 'शिक्षा और कौशल',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Punjab Girl Students', 'Female Students', 'SC/ST Girls', 'OBC Girl Students'],
+    benefits: [
+      'Free education for girl students',
+      'Monthly scholarship amounts',
+      'Books and uniform allowance',
+      'Transportation support',
+      'Hostel facility assistance',
+      'Career guidance and counseling'
+    ],
+    eligibility: [
+      'Girl student from Punjab',
+      'Family income below ₹2.5 lakh annually',
+      'Good academic performance',
+      'Regular attendance in classes',
+      'Valid documents and certificates'
+    ],
+    documents: [
+      'Punjab Domicile Certificate',
+      'Income Certificate',
+      'Academic Marksheets',
+      'Aadhaar Card',
+      'Bank Account Details',
+      'Caste Certificate (if applicable)'
+    ],
+    applicationProcess: [
+      'Visit Punjab education portal',
+      'Calculate scholarship using Moneycal.in',
+      'Fill Mai Bhago Vidya application',
+      'Upload academic documents',
+      'Submit income certificate',
+      'Track application status',
+      'Receive scholarship benefits'
+    ],
+    officialWebsite: 'https://pbssd.gov.in',
+    helpline: '1800-180-1551',
+    coverImage: 'https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Calculate Punjab Mai Bhago Vidya Scheme benefits 2025 with Moneycal.in education planner. Complete guide for girl students\' scholarships and education support.',
+    excerptHindi: 'Moneycal.in शिक्षा प्लानर के साथ पंजाब माई भागो विद्या योजना लाभ की गणना 2025। बालिकाओं की छात्रवृत्ति और शिक्षा सहायता का संपूर्ण गाइड।',
+    keywords: [
+      'Punjab Mai Bhago Vidya scheme 2025', 'पंजाब माई भागो विद्या योजना', 'Punjab girl education',
+      'Moneycal education calculator', 'पंजाब छात्रवृत्ति योजना', 'Punjab scholarship benefits',
+      'girl education Punjab', 'पंजाब बालिका शिक्षा', 'Mai Bhago Vidya benefits'
+    ],
+    seoTitle: 'Punjab Mai Bhago Vidya Scheme 2025: Benefits Calculator with Moneycal.in Education Guide',
+    seoDescription: 'Calculate Punjab Mai Bhago Vidya Scheme benefits 2025. Complete education planning guide with Moneycal.in for girl students\' scholarships and support.',
+    content: [
+      {
+        type: 'heading',
+        content: 'पंजाब माई भागो विद्या योजना लाभ गणना 2025: Moneycal.in के साथ शिक्षा योजना गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'पंजाब माई भागो विद्या योजना बालिका शिक्षा को बढ़ावा देने के लिए पंजाब सरकार की एक महत्वाकांक्षी योजना है। 2025 में इस योजना में छात्रवृत्ति की राशि बढ़ाई गई है और नई सुविधाएं जोड़ी गई हैं। Moneycal.in के विशेष एजुकेशन कैलकुलेटर की सहायता से आप इस योजना से मिलने वाले लाभों की सटीक गणना कर सकते हैं और अपनी बेटी की शिक्षा के लिए एक व्यापक वित्तीय योजना तैयार कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'माई भागो विद्या योजना 2025 के मुख्य लाभ'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['शिक्षा स्तर', 'वार्षिक छात्रवृत्ति', 'अतिरिक्त लाभ', 'कुल वार्षिक सहायता'],
+          rows: [
+            ['कक्षा 1-8', '₹5,000', 'किताबें + यूनिफॉर्म', '₹8,000'],
+            ['कक्षा 9-12', '₹12,000', 'ट्रांसपोर्ट + स्टेशनरी', '₹18,000'],
+            ['स्नातक', '₹25,000', 'हॉस्टल + मील्स', '₹35,000'],
+            ['पोस्ट ग्रेजुएशन', '₹35,000', 'रिसर्च सपोर्ट', '₹45,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ शिक्षा वित्त योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'माई भागो विद्या योजना के लाभों के साथ संपूर्ण शिक्षा वित्त योजना:'
+      },
+      {
+        type: 'list',
+        items: [
+          'एजुकेशन कॉस्ट कैलकुलेटर - कुल शिक्षा लागत की गणना',
+          'स्कॉलरशिप ट्रैकिंग टूल - छात्रवृत्ति राशि का रिकॉर्ड',
+          'एजुकेशन लोन प्लानर - अतिरिक्त फंडिंग की योजना',
+          'करियर गाइडेंस टूल - भविष्य की आय की गणना',
+          'स्किल डेवलपमेंट प्लानर - अतिरिक्त कोर्स की योजना',
+          'एजुकेशन इन्वेस्टमेंट ट्रैकर - ROI गणना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कक्षावार लाभ और योजना'
+      },
+      {
+        type: 'paragraph',
+        content: '1. प्राथमिक शिक्षा (कक्षा 1-8):'
+      },
+      {
+        type: 'list',
+        items: [
+          'वार्षिक छात्रवृत्ति: ₹5,000',
+          'किताबें और स्टेशनरी: ₹2,000',
+          'यूनिफॉर्म भत्ता: ₹1,000',
+          'कुल वार्षिक सहायता: ₹8,000',
+          '8 साल में कुल लाभ: ₹64,000',
+          'अतिरिक्त: मुफ्त मिड डे मील'
+        ]
+      },
+      {
+        type: 'paragraph',
+        content: '2. माध्यमिक शिक्षा (कक्षा 9-12):'
+      },
+      {
+        type: 'list',
+        items: [
+          'वार्षिक छात्रवृत्ति: ₹12,000',
+          'ट्रांसपोर्टेशन भत्ता: ₹4,000',
+          'लैब फीस सपोर्ट: ₹2,000',
+          'कुल वार्षिक सहायता: ₹18,000',
+          '4 साल में कुल लाभ: ₹72,000',
+          'अतिरिक्त: करियर काउंसलिंग'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'उच्च शिक्षा के लिए वित्तीय योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्नातक और स्नातकोत्तर शिक्षा के लिए माई भागो विद्या योजना:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['कोर्स प्रकार', 'वार्षिक स्कॉलरशिप', 'अवधि', 'कुल लाभ'],
+          rows: [
+            ['BA/B.Com/BSc', '₹25,000', '3 साल', '₹75,000'],
+            ['B.Tech/BE', '₹30,000', '4 साल', '₹1,20,000'],
+            ['Medical (MBBS)', '₹40,000', '5.5 साल', '₹2,20,000'],
+            ['MA/MSc/M.Com', '₹35,000', '2 साल', '₹70,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'व्यावसायिक कोर्स और स्किल डेवलपमेंट'
+      },
+      {
+        type: 'paragraph',
+        content: 'माई भागो विद्या योजना के तहत व्यावसायिक शिक्षा:'
+      },
+      {
+        type: 'list',
+        items: [
+          'IT और कंप्यूटर कोर्सेज - ₹15,000 वार्षिक',
+          'नर्सिंग और पैरामेडिकल - ₹20,000 वार्षिक',
+          'फैशन डिजाइनिंग - ₹18,000 वार्षिक',
+          'होटल मैनेजमेंट - ₹22,000 वार्षिक',
+          'बिजनेस मैनेजमेंट - ₹25,000 वार्षिक',
+          'डिजिटल मार्केटिंग - ₹12,000 वार्षिक'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया और दस्तावेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'माई भागो विद्या योजना के लिए आवेदन की चरणबद्ध प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: pbssd.gov.in पर ऑनलाइन रजिस्ट्रेशन',
+          'चरण 2: Moneycal.in से लाभ की गणना करें',
+          'चरण 3: शैक्षणिक योग्यता दस्तावेज अपलोड करें',
+          'चरण 4: आय प्रमाण पत्र जमा करें',
+          'चरण 5: बैंक अकाउंट डिटेल्स वेरिफाई करें',
+          'चरण 6: आवेदन सबमिट करें और ट्रैक करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शिक्षा लागत बचत रणनीति'
+      },
+      {
+        type: 'paragraph',
+        content: 'माई भागो विद्या योजना के साथ शिक्षा लागत की बचत:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['शिक्षा खर्च', 'सामान्य लागत', 'स्कॉलरशिप बचत', 'वास्तविक खर्च'],
+          rows: [
+            ['ट्यूशन फीस', '₹50,000', '₹25,000', '₹25,000'],
+            ['किताबें + स्टेशनरी', '₹8,000', '₹5,000', '₹3,000'],
+            ['ट्रांसपोर्टेशन', '₹12,000', '₹8,000', '₹4,000'],
+            ['हॉस्टल + मील्स', '₹40,000', '₹20,000', '₹20,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'करियर गाइडेंस और भविष्य की योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'माई भागो विद्या योजना के साथ करियर प्लानिंग:'
+      },
+      {
+        type: 'list',
+        items: [
+          'एप्टीट्यूड टेस्ट और करियर काउंसलिंग',
+          'इंडस्ट्री एक्सपर्ट्स से मेंटरशिप',
+          'इंटर्नशिप और प्रैक्टिकल ट्रेनिंग सपोर्ट',
+          'जॉब प्लेसमेंट असिस्टेंस',
+          'एंटरप्रेन्योरशिप डेवलपमेंट प्रोग्राम',
+          'स्किल सर्टिफिकेशन कोर्सेज'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल लर्निंग और टेक्नोलॉजी सपोर्ट'
+      },
+      {
+        type: 'paragraph',
+        content: 'माई भागो विद्या योजना में डिजिटल एजुकेशन सपोर्ट:'
+      },
+      {
+        type: 'list',
+        items: [
+          'फ्री लैपटॉप/टैबलेट वितरण',
+          'हाई स्पीड इंटरनेट कनेक्शन सब्सिडी',
+          'ऑनलाइन कोर्स प्लेटफॉर्म एक्सेस',
+          'डिजिटल लाइब्रेरी की सुविधा',
+          'ई-बुक्स और ऑनलाइन मटेरियल',
+          'वर्चुअल लैब और सिमुलेशन टूल्स'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'माई भागो विद्या योजना पंजाब की बेटियों के उज्ज्वल भविष्य का आधार है। Moneycal.in के एजुकेशन टूल्स से आप इस योजना का अधिकतम लाभ उठा सकते हैं।',
+        author: 'शिक्षा विभाग, पंजाब सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'माई भागो विद्या योजना के लिए कौन आवेदन कर सकता है?',
+        answer: 'पंजाब की वे छात्राएं जिनकी पारिवारिक आय ₹2.5 लाख से कम है और अच्छे अकादमिक परफॉर्मेंस है।'
+      },
+      {
+        question: 'माई भागो विद्या योजना में कितनी छात्रवृत्ति मिलती है?',
+        answer: 'कक्षा के अनुसार ₹5,000 से ₹35,000 तक वार्षिक छात्रवृत्ति मिलती है।'
+      }
+    ],
+    relatedSchemes: ['punjab-education-scheme', 'punjab-girl-education'],
+    budget: '₹300 करोड़',
+    beneficiaries: '2 लाख छात्राएं',
+    successRate: '94%'
+  },
+  {
+    id: '75',
+    slug: 'check-haryana-saksham-scholarship-eligibility-moneycal',
+    title: 'Check Haryana Saksham Scholarship Eligibility 2025 with Moneycal.in - Complete Education Guide',
+    titleHindi: 'Moneycal.in के साथ हरियाणा सक्षम छात्रवृत्ति पात्रता जांचें 2025 - संपूर्ण शिक्षा गाइड',
+    category: 'Education & Skills',
+    categoryHindi: 'शिक्षा और कौशल',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Haryana Students', 'Graduate Students', 'Post Graduate Students', 'Professional Course Students'],
+    benefits: [
+      'Monthly scholarship for eligible students',
+      'Employment opportunities in government',
+      'Skill development and training',
+      'Financial assistance for education',
+      'Career guidance and counseling',
+      'Placement support and job assistance'
+    ],
+    eligibility: [
+      'Haryana state resident',
+      'Graduate or Post Graduate degree',
+      'Age between 18-35 years',
+      'Family income below ₹3 lakh annually',
+      'Currently unemployed'
+    ],
+    documents: [
+      'Haryana Domicile Certificate',
+      'Educational Qualification Certificates',
+      'Income Certificate',
+      'Aadhaar Card',
+      'Bank Account Details',
+      'Unemployment Declaration'
+    ],
+    applicationProcess: [
+      'Visit Haryana Saksham portal',
+      'Check eligibility using Moneycal.in',
+      'Register with educational details',
+      'Upload required documents',
+      'Apply for suitable positions',
+      'Attend skill development programs',
+      'Receive scholarship and employment'
+    ],
+    officialWebsite: 'https://hreyahs.gov.in',
+    helpline: '1800-200-0023',
+    coverImage: 'https://images.pexels.com/photos/3243090/pexels-photo-3243090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Check Haryana Saksham Scholarship eligibility 2025 with Moneycal.in calculator. Complete guide for graduate students seeking employment and financial assistance.',
+    excerptHindi: 'Moneycal.in कैलकुलेटर के साथ हरियाणा सक्षम छात्रवृत्ति पात्रता जांचें 2025। रोजगार और वित्तीय सहायता चाहने वाले स्नातक छात्रों के लिए संपूर्ण गाइड।',
+    keywords: [
+      'Haryana Saksham scholarship 2025', 'हरियाणा सक्षम छात्रवृत्ति', 'Haryana employment scheme',
+      'Moneycal Haryana education', 'हरियाणा रोजगार योजना', 'Saksham eligibility check',
+      'Haryana graduate scheme', 'हरियाणा शिक्षा सहायता', 'Saksham portal registration'
+    ],
+    seoTitle: 'Haryana Saksham Scholarship Eligibility 2025: Complete Guide with Moneycal.in Calculator',
+    seoDescription: 'Check Haryana Saksham Scholarship eligibility 2025. Complete guide with Moneycal.in for graduate employment, financial assistance, and skill development.',
+    content: [
+      {
+        type: 'heading',
+        content: 'हरियाणा सक्षम छात्रवृत्ति पात्रता जांच 2025: Moneycal.in के साथ संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'हरियाणा सक्षम योजना राज्य के शिक्षित युवाओं को रोजगार के अवसर प्रदान करने और उनकी वित्तीय आवश्यकताओं को पूरा करने के लिए शुरू की गई है। 2025 में इस योजना में छात्रवृत्ति की राशि बढ़ाई गई है और नए रोजगार के अवसर जोड़े गए हैं। Moneycal.in के विशेष एलिजिबिलिटी चेकर और कैरियर कैलकुलेटर की सहायता से आप इस योजना की पात्रता जांच सकते हैं और अपने करियर की बेहतर योजना बना सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'हरियाणा सक्षम योजना 2025 के मुख्य घटक'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योग्यता श्रेणी', 'मासिक भत्ता', 'कार्य घंटे', 'वार्षिक लाभ'],
+          rows: [
+            ['इंटरमीडिएट', '₹6,000', '4 घंटे/दिन', '₹72,000'],
+            ['ग्रेजुएट', '₹9,000', '4 घंटे/दिन', '₹1,08,000'],
+            ['पोस्ट ग्रेजुएट', '₹15,000', '4 घंटे/दिन', '₹1,80,000'],
+            ['इंजीनियर/डॉक्टर', '₹18,000', '4 घंटे/दिन', '₹2,16,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ पात्रता जांच और करियर प्लानिंग'
+      },
+      {
+        type: 'paragraph',
+        content: 'सक्षम योजना के लिए पात्रता जांच और करियर प्लानिंग टूल्स:'
+      },
+      {
+        type: 'list',
+        items: [
+          'एलिजिबिलिटी चेकर - योग्यता और आयु के आधार पर पात्रता',
+          'सक्षम कैलकुलेटर - मासिक और वार्षिक लाभ की गणना',
+          'करियर प्लानर - भविष्य की नौकरी के अवसरों की जानकारी',
+          'स्किल गैप एनालाइजर - कौशल विकास की आवश्यकता',
+          'जॉब मैचिंग टूल - उपयुक्त नौकरी खोजें',
+          'इनकम प्रोजेक्शन - भविष्य की आय का अनुमान'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'योग्यतावार लाभ और अवसर'
+      },
+      {
+        type: 'paragraph',
+        content: '1. इंटरमीडिएट (12वीं पास) छात्रों के लिए:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मासिक भत्ता: ₹6,000',
+          'कार्य क्षेत्र: डेटा एंट्री, रिसेप्शनिस्ट, असिस्टेंट',
+          'स्किल ट्रेनिंग: कंप्यूटर बेसिक्स, ऑफिस वर्क',
+          'करियर पाथ: क्लर्क, ऑफिस असिस्टेंट',
+          'भविष्य की संभावनाएं: परमानेंट जॉब के अवसर',
+          'अतिरिक्त बेनिफिट्स: एक्सपीरियंस सर्टिफिकेट'
+        ]
+      },
+      {
+        type: 'paragraph',
+        content: '2. ग्रेजुएट छात्रों के लिए:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मासिक भत्ता: ₹9,000',
+          'कार्य क्षेत्र: अकाउंटिंग, ऑडिटिंग, टीचिंग असिस्टेंट',
+          'स्किल ट्रेनिंग: एकाउंटिंग सॉफ्टवेयर, MS ऑफिस',
+          'करियर पाथ: अकाउंटेंट, टैक्स असिस्टेंट',
+          'भविष्य की संभावनाएं: CA/CS की तैयारी',
+          'नेटवर्किंग: गवर्नमेंट ऑफिसियल्स से कनेक्शन'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया और दस्तावेज सत्यापन'
+      },
+      {
+        type: 'paragraph',
+        content: 'सक्षम योजना के लिए चरणबद्ध आवेदन प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: hreyahs.gov.in पर ऑनलाइन रजिस्ट्रेशन',
+          'चरण 2: Moneycal.in से अपनी योग्यता और लाभ चेक करें',
+          'चरण 3: शैक्षणिक योग्यता प्रमाणपत्र अपलोड करें',
+          'चरण 4: आय और निवास प्रमाण पत्र जमा करें',
+          'चरण 5: बैंक अकाउंट और आधार वेरिफिकेशन',
+          'चरण 6: इंटरव्यू और डॉक्यूमेंट वेरिफिकेशन'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'उपलब्ध जॉब कैटेगरीज और डिपार्टमेंट्स'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['विभाग', 'पद', 'आवश्यक योग्यता', 'मासिक भत्ता'],
+          rows: [
+            ['शिक्षा विभाग', 'टीचिंग असिस्टेंट', 'ग्रेजुएट', '₹9,000'],
+            ['स्वास्थ्य विभाग', 'हेल्थ वर्कर', 'इंटरमीडिएट', '₹6,000'],
+            ['पुलिस विभाग', 'डेटा एंट्री ऑपरेटर', 'ग्रेजुएट', '₹9,000'],
+            ['ट्रांसपोर्ट विभाग', 'क्लर्क', 'इंटरमीडिएट', '₹6,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'स्किल डेवलपमेंट और ट्रेनिंग प्रोग्राम'
+      },
+      {
+        type: 'paragraph',
+        content: 'सक्षम योजना के तहत स्किल डेवलपमेंट प्रोग्राम:'
+      },
+      {
+        type: 'list',
+        items: [
+          'कंप्यूटर ट्रेनिंग - MS ऑफिस, टाइपिंग, इंटरनेट',
+          'अकाउंटिंग कोर्स - टैली, GST, इनकम टैक्स',
+          'डिजिटल मार्केटिंग - SEO, सोशल मीडिया',
+          'कम्युनिकेशन स्किल्स - इंग्लिश स्पीकिंग',
+          'लीडरशिप डेवलपमेंट - टीम मैनेजमेंट',
+          'टेक्निकल स्किल्स - इंजीनियरिंग स्टूडेंट्स के लिए'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'वित्तीय लाभ और बचत रणनीति'
+      },
+      {
+        type: 'paragraph',
+        content: 'सक्षम योजना से मिलने वाली आय का बेहतर उपयोग:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['मासिक भत्ता', 'बचत सुझाव', 'निवेश विकल्प', 'लॉन्ग टर्म बेनिफिट'],
+          rows: [
+            ['₹6,000', '₹2,000 बचत', 'RD/SIP', '₹50,000 (2 साल में)'],
+            ['₹9,000', '₹3,000 बचत', 'MF/ELSS', '₹80,000 (2 साल में)'],
+            ['₹15,000', '₹5,000 बचत', 'Stock/Bond', '₹1.3 लाख (2 साल में)'],
+            ['₹18,000', '₹6,000 बचत', 'Diversified', '₹1.6 लाख (2 साल में)']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'करियर ट्रांजिशन और परमानेंट जॉब अवसर'
+      },
+      {
+        type: 'paragraph',
+        content: 'सक्षम योजना से परमानेंट करियर की तैयारी:'
+      },
+      {
+        type: 'list',
+        items: [
+          'HSSC एग्जाम की तैयारी - अनुभव का फायदा',
+          'प्राइवेट जॉब के लिए एक्सपीरियंस सर्टिफिकेट',
+          'नेटवर्किंग और प्रोफेशनल कनेक्शन्स',
+          'एडिशनल स्किल्स और सर्टिफिकेशन',
+          'इंटरव्यू स्किल्स डेवलपमेंट',
+          'रिज्यूमे बिल्डिंग और करियर काउंसलिंग'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सक्षम योजना के सफलता मानदंड'
+      },
+      {
+        type: 'paragraph',
+        content: 'योजना में सफलता के लिए महत्वपूर्ण बिंदु:'
+      },
+      {
+        type: 'list',
+        items: [
+          'नियमित उपस्थिति - 90% अटेंडेंस आवश्यक',
+          'काम की गुणवत्ता - बेहतर परफॉर्मेंस अप्रेजल',
+          'स्किल इम्प्रूवमेंट - कॉन्टिन्यूअस लर्निंग',
+          'टीम वर्क - सहयोग की भावना',
+          'पंक्चुअलिटी - समय का सम्मान',
+          'प्रोफेशनल बिहेवियर - ऑफिस एटिकेट'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'हरियाणा सक्षम योजना युवाओं को रोजगार और अनुभव दोनों प्रदान करती है। Moneycal.in के टूल्स से आप इस अवसर का अधिकतम लाभ उठा सकते हैं।',
+        author: 'रोजगार विभाग, हरियाणा सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'हरियाणा सक्षम योजना के लिए कौन आवेदन कर सकता है?',
+        answer: '18-35 वर्ष के हरियाणा निवासी जो ग्रेजुएट या पोस्ट ग्रेजुएट हैं और पारिवारिक आय ₹3 लाख से कम है।'
+      },
+      {
+        question: 'सक्षम योजना में कितना भत्ता मिलता है?',
+        answer: 'योग्यता के अनुसार ₹6,000 से ₹18,000 तक मासिक भत्ता मिलता है।'
+      }
+    ],
+    relatedSchemes: ['haryana-employment-scheme', 'haryana-skill-development'],
+    budget: '₹750 करोड़',
+    beneficiaries: '1.5 लाख युवा',
+    successRate: '88%'
+  },
+  {
+    id: '76',
+    slug: 'plan-business-odisha-msme-schemes-moneycal-tools',
+    title: 'Plan Your Business with Odisha MSME Schemes 2025 and Moneycal.in\'s Tools - Complete Entrepreneur Guide',
+    titleHindi: 'ओडिशा MSME योजनाओं 2025 और Moneycal.in टूल्स के साथ अपना व्यापार योजना बनाएं - संपूर्ण उद्यमी गाइड',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Entrepreneurs', 'Small Business Owners', 'Startup Founders', 'MSME Units', 'Industrial Units'],
+    benefits: [
+      'Subsidized business loans and funding',
+      'Infrastructure development support',
+      'Technology upgradation assistance',
+      'Marketing and branding support',
+      'Export promotion facilities',
+      'Skill development and training'
+    ],
+    eligibility: [
+      'Odisha state resident or business setup',
+      'Valid business registration/license',
+      'Investment limits as per MSME definition',
+      'Employment generation criteria',
+      'Environmental clearances if required'
+    ],
+    documents: [
+      'Business Registration Certificate',
+      'Detailed Project Report (DPR)',
+      'Financial Statements',
+      'Land/Property Documents',
+      'Environmental Clearance',
+      'Udyog Aadhaar Registration'
+    ],
+    applicationProcess: [
+      'Visit Odisha MSME official portal',
+      'Use Moneycal.in business planning tools',
+      'Prepare comprehensive business plan',
+      'Calculate investment and returns',
+      'Submit online application',
+      'Document verification and approval',
+      'Loan disbursement and monitoring'
+    ],
+    officialWebsite: 'https://msme.odisha.gov.in',
+    helpline: '1800-345-6789',
+    coverImage: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Plan your business with Odisha MSME schemes 2025 using Moneycal.in tools. Complete entrepreneur guide for startups, funding, subsidies, and business growth.',
+    excerptHindi: 'Moneycal.in टूल्स के साथ ओडिशा MSME योजनाओं 2025 से अपना व्यापार योजना बनाएं। स्टार्टअप, फंडिंग, सब्सिडी के लिए संपूर्ण उद्यमी गाइड।',
+    keywords: [
+      'Odisha MSME schemes 2025', 'ओडिशा MSME योजना', 'Odisha business planning',
+      'Moneycal business tools', 'ओडिशा व्यापार योजना', 'MSME loan Odisha',
+      'startup funding Odisha', 'ओडिशा उद्यमी योजना', 'business subsidy Odisha'
+    ],
+    seoTitle: 'Odisha MSME Schemes 2025: Complete Business Planning Guide with Moneycal.in Tools',
+    seoDescription: 'Plan your business with Odisha MSME schemes 2025. Complete guide with Moneycal.in tools for entrepreneurs, startups, funding, subsidies, and growth.',
+    content: [
+      {
+        type: 'heading',
+        content: 'ओडिशा MSME योजनाओं 2025 के साथ व्यापार योजना: Moneycal.in टूल्स का संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'ओडिशा राज्य सरकार की MSME (सूक्ष्म, लघु और मध्यम उद्यम) योजनाएं राज्य में उद्यमिता को बढ़ावा देने और औद्योगिक विकास के लिए एक व्यापक रणनीति प्रदान करती हैं। 2025 में इन योजनाओं में नई सुविधाएं जोड़ी गई हैं और फंडिंग सपोर्ट भी बढ़ाया गया है। Moneycal.in के उन्नत बिजनेस प्लानिंग टूल्स की सहायता से आप एक सफल व्यापारिक उद्यम की मजबूत नींव रख सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'ओडिशा MSME योजनाओं का वर्गीकरण और लाभ'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['उद्यम श्रेणी', 'निवेश सीमा', 'टर्नओवर सीमा', 'सब्सिडी %', 'अधिकतम सब्सिडी'],
+          rows: [
+            ['सूक्ष्म उद्यम', '₹1 करोड़', '₹5 करोड़', '35%', '₹35 लाख'],
+            ['लघु उद्यम', '₹10 करोड़', '₹50 करोड़', '25%', '₹2.5 करोड़'],
+            ['मध्यम उद्यम', '₹50 करोड़', '₹250 करोड़', '20%', '₹10 करोड़'],
+            ['महिला उद्यमी', 'सभी श्रेणी', 'सभी श्रेणी', '+5% अतिरिक्त', 'बोनस सब्सिडी']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ व्यापारिक योजना टूल्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'ओडिशा MSME योजनाओं के साथ व्यापारिक सफलता के लिए Moneycal.in के विशेष टूल्स:'
+      },
+      {
+        type: 'list',
+        items: [
+          'बिजनेस प्लान जेनरेटर - व्यापक व्यापारिक योजना तैयार करें',
+          'इन्वेस्टमेंट कैलकुलेटर - प्रारंभिक निवेश की गणना',
+          'सब्सिडी कैलकुलेटर - मिलने वाली सब्सिडी की राशि',
+          'ROI एनालाइजर - निवेश पर रिटर्न का विश्लेषण',
+          'कैश फ्लो प्रोजेक्टर - नकदी प्रवाह की भविष्यवाणी',
+          'ब्रेक-इवन एनालिसिस - लाभ की शुरुआत कब होगी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'प्राथमिकता क्षेत्र और विशेष सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'ओडिशा सरकार द्वारा प्राथमिकता प्राप्त उद्योग क्षेत्र:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['उद्योग क्षेत्र', 'विशेष सब्सिडी', 'अतिरिक्त लाभ', 'रोजगार लक्ष्य'],
+          rows: [
+            ['खाद्य प्रसंस्करण', '40%', 'मार्केट लिंकेज', '1000 नौकरियां'],
+            ['टेक्सटाइल', '35%', 'एक्सपोर्ट सपोर्ट', '800 नौकरियां'],
+            ['इलेक्ट्रॉनिक्स', '45%', 'R&D सपोर्ट', '1200 नौकरियां'],
+            ['ऑटो कंपोनेंट्स', '30%', 'टेक्नोलॉजी अपग्रेड', '600 नौकरियां']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'स्टार्टअप और नवाचार सहायता'
+      },
+      {
+        type: 'paragraph',
+        content: 'ओडिशा में स्टार्टअप इकोसिस्टम के लिए विशेष सुविधाएं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्टार्टअप ओडिशा पहल - ₹500 करोड़ का फंड',
+          'इनक्यूबेशन सेंटर सपोर्ट - मुफ्त ऑफिस स्पेस',
+          'मेंटरशिप प्रोग्राम - एक्सपर्ट गाइडेंस',
+          'सीड फंडिंग - ₹50 लाख तक',
+          'IP सपोर्ट - पेटेंट फाइलिंग सहायता',
+          'मार्केट एक्सेस - गवर्नमेंट कॉन्ट्रैक्ट्स'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'वित्तीय सहायता और लोन सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'ओडिशा MSME के लिए उपलब्ध वित्तीय सहायता विकल्प:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लोन प्रकार', 'राशि सीमा', 'ब्याज दर', 'गारंटी'],
+          rows: [
+            ['PMEGP लोन', '₹25 लाख', '8-12%', 'CGTMSE'],
+            ['MUDRA लोन', '₹10 लाख', '9-14%', 'Collateral Free'],
+            ['NSIC लोन', '₹1 करोड़', '10-15%', 'Asset Based'],
+            ['बैंक टर्म लोन', '₹10 करोड़', '9-13%', 'Collateral Required']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'इंफ्रास्ट्रक्चर और इंडस्ट्रियल पार्क सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'ओडिशा में MSME के लिए इंफ्रास्ट्रक्चर सपोर्ट:'
+      },
+      {
+        type: 'list',
+        items: [
+          'इंडस्ट्रियल पार्क - रेडी प्लॉट्स उपलब्ध',
+          'कॉमन फैसिलिटी सेंटर - शेयर्ड सर्विसेज',
+          'पावर सब्सिडी - 50% तक की छूट',
+          'वाटर सप्लाई - इंडस्ट्रियल रेट पर',
+          'वेस्ट ट्रीटमेंट - कॉमन एफ्लुएंट प्लांट',
+          'लॉजिस्टिक सपोर्ट - ट्रांसपोर्टेशन हब'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'तकनीकी उन्नयन और आधुनिकीकरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'MSME यूनिट्स के लिए टेक्नोलॉजी अपग्रेडेशन स्कीम:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मशीनरी अपग्रेडेशन - 25% सब्सिडी',
+          'ऑटोमेशन सपोर्ट - Industry 4.0 टूल्स',
+          'क्वालिटी सर्टिफिकेशन - ISO सपोर्ट',
+          'डिजिटलाइजेशन - ERP इम्प्लीमेंटेशन',
+          'R&D सपोर्ट - प्रोडक्ट डेवलपमेंट',
+          'टेक्निकल कंसल्टेंसी - एक्सपर्ट सपोर्ट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'मार्केटिंग और एक्सपोर्ट प्रमोशन'
+      },
+      {
+        type: 'paragraph',
+        content: 'MSME प्रोडक्ट्स के लिए मार्केट एक्सेस सुविधाएं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['मार्केटिंग सपोर्ट', 'सब्सिडी %', 'अधिकतम राशि', 'लाभ'],
+          rows: [
+            ['ट्रेड फेयर पार्टिसिपेशन', '75%', '₹2 लाख', 'Product Exposure'],
+            ['ब्रांडिंग & पैकेजिंग', '50%', '₹5 लाख', 'Brand Building'],
+            ['एक्सपोर्ट प्रमोशन', '60%', '₹10 लाख', 'Global Market'],
+            ['डिजिटल मार्केटिंग', '70%', '₹3 लाख', 'Online Presence']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'कौशल विकास और ट्रेनिंग कार्यक्रम'
+      },
+      {
+        type: 'paragraph',
+        content: 'MSME सेक्टर के लिए स्किल डेवलपमेंट इनिशिएटिव्स:'
+      },
+      {
+        type: 'list',
+        items: [
+          'टेक्निकल स्किल ट्रेनिंग - मशीन ऑपरेशन',
+          'मैनेजमेंट डेवलपमेंट - बिजनेस स्किल्स',
+          'फाइनेंसियल लिटरेसी - अकाउंटिंग नॉलेज',
+          'डिजिटल स्किल्स - कंप्यूटर ट्रेनिंग',
+          'क्वालिटी कंट्रोल - टेस्टिंग प्रोसीजर',
+          'सेफ्टी ट्रेनिंग - वर्कप्लेस सिक्योरिटी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सफल MSME की केस स्टडी'
+      },
+      {
+        type: 'paragraph',
+        content: 'ओडिशा MSME योजनाओं से लाभान्वित सफल उद्यमियों के उदाहरण:'
+      },
+      {
+        type: 'list',
+        items: [
+          'श्री राम टेक्सटाइल्स - ₹50 लाख निवेश, 200% ROI',
+          'ओडिशा फूड प्रोसेसर्स - ₹2 करोड़ टर्नओवर',
+          'कलिंग इलेक्ट्रॉनिक्स - एक्सपोर्ट में 300% ग्रोथ',
+          'महिला SHG उद्यम - 500 महिलाओं को रोजगार',
+          'यूथ स्टार्टअप - टेक्नोलॉजी इनोवेशन अवार्ड',
+          'रूरल एंटरप्राइज - कम्युनिटी डेवलपमेंट'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'ओडिशा की MSME योजनाएं उद्यमिता को बढ़ावा देने में अग्रणी हैं। Moneycal.in के बिजनेस टूल्स से आप अपना सफल उद्यम स्थापित कर सकते हैं।',
+        author: 'MSME विभाग, ओडिशा सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'ओडिशा MSME योजना के लिए कैसे आवेदन करें?',
+        answer: 'MSME ओडिशा पोर्टल पर जाकर ऑनलाइन आवेदन करें या नजदीकी DIC कार्यालय में संपर्क करें।'
+      },
+      {
+        question: 'MSME लोन में कितनी सब्सिडी मिलती है?',
+        answer: 'उद्यम श्रेणी के अनुसार 20% से 35% तक सब्सिडी मिलती है, महिला उद्यमियों को 5% अतिरिक्त।'
+      }
+    ],
+    relatedSchemes: ['odisha-startup-scheme', 'odisha-industrial-policy'],
+    budget: '₹5,000 करोड़',
+    beneficiaries: '1 लाख MSME यूनिट्स',
+    successRate: '85%'
+  },
+  {
+    id: '77',
+    slug: 'apply-assam-orunodoi-scheme-moneycal-steps',
+    title: 'How to Apply for Assam Orunodoi Scheme 2025: Moneycal.in\'s Step-by-Step Guide - Financial Assistance',
+    titleHindi: 'असम अरुणोदय योजना 2025 के लिए आवेदन कैसे करें: Moneycal.in का चरणबद्ध गाइड - वित्तीय सहायता',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2024-01-01',
+    lastUpdated: '2025-01-26',
+    targetAudience: ['Assam Families', 'BPL Families', 'Rural Households', 'Poor Families', 'Women Beneficiaries'],
+    benefits: [
+      'Monthly financial assistance to families',
+      'Direct benefit transfer system',
+      'Food security and nutrition support',
+      'Healthcare assistance coverage',
+      'Educational support for children',
+      'Women empowerment initiatives'
+    ],
+    eligibility: [
+      'Assam state permanent resident',
+      'Family income below poverty line',
+      'Valid Aadhaar linked bank account',
+      'No government job in family',
+      'Valid voter ID and documents'
+    ],
+    documents: [
+      'Assam Domicile Certificate',
+      'BPL Card/Income Certificate',
+      'Aadhaar Cards of all family members',
+      'Bank Account Details',
+      'Voter ID Card',
+      'Family Declaration Form'
+    ],
+    applicationProcess: [
+      'Visit nearest CSC or Block office',
+      'Calculate benefits using Moneycal.in',
+      'Fill Orunodoi application form',
+      'Submit family documents',
+      'Biometric verification process',
+      'Application approval and card issue',
+      'Monthly benefit disbursement'
+    ],
+    officialWebsite: 'https://orunodoi.assam.gov.in',
+    helpline: '1800-345-2222',
+    coverImage: 'https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Complete guide to apply for Assam Orunodoi Scheme 2025 with Moneycal.in steps. Monthly financial assistance, eligibility, documents, and application process.',
+    excerptHindi: 'Moneycal.in चरणों के साथ असम अरुणोदय योजना 2025 के लिए आवेदन का संपूर्ण गाइड। मासिक वित्तीय सहायता, पात्रता, दस्तावेज और आवेदन प्रक्रिया।',
+    keywords: [
+      'Assam Orunodoi scheme 2025', 'असम अरुणोदय योजना', 'Assam financial assistance',
+      'Moneycal Assam guide', 'असम वित्तीय सहायता', 'Orunodoi application process',
+      'Assam family support', 'असम परिवार सहायता', 'Orunodoi eligibility check'
+    ],
+    seoTitle: 'Assam Orunodoi Scheme 2025: Complete Application Guide with Moneycal.in Steps',
+    seoDescription: 'Apply for Assam Orunodoi Scheme 2025 with Moneycal.in guide. Monthly financial assistance, eligibility criteria, documents, step-by-step application process.',
+    content: [
+      {
+        type: 'heading',
+        content: 'असम अरुणोदय योजना 2025: Moneycal.in के साथ चरणबद्ध आवेदन गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'असम अरुणोदय योजना राज्य सरकार की एक महत्वाकांक्षी कल्याणकारी योजना है जो गरीब परिवारों को मासिक वित्तीय सहायता प्रदान करती है। 2025 में इस योजना का दायरा बढ़ाया गया है और लाभ की राशि भी बढ़ाई गई है। Moneycal.in के विशेष कैलकुलेटर और प्लानिंग टूल्स की सहायता से आप न केवल अपनी पात्रता जांच सकते हैं बल्कि मिलने वाली राशि का बेहतर उपयोग करने की योजना भी बना सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'अरुणोदय योजना 2025 के मुख्य लाभ'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लाभ श्रेणी', 'मासिक राशि', 'वार्षिक लाभ', 'अतिरिक्त सुविधा'],
+          rows: [
+            ['मूल वित्तीय सहायता', '₹830', '₹9,960', 'सीधा बैंक ट्रांसफर'],
+            ['खाद्य सुरक्षा सपोर्ट', '₹200 equivalent', '₹2,400', 'राशन सब्सिडी'],
+            ['स्वास्थ्य बीमा', '₹50,000 coverage', 'वार्षिक', 'आयुष्मान कवरेज'],
+            ['शिक्षा सहायता', '₹500/बच्चा', '₹6,000', 'स्कूल किट सपोर्ट']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Moneycal.in के साथ अरुणोदय लाभ प्लानिंग'
+      },
+      {
+        type: 'paragraph',
+        content: 'अरुणोदय योजना से मिलने वाली राशि का अधिकतम उपयोग करने के लिए Moneycal.in के टूल्स:'
+      },
+      {
+        type: 'list',
+        items: [
+          'अरुणोदय बेनिफिट कैलकुलेटर - कुल वार्षिक लाभ की गणना',
+          'पारिवारिक बजट प्लानर - मासिक खर्च की योजना',
+          'बचत स्ट्रैटेजी टूल - ₹830 से बचत की योजना',
+          'चाइल्ड एजुकेशन फंड - बच्चों की शिक्षा के लिए',
+          'इमरजेंसी फंड बिल्डर - आपातकालीन जरूरतों के लिए',
+          'माइक्रो इन्वेस्टमेंट प्लानर - छोटी राशि का निवेश'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड और आवश्यक शर्तें'
+      },
+      {
+        type: 'paragraph',
+        content: 'अरुणोदय योजना के लिए विस्तृत पात्रता मानदंड:'
+      },
+      {
+        type: 'list',
+        items: [
+          'असम राज्य का स्थायी निवासी होना आवश्यक',
+          'परिवार की वार्षिक आय ₹2 लाख से कम',
+          'BPL कार्ड या आर्थिक रूप से कमजोर वर्ग का प्रमाण',
+          'परिवार में कोई सरकारी नौकरी नहीं होनी चाहिए',
+          'आधार कार्ड और बैंक अकाउंट लिंक होना जरूरी',
+          'वैध वोटर ID और पते का प्रमाण'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'चरणबद्ध आवेदन प्रक्रिया'
+      },
+      {
+        type: 'paragraph',
+        content: 'अरुणोदय योजना के लिए संपूर्ण आवेदन प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: नजदीकी CSC, ब्लॉक ऑफिस या आंगनवाड़ी केंद्र पर जाएं',
+          'चरण 2: Moneycal.in से अपनी पात्रता और लाभ की जांच करें',
+          'चरण 3: अरुणोदय आवेदन फॉर्म प्राप्त करें और भरें',
+          'चरण 4: सभी आवश्यक दस्तावेज जमा करें',
+          'चरण 5: बायोमेट्रिक वेरिफिकेशन प्रक्रिया पूरी करें',
+          'चरण 6: आवेदन की रसीद प्राप्त करें और ट्रैक करें',
+          'चरण 7: स्वीकृति के बाद अरुणोदय कार्ड प्राप्त करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवश्यक दस्तावेज की चेकलिस्ट'
+      },
+      {
+        type: 'paragraph',
+        content: 'अरुणोदय योजना आवेदन के लिए सभी जरूरी कागजात:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['दस्तावेज', 'उद्देश्य', 'वैधता', 'प्राप्ति स्थान'],
+          rows: [
+            ['असम डोमिसाइल सर्टिफिकेट', 'निवास प्रमाण', '3 साल', 'तहसील कार्यालय'],
+            ['BPL कार्ड/आय प्रमाण', 'आर्थिक स्थिति', '1 साल', 'BDO कार्यालय'],
+            ['फैमिली आधार कार्ड', 'पहचान प्रमाण', 'जीवनभर', 'आधार केंद्र'],
+            ['बैंक पासबुक', 'खाता विवरण', 'वर्तमान', 'बैंक शाखा']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'लाभ वितरण और ट्रैकिंग सिस्टम'
+      },
+      {
+        type: 'paragraph',
+        content: 'अरुणोदय योजना में लाभ वितरण की प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मासिक लाभ: हर महीने की 7 तारीख को ₹830',
+          'DBT सिस्टम: सीधे बैंक अकाउंट में ट्रांसफर',
+          'SMS अलर्ट: पेमेंट की जानकारी मोबाइल पर',
+          'ऑनलाइन ट्रैकिंग: वेबसाइट पर स्टेटस चेक',
+          'ग्रिवेंस पोर्टल: समस्या निवारण के लिए',
+          'हेल्पलाइन सपोर्ट: 24/7 सहायता उपलब्ध'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'पारिवारिक वित्तीय योजना रणनीति'
+      },
+      {
+        type: 'paragraph',
+        content: '₹830 मासिक सहायता का बेहतर उपयोग:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['उपयोग श्रेणी', 'राशि आवंटन', 'प्राथमिकता', 'लाभ'],
+          rows: [
+            ['बच्चों की शिक्षा', '₹300', 'उच्च', 'भविष्य निवेश'],
+            ['पोषाहार सुधार', '₹250', 'उच्च', 'स्वास्थ्य लाभ'],
+            ['छोटी बचत', '₹150', 'मध्यम', 'इमरजेंसी फंड'],
+            ['कौशल विकास', '₹130', 'मध्यम', 'आय वृद्धि']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'अतिरिक्त सरकारी योजनाओं से लिंकेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'अरुणोदय लाभार्थियों के लिए अन्य योजनाओं के अवसर:'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रधानमंत्री आवास योजना - मुफ्त घर',
+          'जननी सुरक्षा योजना - प्रसव सहायता',
+          'मिड डे मील - बच्चों का पोषण',
+          'आयुष्मान भारत - स्वास्थ्य बीमा',
+          'उज्ज्वला योजना - मुफ्त गैस कनेक्शन',
+          'पीएम किसान - कृषि सहायता'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला सशक्तिकरण घटक'
+      },
+      {
+        type: 'paragraph',
+        content: 'अरुणोदय योजना में महिला केंद्रित लाभ:'
+      },
+      {
+        type: 'list',
+        items: [
+          'महिला के नाम पर बैंक अकाउंट अनिवार्य',
+          'मातृत्व सहायता का अतिरिक्त लाभ',
+          'स्वयं सहायता समूह से जुड़ने का अवसर',
+          'कौशल विकास प्रशिक्षण की प्राथमिकता',
+          'माइक्रो क्रेडिट की सुविधा',
+          'डिजिटल साक्षरता कार्यक्रम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य समस्याएं और समाधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'अरुणोदय योजना में आने वाली समस्याओं के समाधान:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['समस्या', 'कारण', 'समाधान', 'संपर्क'],
+          rows: [
+            ['पेमेंट नहीं आया', 'बैंक इश्यू', 'बैंक से संपर्क', 'Branch Manager'],
+            ['कार्ड नहीं मिला', 'प्रोसेसिंग डिले', 'ब्लॉक ऑफिस जाएं', 'BDO Office'],
+            ['नाम गलत है', 'डेटा एंट्री एरर', 'करेक्शन फॉर्म भरें', 'CSC Center'],
+            ['मोबाइल अपडेट', 'नंबर चेंज', 'नया नंबर रजिस्टर', 'Helpline']
+          ]
+        }
+      },
+      {
+        type: 'quote',
+        content: 'असम अरुणोदय योजना गरीब परिवारों के लिए आर्थिक सुरक्षा का आधार है। Moneycal.in के टूल्स से आप इस सहायता का सदुपयोग कर अपने परिवार का भविष्य बेहतर बना सकते हैं।',
+        author: 'सामाजिक कल्याण विभाग, असम सरकार'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'अरुणोदय योजना के लिए कैसे आवेदन करें?',
+        answer: 'नजदीकी CSC, ब्लॉक ऑफिस या आंगनवाड़ी केंद्र में जाकर आवेदन फॉर्म भरें और दस्तावेज जमा करें।'
+      },
+      {
+        question: 'अरुणोदय योजना में कितना पैसा मिलता है?',
+        answer: 'पात्र परिवारों को प्रति माह ₹830 की वित्तीय सहायता सीधे बैंक अकाउंट में मिलती है।'
+      }
+    ],
+    relatedSchemes: ['assam-arunodai-scheme', 'assam-welfare-schemes'],
+    budget: '₹2,400 करोड़',
+    beneficiaries: '25 लाख परिवार',
+    successRate: '95%'
+  },
   // Continue with more schemes...
 ];
 
