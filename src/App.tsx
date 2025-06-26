@@ -27,6 +27,9 @@ import ExcelToolPost from './pages/ExcelToolPost';
 import GovernmentSchemes from './pages/GovernmentSchemes';
 import GovernmentSchemePost from './pages/GovernmentSchemePost';
 
+// Crypto Section
+import CryptoSection from './pages/CryptoSection';
+
 function App() {
   return (
     <Layout>
@@ -66,6 +69,9 @@ function App() {
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/sitemap.xml" element={<SitemapXml />} />
         <Route path="/credit-card-finder" element={<CreditCardFinder />} />
+
+        {/* Crypto Section route */}
+        <Route path="/crypto" element={<CryptoSection />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
