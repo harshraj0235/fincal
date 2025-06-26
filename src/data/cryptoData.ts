@@ -485,7 +485,7 @@ export const cryptoArticles: CryptoArticle[] = [
         'Cybersecurity risks',
         'Impact on banks'
       ] },
-      { type: 'subheading', content: 'What's Next?' },
+      { type: 'subheading', content: 'Whats Next?' },
       { type: 'paragraph', content: 'The RBI is running pilots in select cities. Wider rollout is expected in 2025. Users should stay informed about developments.' },
       { type: 'subheading', content: 'Conclusion' },
       { type: 'paragraph', content: 'CBDC could transform payments in India. The digital rupee is a major step towards a cashless economy.' },
