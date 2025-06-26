@@ -2,7 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { cryptoArticles } from '../data/cryptoData';
 import SEOHelmet from '../components/SEOHelmet';
 import { Link } from 'react-router-dom';
-import { Search, TrendingUp, Bitcoin, Shield, Zap } from 'lucide-react';
+import { Search, Bitcoin, Shield, Zap } from 'lucide-react';
+import CryptoPriceConverter from '../components/CryptoPriceConverter';
 
 const CryptoSection: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -100,15 +101,12 @@ const CryptoSection: React.FC = () => {
             </div>
           ))}
         </div>
-        {/* Placeholder for Crypto Tool */}
+        {/* Crypto Tool */}
         <div className="mt-16">
           <h2 className="text-3xl font-extrabold mb-4 flex items-center gap-2">
             <Shield className="h-8 w-8 text-green-400" /> Crypto Price Converter (INR)
           </h2>
-          <div className="bg-gray-900 rounded-lg p-6 shadow-lg border border-gray-700">
-            {/* TODO: Implement Crypto Tool Component */}
-            <p className="text-gray-300">Convert Bitcoin, Ethereum, and other crypto prices to INR in real-time. (Coming soon!)</p>
-          </div>
+          <CryptoPriceConverter />
         </div>
       </div>
     </div>
