@@ -114,6 +114,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </Link>
           
           <Link 
+            to="/crypto" 
+            className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation flex items-center"
+            onClick={onClose}
+          >
+            <Shield className="h-5 w-5 mr-3 text-yellow-500" />
+            Crypto
+          </Link>
+          
+          <Link 
             to="/exceltool" 
             className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation flex items-center"
             onClick={onClose}
