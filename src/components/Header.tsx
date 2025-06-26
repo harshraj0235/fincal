@@ -169,6 +169,15 @@ export const Header: React.FC = () => {
               <FileText className="h-4 w-4 mr-1" />
               Blog
             </Link>
+            <a
+              href="https://moneycal.in/crypto"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <Shield className="h-4 w-4 mr-1 text-yellow-500" />
+              Crypto (MoneyCal.in)
+            </a>
             <Link 
               to="/government-schemes" 
               className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
