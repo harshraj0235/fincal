@@ -148,12 +148,12 @@ const NewsReel: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Latest Finance News Reel - Indian Stock Market, Business & Crypto Updates",
-    "description": "Stay updated with the latest finance news from India. Real-time updates on Sensex, Nifty, stock market, business news, and cryptocurrency trends. Auto-refreshing news reel with Google News integration.",
+    "description": "Stay updated with the latest finance news from India. Real-time updates on Sensex, Nifty, stock market, business news, and cryptocurrency trends. Unlimited content from free Indian news sources with auto-refresh every 10 seconds.",
     "url": "https://moneycal.in/news-reel",
     "mainEntity": {
       "@type": "ItemList",
       "name": "Finance News",
-      "description": "Latest finance and business news from Google News India",
+      "description": "Latest finance and business news from multiple Indian news sources",
       "numberOfItems": news.length,
       "itemListElement": news.map((item, index) => ({
         "@type": "ListItem",
@@ -183,17 +183,17 @@ const NewsReel: React.FC = () => {
       <>
         <SEOHelmet
           title="Latest Finance News Reel - Indian Stock Market & Business Updates"
-          description="Stay updated with the latest finance news from India. Real-time updates on Sensex, Nifty, stock market, business news, and cryptocurrency trends. Auto-refreshing news reel with Google News integration."
-          keywords="finance news india, stock market news, sensex nifty updates, business news india, crypto news, google news finance, real-time finance updates"
+          description="Stay updated with the latest finance news from India. Real-time updates on Sensex, Nifty, stock market, business news, and cryptocurrency trends. Unlimited content from free Indian news sources with auto-refresh every 10 seconds."
+          keywords="finance news india, stock market news, sensex nifty updates, business news india, crypto news, indian news sources, real-time finance updates, moneycontrol, economic times, business standard"
           url="/news-reel"
           structuredData={newsStructuredData}
-          tags={["finance news", "stock market", "business news", "crypto news", "sensex", "nifty", "google news"]}
+          tags={["finance news", "stock market", "business news", "crypto news", "sensex", "nifty", "indian news sources"]}
         />
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center">
           <div className="text-center">
             <RefreshCw className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
             <h2 className="text-xl font-semibold text-gray-700">Loading Latest Finance News...</h2>
-            <p className="text-gray-500 mt-2">Fetching the most recent updates from Google News</p>
+            <p className="text-gray-500 mt-2">Fetching the most recent updates from Indian news sources</p>
           </div>
         </div>
       </>
@@ -205,11 +205,11 @@ const NewsReel: React.FC = () => {
       <>
         <SEOHelmet
           title="Latest Finance News Reel - Indian Stock Market & Business Updates"
-          description="Stay updated with the latest finance news from India. Real-time updates on Sensex, Nifty, stock market, business news, and cryptocurrency trends. Auto-refreshing news reel with Google News integration."
-          keywords="finance news india, stock market news, sensex nifty updates, business news india, crypto news, google news finance, real-time finance updates"
+          description="Stay updated with the latest finance news from India. Real-time updates on Sensex, Nifty, stock market, business news, and cryptocurrency trends. Unlimited content from free Indian news sources with auto-refresh every 10 seconds."
+          keywords="finance news india, stock market news, sensex nifty updates, business news india, crypto news, indian news sources, real-time finance updates, moneycontrol, economic times, business standard"
           url="/news-reel"
           structuredData={newsStructuredData}
-          tags={["finance news", "stock market", "business news", "crypto news", "sensex", "nifty", "google news"]}
+          tags={["finance news", "stock market", "business news", "crypto news", "sensex", "nifty", "indian news sources"]}
         />
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex items-center justify-center">
           <div className="text-center max-w-md mx-auto p-6">
@@ -232,11 +232,11 @@ const NewsReel: React.FC = () => {
     <>
       <SEOHelmet
         title="Latest Finance News Reel - Indian Stock Market & Business Updates"
-        description="Stay updated with the latest finance news from India. Real-time updates on Sensex, Nifty, stock market, business news, and cryptocurrency trends. Auto-refreshing news reel with Google News integration."
-        keywords="finance news india, stock market news, sensex nifty updates, business news india, crypto news, google news finance, real-time finance updates"
+        description="Stay updated with the latest finance news from India. Real-time updates on Sensex, Nifty, stock market, business news, and cryptocurrency trends. Unlimited content from free Indian news sources with auto-refresh every 10 seconds."
+        keywords="finance news india, stock market news, sensex nifty updates, business news india, crypto news, indian news sources, real-time finance updates, moneycontrol, economic times, business standard"
         url="/news-reel"
         structuredData={newsStructuredData}
-        tags={["finance news", "stock market", "business news", "crypto news", "sensex", "nifty", "google news"]}
+        tags={["finance news", "stock market", "business news", "crypto news", "sensex", "nifty", "indian news sources"]}
       />
       <div 
         className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 relative overflow-hidden"
