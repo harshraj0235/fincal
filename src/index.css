@@ -99,6 +99,40 @@ html {
   .modal {
     padding: 1rem;
   }
+  
+  /* News Reel specific mobile optimizations */
+  .news-reel-container {
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+  }
+  
+  .news-reel-card {
+    margin: 0.5rem;
+    border-radius: 1rem;
+  }
+  
+  .news-reel-image {
+    height: 12rem;
+  }
+  
+  .news-reel-content {
+    padding: 1rem;
+  }
+  
+  .news-reel-title {
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+  
+  .news-reel-description {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .news-reel-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
 }
 
 /* Tablet optimizations */
@@ -113,6 +147,42 @@ html {
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+  
+  /* News Reel tablet optimizations */
+  .news-reel-image {
+    height: 14rem;
+  }
+  
+  .news-reel-content {
+    padding: 1.5rem;
+  }
+  
+  .news-reel-title {
+    font-size: 1.25rem;
+  }
+  
+  .news-reel-description {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  .news-reel-image {
+    height: 16rem;
+  }
+  
+  .news-reel-content {
+    padding: 2rem;
+  }
+  
+  .news-reel-title {
+    font-size: 1.5rem;
+  }
+  
+  .news-reel-description {
+    font-size: 1.125rem;
   }
 }
 
@@ -802,4 +872,14 @@ a:hover:not(.btn) {
     font-size: 16px;
     border-radius: 20px;
   }
+}
+
+/* Hide scrollbar for webkit browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
 }
