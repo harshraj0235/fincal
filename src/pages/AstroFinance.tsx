@@ -53,6 +53,26 @@ const AstroFinance: React.FC = () => {
             <p className="mb-4 text-neutral-600">Understand how planetary positions influence your financial decisions and timing.</p>
             <Link to="/astro-finance/planetary-calculator" className="astro-finance-btn">Analyze Planets</Link>
           </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Daily Financial Horoscope</h2>
+            <p className="mb-4 text-neutral-600">Get your daily financial forecast for all zodiac signs. Perfect for daily financial planning.</p>
+            <Link to="/astro-finance/daily-horoscope" className="astro-finance-btn">Read Daily Horoscope</Link>
+          </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Financial Compatibility</h2>
+            <p className="mb-4 text-neutral-600">Check how well zodiac signs work together in business partnerships and investments.</p>
+            <Link to="/astro-finance/compatibility" className="astro-finance-btn">Check Compatibility</Link>
+          </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">2025 Yearly Forecast</h2>
+            <p className="mb-4 text-neutral-600">Get comprehensive 2025 financial predictions with monthly breakdowns for your zodiac.</p>
+            <Link to="/astro-finance/yearly-forecast" className="astro-finance-btn">Get 2025 Forecast</Link>
+          </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Crystal & Feng Shui</h2>
+            <p className="mb-4 text-neutral-600">Discover crystals and feng shui arrangements for financial success based on your zodiac.</p>
+            <Link to="/astro-finance/crystal-calculator" className="astro-finance-btn">Find Crystals</Link>
+          </div>
         </div>
         <div className="mt-16 text-left">
           <h2 className="text-2xl font-bold mb-4">Coming Soon</h2>

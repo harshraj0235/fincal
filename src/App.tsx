@@ -42,6 +42,9 @@ import AstroFinanceGemstoneCalculator from './pages/AstroFinanceGemstoneCalculat
 import AstroFinanceNakshatraCalculator from './pages/AstroFinanceNakshatraCalculator';
 import AstroFinancePlanetaryCalculator from './pages/AstroFinancePlanetaryCalculator';
 import AstroFinanceDailyHoroscope from './pages/AstroFinanceDailyHoroscope';
+import AstroFinanceCompatibilityCalculator from './pages/AstroFinanceCompatibilityCalculator';
+import AstroFinanceYearlyForecast from './pages/AstroFinanceYearlyForecast';
+import AstroFinanceCrystalCalculator from './pages/AstroFinanceCrystalCalculator';
 
 function App() {
   return (
@@ -98,6 +101,9 @@ function App() {
         <Route path="/astro-finance/nakshatra-calculator" element={<AstroFinanceNakshatraCalculator />} />
         <Route path="/astro-finance/planetary-calculator" element={<AstroFinancePlanetaryCalculator />} />
         <Route path="/astro-finance/daily-horoscope" element={<AstroFinanceDailyHoroscope />} />
+        <Route path="/astro-finance/compatibility" element={<AstroFinanceCompatibilityCalculator />} />
+        <Route path="/astro-finance/yearly-forecast" element={<AstroFinanceYearlyForecast />} />
+        <Route path="/astro-finance/crystal-calculator" element={<AstroFinanceCrystalCalculator />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
