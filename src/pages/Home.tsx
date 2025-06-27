@@ -202,6 +202,13 @@ export const Home: React.FC = () => {
         </div>
       </section>
       
+      {/* Astro-Finance Insights Button */}
+      <div className="flex justify-center">
+        <a href="/astro-finance" className="astro-finance-btn">
+          Explore Astro-Finance Insights
+        </a>
+      </div>
+      
       {/* Search Section */}
       <section className="py-12 bg-white relative z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
