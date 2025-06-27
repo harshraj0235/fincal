@@ -23,6 +23,21 @@ const AstroFinance: React.FC = () => {
             <p className="mb-4 text-neutral-600">Explore investment strategies tailored to your astrological profile. Find your lucky numbers, best investment days, and more.</p>
             <Link to="/astro-finance/zodiac-tips" className="astro-finance-btn">Explore Tips</Link>
           </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Lucky Number Generator</h2>
+            <p className="mb-4 text-neutral-600">Generate personalized lucky numbers for financial decisions, stock picking, and investment timing based on your zodiac.</p>
+            <Link to="/astro-finance/lucky-numbers" className="astro-finance-btn">Generate Numbers</Link>
+          </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Muhurat Calculator</h2>
+            <p className="mb-4 text-neutral-600">Find the most auspicious dates and times for financial activities like investments, property purchase, and business decisions.</p>
+            <Link to="/astro-finance/muhurat" className="astro-finance-btn">Calculate Muhurat</Link>
+          </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Zodiac Savings Calculator</h2>
+            <p className="mb-4 text-neutral-600">Get personalized savings recommendations based on your zodiac traits, income, and financial goals.</p>
+            <Link to="/astro-finance/savings-calculator" className="astro-finance-btn">Calculate Savings</Link>
+          </div>
         </div>
         <div className="mt-16 text-left">
           <h2 className="text-2xl font-bold mb-4">Coming Soon</h2>

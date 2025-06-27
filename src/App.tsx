@@ -35,6 +35,9 @@ import CryptoArticlePost from './pages/CryptoArticlePost';
 import AstroFinance from './pages/AstroFinance';
 import AstroFinanceHoroscope from './pages/AstroFinanceHoroscope';
 import AstroFinanceZodiacTips from './pages/AstroFinanceZodiacTips';
+import AstroFinanceLuckyNumberGenerator from './pages/AstroFinanceLuckyNumberGenerator';
+import AstroFinanceMuhuratCalculator from './pages/AstroFinanceMuhuratCalculator';
+import AstroFinanceZodiacSavingsCalculator from './pages/AstroFinanceZodiacSavingsCalculator';
 
 function App() {
   return (
@@ -84,6 +87,9 @@ function App() {
         <Route path="/astro-finance" element={<AstroFinance />} />
         <Route path="/astro-finance/horoscope" element={<AstroFinanceHoroscope />} />
         <Route path="/astro-finance/zodiac-tips" element={<AstroFinanceZodiacTips />} />
+        <Route path="/astro-finance/lucky-numbers" element={<AstroFinanceLuckyNumberGenerator />} />
+        <Route path="/astro-finance/muhurat" element={<AstroFinanceMuhuratCalculator />} />
+        <Route path="/astro-finance/savings-calculator" element={<AstroFinanceZodiacSavingsCalculator />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
