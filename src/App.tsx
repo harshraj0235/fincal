@@ -46,6 +46,9 @@ import AstroFinanceCompatibilityCalculator from './pages/AstroFinanceCompatibili
 import AstroFinanceYearlyForecast from './pages/AstroFinanceYearlyForecast';
 import AstroFinanceCrystalCalculator from './pages/AstroFinanceCrystalCalculator';
 
+// News Reel
+import NewsReel from './pages/NewsReel';
+
 function App() {
   return (
     <Layout>
@@ -104,6 +107,9 @@ function App() {
         <Route path="/astro-finance/compatibility" element={<AstroFinanceCompatibilityCalculator />} />
         <Route path="/astro-finance/yearly-forecast" element={<AstroFinanceYearlyForecast />} />
         <Route path="/astro-finance/crystal-calculator" element={<AstroFinanceCrystalCalculator />} />
+
+        {/* News Reel route */}
+        <Route path="/news-reel" element={<NewsReel />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
