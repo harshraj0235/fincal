@@ -33,6 +33,8 @@ import CryptoArticlePost from './pages/CryptoArticlePost';
 
 // AstroFinance page
 import AstroFinance from './pages/AstroFinance';
+import AstroFinanceHoroscope from './pages/AstroFinanceHoroscope';
+import AstroFinanceZodiacTips from './pages/AstroFinanceZodiacTips';
 
 function App() {
   return (
@@ -80,6 +82,8 @@ function App() {
 
         {/* AstroFinance route */}
         <Route path="/astro-finance" element={<AstroFinance />} />
+        <Route path="/astro-finance/horoscope" element={<AstroFinanceHoroscope />} />
+        <Route path="/astro-finance/zodiac-tips" element={<AstroFinanceZodiacTips />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

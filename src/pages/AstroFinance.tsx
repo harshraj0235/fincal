@@ -16,12 +16,12 @@ const AstroFinance: React.FC = () => {
           <div className="cosmic-card p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl font-semibold mb-2">Personalized Financial Horoscope</h2>
             <p className="mb-4 text-neutral-600">Get your financial forecast based on your zodiac sign and birth date. Plan your investments, savings, and spending for 2025 and beyond.</p>
-            <button className="astro-finance-btn">Get My Horoscope</button>
+            <Link to="/astro-finance/horoscope" className="astro-finance-btn">Get My Horoscope</Link>
           </div>
           <div className="cosmic-card p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl font-semibold mb-2">Zodiac-Based Investment Tips</h2>
             <p className="mb-4 text-neutral-600">Explore investment strategies tailored to your astrological profile. Find your lucky numbers, best investment days, and more.</p>
-            <button className="astro-finance-btn">Explore Tips</button>
+            <Link to="/astro-finance/zodiac-tips" className="astro-finance-btn">Explore Tips</Link>
           </div>
         </div>
         <div className="mt-16 text-left">
