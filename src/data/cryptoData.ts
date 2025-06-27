@@ -4179,37 +4179,6 @@ export const cryptoArticles: CryptoArticle[] = [
     ],
     relatedArticles: ['15', '11', '14', '19'],
   },
-  
-export interface CryptoArticle {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  status: 'active' | 'archived';
-  launchDate: string;
-  coverImage: string;
-  content: {
-    type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'image' | 'quote' | 'table' | 'highlight';
-    content?: string;
-    items?: string[];
-    url?: string;
-    caption?: string;
-    author?: string;
-    tableData?: { headers: string[]; rows: string[][] };
-  }[];
-  keywords: string[];
-  seoTitle: string;
-  seoDescription: string;
-  faqSchema: {
-    question: string;
-    answer: string;
-  }[];
-  relatedArticles: string[];
-}
-
-export const cryptoArticles: CryptoArticle[] = [
-  {
     id: '20',
     slug: 'how-to-invest-10000-crypto-2025',
     title: 'How to Invest ₹10,000 in Crypto in 2025: Complete Step-by-Step Guide for Indian Investors',
