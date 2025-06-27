@@ -38,6 +38,10 @@ import AstroFinanceZodiacTips from './pages/AstroFinanceZodiacTips';
 import AstroFinanceLuckyNumberGenerator from './pages/AstroFinanceLuckyNumberGenerator';
 import AstroFinanceMuhuratCalculator from './pages/AstroFinanceMuhuratCalculator';
 import AstroFinanceZodiacSavingsCalculator from './pages/AstroFinanceZodiacSavingsCalculator';
+import AstroFinanceGemstoneCalculator from './pages/AstroFinanceGemstoneCalculator';
+import AstroFinanceNakshatraCalculator from './pages/AstroFinanceNakshatraCalculator';
+import AstroFinancePlanetaryCalculator from './pages/AstroFinancePlanetaryCalculator';
+import AstroFinanceDailyHoroscope from './pages/AstroFinanceDailyHoroscope';
 
 function App() {
   return (
@@ -90,6 +94,10 @@ function App() {
         <Route path="/astro-finance/lucky-numbers" element={<AstroFinanceLuckyNumberGenerator />} />
         <Route path="/astro-finance/muhurat" element={<AstroFinanceMuhuratCalculator />} />
         <Route path="/astro-finance/savings-calculator" element={<AstroFinanceZodiacSavingsCalculator />} />
+        <Route path="/astro-finance/gemstone-calculator" element={<AstroFinanceGemstoneCalculator />} />
+        <Route path="/astro-finance/nakshatra-calculator" element={<AstroFinanceNakshatraCalculator />} />
+        <Route path="/astro-finance/planetary-calculator" element={<AstroFinancePlanetaryCalculator />} />
+        <Route path="/astro-finance/daily-horoscope" element={<AstroFinanceDailyHoroscope />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

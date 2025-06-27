@@ -12,7 +12,7 @@ const AstroFinance: React.FC = () => {
         <div className="flex flex-col gap-4 items-center mb-10">
           <Link to="/" className="btn btn-primary">Back to Home</Link>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 mt-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
           <div className="cosmic-card p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl font-semibold mb-2">Personalized Financial Horoscope</h2>
             <p className="mb-4 text-neutral-600">Get your financial forecast based on your zodiac sign and birth date. Plan your investments, savings, and spending for 2025 and beyond.</p>
@@ -37,6 +37,21 @@ const AstroFinance: React.FC = () => {
             <h2 className="text-2xl font-semibold mb-2">Zodiac Savings Calculator</h2>
             <p className="mb-4 text-neutral-600">Get personalized savings recommendations based on your zodiac traits, income, and financial goals.</p>
             <Link to="/astro-finance/savings-calculator" className="astro-finance-btn">Calculate Savings</Link>
+          </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Gemstone Calculator</h2>
+            <p className="mb-4 text-neutral-600">Discover the perfect gemstone to enhance your financial prosperity based on your zodiac sign and birth details.</p>
+            <Link to="/astro-finance/gemstone-calculator" className="astro-finance-btn">Find Gemstone</Link>
+          </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Nakshatra Calculator</h2>
+            <p className="mb-4 text-neutral-600">Discover your financial destiny based on your birth star (Nakshatra) in Vedic astrology.</p>
+            <Link to="/astro-finance/nakshatra-calculator" className="astro-finance-btn">Calculate Nakshatra</Link>
+          </div>
+          <div className="cosmic-card p-6 rounded-xl shadow-lg">
+            <h2 className="text-2xl font-semibold mb-2">Planetary Calculator</h2>
+            <p className="mb-4 text-neutral-600">Understand how planetary positions influence your financial decisions and timing.</p>
+            <Link to="/astro-finance/planetary-calculator" className="astro-finance-btn">Analyze Planets</Link>
           </div>
         </div>
         <div className="mt-16 text-left">
