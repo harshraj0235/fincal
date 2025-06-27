@@ -4179,6 +4179,7 @@ export const cryptoArticles: CryptoArticle[] = [
     ],
     relatedArticles: ['15', '11', '14', '19'],
   },
+  {
     id: '20',
     slug: 'how-to-invest-10000-crypto-2025',
     title: 'How to Invest ₹10,000 in Crypto in 2025: Complete Step-by-Step Guide for Indian Investors',
