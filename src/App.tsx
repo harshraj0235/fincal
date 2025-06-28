@@ -18,6 +18,7 @@ import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
+import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
 
 // Excel Tool blog section
 import ExcelTool from './pages/ExcelTool';
@@ -51,69 +52,79 @@ import NewsReel from './pages/NewsReel';
 
 function App() {
   return (
-    <Layout>
-      <ScrollToTop />
+    <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* Missed Call Banking Directory route - outside Layout */}
+        <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
+        
+        {/* All other routes inside Layout */}
+        <Route path="*" element={
+          <Layout>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-        {calculatorCategories.flatMap(category =>
-          category.calculators.map(calculator => (
-            <Route
-              key={calculator.id}
-              path={`/calculators/${calculator.id}`}
-              element={<CalculatorPage calculatorId={calculator.id} />}
-            />
-          ))
-        )}
+              {calculatorCategories.flatMap(category =>
+                category.calculators.map(calculator => (
+                  <Route
+                    key={calculator.id}
+                    path={`/calculators/${calculator.id}`}
+                    element={<CalculatorPage calculatorId={calculator.id} />}
+                  />
+                ))
+              )}
 
-        <Route path="/category/:categoryId" element={<CategoryPage />} />
+              <Route path="/category/:categoryId" element={<CategoryPage />} />
 
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/blog/write" element={<WriteBlog />} />
-        <Route path="/blog/category/banking" element={<BankingKnowledge />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/blog/write" element={<WriteBlog />} />
+              <Route path="/blog/category/banking" element={<BankingKnowledge />} />
 
-        {/* Excel Tool blog section routes */}
-        <Route path="/exceltool" element={<ExcelTool />} />
-        <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
+              {/* Excel Tool blog section routes */}
+              <Route path="/exceltool" element={<ExcelTool />} />
+              <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
 
-        {/* Government Schemes routes */}
-        <Route path="/government-schemes" element={<GovernmentSchemes />} />
-        <Route path="/government-schemes/:slug" element={<GovernmentSchemePost />} />
+              {/* Government Schemes routes */}
+              <Route path="/government-schemes" element={<GovernmentSchemes />} />
+              <Route path="/government-schemes/:slug" element={<GovernmentSchemePost />} />
 
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="/sitemap" element={<Sitemap />} />
-        <Route path="/sitemap.xml" element={<SitemapXml />} />
-        <Route path="/credit-card-finder" element={<CreditCardFinder />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/sitemap.xml" element={<SitemapXml />} />
+              <Route path="/credit-card-finder" element={<CreditCardFinder />} />
 
-        {/* Crypto Section route */}
-        <Route path="/crypto" element={<CryptoSection />} />
-        <Route path="/crypto/:slug" element={<CryptoArticlePost />} />
+              {/* Crypto Section route */}
+              <Route path="/crypto" element={<CryptoSection />} />
+              <Route path="/crypto/:slug" element={<CryptoArticlePost />} />
 
-        {/* AstroFinance route */}
-        <Route path="/astro-finance" element={<AstroFinance />} />
-        <Route path="/astro-finance/horoscope" element={<AstroFinanceHoroscope />} />
-        <Route path="/astro-finance/zodiac-tips" element={<AstroFinanceZodiacTips />} />
-        <Route path="/astro-finance/lucky-numbers" element={<AstroFinanceLuckyNumberGenerator />} />
-        <Route path="/astro-finance/muhurat" element={<AstroFinanceMuhuratCalculator />} />
-        <Route path="/astro-finance/savings-calculator" element={<AstroFinanceZodiacSavingsCalculator />} />
-        <Route path="/astro-finance/gemstone-calculator" element={<AstroFinanceGemstoneCalculator />} />
-        <Route path="/astro-finance/nakshatra-calculator" element={<AstroFinanceNakshatraCalculator />} />
-        <Route path="/astro-finance/planetary-calculator" element={<AstroFinancePlanetaryCalculator />} />
-        <Route path="/astro-finance/daily-horoscope" element={<AstroFinanceDailyHoroscope />} />
-        <Route path="/astro-finance/compatibility" element={<AstroFinanceCompatibilityCalculator />} />
-        <Route path="/astro-finance/yearly-forecast" element={<AstroFinanceYearlyForecast />} />
-        <Route path="/astro-finance/crystal-calculator" element={<AstroFinanceCrystalCalculator />} />
+              {/* AstroFinance route */}
+              <Route path="/astro-finance" element={<AstroFinance />} />
+              <Route path="/astro-finance/horoscope" element={<AstroFinanceHoroscope />} />
+              <Route path="/astro-finance/zodiac-tips" element={<AstroFinanceZodiacTips />} />
+              <Route path="/astro-finance/lucky-numbers" element={<AstroFinanceLuckyNumberGenerator />} />
+              <Route path="/astro-finance/muhurat" element={<AstroFinanceMuhuratCalculator />} />
+              <Route path="/astro-finance/savings-calculator" element={<AstroFinanceZodiacSavingsCalculator />} />
+              <Route path="/astro-finance/gemstone-calculator" element={<AstroFinanceGemstoneCalculator />} />
+              <Route path="/astro-finance/nakshatra-calculator" element={<AstroFinanceNakshatraCalculator />} />
+              <Route path="/astro-finance/planetary-calculator" element={<AstroFinancePlanetaryCalculator />} />
+              <Route path="/astro-finance/daily-horoscope" element={<AstroFinanceDailyHoroscope />} />
+              <Route path="/astro-finance/compatibility" element={<AstroFinanceCompatibilityCalculator />} />
+              <Route path="/astro-finance/yearly-forecast" element={<AstroFinanceYearlyForecast />} />
+              <Route path="/astro-finance/crystal-calculator" element={<AstroFinanceCrystalCalculator />} />
 
-        {/* News Reel route */}
-        <Route path="/news-reel" element={<NewsReel />} />
+              {/* News Reel route */}
+              <Route path="/news-reel" element={<NewsReel />} />
 
-        <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Layout>
+        } />
       </Routes>
-    </Layout>
+    </>
   );
 }
 

@@ -1,6 +1,5 @@
-
-import React, { useState } from 'react';
-import { Search, Filter, Download, Share2, AlertCircle, Calculator, Building2, CreditCard, Shield, Clock } from 'lucide-react';
+import React, { useState, useMemo, ChangeEvent } from 'react';
+import { Search, Filter, Download, Share2, AlertCircle, Calculator, Banknote, CreditCard, Shield, Clock, MapPin, Building2, Smartphone, Menu, X } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 
 export const BankChargesAnalyzer: React.FC = () => {
@@ -9,189 +8,99 @@ export const BankChargesAnalyzer: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>('');
   const [selectedState, setSelectedState] = useState<string>('');
   const [showComparison, setShowComparison] = useState<boolean>(false);
+  const [searchBank, setSearchBank] = useState<string>('');
+  const [searchCity, setSearchCity] = useState<string>('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
+  // Full stateCityData
+  const stateCityData: { [key: string]: string[] } = {
+    'Andhra Pradesh': ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Kurnool', 'Rajahmundry', 'Tirupati', 'Kadapa', 'Anantapur', 'Vizianagaram', 'Eluru', 'Ongole', 'Machilipatnam', 'Adoni', 'Tenali', 'Chittoor', 'Hindupur', 'Bhimavaram', 'Madanapalle', 'Guntakal'],
+    'Arunachal Pradesh': ['Itanagar', 'Naharlagun', 'Pasighat', 'Tezpur', 'Bomdila', 'Ziro', 'Along', 'Basar', 'Khonsa', 'Namsai', 'Changlang', 'Tezu', 'Roing', 'Yingkiong', 'Anini'],
+    'Assam': ['Guwahati', 'Silchar', 'Dibrugarh', 'Jorhat', 'Tezpur', 'Nagaon', 'Tinsukia', 'Bongaigaon', 'Karimganj', 'Dhubri', 'North Lakhimpur', 'Goalpara', 'Sivasagar', 'Diphu', 'Mangaldoi', 'Haflong', 'Hailakandi', 'Morigaon', 'Hojai', 'Lanka'],
+    'Bihar': ['Patna', 'Gaya', 'Bhagalpur', 'Muzaffarpur', 'Darbhanga', 'Bihar Sharif', 'Arrah', 'Begusarai', 'Katihar', 'Munger', 'Chhapra', 'Purnia', 'Saharsa', 'Sasaram', 'Hajipur', 'Dehri', 'Siwan', 'Motihari', 'Nawada', 'Bagaha', 'Buxar', 'Kishanganj', 'Sitamarhi', 'Jamalpur', 'Jehanabad'],
+    'Chhattisgarh': ['Raipur', 'Bhilai', 'Bilaspur', 'Korba', 'Durg', 'Rajnandgaon', 'Jagdalpur', 'Raigarh', 'Ambikapur', 'Mahasamund', 'Dhamtari', 'Chirmiri', 'Janjgir', 'Sakti', 'Tilda', 'Mungeli', 'Naila Janjgir', 'Champa', 'Akaltara', 'Dongargaon'],
+    'Goa': ['Panaji', 'Vasco da Gama', 'Margao', 'Mapusa', 'Ponda', 'Bicholim', 'Curchorem', 'Sanquelim', 'Cuncolim', 'Quepem', 'Sanguem', 'Pernem', 'Cortalim', 'Aldona', 'Arambol'],
+    'Gujarat': ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Bhavnagar', 'Jamnagar', 'Junagadh', 'Gandhinagar', 'Anand', 'Navsari', 'Bharuch', 'Mehsana', 'Morbi', 'Surendranagar', 'Nadiad', 'Porbandar', 'Ankleshwar', 'Vapi', 'Veraval', 'Godhra', 'Patan', 'Kalol', 'Dahod', 'Botad', 'Amreli'],
+    'Haryana': ['Faridabad', 'Gurgaon', 'Panipat', 'Ambala', 'Yamunanagar', 'Rohtak', 'Hisar', 'Karnal', 'Sonipat', 'Panchkula', 'Bhiwani', 'Sirsa', 'Bahadurgarh', 'Jind', 'Thanesar', 'Kaithal', 'Rewari', 'Narnaul', 'Pundri', 'Kosli', 'Palwal', 'Hansi', 'Fatehabad', 'Gohana', 'Tohana'],
+    'Himachal Pradesh': ['Shimla', 'Dharamshala', 'Solan', 'Mandi', 'Palampur', 'Baddi', 'Nahan', 'Paonta Sahib', 'Sundernagar', 'Chamba', 'Una', 'Kullu', 'Hamirpur', 'Bilaspur', 'Kangra', 'Manali', 'Dalhousie', 'Keylong', 'Reckong Peo', 'Kasauli'],
+    'Jharkhand': ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Deoghar', 'Phusro', 'Hazaribagh', 'Giridih', 'Ramgarh', 'Medininagar', 'Chirkunda', 'Pakaur', 'Chaibasa', 'Jhumri Telaiya', 'Sahibganj', 'Lohardaga', 'Godda', 'Dumka', 'Garhwa', 'Koderma', 'Mihijam', 'Patratu', 'Barhi', 'Chas', 'Baghmara'],
+    'Karnataka': ['Bengaluru', 'Mysuru', 'Hubballi', 'Mangaluru', 'Belagavi', 'Davanagere', 'Ballari', 'Vijayapura', 'Shivamogga', 'Tumakuru', 'Raichur', 'Bidar', 'Hosapete', 'Gadag', 'Udupi', 'Robertson Pet', 'Bhadravati', 'Chitradurga', 'Hassan', 'Mandya', 'Chikkamagaluru', 'Bagalkot', 'Ramanagara', 'Gokak', 'Yadgir', 'Rabkavi Banhatti', 'Shahabad', 'Siruguppa', 'Mudhol', 'Sidlaghatta'],
+    'Kerala': ['Kochi', 'Thiruvananthapuram', 'Kozhikode', 'Kollam', 'Thrissur', 'Alappuzha', 'Palakkad', 'Kannur', 'Payyanur', 'Kanhangad', 'Malappuram', 'Vatakara', 'Koyilandy', 'Neyyattinkara', 'Kayamkulam', 'Nedumangad', 'Kannur', 'Taliparamba', 'Kottayam', 'Changanassery', 'Pala', 'Cherthala', 'Kodungallur', 'Chittur-Thathamangalam', 'Muvattupuzha', 'Adoor', 'Mavelikkara', 'Mavoor', 'Perinthalmanna', 'Ottappalam'],
+    'Madhya Pradesh': ['Indore', 'Bhopal', 'Jabalpur', 'Gwalior', 'Ujjain', 'Sagar', 'Dewas', 'Satna', 'Ratlam', 'Rewa', 'Murwara', 'Singrauli', 'Burhanpur', 'Khandwa', 'Morena', 'Bhind', 'Chhindwara', 'Guna', 'Shivpuri', 'Vidisha', 'Chhatarpur', 'Damoh', 'Mandsaur', 'Khargone', 'Neemuch', 'Pithampur', 'Narmadapuram', 'Itarsi', 'Sehore', 'Betul'],
+    'Maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Thane', 'Nashik', 'Aurangabad', 'Solapur', 'Amravati', 'Kolhapur', 'Sangli', 'Malegaon', 'Akola', 'Latur', 'Dhule', 'Ahmednagar', 'Chandrapur', 'Parbhani', 'Jalgaon', 'Bhiwandi', 'Nanded', 'Warangal', 'Ulhasnagar', 'Belgaum', 'Mira-Bhayandar', 'Vasai-Virar', 'Kalyan-Dombivli', 'Navi Mumbai', 'Raigad', 'Panvel', 'Badlapur', 'Ambarnath', 'Virar', 'Naigaon', 'Nalasopara', 'Bhayander', 'Kulgaon', 'Badlapur', 'Khopoli', 'Pen', 'Alibag', 'Murud', 'Shrivardhan'],
+    'Manipur': ['Imphal', 'Thoubal', 'Lilong', 'Mayang Imphal', 'Kakching', 'Bishnupur', 'Churachandpur', 'Senapati', 'Ukhrul', 'Chandel', 'Tamenglong', 'Jiribam', 'Kangpokpi', 'Tengnoupal', 'Kamjong', 'Noney', 'Pherzawl'],
+    'Meghalaya': ['Shillong', 'Tura', 'Cherrapunji', 'Jowai', 'Baghmara', 'Nongpoh', 'Mawkyrwat', 'Resubelpara', 'Ampati', 'Mairang', 'Nongstoin'],
+    'Mizoram': ['Aizawl', 'Lunglei', 'Saiha', 'Champhai', 'Kolasib', 'Serchhip', 'Mamit', 'Lawngtlai'],
+    'Nagaland': ['Kohima', 'Dimapur', 'Mokokchung', 'Tuensang', 'Wokha', 'Zunheboto', 'Phek', 'Kiphire', 'Longleng', 'Peren', 'Mon'],
+    'Odisha': ['Bhubaneswar', 'Cuttack', 'Rourkela', 'Berhampur', 'Sambalpur', 'Puri', 'Balasore', 'Bhadrak', 'Baripada', 'Jharsuguda', 'Jeypore', 'Barbil', 'Khordha', 'Balangir', 'Rayagada', 'Bhawanipatna', 'Dhenkanal', 'Kendrapara', 'Sunabeda', 'Rajgangpur', 'Paradip', 'Talcher', 'Kendujhar', 'Manabazar', 'Koraput'],
+    'Punjab': ['Ludhiana', 'Amritsar', 'Jalandhar', 'Patiala', 'Bathinda', 'Mohali', 'Firozpur', 'Batala', 'Pathankot', 'Moga', 'Abohar', 'Malerkotla', 'Khanna', 'Phagwara', 'Muktsar', 'Barnala', 'Rajpura', 'Hoshiarpur', 'Kapurthala', 'Faridkot', 'Sunam', 'Jagraon', 'Nawanshr', 'Raikot', 'Nabha', 'Longowal', 'Dhuri', 'Mansa', 'Fazilka', 'Gurdaspur'],
+    'Rajasthan': ['Jaipur', 'Jodhpur', 'Kota', 'Bikaner', 'Ajmer', 'Udaipur', 'Bhilwara', 'Alwar', 'Bharatpur', 'Sikar', 'Pali', 'Sri Ganganagar', 'Kishangarh', 'Baran', 'Dhaulpur', 'Tonk', 'Beawar', 'Hanumangarh', 'Gangapur City', 'Banswara', 'Makrana', 'Sujangarh', 'Sardarshahar', 'Ladnu', 'Ratangarh', 'Nokha', 'Nimbahera', 'Suratgarh', 'Rajsamand', 'Lachhmangarh', 'Rajgarh', 'Nasirabad', 'Nohar', 'Phalodi', 'Nathdwara', 'Pilani', 'Merta City', 'Sojat', 'Neem-Ka-Thana'],
+    'Sikkim': ['Gangtok', 'Namchi', 'Gyalshing', 'Mangan', 'Jorethang', 'Nayabazar', 'Singtam', 'Rangpo'],
+    'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli', 'Salem', 'Tirunelveli', 'Tiruppur', 'Ranipet', 'Nagercoil', 'Thanjavur', 'Vellore', 'Kancheepuram', 'Erode', 'Tiruvannamalai', 'Pollachi', 'Rajapalayam', 'Sivakasi', 'Pudukkottai', 'Neyveli', 'Nagapattinam', 'Viluppuram', 'Tiruchengode', 'Vaniyambadi', 'Theni', 'Arakkonam', 'Kumarapalayam', 'Virudhunagar', 'Arni', 'Karaikudi', 'Kumbakonam', 'Dindigul', 'Oddanchatram', 'Palladam', 'Dindukkal', 'Tirupattur', 'Vaniyambadi', 'Gobichettipalayam', 'Bhavani', 'Hosur'],
+    'Telangana': ['Hyderabad', 'Warangal', 'Nizamabad', 'Khammam', 'Karimnagar', 'Ramagundam', 'Mahbubnagar', 'Nalgonda', 'Adilabad', 'Suryapet', 'Miryalaguda', 'Jagtial', 'Mancherial', 'Nirmal', 'Kamareddy', 'Kothagudem', 'Bodhan', 'Sangareddy', 'Metpally', 'Zahirabad', 'MedChal', 'Jangaon', 'Mandamarri', 'Medak', 'Vikarabad'],
+    'Tripura': ['Agartala', 'Dharmanagar', 'Udaipur', 'Kailasahar', 'Bishalgarh', 'Teliamura', 'Khowai', 'Belonia', 'Melaghar', 'Mohanpur', 'Ambassa', 'Ranirbazar', 'Santirbazar', 'Kumarghat', 'Sonamura', 'Panisagar', 'Amarpur', 'Jirania', 'Kamalpur', 'Sabroom'],
+    'Uttar Pradesh': ['Lucknow', 'Kanpur', 'Ghaziabad', 'Agra', 'Varanasi', 'Meerut', 'Allahabad', 'Bareilly', 'Aligarh', 'Moradabad', 'Saharanpur', 'Gorakhpur', 'Noida', 'Firozabad', 'Loni', 'Jhansi', 'Muzaffarnagar', 'Mathura', 'Budaun', 'Rampur', 'Shahjahanpur', 'Farrukhabad', 'Mau', 'Hapur', 'Etawah', 'Mirzapur', 'Bulandshahr', 'Sambhal', 'Amroha', 'Hardoi', 'Fatehpur', 'Raebareli', 'Orai', 'Sitapur', 'Bahraich', 'Modinagar', 'Unnao', 'Jaunpur', 'Lakhimpur', 'Hathras', 'Banda', 'Pilibhit', 'Barabanki', 'Khurja', 'Gonda', 'Mainpuri', 'Lalitpur', 'Etah', 'Deoria', 'Ujhani', 'Ghazipur', 'Sultanpur', 'Azamgarh', 'Bijnor', 'Sahaswan', 'Basti', 'Chandausi', 'Akbarpur', 'Ballia', 'Tanda', 'Greater Noida', 'Shikohabad', 'Shamli', 'Awagarh', 'Kasganj'],
+    'Uttarakhand': ['Dehradun', 'Haridwar', 'Roorkee', 'Haldwani-cum-Kathgodam', 'Rudrapur', 'Kashipur', 'Rishikesh', 'Ramnagar', 'Pithoragarh', 'Jaspur', 'Kichha', 'Sitarganj', 'Bageshwar', 'Haldwani', 'Nainital', 'Almora', 'Baraut', 'Laksar', 'Landhaura', 'Mussoorie', 'Pauri', 'Tehri', 'Chamoli', 'Rudraprayag', 'Champawat', 'Bageshwar', 'Uttarkashi'],
+    'West Bengal': ['Kolkata', 'Howrah', 'Durgapur', 'Asansol', 'Siliguri', 'Bardhaman', 'Malda', 'Baharampur', 'Habra', 'Kharagpur', 'Shantipur', 'Dankuni', 'Dhulian', 'Ranaghat', 'Haldia', 'Raiganj', 'Krishnanagar', 'Nabadwip', 'Medinipur', 'Jalpaiguri', 'Balurghat', 'Basirhat', 'Bankura', 'Chakdaha', 'Darjeeling', 'Alipurduar', 'Purulia', 'Jangipur', 'Bolpur', 'Bangaon', 'Cooch Behar', 'Tamluk', 'Midnapore', 'Raghunathpur', 'Bidhannagar', 'Contai', 'Egra', 'Jhargram', 'Kalimpong', 'Mayurbhanj', 'Rampurhat', 'Suri', 'Tufanganj', 'Mainaguri'],
+    'Andaman and Nicobar Islands': ['Port Blair', 'Bamboo Flat', 'Garacharma', 'Diglipur', 'Mayabunder', 'Rangat', 'Campbell Bay', 'Car Nicobar', 'Hut Bay'],
+    'Chandigarh': ['Chandigarh'],
+    'Dadra and Nagar Haveli and Daman and Diu': ['Daman', 'Diu', 'Silvassa'],
+    'Delhi': ['New Delhi', 'Delhi', 'North Delhi', 'South Delhi', 'East Delhi', 'West Delhi', 'Central Delhi', 'North East Delhi', 'North West Delhi', 'South East Delhi', 'South West Delhi', 'Shahdara', 'Najafgarh'],
+    'Jammu and Kashmir': ['Srinagar', 'Jammu', 'Baramulla', 'Anantnag', 'Sopore', 'KathuaUdhampur', 'Punch', 'Rajauri'],
+    'Ladakh': ['Leh', 'Kargil', 'Nubra', 'Changthang', 'Zanskar'],
+    'Lakshadweep': ['Kavaratti', 'Agatti', 'Minicoy', 'Amini', 'Andrott', 'Kalpeni', 'Kadmat', 'Kiltan', 'Chetlat', 'Bitra'],
+    'Puducherry': ['Puducherry', 'Karaikal', 'Yanam', 'Mahe']
+  };
+
+  // Full banks list (180+)
   const banks = [
-    // Public Sector Banks
-    'State Bank of India',
-    'Punjab National Bank',
-    'Bank of Baroda',
-    'Canara Bank',
-    'Union Bank of India',
-    'Bank of India',
-    'Central Bank of India',
-    'Indian Overseas Bank',
-    'UCO Bank',
-    'Bank of Maharashtra',
-    'Punjab & Sind Bank',
-    'Indian Bank',
-    
-    // Private Sector Banks
-    'HDFC Bank',
-    'ICICI Bank',
-    'Axis Bank',
-    'Kotak Mahindra Bank',
-    'IndusInd Bank',
-    'Yes Bank',
-    'IDFC First Bank',
-    'Federal Bank',
-    'South Indian Bank',
-    'Karnataka Bank',
-    'City Union Bank',
-    'DCB Bank',
-    'RBL Bank',
-    'Tamilnad Mercantile Bank',
-    'Lakshmi Vilas Bank',
-    'Dhanlaxmi Bank',
-    'Karur Vysya Bank',
-    'Nainital Bank',
-    'Catholic Syrian Bank',
-    
+    // Major Public Sector Banks
+    'State Bank of India', 'Punjab National Bank', 'Bank of Baroda', 'Canara Bank', 'Union Bank of India',
+    'Bank of India', 'Central Bank of India', 'Indian Overseas Bank', 'UCO Bank', 'Bank of Maharashtra',
+    'Punjab & Sind Bank', 'Indian Bank',
+    // Major Private Sector Banks
+    'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'Kotak Mahindra Bank', 'Yes Bank', 'IndusInd Bank',
+    'IDFC First Bank', 'Federal Bank', 'South Indian Bank', 'Karur Vysya Bank', 'Tamilnad Mercantile Bank',
+    'City Union Bank', 'Dhanlaxmi Bank', 'Karnataka Bank', 'Lakshmi Vilas Bank', 'Nainital Bank',
+    'RBL Bank', 'Jammu & Kashmir Bank', 'DCB Bank', 'Bandhan Bank',
     // Foreign Banks
-    'Citibank',
-    'Standard Chartered Bank',
-    'HSBC Bank',
-    'Deutsche Bank',
-    'Barclays Bank',
-    'American Express Banking Corp',
-    'Bank of America',
-    'Royal Bank of Scotland',
-    'DBS Bank',
-    'Mizuho Bank',
-    'MUFG Bank',
-    'Sumitomo Mitsui Banking Corporation',
-    'BNP Paribas',
-    'Credit Suisse',
-    'JPMorgan Chase Bank',
-    'Bank of Bahrain and Kuwait',
-    'Emirates NBD Bank',
-    'First Abu Dhabi Bank',
-    'Mashreq Bank',
-    'Qatar National Bank',
-    'National Bank of Kuwait',
-    'Abu Dhabi Commercial Bank',
-    'Doha Bank',
-    'Commercial Bank of Qatar',
-    'Ahli United Bank',
-    
+    'Citibank', 'HSBC', 'Standard Chartered Bank', 'Deutsche Bank', 'Barclays Bank', 'Royal Bank of Scotland',
+    'Bank of America', 'JPMorgan Chase Bank', 'Mizuho Bank', 'Sumitomo Mitsui Banking Corporation',
+    'MUFG Bank', 'DBS Bank', 'Shinhan Bank', 'Woori Bank', 'BNP Paribas', 'Credit Suisse',
+    'UBS AG', 'Societe Generale', 'Credit Agricole Corporate and Investment Bank',
     // Small Finance Banks
-    'AU Small Finance Bank',
-    'Equitas Small Finance Bank',
-    'Ujjivan Small Finance Bank',
-    'Jana Small Finance Bank',
-    'Suryoday Small Finance Bank',
-    'Capital Small Finance Bank',
-    'Fincare Small Finance Bank',
-    'ESAF Small Finance Bank',
-    'North East Small Finance Bank',
-    'Utkarsh Small Finance Bank',
-    'Unity Small Finance Bank',
-    'Shivalik Small Finance Bank',
-    
+    'AU Small Finance Bank', 'Equitas Small Finance Bank', 'Ujjivan Small Finance Bank', 'Jana Small Finance Bank',
+    'Suryoday Small Finance Bank', 'Capital Small Finance Bank', 'ESAF Small Finance Bank', 'North East Small Finance Bank',
+    'Utkarsh Small Finance Bank', 'Fincare Small Finance Bank', 'Unity Small Finance Bank',
     // Payment Banks
-    'Paytm Payments Bank',
-    'Airtel Payments Bank',
-    'India Post Payments Bank',
-    'Fino Payments Bank',
-    'NSDL Payments Bank',
-    'Aditya Birla Idea Payments Bank',
-    'Jio Payments Bank',
-    
-    // Regional Rural Banks
-    'Andhra Pradesh Grameena Vikas Bank',
-    'Andhra Pragathi Grameena Bank',
-    'Chaitanya Godavari Grameena Bank',
-    'Saptagiri Grameena Bank',
-    'Telangana Grameena Bank',
-    'Assam Gramin Vikash Bank',
-    'Arunachal Pradesh Rural Bank',
-    'Manipur Rural Bank',
-    'Meghalaya Rural Bank',
-    'Mizoram Rural Bank',
-    'Nagaland Rural Bank',
-    'Tripura Gramin Bank',
-    'Bihar Gramin Bank',
-    'Uttar Bihar Gramin Bank',
-    'Dakshin Bihar Gramin Bank',
-    'Chhattisgarh Rajya Gramin Bank',
-    'Goa State Co-operative Bank',
-    'Saurashtra Gramin Bank',
-    'Dena Gujarat Gramin Bank',
-    'Baroda Gujarat Gramin Bank',
-    'Sarva Haryana Gramin Bank',
-    'Haryana Gramin Bank',
-    'Himachal Pradesh Gramin Bank',
-    'Jammu & Kashmir Grameen Bank',
-    'Jharkhand Rajya Gramin Bank',
-    'Karnataka Vikas Grameena Bank',
-    'Pragathi Krishna Gramin Bank',
-    'Kerala Gramin Bank',
-    'Madhya Pradesh Gramin Bank',
-    'Narmada Jhabua Gramin Bank',
-    'Maharashtra Gramin Bank',
-    'Vidharbha Konkan Gramin Bank',
-    'Odisha Gramya Bank',
-    'Punjab Gramin Bank',
-    'Rajasthan Marudhara Gramin Bank',
-    'Baroda Rajasthan Kshetriya Gramin Bank',
-    'Tamil Nadu Grama Bank',
-    'Pandyan Grama Bank',
-    'Uttarakhand Gramin Bank',
-    'Uttar Pradesh Gramin Bank',
-    'Purvanchal Bank',
-    'Kashi Gomti Samyut Gramin Bank',
-    'Prathama UP Gramin Bank',
-    'Aryavart Bank',
-    'Sarva UP Gramin Bank',
-    'Paschim Banga Gramin Bank',
-    
-    // Cooperative Banks
-    'NKGSB Co-operative Bank',
-    'Saraswat Cooperative Bank',
-    'Shamrao Vithal Co-operative Bank',
-    'Thane Janata Sahakari Bank',
-    'Cosmos Co-operative Bank',
-    'Bassein Catholic Co-operative Bank',
-    'Mumbai District Central Co-operative Bank',
-    'Pune District Central Co-operative Bank',
-    'Nashik District Central Co-operative Bank',
-    'Ahmednagar District Central Co-operative Bank',
-    'Kolhapur District Central Co-operative Bank',
-    'Sangli District Central Co-operative Bank',
-    'Satara District Central Co-operative Bank',
-    'Solapur District Central Co-operative Bank',
-    'Aurangabad District Central Co-operative Bank',
-    
-    // Others
-    'Bandhan Bank',
-    'CSB Bank',
-    'Jammu & Kashmir Bank',
-    'Tamil Nadu State Apex Cooperative Bank',
-    'Rajkot Nagarik Sahakari Bank',
-    'Gujarat State Co-operative Bank',
-    'Karnataka State Co-operative Apex Bank',
-    'Kerala State Co-operative Bank',
-    'Andhra Pradesh State Co-operative Bank',
-    'Telangana State Co-operative Apex Bank',
-    'Haryana State Co-operative Apex Bank',
-    'Punjab State Co-operative Bank',
-    'Uttar Pradesh Co-operative Bank',
-    'Madhya Pradesh State Co-operative Bank',
-    'Chhattisgarh State Co-operative Bank',
-    'Odisha State Co-operative Bank',
-    'West Bengal State Co-operative Bank',
-    'Assam State Co-operative Apex Bank',
-    'Tripura State Co-operative Bank',
-    'Manipur State Co-operative Bank',
-    'Nagaland State Co-operative Bank',
-    'Mizoram State Co-operative Bank',
-    'Arunachal Pradesh State Co-operative Apex Bank',
-    'Sikkim State Co-operative Bank',
-    'Himachal Pradesh State Co-operative Bank',
-    'Jammu & Kashmir State Co-operative Bank',
-    'Delhi State Co-operative Bank',
-    'Rajasthan State Co-operative Bank',
-    'Bihar State Co-operative Bank',
-    'Jharkhand State Co-operative Bank'
+    'Paytm Payments Bank', 'Airtel Payments Bank', 'India Post Payments Bank', 'Fino Payments Bank',
+    'NSDL Payments Bank', 'Jio Payments Bank', 'Aditya Birla Idea Payments Bank',
+    // Regional Rural Banks (Sample)
+    'Andhra Pradesh Grameena Vikas Bank', 'Andhra Pragathi Grameena Bank', 'Telangana Grameena Bank',
+    'Karnataka Vikas Grameena Bank', 'Pragathi Krishna Grameena Bank', 'Kerala Grameena Bank',
+    'Puduvai Bharathiar Grama Bank', 'Tamil Nadu Grama Bank', 'Pandian Grama Bank', 'Pallavan Grama Bank',
+    'Sarva Haryana Gramin Bank', 'Himachal Pradesh Gramin Bank', 'J&K Grameen Bank', 'Punjab Gramin Bank',
+    'Rajasthan Marudhara Gramin Bank', 'Baroda Gujarat Gramin Bank', 'Saurashtra Gramin Bank',
+    'Maharashtra Gramin Bank', 'Vidharbha Konkan Gramin Bank', 'Deccan Grameena Bank',
+    'Chaitanya Godavari Grameena Bank', 'Saptagiri Grameena Bank', 'Tripura Gramin Bank',
+    'Assam Gramin Vikash Bank', 'Arunachal Pradesh Rural Bank', 'Manipur Rural Bank', 'Meghalaya Rural Bank',
+    'Mizoram Rural Bank', 'Nagaland Rural Bank', 'Sikkim State Cooperative Bank', 'Uttar Bihar Gramin Bank',
+    'Bihar Gramin Bank', 'Jharkhand Rajya Gramin Bank', 'Uttarakhand Gramin Bank', 'Uttar Pradesh Gramin Bank',
+    'Madhya Pradesh Gramin Bank', 'Chhattisgarh Rajya Gramin Bank', 'Odisha Gramya Bank', 'West Bengal Gramin Bank',
+    // Cooperative Banks (Sample)
+    'Saraswat Cooperative Bank', 'Cosmos Cooperative Bank', 'Abhyudaya Cooperative Bank', 'Mumbai District Central Cooperative Bank',
+    'Thane Janata Sahakari Bank', 'NKGSB Cooperative Bank', 'Bassein Catholic Cooperative Bank', 'Jankalyan Sahakari Bank',
+    'Mehsana Urban Cooperative Bank', 'Rajkot Nagarik Sahakari Bank', 'Surat District Cooperative Bank',
+    'Delhi State Cooperative Bank', 'Punjab State Cooperative Bank', 'Haryana State Cooperative Bank',
+    'Uttar Pradesh Cooperative Bank', 'Maharashtra State Cooperative Bank', 'Karnataka State Cooperative Bank',
+    'Andhra Pradesh State Cooperative Bank', 'Tamil Nadu State Cooperative Bank', 'Kerala State Cooperative Bank',
+    'West Bengal State Cooperative Bank', 'Odisha State Cooperative Bank', 'Assam State Cooperative Bank',
+    'Bihar State Cooperative Bank', 'Madhya Pradesh State Cooperative Bank', 'Rajasthan State Cooperative Bank',
+    'Gujarat State Cooperative Bank', 'Himachal Pradesh State Cooperative Bank', 'Jammu & Kashmir State Cooperative Bank',
+    // Development Financial Institutions
+    'Export-Import Bank of India', 'National Bank for Agriculture and Rural Development', 'Small Industries Development Bank of India',
+    'National Housing Bank', 'Power Finance Corporation', 'Rural Electrification Corporation',
+    'Indian Railway Finance Corporation', 'Tourism Finance Corporation of India', 'Technology Development Board'
   ];
 
   const accountTypes = [
@@ -201,103 +110,54 @@ export const BankChargesAnalyzer: React.FC = () => {
     'Senior Citizen Account',
     'Premium Account',
     'Zero Balance Account',
-    'Women Savings Account',
-    'Student Savings Account',
+    'Joint Account',
+    'Minor Account',
     'NRI Account',
-    'Joint Account'
+    'Student Account'
   ];
 
-  const states = [
-    'Andhra Pradesh',
-    'Arunachal Pradesh',
-    'Assam',
-    'Bihar',
-    'Chhattisgarh',
-    'Goa',
-    'Gujarat',
-    'Haryana',
-    'Himachal Pradesh',
-    'Jharkhand',
-    'Karnataka',
-    'Kerala',
-    'Madhya Pradesh',
-    'Maharashtra',
-    'Manipur',
-    'Meghalaya',
-    'Mizoram',
-    'Nagaland',
-    'Odisha',
-    'Punjab',
-    'Rajasthan',
-    'Sikkim',
-    'Tamil Nadu',
-    'Telangana',
-    'Tripura',
-    'Uttar Pradesh',
-    'Uttarakhand',
-    'West Bengal',
-    'Andaman and Nicobar Islands',
-    'Chandigarh',
-    'Dadra and Nagar Haveli and Daman and Diu',
-    'Delhi',
-    'Jammu and Kashmir',
-    'Ladakh',
-    'Lakshadweep',
-    'Puducherry'
-  ];
+  const states = Object.keys(stateCityData);
 
-  const cities = [
-    // Tier 1 Cities
-    'Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Kolkata', 'Surat', 'Pune',
-    
-    // Tier 2 & Major Cities
-    'Jaipur', 'Lucknow', 'Kanpur', 'Nagpur', 'Indore', 'Thane', 'Bhopal', 'Visakhapatnam', 'Pimpri-Chinchwad',
-    'Patna', 'Vadodara', 'Ghaziabad', 'Ludhiana', 'Agra', 'Nashik', 'Faridabad', 'Meerut', 'Rajkot',
-    'Kalyan-Dombivli', 'Vasai-Virar', 'Varanasi', 'Srinagar', 'Dhanbad', 'Jodhpur', 'Amritsar', 'Raipur',
-    'Allahabad', 'Coimbatore', 'Jabalpur', 'Gwalior', 'Vijayawada', 'Madurai', 'Guwahati', 'Chandigarh',
-    'Hubli-Dharwad', 'Amroha', 'Moradabad', 'Gurgaon', 'Aligarh', 'Solapur', 'Ranchi', 'Jalandhar',
-    'Tiruchirappalli', 'Bhubaneswar', 'Salem', 'Warangal', 'Mira-Bhayandar', 'Thiruvananthapuram',
-    'Bhiwandi', 'Saharanpur', 'Guntur', 'Amravati', 'Bikaner', 'Noida', 'Jamshedpur', 'Bhilai Nagar',
-    'Cuttack', 'Firozabad', 'Kochi', 'Nellore', 'Bhavnagar', 'Dehradun', 'Durgapur', 'Asansol',
-    'Rourkela', 'Nanded', 'Kolhapur', 'Ajmer', 'Akola', 'Gulbarga', 'Jamnagar', 'Ujjain', 'Loni',
-    'Siliguri', 'Jhansi', 'Ulhasnagar', 'Nellore', 'Jammu', 'Sangli-Miraj & Kupwad', 'Mangalore',
-    'Erode', 'Belgaum', 'Ambattur', 'Tirunelveli', 'Malegaon', 'Gaya', 'Jalgaon', 'Udaipur',
-    'Maheshtala', 'Davanagere', 'Kozhikode', 'Kurnool', 'Rajpur Sonarpur', 'Rajahmundry', 'Bokaro',
-    'South Dumdum', 'Bellary', 'Patiala', 'Gopalpur', 'Agartala', 'Bhagalpur', 'Muzaffarnagar',
-    'Bhatpara', 'Panihati', 'Latur', 'Dhule', 'Rohtak', 'Korba', 'Bhilwara', 'Berhampur', 'Muzaffarpur',
-    'Ahmednagar', 'Mathura', 'Kollam', 'Avadi', 'Kadapa', 'Kamarhati', 'Sambalpur', 'Bilaspur',
-    'Shahjahanpur', 'Satara', 'Bijapur', 'Rampur', 'Shivamogga', 'Chandrapur', 'Junagadh', 'Thrissur',
-    'Alwar', 'Bardhaman', 'Kulti', 'Kakinada', 'Nizamabad', 'Parbhani', 'Tumkur', 'Khammam',
-    'Ozhukarai', 'Bihar Sharif', 'Panipat', 'Darbhanga', 'Bally', 'Aizawl', 'Dewas', 'Ichalkaranji',
-    'Karnal', 'Bathinda', 'Jalna', 'Eluru', 'Kirari Suleman Nagar', 'Barabanki', 'Purnia', 'Satna',
-    'Mau', 'Sonipat', 'Farrukhabad', 'Sagar', 'Rourkela', 'Durg', 'Imphal', 'Ratlam', 'Hapur',
-    'Arrah', 'Karimnagar', 'Anantapur', 'Etawah', 'Ambernath', 'North Dumdum', 'Bharatpur', 'Begusarai',
-    'New Delhi', 'Gandhidham', 'Baranagar', 'Tiruvottiyur', 'Puducherry', 'Sikar', 'Thoothukudi',
-    'Rewa', 'Mirzapur', 'Raichur', 'Pali', 'Ramagundam', 'Haridwar', 'Vijayanagaram', 'Katihar',
-    'Nagarcoil', 'Sri Ganganagar', 'Karawal Nagar', 'Mango', 'Thanjavur', 'Bulandshahr', 'Uluberia',
-    'Murwara', 'Sambhal', 'Singrauli', 'Nadiad', 'Secunderabad', 'Naihati', 'Yamunanagar', 'Bidhan Nagar',
-    'Pallavaram', 'Bidar', 'Munger', 'Panchkula', 'Burhanpur', 'Raurkela Industrial Township', 'Kharagpur',
-    'Dindigul', 'Gandhinagar', 'Hospet', 'Nangloi Jat', 'Malda', 'Ongole', 'Deoghar', 'Chapra',
-    'Haldia', 'Khandwa', 'Nandyal', 'Chittoor', 'Morena', 'Amroha', 'Anand', 'Bhind', 'Bhalswa Jahangir Pur',
-    'Madhyamgram', 'Bhiwani', 'Navi Mumbai', 'Baharampur', 'Ambala', 'Morbi', 'Fatehpur', 'Rae Bareli',
-    'Khora, Ghaziabad', 'Bhusawal', 'Orai', 'Bahraich', 'Vellore', 'Mahesana', 'Sambalpur', 'Raiganj',
-    'Sirsa', 'Danapur', 'Serampore', 'Sultan Pur Majra', 'Guna', 'Jaunpur', 'Panvel', 'Shivpuri',
-    'Surendranagar Dudhrej', 'Unnao', 'Hugli and Chinsurah', 'Alappuzha', 'Kottayam', 'Machilipatnam',
-    'Shimla', 'Adoni', 'Tenali', 'Proddatur', 'Saharsa', 'Hindupur', 'Sasaram', 'Hajipur', 'Bhimavaram',
-    'Dehri', 'Madanapalle', 'Siwan', 'Bettiah', 'Guntakal', 'Srikakulam', 'Motihari', 'Dharmavaram',
-    'Gudivada', 'Narasaraopet', 'Bagaha', 'Miryalaguda', 'Tadipatri', 'Kishanganj', 'Karaikudi',
-    'Suryapet', 'Jamalpur', 'Kavali', 'Tadepalligudem', 'Amaravati', 'Buxar', 'Jehanabad', 'Aurangabad',
-    'Palakkad', 'Malappuram', 'Tinsukia', 'Jorhat', 'Nalbari', 'Golaghat', 'Silchar', 'Dibrugarh',
-    'North Lakhimpur', 'Nagaon', 'Mangaldoi', 'Sivasagar', 'Bongaigaon', 'Dhubri', 'Diphu', 'Goalpara',
-    'Barpeta', 'Karimganj', 'Hailakandi', 'Haflong', 'Bokakhat', 'Hojai', 'Morigaon', 'Lumding',
-    'Itanagar', 'Naharlagun', 'Pasighat', 'Tezu', 'Along', 'Bomdila', 'Ziro', 'Seppa', 'Khonsa',
-    'Aalo', 'Yingkiong', 'Anini', 'Daporijo', 'Koloriang', 'Basar', 'Mechuka', 'Tato', 'Pangin'
-  ];
+  // Filter cities based on selected state
+  const availableCities = useMemo<string[]>(() => {
+    if (selectedState && stateCityData[selectedState]) {
+      return stateCityData[selectedState];
+    }
+    return [];
+  }, [selectedState]);
+
+  // Filter banks based on search
+  const filteredBanks = useMemo<string[]>(() => {
+    if (!searchBank) return banks;
+    return banks.filter((bank: string) => 
+      bank.toLowerCase().includes(searchBank.toLowerCase())
+    );
+  }, [searchBank, banks]);
+
+  // Filter cities based on search
+  const filteredCities = useMemo<string[]>(() => {
+    if (!searchCity) return availableCities;
+    return availableCities.filter((city: string) => 
+      city.toLowerCase().includes(searchCity.toLowerCase())
+    );
+  }, [searchCity, availableCities]);
 
   const handleAnalyze = () => {
     if (selectedBank && selectedAccountType) {
       setShowComparison(true);
+      setIsMobileMenuOpen(false);
     }
+  };
+
+  const resetForm = () => {
+    setSelectedBank('');
+    setSelectedAccountType('');
+    setSelectedCity('');
+    setSelectedState('');
+    setSearchBank('');
+    setSearchCity('');
+    setShowComparison(false);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -340,16 +200,27 @@ export const BankChargesAnalyzer: React.FC = () => {
 
                 {/* Bank Selection */}
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
-                    Select Bank ({banks.length} Banks Available)
+                  <label className="block text-sm font-semibold text-gray-700 mb-3">
+                    <Banknote className="w-4 h-4 inline mr-2" />
+                    Select Bank ({filteredBanks.length} available)
                   </label>
+                  <div className="relative mb-3">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Search banks..."
+                      value={searchBank}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchBank(e.target.value)}
+                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    />
+                  </div>
                   <select
                     value={selectedBank}
-                    onChange={(e) => setSelectedBank(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedBank(e.target.value)}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                   >
                     <option value="">Choose a bank</option>
-                    {banks.map((bank) => (
+                    {filteredBanks.map((bank: string) => (
                       <option key={bank} value={bank}>{bank}</option>
                     ))}
                   </select>
@@ -362,8 +233,8 @@ export const BankChargesAnalyzer: React.FC = () => {
                   </label>
                   <select
                     value={selectedAccountType}
-                    onChange={(e) => setSelectedAccountType(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedAccountType(e.target.value)}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                   >
                     <option value="">Choose account type</option>
                     {accountTypes.map((type) => (
@@ -379,8 +250,12 @@ export const BankChargesAnalyzer: React.FC = () => {
                   </label>
                   <select
                     value={selectedState}
-                    onChange={(e) => setSelectedState(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    onChange={(e: ChangeEvent<HTMLSelectElement>) => {
+                      setSelectedState(e.target.value);
+                      setSelectedCity(''); // Reset city when state changes
+                      setSearchCity(''); // Reset city search
+                    }}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                   >
                     <option value="">Select State</option>
                     {states.map((state) => (
@@ -389,21 +264,35 @@ export const BankChargesAnalyzer: React.FC = () => {
                   </select>
                 </div>
 
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
-                    City ({cities.length} Cities Available)
-                  </label>
-                  <select
-                    value={selectedCity}
-                    onChange={(e) => setSelectedCity(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">Select City</option>
-                    {cities.map((city) => (
-                      <option key={city} value={city}>{city}</option>
-                    ))}
-                  </select>
-                </div>
+                {/* City Selection with Search */}
+                {selectedState && (
+                  <div className="mb-6">
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">
+                      <MapPin className="w-4 h-4 inline mr-2" />
+                      City ({availableCities.length} in {selectedState})
+                    </label>
+                    <div className="relative mb-3">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                      <input
+                        type="text"
+                        placeholder="Search cities..."
+                        value={searchCity}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchCity(e.target.value)}
+                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      />
+                    </div>
+                    <select
+                      value={selectedCity}
+                      onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedCity(e.target.value)}
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm max-h-40 overflow-y-auto"
+                    >
+                      <option value="">Select City</option>
+                      {filteredCities.map((city) => (
+                        <option key={city} value={city}>{city}</option>
+                      ))}
+                    </select>
+                  </div>
+                )}
 
                 {/* Analyze Button */}
                 <button
@@ -431,9 +320,12 @@ export const BankChargesAnalyzer: React.FC = () => {
                       Select your bank, account type, and location to get a comprehensive analysis of all charges and penalties.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                      <div className="flex items-center justify-center p-3 bg-gray-50 rounded-lg">
-                        <Building2 className="w-4 h-4 mr-2 text-gray-600" />
-                        <span>{banks.length}+ Banks</span>
+                      <div className="flex items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                        <Banknote className="w-5 h-5 mr-2 text-blue-600" />
+                        <div>
+                          <div className="font-semibold text-blue-800">180+ Banks</div>
+                          <div className="text-xs text-blue-600">All Categories</div>
+                        </div>
                       </div>
                       <div className="flex items-center justify-center p-3 bg-gray-50 rounded-lg">
                         <CreditCard className="w-4 h-4 mr-2 text-gray-600" />
@@ -447,7 +339,6 @@ export const BankChargesAnalyzer: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                // ... keep existing code (comparison results section)
                 <div className="space-y-6">
                   {/* Charges Summary */}
                   <div className="bg-white rounded-xl shadow-lg p-6">
@@ -654,8 +545,11 @@ export const BankChargesAnalyzer: React.FC = () => {
                 <p className="text-sm text-gray-600">Calculate your tax liability</p>
               </a>
               
-              <a href="/calculators/loan-comparison-calculator" className="block p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <h3 className="font-semibold text-gray-900 mb-2">Loan Comparison</h3>
+              <a href="/calculators/loan-comparison-calculator" className="block p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+                  <Banknote className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">Loan Comparison</h3>
                 <p className="text-sm text-gray-600">Compare different loan offers</p>
               </a>
             </div>

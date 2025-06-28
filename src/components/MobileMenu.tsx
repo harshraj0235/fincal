@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { X, ChevronRight, FileText, Map, Shield, Calculator } from 'lucide-react';
+import { X, ChevronRight, FileText, Map, Shield, Calculator, PhoneCall } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 interface MobileMenuProps {
@@ -129,6 +129,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           >
             <FileText className="h-5 w-5 mr-3 text-gray-500" />
             Excel Tools
+          </Link>
+          
+          <Link 
+            to="/missed-call-banking-directory" 
+            className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation flex items-center"
+            onClick={onClose}
+          >
+            <PhoneCall className="h-5 w-5 mr-3 text-gray-500" />
+            Missed Call Banking
           </Link>
           
           <Link 

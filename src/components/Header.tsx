@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Calculator, Search, ChevronRight, FileText, Shield } from 'lucide-react';
+import { Menu, X, Calculator, Search, ChevronRight, FileText, Shield, PhoneCall } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { SearchBar } from './SearchBar';
 import { calculatorCategories } from '../data/calculatorData';
@@ -193,6 +193,14 @@ export const Header: React.FC = () => {
               <FileText className="h-4 w-4 mr-1" />
               <span className="hidden xl:inline">Excel Tools</span>
               <span className="xl:hidden">Excel</span>
+            </Link>
+            <Link 
+              to="/missed-call-banking-directory" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <PhoneCall className="h-4 w-4 mr-1" />
+              <span className="hidden xl:inline">Missed Call Banking</span>
+              <span className="xl:hidden">Banking</span>
             </Link>
             <Link 
               to="/about-us" 
