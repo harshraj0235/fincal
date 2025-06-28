@@ -376,6 +376,12 @@ export const Home: React.FC = () => {
                 </p>
                 <ul className="space-y-2 mb-4">
                   <li>
+                    <Link to="/missed-call-banking-directory" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      Missed Call Banking Directory
+                    </Link>
+                  </li>
+                  <li>
                     <Link to="/calculators/bank-ifsc-finder" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
                       <ChevronRight className="h-4 w-4 mr-1" />
                       Bank IFSC Finder
