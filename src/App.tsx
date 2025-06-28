@@ -66,6 +66,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
 
+              <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
+
               {calculatorCategories.flatMap(category =>
                 category.calculators.map(calculator => (
                   <Route
@@ -120,8 +122,6 @@ function App() {
 
               {/* News Reel route */}
               <Route path="/news-reel" element={<NewsReel />} />
-
-              <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
