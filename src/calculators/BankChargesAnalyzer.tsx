@@ -1,6 +1,5 @@
-
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Download, Share2, AlertCircle, Calculator, Bank, CreditCard, Shield, Clock, MapPin, Building2, Smartphone, Menu, X } from 'lucide-react';
+import { Search, Filter, Download, Share2, AlertCircle, Calculator, Banknote, CreditCard, Shield, Clock, MapPin, Building2, Smartphone, Menu, X } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 
 export const BankChargesAnalyzer: React.FC = () => {
@@ -13,7 +12,7 @@ export const BankChargesAnalyzer: React.FC = () => {
   const [searchCity, setSearchCity] = useState<string>('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-  // Comprehensive state-city mapping for India
+  // Full stateCityData
   const stateCityData = {
     'Andhra Pradesh': ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Kurnool', 'Rajahmundry', 'Tirupati', 'Kadapa', 'Anantapur', 'Vizianagaram', 'Eluru', 'Ongole', 'Machilipatnam', 'Adoni', 'Tenali', 'Chittoor', 'Hindupur', 'Bhimavaram', 'Madanapalle', 'Guntakal'],
     'Arunachal Pradesh': ['Itanagar', 'Naharlagun', 'Pasighat', 'Tezpur', 'Bomdila', 'Ziro', 'Along', 'Basar', 'Khonsa', 'Namsai', 'Changlang', 'Tezu', 'Roing', 'Yingkiong', 'Anini'],
@@ -53,34 +52,29 @@ export const BankChargesAnalyzer: React.FC = () => {
     'Puducherry': ['Puducherry', 'Karaikal', 'Yanam', 'Mahe']
   };
 
-  // Comprehensive banks list with 180+ banks
+  // Full banks list (180+)
   const banks = [
     // Major Public Sector Banks
     'State Bank of India', 'Punjab National Bank', 'Bank of Baroda', 'Canara Bank', 'Union Bank of India',
     'Bank of India', 'Central Bank of India', 'Indian Overseas Bank', 'UCO Bank', 'Bank of Maharashtra',
     'Punjab & Sind Bank', 'Indian Bank',
-    
     // Major Private Sector Banks
     'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'Kotak Mahindra Bank', 'Yes Bank', 'IndusInd Bank',
     'IDFC First Bank', 'Federal Bank', 'South Indian Bank', 'Karur Vysya Bank', 'Tamilnad Mercantile Bank',
     'City Union Bank', 'Dhanlaxmi Bank', 'Karnataka Bank', 'Lakshmi Vilas Bank', 'Nainital Bank',
     'RBL Bank', 'Jammu & Kashmir Bank', 'DCB Bank', 'Bandhan Bank',
-    
     // Foreign Banks
     'Citibank', 'HSBC', 'Standard Chartered Bank', 'Deutsche Bank', 'Barclays Bank', 'Royal Bank of Scotland',
     'Bank of America', 'JPMorgan Chase Bank', 'Mizuho Bank', 'Sumitomo Mitsui Banking Corporation',
     'MUFG Bank', 'DBS Bank', 'Shinhan Bank', 'Woori Bank', 'BNP Paribas', 'Credit Suisse',
     'UBS AG', 'Societe Generale', 'Credit Agricole Corporate and Investment Bank',
-    
     // Small Finance Banks
     'AU Small Finance Bank', 'Equitas Small Finance Bank', 'Ujjivan Small Finance Bank', 'Jana Small Finance Bank',
     'Suryoday Small Finance Bank', 'Capital Small Finance Bank', 'ESAF Small Finance Bank', 'North East Small Finance Bank',
     'Utkarsh Small Finance Bank', 'Fincare Small Finance Bank', 'Unity Small Finance Bank',
-    
     // Payment Banks
     'Paytm Payments Bank', 'Airtel Payments Bank', 'India Post Payments Bank', 'Fino Payments Bank',
     'NSDL Payments Bank', 'Jio Payments Bank', 'Aditya Birla Idea Payments Bank',
-    
     // Regional Rural Banks (Sample)
     'Andhra Pradesh Grameena Vikas Bank', 'Andhra Pragathi Grameena Bank', 'Telangana Grameena Bank',
     'Karnataka Vikas Grameena Bank', 'Pragathi Krishna Grameena Bank', 'Kerala Grameena Bank',
@@ -93,7 +87,6 @@ export const BankChargesAnalyzer: React.FC = () => {
     'Mizoram Rural Bank', 'Nagaland Rural Bank', 'Sikkim State Cooperative Bank', 'Uttar Bihar Gramin Bank',
     'Bihar Gramin Bank', 'Jharkhand Rajya Gramin Bank', 'Uttarakhand Gramin Bank', 'Uttar Pradesh Gramin Bank',
     'Madhya Pradesh Gramin Bank', 'Chhattisgarh Rajya Gramin Bank', 'Odisha Gramya Bank', 'West Bengal Gramin Bank',
-    
     // Cooperative Banks (Sample)
     'Saraswat Cooperative Bank', 'Cosmos Cooperative Bank', 'Abhyudaya Cooperative Bank', 'Mumbai District Central Cooperative Bank',
     'Thane Janata Sahakari Bank', 'NKGSB Cooperative Bank', 'Bassein Catholic Cooperative Bank', 'Jankalyan Sahakari Bank',
@@ -104,7 +97,6 @@ export const BankChargesAnalyzer: React.FC = () => {
     'West Bengal State Cooperative Bank', 'Odisha State Cooperative Bank', 'Assam State Cooperative Bank',
     'Bihar State Cooperative Bank', 'Madhya Pradesh State Cooperative Bank', 'Rajasthan State Cooperative Bank',
     'Gujarat State Cooperative Bank', 'Himachal Pradesh State Cooperative Bank', 'Jammu & Kashmir State Cooperative Bank',
-    
     // Development Financial Institutions
     'Export-Import Bank of India', 'National Bank for Agriculture and Rural Development', 'Small Industries Development Bank of India',
     'National Housing Bank', 'Power Finance Corporation', 'Rural Electrification Corporation',
