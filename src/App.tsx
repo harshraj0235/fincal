@@ -19,7 +19,7 @@ import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
 import BankLockerFinder from './calculators/BankLockerFinder';
-// import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
+import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
 
 // Excel Tool blog section
 import ExcelTool from './pages/ExcelTool';
@@ -59,7 +59,7 @@ function App() {
     <>
       <Routes>
         {/* Missed Call Banking Directory route - outside Layout */}
-        {/* <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} /> */}
+        <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
