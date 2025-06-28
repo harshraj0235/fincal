@@ -53,6 +53,7 @@ import NewsReel from './pages/NewsReel';
 
 import ChequeBounceChargesCalculator from './pages/ChequeBounceChargesCalculator';
 import BankTools from './pages/BankTools';
+import FinancePostPage from './pages/FinancePostPage';
 
 function App() {
   return (
@@ -124,6 +125,9 @@ function App() {
 
               {/* News Reel route */}
               <Route path="/news-reel" element={<NewsReel />} />
+
+              {/* Finance Blog Post route */}
+              <Route path="/finance/:slug" element={<FinancePostPage />} />
 
               <Route path="/calculators/bank-locker-finder" element={<BankLockerFinder />} />
               <Route path="/bank-tools" element={<BankTools />} />

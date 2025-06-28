@@ -9,6 +9,7 @@ import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
 import { governmentSchemes } from '../data/governmentSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
+import FinanceReelSection from '../components/FinanceReelSection';
 
 export const Home: React.FC = () => {
   const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
@@ -201,6 +202,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      {/* Finance Reel Section */}
+      <FinanceReelSection />
       
       {/* Astro-Finance Insights Button */}
       <div className="flex justify-center">
