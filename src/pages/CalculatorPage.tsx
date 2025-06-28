@@ -98,6 +98,7 @@ import { InterestRatesComparison } from '../calculators/InterestRatesComparison'
 import { UpiFailureTroubleshooter } from '../calculators/UpiFailureTroubleshooter';
 import { AdvanceTaxCalculator } from '../calculators/AdvanceTaxCalculator';
 import { CreditCardFinder } from '../calculators/CreditCardFinder';
+import { BankChargesAnalyzer } from '../calculators/BankChargesAnalyzer';
 
 interface CalculatorPageProps {
   calculatorId: string;
@@ -349,6 +350,8 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <UpiFailureTroubleshooter />;
       case 'credit-card-finder':
         return <CreditCardFinder />;
+      case 'bank-charges-analyzer':
+        return <BankChargesAnalyzer />;
         
       // FinTech & Payments Calculators
       case 'step-up-sip-calculator':
