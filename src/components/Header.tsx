@@ -203,10 +203,10 @@ export const Header: React.FC = () => {
               <span className="xl:hidden">Banking</span>
             </Link>
             <Link 
-              to="/about-us" 
+              to="/bank-tools" 
               className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium"
             >
-              About
+              Bank Tools
             </Link>
             <Link 
               to="/contact-us" 

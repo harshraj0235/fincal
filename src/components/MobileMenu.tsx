@@ -141,11 +141,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </Link>
           
           <Link 
-            to="/about-us" 
+            to="/bank-tools" 
             className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation"
             onClick={onClose}
           >
-            About Us
+            Bank Tools
           </Link>
           
           <Link 
