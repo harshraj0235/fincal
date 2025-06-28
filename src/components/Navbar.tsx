@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MoneyModal from "./MoneyModal";
 import { Link } from "react-router-dom";
-import { Newspaper, Menu, X } from "lucide-react";
+import { Newspaper, Menu, X, Bank } from "lucide-react";
 
 const Navbar = () => {
   const [showMoneyModal, setShowMoneyModal] = useState(false);
@@ -38,6 +38,13 @@ const Navbar = () => {
             >
               <Newspaper className="w-4 h-4 mr-1" />
               News Reel
+            </Link>
+            <Link 
+              to="/calculators/bank-charges-analyzer" 
+              className="inline-flex items-center bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
+            >
+              <Bank className="w-4 h-4 mr-1" />
+              Bank Charges
             </Link>
             <button 
               onClick={() => setShowMoneyModal(true)}
@@ -83,6 +90,14 @@ const Navbar = () => {
               >
                 <Newspaper className="w-4 h-4 mr-2" />
                 News Reel
+              </Link>
+              <Link 
+                to="/calculators/bank-charges-analyzer" 
+                className="flex items-center bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition-colors text-base font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Bank className="w-4 h-4 mr-2" />
+                Bank Charges
               </Link>
               <button 
                 onClick={() => {
