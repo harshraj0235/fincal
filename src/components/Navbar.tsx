@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MoneyModal from "./MoneyModal";
 import { Link } from "react-router-dom";
-import { Newspaper, Menu, X, Banknote, PhoneCall, Shield, AlertCircle, Calculator, Phone } from "lucide-react";
+import { Newspaper, Menu, X, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const [showMoneyModal, setShowMoneyModal] = useState(false);
@@ -39,60 +39,18 @@ const Navbar = () => {
               <Newspaper className="w-4 h-4 mr-1" />
               News Reel
             </Link>
-            <li className="relative group">
-              <button className="flex items-center space-x-1 hover:text-purple-600 transition-colors">
-                <span>Bank Tools</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors">
+                Bank Tools <ChevronDown className="w-4 h-4 ml-1" />
               </button>
-              <ul className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <li>
-                  <a href="/calculators/bank-locker-finder" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                    <div className="flex items-center">
-                      <Shield className="w-4 h-4 mr-2" />
-                      <div>
-                        <div className="font-semibold">Bank Locker Finder</div>
-                        <div className="text-xs text-gray-500">Find locker availability & charges</div>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="/calculators/cheque-bounce-charges-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                    <div className="flex items-center">
-                      <AlertCircle className="w-4 h-4 mr-2" />
-                      <div>
-                        <div className="font-semibold">Cheque Bounce Charges</div>
-                        <div className="text-xs text-gray-500">Bank-wise penalty calculator</div>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="/calculators/bank-charges-analyzer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                    <div className="flex items-center">
-                      <Calculator className="w-4 h-4 mr-2" />
-                      <div>
-                        <div className="font-semibold">Bank Charges Analyzer</div>
-                        <div className="text-xs text-gray-500">Compare hidden bank fees</div>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="/missed-call-banking-directory" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                    <div className="flex items-center">
-                      <Phone className="w-4 h-4 mr-2" />
-                      <div>
-                        <div className="font-semibold">Missed Call Banking</div>
-                        <div className="text-xs text-gray-500">Bank missed call numbers</div>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </li>
+              <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all z-50">
+                <Link to="/calculators/bank-locker-finder" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700">Bank Locker Finder</Link>
+                <Link to="/calculators/bank-charges-analyzer" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700">Bank Charges Analyzer</Link>
+                <Link to="/missed-call-banking-directory" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700">Missed Call Banking Directory</Link>
+                <Link to="/calculators/cheque-bounce-charges-calculator" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700">Cheque Bounce Charges</Link>
+                <Link to="/bank-tools" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-semibold">All Bank Tools</Link>
+              </div>
+            </div>
             <button 
               onClick={() => setShowMoneyModal(true)}
               className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
@@ -138,60 +96,18 @@ const Navbar = () => {
                 <Newspaper className="w-4 h-4 mr-2" />
                 News Reel
               </Link>
-              <li className="relative group">
-                <button className="flex items-center space-x-1 hover:text-purple-600 transition-colors">
-                  <span>Bank Tools</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+              <div className="relative group">
+                <button className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium flex items-center transition-colors">
+                  Bank Tools <ChevronDown className="w-4 h-4 ml-1" />
                 </button>
-                <ul className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <li>
-                    <a href="/calculators/bank-locker-finder" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                      <div className="flex items-center">
-                        <Shield className="w-4 h-4 mr-2" />
-                        <div>
-                          <div className="font-semibold">Bank Locker Finder</div>
-                          <div className="text-xs text-gray-500">Find locker availability & charges</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/calculators/cheque-bounce-charges-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                      <div className="flex items-center">
-                        <AlertCircle className="w-4 h-4 mr-2" />
-                        <div>
-                          <div className="font-semibold">Cheque Bounce Charges</div>
-                          <div className="text-xs text-gray-500">Bank-wise penalty calculator</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/calculators/bank-charges-analyzer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                      <div className="flex items-center">
-                        <Calculator className="w-4 h-4 mr-2" />
-                        <div>
-                          <div className="font-semibold">Bank Charges Analyzer</div>
-                          <div className="text-xs text-gray-500">Compare hidden bank fees</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/missed-call-banking-directory" className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600">
-                      <div className="flex items-center">
-                        <Phone className="w-4 h-4 mr-2" />
-                        <div>
-                          <div className="font-semibold">Missed Call Banking</div>
-                          <div className="text-xs text-gray-500">Bank missed call numbers</div>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
+                <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all z-50">
+                  <Link to="/calculators/bank-locker-finder" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700">Bank Locker Finder</Link>
+                  <Link to="/calculators/bank-charges-analyzer" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700">Bank Charges Analyzer</Link>
+                  <Link to="/missed-call-banking-directory" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700">Missed Call Banking Directory</Link>
+                  <Link to="/calculators/cheque-bounce-charges-calculator" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700">Cheque Bounce Charges</Link>
+                  <Link to="/bank-tools" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-semibold">All Bank Tools</Link>
+                </div>
+              </div>
               <button 
                 onClick={() => {
                   setShowMoneyModal(true);

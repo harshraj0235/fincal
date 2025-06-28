@@ -18,7 +18,8 @@ import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
-import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
+import BankLockerFinder from './calculators/BankLockerFinder';
+// import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
 
 // Excel Tool blog section
 import ExcelTool from './pages/ExcelTool';
@@ -51,15 +52,14 @@ import AstroFinanceCrystalCalculator from './pages/AstroFinanceCrystalCalculator
 import NewsReel from './pages/NewsReel';
 
 import ChequeBounceChargesCalculator from './pages/ChequeBounceChargesCalculator';
-import BankLockerFinder from './pages/BankLockerFinder';
+import BankTools from './pages/BankTools';
 
 function App() {
   return (
     <>
       <Routes>
         {/* Missed Call Banking Directory route - outside Layout */}
-        <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
-        <Route path="/missedcallbankingdirectory" element={<MissedCallBankingDirectory />} />
+        {/* <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} /> */}
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
@@ -126,6 +126,7 @@ function App() {
               <Route path="/news-reel" element={<NewsReel />} />
 
               <Route path="/calculators/bank-locker-finder" element={<BankLockerFinder />} />
+              <Route path="/bank-tools" element={<BankTools />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
