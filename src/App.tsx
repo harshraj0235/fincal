@@ -51,6 +51,7 @@ import AstroFinanceCrystalCalculator from './pages/AstroFinanceCrystalCalculator
 import NewsReel from './pages/NewsReel';
 
 import ChequeBounceChargesCalculator from './pages/ChequeBounceChargesCalculator';
+import BankLockerFinder from './pages/BankLockerFinder';
 
 function App() {
   return (
@@ -122,6 +123,8 @@ function App() {
 
               {/* News Reel route */}
               <Route path="/news-reel" element={<NewsReel />} />
+
+              <Route path="/calculators/bank-locker-finder" element={<BankLockerFinder />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
