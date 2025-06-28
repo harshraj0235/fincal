@@ -58,6 +58,7 @@ function App() {
     <>
       <Routes>
         {/* Missed Call Banking Directory route - outside Layout */}
+        <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
         <Route path="/missedcallbankingdirectory" element={<MissedCallBankingDirectory />} />
         
         {/* All other routes inside Layout */}
