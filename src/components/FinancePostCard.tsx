@@ -1,14 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Calendar, User, Tag, Heart, MessageCircle, Share2 } from 'lucide-react';
+import { ExternalLink, Calendar, User, Tag, Heart, MessageCircle, Share2, ChevronUp, ChevronDown } from 'lucide-react';
 import { FinancePost } from '../data/financePosts';
 
 interface FinancePostCardProps {
   post: FinancePost;
   reelMode?: boolean;
+  fullPage?: boolean;
+  onNext?: () => void;
+  onPrev?: () => void;
+  isFirst?: boolean;
+  isLast?: boolean;
 }
 
-const FinancePostCard: React.FC<FinancePostCardProps> = ({ post, reelMode }) => {
+const FinancePostCard: React.FC<FinancePostCardProps> = ({ 
+  post, 
+  reelMode, 
+  fullPage,
+  onNext,
+  onPrev,
+  isFirst,
+  isLast
+}) => {
   // Truncate content to 250 words
   const words = post.content.split(/\s+/);
   const previewWords = words.slice(0, 250);
@@ -40,7 +53,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({ post, reelMode }) => 
 
   if (reelMode) {
     return (
-      <div className="relative w-full h-[70vh] max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-end bg-black">
+      <div className={`relative ${fullPage ? 'w-full h-full' : 'w-full h-[70vh] max-w-md'} rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-end bg-black`}>
         {/* Background Image/Video */}
         {post.image ? (
           <img
@@ -60,6 +73,22 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({ post, reelMode }) => 
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
 
+        {/* Navigation Hints */}
+        {fullPage && (
+          <>
+            {!isFirst && (
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                <ChevronUp size={20} />
+              </div>
+            )}
+            {!isLast && (
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                <ChevronDown size={20} />
+              </div>
+            )}
+          </>
+        )}
+
         {/* Overlay Content */}
         <div className="relative z-20 p-6 flex flex-col justify-end h-full">
           {/* Top Row: Category, Date */}
@@ -75,7 +104,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({ post, reelMode }) => 
           </div>
 
           {/* Title */}
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 drop-shadow-lg line-clamp-2">
+          <h3 className={`${fullPage ? 'text-3xl sm:text-4xl' : 'text-2xl sm:text-3xl'} font-extrabold text-white mb-2 drop-shadow-lg line-clamp-2`}>
             {post.title}
           </h3>
 
@@ -88,7 +117,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({ post, reelMode }) => 
           )}
 
           {/* Content Preview */}
-          <p className="text-base text-blue-100 mb-4 line-clamp-5 drop-shadow">
+          <p className={`${fullPage ? 'text-lg' : 'text-base'} text-blue-100 mb-4 line-clamp-5 drop-shadow`}>
             {preview}
           </p>
 
@@ -114,7 +143,10 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({ post, reelMode }) => 
               <button className="text-white hover:text-blue-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50">
                 <MessageCircle size={22} />
               </button>
-              <button className="text-white hover:text-green-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50" onClick={handleShare}>
+              <button 
+                className="text-white hover:text-green-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50" 
+                onClick={handleShare}
+              >
                 <Share2 size={22} />
               </button>
             </div>
@@ -125,6 +157,13 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({ post, reelMode }) => 
               Read More
             </Link>
           </div>
+
+          {/* Navigation Instructions */}
+          {fullPage && (
+            <div className="text-center mt-4 text-blue-200 text-xs opacity-70">
+              <p>Use arrow keys, swipe, or click dots to navigate</p>
+            </div>
+          )}
         </div>
       </div>
     );
