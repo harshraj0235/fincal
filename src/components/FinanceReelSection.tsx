@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Plus, TrendingUp, ChevronUp, ChevronDown, X, Filter, Grid, List, Home, Search, Heart, MessageCircle, Share2, Bookmark, MoreVertical } from 'lucide-react';
+import { Plus, TrendingUp, ChevronUp, ChevronDown, X, Filter, Grid, List, Home, Search, Heart, MessageCircle, Share2, Bookmark, MoreVertical, Edit3, Scroll } from 'lucide-react';
 import { getAllFinancePosts, FinancePost } from '../data/financePosts';
 import FinancePostCard from './FinancePostCard';
 import FinanceBlogForm from './FinanceBlogForm';
@@ -35,6 +35,7 @@ const FinanceReelSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
+  const [scrollMode, setScrollMode] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const allPosts = getAllFinancePosts();
   
@@ -143,10 +144,15 @@ const FinanceReelSection: React.FC = () => {
     }
   }, [selectedCategory]);
 
+  // Toggle scroll mode
+  const toggleScrollMode = () => {
+    setScrollMode(!scrollMode);
+  };
+
   if (isFullPage) {
     return (
       <div className="fixed inset-0 bg-black z-50 overflow-hidden">
-        {/* Header with Add Post Button */}
+        {/* Header with Add Post and Update Buttons */}
         <div className="absolute top-0 left-0 right-0 z-30 bg-gradient-to-b from-black/80 to-transparent p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -165,6 +171,24 @@ const FinanceReelSection: React.FC = () => {
                 title="Add Post"
               >
                 <Plus size={20} />
+              </button>
+              <button
+                onClick={() => setIsFormOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-700 text-white p-2 rounded-full shadow-xl hover:scale-110 transition-all"
+                title="Update Post"
+              >
+                <Edit3 size={20} />
+              </button>
+              <button
+                onClick={toggleScrollMode}
+                className={`p-2 rounded-full shadow-xl hover:scale-110 transition-all ${
+                  scrollMode 
+                    ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white' 
+                    : 'bg-white/20 text-white hover:bg-white/30'
+                }`}
+                title={scrollMode ? "Disable Scroll Mode" : "Enable Scroll Mode"}
+              >
+                <Scroll size={20} />
               </button>
               <span className="text-white text-sm">
                 {current + 1} of {posts.length}
@@ -196,7 +220,7 @@ const FinanceReelSection: React.FC = () => {
         {/* Reel Container */}
         <div
           ref={scrollContainerRef}
-          className="h-full overflow-y-auto snap-y snap-mandatory pt-32"
+          className={`h-full ${scrollMode ? 'overflow-y-auto' : 'overflow-y-auto snap-y snap-mandatory'} pt-32`}
           onScroll={handleScroll}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -205,7 +229,7 @@ const FinanceReelSection: React.FC = () => {
           {posts.map((post, index) => (
             <div
               key={post.id}
-              className="h-full snap-start flex items-center justify-center p-2 sm:p-4"
+              className={`${scrollMode ? 'h-auto min-h-screen' : 'h-full snap-start'} flex items-center justify-center p-2 sm:p-4`}
             >
               <FinancePostCard 
                 post={post} 
@@ -215,6 +239,7 @@ const FinanceReelSection: React.FC = () => {
                 onPrev={goPrev}
                 isFirst={index === 0}
                 isLast={index === posts.length - 1}
+                scrollMode={scrollMode}
               />
             </div>
           ))}
@@ -282,7 +307,7 @@ const FinanceReelSection: React.FC = () => {
   return (
     <>
       <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 py-4 sm:py-8">
-        {/* Header with Add Post Button */}
+        {/* Header with Add Post and Update Buttons */}
         <div className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 z-20 text-center px-4">
           <div className="flex items-center justify-center gap-3 mb-2">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white drop-shadow flex items-center justify-center gap-2">
@@ -290,13 +315,33 @@ const FinanceReelSection: React.FC = () => {
               <span className="hidden sm:inline">Finance Reels</span>
               <span className="sm:hidden">Reels</span>
             </h2>
-            <button
-              onClick={() => setIsFormOpen(true)}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all ml-2"
-              title="Add Post"
-            >
-              <Plus size={18} />
-            </button>
+            <div className="flex items-center gap-2 ml-2">
+              <button
+                onClick={() => setIsFormOpen(true)}
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all"
+                title="Add Post"
+              >
+                <Plus size={18} />
+              </button>
+              <button
+                onClick={() => setIsFormOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-700 text-white p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all"
+                title="Update Post"
+              >
+                <Edit3 size={18} />
+              </button>
+              <button
+                onClick={toggleScrollMode}
+                className={`p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all ${
+                  scrollMode 
+                    ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white' 
+                    : 'bg-white/20 text-white hover:bg-white/30'
+                }`}
+                title={scrollMode ? "Disable Scroll Mode" : "Enable Scroll Mode"}
+              >
+                <Scroll size={18} />
+              </button>
+            </div>
           </div>
           <p className="text-sm sm:text-lg text-blue-100 font-medium drop-shadow hidden sm:block">
             Latest insights, tips, and strategies from the finance community
@@ -372,6 +417,7 @@ const FinanceReelSection: React.FC = () => {
                   onPrev={goPrev}
                   isFirst={current === 0}
                   isLast={current === posts.length - 1}
+                  scrollMode={scrollMode}
                 />
               </div>
 

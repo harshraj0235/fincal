@@ -7,6 +7,7 @@ interface FinancePostCardProps {
   post: FinancePost;
   reelMode?: boolean;
   fullPage?: boolean;
+  scrollMode?: boolean;
   onNext?: () => void;
   onPrev?: () => void;
   isFirst?: boolean;
@@ -17,6 +18,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
   post, 
   reelMode, 
   fullPage,
+  scrollMode = false,
   onNext,
   onPrev,
   isFirst,
@@ -53,7 +55,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
 
   if (reelMode) {
     return (
-      <div className={`relative ${fullPage ? 'w-full h-full' : 'w-full h-[70vh] max-w-sm sm:max-w-md'} rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-end bg-black`}>
+      <div className={`relative ${fullPage ? 'w-full h-full' : 'w-full h-[70vh] max-w-sm sm:max-w-md'} ${scrollMode ? 'min-h-screen' : 'rounded-2xl'} overflow-hidden shadow-2xl flex flex-col justify-end bg-black`}>
         {/* Background Image/Video */}
         {post.image ? (
           <img
@@ -74,7 +76,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
 
         {/* Navigation Hints */}
-        {fullPage && (
+        {fullPage && !scrollMode && (
           <>
             {!isFirst && (
               <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 rounded-full opacity-0 hover:opacity-100 transition-opacity">
@@ -120,8 +122,8 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
           )}
 
           {/* Content Preview */}
-          <p className={`${fullPage ? 'text-base sm:text-lg' : 'text-sm sm:text-base'} text-blue-100 mb-4 line-clamp-4 sm:line-clamp-5 drop-shadow leading-relaxed`}>
-            {preview}
+          <p className={`${fullPage ? 'text-base sm:text-lg' : 'text-sm sm:text-base'} text-blue-100 mb-4 ${scrollMode ? 'line-clamp-none' : 'line-clamp-4 sm:line-clamp-5'} drop-shadow leading-relaxed`}>
+            {scrollMode ? post.content : preview}
           </p>
 
           {/* External Link */}
@@ -164,16 +166,23 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
           </div>
 
           {/* Navigation Instructions */}
-          {fullPage && (
+          {fullPage && !scrollMode && (
             <div className="text-center mt-4 text-blue-200 text-xs opacity-70">
               <p className="hidden sm:block">Use arrow keys, swipe, or click dots to navigate</p>
               <p className="sm:hidden">Swipe or tap dots to navigate</p>
             </div>
           )}
+
+          {/* Scroll Mode Instructions */}
+          {scrollMode && (
+            <div className="text-center mt-4 text-blue-200 text-xs opacity-70">
+              <p>Scroll mode enabled - scroll freely through content</p>
+            </div>
+          )}
         </div>
 
         {/* Floating Action Buttons - Right Side (Full Page Only) */}
-        {fullPage && (
+        {fullPage && !scrollMode && (
           <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
             <button className="text-white hover:text-pink-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center">
               <Heart size={24} />

@@ -1082,6 +1082,126 @@ a:hover:not(.btn) {
   touch-action: manipulation;
 }
 
+/* Finance Reel Scroll Mode Styles */
+.finance-reel-scroll-mode {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.finance-reel-scroll-mode::-webkit-scrollbar {
+  width: 8px;
+}
+
+.finance-reel-scroll-mode::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.finance-reel-scroll-mode::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.6);
+  border-radius: 4px;
+}
+
+.finance-reel-scroll-mode::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
+}
+
+/* Finance Reel Update Button Styles */
+.finance-reel-update-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.finance-reel-update-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+/* Finance Reel Scroll Toggle Button */
+.finance-reel-scroll-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.finance-reel-scroll-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.finance-reel-scroll-toggle.active {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.finance-reel-scroll-toggle.active:hover {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+}
+
+/* Scroll Mode Content Styles */
+.finance-reel-scroll-content {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.finance-reel-scroll-content .finance-reel-description {
+  line-clamp: none;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Mobile Scroll Mode Optimizations */
+@media (max-width: 768px) {
+  .finance-reel-scroll-mode {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  .finance-reel-scroll-mode::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .finance-reel-scroll-content {
+    min-height: 100vh;
+    padding-bottom: 1.5rem;
+  }
+  
+  .finance-reel-update-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .finance-reel-scroll-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Scroll Mode Instructions */
+.finance-reel-scroll-instructions {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  z-index: 1000;
+  animation: fadeInOut 3s ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+  20%, 80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
 /* Enhanced Mobile Finance Reel Styles */
 @media (max-width: 640px) {
   .finance-reel-container {
