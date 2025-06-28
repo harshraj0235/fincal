@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Calendar, User, Tag } from 'lucide-react';
+import { ExternalLink, Calendar, User, Tag, Heart, MessageCircle, Share2 } from 'lucide-react';
 import { FinancePost } from '../data/financePosts';
 
 interface FinancePostCardProps {
   post: FinancePost;
+  reelMode?: boolean;
 }
 
-const FinancePostCard: React.FC<FinancePostCardProps> = ({ post }) => {
+const FinancePostCard: React.FC<FinancePostCardProps> = ({ post, reelMode }) => {
   // Truncate content to 250 words
   const words = post.content.split(/\s+/);
   const previewWords = words.slice(0, 250);
@@ -23,6 +24,113 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({ post }) => {
     });
   };
 
+  // Share handler
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: post.title,
+        text: preview,
+        url: window.location.origin + `/finance/${post.slug}`,
+      });
+    } else {
+      navigator.clipboard.writeText(window.location.origin + `/finance/${post.slug}`);
+      alert('Link copied to clipboard!');
+    }
+  };
+
+  if (reelMode) {
+    return (
+      <div className="relative w-full h-[70vh] max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-end bg-black">
+        {/* Background Image/Video */}
+        {post.image ? (
+          <img
+            src={post.image}
+            alt={post.title}
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            style={{ filter: 'brightness(0.7) blur(0px)' }}
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+            }}
+          />
+        ) : (
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-700 to-purple-900 z-0 flex items-center justify-center">
+            <div className="text-white text-5xl">💰</div>
+          </div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
+
+        {/* Overlay Content */}
+        <div className="relative z-20 p-6 flex flex-col justify-end h-full">
+          {/* Top Row: Category, Date */}
+          <div className="flex items-center gap-2 mb-2">
+            <span className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+              <Tag size={12} />
+              {post.category || 'Finance'}
+            </span>
+            <span className="flex items-center gap-1 text-xs text-blue-100 ml-2">
+              <Calendar size={12} />
+              {formatDate(post.createdAt)}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 drop-shadow-lg line-clamp-2">
+            {post.title}
+          </h3>
+
+          {/* Author */}
+          {post.author && (
+            <div className="flex items-center gap-1 text-sm text-blue-200 mb-2">
+              <User size={14} />
+              <span>{post.author}</span>
+            </div>
+          )}
+
+          {/* Content Preview */}
+          <p className="text-base text-blue-100 mb-4 line-clamp-5 drop-shadow">
+            {preview}
+          </p>
+
+          {/* External Link */}
+          {post.link && (
+            <a
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-blue-300 text-sm hover:text-blue-100 mb-3 transition-colors underline"
+            >
+              <ExternalLink size={14} />
+              External Link
+            </a>
+          )}
+
+          {/* Actions Row */}
+          <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center gap-4">
+              <button className="text-white hover:text-pink-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50">
+                <Heart size={22} />
+              </button>
+              <button className="text-white hover:text-blue-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50">
+                <MessageCircle size={22} />
+              </button>
+              <button className="text-white hover:text-green-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50" onClick={handleShare}>
+                <Share2 size={22} />
+              </button>
+            </div>
+            <Link
+              to={`/finance/${post.slug}`}
+              className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 text-base font-semibold shadow-md hover:shadow-lg transition-all"
+            >
+              Read More
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Classic Card
   return (
     <div className="min-w-[320px] max-w-[320px] bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-100">
       {/* Image Section */}
