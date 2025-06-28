@@ -65,7 +65,7 @@ const ChequeBounceChargesCalculator: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Cheque Bounce Charges Calculator | Bank-wise Cheque Penalty in India 2024"
+        title="Cheque Bounce Charges Calculator | Bank-wise Cheque Penalty in India"
         description="Find cheque bounce charges for SBI, HDFC, ICICI, Axis, and all major Indian banks. Use our bank cheque penalty calculator to compare and avoid cheque return penalties. Updated for 2024."
         keywords="cheque bounce charges SBI, bank cheque penalty calculator, cheque bounce charges India, cheque return charges, bank-wise cheque bounce charges, cheque penalty charges, cheque dishonour charges, cheque bounce fine, cheque bounce penalty calculator"
         url="/calculators/cheque-bounce-charges-calculator"

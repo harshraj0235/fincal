@@ -177,7 +177,7 @@ export const BankChargesAnalyzer: React.FC = () => {
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Unified Multi-Bank Charges & Penalty Analyzer
-              </h1>
+                </h1>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Compare hidden charges, penalties, and fees across all major Indian banks. 
                 Get personalized analysis to avoid unnecessary banking costs and make informed decisions.
@@ -196,7 +196,7 @@ export const BankChargesAnalyzer: React.FC = () => {
                 <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
                   <Filter className="w-5 h-5 mr-2" />
                   Select Your Preferences
-                </h2>
+                  </h2>
 
                 {/* Bank Selection */}
                 <div className="mb-6">
