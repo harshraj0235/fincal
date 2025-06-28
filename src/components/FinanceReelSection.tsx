@@ -1,8 +1,32 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Plus, TrendingUp, ChevronUp, ChevronDown, X, Filter, Grid, List } from 'lucide-react';
+import { Plus, TrendingUp, ChevronUp, ChevronDown, X, Filter, Grid, List, Home, Search, Heart, MessageCircle, Share2, Bookmark, MoreVertical } from 'lucide-react';
 import { getAllFinancePosts, FinancePost } from '../data/financePosts';
 import FinancePostCard from './FinancePostCard';
 import FinanceBlogForm from './FinanceBlogForm';
+
+// Category symbols mapping
+const categorySymbols: { [key: string]: string } = {
+  'All': '🏠',
+  'Personal Finance': '💰',
+  'Investment': '📈',
+  'Tax Planning': '📊',
+  'Cryptocurrency': '₿',
+  'Real Estate': '🏠',
+  'Insurance': '🛡️',
+  'Banking': '🏦',
+  'Retirement Planning': '👴',
+  'Stock Market': '📊',
+  'Mutual Funds': '📋',
+  'Gold Investment': '🥇',
+  'Digital Banking': '📱',
+  'Credit Score': '📋',
+  'Budgeting': '📝',
+  'Saving Tips': '💡',
+  'Financial Planning': '🎯',
+  'Market Analysis': '📊',
+  'Economic News': '📰',
+  'Fintech': '⚡'
+};
 
 const FinanceReelSection: React.FC = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -10,6 +34,7 @@ const FinanceReelSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [current, setCurrent] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [showCategories, setShowCategories] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const allPosts = getAllFinancePosts();
   
@@ -127,11 +152,11 @@ const FinanceReelSection: React.FC = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setIsFullPage(false)}
-                className="text-white hover:text-gray-300 transition-colors p-2"
+                className="text-white hover:text-gray-300 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50"
               >
                 <X size={24} />
               </button>
-              <h2 className="text-white text-lg font-semibold">Finance Reels</h2>
+              <h2 className="text-white text-lg font-semibold hidden sm:block">Finance Reels</h2>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-white text-sm">
@@ -141,20 +166,21 @@ const FinanceReelSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Category Filter */}
+        {/* Category Filter - Mobile Optimized */}
         <div className="absolute top-16 left-0 right-0 z-30 bg-gradient-to-b from-black/60 to-transparent p-4">
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
+                className={`flex-shrink-0 w-12 h-12 rounded-full text-lg font-medium transition-all flex items-center justify-center ${
                   selectedCategory === category
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-blue-600 text-white shadow-lg scale-110'
                     : 'bg-white/20 text-white hover:bg-white/30'
                 }`}
+                title={category}
               >
-                {category}
+                {categorySymbols[category] || '📄'}
               </button>
             ))}
           </div>
@@ -163,7 +189,7 @@ const FinanceReelSection: React.FC = () => {
         {/* Reel Container */}
         <div
           ref={scrollContainerRef}
-          className="h-full overflow-y-auto snap-y snap-mandatory"
+          className="h-full overflow-y-auto snap-y snap-mandatory pt-32"
           onScroll={handleScroll}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -172,7 +198,7 @@ const FinanceReelSection: React.FC = () => {
           {posts.map((post, index) => (
             <div
               key={post.id}
-              className="h-full snap-start flex items-center justify-center p-4"
+              className="h-full snap-start flex items-center justify-center p-2 sm:p-4"
             >
               <FinancePostCard 
                 post={post} 
@@ -187,27 +213,36 @@ const FinanceReelSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Navigation Arrows */}
-        {current > 0 && (
-          <button
-            onClick={goPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
-          >
-            <ChevronUp size={24} />
+        {/* Floating Action Buttons - Right Side */}
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
+          <button className="text-white hover:text-pink-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <Heart size={24} />
           </button>
-        )}
-        
-        {current < posts.length - 1 && (
-          <button
-            onClick={goNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
-          >
-            <ChevronDown size={24} />
+          <button className="text-white hover:text-blue-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <MessageCircle size={24} />
           </button>
-        )}
+          <button className="text-white hover:text-green-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <Share2 size={24} />
+          </button>
+          <button className="text-white hover:text-yellow-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <Bookmark size={24} />
+          </button>
+          <button className="text-white hover:text-gray-300 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <MoreVertical size={24} />
+          </button>
+        </div>
 
-        {/* Progress Dots */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-20">
+        {/* Add Post Button - Floating */}
+        <button
+          onClick={() => setIsFormOpen(true)}
+          className="absolute right-4 bottom-6 z-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-full shadow-xl hover:scale-110 transition-all"
+          title="Add Post"
+        >
+          <Plus size={24} />
+        </button>
+
+        {/* Progress Dots - Left Side */}
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-20">
           {posts.map((_, idx) => (
             <button
               key={idx}
@@ -223,75 +258,96 @@ const FinanceReelSection: React.FC = () => {
             />
           ))}
         </div>
+
+        {/* Navigation Arrows - Mobile Optimized */}
+        {current > 0 && (
+          <button
+            onClick={goPrev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110 sm:hidden"
+          >
+            <ChevronUp size={24} />
+          </button>
+        )}
+        
+        {current < posts.length - 1 && (
+          <button
+            onClick={goNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110 sm:hidden"
+          >
+            <ChevronDown size={24} />
+          </button>
+        )}
       </div>
     );
   }
 
   return (
     <>
-      <section className="relative min-h-[80vh] flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 py-8">
+      <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 py-4 sm:py-8">
         {/* Header */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 text-center">
-          <h2 className="text-4xl font-extrabold text-white drop-shadow mb-1 flex items-center justify-center gap-2">
-            <TrendingUp className="text-blue-400" size={36} />
-            Finance Reels
+        <div className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 z-20 text-center px-4">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white drop-shadow mb-1 flex items-center justify-center gap-2">
+            <TrendingUp className="text-blue-400" size={24} />
+            <span className="hidden sm:inline">Finance Reels</span>
+            <span className="sm:hidden">Reels</span>
           </h2>
-          <p className="text-lg text-blue-100 font-medium drop-shadow">
+          <p className="text-sm sm:text-lg text-blue-100 font-medium drop-shadow hidden sm:block">
             Latest insights, tips, and strategies from the finance community
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-20">
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide max-w-md">
+        {/* Category Filter - Mobile Optimized */}
+        <div className="absolute top-20 sm:top-24 left-1/2 -translate-x-1/2 z-20">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide max-w-xs sm:max-w-md px-4">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
+                className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full text-base sm:text-lg font-medium transition-all flex items-center justify-center ${
                   selectedCategory === category
-                    ? 'bg-blue-600 text-white shadow-lg'
+                    ? 'bg-blue-600 text-white shadow-lg scale-110'
                     : 'bg-white/20 text-white hover:bg-white/30'
                 }`}
+                title={category}
               >
-                {category}
+                {categorySymbols[category] || '📄'}
               </button>
             ))}
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="absolute top-6 right-6 z-30 flex gap-2">
+        <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-30 flex gap-2">
           <button
             onClick={() => setIsFullPage(true)}
-            className="bg-white/20 text-white p-3 rounded-full hover:bg-white/30 transition-all"
+            className="bg-white/20 text-white p-2 sm:p-3 rounded-full hover:bg-white/30 transition-all"
             title="Full Screen"
           >
-            <Grid size={20} />
+            <Grid size={18} />
           </button>
           <button
             onClick={() => setIsFormOpen(true)}
-            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-full shadow-xl hover:scale-110 transition-all"
+            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all"
             title="Add Post"
           >
-            <Plus size={20} />
+            <Plus size={18} />
           </button>
         </div>
 
         {/* Reel Content */}
-        <div className="w-full flex flex-col items-center justify-center min-h-[70vh] mt-20">
+        <div className="w-full flex flex-col items-center justify-center min-h-[70vh] mt-24 sm:mt-20">
           {posts.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-[60vh] text-center">
-              <div className="text-7xl mb-4">📝</div>
-              <h3 className="text-2xl font-bold text-white mb-2">No Posts Yet</h3>
-              <p className="text-blue-200 mb-6">
+            <div className="flex flex-col items-center justify-center h-[60vh] text-center px-4">
+              <div className="text-6xl sm:text-7xl mb-4">📝</div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">No Posts Yet</h3>
+              <p className="text-blue-200 mb-6 text-sm sm:text-base">
                 Be the first to share your finance insights and tips!
               </p>
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto text-lg font-semibold"
+                className="bg-blue-600 text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 mx-auto text-base sm:text-lg font-semibold"
               >
-                <Plus size={24} />
+                <Plus size={20} />
                 Create First Post
               </button>
             </div>
@@ -301,14 +357,14 @@ const FinanceReelSection: React.FC = () => {
               <button
                 onClick={goPrev}
                 disabled={current === 0}
-                className={`absolute left-1/2 -translate-x-1/2 top-0 z-10 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full shadow-lg transition-all ${current === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:scale-110'}`}
+                className={`absolute left-1/2 -translate-x-1/2 top-0 z-10 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full shadow-lg transition-all ${current === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:scale-110'} sm:hidden`}
                 aria-label="Previous Reel"
               >
-                <ChevronUp size={32} />
+                <ChevronUp size={24} />
               </button>
 
               {/* Reel Card */}
-              <div className="w-full max-w-md mx-auto flex items-center justify-center min-h-[60vh]">
+              <div className="w-full max-w-sm sm:max-w-md mx-auto flex items-center justify-center min-h-[60vh] px-2 sm:px-4">
                 <FinancePostCard 
                   post={posts[current]} 
                   reelMode 
@@ -323,19 +379,19 @@ const FinanceReelSection: React.FC = () => {
               <button
                 onClick={goNext}
                 disabled={current === posts.length - 1}
-                className={`absolute left-1/2 -translate-x-1/2 bottom-0 z-10 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full shadow-lg transition-all ${current === posts.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:scale-110'}`}
+                className={`absolute left-1/2 -translate-x-1/2 bottom-0 z-10 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full shadow-lg transition-all ${current === posts.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:scale-110'} sm:hidden`}
                 aria-label="Next Reel"
               >
-                <ChevronDown size={32} />
+                <ChevronDown size={24} />
               </button>
 
               {/* Progress Dots */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-20">
+              <div className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-20">
                 {posts.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrent(idx)}
-                    className={`block w-3 h-3 rounded-full transition-all ${
+                    className={`block w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
                       idx === current 
                         ? 'bg-blue-400 scale-125 shadow-lg' 
                         : 'bg-blue-100 opacity-60 hover:opacity-80'
@@ -347,10 +403,10 @@ const FinanceReelSection: React.FC = () => {
               {/* Full Page Button */}
               <button
                 onClick={() => setIsFullPage(true)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full shadow-lg transition-all hover:scale-110"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full shadow-lg transition-all hover:scale-110"
                 title="Full Screen"
               >
-                <Grid size={20} />
+                <Grid size={18} />
               </button>
             </div>
           )}

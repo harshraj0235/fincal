@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Calendar, User, Tag, Heart, MessageCircle, Share2, ChevronUp, ChevronDown } from 'lucide-react';
+import { ExternalLink, Calendar, User, Tag, Heart, MessageCircle, Share2, ChevronUp, ChevronDown, Bookmark, MoreVertical } from 'lucide-react';
 import { FinancePost } from '../data/financePosts';
 
 interface FinancePostCardProps {
@@ -53,7 +53,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
 
   if (reelMode) {
     return (
-      <div className={`relative ${fullPage ? 'w-full h-full' : 'w-full h-[70vh] max-w-md'} rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-end bg-black`}>
+      <div className={`relative ${fullPage ? 'w-full h-full' : 'w-full h-[70vh] max-w-sm sm:max-w-md'} rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-end bg-black`}>
         {/* Background Image/Video */}
         {post.image ? (
           <img
@@ -68,7 +68,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
           />
         ) : (
           <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-700 to-purple-900 z-0 flex items-center justify-center">
-            <div className="text-white text-5xl">💰</div>
+            <div className="text-white text-4xl sm:text-5xl">💰</div>
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
@@ -90,21 +90,23 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
         )}
 
         {/* Overlay Content */}
-        <div className="relative z-20 p-6 flex flex-col justify-end h-full">
+        <div className="relative z-20 p-4 sm:p-6 flex flex-col justify-end h-full">
           {/* Top Row: Category, Date */}
           <div className="flex items-center gap-2 mb-2">
             <span className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
               <Tag size={12} />
-              {post.category || 'Finance'}
+              <span className="hidden sm:inline">{post.category || 'Finance'}</span>
+              <span className="sm:hidden">{post.category?.slice(0, 8) || 'Finance'}</span>
             </span>
             <span className="flex items-center gap-1 text-xs text-blue-100 ml-2">
               <Calendar size={12} />
-              {formatDate(post.createdAt)}
+              <span className="hidden sm:inline">{formatDate(post.createdAt)}</span>
+              <span className="sm:hidden">{new Date(post.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
             </span>
           </div>
 
           {/* Title */}
-          <h3 className={`${fullPage ? 'text-3xl sm:text-4xl' : 'text-2xl sm:text-3xl'} font-extrabold text-white mb-2 drop-shadow-lg line-clamp-2`}>
+          <h3 className={`${fullPage ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-xl sm:text-2xl md:text-3xl'} font-extrabold text-white mb-2 drop-shadow-lg line-clamp-2 leading-tight`}>
             {post.title}
           </h3>
 
@@ -112,12 +114,13 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
           {post.author && (
             <div className="flex items-center gap-1 text-sm text-blue-200 mb-2">
               <User size={14} />
-              <span>{post.author}</span>
+              <span className="hidden sm:inline">{post.author}</span>
+              <span className="sm:hidden">{post.author.length > 15 ? post.author.slice(0, 15) + '...' : post.author}</span>
             </div>
           )}
 
           {/* Content Preview */}
-          <p className={`${fullPage ? 'text-lg' : 'text-base'} text-blue-100 mb-4 line-clamp-5 drop-shadow`}>
+          <p className={`${fullPage ? 'text-base sm:text-lg' : 'text-sm sm:text-base'} text-blue-100 mb-4 line-clamp-4 sm:line-clamp-5 drop-shadow leading-relaxed`}>
             {preview}
           </p>
 
@@ -130,50 +133,74 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
               className="inline-flex items-center gap-1 text-blue-300 text-sm hover:text-blue-100 mb-3 transition-colors underline"
             >
               <ExternalLink size={14} />
-              External Link
+              <span className="hidden sm:inline">External Link</span>
+              <span className="sm:hidden">Link</span>
             </a>
           )}
 
           {/* Actions Row */}
           <div className="flex items-center justify-between mt-2">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <button className="text-white hover:text-pink-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50">
-                <Heart size={22} />
+                <Heart size={20} />
               </button>
               <button className="text-white hover:text-blue-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50">
-                <MessageCircle size={22} />
+                <MessageCircle size={20} />
               </button>
               <button 
                 className="text-white hover:text-green-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50" 
                 onClick={handleShare}
               >
-                <Share2 size={22} />
+                <Share2 size={20} />
               </button>
             </div>
             <Link
               to={`/finance/${post.slug}`}
-              className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 text-base font-semibold shadow-md hover:shadow-lg transition-all"
+              className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 sm:px-5 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm sm:text-base font-semibold shadow-md hover:shadow-lg transition-all"
             >
-              Read More
+              <span className="hidden sm:inline">Read More</span>
+              <span className="sm:hidden">Read</span>
             </Link>
           </div>
 
           {/* Navigation Instructions */}
           {fullPage && (
             <div className="text-center mt-4 text-blue-200 text-xs opacity-70">
-              <p>Use arrow keys, swipe, or click dots to navigate</p>
+              <p className="hidden sm:block">Use arrow keys, swipe, or click dots to navigate</p>
+              <p className="sm:hidden">Swipe or tap dots to navigate</p>
             </div>
           )}
         </div>
+
+        {/* Floating Action Buttons - Right Side (Full Page Only) */}
+        {fullPage && (
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
+            <button className="text-white hover:text-pink-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+              <Heart size={24} />
+            </button>
+            <button className="text-white hover:text-blue-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+              <MessageCircle size={24} />
+            </button>
+            <button className="text-white hover:text-green-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+              <Share2 size={24} />
+            </button>
+            <button className="text-white hover:text-yellow-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+              <Bookmark size={24} />
+            </button>
+            <button className="text-white hover:text-gray-300 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+              <MoreVertical size={24} />
+            </button>
+          </div>
+        )}
       </div>
     );
   }
 
   // Classic Card
   return (
-    <div className="min-w-[320px] max-w-[320px] bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-100">
+    <div className="min-w-[280px] sm:min-w-[320px] max-w-[280px] sm:max-w-[320px] bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-100">
       {/* Image Section */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-40 sm:h-48 overflow-hidden">
         {post.image ? (
           <img
             src={post.image}
@@ -187,33 +214,35 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
             <div className="text-white text-center">
-              <div className="text-4xl mb-2">💰</div>
-              <div className="text-sm font-medium">Finance</div>
+              <div className="text-3xl sm:text-4xl mb-2">💰</div>
+              <div className="text-xs sm:text-sm font-medium">Finance</div>
             </div>
           </div>
         )}
         
         {/* Category Badge */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
           <span className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
             <Tag size={12} />
-            {post.category || 'Finance'}
+            <span className="hidden sm:inline">{post.category || 'Finance'}</span>
+            <span className="sm:hidden">{post.category?.slice(0, 8) || 'Finance'}</span>
           </span>
         </div>
         
         {/* Date Badge */}
-        <div className="absolute top-3 right-3">
+        <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
           <span className="bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
             <Calendar size={12} />
-            {formatDate(post.createdAt)}
+            <span className="hidden sm:inline">{formatDate(post.createdAt)}</span>
+            <span className="sm:hidden">{new Date(post.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
           </span>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         {/* Title */}
-        <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2 leading-tight">
+        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 line-clamp-2 leading-tight">
           {post.title}
         </h3>
 
@@ -221,12 +250,13 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
         {post.author && (
           <div className="flex items-center gap-1 text-sm text-gray-600 mb-3">
             <User size={14} />
-            <span>{post.author}</span>
+            <span className="hidden sm:inline">{post.author}</span>
+            <span className="sm:hidden">{post.author.length > 15 ? post.author.slice(0, 15) + '...' : post.author}</span>
           </div>
         )}
 
         {/* Content Preview */}
-        <p className="text-sm text-gray-700 mb-4 line-clamp-6 leading-relaxed">
+        <p className="text-xs sm:text-sm text-gray-700 mb-4 line-clamp-4 sm:line-clamp-6 leading-relaxed">
           {preview}
         </p>
 
@@ -244,7 +274,8 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
             className="inline-flex items-center gap-1 text-blue-600 text-sm hover:text-blue-800 mb-3 transition-colors"
           >
             <ExternalLink size={14} />
-            External Link
+            <span className="hidden sm:inline">External Link</span>
+            <span className="sm:hidden">Link</span>
           </a>
         )}
 
