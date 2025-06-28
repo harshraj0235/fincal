@@ -18,7 +18,7 @@ import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
-import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
+// import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
 
 // Excel Tool blog section
 import ExcelTool from './pages/ExcelTool';
@@ -50,12 +50,14 @@ import AstroFinanceCrystalCalculator from './pages/AstroFinanceCrystalCalculator
 // News Reel
 import NewsReel from './pages/NewsReel';
 
+import ChequeBounceChargesCalculator from './pages/ChequeBounceChargesCalculator';
+
 function App() {
   return (
     <>
       <Routes>
         {/* Missed Call Banking Directory route - outside Layout */}
-        <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
+        {/* <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} /> */}
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
@@ -118,6 +120,8 @@ function App() {
 
               {/* News Reel route */}
               <Route path="/news-reel" element={<NewsReel />} />
+
+              <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

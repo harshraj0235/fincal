@@ -53,6 +53,9 @@ const Navbar = () => {
               <PhoneCall className="w-4 h-4 mr-1" />
               Missed Call Banking
             </Link>
+            <li>
+              <a href="/calculators/cheque-bounce-charges-calculator" className="hover:text-orange-600 font-semibold">Cheque Bounce Charges</a>
+            </li>
             <button 
               onClick={() => setShowMoneyModal(true)}
               className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
@@ -114,6 +117,9 @@ const Navbar = () => {
                 <PhoneCall className="w-4 h-4 mr-2" />
                 Missed Call Banking
               </Link>
+              <li>
+                <a href="/calculators/cheque-bounce-charges-calculator" className="hover:text-orange-600 font-semibold">Cheque Bounce Charges</a>
+              </li>
               <button 
                 onClick={() => {
                   setShowMoneyModal(true);

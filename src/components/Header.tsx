@@ -220,6 +220,9 @@ export const Header: React.FC = () => {
             >
               Tax Calculator
             </Link>
+            <li>
+              <a href="/calculators/cheque-bounce-charges-calculator" className="hover:text-orange-600 font-semibold">Cheque Bounce Charges</a>
+            </li>
           </nav>
           
           {/* Mobile Navigation */}
