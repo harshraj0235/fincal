@@ -146,7 +146,7 @@ const FinanceReelSection: React.FC = () => {
   if (isFullPage) {
     return (
       <div className="fixed inset-0 bg-black z-50 overflow-hidden">
-        {/* Header */}
+        {/* Header with Add Post Button */}
         <div className="absolute top-0 left-0 right-0 z-30 bg-gradient-to-b from-black/80 to-transparent p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -158,7 +158,14 @@ const FinanceReelSection: React.FC = () => {
               </button>
               <h2 className="text-white text-lg font-semibold hidden sm:block">Finance Reels</h2>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setIsFormOpen(true)}
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 rounded-full shadow-xl hover:scale-110 transition-all"
+                title="Add Post"
+              >
+                <Plus size={20} />
+              </button>
               <span className="text-white text-sm">
                 {current + 1} of {posts.length}
               </span>
@@ -232,15 +239,6 @@ const FinanceReelSection: React.FC = () => {
           </button>
         </div>
 
-        {/* Add Post Button - Floating */}
-        <button
-          onClick={() => setIsFormOpen(true)}
-          className="absolute right-4 bottom-6 z-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 rounded-full shadow-xl hover:scale-110 transition-all"
-          title="Add Post"
-        >
-          <Plus size={24} />
-        </button>
-
         {/* Progress Dots - Left Side */}
         <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-20">
           {posts.map((_, idx) => (
@@ -284,13 +282,22 @@ const FinanceReelSection: React.FC = () => {
   return (
     <>
       <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 py-4 sm:py-8">
-        {/* Header */}
+        {/* Header with Add Post Button */}
         <div className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 z-20 text-center px-4">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white drop-shadow mb-1 flex items-center justify-center gap-2">
-            <TrendingUp className="text-blue-400" size={24} />
-            <span className="hidden sm:inline">Finance Reels</span>
-            <span className="sm:hidden">Reels</span>
-          </h2>
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white drop-shadow flex items-center justify-center gap-2">
+              <TrendingUp className="text-blue-400" size={24} />
+              <span className="hidden sm:inline">Finance Reels</span>
+              <span className="sm:hidden">Reels</span>
+            </h2>
+            <button
+              onClick={() => setIsFormOpen(true)}
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all ml-2"
+              title="Add Post"
+            >
+              <Plus size={18} />
+            </button>
+          </div>
           <p className="text-sm sm:text-lg text-blue-100 font-medium drop-shadow hidden sm:block">
             Latest insights, tips, and strategies from the finance community
           </p>
@@ -317,20 +324,13 @@ const FinanceReelSection: React.FC = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-30 flex gap-2">
+        <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-30">
           <button
             onClick={() => setIsFullPage(true)}
             className="bg-white/20 text-white p-2 sm:p-3 rounded-full hover:bg-white/30 transition-all"
             title="Full Screen"
           >
             <Grid size={18} />
-          </button>
-          <button
-            onClick={() => setIsFormOpen(true)}
-            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all"
-            title="Add Post"
-          >
-            <Plus size={18} />
           </button>
         </div>
 

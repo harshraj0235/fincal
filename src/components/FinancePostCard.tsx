@@ -92,8 +92,8 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
         {/* Overlay Content */}
         <div className="relative z-20 p-4 sm:p-6 flex flex-col justify-end h-full">
           {/* Top Row: Category, Date */}
-          <div className="flex items-center gap-2 mb-2">
-            <span className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full flex items-center gap-1">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1">
               <Tag size={12} />
               <span className="hidden sm:inline">{post.category || 'Finance'}</span>
               <span className="sm:hidden">{post.category?.slice(0, 8) || 'Finance'}</span>
@@ -106,13 +106,13 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
           </div>
 
           {/* Title */}
-          <h3 className={`${fullPage ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-xl sm:text-2xl md:text-3xl'} font-extrabold text-white mb-2 drop-shadow-lg line-clamp-2 leading-tight`}>
+          <h3 className={`${fullPage ? 'text-2xl sm:text-3xl md:text-4xl' : 'text-xl sm:text-2xl md:text-3xl'} font-extrabold text-white mb-3 drop-shadow-lg line-clamp-2 leading-tight`}>
             {post.title}
           </h3>
 
           {/* Author */}
           {post.author && (
-            <div className="flex items-center gap-1 text-sm text-blue-200 mb-2">
+            <div className="flex items-center gap-1 text-sm text-blue-200 mb-3">
               <User size={14} />
               <span className="hidden sm:inline">{post.author}</span>
               <span className="sm:hidden">{post.author.length > 15 ? post.author.slice(0, 15) + '...' : post.author}</span>
@@ -130,7 +130,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-blue-300 text-sm hover:text-blue-100 mb-3 transition-colors underline"
+              className="inline-flex items-center gap-1 text-blue-300 text-sm hover:text-blue-100 mb-4 transition-colors underline"
             >
               <ExternalLink size={14} />
               <span className="hidden sm:inline">External Link</span>
@@ -139,16 +139,16 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
           )}
 
           {/* Actions Row */}
-          <div className="flex items-center justify-between mt-2">
-            <div className="flex items-center gap-2 sm:gap-4">
-              <button className="text-white hover:text-pink-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50">
+          <div className="flex items-center justify-between mt-3">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <button className="text-white hover:text-pink-400 transition-colors p-2.5 rounded-full bg-black/30 hover:bg-black/50 min-w-[44px] min-h-[44px] flex items-center justify-center">
                 <Heart size={20} />
               </button>
-              <button className="text-white hover:text-blue-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50">
+              <button className="text-white hover:text-blue-400 transition-colors p-2.5 rounded-full bg-black/30 hover:bg-black/50 min-w-[44px] min-h-[44px] flex items-center justify-center">
                 <MessageCircle size={20} />
               </button>
               <button 
-                className="text-white hover:text-green-400 transition-colors p-2 rounded-full bg-black/30 hover:bg-black/50" 
+                className="text-white hover:text-green-400 transition-colors p-2.5 rounded-full bg-black/30 hover:bg-black/50 min-w-[44px] min-h-[44px] flex items-center justify-center" 
                 onClick={handleShare}
               >
                 <Share2 size={20} />
@@ -156,7 +156,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
             </div>
             <Link
               to={`/finance/${post.slug}`}
-              className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 sm:px-5 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm sm:text-base font-semibold shadow-md hover:shadow-lg transition-all"
+              className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 sm:px-5 py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm sm:text-base font-semibold shadow-md hover:shadow-lg transition-all min-h-[44px] flex items-center justify-center"
             >
               <span className="hidden sm:inline">Read More</span>
               <span className="sm:hidden">Read</span>
@@ -175,19 +175,19 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
         {/* Floating Action Buttons - Right Side (Full Page Only) */}
         {fullPage && (
           <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
-            <button className="text-white hover:text-pink-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <button className="text-white hover:text-pink-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center">
               <Heart size={24} />
             </button>
-            <button className="text-white hover:text-blue-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <button className="text-white hover:text-blue-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center">
               <MessageCircle size={24} />
             </button>
-            <button className="text-white hover:text-green-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <button className="text-white hover:text-green-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center">
               <Share2 size={24} />
             </button>
-            <button className="text-white hover:text-yellow-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <button className="text-white hover:text-yellow-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center">
               <Bookmark size={24} />
             </button>
-            <button className="text-white hover:text-gray-300 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg">
+            <button className="text-white hover:text-gray-300 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg min-w-[48px] min-h-[48px] flex items-center justify-center">
               <MoreVertical size={24} />
             </button>
           </div>
@@ -282,7 +282,7 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
         {/* Read More Button */}
         <Link
           to={`/finance/${post.slug}`}
-          className="inline-block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm font-medium text-center transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg"
+          className="inline-block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 text-sm font-medium text-center transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg min-h-[44px] flex items-center justify-center"
         >
           Read More
         </Link>
