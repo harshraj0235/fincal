@@ -213,13 +213,6 @@ export const Home: React.FC = () => {
         </a>
       </div>
       
-      {/* News Reel Button */}
-      <div className="flex justify-center mt-4">
-        <a href="/news-reel" className="news-reel-btn">
-          📰 Latest Finance News Reel
-        </a>
-      </div>
-      
       {/* Search Section */}
       <section className="py-12 bg-white relative z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
