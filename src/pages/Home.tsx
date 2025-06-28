@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
   Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, 
-  Building, Shield, ChevronRight
+  Building, Shield, ChevronRight, PlayCircle
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
@@ -16,6 +16,7 @@ export const Home: React.FC = () => {
   const location = useLocation();
   const categoriesRef = useRef<HTMLElement>(null);
   const allCalculatorsRef = useRef<HTMLDivElement>(null);
+  const [showReel, setShowReel] = useState(false);
   
   useEffect(() => {
     // Get popular calculators from different categories
@@ -203,8 +204,34 @@ export const Home: React.FC = () => {
         </div>
       </section>
       
-      {/* Finance Reel Section */}
-      <FinanceReelSection />
+      {/* Finance Reel Button */}
+      <div className="flex justify-center my-8">
+        <button
+          onClick={() => setShowReel(true)}
+          className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-blue-900 text-xl font-bold transition-all animate-fade-in-up"
+        >
+          <PlayCircle className="w-8 h-8" />
+          Finance Reel
+        </button>
+      </div>
+
+      {/* Finance Reel Modal/Overlay */}
+      {showReel && (
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center animate-fade-in-up">
+          <div className="absolute top-4 right-4 z-60">
+            <button
+              onClick={() => setShowReel(false)}
+              className="bg-white/20 text-white p-3 rounded-full hover:bg-white/40 transition-all shadow-lg"
+              title="Close Reel"
+            >
+              <span className="text-2xl">&times;</span>
+            </button>
+          </div>
+          <div className="w-full h-full flex items-center justify-center">
+            <FinanceReelSection />
+          </div>
+        </div>
+      )}
       
       {/* Astro-Finance Insights Button */}
       <div className="flex justify-center">

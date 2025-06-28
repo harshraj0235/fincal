@@ -99,6 +99,138 @@ export const financePosts: FinancePost[] = [
     createdAt: "2024-02-20T10:15:00Z",
     author: "Retirement Planner",
     category: "Retirement Planning"
+  },
+  {
+    id: "9",
+    title: "What is an ETF? A Beginner's Guide",
+    content: "Exchange-Traded Funds (ETFs) are investment funds traded on stock exchanges, much like stocks. They offer investors a way to diversify their portfolios by holding a basket of assets, such as stocks, bonds, or commodities. ETFs are known for their low expense ratios and tax efficiency. They can be bought and sold throughout the trading day at market prices. Popular types include index ETFs, sector ETFs, and commodity ETFs. For beginners, ETFs provide an accessible entry point into the world of investing, allowing for broad market exposure with relatively low risk. Always research the underlying assets and expense ratios before investing.",
+    link: "https://www.investopedia.com/terms/e/etf.asp",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+    slug: "what-is-an-etf-guide",
+    createdAt: "2024-03-01T09:00:00Z",
+    author: "Investopedia Editors",
+    category: "Investment"
+  },
+  {
+    id: "10",
+    title: "How to File Income Tax Returns Online in India",
+    content: "Filing income tax returns (ITR) online in India has become a straightforward process thanks to the Income Tax Department's e-filing portal. Taxpayers need to register on the portal, select the appropriate ITR form, fill in their income details, claim deductions, and upload necessary documents. After submission, an acknowledgment (ITR-V) is generated, which must be verified electronically or sent to the CPC, Bengaluru. E-filing ensures faster processing and refunds. It's important to file returns before the due date to avoid penalties. For step-by-step guidance, refer to the official e-filing portal.",
+    link: "https://www.incometax.gov.in/iec/foportal/help/how-to-file-itr",
+    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1000&q=80",
+    slug: "how-to-file-itr-online-india",
+    createdAt: "2024-03-02T10:00:00Z",
+    author: "Income Tax Dept. India",
+    category: "Tax Planning"
+  },
+  {
+    id: "11",
+    title: "RBI's Role in India's Financial System",
+    content: "The Reserve Bank of India (RBI) is the central bank responsible for regulating the country's monetary policy, issuing currency, and maintaining financial stability. It supervises banks, manages foreign exchange, and acts as the government's banker. The RBI also sets benchmark interest rates, such as the repo rate, which influence lending and borrowing costs across the economy. Its policies impact inflation, economic growth, and the value of the rupee. Understanding the RBI's functions helps investors and consumers make informed financial decisions.",
+    link: "https://www.rbi.org.in/Scripts/AboutusDisplay.aspx",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1000&q=80",
+    slug: "rbi-role-india-financial-system",
+    createdAt: "2024-03-03T11:00:00Z",
+    author: "RBI Editorial Team",
+    category: "Banking"
+  },
+  {
+    id: "12",
+    title: "Understanding Credit Scores and Their Importance",
+    content: "A credit score is a numerical representation of your creditworthiness, used by lenders to assess the risk of lending to you. In India, credit scores are provided by agencies like CIBIL, Experian, and Equifax. Scores range from 300 to 900, with higher scores indicating better credit health. Factors affecting your score include payment history, credit utilization, length of credit history, and types of credit. Maintaining a good credit score helps secure loans at favorable interest rates and improves your financial reputation.",
+    link: "https://www.cibil.com/credit-score-what-is-credit-score",
+    image: "https://images.unsplash.com/photo-1515168833906-d2a3b82b302b?auto=format&fit=crop&w=1000&q=80",
+    slug: "understanding-credit-scores-india",
+    createdAt: "2024-03-04T12:00:00Z",
+    author: "CIBIL Team",
+    category: "Personal Finance"
+  },
+  {
+    id: "13",
+    title: "SEBI: Safeguarding Indian Investors",
+    content: "The Securities and Exchange Board of India (SEBI) is the regulatory authority for the securities market in India. SEBI's primary objective is to protect investors' interests, promote fair trading practices, and regulate market intermediaries. It enforces rules for stock exchanges, mutual funds, and listed companies. SEBI also educates investors about risks and rights. By ensuring transparency and accountability, SEBI plays a crucial role in maintaining trust in India's capital markets.",
+    link: "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&smid=0&ssid=0",
+    image: "https://images.unsplash.com/photo-1508385082359-f48b1c7b6a10?auto=format&fit=crop&w=1000&q=80",
+    slug: "sebi-safeguarding-investors",
+    createdAt: "2024-03-05T13:00:00Z",
+    author: "SEBI Editorial",
+    category: "Investment"
+  },
+  {
+    id: "14",
+    title: "How to Start Investing in Indian Stock Market",
+    content: "Investing in the Indian stock market requires opening a demat and trading account with a SEBI-registered broker. Research and select stocks based on fundamentals, technical analysis, or expert recommendations. Diversify your portfolio to manage risk. Stay updated with market news and company announcements. Use stop-loss orders to limit potential losses. Remember, stock market investments are subject to market risks, so invest only after thorough research and consider long-term goals.",
+    link: "https://www.moneycontrol.com/news/business/markets/how-to-invest-in-stock-market-in-india-1001231.html",
+    image: "https://images.unsplash.com/photo-1460124431544-8fcb6789a3a1?auto=format&fit=crop&w=1000&q=80",
+    slug: "start-investing-indian-stock-market",
+    createdAt: "2024-03-06T14:00:00Z",
+    author: "Moneycontrol Editorial",
+    category: "Investment"
+  },
+  {
+    id: "15",
+    title: "The Basics of Life Insurance in India",
+    content: "Life insurance provides financial protection to your family in case of your untimely demise. In India, popular types include term insurance, whole life, and endowment policies. Term insurance offers high coverage at low premiums, while endowment plans combine insurance with savings. When choosing a policy, consider your family's needs, liabilities, and future goals. Compare policies from different insurers and read the terms carefully. Life insurance is a cornerstone of sound financial planning.",
+    link: "https://www.policybazaar.com/life-insurance/term-insurance/articles/what-is-life-insurance/",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+    slug: "basics-life-insurance-india",
+    createdAt: "2024-03-07T15:00:00Z",
+    author: "PolicyBazaar Team",
+    category: "Insurance"
+  },
+  {
+    id: "16",
+    title: "How to Use UPI for Digital Payments",
+    content: "Unified Payments Interface (UPI) has revolutionized digital payments in India. To use UPI, download a UPI-enabled app, link your bank account, and set a UPI PIN. You can send or receive money instantly using a Virtual Payment Address (VPA) or QR code. UPI is secure, fast, and available 24/7. It supports bill payments, online shopping, and more. Always keep your PIN confidential and avoid sharing sensitive information to prevent fraud.",
+    link: "https://www.npci.org.in/what-we-do/upi/product-overview",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1000&q=80",
+    slug: "how-to-use-upi-digital-payments",
+    createdAt: "2024-03-08T16:00:00Z",
+    author: "NPCI Editorial",
+    category: "Banking"
+  },
+  {
+    id: "17",
+    title: "A Guide to Public Provident Fund (PPF)",
+    content: "The Public Provident Fund (PPF) is a long-term savings scheme backed by the Government of India. It offers attractive interest rates, tax benefits under Section 80C, and a 15-year lock-in period. PPF accounts can be opened at banks or post offices. Partial withdrawals and loans are allowed after a certain period. PPF is ideal for conservative investors seeking safe, tax-free returns. Always check the latest interest rates and rules before investing.",
+    link: "https://www.investopedia.com/terms/p/public-provident-fund-ppf.asp",
+    image: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b43?auto=format&fit=crop&w=1000&q=80",
+    slug: "guide-public-provident-fund-ppf",
+    createdAt: "2024-03-09T17:00:00Z",
+    author: "Investopedia Editors",
+    category: "Personal Finance"
+  },
+  {
+    id: "18",
+    title: "What is SIP and How Does it Work?",
+    content: "A Systematic Investment Plan (SIP) allows investors to invest a fixed amount in mutual funds at regular intervals. SIPs help inculcate financial discipline and benefit from rupee cost averaging. They are suitable for long-term wealth creation and can be started with as little as ₹500 per month. SIPs offer flexibility, convenience, and the power of compounding. Always review the fund's performance and your financial goals periodically.",
+    link: "https://www.amfiindia.com/investor-corner/knowledge-centre/what-is-sip",
+    image: "https://images.unsplash.com/photo-1508385082359-f48b1c7b6a10?auto=format&fit=crop&w=1000&q=80",
+    slug: "what-is-sip-how-it-works",
+    createdAt: "2024-03-10T18:00:00Z",
+    author: "AMFI India",
+    category: "Investment"
+  },
+  {
+    id: "19",
+    title: "How to Avoid Common Credit Card Mistakes",
+    content: "Credit cards offer convenience and rewards but can lead to debt if misused. Common mistakes include missing payments, maxing out the credit limit, and ignoring statements. Always pay your bills on time, keep credit utilization below 30%, and review your statements for errors. Avoid cash advances and unnecessary balance transfers. Use credit cards responsibly to build a positive credit history and enjoy benefits like cashback, travel rewards, and purchase protection.",
+    link: "https://economictimes.indiatimes.com/wealth/borrow/10-credit-card-mistakes-you-should-avoid/articleshow/70028213.cms",
+    image: "https://images.unsplash.com/photo-1515168833906-d2a3b82b302b?auto=format&fit=crop&w=1000&q=80",
+    slug: "avoid-common-credit-card-mistakes",
+    createdAt: "2024-03-11T19:00:00Z",
+    author: "Economic Times Wealth",
+    category: "Personal Finance"
+  },
+  {
+    id: "20",
+    title: "Basics of Cryptocurrency Taxation in India",
+    content: "Cryptocurrency transactions in India are subject to taxation. Profits from trading, investing, or mining cryptocurrencies are treated as capital gains or business income, depending on the nature of the activity. The government has introduced a 30% tax on crypto gains and 1% TDS on certain transactions. It's important to maintain detailed records of all transactions and consult a tax professional for compliance. Stay updated with the latest regulations from the Income Tax Department.",
+    link: "https://www.incometax.gov.in/iec/foportal/help/cryptocurrency-taxation",
+    image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&w=1000&q=80",
+    slug: "basics-cryptocurrency-taxation-india",
+    createdAt: "2024-03-12T20:00:00Z",
+    author: "Income Tax Dept. India",
+    category: "Cryptocurrency"
   }
 ];
 
