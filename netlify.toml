@@ -2,6 +2,14 @@
   publish = "dist"
   command = "npm run build"
 
+# Redirect www to non-www for consistency
+[[redirects]]
+  from = "https://www.moneycal.in/*"
+  to = "https://moneycal.in/:splat"
+  status = 301
+  force = true
+
+# Handle all other routes for SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"
