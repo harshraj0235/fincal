@@ -63,7 +63,7 @@ const FinanceReelSection: React.FC = () => {
     : allPosts.filter(post => post.category === selectedCategory);
 
   // Get unique categories with proper typing
-  const categories = ['All', ...Array.from(new Set(allPosts.map(post => post.category).filter((category): category is string => Boolean(category)))];
+ const categories = ['All', ...Array.from(new Set(allPosts.map(post => post.category).filter((category): category is string => Boolean(category))))];
 
   // Helper function to get category symbol
   const getCategorySymbol = (category: string): string => {
