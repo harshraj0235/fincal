@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { 
-  Plus, TrendingUp, ChevronUp, ChevronDown, X, Filter, Grid, List, 
-  Home, Search, Heart, MessageCircle, Share2, Bookmark, MoreVertical, 
-  Edit3, Scroll, ArrowLeft, ArrowRight, Settings, RefreshCw, 
+  Plus, TrendingUp, ChevronUp, ChevronDown, X, 
+  Home, Heart, MessageCircle, Share2, Bookmark, 
+  Edit3, Scroll, Settings, RefreshCw, 
   Play, Pause, Volume2, VolumeX, Maximize2, Minimize2, 
-  ThumbsUp, ThumbsDown, Flag, Copy, ExternalLink, Clock, Eye
+  ThumbsUp, ThumbsDown, Flag, Copy, ExternalLink, Clock, Eye,
+  MousePointer, Smartphone, Monitor
 } from 'lucide-react';
 import { getAllFinancePosts, FinancePost } from '../data/financePosts';
 import FinancePostCard from './FinancePostCard';
@@ -47,7 +48,13 @@ const FinanceReelSection: React.FC = () => {
   const [muted, setMuted] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [viewMode, setViewMode] = useState<'reel' | 'grid' | 'list'>('reel');
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+  const [infiniteScroll, setInfiniteScroll] = useState(false);
+  const [scrollSpeed, setScrollSpeed] = useState<'slow' | 'normal' | 'fast'>('normal');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
   const allPosts = getAllFinancePosts();
   
   // Filter posts by category
@@ -55,13 +62,21 @@ const FinanceReelSection: React.FC = () => {
     ? allPosts 
     : allPosts.filter(post => post.category === selectedCategory);
 
-  // Get unique categories
-  const categories = ['All', ...Array.from(new Set(allPosts.map(post => post.category).filter(Boolean)))];
+  // Get unique categories with proper typing
+  const categories = ['All', ...Array.from(new Set(allPosts.map(post => post.category).filter((category): category is string => Boolean(category)))];
+
+  // Helper function to get category symbol
+  const getCategorySymbol = (category: string): string => {
+    return categorySymbols[category] || '📄';
+  };
 
   const goNext = () => {
     if (current < posts.length - 1) {
       setCurrent(prev => prev + 1);
       scrollToPost(current + 1);
+    } else if (infiniteScroll) {
+      setCurrent(0);
+      scrollToPost(0);
     }
   };
 
@@ -69,6 +84,9 @@ const FinanceReelSection: React.FC = () => {
     if (current > 0) {
       setCurrent(prev => prev - 1);
       scrollToPost(current - 1);
+    } else if (infiniteScroll) {
+      setCurrent(posts.length - 1);
+      scrollToPost(posts.length - 1);
     }
   };
 
@@ -76,12 +94,13 @@ const FinanceReelSection: React.FC = () => {
     if (scrollContainerRef.current) {
       const postElement = scrollContainerRef.current.children[index] as HTMLElement;
       if (postElement) {
-        postElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const behavior = scrollSpeed === 'slow' ? 'smooth' : scrollSpeed === 'fast' ? 'auto' : 'smooth';
+        postElement.scrollIntoView({ behavior, block: 'start' });
       }
     }
   };
 
-  // Handle scroll events for snap scrolling
+  // Enhanced scroll handling with direction detection
   const handleScroll = () => {
     if (!scrollContainerRef.current || isScrolling) return;
     
@@ -89,21 +108,40 @@ const FinanceReelSection: React.FC = () => {
     const container = scrollContainerRef.current;
     const scrollTop = container.scrollTop;
     const containerHeight = container.clientHeight;
-    const newIndex = Math.round(scrollTop / containerHeight);
+    const scrollHeight = container.scrollHeight;
     
+    // Calculate scroll progress
+    const progress = (scrollTop / (scrollHeight - containerHeight)) * 100;
+    setScrollProgress(Math.min(100, Math.max(0, progress)));
+    
+    // Detect scroll direction
+    const newIndex = Math.round(scrollTop / containerHeight);
     if (newIndex !== current && newIndex >= 0 && newIndex < posts.length) {
+      setScrollDirection(newIndex > current ? 'down' : 'up');
       setCurrent(newIndex);
     }
+    
+    // Hide scroll indicator after scrolling
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    setShowScrollIndicator(false);
+    scrollTimeoutRef.current = setTimeout(() => {
+      setShowScrollIndicator(true);
+      setScrollDirection(null);
+    }, 2000);
     
     setTimeout(() => setIsScrolling(false), 100);
   };
 
-  // Touch/swipe handling
+  // Enhanced touch/swipe handling with momentum
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [touchStartTime, setTouchStartTime] = useState<number | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientY);
+    setTouchStartTime(Date.now());
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -111,11 +149,14 @@ const FinanceReelSection: React.FC = () => {
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (!touchStart || !touchEnd || !touchStartTime) return;
     
     const distance = touchStart - touchEnd;
-    const isUpSwipe = distance > 50;
-    const isDownSwipe = distance < -50;
+    const duration = Date.now() - touchStartTime;
+    const velocity = Math.abs(distance) / duration;
+    
+    const isUpSwipe = distance > 50 || (distance > 20 && velocity > 0.5);
+    const isDownSwipe = distance < -50 || (distance < -20 && velocity > 0.5);
 
     if (isUpSwipe) {
       goNext();
@@ -125,25 +166,29 @@ const FinanceReelSection: React.FC = () => {
 
     setTouchStart(null);
     setTouchEnd(null);
+    setTouchStartTime(null);
   };
 
-  // Auto-play functionality
+  // Auto-play functionality with scroll mode support
   useEffect(() => {
     let interval: NodeJS.Timeout;
     if (autoPlay && !scrollMode && isFullPage) {
+      const intervalTime = scrollSpeed === 'slow' ? 7000 : scrollSpeed === 'fast' ? 3000 : 5000;
       interval = setInterval(() => {
         if (current < posts.length - 1) {
           goNext();
-        } else {
+        } else if (infiniteScroll) {
           setCurrent(0);
           scrollToPost(0);
+        } else {
+          setAutoPlay(false);
         }
-      }, 5000); // 5 seconds per post
+      }, intervalTime);
     }
     return () => clearInterval(interval);
-  }, [autoPlay, current, posts.length, scrollMode, isFullPage]);
+  }, [autoPlay, current, posts.length, scrollMode, isFullPage, infiniteScroll, scrollSpeed]);
 
-  // Keyboard navigation
+  // Enhanced keyboard navigation
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'ArrowDown' || e.key === ' ') {
@@ -166,11 +211,17 @@ const FinanceReelSection: React.FC = () => {
       if (e.key === 'm' || e.key === 'M') {
         setMuted(!muted);
       }
+      if (e.key === 'i' || e.key === 'I') {
+        setInfiniteScroll(!infiniteScroll);
+      }
+      if (e.key === 's' || e.key === 'S') {
+        setScrollSpeed(prev => prev === 'slow' ? 'normal' : prev === 'normal' ? 'fast' : 'slow');
+      }
     };
     
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [current, posts.length, isFullPage, showNavbar, autoPlay, muted]);
+  }, [current, posts.length, isFullPage, showNavbar, autoPlay, muted, infiniteScroll, scrollSpeed]);
 
   // Auto-scroll to current post when category changes
   useEffect(() => {
@@ -180,9 +231,13 @@ const FinanceReelSection: React.FC = () => {
     }
   }, [selectedCategory]);
 
-  // Toggle scroll mode
+  // Toggle scroll mode with enhanced features
   const toggleScrollMode = () => {
     setScrollMode(!scrollMode);
+    if (!scrollMode) {
+      // Enable scroll mode
+      setShowScrollIndicator(true);
+    }
   };
 
   // Handle post actions
@@ -214,10 +269,27 @@ const FinanceReelSection: React.FC = () => {
     console.log('Bookmarked post:', postId);
   };
 
+  // Scroll to top function
+  const scrollToTop = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  // Scroll to bottom function
+  const scrollToBottom = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ 
+        top: scrollContainerRef.current.scrollHeight, 
+        behavior: 'smooth' 
+      });
+    }
+  };
+
   if (isFullPage) {
     return (
       <div className="fixed inset-0 bg-black z-50 overflow-hidden">
-        {/* Enhanced Header with Better Navigation */}
+        {/* Enhanced Header with Scroll Controls */}
         <div className={`absolute top-0 left-0 right-0 z-30 bg-gradient-to-b from-black/90 via-black/70 to-transparent p-4 transition-all duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="flex items-center justify-between">
             {/* Left Section: Back, Home, Title */}
@@ -250,6 +322,18 @@ const FinanceReelSection: React.FC = () => {
                 <span>{posts.length}</span>
               </div>
               
+              {/* Scroll Speed Control */}
+              <select
+                value={scrollSpeed}
+                onChange={(e) => setScrollSpeed(e.target.value as any)}
+                className="bg-black/30 text-white text-xs rounded px-2 py-1 border border-white/20"
+                title="Scroll Speed"
+              >
+                <option value="slow">Slow</option>
+                <option value="normal">Normal</option>
+                <option value="fast">Fast</option>
+              </select>
+              
               {/* Auto-play Controls */}
               <button
                 onClick={() => setAutoPlay(!autoPlay)}
@@ -270,6 +354,19 @@ const FinanceReelSection: React.FC = () => {
                 title={muted ? "Unmute" : "Mute"}
               >
                 {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+              </button>
+              
+              {/* Infinite Scroll Toggle */}
+              <button
+                onClick={() => setInfiniteScroll(!infiniteScroll)}
+                className={`p-2 rounded-full transition-all ${
+                  infiniteScroll 
+                    ? 'bg-purple-600 text-white' 
+                    : 'bg-white/20 text-white hover:bg-white/30'
+                }`}
+                title={infiniteScroll ? "Disable Infinite Scroll" : "Enable Infinite Scroll"}
+              >
+                <RefreshCw size={16} />
               </button>
               
               {/* Scroll Mode Toggle */}
@@ -327,13 +424,13 @@ const FinanceReelSection: React.FC = () => {
                 }`}
                 title={category}
               >
-                {categorySymbols[category] || '📄'}
+                {getCategorySymbol(category)}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Settings Panel */}
+        {/* Enhanced Settings Panel */}
         {showSettings && (
           <div className="absolute top-20 right-4 z-30 bg-black/90 text-white p-4 rounded-lg shadow-xl">
             <div className="space-y-3">
@@ -359,6 +456,15 @@ const FinanceReelSection: React.FC = () => {
                 </button>
               </div>
               <div className="flex items-center justify-between">
+                <span className="text-sm">Infinite Scroll:</span>
+                <button
+                  onClick={() => setInfiniteScroll(!infiniteScroll)}
+                  className={`px-3 py-1 rounded text-sm ${infiniteScroll ? 'bg-purple-600' : 'bg-gray-600'}`}
+                >
+                  {infiniteScroll ? 'ON' : 'OFF'}
+                </button>
+              </div>
+              <div className="flex items-center justify-between">
                 <span className="text-sm">Show Navbar:</span>
                 <button
                   onClick={() => setShowNavbar(!showNavbar)}
@@ -371,10 +477,10 @@ const FinanceReelSection: React.FC = () => {
           </div>
         )}
 
-        {/* Reel Container */}
+        {/* Enhanced Reel Container with Scroll Features */}
         <div
           ref={scrollContainerRef}
-          className={`h-full ${scrollMode ? 'overflow-y-auto' : 'overflow-y-auto snap-y snap-mandatory'} pt-32`}
+          className={`h-full finance-reel-scroll-container finance-reel-smooth-scroll finance-reel-touch-scroll finance-reel-scroll-optimized ${scrollMode ? 'overflow-y-auto' : 'overflow-y-auto snap-y snap-mandatory'} pt-32 scroll-smooth`}
           onScroll={handleScroll}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -383,7 +489,7 @@ const FinanceReelSection: React.FC = () => {
           {posts.map((post, index) => (
             <div
               key={post.id}
-              className={`${scrollMode ? 'h-auto min-h-screen' : 'h-full snap-start'} flex items-center justify-center p-2 sm:p-4`}
+              className={`finance-reel-snap-item ${scrollMode ? 'h-auto min-h-screen' : 'h-full snap-start'} flex items-center justify-center p-2 sm:p-4`}
             >
               <FinancePostCard 
                 post={post} 
@@ -401,93 +507,80 @@ const FinanceReelSection: React.FC = () => {
               />
             </div>
           ))}
+          
+          {/* Scroll End Indicator */}
+          {scrollMode && (
+            <div className="finance-reel-scroll-end">
+              <div className="finance-reel-scroll-end-icon">🎉</div>
+              <p>You've reached the end of the Finance Reels!</p>
+              <p className="text-sm opacity-70 mt-2">Keep scrolling to explore more content</p>
+            </div>
+          )}
         </div>
 
-        {/* Enhanced Floating Action Buttons - Right Side */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
-          <button 
-            onClick={() => handleLike(posts[current]?.id || '')}
-            className="text-white hover:text-pink-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg group"
-            title="Like"
-          >
-            <Heart size={24} className="group-hover:scale-110 transition-transform" />
-          </button>
-          <button 
-            onClick={() => handleComment(posts[current]?.id || '')}
-            className="text-white hover:text-blue-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg group"
-            title="Comment"
-          >
-            <MessageCircle size={24} className="group-hover:scale-110 transition-transform" />
-          </button>
-          <button 
-            onClick={() => handleShare(posts[current])}
-            className="text-white hover:text-green-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg group"
-            title="Share"
-          >
-            <Share2 size={24} className="group-hover:scale-110 transition-transform" />
-          </button>
-          <button 
-            onClick={() => handleBookmark(posts[current]?.id || '')}
-            className="text-white hover:text-yellow-400 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg group"
-            title="Bookmark"
-          >
-            <Bookmark size={24} className="group-hover:scale-110 transition-transform" />
-          </button>
-          <button className="text-white hover:text-gray-300 transition-colors p-3 rounded-full bg-black/40 hover:bg-black/70 shadow-lg group" title="More">
-            <MoreVertical size={24} className="group-hover:scale-110 transition-transform" />
-          </button>
-        </div>
-
-        {/* Enhanced Progress Dots - Left Side */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-20">
-          {posts.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setCurrent(idx);
-                scrollToPost(idx);
-              }}
-              className={`block w-3 h-3 rounded-full transition-all hover:scale-125 ${
-                idx === current 
-                  ? 'bg-blue-400 scale-125 shadow-lg' 
-                  : 'bg-white/60 hover:bg-white/80'
-              }`}
-              title={`Go to post ${idx + 1}`}
+        {/* Enhanced Scroll Progress Bar */}
+        {showScrollIndicator && scrollMode && (
+          <div className="finance-reel-scroll-progress">
+            <div 
+              className="finance-reel-scroll-progress-bar"
+              style={{ width: `${scrollProgress}%` }}
             />
-          ))}
-        </div>
-
-        {/* Enhanced Navigation Arrows */}
-        {current > 0 && (
-          <button
-            onClick={goPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110 group"
-            title="Previous Post"
-          >
-            <ChevronUp size={24} className="group-hover:scale-110 transition-transform" />
-          </button>
-        )}
-        
-        {current < posts.length - 1 && (
-          <button
-            onClick={goNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110 group"
-            title="Next Post"
-          >
-            <ChevronDown size={24} className="group-hover:scale-110 transition-transform" />
-          </button>
+          </div>
         )}
 
-        {/* Keyboard Shortcuts Help */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 bg-black/80 text-white text-xs px-3 py-2 rounded-lg opacity-70 hover:opacity-100 transition-opacity">
+        {/* Enhanced Scroll Direction Indicator */}
+        {scrollDirection && (
+          <div className="finance-reel-scroll-direction">
+            {scrollDirection === 'up' ? '↑ Scrolling Up' : '↓ Scrolling Down'}
+          </div>
+        )}
+
+        {/* Scroll Speed Indicator */}
+        {scrollMode && (
+          <div className="finance-reel-scroll-speed">
+            Speed: {scrollSpeed.charAt(0).toUpperCase() + scrollSpeed.slice(1)}
+          </div>
+        )}
+
+        {/* Infinite Scroll Indicator */}
+        {infiniteScroll && (
+          <div className="finance-reel-infinite-indicator">
+            <RefreshCw size={14} className="animate-spin" />
+            Infinite Scroll Active
+          </div>
+        )}
+
+        {/* Enhanced Keyboard Shortcuts Help */}
+        <div className="finance-reel-scroll-instructions">
           <div className="flex items-center gap-4">
             <span>↑↓ Navigate</span>
             <span>H Hide Nav</span>
             <span>A Auto-play</span>
-            <span>M Mute</span>
+            <span>I Infinite</span>
+            <span>S Speed</span>
             <span>ESC Exit</span>
           </div>
         </div>
+
+        {/* Quick Scroll Buttons */}
+        {scrollMode && (
+          <>
+            <button
+              onClick={scrollToTop}
+              className="absolute left-4 bottom-20 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110 group"
+              title="Scroll to Top"
+            >
+              <ChevronUp size={20} className="group-hover:scale-110 transition-transform" />
+            </button>
+            <button
+              onClick={scrollToBottom}
+              className="absolute left-4 bottom-32 z-20 bg-black/40 hover:bg-black/70 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110 group"
+              title="Scroll to Bottom"
+            >
+              <ChevronDown size={20} className="group-hover:scale-110 transition-transform" />
+            </button>
+          </>
+        )}
       </div>
     );
   }
@@ -495,7 +588,7 @@ const FinanceReelSection: React.FC = () => {
   return (
     <>
       <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 py-4 sm:py-8">
-        {/* Enhanced Header with Better Layout */}
+        {/* Enhanced Header with Scroll Controls */}
         <div className="absolute top-4 sm:top-6 left-0 right-0 z-30 px-4">
           <div className="flex items-center justify-between">
             {/* Left: Title and Description */}
@@ -509,6 +602,31 @@ const FinanceReelSection: React.FC = () => {
             
             {/* Right: Action Buttons */}
             <div className="flex items-center gap-2">
+              {/* Scroll Speed Controls */}
+              <div className="finance-reel-speed-controls">
+                <button
+                  onClick={() => setScrollSpeed('slow')}
+                  className={`finance-reel-speed-btn ${scrollSpeed === 'slow' ? 'active' : ''}`}
+                  title="Slow Scroll"
+                >
+                  Slow
+                </button>
+                <button
+                  onClick={() => setScrollSpeed('normal')}
+                  className={`finance-reel-speed-btn ${scrollSpeed === 'normal' ? 'active' : ''}`}
+                  title="Normal Scroll"
+                >
+                  Normal
+                </button>
+                <button
+                  onClick={() => setScrollSpeed('fast')}
+                  className={`finance-reel-speed-btn ${scrollSpeed === 'fast' ? 'active' : ''}`}
+                  title="Fast Scroll"
+                >
+                  Fast
+                </button>
+              </div>
+              
               <button
                 onClick={() => setIsFormOpen(true)}
                 className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all group"
@@ -525,7 +643,7 @@ const FinanceReelSection: React.FC = () => {
               </button>
               <button
                 onClick={toggleScrollMode}
-                className={`p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all group ${
+                className={`p-2 sm:p-3 rounded-full shadow-xl hover:scale-110 transition-all group finance-reel-scroll-toggle ${
                   scrollMode 
                     ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white' 
                     : 'bg-white/20 text-white hover:bg-white/30'
@@ -563,7 +681,7 @@ const FinanceReelSection: React.FC = () => {
                 }`}
                 title={category}
               >
-                {categorySymbols[category] || '📄'}
+                {getCategorySymbol(category)}
               </button>
             ))}
           </div>
@@ -664,6 +782,14 @@ const FinanceReelSection: React.FC = () => {
           <div className="text-white text-sm mt-4 opacity-70">
             {current + 1} of {posts.length} posts
           </div>
+
+          {/* Scroll Mode Indicator */}
+          {scrollMode && (
+            <div className="text-white text-xs mt-2 opacity-50 flex items-center gap-1">
+              <Scroll size={12} />
+              Scroll Mode Active
+            </div>
+          )}
         </div>
       </section>
 
