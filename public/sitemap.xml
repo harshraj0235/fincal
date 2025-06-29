@@ -3295,6 +3295,12 @@
 
   <!-- FinTech & Payments -->
   <url>
+    <loc>https://moneycal.in/calculators/lcm-hcf-calculator</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://moneycal.in/calculators/step-up-sip-calculator</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
