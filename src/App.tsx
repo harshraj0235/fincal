@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Layout } from './components/Layout';
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -56,6 +56,41 @@ import BankTools from './pages/BankTools';
 import FinancePostPage from './pages/FinancePostPage';
 
 function App() {
+  useEffect(() => {
+    // AdSense script
+    const adsenseScript = document.createElement('script');
+    adsenseScript.async = true;
+    adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6815277662449747';
+    adsenseScript.crossOrigin = 'anonymous';
+    document.head.appendChild(adsenseScript);
+
+    // Google tag (gtag.js)
+    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      const gtagScript = document.createElement('script');
+      gtagScript.async = true;
+      gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8HGE6528Q4';
+      document.head.appendChild(gtagScript);
+
+      const inlineScript = document.createElement('script');
+      inlineScript.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8HGE6528Q4');
+      `;
+      document.head.appendChild(inlineScript);
+
+      return () => {
+        if (document.head.contains(gtagScript)) document.head.removeChild(gtagScript);
+        if (document.head.contains(inlineScript)) document.head.removeChild(inlineScript);
+        if (document.head.contains(adsenseScript)) document.head.removeChild(adsenseScript);
+      };
+    }
+    return () => {
+      if (document.head.contains(adsenseScript)) document.head.removeChild(adsenseScript);
+    };
+  }, []);
+
   return (
     <>
       <Routes>
