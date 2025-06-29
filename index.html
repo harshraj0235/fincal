@@ -9,6 +9,10 @@
     <meta name="theme-color" content="#2563eb" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6815277662449747"
+     crossorigin="anonymous"></script>
+    
     <!-- Primary Meta Tags -->
     <title>FinanceGurus - India's #1 Financial Calculators & Tools | EMI, SIP, Tax, Investment</title>
     <meta name="title" content="FinanceGurus - India's #1 Financial Calculators & Tools | EMI, SIP, Tax, Investment" />
@@ -198,9 +202,77 @@
   <body>
     <div id="root"></div>
     <div id="google_translate_element" style="display:none;"></div>
+    
+    <!-- Google Translate -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'hi,ta,te,kn,ml,gu,bn,pa,or,mr,ne,si,ur,ar,zh-CN,ja,ko,fr,de,es,pt,it,ru',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- TypeScript -->
     <script type="module" src="/src/main.tsx"></script>
-    <!-- start webpushr code -->
-    <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BJsjp1TFIvB-fa6q0Ys03SnKYsZ4HqYe2opEVP1ii5gv6_SpiNldeNlXE26gXgCHbP5UEmTnLEkG_oHlOpk2vxU' });</script>
-    <!-- end webpushr code -->
+    
+    <!-- Structured Data for BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://financegurus.directory"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculators",
+          "item": "https://financegurus.directory/calculators"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data for FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to calculate EMI for a loan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use our EMI calculator by entering the loan amount, interest rate, and tenure. The calculator will show you the monthly EMI amount and total interest payable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is SIP and how to calculate returns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SIP (Systematic Investment Plan) is a method of investing a fixed amount regularly in mutual funds. Use our SIP calculator to estimate returns based on your monthly investment amount, expected return rate, and investment period."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to calculate income tax for FY 2024-25?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use our income tax calculator by entering your total income, deductions, and tax regime preference (old or new). The calculator will show your tax liability and effective tax rate."
+          }
+        }
+      ]
+    }
+    </script>
   </body>
 </html> 
