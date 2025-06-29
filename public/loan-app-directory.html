@@ -1,791 +1,792 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indian Loan App Directory | MoneyCalc India</title>
-  <meta name="description" content="Comprehensive directory of trusted loan apps in India. Compare interest rates, eligibility criteria, and application processes for personal, student, and business loans.">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#2563eb">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .app-card {
-      transition: all 0.3s ease;
-      border: 1px solid #e2e8f0;
-    }
-    
-    .app-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      border-color: #3b82f6;
-    }
-    
-    .rating-stars {
-      color: #f59e0b;
-    }
-    
-    .feature-badge {
-      background-color: #f0f9ff;
-      color: #0369a1;
-      font-size: 0.75rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 9999px;
-      font-weight: 500;
-    }
-    
-    .loan-type-badge {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 9999px;
-      font-weight: 500;
-    }
-    
-    .personal-loan {
-      background-color: #ecfdf5;
-      color: #047857;
-    }
-    
-    .business-loan {
-      background-color: #eff6ff;
-      color: #1d4ed8;
-    }
-    
-    .student-loan {
-      background-color: #fef3c7;
-      color: #92400e;
-    }
-    
-    .home-loan {
-      background-color: #f3e8ff;
-      color: #7e22ce;
-    }
-    
-    .payday-loan {
-      background-color: #fef2f2;
-      color: #b91c1c;
-    }
-    
-    .filter-button {
-      transition: all 0.2s ease;
-    }
-    
-    .filter-button.active {
-      background-color: #3b82f6;
-      color: white;
-    }
-    
-    .comparison-table th, .comparison-table td {
-      padding: 0.75rem 1rem;
-      text-align: left;
-    }
-    
-    .comparison-table th {
-      background-color: #f8fafc;
-      font-weight: 600;
-    }
-    
-    .comparison-table tr:nth-child(even) {
-      background-color: #f1f5f9;
-    }
-    
-    .tooltip {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 200px;
-      background-color: #1e293b;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 8px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 0.75rem;
-    }
-    
-    .tooltip .tooltiptext::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: #1e293b transparent transparent transparent;
-    }
-    
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-    
-    .scroll-smooth {
-      scroll-behavior: smooth;
-    }
-    
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: #f1f5f9;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: #94a3b8;
-      border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: #64748b;
-    }
-    
-    /* Loan process steps */
-    .step-container {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-    
-    .step-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 15px;
-      width: 2px;
-      background-color: #e2e8f0;
-      z-index: 0;
-    }
-    
-    .step {
-      display: flex;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 1.5rem;
-    }
-    
-    .step-number {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background-color: #3b82f6;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      margin-right: 1rem;
-      flex-shrink: 0;
-    }
-    
-    .step-content {
-      padding-bottom: 1rem;
-    }
-    
-    /* Eligibility calculator styles */
-    .slider {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 8px;
-      border-radius: 5px;
-      background: #e2e8f0;
-      outline: none;
-    }
-    
-    .slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #3b82f6;
-      cursor: pointer;
-    }
-    
-    .slider::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #3b82f6;
-      cursor: pointer;
-    }
-  </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6815277662449747" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan App Directory - MoneyCal.in</title>
+    <meta name="description" content="Comprehensive directory of trusted loan apps in India. Compare interest rates, eligibility criteria, and application processes for personal, student, and business loans.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#2563eb">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .app-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+        
+        .rating-stars {
+            color: #f59e0b;
+        }
+        
+        .feature-badge {
+            background-color: #f0f9ff;
+            color: #0369a1;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        
+        .loan-type-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        
+        .personal-loan {
+            background-color: #ecfdf5;
+            color: #047857;
+        }
+        
+        .business-loan {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+        }
+        
+        .student-loan {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .home-loan {
+            background-color: #f3e8ff;
+            color: #7e22ce;
+        }
+        
+        .payday-loan {
+            background-color: #fef2f2;
+            color: #b91c1c;
+        }
+        
+        .filter-button {
+            transition: all 0.2s ease;
+        }
+        
+        .filter-button.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f1f5f9;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+        }
+        
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1e293b transparent transparent transparent;
+        }
+        
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+        
+        /* Loan process steps */
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .step-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 15px;
+            width: 2px;
+            background-color: #e2e8f0;
+            z-index: 0;
+        }
+        
+        .step {
+            display: flex;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            padding-bottom: 1rem;
+        }
+        
+        /* Eligibility calculator styles */
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #e2e8f0;
+            outline: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 scroll-smooth">
-  <header class="bg-white shadow-md py-4">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <a href="/" class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-          <line x1="8" y1="21" x2="16" y2="21"></line>
-          <line x1="12" y1="17" x2="12" y2="21"></line>
-        </svg>
-        <span class="text-xl font-bold text-neutral-900">FinCalc India</span>
-      </a>
-      
-      <nav class="hidden md:flex items-center space-x-6">
-        <a href="/" class="text-neutral-700 hover:text-blue-600 transition-colors">Home</a>
-        <a href="/blog" class="text-neutral-700 hover:text-blue-600 transition-colors">Blog</a>
-        <a href="/about-us" class="text-neutral-700 hover:text-blue-600 transition-colors">About</a>
-        <a href="/contact-us" class="text-neutral-700 hover:text-blue-600 transition-colors">Contact</a>
-      </nav>
-      
-      <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-neutral-700 p-2 rounded-full hover:bg-neutral-100">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-    
-    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 py-2">
-      <div class="container mx-auto px-4 space-y-2">
-        <a href="/" class="block py-2 text-neutral-700 hover:text-blue-600 transition-colors">Home</a>
-        <a href="/blog" class="block py-2 text-neutral-700 hover:text-blue-600 transition-colors">Blog</a>
-        <a href="/about-us" class="block py-2 text-neutral-700 hover:text-blue-600 transition-colors">About</a>
-        <a href="/contact-us" class="block py-2 text-neutral-700 hover:text-blue-600 transition-colors">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Indian Loan App Directory</h1>
-        <p class="text-xl max-w-3xl mx-auto mb-8">Compare trusted loan apps in India, understand eligibility criteria, and learn how to apply for personal, student, and business loans through mobile applications.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="#loan-apps" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-            Explore Loan Apps
-          </a>
-          <a href="#loan-process" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
-            Loan Application Process
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quick Navigation -->
-    <section class="py-8 bg-white shadow-md">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="#personal-loans" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Personal Loans</a>
-          <a href="#business-loans" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Business Loans</a>
-          <a href="#student-loans" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Student Loans</a>
-          <a href="#payday-loans" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Payday Loans</a>
-          <a href="#eligibility-calculator" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Eligibility Calculator</a>
-          <a href="#comparison" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">App Comparison</a>
-          <a href="#safety-tips" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Safety Tips</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Loan Apps Section -->
-    <section id="loan-apps" class="py-16">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Top Loan Apps in India</h2>
-        
-        <!-- Filter Buttons -->
-        <div class="mb-8 flex flex-wrap justify-center gap-3">
-          <button class="filter-button active px-4 py-2 rounded-lg text-sm font-medium" data-filter="all">All Loans</button>
-          <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="personal-loan">Personal Loans</button>
-          <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="business-loan">Business Loans</button>
-          <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="student-loan">Student Loans</button>
-          <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="home-loan">Home Loans</button>
-          <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="payday-loan">Payday Loans</button>
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <span class="text-xl font-bold text-neutral-900">FinCalc India</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="/" class="text-neutral-700 hover:text-blue-600 transition-colors">Home</a>
+                <a href="/blog" class="text-neutral-700 hover:text-blue-600 transition-colors">Blog</a>
+                <a href="/about-us" class="text-neutral-700 hover:text-blue-600 transition-colors">About</a>
+                <a href="/contact-us" class="text-neutral-700 hover:text-blue-600 transition-colors">Contact</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-neutral-700 p-2 rounded-full hover:bg-neutral-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
         
-        <!-- App Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- App 1: Bajaj Finserv -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan business-loan">
-            <div class="h-40 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">Bajaj Finserv</h3>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 py-2">
+            <div class="container mx-auto px-4 space-y-2">
+                <a href="/" class="block py-2 text-neutral-700 hover:text-blue-600 transition-colors">Home</a>
+                <a href="/blog" class="block py-2 text-neutral-700 hover:text-blue-600 transition-colors">Blog</a>
+                <a href="/about-us" class="block py-2 text-neutral-700 hover:text-blue-600 transition-colors">About</a>
+                <a href="/contact-us" class="block py-2 text-neutral-700 hover:text-blue-600 transition-colors">Contact</a>
             </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★★</div>
-                <div class="text-sm text-gray-500">4.5/5 (50K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge personal-loan">Personal Loan</span>
-                <span class="loan-type-badge business-loan">Business Loan</span>
-                <span class="feature-badge">Instant Approval</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">10.99% - 16% p.a.</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹30,000 - ₹50 Lakhs</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">Up to 4%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">12 - 60 months</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#bajaj-finserv-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.bajajfinserv.in/personal-loan" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 2: HDFC Bank -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan home-loan">
-            <div class="h-40 bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">HDFC Bank</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★★</div>
-                <div class="text-sm text-gray-500">4.7/5 (100K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge personal-loan">Personal Loan</span>
-                <span class="loan-type-badge home-loan">Home Loan</span>
-                <span class="feature-badge">Pre-approved Offers</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">10.5% - 15.5% p.a.</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹50,000 - ₹40 Lakhs</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">Up to 2.5%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">12 - 60 months</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#hdfc-bank-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.hdfcbank.com/personal/products/loans/personal-loan" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 3: mPokket -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="student-loan payday-loan">
-            <div class="h-40 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">mPokket</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★☆</div>
-                <div class="text-sm text-gray-500">4.2/5 (30K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge student-loan">Student Loan</span>
-                <span class="loan-type-badge payday-loan">Payday Loan</span>
-                <span class="feature-badge">No Credit Score</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">0% - 3% per month</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹500 - ₹30,000</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">Varies</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">7 - 90 days</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#mpokket-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.mpokket.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 4: Tata Capital -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan business-loan home-loan">
-            <div class="h-40 bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">Tata Capital</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★☆</div>
-                <div class="text-sm text-gray-500">4.3/5 (25K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge personal-loan">Personal Loan</span>
-                <span class="loan-type-badge business-loan">Business Loan</span>
-                <span class="loan-type-badge home-loan">Home Loan</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">10.99% - 18% p.a.</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹75,000 - ₹35 Lakhs</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">Up to 3%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">12 - 72 months</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#tata-capital-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.tatacapital.com/personal-loan.html" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 5: Credenc -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="student-loan">
-            <div class="h-40 bg-gradient-to-r from-yellow-500 to-yellow-700 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">Credenc</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★☆</div>
-                <div class="text-sm text-gray-500">4.1/5 (5K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge student-loan">Student Loan</span>
-                <span class="feature-badge">Education Focused</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">9.5% - 14% p.a.</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">Up to ₹50 Lakhs</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">1% - 2%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">Up to 10 years</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#credenc-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.credenc.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 6: Fibe (EarlySalary) -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan payday-loan">
-            <div class="h-40 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">Fibe (EarlySalary)</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★☆</div>
-                <div class="text-sm text-gray-500">4.2/5 (40K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge personal-loan">Personal Loan</span>
-                <span class="loan-type-badge payday-loan">Salary Advance</span>
-                <span class="feature-badge">Instant Disbursal</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">2.5% - 3% per month</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹8,000 - ₹5 Lakhs</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">0% - 2%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">3 - 12 months</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#fibe-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.fibe.in/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 7: Lendingkart -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="business-loan">
-            <div class="h-40 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">Lendingkart</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★☆</div>
-                <div class="text-sm text-gray-500">4.0/5 (15K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge business-loan">Business Loan</span>
-                <span class="feature-badge">MSME Focused</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">16% - 24% p.a.</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹50,000 - ₹2 Crores</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">1% - 3%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">3 - 36 months</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#lendingkart-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.lendingkart.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 8: StashFin -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan payday-loan">
-            <div class="h-40 bg-gradient-to-r from-orange-500 to-orange-700 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">StashFin</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★☆☆</div>
-                <div class="text-sm text-gray-500">3.8/5 (20K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge personal-loan">Personal Loan</span>
-                <span class="loan-type-badge payday-loan">Credit Line</span>
-                <span class="feature-badge">Digital Card</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">2.5% - 3.5% per month</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹5,000 - ₹5 Lakhs</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">Up to 5%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">3 - 24 months</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#stashfin-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.stashfin.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 9: Incred -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan student-loan">
-            <div class="h-40 bg-gradient-to-r from-teal-500 to-teal-700 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">Incred</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★☆</div>
-                <div class="text-sm text-gray-500">4.0/5 (10K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge personal-loan">Personal Loan</span>
-                <span class="loan-type-badge student-loan">Education Loan</span>
-                <span class="feature-badge">Flexible Repayment</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">11.99% - 20% p.a.</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹50,000 - ₹25 Lakhs</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">Up to 3%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">12 - 48 months</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#incred-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.incred.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 10: Kreditbee -->
-          <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan payday-loan">
-            <div class="h-40 bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center p-6">
-              <h3 class="text-2xl font-bold text-white text-center">KreditBee</h3>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <div class="rating-stars">★★★★☆</div>
-                <div class="text-sm text-gray-500">4.0/5 (35K+ reviews)</div>
-              </div>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="loan-type-badge personal-loan">Personal Loan</span>
-                <span class="loan-type-badge payday-loan">Short-term Loan</span>
-                <span class="feature-badge">Quick Disbursal</span>
-              </div>
-              
-              <div class="space-y-3 mb-6">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Interest Rate</span>
-                  <span class="font-medium">0% - 3% per month</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Loan Amount</span>
-                  <span class="font-medium">₹1,000 - ₹4 Lakhs</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Processing Fee</span>
-                  <span class="font-medium">Up to 6%</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Tenure</span>
-                  <span class="font-medium">2 - 15 months</span>
-                </div>
-              </div>
-              
-              <div class="flex justify-between items-center">
-                <a href="#kreditbee-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
-                <a href="https://www.kreditbee.in/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Loan Process Section -->
-    <section id="loan-process" class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">How to Apply for a Loan Through Apps</h2>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <div class="step-container">
-              <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                  <h3 class="text-xl font-semibold mb-2">Download the App</h3>
-                  <p class="text-gray-600">Download the loan app from Google Play Store or Apple App Store. Make sure to verify the authenticity of the app by checking the developer name and reviews.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Indian Loan App Directory</h1>
+                <p class="text-xl max-w-3xl mx-auto mb-8">Compare trusted loan apps in India, understand eligibility criteria, and learn how to apply for personal, student, and business loans through mobile applications.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#loan-apps" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                        Explore Loan Apps
+                    </a>
+                    <a href="#loan-process" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                        Loan Application Process
+                    </a>
                 </div>
-              </div>
-              
-              <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                  <h3 class="text-xl font-semibold mb-2">Register & Complete KYC</h3>
-                  <p class="text-gray-600">Create an account using your mobile number and email. Complete the KYC process by providing your Aadhaar, PAN, and other required documents.</p>
+            </div>
+        </section>
+
+        <!-- Quick Navigation -->
+        <section class="py-8 bg-white shadow-md">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#personal-loans" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Personal Loans</a>
+                    <a href="#business-loans" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Business Loans</a>
+                    <a href="#student-loans" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Student Loans</a>
+                    <a href="#payday-loans" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Payday Loans</a>
+                    <a href="#eligibility-calculator" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Eligibility Calculator</a>
+                    <a href="#comparison" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">App Comparison</a>
+                    <a href="#safety-tips" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors">Safety Tips</a>
                 </div>
-              </div>
-              
-              <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                  <h3 class="text-xl font-semibold mb-2">Enter Loan Details</h3>
-                  <p class="text-gray-600">Specify the loan amount you need, the purpose of the loan, and your preferred repayment tenure.</p>
+            </div>
+        </section>
+
+        <!-- Loan Apps Section -->
+        <section id="loan-apps" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Top Loan Apps in India</h2>
+                
+                <!-- Filter Buttons -->
+                <div class="mb-8 flex flex-wrap justify-center gap-3">
+                    <button class="filter-button active px-4 py-2 rounded-lg text-sm font-medium" data-filter="all">All Loans</button>
+                    <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="personal-loan">Personal Loans</button>
+                    <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="business-loan">Business Loans</button>
+                    <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="student-loan">Student Loans</button>
+                    <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="home-loan">Home Loans</button>
+                    <button class="filter-button px-4 py-2 rounded-lg text-sm font-medium" data-filter="payday-loan">Payday Loans</button>
                 </div>
-              </div>
-              
-              <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                  <h3 class="text-xl font-semibold mb-2">Provide Additional Information</h3>
+                
+                <!-- App Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- App 1: Bajaj Finserv -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan business-loan">
+                        <div class="h-40 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">Bajaj Finserv</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★★</div>
+                                <div class="text-sm text-gray-500">4.5/5 (50K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge personal-loan">Personal Loan</span>
+                                <span class="loan-type-badge business-loan">Business Loan</span>
+                                <span class="feature-badge">Instant Approval</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">10.99% - 16% p.a.</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹30,000 - ₹50 Lakhs</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">Up to 4%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">12 - 60 months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#bajaj-finserv-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.bajajfinserv.in/personal-loan" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 2: HDFC Bank -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan home-loan">
+                        <div class="h-40 bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">HDFC Bank</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★★</div>
+                                <div class="text-sm text-gray-500">4.7/5 (100K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge personal-loan">Personal Loan</span>
+                                <span class="loan-type-badge home-loan">Home Loan</span>
+                                <span class="feature-badge">Pre-approved Offers</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">10.5% - 15.5% p.a.</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹50,000 - ₹40 Lakhs</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">Up to 2.5%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">12 - 60 months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#hdfc-bank-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.hdfcbank.com/personal/products/loans/personal-loan" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 3: mPokket -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="student-loan payday-loan">
+                        <div class="h-40 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">mPokket</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★☆</div>
+                                <div class="text-sm text-gray-500">4.2/5 (30K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge student-loan">Student Loan</span>
+                                <span class="loan-type-badge payday-loan">Payday Loan</span>
+                                <span class="feature-badge">No Credit Score</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">0% - 3% per month</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹500 - ₹30,000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">Varies</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">7 - 90 days</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#mpokket-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.mpokket.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 4: Tata Capital -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan business-loan home-loan">
+                        <div class="h-40 bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">Tata Capital</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★☆</div>
+                                <div class="text-sm text-gray-500">4.3/5 (25K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge personal-loan">Personal Loan</span>
+                                <span class="loan-type-badge business-loan">Business Loan</span>
+                                <span class="loan-type-badge home-loan">Home Loan</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">10.99% - 18% p.a.</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹75,000 - ₹35 Lakhs</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">Up to 3%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">12 - 72 months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#tata-capital-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.tatacapital.com/personal-loan.html" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 5: Credenc -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="student-loan">
+                        <div class="h-40 bg-gradient-to-r from-yellow-500 to-yellow-700 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">Credenc</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★☆</div>
+                                <div class="text-sm text-gray-500">4.1/5 (5K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge student-loan">Student Loan</span>
+                                <span class="feature-badge">Education Focused</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">9.5% - 14% p.a.</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">Up to ₹50 Lakhs</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">1% - 2%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">Up to 10 years</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#credenc-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.credenc.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 6: Fibe (EarlySalary) -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan payday-loan">
+                        <div class="h-40 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">Fibe (EarlySalary)</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★☆</div>
+                                <div class="text-sm text-gray-500">4.2/5 (40K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge personal-loan">Personal Loan</span>
+                                <span class="loan-type-badge payday-loan">Salary Advance</span>
+                                <span class="feature-badge">Instant Disbursal</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">2.5% - 3% per month</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹8,000 - ₹5 Lakhs</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">0% - 2%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">3 - 12 months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#fibe-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.fibe.in/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 7: Lendingkart -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="business-loan">
+                        <div class="h-40 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">Lendingkart</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★☆</div>
+                                <div class="text-sm text-gray-500">4.0/5 (15K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge business-loan">Business Loan</span>
+                                <span class="feature-badge">MSME Focused</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">16% - 24% p.a.</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹50,000 - ₹2 Crores</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">1% - 3%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">3 - 36 months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#lendingkart-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.lendingkart.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 8: StashFin -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan payday-loan">
+                        <div class="h-40 bg-gradient-to-r from-orange-500 to-orange-700 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">StashFin</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★☆☆</div>
+                                <div class="text-sm text-gray-500">3.8/5 (20K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge personal-loan">Personal Loan</span>
+                                <span class="loan-type-badge payday-loan">Credit Line</span>
+                                <span class="feature-badge">Digital Card</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">2.5% - 3.5% per month</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹5,000 - ₹5 Lakhs</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">Up to 5%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">3 - 24 months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#stashfin-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.stashfin.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 9: Incred -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan student-loan">
+                        <div class="h-40 bg-gradient-to-r from-teal-500 to-teal-700 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">Incred</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★☆</div>
+                                <div class="text-sm text-gray-500">4.0/5 (10K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge personal-loan">Personal Loan</span>
+                                <span class="loan-type-badge student-loan">Education Loan</span>
+                                <span class="feature-badge">Flexible Repayment</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">11.99% - 20% p.a.</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹50,000 - ₹25 Lakhs</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">Up to 3%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">12 - 48 months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#incred-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.incred.com/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App 10: Kreditbee -->
+                    <div class="app-card bg-white rounded-xl overflow-hidden shadow-md" data-category="personal-loan payday-loan">
+                        <div class="h-40 bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center p-6">
+                            <h3 class="text-2xl font-bold text-white text-center">KreditBee</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="rating-stars">★★★★☆</div>
+                                <div class="text-sm text-gray-500">4.0/5 (35K+ reviews)</div>
+                            </div>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="loan-type-badge personal-loan">Personal Loan</span>
+                                <span class="loan-type-badge payday-loan">Short-term Loan</span>
+                                <span class="feature-badge">Quick Disbursal</span>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Interest Rate</span>
+                                    <span class="font-medium">0% - 3% per month</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Loan Amount</span>
+                                    <span class="font-medium">₹1,000 - ₹4 Lakhs</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Processing Fee</span>
+                                    <span class="font-medium">Up to 6%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Tenure</span>
+                                    <span class="font-medium">2 - 15 months</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="#kreditbee-details" class="text-blue-600 hover:text-blue-800 font-medium">View Details</a>
+                                <a href="https://www.kreditbee.in/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loan Process Section -->
+        <section id="loan-process" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">How to Apply for a Loan Through Apps</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <div class="step-container">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3 class="text-xl font-semibold mb-2">Download the App</h3>
+                                    <p class="text-gray-600">Download the loan app from Google Play Store or Apple App Store. Make sure to verify the authenticity of the app by checking the developer name and reviews.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3 class="text-xl font-semibold mb-2">Register & Complete KYC</h3>
+                                    <p class="text-gray-600">Create an account using your mobile number and email. Complete the KYC process by providing your Aadhaar, PAN, and other required documents.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3 class="text-xl font-semibold mb-2">Enter Loan Details</h3>
+                                    <p class="text-gray-600">Specify the loan amount you need, the purpose of the loan, and your preferred repayment tenure.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3 class="text-xl font-semibold mb-2">Provide Additional Information</h3>
                   <p class="text-gray-600">Enter your employment details, income information, and existing loan obligations. Some apps may require bank statement access.</p>
                 </div>
               </div>
