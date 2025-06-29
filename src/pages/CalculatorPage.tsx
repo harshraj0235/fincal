@@ -66,6 +66,9 @@ import { ForexPipCalculator } from '../calculators/ForexPipCalculator';
 import { SavingsAccountCalculator } from '../calculators/SavingsAccountCalculator';
 import { CurrencyConverter } from '../calculators/CurrencyConverter';
 
+// Import Math & Education Calculators
+import LcmHcfCalculator from '../calculators/LcmHcfCalculator';
+
 // Import FinTech & Payments calculators
 import { StepUpSipCalculator } from '../calculators/StepUpSipCalculator';
 import { InflationAdjustedSipCalculator } from '../calculators/InflationAdjustedSipCalculator';
@@ -396,6 +399,10 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <CryptoTaxEstimator />;
       case 'nri-stock-investment-dashboard':
         return <NriStockInvestmentDashboard />;
+        
+      // Math & Education Calculators
+      case 'lcm-hcf-calculator':
+        return <LcmHcfCalculator />;
         
       default:
         return (

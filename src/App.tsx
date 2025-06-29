@@ -55,6 +55,9 @@ import ChequeBounceChargesCalculator from './pages/ChequeBounceChargesCalculator
 import BankTools from './pages/BankTools';
 import FinancePostPage from './pages/FinancePostPage';
 
+// Math & Education Calculators
+import LcmHcfCalculator from './calculators/LcmHcfCalculator';
+
 function App() {
   useEffect(() => {
     // AdSense script
@@ -105,6 +108,9 @@ function App() {
               <Route path="/" element={<Home />} />
 
               <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
+
+              {/* Math & Education Calculators */}
+              <Route path="/calculators/lcm-hcf-calculator" element={<LcmHcfCalculator />} />
 
               {calculatorCategories.flatMap(category =>
                 category.calculators.map(calculator => (
