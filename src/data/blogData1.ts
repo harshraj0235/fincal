@@ -46085,9 +46085,6 @@ export const blogPosts: BlogPost[] = [
       }
     ]
   },
-  
-
-  
   {
     id: 396,
     title: "Best Digital Banking Apps in India: Complete Features Comparison Guide",
