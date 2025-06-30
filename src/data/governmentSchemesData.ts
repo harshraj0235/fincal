@@ -30705,7 +30705,7 @@ export const governmentSchemes: GovernmentScheme[] = [
     category: 'Employment & Jobs',
     categoryHindi: 'रोजगार और नौकरी',
     status: 'active',
-    launchDate: '2021-08-26',
+    launchDate: '2025-08-26',
     lastUpdated: '2025-06-30',
     targetAudience: ['Unorganized Workers', 'Migrant Workers', 'Construction Workers', 'Domestic Workers'],
     benefits: [
