@@ -1,4 +1,4 @@
-export interface GovernmentScheme {
+ export interface GovernmentScheme {
   id: string;
   slug: string;
   title: string;
