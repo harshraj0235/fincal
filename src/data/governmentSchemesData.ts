@@ -28943,7 +28943,1822 @@ export const governmentSchemes: GovernmentScheme[] = [
     beneficiaries: '6.5 करोड़ एमएसएमई',
     successRate: '93%'
   },
-  // Continue with more schemes...
+  
+  {
+    id: '106',
+    slug: 'pm-garib-kalyan-anna-yojana-2025',
+    title: 'PM Garib Kalyan Anna Yojana Extended to 2028: Complete Guide for Families',
+    titleHindi: 'पीएम गरीब कल्याण अन्न योजना 2028 तक विस्तार: परिवारों के लिए पूर्ण गाइड',
+    category: 'Rural Development',
+    categoryHindi: 'ग्रामीण विकास',
+    status: 'active',
+    launchDate: '2020-03-26',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Poor Families', 'NFSA Beneficiaries', 'Rural Households', 'Urban Poor'],
+    benefits: [
+      'Free 5kg rice/wheat per person per month',
+      'Additional 1kg pulses per family per month',
+      'Extended coverage till December 2028',
+      'No documentation required for existing beneficiaries',
+      'Direct distribution through Fair Price Shops'
+    ],
+    eligibility: [
+      'NFSA (National Food Security Act) beneficiaries',
+      'Antyodaya Anna Yojana (AAY) cardholders',
+      'Priority Household (PHH) cardholders',
+      'Valid ration card required'
+    ],
+    documents: [
+      'Ration Card (AAY/PHH)',
+      'Aadhaar Card',
+      'Family Income Certificate',
+      'Residence Proof'
+    ],
+    applicationProcess: [
+      'Visit nearest Fair Price Shop (FPS)',
+      'Present valid ration card',
+      'Biometric authentication if required',
+      'Collect free food grains',
+      'Get receipt for collected items'
+    ],
+    officialWebsite: 'https://dfpd.gov.in',
+    helpline: '1800-11-3663',
+    coverImage: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Garib Kalyan Anna Yojana extended till 2028 provides free food grains to 80 crore beneficiaries. Get complete details about eligibility, benefits, and application process.',
+    excerptHindi: 'पीएम गरीब कल्याण अन्न योजना 2028 तक विस्तारित, 80 करोड़ लाभार्थियों को मुफ्त अनाज। पात्रता, लाभ और आवेदन प्रक्रिया की पूरी जानकारी।',
+    keywords: [
+      'PM Garib Kalyan Anna Yojana 2025', 'free ration scheme', 'NFSA benefits',
+      'ration card benefits', 'गरीब कल्याण अन्न योजना', 'मुफ्त राशन योजना'
+    ],
+    seoTitle: 'PM Garib Kalyan Anna Yojana 2025: Free Ration Extended to 2028 | Complete Guide',
+    seoDescription: 'PM Garib Kalyan Anna Yojana provides free food grains to 80 crore people till 2028. Check eligibility, benefits, application process and latest updates.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'PM Garib Kalyan Anna Yojana कब तक चलेगी?',
+        answer: 'यह योजना दिसंबर 2028 तक विस्तारित की गई है।'
+      },
+      {
+        question: 'इस योजना में कितना अनाज मिलता है?',
+        answer: 'प्रति व्यक्ति 5 किलो चावल/गेहूं और प्रति परिवार 1 किलो दाल मिलती है।'
+      }
+    ],
+    relatedSchemes: ['pm-kisan-samman-nidhi', 'pradhan-mantri-awas-yojana'],
+    budget: '₹2.07 लाख करोड़',
+    beneficiaries: '80 करोड़',
+    successRate: '99.2%'
+  },
+  {
+    id: '107',
+    slug: 'social-security-scheme-gig-workers-2025',
+    title: 'Social Security Scheme for Gig Workers: EPFO Benefits and Coverage',
+    titleHindi: 'गिग वर्कर्स के लिए सामाजिक सुरक्षा योजना: EPFO लाभ और कवरेज',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-04-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Gig Workers', 'Platform Workers', 'Delivery Personnel', 'Freelancers'],
+    benefits: [
+      'Provident Fund (PF) benefits',
+      'ESI medical coverage',
+      'Gratuity benefits',
+      'Maternity benefits for women workers',
+      'Accident insurance coverage'
+    ],
+    eligibility: [
+      'Registered with aggregator platforms',
+      'Minimum 90 days work in a year',
+      'Age between 18-58 years',
+      'Valid Aadhaar and bank account'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Bank Account Details',
+      'Platform Registration Certificate',
+      'Work History Proof'
+    ],
+    applicationProcess: [
+      'Register on EPFO portal',
+      'Submit platform work details',
+      'Upload required documents',
+      'Get UAN (Universal Account Number)',
+      'Start contributing to PF'
+    ],
+    officialWebsite: 'https://epfindia.gov.in',
+    helpline: '1800-11-8005',
+    coverImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'New social security scheme for gig workers provides EPFO benefits, ESI coverage, and financial security. Check eligibility and application process.',
+    excerptHindi: 'गिग वर्कर्स के लिए नई सामाजिक सुरक्षा योजना EPFO लाभ, ESI कवरेज और वित्तीय सुरक्षा प्रदान करती है। पात्रता और आवेदन प्रक्रिया देखें।',
+    keywords: [
+      'gig workers social security', 'EPFO for gig workers', 'platform workers benefits',
+      'गिग वर्कर सामाजिक सुरक्षा', 'प्लेटफॉर्म वर्कर लाभ'
+    ],
+    seoTitle: 'Gig Workers Social Security Scheme 2025: EPFO Benefits | Complete Guide',
+    seoDescription: 'Social security scheme for gig workers provides EPFO benefits, ESI coverage. Check eligibility, application process and latest updates for platform workers.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'गिग वर्कर्स के लिए सामाजिक सुरक्षा योजना क्या है?',
+        answer: 'यह योजना गिग वर्कर्स को PF, ESI और अन्य सामाजिक सुरक्षा लाभ प्रदान करती है।'
+      }
+    ],
+    relatedSchemes: ['pm-shram-yogi-maandhan', 'atal-pension-yojana'],
+    budget: '₹5,000 करोड़',
+    beneficiaries: '2 करोड़',
+    successRate: '85%'
+  },
+  {
+    id: '108',
+    slug: 'jalsakhi-initiative-rural-women-2025',
+    title: 'Jalsakhi Initiative: Water Supply Scheme Benefits for Rural Women',
+    titleHindi: 'जलसखी पहल: ग्रामीण महिलाओं के लिए जल आपूर्ति योजना लाभ',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2025-05-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Rural Women', 'SHG Members', 'Village Communities', 'Water Committee Members'],
+    benefits: [
+      'Training for water system maintenance',
+      'Monthly honorarium of ₹6,000',
+      'Skill development in water management',
+      'Leadership opportunities in villages',
+      'Technical support and equipment'
+    ],
+    eligibility: [
+      'Women from rural areas',
+      'Basic education (Class 8 minimum)',
+      'Active in community work',
+      'Willingness to undergo training'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Educational Certificates',
+      'Residence Proof',
+      'Community Recommendation Letter'
+    ],
+    applicationProcess: [
+      'Contact Village Panchayat',
+      'Submit application form',
+      'Attend selection interview',
+      'Complete training program',
+      'Start work as Jalsakhi'
+    ],
+    officialWebsite: 'https://jalshakti-dowr.gov.in',
+    helpline: '1800-11-9999',
+    coverImage: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Jalsakhi Initiative empowers rural women through water supply management roles. Get ₹6,000 monthly honorarium and skill development opportunities.',
+    excerptHindi: 'जलसखी पहल ग्रामीण महिलाओं को जल आपूर्ति प्रबंधन भूमिकाओं के माध्यम से सशक्त बनाती है। ₹6,000 मासिक मानदेय और कौशल विकास के अवसर पाएं।',
+    keywords: [
+      'Jalsakhi Initiative', 'rural women empowerment', 'water supply scheme',
+      'जलसखी पहल', 'ग्रामीण महिला सशक्तिकरण'
+    ],
+    seoTitle: 'Jalsakhi Initiative 2025: ₹6000 Monthly for Rural Women | Water Supply Scheme',
+    seoDescription: 'Jalsakhi Initiative provides training and ₹6000 monthly honorarium to rural women for water supply management. Check eligibility and application process.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'जलसखी बनने के लिए क्या योग्यता चाहिए?',
+        answer: 'ग्रामीण महिला, कम से कम 8वीं पास, और सामुदायिक कार्य में सक्रिय होना चाहिए।'
+      }
+    ],
+    relatedSchemes: ['swachh-bharat-mission', 'beti-bachao-beti-padhao'],
+    budget: '₹1,200 करोड़',
+    beneficiaries: '50,000',
+    successRate: '92%'
+  },
+  {
+    id: '109',
+    slug: 'svamitva-yojana-rural-property-card-2025',
+    title: 'Svamitva Yojana Update: Rural Property Card Distribution and Benefits',
+    titleHindi: 'स्वामित्व योजना अपडेट: ग्रामीण संपत्ति कार्ड वितरण और लाभ',
+    category: 'Rural Development',
+    categoryHindi: 'ग्रामीण विकास',
+    status: 'active',
+    launchDate: '2020-04-24',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Rural Property Owners', 'Village Residents', 'Farmers', 'Rural Families'],
+    benefits: [
+      'Legal ownership of residential properties',
+      'Property cards with GPS coordinates',
+      'Easy access to bank loans',
+      'Reduced property disputes',
+      'Online property verification'
+    ],
+    eligibility: [
+      'Resident of participating villages',
+      'Owner of residential property',
+      'Property within village abadi area',
+      'Valid identity documents'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Residence Proof',
+      'Property Possession Documents',
+      'Family Tree/Genealogy'
+    ],
+    applicationProcess: [
+      'Village survey completion',
+      'Property identification by survey team',
+      'Verification of ownership claims',
+      'Issuance of property card',
+      'Online portal registration'
+    ],
+    officialWebsite: 'https://svamitva.nic.in',
+    helpline: '1800-11-5511',
+    coverImage: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Svamitva Yojana provides property cards to rural residents with GPS mapping. Get legal ownership documents and access to financial services.',
+    excerptHindi: 'स्वामित्व योजना GPS मैपिंग के साथ ग्रामीण निवासियों को संपत्ति कार्ड प्रदान करती है। कानूनी स्वामित्व दस्तावेज और वित्तीय सेवाओं तक पहुंच प्राप्त करें।',
+    keywords: [
+      'Svamitva Yojana', 'rural property card', 'village property mapping',
+      'स्वामित्व योजना', 'ग्रामीण संपत्ति कार्ड'
+    ],
+    seoTitle: 'Svamitva Yojana 2025: Rural Property Card Benefits | Complete Guide',
+    seoDescription: 'Svamitva Yojana provides property cards to rural residents with legal ownership rights. Check eligibility, benefits and application process.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'स्वामित्व योजना के तहत प्रॉपर्टी कार्ड कैसे मिलता है?',
+        answer: 'गांव का सर्वे पूरा होने के बाद, सत्यापन के बाद प्रॉपर्टी कार्ड जारी किया जाता है।'
+      }
+    ],
+    relatedSchemes: ['pm-kisan-samman-nidhi', 'pradhan-mantri-awas-yojana-gramin'],
+    budget: '₹79.65 करोड़',
+    beneficiaries: '6.62 लाख',
+    successRate: '89%'
+  },
+  {
+    id: '110',
+    slug: 'atal-tinkering-labs-expansion-2025',
+    title: 'Atal Tinkering Labs Expansion: Innovation Opportunities for Students',
+    titleHindi: 'अटल टिंकरिंग लैब्स विस्तार: छात्रों के लिए नवाचार के अवसर',
+    category: 'Education & Skills',
+    categoryHindi: 'शिक्षा और कौशल',
+    status: 'active',
+    launchDate: '2016-10-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['School Students', 'Teachers', 'Educational Institutions', 'Young Innovators'],
+    benefits: [
+      '₹20 lakh funding for lab setup',
+      'Modern equipment and tools',
+      'Training for teachers and students',
+      'Innovation challenges and competitions',
+      'Mentorship from industry experts'
+    ],
+    eligibility: [
+      'Government and private schools',
+      'Classes 6th to 12th',
+      'Dedicated space for lab',
+      'Committed teacher coordinators'
+    ],
+    documents: [
+      'School Registration Certificate',
+      'Principal Recommendation',
+      'Infrastructure Details',
+      'Teacher Coordinator Details'
+    ],
+    applicationProcess: [
+      'Apply online on AIM portal',
+      'Submit school details and proposal',
+      'Site verification by officials',
+      'Approval and funding release',
+      'Lab setup and inauguration'
+    ],
+    officialWebsite: 'https://aim.gov.in',
+    helpline: '1800-11-2001',
+    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Atal Tinkering Labs provide ₹20 lakh funding for innovation labs in schools. Foster creativity and problem-solving skills among students.',
+    excerptHindi: 'अटल टिंकरिंग लैब्स स्कूलों में नवाचार प्रयोगशालाओं के लिए ₹20 लाख फंडिंग प्रदान करती हैं। छात्रों में रचनात्मकता और समस्या समाधान कौशल को बढ़ावा दें।',
+    keywords: [
+      'Atal Tinkering Labs', 'school innovation labs', 'student creativity',
+      'अटल टिंकरिंग लैब्स', 'स्कूल नवाचार प्रयोगशाला'
+    ],
+    seoTitle: 'Atal Tinkering Labs 2025: ₹20 Lakh School Innovation Labs | Complete Guide',
+    seoDescription: 'Atal Tinkering Labs provide ₹20 lakh funding for innovation labs in schools. Check eligibility, benefits and application process for ATL.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'अटल टिंकरिंग लैब के लिए कितनी फंडिंग मिलती है?',
+        answer: 'प्रत्येक लैब के लिए ₹20 लाख तक की फंडिंग प्रदान की जाती है।'
+      }
+    ],
+    relatedSchemes: ['digital-india', 'skill-india'],
+    budget: '₹500 करोड़',
+    beneficiaries: '10,000 स्कूल',
+    successRate: '87%'
+  },
+
+  {
+    id: '111',
+    slug: 'digital-india-land-records-modernization-2025',
+    title: 'Digital India Land Records Modernization: Online Property Verification Benefits',
+    titleHindi: 'डिजिटल इंडिया भूमि रिकॉर्ड आधुनिकीकरण: ऑनलाइन संपत्ति सत्यापन लाभ',
+    category: 'Urban Development',
+    categoryHindi: 'शहरी विकास',
+    status: 'active',
+    launchDate: '2023-08-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Property Owners', 'Farmers', 'Urban Residents', 'Business Owners'],
+    benefits: [
+      'Online land record verification',
+      'Digital property certificates',
+      'Reduced documentation time',
+      'Transparent land transactions',
+      'Fraud prevention measures'
+    ],
+    eligibility: [
+      'All property owners',
+      'Valid land documents',
+      'Aadhaar verification required',
+      'Updated survey records'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Property Documents',
+      'Survey Settlement Records',
+      'Income Proof'
+    ],
+    applicationProcess: [
+      'Visit land records portal',
+      'Enter property details',
+      'Upload required documents',
+      'Pay nominal fees',
+      'Download digital certificate'
+    ],
+    officialWebsite: 'https://landrecords.gov.in',
+    helpline: '1800-11-0001',
+    coverImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Digital India Land Records Modernization provides online property verification and digital certificates. Streamline land transactions with transparent processes.',
+    excerptHindi: 'डिजिटल इंडिया भूमि रिकॉर्ड आधुनिकीकरण ऑनलाइन संपत्ति सत्यापन और डिजिटल प्रमाणपत्र प्रदान करता है। पारदर्शी प्रक्रियाओं के साथ भूमि लेनदेन को सुव्यवस्थित करें।',
+    keywords: [
+      'digital land records', 'property verification online', 'भूमि रिकॉर्ड डिजिटल',
+      'संपत्ति सत्यापन ऑनलाइन', 'land records modernization'
+    ],
+    seoTitle: 'Digital India Land Records 2025: Online Property Verification | Complete Guide',
+    seoDescription: 'Digital India Land Records Modernization provides online property verification, digital certificates. Check land records, property documents online.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'डिजिटल भूमि रिकॉर्ड कैसे देखें?',
+        answer: 'land records portal पर जाकर अपनी प्रॉपर्टी डिटेल्स डालकर ऑनलाइन देख सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['svamitva-yojana-rural-property-card-2025', 'digital-india'],
+    budget: '₹850 करोड़',
+    beneficiaries: '15 करोड़',
+    successRate: '91%'
+  },
+  {
+    id: '112',
+    slug: 'pradhan-mantri-mudra-yojana-expansion-2025',
+    title: 'PM MUDRA Yojana Expansion 2025: ₹20 Lakh Business Loans for MSMEs',
+    titleHindi: 'पीएम मुद्रा योजना विस्तार 2025: MSME के लिए ₹20 लाख व्यवसायिक ऋण',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2015-04-08',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Small Business Owners', 'Entrepreneurs', 'Women Entrepreneurs', 'Rural Businesses'],
+    benefits: [
+      'Collateral-free business loans',
+      'Loan amount up to ₹20 lakh',
+      'Low interest rates (7-12%)',
+      'Quick processing and approval',
+      'Support for business growth'
+    ],
+    eligibility: [
+      'Indian citizen aged 18-65 years',
+      'Small business or startup',
+      'Good credit score preferred',
+      'Valid business plan'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'PAN Card',
+      'Business Registration',
+      'Bank Statements',
+      'Income Proof'
+    ],
+    applicationProcess: [
+      'Visit nearest bank or NBFC',
+      'Fill MUDRA loan application',
+      'Submit business plan',
+      'Document verification',
+      'Loan disbursement'
+    ],
+    officialWebsite: 'https://mudra.org.in',
+    helpline: '1800-180-1111',
+    coverImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM MUDRA Yojana provides collateral-free business loans up to ₹20 lakh for small enterprises. Support business growth with low-interest financing.',
+    excerptHindi: 'पीएम मुद्रा योजना छोटे उद्यमों के लिए ₹20 लाख तक बिना गारंटी के व्यवसायिक ऋण प्रदान करती है। कम ब्याज दरों पर व्यवसायिक वृद्धि का समर्थन करें।',
+    keywords: [
+      'MUDRA loan 2025', 'business loan without collateral', 'मुद्रा लोन',
+      'व्यवसायिक ऋण बिना गारंटी', 'small business financing'
+    ],
+    seoTitle: 'PM MUDRA Yojana 2025: ₹20 Lakh Business Loan Without Collateral | Apply Now',
+    seoDescription: 'PM MUDRA Yojana provides business loans up to ₹20 lakh without collateral. Low interest rates, quick approval for small enterprises and startups.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'मुद्रा लोन कितना मिल सकता है?',
+        answer: 'मुद्रा योजना के तहत ₹10 लाख से ₹20 लाख तक का लोन मिल सकता है।'
+      }
+    ],
+    relatedSchemes: ['stand-up-india', 'startup-india'],
+    budget: '₹3.5 लाख करोड़',
+    beneficiaries: '40 करोड़',
+    successRate: '94%'
+  },
+  {
+    id: '113',
+    slug: 'ayushman-bharat-health-account-2025',
+    title: 'Ayushman Bharat Health Account: ₹5 Lakh Medical Coverage for Families',
+    titleHindi: 'आयुष्मान भारत स्वास्थ्य खाता: परिवारों के लिए ₹5 लाख चिकित्सा कवरेज',
+    category: 'Healthcare & Medical',
+    categoryHindi: 'स्वास्थ्य और चिकित्सा',
+    status: 'active',
+    launchDate: '2018-09-23',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Poor Families', 'Rural Population', 'Below Poverty Line', 'Uninsured Families'],
+    benefits: [
+      '₹5 lakh annual health coverage',
+      'Cashless treatment at empanelled hospitals',
+      'Coverage for 1,400+ medical procedures',
+      'Pre and post-hospitalization expenses',
+      'Maternity and newborn care'
+    ],
+    eligibility: [
+      'Families covered under SECC-2011',
+      'Rural families with specific criteria',
+      'Urban families meeting occupational criteria',
+      'Valid Aadhaar card required'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Ration Card',
+      'SECC-2011 Details',
+      'Mobile Number'
+    ],
+    applicationProcess: [
+      'Check eligibility online',
+      'Visit nearest CSC or hospital',
+      'Biometric verification',
+      'Generate Ayushman Card',
+      'Use for cashless treatment'
+    ],
+    officialWebsite: 'https://pmjay.gov.in',
+    helpline: '14555',
+    coverImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Ayushman Bharat provides ₹5 lakh annual health coverage for poor families. Cashless treatment at empanelled hospitals for 1,400+ procedures.',
+    excerptHindi: 'आयुष्मान भारत गरीब परिवारों के लिए ₹5 लाख वार्षिक स्वास्थ्य कवरेज प्रदान करता है। 1,400+ प्रक्रियाओं के लिए सूचीबद्ध अस्पतालों में कैशलेस इलाज।',
+    keywords: [
+      'Ayushman Bharat 2025', 'health insurance poor families', 'आयुष्मान भारत',
+      'गरीब परिवार स्वास्थ्य बीमा', 'PMJAY benefits'
+    ],
+    seoTitle: 'Ayushman Bharat 2025: ₹5 Lakh Health Coverage | How to Apply for PMJAY Card',
+    seoDescription: 'Ayushman Bharat provides ₹5 lakh health coverage for poor families. Check eligibility, apply for PMJAY card, get cashless treatment.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'आयुष्मान भारत कार्ड कैसे बनवाएं?',
+        answer: 'नजदीकी CSC या अस्पताल में जाकर बायोमेट्रिक वेरिफिकेशन के बाद कार्ड बनवा सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['rashtriya-swasthya-bima-yojana', 'janani-suraksha-yojana'],
+    budget: '₹6,400 करोड़',
+    beneficiaries: '12 करोड़ परिवार',
+    successRate: '88%'
+  },
+  {
+    id: '114',
+    slug: 'national-apprenticeship-promotion-scheme-2025',
+    title: 'National Apprenticeship Promotion Scheme: Skill Development and Jobs for Youth',
+    titleHindi: 'राष्ट्रीय प्रशिक्षुता प्रोत्साहन योजना: युवाओं के लिए कौशल विकास और नौकरी',
+    category: 'Youth & Students',
+    categoryHindi: 'युवा और छात्र',
+    status: 'active',
+    launchDate: '2016-08-19',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Youth aged 14-21', 'Job Seekers', 'Skill Development Aspirants', 'Engineering Graduates'],
+    benefits: [
+      'Paid apprenticeship training',
+      'Industry-relevant skills development',
+      'Monthly stipend during training',
+      'Job placement assistance',
+      'Certificate recognized by industry'
+    ],
+    eligibility: [
+      'Age 14-21 years for freshers',
+      'Class 8th to Graduate qualification',
+      'Valid Aadhaar and bank account',
+      'Willing to undergo training'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Educational Certificates',
+      'Bank Account Details',
+      'Passport Size Photos'
+    ],
+    applicationProcess: [
+      'Register on apprenticeship portal',
+      'Search for available opportunities',
+      'Apply for suitable positions',
+      'Attend selection process',
+      'Start apprenticeship training'
+    ],
+    officialWebsite: 'https://apprenticeship.gov.in',
+    helpline: '1800-123-9626',
+    coverImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'National Apprenticeship Promotion Scheme provides paid training and job placement for youth. Develop industry skills with monthly stipend.',
+    excerptHindi: 'राष्ट्रीय प्रशिक्षुता प्रोत्साहन योजना युवाओं के लिए भुगतान प्रशिक्षण और नौकरी प्लेसमेंट प्रदान करती है। मासिक वजीफे के साथ उद्योग कौशल विकसित करें।',
+    keywords: [
+      'apprenticeship scheme 2025', 'skill development jobs', 'प्रशिक्षुता योजना',
+      'कौशल विकास नौकरी', 'paid training programs'
+    ],
+    seoTitle: 'National Apprenticeship Scheme 2025: Paid Training & Jobs for Youth | Apply Now',
+    seoDescription: 'National Apprenticeship Promotion Scheme offers paid training, skill development and job placement for youth. Apply online for apprenticeship opportunities.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'प्रशिक्षुता योजना में कितना वेतन मिलता है?',
+        answer: 'प्रशिक्षुता के दौरान न्यूनतम वेतन का 70% हिस्सा वजीफे के रूप में मिलता है।'
+      }
+    ],
+    relatedSchemes: ['skill-india-mission', 'pmkvy-scheme'],
+    budget: '₹1,500 करोड़',
+    beneficiaries: '10 लाख युवा',
+    successRate: '86%'
+  },
+  {
+    id: '115',
+    slug: 'pradhan-mantri-jan-dhan-yojana-update-2025',
+    title: 'PM Jan Dhan Yojana Update 2025: Free Banking and Insurance Benefits',
+    titleHindi: 'पीएम जन धन योजना अपडेट 2025: मुफ्त बैंकिंग और बीमा लाभ',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2014-08-28',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Unbanked Population', 'Poor Families', 'Rural Communities', 'Women'],
+    benefits: [
+      'Zero balance bank account',
+      'RuPay debit card with insurance',
+      '₹10 lakh accident insurance',
+      '₹30,000 life insurance',
+      'Overdraft facility up to ₹10,000'
+    ],
+    eligibility: [
+      'Indian citizen',
+      'No existing bank account',
+      'Valid identity proof',
+      'Address proof required'
+    ],
+    documents: [
+      'Aadhaar Card or Voter ID',
+      'Address Proof',
+      'Passport Size Photo',
+      'Mobile Number'
+    ],
+    applicationProcess: [
+      'Visit nearest bank branch',
+      'Fill account opening form',
+      'Submit required documents',
+      'Biometric verification',
+      'Receive passbook and debit card'
+    ],
+    officialWebsite: 'https://pmjdy.gov.in',
+    helpline: '1800-11-0001',
+    coverImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Jan Dhan Yojana provides zero balance bank accounts with insurance benefits. Get free banking services and financial inclusion.',
+    excerptHindi: 'पीएम जन धन योजना बीमा लाभ के साथ जीरो बैलेंस बैंक खाते प्रदान करती है। मुफ्त बैंकिंग सेवाएं और वित्तीय समावेशन प्राप्त करें।',
+    keywords: [
+      'Jan Dhan Yojana 2025', 'zero balance bank account', 'जन धन योजना',
+      'जीरो बैलेंस बैंक खाता', 'financial inclusion'
+    ],
+    seoTitle: 'PM Jan Dhan Yojana 2025: Zero Balance Account with Insurance | Complete Guide',
+    seoDescription: 'PM Jan Dhan Yojana offers zero balance bank account with RuPay card, accident and life insurance. Apply for free banking services.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'जन धन खाता कैसे खोलें?',
+        answer: 'नजदीकी बैंक शाखा में आधार कार्ड के साथ जाकर मुफ्त में खाता खोल सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['pradhan-mantri-suraksha-bima-yojana', 'atal-pension-yojana'],
+    budget: '₹2,000 करोड़',
+    beneficiaries: '46 करोड़',
+    successRate: '95%'
+  },
+  {
+    id: '116',
+    slug: 'pm-shram-yogi-maandhan-pension-2025',
+    title: 'PM Shram Yogi Maandhan: ₹3000 Monthly Pension for Unorganized Workers',
+    titleHindi: 'पीएम श्रम योगी मानधन: असंगठित श्रमिकों के लिए ₹3000 मासिक पेंशन',
+    category: 'Senior Citizens',
+    categoryHindi: 'वरिष्ठ नागरिक',
+    status: 'active',
+    launchDate: '2019-02-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Unorganized Workers', 'Self-Employed', 'Small Traders', 'Domestic Workers'],
+    benefits: [
+      '₹3,000 monthly pension after 60 years',
+      'Voluntary and contributory scheme',
+      'Family pension of ₹1,500',
+      'Disability pension coverage',
+      'Affordable premium rates'
+    ],
+    eligibility: [
+      'Age 18-40 years at entry',
+      'Monthly income ≤ ₹15,000',
+      'Unorganized sector worker',
+      'Not covered under EPF/ESIC'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Bank Account Details',
+      'Income Certificate',
+      'Self Declaration Form'
+    ],
+    applicationProcess: [
+      'Visit nearest CSC or bank',
+      'Fill enrollment form',
+      'Pay monthly contribution',
+      'Get acknowledgment receipt',
+      'Continue regular payments'
+    ],
+    officialWebsite: 'https://maandhan.in',
+    helpline: '1800-267-6888',
+    coverImage: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Shram Yogi Maandhan provides ₹3,000 monthly pension for unorganized workers. Affordable contributions for secure retirement.',
+    excerptHindi: 'पीएम श्रम योगी मानधन असंगठित श्रमिकों के लिए ₹3,000 मासिक पेंशन प्रदान करती है। सुरक्षित सेवानिवृत्ति के लिए किफायती योगदान।',
+    keywords: [
+      'Shram Yogi Maandhan 2025', 'unorganized worker pension', 'श्रम योगी मानधन',
+      'असंगठित श्रमिक पेंशन', 'monthly pension scheme'
+    ],
+    seoTitle: 'PM Shram Yogi Maandhan 2025: ₹3000 Monthly Pension | Apply for Workers',
+    seoDescription: 'PM Shram Yogi Maandhan offers ₹3000 monthly pension for unorganized workers. Check eligibility, contribution rates and application process.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'श्रम योगी मानधन में कितना योगदान देना होता है?',
+        answer: 'उम्र के अनुसार ₹55 से ₹200 तक मासिक योगदान देना होता है।'
+      }
+    ],
+    relatedSchemes: ['atal-pension-yojana', 'pradhan-mantri-jeevan-jyoti-bima-yojana'],
+    budget: '₹500 करोड़',
+    beneficiaries: '50 लाख',
+    successRate: '83%'
+  },
+  {
+    id: '117',
+    slug: 'beti-bachao-beti-padhao-enhanced-2025',
+    title: 'Beti Bachao Beti Padhao Enhanced 2025: Girl Child Education and Empowerment',
+    titleHindi: 'बेटी बचाओ बेटी पढ़ाओ संवर्धित 2025: बालिका शिक्षा और सशक्तिकरण',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2015-01-22',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Girl Children', 'Parents', 'Women', 'Families with Girl Child'],
+    benefits: [
+      'Educational scholarships for girls',
+      'Financial incentives for families',
+      'Awareness campaigns on girl child rights',
+      'Skill development programs',
+      'Healthcare support for girls'
+    ],
+    eligibility: [
+      'Girl child born in participating districts',
+      'Family income criteria applies',
+      'Birth registration mandatory',
+      'School enrollment required'
+    ],
+    documents: [
+      'Birth Certificate',
+      'Aadhaar Card of Parents',
+      'School Enrollment Certificate',
+      'Income Certificate',
+      'Bank Account Details'
+    ],
+    applicationProcess: [
+      'Register at Anganwadi Center',
+      'Submit required documents',
+      'Complete health checkup',
+      'Ensure school enrollment',
+      'Receive benefits periodically'
+    ],
+    officialWebsite: 'https://wcd.nic.in',
+    helpline: '1800-121-2440',
+    coverImage: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Beti Bachao Beti Padhao promotes girl child education and empowerment. Educational scholarships and financial incentives for families.',
+    excerptHindi: 'बेटी बचाओ बेटी पढ़ाओ बालिका शिक्षा और सशक्तिकरण को बढ़ावा देती है। परिवारों के लिए शैक्षिक छात्रवृत्ति और वित्तीय प्रोत्साहन।',
+    keywords: [
+      'Beti Bachao Beti Padhao 2025', 'girl child education', 'बेटी बचाओ बेटी पढ़ाओ',
+      'बालिका शिक्षा', 'girl empowerment scheme'
+    ],
+    seoTitle: 'Beti Bachao Beti Padhao 2025: Girl Child Education Benefits | Complete Guide',
+    seoDescription: 'Beti Bachao Beti Padhao offers educational scholarships and financial support for girl child. Promote girl education and empowerment.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'बेटी बचाओ बेटी पढ़ाओ योजना में क्या लाभ मिलता है?',
+        answer: 'इस योजना में बेटियों को शिक्षा के लिए छात्रवृत्ति, स्वास्थ्य सुविधा और कौशल विकास का लाभ मिलता है।'
+      }
+    ],
+    relatedSchemes: ['sukanya-samriddhi-yojana', 'kishori-shakti-yojana'],
+    budget: '₹280 करोड़',
+    beneficiaries: '5 करोड़',
+    successRate: '78%'
+  },
+  {
+    id: '118',
+    slug: 'swachh-bharat-mission-gramin-phase-2-2025',
+    title: 'Swachh Bharat Mission Gramin Phase 2: Rural Sanitation and Waste Management',
+    titleHindi: 'स्वच्छ भारत मिशन ग्रामीण चरण 2: ग्रामीण स्वच्छता और अपशिष्ट प्रबंधन',
+    category: 'Rural Development',
+    categoryHindi: 'ग्रामीण विकास',
+    status: 'active',
+    launchDate: '2019-04-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Rural Households', 'Village Communities', 'Panchayati Raj Institutions', 'Rural Women'],
+    benefits: [
+      'Toilet construction incentives',
+      'Solid and liquid waste management',
+      'Community sanitary complexes',
+      'Awareness and behavior change',
+      'Employment generation in sanitation'
+    ],
+    eligibility: [
+      'Rural households without toilets',
+      'Below poverty line families',
+      'Community institutions',
+      'Self-help groups'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'BPL Certificate',
+      'House Ownership Proof',
+      'Bank Account Details'
+    ],
+    applicationProcess: [
+      'Apply through Gram Panchayat',
+      'Technical verification of site',
+      'Approval and fund release',
+      'Construction with quality check',
+      'Completion certificate'
+    ],
+    officialWebsite: 'https://swachhbharatmission.gov.in',
+    helpline: '1800-11-0001',
+    coverImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Swachh Bharat Mission Gramin Phase 2 focuses on rural sanitation and waste management. Toilet construction incentives and community hygiene.',
+    excerptHindi: 'स्वच्छ भारत मिशन ग्रामीण चरण 2 ग्रामीण स्वच्छता और अपशिष्ट प्रबंधन पर केंद्रित है। शौचालय निर्माण प्रोत्साहन और सामुदायिक स्वच्छता।',
+    keywords: [
+      'Swachh Bharat Gramin 2025', 'rural sanitation scheme', 'स्वच्छ भारत ग्रामीण',
+      'ग्रामीण स्वच्छता योजना', 'toilet construction subsidy'
+    ],
+    seoTitle: 'Swachh Bharat Mission Gramin 2025: Rural Toilet Subsidy | Complete Guide',
+    seoDescription: 'Swachh Bharat Mission Gramin provides toilet construction subsidies and waste management solutions for rural areas. Apply for sanitation benefits.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'स्वच्छ भारत मिशन में शौचालय के लिए कितना पैसा मिलता है?',
+        answer: 'ग्रामीण क्षेत्र में शौचालय निर्माण के लिए ₹12,000 की सहायता राशि मिलती है।'
+      }
+    ],
+    relatedSchemes: ['pradhan-mantri-awas-yojana-gramin', 'jal-jeevan-mission'],
+    budget: '₹52,497 करोड़',
+    beneficiaries: '19 करोड़',
+    successRate: '96%'
+  },
+  {
+    id: '119',
+    slug: 'national-rural-health-mission-nhm-2025',
+    title: 'National Rural Health Mission (NHM) 2025: Healthcare Services for Rural India',
+    titleHindi: 'राष्ट्रीय ग्रामीण स्वास्थ्य मिशन (NHM) 2025: ग्रामीण भारत के लिए स्वास्थ्य सेवाएं',
+    category: 'Healthcare & Medical',
+    categoryHindi: 'स्वास्थ्य और चिकित्सा',
+    status: 'active',
+    launchDate: '2005-04-12',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Rural Population', 'Pregnant Women', 'Children', 'Elderly'],
+    benefits: [
+      'Free healthcare services in rural areas',
+      'Maternal and child health programs',
+      'Disease control and prevention',
+      'Strengthened healthcare infrastructure',
+      'Community health worker training'
+    ],
+    eligibility: [
+      'Rural residents',
+      'All age groups covered',
+      'Special focus on vulnerable groups',
+      'No income criteria'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Residence Proof',
+      'Health Card (if available)',
+      'Medical Records'
+    ],
+    applicationProcess: [
+      'Visit nearest Primary Health Centre',
+      'Register for health services',
+      'Get health card issued',
+      'Access free medical treatment',
+      'Follow up care as needed'
+    ],
+    officialWebsite: 'https://nhm.gov.in',
+    helpline: '104',
+    coverImage: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'National Rural Health Mission provides comprehensive healthcare services to rural population. Free treatment and strengthened health infrastructure.',
+    excerptHindi: 'राष्ट्रीय ग्रामीण स्वास्थ्य मिशन ग्रामीण जनसंख्या को व्यापक स्वास्थ्य सेवाएं प्रदान करता है। मुफ्त इलाज और मजबूत स्वास्थ्य अवसंरचना।',
+    keywords: [
+      'National Rural Health Mission 2025', 'rural healthcare services', 'राष्ट्रीय ग्रामीण स्वास्थ्य मिशन',
+      'ग्रामीण स्वास्थ्य सेवाएं', 'free medical treatment rural'
+    ],
+    seoTitle: 'National Rural Health Mission 2025: Free Healthcare Services | Complete Guide',
+    seoDescription: 'National Rural Health Mission provides free healthcare services to rural population. Maternal health, child care and disease prevention programs.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'NHM के तहत कौन सी सेवाएं मुफ्त हैं?',
+        answer: 'NHM के तहत सभी प्राथमिक स्वास्थ्य सेवाएं, मातृ एवं शिशु स्वास्थ्य सेवाएं मुफ्त हैं।'
+      }
+    ],
+    relatedSchemes: ['ayushman-bharat-health-account-2025', 'janani-suraksha-yojana'],
+    budget: '₹37,130 करोड़',
+    beneficiaries: '90 करोड़',
+    successRate: '82%'
+  },
+  {
+    id: '120',
+    slug: 'national-skill-development-mission-2025',
+    title: 'National Skill Development Mission 2025: Skill India for Employment Generation',
+    titleHindi: 'राष्ट्रीय कौशल विकास मिशन 2025: रोजगार सृजन के लिए स्किल इंडिया',
+    category: 'Education & Skills',
+    categoryHindi: 'शिक्षा और कौशल',
+    status: 'active',
+    launchDate: '2015-07-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Youth', 'Job Seekers', 'School Dropouts', 'Women'],
+    benefits: [
+      'Free skill development training',
+      'Industry-relevant certifications',
+      'Placement assistance',
+      'Financial support during training',
+      'Recognition of prior learning'
+    ],
+    eligibility: [
+      'Age 15-45 years',
+      'Basic education preferred',
+      'Unemployed or underemployed',
+      'Indian citizen'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Educational Certificates',
+      'Bank Account Details',
+      'Employment Exchange Registration'
+    ],
+    applicationProcess: [
+      'Register on Skill India portal',
+      'Choose training program',
+      'Complete enrollment process',
+      'Attend training sessions',
+      'Get certified and job placement'
+    ],
+    officialWebsite: 'https://skillindia.gov.in',
+    helpline: '1800-123-9626',
+    coverImage: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'National Skill Development Mission provides free skill training for employment generation. Industry certifications and job placement assistance.',
+    excerptHindi: 'राष्ट्रीय कौशल विकास मिशन रोजगार सृजन के लिए मुफ्त कौशल प्रशिक्षण प्रदान करता है। उद्योग प्रमाणन और नौकरी प्लेसमेंट सहायता।',
+    keywords: [
+      'Skill Development Mission 2025', 'free skill training', 'कौशल विकास मिशन',
+      'मुफ्त कौशल प्रशिक्षण', 'employment generation scheme'
+    ],
+    seoTitle: 'National Skill Development Mission 2025: Free Training & Jobs | Skill India',
+    seoDescription: 'National Skill Development Mission offers free skill training with job placement. Industry certifications and employment opportunities for youth.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'स्किल इंडिया में कौन से कोर्स उपलब्ध हैं?',
+        answer: 'IT, Healthcare, Construction, Retail, Beauty & Wellness आदि 40+ सेक्टर में 200+ कोर्स उपलब्ध हैं।'
+      }
+    ],
+    relatedSchemes: ['national-apprenticeship-promotion-scheme-2025', 'pmkvy-scheme'],
+    budget: '₹12,000 करोड़',
+    beneficiaries: '1 करोड़',
+    successRate: '75%'
+  },
+  {
+    id: '121',
+    slug: 'pradhan-mantri-awas-yojana-urban-2025',
+    title: 'PM Awas Yojana Urban 2025: Affordable Housing for All in Cities',
+    titleHindi: 'पीएम आवास योजना शहरी 2025: शहरों में सभी के लिए किफायती आवास',
+    category: 'Urban Development',
+    categoryHindi: 'शहरी विकास',
+    status: 'active',
+    launchDate: '2015-06-25',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Urban Poor', 'Middle Income Group', 'Economically Weaker Section', 'First Time Home Buyers'],
+    benefits: [
+      'Interest subsidy on home loans',
+      'Direct financial assistance',
+      'Affordable rental housing',
+      'Slum rehabilitation',
+      'Enhanced infrastructure'
+    ],
+    eligibility: [
+      'Annual income up to ₹18 lakh',
+      'Should not own pucca house',
+      'First-time home buyer',
+      'Adult woman co-owner preferred'
+    ],
+    documents: [
+      'Income Certificate',
+      'Aadhaar Card',
+      'Property Documents',
+      'Bank Account Details',
+      'Employment Proof'
+    ],
+    applicationProcess: [
+      'Apply online on official portal',
+      'Submit required documents',
+      'Property verification',
+      'Loan approval process',
+      'Subsidy disbursement'
+    ],
+    officialWebsite: 'https://pmaymis.gov.in',
+    helpline: '1800-11-6446',
+    coverImage: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Awas Yojana Urban provides affordable housing solutions with interest subsidies and financial assistance for urban residents.',
+    excerptHindi: 'पीएम आवास योजना शहरी शहरी निवासियों के लिए ब्याज सब्सिडी और वित्तीय सहायता के साथ किफायती आवास समाधान प्रदान करती है।',
+    keywords: [
+      'PM Awas Yojana Urban 2025', 'affordable housing scheme', 'पीएम आवास योजना शहरी',
+      'किफायती आवास योजना', 'home loan subsidy'
+    ],
+    seoTitle: 'PM Awas Yojana Urban 2025: Home Loan Subsidy & Affordable Housing | Apply',
+    seoDescription: 'PM Awas Yojana Urban offers home loan subsidies and affordable housing for urban residents. Check eligibility and application process.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'पीएम आवास योजना शहरी में कितनी सब्सिडी मिलती है?',
+        answer: 'आय के अनुसार ₹2.35 लाख से ₹2.67 लाख तक की ब्याज सब्सिडी मिलती है।'
+      }
+    ],
+    relatedSchemes: ['pradhan-mantri-awas-yojana-gramin', 'housing-for-all'],
+    budget: '₹48,000 करोड़',
+    beneficiaries: '1.2 करोड़',
+    successRate: '85%'
+  },
+  {
+    id: '122',
+    slug: 'kisan-credit-card-enhanced-2025',
+    title: 'Kisan Credit Card Enhanced 2025: Easy Agricultural Credit for Farmers',
+    titleHindi: 'किसान क्रेडिट कार्ड संवर्धित 2025: किसानों के लिए आसान कृषि ऋण',
+    category: 'Agriculture & Farmers',
+    categoryHindi: 'कृषि और किसान',
+    status: 'active',
+    launchDate: '1998-08-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Small Farmers', 'Marginal Farmers', 'Tenant Farmers', 'Agricultural Workers'],
+    benefits: [
+      'Easy access to agricultural credit',
+      'Crop loans at subsidized rates',
+      'Insurance coverage for crops',
+      'Flexible repayment options',
+      'Coverage for allied activities'
+    ],
+    eligibility: [
+      'Farmers with land ownership',
+      'Tenant farmers with valid documents',
+      'Self-help group members',
+      'Share croppers'
+    ],
+    documents: [
+      'Land Records',
+      'Aadhaar Card',
+      'Bank Account Passbook',
+      'Passport Size Photos',
+      'Income Certificate'
+    ],
+    applicationProcess: [
+      'Visit nearest bank branch',
+      'Fill KCC application form',
+      'Submit land documents',
+      'Credit limit assessment',
+      'Card issuance and activation'
+    ],
+    officialWebsite: 'https://pmkisan.gov.in',
+    helpline: '1800-180-1551',
+    coverImage: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Kisan Credit Card provides easy agricultural credit to farmers with subsidized interest rates and flexible repayment options.',
+    excerptHindi: 'किसान क्रेडिट कार्ड किसानों को सब्सिडी वाली ब्याज दरों और लचीले पुनर्भुगतान विकल्पों के साथ आसान कृषि ऋण प्रदान करता है।',
+    keywords: [
+      'Kisan Credit Card 2025', 'agricultural loan farmers', 'किसान क्रेडिट कार्ड',
+      'कृषि ऋण किसान', 'crop loan subsidy'
+    ],
+    seoTitle: 'Kisan Credit Card 2025: Agricultural Loan for Farmers | Apply Online',
+    seoDescription: 'Kisan Credit Card offers easy agricultural credit with subsidized interest rates. Apply for crop loans and insurance coverage for farming.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'किसान क्रेडिट कार्ड की ब्याज दर क्या है?',
+        answer: 'KCC पर 4% वार्षिक ब्याज दर है, जो समय पर चुकाने पर 2% अतिरिक्त छूट के साथ 7% है।'
+      }
+    ],
+    relatedSchemes: ['pm-kisan-samman-nidhi-yojana-2025', 'pm-fasal-bima-yojana'],
+    budget: '₹3.75 लाख करोड़',
+    beneficiaries: '7 करोड़',
+    successRate: '90%'
+  },
+  {
+    id: '123',
+    slug: 'stand-up-india-scheme-expansion-2025',
+    title: 'Stand Up India Scheme Expansion 2025: Bank Loans for SC/ST and Women Entrepreneurs',
+    titleHindi: 'स्टैंड अप इंडिया योजना विस्तार 2025: SC/ST और महिला उद्यमियों के लिए बैंक ऋण',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2016-04-05',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Women Entrepreneurs', 'SC/ST Entrepreneurs', 'First-time Entrepreneurs', 'Small Business Owners'],
+    benefits: [
+      'Bank loans ₹10 lakh to ₹1 crore',
+      'Composite loans for business setup',
+      'Handholding support and mentoring',
+      'Credit guarantee coverage',
+      'Skill development programs'
+    ],
+    eligibility: [
+      'Women, SC or ST category',
+      'Age 18 years and above',
+      'First-time entrepreneur',
+      'Loan for manufacturing/services'
+    ],
+    documents: [
+      'Identity Proof (Aadhaar/Voter ID)',
+      'Category Certificate (SC/ST)',
+      'Business Plan',
+      'Educational Certificates',
+      'Bank Account Details'
+    ],
+    applicationProcess: [
+      'Prepare detailed business plan',
+      'Apply at designated bank branch',
+      'Document verification',
+      'Credit appraisal process',
+      'Loan sanction and disbursement'
+    ],
+    officialWebsite: 'https://standupmitra.in',
+    helpline: '1800-180-1111',
+    coverImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Stand Up India provides bank loans ₹10 lakh to ₹1 crore for women and SC/ST entrepreneurs to start manufacturing or service businesses.',
+    excerptHindi: 'स्टैंड अप इंडिया महिलाओं और SC/ST उद्यमियों को विनिर्माण या सेवा व्यवसाय शुरू करने के लिए ₹10 लाख से ₹1 करोड़ तक के बैंक ऋण प्रदान करता है।',
+    keywords: [
+      'Stand Up India 2025', 'women entrepreneur loan', 'स्टैंड अप इंडिया',
+      'महिला उद्यमी ऋण', 'SC ST business loan'
+    ],
+    seoTitle: 'Stand Up India 2025: ₹10L-1Cr Loan for Women & SC/ST Entrepreneurs | Apply',
+    seoDescription: 'Stand Up India offers business loans ₹10 lakh to ₹1 crore for women and SC/ST entrepreneurs. Check eligibility and application process.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'स्टैंड अप इंडिया में कितना लोन मिल सकता है?',
+        answer: 'स्टैंड अप इंडिया योजना में ₹10 लाख से ₹1 करोड़ तक का लोन मिल सकता है।'
+      }
+    ],
+    relatedSchemes: ['pradhan-mantri-mudra-yojana-expansion-2025', 'startup-india'],
+    budget: '₹10,000 करोड़',
+    beneficiaries: '1.33 लाख',
+    successRate: '79%'
+  },
+  {
+    id: '124',
+    slug: 'jal-jeevan-mission-rural-water-2025',
+    title: 'Jal Jeevan Mission 2025: Piped Water Supply to Every Rural Household',
+    titleHindi: 'जल जीवन मिशन 2025: हर ग्रामीण घर में पाइप से पानी की आपूर्ति',
+    category: 'Rural Development',
+    categoryHindi: 'ग्रामीण विकास',
+    status: 'active',
+    launchDate: '2019-08-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Rural Households', 'Village Communities', 'Schools', 'Healthcare Centers'],
+    benefits: [
+      'Piped water supply to every home',
+      'Safe and adequate drinking water',
+      'Community water management',
+      'Women participation in planning',
+      'Water quality monitoring'
+    ],
+    eligibility: [
+      'Rural households',
+      'Schools and healthcare institutions',
+      'Community institutions',
+      'All villages covered'
+    ],
+    documents: [
+      'Village Resolution',
+      'Community Participation Certificate',
+      'Technical Survey Report',
+      'Water Quality Test Reports'
+    ],
+    applicationProcess: [
+      'Village planning and preparation',
+      'Community mobilization',
+      'Technical survey and design',
+      'Implementation and monitoring',
+      'Operation and maintenance'
+    ],
+    officialWebsite: 'https://jaljeevanmission.gov.in',
+    helpline: '1800-11-0011',
+    coverImage: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Jal Jeevan Mission aims to provide piped water supply to every rural household by 2024. Safe drinking water and community participation.',
+    excerptHindi: 'जल जीवन मिशन का लक्ष्य 2024 तक हर ग्रामीण घर में पाइप से पानी की आपूर्ति करना है। सुरक्षित पेयजल और सामुदायिक भागीदारी।',
+    keywords: [
+      'Jal Jeevan Mission 2025', 'rural water supply', 'जल जीवन मिशन',
+      'ग्रामीण जल आपूर्ति', 'piped water connection'
+    ],
+    seoTitle: 'Jal Jeevan Mission 2025: Piped Water Connection for Rural Homes | Complete Guide',
+    seoDescription: 'Jal Jeevan Mission provides piped water supply to every rural household. Safe drinking water with community participation and quality monitoring.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'जल जीवन मिशन के तहत पानी कनेक्शन कैसे मिलता है?',
+        answer: 'गांव की पानी समिति के माध्यम से आवेदन करके हर घर में पाइप कनेक्शन मिलता है।'
+      }
+    ],
+    relatedSchemes: ['swachh-bharat-mission-gramin-phase-2-2025', 'mahatma-gandhi-nrega'],
+    budget: '₹3.60 लाख करोड़',
+    beneficiaries: '19 करोड़ घर',
+    successRate: '88%'
+  },
+  {
+    id: '125',
+    slug: 'atal-pension-yojana-enhanced-2025',
+    title: 'Atal Pension Yojana Enhanced 2025: Guaranteed Pension for Unorganized Sector',
+    titleHindi: 'अटल पेंशन योजना संवर्धित 2025: असंगठित क्षेत्र के लिए गारंटीशुदा पेंशन',
+    category: 'Senior Citizens',
+    categoryHindi: 'वरिष्ठ नागरिक',
+    status: 'active',
+    launchDate: '2015-05-09',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Unorganized Sector Workers', 'Self-Employed', 'Private Sector Employees', 'Young Adults'],
+    benefits: [
+      'Guaranteed pension ₹1,000 to ₹5,000',
+      'Government co-contribution for eligible',
+      'Death and disability benefits',
+      'Spouse pension continuation',
+      'Tax benefits under 80CCD'
+    ],
+    eligibility: [
+      'Age 18-40 years at entry',
+      'Indian citizen',
+      'Bank account with Aadhaar',
+      'Not income tax payer (for govt support)'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Bank Account Details',
+      'Mobile Number',
+      'Nomination Form'
+    ],
+    applicationProcess: [
+      'Visit bank or online application',
+      'Choose pension amount',
+      'Complete KYC process',
+      'Set up auto-debit',
+      'Start monthly contributions'
+    ],
+    officialWebsite: 'https://npscra.nsdl.co.in',
+    helpline: '1800-110-069',
+    coverImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Atal Pension Yojana provides guaranteed pension from ₹1,000 to ₹5,000 for unorganized sector workers with government support.',
+    excerptHindi: 'अटल पेंशन योजना असंगठित क्षेत्र के श्रमिकों के लिए सरकारी सहायता के साथ ₹1,000 से ₹5,000 तक की गारंटीशुदा पेंशन प्रदान करती है।',
+    keywords: [
+      'Atal Pension Yojana 2025', 'guaranteed pension scheme', 'अटल पेंशन योजना',
+      'गारंटीशुदा पेंशन योजना', 'unorganized sector pension'
+    ],
+    seoTitle: 'Atal Pension Yojana 2025: ₹1000-5000 Guaranteed Pension | Apply Online',
+    seoDescription: 'Atal Pension Yojana offers guaranteed pension ₹1000-5000 for unorganized workers. Government support and tax benefits available.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'अटल पेंशन योजना में कितना योगदान देना होता है?',
+        answer: 'उम्र और चुनी गई पेंशन राशि के अनुसार ₹42 से ₹1,454 तक मासिक योगदान देना होता है।'
+      }
+    ],
+    relatedSchemes: ['pm-shram-yogi-maandhan-pension-2025', 'national-pension-scheme'],
+    budget: '₹600 करोड़',
+    beneficiaries: '4.5 करोड़',
+    successRate: '87%'
+  },
+  {
+    id: '126',
+    slug: 'digital-india-e-governance-2025',
+    title: 'Digital India E-Governance 2025: Online Government Services for Citizens',
+    titleHindi: 'डिजिटल इंडिया ई-गवर्नेंस 2025: नागरिकों के लिए ऑनलाइन सरकारी सेवाएं',
+    category: 'Urban Development',
+    categoryHindi: 'शहरी विकास',
+    status: 'active',
+    launchDate: '2015-07-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['All Citizens', 'Businesses', 'Government Employees', 'Students'],
+    benefits: [
+      'Online government services',
+      'Digital document verification',
+      'Paperless transactions',
+      'Time and cost savings',
+      'Transparent processes'
+    ],
+    eligibility: [
+      'All Indian citizens',
+      'Valid mobile number',
+      'Email address',
+      'Digital literacy helpful'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Mobile Number',
+      'Email ID',
+      'Relevant service documents'
+    ],
+    applicationProcess: [
+      'Visit respective government portal',
+      'Create account or login',
+      'Fill online application',
+      'Upload required documents',
+      'Track application status'
+    ],
+    officialWebsite: 'https://digitalindia.gov.in',
+    helpline: '1800-11-1011',
+    coverImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Digital India E-Governance provides online government services to citizens. Paperless transactions and transparent digital processes.',
+    excerptHindi: 'डिजिटल इंडिया ई-गवर्नेंस नागरिकों को ऑनलाइन सरकारी सेवाएं प्रदान करता है। पेपरलेस लेनदेन और पारदर्शी डिजिटल प्रक्रियाएं।',
+    keywords: [
+      'Digital India 2025', 'e-governance services', 'डिजिटल इंडिया',
+      'ई-गवर्नेंस सेवाएं', 'online government services'
+    ],
+    seoTitle: 'Digital India E-Governance 2025: Online Government Services | Complete Guide',
+    seoDescription: 'Digital India E-Governance offers online government services, digital verification and paperless transactions for all citizens.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'डिजिटल इंडिया के तहत कौन सी सेवाएं ऑनलाइन हैं?',
+        answer: 'पैन कार्ड, आधार, पासपोर्ट, आयकर रिटर्न, बैंकिंग सेवाएं आदि सभी ऑनलाइन उपलब्ध हैं।'
+      }
+    ],
+    relatedSchemes: ['digital-india-land-records-modernization-2025', 'common-service-centres'],
+    budget: '₹1.13 लाख करोड़',
+    beneficiaries: '130 करोड़',
+    successRate: '92%'
+  },
+  {
+    id: '127',
+    slug: 'pradhan-mantri-gramin-sadak-yojana-2025',
+    title: 'PM Gram Sadak Yojana 2025: All-Weather Road Connectivity for Villages',
+    titleHindi: 'पीएम ग्राम सड़क योजना 2025: गांवों के लिए सर्वमौसमी सड़क संपर्क',
+    category: 'Rural Development',
+    categoryHindi: 'ग्रामीण विकास',
+    status: 'active',
+    launchDate: '2000-12-25',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Rural Communities', 'Village Residents', 'Farmers', 'Rural Businesses'],
+    benefits: [
+      'All-weather road connectivity',
+      'Enhanced rural accessibility',
+      'Economic development boost',
+      'Better access to services',
+      'Employment generation'
+    ],
+    eligibility: [
+      'Villages with population 250+ (500+ in hills)',
+      'Unconnected habitations',
+      'Priority to SC/ST areas',
+      'Remote and backward areas'
+    ],
+    documents: [
+      'Village Census Data',
+      'Population Certificate',
+      'District Collector Approval',
+      'Technical Survey Report'
+    ],
+    applicationProcess: [
+      'District administration proposal',
+      'Technical feasibility study',
+      'State government approval',
+      'Central approval and funding',
+      'Implementation and monitoring'
+    ],
+    officialWebsite: 'https://pmgsy.nic.in',
+    helpline: '1800-11-3003',
+    coverImage: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Gram Sadak Yojana provides all-weather road connectivity to rural villages. Enhanced accessibility and economic development.',
+    excerptHindi: 'पीएम ग्राम सड़क योजना ग्रामीण गांवों को सर्वमौसमी सड़क संपर्क प्रदान करती है। बेहतर पहुंच और आर्थिक विकास।',
+    keywords: [
+      'PM Gram Sadak Yojana 2025', 'rural road connectivity', 'पीएम ग्राम सड़क योजना',
+      'ग्रामीण सड़क संपर्क', 'village road construction'
+    ],
+    seoTitle: 'PM Gram Sadak Yojana 2025: Rural Road Connectivity | Complete Guide',
+    seoDescription: 'PM Gram Sadak Yojana provides all-weather road connectivity to rural villages. Enhanced accessibility and economic development benefits.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'PMGSY के तहत कौन से गांव कवर होते हैं?',
+        answer: '250+ जनसंख्या वाले गांव (पहाड़ी क्षेत्रों में 500+) जो सड़क से नहीं जुड़े हैं।'
+      }
+    ],
+    relatedSchemes: ['pradhan-mantri-awas-yojana-gramin', 'mahatma-gandhi-nrega'],
+    budget: '₹1.39 लाख करोड़',
+    beneficiaries: '1.78 लाख गांव',
+    successRate: '91%'
+  },
+  {
+    id: '128',
+    slug: 'national-education-policy-implementation-2025',
+    title: 'National Education Policy Implementation 2025: Transforming Indian Education System',
+    titleHindi: 'राष्ट्रीय शिक्षा नीति कार्यान्वयन 2025: भारतीय शिक्षा प्रणाली का रूपांतरण',
+    category: 'Education & Skills',
+    categoryHindi: 'शिक्षा और कौशल',
+    status: 'active',
+    launchDate: '2020-07-29',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Students', 'Teachers', 'Educational Institutions', 'Parents'],
+    benefits: [
+      'Holistic and multidisciplinary education',
+      'Focus on critical thinking and creativity',
+      'Technology integration in learning',
+      'Skill development and vocational training',
+      'Mother tongue based education'
+    ],
+    eligibility: [
+      'All students in Indian education system',
+      'Government and private schools',
+      'Higher education institutions',
+      'Vocational training institutes'
+    ],
+    documents: [
+      'Educational Institution Registration',
+      'Teacher Qualification Certificates',
+      'Infrastructure Assessment',
+      'Curriculum Implementation Plan'
+    ],
+    applicationProcess: [
+      'Institution readiness assessment',
+      'Teacher training programs',
+      'Curriculum development',
+      'Infrastructure upgradation',
+      'Implementation monitoring'
+    ],
+    officialWebsite: 'https://education.gov.in',
+    helpline: '1800-11-2001',
+    coverImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'National Education Policy 2020 transforms Indian education with holistic learning, skill development and technology integration.',
+    excerptHindi: 'राष्ट्रीय शिक्षा नीति 2020 समग्र शिक्षा, कौशल विकास और प्रौद्योगिकी एकीकरण के साथ भारतीय शिक्षा को बदलती है।',
+    keywords: [
+      'National Education Policy 2025', 'NEP implementation', 'राष्ट्रीय शिक्षा नीति',
+      'NEP कार्यान्वयन', 'education system transformation'
+    ],
+    seoTitle: 'National Education Policy 2025: NEP Implementation Guide | Education Reform',
+    seoDescription: 'National Education Policy 2020 implementation guide. Holistic education, skill development and technology integration in Indian schools.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'NEP 2020 की मुख्य विशेषताएं क्या हैं?',
+        answer: 'NEP 2020 में 5+3+3+4 संरचना, मातृभाषा में शिक्षा, कौशल विकास और समग्र मूल्यांकन शामिल है।'
+      }
+    ],
+    relatedSchemes: ['atal-tinkering-labs-expansion-2025', 'samagra-shiksha-abhiyan'],
+    budget: '₹99,312 करोड़',
+    beneficiaries: '25 करोड़',
+    successRate: '73%'
+  },
+  {
+    id: '129',
+    slug: 'startup-india-initiative-expansion-2025',
+    title: 'Startup India Initiative Expansion 2025: Support for Entrepreneurs and Innovation',
+    titleHindi: 'स्टार्टअप इंडिया पहल विस्तार 2025: उद्यमियों और नवाचार के लिए समर्थन',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2016-01-16',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Entrepreneurs', 'Startup Founders', 'Young Innovators', 'Tech Professionals'],
+    benefits: [
+      'Tax exemptions for 3 years',
+      'Fast-track patent applications',
+      'Self-certification compliance',
+      'Funding support and incubation',
+      'Regulatory ease and simplification'
+    ],
+    eligibility: [
+      'Incorporated as company/LLP/partnership',
+      'Age of startup up to 10 years',
+      'Annual turnover less than ₹100 crore',
+      'Working on innovation/improvement'
+    ],
+    documents: [
+      'Certificate of Incorporation',
+      'PAN and TAN of Entity',
+      'Details of Funding/Investment',
+      'Pitch Deck and Business Plan'
+    ],
+    applicationProcess: [
+      'Register on Startup India portal',
+      'Submit incorporation certificate',
+      'Upload required documents',
+      'Get recognition certificate',
+      'Access benefits and support'
+    ],
+    officialWebsite: 'https://startupindia.gov.in',
+    helpline: '1800-115-565',
+    coverImage: 'https://images.unsplash.com/photo-1553028826-f4804151e0b2?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Startup India Initiative provides comprehensive support to entrepreneurs with tax benefits, funding access and regulatory ease.',
+    excerptHindi: 'स्टार्टअप इंडिया पहल उद्यमियों को कर लाभ, फंडिंग पहुंच और नियामक सुविधा के साथ व्यापक समर्थन प्रदान करती है।',
+    keywords: [
+      'Startup India 2025', 'entrepreneur support scheme', 'स्टार्टअप इंडिया',
+      'उद्यमी सहायता योजना', 'startup tax benefits'
+    ],
+    seoTitle: 'Startup India 2025: Tax Benefits & Support for Entrepreneurs | Complete Guide',
+    seoDescription: 'Startup India offers tax exemptions, funding support and regulatory ease for startups. Apply for recognition and access benefits.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'स्टार्टअप इंडिया में कैसे रजिस्टर करें?',
+        answer: 'startupindia.gov.in पर जाकर कंपनी का इनकॉर्पोरेशन सर्टिफिकेट के साथ रजिस्टर कर सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['stand-up-india-scheme-expansion-2025', 'pradhan-mantri-mudra-yojana-expansion-2025'],
+    budget: '₹1,000 करोड़',
+    beneficiaries: '98,000 स्टार्टअप',
+    successRate: '85%'
+  },
+  {
+    id: '130',
+    slug: 'rural-self-employment-training-institutes-2025',
+    title: 'Rural Self Employment Training Institutes 2025: Skill Development for Rural Youth',
+    titleHindi: 'ग्रामीण स्वरोजगार प्रशिक्षण संस्थान 2025: ग्रामीण युवाओं के लिए कौशल विकास',
+    category: 'Rural Development',
+    categoryHindi: 'ग्रामीण विकास',
+    status: 'active',
+    launchDate: '1982-01-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Rural Youth', 'Unemployed Rural Population', 'BPL Families', 'Rural Women'],
+    benefits: [
+      'Free skill development training',
+      'Stipend during training period',
+      'Tool kit and raw materials',
+      'Credit linkage assistance',
+      'Follow-up support for 2 years'
+    ],
+    eligibility: [
+      'Rural youth aged 18-35 years',
+      'Education level: 5th to 12th class',
+      'Below poverty line preferred',
+      'Unemployed or underemployed'
+    ],
+    documents: [
+      'Age Proof Certificate',
+      'Educational Qualification Certificate',
+      'Income/BPL Certificate',
+      'Caste Certificate (if applicable)',
+      'Bank Account Details'
+    ],
+    applicationProcess: [
+      'Apply at nearest RSETI center',
+      'Document verification',
+      'Selection through interview',
+      'Training program enrollment',
+      'Post-training support and guidance'
+    ],
+    officialWebsite: 'https://rseti.org',
+    helpline: '1800-180-1111',
+    coverImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Rural Self Employment Training Institutes provide free skill training to rural youth with stipend and credit linkage support.',
+    excerptHindi: 'ग्रामीण स्वरोजगार प्रशिक्षण संस्थान ग्रामीण युवाओं को वजीफा और ऋण संपर्क सहायता के साथ मुफ्त कौशल प्रशिक्षण प्रदान करते हैं।',
+    keywords: [
+      'RSETI training 2025', 'rural skill development', 'RSETI प्रशिक्षण',
+      'ग्रामीण कौशल विकास', 'self employment training'
+    ],
+    seoTitle: 'RSETI Training 2025: Free Skill Development for Rural Youth | Apply Now',
+    seoDescription: 'Rural Self Employment Training Institutes offer free skill training with stipend for rural youth. Credit linkage and post-training support available.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'RSETI प्रशिक्षण में कितना समय लगता है?',
+        answer: 'RSETI प्रशिक्षण कार्यक्रम आमतौर पर 3-6 सप्ताह का होता है कोर्स के अनुसार।'
+      }
+    ],
+    relatedSchemes: ['national-skill-development-mission-2025', 'mahatma-gandhi-nrega'],
+    budget: '₹800 करोड़',
+    beneficiaries: '3 लाख वार्षिक',
+    successRate: '72%'
+  },
+  {
+    id: '131',
+    slug: 'pradhan-mantri-matru-vandana-yojana-2025',
+    title: 'PM Matru Vandana Yojana 2025: Maternity Benefits for Pregnant and Lactating Women',
+    titleHindi: 'पीएम मातृ वंदना योजना 2025: गर्भवती और स्तनपान कराने वाली महिलाओं के लिए मातृत्व लाभ',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2017-01-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Pregnant Women', 'Lactating Mothers', 'First-time Mothers', 'Rural Women'],
+    benefits: [
+      '₹5,000 financial assistance in 3 installments',
+      'Nutrition support during pregnancy',
+      'Institutional delivery promotion',
+      'Health checkup and counseling',
+      'Mother and child health monitoring'
+    ],
+    eligibility: [
+      'Pregnant and lactating women',
+      'Age 19 years or above',
+      'First living child only',
+      'Family income criteria applies'
+    ],
+    documents: [
+      'Pregnancy Registration Card',
+      'Aadhaar Card',
+      'Bank Account Passbook',
+      'Institutional Delivery Certificate',
+      'Child Birth Certificate'
+    ],
+    applicationProcess: [
+      'Register pregnancy at Anganwadi',
+      'Complete health checkups',
+      'Fulfill conditionalities',
+      'Submit required documents',
+      'Receive installments in bank account'
+    ],
+    officialWebsite: 'https://pmmvy.nic.in',
+    helpline: '104',
+    coverImage: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Matru Vandana Yojana provides ₹5,000 financial assistance to pregnant and lactating women for nutrition and health support.',
+    excerptHindi: 'पीएम मातृ वंदना योजना गर्भवती और स्तनपान कराने वाली महिलाओं को पोषण और स्वास्थ्य सहायता के लिए ₹5,000 की वित्तीय सहायता प्रदान करती है।',
+    keywords: [
+      'PM Matru Vandana Yojana 2025', 'maternity benefit scheme', 'पीएम मातृ वंदना योजना',
+      'मातृत्व लाभ योजना', 'pregnancy financial assistance'
+    ],
+    seoTitle: 'PM Matru Vandana Yojana 2025: ₹5000 Maternity Benefit | Apply for PMMVY',
+    seoDescription: 'PM Matru Vandana Yojana offers ₹5000 financial assistance to pregnant women. Nutrition support and health benefits for mothers.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'मातृ वंदना योजना में कितना पैसा मिलता है?',
+        answer: 'इस योजना में गर्भवती महिलाओं को तीन किश्तों में कुल ₹5,000 की राशि मिलती है।'
+      }
+    ],
+    relatedSchemes: ['janani-suraksha-yojana', 'pradhan-mantri-surakshit-matritva-abhiyan'],
+    budget: '₹2,700 करोड़',
+    beneficiaries: '1.76 करोड़',
+    successRate: '89%'
+  },
+  {
+    id: '132',
+    slug: 'pradhan-mantri-kaushal-vikas-yojana-4-2025',
+    title: 'PM Kaushal Vikas Yojana 4.0 (2025): Advanced Skill Training for Industry 4.0',
+    titleHindi: 'पीएम कौशल विकास योजना 4.0 (2025): इंडस्ट्री 4.0 के लिए उन्नत कौशल प्रशिक्षण',
+    category: 'Education & Skills',
+    categoryHindi: 'शिक्षा और कौशल',
+    status: 'active',
+    launchDate: '2025-01-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Youth Aged 15-45', 'Job Seekers', 'School Dropouts', 'Skilled Workers'],
+    benefits: [
+      'Free skill training aligned with Industry 4.0',
+      'Monthly stipend during training',
+      'Certification recognized by industry',
+      'Job placement assistance',
+      'Digital and soft skills training'
+    ],
+    eligibility: [
+      'Age 15-45 years',
+      'Indian citizen',
+      'Basic literacy preferred',
+      'Willingness to undergo training'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Educational Certificates',
+      'Bank Account Details',
+      'Employment Exchange Registration'
+    ],
+    applicationProcess: [
+      'Online registration on PMKVY portal',
+      'Choose training center and course',
+      'Complete enrollment process',
+      'Attend training sessions',
+      'Pass assessment and get certified'
+    ],
+    officialWebsite: 'https://pmkvyofficial.org',
+    helpline: '1800-123-9626',
+    coverImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Kaushal Vikas Yojana 4.0 provides advanced skill training for Industry 4.0 with job placement and industry recognition.',
+    excerptHindi: 'पीएम कौशल विकास योजना 4.0 नौकरी प्लेसमेंट और उद्योग मान्यता के साथ इंडस्ट्री 4.0 के लिए उन्नत कौशल प्रशिक्षण प्रदान करती है।',
+    keywords: [
+      'PMKVY 4.0 2025', 'Industry 4.0 skill training', 'पीएम कौशल विकास योजना 4.0',
+      'इंडस्ट्री 4.0 कौशल प्रशिक्षण', 'advanced skill development'
+    ],
+    seoTitle: 'PM Kaushal Vikas Yojana 4.0 (2025): Industry 4.0 Skill Training | Apply Now',
+    seoDescription: 'PMKVY 4.0 offers advanced skill training for Industry 4.0 with free certification, job placement and monthly stipend during training.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'PMKVY 4.0 में कौन से नए कोर्स हैं?',
+        answer: 'PMKVY 4.0 में AI, Machine Learning, IoT, Robotics, Data Analytics जैसे Industry 4.0 कोर्स शामिल हैं।'
+      }
+    ],
+    relatedSchemes: ['national-skill-development-mission-2025', 'digital-india-e-governance-2025'],
+    budget: '₹15,000 करोड़',
+    beneficiaries: '80 लाख',
+    successRate: '78%'
+  },
+  {
+    id: '133',
+    slug: 'ayushman-bharat-digital-mission-2025',
+    title: 'Ayushman Bharat Digital Mission 2025: Digital Health ID and Telemedicine Services',
+    titleHindi: 'आयुष्मान भारत डिजिटल मिशन 2025: डिजिटल हेल्थ ID और टेलीमेडिसिन सेवाएं',
+    category: 'Healthcare & Medical',
+    categoryHindi: 'स्वास्थ्य और चिकित्सा',
+    status: 'active',
+    launchDate: '2021-09-27',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['All Citizens', 'Patients', 'Healthcare Providers', 'Rural Population'],
+    benefits: [
+      'Unique Digital Health ID for all',
+      'Electronic health records',
+      'Telemedicine consultations',
+      'Digital prescription and medicines',
+      'Seamless healthcare across providers'
+    ],
+    eligibility: [
+      'All Indian citizens',
+      'Valid mobile number',
+      'Basic identity documents',
+      'No age restrictions'
+    ],
+    documents: [
+      'Aadhaar Card or any ID proof',
+      'Mobile Number',
+      'Existing health records (if any)',
+      'Passport size photograph'
+    ],
+    applicationProcess: [
+      'Download Ayushman Bharat Health Account app',
+      'Create account with mobile OTP',
+      'Upload identity documents',
+      'Generate Digital Health ID',
+      'Link with healthcare providers'
+    ],
+    officialWebsite: 'https://abdm.gov.in',
+    helpline: '1800-11-4477',
+    coverImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Ayushman Bharat Digital Mission creates digital health ecosystem with unique health IDs and telemedicine services for all citizens.',
+    excerptHindi: 'आयुष्मान भारत डिजिटल मिशन सभी नागरिकों के लिए अद्वितीय हेल्थ ID और टेलीमेडिसिन सेवाओं के साथ डिजिटल स्वास्थ्य पारिस्थितिकी तंत्र बनाता है।',
+    keywords: [
+      'Ayushman Bharat Digital Mission 2025', 'digital health ID', 'आयुष्मान भारत डिजिटल मिशन',
+      'डिजिटल हेल्थ ID', 'telemedicine services'
+    ],
+    seoTitle: 'Ayushman Bharat Digital Mission 2025: Digital Health ID | Telemedicine Services',
+    seoDescription: 'Ayushman Bharat Digital Mission offers digital health ID, electronic health records and telemedicine services for all citizens.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'डिजिटल हेल्थ ID कैसे बनाएं?',
+        answer: 'Ayushman Bharat Health Account ऐप डाउनलोड करके मोबाइल OTP से अकाउंट बनाकर हेल्थ ID जेनरेट कर सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['ayushman-bharat-health-account-2025', 'national-rural-health-mission-nhm-2025'],
+    budget: '₹1,600 करोड़',
+    beneficiaries: '130 करोड़',
+    successRate: '76%'
+  },
+  {
+    id: '134',
+    slug: 'pradhan-mantri-ujjwala-yojana-2-2025',
+    title: 'PM Ujjwala Yojana 2.0 (2025): Free LPG Connections for Poor Households',
+    titleHindi: 'पीएम उज्ज्वला योजना 2.0 (2025): गरीब परिवारों के लिए मुफ्त LPG कनेक्शन',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2021-08-10',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['BPL Families', 'Rural Women', 'Poor Households', 'Priority Households'],
+    benefits: [
+      'Free LPG connection with gas stove',
+      'First refill absolutely free',
+      'EMI facility for further refills',
+      'Deposit-free LPG connection',
+      'Clean cooking fuel access'
+    ],
+    eligibility: [
+      'Adult women from BPL families',
+      'Priority household category',
+      'Should not have LPG connection',
+      'Valid identity and address proof'
+    ],
+    documents: [
+      'BPL Card or Priority Household Card',
+      'Aadhaar Card of woman applicant',
+      'Bank Account Details',
+      'Address Proof',
+      'Passport Size Photograph'
+    ],
+    applicationProcess: [
+      'Apply at nearest LPG distributor',
+      'Submit application with documents',
+      'Verification by distributor',
+      'KYC completion',
+      'Free connection installation'
+    ],
+    officialWebsite: 'https://pmuy.gov.in',
+    helpline: '1800-233-3555',
+    coverImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Ujjwala Yojana 2.0 provides free LPG connections to poor households with deposit-free installation and EMI facilities.',
+    excerptHindi: 'पीएम उज्ज्वला योजना 2.0 गरीब परिवारों को जमा-मुक्त स्थापना और EMI सुविधाओं के साथ मुफ्त LPG कनेक्शन प्रदान करती है।',
+    keywords: [
+      'PM Ujjwala Yojana 2.0 2025', 'free LPG connection', 'पीएम उज्ज्वला योजना 2.0',
+      'मुफ्त LPG कनेक्शन', 'clean cooking fuel'
+    ],
+    seoTitle: 'PM Ujjwala Yojana 2.0 (2025): Free LPG Connection | Apply for Gas Connection',
+    seoDescription: 'PM Ujjwala Yojana 2.0 offers free LPG connections to BPL families with deposit-free installation and EMI facility for refills.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'उज्ज्वला योजना 2.0 में क्या मिलता है?',
+        answer: 'इस योजना में मुफ्त LPG कनेक्शन, गैस चूल्हा और पहला रिफिल बिल्कुल फ्री मिलता है।'
+      }
+    ],
+    relatedSchemes: ['beti-bachao-beti-padhao-enhanced-2025', 'pradhan-mantri-matru-vandana-yojana-2025'],
+    budget: '₹12,800 करोड़',
+    beneficiaries: '10 करोड़',
+    successRate: '93%'
+  },
+  {
+    id: '135',
+    slug: 'e-shram-portal-worker-registration-2025',
+    title: 'e-Shram Portal Worker Registration 2025: Social Security for Unorganized Workers',
+    titleHindi: 'ई-श्रम पोर्टल श्रमिक पंजीकरण 2025: असंगठित श्रमिकों के लिए सामाजिक सुरक्षा',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2021-08-26',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Unorganized Workers', 'Migrant Workers', 'Construction Workers', 'Domestic Workers'],
+    benefits: [
+      'Unique Universal Account Number (UAN)',
+      'Access to social security schemes',
+      '₹2 lakh accident insurance',
+      'Skill mapping and job matching',
+      'Direct benefit transfer eligibility'
+    ],
+    eligibility: [
+      'Unorganized sector workers',
+      'Age 16-59 years',
+      'Not covered under EPF/ESIC',
+      'Valid mobile number and Aadhaar'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Mobile Number',
+      'Bank Account Details',
+      'Occupation Details',
+      'Skill Information'
+    ],
+    applicationProcess: [
+      'Visit eshram.gov.in website',
+      'Enter Aadhaar and mobile number',
+      'Complete OTP verification',
+      'Fill worker registration form',
+      'Submit and get e-Shram card'
+    ],
+    officialWebsite: 'https://eshram.gov.in',
+    helpline: '14434',
+    coverImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'e-Shram Portal provides social security and insurance benefits to unorganized workers with Universal Account Number registration.',
+    excerptHindi: 'ई-श्रम पोर्टल यूनिवर्सल अकाउंट नंबर पंजीकरण के साथ असंगठित श्रमिकों को सामाजिक सुरक्षा और बीमा लाभ प्रदान करता है।',
+    keywords: [
+      'e-Shram portal 2025', 'unorganized worker registration', 'ई-श्रम पोर्टल',
+      'असंगठित श्रमिक पंजीकरण', 'worker social security'
+    ],
+    seoTitle: 'e-Shram Portal 2025: Worker Registration & Social Security | Apply Online',
+    seoDescription: 'e-Shram Portal offers social security benefits for unorganized workers with UAN registration and ₹2 lakh accident insurance.',
+    content: [],
+    faqSchema: [
+      {
+        question: 'ई-श्रम पोर्टल पर रजिस्ट्रेशन कैसे करें?',
+        answer: 'eshram.gov.in पर जाकर आधार और मोबाइल नंबर से OTP वेरिफिकेशन के बाद रजिस्ट्रेशन कर सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['pm-shram-yogi-maandhan-pension-2025', 'social-security-scheme-gig-workers-2025'],
+    budget: '₹404 करोड़',
+    beneficiaries: '29 करोड़',
+    successRate: '91%'
+  },
+  // Continue with more 136 schemes...
 ];
 
 export function getGovernmentSchemeBySlug(slug: string): GovernmentScheme | undefined {
