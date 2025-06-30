@@ -28943,1821 +28943,8237 @@ export const governmentSchemes: GovernmentScheme[] = [
     beneficiaries: '6.5 करोड़ एमएसएमई',
     successRate: '93%'
   },
-  
+
   {
     id: '106',
-    slug: 'pm-garib-kalyan-anna-yojana-2025',
-    title: 'PM Garib Kalyan Anna Yojana Extended to 2028: Complete Guide for Families',
-    titleHindi: 'पीएम गरीब कल्याण अन्न योजना 2028 तक विस्तार: परिवारों के लिए पूर्ण गाइड',
+    slug: 'pm-garib-kalyan-anna-yojana-2025-free-food-grains',
+    title: 'PM Garib Kalyan Anna Yojana 2025: Free Food Grains for 80 Crore Indians Extended to 2028',
+    titleHindi: 'पीएम गरीब कल्याण अन्न योजना 2025: 80 करोड़ भारतीयों के लिए मुफ्त अनाज 2028 तक बढ़ाया गया',
     category: 'Rural Development',
     categoryHindi: 'ग्रामीण विकास',
     status: 'active',
     launchDate: '2020-03-26',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Poor Families', 'NFSA Beneficiaries', 'Rural Households', 'Urban Poor'],
+    targetAudience: ['Below Poverty Line Families', 'NFSA Beneficiaries', 'Rural Households', 'Urban Poor'],
     benefits: [
-      'Free 5kg rice/wheat per person per month',
-      'Additional 1kg pulses per family per month',
-      'Extended coverage till December 2028',
-      'No documentation required for existing beneficiaries',
-      'Direct distribution through Fair Price Shops'
+      '5 kg rice/wheat per person per month free of cost',
+      '1 kg dal per family per month',
+      'Coverage for 80 crore beneficiaries',
+      'Extended till December 2028',
+      'Direct distribution through Fair Price Shops',
+      'No documentation required for existing cardholders'
     ],
     eligibility: [
-      'NFSA (National Food Security Act) beneficiaries',
-      'Antyodaya Anna Yojana (AAY) cardholders',
+      'Valid ration card holders under NFSA',
       'Priority Household (PHH) cardholders',
-      'Valid ration card required'
+      'Antyodaya Anna Yojana (AAY) beneficiaries',
+      'State-wise beneficiary list verification',
+      'Aadhaar authentication for distribution'
     ],
     documents: [
-      'Ration Card (AAY/PHH)',
-      'Aadhaar Card',
-      'Family Income Certificate',
-      'Residence Proof'
+      'Ration Card (Priority/AAY)',
+      'Aadhaar Card for authentication',
+      'Family identification proof',
+      'Address proof (current)',
+      'Income certificate (if required)',
+      'Bank account details (for DBT)'
     ],
     applicationProcess: [
       'Visit nearest Fair Price Shop (FPS)',
-      'Present valid ration card',
-      'Biometric authentication if required',
-      'Collect free food grains',
-      'Get receipt for collected items'
+      'Present valid ration card for verification',
+      'Complete Aadhaar authentication process',
+      'Receive allocated food grains quantity',
+      'Get acknowledgment receipt with details',
+      'Report any issues to district administration'
     ],
     officialWebsite: 'https://dfpd.gov.in',
-    helpline: '1800-11-3663',
-    coverImage: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Garib Kalyan Anna Yojana extended till 2028 provides free food grains to 80 crore beneficiaries. Get complete details about eligibility, benefits, and application process.',
-    excerptHindi: 'पीएम गरीब कल्याण अन्न योजना 2028 तक विस्तारित, 80 करोड़ लाभार्थियों को मुफ्त अनाज। पात्रता, लाभ और आवेदन प्रक्रिया की पूरी जानकारी।',
+    helpline: '1967',
+    coverImage: 'https://images.pexels.com/photos/6994946/pexels-photo-6994946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Garib Kalyan Anna Yojana extended to 2028, providing free food grains to 80 crore Indians. Complete guide on eligibility, distribution process, and benefits for 2025.',
+    excerptHindi: 'पीएम गरीब कल्याण अन्न योजना 2028 तक बढ़ाई गई, 80 करोड़ भारतीयों को मुफ्त अनाज। 2025 के लिए पात्रता, वितरण प्रक्रिया और लाभों का पूर्ण गाइड।',
     keywords: [
-      'PM Garib Kalyan Anna Yojana 2025', 'free ration scheme', 'NFSA benefits',
-      'ration card benefits', 'गरीब कल्याण अन्न योजना', 'मुफ्त राशन योजना'
+      'PM Garib Kalyan Anna Yojana 2025', 'free food grains scheme', 'ration card benefits',
+      'NFSA benefits 2025', 'fair price shop', 'मुफ्त अनाज योजना',
+      'राशन कार्ड लाभ', 'गरीब कल्याण योजना', 'food security scheme'
     ],
-    seoTitle: 'PM Garib Kalyan Anna Yojana 2025: Free Ration Extended to 2028 | Complete Guide',
-    seoDescription: 'PM Garib Kalyan Anna Yojana provides free food grains to 80 crore people till 2028. Check eligibility, benefits, application process and latest updates.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'PM Garib Kalyan Anna Yojana 2025: Free Food Grains Extended to 2028 | Complete Guide',
+    seoDescription: 'PM Garib Kalyan Anna Yojana 2025 extended to 2028. Get free food grains for 80 crore Indians. Check eligibility, benefits, application process. Latest updates for ration cardholders.',
+    content: [
       {
-        question: 'PM Garib Kalyan Anna Yojana कब तक चलेगी?',
-        answer: 'यह योजना दिसंबर 2028 तक विस्तारित की गई है।'
+        type: 'heading',
+        content: 'PM Garib Kalyan Anna Yojana 2025: 80 करोड़ लोगों के लिए मुफ्त अनाज की योजना'
       },
       {
-        question: 'इस योजना में कितना अनाज मिलता है?',
-        answer: 'प्रति व्यक्ति 5 किलो चावल/गेहूं और प्रति परिवार 1 किलो दाल मिलती है।'
+        type: 'paragraph',
+        content: 'प्रधानमंत्री गरीब कल्याण अन्न योजना (PM-GKAY) भारत सरकार की सबसे बड़ी खाद्य सुरक्षा योजना है जो 80 करोड़ से अधिक लाभार्थियों को मुफ्त अनाज प्रदान करती है। यह योजना कोविड-19 के दौरान शुरू की गई थी और अब इसे 2028 तक बढ़ा दिया गया है। यह राष्ट्रीय खाद्य सुरक्षा अधिनियम (NFSA) के तहत आने वाले सभी लाभार्थियों को कवर करती है।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 में योजना के नए अपडेट और सुधार'
+      },
+      {
+        type: 'paragraph',
+        content: 'सरकार ने 2025 में इस योजना में कई महत्वपूर्ण सुधार किए हैं। डिजिटल राशन कार्ड, बेहतर वितरण प्रणाली, और पारदर्शिता बढ़ाने के उपाय शामिल हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल राशन कार्ड का विस्तार',
+          'आधार आधारित प्रमाणीकरण सिस्टम',
+          'मोबाइल ऐप के माध्यम से स्टेटस चेक',
+          'ऑनलाइन शिकायत निवारण',
+          'रियल-टाइम स्टॉक मॉनिटरिंग',
+          'GPS आधारित FPS ट्रैकिंग'
+        ]
       }
     ],
-    relatedSchemes: ['pm-kisan-samman-nidhi', 'pradhan-mantri-awas-yojana'],
-    budget: '₹2.07 लाख करोड़',
-    beneficiaries: '80 करोड़',
+    faqSchema: [
+      {
+        question: 'PM Garib Kalyan Anna Yojana में कितना अनाज मिलता है?',
+        answer: 'इस योजना में प्रति व्यक्ति 5 किलो चावल/गेहूं और प्रति परिवार 1 किलो दाल मुफ्त मिलती है।'
+      },
+      {
+        question: 'यह योजना कब तक चलेगी?',
+        answer: 'PM Garib Kalyan Anna Yojana को दिसंबर 2028 तक बढ़ा दिया गया है।'
+      },
+      {
+        question: 'कौन लोग इस योजना का लाभ उठा सकते हैं?',
+        answer: 'NFSA के तहत आने वाले सभी राशन कार्ड धारक इस योजना का लाभ उठा सकते हैं।'
+      },
+      {
+        question: 'अनाज कहाँ से मिलेगा?',
+        answer: 'अनाज आपके निकटतम उचित मूल्य की दुकान (Fair Price Shop) से मिलेगा।'
+      },
+      {
+        question: 'क्या इस योजना के लिए कोई आवेदन करना होगा?',
+        answer: 'नहीं, मौजूदा राशन कार्ड धारकों को अलग से आवेदन नहीं करना होगा।'
+      }
+    ],
+    relatedSchemes: ['pm-kisan-samman-nidhi', 'mahatma-gandhi-nrega', 'pradhan-mantri-awas-yojana'],
+    budget: '₹2,00,000 करोड़ (2025-28)',
+    beneficiaries: '80+ करोड़ लाभार्थी',
     successRate: '99.2%'
   },
   {
     id: '107',
-    slug: 'social-security-scheme-gig-workers-2025',
-    title: 'Social Security Scheme for Gig Workers: EPFO Benefits and Coverage',
-    titleHindi: 'गिग वर्कर्स के लिए सामाजिक सुरक्षा योजना: EPFO लाभ और कवरेज',
-    category: 'Employment & Jobs',
-    categoryHindi: 'रोजगार और नौकरी',
+    slug: 'social-security-scheme-95-crore-indians-covered-2025',
+    title: '95 Crore Indians Now Under Social Security Cover: Complete Eligibility Check Guide 2025',
+    titleHindi: '95 करोड़ भारतीय अब सामाजिक सुरक्षा के दायरे में: 2025 पात्रता जांच गाइड',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
     status: 'active',
-    launchDate: '2025-04-01',
+    launchDate: '2016-05-01',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Gig Workers', 'Platform Workers', 'Delivery Personnel', 'Freelancers'],
+    targetAudience: ['Unorganized Workers', 'Daily Wage Earners', 'Domestic Workers', 'Street Vendors', 'Agricultural Workers'],
     benefits: [
-      'Provident Fund (PF) benefits',
-      'ESI medical coverage',
-      'Gratuity benefits',
+      'Life insurance coverage up to ₹2 lakh',
+      'Accidental insurance up to ₹2 lakh',
+      'Pension benefits after 60 years',
+      'Medical benefits under Ayushman Bharat',
       'Maternity benefits for women workers',
-      'Accident insurance coverage'
+      'Disability compensation coverage'
     ],
     eligibility: [
-      'Registered with aggregator platforms',
-      'Minimum 90 days work in a year',
-      'Age between 18-58 years',
-      'Valid Aadhaar and bank account'
+      'Age between 18-40 years for enrollment',
+      'Annual family income below ₹15,000',
+      'Not covered under any other social security scheme',
+      'Valid Aadhaar card and bank account',
+      'Working in unorganized sector'
     ],
     documents: [
-      'Aadhaar Card',
-      'Bank Account Details',
-      'Platform Registration Certificate',
-      'Work History Proof'
+      'Aadhaar Card (mandatory)',
+      'Bank account passbook',
+      'Mobile number for registration',
+      'Passport size photographs',
+      'Income certificate',
+      'Age proof document'
     ],
     applicationProcess: [
-      'Register on EPFO portal',
-      'Submit platform work details',
-      'Upload required documents',
-      'Get UAN (Universal Account Number)',
-      'Start contributing to PF'
+      'Visit Common Service Centre (CSC)',
+      'Fill enrollment form with accurate details',
+      'Submit required documents for verification',
+      'Pay nominal premium amount',
+      'Get enrollment confirmation and card',
+      'Start receiving benefits immediately'
     ],
-    officialWebsite: 'https://epfindia.gov.in',
-    helpline: '1800-11-8005',
-    coverImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'New social security scheme for gig workers provides EPFO benefits, ESI coverage, and financial security. Check eligibility and application process.',
-    excerptHindi: 'गिग वर्कर्स के लिए नई सामाजिक सुरक्षा योजना EPFO लाभ, ESI कवरेज और वित्तीय सुरक्षा प्रदान करती है। पात्रता और आवेदन प्रक्रिया देखें।',
+    officialWebsite: 'https://www.pmjjby.gov.in',
+    helpline: '1800-180-1111',
+    coverImage: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: '95 crore Indians now covered under social security schemes. Complete guide to check eligibility, benefits, and enrollment process for PM Jan Arogya, Jeevan Jyoti Bima, and Suraksha Bima.',
+    excerptHindi: '95 करोड़ भारतीय अब सामाजिक सुरक्षा योजनाओं के तहत कवर। पीएम जन आरोग्य, जीवन ज्योति बीमा, और सुरक्षा बीमा के लिए पात्रता और नामांकन गाइड।',
     keywords: [
-      'gig workers social security', 'EPFO for gig workers', 'platform workers benefits',
-      'गिग वर्कर सामाजिक सुरक्षा', 'प्लेटफॉर्म वर्कर लाभ'
+      'social security scheme India', 'PM Jan Arogya eligibility', 'Jeevan Jyoti Bima Yojana',
+      'Suraksha Bima Yojana', 'unorganized workers insurance', 'सामाजिक सुरक्षा योजना',
+      'जीवन ज्योति बीमा', 'सुरक्षा बीमा योजना', 'workers insurance scheme'
     ],
-    seoTitle: 'Gig Workers Social Security Scheme 2025: EPFO Benefits | Complete Guide',
-    seoDescription: 'Social security scheme for gig workers provides EPFO benefits, ESI coverage. Check eligibility, application process and latest updates for platform workers.',
-    content: [],
-    faqSchema: [
+    seoTitle: '95 Crore Indians Under Social Security: Eligibility Check Guide 2025 | PM Jan Arogya',
+    seoDescription: '95 crore Indians covered under social security schemes 2025. Check eligibility for PM Jan Arogya, Jeevan Jyoti Bima, Suraksha Bima. Complete enrollment guide for unorganized workers.',
+    content: [
       {
-        question: 'गिग वर्कर्स के लिए सामाजिक सुरक्षा योजना क्या है?',
-        answer: 'यह योजना गिग वर्कर्स को PF, ESI और अन्य सामाजिक सुरक्षा लाभ प्रदान करती है।'
+        type: 'heading',
+        content: 'भारत की सामाजिक सुरक्षा योजनाएं: 95 करोड़ लोगों का कवरेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार ने सामाजिक सुरक्षा के क्षेत्र में एक बड़ी उपलब्धि हासिल की है। ILO की रिपोर्ट के अनुसार, अब 95 करोड़ से अधिक भारतीय किसी न किसी सामाजिक सुरक्षा योजना के तहत कवर हैं। यह विश्व स्तर पर एक रिकॉर्ड है और भारत को सामाजिक सुरक्षा के मामले में अग्रणी देशों में शामिल करता है।'
+      },
+      {
+        type: 'subheading',
+        content: 'मुख्य सामाजिक सुरक्षा योजनाएं'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रधानमंत्री जीवन ज्योति बीमा योजना (PMJJBY)',
+          'प्रधानमंत्री सुरक्षा बीमा योजना (PMSBY)',
+          'अटल पेंशन योजना (APY)',
+          'प्रधानमंत्री जन आरोग्य योजना (PM-JAY)',
+          'श्रमिक सामाजिक सुरक्षा योजना',
+          'महात्मा गांधी नरेगा'
+        ]
       }
     ],
-    relatedSchemes: ['pm-shram-yogi-maandhan', 'atal-pension-yojana'],
-    budget: '₹5,000 करोड़',
-    beneficiaries: '2 करोड़',
-    successRate: '85%'
+    faqSchema: [
+      {
+        question: 'कितने भारतीय सामाजिक सुरक्षा के तहत कवर हैं?',
+        answer: 'ILO की रिपोर्ट के अनुसार 95 करोड़ से अधिक भारतीय सामाजिक सुरक्षा योजनाओं के तहत कवर हैं।'
+      },
+      {
+        question: 'सामाजिक सुरक्षा योजना में क्या लाभ मिलते हैं?',
+        answer: 'जीवन बीमा, दुर्घटना बीमा, पेंशन, स्वास्थ्य बीमा, और मातृत्व लाभ मिलते हैं।'
+      },
+      {
+        question: 'कौन इन योजनाओं का लाभ उठा सकता है?',
+        answer: 'असंगठित क्षेत्र के कामगार, दैनिक मजदूर, घरेलू कामगार, और कम आय वाले परिवार।'
+      },
+      {
+        question: 'सामाजिक सुरक्षा योजना में कैसे नामांकन करें?',
+        answer: 'निकटतम CSC या बैंक में जाकर आवश्यक दस्तावेजों के साथ नामांकन करा सकते हैं।'
+      },
+      {
+        question: 'क्या सामाजिक सुरक्षा योजना में प्रीमियम देना होता है?',
+        answer: 'हां, बहुत कम प्रीमियम (₹12-330 सालाना) देना होता है जो सरकार द्वारा सब्सिडी युक्त है।'
+      }
+    ],
+    relatedSchemes: ['pm-jan-arogya-yojana', 'atal-pension-yojana', 'pradhan-mantri-shram-yogi'],
+    budget: '₹50,000 करोड़ (2025-26)',
+    beneficiaries: '95+ करोड़ कवरेज',
+    successRate: '97.8%'
   },
   {
     id: '108',
-    slug: 'jalsakhi-initiative-rural-women-2025',
-    title: 'Jalsakhi Initiative: Water Supply Scheme Benefits for Rural Women',
-    titleHindi: 'जलसखी पहल: ग्रामीण महिलाओं के लिए जल आपूर्ति योजना लाभ',
-    category: 'Women Empowerment',
-    categoryHindi: 'महिला सशक्तिकरण',
+    slug: 'social-security-gig-workers-epfo-bonus-2025',
+    title: 'Social Security for Gig Workers: EPFO Bonus Under PM Jan Arogya Scheme 2025',
+    titleHindi: 'गिग वर्कर्स के लिए सामाजिक सुरक्षा: पीएम जन आरोग्य के तहत EPFO बोनस 2025',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
     status: 'active',
-    launchDate: '2025-05-15',
+    launchDate: '2025-02-01',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Rural Women', 'SHG Members', 'Village Communities', 'Water Committee Members'],
+    targetAudience: ['Gig Workers', 'Delivery Partners', 'Cab Drivers', 'Freelancers', 'Platform Workers'],
     benefits: [
-      'Training for water system maintenance',
-      'Monthly honorarium of ₹6,000',
-      'Skill development in water management',
-      'Leadership opportunities in villages',
-      'Technical support and equipment'
+      'EPFO membership for gig workers',
+      'Provident Fund contributions',
+      'Health insurance under PM-JAY',
+      'Accident insurance coverage',
+      'Retirement benefits after 58 years',
+      'Bonus payments annually'
     ],
     eligibility: [
-      'Women from rural areas',
-      'Basic education (Class 8 minimum)',
-      'Active in community work',
-      'Willingness to undergo training'
+      'Working as gig worker on registered platforms',
+      'Age between 16-65 years',
+      'Valid Aadhaar and bank account',
+      'Monthly earning between ₹15,000-50,000',
+      'Platform registration certificate'
     ],
     documents: [
-      'Aadhaar Card',
-      'Educational Certificates',
-      'Residence Proof',
-      'Community Recommendation Letter'
+      'Aadhaar Card (mandatory)',
+      'Bank account details with IFSC',
+      'Platform registration proof',
+      'Income declaration form',
+      'Mobile number for OTP verification',
+      'Passport size photographs'
     ],
     applicationProcess: [
-      'Contact Village Panchayat',
-      'Submit application form',
-      'Attend selection interview',
-      'Complete training program',
-      'Start work as Jalsakhi'
+      'Register on EPFO gig worker portal',
+      'Upload platform work proof documents',
+      'Complete KYC verification process',
+      'Choose contribution plan (5-12% of income)',
+      'Start monthly contributions',
+      'Receive EPFO member ID and benefits'
     ],
-    officialWebsite: 'https://jalshakti-dowr.gov.in',
-    helpline: '1800-11-9999',
-    coverImage: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Jalsakhi Initiative empowers rural women through water supply management roles. Get ₹6,000 monthly honorarium and skill development opportunities.',
-    excerptHindi: 'जलसखी पहल ग्रामीण महिलाओं को जल आपूर्ति प्रबंधन भूमिकाओं के माध्यम से सशक्त बनाती है। ₹6,000 मासिक मानदेय और कौशल विकास के अवसर पाएं।',
+    officialWebsite: 'https://www.epfindia.gov.in',
+    helpline: '1800-118-005',
+    coverImage: 'https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'New social security scheme for gig workers launched. EPFO membership, health insurance under PM-JAY, and bonus payments. Complete registration guide for delivery partners and freelancers.',
+    excerptHindi: 'गिग वर्कर्स के लिए नई सामाजिक सुरक्षा योजना। EPFO सदस्यता, पीएम-जे.ए.वाई. के तहत स्वास्थ्य बीमा, और बोनस भुगतान। डिलीवरी पार्टनर और फ्रीलांसरों के लिए पंजीकरण गाइड।',
     keywords: [
-      'Jalsakhi Initiative', 'rural women empowerment', 'water supply scheme',
-      'जलसखी पहल', 'ग्रामीण महिला सशक्तिकरण'
+      'gig workers social security', 'EPFO for gig workers', 'delivery partner insurance',
+      'freelancer benefits', 'platform worker scheme', 'गिग वर्कर बीमा',
+      'डिलीवरी पार्टनर योजना', 'फ्रीलांसर सुरक्षा', 'EPFO गिग वर्कर'
     ],
-    seoTitle: 'Jalsakhi Initiative 2025: ₹6000 Monthly for Rural Women | Water Supply Scheme',
-    seoDescription: 'Jalsakhi Initiative provides training and ₹6000 monthly honorarium to rural women for water supply management. Check eligibility and application process.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'Gig Workers Social Security 2025: EPFO Bonus Under PM Jan Arogya | Complete Guide',
+    seoDescription: 'Social security for gig workers 2025. EPFO membership, PM-JAY health insurance, bonus payments for delivery partners, cab drivers, freelancers. Register now at EPFO portal.',
+    content: [
       {
-        question: 'जलसखी बनने के लिए क्या योग्यता चाहिए?',
-        answer: 'ग्रामीण महिला, कम से कम 8वीं पास, और सामुदायिक कार्य में सक्रिय होना चाहिए।'
+        type: 'heading',
+        content: 'गिग वर्कर्स के लिए सामाजिक सुरक्षा: एक नया युग'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत में गिग इकॉनमी तेजी से बढ़ रही है और करोड़ों लोग डिलीवरी, कैब ड्राइविंग, फ्रीलांसिंग जैसे काम कर रहे हैं। सरकार ने इन श्रमिकों के लिए एक व्यापक सामाजिक सुरक्षा योजना शुरू की है जो EPFO के तहत PF, स्वास्थ्य बीमा, और अन्य लाभ प्रदान करती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'गिग वर्कर्स की परिभाषा और कवरेज'
+      },
+      {
+        type: 'list',
+        items: [
+          'ऑनलाइन प्लेटफॉर्म पर काम करने वाले',
+          'डिलीवरी पार्टनर (Zomato, Swiggy, Amazon)',
+          'कैब/ऑटो ड्राइवर (Uber, Ola)',
+          'फ्रीलांसर (Upwork, Fiverr)',
+          'होम सर्विस प्रोवाइडर (Urban Company)',
+          'ई-कॉमर्स सेलर और पार्टनर'
+        ]
       }
     ],
-    relatedSchemes: ['swachh-bharat-mission', 'beti-bachao-beti-padhao'],
-    budget: '₹1,200 करोड़',
-    beneficiaries: '50,000',
-    successRate: '92%'
+    faqSchema: [
+      {
+        question: 'गिग वर्कर कौन होते हैं?',
+        answer: 'गिग वर्कर वे लोग हैं जो ऑनलाइन प्लेटफॉर्म पर काम करते हैं जैसे डिलीवरी पार्टनर, कैब ड्राइवर, फ्रीलांसर।'
+      },
+      {
+        question: 'गिग वर्कर्स को कौन से लाभ मिलेंगे?',
+        answer: 'EPFO सदस्यता, PF योगदान, स्वास्थ्य बीमा, दुर्घटना बीमा, और वार्षिक बोनस मिलेगा।'
+      },
+      {
+        question: 'कैसे रजिस्टर करें?',
+        answer: 'EPFO की गिग वर्कर पोर्टल पर जाकर आवश्यक दस्तावेजों के साथ रजिस्ट्रेशन कर सकते हैं।'
+      },
+      {
+        question: 'कितना योगदान देना होगा?',
+        answer: 'आप अपनी आय का 5-12% तक योगदान चुन सकते हैं।'
+      },
+      {
+        question: 'कब से यह योजना शुरू हुई?',
+        answer: 'यह योजना फरवरी 2025 से शुरू हुई है और सभी गिग वर्कर्स के लिए उपलब्ध है।'
+      }
+    ],
+    relatedSchemes: ['e-shram-card', 'pm-jan-arogya-yojana', 'atal-pension-yojana'],
+    budget: '₹25,000 करोड़ (2025-28)',
+    beneficiaries: '2 करोड़ गिग वर्कर्स',
+    successRate: '92.5%'
   },
   {
     id: '109',
-    slug: 'svamitva-yojana-rural-property-card-2025',
-    title: 'Svamitva Yojana Update: Rural Property Card Distribution and Benefits',
-    titleHindi: 'स्वामित्व योजना अपडेट: ग्रामीण संपत्ति कार्ड वितरण और लाभ',
+    slug: 'jalsakhi-initiative-rural-women-water-supply-scheme-2025',
+    title: 'Jalsakhi Initiative 2025: Empowering Rural Women Through Water Supply Management',
+    titleHindi: 'जलसखी पहल 2025: जल आपूर्ति प्रबंधन के माध्यम से ग्रामीण महिला सशक्तिकरण',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2025-06-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Rural Women', 'Self Help Group Members', 'Water Committee Members', 'Village Level Workers'],
+    benefits: [
+      'Monthly income of ₹3,000-8,000 for water management',
+      'Technical training on water supply systems',
+      'Leadership development programs',
+      'Community recognition and status',
+      'Financial independence for women',
+      'Improved water quality in villages'
+    ],
+    eligibility: [
+      'Rural women aged 18-45 years',
+      'Minimum 10th class education',
+      'Member of Self Help Group (SHG)',
+      'Residence in target village/area',
+      'Basic understanding of community work'
+    ],
+    documents: [
+      'Aadhaar Card and voter ID',
+      'Educational qualification certificate',
+      'SHG membership proof',
+      'Bank account details',
+      'Caste certificate (if applicable)',
+      'Training completion certificate'
+    ],
+    applicationProcess: [
+      'Contact local Block Development Office',
+      'Attend orientation program in village',
+      'Fill application form with complete details',
+      'Submit documents for verification',
+      'Complete 15-day training program',
+      'Start work as certified Jalsakhi'
+    ],
+    officialWebsite: 'https://jalshakti.gov.in',
+    helpline: '1800-11-0011',
+    coverImage: 'https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Jalsakhi Initiative 2025 empowers rural women as water supply managers. Earn ₹3,000-8,000 monthly while ensuring clean water access. Complete training and application guide.',
+    excerptHindi: 'जलसखी पहल 2025 ग्रामीण महिलाओं को जल आपूर्ति प्रबंधक के रूप में सशक्त बनाती है। स्वच्छ पानी सुनिश्चित करते हुए मासिक ₹3,000-8,000 कमाएं। संपूर्ण प्रशिक्षण और आवेदन गाइड।',
+    keywords: [
+      'Jalsakhi Initiative', 'rural women empowerment', 'water supply management',
+      'women water committee', 'village water scheme', 'जलसखी योजना',
+      'ग्रामीण महिला रोजगार', 'जल प्रबंधन', 'महिला सशक्तिकरण योजना'
+    ],
+    seoTitle: 'Jalsakhi Initiative 2025: Rural Women Water Management | Earn ₹3,000-8,000 Monthly',
+    seoDescription: 'Jalsakhi Initiative 2025 for rural women empowerment. Manage village water supply, earn ₹3,000-8,000 monthly. Complete training program, eligibility, application process guide.',
+    content: [
+      {
+        type: 'heading',
+        content: 'जलसखी पहल: ग्रामीण महिलाओं के लिए नए अवसर'
+      },
+      {
+        type: 'paragraph',
+        content: 'उत्तराखंड सरकार द्वारा शुरू की गई जलसखी पहल एक क्रांतिकारी योजना है जो ग्रामीण महिलाओं को जल आपूर्ति प्रबंधन में सीधी भागीदारी देती है। इस योजना के तहत महिलाएं न केवल अपने गांव में स्वच्छ पानी सुनिश्चित करती हैं बल्कि आर्थिक स्वतंत्रता भी प्राप्त करती हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'जलसखी की भूमिका और जिम्मेदारियां'
+      },
+      {
+        type: 'list',
+        items: [
+          'दैनिक जल आपूर्ति की निगरानी',
+          'पानी की गुणवत्ता की जांच',
+          'टंकी और पाइपलाइन का रखरखाव',
+          'जल बिलों का संग्रह और वितरण',
+          'समुदायिक जागरूकता कार्यक्रम',
+          'सरकारी अधिकारियों से समन्वय'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'जलसखी क्या है?',
+        answer: 'जलसखी ग्रामीण महिलाएं हैं जो अपने गांव में जल आपूर्ति प्रणाली का प्रबंधन करती हैं।'
+      },
+      {
+        question: 'जलसखी को कितनी सैलरी मिलती है?',
+        answer: 'जलसखी को मासिक ₹3,000 से ₹8,000 तक की आय होती है।'
+      },
+      {
+        question: 'जलसखी बनने के लिए क्या योग्यता चाहिए?',
+        answer: 'न्यूनतम 10वीं पास, SHG सदस्य, और 18-45 वर्ष की आयु होनी चाहिए।'
+      },
+      {
+        question: 'कैसे आवेदन करें?',
+        answer: 'स्थानीय ब्लॉक विकास कार्यालय में संपर्क करके आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'क्या प्रशिक्षण दिया जाता है?',
+        answer: 'हां, 15 दिन का तकनीकी प्रशिक्षण दिया जाता है।'
+      }
+    ],
+    relatedSchemes: ['swachh-bharat-mission', 'jal-jeevan-mission', 'beti-bachao-beti-padhao'],
+    budget: '₹5,000 करोड़ (2025-27)',
+    beneficiaries: '50,000 ग्रामीण महिलाएं',
+    successRate: '94.2%'
+  },
+  {
+    id: '110',
+    slug: 'svamitva-yojana-rural-property-card-2025-update',
+    title: 'Svamitva Yojana 2025: Have You Received Your Rural Property Card? Complete Status Check',
+    titleHindi: 'स्वामित्व योजना 2025: क्या आपको ग्रामीण संपत्ति कार्ड मिला? स्थिति जांच गाइड',
     category: 'Rural Development',
     categoryHindi: 'ग्रामीण विकास',
     status: 'active',
     launchDate: '2020-04-24',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Rural Property Owners', 'Village Residents', 'Farmers', 'Rural Families'],
+    targetAudience: ['Rural Property Owners', 'Farmers', 'Village Residents', 'Rural Households'],
     benefits: [
-      'Legal ownership of residential properties',
-      'Property cards with GPS coordinates',
-      'Easy access to bank loans',
-      'Reduced property disputes',
-      'Online property verification'
+      'Legal property rights and ownership proof',
+      'Easy access to bank loans and credit',
+      'Property can be used as collateral',
+      'Reduced property disputes in villages',
+      'Accurate property records and documentation',
+      'Enhanced property value and marketability'
     ],
     eligibility: [
-      'Resident of participating villages',
-      'Owner of residential property',
-      'Property within village abadi area',
-      'Valid identity documents'
+      'Property located in rural/village area',
+      'Valid land records and documents',
+      'Aadhaar card of property owner',
+      'Property within surveyed village boundary',
+      'No major land disputes pending'
     ],
     documents: [
-      'Aadhaar Card',
-      'Residence Proof',
-      'Property Possession Documents',
-      'Family Tree/Genealogy'
+      'Aadhaar Card of property owner',
+      'Existing land documents (if any)',
+      'Village residence proof',
+      'Property tax receipts (if applicable)',
+      'Survey settlement records',
+      'Bank account details'
     ],
     applicationProcess: [
-      'Village survey completion',
-      'Property identification by survey team',
-      'Verification of ownership claims',
-      'Issuance of property card',
-      'Online portal registration'
+      'Wait for drone survey in your village',
+      'Village Panchayat will announce survey dates',
+      'Ensure presence during property verification',
+      'Submit required documents to survey team',
+      'Property card will be issued after verification',
+      'Download digital copy from official portal'
     ],
     officialWebsite: 'https://svamitva.nic.in',
-    helpline: '1800-11-5511',
-    coverImage: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Svamitva Yojana provides property cards to rural residents with GPS mapping. Get legal ownership documents and access to financial services.',
-    excerptHindi: 'स्वामित्व योजना GPS मैपिंग के साथ ग्रामीण निवासियों को संपत्ति कार्ड प्रदान करती है। कानूनी स्वामित्व दस्तावेज और वित्तीय सेवाओं तक पहुंच प्राप्त करें।',
+    helpline: '1800-11-2002',
+    coverImage: 'https://images.pexels.com/photos/7078666/pexels-photo-7078666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Svamitva Yojana 2025 provides property cards to rural residents. Check if your village is covered, status of property card, and benefits of legal property rights.',
+    excerptHindi: 'स्वामित्व योजना 2025 ग्रामीण निवासियों को संपत्ति कार्ड प्रदान करती है। जांचें कि आपका गांव कवर है या नहीं, संपत्ति कार्ड की स्थिति, और कानूनी संपत्ति अधिकारों के लाभ।',
     keywords: [
-      'Svamitva Yojana', 'rural property card', 'village property mapping',
-      'स्वामित्व योजना', 'ग्रामीण संपत्ति कार्ड'
+      'Svamitva Yojana property card', 'rural property rights', 'village property survey',
+      'drone survey villages', 'property card status', 'स्वामित्व योजना कार्ड',
+      'ग्रामीण संपत्ति अधिकार', 'गांव संपत्ति सर्वे', 'ड्रोन सर्वे'
     ],
-    seoTitle: 'Svamitva Yojana 2025: Rural Property Card Benefits | Complete Guide',
-    seoDescription: 'Svamitva Yojana provides property cards to rural residents with legal ownership rights. Check eligibility, benefits and application process.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'Svamitva Yojana 2025: Rural Property Card Status Check | Complete Guide',
+    seoDescription: 'Svamitva Yojana 2025 property card for rural areas. Check status, benefits, eligibility, drone survey updates. Get legal property rights for village properties.',
+    content: [
       {
-        question: 'स्वामित्व योजना के तहत प्रॉपर्टी कार्ड कैसे मिलता है?',
-        answer: 'गांव का सर्वे पूरा होने के बाद, सत्यापन के बाद प्रॉपर्टी कार्ड जारी किया जाता है।'
+        type: 'heading',
+        content: 'स्वामित्व योजना 2025: ग्रामीण संपत्ति अधिकारों का डिजिटलीकरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'स्वामित्व योजना भारत सरकार की एक महत्वाकांक्षी योजना है जो ग्रामीण क्षेत्रों में संपत्ति के कानूनी अधिकार प्रदान करती है। ड्रोन तकनीक का उपयोग करके गांवों का सर्वेक्षण किया जाता है और प्रत्येक परिवार को संपत्ति कार्ड दिया जाता है।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 में योजना की प्रगति और कवरेज'
+      },
+      {
+        type: 'list',
+        items: [
+          '6.2 लाख गांवों में सर्वेक्षण पूरा',
+          '1.2 करोड़ संपत्ति कार्ड जारी',
+          'सभी राज्यों में योजना का विस्तार',
+          'डिजिटल प्लेटफॉर्म पर ऑनलाइन एक्सेस',
+          'मोबाइल ऐप के माध्यम से स्टेटस चेक',
+          'बैंकों से तुरंत लोन अप्रूवल'
+        ]
       }
     ],
-    relatedSchemes: ['pm-kisan-samman-nidhi', 'pradhan-mantri-awas-yojana-gramin'],
-    budget: '₹79.65 करोड़',
-    beneficiaries: '6.62 लाख',
-    successRate: '89%'
+    faqSchema: [
+      {
+        question: 'स्वामित्व योजना क्या है?',
+        answer: 'यह ग्रामीण क्षेत्रों में संपत्ति के कानूनी अधिकार प्रदान करने वाली योजना है जो ड्रोन सर्वे के माध्यम से संपत्ति कार्ड जारी करती है।'
+      },
+      {
+        question: 'संपत्ति कार्ड कैसे मिलेगा?',
+        answer: 'आपके गांव में ड्रोन सर्वेक्षण होने के बाद स्वतः संपत्ति कार्ड जारी किया जाएगा।'
+      },
+      {
+        question: 'कैसे पता करें कि मेरे गांव में सर्वे हुआ या नहीं?',
+        answer: 'svamitva.nic.in वेबसाइट पर जाकर अपने गांव का स्टेटस चेक कर सकते हैं।'
+      },
+      {
+        question: 'संपत्ति कार्ड के क्या फायदे हैं?',
+        answer: 'बैंक से लोन आसानी से मिलता है, संपत्ति विवाद कम होते हैं, और कानूनी अधिकार मिलते हैं।'
+      },
+      {
+        question: 'क्या कोई फीस देनी होगी?',
+        answer: 'नहीं, यह योजना पूरी तरह मुफ्त है।'
+      }
+    ],
+    relatedSchemes: ['digital-india', 'e-governance', 'pm-kisan-samman-nidhi'],
+    budget: '₹15,000 करोड़ (2020-25)',
+    beneficiaries: '1.2 करोड़ कार्ड जारी',
+    successRate: '96.8%'
   },
   {
-    id: '110',
-    slug: 'atal-tinkering-labs-expansion-2025',
-    title: 'Atal Tinkering Labs Expansion: Innovation Opportunities for Students',
-    titleHindi: 'अटल टिंकरिंग लैब्स विस्तार: छात्रों के लिए नवाचार के अवसर',
+    id: '111',
+    slug: 'atal-tinkering-labs-expansion-students-parents-guide-2025',
+    title: 'Atal Tinkering Labs Expansion 2025: Complete Guide for Students and Parents',
+    titleHindi: 'अटल टिंकरिंग लैब्स विस्तार 2025: छात्रों और अभिभावकों के लिए संपूर्ण गाइड',
     category: 'Education & Skills',
     categoryHindi: 'शिक्षा और कौशल',
     status: 'active',
-    launchDate: '2016-10-01',
+    launchDate: '2016-07-01',
     lastUpdated: '2025-06-30',
-    targetAudience: ['School Students', 'Teachers', 'Educational Institutions', 'Young Innovators'],
+    targetAudience: ['School Students (Class 6-12)', 'Teachers', 'Parents', 'School Administrators'],
     benefits: [
-      '₹20 lakh funding for lab setup',
-      'Modern equipment and tools',
-      'Training for teachers and students',
-      'Innovation challenges and competitions',
-      'Mentorship from industry experts'
+      'Access to modern technology and tools',
+      'Hands-on learning in STEM subjects',
+      'Innovation and creativity development',
+      'Coding and robotics training',
+      '3D printing and design experience',
+      'Problem-solving skills enhancement'
     ],
     eligibility: [
-      'Government and private schools',
-      'Classes 6th to 12th',
-      'Dedicated space for lab',
-      'Committed teacher coordinators'
+      'Schools affiliated with state/central boards',
+      'Minimum infrastructure requirements met',
+      'Dedicated space for lab setup',
+      'Committed teaching staff available',
+      'Student enrollment of at least 150'
     ],
     documents: [
-      'School Registration Certificate',
-      'Principal Recommendation',
-      'Infrastructure Details',
-      'Teacher Coordinator Details'
+      'School affiliation certificate',
+      'Infrastructure availability proof',
+      'Principal and teacher commitment letter',
+      'Student enrollment details',
+      'School registration documents',
+      'Local administration NOC'
     ],
     applicationProcess: [
-      'Apply online on AIM portal',
-      'Submit school details and proposal',
-      'Site verification by officials',
-      'Approval and funding release',
-      'Lab setup and inauguration'
+      'Visit Atal Innovation Mission website',
+      'Register school with complete details',
+      'Submit application with required documents',
+      'Wait for verification and approval',
+      'Receive lab equipment and setup guidance',
+      'Start operations with mentor support'
     ],
     officialWebsite: 'https://aim.gov.in',
-    helpline: '1800-11-2001',
-    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Atal Tinkering Labs provide ₹20 lakh funding for innovation labs in schools. Foster creativity and problem-solving skills among students.',
-    excerptHindi: 'अटल टिंकरिंग लैब्स स्कूलों में नवाचार प्रयोगशालाओं के लिए ₹20 लाख फंडिंग प्रदान करती हैं। छात्रों में रचनात्मकता और समस्या समाधान कौशल को बढ़ावा दें।',
+    helpline: '1800-11-4477',
+    coverImage: 'https://images.pexels.com/photos/8471916/pexels-photo-8471916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Atal Tinkering Labs expanding to more schools in 2025. Complete guide for students, parents, and schools. Learn about STEM education, coding, robotics, and innovation programs.',
+    excerptHindi: 'अटल टिंकरिंग लैब्स 2025 में और स्कूलों में विस्तार। छात्रों, माता-पिता और स्कूलों के लिए संपूर्ण गाइड। STEM शिक्षा, कोडिंग, रोबोटिक्स और इनोवेशन कार्यक्रमों के बारे में जानें।',
     keywords: [
-      'Atal Tinkering Labs', 'school innovation labs', 'student creativity',
-      'अटल टिंकरिंग लैब्स', 'स्कूल नवाचार प्रयोगशाला'
+      'Atal Tinkering Labs', 'STEM education India', 'school innovation labs',
+      'coding for students', 'robotics training', 'अटल टिंकरिंग लैब',
+      'STEM शिक्षा', 'स्कूल इनोवेशन', 'छात्र कोडिंग', 'रोबोटिक्स प्रशिक्षण'
     ],
-    seoTitle: 'Atal Tinkering Labs 2025: ₹20 Lakh School Innovation Labs | Complete Guide',
-    seoDescription: 'Atal Tinkering Labs provide ₹20 lakh funding for innovation labs in schools. Check eligibility, benefits and application process for ATL.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'Atal Tinkering Labs 2025: School Innovation Program | Students & Parents Guide',
+    seoDescription: 'Atal Tinkering Labs expansion 2025. Complete guide for students, parents, schools. STEM education, coding, robotics, 3D printing. Apply for your school lab setup.',
+    content: [
       {
-        question: 'अटल टिंकरिंग लैब के लिए कितनी फंडिंग मिलती है?',
-        answer: 'प्रत्येक लैब के लिए ₹20 लाख तक की फंडिंग प्रदान की जाती है।'
+        type: 'heading',
+        content: 'अटल टिंकरिंग लैब्स: भविष्य की शिक्षा का आधार'
+      },
+      {
+        type: 'paragraph',
+        content: 'अटल इनोवेशन मिशन के तहत चलाई जा रही अटल टिंकरिंग लैब्स का उद्देश्य बच्चों में वैज्ञानिक सोच और इनोवेशन की भावना विकसित करना है। 2025 में इन लैब्स का विस्तार और भी तेजी से हो रहा है।'
+      },
+      {
+        type: 'subheading',
+        content: 'लैब में उपलब्ध उपकरण और सुविधाएं'
+      },
+      {
+        type: 'list',
+        items: [
+          '3D प्रिंटर और डिजाइन सॉफ्टवेयर',
+          'रोबोटिक्स किट और सेंसर',
+          'माइक्रो कंट्रोलर और प्रोग्रामिंग टूल्स',
+          'इलेक्ट्रॉनिक्स और सर्किट बिल्डिंग',
+          'वर्चुअल रियलिटी और AR डिवाइस',
+          'डिजिटल टूल्स और सॉफ्टवेयर'
+        ]
       }
     ],
-    relatedSchemes: ['digital-india', 'skill-india'],
-    budget: '₹500 करोड़',
-    beneficiaries: '10,000 स्कूल',
-    successRate: '87%'
-  },
-
-  {
-    id: '111',
-    slug: 'digital-india-land-records-modernization-2025',
-    title: 'Digital India Land Records Modernization: Online Property Verification Benefits',
-    titleHindi: 'डिजिटल इंडिया भूमि रिकॉर्ड आधुनिकीकरण: ऑनलाइन संपत्ति सत्यापन लाभ',
-    category: 'Urban Development',
-    categoryHindi: 'शहरी विकास',
-    status: 'active',
-    launchDate: '2023-08-15',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Property Owners', 'Farmers', 'Urban Residents', 'Business Owners'],
-    benefits: [
-      'Online land record verification',
-      'Digital property certificates',
-      'Reduced documentation time',
-      'Transparent land transactions',
-      'Fraud prevention measures'
-    ],
-    eligibility: [
-      'All property owners',
-      'Valid land documents',
-      'Aadhaar verification required',
-      'Updated survey records'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Property Documents',
-      'Survey Settlement Records',
-      'Income Proof'
-    ],
-    applicationProcess: [
-      'Visit land records portal',
-      'Enter property details',
-      'Upload required documents',
-      'Pay nominal fees',
-      'Download digital certificate'
-    ],
-    officialWebsite: 'https://landrecords.gov.in',
-    helpline: '1800-11-0001',
-    coverImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Digital India Land Records Modernization provides online property verification and digital certificates. Streamline land transactions with transparent processes.',
-    excerptHindi: 'डिजिटल इंडिया भूमि रिकॉर्ड आधुनिकीकरण ऑनलाइन संपत्ति सत्यापन और डिजिटल प्रमाणपत्र प्रदान करता है। पारदर्शी प्रक्रियाओं के साथ भूमि लेनदेन को सुव्यवस्थित करें।',
-    keywords: [
-      'digital land records', 'property verification online', 'भूमि रिकॉर्ड डिजिटल',
-      'संपत्ति सत्यापन ऑनलाइन', 'land records modernization'
-    ],
-    seoTitle: 'Digital India Land Records 2025: Online Property Verification | Complete Guide',
-    seoDescription: 'Digital India Land Records Modernization provides online property verification, digital certificates. Check land records, property documents online.',
-    content: [],
     faqSchema: [
       {
-        question: 'डिजिटल भूमि रिकॉर्ड कैसे देखें?',
-        answer: 'land records portal पर जाकर अपनी प्रॉपर्टी डिटेल्स डालकर ऑनलाइन देख सकते हैं।'
+        question: 'अटल टिंकरिंग लैब क्या है?',
+        answer: 'यह स्कूलों में स्थापित इनोवेशन लैब है जहां बच्चे STEM विषयों में प्रैक्टिकल लर्निंग करते हैं।'
+      },
+      {
+        question: 'कौन से स्कूल आवेदन कर सकते हैं?',
+        answer: 'सरकारी और प्राइवेट दोनों तरह के मान्यता प्राप्त स्कूल आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'लैब सेटअप में कितना खर्च आता है?',
+        answer: 'सरकार द्वारा ₹20 लाख तक का अनुदान दिया जाता है।'
+      },
+      {
+        question: 'छात्र क्या सीखते हैं?',
+        answer: 'कोडिंग, रोबोटिक्स, 3D डिजाइन, इलेक्ट्रॉनिक्स और प्रॉब्लम सॉल्विंग।'
+      },
+      {
+        question: 'कैसे आवेदन करें?',
+        answer: 'aim.gov.in पर जाकर ऑनलाइन आवेदन कर सकते हैं।'
       }
     ],
-    relatedSchemes: ['svamitva-yojana-rural-property-card-2025', 'digital-india'],
-    budget: '₹850 करोड़',
-    beneficiaries: '15 करोड़',
-    successRate: '91%'
+    relatedSchemes: ['digital-india', 'skill-india', 'startup-india'],
+    budget: '₹4,000 करोड़ (2016-25)',
+    beneficiaries: '10,000+ स्कूल',
+    successRate: '89.5%'
   },
   {
     id: '112',
-    slug: 'pradhan-mantri-mudra-yojana-expansion-2025',
-    title: 'PM MUDRA Yojana Expansion 2025: ₹20 Lakh Business Loans for MSMEs',
-    titleHindi: 'पीएम मुद्रा योजना विस्तार 2025: MSME के लिए ₹20 लाख व्यवसायिक ऋण',
-    category: 'Financial Inclusion',
-    categoryHindi: 'वित्तीय समावेशन',
-    status: 'active',
-    launchDate: '2015-04-08',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Small Business Owners', 'Entrepreneurs', 'Women Entrepreneurs', 'Rural Businesses'],
-    benefits: [
-      'Collateral-free business loans',
-      'Loan amount up to ₹20 lakh',
-      'Low interest rates (7-12%)',
-      'Quick processing and approval',
-      'Support for business growth'
-    ],
-    eligibility: [
-      'Indian citizen aged 18-65 years',
-      'Small business or startup',
-      'Good credit score preferred',
-      'Valid business plan'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'PAN Card',
-      'Business Registration',
-      'Bank Statements',
-      'Income Proof'
-    ],
-    applicationProcess: [
-      'Visit nearest bank or NBFC',
-      'Fill MUDRA loan application',
-      'Submit business plan',
-      'Document verification',
-      'Loan disbursement'
-    ],
-    officialWebsite: 'https://mudra.org.in',
-    helpline: '1800-180-1111',
-    coverImage: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM MUDRA Yojana provides collateral-free business loans up to ₹20 lakh for small enterprises. Support business growth with low-interest financing.',
-    excerptHindi: 'पीएम मुद्रा योजना छोटे उद्यमों के लिए ₹20 लाख तक बिना गारंटी के व्यवसायिक ऋण प्रदान करती है। कम ब्याज दरों पर व्यवसायिक वृद्धि का समर्थन करें।',
-    keywords: [
-      'MUDRA loan 2025', 'business loan without collateral', 'मुद्रा लोन',
-      'व्यवसायिक ऋण बिना गारंटी', 'small business financing'
-    ],
-    seoTitle: 'PM MUDRA Yojana 2025: ₹20 Lakh Business Loan Without Collateral | Apply Now',
-    seoDescription: 'PM MUDRA Yojana provides business loans up to ₹20 lakh without collateral. Low interest rates, quick approval for small enterprises and startups.',
-    content: [],
-    faqSchema: [
-      {
-        question: 'मुद्रा लोन कितना मिल सकता है?',
-        answer: 'मुद्रा योजना के तहत ₹10 लाख से ₹20 लाख तक का लोन मिल सकता है।'
-      }
-    ],
-    relatedSchemes: ['stand-up-india', 'startup-india'],
-    budget: '₹3.5 लाख करोड़',
-    beneficiaries: '40 करोड़',
-    successRate: '94%'
-  },
-  {
-    id: '113',
-    slug: 'ayushman-bharat-health-account-2025',
-    title: 'Ayushman Bharat Health Account: ₹5 Lakh Medical Coverage for Families',
-    titleHindi: 'आयुष्मान भारत स्वास्थ्य खाता: परिवारों के लिए ₹5 लाख चिकित्सा कवरेज',
-    category: 'Healthcare & Medical',
-    categoryHindi: 'स्वास्थ्य और चिकित्सा',
-    status: 'active',
-    launchDate: '2018-09-23',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Poor Families', 'Rural Population', 'Below Poverty Line', 'Uninsured Families'],
-    benefits: [
-      '₹5 lakh annual health coverage',
-      'Cashless treatment at empanelled hospitals',
-      'Coverage for 1,400+ medical procedures',
-      'Pre and post-hospitalization expenses',
-      'Maternity and newborn care'
-    ],
-    eligibility: [
-      'Families covered under SECC-2011',
-      'Rural families with specific criteria',
-      'Urban families meeting occupational criteria',
-      'Valid Aadhaar card required'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Ration Card',
-      'SECC-2011 Details',
-      'Mobile Number'
-    ],
-    applicationProcess: [
-      'Check eligibility online',
-      'Visit nearest CSC or hospital',
-      'Biometric verification',
-      'Generate Ayushman Card',
-      'Use for cashless treatment'
-    ],
-    officialWebsite: 'https://pmjay.gov.in',
-    helpline: '14555',
-    coverImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Ayushman Bharat provides ₹5 lakh annual health coverage for poor families. Cashless treatment at empanelled hospitals for 1,400+ procedures.',
-    excerptHindi: 'आयुष्मान भारत गरीब परिवारों के लिए ₹5 लाख वार्षिक स्वास्थ्य कवरेज प्रदान करता है। 1,400+ प्रक्रियाओं के लिए सूचीबद्ध अस्पतालों में कैशलेस इलाज।',
-    keywords: [
-      'Ayushman Bharat 2025', 'health insurance poor families', 'आयुष्मान भारत',
-      'गरीब परिवार स्वास्थ्य बीमा', 'PMJAY benefits'
-    ],
-    seoTitle: 'Ayushman Bharat 2025: ₹5 Lakh Health Coverage | How to Apply for PMJAY Card',
-    seoDescription: 'Ayushman Bharat provides ₹5 lakh health coverage for poor families. Check eligibility, apply for PMJAY card, get cashless treatment.',
-    content: [],
-    faqSchema: [
-      {
-        question: 'आयुष्मान भारत कार्ड कैसे बनवाएं?',
-        answer: 'नजदीकी CSC या अस्पताल में जाकर बायोमेट्रिक वेरिफिकेशन के बाद कार्ड बनवा सकते हैं।'
-      }
-    ],
-    relatedSchemes: ['rashtriya-swasthya-bima-yojana', 'janani-suraksha-yojana'],
-    budget: '₹6,400 करोड़',
-    beneficiaries: '12 करोड़ परिवार',
-    successRate: '88%'
-  },
-  {
-    id: '114',
-    slug: 'national-apprenticeship-promotion-scheme-2025',
-    title: 'National Apprenticeship Promotion Scheme: Skill Development and Jobs for Youth',
-    titleHindi: 'राष्ट्रीय प्रशिक्षुता प्रोत्साहन योजना: युवाओं के लिए कौशल विकास और नौकरी',
+    slug: 'pm-research-fellowship-10000-fellowships-iit-iisc-eligibility-2025',
+    title: 'PM Research Fellowship 2025: 10,000 Fellowships for IIT/IISc Students - Eligibility Guide',
+    titleHindi: 'पीएम रिसर्च फेलोशिप 2025: IIT/IISc छात्रों के लिए 10,000 फेलोशिप - पात्रता गाइड',
     category: 'Youth & Students',
     categoryHindi: 'युवा और छात्र',
     status: 'active',
-    launchDate: '2016-08-19',
+    launchDate: '2018-09-01',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Youth aged 14-21', 'Job Seekers', 'Skill Development Aspirants', 'Engineering Graduates'],
+    targetAudience: ['PhD Students', 'Research Scholars', 'IIT/IISc Students', 'STEM Graduates'],
     benefits: [
-      'Paid apprenticeship training',
-      'Industry-relevant skills development',
-      'Monthly stipend during training',
-      'Job placement assistance',
-      'Certificate recognized by industry'
+      '₹70,000-80,000 monthly fellowship amount',
+      '₹2,00,000 annual research grant',
+      'World-class research infrastructure access',
+      'International collaboration opportunities',
+      'Industry mentorship programs',
+      'Publication and patent support'
     ],
     eligibility: [
-      'Age 14-21 years for freshers',
-      'Class 8th to Graduate qualification',
-      'Valid Aadhaar and bank account',
-      'Willing to undergo training'
+      'Indian citizen with valid documents',
+      'BTech/BE with 8+ CGPA or top 25% ranking',
+      'MTech/MSc with 8+ CGPA or equivalent',
+      'GATE/NET qualified (preferred)',
+      'Age limit: 28 years (31 for reserved categories)'
     ],
     documents: [
-      'Aadhaar Card',
-      'Educational Certificates',
-      'Bank Account Details',
-      'Passport Size Photos'
+      'All academic transcripts and certificates',
+      'GATE/NET scorecard (if applicable)',
+      'Research proposal (3-5 pages)',
+      'Two recommendation letters',
+      'Statement of purpose',
+      'Aadhaar card and photo ID'
     ],
     applicationProcess: [
-      'Register on apprenticeship portal',
-      'Search for available opportunities',
-      'Apply for suitable positions',
-      'Attend selection process',
-      'Start apprenticeship training'
+      'Visit PM Research Fellowship portal',
+      'Create account and fill application form',
+      'Upload all required documents',
+      'Submit research proposal with mentor details',
+      'Appear for written test and interview',
+      'Final selection and fellowship award'
     ],
-    officialWebsite: 'https://apprenticeship.gov.in',
-    helpline: '1800-123-9626',
-    coverImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'National Apprenticeship Promotion Scheme provides paid training and job placement for youth. Develop industry skills with monthly stipend.',
-    excerptHindi: 'राष्ट्रीय प्रशिक्षुता प्रोत्साहन योजना युवाओं के लिए भुगतान प्रशिक्षण और नौकरी प्लेसमेंट प्रदान करती है। मासिक वजीफे के साथ उद्योग कौशल विकसित करें।',
+    officialWebsite: 'https://pmrf.in',
+    helpline: '1800-11-4466',
+    coverImage: 'https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Research Fellowship 2025 offers 10,000 fellowships for PhD research at IIT/IISc. ₹70,000-80,000 monthly stipend plus research grant. Complete eligibility and application guide.',
+    excerptHindi: 'पीएम रिसर्च फेलोशिप 2025 IIT/IISc में PhD रिसर्च के लिए 10,000 फेलोशिप प्रदान करती है। ₹70,000-80,000 मासिक स्टाइपेंड और रिसर्च ग्रांट। संपूर्ण पात्रता और आवेदन गाइड।',
     keywords: [
-      'apprenticeship scheme 2025', 'skill development jobs', 'प्रशिक्षुता योजना',
-      'कौशल विकास नौकरी', 'paid training programs'
+      'PM Research Fellowship', 'PhD fellowship India', 'IIT research program',
+      'research scholarship', 'STEM fellowship', 'पीएम रिसर्च फेलोशिप',
+      'PhD स्कॉलरशिप', 'IIT रिसर्च', 'अनुसंधान छात्रवृत्ति'
     ],
-    seoTitle: 'National Apprenticeship Scheme 2025: Paid Training & Jobs for Youth | Apply Now',
-    seoDescription: 'National Apprenticeship Promotion Scheme offers paid training, skill development and job placement for youth. Apply online for apprenticeship opportunities.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'PM Research Fellowship 2025: 10,000 PhD Fellowships | IIT/IISc Eligibility Guide',
+    seoDescription: 'PM Research Fellowship 2025 for PhD students. 10,000 fellowships at IIT/IISc. ₹70,000-80,000 monthly stipend, research grant. Check eligibility, apply at pmrf.in.',
+    content: [
       {
-        question: 'प्रशिक्षुता योजना में कितना वेतन मिलता है?',
-        answer: 'प्रशिक्षुता के दौरान न्यूनतम वेतन का 70% हिस्सा वजीफे के रूप में मिलता है।'
+        type: 'heading',
+        content: 'पीएम रिसर्च फेलोशिप: भारत में उच्च गुणवत्ता अनुसंधान को बढ़ावा'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रधानमंत्री रिसर्च फेलोशिप (PMRF) भारत सरकार की एक प्रतिष्ठित योजना है जो सर्वोत्तम छात्रों को PhD के लिए प्रोत्साहित करती है। यह फेलोशिप केवल IIT, IISc, और कुछ चुनिंदा संस्थानों में उपलब्ध है।'
+      },
+      {
+        type: 'subheading',
+        content: 'फेलोशिप के लाभ और वित्तीय सहायता'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['वर्ष', 'मासिक फेलोशिप', 'वार्षिक रिसर्च ग्रांट', 'कुल राशि'],
+          rows: [
+            ['1st-2nd Year', '₹70,000', '₹2,00,000', '₹10,40,000'],
+            ['3rd-5th Year', '₹80,000', '₹2,00,000', '₹11,60,000'],
+            ['Total (5 years)', '₹45,00,000', '₹10,00,000', '₹55,00,000']
+          ]
+        }
       }
     ],
-    relatedSchemes: ['skill-india-mission', 'pmkvy-scheme'],
-    budget: '₹1,500 करोड़',
-    beneficiaries: '10 लाख युवा',
-    successRate: '86%'
-  },
-  {
-    id: '115',
-    slug: 'pradhan-mantri-jan-dhan-yojana-update-2025',
-    title: 'PM Jan Dhan Yojana Update 2025: Free Banking and Insurance Benefits',
-    titleHindi: 'पीएम जन धन योजना अपडेट 2025: मुफ्त बैंकिंग और बीमा लाभ',
-    category: 'Financial Inclusion',
-    categoryHindi: 'वित्तीय समावेशन',
-    status: 'active',
-    launchDate: '2014-08-28',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Unbanked Population', 'Poor Families', 'Rural Communities', 'Women'],
-    benefits: [
-      'Zero balance bank account',
-      'RuPay debit card with insurance',
-      '₹10 lakh accident insurance',
-      '₹30,000 life insurance',
-      'Overdraft facility up to ₹10,000'
-    ],
-    eligibility: [
-      'Indian citizen',
-      'No existing bank account',
-      'Valid identity proof',
-      'Address proof required'
-    ],
-    documents: [
-      'Aadhaar Card or Voter ID',
-      'Address Proof',
-      'Passport Size Photo',
-      'Mobile Number'
-    ],
-    applicationProcess: [
-      'Visit nearest bank branch',
-      'Fill account opening form',
-      'Submit required documents',
-      'Biometric verification',
-      'Receive passbook and debit card'
-    ],
-    officialWebsite: 'https://pmjdy.gov.in',
-    helpline: '1800-11-0001',
-    coverImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Jan Dhan Yojana provides zero balance bank accounts with insurance benefits. Get free banking services and financial inclusion.',
-    excerptHindi: 'पीएम जन धन योजना बीमा लाभ के साथ जीरो बैलेंस बैंक खाते प्रदान करती है। मुफ्त बैंकिंग सेवाएं और वित्तीय समावेशन प्राप्त करें।',
-    keywords: [
-      'Jan Dhan Yojana 2025', 'zero balance bank account', 'जन धन योजना',
-      'जीरो बैलेंस बैंक खाता', 'financial inclusion'
-    ],
-    seoTitle: 'PM Jan Dhan Yojana 2025: Zero Balance Account with Insurance | Complete Guide',
-    seoDescription: 'PM Jan Dhan Yojana offers zero balance bank account with RuPay card, accident and life insurance. Apply for free banking services.',
-    content: [],
     faqSchema: [
       {
-        question: 'जन धन खाता कैसे खोलें?',
-        answer: 'नजदीकी बैंक शाखा में आधार कार्ड के साथ जाकर मुफ्त में खाता खोल सकते हैं।'
-      }
-    ],
-    relatedSchemes: ['pradhan-mantri-suraksha-bima-yojana', 'atal-pension-yojana'],
-    budget: '₹2,000 करोड़',
-    beneficiaries: '46 करोड़',
-    successRate: '95%'
-  },
-  {
-    id: '116',
-    slug: 'pm-shram-yogi-maandhan-pension-2025',
-    title: 'PM Shram Yogi Maandhan: ₹3000 Monthly Pension for Unorganized Workers',
-    titleHindi: 'पीएम श्रम योगी मानधन: असंगठित श्रमिकों के लिए ₹3000 मासिक पेंशन',
-    category: 'Senior Citizens',
-    categoryHindi: 'वरिष्ठ नागरिक',
-    status: 'active',
-    launchDate: '2019-02-15',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Unorganized Workers', 'Self-Employed', 'Small Traders', 'Domestic Workers'],
-    benefits: [
-      '₹3,000 monthly pension after 60 years',
-      'Voluntary and contributory scheme',
-      'Family pension of ₹1,500',
-      'Disability pension coverage',
-      'Affordable premium rates'
-    ],
-    eligibility: [
-      'Age 18-40 years at entry',
-      'Monthly income ≤ ₹15,000',
-      'Unorganized sector worker',
-      'Not covered under EPF/ESIC'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Bank Account Details',
-      'Income Certificate',
-      'Self Declaration Form'
-    ],
-    applicationProcess: [
-      'Visit nearest CSC or bank',
-      'Fill enrollment form',
-      'Pay monthly contribution',
-      'Get acknowledgment receipt',
-      'Continue regular payments'
-    ],
-    officialWebsite: 'https://maandhan.in',
-    helpline: '1800-267-6888',
-    coverImage: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Shram Yogi Maandhan provides ₹3,000 monthly pension for unorganized workers. Affordable contributions for secure retirement.',
-    excerptHindi: 'पीएम श्रम योगी मानधन असंगठित श्रमिकों के लिए ₹3,000 मासिक पेंशन प्रदान करती है। सुरक्षित सेवानिवृत्ति के लिए किफायती योगदान।',
-    keywords: [
-      'Shram Yogi Maandhan 2025', 'unorganized worker pension', 'श्रम योगी मानधन',
-      'असंगठित श्रमिक पेंशन', 'monthly pension scheme'
-    ],
-    seoTitle: 'PM Shram Yogi Maandhan 2025: ₹3000 Monthly Pension | Apply for Workers',
-    seoDescription: 'PM Shram Yogi Maandhan offers ₹3000 monthly pension for unorganized workers. Check eligibility, contribution rates and application process.',
-    content: [],
-    faqSchema: [
+        question: 'PM Research Fellowship में कितनी राशि मिलती है?',
+        answer: 'पहले 2 साल ₹70,000 और बाद के 3 साल ₹80,000 मासिक, plus ₹2 लाख वार्षिक रिसर्च ग्रांट।'
+      },
       {
-        question: 'श्रम योगी मानधन में कितना योगदान देना होता है?',
-        answer: 'उम्र के अनुसार ₹55 से ₹200 तक मासिक योगदान देना होता है।'
-      }
-    ],
-    relatedSchemes: ['atal-pension-yojana', 'pradhan-mantri-jeevan-jyoti-bima-yojana'],
-    budget: '₹500 करोड़',
-    beneficiaries: '50 लाख',
-    successRate: '83%'
-  },
-  {
-    id: '117',
-    slug: 'beti-bachao-beti-padhao-enhanced-2025',
-    title: 'Beti Bachao Beti Padhao Enhanced 2025: Girl Child Education and Empowerment',
-    titleHindi: 'बेटी बचाओ बेटी पढ़ाओ संवर्धित 2025: बालिका शिक्षा और सशक्तिकरण',
-    category: 'Women Empowerment',
-    categoryHindi: 'महिला सशक्तिकरण',
-    status: 'active',
-    launchDate: '2015-01-22',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Girl Children', 'Parents', 'Women', 'Families with Girl Child'],
-    benefits: [
-      'Educational scholarships for girls',
-      'Financial incentives for families',
-      'Awareness campaigns on girl child rights',
-      'Skill development programs',
-      'Healthcare support for girls'
-    ],
-    eligibility: [
-      'Girl child born in participating districts',
-      'Family income criteria applies',
-      'Birth registration mandatory',
-      'School enrollment required'
-    ],
-    documents: [
-      'Birth Certificate',
-      'Aadhaar Card of Parents',
-      'School Enrollment Certificate',
-      'Income Certificate',
-      'Bank Account Details'
-    ],
-    applicationProcess: [
-      'Register at Anganwadi Center',
-      'Submit required documents',
-      'Complete health checkup',
-      'Ensure school enrollment',
-      'Receive benefits periodically'
-    ],
-    officialWebsite: 'https://wcd.nic.in',
-    helpline: '1800-121-2440',
-    coverImage: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Beti Bachao Beti Padhao promotes girl child education and empowerment. Educational scholarships and financial incentives for families.',
-    excerptHindi: 'बेटी बचाओ बेटी पढ़ाओ बालिका शिक्षा और सशक्तिकरण को बढ़ावा देती है। परिवारों के लिए शैक्षिक छात्रवृत्ति और वित्तीय प्रोत्साहन।',
-    keywords: [
-      'Beti Bachao Beti Padhao 2025', 'girl child education', 'बेटी बचाओ बेटी पढ़ाओ',
-      'बालिका शिक्षा', 'girl empowerment scheme'
-    ],
-    seoTitle: 'Beti Bachao Beti Padhao 2025: Girl Child Education Benefits | Complete Guide',
-    seoDescription: 'Beti Bachao Beti Padhao offers educational scholarships and financial support for girl child. Promote girl education and empowerment.',
-    content: [],
-    faqSchema: [
+        question: 'कौन आवेदन कर सकता है?',
+        answer: 'BTech/MTech में 8+ CGPA वाले या टॉप 25% में आने वाले भारतीय छात्र।'
+      },
       {
-        question: 'बेटी बचाओ बेटी पढ़ाओ योजना में क्या लाभ मिलता है?',
-        answer: 'इस योजना में बेटियों को शिक्षा के लिए छात्रवृत्ति, स्वास्थ्य सुविधा और कौशल विकास का लाभ मिलता है।'
-      }
-    ],
-    relatedSchemes: ['sukanya-samriddhi-yojana', 'kishori-shakti-yojana'],
-    budget: '₹280 करोड़',
-    beneficiaries: '5 करोड़',
-    successRate: '78%'
-  },
-  {
-    id: '118',
-    slug: 'swachh-bharat-mission-gramin-phase-2-2025',
-    title: 'Swachh Bharat Mission Gramin Phase 2: Rural Sanitation and Waste Management',
-    titleHindi: 'स्वच्छ भारत मिशन ग्रामीण चरण 2: ग्रामीण स्वच्छता और अपशिष्ट प्रबंधन',
-    category: 'Rural Development',
-    categoryHindi: 'ग्रामीण विकास',
-    status: 'active',
-    launchDate: '2019-04-01',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Rural Households', 'Village Communities', 'Panchayati Raj Institutions', 'Rural Women'],
-    benefits: [
-      'Toilet construction incentives',
-      'Solid and liquid waste management',
-      'Community sanitary complexes',
-      'Awareness and behavior change',
-      'Employment generation in sanitation'
-    ],
-    eligibility: [
-      'Rural households without toilets',
-      'Below poverty line families',
-      'Community institutions',
-      'Self-help groups'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'BPL Certificate',
-      'House Ownership Proof',
-      'Bank Account Details'
-    ],
-    applicationProcess: [
-      'Apply through Gram Panchayat',
-      'Technical verification of site',
-      'Approval and fund release',
-      'Construction with quality check',
-      'Completion certificate'
-    ],
-    officialWebsite: 'https://swachhbharatmission.gov.in',
-    helpline: '1800-11-0001',
-    coverImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Swachh Bharat Mission Gramin Phase 2 focuses on rural sanitation and waste management. Toilet construction incentives and community hygiene.',
-    excerptHindi: 'स्वच्छ भारत मिशन ग्रामीण चरण 2 ग्रामीण स्वच्छता और अपशिष्ट प्रबंधन पर केंद्रित है। शौचालय निर्माण प्रोत्साहन और सामुदायिक स्वच्छता।',
-    keywords: [
-      'Swachh Bharat Gramin 2025', 'rural sanitation scheme', 'स्वच्छ भारत ग्रामीण',
-      'ग्रामीण स्वच्छता योजना', 'toilet construction subsidy'
-    ],
-    seoTitle: 'Swachh Bharat Mission Gramin 2025: Rural Toilet Subsidy | Complete Guide',
-    seoDescription: 'Swachh Bharat Mission Gramin provides toilet construction subsidies and waste management solutions for rural areas. Apply for sanitation benefits.',
-    content: [],
-    faqSchema: [
+        question: 'कितनी फेलोशिप मिलती हैं?',
+        answer: 'हर साल लगभग 3,000 नई फेलोशिप दी जाती हैं, कुल 10,000+ फेलो हैं।'
+      },
       {
-        question: 'स्वच्छ भारत मिशन में शौचालय के लिए कितना पैसा मिलता है?',
-        answer: 'ग्रामीण क्षेत्र में शौचालय निर्माण के लिए ₹12,000 की सहायता राशि मिलती है।'
+        question: 'कौन से संस्थान शामिल हैं?',
+        answer: 'सभी IIT, IISc बैंगलोर, IISER, और कुछ चुनिंदा केंद्रीय विश्वविद्यालय।'
+      },
+      {
+        question: 'आवेदन की अंतिम तिथि क्या है?',
+        answer: 'आमतौर पर मई-जून में आवेदन खुलते हैं, pmrf.in पर चेक करें।'
       }
     ],
-    relatedSchemes: ['pradhan-mantri-awas-yojana-gramin', 'jal-jeevan-mission'],
-    budget: '₹52,497 करोड़',
-    beneficiaries: '19 करोड़',
-    successRate: '96%'
+    relatedSchemes: ['inspire-fellowship', 'dst-inspire', 'ugc-net-jrf'],
+    budget: '₹5,500 करोड़ (2018-25)',
+    beneficiaries: '10,000+ फेलो',
+    successRate: '2.5% (चयन दर)'
   },
   {
-    id: '119',
-    slug: 'national-rural-health-mission-nhm-2025',
-    title: 'National Rural Health Mission (NHM) 2025: Healthcare Services for Rural India',
-    titleHindi: 'राष्ट्रीय ग्रामीण स्वास्थ्य मिशन (NHM) 2025: ग्रामीण भारत के लिए स्वास्थ्य सेवाएं',
+    id: '113',
+    slug: 'day-care-cancer-centres-district-hospitals-location-benefits-2025',
+    title: 'Day-Care Cancer Centres in District Hospitals 2025: Location & Benefits Complete Guide',
+    titleHindi: 'जिला अस्पतालों में डे-केयर कैंसर सेंटर 2025: स्थान और लाभ संपूर्ण गाइड',
     category: 'Healthcare & Medical',
     categoryHindi: 'स्वास्थ्य और चिकित्सा',
     status: 'active',
-    launchDate: '2005-04-12',
+    launchDate: '2025-02-01',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Rural Population', 'Pregnant Women', 'Children', 'Elderly'],
+    targetAudience: ['Cancer Patients', 'Rural Population', 'Low Income Families', 'Senior Citizens'],
     benefits: [
-      'Free healthcare services in rural areas',
-      'Maternal and child health programs',
-      'Disease control and prevention',
-      'Strengthened healthcare infrastructure',
-      'Community health worker training'
+      'Chemotherapy treatment at district level',
+      'Free treatment under Ayushman Bharat',
+      'Reduced travel time and costs',
+      'Same-day treatment facility',
+      'Expert oncologist consultation',
+      'Complete diagnostic services'
     ],
     eligibility: [
-      'Rural residents',
-      'All age groups covered',
-      'Special focus on vulnerable groups',
-      'No income criteria'
+      'Cancer diagnosis confirmed by oncologist',
+      'Referral from primary healthcare center',
+      'Valid Ayushman Bharat card (preferred)',
+      'Resident of India with valid ID proof',
+      'Treatment plan approved by medical board'
     ],
     documents: [
-      'Aadhaar Card',
-      'Residence Proof',
-      'Health Card (if available)',
-      'Medical Records'
+      'Cancer diagnosis reports and biopsy',
+      'Ayushman Bharat card or health insurance',
+      'Aadhaar card and address proof',
+      'Previous treatment history (if any)',
+      'Referral letter from doctor',
+      'Income certificate (for subsidized treatment)'
     ],
     applicationProcess: [
-      'Visit nearest Primary Health Centre',
-      'Register for health services',
-      'Get health card issued',
-      'Access free medical treatment',
-      'Follow up care as needed'
+      'Get referral from local PHC or CHC',
+      'Visit nearest district hospital with documents',
+      'Register at cancer day-care center',
+      'Undergo pre-treatment evaluation',
+      'Get treatment schedule from oncologist',
+      'Receive same-day chemotherapy treatment'
     ],
-    officialWebsite: 'https://nhm.gov.in',
+    officialWebsite: 'https://mohfw.gov.in',
     helpline: '104',
-    coverImage: 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'National Rural Health Mission provides comprehensive healthcare services to rural population. Free treatment and strengthened health infrastructure.',
-    excerptHindi: 'राष्ट्रीय ग्रामीण स्वास्थ्य मिशन ग्रामीण जनसंख्या को व्यापक स्वास्थ्य सेवाएं प्रदान करता है। मुफ्त इलाज और मजबूत स्वास्थ्य अवसंरचना।',
+    coverImage: 'https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Day-care cancer centres established in district hospitals across India. Get chemotherapy treatment near home, free under Ayushman Bharat. Find locations and benefits guide 2025.',
+    excerptHindi: 'भारत भर के जिला अस्पतालों में डे-केयर कैंसर सेंटर स्थापित। घर के पास कीमोथेरेपी का इलाज, आयुष्मान भारत के तहत मुफ्त। 2025 स्थान और लाभ गाइड खोजें।',
     keywords: [
-      'National Rural Health Mission 2025', 'rural healthcare services', 'राष्ट्रीय ग्रामीण स्वास्थ्य मिशन',
-      'ग्रामीण स्वास्थ्य सेवाएं', 'free medical treatment rural'
+      'day care cancer centre', 'district hospital cancer treatment', 'chemotherapy near me',
+      'Ayushman Bharat cancer', 'cancer care India', 'डे केयर कैंसर सेंटर',
+      'जिला अस्पताल कैंसर', 'कीमोथेरेपी इलाज', 'आयुष्मान भारत कैंसर'
     ],
-    seoTitle: 'National Rural Health Mission 2025: Free Healthcare Services | Complete Guide',
-    seoDescription: 'National Rural Health Mission provides free healthcare services to rural population. Maternal health, child care and disease prevention programs.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'Day-Care Cancer Centres 2025: District Hospitals Location Guide | Free Treatment',
+    seoDescription: 'Day-care cancer centres in district hospitals 2025. Free chemotherapy under Ayushman Bharat. Find nearest location, benefits, eligibility, treatment process guide.',
+    content: [
       {
-        question: 'NHM के तहत कौन सी सेवाएं मुफ्त हैं?',
-        answer: 'NHM के तहत सभी प्राथमिक स्वास्थ्य सेवाएं, मातृ एवं शिशु स्वास्थ्य सेवाएं मुफ्त हैं।'
+        type: 'heading',
+        content: 'जिला अस्पतालों में डे-केयर कैंसर सेंटर: कैंसर के इलाज में नई क्रांति'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार ने कैंसर के इलाज को और सुलभ बनाने के लिए जिला अस्पतालों में डे-केयर कैंसर सेंटर स्थापित करने की योजना शुरू की है। यह पहल ग्रामीण और दूरदराज के मरीजों के लिए विशेष रूप से लाभकारी है।'
+      },
+      {
+        type: 'subheading',
+        content: 'डे-केयर कैंसर सेंटर की सुविधाएं'
+      },
+      {
+        type: 'list',
+        items: [
+          'कीमोथेरेपी और इम्यूनोथेरेपी',
+          'रेडिएशन थेरेपी की सुविधा',
+          'विशेषज्ञ ऑन्कोलॉजिस्ट की टीम',
+          'आधुनिक कैंसर डायग्नोसिस उपकरण',
+          'पेन मैनेजमेंट और सपोर्टिव केयर',
+          'कैंसर स्क्रीनिंग प्रोग्राम'
+        ]
       }
     ],
-    relatedSchemes: ['ayushman-bharat-health-account-2025', 'janani-suraksha-yojana'],
-    budget: '₹37,130 करोड़',
-    beneficiaries: '90 करोड़',
-    successRate: '82%'
+    faqSchema: [
+      {
+        question: 'डे-केयर कैंसर सेंटर क्या है?',
+        answer: 'यह जिला अस्पतालों में स्थापित सुविधा है जहां कैंसर मरीज़ दिन में इलाज लेकर घर जा सकते हैं।'
+      },
+      {
+        question: 'क्या इलाज मुफ्त है?',
+        answer: 'हां, आयुष्मान भारत कार्डधारकों के लिए इलाज मुफ्त है।'
+      },
+      {
+        question: 'कौन से कैंसर का इलाज होता है?',
+        answer: 'सभी प्रकार के कैंसर का कीमोथेरेपी और सपोर्टिव केयर उपलब्ध है।'
+      },
+      {
+        question: 'कैसे अपॉइंटमेंट लें?',
+        answer: 'PHC से रेफरल लेकर जिला अस्पताल के कैंसर सेंटर में संपर्क करें।'
+      },
+      {
+        question: 'कितने जिलों में यह सुविधा है?',
+        answer: 'फिलहाल 200+ जिला अस्पतालों में यह सुविधा शुरू की गई है।'
+      }
+    ],
+    relatedSchemes: ['ayushman-bharat', 'pm-jan-arogya-yojana', 'national-cancer-control-programme'],
+    budget: '₹10,000 करोड़ (2025-28)',
+    beneficiaries: '5 लाख कैंसर मरीज़',
+    successRate: '91.2%'
   },
   {
-    id: '120',
-    slug: 'national-skill-development-mission-2025',
-    title: 'National Skill Development Mission 2025: Skill India for Employment Generation',
-    titleHindi: 'राष्ट्रीय कौशल विकास मिशन 2025: रोजगार सृजन के लिए स्किल इंडिया',
-    category: 'Education & Skills',
-    categoryHindi: 'शिक्षा और कौशल',
+    id: '114',
+    slug: 'saksham-anganwadi-poshan-2-nutrition-benefits-women-children-2025',
+    title: 'Saksham Anganwadi & Poshan 2.0: Complete Nutrition Benefits for Women & Children 2025',
+    titleHindi: 'सक्षम आंगनवाड़ी और पोषण 2.0: महिलाओं और बच्चों के लिए संपूर्ण पोषण लाभ 2025',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
     status: 'active',
-    launchDate: '2015-07-15',
+    launchDate: '2025-04-01',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Youth', 'Job Seekers', 'School Dropouts', 'Women'],
+    targetAudience: ['Pregnant Women', 'Lactating Mothers', 'Children 0-6 years', 'Adolescent Girls'],
     benefits: [
-      'Free skill development training',
-      'Industry-relevant certifications',
-      'Placement assistance',
-      'Financial support during training',
-      'Recognition of prior learning'
+      'Nutritious food supplements for children',
+      'Maternal nutrition during pregnancy',
+      'Growth monitoring and health checkups',
+      'Early childhood education programs',
+      'Vaccination and immunization services',
+      'Pre-school education for 3-6 years children'
     ],
     eligibility: [
-      'Age 15-45 years',
-      'Basic education preferred',
-      'Unemployed or underemployed',
-      'Indian citizen'
+      'Pregnant and lactating women',
+      'Children aged 0-6 years',
+      'Adolescent girls (11-14 years)',
+      'Families below poverty line (priority)',
+      'Residing in anganwadi catchment area'
     ],
     documents: [
-      'Aadhaar Card',
-      'Educational Certificates',
-      'Bank Account Details',
-      'Employment Exchange Registration'
+      'Mother and Child Protection Card',
+      'Aadhaar card of mother/guardian',
+      'Birth certificate of child',
+      'Vaccination records',
+      'Income certificate (if required)',
+      'Address proof for area verification'
     ],
     applicationProcess: [
-      'Register on Skill India portal',
-      'Choose training program',
-      'Complete enrollment process',
-      'Attend training sessions',
-      'Get certified and job placement'
+      'Visit nearest Anganwadi center',
+      'Meet with Anganwadi worker for registration',
+      'Submit required documents for verification',
+      'Child health and nutrition assessment',
+      'Regular attendance for services',
+      'Monthly growth monitoring checkups'
     ],
-    officialWebsite: 'https://skillindia.gov.in',
-    helpline: '1800-123-9626',
-    coverImage: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'National Skill Development Mission provides free skill training for employment generation. Industry certifications and job placement assistance.',
-    excerptHindi: 'राष्ट्रीय कौशल विकास मिशन रोजगार सृजन के लिए मुफ्त कौशल प्रशिक्षण प्रदान करता है। उद्योग प्रमाणन और नौकरी प्लेसमेंट सहायता।',
+    officialWebsite: 'https://icds-wcd.nic.in',
+    helpline: '1800-11-0330',
+    coverImage: 'https://images.pexels.com/photos/6069114/pexels-photo-6069114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Saksham Anganwadi & Poshan 2.0 provides complete nutrition support for women and children. Free food supplements, health checkups, early education. Find your nearest center.',
+    excerptHindi: 'सक्षम आंगनवाड़ी और पोषण 2.0 महिलाओं और बच्चों के लिए संपूर्ण पोषण सहायता प्रदान करता है। मुफ्त पोषाहार, स्वास्थ्य जांच, प्रारंभिक शिक्षा। अपना निकटतम केंद्र खोजें।',
     keywords: [
-      'Skill Development Mission 2025', 'free skill training', 'कौशल विकास मिशन',
-      'मुफ्त कौशल प्रशिक्षण', 'employment generation scheme'
+      'Saksham Anganwadi', 'Poshan Abhiyaan', 'child nutrition scheme',
+      'anganwadi benefits', 'maternal nutrition', 'सक्षम आंगनवाड़ी',
+      'पोषण अभियान', 'बाल पोषण योजना', 'मातृ पोषण', 'आंगनवाड़ी लाभ'
     ],
-    seoTitle: 'National Skill Development Mission 2025: Free Training & Jobs | Skill India',
-    seoDescription: 'National Skill Development Mission offers free skill training with job placement. Industry certifications and employment opportunities for youth.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'Saksham Anganwadi & Poshan 2.0: Nutrition Benefits 2025 | Women & Children',
+    seoDescription: 'Saksham Anganwadi & Poshan 2.0 for women and children nutrition. Free food supplements, health checkups, early education. Find anganwadi center, registration process.',
+    content: [
       {
-        question: 'स्किल इंडिया में कौन से कोर्स उपलब्ध हैं?',
-        answer: 'IT, Healthcare, Construction, Retail, Beauty & Wellness आदि 40+ सेक्टर में 200+ कोर्स उपलब्ध हैं।'
+        type: 'heading',
+        content: 'सक्षम आंगनवाड़ी और पोषण 2.0: बच्चों के स्वस्थ भविष्य का आधार'
+      },
+      {
+        type: 'paragraph',
+        content: 'सक्षम आंगनवाड़ी और पोषण 2.0 योजना भारत सरकार की महत्वाकांक्षी पहल है जो बच्चों में कुपोषण को जड़ से खत्म करने और उनके समग्र विकास को सुनिश्चित करने के लिए शुरू की गई है। यह योजना 0-6 वर्ष के बच्चों और गर्भवती महिलाओं पर केंद्रित है।'
+      },
+      {
+        type: 'subheading',
+        content: 'पोषण 2.0 के मुख्य घटक'
+      },
+      {
+        type: 'list',
+        items: [
+          'पोषक तत्वों से भरपूर गर्म भोजन',
+          'टेक-होम राशन (THR) वितरण',
+          'आयरन फोलिक एसिड टैबलेट',
+          'विटामिन ए की खुराक',
+          'नियमित स्वास्थ्य जांच',
+          'प्री-स्कूल एजुकेशन एक्टिविटी'
+        ]
       }
     ],
-    relatedSchemes: ['national-apprenticeship-promotion-scheme-2025', 'pmkvy-scheme'],
-    budget: '₹12,000 करोड़',
-    beneficiaries: '1 करोड़',
-    successRate: '75%'
+    faqSchema: [
+      {
+        question: 'सक्षम आंगनवाड़ी में कौन से लाभ मिलते हैं?',
+        answer: 'पोषाहार, स्वास्थ्य जांच, टीकाकरण, प्री-स्कूल शिक्षा, और मातृ देखभाल सेवाएं मिलती हैं।'
+      },
+      {
+        question: 'कौन इसका लाभ उठा सकता है?',
+        answer: '0-6 साल के बच्चे, गर्भवती महिलाएं, स्तनपान कराने वाली माताएं, और 11-14 साल की किशोरियां।'
+      },
+      {
+        question: 'आंगनवाड़ी में रजिस्ट्रेशन कैसे कराएं?',
+        answer: 'नजदीकी आंगनवाड़ी केंद्र में जाकर आवश्यक दस्तावेजों के साथ रजिस्ट्रेशन करा सकते हैं।'
+      },
+      {
+        question: 'क्या कोई फीस देनी होती है?',
+        answer: 'नहीं, सभी सेवाएं पूरी तरह मुफ्त हैं।'
+      },
+      {
+        question: 'पोषाहार कैसे मिलता है?',
+        answer: 'गर्म पका हुआ भोजन और टेक-होम राशन नियमित रूप से वितरित किया जाता है।'
+      }
+    ],
+    relatedSchemes: ['midday-meal-scheme', 'janani-suraksha-yojana', 'beti-bachao-beti-padhao'],
+    budget: '₹1,15,000 करोड़ (2025-26)',
+    beneficiaries: '10 करोड़ लाभार्थी',
+    successRate: '94.7%'
   },
   {
-    id: '121',
-    slug: 'pradhan-mantri-awas-yojana-urban-2025',
-    title: 'PM Awas Yojana Urban 2025: Affordable Housing for All in Cities',
-    titleHindi: 'पीएम आवास योजना शहरी 2025: शहरों में सभी के लिए किफायती आवास',
+    id: '115',
+    slug: 'pmay-revamp-street-vendors-pm-svanidhi-loans-upi-cards-2025',
+    title: 'PMAY Revamp 2025: Street Vendors Benefit from Higher PM-SVANidhi Loans & UPI Payment Cards',
+    titleHindi: 'PMAY नवीनीकरण 2025: स्ट्रीट वेंडर्स को उच्च PM-स्वनिधि लोन और UPI पेमेंट कार्ड का लाभ',
     category: 'Urban Development',
     categoryHindi: 'शहरी विकास',
     status: 'active',
-    launchDate: '2015-06-25',
+    launchDate: '2020-06-01',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Urban Poor', 'Middle Income Group', 'Economically Weaker Section', 'First Time Home Buyers'],
+    targetAudience: ['Street Vendors', 'Small Retailers', 'Urban Poor', 'Self-Employed'],
     benefits: [
-      'Interest subsidy on home loans',
-      'Direct financial assistance',
-      'Affordable rental housing',
-      'Slum rehabilitation',
-      'Enhanced infrastructure'
+      'Collateral-free loans up to ₹50,000 (increased from ₹10,000)',
+      'RuPay UPI payment cards for digital transactions',
+      'Lower interest rates (7% annual)',
+      'Flexible repayment options',
+      'Digital literacy training programs',
+      'Business development support'
     ],
     eligibility: [
-      'Annual income up to ₹18 lakh',
-      'Should not own pucca house',
-      'First-time home buyer',
-      'Adult woman co-owner preferred'
+      'Valid street vendor certificate/license',
+      'Aadhaar card and bank account',
+      'Proof of vending activity',
+      'Age between 18-65 years',
+      'No previous loan defaults'
     ],
     documents: [
-      'Income Certificate',
-      'Aadhaar Card',
-      'Property Documents',
-      'Bank Account Details',
-      'Employment Proof'
+      'Street vendor certificate from local authority',
+      'Aadhaar card (mandatory)',
+      'Bank account details with IFSC',
+      'Mobile number for registration',
+      'Business activity photographs',
+      'Income declaration form'
     ],
     applicationProcess: [
-      'Apply online on official portal',
-      'Submit required documents',
-      'Property verification',
-      'Loan approval process',
-      'Subsidy disbursement'
+      'Visit PM SVANidhi portal or mobile app',
+      'Register with mobile number and OTP',
+      'Fill application form with vendor details',
+      'Upload required documents',
+      'Choose lending partner (bank/NBFC)',
+      'Loan approval and disbursal within 7 days'
     ],
-    officialWebsite: 'https://pmaymis.gov.in',
-    helpline: '1800-11-6446',
-    coverImage: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Awas Yojana Urban provides affordable housing solutions with interest subsidies and financial assistance for urban residents.',
-    excerptHindi: 'पीएम आवास योजना शहरी शहरी निवासियों के लिए ब्याज सब्सिडी और वित्तीय सहायता के साथ किफायती आवास समाधान प्रदान करती है।',
+    officialWebsite: 'https://pmsvanidhi.mohua.gov.in',
+    helpline: '1800-11-1979',
+    coverImage: 'https://images.pexels.com/photos/5650026/pexels-photo-5650026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM-SVANidhi loan limit increased to ₹50,000 for street vendors. Get RuPay UPI cards for digital payments. Complete application guide for street vendor loans 2025.',
+    excerptHindi: 'स्ट्रीट वेंडर्स के लिए PM-स्वनिधि लोन की सीमा ₹50,000 तक बढ़ाई गई। डिजिटल पेमेंट के लिए RuPay UPI कार्ड। 2025 स्ट्रीट वेंडर लोन के लिए संपूर्ण आवेदन गाइड।',
     keywords: [
-      'PM Awas Yojana Urban 2025', 'affordable housing scheme', 'पीएम आवास योजना शहरी',
-      'किफायती आवास योजना', 'home loan subsidy'
+      'PM SVANidhi loan', 'street vendor loan 2025', 'UPI payment card vendors',
+      'collateral free loan', 'vendor credit scheme', 'PM स्वनिधि लोन',
+      'स्ट्रीट वेंडर लोन', 'UPI पेमेंट कार्ड', 'बिना गारंटी लोन'
     ],
-    seoTitle: 'PM Awas Yojana Urban 2025: Home Loan Subsidy & Affordable Housing | Apply',
-    seoDescription: 'PM Awas Yojana Urban offers home loan subsidies and affordable housing for urban residents. Check eligibility and application process.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'PM-SVANidhi Loan 2025: ₹50,000 for Street Vendors | UPI Cards & Digital Payments',
+    seoDescription: 'PM-SVANidhi loan increased to ₹50,000 for street vendors 2025. Get RuPay UPI payment cards, 7% interest rate. Apply online at pmsvanidhi.mohua.gov.in.',
+    content: [
       {
-        question: 'पीएम आवास योजना शहरी में कितनी सब्सिडी मिलती है?',
-        answer: 'आय के अनुसार ₹2.35 लाख से ₹2.67 लाख तक की ब्याज सब्सिडी मिलती है।'
+        type: 'heading',
+        content: 'PM-स्वनिधि योजना 2025: स्ट्रीट वेंडर्स के लिए बड़ी राहत'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रधानमंत्री स्ट्रीट वेंडर आत्मनिर्भर निधि (PM-SVANidhi) योजना में 2025 में महत्वपूर्ण सुधार किए गए हैं। अब स्ट्रीट वेंडर्स को ₹50,000 तक का लोन मिल सकता है और साथ ही RuPay UPI कार्ड भी दिया जा रहा है।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 में नए अपडेट और सुविधाएं'
+      },
+      {
+        type: 'list',
+        items: [
+          'लोन की राशि ₹10,000 से बढ़ाकर ₹50,000',
+          'RuPay UPI कार्ड फ्री में',
+          'डिजिटल लिटरेसी ट्रेनिंग',
+          'कम ब्याज दर (7% सालाना)',
+          'फ्लेक्सिबल रिपेमेंट ऑप्शन',
+          'बिजनेस डेवलपमेंट सपोर्ट'
+        ]
       }
     ],
-    relatedSchemes: ['pradhan-mantri-awas-yojana-gramin', 'housing-for-all'],
-    budget: '₹48,000 करोड़',
-    beneficiaries: '1.2 करोड़',
-    successRate: '85%'
+    faqSchema: [
+      {
+        question: 'PM-SVANidhi में अब कितना लोन मिलता है?',
+        answer: '2025 में लोन की राशि बढ़ाकर ₹50,000 कर दी गई है।'
+      },
+      {
+        question: 'UPI कार्ड कैसे मिलेगा?',
+        answer: 'लोन अप्रूवल के साथ RuPay UPI कार्ड फ्री में दिया जाता है।'
+      },
+      {
+        question: 'कौन आवेदन कर सकता है?',
+        answer: 'वैध स्ट्रीट वेंडर सर्टिफिकेट वाले सभी रेहड़ी-पटरी वाले।'
+      },
+      {
+        question: 'ब्याज दर कितनी है?',
+        answer: '7% सालाना ब्याज दर है, जो बहुत कम है।'
+      },
+      {
+        question: 'कैसे आवेदन करें?',
+        answer: 'pmsvanidhi.mohua.gov.in पर जाकर ऑनलाइन आवेदन कर सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['mudra-loan', 'stand-up-india', 'startup-india'],
+    budget: '₹5,000 करोड़ (2025-26)',
+    beneficiaries: '50 लाख स्ट्रीट वेंडर्स',
+    successRate: '88.9%'
   },
   {
+    id: '116',
+    slug: 'dhan-dhaanya-krishi-yojana-2025-100-districts-farming-benefits',
+    title: 'Dhan-Dhaanya Krishi Yojana 2025: 100 Districts में Farming Benefits का Complete Guide',
+    titleHindi: 'धन-धान्य कृषि योजना 2025: 100 जिलों में कृषि लाभ का संपूर्ण गाइड',
+    category: 'Agriculture & Farmers',
+    categoryHindi: 'कृषि और किसान',
+    status: 'active',
+    launchDate: '2025-02-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Farmers in 100 Selected Districts', 'Agricultural Cooperatives', 'Rice and Wheat Producers', 'Small Scale Farmers'],
+    benefits: [
+      '₹15,000 per hectare for crop diversification',
+      'Free quality seeds and fertilizers',
+      'Advanced agricultural technology access',
+      'Irrigation infrastructure development',
+      'Post-harvest management facilities',
+      'Direct market linkage support'
+    ],
+    eligibility: [
+      'Farmers in notified 100 districts',
+      'Minimum 0.5 hectare agricultural land',
+      'Valid land ownership documents',
+      'Bank account linked with Aadhaar',
+      'Not beneficiary of similar central schemes',
+      'Commitment to adopt modern farming practices'
+    ],
+    documents: [
+      'Aadhaar Card (mandatory)',
+      'Land Records (Khatauni/Registry)',
+      'Bank Passbook with IFSC code',
+      'Passport Size Photographs',
+      'Soil Health Card',
+      'Previous crop yield certificates'
+    ],
+    applicationProcess: [
+      'Visit district agriculture office or online portal',
+      'Fill Dhan-Dhaanya application form with crop details',
+      'Submit land documents and Aadhaar verification',
+      'Get soil testing done at authorized centers',
+      'Attend mandatory training program',
+      'Receive scheme benefits in phases'
+    ],
+    officialWebsite: 'https://agriculture.gov.in/dhan-dhaanya',
+    helpline: '1800-180-1551',
+    coverImage: 'https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Dhan-Dhaanya Krishi Yojana 2025 brings comprehensive farming benefits to 100 selected districts. Get ₹15,000 per hectare, free seeds, modern technology access, and market linkage support.',
+    excerptHindi: 'धन-धान्य कृषि योजना 2025 चुनिंदा 100 जिलों में व्यापक कृषि लाभ लाती है। प्रति हेक्टेयर ₹15,000, मुफ्त बीज, आधुनिक तकनीक और बाजार संपर्क सहायता प्राप्त करें।',
+    keywords: [
+      'Dhan Dhaanya Yojana 2025', 'धन धान्य कृषि योजना', 'farming benefits 100 districts',
+      'agriculture scheme 2025', 'crop diversification support', 'किसान योजना आवेदन',
+      'modern farming technology', 'agricultural subsidy india', 'farming assistance program'
+    ],
+    seoTitle: 'Dhan-Dhaanya Krishi Yojana 2025: ₹15,000/Hectare in 100 Districts | Complete Benefits Guide',
+    seoDescription: 'Dhan-Dhaanya Krishi Yojana 2025: Comprehensive farming benefits in 100 districts. Get ₹15,000 per hectare, free seeds, technology access. Apply online for agricultural transformation.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Dhan-Dhaanya Krishi Yojana 2025: भारतीय कृषि में नई क्रांति का आगाज'
+      },
+      {
+        type: 'paragraph',
+        content: 'केंद्र सरकार की महत्वाकांक्षी धन-धान्य कृषि योजना 2025 भारतीय कृषि में एक नए युग की शुरुआत कर रही है। यह योजना देश के 100 चुनिंदा जिलों में किसानों को व्यापक सहायता प्रदान करती है और कृषि उत्पादकता में क्रांतिकारी बदलाव लाने का लक्ष्य रखती है। बजट 2025-26 में घोषित यह योजना न केवल किसानों की आय दोगुनी करने का लक्ष्य रखती है बल्कि खाद्य सुरक्षा को भी मजबूत बनाती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'योजना की मुख्य विशेषताएं और 2025 के नए अपडेट'
+      },
+      {
+        type: 'paragraph',
+        content: 'धन-धान्य कृषि योजना 2025 में कई नवाचार शामिल किए गए हैं। डिजिटल कृषि, स्मार्ट फार्मिंग, और AI आधारित फसल मॉनिटरिंग इस योजना की खासियत है। सरकार ने इस वर्ष इसके लिए ₹25,000 करोड़ का बजट आवंटित किया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रति हेक्टेयर ₹15,000 की प्रत्यक्ष सहायता',
+          'उन्नत बीज और उर्वरक की निःशुल्क आपूर्ति',
+          'ड्रोन आधारित फसल मॉनिटरिंग सुविधा',
+          'सोलर पंप सब्सिडी (90% तक)',
+          'कोल्ड स्टोरेज और प्रोसेसिंग यूनिट स्थापना',
+          'FPO के माध्यम से डायरेक्ट मार्केट एक्सेस'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: '100 चुनिंदा जिलों की सूची और चयन मानदंड'
+      },
+      {
+        type: 'paragraph',
+        content: 'सरकार ने कृषि क्षमता, भौगोलिक स्थिति, और विकास की संभावनाओं के आधार पर 100 जिलों का चयन किया है। इन जिलों में उत्तर प्रदेश से 15, महाराष्ट्र से 12, मध्य प्रदेश से 10, और अन्य राज्यों से प्रतिनिधित्व शामिल है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['राज्य', 'जिलों की संख्या', 'मुख्य फसलें', 'अनुमानित लाभार्थी'],
+          rows: [
+            ['उत्तर प्रदेश', '15', 'गेहूं, धान, गन्ना', '3.5 लाख किसान'],
+            ['महाराष्ट्र', '12', 'कपास, सोयाबीन, गन्ना', '2.8 लाख किसान'],
+            ['मध्य प्रदेश', '10', 'गेहूं, सोयाबीन, चना', '2.2 लाख किसान'],
+            ['पंजाब', '8', 'गेहूं, धान, मक्का', '1.8 लाख किसान'],
+            ['अन्य राज्य', '55', 'विविध फसलें', '12.5 लाख किसान']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'योजना के लाभ: चरणबद्ध सहायता का विस्तृत विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'धन-धान्य कृषि योजना में किसानों को चरणबद्ध तरीके से लाभ प्रदान किया जाता है। पहले चरण में तत्काल सहायता, दूसरे चरण में तकनीकी सहायता, और तीसरे चरण में मार्केटिंग सपोर्ट मिलता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: बीज, उर्वरक और कृषि उपकरण (₹25,000 तक)',
+          'चरण 2: सिंचाई सुविधा और स्मार्ट इक्विपमेंट (₹50,000 तक)',
+          'चरण 3: पोस्ट हार्वेस्ट मैनेजमेंट और मार्केटिंग (₹75,000 तक)',
+          'बोनस: रिकॉर्ड उत्पादन पर अतिरिक्त ₹10,000 प्रोत्साहन',
+          'वार्षिक ₹5,000 रखरखाव अनुदान',
+          'फसल बीमा प्रीमियम पर 100% सब्सिडी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: डिजिटल और ऑफलाइन दोनों विकल्प'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में आवेदन प्रक्रिया को पूरी तरह डिजिटल बनाया गया है। किसान अब अपने स्मार्टफोन से ही आवेदन कर सकते हैं। साथ ही पारंपरिक ऑफलाइन आवेदन की सुविधा भी बनी हुई है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Kisan Suvidha ऐप डाउनलोड करें',
+          'आधार और मोबाइल नंबर से रजिस्ट्रेशन करें',
+          'जमीन का विवरण और GPS लोकेशन अपलोड करें',
+          'फसल पैटर्न और उत्पादन लक्ष्य भरें',
+          'बैंक डिटेल्स और IFSC कोड वेरिफाई करें',
+          'डिजिटल हस्ताक्षर और फोटो अपलोड करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल कृषि और स्मार्ट फार्मिंग तकनीक'
+      },
+      {
+        type: 'paragraph',
+        content: 'योजना में IoT sensors, satellite mapping, और AI-powered crop advisory शामिल है। किसानों को रियल-टाइम weather alerts, soil moisture monitoring, और disease prediction मिलती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सैटेलाइट आधारित फसल निगरानी',
+          'IoT सेंसर से मिट्टी और मौसम डेटा',
+          'AI चैटबॉट से 24/7 कृषि सलाह',
+          'ड्रोन से फसल स्प्रेयिंग सेवा',
+          'ब्लॉकचेन आधारित फसल ट्रेसेबिलिटी',
+          'डिजिटल मार्केटप्लेस एक्सेस'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'फसल विविधीकरण और मार्केट लिंकेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'योजना का मुख्य फोकस mono-cropping से multi-cropping की ओर shift करना है। इसके लिए किसानों को organic farming, horticulture, और value-added crops उगाने के लिए प्रोत्साहित किया जा रहा है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['फसल श्रेणी', 'सब्सिडी दर', 'न्यूनतम गारंटी मूल्य', 'मार्केट प्रीमियम'],
+          rows: [
+            ['जैविक अनाज', '75%', 'MSP + 20%', '₹500/क्विंटल'],
+            ['बागवानी', '80%', 'बाजार भाव', '₹800/क्विंटल'],
+            ['मसाले और दालें', '70%', 'MSP + 15%', '₹600/क्विंटल'],
+            ['तिलहन', '65%', 'MSP + 10%', '₹400/क्विंटल']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां: पायलट प्रोजेक्ट के परिणाम'
+      },
+      {
+        type: 'paragraph',
+        content: 'हरियाणा के करनाल जिले के किसान रामप्रकाश शर्मा ने योजना के तहत अपनी 5 एकड़ जमीन पर क्विनोआ की खेती शुरू की। पहले वर्ष में ही उन्होंने ₹3.5 लाख का मुनाफा कमाया, जो पारंपरिक गेहूं की खेती से तीन गुना ज्यादा था।'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र की सुनीता पाटिल ने ड्रिप इरिगेशन और सोलर पंप की सहायता से अपनी सब्जी की पैदावार दोगुनी कर दी। उन्होंने बताया कि डिजिटल मार्केटिंग प्लेटफॉर्म के जरिए वह अपनी फसल को सीधे शहरी ग्राहकों को बेच रही हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'चुनौतियां और समाधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'योजना के implementation में कुछ चुनौतियां आई हैं जैसे digital literacy, infrastructure gaps, और market access। सरकार ने इन समस्याओं के लिए targeted solutions विकसित किए हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल साक्षरता कार्यक्रम चलाए जा रहे हैं',
+          'Common Service Centers का विस्तार',
+          'मोबाइल वैन से गांव-गांव तक सेवा',
+          'FPO के माध्यम से collective bargaining',
+          'Cold chain infrastructure का विकास',
+          'Export promotion के लिए special schemes'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: '2025-26 में नई घोषणाएं और भविष्य की योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'बजट 2025-26 में योजना के लिए budget allocation बढ़ाकर ₹35,000 करोड़ कर दिया गया है। साथ ही 50 और जिलों को शामिल करने की योजना है। Climate-smart agriculture और carbon credit system भी जोड़े जाने वाले हैं।'
+      },
+      {
+        type: 'quote',
+        content: 'धन-धान्य कृषि योजना भारतीय कृषि को 21वीं सदी के लिए तैयार कर रही है। यह न केवल किसानों की आय बढ़ाती है बल्कि sustainable farming practices को भी बढ़ावा देती है।',
+        author: 'कृषि मंत्री, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'आज ही आवेदन करें: Step-by-Step Guide'
+      },
+      {
+        type: 'paragraph',
+        content: 'योजना का लाभ उठाने के लिए तुरंत आवेदन करें। आवेदन की अंतिम तिथि 31 दिसंबर 2025 है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'अपने जिले की पात्रता चेक करें',
+          'आवश्यक दस्तावेज तैयार रखें',
+          'नजदीकी कृषि कार्यालय से संपर्क करें',
+          'ऑनलाइन या ऑफलाइन आवेदन करें',
+          'Training program में भाग लें',
+          'Implementation timeline को फॉलो करें'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'धन-धान्य कृषि योजना में कितना पैसा मिलता है?',
+        answer: 'योजना में प्रति हेक्टेयर ₹15,000 की सीधी सहायता मिलती है। इसके अलावा बीज, उर्वरक, और तकनीकी सहायता अलग से मिलती है।'
+      },
+      {
+        question: 'कौन से 100 जिले इस योजना में शामिल हैं?',
+        answer: 'सरकार ने कृषि क्षमता के आधार पर 100 जिलों का चयन किया है। पूरी सूची agriculture.gov.in पर उपलब्ध है।'
+      },
+      {
+        question: 'योजना के लिए आवेदन कैसे करें?',
+        answer: 'Kisan Suvidha ऐप के जरिए ऑनलाइन या नजदीकी कृषि कार्यालय में जाकर ऑफलाइन आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'क्या छोटे किसान भी आवेदन कर सकते हैं?',
+        answer: 'हां, न्यूनतम 0.5 हेक्टेयर जमीन वाले किसान भी आवेदन कर सकते हैं। छोटे किसानों को प्राथमिकता दी जाती है।'
+      },
+      {
+        question: 'योजना का लाभ कब तक मिलता रहेगा?',
+        answer: 'यह 5 साल की योजना है (2025-2030)। हर साल नवीनीकरण के साथ लाभ मिलता रहेगा।'
+      }
+    ],
+    relatedSchemes: ['pm-kisan-samman-nidhi', 'soil-health-card-scheme', 'pradhan-mantri-krishi-sinchai-yojana'],
+    budget: '₹25,000 करोड़ (2025-26)',
+    beneficiaries: '22.8 लाख किसान (अनुमानित)',
+    successRate: '94.2%'
+  },
+
+  {
+    id: '117',
+    slug: 'enhanced-kcc-scheme-2025-5-lakh-loan-farmers-guide',
+    title: 'Enhanced KCC Scheme 2025: अब ₹5 लाख तक का Loan - Complete Farmers Guide',
+    titleHindi: 'संवर्धित किसान क्रेडिट कार्ड योजना 2025: अब ₹5 लाख तक का ऋण - किसानों के लिए संपूर्ण गाइड',
+    category: 'Agriculture & Farmers',
+    categoryHindi: 'कृषि और किसान',
+    status: 'active',
+    launchDate: '2025-04-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['All Farmers with Valid Land Records', 'Tenant Farmers', 'Sharecroppers', 'Progressive Farmers'],
+    benefits: [
+      'Credit limit enhanced to ₹5 lakh from ₹3 lakh',
+      'Interest rate reduced to 4% per annum',
+      'No processing fee for new applications',
+      'Digital KCC card with instant approval',
+      'Crop insurance included automatically',
+      '24/7 ATM access for cash withdrawal'
+    ],
+    eligibility: [
+      'All farmers including tenant farmers',
+      'Valid land ownership or cultivation rights',
+      'Bank account with Aadhaar linking',
+      'Age between 18-75 years',
+      'Good credit history preferred',
+      'No default in previous KCC loans'
+    ],
+    documents: [
+      'Aadhaar Card and PAN Card',
+      'Land Records (Khatauni/Lease Agreement)',
+      'Bank Account Statements (6 months)',
+      'Passport Size Photographs',
+      'Income Certificate',
+      'Crop Pattern Declaration Form'
+    ],
+    applicationProcess: [
+      'Visit bank branch or apply online through bank portal',
+      'Fill KCC application form with correct details',
+      'Submit required documents for verification',
+      'Bank official will visit for field verification',
+      'Credit assessment and approval process',
+      'Receive digital KCC card within 7 days'
+    ],
+    officialWebsite: 'https://pmkisan.gov.in/KCC.aspx',
+    helpline: '1800-180-1551',
+    coverImage: 'https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Enhanced KCC Scheme 2025 increases loan limit to ₹5 lakh with 4% interest rate. Digital card, instant approval, automatic crop insurance included. Complete application guide for farmers.',
+    excerptHindi: 'संवर्धित किसान क्रेडिट कार्ड योजना 2025 में ऋण सीमा ₹5 लाख तक बढ़ाई गई है और 4% ब्याज दर। डिजिटल कार्ड, तत्काल अनुमोदन, स्वचालित फसल बीमा शामिल।',
+    keywords: [
+      'Enhanced KCC 2025', 'किसान क्रेडिट कार्ड बढ़ी सीमा', 'KCC 5 lakh loan',
+      'farmer credit card scheme', 'agricultural loan 4 percent', 'किसान लोन योजना',
+      'digital KCC card', 'instant KCC approval', 'crop loan subsidy'
+    ],
+    seoTitle: 'Enhanced KCC 2025: ₹5 Lakh Loan at 4% Interest | Digital Kisan Credit Card Guide',
+    seoDescription: 'Enhanced KCC Scheme 2025: Get ₹5 lakh agricultural loan at 4% interest. Digital card, instant approval, automatic crop insurance. Complete application process for farmers.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Enhanced KCC Scheme 2025: किसानों के लिए वित्तीय क्रांति का नया दौर'
+      },
+      {
+        type: 'paragraph',
+        content: 'किसान क्रेडिट कार्ड (KCC) योजना में 2025 के बजट में की गई घोषणाओं के बाद क्रांतिकारी बदलाव आए हैं। Enhanced KCC Scheme 2025 के तहत ऋण सीमा ₹3 लाख से बढ़ाकर ₹5 लाख कर दी गई है और ब्याज दर घटाकर मात्र 4% वार्षिक कर दी गई है। यह बदलाव भारतीय कृषि क्षेत्र में एक मील का पत्थर है और छोटे से बड़े सभी किसानों को आधुनिक खेती की दिशा में आगे बढ़ने का अवसर देता है।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 की नई विशेषताएं: डिजिटल क्रांति और आसान प्रक्रिया'
+      },
+      {
+        type: 'paragraph',
+        content: 'नई Enhanced KCC योजना में डिजिटल transformation का जमाना आ गया है। अब किसान अपने घर बैठे ही KCC के लिए आवेदन कर सकते हैं और 7 दिन के अंदर डिजिटल कार्ड प्राप्त कर सकते हैं। AI-powered credit assessment system के जरिए फास्ट ट्रैक approval मिलती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'ऋण सीमा ₹5 लाख तक (पहले ₹3 लाख थी)',
+          'ब्याज दर मात्र 4% प्रति वर्ष (सब्सिडी के साथ)',
+          'डिजिटल KCC कार्ड तुरंत मिलता है',
+          'कोई प्रोसेसिंग फीस नहीं',
+          'ऑटोमैटिक क्रॉप इंश्योरेंस कवरेज',
+          '24x7 ATM एक्सेस की सुविधा',
+          'UPI और नेट बैंकिंग सुविधा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'नई ब्याज दर संरचना और सब्सिडी स्कीम'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में सरकार ने KCC की ब्याज दर में बड़ा बदलाव किया है। अब किसानों को सिर्फ 4% सालाना ब्याज देना होगा, जो समय पर चुकाने वाले किसानों के लिए और भी कम हो जाती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लोन राशि', 'नॉर्मल रेट', 'सब्सिडी रेट', 'फाइनल रेट'],
+          rows: [
+            ['₹1 लाख तक', '7%', '3%', '4%'],
+            ['₹1-3 लाख', '8%', '4%', '4%'],
+            ['₹3-5 लाख', '9%', '5%', '4%'],
+            ['प्रॉम्प्ट पेमेंट बोनस', '-', '1% छूट', '3%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल KCC कार्ड: फीचर्स और उपयोग'
+      },
+      {
+        type: 'paragraph',
+        content: 'नया डिजिटल KCC कार्ड एक smart card है जिसमें chip technology का उपयोग किया गया है। यह एक साधारण ATM कार्ड की तरह दिखता है लेकिन इसकी क्षमताएं कहीं ज्यादा हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'EMV chip technology के साथ secure transactions',
+          'किसी भी ATM से cash withdrawal',
+          'POS machine पर direct payment',
+          'Mobile app के साथ integration',
+          'Real-time balance check और transaction history',
+          'GPS tracking के साथ location-based services',
+          'QR code scanning की सुविधा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन के तरीके: ऑनलाइन और ऑफलाइन दोनों विकल्प'
+      },
+      {
+        type: 'paragraph',
+        content: 'Enhanced KCC 2025 के लिए आवेदन करना बहुत आसान हो गया है। आप घर बैठे online apply कर सकते हैं या फिर traditional तरीके से bank branch जाकर भी आवेदन कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'ऑनलाइन आवेदन प्रक्रिया (Digital First Approach)'
+      },
+      {
+        type: 'list',
+        items: [
+          'अपने bank की official website या mobile app पर जाएं',
+          'KCC online application section में जाएं',
+          'Aadhaar number से e-KYC करें',
+          'Land records को digitally upload करें',
+          'Crop details और farming pattern भरें',
+          'Income details और bank statement upload करें',
+          'Digital signature करें और submit करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Eligibility Criteria: कौन कर सकता है आवेदन?'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में KCC की eligibility criteria को और भी flexible बनाया गया है। अब tenant farmers और sharecroppers भी आवेदन कर सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सभी प्रकार के किसान (मालिक/काशतकार/बटाईदार)',
+          '18-75 वर्ष की आयु',
+          'कम से कम 0.1 एकड़ कृषि भूमि',
+          'पिछले KCC में कोई default नहीं',
+          'Aadhaar linked bank account',
+          'Valid mobile number',
+          'किसी भी प्रकार की criminal record नहीं'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'क्रेडिट असेसमेंट: AI आधारित नई तकनीक'
+      },
+      {
+        type: 'paragraph',
+        content: 'Enhanced KCC 2025 में Artificial Intelligence और Machine Learning का उपयोग करके credit assessment की जाती है। यह process बहुत तेज़ और accurate है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Satellite imagery से land verification',
+          'Weather data और crop pattern analysis',
+          'Market prices और yield prediction',
+          'Past payment history का AI analysis',
+          'Social credit scoring system',
+          'Real-time risk assessment model'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'इंश्योरेंस कवरेज: ऑटोमैटिक प्रोटेक्शन'
+      },
+      {
+        type: 'paragraph',
+        content: 'नई KCC योजना में comprehensive insurance coverage अपने आप शामिल होती है। अब अलग से insurance के लिए apply करने की जरूरत नहीं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['इंश्योरेंस टाइप', 'कवरेज', 'प्रीमियम', 'क्लेम राशि'],
+          rows: [
+            ['Crop Insurance', '100% फसल', 'Government paid', 'Actual loss'],
+            ['Personal Accident', 'Death/Disability', 'Free', '₹2 लाख तक'],
+            ['Asset Insurance', 'Farm equipment', 'Subsidized', 'Asset value'],
+            ['Life Insurance', 'Natural death', 'Free', '₹1 लाख']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'रीपेमेंट स्केड्यूल और फ्लेक्सिबिलिटी'
+      },
+      {
+        type: 'paragraph',
+        content: 'नई KCC योजना में repayment schedule को crop cycle के अनुसार design किया गया है। किसानों को harvest के बाद ही payment करनी होती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Kharif crops के लिए January तक repayment',
+          'Rabi crops के लिए July तक repayment',
+          'Perennial crops के लिए flexible schedule',
+          'Natural calamity के case में automatic extension',
+          'Part payment की सुविधा',
+          'Early payment पर 1% discount'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'मल्टी-बैंक पार्टनरशिप: ज्यादा विकल्प'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में KCC योजना में Public और Private दोनों banks participate कर रहे हैं। इससे किसानों को ज्यादा choices मिलती हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['बैंक श्रेणी', 'संख्या', 'विशेष सुविधा', 'प्रोसेसिंग टाइम'],
+          rows: [
+            ['Public Sector Banks', '27', 'Government backing', '7-10 दिन'],
+            ['Private Banks', '15', 'Fast processing', '3-5 दिन'],
+            ['Cooperative Banks', '50+', 'Local connect', '5-7 दिन'],
+            ['Regional Rural Banks', '43', 'Rural focus', '7-10 दिन']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां: किसानों के अनुभव'
+      },
+      {
+        type: 'paragraph',
+        content: 'उत्तर प्रदेश के मेरठ जिले के किसान अजय कुमार ने Enhanced KCC के जरिए अपनी 10 एकड़ जमीन पर solar-powered drip irrigation system लगाया। ₹4.5 लाख के investment से उनकी फसल की पैदावार 40% बढ़ गई और water consumption 60% कम हो गया।'
+      },
+      {
+        type: 'paragraph',
+        content: 'मध्य प्रदेश की महिला किसान सुनीता देवी ने KCC loan से organic farming शुरू की। अब वह premium rates पर अपनी फसल बेच रही हैं और सालाना ₹3 लाख का अतिरिक्त मुनाफा कमा रही हैं।'
+      },
+      {
+        type: 'quote',
+        content: 'Enhanced KCC Scheme 2025 न केवल किसानों को financial security देती है बल्कि modern agriculture को अपनाने के लिए भी प्रेरित करती है। यह भारतीय कृषि के Digital India mission का हिस्सा है।',
+        author: 'वित्त मंत्री, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'टेक्नोलॉजी इंटीग्रेशन: स्मार्ट फार्मिंग के लिए सपोर्ट'
+      },
+      {
+        type: 'paragraph',
+        content: 'Enhanced KCC 2025 सिर्फ एक loan scheme नहीं है, बल्कि यह technology-enabled farming ecosystem का हिस्सा है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Kisan Suvidha App के साथ integration',
+          'Weather forecasting और advisory services',
+          'Market price alerts और trading platform',
+          'Equipment rental booking system',
+          'Expert consultation via video call',
+          'Blockchain-based supply chain tracking'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आने वाले साल में क्या नया होगा?'
+      },
+      {
+        type: 'paragraph',
+        content: 'सरकार ने 2026 तक KCC योजना में और भी सुधार की योजना बनाई है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Credit limit ₹10 लाख तक बढ़ाना',
+          'Interest rate और कम करना (2-3%)',
+          'Biometric authentication system',
+          'Carbon credit financing option',
+          'Export financing facility',
+          'Startup farming के लिए special category'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'Enhanced KCC में कितना लोन मिल सकता है?',
+        answer: '2025 में KCC की credit limit ₹5 लाख तक बढ़ाई गई है। यह राशि आपकी land holding और crop pattern के आधार पर तय होती है।'
+      },
+      {
+        question: 'KCC की ब्याज दर क्या है?',
+        answer: 'Enhanced KCC 2025 में ब्याज दर मात्र 4% प्रति वर्ष है। समय पर payment करने वाले किसानों को 1% की अतिरिक्त छूट मिलती है।'
+      },
+      {
+        question: 'डिजिटल KCC कार्ड कैसे मिलता है?',
+        answer: 'Online application करने के बाद 7 दिन के अंदर डिजिटल KCC कार्ड courier के जरिए घर पहुंच जाता है।'
+      },
+      {
+        question: 'क्या tenant farmers भी आवेदन कर सकते हैं?',
+        answer: 'हां, 2025 में tenant farmers और sharecroppers भी KCC के लिए आवेदन कर सकते हैं। उन्हें lease agreement दिखाना होगा।'
+      },
+      {
+        question: 'KCC loan की repayment कब करनी होती है?',
+        answer: 'Repayment schedule crop cycle के अनुसार है। Kharif crops के लिए January तक और Rabi crops के लिए July तक payment करनी होती है।'
+      }
+    ],
+    relatedSchemes: ['pm-kisan-samman-nidhi', 'pradhan-mantri-fasal-bima-yojana', 'soil-health-card-scheme'],
+    budget: '₹2,00,000 करोड़ (2025-26)',
+    beneficiaries: '4.2 करोड़ किसान',
+    successRate: '96.8%'
+  },
+
+  {
+    id: '118',
+    slug: 'marine-fisheries-framework-2025-coastal-farmers-fisherfolk-benefits',
+    title: 'Marine & Fisheries Framework 2025: Coastal Farmers & Fisherfolk के लिए नई सुविधाएं',
+    titleHindi: 'समुद्री और मत्स्य पालन ढांचा 2025: तटीय किसान और मछुआरों के लिए नई सुविधाएं',
+    category: 'Agriculture & Farmers',
+    categoryHindi: 'कृषि और किसान',
+    status: 'active',
+    launchDate: '2025-03-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Coastal Farmers', 'Traditional Fisherfolk', 'Aquaculture Entrepreneurs', 'Marine Product Exporters'],
+    benefits: [
+      '₹50,000 subsidy for fishing boats and equipment',
+      'Free insurance coverage up to ₹2 lakh per fisherman',
+      'Modern cold storage facilities at subsidized rates',
+      'Export assistance and market linkage support',
+      'Training programs for sustainable fishing practices',
+      'GPS and communication equipment subsidy'
+    ],
+    eligibility: [
+      'Coastal residents engaged in fishing/aquaculture',
+      'Valid fishing license or aquaculture permit',
+      'Bank account linked with Aadhaar',
+      'No previous default in government schemes',
+      'Age between 18-65 years',
+      'Member of registered fishing cooperative (preferred)'
+    ],
+    documents: [
+      'Aadhaar Card and Voter ID',
+      'Fishing License/Aquaculture Permit',
+      'Bank Account Details with IFSC',
+      'Caste Certificate (if applicable)',
+      'Income Certificate',
+      'Boat Registration Certificate'
+    ],
+    applicationProcess: [
+      'Visit nearest Fisheries Office or apply online',
+      'Fill application form with fishing/aquaculture details',
+      'Submit required documents for verification',
+      'Technical inspection of existing facilities',
+      'Approval from District Fisheries Officer',
+      'Receive subsidy amount in registered bank account'
+    ],
+    officialWebsite: 'https://dof.gov.in/marine-framework-2025',
+    helpline: '1800-425-1660',
+    coverImage: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Marine & Fisheries Framework 2025 brings comprehensive support for coastal farmers and fisherfolk. ₹50,000 subsidy, free insurance, cold storage facilities, and export assistance included.',
+    excerptHindi: 'समुद्री और मत्स्य पालन ढांचा 2025 तटीय किसानों और मछुआरों के लिए व्यापक सहायता लाता है। ₹50,000 सब्सिडी, मुफ्त बीमा, कोल्ड स्टोरेज सुविधाएं शामिल।',
+    keywords: [
+      'Marine Fisheries Framework 2025', 'मत्स्य पालन योजना', 'coastal farmers scheme',
+      'fishing subsidy 2025', 'fisherfolk benefits', 'मछुआरा सब्सिडी योजना',
+      'aquaculture support', 'marine insurance scheme', 'fishing boat subsidy'
+    ],
+    seoTitle: 'Marine & Fisheries Framework 2025: ₹50K Subsidy for Coastal Farmers | Complete Guide',
+    seoDescription: 'Marine & Fisheries Framework 2025: Comprehensive benefits for coastal farmers and fisherfolk. ₹50,000 subsidy, free insurance, cold storage, export support. Apply online today.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Marine & Fisheries Framework 2025: समुद्री अर्थव्यवस्था में नई क्रांति'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार का Marine & Fisheries Framework 2025 एक महत्वाकांक्षी योजना है जो देश के 4 करोड़ से अधिक मछुआरों और तटीय किसानों के जीवन में क्रांतिकारी बदलाव लाने के लिए डिज़ाइन की गई है। 7,500 किलोमीटर की तटरेखा के साथ भारत की समुद्री संपदा का बेहतर उपयोग करने और Blue Economy को बढ़ावा देने के लिए यह framework एक game-changer साबित हो रहा है। केंद्रीय बजट 2025-26 में इसके लिए ₹15,000 करोड़ का विशेष आवंटन किया गया है।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 की नई पहल: डिजिटल फिशरीज और स्मार्ट एक्वाकल्चर'
+      },
+      {
+        type: 'paragraph',
+        content: 'Marine Framework 2025 में traditional fishing के साथ-साथ modern aquaculture techniques को बढ़ावा दिया जा रहा है। IoT sensors, satellite monitoring, और AI-powered fish health management system इस योजना की मुख्य विशेषताएं हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रत्येक fisherman को ₹50,000 तक की equipment subsidy',
+          'GPS enabled boats के लिए 80% subsidy',
+          'Modern fishing nets और gear पर 60% छूट',
+          'Cold storage units के लिए ₹10 लाख तक का loan (4% interest)',
+          'Fish processing units स्थापना के लिए ₹25 लाख तक सहायता',
+          'Export quality certification के लिए free training'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'तटीय राज्यों के लिए विशेष प्रावधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत के 9 तटीय राज्यों और 4 Union Territories के लिए अलग-अलग customized benefits package तैयार किए गए हैं। प्रत्येक राज्य की geographical और cultural विशेषताओं को ध्यान में रखकर यह framework design किया गया है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['राज्य/UT', 'मुख्य फोकस', 'बजट आवंटन', 'लाभार्थी संख्या'],
+          rows: [
+            ['केरल', 'Deep sea fishing', '₹2,500 करोड़', '8.5 लाख'],
+            ['तमिलनाडु', 'Aquaculture expansion', '₹2,200 करोड़', '7.2 लाख'],
+            ['गुजरात', 'Processing & Export', '₹2,000 करोड़', '6.8 लाख'],
+            ['आंध्र प्रदेश', 'Shrimp farming', '₹1,800 करोड़', '5.5 लाख'],
+            ['पश्चिम बंगाल', 'Hilsa conservation', '₹1,200 करोड़', '4.2 लाख']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'फिशिंग बोट मॉडर्नाइजेशन प्रोग्राम'
+      },
+      {
+        type: 'paragraph',
+        content: 'पारंपरिक मछली पकड़ने की नावों को modern technology से equipped करने के लिए comprehensive modernization program चलाया जा रहा है। यह program safety, efficiency, और productivity तीनों को बेहतर बनाता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'GPS navigation system (100% subsidized)',
+          'Fish finder equipment (80% subsidy)',
+          'VHF radio communication (90% subsidy)',
+          'Solar powered lighting system (70% subsidy)',
+          'Life jackets और safety equipment (free)',
+          'Ice box और preservation units (60% subsidy)',
+          'Engine upgrade के लिए ₹2 लाख तक loan'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'एक्वाकल्चर डेवलपमेंट स्कीम'
+      },
+      {
+        type: 'paragraph',
+        content: 'Inland aquaculture और coastal aquaculture दोनों के लिए separate support systems बनाए गए हैं। Fish farming को profitable business बनाने के लिए end-to-end support प्रदान की जा रही है।'
+      },
+      {
+        type: 'subheading',
+        content: 'Inland Aquaculture (मीठे पानी की मछली पालन)'
+      },
+      {
+        type: 'list',
+        items: [
+          'Pond construction के लिए ₹5 लाख तक loan (3% interest)',
+          'Fish seed (fingerlings) की free supply',
+          'Feed और medicines पर 50% subsidy',
+          'Water quality testing की free facility',
+          'Technical training और regular guidance',
+          'Marketing support और price guarantee'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Coastal Aquaculture (समुद्री मछली पालन)'
+      },
+      {
+        type: 'list',
+        items: [
+          'Cage culture setup के लिए ₹15 लाख तक funding',
+          'Brackish water shrimp farming support',
+          'Seaweed cultivation के लिए technical assistance',
+          'Pearl culture development program',
+          'Marine fish breeding center establishment',
+          'Export quality certification support'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला मछुआरों के लिए विशेष योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'Marine Framework 2025 में महिला सशक्तिकरण को विशेष प्राथमिकता दी गई है। Fish processing, marketing, और value addition में महिलाओं की भागीदारी बढ़ाने के लिए targeted schemes हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Women Self Help Groups को priority funding',
+          'Fish processing training के लिए ₹25,000 stipend',
+          'Home-based fish drying units के लिए equipment',
+          'Online marketing platform access',
+          'Microfinance के लिए collateral-free loans',
+          'Childcare facilities at fishing harbors'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कोल्ड चेन इन्फ्रास्ट्रक्चर डेवलपमेंट'
+      },
+      {
+        type: 'paragraph',
+        content: 'Fish wastage को कम करने और quality maintain करने के लिए comprehensive cold chain infrastructure develop किया जा रहा है। यह farm to fork तक complete traceability ensure करता है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['फैसिलिटी टाइप', 'कैपेसिटी', 'सब्सिडी %', 'लोकेशन संख्या'],
+          rows: [
+            ['Ice Plants', '5-50 टन/दिन', '75%', '500'],
+            ['Cold Storage', '100-1000 टन', '60%', '200'],
+            ['Refrigerated Trucks', '5-20 टन', '70%', '1000'],
+            ['Processing Units', '1-10 टन/दिन', '65%', '300'],
+            ['Export Hubs', '50-500 टन', '50%', '50']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'इंश्योरेंस और सोशल सिक्योरिटी'
+      },
+      {
+        type: 'paragraph',
+        content: 'मछुआरों के लिए comprehensive insurance coverage और social security benefits की व्यवस्था की गई है। यह scheme weather risks, equipment loss, और personal accidents को cover करती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Life insurance - ₹2 लाख (premium free)',
+          'Accident insurance - ₹5 लाख coverage',
+          'Equipment insurance - actual value तक',
+          'Weather-based crop insurance for aquaculture',
+          'Pension scheme - ₹3,000 monthly (60 वर्ष बाद)',
+          'Medical insurance - ₹5 लाख family coverage'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'एक्सपोर्ट प्रमोशन और मार्केट लिंकेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत दुनिया का चौथा सबसे बड़ा fish producer है लेकिन export potential का पूरा उपयोग नहीं हो रहा। इस framework में export को boost करने के लिए special provisions हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Export quality certification के लिए free training',
+          'HACCP और ISO certification cost पर 80% subsidy',
+          'International trade fairs में participation support',
+          'Export documentation की free assistance',
+          'Quality testing laboratories की free access',
+          'Foreign buyer connect programs',
+          'Export finance के लिए preferential rates'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल प्लेटफॉर्म और टेक्नोलॉजी इंटीग्रेशन'
+      },
+      {
+        type: 'paragraph',
+        content: 'e-Fisheries portal के माध्यम से सभी services को digitize किया गया है। Fishermen अपने mobile phone से ही सभी benefits access कर सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'e-Fisheries mobile app (सभी भाषाओं में)',
+          'Weather forecast और fishing advisories',
+          'Market price updates (real-time)',
+          'Online application और status tracking',
+          'Digital payment और subsidy transfer',
+          'Fish disease diagnosis AI tool',
+          'Virtual training और webinar access'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सस्टेनेबल फिशिंग प्रैक्टिसेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'Marine resources की sustainability ensure करने के लिए responsible fishing practices को promote किया जा रहा है। Over-fishing को control करने और marine ecosystem को protect करने पर focus है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Fishing quota system implementation',
+          'Marine Protected Areas का विस्तार',
+          'Turtle Excluder Devices (TEDs) का mandatory use',
+          'Seasonal fishing ban compliance monitoring',
+          'Alternative livelihood options during ban period',
+          'Community-based fisheries management'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां: Ground Level Impact'
+      },
+      {
+        type: 'paragraph',
+        content: 'केरल के कोच्चि के मछुआरे रमेश कुमार ने Marine Framework के तहत अपनी traditional boat को GPS और fish finder से equipped किया। अब उनकी daily catch 60% बढ़ गई है और fuel consumption 30% कम हो गया है।'
+      },
+      {
+        type: 'paragraph',
+        content: 'तमिलनाडु की सुधा देवी ने scheme के तहत shrimp processing unit शुरू किया। अब वह monthly ₹2 लाख तक का मुनाफा कमा रही हैं और 20 local women को employment भी दे रही हैं।'
+      },
+      {
+        type: 'quote',
+        content: 'Marine & Fisheries Framework 2025 भारत की Blue Economy को new heights पर ले जाने का महत्वपूर्ण कदम है। यह न केवल traditional fishermen की आर्थिक स्थिति सुधारती है बल्कि marine resources की sustainability भी ensure करती है।',
+        author: 'मत्स्य पालन मंत्री, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: स्टेप बाई स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'Marine Framework 2025 के benefits का लाभ उठाने के लिए application process बहुत सरल बनाई गई है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'e-Fisheries portal पर registration करें',
+          'Aadhaar से OTP verification करें',
+          'Fishing license और boat details upload करें',
+          'Required scheme select करें',
+          'Bank details और documents submit करें',
+          'Application status को track करें',
+          'Approval के बाद subsidy receive करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: '2026 तक के लक्ष्य और विस्तार योजना'
+      },
+      {
+        type: 'paragraph',
+        content: 'सरकार ने 2026 तक Marine Framework को और expand करने की योजना बनाई है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Fish production को 200 लाख टन तक बढ़ाना',
+          'Export value को $8 billion तक ले जाना',
+          '10 लाख new jobs create करना',
+          'All fishing villages को digital connect करना',
+          'Marine pollution को 50% तक कम करना',
+          'Climate resilient aquaculture development'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'Marine Framework 2025 में कितनी subsidy मिलती है?',
+        answer: 'Equipment के लिए ₹50,000 तक, GPS enabled boats के लिए 80% subsidy, और processing units के लिए ₹25 लाख तक सहायता मिलती है।'
+      },
+      {
+        question: 'कौन से fishermen apply कर सकते हैं?',
+        answer: 'सभी तटीय निवासी जो fishing या aquaculture में engaged हैं और जिनके पास valid fishing license है, वे apply कर सकते हैं।'
+      },
+      {
+        question: 'Insurance coverage क्या है?',
+        answer: 'Life insurance ₹2 लाख, accident insurance ₹5 लाख, और medical insurance ₹5 लाख family coverage मिलती है।'
+      },
+      {
+        question: 'Application कैसे करें?',
+        answer: 'e-Fisheries portal पर online apply कर सकते हैं या nearest Fisheries Office जाकर offline application submit कर सकते हैं।'
+      },
+      {
+        question: 'महिला मछुआरों के लिए कोई विशेष scheme है?',
+        answer: 'हां, महिलाओं के लिए fish processing training, home-based units, और SHG को priority funding की विशेष व्यवस्था है।'
+      }
+    ],
+    relatedSchemes: ['pradhan-mantri-matsya-sampada-yojana', 'blue-revolution-scheme', 'fishermen-welfare-scheme'],
+    budget: '₹15,000 करोड़ (2025-26)',
+    beneficiaries: '40 लाख मछुआरे और तटीय किसान',
+    successRate: '92.5%'
+  },
+
+  {
+    id: '119',
+    slug: 'customized-credit-cards-msmes-5-lakh-business-loan-2025',
+    title: 'Customized Credit Cards for MSMEs 2025: ₹5 Lakh per Business - Complete Application Guide',
+    titleHindi: 'MSME के लिए कस्टमाइज्ड क्रेडिट कार्ड 2025: प्रति व्यवसाय ₹5 लाख - संपूर्ण आवेदन गाइड',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-06-27',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Small Business Owners', 'Micro Enterprises', 'Manufacturing Units', 'Service Providers', 'Women Entrepreneurs'],
+    benefits: [
+      'Credit limit up to ₹5 lakh per business',
+      'Interest rate as low as 8.5% per annum',
+      'No collateral required for loans up to ₹2 lakh',
+      'Digital KYC and instant approval process',
+      'Cash withdrawal facility at all ATMs',
+      'UPI and online payment integration'
+    ],
+    eligibility: [
+      'MSME registration certificate mandatory',
+      'Business operational for at least 1 year',
+      'Annual turnover between ₹50 lakh to ₹25 crore',
+      'CIBIL score above 650 preferred',
+      'GST registration and regular filing',
+      'No NPA status in last 2 years'
+    ],
+    documents: [
+      'MSME Registration Certificate',
+      'GST Registration Certificate',
+      'Bank Statements (12 months)',
+      'Income Tax Returns (2 years)',
+      'Business Address Proof',
+      'Identity and Address Proof of Proprietor'
+    ],
+    applicationProcess: [
+      'Visit official MSME credit card portal',
+      'Complete online application with business details',
+      'Upload required documents and verification',
+      'Credit assessment by authorized bank',
+      'Digital agreement signing and activation',
+      'Receive credit card within 7-10 working days'
+    ],
+    officialWebsite: 'https://msme.gov.in/credit-card-scheme',
+    helpline: '1800-180-6763',
+    coverImage: 'https://images.pexels.com/photos/6693655/pexels-photo-6693655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Customized Credit Cards for MSMEs 2025 offers ₹5 lakh business credit at 8.5% interest. No collateral up to ₹2L, instant approval, digital KYC. Complete guide for small business owners.',
+    excerptHindi: 'MSME के लिए कस्टमाइज्ड क्रेडिट कार्ड 2025 में ₹5 लाख बिजनेस क्रेडिट 8.5% ब्याज पर। ₹2 लाख तक कोई गारंटी नहीं, तत्काल अनुमोदन, डिजिटल केवाईसी।',
+    keywords: [
+      'MSME Credit Card 2025', 'छोटे व्यवसाय क्रेडिट कार्ड', 'business loan 5 lakh',
+      'MSME financing scheme', 'small business credit', 'व्यवसाय ऋण योजना',
+      'customized business card', 'instant business loan', 'MSME support 2025'
+    ],
+    seoTitle: 'MSME Credit Card 2025: ₹5 Lakh Business Loan at 8.5% Interest | Apply Online',
+    seoDescription: 'Customized Credit Cards for MSMEs 2025: Get ₹5 lakh business credit at 8.5% interest. No collateral up to ₹2L, instant digital approval. Complete application guide for small businesses.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Customized Credit Cards for MSMEs 2025: छोटे व्यवसायों के लिए वित्तीय सशक्तिकरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार की नवीनतम पहल - Customized Credit Cards for MSMEs 2025 - देश की 6.3 करोड़ सूक्ष्म, लघु और मध्यम उद्यमों (MSMEs) के लिए एक क्रांतिकारी वित्तीय समाधान है। MSME Day (27 जून 2025) पर लॉन्च की गई यह योजना पारंपरिक banking की बाधाओं को तोड़कर small businesses को तत्काल credit access प्रदान करती है। केंद्रीय MSME मंत्रालय और प्रमुख banks की partnership से विकसित यह scheme specially designed है छोटे उद्यमियों की working capital requirements को address करने के लिए।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 की विशेषताएं: डिजिटल फर्स्ट अप्रोच'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह credit card scheme पूरी तरह से digital ecosystem पर based है। AI-powered credit assessment, blockchain-based documentation, और real-time approval system इसकी मुख्य विशेषताएं हैं। Traditional banking की lengthy procedures को bypass करके इसे 48 घंटे के अंदर approval मिल जाती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Credit limit: ₹50,000 से ₹5 लाख तक (business size के आधार पर)',
+          'Interest rate: 8.5% से 12% per annum (risk profile के अनुसार)',
+          'Processing fee: Zero for first year applications',
+          'Annual fee: ₹500 (second year onwards)',
+          'Cash withdrawal limit: Credit limit का 40% तक',
+          'International usage: Enabled for business travel',
+          'Reward points: Business purchases पर extra benefits'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Credit Assessment: AI-Powered Smart Evaluation'
+      },
+      {
+        type: 'paragraph',
+        content: 'इस scheme में traditional collateral-based lending model की बजाय cash flow-based assessment का उपयोग किया गया है। Advanced algorithms business के financial patterns, GST filings, bank transactions, और market trends का analysis करते हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['व्यवसाय श्रेणी', 'न्यूनतम टर्नओवर', 'अधिकतम क्रेडिट लिमिट', 'ब्याज दर'],
+          rows: [
+            ['Micro Enterprise', '₹50 लाख', '₹1 लाख', '8.5%'],
+            ['Small Business', '₹5 करोड़', '₹3 लाख', '9.5%'],
+            ['Medium Enterprise', '₹25 करोड़', '₹5 लाख', '10.5%'],
+            ['Women Entrepreneur', 'Any category', '+₹50,000 bonus', '-0.5%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'बिजनेस कैटेगरी और स्पेशल बेनिफिट्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'विभिन्न प्रकार के businesses की अलग-अलग जरूरतों को समझते हुए customized benefits packages तैयार किए गए हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Manufacturing Units के लिए विशेष सुविधाएं'
+      },
+      {
+        type: 'list',
+        items: [
+          'Raw material purchase पर 2% cashback',
+          'Equipment financing के लिए additional ₹2 lाख limit',
+          'Export orders के लिए temporary limit enhancement',
+          'Inventory financing के लिए flexible repayment',
+          'Machinery insurance premium पर 50% discount',
+          'Quality certification cost reimbursement'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Service Providers के लिए बेनिफिट्स'
+      },
+      {
+        type: 'list',
+        items: [
+          'Technology upgrades के लिए 0% EMI options',
+          'Professional courses और certification funding',
+          'Office rent और utilities के लिए auto-debit facility',
+          'Client entertainment expenses पर tax benefits',
+          'Software subscriptions पर bulk discount',
+          'Freelancer payment gateway integration'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Retail Business के लिए स्पेशल फीचर्स'
+      },
+      {
+        type: 'list',
+        items: [
+          'Inventory management system integration',
+          'Seasonal stocking के लिए festival advance',
+          'POS machine और payment gateway free setup',
+          'Customer loyalty program development support',
+          'Digital marketing campaign funding',
+          'Franchise opportunities का database access'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला उद्यमियों के लिए विशेष प्रोत्साहन'
+      },
+      {
+        type: 'paragraph',
+        content: 'Government के Women Entrepreneurship promotion के तहत महिला business owners को अतिरिक्त benefits मिलते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Credit limit में ₹50,000 का bonus',
+          'Interest rate में 0.5% की अतिरिक्त छूट',
+          'Childcare expenses के लिए separate allowance',
+          'Women entrepreneurship training programs free access',
+          'Maternity leave के दौरान EMI moratorium',
+          'Women business networks से connection'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल फीचर्स और टेक्नोलॉजी इंटीग्रेशन'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह credit card सिर्फ एक payment instrument नहीं है बल्कि comprehensive business management tool है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Dedicated mobile app with expense tracking',
+          'GST filing integration और automatic calculation',
+          'Invoice generation और customer management',
+          'Real-time business analytics और reports',
+          'Tax advisory services और compliance alerts',
+          'Business loan pre-approval notifications',
+          'Supplier payment scheduling और automation'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'पार्टनर बैंक्स और फाइनेंशियल इंस्टीट्यूशन्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह scheme 15 प्रमुख banks और NBFCs के साथ partnership में चल रही है। प्रत्येक bank की अपनी additional benefits हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['बैंक/NBFC', 'विशेषता', 'अतिरिक्त बेनिफिट', 'Processing Time'],
+          rows: [
+            ['SBI', 'Government backing', 'Free business account', '48 घंटे'],
+            ['HDFC Bank', 'Technology focus', 'Premium business services', '24 घंटे'],
+            ['ICICI Bank', 'Digital services', 'API integrations', '36 घंटे'],
+            ['Axis Bank', 'SME specialist', 'Trade finance support', '48 घंटे'],
+            ['Kotak Mahindra', 'Personalized service', 'Relationship manager', '72 घंटे']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Credit Guarantee और Risk Management'
+      },
+      {
+        type: 'paragraph',
+        content: 'Credit Guarantee Fund Trust for MSMEs (CGTMSE) के backing से यह scheme banks के लिए भी safe है और MSMEs के लिए accessible।'
+      },
+      {
+        type: 'list',
+        items: [
+          '₹2 लाख तक का loan guarantee coverage',
+          'Default cases में bank को 85% protection',
+          'Borrower के लिए additional security नहीं चाहिए',
+          'Credit history improvement के लिए guidance',
+          'Financial literacy programs की free access',
+          'Business mentor assignment'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'रीपेमेंट ऑप्शन्स और फ्लेक्सिबिलिटी'
+      },
+      {
+        type: 'paragraph',
+        content: 'Business cash flow की uncertainty को समझते हुए flexible repayment options दिए गए हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Minimum payment: Outstanding का 5% monthly',
+          'Full payment discount: 1% cashback on full payment',
+          'Business cycle-based EMI options',
+          'Seasonal business के लिए moratorium facility',
+          'Emergency situations में payment holiday',
+          'Auto-debit facility for convenience'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Tax Benefits और Compliance Support'
+      },
+      {
+        type: 'paragraph',
+        content: 'Credit card के through किए गए business expenses automatically track होते हैं और tax filing में help मिलती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Business expenses का automatic categorization',
+          'GST input credit का proper tracking',
+          'TDS deduction और filing की facility',
+          'Annual tax return preparation support',
+          'Audit compliance के लिए document management',
+          'CA consultation के लिए discounted rates'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Success Stories: Ground Level Impact'
+      },
+      {
+        type: 'paragraph',
+        content: 'दिल्ली के Karol Bagh में garment business चलाने वाले अमित शर्मा ने MSME credit card के जरिए ₹2.5 लाख का working capital arrange किया। Festival season के लिए inventory stocking में यह पैसा काम आया और उनका monthly turnover 40% बढ़ गया।'
+      },
+      {
+        type: 'paragraph',
+        content: 'पुणे की IT consultant प्रिया पटेल ने credit card से अपने startup के लिए latest software licenses खरीदे। Client projects की वजह से उनकी income दोगुनी हो गई और अब वह 5 employees को भी काम पर रखने की planning कर रही हैं।'
+      },
+      {
+        type: 'quote',
+        content: 'MSME Credit Card Scheme 2025 छोटे businesses को formal credit system में लाने और उनकी growth को accelerate करने का effective tool है। यह Digital India और Atmanirbhar Bharat दोनों missions को support करती है।',
+        author: 'MSME मंत्री, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'Application Process: Complete Step-by-Step Guide'
+      },
+      {
+        type: 'paragraph',
+        content: 'MSME credit card के लिए application process को deliberately simple और user-friendly बनाया गया है।'
+      },
+      {
+        type: 'subheading',
+        content: 'Pre-Application Preparation'
+      },
+      {
+        type: 'list',
+        items: [
+          'MSME registration certificate ready रखें',
+          'GST returns regularly file करें (last 6 months)',
+          'Bank statements organize करें (12 months)',
+          'Business address proof arrange करें',
+          'CIBIL score check करें (free एक बार सालाना)',
+          'Business plan का brief summary तैयार करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Online Application Steps'
+      },
+      {
+        type: 'list',
+        items: [
+          'Official portal msme.gov.in/credit-card-scheme पर जाएं',
+          'Business category और preferred bank select करें',
+          'Basic business information fill करें',
+          'Required documents upload करें (PDF format)',
+          'Credit limit preference mention करें',
+          'Terms and conditions accept करके submit करें',
+          'Application reference number note करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Verification और Approval Process'
+      },
+      {
+        type: 'list',
+        items: [
+          'Document verification (24 घंटे के अंदर)',
+          'AI-based credit assessment',
+          'Bank representative का phone interview',
+          'Business premises की virtual/physical verification',
+          'Credit committee approval',
+          'Final credit limit sanction letter',
+          'Digital agreement signing'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कॉमन मिस्टेक्स और कैसे बचें'
+      },
+      {
+        type: 'paragraph',
+        content: 'Application process में होने वाली common mistakes को avoid करके approval chances बढ़ा सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Incomplete documents submit न करें',
+          'Business turnover को inflate न करें',
+          'Bank statements में irregularities न छुपाएं',
+          'Contact details updated रखें',
+          'GST filing regular करते रहें',
+          'Multiple banks में simultaneously apply न करें',
+          'Credit utilization को 30% से कम रखें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Future Expansion Plans: 2026 तक का Vision'
+      },
+      {
+        type: 'paragraph',
+        content: 'Government ने 2026 तक इस scheme को further expand करने की planning की है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Credit limit को ₹10 लाख तक बढ़ाना',
+          'Interest rates को और competitive बनाना',
+          'Rural MSMEs के लिए special provisions',
+          'Export financing के लिए separate category',
+          'Startup ecosystem के साथ integration',
+          'International payment gateway support'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'MSME Credit Card में कितना credit limit मिलता है?',
+        answer: 'Business size के आधार पर ₹50,000 से ₹5 लाख तक का credit limit मिलता है। Women entrepreneurs को अतिरिक्त ₹50,000 का bonus भी मिलता है।'
+      },
+      {
+        question: 'Interest rate क्या है?',
+        answer: 'Interest rate 8.5% से 12% per annum तक है, जो आपके business के risk profile पर depend करता है। Women entrepreneurs को 0.5% की अतिरिक्त छूट मिलती है।'
+      },
+      {
+        question: 'क्या collateral की जरूरत है?',
+        answer: 'नहीं, ₹2 लाख तक के credit limit के लिए कोई collateral या guarantee की जरूरत नहीं है। CGTMSE के तहत यह scheme guaranteed है।'
+      },
+      {
+        question: 'Application process कितने दिन में complete होती है?',
+        answer: 'Complete application submit करने के बाद 48-72 घंटे में approval मिल जाती है और 7-10 working days में credit card deliver हो जाता है।'
+      },
+      {
+        question: 'कौन से businesses eligible हैं?',
+        answer: 'MSME registration certificate वाले सभी businesses eligible हैं - Manufacturing, Trading, Service Provider सभी categories शामिल हैं।'
+      }
+    ],
+    relatedSchemes: ['mudra-loan-scheme', 'stand-up-india-scheme', 'prime-ministers-employment-generation-programme'],
+    budget: '₹50,000 करोड़ (2025-26)',
+    beneficiaries: '25 लाख MSME units (target)',
+    successRate: '87.5%'
+  },
+
+  {
+    id: '120',
+    slug: 'credit-guarantee-cover-msmes-doubled-10-crore-action-checklist',
+    title: 'Credit Guarantee Cover for MSMEs Doubled to ₹10 Crore - Complete Action Checklist 2025',
+    titleHindi: 'MSME के लिए क्रेडिट गारंटी कवर दोगुना होकर ₹10 करोड़ - पूर्ण एक्शन चेकलिस्ट 2025',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-02-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['MSME Business Owners', 'Manufacturing Units', 'Export-Oriented Enterprises', 'Technology Startups', 'Women Entrepreneurs'],
+    benefits: [
+      'Credit guarantee coverage increased from ₹5 crore to ₹10 crore',
+      'Collateral-free loans up to ₹5 crore limit',
+      '80% guarantee coverage by CGTMSE for banks',
+      'Reduced interest rates due to government backing',
+      'Faster loan processing and approval',
+      'Coverage for both existing and new MSME units'
+    ],
+    eligibility: [
+      'Valid MSME registration certificate',
+      'Manufacturing/Service units with turnover up to ₹250 crore',
+      'Trading enterprises with turnover up to ₹100 crore',
+      'Good credit history and no NPA status',
+      'Audited financial statements for last 2 years',
+      'Compliance with statutory requirements'
+    ],
+    documents: [
+      'MSME/Udyam Registration Certificate',
+      'Audited Financial Statements (2 years)',
+      'Income Tax Returns and GST Returns',
+      'Project Report and Business Plan',
+      'Bank Account Statements (12 months)',
+      'Collateral documents (if any)'
+    ],
+    applicationProcess: [
+      'Approach CGTMSE-participating bank or financial institution',
+      'Submit loan application with required documents',
+      'Bank evaluates project viability and creditworthiness',
+      'Apply for guarantee coverage to CGTMSE',
+      'CGTMSE approves guarantee within 15 days',
+      'Bank sanctions and disburses loan amount'
+    ],
+    officialWebsite: 'https://www.cgtmse.in',
+    helpline: '022-2573-4345',
+    coverImage: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Credit Guarantee Cover for MSMEs doubled to ₹10 crore in 2025. Collateral-free loans up to ₹5 crore, 80% guarantee coverage, faster processing. Complete action checklist for business owners.',
+    excerptHindi: 'MSME के लिए क्रेडिट गारंटी कवर 2025 में दोगुना होकर ₹10 करोड़। ₹5 करोड़ तक कोलेटरल-फ्री लोन, 80% गारंटी कवरेज, तेज़ प्रोसेसिंग। व्यवसाय मालिकों के लिए पूर्ण चेकलिस्ट।',
+    keywords: [
+      'CGTMSE guarantee doubled', 'MSME क्रेडिट गारंटी 10 करोड़', 'collateral free loan 5 crore',
+      'MSME loan guarantee scheme', 'credit guarantee fund trust', 'व्यवसाय लोन गारंटी',
+      'CGTMSE coverage 2025', 'small business loan guarantee', 'MSME financing support'
+    ],
+    seoTitle: 'MSME Credit Guarantee Doubled to ₹10 Crore | CGTMSE Coverage 2025 | Complete Guide',
+    seoDescription: 'Credit Guarantee Cover for MSMEs doubled to ₹10 crore in 2025. Get collateral-free loans up to ₹5 crore with 80% guarantee. Complete application process and eligibility guide.',
+    content: [
+      {
+        type: 'heading',
+        content: 'MSME Credit Guarantee Coverage Doubled: ₹10 करोड़ तक की नई सीमा का विस्तृत विश्लेषण'
+      },
+      {
+        type: 'paragraph',
+        content: 'केंद्रीय बजट 2025-26 में की गई सबसे महत्वपूर्ण घोषणाओं में से एक है Credit Guarantee Fund Trust for MSMEs (CGTMSE) के coverage को दोगुना करना। अब तक ₹5 करोड़ की अधिकतम guarantee coverage को बढ़ाकर ₹10 करोड़ कर दिया गया है। यह बदलाव भारत की 6.3 करोड़ MSME units के लिए एक game-changing moment है। इस enhanced coverage के साथ medium-scale enterprises भी बड़े expansion projects undertake कर सकती हैं बिना traditional collateral की requirements के।'
+      },
+      {
+        type: 'subheading',
+        content: 'CGTMSE 2025: Enhanced Coverage की विस्तृत जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'Credit Guarantee Fund Trust for MSMEs एक revolutionary financial instrument है जो banks और MSMEs के बीच trust bridge का काम करता है। 2025 में इसकी capacity दोगुनी होने से न केवल loan limits बढ़ी हैं बल्कि approval percentages भी काफी improve हुई हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Coverage Details', 'पुराना (2024 तक)', 'नया (2025 से)', 'इम्प्रूवमेंट'],
+          rows: [
+            ['Maximum Guarantee', '₹5 करोड़', '₹10 करोड़', '100% increase'],
+            ['Collateral-free Limit', '₹2 करोड़', '₹5 करोड़', '150% increase'],
+            ['Guarantee Percentage', '75-80%', '80-85%', '5% improvement'],
+            ['Processing Time', '30 दिन', '15 दिन', '50% faster'],
+            ['Annual Budget', '₹10,000 cr', '₹25,000 cr', '150% increase']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Sector-wise Coverage और Special Provisions'
+      },
+      {
+        type: 'paragraph',
+        content: 'नई CGTMSE policy में different sectors की specific needs को address करने के लिए customized provisions हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Manufacturing Sector के लिए Enhanced Support'
+      },
+      {
+        type: 'list',
+        items: [
+          'Technology upgradation के लिए ₹8 करोड़ तक guarantee',
+          'Export-oriented units को priority processing',
+          'Green technology adoption के लिए 90% guarantee coverage',
+          'R&D projects के लिए special consideration',
+          'Cluster development initiatives में preferred partner status',
+          'Quality certification costs की partial reimbursement'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Service Sector की नई सुविधाएं'
+      },
+      {
+        type: 'list',
+        items: [
+          'IT/Software companies के लिए intellectual property-based financing',
+          'Healthcare services expansion के लिए equipment financing',
+          'Education sector के लिए infrastructure development support',
+          'Tourism और hospitality के लिए post-COVID recovery packages',
+          'Professional services के लिए working capital support',
+          'Startup ecosystem development के लिए risk capital guarantee'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Trading Enterprises के लिए Specific Benefits'
+      },
+      {
+        type: 'list',
+        items: [
+          'Inventory financing के लिए seasonal limit enhancement',
+          'Import-export businesses को forex risk coverage',
+          'E-commerce platforms के लिए technology integration support',
+          'Supply chain financing के लिए multi-tier guarantee',
+          'Warehouse और logistics के लिए infrastructure support',
+          'Digital payment systems adoption के लिए technology grants'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Eligibility Criteria: Detailed Requirements'
+      },
+      {
+        type: 'paragraph',
+        content: 'Enhanced coverage के साथ eligibility criteria को भी refine किया गया है ताकि deserving MSMEs को maximum benefit मिल सके।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Business Category', 'Investment Limit', 'Turnover Limit', 'Guarantee Coverage'],
+          rows: [
+            ['Micro Manufacturing', '₹1 करोड़', '₹5 करोड़', '85%'],
+            ['Small Manufacturing', '₹10 करोड़', '₹50 करोड़', '80%'],
+            ['Medium Manufacturing', '₹50 करोड़', '₹250 करोड़', '75%'],
+            ['Micro Services', '₹10 लाख', '₹2 करोड़', '85%'],
+            ['Small Services', '₹2 करोड़', '₹10 करोड़', '80%'],
+            ['Medium Services', '₹5 करोड़', '₹50 करोड़', '75%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Application Process: Complete Action Checklist'
+      },
+      {
+        type: 'paragraph',
+        content: 'Enhanced CGTMSE coverage का फायदा उठाने के लिए systematic approach की जरूरत है। यहां step-by-step action checklist है:'
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 1: Pre-Application Preparation (30 दिन पहले)'
+      },
+      {
+        type: 'list',
+        items: [
+          '✅ Udyam Registration certificate को update करें',
+          '✅ Last 3 years के audited financial statements तैयार करें',
+          '✅ GST compliance check करें (all returns filed)',
+          '✅ CIBIL score improve करें (minimum 650 target)',
+          '✅ Detailed project report prepare करें',
+          '✅ Cash flow projections और business plan finalize करें',
+          '✅ Participating banks की list बनाएं और compare करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 2: Bank Selection and Initial Discussion (15 दिन)'
+      },
+      {
+        type: 'list',
+        items: [
+          '✅ CGTMSE participating banks में से best option select करें',
+          '✅ Bank के MSME loan officer से meeting schedule करें',
+          '✅ Initial discussion में loan requirement clearly explain करें',
+          '✅ Bank के specific documentation requirements confirm करें',
+          '✅ Processing timeline और interest rates पर clarity लें',
+          '✅ Multiple banks से quotations compare करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 3: Formal Application Submission (7 दिन)'
+      },
+      {
+        type: 'list',
+        items: [
+          '✅ Complete loan application form fill करें',
+          '✅ All supporting documents attach करें',
+          '✅ CGTMSE guarantee application separately submit करें',
+          '✅ Project cost estimates और quotes attach करें',
+          '✅ Collateral documents (यदि कोई है) submit करें',
+          '✅ Application acknowledgment receipt safely keep करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 4: Follow-up और Approval Process (15-30 दिन)'
+      },
+      {
+        type: 'list',
+        items: [
+          '✅ Bank के queries का prompt response दें',
+          '✅ Site verification के लिए cooperate करें',
+          '✅ Additional documents मांगने पर immediately provide करें',
+          '✅ CGTMSE approval status regularly track करें',
+          '✅ Loan sanction letter के terms carefully review करें',
+          '✅ Documentation formalities complete करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'बैंक Selection Criteria: Right Partner Choose करना'
+      },
+      {
+        type: 'paragraph',
+        content: 'सभी banks same नहीं हैं। CGTMSE guarantee के साथ भी कुछ banks ज्यादा MSME-friendly हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Bank Category', 'Approval Rate', 'Processing Time', 'Interest Rate Range', 'Additional Benefits'],
+          rows: [
+            ['Public Sector Banks', '75-80%', '20-30 दिन', '9.5-11%', 'Government backing'],
+            ['Private Banks', '70-85%', '15-25 दिन', '10-12%', 'Fast processing'],
+            ['Small Finance Banks', '80-90%', '10-20 दिन', '11-13%', 'Personalized service'],
+            ['Regional Rural Banks', '70-75%', '25-35 दिन', '9-10.5%', 'Local understanding'],
+            ['NBFCs', '85-95%', '7-15 दिन', '12-15%', 'Flexible terms']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Risk Assessment और Mitigation Strategies'
+      },
+      {
+        type: 'paragraph',
+        content: 'Enhanced coverage के साथ banks की risk assessment भी sophisticated हो गई है। अपने approval chances improve करने के लिए इन factors पर focus करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Business model की sustainability clearly demonstrate करें',
+          'Market research और competitor analysis include करें',
+          'Financial projections को realistic रखें',
+          'Management team की expertise highlight करें',
+          'Technology adoption और innovation plans show करें',
+          'Environmental और social impact positively present करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Common Mistakes और कैसे Avoid करें'
+      },
+      {
+        type: 'paragraph',
+        content: 'बहुत से MSMEs इन common mistakes की वजह से CGTMSE benefits miss कर देती हैं:'
+      },
+      {
+        type: 'list',
+        items: [
+          '❌ Incomplete documentation submit करना',
+          '✅ Solution: Comprehensive checklist use करें',
+          '❌ Unrealistic financial projections देना',
+          '✅ Solution: Conservative estimates के साथ realistic planning',
+          '❌ Multiple banks में simultaneously apply करना',
+          '✅ Solution: One bank को priority दें, फिर दूसरे options explore करें',
+          '❌ CGTMSE guidelines को properly नहीं समझना',
+          '✅ Solution: Official website और helpline से guidance लें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Digital Transformation और CGTMSE Integration'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में CGTMSE को पूरी तरह digitize किया गया है। अब पूरी process online हो सकती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'PSB Loans in 59 Minutes platform integration',
+          'Digital document verification system',
+          'AI-powered credit assessment tools',
+          'Real-time application tracking system',
+          'Mobile app-based status updates',
+          'Blockchain-based guarantee certificate',
+          'Video KYC और virtual site verification'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Success Stories: Real Impact on Ground'
+      },
+      {
+        type: 'paragraph',
+        content: 'गुजरात की pharmaceutical company Meditech Solutions ने enhanced CGTMSE coverage के तहत ₹8 करोड़ का loan लिया। नई manufacturing facility setup करने के बाद उनका production capacity 300% बढ़ गया और 150 new jobs create हुई।'
+      },
+      {
+        type: 'paragraph',
+        content: 'कर्नाटक के Bangalore की IT services company TechnoSoft ने ₹6 करोड़ की guarantee coverage से international expansion किया। अब वे 5 countries में services provide कर रहे हैं और revenue 250% increase हुआ है।'
+      },
+      {
+        type: 'quote',
+        content: 'CGTMSE coverage का doubling MSMEs के लिए unprecedented opportunity है। यह न केवल financial access improve करता है बल्कि banks का confidence भी बढ़ाता है MSME lending में।',
+        author: 'MSME सचिव, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'Sector-specific Success Metrics और KPIs'
+      },
+      {
+        type: 'paragraph',
+        content: 'Enhanced CGTMSE coverage के impact को measure करने के लिए specific metrics define किए गए हैं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Sector', 'Target Beneficiaries', 'Expected Job Creation', 'Investment Mobilization', 'Export Growth'],
+          rows: [
+            ['Manufacturing', '5 लाख units', '25 लाख jobs', '₹2,00,000 cr', '15%'],
+            ['Services', '3 लाख units', '15 लाख jobs', '₹1,50,000 cr', '20%'],
+            ['Trading', '2 लाख units', '8 लाख jobs', '₹1,00,000 cr', '12%'],
+            ['Technology', '1 लाख units', '12 लाख jobs', '₹80,000 cr', '25%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Future Roadmap: 2026-2030 Vision'
+      },
+      {
+        type: 'paragraph',
+        content: 'Government ने CGTMSE के लिए long-term vision भी announce किया है:'
+      },
+      {
+        type: 'list',
+        items: [
+          '2026: Guarantee coverage को ₹15 करोड़ तक बढ़ाना',
+          '2027: International markets के लिए export guarantee scheme',
+          '2028: Green financing के लिए separate guarantee fund',
+          '2029: Startup ecosystem के साथ complete integration',
+          '2030: Global supply chain में Indian MSMEs की 15% participation'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Immediate Action Items: आज ही शुरू करें'
+      },
+      {
+        type: 'paragraph',
+        content: 'Enhanced CGTMSE coverage का maximum benefit लेने के लिए आज से ही इन steps को follow करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          '1. अपना Udyam Registration status check करें',
+          '2. Last 2 years के financial statements organize करें',
+          '3. Business expansion plan draft करें',
+          '4. CIBIL score check करें और improve करने के steps लें',
+          '5. Nearest CGTMSE participating bank से contact करें',
+          '6. Industry peers से success stories learn करें',
+          '7. Professional consultant की help लें यदि जरूरत हो'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'CGTMSE coverage कितनी बढ़ाई गई है?',
+        answer: 'CGTMSE coverage को ₹5 करोड़ से बढ़ाकर ₹10 करोड़ कर दिया गया है, यानी 100% की increase। साथ ही collateral-free limit भी ₹2 करोड़ से बढ़कर ₹5 करोड़ हो गई है।'
+      },
+      {
+        question: 'कौन से MSMEs इस enhanced coverage के eligible हैं?',
+        answer: 'सभी valid Udyam Registration वाले MSMEs eligible हैं। Manufacturing units (₹250 करोड़ turnover तक) और Trading enterprises (₹100 करोड़ turnover तक) apply कर सकते हैं।'
+      },
+      {
+        question: 'Application process कितने दिन में complete होती है?',
+        answer: 'Enhanced CGTMSE coverage के साथ processing time 30 दिन से घटकर 15 दिन हो गई है। Digital platform के through और भी fast processing possible है।'
+      },
+      {
+        question: 'क्या existing loans पर भी यह coverage apply होती है?',
+        answer: 'नहीं, enhanced coverage केवल new loan applications पर apply होती है। Existing loans अपनी original terms पर ही continue रहेंगी।'
+      },
+      {
+        question: 'Guarantee fee कितनी लगती है?',
+        answer: 'CGTMSE guarantee fee loan amount का 0.5% से 1.5% तक होती है, जो business category और risk profile पर depend करती है।'
+      }
+    ],
+    relatedSchemes: ['mudra-loan-scheme', 'msme-technology-upgradation-scheme', 'prime-ministers-employment-generation-programme'],
+    budget: '₹25,000 करोड़ (2025-26)',
+    beneficiaries: '10 लाख MSME units (estimated)',
+    successRate: '78%'
+  },
+
+  {
+    id: '121',
+    slug: 'fund-first-time-women-sc-st-entrepreneurs-2-cr-loan-guide',
+    title: 'New Fund for First-Time Women/SC/ST Entrepreneurs: ₹2 Cr तक का Loan - Complete Guide 2025',
+    titleHindi: 'प्रथम बार महिला/SC/ST उद्यमियों के लिए नया फंड: ₹2 करोड़ तक का ऋण - संपूर्ण गाइड 2025',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2025-03-08',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['First-time Women Entrepreneurs', 'SC/ST Business Aspirants', 'Female Tech Startup Founders', 'Rural Women Entrepreneurs', 'Young Women Professionals'],
+    benefits: [
+      'Collateral-free loans up to ₹2 crore for first-time entrepreneurs',
+      'Interest rate subsidy of 3% for women entrepreneurs',
+      'Additional 2% rate concession for SC/ST women',
+      'Mentorship and incubation support included',
+      '100% guarantee coverage by government',
+      'Grace period of 12 months for loan repayment'
+    ],
+    eligibility: [
+      'First-time women entrepreneurs (never taken business loan)',
+      'SC/ST category entrepreneurs (male/female both eligible)',
+      'Age between 21-45 years at time of application',
+      'Minimum educational qualification: Class 12th',
+      'Valid business idea with market potential',
+      'Commitment to create at least 3 direct employments'
+    ],
+    documents: [
+      'Educational certificates and mark sheets',
+      'Caste certificate (for SC/ST applicants)',
+      'Detailed business plan and project report',
+      'Bank account statements (6 months)',
+      'Identity proof (Aadhaar/Passport/Voter ID)',
+      'Address proof and residential certificate'
+    ],
+    applicationProcess: [
+      'Register on Stand-Up India portal or visit branch',
+      'Fill detailed application with business proposal',
+      'Upload required documents and certificates',
+      'Attend mandatory entrepreneurship training program',
+      'Present business plan to evaluation committee',
+      'Receive loan sanction and mentorship support'
+    ],
+    officialWebsite: 'https://www.standupmitra.in/women-sc-st-fund',
+    helpline: '1800-180-1111',
+    coverImage: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'New Fund for First-Time Women/SC/ST Entrepreneurs 2025 offers ₹2 crore collateral-free loans with 3-5% interest subsidy. Includes mentorship, incubation support, and 100% government guarantee.',
+    excerptHindi: 'प्रथम बार महिला/SC/ST उद्यमियों के लिए नया फंड 2025 में ₹2 करोड़ तक कोलेटरल-फ्री लोन 3-5% ब्याज सब्सिडी के साथ। मेंटरशिप, इन्क्यूबेशन सपोर्ट शामिल।',
+    keywords: [
+      'Women Entrepreneur Fund 2025', 'महिला उद्यमी ऋण योजना', 'SC ST entrepreneur loan',
+      'first time women business loan', 'collateral free loan women', 'महिला व्यवसाय सहायता',
+      'Stand Up India enhanced', 'women startup funding', 'SC ST business support'
+    ],
+    seoTitle: 'Women/SC/ST Entrepreneur Fund 2025: ₹2 Cr Loan at Subsidized Rate | Complete Guide',
+    seoDescription: 'New Fund for First-Time Women/SC/ST Entrepreneurs 2025: Get ₹2 crore collateral-free loan with interest subsidy. Mentorship, training, and 100% guarantee included. Apply online today.',
+    content: [
+      {
+        type: 'heading',
+        content: 'New Fund for First-Time Women/SC/ST Entrepreneurs: भारत में उद्यमिता की नई दिशा'
+      },
+      {
+        type: 'paragraph',
+        content: 'महिला दिवस (8 मार्च 2025) के अवसर पर भारत सरकार द्वारा लॉन्च किया गया "New Fund for First-Time Women/SC/ST Entrepreneurs" एक groundbreaking initiative है जो traditionally underrepresented communities को entrepreneurship के mainstream में लाने के लिए designed की गई है। यह fund Stand-Up India scheme का enhanced version है जिसमें loan limit को ₹10 लाख से बढ़ाकर ₹2 करोड़ कर दिया गया है। इस योजना का मुख्य उद्देश्य gender और social entrepreneurship gap को bridge करना है और inclusive economic growth को promote करना है।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 के नए Features: Enhanced Support Ecosystem'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह fund सिर्फ financial support नहीं है बल्कि complete entrepreneurship ecosystem provide करता है। Digital India और Skill India missions के साथ integrate करके इसे comprehensive support system बनाया गया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Loan amount: ₹10 लाख से ₹2 करोड़ तक (business size के अनुसार)',
+          'Interest rate: Women के लिए 6-9% (3% subsidy के साथ)',
+          'SC/ST categories: Additional 2% concession (effective rate 4-7%)',
+          'Grace period: 12 months (business establishment के लिए)',
+          'Repayment tenure: 7-10 years with flexible EMI options',
+          'Processing fee: Completely waived off',
+          'Guarantee: 100% by government (no collateral required)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Target Beneficiaries: कौन हैं इस Fund के Eligible Candidates?'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह fund specifically उन individuals के लिए design किया गया है जो traditional banking system से marginalized रहे हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Category', 'Special Benefits', 'Loan Limit', 'Interest Rate', 'Additional Support'],
+          rows: [
+            ['First-time Women', 'Mentorship program', '₹2 करोड़', '6-9%', 'Childcare allowance'],
+            ['SC Women', 'Priority processing', '₹2 करोड़', '4-7%', 'Skill development'],
+            ['ST Women', 'Rural connect support', '₹2 करोड़', '4-7%', 'Digital literacy'],
+            ['SC Male Entrepreneurs', 'Market linkage', '₹1.5 करोड़', '5-8%', 'Technology access'],
+            ['ST Male Entrepreneurs', 'Infrastructure support', '₹1.5 करोड़', '5-8%', 'Transport subsidy']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Business Categories और Sector-wise Support'
+      },
+      {
+        type: 'paragraph',
+        content: 'Fund का benefit सभी legitimate business activities के लिए available है, लेकिन कुछ sectors को priority मिलती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'Priority Sectors (Enhanced Support)'
+      },
+      {
+        type: 'list',
+        items: [
+          'Technology और IT services (app development, software solutions)',
+          'Healthcare और wellness (clinics, diagnostic centers, wellness centers)',
+          'Education services (skill training, online courses, coaching)',
+          'Food processing और catering (organic food, restaurant chains)',
+          'Handicrafts और handloom (traditional crafts, fashion accessories)',
+          'Renewable energy (solar installation, energy consulting)',
+          'E-commerce और digital marketing services'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'General Business Categories (Standard Support)'
+      },
+      {
+        type: 'list',
+        items: [
+          'Retail trading और wholesale business',
+          'Manufacturing units (garments, food items, handicrafts)',
+          'Service businesses (beauty parlors, tailoring, catering)',
+          'Transportation services (cab services, logistics)',
+          'Agriculture और allied activities (poultry, dairy, horticulture)',
+          'Professional services (accounting, legal, consulting)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Mentorship और Incubation Support Program'
+      },
+      {
+        type: 'paragraph',
+        content: 'Fund के साथ comprehensive mentorship program भी attached है जो successful entrepreneurs और industry experts द्वारा provide की जाती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Pre-loan counseling और business plan development',
+          'Industry-specific mentors का assignment',
+          'Monthly one-on-one sessions (first 2 years)',
+          'Quarterly business review meetings',
+          'Market research और competitive analysis support',
+          'Financial planning और cash flow management training',
+          'Digital marketing और brand building guidance',
+          'Legal compliance और regulatory support'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Training और Skill Development Component'
+      },
+      {
+        type: 'paragraph',
+        content: 'Loan approval के साथ mandatory training program भी include है जो entrepreneurial skills develop करने के लिए design किया गया है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Training Module', 'Duration', 'Format', 'Completion Certificate'],
+          rows: [
+            ['Business Planning', '40 घंटे', 'Online/Offline', 'Yes'],
+            ['Financial Management', '30 घंटे', 'Hybrid', 'Yes'],
+            ['Digital Marketing', '25 घंटे', 'Online', 'Yes'],
+            ['Legal Compliance', '20 घंटे', 'Classroom', 'Yes'],
+            ['Leadership Skills', '35 घंटे', 'Workshop', 'Yes'],
+            ['Industry Specific', '50 घंटे', 'Customized', 'Yes']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Application Process: Step-by-Step Detailed Guide'
+      },
+      {
+        type: 'paragraph',
+        content: 'Application process को deliberately user-friendly बनाया गया है, खासकर उन applicants के लिए जो पहली बार business loan apply कर रहे हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 1: Pre-Application (2 सप्ताह पहले)'
+      },
+      {
+        type: 'list',
+        items: [
+          '📝 Business idea को clearly define करें',
+          '📊 Market research conduct करें',
+          '💡 Unique Selling Proposition (USP) identify करें',
+          '📈 Financial projections prepare करें',
+          '🎯 Target customer segment analyze करें',
+          '📋 Required licenses और permits की list बनाएं',
+          '🏢 Business location finalize करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 2: Documentation Preparation (1 सप्ताह)'
+      },
+      {
+        type: 'list',
+        items: [
+          '📄 Educational certificates organize करें',
+          '🏷️ Caste certificate obtain करें (यदि applicable)',
+          '🏦 Bank statements collect करें (minimum 6 months)',
+          '🆔 All identity documents verify करें',
+          '🏠 Address proof और residential certificate arrange करें',
+          '📊 Detailed business plan draft करें',
+          '💼 Professional references prepare करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 3: Online Application Submission'
+      },
+      {
+        type: 'list',
+        items: [
+          '🌐 Visit www.standupmitra.in/women-sc-st-fund',
+          '📝 Create account with valid email और mobile number',
+          '📋 Fill detailed application form (takes 45-60 minutes)',
+          '📤 Upload all required documents (PDF format, max 5MB each)',
+          '✅ Review application thoroughly before submission',
+          '🔄 Get application reference number',
+          '📧 Confirmation email receive करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 4: Evaluation और Interview Process'
+      },
+      {
+        type: 'list',
+        items: [
+          '📞 Initial screening call (within 7 days)',
+          '🎓 Mandatory training program enrollment',
+          '👥 Business plan presentation (evaluation committee के समक्ष)',
+          '🏢 Field visit और verification (यदि required)',
+          '💼 Mentor assignment और first meeting',
+          '✅ Final approval communication',
+          '📜 Loan agreement signing और disbursement'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Digital Platform Features: Tech-Enabled Support'
+      },
+      {
+        type: 'paragraph',
+        content: 'Fund को support करने के लिए state-of-the-art digital platform develop किया गया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          '📱 Mobile app with real-time application tracking',
+          '🤖 AI-powered business plan reviewer',
+          '💬 24/7 chatbot support (Hindi और English में)',
+          '📊 Dashboard for loan monitoring और repayment',
+          '🎥 Video calling facility for mentor sessions',
+          '📚 Resource library with business templates',
+          '🌐 Networking platform for peer connections',
+          '📈 Business performance analytics tools'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Success Stories: Real Impact on Ground'
+      },
+      {
+        type: 'paragraph',
+        content: 'पायलट phase के दौरान कई inspiring success stories सामने आई हैं जो इस fund के potential को demonstrate करती हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Case Study 1: Tech Entrepreneur - Priya Sharma'
+      },
+      {
+        type: 'paragraph',
+        content: 'दिल्ली की 28-वर्षीय software engineer प्रिया शर्मा ने ₹75 लाख का loan लेकर healthcare app development company शुरू की। पहले ही साल में उन्होंने 15 employees को hire किया और 3 hospitals के साथ partnerships sign किए। अब उनकी company का valuation ₹5 करोड़ है।'
+      },
+      {
+        type: 'subheading',
+        content: 'Case Study 2: Rural Women Entrepreneur - Sunita Devi'
+      },
+      {
+        type: 'paragraph',
+        content: 'बिहार के Muzaffarpur की सुनीता देवी (SC category) ने ₹45 लाख का loan लेकर organic food processing unit establish किया। अब वह 50 local women farmers से directly vegetables purchase करती हैं और Delhi-NCR में supply करती हैं। Monthly turnover ₹8 लाख है।'
+      },
+      {
+        type: 'subheading',
+        content: 'Case Study 3: ST Community Success - Ravi Meena'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान के tribal area से राजू मीणा ने ₹1.2 करोड़ से handicraft export business शुरू किया। Traditional tribal art को international market में पहुंचाकर उन्होंने 100+ artisans को employment दी है। अब 15 countries में export कर रहे हैं।'
+      },
+      {
+        type: 'quote',
+        content: 'यह fund सिर्फ financial inclusion नहीं है, बल्कि social transformation का medium है। जब women और marginalized communities entrepreneurship में participate करते हैं, तो पूरा society benefit होता है।',
+        author: 'महिला एवं बाल विकास मंत्री, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'Challenges और Solutions: Common Issues का Address'
+      },
+      {
+        type: 'paragraph',
+        content: 'Fund implementation के दौरान कुछ common challenges identify की गई हैं और उनके proactive solutions develop किए गए हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Challenge', 'Impact', 'Solution Implemented', 'Success Rate'],
+          rows: [
+            ['Digital Literacy Gap', 'Application difficulty', 'Hand-holding support', '95%'],
+            ['Language Barrier', 'Understanding issue', 'Multilingual interface', '98%'],
+            ['Business Plan Writing', 'Quality concern', 'Template + mentoring', '90%'],
+            ['Market Access', 'Sales challenge', 'Buyer-seller connect', '85%'],
+            ['Financial Management', 'Cash flow issue', 'Regular monitoring', '92%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Regional Customization: State-wise Special Features'
+      },
+      {
+        type: 'paragraph',
+        content: 'Different states की specific needs को address करने के लिए regional customization भी किया गया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          '🏔️ Hill States: Transportation subsidy और cold storage support',
+          '🏖️ Coastal States: Marine products और tourism-related businesses priority',
+          '🌾 Agricultural States: Agri-processing और farm-to-fork businesses focus',
+          '🏭 Industrial States: Technology upgradation और skill development emphasis',
+          '🎨 Culturally Rich States: Handicrafts और traditional art promotion',
+          '🌿 Tribal Areas: Forest-based products और eco-tourism initiatives'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Impact Measurement: KPIs और Success Metrics'
+      },
+      {
+        type: 'paragraph',
+        content: 'Fund की success को measure करने के लिए comprehensive metrics system develop किया गया है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Metric Category', '2025 Target', '2026 Target', '2027 Target', 'Measurement Method'],
+          rows: [
+            ['Loan Disbursement', '₹5,000 cr', '₹12,000 cr', '₹20,000 cr', 'Financial tracking'],
+            ['Women Beneficiaries', '50,000', '1,25,000', '2,00,000', 'Database analysis'],
+            ['SC/ST Coverage', '30,000', '75,000', '1,20,000', 'Category tracking'],
+            ['Job Creation', '2,00,000', '5,00,000', '8,00,000', 'Employment survey'],
+            ['Business Survival Rate', '85%', '88%', '90%', 'Follow-up study']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Future Enhancements: 2026-2030 Roadmap'
+      },
+      {
+        type: 'paragraph',
+        content: 'Government ने इस fund के लिए ambitious expansion plans announce किए हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          '2026: Loan limit को ₹5 करोड़ तक increase करना',
+          '2027: International market expansion support',
+          '2028: IPO preparation और venture capital connections',
+          '2029: Technology incubation hubs establishment',
+          '2030: Global women entrepreneurship leadership program'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Immediate Action Plan: आज से ही शुरू करें'
+      },
+      {
+        type: 'paragraph',
+        content: 'यदि आप eligible हैं तो इन steps को immediately follow करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          '✅ Eligibility criteria को thoroughly check करें',
+          '✅ Business idea को refine करें और validate करें',
+          '✅ Required documents collect करना शुरू करें',
+          '✅ Online registration complete करें',
+          '✅ Local mentor network से connect करें',
+          '✅ Training programs के लिए enroll करें',
+          '✅ Peer group या women entrepreneur communities join करें'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'क्या यह fund केवल women entrepreneurs के लिए है?',
+        answer: 'नहीं, यह fund first-time women entrepreneurs और SC/ST category के सभी entrepreneurs (male/female दोनों) के लिए है। हालांकि women को कुछ additional benefits मिलते हैं।'
+      },
+      {
+        question: 'Maximum loan amount कितनी है?',
+        answer: 'Women entrepreneurs के लिए ₹2 करोड़ और SC/ST male entrepreneurs के लिए ₹1.5 करोड़ तक का loan available है।'
+      },
+      {
+        question: 'Interest rate क्या है?',
+        answer: 'Women के लिए 6-9% (3% subsidy के बाद) और SC/ST categories के लिए additional 2% concession मिलती है, जिससे effective rate 4-7% हो जाती है।'
+      },
+      {
+        question: 'क्या collateral की जरूरत है?',
+        answer: 'नहीं, यह complete collateral-free loan है। Government द्वारा 100% guarantee दी जाती है।'
+      },
+      {
+        question: 'Application process कितने दिन में complete होती है?',
+        answer: 'Complete application submit करने के बाद 45-60 दिन में loan sanction हो जाता है, बशर्ते सभी documents proper हों।'
+      }
+    ],
+    relatedSchemes: ['stand-up-india-scheme', 'mudra-loan-scheme', 'mahila-udyam-nidhi-scheme'],
+    budget: '₹10,000 करोड़ (2025-26)',
+    beneficiaries: '2 लाख entrepreneurs (target)',
+    successRate: '82%'
+  },
+
+  {
     id: '122',
-    slug: 'kisan-credit-card-enhanced-2025',
-    title: 'Kisan Credit Card Enhanced 2025: Easy Agricultural Credit for Farmers',
-    titleHindi: 'किसान क्रेडिट कार्ड संवर्धित 2025: किसानों के लिए आसान कृषि ऋण',
+    slug: 'ups-vs-nps-deadline-extended-unified-pension-scheme-choice-guide-2025',
+    title: 'UPS vs NPS Deadline Extended: Unified Pension Scheme Choice Complete Guide 2025',
+    titleHindi: 'UPS बनाम NPS डेडलाइन विस्तार: एकीकृत पेंशन योजना विकल्प संपूर्ण गाइड 2025',
+    category: 'Senior Citizens',
+    categoryHindi: 'वरिष्ठ नागरिक',
+    status: 'active',
+    launchDate: '2025-01-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Central Government Employees', 'State Government Employees', 'PSU Employees', 'Armed Forces Personnel', 'Teachers and Professors'],
+    benefits: [
+      'Choice extended till December 31, 2025',
+      'UPS offers 50% of last drawn salary as pension',
+      'NPS provides market-linked returns with flexibility',
+      'Family pension available in both schemes',
+      'Disability pension covered under UPS',
+      'Tax benefits available in both options'
+    ],
+    eligibility: [
+      'All government employees recruited after January 1, 2004',
+      'Currently contributing to NPS (Tier-I account)',
+      'Minimum 10 years of government service',
+      'Not opted for premature withdrawal from NPS',
+      'Valid employee ID and service records',
+      'Employees of Central/State PSUs (as applicable)'
+    ],
+    documents: [
+      'Employee ID and Service Record',
+      'NPS Account Statement (PRAN number)',
+      'Last Pay Certificate',
+      'Service Book/Service Certificate',
+      'Option Form (to be submitted to employer)',
+      'Family Details Form (for family pension)'
+    ],
+    applicationProcess: [
+      'Download option form from employer/pension department',
+      'Fill form carefully after understanding both schemes',
+      'Attach required service and NPS documents',
+      'Submit to designated pension authority before deadline',
+      'Get acknowledgment receipt with reference number',
+      'Track application status through online portal'
+    ],
+    officialWebsite: 'https://pensionscheme.gov.in/ups-vs-nps',
+    helpline: '1800-110-001',
+    coverImage: 'https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'UPS vs NPS choice deadline extended to December 31, 2025. Complete comparison guide: UPS offers 50% assured pension, NPS provides market returns. Understand benefits, calculate returns, make informed choice.',
+    excerptHindi: 'UPS बनाम NPS विकल्प की अंतिम तारीख 31 दिसंबर 2025 तक बढ़ाई गई। पूर्ण तुलना गाइड: UPS 50% सुनिश्चित पेंशन, NPS बाजार रिटर्न देता है। लाभ समझें, रिटर्न कैलकुलेट करें।',
+    keywords: [
+      'UPS vs NPS deadline', 'एकीकृत पेंशन योजना चुनाव', 'unified pension scheme choice',
+      'government employee pension', 'NPS to UPS switch', 'पेंशन योजना तुलना',
+      'UPS benefits calculator', 'pension scheme comparison', 'government pension options'
+    ],
+    seoTitle: 'UPS vs NPS Choice Deadline Extended 2025 | Complete Comparison Guide | Calculate Better Returns',
+    seoDescription: 'UPS vs NPS deadline extended to Dec 2025. Complete comparison: UPS 50% assured pension vs NPS flexible returns. Calculate which gives better benefits. Government employees guide.',
+    content: [
+      {
+        type: 'heading',
+        content: 'UPS vs NPS: Government Employees के लिए Pension Revolution और Extended Deadline'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार द्वारा UPS (Unified Pension Scheme) vs NPS (National Pension System) के बीच choice की deadline को 31 दिसंबर 2025 तक extend करना government employees के लिए एक महत्वपूर्ण relief है। यह decision उन 50 लाख से अधिक central और state government employees को affect करता है जो 2004 के बाद recruit हुए हैं। UPS की introduction के साथ, employees के पास अब दो distinct pension options हैं - guaranteed pension (UPS) या market-linked returns (NPS)। यह choice employees की financial future और retirement planning को significantly impact करेगी।'
+      },
+      {
+        type: 'subheading',
+        content: 'Deadline Extension: क्यों बढ़ाई गई समय सीमा?'
+      },
+      {
+        type: 'paragraph',
+        content: 'मूल रूप से 30 जून 2025 तक रखी गई deadline को various employee unions और associations के requests के बाद extend किया गया है। यह extension employees को thorough analysis और informed decision लेने के लिए adequate time देता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Original deadline: 30 जून 2025',
+          'Extended deadline: 31 दिसंबर 2025',
+          'Additional time: 6 महीने का extra period',
+          'Reason: Employee unions की मांग और detailed analysis की जरूरत',
+          'Coverage: सभी central और state government employees',
+          'Impact: 50+ लाख employees को benefit',
+          'No penalty: Deadline extension के साथ कोई late fee नहीं'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'UPS (Unified Pension Scheme): Detailed Analysis'
+      },
+      {
+        type: 'paragraph',
+        content: 'UPS एक defined benefit pension scheme है जो traditional pension system के principles पर based है लेकिन modern financial requirements को address करती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'UPS की मुख्य विशेषताएं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Assured Pension: Last drawn salary का 50% (minimum 25 years service के बाद)',
+          'Family Pension: Employee के demise के बाद spouse को pension का 60%',
+          'Minimum Pension: ₹10,000 per month guarantee (10 years service के बाद)',
+          'Dearness Relief: Pension में inflation adjustment',
+          'Lump Sum Payment: Retirement के समय salary के 10 months equivalent',
+          'Disability Pension: Service-related disability cases में special provision',
+          'Guaranteed Benefits: Market fluctuations से independent'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'UPS Pension Calculation Formula:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Service Period', 'Pension Percentage', 'Example (₹50,000 salary)', 'Family Pension'],
+          rows: [
+            ['25+ years', '50%', '₹25,000/month', '₹15,000/month'],
+            ['20-24 years', '(Service years/50) × Salary', 'Variable', '60% of pension'],
+            ['10-19 years', 'Proportionate', 'Min ₹10,000', '60% of pension'],
+            ['Below 10 years', 'Return of contribution', 'Lump sum only', 'Not applicable']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'NPS (National Pension System): Comprehensive Overview'
+      },
+      {
+        type: 'paragraph',
+        content: 'NPS एक defined contribution scheme है जो market-linked returns provide करती है और retirement के समय accumulated corpus से pension milती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'NPS की मुख्य विशेषताएं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Market-Linked Returns: Equity और debt markets में investment',
+          'Flexible Investment: Different fund managers और schemes choose कर सकते हैं',
+          'Portability: Job change के साथ account transfer होता रहता है',
+          'Tax Benefits: Section 80C और 80CCD के under deductions',
+          'Partial Withdrawal: Emergency situations में कुछ amount withdraw कर सकते हैं',
+          'Annuity Options: Retirement के समय different annuity products से choose करें',
+          'Variable Returns: Market performance के आधार पर returns'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'NPS Return Projections और Calculations:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Investment Period', 'Conservative (8%)', 'Moderate (10%)', 'Aggressive (12%)', 'Monthly Pension*'],
+          rows: [
+            ['25 years', '₹15-20 लाख', '₹25-30 लाख', '₹35-45 लाख', '₹12,000-15,000'],
+            ['30 years', '₹25-35 लाख', '₹45-60 लाख', '₹70-90 लाख', '₹18,000-25,000'],
+            ['35 years', '₹40-60 लाख', '₹80-1.2 करोड़', '₹1.5-2 करोड़', '₹25,000-40,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Detailed Comparison: UPS vs NPS की सम्पूर्ण तुलना'
+      },
+      {
+        type: 'paragraph',
+        content: 'दोनों schemes की detailed comparison employees को informed decision लेने में help करेगी।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Parameters', 'UPS', 'NPS', 'Winner'],
+          rows: [
+            ['Guaranteed Returns', 'Yes (50% assured)', 'No (market-linked)', 'UPS'],
+            ['Market Risk', 'Zero', 'High', 'UPS'],
+            ['Growth Potential', 'Limited', 'High', 'NPS'],
+            ['Inflation Protection', 'Dearness Relief', 'Market returns', 'UPS'],
+            ['Family Pension', 'Automatic 60%', 'Need to buy annuity', 'UPS'],
+            ['Flexibility', 'Low', 'High', 'NPS'],
+            ['Tax Benefits', 'Standard', 'Enhanced (80CCD)', 'NPS'],
+            ['Partial Withdrawal', 'Not allowed', 'Allowed', 'NPS']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Age-wise Recommendation Strategy'
+      },
+      {
+        type: 'paragraph',
+        content: 'Different age groups के लिए अलग-अलग strategy recommend की जाती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'Young Employees (25-35 years):'
+      },
+      {
+        type: 'list',
+        items: [
+          '🎯 NPS generally better: Long investment horizon के साथ compound growth',
+          '📈 Market volatility से recover करने का समय है',
+          '💡 Higher risk appetite usually होती है',
+          '🔄 Career flexibility और job changes की possibility',
+          '💰 Tax benefits का maximum utilization possible',
+          '⚖️ लेकिन guaranteed income की preference है तो UPS choose करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Mid-Career Employees (35-45 years):'
+      },
+      {
+        type: 'list',
+        items: [
+          '⚖️ Balanced approach needed: Risk और security दोनों consider करें',
+          '👨‍👩‍👧‍👦 Family responsibilities increase होती हैं',
+          '🏠 Home loans और children education expenses',
+          '📊 Past NPS performance check करें',
+          '🎯 Personal risk tolerance assess करें',
+          '💼 Career stability factor को consider करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Senior Employees (45+ years):'
+      },
+      {
+        type: 'list',
+        items: [
+          '🛡️ UPS generally safer: Guaranteed returns का importance बढ़ता है',
+          '⏰ Limited time for market recovery',
+          '👵 Retirement planning more critical',
+          '💊 Healthcare expenses की planning',
+          '🏥 Family pension का importance',
+          '📉 Market volatility से बचना पड़ सकता है'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Financial Calculator: Personalized Analysis'
+      },
+      {
+        type: 'paragraph',
+        content: 'अपनी specific situation के लिए calculation करने का formula:'
+      },
+      {
+        type: 'subheading',
+        content: 'UPS Calculation Example:'
+      },
+      {
+        type: 'paragraph',
+        content: 'मान लीजिए आपकी current salary ₹60,000 है और retirement के समय ₹1,20,000 होगी:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Monthly Pension: ₹1,20,000 × 50% = ₹60,000',
+          'Annual Pension: ₹60,000 × 12 = ₹7,20,000',
+          'Family Pension: ₹60,000 × 60% = ₹36,000/month',
+          'Lump Sum: ₹1,20,000 × 10 = ₹12,00,000',
+          'Dearness Relief: Pension में annual inflation adjustment'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'NPS Calculation Example:'
+      },
+      {
+        type: 'paragraph',
+        content: 'Same salary के साथ 25 years के लिए NPS contribution:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Monthly Contribution: ₹60,000 × 10% = ₹6,000',
+          'Annual Contribution: ₹72,000',
+          'Corpus at 10% return (25 years): ≈ ₹65 लाख',
+          'Monthly Pension (6% annuity): ≈ ₹32,500',
+          'Lump Sum (40%): ≈ ₹26 लाख'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Decision Making Framework: व्यवस्थित निर्णय प्रक्रिया'
+      },
+      {
+        type: 'paragraph',
+        content: 'Systematic approach से decision लेने के लिए यह framework follow करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          '1️⃣ Current financial position assess करें',
+          '2️⃣ Risk tolerance level determine करें',
+          '3️⃣ Retirement goals clearly define करें',
+          '4️⃣ Family responsibilities consider करें',
+          '5️⃣ Other investments और savings evaluate करें',
+          '6️⃣ Health conditions और life expectancy factor करें',
+          '7️⃣ Professional financial advisor से consult करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'State-wise Implementation Status'
+      },
+      {
+        type: 'paragraph',
+        content: 'Different states में UPS implementation की current status:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['State Category', 'Implementation Status', 'Employee Count', 'Deadline Status'],
+          rows: [
+            ['Central Government', 'Fully Implemented', '35 लाख', 'Dec 31, 2025'],
+            ['State Governments', 'Phase-wise Implementation', '15 लाख', 'State-specific'],
+            ['PSUs', 'Under Consideration', '8 लाख', 'Extended timeline'],
+            ['Armed Forces', 'Special Provisions', '2 लाख', 'Separate process']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Common Mistakes to Avoid'
+      },
+      {
+        type: 'paragraph',
+        content: 'Decision लेते समय इन common mistakes से बचें:'
+      },
+      {
+        type: 'list',
+        items: [
+          '❌ Emotional decision लेना - data-driven approach use करें',
+          '❌ Only short-term benefits देखना - long-term impact consider करें',
+          '❌ Peer pressure में decision लेना - personal situation assess करें',
+          '❌ Market timing करने की कोशिश - consistent investment important है',
+          '❌ Family needs ignore करना - spouse और children को consider करें',
+          '❌ Tax implications भूलना - overall tax planning में integrate करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Application Process: Step-by-Step Guide'
+      },
+      {
+        type: 'paragraph',
+        content: 'Choice exercise के लिए systematic process follow करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          '📋 Employer से official option form collect करें',
+          '📊 Both schemes की detailed comparison करें',
+          '🧮 Personal financial calculator use करके projections करें',
+          '👨‍👩‍👧‍👦 Family members से discuss करें',
+          '💼 HR department से clarifications लें',
+          '✍️ Form carefully fill करें (no corrections allowed)',
+          '📄 Required documents attach करें',
+          '📮 Designated authority को submit करें',
+          '📧 Acknowledgment receipt safely keep करें'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'UPS और NPS के बीच choice एक long-term financial decision है जो आपकी पूरी retired life को affect करेगी। Hasty decision न लें, proper research करें और अपनी specific needs के according choose करें।',
+        author: 'पेंशन एवं पेंशनभोगी कल्याण मंत्रालय'
+      },
+      {
+        type: 'subheading',
+        content: 'Expert Recommendations: Professional Advice'
+      },
+      {
+        type: 'paragraph',
+        content: 'Financial experts और retirement planning specialists की general recommendations:'
+      },
+      {
+        type: 'list',
+        items: [
+          '🔍 Individual assessment is crucial - एक size सभी के लिए fit नहीं होता',
+          '📈 Young employees: NPS अक्सर better choice होती है',
+          '🛡️ Risk-averse employees: UPS safer option है',
+          '👨‍👩‍👧‍👦 Single income families: UPS की guarantee valuable है',
+          '💰 High salary employees: NPS के tax benefits significant हो सकते हैं',
+          '🏥 Health issues वाले employees: UPS की certainty important है'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Future Implications और Long-term Vision'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह choice का long-term impact क्या हो सकता है:'
+      },
+      {
+        type: 'list',
+        items: [
+          '2030 तक: Government का fiscal burden (UPS) vs Market growth (NPS)',
+          '2035 तक: Inflation impact on fixed pensions vs market-linked growth',
+          '2040 तक: Healthcare cost escalation और pension adequacy',
+          'Demographic change: Life expectancy increase का pension पर impact',
+          'Technology adoption: Digital pension management और services',
+          'Economic reforms: Future pension system modifications की possibility'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Immediate Action Items: आज ही करें ये काम'
+      },
+      {
+        type: 'paragraph',
+        content: 'Deadline से पहले ये essential steps complete करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          '✅ Current NPS account statement download करें',
+          '✅ Salary growth projections calculate करें',
+          '✅ Family financial needs assess करें',
+          '✅ Other retirement savings evaluate करें',
+          '✅ Professional financial advisor से consultation लें',
+          '✅ Employee unions या associations से guidance लें',
+          '✅ Option form prepare करना शुरू करें'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'UPS vs NPS choice की deadline कब तक है?',
+        answer: 'Deadline को extend करके 31 दिसंबर 2025 कर दिया गया है। पहले यह 30 जून 2025 थी।'
+      },
+      {
+        question: 'UPS में कितनी pension मिलती है?',
+        answer: 'UPS में last drawn salary का 50% assured pension मिलती है (minimum 25 years service के बाद)। Minimum ₹10,000/month guarantee है।'
+      },
+      {
+        question: 'क्या एक बार choice करने के बाद change कर सकते हैं?',
+        answer: 'नहीं, एक बार choice submit करने के बाद change नहीं कर सकते। इसलिए careful decision लेना जरूरी है।'
+      },
+      {
+        question: 'Family pension कैसे मिलती है?',
+        answer: 'UPS में automatic 60% family pension मिलती है। NPS में separate annuity purchase करनी होती है।'
+      },
+      {
+        question: 'Young employees के लिए कौन सा option बेहतर है?',
+        answer: 'Generally young employees के लिए NPS better हो सकती है क्योंकि long-term market growth का benefit मिल सकता है, लेकिन personal risk tolerance भी consider करें।'
+      }
+    ],
+    relatedSchemes: ['employees-provident-fund', 'atal-pension-yojana', 'pradhan-mantri-vaya-vandana-yojana'],
+    budget: 'Not Applicable (Choice between existing schemes)',
+    beneficiaries: '50+ लाख government employees',
+    successRate: 'Ongoing (Choice process)'
+  },
+
+  {
+    id: '123',
+    slug: 'urban-challenge-fund-1-lakh-crore-city-redevelopment-citizens-guide',
+    title: 'Urban Challenge Fund: ₹1 Lakh Crore City Redevelopment - Complete Citizens Guide 2025',
+    titleHindi: 'शहरी चुनौती फंड: ₹1 लाख करोड़ शहर पुनर्विकास - नागरिकों के लिए संपूर्ण गाइड 2025',
+    category: 'Urban Development',
+    categoryHindi: 'शहरी विकास',
+    status: 'active',
+    launchDate: '2025-02-01',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Urban Residents', 'City Planners', 'Real Estate Developers', 'Local Businesses', 'Environmental Activists'],
+    benefits: [
+      '₹1 lakh crore investment in 100 selected cities',
+      'Smart infrastructure development and upgrades',
+      'Improved public transportation systems',
+      'Green spaces and environmental restoration',
+      'Digital governance and citizen services',
+      'Job creation in urban development sector'
+    ],
+    eligibility: [
+      'Cities selected based on population and development potential',
+      'Urban agglomerations with 1+ million population',
+      'Tier-2 cities with high growth potential',
+      'Cities with existing smart city initiatives',
+      'Strong local governance and implementation capacity',
+      'Citizen participation and community engagement'
+    ],
+    documents: [
+      'City Master Plan and Development Proposals',
+      'Environmental Impact Assessment Reports',
+      'Public Consultation and Citizen Feedback',
+      'Technical Feasibility Studies',
+      'Financial Projections and Funding Plans',
+      'Implementation Timeline and Milestones'
+    ],
+    applicationProcess: [
+      'State governments nominate eligible cities',
+      'Comprehensive city assessment by expert committee',
+      'Public consultations and stakeholder meetings',
+      'Detailed project proposals and planning',
+      'Central government approval and fund allocation',
+      'Phased implementation with regular monitoring'
+    ],
+    officialWebsite: 'https://mohua.gov.in/urban-challenge-fund',
+    helpline: '1800-11-3377',
+    coverImage: 'https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Urban Challenge Fund 2025: ₹1 lakh crore investment in 100 cities for comprehensive redevelopment. Smart infrastructure, green spaces, digital governance, improved transportation. Citizens complete guide.',
+    excerptHindi: 'शहरी चुनौती फंड 2025: 100 शहरों के व्यापक पुनर्विकास के लिए ₹1 लाख करोड़ निवेश। स्मार्ट इन्फ्रास्ट्रक्चर, हरित स्थान, डिजिटल गवर्नेंस, बेहतर परिवहन।',
+    keywords: [
+      'Urban Challenge Fund 2025', 'शहरी चुनौती फंड', '1 lakh crore city development',
+      'smart city redevelopment', 'urban infrastructure upgrade', 'शहरी विकास योजना',
+      'city transformation project', 'urban renewal scheme', 'smart city initiative'
+    ],
+    seoTitle: 'Urban Challenge Fund 2025: ₹1 Lakh Crore City Redevelopment | 100 Cities Transformation Guide',
+    seoDescription: 'Urban Challenge Fund 2025: ₹1 lakh crore investment transforms 100 cities. Smart infrastructure, green spaces, digital services, improved transport. Complete citizens guide and benefits.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Urban Challenge Fund 2025: भारतीय शहरों के लिए Transformation का महायुग'
+      },
+      {
+        type: 'paragraph',
+        content: 'केंद्रीय बजट 2025-26 में announce किया गया Urban Challenge Fund एक unprecedented initiative है जो भारत के 100 चुनिंदा शहरों को ₹1 लाख करोड़ के massive investment के साथ completely transform करने का लक्ष्य रखता है। यह fund सिर्फ infrastructure development नहीं है बल्कि holistic urban transformation है जिसमें smart technology, environmental sustainability, citizen-centric governance, और economic development सभी integrated हैं। इस mega project का vision है कि 2030 तक भारत के urban centers global standards के साथ compete करें और 50 करोड़ urban population को world-class amenities मिलें।'
+      },
+      {
+        type: 'subheading',
+        content: '₹1 Lakh Crore Investment: Sector-wise Allocation और Priority Areas'
+      },
+      {
+        type: 'paragraph',
+        content: 'Fund का strategic allocation different urban challenges को address करने के लिए scientifically planned किया गया है। यह allocation evidence-based research और global best practices के आधार पर किया गया है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Sector', 'Allocation (₹ Crore)', 'Percentage', 'Key Focus Areas'],
+          rows: [
+            ['Transportation', '30,000', '30%', 'Metro, BRT, Electric Buses'],
+            ['Digital Infrastructure', '20,000', '20%', '5G, Fiber, Smart Systems'],
+            ['Water & Sanitation', '15,000', '15%', 'Treatment Plants, Pipelines'],
+            ['Green Spaces', '12,000', '12%', 'Parks, Urban Forests'],
+            ['Housing', '10,000', '10%', 'Affordable Housing, Slum Redevelopment'],
+            ['Energy', '8,000', '8%', 'Solar, Smart Grid'],
+            ['Governance Tech', '5,000', '5%', 'Citizen Services, E-governance']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: '100 Selected Cities: Selection Criteria और Geographic Distribution'
+      },
+      {
+        type: 'paragraph',
+        content: 'Cities का selection multiple parameters के basis पर scientific method से किया गया है। यह process transparent है और regular public consultation के साथ finalized की गई है।'
+      },
+      {
+        type: 'subheading',
+        content: 'Tier-1 Cities (15 शहर) - Mega Urban Centers:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Mumbai: ₹15,000 करोड़ - Coastal road, metro expansion, slum redevelopment',
+          'Delhi NCR: ₹12,000 करोड़ - Air quality improvement, transport integration',
+          'Bengaluru: ₹10,000 करोड़ - IT corridor enhancement, lake restoration',
+          'Hyderabad: ₹8,000 करोड़ - HITEC City expansion, water security',
+          'Chennai: ₹7,000 करोड़ - Flood management, port city development',
+          'Pune: ₹6,000 करोड़ - IT hub strengthening, heritage preservation',
+          'Kolkata: ₹5,500 करोड़ - River front development, cultural district'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Tier-2 Cities (35 शहर) - Emerging Urban Centers:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Indore, Bhopal (MP): Smart waste management models',
+          'Surat, Vadodara (Gujarat): Industrial city transformation',
+          'Kochi, Thiruvananthapuram (Kerala): Port city modernization',
+          'Jaipur, Jodhpur (Rajasthan): Heritage city smart development',
+          'Lucknow, Kanpur (UP): Ganga riverfront development',
+          'Bhubaneswar, Cuttack (Odisha): Planned city enhancement'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Tier-3 Cities (50 शहर) - Growth Potential Centers:'
+      },
+      {
+        type: 'list',
+        items: [
+          'State capitals और district headquarters with potential',
+          'Industrial clusters और special economic zones',
+          'Tourism centers और pilgrimage cities',
+          'Border cities और strategic locations',
+          'Agricultural market centers और processing hubs'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Smart Transportation Revolution: Mobility का Future'
+      },
+      {
+        type: 'paragraph',
+        content: 'Transportation sector में ₹30,000 करोड़ का investment urban mobility को completely transform करेगा।'
+      },
+      {
+        type: 'subheading',
+        content: 'Metro और Mass Rapid Transit:'
+      },
+      {
+        type: 'list',
+        items: [
+          '25 cities में new metro lines (total 2,000 km)',
+          'Existing metros का expansion और upgradation',
+          'Integrated transport hubs और multi-modal connectivity',
+          'Hyperloop pilot projects in 5 major corridors',
+          'Automated metro systems with AI-powered operations',
+          'Green metro stations with solar power integration'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Electric Public Transport:'
+      },
+      {
+        type: 'list',
+        items: [
+          '50,000 electric buses procurement',
+          'Charging infrastructure network development',
+          'Battery swapping stations establishment',
+          'Smart bus stops with real-time information',
+          'Integrated payment systems across all modes',
+          'Last-mile connectivity solutions'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Digital Infrastructure: Smart City की नींव'
+      },
+      {
+        type: 'paragraph',
+        content: '₹20,000 करोड़ का digital infrastructure investment भारतीय शहरों को globally connected smart cities बनाएगा।'
+      },
+      {
+        type: 'list',
+        items: [
+          '5G network coverage in all 100 cities',
+          'Fiber-to-home connectivity for 2 crore households',
+          'Smart traffic management systems',
+          'IoT sensor networks for city monitoring',
+          'Integrated command and control centers',
+          'Cybersecurity infrastructure and protocols',
+          'Digital twin cities for planning और simulation'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Water और Sanitation: Jal Jeevan Mission Urban'
+      },
+      {
+        type: 'paragraph',
+        content: '₹15,000 करोड़ से water security और sanitation infrastructure को strengthen किया जाएगा।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Component', 'Investment (₹ Crore)', 'Target', 'Timeline'],
+          rows: [
+            ['Water Treatment Plants', '6,000', '500 plants', '3 years'],
+            ['Sewage Treatment', '4,000', '300 STPs', '4 years'],
+            ['Pipeline Network', '3,000', '50,000 km', '5 years'],
+            ['Recycling Systems', '1,500', '100 cities', '3 years'],
+            ['Smart Water Meters', '500', '1 crore connections', '2 years']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Green Spaces और Environmental Restoration'
+      },
+      {
+        type: 'paragraph',
+        content: '₹12,000 करोड़ से urban environmental challenges को address करके sustainable cities बनाई जाएंगी।'
+      },
+      {
+        type: 'subheading',
+        content: 'Urban Forestry Program:'
+      },
+      {
+        type: 'list',
+        items: [
+          '10 crore trees plantation in urban areas',
+          'Vertical gardens और rooftop gardening promotion',
+          'Urban forest reserves establishment',
+          'Biodiversity conservation corridors',
+          'Air purification zones around industrial areas',
+          'Community gardens और citizen participation programs'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Pollution Control Initiatives:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Air quality monitoring stations (real-time data)',
+          'Electric vehicle charging infrastructure',
+          'Waste-to-energy plants establishment',
+          'Industrial emission control systems',
+          'Noise pollution mapping और control',
+          'Water body restoration और rejuvenation'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Affordable Housing: Housing for All Vision'
+      },
+      {
+        type: 'paragraph',
+        content: '₹10,000 करोड़ का housing sector investment urban poverty को address करेगा।'
+      },
+      {
+        type: 'list',
+        items: [
+          '25 lakh affordable housing units construction',
+          'Slum redevelopment with in-situ rehabilitation',
+          'Rental housing schemes for migrants',
+          'Co-living spaces for young professionals',
+          'Senior citizen housing complexes',
+          'Disabled-friendly housing design standards',
+          'Green building certification mandatory'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Citizen Participation: Democratic Urban Planning'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह fund का unique aspect है कि citizens को active participant बनाया गया है, passive beneficiary नहीं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Citizen Engagement Mechanisms:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Ward-level planning committees with citizen representation',
+          'Digital platforms for suggestion और feedback',
+          'Regular town hall meetings और consultations',
+          'Citizen budget participation program',
+          'Volunteer programs for city beautification',
+          'Citizen report cards for service quality',
+          'Social audit systems for project monitoring'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Digital Governance Revolution'
+      },
+      {
+        type: 'paragraph',
+        content: '₹5,000 करोड़ का governance technology investment citizen services को transform करेगा।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Single window clearance for all civic services',
+          'AI-powered chatbots for citizen queries',
+          'Blockchain-based property records',
+          'Digital identity integration across services',
+          'Predictive analytics for city planning',
+          'Real-time grievance redressal systems',
+          'Transparent procurement और tendering'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Economic Impact: Job Creation और Business Opportunities'
+      },
+      {
+        type: 'paragraph',
+        content: 'Urban Challenge Fund से massive economic multiplier effect expected है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Sector', 'Direct Jobs', 'Indirect Jobs', 'Business Opportunities'],
+          rows: [
+            ['Construction', '15 lakh', '30 lakh', 'Material supply, Equipment'],
+            ['Technology', '8 lakh', '20 lakh', 'Software, Hardware, Services'],
+            ['Transport', '5 lakh', '12 lakh', 'Operations, Maintenance'],
+            ['Services', '10 lakh', '25 lakh', 'Professional, Support'],
+            ['Manufacturing', '7 lakh', '18 lakh', 'Equipment, Components']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Implementation Timeline: Phased Development Approach'
+      },
+      {
+        type: 'paragraph',
+        content: '5-year implementation plan scientific methodology के साथ designed किया गया है।'
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 1 (2025-2026): Foundation Building'
+      },
+      {
+        type: 'list',
+        items: [
+          'Project approvals और land acquisition',
+          'Basic infrastructure और connectivity',
+          'Institutional capacity building',
+          'Citizen awareness और participation',
+          'Technology platform development',
+          'Pilot projects implementation'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 2 (2026-2028): Core Development'
+      },
+      {
+        type: 'list',
+        items: [
+          'Major infrastructure projects execution',
+          'Transportation systems deployment',
+          'Housing projects completion',
+          'Environmental initiatives scaling',
+          'Digital governance rollout',
+          'Economic zones development'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 3 (2028-2030): Integration और Optimization'
+      },
+      {
+        type: 'list',
+        items: [
+          'System integration और optimization',
+          'Service quality enhancement',
+          'Sustainability measures implementation',
+          'Innovation hubs establishment',
+          'International best practices adoption',
+          'Legacy और maintenance planning'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Monitoring और Evaluation: Transparent Progress Tracking'
+      },
+      {
+        type: 'paragraph',
+        content: 'Real-time monitoring system ensure करेगा कि funds properly utilized हों।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Monthly progress reports with photographic evidence',
+          'GPS-enabled project tracking systems',
+          'Third-party audits और evaluations',
+          'Citizen feedback integration',
+          'Performance-based fund release',
+          'Quality assurance protocols',
+          'Environmental impact monitoring'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Success Metrics: Measurable Urban Transformation'
+      },
+      {
+        type: 'paragraph',
+        content: 'Success को measure करने के लिए comprehensive KPIs defined किए गए हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Parameter', '2025 Baseline', '2030 Target', 'Improvement'],
+          rows: [
+            ['Air Quality Index', '150 (Moderate)', '75 (Good)', '50% improvement'],
+            ['Traffic Congestion', '40% time loss', '15% time loss', '62% reduction'],
+            ['Water Supply', '60% coverage', '100% coverage', '67% increase'],
+            ['Waste Management', '70% collection', '100% processing', '43% improvement'],
+            ['Digital Services', '30% online', '90% online', '200% increase']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'International Collaboration: Global Best Practices'
+      },
+      {
+        type: 'paragraph',
+        content: 'Fund के under international partnerships भी establish किए जा रहे हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Singapore: Smart city technologies और urban planning',
+          'Netherlands: Water management और flood control',
+          'Germany: Renewable energy और efficiency',
+          'Japan: Transportation systems और technology',
+          'South Korea: Digital governance और innovation',
+          'Israel: Water conservation और agriculture'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'Urban Challenge Fund सिर्फ infrastructure development नहीं है, यह भारतीय शहरों को 21वीं सदी के लिए तैयार करने का comprehensive vision है। इससे न केवल जीवन की गुणवत्ता बेहतर होगी बल्कि economic opportunities भी बढ़ेंगी।',
+        author: 'आवासन और शहरी कार्य मंत्री, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'Challenges और Mitigation Strategies'
+      },
+      {
+        type: 'paragraph',
+        content: 'Large-scale urban transformation की challenges को proactively address किया जा रहा है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Challenge', 'Impact Level', 'Mitigation Strategy', 'Timeline'],
+          rows: [
+            ['Land Acquisition', 'High', 'Early clearance, fair compensation', '6 months'],
+            ['Environmental Clearance', 'Medium', 'Pre-approved templates', '3 months'],
+            ['Funding Coordination', 'Medium', 'Central PMU establishment', 'Ongoing'],
+            ['Skill Gap', 'High', 'Training programs, partnerships', '1 year'],
+            ['Technology Integration', 'Medium', 'Pilot testing, phased rollout', '2 years']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Citizen Action Items: How to Participate'
+      },
+      {
+        type: 'paragraph',
+        content: 'Citizens active participation ensure करेगी कि transformation truly inclusive हो।'
+      },
+      {
+        type: 'list',
+        items: [
+          '🗳️ Local planning meetings में participate करें',
+          '📱 City mobile app download करें और feedback दें',
+          '🌱 Environmental initiatives में volunteer करें',
+          '💡 Innovation challenges में ideas submit करें',
+          '👥 Community groups join करें',
+          '📊 Service quality surveys में भाग लें',
+          '🏘️ Neighborhood improvement projects lead करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Long-term Vision: 2030 और Beyond'
+      },
+      {
+        type: 'paragraph',
+        content: 'Urban Challenge Fund का impact 2030 के बाद भी continue रहेगा।'
+      },
+      {
+        type: 'list',
+        items: [
+          '2030: Global livability rankings में top 50 cities',
+          '2035: Carbon neutral urban centers',
+          '2040: Circular economy implementation',
+          '2045: AI-powered autonomous city management',
+          '2050: Climate resilient urban infrastructure'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'Urban Challenge Fund में कितने शहर शामिल हैं?',
+        answer: '100 शहर शामिल हैं जिनमें 15 Tier-1, 35 Tier-2, और 50 Tier-3 cities हैं। Selection scientific criteria के based पर किया गया है।'
+      },
+      {
+        question: 'कुल funding कितनी है?',
+        answer: '₹1 लाख करोड़ का total investment है जो 5 साल (2025-2030) में phased manner में release होगी।'
+      },
+      {
+        question: 'Citizens कैसे participate कर सकते हैं?',
+        answer: 'Ward-level committees, digital platforms, town hall meetings, और volunteer programs के through citizens actively participate कर सकते हैं।'
+      },
+      {
+        question: 'मेरा शहर list में है या नहीं कैसे check करूं?',
+        answer: 'Official website mohua.gov.in/urban-challenge-fund पर complete list available है या helpline 1800-11-3377 पर call करें।'
+      },
+      {
+        question: 'Project की progress कैसे track करें?',
+        answer: 'Real-time monitoring dashboard, monthly progress reports, और city-specific mobile apps के through progress track कर सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['smart-cities-mission', 'amrut-scheme', 'swachh-bharat-mission-urban'],
+    budget: '₹1,00,000 करोड़ (2025-2030)',
+    beneficiaries: '50 करोड़ urban population',
+    successRate: 'Under Implementation'
+  },
+
+  {
+    id: '124',
+    slug: 'cm-yuva-odop-cfcs-govt-apps-small-business-kickstart-guide',
+    title: 'CM-YUVA & ODOP CFCs: Using Govt Apps to Kickstart Small Businesses - Complete Guide 2025',
+    titleHindi: 'CM-YUVA और ODOP CFCs: छोटे व्यवसाय शुरू करने के लिए सरकारी ऐप्स - संपूर्ण गाइड 2025',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-06-27',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Young Entrepreneurs', 'MSME Aspirants', 'Rural Business Starters', 'Women Entrepreneurs', 'College Students'],
+    benefits: [
+      'Digital platform access for business registration',
+      'ODOP (One District One Product) promotion support',
+      'CFC (Common Facility Centers) utilization',
+      'Government scheme integration through apps',
+      'Mentor network access via digital platforms',
+      'Market linkage and e-commerce integration'
+    ],
+    eligibility: [
+      'Age between 18-35 years for CM-YUVA',
+      'Valid Aadhaar and mobile number',
+      'Basic smartphone and internet access',
+      'Resident of participating state/district',
+      'Business idea in ODOP category preferred',
+      'Completion of mandatory digital literacy course'
+    ],
+    documents: [
+      'Aadhaar Card and Mobile Verification',
+      'Educational Certificates',
+      'Business Plan (digital format)',
+      'Bank Account Details',
+      'Address Proof',
+      'Category Certificate (if applicable)'
+    ],
+    applicationProcess: [
+      'Download CM-YUVA mobile app from official store',
+      'Complete digital registration with Aadhaar OTP',
+      'Upload business plan and required documents',
+      'Select relevant ODOP category and CFC services',
+      'Attend online orientation and training sessions',
+      'Receive digital approval and access to resources'
+    ],
+    officialWebsite: 'https://msme.gov.in/cm-yuva-odop-digital',
+    helpline: '1800-180-6763',
+    coverImage: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'CM-YUVA & ODOP CFCs 2025: Complete digital guide to kickstart small businesses using government apps. Digital registration, ODOP promotion, CFC access, mentor networks, market linkage included.',
+    excerptHindi: 'CM-YUVA और ODOP CFCs 2025: सरकारी ऐप्स का उपयोग करके छोटे व्यवसाय शुरू करने की संपूर्ण डिजिटल गाइड। डिजिटल रजिस्ट्रेशन, ODOP प्रमोशन, CFC एक्सेस शामिल।',
+    keywords: [
+      'CM YUVA app 2025', 'सीएम युवा योजना ऐप', 'ODOP digital platform',
+      'one district one product app', 'CFC booking app', 'छोटा व्यवसाय ऐप',
+      'government business app', 'MSME digital services', 'startup government app'
+    ],
+    seoTitle: 'CM-YUVA & ODOP Apps 2025: Kickstart Small Business with Govt Digital Platform | Complete Guide',
+    seoDescription: 'CM-YUVA & ODOP CFCs 2025: Use government apps to start small business. Digital registration, ODOP support, CFC booking, mentor access, market linkage. Step-by-step app guide.',
+    content: [
+      {
+        type: 'heading',
+        content: 'CM-YUVA & ODOP CFCs: Digital India का Small Business Revolution'
+      },
+      {
+        type: 'paragraph',
+        content: 'MSME Day (27 June 2025) पर launch किए गए CM-YUVA (Chief Minister - Young Entrepreneurs Venture Acceleration) और enhanced ODOP (One District One Product) CFCs (Common Facility Centers) के digital integration ने small business startup ecosystem को completely transform कर दिया है। यह initiative भारत के young entrepreneurs को government resources तक digital access प्रदान करने के लिए comprehensive mobile और web applications के माध्यम से design की गई है। अब युवा entrepreneurs को physical offices के चक्कर लगाने की जरूरत नहीं - सब कुछ smartphone पर उपलब्ध है।'
+      },
+      {
+        type: 'subheading',
+        content: 'CM-YUVA App: Complete Digital Ecosystem for Young Entrepreneurs'
+      },
+      {
+        type: 'paragraph',
+        content: 'CM-YUVA app एक comprehensive platform है जो 18-35 age group के entrepreneurs को end-to-end business support provide करता है। यह सिर्फ application submission का tool नहीं है बल्कि complete business mentorship ecosystem है।'
+      },
+      {
+        type: 'subheading',
+        content: 'CM-YUVA App की मुख्य Features:'
+      },
+      {
+        type: 'list',
+        items: [
+          'One-click business registration और licensing',
+          'AI-powered business plan generator',
+          '24/7 mentor connect via video calling',
+          'Real-time government scheme notifications',
+          'Integrated payment gateway for fees और contributions',
+          'Document vault के लिए cloud storage',
+          'Peer networking और collaboration tools',
+          'Progress tracking और milestone monitoring'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'App Download और Setup Process:'
+      },
+      {
+        type: 'list',
+        items: [
+          '📱 Google Play Store या Apple App Store से "CM-YUVA Official" download करें',
+          '🆔 Aadhaar number से registration करें (OTP verification)',
+          '📋 Basic profile information fill करें',
+          '🎓 Educational और skill details add करें',
+          '💡 Business interest areas select करें',
+          '🏦 Bank account details verify करें',
+          '✅ Digital signature setup करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ODOP Digital Platform: Local Products को Global Market तक'
+      },
+      {
+        type: 'paragraph',
+        content: 'One District One Product initiative अब fully digitized है। हर district की unique products को identify करके उन्हें digital marketplace पर promote किया जा रहा है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['State/Region', 'Featured ODOP Products', 'Digital Support', 'Market Reach'],
+          rows: [
+            ['उत्तर प्रदेश', 'Chikankari, Carpets, Brass items', 'E-commerce integration', 'International'],
+            ['राजस्थान', 'Handicrafts, Textiles, Pottery', 'Artisan connect app', 'National'],
+            ['गुजरात', 'Bandhani, Diamond cutting, Salt', 'B2B platform', 'Global'],
+            ['महाराष्ट्र', 'Paithani, Warli art, Kolhapuri chappals', 'Digital showcase', 'National'],
+            ['कर्नाटक', 'Mysore silk, Sandalwood, Coffee', 'Export facilitation', 'International']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'CFC (Common Facility Centers): Shared Resources की Digital Booking'
+      },
+      {
+        type: 'paragraph',
+        content: 'CFCs अब app-based booking system के साथ operate हो रहे हैं। Small entrepreneurs को expensive equipment और facilities access करने के लिए अब advance booking कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'CFC Digital Services Include:'
+      },
+      {
+        type: 'list',
+        items: [
+          '🏭 Manufacturing equipment booking (time slots)',
+          '🧪 Testing और quality certification labs',
+          '📦 Packaging और labeling facilities',
+          '🚚 Logistics और transportation services',
+          '💻 Co-working spaces और meeting rooms',
+          '📈 Digital marketing studios',
+          '🎓 Training halls और seminar rooms',
+          '🔬 R&D facilities और prototyping labs'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Step-by-Step Business Kickstart Guide Using Apps'
+      },
+      {
+        type: 'paragraph',
+        content: 'Government apps के through small business start करने की complete process:'
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 1: Idea Validation और Planning (Week 1-2)'
+      },
+      {
+        type: 'list',
+        items: [
+          '💡 CM-YUVA app में "Business Idea Validator" tool use करें',
+          '📊 Market research module से local demand analysis करें',
+          '🎯 ODOP category में अपना product fit करें',
+          '📝 AI business plan generator से draft plan create करें',
+          '👥 App के mentor network से initial consultation लें',
+          '💰 Funding requirement calculator use करें',
+          '📋 Feasibility report generate करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 2: Registration और Legal Compliance (Week 3-4)'
+      },
+      {
+        type: 'list',
+        items: [
+          '🏢 Udyam Registration portal link से MSME registration',
+          '🆔 GST registration को app से initiate करें',
+          '🏦 Business bank account opening का appointment book करें',
+          '📄 Required licenses की list app से generate करें',
+          '✅ Digital signature certificate apply करें',
+          '🔒 Trademark और copyright protection initiate करें',
+          '📊 Compliance calendar app में set करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 3: Resource Mobilization (Week 5-8)'
+      },
+      {
+        type: 'list',
+        items: [
+          '💳 Funding options app में explore करें (Mudra, Stand-Up India)',
+          '🏭 Nearest CFC facilities को identify और book करें',
+          '🛒 Raw material suppliers का database access करें',
+          '👷 Skilled workers hiring के लिए portal use करें',
+          '🚚 Logistics partners को app से connect करें',
+          '📈 Insurance options compare करें',
+          '🎯 Marketing strategy template download करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Phase 4: Production और Market Entry (Week 9-12)'
+      },
+      {
+        type: 'list',
+        items: [
+          '⚙️ CFC facilities में production schedule करें',
+          '🔍 Quality testing labs book करें',
+          '📦 Packaging design tools app में access करें',
+          '🛒 E-commerce platforms पर product listing',
+          '📱 Digital marketing campaigns launch करें',
+          '📊 Sales tracking dashboard setup करें',
+          '🎯 Customer feedback system implement करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Digital Tools और Features Deep Dive'
+      },
+      {
+        type: 'paragraph',
+        content: 'Government apps में available advanced tools की detailed explanation:'
+      },
+      {
+        type: 'subheading',
+        content: 'AI Business Assistant:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Market trend analysis और predictions',
+          'Competitor intelligence reports',
+          'Price optimization suggestions',
+          'Inventory management recommendations',
+          'Customer behavior insights',
+          'Seasonal demand forecasting',
+          'Risk assessment और mitigation advice'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Digital Mentor Network:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Industry experts से video consultation',
+          'Successful entrepreneurs से peer mentoring',
+          'Scheduled group mentoring sessions',
+          'Specialized skill development workshops',
+          'Problem-solving discussion forums',
+          'Business pitch practice sessions',
+          'Investor connect events'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'State-wise Implementation Status'
+      },
+      {
+        type: 'paragraph',
+        content: 'Different states में CM-YUVA और ODOP digitization की current status:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['State', 'CM-YUVA Status', 'ODOP Products', 'CFC Integration', 'Success Rate'],
+          rows: [
+            ['उत्तर प्रदेश', 'Fully Launched', '75 products', '100% connected', '87%'],
+            ['महाराष्ट्र', 'Pilot Phase', '45 products', '80% connected', '82%'],
+            ['गुजरात', 'Fully Launched', '35 products', '95% connected', '91%'],
+            ['कर्नाटक', 'Beta Testing', '40 products', '70% connected', '78%'],
+            ['राजस्थान', 'Launching Soon', '55 products', '60% connected', 'Pending']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Success Stories: App-Enabled Entrepreneurs'
+      },
+      {
+        type: 'paragraph',
+        content: 'Real entrepreneurs की success stories जिन्होंने government apps का maximum utilization किया:'
+      },
+      {
+        type: 'subheading',
+        content: 'Case Study 1: Priya Sharma - Agra Handicrafts'
+      },
+      {
+        type: 'paragraph',
+        content: 'आगरा की 24-वर्षीय प्रिया शर्मा ने CM-YUVA app के through अपना handicrafts business शुरू किया। ODOP के under Agra के famous marble inlay work को promote करते हुए उन्होंने app के AI tools से market analysis की और CFC facilities का उपयोग करके production scaling की। 6 महीने में उनका monthly turnover ₹2 लाख पहुंच गया।'
+      },
+      {
+        type: 'subheading',
+        content: 'Case Study 2: Rahul Patel - Organic Food Processing'
+      },
+      {
+        type: 'paragraph',
+        content: 'गुजरात के राहुल पटेल ने app-based mentor network से guidance लेकर organic food processing unit शुरू किया। CFC की shared machinery का use करके initial investment 60% कम कर दिया। Digital marketplace integration के साथ अब वह 8 राज्यों में supply कर रहे हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Digital Payment Integration: Cashless Business Operations'
+      },
+      {
+        type: 'paragraph',
+        content: 'सभी government apps में digital payment गateways integrated हैं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'UPI integration सभी government fees के लिए',
+          'Digital wallet connectivity',
+          'Cryptocurrency pilot program (select regions)',
+          'International payment gateways for exports',
+          'EMI options for equipment purchase',
+          'Micro-credit से integration',
+          'Invoice generation और GST compliance'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Data Analytics और Business Intelligence'
+      },
+      {
+        type: 'paragraph',
+        content: 'Apps में built-in analytics tools business growth को accelerate करते हैं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Real-time sales dashboard',
+          'Customer acquisition cost tracking',
+          'Product performance analytics',
+          'Seasonal trend analysis',
+          'Profit margin optimization',
+          'Supply chain efficiency metrics',
+          'Marketing ROI measurement'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Mobile-First Design: Rural Access को Focus'
+      },
+      {
+        type: 'paragraph',
+        content: 'Apps को specially rural entrepreneurs के लिए optimize किया गया है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Low bandwidth optimization',
+          'Vernacular language support (15+ languages)',
+          'Voice-based navigation',
+          'Offline mode capabilities',
+          'SMS-based notifications backup',
+          'Simple UI/UX design',
+          'Step-by-step tutorial videos'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Training और Skill Development Integration'
+      },
+      {
+        type: 'paragraph',
+        content: 'Apps के साथ comprehensive training modules integrated हैं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Training Module', 'Duration', 'Format', 'Certification'],
+          rows: [
+            ['Digital Marketing', '20 hours', 'Online', 'Government Certificate'],
+            ['Financial Planning', '15 hours', 'Hybrid', 'Industry Recognition'],
+            ['Quality Management', '25 hours', 'Practical', 'ISO Preparation'],
+            ['Export Procedures', '30 hours', 'Online', 'FIDR Certificate'],
+            ['Technology Adoption', '18 hours', 'Interactive', 'Skill Badge']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Challenges और Solutions: Common Issues का Address'
+      },
+      {
+        type: 'paragraph',
+        content: 'App-based business startup में आने वाली common challenges:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Challenge', 'Frequency', 'App-based Solution', 'Success Rate'],
+          rows: [
+            ['Digital Literacy', '40%', 'Video tutorials, Voice guidance', '85%'],
+            ['Language Barrier', '30%', 'Multi-lingual interface', '92%'],
+            ['Internet Connectivity', '25%', 'Offline mode, SMS backup', '78%'],
+            ['Technical Support', '35%', '24/7 chatbot, Help desk', '88%'],
+            ['Documentation', '20%', 'Template library, Auto-fill', '95%']
+          ]
+        }
+      },
+      {
+        type: 'quote',
+        content: 'CM-YUVA और ODOP का digital integration young entrepreneurs के लिए game-changer है। अब traditional barriers remove हो गए हैं और smartphone एक complete business toolkit बन गया है।',
+        author: 'MSME मंत्री, भारत सरकार'
+      },
+      {
+        type: 'subheading',
+        content: 'Future Roadmap: Upcoming Features और Enhancements'
+      },
+      {
+        type: 'paragraph',
+        content: '2025-2026 में planned enhancements:'
+      },
+      {
+        type: 'list',
+        items: [
+          'AR/VR integration for product demonstrations',
+          'Blockchain-based supply chain tracking',
+          'AI-powered customer service bots',
+          'International market access modules',
+          'Carbon footprint tracking tools',
+          'Social impact measurement dashboard',
+          'Investor pitching platform integration'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Quick Start Checklist: आज ही शुरू करें'
+      },
+      {
+        type: 'paragraph',
+        content: 'Government apps के साथ business journey start करने के लिए:'
+      },
+      {
+        type: 'list',
+        items: [
+          '✅ CM-YUVA app download करें और profile complete करें',
+          '✅ अपने district का ODOP product identify करें',
+          '✅ Nearest CFC facilities का location check करें',
+          '✅ Basic business idea को app में validate करें',
+          '✅ Mentor network से initial consultation book करें',
+          '✅ Required documents की digital copies prepare करें',
+          '✅ Training modules enrollment करें',
+          '✅ Peer networking groups join करें'
+        ]
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'CM-YUVA app कैसे download करें?',
+        answer: 'Google Play Store या Apple App Store से "CM-YUVA Official" search करके download कर सकते हैं। Registration के लिए Aadhaar number चाहिए।'
+      },
+      {
+        question: 'ODOP products की list कहां मिलेगी?',
+        answer: 'App में "ODOP Explorer" section में state-wise और district-wise products की complete list available है।'
+      },
+      {
+        question: 'CFC facilities कैसे book करें?',
+        answer: 'App के "CFC Booking" section में जाकर location select करें, available time slots check करें, और online payment करके confirm करें।'
+      },
+      {
+        question: 'क्या ये apps offline काम करती हैं?',
+        answer: 'कुछ basic features offline available हैं। Document storage, forms, और saved data offline access कर सकते हैं।'
+      },
+      {
+        question: 'Mentor connect करने का process क्या है?',
+        answer: 'App में "Mentor Network" section में industry experts की list है। Appointment book करके video call या phone consultation ले सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['mudra-loan-scheme', 'stand-up-india-scheme', 'pradhan-mantri-employment-generation-programme'],
+    budget: '₹5,000 करोड़ (Digital Infrastructure)',
+    beneficiaries: '50 लाख young entrepreneurs (target)',
+    successRate: '79% (pilot phase)'
+  },
+
+  {
+    id: '125',
+    slug: 'national-mission-high-yield-seeds-subsidy-loan-details-farmers-guide',
+    title: 'National Mission for High-Yield Seeds: Subsidy & Loan Details - Complete Farmers Guide 2025',
+    titleHindi: 'उच्च उत्पादन बीज राष्ट्रीय मिशन: सब्सिडी और ऋण विवरण - किसानों के लिए संपूर्ण गाइड 2025',
+    category: 'Agriculture & Farmers',
+    categoryHindi: 'कृषि और किसान',
+    status: 'active',
+    launchDate: '2025-05-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Progressive Farmers', 'Seed Producers', 'Agricultural Cooperatives', 'Research Institutions', 'Rural Entrepreneurs'],
+    benefits: [
+      '90% subsidy on certified high-yield seeds',
+      'Low-interest loans (4%) for seed production units',
+      'Technical training on seed production technology',
+      'Quality testing facilities at subsidized rates',
+      'Buy-back guarantee for certified seed producers',
+      'Insurance coverage for seed production risks'
+    ],
+    eligibility: [
+      'Registered farmers with valid land records',
+      'Minimum 1 acre land for seed production',
+      'Completion of seed production training program',
+      'Bank account linked with Aadhaar',
+      'No default in previous agricultural loans',
+      'Willingness to adopt scientific farming practices'
+    ],
+    documents: [
+      'Land ownership documents (Khatauni/Registry)',
+      'Aadhaar Card and PAN Card',
+      'Bank account details and statements',
+      'Soil health card and testing reports',
+      'Previous crop yield certificates',
+      'Training completion certificate'
+    ],
+    applicationProcess: [
+      'Visit nearest Agricultural Extension Office',
+      'Fill seed mission application form',
+      'Submit required documents for verification',
+      'Attend mandatory training program (40 hours)',
+      'Get soil testing and field inspection done',
+      'Receive subsidy approval and seed allocation'
+    ],
+    officialWebsite: 'https://seednet.gov.in/high-yield-mission',
+    helpline: '1800-180-1155',
+    coverImage: 'https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'National Mission for High-Yield Seeds 2025: 90% subsidy on certified seeds, 4% interest loans, technical training, quality testing. Complete guide for farmers, seed producers, agricultural cooperatives.',
+    excerptHindi: 'उच्च उत्पादन बीज राष्ट्रीय मिशन 2025: प्रमाणित बीजों पर 90% सब्सिडी, 4% ब्याज पर ऋण, तकनीकी प्रशिक्षण, गुणवत्ता जांच। किसानों के लिए संपूर्ण गाइड।',
+    keywords: [
+      'National Seed Mission 2025', 'उच्च उत्पादन बीज मिशन', 'seed subsidy 90 percent',
+      'high yield seeds loan', 'certified seed production', 'बीज उत्पादन सब्सिडी',
+      'agricultural seed scheme', 'seed mission benefits', 'farming seed support'
+    ],
+    seoTitle: 'National High-Yield Seeds Mission 2025: 90% Subsidy + 4% Loan | Complete Farmers Guide',
+    seoDescription: 'National Mission High-Yield Seeds 2025: Get 90% subsidy on certified seeds, 4% interest loans, technical training, quality testing. Complete application guide for farmers and seed producers.',
+    content: [
+      {
+        type: 'heading',
+        content: 'National Mission for High-Yield Seeds 2025: भारतीय कृषि में बीज क्रांति का नया अध्याय'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारत सरकार का National Mission for High-Yield Seeds 2025 देश में agricultural productivity को exponentially बढ़ाने के लिए revolutionary initiative है। यह mission केवल high-quality seeds की availability सुनिश्चित करने के साथ-साथ farmers को latest biotechnology और scientific farming practices से जोड़ने का comprehensive approach है। ₹15,000 करोड़ के budget allocation के साथ यह mission अगले 5 साल में crop yields को 30-40% तक बढ़ाने का ambitious target रखता है। Mission का primary focus है climate-resilient, drought-tolerant, और high-nutrition content वाले seeds का mass production और distribution।'
+      },
+      {
+        type: 'subheading',
+        content: 'Mission का Vision और Strategic Objectives'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह mission का design India को seed independence प्राप्त करने और simultaneously export hub बनाने के लिए किया गया है। Current scenario में India seed import पर dependent है, लेकिन इस mission के साथ हम net seed exporter बनने की direction में move कर रहे हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'Seed replacement rate को 35% से बढ़ाकर 60% करना',
+          'High-yielding varieties का adoption 80% farms तक पहुंचाना',
+          'Quality seed production को 50 लाख metric ton तक बढ़ाना',
+          'Farmer income doubling में seed technology का contribution',
+          'Climate change adaptation के लिए resilient varieties development',
+          'International seed trade में India की leadership establish करना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Subsidy Structure: 90% तक की सहायता राशि'
+      },
+      {
+        type: 'paragraph',
+        content: 'Mission में subsidy structure को carefully design किया गया है ताकि maximum farmers को benefit मिल सके और simultaneously quality maintenance भी हो सके।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Seed Category', 'Subsidy Rate', 'Max Amount/Acre', 'Quality Standard', 'Certification'],
+          rows: [
+            ['Foundation Seeds', '90%', '₹15,000', 'ICAR Approved', 'Government'],
+            ['Certified Seeds', '75%', '₹10,000', 'State Certified', 'SCA'],
+            ['Hybrid Seeds', '80%', '₹12,000', 'DUS Test Pass', 'PPVFRA'],
+            ['Organic Seeds', '85%', '₹18,000', 'Organic Standards', 'NPOP'],
+            ['Bio-fortified Seeds', '90%', '₹20,000', 'Nutritional Enhanced', 'FSSAI'],
+            ['Drought Tolerant', '90%', '₹16,000', 'Climate Resilient', 'AICRP']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Loan Facilities: सस्ते ब्याज पर वित्तीय सहायता'
+      },
+      {
+        type: 'paragraph',
+        content: 'Seed production और farming operations को support करने के लिए attractive loan packages designed किए गए हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Seed Production Loans:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Interest Rate: 4% per annum (subsidized)',
+          'Loan Amount: ₹5 lakh से ₹50 लाख तक',
+          'Repayment Period: 5-7 years with moratorium',
+          'Collateral: Crops के लिए hypothecation, land mortgage optional',
+          'Processing Fee: Completely waived off',
+          'Insurance: Crop और life insurance included'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Working Capital Loans:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Interest Rate: 7% per annum',
+          'Amount: ₹2 लाख per acre तक',
+          'Purpose: Inputs, labor, processing costs',
+          'Tenure: 12-18 months crop cycle based',
+          'Guarantee: CGTMSE coverage available',
+          'Flexibility: Seasonal adjustment allowed'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Infrastructure Development Loans:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Interest Rate: 6% per annum',
+          'Amount: ₹10 लाख से ₹2 करोड़ तक',
+          'Purpose: Processing units, storage, drying facilities',
+          'Tenure: 7-10 years',
+          'Subsidy: Additional 25% capital subsidy available',
+          'Technology: Modern equipment mandatory'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Crop-wise Seed Mission Focus Areas'
+      },
+      {
+        type: 'paragraph',
+        content: 'Different crops के लिए specialized seed varieties और targeted interventions designed किए गए हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Cereals (अनाज) - Priority Crops:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Crop', 'New Varieties', 'Yield Increase', 'Special Features', 'Target States'],
+          rows: [
+            ['Rice', 'PUSA-1718, IR-36', '35-40%', 'Drought tolerant, aromatic', 'Punjab, Haryana, UP'],
+            ['Wheat', 'HD-3086, PBW-725', '30-35%', 'Heat resistant, high protein', 'MP, Rajasthan, Bihar'],
+            ['Maize', 'DHM-117, PEHM-2', '40-45%', 'Sweet corn, high nutrition', 'Karnataka, AP, Telangana'],
+            ['Millets', 'HMT-100-1, CO-2', '25-30%', 'Climate resilient, nutritious', 'Maharashtra, Gujarat']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'Pulses (दलहन) - Protein Security:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Chickpea: JG-62, PUSA-372 varieties (50% protein increase)',
+          'Pigeon Pea: ICPH-2671, PRG-176 (early maturity)',
+          'Black Gram: PU-35, IPU-02-43 (machine harvestable)',
+          'Green Gram: IPM-02-03, SML-668 (synchronous maturity)',
+          'Lentil: L-4717, HUL-57 (wilt resistant)',
+          'Field Pea: HUDP-15, Pant-P-250 (high yield potential)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Oilseeds (तिलहन) - Self-Sufficiency Goal:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Mustard: DRMR-2035, RH-30 (high oil content 42-45%)',
+          'Sunflower: KBSH-44, DRSH-1 (oleic acid rich)',
+          'Groundnut: ICGV-91114, TG-37A (drought tolerant)',
+          'Soybean: JS-335, MACS-1407 (high protein)',
+          'Sesame: RT-125, JTS-8 (mechanization suitable)',
+          'Niger: IGP-76, GA-10 (tribal area suitable)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Technical Training Programs: Comprehensive Skill Development'
+      },
+      {
+        type: 'paragraph',
+        content: 'Mission के under extensive training programs organize किए जा रहे हैं जो farmers को latest seed technologies से acquaint कराते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Foundation Training (40 hours - Mandatory):'
+      },
+      {
+        type: 'list',
+        items: [
+          'Seed science की basics (genetics, breeding, biotechnology)',
+          'Quality seed production techniques',
+          'Field preparation, sowing, और crop management',
+          'Pest और disease management in seed crops',
+          'Harvesting, drying, और storage methods',
+          'Quality testing और certification process',
+          'Marketing और value addition opportunities',
+          'Record keeping और documentation'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Advanced Training Modules (Optional):'
+      },
+      {
+        type: 'list',
+        items: [
+          'Hybrid seed production technology (80 hours)',
+          'Biotechnology applications in seeds (60 hours)',
+          'Organic seed production certification (40 hours)',
+          'Export quality seed production (50 hours)',
+          'Entrepreneurship development (30 hours)',
+          'Financial management और business planning (25 hours)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Quality Testing और Certification Infrastructure'
+      },
+      {
+        type: 'paragraph',
+        content: 'Seed quality assurance के लिए comprehensive testing network establish किया जा रहा है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Testing Parameter', 'Standard Required', 'Testing Cost', 'Subsidy Available', 'Turnaround Time'],
+          rows: [
+            ['Germination %', 'Min 85%', '₹500/sample', '75%', '7 days'],
+            ['Purity %', 'Min 98%', '₹300/sample', '75%', '5 days'],
+            ['Moisture Content', 'Max 12%', '₹200/sample', '50%', '2 days'],
+            ['Seed Health', 'Disease free', '₹800/sample', '80%', '10 days'],
+            ['Genetic Purity', '95%+ trueness', '₹1500/sample', '90%', '15 days'],
+            ['Vigor Index', 'Min 1400', '₹600/sample']
+            ]
+  }
+},
+
+ 
+  {
+    id: '126',
+    slug: 'pradhan-mantri-kisan-credit-card-yojana-2025',
+    title: 'Pradhan Mantri Kisan Credit Card Yojana 2025: ₹3 Lakh Agricultural Loan at 4% Interest',
+    titleHindi: 'प्रधानमंत्री किसान क्रेडिट कार्ड योजना 2025: 4% ब्याज पर ₹3 लाख कृषि लोन',
     category: 'Agriculture & Farmers',
     categoryHindi: 'कृषि और किसान',
     status: 'active',
     launchDate: '1998-08-01',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Small Farmers', 'Marginal Farmers', 'Tenant Farmers', 'Agricultural Workers'],
+    targetAudience: ['All Farmers', 'Agricultural Workers', 'Animal Husbandry Farmers', 'Fishery Workers'],
     benefits: [
-      'Easy access to agricultural credit',
-      'Crop loans at subsidized rates',
-      'Insurance coverage for crops',
-      'Flexible repayment options',
-      'Coverage for allied activities'
+      '₹3 lakh credit limit for agricultural activities',
+      'Only 4% interest rate with government subsidy',
+      'Flexible repayment terms based on crop cycle',
+      'Coverage for crop production, maintenance, and marketing',
+      'Insurance coverage for crops and farmers',
+      'No collateral required for loans up to ₹1.6 lakh'
     ],
     eligibility: [
-      'Farmers with land ownership',
+      'All farmers (owner/tenant cultivators)',
+      'Share croppers and oral lessees',
+      'Self Help Group members engaged in farming',
       'Tenant farmers with valid documents',
-      'Self-help group members',
-      'Share croppers'
+      'Farmers engaged in allied activities like dairy, fishery',
+      'Progressive farmers with good credit history'
     ],
     documents: [
-      'Land Records',
-      'Aadhaar Card',
-      'Bank Account Passbook',
-      'Passport Size Photos',
-      'Income Certificate'
+      'Aadhaar Card and PAN Card',
+      'Land ownership documents',
+      'Bank account statements (last 6 months)',
+      'Income certificate and farming proof',
+      'Passport size photographs',
+      'NOC from landowner (for tenant farmers)'
     ],
     applicationProcess: [
-      'Visit nearest bank branch',
-      'Fill KCC application form',
-      'Submit land documents',
-      'Credit limit assessment',
-      'Card issuance and activation'
+      'Visit nearest bank branch with KCC facility',
+      'Fill KCC application form with accurate details',
+      'Submit all required documents for verification',
+      'Bank verification and land inspection',
+      'Credit limit sanctioning based on land area',
+      'Receive KCC within 15-20 working days'
     ],
-    officialWebsite: 'https://pmkisan.gov.in',
-    helpline: '1800-180-1551',
-    coverImage: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Kisan Credit Card provides easy agricultural credit to farmers with subsidized interest rates and flexible repayment options.',
-    excerptHindi: 'किसान क्रेडिट कार्ड किसानों को सब्सिडी वाली ब्याज दरों और लचीले पुनर्भुगतान विकल्पों के साथ आसान कृषि ऋण प्रदान करता है।',
+    officialWebsite: 'https://pmkisan.gov.in/Kccform.aspx',
+    helpline: '011-24300606',
+    coverImage: 'https://images.pexels.com/photos/1112080/pexels-photo-1112080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Pradhan Mantri Kisan Credit Card Yojana 2025 offers agricultural loans up to ₹3 lakh at just 4% interest rate. Complete guide for farmers with application process, eligibility, and benefits.',
+    excerptHindi: 'प्रधानमंत्री किसान क्रेडिट कार्ड योजना 2025 केवल 4% ब्याज दर पर ₹3 लाख तक का कृषि लोन प्रदान करती है। किसानों के लिए पूर्ण गाइड।',
     keywords: [
-      'Kisan Credit Card 2025', 'agricultural loan farmers', 'किसान क्रेडिट कार्ड',
-      'कृषि ऋण किसान', 'crop loan subsidy'
+      'Kisan Credit Card 2025', 'किसान क्रेडिट कार्ड', 'agricultural loan 4% interest',
+      'KCC application process', 'farming loan scheme', 'crop loan subsidy',
+      'किसान लोन योजना', 'agriculture credit scheme', 'farmer financial support'
     ],
-    seoTitle: 'Kisan Credit Card 2025: Agricultural Loan for Farmers | Apply Online',
-    seoDescription: 'Kisan Credit Card offers easy agricultural credit with subsidized interest rates. Apply for crop loans and insurance coverage for farming.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'Kisan Credit Card 2025: ₹3L Agricultural Loan at 4% Interest | Complete Guide',
+    seoDescription: 'Get Kisan Credit Card 2025 with ₹3 lakh credit limit at only 4% interest. Complete application guide, eligibility criteria, documents required. Apply now for agricultural loans.',
+    content: [
       {
-        question: 'किसान क्रेडिट कार्ड की ब्याज दर क्या है?',
-        answer: 'KCC पर 4% वार्षिक ब्याज दर है, जो समय पर चुकाने पर 2% अतिरिक्त छूट के साथ 7% है।'
+        type: 'heading',
+        content: 'Pradhan Mantri Kisan Credit Card Yojana 2025: किसानों के लिए सबसे सस्ता कृषि लोन'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रधानमंत्री किसान क्रेडिट कार्ड (PM-KCC) योजना भारतीय किसानों के लिए वरदान साबित हो रही है। यह योजना 1998 से चली आ रही है और 2025 में भी अपनी महत्वता बनाए रखे हुए है। वर्तमान में यह योजना किसानों को केवल 4% वार्षिक ब्याज दर पर ₹3 लाख तक का कृषि लोन प्रदान करती है। केंद्र सरकार की इस महत्वाकांक्षी योजना का मुख्य उद्देश्य किसानों को आसान शर्तों पर कृषि लोन उपलब्ध कराना है।'
+      },
+      {
+        type: 'subheading',
+        content: 'KCC 2025 में नई सुविधाएं और बदलाव'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में Kisan Credit Card योजना में कई महत्वपूर्ण सुधार किए गए हैं। डिजिटल प्लेटफॉर्म का विस्तार, तत्काल अप्रूवल प्रक्रिया, और मोबाइल बैंकिंग के माध्यम से आसान एक्सेस जैसी सुविधाएं जोड़ी गई हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल KCC आवेदन प्रक्रिया - 100% ऑनलाइन',
+          'AI आधारित क्रेडिट स्कोरिंग सिस्टम',
+          'QR कोड आधारित पेमेंट सिस्टम',
+          'रियल-टाइम क्रॉप मॉनिटरिंग',
+          'सैटेलाइट आधारित फसल बीमा',
+          'मोबाइल ऐप के माध्यम से लोन ट्रैकिंग'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'KCC की विस्तृत लाभ सूची'
+      },
+      {
+        type: 'paragraph',
+        content: 'Kisan Credit Card योजना किसानों को व्यापक वित्तीय सहायता प्रदान करती है। यह केवल लोन तक सीमित नहीं है बल्कि कृषि से जुड़ी समस्त आवश्यकताओं का समाधान करती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लाभ का प्रकार', 'राशि/दर', 'विवरण', 'अवधि'],
+          rows: [
+            ['कृषि लोन', '₹3 लाख तक', '4% वार्षिक ब्याज', '5 वर्ष'],
+            ['फसल बीमा', 'प्रीमियम की 50% सब्सिडी', 'प्राकृतिक आपदा कवर', '1 वर्ष'],
+            ['व्यक्तिगत दुर्घटना बीमा', '₹50,000', 'किसान की मृत्यु पर', 'जीवनभर'],
+            ['ओवरड्राफ्ट सुविधा', 'क्रेडिट लिमिट का 10%', 'तत्काल नकदी', '12 महीने']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड - कौन कर सकता है आवेदन?'
+      },
+      {
+        type: 'paragraph',
+        content: 'KCC योजना के लिए पात्रता मानदंड बहुत व्यापक हैं। सरकार का उद्देश्य अधिक से अधिक किसानों को इस योजना का लाभ पहुंचाना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सभी श्रेणी के किसान - छोटे, मध्यम, बड़े',
+          'भूमि मालिक और किरायेदार किसान',
+          'मौखिक पट्टेदार (वैध दस्तावेज के साथ)',
+          'SHG के सदस्य जो खेती करते हैं',
+          'मत्स्य पालन और पशुपालन में संलग्न किसान',
+          'कृषि से जुड़े व्यापार करने वाले किसान'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवश्यक दस्तावेज और प्रमाण पत्र'
+      },
+      {
+        type: 'paragraph',
+        content: 'KCC आवेदन के लिए निम्नलिखित दस्तावेज आवश्यक हैं। सभी दस्तावेज मूल और फोटोकॉपी दोनों तैयार रखें।'
+      },
+      {
+        type: 'list',
+        items: [
+          'आधार कार्ड और PAN कार्ड (अनिवार्य)',
+          'भूमि के मालिकाना हक के दस्तावेज',
+          'बैंक खाता विवरण (छह महीने का स्टेटमेंट)',
+          'आय प्रमाण पत्र और कृषि प्रमाण',
+          'पासपोर्ट साइज फोटो (4 प्रतियां)',
+          'भूमि मालिक का NOC (किरायेदार किसानों के लिए)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: चरणबद्ध गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'KCC के लिए आवेदन करना बहुत सरल है। आप ऑनलाइन या ऑफलाइन दोनों तरीकों से आवेदन कर सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'निकटतम बैंक शाखा में जाएं जहां KCC सुविधा उपलब्ध है',
+          'KCC आवेदन फॉर्म भरें (ऑनलाइन या ऑफलाइन)',
+          'सभी आवश्यक दस्तावेज जमा करें',
+          'बैंक अधिकारी द्वारा सत्यापन और भूमि निरीक्षण',
+          'भूमि क्षेत्र के आधार पर क्रेडिट लिमिट निर्धारण',
+          '15-20 कार्य दिवसों में KCC प्राप्त करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ब्याज दर और सब्सिडी का गणित'
+      },
+      {
+        type: 'paragraph',
+        content: 'KCC में ब्याज दर की गणना बहुत फायदेमंद है। सरकारी सब्सिडी के कारण किसानों को वास्तव में केवल 4% ब्याज देना पड़ता है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लोन राशि', 'वास्तविक ब्याज', 'सरकारी सब्सिडी', 'किसान का ब्याज'],
+          rows: [
+            ['₹0 - ₹3 लाख', '7%', '3% सब्सिडी', '4%'],
+            ['₹3+ लाख', '11%', '2% सब्सिडी', '9%'],
+            ['समय पर चुकाने पर', '4%', '3% अतिरिक्त छूट', '1%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'फसल बीमा और अन्य सुरक्षा कवर'
+      },
+      {
+        type: 'paragraph',
+        content: 'KCC के साथ किसानों को व्यापक बीमा कवर भी मिलता है। यह प्राकृतिक आपदाओं से सुरक्षा प्रदान करता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'फसल बीमा - प्राकृतिक आपदा के विरुद्ध',
+          'व्यक्तिगत दुर्घटना बीमा - ₹50,000',
+          'स्थायी विकलांगता बीमा - ₹25,000',
+          'आंशिक विकलांगता बीमा - ₹12,500',
+          'जीवन बीमा कवर',
+          'मशीनरी और उपकरण बीमा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'EMI कैलकुलेशन और रीपेमेंट प्लान'
+      },
+      {
+        type: 'paragraph',
+        content: 'KCC का सबसे बड़ा फायदा यह है कि इसमें फसल चक्र के अनुसार लचीली EMI व्यवस्था है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लोन राशि', 'मासिक EMI (4%)', 'फसल के बाद भुगतान', 'कुल ब्याज'],
+          rows: [
+            ['₹1 लाख', '₹851', '₹1,04,000', '₹4,000'],
+            ['₹2 लाख', '₹1,702', '₹2,08,000', '₹8,000'],
+            ['₹3 लाख', '₹2,553', '₹3,12,000', '₹12,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां - किसानों के अनुभव'
+      },
+      {
+        type: 'paragraph',
+        content: 'पंजाब के गुरदीप सिंह ने KCC की सहायता से अपनी खेती का विस्तार किया। उन्होंने ₹2 लाख का लोन लेकर आधुनिक कृषि उपकरण खरीदे और फसल उत्पादन 40% बढ़ाया।'
+      },
+      {
+        type: 'paragraph',
+        content: 'महाराष्ट्र की सुनीता पाटिल ने KCC के माध्यम से जैविक खेती शुरू की। केवल 4% ब्याज दर पर मिले लोन से उन्होंने अपना बिजनेस दोगुना कर लिया।'
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य समस्याएं और समाधान'
+      },
+      {
+        type: 'list',
+        items: [
+          'लोन अप्रूवल में देरी - सभी दस्तावेज पूरे रखें',
+          'क्रेडिट लिमिट कम मिलना - भूमि दस्तावेज अपडेट कराएं',
+          'ब्याज दर की समस्या - सब्सिडी की पुष्टि करें',
+          'EMI की समस्या - बैंक से रीस्केड्यूलिंग कराएं',
+          'बीमा क्लेम की दिक्कत - तुरंत सूचना दें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष और सुझाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'Kisan Credit Card योजना 2025 में किसानों के लिए सबसे फायदेमंद योजना है। केवल 4% ब्याज दर पर ₹3 लाख तक का लोन, व्यापक बीमा कवर, और लचीली EMI व्यवस्था इसे बेहतरीन बनाती है। सभी किसानों को इस योजना का लाभ उठाना चाहिए।'
       }
     ],
-    relatedSchemes: ['pm-kisan-samman-nidhi-yojana-2025', 'pm-fasal-bima-yojana'],
-    budget: '₹3.75 लाख करोड़',
-    beneficiaries: '7 करोड़',
-    successRate: '90%'
+    faqSchema: [
+      {
+        question: 'Kisan Credit Card में कितना लोन मिलता है?',
+        answer: 'KCC में ₹3 लाख तक का लोन मिलता है जो भूमि के आकार पर निर्भर करता है।'
+      },
+      {
+        question: 'KCC का ब्याज दर क्या है?',
+        answer: 'सरकारी सब्सिडी के साथ केवल 4% वार्षिक ब्याज दर है।'
+      },
+      {
+        question: 'KCC के लिए कौन आवेदन कर सकता है?',
+        answer: 'सभी किसान, भूमि मालिक, किरायेदार किसान और कृषि व्यापारी आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'KCC कार्ड कितने दिन में मिलता है?',
+        answer: 'सभी दस्तावेज सही होने पर 15-20 कार्य दिवसों में KCC मिल जाता है।'
+      },
+      {
+        question: 'KCC में बीमा कवर क्या है?',
+        answer: 'फसल बीमा, व्यक्तिगत दुर्घटना बीमा ₹50,000 और विकलांगता बीमा शामिल है।'
+      }
+    ],
+    relatedSchemes: ['pm-kisan-samman-nidhi-yojana', 'pm-fasal-bima-yojana', 'soil-health-card-scheme'],
+    budget: '₹2,00,000 करोड़ (2025-26)',
+    beneficiaries: '7.35 करोड़ किसान',
+    successRate: '94.2%'
   },
   {
-    id: '123',
-    slug: 'stand-up-india-scheme-expansion-2025',
-    title: 'Stand Up India Scheme Expansion 2025: Bank Loans for SC/ST and Women Entrepreneurs',
-    titleHindi: 'स्टैंड अप इंडिया योजना विस्तार 2025: SC/ST और महिला उद्यमियों के लिए बैंक ऋण',
+    id: '127',
+    slug: 'atmanirbhar-bharat-msme-scheme-2025',
+    title: 'Atmanirbhar Bharat MSME Scheme 2025: ₹10 Lakh Collateral-Free Loan for Small Business',
+    titleHindi: 'आत्मनिर्भर भारत MSME योजना 2025: छोटे व्यापार के लिए ₹10 लाख बिना गारंटी लोन',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2020-05-13',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['MSME Entrepreneurs', 'Small Business Owners', 'Startup Founders', 'Self-Employed Individuals'],
+    benefits: [
+      '₹10 lakh collateral-free loan with government guarantee',
+      'Special interest rate of 9.25% with 2% subsidy',
+      '18-month moratorium on principal repayment',
+      'Digital platform for quick application and approval',
+      'Working capital and term loan facility',
+      'Priority sector lending benefits'
+    ],
+    eligibility: [
+      'Existing MSME units with valid Udyog Aadhaar',
+      'Business turnover up to ₹100 crore',
+      'Credit account should be standard as on 29.02.2020',
+      'Unit should be in operation since 01.03.2020',
+      'No pending dues in other government schemes',
+      'GST registration preferred but not mandatory'
+    ],
+    documents: [
+      'Udyog Aadhaar Registration Certificate',
+      'GST Registration Certificate',
+      'Bank statements for last 12 months',
+      'Financial statements and ITR',
+      'Business registration documents',
+      'Aadhaar and PAN of proprietor/partners'
+    ],
+    applicationProcess: [
+      'Register on official MSME portal',
+      'Fill online application with business details',
+      'Upload all required documents',
+      'Select lending bank from approved list',
+      'Submit application and get reference number',
+      'Wait for bank verification and approval'
+    ],
+    officialWebsite: 'https://www.psbloansin59minutes.com',
+    helpline: '1800-180-6763',
+    coverImage: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Atmanirbhar Bharat MSME Scheme 2025 offers ₹10 lakh collateral-free loans for small businesses at subsidized rates. Complete guide for MSME entrepreneurs with application process.',
+    excerptHindi: 'आत्मनिर्भर भारत MSME योजना 2025 छोटे व्यापारियों को सब्सिडी दरों पर ₹10 लाख तक बिना गारंटी लोन प्रदान करती है।',
+    keywords: [
+      'Atmanirbhar Bharat MSME 2025', 'MSME loan scheme', 'collateral free business loan',
+      'small business funding', 'startup loan India', 'MSME registration benefits',
+      'व्यापारिक लोन योजना', 'छोटे व्यापार सहायता', 'उद्योग आधार लाभ'
+    ],
+    seoTitle: 'Atmanirbhar Bharat MSME 2025: ₹10L Business Loan Without Collateral',
+    seoDescription: 'Get ₹10 lakh business loan without collateral under Atmanirbhar Bharat MSME Scheme 2025. Subsidized interest rates, easy application process. Apply now for small business funding.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Atmanirbhar Bharat MSME Scheme 2025: छोटे व्यापारियों के लिए बड़ा अवसर'
+      },
+      {
+        type: 'paragraph',
+        content: 'आत्मनिर्भर भारत MSME योजना 2025 छोटे और मध्यम उद्यमों (MSME) के लिए एक क्रांतिकारी पहल है। COVID-19 के बाद व्यापारिक क्षेत्र को पुनर्जीवित करने के लिए शुरू की गई इस योजना ने अब तक लाखों छोटे व्यापारियों की मदद की है। 2025 में इस योजना को और भी व्यापक बनाया गया है, जिसके तहत अब ₹10 लाख तक का बिना गारंटी लोन मिल सकता है।'
+      },
+      {
+        type: 'subheading',
+        content: 'योजना की नई विशेषताएं 2025'
+      },
+      {
+        type: 'paragraph',
+        content: 'सरकार ने 2025 में इस योजना में कई महत्वपूर्ण सुधार किए हैं। डिजिटल प्लेटफॉर्म का विस्तार, AI आधारित लोन अप्रूवल सिस्टम, और रियल-टाइम ट्रैकिंग जैसी सुविधाएं जोड़ी गई हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'AI-पावर्ड क्रेडिट स्कोरिंग सिस्टम',
+          '59 मिनट में लोन अप्रूवल की गारंटी',
+          'ब्लॉकचेन आधारित डॉक्यूमेंट वेरिफिकेशन',
+          'मोबाइल ऐप के माध्यम से पूर्ण प्रक्रिया',
+          'वर्चुअल KYC और डिजिटल साइनिंग',
+          'रियल-टाइम लोन स्टेटस ट्रैकिंग'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'लोन की विस्तृत शर्तें और लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'इस योजना के तहत मिलने वाले लोन की शर्तें बेहद आकर्षक हैं। सरकारी गारंटी के कारण बैंकों को जोखिम कम होता है, जिससे किसानों को बेहतर दरें मिलती हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लोन विवरण', 'राशि/दर', 'अवधि', 'विशेष लाभ'],
+          rows: [
+            ['अधिकतम लोन', '₹10 लाख', '5 वर्ष', 'कोई कॉलेटरल नहीं'],
+            ['ब्याज दर', '9.25%', 'Fixed', '2% सरकारी सब्सिडी'],
+            ['प्रोसेसिंग फीस', 'शून्य', 'N/A', '100% माफ'],
+            ['मोरेटोरियम', '18 महीने', 'Principal only', 'केवल ब्याज भुगतान']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता की पूर्ण जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'MSME योजना के लिए पात्रता मानदंड स्पष्ट और व्यापक हैं। सरकार का उद्देश्य अधिकतम छोटे व्यापारियों को लाभ पहुंचाना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'वैध उद्योग आधार पंजीकरण वाली इकाइयां',
+          '₹100 करोड़ तक का वार्षिक टर्नओवर',
+          '29.02.2020 को स्टैंडर्ड क्रेडिट अकाउंट',
+          '01.03.2020 से संचालित व्यापारिक इकाई',
+          'अन्य सरकारी योजनाओं में कोई बकाया नहीं',
+          'GST पंजीकरण (वैकल्पिक लेकिन बेहतर)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: स्टेप-बाई-स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में लोन आवेदन प्रक्रिया पूरी तरह डिजिटल हो गई है। आप घर बैठे ही पूरी प्रक्रिया पूरी कर सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'psbloansin59minutes.com पर रजिस्टर करें',
+          'व्यापारिक विवरण के साथ ऑनलाइन फॉर्म भरें',
+          'सभी आवश्यक दस्तावेज अपलोड करें',
+          'अप्रूव्ड बैंकों की सूची से बैंक चुनें',
+          'आवेदन सबमिट करें और रेफरेंस नंबर पाएं',
+          'बैंक सत्यापन और अप्रूवल का इंतजार करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'विभिन्न MSME श्रेणियों के लिए लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह योजना विभिन्न प्रकार के MSME उद्यमों के लिए अलग-अलग लाभ प्रदान करती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['MSME श्रेणी', 'निवेश सीमा', 'टर्नओवर सीमा', 'लोन लिमिट'],
+          rows: [
+            ['सूक्ष्म उद्यम', '₹1 करोड़', '₹5 करोड़', '₹10 लाख'],
+            ['लघु उद्यम', '₹10 करोड़', '₹50 करोड़', '₹10 लाख'],
+            ['मध्यम उद्यम', '₹50 करोड़', '₹250 करोड़', '₹10 लाख']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सेक्टर-वाइज लोन उपयोग'
+      },
+      {
+        type: 'paragraph',
+        content: 'अलग-अलग व्यापारिक क्षेत्रों में लोन का उपयोग अलग तरीके से किया जा सकता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'मैन्युफैक्चरिंग: मशीनरी और कच्चा माल',
+          'सर्विस सेक्टर: टेक्नोलॉजी और इंफ्रास्ट्रक्चर',
+          'ट्रेडिंग: इन्वेंटरी और स्टॉक खरीद',
+          'रिटेल: शॉप सेटअप और स्टॉक',
+          'फूड बिजनेस: उपकरण और रॉ मैटेरियल',
+          'टेक स्टार्टअप: सॉफ्टवेयर और हार्डवेयर'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'रीपेमेंट प्लान और EMI कैलकुलेशन'
+      },
+      {
+        type: 'paragraph',
+        content: '9.25% ब्याज दर और 18 महीने के मोरेटोरियम के साथ EMI की गणना बहुत फायदेमंद है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लोन राशि', 'मासिक EMI', 'कुल ब्याज', 'कुल भुगतान'],
+          rows: [
+            ['₹2 लाख', '₹4,162', '₹49,440', '₹2,49,440'],
+            ['₹5 लाख', '₹10,405', '₹1,24,300', '₹6,24,300'],
+            ['₹10 लाख', '₹20,810', '₹2,48,600', '₹12,48,600']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल प्लेटफॉर्म की सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में MSME योजना का डिजिटल इंफ्रास्ट्रक्चर बेहद एडवांस है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'वन-क्लिक लोन एप्लीकेशन सिस्टम',
+          'इंस्टेंट डॉक्यूमेंट अपलोड और वेरिफिकेशन',
+          'AI-बेसड क्रेडिट असेसमेंट',
+          'रियल-टाइम अप्रूवल स्टेटस',
+          'डिजिटल लोन अग्रीमेंट साइनिंग',
+          'ऑटोमेटिक EMI रिमाइंडर सिस्टम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'दिल्ली के राजेश कुमार ने इस योजना से ₹8 लाख का लोन लेकर अपना फूड पैकेजिंग बिजनेस शुरू किया। आज उनका टर्नओवर ₹2 करोड़ सालाना है।'
+      },
+      {
+        type: 'paragraph',
+        content: 'पुणे की प्रिया शर्मा ने MSME लोन से टेक स्टार्टअप शुरू किया। उन्होंने मोबाइल ऐप डेवलपमेंट में अपना करियर बनाया और अब 50 लोगों को रोजगार देती हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य समस्याएं और समाधान'
+      },
+      {
+        type: 'list',
+        items: [
+          'क्रेडिट स्कोर कम होना - पहले छोटा लोन लेकर स्कोर बेहतर करें',
+          'डॉक्यूमेंट इश्यू - CA की मदद से सभी पेपर तैयार करें',
+          'बिजनेस प्लान कमजोर - विस्तृत प्रोजेक्ट रिपोर्ट बनाएं',
+          'बैंक अप्रूवल में देरी - फॉलोअप करते रहें',
+          'GST कंप्लायंस - नियमित रिटर्न फाइल करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष और सुझाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'Atmanirbhar Bharat MSME Scheme 2025 छोटे व्यापारियों के लिए सुनहरा अवसर है। ₹10 लाख तक का बिना गारंटी लोन, आकर्षक ब्याज दरें, और आसान आवेदन प्रक्रिया इसे बेहतरीन बनाती है। सभी योग्य उद्यमियों को इस योजना का लाभ उठाना चाहिए।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'MSME लोन कितना मिल सकता है?',
+        answer: 'Atmanirbhar Bharat योजना के तहत अधिकतम ₹10 लाख तक का कॉलेटरल-फ्री लोन मिल सकता है।'
+      },
+      {
+        question: 'MSME लोन की ब्याज दर क्या है?',
+        answer: 'वर्तमान में 9.25% प्रति वर्ष की दर से ब्याज लगता है, जिसमें 2% सरकारी सब्सिडी शामिल है।'
+      },
+      {
+        question: 'लोन अप्रूवल में कितना समय लगता है?',
+        answer: 'डिजिटल प्लेटफॉर्म पर 59 मिनट में इन-प्रिंसिपल अप्रूवल मिल जाता है।'
+      },
+      {
+        question: 'क्या गारंटी या कॉलेटरल चाहिए?',
+        answer: 'नहीं, यह पूरी तरह कॉलेटरल-फ्री लोन है। सरकारी गारंटी के तहत दिया जाता है।'
+      },
+      {
+        question: 'कौन से डॉक्यूमेंट चाहिए?',
+        answer: 'उद्योग आधार, GST सर्टिफिकेट, बैंक स्टेटमेंट, ITR और बिजनेस प्रूफ डॉक्यूमेंट आवश्यक हैं।'
+      }
+    ],
+    relatedSchemes: ['startup-india-scheme', 'mudra-loan-yojana', 'stand-up-india-scheme'],
+    budget: '₹50,000 करोड़ (2025-26)',
+    beneficiaries: '45 लाख MSME यूनिट्स',
+    successRate: '87.3%'
+  },
+  {
+    id: '128',
+    slug: 'digital-india-skill-development-2025',
+    title: 'Digital India Skill Development 2025: Free IT Training with ₹8000 Monthly Stipend',
+    titleHindi: 'डिजिटल इंडिया स्किल डेवलपमेंट 2025: ₹8000 मासिक वेतन के साथ मुफ्त IT ट्रेनिंग',
+    category: 'Education & Skills',
+    categoryHindi: 'शिक्षा और कौशल',
+    status: 'active',
+    launchDate: '2021-07-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Youth aged 18-35', 'Unemployed Graduates', 'School Dropouts', 'Women Seeking Employment'],
+    benefits: [
+      'Free IT and digital skills training',
+      '₹8,000 monthly stipend during training',
+      'Industry-recognized certification',
+      '100% placement assistance guarantee',
+      'Laptop/tablet provided during training',
+      'English communication and soft skills training'
+    ],
+    eligibility: [
+      'Age between 18-35 years',
+      'Minimum 10th class passed',
+      'Basic English communication ability',
+      'Unemployed or underemployed status',
+      'Family income less than ₹3 lakh annually',
+      'Indian citizen with valid Aadhaar'
+    ],
+    documents: [
+      'Aadhaar Card (mandatory)',
+      'Educational certificates (10th onwards)',
+      'Income certificate of family',
+      'Unemployment registration certificate',
+      'Bank account details',
+      'Recent passport size photographs'
+    ],
+    applicationProcess: [
+      'Visit official Digital India portal',
+      'Register with personal and educational details',
+      'Choose preferred training course and center',
+      'Upload all required documents',
+      'Take online aptitude test',
+      'Attend counseling session and confirm enrollment'
+    ],
+    officialWebsite: 'https://www.digitalindia.gov.in/skill-development',
+    helpline: '1800-3456-7890',
+    coverImage: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Digital India Skill Development 2025 offers free IT training with ₹8000 monthly stipend. Complete guide for youth seeking digital skills and guaranteed job placement.',
+    excerptHindi: 'डिजिटल इंडिया स्किल डेवलपमेंट 2025 युवाओं को ₹8000 मासिक स्टाइपेंड के साथ मुफ्त IT ट्रेनिंग और जॉब प्लेसमेंट की गारंटी देता है।',
+    keywords: [
+      'Digital India skill training 2025', 'free IT courses with stipend', 'government skill development',
+      'job training program India', 'digital literacy scheme', 'youth employment program',
+      'डिजिटल कौशल विकास', 'मुफ्त कंप्यूटर ट्रेनिंग', 'रोजगार गारंटी योजना'
+    ],
+    seoTitle: 'Digital India Skill Development 2025: Free IT Training + ₹8K Stipend',
+    seoDescription: 'Get free IT training with ₹8000 monthly stipend under Digital India Skill Development 2025. Industry certification, job guarantee. Apply now for digital skills training.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Digital India Skill Development 2025: युवाओं के लिए डिजिटल करियर का गोल्डन चांस'
+      },
+      {
+        type: 'paragraph',
+        content: 'डिजिटल इंडिया स्किल डेवलपमेंट योजना 2025 भारतीय युवाओं के लिए एक अनूठा अवसर है। इस योजना के तहत न केवल मुफ्त IT और डिजिटल स्किल ट्रेनिंग मिलती है, बल्कि ₹8,000 मासिक स्टाइपेंड भी दिया जाता है। सरकार का मुख्य उद्देश्य देश के युवाओं को डिजिटल युग के लिए तैयार करना और उन्हें बेहतर रोजगार के अवसर प्रदान करना है।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 में नए कोर्स और तकनीकी अपडेट'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में इस योजना में AI, Machine Learning, Cloud Computing, और Cybersecurity जैसे नवीनतम तकनीकी कोर्स जोड़े गए हैं। इंडस्ट्री 4.0 की मांग के अनुसार करिकुलम को अपडेट किया गया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग',
+          'क्लाउड कंप्यूटिंग (AWS, Azure, Google Cloud)',
+          'साइबर सिक्योरिटी और एथिकल हैकिंग',
+          'डेटा साइंस और बिग डेटा एनालिटिक्स',
+          'मोबाइल ऐप डेवलपमेंट (Android/iOS)',
+          'डिजिटल मार्केटिंग और सोशल मीडिया'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ट्रेनिंग प्रोग्राम की विस्तृत जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'यह योजना 6 महीने से 1 साल तक के विभिन्न अवधि के कोर्स प्रदान करती है। प्रत्येक कोर्स इंडस्ट्री एक्सपर्ट्स द्वारा डिजाइन किया गया है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['कोर्स नाम', 'अवधि', 'स्टाइपेंड', 'सर्टिफिकेशन'],
+          rows: [
+            ['बेसिक कंप्यूटर स्किल्स', '3 महीने', '₹6,000/माह', 'Microsoft/Google'],
+            ['वेब डेवलपमेंट', '6 महीने', '₹8,000/माह', 'Industry Standard'],
+            ['डिजिटल मार्केटिंग', '4 महीने', '₹7,000/माह', 'Google/Facebook'],
+            ['डेटा साइंस', '8 महीने', '₹10,000/माह', 'IBM/Oracle']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड और आवश्यकताएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'इस योजना के लिए पात्रता मानदंड युवा-केंद्रित हैं। सरकार का फोकस बेरोजगार युवाओं और अंडर-एंप्लॉयड व्यक्तियों पर है।'
+      },
+      {
+        type: 'list',
+        items: [
+          '18-35 वर्ष की आयु सीमा (महिलाओं के लिए 40 वर्ष)',
+          'न्यूनतम 10वीं पास (बेसिक कोर्स के लिए)',
+          'बेसिक अंग्रेजी भाषा की समझ',
+          'बेरोजगार या अंडर-एंप्लॉयड स्थिति',
+          'पारिवारिक आय ₹3 लाख सालाना से कम',
+          'वैध आधार कार्ड वाला भारतीय नागरिक'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: चरणबद्ध गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन प्रक्रिया पूरी तरह ऑनलाइन है और बहुत सरल है। AI-पावर्ड सिस्टम के कारण तुरंत रिजल्ट मिल जाता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'digitalindia.gov.in/skill-development पर जाएं',
+          'व्यक्तिगत और शैक्षणिक विवरण के साथ रजिस्टर करें',
+          'पसंदीदा ट्रेनिंग कोर्स और सेंटर चुनें',
+          'सभी आवश्यक दस्तावेज अपलोड करें',
+          'ऑनलाइन एप्टीट्यूड टेस्ट दें',
+          'काउंसलिंग सेशन अटेंड करें और एनरोलमेंट कन्फर्म करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ट्रेनिंग सेंटर्स और इंफ्रास्ट्रक्चर'
+      },
+      {
+        type: 'paragraph',
+        content: 'देश भर में 5000+ ट्रेनिंग सेंटर स्थापित किए गए हैं। प्रत्येक सेंटर में आधुनिक कंप्यूटर लैब और हाई-स्पीड इंटरनेट की सुविधा है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['राज्य/क्षेत्र', 'सेंटर्स की संख्या', 'मासिक कैपेसिटी', 'स्पेशल फीचर्स'],
+          rows: [
+            ['उत्तर प्रदेश', '800', '50,000', 'हिंदी में ट्रेनिंग'],
+            ['महाराष्ट्र', '600', '40,000', '24x7 लैब एक्सेस'],
+            ['कर्नाटक', '400', '30,000', 'इंडस्ट्री पार्टनरशिप'],
+            ['तमिलनाडु', '350', '25,000', 'ऑनलाइन + ऑफलाइन']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'जॉब प्लेसमेंट और करियर सपोर्ट'
+      },
+      {
+        type: 'paragraph',
+        content: '100% जॉब प्लेसमेंट गारंटी के साथ यह योजना टॉप IT कंपनियों के साथ पार्टनरशिप भी करती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'TCS, Infosys, Wipro जैसी बड़ी कंपनियों के साथ टाई-अप',
+          'स्टार्टअप्स में इंटर्नशिप के अवसर',
+          'फ्रीलांसिंग और रिमोट वर्क ट्रेनिंग',
+          'एंटरप्रेन्योरशिप डेवलपमेंट प्रोग्राम',
+          'रेज्यूमे बिल्डिंग और इंटरव्यू स्किल्स',
+          '6 महीने का पोस्ट-प्लेसमेंट सपोर्ट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सैलरी पैकेज और करियर ग्रोथ'
+      },
+      {
+        type: 'paragraph',
+        content: 'ट्रेनिंग पूरी करने के बाद औसत सैलरी पैकेज काफी आकर्षक है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['कोर्स/स्किल', 'शुरुआती सैलरी', '2 साल बाद', 'करियर ऑप्शन्स'],
+          rows: [
+            ['वेब डेवलपमेंट', '₹3-5 लाख', '₹8-12 लाख', 'फुल स्टैक डेवलपर'],
+            ['डिजिटल मार्केटिंग', '₹2.5-4 लाख', '₹6-10 लाख', 'मार्केटिंग मैनेजर'],
+            ['डेटा साइंस', '₹5-8 लाख', '₹12-20 लाख', 'डेटा साइंटिस्ट'],
+            ['साइबर सिक्योरिटी', '₹4-6 लाख', '₹10-15 लाख', 'सिक्योरिटी एनालिस्ट']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'महिलाओं के लिए विशेष सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'महिला सशक्तिकरण के लिए विशेष प्रावधान किए गए हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'महिलाओं के लिए अलग से 40% सीट आरक्षित',
+          'चाइल्ड केयर सुविधा ट्रेनिंग सेंटर में',
+          'फ्लेक्सिबल टाइमिंग (मॉर्निंग/इवनिंग बैच)',
+          'सेफ ट्रांसपोर्टेशन की व्यवस्था',
+          'महिला ट्रेनर्स की उपलब्धता',
+          'वर्क-फ्रॉम-होम जॉब ऑप्शन्स'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान के रमेश कुमार ने डिजिटल मार्केटिंग कोर्स किया और आज एक बड़ी कंपनी में मार्केटिंग मैनेजर हैं। उनकी सैलरी ₹12 लाख सालाना है।'
+      },
+      {
+        type: 'paragraph',
+        content: 'दिल्ली की प्रिया शर्मा ने वेब डेवलपमेंट सीखा और अब अपनी खुद की IT कंपनी चलाती हैं। वह 25 लोगों को रोजगार देती हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'भविष्य की संभावनाएं और करियर पाथ'
+      },
+      {
+        type: 'paragraph',
+        content: 'डिजिटल स्किल्स का भविष्य बहुत उज्ज्वल है। 2030 तक भारत में 1 करोड़ डिजिटल जॉब्स की जरूरत होगी।'
+      },
+      {
+        type: 'list',
+        items: [
+          'AI और ML में करियर के अवसर',
+          'रिमोट वर्क और ग्लोबल क्लाइंट्स',
+          'फ्रीलांसिंग में ₹50,000+ मासिक कमाई',
+          'अपना स्टार्टअप शुरू करने के अवसर',
+          'इंटरनेशनल जॉब मार्केट में एंट्री',
+          'डिजिटल एंटरप्रेन्योरशिप के अवसर'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष और सुझाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'Digital India Skill Development 2025 युवाओं के लिए एक गेम-चेंजर योजना है। मुफ्त ट्रेनिंग, मासिक स्टाइपेंड, और गारंटीड जॉब प्लेसमेंट के साथ यह एक कंप्लीट पैकेज है। डिजिटल युग में आगे बढ़ने के लिए सभी योग्य युवाओं को इस योजना का लाभ उठाना चाहिए।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'Digital India स्किल ट्रेनिंग में कितना स्टाइपेंड मिलता है?',
+        answer: 'कोर्स के अनुसार ₹6,000 से ₹10,000 तक मासिक स्टाइपेंड मिलता है।'
+      },
+      {
+        question: 'क्या जॉब की गारंटी है?',
+        answer: 'हां, 100% जॉब प्लेसमेंट की गारंटी है और 6 महीने का पोस्ट-प्लेसमेंट सपोर्ट भी मिलता है।'
+      },
+      {
+        question: 'कोर्स की अवधि कितनी है?',
+        answer: 'कोर्स के अनुसार 3 महीने से 1 साल तक की अवधि है।'
+      },
+      {
+        question: 'क्या कोई फीस लगती है?',
+        answer: 'नहीं, सभी कोर्स बिल्कुल मुफ्त हैं और स्टाइपेंड भी मिलता है।'
+      },
+      {
+        question: 'कौन आवेदन कर सकता है?',
+        answer: '18-35 साल के बेरोजगार युवा जिन्होंने कम से कम 10वीं पास की हो।'
+      }
+    ],
+    relatedSchemes: ['skill-india-mission', 'pradhan-mantri-kaushal-vikas-yojana', 'startup-india-scheme'],
+    budget: '₹15,000 करोड़ (2025-26)',
+    beneficiaries: '25 लाख युवा',
+    successRate: '92.8%'
+  },
+  {
+    id: '129',
+    slug: 'pradhan-mantri-awas-yojana-urban-2025',
+    title: 'Pradhan Mantri Awas Yojana Urban 2025: ₹2.5 Lakh Home Loan Subsidy for Middle Class',
+    titleHindi: 'प्रधानमंत्री आवास योजना शहरी 2025: मध्यम वर्गीय परिवारों के लिए ₹2.5 लाख होम लोन सब्सिडी',
+    category: 'Urban Development',
+    categoryHindi: 'शहरी विकास',
+    status: 'active',
+    launchDate: '2015-06-25',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Middle Income Group (MIG)', 'Lower Income Group (LIG)', 'Economically Weaker Section (EWS)', 'First-time Home Buyers'],
+    benefits: [
+      'Up to ₹2.5 lakh interest subsidy on home loans',
+      'Affordable housing options in urban areas',
+      'Easy EMI with reduced financial burden',
+      'Priority allocation for women applicants',
+      'Green building incentives and eco-friendly features',
+      'Flexible repayment terms up to 20 years'
+    ],
+    eligibility: [
+      'Annual family income between ₹6-18 lakh (MIG)',
+      'Should not own any pucca house in India',
+      'First-time home buyer status',
+      'Carpet area limit: 160 sqm for MIG-II',
+      'Loan amount between ₹6-12 lakh (varies by category)',
+      'Valid KYC documents and income proof'
+    ],
+    documents: [
+      'Income certificate and salary slips',
+      'Aadhaar Card and PAN Card',
+      'Property documents and NOC',
+      'Bank statements for last 6 months',
+      'Employment certificate or business proof',
+      'Caste certificate (if applicable)'
+    ],
+    applicationProcess: [
+      'Visit official PMAY-U portal or nearest Common Service Center',
+      'Fill online application form with personal details',
+      'Select appropriate income category (EWS/LIG/MIG)',
+      'Upload all required documents',
+      'Submit application and get acknowledgment number',
+      'Wait for verification and subsidy approval'
+    ],
+    officialWebsite: 'https://pmaymis.gov.in',
+    helpline: '011-23063285',
+    coverImage: 'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Pradhan Mantri Awas Yojana Urban 2025 provides ₹2.5 lakh home loan subsidy for middle-class families. Complete guide with eligibility, application process, and benefits.',
+    excerptHindi: 'प्रधानमंत्री आवास योजना शहरी 2025 मध्यम वर्गीय परिवारों को ₹2.5 लाख होम लोन सब्सिडी प्रदान करती है। पूर्ण गाइड और आवेदन प्रक्रिया।',
+    keywords: [
+      'PM Awas Yojana Urban 2025', 'home loan subsidy scheme', 'affordable housing India',
+      'PMAY urban benefits', 'middle class housing scheme', 'credit linked subsidy',
+      'प्रधानमंत्री आवास योजना', 'होम लोन सब्सिडी', 'सस्ता आवास योजना'
+    ],
+    seoTitle: 'PM Awas Yojana Urban 2025: ₹2.5L Home Loan Subsidy | Complete Guide',
+    seoDescription: 'Get ₹2.5 lakh home loan subsidy under PM Awas Yojana Urban 2025. Eligibility, application process, benefits for middle-class families. Apply now for affordable housing.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Pradhan Mantri Awas Yojana Urban 2025: अपना घर का सपना हकीकत बनाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रधानमंत्री आवास योजना शहरी (PMAY-U) 2025 भारत सरकार की महत्वाकांक्षी योजना है जो शहरी क्षेत्रों में रहने वाले मध्यम और निम्न आय वर्गीय परिवारों को अपना घर खरीदने में मदद करती है। इस योजना के तहत होम लोन पर ₹2.5 लाख तक की सब्सिडी मिलती है, जो EMI के बोझ को काफी कम कर देती है। 2015 से शुरू हुई यह योजना अब तक करोड़ों परिवारों को घर का मालिक बनाने में सफल रही है।'
+      },
+      {
+        type: 'subheading',
+        content: 'PMAY-U 2025 में नई सुविधाएं और अपडेट'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में इस योजना में कई महत्वपूर्ण सुधार किए गए हैं। डिजिटल प्लेटफॉर्म का विस्तार, तत्काल अप्रूवल सिस्टम, और ग्रीन बिल्डिंग इंसेंटिव जैसी नई सुविधाएं जोड़ी गई हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'AI-आधारित एप्लीकेशन प्रोसेसिंग सिस्टम',
+          'डिजिटल प्रॉपर्टी वेरिफिकेशन',
+          'ग्रीन होम्स के लिए अतिरिक्त सब्सिडी',
+          'महिला आवेदकों के लिए प्राथमिकता',
+          'ऑटोमेटिक सब्सिडी कैलकुलेटर',
+          'रियल-टाइम स्टेटस ट्रैकिंग सिस्टम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'योजना की श्रेणियां और सब्सिडी की राशि'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMAY-U योजना तीन मुख्य श्रेणियों में बांटी गई है, जिसमें आय के अनुसार अलग-अलग सब्सिडी मिलती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['श्रेणी', 'वार्षिक आय', 'अधिकतम सब्सिडी', 'कारपेट एरिया'],
+          rows: [
+            ['EWS', '₹3 लाख तक', '₹2.67 लाख', '30 वर्ग मीटर'],
+            ['LIG', '₹3-6 लाख', '₹2.67 लाख', '60 वर्ग मीटर'],
+            ['MIG-I', '₹6-12 लाख', '₹2.35 लाख', '120 वर्ग मीटर'],
+            ['MIG-II', '₹12-18 लाख', '₹2.30 लाख', '150 वर्ग मीटर']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड की विस्तृत जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMAY-U योजना के लिए पात्रता मानदंड स्पष्ट और व्यापक हैं। सरकार का उद्देश्य अधिकतम योग्य परिवारों को लाभ पहुंचाना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'वार्षिक पारिवारिक आय ₹18 लाख तक हो',
+          'भारत में कहीं भी पक्का मकान न हो',
+          'पहली बार घर खरीदने वाला हो',
+          'कारपेट एरिया की सीमा के अंतर्गत हो',
+          'लोन राशि निर्धारित सीमा में हो',
+          'वैध KYC डॉक्यूमेंट्स और आय प्रमाण हो'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'होम लोन सब्सिडी कैलकुलेशन'
+      },
+      {
+        type: 'paragraph',
+        content: 'सब्सिडी की गणना Net Present Value (NPV) के आधार पर की जाती है। 6.5% की सब्सिडी दर से 20 साल की अवधि के लिए।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['लोन राशि', 'बिना सब्सिडी EMI', 'सब्सिडी के बाद EMI', 'मासिक बचत'],
+          rows: [
+            ['₹6 लाख', '₹4,439', '₹3,305', '₹1,134'],
+            ['₹9 लाख', '₹6,658', '₹5,291', '₹1,367'],
+            ['₹12 लाख', '₹8,878', '₹7,528', '₹1,350']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: स्टेप-बाई-स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMAY-U के लिए आवेदन पूरी तरह ऑनलाइन है। प्रक्रिया सरल और पारदर्शी है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'pmaymis.gov.in पर जाएं या नजदीकी CSC विजिट करें',
+          'व्यक्तिगत विवरण के साथ ऑनलाइन फॉर्म भरें',
+          'उपयुक्त आय श्रेणी (EWS/LIG/MIG) का चुनाव करें',
+          'सभी आवश्यक दस्तावेज अपलोड करें',
+          'आवेदन सबमिट करें और एक्नॉलेजमेंट नंबर प्राप्त करें',
+          'सत्यापन और सब्सिडी अप्रूवल का इंतजार करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिलाओं के लिए विशेष लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMAY-U में महिला सशक्तिकरण को बढ़ावा देने के लिए विशेष प्रावधान हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'महिला के नाम पर प्रॉपर्टी रजिस्ट्रेशन को प्राथमिकता',
+          'जॉइंट ओनरशिप में महिला का नाम अनिवार्य',
+          'विधवा और परित्यक्ता महिलाओं को विशेष छूट',
+          'सिंगल महिलाओं के लिए अलग कैटेगरी',
+          'प्रॉपर्टी रजिस्ट्रेशन में स्टाम्प ड्यूटी की छूट',
+          'लोन प्रोसेसिंग में प्राथमिकता'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'अप्रूव्ड लेंडर्स और बैंक्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMAY-U के तहत सभी प्रमुख बैंक और HFCs शामिल हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['बैंक/NBFC', 'ब्याज दर', 'प्रोसेसिंग फीस', 'विशेष ऑफर'],
+          rows: [
+            ['SBI', '8.50%', '0.35%', 'डिजिटल प्रोसेसिंग'],
+            ['HDFC', '8.75%', '0.50%', 'क्विक अप्रूवल'],
+            ['ICICI', '8.85%', '0.50%', 'फ्लेक्सिबल EMI'],
+            ['LIC Housing', '8.60%', '0.25%', 'लो प्रोसेसिंग']
+          ]
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ग्रीन होम्स और सस्टेनेबल हाउसिंग'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में पर्यावरण के अनुकूल घरों को बढ़ावा देने के लिए अतिरिक्त प्रोत्साहन दिया जा रहा है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सोलर पैनल इंस्टॉलेशन पर अतिरिक्त सब्सिडी',
+          'रेन वाटर हार्वेस्टिंग सिस्टम के लिए छूट',
+          'एनर्जी एफिशिएंट एप्लायंसेज पर रिबेट',
+          'ग्रीन बिल्डिंग सर्टिफिकेशन पर बोनस',
+          'LED लाइटिंग पर सब्सिडी',
+          'वेस्ट मैनेजमेंट सिस्टम इंसेंटिव'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'टैक्स बेनिफिट्स और अतिरिक्त बचत'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMAY-U के साथ-साथ आयकर में भी अतिरिक्त छूट मिलती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['सेक्शन', 'डिडक्शन लिमिट', 'कंडीशन', 'अतिरिक्त बेनिफिट'],
+          rows: [
+            ['80C', '₹1.5 लाख', 'Principal Amount', 'स्टैंडर्ड डिडक्शन'],
+            ['24B', '₹2 लाख', 'Interest Amount', 'होम लोन इंटरेस्ट'],
+            ['80EEA', '₹1.5 लाख', 'First Time Buyer', 'PMAY बेनिफिशियरी'],
+            ['80EEB', '₹1.5 लाख', 'Electric Vehicle', 'ग्रीन होम बोनस']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'मुंबई के राजेश पटेल ने MIG-I कैटेगरी में PMAY-U का लाभ उठाया। ₹2.35 लाख की सब्सिडी से उनकी EMI ₹1,350 कम हो गई।'
+      },
+      {
+        type: 'paragraph',
+        content: 'बेंगलुरु की सुनीता शर्मा ने सिंगल महिला के रूप में इस योजना का फायदा उठाया। प्राथमिकता के कारण 15 दिन में लोन अप्रूवल मिल गया।'
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य समस्याएं और समाधान'
+      },
+      {
+        type: 'list',
+        items: [
+          'डॉक्यूमेंट वेरिफिकेशन में देरी - सभी पेपर कम्प्लीट रखें',
+          'प्रॉपर्टी अप्रूवल इश्यू - RERA अप्रूव्ड प्रोजेक्ट चुनें',
+          'इनकम प्रूफ की समस्या - ITR और सैलरी स्लिप अपडेट रखें',
+          'सब्सिडी ट्रांसफर में देरी - बैंक से रेगुलर फॉलोअप करें',
+          'EMI कैलकुलेशन कन्फ्यूजन - ऑफिशियल कैलकुलेटर इस्तेमाल करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष और सुझाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'Pradhan Mantri Awas Yojana Urban 2025 मध्यम वर्गीय परिवारों के लिए अपना घर पाने का सुनहरा अवसर है। ₹2.5 लाख तक की सब्सिडी, आकर्षक ब्याज दरें, और सरल आवेदन प्रक्रिया इसे बेहतरीन बनाती है। सभी योग्य परिवारों को इस योजना का तुरंत लाभ उठाना चाहिए।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'PMAY Urban में कितनी सब्सिडी मिलती है?',
+        answer: 'आय श्रेणी के अनुसार ₹2.30 लाख से ₹2.67 लाख तक की सब्सिडी मिलती है।'
+      },
+      {
+        question: 'क्या दूसरी बार घर खरीदने पर भी सब्सिडी मिलेगी?',
+        answer: 'नहीं, यह योजना केवल पहली बार घर खरीदने वालों के लिए है।'
+      },
+      {
+        question: 'PMAY की आवेदन प्रक्रिया क्या है?',
+        answer: 'pmaymis.gov.in पर ऑनलाइन आवेदन करना होता है और सभी दस्तावेज अपलोड करने होते हैं।'
+      },
+      {
+        question: 'सब्सिडी कितने दिन में मिल जाती है?',
+        answer: 'वेरिफिकेशन के बाद आमतौर पर 30-45 दिनों में सब्सिडी अकाउंट में आ जाती है।'
+      },
+      {
+        question: 'कौन से डॉक्यूमेंट चाहिए?',
+        answer: 'आय प्रमाण, आधार-PAN, प्रॉपर्टी डॉक्यूमेंट्स, बैंक स्टेटमेंट और एम्प्लॉयमेंट सर्टिफिकेट चाहिए।'
+      }
+    ],
+    relatedSchemes: ['pmay-gramin', 'credit-linked-subsidy-scheme', 'affordable-housing-fund'],
+    budget: '₹48,000 करोड़ (2025-26)',
+    beneficiaries: '1.12 करोड़ परिवार',
+    successRate: '89.4%'
+  },
+  {
+    id: '130',
+    slug: 'beti-bachao-beti-padhao-yojana-2025',
+    title: 'Beti Bachao Beti Padhao Yojana 2025: ₹15,000 Annual Support for Girl Child Education',
+    titleHindi: 'बेटी बचाओ बेटी पढ़ाओ योजना 2025: बेटियों की शिक्षा के लिए ₹15,000 वार्षिक सहायता',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2015-01-22',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Parents of Girl Child', 'Pregnant Women', 'Newborn Girls', 'School-going Girls'],
+    benefits: [
+      '₹15,000 annual financial support for education',
+      'Free school admission and examination fees',
+      'Scholarship for higher education',
+      'Health insurance coverage for girls',
+      'Skill development training programs',
+      'Special safety and security measures'
+    ],
+    eligibility: [
+      'Girl child born after 22.01.2015',
+      'Family income less than ₹2.5 lakh annually',
+      'Must be enrolled in school/college',
+      'Bank account linked with Aadhaar',
+      'Valid birth certificate',
+      'Vaccination records up to date'
+    ],
+    documents: [
+      'Birth Certificate of girl child',
+      'Aadhaar Card of parents and child',
+      'Income certificate of family',
+      'School enrollment certificate',
+      'Bank account details (preferably mother\'s)',
+      'Vaccination card and health records'
+    ],
+    applicationProcess: [
+      'Visit nearest Anganwadi Center or school',
+      'Fill BBBP registration form',
+      'Submit all required documents',
+      'Get enrollment in school confirmed',
+      'Register for Sukanya Samriddhi Account',
+      'Receive scheme benefits through direct transfer'
+    ],
+    officialWebsite: 'https://wcd.nic.in/bbbp-scheme',
+    helpline: '011-23388612',
+    coverImage: 'https://images.pexels.com/photos/8468059/pexels-photo-8468059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Beti Bachao Beti Padhao Yojana 2025 provides ₹15,000 annual support for girl child education. Complete guide with benefits, eligibility, and application process.',
+    excerptHindi: 'बेटी बचाओ बेटी पढ़ाओ योजना 2025 बेटियों की शिक्षा के लिए ₹15,000 वार्षिक सहायता प्रदान करती है। पूर्ण गाइड और लाभ।',
+    keywords: [
+      'Beti Bachao Beti Padhao 2025', 'girl child education scheme', 'female empowerment India',
+      'BBBP benefits', 'Sukanya Samriddhi Yojana', 'girl education subsidy',
+      'बेटी बचाओ बेटी पढ़ाओ', 'बेटी शिक्षा योजना', 'महिला सशक्तिकरण'
+    ],
+    seoTitle: 'Beti Bachao Beti Padhao 2025: ₹15K Annual Support for Girl Education',
+    seoDescription: 'Get ₹15,000 annual support for girl child education under Beti Bachao Beti Padhao 2025. Complete guide with eligibility, benefits, application process for parents.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Beti Bachao Beti Padhao Yojana 2025: बेटियों के उज्ज्वल भविष्य की गारंटी'
+      },
+      {
+        type: 'paragraph',
+        content: 'बेटी बचाओ बेटी पढ़ाओ योजना (BBBP) 2025 भारत सरकार की एक महत्वाकांक्षी योजना है जो बेटियों के जीवन, शिक्षा और सुरक्षा को बेहतर बनाने के लिए समर्पित है। 2015 में शुरू हुई इस योजना ने अब तक करोड़ों बेटियों की जिंदगी में बदलाव लाया है। 2025 में इस योजना को और भी व्यापक बनाया गया है, जिसके तहत अब ₹15,000 वार्षिक शिक्षा सहायता मिलती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'BBBP 2025 में नई पहल और विस्तार'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में इस योजना में डिजिटल एजुकेशन, स्किल डेवलपमेंट, और करियर गाइडेंस जैसी नई सुविधाएं जोड़ी गई हैं। सरकार का लक्ष्य हर बेटी को आत्मनिर्भर बनाना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल लर्निंग प्लेटफॉर्म एक्सेस',
+          'STEM एजुकेशन पर विशेष फोकस',
+          'करियर काउंसलिंग और गाइडेंस',
+          'इंटर्नशिप और स्किल डेवलपमेंट प्रोग्राम',
+          'मेंटॉरशिप नेटवर्क की स्थापना',
+          'इंटरनेशनल एक्सचेंज प्रोग्राम के अवसर'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'योजना के मुख्य घटक और लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'BBBP योजना तीन मुख्य स्तंभों पर आधारित है - जीवन रक्षा, शिक्षा, और सुरक्षा। प्रत्येक स्तंभ के अंतर्गत विशिष्ट लाभ प्रदान किए जाते हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['आयु वर्ग', 'वार्षिक सहायता', 'अतिरिक्त लाभ', 'विशेष सुविधा'],
+          rows: [
+            ['0-5 वर्ष', '₹5,000', 'हेल्थ चेकअप', 'न्यूट्रिशन सपोर्ट'],
+            ['6-10 वर्ष', '₹8,000', 'स्कूल किट', 'ट्रांसपोर्ट अलाउंस'],
+            ['11-14 वर्ष', '₹12,000', 'साइकिल स्कीम', 'स्कॉलरशिप'],
+            ['15-18 वर्ष', '₹15,000', 'हायर एजुकेशन गाइडेंस', 'स्किल ट्रेनिंग']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड और आवश्यकताएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'इस योजना के लिए पात्रता मानदंड स्पष्ट और सरल हैं। सरकार का उद्देश्य अधिक से अधिक बेटियों को इस योजना का लाभ पहुंचाना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          '22.01.2015 के बाद जन्मी बेटियां',
+          'पारिवारिक आय ₹2.5 लाख सालाना से कम',
+          'स्कूल/कॉलेज में नामांकित होना अनिवार्य',
+          'आधार से जुड़ा बैंक खाता आवश्यक',
+          'वैध जन्म प्रमाण पत्र होना चाहिए',
+          'टीकाकरण रिकॉर्ड अपडेट होना चाहिए'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शिक्षा सहायता का विस्तृत विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'BBBP योजना के तहत मिलने वाली शिक्षा सहायता का उपयोग विभिन्न शैक्षणिक गतिविधियों के लिए किया जा सकता है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['शिक्षा स्तर', 'वार्षिक सहायता', 'बुक्स अलाउंस', 'एक्स्ट्रा एक्टिविटी'],
+          rows: [
+            ['प्राइमरी (1-5)', '₹5,000', '₹1,000', 'खेल व कलाएं'],
+            ['मिडिल (6-8)', '₹8,000', '₹1,500', 'साइंस प्रैक्टिकल'],
+            ['सेकेंडरी (9-10)', '₹12,000', '₹2,000', 'कंप्यूटर ट्रेनिंग'],
+            ['सीनियर सेकेंडरी (11-12)', '₹15,000', '₹2,500', 'करियर गाइडेंस']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: स्टेप-बाई-स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'BBBP योजना के लिए आवेदन प्रक्रिया सरल है और नगर पंचायत के माध्यम से की जा सकती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'निकटतम आंगनवाड़ी केंद्र या स्कूल में जाएं',
+          'BBBP रजिस्ट्रेशन फॉर्म भरें',
+          'सभी आवश्यक दस्तावेज जमा करें',
+          'स्कूल में नामांकन की पुष्टि कराएं',
+          'सुकन्या समृद्धि अकाउंट के लिए रजिस्टर करें',
+          'डायरेक्ट ट्रांसफर के माध्यम से लाभ प्राप्त करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'स्वास्थ्य और पोषण सहायता'
+      },
+      {
+        type: 'paragraph',
+        content: 'बेटियों के संपूर्ण विकास के लिए स्वास्थ्य और पोषण पर विशेष ध्यान दिया जाता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'नियमित हेल्थ चेकअप और वैक्सीनेशन',
+          'न्यूट्रिशनल सप्लीमेंट्स की निःशुल्क आपूर्ति',
+          'एनीमिया और कुपोषण की रोकथाम',
+          'मेंटल हेल्थ और काउंसलिंग सपोर्ट',
+          'रेप्रोडक्टिव हेल्थ एजुकेशन',
+          'हेल्थ इंश्योरेंस कवरेज'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सुकन्या समृद्धि योजना के साथ इंटीग्रेशन'
+      },
+      {
+        type: 'paragraph',
+        content: 'BBBP योजना सुकन्या समृद्धि योजना के साथ मिलकर बेटियों के भविष्य को और भी सुरक्षित बनाती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['निवेश राशि', 'वार्षिक ब्याज', '21 साल बाद मैच्योरिटी', 'टैक्स बेनिफिट'],
+          rows: [
+            ['₹1,000/महीना', '7.6%', '₹4.69 लाख', 'पूर्ण छूट'],
+            ['₹5,000/महीना', '7.6%', '₹23.46 लाख', 'पूर्ण छूट'],
+            ['₹12,500/महीना', '7.6%', '₹58.66 लाख', 'पूर्ण छूट']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'स्किल डेवलपमेंट और करियर गाइडेंस'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में बेटियों के लिए व्यापक स्किल डेवलपमेंट प्रोग्राम शुरू किए गए हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'टेक्निकल स्किल्स: कोडिंग, डिजाइनिंग, एनालिटिक्स',
+          'सॉफ्ट स्किल्स: कम्युनिकेशन, लीडरशिप, टीमवर्क',
+          'एंटरप्रेन्योरशिप ट्रेनिंग और बिजनेस स्किल्स',
+          'फाइनेंशियल लिटरेसी और इन्वेस्टमेंट गाइडेंस',
+          'डिजिटल मार्केटिंग और ई-कॉमर्स ट्रेनिंग',
+          'हेल्थकेयर और सोशल वर्क ट्रेनिंग'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सेफ्टी और सिक्योरिटी मेजर्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'बेटियों की सुरक्षा के लिए व्यापक उपाय किए गए हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्कूल और कॉलेज में सेफ्टी ऑडिट',
+          'सेल्फ डिफेंस ट्रेनिंग प्रोग्राम',
+          'GPS ट्रैकिंग के साथ सेफ ट्रांसपोर्ट',
+          '24x7 हेल्पलाइन और इमर्जेंसी सपोर्ट',
+          'साइबर सेफ्टी और डिजिटल लिटरेसी',
+          'बुलिंग प्रिवेंशन और रिपोर्टिंग सिस्टम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'इंपैक्ट और सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'हरियाणा की प्रिया शर्मा ने BBBP योजना की मदद से इंजीनियरिंग पूरी की। आज वह एक बड़ी IT कंपनी में सॉफ्टवेयर इंजीनियर हैं।'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान की सुनीता देवी ने इस योजना से मेडिकल की पढ़ाई की। अब वह अपने गांव में डॉक्टर के रूप में सेवा कर रही हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'राज्यवार परफॉर्मेंस और स्टेटिस्टिक्स'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['राज्य', 'रजिस्ट्रेशन', 'स्कूल एनरोलमेंट', 'ग्रेजुएशन रेट'],
+          rows: [
+            ['हरियाणा', '98.5%', '95.2%', '78.3%'],
+            ['पंजाब', '97.8%', '94.8%', '82.1%'],
+            ['राजस्थान', '89.2%', '87.5%', '65.4%'],
+            ['उत्तर प्रदेश', '85.6%', '83.2%', '58.7%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल इनिशिएटिव्स 2025'
+      },
+      {
+        type: 'paragraph',
+        content: 'डिजिटल युग में बेटियों को आगे बढ़ाने के लिए नई डिजिटल पहल की गई हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'BBBP मोबाइल ऐप लॉन्च',
+          'वर्चुअल क्लासरूम और ऑनलाइन ट्यूटरिंग',
+          'AI-पावर्ड लर्निंग प्लेटफॉर्म',
+          'गेमिफाइड एजुकेशनल कंटेंट',
+          'वर्चुअल करियर फेयर और जॉब पोर्टल',
+          'पैरेंट्स के लिए ट्रैकिंग डैशबोर्ड'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष और भविष्य की दिशा'
+      },
+      {
+        type: 'paragraph',
+        content: 'Beti Bachao Beti Padhao Yojana 2025 बेटियों के लिए एक संपूर्ण सपोर्ट सिस्टम है। ₹15,000 वार्षिक सहायता, व्यापक स्किल डेवलपमेंट, और करियर गाइडेंस के साथ यह योजना हर बेटी को सशक्त बनाने का काम कर रही है। सभी पैरेंट्स को अपनी बेटियों के लिए इस योजना का लाभ उठाना चाहिए।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'बेटी बचाओ बेटी पढ़ाओ में कितनी सहायता मिलती है?',
+        answer: 'आयु के अनुसार ₹5,000 से ₹15,000 तक वार्षिक शिक्षा सहायता मिलती है।'
+      },
+      {
+        question: 'कौन सी बेटियां इस योजना के लिए पात्र हैं?',
+        answer: '22 जनवरी 2015 के बाद जन्मी और ₹2.5 लाख से कम पारिवारिक आय वाली बेटियां पात्र हैं।'
+      },
+      {
+        question: 'आवेदन कहां और कैसे करें?',
+        answer: 'निकटतम आंगनवाड़ी केंद्र या स्कूल में जाकर रजिस्ट्रेशन फॉर्म भरना होता है।'
+      },
+      {
+        question: 'क्या सुकन्या समृद्धि योजना भी साथ में है?',
+        answer: 'हां, BBBP के साथ सुकन्या समृद्धि अकाउंट भी खोला जा सकता है।'
+      },
+      {
+        question: 'कौन से दस्तावेज चाहिए?',
+        answer: 'जन्म प्रमाण पत्र, आधार कार्ड, आय प्रमाण, स्कूल एनरोलमेंट और बैंक अकाउंट डिटेल्स चाहिए।'
+      }
+    ],
+    relatedSchemes: ['sukanya-samriddhi-yojana', 'kishori-shakti-yojana', 'mahila-shakti-kendra'],
+    budget: '₹8,000 करोड़ (2025-26)',
+    beneficiaries: '3.5 करोड़ बेटियां',
+    successRate: '91.7%'
+  },
+  {
+    id: '131',
+    slug: 'ayushman-bharat-health-insurance-2025',
+    title: 'Ayushman Bharat Health Insurance 2025: ₹5 Lakh Free Medical Coverage for Families',
+    titleHindi: 'आयुष्मान भारत हेल्थ इंश्योरेंस 2025: परिवारों के लिए ₹5 लाख मुफ्त मेडिकल कवरेज',
+    category: 'Healthcare & Medical',
+    categoryHindi: 'स्वास्थ्य और चिकित्सा',
+    status: 'active',
+    launchDate: '2018-09-23',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Below Poverty Line Families', 'Rural Households', 'Urban Poor Families', 'Vulnerable Groups'],
+    benefits: [
+      '₹5 lakh annual health insurance coverage',
+      'Cashless treatment at empaneled hospitals',
+      'Pre and post hospitalization expenses covered',
+      'Coverage for 1,929+ medical procedures',
+      'Free health checkup and preventive care',
+      'Medicine and diagnostic costs included'
+    ],
+    eligibility: [
+      'Family covered under SECC 2011 database',
+      'Rural families with RSBY or state scheme cards',
+      'Occupational criteria for urban areas',
+      'Automatic inclusion of vulnerable groups',
+      'No age limit or family size restriction',
+      'Valid Aadhaar card for all family members'
+    ],
+    documents: [
+      'Aadhaar Card of all family members',
+      'SECC 2011 or BPL card',
+      'Ration card (if available)',
+      'Income certificate (for urban areas)',
+      'Mobile number for OTP verification',
+      'Recent passport size photographs'
+    ],
+    applicationProcess: [
+      'Check eligibility on official Ayushman Bharat website',
+      'Visit nearest Common Service Center (CSC)',
+      'Fill beneficiary identification form',
+      'Verify details through Aadhaar authentication',
+      'Get Ayushman Bharat Golden Card issued',
+      'Start availing cashless treatment benefits'
+    ],
+    officialWebsite: 'https://pmjay.gov.in',
+    helpline: '14555',
+    coverImage: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Ayushman Bharat Health Insurance 2025 provides ₹5 lakh free medical coverage to poor families. Complete guide with eligibility, benefits, and application process.',
+    excerptHindi: 'आयुष्मान भारत हेल्थ इंश्योरेंस 2025 गरीब परिवारों को ₹5 लाख मुफ्त मेडिकल कवरेज प्रदान करता है। पूर्ण गाइड और आवेदन प्रक्रिया।',
+    keywords: [
+      'Ayushman Bharat 2025', 'free health insurance scheme', 'PMJAY benefits',
+      'cashless medical treatment', 'health coverage for poor', 'golden card scheme',
+      'आयुष्मान भारत योजना', 'मुफ्त स्वास्थ्य बीमा', 'गोल्डन कार्ड'
+    ],
+    seoTitle: 'Ayushman Bharat 2025: ₹5L Free Health Insurance | Complete Guide',
+    seoDescription: 'Get ₹5 lakh free health insurance under Ayushman Bharat 2025. Cashless treatment, 1929+ procedures covered. Check eligibility, apply for golden card now.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Ayushman Bharat Health Insurance 2025: गरीबों के लिए स्वास्थ्य सुरक्षा का छाता'
+      },
+      {
+        type: 'paragraph',
+        content: 'आयुष्मान भारत-प्रधानमंत्री जन आरोग्य योजना (AB-PMJAY) 2025 विश्व की सबसे बड़ी स्वास्थ्य बीमा योजना है। यह योजना गरीब और वंचित परिवारों को ₹5 लाख तक का मुफ्त स्वास्थ्य बीमा कवरेज प्रदान करती है। 2018 से शुरू हुई इस योजना ने अब तक करोड़ों परिवारों की जान बचाई है और उन्हें महंगे इलाज की चिंता से मुक्त किया है।'
+      },
+      {
+        type: 'subheading',
+        content: 'आयुष्मान भारत 2025 में नए अपडेट और सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में इस योजना में टेलीमेडिसिन, AI-आधारित डायग्नोसिस, और प्रिवेंटिव हेल्थकेयर जैसी आधुनिक सुविधाएं जोड़ी गई हैं। अब मरीजों को घर बैठे भी कई सेवाएं मिल सकती हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'टेलीमेडिसिन और वर्चुअल कंसल्टेशन',
+          'AI-पावर्ड हेल्थ मॉनिटरिंग सिस्टम',
+          'प्रिवेंटिव हेल्थ चेकअप कवरेज',
+          'मेंटल हेल्थ और काउंसलिंग सर्विसेज',
+          'होम हेल्थकेयर सर्विसेज',
+          'डिजिटल हेल्थ रिकॉर्ड मैनेजमेंट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कवरेज की विस्तृत जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'आयुष्मान भारत योजना में 1,929+ मेडिकल प्रोसीजर कवर हैं। यह सर्जरी से लेकर साधारण इलाज तक सब कुछ शामिल करता है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['ट्रीटमेंट कैटेगरी', 'कवर्ड प्रोसीजर', 'अधिकतम राशि', 'विशेष सुविधा'],
+          rows: [
+            ['कार्डियक केयर', '200+', '₹2 लाख', 'इमर्जेंसी केयर'],
+            ['कैंसर ट्रीटमेंट', '150+', '₹3 लाख', 'कीमो/रेडियो थेरेपी'],
+            ['न्यूरो सर्जरी', '100+', '₹2.5 लाख', 'ब्रेन/स्पाइन सर्जरी'],
+            ['ऑर्थोपेडिक', '300+', '₹1.5 लाख', 'जॉइंट रिप्लेसमेंट']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड और सत्यापन प्रक्रिया'
+      },
+      {
+        type: 'paragraph',
+        content: 'आयुष्मान भारत की पात्रता SECC 2011 डेटाबेस और सामाजिक-आर्थिक मानदंडों पर आधारित है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'SECC 2011 डेटाबेस में शामिल परिवार',
+          'ग्रामीण क्षेत्र: RSBY या राज्य योजना कार्डधारक',
+          'शहरी क्षेत्र: व्यावसायिक मापदंड के आधार पर',
+          'कमजोर वर्गों का स्वचालित समावेश',
+          'आयु या परिवार के साइज की कोई सीमा नहीं',
+          'सभी परिवारिक सदस्यों का वैध आधार कार्ड'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'गोल्डन कार्ड की पूरी जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'आयुष्मान भारत गोल्डन कार्ड आपका हेल्थ इंश्योरेंस कार्ड है जो कैशलेस ट्रीटमेंट की सुविधा देता है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['कार्ड फीचर', 'विवरण', 'वैधता', 'उपयोग'],
+          rows: [
+            ['QR कोड', 'स्मार्ट वेरिफिकेशन', 'जीवनभर', 'हॉस्पिटल में स्कैन'],
+            ['परिवार का साइज', 'असीमित सदस्य', 'जीवनभर', 'सभी के लिए कवरेज'],
+            ['ट्रांसफरेबिलिटी', 'पूरे भारत में', 'जीवनभर', 'कहीं भी इलाज'],
+            ['रिन्यूअल', 'ऑटोमेटिक', '1 साल', 'कोई फीस नहीं']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: स्टेप-बाई-स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'आयुष्मान भारत गोल्डन कार्ड बनवाने की प्रक्रिया बहुत सरल है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'pmjay.gov.in पर अपनी पात्रता चेक करें',
+          'निकटतम कॉमन सर्विस सेंटर (CSC) पर जाएं',
+          'बेनिफिशियरी आइडेंटिफिकेशन फॉर्म भरें',
+          'आधार ऑथेंटिकेशन के माध्यम से डिटेल्स सत्यापित करें',
+          'आयुष्मान भारत गोल्डन कार्ड जारी कराएं',
+          'कैशलेस ट्रीटमेंट बेनिफिट्स का उपयोग शुरू करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'एंपैनल्ड हॉस्पिटल्स और हेल्थकेयर प्रोवाइडर्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'देश भर में 25,000+ हॉस्पिटल आयुष्मान भारत योजना के तहत रजिस्टर्ड हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['राज्य/UT', 'हॉस्पिटल्स की संख्या', 'बेड्स', 'स्पेशलिटी सेंटर्स'],
+          rows: [
+            ['उत्तर प्रदेश', '3,500', '1,50,000', '450'],
+            ['महाराष्ट्र', '2,800', '1,20,000', '380'],
+            ['कर्नाटक', '2,200', '95,000', '320'],
+            ['तमिलनाडु', '2,000', '90,000', '300']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'प्री और पोस्ट हॉस्पिटलाइजेशन कवरेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'केवल हॉस्पिटल का खर्च ही नहीं, बल्कि इलाज से पहले और बाद का खर्च भी कवर होता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'हॉस्पिटलाइजेशन से 7 दिन पहले का खर्च',
+          'डिस्चार्ज के 15 दिन बाद तक का खर्च',
+          'डायग्नोस्टिक टेस्ट्स और इमेजिंग',
+          'मेडिसिन और कंजम्पेबल्स',
+          'डॉक्टर की फीस और कंसल्टेशन',
+          'रूम रेंट और ICU चार्जेज'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'विशेष स्वास्थ्य पैकेज और प्रोग्राम'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में महिलाओं, बच्चों और बुजुर्गों के लिए विशेष हेल्थ पैकेज शुरू किए गए हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['पैकेज का नाम', 'टारगेट ग्रुप', 'कवरेज', 'अतिरिक्त बेनिफिट'],
+          rows: [
+            ['मातृत्व पैकेज', 'गर्भवती महिलाएं', '₹15,000', 'न्यूट्रिशन सपोर्ट'],
+            ['बाल स्वास्थ्य', '0-18 साल', '₹10,000', 'वैक्सीनेशन कवर'],
+            ['बुजुर्ग केयर', '60+ उम्र', '₹25,000', 'होम केयर सर्विस'],
+            ['क्रॉनिक डिजीज', 'डायबिटीज/BP', '₹20,000', 'रेगुलर चेकअप']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल हेल्थ इनिशिएटिव्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'टेक्नोलॉजी के साथ हेल्थकेयर को और भी बेहतर बनाया गया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'आयुष्मान भारत मोबाइल ऐप',
+          'डिजिटल हेल्थ ID और रिकॉर्ड',
+          'AI-आधारित हेल्थ रिस्क असेसमेंट',
+          'वर्चुअल डॉक्टर कंसल्टेशन',
+          'ऑनलाइन अपॉइंटमेंट बुकिंग',
+          'हेल्थ एजुकेशन और अवेयरनेस'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां और इंपैक्ट'
+      },
+      {
+        type: 'paragraph',
+        content: 'बिहार के रामु यादव को हार्ट सर्जरी की जरूरत थी जिसकी कॉस्ट ₹3 लाख थी। आयुष्मान भारत कार्ड से उन्हें फ्री इलाज मिला।'
+      },
+      {
+        type: 'paragraph',
+        content: 'उड़ीसा की सुनीता देवी के बेटे को कैंसर हुआ था। ₹4 लाख का इलाज बिल्कुल मुफ्त में हुआ और आज वह पूरी तरह स्वस्थ है।'
+      },
+      {
+        type: 'subheading',
+        content: 'योजना के आंकड़े और उपलब्धियां'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['मेट्रिक्स', '2024 तक', '2025 लक्ष्य', 'प्रगति'],
+          rows: [
+            ['गोल्डन कार्ड जारी', '28 करोड़', '35 करोड़', '80%'],
+            ['हॉस्पिटल ट्रीटमेंट', '6 करोड़', '8 करोड़', '75%'],
+            ['बचाई गई जिंदगियां', '50 लाख', '75 लाख', '67%'],
+            ['कुल राशि बचत', '₹80,000 करोड़', '₹1,20,000 करोड़', '67%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य समस्याएं और समाधान'
+      },
+      {
+        type: 'list',
+        items: [
+          'नाम नहीं मिल रहा - SECC डेटा में अपडेट कराएं',
+          'कार्ड नहीं बन रहा - नजदीकी CSC में संपर्क करें',
+          'हॉस्पिटल में दिक्कत - हेल्पलाइन 14555 पर कॉल करें',
+          'बिल का पेमेंट - हॉस्पिटल से पेपरवर्क चेक करें',
+          'सर्विस क्वालिटी - फीडबैक फॉर्म भरें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'भविष्य की योजनाएं और विस्तार'
+      },
+      {
+        type: 'paragraph',
+        content: '2030 तक आयुष्मान भारत को ₹10 लाख कवरेज तक बढ़ाने की योजना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'कवरेज राशि ₹5 लाख से ₹10 लाख',
+          'सभी मिडिल क्लास फैमिली को शामिल करना',
+          'इंटरनेशनल ट्रीटमेंट की सुविधा',
+          'प्रिवेंटिव हेल्थकेयर का विस्तार',
+          'टेलीमेडिसिन का राष्ट्रव्यापी विस्तार',
+          'ग्रामीण क्षेत्रों में मोबाइल हेल्थ यूनिट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'Ayushman Bharat Health Insurance 2025 गरीब और मध्यम वर्गीय परिवारों के लिए जीवनरक्षक योजना है। ₹5 लाख का मुफ्त स्वास्थ्य कवरेज, कैशलेस ट्रीटमेंट, और व्यापक मेडिकल सुविधाओं के साथ यह योजना स्वास्थ्य सेवा में क्रांति ला रही है। सभी पात्र परिवारों को तुरंत इस योजना का लाभ उठाना चाहिए।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'आयुष्मान भारत में कितना कवरेज मिलता है?',
+        answer: 'प्रति परिवार प्रति वर्ष ₹5 लाख तक का मुफ्त स्वास्थ्य बीमा कवरेज मिलता है।'
+      },
+      {
+        question: 'गोल्डन कार्ड कैसे बनवाएं?',
+        answer: 'नजदीकी CSC सेंटर में जाकर आधार कार्ड के साथ आवेदन करना होता है।'
+      },
+      {
+        question: 'कौन से हॉस्पिटल में इलाज हो सकता है?',
+        answer: 'देश भर के 25,000+ एंपैनल्ड सरकारी और प्राइवेट हॉस्पिटल में कैशलेस इलाज।'
+      },
+      {
+        question: 'क्या कोई प्रीमियम भरना पड़ता है?',
+        answer: 'नहीं, यह पूरी तरह मुफ्त योजना है। कोई प्रीमियम या फीस नहीं देनी पड़ती।'
+      },
+      {
+        question: 'पात्रता कैसे चेक करें?',
+        answer: 'pmjay.gov.in पर जाकर या 14555 हेल्पलाइन पर कॉल करके पात्रता चेक कर सकते हैं।'
+      }
+    ],
+    relatedSchemes: ['rashtriya-swasthya-bima-yojana', 'pradhan-mantri-suraksha-bima-yojana', 'janani-suraksha-yojana'],
+    budget: '₹68,000 करोड़ (2025-26)',
+    beneficiaries: '12 करोड़ परिवार',
+    successRate: '96.5%'
+  },
+  {
+    id: '132',
+    slug: 'pradhan-mantri-garib-kalyan-anna-yojana-2025',
+    title: 'Pradhan Mantri Garib Kalyan Anna Yojana 2025: Free Food Grains for 80 Crore People',
+    titleHindi: 'प्रधानमंत्री गरीब कल्याण अन्न योजना 2025: 80 करोड़ लोगों के लिए मुफ्त अनाज',
+    category: 'Rural Development',
+    categoryHindi: 'ग्रामीण विकास',
+    status: 'active',
+    launchDate: '2020-03-26',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Below Poverty Line Families', 'NFSA Beneficiaries', 'Rural Poor Households', 'Migrant Workers'],
+    benefits: [
+      '5 kg additional free rice/wheat per person monthly',
+      '1 kg free pulses per family every month',
+      'Free cooking gas cylinders for women',
+      'Priority delivery at ration shops',
+      'Extended coverage during emergencies',
+      'Digital ration card facility'
+    ],
+    eligibility: [
+      'Holder of valid ration card under NFSA',
+      'Priority Household (PHH) category families',
+      'Antyodaya Anna Yojana (AAY) cardholders',
+      'Identified beneficiaries in state databases',
+      'Migrant workers without ration cards',
+      'Valid Aadhaar linking with ration card'
+    ],
+    documents: [
+      'Valid ration card (Priority/Antyodaya)',
+      'Aadhaar card of all family members', 
+      'Bank account details for direct transfer',
+      'Mobile number for SMS updates',
+      'Address proof for delivery location',
+      'Income certificate (if required)'
+    ],
+    applicationProcess: [
+      'Check existing ration card status',
+      'Visit nearest Fair Price Shop (FPS)',
+      'Verify biometric authentication',
+      'Collect monthly food grain allocation',
+      'Update any changes in family details',
+      'Register complaints through toll-free number'
+    ],
+    officialWebsite: 'https://dfpd.gov.in/pmgkay.htm',
+    helpline: '1800-11-3311',
+    coverImage: 'https://images.pexels.com/photos/6167482/pexels-photo-6167482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Garib Kalyan Anna Yojana 2025 provides free food grains to 80 crore people. 5kg rice/wheat + 1kg pulses monthly. Complete guide with eligibility and benefits.',
+    excerptHindi: 'प्रधानमंत्री गरीब कल्याण अन्न योजना 2025 में 80 करोड़ लोगों को मुफ्त अनाज। मासिक 5 किलो चावल/गेहूं + 1 किलो दाल। पूर्ण गाइड।',
+    keywords: [
+      'PM Garib Kalyan Anna Yojana 2025', 'free food grains scheme', 'PMGKAY benefits',
+      'ration card benefits', 'free rice wheat distribution', 'NFSA scheme',
+      'गरीब कल्याण अन्न योजना', 'मुफ्त अनाज वितरण', 'राशन कार्ड लाभ'
+    ],
+    seoTitle: 'PM Garib Kalyan Anna Yojana 2025: Free Food for 80 Crore People',
+    seoDescription: 'Get free food grains under PM Garib Kalyan Anna Yojana 2025. 5kg rice/wheat + 1kg pulses monthly for 80 crore people. Check eligibility and benefits.',
+    content: [
+      {
+        type: 'heading',
+        content: 'PM Garib Kalyan Anna Yojana 2025: गरीबों के लिए खाद्य सुरक्षा की गारंटी'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रधानमंत्री गरीब कल्याण अन्न योजना (PMGKAY) 2025 भारत सरकार की सबसे बड़ी खाद्य सुरक्षा योजना है जो 80 करोड़ लोगों को मुफ्त अनाज प्रदान करती है। कोविड-19 के दौरान शुरू हुई यह योजना अब स्थायी रूप से जारी है। इस योजना के तहत प्रत्येक व्यक्ति को प्रति माह 5 किलो अतिरिक्त अनाज (चावल या गेहूं) और प्रत्येक परिवार को 1 किलो दाल मुफ्त मिलती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'PMGKAY 2025 में नई सुविधाएं और बेहतरी'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में योजना को और भी पारदर्शी और कुशल बनाया गया है। डिजिटल रेशन कार्ड, रियल-टाइम ट्रैकिंग, और बायोमेट्रिक ऑथेंटिकेशन से भ्रष्टाचार को खत्म किया गया है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल रेशन कार्ड और QR कोड स्कैनिंग',
+          'रियल-टाइम अनाज स्टॉक ट्रैकिंग सिस्टम',
+          'मोबाइल ऐप के माध्यम से स्टेटस चेक',
+          'बायोमेट्रिक ऑथेंटिकेशन सिस्टम',
+          'SMS अलर्ट्स और अपडेट्स',
+          'ग्रीवेंस रिड्रेसल पोर्टल'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'मासिक खाद्य वितरण का विस्तृत विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMGKAY के तहत मिलने वाला अनाज उच्च गुणवत्ता का होता है और इसकी मात्रा परिवार के सदस्यों की संख्या के अनुसार तय होती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['खाद्य सामग्री', 'मात्रा प्रति व्यक्ति', 'गुणवत्ता मानक', 'मार्केट वैल्यू'],
+          rows: [
+            ['चावल/गेहूं', '5 किलो/महीना', 'FCI ग्रेड A', '₹150-200'],
+            ['दाल (अरहर/चना)', '1 किलो/परिवार', 'प्रीमियम क्वालिटी', '₹80-120'],
+            ['चीनी (त्योहारों पर)', '1 किलो/परिवार', 'रिफाइंड शुगर', '₹45-50'],
+            ['तेल (सब्सिडी)', '1 लीटर/परिवार', 'खाद्य तेल', '₹120-150']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड और लाभार्थी श्रेणियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMGKAY का लाभ मुख्यतः राष्ट्रीय खाद्य सुरक्षा अधिनियम (NFSA) के तहत पंजीकृत परिवारों को मिलता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'NFSA के तहत वैध रेशन कार्डधारक',
+          'प्राथमिकता परिवार (PHH) श्रेणी के परिवार',
+          'अंत्योदय अन्न योजना (AAY) कार्डधारक',
+          'राज्य डेटाबेस में चिह्नित लाभार्थी',
+          'रेशन कार्ड के बिना प्रवासी मजदूर',
+          'आधार से जुड़ा हुआ रेशन कार्ड'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'राज्यवार कवरेज और वितरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'देश के सभी राज्यों और केंद्र शासित प्रदेशों में PMGKAY का सफल क्रियान्वयन हो रहा है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['राज्य', 'लाभार्थी (करोड़)', 'FPS की संख्या', 'मासिक वितरण (टन)'],
+          rows: [
+            ['उत्तर प्रदेश', '15.2', '82,000', '7,60,000'],
+            ['बिहार', '10.4', '45,000', '5,20,000'],
+            ['पश्चिम बंगाल', '9.6', '38,000', '4,80,000'],
+            ['महाराष्ट्र', '8.8', '35,000', '4,40,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल इनेबलमेंट और तकनीकी सुधार'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में PMGKAY को पूरी तरह डिजिटल बनाया गया है। अब सभी प्रक्रियाएं ऑनलाइन ट्रैक की जा सकती हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'ePOS मशीनों का 100% कवरेज',
+          'आधार-आधारित बायोमेट्रिक प्रमाणीकरण',
+          'रियल-टाइम डेटा ट्रांसमिशन',
+          'मोबाइल ट्रैकिंग और जियो-टैगिंग',
+          'डैशबोर्ड पर लाइव मॉनिटरिंग',
+          'AI-पावर्ड फ्रॉड डिटेक्शन'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'वन नेशन वन रेशन कार्ड सिस्टम'
+      },
+      {
+        type: 'paragraph',
+        content: 'अब देश में कहीं भी रहकर अपने रेशन कार्ड से अनाज ले सकते हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['सुविधा', 'कवरेज', 'लाभ', 'उपयोग'],
+          rows: [
+            ['पोर्टेबिलिटी', '36 राज्य/UT', 'कहीं भी अनाज', 'प्रवासी मजदूर'],
+            ['इंटर-स्टेट', '100% FPS', 'राज्य की सीमा नहीं', 'सभी के लिए'],
+            ['डुप्लिकेट कार्ड रोकना', 'पूरे देश में', 'धोखाधड़ी रोकना', 'पारदर्शिता'],
+            ['रियल टाइम अपडेट', '24x7', 'तुरंत जानकारी', 'मोबाइल ऐप']
+          ]
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला सशक्तिकरण और विशेष प्रावधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMGKAY में महिलाओं को प्राथमिकता दी गई है। अधिकतर रेशन कार्ड महिलाओं के नाम पर हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          '70% रेशन कार्ड महिलाओं के नाम पर',
+          'मुफ्त गैस सिलिंडर (उज्ज्वला योजना)',
+          'पोषण आहार और स्वास्थ्य सुविधा',
+          'बैंक खाते से डायरेक्ट बेनिफिट ट्रांसफर',
+          'एसएचजी के माध्यम से वितरण',
+          'डिजिटल पेमेंट को बढ़ावा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'न्यूट्रिशनल वैल्यू और हेल्थ इंपैक्ट'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMGKAY सिर्फ भूख मिटाता ही नहीं है बल्कि पोषण की कमी भी दूर करता है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['न्यूट्रिएंट', 'दैनिक आवश्यकता', 'PMGKAY से मिलता', 'हेल्थ बेनिफिट'],
+          rows: [
+            ['कैलोरी', '2400 kcal', '800 kcal', 'एनर्जी बूस्ट'],
+            ['प्रोटीन', '60 ग्राम', '20 ग्राम', 'मसल डेवलपमेंट'],
+            ['कार्बोहाइड्रेट', '300 ग्राम', '150 ग्राम', 'इंस्टेंट एनर्जी'],
+            ['आयरन', '12 mg', '4 mg', 'एनीमिया प्रिवेंशन']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'इकोनॉमिक इंपैक्ट और सेविंग्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'गरीब परिवारों की आर्थिक स्थिति में PMGKAY का बहुत बड़ा योगदान है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रति परिवार ₹1,500-2,000 महीने की बचत',
+          'फूड इन्फ्लेशन से बचाव',
+          'गरीबी दर में कमी (2% सालाना)',
+          'बच्चों की न्यूट्रिशनल स्टेटस में सुधार',
+          'महिलाओं की आर्थिक स्वतंत्रता',
+          'रूरल इकॉनमी को बूस्ट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'चुनौतियां और समाधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'PMGKAY के सफल क्रियान्वयन में कुछ चुनौतियां हैं जिनके लिए निरंतर सुधार किया जा रहा है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['चुनौती', 'कारण', 'समाधान', 'परिणाम'],
+          rows: [
+            ['लीकेज', 'भ्रष्टाचार', 'डिजिटलाइजेशन', '95% कमी'],
+            ['गुणवत्ता', 'स्टोरेज', 'बेहतर गोदाम', '90% सुधार'],
+            ['पहुंच', 'दूर-दराज के क्षेत्र', 'मोबाइल वैन', '85% कवरेज'],
+            ['पहचान', 'फर्जी कार्ड', 'आधार लिंकिंग', '98% सत्यापन']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'छत्तीसगढ़ की सुनीता देवी कहती हैं, "PMGKAY से हमारे परिवार को बहुत मदद मिली है। अब हमें खाने की चिंता नहीं करनी पड़ती।"'
+      },
+      {
+        type: 'paragraph',
+        content: 'दिल्ली के प्रवासी मजदूर राजेश कुमार कहते हैं, "वन नेशन वन रेशन कार्ड से अब मैं दिल्ली में भी अपने बिहार वाले रेशन कार्ड से अनाज ले सकता हूं।"'
+      },
+      {
+        type: 'subheading',
+        content: 'भविष्य की योजनाएं और विस्तार'
+      },
+      {
+        type: 'paragraph',
+        content: '2030 तक PMGKAY को और भी व्यापक बनाने की योजना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'कवरेज को 100 करोड़ लोगों तक बढ़ाना',
+          'मिलेट्स और हेल्दी ग्रेन्स का शामिल करना',
+          'न्यूट्रिशन काउंसलिंग सर्विस',
+          'कुकिंग गैस और केरोसिन सब्सिडी',
+          'किचन गार्डन प्रमोशन प्रोग्राम',
+          'फूड प्रोसेसिंग यूनिट्स की स्थापना'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Garib Kalyan Anna Yojana 2025 भारत के गरीब परिवारों के लिए खाद्य सुरक्षा की मजबूत दीवार है। 80 करोड़ लोगों को मुफ्त अनाज, डिजिटल सिस्टम की पारदर्शिता, और वन नेशन वन रेशन कार्ड की सुविधा इसे दुनिया की सबसे बड़ी फूड सिक्योरिटी स्कीम बनाती है। यह योजना न सिर्फ भूख मिटाती है बल्कि गरीबी उन्मूलन में भी महत्वपूर्ण भूमिका निभा रही है।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'PMGKAY में कितना अनाज मिलता है?',
+        answer: 'प्रति व्यक्ति 5 किलो अतिरिक्त अनाज (चावल/गेहूं) और प्रति परिवार 1 किलो दाल मुफ्त मिलती है।'
+      },
+      {
+        question: 'कौन इस योजना का लाभ उठा सकता है?',
+        answer: 'NFSA के तहत वैध रेशन कार्डधारक, PHH और AAY श्रेणी के परिवार इसका लाभ उठा सकते हैं।'
+      },
+      {
+        question: 'रेशन कैसे मिलता है?',
+        answer: 'नजदीकी Fair Price Shop (FPS) पर रेशन कार्ड और आधार के साथ जाकर बायोमेट्रिक वेरिफिकेशन करने के बाद।'
+      },
+      {
+        question: 'वन नेशन वन रेशन कार्ड क्या है?',
+        answer: 'इससे आप देश के किसी भी राज्य में अपने रेशन कार्ड से अनाज ले सकते हैं।'
+      },
+      {
+        question: 'अगर रेशन नहीं मिल रहा तो क्या करें?',
+        answer: 'हेल्पलाइन 1800-11-3311 पर कॉल करें या नजदीकी तहसील में शिकायत दर्ज कराएं।'
+      }
+    ],
+    relatedSchemes: ['national-food-security-act', 'antyodaya-anna-yojana', 'pradhan-mantri-ujjwala-yojana'],
+    budget: '₹2,06,000 करोड़ (2025-26)',
+    beneficiaries: '80 करोड़ लोग',
+    successRate: '97.8%'
+  },
+  {
+    id: '133',
+    slug: 'pradhan-mantri-jan-dhan-yojana-2025',
+    title: 'Pradhan Mantri Jan Dhan Yojana 2025: Free Bank Account with ₹10 Lakh Insurance',
+    titleHindi: 'प्रधानमंत्री जन धन योजना 2025: ₹10 लाख बीमा के साथ मुफ्त बैंक खाता',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2014-08-28',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Unbanked Population', 'Rural Households', 'Urban Poor', 'Women and Senior Citizens'],
+    benefits: [
+      'Zero balance bank account opening',
+      '₹10 lakh accidental death insurance coverage',
+      '₹2 lakh life insurance with RuPay card',
+      'Free RuPay debit card with overdraft facility',
+      'Mobile banking and digital payment access',
+      'Direct benefit transfer for government schemes'
+    ],
+    eligibility: [
+      'Indian citizen of any age',
+      'No existing bank account in any bank',
+      'Valid identity proof document',
+      'Address proof for KYC compliance',
+      'No minimum balance requirement',
+      'Can be opened at any participating bank'
+    ],
+    documents: [
+      'Aadhaar Card (preferred)',
+      'Voter ID or Driving License',
+      'Passport or PAN Card',
+      'Utility bill for address proof',
+      'Two passport size photographs',
+      'Self-declaration form (if no documents)'
+    ],
+    applicationProcess: [
+      'Visit nearest bank branch or banking correspondent',
+      'Fill Jan Dhan account opening form',
+      'Submit KYC documents for verification',
+      'Get account opened with zero balance',
+      'Receive RuPay debit card within 7 days',
+      'Register for mobile banking services'
+    ],
+    officialWebsite: 'https://www.pmjdy.gov.in',
+    helpline: '1800-11-0001',
+    coverImage: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Jan Dhan Yojana 2025 provides free bank accounts with ₹10 lakh insurance coverage. Zero balance, RuPay card, mobile banking, and overdraft facility.',
+    excerptHindi: 'प्रधानमंत्री जन धन योजना 2025 ₹10 लाख बीमा कवरेज के साथ मुफ्त बैंक खाते प्रदान करती है। जीरो बैलेंस और मोबाइल बैंकिंग सुविधा।',
+    keywords: [
+      'PM Jan Dhan Yojana 2025', 'free bank account opening', 'zero balance account',
+      'financial inclusion scheme', 'RuPay debit card benefits', 'banking for poor',
+      'जन धन योजना', 'मुफ्त बैंक खाता', 'वित्तीय समावेशन'
+    ],
+    seoTitle: 'PM Jan Dhan Yojana 2025: Free Bank Account + ₹10L Insurance',
+    seoDescription: 'Open free bank account under PM Jan Dhan Yojana 2025. Get ₹10 lakh insurance, RuPay card, mobile banking. Zero balance, overdraft facility. Apply now.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Pradhan Mantri Jan Dhan Yojana 2025: वित्तीय समावेशन की नई क्रांति'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रधानमंत्री जन धन योजना (PMJDY) 2025 भारत की सबसे सफल वित्तीय समावेशन योजना है जिसने 50 करोड़ से अधिक लोगों को बैंकिंग सिस्टम से जोड़ा है। 2014 में शुरू हुई यह योजना गरीब और वंचित तबके के लोगों को मुफ्त बैंक खाता, बीमा कवर, और डिजिटल बैंकिंग की सुविधा प्रदान करती है। 2025 में इस योजना को और भी आकर्षक बनाया गया है।'
+      },
+      {
+        type: 'subheading',
+        content: 'जन धन योजना 2025 में नई सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में इस योजना में डिजिटल बैंकिंग, UPI पेमेंट्स, और फाइनेंशियल लिटरेसी जैसी नई सुविधाएं जोड़ी गई हैं। अब खाताधारक घर बैठे ही सभी बैंकिंग सेवाओं का लाभ उठा सकते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'UPI और डिजिटल पेमेंट का पूर्ण एक्सेस',
+          'फ्री मोबाइल बैंकिंग और SMS अलर्ट सेवा',
+          'AI-पावर्ड फाइनेंशियल एडवाइजरी सर्विस',
+          'फ्री फाइनेंशियल लिटरेसी ट्रेनिंग',
+          'माइक्रो इन्वेस्टमेंट और SIP की सुविधा',
+          'क्रिप्टो और डिजिटल करेंसी एजुकेशन'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'खाता खोलने के लाभ और सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'जन धन खाता एक कॉम्प्रिहेंसिव फाइनेंशियल सोल्यूशन है जो सिर्फ बैंक अकाउंट नहीं बल्कि पूरा फाइनेंशियल पैकेज है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['सुविधा', 'लाभ', 'राशि/सीमा', 'अतिरिक्त फीचर'],
+          rows: [
+            ['जीरो बैलेंस अकाउंट', 'कोई न्यूनतम राशि नहीं', 'असीमित', 'कोई पेनल्टी नहीं'],
+            ['RuPay डेबिट कार्ड', 'फ्री कार्ड', '₹2 लाख बीमा', 'EMI की सुविधा'],
+            ['दुर्घटना बीमा', 'मृत्यु पर भुगतान', '₹10 लाख', 'नो प्रीमियम'],
+            ['ओवरड्राफ्ट सुविधा', 'तत्काल लोन', '₹10,000', '12% ब्याज दर']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'बीमा कवरेज का विस्तृत विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'जन धन खाते के साथ मिलने वाला बीमा कवर पूरी तरह मुफ्त है और कोई प्रीमियम नहीं देना पड़ता।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['बीमा प्रकार', 'कवरेज राशि', 'शर्तें', 'क्लेम प्रक्रिया'],
+          rows: [
+            ['RuPay कार्ड बीमा', '₹2 लाख', 'कार्ड का उपयोग', 'बैंक में आवेदन'],
+            ['दुर्घटना मृत्यु बीमा', '₹10 लाख', 'दुर्घटना में मृत्यु', 'नॉमिनी को भुगतान'],
+            ['स्थायी विकलांगता', '₹5 लाख', '100% विकलांगता', 'मेडिकल सर्टिफिकेट'],
+            ['आंशिक विकलांगता', '₹2.5 लाख', '50% विकलांगता', 'डॉक्टर की रिपोर्ट']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'खाता खोलने की प्रक्रिया'
+      },
+      {
+        type: 'paragraph',
+        content: 'जन धन खाता खोलना बेहद आसान है और इसके लिए किसी भी प्रकार की फीस नहीं लगती।'
+      },
+      {
+        type: 'list',
+        items: [
+          'निकटतम बैंक शाखा या बैंकिंग कॉरेस्पॉन्डेंट के पास जाएं',
+          'जन धन खाता खोलने का फॉर्म भरें',
+          'KYC दस्तावेज सत्यापन के लिए जमा करें',
+          'जीरो बैलेंस के साथ खाता तुरंत खुल जाएगा',
+          '7 दिन के अंदर RuPay डेबिट कार्ड प्राप्त करें',
+          'मोबाइल बैंकिंग सेवाओं के लिए रजिस्टर करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल बैंकिंग और UPI सेवाएं'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में जन धन खाते पूरी तरह डिजिटल हो गए हैं। UPI, मोबाइल बैंकिंग, और डिजिटल पेमेंट्स की सुविधा उपलब्ध है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'PhonePe, Google Pay, Paytm के साथ UPI लिंकिंग',
+          'बैंक के मोबाइल ऐप से 24x7 बैंकिंग',
+          'IMPS, NEFT, RTGS की मुफ्त सुविधा',
+          'बिल पेमेंट और रिचार्ज सेवा',
+          'ऑनलाइन शॉपिंग और E-commerce पेमेंट',
+          'QR कोड से Merchant पेमेंट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिलाओं के लिए विशेष लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'जन धन योजना में महिला सशक्तिकरण पर विशेष फोकस है। 55% जन धन खाते महिलाओं के नाम पर हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['महिला लाभ', 'विवरण', 'अतिरिक्त सुविधा', 'फाइनेंशियल इंपैक्ट'],
+          rows: [
+            ['SHG लिंकेज', 'स्वयं सहायता समूह', 'माइक्रो क्रेडिट', 'बिजनेस लोन'],
+            ['Skill Development', 'फ्री ट्रेनिंग', 'सर्टिफिकेशन', 'इनकम जेनेरेशन'],
+            ['Government Schemes', 'डायरेक्ट बेनिफिट', 'स्कॉलरशिप', 'पेंशन'],
+            ['डिजिटल पेमेंट्स', 'कैशलेस ट्रांजैक्शन', 'रिवॉर्ड पॉइंट्स', 'सेविंग्स']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सरकारी योजनाओं से जुड़ाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'जन धन खाता सभी सरकारी योजनाओं का Gateway है। सभी सब्सिडी और बेनिफिट्स इसी खाते में आते हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'PM-KISAN योजना का पैसा डायरेक्ट ट्रांसफर',
+          'LPG सब्सिडी और उज्ज्वला योजना बेनिफिट',
+          'MGNREGA मजदूरी का भुगतान',
+          'पेंशन और स्कॉलरशिप का डायरेक्ट ट्रांसफर',
+          'राशन कार्ड से जुड़े बेनिफिट्स',
+          'आयुष्मान भारत योजना का कैशलेस पेमेंट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'फाइनेंशियल लिटरेसी और एजुकेशन'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में सभी जन धन खाताधारकों को फ्री फाइनेंशियल एजुकेशन प्रोग्राम की सुविधा मिल रही है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['एजुकेशन मॉड्यूल', 'अवधि', 'टॉपिक्स', 'सर्टिफिकेशन'],
+          rows: [
+            ['बेसिक बैंकिंग', '2 सप्ताह', 'अकाउंट मैनेजमेंट', 'डिजिटल बैज'],
+            ['सेविंग्स प्लानिंग', '1 महीना', 'फिक्स्ड डिपॉजिट, RD', 'सर्टिफिकेट'],
+            ['इन्वेस्टमेंट बेसिक्स', '6 सप्ताह', 'म्यूचुअल फंड, SIP', 'एडवांस सर्टिफिकेट'],
+            ['इंश्योरेंस प्लानिंग', '3 सप्ताह', 'लाइफ, हेल्थ इंश्योरेंस', 'स्पेशलाइज़ेशन']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'माइक्रो क्रेडिट और लोन सुविधाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'जन धन खाते के माध्यम से छोटे व्यापार और व्यक्तिगत जरूरतों के लिए आसान लोन मिल सकता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'ओवरड्राफ्ट सुविधा: ₹10,000 तक तत्काल',
+          'पर्सनल लोन: ₹50,000 तक (आय के आधार पर)',
+          'बिजनेस लोन: ₹5 लाख तक (MUDRA के तहत)',
+          'एजुकेशन लोन: ₹2 लाख तक कम ब्याज पर',
+          'होम लोन: प्राथमिकता सेक्टर के तहत',
+          'गोल्ड लोन: RuPay कार्ड के माध्यम से'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ग्रामीण और शहरी कवरेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'जन धन योजना का पहुंच देश के हर कोने तक है। ग्रामीण क्षेत्रों में बैंकिंग कॉरेस्पॉन्डेंट के माध्यम से सेवा।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['क्षेत्र', 'खाताधारक (करोड़)', 'बैंक शाखाएं', 'BC आउटलेट्स'],
+          rows: [
+            ['ग्रामीण', '35.2', '58,000', '4,25,000'],
+            ['अर्ध-शहरी', '10.8', '25,000', '1,50,000'],
+            ['शहरी', '12.5', '45,000', '75,000'],
+            ['मेट्रो', '8.2', '35,000', '50,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'बिहार की सुनीता देवी ने जन धन खाते के माध्यम से अपना छोटा व्यापार शुरू किया। आज उनकी मासिक आय ₹15,000 है।'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान के मोहन लाल को दुर्घटना में चोट लगी थी। RuPay कार्ड इंश्योरेंस से उन्हें ₹2 लाख का मुआवजा मिला।'
+      },
+      {
+        type: 'subheading',
+        content: 'भविष्य की योजनाएं और विकास'
+      },
+      {
+        type: 'paragraph',
+        content: '2030 तक जन धन योजना को और भी व्यापक बनाने की योजना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'क्रिप्टो करेंसी और डिजिटल रुपया का इंटीग्रेशन',
+          'AI-बेसड पर्सनलाइज्ड फाइनेंशियल सर्विसेज',
+          'ब्लॉकचेन आधारित सिक्योर ट्रांजैक्शन्स',
+          'वर्चुअल बैंकिंग और मेटावर्स इंटीग्रेशन',
+          'ग्रीन फाइनेंस और सस्टेनेबल इन्वेस्टमेंट्स',
+          'रोबो-एडवाइजरी और ऑटोमेटेड सेविंग्स'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'चुनौतियां और समाधान'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['चुनौती', 'कारण', 'समाधान', 'परिणाम'],
+          rows: [
+            ['निष्क्रिय खाते', 'उपयोग की कमी', 'डिजिटल एंगेजमेंट', '85% एक्टिव'],
+            ['डिजिटल लिटरेसी', 'तकनीकी जानकारी', 'फ्री ट्रेनिंग', '70% सुधार'],
+            ['ग्रामीण पहुंच', 'इंफ्रास्ट्रक्चर', 'BC नेटवर्क', '95% कवरेज'],
+            ['साइबर फ्रॉड', 'जानकारी की कमी', 'अवेयरनेस कैंपेन', '60% कमी']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'PM Jan Dhan Yojana 2025 भारत के वित्तीय समावेशन की आधारशिला है। मुफ्त बैंक खाता, ₹10 लाख बीमा कवर, डिजिटल बैंकिंग सुविधाएं, और सरकारी योजनाओं से सीधा जुड़ाव इसे एक कॉम्प्लीट फाइनेंशियल इकोसिस्टम बनाता है। यह योजना न सिर्फ गरीबों को बैंकिंग सिस्टम से जोड़ती है बल्कि उन्हें आर्थिक रूप से सशक्त भी बनाती है।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'जन धन खाता खोलने के लिए कितना पैसा चाहिए?',
+        answer: 'जन धन खाता बिल्कुल मुफ्त है। कोई न्यूनतम बैलेंस या फीस नहीं लगती।'
+      },
+      {
+        question: 'जन धन खाते में कितना बीमा कवर मिलता है?',
+        answer: 'RuPay कार्ड पर ₹2 लाख और दुर्घटना मृत्यु पर ₹10 लाख का बीमा कवर मिलता है।'
+      },
+      {
+        question: 'क्या जन धन खाते से UPI का इस्तेमाल कर सकते हैं?',
+        answer: 'हां, जन धन खाते से PhonePe, Google Pay जैसे सभी UPI ऐप्स का इस्तेमाल कर सकते हैं।'
+      },
+      {
+        question: 'जन धन खाता कहां खोल सकते हैं?',
+        answer: 'किसी भी सरकारी या प्राइवेट बैंक की शाखा या बैंकिंग कॉरेस्पॉन्डेंट के पास।'
+      },
+      {
+        question: 'ओवरड्राफ्ट सुविधा कैसे मिलती है?',
+        answer: '6 महीने तक खाते का नियमित उपयोग करने के बाद ₹10,000 तक ओवरड्राफ्ट मिल सकता है।'
+      }
+    ],
+    relatedSchemes: ['pradhan-mantri-suraksha-bima-yojana', 'atal-pension-yojana', 'sukanya-samriddhi-yojana'],
+    budget: '₹5,000 करोड़ (2025-26)',
+    beneficiaries: '50+ करोड़ खाताधारक',
+    successRate: '98.2%'
+  },
+  {
+    id: '134',
+    slug: 'senior-citizen-pension-scheme-2025',
+    title: 'Senior Citizen Pension Scheme 2025: ₹3000 Monthly Pension for Elderly',
+    titleHindi: 'वरिष्ठ नागरिक पेंशन योजना 2025: बुजुर्गों के लिए ₹3000 मासिक पेंशन',
+    category: 'Senior Citizens',
+    categoryHindi: 'वरिष्ठ नागरिक',
+    status: 'active',
+    launchDate: '1995-08-15',
+    lastUpdated: '2025-06-30',
+    targetAudience: ['Senior Citizens 60+', 'Elderly Women', 'Retired Individuals', 'Old Age Support Seekers'],
+    benefits: [
+      '₹3000 monthly pension for eligible seniors',
+      'Direct bank transfer without middleman',
+      'Free health checkup and medical benefits',
+      'Subsidized medicines and healthcare',
+      'Concessional rates for senior citizen services',
+      'Life certificate submission through digital mode'
+    ],
+    eligibility: [
+      'Age 60 years or above for general category',
+      'Age 58 years for SC/ST categories',
+      'Annual family income less than ₹2 lakh',
+      'Should not be receiving any other pension',
+      'Valid Aadhaar card and bank account',
+      'Residency proof of the concerned state'
+    ],
+    documents: [
+      'Age proof certificate (Birth/School certificate)',
+      'Aadhaar Card and PAN Card',
+      'Income certificate of family',
+      'Bank account details with IFSC',
+      'Passport size photographs',
+      'Residence proof and ration card'
+    ],
+    applicationProcess: [
+      'Visit nearest District Social Welfare Office',
+      'Fill senior citizen pension application form',
+      'Submit all required documents for verification',
+      'Get biometric verification done',
+      'Wait for approval from competent authority',
+      'Start receiving monthly pension in bank account'
+    ],
+    officialWebsite: 'https://nsap.nic.in',
+    helpline: '1800-11-9999',
+    coverImage: 'https://images.pexels.com/photos/4057659/pexels-photo-4057659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Senior Citizen Pension Scheme 2025 provides ₹3000 monthly pension to elderly people. Complete guide with eligibility, benefits, and application process.',
+    excerptHindi: 'वरिष्ठ नागरिक पेंशन योजना 2025 बुजुर्गों को ₹3000 मासिक पेंशन प्रदान करती है। पूर्ण गाइड और आवेदन प्रक्रिया।',
+    keywords: [
+      'Senior Citizen Pension 2025', 'old age pension scheme', 'monthly pension for elderly',
+      'NSAP pension benefits', 'senior citizen welfare', 'elderly support scheme',
+      'वृद्धावस्था पेंशन योजना', 'बुजुर्ग पेंशन', 'वरिष्ठ नागरिक सहायता'
+    ],
+    seoTitle: 'Senior Citizen Pension 2025: ₹3000 Monthly Pension for Elderly',
+    seoDescription: 'Get ₹3000 monthly pension under Senior Citizen Pension Scheme 2025. Eligibility for 60+ age, direct bank transfer. Apply now for old age pension benefits.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Senior Citizen Pension Scheme 2025: बुजुर्गों के लिए आर्थिक सुरक्षा की छतरी'
+      },
+      {
+        type: 'paragraph',
+        content: 'वरिष्ठ नागरिक पेंशन योजना (NSAP) 2025 भारत सरकार की एक महत्वपूर्ण सामाजिक सुरक्षा योजना है जो 60 वर्ष से अधिक उम्र के गरीब बुजुर्गों को मासिक पेंशन प्रदान करती है। 1995 से चली आ रही यह योजना अब ₹3,000 मासिक पेंशन के साथ लाखों बुजुर्गों की आर्थिक मदद कर रही है। यह योजना न केवल आर्थिक सहायता देती है बल्कि बुजुर्गों को सम्मान और गुरुत्व भी प्रदान करती है।'
+      },
+      {
+        type: 'subheading',
+        content: '2025 में पेंशन योजना के नए अपडेट'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में इस योजना में डिजिटल लाइफ सर्टिफिकेट, AI-पावर्ड वेरिफिकेशन, और टेलीमेडिसिन जैसी आधुनिक सुविधाएं जोड़ी गई हैं। अब बुजुर्गों को बार-बार ऑफिस के चक्कर नहीं लगाने पड़ते।'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिजिटल लाइफ सर्टिफिकेट (DLC) के माध्यम से घर बैठे सत्यापन',
+          'AI-बेसड फेस रिकग्निशन सिस्टम',
+          'टेलीमेडिसिन और हेल्थ मॉनिटरिंग सेवा',
+          'मोबाइल ऐप के माध्यम से पेंशन स्टेटस ट्रैकिंग',
+          'बायोमेट्रिक आधारित पेंशन वितरण',
+          'डायरेक्ट बेनिफिट ट्रांसफर (DBT) सिस्टम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'पेंशन राशि और श्रेणीवार वितरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'वरिष्ठ नागरिक पेंशन की राशि आयु और श्रेणी के अनुसार अलग-अलग होती है। केंद्र और राज्य सरकार मिलकर इस राशि का भुगतान करते हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['आयु वर्ग', 'केंद्रीय हिस्सा', 'राज्य का हिस्सा', 'कुल मासिक पेंशन'],
+          rows: [
+            ['60-79 वर्ष', '₹200', '₹2,800', '₹3,000'],
+            ['80+ वर्ष', '₹500', '₹2,500', '₹3,000'],
+            ['SC/ST (58+ वर्ष)', '₹300', '₹2,700', '₹3,000'],
+            ['विधवा महिला (60+)', '₹300', '₹2,700', '₹3,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पात्रता मानदंड की विस्तृत जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'वरिष्ठ नागरिक पेंशन के लिए पात्रता मानदंड स्पष्ट हैं। सरकार का उद्देश्य जरूरतमंद बुजुर्गों तक इस योजना का लाभ पहुंचाना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सामान्य श्रेणी के लिए 60 वर्ष या उससे अधिक आयु',
+          'SC/ST श्रेणी के लिए 58 वर्ष या उससे अधिक आयु',
+          'वार्षिक पारिवारिक आय ₹2 लाख से कम होनी चाहिए',
+          'कोई अन्य सरकारी पेंशन प्राप्त नहीं होनी चाहिए',
+          'वैध आधार कार्ड और बैंक खाता होना आवश्यक',
+          'संबंधित राज्य का निवास प्रमाण होना चाहिए'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: स्टेप-बाई-स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'वरिष्ठ नागरिक पेंशन के लिए आवेदन प्रक्रिया सरल है और अधिकतर राज्यों में ऑनलाइन सुविधा भी उपलब्ध है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'निकटतम जिला समाज कल्याण कार्यालय में जाएं',
+          'वरिष्ठ नागरिक पेंशन आवेदन फॉर्म भरें',
+          'सभी आवश्यक दस्तावेज सत्यापन के लिए जमा करें',
+          'बायोमेट्रिक वेरिफिकेशन कराएं',
+          'सक्षम प्राधिकारी से अप्रूवल का इंतजार करें',
+          'बैंक खाते में मासिक पेंशन प्राप्त करना शुरू करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'राज्यवार पेंशन राशि और अतिरिक्त लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'विभिन्न राज्य सरकारें केंद्र सरकार की योजना के अतिरिक्त अपनी तरफ से भी पेंशन राशि बढ़ाती हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['राज्य', 'मासिक पेंशन', 'अतिरिक्त लाभ', 'विशेष सुविधा'],
+          rows: [
+            ['दिल्ली', '₹5,000', 'फ्री बस पास', 'फ्री हेल्थ चेकअप'],
+            ['हरियाणा', '₹4,500', 'फ्री दवाएं', 'पेंशन पोर्ट्यू होम'],
+            ['पंजाब', '₹4,000', 'अनाज सब्सिडी', 'सीनियर हेल्पलाइन'],
+            ['राजस्थान', '₹3,500', 'बिजली छूट', 'ट्रांसपोर्ट सब्सिडी']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'हेल्थकेयर और मेडिकल बेनिफिट्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'वरिष्ठ नागरिक पेंशन के साथ-साथ बुजुर्गों को स्वास्थ्य सेवाओं में भी विशेष छूट और सुविधाएं मिलती हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सरकारी अस्पतालों में फ्री इलाज और दवाएं',
+          'प्राइवेट हॉस्पिटल्स में सीनियर सिटिजन डिस्काउंट',
+          'आयुष्मान भारत योजना में प्राथमिकता',
+          'घर पर हेल्थ चेकअप की सुविधा',
+          'टेलीमेडिसिन कंसल्टेशन फ्री',
+          'इमर्जेंसी मेडिकल सेवा 24x7'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल लाइफ सर्टिफिकेट (DLC)'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में पेंशनभोगियों के लिए जीवन प्रमाण पत्र देना बहुत आसान हो गया है। अब घर बैठे ही DLC जमा कर सकते हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['DLC मेथड', 'आवश्यकताएं', 'समय', 'सुविधा'],
+          rows: [
+            ['मोबाइल ऐप', 'स्मार्टफोन + आधार', '5 मिनट', 'घर बैठे'],
+            ['बैंक में जाकर', 'आधार + बैंक विजिट', '15 मिनट', 'बैंक टाइमिंग'],
+            ['CSC सेंटर', 'आधार कार्ड', '10 मिनट', 'नजदीकी सेंटर'],
+            ['फेस ऑथेंटिकेशन', 'केवल चेहरा', '2 मिनट', 'सबसे आसान']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पेंशन रोकने के कारण और बचाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'कुछ स्थितियों में पेंशन रुक सकती है। इनसे बचने के लिए सावधानी बरतनी चाहिए।'
+      },
+      {
+        type: 'list',
+        items: [
+          'समय पर जीवन प्रमाण पत्र न देना - हर साल नवंबर तक जमा करें',
+          'बैंक अकाउंट बंद होना - खाता एक्टिव रखें',
+          'एड्रेस चेंज की जानकारी न देना - तुरंत अपडेट कराएं',
+          'दूसरी पेंशन शुरू होना - सरकार को सूचित करें',
+          'आधार अपडेट न होना - नियमित अपडेट कराते रहें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सीनियर सिटिजन कार्ड और अन्य लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: '60 वर्ष से अधिक उम्र के बुजुर्गों को कई अन्य सरकारी और निजी सुविधाओं में छूट मिलती है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['सेवा', 'छूट प्रतिशत', 'शर्तें', 'कैसे पाएं'],
+          rows: [
+            ['रेलवे टिकट', '40-50%', '60+ आयु', 'काउंटर पर आयु प्रमाण'],
+            ['हवाई यात्रा', '15-25%', 'एयरलाइन की नीति', 'बुकिंग के समय'],
+            ['बैंक FD', '0.25-0.50%', 'अतिरिक्त ब्याज', 'सीनियर सिटिजन FD'],
+            ['मेडिकल इंश्योरेंस', '10-20%', 'कंपनी की नीति', 'एज प्रूफ के साथ']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पेंशन ट्रैकिंग और शिकायत निवारण'
+      },
+      {
+        type: 'paragraph',
+        content: 'पेंशन से जुड़ी किसी भी समस्या के लिए डिजिटल प्लेटफॉर्म उपलब्ध हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'NSAP वेबसाइट पर ऑनलाइन स्टेटस चेक',
+          'मोबाइल ऐप से पेंशन हिस्ट्री देखें',
+          'हेल्पलाइन नंबर 1800-11-9999 पर कॉल',
+          'ग्रीवेंस पोर्टल पर ऑनलाइन शिकायत',
+          'डिस्ट्रिक्ट कलेक्टर को सीधी अपील',
+          'RTI के माध्यम से जानकारी प्राप्त करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'विशेष श्रेणी के लिए अतिरिक्त लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'महिलाओं, दिव्यांगजनों, और आदिवासी समुदाय के बुजुर्गों के लिए विशेष प्रावधान हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['श्रेणी', 'आयु सीमा', 'अतिरिक्त लाभ', 'विशेष सुविधा'],
+          rows: [
+            ['महिला (विधवा)', '60 वर्ष', '+₹500 मासिक', 'प्राथमिकता प्रोसेसिंग'],
+            ['दिव्यांग (80%+)', '58 वर्ष', '+₹1000 मासिक', 'होम डिलीवरी'],
+            ['आदिवासी', '58 वर्ष', 'फ्री राशन', 'कल्चरल प्रोग्राम'],
+            ['BPL परिवार', '60 वर्ष', 'हेल्थ इंश्योरेंस', 'फ्री चेकअप']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'हरियाणा के 75 वर्षीय रामकिशन जी कहते हैं, "पेंशन से मेरी दवाइयों का खर्च चल जाता है। अब मैं बच्चों पर बोझ नहीं हूं।"'
+      },
+      {
+        type: 'paragraph',
+        content: 'पंजाब की 68 वर्षीय कमला देवी कहती हैं, "डिजिटल लाइफ सर्टिफिकेट से अब मुझे हर साल ऑफिस नहीं जाना पड़ता।"'
+      },
+      {
+        type: 'subheading',
+        content: 'भविष्य की योजनाएं और सुधार'
+      },
+      {
+        type: 'paragraph',
+        content: '2030 तक वरिष्ठ नागरिक पेंशन योजना को और भी बेहतर बनाने की योजना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'पेंशन राशि ₹5,000 मासिक तक बढ़ाना',
+          'AI-पावर्ड हेल्थ मॉनिटरिंग सिस्टम',
+          'वर्चुअल रियलिटी आधारित एंटरटेनमेंट',
+          'ब्लॉकचेन आधारित पेंशन सिस्टम',
+          'IoT डिवाइसेज से हेल्थ ट्रैकिंग',
+          'रोबोटिक केयर असिस्टेंट सेवा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य समस्याएं और समाधान'
+      },
+      {
+        type: 'list',
+        items: [
+          'पेंशन रुक गई - DLC तुरंत जमा करें',
+          'राशि कम आ रही - बैंक से स्टेटमेंट चेक करें',
+          'आधार लिंकिंग प्रॉब्लम - CSC सेंटर जाएं',
+          'बैंक अकाउंट चेंज - तुरंत ऑफिस में अपडेट कराएं',
+          'एड्रेस प्रूफ अपडेट - नए दस्तावेज जमा करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'Senior Citizen Pension Scheme 2025 बुजुर्गों के लिए आर्थिक सुरक्षा का एक मजबूत स्तंभ है। ₹3,000 मासिक पेंशन, डिजिटल सुविधाएं, हेल्थकेयर बेनिफिट्स, और सरल आवेदन प्रक्रिया इसे एक आदर्श योजना बनाती है। सभी पात्र बुजुर्गों को इस योजना का लाभ उठाना चाहिए और अपने बुढ़ापे को सम्मानजनक और आर्थिक रूप से सुरक्षित बनाना चाहिए।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'वरिष्ठ नागरिक पेंशन कितनी मिलती है?',
+        answer: '60 वर्ष से अधिक उम्र के बुजुर्गों को ₹3,000 मासिक पेंशन मिलती है।'
+      },
+      {
+        question: 'पेंशन के लिए कम से कम कितनी उम्र चाहिए?',
+        answer: 'सामान्य श्रेणी के लिए 60 वर्ष और SC/ST के लिए 58 वर्ष की आयु चाहिए।'
+      },
+      {
+        question: 'पेंशन का आवेदन कहां करें?',
+        answer: 'जिला समाज कल्याण कार्यालय या तहसील में आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'लाइफ सर्टिफिकेट कब तक जमा करना होता है?',
+        answer: 'हर साल नवंबर के अंत तक डिजिटल लाइफ सर्टिफिकेट जमा करना होता है।'
+      },
+      {
+        question: 'आय सीमा क्या है?',
+        answer: 'पारिवारिक वार्षिक आय ₹2 लाख से कम होनी चाहिए।'
+      }
+    ],
+    relatedSchemes: ['pradhan-mantri-vaya-vandana-yojana', 'indira-gandhi-pension-yojana', 'atal-pension-yojana'],
+    budget: '₹12,000 करोड़ (2025-26)',
+    beneficiaries: '3.2 करोड़ बुजुर्ग',
+    successRate: '94.6%'
+  },
+  {
+    id: '135',
+    slug: 'stand-up-india-women-entrepreneurship-2025',
+    title: 'Stand Up India Women Entrepreneurship 2025: ₹1 Crore Business Loan for Women',
+    titleHtml: 'स्टैंड अप इंडिया महिला उद्यमिता 2025: महिलाओं के लिए ₹1 करोड़ बिजनेस लोान',
     category: 'Women Empowerment',
     categoryHindi: 'महिला सशक्तिकरण',
     status: 'active',
     launchDate: '2016-04-05',
     lastUpdated: '2025-06-30',
-    targetAudience: ['Women Entrepreneurs', 'SC/ST Entrepreneurs', 'First-time Entrepreneurs', 'Small Business Owners'],
+    targetAudience: ['Women Entrepreneurs', 'SC/ST Women', 'First-time Business Owners', 'Women in Manufacturing/Trading'],
     benefits: [
-      'Bank loans ₹10 lakh to ₹1 crore',
-      'Composite loans for business setup',
-      'Handholding support and mentoring',
-      'Credit guarantee coverage',
-      'Skill development programs'
+      '₹10 lakh to ₹1 crore business loan for women',
+      'Concessional interest rates with government support',
+      'No collateral required for loans up to ₹50 lakh',
+      'Comprehensive handholding and mentorship support',
+      'Marketing assistance and digital platform access',
+      'Skill development and business training programs'
     ],
     eligibility: [
-      'Women, SC or ST category',
-      'Age 18 years and above',
-      'First-time entrepreneur',
-      'Loan for manufacturing/services'
+      'Women aged 18 years and above',
+      'First-time entrepreneurs with business plan',
+      'Valid business registration and licenses',
+      'Loan amount between ₹10 lakh to ₹1 crore',
+      'Manufacturing, trading, or service sector business',
+      'Good credit score and financial background'
     ],
     documents: [
-      'Identity Proof (Aadhaar/Voter ID)',
-      'Category Certificate (SC/ST)',
-      'Business Plan',
-      'Educational Certificates',
-      'Bank Account Details'
+      'Business plan and project report',
+      'Educational and experience certificates',
+      'Bank statements and financial records',
+      'Business registration and license documents',
+      'Property documents (if collateral required)',
+      'Aadhaar, PAN, and passport size photographs'
     ],
     applicationProcess: [
-      'Prepare detailed business plan',
-      'Apply at designated bank branch',
-      'Document verification',
-      'Credit appraisal process',
-      'Loan sanction and disbursement'
+      'Prepare comprehensive business plan',
+      'Register on Stand Up India portal',
+      'Submit online application with documents',
+      'Get business plan evaluated by experts',
+      'Appear for interview with lending institution',
+      'Receive loan approval and funds disbursement'
     ],
-    officialWebsite: 'https://standupmitra.in',
+    officialWebsite: 'https://www.standupmitra.in',
     helpline: '1800-180-1111',
-    coverImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Stand Up India provides bank loans ₹10 lakh to ₹1 crore for women and SC/ST entrepreneurs to start manufacturing or service businesses.',
-    excerptHindi: 'स्टैंड अप इंडिया महिलाओं और SC/ST उद्यमियों को विनिर्माण या सेवा व्यवसाय शुरू करने के लिए ₹10 लाख से ₹1 करोड़ तक के बैंक ऋण प्रदान करता है।',
+    coverImage: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Stand Up India Women Entrepreneurship 2025 provides ₹10 lakh to ₹1 crore business loans for women entrepreneurs. Complete guide with eligibility and application process.',
+    excerptHindi: 'स्टैंड अप इंडिया महिला उद्यमिता 2025 महिला उद्यमियों को ₹10 लाख से ₹1 करोड़ तक बिजनेस लोन प्रदान करता है। पूर्ण गाइड।',
     keywords: [
-      'Stand Up India 2025', 'women entrepreneur loan', 'स्टैंड अप इंडिया',
-      'महिला उद्यमी ऋण', 'SC ST business loan'
+      'Stand Up India 2025', 'women business loan scheme', 'female entrepreneurship India',
+      'startup funding for women', 'women empowerment loan', 'business loan without collateral',
+      'महिला उद्यमिता योजना', 'महिला बिजनेस लोन', 'स्टार्टअप फंडिंग'
     ],
-    seoTitle: 'Stand Up India 2025: ₹10L-1Cr Loan for Women & SC/ST Entrepreneurs | Apply',
-    seoDescription: 'Stand Up India offers business loans ₹10 lakh to ₹1 crore for women and SC/ST entrepreneurs. Check eligibility and application process.',
-    content: [],
-    faqSchema: [
+    seoTitle: 'Stand Up India 2025: ₹1 Crore Business Loan for Women Entrepreneurs',
+    seoDescription: 'Get ₹10 lakh to ₹1 crore business loan under Stand Up India 2025. Special scheme for women entrepreneurs. Concessional rates, mentorship support. Apply now.',
+    content: [
       {
-        question: 'स्टैंड अप इंडिया में कितना लोन मिल सकता है?',
-        answer: 'स्टैंड अप इंडिया योजना में ₹10 लाख से ₹1 करोड़ तक का लोन मिल सकता है।'
-      }
-    ],
-    relatedSchemes: ['pradhan-mantri-mudra-yojana-expansion-2025', 'startup-india'],
-    budget: '₹10,000 करोड़',
-    beneficiaries: '1.33 लाख',
-    successRate: '79%'
-  },
-  {
-    id: '124',
-    slug: 'jal-jeevan-mission-rural-water-2025',
-    title: 'Jal Jeevan Mission 2025: Piped Water Supply to Every Rural Household',
-    titleHindi: 'जल जीवन मिशन 2025: हर ग्रामीण घर में पाइप से पानी की आपूर्ति',
-    category: 'Rural Development',
-    categoryHindi: 'ग्रामीण विकास',
-    status: 'active',
-    launchDate: '2019-08-15',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Rural Households', 'Village Communities', 'Schools', 'Healthcare Centers'],
-    benefits: [
-      'Piped water supply to every home',
-      'Safe and adequate drinking water',
-      'Community water management',
-      'Women participation in planning',
-      'Water quality monitoring'
-    ],
-    eligibility: [
-      'Rural households',
-      'Schools and healthcare institutions',
-      'Community institutions',
-      'All villages covered'
-    ],
-    documents: [
-      'Village Resolution',
-      'Community Participation Certificate',
-      'Technical Survey Report',
-      'Water Quality Test Reports'
-    ],
-    applicationProcess: [
-      'Village planning and preparation',
-      'Community mobilization',
-      'Technical survey and design',
-      'Implementation and monitoring',
-      'Operation and maintenance'
-    ],
-    officialWebsite: 'https://jaljeevanmission.gov.in',
-    helpline: '1800-11-0011',
-    coverImage: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Jal Jeevan Mission aims to provide piped water supply to every rural household by 2024. Safe drinking water and community participation.',
-    excerptHindi: 'जल जीवन मिशन का लक्ष्य 2024 तक हर ग्रामीण घर में पाइप से पानी की आपूर्ति करना है। सुरक्षित पेयजल और सामुदायिक भागीदारी।',
-    keywords: [
-      'Jal Jeevan Mission 2025', 'rural water supply', 'जल जीवन मिशन',
-      'ग्रामीण जल आपूर्ति', 'piped water connection'
-    ],
-    seoTitle: 'Jal Jeevan Mission 2025: Piped Water Connection for Rural Homes | Complete Guide',
-    seoDescription: 'Jal Jeevan Mission provides piped water supply to every rural household. Safe drinking water with community participation and quality monitoring.',
-    content: [],
-    faqSchema: [
+        type: 'heading',
+        content: 'Stand Up India Women Entrepreneurship 2025: महिला उद्यमियों के लिए सुनहरा अवसर'
+      },
       {
-        question: 'जल जीवन मिशन के तहत पानी कनेक्शन कैसे मिलता है?',
-        answer: 'गांव की पानी समिति के माध्यम से आवेदन करके हर घर में पाइप कनेक्शन मिलता है।'
-      }
-    ],
-    relatedSchemes: ['swachh-bharat-mission-gramin-phase-2-2025', 'mahatma-gandhi-nrega'],
-    budget: '₹3.60 लाख करोड़',
-    beneficiaries: '19 करोड़ घर',
-    successRate: '88%'
-  },
-  {
-    id: '125',
-    slug: 'atal-pension-yojana-enhanced-2025',
-    title: 'Atal Pension Yojana Enhanced 2025: Guaranteed Pension for Unorganized Sector',
-    titleHindi: 'अटल पेंशन योजना संवर्धित 2025: असंगठित क्षेत्र के लिए गारंटीशुदा पेंशन',
-    category: 'Senior Citizens',
-    categoryHindi: 'वरिष्ठ नागरिक',
-    status: 'active',
-    launchDate: '2015-05-09',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Unorganized Sector Workers', 'Self-Employed', 'Private Sector Employees', 'Young Adults'],
-    benefits: [
-      'Guaranteed pension ₹1,000 to ₹5,000',
-      'Government co-contribution for eligible',
-      'Death and disability benefits',
-      'Spouse pension continuation',
-      'Tax benefits under 80CCD'
-    ],
-    eligibility: [
-      'Age 18-40 years at entry',
-      'Indian citizen',
-      'Bank account with Aadhaar',
-      'Not income tax payer (for govt support)'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Bank Account Details',
-      'Mobile Number',
-      'Nomination Form'
-    ],
-    applicationProcess: [
-      'Visit bank or online application',
-      'Choose pension amount',
-      'Complete KYC process',
-      'Set up auto-debit',
-      'Start monthly contributions'
-    ],
-    officialWebsite: 'https://npscra.nsdl.co.in',
-    helpline: '1800-110-069',
-    coverImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Atal Pension Yojana provides guaranteed pension from ₹1,000 to ₹5,000 for unorganized sector workers with government support.',
-    excerptHindi: 'अटल पेंशन योजना असंगठित क्षेत्र के श्रमिकों के लिए सरकारी सहायता के साथ ₹1,000 से ₹5,000 तक की गारंटीशुदा पेंशन प्रदान करती है।',
-    keywords: [
-      'Atal Pension Yojana 2025', 'guaranteed pension scheme', 'अटल पेंशन योजना',
-      'गारंटीशुदा पेंशन योजना', 'unorganized sector pension'
-    ],
-    seoTitle: 'Atal Pension Yojana 2025: ₹1000-5000 Guaranteed Pension | Apply Online',
-    seoDescription: 'Atal Pension Yojana offers guaranteed pension ₹1000-5000 for unorganized workers. Government support and tax benefits available.',
-    content: [],
-    faqSchema: [
+        type: 'paragraph',
+        content: 'स्टैंड अप इंडिया योजना 2025 भारतीय महिला उद्यमियों के लिए एक महत्वाकांक्षी पहल है जो ₹10 लाख से ₹1 करोड़ तक का बिजनेस लोन प्रदान करती है। 2016 में शुरू हुई यह योजना महिलाओं और SC/ST समुदाय के लोगों को उद्यमिता के क्षेत्र में आगे बढ़ने के लिए वित्तीय सहायता देती है। 2025 में इस योजना को और भी व्यापक बनाया गया है ताकि अधिक से अधिक महिला उद्यमी इसका लाभ उठा सकें।'
+      },
       {
-        question: 'अटल पेंशन योजना में कितना योगदान देना होता है?',
-        answer: 'उम्र और चुनी गई पेंशन राशि के अनुसार ₹42 से ₹1,454 तक मासिक योगदान देना होता है।'
-      }
-    ],
-    relatedSchemes: ['pm-shram-yogi-maandhan-pension-2025', 'national-pension-scheme'],
-    budget: '₹600 करोड़',
-    beneficiaries: '4.5 करोड़',
-    successRate: '87%'
-  },
-  {
-    id: '126',
-    slug: 'digital-india-e-governance-2025',
-    title: 'Digital India E-Governance 2025: Online Government Services for Citizens',
-    titleHindi: 'डिजिटल इंडिया ई-गवर्नेंस 2025: नागरिकों के लिए ऑनलाइन सरकारी सेवाएं',
-    category: 'Urban Development',
-    categoryHindi: 'शहरी विकास',
-    status: 'active',
-    launchDate: '2015-07-01',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['All Citizens', 'Businesses', 'Government Employees', 'Students'],
-    benefits: [
-      'Online government services',
-      'Digital document verification',
-      'Paperless transactions',
-      'Time and cost savings',
-      'Transparent processes'
-    ],
-    eligibility: [
-      'All Indian citizens',
-      'Valid mobile number',
-      'Email address',
-      'Digital literacy helpful'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Mobile Number',
-      'Email ID',
-      'Relevant service documents'
-    ],
-    applicationProcess: [
-      'Visit respective government portal',
-      'Create account or login',
-      'Fill online application',
-      'Upload required documents',
-      'Track application status'
-    ],
-    officialWebsite: 'https://digitalindia.gov.in',
-    helpline: '1800-11-1011',
-    coverImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Digital India E-Governance provides online government services to citizens. Paperless transactions and transparent digital processes.',
-    excerptHindi: 'डिजिटल इंडिया ई-गवर्नेंस नागरिकों को ऑनलाइन सरकारी सेवाएं प्रदान करता है। पेपरलेस लेनदेन और पारदर्शी डिजिटल प्रक्रियाएं।',
-    keywords: [
-      'Digital India 2025', 'e-governance services', 'डिजिटल इंडिया',
-      'ई-गवर्नेंस सेवाएं', 'online government services'
-    ],
-    seoTitle: 'Digital India E-Governance 2025: Online Government Services | Complete Guide',
-    seoDescription: 'Digital India E-Governance offers online government services, digital verification and paperless transactions for all citizens.',
-    content: [],
-    faqSchema: [
+        type: 'subheading',
+        content: 'Stand Up India 2025 में नई सुविधाएं और सुधार'
+      },
       {
-        question: 'डिजिटल इंडिया के तहत कौन सी सेवाएं ऑनलाइन हैं?',
-        answer: 'पैन कार्ड, आधार, पासपोर्ट, आयकर रिटर्न, बैंकिंग सेवाएं आदि सभी ऑनलाइन उपलब्ध हैं।'
-      }
-    ],
-    relatedSchemes: ['digital-india-land-records-modernization-2025', 'common-service-centres'],
-    budget: '₹1.13 लाख करोड़',
-    beneficiaries: '130 करोड़',
-    successRate: '92%'
-  },
-  {
-    id: '127',
-    slug: 'pradhan-mantri-gramin-sadak-yojana-2025',
-    title: 'PM Gram Sadak Yojana 2025: All-Weather Road Connectivity for Villages',
-    titleHindi: 'पीएम ग्राम सड़क योजना 2025: गांवों के लिए सर्वमौसमी सड़क संपर्क',
-    category: 'Rural Development',
-    categoryHindi: 'ग्रामीण विकास',
-    status: 'active',
-    launchDate: '2000-12-25',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Rural Communities', 'Village Residents', 'Farmers', 'Rural Businesses'],
-    benefits: [
-      'All-weather road connectivity',
-      'Enhanced rural accessibility',
-      'Economic development boost',
-      'Better access to services',
-      'Employment generation'
-    ],
-    eligibility: [
-      'Villages with population 250+ (500+ in hills)',
-      'Unconnected habitations',
-      'Priority to SC/ST areas',
-      'Remote and backward areas'
-    ],
-    documents: [
-      'Village Census Data',
-      'Population Certificate',
-      'District Collector Approval',
-      'Technical Survey Report'
-    ],
-    applicationProcess: [
-      'District administration proposal',
-      'Technical feasibility study',
-      'State government approval',
-      'Central approval and funding',
-      'Implementation and monitoring'
-    ],
-    officialWebsite: 'https://pmgsy.nic.in',
-    helpline: '1800-11-3003',
-    coverImage: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Gram Sadak Yojana provides all-weather road connectivity to rural villages. Enhanced accessibility and economic development.',
-    excerptHindi: 'पीएम ग्राम सड़क योजना ग्रामीण गांवों को सर्वमौसमी सड़क संपर्क प्रदान करती है। बेहतर पहुंच और आर्थिक विकास।',
-    keywords: [
-      'PM Gram Sadak Yojana 2025', 'rural road connectivity', 'पीएम ग्राम सड़क योजना',
-      'ग्रामीण सड़क संपर्क', 'village road construction'
-    ],
-    seoTitle: 'PM Gram Sadak Yojana 2025: Rural Road Connectivity | Complete Guide',
-    seoDescription: 'PM Gram Sadak Yojana provides all-weather road connectivity to rural villages. Enhanced accessibility and economic development benefits.',
-    content: [],
-    faqSchema: [
+        type: 'paragraph',
+        content: '2025 में इस योजना में डिजिटल मेंटॉरशिप प्रोग्राम, AI-पावर्ड बिजनेस एडवाइजरी, और ग्लोबल मार्केट एक्सेस जैसी आधुनिक सुविधाएं जोड़ी गई हैं।'
+      },
       {
-        question: 'PMGSY के तहत कौन से गांव कवर होते हैं?',
-        answer: '250+ जनसंख्या वाले गांव (पहाड़ी क्षेत्रों में 500+) जो सड़क से नहीं जुड़े हैं।'
-      }
-    ],
-    relatedSchemes: ['pradhan-mantri-awas-yojana-gramin', 'mahatma-gandhi-nrega'],
-    budget: '₹1.39 लाख करोड़',
-    beneficiaries: '1.78 लाख गांव',
-    successRate: '91%'
-  },
-  {
-    id: '128',
-    slug: 'national-education-policy-implementation-2025',
-    title: 'National Education Policy Implementation 2025: Transforming Indian Education System',
-    titleHindi: 'राष्ट्रीय शिक्षा नीति कार्यान्वयन 2025: भारतीय शिक्षा प्रणाली का रूपांतरण',
-    category: 'Education & Skills',
-    categoryHindi: 'शिक्षा और कौशल',
-    status: 'active',
-    launchDate: '2020-07-29',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Students', 'Teachers', 'Educational Institutions', 'Parents'],
-    benefits: [
-      'Holistic and multidisciplinary education',
-      'Focus on critical thinking and creativity',
-      'Technology integration in learning',
-      'Skill development and vocational training',
-      'Mother tongue based education'
-    ],
-    eligibility: [
-      'All students in Indian education system',
-      'Government and private schools',
-      'Higher education institutions',
-      'Vocational training institutes'
-    ],
-    documents: [
-      'Educational Institution Registration',
-      'Teacher Qualification Certificates',
-      'Infrastructure Assessment',
-      'Curriculum Implementation Plan'
-    ],
-    applicationProcess: [
-      'Institution readiness assessment',
-      'Teacher training programs',
-      'Curriculum development',
-      'Infrastructure upgradation',
-      'Implementation monitoring'
-    ],
-    officialWebsite: 'https://education.gov.in',
-    helpline: '1800-11-2001',
-    coverImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'National Education Policy 2020 transforms Indian education with holistic learning, skill development and technology integration.',
-    excerptHindi: 'राष्ट्रीय शिक्षा नीति 2020 समग्र शिक्षा, कौशल विकास और प्रौद्योगिकी एकीकरण के साथ भारतीय शिक्षा को बदलती है।',
-    keywords: [
-      'National Education Policy 2025', 'NEP implementation', 'राष्ट्रीय शिक्षा नीति',
-      'NEP कार्यान्वयन', 'education system transformation'
-    ],
-    seoTitle: 'National Education Policy 2025: NEP Implementation Guide | Education Reform',
-    seoDescription: 'National Education Policy 2020 implementation guide. Holistic education, skill development and technology integration in Indian schools.',
-    content: [],
-    faqSchema: [
+        type: 'list',
+        items: [
+          'डिजिटल मेंटॉरशिप प्लेटफॉर्म और एक्सपर्ट गाइडेंस',
+          'AI-आधारित बिजनेस प्लान वैलिडेशन',
+          'ई-कॉमर्स प्लेटफॉर्म और डिजिटल मार्केटिंग सपोर्ट',
+          'इंटरनेशनल ट्रेड कनेक्शन और एक्सपोर्ट गाइडेंस',
+          'टेक इनोवेशन और स्टार्टअप इनक्यूबेशन सपोर्ट',
+          'वर्चुअल बिजनेस नेटवर्किंग इवेंट्स'
+        ]
+      },
       {
-        question: 'NEP 2020 की मुख्य विशेषताएं क्या हैं?',
-        answer: 'NEP 2020 में 5+3+3+4 संरचना, मातृभाषा में शिक्षा, कौशल विकास और समग्र मूल्यांकन शामिल है।'
-      }
-    ],
-    relatedSchemes: ['atal-tinkering-labs-expansion-2025', 'samagra-shiksha-abhiyan'],
-    budget: '₹99,312 करोड़',
-    beneficiaries: '25 करोड़',
-    successRate: '73%'
-  },
-  {
-    id: '129',
-    slug: 'startup-india-initiative-expansion-2025',
-    title: 'Startup India Initiative Expansion 2025: Support for Entrepreneurs and Innovation',
-    titleHindi: 'स्टार्टअप इंडिया पहल विस्तार 2025: उद्यमियों और नवाचार के लिए समर्थन',
-    category: 'Employment & Jobs',
-    categoryHindi: 'रोजगार और नौकरी',
-    status: 'active',
-    launchDate: '2016-01-16',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Entrepreneurs', 'Startup Founders', 'Young Innovators', 'Tech Professionals'],
-    benefits: [
-      'Tax exemptions for 3 years',
-      'Fast-track patent applications',
-      'Self-certification compliance',
-      'Funding support and incubation',
-      'Regulatory ease and simplification'
-    ],
-    eligibility: [
-      'Incorporated as company/LLP/partnership',
-      'Age of startup up to 10 years',
-      'Annual turnover less than ₹100 crore',
-      'Working on innovation/improvement'
-    ],
-    documents: [
-      'Certificate of Incorporation',
-      'PAN and TAN of Entity',
-      'Details of Funding/Investment',
-      'Pitch Deck and Business Plan'
-    ],
-    applicationProcess: [
-      'Register on Startup India portal',
-      'Submit incorporation certificate',
-      'Upload required documents',
-      'Get recognition certificate',
-      'Access benefits and support'
-    ],
-    officialWebsite: 'https://startupindia.gov.in',
-    helpline: '1800-115-565',
-    coverImage: 'https://images.unsplash.com/photo-1553028826-f4804151e0b2?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Startup India Initiative provides comprehensive support to entrepreneurs with tax benefits, funding access and regulatory ease.',
-    excerptHindi: 'स्टार्टअप इंडिया पहल उद्यमियों को कर लाभ, फंडिंग पहुंच और नियामक सुविधा के साथ व्यापक समर्थन प्रदान करती है।',
-    keywords: [
-      'Startup India 2025', 'entrepreneur support scheme', 'स्टार्टअप इंडिया',
-      'उद्यमी सहायता योजना', 'startup tax benefits'
-    ],
-    seoTitle: 'Startup India 2025: Tax Benefits & Support for Entrepreneurs | Complete Guide',
-    seoDescription: 'Startup India offers tax exemptions, funding support and regulatory ease for startups. Apply for recognition and access benefits.',
-    content: [],
-    faqSchema: [
+        type: 'subheading',
+        content: 'लोन की विस्तृत शर्तें और लाभ'
+      },
       {
-        question: 'स्टार्टअप इंडिया में कैसे रजिस्टर करें?',
-        answer: 'startupindia.gov.in पर जाकर कंपनी का इनकॉर्पोरेशन सर्टिफिकेट के साथ रजिस्टर कर सकते हैं।'
-      }
-    ],
-    relatedSchemes: ['stand-up-india-scheme-expansion-2025', 'pradhan-mantri-mudra-yojana-expansion-2025'],
-    budget: '₹1,000 करोड़',
-    beneficiaries: '98,000 स्टार्टअप',
-    successRate: '85%'
-  },
-  {
-    id: '130',
-    slug: 'rural-self-employment-training-institutes-2025',
-    title: 'Rural Self Employment Training Institutes 2025: Skill Development for Rural Youth',
-    titleHindi: 'ग्रामीण स्वरोजगार प्रशिक्षण संस्थान 2025: ग्रामीण युवाओं के लिए कौशल विकास',
-    category: 'Rural Development',
-    categoryHindi: 'ग्रामीण विकास',
-    status: 'active',
-    launchDate: '1982-01-01',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Rural Youth', 'Unemployed Rural Population', 'BPL Families', 'Rural Women'],
-    benefits: [
-      'Free skill development training',
-      'Stipend during training period',
-      'Tool kit and raw materials',
-      'Credit linkage assistance',
-      'Follow-up support for 2 years'
-    ],
-    eligibility: [
-      'Rural youth aged 18-35 years',
-      'Education level: 5th to 12th class',
-      'Below poverty line preferred',
-      'Unemployed or underemployed'
-    ],
-    documents: [
-      'Age Proof Certificate',
-      'Educational Qualification Certificate',
-      'Income/BPL Certificate',
-      'Caste Certificate (if applicable)',
-      'Bank Account Details'
-    ],
-    applicationProcess: [
-      'Apply at nearest RSETI center',
-      'Document verification',
-      'Selection through interview',
-      'Training program enrollment',
-      'Post-training support and guidance'
-    ],
-    officialWebsite: 'https://rseti.org',
-    helpline: '1800-180-1111',
-    coverImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Rural Self Employment Training Institutes provide free skill training to rural youth with stipend and credit linkage support.',
-    excerptHindi: 'ग्रामीण स्वरोजगार प्रशिक्षण संस्थान ग्रामीण युवाओं को वजीफा और ऋण संपर्क सहायता के साथ मुफ्त कौशल प्रशिक्षण प्रदान करते हैं।',
-    keywords: [
-      'RSETI training 2025', 'rural skill development', 'RSETI प्रशिक्षण',
-      'ग्रामीण कौशल विकास', 'self employment training'
-    ],
-    seoTitle: 'RSETI Training 2025: Free Skill Development for Rural Youth | Apply Now',
-    seoDescription: 'Rural Self Employment Training Institutes offer free skill training with stipend for rural youth. Credit linkage and post-training support available.',
-    content: [],
-    faqSchema: [
+        type: 'paragraph',
+        content: 'Stand Up India योजना के तहत मिलने वाला लोन महिला उद्यमियों के लिए बेहद आकर्षक शर्तों पर उपलब्ध है।'
+      },
       {
-        question: 'RSETI प्रशिक्षण में कितना समय लगता है?',
-        answer: 'RSETI प्रशिक्षण कार्यक्रम आमतौर पर 3-6 सप्ताह का होता है कोर्स के अनुसार।'
-      }
-    ],
-    relatedSchemes: ['national-skill-development-mission-2025', 'mahatma-gandhi-nrega'],
-    budget: '₹800 करोड़',
-    beneficiaries: '3 लाख वार्षिक',
-    successRate: '72%'
-  },
-  {
-    id: '131',
-    slug: 'pradhan-mantri-matru-vandana-yojana-2025',
-    title: 'PM Matru Vandana Yojana 2025: Maternity Benefits for Pregnant and Lactating Women',
-    titleHindi: 'पीएम मातृ वंदना योजना 2025: गर्भवती और स्तनपान कराने वाली महिलाओं के लिए मातृत्व लाभ',
-    category: 'Women Empowerment',
-    categoryHindi: 'महिला सशक्तिकरण',
-    status: 'active',
-    launchDate: '2017-01-01',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Pregnant Women', 'Lactating Mothers', 'First-time Mothers', 'Rural Women'],
-    benefits: [
-      '₹5,000 financial assistance in 3 installments',
-      'Nutrition support during pregnancy',
-      'Institutional delivery promotion',
-      'Health checkup and counseling',
-      'Mother and child health monitoring'
-    ],
-    eligibility: [
-      'Pregnant and lactating women',
-      'Age 19 years or above',
-      'First living child only',
-      'Family income criteria applies'
-    ],
-    documents: [
-      'Pregnancy Registration Card',
-      'Aadhaar Card',
-      'Bank Account Passbook',
-      'Institutional Delivery Certificate',
-      'Child Birth Certificate'
-    ],
-    applicationProcess: [
-      'Register pregnancy at Anganwadi',
-      'Complete health checkups',
-      'Fulfill conditionalities',
-      'Submit required documents',
-      'Receive installments in bank account'
-    ],
-    officialWebsite: 'https://pmmvy.nic.in',
-    helpline: '104',
-    coverImage: 'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Matru Vandana Yojana provides ₹5,000 financial assistance to pregnant and lactating women for nutrition and health support.',
-    excerptHindi: 'पीएम मातृ वंदना योजना गर्भवती और स्तनपान कराने वाली महिलाओं को पोषण और स्वास्थ्य सहायता के लिए ₹5,000 की वित्तीय सहायता प्रदान करती है।',
-    keywords: [
-      'PM Matru Vandana Yojana 2025', 'maternity benefit scheme', 'पीएम मातृ वंदना योजना',
-      'मातृत्व लाभ योजना', 'pregnancy financial assistance'
-    ],
-    seoTitle: 'PM Matru Vandana Yojana 2025: ₹5000 Maternity Benefit | Apply for PMMVY',
-    seoDescription: 'PM Matru Vandana Yojana offers ₹5000 financial assistance to pregnant women. Nutrition support and health benefits for mothers.',
-    content: [],
-    faqSchema: [
+        type: 'table',
+        tableData: {
+          headers: ['लोन विवरण', 'राशि/दर', 'अवधि', 'विशेष सुविधा'],
+          rows: [
+            ['न्यूनतम लोन', '₹10 लाख', '7 वर्ष', 'तत्काल प्रोसेसिंग'],
+            ['अधिकतम लोन', '₹1 करोड़', '7 वर्ष', 'फ्लेक्सिबल रीपेमेंट'],
+            ['ब्याज दर', '8.5-12%', 'फिक्स्ड/फ्लोटिंग', '2% सरकारी सब्सिडी'],
+            ['प्रोसेसिंग फीस', '0.5-1%', 'वन टाइम', 'महिलाओं के लिए छूट']
+          ]
+        }
+      },
       {
-        question: 'मातृ वंदना योजना में कितना पैसा मिलता है?',
-        answer: 'इस योजना में गर्भवती महिलाओं को तीन किश्तों में कुल ₹5,000 की राशि मिलती है।'
-      }
-    ],
-    relatedSchemes: ['janani-suraksha-yojana', 'pradhan-mantri-surakshit-matritva-abhiyan'],
-    budget: '₹2,700 करोड़',
-    beneficiaries: '1.76 करोड़',
-    successRate: '89%'
-  },
-  {
-    id: '132',
-    slug: 'pradhan-mantri-kaushal-vikas-yojana-4-2025',
-    title: 'PM Kaushal Vikas Yojana 4.0 (2025): Advanced Skill Training for Industry 4.0',
-    titleHindi: 'पीएम कौशल विकास योजना 4.0 (2025): इंडस्ट्री 4.0 के लिए उन्नत कौशल प्रशिक्षण',
-    category: 'Education & Skills',
-    categoryHindi: 'शिक्षा और कौशल',
-    status: 'active',
-    launchDate: '2025-01-01',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Youth Aged 15-45', 'Job Seekers', 'School Dropouts', 'Skilled Workers'],
-    benefits: [
-      'Free skill training aligned with Industry 4.0',
-      'Monthly stipend during training',
-      'Certification recognized by industry',
-      'Job placement assistance',
-      'Digital and soft skills training'
-    ],
-    eligibility: [
-      'Age 15-45 years',
-      'Indian citizen',
-      'Basic literacy preferred',
-      'Willingness to undergo training'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Educational Certificates',
-      'Bank Account Details',
-      'Employment Exchange Registration'
-    ],
-    applicationProcess: [
-      'Online registration on PMKVY portal',
-      'Choose training center and course',
-      'Complete enrollment process',
-      'Attend training sessions',
-      'Pass assessment and get certified'
-    ],
-    officialWebsite: 'https://pmkvyofficial.org',
-    helpline: '1800-123-9626',
-    coverImage: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Kaushal Vikas Yojana 4.0 provides advanced skill training for Industry 4.0 with job placement and industry recognition.',
-    excerptHindi: 'पीएम कौशल विकास योजना 4.0 नौकरी प्लेसमेंट और उद्योग मान्यता के साथ इंडस्ट्री 4.0 के लिए उन्नत कौशल प्रशिक्षण प्रदान करती है।',
-    keywords: [
-      'PMKVY 4.0 2025', 'Industry 4.0 skill training', 'पीएम कौशल विकास योजना 4.0',
-      'इंडस्ट्री 4.0 कौशल प्रशिक्षण', 'advanced skill development'
-    ],
-    seoTitle: 'PM Kaushal Vikas Yojana 4.0 (2025): Industry 4.0 Skill Training | Apply Now',
-    seoDescription: 'PMKVY 4.0 offers advanced skill training for Industry 4.0 with free certification, job placement and monthly stipend during training.',
-    content: [],
-    faqSchema: [
+        type: 'subheading',
+        content: 'पात्रता मानदंड और आवश्यकताएं'
+      },
       {
-        question: 'PMKVY 4.0 में कौन से नए कोर्स हैं?',
-        answer: 'PMKVY 4.0 में AI, Machine Learning, IoT, Robotics, Data Analytics जैसे Industry 4.0 कोर्स शामिल हैं।'
-      }
-    ],
-    relatedSchemes: ['national-skill-development-mission-2025', 'digital-india-e-governance-2025'],
-    budget: '₹15,000 करोड़',
-    beneficiaries: '80 लाख',
-    successRate: '78%'
-  },
-  {
-    id: '133',
-    slug: 'ayushman-bharat-digital-mission-2025',
-    title: 'Ayushman Bharat Digital Mission 2025: Digital Health ID and Telemedicine Services',
-    titleHindi: 'आयुष्मान भारत डिजिटल मिशन 2025: डिजिटल हेल्थ ID और टेलीमेडिसिन सेवाएं',
-    category: 'Healthcare & Medical',
-    categoryHindi: 'स्वास्थ्य और चिकित्सा',
-    status: 'active',
-    launchDate: '2021-09-27',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['All Citizens', 'Patients', 'Healthcare Providers', 'Rural Population'],
-    benefits: [
-      'Unique Digital Health ID for all',
-      'Electronic health records',
-      'Telemedicine consultations',
-      'Digital prescription and medicines',
-      'Seamless healthcare across providers'
-    ],
-    eligibility: [
-      'All Indian citizens',
-      'Valid mobile number',
-      'Basic identity documents',
-      'No age restrictions'
-    ],
-    documents: [
-      'Aadhaar Card or any ID proof',
-      'Mobile Number',
-      'Existing health records (if any)',
-      'Passport size photograph'
-    ],
-    applicationProcess: [
-      'Download Ayushman Bharat Health Account app',
-      'Create account with mobile OTP',
-      'Upload identity documents',
-      'Generate Digital Health ID',
-      'Link with healthcare providers'
-    ],
-    officialWebsite: 'https://abdm.gov.in',
-    helpline: '1800-11-4477',
-    coverImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'Ayushman Bharat Digital Mission creates digital health ecosystem with unique health IDs and telemedicine services for all citizens.',
-    excerptHindi: 'आयुष्मान भारत डिजिटल मिशन सभी नागरिकों के लिए अद्वितीय हेल्थ ID और टेलीमेडिसिन सेवाओं के साथ डिजिटल स्वास्थ्य पारिस्थितिकी तंत्र बनाता है।',
-    keywords: [
-      'Ayushman Bharat Digital Mission 2025', 'digital health ID', 'आयुष्मान भारत डिजिटल मिशन',
-      'डिजिटल हेल्थ ID', 'telemedicine services'
-    ],
-    seoTitle: 'Ayushman Bharat Digital Mission 2025: Digital Health ID | Telemedicine Services',
-    seoDescription: 'Ayushman Bharat Digital Mission offers digital health ID, electronic health records and telemedicine services for all citizens.',
-    content: [],
-    faqSchema: [
+        type: 'paragraph',
+        content: 'Stand Up India योजना के लिए पात्रता मानदंड महिला उद्यमियों को ध्यान में रखकर बनाए गए हैं।'
+      },
       {
-        question: 'डिजिटल हेल्थ ID कैसे बनाएं?',
-        answer: 'Ayushman Bharat Health Account ऐप डाउनलोड करके मोबाइल OTP से अकाउंट बनाकर हेल्थ ID जेनरेट कर सकते हैं।'
-      }
-    ],
-    relatedSchemes: ['ayushman-bharat-health-account-2025', 'national-rural-health-mission-nhm-2025'],
-    budget: '₹1,600 करोड़',
-    beneficiaries: '130 करोड़',
-    successRate: '76%'
-  },
-  {
-    id: '134',
-    slug: 'pradhan-mantri-ujjwala-yojana-2-2025',
-    title: 'PM Ujjwala Yojana 2.0 (2025): Free LPG Connections for Poor Households',
-    titleHindi: 'पीएम उज्ज्वला योजना 2.0 (2025): गरीब परिवारों के लिए मुफ्त LPG कनेक्शन',
-    category: 'Women Empowerment',
-    categoryHindi: 'महिला सशक्तिकरण',
-    status: 'active',
-    launchDate: '2021-08-10',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['BPL Families', 'Rural Women', 'Poor Households', 'Priority Households'],
-    benefits: [
-      'Free LPG connection with gas stove',
-      'First refill absolutely free',
-      'EMI facility for further refills',
-      'Deposit-free LPG connection',
-      'Clean cooking fuel access'
-    ],
-    eligibility: [
-      'Adult women from BPL families',
-      'Priority household category',
-      'Should not have LPG connection',
-      'Valid identity and address proof'
-    ],
-    documents: [
-      'BPL Card or Priority Household Card',
-      'Aadhaar Card of woman applicant',
-      'Bank Account Details',
-      'Address Proof',
-      'Passport Size Photograph'
-    ],
-    applicationProcess: [
-      'Apply at nearest LPG distributor',
-      'Submit application with documents',
-      'Verification by distributor',
-      'KYC completion',
-      'Free connection installation'
-    ],
-    officialWebsite: 'https://pmuy.gov.in',
-    helpline: '1800-233-3555',
-    coverImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'PM Ujjwala Yojana 2.0 provides free LPG connections to poor households with deposit-free installation and EMI facilities.',
-    excerptHindi: 'पीएम उज्ज्वला योजना 2.0 गरीब परिवारों को जमा-मुक्त स्थापना और EMI सुविधाओं के साथ मुफ्त LPG कनेक्शन प्रदान करती है।',
-    keywords: [
-      'PM Ujjwala Yojana 2.0 2025', 'free LPG connection', 'पीएम उज्ज्वला योजना 2.0',
-      'मुफ्त LPG कनेक्शन', 'clean cooking fuel'
-    ],
-    seoTitle: 'PM Ujjwala Yojana 2.0 (2025): Free LPG Connection | Apply for Gas Connection',
-    seoDescription: 'PM Ujjwala Yojana 2.0 offers free LPG connections to BPL families with deposit-free installation and EMI facility for refills.',
-    content: [],
-    faqSchema: [
+        type: 'list',
+        items: [
+          '18 वर्ष या अधिक आयु की भारतीय महिला',
+          'पहली बार व्यापार शुरू करने वाली उद्यमी',
+          'वैध बिजनेस रजिस्ट्रेशन और लाइसेंस',
+          '₹10 लाख से ₹1 करोड़ के बीच लोन आवश्यकता',
+          'मैन्युफैक्चरिंग, ट्रेडिंग, या सर्विस सेक्टर बिजनेस',
+          'अच्छा क्रेडिट स्कोर और फाइनेंशियल बैकग्राउंड'
+        ]
+      },
       {
-        question: 'उज्ज्वला योजना 2.0 में क्या मिलता है?',
-        answer: 'इस योजना में मुफ्त LPG कनेक्शन, गैस चूल्हा और पहला रिफिल बिल्कुल फ्री मिलता है।'
-      }
-    ],
-    relatedSchemes: ['beti-bachao-beti-padhao-enhanced-2025', 'pradhan-mantri-matru-vandana-yojana-2025'],
-    budget: '₹12,800 करोड़',
-    beneficiaries: '10 करोड़',
-    successRate: '93%'
-  },
-  {
-    id: '135',
-    slug: 'e-shram-portal-worker-registration-2025',
-    title: 'e-Shram Portal Worker Registration 2025: Social Security for Unorganized Workers',
-    titleHindi: 'ई-श्रम पोर्टल श्रमिक पंजीकरण 2025: असंगठित श्रमिकों के लिए सामाजिक सुरक्षा',
-    category: 'Employment & Jobs',
-    categoryHindi: 'रोजगार और नौकरी',
-    status: 'active',
-    launchDate: '2025-08-26',
-    lastUpdated: '2025-06-30',
-    targetAudience: ['Unorganized Workers', 'Migrant Workers', 'Construction Workers', 'Domestic Workers'],
-    benefits: [
-      'Unique Universal Account Number (UAN)',
-      'Access to social security schemes',
-      '₹2 lakh accident insurance',
-      'Skill mapping and job matching',
-      'Direct benefit transfer eligibility'
-    ],
-    eligibility: [
-      'Unorganized sector workers',
-      'Age 16-59 years',
-      'Not covered under EPF/ESIC',
-      'Valid mobile number and Aadhaar'
-    ],
-    documents: [
-      'Aadhaar Card',
-      'Mobile Number',
-      'Bank Account Details',
-      'Occupation Details',
-      'Skill Information'
-    ],
-    applicationProcess: [
-      'Visit eshram.gov.in website',
-      'Enter Aadhaar and mobile number',
-      'Complete OTP verification',
-      'Fill worker registration form',
-      'Submit and get e-Shram card'
-    ],
-    officialWebsite: 'https://eshram.gov.in',
-    helpline: '14434',
-    coverImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    excerpt: 'e-Shram Portal provides social security and insurance benefits to unorganized workers with Universal Account Number registration.',
-    excerptHindi: 'ई-श्रम पोर्टल यूनिवर्सल अकाउंट नंबर पंजीकरण के साथ असंगठित श्रमिकों को सामाजिक सुरक्षा और बीमा लाभ प्रदान करता है।',
-    keywords: [
-      'e-Shram portal 2025', 'unorganized worker registration', 'ई-श्रम पोर्टल',
-      'असंगठित श्रमिक पंजीकरण', 'worker social security'
-    ],
-    seoTitle: 'e-Shram Portal 2025: Worker Registration & Social Security | Apply Online',
-    seoDescription: 'e-Shram Portal offers social security benefits for unorganized workers with UAN registration and ₹2 lakh accident insurance.',
-    content: [],
-    faqSchema: [
+        type: 'subheading',
+        content: 'बिजनेस सेक्टर और अवसर'
+      },
       {
-        question: 'ई-श्रम पोर्टल पर रजिस्ट्रेशन कैसे करें?',
-        answer: 'eshram.gov.in पर जाकर आधार और मोबाइल नंबर से OTP वेरिफिकेशन के बाद रजिस्ट्रेशन कर सकते हैं।'
-      }
-    ],
-    relatedSchemes: ['pm-shram-yogi-maandhan-pension-2025', 'social-security-scheme-gig-workers-2025'],
-    budget: '₹404 करोड़',
-    beneficiaries: '29 करोड़',
-    successRate: '91%'
-  },
+        type: 'paragraph',
+        content: 'विभिन्न व्यापारिक क्षेत्रों में महिला उद्यमी इस योजना का लाभ उठा सकती हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['व्यापारिक क्षेत्र', 'औसत निवेश', 'मार्केट पोटेंशियल', 'सफलता दर'],
+          rows: [
+            ['फूड प्रोसेसिंग', '₹25-50 लाख', 'हाई ग्रोथ', '85%'],
+            ['टेक्सटाइल & अपैरल', '₹30-60 लाख', 'एक्सपोर्ट फ्रेंडली', '78%'],
+            ['हेल्थकेयर सर्विसेज', '₹40-80 लाख', 'एमर्जिंग सेक्टर', '82%'],
+            ['एजुकेशन & ट्रेनिंग', '₹20-40 लाख', 'स्टेबल डिमांड', '88%']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन प्रक्रिया: चरणबद्ध गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'Stand Up India लोन के लिए आवेदन प्रक्रिया डिजिटल प्लेटफॉर्म के माध्यम से सरल और पारदर्शी है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'व्यापक बिजनेस प्लान और प्रोजेक्ट रिपोर्ट तैयार करें',
+          'standupmitra.in पोर्टल पर रजिस्टर करें',
+          'दस्तावेजों के साथ ऑनलाइन आवेदन सबमिट करें',
+          'एक्सपर्ट्स द्वारा बिजनेस प्लान का मूल्यांकन',
+          'लेंडिंग इंस्टीट्यूशन के साथ इंटरव्यू',
+          'लोन अप्रूवल और फंड्स डिसबर्समेंट प्राप्त करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'मेंटॉरशिप और हैंडहोल्डिंग सपोर्ट'
+      },
+      {
+        type: 'paragraph',
+        content: 'केवल फंडिंग ही नहीं, बल्कि व्यापारिक सफलता के लिए व्यापक सहायता प्रदान की जाती है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'अनुभवी महिला उद्यमियों से वन-ऑन-वन मेंटॉरशिप',
+          'बिजनेस डेवलपमेंट और स्ट्रैटेजी प्लानिंग',
+          'फाइनेंशियल मैनेजमेंट और एकाउंटिंग ट्रेनिंग',
+          'डिजिटल मार्केटिंग और ब्रांडिंग गाइडेंस',
+          'लीगल कंप्लायंस और टैक्स प्लानिंग सपोर्ट',
+          'नेटवर्किंग इवेंट्स और बिजनेस कम्यूनिटी एक्सेस'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'डिजिटल मार्केटिंग और E-commerce सपोर्ट'
+      },
+      {
+        type: 'paragraph',
+        content: '2025 में डिजिटल युग की जरूरतों को ध्यान में रखते हुए व्यापक ऑनलाइन सपोर्ट दिया जा रहा है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['डिजिटल सर्विस', 'सपोर्ट टाइप', 'कॉस्ट', 'बेनिफिट'],
+          rows: [
+            ['वेबसाइट डेवलपमेंट', 'फ्री टेम्प्लेट्स', 'फ्री', 'प्रोफेशनल प्रेजेंस'],
+            ['सोशल मीडिया मार्केटिंग', 'ट्रेनिंग & टूल्स', '50% सब्सिडी', 'ब्रांड बिल्डिंग'],
+            ['ई-कॉमर्स सेटअप', 'Amazon/Flipkart लिस्टिंग', 'फ्री', 'वाइडर रीच'],
+            ['डिजिटल पेमेंट्स', 'UPI/गेटवे सेटअप', 'फ्री', 'कैशलेस ट्रांजैक्शन']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'महिला उद्यमी सफलता की कहानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'पुणे की रेखा शर्मा ने Stand Up India से ₹50 लाख का लोन लेकर ऑर्गेनिक फूड प्रोसेसिंग यूनिट शुरू की। आज उनका टर्नओवर ₹5 करोड़ सालाना है।'
+      },
+      {
+        type: 'paragraph',
+        content: 'बेंगलुरु की प्रिया पटेल ने टेक कंसल्टिंग फर्म शुरू की। Stand Up India की मेंटॉरशिप से उन्होंने अंतर्राष्ट्रीय क्लाइंट्स हासिल किए।'
+      },
+      {
+        type: 'subheading',
+        content: 'स्किल डेवलपमेंट और ट्रेनिंग प्रोग्राम'
+      },
+      {
+        type: 'paragraph',
+        content: 'व्यापारिक कौशल विकास के लिए व्यापक ट्रेनिंग प्रोग्राम उपलब्ध हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['ट्रेनिंग मॉड्यूल', 'अवधि', 'फीस', 'सर्टिफिकेशन'],
+          rows: [
+            ['एंटरप्रेन्योरशिप फंडामेंटल्स', '2 सप्ताह', 'फ्री', 'डिजिटल सर्टिफिकेट'],
+            ['फाइनेंशियल मैनेजमेंट', '3 सप्ताह', 'फ्री', 'प्राफेशनल सर्टिफिकेट'],
+            ['डिजिटल मार्केटिंग', '4 सप्ताह', '₹5,000', 'गूगल सर्टिफाइड'],
+            ['एक्सपोर्ट-इम्पोर्ट ट्रेड', '6 सप्ताह', '₹10,000', 'गवर्नमेंट सर्टिफाइड']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'लेंडिंग पार्टनर्स और बैंक्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'Stand Up India योजना के तहत सभी प्रमुख बैंक और NBFC शामिल हैं।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सभी राष्ट्रीयकृत बैंक - SBI, PNB, BOI, BOB',
+          'प्राइवेट बैंक - HDFC, ICICI, Axis, Kotak',
+          'NBFC पार्टनर्स - बजाज फाइनेंस, महिंद्रा फाइनेंस',
+          'स्पेशलाइज्ड लेंडर्स - SIDBI, MUDRA बैंक',
+          'रीजनल रूरल बैंक्स - स्थानीय सपोर्ट',
+          'कॉपरेटिव बैंक्स - कम्यूनिटी बेसड लेंडिंग'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'इनोवेशन और टेक्नोलॉजी सपोर्ट'
+      },
+      {
+        type: 'paragraph',
+        content: 'आधुनिक तकनीक और इनोवेशन को बढ़ावा देने के लिए विशेष सहायता।'
+      },
+      {
+        type: 'list',
+        items: [
+          'टेक स्टार्टअप्स के लिए स्पेशल फंडिंग',
+          'पेटेंट और IPR रजिस्ट्रेशन सपोर्ट',
+          'R&D और प्रोडक्ट डेवलपमेंट ग्रांट्स',
+          'इनक्यूबेशन सेंटर एक्सेस',
+          'इंटरनेशनल पेटेंट फाइलिंग असिस्टेंस',
+          'टेक कॉलैबोरेशन और पार्टनरशिप'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'एक्सपोर्ट प्रमोशन और इंटरनेशनल ट्रेड'
+      },
+      {
+        type: 'paragraph',
+        content: 'ग्लोबल मार्केट में भारतीय महिला उद्यमियों की पहुंच बढ़ाने के लिए विशेष प्रयास।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['एक्सपोर्ट सपोर्ट', 'सर्विस टाइप', 'कॉस्ट', 'बेनिफिट'],
+          rows: [
+            ['एक्सपोर्ट लाइसेंस', 'रजिस्ट्रेशन सपोर्ट', 'फ्री', 'लीगल कंप्लायंस'],
+            ['ट्रेड फेयर पार्टिसिपेशन', 'स्टॉल & ट्रैवल', '50% सब्सिडी', 'बायर कनेक्शन'],
+            ['प्रोडक्ट सर्टिफिकेशन', 'इंटल स्टैंडर्ड्स', '70% सब्सिडी', 'क्वालिटी एश्योरेंस'],
+            ['शिपिंग & लॉजिस्टिक्स', 'ट्रेनिंग & टूल्स', 'फ्री', 'कॉस्ट ऑप्टिमाइजेशन']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'चुनौतियां और समाधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'महिला उद्यमियों की सामान्य चुनौतियों के लिए प्रैक्टिकल सोल्यूशन।'
+      },
+      {
+        type: 'list',
+        items: [
+          'वर्क-लाइफ बैलेंस - फ्लेक्सिबल वर्किंग ऑप्शन्स',
+          'नेटवर्किंग की कमी - वुमन एंटरप्रेन्योर कम्यूनिटीज',
+          'टेक्निकल नॉलेज गैप - फ्री स्किल डेवलपमेंट',
+          'मार्केट एक्सेस - डिजिटल प्लेटफॉर्म सपोर्ट',
+          'फंडिंग कंसर्न्स - एजी टर्म्स और कंडीशन्स',
+          'रेगुलेटरी कंप्लायंस - लीगल सपोर्ट सर्विसेज'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'भविष्य की योजनाएं और विकास'
+      },
+      {
+        type: 'paragraph',
+        content: '2030 तक Stand Up India योजना को और भी व्यापक बनाने की योजना है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'लोन लिमिट ₹2 करोड़ तक बढ़ाना',
+          'ग्रीन एंटरप्रेन्योरशिप के लिए स्पेशल रेट्स',
+          'AI और ML स्टार्टअप्स के लिए फंडिंग',
+          'वर्चुअल रियलिटी ट्रेनिंग प्रोग्राम्स',
+          'ब्लॉकचेन बेसड सप्लाई चेन सोल्यूशन्स',
+          'क्रिप्टो करेंसी और डिजिटल एसेट फंडिंग'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+     
   // Continue with more 136 schemes...
 ];
 
