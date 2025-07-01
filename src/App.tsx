@@ -63,7 +63,7 @@ function App() {
     // AdSense script
     const adsenseScript = document.createElement('script');
     adsenseScript.async = true;
-    adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6815277662449747';
+    adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4446717165665089';
     adsenseScript.crossOrigin = 'anonymous';
     document.head.appendChild(adsenseScript);
 
