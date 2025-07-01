@@ -60,7 +60,26 @@ import LcmHcfCalculator from './calculators/LcmHcfCalculator';
 
 function App() {
   useEffect(() => {
-    // Remove AdSense script and meta tag injection
+    // AdSense script
+    const adsenseScript = document.createElement('script');
+    adsenseScript.async = true;
+    adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4446717165665089';
+    adsenseScript.crossOrigin = 'anonymous';
+    document.head.appendChild(adsenseScript);
+
+    // Google AdSense meta tag
+    if (!document.querySelector('meta[name="google-adsense-account"]')) {
+      const adsenseMeta = document.createElement('meta');
+      adsenseMeta.name = 'google-adsense-account';
+      adsenseMeta.content = 'ca-pub-4446717165665089';
+      document.head.appendChild(adsenseMeta);
+    }
+
+    return () => {
+      if (document.head.contains(adsenseScript)) document.head.removeChild(adsenseScript);
+      const meta = document.querySelector('meta[name="google-adsense-account"]');
+      if (meta) document.head.removeChild(meta);
+    };
   }, []);
 
   return (
