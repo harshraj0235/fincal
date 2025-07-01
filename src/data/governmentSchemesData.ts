@@ -41224,6 +41224,3753 @@ id: '125',
     successRate: '92.8%'
   },
 
+  {
+    id: '146',
+    slug: 'atal-tinkering-labs-expansion-stem-opportunities-school-kids-2025',
+    title: 'Atal Tinkering Labs Expansion 2025: STEM Opportunities for School Kids - Complete Guide',
+    titleHindi: 'अटल टिंकरिंग लैब्स विस्तार 2025: स्कूली बच्चों के लिए STEM अवसर - पूर्ण गाइड',
+    category: 'Education & Skills',
+    categoryHindi: 'शिक्षा और कौशल',
+    status: 'active',
+    launchDate: '2025-01-15',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['School Students', 'Teachers', 'Educational Institutions', 'Parents'],
+    benefits: [
+      'Hands-on experience with cutting-edge technology',
+      'Innovation and creativity development',
+      'STEM education enhancement',
+      'Future career preparation in technology',
+      'Problem-solving skills development',
+      'Access to modern lab equipment'
+    ],
+    eligibility: [
+      'Schools affiliated with CBSE, ICSE, or State Boards',
+      'Minimum 200 students enrollment',
+      'Dedicated space for lab setup',
+      'Committed teaching staff',
+      'Principal\'s approval and support'
+    ],
+    documents: [
+      'School registration certificate',
+      'Principal\'s consent letter',
+      'Infrastructure availability proof',
+      'Teacher qualification certificates',
+      'Student enrollment details'
+    ],
+    applicationProcess: [
+      'Visit Atal Innovation Mission portal',
+      'Fill online application form',
+      'Submit required documents',
+      'Attend virtual presentation',
+      'Await selection committee review',
+      'Receive approval and funding'
+    ],
+    officialWebsite: 'https://aim.gov.in',
+    helpline: '1800-572-4466',
+    coverImage: 'https://images.pexels.com/photos/8500219/pexels-photo-8500219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Atal Tinkering Labs Expansion 2025 brings STEM education to 10,000+ schools. Complete guide for application process, benefits, and opportunities for students.',
+    excerptHindi: 'अटल टिंकरिंग लैब्स विस्तार 2025 में 10,000+ स्कूलों में STEM शिक्षा लाता है। छात्रों के लिए आवेदन प्रक्रिया, लाभ और अवसरों का पूर्ण गाइड।',
+    keywords: [
+      'Atal Tinkering Labs 2025', 'STEM education India', 'school innovation labs',
+      'student technology programs', 'AIM scheme', 'innovation mission',
+      'अटल टिंकरिंग लैब', 'STEM शिक्षा', 'स्कूल तकनीक'
+    ],
+    seoTitle: 'Atal Tinkering Labs 2025: STEM Education for 10,000+ Schools | Complete Application Guide',
+    seoDescription: 'Atal Tinkering Labs Expansion 2025: STEM opportunities for school students. Application process, benefits, eligibility criteria. Transform education with innovation.',
+    budget: '₹500 करोड़ (2025-26)',
+    beneficiaries: '2 लाख+ छात्र',
+    successRate: '95%'
+  },
+  {
+    id: '147',
+    slug: 'rural-prosperity-resilience-programme-career-paths-villages-2025',
+    title: 'Rural Prosperity & Resilience Programme 2025: Career Paths in Villages - Complete Guide',
+    titleHindi: 'ग्रामीण समृद्धि और लचीलापन कार्यक्रम 2025: गांवों में करियर पथ - पूर्ण गाइड',
+    category: 'Rural Development',
+    categoryHindi: 'ग्रामीण विकास',
+    status: 'active',
+    launchDate: '2025-02-01',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Rural Youth', 'Farmers', 'Village Entrepreneurs', 'Rural Women'],
+    benefits: [
+      'Skill development in rural areas',
+      'Employment generation in villages',
+      'Sustainable livelihood creation',
+      'Technology adoption support',
+      'Market linkage facilitation',
+      'Financial assistance for startups'
+    ],
+    eligibility: [
+      'Rural youth aged 18-35 years',
+      'Minimum 10th class education',
+      'Permanent residence in rural area',
+      'Not employed in government sector',
+      'Interest in entrepreneurship or skill development'
+    ],
+    documents: [
+      'Aadhaar Card',
+      'Residence proof',
+      'Educational certificates',
+      'Age proof',
+      'Income certificate',
+      'Bank account details'
+    ],
+    applicationProcess: [
+      'Visit nearest CSC or Block office',
+      'Fill application form',
+      'Submit documents for verification',
+      'Attend skill assessment test',
+      'Complete training program',
+      'Receive certification and support'
+    ],
+    officialWebsite: 'https://rural.gov.in',
+    helpline: '1800-345-6789',
+    coverImage: 'https://images.pexels.com/photos/2886976/pexels-photo-2886976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Rural Prosperity & Resilience Programme 2025 creates career opportunities in villages. Skill development, employment generation, and entrepreneurship support.',
+    excerptHindi: 'ग्रामीण समृद्धि और लचीलापन कार्यक्रम 2025 गांवों में करियर अवसर बनाता है। कौशल विकास, रोजगार सृजन और उद्यमिता सहायता।',
+    keywords: [
+      'Rural prosperity programme 2025', 'village career opportunities', 'rural employment',
+      'skill development rural', 'ग्रामीण समृद्धि', 'गांव करियर', 'ग्रामीण रोजगार'
+    ],
+    seoTitle: 'Rural Prosperity Programme 2025: Village Career Opportunities | Skill Development Guide',
+    seoDescription: 'Rural Prosperity & Resilience Programme 2025: Career paths in villages, skill development, employment generation. Complete application guide for rural youth.',
+    budget: '₹1,200 करोड़ (2025-26)',
+    beneficiaries: '5 लाख+ ग्रामीण युवा',
+    successRate: '88%'
+  },
+  {
+    id: '148',
+    slug: 'first-time-entrepreneurs-scheme-women-sc-st-loans-2025',
+    title: 'First-Time Entrepreneurs Scheme 2025: How Women & SC/ST Can Get ₹2 Cr Loans',
+    titleHindi: 'प्रथम बार उद्यमी योजना 2025: महिला और SC/ST को ₹2 करोड़ लोन कैसे मिले',
+    category: 'Women Empowerment',
+    categoryHindi: 'महिला सशक्तिकरण',
+    status: 'active',
+    launchDate: '2025-03-08',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Women Entrepreneurs', 'SC/ST Entrepreneurs', 'First-time Business Owners', 'Startup Founders'],
+    benefits: [
+      'Loan up to ₹2 crore at subsidized rates',
+      'No collateral for loans up to ₹50 lakh',
+      'Mentorship and business guidance',
+      'Market linkage support',
+      'Technology transfer assistance',
+      'Government procurement preference'
+    ],
+    eligibility: [
+      'Women or SC/ST category entrepreneurs',
+      'Age between 21-45 years',
+      'First-time entrepreneur',
+      'Educational qualification: Graduation',
+      'Valid business plan',
+      'No previous loan defaults'
+    ],
+    documents: [
+      'Aadhaar Card and PAN Card',
+      'Educational certificates',
+      'Category certificate (SC/ST)',
+      'Business plan and project report',
+      'Bank statements',
+      'No objection certificate'
+    ],
+    applicationProcess: [
+      'Prepare detailed business plan',
+      'Register on official portal',
+      'Submit online application',
+      'Upload required documents',
+      'Attend interview/presentation',
+      'Receive loan sanction letter'
+    ],
+    officialWebsite: 'https://msme.gov.in',
+    helpline: '1800-180-6763',
+    coverImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'First-Time Entrepreneurs Scheme 2025 offers ₹2 crore loans to women and SC/ST entrepreneurs. Complete guide for application, eligibility, and benefits.',
+    excerptHindi: 'प्रथम बार उद्यमी योजना 2025 महिला और SC/ST उद्यमियों को ₹2 करोड़ लोन देती है। आवेदन, पात्रता और लाभों का पूर्ण गाइड।',
+    keywords: [
+      'first time entrepreneur scheme 2025', 'women entrepreneur loan', 'SC ST business loan',
+      'startup funding India', 'प्रथम उद्यमी योजना', 'महिला उद्यमी लोन', 'SC ST व्यापार लोन'
+    ],
+    seoTitle: 'First-Time Entrepreneurs Scheme 2025: ₹2 Cr Loans for Women & SC/ST | Complete Guide',
+    seoDescription: 'First-Time Entrepreneurs Scheme 2025: Get ₹2 crore loans for women and SC/ST entrepreneurs. Application process, eligibility, benefits, and success stories.',
+    budget: '₹800 करोड़ (2025-26)',
+    beneficiaries: '1 लाख+ उद्यमी',
+    successRate: '92%'
+  },
+  {
+    id: '149',
+    slug: 'pm-svanidhi-revamp-loans-upi-cards-street-vendors-2025',
+    title: 'PM SVANidhi Revamp 2025: Loans, UPI Cards & Growth Tips for Street Vendors',
+    titleHindi: 'पीएम स्वनिधि रिवैम्प 2025: स्ट्रीट वेंडर्स के लिए लोन, UPI कार्ड और ग्रोथ टिप्स',
+    category: 'Urban Development',
+    categoryHindi: 'शहरी विकास',
+    status: 'active',
+    launchDate: '2025-01-20',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Street Vendors', 'Small Traders', 'Urban Hawkers', 'Micro Entrepreneurs'],
+    benefits: [
+      'Collateral-free loans up to ₹50,000',
+      'Digital payment incentives',
+      'UPI QR code and card facility',
+      'Business development support',
+      'Insurance coverage',
+      'Credit score improvement'
+    ],
+    eligibility: [
+      'Street vendor with valid certificate',
+      'Operating business for at least 1 year',
+      'Aadhaar and bank account mandatory',
+      'No previous loan defaults',
+      'Age between 18-65 years'
+    ],
+    documents: [
+      'Street vendor certificate',
+      'Aadhaar Card',
+      'Bank account details',
+      'Business photographs',
+      'Identity and address proof',
+      'Mobile number verification'
+    ],
+    applicationProcess: [
+      'Visit nearest lending partner bank',
+      'Fill PM SVANidhi application form',
+      'Submit required documents',
+      'Bank verification process',
+      'Loan approval and disbursement',
+      'Receive UPI card and training'
+    ],
+    officialWebsite: 'https://pmsvanidhi.mohua.gov.in',
+    helpline: '1800-11-6446',
+    coverImage: 'https://images.pexels.com/photos/5650026/pexels-photo-5650026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM SVANidhi Revamp 2025 offers enhanced support to street vendors with loans up to ₹50,000, UPI cards, and digital payment incentives.',
+    excerptHindi: 'पीएम स्वनिधि रिवैम्प 2025 स्ट्रीट वेंडर्स को ₹50,000 तक लोन, UPI कार्ड और डिजिटल पेमेंट इंसेंटिव देता है।',
+    keywords: [
+      'PM SVANidhi 2025', 'street vendor loan', 'UPI card vendors', 'digital payment scheme',
+      'पीएम स्वनिधि', 'स्ट्रीट वेंडर लोन', 'UPI कार्ड', 'डिजिटल पेमेंट योजना'
+    ],
+    seoTitle: 'PM SVANidhi 2025: ₹50,000 Loans + UPI Cards for Street Vendors | Complete Guide',
+    seoDescription: 'PM SVANidhi Revamp 2025: Street vendor loans up to ₹50,000, UPI cards, digital incentives. Application process, eligibility, and business growth tips.',
+    budget: '₹700 करोड़ (2025-26)',
+    beneficiaries: '50 लाख+ स्ट्रीट वेंडर्स',
+    successRate: '89%'
+  },
+  {
+    id: '150',
+    slug: 'digital-benefits-cashback-upi-pm-svanidhi-vendors-2025',
+    title: 'Digital Benefits & Cashback 2025: Using UPI Via PM SVANidhi for Maximum Returns',
+    titleHindi: 'डिजिटल लाभ और कैशबैक 2025: अधिकतम रिटर्न के लिए PM SVANidhi के माध्यम से UPI का उपयोग',
+    category: 'Financial Inclusion',
+    categoryHindi: 'वित्तीय समावेशन',
+    status: 'active',
+    launchDate: '2025-02-15',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Digital Payment Users', 'Street Vendors', 'Small Business Owners', 'UPI Users'],
+    benefits: [
+      'Monthly cashback up to ₹100',
+      'Digital transaction rewards',
+      'Free UPI transaction facility',
+      'Business analytics dashboard',
+      'Customer database management',
+      'Payment settlement in 24 hours'
+    ],
+    eligibility: [
+      'PM SVANidhi loan beneficiary',
+      'Active UPI QR code user',
+      'Minimum 25 digital transactions per month',
+      'Valid bank account',
+      'Smartphone with internet connection'
+    ],
+    documents: [
+      'PM SVANidhi loan certificate',
+      'UPI registration proof',
+      'Bank account details',
+      'Monthly transaction statements',
+      'Mobile number verification'
+    ],
+    applicationProcess: [
+      'Activate UPI QR code through PM SVANidhi',
+      'Complete digital payment training',
+      'Start accepting digital payments',
+      'Maintain minimum transaction volume',
+      'Claim monthly cashback rewards',
+      'Track progress through mobile app'
+    ],
+    officialWebsite: 'https://pmsvanidhi.mohua.gov.in',
+    helpline: '1800-11-6446',
+    coverImage: 'https://images.pexels.com/photos/4968639/pexels-photo-4968639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Digital Benefits & Cashback 2025 through PM SVANidhi UPI offers monthly rewards up to ₹100 for street vendors using digital payments.',
+    excerptHindi: 'PM SVANidhi UPI के माध्यम से डिजिटल लाभ और कैशबैक 2025 डिजिटल पेमेंट का उपयोग करने वाले स्ट्रीट वेंडर्स को मासिक ₹100 तक रिवार्ड देता है।',
+    keywords: [
+      'UPI cashback 2025', 'digital payment rewards', 'PM SVANidhi UPI benefits',
+      'street vendor digital payments', 'UPI कैशबैक', 'डिजिटल पेमेंट रिवार्ड'
+    ],
+    seoTitle: 'UPI Cashback 2025: ₹100 Monthly Rewards via PM SVANidhi | Digital Payment Guide',
+    seoDescription: 'Digital Benefits & Cashback 2025: Earn ₹100 monthly through PM SVANidhi UPI. Complete guide for street vendors to maximize digital payment rewards.',
+    budget: '₹200 करोड़ (2025-26)',
+    beneficiaries: '30 लाख+ UPI उपयोगकर्ता',
+    successRate: '94%'
+  },
+  {
+    id: '151',
+    slug: 'udan-scheme-revamped-120-new-destinations-2035-travel-planning',
+    title: 'UDAN Scheme Revamped 2025: 120 New Destinations by 2035 – Complete Travel Planning Guide',
+    titleHindi: 'उड़ान योजना रिवैम्प 2025: 2035 तक 120 नए गंतव्य - पूर्ण यात्रा योजना गाइड',
+    category: 'Urban Development',
+    categoryHindi: 'शहरी विकास',
+    status: 'active',
+    launchDate: '2025-03-15',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Air Travelers', 'Tourism Industry', 'Regional Passengers', 'Business Travelers'],
+    benefits: [
+      'Affordable air connectivity to remote areas',
+      '120 new destinations by 2035',
+      'Subsidized airfare for eligible routes',
+      'Boost to regional tourism',
+      'Employment generation in aviation',
+      'Economic development of tier-2/3 cities'
+    ],
+    eligibility: [
+      'Indian citizen with valid ID proof',
+      'Advance booking through designated airlines',
+      'Routes covered under UDAN scheme',
+      'Compliance with airline baggage policy',
+      'Valid travel documents'
+    ],
+    documents: [
+      'Government issued photo ID',
+      'Advance flight booking confirmation',
+      'Age proof for concessions',
+      'Medical certificate if required',
+      'Passport for international connections'
+    ],
+    applicationProcess: [
+      'Check UDAN route availability',
+      'Book tickets through airline website',
+      'Verify eligibility for subsidized fare',
+      'Complete online check-in',
+      'Arrive at airport with valid documents',
+      'Board flight with proper verification'
+    ],
+    officialWebsite: 'https://udan.gov.in',
+    helpline: '1800-180-1407',
+    coverImage: 'https://images.pexels.com/photos/358220/pexels-photo-358220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'UDAN Scheme Revamped 2025 adds 120 new destinations by 2035. Affordable air connectivity, subsidized fares, and regional development opportunities.',
+    excerptHindi: 'उड़ान योजना रिवैम्प 2025 में 2035 तक 120 नए गंतव्य जोड़े गए। सस्ती हवाई कनेक्टिविटी, सब्सिडी युक्त किराया और क्षेत्रीय विकास के अवसर।',
+    keywords: [
+      'UDAN scheme 2025', 'affordable flights India', 'regional connectivity', 'aviation development',
+      'उड़ान योजना', 'सस्ती उड़ानें', 'क्षेत्रीय कनेक्टिविटी', 'विमानन विकास'
+    ],
+    seoTitle: 'UDAN Scheme 2025: 120 New Destinations by 2035 | Affordable Flight Booking Guide',
+    seoDescription: 'UDAN Scheme Revamped 2025: 120 new flight destinations, subsidized airfare, regional connectivity. Complete travel planning and booking guide.',
+    budget: '₹4,500 करोड़ (2025-30)',
+    beneficiaries: '2 करोड़+ यात्री',
+    successRate: '91%'
+  },
+  {
+    id: '152',
+    slug: 'pm-gati-shakti-national-geospatial-mission-infrastructure-impact-2025',
+    title: 'PM Gati Shakti & National Geospatial Mission 2025: What Infrastructure Means for You',
+    titleHindi: 'PM गति शक्ति और राष्ट्रीय भू-स्थानिक मिशन 2025: आपके लिए इंफ्रास्ट्रक्चर का मतलब',
+    category: 'Urban Development',
+    categoryHindi: 'शहरी विकास',
+    status: 'active',
+    launchDate: '2025-04-01',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Infrastructure Professionals', 'Urban Planners', 'Business Owners', 'Citizens'],
+    benefits: [
+      'Integrated infrastructure development',
+      'Reduced project costs and timelines',
+      'Enhanced digital mapping and planning',
+      'Improved logistics and connectivity',
+      'Employment opportunities in infrastructure',
+      'Better quality of life for citizens'
+    ],
+    eligibility: [
+      'Infrastructure projects worth ₹500+ crore',
+      'Government and private sector projects',
+      'Compliance with environmental norms',
+      'Integration with existing infrastructure',
+      'Digital mapping requirements'
+    ],
+    documents: [
+      'Project proposal and DPR',
+      'Environmental clearance certificate',
+      'Land acquisition documents',
+      'Financial viability reports',
+      'Technical specifications',
+      'Stakeholder consultation records'
+    ],
+    applicationProcess: [
+      'Submit project proposal to PM Gati Shakti portal',
+      'Upload detailed project report',
+      'Complete geospatial mapping requirements',
+      'Obtain multi-modal connectivity approval',
+      'Receive integrated clearance',
+      'Implement project with monitoring'
+    ],
+    officialWebsite: 'https://gatiShakti.gov.in',
+    helpline: '1800-267-7315',
+    coverImage: 'https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'PM Gati Shakti & National Geospatial Mission 2025 revolutionizes infrastructure development with integrated planning and digital mapping.',
+    excerptHindi: 'PM गति शक्ति और राष्ट्रीय भू-स्थानिक मिशन 2025 एकीकृत योजना और डिजिटल मैपिंग के साथ इंफ्रास्ट्रक्चर विकास में क्रांति लाता है।',
+    keywords: [
+      'PM Gati Shakti 2025', 'infrastructure development', 'geospatial mission', 'digital mapping',
+      'गति शक्ति', 'इंफ्रास्ट्रक्चर विकास', 'भू-स्थानिक मिशन', 'डिजिटल मैपिंग'
+    ],
+    seoTitle: 'PM Gati Shakti 2025: Infrastructure Revolution | National Geospatial Mission Guide',
+    seoDescription: 'PM Gati Shakti & National Geospatial Mission 2025: Integrated infrastructure development, digital mapping, project approval process. Complete guide.',
+    budget: '₹1,10,000 करोड़ (2025-30)',
+    beneficiaries: '130 करोड़+ नागरिक',
+    successRate: '87%'
+  },
+  {
+    id: '153',
+    slug: 'kosi-mechi-river-linking-bihar-impact-farmers-finances-2025',
+    title: 'Kosi-Mechi River Linking in Bihar 2025: Impact on Local Farmers & Finances',
+    titleHindi: 'बिहार में कोसी-मेची नदी जोड़ने की योजना 2025: स्थानीय किसानों और वित्त पर प्रभाव',
+    category: 'Agriculture & Farmers',
+    categoryHindi: 'कृषि और किसान',
+    status: 'active',
+    launchDate: '2025-05-01',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Bihar Farmers', 'Water Management Experts', 'Agricultural Professionals', 'Rural Communities'],
+    benefits: [
+      'Improved irrigation facilities',
+      'Flood control and management',
+      'Enhanced agricultural productivity',
+      'Year-round water availability',
+      'Increased crop diversity options',
+      'Better farm income prospects'
+    ],
+    eligibility: [
+      'Farmers in Kosi-Mechi region',
+      'Land ownership or lease documents',
+      'Agricultural activities for minimum 2 years',
+      'Valid farmer registration',
+      'Bank account for benefit transfers'
+    ],
+    documents: [
+      'Land ownership documents',
+      'Farmer registration certificate',
+      'Aadhaar Card and bank details',
+      'Previous crop cultivation records',
+      'Water usage permissions',
+      'Flood damage certificates (if applicable)'
+    ],
+    applicationProcess: [
+      'Register with district irrigation department',
+      'Submit application for water allocation',
+      'Complete soil and water testing',
+      'Receive irrigation schedule and guidelines',
+      'Implement water-efficient farming practices',
+      'Monitor crop yield improvements'
+    ],
+    officialWebsite: 'https://irrigation.bihar.gov.in',
+    helpline: '1800-345-6789',
+    coverImage: 'https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Kosi-Mechi River Linking project 2025 transforms Bihar agriculture with improved irrigation, flood control, and enhanced farm income opportunities.',
+    excerptHindi: 'कोसी-मेची नदी जोड़ने की परियोजना 2025 बेहतर सिंचाई, बाढ़ नियंत्रण और बेहतर कृषि आय के अवसरों के साथ बिहार की कृषि को बदलती है।',
+    keywords: [
+      'Kosi Mechi river linking 2025', 'Bihar irrigation project', 'farmer benefits',
+      'water management Bihar', 'कोसी मेची नदी जोड़ना', 'बिहार सिंचाई परियोजना'
+    ],
+    seoTitle: 'Kosi-Mechi River Linking Bihar 2025: Farmer Benefits | Irrigation Project Guide',
+    seoDescription: 'Kosi-Mechi River Linking 2025: Transform Bihar agriculture with improved irrigation and flood control. Complete impact analysis for farmers.',
+    budget: '₹8,000 करोड़ (2025-30)',
+    beneficiaries: '15 लाख+ किसान',
+    successRate: '85%'
+  },
+  {
+    id: '154',
+    slug: 'tripled-pension-bihar-calculating-new-monthly-support-2025',
+    title: 'Tripled Pension in Bihar 2025: Calculating New Monthly Support for Senior Citizens',
+    titleHindi: 'बिहार में तिगुनी पेंशन 2025: वरिष्ठ नागरिकों के लिए नई मासिक सहायता की गणना',
+    category: 'Senior Citizens',
+    categoryHindi: 'वरिष्ठ नागरिक',
+    status: 'active',
+    launchDate: '2025-06-01',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Senior Citizens', 'Pension Beneficiaries', 'Elderly Care Providers', 'Family Members'],
+    benefits: [
+      'Pension amount increased from ₹400 to ₹1,200',
+      'Direct bank transfer facility',
+      'No intermediary involvement',
+      'Regular payment schedule',
+      'Enhanced dignity and independence',
+      'Improved healthcare access'
+    ],
+    eligibility: [
+      'Age 60 years and above',
+      'Resident of Bihar for minimum 10 years',
+      'Annual family income below ₹2 lakh',
+      'Not receiving other government pension',
+      'Valid Aadhaar and bank account'
+    ],
+    documents: [
+      'Age proof certificate',
+      'Residence proof (10+ years)',
+      'Income certificate',
+      'Aadhaar Card',
+      'Bank account details',
+      'Recent passport size photographs'
+    ],
+    applicationProcess: [
+      'Visit nearest Block Social Security office',
+      'Fill pension application form',
+      'Submit required documents for verification',
+      'Complete biometric registration',
+      'Receive acknowledgment receipt',
+      'Start receiving enhanced pension amount'
+    ],
+    officialWebsite: 'https://sspmis.bihar.gov.in',
+    helpline: '1800-345-6789',
+    coverImage: 'https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Tripled Pension in Bihar 2025 increases monthly support from ₹400 to ₹1,200 for senior citizens. Complete guide for application and benefits.',
+    excerptHindi: 'बिहार में तिगुनी पेंशन 2025 वरिष्ठ नागरिकों के लिए मासिक सहायता ₹400 से बढ़ाकर ₹1,200 करती है। आवेदन और लाभों का पूर्ण गाइड।',
+    keywords: [
+      'Bihar pension scheme 2025', 'senior citizen pension', 'tripled pension Bihar',
+      'elderly benefits', 'बिहार पेंशन योजना', 'वरिष्ठ नागरिक पेंशन', 'तिगुनी पेंशन'
+    ],
+    seoTitle: 'Bihar Tripled Pension 2025: ₹1,200 Monthly for Senior Citizens | Complete Guide',
+    seoDescription: 'Tripled Pension Bihar 2025: Monthly support increased to ₹1,200 for senior citizens. Application process, eligibility, and benefit calculation.',
+    budget: '₹3,600 करोड़ (2025-26)',
+    beneficiaries: '25 लाख+ वरिष्ठ नागरिक',
+    successRate: '96%'
+  },
+  {
+    id: '155',
+    slug: 'mukhyamantri-yuva-udyami-transgenders-skill-to-loan-roadmap-2025',
+    title: 'Mukhyamantri Yuva Udyami for Transgenders 2025: Skill-to-Loan Roadmap',
+    titleHindi: 'मुख्यमंत्री युवा उद्यमी ट्रांसजेंडर योजना 2025: कौशल से लोन तक का रोडमैप',
+    category: 'Youth & Students',
+    categoryHindi: 'युवा और छात्र',
+    status: 'active',
+    launchDate: '2025-06-15',
+    lastUpdated: '2025-07-01',
+    targetAudience: ['Transgender Community', 'Young Entrepreneurs', 'LGBTQ+ Individuals', 'Social Workers'],
+    benefits: [
+      'Collateral-free loans up to ₹10 lakh',
+      'Interest subsidy of 50%',
+      'Skill development training',
+      'Business mentorship support',
+      'Market linkage assistance',
+      'Social security coverage'
+    ],
+    eligibility: [
+      'Transgender individual with valid certificate',
+      'Age between 18-40 years',
+      'Educational qualification: 12th pass',
+      'State resident for minimum 3 years',
+      'Valid business proposal',
+      'No previous loan defaults'
+    ],
+    documents: [
+      'Transgender identity certificate',
+      'Age and educational certificates',
+      'Residence proof',
+      'Business plan document',
+      'Bank account details',
+      'Character certificate'
+    ],
+    applicationProcess: [
+      'Register on Yuva Udyami portal',
+      'Complete skill assessment test',
+      'Submit business proposal',
+      'Attend counseling session',
+      'Complete documentation process',
+      'Receive loan approval and disbursement'
+    ],
+    officialWebsite: 'https://yuva.bihar.gov.in',
+    helpline: '1800-345-6789',
+    coverImage: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    excerpt: 'Mukhyamantri Yuva Udyami for Transgenders 2025 provides ₹10 lakh collateral-free loans with skill development and business mentorship.',
+    excerptHindi: 'मुख्यमंत्री युवा उद्यमी ट्रांसजेंडर योजना 2025 कौशल विकास और व्यापारिक मार्गदर्शन के साथ ₹10 लाख तक गारंटी-मुक्त लोन प्रदान करती है।',
+    keywords: [
+      'transgender entrepreneur scheme 2025', 'LGBTQ business loan', 'inclusive entrepreneurship',
+      'transgender empowerment', 'ट्रांसजेंडर उद्यमी योजना', 'LGBTQ व्यापार लोन'
+    ],
+    seoTitle: 'Mukhyamantri Yuva Udyami Transgender 2025: ₹10 Lakh Loan | Complete Guide',
+    seoDescription: 'Mukhyamantri Yuva Udyami for Transgenders 2025: ₹10 lakh collateral-free loans, skill development, business support. Complete application guide.',
+    budget: '₹100 करोड़ (2025-26)',
+    beneficiaries: '5,000+ ट्रांसजेंडर उद्यमी',
+    successRate: '88%'
+  },
+  
+ 
+  id: '156',
+  slug: 'subhadra-yojana-odisha-women-financial-support-2025',
+  title: 'Subhadra Yojana Odisha 2025: महिलाओं को मिलेगी ₹10,000 सालाना - Complete Guide',
+  titleHindi: 'सुभद्रा योजना ओडिशा 2025: महिलाओं को मिलेगी ₹10,000 सालाना - संपूर्ण गाइड',
+  category: 'Women Empowerment',
+  categoryHindi: 'महिला सशक्तिकरण',
+  status: 'active',
+  launchDate: '2024-09-17',
+  lastUpdated: '2025-01-01',
+  targetAudience: ['Women', 'Mothers', 'Rural Women', 'Urban Women', 'Working Women'],
+  benefits: [
+    '₹10,000 per year direct cash transfer',
+    'Financial independence for women',
+    'Support for education and healthcare',
+    'Empowerment through economic assistance',
+    'Digital literacy promotion',
+    'Reduced gender inequality'
+  ],
+  eligibility: [
+    'Women aged 21-60 years',
+    'Permanent resident of Odisha',
+    'Annual family income less than ₹2.5 lakh',
+    'Not receiving any other cash transfer scheme',
+    'Valid Aadhaar and bank account',
+    'Should not be a government employee'
+  ],
+  documents: [
+    'Aadhaar Card (mandatory)',
+    'Bank Passbook with IFSC code',
+    'Voter ID or Permanent Resident Certificate',
+    'Income Certificate',
+    'Passport Size Photographs',
+    'Mobile number for OTP verification'
+  ],
+  applicationProcess: [
+    'Visit nearest Anganwadi Centre or block office',
+    'Fill Subhadra Yojana application form',
+    'Submit all required documents for verification',
+    'Biometric verification and photo capture',
+    'Get application receipt with reference number',
+    'Track application status online',
+    'Receive first installment within 60 days'
+  ],
+  officialWebsite: 'https://subhadra.odisha.gov.in',
+  helpline: '1800-345-6770',
+  coverImage: 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: 'Subhadra Yojana Odisha 2025 provides ₹10,000 annual financial assistance to women. Complete guide with application process, eligibility criteria, and benefits for women empowerment.',
+  excerptHindi: 'सुभद्रा योजना ओडिशा 2025 महिलाओं को ₹10,000 वार्षिक वित्तीय सहायता प्रदान करती है। महिला सशक्तिकरण के लिए संपूर्ण गाइड, आवेदन प्रक्रिया और लाभ।',
+  keywords: [
+    'Subhadra Yojana 2025', 'सुभद्रा योजना ओडिशा', 'Odisha women scheme', 'महिला कैश ट्रांसफर',
+    'Subhadra Yojana application', 'ओडिशा महिला योजना', 'women empowerment scheme',
+    'Odisha government scheme', 'Subhadra Yojana eligibility', 'महिला वित्तीय सहायता',
+    'Subhadra Yojana benefits', 'ओडिशा सरकार योजना', 'women cash transfer scheme'
+  ],
+  seoTitle: 'Subhadra Yojana Odisha 2025: Women Get ₹10,000 Annual | Complete Application Guide',
+  seoDescription: 'Subhadra Yojana Odisha 2025: Get ₹10,000 annually for women empowerment. Complete application process, eligibility, documents required. Apply now for financial independence.',
+  content: [
+    {
+      type: 'heading',
+      content: 'Subhadra Yojana Odisha 2025: महिला सशक्तिकरण की नई दिशा'
+    },
+    {
+      type: 'paragraph',
+      content: 'ओडिशा सरकार की महत्वाकांक्षी सुभद्रा योजना 2025 में महिलाओं के लिए एक नया मील का पत्थर साबित हो रही है। इस योजना के तहत राज्य की महिलाओं को प्रति वर्ष ₹10,000 की प्रत्यक्ष नकद सहायता प्रदान की जा रही है। यह योजना महिलाओं की आर्थिक स्वतंत्रता को बढ़ावा देने और उन्हें सशक्त बनाने के लिए शुरू की गई है।'
+    },
+    {
+      type: 'subheading',
+      content: 'सुभद्रा योजना 2025: क्यों है खास?'
+    },
+    {
+      type: 'paragraph',
+      content: 'मुख्यमंत्री नवीन पटनायक द्वारा घोषित सुभद्रा योजना ओडिशा की महिलाओं के लिए एक क्रांतिकारी पहल है। यह योजना सिर्फ आर्थिक सहायता नहीं बल्कि महिलाओं के सम्मान और स्वाभिमान को बढ़ाने का काम कर रही है। 2025 में इस योजना का विस्तार कर और भी अधिक महिलाओं को इसका लाभ मिल रहा है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'प्रत्यक्ष बैंक ट्रांसफर - कोई बिचौलिया नहीं',
+        'डिजिटल प्लेटफॉर्म के माध्यम से पारदर्शिता',
+        'AI आधारित पात्रता सत्यापन',
+        'मोबाइल ऐप के माध्यम से आवेदन',
+        'त्वरित अप्रूवल प्रक्रिया',
+        'ब्लॉकचेन आधारित सुरक्षा'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'योजना के मुख्य लाभ और विशेषताएं'
+    },
+    {
+      type: 'paragraph',
+      content: 'सुभद्रा योजना केवल नकद सहायता नहीं है बल्कि महिलाओं के समग्र विकास की एक व्यापक रणनीति है। इस योजना के माध्यम से महिलाएं अपनी शिक्षा, स्वास्थ्य और व्यवसायिक जरूरतों को पूरा कर सकती हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'प्रति वर्ष ₹10,000 की गारंटीशुदा राशि',
+        'दो किश्तों में भुगतान - ₹5,000 प्रत्येक',
+        'शिक्षा और स्वास्थ्य सेवाओं के लिए प्राथमिकता',
+        'डिजिटल साक्षरता कार्यक्रम',
+        'स्किल डेवलपमेंट प्रोग्राम से जुड़ाव',
+        'महिला उद्यमिता को बढ़ावा',
+        'सामाजिक सुरक्षा का जाल'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'भुगतान चक्र और राशि विवरण'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['किश्त', 'राशि', 'भुगतान माह', 'उद्देश्य'],
+        rows: [
+          ['पहली किश्त', '₹5,000', 'अप्रैल-सितंबर', 'शिक्षा और स्वास्थ्य'],
+          ['दूसरी किश्त', '₹5,000', 'अक्टूबर-मार्च', 'व्यवसायिक विकास']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'पात्रता मानदंड: कौन कर सकता है आवेदन?'
+    },
+    {
+      type: 'paragraph',
+      content: 'सुभद्रा योजना के लिए कुछ विशिष्ट पात्रता मानदंड निर्धारित किए गए हैं। इन शर्तों को पूरा करने वाली महिलाएं ही इस योजना का लाभ उठा सकती हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        '21 से 60 वर्ष की आयु की महिलाएं',
+        'ओडिशा की स्थायी निवासी होना आवश्यक',
+        'पारिवारिक वार्षिक आय ₹2.5 लाख से कम',
+        'अन्य कैश ट्रांसफर योजना का लाभ नहीं ले रही',
+        'वैध आधार कार्ड और बैंक खाता',
+        'सरकारी कर्मचारी नहीं होना चाहिए'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आवश्यक दस्तावेज: तैयारी की पूरी सूची'
+    },
+    {
+      type: 'paragraph',
+      content: 'सुभद्रा योजना के लिए आवेदन करने से पहले सभी आवश्यक दस्तावेज तैयार रखना जरूरी है। सही दस्तावेज होने से आवेदन प्रक्रिया तेज हो जाती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'आधार कार्ड (अनिवार्य)',
+        'बैंक पासबुक (IFSC कोड के साथ)',
+        'वोटर आईडी या स्थायी निवास प्रमाण पत्र',
+        'आय प्रमाण पत्र (तहसीलदार द्वारा जारी)',
+        'पासपोर्ट साइज फोटो (4 प्रतियां)',
+        'मोबाइल नंबर (OTP के लिए)',
+        'जाति प्रमाण पत्र (यदि लागू हो)'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आवेदन प्रक्रिया 2025: स्टेप बाई स्टेप गाइड'
+    },
+    {
+      type: 'paragraph',
+      content: 'सुभद्रा योजना के लिए आवेदन करना बहुत सरल है। आप ऑनलाइन या ऑफलाइन दोनों तरीकों से आवेदन कर सकती हैं। 2025 में डिजिटल प्रक्रिया को और भी सुविधाजनक बनाया गया है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'निकटतम आंगनवाड़ी केंद्र या ब्लॉक ऑफिस पर जाएं',
+        'सुभद्रा योजना का आवेदन फॉर्म प्राप्त करें',
+        'फॉर्म में सभी विवरण सही-सही भरें',
+        'आवश्यक दस्तावेज संलग्न करें',
+        'बायोमेट्रिक वेरिफिकेशन कराएं',
+        'आवेदन रसीद संभालकर रखें',
+        'ऑनलाइन स्टेटस ट्रैक करें'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'ऑनलाइन आवेदन: डिजिटल इंडिया की पहल'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में सुभद्रा योजना के लिए ऑनलाइन आवेदन की सुविधा शुरू की गई है। अब महिलाएं घर बैठे ही आवेदन कर सकती हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'subhadra.odisha.gov.in वेबसाइट पर जाएं',
+        'नया आवेदन पर क्लिक करें',
+        'आधार नंबर और मोबाइल नंबर दर्ज करें',
+        'OTP वेरिफिकेशन करें',
+        'व्यक्तिगत विवरण भरें',
+        'दस्तावेज अपलोड करें',
+        'फॉर्म सबमिट करें',
+        'एप्लिकेशन नंबर नोट करें'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'स्टेटस चेक और ट्रैकिंग'
+    },
+    {
+      type: 'paragraph',
+      content: 'अपने आवेदन की स्थिति जानना अब और भी आसान हो गया है। डिजिटल डैशबोर्ड के माध्यम से रियल-टाइम अपडेट मिलते हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'वेबसाइट पर ट्रैक एप्लिकेशन पर क्लिक करें',
+        'आधार नंबर या एप्लिकेशन नंबर डालें',
+        'मोबाइल नंबर वेरिफाई करें',
+        'स्टेटस देखें और प्रिंट करें',
+        'SMS अलर्ट के लिए रजिस्टर करें',
+        'व्हाट्सऐप अपडेट सक्रिय करें'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'योजना का प्रभाव: सफलता की कहानियां'
+    },
+    {
+      type: 'paragraph',
+      content: 'सुभद्रा योजना ने ओडिशा की महिलाओं के जीवन में सकारात्मक बदलाव लाया है। यहां कुछ प्रेरणादायक कहानियां हैं:'
+    },
+    {
+      type: 'paragraph',
+      content: 'भुवनेश्वर की सुनीता देवी ने सुभद्रा योजना की सहायता से अपना छोटा व्यवसाय शुरू किया। उन्होंने कहा, "इस योजना ने मुझे आत्मनिर्भर बनने में मदद की है।"'
+    },
+    {
+      type: 'paragraph',
+      content: 'कटक की रीता साहू ने इस राशि से अपनी बेटी की शिक्षा का खर्च उठाया। वह कहती हैं, "यह योजना वास्तव में महिलाओं को सशक्त बना रही है।"'
+    },
+    {
+      type: 'subheading',
+      content: 'सामान्य समस्याएं और समाधान'
+    },
+    {
+      type: 'paragraph',
+      content: 'कुछ सामान्य समस्याएं आ सकती हैं, जिनके समाधान यहां दिए गए हैं:'
+    },
+    {
+      type: 'list',
+      items: [
+        'आधार लिंक नहीं है: बैंक जाकर तुरंत लिंक कराएं',
+        'दस्तावेज गलत हैं: सही दस्तावेज जमा करें',
+        'आवेदन रिजेक्ट हुआ: कारण जानकर दोबारा आवेदन करें',
+        'पैसा नहीं आया: हेल्पलाइन पर संपर्क करें',
+        'मोबाइल नंबर गलत: अपडेट कराएं'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: '2025-26 के लिए नई योजनाएं'
+    },
+    {
+      type: 'paragraph',
+      content: 'ओडिशा सरकार सुभद्रा योजना को और भी बेहतर बनाने के लिए नई सुविधाएं जोड़ रही है:'
+    },
+    {
+      type: 'list',
+      items: [
+        'राशि में वृद्धि की संभावना',
+        'अधिक महिलाओं को कवरेज',
+        'डिजिटल स्किल ट्रेनिंग',
+        'हेल्थ इंश्योरेंस का जुड़ाव',
+        'माइक्रो फाइनेंस सुविधा',
+        'उद्यमिता विकास कार्यक्रम'
+      ]
+    },
+    {
+      type: 'quote',
+      content: 'सुभद्रा योजना सिर्फ एक योजना नहीं बल्कि महिला सशक्तिकरण की दिशा में एक महत्वपूर्ण कदम है। यह योजना ओडिशा की महिलाओं को आर्थिक रूप से स्वतंत्र बनाने में मदद कर रही है।',
+      author: 'मुख्यमंत्री नवीन पटनायक'
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: 'सुभद्रा योजना ओडिशा 2025 महिलाओं के लिए एक वरदान साबित हो रही है। यह योजना न केवल आर्थिक सहायता प्रदान करती है बल्कि महिलाओं को समाज में सम्मानजनक स्थान दिलाने में भी मदद करती है। सभी पात्र महिलाओं को इस योजना का लाभ उठाना चाहिए और अपने सपनों को साकार करना चाहिए।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'सुभद्रा योजना में कितना पैसा मिलता है?',
+      answer: 'सुभद्रा योजना में प्रति वर्ष ₹10,000 की राशि दो किश्तों में मिलती है - ₹5,000 प्रत्येक किश्त में।'
+    },
+    {
+      question: 'सुभद्रा योजना के लिए कौन आवेदन कर सकता है?',
+      answer: '21-60 वर्ष की ओडिशा की महिलाएं जिनकी पारिवारिक आय ₹2.5 लाख से कम है, वे आवेदन कर सकती हैं।'
+    },
+    {
+      question: 'सुभद्रा योजना का आवेदन कैसे करें?',
+      answer: 'आप निकटतम आंगनवाड़ी केंद्र पर जाकर या subhadra.odisha.gov.in पर ऑनलाइन आवेदन कर सकती हैं।'
+    },
+    {
+      question: 'आवेदन की स्थिति कैसे जांचें?',
+      answer: 'आधार नंबर या एप्लिकेशन नंबर से ऑफिशियल वेबसाइट पर स्टेटस चेक कर सकती हैं।'
+    },
+    {
+      question: 'सुभद्रा योजना में कौन से दस्तावेज चाहिए?',
+      answer: 'आधार कार्ड, बैंक पासबुक, आय प्रमाण पत्र, निवास प्रमाण पत्र और फोटो आवश्यक हैं।'
+    }
+  ],
+  relatedSchemes: ['biju-kanya-ratna-yojana', 'mamata-scheme-odisha', 'kalia-yojana'],
+  budget: '₹55,825 करोड़ (2024-29)',
+  beneficiaries: '1 करोड़ महिलाएं',
+  successRate: '94.2%'
+},
+
+ {
+  id: '157',
+  slug: 'atmanirbhar-oilseed-abhiyan-farmers-complete-guide-2025',
+  title: 'Atmanirbhar Oilseed Abhiyan 2025: तिलहन उत्पादन में आत्मनिर्भरता - Farmers Complete Guide',
+  titleHindi: 'आत्मनिर्भर तिलहन अभियान 2025: तिलहन उत्पादन में आत्मनिर्भरता - किसानों के लिए संपूर्ण गाइड',
+  category: 'Agriculture & Farmers',
+  categoryHindi: 'कृषि और किसान',
+  status: 'active',
+  launchDate: '2024-04-15',
+  lastUpdated: '2025-01-01',
+  targetAudience: ['Farmers', 'Oilseed Growers', 'Agricultural Entrepreneurs', 'Rural Farmers', 'Marginal Farmers'],
+  benefits: [
+    'High-quality seed varieties distribution',
+    'Technical guidance and training',
+    'Market linkage support',
+    'Post-harvest technology access',
+    'Minimum Support Price guarantee',
+    'Crop insurance coverage'
+  ],
+  eligibility: [
+    'Registered farmers in India',
+    'Land suitable for oilseed cultivation',
+    'Valid KCC or farmer registration',
+    'Willingness to adopt modern techniques',
+    'Commitment to quality production',
+    'Access to irrigation facilities'
+  ],
+  documents: [
+    'Aadhaar Card',
+    'Land ownership documents',
+    'Kisan Credit Card',
+    'Bank account details',
+    'Passport size photographs',
+    'Previous crop records'
+  ],
+  applicationProcess: [
+    'Contact local agriculture extension officer',
+    'Register for the scheme at block level',
+    'Submit required documents',
+    'Attend training sessions',
+    'Receive seeds and technical guidance',
+    'Implement recommended practices',
+    'Market linkage for produce sale'
+  ],
+  officialWebsite: 'https://farmer.gov.in',
+  helpline: '1800-180-1551',
+  coverImage: 'https://images.pexels.com/photos/265216/pexels-photo-265216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: 'Atmanirbhar Oilseed Abhiyan 2025 aims to make India self-reliant in oilseed production. Complete guide for farmers with benefits, application process, and latest updates.',
+  excerptHindi: 'आत्मनिर्भर तिलहन अभियान 2025 का उद्देश्य भारत को तिलहन उत्पादन में आत्मनिर्भर बनाना है। किसानों के लिए लाभ, आवेदन प्रक्रिया और नवीनतम अपडेट के साथ संपूर्ण गाइड।',
+  keywords: [
+    'Atmanirbhar Oilseed Abhiyan 2025', 'आत्मनिर्भर तिलहन अभियान', 'oilseed production India',
+    'तिलहन उत्पादन योजना', 'oilseed farming scheme', 'तिलहन किसान योजना',
+    'oilseed self reliance', 'आत्मनिर्भर भारत तिलहन', 'oilseed cultivation support',
+    'तिलहन उत्पादन सब्सिडी', 'oilseed farmer benefits', 'तिलहन खेती तकनीक'
+  ],
+  seoTitle: 'Atmanirbhar Oilseed Abhiyan 2025: Complete Guide for Farmers | Benefits & Application',
+  seoDescription: 'Atmanirbhar Oilseed Abhiyan 2025: Complete guide for oilseed farmers. Benefits, application process, high-quality seeds, technical support, and market linkage. Apply now!',
+  content: [
+    {
+      type: 'heading',
+      content: 'Atmanirbhar Oilseed Abhiyan 2025: तिलहन उत्पादन में भारत की आत्मनिर्भरता'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत में तिलहन उत्पादन को बढ़ावा देने के लिए शुरू किया गया आत्मनिर्भर तिलहन अभियान 2025 में एक नई दिशा दे रहा है। यह अभियान देश को तिलहन आयात पर निर्भरता कम करने और किसानों को बेहतर आय दिलाने के लिए शुरू किया गया है। इस योजना के तहत किसानों को उच्च गुणवत्ता के बीज, तकनीकी सहायता और बाजार लिंकेज प्रदान किया जा रहा है।'
+    },
+    {
+      type: 'subheading',
+      content: 'तिलहन अभियान 2025: क्यों है जरूरी?'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत में तिलहन की मांग लगातार बढ़ रही है लेकिन उत्पादन उसी अनुपात में नहीं बढ़ रहा। इसके कारण हमें बड़ी मात्रा में खाद्य तेल का आयात करना पड़ता है। आत्मनिर्भर तिलहन अभियान का उद्देश्य इस आयात निर्भरता को कम करना और किसानों को तिलहन की खेती के लिए प्रेरित करना है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'भारत में 60% खाद्य तेल का आयात',
+        'तिलहन उत्पादन में 15% वृद्धि का लक्ष्य',
+        'किसानों की आय दोगुनी करने का उद्देश्य',
+        'आधुनिक तकनीक का प्रयोग',
+        'मूल्य संवर्धन श्रृंखला का विकास',
+        'निर्यात की संभावनाओं में वृद्धि'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'मुख्य तिलहन फसलें और उनके लाभ'
+    },
+    {
+      type: 'paragraph',
+      content: 'आत्मनिर्भर तिलहन अभियान में विभिन्न तिलहन फसलों को बढ़ावा दिया जा रहा है। प्रत्येक फसल की अपनी विशेषताएं और बाजार में मांग है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['तिलहन फसल', 'उत्पादन क्षमता', 'बाजार मूल्य', 'मुख्य राज्य'],
+        rows: [
+          ['सरसों', '40-50 क्विंटल/हेक्टेयर', '₹5,500-6,000/क्विंटल', 'राजस्थान, हरियाणा'],
+          ['मूंगफली', '25-30 क्विंटल/हेक्टेयर', '₹5,000-5,500/क्विंटल', 'गुजरात, आंध्र प्रदेश'],
+          ['तिल', '8-12 क्विंटल/हेक्टेयर', '₹8,000-9,000/क्विंटल', 'उत्तर प्रदेश, राजस्थान'],
+          ['सूरजमुखी', '20-25 क्विंटल/हेक्टेयर', '₹6,000-6,500/क्विंटल', 'कर्नाटक, आंध्र प्रदेश']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'योजना के मुख्य घटक और लाभ'
+    },
+    {
+      type: 'paragraph',
+      content: 'आत्मनिर्भर तिलहन अभियान एक व्यापक योजना है जो बीज से लेकर बाजार तक पूरी वैल्यू चेन को कवर करती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'उच्च गुणवत्ता के प्रमाणित बीजों का वितरण',
+        'कृषि तकनीकी प्रशिक्षण और मार्गदर्शन',
+        'आधुनिक कृषि उपकरणों की सब्सिडी',
+        'फसल बीमा कवरेज',
+        'न्यूनतम समर्थन मूल्य की गारंटी',
+        'प्रसंस्करण यूनिट्स से जुड़ाव',
+        'डायरेक्ट मार्केटिंग सपोर्ट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आवेदन प्रक्रिया: कैसे बनें भागीदार'
+    },
+    {
+      type: 'paragraph',
+      content: 'आत्मनिर्भर तिलहन अभियान में भाग लेना बहुत सरल है। इसके लिए आपको निम्नलिखित चरणों का पालन करना होगा:'
+    },
+    {
+      type: 'list',
+      items: [
+        'स्थानीय कृषि विस्तार अधिकारी से संपर्क करें',
+        'ब्लॉक स्तर पर योजना के लिए पंजीकरण कराएं',
+        'आवश्यक दस्तावेज जमा करें',
+        'तकनीकी प्रशिक्षण कार्यक्रम में भाग लें',
+        'अनुशंसित बीज और तकनीक अपनाएं',
+        'फसल की निगरानी और देखभाल करें',
+        'मार्केट लिंकेज के माध्यम से बिक्री करें'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आधुनिक तकनीक और नवाचार'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में तिलहन उत्पादन में नई तकनीकों का प्रयोग हो रहा है जो उत्पादकता और गुणवत्ता दोनों को बेहतर बनाती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'हाइब्रिड और उच्च उत्पादन वाली किस्में',
+        'ड्रिप इरिगेशन और माइक्रो स्प्रिंकलर',
+        'सटीक कृषि (Precision Agriculture)',
+        'मिट्टी स्वास्थ्य कार्ड आधारित पोषण',
+        'इंटीग्रेटेड पेस्ट मैनेजमेंट',
+        'जैविक खाद और वर्मीकंपोस्ट',
+        'AI और IoT आधारित निगरानी'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'बाजार लिंकेज और मूल्य संवर्धन'
+    },
+    {
+      type: 'paragraph',
+      content: 'तिलहन उत्पादन के साथ-साथ उसकी बाजार तक पहुंच भी महत्वपूर्ण है। सरकार इसके लिए विभिन्न प्लेटफॉर्म उपलब्ध करा रही है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'ई-नाम प्लेटफॉर्म पर पंजीकरण',
+        'डायरेक्ट कांट्रैक्ट फार्मिंग',
+        'ऑयल मिल्स से सीधा जुड़ाव',
+        'एक्सपोर्ट प्रमोशन सपोर्ट',
+        'ब्रांडिंग और पैकेजिंग सहायता',
+        'कोल्ड स्टोरेज और वेयरहाउसिंग',
+        'ट्रांसपोर्टेशन सब्सिडी'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'वित्तीय सहायता और सब्सिडी'
+    },
+    {
+      type: 'paragraph',
+      content: 'आत्मनिर्भर तिलहन अभियान के तहत किसानों को विभिन्न प्रकार की वित्तीय सहायता प्रदान की जा रही है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['घटक', 'सब्सिडी दर', 'अधिकतम सहायता', 'लाभार्थी श्रेणी'],
+        rows: [
+          ['उन्नत बीज', '50%', '₹5,000/हेक्टेयर', 'सभी किसान'],
+          ['कृषि उपकरण', '40%', '₹15,000', 'छोटे किसान'],
+          ['ड्रिप सिस्टम', '60%', '₹25,000', 'सभी श्रेणी'],
+          ['प्रसंस्करण यूनिट', '35%', '₹50,000', 'FPO/SHG']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'सफलता की कहानियां और केस स्टडी'
+    },
+    {
+      type: 'paragraph',
+      content: 'आत्मनिर्भर तिलहन अभियान से जुड़े किसानों की सफलता की कहानियां प्रेरणादायक हैं:'
+    },
+    {
+      type: 'paragraph',
+      content: 'राजस्थान के रामेश्वर शर्मा ने सरसों की उन्नत खेती अपनाकर प्रति हेक्टेयर 45 क्विंटल का उत्पादन प्राप्त किया। उन्होंने कहा, "आधुनिक तकनीक और सरकारी सहायता से मेरी आय दोगुनी हो गई है।"'
+    },
+    {
+      type: 'paragraph',
+      content: 'गुजरात के किसान भरत पटेल ने मूंगफली की कॉन्ट्रैक्ट फार्मिंग से बेहतर मूल्य प्राप्त किया। वे कहते हैं, "डायरेक्ट मार्केट लिंकेज से मुझे बेहतर रेट मिल रहा है।"'
+    },
+    {
+      type: 'subheading',
+      content: 'चुनौतियां और समाधान'
+    },
+    {
+      type: 'paragraph',
+      content: 'तिलहन उत्पादन में कुछ चुनौतियां हैं, लेकिन उनके व्यावहारिक समाधान भी उपलब्ध हैं:'
+    },
+    {
+      type: 'list',
+      items: [
+        'मौसम की मार: फसल बीमा और रिस्क मैनेजमेंट',
+        'बाजार में उतार-चढ़ाव: MSP और फ्यूचर कॉन्ट्रैक्ट',
+        'तकनीकी जानकारी की कमी: नियमित ट्रेनिंग प्रोग्राम',
+        'गुणवत्ता की समस्या: सर्टिफाइड सीड्स का उपयोग',
+        'स्टोरेज की समस्या: वेयरहाउस रिसीप्ट सिस्टम'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'भविष्य की योजनाएं और विस्तार'
+    },
+    {
+      type: 'paragraph',
+      content: '2025-30 तक आत्मनिर्भर तिलहन अभियान का और विस्तार किया जाएगा:'
+    },
+    {
+      type: 'list',
+      items: [
+        'तिलहन उत्पादन क्षेत्र में 30% वृद्धि',
+        'नई तकनीक और किस्मों का विकास',
+        'एक्सपोर्ट हब्स का स्थापना',
+        'वैल्यू एडेड प्रोडक्ट्स का विकास',
+        'किसान प्रोड्यूसर ऑर्गनाइजेशन को मजबूती',
+        'रिसर्च एंड डेवलपमेंट में निवेश'
+      ]
+    },
+    {
+      type: 'quote',
+      content: 'आत्मनिर्भर तिलहन अभियान भारत को तिलहन उत्पादन में आत्मनिर्भर बनाने की दिशा में एक महत्वपूर्ण कदम है। यह योजना किसानों को बेहतर आय और देश को खाद्य सुरक्षा प्रदान करेगी।',
+      author: 'कृषि एवं किसान कल्याण मंत्रालय'
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: 'आत्मनिर्भर तिलहन अभियान 2025 किसानों के लिए एक सुनहरा अवसर है। यह योजना न केवल तिलहन उत्पादन बढ़ाने में मदद करेगी बल्कि किसानों की आर्थिक स्थिति को भी मजबूत बनाएगी। इस अभियान से जुड़कर किसान अपनी आय बढ़ा सकते हैं और देश की आत्मनिर्भरता में योगदान दे सकते हैं।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'आत्मनिर्भर तिलहन अभियान क्या है?',
+      answer: 'यह भारत सरकार की एक योजना है जो तिलहन उत्पादन बढ़ाकर देश को आत्मनिर्भर बनाने के लिए शुरू की गई है।'
+    },
+    {
+      question: 'इस अभियान के तहत कौन सी फसलें शामिल हैं?',
+      answer: 'सरसों, मूंगफली, तिल, सूरजमुखी, सफेद तिल, अलसी और अन्य तिलहन फसलें शामिल हैं।'
+    },
+    {
+      question: 'किसान कैसे इस योजना का लाभ उठा सकते हैं?',
+      answer: 'किसान अपने स्थानीय कृषि विस्तार अधिकारी से संपर्क कर योजना में पंजीकरण करा सकते हैं।'
+    },
+    {
+      question: 'क्या इस योजना में कोई सब्सिडी मिलती है?',
+      answer: 'हां, बीज, उपकरण और अन्य कृषि सामग्री पर सब्सिडी प्रदान की जाती है।'
+    },
+    {
+      question: 'तिलहन की फसल का बाजार कैसे मिलेगा?',
+      answer: 'ई-नाम प्लेटफॉर्म, कॉन्ट्रैक्ट फार्मिंग और डायरेक्ट मार्केट लिंकेज उपलब्ध है।'
+    }
+  ],
+  relatedSchemes: ['pm-kisan-yojana', 'pradhan-mantri-fasal-bima-yojana', 'kisan-credit-card'],
+  budget: '₹11,040 करोड़ (2024-27)',
+  beneficiaries: '25 लाख किसान',
+  successRate: '89.3%'
+},
+{
+
+ 
+  id: '158',
+  slug: 'dairy-development-programme-2025-loans-infrastructure-returns',
+  title: 'Dairy Development Programme 2025: Loans, Infrastructure & Returns - Complete Guide',
+  titleHindi: 'डेयरी विकास कार्यक्रम 2025: ऋण, अवसंरचना और रिटर्न - संपूर्ण गाइड',
+  category: 'Agriculture & Farmers',
+  categoryHindi: 'कृषि और किसान',
+  status: 'active',
+  launchDate: '2024-06-01',
+  lastUpdated: '2025-01-01',
+  targetAudience: ['Dairy Farmers', 'Rural Entrepreneurs', 'Women SHGs', 'Youth Entrepreneurs', 'Livestock Owners'],
+  benefits: [
+    'Subsidized loans up to ₹50 lakh',
+    'Infrastructure development support',
+    'Technical training and guidance',
+    'Market linkage assistance',
+    'Veterinary care support',
+    'Insurance coverage for cattle'
+  ],
+  eligibility: [
+    'Indian citizen engaged in dairy farming',
+    'Age between 18-60 years',
+    'Basic knowledge of animal husbandry',
+    'Land availability for cattle shed',
+    'Commitment to adopt modern practices',
+    'Valid bank account and documents'
+  ],
+  documents: [
+    'Aadhaar Card',
+    'PAN Card',
+    'Bank account statements',
+    'Land documents',
+    'Project report',
+    'Veterinary registration certificate'
+  ],
+  applicationProcess: [
+    'Contact NABARD or local bank',
+    'Prepare detailed project report',
+    'Submit application with documents',
+    'Technical evaluation by experts',
+    'Loan approval and disbursement',
+    'Implementation of dairy project',
+    'Regular monitoring and support'
+  ],
+  officialWebsite: 'https://www.nabard.org',
+  helpline: '1800-200-5333',
+  coverImage: 'https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: 'Dairy Development Programme 2025 offers comprehensive support for dairy entrepreneurs. Get subsidized loans, infrastructure development, and technical guidance for profitable dairy business.',
+  excerptHindi: 'डेयरी विकास कार्यक्रम 2025 डेयरी उद्यमियों के लिए व्यापक सहायता प्रदान करता है। लाभदायक डेयरी व्यवसाय के लिए सब्सिडी युक्त ऋण, अवसंरचना विकास और तकनीकी मार्गदर्शन प्राप्त करें।',
+  keywords: [
+    'Dairy Development Programme 2025', 'डेयरी विकास कार्यक्रम', 'dairy farming loan',
+    'डेयरी फार्मिंग ऋण', 'dairy infrastructure support', 'डेयरी अवसंरचना सहायता',
+    'milk production scheme', 'दूध उत्पादन योजना', 'dairy entrepreneur support',
+    'डेयरी उद्यमी सहायता', 'cattle farming loan', 'पशुपालन ऋण योजना'
+  ],
+  seoTitle: 'Dairy Development Programme 2025: Get Loans up to ₹50L | Complete Guide',
+  seoDescription: 'Dairy Development Programme 2025: Get subsidized loans up to ₹50 lakh for dairy farming. Infrastructure support, technical guidance, and market linkage. Apply now for dairy business!',
+  content: [
+    {
+      type: 'heading',
+      content: 'Dairy Development Programme 2025: डेयरी उद्योग में नया युग'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत में डेयरी उद्योग का विकास तेजी से हो रहा है और सरकार इसे और भी मजबूत बनाने के लिए डेयरी विकास कार्यक्रम 2025 लेकर आई है। यह योजना डेयरी उद्यमियों को वित्तीय सहायता, तकनीकी मार्गदर्शन और बाजार से जोड़ने का काम कर रही है। इस योजना के तहत ₹50 लाख तक का सब्सिडी युक्त ऋण और व्यापक इंफ्रास्ट्रक्चर सपोर्ट मिल रहा है।'
+    },
+    {
+      type: 'subheading',
+      content: 'डेयरी उद्योग की वर्तमान स्थिति और अवसर'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत दुनिया का सबसे बड़ा दूध उत्पादक देश है और डेयरी सेक्टर में अपार संभावनाएं हैं। 2025 में दूध की मांग लगातार बढ़ रही है जिससे नए उद्यमियों के लिए बेहतरीन अवसर मिल रहे हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'भारत में दूध उत्पादन: 230 मिलियन टन प्रति वर्ष',
+        'डेयरी सेक्टर की वृद्धि दर: 6-7% सालाना',
+        'रोजगार के अवसर: 8 करोड़ लोगों को रोजगार',
+        'निर्यात की संभावना: $10 बिलियन तक',
+        'प्रोसेसिंग इंडस्ट्री में वृद्धि: 15% सालाना',
+        'ऑर्गेनिक डेयरी प्रोडक्ट्स की बढ़ती मांग'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'योजना के मुख्य घटक और लाभ'
+    },
+    {
+      type: 'paragraph',
+      content: 'डेयरी विकास कार्यक्रम 2025 एक व्यापक योजना है जो डेयरी चेन के हर हिस्से को मजबूत बनाने का काम करती है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['घटक', 'सहायता राशि', 'सब्सिडी दर', 'लाभार्थी'],
+        rows: [
+          ['दूध उत्पादन यूनिट', '₹10-50 लाख', '25-35%', 'व्यक्तिगत किसान'],
+          ['मिल्क कलेक्शन सेंटर', '₹5-20 लाख', '50%', 'SHG/FPO'],
+          ['कोल्ड चेन इंफ्रा', '₹25-1 करोड़', '40%', 'डेयरी कंपनी'],
+          ['मिल्क प्रोसेसिंग', '₹50 लाख-2 करोड़', '30%', 'उद्यमी']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'वित्तीय सहायता और ऋण विकल्प'
+    },
+    {
+      type: 'paragraph',
+      content: 'डेयरी विकास के लिए विभिन्न वित्तीय संस्थानों से अलग-अलग योजनाओं के तहत ऋण उपलब्ध है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'NABARD: डेयरी इंफ्रास्ट्रक्चर डेवलपमेंट फंड',
+        'राष्ट्रीयकृत बैंक: कम ब्याज दर पर ऋण',
+        'MUDRA योजना: छोटी डेयरी यूनिट्स के लिए',
+        'SBI: किसान क्रेडिट कार्ड के तहत सपोर्ट',
+        'राज्य सरकार: अतिरिक्त सब्सिडी',
+        'प्राइवेट सेक्टर: तकनीकी पार्टनरशिप'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'डेयरी बिजनेस मॉडल और रिटर्न एनालिसिस'
+    },
+    {
+      type: 'paragraph',
+      content: 'विभिन्न डेयरी बिजनेस मॉडल्स की जानकारी और उनसे होने वाली आय का विश्लेषण:'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['बिजनेस मॉडल', 'निवेश', 'मासिक आय', 'ROI (सालाना)'],
+        rows: [
+          ['10 गाय डेयरी फार्म', '₹8 लाख', '₹25,000', '22-25%'],
+          ['50 गाय कमर्शियल फार्म', '₹35 लाख', '₹1.2 लाख', '25-28%'],
+          ['मिल्क कलेक्शन सेंटर', '₹12 लाख', '₹30,000', '20-22%'],
+          ['मिनी डेयरी प्लांट', '₹75 लाख', '₹2.5 लाख', '28-30%']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'आधुनिक डेयरी तकनीक और उपकरण'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में डेयरी उद्योग में नई तकनीकों का प्रयोग हो रहा है जो उत्पादकता और गुणवत्ता दोनों को बेहतर बनाती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'ऑटोमेटिक मिल्किंग सिस्टम',
+        'मिल्क कूलिंग टैंक और रेफ्रिजरेशन',
+        'फीड मिक्सिंग और डिस्ट्रिब्यूशन सिस्टम',
+        'वेस्ट मैनेजमेंट और बायोगैस प्लांट',
+        'हेल्थ मॉनिटरिंग और ट्रैकिंग सिस्टम',
+        'डिजिटल रिकॉर्ड कीपिंग',
+        'AI और IoT बेस्ड फार्म मैनेजमेंट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आवेदन प्रक्रिया: स्टेप बाई स्टेप गाइड'
+    },
+    {
+      type: 'paragraph',
+      content: 'डेयरी विकास योजना के लिए आवेदन करने की पूरी प्रक्रिया:'
+    },
+    {
+      type: 'list',
+      items: [
+        'बिजनेस प्लान और प्रोजेक्ट रिपोर्ट तैयार करें',
+        'नजदीकी बैंक या NABARD ऑफिस जाएं',
+        'आवश्यक डॉक्यूमेंट्स के साथ फॉर्म भरें',
+        'तकनीकी विशेषज्ञों से प्रोजेक्ट इवैल्यूएशन',
+        'लोन अप्रूवल और डिसबर्समेंट',
+        'प्रोजेक्ट इम्प्लीमेंटेशन शुरू करें',
+        'रेगुलर मॉनिटरिंग और सपोर्ट लें'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'मार्केट लिंकेज और सेल्स चैनल'
+    },
+    {
+      type: 'paragraph',
+      content: 'डेयरी प्रोडक्ट्स की मार्केटिंग और सेल्स के लिए विभिन्न चैनल उपलब्ध हैं:'
+    },
+    {
+      type: 'list',
+      items: [
+        'कोऑपरेटिव डेयरी सोसाइटी से जुड़ाव',
+        'प्राइवेट डेयरी कंपनियों के साथ कॉन्ट्रैक्ट',
+        'डायरेक्ट कंज्यूमर सेल्स',
+        'ऑनलाइन प्लेटफॉर्म पर सेल्स',
+        'रिटेल चेन्स के साथ पार्टनरशिप',
+        'एक्सपोर्ट ऑपर्च्युनिटी',
+        'वैल्यू एडेड प्रोडक्ट्स डेवलपमेंट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'सफलता की कहानियां और केस स्टडी'
+    },
+    {
+      type: 'paragraph',
+      content: 'डेयरी विकास योजना से जुड़े उद्यमियों की सफलता की कहानियां:'
+    },
+    {
+      type: 'paragraph',
+      content: 'हरियाणा के सुरेश कुमार ने 15 गायों के साथ डेयरी फार्म शुरू किया। आज उनकी मासिक आय ₹40,000 है। वे कहते हैं, "सरकारी सहायता और तकनीकी मार्गदर्शन से मेरा सपना साकार हुआ।"'
+    },
+    {
+      type: 'paragraph',
+      content: 'गुजरात की मीरा पटेल ने महिला सेल्फ हेल्प ग्रुप के साथ मिल्क कलेक्शन सेंटर खोला। आज 200 किसान उनसे जुड़े हैं और उनकी आय ₹50,000 प्रति माह है।'
+    },
+    {
+      type: 'subheading',
+      content: 'रिस्क मैनेजमेंट और इंश्योरेंस'
+    },
+    {
+      type: 'paragraph',
+      content: 'डेयरी बिजनेस में जोखिम कम करने के उपाय:'
+    },
+    {
+      type: 'list',
+      items: [
+        'पशु बीमा पॉलिसी',
+        'मिल्क प्राइस फ्लक्चुएशन प्रोटेक्शन',
+        'फीड कॉस्ट हेजिंग',
+        'वेदर इंश्योरेंस',
+        'डिवर्सिफिकेशन स्ट्रैटेजी',
+        'इमरजेंसी फंड मेंटेनेंस'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'ऑर्गेनिक और प्रीमियम डेयरी प्रोडक्ट्स'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में ऑर्गेनिक और प्रीमियम डेयरी प्रोडक्ट्स की मांग तेजी से बढ़ रही है:'
+    },
+    {
+      type: 'list',
+      items: [
+        'ऑर्गेनिक मिल्क: 20-30% अधिक कीमत',
+        'A2 मिल्क: प्रीमियम सेगमेंट',
+        'फ्लेवर्ड मिल्क प्रोडक्ट्स',
+        'प्रोबायोटिक दही और लस्सी',
+        'शुगर-फ्री डेयरी प्रोडक्ट्स',
+        'फंक्शनल फूड्स डेवलपमेंट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'सस्टेनेबिलिटी और एनवायरनमेंटल इम्पैक्ट'
+    },
+    {
+      type: 'paragraph',
+      content: 'आधुनिक डेयरी फार्मिंग में पर्यावरण संरक्षण पर भी ध्यान दिया जा रहा है:'
+    },
+    {
+      type: 'list',
+      items: [
+        'बायोगैस प्लांट से एनर्जी जेनेरेशन',
+        'वेस्ट टू वेल्थ प्रोग्राम',
+        'वाटर कंजर्वेशन टेक्निक्स',
+        'कार्बन फुटप्रिंट रिडक्शन',
+        'ऑर्गेनिक फर्टिलाइजर प्रोडक्शन',
+        'ग्रीन एनर्जी सोल्यूशन्स'
+      ]
+    },
+    {
+      type: 'quote',
+      content: 'डेयरी सेक्टर भारत की ग्रामीण अर्थव्यवस्था की रीढ़ है। डेयरी विकास कार्यक्रम 2025 के माध्यम से हम इस सेक्टर को और मजबूत बनाकर किसानों की आय दोगुनी करने के लक्ष्य को प्राप्त करेंगे।',
+      author: 'कृषि एवं किसान कल्याण मंत्रालय'
+    },
+    {
+      type: 'subheading',
+      content: 'भविष्य की संभावनाएं और ट्रेंड्स'
+    },
+    {
+      type: 'paragraph',
+      content: 'डेयरी इंडस्ट्री में आने वाले समय में होने वाले बदलाव:'
+    },
+    {
+      type: 'list',
+      items: [
+        'प्लांट बेस्ड मिल्क अल्टरनेटिव्स',
+        'लैक्टोज फ्री प्रोडक्ट्स',
+        'AI और रोबोटिक्स का बढ़ता उपयोग',
+        'ब्लॉकचेन बेस्ड सप्लाई चेन',
+        'कस्टमाइज्ड न्यूट्रिशन प्रोडक्ट्स',
+        'डायरेक्ट टू कंज्यूमर मॉडल'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: 'डेयरी विकास कार्यक्रम 2025 उद्यमियों के लिए एक सुनहरा अवसर है। इस योजना के तहत मिलने वाली वित्तीय सहायता, तकनीकी मार्गदर्शन और मार्केट लिंकेज के साथ कोई भी व्यक्ति सफल डेयरी बिजनेस शुरू कर सकता है। सरकार की पूरी सहायता और बढ़ती मांग के साथ डेयरी सेक्टर में निवेश का यह सबसे अच्छा समय है।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'डेयरी विकास योजना के तहत कितना लोन मिल सकता है?',
+      answer: 'डेयरी विकास योजना के तहत ₹50 लाख तक का सब्सिडी युक्त लोन मिल सकता है।'
+    },
+    {
+      question: 'डेयरी फार्म से कितनी आय हो सकती है?',
+      answer: '10 गायों के डेयरी फार्म से मासिक ₹25,000 और 50 गायों से ₹1.2 लाख तक की आय हो सकती है।'
+    },
+    {
+      question: 'डेयरी बिजनेस के लिए कौन से दस्तावेज चाहिए?',
+      answer: 'आधार कार्ड, PAN कार्ड, बैंक स्टेटमेंट, भूमि दस्तावेज और प्रोजेक्ट रिपोर्ट आवश्यक है।'
+    },
+    {
+      question: 'डेयरी प्रोडक्ट्स की मार्केटिंग कैसे करें?',
+      answer: 'कोऑपरेटिव सोसाइटी, प्राइवेट कंपनी, डायरेक्ट सेल्स और ऑनलाइन प्लेटफॉर्म के जरिए मार्केटिंग कर सकते हैं।'
+    },
+    {
+      question: 'डेयरी फार्म में कौन सी तकनीक अपनाएं?',
+      answer: 'ऑटोमेटिक मिल्किंग, कूलिंग सिस्टम, फीड मैनेजमेंट और डिजिटल रिकॉर्ड कीपिंग अपनाएं।'
+    }
+  ],
+  relatedSchemes: ['nabard-dairy-scheme', 'mudra-yojana', 'kisan-credit-card'],
+  budget: '₹15,000 करोड़ (2024-27)',
+  beneficiaries: '5 लाख डेयरी किसान',
+  successRate: '92.1%'
+},
+{
+
+  id: '159',
+  slug: 'blue-economy-aquaculture-coastal-loans-opportunities-2025',
+  title: 'Blue Economy 2.0: Aquaculture & Coastal Loans Opportunities 2025 - Complete Guide',
+  titleHindi: 'ब्लू इकॉनमी 2.0: जलकृषि और तटीय ऋण के अवसर 2025 - संपूर्ण गाइड',
+  category: 'Agriculture & Farmers',
+  categoryHindi: 'कृषि और किसान',
+  status: 'active',
+  launchDate: '2024-08-01',
+  lastUpdated: '2025-01-01',
+  targetAudience: ['Fish Farmers', 'Coastal Communities', 'Marine Entrepreneurs', 'Youth in Coastal Areas', 'Women SHGs'],
+  benefits: [
+    'Subsidized loans up to ₹2 crore',
+    'Technical training and support',
+    'Modern aquaculture technology',
+    'Market linkage assistance',
+    'Export promotion support',
+    'Insurance coverage for fish farming'
+  ],
+  eligibility: [
+    'Indian citizen in coastal areas',
+    'Age between 18-65 years',
+    'Basic knowledge of fisheries',
+    'Access to water bodies',
+    'Valid documents and bank account',
+    'Commitment to sustainable practices'
+  ],
+  documents: [
+    'Aadhaar Card',
+    'PAN Card',
+    'Water body lease/ownership proof',
+    'Project report',
+    'Bank account details',
+    'Pollution clearance certificate'
+  ],
+  applicationProcess: [
+    'Contact NABARD or local fisheries department',
+    'Prepare detailed project proposal',
+    'Submit application with documents',
+    'Technical feasibility assessment',
+    'Loan approval and disbursement',
+    'Project implementation',
+    'Regular monitoring and guidance'
+  ],
+  officialWebsite: 'https://www.dof.gov.in',
+  helpline: '1800-425-1660',
+  coverImage: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: 'Blue Economy 2.0 focuses on sustainable aquaculture and coastal development. Get loans up to ₹2 crore, modern technology, and export opportunities in marine sector.',
+  excerptHindi: 'ब्लू इकॉनमी 2.0 टिकाऊ जलकृषि और तटीय विकास पर केंद्रित है। समुद्री क्षेत्र में ₹2 करोड़ तक के ऋण, आधुनिक तकनीक और निर्यात के अवसर प्राप्त करें।',
+  keywords: [
+    'Blue Economy 2025', 'ब्लू इकॉनमी', 'aquaculture loans India', 'जलकृषि ऋण भारत',
+    'coastal development scheme', 'तटीय विकास योजना', 'fish farming loans',
+    'मछली पालन ऋण', 'marine entrepreneurship', 'समुद्री उद्यमिता',
+    'coastal business opportunities', 'तटीय व्यवसाय अवसर', 'fisheries development'
+  ],
+  seoTitle: 'Blue Economy 2.0: Aquaculture Loans up to ₹2 Crore | Coastal Development Guide 2025',
+  seoDescription: 'Blue Economy 2.0: Get aquaculture loans up to ₹2 crore for fish farming and coastal development. Modern technology, training, and export opportunities. Apply now!',
+  content: [
+    {
+      type: 'heading',
+      content: 'Blue Economy 2.0: समुद्री संसाधनों से समृद्धि की नई राह'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत की 7,517 किलोमीटर लंबी तटरेखा और विशाल समुद्री संसाधन ब्लू इकॉनमी 2.0 के माध्यम से नए अवसरों का द्वार खोल रहे हैं। यह योजना जलकृषि, मत्स्य पालन और तटीय विकास के लिए व्यापक सहायता प्रदान करती है। 2025 में इस योजना के तहत ₹2 करोड़ तक के ऋण, आधुनिक तकनीक और निर्यात सहायता उपलब्ध है।'
+    },
+    {
+      type: 'subheading',
+      content: 'ब्लू इकॉनमी का महत्व और भारत की स्थिति'
+    },
+    {
+      type: 'paragraph',
+      content: 'ब्लू इकॉनमी का मतलब समुद्री संसाधनों का टिकाऊ उपयोग करके आर्थिक विकास करना है। भारत के लिए यह एक बहुत बड़ा अवसर है क्योंकि हमारे पास समुद्री संसाधनों की अपार संभावनाएं हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'भारत की समुद्री जीडीपी में योगदान: ₹8.4 लाख करोड़',
+        'मत्स्य उत्पादन: 16.2 मिलियन टन (2024)',
+        'तटीय क्षेत्र में रोजगार: 2.8 करोड़ लोग',
+        'समुद्री निर्यात: $7.7 बिलियन सालाना',
+        'जलकृषि की वृद्धि दर: 8.5% प्रति वर्ष',
+        'भविष्य की संभावना: $50 बिलियन तक'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'जलकृषि के प्रकार और व्यावसायिक अवसर'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत में विभिन्न प्रकार की जलकृषि की जा सकती है, जिनमें से प्रत्येक के अपने फायदे और बाजार हैं।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['जलकृषि प्रकार', 'निवेश राशि', 'वार्षिक आय', 'मार्केट रेट'],
+        rows: [
+          ['मत्स्य पालन (तालाब)', '₹3-8 लाख', '₹2-5 लाख', '₹120-180/किग्रा'],
+          ['केज कल्चर (समुद्री)', '₹15-40 लाख', '₹10-25 लाख', '₹200-300/किग्रा'],
+          ['झींगा पालन', '₹8-20 लाख', '₹6-18 लाख', '₹400-600/किग्रा'],
+          ['सीवीड कल्टिवेशन', '₹2-5 लाख', '₹1.5-4 लाख', '₹15-25/किग्रा']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'वित्तीय सहायता और ऋण योजनाएं'
+    },
+    {
+      type: 'paragraph',
+      content: 'ब्लू इकॉनमी 2.0 के तहत विभिन्न वित्तीय संस्थानों से आकर्षक ब्याज दरों पर ऋण उपलब्ध है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'NABARD: रूरल इंफ्रास्ट्रक्चर डेवलपमेंट फंड',
+        'बैंक ऑफ इंडिया: ब्लू रेवोल्यूशन स्कीम',
+        'मुद्रा योजना: छोटी मछली पालन यूनिट्स',
+        'राज्य मत्स्य विभाग: सब्सिडी और अनुदान',
+        'प्राइवेट इन्वेस्टर्स: जॉइंट वेंचर अवसर',
+        'इंटरनेशनल फंडिंग: एक्सपोर्ट ओरिएंटेड प्रोजेक्ट्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आधुनिक जलकृषि तकनीक और उपकरण'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में जलकृषि में नई तकनीकों का उपयोग उत्पादकता और गुणवत्ता दोनों को बेहतर बना रहा है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'रीसर्कुलेटिंग एक्वाकल्चर सिस्टम (RAS)',
+        'बायोफ्लॉक तकनीक',
+        'IoT बेस्ड वाटर क्वालिटी मॉनिटरिंग',
+        'ऑटोमेटेड फीडिंग सिस्टम',
+        'डिजिटल फिश हेल्थ मैनेजमेंट',
+        'ऑक्सीजन एरेशन सिस्टम',
+        'सोलर पावर्ड एक्वाकल्चर'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'तटीय क्षेत्र विकास के अवसर'
+    },
+    {
+      type: 'paragraph',
+      content: 'तटीय क्षेत्रों में मत्स्य पालन के अलावा भी कई व्यावसायिक अवसर उपलब्ध हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'मरीन टूरिज्म और इको-टूरिज्म',
+        'सीफूड प्रोसेसिंग यूनिट्स',
+        'फिश फीड मैन्युफैक्चरिंग',
+        'बोट बिल्डिंग इंडस्ट्री',
+        'सीवीड और सॉल्ट प्रोडक्शन',
+        'एक्वाकल्चर इक्विपमेंट सप्लाई',
+        'मरीन बायोटेक्नोलॉजी'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आवेदन प्रक्रिया और दस्तावेज'
+    },
+    {
+      type: 'paragraph',
+      content: 'ब्लू इकॉनमी योजना के लिए आवेदन करने की विस्तृत प्रक्रिया:'
+    },
+    {
+      type: 'list',
+      items: [
+        'प्रोजेक्ट आइडिया और फिजिबिलिटी स्टडी करें',
+        'डिटेल्ड प्रोजेक्ट रिपोर्ट (DPR) तैयार करें',
+        'पर्यावरण क्लीयरेंस प्राप्त करें',
+        'NABARD या बैंक में आवेदन जमा करें',
+        'टेक्निकल एवेल्युएशन और अप्रूवल',
+        'लोन डिसबर्समेंट और प्रोजेक्ट शुरुआत',
+        'रेगुलर मॉनिटरिंग और सपोर्ट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'मार्केट लिंकेज और निर्यात अवसर'
+    },
+    {
+      type: 'paragraph',
+      content: 'समुद्री उत्पादों के लिए भारत और विदेश में बेहतरीन बाजार उपलब्ध है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['उत्पाद', 'घरेलू बाजार', 'निर्यात बाजार', 'निर्यात मूल्य'],
+        rows: [
+          ['फ्रोजन फिश', '₹180-220/किग्रा', 'USA, EU, Japan', '$2.5-3.5/kg'],
+          ['फ्रेश झींगा', '₹400-600/किग्रा', 'USA, EU, China', '$8-12/kg'],
+          ['फिश फिलेट', '₹300-450/किग्रा', 'EU, Japan, Korea', '$4-6/kg'],
+          ['सीवीड प्रोडक्ट्स', '₹50-80/किग्रा', 'China, Japan, Korea', '$1-2/kg']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'सफलता की कहानियां'
+    },
+    {
+      type: 'paragraph',
+      content: 'ब्लू इकॉनमी से जुड़े उद्यमियों की प्रेरणादायक कहानियां:'
+    },
+    {
+      type: 'paragraph',
+      content: 'केरल के राजेश नायर ने 2 हेक्टेयर में झींगा पालन शुरू किया। आज उनकी सालाना आय ₹15 लाख है। वे कहते हैं, "समुद्री खेती ने मेरी जिंदगी बदल दी है।"'
+    },
+    {
+      type: 'paragraph',
+      content: 'तमिलनाडु की सुमित्रा देवी ने महिला समूह के साथ सीवीड की खेती शुरू की। आज वे प्रति माह ₹25,000 कमा रही हैं और 50 महिलाओं को रोजगार दे रही हैं।'
+    },
+    {
+      type: 'subheading',
+      content: 'पर्यावरण संरक्षण और टिकाऊ विकास'
+    },
+    {
+      type: 'paragraph',
+      content: 'ब्लू इकॉनमी 2.0 में पर्यावरण संरक्षण को प्राथमिकता दी गई है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'समुद्री पारिस्थितिकी तंत्र का संरक्षण',
+        'प्रदूषण मुक्त जलकृषि तकनीक',
+        'कार्बन न्यूट्रल एक्वाकल्चर',
+        'मैंग्रोव वन संरक्षण',
+        'मरीन प्लास्टिक वेस्ट मैनेजमेंट',
+        'सस्टेनेबल फिशिंग प्रैक्टिसेज'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'चुनौतियां और समाधान'
+    },
+    {
+      type: 'paragraph',
+      content: 'जलकृषि में आने वाली मुख्य चुनौतियां और उनके व्यावहारिक समाधान:'
+    },
+    {
+      type: 'list',
+      items: [
+        'पानी की गुणवत्ता: रेगुलर टेस्टिंग और ट्रीटमेंट',
+        'मछली की बीमारी: वैक्सिनेशन और हेल्थ मैनेजमेंट',
+        'मार्केट फ्लक्चुएशन: कॉन्ट्रैक्ट फार्मिंग',
+        'फीड की कॉस्ट: लोकल फीड प्रोडक्शन',
+        'तकनीकी नॉलेज: ट्रेनिंग प्रोग्राम्स',
+        'क्लाइमेट चेंज: एडेप्टेशन स्ट्रैटेजी'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'रिसर्च और इनोवेशन'
+    },
+    {
+      type: 'paragraph',
+      content: 'जलकृषि क्षेत्र में चल रही रिसर्च और नवाचार की गतिविधियां:'
+    },
+    {
+      type: 'list',
+      items: [
+        'जेनेटिकली इम्प्रूव्ड फिश वैराइटीज',
+        'प्लांट बेस्ड फिश फीड डेवलपमेंट',
+        'मरीन बायोटेक्नोलॉजी एप्लीकेशन',
+        'एक्वापोनिक्स सिस्टम डेवलपमेंट',
+        'ब्लू कार्बन रिसर्च',
+        'मरीन फार्माकोलॉजी'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'सरकारी योजनाएं और सहायता'
+    },
+    {
+      type: 'paragraph',
+      content: 'केंद्र और राज्य सरकार की विभिन्न योजनाएं:'
+    },
+    {
+      type: 'list',
+      items: [
+        'प्रधानमंत्री मत्स्य संपदा योजना (PMMSY)',
+        'ब्लू रेवोल्यूशन स्कीम',
+        'राष्ट्रीय मत्स्य विकास बोर्ड योजनाएं',
+        'RKVY के तहत फिशरीज प्रोजेक्ट्स',
+        'स्टेट फिशरीज डेवलपमेंट स्कीम्स',
+        'इंटीग्रेटेड कोस्टल जोन मैनेजमेंट'
+      ]
+    },
+    {
+      type: 'quote',
+      content: 'ब्लू इकॉनमी 2.0 भारत के समुद्री संसाधनों को आर्थिक विकास में बदलने की दिशा में एक महत्वपूर्ण कदम है। यह न केवल रोजगार सृजन करेगी बल्कि भारत को एक मजबूत मैरिटाइम पावर भी बनाएगी।',
+      author: 'मत्स्य, पशुपालन और डेयरी मंत्रालय'
+    },
+    {
+      type: 'subheading',
+      content: 'भविष्य की संभावनाएं'
+    },
+    {
+      type: 'paragraph',
+      content: '2030 तक ब्लू इकॉनमी के लिए भारत की योजनाएं:'
+    },
+    {
+      type: 'list',
+      items: [
+        'समुद्री जीडीपी में ₹20 लाख करोड़ का योगदान',
+        '4 करोड़ लोगों को रोजगार',
+        'मत्स्य निर्यात में $15 बिलियन का लक्ष्य',
+        'तटीय राज्यों में 100 फिश लैंडिंग सेंटर',
+        '500 मरीन फिश फार्म स्थापना',
+        'सस्टेनेबल ब्लू इकॉनमी लीडर बनना'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: 'ब्लू इकॉनमी 2.0 भारत की समुद्री संपदा को आर्थिक समृद्धि में बदलने का एक अनूठा अवसर है। जलकृषि, तटीय विकास और समुद्री उद्यमिता के क्षेत्र में अपार संभावनाएं हैं। सरकारी सहायता, आधुनिक तकनीक और बढ़ती मांग के साथ यह सेक्टर निवेश के लिए सबसे आकर्षक है। समुद्री संसाधनों का सदुपयोग करके हम न केवल अपनी आर्थिक स्थिति सुधार सकते हैं बल्कि पर्यावरण संरक्षण में भी योगदान दे सकते हैं।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'ब्लू इकॉनमी 2.0 के तहत कितना लोन मिल सकता है?',
+      answer: 'ब्लू इकॉनमी 2.0 के तहत जलकृषि और समुद्री प्रोजेक्ट्स के लिए ₹2 करोड़ तक का लोन मिल सकता है।'
+    },
+    {
+      question: 'मछली पालन से कितनी आय हो सकती है?',
+      answer: 'मछली पालन से प्रति हेक्टेयर सालाना ₹2-5 लाख तक की आय हो सकती है, जो तकनीक और मछली के प्रकार पर निर्भर करती है।'
+    },
+    {
+      question: 'जलकृषि के लिए कौन से दस्तावेज चाहिए?',
+      answer: 'आधार कार्ड, PAN कार्ड, जल निकाय का लीज/स्वामित्व प्रमाण, प्रोजेक्ट रिपोर्ट और पर्यावरण क्लीयरेंस आवश्यक है।'
+    },
+    {
+      question: 'मछली का निर्यात कैसे करें?',
+      answer: 'MPEDA रजिस्ट्रेशन, HACCP सर्टिफिकेशन और इंटरनेशनल क्वालिटी स्टैंडर्ड पूरा करके निर्यात कर सकते हैं।'
+    },
+    {
+      question: 'जलकृषि में कौन सी आधुनिक तकनीक अपनाएं?',
+      answer: 'RAS सिस्टम, बायोफ्लॉक तकनीक, IoT मॉनिटरिंग, ऑटोमेटेड फीडिंग और सोलर पावर सिस्टम अपनाएं।'
+    }
+  ],
+  relatedSchemes: ['pmmsy-scheme', 'blue-revolution-scheme', 'nabard-fisheries-loan'],
+  budget: '₹20,050 करोड़ (2020-25)',
+  beneficiaries: '55 लाख मछुआरे और किसान',
+  successRate: '87.6%'
+},
+ {
+  id: '160',
+  slug: 'long-term-innovation-loans-1-lakh-crore-corpus-2025',
+  title: '₹1 Lakh Crore Innovation Loans Corpus 2025: Who Can Apply? Complete Guide',
+  titleHindi: '₹1 लाख करोड़ इनोवेशन ऋण कोष 2025: कौन आवेदन कर सकता है? संपूर्ण गाइड',
+  category: 'Financial Inclusion',
+  categoryHindi: 'वित्तीय समावेशन',
+  status: 'active',
+  launchDate: '2024-07-01',
+  lastUpdated: '2025-01-01',
+  targetAudience: ['Startups', 'Researchers', 'Tech Entrepreneurs', 'Innovation Companies', 'R&D Organizations'],
+  benefits: [
+    'Long-term loans up to ₹500 crore',
+    'Attractive interest rates (6-8%)',
+    'Flexible repayment terms',
+    'No collateral for loans up to ₹50 crore',
+    'Patent and IP support',
+    'Mentorship and incubation support'
+  ],
+  eligibility: [
+    'Indian registered company or startup',
+    'Innovative technology or product',
+    'Strong business plan and team',
+    'Potential for commercialization',
+    'IP protection strategy',
+    'Environmental compliance'
+  ],
+  documents: [
+    'Company incorporation certificate',
+    'Detailed business plan',
+    'Technology description',
+    'Financial projections',
+    'Team credentials',
+    'Patent/IP documentation'
+  ],
+  applicationProcess: [
+    'Register on National Innovation Portal',
+    'Submit detailed project proposal',
+    'Technical evaluation by experts',
+    'Due diligence and background check',
+    'Loan approval committee review',
+    'Disbursement in tranches',
+    'Regular monitoring and milestone tracking'
+  ],
+  officialWebsite: 'https://innovate.gov.in',
+  helpline: '1800-572-9999',
+  coverImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: '₹1 Lakh Crore Innovation Loans Corpus 2025 supports breakthrough technologies. Get long-term loans up to ₹500 crore with flexible terms for innovation and R&D projects.',
+  excerptHindi: '₹1 लाख करोड़ इनोवेशन ऋण कोष 2025 नवाचार तकनीकों का समर्थन करता है। इनोवेशन और R&D प्रोजेक्ट्स के लिए लचीली शर्तों के साथ ₹500 करोड़ तक के दीर्घकालिक ऋण प्राप्त करें।',
+  keywords: [
+    'Innovation Loans 2025', 'इनोवेशन ऋण 2025', 'startup funding India',
+    'स्टार्टअप फंडिंग भारत', 'R&D loans', 'अनुसंधान विकास ऋण',
+    'technology loans', 'तकनीकी ऋण', 'innovation financing',
+    'नवाचार वित्तपोषण', 'long term business loans', 'दीर्घकालिक व्यापारिक ऋण'
+  ],
+  seoTitle: '₹1 Lakh Crore Innovation Loans 2025: Get up to ₹500 Crore | Complete Application Guide',
+  seoDescription: '₹1 Lakh Crore Innovation Loans Corpus 2025: Get long-term loans up to ₹500 crore for startups and innovation projects. Low interest rates, flexible terms. Apply now!',
+  content: [
+    {
+      type: 'heading',
+      content: '₹1 लाख करोड़ इनोवेशन ऋण कोष 2025: भारत में नवाचार की नई क्रांति'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत सरकार द्वारा घोषित ₹1 लाख करोड़ का इनोवेशन ऋण कोष 2025 में देश के स्टार्टअप्स, रिसर्चर्स और टेक एंटरप्रेन्योर्स के लिए एक गेम चेंजर साबित हो रहा है। यह कोष भविष्य की तकनीकों और इनोवेटिव प्रोजेक्ट्स के लिए दीर्घकालिक वित्तपोषण प्रदान करता है। इस योजना के तहत ₹500 करोड़ तक के लोन, आकर्षक ब्याज दरें और लचीली शर्तें उपलब्ध हैं।'
+    },
+    {
+      type: 'subheading',
+      content: 'इनोवेशन इकॉनमी और भारत का विजन'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत को $5 ट्रिलियन इकॉनमी बनाने के लिए इनोवेशन और टेक्नोलॉजी महत्वपूर्ण भूमिका निभा रहे हैं। यह कोष इसी दिशा में एक महत्वपूर्ण कदम है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'भारत में 100+ यूनिकॉर्न स्टार्टअप्स',
+        'टेक सेक्टर का योगदान: जीडीपी का 8%',
+        'डिजिटल इंडिया मिशन के तहत तेज प्रगति',
+        'आर्टिफिशियल इंटेलिजेंस में निवेश: ₹7,000 करोड़',
+        'स्टार्टअप इकोसिस्टम: दुनिया में तीसरा स्थान',
+        'इनोवेशन इंडेक्स में भारत की रैंकिंग: 40वां'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'कोष के मुख्य घटक और फोकस एरिया'
+    },
+    {
+      type: 'paragraph',
+      content: '₹1 लाख करोड़ के इस कोष को विभिन्न सेक्टरों और तकनीकी क्षेत्रों में बांटा गया है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['सेक्टर', 'एलोकेशन', 'फोकस एरिया', 'मैक्स लोन साइज'],
+        rows: [
+          ['AI & ML', '₹25,000 करोड़', 'Machine Learning, NLP', '₹500 करोड़'],
+          ['बायोटेक', '₹20,000 करोड़', 'ड्रग डिस्कवरी, जेनेटिक्स', '₹300 करोड़'],
+          ['क्लीनटेक', '₹15,000 करोड़', 'रिन्यूएबल एनर्जी, EV', '₹400 करोड़'],
+          ['स्पेस टेक', '₹10,000 करोड़', 'सैटेलाइट, लॉन्च सिस्टम', '₹200 करोड़']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'लोन की शर्तें और ब्याज दरें'
+    },
+    {
+      type: 'paragraph',
+      content: 'इनोवेशन लोन्स की शर्तें पारंपरिक बिजनेस लोन्स से अलग और अधिक लचीली हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'ब्याज दर: 6-8% (बेस रेट + स्प्रेड)',
+        'लोन अवधि: 7-15 साल तक',
+        'मोरेटोरियम पीरियड: 3-5 साल',
+        'कोलैटरल फ्री: ₹50 करोड़ तक',
+        'फ्लेक्सिबल रीपेमेंट: मील स्टोन बेस्ड',
+        'ईक्विटी ऑप्शन: कन्वर्टिबल लोन',
+        'टैक्स बेनिफिट्स: सेक्शन 35(2AB) के तहत'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'पात्रता मानदंड और आवेदन शर्तें'
+    },
+    {
+      type: 'paragraph',
+      content: 'इस कोष से लोन पाने के लिए कंपनी और प्रोजेक्ट दोनों के लिए कुछ विशिष्ट मानदंड हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'भारत में रजिस्टर्ड कंपनी या स्टार्टअप',
+        'इनोवेटिव टेक्नोलॉजी या प्रोडक्ट',
+        'स्ट्रॉन्ग टेक्निकल टीम (PhD/Engineers)',
+        'पेटेंटेबल या IP प्रोटेक्टेड इनोवेशन',
+        'क्लियर कमर्शियलाइजेशन रोडमैप',
+        'एनवायर्नमेंटल और सोशल कंप्लायंस',
+        'मिनिमम 3 साल का ट्रैक रिकॉर्ड (सीरीज A के बाद)'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आवेदन प्रक्रिया: स्टेप बाई स्टेप गाइड'
+    },
+    {
+      type: 'paragraph',
+      content: 'इनोवेशन लोन के लिए आवेदन प्रक्रिया टेक्नोलॉजी ड्रिवन और पारदर्शी है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'नेशनल इनोवेशन पोर्टल पर रजिस्ट्रेशन',
+        'डिटेल्ड टेक्निकल प्रपोजल सबमिशन',
+        'पीयर रिव्यू और एक्सपर्ट इवैल्यूएशन',
+        'बिजनेस पोटेंशियल असेसमेंट',
+        'ड्यू डिलिजेंस और बैकग्राउंड चेक',
+        'लोन अप्रूवल कमिटी रिव्यू',
+        'लीगल डॉक्यूमेंटेशन और डिस्बर्समेंट',
+        'माइलस्टोन बेस्ड मॉनिटरिंग'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'टेक्नोलॉजी इवैल्यूएशन क्राइटेरिया'
+    },
+    {
+      type: 'paragraph',
+      content: 'प्रोजेक्ट की तकनीकी गुणवत्ता का आकलन इन पैरामीटर्स पर किया जाता है:'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['पैरामीटर', 'वेटेज', 'मूल्यांकन मानदंड', 'स्कोरिंग'],
+        rows: [
+          ['टेक्निकल इनोवेशन', '30%', 'नवीनता, जटिलता', '1-10'],
+          ['मार्केट पोटेंशियल', '25%', 'बाजार का आकार', '1-10'],
+          ['कमर्शियल विएबिलिटी', '20%', 'रेवेन्यू मॉडल', '1-10'],
+          ['टीम कैपेबिलिटी', '15%', 'अनुभव, स्किल्स', '1-10'],
+          ['IP स्ट्रेंथ', '10%', 'पेटेंट, ट्रेडमार्क', '1-10']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'सपोर्ट इकोसिस्टम और मेंटरशिप'
+    },
+    {
+      type: 'paragraph',
+      content: 'सिर्फ फंडिंग नहीं, बल्कि पूरा सपोर्ट इकोसिस्टम उपलब्ध है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'IIM/IIT प्रोफेसर्स की मेंटरशिप',
+        'इंडस्ट्री एक्सपर्ट्स का गाइडेंस',
+        'पेटेंट फाइलिंग सपोर्ट',
+        'रेगुलेटरी अप्रूवल असिस्टेंस',
+        'मार्केट लिंकेज और कस्टमर कनेक्शन',
+        'इंटरनेशनल कोलैबोरेशन',
+        'टैलेंट एक्विजिशन सपोर्ट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'सफलता की कहानियां और केस स्टडीज'
+    },
+    {
+      type: 'paragraph',
+      content: 'इनोवेशन कोष से फंडिंग पाने वाली कंपनियों की सफलता की कहानियां:'
+    },
+    {
+      type: 'paragraph',
+      content: 'बेंगलुरू की एक AI स्टार्टअप को ₹50 करोड़ का लोन मिला। उन्होंने हेल्थकेयर डायग्नोसिस के लिए AI सोल्यूशन बनाया जो अब 500+ हॉस्पिटल्स में इस्तेमाल हो रहा है।'
+    },
+    {
+      type: 'paragraph',
+      content: 'पुणे की एक बायोटेक कंपनी ने ₹80 करोड़ की फंडिंग से कैंसर ड्रग डेवलप की। अब वे क्लिनिकल ट्रायल के फेज 3 में हैं और अमेरिकी FDA अप्रूवल के करीब हैं।'
+    },
+    {
+      type: 'subheading',
+      content: 'रिस्क असेसमेंट और मिटिगेशन'
+    },
+    {
+      type: 'paragraph',
+      content: 'इनोवेशन प्रोजेक्ट्स में रिस्क मैनेजमेंट एक महत्वपूर्ण पहलू है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'टेक्निकल रिस्क: प्रूफ ऑफ कॉन्सेप्ट वेरिफिकेशन',
+        'मार्केट रिस्क: कस्टमर वैलिडेशन',
+        'रेगुलेटरी रिस्क: कंप्लायंस चेक',
+        'कॉम्पिटिशन रिस्क: IP प्रोटेक्शन',
+        'फाइनेंशियल रिस्क: मल्टिपल फंडिंग सोर्सेज',
+        'टीम रिस्क: की मैन इंश्योरेंस'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'इंटेलेक्चुअल प्रॉपर्टी और पेटेंट सपोर्ट'
+    },
+    {
+      type: 'paragraph',
+      content: 'IP प्रोटेक्शन के लिए कंप्रिहेंसिव सपोर्ट उपलब्ध है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'पेटेंट सर्च और प्रायर आर्ट एनालिसिस',
+        'पेटेंट ड्राफ्टिंग और फाइलिंग सपोर्ट',
+        'ट्रेडमार्क रजिस्ट्रेशन',
+        'कॉपीराइट प्रोटेक्शन',
+        'IP लाइसेंसिंग स्ट्रैटेजी',
+        'इंटरनेशनल पेटेंट फाइलिंग (PCT)',
+        'IP कमर्शियलाइजेशन गाइडेंस'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'इंटरनेशनल कोलैबोरेशन और पार्टनरशिप'
+    },
+    {
+      type: 'paragraph',
+      content: 'ग्लोबल इनोवेशन इकोसिस्टम से कनेक्शन बनाने में सहायता।'
+    },
+    {
+      type: 'list',
+      items: [
+        'सिलिकॉन वैली टेक हब्स से जुड़ाव',
+        'यूरोपीय रिसर्च इंस्टिट्यूट्स के साथ कोलैबोरेशन',
+        'जापान और कोरिया के टेक कंपनीज से पार्टनरशिप',
+        'इजराइल के इनोवेशन सेंटर्स एक्सेस',
+        'सिंगापुर फिनटेक हब कनेक्शन',
+        'जर्मन इंजीनियरिंग पार्टनरशिप'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'फाइनेंशियल प्लानिंग और कैश फ्लो मैनेजमेंट'
+    },
+    {
+      type: 'paragraph',
+      content: 'इनोवेशन प्रोजेक्ट्स के लिए स्पेशल फाइनेंशियल प्लानिंग टूल्स।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['फेज', 'फंडिंग %', 'मुख्य फोकस', 'टाइमलाइन'],
+        rows: [
+          ['प्रूफ ऑफ कॉन्सेप्ट', '20%', 'टेक्निकल वैलिडेशन', '6-12 महीने'],
+          ['प्रोटोटाइप डेवलपमेंट', '30%', 'प्रोडक्ट डेवलपमेंट', '12-18 महीने'],
+          ['मार्केट वैलिडेशन', '25%', 'कस्टमर टेस्टिंग', '18-24 महीने'],
+          ['कमर्शियलाइजेशन', '25%', 'स्केलिंग और सेल्स', '24+ महीने']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'टैक्स बेनिफिट्स और इंसेंटिव्स'
+    },
+    {
+      type: 'paragraph',
+      content: 'इनोवेशन प्रोजेक्ट्स के लिए विशेष टैक्स सुविधाएं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'R&D एक्सपेंडिचर पर 200% डिडक्शन',
+        'स्टार्टअप्स के लिए 3 साल टैक्स हॉलिडे',
+        'कैपिटल गेन्स एग्जेम्प्शन',
+        'एक्सेलेरेटेड डेप्रिसिएशन',
+        'एक्सपोर्ट इंसेंटिव्स',
+        'SEZ स्टेटस के लिए प्राथमिकता'
+      ]
+    },
+    {
+      type: 'quote',
+      content: '₹1 लाख करोड़ का इनोवेशन कोष भारत को ग्लोबल इनोवेशन लीडर बनाने की दिशा में एक महत्वपूर्ण कदम है। यह कोष न केवल स्टार्टअप्स को फंडिंग देगा बल्कि भारत की टेक्नोलॉजिकल कैपेबिलिटी को नई ऊंचाइयों तक ले जाएगा।',
+      author: 'विज्ञान और प्रौद्योगिकी मंत्रालय'
+    },
+    {
+      type: 'subheading',
+      content: 'फ्यूचर रोडमैप और विस्तार योजनाएं'
+    },
+    {
+      type: 'paragraph',
+      content: '2030 तक इस कोष के विस्तार की योजनाएं:'
+    },
+    {
+      type: 'list',
+      items: [
+        'कोष का साइज ₹5 लाख करोड़ तक बढ़ाना',
+        'क्वांटम कंप्यूटिंग और 6G टेक्नोलॉजी फोकस',
+        'ग्रीन टेक और क्लाइमेट सोल्यूशन्स',
+        'स्पेस इकॉनमी और डिफेंस टेक',
+        'हेल्थटेक और बायोमेडिकल इनोवेशन',
+        'एजटेक और फूडटेक सोल्यूशन्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: '₹1 लाख करोड़ का इनोवेशन ऋण कोष भारत के स्टार्टअप और इनोवेशन इकोसिस्टम के लिए एक गेम चेंजर है। यह कोष न केवल वित्तीय सहायता प्रदान करता है बल्कि पूरा सपोर्ट इकोसिस्टम भी देता है। टेक्नोलॉजी एंटरप्रेन्योर्स के लिए यह एक सुनहरा अवसर है अपने इनोवेटिव आइडियाज को रियलिटी में बदलने का। सरकार की पूरी सहायता और ग्लोबल पार्टनरशिप के साथ भारत इनोवेशन के क्षेत्र में विश्व लीडर बनने की दिशा में तेजी से आगे बढ़ रहा है।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'इनोवेशन कोष से कितना लोन मिल सकता है?',
+      answer: 'इनोवेशन कोष से इनोवेटिव प्रोजेक्ट्स के लिए ₹500 करोड़ तक का लोन मिल सकता है।'
+    },
+    {
+      question: 'इनोवेशन लोन की ब्याज दर क्या है?',
+      answer: 'इनोवेशन लोन की ब्याज दर 6-8% है जो प्रोजेक्ट के रिस्क प्रोफाइल पर निर्भर करती है।'
+    },
+    {
+      question: 'कौन सी कंपनियां आवेदन कर सकती हैं?',
+      answer: 'भारत में रजिस्टर्ड कंपनियां जिनके पास इनोवेटिव टेक्नोलॉजी या प्रोडक्ट है, वे आवेदन कर सकती हैं।'
+    },
+    {
+      question: 'क्या कोलैटरल की जरूरत है?',
+      answer: '₹50 करोड़ तक के लोन के लिए कोलैटरल की जरूरत नहीं है।'
+    },
+    {
+      question: 'आवेदन प्रक्रिया कितनी लंबी है?',
+      answer: 'आवेदन से अप्रूवल तक 4-6 महीने का समय लग सकता है।'
+    }
+  ],
+  relatedSchemes: ['startup-india-scheme', 'atal-innovation-mission', 'fund-of-funds-startups'],
+  budget: '₹1,00,000 करोड़ (2024-29)',
+  beneficiaries: '10,000 स्टार्टअप्स और इनोवेटर्स',
+  successRate: '78.5%'
+},
+ {
+  id: '161',
+  slug: 'bio-manufacturing-bio-foundry-scheme-green-innovations-funding-2025',
+  title: 'Bio-Manufacturing & Bio-Foundry Scheme 2025: Funding Green Innovations - Complete Guide',
+  titleHindi: 'बायो-मैन्युफैक्चरिंग और बायो-फाउंड्री योजना 2025: हरित नवाचारों के लिए फंडिंग - संपूर्ण गाइड',
+  category: 'Financial Inclusion',
+  categoryHindi: 'वित्तीय समावेशन',
+  status: 'active',
+  launchDate: '2024-09-15',
+  lastUpdated: '2025-01-01',
+  targetAudience: ['Biotech Startups', 'Research Institutes', 'Green Tech Companies', 'Pharmaceutical Companies', 'Clean Energy Entrepreneurs'],
+  benefits: [
+    'Funding up to ₹200 crore per project',
+    'State-of-the-art bio-foundry access',
+    'R&D infrastructure support',
+    'Regulatory guidance and support',
+    'Market access facilitation',
+    'International collaboration opportunities'
+  ],
+  eligibility: [
+    'Indian registered biotech company',
+    'Innovative bio-manufacturing technology',
+    'Sustainable and environment-friendly process',
+    'Experienced technical team',
+    'Clear commercialization strategy',
+    'Regulatory compliance capability'
+  ],
+  documents: [
+    'Company registration certificate',
+    'Detailed project proposal',
+    'Technical feasibility report',
+    'Environmental impact assessment',
+    'Team credentials and experience',
+    'Regulatory approval strategy'
+  ],
+  applicationProcess: [
+    'Submit EOI on BioTech Portal',
+    'Detailed project proposal submission',
+    'Technical evaluation by experts',
+    'Presentation to selection committee',
+    'Due diligence and compliance check',
+    'Funding approval and agreement',
+    'Milestone-based disbursement'
+  ],
+  officialWebsite: 'https://birac.nic.in',
+  helpline: '1800-572-9999',
+  coverImage: 'https://images.pexels.com/photos/3825517/pexels-photo-3825517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: 'Bio-Manufacturing & Bio-Foundry Scheme 2025 supports sustainable biotechnology innovations. Get funding up to ₹200 crore for green manufacturing solutions and bio-based products.',
+  excerptHindi: 'बायो-मैन्युफैक्चरिंग और बायो-फाउंड्री योजना 2025 टिकाऊ बायोटेक्नोलॉजी नवाचारों का समर्थन करती है। हरित मैन्युफैक्चरिंग समाधान और जैव-आधारित उत्पादों के लिए ₹200 करोड़ तक की फंडिंग प्राप्त करें।',
+  keywords: [
+    'Bio-Manufacturing 2025', 'बायो-मैन्युफैक्चरिंग 2025', 'bio-foundry scheme',
+    'बायो-फाउंड्री योजना', 'green biotechnology funding', 'हरित बायोटेक्नोलॉजी फंडिंग',
+    'sustainable manufacturing', 'टिकाऊ मैन्युफैक्चरिंग', 'biotechnology innovation',
+    'बायोटेक्नोलॉजी नवाचार', 'bio-based products', 'जैव-आधारित उत्पाद'
+  ],
+  seoTitle: 'Bio-Manufacturing Scheme 2025: Get ₹200 Crore Funding | Green Innovation Guide',
+  seoDescription: 'Bio-Manufacturing & Bio-Foundry Scheme 2025: Get funding up to ₹200 crore for sustainable biotechnology innovations. Access bio-foundries, R&D support, and market facilitation.',
+  content: [
+    {
+      type: 'heading',
+      content: 'Bio-Manufacturing & Bio-Foundry Scheme 2025: हरित विनिर्माण की नई दुनिया'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत सरकार की बायो-मैन्युफैक्चरिंग और बायो-फाउंड्री योजना 2025 में एक क्रांतिकारी पहल है जो हरित और टिकाऊ विनिर्माण को बढ़ावा देने के लिए शुरू की गई है। इस योजना के तहत बायोटेक्नोलॉजी कंपनियों और रिसर्च इंस्टिट्यूट्स को ₹200 करोड़ तक की फंडिंग, अत्याधुनिक बायो-फाउंड्री सुविधाएं और व्यापक तकनीकी सहायता प्रदान की जा रही है।'
+    },
+    {
+      type: 'subheading',
+      content: 'बायो-मैन्युफैक्चरिंग का महत्व और भविष्य'
+    },
+    {
+      type: 'paragraph',
+      content: 'पारंपरिक मैन्युफैक्चरिंग की तुलना में बायो-मैन्युफैक्चरिंग अधिक पर्यावरण-अनुकूल, लागत-प्रभावी और टिकाऊ है। यह जैविक प्रक्रियाओं का उपयोग करके विभिन्न उत्पादों का निर्माण करती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'ग्लोबल बायो-मैन्युफैक्चरिंग मार्केट: $500 बिलियन',
+        'भारत में बायोटेक सेक्टर का साइज: $80 बिलियन',
+        'वार्षिक वृद्धि दर: 16-18%',
+        'कार्बन फुटप्रिंट में 80% तक कमी',
+        'एनर्जी कंजम्प्शन में 50% तक कमी',
+        'रोजगार सृजन: 10 लाख नए जॉब्स (2030 तक)'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'बायो-फाउंड्री की भूमिका और सुविधाएं'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-फाउंड्री एक अत्याधुनिक सुविधा है जो बायोलॉजिकल सिस्टम्स को डिजाइन, बिल्ड और टेस्ट करने के लिए ऑटोमेशन और AI का उपयोग करती है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['सुविधा', 'क्षमता', 'एप्लीकेशन', 'कॉस्ट रिडक्शन'],
+        rows: [
+          ['DNA सिंथेसिस', 'मेगाबेस/वर्ष', 'जीन इंजीनियरिंग', '90%'],
+          ['प्रोटीन एक्सप्रेशन', '1000+ प्रोटीन/माह', 'एंजाइम प्रोडक्शन', '70%'],
+          ['सेल कल्चर', '10,000L बायोरिएक्टर', 'बायोफर्मा', '60%'],
+          ['मेटाबोलिक इंजीनियरिंग', '100+ पाथवे/वर्ष', 'केमिकल प्रोडक्शन', '80%']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'योजना के मुख्य फोकस एरिया'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-मैन्युफैक्चरिंग योजना विभिन्न सेक्टरों में इनोवेशन को बढ़ावा देने के लिए डिजाइन की गई है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'बायो-फार्मास्यूटिकल्स और वैक्सीन प्रोडक्शन',
+        'बायो-फ्यूल्स और रिन्यूएबल एनर्जी',
+        'बायो-केमिकल्स और स्पेशियलिटी केमिकल्स',
+        'बायो-मैटेरियल्स और बायो-प्लास्टिक्स',
+        'एग्रीकल्चरल बायोटेक्नोलॉजी',
+        'एनवायर्नमेंटल बायोरेमेडिएशन',
+        'फूड टेक्नोलॉजी और न्यूट्रास्यूटिकल्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'फंडिंग स्ट्रक्चर और पात्रता'
+    },
+    {
+      type: 'paragraph',
+      content: 'यह योजना विभिन्न स्टेज की कंपनियों के लिए अलग-अलग फंडिंग ऑप्शन प्रदान करती है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['स्टेज', 'फंडिंग रेंज', 'इक्विटी', 'फोकस एरिया'],
+        rows: [
+          ['अर्ली स्टेज', '₹5-25 करोड़', '10-15%', 'प्रूफ ऑफ कॉन्सेप्ट'],
+          ['ग्रोथ स्टेज', '₹25-100 करोड़', '15-25%', 'पायलट प्लांट'],
+          ['कमर्शियल स्टेज', '₹100-200 करोड़', '20-30%', 'फुल स्केल प्रोडक्शन'],
+          ['एक्सपेंशन स्टेज', '₹200+ करोड़', '25-35%', 'ग्लोबल एक्सपेंशन']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'तकनीकी सहायता और इंफ्रास्ट्रक्चर'
+    },
+    {
+      type: 'paragraph',
+      content: 'योजना के तहत कंपनियों को अत्याधुनिक तकनीकी सुविधाएं और एक्सपर्ट सपोर्ट उपलब्ध है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'नेशनल बायो-फाउंड्री नेटवर्क एक्सेस',
+        'हाई-थ्रूपुट स्क्रीनिंग फैसिलिटी',
+        'जेनेटिक इंजीनियरिंग प्लेटफॉर्म',
+        'प्रोसेस ऑप्टिमाइजेशन सपोर्ट',
+        'क्वालिटी कंट्रोल और एनालिटिकल सर्विसेज',
+        'पायलट स्केल प्रोडक्शन सुविधा',
+        'AI/ML बेस्ड प्रोसेस ऑप्टिमाइजेशन'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आवेदन प्रक्रिया और दस्तावेज'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-मैन्युफैक्चरिंग योजना के लिए आवेदन एक स्ट्रक्चर्ड प्रोसेस है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'BIRAC पोर्टल पर कंपनी रजिस्ट्रेशन',
+        'EOI (Expression of Interest) सबमिशन',
+        'डिटेल्ड प्रोजेक्ट प्रपोजल (DPP) तैयारी',
+        'टेक्निकल एंड कमर्शियल इवैल्यूएशन',
+        'एक्सपर्ट कमिटी प्रेजेंटेशन',
+        'ड्यू डिलिजेंस और कंप्लायंस चेक',
+        'फंडिंग एग्रीमेंट और डिस्बर्समेंट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'रेगुलेटरी सपोर्ट और अप्रूवल्स'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायोटेक प्रोडक्ट्स के लिए रेगुलेटरी अप्रूवल एक जटिल प्रक्रिया है, जिसके लिए योजना में स्पेशल सपोर्ट है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'CDSCO और FDA गाइडलाइन्स सपोर्ट',
+        'क्लिनिकल ट्रायल डिजाइन असिस्टेंस',
+        'GMP कंप्लायंस सपोर्ट',
+        'इंटेलेक्चुअल प्रॉपर्टी प्रोटेक्शन',
+        'एनवायर्नमेंटल क्लीयरेंस सपोर्ट',
+        'इंटरनेशनल रेगुलेटरी गाइडेंस',
+        'रेगुलेटरी एक्सपर्ट नेटवर्क एक्सेस'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'मार्केट एक्सेस और कमर्शियलाइजेशन'
+    },
+    {
+      type: 'paragraph',
+      content: 'प्रोडक्ट डेवलप करने के बाद मार्केट में उसकी पहुंच बनाना महत्वपूर्ण है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'इंडस्ट्री पार्टनरशिप फैसिलिटेशन',
+        'कॉन्ट्रैक्ट मैन्युफैक्चरिंग ऑप्शन्स',
+        'डिस्ट्रिब्यूशन नेटवर्क एक्सेस',
+        'एक्सपोर्ट प्रमोशन सपोर्ट',
+        'कस्टमर डेवलपमेंट असिस्टेंस',
+        'मार्केट रिसर्च सपोर्ट',
+        'सेल्स एंड मार्केटिंग ट्रेनिंग'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'सफलता की कहानियां और केस स्टडीज'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-मैन्युफैक्चरिंग योजना से फायदा उठाने वाली कंपनियों की सफलता की कहानियां:'
+    },
+    {
+      type: 'paragraph',
+      content: 'बेंगलुरू की एक बायोटेक कंपनी ने इस योजना के तहत ₹50 करोड़ की फंडिंग से इंसुलिन का बायो-सिमिलर बनाया। आज वे भारत में 30% मार्केट शेयर रखते हैं।'
+    },
+    {
+      type: 'paragraph',
+      content: 'पुणे की एक स्टार्टअप ने प्लांट-बेस्ड प्रोटीन का उत्पादन शुरू किया। उन्हें ₹80 करोड़ का इन्वेस्टमेंट मिला और अब वे यूरोप में एक्सपोर्ट कर रहे हैं।'
+    },
+    {
+      type: 'subheading',
+      content: 'एनवायर्नमेंटल इम्पैक्ट और सस्टेनेबिलिटी'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-मैन्युफैक्चरिंग का सबसे बड़ा फायदा इसका पर्यावरण-अनुकूल होना है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['पैरामीटर', 'ट्रेडिशनल मैन्युफैक्चरिंग', 'बायो-मैन्युफैक्चरिंग', 'इम्प्रूवमेंट'],
+        rows: [
+          ['कार्बन एमिशन', '100 टन CO2', '20 टन CO2', '80% कम'],
+          ['एनर्जी यूसेज', '1000 MWh', '500 MWh', '50% कम'],
+          ['वेस्ट जेनेरेशन', '500 टन', '50 टन', '90% कम'],
+          ['वाटर कंजम्प्शन', '10,000 लीटर', '3,000 लीटर', '70% कम']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'इंटरनेशनल कोलैबोरेशन और पार्टनरशिप'
+    },
+    {
+      type: 'paragraph',
+      content: 'ग्लोबल बायो-इकॉनमी में भारत की भागीदारी बढ़ाने के लिए अंतर्राष्ट्रीय सहयोग।'
+    },
+    {
+      type: 'list',
+      items: [
+        'यूएस-इंडिया बायो-टेक पार्टनरशिप',
+        'यूरोपीयन बायो-फाउंड्री नेटवर्क एक्सेस',
+        'जापान-इंडिया बायो-मैन्युफैक्चरिंग एलायंस',
+        'सिंगापुर बायो-टेक हब कनेक्शन',
+        'इजराइल एग्री-बायो-टेक कोलैबोरेशन',
+        'जर्मन इंडस्ट्री 4.0 इंटीग्रेशन'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'स्किल डेवलपमेंट और ट्रेनिंग प्रोग्राम्स'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-मैन्युफैक्चरिंग के लिए स्पेशलाइज्ड स्किल्स की जरूरत होती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'बायो-प्रोसेस इंजीनियरिंग सर्टिफिकेशन',
+        'जेनेटिक इंजीनियरिंग ट्रेनिंग',
+        'बायो-इंफॉर्मेटिक्स कोर्सेज',
+        'रेगुलेटरी अफेयर्स ट्रेनिंग',
+        'क्वालिटी असेसमेंट प्रोग्राम्स',
+        'बिजनेस डेवलपमेंट स्किल्स',
+        'इंटरनेशनल एक्सपोजर प्रोग्राम्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'फ्यूचर ट्रेंड्स और टेक्नोलॉजी रोडमैप'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-मैन्युफैक्चरिंग में आने वाले समय के ट्रेंड्स:'
+    },
+    {
+      type: 'list',
+      items: [
+        'सिंथेटिक बायोलॉजी और डिजाइन्ड ऑर्गेनिज्म',
+        'AI/ML ड्रिवन बायो-प्रोसेस ऑप्टिमाइजेशन',
+        'कंटिन्यूअस मैन्युफैक्चरिंग सिस्टम्स',
+        'पर्सनलाइज्ड मेडिसिन प्रोडक्शन',
+        'स्पेस बायोमैन्युफैक्चरिंग',
+        'क्वांटम बायोलॉजी एप्लीकेशन्स'
+      ]
+    },
+    {
+      type: 'quote',
+      content: 'बायो-मैन्युफैक्चरिंग और बायो-फाउंड्री योजना भारत को ग्लोबल बायो-इकॉनमी में लीडर बनाने की दिशा में एक महत्वपूर्ण कदम है। यह न केवल इकोनॉमिक ग्रोथ लाएगी बल्कि एनवायर्नमेंटल सस्टेनेबिलिटी भी सुनिश्चित करेगी।',
+      author: 'बायोटेक्नोलॉजी विभाग, विज्ञान और प्रौद्योगिकी मंत्रालय'
+    },
+    {
+      type: 'subheading',
+      content: 'रिस्क मैनेजमेंट और मिटिगेशन'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-मैन्युफैक्चरिंग प्रोजेक्ट्स में विभिन्न प्रकार के रिस्क होते हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'टेक्निकल रिस्क: प्रोसेस वेरिएबिलिटी',
+        'रेगुलेटरी रिस्क: अप्रूवल डिले',
+        'मार्केट रिस्क: कंपिटिशन और प्राइसिंग',
+        'ऑपरेशनल रिस्क: स्केलिंग चैलेंजेज',
+        'फाइनेंशियल रिस्क: कैश फ्लो मैनेजमेंट',
+        'IP रिस्क: पेटेंट इंफ्रिंजमेंट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: 'बायो-मैन्युफैक्चरिंग और बायो-फाउंड्री योजना 2025 भारत के लिए एक ट्रांसफॉर्मेटिव इनिशिएटिव है। यह योजना न केवल वित्तीय सहायता प्रदान करती है बल्कि पूरा इकोसिस्टम भी बनाती है जो बायोटेक कंपनियों को सफल होने में मदद करता है। हरित और टिकाऊ विनिर्माण की दिशा में यह एक महत्वपूर्ण कदम है जो भविष्य की पीढ़ियों के लिए एक बेहतर और स्वच्छ दुनिया बनाने में योगदान देगा। बायोटेक उद्यमियों के लिए यह एक सुनहरा अवसर है अपने इनोवेटिव आइडियाज को वास्तविकता में बदलने का।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'बायो-मैन्युफैक्चरिंग योजना के तहत कितनी फंडिंग मिल सकती है?',
+      answer: 'बायो-मैन्युफैक्चरिंग योजना के तहत प्रोजेक्ट के स्टेज के आधार पर ₹5 करोड़ से ₹200 करोड़ तक की फंडिंग मिल सकती है।'
+    },
+    {
+      question: 'बायो-फाउंड्री क्या है और इसके क्या फायदे हैं?',
+      answer: 'बायो-फाउंड्री एक अत्याधुनिक सुविधा है जो बायोलॉजिकल सिस्टम्स को डिजाइन, बिल्ड और टेस्ट करने के लिए ऑटोमेशन का उपयोग करती है। इससे R&D की लागत और समय दोनों कम हो जाते हैं।'
+    },
+    {
+      question: 'कौन सी कंपनियां इस योजना के लिए पात्र हैं?',
+      answer: 'भारत में रजिस्टर्ड बायोटेक कंपनियां जिनके पास इनोवेटिव और पर्यावरण-अनुकूल बायो-मैन्युफैक्चरिंग टेक्नोलॉजी है।'
+    },
+    {
+      question: 'बायो-मैन्युफैक्चरिंग के मुख्य एप्लीकेशन क्या हैं?',
+      answer: 'बायो-फार्मास्यूटिकल्स, बायो-फ्यूल्स, बायो-केमिकल्स, बायो-मैटेरियल्स और एग्रीकल्चरल बायोटेक्नोलॉजी मुख्य एप्लीकेशन हैं।'
+    },
+    {
+      question: 'रेगुलेटरी अप्रूवल में कितना समय लगता है?',
+      answer: 'प्रोडक्ट के प्रकार के आधार पर रेगुलेटरी अप्रूवल में 1-3 साल का समय लग सकता है, लेकिन योजना के तहत तेज ट्रैक प्रोसेस उपलब्ध है।'
+    }
+  ],
+  relatedSchemes: ['startup-india-scheme', 'atal-innovation-mission', 'biotechnology-park-scheme'],
+  budget: '₹12,000 करोड़ (2024-29)',
+  beneficiaries: '2,500 बायोटेक कंपनियां और रिसर्च इंस्टिट्यूट्स',
+  successRate: '85.2%'
+},
+{
+  id: '162',
+  slug: 'national-mission-high-yield-seeds-farmers-guide-premium-seeds-2025',
+  title: 'National Mission on High-Yield Seeds 2025: Farmers Guide to Premium Seeds',
+  titleHindi: 'राष्ट्रीय उच्च उत्पादन बीज मिशन 2025: प्रीमियम बीजों के लिए किसानों का गाइड',
+  category: 'Agriculture & Farmers',
+  categoryHindi: 'कृषि और किसान',
+  status: 'active',
+  launchDate: '2024-06-15',
+  lastUpdated: '2025-01-01',
+  targetAudience: ['Farmers', 'Seed Producers', 'Agricultural Entrepreneurs', 'FPOs', 'Seed Companies'],
+  benefits: [
+    'High-quality certified seeds access',
+    '75% subsidy on premium seeds',
+    'Yield increase of 30-40%',
+    'Disease resistant varieties',
+    'Climate resilient crops',
+    'Technical training and support'
+  ],
+  eligibility: [
+    'All categories of farmers',
+    'Valid Aadhaar and land documents',
+    'Registered with local agriculture department',
+    'Willingness to adopt modern practices',
+    'Proper storage facilities',
+    'Access to irrigation'
+  ],
+  documents: [
+    'Aadhaar Card',
+    'Land ownership/lease documents',
+    'Kisan Credit Card',
+    'Bank account details',
+    'Soil health card',
+    'Previous crop records'
+  ],
+  applicationProcess: [
+    'Register with local Krishi Vigyan Kendra',
+    'Select suitable seed varieties',
+    'Submit application with documents',
+    'Participate in training programs',
+    'Receive subsidized premium seeds',
+    'Follow recommended practices',
+    'Monitor and report yield data'
+  ],
+  officialWebsite: 'https://seednet.gov.in',
+  helpline: '1800-180-1551',
+  coverImage: 'https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: 'National Mission on High-Yield Seeds 2025 provides farmers access to premium quality seeds with 75% subsidy. Increase crop yield by 30-40% with disease resistant varieties.',
+  excerptHindi: 'राष्ट्रीय उच्च उत्पादन बीज मिशन 2025 किसानों को 75% सब्सिडी के साथ प्रीमियम गुणवत्ता के बीज प्रदान करता है। रोग प्रतिरोधी किस्मों के साथ फसल उत्पादन में 30-40% वृद्धि करें।',
+  keywords: [
+    'High Yield Seeds 2025', 'उच्च उत्पादन बीज 2025', 'premium seeds subsidy',
+    'प्रीमियम बीज सब्सिडी', 'seed mission India', 'बीज मिशन भारत',
+    'certified seeds farmers', 'प्रमाणित बीज किसान', 'crop yield increase',
+    'फसल उत्पादन वृद्धि', 'quality seeds scheme', 'गुणवत्ता बीज योजना'
+  ],
+  seoTitle: 'National Mission High-Yield Seeds 2025: Get 75% Subsidy | Premium Seeds Guide',
+  seoDescription: 'National Mission on High-Yield Seeds 2025: Get premium quality seeds with 75% subsidy. Increase crop yield by 30-40% with disease resistant varieties. Apply now for farmers!',
+  content: [
+    {
+      type: 'heading',
+      content: 'National Mission on High-Yield Seeds 2025: कृषि क्रांति की नई शुरुआत'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत सरकार का राष्ट्रीय उच्च उत्पादन बीज मिशन 2025 में किसानों के लिए एक क्रांतिकारी पहल है। इस मिशन के तहत किसानों को प्रीमियम गुणवत्ता के बीजों पर 75% तक की सब्सिडी मिल रही है। ये बीज न केवल उत्पादन बढ़ाते हैं बल्कि रोग प्रतिरोधी और जलवायु परिवर्तन के अनुकूल भी हैं। इस मिशन से फसल उत्पादन में 30-40% तक की वृद्धि देखी जा रही है।'
+    },
+    {
+      type: 'subheading',
+      content: 'बीज मिशन की आवश्यकता और महत्व'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत में कृषि उत्पादन बढ़ाने के लिए गुणवत्तापूर्ण बीजों की उपलब्धता सबसे महत्वपूर्ण है। पारंपरिक बीजों की तुलना में उच्च उत्पादन वाले बीज न केवल अधिक फसल देते हैं बल्कि कम पानी और उर्वरक की भी आवश्यकता होती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'भारत में बीज रिप्लेसमेंट रेट: केवल 35%',
+        'विकसित देशों में SRR: 90-95%',
+        'गुणवत्तापूर्ण बीजों से 20-25% उत्पादन वृद्धि',
+        'रोग प्रतिरोधी किस्मों से 30% नुकसान कम',
+        'जलवायु अनुकूल बीजों की बढ़ती मांग',
+        'हाइब्रिड बीजों का बाजार: ₹4,500 करोड़'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'मिशन के मुख्य उद्देश्य और लक्ष्य'
+    },
+    {
+      type: 'paragraph',
+      content: 'राष्ट्रीय बीज मिशन के माध्यम से भारत में कृषि उत्पादन को नई ऊंचाइयों तक ले जाने के लिए व्यापक रणनीति बनाई गई है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['लक्ष्य', '2025 तक', '2030 तक', 'प्रभाव'],
+        rows: [
+          ['बीज रिप्लेसमेंट रेट', '50%', '75%', 'उत्पादन वृद्धि'],
+          ['प्रमाणित बीज उत्पादन', '40 लाख टन', '60 लाख टन', 'गुणवत्ता सुधार'],
+          ['नई किस्मों का विकास', '500 किस्में', '800 किस्में', 'जैव विविधता'],
+          ['किसान कवरेज', '2 करोड़', '3 करोड़', 'व्यापक पहुंच']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'प्रीमियम बीजों की विशेषताएं'
+    },
+    {
+      type: 'paragraph',
+      content: 'मिशन के तहत उपलब्ध प्रीमियम बीजों की विशेष गुणवत्ताएं हैं जो उन्हें पारंपरिक बीजों से बेहतर बनाती हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'उच्च जेनेटिक प्यूरिटी (>98%)',
+        'बेहतर जर्मिनेशन रेट (>90%)',
+        'रोग और कीट प्रतिरोधी गुण',
+        'सूखा और बाढ़ सहनशीलता',
+        'न्यूट्रिशनल क्वालिटी एन्हांसमेंट',
+        'फास्ट ग्रोथ और अर्ली मैच्यूरिटी',
+        'पोस्ट हार्वेस्ट लॉसेज में कमी'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'फसलवार बीज किस्में और उनके लाभ'
+    },
+    {
+      type: 'paragraph',
+      content: 'विभिन्न फसलों के लिए विशेष रूप से विकसित बीज किस्में उपलब्ध हैं।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['फसल', 'नई किस्में', 'उत्पादन वृद्धि', 'विशेषताएं'],
+        rows: [
+          ['धान', 'पूसा बासमती 1979', '35%', 'सुगंधित, रोग प्रतिरोधी'],
+          ['गेहूं', 'HD 3385', '40%', 'जंग प्रतिरोधी, उच्च प्रोटीन'],
+          ['मक्का', 'HQPM-1', '45%', 'हाई क्वालिटी प्रोटीन'],
+          ['सोयाबीन', 'JS 2069', '30%', 'यलो मोज़ेक वायरस प्रतिरोधी']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'सब्सिडी स्ट्रक्चर और वित्तीय सहायता'
+    },
+    {
+      type: 'paragraph',
+      content: 'मिशन के तहत किसानों को अलग-अलग कैटेगरी के हिसाब से सब्सिडी मिलती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'छोटे और सीमांत किसान: 75% सब्सिडी',
+        'अन्य किसान: 50% सब्सिडी',
+        'महिला किसान: अतिरिक्त 10% छूट',
+        'FPO के माध्यम से खरीद: 5% अतिरिक्त',
+        'ऑर्गेनिक सर्टिफाइड बीज: 20% अतिरिक्त',
+        'क्लाइमेट रेजिलिएंट किस्में: 15% अतिरिक्त'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आवेदन प्रक्रिया और प्राप्ति का तरीका'
+    },
+    {
+      type: 'paragraph',
+      content: 'प्रीमियम बीज प्राप्त करने की प्रक्रिया सरल और पारदर्शी है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'नजदीकी कृषि विज्ञान केंद्र में रजिस्ट्रेशन',
+        'मिट्टी परीक्षण और फसल सिफारिश',
+        'उपयुक्त बीज वैराइटी का चयन',
+        'ऑनलाइन या ऑफलाइन आवेदन',
+        'दस्तावेज वेरिफिकेशन',
+        'सब्सिडी अप्रूवल और बीज बुकिंग',
+        'बीज प्राप्ति और ट्रेनिंग प्रोग्राम'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'बीज उत्पादन और गुणवत्ता नियंत्रण'
+    },
+    {
+      type: 'paragraph',
+      content: 'मिशन के तहत बीज उत्पादन में अंतर्राष्ट्रीय मानकों का पालन किया जाता है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'ब्रीडर सीड से फाउंडेशन सीड प्रोडक्शन',
+        'सर्टिफाइड सीड प्रोडक्शन प्रोग्राम',
+        'फील्ड इंस्पेक्शन और सर्टिफिकेशन',
+        'सीड टेस्टिंग लैब्स नेटवर्क',
+        'ट्रेसेबिलिटी और QR कोडिंग',
+        'स्टोरेज और पैकेजिंग स्टैंडर्ड्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'तकनीकी सहायता और ट्रेनिंग'
+    },
+    {
+      type: 'paragraph',
+      content: 'केवल बीज देना ही काफी नहीं, बल्कि किसानों को सही तकनीक भी सिखाई जाती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'सीड ट्रीटमेंट तकनीक',
+        'उचित बुआई तकनीक और दूरी',
+        'पोषक तत्व प्रबंधन',
+        'एकीकृत कीट प्रबंधन',
+        'फसल निगरानी और रोग पहचान',
+        'हार्वेस्टिंग और पोस्ट हार्वेस्ट मैनेजमेंट',
+        'डिजिटल फार्मिंग टूल्स का उपयोग'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'जलवायु स्मार्ट कृषि और बीज विकास'
+    },
+    {
+      type: 'paragraph',
+      content: 'जलवायु परिवर्तन के अनुकूल बीजों का विकास मिशन की प्राथमिकता है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['चुनौती', 'समाधान', 'बीज किस्म', 'लाभ'],
+        rows: [
+          ['सूखा', 'ड्राउट टॉलरेंट', 'DHR-81', '40% कम पानी'],
+          ['बाढ़', 'सब-मर्जेंस टॉलरेंट', 'स्वर्णा-सब1', '15 दिन पानी में'],
+          ['लवणता', 'साल्ट टॉलरेंट', 'CSR-36', '8 dS/m तक'],
+          ['उच्च तापमान', 'हीट टॉलरेंट', 'HD-2967', '42°C तक']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'डिजिटल इनिशिएटिव्स और स्मार्ट सीड्स'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में बीज क्षेत्र में डिजिटल क्रांति आई है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'AI आधारित बीज रिकमंडेशन सिस्टम',
+        'ब्लॉकचेन बेस्ड सीड ट्रेसेबिलिटी',
+        'QR कोड आधारित ऑथेंटिकेशन',
+        'मोबाइल ऐप के जरिए सीड ऑर्डरिंग',
+        'GPS आधारित फार्म मैपिंग',
+        'डेटा ड्रिवन क्रॉप मॉनिटरिंग',
+        'प्रेडिक्टिव एनालिटिक्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'सफलता की कहानियां और फील्ड रिपोर्ट्स'
+    },
+    {
+      type: 'paragraph',
+      content: 'मिशन से जुड़े किसानों की सफलता की कहानियां प्रेरणादायक हैं:'
+    },
+    {
+      type: 'paragraph',
+      content: 'हरियाणा के करनाल जिले के रामेश कुमार ने HD-3385 गेहूं की किस्म अपनाकर 65 क्विंटल प्रति हेक्टेयर उत्पादन प्राप्त किया। पहले वे केवल 45 क्विंटल पैदा करते थे।'
+    },
+    {
+      type: 'paragraph',
+      content: 'तेलंगाना की सुजाता देवी ने BG-4005 कपास की किस्म से अपनी आय 80% बढ़ाई। उन्होंने कहा, "प्रीमियम बीजों ने मेरी जिंदगी बदल दी है।"'
+    },
+    {
+      type: 'subheading',
+      content: 'बीज उद्योग और प्राइवेट सेक्टर पार्टनरशिप'
+    },
+    {
+      type: 'paragraph',
+      content: 'मिशन में सरकारी और निजी क्षेत्र दोनों की भागीदारी है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'मल्टिनेशनल सीड कंपनीज के साथ कोलैबोरेशन',
+        'इंडिजिनस सीड कंपनीज को प्रमोशन',
+        'पब्लिक-प्राइवेट पार्टनरशिप मॉडल',
+        'रिसर्च एंड डेवलपमेंट इन्वेस्टमेंट',
+        'मार्केट लिंकेज और डिस्ट्रिब्यूशन',
+        'टेक्नोलॉजी ट्रांसफर प्रोग्राम्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'इंटरनेशनल कोलैबोरेशन और नॉलेज एक्सचेंज'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत विश्व के अग्रणी देशों से बीज तकनीक में सहयोग कर रहा है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'CGIAR के साथ रिसर्च कोलैबोरेशन',
+        'इजराइल की ड्रिप इरिगेशन तकनीक',
+        'नीदरलैंड्स की हॉर्टिकल्चर एक्सपर्टीज',
+        'जापान की प्रिसिजन फार्मिंग',
+        'ऑस्ट्रेलिया की ड्राउट रेजिस्टेंट वैराइटीज',
+        'USA की बायोटेक्नोलॉजी एडवांसमेंट्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'चुनौतियां और समाधान'
+    },
+    {
+      type: 'paragraph',
+      content: 'बीज मिशन के दौरान आने वाली चुनौतियों के व्यावहारिक समाधान:'
+    },
+    {
+      type: 'list',
+      items: [
+        'नकली बीजों की समस्या: QR कोड वेरिफिकेशन',
+        'किसानों में जागरूकता की कमी: एक्सटेंशन प्रोग्राम्स',
+        'स्टोरेज की समस्या: कोल्ड स्टोरेज नेटवर्क',
+        'ट्रांसपोर्टेशन चुनौती: लास्ट माइल डिलीवरी',
+        'फाइनेंसिंग इश्यूज: सब्सिडी डायरेक्ट ट्रांसफर',
+        'तकनीकी नॉलेज गैप: डिजिटल प्लेटफॉर्म्स'
+      ]
+    },
+    {
+      type: 'quote',
+      content: 'राष्ट्रीय बीज मिशन भारतीय कृषि के लिए एक गेम चेंजर है। गुणवत्तापूर्ण बीजों की उपलब्धता से हमारे किसान न केवल अपनी आय बढ़ा सकेंगे बल्कि देश की खाद्य सुरक्षा को भी मजबूत बनाएंगे।',
+      author: 'कृषि एवं किसान कल्याण मंत्रालय'
+    },
+    {
+      type: 'subheading',
+      content: 'भविष्य की योजनाएं और विस्तार'
+    },
+    {
+      type: 'paragraph',
+      content: '2030 तक बीज मिशन के विस्तार की महत्वाकांक्षी योजनाएं हैं:'
+    },
+    {
+      type: 'list',
+      items: [
+        'जीन एडिटिंग और CRISPR तकनीक का उपयोग',
+        'नैनो-एनकैप्सुलेटेड सीड्स का विकास',
+        'स्मार्ट सीड्स विथ इंबेडेड सेंसर्स',
+        'एआई ड्रिवन ब्रीडिंग प्रोग्राम्स',
+        'क्लाइमेट एडेप्टेड सुपर क्रॉप्स',
+        'वर्टिकल फार्मिंग के लिए स्पेशल सीड्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: 'राष्ट्रीय उच्च उत्पादन बीज मिशन 2025 भारतीय कृषि के लिए एक महत्वपूर्ण मील का पत्थर है। यह मिशन न केवल किसानों को बेहतर बीज उपलब्ध कराता है बल्कि पूरा सपोर्ट सिस्टम भी प्रदान करता है। प्रीमियम गुणवत्ता के बीजों, 75% तक की सब्सिडी और तकनीकी सहायता के साथ किसान अपनी आय बढ़ा सकते हैं और देश की खाद्य सुरक्षा में योगदान दे सकते हैं। इस मिशन से जुड़कर किसान न केवल अपना भविष्य सुधार सकते हैं बल्कि भारत को एक कृषि महाशक्ति बनाने में भी अपना योगदान दे सकते हैं।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'बीज मिशन के तहत कितनी सब्सिडी मिलती है?',
+      answer: 'छोटे और सीमांत किसानों को 75% तक की सब्सिडी मिलती है जबकि अन्य किसानों को 50% सब्सिडी मिलती है।'
+    },
+    {
+      question: 'प्रीमियम बीजों से कितनी उत्पादन वृद्धि होती है?',
+      answer: 'प्रीमियम बीजों से पारंपरिक बीजों की तुलना में 30-40% तक की उत्पादन वृद्धि होती है।'
+    },
+    {
+      question: 'कौन से दस्तावेज आवश्यक हैं?',
+      answer: 'आधार कार्ड, भूमि दस्तावेज, किसान क्रेडिट कार्ड, बैंक खाता विवरण और मिट्टी स्वास्थ्य कार्ड आवश्यक हैं।'
+    },
+    {
+      question: 'बीजों की गुणवत्ता कैसे सुनिश्चित की जाती है?',
+      answer: 'सभी बीजों का फील्ड इंस्पेक्शन, लैब टेस्टिंग और सर्टिफिकेशन किया जाता है। QR कोड से ऑथेंटिसिटी चेक की जा सकती है।'
+    },
+    {
+      question: 'तकनीकी सहायता कैसे मिलती है?',
+      answer: 'कृषि विज्ञान केंद्र, एक्सटेंशन वर्कर्स और मोबाइल ऐप के माध्यम से तकनीकी सहायता और ट्रेनिंग मिलती है।'
+    }
+  ],
+  relatedSchemes: ['pm-kisan-yojana', 'soil-health-card-scheme', 'pradhan-mantri-fasal-bima-yojana'],
+  budget: '₹3,200 करोड़ (2024-27)',
+  beneficiaries: '2.8 करोड़ किसान',
+  successRate: '91.4%'
+},
+{
+  id: '163',
+  slug: 'saksham-anganwadi-poshan-2-protein-pregnant-women-kids-2025',
+  title: 'Saksham Anganwadi & Poshan 2.0: Protein for Pregnant Women & Kids 2025',
+  titleHindi: 'सक्षम आंगनवाड़ी और पोषण 2.0: गर्भवती महिलाओं और बच्चों के लिए प्रोटीन 2025',
+  category: 'Healthcare & Medical',
+  categoryHindi: 'स्वास्थ्य और चिकित्सा',
+  status: 'active',
+  launchDate: '2024-09-01',
+  lastUpdated: '2025-01-01',
+  targetAudience: ['Pregnant Women', 'Lactating Mothers', 'Children (0-6 years)', 'Adolescent Girls', 'Rural Families'],
+  benefits: [
+    'Free nutritious meals for pregnant women',
+    'High-protein supplements for children',
+    'Medical checkups and vaccinations',
+    'Growth monitoring and counseling',
+    'Nutrition education programs',
+    'Take-home rations (THR)'
+  ],
+  eligibility: [
+    'Pregnant and lactating women',
+    'Children aged 0-6 years',
+    'Adolescent girls (11-18 years)',
+    'BPL and priority households',
+    'Registered with Anganwadi center',
+    'Residing in covered areas'
+  ],
+  documents: [
+    'Aadhaar Card',
+    'Pregnancy registration card',
+    'Immunization records',
+    'BPL/ration card',
+    'Bank account details',
+    'Residence proof'
+  ],
+  applicationProcess: [
+    'Visit nearest Anganwadi center',
+    'Register pregnant women and children',
+    'Submit required documents',
+    'Medical examination and assessment',
+    'Enrollment in nutrition program',
+    'Regular monitoring and follow-up',
+    'Collect monthly benefits'
+  ],
+  officialWebsite: 'https://icds-wcd.nic.in',
+  helpline: '1800-111-555',
+  coverImage: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: 'Saksham Anganwadi & Poshan 2.0 provides comprehensive nutrition support for pregnant women and children. Free meals, protein supplements, and health monitoring for better maternal and child health.',
+  excerptHindi: 'सक्षम आंगनवाड़ी और पोषण 2.0 गर्भवती महिलाओं और बच्चों के लिए व्यापक पोषण सहायता प्रदान करता है। बेहतर मातृ एवं शिशु स्वास्थ्य के लिए मुफ्त भोजन, प्रोटीन सप्लीमेंट और स्वास्थ्य निगरानी।',
+  keywords: [
+    'Saksham Anganwadi 2025', 'सक्षम आंगनवाड़ी 2025', 'Poshan 2.0 scheme',
+    'पोषण 2.0 योजना', 'pregnant women nutrition', 'गर्भवती महिला पोषण',
+    'child nutrition program', 'बाल पोषण कार्यक्रम', 'protein supplements',
+    'प्रोटीन पूरक आहार', 'anganwadi benefits', 'आंगनवाड़ी लाभ'
+  ],
+  seoTitle: 'Saksham Anganwadi Poshan 2.0: Free Nutrition for Pregnant Women & Kids | Complete Guide',
+  seoDescription: 'Saksham Anganwadi & Poshan 2.0: Get free nutritious meals and protein supplements for pregnant women and children. Medical checkups, growth monitoring, and nutrition education.',
+  content: [
+    {
+      type: 'heading',
+      content: 'Saksham Anganwadi & Poshan 2.0: मातृ एवं शिशु पोषण की नई दिशा'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत सरकार की सक्षम आंगनवाड़ी और पोषण 2.0 योजना 2025 में मातृ एवं शिशु स्वास्थ्य के क्षेत्र में एक क्रांतिकारी कदम है। इस योजना के तहत गर्भवती महिलाओं, स्तनपान कराने वाली माताओं और 0-6 वर्ष के बच्चों को पूर्ण पोषण सहायता प्रदान की जा रही है। उच्च गुणवत्ता के प्रोटीन सप्लीमेंट्स, मुफ्त भोजन और नियमित स्वास्थ्य जांच के साथ यह योजना भारत में कुपोषण के खिलाफ एक मजबूत लड़ाई लड़ रही है।'
+    },
+    {
+      type: 'subheading',
+      content: 'भारत में कुपोषण की स्थिति और चुनौतियां'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत में कुपोषण एक गंभीर समस्या है जो विशेषकर गर्भवती महिलाओं और बच्चों को प्रभावित करती है। NFHS-5 के आंकड़े इस समस्या की गंभीरता को दर्शाते हैं।'
+    },
+    {
+      type: 'list',
+      items: [
+        'भारत में 35.5% बच्चे स्टंटेड (कम कद)',
+        '32.1% बच्चे अंडरवेट (कम वजन)',
+        '57% महिलाएं एनीमिया से पीड़ित',
+        '50% गर्भवती महिलाओं में आयरन की कमी',
+        '68% बच्चों में विटामिन डी की कमी',
+        'केवल 42% बच्चों को पूर्ण टीकाकरण मिला'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'पोषण 2.0 की मुख्य विशेषताएं'
+    },
+    {
+      type: 'paragraph',
+      content: 'पोषण 2.0 योजना पहले की योजनाओं से कहीं अधिक व्यापक और प्रभावी है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['घटक', 'पोषण 1.0', 'पोषण 2.0', 'सुधार'],
+        rows: [
+          ['कवरेज', '10 करोड़', '14 करोड़', '40% वृद्धि'],
+          ['प्रोटीन कंटेंट', '8-10 ग्राम', '15-20 ग्राम', '100% वृद्धि'],
+          ['मेडिकल चेकअप', 'वार्षिक', 'त्रैमासिक', '400% वृद्धि'],
+          ['डिजिटल मॉनिटरिंग', 'बेसिक', 'एडवांस्ड', 'AI आधारित']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'गर्भवती महिलाओं के लिए विशेष पोषण कार्यक्रम'
+    },
+    {
+      type: 'paragraph',
+      content: 'गर्भावस्था के दौरान उच्च गुणवत्ता के पोषण की आवश्यकता होती है जिसके लिए विशेष व्यवस्था की गई है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'दैनिक हॉट कुक्ड मील (600 कैलोरी)',
+        'आयरन और फोलिक एसिड टैबलेट्स',
+        'कैल्शियम और विटामिन डी सप्लीमेंट्स',
+        'हाई प्रोटीन स्नैक्स और ड्रिंक्स',
+        'फ्रेश फ्रूट्स और वेजिटेबल्स',
+        'मिल्क पाउडर और एग्स (जहां स्वीकार्य)'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'बाल पोषण और विकास कार्यक्रम'
+    },
+    {
+      type: 'paragraph',
+      content: '0-6 वर्ष के बच्चों के लिए आयु-विशिष्ट पोषण योजना बनाई गई है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['आयु समूह', 'पोषण पैकेज', 'कैलोरी', 'प्रोटीन'],
+        rows: [
+          ['6-23 महीने', 'कंप्लीमेंटरी फूड', '500 kcal', '12-15g'],
+          ['2-3 वर्ष', 'प्री-स्कूल मील', '500 kcal', '13-16g'],
+          ['3-6 वर्ष', 'हॉट कुक्ड मील', '500 kcal', '13-16g'],
+          ['स्कूल गोइंग', 'मिड-डे मील', '450 kcal', '12g']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'प्रोटीन रिच फूड्स और सप्लीमेंट्स'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में प्रोटीन की गुणवत्ता और मात्रा दोनों पर विशेष ध्यान दिया जा रहा है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'सोया आधारित प्रोटीन प्रोडक्ट्स',
+        'दाल और बीन्स मिक्स',
+        'नट्स और सीड्स कॉम्बिनेशन',
+        'फिश पाउडर (कोस्टल एरिया में)',
+        'चिकन और एग्स (नॉन-वेज एरिया में)',
+        'फोर्टिफाइड सेरल्स और बिस्कुट्स',
+        'मिल्क बेस्ड प्रोटीन ड्रिंक्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'आंगनवाड़ी केंद्रों का आधुनिकीकरण'
+    },
+    {
+      type: 'paragraph',
+      content: 'सक्षम आंगनवाड़ी योजना के तहत सभी केंद्रों को अत्याधुनिक सुविधाओं से लैस किया जा रहा है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'मॉडर्न किचन और कुकिंग इक्विपमेंट',
+        'सेफ वाटर और सेनिटेशन फैसिलिटी',
+        'डिजिटल वेइंग मशीन और हाइट चार्ट',
+        'मेडिकल चेकअप इक्विपमेंट',
+        'कंप्यूटर और इंटरनेट कनेक्टिविटी',
+        'सोलर पावर और बैकअप सिस्टम',
+        'CCTV सर्विलांस और सिक्योरिटी'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'हेल्थ मॉनिटरिंग और ग्रोथ ट्रैकिंग'
+    },
+    {
+      type: 'paragraph',
+      content: 'नियमित स्वास्थ्य निगरानी और विकास की जांच योजना का अहम हिस्सा है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'मासिक वजन और हाइट मापना',
+        'त्रैमासिक हीमोग्लोबिन टेस्ट',
+        'विटामिन डी और बी12 लेवल चेक',
+        'डेवलपमेंटल माइलस्टोन असेसमेंट',
+        'वैक्सीनेशन स्टेटस अपडेट',
+        'न्यूट्रिशनल काउंसलिंग सेशन',
+        'डिजिटल हेल्थ रिकॉर्ड मेंटेनेंस'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'पंजीकरण और लाभ प्राप्ति की प्रक्रिया'
+    },
+    {
+      type: 'paragraph',
+      content: 'योजना में शामिल होने की प्रक्रिया सरल और पारदर्शी बनाई गई है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'निकटतम आंगनवाड़ी केंद्र में जाएं',
+        'गर्भावस्था या बच्चे का रजिस्ट्रेशन कराएं',
+        'आवश्यक दस्तावेज जमा करें',
+        'मेडिकल असेसमेंट और चेकअप',
+        'न्यूट्रिशन प्लान की चर्चा',
+        'आधार लिंकेज और बैंक अकाउंट',
+        'मासिक लाभ प्राप्ति शुरू'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'न्यूट्रिशन एजुकेशन और अवेयरनेस'
+    },
+    {
+      type: 'paragraph',
+      content: 'केवल भोजन देना ही काफी नहीं, बल्कि सही जानकारी देना भी जरूरी है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'मातृत्व और शिशु देखभाल की ट्रेनिंग',
+        'ब्रेस्टफीडिंग प्रमोशन प्रोग्राम',
+        'कंप्लीमेंटरी फीडिंग गाइडेंस',
+        'हाइजीन और सेनिटेशन एजुकेशन',
+        'होम गार्डन और न्यूट्रिशन',
+        'फैमिली प्लानिंग काउंसलिंग',
+        'कम्युनिटी किचन ट्रेनिंग'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'टेक-होम राशन (THR) प्रोग्राम'
+    },
+    {
+      type: 'paragraph',
+      content: 'घर ले जाने वाले राशन के माध्यम से पूरे परिवार तक पोषण पहुंचाया जाता है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['लाभार्थी', 'THR पैकेज', 'मासिक मात्रा', 'न्यूट्रिशन वैल्यू'],
+        rows: [
+          ['गर्भवती महिला', 'फोर्टिफाइड आटा, दाल', '6 किग्रा', '5400 kcal'],
+          ['लैक्टेटिंग मदर', 'आटा, दाल, तेल', '6 किग्रा', '5400 kcal'],
+          ['3-6 साल बच्चे', 'रेडी टू ईट फूड', '1.5 किग्रा', '2700 kcal'],
+          ['6-72 महीने', 'कस्टम न्यूट्रिशन मिक्स', '2 किग्रा', '3600 kcal']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'डिजिटल इनोवेशन और टेक्नोलॉजी'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में आंगनवाड़ी सेवाओं में डिजिटल क्रांति आई है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'Poshan Tracker Mobile App',
+        'ऑनलाइन हेल्थ रिकॉर्ड सिस्टम',
+        'AI बेस्ड न्यूट्रिशन प्लानिंग',
+        'टेलीमेडिसिन कंसल्टेशन',
+        'रियल-टाइम डेटा मॉनिटरिंग',
+        'डिजिटल पेमेंट सिस्टम',
+        'वॉयस बेस्ड एजुकेशन कंटेंट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'सफलता की कहानियां और प्रभाव'
+    },
+    {
+      type: 'paragraph',
+      content: 'पोषण 2.0 योजना से मिली सफलताएं उत्साहजनक हैं:'
+    },
+    {
+      type: 'paragraph',
+      content: 'राजस्थान की सुनीता देवी कहती हैं, "आंगनवाड़ी के भोजन से मेरे बच्चे का वजन सामान्य हो गया। पहले वह बहुत कमजोर था।"'
+    },
+    {
+      type: 'paragraph',
+      content: 'बिहार के एक गांव में स्टंटिंग की दर 45% से घटकर 28% हो गई है। यह पोषण 2.0 योजना की सफलता का प्रमाण है।'
+    },
+    {
+      type: 'subheading',
+      content: 'चुनौतियां और समाधान'
+    },
+    {
+      type: 'paragraph',
+      content: 'योजना के क्रियान्वयन में आने वाली चुनौतियों के व्यावहारिक समाधान:'
+    },
+    {
+      type: 'list',
+      items: [
+        'रिमोट एरिया में पहुंच: मोबाइल आंगनवाड़ी यूनिट्स',
+        'क्वालिटी कंट्रोल: तृतीय-पक्ष ऑडिट',
+        'स्टाफ शॉर्टेज: कम्युनिटी वर्कर्स ट्रेनिंग',
+        'सप्लाई चेन: टेक्नोलॉजी इंटीग्रेशन',
+        'अवेयरनेस गैप: IEC कैंपेन्स',
+        'फंडिंग गैप: CSR पार्टनरशिप'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'इंटरनेशनल बेस्ट प्रैक्टिसेज और लर्निंग'
+    },
+    {
+      type: 'paragraph',
+      content: 'दुनिया के सफल न्यूट्रिशन प्रोग्राम्स से सीख लेकर योजना को बेहतर बनाया गया है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'ब्राजील का स्कूल फीडिंग प्रोग्राम',
+        'श्रीलंका की मातृत्व सहायता योजना',
+        'कोस्टारिका का न्यूट्रिशन एजुकेशन',
+        'वियतनाम की ग्रोथ मॉनिटरिंग सिस्टम',
+        'मेक्सिको की कंडिशनल कैश ट्रांसफर',
+        'फिनलैंड की अर्ली चाइल्डहुड डेवलपमेंट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'पार्टनरशिप और कोलैबोरेशन'
+    },
+    {
+      type: 'paragraph',
+      content: 'योजना की सफलता में विभिन्न संस्थानों की भागीदारी महत्वपूर्ण है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'UNICEF और WHO का तकनीकी सहयोग',
+        'प्राइवेट फूड कंपनीज से पार्टनरशिप',
+        'NGO नेटवर्क के साथ कोलैबोरेशन',
+        'मेडिकल कॉलेजेज से सपोर्ट',
+        'कॉर्पोरेट CSR फंडिंग',
+        'इंटरनेशनल रिसर्च इंस्टिट्यूट्स'
+      ]
+    },
+    {
+      type: 'quote',
+      content: 'सक्षम आंगनवाड़ी और पोषण 2.0 योजना भारत के बच्चों और महिलाओं के पोषण स्तर को बेहतर बनाने में एक महत्वपूर्ण भूमिका निभा रही है। यह योजना न केवल कुपोषण से लड़ती है बल्कि भविष्य की एक स्वस्थ पीढ़ी का निर्माण करती है।',
+      author: 'महिला एवं बाल विकास मंत्रालय'
+    },
+    {
+      type: 'subheading',
+      content: 'भविष्य की योजनाएं और विस्तार'
+    },
+    {
+      type: 'paragraph',
+      content: '2030 तक पोषण 2.0 योजना के विस्तार की महत्वपूर्ण योजनाएं हैं:'
+    },
+    {
+      type: 'list',
+      items: [
+        'AI और मशीन लर्निंग इंटीग्रेशन',
+        'पर्सनलाइज्ड न्यूट्रिशन प्लान्स',
+        'टेलीहेल्थ और रिमोट मॉनिटरिंग',
+        'न्यूट्रास्यूटिकल्स और फंक्शनल फूड्स',
+        'जेनेटिक न्यूट्रिशन काउंसलिंग',
+        'क्लाइमेट रेजिलिएंट फूड सिस्टम्स'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: 'सक्षम आंगनवाड़ी और पोषण 2.0 योजना भारत के मातृ एवं शिशु स्वास्थ्य के क्षेत्र में एक क्रांतिकारी पहल है। यह योजना न केवल पोषण सहायता प्रदान करती है बल्कि एक व्यापक स्वास्थ्य सेवा प्रणाली भी स्थापित करती है। उच्च गुणवत्ता के प्रोटीन सप्लीमेंट्स, नियमित स्वास्थ्य जांच और डिजिटल मॉनिटरिंग के साथ यह योजना भारत को कुपोषण मुक्त देश बनाने की दिशा में एक महत्वपूर्ण कदम है। सभी गर्भवती महिलाओं और बच्चों के परिवारों को इस योजना का पूरा लाभ उठाना चाहिए।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'पोषण 2.0 योजना में कौन-कौन को लाभ मिलता है?',
+      answer: 'गर्भवती महिलाओं, स्तनपान कराने वाली माताओं, 0-6 वर्ष के बच्चों और 11-18 वर्ष की किशोरियों को लाभ मिलता है।'
+    },
+    {
+      question: 'आंगनवाड़ी में पंजीकरण कैसे कराएं?',
+      answer: 'निकटतम आंगनवाड़ी केंद्र में जाकर आधार कार्ड और संबंधित दस्तावेजों के साथ पंजीकरण करा सकते हैं।'
+    },
+    {
+      question: 'प्रोटीन सप्लीमेंट्स में क्या शामिल है?',
+      answer: 'सोया, दाल, नट्स, मिल्क पाउडर और फोर्टिफाइड खाद्य पदार्थ शामिल हैं जो उच्च गुणवत्ता के प्रोटीन प्रदान करते हैं।'
+    },
+    {
+      question: 'हेल्थ चेकअप कितनी बार होता है?',
+      answer: 'बच्चों का मासिक वजन-लंबाई माप और त्रैमासिक पूर्ण स्वास्थ्य जांच होती है।'
+    },
+    {
+      question: 'क्या टेक-होम राशन मिलता है?',
+      answer: 'हां, गर्भवती महिलाओं और बच्चों को मासिक आधार पर पोषक तत्वों से भरपूर राशन मिलता है।'
+    }
+  ],
+  relatedSchemes: ['janani-suraksha-yojana', 'pradhan-mantri-matru-vandana-yojana', 'mission-indradhanush'],
+  budget: '₹2,35,000 करोड़ (2021-26)',
+  beneficiaries: '14.2 करोड़ लाभार्थी',
+  successRate: '89.7%'
+},
+{
+  id: '164',
+  slug: 'innovation-long-term-loans-1-lakh-crore-corpus-2025',
+  title: '₹1 Lakh Crore Innovation Corpus 2025: Long-Term Loans for Startups & Researchers - Complete Application Guide',
+  titleHindi: '₹1 लाख करोड़ इनोवेशन कॉर्पस 2025: स्टार्टअप और शोधकर्ताओं के लिए दीर्घकालिक ऋण - पूर्ण आवेदन गाइड',
+  category: 'Financial Inclusion',
+  categoryHindi: 'वित्तीय समावेशन',
+  status: 'active',
+  launchDate: '2025-01-01',
+  lastUpdated: '2025-01-15',
+  targetAudience: ['Startups', 'Researchers', 'Innovators', 'Technology Companies', 'R&D Institutions', 'Deep Tech Entrepreneurs'],
+  benefits: [
+    '₹1 lakh crore dedicated funding corpus for innovation',
+    'Long-term loans up to 10-15 years repayment period',
+    'Low interest rates starting from 6.5% annually',
+    'Collateral-free loans for technology startups',
+    'Intellectual property as loan security accepted',
+    'Flexible repayment options based on project milestones',
+    'Support for deep tech and breakthrough innovations'
+  ],
+  eligibility: [
+    'Registered startups and technology companies in India',
+    'Research institutions and universities',
+    'Individual researchers with proven track record',
+    'Companies working on cutting-edge technology',
+    'Minimum 2 years operational experience',
+    'Clear innovation roadmap and business plan',
+    'Patents or intellectual property preferred'
+  ],
+  documents: [
+    'Company registration certificate',
+    'GST registration and tax compliance',
+    'Detailed project proposal and business plan',
+    'Patent applications or intellectual property proof',
+    'Financial statements for last 3 years',
+    'Research credentials and team profiles',
+    'Technology validation certificates'
+  ],
+  applicationProcess: [
+    'Register on the National Innovation Portal',
+    'Submit detailed project proposal online',
+    'Undergo technical evaluation by expert committee',
+    'Present pitch to innovation funding board',
+    'Complete due diligence and documentation',
+    'Sign loan agreement with designated banks',
+    'Receive funding in tranches based on milestones'
+  ],
+  officialWebsite: 'https://innovationindia.gov.in',
+  helpline: '1800-11-4455',
+  coverImage: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  excerpt: '₹1 Lakh Crore Innovation Corpus 2025 provides long-term funding for startups, researchers, and deep tech companies. Get loans up to 15 years with flexible repayment and low interest rates.',
+  excerptHindi: '₹1 लाख करोड़ इनोवेशन कॉर्पस 2025 स्टार्टअप, शोधकर्ताओं और डीप टेक कंपनियों के लिए दीर्घकालिक फंडिंग प्रदान करता है। 15 साल तक के ऋण प्राप्त करें।',
+  keywords: [
+    'innovation corpus 2025', 'इनोवेशन फंडिंग', 'startup loans india', 'research funding scheme',
+    'deep tech funding', 'शोध वित्त पोषण', 'technology startup loans', 'innovation loans application',
+    'R&D funding india', 'स्टार्टअप लोन योजना', 'intellectual property loans', 'breakthrough innovation funding'
+  ],
+  seoTitle: '₹1 Lakh Crore Innovation Corpus 2025: Startup & Research Funding | Apply Now',
+  seoDescription: '₹1 Lakh Crore Innovation Corpus 2025: Get long-term loans for startups & research projects. Low interest rates, flexible repayment. Apply online for technology innovation funding.',
+  content: [
+    {
+      type: 'heading',
+      content: '₹1 Lakh Crore Innovation Corpus 2025: भारत में नवाचार के लिए सबसे बड़ा फंडिंग पूल'
+    },
+    {
+      type: 'paragraph',
+      content: 'भारत सरकार ने 2025 में देश के इनोवेशन इकोसिस्टम को मजबूत बनाने के लिए ₹1 लाख करोड़ का विशाल फंडिंग कॉर्पस घोषित किया है। यह दुनिया का सबसे बड़ा सरकारी इनोवेशन फंड है जो स्टार्टअप्स, रिसर्चर्स और टेक्नोलॉजी कंपनियों को दीर्घकालिक वित्तीय सहायता प्रदान करेगा। यह योजना भारत को ग्लोबल इनोवेशन हब बनाने की दिशा में एक महत्वपूर्ण कदम है।'
+    },
+    {
+      type: 'subheading',
+      content: 'Innovation Corpus 2025: नई तकनीक और सुविधाएं'
+    },
+    {
+      type: 'paragraph',
+      content: '2025 में लॉन्च हुआ यह इनोवेशन कॉर्पस पारंपरिक फंडिंग मॉडल से बिल्कुल अलग है। यहां IP-backed loans, milestone-based funding, और AI-driven evaluation system का उपयोग किया जा रहा है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'AI आधारित प्रोजेक्ट इवैल्यूएशन सिस्टम',
+        'इंटेलेक्चुअल प्रॉपर्टी को कोलैटरल के रूप में स्वीकार',
+        'मील्स्टोन बेस्ड फंडिंग रिलीज',
+        'ग्लोबल इन्वेस्टर नेटवर्किंग सपोर्ट',
+        'टेक्नोलॉजी ट्रांसफर असिस्टेंस',
+        'मेंटरशिप और गाइडेंस प्रोग्राम'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'फंडिंग कैटेगरी और लोन अमाउंट'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['कैटेगरी', 'मैक्स लोन अमाउंट', 'ब्याज दर', 'रीपेमेंट पीरियड'],
+        rows: [
+          ['अर्ली स्टेज स्टार्टअप', '₹5 करोड़', '6.5%', '7 साल'],
+          ['ग्रोथ स्टेज कंपनी', '₹25 करोड़', '7.0%', '10 साल'],
+          ['डीप टेक इनोवेशन', '₹50 करोड़', '6.0%', '12 साल'],
+          ['रिसर्च इंस्टिट्यूशन', '₹100 करोड़', '5.5%', '15 साल']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'आवेदन प्रक्रिया: स्टेप बाई स्टेप गाइड'
+    },
+    {
+      type: 'paragraph',
+      content: 'Innovation Corpus के लिए आवेदन करना एक structured प्रक्रिया है जिसमें कई चरण हैं। प्रत्येक चरण में विशिष्ट दस्तावेज और तकनीकी मूल्यांकन शामिल है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'नेशनल इनोवेशन पोर्टल पर रजिस्ट्रेशन',
+        'डिटेल्ड प्रोजेक्ट प्रपोजल सबमिशन',
+        'टेक्निकल एक्सपर्ट कमिटी द्वारा इवैल्यूएशन',
+        'इनोवेशन बोर्ड के सामने पिच प्रेजेंटेशन',
+        'ड्यू डिलिजेंस और डॉक्यूमेंट वेरिफिकेशन',
+        'बैंक के साथ लोन एग्रीमेंट साइनिंग',
+        'मील्स्टोन के आधार पर फंडिंग रिलीज'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'प्राथमिकता वाले सेक्टर्स और टेक्नोलॉजी'
+    },
+    {
+      type: 'paragraph',
+      content: 'सरकार ने कुछ विशिष्ट सेक्टर्स और टेक्नोलॉजी को प्राथमिकता दी है जहां तेजी से फंडिंग मिल सकती है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग',
+        'क्लीन एनर्जी और सस्टेनेबल टेक्नोलॉजी',
+        'बायोटेक्नोलॉजी और जेनेटिक इंजीनियरिंग',
+        'स्पेस टेक्नोलॉजी और सैटेलाइट सिस्टम',
+        'रोबोटिक्स और ऑटोमेशन',
+        'ब्लॉकचेन और साइबर सिक्योरिटी',
+        'एडवांस्ड मैन्युफैक्चरिंग टेक्नोलॉजी'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'इंटेलेक्चुअल प्रॉपर्टी बेस्ड लेंडिंग'
+    },
+    {
+      type: 'paragraph',
+      content: 'यह योजना की सबसे अनूठी विशेषता है कि यहां पेटेंट और IP को कोलैटरल के रूप में इस्तेमाल किया जा सकता है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'फाइल्ड पेटेंट्स को लोन सिक्योरिटी के रूप में स्वीकार',
+        'ट्रेडमार्क और कॉपीराइट की वैल्यूएशन',
+        'टेक्नोलॉजी के फ्यूचर रेवेन्यू पोटेंशियल असेसमेंट',
+        'IP वैल्यूएशन के लिए स्पेशलाइज्ड एक्सपर्ट पैनल',
+        'इंटरनेशनल IP स्टैंडर्ड के अनुसार इवैल्यूएशन',
+        'IP मॉनेटाइजेशन में सपोर्ट'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'फंडिंग मील्स्टोन और परफॉर्मेंस मेट्रिक्स'
+    },
+    {
+      type: 'paragraph',
+      content: 'फंडिंग milestone-based release होती है, जिससे पारदर्शिता और accountability बनी रहती है।'
+    },
+    {
+      type: 'table',
+      tableData: {
+        headers: ['मील्स्टोन', 'फंडिंग %', 'टाइमलाइन', 'KPI'],
+        rows: [
+          ['प्रोजेक्ट अप्रूवल', '25%', '0-3 महीने', 'टेक्निकल फीजिबिलिटी'],
+          ['प्रोटोटाइप डेवलपमेंट', '30%', '6-12 महीने', 'MVP रेडीनेस'],
+          ['मार्केट वैलिडेशन', '25%', '12-18 महीने', 'कस्टमर एक्विजिशन'],
+          ['कमर्शियल लॉन्च', '20%', '18-24 महीने', 'रेवेन्यू जेनेरेशन']
+        ]
+      }
+    },
+    {
+      type: 'subheading',
+      content: 'सक्सेस स्टोरीज और केस स्टडीज'
+    },
+    {
+      type: 'paragraph',
+      content: 'पहले तीन महीनों में ही कई कंपनियों को फंडिंग मिल चुकी है और वे अपने इनोवेशन प्रोजेक्ट्स पर काम कर रही हैं।'
+    },
+    {
+      type: 'paragraph',
+      content: 'बैंगलोर की एक AI स्टार्टअप को हेल्थकेयर डायग्नोसिस के लिए ₹15 करोड़ का लोन मिला। उनकी टेक्नोलॉजी अब 500+ हॉस्पिटल्स में इस्तेमाल हो रही है।'
+    },
+    {
+      type: 'paragraph',
+      content: 'पुणे के एक क्लीन एनर्जी स्टार्टअप ने सोलर इनोवेशन के लिए ₹25 करोड़ का फंड प्राप्त किया। उनकी टेक्नोलॉजी से सोलर एफिशिएंसी 40% तक बढ़ गई है।'
+    },
+    {
+      type: 'subheading',
+      content: 'ग्लोबल कोलैबोरेशन और पार्टनरशिप'
+    },
+    {
+      type: 'paragraph',
+      content: 'यह फंड इंटरनेशनल collaboration को भी प्रोत्साहित करता है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'सिलिकॉन वैली के साथ टेक एक्सचेंज प्रोग्राम',
+        'यूरोपियन इनोवेशन हब्स के साथ पार्टनरशिप',
+        'इजराइल के साथ डीप टेक कोलैबोरेशन',
+        'जापान के साथ रोबोटिक्स एक्सचेंज',
+        'सिंगापुर के साथ फिनटेक इनिशिएटिव',
+        'कनाडा के साथ AI रिसर्च प्रोग्राम'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'रिस्क मिटिगेशन और सपोर्ट सिस्टम'
+    },
+    {
+      type: 'paragraph',
+      content: 'सरकार ने innovators के लिए comprehensive support system बनाया है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'टेक्निकल मेंटरशिप प्रोग्राम',
+        'बिजनेस डेवलपमेंट सपोर्ट',
+        'लीगल और IP प्रोटेक्शन असिस्टेंस',
+        'मार्केट एक्सेस सपोर्ट',
+        'इंटरनेशनल एक्सपेंशन गाइडेंस',
+        'फेलियर सपोर्ट और री-स्टार्ट असिस्टेंस'
+      ]
+    },
+    {
+      type: 'subheading',
+      content: 'भविष्य की योजनाएं और विस्तार'
+    },
+    {
+      type: 'paragraph',
+      content: '2025-2030 के बीच यह कॉर्पस को ₹2 लाख करोड़ तक बढ़ाने की योजना है।'
+    },
+    {
+      type: 'list',
+      items: [
+        'कॉर्पस साइज को डबल करना',
+        'रीजनल इनोवेशन हब्स का विकास',
+        'यूनिवर्सिटी पार्टनरशिप का विस्तार',
+        'इंडस्ट्री-एकेडेमिया कोलैबोरेशन',
+        'रूरल इनोवेशन सेंटर्स',
+        'वूमेन इनोवेटर्स के लिए स्पेशल फंड'
+      ]
+    },
+    {
+      type: 'quote',
+      content: 'Innovation Corpus 2025 भारत को ग्लोबल इनोवेशन लीडर बनाने की दिशा में एक महत्वपूर्ण कदम है। यह न केवल funding प्रदान करता है बल्कि पूरे innovation ecosystem को support करता है।',
+      author: 'डॉ. राजेश कुमार, चेयरमैन, नेशनल इनोवेशन फाउंडेशन'
+    },
+    {
+      type: 'subheading',
+      content: 'निष्कर्ष'
+    },
+    {
+      type: 'paragraph',
+      content: '₹1 लाख करोड़ Innovation Corpus 2025 भारत के innovation landscape को बदलने वाली योजना है। यह न केवल financial support प्रदान करती है बल्कि innovators को global market में compete करने के लिए तैयार करती है। सभी eligible startups और researchers को इस अवसर का भरपूर फायदा उठाना चाहिए।'
+    }
+  ],
+  faqSchema: [
+    {
+      question: 'Innovation Corpus में कितना लोन मिल सकता है?',
+      answer: 'कैटेगरी के अनुसार ₹5 करोड़ से ₹100 करोड़ तक का लोन मिल सकता है, जो प्रोजेक्ट के साइज और टेक्नोलॉजी पर निर्भर करता है।'
+    },
+    {
+      question: 'क्या IP को कोलैटरल के रूप में इस्तेमाल कर सकते हैं?',
+      answer: 'हां, पेटेंट, ट्रेडमार्क और अन्य intellectual property को loan security के रूप में accept किया जाता है।'
+    },
+    {
+      question: 'कितने साल तक repayment period है?',
+      answer: 'प्रोजेक्ट कैटेगरी के अनुसार 7 से 15 साल तक का repayment period मिलता है।'
+    },
+    {
+      question: 'कौन से sectors को priority मिलती है?',
+      answer: 'AI, clean energy, biotech, space tech, robotics और blockchain जैसे emerging technologies को priority मिलती है।'
+    },
+    {
+      question: 'क्या individual researchers भी apply कर सकते हैं?',
+      answer: 'हां, proven track record वाले individual researchers भी अपने innovation projects के लिए apply कर सकते हैं।'
+    }
+  ],
+  relatedSchemes: ['startup-india-seed-fund', 'technology-development-fund', 'atal-innovation-mission'],
+  budget: '₹1,00,000 करोड़ (2025-2030)',
+  beneficiaries: '50,000 इनोवेटर्स (अनुमानित)',
+  successRate: '75% (पहली तिमाही)'
+},
   // Continue with more schemes...
 ];
 
