@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Award, Target, Calculator } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const AboutUs: React.FC = () => {
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    const adsenseScript = document.createElement('script');
+    adsenseScript.async = true;
+    adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4446717165665089';
+    adsenseScript.crossOrigin = 'anonymous';
+    document.head.appendChild(adsenseScript);
+    return () => {
+      if (document.head.contains(adsenseScript)) document.head.removeChild(adsenseScript);
+    };
+  }, []);
   
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

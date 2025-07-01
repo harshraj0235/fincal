@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Tag, Filter, X } from 'lucide-react';
 import { blogPosts as oldPosts } from '../data/blogData';
@@ -95,6 +95,17 @@ export const Blog: React.FC = () => {
       </div>
     </div>
   );
+
+  useEffect(() => {
+    const adsenseScript = document.createElement('script');
+    adsenseScript.async = true;
+    adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4446717165665089';
+    adsenseScript.crossOrigin = 'anonymous';
+    document.head.appendChild(adsenseScript);
+    return () => {
+      if (document.head.contains(adsenseScript)) document.head.removeChild(adsenseScript);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50">
