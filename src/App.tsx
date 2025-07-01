@@ -67,6 +67,14 @@ function App() {
     adsenseScript.crossOrigin = 'anonymous';
     document.head.appendChild(adsenseScript);
 
+    // Google AdSense meta tag
+    if (!document.querySelector('meta[name="google-adsense-account"]')) {
+      const adsenseMeta = document.createElement('meta');
+      adsenseMeta.name = 'google-adsense-account';
+      adsenseMeta.content = 'ca-pub-4446717165665089';
+      document.head.appendChild(adsenseMeta);
+    }
+
     // Google tag (gtag.js)
     if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
       const gtagScript = document.createElement('script');
