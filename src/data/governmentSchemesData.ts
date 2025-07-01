@@ -37308,8 +37308,6 @@ id: '125',
   beneficiaries: '6.33 करोड़ MSME units',
   successRate: '94.2%'
 },
-
-export const blogArticles136to145 = [
   {
     id: '136',
     slug: 'up-jan-dhan-pension-push-3-month-campaign-2025',
@@ -41225,7 +41223,7 @@ export const blogArticles136to145 = [
     beneficiaries: '12 लाख MSMEs',
     successRate: '92.8%'
   },
-  
+
   // Continue with more schemes...
 ];
 
