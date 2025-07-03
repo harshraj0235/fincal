@@ -28,8 +28,6 @@ import ExcelToolPost from './pages/ExcelToolPost';
 // Excel Tools section
 import ExcelToolsPage from './pages/ExcelToolsPage';
 import ExcelToolDetail from './pages/ExcelToolDetail';
-import FreelancerInvoiceGenerator from './pages/FreelancerInvoiceGenerator';
-import AttendanceSalarySheet from './pages/AttendanceSalarySheet';
 
 // Government Schemes section
 import GovernmentSchemes from './pages/GovernmentSchemes';
@@ -63,6 +61,9 @@ import FinancePostPage from './pages/FinancePostPage';
 
 // Math & Education Calculators
 import LcmHcfCalculator from './calculators/LcmHcfCalculator';
+
+// Excel Tool Hub
+import ExcelToolHub from './pages/ExcelToolHub';
 
 function App() {
   useEffect(() => {
@@ -129,8 +130,6 @@ function App() {
 
               {/* Excel Tools section routes */}
               <Route path="/excel-tools" element={<ExcelToolsPage />} />
-              <Route path="/excel-tools/freelancer-invoice-generator" element={<FreelancerInvoiceGenerator />} />
-              <Route path="/excel-tools/employee-attendance-salary-sheet" element={<AttendanceSalarySheet />} />
               <Route path="/excel-tools/:slug" element={<ExcelToolDetail />} />
 
               {/* Government Schemes routes */}
@@ -172,6 +171,9 @@ function App() {
 
               <Route path="/calculators/bank-locker-finder" element={<BankLockerFinder />} />
               <Route path="/bank-tools" element={<BankTools />} />
+
+              {/* Excel Tool Hub route */}
+              <Route path="/excel-tool" element={<ExcelToolHub />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
