@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Download, Search, Filter, Star, TrendingUp, Users, FileSpreadsheet, LayoutGrid, List, Sparkles, Wand2 } from 'lucide-react';
+import { Download, Search, Star, TrendingUp, FileSpreadsheet, LayoutGrid, List, Wand2 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { excelTools, getExcelToolsByCategory } from '../data/excelToolsData';
 
@@ -8,7 +8,6 @@ const ExcelToolsPage: React.FC = () => {
   const [filteredTools, setFilteredTools] = useState(excelTools);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('name');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const categories = ['All', 'Personal Finance', 'Business & Accounting', 'Investment & Wealth Management', 'Tax & Compliance', 'Loan & Credit', 'Real Estate & Property'];
@@ -25,22 +24,9 @@ const ExcelToolsPage: React.FC = () => {
         tool.keywords.some(keyword => keyword.toLowerCase().includes(searchQuery.toLowerCase()))
       );
     }
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'name':
-          return a.title.localeCompare(b.title);
-        case 'traffic':
-          return b.estimatedTraffic === 'High' ? 1 : -1;
-        case 'competition':
-          return a.competitionLevel === 'Low' ? -1 : 1;
-        case 'difficulty':
-          return a.difficulty.localeCompare(b.difficulty);
-        default:
-          return 0;
-      }
-    });
+    filtered.sort((a, b) => a.title.localeCompare(b.title));
     setFilteredTools(filtered);
-  }, [selectedCategory, searchQuery, sortBy]);
+  }, [selectedCategory, searchQuery]);
 
   // SEO structured data
   const structuredData = {
@@ -72,22 +58,6 @@ const ExcelToolsPage: React.FC = () => {
     }
   };
 
-  const getCompetitionColor = (level: string) => {
-    switch (level) {
-      case 'Low': return 'text-green-600 bg-green-100';
-      case 'Medium': return 'text-yellow-600 bg-yellow-100';
-      case 'High': return 'text-red-600 bg-red-100';
-      default: return 'text-gray-600 bg-gray-100';
-    }
-  };
-  const getTrafficColor = (level: string) => {
-    switch (level) {
-      case 'High': return 'text-green-600 bg-green-100';
-      case 'Medium': return 'text-yellow-600 bg-yellow-100';
-      case 'Low': return 'text-red-600 bg-red-100';
-      default: return 'text-gray-600 bg-gray-100';
-    }
-  };
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Beginner': return 'text-green-600 bg-green-100';
@@ -321,49 +291,6 @@ const ExcelToolsPage: React.FC = () => {
                 <p className="text-blue-700">Try adjusting your search criteria or browse all categories.</p>
               </div>
             )}
-          </div>
-        </section>
-
-        {/* SEO Benefits Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-100 to-blue-50 border-t border-blue-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-blue-900 mb-4">
-                Why Our Excel Tools Rank #1 on Google
-              </h2>
-              <p className="text-lg text-blue-700 max-w-3xl mx-auto">
-                Our Excel tools are designed for low-competition transactional keywords and follow Google's 2025 SEO guidelines for maximum visibility and user satisfaction.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <TrendingUp className="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">Low Competition Keywords</h3>
-                <p className="text-blue-700">
-                  Each tool targets specific, low-competition transactional keywords that are easier to rank for.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-green-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">SEO Optimized Content</h3>
-                <p className="text-blue-700">
-                  Comprehensive meta tags, structured data, and internal linking for maximum search visibility.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">User-Focused Design</h3>
-                <p className="text-blue-700">
-                  Tools designed with user experience in mind, leading to better engagement and rankings.
-                </p>
-              </div>
-            </div>
           </div>
         </section>
       </div>
