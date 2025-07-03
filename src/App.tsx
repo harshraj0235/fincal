@@ -25,6 +25,10 @@ import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
 import ExcelTool from './pages/ExcelTool';
 import ExcelToolPost from './pages/ExcelToolPost';
 
+// Excel Tools section
+import ExcelToolsPage from './pages/ExcelToolsPage';
+import ExcelToolDetail from './pages/ExcelToolDetail';
+
 // Government Schemes section
 import GovernmentSchemes from './pages/GovernmentSchemes';
 import GovernmentSchemePost from './pages/GovernmentSchemePost';
@@ -120,6 +124,10 @@ function App() {
               {/* Excel Tool blog section routes */}
               <Route path="/exceltool" element={<ExcelTool />} />
               <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
+
+              {/* Excel Tools section routes */}
+              <Route path="/excel-tools" element={<ExcelToolsPage />} />
+              <Route path="/excel-tools/:slug" element={<ExcelToolDetail />} />
 
               {/* Government Schemes routes */}
               <Route path="/government-schemes" element={<GovernmentSchemes />} />
