@@ -6,6 +6,11 @@ import { getExcelToolBySlug, getRelatedTools } from '../data/excelToolsData';
 import SimpleDailyExpenseTracker from './SimpleDailyExpenseTracker';
 import MonthlyBudgetPlanner from './MonthlyBudgetPlanner';
 import InvoiceGeneratorBusiness from './InvoiceGeneratorBusiness';
+import MonthlyBudgetTracker from './MonthlyBudgetTracker';
+import DebtPayoffCalculator from './DebtPayoffCalculator';
+import InvestmentPortfolioTracker from './InvestmentPortfolioTracker';
+import NetWorthCalculator from './NetWorthCalculator';
+import VacationBudgetPlanner from './VacationBudgetPlanner';
 
 const ExcelToolDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -38,6 +43,21 @@ const ExcelToolDetail: React.FC = () => {
   }
   if (slug === 'invoice-generator-business') {
     return <InvoiceGeneratorBusiness />;
+  }
+  if (slug === 'monthly-budget-tracker') {
+    return <MonthlyBudgetTracker />;
+  }
+  if (slug === 'debt-payoff-calculator') {
+    return <DebtPayoffCalculator />;
+  }
+  if (slug === 'investment-portfolio-tracker') {
+    return <InvestmentPortfolioTracker />;
+  }
+  if (slug === 'net-worth-calculator') {
+    return <NetWorthCalculator />;
+  }
+  if (slug === 'vacation-budget-planner') {
+    return <VacationBudgetPlanner />;
   }
 
   // SEO structured data
