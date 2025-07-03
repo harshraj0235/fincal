@@ -722,6 +722,46 @@ export const excelTools: ExcelTool[] = [
     relatedTools: ['daily-expense-tracker', 'monthly-budget-planner'],
     estimatedTraffic: 'Medium',
     competitionLevel: 'Low'
+  },
+  {
+    id: 'ba-003',
+    slug: 'freelancer-invoice-generator',
+    title: 'Freelancer Invoice Generator (with GST/Tax) Excel Template',
+    description: 'Generate professional freelancer invoices with auto invoice number, GST/tax fields, and export as PDF-ready Excel. Perfect for gig workers and freelancers in India.',
+    keywords: ['freelancer invoice excel', 'gst invoice format', 'freelance billing excel', 'invoice generator excel'],
+    category: 'Business & Accounting',
+    difficulty: 'Intermediate',
+    downloadLink: '/downloads/freelancer-invoice-generator.xlsx',
+    features: ['Auto invoice number', 'GST/tax calculation', 'PDF-ready format', 'Client details', 'Service breakdown'],
+    useCases: ['Freelancer billing', 'Gig economy invoicing', 'GST-compliant invoices'],
+    targetAudience: ['Freelancers', 'Consultants', 'Gig workers'],
+    seoTitle: 'Freelancer Invoice Generator Excel Template with GST - Free Download | MoneyCal',
+    seoDescription: 'Download a free freelancer invoice generator Excel template with GST/tax calculation. Auto invoice number, PDF-ready, and perfect for gig workers. SEO optimized for Google 2025.',
+    longTailKeywords: ['freelancer gst invoice excel', 'auto invoice number excel', 'freelancer invoice format india'],
+    internalLinks: ['/calculators/gst-calculator', '/blog/freelancer-tips'],
+    relatedTools: ['invoice-generator-business', 'business-expense-tracker'],
+    estimatedTraffic: 'High',
+    competitionLevel: 'Low'
+  },
+  {
+    id: 'hr-001',
+    slug: 'employee-attendance-salary-sheet',
+    title: 'Employee Attendance and Salary Sheet Excel Template',
+    description: 'Calculate monthly salary based on attendance, with auto-paid-leave logic. Download as Excel for MSMEs and HR professionals.',
+    keywords: ['attendance salary sheet Excel', 'monthly payroll Excel', 'employee attendance excel', 'salary calculation excel'],
+    category: 'Business & Accounting',
+    difficulty: 'Intermediate',
+    downloadLink: '/downloads/employee-attendance-salary-sheet.xlsx',
+    features: ['Attendance-based salary', 'Auto paid leave', 'Monthly payroll', 'Leave tracking'],
+    useCases: ['Payroll processing', 'HR management', 'MSME salary calculation'],
+    targetAudience: ['HR professionals', 'MSMEs', 'Small business owners'],
+    seoTitle: 'Employee Attendance and Salary Sheet Excel Template - Free Download | MoneyCal',
+    seoDescription: 'Download a free employee attendance and salary sheet Excel template. Auto paid leave, monthly payroll, and attendance-based salary calculation. SEO optimized for Google 2025.',
+    longTailKeywords: ['attendance based salary excel', 'auto paid leave excel', 'payroll sheet excel india'],
+    internalLinks: ['/calculators/salary-calculator', '/blog/hr-tips'],
+    relatedTools: ['salary-calculator-excel', 'leave-tracker-excel'],
+    estimatedTraffic: 'High',
+    competitionLevel: 'Low'
   }
 ];
 

@@ -246,21 +246,17 @@ const ExcelToolsPage: React.FC = () => {
                           <Download className="w-4 h-4" /> Download
                         </a>
                         <Link
-                          to={`/excel-tools/${tool.slug}`}
+                          to={
+                            tool.slug === 'freelancer-invoice-generator'
+                              ? '/excel-tools/freelancer-invoice-generator'
+                              : tool.slug === 'employee-attendance-salary-sheet'
+                              ? '/excel-tools/employee-attendance-salary-sheet'
+                              : `/excel-tools/${tool.slug}`
+                          }
                           className="px-4 py-2 border border-blue-200 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors duration-200"
                         >
                           Details
                         </Link>
-                      </div>
-                      <div className="mt-4 pt-4 border-t border-blue-100">
-                        <h4 className="text-xs font-semibold text-blue-700 mb-1">Related:</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {tool.internalLinks.slice(0, 2).map((link, i) => (
-                            <Link key={i} to={link} className="text-blue-600 hover:text-blue-800 text-xs underline">
-                              {link.split('/').pop()?.replace(/-/g, ' ')}
-                            </Link>
-                          ))}
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -300,21 +296,17 @@ const ExcelToolsPage: React.FC = () => {
                           <Download className="w-4 h-4" /> Download
                         </a>
                         <Link
-                          to={`/excel-tools/${tool.slug}`}
+                          to={
+                            tool.slug === 'freelancer-invoice-generator'
+                              ? '/excel-tools/freelancer-invoice-generator'
+                              : tool.slug === 'employee-attendance-salary-sheet'
+                              ? '/excel-tools/employee-attendance-salary-sheet'
+                              : `/excel-tools/${tool.slug}`
+                          }
                           className="px-4 py-2 border border-blue-200 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-50 transition-colors duration-200"
                         >
                           Details
                         </Link>
-                      </div>
-                      <div className="mt-4 pt-4 border-t border-blue-100">
-                        <h4 className="text-xs font-semibold text-blue-700 mb-1">Related:</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {tool.internalLinks.slice(0, 2).map((link, i) => (
-                            <Link key={i} to={link} className="text-blue-600 hover:text-blue-800 text-xs underline">
-                              {link.split('/').pop()?.replace(/-/g, ' ')}
-                            </Link>
-                          ))}
-                        </div>
                       </div>
                     </div>
                   </div>

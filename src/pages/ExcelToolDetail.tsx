@@ -3,6 +3,11 @@ import { useParams, Link } from 'react-router-dom';
 import { Download, Star, TrendingUp, Users, FileSpreadsheet, ArrowLeft, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { getExcelToolBySlug, getRelatedTools } from '../data/excelToolsData';
+import FreelancerInvoiceGenerator from './FreelancerInvoiceGenerator';
+import AttendanceSalarySheet from './AttendanceSalarySheet';
+import SimpleDailyExpenseTracker from './SimpleDailyExpenseTracker';
+import MonthlyBudgetPlanner from './MonthlyBudgetPlanner';
+import InvoiceGeneratorBusiness from './InvoiceGeneratorBusiness';
 
 const ExcelToolDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -25,6 +30,22 @@ const ExcelToolDetail: React.FC = () => {
         </div>
       </div>
     );
+  }
+
+  if (slug === 'freelancer-invoice-generator') {
+    return <FreelancerInvoiceGenerator />;
+  }
+  if (slug === 'employee-attendance-salary-sheet') {
+    return <AttendanceSalarySheet />;
+  }
+  if (slug === 'simple-daily-expense-tracker') {
+    return <SimpleDailyExpenseTracker />;
+  }
+  if (slug === 'monthly-budget-planner') {
+    return <MonthlyBudgetPlanner />;
+  }
+  if (slug === 'invoice-generator-business') {
+    return <InvoiceGeneratorBusiness />;
   }
 
   // SEO structured data

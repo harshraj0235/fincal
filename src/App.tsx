@@ -28,6 +28,8 @@ import ExcelToolPost from './pages/ExcelToolPost';
 // Excel Tools section
 import ExcelToolsPage from './pages/ExcelToolsPage';
 import ExcelToolDetail from './pages/ExcelToolDetail';
+import FreelancerInvoiceGenerator from './pages/FreelancerInvoiceGenerator';
+import AttendanceSalarySheet from './pages/AttendanceSalarySheet';
 
 // Government Schemes section
 import GovernmentSchemes from './pages/GovernmentSchemes';
@@ -127,6 +129,8 @@ function App() {
 
               {/* Excel Tools section routes */}
               <Route path="/excel-tools" element={<ExcelToolsPage />} />
+              <Route path="/excel-tools/freelancer-invoice-generator" element={<FreelancerInvoiceGenerator />} />
+              <Route path="/excel-tools/employee-attendance-salary-sheet" element={<AttendanceSalarySheet />} />
               <Route path="/excel-tools/:slug" element={<ExcelToolDetail />} />
 
               {/* Government Schemes routes */}

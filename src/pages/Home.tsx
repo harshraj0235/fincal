@@ -203,15 +203,26 @@ export const Home: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
-        description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users. Get accurate calculations for loans, investments, and tax planning."
-        keywords="financial calculator india, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, loan calculator, investment calculator, personal finance tools, financial planning india, free financial calculator"
+        title="FinanceGurus Directory - India's Top Financial Calculators & Tools"
+        description="Comprehensive financial calculators for Indian users. Calculate EMI, SIP, income tax, mutual funds, and more. Free online financial planning tools."
         url="/"
         structuredData={homeStructuredData}
-        tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax", "mutual funds", "personal finance", "investment planning"]}
+        tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax calculator", "mutual fund calculator", "PPF calculator", "retirement calculator", "India"]}
       />
       
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+      
+      {/* Excel Tools Button */}
+      <div className="flex justify-center mt-8 mb-4">
+        <Link
+          to="/excel-tools"
+          className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg text-lg md:text-xl transition-colors focus:ring-2 focus:ring-green-300"
+        >
+          <PieChart className="w-6 h-6" />
+          Explore Excel Tools & Templates
+          <ArrowRight className="w-5 h-5" />
+        </Link>
+      </div>
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
