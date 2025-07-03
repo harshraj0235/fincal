@@ -17,9 +17,6 @@ export interface ExcelTool {
   seoDescription: string;
   longTailKeywords: string[];
   internalLinks: string[];
-  relatedTools: string[];
-  estimatedTraffic: 'Low' | 'Medium' | 'High';
-  competitionLevel: 'Low' | 'Medium' | 'High';
 }
 
 export const excelTools: ExcelTool[] = [
@@ -39,9 +36,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free daily expense tracker Excel template. Track expenses, analyze spending, and save more. SEO optimized for Google 2025.',
     longTailKeywords: ['free daily expense tracker excel template', 'how to track daily expenses in excel', 'personal expense tracking spreadsheet'],
     internalLinks: ['/calculators/emi-calculator', '/blog/personal-finance-tips'],
-    relatedTools: ['monthly-budget-planner', 'income-tracker-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-002',
@@ -59,9 +53,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free monthly budget planner Excel template. Plan your finances, track expenses, and achieve savings goals. SEO optimized for Google 2025.',
     longTailKeywords: ['free monthly budget planner excel template', 'excel budget planning spreadsheet download'],
     internalLinks: ['/calculators/income-tax-calculator', '/blog/budgeting-tips'],
-    relatedTools: ['daily-expense-tracker', 'savings-goal-tracker'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'ba-001',
@@ -79,9 +70,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free invoice generator Excel template for business. Create invoices, track payments, and manage billing. SEO optimized for Google 2025.',
     longTailKeywords: ['free invoice generator excel template', 'business invoice template excel'],
     internalLinks: ['/calculators/gst-calculator', '/blog/business-tips'],
-    relatedTools: ['expense-tracker-business', 'profit-loss-calculator'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'ba-002',
@@ -99,9 +87,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free business expense tracker Excel template. Track costs, categorize expenses, and prepare for taxes. SEO optimized for Google 2025.',
     longTailKeywords: ['free business expense tracker excel template', 'company expense tracking spreadsheet'],
     internalLinks: ['/calculators/gst-calculator', '/blog/business-finance'],
-    relatedTools: ['invoice-generator-business', 'profit-loss-calculator'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'iw-001',
@@ -119,9 +104,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free investment portfolio tracker Excel template. Track investments, monitor returns, and analyze allocation. SEO optimized for Google 2025.',
     longTailKeywords: ['free investment portfolio tracker excel template', 'stock portfolio tracker excel'],
     internalLinks: ['/calculators/sip-calculator', '/blog/investment-tips'],
-    relatedTools: ['mutual-fund-tracker', 'sip-calculator-excel'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'iw-002',
@@ -139,9 +121,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free mutual fund tracker Excel template. Track NAV, monitor returns, and analyze performance. SEO optimized for Google 2025.',
     longTailKeywords: ['free mutual fund tracker excel template', 'nav tracker excel spreadsheet'],
     internalLinks: ['/calculators/mutual-fund-returns-calculator', '/blog/mutual-fund-guide'],
-    relatedTools: ['investment-portfolio-tracker', 'sip-calculator-excel'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'tc-001',
@@ -159,9 +138,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free income tax calculator Excel template. Compare regimes, plan deductions, and optimize taxes. SEO optimized for Google 2025.',
     longTailKeywords: ['free income tax calculator excel template', 'tax regime calculator excel'],
     internalLinks: ['/calculators/income-tax-calculator', '/blog/tax-saving-tips'],
-    relatedTools: ['gst-calculator-excel', 'tds-calculator-excel'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'tc-002',
@@ -179,9 +155,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free GST calculator Excel template. Calculate GST, handle input tax credits, and generate invoices. SEO optimized for Google 2025.',
     longTailKeywords: ['free gst calculator excel template', 'gst calculation excel spreadsheet'],
     internalLinks: ['/calculators/gst-calculator', '/blog/gst-guide'],
-    relatedTools: ['invoice-generator-business', 'business-expense-tracker'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'lc-001',
@@ -199,9 +172,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free loan EMI calculator Excel template. Calculate EMIs, compare loans, and plan repayments. SEO optimized for Google 2025.',
     longTailKeywords: ['free loan emi calculator excel template', 'emi calculator excel spreadsheet'],
     internalLinks: ['/calculators/emi-calculator', '/blog/loan-guide'],
-    relatedTools: ['loan-comparison-calculator', 'prepayment-calculator'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'lc-002',
@@ -219,9 +189,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free loan comparison calculator Excel template. Compare loans, analyze costs, and make informed decisions. SEO optimized for Google 2025.',
     longTailKeywords: ['free loan comparison calculator excel template', 'compare loans excel spreadsheet'],
     internalLinks: ['/calculators/loan-comparison-calculator', '/blog/loan-comparison'],
-    relatedTools: ['loan-emi-calculator', 'prepayment-calculator'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'lc-003',
@@ -239,9 +206,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free loan prepayment calculator Excel template. Analyze interest savings and tenure reduction. SEO optimized for Google 2025.',
     longTailKeywords: ['free loan prepayment calculator excel template', 'loan interest savings spreadsheet'],
     internalLinks: ['/calculators/loan-prepayment-calculator', '/blog/loan-prepayment-tips'],
-    relatedTools: ['loan-emi-calculator', 'loan-comparison-calculator'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-003',
@@ -259,9 +223,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free savings goal tracker Excel template. Set goals, track progress, and achieve your dreams. SEO optimized for Google 2025.',
     longTailKeywords: ['free savings goal tracker excel template', 'goal tracking spreadsheet excel'],
     internalLinks: ['/calculators/savings-calculator', '/blog/savings-tips'],
-    relatedTools: ['monthly-budget-planner', 'daily-expense-tracker'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-004',
@@ -279,9 +240,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free income tracker Excel template. Track income sources and analyze trends. SEO optimized for Google 2025.',
     longTailKeywords: ['free income tracker excel template', 'monthly income tracking spreadsheet'],
     internalLinks: ['/calculators/income-tax-calculator', '/blog/income-tips'],
-    relatedTools: ['monthly-budget-planner', 'savings-goal-tracker'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'ba-003',
@@ -299,9 +257,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free profit & loss calculator Excel template. Calculate profits, losses, and margins. SEO optimized for Google 2025.',
     longTailKeywords: ['free profit loss calculator excel template', 'p&l statement excel spreadsheet'],
     internalLinks: ['/calculators/profit-margin-calculator', '/blog/business-accounting'],
-    relatedTools: ['business-expense-tracker', 'invoice-generator-business'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'ba-004',
@@ -319,9 +274,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free cash flow statement Excel template. Track inflows, outflows, and net cash. SEO optimized for Google 2025.',
     longTailKeywords: ['free cash flow statement excel template', 'business cash flow spreadsheet'],
     internalLinks: ['/calculators/cash-flow-calculator', '/blog/cash-flow-tips'],
-    relatedTools: ['profit-loss-calculator', 'business-expense-tracker'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'ba-005',
@@ -339,9 +291,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free balance sheet Excel template. Track assets, liabilities, and equity. SEO optimized for Google 2025.',
     longTailKeywords: ['free balance sheet excel template', 'business balance sheet spreadsheet'],
     internalLinks: ['/calculators/balance-sheet-calculator', '/blog/balance-sheet-guide'],
-    relatedTools: ['profit-loss-calculator', 'cash-flow-statement-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'ba-006',
@@ -359,9 +308,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free accounts receivable tracker Excel template. Track invoices and manage receivables. SEO optimized for Google 2025.',
     longTailKeywords: ['free accounts receivable tracker excel template', 'invoice tracking spreadsheet'],
     internalLinks: ['/calculators/accounts-receivable-calculator', '/blog/accounts-receivable-tips'],
-    relatedTools: ['invoice-generator-business', 'cash-flow-statement-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'ba-007',
@@ -379,9 +325,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free accounts payable tracker Excel template. Track payables and manage vendors. SEO optimized for Google 2025.',
     longTailKeywords: ['free accounts payable tracker excel template', 'payable tracking spreadsheet'],
     internalLinks: ['/calculators/accounts-payable-calculator', '/blog/accounts-payable-tips'],
-    relatedTools: ['cash-flow-statement-excel', 'balance-sheet-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'iw-003',
@@ -399,9 +342,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free SIP calculator Excel template. Calculate returns and plan investments. SEO optimized for Google 2025.',
     longTailKeywords: ['free sip calculator excel template', 'mutual fund sip spreadsheet'],
     internalLinks: ['/calculators/sip-calculator', '/blog/sip-investing-tips'],
-    relatedTools: ['mutual-fund-tracker', 'investment-portfolio-tracker'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'iw-004',
@@ -419,9 +359,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free fixed deposit calculator Excel template. Calculate maturity and compare options. SEO optimized for Google 2025.',
     longTailKeywords: ['free fd calculator excel template', 'fixed deposit maturity spreadsheet'],
     internalLinks: ['/calculators/fd-calculator', '/blog/fd-investment-tips'],
-    relatedTools: ['sip-calculator-excel', 'investment-portfolio-tracker'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'iw-005',
@@ -439,9 +376,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free recurring deposit calculator Excel template. Plan and track RD investments. SEO optimized for Google 2025.',
     longTailKeywords: ['free recurring deposit calculator excel template', 'rd maturity spreadsheet'],
     internalLinks: ['/calculators/rd-calculator', '/blog/rd-investment-tips'],
-    relatedTools: ['fd-calculator-excel', 'sip-calculator-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'iw-006',
@@ -459,9 +393,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free gold investment tracker Excel template. Track prices and analyze returns. SEO optimized for Google 2025.',
     longTailKeywords: ['free gold investment tracker excel template', 'gold price tracking spreadsheet'],
     internalLinks: ['/calculators/gold-investment-calculator', '/blog/gold-investment-tips'],
-    relatedTools: ['investment-portfolio-tracker', 'fd-calculator-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'iw-007',
@@ -479,9 +410,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free crypto portfolio tracker Excel template. Track prices and analyze returns. SEO optimized for Google 2025.',
     longTailKeywords: ['free crypto portfolio tracker excel template', 'cryptocurrency tracking spreadsheet'],
     internalLinks: ['/calculators/crypto-tax-estimator', '/blog/crypto-investment-tips'],
-    relatedTools: ['investment-portfolio-tracker', 'mutual-fund-tracker'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'tc-003',
@@ -499,9 +427,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free TDS calculator Excel template. Calculate TDS for various incomes. SEO optimized for Google 2025.',
     longTailKeywords: ['free tds calculator excel template', 'tax deducted at source spreadsheet'],
     internalLinks: ['/calculators/tds-calculator', '/blog/tds-guide'],
-    relatedTools: ['income-tax-calculator', 'gst-calculator-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'tc-004',
@@ -519,9 +444,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free capital gains tax calculator Excel template. Calculate tax for stocks, funds, and property. SEO optimized for Google 2025.',
     longTailKeywords: ['free capital gains tax calculator excel template', 'capital gains tax spreadsheet'],
     internalLinks: ['/calculators/capital-gains-tax-calculator', '/blog/capital-gains-guide'],
-    relatedTools: ['income-tax-calculator', 'tds-calculator-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'tc-005',
@@ -539,9 +461,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free HUF tax calculator Excel template. Calculate and optimize HUF tax. SEO optimized for Google 2025.',
     longTailKeywords: ['free huf tax calculator excel template', 'huf tax planning spreadsheet'],
     internalLinks: ['/calculators/huf-tax-calculator', '/blog/huf-tax-guide'],
-    relatedTools: ['income-tax-calculator', 'capital-gains-tax-calculator'],
-    estimatedTraffic: 'Low',
-    competitionLevel: 'Low'
   },
   {
     id: 'tc-006',
@@ -559,9 +478,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free Section 80C deduction calculator Excel template. Plan and maximize tax savings. SEO optimized for Google 2025.',
     longTailKeywords: ['free section 80c calculator excel template', '80c deduction spreadsheet'],
     internalLinks: ['/calculators/section-80c-calculator', '/blog/section-80c-guide'],
-    relatedTools: ['income-tax-calculator', 'tds-calculator-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-005',
@@ -579,9 +495,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free emergency fund calculator Excel template. Plan and track your fund for security. SEO optimized for Google 2025.',
     longTailKeywords: ['free emergency fund calculator excel template', 'emergency fund planning spreadsheet'],
     internalLinks: ['/calculators/emergency-fund-calculator', '/blog/emergency-fund-tips'],
-    relatedTools: ['savings-goal-tracker', 'monthly-budget-planner'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-006',
@@ -599,9 +512,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free retirement planner Excel template. Plan your retirement and track investments. SEO optimized for Google 2025.',
     longTailKeywords: ['free retirement planner excel template', 'retirement corpus planning spreadsheet'],
     internalLinks: ['/calculators/retirement-calculator', '/blog/retirement-tips'],
-    relatedTools: ['investment-portfolio-tracker', 'fd-calculator-excel'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-007',
@@ -619,9 +529,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free debt repayment tracker Excel template. Track repayments and plan debt-free dates. SEO optimized for Google 2025.',
     longTailKeywords: ['free debt repayment tracker excel template', 'loan repayment tracking spreadsheet'],
     internalLinks: ['/calculators/debt-repayment-calculator', '/blog/debt-management-tips'],
-    relatedTools: ['loan-emi-calculator', 'monthly-budget-planner'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-008',
@@ -639,9 +546,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free subscription tracker Excel template. Track subscriptions and manage costs. SEO optimized for Google 2025.',
     longTailKeywords: ['free subscription tracker excel template', 'subscription management spreadsheet'],
     internalLinks: ['/calculators/subscription-tracker', '/blog/subscription-management-tips'],
-    relatedTools: ['monthly-budget-planner', 'daily-expense-tracker'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-009',
@@ -659,9 +563,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free bill payment tracker Excel template. Track bills and never miss a payment. SEO optimized for Google 2025.',
     longTailKeywords: ['free bill payment tracker excel template', 'bill tracking spreadsheet'],
     internalLinks: ['/calculators/bill-payment-tracker', '/blog/bill-management-tips'],
-    relatedTools: ['subscription-tracker-excel', 'monthly-budget-planner'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-010',
@@ -679,9 +580,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free wedding budget planner Excel template. Plan expenses and manage vendors. SEO optimized for Google 2025.',
     longTailKeywords: ['free wedding budget planner excel template', 'wedding expense tracking spreadsheet'],
     internalLinks: ['/calculators/wedding-budget-planner', '/blog/wedding-budget-tips'],
-    relatedTools: ['monthly-budget-planner', 'event-budget-planner'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-011',
@@ -699,9 +597,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free event budget planner Excel template. Plan expenses and manage vendors. SEO optimized for Google 2025.',
     longTailKeywords: ['free event budget planner excel template', 'event expense tracking spreadsheet'],
     internalLinks: ['/calculators/event-budget-planner', '/blog/event-budget-tips'],
-    relatedTools: ['wedding-budget-planner', 'monthly-budget-planner'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'pf-012',
@@ -719,9 +614,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free travel expense tracker Excel template. Track expenses and plan budgets. SEO optimized for Google 2025.',
     longTailKeywords: ['free travel expense tracker excel template', 'travel budget tracking spreadsheet'],
     internalLinks: ['/calculators/travel-expense-tracker', '/blog/travel-budget-tips'],
-    relatedTools: ['daily-expense-tracker', 'monthly-budget-planner'],
-    estimatedTraffic: 'Medium',
-    competitionLevel: 'Low'
   },
   {
     id: 'ba-003',
@@ -739,9 +631,6 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free freelancer invoice generator Excel template with GST/tax calculation. Auto invoice number, PDF-ready, and perfect for gig workers. SEO optimized for Google 2025.',
     longTailKeywords: ['freelancer gst invoice excel', 'auto invoice number excel', 'freelancer invoice format india'],
     internalLinks: ['/calculators/gst-calculator', '/blog/freelancer-tips'],
-    relatedTools: ['invoice-generator-business', 'business-expense-tracker'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
   },
   {
     id: 'hr-001',
@@ -759,9 +648,91 @@ export const excelTools: ExcelTool[] = [
     seoDescription: 'Download a free employee attendance and salary sheet Excel template. Auto paid leave, monthly payroll, and attendance-based salary calculation. SEO optimized for Google 2025.',
     longTailKeywords: ['attendance based salary excel', 'auto paid leave excel', 'payroll sheet excel india'],
     internalLinks: ['/calculators/salary-calculator', '/blog/hr-tips'],
-    relatedTools: ['salary-calculator-excel', 'leave-tracker-excel'],
-    estimatedTraffic: 'High',
-    competitionLevel: 'Low'
+  },
+  {
+    id: 'hub-001',
+    slug: 'monthly-budget-tracker',
+    title: 'Comprehensive Monthly Budget Tracker',
+    description: 'Track income, fixed/variable expenses, and savings goals. Visualize your spending with charts.',
+    keywords: ['monthly budget tracker', 'budget planner excel', 'expense tracker', 'savings goals excel'],
+    category: 'Personal Finance',
+    difficulty: 'Beginner',
+    downloadLink: '/downloads/monthly-budget-tracker.xlsx',
+    features: ['Income tracking', 'Fixed/variable expenses', 'Savings goals', 'Charts & visualization'],
+    useCases: ['Personal budgeting', 'Family finance', 'Expense control'],
+    targetAudience: ['Individuals', 'Families', 'Students'],
+    seoTitle: 'Comprehensive Monthly Budget Tracker Excel Tool - Free Download | Moneycal.in',
+    seoDescription: 'Track income, expenses, and savings goals with this free monthly budget tracker Excel tool. Visualize your spending with charts. SEO optimized for Google 2025.',
+    longTailKeywords: ['monthly budget tracker excel', 'budget planner with charts', 'expense and savings tracker excel'],
+    internalLinks: ['/calculators/income-tax-calculator', '/blog/budgeting-tips'],
+  },
+  {
+    id: 'hub-002',
+    slug: 'debt-payoff-calculator',
+    title: 'Debt Payoff Calculator',
+    description: 'Input multiple debts and interest rates. Calculate the fastest payoff using snowball/avalanche strategies.',
+    keywords: ['debt payoff calculator', 'debt snowball excel', 'debt avalanche spreadsheet'],
+    category: 'Personal Finance',
+    difficulty: 'Intermediate',
+    downloadLink: '/downloads/debt-payoff-calculator.xlsx',
+    features: ['Multiple debts', 'Interest rate input', 'Snowball/avalanche strategy', 'Payoff timeline'],
+    useCases: ['Debt management', 'Loan repayment planning', 'Financial recovery'],
+    targetAudience: ['Individuals', 'Families', 'Students'],
+    seoTitle: 'Debt Payoff Calculator Excel Tool - Free Download | Moneycal.in',
+    seoDescription: 'Input multiple debts and interest rates. Calculate the fastest payoff using snowball/avalanche strategies. Free Excel tool. SEO optimized for Google 2025.',
+    longTailKeywords: ['debt payoff calculator excel', 'debt snowball spreadsheet', 'loan repayment planner excel'],
+    internalLinks: ['/calculators/loan-emi-calculator', '/blog/debt-management-tips'],
+  },
+  {
+    id: 'hub-003',
+    slug: 'investment-portfolio-tracker',
+    title: 'Investment Portfolio Tracker',
+    description: 'Monitor stocks, mutual funds, and more. Input purchase price, value, dividends, and calculate returns.',
+    keywords: ['investment portfolio tracker', 'portfolio tracker excel', 'investment returns calculator'],
+    category: 'Investment & Wealth Management',
+    difficulty: 'Intermediate',
+    downloadLink: '/downloads/investment-portfolio-tracker.xlsx',
+    features: ['Stocks & mutual funds', 'Purchase price & value', 'Dividend tracking', 'Return calculation'],
+    useCases: ['Investment monitoring', 'Portfolio analysis', 'Return calculation'],
+    targetAudience: ['Investors', 'Financial advisors', 'Students'],
+    seoTitle: 'Investment Portfolio Tracker Excel Tool - Free Download | Moneycal.in',
+    seoDescription: 'Monitor stocks, mutual funds, and more. Input purchase price, value, dividends, and calculate returns. Free Excel tool. SEO optimized for Google 2025.',
+    longTailKeywords: ['investment portfolio tracker excel', 'portfolio analysis spreadsheet', 'investment returns excel'],
+    internalLinks: ['/calculators/sip-calculator', '/blog/investment-tips'],
+  },
+  {
+    id: 'hub-004',
+    slug: 'net-worth-calculator',
+    title: 'Net Worth Calculator',
+    description: 'List all assets and liabilities to calculate your current net worth. Simple and effective.',
+    keywords: ['net worth calculator', 'net worth excel', 'assets liabilities spreadsheet'],
+    category: 'Personal Finance',
+    difficulty: 'Beginner',
+    downloadLink: '/downloads/net-worth-calculator.xlsx',
+    features: ['Assets & liabilities input', 'Net worth calculation', 'Simple UI'],
+    useCases: ['Personal finance snapshot', 'Wealth tracking', 'Financial planning'],
+    targetAudience: ['Individuals', 'Families', 'Students'],
+    seoTitle: 'Net Worth Calculator Excel Tool - Free Download | Moneycal.in',
+    seoDescription: 'List all assets and liabilities to calculate your current net worth. Simple and effective. Free Excel tool. SEO optimized for Google 2025.',
+    longTailKeywords: ['net worth calculator excel', 'assets and liabilities spreadsheet', 'personal net worth tracker'],
+    internalLinks: ['/calculators/net-worth-calculator', '/blog/wealth-building-tips'],
+  },
+  {
+    id: 'hub-005',
+    slug: 'vacation-budget-planner',
+    title: 'Vacation Budget Planner',
+    description: 'Plan and track trip expenses: flights, accommodation, food, and activities. Stay on budget!',
+    keywords: ['vacation budget planner', 'trip expense tracker', 'travel budget excel'],
+    category: 'Personal Finance',
+    difficulty: 'Beginner',
+    downloadLink: '/downloads/vacation-budget-planner.xlsx',
+    features: ['Trip expense tracking', 'Category breakdown', 'Budget vs actual', 'Stay on budget'],
+    useCases: ['Vacation planning', 'Trip budgeting', 'Travel expense tracking'],
+    targetAudience: ['Travelers', 'Families', 'Students'],
+    seoTitle: 'Vacation Budget Planner Excel Tool - Free Download | Moneycal.in',
+    seoDescription: 'Plan and track trip expenses: flights, accommodation, food, and activities. Stay on budget! Free Excel tool. SEO optimized for Google 2025.',
+    longTailKeywords: ['vacation budget planner excel', 'trip expense tracker spreadsheet', 'travel budget planner excel'],
+    internalLinks: ['/calculators/travel-expense-tracker', '/blog/vacation-budget-tips'],
   }
 ];
 
@@ -802,8 +773,8 @@ export function getRelatedTools(toolId: string, count: number = 5): ExcelTool[] 
   return excelTools
     .filter(t => t.id !== toolId && (
       t.category === tool.category ||
-      t.relatedTools.includes(tool.slug) ||
-      tool.relatedTools.includes(t.slug)
+      t.relatedTools.includes(t.slug) ||
+      t.relatedTools.includes(tool.slug)
     ))
     .slice(0, count);
 }

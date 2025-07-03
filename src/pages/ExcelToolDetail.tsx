@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Download, Star, Users, FileSpreadsheet, ArrowLeft, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import { getExcelToolBySlug, getRelatedTools } from '../data/excelToolsData';
+import { getExcelToolBySlug } from '../data/excelToolsData';
 import SimpleDailyExpenseTracker from './SimpleDailyExpenseTracker';
 import MonthlyBudgetPlanner from './MonthlyBudgetPlanner';
 import InvoiceGeneratorBusiness from './InvoiceGeneratorBusiness';
@@ -15,7 +15,6 @@ import VacationBudgetPlanner from './VacationBudgetPlanner';
 const ExcelToolDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const tool = getExcelToolBySlug(slug || '');
-  const relatedTools = tool ? getRelatedTools(tool.id, 6) : [];
 
   if (!tool) {
     return (
@@ -87,24 +86,6 @@ const ExcelToolDetail: React.FC = () => {
     }
   };
 
-  const getCompetitionColor = (level: string) => {
-    switch (level) {
-      case 'Low': return 'text-green-600 bg-green-100';
-      case 'Medium': return 'text-yellow-600 bg-yellow-100';
-      case 'High': return 'text-red-600 bg-red-100';
-      default: return 'text-gray-600 bg-gray-100';
-    }
-  };
-
-  const getTrafficColor = (level: string) => {
-    switch (level) {
-      case 'High': return 'text-green-600 bg-green-100';
-      case 'Medium': return 'text-yellow-600 bg-yellow-100';
-      case 'Low': return 'text-red-600 bg-red-100';
-      default: return 'text-gray-600 bg-gray-100';
-    }
-  };
-
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Beginner': return 'text-green-600 bg-green-100';
@@ -146,12 +127,6 @@ const ExcelToolDetail: React.FC = () => {
               {/* Tool Info */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${getCompetitionColor(tool.competitionLevel)}`}>
-                    {tool.competitionLevel} Competition
-                  </span>
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${getTrafficColor(tool.estimatedTraffic)}`}>
-                    {tool.estimatedTraffic} Traffic
-                  </span>
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${getDifficultyColor(tool.difficulty)}`}>
                     {tool.difficulty}
                   </span>
@@ -185,14 +160,6 @@ const ExcelToolDetail: React.FC = () => {
 
                 {/* SEO Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-8">
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">{tool.competitionLevel}</div>
-                    <div className="text-sm text-gray-600">Competition</div>
-                  </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600">{tool.estimatedTraffic}</div>
-                    <div className="text-sm text-gray-600">Traffic</div>
-                  </div>
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <div className="text-2xl font-bold text-purple-600">{tool.difficulty}</div>
                     <div className="text-sm text-gray-600">Difficulty</div>
@@ -308,37 +275,6 @@ const ExcelToolDetail: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Related Tools Section */}
-        {relatedTools.length > 0 && (
-          <section className="py-12 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Excel Tools</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {relatedTools.map((relatedTool) => (
-                  <div key={relatedTool.id} className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow duration-200">
-                    <h3 className="font-semibold text-gray-900 mb-2">{relatedTool.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">{relatedTool.description}</p>
-                    <div className="flex gap-2">
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getCompetitionColor(relatedTool.competitionLevel)}`}>
-                        {relatedTool.competitionLevel}
-                      </span>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTrafficColor(relatedTool.estimatedTraffic)}`}>
-                        {relatedTool.estimatedTraffic}
-                      </span>
-                    </div>
-                    <Link
-                      to={`/excel-tools/${relatedTool.slug}`}
-                      className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition-colors"
-                    >
-                      View Details
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* CTA Section */}
         <section className="py-16 bg-blue-600 text-white">
