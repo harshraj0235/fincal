@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://moneycal.in/sitemap.xml
+Sitemap: https://financegurus.directory/sitemap.xml
 
 # Allow all important pages and sections
 Allow: /calculators/

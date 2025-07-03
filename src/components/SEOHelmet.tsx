@@ -16,6 +16,14 @@ interface SEOHelmetProps {
   noIndex?: boolean;
   noFollow?: boolean;
   alternateLanguages?: { [key: string]: string };
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  faqData?: Array<{ question: string; answer: string }>;
+  calculatorData?: {
+    name: string;
+    description: string;
+    category: string;
+    features: string[];
+  };
 }
 
 const SEOHelmet: React.FC<SEOHelmetProps> = ({
@@ -34,6 +42,9 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
   noIndex,
   noFollow,
   alternateLanguages,
+  breadcrumbs,
+  faqData,
+  calculatorData,
 }) => {
   React.useEffect(() => {
     const fullTitle = title.includes('FinanceGurus') ? title : `${title} | FinanceGurus - India's Top Financial Calculators & Tools`;
@@ -108,15 +119,100 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
       });
     }
 
+    // Generate structured data
+    let finalStructuredData = structuredData;
+
+    // Add breadcrumb structured data if provided
+    if (breadcrumbs && breadcrumbs.length > 0) {
+      const breadcrumbData = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.name,
+          "item": item.url.startsWith('http') ? item.url : `https://financegurus.directory${item.url}`
+        }))
+      };
+
+      if (!finalStructuredData) {
+        finalStructuredData = breadcrumbData;
+      } else if (Array.isArray(finalStructuredData)) {
+        finalStructuredData = [...finalStructuredData, breadcrumbData];
+      } else {
+        finalStructuredData = [finalStructuredData, breadcrumbData];
+      }
+    }
+
+    // Add FAQ structured data if provided
+    if (faqData && faqData.length > 0) {
+      const faqStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqData.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+
+      if (!finalStructuredData) {
+        finalStructuredData = faqStructuredData;
+      } else if (Array.isArray(finalStructuredData)) {
+        finalStructuredData = [...finalStructuredData, faqStructuredData];
+      } else {
+        finalStructuredData = [finalStructuredData, faqStructuredData];
+      }
+    }
+
+    // Add calculator structured data if provided
+    if (calculatorData) {
+      const calculatorStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": calculatorData.name,
+        "description": calculatorData.description,
+        "url": url ? (url.startsWith('http') ? url : `https://financegurus.directory${url}`) : window.location.href,
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "featureList": calculatorData.features,
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Indian Financial Users"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "FinanceGurus",
+          "url": "https://financegurus.directory"
+        }
+      };
+
+      if (!finalStructuredData) {
+        finalStructuredData = calculatorStructuredData;
+      } else if (Array.isArray(finalStructuredData)) {
+        finalStructuredData = [...finalStructuredData, calculatorStructuredData];
+      } else {
+        finalStructuredData = [finalStructuredData, calculatorStructuredData];
+      }
+    }
+
     // Structured Data (JSON-LD)
     let jsonLdScript: HTMLScriptElement | null = document.querySelector('script[type="application/ld+json"]');
-    if (structuredData) {
+    if (finalStructuredData) {
       if (!jsonLdScript) {
         jsonLdScript = document.createElement('script');
         jsonLdScript.type = 'application/ld+json';
         document.head.appendChild(jsonLdScript);
       }
-      jsonLdScript.textContent = JSON.stringify(structuredData);
+      jsonLdScript.textContent = JSON.stringify(finalStructuredData);
     } else if (jsonLdScript) {
       jsonLdScript.remove();
     }
@@ -129,11 +225,11 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
           if (link) link.remove();
         });
       }
-      if (structuredData && jsonLdScript) {
+      if (finalStructuredData && jsonLdScript) {
         jsonLdScript.remove();
       }
     };
-  }, [title, description, keywords, image, url, type, structuredData, articlePublishedTime, articleModifiedTime, author, section, tags, noIndex, noFollow, alternateLanguages]);
+  }, [title, description, keywords, image, url, type, structuredData, articlePublishedTime, articleModifiedTime, author, section, tags, noIndex, noFollow, alternateLanguages, breadcrumbs, faqData, calculatorData]);
 
   return null;
 };

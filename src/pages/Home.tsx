@@ -43,50 +43,118 @@ export const Home: React.FC = () => {
     };
   }, []);
   
-  // Structured data for the home page
-  const homeStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "FinanceGurus Directory - India's Top Financial Calculators & Tools",
-    "description": "Comprehensive financial calculators for Indian users. Calculate EMI, SIP, income tax, mutual funds, and more. Free online financial planning tools.",
-    "url": "https://financegurus.directory",
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "Financial Calculators",
-      "description": "Collection of 50+ financial calculators for Indian users",
-      "numberOfItems": calculatorCategories.reduce((total, cat) => total + cat.calculators.length, 0),
-      "itemListElement": calculatorCategories.flatMap((category, catIndex) =>
-        category.calculators.map((calculator, calcIndex) => ({
-          "@type": "ListItem",
-          "position": catIndex * 10 + calcIndex + 1,
-          "item": {
-            "@type": "WebApplication",
-            "name": calculator.name,
-            "description": calculator.description,
-            "url": `https://financegurus.directory/calculators/${calculator.id}`,
-            "applicationCategory": "FinanceApplication",
-            "operatingSystem": "Web Browser",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "INR"
+  // Enhanced structured data for the home page
+  const homeStructuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "FinanceGurus Directory - India's Top Financial Calculators & Tools",
+      "description": "Comprehensive financial calculators for Indian users. Calculate EMI, SIP, income tax, mutual funds, and more. Free online financial planning tools.",
+      "url": "https://financegurus.directory",
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Financial Calculators",
+        "description": "Collection of 50+ financial calculators for Indian users",
+        "numberOfItems": calculatorCategories.reduce((total, cat) => total + cat.calculators.length, 0),
+        "itemListElement": calculatorCategories.flatMap((category, catIndex) =>
+          category.calculators.map((calculator, calcIndex) => ({
+            "@type": "ListItem",
+            "position": catIndex * 10 + calcIndex + 1,
+            "item": {
+              "@type": "WebApplication",
+              "name": calculator.name,
+              "description": calculator.description,
+              "url": `https://financegurus.directory/calculators/${calculator.id}`,
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Web Browser",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "INR"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Indian Financial Users"
+              }
             }
-          }
-        }))
-      )
+          }))
+        )
+      }
     },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FinanceGurus",
+      "alternateName": "FinanceGurus Directory",
+      "url": "https://financegurus.directory",
+      "logo": "https://financegurus.directory/android-chrome-512x512.png",
+      "description": "India's most comprehensive financial calculator platform providing free online financial planning tools",
+      "foundingDate": "2024",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [
+        "https://twitter.com/FinanceGurusIN",
+        "https://facebook.com/FinanceGurusIN"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "FinanceGurus",
+      "url": "https://financegurus.directory",
+      "description": "India's most comprehensive financial calculator platform",
+      "publisher": {
+        "@type": "Organization",
+        "name": "FinanceGurus"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://financegurus.directory/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://financegurus.directory"
+          "@type": "Question",
+          "name": "What financial calculators are available on FinanceGurus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FinanceGurus offers 50+ financial calculators including EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, PPF calculator, retirement calculator, and many more tools for Indian users."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the calculators free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all calculators on FinanceGurus are completely free to use. No registration or subscription required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate are the calculations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calculators use industry-standard formulas and are regularly updated to ensure accuracy. However, results should be used for planning purposes and verified with financial institutions."
+          }
         }
       ]
     }
-  };
+  ];
   
   // Scroll to categories section if hash is present
   useEffect(() => {

@@ -1,153 +1,90 @@
+// Service Worker for FinanceGurus PWA
 const CACHE_NAME = 'financegurus-v1.0.0';
-const STATIC_CACHE_URLS = [
+const urlsToCache = [
   '/',
   '/index.html',
-  '/src/main.tsx',
-  '/src/index.css',
+  '/static/js/bundle.js',
+  '/static/css/main.css',
   '/favicon.ico',
   '/android-chrome-192x192.png',
   '/android-chrome-512x512.png',
-  '/apple-touch-icon.png'
+  '/apple-touch-icon.png',
+  '/site.webmanifest'
 ];
 
-const DYNAMIC_CACHE_URLS = [
-  '/calculators/emi-calculator',
-  '/calculators/sip-calculator', 
-  '/calculators/income-tax-calculator',
-  '/calculators/mutual-fund-overlap-checker',
-  '/calculators/asset-allocation-planner'
-];
-
-// Install event - cache static assets
+// Install event - cache resources
 self.addEventListener('install', (event) => {
-  console.log('Service Worker installing...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('Caching static assets');
-        return cache.addAll(STATIC_CACHE_URLS);
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
       })
-      .then(() => self.skipWaiting())
+  );
+});
+
+// Fetch event - serve from cache if available
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        // Return cached version or fetch from network
+        return response || fetch(event.request);
+      })
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker activating...');
   event.waitUntil(
-    caches.keys()
-      .then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
-            if (cacheName !== CACHE_NAME) {
-              console.log('Deleting old cache:', cacheName);
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
-      .then(() => self.clients.claim())
-  );
-});
-
-// Fetch event - cache strategy
-self.addEventListener('fetch', (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-
-  // Handle navigation requests
-  if (request.mode === 'navigate') {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Cache successful responses
-          if (response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(CACHE_NAME)
-              .then((cache) => cache.put(request, responseClone));
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            console.log('Deleting old cache:', cacheName);
+            return caches.delete(cacheName);
           }
-          return response;
         })
-        .catch(() => {
-          // Fallback to cache
-          return caches.match(request)
-            .then((response) => response || caches.match('/'));
-        })
-    );
-    return;
-  }
-
-  // Handle API and static asset requests
-  event.respondWith(
-    caches.match(request)
-      .then((response) => {
-        if (response) {
-          // Serve from cache
-          return response;
-        }
-
-        // Fetch from network
-        return fetch(request)
-          .then((response) => {
-            // Cache valid responses
-            if (response.status === 200 && request.method === 'GET') {
-              const responseClone = response.clone();
-              caches.open(CACHE_NAME)
-                .then((cache) => {
-                  cache.put(request, responseClone);
-                });
-            }
-            return response;
-          })
-          .catch((error) => {
-            console.log('Fetch failed:', error);
-            // Return offline page or cached version
-            if (request.destination === 'document') {
-              return caches.match('/');
-            }
-          });
-      })
+      );
+    })
   );
 });
 
-// Background sync for analytics
+// Background sync for offline functionality
 self.addEventListener('sync', (event) => {
-  if (event.tag === 'analytics-sync') {
-    event.waitUntil(syncAnalytics());
+  if (event.tag === 'background-sync') {
+    event.waitUntil(doBackgroundSync());
   }
 });
 
-// Push notifications (for future use)
+// Push notification handling
 self.addEventListener('push', (event) => {
-  if (event.data) {
-    const data = event.data.json();
-    const options = {
-      body: data.body,
-      icon: '/android-chrome-192x192.png',
-      badge: '/android-chrome-192x192.png',
-      vibrate: [100, 50, 100],
-      data: {
-        dateOfArrival: Date.now(),
-        primaryKey: data.primaryKey || 1
+  const options = {
+    body: event.data ? event.data.text() : 'New update available!',
+    icon: '/android-chrome-192x192.png',
+    badge: '/android-chrome-192x192.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    },
+    actions: [
+      {
+        action: 'explore',
+        title: 'Explore Calculators',
+        icon: '/android-chrome-192x192.png'
       },
-      actions: [
-        {
-          action: 'explore',
-          title: 'View Calculator',
-          icon: '/android-chrome-192x192.png'
-        },
-        {
-          action: 'close',
-          title: 'Close',
-          icon: '/android-chrome-192x192.png'
-        }
-      ]
-    };
+      {
+        action: 'close',
+        title: 'Close',
+        icon: '/android-chrome-192x192.png'
+      }
+    ]
+  };
 
-    event.waitUntil(
-      self.registration.showNotification(data.title, options)
-    );
-  }
+  event.waitUntil(
+    self.registration.showNotification('FinanceGurus', options)
+  );
 });
 
 // Notification click handling
@@ -161,21 +98,8 @@ self.addEventListener('notificationclick', (event) => {
   }
 });
 
-async function syncAnalytics() {
-  // Sync offline analytics events
-  try {
-    const cache = await caches.open('analytics-cache');
-    const requests = await cache.keys();
-    
-    for (const request of requests) {
-      try {
-        await fetch(request);
-        await cache.delete(request);
-      } catch (error) {
-        console.log('Failed to sync analytics:', error);
-      }
-    }
-  } catch (error) {
-    console.log('Analytics sync failed:', error);
-  }
+// Background sync function
+function doBackgroundSync() {
+  // Implement background sync logic here
+  console.log('Background sync completed');
 }
