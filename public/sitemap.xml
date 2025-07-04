@@ -4156,6 +4156,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+  <loc>https://moneycal.in/calculators/crypto-tax-estimator</loc>
+  <lastmod>2025-06-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://moneycal.in/astro-finance/muhurat</loc>
+  <lastmod>2025-06-15</lastmod>
+  <changefreq>monthly</change>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://moneycal.in/calculators/senior-citizen-savings-planner</loc>
+  <lastmod>2025-06-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://moneycal.in/calculators/msme-loan-eligibility</loc>
+  <lastmod>2025-06-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+  <url>
     <loc>https://moneycal.in/calculators/property-calculators</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
