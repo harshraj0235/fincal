@@ -7,6 +7,8 @@ const tools = [
   { name: 'Bank Charges Analyzer', path: '/calculators/bank-charges-analyzer', desc: 'Compare hidden fees, penalties, and charges for all major banks.' },
   { name: 'Missed Call Banking Directory', path: '/missed-call-banking-directory', desc: 'Get missed call numbers for balance enquiry & mini statements for all banks.' },
   { name: 'Cheque Bounce Charges Calculator', path: '/calculators/cheque-bounce-charges-calculator', desc: 'Check cheque bounce penalties for all Indian banks.' },
+  { name: 'Crypto Tax Calculator', path: '/calculators/crypto-tax-estimator', desc: 'Estimate your crypto tax liability as per Indian regulations.' },
+  { name: 'Astro-Investment Date Picker', path: '/astro-finance/muhurat', desc: 'Find auspicious dates and times for investments based on your zodiac.' },
   // Add more tools as needed
 ];
 
