@@ -1,304 +1,232 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { formatCurrency } from '../utils/calculatorUtils';
+import { Calculator, TrendingUp } from 'lucide-react';
+
+interface CommodityOption {
+  name: string;
+  price: number;
+  lotSize: number;
+  marginPercentage: number;
+}
 
 export const CommodityMarginCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const selectedCommodity = values.selectedCommodity as string;
-    const lots = values.lots as number;
-    const price = values.price as number;
-    const marginPercentage = values.marginPercentage as number;
-    
-    const commodities: Record<string, { lotSize: number }> = {
-      gold: { lotSize: 10 },
-      silver: { lotSize: 30 },
-      crudeoil: { lotSize: 100 },
-      copper: { lotSize: 2500 }
-    };
-    
+  const [selectedCommodity, setSelectedCommodity] = useState<string>('gold');
+  const [lots, setLots] = useState<number>(1);
+  const [price, setPrice] = useState<number>(60000);
+  const [marginPercentage, setMarginPercentage] = useState<number>(5);
+  
+  const [requiredMargin, setRequiredMargin] = useState<number>(0);
+  const [exposureValue, setExposureValue] = useState<number>(0);
+  const [leverage, setLeverage] = useState<number>(0);
+  
+  const commodities: Record<string, CommodityOption> = {
+    gold: {
+      name: 'Gold',
+      price: 60000,
+      lotSize: 10,
+      marginPercentage: 5
+    },
+    silver: {
+      name: 'Silver',
+      price: 75000,
+      lotSize: 30,
+      marginPercentage: 6
+    },
+    crudeoil: {
+      name: 'Crude Oil',
+      price: 6500,
+      lotSize: 100,
+      marginPercentage: 8
+    },
+    copper: {
+      name: 'Copper',
+      price: 750,
+      lotSize: 2500,
+      marginPercentage: 7
+    }
+  };
+  
+  useEffect(() => {
+    const commodity = commodities[selectedCommodity];
+    setPrice(commodity.price);
+    setMarginPercentage(commodity.marginPercentage);
+  }, [selectedCommodity]);
+  
+  useEffect(() => {
     const commodity = commodities[selectedCommodity];
     const contractValue = price * commodity.lotSize * lots;
-    const requiredMargin = contractValue * (marginPercentage / 100);
-    const leverage = contractValue / requiredMargin;
-    const exposureValue = contractValue;
+    const margin = contractValue * (marginPercentage / 100);
     
-    return [
-      {
-        label: 'Required Margin',
-        value: requiredMargin,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <Shield className="h-4 w-4" />,
-        description: 'Margin amount required'
-      },
-      {
-        label: 'Exposure Value',
-        value: exposureValue,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Total contract value'
-      },
-      {
-        label: 'Leverage',
-        value: leverage,
-        unit: 'x',
-        color: 'warning' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Leverage ratio'
-      },
-      {
-        label: 'Contract Value',
-        value: contractValue,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Calculator className="h-4 w-4" />,
-        description: 'Total contract value'
-      },
-      {
-        label: 'Lot Size',
-        value: commodity.lotSize,
-        unit: ' units',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Units per lot'
-      },
-      {
-        label: 'Margin %',
-        value: marginPercentage,
-        unit: '%',
-        color: 'neutral' as const,
-        icon: <PieChart className="h-4 w-4" />,
-        description: 'Margin percentage'
-      }
-    ];
-  };
-
-  const inputs = [
-    {
-      id: 'selectedCommodity',
-      label: 'Select Commodity',
-      type: 'select' as const,
-      value: 'gold',
-      options: [
-        { value: 'gold', label: 'Gold' },
-        { value: 'silver', label: 'Silver' },
-        { value: 'crudeoil', label: 'Crude Oil' },
-        { value: 'copper', label: 'Copper' }
-      ],
-      description: 'Choose the commodity for margin calculation',
-      tooltip: 'Select the commodity you want to trade',
-      required: true
-    },
-    {
-      id: 'lots',
-      label: 'Number of Lots',
-      type: 'range' as const,
-      value: 1,
-      min: 1,
-      max: 10,
-      step: 1,
-      unit: ' lots',
-      description: 'Number of lots you want to trade',
-      tooltip: 'A lot is the standard trading unit for commodities',
-      required: true
-    },
-    {
-      id: 'price',
-      label: 'Price per Unit',
-      type: 'range' as const,
-      value: 60000,
-      min: 1000,
-      max: 100000,
-      step: 100,
-      unit: ' ₹',
-      description: 'Current market price per unit',
-      tooltip: 'The current market price of the commodity',
-      required: true
-    },
-    {
-      id: 'marginPercentage',
-      label: 'Margin Percentage',
-      type: 'range' as const,
-      value: 5,
-      min: 3,
-      max: 15,
-      step: 0.5,
-      unit: '%',
-      description: 'Margin percentage required by broker',
-      tooltip: 'The percentage of contract value required as margin',
-      required: true
-    }
-  ];
-
-  const features = [
-    {
-      name: 'Instant Calculation',
-      description: 'Get margin requirements instantly as you adjust values',
-      icon: <Calculator className="h-5 w-5" />
-    },
-    {
-      name: 'Mobile Optimized',
-      description: 'Works perfectly on all devices and screen sizes',
-      icon: <Smartphone className="h-5 w-5" />
-    },
-    {
-      name: 'No Registration',
-      description: 'Use our calculator without any sign-up required',
-      icon: <Users className="h-5 w-5" />
-    },
-    {
-      name: 'Accurate Results',
-      description: 'Based on standard commodity trading formulas',
-      icon: <CheckCircle className="h-5 w-5" />
-    },
-    {
-      name: 'Free to Use',
-      description: 'Completely free calculator with no hidden charges',
-      icon: <DollarSign className="h-5 w-5" />
-    },
-    {
-      name: '2025 Updated',
-      description: 'Latest commodity trading tools for 2025',
-      icon: <Clock className="h-5 w-5" />
-    }
-  ];
-
-  const faqs = [
-    {
-      question: 'What is commodity margin?',
-      answer: 'Commodity margin is the amount of money required to open and maintain a position in commodity futures trading. It acts as a security deposit and represents a percentage of the total contract value.'
-    },
-    {
-      question: 'How is commodity margin calculated?',
-      answer: 'Commodity margin is calculated as: Contract Value × Margin Percentage. Contract value = Price per unit × Lot size × Number of lots. The margin percentage varies by commodity and broker.'
-    },
-    {
-      question: 'What is leverage in commodity trading?',
-      answer: 'Leverage is the ratio of total exposure to the margin required. Higher leverage means you can control larger positions with less capital, but it also increases risk. Leverage = Contract Value ÷ Required Margin.'
-    },
-    {
-      question: 'What are the different types of commodity margins?',
-      answer: 'Initial margin is required to open a position, while maintenance margin is the minimum amount needed to keep the position open. If your account falls below maintenance margin, you may face a margin call.'
-    },
-    {
-      question: 'How does lot size affect margin requirements?',
-      answer: 'Lot size determines the number of units in one contract. Larger lot sizes mean higher contract values and consequently higher margin requirements. Different commodities have different standard lot sizes.'
-    },
-    {
-      question: 'What factors affect margin percentages?',
-      answer: 'Margin percentages vary based on commodity volatility, market conditions, broker policies, and regulatory requirements. More volatile commodities typically require higher margins.'
-    },
-    {
-      question: 'How accurate is this commodity margin calculator?',
-      answer: 'Our calculator uses standard formulas and provides accurate estimates. However, actual margin requirements may vary based on broker policies, market conditions, and regulatory changes. Always verify with your broker.'
-    },
-    {
-      question: 'Can I use this calculator for all commodities?',
-      answer: 'This calculator covers major commodities like gold, silver, crude oil, and copper. For other commodities, you may need to adjust lot sizes and margin percentages according to exchange specifications.'
-    }
-  ];
-
-  const relatedCalculators = [
-    {
-      id: 'forex-margin-calculator',
-      name: 'Forex Margin Calculator',
-      description: 'Calculate forex margin requirements',
-      url: '/calculators/forex-margin-calculator'
-    },
-    {
-      id: 'stock-margin-calculator',
-      name: 'Stock Margin Calculator',
-      description: 'Calculate stock margin requirements',
-      url: '/calculators/stock-margin-calculator'
-    },
-    {
-      id: 'futures-calculator',
-      name: 'Futures Calculator',
-      description: 'Calculate futures trading metrics',
-      url: '/calculators/futures-calculator'
-    },
-    {
-      id: 'options-calculator',
-      name: 'Options Calculator',
-      description: 'Calculate options trading metrics',
-      url: '/calculators/options-calculator'
-    },
-    {
-      id: 'profit-loss-calculator',
-      name: 'Profit Loss Calculator',
-      description: 'Calculate trading profit and loss',
-      url: '/calculators/profit-loss-calculator'
-    },
-    {
-      id: 'risk-calculator',
-      name: 'Risk Calculator',
-      description: 'Calculate trading risk metrics',
-      url: '/calculators/risk-calculator'
-    }
-  ];
-
-  const tips = [
-    'Always maintain adequate margin to avoid margin calls',
-    'Monitor your positions regularly for margin requirements',
-    'Consider market volatility when calculating margin needs',
-    'Keep extra funds as buffer for margin requirements',
-    'Understand the difference between initial and maintenance margin',
-    'Factor in potential price movements when planning positions',
-    'Check with your broker for specific margin requirements',
-    'Consider using stop-loss orders to manage risk'
-  ];
-
-  const calculatorData = {
-    formula: 'Required Margin = Contract Value × Margin Percentage\nContract Value = Price × Lot Size × Number of Lots\nLeverage = Contract Value ÷ Required Margin',
-    assumptions: [
-      'Standard lot sizes for each commodity',
-      'Margin percentages are approximate',
-      'Prices are current market prices',
-      'No additional fees or charges included',
-      'Results are for planning purposes only'
-    ],
-    limitations: [
-      'Actual margin requirements may vary by broker',
-      'Market conditions can affect margin percentages',
-      'Regulatory changes may impact requirements',
-      'Lot sizes may vary by exchange',
-      'Results are estimates only'
-    ],
-    lastUpdated: 'January 2025'
-  };
-
+    setExposureValue(contractValue);
+    setRequiredMargin(margin);
+    setLeverage(contractValue / margin);
+  }, [selectedCommodity, lots, price, marginPercentage]);
+  
   return (
-    <EnhancedCalculator
-      id="commodity-margin-calculator"
-      name="Commodity Margin Calculator"
-      description="Calculate commodity margin requirements with our free online calculator. Determine margin needed for gold, silver, crude oil, and copper trading."
-      category="Trading Calculators"
-      seoTitle="Commodity Margin Calculator 2025 - Calculate Trading Margin Online | Free Calculator India"
-      seoDescription="Calculate your commodity margin requirements instantly with our free margin calculator. Determine margin for gold, silver, crude oil trading. No registration required. Updated for 2025."
-      focusKeyword="commodity margin calculator"
-      relatedKeywords={[
-        'commodity margin calculator',
-        'trading margin calculator',
-        'futures margin calculator',
-        'gold margin calculator',
-        'silver margin calculator',
-        'commodity margin calculator India',
-        'commodity margin calculator online',
-        'free commodity margin calculator',
-        'commodity margin calculator 2025'
-      ]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="space-y-6">
+        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+          <TrendingUp className="w-5 h-5 mr-2 text-[--primary-600]" />
+          Commodity Details
+        </h2>
+        
+        <div className="space-y-4">
+          <div>
+            <label className="text-sm font-medium text-neutral-700 mb-2 block">
+              Select Commodity
+            </label>
+            <div className="grid grid-cols-2 gap-2">
+              {Object.entries(commodities).map(([key, commodity]) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedCommodity(key)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                    selectedCommodity === key
+                      ? 'bg-[--primary-100] text-[--primary-800]'
+                      : 'bg-neutral-100 text-neutral-600'
+                  }`}
+                >
+                  {commodity.name}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="lots" className="text-sm font-medium text-neutral-700">
+                Number of Lots
+              </label>
+              <span className="text-sm text-neutral-500">
+                {lots} lot{lots > 1 ? 's' : ''}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="lots"
+              min="1" 
+              max="10" 
+              value={lots} 
+              onChange={(e) => setLots(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="price" className="text-sm font-medium text-neutral-700">
+                Price (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(price)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="price"
+              min={price * 0.8} 
+              max={price * 1.2} 
+              step="10" 
+              value={price} 
+              onChange={(e) => setPrice(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="margin-percentage" className="text-sm font-medium text-neutral-700">
+                Margin Percentage (%)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {marginPercentage}%
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="margin-percentage"
+              min="3" 
+              max="15" 
+              step="0.5" 
+              value={marginPercentage} 
+              onChange={(e) => setMarginPercentage(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+        </div>
+        
+        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
+          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Margin Summary</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Required Margin</p>
+              <p className="text-xl font-bold text-neutral-900">{formatCurrency(requiredMargin)}</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Exposure Value</p>
+              <p className="text-xl font-bold text-neutral-900">{formatCurrency(exposureValue)}</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Leverage</p>
+              <p className="text-xl font-bold text-[--primary-900]">{leverage.toFixed(2)}x</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="space-y-6">
+        <div className="bg-neutral-50 p-6 rounded-lg">
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
+            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Commodity Information
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Contract Specifications</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <div className="flex justify-between">
+                  <span>Commodity</span>
+                  <span className="font-medium">{commodities[selectedCommodity].name}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Lot Size</span>
+                  <span className="font-medium">{commodities[selectedCommodity].lotSize} units</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Price</span>
+                  <span className="font-medium">{formatCurrency(price)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Contract Value</span>
+                  <span className="font-medium">{formatCurrency(price * commodities[selectedCommodity].lotSize)}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Margin Requirements</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <p><strong>Initial Margin:</strong> The amount required to open a position</p>
+                <p><strong>Maintenance Margin:</strong> The minimum amount required to keep the position open</p>
+                <p><strong>Margin Call:</strong> When your account equity falls below the maintenance margin</p>
+                <p><strong>Liquidation:</strong> When your account equity falls below the required margin</p>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-[--accent-50] rounded-lg">
+              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Risk Management</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
+                <li>Use stop losses to limit potential losses</li>
+                <li>Don't overleverage your positions</li>
+                <li>Monitor margin levels regularly</li>
+                <li>Be aware of market volatility</li>
+                <li>Maintain adequate buffer in your account</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}; 
+};

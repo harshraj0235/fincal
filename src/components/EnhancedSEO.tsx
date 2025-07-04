@@ -23,7 +23,7 @@ interface EnhancedSEOProps {
     name: string;
     title?: string;
     bio?: string;
-    image?: string;
+  image?: string;
     url?: string;
   };
   
@@ -129,7 +129,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   
   // Generate canonical URL
   const canonicalUrl = url.startsWith('http') ? url : `https://moneycal.in${url}`;
-  
+
   // Generate structured data based on page type
   const generateStructuredData = () => {
     const baseStructuredData = [];
@@ -168,7 +168,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
     // WebSite schema
     baseStructuredData.push({
       "@context": "https://schema.org",
-      "@type": "WebSite",
+        "@type": "WebSite",
       "name": "FinanceGurus",
       "url": "https://moneycal.in",
       "description": "India's most comprehensive financial calculator platform",
@@ -188,26 +188,26 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       case 'calculator':
         if (calculatorData) {
           baseStructuredData.push({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": calculatorData.name,
-            "description": calculatorData.description,
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": calculatorData.name,
+              "description": calculatorData.description,
             "url": canonicalUrl,
-            "applicationCategory": "FinanceApplication",
-            "operatingSystem": "Web Browser",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "INR"
-            },
-            "featureList": calculatorData.features,
-            "audience": {
-              "@type": "Audience",
-              "audienceType": "Indian Financial Users"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "FinanceGurus",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Web Browser",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "INR"
+              },
+              "featureList": calculatorData.features,
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Indian Financial Users"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "FinanceGurus",
               "url": "https://moneycal.in"
             },
             "datePublished": publishedDate,
@@ -231,18 +231,18 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
           }
         }
         break;
-        
+      
       case 'blog':
       case 'article':
       case 'government-scheme':
         baseStructuredData.push({
-          "@context": "https://schema.org",
+              "@context": "https://schema.org",
           "@type": "Article",
-          "headline": title,
-          "description": description,
+              "headline": title,
+              "description": description,
           "image": image?.url,
           "author": author ? {
-            "@type": "Person",
+                "@type": "Person",
             "name": author.name,
             "url": author.url,
             "jobTitle": author.title,
@@ -250,10 +250,10 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
           } : {
             "@type": "Organization",
             "name": "FinanceGurus"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "FinanceGurus",
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "FinanceGurus",
             "logo": {
               "@type": "ImageObject",
               "url": "https://moneycal.in/logo.png"
@@ -268,7 +268,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
           "timeRequired": `PT${readingTime || blogData?.estimatedReadingTime || 5}M`
         });
         break;
-        
+      
       case 'home':
         baseStructuredData.push({
           "@context": "https://schema.org",
@@ -307,7 +307,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
         });
         break;
     }
-    
+
     // Breadcrumb schema
     if (breadcrumbs && breadcrumbs.length > 0) {
       baseStructuredData.push({
@@ -368,7 +368,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
     image: image?.url,
     site: socialMedia?.twitterHandle || '@FinanceGurusIN'
   };
-  
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}

@@ -157,16 +157,16 @@ export const CalculatorPage: React.FC = () => {
   };
   
   if (!calculator) {
-    return (
+        return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <h1 className="text-2xl font-bold text-neutral-900 mb-4">Calculator Not Found</h1>
         <p className="text-neutral-600 mb-8">The calculator you're looking for doesn't exist or may have been moved.</p>
         <Link to="/" className="btn btn-primary">
           Back to Home
         </Link>
-      </div>
-    );
-  }
+          </div>
+        );
+    }
   
   return (
     <>
@@ -189,7 +189,7 @@ export const CalculatorPage: React.FC = () => {
         </nav>
         
         {/* Header Section */}
-        <div className="mb-8">
+      <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-2">
@@ -214,7 +214,7 @@ export const CalculatorPage: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-2">
-              <button 
+        <button 
                 onClick={() => setIsBookmarked(!isBookmarked)}
                 className={`p-2 rounded-lg transition-colors ${
                   isBookmarked 
@@ -226,10 +226,10 @@ export const CalculatorPage: React.FC = () => {
               </button>
               <button className="p-2 rounded-lg bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors">
                 <Share2 className="h-5 w-5" />
-              </button>
+        </button>
             </div>
-          </div>
-          
+      </div>
+      
           {/* Feature Highlights */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
             {calculatorFeatures.map((feature, index) => (
@@ -246,8 +246,8 @@ export const CalculatorPage: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-        
+      </div>
+      
         {/* Tab Navigation */}
         <div className="border-b border-neutral-200 mb-8">
           <nav className="flex space-x-8">
@@ -268,7 +268,7 @@ export const CalculatorPage: React.FC = () => {
               >
                 {tab.icon}
                 <span>{tab.label}</span>
-              </button>
+        </button>
             ))}
           </nav>
         </div>
@@ -328,9 +328,9 @@ export const CalculatorPage: React.FC = () => {
                     
                     <button className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-primary-700 transition-colors">
                       Calculate {calculator.name}
-                    </button>
-                  </div>
-                  
+        </button>
+      </div>
+      
                   {/* Results Section */}
                   <div className="mt-8 p-6 bg-primary-50 rounded-lg">
                     <h3 className="text-lg font-semibold text-primary-900 mb-4">
@@ -380,8 +380,8 @@ export const CalculatorPage: React.FC = () => {
                         <span>Contact Support</span>
                       </Link>
                     </div>
-                  </div>
-                  
+      </div>
+      
                   {/* Related Calculators */}
                   <div className="bg-white rounded-xl shadow-md p-6 border border-neutral-200">
                     <h3 className="text-lg font-semibold text-neutral-900 mb-4">
@@ -399,16 +399,16 @@ export const CalculatorPage: React.FC = () => {
                           </div>
                           <div className="text-sm text-neutral-600">
                             {calc.category}
-                          </div>
+            </div>
                         </Link>
                       ))}
                     </div>
-                  </div>
-                </div>
               </div>
             </div>
-          )}
-          
+          </div>
+        </div>
+      )}
+      
           {activeTab === 'guide' && (
             <div className="prose prose-lg max-w-none">
               <h2>How to Use {calculator.name}</h2>
@@ -455,10 +455,10 @@ export const CalculatorPage: React.FC = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          )}
-          
+          </div>
+        </div>
+      )}
+      
           {activeTab === 'faq' && (
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-neutral-900 mb-6">
@@ -479,7 +479,7 @@ export const CalculatorPage: React.FC = () => {
           )}
           
           {activeTab === 'related' && (
-            <div>
+        <div>
               <h2 className="text-2xl font-bold text-neutral-900 mb-6">
                 Related Financial Tools
               </h2>
@@ -513,11 +513,11 @@ export const CalculatorPage: React.FC = () => {
                     </div>
                   </Link>
                 ))}
-              </div>
-            </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
+        </div>
+    </div>
     </>
   );
 };

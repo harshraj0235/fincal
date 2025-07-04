@@ -51,15 +51,15 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
       .then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
             if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
               console.log('Service Worker: Deleting old cache:', cacheName);
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
       .then(() => {
         console.log('Service Worker: Activated successfully');
         return self.clients.claim();
@@ -307,7 +307,7 @@ self.addEventListener('push', (event) => {
       }
     ]
   };
-  
+
   event.waitUntil(
     self.registration.showNotification('FinanceGurus', options)
   );
@@ -318,7 +318,7 @@ self.addEventListener('notificationclick', (event) => {
   console.log('Service Worker: Notification clicked');
   
   event.notification.close();
-  
+
   if (event.action === 'explore') {
     event.waitUntil(
       clients.openWindow('/calculators')

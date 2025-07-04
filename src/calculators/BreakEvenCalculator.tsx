@@ -1,279 +1,259 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target, Building
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { formatCurrency } from '../utils/calculatorUtils';
+import { Calculator, TrendingUp, PieChart } from 'lucide-react';
+import { ResultChart } from '../components/ResultChart';
 
 export const BreakEvenCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const fixedCosts = values.fixedCosts as number;
-    const sellingPrice = values.sellingPrice as number;
-    const variableCosts = values.variableCosts as number;
+  const [fixedCosts, setFixedCosts] = useState<number>(100000);
+  const [variableCostPerUnit, setVariableCostPerUnit] = useState<number>(60);
+  const [sellingPricePerUnit, setSellingPricePerUnit] = useState<number>(100);
+  const [monthlyUnits, setMonthlyUnits] = useState<number>(2000);
+  const [breakEvenUnits, setBreakEvenUnits] = useState<number>(0);
+  const [breakEvenRevenue, setBreakEvenRevenue] = useState<number>(0);
+  const [monthlyProfit, setMonthlyProfit] = useState<number>(0);
+  const [marginOfSafety, setMarginOfSafety] = useState<number>(0);
+  
+  useEffect(() => {
+    // Calculate break-even point
+    const contributionMargin = sellingPricePerUnit - variableCostPerUnit;
+    const breakEvenPoint = fixedCosts / contributionMargin;
     
-    const contributionMargin = sellingPrice - variableCosts;
-    const breakEvenUnits = fixedCosts / contributionMargin;
-    const breakEvenRevenue = breakEvenUnits * sellingPrice;
-    const marginOfSafety = ((sellingPrice - variableCosts) / sellingPrice) * 100;
+    setBreakEvenUnits(breakEvenPoint);
+    setBreakEvenRevenue(breakEvenPoint * sellingPricePerUnit);
     
-    return [
-      {
-        label: 'Break Even Units',
-        value: breakEvenUnits,
-        unit: ' units',
-        color: 'primary' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Units needed to break even'
-      },
-      {
-        label: 'Break Even Revenue',
-        value: breakEvenRevenue,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Revenue needed to break even'
-      },
-      {
-        label: 'Contribution Margin',
-        value: contributionMargin,
-        unit: ' ₹',
-        color: 'warning' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Contribution per unit'
-      },
-      {
-        label: 'Margin of Safety',
-        value: marginOfSafety,
-        unit: '%',
-        color: 'neutral' as const,
-        icon: <Shield className="h-4 w-4" />,
-        description: 'Safety margin percentage'
-      },
-      {
-        label: 'Fixed Costs',
-        value: fixedCosts,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Building className="h-4 w-4" />,
-        description: 'Total fixed costs'
-      },
-      {
-        label: 'Selling Price',
-        value: sellingPrice,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Calculator className="h-4 w-4" />,
-        description: 'Price per unit'
-      }
-    ];
-  };
-
-  const inputs = [
-    {
-      id: 'fixedCosts',
-      label: 'Fixed Costs',
-      type: 'range' as const,
-      value: 50000,
-      min: 1000,
-      max: 1000000,
-      step: 1000,
-      unit: ' ₹',
-      description: 'Total fixed costs for your business',
-      tooltip: 'Costs that remain constant regardless of production volume (rent, salaries, etc.)',
-      required: true
-    },
-    {
-      id: 'sellingPrice',
-      label: 'Selling Price per Unit',
-      type: 'range' as const,
-      value: 100,
-      min: 10,
-      max: 10000,
-      step: 10,
-      unit: ' ₹',
-      description: 'Price at which you sell each unit',
-      tooltip: 'The price you charge customers for each unit of your product or service',
-      required: true
-    },
-    {
-      id: 'variableCosts',
-      label: 'Variable Cost per Unit',
-      type: 'range' as const,
-      value: 60,
-      min: 1,
-      max: 5000,
-      step: 1,
-      unit: ' ₹',
-      description: 'Cost per unit that varies with production',
-      tooltip: 'Costs that change with production volume (materials, labor, etc.)',
-      required: true
-    }
-  ];
-
-  const features = [
-    {
-      name: 'Instant Calculation',
-      description: 'Get break-even results instantly as you adjust values',
-      icon: <Calculator className="h-5 w-5" />
-    },
-    {
-      name: 'Mobile Optimized',
-      description: 'Works perfectly on all devices and screen sizes',
-      icon: <Smartphone className="h-5 w-5" />
-    },
-    {
-      name: 'No Registration',
-      description: 'Use our calculator without any sign-up required',
-      icon: <Users className="h-5 w-5" />
-    },
-    {
-      name: 'Accurate Results',
-      description: 'Based on standard break-even analysis formulas',
-      icon: <CheckCircle className="h-5 w-5" />
-    },
-    {
-      name: 'Free to Use',
-      description: 'Completely free calculator with no hidden charges',
-      icon: <DollarSign className="h-5 w-5" />
-    },
-    {
-      name: '2025 Updated',
-      description: 'Latest business analysis tools for 2025',
-      icon: <Clock className="h-5 w-5" />
-    }
-  ];
-
-  const faqs = [
-    {
-      question: 'What is break-even analysis?',
-      answer: 'Break-even analysis is a financial calculation that determines the point at which your business\'s total revenue equals its total costs. At this point, you neither make a profit nor incur a loss. It helps you understand how many units you need to sell to cover your costs.'
-    },
-    {
-      question: 'What are fixed costs?',
-      answer: 'Fixed costs are expenses that remain constant regardless of your production or sales volume. Examples include rent, salaries, insurance, and equipment depreciation. These costs must be paid even if you produce nothing.'
-    },
-    {
-      question: 'What are variable costs?',
-      answer: 'Variable costs change directly with your production or sales volume. Examples include raw materials, direct labor, packaging, and shipping costs. These costs increase as you produce more units.'
-    },
-    {
-      question: 'What is contribution margin?',
-      answer: 'Contribution margin is the amount of revenue remaining after deducting variable costs. It represents the amount available to cover fixed costs and contribute to profit. Higher contribution margins mean you need fewer sales to break even.'
-    },
-    {
-      question: 'What is margin of safety?',
-      answer: 'Margin of safety is the difference between your actual or expected sales and the break-even point. It shows how much sales can drop before you start losing money. A higher margin of safety indicates lower risk.'
-    },
-    {
-      question: 'How can I use break-even analysis for business decisions?',
-      answer: 'Break-even analysis helps you set pricing strategies, evaluate new products, plan production levels, and assess business viability. It\'s essential for budgeting, forecasting, and making informed business decisions.'
-    },
-    {
-      question: 'What factors can affect my break-even point?',
-      answer: 'Your break-even point can change due to fluctuations in fixed costs, variable costs, selling prices, market conditions, and competition. Regular analysis helps you adapt to changing business conditions.'
-    },
-    {
-      question: 'How accurate is this break-even calculator?',
-      answer: 'Our break-even calculator uses standard financial formulas and provides accurate projections. However, actual results may vary due to market conditions, cost fluctuations, and other business factors. Use this as a planning tool.'
-    }
-  ];
-
-  const relatedCalculators = [
-    {
-      id: 'profit-margin-calculator',
-      name: 'Profit Margin Calculator',
-      description: 'Calculate profit margins and pricing',
-      url: '/calculators/profit-margin-calculator'
-    },
-    {
-      id: 'business-loan-calculator',
-      name: 'Business Loan Calculator',
-      description: 'Calculate business loan EMI',
-      url: '/calculators/business-loan-calculator'
-    },
-    {
-      id: 'inventory-turnover-calculator',
-      name: 'Inventory Turnover Calculator',
-      description: 'Calculate inventory turnover ratio',
-      url: '/calculators/inventory-turnover-calculator'
-    },
-    {
-      id: 'gst-calculator',
-      name: 'GST Calculator',
-      description: 'Calculate GST for business',
-      url: '/calculators/gst-calculator'
-    },
-    {
-      id: 'tds-calculator',
-      name: 'TDS Calculator',
-      description: 'Calculate TDS on business payments',
-      url: '/calculators/tds-calculator'
-    },
-    {
-      id: 'income-tax-calculator',
-      name: 'Income Tax Calculator',
-      description: 'Calculate business income tax',
-      url: '/calculators/income-tax-calculator'
-    }
-  ];
-
-  const tips = [
-    'Regularly review your break-even analysis as costs and prices change',
-    'Consider seasonal variations in your break-even calculations',
-    'Include all relevant costs in your analysis for accurate results',
-    'Use break-even analysis to evaluate new product launches',
-    'Monitor your margin of safety to assess business risk',
-    'Consider multiple scenarios in your break-even planning',
-    'Factor in market competition when setting prices',
-    'Keep detailed records of all costs for accurate calculations'
-  ];
-
-  const calculatorData = {
-    formula: 'Break-even Units = Fixed Costs / (Selling Price - Variable Cost per Unit)',
-    assumptions: [
-      'Fixed costs remain constant over the analysis period',
-      'Variable costs per unit remain constant',
-      'Selling price remains constant',
-      'All units produced are sold',
-      'No changes in production efficiency'
-    ],
-    limitations: [
-      'Actual costs and prices may fluctuate',
-      'Market conditions may affect sales volume',
-      'Production efficiency may vary',
-      'Seasonal variations not considered',
-      'Results are for planning purposes only'
-    ],
-    lastUpdated: 'January 2025'
-  };
-
+    // Calculate monthly profit/loss
+    const totalRevenue = monthlyUnits * sellingPricePerUnit;
+    const totalVariableCosts = monthlyUnits * variableCostPerUnit;
+    const profit = totalRevenue - totalVariableCosts - fixedCosts;
+    setMonthlyProfit(profit);
+    
+    // Calculate margin of safety
+    const mos = ((monthlyUnits - breakEvenPoint) / monthlyUnits) * 100;
+    setMarginOfSafety(mos);
+  }, [fixedCosts, variableCostPerUnit, sellingPricePerUnit, monthlyUnits]);
+  
   return (
-    <EnhancedCalculator
-      id="break-even-calculator"
-      name="Break Even Calculator"
-      description="Calculate your break-even point with our free online break-even calculator. Determine how many units you need to sell to cover your costs and start making a profit."
-      category="Business Calculators"
-      seoTitle="Break Even Calculator 2025 - Calculate Break Even Point Online | Free Calculator India"
-      seoDescription="Calculate your break-even point instantly with our free break-even calculator. Determine units needed to cover costs and start making profit. No registration required. Updated for 2025."
-      focusKeyword="break even calculator"
-      relatedKeywords={[
-        'break even calculator',
-        'break even analysis',
-        'break even point calculator',
-        'business break even calculator',
-        'break even calculator India',
-        'break even calculator online',
-        'free break even calculator',
-        'break even calculator 2025'
-      ]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="space-y-6">
+        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+          <TrendingUp className="w-5 h-5 mr-2 text-[--primary-600]" />
+          Cost & Price Details
+        </h2>
+        
+        <div className="space-y-4">
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="fixed-costs" className="text-sm font-medium text-neutral-700">
+                Monthly Fixed Costs (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(fixedCosts)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="fixed-costs"
+              min="10000" 
+              max="1000000" 
+              step="10000" 
+              value={fixedCosts} 
+              onChange={(e) => setFixedCosts(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="variable-cost" className="text-sm font-medium text-neutral-700">
+                Variable Cost per Unit (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(variableCostPerUnit)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="variable-cost"
+              min="1" 
+              max={sellingPricePerUnit * 0.9} 
+              step="1" 
+              value={variableCostPerUnit} 
+              onChange={(e) => setVariableCostPerUnit(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="selling-price" className="text-sm font-medium text-neutral-700">
+                Selling Price per Unit (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(sellingPricePerUnit)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="selling-price"
+              min={variableCostPerUnit * 1.1} 
+              max="1000" 
+              step="1" 
+              value={sellingPricePerUnit} 
+              onChange={(e) => setSellingPricePerUnit(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="monthly-units" className="text-sm font-medium text-neutral-700">
+                Expected Monthly Units
+              </label>
+              <span className="text-sm text-neutral-500">
+                {monthlyUnits.toLocaleString()} units
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="monthly-units"
+              min="100" 
+              max="10000" 
+              step="100" 
+              value={monthlyUnits} 
+              onChange={(e) => setMonthlyUnits(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+        </div>
+        
+        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
+          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Break-even Analysis</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Break-even Units</p>
+              <p className="text-xl font-bold text-neutral-900">
+                {Math.ceil(breakEvenUnits).toLocaleString()} units
+              </p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Break-even Revenue</p>
+              <p className="text-xl font-bold text-neutral-900">{formatCurrency(breakEvenRevenue)}</p>
+            </div>
+          </div>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Monthly Profit/Loss</p>
+              <p className={`text-xl font-bold ${monthlyProfit >= 0 ? 'text-[--success-600]' : 'text-[--error-600]'}`}>
+                {formatCurrency(monthlyProfit)}
+              </p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Margin of Safety</p>
+              <p className={`text-xl font-bold ${marginOfSafety >= 0 ? 'text-[--success-600]' : 'text-[--error-600]'}`}>
+                {marginOfSafety.toFixed(1)}%
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+            <PieChart className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Cost Structure
+          </h2>
+          <div className="mt-4 h-64">
+            <ResultChart 
+              data={[
+                { name: 'Fixed Costs', value: fixedCosts, color: '#3b82f6' },
+                { name: 'Variable Costs', value: monthlyUnits * variableCostPerUnit, color: '#f59e0b' },
+                { 
+                  name: monthlyProfit >= 0 ? 'Profit' : 'Loss',
+                  value: Math.abs(monthlyProfit),
+                  color: monthlyProfit >= 0 ? '#22c55e' : '#ef4444'
+                }
+              ]}
+              centerText={`${formatCurrency(monthlyUnits * sellingPricePerUnit)}\nRevenue`}
+            />
+          </div>
+        </div>
+        
+        <div className="bg-neutral-50 p-6 rounded-lg">
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
+            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Analysis Details
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Unit Economics</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <div className="flex justify-between">
+                  <span>Contribution Margin per Unit</span>
+                  <span className="font-medium">
+                    {formatCurrency(sellingPricePerUnit - variableCostPerUnit)}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Contribution Margin Ratio</span>
+                  <span className="font-medium">
+                    {((sellingPricePerUnit - variableCostPerUnit) / sellingPricePerUnit * 100).toFixed(1)}%
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Monthly Analysis</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <div className="flex justify-between">
+                  <span>Total Revenue</span>
+                  <span className="font-medium">
+                    {formatCurrency(monthlyUnits * sellingPricePerUnit)}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Total Variable Costs</span>
+                  <span className="font-medium">
+                    {formatCurrency(monthlyUnits * variableCostPerUnit)}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Fixed Costs</span>
+                  <span className="font-medium">{formatCurrency(fixedCosts)}</span>
+                </div>
+                <div className="flex justify-between border-t border-neutral-200 pt-2 mt-2">
+                  <span>Net Profit/Loss</span>
+                  <span className={`font-medium ${monthlyProfit >= 0 ? 'text-[--success-600]' : 'text-[--error-600]'}`}>
+                    {formatCurrency(monthlyProfit)}
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-[--accent-50] rounded-lg">
+              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Key Insights</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
+                <li>
+                  {monthlyUnits >= breakEvenUnits
+                    ? `Operating ${((monthlyUnits / breakEvenUnits - 1) * 100).toFixed(1)}% above break-even`
+                    : `Need ${((breakEvenUnits - monthlyUnits) / breakEvenUnits * 100).toFixed(1)}% more units to break even`
+                  }
+                </li>
+                <li>Each unit contributes {formatCurrency(sellingPricePerUnit - variableCostPerUnit)} to fixed costs</li>
+                <li>
+                  {marginOfSafety >= 0
+                    ? `Can sustain a ${marginOfSafety.toFixed(1)}% drop in sales`
+                    : 'Currently operating below break-even point'
+                  }
+                </li>
+                <li>Fixed costs represent {((fixedCosts / (monthlyUnits * sellingPricePerUnit)) * 100).toFixed(1)}% of revenue</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

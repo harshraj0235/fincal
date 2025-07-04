@@ -1,276 +1,262 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target
-} from 'lucide-react';
-import { calculateSIPReturns } from '../utils/calculatorUtils';
+import React, { useState, useEffect } from 'react';
+import { formatCurrency, calculateSIPReturns } from '../utils/calculatorUtils';
+import { Sliders, Calculator, ArrowRight, TrendingUp } from 'lucide-react';
+import { ResultChart } from '../components/ResultChart';
 
 export const SipCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const monthlyInvestment = values.monthlyInvestment as number;
-    const expectedReturn = values.expectedReturn as number;
-    const timePeriod = values.timePeriod as number;
-    
+  const [monthlyInvestment, setMonthlyInvestment] = useState<number>(5000);
+  const [expectedReturn, setExpectedReturn] = useState<number>(12);
+  const [timePeriod, setTimePeriod] = useState<number>(10);
+  const [investedAmount, setInvestedAmount] = useState<number>(0);
+  const [estimatedReturns, setEstimatedReturns] = useState<number>(0);
+  const [totalValue, setTotalValue] = useState<number>(0);
+  const [yearlyBreakup, setYearlyBreakup] = useState<Array<{year: number; investment: number; value: number}>>([]);
+  
+  // Manual input states
+  const [manualMonthlyInvestment, setManualMonthlyInvestment] = useState<string>(monthlyInvestment.toString());
+  const [manualExpectedReturn, setManualExpectedReturn] = useState<string>(expectedReturn.toString());
+  const [manualTimePeriod, setManualTimePeriod] = useState<string>(timePeriod.toString());
+  
+  useEffect(() => {
     const result = calculateSIPReturns(monthlyInvestment, expectedReturn, timePeriod);
-    
-    return [
-      {
-        label: 'Invested Amount',
-        value: result.investedAmount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Total amount you will invest'
-      },
-      {
-        label: 'Estimated Returns',
-        value: result.estimatedReturns,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Wealth gained through compounding'
-      },
-      {
-        label: 'Total Value',
-        value: result.totalValue,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Final corpus after investment period'
-      },
-      {
-        label: 'Monthly Investment',
-        value: monthlyInvestment,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Calculator className="h-4 w-4" />,
-        description: 'Amount invested every month'
-      },
-      {
-        label: 'Expected Return',
-        value: expectedReturn,
-        unit: '% p.a.',
-        color: 'warning' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Annual expected return rate'
-      },
-      {
-        label: 'Investment Period',
-        value: `${timePeriod} years`,
-        color: 'neutral' as const,
-        icon: <Calendar className="h-4 w-4" />,
-        description: 'Total investment duration'
-      }
-    ];
+    setInvestedAmount(result.investedAmount);
+    setEstimatedReturns(result.estimatedReturns);
+    setTotalValue(result.totalValue);
+    setYearlyBreakup(result.yearlyBreakup);
+  }, [monthlyInvestment, expectedReturn, timePeriod]);
+  
+  // Update slider values when manual inputs change
+  const handleManualMonthlyInvestmentChange = (value: string) => {
+    setManualMonthlyInvestment(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 500 && numValue <= 100000) {
+      setMonthlyInvestment(numValue);
+    }
   };
-
-  const inputs = [
-    {
-      id: 'monthlyInvestment',
-      label: 'Monthly Investment',
-      type: 'range' as const,
-      value: 5000,
-      min: 500,
-      max: 100000,
-      step: 500,
-      unit: ' ₹',
-      description: 'Amount you will invest every month',
-      tooltip: 'The fixed amount you plan to invest in SIP every month. Start with what you can afford and increase gradually.',
-      required: true
-    },
-    {
-      id: 'expectedReturn',
-      label: 'Expected Annual Return',
-      type: 'range' as const,
-      value: 12,
-      min: 1,
-      max: 30,
-      step: 0.1,
-      unit: '% p.a.',
-      description: 'Expected annual return on your investment',
-      tooltip: 'The annual return rate you expect from your investment. Historical equity returns have been around 12-15% p.a.',
-      required: true
-    },
-    {
-      id: 'timePeriod',
-      label: 'Investment Period',
-      type: 'range' as const,
-      value: 10,
-      min: 1,
-      max: 30,
-      step: 1,
-      unit: ' years',
-      description: 'Duration for which you will invest',
-      tooltip: 'The number of years you plan to continue your SIP. Longer periods benefit more from compounding.',
-      required: true
+  
+  const handleManualExpectedReturnChange = (value: string) => {
+    setManualExpectedReturn(value);
+    const numValue = parseFloat(value);
+    if (!isNaN(numValue) && numValue >= 1 && numValue <= 30) {
+      setExpectedReturn(numValue);
     }
-  ];
-
-  const features = [
-    {
-      name: 'Instant Calculation',
-      description: 'Get SIP results instantly as you adjust values',
-      icon: <Calculator className="h-5 w-5" />
-    },
-    {
-      name: 'Mobile Optimized',
-      description: 'Works perfectly on all devices and screen sizes',
-      icon: <Smartphone className="h-5 w-5" />
-    },
-    {
-      name: 'No Registration',
-      description: 'Use our calculator without any sign-up required',
-      icon: <Users className="h-5 w-5" />
-    },
-    {
-      name: 'Accurate Results',
-      description: 'Based on standard SIP calculation formulas',
-      icon: <CheckCircle className="h-5 w-5" />
-    },
-    {
-      name: 'Free to Use',
-      description: 'Completely free calculator with no hidden charges',
-      icon: <DollarSign className="h-5 w-5" />
-    },
-    {
-      name: '2025 Updated',
-      description: 'Latest rates and calculations for 2025',
-      icon: <Clock className="h-5 w-5" />
-    }
-  ];
-
-  const faqs = [
-    {
-      question: 'What is SIP and how does it work?',
-      answer: 'SIP (Systematic Investment Plan) is a method of investing a fixed amount regularly in mutual funds. It allows you to invest small amounts periodically, benefiting from rupee cost averaging and the power of compounding. You can start with as little as ₹500 per month.'
-    },
-    {
-      question: 'How is SIP return calculated?',
-      answer: 'SIP returns are calculated using the compound interest formula. The calculator considers your monthly investment, expected annual return rate, and investment period to compute the total corpus. The formula accounts for the fact that each monthly investment has a different time period for compounding.'
-    },
-    {
-      question: 'What is the difference between SIP and lump sum investment?',
-      answer: 'In SIP, you invest a fixed amount regularly (monthly), while in lump sum, you invest the entire amount at once. SIP helps in rupee cost averaging, reducing the impact of market volatility, and is more suitable for regular income earners.'
-    },
-    {
-      question: 'What is a realistic expected return for SIP investments?',
-      answer: 'Historical data shows that equity mutual funds have delivered 12-15% annual returns over long periods. However, returns can vary based on market conditions, fund performance, and economic factors. Conservative estimates suggest 8-12% for balanced funds and 12-15% for equity funds.'
-    },
-    {
-      question: 'Can I stop or modify my SIP anytime?',
-      answer: 'Yes, SIPs are flexible. You can pause, stop, increase, or decrease your monthly investment amount anytime. However, consistency is key to achieving your financial goals. Consider the long-term benefits before making frequent changes.'
-    },
-    {
-      question: 'How does compounding work in SIP?',
-      answer: 'Compounding in SIP means your returns earn returns over time. Each monthly investment compounds for a different period - the first investment compounds for the entire period, while the last investment compounds for just one month. This creates a snowball effect on your wealth.'
-    },
-    {
-      question: 'What are the tax implications of SIP investments?',
-      answer: 'SIP investments in equity funds are subject to capital gains tax. Short-term gains (less than 1 year) are taxed at 15%, while long-term gains (more than 1 year) are taxed at 10% above ₹1 lakh. For debt funds, gains are added to your income and taxed as per your slab.'
-    },
-    {
-      question: 'How accurate is this SIP calculator?',
-      answer: 'Our SIP calculator uses standard mathematical formulas and provides accurate projections. However, actual returns may vary due to market fluctuations, fund performance, and economic conditions. Use this as a planning tool and review your investments regularly.'
-    }
-  ];
-
-  const relatedCalculators = [
-    {
-      id: 'lump-sum-calculator',
-      name: 'Lump Sum Calculator',
-      description: 'Calculate returns on one-time investments',
-      url: '/calculators/lump-sum-calculator'
-    },
-    {
-      id: 'step-up-sip-calculator',
-      name: 'Step Up SIP Calculator',
-      description: 'Calculate returns with increasing monthly investments',
-      url: '/calculators/step-up-sip-calculator'
-    },
-    {
-      id: 'mutual-fund-returns-calculator',
-      name: 'Mutual Fund Returns Calculator',
-      description: 'Calculate returns on existing mutual fund investments',
-      url: '/calculators/mutual-fund-returns-calculator'
-    },
-    {
-      id: 'financial-goal-calculator',
-      name: 'Financial Goal Calculator',
-      description: 'Calculate SIP needed to achieve your financial goals',
-      url: '/calculators/financial-goal-calculator'
-    },
-    {
-      id: 'inflation-adjusted-sip-calculator',
-      name: 'Inflation Adjusted SIP Calculator',
-      description: 'Calculate real returns after adjusting for inflation',
-      url: '/calculators/inflation-adjusted-sip-calculator'
-    },
-    {
-      id: 'mutual-fund-cost-calculator',
-      name: 'Mutual Fund Cost Calculator',
-      description: 'Calculate total costs and charges in mutual funds',
-      url: '/calculators/mutual-fund-cost-calculator'
-    }
-  ];
-
-  const tips = [
-    'Start your SIP early to benefit from the power of compounding',
-    'Choose a monthly investment amount you can sustain for the long term',
-    'Don\'t stop SIP during market downturns - it\'s the best time to buy more units',
-    'Review and increase your SIP amount annually with salary hikes',
-    'Diversify across different fund categories for better risk management',
-    'Consider your risk appetite and investment horizon while choosing funds',
-    'Use SIP for long-term goals like retirement, children\'s education, or buying a house',
-    'Don\'t panic during market volatility - SIP works best over 5-10 years'
-  ];
-
-  const calculatorData = {
-    formula: 'FV = P × (((1 + r)^n - 1) / r) × (1 + r)',
-    assumptions: [
-      'Monthly investments are made on the same date every month',
-      'Expected return rate remains constant throughout the investment period',
-      'No exit loads or transaction charges are considered',
-      'Returns are compounded monthly',
-      'No tax implications are included in calculations'
-    ],
-    limitations: [
-      'Actual returns may vary due to market fluctuations and fund performance',
-      'Inflation impact on purchasing power is not considered',
-      'Tax implications on returns are not included',
-      'Fund management fees and expense ratios are not deducted',
-      'Results are for planning purposes only'
-    ],
-    lastUpdated: 'January 2025'
   };
-
+  
+  const handleManualTimePeriodChange = (value: string) => {
+    setManualTimePeriod(value);
+    const numValue = parseInt(value);
+    if (!isNaN(numValue) && numValue >= 1 && numValue <= 30) {
+      setTimePeriod(numValue);
+    }
+  };
+  
+  // Update manual input values when sliders change
+  useEffect(() => {
+    setManualMonthlyInvestment(monthlyInvestment.toString());
+    setManualExpectedReturn(expectedReturn.toString());
+    setManualTimePeriod(timePeriod.toString());
+  }, [monthlyInvestment, expectedReturn, timePeriod]);
+  
   return (
-    <EnhancedCalculator
-      id="sip-calculator"
-      name="SIP Calculator"
-      description="Calculate your Systematic Investment Plan (SIP) returns with our free online SIP calculator. Plan your mutual fund investments and see the power of compounding."
-      category="Investment Calculators"
-      seoTitle="SIP Calculator 2025 - Calculate SIP Returns Online | Free SIP Calculator India"
-      seoDescription="Calculate your SIP returns instantly with our free SIP calculator. Plan your mutual fund investments, see the power of compounding, and achieve your financial goals. No registration required. Updated for 2025."
-      focusKeyword="SIP calculator"
-      relatedKeywords={[
-        'SIP calculator',
-        'mutual fund SIP calculator',
-        'SIP return calculator',
-        'SIP investment calculator',
-        'SIP calculator India',
-        'SIP calculator online',
-        'free SIP calculator',
-        'SIP calculator 2025'
-      ]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="space-y-6">
+        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+          <Sliders className="w-5 h-5 mr-2 text-primary-600" />
+          SIP Details
+        </h2>
+        
+        <div className="space-y-4">
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="monthly-investment" className="text-sm font-medium text-neutral-700">
+                Monthly Investment (₹)
+              </label>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {formatCurrency(monthlyInvestment)}
+                </span>
+                <input 
+                  type="number"
+                  value={manualMonthlyInvestment}
+                  onChange={(e) => handleManualMonthlyInvestmentChange(e.target.value)}
+                  className="w-24 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="500"
+                  max="100000"
+                  step="500"
+                />
+              </div>
+            </div>
+            <input 
+              type="range" 
+              id="monthly-investment"
+              min="500" 
+              max="100000" 
+              step="500" 
+              value={monthlyInvestment} 
+              onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
+              className="slider"
+            />
+            <div className="flex justify-between mt-1 text-xs text-neutral-500">
+              <span>₹500</span>
+              <span>₹1,00,000</span>
+            </div>
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="expected-return" className="text-sm font-medium text-neutral-700">
+                Expected Annual Return (%)
+              </label>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {expectedReturn.toFixed(2)}%
+                </span>
+                <input 
+                  type="number"
+                  value={manualExpectedReturn}
+                  onChange={(e) => handleManualExpectedReturnChange(e.target.value)}
+                  className="w-20 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="1"
+                  max="30"
+                  step="0.1"
+                />
+              </div>
+            </div>
+            <input 
+              type="range" 
+              id="expected-return"
+              min="1" 
+              max="30" 
+              step="0.1" 
+              value={expectedReturn} 
+              onChange={(e) => setExpectedReturn(Number(e.target.value))}
+              className="slider"
+            />
+            <div className="flex justify-between mt-1 text-xs text-neutral-500">
+              <span>1%</span>
+              <span>30%</span>
+            </div>
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="time-period" className="text-sm font-medium text-neutral-700">
+                Time Period (Years)
+              </label>
+              <div className="flex items-center">
+                <span className="text-sm text-neutral-500 mr-2">
+                  {timePeriod} years
+                </span>
+                <input 
+                  type="number"
+                  value={manualTimePeriod}
+                  onChange={(e) => handleManualTimePeriodChange(e.target.value)}
+                  className="w-20 px-2 py-1 text-sm border border-neutral-300 rounded-md"
+                  min="1"
+                  max="30"
+                  step="1"
+                />
+              </div>
+            </div>
+            <input 
+              type="range" 
+              id="time-period"
+              min="1" 
+              max="30" 
+              step="1" 
+              value={timePeriod} 
+              onChange={(e) => setTimePeriod(Number(e.target.value))}
+              className="slider"
+            />
+            <div className="flex justify-between mt-1 text-xs text-neutral-500">
+              <span>1 Year</span>
+              <span>30 Years</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-8 p-6 bg-primary-50 rounded-lg border border-primary-100">
+          <h3 className="text-lg font-semibold text-primary-900 mb-4">Investment Summary</h3>
+          <div className="flex items-center justify-between">
+            <div className="text-center">
+              <p className="text-sm text-neutral-500 mb-1">Invested Amount</p>
+              <p className="text-xl font-bold text-neutral-900">{formatCurrency(investedAmount)}</p>
+            </div>
+            <ArrowRight className="h-5 w-5 text-neutral-400" />
+            <div className="text-center">
+              <p className="text-sm text-neutral-500 mb-1">Est. Returns</p>
+              <p className="text-xl font-bold text-accent-600">{formatCurrency(estimatedReturns)}</p>
+            </div>
+            <ArrowRight className="h-5 w-5 text-neutral-400" />
+            <div className="text-center">
+              <p className="text-sm text-neutral-500 mb-1">Total Value</p>
+              <p className="text-xl font-bold text-success-600">{formatCurrency(totalValue)}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="p-4 bg-accent-50 rounded-lg border border-accent-100">
+          <div className="flex items-start">
+            <Calculator className="h-5 w-5 text-accent-600 mt-0.5 mr-3" />
+            <div>
+              <p className="text-sm text-accent-800">
+                Your monthly investment of <span className="font-semibold">{formatCurrency(monthlyInvestment)}</span> for <span className="font-semibold">{timePeriod} years</span> can grow to <span className="font-semibold">{formatCurrency(totalValue)}</span> at <span className="font-semibold">{expectedReturn}% p.a.</span> expected rate of return.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+            <TrendingUp className="w-5 h-5 mr-2 text-primary-600" />
+            Investment Breakup
+          </h2>
+          <div className="mt-4 h-64">
+            <ResultChart 
+              data={[
+                { name: 'Invested Amount', value: investedAmount, color: '#3b82f6' },
+                { name: 'Est. Returns', value: estimatedReturns, color: '#f59e0b' }
+              ]}
+              centerText={`${formatCurrency(totalValue)}\nTotal Value`}
+            />
+          </div>
+        </div>
+        
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+            <Calculator className="w-5 h-5 mr-2 text-primary-600" />
+            Year-on-Year Growth
+          </h2>
+          <div className="mt-4 overflow-auto max-h-72 rounded-lg border border-neutral-200">
+            <table className="min-w-full divide-y divide-neutral-200">
+              <thead className="bg-neutral-50">
+                <tr>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Year</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Invested Amount (₹)</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Value (₹)</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">Growth</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-neutral-200">
+                {yearlyBreakup.map((year, index) => (
+                  <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-neutral-50'}>
+                    <td className="px-4 py-2 text-sm text-neutral-900">{year.year}</td>
+                    <td className="px-4 py-2 text-sm text-neutral-900">{formatCurrency(year.investment)}</td>
+                    <td className="px-4 py-2 text-sm text-neutral-900">{formatCurrency(year.value)}</td>
+                    <td className="px-4 py-2 text-sm">
+                      <span className="px-2 py-1 text-xs rounded-full bg-success-100 text-success-800">
+                        {((year.value / year.investment - 1) * 100).toFixed(2)}%
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

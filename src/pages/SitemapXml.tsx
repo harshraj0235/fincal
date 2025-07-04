@@ -21,9 +21,9 @@ export const SitemapXml: React.FC = () => {
     changeFrequency: 'weekly' as const,
     priority: 0.7
   }));
-  
-  // Static pages
-  const staticPages = [
+      
+      // Static pages
+      const staticPages = [
     {
       url: 'https://moneycal.in/',
       lastModified: new Date().toISOString(),
@@ -129,7 +129,7 @@ ${allUrls.map(url => `  <url>
   useEffect(() => {
     document.title = 'Sitemap - FinanceGurus';
   }, []);
-
+  
   return (
     <>
       <SEOHelmet

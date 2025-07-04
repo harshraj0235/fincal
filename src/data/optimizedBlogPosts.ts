@@ -382,7 +382,7 @@ export const optimizedBlogPosts: EnhancedBlogPost[] = [
     
     keywords: [
       "home loan EMI calculator 2025",
-      "home loan interest rates 2025",
+      "home loan interest rates 2025", 
       "home loan comparison calculator",
       "EMI calculation home loan",
       "best home loan rates India",
