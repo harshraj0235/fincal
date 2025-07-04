@@ -1,523 +1,532 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { getCalculatorById, getAllCalculators } from '../data/calculatorData';
-import { ArrowLeft, Calculator, TrendingUp, DollarSign, Shield, Clock, Users, Star, Share2, Bookmark, ExternalLink } from 'lucide-react';
-import EnhancedSEO from '../components/EnhancedSEO';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeft, Share2, Bookmark, Info } from 'lucide-react';
+import { getCalculatorById } from '../data/calculatorData';
+import SEOHelmet from '../components/SEOHelmet';
 
-interface CalculatorFAQ {
-  question: string;
-  answer: string;
+// Import all calculators
+import { EmiCalculator } from '../calculators/EmiCalculator';
+import { SipCalculator } from '../calculators/SipCalculator';
+import { PpfCalculator } from '../calculators/PpfCalculator';
+import { GstCalculator } from '../calculators/GstCalculator';
+import { IncomeTaxCalculator } from '../calculators/IncomeTaxCalculator';
+import { HomeLoanCalculator } from '../calculators/HomeLoanCalculator';
+import { PersonalLoanCalculator } from '../calculators/PersonalLoanCalculator';
+import { CarLoanCalculator } from '../calculators/CarLoanCalculator';
+import { BusinessLoanCalculator } from '../calculators/BusinessLoanCalculator';
+import { LoanComparisonCalculator } from '../calculators/LoanComparisonCalculator';
+import { LoanPrepaymentCalculator } from '../calculators/LoanPrepaymentCalculator';
+import { LoanRefinanceCalculator } from '../calculators/LoanRefinanceCalculator';
+import { LoanAffordabilityCalculator } from '../calculators/LoanAffordabilityCalculator';
+import { LoanTenureConverter } from '../calculators/LoanTenureConverter';
+import { CreditCardEmiCalculator } from '../calculators/CreditCardEmiCalculator';
+import { GoldLoanEmiCalculator } from '../calculators/GoldLoanEmiCalculator';
+import { MutualFundReturnsCalculator } from '../calculators/MutualFundReturnsCalculator';
+import { MutualFundCostCalculator } from '../calculators/MutualFundCostCalculator';
+import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalculator';
+import { NpsCalculator } from '../calculators/NpsCalculator';
+import { NpsTier2Calculator } from '../calculators/NpsTier2Calculator';
+import { PostOfficeCalculator } from '../calculators/PostOfficeCalculator';
+import { GoldInvestmentCalculator } from '../calculators/GoldInvestmentCalculator';
+import { CompoundInterestCalculator } from '../calculators/CompoundInterestCalculator';
+import { SimpleInterestCalculator } from '../calculators/SimpleInterestCalculator';
+import { FutureValueCalculator } from '../calculators/FutureValueCalculator';
+import { CapitalGainsTaxCalculator } from '../calculators/CapitalGainsTaxCalculator';
+import { TdsCalculator } from '../calculators/TdsCalculator';
+import { Section80CCalculator } from '../calculators/Section80CCalculator';
+import { Section80DCalculator } from '../calculators/Section80DCalculator';
+import { HraExemptionCalculator } from '../calculators/HraExemptionCalculator';
+import { RetirementCalculator } from '../calculators/RetirementCalculator';
+import { PensionCalculator } from '../calculators/PensionCalculator';
+import { HumanLifeValueCalculator } from '../calculators/HumanLifeValueCalculator';
+import { BreakEvenCalculator } from '../calculators/BreakEvenCalculator';
+import { ProfitMarginCalculator } from '../calculators/ProfitMarginCalculator';
+import { InventoryTurnoverCalculator } from '../calculators/InventoryTurnoverCalculator';
+import { DebtEquityCalculator } from '../calculators/DebtEquityCalculator';
+import { RentVsBuyCalculator } from '../calculators/RentVsBuyCalculator';
+import { PropertyInvestmentCalculator } from '../calculators/PropertyInvestmentCalculator';
+import { StampDutyCalculator } from '../calculators/StampDutyCalculator';
+import { PropertyRegistrationCalculator } from '../calculators/PropertyRegistrationCalculator';
+import { TermInsuranceCalculator } from '../calculators/TermInsuranceCalculator';
+import { HealthInsuranceCalculator } from '../calculators/HealthInsuranceCalculator';
+import { LifeInsuranceCalculator } from '../calculators/LifeInsuranceCalculator';
+import { BudgetCalculator } from '../calculators/BudgetCalculator';
+import { EmergencyFundCalculator } from '../calculators/EmergencyFundCalculator';
+import { FinancialGoalCalculator } from '../calculators/FinancialGoalCalculator';
+import { NetWorthCalculator } from '../calculators/NetWorthCalculator';
+import { InflationCalculator } from '../calculators/InflationCalculator';
+import { InterestRateConverter } from '../calculators/InterestRateConverter';
+import { GratuityCalculator } from '../calculators/GratuityCalculator';
+import { TaxSavingInvestmentCalculator } from '../calculators/TaxSavingInvestmentCalculator';
+import { BrokerageCalculator } from '../calculators/BrokerageCalculator';
+import { MarginTradingCalculator } from '../calculators/MarginTradingCalculator';
+import { CommodityMarginCalculator } from '../calculators/CommodityMarginCalculator';
+import { ForexMarginCalculator } from '../calculators/ForexMarginCalculator';
+import { ForexPipCalculator } from '../calculators/ForexPipCalculator';
+import { SavingsAccountCalculator } from '../calculators/SavingsAccountCalculator';
+import { CurrencyConverter } from '../calculators/CurrencyConverter';
+
+// Import Math & Education Calculators
+import LcmHcfCalculator from '../calculators/LcmHcfCalculator';
+
+// Import FinTech & Payments calculators
+import { StepUpSipCalculator } from '../calculators/StepUpSipCalculator';
+import { InflationAdjustedSipCalculator } from '../calculators/InflationAdjustedSipCalculator';
+import { RentVsBuyAdvancedCalculator } from '../calculators/RentVsBuyAdvancedCalculator';
+import { GoldEtfVsPhysicalCalculator } from '../calculators/GoldEtfVsPhysicalCalculator';
+import { IncomeTaxRegimeComparisonCalculator } from '../calculators/IncomeTaxRegimeComparisonCalculator';
+import { CapitalGainsTaxAdvancedCalculator } from '../calculators/CapitalGainsTaxAdvancedCalculator';
+import { GstSellerCalculator } from '../calculators/GstSellerCalculator';
+import { VirtualCardIssuer } from '../calculators/VirtualCardIssuer';
+import { BnplCalculator } from '../calculators/BnplCalculator';
+import { P2PLendingCalculator } from '../calculators/P2PLendingCalculator';
+
+// Import Investments & Wealth Management calculators
+import { MutualFundOverlapChecker } from '../calculators/MutualFundOverlapChecker';
+import { XirrTracker } from '../calculators/XirrTracker';
+import { DividendYieldCalculator } from '../calculators/DividendYieldCalculator';
+import { AssetAllocationPlanner } from '../calculators/AssetAllocationPlanner';
+import { RiskAppetiteAssessment } from '../calculators/RiskAppetiteAssessment';
+import { CrowdfundingInvestmentPortal } from '../calculators/CrowdfundingInvestmentPortal';
+import { DigitalWealthRoboAdvisor } from '../calculators/DigitalWealthRoboAdvisor';
+import { StableReturnFixedIncomeAggregator } from '../calculators/StableReturnFixedIncomeAggregator';
+import { CryptoTaxEstimator } from '../calculators/CryptoTaxEstimator';
+import { NriStockInvestmentDashboard } from '../calculators/NriStockInvestmentDashboard';
+
+// Import Banking & Finance Tools
+import { BankIfscFinder } from '../calculators/BankIfscFinder';
+import { AtmLocator } from '../calculators/AtmLocator';
+import { BankHolidayCalendar } from '../calculators/BankHolidayCalendar';
+import { InterestRatesComparison } from '../calculators/InterestRatesComparison';
+import { UpiFailureTroubleshooter } from '../calculators/UpiFailureTroubleshooter';
+import { AdvanceTaxCalculator } from '../calculators/AdvanceTaxCalculator';
+import { CreditCardFinder } from '../calculators/CreditCardFinder';
+import { BankChargesAnalyzer } from '../calculators/BankChargesAnalyzer';
+
+interface CalculatorPageProps {
+  calculatorId: string;
 }
 
-interface CalculatorFeatures {
-  name: string;
-  description: string;
-  icon: React.ReactNode;
-}
-
-export const CalculatorPage: React.FC = () => {
-  const { calculatorId } = useParams<{ calculatorId: string }>();
-  const [activeTab, setActiveTab] = useState<'calculator' | 'guide' | 'faq' | 'related'>('calculator');
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  
-  const calculator = getCalculatorById(calculatorId || '');
-  const allCalculators = getAllCalculators();
-  
-  // Enhanced FAQ data for SEO
-  const enhancedFAQs: CalculatorFAQ[] = [
-    {
-      question: `What is ${calculator?.name} and how does it work?`,
-      answer: `${calculator?.description}. Our ${calculator?.name} uses industry-standard formulas and algorithms to provide accurate calculations for Indian financial scenarios. Simply enter your details and get instant results.`
-    },
-    {
-      question: `Is the ${calculator?.name} free to use?`,
-      answer: `Yes, our ${calculator?.name} is completely free to use. No registration, subscription, or hidden charges. You can use it unlimited times for your financial planning needs.`
-    },
-    {
-      question: `How accurate are the calculations from ${calculator?.name}?`,
-      answer: `Our ${calculator?.name} uses precise mathematical formulas and is regularly updated with current market rates and regulations. However, results should be used for planning purposes and verified with financial institutions.`
-    },
-    {
-      question: `Can I use ${calculator?.name} on mobile devices?`,
-      answer: `Absolutely! Our ${calculator?.name} is fully responsive and optimized for all devices including smartphones, tablets, and desktop computers. You can access it anywhere, anytime.`
-    },
-    {
-      question: `What information do I need to use ${calculator?.name}?`,
-      answer: `The required information varies by calculator type. Generally, you'll need basic financial details like amounts, time periods, interest rates, and other relevant parameters. Each calculator has clear input fields with helpful tooltips.`
-    }
-  ];
-  
-  // Enhanced features for the calculator
-  const calculatorFeatures: CalculatorFeatures[] = [
-    {
-      name: "Instant Calculations",
-      description: "Get results in real-time with our optimized algorithms",
-      icon: <Calculator className="h-6 w-6" />
-    },
-    {
-      name: "Mobile Optimized",
-      description: "Works perfectly on all devices and screen sizes",
-      icon: <TrendingUp className="h-6 w-6" />
-    },
-    {
-      name: "Free to Use",
-      description: "No registration, no subscription, no hidden charges",
-      icon: <DollarSign className="h-6 w-6" />
-    },
-    {
-      name: "Secure & Private",
-      description: "Your data stays on your device, never stored on servers",
-      icon: <Shield className="h-6 w-6" />
-    },
-    {
-      name: "Regular Updates",
-      description: "Updated with latest rates, regulations, and market data",
-      icon: <Clock className="h-6 w-6" />
-    },
-    {
-      name: "Trusted by Millions",
-      description: "Used by over 10 lakh+ users across India",
-      icon: <Users className="h-6 w-6" />
-    }
-  ];
-  
-  // Get related calculators
-  const relatedCalculators = calculator?.relatedCalculators 
-    ? allCalculators.filter(calc => calculator.relatedCalculators?.includes(calc.id)).slice(0, 6)
-    : allCalculators.slice(0, 6);
-  
-  // Generate breadcrumbs
-  const breadcrumbs = [
-    { name: "Home", url: "/" },
-    { name: "Calculators", url: "/calculators" },
-    { name: calculator?.category || "Financial Calculators", url: `/category/${calculator?.category?.toLowerCase().replace(/\s+/g, '-')}` },
-    { name: calculator?.name || "Calculator", url: `/calculators/${calculatorId}` }
-  ];
-  
-  // SEO optimization data
-  const seoData = {
-    pageType: 'calculator' as const,
-    title: `${calculator?.name} 2025 - Free Online Calculator | Calculate ${calculator?.name} Instantly`,
-    description: `${calculator?.description} Use our free online ${calculator?.name} to get accurate calculations instantly. No registration required. Trusted by millions of Indian users.`,
-    url: `/calculators/${calculatorId}`,
-    keywords: [
-      `${calculator?.name} calculator`,
-      `${calculator?.name} 2025`,
-      `free ${calculator?.name}`,
-      `online ${calculator?.name}`,
-      `${calculator?.name} India`,
-      ...(calculator?.keywords || [])
-    ],
-    focusKeyword: `${calculator?.name} calculator`,
-    relatedKeywords: [
-      `${calculator?.name} calculation`,
-      `${calculator?.name} formula`,
-      `${calculator?.name} online tool`,
-      `${calculator?.name} free calculator`,
-      `${calculator?.name} India calculator`
-    ],
-    publishedDate: "2024-01-01T00:00:00Z",
-    lastModified: new Date().toISOString(),
-    readingTime: 5,
-    author: {
-      name: "FinanceGurus Team",
-      title: "Financial Calculator Experts",
-      bio: "Our team of financial experts has developed comprehensive calculators to help Indian users make informed financial decisions.",
-      image: "/authors/financegurus-team.jpg",
-      url: "https://moneycal.in/about-us"
-    },
-    image: {
-      url: `https://moneycal.in/images/${calculatorId}-calculator.jpg`,
-      alt: `${calculator?.name} Calculator - Free Online Tool`,
-      width: 1200,
-      height: 630
-    },
-    category: calculator?.category,
-    tags: calculator?.keywords || [],
-    discoverOptimized: {
-      highQualityImages: true,
-      originalReporting: true,
-      expertiseSignals: true,
-      freshContent: true,
-      trendingTopics: ["Financial Planning 2025", "Online Calculators", "Financial Tools"]
-    },
-    calculatorData: {
-      name: calculator?.name || "Financial Calculator",
-      description: calculator?.description || "Free online financial calculator",
-      category: calculator?.category || "Financial Calculators",
-      features: calculatorFeatures.map(f => f.name),
-      faqData: enhancedFAQs,
-      relatedCalculators: relatedCalculators.map(calc => calc.name)
-    },
-    breadcrumbs,
-    preloadResources: [
-      { href: "/src/components/Calculator.tsx", as: "script", type: "module" },
-      { href: "/src/index.css", as: "style" }
-    ]
-  };
+export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) => {
+  const navigate = useNavigate();
+  const calculator = getCalculatorById(calculatorId);
   
   if (!calculator) {
+    return (
+      <>
+        <SEOHelmet
+          title="Calculator Not Found - FinanceGurus Directory"
+          description="The requested financial calculator could not be found. Browse our comprehensive collection of 50+ financial calculators for Indian users."
+          url={`/calculators/${calculatorId}`}
+          noIndex={true}
+        />
+      <div className="text-center py-16">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-4">Calculator Not Found</h2>
+        <p className="text-lg text-neutral-600 mb-8">
+          The calculator you're looking for doesn't exist or may have been moved.
+        </p>
+        <button 
+          onClick={() => navigate('/')}
+          className="btn btn-primary"
+        >
+          Go to Home
+        </button>
+      </div>
+      </>
+    );
+  }
+
+  // Generate structured data for the calculator
+  const calculatorStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": calculator.name,
+    "description": calculator.description,
+    "url": `https://financegurus.directory/calculators/${calculatorId}`,
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "FinanceGurus Directory",
+      "url": "https://financegurus.directory"
+    },
+    "featureList": [
+      "Free online calculator",
+      "Accurate calculations",
+      "Indian financial context",
+      "Mobile responsive",
+      "No registration required"
+    ],
+    "screenshot": "https://financegurus.directory/images/calculator-screenshot.jpg",
+    "softwareVersion": "1.0",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  };
+
+  // Generate keywords based on calculator type
+  const generateKeywords = () => {
+    const baseKeywords = [
+      calculator.name.toLowerCase(),
+      'calculator',
+      'financial calculator',
+      'india',
+      'free calculator',
+      'online calculator'
+    ];
+    
+    // Add category-specific keywords
+    if (calculator.category.includes('loan')) {
+      baseKeywords.push('loan calculator', 'emi calculator', 'loan emi', 'loan repayment');
+    }
+    if (calculator.category.includes('tax')) {
+      baseKeywords.push('tax calculator', 'income tax', 'tax planning', 'tax saving');
+    }
+    if (calculator.category.includes('investment')) {
+      baseKeywords.push('investment calculator', 'investment planning', 'returns calculator');
+    }
+    
+    return baseKeywords.join(', ');
+  };
+
+  // Generate description
+  const generateDescription = () => {
+    return `${calculator.name} - Free online ${calculator.name.toLowerCase()} for Indian users. ${calculator.description} Get accurate calculations instantly. No registration required.`;
+  };
+  
+  const renderCalculator = () => {
+    switch (calculatorId) {
+      // Loan Calculators
+      case 'emi-calculator':
+        return <EmiCalculator />;
+      case 'home-loan-calculator':
+        return <HomeLoanCalculator />;
+      case 'personal-loan-calculator':
+        return <PersonalLoanCalculator />;
+      case 'car-loan-calculator':
+        return <CarLoanCalculator />;
+      case 'business-loan-calculator':
+        return <BusinessLoanCalculator />;
+      case 'loan-comparison-calculator':
+        return <LoanComparisonCalculator />;
+      case 'loan-prepayment-calculator':
+        return <LoanPrepaymentCalculator />;
+      case 'loan-refinance-calculator':
+        return <LoanRefinanceCalculator />;
+      case 'loan-affordability-calculator':
+        return <LoanAffordabilityCalculator />;
+      case 'loan-tenure-converter':
+        return <LoanTenureConverter />;
+      case 'credit-card-emi-calculator':
+        return <CreditCardEmiCalculator />;
+      case 'gold-loan-emi-calculator':
+        return <GoldLoanEmiCalculator />;  
+        
+      // Investment Calculators
+      case 'sip-calculator':
+        return <SipCalculator />;
+      case 'mutual-fund-returns-calculator':
+        return <MutualFundReturnsCalculator />;
+      case 'mutual-fund-cost-calculator':
+        return <MutualFundCostCalculator />;
+      case 'ppf-calculator':
+        return <PpfCalculator />;
+      case 'sukanya-samriddhi-calculator':
+        return <SukanyaSamriddhiCalculator />;
+      case 'nps-calculator':
+        return <NpsCalculator />;
+      case 'nps-tier2-calculator':
+        return <NpsTier2Calculator />;
+      case 'post-office-calculator':
+        return <PostOfficeCalculator />;
+      case 'gold-investment-calculator':
+        return <GoldInvestmentCalculator />;
+      case 'compound-interest-calculator':
+        return <CompoundInterestCalculator />;
+      case 'simple-interest-calculator':
+        return <SimpleInterestCalculator />;
+      case 'future-value-calculator':
+        return <FutureValueCalculator />;
+        
+      // Tax Calculators
+      case 'income-tax-calculator':
+        return <IncomeTaxCalculator />;
+      case 'gst-calculator':
+        return <GstCalculator />;
+      case 'tds-calculator':
+        return <TdsCalculator />;
+      case 'capital-gains-tax-calculator':
+        return <CapitalGainsTaxCalculator />;
+      case 'tax-saving-investment-calculator':
+        return <TaxSavingInvestmentCalculator />;
+      case 'section-80c-calculator':
+        return <Section80CCalculator />;
+      case 'section-80d-calculator':
+        return <Section80DCalculator />;
+      case 'hra-exemption-calculator':
+        return <HraExemptionCalculator />;
+      case 'advance-tax-calculator':
+        return <AdvanceTaxCalculator />;
+        
+      // Retirement Calculators
+      case 'retirement-calculator':
+        return <RetirementCalculator />;
+      case 'pension-calculator':
+        return <PensionCalculator />;
+      case 'human-life-value-calculator':
+        return <HumanLifeValueCalculator />;
+        
+      // Business Calculators
+      case 'break-even-calculator':
+        return <BreakEvenCalculator />;
+      case 'profit-margin-calculator':
+        return <ProfitMarginCalculator />;
+      case 'inventory-turnover-calculator':
+        return <InventoryTurnoverCalculator />;
+      case 'debt-equity-calculator':
+        return <DebtEquityCalculator />;
+        
+      // Property Calculators
+      case 'rent-vs-buy-calculator':
+        return <RentVsBuyCalculator />;
+      case 'property-investment-calculator':
+        return <PropertyInvestmentCalculator />;
+      case 'stamp-duty-calculator':
+        return <StampDutyCalculator />;
+      case 'property-registration-calculator':
+        return <PropertyRegistrationCalculator />;
+        
+      // Insurance Calculators
+      case 'term-insurance-calculator':
+        return <TermInsuranceCalculator />;
+      case 'health-insurance-calculator':
+        return <HealthInsuranceCalculator />;
+      case 'life-insurance-calculator':
+        return <LifeInsuranceCalculator />;
+        
+      // Personal Finance
+      case 'budget-calculator':
+        return <BudgetCalculator />;
+      case 'emergency-fund-calculator':
+        return <EmergencyFundCalculator />;
+      case 'financial-goal-calculator':
+        return <FinancialGoalCalculator />;
+      case 'net-worth-calculator':
+        return <NetWorthCalculator />;
+      case 'inflation-calculator':
+        return <InflationCalculator />;
+      case 'interest-rate-converter':
+        return <InterestRateConverter />;
+      case 'gratuity-calculator':
+        return <GratuityCalculator />;
+        
+      // Investment & Trading
+      case 'brokerage-calculator':
+        return <BrokerageCalculator />;
+      case 'margin-trading-calculator':
+        return <MarginTradingCalculator />;
+      case 'commodity-margin-calculator':
+        return <CommodityMarginCalculator />;
+      case 'forex-margin-calculator':
+        return <ForexMarginCalculator />;
+      case 'forex-pip-calculator':
+        return <ForexPipCalculator />;
+        
+      // Banking & Finance Tools
+      case 'savings-account-calculator':
+        return <SavingsAccountCalculator />;
+      case 'currency-converter':
+        return <CurrencyConverter />;
+      case 'bank-ifsc-finder':
+        return <BankIfscFinder />;
+      case 'atm-locator':
+        return <AtmLocator />;
+      case 'bank-holiday-calendar':
+        return <BankHolidayCalendar />;
+      case 'interest-rates-comparison':
+        return <InterestRatesComparison />;
+      case 'upi-failure-troubleshooter':
+        return <UpiFailureTroubleshooter />;
+      case 'credit-card-finder':
+        return <CreditCardFinder />;
+      case 'bank-charges-analyzer':
+        return <BankChargesAnalyzer />;
+        
+      // FinTech & Payments Calculators
+      case 'step-up-sip-calculator':
+        return <StepUpSipCalculator />;
+      case 'inflation-adjusted-sip-calculator':
+        return <InflationAdjustedSipCalculator />;
+      case 'rent-vs-buy-advanced-calculator':
+        return <RentVsBuyAdvancedCalculator />;
+      case 'gold-etf-vs-physical-calculator':
+        return <GoldEtfVsPhysicalCalculator />;
+      case 'income-tax-regime-comparison-calculator':
+        return <IncomeTaxRegimeComparisonCalculator />;
+      case 'capital-gains-tax-advanced-calculator':
+        return <CapitalGainsTaxAdvancedCalculator />;
+      case 'gst-seller-calculator':
+        return <GstSellerCalculator />;
+      case 'virtual-card-issuer':
+        return <VirtualCardIssuer />;
+      case 'bnpl-calculator':
+        return <BnplCalculator />;
+      case 'p2p-lending-calculator':
+        return <P2PLendingCalculator />;
+        
+      // Investments & Wealth Management Calculators
+      case 'mutual-fund-overlap-checker':
+        return <MutualFundOverlapChecker />;
+      case 'xirr-tracker':
+        return <XirrTracker />;
+      case 'dividend-yield-calculator':
+        return <DividendYieldCalculator />;
+      case 'asset-allocation-planner':
+        return <AssetAllocationPlanner />;
+      case 'risk-appetite-assessment':
+        return <RiskAppetiteAssessment />;
+      case 'crowdfunding-investment-portal':
+        return <CrowdfundingInvestmentPortal />;
+      case 'digital-wealth-robo-advisor':
+        return <DigitalWealthRoboAdvisor />;
+      case 'stable-return-fixed-income-aggregator':
+        return <StableReturnFixedIncomeAggregator />;
+      case 'crypto-tax-estimator':
+        return <CryptoTaxEstimator />;
+      case 'nri-stock-investment-dashboard':
+        return <NriStockInvestmentDashboard />;
+        
+      // Math & Education Calculators
+      case 'lcm-hcf-calculator':
+        return <LcmHcfCalculator />;
+        
+      default:
         return (
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <h1 className="text-2xl font-bold text-neutral-900 mb-4">Calculator Not Found</h1>
-        <p className="text-neutral-600 mb-8">The calculator you're looking for doesn't exist or may have been moved.</p>
-        <Link to="/" className="btn btn-primary">
-          Back to Home
-        </Link>
+          <div className="text-center py-8">
+            <p className="text-neutral-600">
+              This calculator is coming soon. Please check back later!
+            </p>
           </div>
         );
     }
+  };
   
   return (
     <>
-      <EnhancedSEO {...seoData} />
+      <SEOHelmet
+        title={`${calculator.name} - Free Online Calculator | FinanceGurus Directory`}
+        description={generateDescription()}
+        keywords={generateKeywords()}
+        url={`/calculators/${calculatorId}`}
+        image="/images/calculator-default.jpg"
+        type="website"
+        structuredData={calculatorStructuredData}
+        tags={[calculator.name, 'financial calculator', 'india', 'free calculator']}
+        alternateLanguages={{
+          'en-IN': `https://financegurus.directory/calculators/${calculatorId}`,
+          'hi-IN': `https://financegurus.directory/hi/calculators/${calculatorId}`
+        }}
+      />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center space-x-2 text-sm text-neutral-600 mb-8">
-          {breadcrumbs.map((crumb, index) => (
-            <React.Fragment key={crumb.name}>
-              {index > 0 && <span>/</span>}
-              <Link 
-                to={crumb.url} 
-                className="hover:text-primary-600 transition-colors"
-              >
-                {crumb.name}
-              </Link>
-            </React.Fragment>
-          ))}
-        </nav>
-        
-        {/* Header Section */}
+    <div className="max-w-4xl mx-auto">
       <div className="mb-8">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-2">
-                {calculator.name} 2025
-              </h1>
-              <p className="text-lg text-neutral-600 mb-4">
-                {calculator.description}
-              </p>
-              <div className="flex items-center space-x-4 text-sm text-neutral-500">
-                <div className="flex items-center">
-                  <Users className="h-4 w-4 mr-1" />
-                  <span>10L+ users</span>
-                </div>
-                <div className="flex items-center">
-                  <Star className="h-4 w-4 mr-1 text-yellow-500" />
-                  <span>4.8/5 rating</span>
-                </div>
-                <div className="flex items-center">
-                  <Clock className="h-4 w-4 mr-1" />
-                  <span>Updated 2025</span>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2">
         <button 
-                onClick={() => setIsBookmarked(!isBookmarked)}
-                className={`p-2 rounded-lg transition-colors ${
-                  isBookmarked 
-                    ? 'bg-primary-100 text-primary-600' 
-                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
-                }`}
-              >
-                <Bookmark className="h-5 w-5" />
-              </button>
-              <button className="p-2 rounded-lg bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors">
-                <Share2 className="h-5 w-5" />
-        </button>
-            </div>
-      </div>
-      
-          {/* Feature Highlights */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-            {calculatorFeatures.map((feature, index) => (
-              <div key={index} className="text-center p-4 bg-neutral-50 rounded-lg">
-                <div className="flex justify-center mb-2 text-primary-600">
-                  {feature.icon}
-                </div>
-                <h3 className="text-sm font-medium text-neutral-900 mb-1">
-                  {feature.name}
-                </h3>
-                <p className="text-xs text-neutral-600">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-      </div>
-      
-        {/* Tab Navigation */}
-        <div className="border-b border-neutral-200 mb-8">
-          <nav className="flex space-x-8">
-            {[
-              { id: 'calculator', label: 'Calculator', icon: <Calculator className="h-4 w-4" /> },
-              { id: 'guide', label: 'How to Use', icon: <TrendingUp className="h-4 w-4" /> },
-              { id: 'faq', label: 'FAQ', icon: <Shield className="h-4 w-4" /> },
-              { id: 'related', label: 'Related Tools', icon: <ExternalLink className="h-4 w-4" /> }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
-                className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
-                  activeTab === tab.id
-                    ? 'border-primary-500 text-primary-600'
-                    : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'
-                }`}
-              >
-                {tab.icon}
-                <span>{tab.label}</span>
-        </button>
-            ))}
-          </nav>
-        </div>
-        
-        {/* Tab Content */}
-        <div className="min-h-[600px]">
-          {activeTab === 'calculator' && (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
-                <div className="bg-white rounded-xl shadow-lg p-6 border border-neutral-200">
-                  <h2 className="text-xl font-semibold text-neutral-900 mb-6">
-                    {calculator.name}
-                  </h2>
-                  
-                  {/* Calculator Form Placeholder */}
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-neutral-700 mb-2">
-                          Principal Amount (₹)
-                        </label>
-                        <input
-                          type="number"
-                          placeholder="Enter amount"
-                          className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-neutral-700 mb-2">
-                          Interest Rate (%)
-                        </label>
-                        <input
-                          type="number"
-                          placeholder="Enter rate"
-                          className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-2">
-                        Time Period
-                      </label>
-                      <div className="grid grid-cols-2 gap-4">
-                        <input
-                          type="number"
-                          placeholder="Years"
-                          className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        />
-                        <input
-                          type="number"
-                          placeholder="Months"
-                          className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        />
-                      </div>
-                    </div>
-                    
-                    <button className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-primary-700 transition-colors">
-                      Calculate {calculator.name}
+          onClick={() => navigate(-1)} 
+          className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4 mr-1" />
+          <span>Back</span>
         </button>
       </div>
       
-                  {/* Results Section */}
-                  <div className="mt-8 p-6 bg-primary-50 rounded-lg">
-                    <h3 className="text-lg font-semibold text-primary-900 mb-4">
-                      Calculation Results
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="text-center p-4 bg-white rounded-lg">
-                        <div className="text-2xl font-bold text-primary-600">₹0</div>
-                        <div className="text-sm text-neutral-600">Total Amount</div>
-                      </div>
-                      <div className="text-center p-4 bg-white rounded-lg">
-                        <div className="text-2xl font-bold text-primary-600">₹0</div>
-                        <div className="text-sm text-neutral-600">Interest Earned</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="lg:col-span-1">
-                <div className="sticky top-24 space-y-6">
-                  {/* Quick Links */}
-                  <div className="bg-white rounded-xl shadow-md p-6 border border-neutral-200">
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-4">
-                      Quick Links
-                    </h3>
-                    <div className="space-y-3">
-                      <Link 
-                        to="/blog"
-                        className="flex items-center text-neutral-600 hover:text-primary-600 transition-colors"
-                      >
-                        <ArrowLeft className="h-4 w-4 mr-2" />
-                        <span>Financial Blog</span>
-                      </Link>
-                      <Link 
-                        to="/calculators"
-                        className="flex items-center text-neutral-600 hover:text-primary-600 transition-colors"
-                      >
-                        <Calculator className="h-4 w-4 mr-2" />
-                        <span>All Calculators</span>
-                      </Link>
-                      <Link 
-                        to="/contact-us"
-                        className="flex items-center text-neutral-600 hover:text-primary-600 transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        <span>Contact Support</span>
-                      </Link>
-                    </div>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-neutral-900 mb-3">{calculator.name}</h1>
+        <p className="text-lg text-neutral-600">{calculator.description}</p>
       </div>
       
-                  {/* Related Calculators */}
-                  <div className="bg-white rounded-xl shadow-md p-6 border border-neutral-200">
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-4">
-                      Related Calculators
-                    </h3>
-                    <div className="space-y-3">
-                      {relatedCalculators.slice(0, 4).map(calc => (
-                        <Link
-                          key={calc.id}
-                          to={`/calculators/${calc.id}`}
-                          className="block p-3 rounded-lg border border-neutral-200 hover:border-primary-300 hover:bg-primary-50 transition-colors"
-                        >
-                          <div className="font-medium text-neutral-900 mb-1">
-                            {calc.name}
-                          </div>
-                          <div className="text-sm text-neutral-600">
-                            {calc.category}
-            </div>
-                        </Link>
-                      ))}
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <div className="flex justify-end space-x-3 mb-6">
+        <button className="btn btn-outline flex items-center">
+          <Share2 className="h-4 w-4 mr-2" />
+          <span>Share</span>
+        </button>
+        <button className="btn btn-outline flex items-center">
+          <Bookmark className="h-4 w-4 mr-2" />
+          <span>Save</span>
+        </button>
+      </div>
       
-          {activeTab === 'guide' && (
-            <div className="prose prose-lg max-w-none">
-              <h2>How to Use {calculator.name}</h2>
-              <p>
-                Our {calculator.name} is designed to be simple and user-friendly. Follow these steps to get accurate calculations:
-              </p>
-              
-              <h3>Step 1: Enter Basic Information</h3>
-              <p>
-                Start by entering the basic information required for the calculation. This typically includes:
-              </p>
-              <ul>
-                <li>Principal amount or investment amount</li>
-                <li>Interest rate or expected return</li>
-                <li>Time period (years/months)</li>
-                <li>Any additional parameters specific to this calculator</li>
-              </ul>
-              
-              <h3>Step 2: Review and Calculate</h3>
-              <p>
-                Double-check your inputs to ensure accuracy. Click the "Calculate" button to get instant results.
-              </p>
-              
-              <h3>Step 3: Understand Results</h3>
-              <p>
-                The calculator will display detailed results including:
-              </p>
-              <ul>
-                <li>Total amount or final value</li>
-                <li>Interest earned or returns generated</li>
-                <li>Breakdown of calculations</li>
-                <li>Additional insights and recommendations</li>
-              </ul>
-              
-              <h3>Important Notes</h3>
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <Shield className="h-5 w-5 text-yellow-400" />
-                  </div>
-                  <div className="ml-3">
-                    <p className="text-sm text-yellow-800">
-                      <strong>Disclaimer:</strong> Results are for planning purposes only. Please verify calculations with your financial advisor or institution before making any financial decisions.
-                    </p>
-                  </div>
-                </div>
-          </div>
-        </div>
-      )}
+      <div className="card mb-8">
+        {renderCalculator()}
+      </div>
       
-          {activeTab === 'faq' && (
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-neutral-900 mb-6">
-                Frequently Asked Questions
-              </h2>
-              
-              {enhancedFAQs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-md p-6 border border-neutral-200">
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-neutral-700 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
+      {calculator.info && (
+        <div className="bg-[--primary-50] border border-[--primary-200] rounded-lg p-6 mb-8">
+          <div className="flex items-start">
+            <div className="flex-shrink-0 mt-0.5">
+              <Info className="h-5 w-5 text-[--primary-600]" />
             </div>
-          )}
-          
-          {activeTab === 'related' && (
-        <div>
-              <h2 className="text-2xl font-bold text-neutral-900 mb-6">
-                Related Financial Tools
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {relatedCalculators.map(calc => (
-                  <Link
-                    key={calc.id}
-                    to={`/calculators/${calc.id}`}
-                    className="block bg-white rounded-xl shadow-md p-6 border border-neutral-200 hover:shadow-lg hover:border-primary-300 transition-all duration-200"
-                  >
-                    <div className="flex items-center mb-4">
-                      <div className="h-10 w-10 bg-primary-100 rounded-lg flex items-center justify-center mr-3">
-                        <Calculator className="h-5 w-5 text-primary-600" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-neutral-900">
-                          {calc.name}
-                        </h3>
-                        <p className="text-sm text-neutral-600">
-                          {calc.category}
-                        </p>
-                      </div>
-                    </div>
-                    <p className="text-sm text-neutral-700 mb-4">
-                      {calc.keywords.slice(0, 3).join(', ')}
-                    </p>
-                    <div className="flex items-center text-sm text-primary-600">
-                      <span>Try Calculator</span>
-                      <ExternalLink className="h-4 w-4 ml-1" />
-                    </div>
-                  </Link>
+            <div className="ml-3">
+              <h3 className="text-lg font-semibold text-[--primary-900] mb-2">About this calculator</h3>
+              <div className="text-[--primary-800] space-y-2">
+                {calculator.info.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
                 ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
+      
+      {calculator.faqs && (
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {calculator.faqs.map((faq, index) => (
+              <details key={index} className="group bg-white border border-neutral-200 rounded-lg">
+                <summary className="flex justify-between items-center cursor-pointer py-4 px-6">
+                  <h3 className="text-lg font-medium text-neutral-900">{faq.question}</h3>
+                  <span className="transition-transform duration-300 group-open:rotate-180">
+                    <svg className="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </span>
+                </summary>
+                <div className="px-6 pb-4 text-neutral-600">{faq.answer}</div>
+              </details>
+            ))}
+          </div>
         </div>
+      )}
+      
+      {calculator.relatedCalculators && (
+        <div>
+          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Related Calculators</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {calculator.relatedCalculators.map(id => {
+              const related = getCalculatorById(id);
+              if (!related) return null;
+              
+              return (
+                <button 
+                  key={id}
+                  onClick={() => navigate(`/calculators/${id}`)}
+                  className="bg-white border border-neutral-200 rounded-lg p-4 hover:shadow-md transition-shadow text-left"
+                >
+                  <h3 className="text-lg font-medium text-neutral-900 mb-1">{related.name}</h3>
+                  <p className="text-sm text-neutral-600 line-clamp-2">{related.description}</p>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
     </>
   );
 };
+
+export default CalculatorPage;
