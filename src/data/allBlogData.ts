@@ -1,6 +1,6 @@
 import { blogPosts as blogPosts0 } from './blogData';
 import { blogPosts as blogPosts1 } from './blogData1';
-import { blogPosts as blogPosts2 } from './blogdata2';
+import { blogPosts as blogPosts2 } from './blogData2';
 
 export const allBlogPosts = [...blogPosts0, ...blogPosts1,...blogPosts2];
 
