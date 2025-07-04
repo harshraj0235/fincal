@@ -1,3 +1,3 @@
-import ChequeBounceChargesCalculator from '../calculators/ChequeBounceChargesCalculator';
+import { ChequeBounceChargesCalculator } from '../calculators/ChequeBounceChargesCalculator';
 
 export default ChequeBounceChargesCalculator; 

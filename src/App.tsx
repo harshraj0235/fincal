@@ -18,7 +18,7 @@ import { SitemapXml } from './pages/SitemapXml';
 import { BankingKnowledge } from './pages/BankingKnowledge';
 import { CategoryPage } from './pages/CategoryPage';
 import { CreditCardFinder } from './calculators/CreditCardFinder';
-import BankLockerFinder from './calculators/BankLockerFinder';
+import { BankLockerFinder } from './calculators/BankLockerFinder';
 import MissedCallBankingDirectory from './pages/MissedCallBankingDirectory';
 
 // Excel Tool blog section
@@ -60,13 +60,13 @@ import BankTools from './pages/BankTools';
 import FinancePostPage from './pages/FinancePostPage';
 
 // Math & Education Calculators
-import LcmHcfCalculator from './calculators/LcmHcfCalculator';
+import { LcmHcfCalculator } from './calculators/LcmHcfCalculator';
 
 // Excel Tool Hub
 import ExcelToolHub from './pages/ExcelToolHub';
 
-import SeniorCitizenSavingsPlanner from './calculators/SeniorCitizenSavingsPlanner';
-import MSMELoanEligibilityChecker from './calculators/MSMELoanEligibilityChecker';
+import { SeniorCitizenSavingsPlanner } from './calculators/SeniorCitizenSavingsPlanner';
+import { MSMELoanEligibilityChecker } from './calculators/MSMELoanEligibilityChecker';
 
 function App() {
   useEffect(() => {
