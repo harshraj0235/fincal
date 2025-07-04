@@ -1,4 +1,7 @@
-export const blogPosts = [
+import type { BlogPost } from './blogData';
+
+export const blogPosts: BlogPost[] = [
+
   {
     id: 559,
     title: "Senior Citizen Fixed Deposit Strategy: Calculate Higher Interest Rate Benefits and Tax Optimization",
