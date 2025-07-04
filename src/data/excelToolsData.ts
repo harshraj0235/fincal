@@ -17,6 +17,9 @@ export interface ExcelTool {
   seoDescription: string;
   longTailKeywords: string[];
   internalLinks: string[];
+  competitionLevel: 'Low' | 'Medium' | 'High';
+  estimatedTraffic: 'Low' | 'Medium' | 'High';
+  relatedTools: string[];
 }
 
 // Export functions for data access
@@ -61,6 +64,31 @@ export function getRelatedTools(toolId: string, count: number = 5): ExcelTool[] 
     ))
     .slice(0, count);
 }
+
+// Export a placeholder excelTools array
+export const excelTools: ExcelTool[] = [
+  {
+    id: '1',
+    slug: 'personal-budget-template',
+    title: 'Personal Budget Template',
+    description: 'Track your income and expenses with this easy-to-use Excel template.',
+    keywords: ['budget', 'personal finance', 'expenses', 'income'],
+    category: 'Personal Finance',
+    difficulty: 'Beginner',
+    downloadLink: '#',
+    features: ['Income tracking', 'Expense tracking', 'Monthly summary'],
+    useCases: ['Personal budgeting', 'Expense management'],
+    targetAudience: ['Individuals', 'Students'],
+    seoTitle: 'Personal Budget Template - Free Excel Download',
+    seoDescription: 'Download a free personal budget Excel template to manage your finances easily.',
+    longTailKeywords: ['personal budget excel', 'free budget template'],
+    internalLinks: [],
+    competitionLevel: 'Low',
+    estimatedTraffic: 'High',
+    relatedTools: [],
+  },
+  // Add more tools as needed
+];
 
 // Add 30 more unique, SEO-optimized Excel tools below, following the same structure and best practices.
 // Each tool should have unique content, cover a new use case, and be focused on low-competition transactional keywords.
