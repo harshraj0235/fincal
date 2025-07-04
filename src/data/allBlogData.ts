@@ -2,7 +2,7 @@ import { blogPosts as blogPosts0 } from './blogData';
 import { blogPosts as blogPosts1 } from './blogData1';
 import { blogPosts as blogPosts2 } from './blogData2';
 
-export const allBlogPosts = [...blogPosts0, ...blogPosts1,...blogPosts2];
+export const allBlogPosts = [...blogPosts0, ...blogPosts1, ...blogPosts2];
 
 // If you have getBlogPostBySlug and getRelatedPosts, re-export or adjust them to use allBlogPosts:
 export function getBlogPostBySlug(slug: string) {
