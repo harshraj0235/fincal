@@ -65,6 +65,9 @@ import LcmHcfCalculator from './calculators/LcmHcfCalculator';
 // Excel Tool Hub
 import ExcelToolHub from './pages/ExcelToolHub';
 
+import SeniorCitizenSavingsPlanner from './calculators/SeniorCitizenSavingsPlanner';
+import MSMELoanEligibilityChecker from './calculators/MSMELoanEligibilityChecker';
+
 function App() {
   useEffect(() => {
     // AdSense script
@@ -174,6 +177,9 @@ function App() {
 
               {/* Excel Tool Hub route */}
               <Route path="/excel-tool" element={<ExcelToolHub />} />
+
+              <Route path="/calculators/senior-citizen-savings-planner" element={<SeniorCitizenSavingsPlanner />} />
+              <Route path="/calculators/msme-loan-eligibility" element={<MSMELoanEligibilityChecker />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
