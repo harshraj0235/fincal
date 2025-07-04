@@ -68,6 +68,7 @@ export interface EnhancedBlogPost {
     originalReporting: boolean;
     expertiseSignals: boolean;
     freshContent: boolean;
+    trendingTopics?: string[];
   };
 }
 
@@ -101,7 +102,7 @@ export const optimizedBlogPosts: EnhancedBlogPost[] = [
     ],
     
     // SEO Enhancement Fields
-    canonicalUrl: "https://yoursite.com/pm-kisan-yojana-2025-eligibility-benefits-status-check",
+    canonicalUrl: "https://moneycal.in/pm-kisan-yojana-2025-eligibility-benefits-status-check",
     focusKeyword: "PM Kisan Yojana 2025",
     relatedKeywords: [
       "PM Kisan scheme benefits",
@@ -125,26 +126,26 @@ export const optimizedBlogPosts: EnhancedBlogPost[] = [
       author: {
         "@type": "Person",
         name: "Dr. Rajesh Kumar",
-        url: "https://yoursite.com/authors/dr-rajesh-kumar"
+        url: "https://moneycal.in/authors/dr-rajesh-kumar"
       },
       publisher: {
         "@type": "Organization",
-        name: "Your Financial Site",
-        logo: "https://yoursite.com/logo.png"
+        name: "FinanceGurus",
+        logo: "https://moneycal.in/logo.png"
       },
       datePublished: "2025-01-15T10:00:00Z",
       dateModified: "2025-01-15T10:00:00Z",
-      mainEntityOfPage: "https://yoursite.com/pm-kisan-yojana-2025-eligibility-benefits-status-check"
+      mainEntityOfPage: "https://moneycal.in/pm-kisan-yojana-2025-eligibility-benefits-status-check"
     },
     
     // Social media optimization
     openGraph: {
       title: "PM Kisan Yojana 2025: ₹6000 Annual Benefit Guide | Eligibility & Status Check",
       description: "Complete PM Kisan Yojana 2025 guide: Check eligibility, benefits, status online. Expert tips for farmers to get ₹6000 annual financial support.",
-      image: "https://yoursite.com/images/pm-kisan-yojana-2025-guide.jpg",
-      url: "https://yoursite.com/pm-kisan-yojana-2025-eligibility-benefits-status-check",
+      image: "https://moneycal.in/images/pm-kisan-yojana-2025-guide.jpg",
+      url: "https://moneycal.in/pm-kisan-yojana-2025-eligibility-benefits-status-check",
       type: "article",
-      siteName: "Your Financial Site"
+      siteName: "FinanceGurus"
     },
     
     // Google Discover optimization
@@ -152,7 +153,8 @@ export const optimizedBlogPosts: EnhancedBlogPost[] = [
       highQualityImages: true,     // 1200x675px minimum images
       originalReporting: true,     // Unique insights and analysis
       expertiseSignals: true,      // Author credentials and expertise
-      freshContent: true           // Updated with latest 2025 information
+      freshContent: true,          // Updated with latest 2025 information
+      trendingTopics: ["Union Budget 2025", "Farmer Welfare", "Agricultural Finance"]
     },
     
     content: [
@@ -203,164 +205,241 @@ export const optimizedBlogPosts: EnhancedBlogPost[] = [
       "mutual fund SIP calculator",
       "SIP investment planning",
       "systematic investment plan calculator",
-      "SIP returns calculation",
-      "monthly SIP amount calculator",
-      "best SIP calculator India"
+      "SIP returns calculator",
+      "mutual fund investment calculator",
+      "SIP wealth creation"
     ],
     
-    canonicalUrl: "https://yoursite.com/sip-calculator-mutual-fund-investment-planning-2025",
-    focusKeyword: "SIP calculator 2025",
+    canonicalUrl: "https://moneycal.in/sip-calculator-mutual-fund-investment-planning-2025",
+    focusKeyword: "SIP Calculator 2025",
     relatedKeywords: [
-      "SIP planning tool",
-      "mutual fund calculator",
-      "investment planning calculator", 
-      "SIP goal planning",
-      "monthly investment calculator",
-      "wealth creation through SIP"
+      "mutual fund investment 2025",
+      "SIP vs lump sum investment",
+      "best SIP mutual funds India",
+      "SIP investment strategy",
+      "mutual fund returns calculator",
+      "investment planning tools"
     ],
     
-    publishedDate: "2025-01-14T09:00:00Z",
-    lastModified: "2025-01-14T09:00:00Z",
-    readingTime: 10,
+    publishedDate: "2025-01-10T09:00:00Z",
+    lastModified: "2025-01-10T09:00:00Z",
+    readingTime: 12,
     
     schema: {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: "SIP Calculator 2025: Plan Your Mutual Fund Investment for Maximum Returns",
-      description: "Comprehensive guide to using SIP calculators for mutual fund investment planning, goal-based investing, and wealth creation strategies.",
+      headline: "SIP Calculator 2025: Plan Your Mutual Fund Investment for Maximum Returns | Step-by-Step Guide",
+      description: "Comprehensive guide to SIP calculator usage for mutual fund investment planning in 2025.",
       author: {
         "@type": "Person",
         name: "Priya Sharma",
-        url: "https://yoursite.com/authors/priya-sharma"
+        url: "https://moneycal.in/authors/priya-sharma"
       },
       publisher: {
         "@type": "Organization",
-        name: "Your Financial Site",
-        logo: "https://yoursite.com/logo.png"
+        name: "FinanceGurus",
+        logo: "https://moneycal.in/logo.png"
       },
-      datePublished: "2025-01-14T09:00:00Z",
-      dateModified: "2025-01-14T09:00:00Z",
-      mainEntityOfPage: "https://yoursite.com/sip-calculator-mutual-fund-investment-planning-2025"
+      datePublished: "2025-01-10T09:00:00Z",
+      dateModified: "2025-01-10T09:00:00Z",
+      mainEntityOfPage: "https://moneycal.in/sip-calculator-mutual-fund-investment-planning-2025"
     },
     
     openGraph: {
-      title: "SIP Calculator 2025: Mutual Fund Investment Planning Guide | Maximum Returns",
-      description: "Master SIP calculations, plan mutual fund investments, and achieve financial goals. Advanced SIP calculator with inflation adjustment and goal-based planning.",
-      image: "https://yoursite.com/images/sip-calculator-2025-guide.jpg",
-      url: "https://yoursite.com/sip-calculator-mutual-fund-investment-planning-2025",
+      title: "SIP Calculator 2025: Plan Your Mutual Fund Investment for Maximum Returns",
+      description: "Master SIP calculations for 2025. Use our advanced SIP calculator to plan your mutual fund investments and achieve financial goals.",
+      image: "https://moneycal.in/images/sip-calculator-2025-guide.jpg",
+      url: "https://moneycal.in/sip-calculator-mutual-fund-investment-planning-2025",
       type: "article",
-      siteName: "Your Financial Site"
+      siteName: "FinanceGurus"
     },
     
     discoverOptimized: {
       highQualityImages: true,
       originalReporting: true,
       expertiseSignals: true,
-      freshContent: true
+      freshContent: true,
+      trendingTopics: ["Mutual Fund Investment", "SIP Planning", "Wealth Creation 2025"]
     },
     
     content: [
       {
         type: 'heading',
         level: 1,
-        content: 'SIP Calculator 2025: Your Ultimate Guide to Mutual Fund Investment Planning'
+        content: 'SIP Calculator 2025: Your Complete Guide to Mutual Fund Investment Planning'
       },
       {
         type: 'paragraph',
-        content: 'Systematic Investment Plans (SIPs) have revolutionized how Indians invest in mutual funds. With over ₹15,000 crore monthly SIP flows in 2024, understanding how to use SIP calculators effectively is crucial for maximizing your investment returns. This comprehensive guide will help you master SIP calculations and plan your financial future with precision.'
-      },
-      {
-        type: 'heading',
-        level: 2,
-        content: '🎯 Why SIP Calculator is Essential for Your Investment Journey'
-      },
-      {
-        type: 'list',
-        items: [
-          'Accurate return projections based on historical data and expected returns',
-          'Goal-based investment planning for education, retirement, and wealth creation',
-          'Comparison of different SIP amounts and time horizons',
-          'Inflation adjustment for realistic financial planning',
-          'Tax-saving SIP calculations under Section 80C'
-        ]
+        content: 'Systematic Investment Plan (SIP) has emerged as the most popular investment strategy for Indian investors in 2025. With the right SIP calculator and planning tools, you can create substantial wealth over time. This comprehensive guide will help you understand how to use SIP calculators effectively for maximum returns.'
       }
     ]
   },
   
   {
-    id: "home-loan-emi-calculator-2025",
-    slug: "home-loan-emi-calculator-interest-rates-2025",
-    title: "Home Loan EMI Calculator 2025: Compare Interest Rates, Calculate EMI & Save ₹5 Lakhs | Complete Guide",
-    author: "Amit Verma",
-    authorTitle: "Home Loan Specialist & Real Estate Finance Expert",
-    authorImage: "/authors/amit-verma.jpg",
-    authorBio: "Amit Verma is a certified home loan specialist with 18+ years of experience in real estate finance. He has helped 25,000+ families secure affordable home loans and save crores in interest.",
+    id: "income-tax-calculator-2025-complete-guide",
+    slug: "income-tax-calculator-2025-old-vs-new-regime-comparison",
+    title: "Income Tax Calculator 2025: Old vs New Regime Comparison | Save ₹50,000+ in Taxes",
+    author: "CA Amit Patel",
+    authorTitle: "Chartered Accountant & Tax Planning Expert",
+    authorImage: "/authors/ca-amit-patel.jpg",
+    authorBio: "CA Amit Patel is a practicing Chartered Accountant with 15+ years of experience in tax planning and compliance. He has helped 20,000+ individuals optimize their tax liability.",
     
-    metaDescription: "Home Loan EMI Calculator 2025: Calculate accurate EMI, compare interest rates across 50+ banks, and learn prepayment strategies to save ₹5+ lakhs. Get expert guidance on home loan planning.",
+    metaDescription: "Income Tax Calculator 2025: Compare old vs new tax regime, calculate your tax liability, and save ₹50,000+ with expert tax planning strategies. Free online tax calculator for Indian taxpayers.",
     
-    excerpt: "Navigate home loan EMI calculations with confidence using our advanced 2025 calculator. Compare interest rates, optimize loan tenure, and discover proven strategies to reduce your EMI burden significantly.",
+    excerpt: "Master income tax calculation for 2025 with our comprehensive guide. Compare old vs new tax regime, understand deductions, and optimize your tax liability with expert strategies.",
     
-    categories: ["Home Loans", "Real Estate", "EMI Calculation", "Financial Planning"],
+    categories: ["Tax Planning", "Income Tax", "Financial Calculators", "Tax Optimization"],
     
     keywords: [
-      "home loan EMI calculator 2025",
-      "home loan interest rates 2025", 
-      "EMI calculation formula",
-      "home loan EMI reduction",
-      "best home loan rates India",
-      "home loan calculator with prepayment",
-      "home loan eligibility calculator"
+      "income tax calculator 2025",
+      "old vs new tax regime",
+      "income tax calculation India",
+      "tax planning 2025",
+      "tax saving strategies",
+      "income tax comparison calculator",
+      "tax optimization India"
     ],
     
-    canonicalUrl: "https://yoursite.com/home-loan-emi-calculator-interest-rates-2025",
-    focusKeyword: "home loan EMI calculator 2025",
+    canonicalUrl: "https://moneycal.in/income-tax-calculator-2025-old-vs-new-regime-comparison",
+    focusKeyword: "Income Tax Calculator 2025",
     relatedKeywords: [
-      "home loan calculator",
-      "EMI calculator online",
-      "home loan planning tool",
-      "mortgage calculator India",
-      "loan EMI calculation",
-      "housing loan calculator"
+      "tax regime comparison 2025",
+      "income tax slabs 2025",
+      "tax saving investments",
+      "section 80C deductions",
+      "tax planning calculator",
+      "income tax optimization"
     ],
     
-    publishedDate: "2025-01-13T11:00:00Z",
-    lastModified: "2025-01-13T11:00:00Z", 
-    readingTime: 12,
+    publishedDate: "2025-01-08T08:00:00Z",
+    lastModified: "2025-01-08T08:00:00Z",
+    readingTime: 15,
     
     schema: {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: "Home Loan EMI Calculator 2025: Compare Interest Rates, Calculate EMI & Save ₹5 Lakhs",
-      description: "Comprehensive guide to home loan EMI calculation, interest rate comparison, and strategies to reduce EMI burden and save money.",
+      headline: "Income Tax Calculator 2025: Old vs New Regime Comparison | Save ₹50,000+ in Taxes",
+      description: "Comprehensive guide to income tax calculation for 2025 with old vs new regime comparison.",
       author: {
         "@type": "Person",
-        name: "Amit Verma",
-        url: "https://yoursite.com/authors/amit-verma"
+        name: "CA Amit Patel",
+        url: "https://moneycal.in/authors/ca-amit-patel"
       },
       publisher: {
         "@type": "Organization",
-        name: "Your Financial Site",
-        logo: "https://yoursite.com/logo.png"
+        name: "FinanceGurus",
+        logo: "https://moneycal.in/logo.png"
       },
-      datePublished: "2025-01-13T11:00:00Z",
-      dateModified: "2025-01-13T11:00:00Z",
-      mainEntityOfPage: "https://yoursite.com/home-loan-emi-calculator-interest-rates-2025"
+      datePublished: "2025-01-08T08:00:00Z",
+      dateModified: "2025-01-08T08:00:00Z",
+      mainEntityOfPage: "https://moneycal.in/income-tax-calculator-2025-old-vs-new-regime-comparison"
     },
     
     openGraph: {
-      title: "Home Loan EMI Calculator 2025: Save ₹5 Lakhs with Smart Planning",
-      description: "Calculate home loan EMI, compare rates across 50+ banks, learn prepayment strategies. Expert guidance to reduce your EMI burden significantly.",
-      image: "https://yoursite.com/images/home-loan-emi-calculator-2025.jpg",
-      url: "https://yoursite.com/home-loan-emi-calculator-interest-rates-2025",
+      title: "Income Tax Calculator 2025: Old vs New Regime Comparison | Save ₹50,000+",
+      description: "Compare old vs new tax regime, calculate your tax liability, and save ₹50,000+ with expert tax planning strategies.",
+      image: "https://moneycal.in/images/income-tax-calculator-2025-guide.jpg",
+      url: "https://moneycal.in/income-tax-calculator-2025-old-vs-new-regime-comparison",
       type: "article",
-      siteName: "Your Financial Site"
+      siteName: "FinanceGurus"
     },
     
     discoverOptimized: {
       highQualityImages: true,
       originalReporting: true,
       expertiseSignals: true,
-      freshContent: true
+      freshContent: true,
+      trendingTopics: ["Income Tax 2025", "Tax Planning", "Union Budget 2025", "Tax Optimization"]
+    },
+    
+    content: [
+      {
+        type: 'heading',
+        level: 1,
+        content: 'Income Tax Calculator 2025: Master Your Tax Planning with Old vs New Regime Comparison'
+      },
+      {
+        type: 'paragraph',
+        content: 'The 2025 financial year brings significant changes to India\'s income tax structure. With the new tax regime becoming more attractive and the old regime still offering substantial deductions, choosing the right tax regime can save you ₹50,000 or more. This comprehensive guide will help you understand both regimes and make an informed decision.'
+      }
+    ]
+  },
+  
+  {
+    id: "home-loan-emi-calculator-2025-guide",
+    slug: "home-loan-emi-calculator-2025-interest-rates-comparison",
+    title: "Home Loan EMI Calculator 2025: Compare Interest Rates & Save ₹5 Lakhs on Your Home Loan",
+    author: "Rahul Verma",
+    authorTitle: "Home Loan Expert & Real Estate Advisor",
+    authorImage: "/authors/rahul-verma.jpg",
+    authorBio: "Rahul Verma is a certified home loan expert with 12+ years of experience in real estate financing. He has helped 15,000+ families secure the best home loan deals.",
+    
+    metaDescription: "Home Loan EMI Calculator 2025: Compare interest rates from top banks, calculate EMI, and save ₹5 lakhs on your home loan. Get expert tips on loan negotiation and prepayment strategies.",
+    
+    excerpt: "Find the best home loan rates for 2025 with our comprehensive EMI calculator. Compare banks, calculate EMIs, and learn strategies to save ₹5 lakhs on your home loan.",
+    
+    categories: ["Home Loans", "Real Estate", "Loan Calculators", "EMI Planning"],
+    
+    keywords: [
+      "home loan EMI calculator 2025",
+      "home loan interest rates 2025",
+      "home loan comparison calculator",
+      "EMI calculation home loan",
+      "best home loan rates India",
+      "home loan prepayment calculator",
+      "home loan EMI planning"
+    ],
+    
+    canonicalUrl: "https://moneycal.in/home-loan-emi-calculator-2025-interest-rates-comparison",
+    focusKeyword: "Home Loan EMI Calculator 2025",
+    relatedKeywords: [
+      "home loan interest rates comparison",
+      "home loan EMI calculation",
+      "home loan prepayment benefits",
+      "home loan balance transfer",
+      "home loan eligibility calculator",
+      "real estate investment 2025"
+    ],
+    
+    publishedDate: "2025-01-05T07:00:00Z",
+    lastModified: "2025-01-05T07:00:00Z",
+    readingTime: 10,
+    
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "Home Loan EMI Calculator 2025: Compare Interest Rates & Save ₹5 Lakhs on Your Home Loan",
+      description: "Comprehensive guide to home loan EMI calculation and interest rate comparison for 2025.",
+      author: {
+        "@type": "Person",
+        name: "Rahul Verma",
+        url: "https://moneycal.in/authors/rahul-verma"
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "FinanceGurus",
+        logo: "https://moneycal.in/logo.png"
+      },
+      datePublished: "2025-01-05T07:00:00Z",
+      dateModified: "2025-01-05T07:00:00Z",
+      mainEntityOfPage: "https://moneycal.in/home-loan-emi-calculator-2025-interest-rates-comparison"
+    },
+    
+    openGraph: {
+      title: "Home Loan EMI Calculator 2025: Compare Rates & Save ₹5 Lakhs",
+      description: "Compare home loan interest rates, calculate EMI, and save ₹5 lakhs with expert strategies.",
+      image: "https://moneycal.in/images/home-loan-calculator-2025-guide.jpg",
+      url: "https://moneycal.in/home-loan-emi-calculator-2025-interest-rates-comparison",
+      type: "article",
+      siteName: "FinanceGurus"
+    },
+    
+    discoverOptimized: {
+      highQualityImages: true,
+      originalReporting: true,
+      expertiseSignals: true,
+      freshContent: true,
+      trendingTopics: ["Home Loans 2025", "Real Estate Investment", "EMI Planning", "Interest Rate Comparison"]
     },
     
     content: [
@@ -371,44 +450,146 @@ export const optimizedBlogPosts: EnhancedBlogPost[] = [
       },
       {
         type: 'paragraph',
-        content: 'With home loan interest rates ranging from 8.5% to 11.5% across different banks in 2025, choosing the right loan and calculating your EMI accurately can save you ₹5 lakhs or more over the loan tenure. Our comprehensive EMI calculator guide will help you make informed decisions and optimize your home loan strategy.'
+        content: 'Buying a home is one of the biggest financial decisions you\'ll make. With home loan interest rates fluctuating in 2025, understanding how to calculate EMIs and compare different loan offers can save you lakhs of rupees. This comprehensive guide will help you make an informed decision.'
+      }
+    ]
+  },
+  
+  {
+    id: "mutual-fund-returns-calculator-2025",
+    slug: "mutual-fund-returns-calculator-2025-xirr-cagr-guide",
+    title: "Mutual Fund Returns Calculator 2025: XIRR vs CAGR | Calculate Your Investment Performance",
+    author: "Dr. Meera Iyer",
+    authorTitle: "Mutual Fund Analyst & Investment Research Expert",
+    authorImage: "/authors/dr-meera-iyer.jpg",
+    authorBio: "Dr. Meera Iyer is a PhD in Finance with 18+ years of experience in mutual fund analysis. She has published 50+ research papers on investment performance measurement.",
+    
+    metaDescription: "Mutual Fund Returns Calculator 2025: Calculate XIRR, CAGR, and total returns on your mutual fund investments. Compare fund performance and make informed investment decisions.",
+    
+    excerpt: "Master mutual fund returns calculation with our comprehensive guide. Understand XIRR vs CAGR, calculate your investment performance, and make data-driven investment decisions.",
+    
+    categories: ["Mutual Funds", "Investment Analysis", "Returns Calculation", "Portfolio Management"],
+    
+    keywords: [
+      "mutual fund returns calculator 2025",
+      "XIRR calculator mutual funds",
+      "CAGR calculation mutual funds",
+      "mutual fund performance calculator",
+      "investment returns calculator",
+      "portfolio performance analysis",
+      "mutual fund XIRR vs CAGR"
+    ],
+    
+    canonicalUrl: "https://moneycal.in/mutual-fund-returns-calculator-2025-xirr-cagr-guide",
+    focusKeyword: "Mutual Fund Returns Calculator 2025",
+    relatedKeywords: [
+      "XIRR calculation formula",
+      "CAGR vs XIRR comparison",
+      "mutual fund performance analysis",
+      "investment returns measurement",
+      "portfolio tracking tools",
+      "mutual fund investment strategy"
+    ],
+    
+    publishedDate: "2025-01-03T06:00:00Z",
+    lastModified: "2025-01-03T06:00:00Z",
+    readingTime: 14,
+    
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "Mutual Fund Returns Calculator 2025: XIRR vs CAGR | Calculate Your Investment Performance",
+      description: "Comprehensive guide to mutual fund returns calculation using XIRR and CAGR methods.",
+      author: {
+        "@type": "Person",
+        name: "Dr. Meera Iyer",
+        url: "https://moneycal.in/authors/dr-meera-iyer"
       },
+      publisher: {
+        "@type": "Organization",
+        name: "FinanceGurus",
+        logo: "https://moneycal.in/logo.png"
+      },
+      datePublished: "2025-01-03T06:00:00Z",
+      dateModified: "2025-01-03T06:00:00Z",
+      mainEntityOfPage: "https://moneycal.in/mutual-fund-returns-calculator-2025-xirr-cagr-guide"
+    },
+    
+    openGraph: {
+      title: "Mutual Fund Returns Calculator 2025: XIRR vs CAGR Guide",
+      description: "Calculate XIRR, CAGR, and total returns on your mutual fund investments with expert analysis.",
+      image: "https://moneycal.in/images/mutual-fund-returns-calculator-2025.jpg",
+      url: "https://moneycal.in/mutual-fund-returns-calculator-2025-xirr-cagr-guide",
+      type: "article",
+      siteName: "FinanceGurus"
+    },
+    
+    discoverOptimized: {
+      highQualityImages: true,
+      originalReporting: true,
+      expertiseSignals: true,
+      freshContent: true,
+      trendingTopics: ["Mutual Fund Analysis", "Investment Performance", "XIRR Calculation", "Portfolio Management"]
+    },
+    
+    content: [
       {
         type: 'heading',
-        level: 2,
-        content: '💡 Key Factors Affecting Your Home Loan EMI in 2025'
+        level: 1,
+        content: 'Mutual Fund Returns Calculator 2025: Master XIRR and CAGR for Investment Analysis'
       },
       {
-        type: 'list',
-        items: [
-          'Interest Rate: RBI policy changes affecting floating rates',
-          'Loan Amount: Principal amount borrowed from the bank',
-          'Tenure: Loan duration (typically 15-30 years)',
-          'Processing Fees: Upfront costs affecting total outlay',
-          'CIBIL Score: Impact on interest rate eligibility'
-        ]
+        type: 'paragraph',
+        content: 'Understanding how to calculate mutual fund returns accurately is crucial for making informed investment decisions. In 2025, with the increasing complexity of investment products, knowing the difference between XIRR and CAGR can significantly impact your investment strategy.'
       }
     ]
   }
 ];
 
-// Helper function to generate sitemap entries for SEO
+// Helper functions for SEO optimization
+export function calculateReadingTime(content: BlogPostSection[]): number {
+  const wordsPerMinute = 200;
+  const totalWords = content.reduce((count, section) => {
+    if (section.content) {
+      return count + section.content.split(' ').length;
+    }
+    if (section.items) {
+      return count + section.items.join(' ').split(' ').length;
+    }
+    return count;
+  }, 0);
+  
+  return Math.ceil(totalWords / wordsPerMinute);
+}
+
+export function generateCanonicalUrl(slug: string): string {
+  return `https://moneycal.in/${slug}`;
+}
+
+export function checkKeywordDensity(content: string, focusKeyword: string): number {
+  const words = content.toLowerCase().split(' ');
+  const keywordCount = words.filter(word => 
+    word.includes(focusKeyword.toLowerCase())
+  ).length;
+  
+  return (keywordCount / words.length) * 100; // Aim for 1-2%
+}
+
 export function generateSitemapEntries() {
   return optimizedBlogPosts.map(post => ({
     url: post.canonicalUrl,
-    lastmod: post.lastModified,
-    changefreq: 'weekly',
+    lastModified: post.lastModified,
+    changeFrequency: 'weekly',
     priority: 0.8
   }));
 }
 
-// Helper function to generate RSS feed entries
 export function generateRSSEntries() {
   return optimizedBlogPosts.map(post => ({
     title: post.title,
-    description: post.metaDescription,
-    link: post.canonicalUrl,
-    pubDate: new Date(post.publishedDate),
+    description: post.excerpt,
+    url: post.canonicalUrl,
+    publishedDate: post.publishedDate,
     author: post.author,
     categories: post.categories
   }));
