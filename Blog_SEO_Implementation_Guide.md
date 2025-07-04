@@ -1,5 +1,5 @@
 # Blog SEO Implementation Guide for Google Ranking & Discover
-
+https://moneycal.in/
 ## Overview
 This guide shows how to apply the enhanced SEO structure to your existing blog data files to improve Google search rankings and Google Discover eligibility.
 
