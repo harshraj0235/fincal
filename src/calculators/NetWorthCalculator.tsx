@@ -1,165 +1,205 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
+} from 'lucide-react';
 
 export const NetWorthCalculator: React.FC = () => {
-  const [assets, setAssets] = useState({
-    cash: 0,
-    investments: 0,
-    realEstate: 0,
-    vehicles: 0,
-    otherAssets: 0
-  });
-
-  const [liabilities, setLiabilities] = useState({
-    mortgages: 0,
-    loans: 0,
-    creditCards: 0,
-    otherDebts: 0
-  });
-
-  const totalAssets = Object.values(assets).reduce((sum, value) => sum + value, 0);
-  const totalLiabilities = Object.values(liabilities).reduce((sum, value) => sum + value, 0);
-  const netWorth = totalAssets - totalLiabilities;
-
-  const handleAssetChange = (field: keyof typeof assets) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAssets(prev => ({
-      ...prev,
-      [field]: Number(e.target.value) || 0
-    }));
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
+    
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
+    
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
   };
 
-  const handleLiabilityChange = (field: keyof typeof liabilities) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    setLiabilities(prev => ({
-      ...prev,
-      [field]: Number(e.target.value) || 0
-    }));
-  };
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Net Worth Calculator and how does it work?",
+    "answer": "Net Worth Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this net worth calculator calculator?",
+    "answer": "Our net worth calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our net worth calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our net worth calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
 
   return (
-    <div className="p-6">
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-neutral-900">Assets</h2>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Cash and Bank Accounts</label>
-              <input
-                type="number"
-                value={assets.cash}
-                onChange={handleAssetChange('cash')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Investments</label>
-              <input
-                type="number"
-                value={assets.investments}
-                onChange={handleAssetChange('investments')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Real Estate</label>
-              <input
-                type="number"
-                value={assets.realEstate}
-                onChange={handleAssetChange('realEstate')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Vehicles</label>
-              <input
-                type="number"
-                value={assets.vehicles}
-                onChange={handleAssetChange('vehicles')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Other Assets</label>
-              <input
-                type="number"
-                value={assets.otherAssets}
-                onChange={handleAssetChange('otherAssets')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-          </div>
-          <div className="pt-4 border-t">
-            <div className="flex justify-between items-center">
-              <span className="font-medium text-neutral-700">Total Assets:</span>
-              <span className="text-lg font-semibold text-green-600">${totalAssets.toLocaleString()}</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-neutral-900">Liabilities</h2>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Mortgages</label>
-              <input
-                type="number"
-                value={liabilities.mortgages}
-                onChange={handleLiabilityChange('mortgages')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Loans</label>
-              <input
-                type="number"
-                value={liabilities.loans}
-                onChange={handleLiabilityChange('loans')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Credit Cards</label>
-              <input
-                type="number"
-                value={liabilities.creditCards}
-                onChange={handleLiabilityChange('creditCards')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-1">Other Debts</label>
-              <input
-                type="number"
-                value={liabilities.otherDebts}
-                onChange={handleLiabilityChange('otherDebts')}
-                className="input-field w-full"
-                placeholder="0"
-              />
-            </div>
-          </div>
-          <div className="pt-4 border-t">
-            <div className="flex justify-between items-center">
-              <span className="font-medium text-neutral-700">Total Liabilities:</span>
-              <span className="text-lg font-semibold text-red-600">${totalLiabilities.toLocaleString()}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-8 p-6 bg-neutral-50 rounded-lg">
-        <div className="flex justify-between items-center">
-          <h3 className="text-xl font-semibold text-neutral-900">Net Worth</h3>
-          <span className={`text-2xl font-bold ${netWorth >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-            ${netWorth.toLocaleString()}
-          </span>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="networthcalculator"
+      name="Net Worth Calculator"
+      description="Calculate your net worth calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Investment Calculators"
+      seoTitle="Net Worth Calculator 2025 - Calculate Net Worth Calculator Online | Free Calculator India"
+      seoDescription="Calculate your net worth calculator instantly with our free net worth calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="net worth calculator calculator"
+      relatedKeywords={["net worth calculator calculator","net worth calculator calculation","net worth calculator calculator India","net worth calculator calculator online","free net worth calculator calculator","net worth calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

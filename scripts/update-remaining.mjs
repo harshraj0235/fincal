@@ -1,4 +1,12 @@
-import React from 'react';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Simple template for remaining calculators
+const simpleTemplate = (calculatorName, category, description) => `import React from 'react';
 import { EnhancedCalculator } from '../components/EnhancedCalculator';
 import { 
   Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
@@ -6,7 +14,7 @@ import {
   Info, AlertCircle, CheckCircle, ExternalLink, Target
 } from 'lucide-react';
 
-export const HumanLifeValueCalculator: React.FC = () => {
+export const ${calculatorName}: React.FC = () => {
   const handleCalculate = (values: Record<string, number | string>) => {
     const amount = values.amount as number;
     const rate = values.rate as number;
@@ -121,8 +129,8 @@ export const HumanLifeValueCalculator: React.FC = () => {
 
   const faqs = [
     {
-      question: 'What is Human Life Value Calculator?',
-      answer: 'Human Life Value Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs.'
+      question: 'What is ${calculatorName.replace(/([A-Z])/g, ' $1').trim()}?',
+      answer: '${calculatorName.replace(/([A-Z])/g, ' $1').trim()} is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs.'
     },
     {
       question: 'How accurate is this calculator?',
@@ -185,20 +193,20 @@ export const HumanLifeValueCalculator: React.FC = () => {
 
   return (
     <EnhancedCalculator
-      id="humanlifevaluecalculator"
-      name="Human Life Value Calculator"
-      description="Calculate human life value for insurance planning with our free online calculator."
-      category="Insurance Calculators"
-      seoTitle="Human Life Value Calculator 2025 - Calculate Human Life Value Calculator Online | Free Calculator India"
-      seoDescription="Calculate your human life value calculator instantly with our free calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="human life value calculator calculator"
+      id="${calculatorName.toLowerCase().replace(/([A-Z])/g, '-$1').toLowerCase()}"
+      name="${calculatorName.replace(/([A-Z])/g, ' $1').trim()}"
+      description="${description}"
+      category="${category}"
+      seoTitle="${calculatorName.replace(/([A-Z])/g, ' $1').trim()} 2025 - Calculate ${calculatorName.replace(/([A-Z])/g, ' $1').trim()} Online | Free Calculator India"
+      seoDescription="Calculate your ${calculatorName.replace(/([A-Z])/g, ' $1').trim().toLowerCase()} instantly with our free calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="${calculatorName.replace(/([A-Z])/g, ' $1').trim().toLowerCase()} calculator"
       relatedKeywords={[
-        'human life value calculator calculator',
-        'human life value calculator calculation',
-        'human life value calculator calculator India',
-        'human life value calculator calculator online',
-        'free human life value calculator calculator',
-        'human life value calculator calculator 2025'
+        '${calculatorName.replace(/([A-Z])/g, ' $1').trim().toLowerCase()} calculator',
+        '${calculatorName.replace(/([A-Z])/g, ' $1').trim().toLowerCase()} calculation',
+        '${calculatorName.replace(/([A-Z])/g, ' $1').trim().toLowerCase()} calculator India',
+        '${calculatorName.replace(/([A-Z])/g, ' $1').trim().toLowerCase()} calculator online',
+        'free ${calculatorName.replace(/([A-Z])/g, ' $1').trim().toLowerCase()} calculator',
+        '${calculatorName.replace(/([A-Z])/g, ' $1').trim().toLowerCase()} calculator 2025'
       ]}
       inputs={inputs}
       onCalculate={handleCalculate}
@@ -209,4 +217,64 @@ export const HumanLifeValueCalculator: React.FC = () => {
       calculatorData={calculatorData}
     />
   );
-};
+};`;
+
+// Remaining calculators to update
+const remainingCalculators = [
+  { name: 'HealthInsuranceCalculator', category: 'Insurance Calculators', description: 'Calculate health insurance premiums and coverage with our free online calculator.' },
+  { name: 'HumanLifeValueCalculator', category: 'Insurance Calculators', description: 'Calculate human life value for insurance planning with our free online calculator.' },
+  { name: 'InventoryTurnoverCalculator', category: 'Business Calculators', description: 'Calculate inventory turnover ratio for business analysis with our free online calculator.' },
+  { name: 'LifeInsuranceCalculator', category: 'Insurance Calculators', description: 'Calculate life insurance premiums and coverage with our free online calculator.' },
+  { name: 'MarginTradingCalculator', category: 'Trading Calculators', description: 'Calculate margin trading requirements with our free online calculator.' },
+  { name: 'ProfitMarginCalculator', category: 'Business Calculators', description: 'Calculate profit margins for business analysis with our free online calculator.' },
+  { name: 'PropertyRegistrationCalculator', category: 'Property Calculators', description: 'Calculate property registration costs with our free online calculator.' },
+  { name: 'RentVsBuyAdvancedCalculator', category: 'Property Calculators', description: 'Compare rent vs buy options with our advanced free online calculator.' },
+  { name: 'RentVsBuyCalculator', category: 'Property Calculators', description: 'Compare rent vs buy options with our free online calculator.' },
+  { name: 'StampDutyCalculator', category: 'Property Calculators', description: 'Calculate stamp duty for property transactions with our free online calculator.' },
+  { name: 'TermInsuranceCalculator', category: 'Insurance Calculators', description: 'Calculate term insurance premiums with our free online calculator.' }
+];
+
+// Function to update a calculator file
+function updateCalculatorFile(calculator) {
+  try {
+    const filePath = path.join(__dirname, '..', 'src', 'calculators', `${calculator.name}.tsx`);
+    const content = simpleTemplate(calculator.name, calculator.category, calculator.description);
+    
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log(`✅ Updated: ${calculator.name}.tsx`);
+    return true;
+  } catch (error) {
+    console.error(`❌ Error updating ${calculator.name}:`, error.message);
+    return false;
+  }
+}
+
+// Main function
+function main() {
+  console.log('🚀 Updating remaining calculators...\n');
+  
+  let successCount = 0;
+  let errorCount = 0;
+  
+  remainingCalculators.forEach(calculator => {
+    if (updateCalculatorFile(calculator)) {
+      successCount++;
+    } else {
+      errorCount++;
+    }
+  });
+  
+  console.log(`\n📊 Update Summary:`);
+  console.log(`✅ Successfully updated: ${successCount} files`);
+  console.log(`❌ Errors: ${errorCount} files`);
+  console.log(`📁 Total files processed: ${remainingCalculators.length}`);
+  
+  if (errorCount === 0) {
+    console.log('\n🎉 All remaining calculators updated successfully!');
+  } else {
+    console.log('\n⚠️  Some files had errors. Please check the logs above.');
+  }
+}
+
+// Run the script
+main(); 

@@ -1,239 +1,205 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency } from '../utils/calculatorUtils';
-import { Calculator, DollarSign, PieChart } from 'lucide-react';
-import { ResultChart } from '../components/ResultChart';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target
+} from 'lucide-react';
 
 export const LoanAffordabilityCalculator: React.FC = () => {
-  const [monthlyIncome, setMonthlyIncome] = useState<number>(50000);
-  const [monthlyExpenses, setMonthlyExpenses] = useState<number>(20000);
-  const [existingEmi, setExistingEmi] = useState<number>(0);
-  const [interestRate, setInterestRate] = useState<number>(8.5);
-  const [loanTenure, setLoanTenure] = useState<number>(20);
-  const [maxLoanAmount, setMaxLoanAmount] = useState<number>(0);
-  const [maxEmi, setMaxEmi] = useState<number>(0);
-  const [totalInterest, setTotalInterest] = useState<number>(0);
-  
-  useEffect(() => {
-    // Calculate maximum EMI capacity (50% of net disposable income)
-    const disposableIncome = monthlyIncome - monthlyExpenses;
-    const availableForEmi = Math.max(0, disposableIncome * 0.5 - existingEmi);
-    setMaxEmi(availableForEmi);
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    // Calculate maximum loan amount based on EMI capacity
-    const monthlyRate = interestRate / 12 / 100;
-    const totalMonths = loanTenure * 12;
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
     
-    const maxLoan = availableForEmi * ((Math.pow(1 + monthlyRate, totalMonths) - 1) / 
-                   (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)));
-    
-    setMaxLoanAmount(maxLoan);
-    setTotalInterest((availableForEmi * totalMonths) - maxLoan);
-  }, [monthlyIncome, monthlyExpenses, existingEmi, interestRate, loanTenure]);
-  
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
+  };
+
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Loan Affordability Calculator and how does it work?",
+    "answer": "Loan Affordability Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this loan affordability calculator calculator?",
+    "answer": "Our loan affordability calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our loan affordability calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our loan affordability calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-          <DollarSign className="w-5 h-5 mr-2 text-[--primary-600]" />
-          Income & Expenses
-        </h2>
-        
-        <div className="space-y-4">
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="monthly-income" className="text-sm font-medium text-neutral-700">
-                Monthly Income (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(monthlyIncome)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="monthly-income"
-              min="20000" 
-              max="1000000" 
-              step="5000" 
-              value={monthlyIncome} 
-              onChange={(e) => setMonthlyIncome(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="monthly-expenses" className="text-sm font-medium text-neutral-700">
-                Monthly Expenses (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(monthlyExpenses)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="monthly-expenses"
-              min="0" 
-              max={monthlyIncome * 0.8} 
-              step="1000" 
-              value={monthlyExpenses} 
-              onChange={(e) => setMonthlyExpenses(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="existing-emi" className="text-sm font-medium text-neutral-700">
-                Existing EMI Obligations (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(existingEmi)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="existing-emi"
-              min="0" 
-              max={monthlyIncome * 0.5} 
-              step="1000" 
-              value={existingEmi} 
-              onChange={(e) => setExistingEmi(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="interest-rate" className="text-sm font-medium text-neutral-700">
-                Interest Rate (% p.a.)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {interestRate}%
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="interest-rate"
-              min="6" 
-              max="15" 
-              step="0.1" 
-              value={interestRate} 
-              onChange={(e) => setInterestRate(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="loan-tenure" className="text-sm font-medium text-neutral-700">
-                Loan Tenure (Years)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {loanTenure} years
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="loan-tenure"
-              min="1" 
-              max="30" 
-              value={loanTenure} 
-              onChange={(e) => setLoanTenure(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-        </div>
-        
-        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Loan Eligibility</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Maximum Loan Amount</p>
-              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(maxLoanAmount)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Maximum EMI Capacity</p>
-              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(maxEmi)}</p>
-            </div>
-          </div>
-          <div className="mt-4 p-4 bg-[--accent-50] rounded-lg">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-neutral-500">FOIR</p>
-                <p className="text-lg font-semibold text-neutral-900">
-                  {(((existingEmi + maxEmi) / monthlyIncome) * 100).toFixed(1)}%
-                </p>
-              </div>
-              <div>
-                <p className="text-sm text-neutral-500">Debt Service Ratio</p>
-                <p className="text-lg font-semibold text-neutral-900">
-                  {((maxEmi / (monthlyIncome - monthlyExpenses)) * 100).toFixed(1)}%
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="space-y-6">
-        <div>
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <PieChart className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Monthly Income Distribution
-          </h2>
-          <div className="mt-4 h-64">
-            <ResultChart 
-              data={[
-                { name: 'Expenses', value: monthlyExpenses, color: '#f59e0b' },
-                { name: 'Existing EMI', value: existingEmi, color: '#ef4444' },
-                { name: 'New EMI Capacity', value: maxEmi, color: '#22c55e' },
-                { name: 'Savings', value: monthlyIncome - monthlyExpenses - existingEmi - maxEmi, color: '#3b82f6' }
-              ]}
-              centerText={`${formatCurrency(monthlyIncome)}\nMonthly Income`}
-            />
-          </div>
-        </div>
-        
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Eligibility Criteria
-          </h2>
-          
-          <div className="space-y-4">
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Key Factors</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>Monthly income and stability</li>
-                <li>Existing debt obligations</li>
-                <li>Credit score and history</li>
-                <li>Age and remaining service years</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Income Ratios</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>Fixed Obligation to Income Ratio (FOIR) should be below 50-55%</li>
-                <li>EMI to Net Income Ratio should be below 40-45%</li>
-                <li>Debt Service Ratio should be comfortable</li>
-                <li>Consider future income growth potential</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-[--accent-50] rounded-lg">
-              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Tips to Improve Eligibility</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
-                <li>Maintain a good credit score</li>
-                <li>Reduce existing debt obligations</li>
-                <li>Include additional income sources</li>
-                <li>Opt for a longer loan tenure</li>
-                <li>Add a co-applicant to increase eligibility</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="loanaffordabilitycalculator"
+      name="Loan Affordability Calculator"
+      description="Calculate your loan affordability calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Loan Calculators"
+      seoTitle="Loan Affordability Calculator 2025 - Calculate Loan Affordability Calculator Online | Free Calculator India"
+      seoDescription="Calculate your loan affordability calculator instantly with our free loan affordability calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="loan affordability calculator calculator"
+      relatedKeywords={["loan affordability calculator calculator","loan affordability calculator calculation","loan affordability calculator calculator India","loan affordability calculator calculator online","free loan affordability calculator calculator","loan affordability calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

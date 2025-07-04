@@ -1,259 +1,280 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency, calculateGST } from '../utils/calculatorUtils';
-import { Plus, Calculator, ArrowDown, ArrowUp } from 'lucide-react';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target, Receipt
+} from 'lucide-react';
+import { calculateGST } from '../utils/calculatorUtils';
 
 export const GstCalculator: React.FC = () => {
-  const [calculationType, setCalculationType] = useState<'exclusive' | 'inclusive'>('exclusive');
-  const [amount, setAmount] = useState<number>(1000);
-  const [gstRate, setGstRate] = useState<number>(18);
-  const [gstAmount, setGstAmount] = useState<number>(0);
-  const [totalAmount, setTotalAmount] = useState<number>(0);
-  const [baseAmount, setBaseAmount] = useState<number>(0);
-  const [cgst, setCgst] = useState<number>(0);
-  const [sgst, setSgst] = useState<number>(0);
-  
-  // Manual input states
-  const [manualAmount, setManualAmount] = useState<string>(amount.toString());
-  const [manualGstRate, setManualGstRate] = useState<string>(gstRate.toString());
-  
-  useEffect(() => {
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const gstRate = values.gstRate as number;
+    const calculationType = values.calculationType as 'exclusive' | 'inclusive';
+    
     const result = calculateGST(amount, gstRate, calculationType);
+    const cgst = result.gstAmount / 2;
+    const sgst = result.gstAmount / 2;
     
-    if (calculationType === 'exclusive') {
-      setGstAmount(result.gstAmount);
-      setTotalAmount(result.totalAmount);
-      setBaseAmount(amount);
-    } else {
-      setGstAmount(result.gstAmount);
-      setBaseAmount(result.baseAmount);
-      setTotalAmount(amount);
-    }
-    
-    setCgst(result.gstAmount / 2);
-    setSgst(result.gstAmount / 2);
-  }, [amount, gstRate, calculationType]);
-  
-  // Update slider values when manual inputs change
-  const handleManualAmountChange = (value: string) => {
-    setManualAmount(value);
-    const numValue = parseFloat(value);
-    if (!isNaN(numValue) && numValue >= 0) {
-      setAmount(numValue);
-    }
+    return [
+      {
+        label: calculationType === 'exclusive' ? 'Total Amount (with GST)' : 'Base Amount (without GST)',
+        value: calculationType === 'exclusive' ? result.totalAmount : result.baseAmount,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: calculationType === 'exclusive' ? 'Amount including GST' : 'Amount excluding GST'
+      },
+      {
+        label: 'GST Amount',
+        value: result.gstAmount,
+        unit: ' ₹',
+        color: 'warning' as const,
+        icon: <Receipt className="h-4 w-4" />,
+        description: `GST at ${gstRate}% rate`
+      },
+      {
+        label: 'CGST',
+        value: cgst,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Calculator className="h-4 w-4" />,
+        description: 'Central GST (50% of total GST)'
+      },
+      {
+        label: 'SGST',
+        value: sgst,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Calculator className="h-4 w-4" />,
+        description: 'State GST (50% of total GST)'
+      },
+      {
+        label: 'GST Rate',
+        value: gstRate,
+        unit: '%',
+        color: 'neutral' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Applicable GST rate'
+      },
+      {
+        label: calculationType === 'exclusive' ? 'Base Amount' : 'Total Amount',
+        value: calculationType === 'exclusive' ? amount : result.totalAmount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: calculationType === 'exclusive' ? 'Original amount' : 'Amount including GST'
+      }
+    ];
   };
-  
-  const handleManualGstRateChange = (value: string) => {
-    setManualGstRate(value);
-    const numValue = parseFloat(value);
-    if (!isNaN(numValue) && numValue >= 0 && numValue <= 100) {
-      setGstRate(numValue);
+
+  const inputs = [
+    {
+      id: 'calculationType',
+      label: 'Calculation Type',
+      type: 'select' as const,
+      value: 'exclusive',
+      options: [
+        { value: 'exclusive', label: 'Add GST (Exclusive)' },
+        { value: 'inclusive', label: 'Remove GST (Inclusive)' }
+      ],
+      description: 'Choose whether to add or remove GST',
+      tooltip: 'Exclusive: Add GST to base amount. Inclusive: Remove GST from total amount.',
+      required: true
+    },
+    {
+      id: 'amount',
+      label: 'Amount',
+      type: 'range' as const,
+      value: 1000,
+      min: 0,
+      max: 1000000,
+      step: 100,
+      unit: ' ₹',
+      description: 'Enter the amount for GST calculation',
+      tooltip: 'The amount on which GST needs to be calculated or removed',
+      required: true
+    },
+    {
+      id: 'gstRate',
+      label: 'GST Rate',
+      type: 'select' as const,
+      value: 18,
+      options: [
+        { value: 0, label: '0% (Nil Rate)' },
+        { value: 5, label: '5% (Reduced Rate)' },
+        { value: 12, label: '12% (Standard Rate)' },
+        { value: 18, label: '18% (Standard Rate)' },
+        { value: 28, label: '28% (Luxury Rate)' }
+      ],
+      description: 'Select the applicable GST rate',
+      tooltip: 'Choose the GST rate applicable to your goods or services',
+      required: true
     }
+  ];
+
+  const features = [
+    {
+      name: 'Instant Calculation',
+      description: 'Get GST results instantly as you adjust values',
+      icon: <Calculator className="h-5 w-5" />
+    },
+    {
+      name: 'Mobile Optimized',
+      description: 'Works perfectly on all devices and screen sizes',
+      icon: <Smartphone className="h-5 w-5" />
+    },
+    {
+      name: 'No Registration',
+      description: 'Use our calculator without any sign-up required',
+      icon: <Users className="h-5 w-5" />
+    },
+    {
+      name: 'Accurate Results',
+      description: 'Based on official GST calculation formulas',
+      icon: <CheckCircle className="h-5 w-5" />
+    },
+    {
+      name: 'Free to Use',
+      description: 'Completely free calculator with no hidden charges',
+      icon: <DollarSign className="h-5 w-5" />
+    },
+    {
+      name: '2025 Updated',
+      description: 'Latest GST rates and calculations for 2025',
+      icon: <Clock className="h-5 w-5" />
+    }
+  ];
+
+  const faqs = [
+    {
+      question: 'What is GST and how is it calculated?',
+      answer: 'GST (Goods and Services Tax) is a comprehensive indirect tax levied on the supply of goods and services in India. It is calculated as a percentage of the taxable value. GST = Taxable Value × GST Rate / 100. The total GST is split equally between CGST (Central GST) and SGST (State GST).'
+    },
+    {
+      question: 'What are the different GST rates in India?',
+      answer: 'India has five GST rates: 0% (nil rate for essential items), 5% (reduced rate for basic necessities), 12% and 18% (standard rates for most goods and services), and 28% (luxury rate for premium items). Some items like petroleum products, alcohol, and electricity are outside GST scope.'
+    },
+    {
+      question: 'What is the difference between exclusive and inclusive GST?',
+      answer: 'Exclusive GST means the base amount does not include GST, and GST is added on top. Inclusive GST means the total amount already includes GST, and you need to separate the GST component. For example, ₹1000 exclusive + 18% GST = ₹1180, while ₹1180 inclusive contains ₹1000 base + ₹180 GST.'
+    },
+    {
+      question: 'How is CGST and SGST calculated?',
+      answer: 'CGST (Central GST) and SGST (State GST) are each calculated as 50% of the total GST amount. For example, if total GST is ₹180 at 18% rate, then CGST = ₹90 and SGST = ₹90. This applies to intra-state supplies. For inter-state supplies, IGST (Integrated GST) is levied at the full rate.'
+    },
+    {
+      question: 'When should I use exclusive vs inclusive GST calculation?',
+      answer: 'Use exclusive calculation when you have a base amount and want to add GST to it (common for sellers). Use inclusive calculation when you have a total amount and want to separate the GST component (common for buyers or when analyzing prices).'
+    },
+    {
+      question: 'Are there any exemptions from GST?',
+      answer: 'Yes, certain goods and services are exempt from GST, including agricultural products, healthcare services, educational services, and some financial services. The government periodically updates the list of exempt items.'
+    },
+    {
+      question: 'How does GST affect small businesses?',
+      answer: 'Businesses with turnover below ₹40 lakhs (₹20 lakhs for special category states) are exempt from GST registration. However, they can voluntarily register to claim input tax credit. Composition scheme is available for businesses with turnover up to ₹1.5 crores.'
+    },
+    {
+      question: 'How accurate is this GST calculator?',
+      answer: 'Our GST calculator uses official GST calculation formulas and provides accurate results. However, actual GST liability may vary based on specific business circumstances, exemptions, and input tax credits. Always consult with a tax professional for business decisions.'
+    }
+  ];
+
+  const relatedCalculators = [
+    {
+      id: 'gst-seller-calculator',
+      name: 'GST Seller Calculator',
+      description: 'Calculate GST for sellers and businesses',
+      url: '/calculators/gst-seller-calculator'
+    },
+    {
+      id: 'income-tax-calculator',
+      name: 'Income Tax Calculator',
+      description: 'Calculate income tax for FY 2024-25',
+      url: '/calculators/income-tax-calculator'
+    },
+    {
+      id: 'tds-calculator',
+      name: 'TDS Calculator',
+      description: 'Calculate TDS on various payments',
+      url: '/calculators/tds-calculator'
+    },
+    {
+      id: 'profit-margin-calculator',
+      name: 'Profit Margin Calculator',
+      description: 'Calculate profit margins and pricing',
+      url: '/calculators/profit-margin-calculator'
+    },
+    {
+      id: 'break-even-calculator',
+      name: 'Break Even Calculator',
+      description: 'Calculate break-even point for business',
+      url: '/calculators/break-even-calculator'
+    },
+    {
+      id: 'business-loan-calculator',
+      name: 'Business Loan Calculator',
+      description: 'Calculate business loan EMI',
+      url: '/calculators/business-loan-calculator'
+    }
+  ];
+
+  const tips = [
+    'Always verify GST rates for your specific goods or services',
+    'Keep proper records of GST collected and paid',
+    'File GST returns on time to avoid penalties',
+    'Claim input tax credit on business purchases',
+    'Use separate accounts for CGST, SGST, and IGST',
+    'Verify GST registration numbers of your suppliers',
+    'Maintain proper invoices with GST details',
+    'Stay updated with latest GST notifications and changes'
+  ];
+
+  const calculatorData = {
+    formula: 'GST = Taxable Value × GST Rate / 100',
+    assumptions: [
+      'GST rate remains constant for the calculation period',
+      'No exemptions or special rates apply',
+      'Equal split between CGST and SGST for intra-state supplies',
+      'No input tax credit considerations included'
+    ],
+    limitations: [
+      'Actual GST liability may vary based on business circumstances',
+      'Exemptions and special rates not considered',
+      'Input tax credit not included in calculations',
+      'Results are for planning purposes only'
+    ],
+    lastUpdated: 'January 2025'
   };
-  
-  // Update manual input values when sliders change
-  useEffect(() => {
-    setManualAmount(amount.toString());
-    setManualGstRate(gstRate.toString());
-  }, [amount, gstRate]);
-  
+
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col sm:flex-row justify-between gap-4">
-        <div className="flex rounded-lg overflow-hidden border border-neutral-200">
-          <button 
-            className={`px-4 py-2 text-sm font-medium ${calculationType === 'exclusive' ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700'}`}
-            onClick={() => setCalculationType('exclusive')}
-          >
-            Add GST (Exclusive)
-          </button>
-          <button 
-            className={`px-4 py-2 text-sm font-medium ${calculationType === 'inclusive' ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700'}`}
-            onClick={() => setCalculationType('inclusive')}
-          >
-            Remove GST (Inclusive)
-          </button>
-        </div>
-        
-        <div className="flex rounded-lg overflow-hidden border border-neutral-200">
-          {[5, 12, 18, 28].map(rate => (
-            <button 
-              key={rate}
-              className={`px-3 py-2 text-sm font-medium ${gstRate === rate ? 'bg-primary-600 text-white' : 'bg-white text-neutral-700'}`}
-              onClick={() => setGstRate(rate)}
-            >
-              {rate}%
-            </button>
-          ))}
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <Calculator className="w-5 h-5 mr-2 text-primary-600" />
-            {calculationType === 'exclusive' ? 'Add GST to Amount' : 'Remove GST from Amount'}
-          </h2>
-          
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="amount" className="block text-sm font-medium text-neutral-700 mb-2">
-                {calculationType === 'exclusive' ? 'Base Amount (₹)' : 'Total Amount (₹)'}
-              </label>
-              <div className="flex items-center">
-                <div className="relative flex-grow mr-2">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <span className="text-neutral-500 sm:text-sm">₹</span>
-                  </div>
-                  <input
-                    type="number"
-                    id="amount"
-                    className="input pl-8"
-                    placeholder="Enter amount"
-                    value={manualAmount}
-                    onChange={(e) => handleManualAmountChange(e.target.value)}
-                    min="0"
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <label htmlFor="gst-rate" className="block text-sm font-medium text-neutral-700 mb-2">
-                GST Rate (%)
-              </label>
-              <div className="flex items-center">
-                <div className="relative flex-grow mr-2">
-                  <input
-                    type="number"
-                    id="gst-rate"
-                    className="input pr-8"
-                    placeholder="GST rate"
-                    value={manualGstRate}
-                    onChange={(e) => handleManualGstRateChange(e.target.value)}
-                    min="0"
-                    max="100"
-                    step="0.01"
-                  />
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                    <span className="text-neutral-500 sm:text-sm">%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-8 flex justify-center">
-            {calculationType === 'exclusive' ? (
-              <div className="flex flex-col items-center space-y-2">
-                <div className="bg-neutral-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500 mb-1">Base Amount</p>
-                  <p className="text-xl font-bold text-neutral-900">{formatCurrency(baseAmount)}</p>
-                </div>
-                <Plus className="h-5 w-5 text-neutral-400" />
-                <div className="bg-primary-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500 mb-1">GST Amount ({gstRate}%)</p>
-                  <p className="text-xl font-bold text-primary-800">{formatCurrency(gstAmount)}</p>
-                </div>
-                <ArrowDown className="h-5 w-5 text-neutral-400" />
-                <div className="bg-accent-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500 mb-1">Total Amount</p>
-                  <p className="text-xl font-bold text-accent-800">{formatCurrency(totalAmount)}</p>
-                </div>
-              </div>
-            ) : (
-              <div className="flex flex-col items-center space-y-2">
-                <div className="bg-accent-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500 mb-1">Total Amount</p>
-                  <p className="text-xl font-bold text-accent-800">{formatCurrency(totalAmount)}</p>
-                </div>
-                <ArrowDown className="h-5 w-5 text-neutral-400" />
-                <div className="bg-neutral-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500 mb-1">Base Amount</p>
-                  <p className="text-xl font-bold text-neutral-900">{formatCurrency(baseAmount)}</p>
-                </div>
-                <Plus className="h-5 w-5 text-neutral-400" />
-                <div className="bg-primary-100 rounded-lg p-4 w-64 text-center">
-                  <p className="text-sm text-neutral-500 mb-1">GST Amount ({gstRate}%)</p>
-                  <p className="text-xl font-bold text-primary-800">{formatCurrency(gstAmount)}</p>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-        
-        <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <Calculator className="w-5 h-5 mr-2 text-primary-600" />
-            GST Breakup
-          </h2>
-          
-          <div className="p-6 bg-white rounded-lg border border-neutral-200">
-            <div className="grid grid-cols-1 gap-4">
-              <div className="p-4 bg-neutral-50 rounded-lg">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-sm text-neutral-500">Base Amount</p>
-                    <p className="text-lg font-semibold text-neutral-900">{formatCurrency(baseAmount)}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-neutral-500">Taxable Value</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="p-4 bg-primary-50 rounded-lg">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-sm text-neutral-500">CGST @ {gstRate/2}%</p>
-                    <p className="text-lg font-semibold text-primary-800">{formatCurrency(cgst)}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-neutral-500">Central Tax</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="p-4 bg-primary-50 rounded-lg">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-sm text-neutral-500">SGST @ {gstRate/2}%</p>
-                    <p className="text-lg font-semibold text-primary-800">{formatCurrency(sgst)}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-neutral-500">State Tax</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="border-t border-neutral-200 my-2"></div>
-              
-              <div className="p-4 bg-accent-50 rounded-lg">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-sm text-neutral-500">Total Amount</p>
-                    <p className="text-lg font-semibold text-accent-800">{formatCurrency(totalAmount)}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-neutral-500">Invoice Value</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="p-4 bg-neutral-50 rounded-lg border border-neutral-200">
-            <h3 className="text-sm font-medium text-neutral-700 mb-2">GST Calculation Formula</h3>
-            <div className="space-y-2 text-sm text-neutral-600">
-              <p><span className="font-medium">Add GST (Exclusive):</span></p>
-              <p className="pl-4">GST Amount = Base Amount × (GST Rate ÷ 100)</p>
-              <p className="pl-4">Total Amount = Base Amount + GST Amount</p>
-              <p className="mt-2"><span className="font-medium">Remove GST (Inclusive):</span></p>
-              <p className="pl-4">Base Amount = Total Amount ÷ (1 + GST Rate ÷ 100)</p>
-              <p className="pl-4">GST Amount = Total Amount - Base Amount</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="gst-calculator"
+      name="GST Calculator"
+      description="Calculate GST (Goods and Services Tax) with our free online GST calculator. Add or remove GST from amounts with accurate calculations for CGST, SGST, and total amounts."
+      category="Tax Calculators"
+      seoTitle="GST Calculator 2025 - Calculate GST Online | Free GST Calculator India"
+      seoDescription="Calculate GST instantly with our free GST calculator. Add or remove GST from amounts, calculate CGST and SGST. No registration required. Updated for 2025 with latest rates."
+      focusKeyword="GST calculator"
+      relatedKeywords={[
+        'GST calculator',
+        'GST calculation',
+        'CGST calculator',
+        'SGST calculator',
+        'GST calculator India',
+        'GST calculator online',
+        'free GST calculator',
+        'GST calculator 2025'
+      ]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

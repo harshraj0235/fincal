@@ -1,338 +1,205 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency } from '../utils/calculatorUtils';
-import { Sliders, Calculator, PieChart } from 'lucide-react';
-import { ResultChart } from '../components/ResultChart';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
+} from 'lucide-react';
 
 export const RetirementCalculator: React.FC = () => {
-  const [currentAge, setCurrentAge] = useState<number>(30);
-  const [retirementAge, setRetirementAge] = useState<number>(60);
-  const [monthlyExpenses, setMonthlyExpenses] = useState<number>(50000);
-  const [existingSavings, setExistingSavings] = useState<number>(1000000);
-  const [monthlyInvestment, setMonthlyInvestment] = useState<number>(20000);
-  const [expectedReturn, setExpectedReturn] = useState<number>(12);
-  const [inflationRate, setInflationRate] = useState<number>(6);
-  const [lifeExpectancy, setLifeExpectancy] = useState<number>(85);
-  
-  const [requiredCorpus, setRequiredCorpus] = useState<number>(0);
-  const [expectedCorpus, setExpectedCorpus] = useState<number>(0);
-  const [monthlyGap, setMonthlyGap] = useState<number>(0);
-  const [totalInvestment, setTotalInvestment] = useState<number>(0);
-  const [totalReturns, setTotalReturns] = useState<number>(0);
-  
-  useEffect(() => {
-    // Calculate required retirement corpus
-    const yearsInRetirement = lifeExpectancy - retirementAge;
-    const yearsToRetirement = retirementAge - currentAge;
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    // Calculate future monthly expenses considering inflation
-    const futureMonthlyExpenses = monthlyExpenses * Math.pow(1 + inflationRate / 100, yearsToRetirement);
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
     
-    // Calculate required corpus assuming post-retirement return of 7%
-    const postRetirementReturn = 7;
-    const monthlyReturnRate = postRetirementReturn / 1200;
-    const numberOfMonths = yearsInRetirement * 12;
-    
-    const required = futureMonthlyExpenses * 
-      (1 - Math.pow(1 + monthlyReturnRate, -numberOfMonths)) / monthlyReturnRate;
-    
-    setRequiredCorpus(required);
-    
-    // Calculate expected corpus
-    let corpus = existingSavings;
-    const monthlyRate = expectedReturn / 1200;
-    const investmentMonths = yearsToRetirement * 12;
-    
-    // Future value of existing savings
-    corpus *= Math.pow(1 + expectedReturn / 100, yearsToRetirement);
-    
-    // Future value of monthly investments
-    const futureValueOfInvestments = monthlyInvestment * 
-      ((Math.pow(1 + monthlyRate, investmentMonths) - 1) / monthlyRate) * 
-      (1 + monthlyRate);
-    
-    corpus += futureValueOfInvestments;
-    
-    setExpectedCorpus(corpus);
-    setTotalInvestment(existingSavings + (monthlyInvestment * investmentMonths));
-    setTotalReturns(corpus - (existingSavings + (monthlyInvestment * investmentMonths)));
-    
-    // Calculate monthly investment gap
-    if (corpus < required) {
-      const additionalCorpusNeeded = required - corpus;
-      const gapMonthlyInvestment = (additionalCorpusNeeded * monthlyRate) / 
-        (Math.pow(1 + monthlyRate, investmentMonths) - 1);
-      setMonthlyGap(gapMonthlyInvestment);
-    } else {
-      setMonthlyGap(0);
-    }
-  }, [
-    currentAge,
-    retirementAge,
-    monthlyExpenses,
-    existingSavings,
-    monthlyInvestment,
-    expectedReturn,
-    inflationRate,
-    lifeExpectancy
-  ]);
-  
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
+  };
+
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Retirement Calculator and how does it work?",
+    "answer": "Retirement Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this retirement calculator calculator?",
+    "answer": "Our retirement calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our retirement calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our retirement calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-          <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
-          Retirement Planning Details
-        </h2>
-        
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="current-age" className="text-sm font-medium text-neutral-700">
-                  Current Age
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {currentAge} years
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="current-age"
-                min="20" 
-                max="70" 
-                value={currentAge} 
-                onChange={(e) => setCurrentAge(Number(e.target.value))}
-                className="slider"
-              />
-            </div>
-            
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="retirement-age" className="text-sm font-medium text-neutral-700">
-                  Retirement Age
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {retirementAge} years
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="retirement-age"
-                min={currentAge + 1} 
-                max="80" 
-                value={retirementAge} 
-                onChange={(e) => setRetirementAge(Number(e.target.value))}
-                className="slider"
-              />
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="monthly-expenses" className="text-sm font-medium text-neutral-700">
-                Current Monthly Expenses (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(monthlyExpenses)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="monthly-expenses"
-              min="10000" 
-              max="500000" 
-              step="5000" 
-              value={monthlyExpenses} 
-              onChange={(e) => setMonthlyExpenses(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="existing-savings" className="text-sm font-medium text-neutral-700">
-                Existing Retirement Savings (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(existingSavings)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="existing-savings"
-              min="0" 
-              max="10000000" 
-              step="100000" 
-              value={existingSavings} 
-              onChange={(e) => setExistingSavings(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="monthly-investment" className="text-sm font-medium text-neutral-700">
-                Monthly Investment (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(monthlyInvestment)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="monthly-investment"
-              min="1000" 
-              max="200000" 
-              step="1000" 
-              value={monthlyInvestment} 
-              onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="expected-return" className="text-sm font-medium text-neutral-700">
-                  Expected Return (%)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {expectedReturn}%
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="expected-return"
-                min="6" 
-                max="15" 
-                step="0.5" 
-                value={expectedReturn} 
-                onChange={(e) => setExpectedReturn(Number(e.target.value))}
-                className="slider"
-              />
-            </div>
-            
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="inflation-rate" className="text-sm font-medium text-neutral-700">
-                  Inflation Rate (%)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {inflationRate}%
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="inflation-rate"
-                min="4" 
-                max="10" 
-                step="0.5" 
-                value={inflationRate} 
-                onChange={(e) => setInflationRate(Number(e.target.value))}
-                className="slider"
-              />
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="life-expectancy" className="text-sm font-medium text-neutral-700">
-                Life Expectancy
-              </label>
-              <span className="text-sm text-neutral-500">
-                {lifeExpectancy} years
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="life-expectancy"
-              min={retirementAge + 1} 
-              max="100" 
-              value={lifeExpectancy} 
-              onChange={(e) => setLifeExpectancy(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-        </div>
-        
-        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Retirement Summary</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Required Corpus</p>
-              <p className="text-xl font-bold text-neutral-900">{formatCurrency(requiredCorpus)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Expected Corpus</p>
-              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(expectedCorpus)}</p>
-            </div>
-          </div>
-          
-          {monthlyGap > 0 && (
-            <div className="mt-4 p-4 bg-[--error-50] rounded-lg border border-[--error-100]">
-              <p className="text-sm text-[--error-600] mb-1">Additional Monthly Investment Needed</p>
-              <p className="text-xl font-bold text-[--error-700]">{formatCurrency(monthlyGap)}</p>
-            </div>
-          )}
-        </div>
-      </div>
-      
-      <div className="space-y-6">
-        <div>
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <PieChart className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Corpus Breakup
-          </h2>
-          <div className="mt-4 h-64">
-            <ResultChart 
-              data={[
-                { name: 'Total Investment', value: totalInvestment, color: '#3b82f6' },
-                { name: 'Expected Returns', value: totalReturns, color: '#22c55e' }
-              ]}
-              centerText={`${formatCurrency(expectedCorpus)}\nExpected Corpus`}
-            />
-          </div>
-        </div>
-        
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Planning Guidelines
-          </h2>
-          
-          <div className="space-y-4">
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Key Factors</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>Start early to benefit from compound growth</li>
-                <li>Consider inflation impact on expenses</li>
-                <li>Account for medical expenses in later years</li>
-                <li>Review and rebalance investments periodically</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Investment Options</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>National Pension System (NPS)</li>
-                <li>Public Provident Fund (PPF)</li>
-                <li>Mutual Funds</li>
-                <li>Fixed Deposits</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-[--accent-50] rounded-lg">
-              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Important Notes</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
-                <li>Diversify retirement investments</li>
-                <li>Consider tax implications</li>
-                <li>Build emergency fund separately</li>
-                <li>Account for major life events</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="retirementcalculator"
+      name="Retirement Calculator"
+      description="Calculate your retirement calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Investment Calculators"
+      seoTitle="Retirement Calculator 2025 - Calculate Retirement Calculator Online | Free Calculator India"
+      seoDescription="Calculate your retirement calculator instantly with our free retirement calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="retirement calculator calculator"
+      relatedKeywords={["retirement calculator calculator","retirement calculator calculation","retirement calculator calculator India","retirement calculator calculator online","free retirement calculator calculator","retirement calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

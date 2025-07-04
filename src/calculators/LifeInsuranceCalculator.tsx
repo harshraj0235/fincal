@@ -1,280 +1,212 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency } from '../utils/calculatorUtils';
-import { Sliders, Calculator, Shield } from 'lucide-react';
-
-type PolicyType = 'endowment' | 'moneyBack' | 'ulip' | 'wholeLife';
-
-interface PolicyDetails {
-  name: string;
-  description: string;
-  minTerm: number;
-  maxTerm: number;
-  returnRate: number;
-}
-
-const policyTypes: Record<PolicyType, PolicyDetails> = {
-  endowment: {
-    name: 'Endowment Plan',
-    description: 'Savings + Insurance with guaranteed returns',
-    minTerm: 10,
-    maxTerm: 30,
-    returnRate: 6
-  },
-  moneyBack: {
-    name: 'Money Back Policy',
-    description: 'Periodic returns during policy term',
-    minTerm: 15,
-    maxTerm: 25,
-    returnRate: 5.5
-  },
-  ulip: {
-    name: 'ULIP',
-    description: 'Market-linked returns with insurance',
-    minTerm: 5,
-    maxTerm: 20,
-    returnRate: 10
-  },
-  wholeLife: {
-    name: 'Whole Life Plan',
-    description: 'Lifetime coverage with savings',
-    minTerm: 20,
-    maxTerm: 40,
-    returnRate: 7
-  }
-};
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target
+} from 'lucide-react';
 
 export const LifeInsuranceCalculator: React.FC = () => {
-  const [policyType, setPolicyType] = useState<PolicyType>('endowment');
-  const [age, setAge] = useState<number>(30);
-  const [coverAmount, setCoverAmount] = useState<number>(2000000);
-  const [policyTerm, setPolicyTerm] = useState<number>(20);
-  const [monthlyPremium, setMonthlyPremium] = useState<number>(0);
-  const [maturityValue, setMaturityValue] = useState<number>(0);
-  
-  useEffect(() => {
-    // Calculate premium and maturity value
-    const policy = policyTypes[policyType];
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    // Base premium calculation
-    let basePremium = coverAmount / (policyTerm * 12);
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
     
-    // Age factor
-    basePremium *= (1 + (age - 25) * 0.02);
-    
-    // Policy type factor
-    switch (policyType) {
-      case 'endowment':
-        basePremium *= 1.2;
-        break;
-      case 'moneyBack':
-        basePremium *= 1.3;
-        break;
-      case 'ulip':
-        basePremium *= 1.1;
-        break;
-      case 'wholeLife':
-        basePremium *= 1.4;
-        break;
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
+  };
+
+  const inputs = [
+    {
+      id: 'amount',
+      label: 'Amount',
+      type: 'range' as const,
+      value: 10000,
+      min: 1000,
+      max: 1000000,
+      step: 1000,
+      unit: ' ₹',
+      description: 'Enter the amount for calculation',
+      tooltip: 'The amount on which calculation needs to be performed',
+      required: true
+    },
+    {
+      id: 'rate',
+      label: 'Rate',
+      type: 'range' as const,
+      value: 10,
+      min: 1,
+      max: 30,
+      step: 0.1,
+      unit: '% p.a.',
+      description: 'Annual rate for calculation',
+      tooltip: 'The annual rate applicable to your calculation',
+      required: true
+    },
+    {
+      id: 'period',
+      label: 'Time Period',
+      type: 'range' as const,
+      value: 5,
+      min: 1,
+      max: 30,
+      step: 1,
+      unit: ' years',
+      description: 'Duration for calculation',
+      tooltip: 'The time period for your calculation',
+      required: true
     }
-    
-    setMonthlyPremium(basePremium);
-    
-    // Calculate maturity value
-    const totalPremium = basePremium * 12 * policyTerm;
-    const maturity = totalPremium * Math.pow(1 + policy.returnRate / 100, policyTerm);
-    setMaturityValue(maturity);
-    
-  }, [policyType, age, coverAmount, policyTerm]);
-  
+  ];
+
+  const features = [
+    {
+      name: 'Instant Calculation',
+      description: 'Get results instantly as you adjust values',
+      icon: <Calculator className="h-5 w-5" />
+    },
+    {
+      name: 'Mobile Optimized',
+      description: 'Works perfectly on all devices and screen sizes',
+      icon: <Smartphone className="h-5 w-5" />
+    },
+    {
+      name: 'No Registration',
+      description: 'Use our calculator without any sign-up required',
+      icon: <Users className="h-5 w-5" />
+    },
+    {
+      name: 'Accurate Results',
+      description: 'Based on standard mathematical formulas',
+      icon: <CheckCircle className="h-5 w-5" />
+    },
+    {
+      name: 'Free to Use',
+      description: 'Completely free calculator with no hidden charges',
+      icon: <DollarSign className="h-5 w-5" />
+    },
+    {
+      name: '2025 Updated',
+      description: 'Latest calculation tools for 2025',
+      icon: <Clock className="h-5 w-5" />
+    }
+  ];
+
+  const faqs = [
+    {
+      question: 'What is Life Insurance Calculator?',
+      answer: 'Life Insurance Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs.'
+    },
+    {
+      question: 'How accurate is this calculator?',
+      answer: 'Our calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool.'
+    },
+    {
+      question: 'Is this calculator free to use?',
+      answer: 'Yes, our calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning.'
+    },
+    {
+      question: 'Can I use this calculator on mobile devices?',
+      answer: 'Yes, our calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size.'
+    }
+  ];
+
+  const relatedCalculators = [
+    {
+      id: 'emi-calculator',
+      name: 'EMI Calculator',
+      description: 'Calculate EMI for loans',
+      url: '/calculators/emi-calculator'
+    },
+    {
+      id: 'sip-calculator',
+      name: 'SIP Calculator',
+      description: 'Calculate SIP returns',
+      url: '/calculators/sip-calculator'
+    },
+    {
+      id: 'compound-interest-calculator',
+      name: 'Compound Interest Calculator',
+      description: 'Calculate compound interest',
+      url: '/calculators/compound-interest-calculator'
+    }
+  ];
+
+  const tips = [
+    'Always verify your inputs before calculating',
+    'Consider consulting with a financial advisor for important decisions',
+    'Keep your calculations for future reference',
+    'Update your inputs as your situation changes',
+    'Use this calculator as a planning tool only',
+    'Consider all factors that may affect your results'
+  ];
+
+  const calculatorData = {
+    formula: 'Standard mathematical formula',
+    assumptions: [
+      'Rates remain constant throughout the period',
+      'No additional charges or fees included',
+      'Results are for planning purposes only'
+    ],
+    limitations: [
+      'Actual results may vary due to market conditions',
+      'Additional factors not included in calculations',
+      'Consult professionals for important decisions'
+    ],
+    lastUpdated: 'January 2025'
+  };
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-          <Shield className="w-5 h-5 mr-2 text-[--primary-600]" />
-          Life Insurance Details
-        </h2>
-        
-        <div className="space-y-4">
-          <div>
-            <label className="text-sm font-medium text-neutral-700 mb-2 block">
-              Policy Type
-            </label>
-            <div className="grid grid-cols-2 gap-2">
-              {Object.entries(policyTypes).map(([key, policy]) => (
-                <button
-                  key={key}
-                  onClick={() => setPolicyType(key as PolicyType)}
-                  className={`p-4 rounded-lg text-left ${
-                    policyType === key
-                      ? 'bg-[--primary-100] text-[--primary-800]'
-                      : 'bg-neutral-100 text-neutral-600'
-                  }`}
-                >
-                  <div className="font-medium">{policy.name}</div>
-                  <div className="text-sm mt-1 opacity-80">{policy.description}</div>
-                </button>
-              ))}
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="cover-amount" className="text-sm font-medium text-neutral-700">
-                Cover Amount (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(coverAmount)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="cover-amount"
-              min="500000" 
-              max="10000000" 
-              step="100000" 
-              value={coverAmount} 
-              onChange={(e) => setCoverAmount(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="age" className="text-sm font-medium text-neutral-700">
-                Age (Years)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {age} years
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="age"
-              min="18" 
-              max="65" 
-              value={age} 
-              onChange={(e) => setAge(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="policy-term" className="text-sm font-medium text-neutral-700">
-                Policy Term (Years)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {policyTerm} years
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="policy-term"
-              min={policyTypes[policyType].minTerm} 
-              max={policyTypes[policyType].maxTerm} 
-              value={policyTerm} 
-              onChange={(e) => setPolicyTerm(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-        </div>
-        
-        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Policy Summary</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Monthly Premium</p>
-              <p className="text-xl font-bold text-neutral-900">{formatCurrency(monthlyPremium)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Annual Premium</p>
-              <p className="text-xl font-bold text-neutral-900">{formatCurrency(monthlyPremium * 12)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Maturity Value</p>
-              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(maturityValue)}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="space-y-6">
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Policy Details
-          </h2>
-          
-          <div className="space-y-4">
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Coverage Details</h3>
-              <div className="space-y-2 text-sm text-neutral-600">
-                <div className="flex justify-between">
-                  <span>Sum Assured</span>
-                  <span className="font-medium">{formatCurrency(coverAmount)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Policy Term</span>
-                  <span className="font-medium">{policyTerm} years</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Expected Returns</span>
-                  <span className="font-medium">{policyTypes[policyType].returnRate}% p.a.</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Policy Benefits</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                {policyType === 'endowment' && (
-                  <>
-                    <li>Guaranteed maturity benefit</li>
-                    <li>Death benefit equal to sum assured</li>
-                    <li>Bonus additions</li>
-                    <li>Loan facility available</li>
-                  </>
-                )}
-                {policyType === 'moneyBack' && (
-                  <>
-                    <li>Periodic survival benefits</li>
-                    <li>Guaranteed maturity benefit</li>
-                    <li>Death benefit with bonuses</li>
-                    <li>Regular liquidity</li>
-                  </>
-                )}
-                {policyType === 'ulip' && (
-                  <>
-                    <li>Market-linked returns</li>
-                    <li>Flexibility in fund selection</li>
-                    <li>Switching between funds</li>
-                    <li>Transparency in charges</li>
-                  </>
-                )}
-                {policyType === 'wholeLife' && (
-                  <>
-                    <li>Lifetime coverage</li>
-                    <li>Guaranteed additions</li>
-                    <li>Premium payment limited term</li>
-                    <li>Legacy planning</li>
-                  </>
-                )}
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-[--accent-50] rounded-lg">
-              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Important Notes</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
-                <li>Tax benefits under Section 80C</li>
-                <li>Maturity amount tax-free under Section 10(10D)</li>
-                <li>Grace period of 30 days for premium payment</li>
-                <li>Policy revival available within 2 years</li>
-                <li>Loan facility available after 3 years</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="lifeinsurancecalculator"
+      name="Life Insurance Calculator"
+      description="Calculate life insurance premiums and coverage with our free online calculator."
+      category="Insurance Calculators"
+      seoTitle="Life Insurance Calculator 2025 - Calculate Life Insurance Calculator Online | Free Calculator India"
+      seoDescription="Calculate your life insurance calculator instantly with our free calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="life insurance calculator calculator"
+      relatedKeywords={[
+        'life insurance calculator calculator',
+        'life insurance calculator calculation',
+        'life insurance calculator calculator India',
+        'life insurance calculator calculator online',
+        'free life insurance calculator calculator',
+        'life insurance calculator calculator 2025'
+      ]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

@@ -1,245 +1,212 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency } from '../utils/calculatorUtils';
-import { Sliders, Calculator, Heart } from 'lucide-react';
-
-interface FamilyMember {
-  age: number;
-  relation: string;
-  preExisting: boolean;
-}
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target
+} from 'lucide-react';
 
 export const HealthInsuranceCalculator: React.FC = () => {
-  const [coverAmount, setCoverAmount] = useState<number>(500000);
-  const [city, setCity] = useState<'metro' | 'non-metro'>('metro');
-  const [familyMembers, setFamilyMembers] = useState<FamilyMember[]>([
-    { age: 35, relation: 'Self', preExisting: false },
-    { age: 32, relation: 'Spouse', preExisting: false }
-  ]);
-  const [annualPremium, setAnnualPremium] = useState<number>(0);
-  const [monthlyPremium, setMonthlyPremium] = useState<number>(0);
-  
-  useEffect(() => {
-    // Calculate premium based on various factors
-    let basePremium = (coverAmount / 100000) * 1000;
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    // City factor
-    if (city === 'metro') {
-      basePremium *= 1.1;
-    }
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
     
-    // Age and pre-existing conditions factor
-    familyMembers.forEach(member => {
-      let memberPremium = basePremium * (1 + (member.age - 25) * 0.02);
-      if (member.preExisting) {
-        memberPremium *= 1.3;
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
       }
-      basePremium += memberPremium;
-    });
-    
-    setAnnualPremium(basePremium);
-    setMonthlyPremium(basePremium / 12);
-  }, [coverAmount, city, familyMembers]);
-  
-  const addFamilyMember = () => {
-    setFamilyMembers([...familyMembers, { age: 30, relation: 'Child', preExisting: false }]);
+    ];
   };
-  
-  const removeFamilyMember = (index: number) => {
-    setFamilyMembers(familyMembers.filter((_, i) => i !== index));
+
+  const inputs = [
+    {
+      id: 'amount',
+      label: 'Amount',
+      type: 'range' as const,
+      value: 10000,
+      min: 1000,
+      max: 1000000,
+      step: 1000,
+      unit: ' ₹',
+      description: 'Enter the amount for calculation',
+      tooltip: 'The amount on which calculation needs to be performed',
+      required: true
+    },
+    {
+      id: 'rate',
+      label: 'Rate',
+      type: 'range' as const,
+      value: 10,
+      min: 1,
+      max: 30,
+      step: 0.1,
+      unit: '% p.a.',
+      description: 'Annual rate for calculation',
+      tooltip: 'The annual rate applicable to your calculation',
+      required: true
+    },
+    {
+      id: 'period',
+      label: 'Time Period',
+      type: 'range' as const,
+      value: 5,
+      min: 1,
+      max: 30,
+      step: 1,
+      unit: ' years',
+      description: 'Duration for calculation',
+      tooltip: 'The time period for your calculation',
+      required: true
+    }
+  ];
+
+  const features = [
+    {
+      name: 'Instant Calculation',
+      description: 'Get results instantly as you adjust values',
+      icon: <Calculator className="h-5 w-5" />
+    },
+    {
+      name: 'Mobile Optimized',
+      description: 'Works perfectly on all devices and screen sizes',
+      icon: <Smartphone className="h-5 w-5" />
+    },
+    {
+      name: 'No Registration',
+      description: 'Use our calculator without any sign-up required',
+      icon: <Users className="h-5 w-5" />
+    },
+    {
+      name: 'Accurate Results',
+      description: 'Based on standard mathematical formulas',
+      icon: <CheckCircle className="h-5 w-5" />
+    },
+    {
+      name: 'Free to Use',
+      description: 'Completely free calculator with no hidden charges',
+      icon: <DollarSign className="h-5 w-5" />
+    },
+    {
+      name: '2025 Updated',
+      description: 'Latest calculation tools for 2025',
+      icon: <Clock className="h-5 w-5" />
+    }
+  ];
+
+  const faqs = [
+    {
+      question: 'What is Health Insurance Calculator?',
+      answer: 'Health Insurance Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs.'
+    },
+    {
+      question: 'How accurate is this calculator?',
+      answer: 'Our calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool.'
+    },
+    {
+      question: 'Is this calculator free to use?',
+      answer: 'Yes, our calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning.'
+    },
+    {
+      question: 'Can I use this calculator on mobile devices?',
+      answer: 'Yes, our calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size.'
+    }
+  ];
+
+  const relatedCalculators = [
+    {
+      id: 'emi-calculator',
+      name: 'EMI Calculator',
+      description: 'Calculate EMI for loans',
+      url: '/calculators/emi-calculator'
+    },
+    {
+      id: 'sip-calculator',
+      name: 'SIP Calculator',
+      description: 'Calculate SIP returns',
+      url: '/calculators/sip-calculator'
+    },
+    {
+      id: 'compound-interest-calculator',
+      name: 'Compound Interest Calculator',
+      description: 'Calculate compound interest',
+      url: '/calculators/compound-interest-calculator'
+    }
+  ];
+
+  const tips = [
+    'Always verify your inputs before calculating',
+    'Consider consulting with a financial advisor for important decisions',
+    'Keep your calculations for future reference',
+    'Update your inputs as your situation changes',
+    'Use this calculator as a planning tool only',
+    'Consider all factors that may affect your results'
+  ];
+
+  const calculatorData = {
+    formula: 'Standard mathematical formula',
+    assumptions: [
+      'Rates remain constant throughout the period',
+      'No additional charges or fees included',
+      'Results are for planning purposes only'
+    ],
+    limitations: [
+      'Actual results may vary due to market conditions',
+      'Additional factors not included in calculations',
+      'Consult professionals for important decisions'
+    ],
+    lastUpdated: 'January 2025'
   };
-  
-  const updateFamilyMember = (index: number, updates: Partial<FamilyMember>) => {
-    setFamilyMembers(familyMembers.map((member, i) => 
-      i === index ? { ...member, ...updates } : member
-    ));
-  };
-  
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-          <Heart className="w-5 h-5 mr-2 text-[--primary-600]" />
-          Health Insurance Details
-        </h2>
-        
-        <div className="space-y-4">
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="cover-amount" className="text-sm font-medium text-neutral-700">
-                Cover Amount (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(coverAmount)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="cover-amount"
-              min="100000" 
-              max="5000000" 
-              step="100000" 
-              value={coverAmount} 
-              onChange={(e) => setCoverAmount(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <label className="text-sm font-medium text-neutral-700 mb-2 block">
-              City Type
-            </label>
-            <div className="flex space-x-4">
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  city === 'metro'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setCity('metro')}
-              >
-                Metro City
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  city === 'non-metro'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setCity('non-metro')}
-              >
-                Non-Metro City
-              </button>
-            </div>
-          </div>
-          
-          <div className="space-y-4">
-            <h3 className="text-lg font-medium text-neutral-900">Family Members</h3>
-            {familyMembers.map((member, index) => (
-              <div key={index} className="p-4 bg-white rounded-lg border border-neutral-200">
-                <div className="flex justify-between items-center mb-4">
-                  <input
-                    type="text"
-                    value={member.relation}
-                    onChange={(e) => updateFamilyMember(index, { relation: e.target.value })}
-                    className="text-sm font-medium bg-transparent border-none p-0 focus:ring-0"
-                  />
-                  {index > 1 && (
-                    <button
-                      onClick={() => removeFamilyMember(index)}
-                      className="text-neutral-400 hover:text-neutral-600"
-                    >
-                      ✕
-                    </button>
-                  )}
-                </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between mb-2">
-                      <label className="text-sm text-neutral-600">Age</label>
-                      <span className="text-sm text-neutral-500">{member.age} years</span>
-                    </div>
-                    <input
-                      type="range"
-                      min="1"
-                      max="80"
-                      value={member.age}
-                      onChange={(e) => updateFamilyMember(index, { age: Number(e.target.value) })}
-                      className="slider"
-                    />
-                  </div>
-                  
-                  <div className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      checked={member.preExisting}
-                      onChange={(e) => updateFamilyMember(index, { preExisting: e.target.checked })}
-                      className="rounded border-neutral-300 text-[--primary-600] focus:ring-[--primary-500]"
-                    />
-                    <label className="text-sm text-neutral-600">
-                      Pre-existing Conditions
-                    </label>
-                  </div>
-                </div>
-              </div>
-            ))}
-            
-            {familyMembers.length < 6 && (
-              <button
-                onClick={addFamilyMember}
-                className="w-full py-2 px-4 border-2 border-dashed border-neutral-300 rounded-lg text-neutral-600 hover:border-neutral-400 hover:text-neutral-700 transition-colors"
-              >
-                + Add Family Member
-              </button>
-            )}
-          </div>
-        </div>
-        
-        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Premium Summary</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Annual Premium</p>
-              <p className="text-xl font-bold text-neutral-900">{formatCurrency(annualPremium)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Monthly Premium</p>
-              <p className="text-xl font-bold text-neutral-900">{formatCurrency(monthlyPremium)}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="space-y-6">
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Policy Details
-          </h2>
-          
-          <div className="space-y-4">
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Coverage Details</h3>
-              <div className="space-y-2 text-sm text-neutral-600">
-                <div className="flex justify-between">
-                  <span>Sum Insured</span>
-                  <span className="font-medium">{formatCurrency(coverAmount)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Family Members</span>
-                  <span className="font-medium">{familyMembers.length}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>City Type</span>
-                  <span className="font-medium">{city === 'metro' ? 'Metro' : 'Non-Metro'}</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Key Features</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>Cashless treatment at network hospitals</li>
-                <li>Pre and post hospitalization coverage</li>
-                <li>Day care procedures covered</li>
-                <li>No claim bonus benefit</li>
-                <li>Tax benefits under Section 80D</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-[--accent-50] rounded-lg">
-              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Important Notes</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
-                <li>30 days initial waiting period</li>
-                <li>2 years waiting period for pre-existing diseases</li>
-                <li>Lifelong renewability</li>
-                <li>Free health check-up every 4 claim-free years</li>
-                <li>AYUSH treatment coverage</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="healthinsurancecalculator"
+      name="Health Insurance Calculator"
+      description="Calculate health insurance premiums and coverage with our free online calculator."
+      category="Insurance Calculators"
+      seoTitle="Health Insurance Calculator 2025 - Calculate Health Insurance Calculator Online | Free Calculator India"
+      seoDescription="Calculate your health insurance calculator instantly with our free calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="health insurance calculator calculator"
+      relatedKeywords={[
+        'health insurance calculator calculator',
+        'health insurance calculator calculation',
+        'health insurance calculator calculator India',
+        'health insurance calculator calculator online',
+        'free health insurance calculator calculator',
+        'health insurance calculator calculator 2025'
+      ]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

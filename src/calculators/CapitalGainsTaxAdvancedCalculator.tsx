@@ -1,537 +1,205 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency } from '../utils/calculatorUtils';
-import { Sliders, Calculator, TrendingUp } from 'lucide-react';
-import { BarChart } from '../components/BarChart';
-
-type AssetType = 'equity' | 'debt' | 'property' | 'gold' | 'crypto';
-type HoldingPeriod = 'shortTerm' | 'longTerm';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target, Receipt
+} from 'lucide-react';
 
 export const CapitalGainsTaxAdvancedCalculator: React.FC = () => {
-  const [assetType, setAssetType] = useState<AssetType>('equity');
-  const [purchasePrice, setPurchasePrice] = useState<number>(100000);
-  const [salePrice, setSalePrice] = useState<number>(150000);
-  const [purchaseDate, setPurchaseDate] = useState<string>('2023-01-01');
-  const [saleDate, setSaleDate] = useState<string>('2025-01-01');
-  const [holdingPeriod, setHoldingPeriod] = useState<HoldingPeriod>('longTerm');
-  const [indexationBenefit, setIndexationBenefit] = useState<boolean>(true);
-  const [taxBracket, setTaxBracket] = useState<number>(30);
-  
-  const [gainAmount, setGainAmount] = useState<number>(0);
-  const [indexedCost, setIndexedCost] = useState<number>(0);
-  const [indexedGain, setIndexedGain] = useState<number>(0);
-  const [taxAmount, setTaxAmount] = useState<number>(0);
-  const [effectiveTaxRate, setEffectiveTaxRate] = useState<number>(0);
-  const [taxSavingsFromIndexation, setTaxSavingsFromIndexation] = useState<number>(0);
-  
-  // Cost inflation indices (simplified for demonstration)
-  const costInflationIndices: Record<string, number> = {
-    '2020': 301,
-    '2021': 317,
-    '2022': 331,
-    '2023': 348,
-    '2024': 365,
-    '2025': 383
-  };
-  
-  useEffect(() => {
-    // Determine holding period based on dates
-    const purchase = new Date(purchaseDate);
-    const sale = new Date(saleDate);
-    const holdingPeriodInMonths = (sale.getFullYear() - purchase.getFullYear()) * 12 + 
-                                 (sale.getMonth() - purchase.getMonth());
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    let isLongTerm = false;
-    switch (assetType) {
-      case 'equity':
-        isLongTerm = holdingPeriodInMonths >= 12;
-        break;
-      case 'debt':
-        isLongTerm = holdingPeriodInMonths >= 36;
-        break;
-      case 'property':
-        isLongTerm = holdingPeriodInMonths >= 24;
-        break;
-      case 'gold':
-        isLongTerm = holdingPeriodInMonths >= 36;
-        break;
-      case 'crypto':
-        isLongTerm = false; // Always short-term as per current laws
-        break;
-    }
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
     
-    setHoldingPeriod(isLongTerm ? 'longTerm' : 'shortTerm');
-    
-    // Calculate capital gain
-    const gain = salePrice - purchasePrice;
-    setGainAmount(gain);
-    
-    // Calculate indexed cost of acquisition (for applicable assets)
-    const purchaseYear = purchase.getFullYear().toString();
-    const saleYear = sale.getFullYear().toString();
-    
-    const purchaseYearIndex = costInflationIndices[purchaseYear] || 301;
-    const saleYearIndex = costInflationIndices[saleYear] || 383;
-    
-    const indexedCostOfAcquisition = purchasePrice * (saleYearIndex / purchaseYearIndex);
-    setIndexedCost(indexedCostOfAcquisition);
-    
-    const indexedGainAmount = salePrice - indexedCostOfAcquisition;
-    setIndexedGain(Math.max(0, indexedGainAmount));
-    
-    // Calculate tax based on asset type and holding period
-    let tax = 0;
-    let taxWithoutIndexation = 0;
-    
-    if (gain > 0) {
-      if (isLongTerm) {
-        switch (assetType) {
-          case 'equity':
-            // 10% above 1L for long-term equity gains
-            tax = Math.max(0, gain - 100000) * 0.1;
-            break;
-          case 'debt':
-          case 'gold':
-            // 20% with indexation for long-term debt and gold
-            tax = indexationBenefit ? Math.max(0, indexedGainAmount) * 0.2 : gain * 0.2;
-            taxWithoutIndexation = gain * 0.2;
-            break;
-          case 'property':
-            // 20% with indexation for long-term property
-            tax = indexationBenefit ? Math.max(0, indexedGainAmount) * 0.2 : gain * 0.2;
-            taxWithoutIndexation = gain * 0.2;
-            break;
-          case 'crypto':
-            // 30% flat for crypto (no long-term benefit)
-            tax = gain * 0.3;
-            break;
-        }
-      } else {
-        // Short-term capital gains
-        switch (assetType) {
-          case 'equity':
-            // 15% for short-term equity gains
-            tax = gain * 0.15;
-            break;
-          case 'debt':
-          case 'gold':
-          case 'property':
-            // Taxed at income tax slab rate
-            tax = gain * (taxBracket / 100);
-            break;
-          case 'crypto':
-            // 30% flat for crypto
-            tax = gain * 0.3;
-            break;
-        }
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
       }
-    }
-    
-    setTaxAmount(tax);
-    setEffectiveTaxRate(gain > 0 ? (tax / gain) * 100 : 0);
-    
-    // Calculate tax savings from indexation
-    if (isLongTerm && (assetType === 'debt' || assetType === 'gold' || assetType === 'property') && indexationBenefit) {
-      setTaxSavingsFromIndexation(Math.max(0, taxWithoutIndexation - tax));
-    } else {
-      setTaxSavingsFromIndexation(0);
-    }
-    
-  }, [assetType, purchasePrice, salePrice, purchaseDate, saleDate, indexationBenefit, taxBracket]);
-  
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-          <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
-          Capital Gains Details
-        </h2>
-        
-        <div className="space-y-4">
-          <div>
-            <label className="text-sm font-medium text-neutral-700 mb-2 block">
-              Asset Type
-            </label>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  assetType === 'equity'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setAssetType('equity')}
-              >
-                Equity
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  assetType === 'debt'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setAssetType('debt')}
-              >
-                Debt
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  assetType === 'property'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setAssetType('property')}
-              >
-                Property
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  assetType === 'gold'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setAssetType('gold')}
-              >
-                Gold
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  assetType === 'crypto'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setAssetType('crypto')}
-              >
-                Crypto
-              </button>
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="purchase-price" className="text-sm font-medium text-neutral-700">
-                Purchase Price (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(purchasePrice)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="purchase-price"
-              min="1000" 
-              max="10000000" 
-              step="1000" 
-              value={purchasePrice} 
-              onChange={(e) => setPurchasePrice(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="sale-price" className="text-sm font-medium text-neutral-700">
-                Sale Price (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(salePrice)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="sale-price"
-              min="1000" 
-              max="10000000" 
-              step="1000" 
-              value={salePrice} 
-              onChange={(e) => setSalePrice(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="purchase-date" className="block text-sm font-medium text-neutral-700 mb-2">
-                Purchase Date
-              </label>
-              <input
-                type="date"
-                id="purchase-date"
-                value={purchaseDate}
-                onChange={(e) => setPurchaseDate(e.target.value)}
-                className="input"
-                max={saleDate}
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="sale-date" className="block text-sm font-medium text-neutral-700 mb-2">
-                Sale Date
-              </label>
-              <input
-                type="date"
-                id="sale-date"
-                value={saleDate}
-                onChange={(e) => setSaleDate(e.target.value)}
-                className="input"
-                min={purchaseDate}
-              />
-            </div>
-          </div>
-          
-          {(assetType === 'debt' || assetType === 'property' || assetType === 'gold') && holdingPeriod === 'longTerm' && (
-            <div className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                id="indexation"
-                checked={indexationBenefit}
-                onChange={(e) => setIndexationBenefit(e.target.checked)}
-                className="rounded border-neutral-300 text-[--primary-600] focus:ring-[--primary-500]"
-              />
-              <label htmlFor="indexation" className="text-sm font-medium text-neutral-700">
-                Apply Indexation Benefit
-              </label>
-            </div>
-          )}
-          
-          {(assetType === 'debt' || assetType === 'property' || assetType === 'gold') && holdingPeriod === 'shortTerm' && (
-            <div>
-              <label className="text-sm font-medium text-neutral-700 mb-2 block">
-                Income Tax Bracket
-              </label>
-              <div className="grid grid-cols-4 gap-2">
-                <button
-                  className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                    taxBracket === 5
-                      ? 'bg-[--primary-100] text-[--primary-800]'
-                      : 'bg-neutral-100 text-neutral-600'
-                  }`}
-                  onClick={() => setTaxBracket(5)}
-                >
-                  5%
-                </button>
-                <button
-                  className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                    taxBracket === 20
-                      ? 'bg-[--primary-100] text-[--primary-800]'
-                      : 'bg-neutral-100 text-neutral-600'
-                  }`}
-                  onClick={() => setTaxBracket(20)}
-                >
-                  20%
-                </button>
-                <button
-                  className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                    taxBracket === 30
-                      ? 'bg-[--primary-100] text-[--primary-800]'
-                      : 'bg-neutral-100 text-neutral-600'
-                  }`}
-                  onClick={() => setTaxBracket(30)}
-                >
-                  30%
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-        
-        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Tax Summary</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Capital Gains</p>
-              <p className={`text-xl font-bold ${gainAmount >= 0 ? 'text-[--success-600]' : 'text-[--error-600]'}`}>
-                {formatCurrency(gainAmount)}
-              </p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Tax Amount</p>
-              <p className="text-xl font-bold text-[--error-600]">{formatCurrency(taxAmount)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Effective Tax Rate</p>
-              <p className="text-xl font-bold text-neutral-900">{effectiveTaxRate.toFixed(2)}%</p>
-            </div>
-          </div>
-          
-          {(assetType === 'debt' || assetType === 'property' || assetType === 'gold') && 
-           holdingPeriod === 'longTerm' && indexationBenefit && (
-            <div className="mt-4 p-4 bg-[--success-50] rounded-lg">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-neutral-500">Indexed Cost of Acquisition</p>
-                  <p className="text-lg font-semibold text-neutral-900">
-                    {formatCurrency(indexedCost)}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-neutral-500">Tax Savings from Indexation</p>
-                  <p className="text-lg font-semibold text-[--success-600]">
-                    {formatCurrency(taxSavingsFromIndexation)}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-      
-      <div className="space-y-6">
-        <div>
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <TrendingUp className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Tax Comparison
-          </h2>
-          <div className="mt-4 h-64">
-            <BarChart 
-              data={[
-                { 
-                  label: 'Capital Gains', 
-                  value: gainAmount,
-                  color: '#3b82f6'
-                },
-                { 
-                  label: 'Tax Amount', 
-                  value: taxAmount,
-                  color: '#ef4444'
-                },
-                ...(indexationBenefit && holdingPeriod === 'longTerm' && 
-                  (assetType === 'debt' || assetType === 'property' || assetType === 'gold') ? 
-                  [{ 
-                    label: 'Tax Without Indexation', 
-                    value: gainAmount * 0.2,
-                    color: '#f59e0b'
-                  }] : [])
-              ]}
-              xKey="label"
-              yKey="value"
-              color="color"
-              xLabel="Amount Type"
-              yLabel="Amount (₹)"
-              formatY={(value) => formatCurrency(value)}
-            />
-          </div>
-        </div>
-        
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Tax Guidelines for {assetType.charAt(0).toUpperCase() + assetType.slice(1)}
-          </h2>
-          
-          <div className="space-y-4">
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Holding Period Classification</h3>
-              <div className="space-y-2 text-sm text-neutral-600">
-                {assetType === 'equity' && (
-                  <>
-                    <p><span className="font-medium">Short Term:</span> Less than 12 months</p>
-                    <p><span className="font-medium">Long Term:</span> 12 months or more</p>
-                  </>
-                )}
-                {(assetType === 'debt' || assetType === 'gold') && (
-                  <>
-                    <p><span className="font-medium">Short Term:</span> Less than 36 months</p>
-                    <p><span className="font-medium">Long Term:</span> 36 months or more</p>
-                  </>
-                )}
-                {assetType === 'property' && (
-                  <>
-                    <p><span className="font-medium">Short Term:</span> Less than 24 months</p>
-                    <p><span className="font-medium">Long Term:</span> 24 months or more</p>
-                  </>
-                )}
-                {assetType === 'crypto' && (
-                  <>
-                    <p><span className="font-medium">All crypto gains:</span> Treated as short-term gains regardless of holding period</p>
-                  </>
-                )}
-              </div>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Tax Rates</h3>
-              <div className="space-y-2 text-sm text-neutral-600">
-                {assetType === 'equity' && (
-                  <>
-                    <p><span className="font-medium">Short Term:</span> 15% of gains</p>
-                    <p><span className="font-medium">Long Term:</span> 10% of gains exceeding ₹1 lakh (without indexation)</p>
-                  </>
-                )}
-                {(assetType === 'debt' || assetType === 'gold') && (
-                  <>
-                    <p><span className="font-medium">Short Term:</span> Taxed as per income tax slab rate</p>
-                    <p><span className="font-medium">Long Term:</span> 20% with indexation benefit</p>
-                  </>
-                )}
-                {assetType === 'property' && (
-                  <>
-                    <p><span className="font-medium">Short Term:</span> Taxed as per income tax slab rate</p>
-                    <p><span className="font-medium">Long Term:</span> 20% with indexation benefit</p>
-                    <p><span className="font-medium">Section 54/54F:</span> Exemption available if reinvested in residential property</p>
-                  </>
-                )}
-                {assetType === 'crypto' && (
-                  <>
-                    <p><span className="font-medium">Flat rate:</span> 30% on gains without any deductions or set-off of losses</p>
-                    <p><span className="font-medium">TDS:</span> 1% TDS on transfer of virtual digital assets</p>
-                  </>
-                )}
-              </div>
-            </div>
-            
-            {(assetType === 'debt' || assetType === 'property' || assetType === 'gold') && (
-              <div className="p-4 bg-white rounded-lg">
-                <h3 className="text-lg font-medium text-neutral-900 mb-2">Indexation Benefit</h3>
-                <div className="space-y-2 text-sm text-neutral-600">
-                  <p>Indexation adjusts the purchase price for inflation, reducing the taxable gain.</p>
-                  <p><span className="font-medium">Formula:</span> Indexed Cost = Original Cost × (CII of Sale Year ÷ CII of Purchase Year)</p>
-                  <p><span className="font-medium">CII:</span> Cost Inflation Index published by the Income Tax Department</p>
-                  <p className="text-[--success-600] font-medium">In this case, indexation saved you {formatCurrency(taxSavingsFromIndexation)} in taxes.</p>
-                </div>
-              </div>
-            )}
-            
-            <div className="p-4 bg-[--accent-50] rounded-lg">
-              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Tax Planning Tips</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
-                {assetType === 'equity' && (
-                  <>
-                    <li>Consider harvesting losses to offset gains</li>
-                    <li>Time your sales to spread gains across financial years</li>
-                    <li>Utilize the ₹1 lakh exemption for long-term gains efficiently</li>
-                    <li>Consider ELSS funds for tax-saving along with capital gains</li>
-                  </>
-                )}
-                {(assetType === 'debt' || assetType === 'gold') && (
-                  <>
-                    <li>Hold investments for at least 36 months to qualify for long-term gains</li>
-                    <li>Utilize indexation benefit to reduce tax liability</li>
-                    <li>Consider debt mutual funds for more tax-efficient returns</li>
-                    <li>For gold, consider Sovereign Gold Bonds for additional interest income</li>
-                  </>
-                )}
-                {assetType === 'property' && (
-                  <>
-                    <li>Hold property for at least 24 months to qualify for long-term gains</li>
-                    <li>Invest in another residential property to claim exemption under Section 54/54F</li>
-                    <li>Invest in specified bonds under Section 54EC within 6 months of sale</li>
-                    <li>Keep all improvement cost receipts to add to the cost of acquisition</li>
-                  </>
-                )}
-                {assetType === 'crypto' && (
-                  <>
-                    <li>Maintain detailed records of all transactions</li>
-                    <li>Consider tax implications before each trade</li>
-                    <li>Be aware that losses from crypto cannot be set off against other income</li>
-                    <li>Stay updated with evolving regulations in this space</li>
-                  </>
-                )}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    ];
+  };
+
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Capital Gains Tax Advanced Calculator and how does it work?",
+    "answer": "Capital Gains Tax Advanced Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this capital gains tax advanced calculator calculator?",
+    "answer": "Our capital gains tax advanced calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our capital gains tax advanced calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our capital gains tax advanced calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
 };
 
-export default CapitalGainsTaxAdvancedCalculator;
+  return (
+    <EnhancedCalculator
+      id="capitalgainstaxadvancedcalculator"
+      name="Capital Gains Tax Advanced Calculator"
+      description="Calculate your capital gains tax advanced calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Tax Calculators"
+      seoTitle="Capital Gains Tax Advanced Calculator 2025 - Calculate Capital Gains Tax Advanced Calculator Online | Free Calculator India"
+      seoDescription="Calculate your capital gains tax advanced calculator instantly with our free capital gains tax advanced calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="capital gains tax advanced calculator calculator"
+      relatedKeywords={["capital gains tax advanced calculator calculator","capital gains tax advanced calculator calculation","capital gains tax advanced calculator calculator India","capital gains tax advanced calculator calculator online","free capital gains tax advanced calculator calculator","capital gains tax advanced calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
+  );
+};

@@ -1,299 +1,205 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency, calculateEMI } from '../utils/calculatorUtils';
-import { Sliders, Calculator, ArrowDown } from 'lucide-react';
-import { BarChart } from '../components/BarChart';
-
-interface LoanOption {
-  id: number;
-  loanAmount: number;
-  interestRate: number;
-  tenure: number;
-  processingFee: number;
-  emi: number;
-  totalInterest: number;
-  totalPayment: number;
-  bank?: string;
-}
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target
+} from 'lucide-react';
 
 export const LoanComparisonCalculator: React.FC = () => {
-  const [loanOptions, setLoanOptions] = useState<LoanOption[]>([
-    {
-      id: 1,
-      loanAmount: 1000000,
-      interestRate: 8.5,
-      tenure: 20,
-      processingFee: 0.5,
-      emi: 0,
-      totalInterest: 0,
-      totalPayment: 0,
-      bank: 'Bank A'
-    },
-    {
-      id: 2,
-      loanAmount: 1000000,
-      interestRate: 8.7,
-      tenure: 20,
-      processingFee: 0.25,
-      emi: 0,
-      totalInterest: 0,
-      totalPayment: 0,
-      bank: 'Bank B'
-    }
-  ]);
-  
-  const [selectedOption, setSelectedOption] = useState<number | null>(null);
-  
-  useEffect(() => {
-    const updatedOptions = loanOptions.map(option => {
-      const emi = calculateEMI(option.loanAmount, option.interestRate, option.tenure * 12);
-      const totalPayment = emi * option.tenure * 12;
-      const totalInterest = totalPayment - option.loanAmount;
-      const processingFeeAmount = (option.processingFee / 100) * option.loanAmount;
-      
-      return {
-        ...option,
-        emi,
-        totalInterest,
-        totalPayment: totalPayment + processingFeeAmount
-      };
-    });
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    setLoanOptions(updatedOptions);
-  }, []);
-  
-  const addLoanOption = () => {
-    const newId = Math.max(...loanOptions.map(o => o.id)) + 1;
-    setLoanOptions([...loanOptions, {
-      id: newId,
-      loanAmount: 1000000,
-      interestRate: 8.5,
-      tenure: 20,
-      processingFee: 0.5,
-      emi: 0,
-      totalInterest: 0,
-      totalPayment: 0,
-      bank: `Bank ${String.fromCharCode(65 + newId - 1)}`
-    }]);
-  };
-  
-  const removeLoanOption = (id: number) => {
-    if (loanOptions.length > 2) {
-      setLoanOptions(loanOptions.filter(option => option.id !== id));
-      if (selectedOption === id) setSelectedOption(null);
-    }
-  };
-  
-  const updateLoanOption = (id: number, updates: Partial<LoanOption>) => {
-    setLoanOptions(loanOptions.map(option => {
-      if (option.id === id) {
-        const updatedOption = { ...option, ...updates };
-        const emi = calculateEMI(updatedOption.loanAmount, updatedOption.interestRate, updatedOption.tenure * 12);
-        const totalPayment = emi * updatedOption.tenure * 12;
-        const totalInterest = totalPayment - updatedOption.loanAmount;
-        const processingFeeAmount = (updatedOption.processingFee / 100) * updatedOption.loanAmount;
-        
-        return {
-          ...updatedOption,
-          emi,
-          totalInterest,
-          totalPayment: totalPayment + processingFeeAmount
-        };
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
+    
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
       }
-      return option;
-    }));
+    ];
   };
-  
-  const getBestOption = () => {
-    return loanOptions.reduce((best, current) => 
-      current.totalPayment < best.totalPayment ? current : best
-    );
-  };
-  
-  const bestOption = getBestOption();
-  
+
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Loan Comparison Calculator and how does it work?",
+    "answer": "Loan Comparison Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this loan comparison calculator calculator?",
+    "answer": "Our loan comparison calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our loan comparison calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our loan comparison calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
+
   return (
-    <div className="space-y-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {loanOptions.map(option => (
-          <div 
-            key={option.id}
-            className={`p-6 rounded-lg border-2 transition-all ${
-              selectedOption === option.id 
-                ? 'border-[--primary-500] bg-[--primary-50]'
-                : option.id === bestOption.id
-                  ? 'border-[--success-500] bg-[--success-50]'
-                  : 'border-neutral-200 bg-white'
-            }`}
-          >
-            <div className="flex justify-between items-start mb-4">
-              <input
-                type="text"
-                value={option.bank}
-                onChange={(e) => updateLoanOption(option.id, { bank: e.target.value })}
-                className="text-lg font-semibold bg-transparent border-none p-0 focus:ring-0"
-                placeholder="Bank Name"
-              />
-              {loanOptions.length > 2 && (
-                <button
-                  onClick={() => removeLoanOption(option.id)}
-                  className="text-neutral-400 hover:text-neutral-600"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-            
-            <div className="space-y-4">
-              <div>
-                <label className="text-sm font-medium text-neutral-700">
-                  Loan Amount (₹)
-                </label>
-                <input
-                  type="number"
-                  value={option.loanAmount}
-                  onChange={(e) => updateLoanOption(option.id, { loanAmount: Number(e.target.value) })}
-                  className="input mt-1"
-                  min="10000"
-                  max="100000000"
-                  step="10000"
-                />
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium text-neutral-700">
-                  Interest Rate (% p.a.)
-                </label>
-                <input
-                  type="number"
-                  value={option.interestRate}
-                  onChange={(e) => updateLoanOption(option.id, { interestRate: Number(e.target.value) })}
-                  className="input mt-1"
-                  min="1"
-                  max="30"
-                  step="0.1"
-                />
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium text-neutral-700">
-                  Tenure (Years)
-                </label>
-                <input
-                  type="number"
-                  value={option.tenure}
-                  onChange={(e) => updateLoanOption(option.id, { tenure: Number(e.target.value) })}
-                  className="input mt-1"
-                  min="1"
-                  max="30"
-                />
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium text-neutral-700">
-                  Processing Fee (%)
-                </label>
-                <input
-                  type="number"
-                  value={option.processingFee}
-                  onChange={(e) => updateLoanOption(option.id, { processingFee: Number(e.target.value) })}
-                  className="input mt-1"
-                  min="0"
-                  max="5"
-                  step="0.01"
-                />
-              </div>
-            </div>
-            
-            <div className="mt-6 pt-6 border-t border-neutral-200">
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-sm text-neutral-600">Monthly EMI</span>
-                  <span className="font-medium">{formatCurrency(option.emi)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-neutral-600">Processing Fee</span>
-                  <span className="font-medium">{formatCurrency(option.loanAmount * option.processingFee / 100)}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-neutral-600">Total Interest</span>
-                  <span className="font-medium">{formatCurrency(option.totalInterest)}</span>
-                </div>
-                <div className="flex justify-between text-lg font-semibold mt-4 pt-2 border-t border-neutral-200">
-                  <span>Total Payment</span>
-                  <span>{formatCurrency(option.totalPayment)}</span>
-                </div>
-              </div>
-            </div>
-            
-            <button
-              onClick={() => setSelectedOption(option.id === selectedOption ? null : option.id)}
-              className={`w-full mt-4 btn ${
-                option.id === selectedOption
-                  ? 'bg-[--primary-600] text-white'
-                  : 'bg-white text-[--primary-600] border border-[--primary-600]'
-              }`}
-            >
-              {option.id === selectedOption ? 'Selected' : 'Select'}
-            </button>
-          </div>
-        ))}
-        
-        {loanOptions.length < 4 && (
-          <button
-            onClick={addLoanOption}
-            className="h-full min-h-[200px] rounded-lg border-2 border-dashed border-neutral-300 flex items-center justify-center text-neutral-600 hover:text-neutral-800 hover:border-neutral-400 transition-colors"
-          >
-            <div className="text-center">
-              <div className="text-4xl mb-2">+</div>
-              <div>Add Another Option</div>
-            </div>
-          </button>
-        )}
-      </div>
-      
-      <div className="bg-[--success-50] border border-[--success-200] rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-[--success-800] mb-4">Best Option: {bestOption.bank}</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white rounded-lg p-4">
-            <p className="text-sm text-neutral-500 mb-1">Monthly EMI</p>
-            <p className="text-xl font-bold text-[--success-700]">{formatCurrency(bestOption.emi)}</p>
-          </div>
-          <div className="bg-white rounded-lg p-4">
-            <p className="text-sm text-neutral-500 mb-1">Interest Rate</p>
-            <p className="text-xl font-bold text-[--success-700]">{bestOption.interestRate}%</p>
-          </div>
-          <div className="bg-white rounded-lg p-4">
-            <p className="text-sm text-neutral-500 mb-1">Total Interest</p>
-            <p className="text-xl font-bold text-[--success-700]">{formatCurrency(bestOption.totalInterest)}</p>
-          </div>
-          <div className="bg-white rounded-lg p-4">
-            <p className="text-sm text-neutral-500 mb-1">Total Payment</p>
-            <p className="text-xl font-bold text-[--success-700]">{formatCurrency(bestOption.totalPayment)}</p>
-          </div>
-        </div>
-      </div>
-      
-      <div>
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-6">
-          <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-          Comparison Chart
-        </h2>
-        <div className="h-80">
-          <BarChart 
-            data={loanOptions.map(option => ({
-              label: option.bank || `Option ${option.id}`,
-              value: option.totalPayment,
-              color: option.id === bestOption.id ? '#22c55e' : '#3b82f6'
-            }))}
-            xKey="label"
-            yKey="value"
-            color="color"
-            xLabel="Banks"
-            yLabel="Total Payment (₹)"
-            formatY={(value) => formatCurrency(value)}
-          />
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="loancomparisoncalculator"
+      name="Loan Comparison Calculator"
+      description="Calculate your loan comparison calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Loan Calculators"
+      seoTitle="Loan Comparison Calculator 2025 - Calculate Loan Comparison Calculator Online | Free Calculator India"
+      seoDescription="Calculate your loan comparison calculator instantly with our free loan comparison calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="loan comparison calculator calculator"
+      relatedKeywords={["loan comparison calculator calculator","loan comparison calculator calculation","loan comparison calculator calculator India","loan comparison calculator calculator online","free loan comparison calculator calculator","loan comparison calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

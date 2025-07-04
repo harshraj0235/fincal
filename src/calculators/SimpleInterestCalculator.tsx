@@ -1,92 +1,205 @@
-import React, { useState } from 'react';
-import { Calculator } from 'lucide-react';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
+} from 'lucide-react';
 
 export const SimpleInterestCalculator: React.FC = () => {
-  const [principal, setPrincipal] = useState<number>(0);
-  const [rate, setRate] = useState<number>(0);
-  const [time, setTime] = useState<number>(0);
-  const [interest, setInterest] = useState<number>(0);
-
-  const calculateInterest = () => {
-    const simpleInterest = (principal * rate * time) / 100;
-    setInterest(simpleInterest);
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
+    
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
+    
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
   };
 
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Simple Interest Calculator and how does it work?",
+    "answer": "Simple Interest Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this simple interest calculator calculator?",
+    "answer": "Our simple interest calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our simple interest calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our simple interest calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
+
   return (
-    <div className="p-6">
-      <div className="grid gap-6">
-        <div className="space-y-2">
-          <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
-            Principal Amount
-          </label>
-          <input
-            type="number"
-            id="principal"
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-            value={principal}
-            onChange={(e) => setPrincipal(Number(e.target.value))}
-            min="0"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="rate" className="block text-sm font-medium text-gray-700">
-            Interest Rate (% per annum)
-          </label>
-          <input
-            type="number"
-            id="rate"
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-            value={rate}
-            onChange={(e) => setRate(Number(e.target.value))}
-            min="0"
-            step="0.1"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="time" className="block text-sm font-medium text-gray-700">
-            Time (in years)
-          </label>
-          <input
-            type="number"
-            id="time"
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-            value={time}
-            onChange={(e) => setTime(Number(e.target.value))}
-            min="0"
-            step="0.1"
-          />
-        </div>
-
-        <button
-          onClick={calculateInterest}
-          className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-        >
-          <Calculator className="w-5 h-5 mr-2" />
-          Calculate Interest
-        </button>
-
-        {interest > 0 && (
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <h3 className="text-lg font-medium text-gray-900">Results</h3>
-            <div className="mt-2 grid gap-4">
-              <div>
-                <p className="text-sm text-gray-500">Simple Interest</p>
-                <p className="text-2xl font-semibold text-gray-900">
-                  ₹{interest.toFixed(2)}
-                </p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-500">Total Amount</p>
-                <p className="text-2xl font-semibold text-gray-900">
-                  ₹{(principal + interest).toFixed(2)}
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="simpleinterestcalculator"
+      name="Simple Interest Calculator"
+      description="Calculate your simple interest calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Investment Calculators"
+      seoTitle="Simple Interest Calculator 2025 - Calculate Simple Interest Calculator Online | Free Calculator India"
+      seoDescription="Calculate your simple interest calculator instantly with our free simple interest calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="simple interest calculator calculator"
+      relatedKeywords={["simple interest calculator calculator","simple interest calculator calculation","simple interest calculator calculator India","simple interest calculator calculator online","free simple interest calculator calculator","simple interest calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

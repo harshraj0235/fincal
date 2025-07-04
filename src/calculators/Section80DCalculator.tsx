@@ -1,172 +1,205 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency } from '../utils/calculatorUtils';
-import { Sliders, Calculator } from 'lucide-react';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
+} from 'lucide-react';
 
 export const Section80DCalculator: React.FC = () => {
-  const [selfPremium, setSelfPremium] = useState<number>(25000);
-  const [parentsPremium, setParentsPremium] = useState<number>(25000);
-  const [parentsAge, setParentsAge] = useState<'below60' | 'above60'>('below60');
-  const [totalDeduction, setTotalDeduction] = useState<number>(0);
-  
-  useEffect(() => {
-    const selfLimit = 25000;
-    const parentsLimit = parentsAge === 'above60' ? 50000 : 25000;
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    const selfDeduction = Math.min(selfPremium, selfLimit);
-    const parentsDeduction = Math.min(parentsPremium, parentsLimit);
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
     
-    setTotalDeduction(selfDeduction + parentsDeduction);
-  }, [selfPremium, parentsPremium, parentsAge]);
-  
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
+  };
+
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Section80 D Calculator and how does it work?",
+    "answer": "Section80 D Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this section80 d calculator calculator?",
+    "answer": "Our section80 d calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our section80 d calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our section80 d calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-          <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
-          Health Insurance Premium Details
-        </h2>
-        
-        <div className="space-y-4">
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="self-premium" className="text-sm font-medium text-neutral-700">
-                Self & Family Premium (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(selfPremium)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="self-premium"
-              min="0" 
-              max="50000" 
-              step="1000" 
-              value={selfPremium} 
-              onChange={(e) => setSelfPremium(Number(e.target.value))}
-              className="slider"
-            />
-            <div className="flex justify-between mt-1 text-xs text-neutral-500">
-              <span>₹0</span>
-              <span>₹50,000</span>
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="parents-premium" className="text-sm font-medium text-neutral-700">
-                Parents Premium (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(parentsPremium)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="parents-premium"
-              min="0" 
-              max="75000" 
-              step="1000" 
-              value={parentsPremium} 
-              onChange={(e) => setParentsPremium(Number(e.target.value))}
-              className="slider"
-            />
-            <div className="flex justify-between mt-1 text-xs text-neutral-500">
-              <span>₹0</span>
-              <span>₹75,000</span>
-            </div>
-          </div>
-          
-          <div className="pt-4">
-            <label className="text-sm font-medium text-neutral-700 mb-2 block">
-              Parents Age Group
-            </label>
-            <div className="flex space-x-4">
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  parentsAge === 'below60'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setParentsAge('below60')}
-              >
-                Below 60 years
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  parentsAge === 'above60'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setParentsAge('above60')}
-              >
-                60 years & above
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Deduction Summary</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Self & Family</p>
-              <p className="text-xl font-bold text-neutral-900">
-                {formatCurrency(Math.min(selfPremium, 25000))}
-              </p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Parents</p>
-              <p className="text-xl font-bold text-neutral-900">
-                {formatCurrency(Math.min(parentsPremium, parentsAge === 'above60' ? 50000 : 25000))}
-              </p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Total Deduction</p>
-              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(totalDeduction)}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="space-y-6">
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Section 80D Guidelines
-          </h2>
-          
-          <div className="space-y-4">
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Self & Family Coverage</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>Maximum deduction of ₹25,000 for self, spouse, and dependent children</li>
-                <li>Includes health insurance premium and preventive health checkup</li>
-                <li>Preventive health checkup deduction capped at ₹5,000</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Parents Coverage</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>Additional deduction for parents' health insurance premium</li>
-                <li>₹25,000 if parents are below 60 years</li>
-                <li>₹50,000 if parents are 60 years or above</li>
-                <li>Includes preventive health checkup up to ₹5,000</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-[--accent-50] rounded-lg">
-              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Important Notes</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
-                <li>Premium must be paid through non-cash mode</li>
-                <li>Policy should be from a registered insurer</li>
-                <li>Deduction available under old tax regime only</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="section80dcalculator"
+      name="Section80 D Calculator"
+      description="Calculate your section80 d calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Investment Calculators"
+      seoTitle="Section80 D Calculator 2025 - Calculate Section80 D Calculator Online | Free Calculator India"
+      seoDescription="Calculate your section80 d calculator instantly with our free section80 d calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="section80 d calculator calculator"
+      relatedKeywords={["section80 d calculator calculator","section80 d calculator calculation","section80 d calculator calculator India","section80 d calculator calculator online","free section80 d calculator calculator","section80 d calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

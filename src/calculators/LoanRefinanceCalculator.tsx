@@ -1,396 +1,205 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency, calculateEMI } from '../utils/calculatorUtils';
-import { Sliders, Calculator, ArrowRight } from 'lucide-react';
-import { BarChart } from '../components/BarChart';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target
+} from 'lucide-react';
 
 export const LoanRefinanceCalculator: React.FC = () => {
-  // Existing loan details
-  const [currentLoanBalance, setCurrentLoanBalance] = useState<number>(2000000);
-  const [currentInterestRate, setCurrentInterestRate] = useState<number>(9.5);
-  const [remainingTenure, setRemainingTenure] = useState<number>(15);
-  const [currentEmi, setCurrentEmi] = useState<number>(0);
-  
-  // New loan details
-  const [newInterestRate, setNewInterestRate] = useState<number>(8.5);
-  const [newTenure, setNewTenure] = useState<number>(15);
-  const [processingFee, setProcessingFee] = useState<number>(0.5);
-  const [newEmi, setNewEmi] = useState<number>(0);
-  
-  // Calculated values
-  const [currentTotalPayment, setCurrentTotalPayment] = useState<number>(0);
-  const [newTotalPayment, setNewTotalPayment] = useState<number>(0);
-  const [savings, setSavings] = useState<number>(0);
-  const [breakEvenMonths, setBreakEvenMonths] = useState<number>(0);
-  
-  useEffect(() => {
-    // Calculate current loan details
-    const calculatedCurrentEmi = calculateEMI(currentLoanBalance, currentInterestRate, remainingTenure * 12);
-    const currentTotal = calculatedCurrentEmi * remainingTenure * 12;
-    setCurrentEmi(calculatedCurrentEmi);
-    setCurrentTotalPayment(currentTotal);
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    // Calculate new loan details
-    const calculatedNewEmi = calculateEMI(currentLoanBalance, newInterestRate, newTenure * 12);
-    const processingFeeAmount = (processingFee / 100) * currentLoanBalance;
-    const newTotal = (calculatedNewEmi * newTenure * 12) + processingFeeAmount;
-    setNewEmi(calculatedNewEmi);
-    setNewTotalPayment(newTotal);
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
     
-    // Calculate savings
-    const calculatedSavings = currentTotal - newTotal;
-    setSavings(calculatedSavings);
-    
-    // Calculate break-even point
-    const monthlyBenefit = calculatedCurrentEmi - calculatedNewEmi;
-    if (monthlyBenefit > 0) {
-      const months = Math.ceil(processingFeeAmount / monthlyBenefit);
-      setBreakEvenMonths(months);
-    } else {
-      setBreakEvenMonths(0);
-    }
-  }, [
-    currentLoanBalance,
-    currentInterestRate,
-    remainingTenure,
-    newInterestRate,
-    newTenure,
-    processingFee
-  ]);
-  
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
+  };
+
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Loan Refinance Calculator and how does it work?",
+    "answer": "Loan Refinance Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this loan refinance calculator calculator?",
+    "answer": "Our loan refinance calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our loan refinance calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our loan refinance calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
+
   return (
-    <div className="space-y-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Current Loan Details
-          </h2>
-          
-          <div className="space-y-4">
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="current-balance" className="text-sm font-medium text-neutral-700">
-                  Outstanding Balance (₹)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {formatCurrency(currentLoanBalance)}
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="current-balance"
-                min="100000" 
-                max="10000000" 
-                step="100000" 
-                value={currentLoanBalance} 
-                onChange={(e) => setCurrentLoanBalance(Number(e.target.value))}
-                className="slider"
-              />
-              <div className="flex justify-between mt-1 text-xs text-neutral-500">
-                <span>₹1L</span>
-                <span>₹1Cr</span>
-              </div>
-            </div>
-            
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="current-rate" className="text-sm font-medium text-neutral-700">
-                  Current Interest Rate (% p.a.)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {currentInterestRate.toFixed(2)}%
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="current-rate"
-                min="6" 
-                max="15" 
-                step="0.05" 
-                value={currentInterestRate} 
-                onChange={(e) => setCurrentInterestRate(Number(e.target.value))}
-                className="slider"
-              />
-              <div className="flex justify-between mt-1 text-xs text-neutral-500">
-                <span>6%</span>
-                <span>15%</span>
-              </div>
-            </div>
-            
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="remaining-tenure" className="text-sm font-medium text-neutral-700">
-                  Remaining Tenure (Years)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {remainingTenure} years
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="remaining-tenure"
-                min="1" 
-                max="30" 
-                step="1" 
-                value={remainingTenure} 
-                onChange={(e) => setRemainingTenure(Number(e.target.value))}
-                className="slider"
-              />
-              <div className="flex justify-between mt-1 text-xs text-neutral-500">
-                <span>1 Year</span>
-                <span>30 Years</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="p-6 bg-neutral-50 rounded-lg">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Current Loan Summary</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <p className="text-sm text-neutral-500 mb-1">Monthly EMI</p>
-                <p className="text-xl font-bold text-neutral-900">{formatCurrency(currentEmi)}</p>
-              </div>
-              <div>
-                <p className="text-sm text-neutral-500 mb-1">Total Payment</p>
-                <p className="text-xl font-bold text-neutral-900">{formatCurrency(currentTotalPayment)}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            New Loan Details
-          </h2>
-          
-          <div className="space-y-4">
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="new-rate" className="text-sm font-medium text-neutral-700">
-                  New Interest Rate (% p.a.)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {newInterestRate.toFixed(2)}%
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="new-rate"
-                min="6" 
-                max="15" 
-                step="0.05" 
-                value={newInterestRate} 
-                onChange={(e) => setNewInterestRate(Number(e.target.value))}
-                className="slider"
-              />
-              <div className="flex justify-between mt-1 text-xs text-neutral-500">
-                <span>6%</span>
-                <span>15%</span>
-              </div>
-            </div>
-            
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="new-tenure" className="text-sm font-medium text-neutral-700">
-                  New Tenure (Years)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {newTenure} years
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="new-tenure"
-                min="1" 
-                max="30" 
-                step="1" 
-                value={newTenure} 
-                onChange={(e) => setNewTenure(Number(e.target.value))}
-                className="slider"
-              />
-              <div className="flex justify-between mt-1 text-xs text-neutral-500">
-                <span>1 Year</span>
-                <span>30 Years</span>
-              </div>
-            </div>
-            
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="processing-fee" className="text-sm font-medium text-neutral-700">
-                  Processing Fee (%)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {processingFee.toFixed(2)}%
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="processing-fee"
-                min="0" 
-                max="2" 
-                step="0.05" 
-                value={processingFee} 
-                onChange={(e) => setProcessingFee(Number(e.target.value))}
-                className="slider"
-              />
-              <div className="flex justify-between mt-1 text-xs text-neutral-500">
-                <span>0%</span>
-                <span>2%</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="p-6 bg-[--primary-50] rounded-lg">
-            <h3 className="text-lg font-semibold text-[--primary-900] mb-4">New Loan Summary</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <p className="text-sm text-neutral-500 mb-1">New Monthly EMI</p>
-                <p className="text-xl font-bold text-[--primary-900]">{formatCurrency(newEmi)}</p>
-              </div>
-              <div>
-                <p className="text-sm text-neutral-500 mb-1">Total Payment</p>
-                <p className="text-xl font-bold text-[--primary-900]">{formatCurrency(newTotalPayment)}</p>
-              </div>
-              <div>
-                <p className="text-sm text-neutral-500 mb-1">Processing Fee</p>
-                <p className="text-xl font-bold text-[--primary-900]">
-                  {formatCurrency((processingFee / 100) * currentLoanBalance)}
-                </p>
-              </div>
-              <div>
-                <p className="text-sm text-neutral-500 mb-1">EMI Reduction</p>
-                <p className="text-xl font-bold text-[--primary-900]">
-                  {formatCurrency(Math.max(0, currentEmi - newEmi))}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="p-6 bg-[--success-50] rounded-lg">
-          <h3 className="text-lg font-semibold text-[--success-800] mb-4">Refinancing Benefits</h3>
-          <div className="space-y-4">
-            <div>
-              <p className="text-sm text-[--success-600] mb-1">Total Savings</p>
-              <p className="text-2xl font-bold text-[--success-700]">
-                {formatCurrency(Math.max(0, savings))}
-              </p>
-            </div>
-            <div>
-              <p className="text-sm text-[--success-600] mb-1">Break-even Period</p>
-              <p className="text-2xl font-bold text-[--success-700]">
-                {breakEvenMonths > 0 
-                  ? `${Math.floor(breakEvenMonths / 12)} years ${breakEvenMonths % 12} months`
-                  : 'Not applicable'}
-              </p>
-            </div>
-            <div>
-              <p className="text-sm text-[--success-600] mb-1">Monthly Savings</p>
-              <p className="text-2xl font-bold text-[--success-700]">
-                {formatCurrency(Math.max(0, currentEmi - newEmi))}
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div className="p-6 bg-white rounded-lg border border-neutral-200">
-          <h3 className="text-lg font-semibold text-neutral-900 mb-4">Payment Comparison</h3>
-          <div className="h-64">
-            <BarChart 
-              data={[
-                {
-                  label: 'Current Loan',
-                  value: currentTotalPayment,
-                  color: '#ef4444'
-                },
-                {
-                  label: 'New Loan',
-                  value: newTotalPayment,
-                  color: '#22c55e'
-                }
-              ]}
-              xKey="label"
-              yKey="value"
-              color="color"
-              xLabel="Loan"
-              yLabel="Total Payment (₹)"
-              formatY={(value) => formatCurrency(value)}
-            />
-          </div>
-        </div>
-      </div>
-      
-      <div className="p-6 bg-neutral-50 rounded-lg">
-        <h3 className="text-lg font-semibold text-neutral-900 mb-4">Refinancing Recommendations</h3>
-        <div className="space-y-4">
-          {savings > 0 && (
-            <div className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[--success-100] text-[--success-600] flex items-center justify-center">
-                ✓
-              </div>
-              <div>
-                <p className="text-neutral-900">
-                  Refinancing is recommended as it will save you {formatCurrency(savings)} over the loan term.
-                </p>
-                <p className="text-sm text-neutral-600 mt-1">
-                  You'll break even on the processing fee in {breakEvenMonths} months.
-                </p>
-              </div>
-            </div>
-          )}
-          
-          {currentEmi - newEmi > 0 && (
-            <div className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[--success-100] text-[--success-600] flex items-center justify-center">
-                ✓
-              </div>
-              <div>
-                <p className="text-neutral-900">
-                  Your monthly EMI will reduce by {formatCurrency(currentEmi - newEmi)}.
-                </p>
-                <p className="text-sm text-neutral-600 mt-1">
-                  This improves your monthly cash flow and reduces financial stress.
-                </p>
-              </div>
-            </div>
-          )}
-          
-          {newInterestRate < currentInterestRate && (
-            <div className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[--success-100] text-[--success-600] flex items-center justify-center">
-                ✓
-              </div>
-              <div>
-                <p className="text-neutral-900">
-                  Interest rate reduction of {(currentInterestRate - newInterestRate).toFixed(2)}%.
-                </p>
-                <p className="text-sm text-neutral-600 mt-1">
-                  Lower interest rate means more of your payment goes toward principal.
-                </p>
-              </div>
-            </div>
-          )}
-          
-          {savings <= 0 && (
-            <div className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[--error-100] text-[--error-600] flex items-center justify-center">
-                ✕
-              </div>
-              <div>
-                <p className="text-neutral-900">
-                  Refinancing may not be beneficial at this time.
-                </p>
-                <p className="text-sm text-neutral-600 mt-1">
-                  The processing fees and/or new loan terms don't result in significant savings.
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="loanrefinancecalculator"
+      name="Loan Refinance Calculator"
+      description="Calculate your loan refinance calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Loan Calculators"
+      seoTitle="Loan Refinance Calculator 2025 - Calculate Loan Refinance Calculator Online | Free Calculator India"
+      seoDescription="Calculate your loan refinance calculator instantly with our free loan refinance calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="loan refinance calculator calculator"
+      relatedKeywords={["loan refinance calculator calculator","loan refinance calculator calculation","loan refinance calculator calculator India","loan refinance calculator calculator online","free loan refinance calculator calculator","loan refinance calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

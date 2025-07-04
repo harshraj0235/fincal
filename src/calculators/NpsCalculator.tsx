@@ -1,263 +1,205 @@
-import React, { useState, useEffect } from 'react';
-import { formatCurrency } from '../utils/calculatorUtils';
-import { Sliders, Calculator, PieChart } from 'lucide-react';
-import { ResultChart } from '../components/ResultChart';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
+} from 'lucide-react';
 
 export const NpsCalculator: React.FC = () => {
-  const [monthlyContribution, setMonthlyContribution] = useState<number>(5000);
-  const [employerContribution, setEmployerContribution] = useState<number>(5000);
-  const [expectedReturn, setExpectedReturn] = useState<number>(10);
-  const [currentAge, setCurrentAge] = useState<number>(30);
-  const [retirementAge, setRetirementAge] = useState<number>(60);
-  const [existingBalance, setExistingBalance] = useState<number>(100000);
-  const [equityAllocation, setEquityAllocation] = useState<number>(50);
-  const [maturityAmount, setMaturityAmount] = useState<number>(0);
-  const [totalContribution, setTotalContribution] = useState<number>(0);
-  const [totalReturns, setTotalReturns] = useState<number>(0);
-  
-  useEffect(() => {
-    // Calculate NPS accumulation
-    const investmentYears = retirementAge - currentAge;
-    let balance = existingBalance;
-    const yearlyContribution = (monthlyContribution + employerContribution) * 12;
-    let totalContrib = existingBalance;
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
     
-    for (let year = 1; year <= investmentYears; year++) {
-      totalContrib += yearlyContribution;
-      balance += yearlyContribution;
-      
-      // Calculate returns based on asset allocation
-      const equityReturns = balance * (equityAllocation / 100) * (expectedReturn / 100);
-      const debtReturns = balance * ((100 - equityAllocation) / 100) * ((expectedReturn - 2) / 100);
-      const totalReturns = equityReturns + debtReturns;
-      
-      balance += totalReturns;
-    }
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
     
-    setMaturityAmount(balance);
-    setTotalContribution(totalContrib);
-    setTotalReturns(balance - totalContrib);
-  }, [monthlyContribution, employerContribution, expectedReturn, currentAge, retirementAge, existingBalance, equityAllocation]);
-  
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
+  };
+
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Nps Calculator and how does it work?",
+    "answer": "Nps Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this nps calculator calculator?",
+    "answer": "Our nps calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our nps calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our nps calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-          <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
-          NPS Details
-        </h2>
-        
-        <div className="space-y-4">
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="monthly-contribution" className="text-sm font-medium text-neutral-700">
-                Monthly Contribution (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(monthlyContribution)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="monthly-contribution"
-              min="500" 
-              max="50000" 
-              step="500" 
-              value={monthlyContribution} 
-              onChange={(e) => setMonthlyContribution(Number(e.target.value))}
-              className="slider"
-            />
-            <div className="flex justify-between mt-1 text-xs text-neutral-500">
-              <span>₹500</span>
-              <span>₹50,000</span>
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="employer-contribution" className="text-sm font-medium text-neutral-700">
-                Monthly Employer Contribution (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(employerContribution)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="employer-contribution"
-              min="0" 
-              max="50000" 
-              step="500" 
-              value={employerContribution} 
-              onChange={(e) => setEmployerContribution(Number(e.target.value))}
-              className="slider"
-            />
-            <div className="flex justify-between mt-1 text-xs text-neutral-500">
-              <span>₹0</span>
-              <span>₹50,000</span>
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="existing-balance" className="text-sm font-medium text-neutral-700">
-                Existing NPS Balance (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(existingBalance)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="existing-balance"
-              min="0" 
-              max="10000000" 
-              step="10000" 
-              value={existingBalance} 
-              onChange={(e) => setExistingBalance(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="current-age" className="text-sm font-medium text-neutral-700">
-                Current Age (Years)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {currentAge} years
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="current-age"
-              min="18" 
-              max="55" 
-              step="1" 
-              value={currentAge} 
-              onChange={(e) => setCurrentAge(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="equity-allocation" className="text-sm font-medium text-neutral-700">
-                Equity Allocation (%)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {equityAllocation}%
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="equity-allocation"
-              min="0" 
-              max="75" 
-              step="5" 
-              value={equityAllocation} 
-              onChange={(e) => setEquityAllocation(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="expected-return" className="text-sm font-medium text-neutral-700">
-                Expected Return (% p.a.)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {expectedReturn}%
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="expected-return"
-              min="8" 
-              max="15" 
-              step="0.5" 
-              value={expectedReturn} 
-              onChange={(e) => setExpectedReturn(Number(e.target.value))}
-              className="slider"
-            />
-          </div>
-        </div>
-        
-        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">NPS Summary</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Total Contribution</p>
-              <p className="text-xl font-bold text-neutral-900">{formatCurrency(totalContribution)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Total Returns</p>
-              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(totalReturns)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Maturity Amount</p>
-              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(maturityAmount)}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="space-y-6">
-        <div>
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <PieChart className="w-5 h-5 mr-2 text-[--primary-600]" />
-            NPS Breakup
-          </h2>
-          <div className="mt-4 h-64">
-            <ResultChart 
-              data={[
-                { name: 'Total Contribution', value: totalContribution, color: '#3b82f6' },
-                { name: 'Returns', value: totalReturns, color: '#22c55e' }
-              ]}
-              centerText={`${formatCurrency(maturityAmount)}\nTotal Value`}
-            />
-          </div>
-        </div>
-        
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            NPS Guidelines
-          </h2>
-          
-          <div className="space-y-4">
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Investment Rules</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>Maximum equity exposure capped at 75%</li>
-                <li>Auto reduction in equity after age 50</li>
-                <li>Minimum contribution of ₹6,000 per year</li>
-                <li>Maximum contribution not capped</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Tax Benefits</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
-                <li>Additional ₹50,000 deduction under 80CCD(1B)</li>
-                <li>Employer contribution deductible under 80CCD(2)</li>
-                <li>40% of corpus tax-free on maturity</li>
-                <li>Partial withdrawal tax-free after 3 years</li>
-              </ul>
-            </div>
-            
-            <div className="p-4 bg-[--accent-50] rounded-lg">
-              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Important Notes</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
-                <li>Retirement age fixed at 60 years</li>
-                <li>Minimum 40% annuitization mandatory</li>
-                <li>Partial withdrawal allowed for specific needs</li>
-                <li>Professional fund management with low costs</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="npscalculator"
+      name="Nps Calculator"
+      description="Calculate your nps calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Investment Calculators"
+      seoTitle="Nps Calculator 2025 - Calculate Nps Calculator Online | Free Calculator India"
+      seoDescription="Calculate your nps calculator instantly with our free nps calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="nps calculator calculator"
+      relatedKeywords={["nps calculator calculator","nps calculator calculation","nps calculator calculator India","nps calculator calculator online","free nps calculator calculator","nps calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };

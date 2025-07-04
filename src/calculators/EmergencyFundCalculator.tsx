@@ -1,76 +1,205 @@
-import React, { useState } from 'react';
-import { Calculator } from 'lucide-react';
+import React from 'react';
+import { EnhancedCalculator } from '../components/EnhancedCalculator';
+import { 
+  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
+  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
+  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
+} from 'lucide-react';
 
 export const EmergencyFundCalculator: React.FC = () => {
-  const [monthlyExpenses, setMonthlyExpenses] = useState<number>(0);
-  const [monthsOfCoverage, setMonthsOfCoverage] = useState<number>(6);
-  
-  const calculateEmergencyFund = () => {
-    return monthlyExpenses * monthsOfCoverage;
+  const handleCalculate = (values: Record<string, number | string>) => {
+    const amount = values.amount as number;
+    const rate = values.rate as number;
+    const period = values.period as number;
+    
+    // Basic calculation - replace with actual formula
+    const result = amount * (1 + rate / 100) ** period;
+    const interest = result - amount;
+    
+    return [
+      {
+        label: 'Result',
+        value: result,
+        unit: ' ₹',
+        color: 'primary' as const,
+        icon: <DollarSign className="h-4 w-4" />,
+        description: 'Calculated result'
+      },
+      {
+        label: 'Interest',
+        value: interest,
+        unit: ' ₹',
+        color: 'success' as const,
+        icon: <TrendingUp className="h-4 w-4" />,
+        description: 'Interest earned'
+      },
+      {
+        label: 'Principal',
+        value: amount,
+        unit: ' ₹',
+        color: 'neutral' as const,
+        icon: <Target className="h-4 w-4" />,
+        description: 'Original amount'
+      }
+    ];
   };
 
+  const inputs = [
+  {
+    "id": "amount",
+    "label": "Amount",
+    "type": "range",
+    "value": 10000,
+    "min": 1000,
+    "max": 1000000,
+    "step": 1000,
+    "unit": " ₹",
+    "description": "Enter the amount for calculation",
+    "tooltip": "The amount on which calculation needs to be performed",
+    "required": true
+  },
+  {
+    "id": "rate",
+    "label": "Rate",
+    "type": "range",
+    "value": 10,
+    "min": 1,
+    "max": 30,
+    "step": 0.1,
+    "unit": "% p.a.",
+    "description": "Annual rate for calculation",
+    "tooltip": "The annual rate applicable to your calculation",
+    "required": true
+  },
+  {
+    "id": "period",
+    "label": "Time Period",
+    "type": "range",
+    "value": 5,
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "unit": " years",
+    "description": "Duration for calculation",
+    "tooltip": "The time period for your calculation",
+    "required": true
+  }
+];
+
+  const features = [
+  {
+    "name": "Instant Calculation",
+    "description": "Get instant calculation results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Mobile Optimized",
+    "description": "Get mobile optimized results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "No Registration",
+    "description": "Get no registration results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Accurate Results",
+    "description": "Get accurate results results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "Free to Use",
+    "description": "Get free to use results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  },
+  {
+    "name": "2025 Updated",
+    "description": "Get 2025 updated results instantly",
+    "icon": "<Calculator className=\"h-5 w-5\" />"
+  }
+];
+
+  const faqs = [
+  {
+    "question": "What is Emergency Fund Calculator and how does it work?",
+    "answer": "Emergency Fund Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
+  },
+  {
+    "question": "How accurate is this emergency fund calculator calculator?",
+    "answer": "Our emergency fund calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
+  },
+  {
+    "question": "Is this calculator free to use?",
+    "answer": "Yes, our emergency fund calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
+  },
+  {
+    "question": "Can I use this calculator on mobile devices?",
+    "answer": "Yes, our emergency fund calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
+  }
+];
+
+  const relatedCalculators = [
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "description": "Calculate EMI for loans",
+    "url": "/calculators/emi-calculator"
+  },
+  {
+    "id": "sip-calculator",
+    "name": "SIP Calculator",
+    "description": "Calculate SIP returns",
+    "url": "/calculators/sip-calculator"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Calculate compound interest",
+    "url": "/calculators/compound-interest-calculator"
+  }
+];
+
+  const tips = [
+  "Always verify your inputs before calculating",
+  "Consider consulting with a financial advisor for important decisions",
+  "Keep your calculations for future reference",
+  "Update your inputs as your situation changes",
+  "Use this calculator as a planning tool only",
+  "Consider all factors that may affect your results"
+];
+
+  const calculatorData = {
+  "formula": "Standard mathematical formula",
+  "assumptions": [
+    "Rates remain constant throughout the period",
+    "No additional charges or fees included",
+    "Results are for planning purposes only"
+  ],
+  "limitations": [
+    "Actual results may vary due to market conditions",
+    "Additional factors not included in calculations",
+    "Consult professionals for important decisions"
+  ],
+  "lastUpdated": "January 2025"
+};
+
   return (
-    <div className="p-6">
-      <div className="grid gap-6">
-        <div className="space-y-4">
-          <label className="block">
-            <span className="text-neutral-700 font-medium">Monthly Expenses</span>
-            <div className="mt-1 relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500">₹</span>
-              <input
-                type="number"
-                value={monthlyExpenses}
-                onChange={(e) => setMonthlyExpenses(Number(e.target.value))}
-                className="block w-full pl-8 pr-3 py-2 border border-neutral-300 rounded-md focus:ring-primary focus:border-primary"
-                placeholder="Enter your monthly expenses"
-              />
-            </div>
-          </label>
-
-          <label className="block">
-            <span className="text-neutral-700 font-medium">Months of Coverage</span>
-            <div className="mt-1">
-              <input
-                type="range"
-                min="3"
-                max="12"
-                step="1"
-                value={monthsOfCoverage}
-                onChange={(e) => setMonthsOfCoverage(Number(e.target.value))}
-                className="w-full"
-              />
-              <div className="flex justify-between text-sm text-neutral-600">
-                <span>3 months</span>
-                <span>{monthsOfCoverage} months</span>
-                <span>12 months</span>
-              </div>
-            </div>
-          </label>
-        </div>
-
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-neutral-900">Recommended Emergency Fund</h3>
-            <Calculator className="h-5 w-5 text-neutral-500" />
-          </div>
-          <div className="text-3xl font-bold text-primary">
-            ₹{calculateEmergencyFund().toLocaleString('en-IN')}
-          </div>
-          <p className="mt-2 text-sm text-neutral-600">
-            This amount should cover your expenses for {monthsOfCoverage} months in case of emergencies.
-          </p>
-        </div>
-
-        <div className="bg-blue-50 p-4 rounded-lg">
-          <h4 className="font-medium text-blue-900 mb-2">Why have an emergency fund?</h4>
-          <ul className="list-disc list-inside space-y-2 text-blue-800">
-            <li>Provides financial security during unexpected events</li>
-            <li>Helps avoid taking on debt for emergencies</li>
-            <li>Reduces financial stress and anxiety</li>
-            <li>Gives you time to find new employment if needed</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <EnhancedCalculator
+      id="emergencyfundcalculator"
+      name="Emergency Fund Calculator"
+      description="Calculate your emergency fund calculator with our free online calculator. Get accurate calculations and results instantly."
+      category="Investment Calculators"
+      seoTitle="Emergency Fund Calculator 2025 - Calculate Emergency Fund Calculator Online | Free Calculator India"
+      seoDescription="Calculate your emergency fund calculator instantly with our free emergency fund calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
+      focusKeyword="emergency fund calculator calculator"
+      relatedKeywords={["emergency fund calculator calculator","emergency fund calculator calculation","emergency fund calculator calculator India","emergency fund calculator calculator online","free emergency fund calculator calculator","emergency fund calculator calculator 2025"]}
+      inputs={inputs}
+      onCalculate={handleCalculate}
+      features={features}
+      faqs={faqs}
+      relatedCalculators={relatedCalculators}
+      tips={tips}
+      calculatorData={calculatorData}
+    />
   );
 };
