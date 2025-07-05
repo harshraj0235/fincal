@@ -26,6 +26,7 @@ import { MutualFundCostCalculator } from '../calculators/MutualFundCostCalculato
 import { SukanyaSamriddhiCalculator } from '../calculators/SukanyaSamriddhiCalculator';
 import { NpsCalculator } from '../calculators/NpsCalculator';
 import { NpsTier2Calculator } from '../calculators/NpsTier2Calculator';
+import NpsReturnCalculator from '../calculators/NpsReturnCalculator';
 import { PostOfficeCalculator } from '../calculators/PostOfficeCalculator';
 import { GoldInvestmentCalculator } from '../calculators/GoldInvestmentCalculator';
 import { CompoundInterestCalculator } from '../calculators/CompoundInterestCalculator';
@@ -117,7 +118,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         <SEOHelmet
           title="Calculator Not Found - FinanceGurus Directory"
           description="The requested financial calculator could not be found. Browse our comprehensive collection of 50+ financial calculators for Indian users."
-          url={`/calculators/${calculatorId}`}
+          url={`https://moneycal.in/calculators/${calculatorId}`}
           noIndex={true}
         />
       <div className="text-center py-16">
@@ -142,7 +143,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
     "@type": "WebApplication",
     "name": calculator.name,
     "description": calculator.description,
-    "url": `https://financegurus.directory/calculators/${calculatorId}`,
+    "url": `https://moneycal.in/calculators/${calculatorId}`,
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -153,7 +154,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
     "provider": {
       "@type": "Organization",
       "name": "FinanceGurus Directory",
-      "url": "https://financegurus.directory"
+      "url": "https://moneycal.in"
     },
     "featureList": [
       "Free online calculator",
@@ -162,7 +163,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
       "Mobile responsive",
       "No registration required"
     ],
-    "screenshot": "https://financegurus.directory/images/calculator-screenshot.jpg",
+    "screenshot": "https://moneycal.in/images/calculator-screenshot.jpg",
     "softwareVersion": "1.0",
     "datePublished": "2024-01-01",
     "dateModified": new Date().toISOString().split('T')[0]
@@ -279,6 +280,8 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         return <PensionCalculator />;
       case 'human-life-value-calculator':
         return <HumanLifeValueCalculator />;
+      case 'nps-return-calculator':
+        return <NpsReturnCalculator />;
         
       // Business Calculators
       case 'break-even-calculator':
@@ -421,14 +424,14 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         title={`${calculator.name} - Free Online Calculator | FinanceGurus Directory`}
         description={generateDescription()}
         keywords={generateKeywords()}
-        url={`/calculators/${calculatorId}`}
+        url={`https://moneycal.in/calculators/${calculatorId}`}
         image="/images/calculator-default.jpg"
         type="website"
         structuredData={calculatorStructuredData}
         tags={[calculator.name, 'financial calculator', 'india', 'free calculator']}
         alternateLanguages={{
-          'en-IN': `https://financegurus.directory/calculators/${calculatorId}`,
-          'hi-IN': `https://financegurus.directory/hi/calculators/${calculatorId}`
+          'en-IN': `https://moneycal.in/calculators/${calculatorId}`,
+          'hi-IN': `https://moneycal.in/hi/calculators/${calculatorId}`
         }}
       />
       

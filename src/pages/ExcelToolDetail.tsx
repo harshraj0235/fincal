@@ -65,7 +65,7 @@ const ExcelToolDetail: React.FC = () => {
     "@type": "SoftwareApplication",
     "name": tool.title,
     "description": tool.description,
-    "url": `https://financegurus.directory/excel-tools/${tool.slug}`,
+    "url": `https://moneycal.in/excel-tools/${tool.slug}`,
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Microsoft Excel",
     "offers": {
@@ -82,7 +82,7 @@ const ExcelToolDetail: React.FC = () => {
     "author": {
       "@type": "Organization",
       "name": "FinanceGurus",
-      "url": "https://financegurus.directory"
+      "url": "https://moneycal.in"
     }
   };
 

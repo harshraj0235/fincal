@@ -34,7 +34,7 @@ const ExcelToolsPage: React.FC = () => {
     "@type": "CollectionPage",
     "name": "100 Free Excel Tools & Templates - FinanceGurus",
     "description": "Download 100+ free Excel tools and templates for personal finance, business, investment, tax, and more. All tools are SEO optimized and designed for low-competition keywords.",
-    "url": "https://financegurus.directory/excel-tools",
+    "url": "https://moneycal.in/excel-tools",
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": excelTools.length,
@@ -45,7 +45,7 @@ const ExcelToolsPage: React.FC = () => {
           "@type": "SoftwareApplication",
           "name": tool.title,
           "description": tool.description,
-          "url": `https://financegurus.directory/excel-tools/${tool.slug}`,
+          "url": `https://moneycal.in/excel-tools/${tool.slug}`,
           "applicationCategory": "FinanceApplication",
           "operatingSystem": "Microsoft Excel",
           "offers": {

@@ -77,11 +77,11 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       "@type": "WebPage",
       "name": title,
       "description": description,
-      "url": url.startsWith('http') ? url : `https://financegurus.directory${url}`,
+      "url": url.startsWith('http') ? url : `https://moneycal.in${url}`,
       "inLanguage": "en-IN",
       "isPartOf": {
         "@type": "WebSite",
-        "@id": "https://financegurus.directory/#website"
+        "@id": "https://moneycal.in/#website"
       }
     };
 
@@ -95,7 +95,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
               "@type": "WebApplication",
               "name": calculatorData.name,
               "description": calculatorData.description,
-              "url": url.startsWith('http') ? url : `https://financegurus.directory${url}`,
+              "url": url.startsWith('http') ? url : `https://moneycal.in${url}`,
               "applicationCategory": "FinanceApplication",
               "operatingSystem": "Web Browser",
               "offers": {
@@ -111,7 +111,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
               "publisher": {
                 "@type": "Organization",
                 "name": "FinanceGurus",
-                "url": "https://financegurus.directory"
+                "url": "https://moneycal.in"
               }
             }
           ];
@@ -127,7 +127,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
               "@type": "BlogPosting",
               "headline": title,
               "description": description,
-              "url": url.startsWith('http') ? url : `https://financegurus.directory${url}`,
+              "url": url.startsWith('http') ? url : `https://moneycal.in${url}`,
               "datePublished": blogData.publishedTime,
               "dateModified": blogData.modifiedTime || blogData.publishedTime,
               "author": {
@@ -137,7 +137,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
               "publisher": {
                 "@type": "Organization",
                 "name": "FinanceGurus",
-                "url": "https://financegurus.directory"
+                "url": "https://moneycal.in"
               },
               "articleSection": blogData.category,
               "keywords": blogData.tags.join(', ')
@@ -155,12 +155,12 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
               "@type": "CollectionPage",
               "name": categoryData.name,
               "description": categoryData.description,
-              "url": url.startsWith('http') ? url : `https://financegurus.directory${url}`,
+              "url": url.startsWith('http') ? url : `https://moneycal.in${url}`,
               "numberOfItems": categoryData.calculatorCount,
               "publisher": {
                 "@type": "Organization",
                 "name": "FinanceGurus",
-                "url": "https://financegurus.directory"
+                "url": "https://moneycal.in"
               }
             }
           ];
@@ -213,7 +213,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       description={getEnhancedDescription()}
       keywords={getEnhancedKeywords()}
       url={url}
-      image={image || 'https://financegurus.directory/android-chrome-512x512.png'}
+      image={image || 'https://moneycal.in/android-chrome-512x512.png'}
       type={pageType === 'blog' ? 'article' : 'website'}
       structuredData={generateStructuredData()}
       breadcrumbs={generateBreadcrumbs()}

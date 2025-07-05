@@ -1,205 +1,238 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { formatCurrency } from '../utils/calculatorUtils';
+import { Calculator, Scale, PieChart } from 'lucide-react';
+import { ResultChart } from '../components/ResultChart';
 
 export const DebtEquityCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const amount = values.amount as number;
-    const rate = values.rate as number;
-    const period = values.period as number;
+  const [totalDebt, setTotalDebt] = useState<number>(1000000);
+  const [shortTermDebt, setShortTermDebt] = useState<number>(400000);
+  const [totalEquity, setTotalEquity] = useState<number>(2000000);
+  const [retainedEarnings, setRetainedEarnings] = useState<number>(500000);
+  const [debtEquityRatio, setDebtEquityRatio] = useState<number>(0);
+  const [equityMultiplier, setEquityMultiplier] = useState<number>(0);
+  const [financialLeverage, setFinancialLeverage] = useState<number>(0);
+  
+  useEffect(() => {
+    // Calculate financial ratios
+    const debtToEquity = totalDebt / totalEquity;
+    const eqMultiplier = (totalDebt + totalEquity) / totalEquity;
+    const leverage = totalDebt / (totalDebt + totalEquity);
     
-    // Basic calculation - replace with actual formula
-    const result = amount * (1 + rate / 100) ** period;
-    const interest = result - amount;
-    
-    return [
-      {
-        label: 'Result',
-        value: result,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Calculated result'
-      },
-      {
-        label: 'Interest',
-        value: interest,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Interest earned'
-      },
-      {
-        label: 'Principal',
-        value: amount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Original amount'
-      }
-    ];
-  };
-
-  const inputs = [
-  {
-    "id": "amount",
-    "label": "Amount",
-    "type": "range",
-    "value": 10000,
-    "min": 1000,
-    "max": 1000000,
-    "step": 1000,
-    "unit": " ₹",
-    "description": "Enter the amount for calculation",
-    "tooltip": "The amount on which calculation needs to be performed",
-    "required": true
-  },
-  {
-    "id": "rate",
-    "label": "Rate",
-    "type": "range",
-    "value": 10,
-    "min": 1,
-    "max": 30,
-    "step": 0.1,
-    "unit": "% p.a.",
-    "description": "Annual rate for calculation",
-    "tooltip": "The annual rate applicable to your calculation",
-    "required": true
-  },
-  {
-    "id": "period",
-    "label": "Time Period",
-    "type": "range",
-    "value": 5,
-    "min": 1,
-    "max": 30,
-    "step": 1,
-    "unit": " years",
-    "description": "Duration for calculation",
-    "tooltip": "The time period for your calculation",
-    "required": true
-  }
-];
-
-  const features = [
-  {
-    "name": "Instant Calculation",
-    "description": "Get instant calculation results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Mobile Optimized",
-    "description": "Get mobile optimized results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "No Registration",
-    "description": "Get no registration results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Accurate Results",
-    "description": "Get accurate results results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Free to Use",
-    "description": "Get free to use results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "2025 Updated",
-    "description": "Get 2025 updated results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  }
-];
-
-  const faqs = [
-  {
-    "question": "What is Debt Equity Calculator and how does it work?",
-    "answer": "Debt Equity Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
-  },
-  {
-    "question": "How accurate is this debt equity calculator calculator?",
-    "answer": "Our debt equity calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
-  },
-  {
-    "question": "Is this calculator free to use?",
-    "answer": "Yes, our debt equity calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
-  },
-  {
-    "question": "Can I use this calculator on mobile devices?",
-    "answer": "Yes, our debt equity calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
-  }
-];
-
-  const relatedCalculators = [
-  {
-    "id": "emi-calculator",
-    "name": "EMI Calculator",
-    "description": "Calculate EMI for loans",
-    "url": "/calculators/emi-calculator"
-  },
-  {
-    "id": "sip-calculator",
-    "name": "SIP Calculator",
-    "description": "Calculate SIP returns",
-    "url": "/calculators/sip-calculator"
-  },
-  {
-    "id": "compound-interest-calculator",
-    "name": "Compound Interest Calculator",
-    "description": "Calculate compound interest",
-    "url": "/calculators/compound-interest-calculator"
-  }
-];
-
-  const tips = [
-  "Always verify your inputs before calculating",
-  "Consider consulting with a financial advisor for important decisions",
-  "Keep your calculations for future reference",
-  "Update your inputs as your situation changes",
-  "Use this calculator as a planning tool only",
-  "Consider all factors that may affect your results"
-];
-
-  const calculatorData = {
-  "formula": "Standard mathematical formula",
-  "assumptions": [
-    "Rates remain constant throughout the period",
-    "No additional charges or fees included",
-    "Results are for planning purposes only"
-  ],
-  "limitations": [
-    "Actual results may vary due to market conditions",
-    "Additional factors not included in calculations",
-    "Consult professionals for important decisions"
-  ],
-  "lastUpdated": "January 2025"
-};
-
+    setDebtEquityRatio(debtToEquity);
+    setEquityMultiplier(eqMultiplier);
+    setFinancialLeverage(leverage);
+  }, [totalDebt, totalEquity, shortTermDebt, retainedEarnings]);
+  
   return (
-    <EnhancedCalculator
-      id="debtequitycalculator"
-      name="Debt Equity Calculator"
-      description="Calculate your debt equity calculator with our free online calculator. Get accurate calculations and results instantly."
-      category="Loan Calculators"
-      seoTitle="Debt Equity Calculator 2025 - Calculate Debt Equity Calculator Online | Free Calculator India"
-      seoDescription="Calculate your debt equity calculator instantly with our free debt equity calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="debt equity calculator calculator"
-      relatedKeywords={["debt equity calculator calculator","debt equity calculator calculation","debt equity calculator calculator India","debt equity calculator calculator online","free debt equity calculator calculator","debt equity calculator calculator 2025"]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="space-y-6">
+        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+          <Scale className="w-5 h-5 mr-2 text-[--primary-600]" />
+          Financial Structure
+        </h2>
+        
+        <div className="space-y-4">
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="total-debt" className="text-sm font-medium text-neutral-700">
+                Total Debt (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(totalDebt)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="total-debt"
+              min="0" 
+              max="10000000" 
+              step="100000" 
+              value={totalDebt} 
+              onChange={(e) => setTotalDebt(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="short-term-debt" className="text-sm font-medium text-neutral-700">
+                Short-term Debt (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(shortTermDebt)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="short-term-debt"
+              min="0" 
+              max={totalDebt} 
+              step="100000" 
+              value={shortTermDebt} 
+              onChange={(e) => setShortTermDebt(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="total-equity" className="text-sm font-medium text-neutral-700">
+                Total Equity (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(totalEquity)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="total-equity"
+              min="100000" 
+              max="20000000" 
+              step="100000" 
+              value={totalEquity} 
+              onChange={(e) => setTotalEquity(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="retained-earnings" className="text-sm font-medium text-neutral-700">
+                Retained Earnings (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(retainedEarnings)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="retained-earnings"
+              min="0" 
+              max={totalEquity} 
+              step="100000" 
+              value={retainedEarnings} 
+              onChange={(e) => setRetainedEarnings(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+        </div>
+        
+        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
+          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Financial Ratios</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Debt-to-Equity Ratio</p>
+              <p className="text-xl font-bold text-neutral-900">{debtEquityRatio.toFixed(2)}</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Equity Multiplier</p>
+              <p className="text-xl font-bold text-neutral-900">{equityMultiplier.toFixed(2)}</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Financial Leverage</p>
+              <p className="text-xl font-bold text-neutral-900">{(financialLeverage * 100).toFixed(1)}%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+            <PieChart className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Capital Structure
+          </h2>
+          <div className="mt-4 h-64">
+            <ResultChart 
+              data={[
+                { name: 'Long-term Debt', value: totalDebt - shortTermDebt, color: '#3b82f6' },
+                { name: 'Short-term Debt', value: shortTermDebt, color: '#f59e0b' },
+                { name: 'Retained Earnings', value: retainedEarnings, color: '#22c55e' },
+                { name: 'Other Equity', value: totalEquity - retainedEarnings, color: '#a855f7' }
+              ]}
+              centerText={`${formatCurrency(totalDebt + totalEquity)}\nTotal Capital`}
+            />
+          </div>
+        </div>
+        
+        <div className="bg-neutral-50 p-6 rounded-lg">
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
+            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Financial Analysis
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Debt Structure</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <div className="flex justify-between">
+                  <span>Long-term Debt</span>
+                  <span className="font-medium">{formatCurrency(totalDebt - shortTermDebt)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Short-term Debt</span>
+                  <span className="font-medium">{formatCurrency(shortTermDebt)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Debt Mix (Short-term)</span>
+                  <span className="font-medium">
+                    {((shortTermDebt / totalDebt) * 100).toFixed(1)}%
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Equity Structure</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <div className="flex justify-between">
+                  <span>Retained Earnings</span>
+                  <span className="font-medium">{formatCurrency(retainedEarnings)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Other Equity</span>
+                  <span className="font-medium">{formatCurrency(totalEquity - retainedEarnings)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Retention Ratio</span>
+                  <span className="font-medium">
+                    {((retainedEarnings / totalEquity) * 100).toFixed(1)}%
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-[--accent-50] rounded-lg">
+              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Risk Assessment</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
+                {debtEquityRatio > 2 ? (
+                  <>
+                    <li>High financial leverage indicates increased risk</li>
+                    <li>Consider reducing debt exposure</li>
+                    <li>Monitor interest coverage carefully</li>
+                  </>
+                ) : debtEquityRatio > 1 ? (
+                  <>
+                    <li>Moderate leverage with balanced risk</li>
+                    <li>Maintain debt service coverage</li>
+                    <li>Review cost of capital optimization</li>
+                  </>
+                ) : (
+                  <>
+                    <li>Conservative financial structure</li>
+                    <li>Potential for additional leverage</li>
+                    <li>Consider growth opportunities</li>
+                  </>
+                )}
+                <li>
+                  Short-term debt is {((shortTermDebt / totalDebt) * 100).toFixed(1)}% of total debt
+                  {shortTermDebt / totalDebt > 0.5 ? ' (high refinancing risk)' : ' (manageable)'}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

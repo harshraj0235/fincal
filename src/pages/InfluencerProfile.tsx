@@ -32,7 +32,7 @@ const InfluencerProfile: React.FC = () => {
     "jobTitle": influencer.title,
     "description": influencer.biography,
     "image": influencer.photo_url,
-    "url": `https://financegurus.directory/influencer/${influencer.id}`,
+    "url": `https://moneycal.in/influencer/${influencer.id}`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": influencer.location.split(', ')[0],

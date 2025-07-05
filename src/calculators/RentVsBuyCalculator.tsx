@@ -1,212 +1,340 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { formatCurrency } from '../utils/calculatorUtils';
+import { Calculator, Home } from 'lucide-react';
+import { ResultChart } from '../components/ResultChart';
 
 export const RentVsBuyCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const amount = values.amount as number;
-    const rate = values.rate as number;
-    const period = values.period as number;
+  const [propertyValue, setPropertyValue] = useState<number>(5000000);
+  const [monthlyRent, setMonthlyRent] = useState<number>(25000);
+  const [downPayment, setDownPayment] = useState<number>(1000000);
+  const [loanTenure, setLoanTenure] = useState<number>(20);
+  const [interestRate, setInterestRate] = useState<number>(8.5);
+  const [annualRentIncrease, setAnnualRentIncrease] = useState<number>(5);
+  const [annualAppreciation, setAnnualAppreciation] = useState<number>(5);
+  const [annualMaintenance, setAnnualMaintenance] = useState<number>(24000);
+  
+  const [monthlyEmi, setMonthlyEmi] = useState<number>(0);
+  const [totalRentPaid, setTotalRentPaid] = useState<number>(0);
+  const [totalCostOfBuying, setTotalCostOfBuying] = useState<number>(0);
+  const [propertyValueAfterTenure, setPropertyValueAfterTenure] = useState<number>(0);
+  
+  useEffect(() => {
+    // Calculate EMI
+    const loanAmount = propertyValue - downPayment;
+    const monthlyRate = interestRate / 1200;
+    const totalMonths = loanTenure * 12;
+    const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / 
+                (Math.pow(1 + monthlyRate, totalMonths) - 1);
     
-    // Basic calculation - replace with actual formula
-    const result = amount * (1 + rate / 100) ** period;
-    const interest = result - amount;
+    // Calculate total rent paid
+    let totalRent = 0;
+    let currentRent = monthlyRent;
+    for (let year = 1; year <= loanTenure; year++) {
+      totalRent += currentRent * 12;
+      currentRent *= (1 + annualRentIncrease / 100);
+    }
     
-    return [
-      {
-        label: 'Result',
-        value: result,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Calculated result'
-      },
-      {
-        label: 'Interest',
-        value: interest,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Interest earned'
-      },
-      {
-        label: 'Principal',
-        value: amount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Original amount'
-      }
-    ];
-  };
-
-  const inputs = [
-    {
-      id: 'amount',
-      label: 'Amount',
-      type: 'range' as const,
-      value: 10000,
-      min: 1000,
-      max: 1000000,
-      step: 1000,
-      unit: ' ₹',
-      description: 'Enter the amount for calculation',
-      tooltip: 'The amount on which calculation needs to be performed',
-      required: true
-    },
-    {
-      id: 'rate',
-      label: 'Rate',
-      type: 'range' as const,
-      value: 10,
-      min: 1,
-      max: 30,
-      step: 0.1,
-      unit: '% p.a.',
-      description: 'Annual rate for calculation',
-      tooltip: 'The annual rate applicable to your calculation',
-      required: true
-    },
-    {
-      id: 'period',
-      label: 'Time Period',
-      type: 'range' as const,
-      value: 5,
-      min: 1,
-      max: 30,
-      step: 1,
-      unit: ' years',
-      description: 'Duration for calculation',
-      tooltip: 'The time period for your calculation',
-      required: true
-    }
-  ];
-
-  const features = [
-    {
-      name: 'Instant Calculation',
-      description: 'Get results instantly as you adjust values',
-      icon: <Calculator className="h-5 w-5" />
-    },
-    {
-      name: 'Mobile Optimized',
-      description: 'Works perfectly on all devices and screen sizes',
-      icon: <Smartphone className="h-5 w-5" />
-    },
-    {
-      name: 'No Registration',
-      description: 'Use our calculator without any sign-up required',
-      icon: <Users className="h-5 w-5" />
-    },
-    {
-      name: 'Accurate Results',
-      description: 'Based on standard mathematical formulas',
-      icon: <CheckCircle className="h-5 w-5" />
-    },
-    {
-      name: 'Free to Use',
-      description: 'Completely free calculator with no hidden charges',
-      icon: <DollarSign className="h-5 w-5" />
-    },
-    {
-      name: '2025 Updated',
-      description: 'Latest calculation tools for 2025',
-      icon: <Clock className="h-5 w-5" />
-    }
-  ];
-
-  const faqs = [
-    {
-      question: 'What is Rent Vs Buy Calculator?',
-      answer: 'Rent Vs Buy Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs.'
-    },
-    {
-      question: 'How accurate is this calculator?',
-      answer: 'Our calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool.'
-    },
-    {
-      question: 'Is this calculator free to use?',
-      answer: 'Yes, our calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning.'
-    },
-    {
-      question: 'Can I use this calculator on mobile devices?',
-      answer: 'Yes, our calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size.'
-    }
-  ];
-
-  const relatedCalculators = [
-    {
-      id: 'emi-calculator',
-      name: 'EMI Calculator',
-      description: 'Calculate EMI for loans',
-      url: '/calculators/emi-calculator'
-    },
-    {
-      id: 'sip-calculator',
-      name: 'SIP Calculator',
-      description: 'Calculate SIP returns',
-      url: '/calculators/sip-calculator'
-    },
-    {
-      id: 'compound-interest-calculator',
-      name: 'Compound Interest Calculator',
-      description: 'Calculate compound interest',
-      url: '/calculators/compound-interest-calculator'
-    }
-  ];
-
-  const tips = [
-    'Always verify your inputs before calculating',
-    'Consider consulting with a financial advisor for important decisions',
-    'Keep your calculations for future reference',
-    'Update your inputs as your situation changes',
-    'Use this calculator as a planning tool only',
-    'Consider all factors that may affect your results'
-  ];
-
-  const calculatorData = {
-    formula: 'Standard mathematical formula',
-    assumptions: [
-      'Rates remain constant throughout the period',
-      'No additional charges or fees included',
-      'Results are for planning purposes only'
-    ],
-    limitations: [
-      'Actual results may vary due to market conditions',
-      'Additional factors not included in calculations',
-      'Consult professionals for important decisions'
-    ],
-    lastUpdated: 'January 2025'
-  };
-
+    // Calculate total cost of buying
+    const totalEmi = emi * totalMonths;
+    const totalMaintenance = annualMaintenance * loanTenure;
+    const totalBuyingCost = downPayment + totalEmi + totalMaintenance;
+    
+    // Calculate property value after tenure
+    const futureValue = propertyValue * Math.pow(1 + annualAppreciation / 100, loanTenure);
+    
+    setMonthlyEmi(emi);
+    setTotalRentPaid(totalRent);
+    setTotalCostOfBuying(totalBuyingCost);
+    setPropertyValueAfterTenure(futureValue);
+  }, [
+    propertyValue,
+    monthlyRent,
+    downPayment,
+    loanTenure,
+    interestRate,
+    annualRentIncrease,
+    annualAppreciation,
+    annualMaintenance
+  ]);
+  
   return (
-    <EnhancedCalculator
-      id="rentvsbuycalculator"
-      name="Rent Vs Buy Calculator"
-      description="Compare rent vs buy options with our free online calculator."
-      category="Property Calculators"
-      seoTitle="Rent Vs Buy Calculator 2025 - Calculate Rent Vs Buy Calculator Online | Free Calculator India"
-      seoDescription="Calculate your rent vs buy calculator instantly with our free calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="rent vs buy calculator calculator"
-      relatedKeywords={[
-        'rent vs buy calculator calculator',
-        'rent vs buy calculator calculation',
-        'rent vs buy calculator calculator India',
-        'rent vs buy calculator calculator online',
-        'free rent vs buy calculator calculator',
-        'rent vs buy calculator calculator 2025'
-      ]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="space-y-6">
+        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+          <Home className="w-5 h-5 mr-2 text-[--primary-600]" />
+          Property Details
+        </h2>
+        
+        <div className="space-y-4">
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="property-value" className="text-sm font-medium text-neutral-700">
+                Property Value (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(propertyValue)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="property-value"
+              min="1000000" 
+              max="50000000" 
+              step="100000" 
+              value={propertyValue} 
+              onChange={(e) => setPropertyValue(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="monthly-rent" className="text-sm font-medium text-neutral-700">
+                Monthly Rent (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(monthlyRent)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="monthly-rent"
+              min="5000" 
+              max="500000" 
+              step="1000" 
+              value={monthlyRent} 
+              onChange={(e) => setMonthlyRent(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="down-payment" className="text-sm font-medium text-neutral-700">
+                Down Payment (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(downPayment)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="down-payment"
+              min={propertyValue * 0.1} 
+              max={propertyValue * 0.9} 
+              step="100000" 
+              value={downPayment} 
+              onChange={(e) => setDownPayment(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <div className="flex justify-between mb-2">
+                <label htmlFor="loan-tenure" className="text-sm font-medium text-neutral-700">
+                  Loan Tenure (Years)
+                </label>
+                <span className="text-sm text-neutral-500">
+                  {loanTenure} years
+                </span>
+              </div>
+              <input 
+                type="range" 
+                id="loan-tenure"
+                min="5" 
+                max="30" 
+                step="1" 
+                value={loanTenure} 
+                onChange={(e) => setLoanTenure(Number(e.target.value))}
+                className="slider"
+              />
+            </div>
+            
+            <div>
+              <div className="flex justify-between mb-2">
+                <label htmlFor="interest-rate" className="text-sm font-medium text-neutral-700">
+                  Interest Rate (%)
+                </label>
+                <span className="text-sm text-neutral-500">
+                  {interestRate}%
+                </span>
+              </div>
+              <input 
+                type="range" 
+                id="interest-rate"
+                min="6" 
+                max="15" 
+                step="0.1" 
+                value={interestRate} 
+                onChange={(e) => setInterestRate(Number(e.target.value))}
+                className="slider"
+              />
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <div className="flex justify-between mb-2">
+                <label htmlFor="rent-increase" className="text-sm font-medium text-neutral-700">
+                  Annual Rent Increase (%)
+                </label>
+                <span className="text-sm text-neutral-500">
+                  {annualRentIncrease}%
+                </span>
+              </div>
+              <input 
+                type="range" 
+                id="rent-increase"
+                min="0" 
+                max="15" 
+                step="0.5" 
+                value={annualRentIncrease} 
+                onChange={(e) => setAnnualRentIncrease(Number(e.target.value))}
+                className="slider"
+              />
+            </div>
+            
+            <div>
+              <div className="flex justify-between mb-2">
+                <label htmlFor="appreciation" className="text-sm font-medium text-neutral-700">
+                  Annual Appreciation (%)
+                </label>
+                <span className="text-sm text-neutral-500">
+                  {annualAppreciation}%
+                </span>
+              </div>
+              <input 
+                type="range" 
+                id="appreciation"
+                min="0" 
+                max="20" 
+                step="0.5" 
+                value={annualAppreciation} 
+                onChange={(e) => setAnnualAppreciation(Number(e.target.value))}
+                className="slider"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="maintenance" className="text-sm font-medium text-neutral-700">
+                Annual Maintenance (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(annualMaintenance)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="maintenance"
+              min="0" 
+              max="120000" 
+              step="1000" 
+              value={annualMaintenance} 
+              onChange={(e) => setAnnualMaintenance(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+        </div>
+        
+        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
+          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Monthly Payments</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Monthly EMI</p>
+              <p className="text-xl font-bold text-neutral-900">{formatCurrency(monthlyEmi)}</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Current Monthly Rent</p>
+              <p className="text-xl font-bold text-neutral-900">{formatCurrency(monthlyRent)}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Cost Comparison
+          </h2>
+          <div className="mt-4 h-64">
+            <ResultChart 
+              data={[
+                { name: 'Total Cost of Buying', value: totalCostOfBuying, color: '#3b82f6' },
+                { name: 'Total Rent Paid', value: totalRentPaid, color: '#f59e0b' }
+              ]}
+              centerText={`${formatCurrency(propertyValueAfterTenure)}\nProperty Value`}
+            />
+          </div>
+        </div>
+        
+        <div className="bg-neutral-50 p-6 rounded-lg">
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
+            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Detailed Analysis
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Buying Costs</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <div className="flex justify-between">
+                  <span>Down Payment</span>
+                  <span className="font-medium">{formatCurrency(downPayment)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Total EMI Payments</span>
+                  <span className="font-medium">{formatCurrency(monthlyEmi * loanTenure * 12)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Total Maintenance</span>
+                  <span className="font-medium">{formatCurrency(annualMaintenance * loanTenure)}</span>
+                </div>
+                <div className="flex justify-between border-t border-neutral-200 pt-2 mt-2">
+                  <span className="font-medium">Total Cost of Buying</span>
+                  <span className="font-medium">{formatCurrency(totalCostOfBuying)}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Renting Costs</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <div className="flex justify-between">
+                  <span>Total Rent Paid</span>
+                  <span className="font-medium">{formatCurrency(totalRentPaid)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Monthly Rent in Final Year</span>
+                  <span className="font-medium">
+                    {formatCurrency(monthlyRent * Math.pow(1 + annualRentIncrease / 100, loanTenure))}
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-[--accent-50] rounded-lg">
+              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Key Insights</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
+                <li>
+                  {totalCostOfBuying > totalRentPaid 
+                    ? 'Renting costs less than buying over the given period'
+                    : 'Buying costs less than renting over the given period'}
+                </li>
+                <li>Property value appreciation: {formatCurrency(propertyValueAfterTenure - propertyValue)}</li>
+                <li>Net cost of buying (after appreciation): {formatCurrency(totalCostOfBuying - propertyValueAfterTenure)}</li>
+                <li>
+                  Monthly investment needed while renting: 
+                  {formatCurrency((totalCostOfBuying - totalRentPaid) / (loanTenure * 12))}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

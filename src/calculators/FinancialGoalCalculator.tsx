@@ -1,205 +1,88 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
-} from 'lucide-react';
+import React, { useState } from 'react';
 
 export const FinancialGoalCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const amount = values.amount as number;
-    const rate = values.rate as number;
-    const period = values.period as number;
+  const [goalAmount, setGoalAmount] = useState<number>(0);
+  const [timeframe, setTimeframe] = useState<number>(0);
+  const [monthlyInvestment, setMonthlyInvestment] = useState<number>(0);
+  const [interestRate, setInterestRate] = useState<number>(7);
+
+  const calculateMonthlyInvestment = () => {
+    const r = interestRate / 100 / 12; // Monthly interest rate
+    const n = timeframe * 12; // Total number of months
+    const futureValue = goalAmount;
     
-    // Basic calculation - replace with actual formula
-    const result = amount * (1 + rate / 100) ** period;
-    const interest = result - amount;
+    // PMT formula: FV = PMT * (((1 + r)^n - 1) / r)
+    // Solving for PMT: PMT = FV * r / ((1 + r)^n - 1)
+    const monthlyPayment = (futureValue * r) / (Math.pow(1 + r, n) - 1);
     
-    return [
-      {
-        label: 'Result',
-        value: result,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Calculated result'
-      },
-      {
-        label: 'Interest',
-        value: interest,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Interest earned'
-      },
-      {
-        label: 'Principal',
-        value: amount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Original amount'
-      }
-    ];
+    setMonthlyInvestment(Math.round(monthlyPayment));
   };
 
-  const inputs = [
-  {
-    "id": "amount",
-    "label": "Amount",
-    "type": "range",
-    "value": 10000,
-    "min": 1000,
-    "max": 1000000,
-    "step": 1000,
-    "unit": " ₹",
-    "description": "Enter the amount for calculation",
-    "tooltip": "The amount on which calculation needs to be performed",
-    "required": true
-  },
-  {
-    "id": "rate",
-    "label": "Rate",
-    "type": "range",
-    "value": 10,
-    "min": 1,
-    "max": 30,
-    "step": 0.1,
-    "unit": "% p.a.",
-    "description": "Annual rate for calculation",
-    "tooltip": "The annual rate applicable to your calculation",
-    "required": true
-  },
-  {
-    "id": "period",
-    "label": "Time Period",
-    "type": "range",
-    "value": 5,
-    "min": 1,
-    "max": 30,
-    "step": 1,
-    "unit": " years",
-    "description": "Duration for calculation",
-    "tooltip": "The time period for your calculation",
-    "required": true
-  }
-];
-
-  const features = [
-  {
-    "name": "Instant Calculation",
-    "description": "Get instant calculation results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Mobile Optimized",
-    "description": "Get mobile optimized results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "No Registration",
-    "description": "Get no registration results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Accurate Results",
-    "description": "Get accurate results results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Free to Use",
-    "description": "Get free to use results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "2025 Updated",
-    "description": "Get 2025 updated results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  }
-];
-
-  const faqs = [
-  {
-    "question": "What is Financial Goal Calculator and how does it work?",
-    "answer": "Financial Goal Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
-  },
-  {
-    "question": "How accurate is this financial goal calculator calculator?",
-    "answer": "Our financial goal calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
-  },
-  {
-    "question": "Is this calculator free to use?",
-    "answer": "Yes, our financial goal calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
-  },
-  {
-    "question": "Can I use this calculator on mobile devices?",
-    "answer": "Yes, our financial goal calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
-  }
-];
-
-  const relatedCalculators = [
-  {
-    "id": "emi-calculator",
-    "name": "EMI Calculator",
-    "description": "Calculate EMI for loans",
-    "url": "/calculators/emi-calculator"
-  },
-  {
-    "id": "sip-calculator",
-    "name": "SIP Calculator",
-    "description": "Calculate SIP returns",
-    "url": "/calculators/sip-calculator"
-  },
-  {
-    "id": "compound-interest-calculator",
-    "name": "Compound Interest Calculator",
-    "description": "Calculate compound interest",
-    "url": "/calculators/compound-interest-calculator"
-  }
-];
-
-  const tips = [
-  "Always verify your inputs before calculating",
-  "Consider consulting with a financial advisor for important decisions",
-  "Keep your calculations for future reference",
-  "Update your inputs as your situation changes",
-  "Use this calculator as a planning tool only",
-  "Consider all factors that may affect your results"
-];
-
-  const calculatorData = {
-  "formula": "Standard mathematical formula",
-  "assumptions": [
-    "Rates remain constant throughout the period",
-    "No additional charges or fees included",
-    "Results are for planning purposes only"
-  ],
-  "limitations": [
-    "Actual results may vary due to market conditions",
-    "Additional factors not included in calculations",
-    "Consult professionals for important decisions"
-  ],
-  "lastUpdated": "January 2025"
-};
-
   return (
-    <EnhancedCalculator
-      id="financialgoalcalculator"
-      name="Financial Goal Calculator"
-      description="Calculate your financial goal calculator with our free online calculator. Get accurate calculations and results instantly."
-      category="Investment Calculators"
-      seoTitle="Financial Goal Calculator 2025 - Calculate Financial Goal Calculator Online | Free Calculator India"
-      seoDescription="Calculate your financial goal calculator instantly with our free financial goal calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="financial goal calculator calculator"
-      relatedKeywords={["financial goal calculator calculator","financial goal calculator calculation","financial goal calculator calculator India","financial goal calculator calculator online","free financial goal calculator calculator","financial goal calculator calculator 2025"]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <div className="p-6">
+      <div className="space-y-6">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Goal Amount (₹)
+          </label>
+          <input
+            type="number"
+            value={goalAmount}
+            onChange={(e) => setGoalAmount(Number(e.target.value))}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter your goal amount"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Time Frame (Years)
+          </label>
+          <input
+            type="number"
+            value={timeframe}
+            onChange={(e) => setTimeframe(Number(e.target.value))}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter time frame in years"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Expected Annual Return (%)
+          </label>
+          <input
+            type="number"
+            value={interestRate}
+            onChange={(e) => setInterestRate(Number(e.target.value))}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter expected annual return"
+          />
+        </div>
+
+        <button
+          onClick={calculateMonthlyInvestment}
+          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+        >
+          Calculate Required Monthly Investment
+        </button>
+
+        {monthlyInvestment > 0 && (
+          <div className="mt-6 p-4 bg-blue-50 rounded-md">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Results</h3>
+            <p className="text-gray-700">
+              To reach your goal of ₹{goalAmount.toLocaleString()} in {timeframe} years, 
+              you need to invest:
+            </p>
+            <p className="text-2xl font-bold text-blue-600 mt-2">
+              ₹{monthlyInvestment.toLocaleString()} per month
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              Assuming an annual return of {interestRate}%
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };

@@ -82,14 +82,14 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      canonical.setAttribute('href', url.startsWith('http') ? url : `https://financegurus.directory${url}`);
+      canonical.setAttribute('href', url.startsWith('http') ? url : `https://moneycal.in${url}`);
     }
 
     // Open Graph tags
     setMeta('og:title', fullTitle, 'property');
     setMeta('og:description', description, 'property');
     setMeta('og:type', type, 'property');
-    setMeta('og:url', url ? (url.startsWith('http') ? url : `https://financegurus.directory${url}`) : window.location.href, 'property');
+    setMeta('og:url', url ? (url.startsWith('http') ? url : `https://moneycal.in${url}`) : window.location.href, 'property');
     setMeta('og:site_name', 'FinanceGurus', 'property');
     if (image) setMeta('og:image', image, 'property');
     if (articlePublishedTime) setMeta('article:published_time', articlePublishedTime, 'property');
@@ -131,7 +131,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
           "@type": "ListItem",
           "position": index + 1,
           "name": item.name,
-          "item": item.url.startsWith('http') ? item.url : `https://financegurus.directory${item.url}`
+          "item": item.url.startsWith('http') ? item.url : `https://moneycal.in${item.url}`
         }))
       };
 
@@ -175,7 +175,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
         "@type": "WebApplication",
         "name": calculatorData.name,
         "description": calculatorData.description,
-        "url": url ? (url.startsWith('http') ? url : `https://financegurus.directory${url}`) : window.location.href,
+        "url": url ? (url.startsWith('http') ? url : `https://moneycal.in${url}`) : window.location.href,
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web Browser",
         "offers": {
@@ -191,7 +191,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
         "publisher": {
           "@type": "Organization",
           "name": "FinanceGurus",
-          "url": "https://financegurus.directory"
+          "url": "https://moneycal.in"
         }
       };
 

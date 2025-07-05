@@ -1,8 +1,65 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://financegurus.directory/sitemap.xml
+# Sitemaps
+Sitemap: https://moneycal.in/sitemap.xml
+Sitemap: https://moneycal.in/sitemap-blog.xml
+Sitemap: https://moneycal.in/sitemap-calculators.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow important pages
+Allow: /blog/
+Allow: /calculators/
+Allow: /about/
+Allow: /contact/
+
+# Google Discover optimization
+User-agent: Googlebot-News
+Allow: /blog/
+Allow: /amp-blog.html
+
+# Mobile optimization
+User-agent: *
+Allow: /amp-*.html
+Allow: /mobile/
+
+# Allow all calculator pages
+Allow: /calculators/*
+
+# Allow all blog posts
+Allow: /blog/*
+
+# Allow government schemes
+Allow: /government-schemes/*
+
+# Allow crypto content
+Allow: /crypto/*
+
+# Allow astro finance content
+Allow: /astro-finance/*
+
+# Allow excel tools
+Allow: /excel-tools/*
+Allow: /exceltool/*
+
+# Allow news reel
+Allow: /news-reel
+
+# Allow bank tools
+Allow: /bank-tools
+
+# Allow credit card finder
+Allow: /credit-card-finder
+
+# Allow missed call banking directory
+Allow: /missed-call-banking-directory
 
 # Allow all important pages and sections
 Allow: /calculators/
@@ -26,18 +83,6 @@ Allow: /blog/category/
 
 # Allow search functionality
 Allow: /search
-
-# Disallow admin and private areas
-Disallow: /admin/
-Disallow: /private/
-Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
-Disallow: /temp/
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /dist/
-Disallow: /build/
 
 # Google-specific bots
 User-agent: Googlebot
@@ -65,9 +110,6 @@ User-agent: Mediapartners-Google
 Allow: /
 
 User-agent: Googlebot-Favicon
-Allow: /
-
-User-agent: Googlebot-News
 Allow: /
 
 User-agent: Googlebot-Video

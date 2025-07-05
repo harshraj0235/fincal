@@ -81,14 +81,14 @@ export const generateStructuredData = (page: SEOPage, additionalData?: any) => {
   // WebPage schema
   const webPageSchema = {
     '@type': 'WebPage',
-    '@id': `https://financegurus.directory${page.url}#webpage`,
-    url: `https://financegurus.directory${page.url}`,
+    '@id': `https://moneycal.in${page.url}#webpage`,
+    url: `https://moneycal.in${page.url}`,
     name: page.title,
     description: page.description,
     inLanguage: 'en-IN',
     isPartOf: {
       '@type': 'WebSite',
-      '@id': 'https://financegurus.directory/#website'
+      '@id': 'https://moneycal.in/#website'
     },
     datePublished: page.lastmod || new Date().toISOString(),
     dateModified: page.lastmod || new Date().toISOString()
@@ -100,10 +100,10 @@ export const generateStructuredData = (page: SEOPage, additionalData?: any) => {
   if (page.type === 'calculator') {
     const calculatorSchema = {
       '@type': 'WebApplication',
-      '@id': `https://financegurus.directory${page.url}#calculator`,
+      '@id': `https://moneycal.in${page.url}#calculator`,
       name: page.title.split(' - ')[0],
       description: page.description,
-      url: `https://financegurus.directory${page.url}`,
+      url: `https://moneycal.in${page.url}`,
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web Browser',
       offers: {
@@ -122,10 +122,10 @@ export const generateStructuredData = (page: SEOPage, additionalData?: any) => {
   if (page.type === 'article') {
     const articleSchema = {
       '@type': 'Article',
-      '@id': `https://financegurus.directory${page.url}#article`,
+      '@id': `https://moneycal.in${page.url}#article`,
       headline: page.title.split(' | ')[0],
       description: page.description,
-      image: page.image || 'https://financegurus.directory/og-image.jpg',
+      image: page.image || 'https://moneycal.in/og-image.jpg',
       datePublished: page.lastmod || new Date().toISOString(),
       dateModified: page.lastmod || new Date().toISOString(),
       author: {
@@ -134,9 +134,9 @@ export const generateStructuredData = (page: SEOPage, additionalData?: any) => {
       },
       publisher: {
         '@type': 'Organization',
-        '@id': 'https://financegurus.directory/#organization'
+        '@id': 'https://moneycal.in/#organization'
       },
-      mainEntityOfPage: `https://financegurus.directory${page.url}`
+      mainEntityOfPage: `https://moneycal.in${page.url}`
     };
 
     baseData['@graph'].push(articleSchema);
@@ -158,7 +158,7 @@ export const generateStructuredData = (page: SEOPage, additionalData?: any) => {
 export const generateSitemapEntry = (page: SEOPage): string => {
   return `
   <url>
-    <loc>https://financegurus.directory${page.url}</loc>
+    <loc>https://moneycal.in${page.url}</loc>
     <lastmod>${page.lastmod || new Date().toISOString()}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
@@ -171,8 +171,8 @@ export const generateOpenGraphTags = (page: SEOPage): Array<{ property: string; 
     { property: 'og:type', content: page.type === 'article' ? 'article' : 'website' },
     { property: 'og:title', content: page.title },
     { property: 'og:description', content: page.description },
-    { property: 'og:url', content: `https://financegurus.directory${page.url}` },
-    { property: 'og:image', content: page.image || 'https://financegurus.directory/og-image.jpg' },
+    { property: 'og:url', content: `https://moneycal.in${page.url}` },
+    { property: 'og:image', content: page.image || 'https://moneycal.in/og-image.jpg' },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
     { property: 'og:site_name', content: 'FinanceGurus' },
@@ -186,7 +186,7 @@ export const generateTwitterTags = (page: SEOPage): Array<{ name: string; conten
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: page.title },
     { name: 'twitter:description', content: page.description },
-    { name: 'twitter:image', content: page.image || 'https://financegurus.directory/og-image.jpg' },
+    { name: 'twitter:image', content: page.image || 'https://moneycal.in/og-image.jpg' },
     { name: 'twitter:site', content: '@FinanceGurusIN' },
     { name: 'twitter:creator', content: '@FinanceGurusIN' }
   ];

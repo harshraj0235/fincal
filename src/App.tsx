@@ -59,9 +59,6 @@ import ChequeBounceChargesCalculator from './pages/ChequeBounceChargesCalculator
 import BankTools from './pages/BankTools';
 import FinancePostPage from './pages/FinancePostPage';
 
-// Math & Education Calculators
-import LcmHcfCalculator from './calculators/LcmHcfCalculator';
-
 // Excel Tool Hub
 import ExcelToolHub from './pages/ExcelToolHub';
 
@@ -107,8 +104,11 @@ function App() {
 
               <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
 
+              {/* Direct Calculator Routes */}
+              <Route path="/calculators/emi-calculator" element={<CalculatorPage calculatorId="emi-calculator" />} />
+
               {/* Math & Education Calculators */}
-              <Route path="/calculators/lcm-hcf-calculator" element={<LcmHcfCalculator />} />
+              <Route path="/calculators/lcm-hcf-calculator" element={<CalculatorPage calculatorId="lcm-hcf-calculator" />} />
 
               {calculatorCategories.flatMap(category =>
                 category.calculators.map(calculator => (

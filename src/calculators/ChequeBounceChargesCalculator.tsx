@@ -1,205 +1,166 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
-} from 'lucide-react';
+import React, { useState, useMemo, ChangeEvent } from 'react';
+import SEOHelmet from '../components/SEOHelmet';
+import { Search, Banknote, AlertCircle, Calculator } from 'lucide-react';
 
-export const ChequeBounceChargesCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const amount = values.amount as number;
-    const rate = values.rate as number;
-    const period = values.period as number;
-    
-    // Basic calculation - replace with actual formula
-    const result = amount * (1 + rate / 100) ** period;
-    const interest = result - amount;
-    
-    return [
-      {
-        label: 'Result',
-        value: result,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Calculated result'
-      },
-      {
-        label: 'Interest',
-        value: interest,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Interest earned'
-      },
-      {
-        label: 'Principal',
-        value: amount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Original amount'
-      }
-    ];
-  };
-
-  const inputs = [
-  {
-    "id": "amount",
-    "label": "Amount",
-    "type": "range",
-    "value": 10000,
-    "min": 1000,
-    "max": 1000000,
-    "step": 1000,
-    "unit": " ₹",
-    "description": "Enter the amount for calculation",
-    "tooltip": "The amount on which calculation needs to be performed",
-    "required": true
-  },
-  {
-    "id": "rate",
-    "label": "Rate",
-    "type": "range",
-    "value": 10,
-    "min": 1,
-    "max": 30,
-    "step": 0.1,
-    "unit": "% p.a.",
-    "description": "Annual rate for calculation",
-    "tooltip": "The annual rate applicable to your calculation",
-    "required": true
-  },
-  {
-    "id": "period",
-    "label": "Time Period",
-    "type": "range",
-    "value": 5,
-    "min": 1,
-    "max": 30,
-    "step": 1,
-    "unit": " years",
-    "description": "Duration for calculation",
-    "tooltip": "The time period for your calculation",
-    "required": true
-  }
-];
-
-  const features = [
-  {
-    "name": "Instant Calculation",
-    "description": "Get instant calculation results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Mobile Optimized",
-    "description": "Get mobile optimized results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "No Registration",
-    "description": "Get no registration results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Accurate Results",
-    "description": "Get accurate results results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Free to Use",
-    "description": "Get free to use results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "2025 Updated",
-    "description": "Get 2025 updated results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  }
-];
-
-  const faqs = [
-  {
-    "question": "What is Cheque Bounce Charges Calculator and how does it work?",
-    "answer": "Cheque Bounce Charges Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
-  },
-  {
-    "question": "How accurate is this cheque bounce charges calculator calculator?",
-    "answer": "Our cheque bounce charges calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
-  },
-  {
-    "question": "Is this calculator free to use?",
-    "answer": "Yes, our cheque bounce charges calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
-  },
-  {
-    "question": "Can I use this calculator on mobile devices?",
-    "answer": "Yes, our cheque bounce charges calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
-  }
-];
-
-  const relatedCalculators = [
-  {
-    "id": "emi-calculator",
-    "name": "EMI Calculator",
-    "description": "Calculate EMI for loans",
-    "url": "/calculators/emi-calculator"
-  },
-  {
-    "id": "sip-calculator",
-    "name": "SIP Calculator",
-    "description": "Calculate SIP returns",
-    "url": "/calculators/sip-calculator"
-  },
-  {
-    "id": "compound-interest-calculator",
-    "name": "Compound Interest Calculator",
-    "description": "Calculate compound interest",
-    "url": "/calculators/compound-interest-calculator"
-  }
-];
-
-  const tips = [
-  "Always verify your inputs before calculating",
-  "Consider consulting with a financial advisor for important decisions",
-  "Keep your calculations for future reference",
-  "Update your inputs as your situation changes",
-  "Use this calculator as a planning tool only",
-  "Consider all factors that may affect your results"
-];
-
-  const calculatorData = {
-  "formula": "Standard mathematical formula",
-  "assumptions": [
-    "Rates remain constant throughout the period",
-    "No additional charges or fees included",
-    "Results are for planning purposes only"
-  ],
-  "limitations": [
-    "Actual results may vary due to market conditions",
-    "Additional factors not included in calculations",
-    "Consult professionals for important decisions"
-  ],
-  "lastUpdated": "January 2025"
+const chequeChargesData: { [bank: string]: { charge: string; notes?: string } } = {
+  'State Bank of India': { charge: '₹150 + GST', notes: 'For savings account; ₹750 for business accounts' },
+  'HDFC Bank': { charge: '₹500 + taxes', notes: 'Per instrument' },
+  'ICICI Bank': { charge: '₹350 + taxes', notes: 'Per instrument' },
+  'Axis Bank': { charge: '₹350 + taxes', notes: 'Per instrument' },
+  'Kotak Mahindra Bank': { charge: '₹350 + taxes', notes: 'Per instrument' },
+  'Punjab National Bank': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'Bank of Baroda': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'Canara Bank': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'Union Bank of India': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'IDFC First Bank': { charge: '₹250 + taxes', notes: 'Per instrument' },
+  'IndusInd Bank': { charge: '₹350 + taxes', notes: 'Per instrument' },
+  'Yes Bank': { charge: '₹350 + taxes', notes: 'Per instrument' },
+  'Federal Bank': { charge: '₹300 + taxes', notes: 'Per instrument' },
+  'Bank of India': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'Central Bank of India': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'Indian Overseas Bank': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'UCO Bank': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'Bank of Maharashtra': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'Punjab & Sind Bank': { charge: '₹150 + GST', notes: 'Per instrument' },
+  'Indian Bank': { charge: '₹150 + GST', notes: 'Per instrument' },
+  // Add more banks as needed
 };
+
+const banks = Object.keys(chequeChargesData);
+
+const faqList = [
+  {
+    q: 'What is a cheque bounce charge?',
+    a: 'A cheque bounce charge is a penalty levied by banks when a cheque issued by you is returned unpaid due to insufficient funds or other reasons.'
+  },
+  {
+    q: 'How much is the cheque bounce charge in SBI?',
+    a: 'SBI charges ₹150 + GST for cheque bounce in savings accounts. For business accounts, it is ₹750.'
+  },
+  {
+    q: 'Are cheque bounce charges the same for all banks?',
+    a: 'No, cheque bounce charges vary from bank to bank and may also depend on the type of account.'
+  },
+  {
+    q: 'Is GST applicable on cheque bounce charges?',
+    a: 'Yes, GST is applicable on cheque bounce charges as per government rules.'
+  },
+  {
+    q: 'How can I avoid cheque bounce charges?',
+    a: 'Maintain sufficient balance in your account and ensure all cheque details are correct before issuing.'
+  },
+];
+
+const ChequeBounceChargesCalculator: React.FC = () => {
+  const [search, setSearch] = useState('');
+  const [selectedBank, setSelectedBank] = useState('');
+
+  const filteredBanks = useMemo(() => {
+    if (!search) return banks;
+    return banks.filter(bank => bank.toLowerCase().includes(search.toLowerCase()));
+  }, [search]);
+
+  const result = selectedBank ? chequeChargesData[selectedBank] : null;
 
   return (
-    <EnhancedCalculator
-      id="chequebouncechargescalculator"
-      name="Cheque Bounce Charges Calculator"
-      description="Calculate your cheque bounce charges calculator with our free online calculator. Get accurate calculations and results instantly."
-      category="Investment Calculators"
-      seoTitle="Cheque Bounce Charges Calculator 2025 - Calculate Cheque Bounce Charges Calculator Online | Free Calculator India"
-      seoDescription="Calculate your cheque bounce charges calculator instantly with our free cheque bounce charges calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="cheque bounce charges calculator calculator"
-      relatedKeywords={["cheque bounce charges calculator calculator","cheque bounce charges calculator calculation","cheque bounce charges calculator calculator India","cheque bounce charges calculator calculator online","free cheque bounce charges calculator calculator","cheque bounce charges calculator calculator 2025"]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <>
+      <SEOHelmet
+        title="Cheque Bounce Charges Calculator | Bank-wise Cheque Penalty in India 2024"
+        description="Find cheque bounce charges for SBI, HDFC, ICICI, Axis, and all major Indian banks. Use our bank cheque penalty calculator to compare and avoid cheque return penalties. Updated for 2024."
+        keywords="cheque bounce charges SBI, bank cheque penalty calculator, cheque bounce charges India, cheque return charges, bank-wise cheque bounce charges, cheque penalty charges, cheque dishonour charges, cheque bounce fine, cheque bounce penalty calculator"
+        url="/calculators/cheque-bounce-charges-calculator"
+        tags={["cheque bounce charges", "bank cheque penalty", "cheque bounce charges SBI", "cheque penalty calculator"]}
+        schemaType="FAQPage"
+        schemaData={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          'mainEntity': faqList.map(faq => ({
+            '@type': 'Question',
+            'name': faq.q,
+            'acceptedAnswer': { '@type': 'Answer', 'text': faq.a }
+          }))
+        }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100 py-8">
+        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-orange-700 mb-2">
+            Cheque Bounce Charges Calculator
+          </h1>
+          <p className="text-center text-gray-600 mb-6">
+            Instantly find and compare cheque bounce charges for all major Indian banks. Updated for 2024.
+          </p>
+          <div className="mb-6">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <Banknote className="inline w-4 h-4 mr-1 text-orange-600" />
+              Search Bank
+            </label>
+            <div className="relative mb-2">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Type bank name..."
+                value={search}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 border border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent text-sm"
+              />
+            </div>
+            <select
+              value={selectedBank}
+              onChange={e => setSelectedBank(e.target.value)}
+              className="w-full p-3 border border-orange-200 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent text-sm"
+            >
+              <option value="">Select a bank</option>
+              {filteredBanks.map(bank => (
+                <option key={bank} value={bank}>{bank}</option>
+              ))}
+            </select>
+          </div>
+          {result && (
+            <div className="bg-gradient-to-br from-orange-50 to-yellow-100 border border-orange-200 rounded-xl p-5 mb-6 text-center">
+              <h2 className="text-xl font-semibold text-orange-800 mb-2">{selectedBank} Cheque Bounce Charges</h2>
+              <div className="text-2xl font-bold text-orange-700 mb-1">{result.charge}</div>
+              {result.notes && <div className="text-sm text-gray-600 mb-2">{result.notes}</div>}
+              <div className="text-xs text-gray-500">(GST extra as applicable)</div>
+            </div>
+          )}
+          <div className="text-xs text-gray-500 text-center mb-2">
+            Data updated: 2024 | Source: Official Bank Websites
+          </div>
+        </div>
+        {/* FAQ Section */}
+        <div className="max-w-2xl mx-auto mt-10">
+          <h2 className="text-xl font-bold text-orange-700 mb-4 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqList.map((faq, idx) => (
+              <div key={idx} className="bg-white rounded-lg shadow p-4">
+                <div className="flex items-center mb-2">
+                  <AlertCircle className="w-5 h-5 text-orange-500 mr-2" />
+                  <span className="font-semibold text-gray-900">{faq.q}</span>
+                </div>
+                <div className="text-gray-700 text-sm">{faq.a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Related Tools */}
+        <div className="max-w-2xl mx-auto mt-10">
+          <h2 className="text-lg font-bold text-orange-700 mb-4 text-center">Related Tools</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="/calculators/bank-charges-analyzer" className="block p-4 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors text-center">
+              <Calculator className="w-5 h-5 mx-auto mb-1 text-orange-600" />
+              <div className="font-semibold text-orange-800">Bank Charges Analyzer</div>
+              <div className="text-xs text-gray-600">Compare all hidden bank charges</div>
+            </a>
+            <a href="/calculators/emi-calculator" className="block p-4 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors text-center">
+              <Calculator className="w-5 h-5 mx-auto mb-1 text-orange-600" />
+              <div className="font-semibold text-orange-800">EMI Calculator</div>
+              <div className="text-xs text-gray-600">Calculate your loan EMIs</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
+
+export default ChequeBounceChargesCalculator; 

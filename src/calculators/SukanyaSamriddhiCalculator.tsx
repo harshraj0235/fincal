@@ -1,205 +1,192 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
+import React, { useState, useEffect } from 'react';
+import { formatCurrency } from '../utils/calculatorUtils';
+import {
+  Sliders,
+  Calculator,
+  PieChart
 } from 'lucide-react';
+import { ResultChart } from '../components/ResultChart';
 
 export const SukanyaSamriddhiCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const amount = values.amount as number;
-    const rate = values.rate as number;
-    const period = values.period as number;
+  const [yearlyDeposit, setYearlyDeposit] = useState<number>(25000);
+  const [interestRate, setInterestRate] = useState<number>(8);
+  const [girlAge, setGirlAge] = useState<number>(2);
+  const [maturityAmount, setMaturityAmount] = useState<number>(0);
+  const [totalDeposit, setTotalDeposit] = useState<number>(0);
+  const [totalInterest, setTotalInterest] = useState<number>(0);
+  
+  useEffect(() => {
+    // Calculate maturity amount
+    let balance = 0;
+    let depositYears = Math.min(15, 21 - girlAge);
+    let totalDepositAmount = 0;
     
-    // Basic calculation - replace with actual formula
-    const result = amount * (1 + rate / 100) ** period;
-    const interest = result - amount;
+    // Calculate for deposit period (15 years or till age 21)
+    for (let year = 1; year <= depositYears; year++) {
+      balance += yearlyDeposit;
+      totalDepositAmount += yearlyDeposit;
+      balance += balance * (interestRate / 100);
+    }
     
-    return [
-      {
-        label: 'Result',
-        value: result,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Calculated result'
-      },
-      {
-        label: 'Interest',
-        value: interest,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Interest earned'
-      },
-      {
-        label: 'Principal',
-        value: amount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Original amount'
-      }
-    ];
-  };
-
-  const inputs = [
-  {
-    "id": "amount",
-    "label": "Amount",
-    "type": "range",
-    "value": 10000,
-    "min": 1000,
-    "max": 1000000,
-    "step": 1000,
-    "unit": " ₹",
-    "description": "Enter the amount for calculation",
-    "tooltip": "The amount on which calculation needs to be performed",
-    "required": true
-  },
-  {
-    "id": "rate",
-    "label": "Rate",
-    "type": "range",
-    "value": 10,
-    "min": 1,
-    "max": 30,
-    "step": 0.1,
-    "unit": "% p.a.",
-    "description": "Annual rate for calculation",
-    "tooltip": "The annual rate applicable to your calculation",
-    "required": true
-  },
-  {
-    "id": "period",
-    "label": "Time Period",
-    "type": "range",
-    "value": 5,
-    "min": 1,
-    "max": 30,
-    "step": 1,
-    "unit": " years",
-    "description": "Duration for calculation",
-    "tooltip": "The time period for your calculation",
-    "required": true
-  }
-];
-
-  const features = [
-  {
-    "name": "Instant Calculation",
-    "description": "Get instant calculation results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Mobile Optimized",
-    "description": "Get mobile optimized results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "No Registration",
-    "description": "Get no registration results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Accurate Results",
-    "description": "Get accurate results results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Free to Use",
-    "description": "Get free to use results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "2025 Updated",
-    "description": "Get 2025 updated results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  }
-];
-
-  const faqs = [
-  {
-    "question": "What is Sukanya Samriddhi Calculator and how does it work?",
-    "answer": "Sukanya Samriddhi Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
-  },
-  {
-    "question": "How accurate is this sukanya samriddhi calculator calculator?",
-    "answer": "Our sukanya samriddhi calculator calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
-  },
-  {
-    "question": "Is this calculator free to use?",
-    "answer": "Yes, our sukanya samriddhi calculator calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
-  },
-  {
-    "question": "Can I use this calculator on mobile devices?",
-    "answer": "Yes, our sukanya samriddhi calculator calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
-  }
-];
-
-  const relatedCalculators = [
-  {
-    "id": "emi-calculator",
-    "name": "EMI Calculator",
-    "description": "Calculate EMI for loans",
-    "url": "/calculators/emi-calculator"
-  },
-  {
-    "id": "sip-calculator",
-    "name": "SIP Calculator",
-    "description": "Calculate SIP returns",
-    "url": "/calculators/sip-calculator"
-  },
-  {
-    "id": "compound-interest-calculator",
-    "name": "Compound Interest Calculator",
-    "description": "Calculate compound interest",
-    "url": "/calculators/compound-interest-calculator"
-  }
-];
-
-  const tips = [
-  "Always verify your inputs before calculating",
-  "Consider consulting with a financial advisor for important decisions",
-  "Keep your calculations for future reference",
-  "Update your inputs as your situation changes",
-  "Use this calculator as a planning tool only",
-  "Consider all factors that may affect your results"
-];
-
-  const calculatorData = {
-  "formula": "Standard mathematical formula",
-  "assumptions": [
-    "Rates remain constant throughout the period",
-    "No additional charges or fees included",
-    "Results are for planning purposes only"
-  ],
-  "limitations": [
-    "Actual results may vary due to market conditions",
-    "Additional factors not included in calculations",
-    "Consult professionals for important decisions"
-  ],
-  "lastUpdated": "January 2025"
-};
-
+    // Calculate interest for remaining period till maturity (21 years)
+    const remainingYears = 21 - girlAge - depositYears;
+    for (let year = 1; year <= remainingYears; year++) {
+      balance += balance * (interestRate / 100);
+    }
+    
+    setTotalDeposit(totalDepositAmount);
+    setMaturityAmount(balance);
+    setTotalInterest(balance - totalDepositAmount);
+  }, [yearlyDeposit, interestRate, girlAge]);
+  
   return (
-    <EnhancedCalculator
-      id="sukanyasamriddhicalculator"
-      name="Sukanya Samriddhi Calculator"
-      description="Calculate your sukanya samriddhi calculator with our free online calculator. Get accurate calculations and results instantly."
-      category="Investment Calculators"
-      seoTitle="Sukanya Samriddhi Calculator 2025 - Calculate Sukanya Samriddhi Calculator Online | Free Calculator India"
-      seoDescription="Calculate your sukanya samriddhi calculator instantly with our free sukanya samriddhi calculator calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="sukanya samriddhi calculator calculator"
-      relatedKeywords={["sukanya samriddhi calculator calculator","sukanya samriddhi calculator calculation","sukanya samriddhi calculator calculator India","sukanya samriddhi calculator calculator online","free sukanya samriddhi calculator calculator","sukanya samriddhi calculator calculator 2025"]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="space-y-6">
+        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+          <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
+          Sukanya Samriddhi Account Details
+        </h2>
+        
+        <div className="space-y-4">
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="yearly-deposit" className="text-sm font-medium text-neutral-700">
+                Yearly Deposit (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(yearlyDeposit)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="yearly-deposit"
+              min="1000" 
+              max="150000" 
+              step="1000" 
+              value={yearlyDeposit} 
+              onChange={(e) => setYearlyDeposit(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="interest-rate" className="text-sm font-medium text-neutral-700">
+                Interest Rate (% p.a.)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {interestRate}%
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="interest-rate"
+              min="7" 
+              max="9" 
+              step="0.1" 
+              value={interestRate} 
+              onChange={(e) => setInterestRate(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="girl-age" className="text-sm font-medium text-neutral-700">
+                Girl's Age (Years)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {girlAge} years
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="girl-age"
+              min="0" 
+              max="10" 
+              step="1" 
+              value={girlAge} 
+              onChange={(e) => setGirlAge(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+        </div>
+        
+        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
+          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Account Summary</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Total Deposit</p>
+              <p className="text-xl font-bold text-neutral-900">{formatCurrency(totalDeposit)}</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Interest Earned</p>
+              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(totalInterest)}</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Maturity Amount</p>
+              <p className="text-xl font-bold text-[--success-600]">{formatCurrency(maturityAmount)}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+            <PieChart className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Account Breakup
+          </h2>
+          <div className="mt-4 h-64">
+            <ResultChart 
+              data={[
+                { name: 'Total Deposit', value: totalDeposit, color: '#3b82f6' },
+                { name: 'Interest', value: totalInterest, color: '#22c55e' }
+              ]}
+              centerText={`${formatCurrency(maturityAmount)}\nMaturity Value`}
+            />
+          </div>
+        </div>
+        
+        <div className="bg-neutral-50 p-6 rounded-lg">
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
+            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Scheme Guidelines
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Key Features</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
+                <li>Account can be opened for girl child below 10 years</li>
+                <li>Deposits allowed for 15 years</li>
+                <li>Account matures when girl turns 21</li>
+                <li>Minimum deposit: ₹250, Maximum: ₹1.5 lakh per year</li>
+              </ul>
+            </div>
+            
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Tax Benefits</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-neutral-600">
+                <li>Tax deduction under Section 80C</li>
+                <li>Interest earned is tax-free</li>
+                <li>Maturity amount is tax-free</li>
+                <li>EEE (Exempt-Exempt-Exempt) status</li>
+              </ul>
+            </div>
+            
+            <div className="p-4 bg-[--accent-50] rounded-lg">
+              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Benefits</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
+                <li>Highest interest rate among government schemes</li>
+                <li>Partial withdrawal allowed for education</li>
+                <li>Government backed security</li>
+                <li>Helps in girl child's future planning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

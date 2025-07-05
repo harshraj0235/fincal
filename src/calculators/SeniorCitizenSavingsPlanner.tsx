@@ -1,205 +1,105 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target, Zap
-} from 'lucide-react';
+import React, { useState } from 'react';
+import SEOHelmet from '../components/SEOHelmet';
 
-export const SeniorCitizenSavingsPlanner: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const amount = values.amount as number;
-    const rate = values.rate as number;
-    const period = values.period as number;
-    
-    // Basic calculation - replace with actual formula
-    const result = amount * (1 + rate / 100) ** period;
-    const interest = result - amount;
-    
-    return [
-      {
-        label: 'Result',
-        value: result,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Calculated result'
-      },
-      {
-        label: 'Interest',
-        value: interest,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Interest earned'
-      },
-      {
-        label: 'Principal',
-        value: amount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Original amount'
-      }
-    ];
-  };
-
-  const inputs = [
-  {
-    "id": "amount",
-    "label": "Amount",
-    "type": "range",
-    "value": 10000,
-    "min": 1000,
-    "max": 1000000,
-    "step": 1000,
-    "unit": " ₹",
-    "description": "Enter the amount for calculation",
-    "tooltip": "The amount on which calculation needs to be performed",
-    "required": true
-  },
-  {
-    "id": "rate",
-    "label": "Rate",
-    "type": "range",
-    "value": 10,
-    "min": 1,
-    "max": 30,
-    "step": 0.1,
-    "unit": "% p.a.",
-    "description": "Annual rate for calculation",
-    "tooltip": "The annual rate applicable to your calculation",
-    "required": true
-  },
-  {
-    "id": "period",
-    "label": "Time Period",
-    "type": "range",
-    "value": 5,
-    "min": 1,
-    "max": 30,
-    "step": 1,
-    "unit": " years",
-    "description": "Duration for calculation",
-    "tooltip": "The time period for your calculation",
-    "required": true
-  }
+const schemes = [
+  { label: 'Senior Citizen Savings Scheme (SCSS)', value: 'scss', rate: 8.2, max: 1500000, tenure: 5 },
+  { label: 'Pradhan Mantri Vaya Vandana Yojana (PMVVY)', value: 'pmvvy', rate: 7.4, max: 1500000, tenure: 10 }
 ];
 
-  const features = [
-  {
-    "name": "Instant Calculation",
-    "description": "Get instant calculation results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Mobile Optimized",
-    "description": "Get mobile optimized results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "No Registration",
-    "description": "Get no registration results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Accurate Results",
-    "description": "Get accurate results results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Free to Use",
-    "description": "Get free to use results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "2025 Updated",
-    "description": "Get 2025 updated results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  }
-];
+const SeniorCitizenSavingsPlanner: React.FC = () => {
+  const [scheme, setScheme] = useState('scss');
+  const [principal, setPrincipal] = useState(100000);
+  const [rate, setRate] = useState(schemes[0].rate);
+  const [tenure, setTenure] = useState(schemes[0].tenure);
+  const [showFAQ, setShowFAQ] = useState(false);
 
-  const faqs = [
-  {
-    "question": "What is Senior Citizen Savings Planner and how does it work?",
-    "answer": "Senior Citizen Savings Planner is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
-  },
-  {
-    "question": "How accurate is this senior citizen savings planner calculator?",
-    "answer": "Our senior citizen savings planner calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
-  },
-  {
-    "question": "Is this calculator free to use?",
-    "answer": "Yes, our senior citizen savings planner calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
-  },
-  {
-    "question": "Can I use this calculator on mobile devices?",
-    "answer": "Yes, our senior citizen savings planner calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
-  }
-];
+  const selectedScheme = schemes.find(s => s.value === scheme)!;
 
-  const relatedCalculators = [
-  {
-    "id": "emi-calculator",
-    "name": "EMI Calculator",
-    "description": "Calculate EMI for loans",
-    "url": "/calculators/emi-calculator"
-  },
-  {
-    "id": "sip-calculator",
-    "name": "SIP Calculator",
-    "description": "Calculate SIP returns",
-    "url": "/calculators/sip-calculator"
-  },
-  {
-    "id": "compound-interest-calculator",
-    "name": "Compound Interest Calculator",
-    "description": "Calculate compound interest",
-    "url": "/calculators/compound-interest-calculator"
-  }
-];
-
-  const tips = [
-  "Always verify your inputs before calculating",
-  "Consider consulting with a financial advisor for important decisions",
-  "Keep your calculations for future reference",
-  "Update your inputs as your situation changes",
-  "Use this calculator as a planning tool only",
-  "Consider all factors that may affect your results"
-];
-
-  const calculatorData = {
-  "formula": "Standard mathematical formula",
-  "assumptions": [
-    "Rates remain constant throughout the period",
-    "No additional charges or fees included",
-    "Results are for planning purposes only"
-  ],
-  "limitations": [
-    "Actual results may vary due to market conditions",
-    "Additional factors not included in calculations",
-    "Consult professionals for important decisions"
-  ],
-  "lastUpdated": "January 2025"
-};
+  // Calculate maturity and interest
+  const interest = principal * (rate / 100) * tenure;
+  const maturity = principal + interest;
+  const taxBenefit = Math.min(principal, 150000); // Section 80C
 
   return (
-    <EnhancedCalculator
-      id="seniorcitizensavingsplanner"
-      name="Senior Citizen Savings Planner"
-      description="Calculate your senior citizen savings planner with our free online calculator. Get accurate calculations and results instantly."
-      category="Investment Calculators"
-      seoTitle="Senior Citizen Savings Planner 2025 - Calculate Senior Citizen Savings Planner Online | Free Calculator India"
-      seoDescription="Calculate your senior citizen savings planner instantly with our free senior citizen savings planner calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="senior citizen savings planner calculator"
-      relatedKeywords={["senior citizen savings planner calculator","senior citizen savings planner calculation","senior citizen savings planner calculator India","senior citizen savings planner calculator online","free senior citizen savings planner calculator","senior citizen savings planner calculator 2025"]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <>
+      <SEOHelmet
+        title="Senior Citizen Savings Planner - SCSS & PMVVY Calculator | Fincal"
+        description="Design savings plans for SCSS or PMVVY with interest and tax benefit projections. Fully mobile-friendly, SEO-optimized, and easy to use."
+        keywords="senior citizen savings calculator India, SCSS calculator, PMVVY calculator, senior citizen tax benefit, best savings for seniors"
+        url="/calculators/senior-citizen-savings-planner"
+        tags={["senior citizen savings", "SCSS calculator", "PMVVY calculator", "tax benefit", "retirement savings"]}
+      />
+      <div className="max-w-xl mx-auto py-8 px-4">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+          <h1 className="text-2xl font-bold text-green-800 mb-2 md:mb-0">Senior Citizen Savings Planner</h1>
+          <button
+            className="text-sm text-green-700 hover:text-green-900 underline md:ml-4"
+            aria-label="Show FAQ"
+            onClick={() => setShowFAQ(true)}
+          >
+            How does this work?
+          </button>
+        </div>
+        <div className="bg-white rounded-xl shadow-lg p-6 space-y-6">
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="scheme-select">Scheme</label>
+            <select id="scheme-select" value={scheme} onChange={e => {
+              setScheme(e.target.value);
+              const s = schemes.find(s => s.value === e.target.value)!;
+              setRate(s.rate);
+              setTenure(s.tenure);
+            }} className="input w-full" aria-label="Select Scheme">
+              {schemes.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="principal">Principal (₹)</label>
+            <input id="principal" type="number" min="1000" max={selectedScheme.max} value={principal} onChange={e => setPrincipal(Number(e.target.value))} className="input w-full" aria-label="Principal Amount" />
+            <p className="text-xs text-gray-500 mt-1">Max: ₹{selectedScheme.max.toLocaleString()}</p>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="rate">Interest Rate (%)</label>
+            <input id="rate" type="number" min="0" max="20" step="0.01" value={rate} onChange={e => setRate(Number(e.target.value))} className="input w-full" aria-label="Interest Rate" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="tenure">Tenure (years)</label>
+            <input id="tenure" type="number" min="1" max="20" value={tenure} onChange={e => setTenure(Number(e.target.value))} className="input w-full" aria-label="Tenure" />
+          </div>
+          <div className="bg-green-50 rounded-lg p-4 mt-4">
+            <h2 className="text-lg font-semibold text-green-800 mb-2">Results</h2>
+            <div className="flex flex-col gap-2">
+              <div><span className="font-medium">Total Interest:</span> ₹{interest.toLocaleString()}</div>
+              <div><span className="font-medium">Maturity Amount:</span> ₹{maturity.toLocaleString()}</div>
+              <div><span className="font-medium">Tax Benefit (Sec 80C):</span> ₹{taxBenefit.toLocaleString()}</div>
+            </div>
+          </div>
+        </div>
+        {/* FAQ Modal */}
+        {showFAQ && (
+          <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+              <button
+                className="absolute top-2 right-2 text-neutral-400 hover:text-neutral-700"
+                aria-label="Close FAQ"
+                onClick={() => setShowFAQ(false)}
+              >
+                ×
+              </button>
+              <h3 className="text-xl font-bold mb-4">Senior Citizen Savings Planner FAQ</h3>
+              <ul className="list-disc list-inside text-sm text-neutral-700 space-y-2">
+                <li><strong>Which schemes are supported?</strong> SCSS and PMVVY.</li>
+                <li><strong>Are rates up to date?</strong> Yes, but you can adjust them manually.</li>
+                <li><strong>Is my data saved?</strong> No, all calculations are done in your browser and not stored.</li>
+                <li><strong>Is this tool free?</strong> 100% free for all users.</li>
+                <li><strong>Is this mobile-friendly?</strong> Yes, fully responsive and easy to use on any device.</li>
+                <li><strong>Where can I get more help?</strong> See the info and notes sections below, or contact us via the site.</li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
+
+export default SeniorCitizenSavingsPlanner; 

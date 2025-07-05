@@ -1,205 +1,105 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target
-} from 'lucide-react';
+import React, { useState } from 'react';
+import SEOHelmet from '../components/SEOHelmet';
 
-export const MSMELoanEligibilityChecker: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const amount = values.amount as number;
-    const rate = values.rate as number;
-    const period = values.period as number;
-    
-    // Basic calculation - replace with actual formula
-    const result = amount * (1 + rate / 100) ** period;
-    const interest = result - amount;
-    
-    return [
-      {
-        label: 'Result',
-        value: result,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Calculated result'
-      },
-      {
-        label: 'Interest',
-        value: interest,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Interest earned'
-      },
-      {
-        label: 'Principal',
-        value: amount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Original amount'
-      }
-    ];
-  };
-
-  const inputs = [
-  {
-    "id": "amount",
-    "label": "Amount",
-    "type": "range",
-    "value": 10000,
-    "min": 1000,
-    "max": 1000000,
-    "step": 1000,
-    "unit": " ₹",
-    "description": "Enter the amount for calculation",
-    "tooltip": "The amount on which calculation needs to be performed",
-    "required": true
-  },
-  {
-    "id": "rate",
-    "label": "Rate",
-    "type": "range",
-    "value": 10,
-    "min": 1,
-    "max": 30,
-    "step": 0.1,
-    "unit": "% p.a.",
-    "description": "Annual rate for calculation",
-    "tooltip": "The annual rate applicable to your calculation",
-    "required": true
-  },
-  {
-    "id": "period",
-    "label": "Time Period",
-    "type": "range",
-    "value": 5,
-    "min": 1,
-    "max": 30,
-    "step": 1,
-    "unit": " years",
-    "description": "Duration for calculation",
-    "tooltip": "The time period for your calculation",
-    "required": true
-  }
+const schemes = [
+  { label: 'Mudra Loan', value: 'mudra', minTurnover: 0, minYears: 0, collateral: false },
+  { label: 'CGTMSE', value: 'cgtmse', minTurnover: 1000000, minYears: 1, collateral: false }
 ];
 
-  const features = [
-  {
-    "name": "Instant Calculation",
-    "description": "Get instant calculation results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Mobile Optimized",
-    "description": "Get mobile optimized results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "No Registration",
-    "description": "Get no registration results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Accurate Results",
-    "description": "Get accurate results results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "Free to Use",
-    "description": "Get free to use results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  },
-  {
-    "name": "2025 Updated",
-    "description": "Get 2025 updated results instantly",
-    "icon": "<Calculator className=\"h-5 w-5\" />"
-  }
-];
+const MSMELoanEligibilityChecker: React.FC = () => {
+  const [scheme, setScheme] = useState('mudra');
+  const [businessType, setBusinessType] = useState('Proprietorship');
+  const [turnover, setTurnover] = useState(500000);
+  const [years, setYears] = useState(1);
+  const [collateral, setCollateral] = useState(false);
+  const [showFAQ, setShowFAQ] = useState(false);
 
-  const faqs = [
-  {
-    "question": "What is M S M E Loan Eligibility Checker and how does it work?",
-    "answer": "M S M E Loan Eligibility Checker is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs."
-  },
-  {
-    "question": "How accurate is this m s m e loan eligibility checker calculator?",
-    "answer": "Our m s m e loan eligibility checker calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool."
-  },
-  {
-    "question": "Is this calculator free to use?",
-    "answer": "Yes, our m s m e loan eligibility checker calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning."
-  },
-  {
-    "question": "Can I use this calculator on mobile devices?",
-    "answer": "Yes, our m s m e loan eligibility checker calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size."
-  }
-];
+  const selectedScheme = schemes.find(s => s.value === scheme)!;
 
-  const relatedCalculators = [
-  {
-    "id": "emi-calculator",
-    "name": "EMI Calculator",
-    "description": "Calculate EMI for loans",
-    "url": "/calculators/emi-calculator"
-  },
-  {
-    "id": "sip-calculator",
-    "name": "SIP Calculator",
-    "description": "Calculate SIP returns",
-    "url": "/calculators/sip-calculator"
-  },
-  {
-    "id": "compound-interest-calculator",
-    "name": "Compound Interest Calculator",
-    "description": "Calculate compound interest",
-    "url": "/calculators/compound-interest-calculator"
-  }
-];
-
-  const tips = [
-  "Always verify your inputs before calculating",
-  "Consider consulting with a financial advisor for important decisions",
-  "Keep your calculations for future reference",
-  "Update your inputs as your situation changes",
-  "Use this calculator as a planning tool only",
-  "Consider all factors that may affect your results"
-];
-
-  const calculatorData = {
-  "formula": "Standard mathematical formula",
-  "assumptions": [
-    "Rates remain constant throughout the period",
-    "No additional charges or fees included",
-    "Results are for planning purposes only"
-  ],
-  "limitations": [
-    "Actual results may vary due to market conditions",
-    "Additional factors not included in calculations",
-    "Consult professionals for important decisions"
-  ],
-  "lastUpdated": "January 2025"
-};
+  // Eligibility logic
+  const eligible =
+    turnover >= selectedScheme.minTurnover &&
+    years >= selectedScheme.minYears &&
+    (!selectedScheme.collateral || collateral === true);
 
   return (
-    <EnhancedCalculator
-      id="msmeloaneligibilitychecker"
-      name="M S M E Loan Eligibility Checker"
-      description="Calculate your m s m e loan eligibility checker with our free online calculator. Get accurate calculations and results instantly."
-      category="Loan Calculators"
-      seoTitle="M S M E Loan Eligibility Checker 2025 - Calculate M S M E Loan Eligibility Checker Online | Free Calculator India"
-      seoDescription="Calculate your m s m e loan eligibility checker instantly with our free m s m e loan eligibility checker calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="m s m e loan eligibility checker calculator"
-      relatedKeywords={["m s m e loan eligibility checker calculator","m s m e loan eligibility checker calculation","m s m e loan eligibility checker calculator India","m s m e loan eligibility checker calculator online","free m s m e loan eligibility checker calculator","m s m e loan eligibility checker calculator 2025"]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <>
+      <SEOHelmet
+        title="MSME Loan Eligibility Checker - Mudra & CGTMSE | Fincal"
+        description="Assess loan eligibility for Indian MSMEs under schemes like Mudra or CGTMSE. Fully mobile-friendly, SEO-optimized, and easy to use."
+        keywords="msme loan eligibility calculator India, mudra loan eligibility, cgtmse eligibility, msme loan checker, business loan India"
+        url="/calculators/msme-loan-eligibility"
+        tags={["msme loan eligibility", "mudra loan", "cgtmse", "business loan", "msme checker"]}
+      />
+      <div className="max-w-xl mx-auto py-8 px-4">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+          <h1 className="text-2xl font-bold text-blue-800 mb-2 md:mb-0">MSME Loan Eligibility Checker</h1>
+          <button
+            className="text-sm text-blue-700 hover:text-blue-900 underline md:ml-4"
+            aria-label="Show FAQ"
+            onClick={() => setShowFAQ(true)}
+          >
+            How does this work?
+          </button>
+        </div>
+        <div className="bg-white rounded-xl shadow-lg p-6 space-y-6">
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="scheme-select">Scheme</label>
+            <select id="scheme-select" value={scheme} onChange={e => setScheme(e.target.value)} className="input w-full" aria-label="Select Scheme">
+              {schemes.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="business-type">Business Type</label>
+            <input id="business-type" type="text" value={businessType} onChange={e => setBusinessType(e.target.value)} className="input w-full" aria-label="Business Type" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="turnover">Annual Turnover (₹)</label>
+            <input id="turnover" type="number" min="0" value={turnover} onChange={e => setTurnover(Number(e.target.value))} className="input w-full" aria-label="Annual Turnover" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="years">Years in Operation</label>
+            <input id="years" type="number" min="0" value={years} onChange={e => setYears(Number(e.target.value))} className="input w-full" aria-label="Years in Operation" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1" htmlFor="collateral">Collateral Available?</label>
+            <input id="collateral" type="checkbox" checked={collateral} onChange={e => setCollateral(e.target.checked)} className="ml-2" aria-label="Collateral Available" />
+          </div>
+          <div className="bg-blue-50 rounded-lg p-4 mt-4">
+            <h2 className="text-lg font-semibold text-blue-800 mb-2">Eligibility Result</h2>
+            {eligible ? (
+              <div className="text-green-700 font-medium">You are likely eligible for the selected scheme.</div>
+            ) : (
+              <div className="text-red-700 font-medium">You may not be eligible for the selected scheme. Please check the requirements.</div>
+            )}
+          </div>
+        </div>
+        {/* FAQ Modal */}
+        {showFAQ && (
+          <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+              <button
+                className="absolute top-2 right-2 text-neutral-400 hover:text-neutral-700"
+                aria-label="Close FAQ"
+                onClick={() => setShowFAQ(false)}
+              >
+                ×
+              </button>
+              <h3 className="text-xl font-bold mb-4">MSME Loan Eligibility Checker FAQ</h3>
+              <ul className="list-disc list-inside text-sm text-neutral-700 space-y-2">
+                <li><strong>Which schemes are supported?</strong> Mudra and CGTMSE.</li>
+                <li><strong>Are results guaranteed?</strong> No, this is a guidance tool. Please check with your bank for final eligibility.</li>
+                <li><strong>Is my data saved?</strong> No, all calculations are done in your browser and not stored.</li>
+                <li><strong>Is this tool free?</strong> 100% free for all users.</li>
+                <li><strong>Is this mobile-friendly?</strong> Yes, fully responsive and easy to use on any device.</li>
+                <li><strong>Where can I get more help?</strong> See the info and notes sections below, or contact us via the site.</li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
+
+export default MSMELoanEligibilityChecker; 

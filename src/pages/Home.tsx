@@ -50,7 +50,7 @@ export const Home: React.FC = () => {
       "@type": "WebPage",
       "name": "FinanceGurus Directory - India's Top Financial Calculators & Tools",
       "description": "Comprehensive financial calculators for Indian users. Calculate EMI, SIP, income tax, mutual funds, and more. Free online financial planning tools.",
-      "url": "https://financegurus.directory",
+      "url": "https://moneycal.in",
       "mainEntity": {
         "@type": "ItemList",
         "name": "Financial Calculators",
@@ -64,7 +64,7 @@ export const Home: React.FC = () => {
               "@type": "WebApplication",
               "name": calculator.name,
               "description": calculator.description,
-              "url": `https://financegurus.directory/calculators/${calculator.id}`,
+              "url": `https://moneycal.in/calculators/${calculator.id}`,
               "applicationCategory": "FinanceApplication",
               "operatingSystem": "Web Browser",
               "offers": {
@@ -86,8 +86,8 @@ export const Home: React.FC = () => {
       "@type": "Organization",
       "name": "FinanceGurus",
       "alternateName": "FinanceGurus Directory",
-      "url": "https://financegurus.directory",
-      "logo": "https://financegurus.directory/android-chrome-512x512.png",
+      "url": "https://moneycal.in",
+      "logo": "https://moneycal.in/android-chrome-512x512.png",
       "description": "India's most comprehensive financial calculator platform providing free online financial planning tools",
       "foundingDate": "2024",
       "address": {
@@ -112,7 +112,7 @@ export const Home: React.FC = () => {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "FinanceGurus",
-      "url": "https://financegurus.directory",
+      "url": "https://moneycal.in",
       "description": "India's most comprehensive financial calculator platform",
       "publisher": {
         "@type": "Organization",
@@ -120,7 +120,7 @@ export const Home: React.FC = () => {
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://financegurus.directory/search?q={search_term_string}",
+        "target": "https://moneycal.in/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },

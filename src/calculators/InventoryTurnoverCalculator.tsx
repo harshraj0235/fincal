@@ -1,212 +1,283 @@
-import React from 'react';
-import { EnhancedCalculator } from '../components/EnhancedCalculator';
-import { 
-  Calculator, TrendingUp, DollarSign, Calendar, PieChart, 
-  Shield, Users, Star, Clock, Smartphone, Monitor, Tablet,
-  Info, AlertCircle, CheckCircle, ExternalLink, Target
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { formatCurrency } from '../utils/calculatorUtils';
+import { Calculator, Package, TrendingUp } from 'lucide-react';
 
 export const InventoryTurnoverCalculator: React.FC = () => {
-  const handleCalculate = (values: Record<string, number | string>) => {
-    const amount = values.amount as number;
-    const rate = values.rate as number;
-    const period = values.period as number;
+  const [costOfGoodsSold, setCostOfGoodsSold] = useState<number>(1000000);
+  const [beginningInventory, setBeginningInventory] = useState<number>(200000);
+  const [endingInventory, setEndingInventory] = useState<number>(150000);
+  const [salesRevenue, setSalesRevenue] = useState<number>(1500000);
+  const [inventoryTurnover, setInventoryTurnover] = useState<number>(0);
+  const [daysInventory, setDaysInventory] = useState<number>(0);
+  const [grossMargin, setGrossMargin] = useState<number>(0);
+  
+  useEffect(() => {
+    // Calculate average inventory
+    const averageInventory = (beginningInventory + endingInventory) / 2;
     
-    // Basic calculation - replace with actual formula
-    const result = amount * (1 + rate / 100) ** period;
-    const interest = result - amount;
+    // Calculate inventory turnover ratio
+    const turnover = costOfGoodsSold / averageInventory;
+    setInventoryTurnover(turnover);
     
-    return [
-      {
-        label: 'Result',
-        value: result,
-        unit: ' ₹',
-        color: 'primary' as const,
-        icon: <DollarSign className="h-4 w-4" />,
-        description: 'Calculated result'
-      },
-      {
-        label: 'Interest',
-        value: interest,
-        unit: ' ₹',
-        color: 'success' as const,
-        icon: <TrendingUp className="h-4 w-4" />,
-        description: 'Interest earned'
-      },
-      {
-        label: 'Principal',
-        value: amount,
-        unit: ' ₹',
-        color: 'neutral' as const,
-        icon: <Target className="h-4 w-4" />,
-        description: 'Original amount'
-      }
-    ];
-  };
-
-  const inputs = [
-    {
-      id: 'amount',
-      label: 'Amount',
-      type: 'range' as const,
-      value: 10000,
-      min: 1000,
-      max: 1000000,
-      step: 1000,
-      unit: ' ₹',
-      description: 'Enter the amount for calculation',
-      tooltip: 'The amount on which calculation needs to be performed',
-      required: true
-    },
-    {
-      id: 'rate',
-      label: 'Rate',
-      type: 'range' as const,
-      value: 10,
-      min: 1,
-      max: 30,
-      step: 0.1,
-      unit: '% p.a.',
-      description: 'Annual rate for calculation',
-      tooltip: 'The annual rate applicable to your calculation',
-      required: true
-    },
-    {
-      id: 'period',
-      label: 'Time Period',
-      type: 'range' as const,
-      value: 5,
-      min: 1,
-      max: 30,
-      step: 1,
-      unit: ' years',
-      description: 'Duration for calculation',
-      tooltip: 'The time period for your calculation',
-      required: true
-    }
-  ];
-
-  const features = [
-    {
-      name: 'Instant Calculation',
-      description: 'Get results instantly as you adjust values',
-      icon: <Calculator className="h-5 w-5" />
-    },
-    {
-      name: 'Mobile Optimized',
-      description: 'Works perfectly on all devices and screen sizes',
-      icon: <Smartphone className="h-5 w-5" />
-    },
-    {
-      name: 'No Registration',
-      description: 'Use our calculator without any sign-up required',
-      icon: <Users className="h-5 w-5" />
-    },
-    {
-      name: 'Accurate Results',
-      description: 'Based on standard mathematical formulas',
-      icon: <CheckCircle className="h-5 w-5" />
-    },
-    {
-      name: 'Free to Use',
-      description: 'Completely free calculator with no hidden charges',
-      icon: <DollarSign className="h-5 w-5" />
-    },
-    {
-      name: '2025 Updated',
-      description: 'Latest calculation tools for 2025',
-      icon: <Clock className="h-5 w-5" />
-    }
-  ];
-
-  const faqs = [
-    {
-      question: 'What is Inventory Turnover Calculator?',
-      answer: 'Inventory Turnover Calculator is a financial calculation tool that helps you determine various financial metrics. It uses standard mathematical formulas to provide accurate results for your financial planning needs.'
-    },
-    {
-      question: 'How accurate is this calculator?',
-      answer: 'Our calculator uses standard mathematical formulas and provides accurate projections. However, actual results may vary due to market fluctuations and other factors. Use this as a planning tool.'
-    },
-    {
-      question: 'Is this calculator free to use?',
-      answer: 'Yes, our calculator is completely free to use. No registration or payment is required. You can use it as many times as you need for your financial planning.'
-    },
-    {
-      question: 'Can I use this calculator on mobile devices?',
-      answer: 'Yes, our calculator is fully optimized for all devices including mobile phones, tablets, and desktop computers. The interface adapts to your screen size.'
-    }
-  ];
-
-  const relatedCalculators = [
-    {
-      id: 'emi-calculator',
-      name: 'EMI Calculator',
-      description: 'Calculate EMI for loans',
-      url: '/calculators/emi-calculator'
-    },
-    {
-      id: 'sip-calculator',
-      name: 'SIP Calculator',
-      description: 'Calculate SIP returns',
-      url: '/calculators/sip-calculator'
-    },
-    {
-      id: 'compound-interest-calculator',
-      name: 'Compound Interest Calculator',
-      description: 'Calculate compound interest',
-      url: '/calculators/compound-interest-calculator'
-    }
-  ];
-
-  const tips = [
-    'Always verify your inputs before calculating',
-    'Consider consulting with a financial advisor for important decisions',
-    'Keep your calculations for future reference',
-    'Update your inputs as your situation changes',
-    'Use this calculator as a planning tool only',
-    'Consider all factors that may affect your results'
-  ];
-
-  const calculatorData = {
-    formula: 'Standard mathematical formula',
-    assumptions: [
-      'Rates remain constant throughout the period',
-      'No additional charges or fees included',
-      'Results are for planning purposes only'
-    ],
-    limitations: [
-      'Actual results may vary due to market conditions',
-      'Additional factors not included in calculations',
-      'Consult professionals for important decisions'
-    ],
-    lastUpdated: 'January 2025'
-  };
-
+    // Calculate days inventory outstanding
+    const dio = 365 / turnover;
+    setDaysInventory(dio);
+    
+    // Calculate gross margin
+    const margin = ((salesRevenue - costOfGoodsSold) / salesRevenue) * 100;
+    setGrossMargin(margin);
+  }, [costOfGoodsSold, beginningInventory, endingInventory, salesRevenue]);
+  
   return (
-    <EnhancedCalculator
-      id="inventoryturnovercalculator"
-      name="Inventory Turnover Calculator"
-      description="Calculate inventory turnover ratio for business analysis with our free online calculator."
-      category="Business Calculators"
-      seoTitle="Inventory Turnover Calculator 2025 - Calculate Inventory Turnover Calculator Online | Free Calculator India"
-      seoDescription="Calculate your inventory turnover calculator instantly with our free calculator. Get accurate calculations and results. No registration required. Updated for 2025."
-      focusKeyword="inventory turnover calculator calculator"
-      relatedKeywords={[
-        'inventory turnover calculator calculator',
-        'inventory turnover calculator calculation',
-        'inventory turnover calculator calculator India',
-        'inventory turnover calculator calculator online',
-        'free inventory turnover calculator calculator',
-        'inventory turnover calculator calculator 2025'
-      ]}
-      inputs={inputs}
-      onCalculate={handleCalculate}
-      features={features}
-      faqs={faqs}
-      relatedCalculators={relatedCalculators}
-      tips={tips}
-      calculatorData={calculatorData}
-    />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="space-y-6">
+        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+          <Package className="w-5 h-5 mr-2 text-[--primary-600]" />
+          Inventory Details
+        </h2>
+        
+        <div className="space-y-4">
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="cogs" className="text-sm font-medium text-neutral-700">
+                Cost of Goods Sold (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(costOfGoodsSold)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="cogs"
+              min="100000" 
+              max="10000000" 
+              step="100000" 
+              value={costOfGoodsSold} 
+              onChange={(e) => setCostOfGoodsSold(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="beginning-inventory" className="text-sm font-medium text-neutral-700">
+                Beginning Inventory (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(beginningInventory)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="beginning-inventory"
+              min="10000" 
+              max="2000000" 
+              step="10000" 
+              value={beginningInventory} 
+              onChange={(e) => setBeginningInventory(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="ending-inventory" className="text-sm font-medium text-neutral-700">
+                Ending Inventory (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(endingInventory)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="ending-inventory"
+              min="10000" 
+              max="2000000" 
+              step="10000" 
+              value={endingInventory} 
+              onChange={(e) => setEndingInventory(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+          
+          <div>
+            <div className="flex justify-between mb-2">
+              <label htmlFor="sales-revenue" className="text-sm font-medium text-neutral-700">
+                Sales Revenue (₹)
+              </label>
+              <span className="text-sm text-neutral-500">
+                {formatCurrency(salesRevenue)}
+              </span>
+            </div>
+            <input 
+              type="range" 
+              id="sales-revenue"
+              min={costOfGoodsSold} 
+              max={costOfGoodsSold * 2} 
+              step="100000" 
+              value={salesRevenue} 
+              onChange={(e) => setSalesRevenue(Number(e.target.value))}
+              className="slider"
+            />
+          </div>
+        </div>
+        
+        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
+          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Inventory Metrics</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Inventory Turnover Ratio</p>
+              <p className="text-xl font-bold text-neutral-900">{inventoryTurnover.toFixed(2)}x</p>
+              <p className="text-sm text-[--primary-600]">Times per year</p>
+            </div>
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <p className="text-sm text-neutral-500 mb-1">Days Inventory Outstanding</p>
+              <p className="text-xl font-bold text-neutral-900">{daysInventory.toFixed(1)} days</p>
+              <p className="text-sm text-[--primary-600]">Average holding period</p>
+            </div>
+          </div>
+          <div className="mt-4 p-4 bg-[--accent-50] rounded-lg">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-neutral-500">Average Inventory</p>
+                <p className="text-lg font-semibold text-neutral-900">
+                  {formatCurrency((beginningInventory + endingInventory) / 2)}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-neutral-500">Gross Margin</p>
+                <p className="text-lg font-semibold text-neutral-900">
+                  {grossMargin.toFixed(1)}%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
+            <TrendingUp className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Performance Analysis
+          </h2>
+          
+          <div className="mt-4 space-y-4">
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <h3 className="text-lg font-medium text-neutral-900 mb-4">Turnover Ratio Trend</h3>
+              <div className="h-4 bg-neutral-100 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-[--primary-600] rounded-full"
+                  style={{ width: `${Math.min(100, (inventoryTurnover / 12) * 100)}%` }}
+                ></div>
+              </div>
+              <div className="mt-2 flex justify-between text-sm text-neutral-500">
+                <span>Low (4x)</span>
+                <span>Good (8x)</span>
+                <span>Excellent (12x)</span>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-white rounded-lg shadow-sm">
+              <h3 className="text-lg font-medium text-neutral-900 mb-4">Days Inventory Trend</h3>
+              <div className="h-4 bg-neutral-100 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-[--primary-600] rounded-full"
+                  style={{ width: `${Math.min(100, 100 - (daysInventory / 90) * 100)}%` }}
+                ></div>
+              </div>
+              <div className="mt-2 flex justify-between text-sm text-neutral-500">
+                <span>90 days</span>
+                <span>60 days</span>
+                <span>30 days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-neutral-50 p-6 rounded-lg">
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
+            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+            Analysis & Insights
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Performance Assessment</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <p>
+                  {inventoryTurnover > 8
+                    ? 'Excellent inventory management with high turnover'
+                    : inventoryTurnover > 4
+                    ? 'Good inventory turnover, but room for improvement'
+                    : 'Low turnover rate, consider optimizing inventory levels'
+                  }
+                </p>
+                <p>
+                  {daysInventory < 45
+                    ? 'Very efficient inventory holding period'
+                    : daysInventory < 75
+                    ? 'Moderate inventory holding duration'
+                    : 'Long inventory holding period, may indicate overstocking'
+                  }
+                </p>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-white rounded-lg">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">Financial Impact</h3>
+              <div className="space-y-2 text-sm text-neutral-600">
+                <div className="flex justify-between">
+                  <span>Working Capital in Inventory</span>
+                  <span className="font-medium">
+                    {formatCurrency((beginningInventory + endingInventory) / 2)}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Gross Profit</span>
+                  <span className="font-medium">
+                    {formatCurrency(salesRevenue - costOfGoodsSold)}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Inventory Efficiency</span>
+                  <span className="font-medium">
+                    {(costOfGoodsSold / ((beginningInventory + endingInventory) / 2) * 100).toFixed(1)}%
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-4 bg-[--accent-50] rounded-lg">
+              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Recommendations</h3>
+              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
+                {inventoryTurnover < 4 && (
+                  <>
+                    <li>Consider reducing inventory levels</li>
+                    <li>Implement better forecasting methods</li>
+                    <li>Review purchasing policies</li>
+                  </>
+                )}
+                {inventoryTurnover >= 4 && inventoryTurnover < 8 && (
+                  <>
+                    <li>Optimize order quantities</li>
+                    <li>Monitor seasonal variations</li>
+                    <li>Review safety stock levels</li>
+                  </>
+                )}
+                {inventoryTurnover >= 8 && (
+                  <>
+                    <li>Maintain current inventory management practices</li>
+                    <li>Monitor for stockout risks</li>
+                    <li>Consider bulk purchase discounts</li>
+                  </>
+                )}
+                <li>Regular review of slow-moving items</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
