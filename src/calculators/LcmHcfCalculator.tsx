@@ -88,6 +88,7 @@ const LcmHcfCalculator: React.FC = () => {
 
     // Calculate HCF using prime factors
     const hcfFactors: { [key: number]: number } = {};
+    const allFactors = Object.keys(primeFactors).map(key => parseInt(key));
     
     Object.keys(primeFactors).forEach(numStr => {
       const num = parseInt(numStr);
