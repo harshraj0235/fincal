@@ -113,7 +113,7 @@ export const Blog: React.FC = () => {
       },
       "datePublished": post.date,
       "dateModified": post.date,
-      "image": post.image || "https://moneycal.in/images/blog-default.jpg",
+      "image": post.image || post.coverImage || "https://moneycal.in/images/blog-default.jpg",
       "url": `https://moneycal.in/blog/${post.slug}`,
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -380,7 +380,7 @@ export const Blog: React.FC = () => {
           isFeatured ? 'aspect-[16/9]' : viewMode === 'grid' ? 'aspect-video' : 'aspect-[3/2]'
         }`}>
           <img
-            src={post.image || '/images/blog-default.jpg'}
+            src={post.image || post.coverImage || '/images/blog-default.jpg'}
             alt={post.title} 
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             loading={index < 6 ? "eager" : "lazy"}
