@@ -54,6 +54,45 @@ html {
     min-width: 44px;
   }
   
+  /* Mobile Navbar Animations */
+  .mobile-menu {
+    animation: slideInFromTop 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .mobile-menu .p-4 {
+    animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .mobile-menu .p-4:nth-child(1) { animation-delay: 0.1s; }
+  .mobile-menu .p-4:nth-child(2) { animation-delay: 0.2s; }
+  .mobile-menu .p-4:nth-child(3) { animation-delay: 0.3s; }
+  .mobile-menu .p-4:nth-child(4) { animation-delay: 0.4s; }
+  
+  /* Glass morphism effects */
+  .mobile-menu {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  /* Smooth transitions for mobile menu items */
+  .mobile-menu a, .mobile-menu button {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .mobile-menu a:hover, .mobile-menu button:hover {
+    transform: translateX(4px);
+  }
+  
+  /* Quick action cards animation */
+  .mobile-menu .grid > * {
+    animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .mobile-menu .grid > *:nth-child(1) { animation-delay: 0.2s; }
+  .mobile-menu .grid > *:nth-child(2) { animation-delay: 0.3s; }
+  .mobile-menu .grid > *:nth-child(3) { animation-delay: 0.4s; }
+  .mobile-menu .grid > *:nth-child(4) { animation-delay: 0.5s; }
+  
   /* Better text sizing for mobile */
   h1 {
     font-size: clamp(1.875rem, 5vw, 3rem);
@@ -202,6 +241,29 @@ html {
   }
   50% {
     opacity: .5;
+  }
+}
+
+/* Mobile Navbar Keyframe Animations */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
