@@ -4,7 +4,6 @@ import { ArrowLeft, Calendar, User, Tag, Share2, Bookmark, Facebook, Twitter, Li
  //import { getBlogPostBySlug, getRelatedPosts } from '../data/blogData';
 import { getBlogPostBySlug, getRelatedPosts } from '../data/allBlogData';
 
-
 export const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
