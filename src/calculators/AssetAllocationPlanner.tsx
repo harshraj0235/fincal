@@ -151,7 +151,6 @@ const riskProfileAllocations: Record<RiskProfile, AssetAllocation> = {
 };
 
 function getDynamicRiskProfile(age: number, timeHorizon: number, investmentAmount: number): RiskProfile {
-  // Simple dynamic risk profile for demo; can use ML/advanced survey in real apps
   if (age < 30 && timeHorizon >= 10 && investmentAmount > 5000000) return 'aggressive';
   if (age < 35 && timeHorizon >= 8) return 'growth';
   if (age < 45 && timeHorizon >= 5) return 'balanced';
@@ -177,7 +176,6 @@ export const AssetAllocationPlanner: React.FC = () => {
 
   // SEO schema state (no re-render)
   useEffect(() => {
-    // Insert schema.org/FAQPage and calculator JSON-LD for SEO
     const faqSchema = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -215,29 +213,25 @@ export const AssetAllocationPlanner: React.FC = () => {
     return () => { document.head.removeChild(script); };
   }, []);
 
-  // Update allocation based on risk profile unless custom
   useEffect(() => {
     if (!customAllocation) {
       setAllocation(riskProfileAllocations[riskProfile]);
     }
   }, [riskProfile, customAllocation]);
 
-  // Calculate expected return and risk
   useEffect(() => {
     let weightedReturn = 0, riskScore = 0;
     Object.entries(allocation).forEach(([key, value]) => {
       weightedReturn += (value / 100) * (assetReturns[key as keyof AssetAllocation] || 0);
-      // Risk: weight equity/international/alt higher, debt/cash lowest
       if (key === 'equity' || key === 'internationalEquity' || key === 'alternative') riskScore += value * 0.8;
       else if (key === 'debt' || key === 'hybrid' || key === 'esg') riskScore += value * 0.3;
       else if (key === 'gold' || key === 'reits') riskScore += value * 0.4;
       else riskScore += value * 0.1;
     });
     setExpectedReturn(weightedReturn);
-    setRiskLevel(riskScore / 100); // 0-100 scale
+    setRiskLevel(riskScore / 100);
   }, [allocation]);
 
-  // Handle manual input
   const handleManualInput = (setter: React.Dispatch<React.SetStateAction<number>>, value: string, min: number, max: number) => {
     let num = Number(value.replace(/[^0-9]/g, ''));
     if (isNaN(num)) num = min;
@@ -247,11 +241,9 @@ export const AssetAllocationPlanner: React.FC = () => {
     return String(num);
   };
 
-  // Asset slider/input change
   const handleAllocationChange = (asset: keyof AssetAllocation, value: number) => {
     if (!customAllocation) setCustomAllocation(true);
     value = Math.max(0, Math.min(100, value));
-    // Total other
     const otherTotal = Object.entries(allocation)
       .filter(([key]) => key !== asset)
       .reduce((sum, [_, v]) => sum + v, 0);
@@ -259,13 +251,11 @@ export const AssetAllocationPlanner: React.FC = () => {
     setAllocation({ ...allocation, [asset]: value });
   };
 
-  // Reset to recommended
   const resetAllocation = () => {
     setCustomAllocation(false);
     setAllocation(riskProfileAllocations[riskProfile]);
   };
 
-  // Calculate amounts for chart
   const calculateAssetAmounts = () =>
     Object.entries(allocation).map(([key, pct]) => {
       const assetClass = assetClasses.find(ac => ac.key === key)!;
@@ -276,16 +266,13 @@ export const AssetAllocationPlanner: React.FC = () => {
       };
     });
 
-  // Dynamic risk profile suggestion
   useEffect(() => {
-    // If not custom, suggest a dynamic profile
     if (!customAllocation) {
       setRiskProfile(getDynamicRiskProfile(age, timeHorizon, investmentAmount));
     }
     // eslint-disable-next-line
   }, [age, timeHorizon, investmentAmount]);
 
-  // FAQ content for SEO
   const FAQS = [
     {
       q: "What is the best asset allocation for Indian investors in 2025?",
@@ -524,4 +511,14 @@ export const AssetAllocationPlanner: React.FC = () => {
           <div className="space-y-4">
             {assetClasses.map(assetClass => (
               <div key={assetClass.key} className="p-4 bg-white rounded-lg">
-                <div cl
+                <div className="flex justify-between items-center mb-2">
+                  <span className="flex items-center">
+                    <span
+                      className="h-3 w-3 rounded-full mr-2"
+                      style={{ backgroundColor: assetClass.color }}
+                    ></span>
+                    <span className="font-semibold">{assetClass.name}</span>
+                  </span>
+                  <span className="text-xs text-neutral-500">{assetClass.returnRange} returns</span>
+                </div>
+                <div className="text-sm text-neutral-700 mb-1"
