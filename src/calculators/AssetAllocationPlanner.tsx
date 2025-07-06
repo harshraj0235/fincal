@@ -521,4 +521,33 @@ export const AssetAllocationPlanner: React.FC = () => {
                   </span>
                   <span className="text-xs text-neutral-500">{assetClass.returnRange} returns</span>
                 </div>
-                <div className="text-sm text-neutral-700 mb-1"
+                <div className="text-sm text-neutral-700 mb-1">
+                  {assetClass.description}
+                </div>
+                <div className="flex flex-wrap gap-2 text-xs text-neutral-500">
+                  <span><b>Risk:</b> {assetClass.riskLevel}</span>
+                  <span><b>Example:</b> {assetClass.example}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* FAQ Section */}
+        <div className="bg-white p-6 rounded-lg border border-neutral-100">
+          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
+            <HelpCircle className="w-5 h-5 mr-2 text-[--primary-600]" />
+            FAQs
+          </h2>
+          <div className="space-y-4">
+            {FAQS.map((faq, idx) => (
+              <div key={idx}>
+                <h3 className="font-medium text-neutral-800 mb-1">{faq.q}</h3>
+                <p className="text-neutral-600 text-sm">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
