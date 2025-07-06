@@ -418,7 +418,8 @@ export const EmiCalculator: React.FC = () => {
                         <td className="px-4 py-2 text-sm text-neutral-900">{formatCurrency(yearlyPrincipal)}</td>
                         <td className="px-4 py-2 text-sm text-neutral-900">{formatCurrency(yearlyInterest)}</td>
                         <td className="px-4 py-2 text-sm text-neutral-900">{formatCurrency(remainingBalance)}</td>
-                );
+                           </tr>
+                    );
                   })}
                 </tbody>
               </table>
@@ -489,3 +490,4 @@ export const EmiCalculator: React.FC = () => {
     </>
   );
 };
+                
