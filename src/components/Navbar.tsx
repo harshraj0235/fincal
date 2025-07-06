@@ -105,49 +105,49 @@ const Navbar = () => {
           ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-gray-200/50' 
           : 'bg-white shadow-sm border-b border-gray-100'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo/Brand */}
-            <div className="flex-shrink-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo/Brand */}
+          <div className="flex-shrink-0">
               <Link 
                 to="/" 
                 className="flex items-center text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
                 aria-label="MoneyCal - Financial Calculator Home"
               >
                 <Calculator className="w-6 h-6 mr-2" />
-                MoneyCal
-              </Link>
-            </div>
+              MoneyCal
+            </Link>
+          </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
-              <Link 
-                to="/blog" 
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6">
+            <Link 
+              to="/blog" 
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
                 aria-label="Read our financial blog"
-              >
+            >
                 <BookOpen className="w-4 h-4 mr-1" />
-                Blog
-              </Link>
-              <Link 
-                to="/crypto" 
+              Blog
+            </Link>
+            <Link 
+              to="/crypto" 
                 className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
                 aria-label="Cryptocurrency tools and information"
-              >
+            >
                 <Coins className="w-4 h-4 mr-1" />
-                Crypto
-              </Link>
-              <Link 
-                to="/news-reel" 
-                className="inline-flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              Crypto
+            </Link>
+            <Link 
+              to="/news-reel" 
+              className="inline-flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 aria-label="Latest financial news"
-              >
-                <Newspaper className="w-4 h-4 mr-1" />
-                News Reel
-              </Link>
+            >
+              <Newspaper className="w-4 h-4 mr-1" />
+              News Reel
+            </Link>
               
               {/* Bank Tools Dropdown */}
-              <div className="relative group">
+            <div className="relative group">
                 <button 
                   className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors"
                   aria-label="Banking tools and calculators"
@@ -156,7 +156,7 @@ const Navbar = () => {
                   <Building2 className="w-4 h-4 mr-1" />
                   Bank Tools 
                   <ChevronDown className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" />
-                </button>
+              </button>
                 <div className="absolute left-0 mt-2 w-64 bg-white/95 backdrop-blur-md border border-gray-200/50 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200 z-50">
                   <div className="p-2">
                     <Link to="/calculators/bank-locker-finder" className="flex items-center px-3 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
@@ -184,26 +184,26 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <button 
-                onClick={() => setShowMoneyModal(true)}
+            <button 
+              onClick={() => setShowMoneyModal(true)}
                 className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 aria-label="Open money management tools"
-              >
+            >
                 <Banknote className="w-4 h-4 inline mr-1" />
-                Money
-              </button>
-            </div>
+              Money
+            </button>
+          </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="mobile-menu-button p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-all duration-200"
                 aria-label="Toggle mobile menu"
                 aria-expanded={isMobileMenuOpen}
-              >
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
             </div>
           </div>
         </div>
@@ -240,30 +240,30 @@ const Navbar = () => {
                     <CreditCard className="w-5 h-5 text-blue-600 mr-2" />
                     <span className="text-sm font-medium text-gray-900">EMI Calculator</span>
                   </Link>
-                  <Link
+              <Link 
                     to="/calculators/sip-calculator"
                     className="flex items-center p-3 bg-green-50 rounded-xl hover:bg-green-100 transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                     <TrendingUp className="w-5 h-5 text-green-600 mr-2" />
                     <span className="text-sm font-medium text-gray-900">SIP Calculator</span>
-                  </Link>
-                  <Link
+              </Link>
+              <Link 
                     to="/calculators/fd-calculator"
                     className="flex items-center p-3 bg-purple-50 rounded-xl hover:bg-purple-100 transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                     <PiggyBank className="w-5 h-5 text-purple-600 mr-2" />
                     <span className="text-sm font-medium text-gray-900">FD Calculator</span>
-                  </Link>
-                  <Link
+              </Link>
+              <Link 
                     to="/calculators/ppf-calculator"
                     className="flex items-center p-3 bg-orange-50 rounded-xl hover:bg-orange-100 transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                     <Shield className="w-5 h-5 text-orange-600 mr-2" />
                     <span className="text-sm font-medium text-gray-900">PPF Calculator</span>
-                  </Link>
+              </Link>
                 </div>
               </div>
 
@@ -298,16 +298,16 @@ const Navbar = () => {
                     <Newspaper className="w-5 h-5 mr-3 text-green-600" />
                     <span className="font-medium">News Reel</span>
                   </Link>
-                  <button 
-                    onClick={() => {
-                      setShowMoneyModal(true);
-                      setIsMobileMenuOpen(false);
-                    }}
+              <button 
+                onClick={() => {
+                  setShowMoneyModal(true);
+                  setIsMobileMenuOpen(false);
+                }}
                     className="w-full flex items-center p-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200"
-                  >
+              >
                     <Banknote className="w-5 h-5 mr-3" />
                     <span className="font-medium">Money Tools</span>
-                  </button>
+              </button>
                 </div>
               </div>
 
