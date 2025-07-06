@@ -4,29 +4,51 @@ import { Search, Calendar, User, ArrowRight, Tag, Filter, X } from 'lucide-react
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
 
-const allBlogPosts = [...oldPosts, ...newPosts];
+// Show latest articles from newPosts on top, then older articles, with pagination (15 per page)
+const latestArticles = [...newPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const olderArticles = [...oldPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const POSTS_PER_PAGE = 15;
 
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [showFilter, setShowFilter] = useState(false);
+  const [page, setPage] = useState(1);
 
   // Get unique categories
   const categories = Array.from(
-    new Set(allBlogPosts.flatMap(post => post.categories))
+    new Set([...latestArticles, ...olderArticles].flatMap(post => post.categories))
   );
 
-  // Filter posts based on search and category
-  const filteredPosts = allBlogPosts.filter(post => {
-    const matchesSearch = searchTerm === '' ||
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+  // Filter and combine
+  const filterPosts = (posts: typeof latestArticles) =>
+    posts.filter(post => {
+      const matchesSearch =
+        searchTerm === '' ||
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
 
-    const matchesCategory = selectedCategory === null ||
-      post.categories.includes(selectedCategory);
+      const matchesCategory =
+        selectedCategory === null || post.categories.includes(selectedCategory);
 
-    return matchesSearch && matchesCategory;
-  });
+      return matchesSearch && matchesCategory;
+    });
+
+  const filteredLatest = filterPosts(latestArticles);
+  const filteredOlder = filterPosts(olderArticles);
+
+  // Pagination logic
+  const allFiltered = [...filteredLatest, ...filteredOlder];
+  const totalPosts = allFiltered.length;
+  const pageCount = Math.ceil(totalPosts / POSTS_PER_PAGE);
+  const startIdx = (page - 1) * POSTS_PER_PAGE;
+  const endIdx = startIdx + POSTS_PER_PAGE;
+  const paginatedPosts = allFiltered.slice(startIdx, endIdx);
+
+  // Reset to page 1 on filter/search/category change
+  React.useEffect(() => {
+    setPage(1);
+  }, [searchTerm, selectedCategory]);
 
   // Filter sidebar/modal content
   const FilterContent = () => (
@@ -40,8 +62,8 @@ export const Blog: React.FC = () => {
               setShowFilter(false);
             }}
             className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-              selectedCategory === null 
-                ? 'bg-blue-100 text-blue-800 font-medium' 
+              selectedCategory === null
+                ? 'bg-blue-100 text-blue-800 font-medium'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}
           >
@@ -55,8 +77,8 @@ export const Blog: React.FC = () => {
                 setShowFilter(false);
               }}
               className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                selectedCategory === category 
-                  ? 'bg-blue-100 text-blue-800 font-medium' 
+                selectedCategory === category
+                  ? 'bg-blue-100 text-blue-800 font-medium'
                   : 'text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -71,8 +93,8 @@ export const Blog: React.FC = () => {
         <p className="text-sm text-blue-700 mb-3">
           Explore comprehensive guides on government financial schemes.
         </p>
-        <Link 
-          to="/blog/category/government-schemes" 
+        <Link
+          to="/blog/category/government-schemes"
           className="text-sm font-medium text-blue-700 hover:text-blue-800 flex items-center gap-1"
         >
           View all guides
@@ -85,8 +107,8 @@ export const Blog: React.FC = () => {
         <p className="text-sm text-green-700 mb-3">
           Share your financial expertise with our community.
         </p>
-        <Link 
-          to="/blog/write" 
+        <Link
+          to="/blog/write"
           className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1"
         >
           Learn more
@@ -195,10 +217,10 @@ export const Blog: React.FC = () => {
 
           {/* Main Content */}
           <div className="lg:col-span-3">
-            {filteredPosts.length === 0 ? (
+            {paginatedPosts.length === 0 ? (
               <div className="bg-white rounded-lg shadow p-8 text-center">
                 <p className="text-lg text-gray-600 mb-4">No articles found matching your criteria.</p>
-                <button 
+                <button
                   onClick={() => {
                     setSearchTerm('');
                     setSelectedCategory(null);
@@ -211,16 +233,16 @@ export const Blog: React.FC = () => {
             ) : (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
-                  {filteredPosts.map(post => (
-                    <Link 
-                      key={post.id} 
+                  {paginatedPosts.map(post => (
+                    <Link
+                      key={post.id}
                       to={`/blog/${post.slug}`}
                       className="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow"
                     >
                       <div className="h-48 overflow-hidden rounded-t-lg">
-                        <img 
-                          src={post.coverImage} 
-                          alt={post.title} 
+                        <img
+                          src={post.coverImage}
+                          alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
                         />
                       </div>
@@ -289,7 +311,7 @@ export const Blog: React.FC = () => {
                   </div>
 
                   <div className="text-center">
-                    <Link 
+                    <Link
                       to="/blog/category/government-schemes"
                       className="inline-flex items-center text-green-700 hover:text-green-800 font-medium"
                     >
@@ -299,22 +321,30 @@ export const Blog: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Pagination (static) */}
+                {/* Pagination */}
                 <div className="flex justify-center">
                   <nav className="inline-flex rounded-lg shadow-sm" aria-label="Pagination">
-                    <button className="px-4 py-2 rounded-l border border-gray-300 bg-white text-gray-500 hover:bg-gray-100">
+                    <button
+                      className="px-4 py-2 rounded-l border border-gray-300 bg-white text-gray-500 hover:bg-gray-100"
+                      disabled={page === 1}
+                      onClick={() => setPage(p => Math.max(1, p - 1))}
+                    >
                       Previous
                     </button>
-                    <button className="px-4 py-2 border-t border-b border-gray-300 bg-blue-50 text-blue-600 font-bold">
-                      1
-                    </button>
-                    <button className="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-100">
-                      2
-                    </button>
-                    <button className="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-100">
-                      3
-                    </button>
-                    <button className="px-4 py-2 rounded-r border border-gray-300 bg-white text-gray-500 hover:bg-gray-100">
+                    {Array.from({ length: pageCount }, (_, i) => (
+                      <button
+                        key={i + 1}
+                        className={`px-4 py-2 border-t border-b border-gray-300 ${page === i + 1 ? 'bg-blue-50 text-blue-600 font-bold' : 'bg-white text-gray-500 hover:bg-gray-100'}`}
+                        onClick={() => setPage(i + 1)}
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+                    <button
+                      className="px-4 py-2 rounded-r border border-gray-300 bg-white text-gray-500 hover:bg-gray-100"
+                      disabled={page === pageCount}
+                      onClick={() => setPage(p => Math.min(pageCount, p + 1))}
+                    >
                       Next
                     </button>
                   </nav>
