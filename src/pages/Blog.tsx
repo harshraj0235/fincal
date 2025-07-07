@@ -121,6 +121,60 @@ export const Blog: React.FC = () => {
     </div>
   );
 
+  // --- Responsive Pagination component ---
+  const Pagination = () => {
+    // Show max 5 pages at once, with scroll on mobile if needed
+    const pageNumbers = Array.from({ length: pageCount }, (_, i) => i + 1);
+
+    return (
+      <nav
+        className="w-full flex justify-center mt-4 mb-8"
+        aria-label="Pagination"
+      >
+        <div
+          className="inline-flex rounded-lg shadow-sm bg-white border border-gray-200 overflow-x-auto scrollbar-hide"
+          style={{
+            maxWidth: '100%',
+            WebkitOverflowScrolling: 'touch',
+          }}
+        >
+          <button
+            className="px-4 py-2 text-base rounded-l border-r border-gray-200 bg-white text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[48px]"
+            disabled={page === 1}
+            onClick={() => setPage(p => Math.max(1, p - 1))}
+            aria-label="Previous page"
+          >
+            Prev
+          </button>
+          <div className="flex flex-nowrap overflow-x-auto">
+            {pageNumbers.map((num) => (
+              <button
+                key={num}
+                className={`px-4 py-2 text-base border-r border-gray-200 ${
+                  page === num
+                    ? 'bg-blue-50 text-blue-600 font-bold'
+                    : 'bg-white text-gray-500 hover:bg-gray-100'
+                } focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[48px]`}
+                onClick={() => setPage(num)}
+                aria-label={`Go to page ${num}`}
+              >
+                {num}
+              </button>
+            ))}
+          </div>
+          <button
+            className="px-4 py-2 text-base rounded-r bg-white text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[48px]"
+            disabled={page === pageCount}
+            onClick={() => setPage(p => Math.min(pageCount, p + 1))}
+            aria-label="Next page"
+          >
+            Next
+          </button>
+        </div>
+      </nav>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -354,49 +408,23 @@ export const Blog: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Pagination */}
-                <div className="flex justify-center mb-8">
-                  <nav className="inline-flex rounded-lg shadow-sm" aria-label="Pagination">
-                    <button
-                      className="px-4 py-2 rounded-l border border-gray-300 bg-white text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                      disabled={page === 1}
-                      onClick={() => setPage(p => Math.max(1, p - 1))}
-                      aria-label="Previous page"
-                    >
-                      Previous
-                    </button>
-                    {Array.from({ length: pageCount }, (_, i) => (
-                      <button
-                        key={i + 1}
-                        className={`px-4 py-2 border-t border-b border-gray-300 ${page === i + 1 ? 'bg-blue-50 text-blue-600 font-bold' : 'bg-white text-gray-500 hover:bg-gray-100'} focus:outline-none focus:ring-2 focus:ring-blue-400`}
-                        onClick={() => setPage(i + 1)}
-                        aria-label={`Go to page ${i + 1}`}
-                      >
-                        {i + 1}
-                      </button>
-                    ))}
-                    <button
-                      className="px-4 py-2 rounded-r border border-gray-300 bg-white text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                      disabled={page === pageCount}
-                      onClick={() => setPage(p => Math.min(pageCount, p + 1))}
-                      aria-label="Next page"
-                    >
-                      Next
-                    </button>
-                  </nav>
-                </div>
+                {/* Mobile Friendly Pagination */}
+                <Pagination />
               </>
             )}
           </div>
         </div>
       </div>
 
-      {/* Add fadeInUp animation */}
+      {/* Add fadeInUp animation and hide scrollbar utility */}
       <style>{`
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        /* Hide scrollbar for pagination on mobile */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
     </div>
   );
