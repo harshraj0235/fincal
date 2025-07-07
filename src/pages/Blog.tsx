@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, User, ArrowRight, Tag, Filter, X } from 'lucide-react';
+import { Search, Calendar, User, ArrowRight, Filter, X } from 'lucide-react';
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
 
@@ -49,6 +49,9 @@ export const Blog: React.FC = () => {
   React.useEffect(() => {
     setPage(1);
   }, [searchTerm, selectedCategory]);
+
+  // Featured Post (top of the page)
+  const featuredPost = allFiltered.length > 0 ? allFiltered[0] : null;
 
   // Filter sidebar/modal content
   const FilterContent = () => (
@@ -131,6 +134,33 @@ export const Blog: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Featured Post */}
+      {featuredPost && (
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-8">
+          <Link to={`/blog/${featuredPost.slug}`} className="block group rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-green-50 to-blue-50 hover:shadow-2xl transition-shadow">
+            <div className="md:flex">
+              <img src={featuredPost.coverImage} alt={featuredPost.title} className="h-64 w-full md:w-96 object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-t-none group-hover:scale-105 transition-transform duration-300" />
+              <div className="p-6 flex flex-col justify-center">
+                <div className="flex items-center text-xs text-gray-500 mb-2">
+                  <Calendar className="h-3 w-3 mr-1" />
+                  <span>{featuredPost.date}</span>
+                  <span className="mx-2">•</span>
+                  <User className="h-3 w-3 mr-1" />
+                  <span>{featuredPost.author}</span>
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors line-clamp-2">{featuredPost.title}</h2>
+                <p className="text-gray-700 text-base mb-3 line-clamp-3">{featuredPost.excerpt}</p>
+                <div className="flex flex-wrap gap-2">
+                  {featuredPost.categories.slice(0, 2).map(category => (
+                    <span key={category} className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs">{category}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Search and Mobile Filter */}
@@ -233,11 +263,14 @@ export const Blog: React.FC = () => {
             ) : (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
-                  {paginatedPosts.map(post => (
+                  {paginatedPosts.map((post, idx) => (
                     <Link
                       key={post.id}
                       to={`/blog/${post.slug}`}
-                      className="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow"
+                      className="group bg-white rounded-xl shadow hover:shadow-2xl transition-shadow duration-300 border border-gray-100 hover:border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      style={{ animation: `fadeInUp 0.4s ${0.05 * idx}s both` }}
+                      tabIndex={0}
+                      aria-label={post.title}
                     >
                       <div className="h-48 overflow-hidden rounded-t-lg">
                         <img
@@ -325,25 +358,28 @@ export const Blog: React.FC = () => {
                 <div className="flex justify-center mb-8">
                   <nav className="inline-flex rounded-lg shadow-sm" aria-label="Pagination">
                     <button
-                      className="px-4 py-2 rounded-l border border-gray-300 bg-white text-gray-500 hover:bg-gray-100"
+                      className="px-4 py-2 rounded-l border border-gray-300 bg-white text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
                       disabled={page === 1}
                       onClick={() => setPage(p => Math.max(1, p - 1))}
+                      aria-label="Previous page"
                     >
                       Previous
                     </button>
                     {Array.from({ length: pageCount }, (_, i) => (
                       <button
                         key={i + 1}
-                        className={`px-4 py-2 border-t border-b border-gray-300 ${page === i + 1 ? 'bg-blue-50 text-blue-600 font-bold' : 'bg-white text-gray-500 hover:bg-gray-100'}`}
+                        className={`px-4 py-2 border-t border-b border-gray-300 ${page === i + 1 ? 'bg-blue-50 text-blue-600 font-bold' : 'bg-white text-gray-500 hover:bg-gray-100'} focus:outline-none focus:ring-2 focus:ring-blue-400`}
                         onClick={() => setPage(i + 1)}
+                        aria-label={`Go to page ${i + 1}`}
                       >
                         {i + 1}
                       </button>
                     ))}
                     <button
-                      className="px-4 py-2 rounded-r border border-gray-300 bg-white text-gray-500 hover:bg-gray-100"
+                      className="px-4 py-2 rounded-r border border-gray-300 bg-white text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
                       disabled={page === pageCount}
                       onClick={() => setPage(p => Math.min(pageCount, p + 1))}
+                      aria-label="Next page"
                     >
                       Next
                     </button>
@@ -354,6 +390,14 @@ export const Blog: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Add fadeInUp animation */}
+      <style>{`
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      `}</style>
     </div>
   );
 };
