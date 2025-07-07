@@ -64,6 +64,7 @@ import ExcelToolHub from './pages/ExcelToolHub';
 
 import SeniorCitizenSavingsPlanner from './calculators/SeniorCitizenSavingsPlanner';
 import MSMELoanEligibilityChecker from './calculators/MSMELoanEligibilityChecker';
+import GreenEnergyInvestmentCalculator from './calculators/GreenEnergyInvestmentCalculator';
 
 function App() {
   useEffect(() => {
@@ -180,6 +181,7 @@ function App() {
 
               <Route path="/calculators/senior-citizen-savings-planner" element={<SeniorCitizenSavingsPlanner />} />
               <Route path="/calculators/msme-loan-eligibility" element={<MSMELoanEligibilityChecker />} />
+              <Route path="/calculators/green-energy-investment-calculator" element={<GreenEnergyInvestmentCalculator />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
