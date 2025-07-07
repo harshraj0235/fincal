@@ -4,9 +4,15 @@ import { Search, Calendar, User, ArrowRight, Filter, X } from 'lucide-react';
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
 
-// Show latest articles from newPosts on top, then older articles, with pagination (15 per page)
-const latestArticles = [...newPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-const olderArticles = [...oldPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+// Helper to format today's date to YYYY-MM-DD
+function getTodayDateString() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 const POSTS_PER_PAGE = 15;
 
 export const Blog: React.FC = () => {
@@ -15,43 +21,49 @@ export const Blog: React.FC = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [page, setPage] = useState(1);
 
-  // Get unique categories
-  const categories = Array.from(
-    new Set([...latestArticles, ...olderArticles].flatMap(post => post.categories))
-  );
+  const todayStr = getTodayDateString();
 
-  // Filter and combine
-  const filterPosts = (posts: typeof latestArticles) =>
-    posts.filter(post => {
-      const matchesSearch =
-        searchTerm === '' ||
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+  // Combine and sort posts
+  const allArticles = [...newPosts, ...oldPosts];
+  // Filter/search logic
+  const matchesFilter = (post: typeof allArticles[0]) => {
+    const matchesSearch =
+      searchTerm === '' ||
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      selectedCategory === null || post.categories.includes(selectedCategory);
+    return matchesSearch && matchesCategory;
+  };
 
-      const matchesCategory =
-        selectedCategory === null || post.categories.includes(selectedCategory);
+  // Separate today's posts and the rest for sorting
+  const todaysPosts = allArticles
+    .filter(post => post.date === todayStr && matchesFilter(post))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const notTodaysPosts = allArticles
+    .filter(post => post.date !== todayStr && matchesFilter(post))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const filteredPosts = [...todaysPosts, ...notTodaysPosts];
 
-      return matchesSearch && matchesCategory;
-    });
-
-  const filteredLatest = filterPosts(latestArticles);
-  const filteredOlder = filterPosts(olderArticles);
-
-  // Pagination logic
-  const allFiltered = [...filteredLatest, ...filteredOlder];
-  const totalPosts = allFiltered.length;
+  // Pagination logic (only for blog list, not for Govt Schemes section)
+  const totalPosts = filteredPosts.length;
   const pageCount = Math.ceil(totalPosts / POSTS_PER_PAGE);
   const startIdx = (page - 1) * POSTS_PER_PAGE;
   const endIdx = startIdx + POSTS_PER_PAGE;
-  const paginatedPosts = allFiltered.slice(startIdx, endIdx);
+  const paginatedPosts = filteredPosts.slice(startIdx, endIdx);
+
+  // Get unique categories for filter
+  const categories = Array.from(
+    new Set(allArticles.flatMap(post => post.categories))
+  );
 
   // Reset to page 1 on filter/search/category change
   React.useEffect(() => {
     setPage(1);
   }, [searchTerm, selectedCategory]);
 
-  // Featured Post (top of the page)
-  const featuredPost = allFiltered.length > 0 ? allFiltered[0] : null;
+  // Featured Post: top of filtered list (after today's filter applied)
+  const featuredPost = filteredPosts.length > 0 ? filteredPosts[0] : null;
 
   // Filter sidebar/modal content
   const FilterContent = () => (
@@ -123,9 +135,7 @@ export const Blog: React.FC = () => {
 
   // --- Responsive Pagination component ---
   const Pagination = () => {
-    // Show max 5 pages at once, with scroll on mobile if needed
     const pageNumbers = Array.from({ length: pageCount }, (_, i) => i + 1);
-
     return (
       <nav
         className="w-full flex justify-center mt-4 mb-8"
@@ -357,6 +367,9 @@ export const Blog: React.FC = () => {
                   ))}
                 </div>
 
+                {/* Pagination (after post list, before government scheme section) */}
+                <Pagination />
+
                 {/* Government Schemes Section */}
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-12">
                   <h2 className="text-2xl font-bold text-green-900 mb-4">Government Scheme Guides</h2>
@@ -407,9 +420,6 @@ export const Blog: React.FC = () => {
                     </Link>
                   </div>
                 </div>
-
-                {/* Mobile Friendly Pagination */}
-                <Pagination />
               </>
             )}
           </div>
@@ -422,7 +432,6 @@ export const Blog: React.FC = () => {
           from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        /* Hide scrollbar for pagination on mobile */
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
