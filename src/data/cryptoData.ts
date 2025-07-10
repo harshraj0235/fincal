@@ -21118,7 +21118,6 @@ export const cryptoArticles: CryptoArticle[] = [
     ],
     relatedArticles: ['62', '54', '55', '57'],
   },
-  
   {
     id: '64',
     slug: 'crypto-astro-finance-rashifal-bitcoin-investment-strategy',
