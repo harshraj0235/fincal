@@ -1,25 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { formatCurrency } from '../utils/calculatorUtils';
-import { Calculator, CreditCard, Calendar, ArrowRight } from 'lucide-react';
+import { CreditCard, Calendar, ArrowRight, Info, ExternalLink } from 'lucide-react';
+import Link from 'next/link'; // Remove if not using Next.js, else use <a>
+
+const PROVIDERS = [
+  { key: 'custom', name: 'Custom', url: '' },
+  { key: 'zestmoney', name: 'ZestMoney', url: 'https://www.zestmoney.in/' },
+  { key: 'simpl', name: 'Simpl', url: 'https://getsimpl.com/' },
+  { key: 'lazypay', name: 'LazyPay', url: 'https://www.lazypay.in/' },
+  { key: 'flipkart', name: 'Flipkart Pay Later', url: 'https://www.flipkart.com/' },
+  { key: 'amazon', name: 'Amazon Pay Later', url: 'https://www.amazon.in/' },
+];
+
+const CITIES = ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai', 'Kolkata', 'Other'];
 
 export const BnplCalculator: React.FC = () => {
-  const [purchaseAmount, setPurchaseAmount] = useState<number>(10000);
-  const [tenure, setTenure] = useState<number>(3);
-  const [downPayment, setDownPayment] = useState<number>(0);
-  const [interestRate, setInterestRate] = useState<number>(0);
-  const [processingFee, setProcessingFee] = useState<number>(0);
-  const [latePaymentFee, setLatePaymentFee] = useState<number>(500);
-  const [provider, setProvider] = useState<'custom' | 'zestmoney' | 'simpl' | 'lazypay' | 'flipkart'>('custom');
-  
-  // Calculated values
-  const [installmentAmount, setInstallmentAmount] = useState<number>(0);
-  const [totalPayable, setTotalPayable] = useState<number>(0);
-  const [totalInterest, setTotalInterest] = useState<number>(0);
-  const [totalFees, setTotalFees] = useState<number>(0);
-  const [apr, setApr] = useState<number>(0);
+  // Core state
+  const [purchaseAmount, setPurchaseAmount] = useState(10000);
+  const [tenure, setTenure] = useState(3);
+  const [downPayment, setDownPayment] = useState(0);
+  const [interestRate, setInterestRate] = useState(0);
+  const [processingFee, setProcessingFee] = useState(0);
+  const [latePaymentFee, setLatePaymentFee] = useState(500);
+  const [provider, setProvider] = useState<'custom' | 'zestmoney' | 'simpl' | 'lazypay' | 'flipkart' | 'amazon'>('custom');
+  // Advanced input
+  const [salary, setSalary] = useState(40000);
+  const [creditScore, setCreditScore] = useState(700);
+  const [city, setCity] = useState(CITIES[0]);
+
+  // Calculated
+  const [installmentAmount, setInstallmentAmount] = useState(0);
+  const [totalPayable, setTotalPayable] = useState(0);
+  const [totalInterest, setTotalInterest] = useState(0);
+  const [totalFees, setTotalFees] = useState(0);
+  const [apr, setApr] = useState(0);
   const [installmentDates, setInstallmentDates] = useState<string[]>([]);
-  
-  // Set provider presets
+  const [eligibility, setEligibility] = useState<string>('');
+
+  // Provider presets
   useEffect(() => {
     if (provider !== 'custom') {
       switch (provider) {
@@ -47,425 +65,387 @@ export const BnplCalculator: React.FC = () => {
           setTenure(3);
           setDownPayment(0);
           break;
+        case 'amazon':
+          setInterestRate(18);
+          setProcessingFee(1.2);
+          setTenure(6);
+          setDownPayment(0);
+          break;
       }
     }
   }, [provider]);
-  
-  // Calculate installment details
+
+  // Installment calculation
   useEffect(() => {
     const processingFeeAmount = (purchaseAmount * processingFee) / 100;
     const loanAmount = purchaseAmount - downPayment;
-    
-    // Calculate installment amount with interest
     const monthlyRate = interestRate / 12 / 100;
     let installment = 0;
-    
     if (interestRate === 0) {
-      // No interest, simple division
       installment = loanAmount / tenure;
     } else {
-      // With interest, use EMI formula
-      installment = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenure)) / 
-                   (Math.pow(1 + monthlyRate, tenure) - 1);
+      installment =
+        (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenure)) /
+        (Math.pow(1 + monthlyRate, tenure) - 1);
     }
-    
-    const totalPay = (installment * tenure) + downPayment + processingFeeAmount;
+    const totalPay = installment * tenure + downPayment + processingFeeAmount;
     const totalInt = totalPay - purchaseAmount - processingFeeAmount;
-    
     setInstallmentAmount(installment);
     setTotalPayable(totalPay);
     setTotalInterest(totalInt);
     setTotalFees(processingFeeAmount);
-    
-    // Calculate APR (Annual Percentage Rate)
-    // This is a simplified calculation
-    const aprValue = (totalInt / loanAmount) * (12 / tenure) * 100;
-    setApr(aprValue);
-    
-    // Generate installment dates
+    setApr((totalInt / loanAmount) * (12 / tenure) * 100);
+
+    // Payment schedule
     const dates: string[] = [];
     const currentDate = new Date();
-    
     for (let i = 1; i <= tenure; i++) {
       const date = new Date(currentDate);
       date.setMonth(currentDate.getMonth() + i);
-      dates.push(date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }));
+      dates.push(
+        date.toLocaleDateString('en-IN', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric',
+        })
+      );
     }
-    
     setInstallmentDates(dates);
   }, [purchaseAmount, tenure, downPayment, interestRate, processingFee]);
-  
+
+  // Eligibility logic (very basic simulation)
+  useEffect(() => {
+    if (creditScore < 600) setEligibility('Low: Most BNPL providers may reject.');
+    else if (salary < 15000) setEligibility('Low: Income below ₹15,000/month makes approval unlikely.');
+    else if (creditScore > 800 && salary > 50000)
+      setEligibility('Excellent: Instant approvals likely on most platforms.');
+    else setEligibility('Good: Likely eligible for most BNPL offers.');
+  }, [salary, creditScore]);
+
+  // Comparison to Credit Card EMI (India market rates)
+  const ccEmiRate = 18;
+  const ccEmi = ((purchaseAmount - downPayment) * (ccEmiRate / 12 / 100) * Math.pow(1 + ccEmiRate / 12 / 100, tenure)) /
+    (Math.pow(1 + ccEmiRate / 12 / 100, tenure) - 1);
+
+  // ---- SEO JSON-LD FAQ & Rich Snippet ----
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': [
+      {
+        '@type': 'Question',
+        'name': 'What is a BNPL calculator?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text':
+            'A BNPL (Buy Now, Pay Later) calculator helps you estimate your monthly installments, total payable amount, and interest for BNPL schemes offered by Indian fintech companies.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'Which BNPL providers are popular in India?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text':
+            'Popular BNPL providers in India include ZestMoney, Simpl, LazyPay, Flipkart Pay Later, and Amazon Pay Later.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'Is BNPL better than credit card EMI?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text':
+            'BNPL can be cheaper than credit card EMI for short tenures and zero-interest offers, but always check the processing fees and late payment charges.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'Does BNPL affect my CIBIL score?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text':
+            'Yes, missed payments or defaults on BNPL can negatively impact your credit score. Make sure to pay your installments on time.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'How is the BNPL installment calculated?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text':
+            'The BNPL installment is calculated based on purchase amount, tenure, interest rate, processing fees, and any down payment. This calculator uses the standard EMI formula for interest-bearing plans.',
+        },
+      },
+    ],
+  };
+
+  // ---- Main Render ----
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div className="space-y-6">
-        <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-          <CreditCard className="w-5 h-5 mr-2 text-[--primary-600]" />
-          Buy Now, Pay Later Calculator
-        </h2>
-        
-        <div className="space-y-4">
+    <main className="max-w-5xl mx-auto px-2 py-8" itemScope itemType="https://schema.org/FinancialProduct">
+      {/* SEO Meta & JSON-LD (move to Head if Next.js) */}
+      <title>BNPL Calculator India – EMI, Eligibility, FAQs | Fincal</title>
+      <meta
+        name="description"
+        content="Free online BNPL calculator for India. Calculate Buy Now Pay Later EMI, compare providers, see eligibility, and get answers to all BNPL FAQs. Updated for 2024 RBI rules."
+      />
+      <link rel="canonical" href="https://fincal.vercel.app/calculators/BnplCalculator" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      {/* End SEO */}
+
+      <h1 className="text-3xl font-bold mb-2" itemProp="name">
+        BNPL Calculator India <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-base ml-2">2024</span>
+      </h1>
+      <p className="mb-4 text-lg text-neutral-700" itemProp="description">
+        Free Buy Now Pay Later (BNPL) EMI calculator for Indian shoppers. Calculate installments, compare with credit card EMI, check eligibility, and more. <strong>Updated as per <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12361" rel="noopener noreferrer" target="_blank" className="text-blue-700 underline">RBI guidelines</a>.</strong>
+      </p>
+      {/* Internal Links */}
+      <div className="mb-6 flex gap-4 flex-wrap text-sm">
+        <Link href="/" className="text-blue-600 underline">🏠 Home</Link>
+        <Link href="/calculators/EmiCalculator" className="text-blue-600 underline">📊 EMI Calculator</Link>
+        <a href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline flex items-center gap-1">
+          RBI <ExternalLink className="w-3 h-3" />
+        </a>
+      </div>
+
+      {/* User Inputs */}
+      <section className="bg-white p-6 shadow rounded-lg mb-8" aria-label="BNPL Calculator Form">
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Core Inputs */}
           <div>
-            <label className="text-sm font-medium text-neutral-700 mb-2 block">
-              BNPL Provider
-            </label>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  provider === 'custom'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setProvider('custom')}
-              >
-                Custom
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  provider === 'zestmoney'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setProvider('zestmoney')}
-              >
-                ZestMoney
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  provider === 'simpl'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setProvider('simpl')}
-              >
-                Simpl
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  provider === 'lazypay'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setProvider('lazypay')}
-              >
-                LazyPay
-              </button>
-              <button
-                className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                  provider === 'flipkart'
-                    ? 'bg-[--primary-100] text-[--primary-800]'
-                    : 'bg-neutral-100 text-neutral-600'
-                }`}
-                onClick={() => setProvider('flipkart')}
-              >
-                Flipkart Pay Later
-              </button>
+            <label className="block font-medium mb-1">BNPL Provider</label>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {PROVIDERS.map((prov) => (
+                <button
+                  key={prov.key}
+                  type="button"
+                  aria-label={prov.name}
+                  className={`px-3 py-1 rounded border ${provider === prov.key ? 'bg-blue-100 border-blue-400 font-bold' : 'bg-neutral-50 border-neutral-300'}`}
+                  onClick={() => setProvider(prov.key as any)}
+                >
+                  {prov.name}
+                </button>
+              ))}
             </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="purchase-amount" className="text-sm font-medium text-neutral-700">
-                Purchase Amount (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(purchaseAmount)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="purchase-amount"
-              min="1000" 
-              max="100000" 
-              step="1000" 
-              value={purchaseAmount} 
-              onChange={(e) => setPurchaseAmount(Number(e.target.value))}
-              className="slider"
+            <label className="block mb-1">Purchase Amount (₹)</label>
+            <input
+              type="number"
+              min={1000}
+              max={200000}
+              step={500}
+              value={purchaseAmount}
+              onChange={e => setPurchaseAmount(Number(e.target.value))}
+              className="w-full border rounded p-2 mb-4"
+              required
+              inputMode="numeric"
+            />
+            <label className="block mb-1">Tenure (Months)</label>
+            <input
+              type="number"
+              min={1}
+              max={24}
+              value={tenure}
+              onChange={e => setTenure(Number(e.target.value))}
+              className="w-full border rounded p-2 mb-4"
+              required
+              inputMode="numeric"
+            />
+            <label className="block mb-1">Down Payment (₹)</label>
+            <input
+              type="number"
+              min={0}
+              max={purchaseAmount * 0.6}
+              step={500}
+              value={downPayment}
+              onChange={e => setDownPayment(Number(e.target.value))}
+              className="w-full border rounded p-2 mb-4"
+              inputMode="numeric"
             />
           </div>
-          
+          {/* Advanced Inputs */}
           <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="tenure" className="text-sm font-medium text-neutral-700">
-                Tenure (Months)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {tenure} {tenure === 1 ? 'month' : 'months'}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="tenure"
-              min="1" 
-              max="12" 
-              step="1" 
-              value={tenure} 
-              onChange={(e) => {
-                setTenure(Number(e.target.value));
-                if (provider !== 'custom') setProvider('custom');
-              }}
-              className="slider"
+            <label className="block mb-1">Interest Rate (% p.a.)</label>
+            <input
+              type="number"
+              min={0}
+              max={36}
+              step={0.1}
+              value={interestRate}
+              onChange={e => setInterestRate(Number(e.target.value))}
+              className="w-full border rounded p-2 mb-4"
+              inputMode="decimal"
             />
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="down-payment" className="text-sm font-medium text-neutral-700">
-                Down Payment (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(downPayment)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="down-payment"
-              min="0" 
-              max={purchaseAmount * 0.5} 
-              step="500" 
-              value={downPayment} 
-              onChange={(e) => {
-                setDownPayment(Number(e.target.value));
-                if (provider !== 'custom') setProvider('custom');
-              }}
-              className="slider"
+            <label className="block mb-1">Processing Fee (%)</label>
+            <input
+              type="number"
+              min={0}
+              max={5}
+              step={0.1}
+              value={processingFee}
+              onChange={e => setProcessingFee(Number(e.target.value))}
+              className="w-full border rounded p-2 mb-4"
+              inputMode="decimal"
             />
-          </div>
-          
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="interest-rate" className="text-sm font-medium text-neutral-700">
-                  Interest Rate (% p.a.)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {interestRate}%
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="interest-rate"
-                min="0" 
-                max="36" 
-                step="0.5" 
-                value={interestRate} 
-                onChange={(e) => {
-                  setInterestRate(Number(e.target.value));
-                  if (provider !== 'custom') setProvider('custom');
-                }}
-                className="slider"
-              />
-            </div>
-            
-            <div>
-              <div className="flex justify-between mb-2">
-                <label htmlFor="processing-fee" className="text-sm font-medium text-neutral-700">
-                  Processing Fee (%)
-                </label>
-                <span className="text-sm text-neutral-500">
-                  {processingFee}%
-                </span>
-              </div>
-              <input 
-                type="range" 
-                id="processing-fee"
-                min="0" 
-                max="5" 
-                step="0.1" 
-                value={processingFee} 
-                onChange={(e) => {
-                  setProcessingFee(Number(e.target.value));
-                  if (provider !== 'custom') setProvider('custom');
-                }}
-                className="slider"
-              />
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-2">
-              <label htmlFor="late-payment-fee" className="text-sm font-medium text-neutral-700">
-                Late Payment Fee (₹)
-              </label>
-              <span className="text-sm text-neutral-500">
-                {formatCurrency(latePaymentFee)}
-              </span>
-            </div>
-            <input 
-              type="range" 
-              id="late-payment-fee"
-              min="0" 
-              max="2000" 
-              step="100" 
-              value={latePaymentFee} 
-              onChange={(e) => setLatePaymentFee(Number(e.target.value))}
-              className="slider"
+            <label className="block mb-1">Late Payment Fee (₹)</label>
+            <input
+              type="number"
+              min={0}
+              max={3000}
+              step={100}
+              value={latePaymentFee}
+              onChange={e => setLatePaymentFee(Number(e.target.value))}
+              className="w-full border rounded p-2 mb-4"
+              inputMode="numeric"
             />
+            {/* User Data */}
+            <label className="block mb-1">Your Monthly Salary (₹)</label>
+            <input
+              type="number"
+              min={5000}
+              max={500000}
+              step={1000}
+              value={salary}
+              onChange={e => setSalary(Number(e.target.value))}
+              className="w-full border rounded p-2 mb-4"
+              inputMode="numeric"
+            />
+            <label className="block mb-1">Your CIBIL/Credit Score</label>
+            <input
+              type="number"
+              min={300}
+              max={900}
+              value={creditScore}
+              onChange={e => setCreditScore(Number(e.target.value))}
+              className="w-full border rounded p-2 mb-4"
+              inputMode="numeric"
+            />
+            <label className="block mb-1">Your City</label>
+            <select
+              value={city}
+              onChange={e => setCity(e.target.value)}
+              className="w-full border rounded p-2 mb-4"
+            >
+              {CITIES.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
           </div>
+        </form>
+        {/* Eligibility */}
+        <div className="mt-2 text-sm flex items-center gap-2">
+          <Info className="w-4 h-4 text-blue-500" />
+          <span className="font-semibold">Eligibility: </span>
+          <span>{eligibility}</span>
         </div>
-        
-        <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-          <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Payment Summary</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Installment Amount</p>
-              <p className="text-xl font-bold text-neutral-900">{formatCurrency(installmentAmount)}</p>
-              <p className="text-xs text-neutral-500 mt-1">Per month for {tenure} months</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Total Payable</p>
-              <p className="text-xl font-bold text-neutral-900">{formatCurrency(totalPayable)}</p>
-              <p className="text-xs text-neutral-500 mt-1">Including all fees and interest</p>
-            </div>
+      </section>
+
+      {/* --- Output --- */}
+      <section className="mb-8 grid md:grid-cols-2 gap-6">
+        {/* Payment Summary */}
+        <div className="bg-blue-50 rounded-lg p-6 border border-blue-100 mb-6" aria-label="Payment Summary">
+          <h2 className="font-semibold text-xl mb-4 flex items-center gap-2">
+            <CreditCard className="w-5 h-5" /> BNPL Payment Summary
+          </h2>
+          <div className="mb-2 text-lg">
+            <strong>Installment:</strong> {formatCurrency(installmentAmount)} x {tenure} months
           </div>
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Down Payment</p>
-              <p className="text-lg font-semibold text-neutral-900">{formatCurrency(downPayment)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Total Interest</p>
-              <p className="text-lg font-semibold text-[--error-600]">{formatCurrency(totalInterest)}</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <p className="text-sm text-neutral-500 mb-1">Processing Fee</p>
-              <p className="text-lg font-semibold text-[--error-600]">{formatCurrency(totalFees)}</p>
-            </div>
-          </div>
-          
-          {interestRate > 0 && (
-            <div className="mt-4 p-4 bg-[--warning-50] rounded-lg">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-[--warning-700]">Effective APR</p>
-                  <p className="text-lg font-semibold text-[--warning-800]">
-                    {apr.toFixed(2)}%
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-[--warning-700]">Extra Cost</p>
-                  <p className="text-lg font-semibold text-[--warning-800]">
-                    {formatCurrency(totalPayable - purchaseAmount)}
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div>Total Payable: <span className="font-bold">{formatCurrency(totalPayable)}</span></div>
+          <div>Processing Fee: {formatCurrency(totalFees)}</div>
+          <div>Total Interest: {formatCurrency(totalInterest)}</div>
+          <div>Effective APR: <span className="font-bold">{apr.toFixed(2)}%</span></div>
+          {interestRate === 0 && <div className="text-green-700 mt-2">No interest! Check for hidden fees.</div>}
+        </div>
+        {/* Payment Schedule */}
+        <div className="bg-white rounded-lg p-6 border border-neutral-100" aria-label="Payment Schedule">
+          <h2 className="font-semibold text-xl mb-4 flex items-center gap-2"><Calendar className="w-5 h-5" /> Payment Schedule</h2>
+          {downPayment > 0 && (
+            <div className="mb-2">Down Payment: <span className="font-bold">{formatCurrency(downPayment)}</span> (due now)</div>
           )}
-        </div>
-      </div>
-      
-      <div className="space-y-6">
-        <div>
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <Calendar className="w-5 h-5 mr-2 text-[--primary-600]" />
-            Payment Schedule
-          </h2>
-          <div className="mt-4 space-y-4">
-            {downPayment > 0 && (
-              <div className="flex items-center p-4 bg-[--primary-50] rounded-lg border border-[--primary-200]">
-                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-[--primary-100] flex items-center justify-center mr-4">
-                  <span className="text-sm font-medium text-[--primary-700]">Now</span>
-                </div>
-                <div className="flex-grow">
-                  <p className="text-sm font-medium text-neutral-900">Down Payment</p>
-                  <p className="text-xs text-neutral-500">Due immediately</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-lg font-semibold text-[--primary-700]">{formatCurrency(downPayment)}</p>
-                </div>
-              </div>
-            )}
-            
-            {installmentDates.map((date, index) => (
-              <div key={index} className="flex items-center p-4 bg-white rounded-lg border border-neutral-200">
-                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-neutral-100 flex items-center justify-center mr-4">
-                  <span className="text-sm font-medium text-neutral-700">{index + 1}</span>
-                </div>
-                <div className="flex-grow">
-                  <p className="text-sm font-medium text-neutral-900">Installment {index + 1}</p>
-                  <p className="text-xs text-neutral-500">Due on {date}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-lg font-semibold text-neutral-900">{formatCurrency(installmentAmount)}</p>
-                </div>
-              </div>
+          <ul className="list-decimal ml-4">
+            {installmentDates.map((date, i) => (
+              <li key={i} className="mb-1 flex justify-between">
+                <span>Installment {i + 1}: <span className="text-neutral-700">{date}</span></span>
+                <span>{formatCurrency(installmentAmount)}</span>
+              </li>
             ))}
-            
-            {processingFee > 0 && (
-              <div className="flex items-center p-4 bg-[--warning-50] rounded-lg border border-[--warning-200]">
-                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-[--warning-100] flex items-center justify-center mr-4">
-                  <span className="text-sm font-medium text-[--warning-700]">Fee</span>
-                </div>
-                <div className="flex-grow">
-                  <p className="text-sm font-medium text-[--warning-800]">Processing Fee ({processingFee}%)</p>
-                  <p className="text-xs text-[--warning-600]">Charged upfront</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-lg font-semibold text-[--warning-700]">{formatCurrency(totalFees)}</p>
-                </div>
-              </div>
-            )}
-          </div>
+          </ul>
         </div>
-        
-        <div className="bg-neutral-50 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-            <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
-            BNPL Information
-          </h2>
-          
-          <div className="space-y-4">
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">How BNPL Works</h3>
-              <ol className="list-decimal list-inside space-y-2 text-sm text-neutral-600">
-                <li>Select BNPL at checkout on supported merchants</li>
-                <li>Complete a quick eligibility check (usually instant)</li>
-                <li>Choose your preferred repayment schedule</li>
-                <li>Make the purchase with little or no money upfront</li>
-                <li>Pay back in installments over the agreed period</li>
-              </ol>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">Popular BNPL Providers in India</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="font-medium">ZestMoney</span>
-                  <span className="text-neutral-600">Interest: 0-24% p.a.</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">Simpl</span>
-                  <span className="text-neutral-600">Pay in 15-30 days, no interest</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">LazyPay</span>
-                  <span className="text-neutral-600">15-day credit, no interest</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">Flipkart Pay Later</span>
-                  <span className="text-neutral-600">Interest: 0-14% p.a.</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">Amazon Pay Later</span>
-                  <span className="text-neutral-600">Interest: 0-18% p.a.</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="p-4 bg-[--accent-50] rounded-lg">
-              <h3 className="text-lg font-medium text-[--accent-900] mb-2">Important Considerations</h3>
-              <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
-                <li>Late payments can result in hefty fees ({formatCurrency(latePaymentFee)} per instance)</li>
-                <li>Missed payments may negatively impact your credit score</li>
-                <li>Some "interest-free" options may still charge processing fees</li>
-                <li>BNPL debt can accumulate quickly if not managed properly</li>
-                <li>Consider the effective APR ({apr.toFixed(2)}%) compared to credit cards</li>
-                <li>Read the terms and conditions carefully before signing up</li>
-              </ul>
-            </div>
-          </div>
+      </section>
+
+      {/* Market Comparison (Credit Card EMI) */}
+      <section className="bg-yellow-50 border border-yellow-100 rounded-lg p-4 mb-8">
+        <h3 className="font-semibold text-lg">Credit Card EMI Comparison</h3>
+        <div>
+          Typical credit card EMI ({ccEmiRate}% p.a.): <strong>{formatCurrency(ccEmi)} x {tenure} months</strong>
         </div>
-      </div>
-    </div>
+        <div>
+          BNPL {interestRate > 0 ? `(${interestRate}% p.a.)` : '(No interest)'}: <strong>{formatCurrency(installmentAmount)} x {tenure} months</strong>
+        </div>
+        <p className="text-sm text-neutral-700 mt-2">
+          <a href="https://www.paisabazaar.com/credit-card/emi-conversion/" target="_blank" rel="noopener noreferrer" className="underline text-blue-700">Learn more about Credit Card EMI</a>
+        </p>
+      </section>
+
+      {/* Info & External Providers */}
+      <section className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-white rounded-lg p-6 border border-neutral-100">
+          <h2 className="font-semibold text-lg mb-2">Popular BNPL Providers in India</h2>
+          <ul className="space-y-2 text-sm">
+            {PROVIDERS.filter(x => x.key !== 'custom').map((prov) => (
+              <li key={prov.key}>
+                <a href={prov.url} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">
+                  {prov.name} <ExternalLink className="w-3 h-3 inline" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-white rounded-lg p-6 border border-neutral-100">
+          <h2 className="font-semibold text-lg mb-2">BNPL Safety Tips</h2>
+          <ul className="list-disc ml-4 text-sm">
+            <li>Always pay on time to avoid late fees ({formatCurrency(latePaymentFee)}/missed payment).</li>
+            <li>Read the <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12361" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">RBI BNPL guidelines</a>.</li>
+            <li>Compare BNPL with credit card EMI before choosing.</li>
+            <li>Ensure your provider reports to CIBIL/credit bureaus.</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-[#f8f9fb] rounded-lg p-6 mb-8" id="bnpl-faq" aria-label="BNPL Calculator FAQs">
+        <h2 className="font-semibold text-2xl mb-4">Frequently Asked Questions – BNPL Calculator</h2>
+        <dl className="space-y-4">
+          <div>
+            <dt className="font-bold">What is Buy Now Pay Later (BNPL)?</dt>
+            <dd>
+              BNPL lets you purchase products now and pay for them later, often in interest-free or low-interest installments. It's popular among Indian shoppers for both online and offline purchases.
+            </dd>
+          </div>
+          <div>
+            <dt className="font-bold">Are BNPL schemes safe in India?</dt>
+            <dd>
+              RBI has issued <a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12361" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">guidelines</a> to protect users. Always check the provider's terms and your eligibility.
+            </dd>
+          </div>
+          <div>
+            <dt className="font-bold">Does using BNPL impact my CIBIL score?</dt>
+            <dd>Yes, delayed or missed payments can affect your credit score.</dd>
+          </div>
+          <div>
+            <dt className="font-bold">What is the difference between BNPL and EMI on credit cards?</dt>
+            <dd>
+              BNPL may offer zero-interest for short tenures, but credit card EMI often has higher interest. Always compare, as shown above.
+            </dd>
+          </div>
+          <div>
+            <dt className="font-bold">How to use this BNPL calculator?</dt>
+            <dd>
+              Enter the loan details, select a provider, and see your EMI, total payable, and payment schedule instantly.
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </main>
   );
 };
 
