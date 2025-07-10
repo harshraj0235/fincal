@@ -4,7 +4,7 @@ import {
   ArrowLeft, Calendar, User, Tag, Share2, Bookmark,
   Facebook, Twitter, Linkedin, Copy
 } from 'lucide-react';
-import { getBlogPostBySlug, getRelatedPosts } from '../data/allBlogData';
+import { getBlogPostBySlug, getRelatedPosts, getLatestPosts } from '../data/allBlogData';
 
 const AUTHOR_NAME = "Harsh Raj";
 const AUTHOR_LINKEDIN = "https://www.linkedin.com/in/harshitpatel9/";
@@ -18,7 +18,24 @@ export const BlogPost: React.FC = () => {
   const navigate = useNavigate();
 
   const post = getBlogPostBySlug(slug || '');
-  const relatedPosts = getRelatedPosts(slug || '', 3);
+
+  // --- Updated relatedPosts logic to always show at least 5 ---
+  // Try to get up to 10 related posts (more for fallback), exclude current post by slug
+  let relatedPosts = getRelatedPosts(slug || '', 10).filter(p => p.slug !== slug);
+
+  // Fallback: If less than 5, fill with latest posts (excluding current and duplicates)
+  if (relatedPosts.length < 5) {
+    const latestPosts = getLatestPosts(10) // adjust the count as needed
+      .filter(
+        p =>
+          p.slug !== slug &&
+          !relatedPosts.some(rp => rp.id === p.id)
+      );
+    relatedPosts = [...relatedPosts, ...latestPosts].slice(0, 5);
+  } else {
+    relatedPosts = relatedPosts.slice(0, 5);
+  }
+  // ----------------------------------------------------------
 
   function shareOn(platform: 'facebook' | 'twitter' | 'linkedin') {
     const url = window.location.href;
@@ -279,10 +296,16 @@ export const BlogPost: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/calculators/post-office-schemes-calculator" className="text-sm text-[--success-800] hover:text-[--success-900] font-medium flex items-center">
+                  {/* --- Updated link as requested below --- */}
+                  <a
+                    href="https://moneycal.in/calculators/post-office-calculator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-[--success-800] hover:text-[--success-900] font-medium flex items-center"
+                  >
                     <span className="h-5 w-5 rounded-full bg-[--success-200] text-[--success-700] flex items-center justify-center flex-shrink-0 mr-2">→</span>
                     Post Office Schemes Calculator
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link to="/calculators/ppf-calculator" className="text-sm text-[--success-800] hover:text-[--success-900] font-medium flex items-center">
