@@ -44675,6 +44675,2219 @@ id: '125',
   beneficiaries: '14.2 करोड़ लाभार्थी',
   successRate: '89.7%'
 },
+{
+    id: '165',
+    slug: 'rajasthan-rssb-lab-attendant-online-form-2025-last-date-today',
+    title: 'Rajasthan RSSB Lab Attendant Online Form 2025 - Last Date Today: Complete Guide & Application Process',
+    titleHindi: 'राजस्थान RSSB लैब अटेंडेंट ऑनलाइन फॉर्म 2025 - आज अंतिम तिथि: संपूर्ण गाइड और आवेदन प्रक्रिया',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-06-15',
+    lastUpdated: '2025-07-10',
+    targetAudience: ['Lab Technician Aspirants', '10+2 Pass Candidates', 'Science Background Students', 'Healthcare Job Seekers', 'Rajasthan Residents'],
+    benefits: [
+      'Monthly salary ₹19,900-63,200',
+      'Grade Pay ₹2,400',
+      'Medical facilities',
+      'Provident Fund benefits',
+      'Career growth opportunities',
+      'Government job security'
+    ],
+    eligibility: [
+      '10+2 pass in Science stream',
+      'Age: 18-28 years (relaxation as per rules)',
+      'Medical/Lab certificate preferred',
+      'Rajasthan domicile certificate',
+      'Physical fitness certificate',
+      'Good character certificate'
+    ],
+    documents: [
+      '10+2 mark sheet and certificate',
+      'Domicile certificate',
+      'Category certificate (if applicable)',
+      'Age proof (birth certificate)',
+      'Recent passport size photos',
+      'Medical fitness certificate'
+    ],
+    applicationProcess: [
+      'Visit official RSSB website',
+      'Click on Lab Attendant recruitment',
+      'Fill online application form',
+      'Upload required documents',
+      'Pay application fee',
+      'Submit form and take printout',
+      'Keep application number safe'
+    ],
+    officialWebsite: 'https://rssb.rajasthan.gov.in',
+    helpline: '0141-2921323',
+    coverImage: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2',
+    excerpt: 'Rajasthan RSSB Lab Attendant Recruitment 2025: Apply online today for 500+ posts. Salary up to ₹63,200, last date today. Complete eligibility, documents and application guide.',
+    excerptHindi: 'राजस्थान RSSB लैब अटेंडेंट भर्ती 2025: 500+ पदों के लिए आज ही ऑनलाइन आवेदन करें। वेतन ₹63,200 तक, आज अंतिम तिथि। पूर्ण योग्यता, दस्तावेज और आवेदन गाइड।',
+    keywords: [
+      'Rajasthan RSSB Lab Attendant 2025', 'राजस्थान RSSB लैब अटेंडेंट 2025',
+      'RSSB Lab Attendant online form', 'लैब अटेंडेंट ऑनलाइन फॉर्म',
+      'Rajasthan government jobs 2025', 'राजस्थान सरकारी नौकरी 2025',
+      'Lab Attendant salary benefits', 'लैब अटेंडेंट वेतन लाभ'
+    ],
+    seoTitle: 'Rajasthan RSSB Lab Attendant 2025: Online Form Last Date Today | Apply Now',
+    seoDescription: 'Rajasthan RSSB Lab Attendant Online Form 2025 ends today! 500+ posts, salary ₹63,200. Check eligibility, documents & apply now. Complete guide inside.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Rajasthan RSSB Lab Attendant Online Form 2025: आज अंतिम दिन, ऐसे करें आवेदन'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान अधीनस्थ एवं मंत्रिस्तरीय सेवा चयन बोर्ड (RSSB) द्वारा लैब अटेंडेंट के 500+ पदों की भर्ती के लिए ऑनलाइन आवेदन की अंतिम तिथि आज यानी 10 जुलाई 2025 है। यह राजस्थान की सबसे बड़ी लैब अटेंडेंट भर्ती है जिसमें ₹63,200 तक का वेतन मिलेगा। जो उम्मीदवार अभी तक आवेदन नहीं कर पाए हैं, वे आज ही अपना फॉर्म भर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'RSSB Lab Attendant 2025: महत्वपूर्ण तिथियां और अवलोकन'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान RSSB लैब अटेंडेंट भर्ती 2025 की शुरुआत 15 जून 2025 से हुई थी और आज इसकी अंतिम तिथि है। इस भर्ती में कुल 523 पदों के लिए आवेदन मांगे गए हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['विवरण', 'तिथि/जानकारी', 'स्थिति', 'महत्व'],
+          rows: [
+            ['आवेदन शुरू', '15 जून 2025', 'पूर्ण', 'रजिस्ट्रेशन शुरू'],
+            ['आवेदन अंत', '10 जुलाई 2025', 'आज', 'अंतिम दिन'],
+            ['कुल पद', '523 पद', 'उपलब्ध', 'अधिक अवसर'],
+            ['परीक्षा तिथि', 'अगस्त 2025', 'घोषित होगी', 'तैयारी शुरू करें']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पद वार विवरण और वेतन संरचना'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान RSSB लैब अटेंडेंट भर्ती में विभिन्न विभागों के लिए पद उपलब्ध हैं। सभी पदों का वेतन समान है लेकिन कार्य क्षेत्र अलग है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्वास्थ्य विभाग लैब अटेंडेंट: 250 पद',
+          'मेडिकल कॉलेज लैब अटेंडेंट: 150 पद',
+          'पशु चिकित्सा विभाग: 80 पद',
+          'कृषि विभाग लैबोरेटरी: 43 पद',
+          'अन्य विभागीय लैब: बाकी पद'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'वेतन और भत्ते: आकर्षक पैकेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'RSSB लैब अटेंडेंट की नौकरी में मिलने वाला वेतन और भत्ते काफी आकर्षक हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['वेतन घटक', 'राशि (₹)', 'विवरण', 'वार्षिक लाभ'],
+          rows: [
+            ['मूल वेतन', '19,900-63,200', '7वां वेतन आयोग', '2,38,800-7,58,400'],
+            ['ग्रेड पे', '2,400', 'अतिरिक्त भत्ता', '28,800'],
+            ['महंगाई भत्ता', 'वेतन का 17%', 'समय-समय पर बढ़ता', '40,596-1,28,896'],
+            ['HRA', 'वेतन का 8-24%', 'शहर के अनुसार', '19,104-1,82,016']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'शैक्षणिक योग्यता और आयु सीमा'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान RSSB लैब अटेंडेंट पद के लिए न्यूनतम शैक्षणिक योग्यता और आयु सीमा निर्धारित की गई है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'न्यूनतम योग्यता: 10+2 साइंस स्ट्रीम से पास',
+          'आयु सीमा: 18 से 28 वर्ष (10 जुलाई 2025 तक)',
+          'SC/ST को 5 साल, OBC को 3 साल की छूट',
+          'विकलांग उम्मीदवारों को 10 साल की छूट',
+          'पूर्व सैनिक को नियमानुसार छूट',
+          'राजस्थान का मूल निवासी होना आवश्यक'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन शुल्क और पेमेंट मोड'
+      },
+      {
+        type: 'paragraph',
+        content: 'RSSB लैब अटेंडेंट आवेदन के लिए श्रेणी के अनुसार शुल्क निर्धारित है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['श्रेणी', 'आवेदन शुल्क', 'परीक्षा शुल्क', 'कुल राशि'],
+          rows: [
+            ['सामान्य/OBC', '₹350', '₹120', '₹470'],
+            ['SC/ST/PH', '₹150', '₹120', '₹270'],
+            ['EWS', '₹350', '₹120', '₹470'],
+            ['महिला उम्मीदवार', 'कोई छूट नहीं', '₹120', 'सामान्य दर']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'ऑनलाइन आवेदन प्रक्रिया: स्टेप बाई स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'आज अंतिम दिन है, इसलिए जल्दी से जल्दी आवेदन करें। यहां पूरी प्रक्रिया दी गई है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: RSSB की आधिकारिक वेबसाइट rssb.rajasthan.gov.in पर जाएं',
+          'चरण 2: "Lab Attendant Recruitment 2025" लिंक पर क्लिक करें',
+          'चरण 3: "Apply Online" बटन दबाएं',
+          'चरण 4: SSO ID से लॉगिन करें या नई ID बनाएं',
+          'चरण 5: व्यक्तिगत विवरण सही-सही भरें',
+          'चरण 6: शैक्षणिक योग्यता की जानकारी दें',
+          'चरण 7: आवश्यक दस्तावेज अपलोड करें',
+          'चरण 8: आवेदन शुल्क का भुगतान करें',
+          'चरण 9: फॉर्म सबमिट करें और प्रिंट निकालें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवश्यक दस्तावेज और अपलोड गाइडलाइन'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन के समय निम्नलिखित दस्तावेजों की स्कैन कॉपी तैयार रखें:'
+      },
+      {
+        type: 'list',
+        items: [
+          '10वीं की मार्कशीट और सर्टिफिकेट (JPG, 100KB तक)',
+          '12वीं की मार्कशीट और सर्टिफिकेट (JPG, 100KB तक)',
+          'जन्म प्रमाण पत्र या 10वीं की मार्कशीट',
+          'जाति प्रमाण पत्र (यदि लागू हो)',
+          'निवास प्रमाण पत्र (राजस्थान का)',
+          'पासपोर्ट साइज फोटो (JPG, 10-50KB)',
+          'हस्ताक्षर की स्कैन कॉपी (JPG, 5-20KB)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'परीक्षा पैटर्न और सिलेबस'
+      },
+      {
+        type: 'paragraph',
+        content: 'RSSB लैब अटेंडेंट परीक्षा एक चरण में होगी। इसमें 100 प्रश्न होंगे।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['विषय', 'प्रश्न संख्या', 'अंक', 'समयावधि'],
+          rows: [
+            ['सामान्य ज्ञान', '40 प्रश्न', '80 अंक', '2 घंटे'],
+            ['गणित', '20 प्रश्न', '40 अंक', '(कुल समय)'],
+            ['विज्ञान', '25 प्रश्न', '50 अंक', ''],
+            ['अंग्रेजी/हिंदी', '15 प्रश्न', '30 अंक', '']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'चयन प्रक्रिया और मेरिट लिस्ट'
+      },
+      {
+        type: 'paragraph',
+        content: 'RSSB लैब अटेंडेंट का चयन निम्नलिखित चरणों में होगा:'
+      },
+      {
+        type: 'list',
+        items: [
+          'लिखित परीक्षा (100% वेटेज)',
+          'दस्तावेज सत्यापन',
+          'मेडिकल फिटनेस टेस्ट',
+          'फाइनल मेरिट लिस्ट',
+          'पद आवंटन',
+          'ज्वाइनिंग प्रक्रिया'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'तैयारी की रणनीति और टिप्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'सफलता के लिए सही तैयारी रणनीति अपनाना जरूरी है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'राजस्थान GK पर विशेष ध्यान दें',
+          'NCERT की 10+2 साइंस बुकें पढ़ें',
+          'दैनिक करंट अफेयर्स पढ़ते रहें',
+          'पिछले साल के प्रश्न पत्र हल करें',
+          'मॉक टेस्ट का अभ्यास करें',
+          'टाइम मैनेजमेंट पर काम करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'वर्क प्रोफाइल और कैरियर ग्रोथ'
+      },
+      {
+        type: 'paragraph',
+        content: 'लैब अटेंडेंट के रूप में आपको निम्नलिखित कार्य करने होंगे:'
+      },
+      {
+        type: 'list',
+        items: [
+          'लैब उपकरणों की सफाई और रखरखाव',
+          'सैंपल कलेक्शन में सहायता',
+          'टेस्ट रिपोर्ट की तैयारी',
+          'लैब सेफ्टी नियमों का पालन',
+          'डॉक्टर्स और टेक्निशियन की सहायता',
+          'रिकॉर्ड मेंटेनेंस का काम'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन में होने वाली गलतियां और समाधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'अंतिम दिन आवेदन करते समय इन गलतियों से बचें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'गलत जन्म तिथि न भरें, 10वीं सर्टिफिकेट देखकर भरें',
+          'फोटो और सिग्नेचर का साइज सही रखें',
+          'कैटेगरी सर्टिफिकेट की तारीख चेक करें',
+          'मोबाइल नंबर और ईमेल सही भरें',
+          'फीस पेमेंट के बाद स्क्रीनशॉट सेव करें',
+          'फाइनल सबमिट से पहले प्रीव्यू जरूर देखें'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'राजस्थान RSSB लैब अटेंडेंट भर्ती 2025 राज्य की सबसे बड़ी हेल्थकेयर जॉब्स में से एक है। यह न केवल अच्छा वेतन देती है बल्कि मेडिकल सेक्टर में कैरियर बनाने का शानदार अवसर भी प्रदान करती है।',
+        author: 'राजस्थान RSSB चयन बोर्ड'
+      },
+      {
+        type: 'subheading',
+        content: 'आज ही आवेदन करें - अंतिम चेतावनी'
+      },
+      {
+        type: 'paragraph',
+        content: 'आज 10 जुलाई 2025 राजस्थान RSSB लैब अटेंडेंट ऑनलाइन आवेदन की अंतिम तिथि है। रात 11:59 बजे तक आवेदन कर सकते हैं। जो उम्मीदवार अभी तक आवेदन नहीं कर पाए हैं, वे जल्दी करें। देर से आवेदन करने पर तकनीकी समस्या हो सकती है।'
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'राजस्थान RSSB लैब अटेंडेंट भर्ती 2025 राज्य के युवाओं के लिए एक सुनहरा अवसर है। ₹63,200 तक का वेतन, जॉब सिक्योरिटी और हेल्थकेयर सेक्टर में कैरियर बनाने का मौका मिल रहा है। आज अंतिम दिन है इसलिए देर न करें और तुरंत आवेदन करें। सभी दस्तावेज तैयार रखें और ऑनलाइन फॉर्म सावधानी से भरें। परीक्षा की तैयारी के लिए सिलेबस के अनुसार पढ़ाई करें और सफलता प्राप्त करें।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'राजस्थान RSSB लैब अटेंडेंट की आवेदन अंतिम तिथि क्या है?',
+        answer: 'राजस्थान RSSB लैब अटेंडेंट की आवेदन अंतिम तिथि 10 जुलाई 2025 है। आज रात 11:59 बजे तक आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'RSSB लैब अटेंडेंट का वेतन कितना है?',
+        answer: 'RSSB लैब अटेंडेंट का वेतन ₹19,900 से ₹63,200 (7वां वेतन आयोग) है। इसके अलावा ग्रेड पे ₹2,400 और अन्य भत्ते भी मिलते हैं।'
+      },
+      {
+        question: 'लैब अटेंडेंट पद के लिए न्यूनतम योग्यता क्या है?',
+        answer: 'लैब अटेंडेंट पद के लिए 10+2 साइंस स्ट्रीम से पास होना जरूरी है। आयु सीमा 18-28 वर्ष है।'
+      },
+      {
+        question: 'आवेदन शुल्क कितना है?',
+        answer: 'सामान्य/OBC के लिए ₹470, SC/ST/PH के लिए ₹270 आवेदन शुल्क है।'
+      },
+      {
+        question: 'परीक्षा में कितने प्रश्न होंगे?',
+        answer: 'परीक्षा में कुल 100 प्रश्न होंगे जिसमें सामान्य ज्ञान, गणित, विज्ञान और भाषा के प्रश्न शामिल हैं।'
+      }
+    ],
+    relatedSchemes: ['rajasthan-staff-nurse-recruitment', 'rssb-agriculture-supervisor', 'rajasthan-medical-officer-jobs'],
+    budget: '₹50 करोड़ (वार्षिक वेतन बजट)',
+    beneficiaries: '523 पद + आवेदक',
+    successRate: '95.2%'
+  },
+
+  {
+    id: '166',
+    slug: 'jpsc-project-manager-online-form-2025-last-date-today',
+    title: 'JPSC Project Manager Online Form 2025 – Last Date Today: Complete Application Guide',
+    titleHindi: 'JPSC प्रोजेक्ट मैनेजर ऑनलाइन फॉर्म 2025 – आज अंतिम तिथि: संपूर्ण आवेदन गाइड',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-06-20',
+    lastUpdated: '2025-07-10',
+    targetAudience: ['Engineering Graduates', 'Management Graduates', 'Experienced Professionals', 'Project Management Aspirants', 'Jharkhand Residents'],
+    benefits: [
+      'Monthly salary ₹56,100-1,77,500',
+      'Grade Pay ₹5,400',
+      'Medical and travel allowances',
+      'PF and pension benefits',
+      'Leadership role opportunities',
+      'Government job security'
+    ],
+    eligibility: [
+      'Bachelor degree in Engineering/Management',
+      'Age: 21-35 years (relaxation as per rules)',
+      '3+ years project management experience',
+      'Jharkhand domicile preferred',
+      'Good health certificate',
+      'Character certificate required'
+    ],
+    documents: [
+      'Bachelor degree certificate',
+      'Experience certificates',
+      'Age proof documents',
+      'Domicile certificate',
+      'Category certificate (if applicable)',
+      'Recent passport photos'
+    ],
+    applicationProcess: [
+      'Visit JPSC official website',
+      'Find Project Manager recruitment',
+      'Fill online application carefully',
+      'Upload all required documents',
+      'Pay application fee online',
+      'Submit and download receipt',
+      'Keep registration number safe'
+    ],
+    officialWebsite: 'https://jpsc.gov.in',
+    helpline: '0651-2446537',
+    coverImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2',
+    excerpt: 'JPSC Project Manager Recruitment 2025: Apply online today for high-salary government posts. Last date today, salary up to ₹1,77,500. Complete guide for application.',
+    excerptHindi: 'JPSC प्रोजेक्ट मैनेजर भर्ती 2025: उच्च वेतन सरकारी पदों के लिए आज ही ऑनलाइन आवेदन करें। आज अंतिम तिथि, वेतन ₹1,77,500 तक। आवेदन की संपूर्ण गाइड।',
+    keywords: [
+      'JPSC Project Manager 2025', 'झारखंड प्रोजेक्ट मैनेजर 2025',
+      'JPSC online form last date', 'प्रोजेक्ट मैनेजर ऑनलाइन फॉर्म',
+      'Jharkhand government jobs 2025', 'झारखंड सरकारी नौकरी 2025',
+      'Project Manager salary benefits', 'प्रोजेक्ट मैनेजर वेतन लाभ'
+    ],
+    seoTitle: 'JPSC Project Manager 2025: Online Form Last Date Today | Apply Now ₹1.77L Salary',
+    seoDescription: 'JPSC Project Manager Online Form 2025 ends today! High salary ₹1,77,500, government job security. Check eligibility, documents & apply immediately.',
+    content: [
+      {
+        type: 'heading',
+        content: 'JPSC Project Manager Online Form 2025: आज अंतिम दिन, ₹1.77 लाख सैलरी'
+      },
+      {
+        type: 'paragraph',
+        content: 'झारखंड लोक सेवा आयोग (JPSC) द्वारा प्रोजेक्ट मैनेजर के पदों पर भर्ती के लिए ऑनलाइन आवेदन की अंतिम तिथि आज यानी 10 जुलाई 2025 है। यह झारखंड की सबसे उच्च वेतन वाली सरकारी नौकरियों में से एक है जिसमें ₹1,77,500 तक का मासिक वेतन मिल सकता है। जो उम्मीदवार अभी तक आवेदन नहीं कर पाए हैं, वे आज ही रात 11:59 बजे तक अपना फॉर्म जमा कर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'JPSC Project Manager 2025: पद विवरण और महत्वपूर्ण जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'झारखंड सरकार के विभिन्न विभागों में प्रोजेक्ट मैनेजर पदों की भर्ती हो रही है। यह एक लीडरशिप रोल है जिसमें बड़ी जिम्मेदारियां हैं।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['पद विवरण', 'संख्या', 'विभाग', 'कार्य क्षेत्र'],
+          rows: [
+            ['प्रोजेक्ट मैनेजर (IT)', '25 पद', 'सूचना प्रौद्योगिकी', 'तकनीकी प्रोजेक्ट'],
+            ['प्रोजेक्ट मैनेजर (Infrastructure)', '20 पद', 'शहरी विकास', 'इन्फ्रास्ट्रक्चर'],
+            ['प्रोजेक्ट मैनेजर (Rural)', '15 पद', 'ग्रामीण विकास', 'ग्रामीण परियोजना'],
+            ['प्रोजेक्ट मैनेजर (Health)', '10 पद', 'स्वास्थ्य विभाग', 'हेल्थकेयर प्रोजेक्ट']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'वेतन संरचना और भत्ते: आकर्षक पैकेज'
+      },
+      {
+        type: 'paragraph',
+        content: 'JPSC प्रोजेक्ट मैनेजर पद का वेतन झारखंड सरकार की सबसे अच्छी वेतन संरचना में से एक है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['वेतन घटक', 'राशि (₹)', 'विवरण', 'वार्षिक राशि'],
+          rows: [
+            ['मूल वेतन', '56,100-1,77,500', '7वां वेतन आयोग', '6,73,200-21,30,000'],
+            ['ग्रेड पे', '5,400', 'अतिरिक्त भत्ता', '64,800'],
+            ['DA', 'वेतन का 17%', 'महंगाई भत्ता', '1,14,444-3,61,800'],
+            ['HRA', 'वेतन का 8-24%', 'मकान किराया', '53,856-5,11,200']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'शैक्षणिक योग्यता और अनुभव आवश्यकताएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रोजेक्ट मैनेजर पद के लिए विशिष्ट शैक्षणिक योग्यता और अनुभव की आवश्यकता है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'बैचलर डिग्री इंजीनियरिंग/मैनेजमेंट में (न्यूनतम 60%)',
+          'मास्टर डिग्री MBA/MCA में वरीयता',
+          'न्यूनतम 3 साल का प्रोजेक्ट मैनेजमेंट अनुभव',
+          'आयु सीमा: 21 से 35 वर्ष (10 जुलाई 2025 तक)',
+          'PMP/PRINCE2 सर्टिफिकेशन को वरीयता',
+          'कंप्यूटर और अंग्रेजी का अच्छा ज्ञान'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आयु सीमा में छूट और आरक्षण'
+      },
+      {
+        type: 'paragraph',
+        content: 'विभिन्न श्रेणियों के लिए आयु सीमा में छूट का प्रावधान है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['श्रेणी', 'सामान्य आयु', 'अधिकतम आयु छूट', 'कुल अधिकतम आयु'],
+          rows: [
+            ['सामान्य', '21-35 वर्ष', 'कोई छूट नहीं', '35 वर्ष'],
+            ['OBC', '21-35 वर्ष', '3 वर्ष', '38 वर्ष'],
+            ['SC/ST', '21-35 वर्ष', '5 वर्ष', '40 वर्ष'],
+            ['PWD', '21-35 वर्ष', '10 वर्ष', '45 वर्ष']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन शुल्क और भुगतान विकल्प'
+      },
+      {
+        type: 'paragraph',
+        content: 'JPSC प्रोजेक्ट मैनेजर पद के लिए श्रेणी के अनुसार आवेदन शुल्क निर्धारित है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'सामान्य/OBC उम्मीदवार: ₹600',
+          'SC/ST/PWD उम्मीदवार: ₹150',
+          'EWS श्रेणी: ₹600',
+          'महिला उम्मीदवारों को कोई विशेष छूट नहीं',
+          'भुगतान: डेबिट कार्ड/क्रेडिट कार्ड/नेट बैंकिंग',
+          'चालान/ड्राफ्ट की सुविधा उपलब्ध नहीं'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ऑनलाइन आवेदन प्रक्रिया: पूरी गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'आज अंतिम दिन है, इसलिए सावधानी से और जल्दी आवेदन करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्टेप 1: jpsc.gov.in पर जाएं',
+          'स्टेप 2: "Online Application" सेक्शन में जाएं',
+          'स्टेप 3: "Project Manager Recruitment 2025" लिंक क्लिक करें',
+          'स्टेप 4: "Apply Online" बटन दबाएं',
+          'स्टेप 5: नया रजिस्ट्रेशन करें या लॉगिन करें',
+          'स्टेप 6: व्यक्तिगत जानकारी सही भरें',
+          'स्टेप 7: शैक्षणिक और अनुभव विवरण दें',
+          'स्टेप 8: दस्तावेज अपलोड करें',
+          'स्टेप 9: आवेदन शुल्क का भुगतान करें',
+          'स्टेप 10: फॉर्म सबमिट करें और रसीद डाउनलोड करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवश्यक दस्तावेज और अपलोड निर्देश'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन के लिए निम्नलिखित दस्तावेजों की स्कैन कॉपी तैयार रखें:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['दस्तावेज', 'फॉर्मेट', 'साइज लिमिट', 'गुणवत्ता'],
+          rows: [
+            ['बैचलर डिग्री', 'PDF/JPG', '500KB तक', 'Clear & Readable'],
+            ['मास्टर डिग्री', 'PDF/JPG', '500KB तक', 'Clear & Readable'],
+            ['अनुभव प्रमाण पत्र', 'PDF', '1MB तक', 'Letterhead पर'],
+            ['जन्म प्रमाण पत्र', 'JPG/PDF', '200KB तक', 'Official Copy'],
+            ['जाति प्रमाण पत्र', 'PDF', '300KB तक', 'Valid Certificate'],
+            ['पासपोर्ट फोटो', 'JPG', '50KB तक', 'Recent Photo']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'चयन प्रक्रिया और परीक्षा पैटर्न'
+      },
+      {
+        type: 'paragraph',
+        content: 'JPSC प्रोजेक्ट मैनेजर का चयन तीन चरणों में होता है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'प्रारंभिक परीक्षा (Objective Type): 200 अंक',
+          'मुख्य परीक्षा (Descriptive): 500 अंक',
+          'व्यक्तित्व परीक्षण (Interview): 120 अंक',
+          'दस्तावेज सत्यापन',
+          'मेडिकल टेस्ट',
+          'फाइनल मेरिट लिस्ट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सिलेबस और तैयारी गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रारंभिक परीक्षा में निम्नलिखित विषय शामिल हैं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['विषय', 'प्रश्न संख्या', 'अंक', 'महत्वपूर्ण टॉपिक'],
+          rows: [
+            ['सामान्य अध्ययन', '50 प्रश्न', '100 अंक', 'इतिहास, भूगोल, राजनीति'],
+            ['झारखंड GK', '25 प्रश्न', '50 अंक', 'राज्य की जानकारी'],
+            ['प्रोजेक्ट मैनेजमेंट', '25 प्रश्न', '50 अंक', 'PM concepts, Tools']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'कार्य प्रोफाइल और जिम्मेदारियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रोजेक्ट मैनेजर के रूप में आपकी मुख्य जिम्मेदारियां होंगी:'
+      },
+      {
+        type: 'list',
+        items: [
+          'सरकारी परियोजनाओं की योजना और क्रियान्वयन',
+          'बजट और टाइमलाइन का प्रबंधन',
+          'टीम लीडरशिप और कोऑर्डिनेशन',
+          'प्रोजेक्ट रिस्क मैनेजमेंट',
+          'स्टेकहोल्डर्स के साथ संपर्क',
+          'प्रोग्रेस रिपोर्टिंग और मॉनिटरिंग',
+          'गुणवत्ता नियंत्रण और डिलीवरी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'कैरियर ग्रोथ और प्रमोशन अवसर'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रोजेक्ट मैनेजर पद से आगे के कैरियर अवसर:'
+      },
+      {
+        type: 'list',
+        items: [
+          'सीनियर प्रोजेक्ट मैनेजर (3-5 साल बाद)',
+          'प्रोग्राम मैनेजर (5-7 साल बाद)',
+          'डिप्टी डायरेक्टर लेवल (8-10 साल बाद)',
+          'डायरेक्टर पद तक प्रमोशन',
+          'IAS/IPS में लेटरल एंट्री के अवसर',
+          'कॉर्पोरेट सेक्टर में अवसर'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन में सामान्य गलतियां और बचाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'अंतिम दिन आवेदन करते समय इन गलतियों से बचें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'डिग्री में गलत मार्क्स या प्रतिशत न भरें',
+          'अनुभव की गलत तारीख न दें',
+          'फोटो में चेहरा क्लियर दिखना चाहिए',
+          'सिग्नेचर काले पेन से साफ होना चाहिए',
+          'कैटेगरी सर्टिफिकेट की वैलिडिटी चेक करें',
+          'आवेदन शुल्क भुगतान के बाद स्क्रीनशॉट लें'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'JPSC प्रोजेक्ट मैनेजर पद झारखंड सरकार का एक प्रतिष्ठित और उच्च वेतन वाला पद है। यह न केवल अच्छी सैलरी देता है बल्कि राज्य के विकास में योगदान देने का अवसर भी प्रदान करता है।',
+        author: 'झारखंड लोक सेवा आयोग'
+      },
+      {
+        type: 'subheading',
+        content: 'अंतिम समय की तैयारी और टिप्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'परीक्षा की तैयारी के लिए अंतिम समय में ये काम करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'झारखंड के करंट अफेयर्स पर फोकस करें',
+          'प्रोजेक्ट मैनेजमेंट के बेसिक कॉन्सेप्ट्स रिवाइज करें',
+          'पिछले साल के JPSC के प्रश्न पेपर देखें',
+          'टाइम मैनेजमेंट की प्रैक्टिस करें',
+          'हेल्थ और फिटनेस पर ध्यान दें',
+          'इंटरव्यू स्किल्स डेवलप करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'JPSC प्रोजेक्ट मैनेजर भर्ती 2025 झारखंड के शिक्षित युवाओं के लिए एक बेहतरीन अवसर है। ₹1,77,500 तक का मासिक वेतन, सरकारी नौकरी की सुरक्षा और लीडरशिप की भूमिका मिल रही है। आज अंतिम दिन है इसलिए बिना देर किए तुरंत आवेदन करें। सभी दस्तावेज सही-सही अपलोड करें और फॉर्म भरते समय सावधानी बरतें। यह आपके कैरियर का टर्निंग पॉइंट हो सकता है। परीक्षा की तैयारी अभी से शुरू करें और अपने सपने को साकार करें।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'JPSC प्रोजेक्ट मैनेजर की आवेदन अंतिम तिथि क्या है?',
+        answer: 'JPSC प्रोजेक्ट मैनेजर की आवेदन अंतिम तिथि 10 जुलाई 2025 है। आज रात 11:59 बजे तक आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'प्रोजेक्ट मैनेजर का वेतन कितना है?',
+        answer: 'प्रोजेक्ट मैनेजर का वेतन ₹56,100 से ₹1,77,500 (7वां वेतन आयोग) है। इसके अलावा ग्रेड पे और अन्य भत्ते भी मिलते हैं।'
+      },
+      {
+        question: 'प्रोजेक्ट मैनेजर पद के लिए अनुभव कितना चाहिए?',
+        answer: 'प्रोजेक्ट मैनेजर पद के लिए न्यूनतम 3 साल का प्रोजेक्ट मैनेजमेंट अनुभव आवश्यक है।'
+      },
+      {
+        question: 'चयन प्रक्रिया में कितने चरण हैं?',
+        answer: 'चयन प्रक्रिया में तीन चरण हैं - प्रारंभिक परीक्षा, मुख्य परीक्षा और व्यक्तित्व परीक्षण (इंटरव्यू)।'
+      },
+      {
+        question: 'कुल कितने पद हैं और किन विभागों में?',
+        answer: 'कुल 70 पद हैं जो IT, Infrastructure, Rural Development और Health विभागों में बांटे गए हैं।'
+      }
+    ],
+    relatedSchemes: ['jharkhand-civil-services', 'jpsc-forest-officer', 'jharkhand-staff-selection-commission'],
+    budget: '₹85 करोड़ (वार्षिक वेतन बजट)',
+    beneficiaries: '70 पद + आवेदक',
+    successRate: '94.8%'
+  },
+
+  {
+    id: '167',
+    slug: 'bihar-bscb-cooperative-bank-assistant-online-form-2025-last-date-today',
+    title: 'Bihar BSCB Co-operative Bank Assistant Online Form 2025 – Last Date Today',
+    titleHindi: 'बिहार BSCB को-ऑपरेटिव बैंक असिस्टेंट ऑनलाइन फॉर्म 2025 – आज अंतिम तिथि',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-06-25',
+    lastUpdated: '2025-07-10',
+    targetAudience: ['Banking Aspirants', 'Graduate Students', 'Finance Background', 'Bihar Residents', 'Government Job Seekers'],
+    benefits: [
+      'Monthly salary ₹25,000-45,000',
+      'Banking career opportunities',
+      'Medical and insurance benefits',
+      'PF and gratuity benefits',
+      'Promotion opportunities',
+      'Job security in banking'
+    ],
+    eligibility: [
+      'Graduation in any discipline',
+      'Age: 18-28 years (relaxation as per rules)',
+      'Computer knowledge required',
+      'Local language proficiency',
+      'Bihar domicile preferred',
+      'Good character certificate'
+    ],
+    documents: [
+      'Graduation certificate and mark sheets',
+      'Age proof documents',
+      'Domicile certificate',
+      'Category certificate (if applicable)',
+      'Computer certificate',
+      'Recent passport size photos'
+    ],
+    applicationProcess: [
+      'Visit BSCB official website',
+      'Find Assistant recruitment link',
+      'Register with email and mobile',
+      'Fill application form completely',
+      'Upload required documents',
+      'Pay application fee',
+      'Submit and download receipt'
+    ],
+    officialWebsite: 'https://bscb.co.in',
+    helpline: '0612-2235567',
+    coverImage: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2',
+    excerpt: 'Bihar BSCB Co-operative Bank Assistant Recruitment 2025: Apply online today for banking jobs. Last date today, good salary and benefits. Complete application guide.',
+    excerptHindi: 'बिहार BSCB को-ऑपरेटिव बैंक असिस्टेंट भर्ती 2025: बैंकिंग जॉब्स के लिए आज ही ऑनलाइन आवेदन करें। आज अंतिम तिथि, अच्छा वेतन और लाभ। संपूर्ण आवेदन गाइड।',
+    keywords: [
+      'Bihar BSCB Bank Assistant 2025', 'बिहार BSCB बैंक असिस्टेंट 2025',
+      'Cooperative bank assistant form', 'को-ऑपरेटिव बैंक असिस्टेंट फॉर्म',
+      'Bihar banking jobs 2025', 'बिहार बैंकिंग जॉब्स 2025',
+      'Bank assistant salary benefits', 'बैंक असिस्टेंट वेतन लाभ'
+    ],
+    seoTitle: 'Bihar BSCB Bank Assistant 2025: Online Form Last Date Today | Banking Jobs',
+    seoDescription: 'Bihar BSCB Cooperative Bank Assistant Form 2025 ends today! Good salary, banking career opportunities. Check eligibility & apply immediately.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Bihar BSCB Co-operative Bank Assistant 2025: आज अंतिम दिन, बैंकिंग करियर का मौका'
+      },
+      {
+        type: 'paragraph',
+        content: 'बिहार राज्य सहकारी बैंक लिमिटेड (BSCB) द्वारा असिस्टेंट के पदों पर भर्ती के लिए ऑनलाइन आवेदन की अंतिम तिथि आज यानी 10 जुलाई 2025 है। यह बिहार के युवाओं के लिए बैंकिंग सेक्टर में करियर बनाने का सुनहरा अवसर है। कुल 350+ पदों के लिए भर्ती हो रही है जिसमें ₹45,000 तक का मासिक वेतन मिल सकता है। जो उम्मीदवार अभी तक आवेदन नहीं कर पाए हैं, वे आज ही अपना फॉर्म भर सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'BSCB Assistant 2025: पद विवरण और बैंक की जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'बिहार राज्य सहकारी बैंक लिमिटेड बिहार का सबसे बड़ा सहकारी बैंक है जो राज्य भर में अपनी सेवाएं प्रदान करता है।'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['पद विवरण', 'पद संख्या', 'कार्य स्थान', 'वेतन स्तर'],
+          rows: [
+            ['असिस्टेंट (ग्रामीण)', '200 पद', 'ग्रामीण शाखाएं', '₹25,000-40,000'],
+            ['असिस्टेंट (शहरी)', '100 पद', 'शहरी शाखाएं', '₹28,000-45,000'],
+            ['असिस्टेंट (IT)', '30 पद', 'मुख्यालय/बड़ी शाखाएं', '₹30,000-45,000'],
+            ['असिस्टेंट (कैशियर)', '20 पद', 'सभी शाखाएं', '₹25,000-40,000']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'वेतन संरचना और लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'BSCB असिस्टेंट पद में मिलने वाला वेतन और लाभ बैंकिंग इंडस्ट्री के अनुसार निर्धारित है।'
+      },
+      {
+        type: 'list',
+        items: [
+          'मूल वेतन: ₹25,000 से ₹45,000 (अनुभव के अनुसार)',
+          'महंगाई भत्ता: मूल वेतन का 15-20%',
+          'मकान किराया भत्ता: वेतन का 8-10%',
+          'मेडिकल और इंश्योरेंस बेनिफिट्स',
+          'प्रोविडेंट फंड और ग्रेच्युटी',
+          'वार्षिक बोनस और इंक्रीमेंट',
+          'बैंक लोन में छूट की सुविधा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शैक्षणिक योग्यता और आयु सीमा'
+      },
+      {
+        type: 'paragraph',
+        content: 'BSCB असिस्टेंट पद के लिए न्यूनतम शैक्षणिक योग्यता और आयु सीमा:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['योग्यता मापदंड', 'आवश्यकता', 'विशेष शर्तें', 'प्राथमिकता'],
+          rows: [
+            ['शैक्षणिक योग्यता', 'स्नातक (किसी भी विषय)', 'न्यूनतम 50% अंक', 'Commerce/Economics'],
+            ['आयु सीमा', '18-28 वर्ष', 'जन्म तिथि: 10/07/1997-10/07/2007', 'नियमानुसार छूट'],
+            ['कंप्यूटर ज्ञान', 'Basic Computer Certificate', 'MS Office, Internet', 'DCA/PGDCA'],
+            ['भाषा ज्ञान', 'हिंदी/अंग्रेजी', 'स्थानीय भाषा बेहतर', 'बिहारी भाषा जानना']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'आयु में छूट और आरक्षण नीति'
+      },
+      {
+        type: 'paragraph',
+        content: 'बिहार सरकार की आरक्षण नीति के अनुसार छूट मिलेगी:'
+      },
+      {
+        type: 'list',
+        items: [
+          'OBC/EBC: 3 साल की आयु छूट',
+          'SC/ST: 5 साल की आयु छूट',
+          'विकलांग उम्मीदवार: 10 साल की छूट',
+          'महिला उम्मीदवार: 5 साल की छूट',
+          'पूर्व सैनिक: 5 साल की छूट',
+          'खिलाड़ी (राष्ट्रीय/राज्य स्तर): 5 साल की छूट'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन शुल्क और भुगतान विधि'
+      },
+      {
+        type: 'paragraph',
+        content: 'श्रेणी के अनुसार आवेदन शुल्क निर्धारित है:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['श्रेणी', 'आवेदन शुल्क', 'परीक्षा शुल्क', 'कुल राशि'],
+          rows: [
+            ['सामान्य/OBC/EBC', '₹500', '₹100', '₹600'],
+            ['SC/ST/PWD', '₹250', '₹100', '₹350'],
+            ['महिला उम्मीदवार', '₹400', '₹100', '₹500'],
+            ['आर्थिक रूप से कमजोर (EWS)', '₹300', '₹100', '₹400']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'ऑनलाइन आवेदन प्रक्रिया: विस्तृत गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'आज अंतिम दिन है, इसलिए तुरंत आवेदन करें। यहां पूरी प्रक्रिया है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्टेप 1: bscb.co.in वेबसाइट पर जाएं',
+          'स्टेप 2: "Recruitment" सेक्शन में क्लिक करें',
+          'स्टेप 3: "Assistant Recruitment 2025" लिंक खोलें',
+          'स्टेप 4: "Apply Online" बटन पर क्लिक करें',
+          'स्टेप 5: मोबाइल/ईमेल से रजिस्ट्रेशन करें',
+          'स्टेप 6: OTP वेरिफिकेशन करें',
+          'स्टेप 7: व्यक्तिगत जानकारी भरें',
+          'स्टेप 8: शैक्षणिक विवरण सही भरें',
+          'स्टेप 9: फोटो और सिग्नेचर अपलोड करें',
+          'स्टेप 10: फीस पेमेंट करें और सबमिट करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'दस्तावेज अपलोड गाइडलाइन'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन के लिए निम्नलिखित दस्तावेज तैयार रखें:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['दस्तावेज', 'फॉर्मेट', 'साइज', 'गुणवत्ता'],
+          rows: [
+            ['10वीं मार्कशीट', 'JPG/PDF', '200KB तक', 'Clear Scan'],
+            ['12वीं मार्कशीट', 'JPG/PDF', '200KB तक', 'Clear Scan'],
+            ['ग्रेजुएशन सर्टिफिकेट', 'PDF', '300KB तक', 'Original Copy'],
+            ['जाति प्रमाण पत्र', 'PDF', '200KB तक', 'Valid Certificate'],
+            ['पासपोर्ट फोटो', 'JPG', '50KB तक', 'Recent Photo'],
+            ['हस्ताक्षर', 'JPG', '30KB तक', 'Clear Signature']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'परीक्षा पैटर्न और सिलेबस'
+      },
+      {
+        type: 'paragraph',
+        content: 'BSCB असिस्टेंट परीक्षा का पैटर्न बैंकिंग परीक्षाओं के अनुसार है:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['विषय', 'प्रश्न संख्या', 'अंक', 'समय'],
+          rows: [
+            ['Reasoning Ability', '35 प्रश्न', '35 अंक', '60 मिनट'],
+            ['Numerical Ability', '35 प्रश्न', '35 अंक', '45 मिनट'],
+            ['General Awareness', '40 प्रश्न', '40 अंक', '35 मिनट'],
+            ['English Language', '30 प्रश्न', '30 अंक', '40 मिनट'],
+            ['Computer Knowledge', '20 प्रश्न', '20 अंक', '20 मिनट']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'चयन प्रक्रिया और मेरिट'
+      },
+      {
+        type: 'paragraph',
+        content: 'BSCB असिस्टेंट का चयन निम्नलिखित चरणों में होगा:'
+      },
+      {
+        type: 'list',
+        items: [
+          'ऑनलाइन प्रारंभिक परीक्षा (Prelims)',
+          'ऑनलाइन मुख्य परीक्षा (Mains)',
+          'दस्तावेज सत्यापन (Document Verification)',
+          'मेडिकल चेकअप',
+          'फाइनल मेरिट लिस्ट',
+          'पद आवंटन और ट्रेनिंग'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'बैंकिंग करियर के अवसर'
+      },
+      {
+        type: 'paragraph',
+        content: 'BSCB असिस्टेंट से शुरू होकर बैंकिंग में उच्च पदों तक जा सकते हैं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'असिस्टेंट → ऑफिसर (2-3 साल)',
+          'ऑफिसर → असिस्टेंट मैनेजर (3-5 साल)',
+          'असिस्टेंट मैनेजर → मैनेजर (5-7 साल)',
+          'मैनेजर → सीनियर मैनेजर (7-10 साल)',
+          'अन्य बैंकों में जॉब अवसर',
+          'IBPS/SBI में अनुभव का फायदा'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'तैयारी की रणनीति और टिप्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'सफलता के लिए सही तैयारी रणनीति अपनाएं:'
+      },
+      {
+        type: 'list',
+        items: [
+          'बैंकिंग अवेयरनेस पर फोकस करें',
+          'बिहार का सामान्य ज्ञान तैयार करें',
+          'क्वांटिटेटिव एप्टीट्यूड की प्रैक्टिस करें',
+          'रीजनिंग के सभी टॉपिक्स कवर करें',
+          'अंग्रेजी की व्याकरण पढ़ें',
+          'दैनिक मॉक टेस्ट दें',
+          'स्पीड और एक्यूरेसी पर काम करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन में सामान्य त्रुटियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'अंतिम दिन आवेदन करते समय इन गलतियों से बचें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'नाम में स्पेलिंग गलती न करें',
+          'जन्म तिथि 10वीं सर्टिफिकेट के अनुसार भरें',
+          'मोबाइल नंबर और ईमेल सही भरें',
+          'फोटो में चेहरा साफ दिखना चाहिए',
+          'कैटेगरी सर्टिफिकेट की डेट चेक करें',
+          'फीस पेमेंट के बाद रसीद सेव करें'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'बिहार राज्य सहकारी बैंक लिमिटेड बिहार के युवाओं को बैंकिंग सेक्टर में करियर बनाने का बेहतरीन अवसर प्रदान कर रहा है। यह न केवल अच्छी सैलरी देता है बल्कि बैंकिंग इंडस्ट्री में आगे बढ़ने के रास्ते भी खोलता है।',
+        author: 'बिहार राज्य सहकारी बैंक लिमिटेड'
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'बिहार BSCB को-ऑपरेटिव बैंक असिस्टेंट भर्ती 2025 राज्य के युवाओं के लिए बैंकिंग करियर का दरवाजा खोलती है। ₹45,000 तक का मासिक वेतन, जॉब सिक्योरिटी और प्रमोशन के अवसर मिल रहे हैं। आज अंतिम दिन है इसलिए तुरंत आवेदन करें। सभी दस्तावेज तैयार रखें और फॉर्म सावधानी से भरें। बैंकिंग एक स्थिर और सम्मानजनक करियर है जो आपको वित्तीय सुरक्षा प्रदान करता है। इस अवसर को न गंवाएं और अपने भविष्य को संवारें।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'बिहार BSCB बैंक असिस्टेंट की अंतिम तिथि क्या है?',
+        answer: 'बिहार BSCB बैंक असिस्टेंट की आवेदन अंतिम तिथि 10 जुलाई 2025 है। आज रात 11:59 बजे तक आवेदन कर सकते हैं।'
+      },
+      {
+        question: 'असिस्टेंट का वेतन कितना मिलेगा?',
+        answer: 'असिस्टेंट का वेतन ₹25,000 से ₹45,000 तक है। इसके अलावा DA, HRA और अन्य भत्ते भी मिलते हैं।'
+      },
+      {
+        question: 'कुल कितने पद हैं और क्या योग्यता चाहिए?',
+        answer: 'कुल 350+ पद हैं। योग्यता: स्नातक (किसी भी विषय में) और आयु 18-28 वर्ष।'
+      },
+      {
+        question: 'परीक्षा कितने चरणों में होगी?',
+        answer: 'परीक्षा दो चरणों में होगी - प्रारंभिक परीक्षा (Prelims) और मुख्य परीक्षा (Mains)।'
+      },
+      {
+        question: 'आवेदन शुल्क कितना है?',
+        answer: 'सामान्य श्रेणी के लिए ₹600, SC/ST/PWD के लिए ₹350 आवेदन शुल्क है।'
+      }
+    ],
+    relatedSchemes: ['bihar-banking-jobs', 'cooperative-bank-recruitment', 'bihar-government-jobs'],
+    budget: '₹40 करोड़ (वार्षिक वेतन बजट)',
+    beneficiaries: '350+ पद + आवेदक',
+    successRate: '91.5%'
+  },
+
+  {
+    id: '168',
+    slug: 'ssc-cgl-correction-edit-form-2025',
+    title: 'SSC CGL Correction/Edit Form 2025: Last Chance to Modify Application Details',
+    titleHindi: 'SSC CGL सुधार/संपादन फॉर्म 2025: एप्लिकेशन विवरण संशोधित करने का अंतिम मौका',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-07-05',
+    lastUpdated: '2025-07-10',
+    targetAudience: ['SSC CGL Applicants', 'Government Job Aspirants', 'Graduate Students', 'Civil Services Aspirants', 'Central Government Job Seekers'],
+    benefits: [
+      'Correct personal details',
+      'Update educational information',
+      'Change exam center preferences',
+      'Modify photo and signature',
+      'Update contact information',
+      'Change category/reservation details'
+    ],
+    eligibility: [
+      'Already applied for SSC CGL 2025',
+      'Valid application number and password',
+      'Correction window is open',
+      'Payment of correction fee (if applicable)',
+      'Original documents for verification',
+      'Valid reason for correction'
+    ],
+    documents: [
+      'Original application receipt',
+      'Updated documents for correction',
+      'Valid photo and signature',
+      'Educational certificates',
+      'Category certificate (if changing)',
+      'ID proof for verification'
+    ],
+    applicationProcess: [
+      'Visit SSC official website',
+      'Login with application credentials',
+      'Select correction/edit option',
+      'Choose fields to modify',
+      'Upload new documents if required',
+      'Pay correction fee',
+      'Submit revised application'
+    ],
+    officialWebsite: 'https://ssc.nic.in',
+    helpline: '011-24361359',
+    coverImage: 'https://images.pexels.com/photos/4050325/pexels-photo-4050325.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2',
+    excerpt: 'SSC CGL Correction Window 2025 open now! Modify your application details, update documents, change exam centers. Limited time opportunity - act fast.',
+    excerptHindi: 'SSC CGL सुधार विंडो 2025 अब खुली! अपने आवेदन विवरण संशोधित करें, दस्तावेज अपडेट करें, परीक्षा केंद्र बदलें। सीमित समय का अवसर - जल्दी करें।',
+    keywords: [
+      'SSC CGL correction form 2025', 'SSC CGL सुधार फॉर्म 2025',
+      'SSC CGL edit application', 'SSC CGL एप्लिकेशन एडिट',
+      'SSC correction window 2025', 'SSC सुधार विंडो 2025',
+      'CGL application modification', 'CGL एप्लिकेशन संशोधन'
+    ],
+    seoTitle: 'SSC CGL Correction Form 2025: Edit Application Details Now | Correction Window Open',
+    seoDescription: 'SSC CGL Correction/Edit Form 2025 is live! Modify personal details, exam centers, documents. Limited time window - apply corrections now.',
+    content: [
+      {
+        type: 'heading',
+        content: 'SSC CGL Correction Form 2025: आवेदन सुधार का अंतिम मौका'
+      },
+      {
+        type: 'paragraph',
+        content: 'कर्मचारी चयन आयोग (SSC) ने SSC CGL 2025 के आवेदन पत्र में सुधार/संपादन की सुविधा शुरू कर दी है। यह एक सीमित समय का अवसर है जिसमें उम्मीदवार अपने आवेदन में गलतियों को सुधार सकते हैं। 5 जुलाई से शुरू हुई यह सुधार विंडो केवल कुछ दिनों के लिए खुली रहेगी। जिन उम्मीदवारों ने पहले आवेदन किया था और उनके फॉर्म में कोई गलती है, वे इस अवसर का फायदा उठा सकते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'SSC CGL 2025: सुधार विंडो की महत्वपूर्ण तिथियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC CGL सुधार प्रक्रिया की समयावधि और महत्वपूर्ण जानकारी:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['गतिविधि', 'तिथि', 'समय', 'स्थिति'],
+          rows: [
+            ['सुधार विंडो शुरू', '5 जुलाई 2025', '10:00 AM', 'शुरू हो गई'],
+            ['सुधार विंडो अंत', '15 जुलाई 2025', '11:59 PM', 'चालू'],
+            ['फीस पेमेंट अंत', '16 जुलाई 2025', '11:59 PM', 'आगामी'],
+            ['एडमिट कार्ड', 'अगस्त 2025', 'घोषित होगी', 'भविष्य में']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'किन विवरणों में सुधार कर सकते हैं'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC CGL सुधार फॉर्म में निम्नलिखित विवरणों को संशोधित किया जा सकता है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'व्यक्तिगत विवरण (नाम, पिता का नाम, जन्म तिथि)',
+          'शैक्षणिक योग्यता की जानकारी',
+          'परीक्षा केंद्र की प्राथमिकता',
+          'फोटो और हस्ताक्षर अपडेट',
+          'संपर्क विवरण (मोबाइल, ईमेल)',
+          'श्रेणी/आरक्षण की जानकारी',
+          'पद की प्राथमिकता',
+          'शारीरिक विकलांगता की जानकारी'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सुधार शुल्क और भुगतान विकल्प'
+      },
+      {
+        type: 'paragraph',
+        content: 'विभिन्न प्रकार के सुधार के लिए अलग-अलग शुल्क निर्धारित है:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['सुधार प्रकार', 'शुल्क (₹)', 'कौन भर सकता है', 'डॉक्यूमेंट चाहिए'],
+          rows: [
+            ['व्यक्तिगत विवरण', '100', 'सभी उम्मीदवार', 'हां'],
+            ['शैक्षणिक योग्यता', '100', 'सभी उम्मीदवार', 'हां'],
+            ['फोटो/सिग्नेचर', '100', 'सभी उम्मीदवार', 'हां'],
+            ['परीक्षा केंद्र', 'निःशुल्क', 'सभी उम्मीदवार', 'नहीं'],
+            ['संपर्क विवरण', 'निःशुल्क', 'सभी उम्मीदवार', 'नहीं'],
+            ['श्रेणी परिवर्तन', '100', 'सभी उम्मीदवार', 'हां']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सुधार प्रक्रिया: स्टेप बाई स्टेप गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC CGL आवेदन में सुधार करने की पूरी प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'स्टेप 1: ssc.nic.in की आधिकारिक वेबसाइट पर जाएं',
+          'स्टेप 2: "Correction in Application" लिंक पर क्लिक करें',
+          'स्टेप 3: अपना Registration Number और Password डालें',
+          'स्टेप 4: सुधार करना चाहते हैं उस सेक्शन को चुनें',
+          'स्टेप 5: गलत जानकारी को सही जानकारी से बदलें',
+          'स्टेप 6: नए दस्तावेज अपलोड करें (यदि आवश्यक हो)',
+          'स्टेप 7: सुधार शुल्क का भुगतान करें',
+          'स्टेप 8: संशोधित आवेदन को सबमिट करें',
+          'स्टेप 9: सुधार रसीद का प्रिंट निकालें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महत्वपूर्ण सुधार और उनके नियम'
+      },
+      {
+        type: 'paragraph',
+        content: 'विभिन्न प्रकार के सुधार के लिए विशेष नियम और शर्तें:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['सुधार विवरण', 'नियम', 'दस्तावेज आवश्यक', 'सीमा'],
+          rows: [
+            ['नाम सुधार', '10वीं सर्टिफिकेट के अनुसार', '10वीं मार्कशीट', 'केवल स्पेलिंग'],
+            ['जन्म तिथि', '10वीं सर्टिफिकेट के अनुसार', '10वीं मार्कशीट', 'एक बार'],
+            ['पिता का नाम', 'Official डॉक्यूमेंट अनुसार', 'पहचान पत्र', 'एक बार'],
+            ['शैक्षणिक योग्यता', 'Higher Qualification Add', 'नई डिग्री', 'Upgrade only'],
+            ['श्रेणी बदलाव', 'Valid Certificate', 'जाति प्रमाण पत्र', 'एक बार']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'फोटो और सिग्नेचर अपडेट गाइडलाइन'
+      },
+      {
+        type: 'paragraph',
+        content: 'फोटो और हस्ताक्षर अपडेट करते समय इन निर्देशों का पालन करें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'फोटो: 4KB से 40KB, JPG/JPEG फॉर्मेट में',
+          'फोटो का साइज: 3.5cm x 4.5cm होना चाहिए',
+          'फोटो हाल ही का होना चाहिए (6 महीने से पुराना नहीं)',
+          'चेहरा साफ दिखना चाहिए, चश्मा हटाकर',
+          'सिग्नेचर: 1KB से 40KB, JPG/JPEG फॉर्मेट में',
+          'सिग्नेचर का साइज: 3.5cm x 1.5cm',
+          'काले या नीले पेन से साफ हस्ताक्षर'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'परीक्षा केंद्र परिवर्तन की सुविधा'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC CGL परीक्षा केंद्र बदलने के नियम और प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'परीक्षा केंद्र बदलना बिल्कुल मुफ्त है',
+          'अपने राज्य के अंदर केंद्र बदल सकते हैं',
+          'दूसरे राज्य में केंद्र बदलने की अनुमति है',
+          'उपलब्धता के आधार पर केंद्र मिलेगा',
+          'मेट्रो सिटी से नॉन-मेट्रो में बदल सकते हैं',
+          'एक से अधिक बार केंद्र बदल सकते हैं'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'श्रेणी/आरक्षण में सुधार'
+      },
+      {
+        type: 'paragraph',
+        content: 'आरक्षण श्रेणी में बदलाव के नियम:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['बदलाव प्रकार', 'अनुमति', 'दस्तावेज', 'शुल्क'],
+          rows: [
+            ['General से OBC', 'हां', 'OBC सर्टिफिकेट', '₹100'],
+            ['General से SC/ST', 'हां', 'SC/ST सर्टिफिकेट', '₹100'],
+            ['OBC से General', 'हां', 'कोई नहीं', '₹100'],
+            ['SC/ST से General', 'हां', 'कोई नहीं', '₹100'],
+            ['EWS Add/Remove', 'हां', 'EWS सर्टिफिकेट', '₹100'],
+            ['PWD Status Change', 'हां', 'Medical Certificate', '₹100']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'सामान्य गलतियां और उनसे बचाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'सुधार करते समय इन गलतियों से बचें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'एक साथ कई सुधार न करें, एक-एक करके करें',
+          'गलत डॉक्यूमेंट अपलोड न करें',
+          'फोटो और सिग्नेचर का साइज चेक करें',
+          'फीस पेमेंट के बाद डबल चेक करें',
+          'इंटरनेट कनेक्शन की जांच कर लें',
+          'अंतिम समय में रश न करें',
+          'सभी बदलाव को प्रीव्यू जरूर देखें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'तकनीकी समस्याएं और समाधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'सुधार प्रक्रिया में आने वाली तकनीकी समस्याओं का समाधान:'
+      },
+      {
+        type: 'list',
+        items: [
+          'वेबसाइट स्लो है: Off-peak hours में कोशिश करें',
+          'लॉगिन नहीं हो रहा: Password reset करें',
+          'पेमेंट गेटवे एरर: दूसरा Browser इस्तेमाल करें',
+          'फाइल अपलोड नहीं हो रही: साइज कम करें',
+          'Session timeout: जल्दी-जल्दी काम करें',
+          'हेल्पलाइन नंबर: 011-24361359 पर कॉल करें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'सुधार के बाद क्या होगा'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन सुधार के बाद की प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'संशोधित आवेदन की समीक्षा SSC द्वारा',
+          'गलत सुधार की स्थिति में रिजेक्शन',
+          'एडमिट कार्ड में सुधारे गए विवरण दिखेंगे',
+          'परीक्षा के दिन ID verification जरूरी',
+          'डॉक्यूमेंट वेरिफिकेशन में updated docs लाना',
+          'कोई भी विसंगति पर तुरंत संपर्क करना'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'SSC CGL सुधार विंडो उम्मीदवारों को अपनी गलतियों को सुधारने का दूसरा मौका देती है। यह सुनिश्चित करता है कि कोई भी योग्य उम्मीदवार तकनीकी गलतियों के कारण परीक्षा से वंचित न रहे।',
+        author: 'कर्मचारी चयन आयोग (SSC)'
+      },
+      {
+        type: 'subheading',
+        content: 'महत्वपूर्ण सुझाव और सावधानियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'सुधार प्रक्रिया को सफलतापूर्वक पूरा करने के लिए:'
+      },
+      {
+        type: 'list',
+        items: [
+          'सुधार से पहले सभी दस्तावेज तैयार रखें',
+          'अच्छे इंटरनेट कनेक्शन का इस्तेमाल करें',
+          'केवल जरूरी सुधार ही करें',
+          'फीस पेमेंट रसीद सेव करें',
+          'सुधारित आवेदन का प्रिंट निकालें',
+          'Email confirmation का इंतजार करें',
+          'Helpline number की जानकारी रखें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC CGL सुधार/संपादन फॉर्म 2025 उम्मीदवारों के लिए अपने आवेदन में गलतियों को सुधारने का अंतिम अवसर है। यह सुविधा केवल सीमित समय के लिए उपलब्ध है इसलिए जो भी उम्मीदवारों को अपने आवेदन में कोई गलती दिख रही है, वे तुरंत सुधार करें। व्यक्तिगत विवरण से लेकर परीक्षा केंद्र तक, सभी जरूरी बदलाव कर सकते हैं। याद रखें कि सुधार के लिए उचित दस्तावेज और शुल्क की आवश्यकता हो सकती है। सभी नियमों का पालन करते हुए सुधार करें और अपने SSC CGL 2025 के सपने को साकार करने के लिए तैयार रहें।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'SSC CGL सुधार विंडो कब तक खुली रहेगी?',
+        answer: 'SSC CGL सुधार विंडो 5 जुलाई से 15 जुलाई 2025 तक खुली रहेगी। इसके बाद कोई सुधार की सुविधा नहीं होगी।'
+      },
+      {
+        question: 'सुधार के लिए कितना शुल्क लगता है?',
+        answer: 'अधिकतर सुधार के लिए ₹100 शुल्क है। परीक्षा केंद्र और संपर्क विवरण बदलना निःशुल्क है।'
+      },
+      {
+        question: 'क्या नाम और जन्म तिथि दोनों एक साथ बदल सकते हैं?',
+        answer: 'हां, लेकिन दोनों के लिए अलग-अलग शुल्क देना होगा और 10वीं कक्षा का प्रमाण पत्र आवश्यक होगा।'
+      },
+      {
+        question: 'फोटो और सिग्नेचर की क्या आवश्यकताएं हैं?',
+        answer: 'फोटो: 4-40KB, JPG फॉर्मेट, 3.5x4.5cm। सिग्नेचर: 1-40KB, JPG फॉर्मेट, 3.5x1.5cm साइज में होना चाहिए।'
+      },
+      {
+        question: 'क्या श्रेणी (Category) बदली जा सकती है?',
+        answer: 'हां, श्रेणी बदली जा सकती है। इसके लिए valid certificate और ₹100 शुल्क की आवश्यकता होगी।'
+      }
+    ],
+    relatedSchemes: ['ssc-chsl-correction', 'ssc-mts-edit-form', 'ssc-cpo-modification'],
+    budget: 'सुधार शुल्क से राजस्व',
+    beneficiaries: 'SSC CGL 2025 आवेदक',
+    successRate: '98.5%'
+  },
+
+  {
+    id: '169',
+    slug: 'indian-army-ssc-technical-april-2026-online-form',
+    title: 'Indian Army SSC Technical April 2026 Online Form: Apply Now for Technical Officers',
+    titleHindi: 'भारतीय सेना SSC तकनीकी अप्रैल 2026 ऑनलाइन फॉर्म: तकनीकी अधिकारियों के लिए अभी आवेदन करें',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-07-01',
+    lastUpdated: '2025-07-10',
+    targetAudience: ['Engineering Graduates', 'Technical Degree Holders', 'Army Officer Aspirants', 'Defense Job Seekers', 'STEM Background Students'],
+    benefits: [
+      'Starting salary ₹56,100 per month',
+      'Military service prestige',
+      'Medical and family benefits',
+      'Pension and retirement benefits',
+      'Leadership training opportunities',
+      'Travel and adventure'
+    ],
+    eligibility: [
+      'Engineering degree (B.E/B.Tech)',
+      'Age: 20-27 years for men, 20-29 for women',
+      'Unmarried status required',
+      'Medical fitness standards',
+      'Indian citizenship',
+      'Good character certificate'
+    ],
+    documents: [
+      'Engineering degree certificate',
+      'All semester mark sheets',
+      '10th and 12th certificates',
+      'Age proof documents',
+      'Character certificate',
+      'Medical fitness certificate'
+    ],
+    applicationProcess: [
+      'Visit joinindianarmy.nic.in',
+      'Register for SSC Technical',
+      'Fill personal details carefully',
+      'Upload required documents',
+      'Select preferred technical branch',
+      'Submit application online',
+      'Take printout for records'
+    ],
+    officialWebsite: 'https://joinindianarmy.nic.in',
+    helpline: '011-26173215',
+    coverImage: 'https://images.pexels.com/photos/1002543/pexels-photo-1002543.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2',
+    excerpt: 'Indian Army SSC Technical April 2026 recruitment started! Apply online for technical officer posts. Good salary, prestige, and career growth in defense.',
+    excerptHindi: 'भारतीय सेना SSC तकनीकी अप्रैल 2026 भर्ती शुरू! तकनीकी अधिकारी पदों के लिए ऑनलाइन आवेदन करें। अच्छा वेतन, प्रतिष्ठा और रक्षा में करियर वृद्धि।',
+    keywords: [
+      'Indian Army SSC Technical 2026', 'भारतीय सेना SSC तकनीकी 2026',
+      'Army technical officer recruitment', 'सेना तकनीकी अधिकारी भर्ती',
+      'SSC Tech April 2026 application', 'SSC टेक अप्रैल 2026 आवेदन',
+      'Army engineering jobs 2025', 'सेना इंजीनियरिंग जॉब्स 2025'
+    ],
+    seoTitle: 'Indian Army SSC Technical April 2026: Apply Online Now | Officer Recruitment',
+    seoDescription: 'Indian Army SSC Technical April 2026 recruitment open! Apply online for technical officer posts. Engineering graduates eligible. Good salary & benefits.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Indian Army SSC Technical April 2026: इंजीनियरिंग ग्रेजुएट्स के लिए सुनहरा अवसर'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारतीय सेना ने SSC Technical April 2026 कोर्स के लिए ऑनलाइन आवेदन प्रक्रिया शुरू कर दी है। यह इंजीनियरिंग ग्रेजुएट्स के लिए भारतीय सेना में तकनीकी अधिकारी बनने का बेहतरीन अवसर है। SSC (Short Service Commission) के तहत यह 14 साल की प्रारंभिक सेवा है जिसे बाद में स्थायी कमीशन में बदला जा सकता है। शुरुआती वेतन ₹56,100 प्रति माह है और इसके साथ कई अन्य लाभ भी मिलते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'SSC Technical कोर्स: महत्वपूर्ण जानकारी और तिथियां'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारतीय सेना SSC Technical April 2026 कोर्स की महत्वपूर्ण तिथियां और विवरण:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['विवरण', 'तिथि/जानकारी', 'महत्व', 'टिप्पणी'],
+          rows: [
+            ['आवेदन शुरू', '1 जुलाई 2025', 'आवेदन खुले', 'तुरंत आवेदन करें'],
+            ['आवेदन अंत', '31 जुलाई 2025', 'अंतिम तिथि', 'देर न करें'],
+            ['कोर्स शुरू', 'अप्रैल 2026', 'ट्रेनिंग आरंभ', '9 महीने बाद'],
+            ['सेवा अवधि', '14 साल', 'प्रारंभिक कमिटमेंट', 'बढ़ाई जा सकती है']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'तकनीकी शाखाएं और पद विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC Technical में विभिन्न इंजीनियरिंग शाखाओं के लिए पद उपलब्ध हैं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['तकनीकी शाखा', 'योग्यता', 'पद संख्या', 'कार्य क्षेत्र'],
+          rows: [
+            ['Corps of Engineers', 'Civil Engineering', '80 पद', 'Construction, Infrastructure'],
+            ['Corps of Signals', 'Electronics/IT/Computer', '60 पद', 'Communication, IT'],
+            ['Corps of EME', 'Mechanical/Electrical', '70 पद', 'Equipment Maintenance'],
+            ['Army Aviation', 'Aeronautical/Mechanical', '25 पद', 'Aircraft Maintenance'],
+            ['Army Ordnance Corps', 'Any Engineering', '35 पद', 'Ammunition, Equipment']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'वेतन संरचना और लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारतीय सेना में SSC Technical अधिकारी को मिलने वाले वेतन और लाभ:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मूल वेतन: ₹56,100 प्रति माह (7वां वेतन आयोग)',
+          'मिलिट्री सर्विस पे (MSP): ₹15,500',
+          'ग्रेड पे और DA (महंगाई भत्ता)',
+          'फील्ड एरिया एलाउंस (ऑपरेशनल एरिया में)',
+          'मुफ्त आवास और खाना (या HRA)',
+          'मेडिकल सुविधा पूरे परिवार के लिए',
+          'CSD कैंटीन की सुविधा',
+          'Leave Travel Concession (LTC)',
+          'पेंशन और ग्रेच्युटी बेनिफिट्स'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शैक्षणिक योग्यता और आयु सीमा'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC Technical के लिए निर्धारित योग्यता मापदंड:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['मापदंड', 'पुरुष उम्मीदवार', 'महिला उम्मीदवार', 'विशेष शर्तें'],
+          rows: [
+            ['आयु सीमा', '20-27 वर्ष', '20-29 वर्ष', 'कोर्स शुरू होने तक'],
+            ['शैक्षणिक योग्यता', 'B.E/B.Tech (60% min)', 'B.E/B.Tech (60% min)', 'AICTE recognized'],
+            ['वैवाहिक स्थिति', 'अविवाहित', 'अविवाहित', 'कोर्स के दौरान शादी नहीं'],
+            ['शारीरिक फिटनेस', 'Medical standards', 'Medical standards', 'सभी मेडिकल टेस्ट पास']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'ऑनलाइन आवेदन प्रक्रिया: संपूर्ण गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारतीय सेना SSC Technical के लिए ऑनलाइन आवेदन की पूरी प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: joinindianarmy.nic.in पर जाएं',
+          'चरण 2: "Officer Entry" सेक्शन में क्लिक करें',
+          'चरण 3: "SSC Technical" कोर्स चुनें',
+          'चरण 4: "Apply Online" बटन दबाएं',
+          'चरण 5: नया अकाउंट बनाएं या लॉगिन करें',
+          'चरण 6: व्यक्तिगत विवरण सही-सही भरें',
+          'चरण 7: शैक्षणिक विवरण और मार्क्स भरें',
+          'चरण 8: पसंदीदा तकनीकी शाखा चुनें',
+          'चरण 9: फोटो और दस्तावेज अपलोड करें',
+          'चरण 10: प्रीव्यू चेक करके सबमिट करें',
+          'चरण 11: आवेदन का प्रिंट निकालें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'दस्तावेज अपलोड आवश्यकताएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन के लिए निम्नलिखित दस्तावेजों की स्कैन कॉपी चाहिए:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['दस्तावेज', 'फॉर्मेट', 'साइज लिमिट', 'गुणवत्ता आवश्यकता'],
+          rows: [
+            ['पासपोर्ट साइज फोटो', 'JPG', '20-50KB', 'रंगीन, हाल का'],
+            ['10वीं मार्कशीट', 'PDF', '100KB तक', 'Clear & Readable'],
+            ['12वीं मार्कशीट', 'PDF', '100KB तक', 'Clear & Readable'],
+            ['Engineering Degree', 'PDF', '200KB तक', 'Final Year Certificate'],
+            ['All Semester Marksheets', 'PDF', '500KB तक', 'Combined Single File'],
+            ['Character Certificate', 'PDF', '100KB तक', 'College/University']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'चयन प्रक्रिया और परीक्षा पैटर्न'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC Technical की चयन प्रक्रिया तीन चरणों में होती है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: SSB Interview (5 दिन)',
+          'चरण 2: Medical Examination',
+          'चरण 3: Merit List और Final Selection',
+          'SSB में Psychological Tests',
+          'Group Testing Officer (GTO) Tasks',
+          'Personal Interview',
+          'Conference (Final Assessment)',
+          'Medical के बाद ही Final Merit List'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'SSB Interview की तैयारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSB interview में सफलता के लिए तैयारी टिप्स:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Current Affairs की अच्छी जानकारी रखें',
+          'अपनी Engineering field की गहरी समझ',
+          'Leadership qualities develop करें',
+          'Physical fitness maintain करें',
+          'Communication skills improve करें',
+          'Army के बारे में पूरी जानकारी',
+          'National और International issues पर नजर',
+          'Group Discussion में active participation',
+          'Confidence और positive attitude'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'ट्रेनिंग और कैरियर प्रोग्रेशन'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC Technical officers की ट्रेनिंग और करियर पाथ:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['चरण', 'अवधि', 'स्थान', 'विवरण'],
+          rows: [
+            ['Young Officers Course', '49 सप्ताह', 'Officers Training Academy', 'Basic Military Training'],
+            ['Technical Training', '6-12 महीने', 'Technical Institutes', 'Specialized Technical Skills'],
+            ['Unit Posting', '2-3 साल', 'Field Units', 'Practical Experience'],
+            ['Promotional Courses', 'समय-समय पर', 'Various Academies', 'Career Advancement'],
+            ['Higher Appointments', '8-10 साल बाद', 'Command Posts', 'Leadership Roles']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'तकनीकी शाखा का चुनाव गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'अपनी Engineering background के अनुसार सही शाखा चुनें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Civil Engineers: Corps of Engineers या Army Aviation',
+          'Mechanical Engineers: Corps of EME या Army Aviation',
+          'Electrical Engineers: Corps of Signals या Corps of EME',
+          'Electronics Engineers: Corps of Signals (सबसे बेहतर)',
+          'Computer/IT Engineers: Corps of Signals',
+          'Aeronautical Engineers: Army Aviation (प्राथमिकता)',
+          'Chemical Engineers: Army Ordnance Corps',
+          'Metallurgy Engineers: Corps of EME'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'महिला उम्मीदवारों के लिए विशेष जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'महिला officers के लिए विशेष प्रावधान और अवसर:'
+      },
+      {
+        type: 'list',
+        items: [
+          'आयु सीमा में 2 साल की अतिरिक्त छूट',
+          'सभी technical arms में posting',
+          'Combat roles में भी opportunity',
+          'Maternity leave और family benefits',
+          'Equal career progression opportunities',
+          'Special accommodation facilities',
+          'Family welfare measures',
+          'Work-life balance initiatives'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'स्थायी कमीशन की संभावना'
+      },
+      {
+        type: 'paragraph',
+        content: 'SSC से Permanent Commission में conversion की प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          '10 साल की service के बाद PC option',
+          'Excellent service record जरूरी',
+          'Medical और fitness standards maintain',
+          'Technical competency assessment',
+          'Interview और selection board',
+          '14 साल तक service extension भी possible',
+          'Pension benefits PC officers को मिलते हैं',
+          'Command appointments तक पहुंच सकते हैं'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'भारतीय सेना SSC Technical कोर्स देश की रक्षा में योगदान देने और अपने तकनीकी कौशल का उपयोग करने का अनूठा अवसर है। यह न केवल व्यक्तिगत विकास प्रदान करता है बल्कि राष्ट्र सेवा का गौरव भी देता है।',
+        author: 'भारतीय सेना भर्ती निदेशालय'
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन में सामान्य गलतियां और बचाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन करते समय इन गलतियों से बचें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Engineering की सभी semester marksheets upload करना जरूरी',
+          'Photo quality अच्छी होनी चाहिए (uniform न पहनें)',
+          'Date of birth 10वीं certificate के अनुसार ही भरें',
+          'Technical branch selection सोच-समझकर करें',
+          'सभी fields mandatory हैं, कोई भी छोड़ें नहीं',
+          'Document size limits का ध्यान रखें',
+          'Final submission से पहले preview जरूर देखें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'Indian Army SSC Technical April 2026 कोर्स Engineering graduates के लिए भारतीय सेना में शानदार करियर बनाने का सुनहरा अवसर है। ₹56,100 से शुरू होने वाला वेतन, job security, prestige और देश सेवा का गौरव मिलता है। 14 साल की प्रारंभिक service commitment है जिसे बाद में permanent commission में convert किया जा सकता है। यह केवल नौकरी नहीं बल्कि एक सम्मानजनक profession है जो leadership skills develop करती है। जो भी engineering graduates army में officer बनने का सपना देखते हैं, वे तुरंत आवेदन करें और अपने तकनीकी ज्ञान को देश की सेवा में लगाएं।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'SSC Technical April 2026 की आवेदन अंतिम तिथि क्या है?',
+        answer: 'SSC Technical April 2026 की आवेदन अंतिम तिथि 31 जुलाई 2025 है। आवेदन joinindianarmy.nic.in पर करना होगा।'
+      },
+      {
+        question: 'SSC Technical officer की शुरुआती सैलरी कितनी है?',
+        answer: 'SSC Technical officer की शुरुआती सैलरी ₹56,100 प्रति माह है। इसके अलावा MSP, DA और अन्य allowances भी मिलते हैं।'
+      },
+      {
+        question: 'कौन सी engineering branches eligible हैं?',
+        answer: 'सभी engineering branches eligible हैं - Civil, Mechanical, Electrical, Electronics, Computer, IT, Aeronautical आदि।'
+      },
+      {
+        question: 'SSC Technical में service commitment कितनी है?',
+        answer: 'SSC Technical में 14 साल की प्रारंभिक service commitment है। बाद में permanent commission का option भी है।'
+      },
+      {
+        question: 'महिला candidates के लिए आयु सीमा क्या है?',
+        answer: 'महिला candidates के लिए आयु सीमा 20-29 वर्ष है, पुरुषों के लिए 20-27 वर्ष है।'
+      }
+    ],
+    relatedSchemes: ['indian-army-agniveer', 'indian-navy-ssc', 'indian-air-force-technical'],
+    budget: 'रक्षा बजट 2025-26',
+    beneficiaries: 'Engineering Graduates',
+    successRate: '15-20%'
+  },
+
+  {
+    id: '170',
+    slug: 'indian-coast-guard-ac-01-2027-batch-online-form-start',
+    title: 'Indian Coast Guard AC 01/2027 Batch Online Form – Start: Apply for Assistant Commandant Posts',
+    titleHindi: 'भारतीय तटरक्षक बल AC 01/2027 बैच ऑनलाइन फॉर्म – शुरू: सहायक कमांडेंट पदों के लिए आवेदन करें',
+    category: 'Employment & Jobs',
+    categoryHindi: 'रोजगार और नौकरी',
+    status: 'active',
+    launchDate: '2025-07-10',
+    lastUpdated: '2025-07-10',
+    targetAudience: ['Graduate Students', 'Defense Aspirants', 'Marine Engineering Students', 'Nautical Science Graduates', 'Coast Guard Officer Aspirants'],
+    benefits: [
+      'Starting salary ₹56,100 per month',
+      'Coast Guard officer status',
+      'Maritime career opportunities',
+      'Medical and family benefits',
+      'Pension and retirement benefits',
+      'Adventure and travel opportunities'
+    ],
+    eligibility: [
+      'Bachelor degree (minimum 60%)',
+      'Age: 19-25 years',
+      'Unmarried status for training',
+      'Medical fitness for sea service',
+      'Indian citizenship required',
+      'Good swimming ability'
+    ],
+    documents: [
+      'Graduation degree certificate',
+      'All semester mark sheets',
+      '10th and 12th certificates',
+      'Age proof documents',
+      'Character certificate from college',
+      'Medical fitness certificate'
+    ],
+    applicationProcess: [
+      'Visit indiancoastguard.gov.in',
+      'Click on AC 01/2027 recruitment',
+      'Register with email and mobile',
+      'Fill application form completely',
+      'Upload required documents',
+      'Submit application online',
+      'Take printout for records'
+    ],
+    officialWebsite: 'https://indiancoastguard.gov.in',
+    helpline: '011-23798294',
+    coverImage: 'https://images.pexels.com/photos/87651/earth-blue-planet-globe-planet-87651.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2',
+    excerpt: 'Indian Coast Guard AC 01/2027 batch recruitment started! Apply online for Assistant Commandant posts. Maritime career with good salary and benefits.',
+    excerptHindi: 'भारतीय तटरक्षक बल AC 01/2027 बैच भर्ती शुरू! सहायक कमांडेंट पदों के लिए ऑनलाइन आवेदन करें। अच्छे वेतन और लाभ के साथ समुद्री करियर।',
+    keywords: [
+      'Indian Coast Guard AC 2027', 'भारतीय तटरक्षक बल AC 2027',
+      'Coast Guard Assistant Commandant', 'तटरक्षक सहायक कमांडेंट',
+      'ICG AC 01/2027 application', 'ICG AC 01/2027 आवेदन',
+      'Coast Guard officer recruitment', 'तटरक्षक अधिकारी भर्ती'
+    ],
+    seoTitle: 'Indian Coast Guard AC 01/2027: Online Form Started | Apply for Assistant Commandant',
+    seoDescription: 'Indian Coast Guard AC 01/2027 batch recruitment open! Apply online for Assistant Commandant posts. Good salary, maritime career opportunities.',
+    content: [
+      {
+        type: 'heading',
+        content: 'Indian Coast Guard AC 01/2027 Batch: समुद्री करियर का शानदार अवसर'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारतीय तटरक्षक बल (Indian Coast Guard) ने AC 01/2027 बैच के लिए ऑनलाइन आवेदन प्रक्रिया आज यानी 10 जुलाई 2025 से शुरू कर दी है। यह सहायक कमांडेंट (Assistant Commandant) के पदों पर भर्ती है जो भारत की समुद्री सुरक्षा में महत्वपूर्ण भूमिका निभाते हैं। यह करियर न केवल अच्छा वेतन देता है बल्कि देश की तटीय सुरक्षा में योगदान देने का गौरव भी प्रदान करता है। शुरुआती वेतन ₹56,100 प्रति माह है और इसके साथ कई आकर्षक भत्ते भी मिलते हैं।'
+      },
+      {
+        type: 'subheading',
+        content: 'Coast Guard AC 01/2027: महत्वपूर्ण तिथियां और कोर्स विवरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारतीय तटरक्षक बल AC 01/2027 बैच की महत्वपूर्ण जानकारी:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['विवरण', 'तिथि/जानकारी', 'महत्व', 'टिप्पणी'],
+          rows: [
+            ['आवेदन शुरू', '10 जुलाई 2025', 'आज से शुरू', 'तुरंत आवेदन करें'],
+            ['आवेदन अंत', '10 अगस्त 2025', '1 महीने का समय', 'देर न करें'],
+            ['कोर्स शुरू', 'जनवरी 2027', '18 महीने बाद', 'तैयारी का समय'],
+            ['ट्रेनिंग अवधि', '22 सप्ताह', 'Intensive Training', 'INA में होगी']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'पद विवरण और विभिन्न शाखाएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'Coast Guard AC में विभिन्न specialization और entry schemes उपलब्ध हैं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Entry Scheme', 'योग्यता', 'पद संख्या', 'विशेषज्ञता'],
+          rows: [
+            ['General Duty', 'Any Graduate (60%)', '40 पद', 'Ship Operations, Navigation'],
+            ['Pilot', 'Math/Physics (60%)', '15 पद', 'Aviation, Flying'],
+            ['Technical', 'Engineering Degree', '25 पद', 'Ship Engineering'],
+            ['Law', 'LLB Degree', '5 पद', 'Legal Affairs'],
+            ['Commercial Pilot', 'CPL License', '10 पद', 'Advanced Aviation']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'वेतन संरचना और सेवा लाभ'
+      },
+      {
+        type: 'paragraph',
+        content: 'Coast Guard Assistant Commandant को मिलने वाले वेतन और लाभ:'
+      },
+      {
+        type: 'list',
+        items: [
+          'मूल वेतन: ₹56,100 प्रति माह (7वां वेतन आयोग)',
+          'Military Service Pay: ₹15,500',
+          'ग्रेड पे और महंगाई भत्ता',
+          'Sea Going Allowance (समुद्री ड्यूटी के दौरान)',
+          'Flying Allowance (Pilot officers के लिए)',
+          'मुफ्त आवास या HRA',
+          'मेडिकल सुविधा पूरे परिवार के लिए',
+          'CSD कैंटीन की सुविधा',
+          'Leave Travel Concession',
+          'Pension और Gratuity benefits'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'शैक्षणिक योग्यता और आयु सीमा'
+      },
+      {
+        type: 'paragraph',
+        content: 'Coast Guard AC के लिए entry-wise योग्यता आवश्यकताएं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Entry Type', 'शैक्षणिक योग्यता', 'आयु सीमा', 'विशेष आवश्यकताएं'],
+          rows: [
+            ['General Duty', 'Graduate (किसी भी विषय में)', '19-25 वर्ष', 'Swimming जानना जरूरी'],
+            ['Pilot Entry', 'Math/Physics with 60%', '19-25 वर्ष', 'Good eyesight, No glasses'],
+            ['Technical', 'B.E/B.Tech (60%)', '19-25 वर्ष', 'Mechanical/Electrical preferred'],
+            ['Law Entry', 'LLB (55%)', '21-27 वर्ष', 'Law practice experience preferred'],
+            ['Commercial Pilot', 'Graduate + CPL', '19-25 वर्ष', 'Valid CPL license']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'ऑनलाइन आवेदन प्रक्रिया: विस्तृत गाइड'
+      },
+      {
+        type: 'paragraph',
+        content: 'Coast Guard AC 01/2027 के लिए ऑनलाइन आवेदन की पूरी प्रक्रिया:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: indiancoastguard.gov.in पर जाएं',
+          'चरण 2: "Join Indian Coast Guard" सेक्शन में जाएं',
+          'चरण 3: "AC 01/2027 Batch" link पर क्लिक करें',
+          'चरण 4: "Apply Online" बटन दबाएं',
+          'चरण 5: Mobile number और Email से registration करें',
+          'चरण 6: OTP verification करें',
+          'चरण 7: Personal details सही-सही भरें',
+          'चरण 8: Educational qualification details दें',
+          'चरण 9: Preferred entry scheme select करें',
+          'चरण 10: Photo और documents upload करें',
+          'चरण 11: Declaration accept करके submit करें',
+          'चरण 12: Application form का printout निकालें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'दस्तावेज अपलोड गाइडलाइन'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन के लिए निम्नलिखित दस्तावेजों की स्कैन कॉपी तैयार रखें:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['दस्तावेज', 'फॉर्मेट', 'साइज लिमिट', 'गुणवत्ता आवश्यकता'],
+          rows: [
+            ['Passport Size Photo', 'JPG/JPEG', '20-50KB', 'Recent, Colored'],
+            ['10th Certificate', 'PDF', '100KB तक', 'Clear scan'],
+            ['12th Certificate', 'PDF', '100KB तक', 'Clear scan'],
+            ['Graduation Certificate', 'PDF', '200KB तक', 'Final year certificate'],
+            ['All Semester Marksheets', 'PDF', '500KB तक', 'Combined file'],
+            ['Character Certificate', 'PDF', '100KB तक', 'From college/university'],
+            ['Swimming Certificate', 'PDF', '100KB तक', 'From recognized institute']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'चयन प्रक्रिया और परीक्षा चरण'
+      },
+      {
+        type: 'paragraph',
+        content: 'Coast Guard AC की चयन प्रक्रिया चार चरणों में होती है:'
+      },
+      {
+        type: 'list',
+        items: [
+          'चरण 1: Preliminary Screening Test (PST)',
+          'चरण 2: Physical Fitness Test (PFT)',
+          'चरण 3: Psychological Test + Group Discussion',
+          'चरण 4: Personal Interview',
+          'चरण 5: Medical Examination',
+          'चरण 6: Final Merit List',
+          'PST में Mathematics, English, GK, Reasoning',
+          'PFT में Running, Push-ups, Sit-ups',
+          'Swimming test (mandatory for all)'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Physical Fitness Test (PFT) आवश्यकताएं'
+      },
+      {
+        type: 'paragraph',
+        content: 'Coast Guard PFT में निम्नलिखित activities शामिल हैं:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Activity', 'पुरुष उम्मीदवार', 'महिला उम्मीदवार', 'समय सीमा'],
+          rows: [
+            ['1.6 Km Running', '7 मिनट', '8.5 मिनट', 'Qualifying'],
+            ['Push-ups', '15 minimum', '8 minimum', '2 मिनट में'],
+            ['Sit-ups', '20 minimum', '15 minimum', '2 मिनट में'],
+            ['Swimming (25m)', 'Any stroke', 'Any stroke', '5 मिनट में'],
+            ['Chin-ups', '4 minimum', 'Not applicable', 'No time limit']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'ट्रेनिंग और कैरियर प्रोग्रेशन'
+      },
+      {
+        type: 'paragraph',
+        content: 'Coast Guard AC officers की training और career path:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Initial Naval Training: 22 weeks at Indian Naval Academy',
+          'Professional Training: Coast Guard specific courses',
+          'Ship Training: Practical sea experience',
+          'Specialization Course: Entry scheme के अनुसार',
+          'Command Course: Leadership development',
+          'Staff Course: Higher appointments के लिए',
+          'Foreign Training: International cooperation',
+          'Research & Development: Technical advancement'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'विभिन्न Entry Schemes की विस्तृत जानकारी'
+      },
+      {
+        type: 'paragraph',
+        content: 'प्रत्येक entry scheme की विशेष जानकारी और करियर prospects:'
+      },
+      {
+        type: 'table',
+        tableData: {
+          headers: ['Entry Scheme', 'कार्य प्रोफाइल', 'Career Growth', 'Special Benefits'],
+          rows: [
+            ['General Duty', 'Ship operations, Navigation', 'Command positions', 'Sea experience'],
+            ['Pilot', 'Aircraft flying, Search operations', 'Flight Commander', 'Flying allowance'],
+            ['Technical', 'Ship engineering, Maintenance', 'Engineering Officer', 'Technical expertise'],
+            ['Law', 'Legal matters, Court cases', 'Legal Advisor', 'Law practice'],
+            ['Commercial Pilot', 'Advanced flying operations', 'Senior Pilot', 'High flying hours']
+          ]
+        }
+      },
+      {
+        type: 'subheading',
+        content: 'महिला उम्मीदवारों के लिए विशेष प्रावधान'
+      },
+      {
+        type: 'paragraph',
+        content: 'महिला officers के लिए Coast Guard में special facilities:'
+      },
+      {
+        type: 'list',
+        items: [
+          'सभी entry schemes में eligible',
+          'Same pay and allowances as male officers',
+          'Maternity leave और child care benefits',
+          'Family accommodation facilities',
+          'Medical benefits for family',
+          'Shore posting preference (family के साथ)',
+          'Career progression में equal opportunities',
+          'Women-friendly policies और procedures'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'Coast Guard की भूमिका और कार्य क्षेत्र'
+      },
+      {
+        type: 'paragraph',
+        content: 'भारतीय तटरक्षक बल के मुख्य कार्य और जिम्मेदारियां:'
+      },
+      {
+        type: 'list',
+        items: [
+          'तटीय सुरक्षा और निगरानी',
+          'समुद्री खोज और बचाव अभियान',
+          'मछुआरों की सुरक्षा और सहायता',
+          'तस्करी रोधी अभियान',
+          'समुद्री प्रदूषण नियंत्रण',
+          'अंतर्राष्ट्रीय समुद्री सहयोग',
+          'आपदा राहत कार्य',
+          'Maritime law enforcement'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'तैयारी की रणनीति और टिप्स'
+      },
+      {
+        type: 'paragraph',
+        content: 'Coast Guard AC selection के लिए तैयारी strategy:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Current Affairs पर विशेष ध्यान दें',
+          'Maritime और Coast Guard knowledge बढ़ाएं',
+          'Physical fitness maintain करें',
+          'Swimming practice regularly करें',
+          'Mathematics और Reasoning strengthen करें',
+          'English communication skills improve करें',
+          'Group discussion practice करें',
+          'Personality development पर काम करें',
+          'Leadership qualities develop करें'
+        ]
+      },
+      {
+        type: 'quote',
+        content: 'भारतीय तटरक्षक बल देश की समुद्री सीमाओं की रक्षा करने वाला महत्वपूर्ण संगठन है। AC 01/2027 बैच युवाओं को इस गौरवशाली संस्था में सेवा करने और समुद्री सुरक्षा में योगदान देने का अवसर प्रदान करता है।',
+        author: 'भारतीय तटरक्षक बल मुख्यालय'
+      },
+      {
+        type: 'subheading',
+        content: 'आवेदन में सामान्य गलतियां और बचाव'
+      },
+      {
+        type: 'paragraph',
+        content: 'आवेदन करते समय इन गलतियों से बचें:'
+      },
+      {
+        type: 'list',
+        items: [
+          'Percentage calculation में गलती न करें',
+          'Entry scheme selection सोच-समझकर करें',
+          'Photo quality अच्छी रखें (uniform न पहनें)',
+          'Swimming certificate जरूर attach करें',
+          'All semester marksheets upload करना जरूरी',
+          'Contact details सही और active रखें',
+          'Final submission से पहले preview जरूर देखें'
+        ]
+      },
+      {
+        type: 'subheading',
+        content: 'निष्कर्ष'
+      },
+      {
+        type: 'paragraph',
+        content: 'Indian Coast Guard AC 01/2027 बैच भारत के युवाओं के लिए समुद्री करियर में उत्कृष्टता हासिल करने का शानदार अवसर है। ₹56,100 से शुरू होने वाला वेतन, job security, adventure और देश सेवा का गौरव मिलता है। यह केवल नौकरी नहीं बल्कि एक noble profession है जो व्यक्तित्व विकास और leadership skills provide करती है। Coast Guard officers समुद्री सुरक्षा, rescue operations और maritime law enforcement में महत्वपूर्ण भूमिका निभाते हैं। जो भी युवा adventure, challenge और meaningful career चाहते हैं, वे तुरंत आवेदन करें और भारत की तटीय सुरक्षा में अपना योगदान दें।'
+      }
+    ],
+    faqSchema: [
+      {
+        question: 'Coast Guard AC 01/2027 की आवेदन अंतिम तिथि क्या है?',
+        answer: 'Coast Guard AC 01/2027 की आवेदन अंतिम तिथि 10 अगस्त 2025 है। आवेदन indiancoastguard.gov.in पर करना होगा।'
+      },
+      {
+        question: 'Assistant Commandant की शुरुआती सैलरी कितनी है?',
+        answer: 'Assistant Commandant की शुरुआती सैलरी ₹56,100 प्रति माह है। इसके अलावा MSP, allowances और अन्य benefits भी मिलते हैं।'
+      },
+      {
+        question: 'कौन सी entry schemes available हैं?',
+        answer: 'General Duty, Pilot, Technical, Law और Commercial Pilot entry schemes available हैं। योग्यता के अनुसार apply कर सकते हैं।'
+      },
+      {
+        question: 'क्या swimming जानना जरूरी है?',
+        answer: 'हां, swimming जानना जरूरी है। Selection process में swimming test भी होता है। 25 meter swimming करना होगा।'
+      },
+      {
+        question: 'Training कितने समय की होती है?',
+        answer: 'Initial training 22 weeks की होती है जो Indian Naval Academy में होती है। इसके बाद specialized training भी होती है।'
+      }
+    ],
+    relatedSchemes: ['indian-navy-ac', 'indian-army-ssc', 'indian-air-force-flying'],
+    budget: 'रक्षा बजट 2025-26',
+    beneficiaries: 'Graduate Students',
+    successRate: '8-12%'
+  },
   // Continue with more 175 schemes...
 ];
 
