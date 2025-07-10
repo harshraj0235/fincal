@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Award, Target, Calculator } from 'lucide-react';
+import { ArrowLeft, Award, Target, Calculator, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const AboutUs: React.FC = () => {
@@ -107,6 +107,42 @@ export const AboutUs: React.FC = () => {
           <p className="text-lg text-neutral-700">
             Today, FinCalc India serves millions of users across the country, helping individuals, families, and small businesses make better financial decisions through accurate calculations and educational resources.
           </p>
+        </div>
+      </div>
+
+      {/* About Me Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center flex items-center justify-center">
+          <User className="h-6 w-6 text-primary-600 mr-2" />
+          About Me
+        </h2>
+        <div className="bg-white rounded-xl shadow-md p-8 flex flex-col items-center">
+          {/* If you have a photo, add an <img> tag here. Example: */}
+          {/* <img src="YOUR_PHOTO_URL" alt="Harsh Raj" className="w-28 h-28 rounded-full object-cover border-2 border-green-600 mb-4" /> */}
+          <div className="text-center">
+            <h3 className="text-xl font-bold text-green-800 mb-2">Harsh Raj</h3>
+            <p className="text-neutral-700 mb-4">
+              Harsh Raj is a Software Engineer with years of experience helping people make smart investment decisions. Passionate about financial literacy and transparent, trustworthy guidance.
+            </p>
+            <div className="flex justify-center gap-4">
+              <a
+                href="https://www.linkedin.com/in/harshitpatel9/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-800 hover:underline font-medium"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://x.com/harshitx9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline font-medium"
+              >
+                Twitter (X)
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       
