@@ -23,8 +23,9 @@ export const Blog: React.FC = () => {
 
   const todayStr = getTodayDateString();
 
-  // Combine and sort posts
-  const allArticles = [...newPosts, ...oldPosts];
+  // Combine and sort posts by id descending (last id first)
+  const allArticles = [...newPosts, ...oldPosts].sort((a, b) => b.id - a.id);
+
   // Filter/search logic
   const matchesFilter = (post: typeof allArticles[0]) => {
     const matchesSearch =
@@ -38,11 +39,9 @@ export const Blog: React.FC = () => {
 
   // Separate today's posts and the rest for sorting
   const todaysPosts = allArticles
-    .filter(post => post.date === todayStr && matchesFilter(post))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .filter(post => post.date === todayStr && matchesFilter(post));
   const notTodaysPosts = allArticles
-    .filter(post => post.date !== todayStr && matchesFilter(post))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .filter(post => post.date !== todayStr && matchesFilter(post));
   const filteredPosts = [...todaysPosts, ...notTodaysPosts];
 
   // Pagination logic (only for blog list, not for Govt Schemes section)
