@@ -234,11 +234,6 @@ const GovernmentSchemePost: React.FC = () => {
           </div>
         </div>
 
-        {/* Disclaimer */}
-        <div className="mb-10 bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-xs sm:text-sm text-yellow-800">
-          <b>Disclaimer:</b> This content is for educational purposes only. I am not a certified financial expert or advisor. All information is based on personal experience, research, and knowledge, and should not be considered as professional or legal advice. Please consult with a qualified expert before making any financial decisions. All risks associated with your actions are your own responsibility. If you find any mistakes or inaccuracies, please contact me as soon as possible so I can make corrections. I try my best to comply with all applicable laws in India.
-        </div>
-
         {/* FAQ Section */}
         {scheme.faqSchema && scheme.faqSchema.length > 0 && (
           <div className="mt-12 bg-white p-4 sm:p-6 rounded-lg shadow-sm border">
@@ -285,6 +280,11 @@ const GovernmentSchemePost: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* Disclaimer at the very bottom */}
+        <div className="mb-10 mt-12 bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-xs sm:text-sm text-yellow-800">
+          <b>Disclaimer:</b> This content is for educational purposes only. I am not a certified financial expert or advisor. All information is based on personal experience, research, and knowledge, and should not be considered as professional or legal advice. Please consult with a qualified expert before making any financial decisions. All risks associated with your actions are your own responsibility. If you find any mistakes or inaccuracies, please contact me as soon as possible so I can make corrections. I try my best to comply with all applicable laws in India.
+        </div>
       </div>
     </div>
   );
