@@ -8,6 +8,8 @@ import {
   BookOpen,
   Filter,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { governmentSchemes, schemeCategories } from '../data/governmentSchemesData';
 
@@ -43,11 +45,14 @@ const statusOptions = [
   { value: 'future', label: 'Future Schemes', labelHindi: 'भविष्य की योजनाएं' },
 ];
 
+const PAGE_SIZE = 15;
+
 const GovernmentSchemes: React.FC = () => {
   // States
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedStatus, setSelectedStatus] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Defensive data checks (improve production robustness)
   const schemes: Scheme[] = Array.isArray(governmentSchemes)
@@ -67,16 +72,17 @@ const GovernmentSchemes: React.FC = () => {
     return counts;
   }, [schemes, categories]);
 
-  // Filtered schemes
+  // Filtered and sorted schemes
   const filteredSchemes = useMemo(() => {
-    return schemes.filter((scheme) => {
+    let result = schemes.filter((scheme) => {
+      const search = searchTerm.trim().toLowerCase();
       const matchesSearch =
-        !searchTerm ||
-        scheme.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        scheme.titleHindi.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        scheme.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        !search ||
+        scheme.title.toLowerCase().includes(search) ||
+        scheme.titleHindi.toLowerCase().includes(search) ||
+        scheme.excerpt.toLowerCase().includes(search) ||
         scheme.keywords.some((keyword) =>
-          keyword.toLowerCase().includes(searchTerm.toLowerCase())
+          keyword.toLowerCase().includes(search)
         );
 
       const matchesCategory =
@@ -87,7 +93,41 @@ const GovernmentSchemes: React.FC = () => {
 
       return matchesSearch && matchesCategory && matchesStatus;
     });
+
+    // Descending order by id (assuming id is numeric or can be sorted as string)
+    result = result.slice().sort((a, b) => {
+      // If id is numeric, use Number(a.id)
+      // If id is string but sortable, use localeCompare
+      // Let's try numeric first, fallback to string compare
+      const numA = Number(a.id);
+      const numB = Number(b.id);
+      if (!isNaN(numA) && !isNaN(numB)) {
+        return numB - numA;
+      }
+      return b.id.localeCompare(a.id);
+    });
+
+    return result;
   }, [schemes, searchTerm, selectedCategory, selectedStatus]);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredSchemes.length / PAGE_SIZE);
+  const paginatedSchemes = useMemo(() => {
+    const start = (currentPage - 1) * PAGE_SIZE;
+    return filteredSchemes.slice(start, start + PAGE_SIZE);
+  }, [filteredSchemes, currentPage]);
+
+  // Handle page change
+  const goToPage = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Reset page when filters/search change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategory, selectedStatus]);
 
   // Error fallback UI if no data
   if (!schemes.length) {
@@ -104,6 +144,62 @@ const GovernmentSchemes: React.FC = () => {
       </div>
     );
   }
+
+  // Pagination buttons (mobile friendly)
+  const Pagination = () => {
+    if (totalPages <= 1) return null;
+
+    // Show up to 3 pages before and after current, and always first/last
+    const pages: number[] = [];
+    for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
+      pages.push(i);
+    }
+    if (!pages.includes(1)) pages.unshift(1);
+    if (!pages.includes(totalPages)) pages.push(totalPages);
+
+    // Remove duplicates, keep order
+    const uniquePages = Array.from(new Set(pages));
+
+    return (
+      <nav
+        className="flex flex-wrap items-center justify-center gap-2 mt-10 mb-6"
+        aria-label="Pagination"
+      >
+        <button
+          className="flex items-center px-3 py-2 rounded-lg bg-white text-green-700 border border-green-200 hover:bg-green-50 transition disabled:opacity-50"
+          onClick={() => goToPage(currentPage - 1)}
+          disabled={currentPage === 1}
+          aria-label="Previous Page"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <div className="flex flex-nowrap overflow-x-auto gap-2">
+          {uniquePages.map((page, idx) => (
+            <button
+              key={page}
+              onClick={() => goToPage(page)}
+              className={`px-3 py-2 rounded-lg text-sm font-medium ${
+                page === currentPage
+                  ? 'bg-green-600 text-white shadow'
+                  : 'bg-white text-green-700 border border-green-200 hover:bg-green-50'
+              } transition`}
+              aria-current={page === currentPage ? 'page' : undefined}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+        <button
+          className="flex items-center px-3 py-2 rounded-lg bg-white text-green-700 border border-green-200 hover:bg-green-50 transition disabled:opacity-50"
+          onClick={() => goToPage(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          aria-label="Next Page"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </nav>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -217,7 +313,7 @@ const GovernmentSchemes: React.FC = () => {
 
         {/* Schemes Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSchemes.map((scheme) => (
+          {paginatedSchemes.map((scheme) => (
             <Link
               key={scheme.id}
               to={`/government-schemes/${scheme.slug}`}
@@ -321,10 +417,13 @@ const GovernmentSchemes: React.FC = () => {
           </div>
         )}
 
+        {/* Pagination */}
+        {filteredSchemes.length > 0 && <Pagination />}
+
         {/* Results Count */}
         {filteredSchemes.length > 0 && (
-          <div className="mt-8 text-center text-gray-500 text-sm">
-            {filteredSchemes.length} में से {filteredSchemes.length} योजनाएं दिखा रहा है
+          <div className="mt-2 text-center text-gray-500 text-sm">
+            {filteredSchemes.length} में से {paginatedSchemes.length} योजनाएं दिखा रहा है (पृष्ठ {currentPage} / {totalPages})
           </div>
         )}
       </div>
