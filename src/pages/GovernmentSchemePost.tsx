@@ -1,14 +1,21 @@
 import React, { useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Calendar, ArrowLeft, Share2, ChevronRight } from 'lucide-react';
+import { Calendar, ArrowLeft, Share2, ChevronRight, Copy as CopyIcon } from 'lucide-react';
 import { getGovernmentSchemeBySlug, getRelatedGovernmentSchemes } from '../data/governmentSchemesData';
-import SEOHelmet from '../components/SEOHelmet'; // FIXED: Default import
+import SEOHelmet from '../components/SEOHelmet';
 
 interface TocItem {
   idx: number;
   text: string | undefined;
   type: 'heading' | 'subheading';
 }
+
+const AUTHOR = {
+  name: 'Harsh Raj',
+  linkedin: 'https://www.linkedin.com/in/harshitpatel9/',
+  twitter: 'https://x.com/harshitx9',
+  bio: 'Harsh Raj is a Software Engineer with years of experience helping people make smart investment decisions. Passionate about financial literacy and transparent, trustworthy guidance.'
+};
 
 const GovernmentSchemePost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -29,16 +36,31 @@ const GovernmentSchemePost: React.FC = () => {
       .filter((item): item is TocItem => item !== null);
   }, [scheme]);
 
-  // Share handler
-  const handleShare = () => {
+  // Share Link handlers
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Link copied to clipboard!');
+  };
+
+  const shareUrls = useMemo(() => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(scheme?.title ?? '');
+    return {
+      whatsapp: `https://wa.me/?text=${text}%20${url}`,
+      twitter: `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+      linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`,
+    };
+  }, [scheme]);
+
+  const handleNativeShare = () => {
     if (navigator.share) {
       navigator.share({
         title: scheme?.title,
         url: window.location.href,
       });
     } else {
-      navigator.clipboard.writeText(window.location.href);
-      alert('Link copied to clipboard!');
+      handleCopyLink();
     }
   };
 
@@ -68,8 +90,8 @@ const GovernmentSchemePost: React.FC = () => {
               'bg-purple-500'
             }`}>
               {scheme.status === 'active' ? 'सक्रिय योजना' :
-               scheme.status === 'upcoming' ? 'आगामी योजना' :
-               scheme.status === 'past' ? 'पुरानी योजना' : 'भविष्य की योजना'}
+                scheme.status === 'upcoming' ? 'आगामी योजना' :
+                scheme.status === 'past' ? 'पुरानी योजना' : 'भविष्य की योजना'}
             </div>
             <div className="flex items-center gap-1 text-xs sm:text-sm">
               <Calendar className="h-4 w-4" />
@@ -82,7 +104,7 @@ const GovernmentSchemePost: React.FC = () => {
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">{scheme.titleHindi}</h1>
           <p className="text-lg sm:text-xl opacity-90 mb-6">{scheme.excerptHindi}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-4 items-center">
             <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs sm:text-sm">{scheme.categoryHindi}</span>
             {scheme.budget && (
               <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs sm:text-sm">बजट: {scheme.budget}</span>
@@ -90,9 +112,27 @@ const GovernmentSchemePost: React.FC = () => {
             {scheme.beneficiaries && (
               <span className="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs sm:text-sm">{scheme.beneficiaries} लाभार्थी</span>
             )}
-            <button onClick={handleShare} className="ml-auto flex items-center gap-1 px-3 py-1 rounded bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors text-xs sm:text-sm">
-              <Share2 className="h-4 w-4" /> शेयर करें
-            </button>
+            {/* Social/Copy/Share Buttons */}
+            <div className="ml-auto flex gap-1 items-center">
+              <button onClick={handleNativeShare} className="flex items-center gap-1 px-2 py-1 rounded bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors text-xs sm:text-sm" title="शेयर करें">
+                <Share2 className="h-4 w-4" /> शेयर करें
+              </button>
+              <button onClick={handleCopyLink} className="flex items-center gap-1 px-2 py-1 rounded bg-white bg-opacity-20 hover:bg-opacity-30 transition-colors text-xs sm:text-sm" title="कॉपी करें">
+                <CopyIcon className="h-4 w-4" /> कॉपी लिंक
+              </button>
+              <a href={shareUrls.whatsapp} target="_blank" rel="noopener noreferrer" className="px-2 py-1 rounded bg-[#25d366] hover:bg-[#22b358] transition-colors text-xs sm:text-sm text-white" title="WhatsApp">
+                WhatsApp
+              </a>
+              <a href={shareUrls.twitter} target="_blank" rel="noopener noreferrer" className="px-2 py-1 rounded bg-[#1da1f2] hover:bg-[#1875b2] transition-colors text-xs sm:text-sm text-white" title="X">
+                X
+              </a>
+              <a href={shareUrls.facebook} target="_blank" rel="noopener noreferrer" className="px-2 py-1 rounded bg-[#4267B2] hover:bg-[#324d8c] transition-colors text-xs sm:text-sm text-white" title="Facebook">
+                Facebook
+              </a>
+              <a href={shareUrls.linkedin} target="_blank" rel="noopener noreferrer" className="px-2 py-1 rounded bg-[#0077b5] hover:bg-[#005983] transition-colors text-xs sm:text-sm text-white" title="LinkedIn">
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -182,6 +222,23 @@ const GovernmentSchemePost: React.FC = () => {
           })}
         </article>
 
+        {/* Author Box */}
+        <div className="mt-12 mb-10 bg-white p-5 rounded-lg shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-4 border border-green-100">
+          <div>
+            <div className="font-bold text-lg text-green-800">{AUTHOR.name}</div>
+            <div className="text-gray-700 text-sm mb-2">{AUTHOR.bio}</div>
+            <div className="flex gap-3 mt-1">
+              <a href={AUTHOR.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:underline text-xs sm:text-sm">LinkedIn</a>
+              <a href={AUTHOR.twitter} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-xs sm:text-sm">Twitter (X)</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="mb-10 bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-xs sm:text-sm text-yellow-800">
+          <b>Disclaimer:</b> This content is for educational purposes only. I am not a certified financial expert or advisor. All information is based on personal experience, research, and knowledge, and should not be considered as professional or legal advice. Please consult with a qualified expert before making any financial decisions. All risks associated with your actions are your own responsibility. If you find any mistakes or inaccuracies, please contact me as soon as possible so I can make corrections. I try my best to comply with all applicable laws in India.
+        </div>
+
         {/* FAQ Section */}
         {scheme.faqSchema && scheme.faqSchema.length > 0 && (
           <div className="mt-12 bg-white p-4 sm:p-6 rounded-lg shadow-sm border">
@@ -219,7 +276,7 @@ const GovernmentSchemePost: React.FC = () => {
                         'bg-gray-100 text-gray-700'
                       }`}>
                         {relatedScheme.status === 'active' ? 'सक्रिय' :
-                         relatedScheme.status === 'upcoming' ? 'आगामी' : 'पुरानी'}
+                          relatedScheme.status === 'upcoming' ? 'आगामी' : 'पुरानी'}
                       </span>
                     </div>
                   </div>
