@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { formatCurrency } from '../utils/calculatorUtils';
 import { CreditCard, Calendar, ArrowRight, Info, ExternalLink } from 'lucide-react';
-import Link from 'next/link'; // Remove if not using Next.js, else use <a>
 
 const PROVIDERS = [
   { key: 'custom', name: 'Custom', url: '' },
@@ -183,7 +182,7 @@ export const BnplCalculator: React.FC = () => {
   // ---- Main Render ----
   return (
     <main className="max-w-5xl mx-auto px-2 py-8" itemScope itemType="https://schema.org/FinancialProduct">
-      {/* SEO Meta & JSON-LD (move to Head if Next.js) */}
+      {/* SEO Meta & JSON-LD (move to Head if using react-helmet or similar) */}
       <title>BNPL Calculator India – EMI, Eligibility, FAQs | Fincal</title>
       <meta
         name="description"
@@ -201,8 +200,8 @@ export const BnplCalculator: React.FC = () => {
       </p>
       {/* Internal Links */}
       <div className="mb-6 flex gap-4 flex-wrap text-sm">
-        <Link href="/" className="text-blue-600 underline">🏠 Home</Link>
-        <Link href="/calculators/EmiCalculator" className="text-blue-600 underline">📊 EMI Calculator</Link>
+        <a href="/" className="text-blue-600 underline">🏠 Home</a>
+        <a href="/calculators/EmiCalculator" className="text-blue-600 underline">📊 EMI Calculator</a>
         <a href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline flex items-center gap-1">
           RBI <ExternalLink className="w-3 h-3" />
         </a>
