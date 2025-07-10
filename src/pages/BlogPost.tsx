@@ -19,23 +19,15 @@ export const BlogPost: React.FC = () => {
 
   const post = getBlogPostBySlug(slug || '');
 
-  // --- Updated relatedPosts logic to always show at least 5 ---
-  // Try to get up to 10 related posts (more for fallback), exclude current post by slug
+  // Always show at least 5 related posts (mixing related & latest, excluding current and duplicates)
   let relatedPosts = getRelatedPosts(slug || '', 10).filter(p => p.slug !== slug);
-
-  // Fallback: If less than 5, fill with latest posts (excluding current and duplicates)
   if (relatedPosts.length < 5) {
-    const latestPosts = getLatestPosts(10) // adjust the count as needed
-      .filter(
-        p =>
-          p.slug !== slug &&
-          !relatedPosts.some(rp => rp.id === p.id)
-      );
+    const latestPosts = getLatestPosts(10)
+      .filter(p => p.slug !== slug && !relatedPosts.some(rp => rp.id === p.id));
     relatedPosts = [...relatedPosts, ...latestPosts].slice(0, 5);
   } else {
     relatedPosts = relatedPosts.slice(0, 5);
   }
-  // ----------------------------------------------------------
 
   function shareOn(platform: 'facebook' | 'twitter' | 'linkedin') {
     const url = window.location.href;
@@ -296,7 +288,6 @@ export const BlogPost: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  {/* --- Updated link as requested below --- */}
                   <a
                     href="https://moneycal.in/calculators/post-office-calculator"
                     target="_blank"
