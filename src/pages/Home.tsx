@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense, useMemo, useTransition } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, 
-  Building, Shield, ChevronRight
-} from 'lucide-react';
+import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, ChevronRight } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
@@ -520,8 +517,8 @@ export const Home: React.FC = () => {
                         alt={scheme.titleHindi}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
-                        width="400"
-                        height="300"
+                        width={400}
+                        height={300}
                       />
                     </picture>
                     <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-green-600 text-white shadow">
@@ -704,14 +701,14 @@ export const Home: React.FC = () => {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
               <div className="h-48 overflow-hidden">
                 <picture>
-                  <source srcSet="/images/optimized/pexels-photo-7063778.webp" type="image/webp" />
+                  <source srcSet="https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
                   <img 
-                    src="/images/optimized/pexels-photo-7063778.jpeg" 
+                    src="https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                     alt="Sukanya Samriddhi Yojana" 
                     className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
                     loading="lazy"
-                    width="400"
-                    height="300"
+                    width={400}
+                    height={300}
                   />
                 </picture>
               </div>
@@ -738,14 +735,14 @@ export const Home: React.FC = () => {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
               <div className="h-48 overflow-hidden">
                 <picture>
-                  <source srcSet="/images/optimized/pexels-photo-7876708.webp" type="image/webp" />
+                  <source srcSet="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
                   <img 
-                    src="/images/optimized/pexels-photo-7876708.jpeg" 
+                    src="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                     alt="National Pension System" 
                     className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
                     loading="lazy"
-                    width="400"
-                    height="300"
+                    width={400}
+                    height={300}
                   />
                 </picture>
               </div>
@@ -772,14 +769,14 @@ export const Home: React.FC = () => {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
               <div className="h-48 overflow-hidden">
                 <picture>
-                  <source srcSet="/images/optimized/pexels-photo-6693661.webp" type="image/webp" />
+                  <source srcSet="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
                   <img 
-                    src="/images/optimized/pexels-photo-6693661.jpeg" 
+                    src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                     alt="Tax Saving Options" 
                     className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
                     loading="lazy"
-                    width="400"
-                    height="300"
+                    width={400}
+                    height={300}
                   />
                 </picture>
               </div>
@@ -844,14 +841,14 @@ export const Home: React.FC = () => {
               <div className="hidden md:block relative">
                 <div className="absolute inset-0 bg-black opacity-20"></div>
                 <picture>
-                  <source srcSet="/images/optimized/pexels-photo-6802042.webp" type="image/webp" />
+                  <source srcSet="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
                   <img 
-                    src="/images/optimized/pexels-photo-6802042.jpeg" 
+                    src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                     alt="Financial planning" 
                     className="h-full w-full object-cover"
                     loading="lazy"
-                    width="400"
-                    height="300"
+                    width={600}
+                    height={400}
                   />
                 </picture>
               </div>
@@ -862,7 +859,9 @@ export const Home: React.FC = () => {
       
       {/* Categories Section */}
       <section ref={categoriesRef} id="categories-section" className="py-16 bg-neutral-50">
-        <CategorySection />
+        <Suspense fallback={<div className="text-center py-8">Loading categories...</div>}>
+          <CategorySection />
+        </Suspense>
       </section>
     </div>
     </>
