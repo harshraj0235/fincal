@@ -218,16 +218,7 @@ export const Home: React.FC = () => {
           ))}
         </div>
         <div className="flex justify-center mt-6">
-          <button
-            className="text-blue-600 font-semibold hover:underline"
-            onClick={() => {
-              if (allCalculatorsRef.current) {
-                allCalculatorsRef.current.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            View all 12 calculators
-          </button>
+          <Link to="/category/loan-calculators" className="text-blue-600 font-semibold hover:underline">View all 12 calculators</Link>
         </div>
       </section>
       {/* Blog Highlights */}
