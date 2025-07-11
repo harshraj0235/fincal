@@ -7,7 +7,7 @@ import NewsSubmissionForm from "../components/NewsSubmissionForm";
 import CommentsSection from "../components/CommentsSection";
 import { blogPosts as blogPosts0 } from "../data/blogData";
 import { blogPosts as blogPosts1 } from "../data/blogData1";
-import { governmentSchemesData } from "../data/governmentSchemesData";
+import { governmentSchemes } from "../data/governmentSchemesData";
 import { calculatorCategories } from "../data/calculatorData";
 
 function getRandomElements<T>(arr: T[], n: number): T[] {
@@ -19,8 +19,8 @@ const NewsHub: React.FC = () => {
   const [searchResults, setSearchResults] = useState<string[]>([]);
 
   // Flatten calculators
-  const calculators = calculatorCategories.flatMap(cat => cat.calculators.map(calc => ({
-    id: calc.id,
+  const calculators: NewsItem[] = calculatorCategories.flatMap(cat => cat.calculators.map(calc => ({
+    id: String(calc.id),
     title: calc.name,
     summary: calc.description,
     category: cat.name,
@@ -29,43 +29,36 @@ const NewsHub: React.FC = () => {
   })));
 
   // Map blog posts
-  const allBlogs = [
+  const allBlogs: NewsItem[] = [
     ...blogPosts0.map(post => ({
-      id: post.id,
+      id: String(post.id),
       title: post.title,
-      summary: post.excerpt || post.summary || post.description || "",
-      category: post.categories?.[0] || post.category || "अन्य",
-      date: post.publishedDate || post.date || "",
+      summary: post.excerpt || "",
+      category: post.categories?.[0] || "अन्य",
+      date: post.date || "",
       slug: `/blog/${post.slug}`
     })),
     ...blogPosts1.map(post => ({
-      id: post.id,
+      id: String(post.id),
       title: post.title,
-      summary: post.excerpt || post.summary || post.description || "",
-      category: post.categories?.[0] || post.category || "अन्य",
-      date: post.publishedDate || post.date || "",
+      summary: post.excerpt || "",
+      category: post.categories?.[0] || "अन्य",
+      date: post.date || "",
       slug: `/blog/${post.slug}`
     })),
-    ...governmentSchemesData.map(scheme => ({
-      id: scheme.id,
+    ...governmentSchemes.map(scheme => ({
+      id: String(scheme.id),
       title: scheme.title,
-      summary: scheme.summary || scheme.description || "",
+      summary: scheme.seoDescription || "",
       category: scheme.category || "सरकारी योजना",
-      date: scheme.publishedDate || scheme.date || "",
+      date: "",
       slug: `/government-schemes/${scheme.slug}`
     })),
     ...calculators
   ];
 
   // Pick 6 random blogs/calculators/schemes
-  const randomBlogs: NewsItem[] = getRandomElements(allBlogs, 6).map(item => ({
-    id: item.id,
-    title: item.title,
-    summary: item.summary,
-    category: item.category,
-    date: item.date,
-    slug: item.slug
-  }));
+  const randomBlogs: NewsItem[] = getRandomElements(allBlogs, 6);
 
   // NewsList now expects a click handler to open the slug
   const handleNewsClick = (slug: string) => {
