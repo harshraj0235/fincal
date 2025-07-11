@@ -48755,7 +48755,7 @@ id: '125',
           'IT सेक्टर: TCS, Infosys, Wipro, HCL, Tech Mahindra',
           'बैंकिंग: SBI, HDFC, ICICI, Axis Bank, Kotak',
           'मैन्युफैक्चरिंग: Tata, Mahindra, Bajaj, L&T, Godrej',
-          'फार्मा: Sun Pharma, Dr. Reddy's, Cipla, Lupin',
+          'फार्मा: Sun Pharma, Dr. Reddys, Cipla, Lupin',
           'रिटेल: Reliance, Flipkart, Amazon, Myntra',
           'टेलीकॉम: Airtel, Jio, Vi, BSNL'
         ]
@@ -48925,7 +48925,7 @@ id: '125',
     beneficiaries: '1 करोड़ युवा',
     successRate: '96%'
   },
-  
+
   // Continue with more 175 schemes...
 ];
 
