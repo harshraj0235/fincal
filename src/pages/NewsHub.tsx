@@ -1,30 +1,76 @@
 import React, { useState } from "react";
 import NewsSearchBar from "../components/NewsSearchBar";
 import NewsList, { NewsItem } from "../components/NewsList";
-import { optimizedBlogPosts } from "../data/optimizedBlogPosts";
 import BlogSuggestions from "../components/BlogSuggestions";
 import DeshiChat from "../components/DeshiChat";
 import NewsSubmissionForm from "../components/NewsSubmissionForm";
 import CommentsSection from "../components/CommentsSection";
+import { blogPosts as blogPosts0 } from "../data/blogData";
+import { blogPosts as blogPosts1 } from "../data/blogData1";
+import { governmentSchemesData } from "../data/governmentSchemesData";
+import { calculatorCategories } from "../data/calculatorData";
 
-// Placeholder components (to be implemented)
-// import NewsList from "../components/NewsList";
-// import DeshiChat from "../components/DeshiChat";
-// import BlogSuggestions from "../components/BlogSuggestions";
-// import NewsSubmissionForm from "../components/NewsSubmissionForm";
-// import CommentsSection from "../components/CommentsSection";
+function getRandomElements<T>(arr: T[], n: number): T[] {
+  const shuffled = arr.slice().sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, n);
+}
 
 const NewsHub: React.FC = () => {
   const [searchResults, setSearchResults] = useState<string[]>([]);
 
-  // Map EnhancedBlogPost to NewsItem for NewsList
-  const latestNews: NewsItem[] = optimizedBlogPosts.slice(0, 6).map(post => ({
-    id: post.id,
-    title: post.title,
-    summary: post.excerpt,
-    category: post.categories[0] || "अन्य",
-    date: post.publishedDate.split("T")[0],
+  // Flatten calculators
+  const calculators = calculatorCategories.flatMap(cat => cat.calculators.map(calc => ({
+    id: calc.id,
+    title: calc.name,
+    summary: calc.description,
+    category: cat.name,
+    date: "",
+    slug: `/calculators/${calc.id}`
+  })));
+
+  // Map blog posts
+  const allBlogs = [
+    ...blogPosts0.map(post => ({
+      id: post.id,
+      title: post.title,
+      summary: post.excerpt || post.summary || post.description || "",
+      category: post.categories?.[0] || post.category || "अन्य",
+      date: post.publishedDate || post.date || "",
+      slug: `/blog/${post.slug}`
+    })),
+    ...blogPosts1.map(post => ({
+      id: post.id,
+      title: post.title,
+      summary: post.excerpt || post.summary || post.description || "",
+      category: post.categories?.[0] || post.category || "अन्य",
+      date: post.publishedDate || post.date || "",
+      slug: `/blog/${post.slug}`
+    })),
+    ...governmentSchemesData.map(scheme => ({
+      id: scheme.id,
+      title: scheme.title,
+      summary: scheme.summary || scheme.description || "",
+      category: scheme.category || "सरकारी योजना",
+      date: scheme.publishedDate || scheme.date || "",
+      slug: `/government-schemes/${scheme.slug}`
+    })),
+    ...calculators
+  ];
+
+  // Pick 6 random blogs/calculators/schemes
+  const randomBlogs: NewsItem[] = getRandomElements(allBlogs, 6).map(item => ({
+    id: item.id,
+    title: item.title,
+    summary: item.summary,
+    category: item.category,
+    date: item.date,
+    slug: item.slug
   }));
+
+  // NewsList now expects a click handler to open the slug
+  const handleNewsClick = (slug: string) => {
+    window.open(slug, "_blank");
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-green-100 py-6 px-2 md:px-8 lg:px-32">
@@ -55,7 +101,7 @@ const NewsHub: React.FC = () => {
       <section className="mb-8">
         <div className="bg-white rounded-lg shadow p-4">
           <h2 className="text-2xl font-bold text-green-600 mb-2">लेटेस्ट न्यूज़</h2>
-          <NewsList news={latestNews} />
+          <NewsList news={randomBlogs} onNewsClick={handleNewsClick} />
         </div>
       </section>
 
