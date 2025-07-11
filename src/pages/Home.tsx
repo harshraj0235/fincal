@@ -218,7 +218,16 @@ export const Home: React.FC = () => {
           ))}
         </div>
         <div className="flex justify-center mt-6">
-          <Link to="/calculators/emi-calculator" className="text-blue-600 font-semibold hover:underline">View All Calculators</Link>
+          <button
+            className="text-blue-600 font-semibold hover:underline"
+            onClick={() => {
+              if (allCalculatorsRef.current) {
+                allCalculatorsRef.current.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            View all 12 calculators
+          </button>
         </div>
       </section>
       {/* Blog Highlights */}
@@ -266,6 +275,33 @@ export const Home: React.FC = () => {
       <section ref={categoriesRef} id="categories-section" className="py-16 bg-neutral-50">
         <CategorySection />
       </section>
+      {/* All Calculators Section */}
+      <div id="categories" ref={allCalculatorsRef} className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">All Calculators</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Browse our comprehensive collection of financial calculators organized by category
+            </p>
+          </div>
+          {/* The rest of the all calculators grid remains unchanged */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {calculatorCategories.flatMap(category =>
+              category.calculators.map(calculator => (
+                <Link
+                  key={calculator.id}
+                  to={`/calculators/${calculator.id}`}
+                  className="group bg-white rounded-xl shadow hover:shadow-2xl transition-shadow border border-gray-100 hover:border-blue-200 p-6 flex flex-col items-start hover:-translate-y-1"
+                >
+                  <div className="text-lg font-semibold text-blue-700 group-hover:text-blue-900 mb-2">{calculator.name}</div>
+                  <div className="text-sm text-neutral-600 mb-3 line-clamp-2">{calculator.description}</div>
+                  <span className="mt-auto text-xs text-green-600 font-medium">Try Now →</span>
+                </Link>
+              ))
+            )}
+          </div>
+        </div>
+      </div>
       {/* Footer */}
       <footer className="bg-gradient-to-r from-blue-700 to-green-700 text-white py-8 mt-12">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
