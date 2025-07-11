@@ -274,15 +274,19 @@ const FinancePostCard: React.FC<FinancePostCardProps> = ({
       {/* Card Image */}
       {post.image && (
         <div className="relative h-48 overflow-hidden">
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
-            }}
-          />
+          <picture>
+            <source srcSet={post.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+              }}
+            />
+          </picture>
           <div className="absolute top-2 left-2">
             <span className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
               {post.category || 'Finance'}

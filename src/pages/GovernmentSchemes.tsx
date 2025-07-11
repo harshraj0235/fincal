@@ -252,12 +252,15 @@ const GovernmentSchemes: React.FC = () => {
               style={{ minHeight: 120 }}
             >
               <div className="flex-shrink-0 w-full sm:w-36 bg-gray-100 flex items-center justify-center border-r-2 border-black">
-                <img
-                  src={scheme.coverImage}
-                  alt={scheme.title}
-                  className="w-full h-28 sm:h-36 object-cover group-hover:scale-110 transition-transform duration-200"
-                  loading="lazy"
-                />
+                <picture>
+                  <source srcSet={`${scheme.coverImage}.webp`} type="image/webp" />
+                  <img
+                    src={scheme.coverImage}
+                    alt={scheme.title}
+                    className="w-full h-28 sm:h-36 object-cover group-hover:scale-110 transition-transform duration-200"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               <div className="flex-1 p-3 flex flex-col justify-between">
                 <div>

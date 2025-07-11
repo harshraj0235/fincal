@@ -97,11 +97,15 @@ export const BlogPost: React.FC = () => {
                 </div>
                 {post.coverImage && (
                   <div className="mt-6 rounded-xl overflow-hidden shadow-md">
-                    <img
-                      src={post.coverImage}
-                      alt={post.title}
-                      className="w-full aspect-[16/9] object-cover"
-                    />
+                    <picture>
+                      <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-full aspect-[16/9] object-cover"
+                        loading="lazy"
+                      />
+                    </picture>
                   </div>
                 )}
               </header>
@@ -121,11 +125,15 @@ export const BlogPost: React.FC = () => {
                     )}
                     {section.type === 'image' && (
                       <figure className="my-6">
-                        <img
-                          src={section.url}
-                          alt={section.caption || ''}
-                          className="w-full rounded-lg"
-                        />
+                        <picture>
+                          <source srcSet={section.url.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                          <img
+                            src={section.url}
+                            alt={section.caption || ''}
+                            className="w-full rounded-lg"
+                            loading="lazy"
+                          />
+                        </picture>
                         {section.caption && (
                           <figcaption className="text-sm text-neutral-500 text-center mt-2">
                             {section.caption}

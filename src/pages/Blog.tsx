@@ -203,7 +203,7 @@ export const Blog: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-8">
           <Link to={`/blog/${featuredPost.slug}`} className="block group rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-green-50 to-blue-50 hover:shadow-2xl transition-shadow">
             <div className="md:flex">
-              <img src={featuredPost.coverImage} alt={featuredPost.title} className="h-64 w-full md:w-96 object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-t-none group-hover:scale-105 transition-transform duration-300" />
+              <img src={featuredPost.coverImage} alt={featuredPost.title} className="h-64 w-full md:w-96 object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-t-none group-hover:scale-105 transition-transform duration-300" loading="lazy" />
               <div className="p-6 flex flex-col justify-center">
                 <div className="flex items-center text-xs text-gray-500 mb-2">
                   <Calendar className="h-3 w-3 mr-1" />
@@ -336,11 +336,15 @@ export const Blog: React.FC = () => {
                       aria-label={post.title}
                     >
                       <div className="h-48 overflow-hidden rounded-t-lg">
-                        <img
-                          src={post.coverImage}
-                          alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                        />
+                        <picture>
+                          <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                          <img
+                            src={post.coverImage}
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                            loading="lazy"
+                          />
+                        </picture>
                       </div>
                       <div className="p-5">
                         <div className="flex items-center text-xs text-gray-500 mb-3">

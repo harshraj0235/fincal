@@ -182,7 +182,10 @@ const GovernmentSchemePost: React.FC = () => {
               case 'image':
                 return (
                   <div key={idx} className="my-8 text-center">
-                    <img src={section.url} alt={section.caption || ''} className="mx-auto rounded-lg shadow-lg max-h-80 sm:max-h-96 object-contain" />
+                    <picture>
+                      <source srcSet={`${section.url}?w=600&h=400&format=webp`} type="image/webp" />
+                      <img src={section.url} alt={section.caption || ''} className="mx-auto rounded-lg shadow-lg max-h-80 sm:max-h-96 object-contain" loading="lazy" />
+                    </picture>
                     {section.caption && <div className="text-sm text-gray-500 mt-2">{section.caption}</div>}
                   </div>
                 );

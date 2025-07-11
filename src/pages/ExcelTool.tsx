@@ -306,11 +306,15 @@ const ExcelTool: React.FC = () => {
               className="group bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               <div className="relative">
-                <img
-                  src={post.coverImage}
-                  alt={post.title}
-                  className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <picture>
+                  <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </picture>
                 {post.downloadLink && (
                   <div className="absolute top-3 right-3">
                     <div className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
