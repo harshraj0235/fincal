@@ -54,6 +54,7 @@ import AstroFinanceCrystalCalculator from './pages/AstroFinanceCrystalCalculator
 
 // News Reel
 import NewsReel from './pages/NewsReel';
+import NewsHub from './pages/NewsHub';
 
 import ChequeBounceChargesCalculator from './pages/ChequeBounceChargesCalculator';
 import BankTools from './pages/BankTools';
@@ -169,6 +170,8 @@ function App() {
 
               {/* News Reel route */}
               <Route path="/news-reel" element={<NewsReel />} />
+              {/* NewsHub route */}
+              <Route path="/news" element={<NewsHub />} />
 
               {/* Finance Blog Post route */}
               <Route path="/finance/:slug" element={<FinancePostPage />} />
