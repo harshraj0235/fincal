@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { formatCurrency } from "../utils/calculatorUtils";
-import { Sliders, Calculator, Shield, Info, ExternalLink } from "lucide-react";
+import { Sliders, Calculator, Shield, Info, ExternalLink, Twitter, Facebook, Share2 } from "lucide-react";
+
+// Utility to format numbers as Indian currency
+const formatCurrency = (amount: number) => {
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(amount);
+};
+
 
 // SEO/FAQ Schema for Google EEAT, ranking & FAQ rich snippets
 const injectSchema = () => {
@@ -95,7 +105,8 @@ export const TermInsuranceCalculator: React.FC = () => {
 
   // For SEO FAQ schema
   useEffect(() => {
-    injectSchema();
+    const cleanup = injectSchema();
+    return cleanup;
   }, []);
 
   // Premium calculation
@@ -132,14 +143,39 @@ export const TermInsuranceCalculator: React.FC = () => {
     max: number,
     setManual: React.Dispatch<React.SetStateAction<string>>
   ) => {
+    setManual(value);
     let num = Number(value.replace(/[^0-9]/g, ""));
-    if (isNaN(num)) num = min;
+    if (value === "" || isNaN(num)) {
+        return value; // Allow user to clear input
+    }
     if (num < min) num = min;
     if (num > max) num = max;
     setter(num);
-    setManual(value);
     return String(num);
   };
+  
+  // Social Share Handler
+  const handleShare = (platform: 'twitter' | 'facebook' | 'whatsapp') => {
+    const url = "https://fincal.in/term-insurance-calculator";
+    const text = `I just calculated my term insurance premium! For a ${formatCurrency(coverAmount)} cover, it's just ${formatCurrency(monthlyPremium)}/month. Calculate yours here:`;
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
+
+    let shareUrl = "";
+    switch (platform) {
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
+            break;
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedText}`;
+            break;
+        case 'whatsapp':
+            shareUrl = `https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}`;
+            break;
+    }
+    window.open(shareUrl, '_blank', 'noopener,noreferrer');
+  };
+
 
   return (
     <>
@@ -155,7 +191,7 @@ export const TermInsuranceCalculator: React.FC = () => {
         {/* Left: User Inputs */}
         <div className="space-y-6">
           <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
-            <Shield className="w-5 h-5 mr-2 text-[--primary-600]" />
+            <Shield className="w-5 h-5 mr-2 text-blue-600" />
             Term Insurance Details
           </h2>
           <div className="space-y-4">
@@ -178,7 +214,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                   setCoverAmount(Number(e.target.value));
                   setManualCover(e.target.value);
                 }}
-                className="slider"
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
               />
               <input
                 type="text"
@@ -210,7 +246,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                   setAge(Number(e.target.value));
                   setManualAge(e.target.value);
                 }}
-                className="slider"
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
               />
               <input
                 type="text"
@@ -242,7 +278,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                   setPolicyTerm(Number(e.target.value));
                   setManualTerm(e.target.value);
                 }}
-                className="slider"
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
               />
               <input
                 type="text"
@@ -266,7 +302,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                   <button
                     className={`px-4 py-2 rounded-lg text-sm font-medium ${
                       gender === "male"
-                        ? "bg-[--primary-100] text-[--primary-800]"
+                        ? "bg-blue-100 text-blue-800"
                         : "bg-neutral-100 text-neutral-600"
                     }`}
                     onClick={() => setGender("male")}
@@ -276,7 +312,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                   <button
                     className={`px-4 py-2 rounded-lg text-sm font-medium ${
                       gender === "female"
-                        ? "bg-[--primary-100] text-[--primary-800]"
+                        ? "bg-blue-100 text-blue-800"
                         : "bg-neutral-100 text-neutral-600"
                     }`}
                     onClick={() => setGender("female")}
@@ -291,7 +327,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                   id="smoker"
                   checked={smoker}
                   onChange={(e) => setSmoker(e.target.checked)}
-                  className="rounded border-neutral-300 text-[--primary-600] focus:ring-[--primary-500]"
+                  className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500"
                 />
                 <label htmlFor="smoker" className="text-sm font-medium text-neutral-700">
                   Smoker
@@ -307,7 +343,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                     type="checkbox"
                     checked={returnOfPremium}
                     onChange={e => setReturnOfPremium(e.target.checked)}
-                    className="rounded border-neutral-300 text-[--primary-600] mr-2"
+                    className="rounded border-neutral-300 text-blue-600 mr-2"
                   />
                   Return of Premium
                 </label>
@@ -316,7 +352,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                     type="checkbox"
                     checked={criticalIllness}
                     onChange={e => setCriticalIllness(e.target.checked)}
-                    className="rounded border-neutral-300 text-[--primary-600] mr-2"
+                    className="rounded border-neutral-300 text-blue-600 mr-2"
                   />
                   Critical Illness
                 </label>
@@ -325,7 +361,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                     type="checkbox"
                     checked={accidentalDeath}
                     onChange={e => setAccidentalDeath(e.target.checked)}
-                    className="rounded border-neutral-300 text-[--primary-600] mr-2"
+                    className="rounded border-neutral-300 text-blue-600 mr-2"
                   />
                   Accidental Death
                 </label>
@@ -333,8 +369,8 @@ export const TermInsuranceCalculator: React.FC = () => {
             </div>
           </div>
           {/* Premium Summary */}
-          <div className="mt-8 p-6 bg-[--primary-50] rounded-lg border border-[--primary-100]">
-            <h3 className="text-lg font-semibold text-[--primary-900] mb-4">Premium Summary</h3>
+          <div className="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-100">
+            <h3 className="text-lg font-semibold text-blue-900 mb-4">Premium Summary</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-4 bg-white rounded-lg shadow-sm">
                 <p className="text-sm text-neutral-500 mb-1">Annual Premium</p>
@@ -345,7 +381,22 @@ export const TermInsuranceCalculator: React.FC = () => {
                 <p className="text-xl font-bold text-neutral-900">{formatCurrency(monthlyPremium)}</p>
               </div>
             </div>
-            <div className="mt-2 text-xs text-[--accent-700]">
+             {/* Social Share Buttons */}
+            <div className="mt-4 pt-4 border-t border-blue-200">
+                <p className="text-sm text-center font-medium text-blue-800 mb-2">Share Your Results</p>
+                <div className="flex justify-center items-center space-x-3">
+                    <button onClick={() => handleShare('twitter')} className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors duration-200 shadow-sm" aria-label="Share on Twitter">
+                        <Twitter className="w-5 h-5 text-[#1DA1F2]" />
+                    </button>
+                    <button onClick={() => handleShare('facebook')} className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors duration-200 shadow-sm" aria-label="Share on Facebook">
+                        <Facebook className="w-5 h-5 text-[#1877F2]" />
+                    </button>
+                    <button onClick={() => handleShare('whatsapp')} className="p-2 rounded-full bg-white hover:bg-gray-100 transition-colors duration-200 shadow-sm" aria-label="Share on WhatsApp">
+                        <Share2 className="w-5 h-5 text-[#25D366]" />
+                    </button>
+                </div>
+            </div>
+            <div className="mt-2 text-xs text-red-700">
               * Actual premium may vary by insurer, health, add-ons, and latest IRDAI rules.
             </div>
           </div>
@@ -354,7 +405,7 @@ export const TermInsuranceCalculator: React.FC = () => {
         <div className="space-y-6">
           <div className="bg-neutral-50 p-6 rounded-lg">
             <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-              <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+              <Calculator className="w-5 h-5 mr-2 text-blue-600" />
               Policy & Market Information
             </h2>
             <div className="space-y-4">
@@ -376,19 +427,19 @@ export const TermInsuranceCalculator: React.FC = () => {
                   {returnOfPremium && (
                     <div className="flex justify-between">
                       <span>Return of Premium</span>
-                      <span className="font-medium text-[--success-600]">Enabled</span>
+                      <span className="font-medium text-green-600">Enabled</span>
                     </div>
                   )}
                   {criticalIllness && (
                     <div className="flex justify-between">
                       <span>Critical Illness Rider</span>
-                      <span className="font-medium text-[--accent-700]">Enabled</span>
+                      <span className="font-medium text-orange-700">Enabled</span>
                     </div>
                   )}
                   {accidentalDeath && (
                     <div className="flex justify-between">
                       <span>Accidental Death Rider</span>
-                      <span className="font-medium text-[--accent-700]">Enabled</span>
+                      <span className="font-medium text-orange-700">Enabled</span>
                     </div>
                   )}
                 </div>
@@ -410,9 +461,9 @@ export const TermInsuranceCalculator: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-[--accent-50] rounded-lg">
-                <h3 className="text-lg font-medium text-[--accent-900] mb-2">Key Features & Benefits</h3>
-                <ul className="list-disc list-inside space-y-2 text-sm text-[--accent-700]">
+              <div className="p-4 bg-orange-50 rounded-lg">
+                <h3 className="text-lg font-medium text-orange-900 mb-2">Key Features & Benefits</h3>
+                <ul className="list-disc list-inside space-y-2 text-sm text-orange-700">
                   <li>Pure protection for your family at the lowest cost</li>
                   <li>Tax benefits under Sec 80C & 10(10D)</li>
                   <li>Riders for extra protection (critical illness, accidental death, waiver of premium)</li>
@@ -423,7 +474,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                       href="https://irdai.gov.in/document-detail?documentId=1371410"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline text-[--primary-700] flex items-center"
+                      className="underline text-blue-700 flex items-center"
                     >
                       IRDAI Claim Settlement Ratios <ExternalLink className="w-3 h-3 ml-1" />
                     </a>
@@ -434,7 +485,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                       href="https://www.policybazaar.com/life-insurance/term-insurance/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline text-[--primary-700]"
+                      className="underline text-blue-700"
                     >
                       PolicyBazaar <ExternalLink className="w-3 h-3 inline" />
                     </a>
@@ -446,7 +497,7 @@ export const TermInsuranceCalculator: React.FC = () => {
           {/* Unique FAQ for SEO/EEAT */}
           <div className="bg-white p-6 rounded-lg border border-neutral-100">
             <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-              <Info className="w-5 h-5 mr-2 text-[--primary-600]" />
+              <Info className="w-5 h-5 mr-2 text-blue-600" />
               Frequently Asked Questions (FAQs)
             </h2>
             <div className="space-y-4 text-sm">
@@ -458,7 +509,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                   Based on age, sum assured, term, gender, smoking/health, riders, and insurer. Premiums are lowest for young, healthy, non-smoking females. See{" "}
                   <a
                     href="https://irdai.gov.in/document-detail?documentId=1371410"
-                    className="underline text-[--primary-700]"
+                    className="underline text-blue-700"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -507,7 +558,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                   For unbiased data, use{" "}
                   <a
                     href="https://irdai.gov.in/document-detail?documentId=1371410"
-                    className="underline text-[--primary-700]"
+                    className="underline text-blue-700"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -518,7 +569,7 @@ export const TermInsuranceCalculator: React.FC = () => {
                     href="https://www.policybazaar.com/life-insurance/term-insurance/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline text-[--primary-700]"
+                    className="underline text-blue-700"
                   >
                     PolicyBazaar
                   </a>
@@ -532,3 +583,5 @@ export const TermInsuranceCalculator: React.FC = () => {
     </>
   );
 };
+
+export default TermInsuranceCalculator;
