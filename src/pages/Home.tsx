@@ -124,7 +124,7 @@ export const Home: React.FC = () => {
       <SEOHelmet
         title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
         description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users. Get accurate calculations for loans, investments, and tax planning."
-        keywords="financial calculator india, EMI calculator, SIP calculator, income tax, mutual funds, personal finance, investment planning"
+        keywords="financial calculator india, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, loan calculator, investment calculator, personal finance tools, financial planning india, free financial calculator"
         url="/"
         structuredData={homeStructuredData}
         tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax", "mutual funds", "personal finance", "investment planning"]}
