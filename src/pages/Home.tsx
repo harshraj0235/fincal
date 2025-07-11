@@ -517,6 +517,7 @@ export const Home: React.FC = () => {
                       src={scheme.coverImage}
                       alt={scheme.titleHindi}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                     <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-green-600 text-white shadow">
                       {scheme.categoryHindi}
@@ -701,6 +702,7 @@ export const Home: React.FC = () => {
                   src="https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Sukanya Samriddhi Yojana" 
                   className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6">
@@ -729,6 +731,7 @@ export const Home: React.FC = () => {
                   src="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="National Pension System" 
                   className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6">
@@ -757,6 +760,7 @@ export const Home: React.FC = () => {
                   src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Tax Saving Options" 
                   className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                  loading="lazy"
                 />
               </div>
               <div className="p-6">
