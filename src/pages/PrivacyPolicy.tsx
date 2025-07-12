@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
 
 export const PrivacyPolicy: React.FC = () => {
   const navigate = useNavigate();
@@ -10,6 +10,7 @@ export const PrivacyPolicy: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
+      <AstroFinanceButton />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
         <button 

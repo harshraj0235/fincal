@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Download, Plus, FileSpreadsheet, ArrowRight, ArrowLeft, Settings, Star } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
+import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
 // SheetJS for Excel export
 import * as XLSX from 'xlsx';
 
@@ -149,6 +151,8 @@ const ExcelToolBuilder: React.FC = () => {
 
   return (
     <>
+      <WhatsAppBanner />
+      <AstroFinanceButton />
       <SEOHelmet
         title="Excel Tool Builder - Create Custom Excel Sheets Online | FinanceGurus"
         description="Build your own Excel sheet online with a simple, step-by-step wizard. Add fields, formulas, and download your custom Excel file instantly. SEO optimized for Google 2025."
@@ -182,7 +186,7 @@ const ExcelToolBuilder: React.FC = () => {
             <div>
               <h2 className="text-xl font-semibold mb-4 text-blue-700">Choose a Template or Start from Scratch</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                {templates.map((template, idx) => (
+                {templates.map((template) => (
                   <button
                     key={template.name}
                     className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex flex-col items-center hover:bg-blue-100 focus:ring-2 focus:ring-blue-400"

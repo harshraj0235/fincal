@@ -3,12 +3,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calculator, FileText } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { blogPosts } from '../data/blogData';
+import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
 
 export const Sitemap: React.FC = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <>
+      <WhatsAppBanner />
+      <AstroFinanceButton />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 
@@ -182,6 +187,7 @@ export const Sitemap: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BarChart2, TrendingUp, DollarSign, Briefcase, Globe2 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
+import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
 
 const tools = [
   {
@@ -61,30 +63,34 @@ const structuredData = {
   }
 };
 
-const ExcelToolHub = () => (
-  <>
-    <SEOHelmet
-      title="Excel Tool Hub - Personal Finance & Budgeting | Moneycal.in"
-      description="Explore interactive, export-capable Excel tools for budgeting, debt payoff, investments, net worth, and vacation planning. SEO-optimized, device-friendly, and collaborative."
-      url="/excel-tool"
-      structuredData={structuredData}
-      tags={["excel tool", "budget tracker", "debt payoff", "investment tracker", "net worth calculator", "vacation planner"]}
-    />
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 py-10 px-4 flex flex-col items-center">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-center text-blue-800 mb-6 drop-shadow-lg">Excel Tool Hub</h1>
-      <p className="text-lg md:text-xl text-blue-700 text-center mb-10 max-w-2xl">Build, analyze, and export your personal finance data with our interactive, collaborative Excel tools. SEO-optimized, device-friendly, and easy for everyone!</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
-        {tools.map(tool => (
-          <div key={tool.slug} className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:shadow-2xl transition-shadow">
-            <div className="mb-4">{tool.icon}</div>
-            <h2 className="text-xl font-bold text-blue-900 mb-2 text-center">{tool.title}</h2>
-            <p className="text-blue-700 text-center mb-4">{tool.description}</p>
-            <Link to={`/excel-tools/${tool.slug}`} className="mt-auto bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-blue-700 transition-colors">Open</Link>
-          </div>
-        ))}
+const ExcelToolHub: React.FC = () => {
+  return (
+    <>
+      <WhatsAppBanner />
+      <AstroFinanceButton />
+      <SEOHelmet
+        title="Excel Tool Hub - Personal Finance & Budgeting | Moneycal.in"
+        description="Explore interactive, export-capable Excel tools for budgeting, debt payoff, investments, net worth, and vacation planning. SEO-optimized, device-friendly, and collaborative."
+        url="/excel-tool"
+        structuredData={structuredData}
+        tags={["excel tool", "budget tracker", "debt payoff", "investment tracker", "net worth calculator", "vacation planner"]}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 py-10 px-4 flex flex-col items-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center text-blue-800 mb-6 drop-shadow-lg">Excel Tool Hub</h1>
+        <p className="text-lg md:text-xl text-blue-700 text-center mb-10 max-w-2xl">Build, analyze, and export your personal finance data with our interactive, collaborative Excel tools. SEO-optimized, device-friendly, and easy for everyone!</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
+          {tools.map(tool => (
+            <div key={tool.slug} className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:shadow-2xl transition-shadow">
+              <div className="mb-4">{tool.icon}</div>
+              <h2 className="text-xl font-bold text-blue-900 mb-2 text-center">{tool.title}</h2>
+              <p className="text-blue-700 text-center mb-4">{tool.description}</p>
+              <Link to={`/excel-tools/${tool.slug}`} className="mt-auto bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-blue-700 transition-colors">Open</Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 export default ExcelToolHub; 

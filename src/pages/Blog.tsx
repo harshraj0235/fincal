@@ -4,6 +4,8 @@ import { Search, Calendar, User, ArrowRight, Filter, X } from 'lucide-react';
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
 import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
+import SEOHelmet from '../components/SEOHelmet';
 
 // Helper to format today's date to YYYY-MM-DD
 function getTodayDateString() {
@@ -188,6 +190,12 @@ export const Blog: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
+      <AstroFinanceButton />
+      <SEOHelmet
+        title="Finance Blog - Expert Insights, Tips, and Guides"
+        description="Expert insights, tips, and guides to help you make better financial decisions. Stay informed with our comprehensive blog."
+        keywords="finance, investment, tips, guides, personal finance, investment strategies, financial planning"
+      />
       <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b">

@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { Download, Star, Users, FileSpreadsheet, ArrowLeft, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { getExcelToolBySlug } from '../data/excelToolsData';
+import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
 import SimpleDailyExpenseTracker from './SimpleDailyExpenseTracker';
 import MonthlyBudgetPlanner from './MonthlyBudgetPlanner';
 import InvoiceGeneratorBusiness from './InvoiceGeneratorBusiness';
@@ -18,19 +20,23 @@ const ExcelToolDetail: React.FC = () => {
 
   if (!tool) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <FileSpreadsheet className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Excel Tool Not Found</h1>
-          <p className="text-gray-600 mb-4">The Excel tool you're looking for doesn't exist.</p>
-          <Link
-            to="/excel-tools"
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Browse All Excel Tools
-          </Link>
+      <>
+        <WhatsAppBanner />
+        <AstroFinanceButton />
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="text-center">
+            <FileSpreadsheet className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">Excel Tool Not Found</h1>
+            <p className="text-gray-600 mb-4">The Excel tool you're looking for doesn't exist.</p>
+            <Link
+              to="/excel-tools"
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Browse All Excel Tools
+            </Link>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -97,6 +103,8 @@ const ExcelToolDetail: React.FC = () => {
 
   return (
     <>
+      <WhatsAppBanner />
+      <AstroFinanceButton />
       <SEOHelmet
         title={tool.seoTitle}
         description={tool.seoDescription}

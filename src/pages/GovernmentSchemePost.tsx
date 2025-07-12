@@ -4,6 +4,7 @@ import { Calendar, ArrowLeft, Share2, ChevronRight, Copy as CopyIcon } from 'luc
 import { getGovernmentSchemeBySlug, getRelatedGovernmentSchemes } from '../data/governmentSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
 
 interface TocItem {
   idx: number;
@@ -77,6 +78,7 @@ const GovernmentSchemePost: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
+      <AstroFinanceButton />
       <div className="min-h-screen bg-gray-50">
       <SEOHelmet title={scheme.seoTitle} description={scheme.seoDescription} />
       {/* Header Section */}

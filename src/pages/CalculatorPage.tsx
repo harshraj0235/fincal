@@ -4,6 +4,7 @@ import { ArrowLeft, Share2, Bookmark, Info } from 'lucide-react';
 import { getCalculatorById } from '../data/calculatorData';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
 
 // Dynamic import map for calculators
 const calculatorLazyMap: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
@@ -106,116 +107,41 @@ interface CalculatorPageProps {
 export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) => {
   const navigate = useNavigate();
   const calculator = getCalculatorById(calculatorId);
-  
+  const LazyCalculator = calculatorLazyMap[calculatorId];
+
   if (!calculator) {
     return (
-      <>
-        <SEOHelmet
-          title="Calculator Not Found - FinanceGurus Directory"
-          description="The requested financial calculator could not be found. Browse our comprehensive collection of 50+ financial calculators for Indian users."
-          url={`https://moneycal.in/calculators/${calculatorId}`}
-          noIndex={true}
-        />
-      <div className="text-center py-16">
-        <h2 className="text-2xl font-bold text-neutral-900 mb-4">Calculator Not Found</h2>
-        <p className="text-lg text-neutral-600 mb-8">
-          The calculator you're looking for doesn't exist or may have been moved.
-        </p>
-        <button 
-          onClick={() => navigate('/')} 
-          className="btn btn-primary"
-        >
-          Go to Home
-        </button>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <Calculator className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Calculator Not Found</h1>
+          <p className="text-gray-600 mb-4">The calculator you're looking for doesn't exist.</p>
+          <button
+            onClick={() => navigate('/')}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Go Home
+          </button>
+        </div>
       </div>
-      </>
     );
   }
 
-  // Generate structured data for the calculator
-  const calculatorStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": calculator.name,
-    "description": calculator.description,
-    "url": `https://moneycal.in/calculators/${calculatorId}`,
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "INR"
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "FinanceGurus Directory",
-      "url": "https://moneycal.in"
-    },
-    "featureList": [
-      "Free online calculator",
-      "Accurate calculations",
-      "Indian financial context",
-      "Mobile responsive",
-      "No registration required"
-    ],
-    "screenshot": "https://moneycal.in/images/calculator-screenshot.jpg",
-    "softwareVersion": "1.0",
-    "datePublished": "2024-01-01",
-    "dateModified": new Date().toISOString().split('T')[0]
-  };
 
-  // Generate keywords based on calculator type
-  const generateKeywords = () => {
-    const baseKeywords = [
-      calculator.name.toLowerCase(),
-      'calculator',
-      'financial calculator',
-      'india',
-      'free calculator',
-      'online calculator'
-    ];
-    
-    // Add category-specific keywords
-    if (calculator.category.includes('loan')) {
-      baseKeywords.push('loan calculator', 'emi calculator', 'loan emi', 'loan repayment');
-    }
-    if (calculator.category.includes('tax')) {
-      baseKeywords.push('tax calculator', 'income tax', 'tax planning', 'tax saving');
-    }
-    if (calculator.category.includes('investment')) {
-      baseKeywords.push('investment calculator', 'investment planning', 'returns calculator');
-    }
-    
-    return baseKeywords.join(', ');
-  };
-
-  // Generate description
-  const generateDescription = () => {
-    return `${calculator.name} - Free online ${calculator.name.toLowerCase()} for Indian users. ${calculator.description} Get accurate calculations instantly. No registration required.`;
-  };
   
-  // Render calculator dynamically
-  const LazyCalculator = calculatorLazyMap[calculatorId];
-
   return (
     <>
       <WhatsAppBanner />
+      <AstroFinanceButton />
       <SEOHelmet
-        title={`${calculator.name} - Free Online Calculator | FinanceGurus Directory`}
-        description={generateDescription()}
-        keywords={generateKeywords()}
-        url={`https://moneycal.in/calculators/${calculatorId}`}
-        image="/images/calculator-default.jpg"
-        type="website"
-        structuredData={calculatorStructuredData}
-        tags={[calculator.name, 'financial calculator', 'india', 'free calculator']}
-        alternateLanguages={{
-          'en-IN': `https://moneycal.in/calculators/${calculatorId}`,
-          'hi-IN': `https://moneycal.in/hi/calculators/${calculatorId}`
-        }}
+        title={`${calculator.name} - Free Online Calculator | FinCalc India`}
+        description={`Use our free ${calculator.name.toLowerCase()} to ${calculator.description.toLowerCase()}. Accurate calculations, instant results, and expert guidance.`}
+        keywords={`${calculator.name.toLowerCase()}, calculator, financial calculator, ${calculator.category.toLowerCase()}, india`}
+        url={`/calculators/${calculatorId}`}
+        tags={[calculator.category, 'calculator', 'financial tools']}
       />
       
-    <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto">
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 

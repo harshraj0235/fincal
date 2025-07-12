@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Search, Calendar, User, Tag, Download, TrendingUp, BookOpen } from 'lucide-react';
 import { excelToolBlogPosts } from '../data/exceltooldata';
 import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
+import SEOHelmet from '../components/SEOHelmet';
 
 const FAQ_SCHEMA = {
   "@context": "https://schema.org",
@@ -93,6 +95,12 @@ const ExcelTool: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
+      <AstroFinanceButton />
+      <SEOHelmet
+        title="Excel Tools & Templates for Personal Finance in India"
+        description="Master Personal Finance with Professional Excel Templates. Find the best Excel templates for budgeting, savings, investments, and tax planning in India."
+        keywords="Excel templates, personal finance, budget planner, expense tracker, loan calculator, investment tracker, tax planning, India"
+      />
       <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">

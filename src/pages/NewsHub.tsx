@@ -4,6 +4,8 @@ import { blogPosts as blogPosts0 } from "../data/blogData";
 import { blogPosts as blogPosts1 } from "../data/blogData1";
 import { governmentSchemes } from "../data/governmentSchemesData";
 import { calculatorCategories } from "../data/calculatorData";
+import WhatsAppBanner from "../components/WhatsAppBanner";
+import AstroFinanceButton from "../components/AstroFinanceButton";
 
 function getRandomElements<T>(arr: T[], n: number): T[] {
   const shuffled = arr.slice().sort(() => 0.5 - Math.random());
@@ -70,18 +72,22 @@ const NewsHub: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-green-100 py-6 px-2 md:px-8 lg:px-32">
-      <div className="max-w-3xl mx-auto">
-        <input
-          type="text"
-          className="w-full p-3 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-lg mb-6"
-          placeholder="Search blogs/news/calculators..."
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-        <NewsList news={filteredBlogs} onNewsClick={handleNewsClick} />
+    <>
+      <WhatsAppBanner />
+      <AstroFinanceButton />
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <input
+            type="text"
+            className="w-full p-3 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-lg mb-6"
+            placeholder="Search blogs/news/calculators..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          <NewsList news={filteredBlogs} onNewsClick={handleNewsClick} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

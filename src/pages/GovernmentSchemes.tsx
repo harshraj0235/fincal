@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import { governmentSchemes, schemeCategories } from '../data/governmentSchemesData';
 import WhatsAppBanner from '../components/WhatsAppBanner';
+import AstroFinanceButton from '../components/AstroFinanceButton';
+import SEOHelmet from '../components/SEOHelmet';
 
 interface Scheme {
   id: string;
@@ -44,7 +46,7 @@ const statusOptions = [
 
 const PAGE_SIZE = 15;
 
-const GovernmentSchemes: React.FC = () => {
+export const GovernmentSchemes: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedStatus, setSelectedStatus] = useState<string | null>(null);
@@ -172,6 +174,12 @@ const GovernmentSchemes: React.FC = () => {
   return (
     <>
       <WhatsAppBanner />
+      <AstroFinanceButton />
+      <SEOHelmet
+        title="भारत सरकार की योजनाएं - सरकारी योजनाएं, भारत सरकार योजनाएं, सरकारी योजनाएं भारत"
+        description="भारत सरकार की सभी सरकारी योजनाएं, भारत सरकार योजनाएं, सरकारी योजनाएं भारत, भारत सरकार की योजनाएं 2023, भारत सरकार की योजनाएं 2024, भारत सरकार की योजनाएं 2025, भारत सरकार की योजनाएं 2026, भारत सरकार की योजनाएं 2027, भारत सरकार की योजनाएं 2028, भारत सरकार की योजनाएं 2029, भारत सरकार की योजनाएं 2030"
+        keywords="भारत सरकार की योजनाएं, भारत सरकार योजनाएं, सरकारी योजनाएं भारत, भारत सरकार की योजनाएं 2023, भारत सरकार की योजनाएं 2024, भारत सरकार की योजनाएं 2025, भारत सरकार की योजनाएं 2026, भारत सरकार की योजनाएं 2027, भारत सरकार की योजनाएं 2028, भारत सरकार की योजनाएं 2029, भारत सरकार की योजनाएं 2030"
+      />
       <div className="min-h-screen bg-white">
       {/* Header Section */}
       <div className="bg-red-700 text-white border-b-4 border-black">
