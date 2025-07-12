@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Filter, X } from 'lucide-react';
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
+import { blogs as newFolderBlogs } from '../data/blogs';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import SEOHelmet from '../components/SEOHelmet';
@@ -16,6 +17,17 @@ function getTodayDateString() {
   return `${yyyy}-${mm}-${dd}`;
 }
 
+// Helper to update blog dates if older than 2 days
+function refreshBlogDates(blog) {
+  const now = new Date();
+  const lastMod = new Date(blog.lastModified || blog.publishedDate);
+  if ((now.getTime() - lastMod.getTime()) > 2 * 24 * 60 * 60 * 1000) {
+    const todayStr = now.toISOString();
+    return { ...blog, publishedDate: todayStr, lastModified: todayStr };
+  }
+  return blog;
+}
+
 const POSTS_PER_PAGE = 15;
 
 export const Blog: React.FC = () => {
@@ -27,7 +39,11 @@ export const Blog: React.FC = () => {
   const todayStr = getTodayDateString();
 
   // Combine and sort posts by id descending (last id first)
-  const allArticles = [...newPosts, ...oldPosts].sort((a, b) => b.id - a.id);
+  const allArticles = [
+    ...newFolderBlogs.map(refreshBlogDates),
+    ...newPosts,
+    ...oldPosts
+  ].sort((a, b) => b.id - a.id);
 
   // Filter/search logic
   const matchesFilter = (post: typeof allArticles[0]) => {
