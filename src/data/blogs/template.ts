@@ -1,15 +1,22 @@
 import { blogPosts } from '../blogData1';
 
+// ========================================
 // TEMPLATE FOR NEW BLOG POSTS
-// Copy this file and rename it to your desired blog ID (e.g., 653.ts, 654.ts, etc.)
-// Update all the content below with your blog information
-
+// ========================================
+// 
+// HOW TO USE:
+// 1. Copy this file and rename it to your desired blog ID (e.g., 653.ts, 654.ts, etc.)
+// 2. Update all the content below with your blog information
+// 3. The file will be automatically imported - no need to update any index files!
+//
 // AUTO-UPDATE FEATURE: Blog dates will automatically update every 2 days to keep content fresh for Google
 // The system will automatically update the 'date' field if the blog is older than 2 days
+//
+// ========================================
 
 const blogTemplate = {
-  id: 653, // CHANGE THIS TO YOUR BLOG ID
-  slug: 'your-blog-slug-here', // CHANGE THIS TO YOUR SLUG
+  id: 654, // CHANGE THIS TO YOUR BLOG ID (must be unique)
+  slug: 'your-blog-slug-here', // CHANGE THIS TO YOUR SLUG (URL-friendly)
   title: 'Your Blog Title Here', // CHANGE THIS TO YOUR TITLE
   author: 'Author Name', // CHANGE THIS TO AUTHOR NAME
   authorTitle: 'Author Title', // CHANGE THIS TO AUTHOR TITLE
