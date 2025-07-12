@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Filter, X } from 'lucide-react';
-import { blogPosts as oldPosts } from '../data/blogData';
-import { blogPosts as newPosts } from '../data/blogData1';
-import { blogs as newFolderBlogs } from '../data/blogs';
+import { allBlogPosts } from '../data/allBlogData';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import SEOHelmet from '../components/SEOHelmet';
@@ -38,12 +36,10 @@ export const Blog: React.FC = () => {
 
   const todayStr = getTodayDateString();
 
-  // Combine and sort posts by id descending (last id first)
-  const allArticles = [
-    ...newFolderBlogs.map(refreshBlogDates),
-    ...newPosts,
-    ...oldPosts
-  ].sort((a, b) => b.id - a.id);
+  // Use allBlogPosts and sort by id descending (last id first)
+  const allArticles = allBlogPosts
+    .map(refreshBlogDates)
+    .sort((a, b) => b.id - a.id);
 
   // Filter/search logic
   const matchesFilter = (post: typeof allArticles[0]) => {
