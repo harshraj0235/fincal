@@ -1,5 +1,8 @@
 
 
+import { blogPosts } from '../blogData1';
+// Imported for reference - can be used to link to related blog posts or for data consistency
+
 const blog651 = {
   id: 651,
   slug: 'indian-green-hydrogen-startups-investment-guide-2025',
@@ -122,5 +125,12 @@ const blog651 = {
     freshContent: true
   }
 };
+
+// Get related blog posts from blogData1 for internal linking
+export const relatedBlogPosts = blogPosts.filter(post => 
+  post.categories?.some(cat => 
+    blog651.categories.includes(cat)
+  )
+).slice(0, 3);
 
 export default blog651; 
