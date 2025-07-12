@@ -1,7 +1,8 @@
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
+import { blogs as newFolderBlogs } from '../data/blogs';
 
-const allBlogPosts = [...oldPosts, ...newPosts];
+const allBlogPosts = [...newFolderBlogs, ...newPosts, ...oldPosts];
 
 export interface SitemapUrl {
   loc: string;
