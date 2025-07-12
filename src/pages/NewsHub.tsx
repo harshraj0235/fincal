@@ -85,16 +85,16 @@ const NewsHub: React.FC = () => {
           </div>
           
           {/* News Section */}
-          <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Latest Financial News & Tools</h3>
-            <input
-              type="text"
-              className="w-full p-3 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-lg mb-6"
-              placeholder="Search blogs/news/calculators..."
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-            />
-            <NewsList news={filteredBlogs} onNewsClick={handleNewsClick} />
+          <input
+            type="text"
+            className="w-full p-3 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-lg mb-6"
+            placeholder="Search blogs/news/calculators..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          <NewsList news={filteredBlogs} onNewsClick={handleNewsClick} />
           </div>
         </div>
       </div>
