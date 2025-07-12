@@ -4,10 +4,10 @@ const blog652 = {
   id: 652,
   slug: 'digital-rupee-cbdc-india-2025-complete-guide',
   title: 'Digital Rupee (CBDC) in India 2025: Complete Guide to Central Bank Digital Currency',
-  author: 'Rahul Verma',
-  authorTitle: 'Digital Finance Expert',
-  authorImage: 'https://moneycal.in/images/authors/rahul-verma.jpg',
-  authorBio: 'Rahul Verma is a digital finance expert with 15+ years of experience in fintech and blockchain technology, specializing in CBDC and digital payment systems.',
+  author: 'Harsh Raj',
+  authorTitle: 'Software Engineer & Finance Enthusiast',
+  authorImage: 'https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png',
+  authorBio: 'Harsh Raj is a B.Tech graduate and software engineer who shares educational finance content. Not a financial expert—please consult authorized professionals for advice.',
   metaDescription: 'Complete guide to Digital Rupee (CBDC) in India 2025. Learn about RBI\'s digital currency pilot, benefits, risks, and how it will change India\'s financial landscape.',
   excerpt: 'The Reserve Bank of India is leading the world in CBDC innovation. Learn everything about Digital Rupee - from pilot programs to future implications for Indian economy.',
   categories: ['Digital Finance', 'CBDC', 'RBI', 'India', 'Fintech', 'Digital Payments'],
@@ -108,8 +108,8 @@ const blog652 = {
     "dateModified": new Date().toISOString(),
     "author": {
       "@type": "Person",
-      "name": 'Rahul Verma',
-      "url": 'https://www.linkedin.com/in/rahulverma-digital/'
+      "name": 'Harsh Raj',
+      "url": '/author/harsh-raj'
     },
     "publisher": {
       "@type": "Organization",

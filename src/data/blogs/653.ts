@@ -4,10 +4,10 @@ const blog653 = {
   id: 653,
   slug: 'how-esg-factors-influence-indian-startup-valuations-2025',
   title: 'How ESG Factors Influence Indian Startup Valuations in 2025',
-  author: 'Priya Sharma',
-  authorTitle: 'ESG Investment Analyst',
-  authorImage: 'https://moneycal.in/images/authors/priya-sharma.jpg',
-  authorBio: 'Priya Sharma is a leading ESG investment analyst with 12+ years of experience in sustainable finance and Indian startup ecosystem analysis.',
+  author: 'Harsh Raj',
+  authorTitle: 'Software Engineer & Finance Enthusiast',
+  authorImage: 'https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png',
+  authorBio: 'Harsh Raj is a B.Tech graduate and software engineer who shares educational finance content. Not a financial expert—please consult authorized professionals for advice.',
   metaDescription: 'Complete guide to how ESG factors influence Indian startup valuations in 2025. Learn about environmental, social, and governance impact on startup funding and growth.',
   excerpt: 'In India\'s booming startup ecosystem, valuations are no longer just about revenue or growth potential. Environmental, Social, and Governance (ESG) factors are becoming critical in shaping how investors value startups.',
   categories: ['ESG Investing', 'Startups', 'Valuations', 'India', 'Sustainability', 'Investment'],
@@ -99,8 +99,8 @@ const blog653 = {
     "dateModified": new Date().toISOString(),
     "author": {
       "@type": "Person",
-      "name": 'Priya Sharma',
-      "url": 'https://www.linkedin.com/in/priyasharma-esg/'
+      "name": 'Harsh Raj',
+      "url": '/author/harsh-raj'
     },
     "publisher": {
       "@type": "Organization",

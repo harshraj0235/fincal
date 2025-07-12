@@ -7,10 +7,10 @@ const blog651 = {
   id: 651,
   slug: 'indian-green-hydrogen-startups-investment-guide-2025',
   title: 'Indian Green Hydrogen Startups: Your Guide to Investment Opportunities in 2025',
-  author: 'Priya Sharma',
-  authorTitle: 'Sustainable Finance Analyst',
-  authorImage: 'https://moneycal.in/images/authors/priya-sharma.jpg',
-  authorBio: 'Priya Sharma is a leading expert in sustainable finance and Indian energy markets, with 12+ years of experience advising VCs and startups on ESG investments.',
+  author: 'Harsh Raj',
+  authorTitle: 'Software Engineer & Finance Enthusiast',
+  authorImage: 'https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png',
+  authorBio: 'Harsh Raj is a B.Tech graduate and software engineer who shares educational finance content. Not a financial expert—please consult authorized professionals for advice.',
   metaDescription: 'Complete guide to Indian green hydrogen startups investment opportunities in 2025. Learn about government support, key players, market growth, and how to invest in clean energy.',
   excerpt: 'Discover why green hydrogen startups in India are a big deal in 2025, who\'s leading the charge, and how you can learn about this exciting investment opportunity.',
   categories: ['ESG Investing', 'Startups', 'Green Hydrogen', 'India', 'Clean Energy'],
@@ -87,8 +87,8 @@ const blog651 = {
     "dateModified": new Date().toISOString(),
     "author": {
       "@type": "Person",
-      "name": 'Priya Sharma',
-      "url": 'https://www.linkedin.com/in/priyasharma-esg/'
+      "name": 'Harsh Raj',
+      "url": '/author/harsh-raj'
     },
     "publisher": {
       "@type": "Organization",
