@@ -52,6 +52,7 @@ const ExcelToolHub = lazy(() => import('./pages/ExcelToolHub'));
 const SeniorCitizenSavingsPlanner = lazy(() => import('./calculators/SeniorCitizenSavingsPlanner'));
 const MSMELoanEligibilityChecker = lazy(() => import('./calculators/MSMELoanEligibilityChecker'));
 const GreenEnergyInvestmentCalculator = lazy(() => import('./calculators/GreenEnergyInvestmentCalculator'));
+const AuthorProfilePage = lazy(() => import('./pages/AuthorProfilePage'));
 
 function App() {
   useEffect(() => {
@@ -154,6 +155,7 @@ function App() {
                 <Route path="/calculators/senior-citizen-savings-planner" element={<SeniorCitizenSavingsPlanner />} />
                 <Route path="/calculators/msme-loan-eligibility" element={<MSMELoanEligibilityChecker />} />
                 <Route path="/calculators/green-energy-investment-calculator" element={<GreenEnergyInvestmentCalculator />} />
+                <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calculator, Facebook, Twitter, Linkedin, Instagram, FileText, Map } from 'lucide-react';
-import { calculatorCategories } from '../data/calculatorData';
 
 export const Footer: React.FC = () => {
   return (
@@ -158,6 +157,11 @@ export const Footer: React.FC = () => {
                 <Link to="/sitemap" className="text-neutral-300 hover:text-white transition-colors flex items-center">
                   <Map className="h-4 w-4 mr-1" />
                   Sitemap
+                </Link>
+              </li>
+              <li>
+                <Link to="/author/harsh-raj" className="text-neutral-300 hover:text-white transition-colors">
+                  Meet Our Author
                 </Link>
               </li>
             </ul>

@@ -88,7 +88,12 @@ export const BlogPost: React.FC = () => {
                 <div className="flex flex-wrap items-center text-sm text-neutral-500 gap-x-6 gap-y-2">
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-1" />
-                    <span>{AUTHOR_NAME}</span>
+                    <Link 
+                      to="/author/harsh-raj" 
+                      className="hover:text-blue-600 transition-colors"
+                    >
+                      {AUTHOR_NAME}
+                    </Link>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-1" />
@@ -221,7 +226,12 @@ export const BlogPost: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-neutral-900 flex items-center gap-2" itemProp="name">
-                    {AUTHOR_NAME}
+                    <Link 
+                      to="/author/harsh-raj" 
+                      className="hover:text-blue-600 transition-colors"
+                    >
+                      {AUTHOR_NAME}
+                    </Link>
                     <a
                       href={AUTHOR_LINKEDIN}
                       target="_blank"
@@ -243,6 +253,12 @@ export const BlogPost: React.FC = () => {
                   </h4>
                   <p className="text-sm text-neutral-600" itemProp="jobTitle">{AUTHOR_TITLE}</p>
                   <p className="text-neutral-700 mt-1" itemProp="description">{AUTHOR_BIO}</p>
+                  <Link 
+                    to="/author/harsh-raj" 
+                    className="inline-flex items-center mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    View Full Profile →
+                  </Link>
                 </div>
               </section>
             </article>

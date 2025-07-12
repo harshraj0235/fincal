@@ -122,14 +122,12 @@ export const AboutUs: React.FC = () => {
           About Me
         </h2>
         <div className="bg-white rounded-xl shadow-md p-8 flex flex-col items-center">
-          {/* If you have a photo, add an <img> tag here. Example: */}
-          {/* <img src="YOUR_PHOTO_URL" alt="Harsh Raj" className="w-28 h-28 rounded-full object-cover border-2 border-green-600 mb-4" /> */}
           <div className="text-center">
             <h3 className="text-xl font-bold text-green-800 mb-2">Harsh Raj</h3>
             <p className="text-neutral-700 mb-4">
-              Harsh Raj is a Software Engineer with years of experience helping people make smart investment decisions. Passionate about financial literacy and transparent, trustworthy guidance.
+              Harsh Raj is a B.Tech graduate and Software Engineer with a passion for finance education. I love exploring financial concepts and sharing educational content to help others understand complex financial topics.
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-4 mb-4">
               <a
                 href="https://www.linkedin.com/in/harshitpatel9/"
                 target="_blank"
@@ -147,6 +145,12 @@ export const AboutUs: React.FC = () => {
                 Twitter (X)
               </a>
             </div>
+            <Link 
+              to="/author/harsh-raj" 
+              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              View Full Profile
+            </Link>
           </div>
         </div>
       </div>
