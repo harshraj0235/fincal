@@ -16,7 +16,7 @@ const AuthorProfile: React.FC<AuthorProfileProps> = ({ isFullPage = false }) => 
     expertise: "Finance Education & Technology",
     linkedin: "https://linkedin.com/in/harshitpatel9/",
     twitter: "https://x.com/harshitx9/",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    avatar: "https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png",
     disclaimer: "All content shared is for educational purposes only. I am not a financial expert. Please consult authorized financial advisors for professional advice."
   };
 

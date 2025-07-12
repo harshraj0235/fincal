@@ -12,7 +12,7 @@ import SEOHelmet from '../components/SEOHelmet';
 const AUTHOR_NAME = "Harsh Raj";
 const AUTHOR_LINKEDIN = "https://www.linkedin.com/in/harshitpatel9/";
 const AUTHOR_TWITTER = "https://x.com/harshitx9";
-const AUTHOR_IMAGE = "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+const AUTHOR_IMAGE = "https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png";
 const AUTHOR_TITLE = "Software Engineer & Content Creator";
 const AUTHOR_BIO = "Harsh Raj is a Software Engineer with years of experience helping people make smart investment decisions. Passionate about financial literacy and transparent, trustworthy guidance.";
 
