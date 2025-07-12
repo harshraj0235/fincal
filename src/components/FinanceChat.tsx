@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { getAllCalculators } from '../data/calculatorData';
+import { getAllCalculators, getCalculatorById } from '../data/calculatorData';
 import { excelTools } from '../data/excelToolsData';
 import { governmentSchemes } from '../data/governmentSchemesData';
 import { blogPosts as blogPosts0 } from '../data/blogData';
@@ -56,10 +56,28 @@ const FinanceChat: React.FC = () => {
       calc.name.toLowerCase().includes(lowerQuery) ? 2 : 0;
 
       if (relevance > 0) {
+        // Get detailed calculator info
+        const calculatorDetails = getCalculatorById(calc.id);
+        let description = `Financial calculator for ${calc.name.toLowerCase()}`;
+        
+        if (calculatorDetails) {
+          const features = [];
+          if (calculatorDetails.info && calculatorDetails.info.length > 0) {
+            features.push(...calculatorDetails.info.slice(0, 3));
+          }
+          if (calculatorDetails.faqs && calculatorDetails.faqs.length > 0) {
+            features.push(calculatorDetails.faqs[0].question);
+          }
+          
+          if (features.length > 0) {
+            description = `**Key Features:**\n• ${features.join('\n• ')}`;
+          }
+        }
+
         results.push({
           type: 'calculator',
           title: calc.name,
-          description: `Financial calculator for ${calc.name.toLowerCase()}`,
+          description: description,
           category: calc.category,
           url: `/calculators/${calc.id}`,
           relevance
@@ -76,10 +94,17 @@ const FinanceChat: React.FC = () => {
       tool.description.toLowerCase().includes(lowerQuery) ? 1 : 0;
 
       if (relevance > 0) {
+        // Create detailed description with features
+        let description = tool.description;
+        if (tool.features && tool.features.length > 0) {
+          const featureList = tool.features.slice(0, 3).join('\n• ');
+          description = `${tool.description}\n\n**Key Features:**\n• ${featureList}`;
+        }
+
         results.push({
           type: 'excel-tool',
           title: tool.title,
-          description: tool.description,
+          description: description,
           category: tool.category,
           url: `/excel-tools/${tool.slug}`,
           relevance
@@ -112,10 +137,24 @@ const FinanceChat: React.FC = () => {
       post.categories?.some(cat => cat.toLowerCase().includes(lowerQuery)) ? 1 : 0;
 
       if (relevance > 0) {
+        // Extract key points from content if available
+        let keyPoints = '';
+        if (post.content && Array.isArray(post.content)) {
+          const contentText = post.content
+            .filter(item => item.type === 'paragraph' || item.type === 'list')
+            .map(item => item.content || (item.items ? item.items.join(' ') : ''))
+            .join(' ')
+            .substring(0, 200);
+          
+          if (contentText) {
+            keyPoints = contentText.length > 150 ? contentText.substring(0, 150) + '...' : contentText;
+          }
+        }
+
         results.push({
           type: 'blog',
           title: post.title,
-          description: post.excerpt || '',
+          description: keyPoints || post.excerpt || '',
           category: post.categories?.[0] || 'Blog',
           url: `/blog/${post.slug}`,
           relevance
@@ -130,10 +169,22 @@ const FinanceChat: React.FC = () => {
       article.keywords.some(keyword => keyword.toLowerCase().includes(lowerQuery)) ? 1 : 0;
 
       if (relevance > 0) {
+        // Extract key points from FAQ if available
+        let keyPoints = article.excerpt;
+        if (article.faqSchema && article.faqSchema.length > 0) {
+          const faqPoints = article.faqSchema
+            .slice(0, 2)
+            .map(faq => faq.question)
+            .join(' • ');
+          if (faqPoints) {
+            keyPoints = `${article.excerpt}\n\n**Key Topics:**\n• ${faqPoints}`;
+          }
+        }
+
         results.push({
           type: 'crypto',
           title: article.title,
-          description: article.excerpt,
+          description: keyPoints,
           category: article.category,
           url: `/crypto/${article.slug}`,
           relevance
@@ -150,28 +201,52 @@ const FinanceChat: React.FC = () => {
     }
 
     const topResult = results[0];
-    let response = `Here's what I found about "${query}":\n\n`;
+    let response = `✨ **Quick Answer for "${query}"**\n\n`;
 
     if (topResult.type === 'calculator') {
-      response += `📊 **${topResult.title}**\n${topResult.description}\n\n`;
+      response += `📊 **${topResult.title}**\n\n`;
+      response += `**Key Features:**\n`;
+      response += `• ${topResult.description}\n`;
+      response += `• Category: ${topResult.category}\n`;
+      response += `• [🔗 Try Calculator](${topResult.url})\n\n`;
     } else if (topResult.type === 'excel-tool') {
-      response += `📈 **${topResult.title}**\n${topResult.description}\n\n`;
+      response += `📈 **${topResult.title}**\n\n`;
+      response += `**What you get:**\n`;
+      response += `• ${topResult.description}\n`;
+      response += `• Category: ${topResult.category}\n`;
+      response += `• [🔗 Download Tool](${topResult.url})\n\n`;
     } else if (topResult.type === 'government-scheme') {
-      response += `🏛️ **${topResult.title}**\n${topResult.description}\n\n`;
+      response += `🏛️ **${topResult.title}**\n\n`;
+      response += `**Scheme Highlights:**\n`;
+      response += `• ${topResult.description}\n`;
+      response += `• Category: ${topResult.category}\n`;
+      response += `• [🔗 Learn More](${topResult.url})\n\n`;
     } else if (topResult.type === 'blog') {
-      response += `📝 **${topResult.title}**\n${topResult.description}\n\n`;
+      response += `📝 **${topResult.title}**\n\n`;
+      response += `**Quick Summary:**\n`;
+      response += `• ${topResult.description}\n`;
+      response += `• Category: ${topResult.category}\n`;
+      response += `• [🔗 Read Full Article](${topResult.url})\n\n`;
     } else if (topResult.type === 'crypto') {
-      response += `₿ **${topResult.title}**\n${topResult.description}\n\n`;
+      response += `₿ **${topResult.title}**\n\n`;
+      response += `**Key Points:**\n`;
+      response += `• ${topResult.description}\n`;
+      response += `• Category: ${topResult.category}\n`;
+      response += `• [🔗 Read Full Guide](${topResult.url})\n\n`;
     }
 
     if (results.length > 1) {
-      response += "**Related resources you might find helpful:**\n";
+      response += `**💡 Related Resources:**\n`;
       results.slice(1, 4).forEach((result, index) => {
         const icon = result.type === 'calculator' ? '📊' : 
                     result.type === 'excel-tool' ? '📈' : 
                     result.type === 'government-scheme' ? '🏛️' :
                     result.type === 'blog' ? '📝' : '₿';
-        response += `${index + 1}. ${icon} ${result.title}\n`;
+        const action = result.type === 'calculator' ? 'Try' :
+                      result.type === 'excel-tool' ? 'Download' :
+                      result.type === 'government-scheme' ? 'Learn' :
+                      result.type === 'blog' ? 'Read' : 'Explore';
+        response += `${index + 1}. ${icon} **${result.title}**\n   [🔗 ${action}](${result.url})\n\n`;
       });
     }
 
@@ -247,7 +322,35 @@ const FinanceChat: React.FC = () => {
                   : 'bg-gray-100 text-gray-800'
               }`}
             >
-              <div className="whitespace-pre-wrap text-sm">{message.content}</div>
+              <div className="whitespace-pre-wrap text-sm">
+                {message.type === 'bot' ? (
+                  <div className="space-y-2">
+                    {message.content.split('\n').map((line, index) => {
+                      if (line.includes('[🔗')) {
+                        // Handle clickable links
+                        const linkMatch = line.match(/\[🔗 ([^\]]+)\]\(([^)]+)\)/);
+                        if (linkMatch) {
+                          const [, linkText, url] = linkMatch;
+                          return (
+                            <div key={index} className="flex items-center space-x-2">
+                              <span>{line.replace(/\[🔗 [^\]]+\]\([^)]+\)/, '')}</span>
+                              <button
+                                onClick={() => window.open(url, '_blank')}
+                                className="inline-flex items-center px-2 py-1 text-xs font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100 transition-colors"
+                              >
+                                🔗 {linkText}
+                              </button>
+                            </div>
+                          );
+                        }
+                      }
+                      return <div key={index}>{line}</div>;
+                    })}
+                  </div>
+                ) : (
+                  message.content
+                )}
+              </div>
               <div className={`text-xs mt-1 ${
                 message.type === 'user' ? 'text-green-100' : 'text-gray-500'
               }`}>
