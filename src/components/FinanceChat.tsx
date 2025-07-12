@@ -216,42 +216,42 @@ const FinanceChat: React.FC = () => {
     }
 
     const topResult = results[0];
-    let response = `✨ **Quick Answer for "${query}"**\n\n`;
+    let response = `Quick Answer for: ${query}\n\n`;
 
     if (topResult.type === 'calculator') {
-      response += `📊 **${topResult.title}**\n\n`;
-      response += `**Key Features:**\n`;
-      response += `• ${topResult.description}\n`;
-      response += `• Category: ${topResult.category}\n`;
-      response += `• [🔗 Try Calculator](${topResult.url})\n\n`;
+      response += `Calculator: ${topResult.title}\n`;
+      response += `Key Features:\n`;
+      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+      response += `- Category: ${topResult.category}\n`;
+      response += `- [Try Calculator](${topResult.url})\n\n`;
     } else if (topResult.type === 'excel-tool') {
-      response += `📈 **${topResult.title}**\n\n`;
-      response += `**What you get:**\n`;
-      response += `• ${topResult.description}\n`;
-      response += `• Category: ${topResult.category}\n`;
-      response += `• [🔗 Download Tool](${topResult.url})\n\n`;
+      response += `Excel Tool: ${topResult.title}\n`;
+      response += `What you get:\n`;
+      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+      response += `- Category: ${topResult.category}\n`;
+      response += `- [Download Tool](${topResult.url})\n\n`;
     } else if (topResult.type === 'government-scheme') {
-      response += `🏛️ **${topResult.title}**\n\n`;
-      response += `**Scheme Highlights:**\n`;
-      response += `• ${topResult.description}\n`;
-      response += `• Category: ${topResult.category}\n`;
-      response += `• [🔗 Learn More](${topResult.url})\n\n`;
+      response += `Scheme: ${topResult.title}\n`;
+      response += `Scheme Highlights:\n`;
+      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+      response += `- Category: ${topResult.category}\n`;
+      response += `- [Learn More](${topResult.url})\n\n`;
     } else if (topResult.type === 'blog') {
-      response += `📝 **${topResult.title}**\n\n`;
-      response += `**Quick Summary:**\n`;
-      response += `• ${topResult.description}\n`;
-      response += `• Category: ${topResult.category}\n`;
-      response += `• [🔗 Read Full Article](${topResult.url})\n\n`;
+      response += `Blog: ${topResult.title}\n`;
+      response += `Quick Summary:\n`;
+      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+      response += `- Category: ${topResult.category}\n`;
+      response += `- [Read Full Article](${topResult.url})\n\n`;
     } else if (topResult.type === 'crypto') {
-      response += `₿ **${topResult.title}**\n\n`;
-      response += `**Key Points:**\n`;
-      response += `• ${topResult.description}\n`;
-      response += `• Category: ${topResult.category}\n`;
-      response += `• [🔗 Read Full Guide](${topResult.url})\n\n`;
+      response += `Crypto Guide: ${topResult.title}\n`;
+      response += `Key Points:\n`;
+      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+      response += `- Category: ${topResult.category}\n`;
+      response += `- [Read Full Guide](${topResult.url})\n\n`;
     }
 
     if (results.length > 1) {
-      response += `**💡 Related Resources:**\n`;
+      response += `Related Resources:\n`;
       results.slice(1, 4).forEach((result, index) => {
         const icon = result.type === 'calculator' ? '📊' : 
                     result.type === 'excel-tool' ? '📈' : 
@@ -261,7 +261,7 @@ const FinanceChat: React.FC = () => {
                       result.type === 'excel-tool' ? 'Download' :
                       result.type === 'government-scheme' ? 'Learn' :
                       result.type === 'blog' ? 'Read' : 'Explore';
-        response += `${index + 1}. ${icon} **${result.title}**\n   [🔗 ${action}](${result.url})\n\n`;
+        response += `${index + 1}. ${icon} ${result.title}\n   [${action}](${result.url})\n`;
       });
     }
 
