@@ -1,3 +1,4 @@
+/*
 import { blogPosts } from '../blogData1';
 
 // ========================================
@@ -105,4 +106,5 @@ export const relatedBlogPosts = blogPosts.filter(post =>
   )
 ).slice(0, 3);
 
-export default blogTemplate; 
+export default blogTemplate;
+*/ 
