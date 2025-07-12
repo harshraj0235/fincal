@@ -13,11 +13,11 @@ const blog655 = {
   categories: ['ESG Investing', 'Startups', 'Valuations', 'India', 'Sustainability', 'Investment'],
   keywords: ['ESG risks Indian startups', 'sustainable startup investments', 'green startups India 2025', 'ESG compliance', 'startup valuation risk', 'Indian startup ecosystem', 'environmental social governance', 'Hinglish finance blog'],
   date: new Date().toISOString().slice(0, 10),
-  coverImage: 'https://cdn.leonardo.ai/users/264400f1-bbb5-4960-8d01-e7b693bb8b77/generations/17298564-2bd5-4be6-9868-fd18a815d61f/segments/3:4:1/Flux_Dev_A_vintage_worn_browncolored_wooden_signboard_with_pee_2.jpg',
+  coverImage: "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   content: [
     { type: 'heading', content: 'Bhool Gaye ESG Rules? Aapka Indian Startup Investment Risk Mein Hai!' },
     { type: 'paragraph', content: 'India ka startup ecosystem tezi se badh raha hai, aur 2030 tak yeh $1 trillion ka ban sakta hai. Lekin ek badi galti investors aur startups dono kar rahe hain—ESG (Environmental, Social, Governance) rules ko ignore karna. Yeh "forgotten rules" aapke investment ko risk mein daal sakte hain, aur valuation ko bhi ghat sakte hain. Is Hinglish blog mein hum batayenge ki ESG kyun zaroori hai, kaise yeh Indian startups ke investments ko affect karta hai, aur kaise aap apne investments ko safe rakh sakte hain. Yeh article Indian audience ke liye hai, Google, Google News, aur Google Discover ke liye SEO-friendly hai, aur charts aur visuals ke saath aapko sab kuch clear samjhayega!' },
-    { type: 'image', url: 'https://cdn.leonardo.ai/users/264400f1-bbb5-4960-8d01-e7b693bb8b77/generations/17298564-2bd5-4be6-9868-fd18a815d61f/segments/3:4:1/Flux_Dev_A_vintage_worn_browncolored_wooden_signboard_with_pee_2.jpg', caption: 'ESG Rules: Ignore Mat Karo! (Google Discover-Optimized Visual)' },
+    { type: 'image', url: 'https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', caption: 'Indian startup team discussing ESG compliance for sustainable growth.' },
     { type: 'heading', content: 'ESG Kya Hai Aur Kyun Bhoolna Risky Hai?' },
     { type: 'paragraph', content: 'ESG ka matlab hai Environmental, Social, aur Governance—teen factors jo ek startup ke ethical aur sustainable practices ko measure karte hain:' },
     { type: 'list', items: [
