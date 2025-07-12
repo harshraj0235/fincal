@@ -35,9 +35,9 @@ export const AboutUs: React.FC = () => {
       </div>
       
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-neutral-900 mb-4">About FinCalc India</h1>
+        <h1 className="text-4xl font-bold text-neutral-900 mb-4">About MoneyCal India</h1>
         <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-          Empowering Indians to make informed financial decisions through accurate calculations and educational resources
+          Empowering Indians to make informed financial decisions through accurate calculations and educational resources. Explore our <Link to="/blog" className="text-blue-600 underline hover:text-blue-800">blog</Link> and <Link to="/calculators/emi-calculator" className="text-blue-600 underline hover:text-blue-800">calculators</Link>.
         </p>
       </div>
       
@@ -48,10 +48,10 @@ export const AboutUs: React.FC = () => {
             Our Mission
           </h2>
           <p className="text-lg text-neutral-700 mb-4">
-            At FinCalc India, our mission is to democratize financial literacy and empower every Indian to take control of their financial future. We believe that accurate calculations are the foundation of sound financial decisions.
+            At MoneyCal India, my mission is to democratize financial literacy and empower every Indian to take control of their financial future. I believe that accurate calculations are the foundation of sound financial decisions.
           </p>
           <p className="text-lg text-neutral-700">
-            We're committed to providing free, accessible, and user-friendly financial calculators tailored specifically for the Indian context, taking into account local tax laws, investment options, and financial products.
+            I'm committed to providing free, accessible, and user-friendly financial calculators tailored specifically for the Indian context, taking into account local tax laws, investment options, and financial products.
           </p>
         </div>
         
@@ -96,21 +96,17 @@ export const AboutUs: React.FC = () => {
       <div className="mb-16">
         <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center flex items-center justify-center">
           <Calculator className="h-6 w-6 text-primary-600 mr-2" />
-          Our Story
+          My Story
         </h2>
-        
         <div className="bg-white rounded-xl shadow-md p-8">
           <p className="text-lg text-neutral-700 mb-4">
-            FinCalc India was founded in 2023 by a team of finance professionals who recognized a significant gap in the market: while there were many financial calculators available online, few were tailored specifically for the Indian context, and even fewer provided educational content alongside their tools.
+            Hi, I'm Harsh Raj, the creator of MoneyCal India. As a B.Tech graduate and software engineer, I started MoneyCal to make finance simple and accessible for everyone. I noticed that while there are many financial calculators online, very few are truly tailored for the Indian context or provide clear, educational content.
           </p>
           <p className="text-lg text-neutral-700 mb-4">
-            Our founders had spent years working in various segments of the financial industry – banking, investment management, tax consulting, and financial education. They had firsthand experience of how proper financial calculations could make a tremendous difference in people's financial outcomes.
-          </p>
-          <p className="text-lg text-neutral-700 mb-4">
-            What started as a small collection of basic calculators has now grown into India's most comprehensive suite of financial tools, covering everything from loan EMIs and tax calculations to retirement planning and investment returns.
+            My goal is to help you make better financial decisions by providing accurate calculators and easy-to-understand guides. All the content I share is for educational purposes only—I'm not a financial expert, so please consult authorized professionals for any financial advice.
           </p>
           <p className="text-lg text-neutral-700">
-            Today, FinCalc India serves millions of users across the country, helping individuals, families, and small businesses make better financial decisions through accurate calculations and educational resources.
+            Explore my <Link to="/blog" className="text-blue-600 underline hover:text-blue-800">blog</Link> for the latest educational articles, or try out the <Link to="/calculators/emi-calculator" className="text-blue-600 underline hover:text-blue-800">EMI Calculator</Link> and other tools. Want to know more about me? <Link to="/author/harsh-raj" className="text-blue-600 underline hover:text-blue-800">View my full profile</Link>.
           </p>
         </div>
       </div>

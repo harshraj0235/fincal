@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { ArrowLeft, MapPin, Send, MessageSquare } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
@@ -128,97 +128,35 @@ export const ContactUs: React.FC = () => {
         <div>
           <h2 className="text-2xl font-bold text-neutral-900 mb-6 flex items-center">
             <MapPin className="h-6 w-6 text-primary-600 mr-2" />
-            Contact Information
+            Author Information
           </h2>
-          
-          <div className="bg-white rounded-xl shadow-md p-8 mb-8">
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-primary-600" />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">Email Us</h3>
-                  <p className="text-neutral-600 mb-1">For general inquiries:</p>
-                  <a href="mailto:info@fincalcindia.com" className="text-primary-600 hover:text-primary-700">
-                    info@fincalcindia.com
-                  </a>
-                  <p className="text-neutral-600 mt-2 mb-1">For support:</p>
-                  <a href="mailto:support@fincalcindia.com" className="text-primary-600 hover:text-primary-700">
-                    support@fincalcindia.com
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center">
-                    <Phone className="h-5 w-5 text-primary-600" />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">Call Us</h3>
-                  <p className="text-neutral-600 mb-1">Customer Support:</p>
-                  <a href="tel:+911234567890" className="text-primary-600 hover:text-primary-700">
-                    +91 1234 567 890
-                  </a>
-                  <p className="text-neutral-600 mt-2 mb-1">Business Inquiries:</p>
-                  <a href="tel:+911234567891" className="text-primary-600 hover:text-primary-700">
-                    +91 1234 567 891
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-primary-600" />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">Visit Us</h3>
-                  <p className="text-neutral-600">
-                    FinCalc India<br />
-                    123 Financial District<br />
-                    Bandra Kurla Complex<br />
-                    Mumbai, Maharashtra 400051<br />
-                    India
-                  </p>
-                </div>
-              </div>
+          <div className="bg-white rounded-xl shadow-md p-8 flex flex-col items-center">
+            <img
+              src="https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png"
+              alt="Harsh Raj"
+              className="w-24 h-24 rounded-full border-4 border-blue-200 shadow mb-4 object-cover"
+            />
+            <h3 className="text-xl font-bold text-blue-800 mb-1">Harsh Raj</h3>
+            <p className="text-blue-700 mb-2">Software Engineer & Finance Enthusiast</p>
+            <p className="text-neutral-700 text-center mb-4">
+              I am a B.Tech graduate and software engineer with a passion for finance. I love exploring financial concepts and sharing educational content to help others understand complex financial topics. Please note that I share information for educational purposes only - I am not a financial expert, and readers should consult authorized experts for financial advice.
+            </p>
+            <div className="flex gap-4 mb-2">
+              <a href="https://linkedin.com/in/harshitpatel9/" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 font-medium">LinkedIn</a>
+              <a href="https://x.com/harshitx9/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 font-medium">Twitter (X)</a>
             </div>
-          </div>
-          
-          <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <h3 className="text-xl font-semibold text-primary-900 mb-4">Business Hours</h3>
-            <div className="space-y-2 text-primary-800">
-              <div className="flex justify-between">
-                <span>Monday - Friday:</span>
-                <span>9:00 AM - 6:00 PM IST</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Saturday:</span>
-                <span>10:00 AM - 4:00 PM IST</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Sunday:</span>
-                <span>Closed</span>
-              </div>
-            </div>
+            <a href="/author/harsh-raj" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors mt-2">View Full Profile</a>
           </div>
         </div>
       </div>
-      
-      <div className="bg-white rounded-xl shadow-md overflow-hidden">
+      {/* Remove the map section below */}
+      {/* <div className="bg-white rounded-xl shadow-md overflow-hidden">
         <div className="h-96 w-full">
-          {/* In a real application, you would embed a Google Map here */}
           <div className="w-full h-full bg-neutral-200 flex items-center justify-center">
             <p className="text-neutral-600 text-lg">Interactive Map Would Be Displayed Here</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
     </>
   );
