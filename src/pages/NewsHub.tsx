@@ -6,6 +6,7 @@ import { governmentSchemes } from "../data/governmentSchemesData";
 import { calculatorCategories } from "../data/calculatorData";
 import WhatsAppBanner from "../components/WhatsAppBanner";
 import AstroFinanceButton from "../components/AstroFinanceButton";
+import FinanceChat from "../components/FinanceChat";
 
 function getRandomElements<T>(arr: T[], n: number): T[] {
   const shuffled = arr.slice().sort(() => 0.5 - Math.random());
@@ -76,15 +77,25 @@ const NewsHub: React.FC = () => {
       <WhatsAppBanner />
       <AstroFinanceButton />
       <div className="min-h-screen bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <input
-            type="text"
-            className="w-full p-3 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-lg mb-6"
-            placeholder="Search blogs/news/calculators..."
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-          />
-          <NewsList news={filteredBlogs} onNewsClick={handleNewsClick} />
+        <div className="max-w-6xl mx-auto px-4 py-8">
+          {/* Chat Section */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Ask Your Financial Assistant</h2>
+            <FinanceChat />
+          </div>
+          
+          {/* News Section */}
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Latest Financial News & Tools</h3>
+            <input
+              type="text"
+              className="w-full p-3 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-lg mb-6"
+              placeholder="Search blogs/news/calculators..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+            />
+            <NewsList news={filteredBlogs} onNewsClick={handleNewsClick} />
+          </div>
         </div>
       </div>
     </>
