@@ -218,36 +218,48 @@ const FinanceChat: React.FC = () => {
     const topResult = results[0];
     let response = `Quick Answer for: ${query}\n\n`;
 
-    if (topResult.type === 'calculator') {
-      response += `Calculator: ${topResult.title}\n`;
-      response += `Key Features:\n`;
-      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
-      response += `- Category: ${topResult.category}\n`;
-      response += `- [Try Calculator](${topResult.url})\n\n`;
-    } else if (topResult.type === 'excel-tool') {
-      response += `Excel Tool: ${topResult.title}\n`;
-      response += `What you get:\n`;
-      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
-      response += `- Category: ${topResult.category}\n`;
-      response += `- [Download Tool](${topResult.url})\n\n`;
-    } else if (topResult.type === 'government-scheme') {
-      response += `Scheme: ${topResult.title}\n`;
-      response += `Scheme Highlights:\n`;
-      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
-      response += `- Category: ${topResult.category}\n`;
-      response += `- [Learn More](${topResult.url})\n\n`;
-    } else if (topResult.type === 'blog') {
+    // Find a related blog post (not the top result)
+    const relatedBlog = results.find(r => r.type === 'blog' && r.url !== topResult.url);
+    if (topResult.type === 'blog') {
+      // If the top result is a blog, show it as the main answer and also show another related blog if available
       response += `Blog: ${topResult.title}\n`;
       response += `Quick Summary:\n`;
       response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
       response += `- Category: ${topResult.category}\n`;
       response += `- [Read Full Article](${topResult.url})\n\n`;
-    } else if (topResult.type === 'crypto') {
-      response += `Crypto Guide: ${topResult.title}\n`;
-      response += `Key Points:\n`;
-      response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
-      response += `- Category: ${topResult.category}\n`;
-      response += `- [Read Full Guide](${topResult.url})\n\n`;
+      if (relatedBlog) {
+        response += `Related Blog:\n- ${relatedBlog.title}\n- [Read Related Blog](${relatedBlog.url})\n\n`;
+      }
+    } else {
+      // For all other types, show the main answer and a related blog if available
+      if (topResult.type === 'calculator') {
+        response += `Calculator: ${topResult.title}\n`;
+        response += `Key Features:\n`;
+        response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+        response += `- Category: ${topResult.category}\n`;
+        response += `- [Try Calculator](${topResult.url})\n\n`;
+      } else if (topResult.type === 'excel-tool') {
+        response += `Excel Tool: ${topResult.title}\n`;
+        response += `What you get:\n`;
+        response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+        response += `- Category: ${topResult.category}\n`;
+        response += `- [Download Tool](${topResult.url})\n\n`;
+      } else if (topResult.type === 'government-scheme') {
+        response += `Scheme: ${topResult.title}\n`;
+        response += `Scheme Highlights:\n`;
+        response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+        response += `- Category: ${topResult.category}\n`;
+        response += `- [Learn More](${topResult.url})\n\n`;
+      } else if (topResult.type === 'crypto') {
+        response += `Crypto Guide: ${topResult.title}\n`;
+        response += `Key Points:\n`;
+        response += `- ${topResult.description.replace(/\*\*/g, '')}\n`;
+        response += `- Category: ${topResult.category}\n`;
+        response += `- [Read Full Guide](${topResult.url})\n\n`;
+      }
+      if (relatedBlog) {
+        response += `Related Blog:\n- ${relatedBlog.title}\n- [Read Related Blog](${relatedBlog.url})\n\n`;
+      }
     }
 
     if (results.length > 1) {
