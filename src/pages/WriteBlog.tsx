@@ -1,12 +1,15 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 export const WriteBlog: React.FC = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="min-h-screen flex flex-col bg-neutral-50">
+    <>
+      <WhatsAppBanner />
+      <div className="min-h-screen flex flex-col bg-neutral-50">
       <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md shadow mb-2 px-2 py-2">
         <button 
           onClick={() => navigate('/blog')} 
@@ -188,6 +191,7 @@ export const WriteBlog: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

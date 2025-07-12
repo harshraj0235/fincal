@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Calendar, ArrowLeft, Share2, ChevronRight, Copy as CopyIcon } from 'lucide-react';
 import { getGovernmentSchemeBySlug, getRelatedGovernmentSchemes } from '../data/governmentSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 interface TocItem {
   idx: number;
@@ -74,7 +75,9 @@ const GovernmentSchemePost: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <WhatsAppBanner />
+      <div className="min-h-screen bg-gray-50">
       <SEOHelmet title={scheme.seoTitle} description={scheme.seoDescription} />
       {/* Header Section */}
       <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white">
@@ -290,6 +293,7 @@ const GovernmentSchemePost: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
