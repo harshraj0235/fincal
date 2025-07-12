@@ -13,7 +13,7 @@ const blog652 = {
   categories: ['Digital Finance', 'CBDC', 'RBI', 'India', 'Fintech', 'Digital Payments'],
   keywords: ['digital rupee', 'CBDC', 'RBI digital currency', 'India CBDC', 'digital payments', 'blockchain', 'fintech', '2025', 'digital economy'],
   date: '2025-07-12',
-  coverImage: 'https://beincrypto.com/wp-content/uploads/2023/07/BIC_DIGITAL_RUPEE_INDIA-covers-neutral-coins-850x478.png',
+  coverImage: 'https://ideogram.ai/assets/progressive-image/balanced/response/-HHmw8q6Q2y5Gbx4126xMg',
   content: [
     { type: 'heading', content: 'Digital Rupee (CBDC) in India 2025: Complete Guide to Central Bank Digital Currency' },
     { type: 'paragraph', content: 'India is at the forefront of the global CBDC revolution. The Reserve Bank of India (RBI) has been actively developing and testing the Digital Rupee, making India one of the first major economies to implement a central bank digital currency. This comprehensive guide will walk you through everything you need to know about Digital Rupee in 2025 - from its current pilot status to its potential impact on India\'s financial future.' },
@@ -92,7 +92,7 @@ const blog652 = {
     { type: 'paragraph', content: 'As we move through 2025, keep an eye on RBI announcements and pilot expansions. The future of money in India is digital, and Digital Rupee is leading the way.' },
     { type: 'paragraph', content: 'Note: This article is for informational purposes only. Always refer to official RBI guidelines for the most current information about Digital Rupee.' }
   ],
-  featuredImage: 'https://moneycal.in/images/blogs/digital-rupee-india.jpg',
+  featuredImage: 'https://ideogram.ai/assets/progressive-image/balanced/response/-HHmw8q6Q2y5Gbx4126xMg',
   videoUrl: 'https://www.youtube.com/embed/digital-rupee-india-2025',
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
@@ -102,7 +102,7 @@ const blog652 = {
     "@type": "NewsArticle",
     "headline": 'Digital Rupee (CBDC) in India 2025: Complete Guide to Central Bank Digital Currency',
     "image": [
-      'https://moneycal.in/images/blogs/digital-rupee-india.jpg'
+      'https://ideogram.ai/assets/progressive-image/balanced/response/-HHmw8q6Q2y5Gbx4126xMg'
     ],
     "datePublished": new Date().toISOString(),
     "dateModified": new Date().toISOString(),
@@ -136,7 +136,7 @@ const blog652 = {
   openGraph: {
     title: 'Digital Rupee (CBDC) in India 2025: Complete Guide to Central Bank Digital Currency',
     description: 'Complete guide to Digital Rupee (CBDC) in India 2025. Learn about RBI\'s digital currency pilot, benefits, risks, and how it will change India\'s financial landscape.',
-    image: 'https://moneycal.in/images/blogs/digital-rupee-india.jpg',
+    image: 'https://ideogram.ai/assets/progressive-image/balanced/response/-HHmw8q6Q2y5Gbx4126xMg',
     url: 'https://moneycal.in/blog/digital-rupee-cbdc-india-2025-complete-guide',
     type: 'article',
     siteName: 'Moneycal.in'

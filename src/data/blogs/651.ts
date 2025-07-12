@@ -15,8 +15,8 @@ const blog651 = {
   excerpt: 'Discover why green hydrogen startups in India are a big deal in 2025, who\'s leading the charge, and how you can learn about this exciting investment opportunity.',
   categories: ['ESG Investing', 'Startups', 'Green Hydrogen', 'India', 'Clean Energy'],
   keywords: ['green hydrogen', 'Indian startups', 'ESG investing', 'sustainable energy', '2025 outlook', 'impact investing', 'venture capital', 'clean tech', 'renewable energy', 'investment guide'],
-  date: '2025-01-27', // Fixed date format
-  coverImage: 'https://static.investindia.gov.in/s3fs-public/2025-06/hydrogen.png',
+  date: '2025-07-12', // Fixed date format
+  coverImage: 'https://ideogram.ai/assets/progressive-image/balanced/response/nzDK_dc9QKqFmjpBtNzO2Q',
   content: [
     { type: 'heading', content: 'Indian Green Hydrogen Startups: Your Guide to Investment Opportunities in 2025' },
     { type: 'paragraph', content: 'Green hydrogen is a hot topic in India right now, and it\'s no wonder why! It\'s a clean, eco-friendly fuel that could power everything from factories to trucks without harming the planet. As India aims to become a global leader in green energy, startups in this space are popping up, and investors are taking notice. In this easy-to-read guide, we\'ll break down why green hydrogen startups in India are a big deal in 2025, who\'s leading the charge, and how you can learn about this exciting opportunity. Plus, we\'ll make sure this article is SEO-friendly to rank well on Google, Google News, and Google Discover.' },
@@ -71,7 +71,7 @@ const blog651 = {
     { type: 'paragraph', content: 'Indian green hydrogen startups are at the heart of a clean energy revolution, and 2025 is the perfect time to get involved. With government support, innovative startups, and growing global demand, this sector is ready to take off. By following smart SEO strategies, startups can reach more people and attract the right investors. Whether you\'re an investor or just curious, keep an eye on India\'s green hydrogen scene—it\'s going to be big!' },
     { type: 'paragraph', content: 'Note: This article is for information only and not investment advice. Always talk to a financial advisor before investing.' }
   ],
-  featuredImage: 'https://moneycal.in/images/blogs/green-hydrogen-india-plant.jpg',
+  featuredImage: 'https://ideogram.ai/assets/progressive-image/balanced/response/nzDK_dc9QKqFmjpBtNzO2Q',
   videoUrl: 'https://www.youtube.com/embed/green-hydrogen-india-2025',
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
@@ -81,7 +81,7 @@ const blog651 = {
     "@type": "NewsArticle",
     "headline": 'Indian Green Hydrogen Startups: Your Guide to Investment Opportunities in 2025',
     "image": [
-      'https://moneycal.in/images/blogs/green-hydrogen-india-plant.jpg'
+      'https://ideogram.ai/assets/progressive-image/balanced/response/nzDK_dc9QKqFmjpBtNzO2Q'
     ],
     "datePublished": new Date().toISOString(),
     "dateModified": new Date().toISOString(),
@@ -115,7 +115,7 @@ const blog651 = {
   openGraph: {
     title: 'Indian Green Hydrogen Startups: Your Guide to Investment Opportunities in 2025',
     description: 'Complete guide to Indian green hydrogen startups investment opportunities in 2025. Learn about government support, key players, market growth, and how to invest in clean energy.',
-    image: 'https://moneycal.in/images/blogs/green-hydrogen-india-plant.jpg',
+    image: 'https://ideogram.ai/assets/progressive-image/balanced/response/nzDK_dc9QKqFmjpBtNzO2Q',
     url: 'https://moneycal.in/blog/indian-green-hydrogen-startups-investment-guide-2025',
     type: 'article',
     siteName: 'Moneycal.in'
