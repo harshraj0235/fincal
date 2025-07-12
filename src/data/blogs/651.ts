@@ -1,4 +1,4 @@
-import { BlogPostSection } from '../../data/optimizedBlogPosts';
+
 
 const blog651 = {
   id: 651,
