@@ -27,21 +27,36 @@ const FinanceChat: React.FC = () => {
     {
       id: '1',
       type: 'bot',
-      content: 'Hello! I\'m your financial assistant. Ask me anything about calculators, Excel tools, government schemes, or financial topics. I\'ll provide concise answers and show you related resources.',
+      content: '👋 Hello! I\'m your financial assistant. Ask me anything about calculators, Excel tools, government schemes, or financial topics. I\'ll provide concise answers and show you related resources.',
       timestamp: new Date()
     }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
+  // Scroll to bottom
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Show scroll-to-latest button if not at bottom
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!chatContainerRef.current) return;
+      const { scrollTop, scrollHeight, clientHeight } = chatContainerRef.current;
+      setShowScroll(scrollHeight - scrollTop - clientHeight > 80);
+    };
+    const ref = chatContainerRef.current;
+    if (ref) ref.addEventListener('scroll', handleScroll);
+    return () => { if (ref) ref.removeEventListener('scroll', handleScroll); };
+  }, []);
+
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, isLoading]);
 
   const searchData = (query: string): SearchResult[] => {
     const results: SearchResult[] = [];
@@ -253,6 +268,18 @@ const FinanceChat: React.FC = () => {
     return response;
   };
 
+  // Clear chat
+  const handleClearChat = () => {
+    setMessages([
+      {
+        id: '1',
+        type: 'bot',
+        content: '👋 Hello! I\'m your financial assistant. Ask me anything about calculators, Excel tools, government schemes, or financial topics. I\'ll provide concise answers and show you related resources.',
+        timestamp: new Date()
+      }
+    ]);
+  };
+
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
@@ -292,42 +319,56 @@ const FinanceChat: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-200 max-w-2xl mx-auto">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-200 max-w-2xl mx-auto w-full animate-fade-in">
       {/* Chat Header */}
-      <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-t-lg">
+      <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-t-lg flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-label="Chat Icon">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </div>
           <div>
             <h3 className="font-semibold text-lg">Financial Assistant</h3>
-            <p className="text-green-100 text-sm">Ask me about calculators, tools, and schemes</p>
+            <p className="text-green-100 text-xs sm:text-sm">Ask me about calculators, tools, and schemes</p>
           </div>
         </div>
+        <button
+          aria-label="Clear chat"
+          onClick={handleClearChat}
+          className="ml-2 px-3 py-1 text-xs bg-white bg-opacity-20 hover:bg-opacity-40 rounded-lg text-white border border-white border-opacity-30 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+        >
+          🗑️ Clear
+        </button>
       </div>
 
       {/* Messages */}
-      <div className="h-96 overflow-y-auto p-4 space-y-4">
+      <div
+        ref={chatContainerRef}
+        className="h-96 sm:h-[32rem] overflow-y-auto p-2 sm:p-4 space-y-4 bg-gradient-to-b from-white to-green-50 relative"
+        style={{ scrollBehavior: 'smooth' }}
+        tabIndex={0}
+        aria-label="Chat conversation"
+      >
         {messages.map((message) => (
           <div
             key={message.id}
-            className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
+            className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in`}
           >
             <div
-              className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+              className={`max-w-[90vw] sm:max-w-xs lg:max-w-md px-4 py-2 rounded-2xl shadow-md transition-all duration-200 ${
                 message.type === 'user'
-                  ? 'bg-green-500 text-white'
-                  : 'bg-gray-100 text-gray-800'
+                  ? 'bg-green-500 text-white self-end rounded-br-none'
+                  : 'bg-gray-100 text-gray-800 self-start rounded-bl-none'
               }`}
+              tabIndex={0}
+              aria-label={message.type === 'user' ? 'Your message' : 'Bot message'}
             >
               <div className="whitespace-pre-wrap text-sm">
                 {message.type === 'bot' ? (
                   <div className="space-y-2">
                     {message.content.split('\n').map((line, index) => {
                       if (line.includes('[🔗')) {
-                        // Handle clickable links
                         const linkMatch = line.match(/\[🔗 ([^\]]+)\]\(([^)]+)\)/);
                         if (linkMatch) {
                           const [, linkText, url] = linkMatch;
@@ -336,7 +377,8 @@ const FinanceChat: React.FC = () => {
                               <span>{line.replace(/\[🔗 [^\]]+\]\([^)]+\)/, '')}</span>
                               <button
                                 onClick={() => window.open(url, '_blank')}
-                                className="inline-flex items-center px-2 py-1 text-xs font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100 transition-colors"
+                                className="inline-flex items-center px-2 py-1 text-xs font-medium text-green-600 bg-green-50 rounded-md hover:bg-green-100 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400"
+                                aria-label={`Open ${linkText}`}
                               >
                                 🔗 {linkText}
                               </button>
@@ -359,55 +401,65 @@ const FinanceChat: React.FC = () => {
             </div>
           </div>
         ))}
-        
         {isLoading && (
-          <div className="flex justify-start">
-            <div className="bg-gray-100 text-gray-800 max-w-xs lg:max-w-md px-4 py-2 rounded-lg">
+          <div className="flex justify-start animate-pulse">
+            <div className="bg-gray-100 text-gray-800 max-w-[90vw] sm:max-w-xs lg:max-w-md px-4 py-2 rounded-2xl">
               <div className="flex items-center space-x-2">
                 <div className="flex space-x-1">
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                 </div>
-                <span className="text-sm text-gray-600">Searching...</span>
+                <span className="text-sm text-gray-600">Typing...</span>
               </div>
             </div>
           </div>
         )}
-        
         <div ref={messagesEndRef} />
+        {showScroll && (
+          <button
+            aria-label="Scroll to latest message"
+            className="fixed bottom-24 right-6 z-10 bg-green-500 text-white rounded-full shadow-lg p-2 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 animate-bounce"
+            onClick={scrollToBottom}
+          >
+            ↓
+          </button>
+        )}
       </div>
 
       {/* Input */}
-      <div className="border-t border-gray-200 p-4">
-        <div className="flex space-x-2">
+      <div className="border-t border-gray-200 p-2 sm:p-4 bg-white flex flex-col gap-2">
+        <div className="flex space-x-2 items-center">
           <input
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Ask about EMI calculator, budget tools, government schemes..."
-            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-base sm:text-lg"
             disabled={isLoading}
+            aria-label="Type your message"
+            autoComplete="off"
           />
           <button
             onClick={handleSendMessage}
             disabled={!inputValue.trim() || isLoading}
-            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-base"
+            aria-label="Send message"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
             </svg>
           </button>
         </div>
-        
         {/* Quick Suggestions */}
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-1 flex flex-wrap gap-2">
           {['EMI Calculator', 'Budget Template', 'PPF Scheme', 'Tax Calculator', 'Crypto Regulation', 'Mutual Funds'].map((suggestion) => (
             <button
               key={suggestion}
               onClick={() => setInputValue(suggestion)}
-              className="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
+              className="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded-full hover:bg-green-100 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400"
+              aria-label={`Quick suggestion: ${suggestion}`}
             >
               {suggestion}
             </button>
@@ -417,5 +469,10 @@ const FinanceChat: React.FC = () => {
     </div>
   );
 };
+
+// Add fade-in animation
+// In your global CSS (e.g., index.css or tailwind.css), add:
+// .animate-fade-in { animation: fadeIn 0.5s ease; }
+// @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 export default FinanceChat; 

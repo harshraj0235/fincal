@@ -2133,3 +2133,31 @@ a:hover:not(.btn) {
     overflow: visible;
   }
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Improve chat bubble and button tap targets for mobile */
+@media (max-width: 640px) {
+  .max-w-xs, .lg\:max-w-md, .max-w-2xl, .max-w-3xl {
+    max-width: 98vw !important;
+  }
+  .rounded-lg, .rounded-2xl {
+    border-radius: 1.2rem !important;
+  }
+  .px-4, .px-3, .py-2, .py-1 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  button, input {
+    font-size: 1.1rem !important;
+    min-height: 2.5rem !important;
+  }
+}
