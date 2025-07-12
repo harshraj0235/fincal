@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, Tag, Download, TrendingUp, BookOpen } from 'lucide-react';
 import { excelToolBlogPosts } from '../data/exceltooldata';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 const FAQ_SCHEMA = {
   "@context": "https://schema.org",
@@ -90,7 +91,9 @@ const ExcelTool: React.FC = () => {
   }, [searchTerm, selectedCategory, sortBy]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <WhatsAppBanner />
+      <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
     <div className="max-w-7xl mx-auto px-4 py-12">
@@ -403,6 +406,7 @@ const ExcelTool: React.FC = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

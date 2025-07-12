@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Award, Target, Calculator, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 export const AboutUs: React.FC = () => {
   const navigate = useNavigate();
@@ -18,7 +19,9 @@ export const AboutUs: React.FC = () => {
   }, []);
   
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <>
+      <WhatsAppBanner />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 
@@ -159,6 +162,7 @@ export const AboutUs: React.FC = () => {
         </Link>
       </div>
     </div>
+    </>
   );
 };
 

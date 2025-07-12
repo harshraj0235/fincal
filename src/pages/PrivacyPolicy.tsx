@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 export const PrivacyPolicy: React.FC = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <>
+      <WhatsAppBanner />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 
@@ -121,6 +124,7 @@ export const PrivacyPolicy: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
