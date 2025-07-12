@@ -2,6 +2,16 @@
 
 This folder contains individual blog post files that are automatically imported into the blog system.
 
+## 🆕 Auto-Update Date Feature
+
+**Blog dates automatically update every 2 days** to keep content fresh for Google and improve SEO rankings. This feature:
+
+- ✅ **Automatic Updates**: Blog dates refresh every 2 days without manual intervention
+- ✅ **Google Freshness**: Helps Google understand content is current and relevant
+- ✅ **SEO Boost**: Fresh content gets better rankings in search results
+- ✅ **Smart Detection**: Only updates blogs older than 2 days
+- ✅ **Preserves Original**: Keeps original published date while updating display date
+
 ## How to Add New Blog Posts
 
 ### 1. Create a New Blog File
@@ -16,7 +26,7 @@ Edit the copied file and update all the fields marked with `// CHANGE THIS`:
 - `slug`: URL-friendly slug (e.g., 'my-blog-post-title')
 - `title`: Blog post title
 - `author`: Author name
-- `date`: Publication date in YYYY-MM-DD format
+- `date`: Publication date in YYYY-MM-DD format (will auto-update every 2 days)
 - `coverImage`: Main image URL
 - `excerpt`: Short description
 - `categories`: Array of categories
@@ -45,7 +55,7 @@ The system automatically finds related posts from `blogData1.ts` based on matchi
 ## File Structure
 ```
 src/data/blogs/
-├── index.ts          # Auto-imports all blog files
+├── index.ts          # Auto-imports all blog files with date updates
 ├── template.ts       # Template for new blogs
 ├── 651.ts           # Green Hydrogen blog
 ├── 652.ts           # Digital Rupee blog
@@ -55,6 +65,7 @@ src/data/blogs/
 
 ## Auto-Import Features
 - **Automatic Discovery**: Any `.ts` file in this folder is automatically imported
+- **Auto-Date Updates**: Blog dates refresh every 2 days for Google freshness
 - **Sorting**: Blogs are automatically sorted by ID (newest first)
 - **Type Safety**: Full TypeScript support with proper types
 - **Error Handling**: Invalid files are filtered out automatically
@@ -65,10 +76,11 @@ src/data/blogs/
 3. Save the file
 4. The blog will automatically appear on your blog page at `/blog`
 5. Individual blog post will be available at `/blog/your-slug`
+6. **Date will auto-update every 2 days** for fresh content
 
 ## Notes
 - Blog IDs must be unique across all blog sources (blogs folder, blogData.ts, blogData1.ts)
-- The system automatically refreshes blog dates if they're older than 2 days
+- **Blog dates automatically update every 2 days** to keep content fresh for Google
 - All blogs are optimized for SEO, Google News, and Google Discover
 - Related posts are automatically generated based on category matching
 
@@ -77,4 +89,5 @@ If a blog doesn't appear:
 1. Check that the `id` field is unique
 2. Ensure all required fields are filled
 3. Verify the file is saved with `.ts` extension
-4. Check browser console for any import errors 
+4. Check browser console for any import errors
+5. Check browser console for auto-update logs 

@@ -12,8 +12,8 @@ const blog652 = {
   excerpt: 'The Reserve Bank of India is leading the world in CBDC innovation. Learn everything about Digital Rupee - from pilot programs to future implications for Indian economy.',
   categories: ['Digital Finance', 'CBDC', 'RBI', 'India', 'Fintech', 'Digital Payments'],
   keywords: ['digital rupee', 'CBDC', 'RBI digital currency', 'India CBDC', 'digital payments', 'blockchain', 'fintech', '2025', 'digital economy'],
-  date: '2025-01-28',
-  coverImage: 'https://moneycal.in/images/blogs/digital-rupee-india.jpg',
+  date: '2025-07-12',
+  coverImage: 'https://beincrypto.com/wp-content/uploads/2023/07/BIC_DIGITAL_RUPEE_INDIA-covers-neutral-coins-850x478.png',
   content: [
     { type: 'heading', content: 'Digital Rupee (CBDC) in India 2025: Complete Guide to Central Bank Digital Currency' },
     { type: 'paragraph', content: 'India is at the forefront of the global CBDC revolution. The Reserve Bank of India (RBI) has been actively developing and testing the Digital Rupee, making India one of the first major economies to implement a central bank digital currency. This comprehensive guide will walk you through everything you need to know about Digital Rupee in 2025 - from its current pilot status to its potential impact on India\'s financial future.' },

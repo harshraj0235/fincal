@@ -18,10 +18,18 @@ function getTodayDateString() {
 // Helper to update blog dates if older than 2 days
 function refreshBlogDates(blog) {
   const now = new Date();
-  const lastMod = new Date(blog.lastModified || blog.publishedDate);
-  if ((now.getTime() - lastMod.getTime()) > 2 * 24 * 60 * 60 * 1000) {
-    const todayStr = now.toISOString();
-    return { ...blog, publishedDate: todayStr, lastModified: todayStr };
+  const blogDate = new Date(blog.date);
+  const daysDifference = Math.floor((now.getTime() - blogDate.getTime()) / (1000 * 60 * 60 * 24));
+  
+  // Update date if blog is older than 2 days
+  if (daysDifference >= 2) {
+    const updatedDate = now.toISOString().split('T')[0]; // YYYY-MM-DD format
+    return { 
+      ...blog, 
+      date: updatedDate,
+      publishedDate: now.toISOString(), 
+      lastModified: now.toISOString() 
+    };
   }
   return blog;
 }

@@ -4,6 +4,9 @@ import { blogPosts } from '../blogData1';
 // Copy this file and rename it to your desired blog ID (e.g., 653.ts, 654.ts, etc.)
 // Update all the content below with your blog information
 
+// AUTO-UPDATE FEATURE: Blog dates will automatically update every 2 days to keep content fresh for Google
+// The system will automatically update the 'date' field if the blog is older than 2 days
+
 const blogTemplate = {
   id: 653, // CHANGE THIS TO YOUR BLOG ID
   slug: 'your-blog-slug-here', // CHANGE THIS TO YOUR SLUG
@@ -16,7 +19,7 @@ const blogTemplate = {
   excerpt: 'Your blog excerpt here...', // CHANGE THIS TO EXCERPT
   categories: ['Category1', 'Category2', 'Category3'], // CHANGE THESE CATEGORIES
   keywords: ['keyword1', 'keyword2', 'keyword3'], // CHANGE THESE KEYWORDS
-  date: '2025-01-29', // CHANGE THIS TO YOUR DATE (YYYY-MM-DD format)
+  date: '2025-01-29', // CHANGE THIS TO YOUR DATE (YYYY-MM-DD format) - Will auto-update every 2 days
   coverImage: 'https://moneycal.in/images/blogs/your-image.jpg', // CHANGE THIS TO COVER IMAGE
   content: [
     { type: 'heading', content: 'Your Main Heading' },

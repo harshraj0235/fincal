@@ -22,15 +22,38 @@ interface BlogPost {
   [key: string]: unknown;
 }
 
+// Function to auto-update blog dates every 2 days for fresh content
+function autoUpdateBlogDates(blog: BlogPost): BlogPost {
+  const now = new Date();
+  const blogDate = new Date(blog.date);
+  const daysDifference = Math.floor((now.getTime() - blogDate.getTime()) / (1000 * 60 * 60 * 24));
+  
+  // Update date if blog is older than 2 days
+  if (daysDifference >= 2) {
+    const updatedDate = now.toISOString().split('T')[0]; // YYYY-MM-DD format
+    return {
+      ...blog,
+      date: updatedDate,
+      lastModified: now.toISOString(),
+      publishedDate: blog.publishedDate || now.toISOString()
+    };
+  }
+  
+  return blog;
+}
+
 // Import all blog files dynamically
 const blogModules = import.meta.glob('./*.ts', { eager: true });
 
-// Extract all blog objects from the imported modules
+// Extract all blog objects from the imported modules and auto-update dates
 export const blogs: BlogPost[] = Object.values(blogModules)
-  .map((module: Record<string, unknown>) => {
+  .map((module: unknown) => {
     // Skip the index.ts file itself
-    if (module.default && typeof module.default === 'object' && (module.default as BlogPost).id) {
-      return module.default as BlogPost;
+    if (module && typeof module === 'object' && 'default' in module && 
+        (module as { default: unknown }).default && 
+        typeof (module as { default: unknown }).default === 'object' && 
+        ((module as { default: BlogPost }).default as BlogPost).id) {
+      return autoUpdateBlogDates((module as { default: BlogPost }).default);
     }
     return null;
   })
@@ -38,8 +61,8 @@ export const blogs: BlogPost[] = Object.values(blogModules)
   .sort((a: BlogPost, b: BlogPost) => b.id - a.id); // Sort by ID descending (newest first)
 
 // Export individual blogs for specific access if needed
-export const blog651 = blogModules['./651.ts']?.default as BlogPost | undefined;
-export const blog652 = blogModules['./652.ts']?.default as BlogPost | undefined;
+export const blog651 = (blogModules['./651.ts'] as { default: BlogPost })?.default;
+export const blog652 = (blogModules['./652.ts'] as { default: BlogPost })?.default;
 // Add more exports as you create new blog files
 
-console.log(`Loaded ${blogs.length} blog files:`, blogs.map((blog: BlogPost) => blog.id)); 
+console.log(`Loaded ${blogs.length} blog files with auto-updated dates:`, blogs.map((blog: BlogPost) => `${blog.id} (${blog.date})`)); 
