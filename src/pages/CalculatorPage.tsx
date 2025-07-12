@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, Bookmark, Info } from 'lucide-react';
 import { getCalculatorById } from '../data/calculatorData';
 import SEOHelmet from '../components/SEOHelmet';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 // Dynamic import map for calculators
 const calculatorLazyMap: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
@@ -198,6 +199,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
 
   return (
     <>
+      <WhatsAppBanner />
       <SEOHelmet
         title={`${calculator.name} - Free Online Calculator | FinanceGurus Directory`}
         description={generateDescription()}

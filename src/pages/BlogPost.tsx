@@ -5,6 +5,7 @@ import {
   Facebook, Twitter, Linkedin, Copy
 } from 'lucide-react';
 import { getBlogPostBySlug, getRelatedPosts } from '../data/allBlogData';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 const AUTHOR_NAME = "Harsh Raj";
 const AUTHOR_LINKEDIN = "https://www.linkedin.com/in/harshitpatel9/";
@@ -56,6 +57,7 @@ export const BlogPost: React.FC = () => {
 
   return (
     <>
+      <WhatsAppBanner />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         {/* Back button */}
         <div className="mb-6">

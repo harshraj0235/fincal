@@ -6,6 +6,7 @@ import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
 import { governmentSchemes } from '../data/governmentSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 export const Home: React.FC = () => {
   const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
@@ -118,6 +119,7 @@ export const Home: React.FC = () => {
   
   return (
     <>
+      <WhatsAppBanner />
       <SEOHelmet
         title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
         description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users. Get accurate calculations for loans, investments, and tax planning."

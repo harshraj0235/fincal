@@ -9,6 +9,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { governmentSchemes, schemeCategories } from '../data/governmentSchemesData';
+import WhatsAppBanner from '../components/WhatsAppBanner';
 
 interface Scheme {
   id: string;
@@ -169,7 +170,9 @@ const GovernmentSchemes: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <WhatsAppBanner />
+      <div className="min-h-screen bg-white">
       {/* Header Section */}
       <div className="bg-red-700 text-white border-b-4 border-black">
         <div className="max-w-5xl mx-auto px-3 py-6">
@@ -351,6 +354,7 @@ const GovernmentSchemes: React.FC = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
