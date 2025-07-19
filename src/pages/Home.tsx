@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, lazy, Suspense, useMemo, useTransition } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, ChevronRight } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
@@ -427,6 +427,66 @@ export const Home: React.FC = () => {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tool Hub Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-blue-900 mb-4">Tool Hub: Sales & Shopkeeper Tools</h2>
+            <p className="text-lg text-blue-700 max-w-3xl mx-auto">
+              30+ unique tools for sales professionals and shopkeepers. Fast, easy, and mobile-friendly!
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {/* Salesperson Tools */}
+            {[
+              { name: 'Instant Discount & Profit Calculator', link: '/tools/discount-profit', icon: '💸' },
+              { name: 'Product Comparison Matrix', link: '/tools/product-comparison', icon: '📊' },
+              { name: 'EMI/Loan Affordability Checker', link: '/tools/emi-affordability', icon: '🏦' },
+              { name: 'Meeting Agenda & Note Taker', link: '/tools/meeting-notes', icon: '📝' },
+              { name: 'Digital Business Card Creator', link: '/tools/business-card', icon: '💼' },
+              { name: 'QR Code Generator for Products', link: '/tools/qr-generator', icon: '🔗' },
+              { name: 'Customer Persona Builder', link: '/tools/persona-builder', icon: '👤' },
+              { name: 'Time Zone Converter', link: '/tools/timezone-converter', icon: '🌐' },
+              { name: 'Sales Script Assistant', link: '/tools/sales-script', icon: '🎤' },
+              { name: 'Sales Performance Tracker', link: '/tools/sales-tracker', icon: '📈' },
+              { name: 'Competitive Analysis Cheat Sheet', link: '/tools/competitive-analysis', icon: '🕵️' },
+              { name: 'Offer/Proposal Template Builder', link: '/tools/proposal-template', icon: '📄' },
+              { name: 'Feedback Form Generator', link: '/tools/feedback-form', icon: '🗣️' },
+              { name: 'Follow-Up Reminder & Scheduler', link: '/tools/followup-reminder', icon: '⏰' },
+              { name: 'Content Sharing Helper', link: '/tools/content-sharing', icon: '🔗' },
+              { name: 'Sales Goal Planner', link: '/tools/sales-goal-planner', icon: '🎯' },
+              { name: 'Client Testimonial Collector', link: '/tools/testimonial-collector', icon: '🌟' },
+              { name: 'Referral Program Tracker', link: '/tools/referral-tracker', icon: '🔄' },
+              { name: 'Digital Product/Service Showcase', link: '/tools/product-showcase', icon: '🛍️' },
+              { name: 'Meeting Cost Calculator', link: '/tools/meeting-cost', icon: '⏳' },
+              // Shopkeeper Tools
+              { name: 'Real-time Stock Checker', link: '/tools/stock-checker', icon: '📦' },
+              { name: 'Price Tag/Label Creator', link: '/tools/price-tag', icon: '🏷️' },
+              { name: 'Daily Sales Report Generator', link: '/tools/sales-report', icon: '🧾' },
+              { name: 'Promotional Offer Designer', link: '/tools/promo-designer', icon: '🎨' },
+              { name: 'Customer Loyalty Point Tracker', link: '/tools/loyalty-tracker', icon: '🎁' },
+              { name: 'Staff Duty Roster & Leave Planner', link: '/tools/staff-roster', icon: '👥' },
+              { name: 'Supplier Order Manager', link: '/tools/supplier-orders', icon: '🚚' },
+              { name: 'QR Code Generator for Store', link: '/tools/store-qr', icon: '🏪' },
+              { name: 'Online Review Request Generator', link: '/tools/review-request', icon: '⭐' },
+              { name: 'Basic Expense Tracker', link: '/tools/expense-tracker', icon: '💰' },
+            ].map((tool, idx) => (
+              <Link
+                key={tool.link}
+                to={tool.link}
+                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl border border-blue-100 p-6 flex flex-col items-center text-center transition-all hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                tabIndex={0}
+                aria-label={tool.name}
+              >
+                <span className="text-4xl mb-4 animate-bounce group-hover:scale-110 transition-transform">{tool.icon}</span>
+                <span className="font-semibold text-blue-900 text-lg mb-2 group-hover:text-blue-700 transition-colors">{tool.name}</span>
+                <span className="text-xs text-blue-600 group-hover:text-blue-800">{idx < 20 ? 'Sales Tool' : 'Shopkeeper Tool'}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
