@@ -4,6 +4,8 @@ import { Layout } from './components/Layout';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
+import ToolPlaceholder from './pages/tools/ToolPlaceholder';
+import DiscountProfitCalculator from './pages/tools/DiscountProfitCalculator';
 
 // Lazy load all page-level components
 const Home = lazy(() => import('./pages/Home'));
@@ -156,6 +158,8 @@ function App() {
                 <Route path="/calculators/msme-loan-eligibility" element={<MSMELoanEligibilityChecker />} />
                 <Route path="/calculators/green-energy-investment-calculator" element={<GreenEnergyInvestmentCalculator />} />
                 <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
+                <Route path="/tools/discount-profit" element={<DiscountProfitCalculator />} />
+                <Route path="/tools/:toolId" element={<ToolPlaceholder />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>
