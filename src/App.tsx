@@ -14,6 +14,8 @@ import MeetingAgendaNoteTaker from './pages/tools/MeetingAgendaNoteTaker';
 import DigitalBusinessCardCreator from './pages/tools/DigitalBusinessCardCreator';
 import QRCodeGenerator from './pages/tools/QRCodeGenerator';
 import CustomerPersonaBuilder from './pages/tools/CustomerPersonaBuilder';
+import TimeZoneConverter from './pages/tools/TimeZoneConverter';
+import SalesScriptAssistant from './pages/tools/SalesScriptAssistant';
 
 // Lazy load all page-level components
 const Home = lazy(() => import('./pages/Home'));
@@ -175,6 +177,8 @@ function App() {
                 <Route path="/tools/business-card" element={<DigitalBusinessCardCreator />} />
                 <Route path="/tools/qr-generator" element={<QRCodeGenerator />} />
                 <Route path="/tools/persona-builder" element={<CustomerPersonaBuilder />} />
+                <Route path="/tools/timezone-converter" element={<TimeZoneConverter />} />
+                <Route path="/tools/sales-script" element={<SalesScriptAssistant />} />
                 <Route path="/tools/:toolId" element={<ToolPlaceholder />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
