@@ -145,6 +145,15 @@ const Navbar = () => {
               <Newspaper className="w-4 h-4 mr-1" />
               News Reel
             </Link>
+            <Link 
+              to="/tools" 
+              className="text-white bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-800 transition-all duration-200 text-sm font-medium flex items-center" 
+              aria-label="Tool Hub - All Tools"
+              style={{ marginLeft: '8px' }}
+            >
+              <Zap className="w-4 h-4 mr-1" />
+              Tool Hub
+            </Link>
               
               {/* Bank Tools Dropdown */}
             <div className="relative group">
@@ -297,6 +306,14 @@ const Navbar = () => {
                   >
                     <Newspaper className="w-5 h-5 mr-3 text-green-600" />
                     <span className="font-medium">News Reel</span>
+                  </Link>
+                  <Link 
+                    to="/tools" 
+                    className="flex items-center p-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors font-semibold"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Zap className="w-5 h-5 mr-3" />
+                    <span className="font-medium">Tool Hub</span>
                   </Link>
               <button 
                 onClick={() => {
