@@ -16,6 +16,8 @@ import QRCodeGenerator from './pages/tools/QRCodeGenerator';
 import CustomerPersonaBuilder from './pages/tools/CustomerPersonaBuilder';
 import TimeZoneConverter from './pages/tools/TimeZoneConverter';
 import SalesScriptAssistant from './pages/tools/SalesScriptAssistant';
+import SalesPerformanceTracker from './pages/tools/SalesPerformanceTracker';
+import CompetitiveAnalysisCheatSheet from './pages/tools/CompetitiveAnalysisCheatSheet';
 
 // Lazy load all page-level components
 const Home = lazy(() => import('./pages/Home'));
@@ -179,6 +181,8 @@ function App() {
                 <Route path="/tools/persona-builder" element={<CustomerPersonaBuilder />} />
                 <Route path="/tools/timezone-converter" element={<TimeZoneConverter />} />
                 <Route path="/tools/sales-script" element={<SalesScriptAssistant />} />
+                <Route path="/tools/sales-tracker" element={<SalesPerformanceTracker />} />
+                <Route path="/tools/competitive-analysis" element={<CompetitiveAnalysisCheatSheet />} />
                 <Route path="/tools/:toolId" element={<ToolPlaceholder />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
