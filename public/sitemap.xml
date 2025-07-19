@@ -6389,6 +6389,83 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Excel Tools Section -->
- 
+  <!--  Tools HUB Section -->
+ <url>
+    <loc>https://moneycal.in/tools/discount-profit</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/product-comparison</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/emi-affordability</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/meeting-notes</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/business-card</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/qr-generator</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/persona-builder</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/timezone-converter</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/sales-script</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/sales-tracker</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/competitive-analysis</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/proposal-template</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/feedback-form</loc>
+    <lastmod>2025-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
