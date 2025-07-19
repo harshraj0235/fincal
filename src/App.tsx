@@ -100,6 +100,7 @@ function App() {
         {/* Missed Call Banking Directory route - outside Layout */}
         <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
         {/* All other routes inside Layout */}
+        <Route path="/tools" element={<Navigate to="https://moneycal.in/tools/" replace />} />
         <Route path="*" element={
           <Layout>
             <ScrollToTop />
