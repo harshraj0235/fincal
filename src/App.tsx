@@ -6,6 +6,10 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
 import ToolPlaceholder from './pages/tools/ToolPlaceholder';
 import DiscountProfitCalculator from './pages/tools/DiscountProfitCalculator';
+import ProductComparisonMatrix from './pages/tools/ProductComparisonMatrix';
+import EMIAffordabilityChecker from './pages/tools/EMIAffordabilityChecker';
+import RealTimeStockChecker from './pages/tools/RealTimeStockChecker';
+import PriceTagLabelCreator from './pages/tools/PriceTagLabelCreator';
 
 // Lazy load all page-level components
 const Home = lazy(() => import('./pages/Home'));
@@ -159,6 +163,10 @@ function App() {
                 <Route path="/calculators/green-energy-investment-calculator" element={<GreenEnergyInvestmentCalculator />} />
                 <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
                 <Route path="/tools/discount-profit" element={<DiscountProfitCalculator />} />
+                <Route path="/tools/product-comparison" element={<ProductComparisonMatrix />} />
+                <Route path="/tools/emi-affordability" element={<EMIAffordabilityChecker />} />
+                <Route path="/tools/stock-checker" element={<RealTimeStockChecker />} />
+                <Route path="/tools/price-tag" element={<PriceTagLabelCreator />} />
                 <Route path="/tools/:toolId" element={<ToolPlaceholder />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
