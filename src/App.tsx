@@ -18,6 +18,8 @@ import TimeZoneConverter from './pages/tools/TimeZoneConverter';
 import SalesScriptAssistant from './pages/tools/SalesScriptAssistant';
 import SalesPerformanceTracker from './pages/tools/SalesPerformanceTracker';
 import CompetitiveAnalysisCheatSheet from './pages/tools/CompetitiveAnalysisCheatSheet';
+import OfferProposalTemplateBuilder from './pages/tools/OfferProposalTemplateBuilder';
+import SimpleFeedbackFormGenerator from './pages/tools/SimpleFeedbackFormGenerator';
 
 // Lazy load all page-level components
 const Home = lazy(() => import('./pages/Home'));
@@ -183,6 +185,8 @@ function App() {
                 <Route path="/tools/sales-script" element={<SalesScriptAssistant />} />
                 <Route path="/tools/sales-tracker" element={<SalesPerformanceTracker />} />
                 <Route path="/tools/competitive-analysis" element={<CompetitiveAnalysisCheatSheet />} />
+                <Route path="/tools/proposal-template" element={<OfferProposalTemplateBuilder />} />
+                <Route path="/tools/feedback-form" element={<SimpleFeedbackFormGenerator />} />
                 <Route path="/tools/:toolId" element={<ToolPlaceholder />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
