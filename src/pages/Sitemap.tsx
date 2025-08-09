@@ -27,7 +27,7 @@ export const Sitemap: React.FC = () => {
       <div className="text-center mb-12">
         <h1 className="text-3xl font-bold text-neutral-900 mb-4">Sitemap</h1>
         <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-          A complete overview of all pages and resources available on FinCalc India
+          A complete overview of all pages and resources available on MoneyCal India
         </p>
       </div>
       
@@ -67,6 +67,21 @@ export const Sitemap: React.FC = () => {
             <li>
               <Link to="/terms-and-conditions" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
                 Terms and Conditions
+              </Link>
+            </li>
+            <li>
+              <Link to="/disclaimer" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Disclaimer
+              </Link>
+            </li>
+            <li>
+              <Link to="/cookie-policy" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Cookie Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/editorial-policy" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Editorial Policy
               </Link>
             </li>
             <li>

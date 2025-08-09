@@ -47,7 +47,8 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
   calculatorData,
 }) => {
   React.useEffect(() => {
-    const fullTitle = title.includes('FinanceGurus') ? title : `${title} | FinanceGurus - India's Top Financial Calculators & Tools`;
+    const siteName = 'MoneyCal India';
+    const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName} - India's Top Financial Calculators & Tools`;
     document.title = fullTitle;
 
     // Helper to set or update a meta tag
@@ -90,7 +91,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
     setMeta('og:description', description, 'property');
     setMeta('og:type', type, 'property');
     setMeta('og:url', url ? (url.startsWith('http') ? url : `https://moneycal.in${url}`) : window.location.href, 'property');
-    setMeta('og:site_name', 'FinanceGurus', 'property');
+    setMeta('og:site_name', siteName, 'property');
     if (image) setMeta('og:image', image, 'property');
     if (articlePublishedTime) setMeta('article:published_time', articlePublishedTime, 'property');
     if (articleModifiedTime) setMeta('article:modified_time', articleModifiedTime, 'property');
@@ -103,7 +104,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
     setMeta('twitter:title', fullTitle);
     setMeta('twitter:description', description);
     if (image) setMeta('twitter:image', image);
-    setMeta('twitter:site', '@FinanceGurusIN');
+    setMeta('twitter:site', '@MoneyCalIN');
 
     // Alternate language links (hreflang)
     if (alternateLanguages) {
@@ -190,7 +191,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
         },
         "publisher": {
           "@type": "Organization",
-          "name": "FinanceGurus",
+          "name": "MoneyCal India",
           "url": "https://moneycal.in"
         }
       };

@@ -32,6 +32,9 @@ export const SitemapXml: React.FC = () => {
         { url: '/contact-us', priority: '0.7', changefreq: 'monthly' },
         { url: '/privacy-policy', priority: '0.5', changefreq: 'yearly' },
         { url: '/terms-and-conditions', priority: '0.5', changefreq: 'yearly' },
+        { url: '/disclaimer', priority: '0.5', changefreq: 'yearly' },
+        { url: '/cookie-policy', priority: '0.5', changefreq: 'yearly' },
+        { url: '/editorial-policy', priority: '0.5', changefreq: 'yearly' },
         { url: '/sitemap', priority: '0.5', changefreq: 'monthly' }
       ];
       

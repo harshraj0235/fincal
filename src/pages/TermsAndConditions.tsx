@@ -35,7 +35,7 @@ export const TermsAndConditions: React.FC = () => {
           
           <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">Introduction</h2>
           <p>
-            These Terms and Conditions ("Terms") govern your use of the FinCalc India website and all content, services, and products available at or through the website (collectively, the "Service"). The Service is owned and operated by FinCalc India ("we," "us," or "our").
+            These Terms and Conditions ("Terms") govern your use of the MoneyCal India website and all content, services, and products available at or through the website (collectively, the "Service"). The Service is owned and operated by MoneyCal India ("we," "us," or "our").
           </p>
           <p>
             By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the Terms, you may not access the Service.
@@ -66,7 +66,7 @@ export const TermsAndConditions: React.FC = () => {
           
           <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">Intellectual Property</h2>
           <p>
-            The Service and its original content, features, and functionality are and will remain the exclusive property of FinCalc India and its licensors. The Service is protected by copyright, trademark, and other laws of both India and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of FinCalc India.
+            The Service and its original content, features, and functionality are and will remain the exclusive property of MoneyCal India and its licensors. The Service is protected by copyright, trademark, and other laws of both India and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of MoneyCal India.
           </p>
           
           <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">Disclaimer of Warranties</h2>
@@ -88,7 +88,7 @@ export const TermsAndConditions: React.FC = () => {
             The calculators, tools, and information provided on this website are for informational and educational purposes only. They are not intended to provide financial, investment, legal, or tax advice. The results provided by our calculators are based on the information you input and assumptions that may not apply to your individual situation.
           </p>
           <p>
-            Before making any financial decisions, we strongly recommend consulting with a qualified financial advisor, accountant, or legal professional. FinCalc India is not responsible for any decisions made based on the information provided by our calculators or content.
+            Before making any financial decisions, we strongly recommend consulting with a qualified financial advisor, accountant, or legal professional. MoneyCal India is not responsible for any decisions made based on the information provided by our calculators or content.
           </p>
           
           <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">Limitation of Liability</h2>
@@ -104,7 +104,7 @@ export const TermsAndConditions: React.FC = () => {
           
           <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">Indemnification</h2>
           <p>
-            You agree to defend, indemnify, and hold harmless FinCalc India and its licensee and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of:
+            You agree to defend, indemnify, and hold harmless MoneyCal India and its licensee and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of:
           </p>
           <ul className="list-disc pl-6 space-y-2 mb-4">
             <li>Your use and access of the Service, by you or any person using your account and password</li>
@@ -127,7 +127,7 @@ export const TermsAndConditions: React.FC = () => {
             If you have any questions about these Terms, please contact us at:
           </p>
           <p className="font-medium">
-            Email: legal@fincalcindia.com<br />
+            Email: legal@moneycal.in<br />
             Phone: +91 1234567890
           </p>
         </div>

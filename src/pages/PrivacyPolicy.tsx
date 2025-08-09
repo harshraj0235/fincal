@@ -35,7 +35,7 @@ export const PrivacyPolicy: React.FC = () => {
           
           <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4">Introduction</h2>
           <p>
-            FinCalc India ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, including any other media form, media channel, mobile website, or mobile application related or connected to it (collectively, the "Site").
+            MoneyCal India ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, including any other media form, media channel, mobile website, or mobile application related or connected to it (collectively, the "Site").
           </p>
           <p>
             Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the Site.
@@ -119,7 +119,7 @@ export const PrivacyPolicy: React.FC = () => {
             If you have any questions about this Privacy Policy, please contact us at:
           </p>
           <p className="font-medium">
-            Email: privacy@fincalcindia.com<br />
+            Email: privacy@moneycal.in<br />
             Phone: +91 1234567890
           </p>
         </div>

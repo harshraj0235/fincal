@@ -3,6 +3,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { Sidebar } from './Sidebar';
 import { useLocation } from 'react-router-dom';
+import CookieConsent from './CookieConsent';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -31,6 +32,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
         
       <Footer />
+      <CookieConsent />
     </div>
   );
 };

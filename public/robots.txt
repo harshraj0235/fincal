@@ -73,6 +73,9 @@ Allow: /about-us
 Allow: /contact-us
 Allow: /privacy-policy
 Allow: /terms-and-conditions
+Allow: /disclaimer
+Allow: /cookie-policy
+Allow: /editorial-policy
 Allow: /sitemap
 Allow: /sitemap.xml
 Allow: /credit-card-finder

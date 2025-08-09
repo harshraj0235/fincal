@@ -33,6 +33,9 @@ const AboutUs = lazy(() => import('./pages/AboutUs'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
 const SitemapXml = lazy(() => import('./pages/SitemapXml'));
+const Disclaimer = lazy(() => import('./pages/Disclaimer'));
+const CookiePolicy = lazy(() => import('./pages/CookiePolicy'));
+const EditorialPolicy = lazy(() => import('./pages/EditorialPolicy'));
 const BankingKnowledge = lazy(() => import('./pages/BankingKnowledge'));
 const CategoryPage = lazy(() => import('./pages/CategoryPage'));
 const CreditCardFinder = lazy(() => import('./calculators/CreditCardFinder'));
@@ -72,26 +75,43 @@ const AuthorProfilePage = lazy(() => import('./pages/AuthorProfilePage'));
 
 function App() {
   useEffect(() => {
-    // AdSense script
-    const adsenseScript = document.createElement('script');
-    adsenseScript.async = true;
-    adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4446717165665089';
-    adsenseScript.crossOrigin = 'anonymous';
-    document.head.appendChild(adsenseScript);
+    const CONSENT_KEY = 'fincal_cookie_consent_v1';
+    const loadAds = () => {
+      if (document.querySelector('script[data-adsbygoogle-script]')) return;
+      const adsenseScript = document.createElement('script');
+      adsenseScript.async = true;
+      adsenseScript.dataset.adsbygoogleScript = 'true';
+      adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4446717165665089';
+      adsenseScript.crossOrigin = 'anonymous';
+      document.head.appendChild(adsenseScript);
 
-    // Google AdSense meta tag
-    if (!document.querySelector('meta[name="google-adsense-account"]')) {
-      const adsenseMeta = document.createElement('meta');
-      adsenseMeta.name = 'google-adsense-account';
-      adsenseMeta.content = 'ca-pub-4446717165665089';
-      document.head.appendChild(adsenseMeta);
-    }
-
-    return () => {
-      if (document.head.contains(adsenseScript)) document.head.removeChild(adsenseScript);
-      const meta = document.querySelector('meta[name="google-adsense-account"]');
-      if (meta) document.head.removeChild(meta);
+      if (!document.querySelector('meta[name="google-adsense-account"]')) {
+        const adsenseMeta = document.createElement('meta');
+        adsenseMeta.name = 'google-adsense-account';
+        adsenseMeta.content = 'ca-pub-4446717165665089';
+        document.head.appendChild(adsenseMeta);
+      }
     };
+
+    const stored = ((): 'accepted' | 'rejected' | 'unset' => {
+      try {
+        const v = localStorage.getItem(CONSENT_KEY);
+        return v === 'accepted' || v === 'rejected' ? v : 'unset';
+      } catch {
+        return 'unset';
+      }
+    })();
+
+    if (stored === 'accepted') {
+      loadAds();
+    } else {
+      const onAccept = () => {
+        loadAds();
+        window.removeEventListener('cookie-consent-accepted', onAccept);
+      };
+      window.addEventListener('cookie-consent-accepted', onAccept);
+      return () => window.removeEventListener('cookie-consent-accepted', onAccept);
+    }
   }, []);
 
   return (
@@ -137,6 +157,9 @@ function App() {
                 <Route path="/government-schemes/:slug" element={<GovernmentSchemePost />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                <Route path="/disclaimer" element={<Disclaimer />} />
+                <Route path="/cookie-policy" element={<CookiePolicy />} />
+                <Route path="/editorial-policy" element={<EditorialPolicy />} />
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/sitemap" element={<Sitemap />} />

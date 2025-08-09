@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <Calculator className="h-8 w-8 text-primary-400" />
-              <span className="text-xl font-bold text-white">FinCalc India</span>
+              <span className="text-xl font-bold text-white">MoneyCal India</span>
             </Link>
             <p className="text-neutral-300 mb-4">
               Your trusted source for all financial calculations tailored for the Indian context. 
@@ -154,6 +154,21 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/disclaimer" className="text-neutral-300 hover:text-white transition-colors">
+                  Disclaimer
+                </Link>
+              </li>
+              <li>
+                <Link to="/cookie-policy" className="text-neutral-300 hover:text-white transition-colors">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/editorial-policy" className="text-neutral-300 hover:text-white transition-colors">
+                  Editorial Policy
+                </Link>
+              </li>
+              <li>
                 <Link to="/sitemap" className="text-neutral-300 hover:text-white transition-colors flex items-center">
                   <Map className="h-4 w-4 mr-1" />
                   Sitemap
@@ -169,7 +184,7 @@ export const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-neutral-700 pt-6 text-center text-neutral-400 text-sm">
-          <p>© {new Date().getFullYear()} FinCalc India. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MoneyCal India. All rights reserved.</p>
           <p className="mt-2">Disclaimer: The calculators provided are for informational purposes only and do not constitute financial advice.</p>
         </div>
       </div>
