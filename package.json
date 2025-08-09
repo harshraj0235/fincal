@@ -10,6 +10,14 @@
     "preview": "vite preview",
     "generate-blogs": "node scripts/generate-blogs.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
+    "auto-government-jobs": "node scripts/auto-government-jobs-generator.cjs",
+    "auto-scheme-jobs": "node scripts/auto-scheme-job-generator.cjs",
+    "auto-runner": "node scripts/auto-runner.cjs",
+    "automation:start": "node scripts/auto-runner.cjs",
+    "automation:install-task": "powershell -ExecutionPolicy Bypass -File scripts/setup-windows-task.ps1 -Create",
+    "automation:remove-task": "powershell -ExecutionPolicy Bypass -File scripts/setup-windows-task.ps1 -Delete",
+    "automation:status": "powershell -ExecutionPolicy Bypass -File scripts/setup-windows-task.ps1 -Status",
+    "automation:test": "node scripts/test-automation.cjs",
     "lhci:autorun": "lhci autorun"
   },
   "dependencies": {

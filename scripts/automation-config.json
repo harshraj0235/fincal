@@ -1,0 +1,72 @@
+{
+  "automation": {
+    "enabled": true,
+    "interval_hours": 36,
+    "scripts": [
+      "auto-news-generator.cjs",
+      "auto-government-jobs-generator.cjs",
+      "auto-scheme-job-generator.cjs",
+      "generate-blogs.cjs"
+    ],
+    "git": {
+      "enabled": true,
+      "auto_pull": true,
+      "auto_commit": true,
+      "auto_push": true,
+      "commit_message_template": "Auto-update: {timestamp} - Generated new content"
+    },
+    "logging": {
+      "enabled": true,
+      "log_file": "auto-runner.log",
+      "console_output": true,
+      "log_level": "info"
+    },
+    "notifications": {
+      "enabled": false,
+      "email": "",
+      "webhook_url": ""
+    },
+    "error_handling": {
+      "max_retries": 3,
+      "retry_delay_minutes": 30,
+      "continue_on_error": true
+    },
+    "performance": {
+      "delay_between_scripts_ms": 1000,
+      "timeout_seconds": 300
+    }
+  },
+  "scripts_config": {
+    "auto-news-generator": {
+      "enabled": true,
+      "posts_per_cycle": 10,
+      "word_count_target": 1200
+    },
+    "auto-government-jobs-generator": {
+      "enabled": true,
+      "posts_per_cycle": 15,
+      "word_count_target": 1200
+    },
+    "auto-scheme-job-generator": {
+      "enabled": true,
+      "posts_per_cycle": 15,
+      "word_count_target": 1200
+    },
+    "generate-blogs": {
+      "enabled": true,
+      "posts_per_cycle": 20,
+      "word_count_target": 1500
+    }
+  },
+  "paths": {
+    "project_root": "../",
+    "blogs_dir": "../src/data/blogs",
+    "government_schemes_dir": "../src/data/government-schemes",
+    "jobs_dir": "../src/data/jobs"
+  },
+  "github": {
+    "repository": "https://github.com/harshraj0235/fincal.git",
+    "branch": "main",
+    "remote": "origin"
+  }
+}
