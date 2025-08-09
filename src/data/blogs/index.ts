@@ -22,14 +22,14 @@ interface BlogPost {
   [key: string]: unknown;
 }
 
-// Function to auto-update blog dates every 2 days for fresh content
+// Function to auto-update blog dates every 1 day (24 hours) for fresh content
 function autoUpdateBlogDates(blog: BlogPost): BlogPost {
   const now = new Date();
   const blogDate = new Date(blog.date);
   const daysDifference = Math.floor((now.getTime() - blogDate.getTime()) / (1000 * 60 * 60 * 24));
   
-  // Update date if blog is older than 2 days
-  if (daysDifference >= 2) {
+  // Update date if blog is older than or equal to 1 day
+  if (daysDifference >= 1) {
     const updatedDate = now.toISOString().split('T')[0]; // YYYY-MM-DD format
     return {
       ...blog,

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { calculatorCategories } from '../data/calculatorData';
-import { blogPosts } from '../data/blogData';
+import { allBlogPosts } from '../data/allBlogData';
 import { excelToolBlogPosts } from '../data/exceltooldata';
 import { governmentSchemes } from '../data/governmentSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
@@ -59,11 +59,11 @@ export const SitemapXml: React.FC = () => {
         });
       });
       
-      // Blog posts
-      blogPosts.forEach(post => {
+      // Blog posts (including dynamic blogs from src/data/blogs)
+      allBlogPosts.forEach(post => {
         xml += `  <url>\n`;
         xml += `    <loc>${baseUrl}/blog/${post.slug}</loc>\n`;
-        xml += `    <lastmod>${post.date}</lastmod>\n`;
+        xml += `    <lastmod>${post.lastModified || post.publishedDate || post.date}</lastmod>\n`;
         xml += `    <changefreq>monthly</changefreq>\n`;
         xml += `    <priority>0.7</priority>\n`;
         xml += `  </url>\n`;
