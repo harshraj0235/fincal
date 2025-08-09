@@ -367,6 +367,10 @@ async function commitAndPushChanges() {
   try {
     console.log('📝 Committing changes to Git...');
     
+    // First pull any remote changes
+    console.log('📥 Pulling latest changes before committing...');
+    execSync('git pull origin main', { stdio: 'inherit' });
+    
     // Add all changes
     execSync('git add .', { stdio: 'inherit' });
     
@@ -382,16 +386,38 @@ async function commitAndPushChanges() {
     
   } catch (error) {
     console.error('❌ Error in Git operations:', error);
+    throw error;
   }
 }
 
+// Enhanced scheduling function with better logging
 function scheduleNextRun() {
   const nextRun = new Date(Date.now() + CONFIG.INTERVAL_HOURS * 60 * 60 * 1000);
-  console.log(`⏰ Next run scheduled for: ${nextRun.toLocaleString()}`);
+  const nextRunLocal = nextRun.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
   
-  setTimeout(() => {
-    generateNewsBlogs();
-    scheduleNextRun(); // Schedule next run
+  console.log(`⏰ Next blog generation scheduled for: ${nextRunLocal}`);
+  console.log(`⏰ (${CONFIG.INTERVAL_HOURS} hours from now)`);
+  
+  setTimeout(async () => {
+    try {
+      console.log('\n🔄 ========================================');
+      console.log('🔄 Starting scheduled blog generation...');
+      console.log('🔄 ========================================');
+      
+      // Sync with GitHub before generating new content
+      await syncWithGitHub();
+      
+      // Generate new blogs
+      await generateNewsBlogs();
+      
+      // Schedule next run
+      scheduleNextRun();
+      
+    } catch (error) {
+      console.error('❌ Error in scheduled run:', error);
+      // Reschedule even if there's an error
+      setTimeout(scheduleNextRun, 60 * 60 * 1000); // Retry in 1 hour
+    }
   }, CONFIG.INTERVAL_HOURS * 60 * 60 * 1000);
 }
 
@@ -424,6 +450,43 @@ function updateExistingBlogDates() {
   }
 }
 
+// Enhanced git sync function
+async function syncWithGitHub() {
+  try {
+    console.log('📥 Pulling latest changes from GitHub...');
+    
+    // Pull latest changes
+    execSync('git pull origin main', { stdio: 'inherit' });
+    console.log('✅ Successfully pulled from GitHub');
+    
+    // Check if there are any local changes to push
+    const status = execSync('git status --porcelain', { encoding: 'utf8' });
+    
+    if (status.trim()) {
+      console.log('📤 Pushing local changes to GitHub...');
+      
+      // Add all changes
+      execSync('git add .', { stdio: 'inherit' });
+      
+      // Commit with timestamp
+      const commitMessage = `Auto-sync: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`;
+      execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });
+      
+      // Push to GitHub
+      execSync('git push origin main', { stdio: 'inherit' });
+      console.log('✅ Successfully pushed to GitHub');
+    } else {
+      console.log('✅ No local changes to push');
+    }
+    
+    console.log('🔄 GitHub sync completed successfully');
+    
+  } catch (error) {
+    console.error('❌ Error in GitHub sync:', error);
+    throw error;
+  }
+}
+
 // Main execution
 async function main() {
   try {
@@ -435,19 +498,35 @@ async function main() {
     console.log(`   • Update interval: ${CONFIG.UPDATE_INTERVAL_HOURS} hours`);
     console.log(`   • Target word count: ${CONFIG.WORD_COUNT_TARGET}`);
     console.log(`   • Blog directory: ${CONFIG.BLOG_DIR}`);
+    console.log(`   • Auto-mode: ENABLED (continuous operation)`);
+    console.log(`   • Git auto-sync: ENABLED (push/pull every cycle)`);
     console.log('');
-    
+
     // Initial run
+    console.log('🚀 Starting initial blog generation...');
     await generateNewsBlogs();
     
-    // Schedule next runs
+    // Schedule continuous runs every 36 hours
+    console.log(`⏰ Setting up continuous auto-mode: runs every ${CONFIG.INTERVAL_HOURS} hours`);
     scheduleNextRun();
     
     // Schedule daily blog date updates
     setInterval(updateExistingBlogDates, CONFIG.UPDATE_INTERVAL_HOURS * 60 * 60 * 1000);
     
-    console.log('🔄 Script is now running continuously...');
+    // Schedule git sync every 12 hours to ensure repository is up to date
+    setInterval(async () => {
+      try {
+        console.log('🔄 Auto-syncing with GitHub repository...');
+        await syncWithGitHub();
+      } catch (error) {
+        console.error('❌ Error in auto-sync:', error);
+      }
+    }, 12 * 60 * 60 * 1000); // Every 12 hours
+    
+    console.log('🔄 Script is now running in AUTO-MODE continuously...');
     console.log('💡 Press Ctrl+C to stop the script');
+    console.log('📝 Next blog generation in 36 hours');
+    console.log('🔄 Next git sync in 12 hours');
     
   } catch (error) {
     console.error('❌ Fatal error:', error);
