@@ -18,6 +18,8 @@
     "automation:remove-task": "powershell -ExecutionPolicy Bypass -File scripts/setup-windows-task.ps1 -Delete",
     "automation:status": "powershell -ExecutionPolicy Bypass -File scripts/setup-windows-task.ps1 -Status",
     "automation:test": "node scripts/test-automation.cjs",
+    "automation:service": "node scripts/automation-service.cjs",
+    "automation:service:start": "node scripts/automation-service.cjs",
     "lhci:autorun": "lhci autorun"
   },
   "dependencies": {

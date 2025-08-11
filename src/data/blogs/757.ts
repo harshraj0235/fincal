@@ -8,7 +8,7 @@ export const blog757: BlogPost = {
   author: 'MoneyCal India',
   authorImage: '/images/authors/moneycal-india.jpg',
   date: '2025-08-09',
-  lastUpdated: '2025-08-10',
+  lastUpdated: '2025-08-11',
   category: 'cryptocurrency',
   tags: ['Hyderabad', 'क्रिप्टोकरेंसी', 'भारत', 'अर्थव्यवस्था', 'विकास'],
   readTime: '5 min read',

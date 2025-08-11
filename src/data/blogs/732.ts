@@ -8,7 +8,7 @@ export const blog732: BlogPost = {
   author: 'MoneyCal India',
   authorImage: '/images/authors/moneycal-india.jpg',
   date: '2025-08-09',
-  lastUpdated: '2025-08-10',
+  lastUpdated: '2025-08-11',
   category: 'business',
   tags: ['Hyderabad', 'स्टार्टअप इकोसिस्टम', 'भारत', 'अर्थव्यवस्था', 'विकास'],
   readTime: '5 min read',
