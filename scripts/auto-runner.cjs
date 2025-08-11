@@ -350,7 +350,8 @@ function startAutomation() {
   loadConfig();
   
   // Change to project root directory
-  process.chdir(CONFIG.PROJECT_ROOT);
+  const projectRoot = path.resolve(__dirname, '..');
+  process.chdir(projectRoot);
   
   log(`📁 Working directory: ${process.cwd()}`, COLORS.CYAN);
   log(`⏰ Interval: ${CONFIG.INTERVAL_HOURS} hours`, COLORS.CYAN);

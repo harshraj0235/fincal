@@ -20,6 +20,7 @@
     "automation:test": "node scripts/test-automation.cjs",
     "automation:service": "node scripts/automation-service.cjs",
     "automation:service:start": "node scripts/automation-service.cjs",
+    "automation:simple": "node scripts/simple-automation.cjs",
     "lhci:autorun": "lhci autorun"
   },
   "dependencies": {

@@ -44,7 +44,7 @@ function startAutomationProcess() {
     stdio: ['pipe', 'pipe', 'pipe'],
     detached: false,
     shell: true,
-    cwd: path.dirname(SERVICE_CONFIG.scriptPath)
+    cwd: path.resolve(__dirname, '..')
   });
   
   let stdout = '';
