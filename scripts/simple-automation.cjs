@@ -8,7 +8,7 @@ const CONFIG = {
   INTERVAL_HOURS: 36,
   LOG_FILE: path.join(__dirname, 'simple-automation.log'),
   scripts: [
-    'auto-news-generator.cjs',
+    'enhanced-news-generator.cjs',
     'auto-government-jobs-generator.cjs',
     'auto-scheme-job-generator.cjs',
     'generate-blogs.cjs'

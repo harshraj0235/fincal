@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "generate-blogs": "node scripts/generate-blogs.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
+    "enhanced-news": "node scripts/enhanced-news-generator.cjs",
     "auto-government-jobs": "node scripts/auto-government-jobs-generator.cjs",
     "auto-scheme-jobs": "node scripts/auto-scheme-job-generator.cjs",
     "auto-runner": "node scripts/auto-runner.cjs",
