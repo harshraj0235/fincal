@@ -43,7 +43,8 @@ function startAutomationProcess() {
   const child = spawn('node', [SERVICE_CONFIG.scriptPath], {
     stdio: ['pipe', 'pipe', 'pipe'],
     detached: false,
-    shell: true
+    shell: true,
+    cwd: path.dirname(SERVICE_CONFIG.scriptPath)
   });
   
   let stdout = '';

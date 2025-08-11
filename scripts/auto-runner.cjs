@@ -349,7 +349,10 @@ function startAutomation() {
   // Load configuration
   loadConfig();
   
-  log(`📁 Working directory: ${__dirname}`, COLORS.CYAN);
+  // Change to project root directory
+  process.chdir(CONFIG.PROJECT_ROOT);
+  
+  log(`📁 Working directory: ${process.cwd()}`, COLORS.CYAN);
   log(`⏰ Interval: ${CONFIG.INTERVAL_HOURS} hours`, COLORS.CYAN);
   log(`📝 Log file: ${CONFIG.LOG_FILE}`, COLORS.CYAN);
   log(`🚨 Error log file: ${CONFIG.ERROR_LOG_FILE}`, COLORS.CYAN);
