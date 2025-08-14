@@ -65,6 +65,12 @@ For future email notifications, you can add these secrets in your repository:
 3. **Mint (Livemint)** - Money and investment news
 4. **Investing.com India** - Financial markets and economic news
 
+### **Technical Implementation:**
+- **Built-in Node.js modules** - Uses `https` and `http` for RSS fetching
+- **Simple XML parser** - Custom regex-based RSS parser for reliability
+- **No external dependencies** - Eliminates module compatibility issues
+- **CommonJS compatible** - Works with your project's module system
+
 ### **Fallback System:**
 If RSS feeds are unavailable, the system uses 20 predefined finance topics:
 - Indian Stock Market Analysis
