@@ -1,0 +1,154 @@
+name: Automated Blog Generation & Deployment
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 6 AM IST daily
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [ main ]
+
+jobs:
+  generate-blogs:
+    runs-on: ubuntu-latest
+    name: Generate Blog Posts
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Create logs directory
+        run: mkdir -p logs
+        
+      - name: Generate blog posts
+        run: node automated-blog-generator.js
+        env:
+          NODE_ENV: production
+          
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "no_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "no_changes=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit and push changes
+        if: steps.changes.outputs.no_changes == 'false'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "🤖 Auto-generated blog posts from RSS feeds - $(date +'%Y-%m-%d %H:%M:%S')"
+          git push origin main
+          
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: automation-logs
+          path: logs/
+          retention-days: 7
+
+  deploy-vercel:
+    needs: generate-blogs
+    runs-on: ubuntu-latest
+    name: Deploy to Vercel
+    if: needs.generate-blogs.outputs.no_changes == 'false'
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build project
+        run: npm run build
+        
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+
+  deploy-netlify:
+    needs: generate-blogs
+    runs-on: ubuntu-latest
+    name: Deploy to Netlify
+    if: needs.generate-blogs.outputs.no_changes == 'false'
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build project
+        run: npm run build
+        
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "🤖 Auto-deploy: Blog posts updated"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+
+  notify-success:
+    needs: [generate-blogs, deploy-vercel, deploy-netlify]
+    runs-on: ubuntu-latest
+    name: Send Success Notification
+    if: always() && needs.generate-blogs.result == 'success'
+    
+    steps:
+      - name: Success notification
+        run: |
+          echo "✅ Blog generation and deployment completed successfully!"
+          echo "📅 Date: $(date)"
+          echo "📊 Generated: 20 new blog posts"
+          echo "🌐 Deployed to: Vercel & Netlify"
+          
+  notify-failure:
+    needs: [generate-blogs, deploy-vercel, deploy-netlify]
+    runs-on: ubuntu-latest
+    name: Send Failure Notification
+    if: always() && (needs.generate-blogs.result == 'failure' || needs.deploy-vercel.result == 'failure' || needs.deploy-netlify.result == 'failure')
+    
+    steps:
+      - name: Failure notification
+        run: |
+          echo "❌ Blog generation or deployment failed!"
+          echo "📅 Date: $(date)"
+          echo "🔍 Check the logs for more details"
+          exit 1

@@ -10,10 +10,6 @@
     "preview": "vite preview",
     "generate-blogs": "node scripts/generate-blogs.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
-    "auto-blog": "node scripts/auto-blog-generator.cjs",
-    "auto-blog:manual": "node scripts/auto-blog-generator.cjs --manual",
-    "auto-blog:status": "node scripts/auto-blog-generator.cjs --status",
-    "auto-blog:daemon": "node scripts/auto-blog-generator.cjs --daemon",
     "lhci:autorun": "lhci autorun"
   },
   "dependencies": {
@@ -30,7 +26,10 @@
     "react-router-dom": "^6.30.1",
     "recharts": "^2.15.4",
     "web-vitals": "^3.5.2",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "axios": "^1.6.0",
+    "xml2js": "^0.6.2",
+    "node-cron": "^3.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

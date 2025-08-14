@@ -8,7 +8,6 @@ import { governmentSchemes } from '../data/governmentSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
-import FinanceNewsSection from '../components/FinanceNewsSection';
 
 export const Home: React.FC = () => {
   const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
@@ -118,12 +117,12 @@ export const Home: React.FC = () => {
       default: return 'from-primary-500 to-primary-700';
     }
   };
-  
+
   return (
     <>
       <WhatsAppBanner />
       <AstroFinanceButton />
-      <SEOHelmet
+      <SEOHelmet 
         title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
         description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users. Get accurate calculations for loans, investments, and tax planning."
         keywords="financial calculator india, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, loan calculator, investment calculator, personal finance tools, financial planning india, free financial calculator"
@@ -147,8 +146,8 @@ export const Home: React.FC = () => {
               </defs>
               <rect width="100%" height="100%" fill="url(#grid)" />
             </svg>
-          </div>
-        </div>
+              </div>
+                </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -183,7 +182,7 @@ export const Home: React.FC = () => {
                     <div className="mb-4">
                       <div className="text-primary-600 font-semibold mb-1 text-sm">Loan Amount</div>
                       <div className="text-xl sm:text-2xl font-bold text-neutral-900">₹25,00,000</div>
-                    </div>
+          </div>
                     <div className="mb-4">
                       <div className="text-primary-600 font-semibold mb-1 text-sm">Interest Rate</div>
                       <div className="text-xl sm:text-2xl font-bold text-neutral-900">8.5%</div>
@@ -203,7 +202,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Search Section */}
       <section className="py-12 bg-white relative z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,7 +215,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Quick Access Categories */}
       <section className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -250,7 +249,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Popular Calculators */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -263,7 +262,7 @@ export const Home: React.FC = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {popularCalculators.map(calculator => (
-              <Link 
+              <Link
                 key={calculator.id}
                 to={`/calculators/${calculator.id}`}
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all group border border-neutral-100 hover:border-primary-200"
@@ -297,7 +296,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Tools Section */}
       <section className="py-16 bg-gradient-to-br from-primary-50 to-primary-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -628,7 +627,7 @@ export const Home: React.FC = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {calculatorCategories.map(category => (
-              <Link 
+            <Link
                 key={category.id}
                 to={`/#${category.id}`}
                 className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all"
@@ -650,12 +649,12 @@ export const Home: React.FC = () => {
                     </span>
                   </div>
                 </div>
-              </Link>
+            </Link>
             ))}
           </div>
         </div>
       </section>
-      
+
       {/* All Calculators Section */}
       <div id="categories" ref={allCalculatorsRef} className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -752,9 +751,128 @@ export const Home: React.FC = () => {
         </div>
       </section>
       
-      {/* Dynamic Finance News Section */}
-      <FinanceNewsSection maxPosts={6} showFeatured={true} />
-      
+      {/* Blog Section */}
+      <section className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Financial Insights & Guides</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Stay informed with our latest articles on personal finance, investments, taxes, and more
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
+              <div className="h-48 overflow-hidden">
+                <picture>
+                  <source srcSet="https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
+                  <img 
+                    src="https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    alt="Sukanya Samriddhi Yojana" 
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                    loading="lazy"
+                    width={400}
+                    height={300}
+                  />
+                </picture>
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-primary-600 font-medium mb-2">Government Schemes</div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  <Link to="/blog/sukanya-samriddhi-yojana-guide">
+                    Sukanya Samriddhi Yojana: A Comprehensive Guide
+                  </Link>
+                </h3>
+                <p className="text-neutral-600 text-sm mb-4">
+                  Everything you need to know about SSY - eligibility, benefits, tax advantages, and how to maximize returns.
+                </p>
+                <Link 
+                  to="/blog/sukanya-samriddhi-yojana-guide" 
+                  className="text-primary-600 hover:text-primary-700 font-medium flex items-center"
+                >
+                  Read More
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
+              <div className="h-48 overflow-hidden">
+                <picture>
+                  <source srcSet="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
+                  <img 
+                    src="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    alt="National Pension System" 
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                    loading="lazy"
+                    width={400}
+                    height={300}
+                  />
+                </picture>
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-primary-600 font-medium mb-2">Retirement Planning</div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  <Link to="/blog/national-pension-system-guide">
+                    National Pension System: A Complete Guide
+                  </Link>
+                </h3>
+                <p className="text-neutral-600 text-sm mb-4">
+                  Everything you need to know about NPS - structure, benefits, tax advantages, and investment strategies.
+                </p>
+                <Link 
+                  to="/blog/national-pension-system-guide" 
+                  className="text-primary-600 hover:text-primary-700 font-medium flex items-center"
+                >
+                  Read More
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
+              <div className="h-48 overflow-hidden">
+                <picture>
+                  <source srcSet="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
+                  <img 
+                    src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    alt="Tax Saving Options" 
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                    loading="lazy"
+                    width={400}
+                    height={300}
+                  />
+                </picture>
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-primary-600 font-medium mb-2">Tax Planning</div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  <Link to="/blog/tax-saving-investment-options">
+                    Tax-Saving Investment Options: Beyond Section 80C
+                  </Link>
+                </h3>
+                <p className="text-neutral-600 text-sm mb-4">
+                  Explore tax-saving options beyond the traditional Section 80C investments - maximize deductions and optimize your tax planning.
+                </p>
+                <Link 
+                  to="/blog/tax-saving-investment-options" 
+                  className="text-primary-600 hover:text-primary-700 font-medium flex items-center"
+                >
+                  Read More
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center mt-10">
+            <Link to="/blog" className="btn bg-primary-600 text-black hover:bg-primary-700 shadow-md hover:shadow-lg transition-all">
+              View All Articles
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
