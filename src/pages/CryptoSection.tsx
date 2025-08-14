@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { cryptoArticles } from '../data/cryptoData';
+import { cryptoBlogs } from '../data/crypto';
 import SEOHelmet from '../components/SEOHelmet';
 import { Link } from 'react-router-dom';
 import { Search, Bitcoin, Shield, Zap } from 'lucide-react';
@@ -11,20 +11,20 @@ const CryptoSection: React.FC = () => {
 
   // Extract unique categories
   const categories = useMemo(() => {
-    const cats = Array.from(new Set(cryptoArticles.map(a => a.category)));
+    const cats = Array.from(new Set(cryptoBlogs.map(a => a.category)));
     return cats;
   }, []);
 
   // Filtered articles
   const filteredArticles = useMemo(() => {
-    return cryptoArticles.filter(article => {
+    return cryptoBlogs.filter(blog => {
       const matchesSearch =
         !searchTerm ||
-        article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.keywords.some(k => k.toLowerCase().includes(searchTerm.toLowerCase()));
+        blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.keywords.some(k => k.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchesCategory =
-        selectedCategory === null || article.category === selectedCategory;
+        selectedCategory === null || blog.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
   }, [searchTerm, selectedCategory]);
@@ -88,16 +88,19 @@ const CryptoSection: React.FC = () => {
         </div>
         {/* Articles List */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredArticles.map(article => (
-            <div key={article.id} className="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 hover:border-yellow-400 transition-all">
-              <img src={article.coverImage} alt={article.title} className="w-full h-48 object-cover rounded-lg mb-4 border-4 border-gray-900" />
-              <h2 className="text-2xl font-bold mb-2 text-yellow-300">{article.title}</h2>
-              <p className="text-gray-200 mb-4">{article.excerpt}</p>
+          {filteredArticles.map(blog => (
+            <div key={blog.id} className="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 hover:border-yellow-400 transition-all">
+              <div className="w-full h-48 bg-gradient-to-br from-yellow-400 to-pink-500 rounded-lg mb-4 border-4 border-gray-900 flex items-center justify-center">
+                <Bitcoin className="h-16 w-16 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold mb-2 text-yellow-300">{blog.title}</h2>
+              <p className="text-gray-200 mb-4">{blog.description}</p>
               <div className="flex items-center gap-2 mb-4">
                 <Zap className="h-5 w-5 text-pink-400" />
-                <span className="text-sm text-pink-300">{article.category}</span>
+                <span className="text-sm text-pink-300">{blog.category}</span>
+                <span className="text-sm text-gray-400 ml-auto">{blog.readTime}</span>
               </div>
-              <Link to={`/crypto/${article.slug}`} className="inline-block mt-2 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow hover:bg-yellow-300 transition-all">Read More</Link>
+              <Link to={`/crypto/${blog.slug}`} className="inline-block mt-2 px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow hover:bg-yellow-300 transition-all">पढ़ें</Link>
             </div>
           ))}
         </div>
