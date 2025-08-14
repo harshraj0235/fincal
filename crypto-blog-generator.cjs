@@ -5,37 +5,46 @@ const xml2js = require('xml2js');
 const cron = require('node-cron');
 const { exec } = require('child_process');
 
-// Crypto RSS Feeds
+// Indian Crypto RSS Feeds
 const CRYPTO_RSS_FEEDS = [
-  'https://cointelegraph.com/rss',
-  'https://cryptonews.com/news/feed',
-  'https://bitcoinmagazine.com/.rss/full/',
-  'https://decrypt.co/feed',
-  'https://www.coindesk.com/arc/outboundfeeds/rss/'
+  'https://coingape.com/feed',
+  'https://bitcoinworld.co.in/feed',
+  'https://wazirx.com/blog/feed',
+  'https://coindcx.com/blog/feed',
+  'https://www.businesstoday.in/rssfeeds/8395173.cms?catid=coindcx-crypto',
+  'https://coinfunda.com/feed',
+  'https://blog.unocoin.com/feed',
+  'https://cryptopeoplee.in/feed'
 ];
 
-// Crypto blog topics mapping
+// Indian Crypto blog topics mapping (starting from 75)
 const CRYPTO_BLOG_TOPICS = {
-  74: 'क्रिप्टोकरेंसी में निवेश: 2025 में बिटकॉइन और डिजिटल एसेट्स का पूरा गाइड',
-  75: 'एथेरियम 2.0: स्टेकिंग और डीएपी का भविष्य',
-  76: 'डिफाई (DeFi) निवेश: यील्ड फार्मिंग और लिक्विडिटी माइनिंग',
-  77: 'NFT बाजार: डिजिटल कला और कलेक्टिबल्स में निवेश',
-  78: 'क्रिप्टो वॉलेट सुरक्षा: हॉट वॉलेट vs कोल्ड वॉलेट',
-  79: 'क्रिप्टो ट्रेडिंग रणनीतियां: स्कैल्पिंग से लेकर होल्डिंग तक',
-  80: 'स्टेबलकॉइन: USDT, USDC और DAI का विश्लेषण',
-  81: 'क्रिप्टो माइनिंग: प्रूफ-ऑफ-वर्क और प्रूफ-ऑफ-स्टेक',
-  82: 'क्रिप्टो एक्सचेंज: कौन सा एक्सचेंज सबसे अच्छा है?',
-  83: 'क्रिप्टो टैक्स: भारत में क्रिप्टोकरेंसी पर कराधान',
-  84: 'क्रिप्टो रेगुलेशन: भारत और विश्व में कानूनी स्थिति',
-  85: 'क्रिप्टो पोर्टफोलियो डायवर्सिफिकेशन',
-  86: 'क्रिप्टो रिस्क मैनेजमेंट: स्टॉप-लॉस और टेक-प्रॉफिट',
-  87: 'क्रिप्टो टेक्निकल एनालिसिस: चार्ट पैटर्न और इंडिकेटर्स',
-  88: 'क्रिप्टो फंडामेंटल एनालिसिस: टोकनोमिक्स और यूटिलिटी',
-  89: 'क्रिप्टो स्कैम्स: कैसे बचें और सुरक्षित रहें',
-  90: 'क्रिप्टो एडुकेशन: ब्लॉकचेन और क्रिप्टोग्राफी की बुनियादी बातें',
-  91: 'क्रिप्टो इनोवेशन: लेयर 2 सॉल्यूशन्स और स्केलेबिलिटी',
-  92: 'क्रिप्टो इकोसिस्टम: डेवलपर्स और प्रोजेक्ट्स',
-  93: 'क्रिप्टो गेमिंग: प्ले-टू-अर्न और मेटावर्स'
+  75: 'भारतीय क्रिप्टो बाजार 2025: बिटकॉइन और एथेरियम की वर्तमान स्थिति',
+  76: 'भारत में क्रिप्टो एक्सचेंज: WazirX, CoinDCX और अन्य प्लेटफॉर्म्स का तुलनात्मक विश्लेषण',
+  77: 'भारतीय क्रिप्टो निवेशकों के लिए टैक्स गाइड 2025: 30% कर और 1% TDS',
+  78: 'भारत में क्रिप्टो रेगुलेशन: RBI और सरकार की नीतियां',
+  79: 'भारतीय क्रिप्टो ट्रेडिंग रणनीतियां: डे ट्रेडिंग से लेकर होल्डिंग तक',
+  80: 'भारत में NFT बाजार: डिजिटल कला और कलेक्टिबल्स में निवेश',
+  81: 'भारतीय क्रिप्टो वॉलेट: सुरक्षित निवेश के लिए सर्वोत्तम विकल्प',
+  82: 'भारत में डिफाई (DeFi): यील्ड फार्मिंग और स्टेकिंग अवसर',
+  83: 'भारतीय क्रिप्टो माइनिंग: कानूनी स्थिति और लाभदायकता',
+  84: 'भारत में स्टेबलकॉइन: USDT, USDC और भारतीय रुपया',
+  85: 'भारतीय क्रिप्टो पोर्टफोलियो: विविधीकरण और जोखिम प्रबंधन',
+  86: 'भारत में क्रिप्टो स्कैम्स: कैसे बचें और सुरक्षित रहें',
+  87: 'भारतीय क्रिप्टो एडुकेशन: ब्लॉकचेन और क्रिप्टोग्राफी की बुनियादी बातें',
+  88: 'भारत में क्रिप्टो इनोवेशन: स्टार्टअप्स और नई तकनीकें',
+  89: 'भारत में क्रिप्टो गेमिंग: प्ले-टू-अर्न और मेटावर्स',
+  90: 'भारतीय क्रिप्टो कम्युनिटी: ट्रेडर्स, इन्वेस्टर्स और डेवलपर्स',
+  91: 'भारत में क्रिप्टो फ्यूचर्स: CBDC और डिजिटल रुपया',
+  92: 'भारतीय क्रिप्टो मार्केट एनालिसिस: तकनीकी और मौलिक विश्लेषण',
+  93: 'भारत में क्रिप्टो इंश्योरेंस: निवेश सुरक्षा और बीमा विकल्प',
+  94: 'भारतीय क्रिप्टो लेंडिंग: ब्याज अर्जित करने के तरीके',
+  95: 'भारत में क्रिप्टो पेमेंट: डिजिटल भुगतान का भविष्य',
+  96: 'भारतीय क्रिप्टो रेमिटेंस: विदेशी मुद्रा हस्तांतरण',
+  97: 'भारत में क्रिप्टो रियल एस्टेट: प्रॉपर्टी में निवेश',
+  98: 'भारतीय क्रिप्टो माइक्रो-इन्वेस्टमेंट: छोटी राशि से शुरुआत',
+  99: 'भारत में क्रिप्टो रिटायरमेंट प्लानिंग: लंबी अवधि के लक्ष्य',
+  100: 'भारत में क्रिप्टो सोशल ट्रेडिंग: अनुभवी ट्रेडर्स से सीखें'
 };
 
 // Function to fetch crypto news from RSS feeds
@@ -81,14 +90,14 @@ function getNextCryptoBlogId() {
   const files = fs.readdirSync(cryptoDir).filter(file => file.endsWith('.ts') && file !== 'index.ts' && file !== 'types.ts');
   
   if (files.length === 0) {
-    return 74; // Start from 74
+    return 75; // Start from 75 for new Indian crypto blogs
   }
   
   const ids = files.map(file => parseInt(file.replace('.ts', '')));
   return Math.max(...ids) + 1;
 }
 
-// Function to generate crypto blog content
+// Function to generate Indian crypto blog content
 function generateCryptoBlogContent(topic, newsData, blogId) {
   const currentDate = new Date().toISOString().split('T')[0];
   const slug = topic
@@ -105,63 +114,79 @@ function generateCryptoBlogContent(topic, newsData, blogId) {
     },
     {
       type: 'paragraph',
-      text: `क्रिप्टोकरेंसी बाजार में नई तकनीक और निवेश अवसरों की लगातार बढ़ती मांग के साथ, ${topic.toLowerCase()} एक महत्वपूर्ण विषय बन गया है। यह लेख आपको इस क्षेत्र में निवेश के बारे में विस्तृत जानकारी प्रदान करेगा।`
+      text: `भारतीय क्रिप्टोकरेंसी बाजार में तेजी से बदलाव आ रहे हैं। ${topic.toLowerCase()} भारतीय निवेशकों के लिए एक महत्वपूर्ण विषय बन गया है। यह लेख आपको भारतीय संदर्भ में इस क्षेत्र में निवेश के बारे में विस्तृत जानकारी प्रदान करेगा।`
     },
     {
       type: 'subheading',
-      text: 'वर्तमान बाजार की स्थिति'
+      text: 'भारतीय क्रिप्टो बाजार की वर्तमान स्थिति'
     },
     {
       type: 'paragraph',
-      text: '2025 में क्रिप्टोकरेंसी बाजार में काफी परिपक्वता आई है। संस्थागत निवेशकों की बढ़ती रुचि और विनियामक स्पष्टता के साथ, डिजिटल एसेट्स मुख्यधारा में आ रहे हैं।'
+      text: '2025 में भारतीय क्रिप्टोकरेंसी बाजार में काफी परिपक्वता आई है। WazirX, CoinDCX जैसे भारतीय एक्सचेंजों की बढ़ती लोकप्रियता और सरकार की नीतियों में स्पष्टता के साथ, भारतीय निवेशक अब क्रिप्टोकरेंसी को गंभीरता से ले रहे हैं।'
     },
     {
       type: 'subheading',
-      text: 'निवेश के अवसर'
+      text: 'भारतीय निवेशकों के लिए अवसर'
     },
     {
       type: 'paragraph',
-      text: 'क्रिप्टोकरेंसी में निवेश करने के कई तरीके हैं। आप सीधे कॉइन खरीद सकते हैं, डिफाई प्रोटोकॉल में निवेश कर सकते हैं, या NFT में निवेश कर सकते हैं।'
+      text: 'भारत में क्रिप्टोकरेंसी में निवेश करने के कई तरीके हैं। आप भारतीय एक्सचेंजों पर कॉइन खरीद सकते हैं, डिफाई प्रोटोकॉल में निवेश कर सकते हैं, या NFT में निवेश कर सकते हैं।'
     },
     {
       type: 'list',
-      text: 'सीधे क्रिप्टोकरेंसी खरीदना: बिटकॉइन, एथेरियम जैसी प्रमुख क्रिप्टोकरेंसी में निवेश'
+      text: 'भारतीय एक्सचेंज: WazirX, CoinDCX, Unocoin जैसे प्लेटफॉर्म्स पर निवेश'
     },
     {
       type: 'list',
-      text: 'डिफाई प्रोटोकॉल: यील्ड फार्मिंग और लिक्विडिटी प्रदान करना'
+      text: 'डिफाई प्रोटोकॉल: यील्ड फार्मिंग और स्टेकिंग के माध्यम से आय अर्जित करना'
     },
     {
       type: 'list',
-      text: 'NFT निवेश: डिजिटल कला और कलेक्टिबल्स में निवेश'
+      text: 'NFT निवेश: भारतीय कलाकारों और कलेक्टिबल्स में निवेश'
     },
     {
       type: 'list',
-      text: 'स्टेकिंग: प्रूफ-ऑफ-स्टेक क्रिप्टोकरेंसी में स्टेक करना'
+      text: 'स्टेकिंग: प्रूफ-ऑफ-स्टेक क्रिप्टोकरेंसी में स्टेक करके ब्याज अर्जित करना'
     },
     {
       type: 'subheading',
-      text: 'जोखिम प्रबंधन'
+      text: 'भारतीय क्रिप्टो विनियमन'
     },
     {
       type: 'paragraph',
-      text: 'क्रिप्टोकरेंसी में निवेश करते समय जोखिम प्रबंधन महत्वपूर्ण है। आपको अपने पोर्टफोलियो का विविधीकरण करना चाहिए और केवल उतनी राशि का निवेश करना चाहिए जिसे आप खो सकते हैं।'
+      text: 'भारत में क्रिप्टोकरेंसी का विनियमन अभी भी विकसित हो रहा है। सरकार ने क्रिप्टोकरेंसी पर 30% कर लगाया है और 1% टीडीएस भी लागू किया है। RBI ने भी क्रिप्टोकरेंसी के संबंध में अपनी नीतियों को स्पष्ट किया है।'
     },
     {
       type: 'subheading',
-      text: 'भारत में क्रिप्टोकरेंसी'
+      text: 'भारतीय क्रिप्टो एक्सचेंज'
     },
     {
       type: 'paragraph',
-      text: 'भारत में क्रिप्टोकरेंसी का विनियमन अभी भी विकसित हो रहा है। सरकार ने क्रिप्टोकरेंसी पर 30% कर लगाया है और 1% टीडीएस भी लागू किया है।'
+      text: 'भारत में कई प्रमुख क्रिप्टो एक्सचेंज हैं जो भारतीय निवेशकों को सेवाएं प्रदान करते हैं। WazirX, CoinDCX, Unocoin जैसे एक्सचेंज भारतीय रुपया में क्रिप्टोकरेंसी खरीदने और बेचने की सुविधा प्रदान करते हैं।'
     },
     {
       type: 'subheading',
-      text: 'भविष्य की संभावनाएं'
+      text: 'भारतीय क्रिप्टो कराधान'
     },
     {
       type: 'paragraph',
-      text: 'क्रिप्टोकरेंसी का भविष्य बहुत उज्ज्वल दिखता है। ब्लॉकचेन तकनीक का विकास और नए उपयोग मामलों की खोज के साथ, यह क्षेत्र तेजी से बढ़ रहा है।'
+      text: 'भारत में क्रिप्टोकरेंसी से होने वाली आय पर 30% कर लगता है। इसके अलावा, क्रिप्टोकरेंसी की खरीद पर 1% टीडीएस भी लागू है। क्रिप्टोकरेंसी लेन-देन का रिकॉर्ड रखना महत्वपूर्ण है।'
+    },
+    {
+      type: 'subheading',
+      text: 'भारतीय क्रिप्टो सुरक्षा'
+    },
+    {
+      type: 'paragraph',
+      text: 'भारतीय निवेशकों के लिए क्रिप्टोकरेंसी सुरक्षा महत्वपूर्ण है। आपको विश्वसनीय एक्सचेंज का उपयोग करना चाहिए, दो-कारक प्रमाणीकरण का उपयोग करना चाहिए, और अपने निजी कुंजी को सुरक्षित रखना चाहिए।'
+    },
+    {
+      type: 'subheading',
+      text: 'भारतीय क्रिप्टो का भविष्य'
+    },
+    {
+      type: 'paragraph',
+      text: 'भारत में क्रिप्टोकरेंसी का भविष्य बहुत उज्ज्वल दिखता है। सरकार की डिजिटल रुपया पहल और ब्लॉकचेन तकनीक के विकास के साथ, भारत क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण खिलाड़ी बन रहा है।'
     },
     {
       type: 'subheading',
@@ -169,7 +194,7 @@ function generateCryptoBlogContent(topic, newsData, blogId) {
     },
     {
       type: 'paragraph',
-      text: `${topic} में निवेश करने से पहले अच्छी तरह से शोध करें और अपनी वित्तीय स्थिति का मूल्यांकन करें। क्रिप्टोकरेंसी बाजार बहुत अस्थिर है और अचानक मूल्य परिवर्तन हो सकते हैं।`
+      text: `${topic} में निवेश करने से पहले अच्छी तरह से शोध करें और अपनी वित्तीय स्थिति का मूल्यांकन करें। भारतीय क्रिप्टोकरेंसी बाजार बहुत अस्थिर है और अचानक मूल्य परिवर्तन हो सकते हैं। साथ ही, कराधान और विनियामक मुद्दों को भी ध्यान में रखें।`
     }
   ];
 
@@ -179,21 +204,21 @@ export const crypto${blogId}: CryptoBlogPost = {
   id: '${blogId}',
   title: '${topic}',
   slug: '${slug}',
-  description: '${topic} के बारे में विस्तृत जानकारी और निवेश मार्गदर्शन।',
+  description: '${topic} के बारे में विस्तृत जानकारी और भारतीय निवेशकों के लिए मार्गदर्शन।',
   content: ${JSON.stringify(content, null, 2)},
-  category: 'क्रिप्टोकरेंसी',
-  tags: ['क्रिप्टोकरेंसी', 'निवेश', 'डिजिटल एसेट्स', 'ब्लॉकचेन', 'भारत'],
+  category: 'भारतीय क्रिप्टोकरेंसी',
+  tags: ['भारतीय क्रिप्टो', 'क्रिप्टोकरेंसी', 'निवेश', 'डिजिटल एसेट्स', 'ब्लॉकचेन', 'भारत', 'WazirX', 'CoinDCX'],
   author: 'मनीकैल टीम',
   publishedDate: '${currentDate}',
   lastModified: '${currentDate}',
-  readTime: '8 मिनट',
-  metaDescription: '${topic} के बारे में विस्तृत जानकारी और निवेश मार्गदर्शन।',
-  keywords: ['क्रिप्टोकरेंसी', 'निवेश', 'डिजिटल एसेट्स', 'ब्लॉकचेन', 'भारत'],
+  readTime: '10 मिनट',
+  metaDescription: '${topic} के बारे में विस्तृत जानकारी और भारतीय निवेशकों के लिए मार्गदर्शन।',
+  keywords: ['भारतीय क्रिप्टो', 'क्रिप्टोकरेंसी', 'निवेश', 'डिजिटल एसेट्स', 'ब्लॉकचेन', 'भारत', 'WazirX', 'CoinDCX', 'क्रिप्टो टैक्स'],
   structuredData: {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: '${topic}',
-    description: '${topic} के बारे में विस्तृत जानकारी और निवेश मार्गदर्शन।',
+    description: '${topic} के बारे में विस्तृत जानकारी और भारतीय निवेशकों के लिए मार्गदर्शन।',
     author: {
       '@type': 'Person',
       name: 'मनीकैल टीम'
@@ -212,11 +237,11 @@ export const crypto${blogId}: CryptoBlogPost = {
       '@type': 'WebPage',
       '@id': 'https://moneycal.in/crypto/${slug}'
     },
-    keywords: 'क्रिप्टोकरेंसी, निवेश, डिजिटल एसेट्स, ब्लॉकचेन, भारत'
+    keywords: 'भारतीय क्रिप्टो, क्रिप्टोकरेंसी, निवेश, डिजिटल एसेट्स, ब्लॉकचेन, भारत, WazirX, CoinDCX, क्रिप्टो टैक्स'
   },
   openGraph: {
     title: '${topic}',
-    description: '${topic} के बारे में विस्तृत जानकारी और निवेश मार्गदर्शन।',
+    description: '${topic} के बारे में विस्तृत जानकारी और भारतीय निवेशकों के लिए मार्गदर्शन।',
     type: 'article',
     url: 'https://moneycal.in/crypto/${slug}',
     siteName: 'मनीकैल'
@@ -317,20 +342,20 @@ function commitAndPushCryptoChanges() {
   });
 }
 
-// Main function to generate crypto blogs
+// Main function to generate Indian crypto blogs
 async function generateCryptoBlogs() {
   try {
-    console.log('🚀 Starting crypto blog generation...');
+    console.log('🚀 Starting Indian crypto blog generation...');
     
-    // Fetch crypto news
+    // Fetch Indian crypto news
     const newsData = await fetchCryptoRSSFeeds();
-    console.log(`📰 Fetched ${newsData.length} crypto news items`);
+    console.log(`📰 Fetched ${newsData.length} Indian crypto news items`);
     
-    // Generate 5 new crypto blogs
+    // Generate 5 new Indian crypto blogs
     const newBlogIds = [];
     for (let i = 0; i < 5; i++) {
       const blogId = getNextCryptoBlogId();
-      const topic = CRYPTO_BLOG_TOPICS[blogId] || `क्रिप्टोकरेंसी निवेश गाइड ${blogId}`;
+      const topic = CRYPTO_BLOG_TOPICS[blogId] || `भारतीय क्रिप्टोकरेंसी निवेश गाइड ${blogId}`;
       
       const content = generateCryptoBlogContent(topic, newsData, blogId);
       createCryptoBlogFile(blogId, content);
@@ -346,16 +371,16 @@ async function generateCryptoBlogs() {
     // Commit and push changes
     commitAndPushCryptoChanges();
     
-    console.log(`✅ Generated ${newBlogIds.length} crypto blog posts: ${newBlogIds.join(', ')}`);
+    console.log(`✅ Generated ${newBlogIds.length} Indian crypto blog posts: ${newBlogIds.join(', ')}`);
     
   } catch (error) {
-    console.error('❌ Error generating crypto blogs:', error);
+    console.error('❌ Error generating Indian crypto blogs:', error);
   }
 }
 
-// Schedule daily crypto blog generation at 6 AM IST
+// Schedule daily Indian crypto blog generation at 6 AM IST
 cron.schedule('0 6 * * *', () => {
-  console.log('🕕 6 AM IST - Starting daily crypto blog generation...');
+  console.log('🕕 6 AM IST - Starting daily Indian crypto blog generation...');
   generateCryptoBlogs();
 }, { timezone: 'Asia/Kolkata' });
 
