@@ -1,26 +1,6 @@
 import { BlogPost } from './types';
 
 // Auto-generated blog imports
-import { blog1000 } from './1000';
-import { blog1001 } from './1001';
-import { blog1002 } from './1002';
-import { blog1003 } from './1003';
-import { blog1004 } from './1004';
-import { blog1005 } from './1005';
-import { blog1006 } from './1006';
-import { blog1007 } from './1007';
-import { blog1008 } from './1008';
-import { blog1009 } from './1009';
-import { blog1010 } from './1010';
-import { blog1011 } from './1011';
-import { blog1012 } from './1012';
-import { blog1013 } from './1013';
-import { blog1014 } from './1014';
-import { blog1015 } from './1015';
-import { blog1016 } from './1016';
-import { blog1017 } from './1017';
-import { blog1018 } from './1018';
-import { blog1019 } from './1019';
 import { blog181 } from './181';
 import { blog182 } from './182';
 import { blog183 } from './183';
@@ -367,30 +347,10 @@ import { blog997 } from './997';
 import { blog998 } from './998';
 import { blog999 } from './999';
 import { blogtemplate } from './template';
-import { blogtest-automation } from './test-automation';
+import { testBlog } from './test-automation';
 
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
-  blog1000,
-  blog1001,
-  blog1002,
-  blog1003,
-  blog1004,
-  blog1005,
-  blog1006,
-  blog1007,
-  blog1008,
-  blog1009,
-  blog1010,
-  blog1011,
-  blog1012,
-  blog1013,
-  blog1014,
-  blog1015,
-  blog1016,
-  blog1017,
-  blog1018,
-  blog1019,
   blog181,
   blog182,
   blog183,
@@ -737,7 +697,7 @@ export const blogs: BlogPost[] = [
   blog998,
   blog999,
   blogtemplate,
-  blogtest-automation,
+  testBlog,
 ];
 
 // Auto-update blog dates
@@ -751,26 +711,6 @@ export function autoUpdateBlogDates() {
 }
 
 // Export individual blogs
-export { blog1000 } from './1000';
-export { blog1001 } from './1001';
-export { blog1002 } from './1002';
-export { blog1003 } from './1003';
-export { blog1004 } from './1004';
-export { blog1005 } from './1005';
-export { blog1006 } from './1006';
-export { blog1007 } from './1007';
-export { blog1008 } from './1008';
-export { blog1009 } from './1009';
-export { blog1010 } from './1010';
-export { blog1011 } from './1011';
-export { blog1012 } from './1012';
-export { blog1013 } from './1013';
-export { blog1014 } from './1014';
-export { blog1015 } from './1015';
-export { blog1016 } from './1016';
-export { blog1017 } from './1017';
-export { blog1018 } from './1018';
-export { blog1019 } from './1019';
 export { blog181 } from './181';
 export { blog182 } from './182';
 export { blog183 } from './183';
@@ -1117,4 +1057,4 @@ export { blog997 } from './997';
 export { blog998 } from './998';
 export { blog999 } from './999';
 export { blogtemplate } from './template';
-export { blogtest-automation } from './test-automation';
+export { testBlog } from './test-automation';
