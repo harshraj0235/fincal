@@ -1,12 +1,6 @@
 import { BlogPost } from './types';
 
 // Auto-generated blog imports
-import { blog181 } from './181';
-import { blog182 } from './182';
-import { blog183 } from './183';
-import { blog184 } from './184';
-import { blog185 } from './185';
-import { blog186 } from './186';
 import { blog651 } from './651';
 import { blog652 } from './652';
 import { blog653 } from './653';
@@ -711,12 +705,7 @@ export function autoUpdateBlogDates() {
 }
 
 // Export individual blogs
-export { blog181 } from './181';
-export { blog182 } from './182';
-export { blog183 } from './183';
-export { blog184 } from './184';
-export { blog185 } from './185';
-export { blog186 } from './186';
+
 export { blog651 } from './651';
 export { blog652 } from './652';
 export { blog653 } from './653';
