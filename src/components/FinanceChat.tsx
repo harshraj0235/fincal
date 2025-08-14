@@ -4,7 +4,7 @@ import { excelTools } from '../data/excelToolsData';
 import { governmentSchemes } from '../data/governmentSchemesData';
 import { blogPosts as blogPosts0 } from '../data/blogData';
 import { blogPosts as blogPosts1 } from '../data/blogData1';
-import { cryptoArticles } from '../data/cryptoData';
+import { cryptoBlogs } from '../data/crypto';
 
 interface ChatMessage {
   id: string;
@@ -177,31 +177,32 @@ const FinanceChat: React.FC = () => {
       }
     });
 
-    // Search crypto articles
-    cryptoArticles.forEach(article => {
-      const relevance = article.title.toLowerCase().includes(lowerQuery) ? 3 :
-      article.excerpt.toLowerCase().includes(lowerQuery) ? 2 :
-      article.keywords.some(keyword => keyword.toLowerCase().includes(lowerQuery)) ? 1 : 0;
+    // Search crypto blogs
+    cryptoBlogs.forEach(blog => {
+      const relevance = blog.title.toLowerCase().includes(lowerQuery) ? 3 :
+      blog.description.toLowerCase().includes(lowerQuery) ? 2 :
+      blog.keywords.some(keyword => keyword.toLowerCase().includes(lowerQuery)) ? 1 : 0;
 
       if (relevance > 0) {
-        // Extract key points from FAQ if available
-        let keyPoints = article.excerpt;
-        if (article.faqSchema && article.faqSchema.length > 0) {
-          const faqPoints = article.faqSchema
-            .slice(0, 2)
-            .map(faq => faq.question)
+        // Extract key points from content if available
+        let keyPoints = blog.description;
+        if (blog.content && blog.content.length > 0) {
+          const contentPoints = blog.content
+            .slice(0, 3)
+            .filter(block => block.type === 'subheading')
+            .map(block => block.text)
             .join(' • ');
-          if (faqPoints) {
-            keyPoints = `${article.excerpt}\n\n**Key Topics:**\n• ${faqPoints}`;
+          if (contentPoints) {
+            keyPoints = `${blog.description}\n\n**Key Topics:**\n• ${contentPoints}`;
           }
         }
 
         results.push({
           type: 'crypto',
-          title: article.title,
+          title: blog.title,
           description: keyPoints,
-          category: article.category,
-          url: `/crypto/${article.slug}`,
+          category: blog.category,
+          url: `/crypto/${blog.slug}`,
           relevance
         });
       }
