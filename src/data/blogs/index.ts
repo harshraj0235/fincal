@@ -137,6 +137,7 @@ import { blog787 } from './787';
 import { blog788 } from './788';
 import { blog789 } from './789';
 import { blog790 } from './790';
+import { blogtemplate } from './template';
 
 // Auto-generated blog array
 export const blogs: BlogPost[] = [

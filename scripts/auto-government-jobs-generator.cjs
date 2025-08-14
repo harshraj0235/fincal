@@ -404,36 +404,17 @@ function updateBlogIndex() {
   // Generate new blog entries
   const newBlogs = existingBlogs.map(id => {
     const blogPath = path.join(CONFIG.BLOG_DIR, `${id}.ts`);
+    const blogContent = fs.readFileSync(blogPath, 'utf8');
     
-    // Check if file exists before reading
-    if (!fs.existsSync(blogPath)) {
-      return {
-        id,
-        title: `Blog ${id}`,
-        path: `./${id}`
-      };
-    }
+    // Extract title from content
+    const titleMatch = blogContent.match(/title:\s*['"`]([^'"`]+)['"`]/);
+    const title = titleMatch ? titleMatch[1] : `Blog ${id}`;
     
-    try {
-      const blogContent = fs.readFileSync(blogPath, 'utf8');
-      
-      // Extract title from content
-      const titleMatch = blogContent.match(/title:\s*['"`]([^'"`]+)['"`]/);
-      const title = titleMatch ? titleMatch[1] : `Blog ${id}`;
-      
-      return {
-        id,
-        title,
-        path: `./${id}`
-      };
-    } catch (error) {
-      console.log(`⚠️ Warning: Could not read blog ${id}: ${error.message}`);
-      return {
-        id,
-        title: `Blog ${id}`,
-        path: `./${id}`
-      };
-    }
+    return {
+      id,
+      title,
+      path: `./${id}`
+    };
   });
 
   // Create index content
