@@ -16,7 +16,19 @@ import {
   Bookmark,
   Grid,
   List,
-  Phone
+  Phone,
+  Zap,
+  Shield,
+  Globe,
+  Users,
+  Target,
+  Award,
+  Play,
+  Eye,
+  Share2,
+  Heart,
+  TrendingDown,
+  Activity
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { SearchBar } from '../components/SearchBar';
@@ -30,16 +42,20 @@ export const HomeNew: React.FC = () => {
   const [cryptoNews, setCryptoNews] = useState<any[]>([]);
   const [governmentNews, setGovernmentNews] = useState<any[]>([]);
   const [excelTools, setExcelTools] = useState<any[]>([]);
+  const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
+    // Animation trigger
+    setIsVisible(true);
+    
     // Set popular calculators
     setPopularCalculators([
-      { id: 'emi-calculator', name: 'EMI Calculator', description: 'Calculate your loan EMI, total interest, and payment schedule', category: 'Loan Calculators' },
-      { id: 'sip-calculator', name: 'SIP Calculator', description: 'Plan your investments and calculate returns on SIP investments', category: 'Investment Calculators' },
-      { id: 'income-tax-calculator', name: 'Income Tax Calculator', description: 'Calculate your income tax liability under old and new tax regimes', category: 'Tax Calculators' },
-      { id: 'mutual-fund-overlap-checker', name: 'Mutual Fund Overlap Checker', description: 'Check portfolio overlap between mutual funds to optimize diversification', category: 'Investments & Wealth Management' },
-      { id: 'asset-allocation-planner', name: 'Asset Allocation Planner', description: 'Create a balanced portfolio based on your risk profile', category: 'Investments & Wealth Management' },
-      { id: 'credit-card-finder', name: 'Credit Card Finder', description: 'Find the best credit card based on your spending patterns', category: 'Banking & Finance Tools' }
+      { id: 'emi-calculator', name: 'EMI Calculator', description: 'Calculate your loan EMI, total interest, and payment schedule', category: 'Loan Calculators', icon: '💰' },
+      { id: 'sip-calculator', name: 'SIP Calculator', description: 'Plan your investments and calculate returns on SIP investments', category: 'Investment Calculators', icon: '📈' },
+      { id: 'income-tax-calculator', name: 'Income Tax Calculator', description: 'Calculate your income tax liability under old and new tax regimes', category: 'Tax Calculators', icon: '📊' },
+      { id: 'mutual-fund-overlap-checker', name: 'Mutual Fund Overlap Checker', description: 'Check portfolio overlap between mutual funds to optimize diversification', category: 'Investments & Wealth Management', icon: '🎯' },
+      { id: 'asset-allocation-planner', name: 'Asset Allocation Planner', description: 'Create a balanced portfolio based on your risk profile', category: 'Investments & Wealth Management', icon: '⚖️' },
+      { id: 'credit-card-finder', name: 'Credit Card Finder', description: 'Find the best credit card based on your spending patterns', category: 'Banking & Finance Tools', icon: '💳' }
     ]);
     
     // Set latest news
@@ -51,7 +67,9 @@ export const HomeNew: React.FC = () => {
         category: "Banking",
         date: "2025-01-15",
         image: "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "5 min read"
+        readTime: "5 min read",
+        views: "2.5K",
+        trending: true
       },
       {
         id: 2,
@@ -60,7 +78,8 @@ export const HomeNew: React.FC = () => {
         category: "Investments",
         date: "2025-01-14",
         image: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "4 min read"
+        readTime: "4 min read",
+        views: "1.8K"
       },
       {
         id: 3,
@@ -69,7 +88,19 @@ export const HomeNew: React.FC = () => {
         category: "Tax",
         date: "2025-01-13",
         image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "6 min read"
+        readTime: "6 min read",
+        views: "3.2K",
+        trending: true
+      },
+      {
+        id: 4,
+        title: "Digital Rupee Pilot Program Shows 200% Growth in Adoption",
+        excerpt: "The Reserve Bank of India's digital rupee pilot program has shown remarkable growth with increased adoption in retail transactions.",
+        category: "Digital Banking",
+        date: "2025-01-12",
+        image: "https://images.pexels.com/photos/6771900/pexels-photo-6771900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        readTime: "4 min read",
+        views: "1.5K"
       }
     ]);
     
@@ -82,7 +113,9 @@ export const HomeNew: React.FC = () => {
         category: "Cryptocurrency",
         date: "2025-01-15",
         image: "https://images.pexels.com/photos/6771900/pexels-photo-6771900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "3 min read"
+        readTime: "3 min read",
+        views: "4.1K",
+        trending: true
       },
       {
         id: 2,
@@ -91,7 +124,8 @@ export const HomeNew: React.FC = () => {
         category: "Digital Currency",
         date: "2025-01-14",
         image: "https://images.pexels.com/photos/6771900/pexels-photo-6771900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "4 min read"
+        readTime: "4 min read",
+        views: "2.8K"
       }
     ]);
     
@@ -104,7 +138,8 @@ export const HomeNew: React.FC = () => {
         category: "Government Schemes",
         date: "2025-01-15",
         image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "5 min read"
+        readTime: "5 min read",
+        views: "3.7K"
       },
       {
         id: 2,
@@ -113,7 +148,8 @@ export const HomeNew: React.FC = () => {
         category: "Healthcare",
         date: "2025-01-14",
         image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "4 min read"
+        readTime: "4 min read",
+        views: "2.1K"
       }
     ]);
     
@@ -125,7 +161,8 @@ export const HomeNew: React.FC = () => {
         description: "Comprehensive Excel template for financial modeling and analysis",
         category: "Finance",
         downloads: 1250,
-        rating: 4.8
+        rating: 4.8,
+        featured: true
       },
       {
         id: 2,
@@ -141,43 +178,62 @@ export const HomeNew: React.FC = () => {
         description: "Excel tool to track and analyze investment portfolio performance",
         category: "Investments",
         downloads: 1100,
-        rating: 4.9
+        rating: 4.9,
+        featured: true
       }
     ]);
   }, []);
 
+  // Stats data
+  const stats = [
+    { label: "Active Users", value: "50K+", icon: Users, color: "text-blue-600" },
+    { label: "Calculators", value: "100+", icon: Calculator, color: "text-green-600" },
+    { label: "Success Rate", value: "99.9%", icon: Target, color: "text-purple-600" },
+    { label: "Trust Score", value: "4.9/5", icon: Award, color: "text-orange-600" }
+  ];
+
   // News card component
   const NewsCard = ({ news, featured = false }: { news: any; featured?: boolean }) => (
     <Link to={`/news/${news.id}`} className="group">
-      <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${featured ? 'col-span-2 row-span-2' : ''}`}>
+      <div className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2 ${featured ? 'col-span-2 row-span-2' : ''}`}>
         <div className="relative overflow-hidden">
           <img 
             src={news.image} 
             alt={news.title}
-            className={`w-full object-cover transition-transform duration-300 group-hover:scale-105 ${featured ? 'h-64' : 'h-48'}`}
+            className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${featured ? 'h-80' : 'h-56'}`}
           />
-          <div className="absolute top-3 left-3">
-            <span className="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-medium">
-              {news.category}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute top-4 left-4">
+            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${news.trending ? 'bg-orange-500 text-white' : 'bg-red-500 text-white'}`}>
+              {news.trending ? '🔥 Trending' : news.category}
             </span>
           </div>
-          <div className="absolute top-3 right-3">
+          <div className="absolute top-4 right-4 flex gap-2">
             <button className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors">
               <Bookmark className="h-4 w-4 text-white" />
             </button>
+            <button className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors">
+              <Share2 className="h-4 w-4 text-white" />
+            </button>
           </div>
         </div>
-        <div className="p-4">
-          <h3 className={`font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors ${featured ? 'text-xl' : 'text-lg'}`}>
+        <div className="p-6">
+          <h3 className={`font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors ${featured ? 'text-2xl' : 'text-xl'}`}>
             {news.title}
           </h3>
-          <p className={`text-gray-600 mb-3 line-clamp-2 ${featured ? 'text-base' : 'text-sm'}`}>
+          <p className={`text-gray-600 mb-4 line-clamp-2 ${featured ? 'text-lg' : 'text-base'}`}>
             {news.excerpt}
           </p>
           <div className="flex items-center justify-between text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4" />
-              <span>{news.readTime}</span>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1">
+                <Clock className="h-4 w-4" />
+                <span>{news.readTime}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <Eye className="h-4 w-4" />
+                <span>{news.views}</span>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
@@ -192,24 +248,35 @@ export const HomeNew: React.FC = () => {
   // Calculator card component
   const CalculatorCard = ({ calculator }: { calculator: any }) => (
     <Link to={`/calculators/${calculator.id}`} className="group">
-      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
+      <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 border border-gray-100 transform hover:-translate-y-2 hover:scale-105">
         <div className="flex items-center justify-between mb-4">
-          <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-            <Calculator className="h-6 w-6 text-white" />
+          <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center text-2xl">
+            {calculator.icon}
           </div>
-          <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-primary-600 transition-colors" />
+          <ArrowRight className="h-6 w-6 text-gray-400 group-hover:text-primary-600 transition-colors transform group-hover:translate-x-1" />
         </div>
-        <h3 className="font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+        <h3 className="font-bold text-gray-900 mb-3 text-lg group-hover:text-primary-600 transition-colors">
           {calculator.name}
         </h3>
-        <p className="text-gray-600 text-sm mb-3">
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
           {calculator.description}
         </p>
-        <span className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
+        <span className="inline-block bg-gradient-to-r from-primary-100 to-primary-200 text-primary-700 px-3 py-1 rounded-full text-xs font-medium">
           {calculator.category}
         </span>
       </div>
     </Link>
+  );
+
+  // Feature card component
+  const FeatureCard = ({ icon: Icon, title, description, color }: { icon: any; title: string; description: string; color: string }) => (
+    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      <div className={`w-12 h-12 ${color} bg-opacity-10 rounded-xl flex items-center justify-center mb-4`}>
+        <Icon className={`h-6 w-6 ${color}`} />
+      </div>
+      <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
+      <p className="text-gray-600 text-sm">{description}</p>
+    </div>
   );
 
   return (
@@ -224,68 +291,91 @@ export const HomeNew: React.FC = () => {
         tags={["financial news", "crypto", "government schemes", "calculators", "personal finance", "investment", "banking"]}
       />
       
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
         {/* Hero Section with Breaking News */}
-        <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-8 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 py-12 overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-400/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Breaking News Ticker */}
-            <div className="bg-red-600 text-white py-2 px-4 rounded-lg mb-6 flex items-center gap-3">
-              <span className="bg-white text-red-600 px-2 py-1 rounded text-xs font-bold">BREAKING</span>
+            <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-3 px-6 rounded-2xl mb-8 flex items-center gap-4 shadow-lg">
+              <span className="bg-white text-red-600 px-3 py-1 rounded-full text-sm font-bold animate-pulse">BREAKING</span>
               <div className="flex-1 overflow-hidden">
                 <div className="animate-marquee whitespace-nowrap">
-                  <span className="mr-8">RBI Announces New Digital Lending Guidelines for 2025</span>
-                  <span className="mr-8">Bitcoin Surges Past $50,000 as Institutional Adoption Grows</span>
-                  <span className="mr-8">SEBI Approves New Mutual Fund Categories for Retail Investors</span>
+                  <span className="mr-12">🚀 RBI Announces New Digital Lending Guidelines for 2025</span>
+                  <span className="mr-12">📈 Bitcoin Surges Past $50,000 as Institutional Adoption Grows</span>
+                  <span className="mr-12">💼 SEBI Approves New Mutual Fund Categories for Retail Investors</span>
+                  <span className="mr-12">🏦 Digital Rupee Pilot Program Shows 200% Growth in Adoption</span>
                 </div>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
-                  Your Gateway to
-                  <span className="block text-yellow-300">Financial Intelligence</span>
-                </h1>
-                <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto lg:mx-0">
-                  Stay ahead with the latest financial news, crypto updates, government schemes, and powerful financial calculators.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Link 
-                    to="/blog" 
-                    className="btn bg-white text-primary-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all px-8 py-4 text-lg font-medium rounded-xl"
-                  >
-                    Read Latest News
-                  </Link>
-                  <Link 
-                    to="/#categories" 
-                    className="btn bg-yellow-500 text-white hover:bg-yellow-600 shadow-lg hover:shadow-xl transition-all px-8 py-4 text-lg font-medium rounded-xl"
-                  >
-                    Use Calculators
-                  </Link>
+                <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 leading-tight text-white">
+                    Your Gateway to
+                    <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent animate-pulse">
+                      Financial Intelligence
+                    </span>
+                  </h1>
+                  <p className="text-xl mb-10 text-white/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Stay ahead with the latest financial news, crypto updates, government schemes, and powerful financial calculators designed for Indian users.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <Link 
+                      to="/blog" 
+                      className="group bg-white text-primary-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl transform hover:-translate-y-1 hover:scale-105"
+                    >
+                      📰 Read Latest News
+                      <ArrowRight className="inline-block ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <Link 
+                      to="/#categories" 
+                      className="group bg-gradient-to-r from-yellow-400 to-orange-500 text-white hover:from-yellow-500 hover:to-orange-600 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl transform hover:-translate-y-1 hover:scale-105"
+                    >
+                      🧮 Use Calculators
+                      <Calculator className="inline-block ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="hidden lg:block">
                 <div className="relative">
-                  <div className="absolute -top-16 -left-16 w-32 h-32 bg-primary-400 rounded-full opacity-20 animate-pulse"></div>
-                  <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-primary-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  <div className="bg-white p-8 rounded-2xl shadow-2xl transform rotate-3 z-10 backdrop-blur-sm bg-opacity-95">
+                  <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary-400 rounded-full opacity-20 animate-pulse"></div>
+                  <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-primary-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                  <div className="bg-white/95 backdrop-blur-xl p-8 rounded-3xl shadow-2xl transform rotate-3 z-10 border border-white/20">
                     <div className="transform -rotate-3">
-                      <div className="mb-4">
-                        <div className="text-primary-600 font-semibold mb-1 text-sm">Latest News</div>
-                        <div className="text-xl font-bold text-neutral-900">Financial Markets Update</div>
+                      <div className="mb-6">
+                        <div className="text-primary-600 font-semibold mb-2 text-sm uppercase tracking-wide">📊 Live Market Updates</div>
+                        <div className="text-2xl font-bold text-neutral-900">Financial Markets</div>
                       </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-gray-600">Sensex: 72,500 (+1.2%)</span>
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between p-3 bg-green-50 rounded-xl">
+                          <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-sm font-medium text-gray-700">Sensex</span>
+                          </div>
+                          <span className="text-lg font-bold text-green-600">72,500 (+1.2%)</span>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                          <span className="text-sm text-gray-600">Nifty: 21,800 (-0.3%)</span>
+                        <div className="flex items-center justify-between p-3 bg-red-50 rounded-xl">
+                          <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                            <span className="text-sm font-medium text-gray-700">Nifty</span>
+                          </div>
+                          <span className="text-lg font-bold text-red-600">21,800 (-0.3%)</span>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-gray-600">Bitcoin: $51,200 (+5.1%)</span>
+                        <div className="flex items-center justify-between p-3 bg-green-50 rounded-xl">
+                          <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-sm font-medium text-gray-700">Bitcoin</span>
+                          </div>
+                          <span className="text-lg font-bold text-green-600">$51,200 (+5.1%)</span>
                         </div>
                       </div>
                     </div>
@@ -296,29 +386,84 @@ export const HomeNew: React.FC = () => {
           </div>
         </section>
 
-        {/* Search Section */}
-        <section className="bg-white py-8 border-b">
+        {/* Stats Section */}
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto">
-              <SearchBar />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className={`text-center transition-all duration-700 delay-${index * 100} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                  <div className={`w-16 h-16 ${stat.color} bg-opacity-10 rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                    <stat.icon className={`h-8 w-8 ${stat.color}`} />
+                  </div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-gray-600">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Featured News Section */}
-        <section className="py-12 bg-white">
+        {/* Stats Section */}
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured News</h2>
-                <p className="text-gray-600">Stay updated with the latest financial developments</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 text-blue-600 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">50K+</div>
+                <div className="text-gray-600">Active Users</div>
               </div>
-              <Link to="/blog" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
-                View All News <ArrowRight className="h-4 w-4" />
+              <div className="text-center">
+                <div className="w-16 h-16 text-green-600 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Calculator className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">100+</div>
+                <div className="text-gray-600">Calculators</div>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 text-purple-600 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Target className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">99.9%</div>
+                <div className="text-gray-600">Success Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 text-orange-600 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">4.9/5</div>
+                <div className="text-gray-600">Trust Score</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Search Section */}
+        <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Find What You Need</h2>
+              <p className="text-gray-600">Search across calculators, news, tools, and more</p>
+            </div>
+            <SearchBar />
+          </div>
+        </section>
+
+        {/* Featured News Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-12">
+              <div>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">🔥 Featured News</h2>
+                <p className="text-gray-600 text-lg">Stay updated with the latest financial developments</p>
+              </div>
+              <Link to="/blog" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-lg group">
+                View All News <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {latestNews.map((news, index) => (
                 <NewsCard key={news.id} news={news} featured={index === 0} />
               ))}
@@ -326,56 +471,94 @@ export const HomeNew: React.FC = () => {
           </div>
         </section>
 
-        {/* Category Navigation */}
-        <section className="py-8 bg-gray-100">
+        {/* Features Section */}
+        <section className="py-16 bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Quick Navigation</h2>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Moneycal.in?</h2>
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">Comprehensive financial tools and insights designed specifically for Indian users</p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              <Link to="/blog" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <BookOpen className="h-8 w-8 text-primary-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Latest News</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <FeatureCard 
+                icon={Shield} 
+                title="Trusted & Secure" 
+                description="Bank-grade security with 99.9% uptime and data protection"
+                color="text-green-600"
+              />
+              <FeatureCard 
+                icon={Zap} 
+                title="Lightning Fast" 
+                description="Instant calculations and real-time market data updates"
+                color="text-yellow-600"
+              />
+              <FeatureCard 
+                icon={Globe} 
+                title="India Focused" 
+                description="Tailored for Indian financial markets and regulations"
+                color="text-blue-600"
+              />
+              <FeatureCard 
+                icon={Users} 
+                title="Community Driven" 
+                description="Join 50K+ users making smarter financial decisions"
+                color="text-purple-600"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Category Navigation */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Quick Navigation</h2>
+              <p className="text-gray-600 text-lg">Access all our services with one click</p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              <Link to="/blog" className="bg-gradient-to-br from-primary-500 to-primary-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center group transform hover:-translate-y-2">
+                <BookOpen className="h-10 w-10 text-white mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <span className="text-white font-semibold">Latest News</span>
               </Link>
-              <Link to="/crypto" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Crypto News</span>
+              <Link to="/crypto" className="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center group transform hover:-translate-y-2">
+                <TrendingUp className="h-10 w-10 text-white mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <span className="text-white font-semibold">Crypto News</span>
               </Link>
-              <Link to="/government-schemes" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <Building className="h-8 w-8 text-blue-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Govt Schemes</span>
+              <Link to="/government-schemes" className="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center group transform hover:-translate-y-2">
+                <Building className="h-10 w-10 text-white mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <span className="text-white font-semibold">Govt Schemes</span>
               </Link>
-              <Link to="/exceltool" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <BarChart3 className="h-8 w-8 text-purple-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Excel Tools</span>
+              <Link to="/exceltool" className="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center group transform hover:-translate-y-2">
+                <BarChart3 className="h-10 w-10 text-white mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <span className="text-white font-semibold">Excel Tools</span>
               </Link>
-              <Link to="/missed-call-banking-directory" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <Phone className="h-8 w-8 text-orange-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Banking</span>
+              <Link to="/missed-call-banking-directory" className="bg-gradient-to-br from-orange-500 to-orange-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center group transform hover:-translate-y-2">
+                <Phone className="h-10 w-10 text-white mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <span className="text-white font-semibold">Banking</span>
               </Link>
-              <Link to="/bank-tools" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <CreditCard className="h-8 w-8 text-red-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Bank Tools</span>
+              <Link to="/bank-tools" className="bg-gradient-to-br from-red-500 to-red-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all text-center group transform hover:-translate-y-2">
+                <CreditCard className="h-10 w-10 text-white mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <span className="text-white font-semibold">Bank Tools</span>
               </Link>
             </div>
           </div>
         </section>
 
         {/* Crypto News Section */}
-        <section className="py-12 bg-white">
+        <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-12">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Crypto & Digital Currency</h2>
-                <p className="text-gray-600">Latest updates from the cryptocurrency world</p>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">🚀 Crypto & Digital Currency</h2>
+                <p className="text-gray-600 text-lg">Latest updates from the cryptocurrency world</p>
               </div>
-              <Link to="/crypto" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
-                View All Crypto News <ArrowRight className="h-4 w-4" />
+              <Link to="/crypto" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-lg group">
+                View All Crypto News <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {cryptoNews.map((news) => (
                 <NewsCard key={news.id} news={news} />
               ))}
@@ -384,19 +567,19 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Government Schemes Section */}
-        <section className="py-12 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-12">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Government Schemes</h2>
-                <p className="text-gray-600">Latest government initiatives and benefits</p>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">🏛️ Government Schemes</h2>
+                <p className="text-gray-600 text-lg">Latest government initiatives and benefits</p>
               </div>
-              <Link to="/government-schemes" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
-                View All Schemes <ArrowRight className="h-4 w-4" />
+              <Link to="/government-schemes" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-lg group">
+                View All Schemes <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {governmentNews.map((news) => (
                 <NewsCard key={news.id} news={news} />
               ))}
@@ -405,34 +588,34 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Excel Tools Section */}
-        <section className="py-12 bg-white">
+        <section className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-12">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Excel Tools & Templates</h2>
-                <p className="text-gray-600">Professional Excel tools for financial analysis</p>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">📊 Excel Tools & Templates</h2>
+                <p className="text-gray-600 text-lg">Professional Excel tools for financial analysis</p>
               </div>
-              <Link to="/exceltool" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
-                View All Tools <ArrowRight className="h-4 w-4" />
+              <Link to="/exceltool" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-lg group">
+                View All Tools <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {excelTools.map((tool) => (
-                <div key={tool.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
+                <div key={tool.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 transform hover:-translate-y-2">
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                      <BarChart3 className="h-6 w-6 text-white" />
+                    <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                      <BarChart3 className="h-7 w-7 text-white" />
                     </div>
                     <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                      <span className="text-sm font-medium">{tool.rating}</span>
+                      <Star className="h-5 w-5 text-yellow-400 fill-current" />
+                      <span className="text-sm font-semibold">{tool.rating}</span>
                     </div>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{tool.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{tool.description}</p>
+                  <h3 className="font-bold text-gray-900 mb-3 text-lg">{tool.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{tool.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
+                    <span className="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">
                       {tool.category}
                     </span>
                     <span className="text-sm text-gray-500">{tool.downloads} downloads</span>
@@ -444,19 +627,19 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Financial Calculators Section */}
-        <section id="categories" className="py-12 bg-gray-50">
+        <section id="categories" className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Financial Calculators</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">🧮 Financial Calculators</h2>
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                 Comprehensive financial calculators to help you make informed decisions about loans, investments, taxes, and more.
               </p>
             </div>
             
             {/* Popular Calculators */}
-            <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Popular Calculators</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">🔥 Popular Calculators</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {popularCalculators.map((calculator) => (
                   <CalculatorCard key={calculator.id} calculator={calculator} />
                 ))}
@@ -466,19 +649,19 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Newsletter Section */}
-        <section className="py-12 bg-primary-600">
+        <section className="py-16 bg-gradient-to-br from-primary-600 to-primary-800">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Stay Updated</h2>
-            <p className="text-white/90 mb-8">
+            <h2 className="text-4xl font-bold text-white mb-4">Stay Updated</h2>
+            <p className="text-white/90 mb-8 text-lg">
               Get the latest financial news, market updates, and exclusive insights delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                className="flex-1 px-6 py-4 rounded-2xl border-0 focus:ring-2 focus:ring-white focus:ring-opacity-50 text-lg"
               />
-              <button className="bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-yellow-600 transition-colors">
+              <button className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-4 rounded-2xl font-semibold hover:from-yellow-500 hover:to-orange-600 transition-all transform hover:-translate-y-1 hover:scale-105">
                 Subscribe
               </button>
             </div>
