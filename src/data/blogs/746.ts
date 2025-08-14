@@ -8,7 +8,7 @@ export const blog746: BlogPost = {
   author: 'MoneyCal India',
   authorImage: '/images/authors/moneycal-india.jpg',
   date: '2025-08-09',
-  lastUpdated: '2025-08-11',
+  lastUpdated: '2025-08-14',
   category: 'finance',
   tags: ['Ludhiana', 'वित्तीय प्रौद्योगिकी', 'भारत', 'अर्थव्यवस्था', 'विकास'],
   readTime: '5 min read',

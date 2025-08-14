@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog698 = {
+export const blog698: BlogPost = {
   id: 698,
   slug: 'guwahati-jobs-trends-2025-guide-698',
   title: 'Guwahati 2025: Jobs, Reskilling & Salaries — A Practical Guide (698)',

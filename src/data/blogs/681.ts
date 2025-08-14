@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog681 = {
+export const blog681: BlogPost = {
   id: 681,
   slug: 'mumbai-stocks-trends-2025-guide-681',
   title: 'Mumbai 2025: Stock Market & SIP Discipline — A Practical Guide (681)',

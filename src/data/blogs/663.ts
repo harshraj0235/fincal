@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog663 = {
+export const blog663: BlogPost = {
   id: 663,
   slug: 'bengaluru-salary-tax-2025-smart-switch-new-old-regime',
   title: 'Bengaluru Salaried in 2025: Smart Switch Between New and Old Tax Regimes',

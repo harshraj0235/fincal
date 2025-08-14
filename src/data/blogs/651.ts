@@ -3,7 +3,7 @@
 import { blogPosts } from '../blogData1';
 // Imported for reference - can be used to link to related blog posts or for data consistency
 
-const blog651 = {
+export const blog651: BlogPost = {
   id: 651,
   slug: 'indian-green-hydrogen-startups-investment-guide-2025',
   title: 'Indian Green Hydrogen Startups: Your Guide to Investment Opportunities in 2025',

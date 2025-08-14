@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog724 = {
+export const blog724: BlogPost = {
   id: 724,
   slug: 'pune-tech-trends-2025-guide-724',
   title: 'Pune 2025: Tech Hiring & AI Adoption — A Practical Guide (724)',

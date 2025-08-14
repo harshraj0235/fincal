@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog659 = {
+export const blog659: BlogPost = {
   id: 659,
   slug: 'mumbai-mutual-funds-shift-to-short-duration-bonds-2025',
   title: 'Mumbai Fund Managers Shift to Short-Duration Bonds: What It Means for SIP Investors (2025)',

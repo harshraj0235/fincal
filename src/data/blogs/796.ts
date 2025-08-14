@@ -40,7 +40,7 @@ Mumbai के AI फाइनेंस क्षेत्र में यह �
   author: 'MoneyCal India',
   authorImage: '/images/authors/moneycal-india.jpg',
   date: '2025-08-11',
-  lastUpdated: '2025-08-12',
+  lastUpdated: '2025-08-14',
   category: 'technology',
   tags: ['Mumbai', 'AI फाइनेंस', 'भारत', 'अर्थव्यवस्था', 'विकास', 'नवाचार', 'तकनीक'],
   readTime: '6 min read',

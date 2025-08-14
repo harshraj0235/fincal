@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog723 = {
+export const blog723: BlogPost = {
   id: 723,
   slug: 'noida-finance-trends-2025-guide-723',
   title: 'Noida 2025: Personal Finance & Tax — A Practical Guide (723)',

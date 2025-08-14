@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog652 = {
+export const blog652: BlogPost = {
   id: 652,
   slug: 'digital-rupee-cbdc-india-2025-complete-guide',
   title: 'Digital Rupee (CBDC) in India 2025: Complete Guide to Central Bank Digital Currency',

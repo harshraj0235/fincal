@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog661 = {
+export const blog661: BlogPost = {
   id: 661,
   slug: 'bengaluru-upi-developers-2025-roadmap',
   title: 'Bengaluru UPI Developers: 2025 Roadmap for Reliability, Risk, and Scale',

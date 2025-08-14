@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog656 = {
+export const blog656: BlogPost = {
   id: 656,
   slug: 'shocking-truth-india-green-hydrogen-startups',
   title: 'The Shocking Truth About India’s Green Hydrogen Startups (Investors Yeh Miss Kar Rahe Hain!)',

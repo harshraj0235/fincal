@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog726 = {
+export const blog726: BlogPost = {
   id: 726,
   slug: 'chennai-jobs-trends-2025-guide-726',
   title: 'Chennai 2025: Jobs, Reskilling & Salaries — A Practical Guide (726)',

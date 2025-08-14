@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog667 = {
+export const blog667: BlogPost = {
   id: 667,
   slug: 'noida-msme-credit-2025-new-eligibility-rules',
   title: 'Noida MSME Credit in 2025: New Eligibility Rules and How to Improve Approval Odds',

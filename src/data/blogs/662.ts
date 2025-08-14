@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog662 = {
+export const blog662: BlogPost = {
   id: 662,
   slug: 'mumbai-ppf-nsc-rates-q3-2025-planning-guide',
   title: 'Mumbai Investors: PPF and NSC Rates in Q3 2025 — Simple Planning Guide',

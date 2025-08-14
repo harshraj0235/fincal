@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog657 = {
+export const blog657: BlogPost = {
   id: 657,
   slug: 'noida-startup-fund-boosts-ai-and-fintech-hubs-2025',
   title: 'Noida Startup Fund Boosts AI and Fintech Hubs in 2025: Hiring, Grants, and Expansion Plans',

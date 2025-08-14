@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog658 = {
+export const blog658: BlogPost = {
   id: 658,
   slug: 'bengaluru-fintech-hiring-surge-q3-2025-outlook',
   title: 'Bengaluru Fintech Hiring Surges in Q3 2025: Skills in Demand and Salary Bands',

@@ -8,7 +8,7 @@ export const blog765: BlogPost = {
   author: 'MoneyCal India',
   authorImage: '/images/authors/moneycal-india.jpg',
   date: '2025-08-11',
-  lastUpdated: '2025-08-12',
+  lastUpdated: '2025-08-14',
   category: 'business',
   tags: ['Rajkot', 'स्टार्टअप इकोसिस्टम', 'भारत', 'अर्थव्यवस्था', 'विकास'],
   readTime: '5 min read',

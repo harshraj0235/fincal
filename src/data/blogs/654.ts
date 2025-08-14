@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog654 = {
+export const blog654: BlogPost = {
   id: 654,
   slug: 'esg-secret-indian-startup-investment-10x',
   title: 'Yeh ESG Secret Aapke Indian Startup Investment Ko 10X Kar Sakta Hai!',

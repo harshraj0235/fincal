@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog653 = {
+export const blog653: BlogPost = {
   id: 653,
   slug: 'how-esg-factors-influence-indian-startup-valuations-2025',
   title: 'How ESG Factors Influence Indian Startup Valuations in 2025',

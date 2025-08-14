@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog664 = {
+export const blog664: BlogPost = {
   id: 664,
   slug: 'noida-credit-card-approvals-2025-tips-to-increase-eligibility',
   title: 'Noida Credit Card Approvals in 2025: Practical Tips to Improve Eligibility',

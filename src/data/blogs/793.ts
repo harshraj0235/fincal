@@ -40,7 +40,7 @@ Kalyan-Dombivali के डिजिटल वॉलेट क्षेत्र
   author: 'MoneyCal India',
   authorImage: '/images/authors/moneycal-india.jpg',
   date: '2025-08-11',
-  lastUpdated: '2025-08-12',
+  lastUpdated: '2025-08-14',
   category: 'finance',
   tags: ['Kalyan-Dombivali', 'डिजिटल वॉलेट', 'भारत', 'अर्थव्यवस्था', 'विकास', 'नवाचार', 'तकनीक'],
   readTime: '6 min read',

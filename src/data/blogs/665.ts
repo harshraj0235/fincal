@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog665 = {
+export const blog665: BlogPost = {
   id: 665,
   slug: 'mumbai-gold-loan-vs-personal-loan-2025-which-is-better',
   title: 'Mumbai 2025: Gold Loan vs Personal Loan — Which Is Better for Quick Cash?',

@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog666 = {
+export const blog666: BlogPost = {
   id: 666,
   slug: 'bengaluru-esops-2025-taxation-and-liquidity-checklist',
   title: 'Bengaluru ESOPs in 2025: Taxation and Liquidity Checklist for Employees',

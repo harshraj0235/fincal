@@ -1,6 +1,8 @@
+import { BlogPost } from './types';
+
 import { blogPosts } from '../blogData1';
 
-const blog660 = {
+export const blog660: BlogPost = {
   id: 660,
   slug: 'noida-it-parks-offer-rent-waivers-for-ai-startups-2025',
   title: 'Noida IT Parks Offer Rent Waivers for AI Startups in 2025: Terms, Eligibility, and Deadlines',
