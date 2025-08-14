@@ -10,6 +10,10 @@
     "preview": "vite preview",
     "generate-blogs": "node scripts/generate-blogs.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
+    "auto-blog": "node scripts/auto-blog-generator.cjs",
+    "auto-blog:manual": "node scripts/auto-blog-generator.cjs --manual",
+    "auto-blog:status": "node scripts/auto-blog-generator.cjs --status",
+    "auto-blog:daemon": "node scripts/auto-blog-generator.cjs --daemon",
     "lhci:autorun": "lhci autorun"
   },
   "dependencies": {

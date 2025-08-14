@@ -1,55 +1,16 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  Calculator, 
-  ArrowRight, 
-  TrendingUp, 
-  DollarSign, 
-  PieChart, 
-  Building, 
-  Shield, 
-  ChevronRight,
-  Search,
-  Clock,
-  User,
-  Calendar,
-  BookOpen,
-  BarChart3,
-  Globe,
-  FileText,
-  CreditCard,
-  Banknote,
-  TrendingDown,
-  Zap,
-  Star,
-  Eye,
-  Share2,
-  Bookmark,
-  Filter,
-  Grid,
-  List,
-  Phone
-} from 'lucide-react';
+import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, ChevronRight } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
 import { governmentSchemes } from '../data/governmentSchemesData';
-import { blogs } from '../data/blogs';
-import { cryptoData } from '../data/cryptoData';
-import { excelToolsData } from '../data/excelToolsData';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 
 export const Home: React.FC = () => {
   const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
-  const [featuredBlogs, setFeaturedBlogs] = useState<any[]>([]);
-  const [latestNews, setLatestNews] = useState<any[]>([]);
-  const [cryptoNews, setCryptoNews] = useState<any[]>([]);
-  const [governmentNews, setGovernmentNews] = useState<any[]>([]);
-  const [excelTools, setExcelTools] = useState<any[]>([]);
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [activeCategory, setActiveCategory] = useState('all');
   const location = useLocation();
   const categoriesRef = useRef<HTMLElement>(null);
   const allCalculatorsRef = useRef<HTMLDivElement>(null);
@@ -66,128 +27,21 @@ export const Home: React.FC = () => {
     ];
     
     setPopularCalculators(popular);
-    
-    // Set featured blogs (using available blog data)
-    setFeaturedBlogs([blog651]);
-    
-    // Set latest news (simulate with available data)
-    setLatestNews([
-      {
-        id: 1,
-        title: "RBI Announces New Digital Lending Guidelines for 2025",
-        excerpt: "The Reserve Bank of India has introduced comprehensive guidelines for digital lending platforms to enhance transparency and protect consumers.",
-        category: "Banking",
-        date: "2025-01-15",
-        image: "https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "5 min read"
-      },
-      {
-        id: 2,
-        title: "SEBI Approves New Mutual Fund Categories for Retail Investors",
-        excerpt: "Market regulator SEBI has approved new mutual fund categories specifically designed for retail investors with better risk management.",
-        category: "Investments",
-        date: "2025-01-14",
-        image: "https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "4 min read"
-      },
-      {
-        id: 3,
-        title: "Government Launches New Tax Benefits for Startup Investments",
-        excerpt: "The government has announced new tax incentives for investments in startups and small businesses to boost entrepreneurship.",
-        category: "Tax",
-        date: "2025-01-13",
-        image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "6 min read"
-      }
-    ]);
-    
-    // Set crypto news
-    setCryptoNews([
-      {
-        id: 1,
-        title: "Bitcoin Surges Past $50,000 as Institutional Adoption Grows",
-        excerpt: "Bitcoin has reached a new milestone as major institutions continue to show interest in cryptocurrency investments.",
-        category: "Cryptocurrency",
-        date: "2025-01-15",
-        image: "https://images.pexels.com/photos/6771900/pexels-photo-6771900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "3 min read"
-      },
-      {
-        id: 2,
-        title: "RBI's Digital Rupee Pilot Program Shows Promising Results",
-        excerpt: "The Reserve Bank of India's digital rupee pilot program has shown positive results with increased adoption in retail transactions.",
-        category: "Digital Currency",
-        date: "2025-01-14",
-        image: "https://images.pexels.com/photos/6771900/pexels-photo-6771900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "4 min read"
-      }
-    ]);
-    
-    // Set government schemes news
-    setGovernmentNews([
-      {
-        id: 1,
-        title: "PM-KISAN Scheme Extended with Enhanced Benefits for Farmers",
-        excerpt: "The government has extended the PM-KISAN scheme with additional benefits for small and marginal farmers across India.",
-        category: "Government Schemes",
-        date: "2025-01-15",
-        image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "5 min read"
-      },
-      {
-        id: 2,
-        title: "Ayushman Bharat Coverage Expanded to Include More Beneficiaries",
-        excerpt: "The Ayushman Bharat health insurance scheme has been expanded to cover additional beneficiaries with enhanced coverage limits.",
-        category: "Healthcare",
-        date: "2025-01-14",
-        image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        readTime: "4 min read"
-      }
-    ]);
-    
-    // Set excel tools
-    setExcelTools([
-      {
-        id: 1,
-        title: "Advanced Financial Modeling Template",
-        description: "Comprehensive Excel template for financial modeling and analysis",
-        category: "Finance",
-        downloads: 1250,
-        rating: 4.8
-      },
-      {
-        id: 2,
-        title: "Budget Planning Dashboard",
-        description: "Interactive Excel dashboard for personal and business budget planning",
-        category: "Budgeting",
-        downloads: 890,
-        rating: 4.6
-      },
-      {
-        id: 3,
-        title: "Investment Portfolio Tracker",
-        description: "Excel tool to track and analyze investment portfolio performance",
-        category: "Investments",
-        downloads: 1100,
-        rating: 4.9
-      }
-    ]);
   }, []);
   
   // Structured data for the home page
   const homeStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Moneycal.in - India's Premier Financial News & Tools Portal",
-    "description": "Comprehensive financial news, calculators, and tools for Indian users. Stay updated with latest financial news, crypto updates, government schemes, and use free financial calculators.",
-    "url": "https://moneycal.in",
+    "name": "FinanceGurus Directory - India's Top Financial Calculators & Tools",
+    "description": "Comprehensive financial calculators for Indian users. Calculate EMI, SIP, income tax, mutual funds, and more. Free online financial planning tools.",
+    "url": "https://financegurus.directory",
     "mainEntity": {
       "@type": "ItemList",
-      "name": "Financial Tools & News",
-      "description": "Collection of financial calculators, news, and tools for Indian users",
-      "numberOfItems": calculatorCategories.reduce((total, cat) => total + cat.calculators.length, 0) + latestNews.length + cryptoNews.length,
-      "itemListElement": [
-        ...calculatorCategories.flatMap((category, catIndex) =>
+      "name": "Financial Calculators",
+      "description": "Collection of 50+ financial calculators for Indian users",
+      "numberOfItems": calculatorCategories.reduce((total, cat) => total + cat.calculators.length, 0),
+      "itemListElement": calculatorCategories.flatMap((category, catIndex) =>
         category.calculators.map((calculator, calcIndex) => ({
           "@type": "ListItem",
           "position": catIndex * 10 + calcIndex + 1,
@@ -195,7 +49,7 @@ export const Home: React.FC = () => {
             "@type": "WebApplication",
             "name": calculator.name,
             "description": calculator.description,
-            "url": `https://moneycal.in/calculators/${calculator.id}`,
+            "url": `https://financegurus.directory/calculators/${calculator.id}`,
             "applicationCategory": "FinanceApplication",
             "operatingSystem": "Web Browser",
             "offers": {
@@ -205,20 +59,7 @@ export const Home: React.FC = () => {
             }
           }
         }))
-        ),
-        ...latestNews.map((news, index) => ({
-          "@type": "ListItem",
-          "position": 100 + index + 1,
-          "item": {
-            "@type": "NewsArticle",
-            "headline": news.title,
-            "description": news.excerpt,
-            "url": `https://moneycal.in/news/${news.id}`,
-            "datePublished": news.date,
-            "articleSection": news.category
-          }
-        }))
-      ]
+      )
     },
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -227,7 +68,7 @@ export const Home: React.FC = () => {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://moneycal.in"
+          "item": "https://financegurus.directory"
         }
       ]
     }
@@ -276,394 +117,816 @@ export const Home: React.FC = () => {
       default: return 'from-primary-500 to-primary-700';
     }
   };
-
-  // News card component
-  const NewsCard = ({ news, featured = false }: { news: any; featured?: boolean }) => (
-    <Link to={`/news/${news.id}`} className="group">
-      <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${featured ? 'col-span-2 row-span-2' : ''}`}>
-        <div className="relative overflow-hidden">
-          <img 
-            src={news.image} 
-            alt={news.title}
-            className={`w-full object-cover transition-transform duration-300 group-hover:scale-105 ${featured ? 'h-64' : 'h-48'}`}
-          />
-          <div className="absolute top-3 left-3">
-            <span className="bg-red-500 text-white px-2 py-1 rounded-full text-xs font-medium">
-              {news.category}
-            </span>
-          </div>
-          <div className="absolute top-3 right-3">
-            <button className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors">
-              <Bookmark className="h-4 w-4 text-white" />
-            </button>
-          </div>
-        </div>
-        <div className="p-4">
-          <h3 className={`font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors ${featured ? 'text-xl' : 'text-lg'}`}>
-            {news.title}
-          </h3>
-          <p className={`text-gray-600 mb-3 line-clamp-2 ${featured ? 'text-base' : 'text-sm'}`}>
-            {news.excerpt}
-          </p>
-          <div className="flex items-center justify-between text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4" />
-              <span>{news.readTime}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4" />
-              <span>{new Date(news.date).toLocaleDateString()}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-
-  // Calculator card component
-  const CalculatorCard = ({ calculator }: { calculator: any }) => (
-    <Link to={`/calculators/${calculator.id}`} className="group">
-      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
-        <div className="flex items-center justify-between mb-4">
-          <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
-            <Calculator className="h-6 w-6 text-white" />
-          </div>
-          <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-primary-600 transition-colors" />
-        </div>
-        <h3 className="font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-          {calculator.name}
-        </h3>
-        <p className="text-gray-600 text-sm mb-3">
-          {calculator.description}
-        </p>
-        <span className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
-          {calculator.category}
-        </span>
-      </div>
-    </Link>
-  );
-
+  
   return (
     <>
       <WhatsAppBanner />
       <AstroFinanceButton />
-      <SEOHelmet 
-        title="Moneycal.in - India's Premier Financial News & Tools Portal"
-        description="Stay updated with latest financial news, crypto updates, government schemes, and use free financial calculators. Comprehensive financial tools and news for Indian users."
-        keywords="financial news india, crypto news, government schemes, financial calculators, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, personal finance india"
+      <SEOHelmet
+        title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
+        description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users. Get accurate calculations for loans, investments, and tax planning."
+        keywords="financial calculator india, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, loan calculator, investment calculator, personal finance tools, financial planning india, free financial calculator"
         url="/"
         structuredData={homeStructuredData}
-        tags={["financial news", "crypto", "government schemes", "calculators", "personal finance", "investment", "banking"]}
+        tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax", "mutual funds", "personal finance", "investment planning"]}
       />
       
-      <div className="min-h-screen bg-gray-50">
-      {/* Hero Section with Breaking News */}
-        <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-8 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Breaking News Ticker */}
-            <div className="bg-red-600 text-white py-2 px-4 rounded-lg mb-6 flex items-center gap-3">
-              <span className="bg-white text-red-600 px-2 py-1 rounded text-xs font-bold">BREAKING</span>
-              <div className="flex-1 overflow-hidden">
-                <div className="animate-marquee whitespace-nowrap">
-                  <span className="mr-8">RBI Announces New Digital Lending Guidelines for 2025</span>
-                  <span className="mr-8">Bitcoin Surges Past $50,000 as Institutional Adoption Grows</span>
-                  <span className="mr-8">SEBI Approves New Mutual Fund Categories for Retail Investors</span>
-              </div>
-            </div>
+    <div className="min-h-screen">
+      
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <circle cx="5" cy="5" r="0.5" fill="white" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
           </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="text-center lg:text-left">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
-                  Your Gateway to
-                  <span className="block text-yellow-300">Financial Intelligence</span>
-                  </h1>
-                <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto lg:mx-0">
-                  Stay ahead with the latest financial news, crypto updates, government schemes, and powerful financial calculators.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Link 
-                    to="/blog" 
-                    className="btn bg-white text-primary-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all px-8 py-4 text-lg font-medium rounded-xl"
-                  >
-                    Read Latest News
-                  </Link>
-                  <Link 
-                    to="/#categories" 
-                    className="btn bg-yellow-500 text-white hover:bg-yellow-600 shadow-lg hover:shadow-xl transition-all px-8 py-4 text-lg font-medium rounded-xl"
-                  >
-                    Use Calculators
-                  </Link>
-                </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-black">
+                Smart Financial Decisions Start Here
+              </h1>
+              <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-black/90 max-w-2xl mx-auto lg:mx-0">
+                Comprehensive financial calculators tailored for Indian users. Plan loans, investments, taxes, and more with confidence.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <Link 
+                  to="/calculators/emi-calculator" 
+                  className="btn bg-white text-primary-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all px-6 py-3 text-base font-medium rounded-xl"
+                >
+                  EMI Calculator
+                </Link>
+                <Link 
+                  to="/calculators/income-tax-calculator" 
+                  className="btn bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-xl transition-all px-6 py-3 text-base font-medium rounded-xl"
+                >
+                  Income Tax
+                </Link>
               </div>
-              <div className="hidden lg:block">
-                <div className="relative">
-                  <div className="absolute -top-16 -left-16 w-32 h-32 bg-primary-400 rounded-full opacity-20 animate-pulse"></div>
-                  <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-primary-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  <div className="bg-white p-8 rounded-2xl shadow-2xl transform rotate-3 z-10 backdrop-blur-sm bg-opacity-95">
-                    <div className="transform -rotate-3">
-                      <div className="mb-4">
-                        <div className="text-primary-600 font-semibold mb-1 text-sm">Latest News</div>
-                        <div className="text-xl font-bold text-neutral-900">Financial Markets Update</div>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-gray-600">Sensex: 72,500 (+1.2%)</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                          <span className="text-sm text-gray-600">Nifty: 21,800 (-0.3%)</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-gray-600">Bitcoin: $51,200 (+5.1%)</span>
             </div>
+            <div className="hidden lg:block">
+              <div className="relative">
+                <div className="absolute -top-16 -left-16 w-32 h-32 bg-primary-400 rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-primary-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-2xl transform rotate-3 z-10 backdrop-blur-sm bg-opacity-95">
+                  <div className="transform -rotate-3">
+                    <div className="mb-4">
+                      <div className="text-primary-600 font-semibold mb-1 text-sm">Loan Amount</div>
+                      <div className="text-xl sm:text-2xl font-bold text-neutral-900">₹25,00,000</div>
                     </div>
+                    <div className="mb-4">
+                      <div className="text-primary-600 font-semibold mb-1 text-sm">Interest Rate</div>
+                      <div className="text-xl sm:text-2xl font-bold text-neutral-900">8.5%</div>
+                    </div>
+                    <div className="mb-4">
+                      <div className="text-primary-600 font-semibold mb-1 text-sm">Loan Tenure</div>
+                      <div className="text-xl sm:text-2xl font-bold text-neutral-900">20 Years</div>
+                    </div>
+                    <div className="pt-4 border-t border-neutral-200">
+                      <div className="text-primary-600 font-semibold mb-1 text-sm">Monthly EMI</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-neutral-900">₹21,761</div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </section>
-
-        {/* Search Section */}
-        <section className="bg-white py-8 border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto">
-              <SearchBar />
-            </div>
+      
+      {/* Search Section */}
+      <section className="py-12 bg-white relative z-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-neutral-900 mb-2">Find the Right Calculator</h2>
+            <p className="text-neutral-600">Search from our collection of 50+ financial calculators</p>
           </div>
-        </section>
-
-        {/* Featured News Section */}
-        <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured News</h2>
-                <p className="text-gray-600">Stay updated with the latest financial developments</p>
-                  </div>
-              <Link to="/blog" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
-                View All News <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {latestNews.map((news, index) => (
-                <NewsCard key={news.id} news={news} featured={index === 0} />
-            ))}
+          <div className="bg-white shadow-lg rounded-xl p-6 border border-neutral-100">
+            <SearchBar />
           </div>
         </div>
       </section>
-
-        {/* Category Navigation */}
-        <section className="py-8 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Quick Navigation</h2>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-lg ${viewMode === 'grid' ? 'bg-primary-100 text-primary-600' : 'bg-white text-gray-600'}`}
-                >
-                  <Grid className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-lg ${viewMode === 'list' ? 'bg-primary-100 text-primary-600' : 'bg-white text-gray-600'}`}
-                >
-                  <List className="h-5 w-5" />
-                    </button>
-              </div>
+      
+      {/* Quick Access Categories */}
+      <section className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Quick Access Categories</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Find the financial tools you need, organized by category
+            </p>
           </div>
           
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              <Link to="/blog" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <BookOpen className="h-8 w-8 text-primary-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Latest News</span>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {calculatorCategories.slice(0, 6).map(category => (
+              <Link 
+                key={category.id}
+                to={`/#${category.id}`} 
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all text-center group"
+              >
+                <div className={`h-16 w-16 rounded-full bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                  {getCategoryIcon(category.id)}
+                </div>
+                <h3 className="font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">{category.name.split(' ')[0]}</h3>
               </Link>
-              <Link to="/crypto" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Crypto News</span>
-              </Link>
-              <Link to="/government-schemes" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <Building className="h-8 w-8 text-blue-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Govt Schemes</span>
-              </Link>
-              <Link to="/exceltool" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <BarChart3 className="h-8 w-8 text-purple-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Excel Tools</span>
-              </Link>
-              <Link to="/missed-call-banking-directory" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <Phone className="h-8 w-8 text-orange-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Banking</span>
-              </Link>
-              <Link to="/bank-tools" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
-                <CreditCard className="h-8 w-8 text-red-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium text-gray-900">Bank Tools</span>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <Link to="/#categories" className="text-primary-600 hover:text-primary-700 font-medium flex items-center justify-center">
+              View All Categories
+              <ArrowRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
         </div>
       </section>
-
-        {/* Crypto News Section */}
-        <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Crypto & Digital Currency</h2>
-                <p className="text-gray-600">Latest updates from the cryptocurrency world</p>
+      
+      {/* Popular Calculators */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Most Popular Calculators</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Our most frequently used calculators to help you make informed financial decisions
+            </p>
           </div>
-              <Link to="/crypto" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
-                View All Crypto News <ArrowRight className="h-4 w-4" />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {popularCalculators.map(calculator => (
+              <Link 
+                key={calculator.id}
+                to={`/calculators/${calculator.id}`}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all group border border-neutral-100 hover:border-primary-200"
+              >
+                <div className="flex items-start mb-4">
+                  <div className="h-12 w-12 rounded-lg bg-primary-100 flex items-center justify-center mr-4 group-hover:bg-primary-200 transition-colors">
+                    <Calculator className="h-6 w-6 text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 group-hover:text-primary-600 transition-colors">
+                      {calculator.name}
+                    </h3>
+                    <p className="text-sm text-neutral-500">{calculator.category}</p>
+                  </div>
+                </div>
+                <p className="text-neutral-600 mb-4 text-sm">{calculator.description}</p>
+                <div className="flex justify-end">
+                  <span className="text-primary-600 group-hover:text-primary-700 font-medium text-sm flex items-center">
+                    Try Calculator
+                    <ArrowRight className="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
               </Link>
+            ))}
+          </div>
+          
+          <div className="text-center mt-10">
+            <Link to="/#categories" className="btn bg-primary-600 text-black hover:bg-primary-700 shadow-md hover:shadow-lg transition-all">
+              View All Calculators
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* Featured Tools Section */}
+      <section className="py-16 bg-gradient-to-br from-primary-50 to-primary-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Featured Financial Tools</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Specialized tools designed to solve complex financial challenges
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all border border-neutral-100">
+              <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <PieChart className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-purple-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Portfolio Optimization</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Optimize your investment portfolio with tools for diversification, risk assessment, and performance tracking.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li>
+                    <Link to="/calculators/mutual-fund-overlap-checker" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      Mutual Fund Overlap Checker
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/asset-allocation-planner" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      Asset Allocation Planner
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/risk-appetite-assessment" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      Risk Appetite Assessment
+                    </Link>
+                  </li>
+                </ul>
+                <Link to="/#investments-wealth-management" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                  Explore All Portfolio Tools
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {cryptoNews.map((news) => (
-                <NewsCard key={news.id} news={news} />
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all border border-neutral-100">
+              <div className="h-48 bg-gradient-to-br from-green-500 to-green-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Building className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-green-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Banking Tools</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Essential banking tools to help you navigate financial services, find ATMs, and troubleshoot common issues.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li>
+                    <Link to="/calculators/bank-ifsc-finder" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      Bank IFSC Finder
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/upi-failure-troubleshooter" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      UPI Failure Troubleshooter
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/bank-holiday-calendar" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      Bank Holiday Calendar
+                    </Link>
+                  </li>
+                </ul>
+                <Link to="/#banking-calculators" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                  Explore All Banking Tools
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all border border-neutral-100">
+              <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <DollarSign className="h-20 w-20 text-white opacity-20" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-blue-900 to-transparent">
+                  <h3 className="text-xl font-semibold text-white">Tax Tools</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-neutral-600 mb-4">
+                  Comprehensive tax calculators to help you plan your taxes, maximize deductions, and stay compliant.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li>
+                    <Link to="/calculators/income-tax-calculator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      Income Tax Calculator
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/income-tax-regime-comparison-calculator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      Tax Regime Comparison
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/calculators/gst-calculator" className="text-primary-600 hover:text-primary-700 flex items-center text-sm">
+                      <ChevronRight className="h-4 w-4 mr-1" />
+                      GST Calculator
+                    </Link>
+                  </li>
+                </ul>
+                <Link to="/#tax-calculators" className="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                  Explore All Tax Tools
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tool Hub Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-blue-900 mb-4">Tool Hub: Sales & Shopkeeper Tools</h2>
+            <p className="text-lg text-blue-700 max-w-3xl mx-auto">
+              30+ unique tools for sales professionals and shopkeepers. Fast, easy, and mobile-friendly!
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {/* Salesperson Tools */}
+            {[
+              { name: 'Instant Discount & Profit Calculator', link: '/tools/discount-profit', icon: '💸' },
+              { name: 'Product Comparison Matrix', link: '/tools/product-comparison', icon: '📊' },
+              { name: 'EMI/Loan Affordability Checker', link: '/tools/emi-affordability', icon: '🏦' },
+              { name: 'Meeting Agenda & Note Taker', link: '/tools/meeting-notes', icon: '📝' },
+              { name: 'Digital Business Card Creator', link: '/tools/business-card', icon: '💼' },
+              { name: 'QR Code Generator for Products', link: '/tools/qr-generator', icon: '🔗' },
+              { name: 'Customer Persona Builder', link: '/tools/persona-builder', icon: '👤' },
+              { name: 'Time Zone Converter', link: '/tools/timezone-converter', icon: '🌐' },
+              { name: 'Sales Script Assistant', link: '/tools/sales-script', icon: '🎤' },
+              { name: 'Sales Performance Tracker', link: '/tools/sales-tracker', icon: '📈' },
+              { name: 'Competitive Analysis Cheat Sheet', link: '/tools/competitive-analysis', icon: '🕵️' },
+              { name: 'Offer/Proposal Template Builder', link: '/tools/proposal-template', icon: '📄' },
+              { name: 'Feedback Form Generator', link: '/tools/feedback-form', icon: '🗣️' },
+              { name: 'Follow-Up Reminder & Scheduler', link: '/tools/followup-reminder', icon: '⏰' },
+              { name: 'Content Sharing Helper', link: '/tools/content-sharing', icon: '🔗' },
+              { name: 'Sales Goal Planner', link: '/tools/sales-goal-planner', icon: '🎯' },
+              { name: 'Client Testimonial Collector', link: '/tools/testimonial-collector', icon: '🌟' },
+              { name: 'Referral Program Tracker', link: '/tools/referral-tracker', icon: '🔄' },
+              { name: 'Digital Product/Service Showcase', link: '/tools/product-showcase', icon: '🛍️' },
+              { name: 'Meeting Cost Calculator', link: '/tools/meeting-cost', icon: '⏳' },
+              // Shopkeeper Tools
+              { name: 'Real-time Stock Checker', link: '/tools/stock-checker', icon: '📦' },
+              { name: 'Price Tag/Label Creator', link: '/tools/price-tag', icon: '🏷️' },
+              { name: 'Daily Sales Report Generator', link: '/tools/sales-report', icon: '🧾' },
+              { name: 'Promotional Offer Designer', link: '/tools/promo-designer', icon: '🎨' },
+              { name: 'Customer Loyalty Point Tracker', link: '/tools/loyalty-tracker', icon: '🎁' },
+              { name: 'Staff Duty Roster & Leave Planner', link: '/tools/staff-roster', icon: '👥' },
+              { name: 'Supplier Order Manager', link: '/tools/supplier-orders', icon: '🚚' },
+              { name: 'QR Code Generator for Store', link: '/tools/store-qr', icon: '🏪' },
+              { name: 'Online Review Request Generator', link: '/tools/review-request', icon: '⭐' },
+              { name: 'Basic Expense Tracker', link: '/tools/expense-tracker', icon: '💰' },
+            ].map((tool, idx) => (
+              <Link
+                key={tool.link}
+                to={tool.link}
+                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl border border-blue-100 p-6 flex flex-col items-center text-center transition-all hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                tabIndex={0}
+                aria-label={tool.name}
+              >
+                <span className="text-4xl mb-4 animate-bounce group-hover:scale-110 transition-transform">{tool.icon}</span>
+                <span className="font-semibold text-blue-900 text-lg mb-2 group-hover:text-blue-700 transition-colors">{tool.name}</span>
+                <span className="text-xs text-blue-600 group-hover:text-blue-800">{idx < 20 ? 'Sales Tool' : 'Shopkeeper Tool'}</span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Government Schemes Section */}
-        <section className="py-12 bg-gray-50">
+        {/* Excel Tools & Government Schemes Section */}
+        <section className="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Government Schemes</h2>
-                <p className="text-gray-600">Latest government initiatives and benefits</p>
-              </div>
-              <Link to="/government-schemes" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
-                View All Schemes <ArrowRight className="h-4 w-4" />
-              </Link>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-neutral-900 mb-4">Excel Tools & Government Schemes</h2>
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+                Professional Excel templates and comprehensive government scheme information
+              </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {governmentNews.map((news) => (
-                <NewsCard key={news.id} news={news} />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Excel Tools Card */}
+              <div className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all border border-neutral-100">
+                <div className="h-48 bg-gradient-to-br from-orange-500 to-orange-700 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Calculator className="h-20 w-20 text-white opacity-20" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-orange-900 to-transparent">
+                    <h3 className="text-xl font-semibold text-white">Excel Tools & Templates</h3>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-neutral-600 mb-4">
+                    Professional Excel templates for personal finance, budgeting, investment tracking, and financial analysis. Download ready-to-use templates.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="text-sm text-neutral-600">• Monthly Budget Templates</li>
+                    <li className="text-sm text-neutral-600">• Investment Tracking Sheets</li>
+                    <li className="text-sm text-neutral-600">• Tax Planning Tools</li>
+                    <li className="text-sm text-neutral-600">• Business Financial Models</li>
+                  </ul>
+                  <Link to="/exceltool" className="btn bg-orange-600 text-white hover:bg-orange-700 shadow-md hover:shadow-lg transition-all w-full text-center">
+                    Explore Excel Tools
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Government Schemes Card */}
+              <div className="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all border border-neutral-100">
+                <div className="h-48 bg-gradient-to-br from-green-500 to-green-700 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Shield className="h-20 w-20 text-white opacity-20" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-green-900 to-transparent">
+                    <h3 className="text-xl font-semibold text-white">Government Schemes</h3>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-neutral-600 mb-4">
+                    Complete information on 100+ government schemes - eligibility, benefits, application process, and latest updates in Hindi and English.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    <li className="text-sm text-neutral-600">• 100+ Government Schemes</li>
+                    <li className="text-sm text-neutral-600">• Detailed Application Guides</li>
+                    <li className="text-sm text-neutral-600">• Eligibility & Benefits</li>
+                    <li className="text-sm text-neutral-600">• Latest Updates & News</li>
+                  </ul>
+                  <Link to="/government-schemes" className="btn bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg transition-all w-full text-center" onClick={() => console.log('View All Schemes clicked')}>
+                    View All Schemes
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-
-        {/* Excel Tools Section */}
-        <section className="py-12 bg-white">
+        
+        {/* Government Schemes Section */}
+        <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Excel Tools & Templates</h2>
-                <p className="text-gray-600">Professional Excel tools for financial analysis</p>
-              </div>
-              <Link to="/exceltool" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
-                View All Tools <ArrowRight className="h-4 w-4" />
-              </Link>
-          </div>
-          
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {excelTools.map((tool) => (
-                <div key={tool.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                      <BarChart3 className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                      <span className="text-sm font-medium">{tool.rating}</span>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-green-900 mb-4">भारत सरकार की योजनाएं</h2>
+              <p className="text-lg text-green-700 max-w-3xl mx-auto">
+                सभी सरकारी योजनाओं की पूरी जानकारी - आवेदन से लेकर लाभ तक, हिंदी में।
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+              {governmentSchemes.slice(0, 6).map(scheme => (
+                <Link
+                  key={scheme.id}
+                  to={`/government-schemes/${scheme.slug}`}
+                  className="bg-white rounded-xl shadow-lg hover:shadow-2xl border border-green-100 group overflow-hidden transition-all"
+                >
+                  <div className="h-44 overflow-hidden relative">
+                    <picture>
+                      <source srcSet={`/images/optimized/${scheme.coverImage.replace('.jpeg', '.webp')}`} type="image/webp" />
+                      <img
+                        src={`/images/optimized/${scheme.coverImage}`}
+                        alt={scheme.titleHindi}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        width={400}
+                        height={300}
+                      />
+                    </picture>
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-green-600 text-white shadow">
+                      {scheme.categoryHindi}
                     </div>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{tool.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{tool.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
-                      {tool.category}
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-green-900 mb-2 group-hover:text-green-700 transition-colors line-clamp-2">
+                      {scheme.titleHindi}
+                    </h3>
+                    <p className="text-green-800 text-sm mb-4 line-clamp-3">{scheme.excerptHindi}</p>
+                    <div className="flex items-center gap-2 text-xs text-green-600 mb-2">
+                      <span>लाभार्थी: {scheme.beneficiaries || 'लाखों'}</span>
+                      <span>•</span>
+                      <span>{scheme.status === 'active' ? 'सक्रिय' : scheme.status === 'upcoming' ? 'आगामी' : 'पुरानी'}</span>
+                    </div>
+                    <div className="flex justify-between items-center mt-2">
+                      <span className="text-xs text-green-700">{scheme.benefits.length} लाभ</span>
+                      <span className="text-green-600 font-medium flex items-center">विवरण <ArrowRight className="h-4 w-4 ml-1" /></span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <Link to="/government-schemes" className="btn bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg transition-all">
+                सभी योजनाएं देखें
+              </Link>
+            </div>
+          </div>
+        </section>
+      
+      {/* All Categories Grid */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Explore All Categories</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Find the perfect calculator for your financial needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {calculatorCategories.map(category => (
+              <Link 
+                key={category.id}
+                to={`/#${category.id}`}
+                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${getCategoryColor(category.id)} opacity-90 group-hover:opacity-100 transition-opacity`}></div>
+                <div className="relative z-10 p-6 h-full flex flex-col">
+                  <div className="mb-auto">
+                    <div className="h-12 w-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center mb-4">
+                      {getCategoryIcon(category.id)}
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2">{category.name}</h3>
+                    <p className="text-white text-opacity-90 text-sm mb-4">{category.description}</p>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white text-sm">{category.calculators.length} calculators</span>
+                    <span className="text-white flex items-center text-sm font-medium">
+                      Explore
+                      <ArrowRight className="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
                     </span>
-                    <span className="text-sm text-gray-500">{tool.downloads} downloads</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* All Calculators Section */}
+      <div id="categories" ref={allCalculatorsRef} className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">All Calculators</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Browse our comprehensive collection of financial calculators organized by category
+            </p>
+          </div>
+          
+          <div className="space-y-12">
+            {calculatorCategories.map(category => (
+              <div key={category.id} id={category.id} className="bg-white rounded-xl p-8 shadow-lg border border-neutral-100">
+                <div className="flex items-center mb-6">
+                  <div className={`h-10 w-10 rounded-lg bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mr-3`}>
+                    {getCategoryIcon(category.id)}
+                  </div>
+                  <h3 className="text-2xl font-bold text-neutral-900">{category.name}</h3>
+                </div>
+                <p className="text-neutral-600 mb-6 max-w-3xl">{category.description}</p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {category.calculators.map(calculator => (
+                    <Link 
+                      key={calculator.id}
+                      to={`/calculators/${calculator.id}`}
+                      className="p-4 border border-neutral-200 rounded-lg hover:border-primary-300 hover:bg-primary-50 transition-colors flex items-center"
+                    >
+                      <Calculator className="h-5 w-5 text-primary-600 mr-3 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-medium text-neutral-900 hover:text-primary-600 transition-colors">{calculator.name}</h4>
+                        <p className="text-xs text-neutral-500 mt-1 line-clamp-1">{calculator.description}</p>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-        {/* Financial Calculators Section */}
-        <section id="categories" ref={allCalculatorsRef} className="py-12 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Financial Calculators</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Comprehensive financial calculators to help you make informed decisions about loans, investments, taxes, and more.
+      </div>
+      
+      {/* Features Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Why Choose Our Calculators?</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Designed specifically for the Indian financial context, our calculators offer precision, ease of use, and comprehensive insights
             </p>
           </div>
           
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <button
-                onClick={() => setActiveCategory('all')}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeCategory === 'all' 
-                    ? 'bg-primary-600 text-white' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                All Categories
-              </button>
-              {calculatorCategories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    activeCategory === category.id 
-                      ? 'bg-primary-600 text-white' 
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
-                  }`}
-                >
-                  {category.name}
-                </button>
-              ))}
-            </div>
-            
-            {/* Popular Calculators */}
-            <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Popular Calculators</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {popularCalculators.map((calculator) => (
-                  <CalculatorCard key={calculator.id} calculator={calculator} />
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-lg border border-neutral-100 hover:shadow-xl transition-all">
+              <div className="h-16 w-16 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                <Calculator className="h-8 w-8 text-primary-600" />
               </div>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">Indian Context</h3>
+              <p className="text-neutral-600">
+                Tailored for Indian tax laws, investment options, and financial products
+              </p>
             </div>
             
-            {/* All Categories */}
-          <div className="space-y-12">
-            {calculatorCategories.map((category) => (
-              <CategorySection key={category.id} category={category} />
-            ))}
+            <div className="bg-white p-6 rounded-xl shadow-lg border border-neutral-100 hover:shadow-xl transition-all">
+              <div className="h-16 w-16 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                <TrendingUp className="h-8 w-8 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">Accurate Results</h3>
+              <p className="text-neutral-600">
+                Precise calculations based on the latest financial formulas and regulations
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-lg border border-neutral-100 hover:shadow-xl transition-all">
+              <div className="h-16 w-16 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                <PieChart className="h-8 w-8 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">Visual Insights</h3>
+              <p className="text-neutral-600">
+                Interactive charts and visual breakdowns to understand your finances better
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-lg border border-neutral-100 hover:shadow-xl transition-all">
+              <div className="h-16 w-16 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+                <Shield className="h-8 w-8 text-primary-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-3">Privacy Focused</h3>
+              <p className="text-neutral-600">
+                All calculations happen in your browser with no data stored on our servers
+              </p>
+            </div>
           </div>
         </div>
       </section>
-
-        {/* Newsletter Section */}
-        <section className="py-12 bg-primary-600">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">Stay Updated</h2>
-            <p className="text-white/90 mb-8">
-              Get the latest financial news, market updates, and exclusive insights delivered to your inbox.
+      
+      {/* Blog Section */}
+      <section className="py-16 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Financial Insights & Guides</h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Stay informed with our latest articles on personal finance, investments, taxes, and more
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-white focus:ring-opacity-50"
-              />
-              <button className="bg-yellow-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-yellow-600 transition-colors">
-                Subscribe
-              </button>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
+              <div className="h-48 overflow-hidden">
+                <picture>
+                  <source srcSet="https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
+                  <img 
+                    src="https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    alt="Sukanya Samriddhi Yojana" 
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                    loading="lazy"
+                    width={400}
+                    height={300}
+                  />
+                </picture>
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-primary-600 font-medium mb-2">Government Schemes</div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  <Link to="/blog/sukanya-samriddhi-yojana-guide">
+                    Sukanya Samriddhi Yojana: A Comprehensive Guide
+                  </Link>
+                </h3>
+                <p className="text-neutral-600 text-sm mb-4">
+                  Everything you need to know about SSY - eligibility, benefits, tax advantages, and how to maximize returns.
+                </p>
+                <Link 
+                  to="/blog/sukanya-samriddhi-yojana-guide" 
+                  className="text-primary-600 hover:text-primary-700 font-medium flex items-center"
+                >
+                  Read More
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
+              <div className="h-48 overflow-hidden">
+                <picture>
+                  <source srcSet="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
+                  <img 
+                    src="https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    alt="National Pension System" 
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                    loading="lazy"
+                    width={400}
+                    height={300}
+                  />
+                </picture>
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-primary-600 font-medium mb-2">Retirement Planning</div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  <Link to="/blog/national-pension-system-guide">
+                    National Pension System: A Complete Guide
+                  </Link>
+                </h3>
+                <p className="text-neutral-600 text-sm mb-4">
+                  Everything you need to know about NPS - structure, benefits, tax advantages, and investment strategies.
+                </p>
+                <Link 
+                  to="/blog/national-pension-system-guide" 
+                  className="text-primary-600 hover:text-primary-700 font-medium flex items-center"
+                >
+                  Read More
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-neutral-100 group">
+              <div className="h-48 overflow-hidden">
+                <picture>
+                  <source srcSet="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
+                  <img 
+                    src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    alt="Tax Saving Options" 
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                    loading="lazy"
+                    width={400}
+                    height={300}
+                  />
+                </picture>
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-primary-600 font-medium mb-2">Tax Planning</div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  <Link to="/blog/tax-saving-investment-options">
+                    Tax-Saving Investment Options: Beyond Section 80C
+                  </Link>
+                </h3>
+                <p className="text-neutral-600 text-sm mb-4">
+                  Explore tax-saving options beyond the traditional Section 80C investments - maximize deductions and optimize your tax planning.
+                </p>
+                <Link 
+                  to="/blog/tax-saving-investment-options" 
+                  className="text-primary-600 hover:text-primary-700 font-medium flex items-center"
+                >
+                  Read More
+                  <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
-        </section>
+          
+          <div className="text-center mt-10">
+            <Link to="/blog" className="btn bg-primary-600 text-black hover:bg-primary-700 shadow-md hover:shadow-lg transition-all">
+              View All Articles
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl shadow-xl overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="p-8 md:p-12">
+                <h2 className="text-3xl font-bold mb-4 text-black">Stay Updated with Financial Insights</h2>
+                <p className="text-lg mb-6 text-black">
+                  Subscribe to our newsletter for the latest updates on financial tools, tax changes, investment strategies, and more.
+                </p>
+                <form className="space-y-4">
+                  <div>
+                    <label htmlFor="email" className="sr-only">Email address</label>
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email"
+                      className="input w-full"
+                      required
+                    />
+                  </div>
+                  <button type="submit" className="btn bg-white text-primary-700 hover:bg-primary-50 shadow-md hover:shadow-lg transition-all w-full sm:w-auto">
+                    Subscribe
+                  </button>
+                </form>
+                <p className="text-xs text-black mt-4">
+                  By subscribing, you agree to our <Link to="/privacy-policy" className="underline text-white">Privacy Policy</Link> and consent to receive financial updates and marketing communications from us.
+                </p>
+              </div>
+              <div className="hidden md:block relative">
+                <div className="absolute inset-0 bg-black opacity-20"></div>
+                <picture>
+                  <source srcSet="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.webp" type="image/webp" />
+                  <img 
+                    src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                    alt="Financial planning" 
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                    width={600}
+                    height={400}
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Categories Section */}
+      <section ref={categoriesRef} id="categories-section" className="py-16 bg-neutral-50">
+        <Suspense fallback={<div className="text-center py-8">Loading categories...</div>}>
+          <CategorySection />
+        </Suspense>
+      </section>
     </div>
     </>
   );
