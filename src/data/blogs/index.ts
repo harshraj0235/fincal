@@ -2,14 +2,10 @@ import { BlogPost } from './types';
 
 // Auto-generated blog imports
 import { blog651 } from './651';
-import { blogtemplate } from './template';
-import { testBlog } from './test-automation';
 
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
   blog651,
-  blogtemplate,
-  testBlog,
 ];
 
 // Auto-update blog dates
@@ -24,5 +20,3 @@ export function autoUpdateBlogDates() {
 
 // Export individual blogs
 export { blog651 } from './651';
-export { blogtemplate } from './template';
-export { testBlog } from './test-automation';
