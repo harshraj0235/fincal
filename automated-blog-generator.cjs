@@ -441,6 +441,44 @@ function updateIndexFile(newBlogIds) {
   console.log('Updated index.ts file');
 }
 
+// Function to update sitemap.xml
+function updateSitemap(newBlogIds) {
+  const sitemapPath = path.join(__dirname, 'public', 'sitemap.xml');
+  let sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+  
+  const currentDate = new Date().toISOString().split('T')[0];
+  
+  // Find the closing </urlset> tag
+  const closingTagIndex = sitemapContent.lastIndexOf('</urlset>');
+  
+  if (closingTagIndex !== -1) {
+    // Generate sitemap entries for new blog posts
+    let newEntries = '';
+    newBlogIds.forEach(blogId => {
+      // Get the topic for this blog ID
+      const topic = BLOG_TOPICS[blogId] || `Finance Investment Guide ${blogId}`;
+      
+      // Create a URL-friendly slug from the topic
+      const blogSlug = topic
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with single
+        .trim();
+      
+      newEntries += `\n  <url>\n    <loc>https://moneycal.in/blog/${blogSlug}</loc>\n    <lastmod>${currentDate}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`;
+    });
+    
+    // Insert new entries before the closing tag
+    sitemapContent = sitemapContent.slice(0, closingTagIndex) + newEntries + '\n' + sitemapContent.slice(closingTagIndex);
+    
+    fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
+    console.log(`Updated sitemap.xml with ${newBlogIds.length} new blog entries`);
+  } else {
+    console.error('Could not find closing </urlset> tag in sitemap.xml');
+  }
+}
+
 // Function to commit and push changes
 function commitAndPushChanges() {
   const commands = [
@@ -484,6 +522,9 @@ async function generateBlogs() {
     
     // Update index.ts
     updateIndexFile(newBlogIds);
+    
+    // Update sitemap.xml
+    updateSitemap(newBlogIds);
     
     // Commit and push changes
     commitAndPushChanges();
