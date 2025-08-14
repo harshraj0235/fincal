@@ -39,7 +39,6 @@ jobs:
       run: |
         npm ci
         npm install -g typescript
-        npm install node-fetch xml2js
 
     - name: 🔍 Check System Status
       run: |

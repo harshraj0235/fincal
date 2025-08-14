@@ -1,9 +1,7 @@
-const fetch = require('node-fetch');
-const { parseString } = require('xml2js');
+const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { promisify } = require('util');
-const parseXML = promisify(parseString);
 
 console.log('🚀 Starting Cloud-Based Auto Blog Generator...');
 console.log('⏰ Time:', new Date().toISOString());
@@ -44,33 +42,89 @@ const FINANCE_TOPICS = [
   'Market Volatility'
 ];
 
-async function fetchRSSFeed(url) {
-  try {
-    console.log(`📡 Fetching RSS feed: ${url}`);
-    const response = await fetch(url, {
+// Simple HTTP request function
+function makeRequest(url) {
+  return new Promise((resolve, reject) => {
+    const protocol = url.startsWith('https:') ? https : http;
+    
+    const req = protocol.get(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; AutoBlogGenerator/1.0)'
       },
       timeout: 10000
+    }, (res) => {
+      let data = '';
+      
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+      
+      res.on('end', () => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          resolve(data);
+        } else {
+          reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
+        }
+      });
     });
     
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
+    req.on('error', (error) => {
+      reject(error);
+    });
     
-    const xmlText = await response.text();
-    const result = await parseXML(xmlText);
+    req.on('timeout', () => {
+      req.destroy();
+      reject(new Error('Request timeout'));
+    });
+  });
+}
+
+// Simple XML parser for RSS feeds
+function parseRSSFeed(xmlText) {
+  const items = [];
+  
+  // Extract items using regex (simple but effective for RSS)
+  const itemRegex = /<item[^>]*>([\s\S]*?)<\/item>/gi;
+  let match;
+  
+  while ((match = itemRegex.exec(xmlText)) !== null) {
+    const itemContent = match[1];
     
-    const items = result.rss?.channel?.[0]?.item || [];
+    // Extract title
+    const titleMatch = itemContent.match(/<title[^>]*>([^<]+)<\/title>/i);
+    const title = titleMatch ? titleMatch[1].trim() : 'Financial News Update';
+    
+    // Extract description
+    const descMatch = itemContent.match(/<description[^>]*>([^<]+)<\/description>/i);
+    const description = descMatch ? descMatch[1].trim() : 'Latest financial market update';
+    
+    // Extract link
+    const linkMatch = itemContent.match(/<link[^>]*>([^<]+)<\/link>/i);
+    const link = linkMatch ? linkMatch[1].trim() : '';
+    
+    // Extract pubDate
+    const dateMatch = itemContent.match(/<pubDate[^>]*>([^<]+)<\/pubDate>/i);
+    const pubDate = dateMatch ? dateMatch[1].trim() : new Date().toISOString();
+    
+    items.push({
+      title,
+      description,
+      link,
+      pubDate,
+      source: 'RSS Feed'
+    });
+  }
+  
+  return items;
+}
+
+async function fetchRSSFeed(url) {
+  try {
+    console.log(`📡 Fetching RSS feed: ${url}`);
+    const xmlText = await makeRequest(url);
+    const items = parseRSSFeed(xmlText);
     console.log(`✅ Fetched ${items.length} items from ${url}`);
-    
-    return items.map(item => ({
-      title: item.title?.[0] || 'Financial News Update',
-      description: item.description?.[0] || 'Latest financial market update',
-      link: item.link?.[0] || '',
-      pubDate: item.pubDate?.[0] || new Date().toISOString(),
-      source: url
-    }));
+    return items;
   } catch (error) {
     console.error(`❌ Error fetching ${url}:`, error.message);
     return [];
