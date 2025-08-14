@@ -188,23 +188,23 @@ export const Home: React.FC = () => {
       "numberOfItems": calculatorCategories.reduce((total, cat) => total + cat.calculators.length, 0) + latestNews.length + cryptoNews.length,
       "itemListElement": [
         ...calculatorCategories.flatMap((category, catIndex) =>
-          category.calculators.map((calculator, calcIndex) => ({
-            "@type": "ListItem",
-            "position": catIndex * 10 + calcIndex + 1,
-            "item": {
-              "@type": "WebApplication",
-              "name": calculator.name,
-              "description": calculator.description,
-              "url": `https://moneycal.in/calculators/${calculator.id}`,
-              "applicationCategory": "FinanceApplication",
-              "operatingSystem": "Web Browser",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "INR"
-              }
+        category.calculators.map((calculator, calcIndex) => ({
+          "@type": "ListItem",
+          "position": catIndex * 10 + calcIndex + 1,
+          "item": {
+            "@type": "WebApplication",
+            "name": calculator.name,
+            "description": calculator.description,
+            "url": `https://moneycal.in/calculators/${calculator.id}`,
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web Browser",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "INR"
             }
-          }))
+          }
+        }))
         ),
         ...latestNews.map((news, index) => ({
           "@type": "ListItem",
@@ -347,7 +347,7 @@ export const Home: React.FC = () => {
     <>
       <WhatsAppBanner />
       <AstroFinanceButton />
-      <SEOHelmet
+      <SEOHelmet 
         title="Moneycal.in - India's Premier Financial News & Tools Portal"
         description="Stay updated with latest financial news, crypto updates, government schemes, and use free financial calculators. Comprehensive financial tools and news for Indian users."
         keywords="financial news india, crypto news, government schemes, financial calculators, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, personal finance india"
@@ -357,10 +357,10 @@ export const Home: React.FC = () => {
       />
       
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section with Breaking News */}
+      {/* Hero Section with Breaking News */}
         <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 py-8 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Breaking News Ticker */}
+          {/* Breaking News Ticker */}
             <div className="bg-red-600 text-white py-2 px-4 rounded-lg mb-6 flex items-center gap-3">
               <span className="bg-white text-red-600 px-2 py-1 rounded text-xs font-bold">BREAKING</span>
               <div className="flex-1 overflow-hidden">
@@ -368,16 +368,16 @@ export const Home: React.FC = () => {
                   <span className="mr-8">RBI Announces New Digital Lending Guidelines for 2025</span>
                   <span className="mr-8">Bitcoin Surges Past $50,000 as Institutional Adoption Grows</span>
                   <span className="mr-8">SEBI Approves New Mutual Fund Categories for Retail Investors</span>
-                </div>
               </div>
             </div>
-            
+          </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="text-center lg:text-left">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-white">
                   Your Gateway to
                   <span className="block text-yellow-300">Financial Intelligence</span>
-                </h1>
+                  </h1>
                 <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto lg:mx-0">
                   Stay ahead with the latest financial news, crypto updates, government schemes, and powerful financial calculators.
                 </p>
@@ -418,15 +418,15 @@ export const Home: React.FC = () => {
                         <div className="flex items-center gap-3">
                           <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                           <span className="text-sm text-gray-600">Bitcoin: $51,200 (+5.1%)</span>
-                        </div>
-                      </div>
+            </div>
+                    </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Search Section */}
         <section className="bg-white py-8 border-b">
@@ -444,7 +444,7 @@ export const Home: React.FC = () => {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured News</h2>
                 <p className="text-gray-600">Stay updated with the latest financial developments</p>
-              </div>
+                  </div>
               <Link to="/blog" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
                 View All News <ArrowRight className="h-4 w-4" />
               </Link>
@@ -453,15 +453,15 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {latestNews.map((news, index) => (
                 <NewsCard key={news.id} news={news} featured={index === 0} />
-              ))}
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Category Navigation */}
         <section className="py-8 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-gray-900">Quick Navigation</h2>
               <div className="flex items-center gap-2">
                 <button
@@ -475,10 +475,10 @@ export const Home: React.FC = () => {
                   className={`p-2 rounded-lg ${viewMode === 'list' ? 'bg-primary-100 text-primary-600' : 'bg-white text-gray-600'}`}
                 >
                   <List className="h-5 w-5" />
-                </button>
+                    </button>
               </div>
-            </div>
-            
+          </div>
+          
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               <Link to="/blog" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
                 <BookOpen className="h-8 w-8 text-primary-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
@@ -503,10 +503,10 @@ export const Home: React.FC = () => {
               <Link to="/bank-tools" className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center group">
                 <CreditCard className="h-8 w-8 text-red-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-medium text-gray-900">Bank Tools</span>
-              </Link>
-            </div>
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Crypto News Section */}
         <section className="py-12 bg-white">
@@ -515,7 +515,7 @@ export const Home: React.FC = () => {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Crypto & Digital Currency</h2>
                 <p className="text-gray-600">Latest updates from the cryptocurrency world</p>
-              </div>
+          </div>
               <Link to="/crypto" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
                 View All Crypto News <ArrowRight className="h-4 w-4" />
               </Link>
@@ -524,12 +524,12 @@ export const Home: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {cryptoNews.map((news) => (
                 <NewsCard key={news.id} news={news} />
-              ))}
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Government Schemes Section */}
+      {/* Government Schemes Section */}
         <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
@@ -561,8 +561,8 @@ export const Home: React.FC = () => {
               <Link to="/exceltool" className="text-primary-600 hover:text-primary-700 font-medium flex items-center gap-2">
                 View All Tools <ArrowRight className="h-4 w-4" />
               </Link>
-            </div>
-            
+          </div>
+          
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {excelTools.map((tool) => (
                 <div key={tool.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100">
@@ -582,23 +582,23 @@ export const Home: React.FC = () => {
                       {tool.category}
                     </span>
                     <span className="text-sm text-gray-500">{tool.downloads} downloads</span>
-                  </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Financial Calculators Section */}
         <section id="categories" ref={allCalculatorsRef} className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+          <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Financial Calculators</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Comprehensive financial calculators to help you make informed decisions about loans, investments, taxes, and more.
-              </p>
-            </div>
-            
+            </p>
+          </div>
+          
             {/* Category Filter */}
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <button
@@ -637,13 +637,13 @@ export const Home: React.FC = () => {
             </div>
             
             {/* All Categories */}
-            <div className="space-y-12">
-              {calculatorCategories.map((category) => (
-                <CategorySection key={category.id} category={category} />
-              ))}
-            </div>
+          <div className="space-y-12">
+            {calculatorCategories.map((category) => (
+              <CategorySection key={category.id} category={category} />
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Newsletter Section */}
         <section className="py-12 bg-primary-600">
@@ -664,7 +664,7 @@ export const Home: React.FC = () => {
             </div>
           </div>
         </section>
-      </div>
+    </div>
     </>
   );
 };

@@ -270,12 +270,12 @@ export const HomeNew: React.FC = () => {
 
   // Feature card component
   const FeatureCard = ({ icon: Icon, title, description, color }: { icon: any; title: string; description: string; color: string }) => (
-    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-      <div className={`w-12 h-12 ${color} bg-opacity-10 rounded-xl flex items-center justify-center mb-4`}>
-        <Icon className={`h-6 w-6 ${color}`} />
+    <div className="bg-white rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      <div className={`w-10 h-10 lg:w-12 lg:h-12 ${color} bg-opacity-10 rounded-lg lg:rounded-xl flex items-center justify-center mb-3 lg:mb-4`}>
+        <Icon className={`h-5 w-5 lg:h-6 lg:w-6 ${color}`} />
       </div>
-      <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <h3 className="font-bold text-gray-900 mb-2 text-sm lg:text-base">{title}</h3>
+      <p className="text-gray-600 text-xs lg:text-sm">{description}</p>
     </div>
   );
 
@@ -471,11 +471,11 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Search Section */}
-        <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-12">
+        <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-8 lg:py-12">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Find What You Need</h2>
-              <p className="text-gray-600">Search across calculators, news, tools, and more</p>
+            <div className="text-center mb-6 lg:mb-8">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 lg:mb-4">Find What You Need</h2>
+              <p className="text-gray-600 text-sm lg:text-base">Search across calculators, news, tools, and more</p>
             </div>
             <SearchBar />
           </div>
@@ -494,7 +494,7 @@ export const HomeNew: React.FC = () => {
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
               {latestNews.map((news, index) => (
                 <NewsCard key={news.id} news={news} featured={index === 0} />
               ))}
@@ -503,14 +503,14 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 bg-gradient-to-br from-primary-50 to-blue-50">
+        <section className="py-12 lg:py-16 bg-gradient-to-br from-primary-50 to-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Moneycal.in?</h2>
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">Comprehensive financial tools and insights designed specifically for Indian users</p>
+            <div className="text-center mb-8 lg:mb-12">
+              <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2 lg:mb-4">Why Choose Moneycal.in?</h2>
+              <p className="text-gray-600 text-sm lg:text-lg max-w-3xl mx-auto">Comprehensive financial tools and insights designed specifically for Indian users</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
               <FeatureCard 
                 icon={Shield} 
                 title="Trusted & Secure" 
@@ -577,19 +577,19 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Crypto News Section */}
-        <section className="py-16 bg-gradient-to-br from-green-50 to-emerald-50">
+        <section className="py-12 lg:py-16 bg-gradient-to-br from-green-50 to-emerald-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 lg:mb-12 gap-4">
               <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">🚀 Crypto & Digital Currency</h2>
-                <p className="text-gray-600 text-lg">Latest updates from the cryptocurrency world</p>
+                <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2 lg:mb-4">🚀 Crypto & Digital Currency</h2>
+                <p className="text-gray-600 text-sm lg:text-lg">Latest updates from the cryptocurrency world</p>
               </div>
-              <Link to="/crypto" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-lg group">
-                View All Crypto News <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Link to="/crypto" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-sm lg:text-lg group self-start sm:self-center">
+                View All Crypto News <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8">
               {cryptoNews.map((news) => (
                 <NewsCard key={news.id} news={news} />
               ))}
@@ -598,19 +598,19 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Government Schemes Section */}
-        <section className="py-16 bg-white">
+        <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 lg:mb-12 gap-4">
               <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">🏛️ Government Schemes</h2>
-                <p className="text-gray-600 text-lg">Latest government initiatives and benefits</p>
+                <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2 lg:mb-4">🏛️ Government Schemes</h2>
+                <p className="text-gray-600 text-sm lg:text-lg">Latest government initiatives and benefits</p>
               </div>
-              <Link to="/government-schemes" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-lg group">
-                View All Schemes <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Link to="/government-schemes" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-sm lg:text-lg group self-start sm:self-center">
+                View All Schemes <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8">
               {governmentNews.map((news) => (
                 <NewsCard key={news.id} news={news} />
               ))}
@@ -619,58 +619,58 @@ export const HomeNew: React.FC = () => {
         </section>
 
         {/* Excel Tools Section */}
-        <section className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
+        <section className="py-12 lg:py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-12">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 lg:mb-12 gap-4">
               <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">📊 Excel Tools & Templates</h2>
-                <p className="text-gray-600 text-lg">Professional Excel tools for financial analysis</p>
+                <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2 lg:mb-4">📊 Excel Tools & Templates</h2>
+                <p className="text-gray-600 text-sm lg:text-lg">Professional Excel tools for financial analysis</p>
               </div>
-              <Link to="/exceltool" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-lg group">
-                View All Tools <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Link to="/exceltool" className="text-primary-600 hover:text-primary-700 font-semibold flex items-center gap-2 text-sm lg:text-lg group self-start sm:self-center">
+                View All Tools <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {excelTools.map((tool) => (
-                <div key={tool.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 transform hover:-translate-y-2">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                      <BarChart3 className="h-7 w-7 text-white" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+                              {excelTools.map((tool) => (
+                  <div key={tool.id} className="bg-white rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 lg:p-6 border border-gray-100 transform hover:-translate-y-2">
+                    <div className="flex items-center justify-between mb-3 lg:mb-4">
+                      <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg lg:rounded-xl flex items-center justify-center">
+                        <BarChart3 className="h-6 w-6 lg:h-7 lg:w-7 text-white" />
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Star className="h-4 w-4 lg:h-5 lg:w-5 text-yellow-400 fill-current" />
+                        <span className="text-xs lg:text-sm font-semibold">{tool.rating}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Star className="h-5 w-5 text-yellow-400 fill-current" />
-                      <span className="text-sm font-semibold">{tool.rating}</span>
+                    <h3 className="font-bold text-gray-900 mb-2 lg:mb-3 text-base lg:text-lg">{tool.title}</h3>
+                    <p className="text-gray-600 text-xs lg:text-sm mb-3 lg:mb-4 leading-relaxed">{tool.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="inline-block bg-purple-100 text-purple-700 px-2 lg:px-3 py-1 rounded-full text-xs font-medium">
+                        {tool.category}
+                      </span>
+                      <span className="text-xs lg:text-sm text-gray-500">{tool.downloads} downloads</span>
                     </div>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-3 text-lg">{tool.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{tool.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">
-                      {tool.category}
-                    </span>
-                    <span className="text-sm text-gray-500">{tool.downloads} downloads</span>
-                  </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </section>
 
         {/* Financial Calculators Section */}
-        <section id="categories" className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section id="categories" className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">🧮 Financial Calculators</h2>
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            <div className="text-center mb-12 lg:mb-16">
+              <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2 lg:mb-4">🧮 Financial Calculators</h2>
+              <p className="text-gray-600 text-sm lg:text-lg max-w-3xl mx-auto">
                 Comprehensive financial calculators to help you make informed decisions about loans, investments, taxes, and more.
               </p>
             </div>
             
             {/* Popular Calculators */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">🔥 Popular Calculators</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="mb-8 lg:mb-12">
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-6 lg:mb-8 text-center">🔥 Popular Calculators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
                 {popularCalculators.map((calculator) => (
                   <CalculatorCard key={calculator.id} calculator={calculator} />
                 ))}
