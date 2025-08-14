@@ -234,7 +234,7 @@ export const ContactUs: React.FC = () => {
         </p>
       </div>
     </div>
-    
+  </div>
   );
 };
 
