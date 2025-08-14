@@ -28,6 +28,7 @@ This system runs **100% in the cloud** using GitHub Actions. Your laptop can be 
 1. Go to your GitHub repository: `https://github.com/harshraj0235/fincal`
 2. Click on the **"Actions"** tab
 3. If prompted, click **"Enable Actions"**
+4. **Important**: The workflow includes proper permissions for repository writes
 
 ### **Step 2: Configure Repository Secrets (Optional)**
 For future email notifications, you can add these secrets in your repository:
@@ -206,7 +207,7 @@ If RSS feeds are unavailable, the system uses 20 predefined finance topics:
 1. **Actions not running**: Check if Actions are enabled
 2. **Build failures**: Verify TypeScript compilation
 3. **RSS feed errors**: System uses fallback topics
-4. **Git push failures**: Check repository permissions
+4. **Git push failures**: ✅ **RESOLVED** - Workflow now has proper write permissions
 
 ### **Monitoring:**
 - **GitHub Actions Logs**: Detailed execution logs
