@@ -172,10 +172,10 @@ export const Home: React.FC = () => {
       default: return <Calculator className="h-6 w-6 text-white" />;
     }
   };
-
+  
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHelmet 
+      <SEOHelmet
         title="MoneyCal - India's Premier Financial News & Calculator Portal"
         description="Latest financial news, market updates, and comprehensive financial calculators for Indian users. Stay informed with breaking news and expert analysis."
         keywords="financial news, market updates, financial calculators, EMI calculator, SIP calculator, income tax calculator, Indian finance"
@@ -201,10 +201,10 @@ export const Home: React.FC = () => {
                       {featuredStories[0].category}
                     </span>
                     <span className="text-sm opacity-80">{featuredStories[0].date}</span>
-                  </div>
+          </div>
                   <h1 className="text-2xl md:text-3xl font-bold mb-2 leading-tight">
                     {featuredStories[0].title}
-                  </h1>
+              </h1>
                   <p className="text-gray-200 mb-4 line-clamp-2">
                     {featuredStories[0].excerpt}
                   </p>
@@ -218,14 +218,14 @@ export const Home: React.FC = () => {
                         <Eye className="h-4 w-4" />
                         <span>{featuredStories[0].views}</span>
                       </span>
-                    </div>
+              </div>
                     <button className="bg-white text-black px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                       Read More
                     </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
             {/* Sidebar Featured Stories */}
             <div className="space-y-6">
@@ -252,15 +252,15 @@ export const Home: React.FC = () => {
                     <div className="flex items-center justify-between text-xs text-gray-500">
                       <span>{story.readTime}</span>
                       <span>{story.views} views</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
+              ))}
+          </div>
+          </div>
+        </div>
       </section>
-
+      
       {/* Latest News Section */}
       <section className="bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -295,12 +295,12 @@ export const Home: React.FC = () => {
                     </button>
                   </div>
                 </div>
-              </div>
+                </div>
             ))}
           </div>
         </div>
       </section>
-
+      
       {/* Popular Calculators Section */}
       <section className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -313,7 +313,7 @@ export const Home: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {popularCalculators.map((calculator) => (
-              <Link
+              <Link 
                 key={calculator.id}
                 to={`/calculators/${calculator.id}`}
                 className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
@@ -347,7 +347,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
+      
       {/* Government Schemes Section */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -364,12 +364,12 @@ export const Home: React.FC = () => {
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="bg-green-100 p-2 rounded-lg">
                     <Shield className="h-5 w-5 text-green-600" />
-                  </div>
+                </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">{scheme.name}</h3>
                     <p className="text-sm text-gray-500">{scheme.category}</p>
-                  </div>
                 </div>
+              </div>
                 <p className="text-sm text-gray-600 mb-4 line-clamp-3">{scheme.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
@@ -380,24 +380,24 @@ export const Home: React.FC = () => {
                     className="text-primary-600 hover:text-primary-700 text-sm font-semibold"
                   >
                     Learn More →
-                  </Link>
-                </div>
+                </Link>
               </div>
+            </div>
             ))}
-          </div>
-          
+            </div>
+            
           <div className="text-center mt-8">
-            <Link
+              <Link
               to="/government-schemes"
               className="inline-flex items-center px-6 py-3 border border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-600 hover:text-white transition-colors"
             >
-              View All Schemes
+                    View All Schemes
               <ArrowRight className="h-5 w-5 ml-2" />
-            </Link>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      
       {/* All Calculators Section */}
       <section ref={allCalculatorsRef} className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -415,7 +415,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
+      
       {/* WhatsApp Banner */}
       <WhatsAppBanner />
       
