@@ -224,18 +224,16 @@ export const ContactUs: React.FC = () => {
           </div>
         </div>
       </div>
-          </div>
-        </div>
 
-        {/* Disclaimer Section */}
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mt-8">
-          <h3 className="text-lg font-semibold text-yellow-800 mb-2">Important Information</h3>
-          <p className="text-yellow-700">
-            For urgent financial advice or complex financial planning, we recommend consulting with qualified financial advisors, 
-            tax professionals, or legal experts. Our calculators and tools are designed for educational purposes and general guidance only.
-          </p>
-        </div>
+      {/* Disclaimer Section */}
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mt-8">
+        <h3 className="text-lg font-semibold text-yellow-800 mb-2">Important Information</h3>
+        <p className="text-yellow-700">
+          For urgent financial advice or complex financial planning, we recommend consulting with qualified financial advisors, 
+          tax professionals, or legal experts. Our calculators and tools are designed for educational purposes and general guidance only.
+        </p>
       </div>
+    </div>
     </>
   );
 };
