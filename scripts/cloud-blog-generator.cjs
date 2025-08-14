@@ -42,6 +42,56 @@ const FINANCE_TOPICS = [
   'Market Volatility'
 ];
 
+// Different content templates for variety
+const CONTENT_TEMPLATES = [
+  {
+    intro: "The financial landscape is experiencing unprecedented changes, and ${topic} has emerged as a critical area of focus for investors and financial professionals. This comprehensive analysis delves into the latest developments, market dynamics, and strategic implications that every investor should understand.",
+    overview: "Recent developments in ${topic} have created significant opportunities and challenges across various market segments. Industry experts and market analysts are closely monitoring these trends, as they could fundamentally reshape investment strategies and financial planning approaches.",
+    insights: "Market research and expert analysis reveal several compelling insights about ${topic}. These findings provide crucial context for understanding market movements and identifying potential investment opportunities in the current economic environment.",
+    analysis: "Financial experts and market analysts have provided detailed perspectives on ${topic}. Their comprehensive analysis covers market dynamics, investment opportunities, risk factors, and strategic considerations for different types of investors.",
+    recommendations: "Based on thorough analysis of ${topic}, several strategic recommendations emerge for investors and financial planners. These insights are designed to help navigate current market conditions while maximizing opportunities and managing potential risks effectively.",
+    conclusion: "The developments in ${topic} represent a transformative period in financial markets. As we move forward, staying informed about these changes and their implications will be crucial for making sound investment decisions and achieving long-term financial goals."
+  },
+  {
+    intro: "In today's rapidly evolving financial markets, ${topic} has become increasingly important for both individual and institutional investors. This detailed examination explores the current state, future prospects, and strategic implications of this critical financial area.",
+    overview: "The current landscape of ${topic} presents unique opportunities and challenges that require careful analysis and strategic planning. Market participants are actively adapting to these changes, which could have lasting implications for investment strategies and portfolio management.",
+    insights: "Comprehensive market analysis of ${topic} reveals several key trends and patterns that investors should consider. These insights provide valuable guidance for understanding market dynamics and identifying strategic investment opportunities.",
+    analysis: "Leading financial experts and market analysts have conducted extensive research on ${topic}. Their findings offer critical insights into market trends, investment opportunities, risk management strategies, and future market developments.",
+    recommendations: "Drawing from expert analysis of ${topic}, several strategic recommendations have emerged for investors and financial professionals. These guidelines are designed to help optimize investment strategies while effectively managing market risks and uncertainties.",
+    conclusion: "The ongoing developments in ${topic} signal important changes in the financial landscape. Understanding these trends and their implications will be essential for investors seeking to navigate current market conditions and achieve their financial objectives."
+  },
+  {
+    intro: "As financial markets continue to evolve, ${topic} has emerged as a key area of interest for investors and financial planners. This in-depth analysis examines the current trends, market dynamics, and strategic considerations that are shaping this important financial sector.",
+    overview: "The evolving landscape of ${topic} is creating new opportunities and challenges for market participants. Industry professionals and financial experts are closely monitoring these developments, which could significantly impact investment strategies and financial planning approaches.",
+    insights: "Recent market analysis of ${topic} has uncovered several important trends and patterns. These findings provide essential context for understanding market movements and identifying potential investment opportunities in today's dynamic financial environment.",
+    analysis: "Financial experts and market analysts have provided comprehensive insights into ${topic}. Their detailed analysis covers market trends, investment opportunities, risk factors, and strategic considerations for various types of investors and financial professionals.",
+    recommendations: "Based on thorough analysis of ${topic}, several strategic recommendations have been developed for investors and financial planners. These insights are designed to help optimize investment strategies while effectively managing risks and maximizing opportunities.",
+    conclusion: "The developments in ${topic} represent a significant evolution in financial markets. Staying informed about these changes and their implications will be crucial for investors seeking to make informed decisions and achieve their long-term financial objectives."
+  }
+];
+
+// Different FAQ templates for variety
+const FAQ_TEMPLATES = [
+  [
+    { question: "What are the key factors driving ${topic}?", answer: "The key factors include market dynamics, regulatory changes, technological innovations, and evolving investor preferences that are collectively shaping the landscape of ${topic}." },
+    { question: "How can investors benefit from ${topic}?", answer: "Investors can benefit by understanding market trends, identifying strategic opportunities, diversifying portfolios, and implementing risk management strategies aligned with ${topic} developments." },
+    { question: "What risks should investors consider with ${topic}?", answer: "Investors should consider market volatility, regulatory changes, economic uncertainties, and the need for proper diversification when engaging with ${topic} opportunities." },
+    { question: "What is the long-term outlook for ${topic}?", answer: "The long-term outlook suggests continued evolution with opportunities for growth, though success will depend on staying informed about market changes and adapting strategies accordingly." }
+  ],
+  [
+    { question: "Why is ${topic} important for financial planning?", answer: "${topic} is crucial because it represents significant opportunities and risks that can impact investment returns, portfolio performance, and overall financial planning strategies." },
+    { question: "What strategies work best for ${topic}?", answer: "Effective strategies include thorough research, diversification, risk management, and staying updated with market developments and expert insights related to ${topic}." },
+    { question: "How does ${topic} affect different types of investors?", answer: "Different investors may be affected differently based on their risk tolerance, investment goals, and portfolio composition when considering ${topic} opportunities." },
+    { question: "What should investors watch for in ${topic}?", answer: "Investors should monitor market trends, regulatory developments, technological changes, and expert analysis to make informed decisions about ${topic} opportunities." }
+  ],
+  [
+    { question: "What makes ${topic} unique in today's market?", answer: "${topic} stands out due to its current market relevance, growth potential, and the unique opportunities it presents for investors seeking to diversify and optimize their portfolios." },
+    { question: "How can beginners approach ${topic}?", answer: "Beginners should start with education, research, and potentially consulting with financial advisors to understand the basics and develop appropriate strategies for ${topic}." },
+    { question: "What are the current trends in ${topic}?", answer: "Current trends include technological innovation, regulatory evolution, changing investor preferences, and market dynamics that are reshaping the landscape of ${topic}." },
+    { question: "What resources are available for learning about ${topic}?", answer: "Resources include financial publications, expert analysis, market reports, educational materials, and professional financial advisors who can provide guidance on ${topic}." }
+  ]
+];
+
 // Simple HTTP request function
 function makeRequest(url) {
   return new Promise((resolve, reject) => {
@@ -198,44 +248,53 @@ function generateBlogContent(rssItem, blogId) {
   const keywords = extractKeywords(rssItem.title, rssItem.description);
   const coverImage = getCoverImage(rssItem.title);
   
+  // Select random template for variety
+  const templateIndex = Math.floor(Math.random() * CONTENT_TEMPLATES.length);
+  const faqIndex = Math.floor(Math.random() * FAQ_TEMPLATES.length);
+  const template = CONTENT_TEMPLATES[templateIndex];
+  const faqTemplate = FAQ_TEMPLATES[faqIndex];
+  
+  // Use the actual RSS title as the topic
+  const topic = rssItem.title;
+  
   return `import { BlogPost } from './types';
 
 export const blog${blogId}: BlogPost = {
   id: ${blogId},
   slug: '${slug}',
-  title: '${rssItem.title} 2025: Complete Analysis and Insights',
+  title: '${topic}: Complete Analysis and Strategic Insights',
   author: 'Harsh Raj',
   authorTitle: 'Software Engineer & Finance Enthusiast',
   authorImage: 'https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png',
   authorBio: 'Harsh Raj is a B.Tech graduate and software engineer who shares educational finance content. Not a financial expert—please consult authorized professionals for advice.',
-  metaDescription: 'Complete analysis of ${rssItem.title.toLowerCase()}. Learn about the latest trends, insights, and expert opinions on this important financial topic.',
+  metaDescription: 'Comprehensive analysis of ${topic.toLowerCase()}. Discover the latest trends, expert insights, and strategic recommendations for informed financial decision-making.',
   excerpt: '${rssItem.description}',
   categories: ${JSON.stringify(categories)},
   keywords: ${JSON.stringify(keywords)},
   date: '${new Date().toISOString().split('T')[0]}',
   coverImage: '${coverImage}',
   content: [
-    { type: 'heading', content: '${rssItem.title} 2025: Complete Analysis and Insights' },
-    { type: 'paragraph', content: 'In today\\'s dynamic financial landscape, understanding the implications of ${rssItem.title.toLowerCase()} is crucial for investors, businesses, and individuals alike. This comprehensive analysis explores the latest developments, market implications, and strategic insights that can help you make informed financial decisions.' },
+    { type: 'heading', content: '${topic}: Complete Analysis and Strategic Insights' },
+    { type: 'paragraph', content: '${template.intro.replace(/\${topic}/g, topic)}' },
     { type: 'heading', content: 'Market Overview and Current Trends' },
-    { type: 'paragraph', content: 'The financial markets are constantly evolving, and recent developments in ${rssItem.title.toLowerCase()} have significant implications for various sectors. Market analysts and experts are closely monitoring these changes, as they could impact investment strategies, business decisions, and economic policies.' },
+    { type: 'paragraph', content: '${template.overview.replace(/\${topic}/g, topic)}' },
     { type: 'heading', content: 'Key Insights and Analysis' },
-    { type: 'paragraph', content: 'Based on the latest data and expert analysis, several key insights emerge regarding ${rssItem.title.toLowerCase()}. These insights provide valuable context for understanding the broader implications and potential opportunities in the current market environment.' },
+    { type: 'paragraph', content: '${template.insights.replace(/\${topic}/g, topic)}' },
     { type: 'list', items: [
-      'Market impact and potential opportunities',
-      'Risk factors and considerations for investors',
-      'Long-term implications for financial planning',
+      'Market dynamics and investment opportunities',
+      'Risk assessment and management strategies',
+      'Long-term planning considerations',
       'Expert recommendations and best practices',
-      'Regulatory considerations and compliance requirements'
+      'Regulatory and compliance requirements'
     ]},
     { type: 'heading', content: 'Detailed Analysis and Expert Opinions' },
-    { type: 'paragraph', content: 'Financial experts and market analysts have provided detailed insights into the implications of ${rssItem.title.toLowerCase()}. Their analysis covers various aspects including market dynamics, investment opportunities, risk management strategies, and future outlook.' },
-    { type: 'paragraph', content: 'The consensus among industry professionals suggests that these developments could create both challenges and opportunities for different market participants. Understanding these dynamics is essential for making informed investment and business decisions.' },
+    { type: 'paragraph', content: '${template.analysis.replace(/\${topic}/g, topic)}' },
+    { type: 'paragraph', content: 'Industry professionals and financial experts emphasize the importance of understanding these developments and their implications for different types of investors. The consensus suggests that staying informed and adapting strategies accordingly will be crucial for success in this evolving landscape.' },
     { type: 'heading', content: 'Strategic Recommendations and Best Practices' },
-    { type: 'paragraph', content: 'Based on the comprehensive analysis of ${rssItem.title.toLowerCase()}, several strategic recommendations emerge for investors and businesses. These recommendations are designed to help navigate the current market environment effectively while maximizing opportunities and minimizing risks.' },
+    { type: 'paragraph', content: '${template.recommendations.replace(/\${topic}/g, topic)}' },
     { type: 'heading', content: 'Conclusion and Future Outlook' },
-    { type: 'paragraph', content: 'The developments surrounding ${rssItem.title.toLowerCase()} represent a significant moment in the financial markets. As we move forward, it\\'s essential to stay informed about ongoing developments and their implications for various market segments.' },
-    { type: 'paragraph', content: 'By understanding the current landscape and staying updated with the latest trends, investors and businesses can position themselves strategically to capitalize on opportunities while managing potential risks effectively. The key is to maintain a balanced approach that considers both short-term market dynamics and long-term strategic objectives.' }
+    { type: 'paragraph', content: '${template.conclusion.replace(/\${topic}/g, topic)}' },
+    { type: 'paragraph', content: 'As the financial landscape continues to evolve, understanding and adapting to changes in ${topic.toLowerCase()} will be essential for investors seeking to optimize their portfolios and achieve their financial objectives. The key is to maintain a balanced approach that considers both current opportunities and long-term strategic planning.' }
   ],
   featuredImage: '${coverImage}',
   videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
@@ -245,8 +304,8 @@ export const blog${blogId}: BlogPost = {
   structuredData: {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "${rssItem.title} 2025: Complete Analysis and Insights",
-    "description": "Complete analysis of ${rssItem.title.toLowerCase()}. Learn about the latest trends, insights, and expert opinions on this important financial topic.",
+    "headline": "${topic}: Complete Analysis and Strategic Insights",
+    "description": "Comprehensive analysis of ${topic.toLowerCase()}. Discover the latest trends, expert insights, and strategic recommendations for informed financial decision-making.",
     "author": {
       "@type": "Person",
       "name": "Harsh Raj",
@@ -270,15 +329,13 @@ export const blog${blogId}: BlogPost = {
     "datePublished": "${new Date().toISOString()}",
     "dateModified": "${new Date().toISOString()}"
   },
-  faqSchema: [
-    { question: "What are the key implications of ${rssItem.title.toLowerCase()}?", answer: "The key implications include market impact, investment opportunities, risk considerations, and strategic planning requirements for various market participants." },
-    { question: "How does this affect individual investors?", answer: "Individual investors should consider the impact on their portfolios, potential opportunities for diversification, and the need to review their investment strategies." },
-    { question: "What should businesses consider in light of these developments?", answer: "Businesses should evaluate the impact on their operations, consider strategic adjustments, and stay informed about regulatory changes and market dynamics." },
-    { question: "What are the long-term implications?", answer: "Long-term implications include potential structural changes in the market, evolving regulatory frameworks, and the need for adaptive strategies in financial planning." }
-  ],
+  faqSchema: ${JSON.stringify(faqTemplate.map(faq => ({
+    question: faq.question.replace(/\${topic}/g, topic),
+    answer: faq.answer.replace(/\${topic}/g, topic)
+  })))},
   openGraph: {
-    title: "${rssItem.title} 2025: Complete Analysis and Insights",
-    description: "Complete analysis of ${rssItem.title.toLowerCase()}. Learn about the latest trends, insights, and expert opinions on this important financial topic.",
+    title: "${topic}: Complete Analysis and Strategic Insights",
+    description: "Comprehensive analysis of ${topic.toLowerCase()}. Discover the latest trends, expert insights, and strategic recommendations for informed financial decision-making.",
     image: "${coverImage}",
     url: "https://moneycal.in/blog/${slug}",
     type: "article",
@@ -347,7 +404,7 @@ async function generateBlogs() {
       for (let i = 0; i < 20; i++) {
         const topic = FINANCE_TOPICS[i % FINANCE_TOPICS.length];
         rssItems.push({
-          title: `${topic} 2025`,
+          title: `${topic} Trends and Opportunities`,
           description: `Comprehensive analysis of ${topic.toLowerCase()} trends and opportunities`,
           link: `https://example.com/${topic.toLowerCase().replace(/\s+/g, '-')}`,
           pubDate: new Date().toISOString(),
