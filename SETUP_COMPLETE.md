@@ -34,8 +34,8 @@
 
 ### 📁 Files Created/Modified
 ```
-✅ automated-blog-generator.js     # Main automation script
-✅ deploy-automation.js            # Deployment automation
+✅ automated-blog-generator.cjs    # Main automation script
+✅ deploy-automation.cjs           # Deployment automation
 ✅ src/components/FinanceNewsSection.tsx  # Home page component
 ✅ .github/workflows/automation.yml # GitHub Actions workflow
 ✅ AUTOMATION_README.md            # Complete setup guide
@@ -69,10 +69,10 @@ NETLIFY_SITE_ID=your_netlify_site_id
 ### 3. Test the System
 ```bash
 # Test blog generation locally
-node automated-blog-generator.js
+node automated-blog-generator.cjs
 
 # Test deployment setup
-node deploy-automation.js setup
+node deploy-automation.cjs setup
 ```
 
 ### 4. Monitor Automation
@@ -107,7 +107,7 @@ node deploy-automation.js setup
 
 ### Generate Blogs Now:
 ```bash
-node automated-blog-generator.js
+node automated-blog-generator.cjs
 ```
 
 ### Setup Local Automation:
@@ -117,7 +117,7 @@ node automated-blog-generator.js
 
 # Linux/Mac Cron
 crontab -e
-# Add: 0 6 * * * cd /path/to/project && node automated-blog-generator.js
+# Add: 0 6 * * * cd /path/to/project && node automated-blog-generator.cjs
 ```
 
 ### Deploy Manually:

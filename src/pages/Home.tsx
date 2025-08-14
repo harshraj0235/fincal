@@ -751,7 +751,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Dynamic Finance News Section */}
       <FinanceNewsSection />
 

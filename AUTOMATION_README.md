@@ -33,10 +33,10 @@ npm install
 
 ```bash
 # Create deployment configurations
-node deploy-automation.js setup
+node deploy-automation.cjs setup
 
 # Test the blog generation (generates 20 blog posts)
-node automated-blog-generator.js
+node automated-blog-generator.cjs
 ```
 
 ### 3. Cloud Deployment Setup
@@ -70,7 +70,7 @@ jobs:
         with:
           node-version: '18'
       - run: npm install
-      - run: node automated-blog-generator.js
+      - run: node automated-blog-generator.cjs
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -101,7 +101,7 @@ For local automation that runs even when your computer is off:
 ```batch
 @echo off
 cd /d "C:\path\to\your\project"
-node automated-blog-generator.js
+node automated-blog-generator.cjs
 ```
 
 2. Open Task Scheduler and create a new task:
@@ -116,14 +116,14 @@ node automated-blog-generator.js
 crontab -e
 
 # Add this line (adjust path):
-0 6 * * * cd /path/to/project && node automated-blog-generator.js
+0 6 * * * cd /path/to/project && node automated-blog-generator.cjs
 ```
 
 ## 📁 File Structure
 
 ```
-├── automated-blog-generator.js    # Main automation script
-├── deploy-automation.js           # Deployment automation
+├── automated-blog-generator.cjs   # Main automation script
+├── deploy-automation.cjs          # Deployment automation
 ├── src/
 │   ├── components/
 │   │   └── FinanceNewsSection.tsx # Home page news section
@@ -180,7 +180,7 @@ Each blog post contains:
 
 ```bash
 # Generate 20 blog posts immediately
-node automated-blog-generator.js
+node automated-blog-generator.cjs
 ```
 
 ### Automated Generation
