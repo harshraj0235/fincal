@@ -30,13 +30,15 @@ This system runs **100% in the cloud** using GitHub Actions. Your laptop can be 
 3. If prompted, click **"Enable Actions"**
 
 ### **Step 2: Configure Repository Secrets (Optional)**
-For email notifications, add these secrets in your repository:
+For future email notifications, you can add these secrets in your repository:
 
 1. Go to **Settings** → **Secrets and variables** → **Actions**
 2. Add these repository secrets:
    - `EMAIL_USERNAME`: Your Gmail address
    - `EMAIL_PASSWORD`: Your Gmail app password
    - `NOTIFICATION_EMAIL`: Email to receive notifications
+
+*Note: Email notifications are currently disabled to ensure the system runs smoothly.*
 
 ### **Step 3: Test the System**
 1. Go to **Actions** tab in your repository
@@ -54,7 +56,7 @@ For email notifications, add these secrets in your repository:
 
 ### **Files Created:**
 - `.github/workflows/auto-blog-generator.yml` - GitHub Actions workflow
-- `scripts/cloud-blog-generator.js` - Main automation script
+- `scripts/cloud-blog-generator.cjs` - Main automation script
 - `src/components/FinanceNewsSection.tsx` - Home page display component
 
 ### **RSS Feeds Integrated:**
