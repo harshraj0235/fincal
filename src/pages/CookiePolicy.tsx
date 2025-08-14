@@ -24,12 +24,12 @@ export const CookiePolicy: React.FC = () => {
       <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="mb-8">
-            <button onClick={() => navigate(-1)} className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors">
-              <ArrowLeft className="h-4 w-4 mr-1" />
-              <span>Back</span>
-            </button>
-          </div>
+        <div className="mb-8">
+          <button onClick={() => navigate(-1)} className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors">
+            <ArrowLeft className="h-4 w-4 mr-1" />
+            <span>Back</span>
+          </button>
+        </div>
 
           {/* Header Section */}
           <div className="text-center mb-12">
@@ -42,14 +42,14 @@ export const CookiePolicy: React.FC = () => {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Understanding how we use cookies to enhance your experience and protect your privacy on MoneyCal.in
             </p>
-          </div>
+        </div>
 
           {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
             {/* Policy Content */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
-                <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none">
                   <p className="text-neutral-600 mb-6">Last Updated: June 15, 2025</p>
 
                   <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4 flex items-center">

@@ -209,8 +209,8 @@ Remember: This is for entertainment and educational purposes. Always consult wit
                 Your Financial Horoscope
               </h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     <Calendar className="h-4 w-4 inline mr-1" />
                     Birth Date
@@ -222,9 +222,9 @@ Remember: This is for entertainment and educational purposes. Always consult wit
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                     required
                   />
-                </div>
+            </div>
                 
-                <div>
+            <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     <Zap className="h-4 w-4 inline mr-1" />
                     Zodiac Sign
@@ -239,8 +239,8 @@ Remember: This is for entertainment and educational purposes. Always consult wit
                         {sign.name} ({sign.element})
                       </option>
                     ))}
-                  </select>
-                </div>
+              </select>
+            </div>
                 
                 <button
                   type="submit"
@@ -248,14 +248,14 @@ Remember: This is for entertainment and educational purposes. Always consult wit
                 >
                   Generate Financial Horoscope
                 </button>
-              </form>
+          </form>
               
-              {result && (
+          {result && (
                 <div className="mt-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200">
                   <h3 className="font-semibold text-purple-800 mb-3">Your Financial Insights</h3>
                   <pre className="whitespace-pre-wrap text-sm text-gray-700 font-sans">{result}</pre>
-                </div>
-              )}
+            </div>
+          )}
             </div>
 
             {/* Educational Content */}

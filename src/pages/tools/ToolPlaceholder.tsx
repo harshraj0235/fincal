@@ -242,10 +242,10 @@ const ToolPlaceholder: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
       </div>
+    </div>
     </>
   );
 };
 
-export default ToolPlaceholder;
+export default ToolPlaceholder; 

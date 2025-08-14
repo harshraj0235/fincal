@@ -262,7 +262,7 @@ const MoneyBlog: React.FC = () => {
                 <li>• Insurance and risk management</li>
                 <li>• Retirement planning and wealth creation</li>
                 <li>• Real estate investment guidance</li>
-              </ul>
+      </ul>
             </div>
           </div>
         </div>

@@ -149,7 +149,7 @@ const MonthlyBudgetPlanner: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              {rows.map((row, idx) => (
+        {rows.map((row, idx) => (
                 <div key={idx} className="border border-gray-200 rounded-lg p-4">
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
                     <div>
@@ -202,8 +202,8 @@ const MonthlyBudgetPlanner: React.FC = () => {
                       </button>
                     </div>
                   </div>
-                </div>
-              ))}
+          </div>
+        ))}
             </div>
 
             <button

@@ -167,7 +167,7 @@ const MoneyTool: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {toolCategories.map((category) => {
               const IconComponent = category.icon;
-              return (
+  return (
                 <div key={category.name} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow cursor-pointer">
                   <div className="flex items-center mb-4">
                     <IconComponent className="h-8 w-8 text-blue-600 mr-3" />

@@ -465,7 +465,7 @@ Generated on: ${new Date().toLocaleDateString()}`;
                 <li>• Update personas regularly</li>
                 <li>• Share with your entire team</li>
               </ul>
-            </div>
+        </div>
             
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
               <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
@@ -478,8 +478,8 @@ Generated on: ${new Date().toLocaleDateString()}`;
                 <li>• 48% more effective marketing</li>
                 <li>• 39% improved product adoption</li>
               </ul>
-            </div>
           </div>
+        </div>
 
           {/* Disclaimer */}
           <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
@@ -490,8 +490,8 @@ Generated on: ${new Date().toLocaleDateString()}`;
               validate with actual customer feedback and market research.
             </p>
           </div>
-        </div>
       </div>
+    </div>
     </>
   );
 };
