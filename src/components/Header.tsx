@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Calculator, Search, ChevronRight, FileText, Shield, PhoneCall, TrendingUp, Clock, Globe } from 'lucide-react';
+import { Menu, X, Calculator, Search, ChevronRight, FileText, Shield, PhoneCall } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
 import { SearchBar } from './SearchBar';
 import { calculatorCategories } from '../data/calculatorData';
@@ -14,14 +14,6 @@ export const Header: React.FC = () => {
   const navigate = useNavigate();
   const categoriesRef = useRef<HTMLDivElement>(null);
   const justOpenedMenu = useRef(false);
-
-  // Breaking news ticker content
-  const breakingNews = [
-    "RBI keeps repo rate unchanged at 6.5% for the 8th consecutive time",
-    "Sensex hits new all-time high of 75,000 points",
-    "New tax benefits announced for home loan borrowers",
-    "Mutual fund SIP investments reach record high in March 2025"
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,168 +72,200 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <>
-      {/* Breaking News Ticker */}
-      <div className="bg-red-600 text-white py-2 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 bg-red-700 px-3 py-1 rounded-full">
-              <TrendingUp className="h-4 w-4" />
-              <span className="text-sm font-semibold">BREAKING</span>
-            </div>
-            <div className="flex-1 overflow-hidden">
-              <div className="animate-marquee whitespace-nowrap">
-                {breakingNews.map((news, index) => (
-                  <span key={index} className="inline-block mr-8 text-sm">
-                    {news}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <header 
-        className={`sticky top-0 z-[999] pointer-events-auto transition-all duration-300 ${
-          isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' : 'bg-white py-3 md:py-4'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top Bar */}
-          <div className="flex justify-between items-center mb-3">
-            <div className="flex items-center space-x-6 text-sm text-gray-600">
-              <div className="flex items-center space-x-2">
-                <Clock className="h-4 w-4" />
-                <span>{new Date().toLocaleDateString('en-IN', { 
-                  weekday: 'long', 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Globe className="h-4 w-4" />
-                <span>India</span>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setSearchOpen(!searchOpen)}
-                className="text-gray-600 hover:text-primary-600 transition-colors"
-              >
-                <Search className="h-5 w-5" />
-              </button>
-              <Link to="/contact" className="text-gray-600 hover:text-primary-600 transition-colors text-sm">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-
-          {/* Search Bar */}
-          {searchOpen && (
-            <div className="mb-4">
-              <SearchBar onClose={() => setSearchOpen(false)} />
-            </div>
-          )}
-
-          {/* Main Navigation */}
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 min-w-0 flex-shrink-0">
-              <div className="bg-primary-600 p-2 rounded-lg">
-                <Calculator className="h-8 w-8 text-white" />
-              </div>
-              <div>
-                <span className="text-2xl font-bold text-neutral-900">MoneyCal</span>
-                <div className="text-xs text-gray-500">India's Financial Portal</div>
-              </div>
+    <header 
+      className={`sticky top-0 z-[999] pointer-events-auto transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' : 'bg-white py-3 md:py-4'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center">
+          {/* Logo - Improved for mobile */}
+          <Link to="/" className="flex items-center space-x-2 min-w-0 flex-shrink-0">
+            <Calculator className="h-7 w-7 md:h-8 md:w-8 text-primary-600 flex-shrink-0" />
+            <span className="text-lg md:text-xl font-bold text-neutral-900 truncate">MoneyCal</span>
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <Link to="/" className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium">
+              Home
             </Link>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              <Link to="/" className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-primary-600">
-                Home
-              </Link>
-              <div className="relative" ref={categoriesRef}>
-                <button 
-                  onClick={() => setCategoriesOpen(!categoriesOpen)}
-                  className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-primary-600"
+            <div className="relative" ref={categoriesRef}>
+              <button 
+                onClick={() => setCategoriesOpen(!categoriesOpen)}
+                className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Categories
+                <svg 
+                  className={`ml-1 h-4 w-4 transition-transform ${categoriesOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Calculators
-                  <ChevronRight className={`ml-1 h-4 w-4 transition-transform ${categoriesOpen ? 'rotate-90' : ''}`} />
-                </button>
-                
-                {categoriesOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                    <div className="grid grid-cols-1 gap-1">
-                      {calculatorCategories.map((category) => (
-                        <div key={category.id} className="px-4 py-2">
-                          <h3 className="text-sm font-semibold text-gray-900 mb-2">{category.name}</h3>
-                          <div className="space-y-1">
-                            {category.calculators.slice(0, 3).map((calculator) => (
-                              <button
-                                key={calculator.id}
-                                onClick={() => handleCalculatorClick(calculator.id)}
-                                className="block w-full text-left text-sm text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-2 py-1 rounded transition-colors"
-                              >
-                                {calculator.name}
-                              </button>
-                            ))}
-                            {category.calculators.length > 3 && (
-                              <Link
-                                to={`/category/${category.id}`}
-                                className="block text-sm text-primary-600 hover:text-primary-700 px-2 py-1 rounded transition-colors"
-                              >
-                                View all {category.calculators.length} calculators →
-                              </Link>
-                            )}
-                          </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              
+              {categoriesOpen && (
+                <div className="absolute left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-10 py-2">
+                  {calculatorCategories.map(category => (
+                    <div key={category.id} className="relative group">
+                      <Link
+                        to={`/#${category.id}`}
+                        className="block px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 group transition-colors"
+                        onClick={() => setCategoriesOpen(false)}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium">{category.name}</span>
+                          <ChevronRight className="h-4 w-4 text-neutral-400 group-hover:text-primary-600 transition-colors" />
                         </div>
-                      ))}
+                      </Link>
+                      <div className="absolute left-full top-0 ml-1 w-72 bg-white rounded-xl shadow-xl border border-gray-100 hidden group-hover:block">
+                        <div className="py-2">
+                          {category.calculators.slice(0, 8).map(calculator => (
+                            <button
+                              key={calculator.id}
+                              onClick={() => handleCalculatorClick(calculator.id)}
+                              className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 transition-colors"
+                            >
+                              {calculator.name}
+                            </button>
+                          ))}
+                          {category.calculators.length > 8 && (
+                            <Link
+                              to={`/#${category.id}`}
+                              className="block px-4 py-3 text-primary-600 hover:bg-neutral-50 font-medium transition-colors"
+                              onClick={() => setCategoriesOpen(false)}
+                            >
+                              View all {category.calculators.length} calculators
+                            </Link>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-              <Link to="/blog" className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-primary-600">
-                News & Analysis
-              </Link>
-              <Link to="/government-schemes" className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-primary-600">
-                Govt Schemes
-              </Link>
-              <Link to="/tools" className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-primary-600">
-                Tools
-              </Link>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button
+                  ))}
+                  <Link
+                    to="/#categories"
+                    className="block px-4 py-3 text-primary-600 hover:bg-neutral-50 font-medium border-t border-neutral-100 mt-1 transition-colors"
+                    onClick={() => setCategoriesOpen(false)}
+                  >
+                    View all calculators
+                  </Link>
+                </div>
+              )}
+            </div>
+            <button 
+              onClick={() => setSearchOpen(true)}
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <Search className="h-4 w-4" />
+              <span>Search</span>
+            </button>
+            <Link 
+              to="/blog" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <FileText className="h-4 w-4 mr-1" />
+              Blog
+            </Link>
+            <Link 
+              to="/crypto" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <Shield className="h-4 w-4 mr-1 text-yellow-500" />
+              Crypto
+            </Link>
+            <Link 
+              to="/government-schemes" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <Shield className="h-4 w-4 mr-1" />
+              <span className="hidden xl:inline">Government Schemes</span>
+              <span className="xl:hidden">Schemes</span>
+            </Link>
+            <Link 
+              to="/exceltool" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <FileText className="h-4 w-4 mr-1" />
+              <span className="hidden xl:inline">Excel Tools</span>
+              <span className="xl:hidden">Excel</span>
+            </Link>
+            <Link 
+              to="/missed-call-banking-directory" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
+            >
+              <PhoneCall className="h-4 w-4 mr-1" />
+              <span className="hidden xl:inline">Missed Call Banking</span>
+              <span className="xl:hidden">Banking</span>
+            </Link>
+            <Link 
+              to="/bank-tools" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Bank Tools
+            </Link>
+            <Link 
+              to="/contact-us" 
+              className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Contact
+            </Link>
+            <Link 
+              to="/calculators/income-tax-calculator" 
+              className="btn btn-primary text-sm px-4 py-2"
+            >
+              Tax Calculator
+            </Link>
+            <li>
+              <a href="/calculators/cheque-bounce-charges-calculator" className="hover:text-orange-600 font-semibold">Cheque Bounce Charges</a>
+            </li>
+          </nav>
+          
+          {/* Mobile Navigation */}
+          <div className="flex lg:hidden items-center space-x-2">
+            <button 
+              onClick={() => setSearchOpen(true)}
+              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation z-[1000] pointer-events-auto"
+              aria-label="Search"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+            <button 
               onClick={handleOpenMobileMenu}
-              className="lg:hidden text-neutral-700 hover:text-primary-600 transition-colors"
+              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation z-[1000] pointer-events-auto"
+              aria-label="Open menu"
             >
               <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <MobileMenu onClose={() => setMobileMenuOpen(false)} />
-        )}
-      </header>
-
-      {/* CSS for marquee animation */}
-      <style jsx>{`
-        @keyframes marquee {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
-    </>
+      </div>
+      
+      {/* Search Modal */}
+      {searchOpen && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center pt-16 sm:pt-20">
+          <div className="bg-white rounded-xl w-full max-w-2xl mx-4 p-4 shadow-2xl">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-semibold text-neutral-900">Search Calculators</h2>
+              <button 
+                onClick={() => setSearchOpen(false)}
+                className="text-neutral-500 hover:text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors"
+                aria-label="Close search"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <SearchBar onClose={() => setSearchOpen(false)} />
+          </div>
+        </div>
+      )}
+      
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+      )}
+    </header>
   );
 };

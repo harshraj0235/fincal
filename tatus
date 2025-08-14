@@ -6,3 +6,8 @@
 [33mf3b7809[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Add comprehensive blog posts 658-667 and 678-730 with SEO optimization and Google Discover features
 [33m489731d[m Content: add blogs 658–667 and 678–730; generator script; refresh set to 24h; SEO/OG and schema improvements.
 [33m4c951b4[m Blogs: add 657 (Noida AI/fintech fund) + sitemap uses allBlogPosts; freshness auto-update to 24h.
+[33m620c01d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Complete UI transformation to modern news portal - Updated Header, Home page, MobileMenu, and CSS with NDTV-style design
+[33m8fcc813[m Transform UI to modern news portal design - Remove excel_blogs, add breaking news ticker, featured stories, and NDTV-style layout
+[33m15e94bb[m Enhance Excel tools page with modern UI, blog integration, and new AI Excel 2025 blog
+[33m28896ba[m Fix index.ts - remove problematic template and test-automation imports
+[33mc86a963[m Fix index.ts - remove all deleted blog file imports and exports

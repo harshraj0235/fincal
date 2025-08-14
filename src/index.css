@@ -69,10 +69,14 @@ html {
   }
 }
 
-/* Marquee animation for breaking news ticker */
+/* Marquee animation for breaking news */
 @keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .animate-marquee {

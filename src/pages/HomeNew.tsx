@@ -1,76 +1,48 @@
-import React, { useState, useEffect, useRef, Suspense } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Calculator, 
   ArrowRight, 
   TrendingUp, 
   DollarSign, 
-  PieChart, 
   Building, 
-  Shield, 
-  ChevronRight,
   Search,
   Clock,
-  User,
   Calendar,
   BookOpen,
   BarChart3,
-  Globe,
-  FileText,
   CreditCard,
-  Banknote,
-  TrendingDown,
-  Zap,
   Star,
-  Eye,
-  Share2,
   Bookmark,
-  Filter,
   Grid,
   List,
   Phone
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
-import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
-import { governmentSchemes } from '../data/governmentSchemesData';
-import { blogs } from '../data/blogs';
-import { cryptoData } from '../data/cryptoData';
-import { excelToolsData } from '../data/excelToolsData';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 
-export const Home: React.FC = () => {
-  const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
-  const [featuredBlogs, setFeaturedBlogs] = useState<any[]>([]);
+export const HomeNew: React.FC = () => {
+  const [popularCalculators, setPopularCalculators] = useState<any[]>([]);
   const [latestNews, setLatestNews] = useState<any[]>([]);
   const [cryptoNews, setCryptoNews] = useState<any[]>([]);
   const [governmentNews, setGovernmentNews] = useState<any[]>([]);
   const [excelTools, setExcelTools] = useState<any[]>([]);
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [activeCategory, setActiveCategory] = useState('all');
-  const location = useLocation();
-  const categoriesRef = useRef<HTMLElement>(null);
-  const allCalculatorsRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // Get popular calculators from different categories
-    const popular = [
+    // Set popular calculators
+    setPopularCalculators([
       { id: 'emi-calculator', name: 'EMI Calculator', description: 'Calculate your loan EMI, total interest, and payment schedule', category: 'Loan Calculators' },
       { id: 'sip-calculator', name: 'SIP Calculator', description: 'Plan your investments and calculate returns on SIP investments', category: 'Investment Calculators' },
       { id: 'income-tax-calculator', name: 'Income Tax Calculator', description: 'Calculate your income tax liability under old and new tax regimes', category: 'Tax Calculators' },
       { id: 'mutual-fund-overlap-checker', name: 'Mutual Fund Overlap Checker', description: 'Check portfolio overlap between mutual funds to optimize diversification', category: 'Investments & Wealth Management' },
       { id: 'asset-allocation-planner', name: 'Asset Allocation Planner', description: 'Create a balanced portfolio based on your risk profile', category: 'Investments & Wealth Management' },
       { id: 'credit-card-finder', name: 'Credit Card Finder', description: 'Find the best credit card based on your spending patterns', category: 'Banking & Finance Tools' }
-    ];
+    ]);
     
-    setPopularCalculators(popular);
-    
-    // Set featured blogs (using available blog data)
-    setFeaturedBlogs([blog651]);
-    
-    // Set latest news (simulate with available data)
+    // Set latest news
     setLatestNews([
       {
         id: 1,
@@ -173,109 +145,6 @@ export const Home: React.FC = () => {
       }
     ]);
   }, []);
-  
-  // Structured data for the home page
-  const homeStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Moneycal.in - India's Premier Financial News & Tools Portal",
-    "description": "Comprehensive financial news, calculators, and tools for Indian users. Stay updated with latest financial news, crypto updates, government schemes, and use free financial calculators.",
-    "url": "https://moneycal.in",
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "Financial Tools & News",
-      "description": "Collection of financial calculators, news, and tools for Indian users",
-      "numberOfItems": calculatorCategories.reduce((total, cat) => total + cat.calculators.length, 0) + latestNews.length + cryptoNews.length,
-      "itemListElement": [
-        ...calculatorCategories.flatMap((category, catIndex) =>
-          category.calculators.map((calculator, calcIndex) => ({
-            "@type": "ListItem",
-            "position": catIndex * 10 + calcIndex + 1,
-            "item": {
-              "@type": "WebApplication",
-              "name": calculator.name,
-              "description": calculator.description,
-              "url": `https://moneycal.in/calculators/${calculator.id}`,
-              "applicationCategory": "FinanceApplication",
-              "operatingSystem": "Web Browser",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "INR"
-              }
-            }
-          }))
-        ),
-        ...latestNews.map((news, index) => ({
-          "@type": "ListItem",
-          "position": 100 + index + 1,
-          "item": {
-            "@type": "NewsArticle",
-            "headline": news.title,
-            "description": news.excerpt,
-            "url": `https://moneycal.in/news/${news.id}`,
-            "datePublished": news.date,
-            "articleSection": news.category
-          }
-        }))
-      ]
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://moneycal.in"
-        }
-      ]
-    }
-  };
-  
-  // Scroll to categories section if hash is present
-  useEffect(() => {
-    if (location.hash) {
-      const hash = location.hash.substring(1);
-      
-      if (hash === 'categories' && allCalculatorsRef.current) {
-        allCalculatorsRef.current.scrollIntoView({ behavior: 'smooth' });
-      } else if (categoriesRef.current) {
-        const categoryElement = document.getElementById(hash);
-        if (categoryElement) {
-          categoryElement.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-  }, [location.hash]);
-
-  // Get category icon based on category ID
-  const getCategoryIcon = (categoryId: string) => {
-    switch(categoryId) {
-      case 'loan-calculators': return <Building className="h-6 w-6 text-white" />;
-      case 'investment-calculators': return <TrendingUp className="h-6 w-6 text-white" />;
-      case 'tax-calculators': return <DollarSign className="h-6 w-6 text-white" />;
-      default: return <Calculator className="h-6 w-6 text-white" />;
-    }
-  };
-  
-  // Get category color based on category ID
-  const getCategoryColor = (categoryId: string) => {
-    switch(categoryId) {
-      case 'loan-calculators': return 'from-blue-500 to-blue-700';
-      case 'investment-calculators': return 'from-green-500 to-green-700';
-      case 'tax-calculators': return 'from-purple-500 to-purple-700';
-      case 'retirement-calculators': return 'from-orange-500 to-orange-700';
-      case 'business-calculators': return 'from-indigo-500 to-indigo-700';
-      case 'property-calculators': return 'from-red-500 to-red-700';
-      case 'insurance-calculators': return 'from-pink-500 to-pink-700';
-      case 'banking-calculators': return 'from-cyan-500 to-cyan-700';
-      case 'fintech-payments': return 'from-amber-500 to-amber-700';
-      case 'investments-wealth-management': return 'from-emerald-500 to-emerald-700';
-      case 'personal-finance': return 'from-teal-500 to-teal-700';
-      default: return 'from-primary-500 to-primary-700';
-    }
-  };
 
   // News card component
   const NewsCard = ({ news, featured = false }: { news: any; featured?: boolean }) => (
@@ -352,7 +221,6 @@ export const Home: React.FC = () => {
         description="Stay updated with latest financial news, crypto updates, government schemes, and use free financial calculators. Comprehensive financial tools and news for Indian users."
         keywords="financial news india, crypto news, government schemes, financial calculators, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, personal finance india"
         url="/"
-        structuredData={homeStructuredData}
         tags={["financial news", "crypto", "government schemes", "calculators", "personal finance", "investment", "banking"]}
       />
       
@@ -463,20 +331,6 @@ export const Home: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-gray-900">Quick Navigation</h2>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-lg ${viewMode === 'grid' ? 'bg-primary-100 text-primary-600' : 'bg-white text-gray-600'}`}
-                >
-                  <Grid className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-lg ${viewMode === 'list' ? 'bg-primary-100 text-primary-600' : 'bg-white text-gray-600'}`}
-                >
-                  <List className="h-5 w-5" />
-                </button>
-              </div>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -590,40 +444,13 @@ export const Home: React.FC = () => {
         </section>
 
         {/* Financial Calculators Section */}
-        <section id="categories" ref={allCalculatorsRef} className="py-12 bg-gray-50">
+        <section id="categories" className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Financial Calculators</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Comprehensive financial calculators to help you make informed decisions about loans, investments, taxes, and more.
               </p>
-            </div>
-            
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <button
-                onClick={() => setActiveCategory('all')}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeCategory === 'all' 
-                    ? 'bg-primary-600 text-white' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                All Categories
-              </button>
-              {calculatorCategories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    activeCategory === category.id 
-                      ? 'bg-primary-600 text-white' 
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
-                  }`}
-                >
-                  {category.name}
-                </button>
-              ))}
             </div>
             
             {/* Popular Calculators */}
@@ -634,13 +461,6 @@ export const Home: React.FC = () => {
                   <CalculatorCard key={calculator.id} calculator={calculator} />
                 ))}
               </div>
-            </div>
-            
-            {/* All Categories */}
-            <div className="space-y-12">
-              {calculatorCategories.map((category) => (
-                <CategorySection key={category.id} category={category} />
-              ))}
             </div>
           </div>
         </section>
@@ -668,5 +488,3 @@ export const Home: React.FC = () => {
     </>
   );
 };
-
-export default Home;

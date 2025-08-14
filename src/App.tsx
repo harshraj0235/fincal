@@ -22,7 +22,7 @@ import OfferProposalTemplateBuilder from './pages/tools/OfferProposalTemplateBui
 import SimpleFeedbackFormGenerator from './pages/tools/SimpleFeedbackFormGenerator';
 
 // Lazy load all page-level components
-const Home = lazy(() => import('./pages/Home'));
+const Home = lazy(() => import('./pages/HomeNew').then(module => ({ default: module.HomeNew })));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
