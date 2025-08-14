@@ -1,14 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { X, ChevronRight, FileText, Map, Shield, Calculator, PhoneCall } from 'lucide-react';
+import { X, ChevronRight, FileText, Shield, Calculator, TrendingUp, Clock, Globe } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 
 interface MobileMenuProps {
-  isOpen: boolean;
   onClose: () => void;
 }
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+export const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
   const menuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   
@@ -25,25 +24,21 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       }
     };
     
-    if (isOpen) {
-      document.addEventListener('mousedown', handleOutsideClick);
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
-    }
+    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('keydown', handleEscape);
+    document.body.style.overflow = 'hidden';
     
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = '';
     };
-  }, [isOpen, onClose]);
+  }, [onClose]);
   
   const handleCalculatorClick = (calculatorId: string) => {
     navigate(`/calculators/${calculatorId}`);
     onClose();
   };
-  
-  if (!isOpen) return null;
   
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex justify-end">
@@ -54,8 +49,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-100 p-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Calculator className="h-6 w-6 text-primary-600" />
-            <h2 className="text-lg font-semibold text-gray-900">FinCalc India</h2>
+            <div className="bg-primary-600 p-2 rounded-lg">
+              <Calculator className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900">MoneyCal</h2>
+              <p className="text-xs text-gray-500">India's Financial Portal</p>
+            </div>
           </div>
           <button 
             onClick={onClose}
@@ -101,7 +101,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
           >
             <FileText className="h-5 w-5 mr-3 text-gray-500" />
-            Blog
+            News & Analysis
           </Link>
           
           <Link 
@@ -110,123 +110,65 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
           >
             <Shield className="h-5 w-5 mr-3 text-gray-500" />
-            Government Schemes
+            Govt Schemes
           </Link>
           
           <Link 
-            to="/crypto" 
+            to="/tools" 
             className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation flex items-center"
             onClick={onClose}
           >
-            <Shield className="h-5 w-5 mr-3 text-yellow-500" />
-            Crypto
+            <Calculator className="h-5 w-5 mr-3 text-gray-500" />
+            Tools
           </Link>
-          
-          <Link 
-            to="/exceltool" 
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation flex items-center"
-            onClick={onClose}
-          >
-            <FileText className="h-5 w-5 mr-3 text-gray-500" />
-            Excel Tools
-          </Link>
-          
-          <Link 
-            to="/missed-call-banking-directory" 
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation flex items-center"
-            onClick={onClose}
-          >
-            <PhoneCall className="h-5 w-5 mr-3 text-gray-500" />
-            Missed Call Banking
-          </Link>
-          
-          <Link 
-            to="/bank-tools" 
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation"
-            onClick={onClose}
-          >
-            Bank Tools
-          </Link>
-          
-          <Link 
-            to="/contact-us" 
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation"
-            onClick={onClose}
-          >
-            Contact Us
-          </Link>
-          
-          <Link 
-            to="/sitemap" 
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation flex items-center"
-            onClick={onClose}
-          >
-            <Map className="h-5 w-5 mr-3 text-gray-500" />
-            Sitemap
-          </Link>
-          
-          <Link 
-            to="/#categories" 
-            className="block py-3 px-4 text-primary-600 hover:bg-primary-50 rounded-xl transition-colors touch-manipulation font-medium mt-4 border border-primary-200"
-            onClick={onClose}
-          >
-            View All Calculators
-          </Link>
-          
+
           {/* Calculator Categories */}
-          <div className="mt-6">
-            <h3 className="font-semibold text-gray-700 px-4 py-2 text-sm uppercase tracking-wide">Calculator Categories</h3>
-            <div className="space-y-1">
-              {calculatorCategories.map(category => (
-                <div key={category.id} className="mt-2">
-                  <Link 
-                    to={`/#${category.id}`}
-                    className="px-4 py-3 flex justify-between items-center text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation"
-                    onClick={onClose}
-                  >
+          <div className="border-t border-gray-100 pt-4 mt-4">
+            <h3 className="text-sm font-semibold text-gray-900 mb-3 px-4">Calculators</h3>
+            {calculatorCategories.map((category) => (
+              <div key={category.id} className="mb-2">
+                <Link
+                  to={`/#${category.id}`}
+                  className="block py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors touch-manipulation"
+                  onClick={onClose}
+                >
+                  <div className="flex items-center justify-between">
                     <span className="font-medium">{category.name}</span>
                     <ChevronRight className="h-4 w-4 text-gray-400" />
-                  </Link>
-                  <div className="ml-4 space-y-1">
-                    {category.calculators.slice(0, 4).map(calculator => (
-                      <button
-                        key={calculator.id}
-                        onClick={() => handleCalculatorClick(calculator.id)}
-                        className="block w-full text-left py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg text-sm transition-colors touch-manipulation"
-                      >
-                        {calculator.name}
-                      </button>
-                    ))}
-                    {category.calculators.length > 4 && (
-                      <Link
-                        to={`/#${category.id}`}
-                        className="block py-2 px-4 text-primary-600 hover:bg-primary-50 rounded-lg text-sm font-medium transition-colors touch-manipulation"
-                        onClick={onClose}
-                      >
-                        View all {category.calculators.length} calculators
-                      </Link>
-                    )}
                   </div>
+                </Link>
+                <div className="ml-4 space-y-1">
+                  {category.calculators.slice(0, 3).map((calculator) => (
+                    <button
+                      key={calculator.id}
+                      onClick={() => handleCalculatorClick(calculator.id)}
+                      className="block w-full text-left py-2 px-4 text-sm text-gray-600 hover:text-primary-600 hover:bg-gray-50 rounded-lg transition-colors touch-manipulation"
+                    >
+                      {calculator.name}
+                    </button>
+                  ))}
+                  {category.calculators.length > 3 && (
+                    <Link
+                      to={`/#${category.id}`}
+                      className="block py-2 px-4 text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors touch-manipulation"
+                      onClick={onClose}
+                    >
+                      View all {category.calculators.length} calculators →
+                    </Link>
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-          
-          {/* Footer Links */}
-          <div className="mt-6 pt-4 border-t border-gray-100 space-y-1">
+
+          {/* Contact */}
+          <div className="border-t border-gray-100 pt-4 mt-4">
             <Link 
-              to="/privacy-policy" 
-              className="block py-2 px-4 text-gray-600 hover:bg-gray-50 rounded-lg text-sm transition-colors touch-manipulation"
+              to="/contact" 
+              className="block py-3 px-4 text-gray-900 hover:bg-gray-50 rounded-xl transition-colors touch-manipulation"
               onClick={onClose}
             >
-              Privacy Policy
-            </Link>
-            <Link 
-              to="/terms-and-conditions" 
-              className="block py-2 px-4 text-gray-600 hover:bg-gray-50 rounded-lg text-sm transition-colors touch-manipulation"
-              onClick={onClose}
-            >
-              Terms & Conditions
+              Contact Us
             </Link>
           </div>
         </nav>
