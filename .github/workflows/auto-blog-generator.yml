@@ -21,6 +21,9 @@ on:
 jobs:
   auto-blog-generation:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
     
     steps:
     - name: 🚀 Checkout Repository
@@ -28,6 +31,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
+        permissions: write-all
 
     - name: 📦 Setup Node.js
       uses: actions/setup-node@v4
@@ -76,6 +80,7 @@ jobs:
     - name: 🚀 Push Changes
       run: |
         echo "🚀 Pushing changes to repository..."
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         git push origin main
 
     - name: ✅ Success Notification
