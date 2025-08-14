@@ -59,20 +59,7 @@ export const blog656: BlogPost = {
   videoUrl: '',
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 7,
-  schema: {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": 'The Shocking Truth About India’s Green Hydrogen Startups (Investors Yeh Miss Kar Rahe Hain!)',
-    "image": [
-      'https://cdn.leonardo.ai/users/264400f1-bbb5-4960-8d01-e7b693bb8b77/generations/1f190639-462a-418c-9404-f84731419a4c/segments/4:4:1/Flux_Dev_A_vibrant_and_futuristic_illustration_depicting_the_b_3.jpg'
-    ],
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": 'Harsh Raj',
-      "url": '/author/harsh-raj'
+  readingTime: 7
     },
     "publisher": {
       "@type": "Organization",

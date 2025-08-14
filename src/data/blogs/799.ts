@@ -56,16 +56,7 @@ Patna के AI फाइनेंस क्षेत्र में यह व
     ogDescription: 'Patna में AI फाइनेंस के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'AI फाइनेंस में Patna में नया विकास 2025',
-    twitterDescription: 'Patna में AI फाइनेंस के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "AI फाइनेंस में Patna में नया विकास 2025",
-      "description": "Patna में AI फाइनेंस के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/799-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Patna में AI फाइनेंस के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

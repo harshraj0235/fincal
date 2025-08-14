@@ -24,16 +24,7 @@ export const blog752: BlogPost = {
     ogDescription: 'Kalyan-Dombivali में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'क्रिप्टोकरेंसी में Kalyan-Dombivali में नया विकास 2025',
-    twitterDescription: 'Kalyan-Dombivali में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "क्रिप्टोकरेंसी में Kalyan-Dombivali में नया विकास 2025",
-      "description": "Kalyan-Dombivali में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/752-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Kalyan-Dombivali में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

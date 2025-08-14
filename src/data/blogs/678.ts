@@ -61,14 +61,7 @@ export const blog678: BlogPost = {
   ],
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 6,
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
-    headline: 'Bengaluru AI Hiring Trends 2025',
-    image: ['https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg'],
-    datePublished: new Date().toISOString(),
-    dateModified: new Date().toISOString(),
+  readingTime: 6
     author: { '@type': 'Person', name: 'Harsh Raj', url: '/author/harsh-raj' },
     publisher: { '@type': 'Organization', name: 'MoneyCal India' }
   },

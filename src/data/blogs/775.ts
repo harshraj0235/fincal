@@ -24,16 +24,7 @@ export const blog775: BlogPost = {
     ogDescription: 'Varanasi में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'वित्तीय प्रौद्योगिकी में Varanasi में नया विकास 2025',
-    twitterDescription: 'Varanasi में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "वित्तीय प्रौद्योगिकी में Varanasi में नया विकास 2025",
-      "description": "Varanasi में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/775-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Varanasi में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

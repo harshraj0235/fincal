@@ -24,16 +24,7 @@ export const blog770: BlogPost = {
     ogDescription: 'Nagpur में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'स्टार्टअप इकोसिस्टम में Nagpur में नया विकास 2025',
-    twitterDescription: 'Nagpur में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "स्टार्टअप इकोसिस्टम में Nagpur में नया विकास 2025",
-      "description": "Nagpur में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/770-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Nagpur में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

@@ -24,16 +24,7 @@ export const blog751: BlogPost = {
     ogDescription: 'Agra में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'स्टार्टअप इकोसिस्टम में Agra में नया विकास 2025',
-    twitterDescription: 'Agra में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "स्टार्टअप इकोसिस्टम में Agra में नया विकास 2025",
-      "description": "Agra में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/751-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Agra में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

@@ -36,12 +36,7 @@ export const blog661: BlogPost = {
   ],
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 3,
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
-    headline: 'Bengaluru UPI Developers: 2025 Roadmap',
-    image: ['https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg']
+  readingTime: 3
   },
   openGraph: {
     title: 'UPI 2025: Reliability, Risk, and Scale',

@@ -24,16 +24,7 @@ export const blog738: BlogPost = {
     ogDescription: 'Ludhiana में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'डिजिटल बैंकिंग में Ludhiana में नया विकास 2025',
-    twitterDescription: 'Ludhiana में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "डिजिटल बैंकिंग में Ludhiana में नया विकास 2025",
-      "description": "Ludhiana में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/738-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Ludhiana में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

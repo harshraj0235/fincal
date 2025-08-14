@@ -24,16 +24,7 @@ export const blog779: BlogPost = {
     ogDescription: 'Surat में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'रियल एस्टेट निवेश में Surat में नया विकास 2025',
-    twitterDescription: 'Surat में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "रियल एस्टेट निवेश में Surat में नया विकास 2025",
-      "description": "Surat में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/779-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Surat में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

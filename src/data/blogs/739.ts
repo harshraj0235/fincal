@@ -24,16 +24,7 @@ export const blog739: BlogPost = {
     ogDescription: 'Chennai में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'रियल एस्टेट निवेश में Chennai में नया विकास 2025',
-    twitterDescription: 'Chennai में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "रियल एस्टेट निवेश में Chennai में नया विकास 2025",
-      "description": "Chennai में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/739-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Chennai में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

@@ -89,20 +89,7 @@ export const blog653: BlogPost = {
   videoUrl: '',
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 8,
-  schema: {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": 'How ESG Factors Influence Indian Startup Valuations in 2025',
-    "image": [
-      'https://ideogram.ai/assets/image/lossless/response/-MdkOW22Tvqe6aPFhGsAIQ'
-    ],
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": 'Harsh Raj',
-      "url": '/author/harsh-raj'
+  readingTime: 8
     },
     "publisher": {
       "@type": "Organization",

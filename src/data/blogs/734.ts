@@ -24,16 +24,7 @@ export const blog734: BlogPost = {
     ogDescription: 'Pimpri-Chinchwad में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'रियल एस्टेट निवेश में Pimpri-Chinchwad में नया विकास 2025',
-    twitterDescription: 'Pimpri-Chinchwad में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "रियल एस्टेट निवेश में Pimpri-Chinchwad में नया विकास 2025",
-      "description": "Pimpri-Chinchwad में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/734-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Pimpri-Chinchwad में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

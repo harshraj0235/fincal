@@ -24,16 +24,7 @@ export const blog740: BlogPost = {
     ogDescription: 'Thane में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'वित्तीय प्रौद्योगिकी में Thane में नया विकास 2025',
-    twitterDescription: 'Thane में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "वित्तीय प्रौद्योगिकी में Thane में नया विकास 2025",
-      "description": "Thane में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/740-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Thane में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

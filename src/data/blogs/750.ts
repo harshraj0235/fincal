@@ -24,16 +24,7 @@ export const blog750: BlogPost = {
     ogDescription: 'Vasai-Virar में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'रियल एस्टेट निवेश में Vasai-Virar में नया विकास 2025',
-    twitterDescription: 'Vasai-Virar में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "रियल एस्टेट निवेश में Vasai-Virar में नया विकास 2025",
-      "description": "Vasai-Virar में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/750-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Vasai-Virar में रियल एस्टेट निवेश के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

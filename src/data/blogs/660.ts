@@ -32,14 +32,7 @@ export const blog660: BlogPost = {
   ],
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 3,
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
-    headline: 'Noida IT Parks Offer Rent Waivers for AI Startups (2025)',
-    image: ['https://images.pexels.com/photos/7876708/pexels-photo-7876708.jpeg'],
-    datePublished: new Date().toISOString(),
-    dateModified: new Date().toISOString(),
+  readingTime: 3
     author: { '@type': 'Person', name: 'Harsh Raj', url: '/author/harsh-raj' },
     publisher: { '@type': 'Organization', name: 'MoneyCal India' }
   },

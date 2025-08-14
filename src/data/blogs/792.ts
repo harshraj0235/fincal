@@ -56,16 +56,7 @@ Kolkata के सस्टेनेबल इन्वेस्टमेंट 
     ogDescription: 'Kolkata में सस्टेनेबल इन्वेस्टमेंट के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'सस्टेनेबल इन्वेस्टमेंट में Kolkata में नया विकास 2025',
-    twitterDescription: 'Kolkata में सस्टेनेबल इन्वेस्टमेंट के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "सस्टेनेबल इन्वेस्टमेंट में Kolkata में नया विकास 2025",
-      "description": "Kolkata में सस्टेनेबल इन्वेस्टमेंट के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/792-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Kolkata में सस्टेनेबल इन्वेस्टमेंट के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

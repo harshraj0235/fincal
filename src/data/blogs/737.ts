@@ -24,16 +24,7 @@ export const blog737: BlogPost = {
     ogDescription: 'Jaipur में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'स्टार्टअप इकोसिस्टम में Jaipur में नया विकास 2025',
-    twitterDescription: 'Jaipur में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "स्टार्टअप इकोसिस्टम में Jaipur में नया विकास 2025",
-      "description": "Jaipur में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/737-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Jaipur में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

@@ -102,20 +102,7 @@ export const blog655: BlogPost = {
   videoUrl: '',
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 8,
-  schema: {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": 'Bhool Gaye ESG Rules? Aapka Indian Startup Investment Risk Mein Hai!',
-    "image": [
-      'https://cdn.leonardo.ai/users/264400f1-bbb5-4960-8d01-e7b693bb8b77/generations/17298564-2bd5-4be6-9868-fd18a815d61f/segments/3:4:1/Flux_Dev_A_vintage_worn_browncolored_wooden_signboard_with_pee_2.jpg'
-    ],
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": 'Harsh Raj',
-      "url": '/author/harsh-raj'
+  readingTime: 8
     },
     "publisher": {
       "@type": "Organization",

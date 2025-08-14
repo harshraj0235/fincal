@@ -98,20 +98,7 @@ export const blog652: BlogPost = {
   videoUrl: 'https://www.youtube.com/embed/digital-rupee-india-2025',
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 7,
-  schema: {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": 'Digital Rupee (CBDC) in India 2025: Complete Guide to Central Bank Digital Currency',
-    "image": [
-      'https://ideogram.ai/assets/progressive-image/balanced/response/-HHmw8q6Q2y5Gbx4126xMg'
-    ],
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": 'Harsh Raj',
-      "url": '/author/harsh-raj'
+  readingTime: 7
     },
     "publisher": {
       "@type": "Organization",

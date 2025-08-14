@@ -24,16 +24,7 @@ export const blog736: BlogPost = {
     ogDescription: 'Vadodara में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'क्रिप्टोकरेंसी में Vadodara में नया विकास 2025',
-    twitterDescription: 'Vadodara में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "क्रिप्टोकरेंसी में Vadodara में नया विकास 2025",
-      "description": "Vadodara में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/736-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Vadodara में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

@@ -24,16 +24,7 @@ export const blog733: BlogPost = {
     ogDescription: 'Visakhapatnam में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'डिजिटल बैंकिंग में Visakhapatnam में नया विकास 2025',
-    twitterDescription: 'Visakhapatnam में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "डिजिटल बैंकिंग में Visakhapatnam में नया विकास 2025",
-      "description": "Visakhapatnam में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/733-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Visakhapatnam में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

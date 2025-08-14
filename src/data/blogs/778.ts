@@ -24,16 +24,7 @@ export const blog778: BlogPost = {
     ogDescription: 'Patna में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'डिजिटल बैंकिंग में Patna में नया विकास 2025',
-    twitterDescription: 'Patna में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "डिजिटल बैंकिंग में Patna में नया विकास 2025",
-      "description": "Patna में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/778-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Patna में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

@@ -94,20 +94,7 @@ export const blog654: BlogPost = {
   videoUrl: '',
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 8,
-  schema: {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": 'Yeh ESG Secret Aapke Indian Startup Investment Ko 10X Kar Sakta Hai!',
-    "image": [
-      'https://image.lexica.art/full_webp/00f4d873-a43c-4cda-b0b7-9f92c90c1496'
-    ],
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": 'Harsh Raj',
-      "url": '/author/harsh-raj'
+  readingTime: 8
     },
     "publisher": {
       "@type": "Organization",

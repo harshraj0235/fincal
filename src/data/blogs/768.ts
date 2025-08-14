@@ -24,16 +24,7 @@ export const blog768: BlogPost = {
     ogDescription: 'Thane में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'डिजिटल बैंकिंग में Thane में नया विकास 2025',
-    twitterDescription: 'Thane में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "डिजिटल बैंकिंग में Thane में नया विकास 2025",
-      "description": "Thane में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/768-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Thane में डिजिटल बैंकिंग के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

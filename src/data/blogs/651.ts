@@ -75,20 +75,7 @@ const blog651 = {
   videoUrl: 'https://www.youtube.com/embed/green-hydrogen-india-2025',
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 8,
-  schema: {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": 'Indian Green Hydrogen Startups: Your Guide to Investment Opportunities in 2025',
-    "image": [
-      'https://ideogram.ai/assets/progressive-image/balanced/response/nzDK_dc9QKqFmjpBtNzO2Q'
-    ],
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": 'Harsh Raj',
-      "url": '/author/harsh-raj'
+  readingTime: 8
     },
     "publisher": {
       "@type": "Organization",

@@ -24,16 +24,7 @@ export const blog744: BlogPost = {
     ogDescription: 'Thane में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'स्टार्टअप इकोसिस्टम में Thane में नया विकास 2025',
-    twitterDescription: 'Thane में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "स्टार्टअप इकोसिस्टम में Thane में नया विकास 2025",
-      "description": "Thane में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/744-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Thane में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

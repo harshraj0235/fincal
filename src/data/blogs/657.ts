@@ -39,14 +39,7 @@ export const blog657: BlogPost = {
   ],
   publishedDate: new Date().toISOString(),
   lastModified: new Date().toISOString(),
-  readingTime: 4,
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'NewsArticle',
-    headline: 'Noida Startup Fund Boosts AI and Fintech Hubs in 2025',
-    image: ['https://images.pexels.com/photos/7063778/pexels-photo-7063778.jpeg'],
-    datePublished: new Date().toISOString(),
-    dateModified: new Date().toISOString(),
+  readingTime: 4
     author: { '@type': 'Person', name: 'Harsh Raj', url: '/author/harsh-raj' },
     publisher: { '@type': 'Organization', name: 'MoneyCal India' }
   },

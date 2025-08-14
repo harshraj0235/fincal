@@ -24,16 +24,7 @@ export const blog747: BlogPost = {
     ogDescription: 'Pimpri-Chinchwad में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'क्रिप्टोकरेंसी में Pimpri-Chinchwad में नया विकास 2025',
-    twitterDescription: 'Pimpri-Chinchwad में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "क्रिप्टोकरेंसी में Pimpri-Chinchwad में नया विकास 2025",
-      "description": "Pimpri-Chinchwad में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/747-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Pimpri-Chinchwad में क्रिप्टोकरेंसी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

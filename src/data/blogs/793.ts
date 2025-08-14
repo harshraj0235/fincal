@@ -56,16 +56,7 @@ Kalyan-Dombivali के डिजिटल वॉलेट क्षेत्र
     ogDescription: 'Kalyan-Dombivali में डिजिटल वॉलेट के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'डिजिटल वॉलेट में Kalyan-Dombivali में नया विकास 2025',
-    twitterDescription: 'Kalyan-Dombivali में डिजिटल वॉलेट के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "डिजिटल वॉलेट में Kalyan-Dombivali में नया विकास 2025",
-      "description": "Kalyan-Dombivali में डिजिटल वॉलेट के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/793-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Kalyan-Dombivali में डिजिटल वॉलेट के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

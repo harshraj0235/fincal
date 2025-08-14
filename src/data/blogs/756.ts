@@ -24,16 +24,7 @@ export const blog756: BlogPost = {
     ogDescription: 'Ludhiana में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'स्टार्टअप इकोसिस्टम में Ludhiana में नया विकास 2025',
-    twitterDescription: 'Ludhiana में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "स्टार्टअप इकोसिस्टम में Ludhiana में नया विकास 2025",
-      "description": "Ludhiana में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/756-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Ludhiana में स्टार्टअप इकोसिस्टम के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

@@ -24,16 +24,7 @@ export const blog759: BlogPost = {
     ogDescription: 'Mumbai में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'वित्तीय प्रौद्योगिकी में Mumbai में नया विकास 2025',
-    twitterDescription: 'Mumbai में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "वित्तीय प्रौद्योगिकी में Mumbai में नया विकास 2025",
-      "description": "Mumbai में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/759-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Mumbai में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",

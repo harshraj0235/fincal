@@ -24,16 +24,7 @@ export const blog741: BlogPost = {
     ogDescription: 'Patna में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
     twitterCard: 'summary_large_image',
     twitterTitle: 'वित्तीय प्रौद्योगिकी में Patna में नया विकास 2025',
-    twitterDescription: 'Patna में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": "वित्तीय प्रौद्योगिकी में Patna में नया विकास 2025",
-      "description": "Patna में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।",
-      "image": "/images/blog/741-og.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "MoneyCal India"
+    twitterDescription: 'Patna में वित्तीय प्रौद्योगिकी के क्षेत्र में एक महत्वपूर्ण विकास देखने को मिला है।'
       },
       "publisher": {
         "@type": "Organization",
