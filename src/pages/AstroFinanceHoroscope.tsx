@@ -95,7 +95,7 @@ const AstroFinanceHoroscope: React.FC = () => {
       'Pisces': {
         investment: 'Intuitive, creative investment approach suits your compassionate nature. Consider impact investing.',
         timing: 'Best investment periods: February-March, August-September',
-        advice: 'Trust your intuition but ensure it's backed by solid research.'
+        advice: 'Trust your intuition but ensure its backed by solid research.'
       }
     };
 
