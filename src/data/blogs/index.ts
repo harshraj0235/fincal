@@ -345,12 +345,6 @@ import { testBlog } from './test-automation';
 
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
-  blog181,
-  blog182,
-  blog183,
-  blog184,
-  blog185,
-  blog186,
   blog651,
   blog652,
   blog653,

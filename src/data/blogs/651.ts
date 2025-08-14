@@ -12,7 +12,7 @@ export const blog651: BlogPost = {
   metaDescription: 'Complete guide to indian green hydrogen startups investment guide 2025. Learn about key concepts, strategies, and best practices for indian green hydrogen startups investment guide  in India.',
   excerpt: 'Discover comprehensive insights into indian green hydrogen startups investment guide 2025. This guide covers everything you need to know about indian green hydrogen startups investment guide  in the Indian context.',
   categories: ['Finance', 'Investment', 'India', 'Guide'],
-  keywords: ['indian green hydrogen startups investment guide ', 'finance guide', 'investment India', 'financial planning'],
+  keywords: ['indian green hydrogen startups investment guide, finance guide', 'investment India', 'financial planning'],
   date: '2025-07-12',
   coverImage: 'https://images.pexels.com/photos/534216/pexels-photo-534216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   content: [
@@ -75,7 +75,7 @@ export const blog651: BlogPost = {
     },
     "mainEntityOfPage": 'https://moneycal.in/blog/indian-green-hydrogen-startups-investment-guide-2025',
     "articleSection": 'Finance, Investment, India, Guide',
-    "keywords": 'indian green hydrogen startups investment guide ', 'finance guide', 'investment India', 'financial planning',
+    "keywords": "indian green hydrogen startups investment guide , finance guide, investment India, financial planning",
     "wordCount": 1800,
     "timeRequired": "PT12M",
     "inLanguage": "en-IN",
