@@ -52,7 +52,7 @@ jobs:
     - name: 🤖 Run Cloud-Based Auto Blog Generator
       run: |
         echo "🔄 Starting automated blog generation..."
-        node scripts/cloud-blog-generator.js
+        node scripts/cloud-blog-generator.cjs
 
     - name: 🔍 Verify Generated Files
       run: |
@@ -87,49 +87,4 @@ jobs:
         echo "📊 Generated: 20 new blog posts"
         echo "🔗 Repository: ${{ github.repository }}"
 
-    - name: 📧 Send Success Email (Optional)
-      if: success()
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 587
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "✅ Auto Blog Generation Completed - ${{ github.repository }}"
-        to: ${{ secrets.NOTIFICATION_EMAIL }}
-        from: "Auto Blog Generator"
-        body: |
-          🎉 Automated blog generation completed successfully!
-          
-          📅 Date: $(date)
-          🌍 Timezone: IST
-          📊 Generated: 20 new blog posts
-          🔗 Repository: ${{ github.repository }}
-          
-          The system will run again tomorrow at 6:00 AM IST.
-          
-          Best regards,
-          Auto Blog Generator Bot
 
-    - name: ❌ Send Failure Email (Optional)
-      if: failure()
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 587
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "❌ Auto Blog Generation Failed - ${{ github.repository }}"
-        to: ${{ secrets.NOTIFICATION_EMAIL }}
-        from: "Auto Blog Generator"
-        body: |
-          ❌ Automated blog generation failed!
-          
-          📅 Date: $(date)
-          🌍 Timezone: IST
-          🔗 Repository: ${{ github.repository }}
-          
-          Please check the GitHub Actions logs for details.
-          
-          Best regards,
-          Auto Blog Generator Bot
