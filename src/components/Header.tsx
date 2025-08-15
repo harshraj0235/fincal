@@ -32,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const navItems = [
     { name: 'Calculators', href: '/#calculators', icon: Calculator },
     { name: 'Blog', href: '/blog', icon: FileText },
-    { name: 'Tools', href: '/tools', icon: TrendingUp },
+    { name: 'Tools', href: '/exceltool', icon: TrendingUp },
     { name: 'Schemes', href: '/government-schemes', icon: Settings },
     { name: 'Astro', href: '/astro-finance', icon: Sparkles },
   ];
