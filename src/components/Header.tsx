@@ -1,271 +1,236 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Calculator, Search, ChevronRight, FileText, Shield, PhoneCall } from 'lucide-react';
-import { MobileMenu } from './MobileMenu';
-import { SearchBar } from './SearchBar';
-import { calculatorCategories } from '../data/calculatorData';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Menu, 
+  X, 
+  Search, 
+  Calculator, 
+  TrendingUp, 
+  FileText, 
+  Settings,
+  User,
+  Bell,
+  ChevronDown
+} from 'lucide-react';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onMenuClick?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
-  const categoriesRef = useRef<HTMLDivElement>(null);
-  const justOpenedMenu = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Only close mobile menu on actual route change, not on every location change
-  useEffect(() => {
-    if (justOpenedMenu.current) {
-      justOpenedMenu.current = false;
-      return;
-    }
-    setMobileMenuOpen(false);
-    setSearchOpen(false);
-    setCategoriesOpen(false);
-  }, [location.pathname]);
-  
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (categoriesRef.current && !categoriesRef.current.contains(event.target as Node)) {
-        setCategoriesOpen(false);
-      }
-    };
-    
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [mobileMenuOpen]);
-  
-  const handleCalculatorClick = (calculatorId: string) => {
-    navigate(`/calculators/${calculatorId}`);
-    setCategoriesOpen(false);
-  };
-
-  // Fix: When opening the mobile menu, set a flag to prevent immediate closing
-  const handleOpenMobileMenu = () => {
-    justOpenedMenu.current = true;
-    setMobileMenuOpen(true);
-  };
+  const navItems = [
+    { name: 'Calculators', href: '/#calculators', icon: Calculator },
+    { name: 'Blog', href: '/blog', icon: FileText },
+    { name: 'Tools', href: '/tools', icon: TrendingUp },
+    { name: 'Schemes', href: '/government-schemes', icon: Settings },
+  ];
 
   return (
-    <header 
-      className={`sticky top-0 z-[999] pointer-events-auto transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-2' : 'bg-white py-3 md:py-4'
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-white/20' 
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo - Improved for mobile */}
-          <Link to="/" className="flex items-center space-x-2 min-w-0 flex-shrink-0">
-            <Calculator className="h-7 w-7 md:h-8 md:w-8 text-primary-600 flex-shrink-0" />
-            <span className="text-lg md:text-xl font-bold text-neutral-900 truncate">MoneyCal</span>
-          </Link>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <Link to="/" className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium">
-              Home
-            </Link>
-            <div className="relative" ref={categoriesRef}>
-              <button 
-                onClick={() => setCategoriesOpen(!categoriesOpen)}
-                className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Categories
-                <svg 
-                  className={`ml-1 h-4 w-4 transition-transform ${categoriesOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              
-              {categoriesOpen && (
-                <div className="absolute left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-10 py-2">
-                  {calculatorCategories.map(category => (
-                    <div key={category.id} className="relative group">
-                      <Link
-                        to={`/#${category.id}`}
-                        className="block px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 group transition-colors"
-                        onClick={() => setCategoriesOpen(false)}
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="font-medium">{category.name}</span>
-                          <ChevronRight className="h-4 w-4 text-neutral-400 group-hover:text-primary-600 transition-colors" />
-                        </div>
-                      </Link>
-                      <div className="absolute left-full top-0 ml-1 w-72 bg-white rounded-xl shadow-xl border border-gray-100 hidden group-hover:block">
-                        <div className="py-2">
-                          {category.calculators.slice(0, 8).map(calculator => (
-                            <button
-                              key={calculator.id}
-                              onClick={() => handleCalculatorClick(calculator.id)}
-                              className="block w-full text-left px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 transition-colors"
-                            >
-                              {calculator.name}
-                            </button>
-                          ))}
-                          {category.calculators.length > 8 && (
-                            <Link
-                              to={`/#${category.id}`}
-                              className="block px-4 py-3 text-primary-600 hover:bg-neutral-50 font-medium transition-colors"
-                              onClick={() => setCategoriesOpen(false)}
-                            >
-                              View all {category.calculators.length} calculators
-                            </Link>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  <Link
-                    to="/#categories"
-                    className="block px-4 py-3 text-primary-600 hover:bg-neutral-50 font-medium border-t border-neutral-100 mt-1 transition-colors"
-                    onClick={() => setCategoriesOpen(false)}
-                  >
-                    View all calculators
-                  </Link>
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center"
+          >
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="relative">
+                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <Calculator className="w-6 h-6 text-white" />
                 </div>
-              )}
-            </div>
-            <button 
-              onClick={() => setSearchOpen(true)}
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <Search className="h-4 w-4" />
-              <span>Search</span>
-            </button>
-            <Link 
-              to="/blog" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <FileText className="h-4 w-4 mr-1" />
-              Blog
+                <motion.div
+                  animate={{ 
+                    rotate: [0, 360],
+                    scale: [1, 1.2, 1]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"
+                />
+              </div>
+              <div className="hidden sm:block">
+                <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  MoneyCal.in
+                </h1>
+                <p className="text-xs text-gray-600">Smart Financial Tools</p>
+              </div>
             </Link>
-            <Link 
-              to="/crypto" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <Shield className="h-4 w-4 mr-1 text-yellow-500" />
-              Crypto
-            </Link>
-            <Link 
-              to="/government-schemes" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <Shield className="h-4 w-4 mr-1" />
-              <span className="hidden xl:inline">Government Schemes</span>
-              <span className="xl:hidden">Schemes</span>
-            </Link>
-            <Link 
-              to="/exceltool" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <FileText className="h-4 w-4 mr-1" />
-              <span className="hidden xl:inline">Excel Tools</span>
-              <span className="xl:hidden">Excel</span>
-            </Link>
-            <Link 
-              to="/missed-call-banking-directory" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors flex items-center px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <PhoneCall className="h-4 w-4 mr-1" />
-              <span className="hidden xl:inline">Missed Call Banking</span>
-              <span className="xl:hidden">Banking</span>
-            </Link>
-            <Link 
-              to="/bank-tools" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Bank Tools
-            </Link>
-            <Link 
-              to="/contact-us" 
-              className="text-neutral-700 hover:text-primary-600 transition-colors px-3 py-2 rounded-md text-sm font-medium"
-            >
-              Contact
-            </Link>
-            <Link 
-              to="/calculators/income-tax-calculator" 
-              className="btn btn-primary text-sm px-4 py-2"
-            >
-              Tax Calculator
-            </Link>
-            <li>
-              <a href="/calculators/cheque-bounce-charges-calculator" className="hover:text-orange-600 font-semibold">Cheque Bounce Charges</a>
-            </li>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.href || 
+                             (item.href === '/#calculators' && location.pathname.includes('/calculators'));
+              
+              return (
+                <motion.div
+                  key={item.name}
+                  whileHover={{ y: -2 }}
+                  className="relative"
+                >
+                  <Link
+                    to={item.href}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span className="font-medium">{item.name}</span>
+                  </Link>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
+                    />
+                  )}
+                </motion.div>
+              );
+            })}
           </nav>
-          
-          {/* Mobile Navigation */}
-          <div className="flex lg:hidden items-center space-x-2">
-            <button 
-              onClick={() => setSearchOpen(true)}
-              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation z-[1000] pointer-events-auto"
-              aria-label="Search"
+
+          {/* Right Side Actions */}
+          <div className="flex items-center space-x-4">
+            {/* Search Button */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="p-2 rounded-xl bg-gray-100 hover:bg-blue-100 transition-colors"
             >
-              <Search className="h-5 w-5" />
-            </button>
-            <button 
-              onClick={handleOpenMobileMenu}
-              className="text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors touch-manipulation z-[1000] pointer-events-auto"
-              aria-label="Open menu"
+              <Search className="w-5 h-5 text-gray-600" />
+            </motion.button>
+
+            {/* Notifications */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="relative p-2 rounded-xl bg-gray-100 hover:bg-blue-100 transition-colors"
             >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Search Modal */}
-      {searchOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center pt-16 sm:pt-20">
-          <div className="bg-white rounded-xl w-full max-w-2xl mx-4 p-4 shadow-2xl">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold text-neutral-900">Search Calculators</h2>
-              <button 
-                onClick={() => setSearchOpen(false)}
-                className="text-neutral-500 hover:text-neutral-700 p-2 rounded-full hover:bg-neutral-100 transition-colors"
-                aria-label="Close search"
+              <Bell className="w-5 h-5 text-gray-600" />
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"
+              />
+            </motion.button>
+
+            {/* User Menu */}
+            <div className="relative">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center space-x-2 p-2 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 transition-all"
               >
-                <X className="h-5 w-5" />
-              </button>
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                  <User className="w-4 h-4 text-white" />
+                </div>
+                <ChevronDown className={`w-4 h-4 text-gray-600 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+              </motion.button>
+
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-2"
+                  >
+                    <Link to="/profile" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+                      Profile
+                    </Link>
+                    <Link to="/settings" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+                      Settings
+                    </Link>
+                    <hr className="my-2" />
+                    <button className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600">
+                      Sign Out
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-            <SearchBar onClose={() => setSearchOpen(false)} />
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={onMenuClick}
+              className="lg:hidden p-2 rounded-xl bg-gray-100 hover:bg-blue-100 transition-colors"
+            >
+              <Menu className="w-6 h-6 text-gray-600" />
+            </motion.button>
           </div>
         </div>
-      )}
-      
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
-      )}
-    </header>
+
+        {/* Search Bar */}
+        <AnimatePresence>
+          {isSearchOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="py-4"
+            >
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search calculators, tools, or articles..."
+                  className="w-full px-4 py-3 pl-12 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                  autoFocus
+                />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <button
+                  onClick={() => setIsSearchOpen(false)}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 p-1 rounded-lg hover:bg-gray-100"
+                >
+                  <X className="w-4 h-4 text-gray-400" />
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Progress Bar */}
+      <motion.div
+        className="h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+        style={{ transformOrigin: "left" }}
+      />
+    </motion.header>
   );
 };

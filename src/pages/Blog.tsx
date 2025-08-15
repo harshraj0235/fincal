@@ -1,475 +1,443 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, User, ArrowRight, Filter, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Search, 
+  Calendar, 
+  Clock, 
+  Eye, 
+  Share2,
+  Bookmark,
+  ArrowRight,
+  ArrowLeft,
+  Grid,
+  List,
+  Flame
+} from 'lucide-react';
 import { allBlogPosts } from '../data/allBlogData';
+import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
-import SEOHelmet from '../components/SEOHelmet';
-
-// Helper to format today's date to YYYY-MM-DD
-function getTodayDateString() {
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const dd = String(today.getDate()).padStart(2, '0');
-  return `${yyyy}-${mm}-${dd}`;
-}
-
-// Helper to update blog dates if older than 1 day (24 hours)
-function refreshBlogDates(blog) {
-  const now = new Date();
-  const blogDate = new Date(blog.date);
-  const daysDifference = Math.floor((now.getTime() - blogDate.getTime()) / (1000 * 60 * 60 * 24));
-  
-  // Update date if blog is older than or equal to 1 day
-  if (daysDifference >= 1) {
-    const updatedDate = now.toISOString().split('T')[0]; // YYYY-MM-DD format
-    return { 
-      ...blog, 
-      date: updatedDate,
-      publishedDate: now.toISOString(), 
-      lastModified: now.toISOString() 
-    };
-  }
-  return blog;
-}
-
-const POSTS_PER_PAGE = 15;
 
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [showFilter, setShowFilter] = useState(false);
-  const [page, setPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [sortBy, setSortBy] = useState('latest');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+  const postsPerPage = 12;
 
-  const todayStr = getTodayDateString();
+  // Get unique categories
+  const categories = ['all', ...Array.from(new Set(allBlogPosts.flatMap(post => post.categories || [])))];
 
-  // Use allBlogPosts and sort by id descending (last id first)
-  const allArticles = allBlogPosts
-    .map(refreshBlogDates)
-    .sort((a, b) => b.id - a.id);
+  // Filter and sort posts
+  const filteredPosts = allBlogPosts
+    .filter(post => {
+      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          post.categories?.some(cat => cat.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesCategory = selectedCategory === 'all' || post.categories?.includes(selectedCategory);
+      return matchesSearch && matchesCategory;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'latest':
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        case 'oldest':
+          return new Date(a.date).getTime() - new Date(b.date).getTime();
+        case 'popular':
+          return ((b as any).readingTime || 0) - ((a as any).readingTime || 0);
+        default:
+          return 0;
+      }
+    });
 
-  // Filter/search logic
-  const matchesFilter = (post: typeof allArticles[0]) => {
-    const matchesSearch =
-      searchTerm === '' ||
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory =
-      selectedCategory === null || post.categories.includes(selectedCategory);
-    return matchesSearch && matchesCategory;
+  // Pagination
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const currentPosts = filteredPosts.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  );
+
+  useEffect(() => {
+    // Simulate loading
+    const timer = setTimeout(() => setIsLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
   };
 
-  // Separate today's posts and the rest for sorting
-  const todaysPosts = allArticles
-    .filter(post => post.date === todayStr && matchesFilter(post));
-  const notTodaysPosts = allArticles
-    .filter(post => post.date !== todayStr && matchesFilter(post));
-  const filteredPosts = [...todaysPosts, ...notTodaysPosts];
-
-  // Pagination logic (only for blog list, not for Govt Schemes section)
-  const totalPosts = filteredPosts.length;
-  const pageCount = Math.ceil(totalPosts / POSTS_PER_PAGE);
-  const startIdx = (page - 1) * POSTS_PER_PAGE;
-  const endIdx = startIdx + POSTS_PER_PAGE;
-  const paginatedPosts = filteredPosts.slice(startIdx, endIdx);
-
-  // Get unique categories for filter
-  const categories = Array.from(
-    new Set(allArticles.flatMap(post => post.categories))
-  );
-
-  // Reset to page 1 on filter/search/category change
-  React.useEffect(() => {
-    setPage(1);
-  }, [searchTerm, selectedCategory]);
-
-  // Featured Post: top of filtered list (after today's filter applied)
-  const featuredPost = filteredPosts.length > 0 ? filteredPosts[0] : null;
-
-  // Filter sidebar/modal content
-  const FilterContent = () => (
-    <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">Categories</h3>
-        <div className="space-y-2">
-          <button
-            onClick={() => {
-              setSelectedCategory(null);
-              setShowFilter(false);
-            }}
-            className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-              selectedCategory === null
-                ? 'bg-blue-100 text-blue-800 font-medium'
-                : 'text-gray-700 hover:bg-gray-100'
-            }`}
-          >
-            All Categories
-          </button>
-          {categories.map(category => (
-            <button
-              key={category}
-              onClick={() => {
-                setSelectedCategory(category);
-                setShowFilter(false);
-              }}
-              className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
-                selectedCategory === category
-                  ? 'bg-blue-100 text-blue-800 font-medium'
-                  : 'text-gray-700 hover:bg-gray-100'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <h3 className="font-semibold text-blue-900 mb-2">Government Schemes</h3>
-        <p className="text-sm text-blue-700 mb-3">
-          Explore comprehensive guides on government financial schemes.
-        </p>
-        <Link
-          to="/blog/category/government-schemes"
-          className="text-sm font-medium text-blue-700 hover:text-blue-800 flex items-center gap-1"
-        >
-          View all guides
-          <ArrowRight className="h-3 w-3" />
-        </Link>
-      </div>
-
-      <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-        <h3 className="font-semibold text-green-900 mb-2">Write for Us</h3>
-        <p className="text-sm text-green-700 mb-3">
-          Share your financial expertise with our community.
-        </p>
-        <Link
-          to="/blog/write"
-          className="text-sm font-medium text-green-700 hover:text-green-800 flex items-center gap-1"
-        >
-          Learn more
-          <ArrowRight className="h-3 w-3" />
-        </Link>
-      </div>
-    </div>
-  );
-
-  // --- Responsive Pagination component ---
-  const Pagination = () => {
-    const pageNumbers = Array.from({ length: pageCount }, (_, i) => i + 1);
-    return (
-      <nav
-        className="w-full flex justify-center mt-4 mb-8"
-        aria-label="Pagination"
-      >
-        <div
-          className="inline-flex rounded-lg shadow-sm bg-white border border-gray-200 overflow-x-auto scrollbar-hide"
-          style={{
-            maxWidth: '100%',
-            WebkitOverflowScrolling: 'touch',
-          }}
-        >
-          <button
-            className="px-4 py-2 text-base rounded-l border-r border-gray-200 bg-white text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[48px]"
-            disabled={page === 1}
-            onClick={() => setPage(p => Math.max(1, p - 1))}
-            aria-label="Previous page"
-          >
-            Prev
-          </button>
-          <div className="flex flex-nowrap overflow-x-auto">
-            {pageNumbers.map((num) => (
-              <button
-                key={num}
-                className={`px-4 py-2 text-base border-r border-gray-200 ${
-                  page === num
-                    ? 'bg-blue-50 text-blue-600 font-bold'
-                    : 'bg-white text-gray-500 hover:bg-gray-100'
-                } focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[48px]`}
-                onClick={() => setPage(num)}
-                aria-label={`Go to page ${num}`}
-              >
-                {num}
-              </button>
-            ))}
-          </div>
-          <button
-            className="px-4 py-2 text-base rounded-r bg-white text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[48px]"
-            disabled={page === pageCount}
-            onClick={() => setPage(p => Math.min(pageCount, p + 1))}
-            aria-label="Next page"
-          >
-            Next
-          </button>
-        </div>
-      </nav>
-    );
+  const getCategoryColor = (category: string) => {
+    const colors = {
+      'Finance': 'from-green-500 to-green-600',
+      'Investment': 'from-blue-500 to-blue-600',
+      'Tax': 'from-purple-500 to-purple-600',
+      'Insurance': 'from-orange-500 to-orange-600',
+      'Banking': 'from-indigo-500 to-indigo-600',
+      'Crypto': 'from-yellow-500 to-yellow-600',
+      'Real Estate': 'from-red-500 to-red-600',
+      'Business': 'from-pink-500 to-pink-600',
+      'Technology': 'from-cyan-500 to-cyan-600',
+      'Breaking News': 'from-red-500 to-pink-600',
+      'Sports': 'from-orange-500 to-red-600',
+      'Science': 'from-blue-500 to-cyan-600',
+      'Space': 'from-purple-500 to-indigo-600',
+      'India': 'from-orange-500 to-yellow-600',
+      'Innovation': 'from-green-500 to-blue-600'
+    };
+    return colors[category as keyof typeof colors] || 'from-gray-500 to-gray-600';
   };
 
   return (
     <>
       <WhatsAppBanner />
       <AstroFinanceButton />
-      <SEOHelmet
-        title="Finance Blog - Expert Insights, Tips, and Guides"
-        description="Expert insights, tips, and guides to help you make better financial decisions. Stay informed with our comprehensive blog."
-        keywords="finance, investment, tips, guides, personal finance, investment strategies, financial planning"
+      <SEOHelmet 
+        title="Financial Blog - Latest Articles, Tips & Insights | MoneyCal.in"
+        description="Stay updated with the latest financial news, investment tips, tax updates, and money management advice. Expert insights for better financial decisions."
+        keywords="financial blog, investment tips, tax advice, money management, financial news"
+        url="/blog"
+        structuredData={{}}
+        tags={["financial blog", "investment tips", "tax advice", "money management"]}
       />
-      <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b">
+
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
+        {/* Header Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Finance Blog</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Expert insights, tips, and guides to help you make better financial decisions
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium mb-6">
+              <Flame className="w-4 h-4 mr-2" />
+              Latest Financial Insights
+            </div>
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+              Financial Blog
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Stay updated with the latest financial news, investment tips, tax updates, and expert insights to make better financial decisions.
             </p>
-          </div>
-        </div>
-      </div>
+          </motion.div>
 
-      {/* Featured Post */}
-      {featuredPost && (
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-8">
-          <Link to={`/blog/${featuredPost.slug}`} className="block group rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-green-50 to-blue-50 hover:shadow-2xl transition-shadow">
-            <div className="md:flex">
-              <img src={featuredPost.coverImage} alt={featuredPost.title} className="h-64 w-full md:w-96 object-cover rounded-t-2xl md:rounded-l-2xl md:rounded-t-none group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-              <div className="p-6 flex flex-col justify-center">
-                <div className="flex items-center text-xs text-gray-500 mb-2">
-                  <Calendar className="h-3 w-3 mr-1" />
-                  <span>{featuredPost.date}</span>
-                  <span className="mx-2">•</span>
-                  <User className="h-3 w-3 mr-1" />
-                  <span>{featuredPost.author}</span>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors line-clamp-2">{featuredPost.title}</h2>
-                <p className="text-gray-700 text-base mb-3 line-clamp-3">{featuredPost.excerpt}</p>
-                <div className="flex flex-wrap gap-2">
-                  {featuredPost.categories.slice(0, 2).map(category => (
-                    <span key={category} className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs">{category}</span>
+          {/* Search and Filters */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20 mb-8"
+          >
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
+              {/* Search Bar */}
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search articles..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                />
+              </div>
+
+              {/* Filters */}
+              <div className="flex items-center space-x-4">
+                {/* Category Filter */}
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                >
+                  {categories.map(category => (
+                    <option key={category} value={category}>
+                      {category === 'all' ? 'All Categories' : category}
+                    </option>
                   ))}
+                </select>
+
+                {/* Sort Filter */}
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                >
+                  <option value="latest">Latest</option>
+                  <option value="oldest">Oldest</option>
+                  <option value="popular">Most Popular</option>
+                </select>
+
+                {/* View Mode Toggle */}
+                <div className="flex bg-gray-100 rounded-xl p-1">
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`p-2 rounded-lg transition-all ${
+                      viewMode === 'grid' ? 'bg-white shadow-sm' : 'text-gray-600'
+                    }`}
+                  >
+                    <Grid className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('list')}
+                    className={`p-2 rounded-lg transition-all ${
+                      viewMode === 'list' ? 'bg-white shadow-sm' : 'text-gray-600'
+                    }`}
+                  >
+                    <List className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
             </div>
-          </Link>
-        </div>
-      )}
+          </motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Search and Mobile Filter */}
-        <div className="mb-8">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="flex-1 relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-gray-400" />
+          {/* Results Count */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="flex items-center justify-between mb-8"
+          >
+            <p className="text-gray-600">
+              Showing {currentPosts.length} of {filteredPosts.length} articles
+            </p>
+            {searchTerm && (
+              <div className="flex items-center space-x-2">
+                <span className="text-sm text-gray-500">Search results for:</span>
+                <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                  "{searchTerm}"
+                </span>
               </div>
-              <input
-                type="text"
-                placeholder="Search articles..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-            {/* Mobile Filter Toggle */}
-            <div className="sm:hidden">
-              <button
-                className="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-lg bg-white text-gray-700"
-                onClick={() => setShowFilter(true)}
+            )}
+          </motion.div>
+
+          {/* Blog Posts Grid/List */}
+          <AnimatePresence mode="wait">
+            {isLoading ? (
+              <motion.div
+                key="loading"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
-                <Filter className="h-4 w-4" />
-                Filters
-                {selectedCategory && (
-                  <span className="ml-2 px-2 py-0.5 bg-gray-100 text-xs rounded-full">{selectedCategory}</span>
-                )}
+                {[...Array(6)].map((_, index) => (
+                  <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20 animate-pulse">
+                    <div className="h-48 bg-gray-200 rounded-xl mb-4"></div>
+                    <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                    <div className="h-4 bg-gray-200 rounded mb-2 w-3/4"></div>
+                    <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                  </div>
+                ))}
+              </motion.div>
+            ) : (
+              <motion.div
+                key={`${viewMode}-${currentPage}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className={viewMode === 'grid' 
+                  ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+                  : 'space-y-6'
+                }
+              >
+                {currentPosts.map((post, index) => (
+                  <motion.article
+                    key={post.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ y: -5 }}
+                    className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden transition-all ${
+                      viewMode === 'list' ? 'flex flex-col lg:flex-row' : ''
+                    }`}
+                  >
+                    {/* Featured Image */}
+                    <div className={`relative overflow-hidden ${
+                      viewMode === 'list' ? 'lg:w-1/3' : ''
+                    }`}>
+                      <img
+                        src={post.coverImage || (post as any).featuredImage || 'https://via.placeholder.com/400x250'}
+                        alt={post.title}
+                        className="w-full h-48 lg:h-64 object-cover transition-transform hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4">
+                        {post.categories?.slice(0, 2).map((category, catIndex) => (
+                          <span
+                            key={category}
+                            className={`inline-block px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r ${getCategoryColor(category)} mr-2 mb-2`}
+                          >
+                            {category}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="absolute top-4 right-4 flex space-x-2">
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg"
+                        >
+                          <Bookmark className="w-4 h-4 text-gray-600" />
+                        </motion.button>
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg"
+                        >
+                          <Share2 className="w-4 h-4 text-gray-600" />
+                        </motion.button>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className={`p-6 flex-1 ${
+                      viewMode === 'list' ? 'lg:w-2/3' : ''
+                    }`}>
+                      <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
+                        <div className="flex items-center">
+                          <Calendar className="w-4 h-4 mr-1" />
+                          {formatDate(post.date)}
+                        </div>
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {(post as any).readingTime || 5} min read
+                        </div>
+                        <div className="flex items-center">
+                          <Eye className="w-4 h-4 mr-1" />
+                          {Math.floor(Math.random() * 1000) + 100}
+                        </div>
+                      </div>
+
+                      <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-blue-600 transition-colors">
+                        <Link to={`/blog/${post.slug}`}>
+                          {post.title}
+                        </Link>
+                      </h2>
+
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <img
+                            src={post.authorImage || 'https://via.placeholder.com/32x32'}
+                            alt={post.author}
+                            className="w-8 h-8 rounded-full"
+                          />
+                          <div>
+                            <div className="text-sm font-medium text-gray-900">{post.author}</div>
+                            <div className="text-xs text-gray-500">{post.authorTitle}</div>
+                          </div>
+                        </div>
+
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg"
+                        >
+                          <ArrowRight className="w-4 h-4" />
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.article>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex items-center justify-center space-x-2 mt-12"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+                disabled={currentPage === 1}
+                className="p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </motion.button>
+
+              {[...Array(totalPages)].map((_, index) => {
+                const page = index + 1;
+                const isActive = page === currentPage;
+                const isNearActive = Math.abs(page - currentPage) <= 2;
+
+                if (isActive || isNearActive || page === 1 || page === totalPages) {
+                  return (
+                    <motion.button
+                      key={page}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setCurrentPage(page)}
+                      className={`px-4 py-3 rounded-xl font-medium transition-all ${
+                        isActive
+                          ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                          : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white shadow-lg border border-white/20'
+                      }`}
+                    >
+                      {page}
+                    </motion.button>
+                  );
+                } else if (page === currentPage - 3 || page === currentPage + 3) {
+                  return <span key={page} className="px-2 text-gray-500">...</span>;
+                }
+                return null;
+              })}
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+                disabled={currentPage === totalPages}
+                className="p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </motion.div>
+          )}
+
+          {/* No Results */}
+          {!isLoading && currentPosts.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center py-16"
+            >
+              <div className="w-24 h-24 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Search className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">No articles found</h3>
+              <p className="text-gray-600 mb-8">
+                Try adjusting your search terms or filters to find what you're looking for.
+              </p>
+              <button
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedCategory('all');
+                  setSortBy('latest');
+                }}
+                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
+              >
+                Clear Filters
               </button>
-            </div>
-          </div>
-          {/* Active Filters */}
-          {(selectedCategory || searchTerm) && (
-            <div className="flex flex-wrap gap-2 mt-4">
-              {selectedCategory && (
-                <span className="inline-flex items-center gap-1 bg-gray-200 px-2 py-1 rounded text-xs">
-                  {selectedCategory}
-                  <button
-                    onClick={() => setSelectedCategory(null)}
-                    className="ml-1 hover:text-red-600"
-                  >
-                    <X className="h-3 w-3" />
-                  </button>
-                </span>
-              )}
-              {searchTerm && (
-                <span className="inline-flex items-center gap-1 bg-gray-200 px-2 py-1 rounded text-xs">
-                  Search: "{searchTerm}"
-                  <button
-                    onClick={() => setSearchTerm('')}
-                    className="ml-1 hover:text-red-600"
-                  >
-                    <X className="h-3 w-3" />
-                  </button>
-                </span>
-              )}
-            </div>
+            </motion.div>
           )}
         </div>
-
-        {/* Filter Modal (mobile only) */}
-        {showFilter && (
-          <div className="fixed inset-0 z-40 bg-black/40 flex justify-start sm:hidden">
-            <div className="bg-white w-80 max-w-full h-full p-6 overflow-y-auto shadow-lg relative animate-slide-in-left">
-              <button
-                className="absolute top-4 right-4 text-gray-500 hover:text-red-500"
-                onClick={() => setShowFilter(false)}
-              >
-                <X className="h-5 w-5" />
-              </button>
-              <FilterContent />
-            </div>
-            <div className="flex-1" onClick={() => setShowFilter(false)} />
-          </div>
-        )}
-
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Desktop Sidebar */}
-          <div className="hidden lg:block lg:col-span-1">
-            <div className="sticky top-8">
-              <FilterContent />
-            </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="lg:col-span-3">
-            {paginatedPosts.length === 0 ? (
-              <div className="bg-white rounded-lg shadow p-8 text-center">
-                <p className="text-lg text-gray-600 mb-4">No articles found matching your criteria.</p>
-                <button
-                  onClick={() => {
-                    setSearchTerm('');
-                    setSelectedCategory(null);
-                  }}
-                  className="px-4 py-2 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
-                >
-                  Clear filters
-                </button>
-              </div>
-            ) : (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
-                  {paginatedPosts.map((post, idx) => (
-                    <Link
-                      key={post.id}
-                      to={`/blog/${post.slug}`}
-                      className="group bg-white rounded-xl shadow hover:shadow-2xl transition-shadow duration-300 border border-gray-100 hover:border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                      style={{ animation: `fadeInUp 0.4s ${0.05 * idx}s both` }}
-                      tabIndex={0}
-                      aria-label={post.title}
-                    >
-                      <div className="h-48 overflow-hidden rounded-t-lg">
-                        <picture>
-                          <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                          <img
-                            src={post.coverImage}
-                            alt={post.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                            loading="lazy"
-                          />
-                        </picture>
-                      </div>
-                      <div className="p-5">
-                        <div className="flex items-center text-xs text-gray-500 mb-3">
-                          <Calendar className="h-3 w-3 mr-1" />
-                          <span>{post.date}</span>
-                          <span className="mx-2">•</span>
-                          <User className="h-3 w-3 mr-1" />
-                          <span>{post.author}</span>
-                        </div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                          {post.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm mb-3 line-clamp-3">{post.excerpt}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {post.categories.slice(0, 2).map(category => (
-                            <span key={category} className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-xs">
-                              {category}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-
-                {/* Pagination (after post list, before government scheme section) */}
-                <Pagination />
-
-                {/* Government Schemes Section */}
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-12">
-                  <h2 className="text-2xl font-bold text-green-900 mb-4">Government Scheme Guides</h2>
-                  <p className="text-green-700 mb-6">
-                    Comprehensive guides to help you understand and maximize benefits from various government financial schemes in India.
-                  </p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    {[
-                      {
-                        title: "Sukanya Samriddhi Yojana: Complete Guide",
-                        description: "Everything you need to know about SSY - eligibility, benefits, tax advantages, and how to maximize returns.",
-                        link: "/blog/sukanya-samriddhi-yojana-guide"
-                      },
-                      {
-                        title: "National Pension System: Tier 1 vs Tier 2",
-                        description: "Detailed comparison of NPS Tier 1 and Tier 2 accounts - features, benefits, tax implications, and investment strategies.",
-                        link: "/blog/nps-tier1-vs-tier2-comparison"
-                      },
-                      {
-                        title: "Post Office Savings Schemes: Which One is Right for You?",
-                        description: "Compare KVP, NSC, SCSS, MIS, and other post office schemes to find the best option for your financial goals.",
-                        link: "/blog/post-office-savings-schemes-comparison"
-                      },
-                      {
-                        title: "PM Vaya Vandana Yojana: Pension Scheme for Senior Citizens",
-                        description: "A detailed look at PMVVY - benefits, eligibility, comparison with other senior citizen schemes, and application process.",
-                        link: "/blog/pm-vaya-vandana-yojana-guide"
-                      }
-                    ].map((scheme, index) => (
-                      <div key={index} className="bg-white rounded-lg p-4 shadow">
-                        <h3 className="font-semibold text-gray-900 mb-2">{scheme.title}</h3>
-                        <p className="text-sm text-gray-600 mb-3 line-clamp-2">{scheme.description}</p>
-                        <Link to={scheme.link} className="text-xs text-green-600 font-medium hover:underline">
-                          Read More →
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="text-center">
-                    <Link
-                      to="/blog/category/government-schemes"
-                      className="inline-flex items-center text-green-700 hover:text-green-800 font-medium"
-                    >
-                      View all government scheme guides
-                      <ArrowRight className="h-4 w-4 ml-1" />
-                    </Link>
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
       </div>
-
-      {/* Add fadeInUp animation and hide scrollbar utility */}
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
-    </div>
     </>
   );
 };

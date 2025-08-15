@@ -211,7 +211,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl font-bold text-white">100%</div>
                     <div className="text-white/80 text-sm">Free</div>
                   </div>
-                </div>
+              </div>
             </div>
               
               {/* Interactive Calculator Preview */}
