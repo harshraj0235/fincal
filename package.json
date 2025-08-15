@@ -14,6 +14,7 @@
     "generate-manual": "node manual-blog-generator.cjs",
     "deploy": "node deploy.cjs",
     "deploy-cloudflare": "node deploy-cloudflare.cjs",
+    "deploy-cloudflare-direct": "node deploy-cloudflare-direct.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
     "lhci:autorun": "lhci autorun"
   },

@@ -1,44 +1,22 @@
-name: Deploy to Cloudflare Workers
+# DISABLED: GitHub Actions workflow disabled due to billing limitations
+# Use direct Cloudflare deployment instead
+
+name: DISABLED - Deploy to Cloudflare Workers
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # Disabled all triggers to prevent billing issues
+  workflow_dispatch: # Only manual trigger allowed
 
 jobs:
-  deploy:
+  # This job is disabled
+  disabled:
     runs-on: ubuntu-latest
-    name: Deploy to Cloudflare Workers
+    name: DISABLED - Deploy to Cloudflare Workers
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Install Wrangler CLI
-        run: npm install -g wrangler
-        
-      - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --env production
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Success notification
+      - name: Workflow Disabled
         run: |
-          echo "✅ Successfully deployed to Cloudflare Workers!"
-          echo "📅 Date: $(date)"
-          echo "🌐 Your blog generation will run daily at 6 AM IST"
-          echo "📊 Monitor logs at: https://dash.cloudflare.com/workers"
+          echo "❌ This workflow is disabled due to GitHub Actions billing limitations"
+          echo "✅ Use direct Cloudflare deployment instead"
+          echo "📖 See CLOUDFLARE_SETUP_GUIDE.md for alternative setup"
+          exit 1
