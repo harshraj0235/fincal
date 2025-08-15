@@ -415,7 +415,7 @@ Generated on: ${new Date().toLocaleDateString()}`;
                 <li>• Include case studies or testimonials</li>
                 <li>• Follow up after submission</li>
               </ul>
-            </div>
+        </div>
             
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
               <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
@@ -428,8 +428,8 @@ Generated on: ${new Date().toLocaleDateString()}`;
                 <li>• Proposed solution</li>
                 <li>• Pricing and timeline</li>
               </ul>
-            </div>
           </div>
+        </div>
 
           {/* Disclaimer */}
           <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
@@ -440,8 +440,8 @@ Generated on: ${new Date().toLocaleDateString()}`;
               Consider consulting with legal professionals for complex business agreements.
             </p>
           </div>
-        </div>
       </div>
+    </div>
     </>
   );
 };

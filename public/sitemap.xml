@@ -7091,6 +7091,36 @@
     <url>
       <loc>https://moneycal.in/blog/gold-investment-opportunities-india</loc>
       <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+      <loc>https://moneycal.in/blog/digital-banking-revolution-india</loc>
+      <lastmod>2025-08-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://moneycal.in/blog/insurance-planning-for-indian-families</loc>
+      <lastmod>2025-08-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://moneycal.in/blog/tax-saving-investment-options-2025</loc>
+      <lastmod>2025-08-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://moneycal.in/blog/retirement-planning-strategies-india</loc>
+      <lastmod>2025-08-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    <url>
+      <loc>https://moneycal.in/blog/personal-finance-management-tips</loc>
+      <lastmod>2025-08-15</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
