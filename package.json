@@ -9,7 +9,8 @@
     "build:deploy": "npm install && npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "generate-blogs": "node scripts/generate-blogs.cjs",
+    "generate-blogs": "node automated-blog-generator.cjs",
+    "generate-crypto": "node crypto-blog-generator.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
     "lhci:autorun": "lhci autorun"
   },
