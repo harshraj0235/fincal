@@ -5,15 +5,5 @@ compatibility_date = "2024-01-01"
 [triggers]
 crons = ["0 6 * * *"]  # Daily at 6 AM IST
 
-[env.production]
-name = "blog-generator-prod"
-
-[env.staging]
-name = "blog-generator-staging"
-
-# Environment variables (set these in Cloudflare dashboard)
 [vars]
 GITHUB_TOKEN = "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"
-
-# Secrets (set these using wrangler secret put)
-# wrangler secret put GITHUB_TOKEN
