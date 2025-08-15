@@ -29,7 +29,7 @@ export const Home: React.FC = () => {
     ];
     setPopularCalculators(popular);
   }, []);
-
+  
   // Intersection Observer for smooth scrolling navigation
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,7 +48,7 @@ export const Home: React.FC = () => {
 
     return () => observer.disconnect();
   }, []);
-
+  
   // Scroll to categories section if hash is present
   useEffect(() => {
     if (location.hash) {
@@ -132,8 +132,8 @@ export const Home: React.FC = () => {
           </div>
         </div>
       )}
-
-      <div className="min-h-screen">
+      
+    <div className="min-h-screen">
         {/* Floating Navigation Bar */}
         <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40 bg-white/90 backdrop-blur-md rounded-full shadow-lg border border-gray-200 px-4 py-2 hidden lg:flex items-center space-x-1">
           <button onClick={() => scrollToSection('hero')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'hero' ? 'bg-primary-600 text-white' : 'text-gray-600 hover:text-gray-900'}`}>Home</button>
@@ -149,21 +149,21 @@ export const Home: React.FC = () => {
         >
           <Menu className="h-6 w-6" />
         </button>
-        
-        {/* Hero Section */}
+      
+      {/* Hero Section */}
         <section id="hero" className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 py-20 sm:py-24 md:py-32 lg:py-40 overflow-hidden">
           {/* Animated Background */}
           <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-0 left-0 w-full h-full">
               <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
               <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
-            </div>
-          </div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              </div>
+                </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left">
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
                   <Star className="h-4 w-4 mr-2" />
                   Trusted by 1M+ Users
@@ -172,30 +172,30 @@ export const Home: React.FC = () => {
                   Smart Financial
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">Decisions</span>
                   Start Here
-                </h1>
+              </h1>
                 <p className="text-xl sm:text-2xl mb-8 text-white/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   India's most comprehensive financial calculator platform. Plan loans, investments, taxes, and more with confidence.
-                </p>
+              </p>
                 
                 {/* Quick Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                  <Link 
-                    to="/calculators/emi-calculator" 
+                <Link 
+                  to="/calculators/emi-calculator" 
                     className="group bg-white text-primary-700 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl flex items-center justify-center"
-                  >
+                >
                     <Calculator className="h-5 w-5 mr-2" />
-                    EMI Calculator
+                  EMI Calculator
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link 
-                    to="/calculators/income-tax-calculator" 
+                </Link>
+                <Link 
+                  to="/calculators/income-tax-calculator" 
                     className="group bg-green-500 text-white hover:bg-green-600 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl flex items-center justify-center"
-                  >
+                >
                     <DollarSign className="h-5 w-5 mr-2" />
-                    Income Tax
+                  Income Tax
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
+                </Link>
+              </div>
 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
@@ -212,11 +212,11 @@ export const Home: React.FC = () => {
                     <div className="text-white/80 text-sm">Free</div>
                   </div>
                 </div>
-              </div>
+            </div>
               
               {/* Interactive Calculator Preview */}
-              <div className="hidden lg:block">
-                <div className="relative">
+            <div className="hidden lg:block">
+              <div className="relative">
                   <div className="absolute -top-8 -left-8 w-32 h-32 bg-yellow-400/20 rounded-full animate-pulse"></div>
                   <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-orange-400/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
                   <div className="bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
@@ -233,34 +233,34 @@ export const Home: React.FC = () => {
                         <div>
                           <label className="text-sm font-medium text-gray-600">Interest Rate</label>
                           <div className="text-2xl font-bold text-gray-900">8.5%</div>
-                        </div>
+          </div>
                         <div>
                           <label className="text-sm font-medium text-gray-600">Loan Tenure</label>
                           <div className="text-2xl font-bold text-gray-900">20 Years</div>
-                        </div>
+                    </div>
                         <div className="pt-4 border-t border-gray-200">
                           <label className="text-sm font-medium text-gray-600">Monthly EMI</label>
                           <div className="text-3xl font-bold text-primary-600">₹21,761</div>
-                        </div>
-                      </div>
+                    </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Smart Search Section */}
         <section className="py-16 bg-white relative z-20 -mt-8">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white shadow-2xl rounded-3xl p-8 border border-gray-100">
-              <div className="text-center mb-8">
+          <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-gray-900 mb-3">Find Your Perfect Calculator</h2>
                 <p className="text-gray-600 text-lg">Search from our collection of 50+ financial calculators</p>
-              </div>
+          </div>
               <div className="relative">
-                <SearchBar />
+            <SearchBar />
                 <div className="mt-6 flex flex-wrap gap-2 justify-center">
                   <span className="text-sm text-gray-500">Popular:</span>
                   {['EMI', 'SIP', 'Income Tax', 'Mutual Fund'].map((term) => (
@@ -270,104 +270,104 @@ export const Home: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Quick Access Categories */}
+      {/* Quick Access Categories */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Quick Access Categories</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Find the financial tools you need, organized by category
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {calculatorCategories.slice(0, 6).map(category => (
-                <Link 
-                  key={category.id}
-                  to={`/#${category.id}`} 
+              Find the financial tools you need, organized by category
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {calculatorCategories.slice(0, 6).map(category => (
+              <Link 
+                key={category.id}
+                to={`/#${category.id}`} 
                   className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all text-center transform hover:-translate-y-2 duration-300"
-                >
+              >
                   <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
-                    {getCategoryIcon(category.id)}
-                  </div>
+                  {getCategoryIcon(category.id)}
+                </div>
                   <h3 className="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors text-sm">{category.name.split(' ')[0]}</h3>
                   <p className="text-xs text-gray-500 mt-1">{category.calculators.length} tools</p>
-                </Link>
-              ))}
-            </div>
-            
+              </Link>
+            ))}
+          </div>
+          
             <div className="text-center mt-12">
               <Link to="/#categories" className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl font-semibold hover:bg-primary-700 shadow-lg hover:shadow-xl transition-all">
-                View All Categories
+              View All Categories
                 <ArrowRight className="h-5 w-5 ml-2" />
-              </Link>
-            </div>
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Popular Calculators */}
+      {/* Popular Calculators */}
         <section id="popular" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Most Popular Calculators</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our most frequently used calculators to help you make informed financial decisions
-              </p>
-            </div>
-            
+              Our most frequently used calculators to help you make informed financial decisions
+            </p>
+          </div>
+          
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {popularCalculators.map((calculator, index) => (
-                <Link
-                  key={calculator.id}
-                  to={`/calculators/${calculator.id}`}
+              <Link
+                key={calculator.id}
+                to={`/calculators/${calculator.id}`}
                   className="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 transform hover:-translate-y-2 duration-300"
                 >
                   <div className="flex items-start mb-6">
                     <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform shadow-lg">
                       <Calculator className="h-7 w-7 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
-                        {calculator.name}
-                      </h3>
-                      <p className="text-sm text-gray-500">{calculator.category}</p>
-                    </div>
                   </div>
+                  <div>
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                      {calculator.name}
+                    </h3>
+                      <p className="text-sm text-gray-500">{calculator.category}</p>
+                  </div>
+                </div>
                   <p className="text-gray-600 mb-6 leading-relaxed">{calculator.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-primary-600 group-hover:text-primary-700 font-semibold flex items-center">
-                      Try Calculator
+                    Try Calculator
                       <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </span>
+                  </span>
                     <div className="text-2xl font-bold text-gray-300">#{index + 1}</div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            
+                </div>
+              </Link>
+            ))}
+          </div>
+          
             <div className="text-center mt-16">
               <Link to="/#categories" className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl font-semibold hover:bg-primary-700 shadow-lg hover:shadow-xl transition-all">
-                View All Calculators
+              View All Calculators
                 <ArrowRight className="h-5 w-5 ml-2" />
-              </Link>
-            </div>
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Features Section */}
         <section id="features" className="py-20 bg-gradient-to-br from-primary-50 to-primary-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Calculators?</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Designed specifically for the Indian financial context, our calculators offer precision, ease of use, and comprehensive insights
-              </p>
-            </div>
-            
+            </p>
+          </div>
+          
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-100 hover:border-primary-200 transition-all transform hover:-translate-y-2 duration-300">
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center mb-6 shadow-lg">
@@ -377,8 +377,8 @@ export const Home: React.FC = () => {
                 <p className="text-gray-600 leading-relaxed">
                   Tailored for Indian tax laws, investment options, and financial products
                 </p>
-              </div>
-              
+            </div>
+            
               <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-100 hover:border-primary-200 transition-all transform hover:-translate-y-2 duration-300">
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mb-6 shadow-lg">
                   <TrendingUp className="h-8 w-8 text-white" />
@@ -387,8 +387,8 @@ export const Home: React.FC = () => {
                 <p className="text-gray-600 leading-relaxed">
                   Precise calculations based on the latest financial formulas and regulations
                 </p>
-              </div>
-              
+            </div>
+            
               <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-100 hover:border-primary-200 transition-all transform hover:-translate-y-2 duration-300">
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6 shadow-lg">
                   <PieChart className="h-8 w-8 text-white" />
@@ -396,13 +396,13 @@ export const Home: React.FC = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Visual Insights</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Interactive charts and visual breakdowns to understand your finances better
-                </p>
-              </div>
-              
+              </p>
+            </div>
+            
               <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl border border-gray-100 hover:border-primary-200 transition-all transform hover:-translate-y-2 duration-300">
                 <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6 shadow-lg">
                   <Smartphone className="h-8 w-8 text-white" />
-                </div>
+                  </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Mobile Friendly</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Optimized for all devices - use on mobile, tablet, or desktop seamlessly
@@ -411,124 +411,124 @@ export const Home: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* All Categories Grid */}
+      
+      {/* All Categories Grid */}
         <section id="categories" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore All Categories</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Find the perfect calculator for your financial needs
-              </p>
-            </div>
-            
+              Find the perfect calculator for your financial needs
+            </p>
+          </div>
+          
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {calculatorCategories.map(category => (
-                <Link
-                  key={category.id}
-                  to={`/#${category.id}`}
+            {calculatorCategories.map(category => (
+            <Link
+                key={category.id}
+                to={`/#${category.id}`}
                   className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300"
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${getCategoryColor(category.id)} opacity-90 group-hover:opacity-100 transition-opacity`}></div>
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${getCategoryColor(category.id)} opacity-90 group-hover:opacity-100 transition-opacity`}></div>
                   <div className="relative z-10 p-8 h-full flex flex-col">
-                    <div className="mb-auto">
+                  <div className="mb-auto">
                       <div className="h-16 w-16 rounded-2xl bg-white bg-opacity-20 flex items-center justify-center mb-6 shadow-lg">
-                        {getCategoryIcon(category.id)}
-                      </div>
+                      {getCategoryIcon(category.id)}
+                    </div>
                       <h3 className="text-2xl font-bold text-white mb-4">{category.name}</h3>
                       <p className="text-white text-opacity-90 leading-relaxed">{category.description}</p>
-                    </div>
+                  </div>
                     <div className="flex justify-between items-center mt-6">
                       <span className="text-white text-sm font-medium">{category.calculators.length} calculators</span>
                       <span className="text-white flex items-center text-sm font-semibold">
-                        Explore
+                      Explore
                         <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </div>
+                    </span>
                   </div>
-                </Link>
-              ))}
-            </div>
+                </div>
+            </Link>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* All Calculators Section */}
+      {/* All Calculators Section */}
         <div id="all-calculators" ref={allCalculatorsRef} className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">All Calculators</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Browse our comprehensive collection of financial calculators organized by category
-              </p>
-            </div>
-            
-            <div className="space-y-12">
-              {calculatorCategories.map(category => (
+              Browse our comprehensive collection of financial calculators organized by category
+            </p>
+          </div>
+          
+          <div className="space-y-12">
+            {calculatorCategories.map(category => (
                 <div key={category.id} id={category.id} className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
                   <div className="flex items-center mb-8">
                     <div className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mr-4 shadow-lg`}>
-                      {getCategoryIcon(category.id)}
-                    </div>
+                    {getCategoryIcon(category.id)}
+                  </div>
                     <div>
                       <h3 className="text-3xl font-bold text-gray-900">{category.name}</h3>
                       <p className="text-gray-600">{category.description}</p>
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {category.calculators.map(calculator => (
-                      <Link 
-                        key={calculator.id}
-                        to={`/calculators/${calculator.id}`}
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {category.calculators.map(calculator => (
+                    <Link 
+                      key={calculator.id}
+                      to={`/calculators/${calculator.id}`}
                         className="p-6 border border-gray-200 rounded-xl hover:border-primary-300 hover:bg-primary-50 transition-all group"
-                      >
+                    >
                         <div className="flex items-center">
                           <Calculator className="h-6 w-6 text-primary-600 mr-4 flex-shrink-0" />
-                          <div>
+                      <div>
                             <h4 className="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">{calculator.name}</h4>
                             <p className="text-sm text-gray-500 mt-1 line-clamp-2">{calculator.description}</p>
                           </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        {/* Dynamic Finance News Section */}
-        <FinanceNewsSection />
+      {/* Dynamic Finance News Section */}
+      <FinanceNewsSection />
 
-        {/* CTA Section */}
+      {/* CTA Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl shadow-2xl overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="p-12 md:p-16">
                   <h2 className="text-4xl font-bold mb-6 text-white">Stay Updated with Financial Insights</h2>
                   <p className="text-xl mb-8 text-white/90 leading-relaxed">
-                    Subscribe to our newsletter for the latest updates on financial tools, tax changes, investment strategies, and more.
-                  </p>
+                  Subscribe to our newsletter for the latest updates on financial tools, tax changes, investment strategies, and more.
+                </p>
                   <form className="space-y-6">
-                    <div>
-                      <input
-                        type="email"
+                  <div>
+                    <input
+                      type="email"
                         placeholder="Enter your email address"
                         className="w-full px-6 py-4 rounded-2xl text-lg border-0 focus:ring-2 focus:ring-white/20"
-                        required
-                      />
-                    </div>
+                      required
+                    />
+                  </div>
                     <button type="submit" className="w-full bg-white text-primary-700 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl">
                       Subscribe Now
-                    </button>
-                  </form>
+                  </button>
+                </form>
                   <p className="text-sm text-white/80 mt-6">
                     By subscribing, you agree to our Privacy Policy and consent to receive financial updates.
-                  </p>
-                </div>
-                <div className="hidden md:block relative">
+                </p>
+              </div>
+              <div className="hidden md:block relative">
                   <div className="absolute inset-0 bg-black/20"></div>
                   <img 
                     src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
@@ -536,12 +536,12 @@ export const Home: React.FC = () => {
                     className="h-full w-full object-cover"
                     loading="lazy"
                   />
-                </div>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
     </>
   );
 };
