@@ -9,14 +9,9 @@ import {
   Shield, 
   Star,
   Clock,
-  Users,
-  Zap,
-  ChevronRight,
-  HelpCircle,
   ArrowLeft,
   Share2,
   Bookmark,
-  Download,
   Info,
   CheckCircle,
   AlertCircle
@@ -26,108 +21,119 @@ import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 
-// Dynamic imports for main calculator components
-const calculatorComponents: { [key: string]: React.LazyExoticComponent<any> } = {
-  'emi-calculator': lazy(() => import('../calculators/EmiCalculator').then(module => ({ default: module.EmiCalculator }))),
-  'sip-calculator': lazy(() => import('../calculators/SipCalculator').then(module => ({ default: module.SipCalculator }))),
-  'income-tax-calculator': lazy(() => import('../calculators/IncomeTaxCalculator').then(module => ({ default: module.IncomeTaxCalculator }))),
-  'home-loan-calculator': lazy(() => import('../calculators/HomeLoanCalculator').then(module => ({ default: module.HomeLoanCalculator }))),
-  'personal-loan-calculator': lazy(() => import('../calculators/PersonalLoanCalculator').then(module => ({ default: module.PersonalLoanCalculator }))),
-  'car-loan-calculator': lazy(() => import('../calculators/CarLoanCalculator').then(module => ({ default: module.CarLoanCalculator }))),
-  'business-loan-calculator': lazy(() => import('../calculators/BusinessLoanCalculator').then(module => ({ default: module.BusinessLoanCalculator }))),
-  'loan-comparison-calculator': lazy(() => import('../calculators/LoanComparisonCalculator').then(module => ({ default: module.LoanComparisonCalculator }))),
-  'loan-prepayment-calculator': lazy(() => import('../calculators/LoanPrepaymentCalculator').then(module => ({ default: module.LoanPrepaymentCalculator }))),
-  'loan-refinance-calculator': lazy(() => import('../calculators/LoanRefinanceCalculator').then(module => ({ default: module.LoanRefinanceCalculator }))),
-  'loan-affordability-calculator': lazy(() => import('../calculators/LoanAffordabilityCalculator').then(module => ({ default: module.LoanAffordabilityCalculator }))),
-  'loan-tenure-converter': lazy(() => import('../calculators/LoanTenureConverter').then(module => ({ default: module.LoanTenureConverter }))),
-  'credit-card-emi-calculator': lazy(() => import('../calculators/CreditCardEmiCalculator').then(module => ({ default: module.CreditCardEmiCalculator }))),
-  'gold-loan-emi-calculator': lazy(() => import('../calculators/GoldLoanEmiCalculator').then(module => ({ default: module.GoldLoanEmiCalculator }))),
-  'mutual-fund-returns-calculator': lazy(() => import('../calculators/MutualFundReturnsCalculator').then(module => ({ default: module.MutualFundReturnsCalculator }))),
-  'mutual-fund-cost-calculator': lazy(() => import('../calculators/MutualFundCostCalculator').then(module => ({ default: module.MutualFundCostCalculator }))),
-  'ppf-calculator': lazy(() => import('../calculators/PpfCalculator').then(module => ({ default: module.PpfCalculator }))),
-  'sukanya-samriddhi-calculator': lazy(() => import('../calculators/SukanyaSamriddhiCalculator').then(module => ({ default: module.SukanyaSamriddhiCalculator }))),
-  'nps-calculator': lazy(() => import('../calculators/NpsCalculator').then(module => ({ default: module.NpsCalculator }))),
-  'nps-tier2-calculator': lazy(() => import('../calculators/NpsTier2Calculator').then(module => ({ default: module.NpsTier2Calculator }))),
-  'post-office-calculator': lazy(() => import('../calculators/PostOfficeCalculator').then(module => ({ default: module.PostOfficeCalculator }))),
-  'gold-investment-calculator': lazy(() => import('../calculators/GoldInvestmentCalculator').then(module => ({ default: module.GoldInvestmentCalculator }))),
-  'compound-interest-calculator': lazy(() => import('../calculators/CompoundInterestCalculator').then(module => ({ default: module.CompoundInterestCalculator }))),
-  'simple-interest-calculator': lazy(() => import('../calculators/SimpleInterestCalculator').then(module => ({ default: module.SimpleInterestCalculator }))),
-  'future-value-calculator': lazy(() => import('../calculators/FutureValueCalculator').then(module => ({ default: module.FutureValueCalculator }))),
-  'income-tax-regime-comparison-calculator': lazy(() => import('../calculators/IncomeTaxRegimeComparisonCalculator').then(module => ({ default: module.IncomeTaxRegimeComparisonCalculator }))),
-  'advance-tax-calculator': lazy(() => import('../calculators/AdvanceTaxCalculator').then(module => ({ default: module.AdvanceTaxCalculator }))),
-  'gst-calculator': lazy(() => import('../calculators/GstCalculator').then(module => ({ default: module.GstCalculator }))),
-  'gst-seller-calculator': lazy(() => import('../calculators/GstSellerCalculator').then(module => ({ default: module.GstSellerCalculator }))),
-  'tds-calculator': lazy(() => import('../calculators/TdsCalculator').then(module => ({ default: module.TdsCalculator }))),
-  'capital-gains-tax-calculator': lazy(() => import('../calculators/CapitalGainsTaxCalculator').then(module => ({ default: module.CapitalGainsTaxCalculator }))),
-  'capital-gains-tax-advanced-calculator': lazy(() => import('../calculators/CapitalGainsTaxAdvancedCalculator').then(module => ({ default: module.CapitalGainsTaxAdvancedCalculator }))),
-  'tax-saving-investment-calculator': lazy(() => import('../calculators/TaxSavingInvestmentCalculator').then(module => ({ default: module.TaxSavingInvestmentCalculator }))),
-  'section-80c-calculator': lazy(() => import('../calculators/Section80CCalculator').then(module => ({ default: module.Section80CCalculator }))),
-  'section-80d-calculator': lazy(() => import('../calculators/Section80DCalculator').then(module => ({ default: module.Section80DCalculator }))),
-  'retirement-calculator': lazy(() => import('../calculators/RetirementCalculator').then(module => ({ default: module.RetirementCalculator }))),
-  'pension-calculator': lazy(() => import('../calculators/PensionCalculator').then(module => ({ default: module.PensionCalculator }))),
-  'gratuity-calculator': lazy(() => import('../calculators/GratuityCalculator').then(module => ({ default: module.GratuityCalculator }))),
-  'hra-exemption-calculator': lazy(() => import('../calculators/HraExemptionCalculator').then(module => ({ default: module.HraExemptionCalculator }))),
-  'profit-margin-calculator': lazy(() => import('../calculators/ProfitMarginCalculator').then(module => ({ default: module.ProfitMarginCalculator }))),
-  'break-even-calculator': lazy(() => import('../calculators/BreakEvenCalculator').then(module => ({ default: module.BreakEvenCalculator }))),
-  'property-investment-calculator': lazy(() => import('../calculators/PropertyInvestmentCalculator').then(module => ({ default: module.PropertyInvestmentCalculator }))),
-  'property-registration-calculator': lazy(() => import('../calculators/PropertyRegistrationCalculator').then(module => ({ default: module.PropertyRegistrationCalculator }))),
-  'rent-vs-buy-calculator': lazy(() => import('../calculators/RentVsBuyCalculator').then(module => ({ default: module.RentVsBuyCalculator }))),
-  'rent-vs-buy-advanced-calculator': lazy(() => import('../calculators/RentVsBuyAdvancedCalculator').then(module => ({ default: module.RentVsBuyAdvancedCalculator }))),
-  'stamp-duty-calculator': lazy(() => import('../calculators/StampDutyCalculator').then(module => ({ default: module.StampDutyCalculator }))),
-  'life-insurance-calculator': lazy(() => import('../calculators/LifeInsuranceCalculator').then(module => ({ default: module.LifeInsuranceCalculator }))),
-  'health-insurance-calculator': lazy(() => import('../calculators/HealthInsuranceCalculator').then(module => ({ default: module.HealthInsuranceCalculator }))),
-  'term-insurance-calculator': lazy(() => import('../calculators/TermInsuranceCalculator').then(module => ({ default: module.TermInsuranceCalculator }))),
-  'human-life-value-calculator': lazy(() => import('../calculators/HumanLifeValueCalculator').then(module => ({ default: module.HumanLifeValueCalculator }))),
-  'savings-account-calculator': lazy(() => import('../calculators/SavingsAccountCalculator').then(module => ({ default: module.SavingsAccountCalculator }))),
-  'currency-converter': lazy(() => import('../calculators/CurrencyConverter').then(module => ({ default: module.CurrencyConverter }))),
-  'inflation-calculator': lazy(() => import('../calculators/InflationCalculator').then(module => ({ default: module.InflationCalculator }))),
-  'inflation-adjusted-sip-calculator': lazy(() => import('../calculators/InflationAdjustedSipCalculator').then(module => ({ default: module.InflationAdjustedSipCalculator }))),
-  'step-up-sip-calculator': lazy(() => import('../calculators/StepUpSipCalculator').then(module => ({ default: module.StepUpSipCalculator }))),
-  'xirr-tracker': lazy(() => import('../calculators/XirrTracker').then(module => ({ default: module.XirrTracker }))),
-  'mutual-fund-overlap-checker': lazy(() => import('../calculators/MutualFundOverlapChecker').then(module => ({ default: module.MutualFundOverlapChecker }))),
-  'gold-etf-vs-physical-calculator': lazy(() => import('../calculators/GoldEtfVsPhysicalCalculator').then(module => ({ default: module.GoldEtfVsPhysicalCalculator }))),
-  'brokerage-calculator': lazy(() => import('../calculators/BrokerageCalculator').then(module => ({ default: module.BrokerageCalculator }))),
-  'dividend-yield-calculator': lazy(() => import('../calculators/DividendYieldCalculator').then(module => ({ default: module.DividendYieldCalculator }))),
-  'debt-equity-calculator': lazy(() => import('../calculators/DebtEquityCalculator').then(module => ({ default: module.DebtEquityCalculator }))),
-  'inventory-turnover-calculator': lazy(() => import('../calculators/InventoryTurnoverCalculator').then(module => ({ default: module.InventoryTurnoverCalculator }))),
-  'asset-allocation-planner': lazy(() => import('../calculators/AssetAllocationPlanner').then(module => ({ default: module.AssetAllocationPlanner }))),
-  'financial-goal-calculator': lazy(() => import('../calculators/FinancialGoalCalculator').then(module => ({ default: module.FinancialGoalCalculator }))),
-  'emergency-fund-calculator': lazy(() => import('../calculators/EmergencyFundCalculator').then(module => ({ default: module.EmergencyFundCalculator }))),
-  'net-worth-calculator': lazy(() => import('../calculators/NetWorthCalculator').then(module => ({ default: module.NetWorthCalculator }))),
-  'budget-calculator': lazy(() => import('../calculators/BudgetCalculator').then(module => ({ default: module.BudgetCalculator }))),
-  'bnpl-calculator': lazy(() => import('../calculators/BnplCalculator').then(module => ({ default: module.BnplCalculator }))),
-  'p2p-lending-calculator': lazy(() => import('../calculators/P2PLendingCalculator').then(module => ({ default: module.P2PLendingCalculator }))),
-  'margin-trading-calculator': lazy(() => import('../calculators/MarginTradingCalculator').then(module => ({ default: module.MarginTradingCalculator }))),
-  'forex-pip-calculator': lazy(() => import('../calculators/ForexPipCalculator').then(module => ({ default: module.ForexPipCalculator }))),
-  'forex-margin-calculator': lazy(() => import('../calculators/ForexMarginCalculator').then(module => ({ default: module.ForexMarginCalculator }))),
-  'commodity-margin-calculator': lazy(() => import('../calculators/CommodityMarginCalculator').then(module => ({ default: module.CommodityMarginCalculator }))),
-  'crypto-tax-estimator': lazy(() => import('../calculators/CryptoTaxEstimator').then(module => ({ default: module.CryptoTaxEstimator }))),
-  'interest-rate-converter': lazy(() => import('../calculators/InterestRateConverter').then(module => ({ default: module.InterestRateConverter }))),
-  'interest-rates-comparison': lazy(() => import('../calculators/InterestRatesComparison').then(module => ({ default: module.InterestRatesComparison }))),
-  'lcm-hcf-calculator': lazy(() => import('../calculators/LcmHcfCalculator').then(module => ({ default: module.LcmHcfCalculator }))),
-  'risk-appetite-assessment': lazy(() => import('../calculators/RiskAppetiteAssessment').then(module => ({ default: module.RiskAppetiteAssessment }))),
-  'digital-wealth-robo-advisor': lazy(() => import('../calculators/DigitalWealthRoboAdvisor').then(module => ({ default: module.DigitalWealthRoboAdvisor }))),
-  'crowdfunding-investment-portal': lazy(() => import('../calculators/CrowdfundingInvestmentPortal').then(module => ({ default: module.CrowdfundingInvestmentPortal }))),
-  'stable-return-fixed-income-aggregator': lazy(() => import('../calculators/StableReturnFixedIncomeAggregator').then(module => ({ default: module.StableReturnFixedIncomeAggregator }))),
-  'nri-stock-investment-dashboard': lazy(() => import('../calculators/NriStockInvestmentDashboard').then(module => ({ default: module.NriStockInvestmentDashboard }))),
-  'bank-charges-analyzer': lazy(() => import('../calculators/BankChargesAnalyzer').then(module => ({ default: module.BankChargesAnalyzer }))),
-  'atm-locator': lazy(() => import('../calculators/AtmLocator').then(module => ({ default: module.AtmLocator }))),
-  'bank-ifsc-finder': lazy(() => import('../calculators/BankIfscFinder').then(module => ({ default: module.BankIfscFinder }))),
-  'bank-holiday-calendar': lazy(() => import('../calculators/BankHolidayCalendar').then(module => ({ default: module.BankHolidayCalendar }))),
-  'virtual-card-issuer': lazy(() => import('../calculators/VirtualCardIssuer').then(module => ({ default: module.VirtualCardIssuer }))),
-  'upi-failure-troubleshooter': lazy(() => import('../calculators/UpiFailureTroubleshooter').then(module => ({ default: module.UpiFailureTroubleshooter }))),
-  'senior-citizen-savings-planner': lazy(() => import('../calculators/SeniorCitizenSavingsPlanner').then(module => ({ default: module.SeniorCitizenSavingsPlanner }))),
-  'msme-loan-eligibility': lazy(() => import('../calculators/MSMELoanEligibilityChecker').then(module => ({ default: module.MSMELoanEligibilityChecker }))),
-  'green-energy-investment-calculator': lazy(() => import('../calculators/GreenEnergyInvestmentCalculator').then(module => ({ default: module.GreenEnergyInvestmentCalculator }))),
-  'cheque-bounce-charges-calculator': lazy(() => import('../calculators/ChequeBounceChargesCalculator').then(module => ({ default: module.ChequeBounceChargesCalculator }))),
-  'bank-locker-finder': lazy(() => import('../calculators/BankLockerFinder').then(module => ({ default: module.BankLockerFinder }))),
-  'credit-card-finder': lazy(() => import('../calculators/CreditCardFinder').then(module => ({ default: module.CreditCardFinder })))
+// Mapping of calculator IDs to their component names
+const calculatorComponentMap: { [key: string]: string } = {
+  'emi-calculator': 'EmiCalculator',
+  'sip-calculator': 'SipCalculator',
+  'income-tax-calculator': 'IncomeTaxCalculator',
+  'home-loan-calculator': 'HomeLoanCalculator',
+  'personal-loan-calculator': 'PersonalLoanCalculator',
+  'car-loan-calculator': 'CarLoanCalculator',
+  'business-loan-calculator': 'BusinessLoanCalculator',
+  'loan-comparison-calculator': 'LoanComparisonCalculator',
+  'loan-prepayment-calculator': 'LoanPrepaymentCalculator',
+  'loan-refinance-calculator': 'LoanRefinanceCalculator',
+  'loan-affordability-calculator': 'LoanAffordabilityCalculator',
+  'loan-tenure-converter': 'LoanTenureConverter',
+  'credit-card-emi-calculator': 'CreditCardEmiCalculator',
+  'gold-loan-emi-calculator': 'GoldLoanEmiCalculator',
+  'mutual-fund-returns-calculator': 'MutualFundReturnsCalculator',
+  'mutual-fund-cost-calculator': 'MutualFundCostCalculator',
+  'ppf-calculator': 'PpfCalculator',
+  'sukanya-samriddhi-calculator': 'SukanyaSamriddhiCalculator',
+  'nps-calculator': 'NpsCalculator',
+  'nps-tier2-calculator': 'NpsTier2Calculator',
+  'post-office-calculator': 'PostOfficeCalculator',
+  'gold-investment-calculator': 'GoldInvestmentCalculator',
+  'compound-interest-calculator': 'CompoundInterestCalculator',
+  'simple-interest-calculator': 'SimpleInterestCalculator',
+  'future-value-calculator': 'FutureValueCalculator',
+  'income-tax-regime-comparison-calculator': 'IncomeTaxRegimeComparisonCalculator',
+  'advance-tax-calculator': 'AdvanceTaxCalculator',
+  'gst-calculator': 'GstCalculator',
+  'gst-seller-calculator': 'GstSellerCalculator',
+  'tds-calculator': 'TdsCalculator',
+  'capital-gains-tax-calculator': 'CapitalGainsTaxCalculator',
+  'capital-gains-tax-advanced-calculator': 'CapitalGainsTaxAdvancedCalculator',
+  'tax-saving-investment-calculator': 'TaxSavingInvestmentCalculator',
+  'section-80c-calculator': 'Section80CCalculator',
+  'section-80d-calculator': 'Section80DCalculator',
+  'retirement-calculator': 'RetirementCalculator',
+  'pension-calculator': 'PensionCalculator',
+  'hra-exemption-calculator': 'HraExemptionCalculator',
+  'profit-margin-calculator': 'ProfitMarginCalculator',
+  'break-even-calculator': 'BreakEvenCalculator',
+  'property-investment-calculator': 'PropertyInvestmentCalculator',
+  'property-registration-calculator': 'PropertyRegistrationCalculator',
+  'rent-vs-buy-calculator': 'RentVsBuyCalculator',
+  'rent-vs-buy-advanced-calculator': 'RentVsBuyAdvancedCalculator',
+  'stamp-duty-calculator': 'StampDutyCalculator',
+  'life-insurance-calculator': 'LifeInsuranceCalculator',
+  'health-insurance-calculator': 'HealthInsuranceCalculator',
+  'term-insurance-calculator': 'TermInsuranceCalculator',
+  'human-life-value-calculator': 'HumanLifeValueCalculator',
+  'savings-account-calculator': 'SavingsAccountCalculator',
+  'currency-converter': 'CurrencyConverter',
+  'inflation-calculator': 'InflationCalculator',
+  'inflation-adjusted-sip-calculator': 'InflationAdjustedSipCalculator',
+  'step-up-sip-calculator': 'StepUpSipCalculator',
+  'xirr-tracker': 'XirrTracker',
+  'mutual-fund-overlap-checker': 'MutualFundOverlapChecker',
+  'gold-etf-vs-physical-calculator': 'GoldEtfVsPhysicalCalculator',
+  'brokerage-calculator': 'BrokerageCalculator',
+  'dividend-yield-calculator': 'DividendYieldCalculator',
+  'debt-equity-calculator': 'DebtEquityCalculator',
+  'inventory-turnover-calculator': 'InventoryTurnoverCalculator',
+  'asset-allocation-planner': 'AssetAllocationPlanner',
+  'financial-goal-calculator': 'FinancialGoalCalculator',
+  'emergency-fund-calculator': 'EmergencyFundCalculator',
+  'net-worth-calculator': 'NetWorthCalculator',
+  'budget-calculator': 'BudgetCalculator',
+  'bnpl-calculator': 'BnplCalculator',
+  'p2p-lending-calculator': 'P2PLendingCalculator',
+  'margin-trading-calculator': 'MarginTradingCalculator',
+  'forex-pip-calculator': 'ForexPipCalculator',
+  'forex-margin-calculator': 'ForexMarginCalculator',
+  'commodity-margin-calculator': 'CommodityMarginCalculator',
+  'crypto-tax-estimator': 'CryptoTaxEstimator',
+  'interest-rate-converter': 'InterestRateConverter',
+  'interest-rates-comparison': 'InterestRatesComparison',
+  'lcm-hcf-calculator': 'LcmHcfCalculator',
+  'risk-appetite-assessment': 'RiskAppetiteAssessment',
+  'digital-wealth-robo-advisor': 'DigitalWealthRoboAdvisor',
+  'crowdfunding-investment-portal': 'CrowdfundingInvestmentPortal',
+  'stable-return-fixed-income-aggregator': 'StableReturnFixedIncomeAggregator',
+  'nri-stock-investment-dashboard': 'NriStockInvestmentDashboard',
+  'bank-charges-analyzer': 'BankChargesAnalyzer',
+  'atm-locator': 'AtmLocator',
+  'bank-ifsc-finder': 'BankIfscFinder',
+  'bank-holiday-calendar': 'BankHolidayCalendar',
+  'virtual-card-issuer': 'VirtualCardIssuer',
+  'upi-failure-troubleshooter': 'UpiFailureTroubleshooter',
+  'senior-citizen-savings-planner': 'SeniorCitizenSavingsPlanner',
+  'msme-loan-eligibility': 'MSMELoanEligibilityChecker',
+  'green-energy-investment-calculator': 'GreenEnergyInvestmentCalculator',
+  'cheque-bounce-charges-calculator': 'ChequeBounceChargesCalculator',
+  'bank-locker-finder': 'BankLockerFinder',
+  'credit-card-finder': 'CreditCardFinder',
+  'gratuity-calculator': 'GratuityCalculator'
+};
+
+// Dynamic import function with explicit file extension
+const getCalculatorComponent = (calculatorId: string) => {
+  const componentName = calculatorComponentMap[calculatorId];
+  if (!componentName) return null;
+  
+  return lazy(() => 
+    import(`../calculators/${componentName}.tsx`).then(module => ({
+      default: module[componentName as keyof typeof module]
+    }))
+  );
 };
 
 export const CalculatorPage: React.FC = () => {
   const { calculatorId } = useParams<{ calculatorId: string }>();
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('calculator');
   const [showSuccess, setShowSuccess] = useState(false);
 
   // Find the calculator
@@ -136,16 +142,14 @@ export const CalculatorPage: React.FC = () => {
     .find(calc => calc.id === calculatorId);
 
   // Get the calculator component
-  const CalculatorComponent = calculatorId ? calculatorComponents[calculatorId] : null;
+  const CalculatorComponent = calculatorId ? getCalculatorComponent(calculatorId) : null;
 
   useEffect(() => {
-    // Simulate loading
     const timer = setTimeout(() => setIsLoading(false), 500);
     return () => clearTimeout(timer);
   }, [calculatorId]);
 
   useEffect(() => {
-    // Show success message when calculator loads
     if (!isLoading && calculator) {
       setShowSuccess(true);
       const timer = setTimeout(() => setShowSuccess(false), 3000);
@@ -221,7 +225,6 @@ export const CalculatorPage: React.FC = () => {
       />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-        {/* Success Message */}
         <AnimatePresence>
           {showSuccess && (
             <motion.div
@@ -236,7 +239,6 @@ export const CalculatorPage: React.FC = () => {
           )}
         </AnimatePresence>
 
-        {/* Header */}
         <div className="bg-white shadow-sm border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex items-center space-x-4">
@@ -270,10 +272,8 @@ export const CalculatorPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Calculator Section */}
             <div className="lg:col-span-3">
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 {isLoading ? (
@@ -300,10 +300,8 @@ export const CalculatorPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="space-y-6">
-                {/* Calculator Info */}
                 <div className="bg-white rounded-2xl shadow-xl p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">About This Calculator</h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -315,7 +313,6 @@ export const CalculatorPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Related Calculators */}
                 {calculator.relatedCalculators && calculator.relatedCalculators.length > 0 && (
                   <div className="bg-white rounded-2xl shadow-xl p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Calculators</h3>
@@ -342,7 +339,6 @@ export const CalculatorPage: React.FC = () => {
                   </div>
                 )}
 
-                {/* Quick Stats */}
                 <div className="bg-white rounded-2xl shadow-xl p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Stats</h3>
                   <div className="space-y-4">
