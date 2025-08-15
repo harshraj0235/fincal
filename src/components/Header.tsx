@@ -181,13 +181,13 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         </AnimatePresence>
 
       {/* Progress Bar */}
-      <motion.div
-        className="h-1 bg-gradient-to-r from-blue-600 to-purple-600"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: isScrolled ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        style={{ transformOrigin: 'left' }}
-      />
+     <motion.div
+  className="h-1 bg-gradient-to-r from-blue-600 to-purple-600"
+  initial={{ scaleX: 0 }}
+  animate={{ scaleX: isScrolled ? 1 : 0 }}
+  transition={{ duration: 0.3 }}
+  style={{ transformOrigin: 'left' }}
+/>
     </motion.header>
   );
 };
