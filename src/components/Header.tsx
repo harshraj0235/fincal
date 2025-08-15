@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                 </h1>
                 <p className="text-xs text-gray-600">Smart Financial Tools</p>
               </div>
-            </Link>
+          </Link>
           </motion.div>
           
           {/* Desktop Navigation */}
@@ -96,7 +96,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                   whileHover={{ y: -2 }}
                   className="relative"
                 >
-                  <Link
+                            <Link
                     to={item.href}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${
                       isActive
@@ -106,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                   >
                     <Icon className="w-4 h-4" />
                     <span className="font-medium">{item.name}</span>
-                  </Link>
+                            </Link>
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
               );
             })}
           </nav>
-
+          
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
             {/* Search Button */}
@@ -151,8 +151,8 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             >
               <Menu className="w-6 h-6 text-gray-600" />
             </motion.button>
-          </div>
         </div>
+      </div>
       
         {/* Search Bar */}
         <AnimatePresence>
@@ -171,8 +171,8 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                     placeholder="Search calculators, tools, and more..."
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
-                </div>
-              </div>
+          </div>
+        </div>
             </motion.div>
           )}
         </AnimatePresence>
