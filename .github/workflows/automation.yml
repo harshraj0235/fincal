@@ -1,44 +1,23 @@
-name: Build and Test
+# DISABLED: GitHub Actions workflow disabled due to billing limitations
+# Use manual-blog-generator.cjs instead for blog generation
+# Use local build and deployment scripts
+
+name: DISABLED - Build and Test
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # Disabled all triggers to prevent billing issues
+  workflow_dispatch: # Only manual trigger allowed
 
 jobs:
-  build:
+  # This job is disabled
+  disabled:
     runs-on: ubuntu-latest
-    name: Build and Test
+    name: DISABLED - Build and Test
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-          
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Build project
-        run: npm run build
-        
-      - name: Test build output
+      - name: Workflow Disabled
         run: |
-          if [ -d "dist" ]; then
-            echo "✅ Build successful - dist directory created"
-            ls -la dist/
-          else
-            echo "❌ Build failed - dist directory not found"
-            exit 1
-          fi
-          
-      - name: Success notification
-        run: |
-          echo "✅ Build completed successfully!"
-          echo "📅 Date: $(date)"
-          echo "🏗️ Build: Successful"
+          echo "❌ This workflow is disabled due to GitHub Actions billing limitations"
+          echo "✅ Use manual-blog-generator.cjs for blog generation instead"
+          echo "📖 See BLOG_GENERATION_README.md for setup instructions"
+          exit 1
