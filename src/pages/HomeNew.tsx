@@ -1,34 +1,16 @@
-import React, { useState, useEffect, useRef, Suspense } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, ChevronRight, Search, Menu, X, Star, Users, Zap, Globe, Smartphone } from 'lucide-react';
+import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, Search, Menu, X, Star, Users, Zap, Globe, Smartphone } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
-import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
-import { governmentSchemes } from '../data/governmentSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
-import FinanceNewsSection from '../components/FinanceNewsSection';
 
-export const Home: React.FC = () => {
-  const [popularCalculators, setPopularCalculators] = useState<Array<{id: string; name: string; description: string; category: string}>>([]);
+export const HomeNew: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const location = useLocation();
-  const categoriesRef = useRef<HTMLElement>(null);
-  const allCalculatorsRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const popular = [
-      { id: 'emi-calculator', name: 'EMI Calculator', description: 'Calculate your loan EMI, total interest, and payment schedule', category: 'Loan Calculators' },
-      { id: 'sip-calculator', name: 'SIP Calculator', description: 'Plan your investments and calculate returns on SIP investments', category: 'Investment Calculators' },
-      { id: 'income-tax-calculator', name: 'Income Tax Calculator', description: 'Calculate your income tax liability under old and new tax regimes', category: 'Tax Calculators' },
-      { id: 'mutual-fund-overlap-checker', name: 'Mutual Fund Overlap Checker', description: 'Check portfolio overlap between mutual funds to optimize diversification', category: 'Investments & Wealth Management' },
-      { id: 'asset-allocation-planner', name: 'Asset Allocation Planner', description: 'Create a balanced portfolio based on your risk profile', category: 'Investments & Wealth Management' },
-      { id: 'credit-card-finder', name: 'Credit Card Finder', description: 'Find the best credit card based on your spending patterns', category: 'Banking & Finance Tools' }
-    ];
-    setPopularCalculators(popular);
-  }, []);
 
   // Intersection Observer for smooth scrolling navigation
   useEffect(() => {
@@ -49,20 +31,13 @@ export const Home: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Scroll to categories section if hash is present
-  useEffect(() => {
-    if (location.hash) {
-      const hash = location.hash.substring(1);
-      if (hash === 'categories' && allCalculatorsRef.current) {
-        allCalculatorsRef.current.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
     }
-  }, [location.hash]);
+  };
 
   const getCategoryIcon = (categoryId: string) => {
     switch(categoryId) {
@@ -78,23 +53,7 @@ export const Home: React.FC = () => {
       case 'loan-calculators': return 'from-blue-500 to-blue-700';
       case 'investment-calculators': return 'from-green-500 to-green-700';
       case 'tax-calculators': return 'from-purple-500 to-purple-700';
-      case 'retirement-calculators': return 'from-orange-500 to-orange-700';
-      case 'business-calculators': return 'from-indigo-500 to-indigo-700';
-      case 'property-calculators': return 'from-red-500 to-red-700';
-      case 'insurance-calculators': return 'from-pink-500 to-pink-700';
-      case 'banking-calculators': return 'from-cyan-500 to-cyan-700';
-      case 'fintech-payments': return 'from-amber-500 to-amber-700';
-      case 'investments-wealth-management': return 'from-emerald-500 to-emerald-700';
-      case 'personal-finance': return 'from-teal-500 to-teal-700';
       default: return 'from-primary-500 to-primary-700';
-    }
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
     }
   };
 
@@ -104,11 +63,11 @@ export const Home: React.FC = () => {
       <AstroFinanceButton />
       <SEOHelmet 
         title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
-        description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users."
-        keywords="financial calculator india, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, loan calculator, investment calculator, personal finance tools, financial planning india, free financial calculator"
+        description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more."
+        keywords="financial calculator india, EMI calculator, SIP calculator, income tax calculator"
         url="/"
         structuredData={{}}
-        tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax", "mutual funds", "personal finance", "investment planning"]}
+        tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax"]}
       />
       
       {/* Mobile Navigation Overlay */}
@@ -125,9 +84,7 @@ export const Home: React.FC = () => {
               <button onClick={() => scrollToSection('hero')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Home</button>
               <button onClick={() => scrollToSection('popular')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Popular Tools</button>
               <button onClick={() => scrollToSection('categories')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">All Categories</button>
-              <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Features</button>
               <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Blog</Link>
-              <Link to="/government-schemes" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100">Government Schemes</Link>
             </nav>
           </div>
         </div>
@@ -139,7 +96,6 @@ export const Home: React.FC = () => {
           <button onClick={() => scrollToSection('hero')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'hero' ? 'bg-primary-600 text-white' : 'text-gray-600 hover:text-gray-900'}`}>Home</button>
           <button onClick={() => scrollToSection('popular')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'popular' ? 'bg-primary-600 text-white' : 'text-gray-600 hover:text-gray-900'}`}>Popular</button>
           <button onClick={() => scrollToSection('categories')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'categories' ? 'bg-primary-600 text-white' : 'text-gray-600 hover:text-gray-900'}`}>Categories</button>
-          <button onClick={() => scrollToSection('features')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'features' ? 'bg-primary-600 text-white' : 'text-gray-600 hover:text-gray-900'}`}>Features</button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -154,11 +110,8 @@ export const Home: React.FC = () => {
         <section id="hero" className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 py-20 sm:py-24 md:py-32 lg:py-40 overflow-hidden">
           {/* Animated Background */}
           <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-full h-full">
-              <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
-            </div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           </div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -320,7 +273,11 @@ export const Home: React.FC = () => {
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {popularCalculators.map((calculator, index) => (
+              {[
+                { id: 'emi-calculator', name: 'EMI Calculator', description: 'Calculate your loan EMI, total interest, and payment schedule', category: 'Loan Calculators' },
+                { id: 'sip-calculator', name: 'SIP Calculator', description: 'Plan your investments and calculate returns on SIP investments', category: 'Investment Calculators' },
+                { id: 'income-tax-calculator', name: 'Income Tax Calculator', description: 'Calculate your income tax liability under old and new tax regimes', category: 'Tax Calculators' }
+              ].map((calculator, index) => (
                 <Link
                   key={calculator.id}
                   to={`/calculators/${calculator.id}`}
@@ -347,13 +304,6 @@ export const Home: React.FC = () => {
                   </div>
                 </Link>
               ))}
-            </div>
-            
-            <div className="text-center mt-16">
-              <Link to="/#categories" className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl font-semibold hover:bg-primary-700 shadow-lg hover:shadow-xl transition-all">
-                View All Calculators
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Link>
             </div>
           </div>
         </section>
@@ -451,99 +401,9 @@ export const Home: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* All Calculators Section */}
-        <div id="all-calculators" ref={allCalculatorsRef} className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">All Calculators</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Browse our comprehensive collection of financial calculators organized by category
-              </p>
-            </div>
-            
-            <div className="space-y-12">
-              {calculatorCategories.map(category => (
-                <div key={category.id} id={category.id} className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
-                  <div className="flex items-center mb-8">
-                    <div className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mr-4 shadow-lg`}>
-                      {getCategoryIcon(category.id)}
-                    </div>
-                    <div>
-                      <h3 className="text-3xl font-bold text-gray-900">{category.name}</h3>
-                      <p className="text-gray-600">{category.description}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {category.calculators.map(calculator => (
-                      <Link 
-                        key={calculator.id}
-                        to={`/calculators/${calculator.id}`}
-                        className="p-6 border border-gray-200 rounded-xl hover:border-primary-300 hover:bg-primary-50 transition-all group"
-                      >
-                        <div className="flex items-center">
-                          <Calculator className="h-6 w-6 text-primary-600 mr-4 flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">{calculator.name}</h4>
-                            <p className="text-sm text-gray-500 mt-1 line-clamp-2">{calculator.description}</p>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Dynamic Finance News Section */}
-        <FinanceNewsSection />
-
-        {/* CTA Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl shadow-2xl overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="p-12 md:p-16">
-                  <h2 className="text-4xl font-bold mb-6 text-white">Stay Updated with Financial Insights</h2>
-                  <p className="text-xl mb-8 text-white/90 leading-relaxed">
-                    Subscribe to our newsletter for the latest updates on financial tools, tax changes, investment strategies, and more.
-                  </p>
-                  <form className="space-y-6">
-                    <div>
-                      <input
-                        type="email"
-                        placeholder="Enter your email address"
-                        className="w-full px-6 py-4 rounded-2xl text-lg border-0 focus:ring-2 focus:ring-white/20"
-                        required
-                      />
-                    </div>
-                    <button type="submit" className="w-full bg-white text-primary-700 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl">
-                      Subscribe Now
-                    </button>
-                  </form>
-                  <p className="text-sm text-white/80 mt-6">
-                    By subscribing, you agree to our Privacy Policy and consent to receive financial updates.
-                  </p>
-                </div>
-                <div className="hidden md:block relative">
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <img 
-                    src="https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                    alt="Financial planning" 
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
 };
 
-export default Home;
+export default HomeNew;
