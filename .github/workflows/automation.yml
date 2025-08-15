@@ -1,73 +1,20 @@
-name: Automated Blog Generation & Deployment
+name: Build and Test
 
 on:
-  schedule:
-    - cron: '0 6 * * *'  # 6 AM IST daily
-  workflow_dispatch:  # Manual trigger
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
 
 jobs:
-  generate-blogs:
-    runs-on: ubuntu-latest
-    name: Generate Blog Posts
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-          
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Create logs directory
-        run: mkdir -p logs
-        
-      - name: Generate blog posts
-        run: node automated-blog-generator.cjs
-        env:
-          NODE_ENV: production
-          
-      - name: Check for changes
-        id: changes
-        run: |
-          if git diff --quiet; then
-            echo "no_changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "no_changes=false" >> $GITHUB_OUTPUT
-          fi
-          
-      - name: Commit and push changes
-        if: steps.changes.outputs.no_changes == 'false'
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "🤖 Auto-generated blog posts from RSS feeds - $(date +'%Y-%m-%d %H:%M:%S')"
-          git push origin main
-          
-      - name: Upload logs
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: automation-logs
-          path: logs/
-          retention-days: 7
-
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
     name: Build and Test
-    needs: generate-blogs
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+          
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -89,31 +36,9 @@ jobs:
             echo "❌ Build failed - dist directory not found"
             exit 1
           fi
-
-  notify-success:
-    needs: [generate-blogs, build-and-test]
-    runs-on: ubuntu-latest
-    name: Send Success Notification
-    if: always() && needs.generate-blogs.result == 'success' && needs.build-and-test.result == 'success'
-    
-    steps:
+          
       - name: Success notification
         run: |
-          echo "✅ Blog generation and build completed successfully!"
+          echo "✅ Build completed successfully!"
           echo "📅 Date: $(date)"
-          echo "📊 Generated: 20 new blog posts"
           echo "🏗️ Build: Successful"
-          
-  notify-failure:
-    needs: [generate-blogs, build-and-test]
-    runs-on: ubuntu-latest
-    name: Send Failure Notification
-    if: always() && (needs.generate-blogs.result == 'failure' || needs.build-and-test.result == 'failure')
-    
-    steps:
-      - name: Failure notification
-        run: |
-          echo "❌ Blog generation or build failed!"
-          echo "📅 Date: $(date)"
-          echo "🔍 Check the logs for more details"
-          exit 1

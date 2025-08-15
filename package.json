@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "generate-blogs": "node automated-blog-generator.cjs",
     "generate-crypto": "node crypto-blog-generator.cjs",
+    "generate-manual": "node manual-blog-generator.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
     "lhci:autorun": "lhci autorun"
   },
