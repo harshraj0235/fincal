@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Calculator, 
@@ -14,56 +14,20 @@ import {
   X, 
   Star, 
   Users, 
-  Zap, 
   Globe, 
   Smartphone,
-  FileText,
-  BookOpen,
-  Settings,
-  Phone,
-  Mail,
-  MapPin,
-  ChevronDown,
-  Play,
-  CheckCircle,
   Clock,
-  Award,
-  Target,
-  BarChart3,
-  Lightbulb,
-  Heart,
-  Gift,
-  Rocket,
-  Crown,
-  Gem,
-  Sparkles,
-  Home,
-  HelpCircle,
-  User,
-  Bell,
-  Share2,
-  Bookmark,
-  Download,
-  RefreshCw,
-  Info,
-  AlertCircle,
-  ExternalLink
+  BarChart3
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { allBlogPosts } from '../data/allBlogData';
-import { SearchBar } from '../components/SearchBar';
 import SEOHelmet from '../components/SEOHelmet';
-import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 export const HomeNew: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const location = useLocation();
-  const searchRef = useRef<HTMLDivElement>(null);
 
   // Intersection Observer for smooth scrolling navigation
   useEffect(() => {
@@ -92,14 +56,7 @@ export const HomeNew: React.FC = () => {
     }
   };
 
-  const handleSearch = (term: string) => {
-    setSearchTerm(term);
-    // Navigate to search results or filter content
-    if (term.trim()) {
-      // You can implement search functionality here
-      console.log('Searching for:', term);
-    }
-  };
+
 
   const getCategoryIcon = (categoryId: string) => {
     switch(categoryId) {
@@ -137,8 +94,7 @@ export const HomeNew: React.FC = () => {
 
   return (
     <>
-      <WhatsAppBanner />
-      <AstroFinanceButton />
+
       <SEOHelmet 
         title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
         description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more."

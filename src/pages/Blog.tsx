@@ -16,8 +16,7 @@ import {
 } from 'lucide-react';
 import { allBlogPosts } from '../data/allBlogData';
 import SEOHelmet from '../components/SEOHelmet';
-import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+
 
 export const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -97,8 +96,7 @@ export const Blog: React.FC = () => {
 
   return (
     <>
-      <WhatsAppBanner />
-      <AstroFinanceButton />
+
       <SEOHelmet
         title="Financial Blog - Latest Articles, Tips & Insights | MoneyCal.in"
         description="Stay updated with the latest financial news, investment tips, tax updates, and money management advice. Expert insights for better financial decisions."

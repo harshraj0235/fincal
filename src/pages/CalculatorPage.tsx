@@ -111,7 +111,7 @@ interface CalculatorPageProps {
 export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) => {
   const navigate = useNavigate();
   const calculator = getCalculatorById(calculatorId);
-  
+
   if (!calculator) {
     return (
       <>
@@ -126,13 +126,13 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         <p className="text-lg text-neutral-600 mb-8">
           The calculator you're looking for doesn't exist or may have been moved.
         </p>
-        <button 
-          onClick={() => navigate('/')}
+          <button
+            onClick={() => navigate('/')}
           className="btn btn-primary"
-        >
+          >
           Go to Home
-        </button>
-      </div>
+          </button>
+        </div>
       </>
     );
   }
@@ -435,7 +435,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         }}
       />
       
-    <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto">
       <div className="mb-8">
         <button 
           onClick={() => navigate(-1)} 
