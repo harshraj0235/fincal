@@ -36,7 +36,18 @@ import {
   Rocket,
   Crown,
   Gem,
-  Sparkles
+  Sparkles,
+  Home,
+  HelpCircle,
+  User,
+  Bell,
+  Share2,
+  Bookmark,
+  Download,
+  RefreshCw,
+  Info,
+  AlertCircle,
+  ExternalLink
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { allBlogPosts } from '../data/allBlogData';
@@ -50,6 +61,7 @@ export const HomeNew: React.FC = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
   const location = useLocation();
   const searchRef = useRef<HTMLDivElement>(null);
 
@@ -77,6 +89,15 @@ export const HomeNew: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
+    }
+  };
+
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+    // Navigate to search results or filter content
+    if (term.trim()) {
+      // You can implement search functionality here
+      console.log('Searching for:', term);
     }
   };
 
@@ -110,6 +131,9 @@ export const HomeNew: React.FC = () => {
 
   // Get featured blog posts
   const featuredBlogs = allBlogPosts.slice(0, 6);
+
+  // Quick search suggestions
+  const searchSuggestions = ['EMI', 'SIP', 'Income Tax', 'Mutual Fund', 'PPF', 'FD', 'GST', 'TDS'];
 
   return (
     <>
@@ -152,6 +176,11 @@ export const HomeNew: React.FC = () => {
                 <button onClick={() => scrollToSection('blog')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Blog</button>
                 <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Features</button>
                 <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">View All Blog Posts</Link>
+                <Link to="/government-schemes" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Government Schemes</Link>
+                <Link to="/exceltool" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Excel Tools</Link>
+                <Link to="/crypto" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Crypto</Link>
+                <Link to="/astro-finance" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Astro Finance</Link>
+                <Link to="/contact-us" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Contact Us</Link>
               </nav>
             </motion.div>
           </motion.div>
@@ -165,6 +194,10 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('popular')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'popular' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Popular</button>
           <button onClick={() => scrollToSection('categories')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
           <button onClick={() => scrollToSection('blog')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Blog</button>
+          <Link to="/government-schemes" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Schemes</Link>
+          <Link to="/exceltool" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Excel</Link>
+          <Link to="/crypto" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Crypto</Link>
+          <Link to="/astro-finance" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Astro</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -317,11 +350,24 @@ export const HomeNew: React.FC = () => {
                 <p className="text-gray-600 text-lg">Search from our collection of 50+ financial calculators</p>
               </div>
               <div className="relative">
-                <SearchBar />
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search for calculators..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full px-4 py-3 pl-12 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  />
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                </div>
                 <div className="mt-6 flex flex-wrap gap-2 justify-center">
                   <span className="text-sm text-gray-500">Popular:</span>
-                  {['EMI', 'SIP', 'Income Tax', 'Mutual Fund'].map((term) => (
-                    <button key={term} className="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors">
+                  {searchSuggestions.map((term) => (
+                    <button 
+                      key={term} 
+                      onClick={() => setSearchTerm(term)}
+                      className="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm text-gray-700 transition-colors"
+                    >
                       {term}
                     </button>
                   ))}
@@ -355,7 +401,7 @@ export const HomeNew: React.FC = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <Link 
-                    to={`/#${category.id}`} 
+                    to={`/calculators/${category.calculators[0]?.id || 'emi-calculator'}`}
                     className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all text-center transform hover:-translate-y-2 duration-300 block"
                   >
                     <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
@@ -455,7 +501,7 @@ export const HomeNew: React.FC = () => {
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredBlogs.map((blog, index) => (
+              {featuredBlogs.slice(0, 6).map((blog, index) => (
                 <motion.article
                   key={blog.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -571,79 +617,8 @@ export const HomeNew: React.FC = () => {
           </div>
         </section>
 
-        {/* Blog Section */}
-        <section id="blog" className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Latest Financial Insights</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Stay updated with the latest financial news, investment tips, and expert insights
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Complete Guide to Income Tax Calculation 2024",
-                  excerpt: "Learn how to calculate your income tax under both old and new tax regimes with our comprehensive guide.",
-                  author: "Tax Expert",
-                  date: "2024-01-15",
-                  category: "Tax"
-                },
-                {
-                  title: "Best SIP Investment Strategies for 2024",
-                  excerpt: "Discover the most effective SIP investment strategies to maximize your returns in 2024.",
-                  author: "Investment Advisor",
-                  date: "2024-01-12",
-                  category: "Investment"
-                },
-                {
-                  title: "Understanding EMI Calculation: A Complete Guide",
-                  excerpt: "Everything you need to know about EMI calculation, factors affecting it, and how to reduce your EMI burden.",
-                  author: "Financial Planner",
-                  date: "2024-01-10",
-                  category: "Loan"
-                }
-              ].map((blog, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all overflow-hidden group">
-                  <Link to="/blog" className="block">
-                    <div className="p-6">
-                      <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
-                        <div className="flex items-center">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {new Date(blog.date).toLocaleDateString()}
-                        </div>
-                        <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                          {blog.category}
-                        </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                        {blog.title}
-                      </h3>
-                      <p className="text-gray-600 line-clamp-3 mb-4">
-                        {blog.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-gray-900">{blog.author}</span>
-                        <ArrowRight className="w-5 h-5 text-blue-600 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-            
-            <div className="text-center mt-12">
-              <Link to="/blog" className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
-                View All Blog Posts
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* All Categories Grid */}
-        <section id="categories" className="py-20 bg-white">
+        <section id="categories" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -666,7 +641,7 @@ export const HomeNew: React.FC = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <Link
-                    to={`/#${category.id}`}
+                    to={`/calculators/${category.calculators[0]?.id || 'emi-calculator'}`}
                     className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 block"
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br ${getCategoryColor(category.id)} opacity-90 group-hover:opacity-100 transition-opacity`}></div>
@@ -723,6 +698,12 @@ export const HomeNew: React.FC = () => {
                   className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-2xl font-semibold transition-all"
                 >
                   Tax Calculator
+                </Link>
+                <Link
+                  to="/astro-finance"
+                  className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-2xl font-semibold transition-all"
+                >
+                  Astro Finance
                 </Link>
               </div>
             </motion.div>
