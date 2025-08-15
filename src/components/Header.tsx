@@ -81,9 +81,9 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                 </h1>
                 <p className="text-xs text-gray-600">Smart Financial Tools</p>
               </div>
-            </Link>
+          </Link>
           </motion.div>
-
+          
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => {
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                   whileHover={{ y: -2 }}
                   className="relative"
                 >
-                  <Link
+                            <Link
                     to={item.href}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${
                       isActive
@@ -107,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                   >
                     <Icon className="w-4 h-4" />
                     <span className="font-medium">{item.name}</span>
-                  </Link>
+                            </Link>
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
@@ -169,10 +169,10 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                   >
                     <Link to="/profile" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
                       Profile
-                    </Link>
+            </Link>
                     <Link to="/settings" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
                       Settings
-                    </Link>
+            </Link>
                     <hr className="my-2" />
                     <button className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600">
                       Sign Out
@@ -191,9 +191,9 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             >
               <Menu className="w-6 h-6 text-gray-600" />
             </motion.button>
-          </div>
         </div>
-
+      </div>
+      
         {/* Search Bar */}
         <AnimatePresence>
           {isSearchOpen && (
@@ -211,17 +211,17 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                   autoFocus
                 />
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <button
+              <button 
                   onClick={() => setIsSearchOpen(false)}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 p-1 rounded-lg hover:bg-gray-100"
-                >
+              >
                   <X className="w-4 h-4 text-gray-400" />
-                </button>
-              </div>
+              </button>
+            </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+        </div>
 
       {/* Progress Bar */}
       <motion.div

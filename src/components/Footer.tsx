@@ -93,13 +93,13 @@ export const Footer: React.FC = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                     <Calculator className="w-7 h-7 text-white" />
                   </div>
-                  <div>
+          <div>
                     <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                       MoneyCal.in
                     </h3>
                     <p className="text-blue-200 text-sm">Smart Financial Tools</p>
                   </div>
-                </Link>
+            </Link>
                 <p className="text-gray-300 leading-relaxed mb-6">
                   India's most comprehensive financial calculator platform. Plan loans, investments, taxes, and more with confidence.
                 </p>
@@ -117,11 +117,11 @@ export const Footer: React.FC = () => {
                   <div className="flex items-center space-x-3 text-gray-300">
                     <MapPin className="w-4 h-4 text-blue-400" />
                     <span className="text-sm">Mumbai, Maharashtra, India</span>
-                  </div>
+            </div>
                 </div>
               </motion.div>
-            </div>
-
+          </div>
+          
             {/* Footer Sections */}
             {footerSections.map((section, index) => (
               <motion.div
@@ -153,15 +153,15 @@ export const Footer: React.FC = () => {
                         >
                           <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                           {link.name}
-                        </Link>
+                </Link>
                       </motion.div>
-                    </li>
+              </li>
                   ))}
-                </ul>
+            </ul>
               </motion.div>
             ))}
           </div>
-
+          
           {/* Stats Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -196,8 +196,8 @@ export const Footer: React.FC = () => {
               })}
             </div>
           </motion.div>
-        </div>
-
+          </div>
+          
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 bg-black/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -250,8 +250,8 @@ export const Footer: React.FC = () => {
               >
                 <ArrowUp className="w-5 h-5" />
               </motion.button>
-            </div>
           </div>
+        </div>
         </div>
       </div>
     </footer>

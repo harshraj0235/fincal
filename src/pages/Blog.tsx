@@ -38,7 +38,7 @@ export const Blog: React.FC = () => {
                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           post.categories?.some(cat => cat.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchesCategory = selectedCategory === 'all' || post.categories?.includes(selectedCategory);
-      return matchesSearch && matchesCategory;
+    return matchesSearch && matchesCategory;
     })
     .sort((a, b) => {
       switch (sortBy) {
@@ -99,7 +99,7 @@ export const Blog: React.FC = () => {
     <>
       <WhatsAppBanner />
       <AstroFinanceButton />
-      <SEOHelmet 
+      <SEOHelmet
         title="Financial Blog - Latest Articles, Tips & Insights | MoneyCal.in"
         description="Stay updated with the latest financial news, investment tips, tax updates, and money management advice. Expert insights for better financial decisions."
         keywords="financial blog, investment tips, tax advice, money management, financial news"
@@ -139,14 +139,14 @@ export const Blog: React.FC = () => {
               {/* Search Bar */}
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                />
-              </div>
+              />
+            </div>
 
               {/* Filters */}
               <div className="flex items-center space-x-4">
@@ -184,16 +184,16 @@ export const Blog: React.FC = () => {
                   >
                     <Grid className="w-5 h-5" />
                   </button>
-                  <button
+              <button
                     onClick={() => setViewMode('list')}
                     className={`p-2 rounded-lg transition-all ${
                       viewMode === 'list' ? 'bg-white shadow-sm' : 'text-gray-600'
                     }`}
                   >
                     <List className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
+              </button>
+            </div>
+          </div>
             </div>
           </motion.div>
 
@@ -207,14 +207,14 @@ export const Blog: React.FC = () => {
             <p className="text-gray-600">
               Showing {currentPosts.length} of {filteredPosts.length} articles
             </p>
-            {searchTerm && (
+              {searchTerm && (
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-gray-500">Search results for:</span>
                 <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
                   "{searchTerm}"
                 </span>
-              </div>
-            )}
+            </div>
+          )}
           </motion.div>
 
           {/* Blog Posts Grid/List */}
@@ -233,7 +233,7 @@ export const Blog: React.FC = () => {
                     <div className="h-4 bg-gray-200 rounded mb-2"></div>
                     <div className="h-4 bg-gray-200 rounded mb-2 w-3/4"></div>
                     <div className="h-3 bg-gray-200 rounded w-1/2"></div>
-                  </div>
+            </div>
                 ))}
               </motion.div>
             ) : (
@@ -250,7 +250,7 @@ export const Blog: React.FC = () => {
               >
                 {currentPosts.map((post, index) => (
                   <motion.article
-                    key={post.id}
+                      key={post.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
@@ -265,7 +265,7 @@ export const Blog: React.FC = () => {
                     }`}>
                       <img
                         src={post.coverImage || (post as any).featuredImage || 'https://via.placeholder.com/400x250'}
-                        alt={post.title}
+                            alt={post.title}
                         className="w-full h-48 lg:h-64 object-cover transition-transform hover:scale-105"
                       />
                       <div className="absolute top-4 left-4">
@@ -274,10 +274,10 @@ export const Blog: React.FC = () => {
                             key={category}
                             className={`inline-block px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r ${getCategoryColor(category)} mr-2 mb-2`}
                           >
-                            {category}
-                          </span>
-                        ))}
-                      </div>
+                              {category}
+                            </span>
+                          ))}
+                        </div>
                       <div className="absolute top-4 right-4 flex space-x-2">
                         <motion.button
                           whileHover={{ scale: 1.1 }}
@@ -312,8 +312,8 @@ export const Blog: React.FC = () => {
                         <div className="flex items-center">
                           <Eye className="w-4 h-4 mr-1" />
                           {Math.floor(Math.random() * 1000) + 100}
-                        </div>
                       </div>
+                </div>
 
                       <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-blue-600 transition-colors">
                         <Link to={`/blog/${post.slug}`}>
@@ -335,8 +335,8 @@ export const Blog: React.FC = () => {
                           <div>
                             <div className="text-sm font-medium text-gray-900">{post.author}</div>
                             <div className="text-xs text-gray-500">{post.authorTitle}</div>
-                          </div>
-                        </div>
+                      </div>
+                  </div>
 
                         <motion.button
                           whileHover={{ scale: 1.05 }}
@@ -345,8 +345,8 @@ export const Blog: React.FC = () => {
                         >
                           <ArrowRight className="w-4 h-4" />
                         </motion.button>
-                      </div>
-                    </div>
+                  </div>
+                </div>
                   </motion.article>
                 ))}
               </motion.div>
@@ -435,9 +435,9 @@ export const Blog: React.FC = () => {
                 Clear Filters
               </button>
             </motion.div>
-          )}
-        </div>
-      </div>
+            )}
+          </div>
+    </div>
     </>
   );
 };

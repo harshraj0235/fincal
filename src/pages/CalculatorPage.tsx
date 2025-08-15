@@ -66,7 +66,7 @@ export const CalculatorPage: React.FC = () => {
         >
           <div className="w-24 h-24 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
             <AlertCircle className="w-12 h-12 text-white" />
-          </div>
+        </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Calculator Not Found</h1>
           <p className="text-gray-600 mb-8">The calculator you're looking for doesn't exist.</p>
           <Link
@@ -104,12 +104,12 @@ export const CalculatorPage: React.FC = () => {
   const category = calculatorCategories.find(cat => 
     cat.calculators.some(calc => calc.id === calculatorId)
   );
-
+  
   return (
     <>
       <WhatsAppBanner />
       <AstroFinanceButton />
-      <SEOHelmet 
+      <SEOHelmet
         title={`${calculator.name} - Free Online Calculator | MoneyCal.in`}
         description={calculator.description || `Calculate ${calculator.name.toLowerCase()} with our free online calculator. Get accurate results instantly.`}
         keywords={`${calculator.name}, calculator, financial calculator, online calculator`}
@@ -163,7 +163,7 @@ export const CalculatorPage: React.FC = () => {
                   <div className="flex items-center space-x-4 mb-4">
                     <div className={`w-16 h-16 bg-gradient-to-r ${getCategoryColor(category?.id || '')} rounded-2xl flex items-center justify-center shadow-lg`}>
                       {getCategoryIcon(category?.id || '')}
-                    </div>
+            </div>
                     <div>
                       <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                         {calculator.name}
@@ -181,13 +181,13 @@ export const CalculatorPage: React.FC = () => {
                           <Clock className="w-4 h-4 mr-1 text-green-500" />
                           Updated today
                         </span>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
                   <p className="text-gray-600 text-lg leading-relaxed max-w-3xl">
                     {calculator.description || `Calculate ${calculator.name.toLowerCase()} with our free online calculator. Get accurate results instantly.`}
                   </p>
-                </div>
+        </div>
 
                 {/* Action Buttons */}
                 <div className="flex items-center space-x-3 mt-6 lg:mt-0">
@@ -216,8 +216,8 @@ export const CalculatorPage: React.FC = () => {
                     <Download className="w-5 h-5 text-gray-600" />
                   </motion.button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
           </motion.div>
 
           {/* Main Content */}
@@ -238,8 +238,8 @@ export const CalculatorPage: React.FC = () => {
                     { id: 'info', name: 'Information', icon: Info },
                   ].map((tab) => {
                     const Icon = tab.icon;
-                    return (
-                      <button
+              return (
+                <button 
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
                         className={`flex-1 flex items-center justify-center space-x-2 py-4 px-6 transition-all ${
@@ -250,10 +250,10 @@ export const CalculatorPage: React.FC = () => {
                       >
                         <Icon className="w-5 h-5" />
                         <span className="font-medium">{tab.name}</span>
-                      </button>
-                    );
-                  })}
-                </div>
+                </button>
+              );
+            })}
+          </div>
 
                 {/* Tab Content */}
                 <div className="p-6">
@@ -283,8 +283,8 @@ export const CalculatorPage: React.FC = () => {
                                 <Calculator className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Calculator Component Not Found</h3>
                                 <p className="text-gray-600">This calculator is under development.</p>
-                              </div>
-                            )}
+        </div>
+      )}
                           </div>
                         )}
                       </motion.div>
@@ -429,7 +429,7 @@ export const CalculatorPage: React.FC = () => {
             </motion.div>
           </div>
         </div>
-      </div>
+    </div>
     </>
   );
 };

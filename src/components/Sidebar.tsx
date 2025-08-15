@@ -57,7 +57,7 @@ export const Sidebar: React.FC = () => {
       default: return 'from-gray-500 to-gray-600';
     }
   };
-
+  
   return (
     <div className="h-full overflow-y-auto bg-white/80 backdrop-blur-md">
       <div className="p-6">
@@ -73,7 +73,7 @@ export const Sidebar: React.FC = () => {
             <Zap className="w-4 h-4 mr-2 text-yellow-500" />
             Quick Actions
           </h3>
-          <div className="space-y-2">
+      <div className="space-y-2">
             {quickActions.map((action) => {
               const Icon = action.icon;
               const isActive = location.pathname === action.href;
@@ -198,10 +198,10 @@ export const Sidebar: React.FC = () => {
                       >
                         {category.calculators.slice(0, 6).map((calculator) => {
                           const isCalculatorActive = location.pathname.includes(calculator.id);
-                          
-                          return (
+                  
+                  return (
                             <motion.div
-                              key={calculator.id}
+                      key={calculator.id}
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.1 }}
@@ -212,9 +212,9 @@ export const Sidebar: React.FC = () => {
                                   isCalculatorActive
                                     ? 'bg-blue-100 text-blue-700 font-medium'
                                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                                }`}
-                              >
-                                {calculator.name}
+                      }`}
+                    >
+                      {calculator.name}
                               </Link>
                             </motion.div>
                           );
@@ -276,9 +276,9 @@ export const Sidebar: React.FC = () => {
                     <span className="font-medium text-sm">{item.name}</span>
                   </Link>
                 </motion.div>
-              );
-            })}
-          </div>
+                  );
+                })}
+              </div>
         </div>
 
         {/* Stats */}
@@ -299,7 +299,7 @@ export const Sidebar: React.FC = () => {
               Updated daily
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </div>
   );
