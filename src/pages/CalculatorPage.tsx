@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -21,114 +21,50 @@ import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 
-// Mapping of calculator IDs to their component names
-const calculatorComponentMap: { [key: string]: string } = {
-  'emi-calculator': 'EmiCalculator',
-  'sip-calculator': 'SipCalculator',
-  'income-tax-calculator': 'IncomeTaxCalculator',
-  'home-loan-calculator': 'HomeLoanCalculator',
-  'personal-loan-calculator': 'PersonalLoanCalculator',
-  'car-loan-calculator': 'CarLoanCalculator',
-  'business-loan-calculator': 'BusinessLoanCalculator',
-  'loan-comparison-calculator': 'LoanComparisonCalculator',
-  'loan-prepayment-calculator': 'LoanPrepaymentCalculator',
-  'loan-refinance-calculator': 'LoanRefinanceCalculator',
-  'loan-affordability-calculator': 'LoanAffordabilityCalculator',
-  'loan-tenure-converter': 'LoanTenureConverter',
-  'credit-card-emi-calculator': 'CreditCardEmiCalculator',
-  'gold-loan-emi-calculator': 'GoldLoanEmiCalculator',
-  'mutual-fund-returns-calculator': 'MutualFundReturnsCalculator',
-  'mutual-fund-cost-calculator': 'MutualFundCostCalculator',
-  'ppf-calculator': 'PpfCalculator',
-  'sukanya-samriddhi-calculator': 'SukanyaSamriddhiCalculator',
-  'nps-calculator': 'NpsCalculator',
-  'nps-tier2-calculator': 'NpsTier2Calculator',
-  'post-office-calculator': 'PostOfficeCalculator',
-  'gold-investment-calculator': 'GoldInvestmentCalculator',
-  'compound-interest-calculator': 'CompoundInterestCalculator',
-  'simple-interest-calculator': 'SimpleInterestCalculator',
-  'future-value-calculator': 'FutureValueCalculator',
-  'income-tax-regime-comparison-calculator': 'IncomeTaxRegimeComparisonCalculator',
-  'advance-tax-calculator': 'AdvanceTaxCalculator',
-  'gst-calculator': 'GstCalculator',
-  'gst-seller-calculator': 'GstSellerCalculator',
-  'tds-calculator': 'TdsCalculator',
-  'capital-gains-tax-calculator': 'CapitalGainsTaxCalculator',
-  'capital-gains-tax-advanced-calculator': 'CapitalGainsTaxAdvancedCalculator',
-  'tax-saving-investment-calculator': 'TaxSavingInvestmentCalculator',
-  'section-80c-calculator': 'Section80CCalculator',
-  'section-80d-calculator': 'Section80DCalculator',
-  'retirement-calculator': 'RetirementCalculator',
-  'pension-calculator': 'PensionCalculator',
-  'hra-exemption-calculator': 'HraExemptionCalculator',
-  'profit-margin-calculator': 'ProfitMarginCalculator',
-  'break-even-calculator': 'BreakEvenCalculator',
-  'property-investment-calculator': 'PropertyInvestmentCalculator',
-  'property-registration-calculator': 'PropertyRegistrationCalculator',
-  'rent-vs-buy-calculator': 'RentVsBuyCalculator',
-  'rent-vs-buy-advanced-calculator': 'RentVsBuyAdvancedCalculator',
-  'stamp-duty-calculator': 'StampDutyCalculator',
-  'life-insurance-calculator': 'LifeInsuranceCalculator',
-  'health-insurance-calculator': 'HealthInsuranceCalculator',
-  'term-insurance-calculator': 'TermInsuranceCalculator',
-  'human-life-value-calculator': 'HumanLifeValueCalculator',
-  'savings-account-calculator': 'SavingsAccountCalculator',
-  'currency-converter': 'CurrencyConverter',
-  'inflation-calculator': 'InflationCalculator',
-  'inflation-adjusted-sip-calculator': 'InflationAdjustedSipCalculator',
-  'step-up-sip-calculator': 'StepUpSipCalculator',
-  'xirr-tracker': 'XirrTracker',
-  'mutual-fund-overlap-checker': 'MutualFundOverlapChecker',
-  'gold-etf-vs-physical-calculator': 'GoldEtfVsPhysicalCalculator',
-  'brokerage-calculator': 'BrokerageCalculator',
-  'dividend-yield-calculator': 'DividendYieldCalculator',
-  'debt-equity-calculator': 'DebtEquityCalculator',
-  'inventory-turnover-calculator': 'InventoryTurnoverCalculator',
-  'asset-allocation-planner': 'AssetAllocationPlanner',
-  'financial-goal-calculator': 'FinancialGoalCalculator',
-  'emergency-fund-calculator': 'EmergencyFundCalculator',
-  'net-worth-calculator': 'NetWorthCalculator',
-  'budget-calculator': 'BudgetCalculator',
-  'bnpl-calculator': 'BnplCalculator',
-  'p2p-lending-calculator': 'P2PLendingCalculator',
-  'margin-trading-calculator': 'MarginTradingCalculator',
-  'forex-pip-calculator': 'ForexPipCalculator',
-  'forex-margin-calculator': 'ForexMarginCalculator',
-  'commodity-margin-calculator': 'CommodityMarginCalculator',
-  'crypto-tax-estimator': 'CryptoTaxEstimator',
-  'interest-rate-converter': 'InterestRateConverter',
-  'interest-rates-comparison': 'InterestRatesComparison',
-  'lcm-hcf-calculator': 'LcmHcfCalculator',
-  'risk-appetite-assessment': 'RiskAppetiteAssessment',
-  'digital-wealth-robo-advisor': 'DigitalWealthRoboAdvisor',
-  'crowdfunding-investment-portal': 'CrowdfundingInvestmentPortal',
-  'stable-return-fixed-income-aggregator': 'StableReturnFixedIncomeAggregator',
-  'nri-stock-investment-dashboard': 'NriStockInvestmentDashboard',
-  'bank-charges-analyzer': 'BankChargesAnalyzer',
-  'atm-locator': 'AtmLocator',
-  'bank-ifsc-finder': 'BankIfscFinder',
-  'bank-holiday-calendar': 'BankHolidayCalendar',
-  'virtual-card-issuer': 'VirtualCardIssuer',
-  'upi-failure-troubleshooter': 'UpiFailureTroubleshooter',
-  'senior-citizen-savings-planner': 'SeniorCitizenSavingsPlanner',
-  'msme-loan-eligibility': 'MSMELoanEligibilityChecker',
-  'green-energy-investment-calculator': 'GreenEnergyInvestmentCalculator',
-  'cheque-bounce-charges-calculator': 'ChequeBounceChargesCalculator',
-  'bank-locker-finder': 'BankLockerFinder',
-  'credit-card-finder': 'CreditCardFinder',
-  'gratuity-calculator': 'GratuityCalculator'
-};
+// Static imports for key calculators
+import { EmiCalculator } from '../calculators/EmiCalculator';
+import { SipCalculator } from '../calculators/SipCalculator';
+import { IncomeTaxCalculator } from '../calculators/IncomeTaxCalculator';
+import { HomeLoanCalculator } from '../calculators/HomeLoanCalculator';
+import { PersonalLoanCalculator } from '../calculators/PersonalLoanCalculator';
+import { CarLoanCalculator } from '../calculators/CarLoanCalculator';
+import { BusinessLoanCalculator } from '../calculators/BusinessLoanCalculator';
+import { PpfCalculator } from '../calculators/PpfCalculator';
+import { MutualFundReturnsCalculator } from '../calculators/MutualFundReturnsCalculator';
+import { GstCalculator } from '../calculators/GstCalculator';
+import { TdsCalculator } from '../calculators/TdsCalculator';
+import { RetirementCalculator } from '../calculators/RetirementCalculator';
+import { BreakEvenCalculator } from '../calculators/BreakEvenCalculator';
+import { PropertyInvestmentCalculator } from '../calculators/PropertyInvestmentCalculator';
+import { LifeInsuranceCalculator } from '../calculators/LifeInsuranceCalculator';
+import { CurrencyConverter } from '../calculators/CurrencyConverter';
+import { CompoundInterestCalculator } from '../calculators/CompoundInterestCalculator';
+import { SimpleInterestCalculator } from '../calculators/SimpleInterestCalculator';
+import { FutureValueCalculator } from '../calculators/FutureValueCalculator';
+import { InflationCalculator } from '../calculators/InflationCalculator';
 
-// Dynamic import function with explicit file extension
-const getCalculatorComponent = (calculatorId: string) => {
-  const componentName = calculatorComponentMap[calculatorId];
-  if (!componentName) return null;
-  
-  return lazy(() => 
-    import(`../calculators/${componentName}.tsx`).then(module => ({
-      default: module[componentName as keyof typeof module]
-    }))
-  );
+// Static component mapping
+const calculatorComponents: { [key: string]: React.ComponentType } = {
+  'emi-calculator': EmiCalculator,
+  'sip-calculator': SipCalculator,
+  'income-tax-calculator': IncomeTaxCalculator,
+  'home-loan-calculator': HomeLoanCalculator,
+  'personal-loan-calculator': PersonalLoanCalculator,
+  'car-loan-calculator': CarLoanCalculator,
+  'business-loan-calculator': BusinessLoanCalculator,
+  'ppf-calculator': PpfCalculator,
+  'mutual-fund-returns-calculator': MutualFundReturnsCalculator,
+  'gst-calculator': GstCalculator,
+  'tds-calculator': TdsCalculator,
+  'retirement-calculator': RetirementCalculator,
+  'break-even-calculator': BreakEvenCalculator,
+  'property-investment-calculator': PropertyInvestmentCalculator,
+  'life-insurance-calculator': LifeInsuranceCalculator,
+  'currency-converter': CurrencyConverter,
+  'compound-interest-calculator': CompoundInterestCalculator,
+  'simple-interest-calculator': SimpleInterestCalculator,
+  'future-value-calculator': FutureValueCalculator,
+  'inflation-calculator': InflationCalculator,
 };
 
 export const CalculatorPage: React.FC = () => {
@@ -142,7 +78,7 @@ export const CalculatorPage: React.FC = () => {
     .find(calc => calc.id === calculatorId);
 
   // Get the calculator component
-  const CalculatorComponent = calculatorId ? getCalculatorComponent(calculatorId) : null;
+  const CalculatorComponent = calculatorId ? calculatorComponents[calculatorId] : null;
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 500);
@@ -169,7 +105,8 @@ export const CalculatorPage: React.FC = () => {
             <AlertCircle className="w-12 h-12 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Calculator Not Found</h1>
-          <p className="text-gray-600 mb-8">The calculator you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-4">The calculator you're looking for doesn't exist.</p>
+          <p className="text-sm text-gray-500 mb-8">Requested ID: {calculatorId}</p>
           <Link
             to="/"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
@@ -215,7 +152,7 @@ export const CalculatorPage: React.FC = () => {
     <>
       <WhatsAppBanner />
       <AstroFinanceButton />
-      <SEOHelmet 
+      <SEOHelmet
         title={`${calculator.name} - Free Online Calculator`}
         description={calculator.description}
         keywords={calculator.keywords.join(', ')}
@@ -271,7 +208,7 @@ export const CalculatorPage: React.FC = () => {
             </div>
           </div>
         </div>
-
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             <div className="lg:col-span-3">
@@ -281,20 +218,15 @@ export const CalculatorPage: React.FC = () => {
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
                   </div>
                 ) : CalculatorComponent ? (
-                  <Suspense fallback={
-                    <div className="flex items-center justify-center py-12">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                    </div>
-                  }>
-                    <CalculatorComponent />
-                  </Suspense>
+                  <CalculatorComponent />
                 ) : (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Info className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Calculator Coming Soon</h3>
-                    <p className="text-gray-600">This calculator is currently under development.</p>
+                    <p className="text-gray-600 mb-4">This calculator is currently under development.</p>
+                    <p className="text-sm text-gray-500">Available calculators: EMI, SIP, Income Tax, Home Loan, Personal Loan, Car Loan, Business Loan, PPF, Mutual Fund Returns, GST, TDS, Retirement, Break Even, Property Investment, Life Insurance, Currency Converter, Compound Interest, Simple Interest, Future Value, Inflation</p>
                   </div>
                 )}
               </div>
@@ -323,7 +255,7 @@ export const CalculatorPage: React.FC = () => {
                           .find(calc => calc.id === relatedId);
                         
                         if (!relatedCalc) return null;
-                        
+              
                         return (
                           <Link
                             key={relatedId}
