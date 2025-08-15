@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/generate-blogs",
+      "schedule": "0 6 * * *"
+    }
+  ],
+  "functions": {
+    "api/generate-blogs.js": {
+      "maxDuration": 300
+    }
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
+}
