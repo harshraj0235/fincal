@@ -73,7 +73,7 @@ async function main() {
     // Step 4: Deploy to Cloudflare
     log('🚀 Step 4: Deploying to Cloudflare Workers...', 'blue');
     try {
-      await runCommand('wrangler deploy --env production', 'Cloudflare deployment');
+      await runCommand('wrangler deploy', 'Cloudflare deployment');
       log('✅ Successfully deployed to Cloudflare Workers!', 'green');
     } catch (error) {
       log('❌ Cloudflare deployment failed.', 'red');
