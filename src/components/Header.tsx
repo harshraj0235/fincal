@@ -3,15 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, 
-  X, 
   Search, 
   Calculator, 
   TrendingUp, 
   FileText, 
   Settings,
   MessageCircle,
-  Sparkles,
-  ChevronDown
+  Sparkles
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -21,7 +19,6 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -179,6 +176,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
 
       {/* Progress Bar */}
       <motion.div
