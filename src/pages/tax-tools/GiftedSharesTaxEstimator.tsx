@@ -387,7 +387,7 @@ const GiftedSharesTaxEstimator: React.FC = () => {
                   </h3>
                   <ul className="space-y-2 text-orange-700">
                     <li>• Cost of acquisition = FMV at gift date</li>
-                    <li>• No gift tax if FMV ≤ ₹50,000</li>
+                    <li>• No gift tax if FMV &le; ₹50,000</li>
                     <li>• Capital gains calculated from FMV</li>
                     <li>• Higher tax implications</li>
                   </ul>
@@ -401,7 +401,7 @@ const GiftedSharesTaxEstimator: React.FC = () => {
                 </h3>
                 <ul className="space-y-2 text-yellow-700">
                   <li>• No gift tax on shares received from relatives</li>
-                  <li>• Gift tax applies if FMV > ₹50,000 from non-relatives</li>
+                  <li>• Gift tax applies if FMV &gt; ₹50,000 from non-relatives</li>
                   <li>• Capital gains tax applies on sale of gifted shares</li>
                   <li>• Holding period starts from gift date, not donor's purchase date</li>
                 </ul>
