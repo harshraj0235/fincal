@@ -20,6 +20,7 @@ import { astroBlog2 } from '../data/astroBlogs/astroBlog2';
 import { astroBlog3 } from '../data/astroBlogs/astroBlog3';
 import { astroBlog4 } from '../data/astroBlogs/astroBlog4';
 import { astroBlog5 } from '../data/astroBlogs/astroBlog5';
+import { astroBlog6 } from '../data/astroBlogs/astroBlog6';
 import SEOHelmet from '../components/SEOHelmet';
 
 const AstroFinance: React.FC = () => {
@@ -36,7 +37,8 @@ const AstroFinance: React.FC = () => {
     { ...astroBlog2, date: '2024-12-14', readingTime: 6, views: 980, featured: false, authorTitle: 'Vedic Astrology Specialist' },
     { ...astroBlog3, date: '2024-12-13', readingTime: 10, views: 1450, featured: true, authorTitle: 'Vedic Astrology Specialist' },
     { ...astroBlog4, date: '2024-12-12', readingTime: 7, views: 890, featured: false, authorTitle: 'Vedic Astrology Specialist' },
-    { ...astroBlog5, date: '2024-12-11', readingTime: 9, views: 1120, featured: true, authorTitle: 'Vedic Astrology Specialist' }
+    { ...astroBlog5, date: '2024-12-11', readingTime: 9, views: 1120, featured: true, authorTitle: 'Vedic Astrology Specialist' },
+    { ...astroBlog6, date: '2024-12-10', readingTime: 12, views: 1680, featured: true, authorTitle: 'Vedic Astrology Specialist' }
   ];
 
   // Categories for astro blogs
