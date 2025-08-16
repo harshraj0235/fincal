@@ -13,10 +13,7 @@ import {
   Search,
   Grid,
   List,
-  Filter,
-  Star,
-  Clock,
-  Users
+  Filter
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -245,7 +242,7 @@ const CalculatorCategories: React.FC = () => {
                 )}
 
                 <Link
-                  to={`/#${category.id}`}
+                  to={`/calculators/category/${category.id}`}
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group"
                 >
                   View all {category.calculators.length} calculators
