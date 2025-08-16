@@ -172,9 +172,9 @@ const StockScreener: React.FC = () => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     >
                       <option value="">All Market Caps</option>
-                      <option value="Large">Large Cap (>20,000 Cr)</option>
+                      <option value="Large">Large Cap (&gt;20,000 Cr)</option>
                       <option value="Mid">Mid Cap (5,000-20,000 Cr)</option>
-                      <option value="Small">Small Cap (<5,000 Cr)</option>
+                      <option value="Small">Small Cap (&lt;5,000 Cr)</option>
                     </select>
                   </div>
 
@@ -189,9 +189,9 @@ const StockScreener: React.FC = () => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     >
                       <option value="">All P/E Ratios</option>
-                      <option value="low">Low (<15)</option>
+                      <option value="low">Low (&lt;15)</option>
                       <option value="medium">Medium (15-25)</option>
-                      <option value="high">High (>25)</option>
+                      <option value="high">High (&gt;25)</option>
                     </select>
                   </div>
 
@@ -206,9 +206,9 @@ const StockScreener: React.FC = () => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     >
                       <option value="">All Dividend Yields</option>
-                      <option value="high">High (>3%)</option>
+                      <option value="high">High (&gt;3%)</option>
                       <option value="medium">Medium (1-3%)</option>
-                      <option value="low">Low (<1%)</option>
+                      <option value="low">Low (&lt;1%)</option>
                     </select>
                   </div>
 
@@ -242,9 +242,9 @@ const StockScreener: React.FC = () => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     >
                       <option value="">All Prices</option>
-                      <option value="low">Low (<500)</option>
+                      <option value="low">Low (&lt;500)</option>
                       <option value="medium">Medium (500-1000)</option>
-                      <option value="high">High (>1000)</option>
+                      <option value="high">High (&gt;1000)</option>
                     </select>
                   </div>
 
