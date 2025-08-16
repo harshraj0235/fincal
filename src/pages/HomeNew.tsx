@@ -99,12 +99,12 @@ export const HomeNew: React.FC = () => {
       // Search in blog posts
       allBlogPosts.forEach(blog => {
         if (blog.title.toLowerCase().includes(term.toLowerCase()) ||
-            (blog as any).description?.toLowerCase().includes(term.toLowerCase())) {
+            (blog.description || '').toLowerCase().includes(term.toLowerCase())) {
           results.push({
             type: 'blog',
             id: String(blog.id),
             name: blog.title,
-            description: (blog as any).description || blog.title,
+            description: blog.description || blog.title,
             category: 'Blog',
             url: `/blog/${blog.slug}`
           });
@@ -489,6 +489,96 @@ export const HomeNew: React.FC = () => {
             >
               <Link to="/calculators" className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
                 View All Categories
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Top Tools Section */}
+        <section id="tools" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Top Financial Tools</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover our comprehensive collection of financial tools and calculators
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { 
+                  name: 'Financial Calculators', 
+                  description: 'EMI, SIP, Tax, and more calculators',
+                  icon: Calculator,
+                  color: 'from-blue-500 to-blue-600',
+                  path: '/calculators'
+                },
+                { 
+                  name: 'Tax Tools Hub', 
+                  description: 'Advanced tax planning and calculation tools',
+                  icon: DollarSign,
+                  color: 'from-green-500 to-green-600',
+                  path: '/tax-tools'
+                },
+                { 
+                  name: 'Stock Market Tools', 
+                  description: 'Stock analysis, screening, and learning tools',
+                  icon: TrendingUp,
+                  color: 'from-purple-500 to-purple-600',
+                  path: '/stock-market'
+                },
+                { 
+                  name: 'Astro Finance', 
+                  description: 'Vedic astrology-based financial guidance',
+                  icon: BarChart3,
+                  color: 'from-pink-500 to-pink-600',
+                  path: '/astro-finance'
+                }
+              ].map((tool, index) => (
+                <motion.div
+                  key={tool.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Link 
+                    to={tool.path}
+                    className="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2 duration-300 block"
+                  >
+                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                      <tool.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {tool.description}
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <span className="text-blue-600 group-hover:text-blue-700 font-semibold flex items-center">
+                        Explore Tools
+                        <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-center mt-12"
+            >
+              <Link to="/tools" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all">
+                View All Tools
                 <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
             </motion.div>

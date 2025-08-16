@@ -466,7 +466,7 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
 
             <WhatsAppBanner />
             <AstroFinanceButton />
-          </div>
+        </div>
         </section>
       </div>
     </>

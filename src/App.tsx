@@ -175,7 +175,6 @@ function App() {
         {/* Missed Call Banking Directory route - outside Layout */}
         <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
         {/* All other routes inside Layout */}
-        <Route path="/tools" element={<Navigate to="https://moneycal.in/tools/" replace />} />
         <Route path="*" element={
           <Layout>
             <ScrollToTop />
@@ -236,6 +235,7 @@ function App() {
                   <Route path="/stock-market/tools-practical-application" element={<ToolsPracticalApplication />} />
                   <Route path="/stock-market/case-studies-market-psychology" element={<CaseStudiesMarketPsychology />} />
                   <Route path="/tools" element={<ToolsHub />} />
+                  <Route path="/tools/" element={<ToolsHub />} />
                   <Route path="/tax-tools" element={<TaxToolsHub />} />
                   <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
