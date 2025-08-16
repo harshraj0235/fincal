@@ -24,7 +24,8 @@ import {
   Eye,
   Calendar,
   Globe,
-  Target
+  Target,
+  ArrowLeftRight
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -386,6 +387,17 @@ const TaxToolsHub: React.FC = () => {
         path: '/tax-tools/high-dividend-tax-impact-calculator',
         isNew: true,
         color: 'from-green-500 to-green-600',
+        status: 'available'
+      },
+      {
+        id: 'tax-year-comparison-slider-tool',
+        name: 'Tax Year Comparison Slider Tool',
+        description: 'Compare tax implications across different financial years',
+        icon: <ArrowLeftRight className="h-6 w-6" />,
+        category: 'Tax Planning',
+        path: '/tax-tools/tax-year-comparison-slider-tool',
+        isNew: true,
+        color: 'from-purple-500 to-purple-600',
         status: 'available'
       }
     ];
