@@ -94,6 +94,7 @@ const TaxEfficientWithdrawalPlanner = lazy(() => import('./pages/tax-tools/TaxEf
 const PFWithdrawalTaxPreview = lazy(() => import('./pages/tax-tools/PFWithdrawalTaxPreview'));
 const HighDividendTaxImpactCalculator = lazy(() => import('./pages/tax-tools/HighDividendTaxImpactCalculator'));
 const TaxYearComparisonSliderTool = lazy(() => import('./pages/tax-tools/TaxYearComparisonSliderTool'));
+const ShortTermLossOffsetVisualizer = lazy(() => import('./pages/tax-tools/ShortTermLossOffsetVisualizer'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -265,8 +266,9 @@ function App() {
                   <Route path="/tax-tools/tax-efficient-withdrawal-planner" element={<TaxEfficientWithdrawalPlanner />} />
                   <Route path="/tax-tools/pf-withdrawal-tax-preview" element={<PFWithdrawalTaxPreview />} />
                   <Route path="/tax-tools/high-dividend-tax-impact-calculator" element={<HighDividendTaxImpactCalculator />} />
-                  <Route path="/tax-tools/tax-year-comparison-slider-tool" element={<TaxYearComparisonSliderTool />} />
-                  <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
+                                      <Route path="/tax-tools/tax-year-comparison-slider-tool" element={<TaxYearComparisonSliderTool />} />
+                    <Route path="/tax-tools/short-term-loss-offset-visualizer" element={<ShortTermLossOffsetVisualizer />} />
+                    <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
                   <Route path="/calculators/xirr-calculator" element={<XIRRCalculator />} />

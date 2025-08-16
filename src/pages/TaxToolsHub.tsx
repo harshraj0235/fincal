@@ -25,7 +25,8 @@ import {
   Calendar,
   Globe,
   Target,
-  ArrowLeftRight
+  ArrowLeftRight,
+  AlertTriangle
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -398,8 +399,19 @@ const TaxToolsHub: React.FC = () => {
         path: '/tax-tools/tax-year-comparison-slider-tool',
         isNew: true,
         color: 'from-purple-500 to-purple-600',
-      status: 'available'
-    }
+        status: 'available'
+      },
+      {
+        id: 'short-term-loss-offset-visualizer',
+        name: 'Short-Term Loss Offset Visualizer',
+        description: 'Visualize and optimize capital loss offset strategies',
+        icon: <AlertTriangle className="h-6 w-6" />,
+        category: 'Loss Management',
+        path: '/tax-tools/short-term-loss-offset-visualizer',
+        isNew: true,
+        color: 'from-red-500 to-red-600',
+        status: 'available'
+      }
   ];
 
   const categories = [
