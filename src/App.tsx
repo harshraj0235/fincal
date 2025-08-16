@@ -60,6 +60,9 @@ const AdvancedTradingStrategies = lazy(() => import('./pages/AdvancedTradingStra
 const ToolsPracticalApplication = lazy(() => import('./pages/ToolsPracticalApplication'));
 const CaseStudiesMarketPsychology = lazy(() => import('./pages/CaseStudiesMarketPsychology'));
 const ToolsHub = lazy(() => import('./pages/ToolsHub'));
+const TaxToolsHub = lazy(() => import('./pages/TaxToolsHub'));
+const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
+const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -198,6 +201,9 @@ function App() {
                   <Route path="/stock-market/tools-practical-application" element={<ToolsPracticalApplication />} />
                   <Route path="/stock-market/case-studies-market-psychology" element={<CaseStudiesMarketPsychology />} />
                   <Route path="/tools" element={<ToolsHub />} />
+                  <Route path="/tax-tools" element={<TaxToolsHub />} />
+                  <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
+                  <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
