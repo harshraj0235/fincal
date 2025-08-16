@@ -143,7 +143,7 @@ const TaxToolsHub: React.FC = () => {
       path: '/tax-tools/dividend-tax-estimator',
       isPopular: true,
       color: 'from-yellow-500 to-yellow-600',
-      status: 'coming-soon'
+      status: 'available'
     },
     {
       id: 'dividend-reinvestment-tax-comparison',
@@ -175,7 +175,7 @@ const TaxToolsHub: React.FC = () => {
       category: 'Loss Management',
       path: '/tax-tools/loss-carry-forward-estimator',
       color: 'from-red-500 to-red-600',
-      status: 'coming-soon'
+      status: 'available'
     },
     {
       id: 'short-term-capital-loss-benefit',
