@@ -54,6 +54,11 @@ const StockMarket = lazy(() => import('./pages/StockMarket'));
 const StockMarketBasics = lazy(() => import('./pages/StockMarketBasics'));
 const StockMarketLesson = lazy(() => import('./pages/StockMarketLesson'));
 const CoreMarketConcepts = lazy(() => import('./pages/CoreMarketConcepts'));
+const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
+const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
+const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
+const XIRRCalculator = lazy(() => import('./pages/XIRRCalculator'));
+const StockScreener = lazy(() => import('./pages/StockScreener'));
 const AstroFinanceHoroscope = lazy(() => import('./pages/AstroFinanceHoroscope'));
 const AstroFinanceZodiacTips = lazy(() => import('./pages/AstroFinanceZodiacTips'));
 const AstroFinanceLuckyNumberGenerator = lazy(() => import('./pages/AstroFinanceLuckyNumberGenerator'));
@@ -181,6 +186,11 @@ function App() {
                                    <Route path="/stock-market/stock-market-basics" element={<StockMarketBasics />} />
                   <Route path="/stock-market/stock-market-basics/lesson/:lessonId" element={<StockMarketLesson />} />
                   <Route path="/stock-market/core-market-concepts" element={<CoreMarketConcepts />} />
+                  <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
+                  <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
+                  <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
+                  <Route path="/calculators/xirr-calculator" element={<XIRRCalculator />} />
+                  <Route path="/calculators/stock-screener" element={<StockScreener />} />
                 <Route path="/astro-finance/horoscope" element={<AstroFinanceHoroscope />} />
                 <Route path="/astro-finance/zodiac-tips" element={<AstroFinanceZodiacTips />} />
                 <Route path="/astro-finance/lucky-numbers" element={<AstroFinanceLuckyNumberGenerator />} />
