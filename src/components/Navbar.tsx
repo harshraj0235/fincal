@@ -20,13 +20,17 @@ import {
   Wallet,
   Percent,
   Target,
-  Zap
+  Zap,
+  Sparkles
 } from "lucide-react";
 
 const Navbar = () => {
   const [showMoneyModal, setShowMoneyModal] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<string[]>([]);
+  const [isSearchLoading, setIsSearchLoading] = useState(false);
 
   // Handle scroll effect for glass morphism
   useEffect(() => {
@@ -54,6 +58,59 @@ const Navbar = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isMobileMenuOpen]);
+
+  // Enhanced search functionality like news search
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    
+    setIsSearchLoading(true);
+    setSearchResults([]);
+    
+    try {
+      const API_KEY = "sk-eb4865dd01204224a1d97f3a30a2eb83";
+      const API_URL = "https://api.deepseek.com/v1/chat/completions";
+      
+      const prompt = `Search for financial calculators, tools, and information: ${searchQuery} (Provide relevant calculators, tools, and financial information from MoneyCal platform)`;
+      
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: "deepseek-chat",
+          messages: [
+            { 
+              role: "system", 
+              content: "You are a financial assistant that helps users find relevant calculators, tools, and financial information from the MoneyCal platform. Provide concise, helpful responses with specific calculator names and categories." 
+            },
+            { role: "user", content: prompt },
+          ],
+          max_tokens: 512,
+          temperature: 0.7,
+        }),
+      });
+      
+      if (!response.ok) throw new Error("API Error");
+      
+      const data = await response.json();
+      const content: string = data.choices?.[0]?.message?.content || "";
+      
+      // Parse the response to extract bullet points or lines
+      const results = content
+        .split(/\n|•|\d+\./)
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+      
+      setSearchResults(results);
+    } catch {
+      setSearchResults(["Search functionality temporarily unavailable. Please try again later."]);
+    } finally {
+      setIsSearchLoading(false);
+    }
+  };
 
   // Calculator categories for mobile menu
   const calculatorCategories = [
@@ -146,6 +203,15 @@ const Navbar = () => {
               News Reel
             </Link>
             <Link 
+              to="/astro-finance" 
+              className="text-white bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 rounded-lg shadow-md hover:from-purple-700 hover:to-pink-700 transition-all duration-200 text-sm font-medium flex items-center" 
+              aria-label="Astro Finance - Vedic Astrology Financial Guidance"
+              style={{ marginLeft: '8px' }}
+            >
+              <Sparkles className="w-4 h-4 mr-1" />
+              Astro Finance
+            </Link>
+            <Link 
               to="/tools" 
               className="text-white bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-800 transition-all duration-200 text-sm font-medium flex items-center" 
               aria-label="Tool Hub - All Tools"
@@ -221,17 +287,42 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="mobile-menu fixed inset-0 top-16 z-50 md:hidden">
             <div className="h-full bg-white/95 backdrop-blur-md border-t border-gray-200/50 overflow-y-auto">
-              {/* Search Bar */}
+              {/* Enhanced Search Bar */}
               <div className="p-4 border-b border-gray-200/50">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search calculators..."
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 backdrop-blur-sm"
-                    aria-label="Search financial calculators"
-                  />
-                </div>
+                <form onSubmit={handleSearch} className="space-y-3">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <input
+                      type="text"
+                      placeholder="Search calculators, tools, and financial info..."
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 backdrop-blur-sm"
+                      aria-label="Search financial calculators and tools"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
+                    disabled={isSearchLoading || !searchQuery.trim()}
+                  >
+                    {isSearchLoading ? "Searching..." : "Search"}
+                  </button>
+                </form>
+                
+                {/* Search Results */}
+                {searchResults.length > 0 && (
+                  <div className="mt-3 p-3 bg-blue-50 rounded-lg">
+                    <h4 className="text-sm font-semibold text-blue-900 mb-2">Search Results:</h4>
+                    <ul className="space-y-1">
+                      {searchResults.map((result, index) => (
+                        <li key={index} className="text-sm text-blue-800">
+                          • {result}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
 
               {/* Quick Actions */}
@@ -306,6 +397,14 @@ const Navbar = () => {
                   >
                     <Newspaper className="w-5 h-5 mr-3 text-green-600" />
                     <span className="font-medium">News Reel</span>
+                  </Link>
+                  <Link 
+                    to="/astro-finance" 
+                    className="flex items-center p-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 transition-colors font-semibold"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Sparkles className="w-5 h-5 mr-3" />
+                    <span className="font-medium">Astro Finance</span>
                   </Link>
                   <Link 
                     to="/tools" 
