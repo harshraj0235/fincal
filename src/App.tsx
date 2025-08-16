@@ -54,6 +54,7 @@ const StockMarket = lazy(() => import('./pages/StockMarket'));
 const StockMarketBasics = lazy(() => import('./pages/StockMarketBasics'));
 const StockMarketLesson = lazy(() => import('./pages/StockMarketLesson'));
 const CoreMarketConcepts = lazy(() => import('./pages/CoreMarketConcepts'));
+const FundamentalAnalysis = lazy(() => import('./pages/FundamentalAnalysis'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -186,6 +187,7 @@ function App() {
                                    <Route path="/stock-market/stock-market-basics" element={<StockMarketBasics />} />
                   <Route path="/stock-market/stock-market-basics/lesson/:lessonId" element={<StockMarketLesson />} />
                   <Route path="/stock-market/core-market-concepts" element={<CoreMarketConcepts />} />
+                  <Route path="/stock-market/fundamental-analysis" element={<FundamentalAnalysis />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
