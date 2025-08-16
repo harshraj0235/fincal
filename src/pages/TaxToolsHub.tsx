@@ -147,6 +147,16 @@ const TaxToolsHub: React.FC = () => {
       path: '/tax-tools/tax-on-partial-selloff-calculator',
       color: 'from-indigo-500 to-indigo-600',
       status: 'available'
+    },
+    {
+      id: 'offset-ltcg-with-annual-exemptions-tool',
+      name: 'Offset LTCG with Annual Exemptions Tool',
+      description: 'Plan LTCG sales to maximize annual exemption benefits',
+      icon: <Shield className="h-6 w-6" />,
+      category: 'Capital Gains',
+      path: '/tax-tools/offset-ltcg-with-annual-exemptions-tool',
+      color: 'from-emerald-500 to-emerald-600',
+      status: 'available'
     }
   ];
 

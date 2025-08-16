@@ -71,6 +71,7 @@ const IntradayVsDeliveryTaxCalculator = lazy(() => import('./pages/tax-tools/Int
 const Section80CTallyAnalyzer = lazy(() => import('./pages/tax-tools/Section80CTallyAnalyzer'));
 const ShortTermCapitalLossBenefitEstimator = lazy(() => import('./pages/tax-tools/ShortTermCapitalLossBenefitEstimator'));
 const TaxOnPartialSelloffCalculator = lazy(() => import('./pages/tax-tools/TaxOnPartialSelloffCalculator'));
+const OffsetLTCGWithAnnualExemptionsTool = lazy(() => import('./pages/tax-tools/OffsetLTCGWithAnnualExemptionsTool'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -220,6 +221,7 @@ function App() {
                   <Route path="/tax-tools/section-80c-tally-analyzer" element={<Section80CTallyAnalyzer />} />
                   <Route path="/tax-tools/short-term-capital-loss-benefit-estimator" element={<ShortTermCapitalLossBenefitEstimator />} />
                   <Route path="/tax-tools/tax-on-partial-selloff-calculator" element={<TaxOnPartialSelloffCalculator />} />
+                  <Route path="/tax-tools/offset-ltcg-with-annual-exemptions-tool" element={<OffsetLTCGWithAnnualExemptionsTool />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
