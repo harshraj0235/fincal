@@ -28,7 +28,7 @@ import {
   ArrowLeftRight,
   AlertTriangle,
   Home,
-  Plane
+  Scale
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -425,17 +425,28 @@ const TaxToolsHub: React.FC = () => {
         color: 'from-purple-500 to-purple-600',
         status: 'available'
       },
-      {
-        id: 'hra-vs-lta-tax-comparison-tool',
-        name: 'HRA vs LTA Tax Comparison Tool',
-        description: 'Compare and optimize House Rent vs Leave Travel Allowance benefits',
-        icon: <Home className="h-6 w-6" />,
-        category: 'Tax Planning',
-        path: '/tax-tools/hra-vs-lta-tax-comparison-tool',
-        isNew: true,
-        color: 'from-teal-500 to-teal-600',
-        status: 'available'
-      }
+             {
+         id: 'hra-vs-lta-tax-comparison-tool',
+         name: 'HRA vs LTA Tax Comparison Tool',
+         description: 'Compare and optimize House Rent vs Leave Travel Allowance benefits',
+         icon: <Home className="h-6 w-6" />,
+         category: 'Tax Planning',
+         path: '/tax-tools/hra-vs-lta-tax-comparison-tool',
+         isNew: true,
+         color: 'from-teal-500 to-teal-600',
+         status: 'available'
+       },
+       {
+         id: 'old-vs-new-tax-regime-helper',
+         name: 'Old vs New Tax Regime Helper',
+         description: 'Compare and choose between old and new tax regimes',
+         icon: <Scale className="h-6 w-6" />,
+         category: 'Tax Planning',
+         path: '/tax-tools/old-vs-new-tax-regime-helper',
+         isNew: true,
+         color: 'from-orange-500 to-orange-600',
+         status: 'available'
+       }
   ];
 
   const categories = [

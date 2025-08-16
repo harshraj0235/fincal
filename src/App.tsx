@@ -97,6 +97,7 @@ const TaxYearComparisonSliderTool = lazy(() => import('./pages/tax-tools/TaxYear
 const ShortTermLossOffsetVisualizer = lazy(() => import('./pages/tax-tools/ShortTermLossOffsetVisualizer'));
 const ExitStrategyTaxVisualizer = lazy(() => import('./pages/tax-tools/ExitStrategyTaxVisualizer'));
 const HRAvsLTATaxComparisonTool = lazy(() => import('./pages/tax-tools/HRAvsLTATaxComparisonTool'));
+const OldVsNewTaxRegimeHelper = lazy(() => import('./pages/tax-tools/OldVsNewTaxRegimeHelper'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -272,6 +273,7 @@ function App() {
                     <Route path="/tax-tools/short-term-loss-offset-visualizer" element={<ShortTermLossOffsetVisualizer />} />
                     <Route path="/tax-tools/exit-strategy-tax-visualizer" element={<ExitStrategyTaxVisualizer />} />
                     <Route path="/tax-tools/hra-vs-lta-tax-comparison-tool" element={<HRAvsLTATaxComparisonTool />} />
+                    <Route path="/tax-tools/old-vs-new-tax-regime-helper" element={<OldVsNewTaxRegimeHelper />} />
                     <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
