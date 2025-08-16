@@ -189,8 +189,8 @@ function App() {
                 {/* Crypto Section route */}
                 <Route path="/crypto" element={<CryptoSection />} />
                 <Route path="/crypto/:slug" element={<CryptoArticlePost />} />
-                                 {/* AstroFinance route */}
-                 <Route path="/astro-finance" element={<AstroFinance />} />
+                {/* AstroFinance route */}
+                <Route path="/astro-finance" element={<AstroFinance />} />
                  {/* Stock Market route */}
                  <Route path="/stock-market" element={<StockMarket />} />
                                    <Route path="/stock-market/stock-market-basics" element={<StockMarketBasics />} />
