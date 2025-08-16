@@ -66,6 +66,7 @@ const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimat
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
 const DividendTaxEstimator = lazy(() => import('./pages/tax-tools/DividendTaxEstimator'));
 const LossCarryForwardEstimator = lazy(() => import('./pages/tax-tools/LossCarryForwardEstimator'));
+const TurnoverCalculatorITR = lazy(() => import('./pages/tax-tools/TurnoverCalculatorITR'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -210,6 +211,7 @@ function App() {
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
                   <Route path="/tax-tools/dividend-tax-estimator" element={<DividendTaxEstimator />} />
                   <Route path="/tax-tools/loss-carry-forward-estimator" element={<LossCarryForwardEstimator />} />
+                  <Route path="/tax-tools/turnover-calculator-itr" element={<TurnoverCalculatorITR />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />

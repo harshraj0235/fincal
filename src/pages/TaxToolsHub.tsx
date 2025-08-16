@@ -8,31 +8,15 @@ import {
   Search, 
   TrendingUp, 
   DollarSign, 
-  Shield, 
-  CreditCard, 
-  PiggyBank, 
   FileText, 
-  Users, 
-  Target, 
   Zap, 
-  BookOpen, 
-  Coins, 
-  Sparkles, 
   BarChart3, 
   Wrench, 
-  Monitor, 
   Clock, 
-  Building2,
   Rocket,
-  Filter,
-  Calendar,
   TrendingDown,
   Percent,
-  PieChart,
-  Activity,
-  Briefcase,
-  Award,
-  CheckCircle
+  Activity
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -131,7 +115,7 @@ const TaxToolsHub: React.FC = () => {
       category: 'Filing & Compliance',
       path: '/tax-tools/turnover-calculator-itr',
       color: 'from-orange-500 to-orange-600',
-      status: 'coming-soon'
+      status: 'available'
     },
     {
       id: 'section-80c-tally-analyzer',
