@@ -398,9 +398,9 @@ const TaxToolsHub: React.FC = () => {
         path: '/tax-tools/tax-year-comparison-slider-tool',
         isNew: true,
         color: 'from-purple-500 to-purple-600',
-        status: 'available'
-      }
-    ];
+      status: 'available'
+    }
+  ];
 
   const categories = [
     { id: 'all', name: 'All Tools', icon: <Zap className="h-5 w-5" /> },

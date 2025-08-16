@@ -399,8 +399,8 @@ const BonusSharesTaxImpactTool: React.FC = () => {
                   <ul className="space-y-2 text-blue-700">
                     <li>• Cost per share = Original cost / Total shares</li>
                     <li>• Capital gains calculated on sale</li>
-                    <li>• STCG if held ≤ 1 year</li>
-                    <li>• LTCG if held > 1 year</li>
+                    <li>• STCG if held &le; 1 year</li>
+                    <li>• LTCG if held &gt; 1 year</li>
                   </ul>
                 </div>
               </div>
