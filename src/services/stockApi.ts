@@ -151,8 +151,8 @@ export const getStockOverview = async (symbol: string): Promise<StockOverview | 
       roe: data.ReturnOnEquityTTM,
       debtToEquity: data.DebtToEquityRatio,
       beta: data.Beta,
-      high52Week: data.52WeekHigh,
-      low52Week: data.52WeekLow
+      high52Week: data['52WeekHigh'],
+      low52Week: data['52WeekLow']
     };
     
     setCachedData(cacheKey, overview);
