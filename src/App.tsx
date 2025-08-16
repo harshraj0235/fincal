@@ -61,6 +61,7 @@ const ToolsPracticalApplication = lazy(() => import('./pages/ToolsPracticalAppli
 const CaseStudiesMarketPsychology = lazy(() => import('./pages/CaseStudiesMarketPsychology'));
 const ToolsHub = lazy(() => import('./pages/ToolsHub'));
 const TaxToolsHub = lazy(() => import('./pages/TaxToolsHub'));
+const FinanceTools = lazy(() => import('./pages/FinanceTools'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -237,6 +238,7 @@ function App() {
                   <Route path="/tools" element={<ToolsHub />} />
                   <Route path="/tools/" element={<ToolsHub />} />
                   <Route path="/tax-tools" element={<TaxToolsHub />} />
+                  <Route path="/finance-tools" element={<FinanceTools />} />
                   <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />

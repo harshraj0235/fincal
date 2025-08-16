@@ -99,12 +99,12 @@ export const HomeNew: React.FC = () => {
       // Search in blog posts
       allBlogPosts.forEach(blog => {
         if (blog.title.toLowerCase().includes(term.toLowerCase()) ||
-            (blog.description || '').toLowerCase().includes(term.toLowerCase())) {
+            (blog.excerpt || '').toLowerCase().includes(term.toLowerCase())) {
           results.push({
             type: 'blog',
             id: String(blog.id),
             name: blog.title,
-            description: blog.description || blog.title,
+            description: blog.excerpt || blog.title,
             category: 'Blog',
             url: `/blog/${blog.slug}`
           });
@@ -210,13 +210,15 @@ export const HomeNew: React.FC = () => {
                 <button onClick={() => scrollToSection('blog')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Blog</button>
                 <button onClick={() => scrollToSection('news')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">News</button>
                 <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Features</button>
+                <Link to="/tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
+                <Link to="/tax-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">💰 Tax Tools</Link>
+                <Link to="/finance-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📈 Finance Tools</Link>
                 <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">View All Blog Posts</Link>
                 <Link to="/government-schemes" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Government Schemes</Link>
                 <Link to="/exceltool" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Excel Tools</Link>
                 <Link to="/crypto" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Crypto</Link>
                 <Link to="/astro-finance" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Astro Finance</Link>
                 <Link to="/stock-market" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Stock Market</Link>
-                <Link to="/tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Tools Hub</Link>
                 <Link to="/contact-us" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Contact Us</Link>
               </nav>
             </motion.div>
@@ -232,12 +234,14 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('categories')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
           <button onClick={() => scrollToSection('blog')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Blog</button>
           <button onClick={() => scrollToSection('news')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
+          <Link to="/tools" className="px-4 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold">🛠️ Tools</Link>
+          <Link to="/tax-tools" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">💰 Tax</Link>
+          <Link to="/finance-tools" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">📈 Finance</Link>
           <Link to="/government-schemes" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Schemes</Link>
           <Link to="/exceltool" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Excel</Link>
           <Link to="/crypto" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Crypto</Link>
           <Link to="/astro-finance" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Astro</Link>
           <Link to="/stock-market" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Stock</Link>
-          <Link to="/tools" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Tools</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -986,7 +990,7 @@ export const HomeNew: React.FC = () => {
               <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
                 Join millions of users who trust our calculators for their financial planning needs
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
                 <Link
                   to="/calculators/emi-calculator"
                   className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold transition-all shadow-lg hover:shadow-xl"
@@ -994,16 +998,28 @@ export const HomeNew: React.FC = () => {
                   Start Calculating
                 </Link>
                 <Link
+                  to="/tools"
+                  className="bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 px-8 py-4 rounded-2xl font-semibold transition-all shadow-lg hover:shadow-xl"
+                >
+                  🛠️ All Tools Hub
+                </Link>
+                <Link
+                  to="/tax-tools"
+                  className="bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 px-8 py-4 rounded-2xl font-semibold transition-all shadow-lg hover:shadow-xl"
+                >
+                  💰 Tax Tools
+                </Link>
+                <Link
+                  to="/finance-tools"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 px-8 py-4 rounded-2xl font-semibold transition-all shadow-lg hover:shadow-xl"
+                >
+                  📈 Finance Tools
+                </Link>
+                <Link
                   to="/blog"
                   className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-2xl font-semibold transition-all"
                 >
                   Read Our Blog
-                </Link>
-                <Link
-                  to="/calculators/income-tax-calculator"
-                  className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-2xl font-semibold transition-all"
-                >
-                  Tax Calculator
                 </Link>
                 <Link
                   to="/astro-finance"
