@@ -87,6 +87,10 @@ const GiftedSharesTaxEstimator = lazy(() => import('./pages/tax-tools/GiftedShar
 const BonusSharesTaxImpactTool = lazy(() => import('./pages/tax-tools/BonusSharesTaxImpactTool'));
 const SwitchMFTaxCalculator = lazy(() => import('./pages/tax-tools/SwitchMFTaxCalculator'));
 const DeductionBucketVisualizer = lazy(() => import('./pages/tax-tools/80CDeductionBucketVisualizer'));
+const TraderTurnoverEstimatorITR = lazy(() => import('./pages/tax-tools/TraderTurnoverEstimatorITR'));
+const IntraYearRedemptionTaxTracker = lazy(() => import('./pages/tax-tools/IntraYearRedemptionTaxTracker'));
+const DoubleTaxReliefTool = lazy(() => import('./pages/tax-tools/DoubleTaxReliefTool'));
+const TaxEfficientWithdrawalPlanner = lazy(() => import('./pages/tax-tools/TaxEfficientWithdrawalPlanner'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -252,6 +256,10 @@ function App() {
                   <Route path="/tax-tools/bonus-shares-tax-impact-tool" element={<BonusSharesTaxImpactTool />} />
                   <Route path="/tax-tools/switch-mf-tax-calculator" element={<SwitchMFTaxCalculator />} />
                   <Route path="/tax-tools/80c-deduction-bucket-visualizer" element={<DeductionBucketVisualizer />} />
+                  <Route path="/tax-tools/trader-turnover-estimator-itr" element={<TraderTurnoverEstimatorITR />} />
+                  <Route path="/tax-tools/intra-year-redemption-tax-tracker" element={<IntraYearRedemptionTaxTracker />} />
+                  <Route path="/tax-tools/double-tax-relief-tool" element={<DoubleTaxReliefTool />} />
+                  <Route path="/tax-tools/tax-efficient-withdrawal-planner" element={<TaxEfficientWithdrawalPlanner />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />

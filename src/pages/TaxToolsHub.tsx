@@ -22,7 +22,9 @@ import {
   RefreshCw,
   Gift,
   Eye,
-  Calendar
+  Calendar,
+  Globe,
+  Target
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -319,6 +321,50 @@ const TaxToolsHub: React.FC = () => {
         isNew: true,
         color: 'from-emerald-500 to-emerald-600',
         status: 'available'
+      },
+      {
+        id: 'trader-turnover-estimator-itr',
+        name: 'Trader Turnover Estimator for ITR',
+        description: 'Calculate trading turnover for ITR filing',
+        icon: <FileText className="h-6 w-6" />,
+        category: 'Filing & Compliance',
+        path: '/tax-tools/trader-turnover-estimator-itr',
+        isNew: true,
+        color: 'from-orange-500 to-orange-600',
+        status: 'available'
+      },
+      {
+        id: 'intra-year-redemption-tax-tracker',
+        name: 'Intra-Year Redemption Tax Tracker',
+        description: 'Track tax implications of multiple redemptions',
+        icon: <Clock className="h-6 w-6" />,
+        category: 'Capital Gains',
+        path: '/tax-tools/intra-year-redemption-tax-tracker',
+        isNew: true,
+        color: 'from-blue-500 to-blue-600',
+        status: 'available'
+      },
+      {
+        id: 'double-tax-relief-tool',
+        name: 'Double Tax Relief Tool',
+        description: 'Calculate relief from double taxation',
+        icon: <Globe className="h-6 w-6" />,
+        category: 'International Tax',
+        path: '/tax-tools/double-tax-relief-tool',
+        isNew: true,
+        color: 'from-purple-500 to-purple-600',
+        status: 'available'
+      },
+      {
+        id: 'tax-efficient-withdrawal-planner',
+        name: 'Tax-Efficient Withdrawal Planner',
+        description: 'Plan tax-efficient withdrawals from investments',
+        icon: <Target className="h-6 w-6" />,
+        category: 'Tax Planning',
+        path: '/tax-tools/tax-efficient-withdrawal-planner',
+        isNew: true,
+        color: 'from-green-500 to-green-600',
+        status: 'available'
       }
     ];
 
@@ -333,7 +379,8 @@ const TaxToolsHub: React.FC = () => {
     { id: 'Advanced Tools', name: 'Advanced Tools', icon: <Wrench className="h-5 w-5" /> },
     { id: 'Data Analysis', name: 'Data Analysis', icon: <BarChart3 className="h-5 w-5" /> },
     { id: 'Retirement Planning', name: 'Retirement Planning', icon: <Shield className="h-5 w-5" /> },
-    { id: 'Tax Optimization', name: 'Tax Optimization', icon: <Calculator className="h-5 w-5" /> }
+    { id: 'Tax Optimization', name: 'Tax Optimization', icon: <Calculator className="h-5 w-5" /> },
+    { id: 'International Tax', name: 'International Tax', icon: <Globe className="h-5 w-5" /> }
   ];
 
   const filteredTools = taxTools.filter(tool => {
