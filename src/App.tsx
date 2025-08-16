@@ -72,6 +72,11 @@ const Section80CTallyAnalyzer = lazy(() => import('./pages/tax-tools/Section80CT
 const ShortTermCapitalLossBenefitEstimator = lazy(() => import('./pages/tax-tools/ShortTermCapitalLossBenefitEstimator'));
 const TaxOnPartialSelloffCalculator = lazy(() => import('./pages/tax-tools/TaxOnPartialSelloffCalculator'));
 const OffsetLTCGWithAnnualExemptionsTool = lazy(() => import('./pages/tax-tools/OffsetLTCGWithAnnualExemptionsTool'));
+const DividendReinvestmentTaxComparison = lazy(() => import('./pages/tax-tools/DividendReinvestmentTaxComparison'));
+const TaxOnBonusSharesTracker = lazy(() => import('./pages/tax-tools/TaxOnBonusSharesTracker'));
+const TDSImpactVisualizerOnGains = lazy(() => import('./pages/tax-tools/TDSImpactVisualizerOnGains'));
+const DebtFundTaxCalculator = lazy(() => import('./pages/tax-tools/DebtFundTaxCalculator'));
+const NPSTaxBenefitVsGrowthEstimator = lazy(() => import('./pages/tax-tools/NPSTaxBenefitVsGrowthEstimator'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -222,6 +227,11 @@ function App() {
                   <Route path="/tax-tools/short-term-capital-loss-benefit-estimator" element={<ShortTermCapitalLossBenefitEstimator />} />
                   <Route path="/tax-tools/tax-on-partial-selloff-calculator" element={<TaxOnPartialSelloffCalculator />} />
                   <Route path="/tax-tools/offset-ltcg-with-annual-exemptions-tool" element={<OffsetLTCGWithAnnualExemptionsTool />} />
+                  <Route path="/tax-tools/dividend-reinvestment-tax-comparison" element={<DividendReinvestmentTaxComparison />} />
+                  <Route path="/tax-tools/tax-on-bonus-shares-tracker" element={<TaxOnBonusSharesTracker />} />
+                  <Route path="/tax-tools/tds-impact-visualizer-on-gains" element={<TDSImpactVisualizerOnGains />} />
+                  <Route path="/tax-tools/debt-fund-tax-calculator" element={<DebtFundTaxCalculator />} />
+                  <Route path="/tax-tools/nps-tax-benefit-vs-growth-estimator" element={<NPSTaxBenefitVsGrowthEstimator />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />

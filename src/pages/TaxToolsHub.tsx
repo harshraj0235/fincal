@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  Calculator, 
-  Star, 
-  ArrowRight, 
-  Search, 
-  TrendingUp, 
-  DollarSign, 
-  FileText, 
-  Zap, 
-  BarChart3, 
-  Wrench, 
-  Clock, 
+import {
+  Calculator,
+  Star,
+  ArrowRight,
+  Search,
+  TrendingUp,
+  DollarSign,
+  FileText,
+  Zap,
+  BarChart3,
+  Wrench,
+  Clock,
   Rocket,
   TrendingDown,
   Percent,
   Activity,
-  PieChart
+  PieChart,
+  Shield,
+  RefreshCw,
+  Gift,
+  Eye
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -156,6 +160,56 @@ const TaxToolsHub: React.FC = () => {
       category: 'Capital Gains',
       path: '/tax-tools/offset-ltcg-with-annual-exemptions-tool',
       color: 'from-emerald-500 to-emerald-600',
+      status: 'available'
+    },
+    {
+      id: 'dividend-reinvestment-tax-comparison',
+      name: 'Dividend Reinvestment Tax Comparison',
+      description: 'Compare tax implications of dividend reinvestment vs direct investment',
+      icon: <RefreshCw className="h-6 w-6" />,
+      category: 'Dividends',
+      path: '/tax-tools/dividend-reinvestment-tax-comparison',
+      color: 'from-cyan-500 to-cyan-600',
+      status: 'available'
+    },
+    {
+      id: 'tax-on-bonus-shares-tracker',
+      name: 'Tax on Bonus Shares Tracker',
+      description: 'Track and calculate tax implications of bonus shares',
+      icon: <Gift className="h-6 w-6" />,
+      category: 'Capital Gains',
+      path: '/tax-tools/tax-on-bonus-shares-tracker',
+      color: 'from-pink-500 to-pink-600',
+      status: 'available'
+    },
+    {
+      id: 'tds-impact-visualizer-on-gains',
+      name: 'TDS Impact Visualizer on Gains',
+      description: 'Visualize how TDS affects your capital gains',
+      icon: <Eye className="h-6 w-6" />,
+      category: 'Advanced Tools',
+      path: '/tax-tools/tds-impact-visualizer-on-gains',
+      color: 'from-violet-500 to-violet-600',
+      status: 'available'
+    },
+    {
+      id: 'debt-fund-tax-calculator',
+      name: 'Debt Fund Tax Calculator',
+      description: 'Compare normal vs STCG rates for debt funds',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Mutual Funds',
+      path: '/tax-tools/debt-fund-tax-calculator',
+      color: 'from-amber-500 to-amber-600',
+      status: 'available'
+    },
+    {
+      id: 'nps-tax-benefit-vs-growth-estimator',
+      name: 'NPS Tax Benefit vs Growth Estimator',
+      description: 'Compare tax benefits vs growth benefits of NPS',
+      icon: <Shield className="h-6 w-6" />,
+      category: 'Tax Planning',
+      path: '/tax-tools/nps-tax-benefit-vs-growth-estimator',
+      color: 'from-lime-500 to-lime-600',
       status: 'available'
     }
   ];
