@@ -224,6 +224,15 @@ const Navbar = () => {
               Astro Finance
             </Link>
             <Link 
+              to="/stock-market" 
+              className="text-white bg-gradient-to-r from-green-600 to-blue-600 px-4 py-2 rounded-lg shadow-md hover:from-green-700 hover:to-blue-700 transition-all duration-200 text-sm font-medium flex items-center" 
+              aria-label="Stock Market Course - Learn Trading"
+              style={{ marginLeft: '8px' }}
+            >
+              <TrendingUp className="w-4 h-4 mr-1" />
+              Stock Market
+            </Link>
+            <Link 
               to="/tools" 
               className="text-white bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-800 transition-all duration-200 text-sm font-medium flex items-center" 
               aria-label="Tool Hub - All Tools"
@@ -302,17 +311,17 @@ const Navbar = () => {
               {/* Enhanced Search Bar */}
               <div className="p-4 border-b border-gray-200/50">
                 <form onSubmit={handleSearch} className="space-y-3">
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <input
-                      type="text"
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
                       placeholder="Search calculators, tools, and financial info..."
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 backdrop-blur-sm"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 backdrop-blur-sm"
                       aria-label="Search financial calculators and tools"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                  </div>
+                  />
+                </div>
                   <button
                     type="submit"
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
@@ -417,6 +426,14 @@ const Navbar = () => {
                   >
                     <Sparkles className="w-5 h-5 mr-3" />
                     <span className="font-medium">Astro Finance</span>
+                  </Link>
+                  <Link 
+                    to="/stock-market" 
+                    className="flex items-center p-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl hover:from-green-700 hover:to-blue-700 transition-colors font-semibold"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <TrendingUp className="w-5 h-5 mr-3" />
+                    <span className="font-medium">Stock Market</span>
                   </Link>
                   <Link 
                     to="/tools" 

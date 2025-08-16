@@ -49,7 +49,7 @@ export const BlogPost: React.FC = () => {
 
   // Check if this is an astro finance blog post
   const isAstroBlog = location.includes('/astro-finance/blog/');
-  
+
   const post = isAstroBlog ? getAstroBlogBySlug(slug || '') : getBlogPostBySlug(slug || '');
   const relatedPosts = isAstroBlog ? getRelatedAstroPosts(slug || '', 3) : getRelatedPosts(slug || '', 3);
 
@@ -155,8 +155,8 @@ export const BlogPost: React.FC = () => {
                   </div>
                 )}
               </header>
-                             {/* Blog content */}
-               <div className="prose prose-lg max-w-none mb-8">
+              {/* Blog content */}
+              <div className="prose prose-lg max-w-none mb-8">
                  {isAstroBlog ? (
                    // For astro blogs, content is HTML string
                    <div 
@@ -166,47 +166,47 @@ export const BlogPost: React.FC = () => {
                  ) : (
                    // For regular blogs, content is structured array
                    post.content.map((section, index) => (
-                     <div key={index} className="mb-8">
-                       {section.type === 'paragraph' && <p>{section.content}</p>}
-                       {section.type === 'heading' && <h2 className="text-2xl font-bold mt-8 mb-4">{section.content}</h2>}
-                       {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{section.content}</h3>}
-                       {section.type === 'list' && (
-                         <ul className="list-disc pl-6 space-y-2">
-                           {section.items.map((item, i) => (
-                             <li key={i}>{item}</li>
-                           ))}
-                         </ul>
-                       )}
-                       {section.type === 'image' && (
-                         <figure className="my-6">
-                           <picture>
-                             <source srcSet={section.url.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                             <img
-                               src={section.url}
-                               alt={section.caption || ''}
-                               className="w-full rounded-lg"
-                               loading="lazy"
-                             />
-                           </picture>
-                           {section.caption && (
-                             <figcaption className="text-sm text-neutral-500 text-center mt-2">
-                               {section.caption}
-                             </figcaption>
-                           )}
-                         </figure>
-                       )}
-                       {section.type === 'quote' && (
-                         <blockquote className="border-l-4 border-primary-500 pl-4 py-2 my-6 text-neutral-700 italic">
-                           {section.content}
-                           {section.author && (
-                             <footer className="text-sm text-neutral-500 mt-2">— {section.author}</footer>
-                           )}
-                         </blockquote>
-                       )}
-                     </div>
+                  <div key={index} className="mb-8">
+                    {section.type === 'paragraph' && <p>{section.content}</p>}
+                    {section.type === 'heading' && <h2 className="text-2xl font-bold mt-8 mb-4">{section.content}</h2>}
+                    {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{section.content}</h3>}
+                    {section.type === 'list' && (
+                      <ul className="list-disc pl-6 space-y-2">
+                        {section.items.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {section.type === 'image' && (
+                      <figure className="my-6">
+                        <picture>
+                          <source srcSet={section.url.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                          <img
+                            src={section.url}
+                            alt={section.caption || ''}
+                            className="w-full rounded-lg"
+                            loading="lazy"
+                          />
+                        </picture>
+                        {section.caption && (
+                          <figcaption className="text-sm text-neutral-500 text-center mt-2">
+                            {section.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    )}
+                    {section.type === 'quote' && (
+                      <blockquote className="border-l-4 border-primary-500 pl-4 py-2 my-6 text-neutral-700 italic">
+                        {section.content}
+                        {section.author && (
+                          <footer className="text-sm text-neutral-500 mt-2">— {section.author}</footer>
+                        )}
+                      </blockquote>
+                    )}
+                  </div>
                    ))
                  )}
-               </div>
+              </div>
               {/* Social Share & Save */}
               <div className="border-t border-b border-neutral-200 py-6 my-8 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div>
