@@ -26,7 +26,9 @@ import {
   Globe,
   Target,
   ArrowLeftRight,
-  AlertTriangle
+  AlertTriangle,
+  Home,
+  Plane
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -421,6 +423,17 @@ const TaxToolsHub: React.FC = () => {
         path: '/tax-tools/exit-strategy-tax-visualizer',
         isNew: true,
         color: 'from-purple-500 to-purple-600',
+        status: 'available'
+      },
+      {
+        id: 'hra-vs-lta-tax-comparison-tool',
+        name: 'HRA vs LTA Tax Comparison Tool',
+        description: 'Compare and optimize House Rent vs Leave Travel Allowance benefits',
+        icon: <Home className="h-6 w-6" />,
+        category: 'Tax Planning',
+        path: '/tax-tools/hra-vs-lta-tax-comparison-tool',
+        isNew: true,
+        color: 'from-teal-500 to-teal-600',
         status: 'available'
       }
   ];
