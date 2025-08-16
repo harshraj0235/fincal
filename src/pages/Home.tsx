@@ -350,7 +350,7 @@ export const Home: React.FC = () => {
           </div>
           
             <div className="text-center mt-16">
-              <Link to="/#categories" className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl font-semibold hover:bg-primary-700 shadow-lg hover:shadow-xl transition-all">
+              <Link to="/calculators" className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl font-semibold hover:bg-primary-700 shadow-lg hover:shadow-xl transition-all">
               View All Calculators
                 <ArrowRight className="h-5 w-5 ml-2" />
             </Link>

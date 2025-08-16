@@ -12,7 +12,11 @@ import {
   ChevronRight,
   Search,
   Grid,
-  List
+  List,
+  Filter,
+  Star,
+  Clock,
+  Users
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -21,6 +25,7 @@ import AstroFinanceButton from '../components/AstroFinanceButton';
 const CalculatorCategories: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const getCategoryIcon = (categoryId: string) => {
     switch(categoryId) {
@@ -56,14 +61,20 @@ const CalculatorCategories: React.FC = () => {
     }
   };
 
-  const filteredCategories = calculatorCategories.filter(category =>
-    category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    category.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    category.calculators.some(calc => 
-      calc.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      calc.description.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  );
+  const filteredCategories = calculatorCategories.filter(category => {
+    const matchesSearch = category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      category.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      category.calculators.some(calc => 
+        calc.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        calc.description.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    
+    const matchesCategory = selectedCategory === 'all' || category.id === selectedCategory;
+    
+    return matchesSearch && matchesCategory;
+  });
+
+  const totalCalculators = calculatorCategories.reduce((total, cat) => total + cat.calculators.length, 0);
 
   return (
     <>
@@ -73,7 +84,7 @@ const CalculatorCategories: React.FC = () => {
         title="All Calculator Categories - Financial Tools & Calculators | MoneyCal.in"
         description="Explore all financial calculator categories including loan calculators, investment calculators, tax calculators, retirement planners, and more. Find the perfect financial tool for your needs."
         keywords="financial calculators, loan calculators, investment calculators, tax calculators, retirement calculators, business calculators, property calculators"
-        url="/#calculators"
+        url="/calculators"
         structuredData={{}}
       />
 
@@ -97,12 +108,37 @@ const CalculatorCategories: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Search and View Controls */}
+          {/* Stats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12"
+          >
+            <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-2">{calculatorCategories.length}</div>
+              <div className="text-gray-600">Categories</div>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
+              <div className="text-3xl font-bold text-green-600 mb-2">{totalCalculators}</div>
+              <div className="text-gray-600">Calculators</div>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
+              <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
+              <div className="text-gray-600">Free Tools</div>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
+              <div className="text-3xl font-bold text-orange-600 mb-2">24/7</div>
+              <div className="text-gray-600">Available</div>
+            </div>
+          </motion.div>
+
+          {/* Search and Filter Controls */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 mb-8"
+            className="flex flex-col lg:flex-row gap-4 mb-8"
           >
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -114,6 +150,22 @@ const CalculatorCategories: React.FC = () => {
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm"
               />
             </div>
+            
+            {/* Category Filter */}
+            <div className="relative">
+              <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="pl-10 pr-8 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm appearance-none"
+              >
+                <option value="all">All Categories</option>
+                {calculatorCategories.map(category => (
+                  <option key={category.id} value={category.id}>{category.name}</option>
+                ))}
+              </select>
+            </div>
+            
             <div className="flex gap-2">
               <button
                 onClick={() => setViewMode('grid')}
@@ -174,7 +226,7 @@ const CalculatorCategories: React.FC = () => {
                 </div>
 
                 <div className="space-y-2 mb-4">
-                  {category.calculators.slice(0, viewMode === 'list' ? 6 : 4).map(calculator => (
+                  {category.calculators.slice(0, viewMode === 'list' ? 8 : 4).map(calculator => (
                     <Link
                       key={calculator.id}
                       to={`/calculators/${calculator.id}`}
@@ -186,9 +238,9 @@ const CalculatorCategories: React.FC = () => {
                   ))}
                 </div>
 
-                {category.calculators.length > (viewMode === 'list' ? 6 : 4) && (
+                {category.calculators.length > (viewMode === 'list' ? 8 : 4) && (
                   <div className="text-sm text-gray-500 mb-4">
-                    +{category.calculators.length - (viewMode === 'list' ? 6 : 4)} more calculators
+                    +{category.calculators.length - (viewMode === 'list' ? 8 : 4)} more calculators
                   </div>
                 )}
 
@@ -203,32 +255,79 @@ const CalculatorCategories: React.FC = () => {
             ))}
           </motion.div>
 
-          {/* Summary Stats */}
+          {/* All Calculators Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="mt-12 bg-white rounded-2xl p-8 shadow-lg"
+            className="mt-16"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">
-                  {calculatorCategories.length}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Browse All Calculators</h2>
+              <p className="text-lg text-gray-600">Find the perfect calculator for your financial needs</p>
+            </div>
+            
+            <div className="space-y-12">
+              {calculatorCategories.map(category => (
+                <div key={category.id} id={category.id} className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+                  <div className="flex items-center mb-8">
+                    <div className={`h-12 w-12 rounded-2xl bg-gradient-to-br ${getCategoryColor(category.id)} flex items-center justify-center mr-4 shadow-lg`}>
+                      {getCategoryIcon(category.id)}
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-bold text-gray-900">{category.name}</h3>
+                      <p className="text-gray-600">{category.description}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {category.calculators.map(calculator => (
+                      <Link 
+                        key={calculator.id}
+                        to={`/calculators/${calculator.id}`}
+                        className="p-6 border border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all group"
+                      >
+                        <div className="flex items-center">
+                          <Calculator className="h-6 w-6 text-blue-600 mr-4 flex-shrink-0" />
+                          <div>
+                            <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">{calculator.name}</h4>
+                            <p className="text-sm text-gray-500 mt-1 line-clamp-2">{calculator.description}</p>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-                <div className="text-gray-600">Categories</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 mb-2">
-                  {calculatorCategories.reduce((total, cat) => total + cat.calculators.length, 0)}
-                </div>
-                <div className="text-gray-600">Calculators</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-purple-600 mb-2">
-                  {filteredCategories.length}
-                </div>
-                <div className="text-gray-600">Showing Results</div>
-              </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-12 text-center text-white"
+          >
+            <h2 className="text-3xl font-bold mb-4">Need Help Choosing?</h2>
+            <p className="text-xl mb-8 text-blue-100">
+              Our comprehensive collection of financial calculators helps you make informed decisions
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/"
+                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold hover:bg-gray-100 transition-all"
+              >
+                Back to Home
+                <ChevronRight className="h-5 w-5 ml-2" />
+              </Link>
+              <Link
+                to="/tools"
+                className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold hover:bg-white hover:text-blue-600 transition-all"
+              >
+                Explore More Tools
+                <ChevronRight className="h-5 w-5 ml-2" />
+              </Link>
             </div>
           </motion.div>
         </div>

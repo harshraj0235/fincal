@@ -48,8 +48,8 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       case 'calculator':
         return [
           ...baseBreadcrumbs,
-          { name: 'Calculators', url: '/#categories' },
-          { name: calculatorData?.category || 'Calculator', url: '/#categories' },
+          { name: 'Calculators', url: '/calculators' },
+          { name: calculatorData?.category || 'Calculator', url: '/calculators' },
           { name: calculatorData?.name || 'Calculator', url }
         ];
       case 'blog':
@@ -62,7 +62,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       case 'category':
         return [
           ...baseBreadcrumbs,
-          { name: 'Calculators', url: '/#categories' },
+          { name: 'Calculators', url: '/calculators' },
           { name: categoryData?.name || 'Category', url }
         ];
       default:

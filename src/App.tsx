@@ -185,7 +185,6 @@ function App() {
                 <Route path="/astro-finance/crystal-calculator" element={<AstroFinanceCrystalCalculator />} />
                 <Route path="/astro-finance/blog/:slug" element={<BlogPost />} />
                 {/* Calculator Categories route */}
-                <Route path="/#calculators" element={<CalculatorCategories />} />
                 <Route path="/calculators" element={<CalculatorCategories />} />
                 {/* News Reel route */}
                 <Route path="/news-reel" element={<NewsReel />} />

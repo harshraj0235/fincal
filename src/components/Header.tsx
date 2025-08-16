@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   }, []);
 
   const navItems = [
-    { name: 'Calculators', href: '/#calculators', icon: Calculator },
+    { name: 'Calculators', href: '/calculators', icon: Calculator },
     { name: 'Blog', href: '/blog', icon: FileText },
     { name: 'Tools', href: '/exceltool', icon: TrendingUp },
     { name: 'Schemes', href: '/government-schemes', icon: Settings },
@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.href || 
-                             (item.href === '/#calculators' && location.pathname.includes('/calculators')) ||
+                             (item.href === '/calculators' && location.pathname.includes('/calculators')) ||
                              (item.href === '/astro-finance' && location.pathname.includes('/astro-finance'));
               
               return (

@@ -166,7 +166,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </Link>
           
           <Link 
-            to="/#categories" 
+            to="/calculators" 
             className="block py-3 px-4 text-primary-600 hover:bg-primary-50 rounded-xl transition-colors touch-manipulation font-medium mt-4 border border-primary-200"
             onClick={onClose}
           >

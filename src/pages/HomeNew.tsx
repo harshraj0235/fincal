@@ -483,7 +483,7 @@ export const HomeNew: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-center mt-12"
             >
-              <Link to="/#categories" className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
+              <Link to="/calculators" className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
                 View All Categories
                 <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
