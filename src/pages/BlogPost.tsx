@@ -5,6 +5,11 @@ import {
   Facebook, Twitter, Linkedin, Copy
 } from 'lucide-react';
 import { getBlogPostBySlug, getRelatedPosts } from '../data/allBlogData';
+import { astroBlog1 } from '../data/astroBlogs/astroBlog1';
+import { astroBlog2 } from '../data/astroBlogs/astroBlog2';
+import { astroBlog3 } from '../data/astroBlogs/astroBlog3';
+import { astroBlog4 } from '../data/astroBlogs/astroBlog4';
+import { astroBlog5 } from '../data/astroBlogs/astroBlog5';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import SEOHelmet from '../components/SEOHelmet';
@@ -16,12 +21,35 @@ const AUTHOR_IMAGE = "https://pbs.twimg.com/profile_images/1634415500418588677/u
 const AUTHOR_TITLE = "Software Engineer & Content Creator";
 const AUTHOR_BIO = "Harsh Raj is a Software Engineer with years of experience helping people make smart investment decisions. Passionate about financial literacy and transparent, trustworthy guidance.";
 
+// Helper functions for astro blogs
+const allAstroBlogs = [
+  { ...astroBlog1, date: '2024-12-15', readingTime: 8, views: 1250, featured: true },
+  { ...astroBlog2, date: '2024-12-14', readingTime: 6, views: 980, featured: false },
+  { ...astroBlog3, date: '2024-12-13', readingTime: 10, views: 1450, featured: true },
+  { ...astroBlog4, date: '2024-12-12', readingTime: 7, views: 890, featured: false },
+  { ...astroBlog5, date: '2024-12-11', readingTime: 9, views: 1120, featured: true }
+];
+
+const getAstroBlogBySlug = (slug: string) => {
+  return allAstroBlogs.find(blog => blog.slug === slug);
+};
+
+const getRelatedAstroPosts = (currentSlug: string, limit: number = 3) => {
+  return allAstroBlogs
+    .filter(blog => blog.slug !== currentSlug)
+    .slice(0, limit);
+};
+
 export const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const location = window.location.pathname;
 
-  const post = getBlogPostBySlug(slug || '');
-  const relatedPosts = getRelatedPosts(slug || '', 3);
+  // Check if this is an astro finance blog post
+  const isAstroBlog = location.includes('/astro-finance/blog/');
+  
+  const post = isAstroBlog ? getAstroBlogBySlug(slug || '') : getBlogPostBySlug(slug || '');
+  const relatedPosts = isAstroBlog ? getRelatedAstroPosts(slug || '', 3) : getRelatedPosts(slug || '', 3);
 
   function shareOn(platform: 'facebook' | 'twitter' | 'linkedin') {
     const url = window.location.href;
@@ -48,10 +76,10 @@ export const BlogPost: React.FC = () => {
         <h1 className="text-2xl font-bold text-neutral-900 mb-4">Blog Post Not Found</h1>
         <p className="text-neutral-600 mb-8">The blog post you're looking for doesn't exist or may have been moved.</p>
         <button
-          onClick={() => navigate('/blog')}
+          onClick={() => navigate(isAstroBlog ? '/astro-finance' : '/blog')}
           className="btn btn-primary"
         >
-          Back to Blog
+          Back to {isAstroBlog ? 'Astro Finance' : 'Blog'}
         </button>
       </div>
     );
@@ -65,17 +93,17 @@ export const BlogPost: React.FC = () => {
         title={post.title}
         description={post.excerpt}
         image={post.coverImage}
-        url={`${window.location.origin}/blog/${post.slug}`}
+        url={`${window.location.origin}${isAstroBlog ? '/astro-finance/blog/' : '/blog/'}${post.slug}`}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         {/* Back button */}
         <div className="mb-6">
           <button
-            onClick={() => navigate('/blog')}
+            onClick={() => navigate(isAstroBlog ? '/astro-finance' : '/blog')}
             className="inline-flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
           >
             <ArrowLeft className="h-5 w-5 mr-1" />
-            Back to Blog
+            Back to {isAstroBlog ? 'Astro Finance' : 'Blog'}
           </button>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">

@@ -182,6 +182,7 @@ function App() {
                 <Route path="/astro-finance/compatibility" element={<AstroFinanceCompatibilityCalculator />} />
                 <Route path="/astro-finance/yearly-forecast" element={<AstroFinanceYearlyForecast />} />
                 <Route path="/astro-finance/crystal-calculator" element={<AstroFinanceCrystalCalculator />} />
+                <Route path="/astro-finance/blog/:slug" element={<BlogPost />} />
                 {/* News Reel route */}
                 <Route path="/news-reel" element={<NewsReel />} />
                 {/* NewsHub route */}
