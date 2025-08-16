@@ -77,6 +77,16 @@ const TaxOnBonusSharesTracker = lazy(() => import('./pages/tax-tools/TaxOnBonusS
 const TDSImpactVisualizerOnGains = lazy(() => import('./pages/tax-tools/TDSImpactVisualizerOnGains'));
 const DebtFundTaxCalculator = lazy(() => import('./pages/tax-tools/DebtFundTaxCalculator'));
 const NPSTaxBenefitVsGrowthEstimator = lazy(() => import('./pages/tax-tools/NPSTaxBenefitVsGrowthEstimator'));
+const TaxFilingDeadlineReminderWidget = lazy(() => import('./pages/tax-tools/TaxFilingDeadlineReminderWidget'));
+const ITRFormTypeHelper = lazy(() => import('./pages/tax-tools/ITRFormTypeHelper'));
+const TaxLossHarvestingCalculator = lazy(() => import('./pages/tax-tools/TaxLossHarvestingCalculator'));
+const CSVToTaxSummaryTool = lazy(() => import('./pages/tax-tools/CSVToTaxSummaryTool'));
+const ELSSLockinVsTaxBenefitVisualizer = lazy(() => import('./pages/tax-tools/ELSSLockinVsTaxBenefitVisualizer'));
+const PFvsNPSTaxGrowthComparison = lazy(() => import('./pages/tax-tools/PFvsNPSTaxGrowthComparison'));
+const GiftedSharesTaxEstimator = lazy(() => import('./pages/tax-tools/GiftedSharesTaxEstimator'));
+const BonusSharesTaxImpactTool = lazy(() => import('./pages/tax-tools/BonusSharesTaxImpactTool'));
+const SwitchMFTaxCalculator = lazy(() => import('./pages/tax-tools/SwitchMFTaxCalculator'));
+const DeductionBucketVisualizer = lazy(() => import('./pages/tax-tools/80CDeductionBucketVisualizer'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -232,6 +242,16 @@ function App() {
                   <Route path="/tax-tools/tds-impact-visualizer-on-gains" element={<TDSImpactVisualizerOnGains />} />
                   <Route path="/tax-tools/debt-fund-tax-calculator" element={<DebtFundTaxCalculator />} />
                   <Route path="/tax-tools/nps-tax-benefit-vs-growth-estimator" element={<NPSTaxBenefitVsGrowthEstimator />} />
+                  <Route path="/tax-tools/tax-filing-deadline-reminder-widget" element={<TaxFilingDeadlineReminderWidget />} />
+                  <Route path="/tax-tools/itr-form-type-helper" element={<ITRFormTypeHelper />} />
+                  <Route path="/tax-tools/tax-loss-harvesting-calculator" element={<TaxLossHarvestingCalculator />} />
+                  <Route path="/tax-tools/csv-to-tax-summary-tool" element={<CSVToTaxSummaryTool />} />
+                  <Route path="/tax-tools/elss-lockin-vs-tax-benefit-visualizer" element={<ELSSLockinVsTaxBenefitVisualizer />} />
+                  <Route path="/tax-tools/pf-vs-nps-tax-growth-comparison" element={<PFvsNPSTaxGrowthComparison />} />
+                  <Route path="/tax-tools/gifted-shares-tax-estimator" element={<GiftedSharesTaxEstimator />} />
+                  <Route path="/tax-tools/bonus-shares-tax-impact-tool" element={<BonusSharesTaxImpactTool />} />
+                  <Route path="/tax-tools/switch-mf-tax-calculator" element={<SwitchMFTaxCalculator />} />
+                  <Route path="/tax-tools/80c-deduction-bucket-visualizer" element={<DeductionBucketVisualizer />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />

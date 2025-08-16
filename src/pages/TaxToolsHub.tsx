@@ -21,7 +21,8 @@ import {
   Shield,
   RefreshCw,
   Gift,
-  Eye
+  Eye,
+  Calendar
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -211,8 +212,115 @@ const TaxToolsHub: React.FC = () => {
       path: '/tax-tools/nps-tax-benefit-vs-growth-estimator',
       color: 'from-lime-500 to-lime-600',
       status: 'available'
-    }
-  ];
+    },
+    {
+      id: 'tax-filing-deadline-reminder-widget',
+      name: 'Tax Filing Deadline Reminder Widget',
+      description: 'Never miss important tax deadlines with comprehensive reminders',
+      icon: <Calendar className="h-6 w-6" />,
+      category: 'Tax Planning',
+      path: '/tax-tools/tax-filing-deadline-reminder-widget',
+      color: 'from-orange-500 to-orange-600',
+      status: 'available'
+    },
+    {
+      id: 'itr-form-type-helper',
+      name: 'ITR Form Type Helper',
+      description: 'Choose the right ITR form based on your income sources',
+      icon: <FileText className="h-6 w-6" />,
+      category: 'Tax Filing',
+      path: '/tax-tools/itr-form-type-helper',
+      color: 'from-indigo-500 to-indigo-600',
+      status: 'available'
+    },
+    {
+      id: 'tax-loss-harvesting-calculator',
+      name: 'Tax Loss Harvesting Calculator',
+      description: 'Optimize your tax strategy by harvesting investment losses',
+      icon: <TrendingDown className="h-6 w-6" />,
+      category: 'Tax Optimization',
+      path: '/tax-tools/tax-loss-harvesting-calculator',
+      color: 'from-red-500 to-red-600',
+      status: 'available'
+    },
+    {
+      id: 'csv-to-tax-summary-tool',
+      name: 'CSV to Tax Summary Tool',
+      description: 'Convert trading CSV data into comprehensive tax reports',
+      icon: <FileText className="h-6 w-6" />,
+      category: 'Data Analysis',
+      path: '/tax-tools/csv-to-tax-summary-tool',
+      isNew: true,
+      color: 'from-indigo-500 to-indigo-600',
+      status: 'available'
+    },
+    {
+      id: 'elss-lockin-vs-tax-benefit-visualizer',
+      name: 'ELSS Lock-in vs Tax Benefit Visualizer',
+      description: 'Compare ELSS 3-year lock-in period with tax benefits',
+      icon: <Shield className="h-6 w-6" />,
+      category: 'Tax Planning',
+      path: '/tax-tools/elss-lockin-vs-tax-benefit-visualizer',
+      isNew: true,
+      color: 'from-blue-500 to-blue-600',
+      status: 'available'
+    },
+    {
+      id: 'pf-vs-nps-tax-growth-comparison',
+      name: 'PF vs NPS Tax & Growth Comparison',
+      description: 'Compare EPF and NPS for retirement planning',
+      icon: <Shield className="h-6 w-6" />,
+      category: 'Retirement Planning',
+      path: '/tax-tools/pf-vs-nps-tax-growth-comparison',
+      isNew: true,
+      color: 'from-green-500 to-green-600',
+      status: 'available'
+    },
+    {
+      id: 'gifted-shares-tax-estimator',
+      name: 'Gifted Shares Tax Estimator',
+      description: 'Calculate tax on shares received as gifts',
+      icon: <Gift className="h-6 w-6" />,
+      category: 'Capital Gains',
+      path: '/tax-tools/gifted-shares-tax-estimator',
+      isNew: true,
+      color: 'from-pink-500 to-pink-600',
+      status: 'available'
+    },
+         {
+       id: 'bonus-shares-tax-impact-tool',
+       name: 'Bonus Shares Tax Impact Tool',
+       description: 'Calculate tax implications on bonus shares',
+       icon: <Gift className="h-6 w-6" />,
+       category: 'Capital Gains',
+       path: '/tax-tools/bonus-shares-tax-impact-tool',
+       isNew: true,
+       color: 'from-purple-500 to-purple-600',
+       status: 'available'
+     },
+           {
+        id: 'switch-mf-tax-calculator',
+        name: 'Switch MF Tax Calculator',
+        description: 'Calculate tax on mutual fund switching',
+        icon: <RefreshCw className="h-6 w-6" />,
+        category: 'Mutual Funds',
+        path: '/tax-tools/switch-mf-tax-calculator',
+        isNew: true,
+        color: 'from-cyan-500 to-cyan-600',
+        status: 'available'
+      },
+      {
+        id: '80c-deduction-bucket-visualizer',
+        name: '80C Deduction Bucket Visualizer',
+        description: 'Visualize and optimize 80C investments',
+        icon: <PieChart className="h-6 w-6" />,
+        category: 'Tax Planning',
+        path: '/tax-tools/80c-deduction-bucket-visualizer',
+        isNew: true,
+        color: 'from-emerald-500 to-emerald-600',
+        status: 'available'
+      }
+    ];
 
   const categories = [
     { id: 'all', name: 'All Tools', icon: <Zap className="h-5 w-5" /> },
@@ -222,7 +330,10 @@ const TaxToolsHub: React.FC = () => {
     { id: 'Loss Management', name: 'Loss Management', icon: <TrendingDown className="h-5 w-5" /> },
     { id: 'Tax Planning', name: 'Tax Planning', icon: <Percent className="h-5 w-5" /> },
     { id: 'Filing & Compliance', name: 'Filing & Compliance', icon: <FileText className="h-5 w-5" /> },
-    { id: 'Advanced Tools', name: 'Advanced Tools', icon: <Wrench className="h-5 w-5" /> }
+    { id: 'Advanced Tools', name: 'Advanced Tools', icon: <Wrench className="h-5 w-5" /> },
+    { id: 'Data Analysis', name: 'Data Analysis', icon: <BarChart3 className="h-5 w-5" /> },
+    { id: 'Retirement Planning', name: 'Retirement Planning', icon: <Shield className="h-5 w-5" /> },
+    { id: 'Tax Optimization', name: 'Tax Optimization', icon: <Calculator className="h-5 w-5" /> }
   ];
 
   const filteredTools = taxTools.filter(tool => {
