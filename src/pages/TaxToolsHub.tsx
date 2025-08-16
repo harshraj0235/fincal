@@ -110,7 +110,7 @@ const TaxToolsHub: React.FC = () => {
       path: '/tax-tools/mutual-fund-exit-load-checker',
       isNew: true,
       color: 'from-indigo-500 to-indigo-600',
-      status: 'coming-soon'
+      status: 'available'
     },
     {
       id: 'mutual-fund-capital-gains-tax',
