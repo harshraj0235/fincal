@@ -55,6 +55,10 @@ const StockMarketBasics = lazy(() => import('./pages/StockMarketBasics'));
 const StockMarketLesson = lazy(() => import('./pages/StockMarketLesson'));
 const CoreMarketConcepts = lazy(() => import('./pages/CoreMarketConcepts'));
 const FundamentalAnalysis = lazy(() => import('./pages/FundamentalAnalysis'));
+const TechnicalAnalysis = lazy(() => import('./pages/TechnicalAnalysis'));
+const AdvancedTradingStrategies = lazy(() => import('./pages/AdvancedTradingStrategies'));
+const ToolsPracticalApplication = lazy(() => import('./pages/ToolsPracticalApplication'));
+const CaseStudiesMarketPsychology = lazy(() => import('./pages/CaseStudiesMarketPsychology'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -188,6 +192,10 @@ function App() {
                   <Route path="/stock-market/stock-market-basics/lesson/:lessonId" element={<StockMarketLesson />} />
                   <Route path="/stock-market/core-market-concepts" element={<CoreMarketConcepts />} />
                   <Route path="/stock-market/fundamental-analysis" element={<FundamentalAnalysis />} />
+                  <Route path="/stock-market/technical-analysis" element={<TechnicalAnalysis />} />
+                  <Route path="/stock-market/advanced-trading-strategies" element={<AdvancedTradingStrategies />} />
+                  <Route path="/stock-market/tools-practical-application" element={<ToolsPracticalApplication />} />
+                  <Route path="/stock-market/case-studies-market-psychology" element={<CaseStudiesMarketPsychology />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
