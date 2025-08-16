@@ -64,6 +64,18 @@ const Navbar = () => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
     
+    // Check if search query contains news-related keywords
+    const newsKeywords = ['news', 'latest', 'update', 'market', 'stock', 'crypto', 'bitcoin', 'ethereum', 'finance news', 'economic'];
+    const isNewsSearch = newsKeywords.some(keyword => 
+      searchQuery.toLowerCase().includes(keyword.toLowerCase())
+    );
+    
+    if (isNewsSearch) {
+      // Redirect to news page with search query
+      window.location.href = `/news?search=${encodeURIComponent(searchQuery)}`;
+      return;
+    }
+    
     setIsSearchLoading(true);
     setSearchResults([]);
     
@@ -429,10 +441,14 @@ const Navbar = () => {
 
               {/* Calculator Categories */}
               <div className="p-4">
-                <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center">
+                <Link 
+                  to="/calculators" 
+                  className="text-sm font-semibold text-gray-900 mb-3 flex items-center hover:text-blue-600 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   <Calculator className="w-4 h-4 mr-2 text-blue-600" />
                   All Calculators
-                </h3>
+                </Link>
                 <div className="space-y-4">
                   {calculatorCategories.map((category, index) => (
                     <div key={index} className="space-y-2">

@@ -425,7 +425,7 @@ export const astroBlog6 = {
   authorImage: "https://via.placeholder.com/100x100/4F46E5/ffffff?text=JV",
   date: new Date().toISOString(),
   categories: ["ज्योतिष", "धन", "राशि", "व्यवसाय", "निवेश"],
-  coverImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+  coverImage: "https://d2vlk40wphb5v6.cloudfront.net/public/cms-images/blogs/172184086_How-to-Become-Rich-as-per-astrology.jpg",
   readingTime: "12 मिनट",
   tags: ["राशि", "धन", "व्यवसाय", "ज्योतिष", "करियर", "निवेश", "आर्थिक सफलता", "व्यवसाय मार्गदर्शन"],
   seoTitle: "राशि के अनुसार धन कमाने के तरीके - ज्योतिषीय मार्गदर्शन से आर्थिक सफलता",

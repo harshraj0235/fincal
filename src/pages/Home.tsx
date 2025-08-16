@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, ChevronRight, Search, Menu, X, Star, Users, Zap, Globe, Smartphone } from 'lucide-react';
+import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, ChevronRight, Search, Menu, X, Star, Users, Zap, Globe, Smartphone, Sparkles } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
@@ -301,7 +301,7 @@ export const Home: React.FC = () => {
           </div>
           
             <div className="text-center mt-12">
-              <Link to="/#categories" className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl font-semibold hover:bg-primary-700 shadow-lg hover:shadow-xl transition-all">
+              <Link to="/calculators" className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl font-semibold hover:bg-primary-700 shadow-lg hover:shadow-xl transition-all">
               View All Categories
                 <ArrowRight className="h-5 w-5 ml-2" />
             </Link>
@@ -497,6 +497,97 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Astro Finance Blog Section */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm font-medium mb-6">
+              <Sparkles className="w-4 h-4 mr-2" />
+              Vedic Astrology & Finance
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Astro Finance Insights</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover how Vedic astrology can guide your financial decisions and wealth creation strategies
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "राशि के अनुसार धन कमाने के तरीके",
+                excerpt: "अपनी राशि के अनुसार सही व्यवसाय चुनें और धन कमाने के लिए ज्योतिषीय मार्गदर्शन प्राप्त करें।",
+                slug: "rashike-anusar-dhan-kamane-ke-tariqe",
+                image: "https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/67b7102abc3091001dddd452.png",
+                category: "ज्योतिष",
+                readingTime: "8 min read"
+              },
+              {
+                title: "ज्योतिष में ग्रहों का वित्तीय जीवन पर प्रभाव",
+                excerpt: "ग्रहों की स्थिति और उनका आपके वित्तीय जीवन पर क्या प्रभाव पड़ता है, जानें विस्तार से।",
+                slug: "grahon-ka-vittiya-jeevan-par-prabhav",
+                image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                category: "ग्रह विज्ञान",
+                readingTime: "6 min read"
+              },
+              {
+                title: "कुंडली में धन योग: कैसे पहचानें",
+                excerpt: "अपनी कुंडली में धन योग को कैसे पहचानें और उसका लाभ कैसे उठाएं।",
+                slug: "kundli-mein-dhan-yog",
+                image: "https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                category: "कुंडली विश्लेषण",
+                readingTime: "10 min read"
+              }
+            ].map((blog, index) => (
+              <Link
+                key={blog.slug}
+                to={`/astro-finance/blog/${blog.slug}`}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 overflow-hidden"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={blog.image} 
+                    alt={blog.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="inline-block px-3 py-1 bg-purple-600 text-white text-xs font-medium rounded-full">
+                      {blog.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors line-clamp-2">
+                    {blog.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {blog.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-500">{blog.readingTime}</span>
+                    <span className="text-purple-600 group-hover:text-purple-700 font-medium text-sm flex items-center">
+                      Read More
+                      <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link 
+              to="/astro-finance" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl font-semibold hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transition-all"
+            >
+              Explore All Astro Finance Articles
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Dynamic Finance News Section */}
       <FinanceNewsSection />

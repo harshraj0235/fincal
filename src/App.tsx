@@ -62,6 +62,7 @@ const AstroFinanceDailyHoroscope = lazy(() => import('./pages/AstroFinanceDailyH
 const AstroFinanceCompatibilityCalculator = lazy(() => import('./pages/AstroFinanceCompatibilityCalculator'));
 const AstroFinanceYearlyForecast = lazy(() => import('./pages/AstroFinanceYearlyForecast'));
 const AstroFinanceCrystalCalculator = lazy(() => import('./pages/AstroFinanceCrystalCalculator'));
+const CalculatorCategories = lazy(() => import('./pages/CalculatorCategories'));
 const NewsReel = lazy(() => import('./pages/NewsReel'));
 const NewsHub = lazy(() => import('./pages/NewsHub'));
 const ChequeBounceChargesCalculator = lazy(() => import('./pages/ChequeBounceChargesCalculator'));
@@ -183,6 +184,9 @@ function App() {
                 <Route path="/astro-finance/yearly-forecast" element={<AstroFinanceYearlyForecast />} />
                 <Route path="/astro-finance/crystal-calculator" element={<AstroFinanceCrystalCalculator />} />
                 <Route path="/astro-finance/blog/:slug" element={<BlogPost />} />
+                {/* Calculator Categories route */}
+                <Route path="/#calculators" element={<CalculatorCategories />} />
+                <Route path="/calculators" element={<CalculatorCategories />} />
                 {/* News Reel route */}
                 <Route path="/news-reel" element={<NewsReel />} />
                 {/* NewsHub route */}
