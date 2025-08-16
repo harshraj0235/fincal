@@ -98,14 +98,14 @@ const TaxToolsHub: React.FC = () => {
     },
     // Coming Soon Tools
     {
-      id: 'intraday-delivery-tax-calculator',
+      id: 'intraday-vs-delivery-tax-calculator',
       name: 'Intraday vs Delivery Tax Calculator',
       description: 'Compare tax implications of intraday vs delivery trading',
       icon: <Activity className="h-6 w-6" />,
       category: 'Capital Gains',
-      path: '/tax-tools/intraday-delivery-tax-calculator',
+      path: '/tax-tools/intraday-vs-delivery-tax-calculator',
       color: 'from-purple-500 to-purple-600',
-      status: 'coming-soon'
+      status: 'available'
     },
     {
       id: 'turnover-calculator-itr',
@@ -125,7 +125,17 @@ const TaxToolsHub: React.FC = () => {
       category: 'Tax Planning',
       path: '/tax-tools/section-80c-tally-analyzer',
       color: 'from-teal-500 to-teal-600',
-      status: 'coming-soon'
+      status: 'available'
+    },
+    {
+      id: 'short-term-capital-loss-benefit-estimator',
+      name: 'Short-Term Capital Loss Benefit Estimator',
+      description: 'Calculate benefits of STCG losses and optimize tax strategy',
+      icon: <TrendingDown className="h-6 w-6" />,
+      category: 'Loss Management',
+      path: '/tax-tools/short-term-capital-loss-benefit-estimator',
+      color: 'from-pink-500 to-pink-600',
+      status: 'available'
     }
   ];
 
