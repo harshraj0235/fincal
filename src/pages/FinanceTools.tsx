@@ -33,6 +33,7 @@ const FinanceTools: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const financeTools: FinanceTool[] = [
+    // SIP Tools
     {
       id: 'sip-delay-loss-calculator',
       name: 'SIP Delay Loss Calculator',
@@ -58,6 +59,96 @@ const FinanceTools: React.FC = () => {
       seoDescription: 'Plan your step-up SIP strategy to increase investments systematically.'
     },
     {
+      id: 'lumpsum-vs-sip-analyzer',
+      name: 'Lumpsum vs SIP Analyzer',
+      description: 'Compare lumpsum vs SIP investment strategies for optimal returns',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'SIP Tools',
+      path: '/finance-tools/lumpsum-vs-sip-analyzer',
+      color: 'from-blue-500 to-blue-600',
+      keywords: ['lumpsum vs SIP', 'investment comparison', 'investment strategy'],
+      seoDescription: 'Compare lumpsum vs SIP investment strategies to choose the best approach.'
+    },
+    {
+      id: 'sip-inflation-adjusted-calculator',
+      name: 'SIP Inflation-Adjusted Calculator',
+      description: 'Calculate real returns on SIP investments after adjusting for inflation',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'SIP Tools',
+      path: '/finance-tools/sip-inflation-adjusted-calculator',
+      color: 'from-purple-500 to-purple-600',
+      keywords: ['inflation adjusted SIP', 'real returns', 'inflation calculator'],
+      seoDescription: 'Calculate real returns on SIP investments after adjusting for inflation.'
+    },
+    {
+      id: 'sip-missed-payment-loss-estimator',
+      name: 'SIP Missed Payment Loss Estimator',
+      description: 'Estimate the impact of missing SIP payments on your investment goals',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'SIP Tools',
+      path: '/finance-tools/sip-missed-payment-loss-estimator',
+      color: 'from-orange-500 to-orange-600',
+      keywords: ['missed SIP payment', 'investment loss', 'SIP impact'],
+      seoDescription: 'Estimate the impact of missing SIP payments on your investment goals.'
+    },
+    {
+      id: 'sip-withdrawal-planner',
+      name: 'SIP Withdrawal Planner',
+      description: 'Plan systematic withdrawals from your SIP investments',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'SIP Tools',
+      path: '/finance-tools/sip-withdrawal-planner',
+      color: 'from-pink-500 to-pink-600',
+      keywords: ['SIP withdrawal', 'systematic withdrawal', 'investment planning'],
+      seoDescription: 'Plan systematic withdrawals from your SIP investments.'
+    },
+    {
+      id: 'sip-vs-swp-tool',
+      name: 'SIP vs SWP Tool',
+      description: 'Compare Systematic Investment Plan vs Systematic Withdrawal Plan',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'SIP Tools',
+      path: '/finance-tools/sip-vs-swp-tool',
+      color: 'from-indigo-500 to-indigo-600',
+      keywords: ['SIP vs SWP', 'systematic withdrawal', 'investment comparison'],
+      seoDescription: 'Compare Systematic Investment Plan vs Systematic Withdrawal Plan.'
+    },
+    {
+      id: 'flexi-sip-planner',
+      name: 'Flexi SIP Planner',
+      description: 'Plan flexible SIP investments with variable amounts',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'SIP Tools',
+      path: '/finance-tools/flexi-sip-planner',
+      color: 'from-teal-500 to-teal-600',
+      keywords: ['flexi SIP', 'flexible investment', 'variable SIP'],
+      seoDescription: 'Plan flexible SIP investments with variable amounts.'
+    },
+    {
+      id: 'sip-tracker-with-goal-thermometer',
+      name: 'SIP Tracker with Goal Thermometer',
+      description: 'Track your SIP progress towards financial goals with visual indicators',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'SIP Tools',
+      path: '/finance-tools/sip-tracker-with-goal-thermometer',
+      color: 'from-cyan-500 to-cyan-600',
+      keywords: ['SIP tracker', 'goal tracking', 'investment progress'],
+      seoDescription: 'Track your SIP progress towards financial goals with visual indicators.'
+    },
+    {
+      id: 'sip-return-deviation-chart',
+      name: 'SIP Return Deviation Chart',
+      description: 'Analyze SIP return variations and volatility patterns',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'SIP Tools',
+      path: '/finance-tools/sip-return-deviation-chart',
+      color: 'from-lime-500 to-lime-600',
+      keywords: ['SIP return deviation', 'volatility analysis', 'return patterns'],
+      seoDescription: 'Analyze SIP return variations and volatility patterns.'
+    },
+
+    // Mutual Fund Tools
+    {
       id: 'mutual-fund-comparison-tool',
       name: 'Mutual Fund Comparison Tool',
       description: 'Compare direct vs regular mutual fund plans and their impact',
@@ -70,6 +161,85 @@ const FinanceTools: React.FC = () => {
       seoDescription: 'Compare direct vs regular mutual fund plans to understand the impact of expense ratios.'
     },
     {
+      id: 'mutual-fund-expense-ratio-estimator',
+      name: 'Mutual Fund Expense Ratio Estimator',
+      description: 'Calculate and compare expense ratios across different mutual funds',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Mutual Fund Tools',
+      path: '/finance-tools/mutual-fund-expense-ratio-estimator',
+      color: 'from-blue-500 to-blue-600',
+      keywords: ['expense ratio', 'mutual fund costs', 'fund comparison'],
+      seoDescription: 'Calculate and compare expense ratios across different mutual funds.'
+    },
+    {
+      id: 'mutual-fund-exit-load-tracker',
+      name: 'Mutual Fund Exit Load Tracker',
+      description: 'Track exit loads and their impact on mutual fund returns',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Mutual Fund Tools',
+      path: '/finance-tools/mutual-fund-exit-load-tracker',
+      color: 'from-red-500 to-red-600',
+      keywords: ['exit load', 'mutual fund charges', 'redemption fees'],
+      seoDescription: 'Track exit loads and their impact on mutual fund returns.'
+    },
+    {
+      id: 'mutual-fund-star-ratings-explorer',
+      name: 'Mutual Fund Star Ratings Explorer',
+      description: 'Explore and analyze mutual fund star ratings and performance',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Mutual Fund Tools',
+      path: '/finance-tools/mutual-fund-star-ratings-explorer',
+      color: 'from-yellow-500 to-yellow-600',
+      keywords: ['star ratings', 'fund performance', 'rating analysis'],
+      seoDescription: 'Explore and analyze mutual fund star ratings and performance.'
+    },
+    {
+      id: 'mutual-fund-overlap-checker',
+      name: 'Mutual Fund Overlap Checker',
+      description: 'Check portfolio overlap between different mutual funds',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Mutual Fund Tools',
+      path: '/finance-tools/mutual-fund-overlap-checker',
+      color: 'from-green-500 to-green-600',
+      keywords: ['portfolio overlap', 'fund diversification', 'overlap analysis'],
+      seoDescription: 'Check portfolio overlap between different mutual funds.'
+    },
+    {
+      id: 'mutual-fund-historical-nav-visualizer',
+      name: 'Mutual Fund Historical NAV Visualizer',
+      description: 'Visualize historical NAV trends and performance patterns',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Mutual Fund Tools',
+      path: '/finance-tools/mutual-fund-historical-nav-visualizer',
+      color: 'from-purple-500 to-purple-600',
+      keywords: ['historical NAV', 'fund performance', 'trend analysis'],
+      seoDescription: 'Visualize historical NAV trends and performance patterns.'
+    },
+    {
+      id: 'mutual-fund-tracker',
+      name: 'Mutual Fund Tracker',
+      description: 'Track and monitor your mutual fund investments with charts',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Mutual Fund Tools',
+      path: '/finance-tools/mutual-fund-tracker',
+      color: 'from-pink-500 to-pink-600',
+      keywords: ['mutual fund tracker', 'investment monitoring', 'fund tracking'],
+      seoDescription: 'Track and monitor your mutual fund investments with charts.'
+    },
+    {
+      id: 'etf-vs-mutual-fund-comparison',
+      name: 'ETF vs Mutual Fund Comparison',
+      description: 'Compare ETFs and mutual funds to choose the best investment option',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Mutual Fund Tools',
+      path: '/finance-tools/etf-vs-mutual-fund-comparison',
+      color: 'from-indigo-500 to-indigo-600',
+      keywords: ['ETF vs mutual fund', 'investment comparison', 'fund selection'],
+      seoDescription: 'Compare ETFs and mutual funds to choose the best investment option.'
+    },
+
+    // Investment Analysis
+    {
       id: 'portfolio-diversification-visualizer',
       name: 'Portfolio Diversification Visualizer',
       description: 'Visualize and analyze your portfolio diversification across asset classes',
@@ -81,6 +251,129 @@ const FinanceTools: React.FC = () => {
       keywords: ['portfolio diversification', 'asset allocation', 'risk management'],
       seoDescription: 'Visualize your portfolio diversification across asset classes.'
     },
+    {
+      id: 'real-vs-nominal-return-calculator',
+      name: 'Real vs Nominal Return Calculator',
+      description: 'Calculate real returns by adjusting nominal returns for inflation',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/real-vs-nominal-return-calculator',
+      color: 'from-blue-500 to-blue-600',
+      keywords: ['real returns', 'nominal returns', 'inflation adjustment'],
+      seoDescription: 'Calculate real returns by adjusting nominal returns for inflation.'
+    },
+    {
+      id: 'fd-vs-mutual-fund-return-tool',
+      name: 'FD vs Mutual Fund Return Tool',
+      description: 'Compare returns from Fixed Deposits vs Mutual Funds',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/fd-vs-mutual-fund-return-tool',
+      color: 'from-green-500 to-green-600',
+      keywords: ['FD vs mutual fund', 'return comparison', 'investment choice'],
+      seoDescription: 'Compare returns from Fixed Deposits vs Mutual Funds.'
+    },
+    {
+      id: 'stock-cagr-calculator',
+      name: 'Stock CAGR Calculator',
+      description: 'Calculate Compound Annual Growth Rate for stock investments',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/stock-cagr-calculator',
+      color: 'from-purple-500 to-purple-600',
+      keywords: ['stock CAGR', 'compound growth', 'investment returns'],
+      seoDescription: 'Calculate Compound Annual Growth Rate for stock investments.'
+    },
+    {
+      id: 'nifty-vs-sensex-performance-tracker',
+      name: 'Nifty vs Sensex Performance Tracker',
+      description: 'Track and compare performance of Nifty 50 vs Sensex',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/nifty-vs-sensex-performance-tracker',
+      color: 'from-orange-500 to-orange-600',
+      keywords: ['Nifty vs Sensex', 'index comparison', 'market performance'],
+      seoDescription: 'Track and compare performance of Nifty 50 vs Sensex.'
+    },
+    {
+      id: 'index-fund-return-comparison',
+      name: 'Index Fund Return Comparison',
+      description: 'Compare returns across different index funds',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/index-fund-return-comparison',
+      color: 'from-teal-500 to-teal-600',
+      keywords: ['index fund comparison', 'passive investing', 'fund returns'],
+      seoDescription: 'Compare returns across different index funds.'
+    },
+    {
+      id: 'equity-vs-debt-split-recommender',
+      name: 'Equity vs Debt Split Recommender',
+      description: 'Get recommendations for equity-debt allocation based on your profile',
+      icon: <PieChart className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/equity-vs-debt-split-recommender',
+      color: 'from-indigo-500 to-indigo-600',
+      keywords: ['equity debt split', 'asset allocation', 'investment recommendation'],
+      seoDescription: 'Get recommendations for equity-debt allocation based on your profile.'
+    },
+    {
+      id: 'asset-allocation-tool',
+      name: 'Asset Allocation Tool',
+      description: 'Age-based asset allocation recommendations for optimal portfolio balance',
+      icon: <PieChart className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/asset-allocation-tool',
+      color: 'from-cyan-500 to-cyan-600',
+      keywords: ['asset allocation', 'age-based investing', 'portfolio balance'],
+      seoDescription: 'Age-based asset allocation recommendations for optimal portfolio balance.'
+    },
+    {
+      id: 'portfolio-rebalancing-reminder-tool',
+      name: 'Portfolio Rebalancing Reminder Tool',
+      description: 'Set reminders and track portfolio rebalancing needs',
+      icon: <PieChart className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/portfolio-rebalancing-reminder-tool',
+      color: 'from-lime-500 to-lime-600',
+      keywords: ['portfolio rebalancing', 'investment reminders', 'portfolio management'],
+      seoDescription: 'Set reminders and track portfolio rebalancing needs.'
+    },
+    {
+      id: 'investment-timeline-visualizer',
+      name: 'Investment Timeline Visualizer',
+      description: 'Visualize your investment journey and milestones',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/investment-timeline-visualizer',
+      color: 'from-pink-500 to-pink-600',
+      keywords: ['investment timeline', 'investment journey', 'milestones'],
+      seoDescription: 'Visualize your investment journey and milestones.'
+    },
+    {
+      id: '5y-cagr-vs-volatility-analyzer',
+      name: '5Y CAGR vs Volatility Analyzer',
+      description: 'Analyze 5-year CAGR vs volatility for investment decisions',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/5y-cagr-vs-volatility-analyzer',
+      color: 'from-red-500 to-red-600',
+      keywords: ['5Y CAGR', 'volatility analysis', 'risk return analysis'],
+      seoDescription: 'Analyze 5-year CAGR vs volatility for investment decisions.'
+    },
+    {
+      id: 'investment-goal-countdown-widget',
+      name: 'Investment Goal Countdown Widget',
+      description: 'Track progress towards your investment goals with countdown timers',
+      icon: <TrendingUp className="h-6 w-6" />,
+      category: 'Investment Analysis',
+      path: '/finance-tools/investment-goal-countdown-widget',
+      color: 'from-yellow-500 to-yellow-600',
+      keywords: ['investment goals', 'goal tracking', 'countdown widget'],
+      seoDescription: 'Track progress towards your investment goals with countdown timers.'
+    },
+
+    // Advanced Investment
     {
       id: 'xirr-calculator',
       name: 'XIRR Calculator',
@@ -103,6 +396,193 @@ const FinanceTools: React.FC = () => {
       color: 'from-green-500 to-green-600',
       keywords: ['dividend tracker', 'dividend income', 'investment tracking'],
       seoDescription: 'Track and analyze dividend income from your investments.'
+    },
+    {
+      id: 'elss-vs-ppf-return-visualizer',
+      name: 'ELSS vs PPF Return Visualizer',
+      description: 'Compare returns from ELSS vs PPF investments',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/elss-vs-ppf-return-visualizer',
+      color: 'from-purple-500 to-purple-600',
+      keywords: ['ELSS vs PPF', 'tax saving', 'return comparison'],
+      seoDescription: 'Compare returns from ELSS vs PPF investments.'
+    },
+    {
+      id: 'gold-vs-equity-10-year-return-comparator',
+      name: 'Gold vs Equity 10-Year Return Comparator',
+      description: 'Compare 10-year returns from gold vs equity investments',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/gold-vs-equity-10-year-return-comparator',
+      color: 'from-yellow-500 to-yellow-600',
+      keywords: ['gold vs equity', '10 year returns', 'investment comparison'],
+      seoDescription: 'Compare 10-year returns from gold vs equity investments.'
+    },
+    {
+      id: 'crypto-vs-equity-investment-risk-tool',
+      name: 'Crypto vs Equity Investment Risk Tool',
+      description: 'Compare risk profiles of crypto vs equity investments',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/crypto-vs-equity-investment-risk-tool',
+      color: 'from-orange-500 to-orange-600',
+      keywords: ['crypto vs equity', 'risk comparison', 'investment risk'],
+      seoDescription: 'Compare risk profiles of crypto vs equity investments.'
+    },
+    {
+      id: 'reits-vs-fd-roi-visualizer',
+      name: 'REITs vs FD ROI Visualizer',
+      description: 'Compare ROI from REITs vs Fixed Deposits',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/reits-vs-fd-roi-visualizer',
+      color: 'from-blue-500 to-blue-600',
+      keywords: ['REITs vs FD', 'ROI comparison', 'real estate investment'],
+      seoDescription: 'Compare ROI from REITs vs Fixed Deposits.'
+    },
+    {
+      id: 'long-term-capital-gains-estimator',
+      name: 'Long-Term Capital Gains Estimator',
+      description: 'Estimate long-term capital gains on your investments',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/long-term-capital-gains-estimator',
+      color: 'from-green-500 to-green-600',
+      keywords: ['long term capital gains', 'LTCG', 'tax estimation'],
+      seoDescription: 'Estimate long-term capital gains on your investments.'
+    },
+    {
+      id: 'stock-split-adjusted-roi-calculator',
+      name: 'Stock Split Adjusted ROI Calculator',
+      description: 'Calculate ROI adjusted for stock splits and corporate actions',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/stock-split-adjusted-roi-calculator',
+      color: 'from-purple-500 to-purple-600',
+      keywords: ['stock split', 'ROI calculation', 'corporate actions'],
+      seoDescription: 'Calculate ROI adjusted for stock splits and corporate actions.'
+    },
+    {
+      id: 'expense-ratio-impact-visual-tool',
+      name: 'Expense Ratio Impact Visual Tool',
+      description: 'Visualize the impact of expense ratios on long-term returns',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/expense-ratio-impact-visual-tool',
+      color: 'from-red-500 to-red-600',
+      keywords: ['expense ratio impact', 'fund costs', 'return impact'],
+      seoDescription: 'Visualize the impact of expense ratios on long-term returns.'
+    },
+    {
+      id: 'goal-based-investment-allocator',
+      name: 'Goal-Based Investment Allocator',
+      description: 'Allocate investments based on specific financial goals',
+      icon: <PieChart className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/goal-based-investment-allocator',
+      color: 'from-indigo-500 to-indigo-600',
+      keywords: ['goal based investing', 'investment allocation', 'financial goals'],
+      seoDescription: 'Allocate investments based on specific financial goals.'
+    },
+    {
+      id: 'nps-vs-ppf-comparison',
+      name: 'NPS vs PPF Comparison',
+      description: 'Compare National Pension System vs Public Provident Fund',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/nps-vs-ppf-comparison',
+      color: 'from-teal-500 to-teal-600',
+      keywords: ['NPS vs PPF', 'pension planning', 'retirement comparison'],
+      seoDescription: 'Compare National Pension System vs Public Provident Fund.'
+    },
+    {
+      id: 'real-estate-vs-stock-roi-tool',
+      name: 'Real Estate vs Stock ROI Tool',
+      description: 'Compare ROI from real estate vs stock investments',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/real-estate-vs-stock-roi-tool',
+      color: 'from-cyan-500 to-cyan-600',
+      keywords: ['real estate vs stock', 'ROI comparison', 'investment choice'],
+      seoDescription: 'Compare ROI from real estate vs stock investments.'
+    },
+    {
+      id: 'monthly-passive-income-calculator',
+      name: 'Monthly Passive Income Calculator',
+      description: 'Calculate monthly passive income from your investments',
+      icon: <DollarSign className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/monthly-passive-income-calculator',
+      color: 'from-lime-500 to-lime-600',
+      keywords: ['passive income', 'monthly income', 'investment income'],
+      seoDescription: 'Calculate monthly passive income from your investments.'
+    },
+    {
+      id: 'shareholding-pattern-visualizer',
+      name: 'Shareholding Pattern Visualizer',
+      description: 'Visualize shareholding patterns and ownership structures',
+      icon: <PieChart className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/shareholding-pattern-visualizer',
+      color: 'from-pink-500 to-pink-600',
+      keywords: ['shareholding pattern', 'ownership structure', 'stock analysis'],
+      seoDescription: 'Visualize shareholding patterns and ownership structures.'
+    },
+    {
+      id: 'top-sector-allocation-analyzer',
+      name: 'Top Sector Allocation Analyzer',
+      description: 'Analyze sector allocation in your portfolio and market indices',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/top-sector-allocation-analyzer',
+      color: 'from-orange-500 to-orange-600',
+      keywords: ['sector allocation', 'portfolio analysis', 'sector exposure'],
+      seoDescription: 'Analyze sector allocation in your portfolio and market indices.'
+    },
+    {
+      id: 'amc-fee-analyzer-tool',
+      name: 'AMC Fee Analyzer Tool',
+      description: 'Analyze Asset Management Company fees and their impact',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/amc-fee-analyzer-tool',
+      color: 'from-red-500 to-red-600',
+      keywords: ['AMC fees', 'fund charges', 'fee analysis'],
+      seoDescription: 'Analyze Asset Management Company fees and their impact.'
+    },
+    {
+      id: 'simple-stock-valuation-tool',
+      name: 'Simple Stock Valuation Tool',
+      description: 'Basic stock valuation using PE ratio and EPS analysis',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/simple-stock-valuation-tool',
+      color: 'from-blue-500 to-blue-600',
+      keywords: ['stock valuation', 'PE ratio', 'EPS analysis'],
+      seoDescription: 'Basic stock valuation using PE ratio and EPS analysis.'
+    },
+    {
+      id: 'ulip-vs-term-insurance-return-calculator',
+      name: 'ULIP vs Term Insurance Return Calculator',
+      description: 'Compare returns from ULIP vs Term Insurance policies',
+      icon: <Calculator className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/ulip-vs-term-insurance-return-calculator',
+      color: 'from-green-500 to-green-600',
+      keywords: ['ULIP vs term insurance', 'insurance comparison', 'return calculation'],
+      seoDescription: 'Compare returns from ULIP vs Term Insurance policies.'
+    },
+    {
+      id: 'gold-sip-vs-gold-etf-return-visualizer',
+      name: 'Gold SIP vs Gold ETF Return Visualizer',
+      description: 'Compare returns from Gold SIP vs Gold ETF investments',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Advanced Investment',
+      path: '/finance-tools/gold-sip-vs-gold-etf-return-visualizer',
+      color: 'from-yellow-500 to-yellow-600',
+      keywords: ['gold SIP', 'gold ETF', 'gold investment comparison'],
+      seoDescription: 'Compare returns from Gold SIP vs Gold ETF investments.'
     }
   ];
 
