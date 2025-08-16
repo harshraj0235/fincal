@@ -466,11 +466,13 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
 
             <WhatsAppBanner />
             <AstroFinanceButton />
-          </motion.div>
-        </div>
+          </div>
+        </section>
       </div>
     </>
   );
 };
 
 export default ShortTermLossOffsetVisualizer;
+
+
