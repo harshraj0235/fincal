@@ -376,6 +376,17 @@ const TaxToolsHub: React.FC = () => {
         isNew: true,
         color: 'from-blue-500 to-blue-600',
         status: 'available'
+      },
+      {
+        id: 'high-dividend-tax-impact-calculator',
+        name: 'High Dividend Tax Impact Calculator',
+        description: 'Calculate tax implications of high dividend income',
+        icon: <DollarSign className="h-6 w-6" />,
+        category: 'Dividends',
+        path: '/tax-tools/high-dividend-tax-impact-calculator',
+        isNew: true,
+        color: 'from-green-500 to-green-600',
+        status: 'available'
       }
     ];
 
