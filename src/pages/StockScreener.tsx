@@ -7,6 +7,7 @@ import AstroFinanceButton from '../components/AstroFinanceButton';
 import PortfolioTracker from '../components/PortfolioTracker';
 import StockNews from '../components/StockNews';
 import MarketWatchlist from '../components/MarketWatchlist';
+import { getMultipleStockQuotes, getPopularIndianStocks, StockQuote } from '../services/stockApi';
 
 interface StockData {
   symbol: string;
@@ -201,12 +202,51 @@ const StockScreener: React.FC = () => {
   ];
 
   useEffect(() => {
-    // Simulate API call with real-time data
-    setTimeout(() => {
-      setStocks(mockStocksData);
-      setFilteredStocks(mockStocksData);
-      setLoading(false);
-    }, 1000);
+    const fetchRealStockData = async () => {
+      try {
+        setLoading(true);
+        const popularStocks = getPopularIndianStocks();
+        const realStockQuotes = await getMultipleStockQuotes(popularStocks);
+        
+        // Convert API data to our StockData format
+        const realStockData: StockData[] = realStockQuotes.map((quote: StockQuote) => ({
+          symbol: quote.symbol,
+          name: quote.symbol, // API doesn't provide company names in quotes
+          price: quote.price,
+          change: quote.change,
+          changePercent: quote.changePercent,
+          marketCap: 'N/A', // Would need overview API call for this
+          peRatio: 0, // Would need overview API call for this
+          dividendYield: 0, // Would need overview API call for this
+          sector: 'N/A', // Would need overview API call for this
+          volume: quote.volume,
+          high52Week: 0, // Would need overview API call for this
+          low52Week: 0, // Would need overview API call for this
+          beta: 0, // Would need overview API call for this
+          eps: 0, // Would need overview API call for this
+          roe: 0, // Would need overview API call for this
+          debtToEquity: 0 // Would need overview API call for this
+        }));
+        
+        // Fallback to mock data if API fails or returns empty
+        if (realStockData.length > 0) {
+          setStocks(realStockData);
+          setFilteredStocks(realStockData);
+        } else {
+          setStocks(mockStocksData);
+          setFilteredStocks(mockStocksData);
+        }
+      } catch (error) {
+        console.error('Error fetching real stock data:', error);
+        // Fallback to mock data
+        setStocks(mockStocksData);
+        setFilteredStocks(mockStocksData);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRealStockData();
   }, []);
 
   useEffect(() => {
@@ -875,50 +915,171 @@ const StockScreener: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="mt-12 bg-white rounded-2xl shadow-lg p-8"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <Info className="h-6 w-6 mr-2 text-purple-600" />
-              Advanced Stock Screening Features
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+              <Info className="h-8 w-8 mr-3 text-purple-600" />
+              Building a Scalable Stock Price & Stock Screener Tool
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                  <Target className="h-4 w-4 mr-2 text-green-600" />
-                  Real-time Data
-                </h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li>• Live stock prices and changes</li>
-                  <li>• Real-time market data</li>
-                  <li>• Instant filtering results</li>
-                  <li>• Auto-refresh capabilities</li>
-                </ul>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Building a stock price and stock screener tool at scale—capable of handling millions of daily users searching for queries like "Best stocks to buy today," "Top Nifty stocks," "Stock screener India," or "Stocks under 500 rupees"—requires focusing on real-time data processing, low-latency responses, high availability, and cost efficiency. This is especially relevant for an Indian audience, where retail investors drive massive traffic to platforms like Groww or Moneycontrol.
+              </p>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                    <Target className="h-5 w-5 mr-2 text-blue-600" />
+                    Core Requirements & MVP
+                  </h3>
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      <span><strong>Real-time stock prices:</strong> Quotes, charts, and live updates</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      <span><strong>Screener functionality:</strong> Filter by price, sector, market cap, dividend yield</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      <span><strong>Instant results:</strong> No login required; client-side filtering for speed</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-600 mr-2">•</span>
+                      <span><strong>Scalability:</strong> Handle 1M+ queries/day with real-time updates</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                    <TrendingUp className="h-5 w-5 mr-2 text-green-600" />
+                    Data Sources & APIs
+                  </h3>
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      <span><strong>Alpha Vantage:</strong> Best overall for stock quotes and fundamentals</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      <span><strong>Twelve Data:</strong> Real-time NSE/BSE data with WebSocket support</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      <span><strong>Polygon.io:</strong> Low-latency real-time feeds for screeners</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      <span><strong>Breeze API:</strong> ICICI Direct for NSE/BSE quotes</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                  <TrendingUp className="h-4 w-4 mr-2 text-blue-600" />
-                  Advanced Filters
+
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <Zap className="h-5 w-5 mr-2 text-purple-600" />
+                  System Architecture & Technology Stack
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li>• Price range filtering</li>
-                  <li>• Market cap categories</li>
-                  <li>• P/E ratio analysis</li>
-                  <li>• Dividend yield screening</li>
-                  <li>• Sector-based filtering</li>
-                  <li>• ROE analysis</li>
-                </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Frontend Stack:</h4>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• React.js/Next.js for interactive UI</li>
+                      <li>• Chart.js or TradingView widgets</li>
+                      <li>• Mobile-responsive design</li>
+                      <li>• Client-side filtering for speed</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Backend Stack:</h4>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• Python (FastAPI/Flask) for API endpoints</li>
+                      <li>• Node.js for WebSocket handling</li>
+                      <li>• PostgreSQL/MongoDB for metadata</li>
+                      <li>• Redis for caching real-time prices</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                  <Zap className="h-4 w-4 mr-2 text-orange-600" />
-                  User Experience
+
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <BarChart3 className="h-5 w-5 mr-2 text-orange-600" />
+                  Scalable Design & Performance
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li>• Table and card views</li>
-                  <li>• Multiple sorting options</li>
-                  <li>• Favorite stocks feature</li>
-                  <li>• Mobile responsive design</li>
-                  <li>• Quick search functionality</li>
-                  <li>• Comprehensive metrics</li>
-                </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Microservices Architecture:</h4>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• Separate services for price fetching</li>
+                      <li>• Dedicated screening service</li>
+                      <li>• User query handling service</li>
+                      <li>• Kubernetes orchestration</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Real-Time Pipeline:</h4>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• Kafka/Google Pub/Sub for data ingestion</li>
+                      <li>• Apache Spark for filtering millions of updates</li>
+                      <li>• Redis/ElastiCache for frequent queries</li>
+                      <li>• Auto-scaling with AWS ECS/GKE</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-indigo-50 to-cyan-50 p-6 rounded-xl mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <RefreshCw className="h-5 w-5 mr-2 text-indigo-600" />
+                  Implementation Steps & Best Practices
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">1. Prototype (MVP):</h4>
+                    <p className="text-sm text-gray-700">Use Streamlit for quick web app with Alpha Vantage API, apply filters client-side for instant results.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">2. Scale the Backend:</h4>
+                    <p className="text-sm text-gray-700">Migrate to cloud with AWS Lambda for on-demand scaling, implement queueing (SQS) for API bursts.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">3. Real-Time Features:</h4>
+                    <p className="text-sm text-gray-700">Integrate WebSockets with Twelve Data for live prices, use Socket.io in Node.js backend.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">4. Testing & Optimization:</h4>
+                    <p className="text-sm text-gray-700">Load test with Locust/JMeter for 10K concurrent users, monitor with CloudWatch/Prometheus.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <Star className="h-5 w-5 mr-2 text-yellow-600" />
+                  Cost Analysis & Monetization
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Costs:</h4>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• MVP: Free (GitHub Pages + free APIs)</li>
+                      <li>• At scale: $100-500/month (AWS + paid APIs)</li>
+                      <li>• 1M users: Comprehensive infrastructure</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Monetization:</h4>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• Freemium model (basic free, premium real-time)</li>
+                      <li>• Ads on results pages</li>
+                      <li>• SEO optimization for daily searches</li>
+                      <li>• AI enhancements with LangGraph</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
