@@ -16,7 +16,8 @@ import {
   Rocket,
   TrendingDown,
   Percent,
-  Activity
+  Activity,
+  PieChart
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -135,6 +136,16 @@ const TaxToolsHub: React.FC = () => {
       category: 'Loss Management',
       path: '/tax-tools/short-term-capital-loss-benefit-estimator',
       color: 'from-pink-500 to-pink-600',
+      status: 'available'
+    },
+    {
+      id: 'tax-on-partial-selloff-calculator',
+      name: 'Tax on Partial Selloff Calculator',
+      description: 'Calculate tax implications when selling partial holdings',
+      icon: <PieChart className="h-6 w-6" />,
+      category: 'Capital Gains',
+      path: '/tax-tools/tax-on-partial-selloff-calculator',
+      color: 'from-indigo-500 to-indigo-600',
       status: 'available'
     }
   ];
