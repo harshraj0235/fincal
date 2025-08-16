@@ -56,7 +56,7 @@ const TaxToolsHub: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const taxTools: TaxTool[] = [
-    // Capital Gains Tools
+    // Available Tools
     {
       id: 'stcg-ltcg-classifier',
       name: 'STCG vs LTCG Classifier',
@@ -80,28 +80,6 @@ const TaxToolsHub: React.FC = () => {
       status: 'available'
     },
     {
-      id: 'intraday-delivery-tax-calculator',
-      name: 'Intraday vs Delivery Tax Calculator',
-      description: 'Compare tax implications of intraday vs delivery trading',
-      icon: <Activity className="h-6 w-6" />,
-      category: 'Capital Gains',
-      path: '/tax-tools/intraday-delivery-tax-calculator',
-      color: 'from-purple-500 to-purple-600',
-      status: 'coming-soon'
-    },
-    {
-      id: 'partial-selloff-tax-calculator',
-      name: 'Tax on Partial Selloff Calculator',
-      description: 'Calculate tax on partial sale of investments',
-      icon: <PieChart className="h-6 w-6" />,
-      category: 'Capital Gains',
-      path: '/tax-tools/partial-selloff-tax-calculator',
-      color: 'from-orange-500 to-orange-600',
-      status: 'coming-soon'
-    },
-
-    // Mutual Fund Tools
-    {
       id: 'mutual-fund-exit-load-checker',
       name: 'Mutual Fund Exit Load Checker',
       description: 'Check exit load charges for mutual fund redemptions',
@@ -112,28 +90,6 @@ const TaxToolsHub: React.FC = () => {
       color: 'from-indigo-500 to-indigo-600',
       status: 'available'
     },
-    {
-      id: 'mutual-fund-capital-gains-tax',
-      name: 'Mutual Fund Capital Gains Tax Estimator',
-      description: 'Calculate tax on mutual fund capital gains',
-      icon: <TrendingDown className="h-6 w-6" />,
-      category: 'Mutual Funds',
-      path: '/tax-tools/mutual-fund-capital-gains-tax',
-      color: 'from-teal-500 to-teal-600',
-      status: 'coming-soon'
-    },
-    {
-      id: 'switch-gains-tax-estimator',
-      name: 'Switch Gains Tax Estimator (MF to MF)',
-      description: 'Calculate tax on mutual fund switches',
-      icon: <ArrowRight className="h-6 w-6" />,
-      category: 'Mutual Funds',
-      path: '/tax-tools/switch-gains-tax-estimator',
-      color: 'from-cyan-500 to-cyan-600',
-      status: 'coming-soon'
-    },
-
-    // Dividend Tools
     {
       id: 'dividend-tax-estimator',
       name: 'Dividend Tax Estimator (Post-2020 Rules)',
@@ -146,143 +102,45 @@ const TaxToolsHub: React.FC = () => {
       status: 'available'
     },
     {
-      id: 'dividend-reinvestment-tax-comparison',
-      name: 'Dividend Reinvestment Tax Comparison',
-      description: 'Compare tax implications of dividend reinvestment',
-      icon: <RefreshCw className="h-6 w-6" />,
-      category: 'Dividends',
-      path: '/tax-tools/dividend-reinvestment-tax-comparison',
-      color: 'from-lime-500 to-lime-600',
-      status: 'coming-soon'
-    },
-    {
-      id: 'bonus-shares-tax-tracker',
-      name: 'Tax on Bonus Shares Tracker',
-      description: 'Track tax implications of bonus share issues',
-      icon: <Gift className="h-6 w-6" />,
-      category: 'Dividends',
-      path: '/tax-tools/bonus-shares-tax-tracker',
-      color: 'from-pink-500 to-pink-600',
-      status: 'coming-soon'
-    },
-
-    // Loss Management Tools
-    {
       id: 'loss-carry-forward-estimator',
       name: 'Loss Carry Forward Estimator',
       description: 'Calculate and track capital loss carry forward',
       icon: <TrendingDown className="h-6 w-6" />,
       category: 'Loss Management',
       path: '/tax-tools/loss-carry-forward-estimator',
+      isNew: true,
       color: 'from-red-500 to-red-600',
       status: 'available'
     },
+    // Coming Soon Tools
     {
-      id: 'short-term-capital-loss-benefit',
-      name: 'Short-Term Capital Loss Benefit Estimator',
-      description: 'Calculate benefits from short-term capital losses',
-      icon: <Shield className="h-6 w-6" />,
-      category: 'Loss Management',
-      path: '/tax-tools/short-term-capital-loss-benefit',
-      color: 'from-rose-500 to-rose-600',
-      status: 'coming-soon'
-    },
-
-    // Tax Planning Tools
-    {
-      id: 'tax-savings-section-54ec-54f',
-      name: 'Tax Savings with Section 54EC, 54F, etc.',
-      description: 'Calculate tax savings under various sections',
-      icon: <Percent className="h-6 w-6" />,
-      category: 'Tax Planning',
-      path: '/tax-tools/tax-savings-section-54ec-54f',
-      isPopular: true,
-      color: 'from-emerald-500 to-emerald-600',
+      id: 'intraday-delivery-tax-calculator',
+      name: 'Intraday vs Delivery Tax Calculator',
+      description: 'Compare tax implications of intraday vs delivery trading',
+      icon: <Activity className="h-6 w-6" />,
+      category: 'Capital Gains',
+      path: '/tax-tools/intraday-delivery-tax-calculator',
+      color: 'from-purple-500 to-purple-600',
       status: 'coming-soon'
     },
     {
-      id: 'nps-tax-benefit-vs-growth',
-      name: 'NPS Tax Benefit vs Growth Estimator',
-      description: 'Compare NPS tax benefits with growth potential',
-      icon: <Briefcase className="h-6 w-6" />,
-      category: 'Tax Planning',
-      path: '/tax-tools/nps-tax-benefit-vs-growth',
-      color: 'from-violet-500 to-violet-600',
+      id: 'turnover-calculator-itr',
+      name: 'Turnover Calculator for ITR Form Filling',
+      description: 'Calculate turnover for ITR form selection',
+      icon: <FileText className="h-6 w-6" />,
+      category: 'Filing & Compliance',
+      path: '/tax-tools/turnover-calculator-itr',
+      color: 'from-orange-500 to-orange-600',
       status: 'coming-soon'
     },
     {
       id: 'section-80c-tally-analyzer',
       name: 'Section 80C Tally Analyzer',
-      description: 'Analyze your Section 80C investments and deductions',
-      icon: <CheckCircle className="h-6 w-6" />,
+      description: 'Analyze and optimize your Section 80C investments',
+      icon: <Percent className="h-6 w-6" />,
       category: 'Tax Planning',
       path: '/tax-tools/section-80c-tally-analyzer',
-      color: 'from-amber-500 to-amber-600',
-      status: 'coming-soon'
-    },
-
-    // Filing & Compliance Tools
-    {
-      id: 'turnover-calculator-itr',
-      name: 'Turnover Calculator for ITR Form Filling',
-      description: 'Calculate turnover for ITR form filing',
-      icon: <FileText className="h-6 w-6" />,
-      category: 'Filing & Compliance',
-      path: '/tax-tools/turnover-calculator-itr',
-      color: 'from-slate-500 to-slate-600',
-      status: 'coming-soon'
-    },
-    {
-      id: 'itr-form-type-helper',
-      name: 'ITR Form Type Helper',
-      description: 'Determine the correct ITR form based on your income',
-      icon: <FileText className="h-6 w-6" />,
-      category: 'Filing & Compliance',
-      path: '/tax-tools/itr-form-type-helper',
-      color: 'from-gray-500 to-gray-600',
-      status: 'coming-soon'
-    },
-    {
-      id: 'tax-filing-deadline-reminder',
-      name: 'Tax Filing Deadline Reminder Widget',
-      description: 'Get reminders for important tax filing deadlines',
-      icon: <Calendar className="h-6 w-6" />,
-      category: 'Filing & Compliance',
-      path: '/tax-tools/tax-filing-deadline-reminder',
-      color: 'from-blue-500 to-blue-600',
-      status: 'coming-soon'
-    },
-
-    // Advanced Tools
-    {
-      id: 'annual-tax-summary-trades',
-      name: 'Annual Tax Summary from Trades (CSV to JS)',
-      description: 'Generate annual tax summary from trading data',
-      icon: <BarChart3 className="h-6 w-6" />,
-      category: 'Advanced Tools',
-      path: '/tax-tools/annual-tax-summary-trades',
-      isNew: true,
-      color: 'from-indigo-500 to-indigo-600',
-      status: 'coming-soon'
-    },
-    {
-      id: 'tax-efficient-withdrawal-order',
-      name: 'Tax Efficient Withdrawal Order Tool',
-      description: 'Optimize withdrawal order for tax efficiency',
-      icon: <TrendingUp className="h-6 w-6" />,
-      category: 'Advanced Tools',
-      path: '/tax-tools/tax-efficient-withdrawal-order',
-      color: 'from-green-500 to-green-600',
-      status: 'coming-soon'
-    },
-    {
-      id: 'tax-scenario-comparison',
-      name: 'Tax Scenario Comparison Tool',
-      description: 'Compare different tax scenarios and strategies',
-      icon: <Target className="h-6 w-6" />,
-      category: 'Advanced Tools',
-      path: '/tax-tools/tax-scenario-comparison',
-      color: 'from-purple-500 to-purple-600',
+      color: 'from-teal-500 to-teal-600',
       status: 'coming-soon'
     }
   ];
