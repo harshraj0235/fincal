@@ -52,6 +52,8 @@ const CryptoArticlePost = lazy(() => import('./pages/CryptoArticlePost'));
 const AstroFinance = lazy(() => import('./pages/AstroFinance'));
 const StockMarket = lazy(() => import('./pages/StockMarket'));
 const StockMarketBasics = lazy(() => import('./pages/StockMarketBasics'));
+const StockMarketLesson = lazy(() => import('./pages/StockMarketLesson'));
+const CoreMarketConcepts = lazy(() => import('./pages/CoreMarketConcepts'));
 const AstroFinanceHoroscope = lazy(() => import('./pages/AstroFinanceHoroscope'));
 const AstroFinanceZodiacTips = lazy(() => import('./pages/AstroFinanceZodiacTips'));
 const AstroFinanceLuckyNumberGenerator = lazy(() => import('./pages/AstroFinanceLuckyNumberGenerator'));
@@ -176,7 +178,9 @@ function App() {
                  <Route path="/astro-finance" element={<AstroFinance />} />
                  {/* Stock Market route */}
                  <Route path="/stock-market" element={<StockMarket />} />
-                 <Route path="/stock-market/stock-market-basics" element={<StockMarketBasics />} />
+                                   <Route path="/stock-market/stock-market-basics" element={<StockMarketBasics />} />
+                  <Route path="/stock-market/stock-market-basics/lesson/:lessonId" element={<StockMarketLesson />} />
+                  <Route path="/stock-market/core-market-concepts" element={<CoreMarketConcepts />} />
                 <Route path="/astro-finance/horoscope" element={<AstroFinanceHoroscope />} />
                 <Route path="/astro-finance/zodiac-tips" element={<AstroFinanceZodiacTips />} />
                 <Route path="/astro-finance/lucky-numbers" element={<AstroFinanceLuckyNumberGenerator />} />

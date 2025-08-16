@@ -34,128 +34,128 @@ const StockMarket: React.FC = () => {
   const courseLevels = [
     {
       id: 'stock-market-basics',
-      title: 'स्टॉक मार्केट बेसिक्स',
+      title: 'Stock Market Basics',
       englishTitle: 'Stock Market Basics',
-      description: 'शेयर मार्केट की बुनियादी जानकारी और शुरुआती अवधारणाएं',
+      description: 'Basic information about stock market and fundamental concepts',
       lessons: 5,
-      duration: '2 घंटे',
-      level: 'शुरुआती',
+      duration: '2 hours',
+      level: 'Beginner',
       color: 'from-blue-500 to-blue-700',
       icon: <BookOpen className="h-8 w-8 text-white" />,
       topics: [
-        'शेयर मार्केट क्या है?',
-        'मुख्य बाजार प्रतिभागी',
-        'डीमैट और ट्रेडिंग अकाउंट',
-        'आईपीओ क्या है?',
-        'बुनियादी शेयर मार्केट शब्दावली'
+        'What is Stock Market?',
+        'Key Market Participants',
+        'Demat and Trading Account',
+        'What is IPO?',
+        'Basic Stock Market Terms'
       ]
     },
     {
       id: 'core-market-concepts',
-      title: 'मुख्य बाजार अवधारणाएं',
+      title: 'Core Market Concepts',
       englishTitle: 'Core Market Concepts',
-      description: 'बुल और बेयर मार्केट, मार्केट कैप, डिविडेंड और सेक्टर',
+      description: 'Bull and Bear markets, Market cap, Dividends and Sectors',
       lessons: 5,
-      duration: '3 घंटे',
-      level: 'मध्यम',
+      duration: '3 hours',
+      level: 'Intermediate',
       color: 'from-green-500 to-green-700',
       icon: <TrendingUp className="h-8 w-8 text-white" />,
       topics: [
-        'बुल और बेयर मार्केट',
-        'मार्केट कैपिटलाइजेशन',
-        'डिविडेंड और उनके प्रकार',
-        'सेक्टर और इंडेक्स',
-        'आर्थिक चक्र और बाजार प्रभाव'
+        'Bull and Bear Markets',
+        'Market Capitalization',
+        'Dividends and Types',
+        'Sectors and Indices',
+        'Economic Cycles and Market Impact'
       ]
     },
     {
       id: 'fundamental-analysis',
-      title: 'फंडामेंटल एनालिसिस',
+      title: 'Fundamental Analysis',
       englishTitle: 'Fundamental Analysis',
-      description: 'कंपनी के वित्तीय स्वास्थ्य का विश्लेषण और मूल्यांकन',
+      description: 'Analysis and evaluation of company financial health',
       lessons: 6,
-      duration: '4 घंटे',
-      level: 'उन्नत',
+      duration: '4 hours',
+      level: 'Advanced',
       color: 'from-purple-500 to-purple-700',
       icon: <BarChart3 className="h-8 w-8 text-white" />,
       topics: [
-        'फंडामेंटल एनालिसिस क्या है?',
-        'ईपीएस और पी/ई रेशियो',
-        'रिटर्न ऑन इक्विटी (ROE)',
-        'बैलेंस शीट समझना',
-        'महत्वपूर्ण वित्तीय अनुपात',
-        'कंपनी मूल्यांकन'
+        'What is Fundamental Analysis?',
+        'EPS and P/E Ratio',
+        'Return on Equity (ROE)',
+        'Understanding Balance Sheet',
+        'Important Financial Ratios',
+        'Company Valuation'
       ]
     },
     {
       id: 'technical-analysis',
-      title: 'टेक्निकल एनालिसिस',
+      title: 'Technical Analysis',
       englishTitle: 'Technical Analysis',
-      description: 'चार्ट पैटर्न, इंडिकेटर्स और मूल्य आंदोलन का विश्लेषण',
+      description: 'Chart patterns, indicators and price movement analysis',
       lessons: 5,
-      duration: '4 घंटे',
-      level: 'उन्नत',
+      duration: '4 hours',
+      level: 'Advanced',
       color: 'from-orange-500 to-orange-700',
       icon: <LineChart className="h-8 w-8 text-white" />,
       topics: [
-        'टेक्निकल एनालिसिस क्या है?',
-        'कैंडलस्टिक चार्ट',
-        'सपोर्ट और रेजिस्टेंस',
-        'लोकप्रिय टेक्निकल इंडिकेटर्स',
-        'वॉल्यूम एनालिसिस'
+        'What is Technical Analysis?',
+        'Candlestick Charts',
+        'Support and Resistance',
+        'Popular Technical Indicators',
+        'Volume Analysis'
       ]
     },
     {
       id: 'advanced-trading',
-      title: 'उन्नत ट्रेडिंग रणनीतियां',
+      title: 'Advanced Trading Strategies',
       englishTitle: 'Advanced Trading Strategies',
-      description: 'स्विंग ट्रेडिंग, डे ट्रेडिंग और रिस्क मैनेजमेंट',
+      description: 'Swing trading, day trading and risk management',
       lessons: 5,
-      duration: '5 घंटे',
-      level: 'विशेषज्ञ',
+      duration: '5 hours',
+      level: 'Expert',
       color: 'from-red-500 to-red-700',
       icon: <Zap className="h-8 w-8 text-white" />,
       topics: [
-        'स्विंग ट्रेडिंग',
-        'डे ट्रेडिंग बेसिक्स',
-        'ऑप्शन और फ्यूचर्स',
-        'चार्ट पैटर्न',
-        'रिस्क मैनेजमेंट तकनीकें'
+        'Swing Trading',
+        'Day Trading Basics',
+        'Options and Futures',
+        'Chart Patterns',
+        'Risk Management Techniques'
       ]
     },
     {
       id: 'tools-practical',
-      title: 'टूल्स और प्रैक्टिकल एप्लिकेशन',
+      title: 'Tools & Practical Application',
       englishTitle: 'Tools & Practical Application',
-      description: 'व्यावहारिक टूल्स, पेपर ट्रेडिंग और मार्केट न्यूज',
+      description: 'Practical tools, paper trading and market news',
       lessons: 5,
-      duration: '3 घंटे',
-      level: 'मध्यम',
+      duration: '3 hours',
+      level: 'Intermediate',
       color: 'from-indigo-500 to-indigo-700',
       icon: <Calculator className="h-8 w-8 text-white" />,
       topics: [
-        'स्टॉक स्क्रीनर का उपयोग',
-        'ट्रेडिंग प्लेटफॉर्म',
-        'इन्वेस्टमेंट कैलकुलेटर्स',
-        'पेपर ट्रेडिंग',
-        'मार्केट न्यूज पढ़ना'
+        'Using Stock Screeners',
+        'Trading Platforms',
+        'Investment Calculators',
+        'Paper Trading',
+        'Reading Market News'
       ]
     },
     {
       id: 'case-studies-psychology',
-      title: 'केस स्टडीज और मार्केट साइकोलॉजी',
+      title: 'Case Studies & Market Psychology',
       englishTitle: 'Case Studies & Market Psychology',
-      description: 'वास्तविक केस स्टडीज और व्यवहारिक वित्त',
+      description: 'Real case studies and behavioral finance',
       lessons: 4,
-      duration: '3 घंटे',
-      level: 'विशेषज्ञ',
+      duration: '3 hours',
+      level: 'Expert',
       color: 'from-pink-500 to-pink-700',
       icon: <Brain className="h-8 w-8 text-white" />,
       topics: [
-        'प्रसिद्ध स्टॉक मार्केट केस स्टडीज',
-        'बिहेवियरल फाइनेंस बेसिक्स',
-        'ट्रेडिंग में भावनात्मक अनुशासन',
-        'ट्रेडिंग माइंडसेट विकसित करना'
+        'Famous Stock Market Case Studies',
+        'Behavioral Finance Basics',
+        'Emotional Discipline in Trading',
+        'Developing Trading Mindset'
       ]
     }
   ];
@@ -163,43 +163,43 @@ const StockMarket: React.FC = () => {
   const tools = [
     {
       id: 'sip-calculator',
-      title: 'SIP कैलकुलेटर',
-      description: 'सिस्टेमैटिक इन्वेस्टमेंट प्लान के लिए रिटर्न की गणना',
+      title: 'SIP Calculator',
+      description: 'Calculate returns for Systematic Investment Plan',
       icon: <Calculator className="h-6 w-6" />,
       color: 'from-blue-500 to-blue-600'
     },
     {
       id: 'cagr-calculator',
-      title: 'CAGR कैलकुलेटर',
-      description: 'कंपाउंड एनुअल ग्रोथ रेट की गणना',
+      title: 'CAGR Calculator',
+      description: 'Calculate Compound Annual Growth Rate',
       icon: <TrendingUp className="h-6 w-6" />,
       color: 'from-green-500 to-green-600'
     },
     {
       id: 'pe-ratio-calculator',
-      title: 'P/E रेशियो कैलकुलेटर',
-      description: 'प्राइस-टू-अर्निंग रेशियो की गणना',
+      title: 'P/E Ratio Calculator',
+      description: 'Calculate Price-to-Earnings Ratio',
       icon: <BarChart3 className="h-6 w-6" />,
       color: 'from-purple-500 to-purple-600'
     },
     {
       id: 'intrinsic-value-calculator',
-      title: 'इंट्रिन्सिक वैल्यू कैलकुलेटर',
-      description: 'स्टॉक की आंतरिक मूल्य की गणना',
+      title: 'Intrinsic Value Calculator',
+      description: 'Calculate intrinsic value of stocks',
       icon: <Target className="h-6 w-6" />,
       color: 'from-orange-500 to-orange-600'
     },
     {
       id: 'xirr-calculator',
-      title: 'XIRR कैलकुलेटर',
-      description: 'अनियमित निवेश के लिए रिटर्न की गणना',
+      title: 'XIRR Calculator',
+      description: 'Calculate returns for irregular investments',
       icon: <PieChart className="h-6 w-6" />,
       color: 'from-red-500 to-red-600'
     },
     {
       id: 'stock-screener',
-      title: 'स्टॉक स्क्रीनर',
-      description: 'अपनी रणनीति के अनुसार स्टॉक फ़िल्टर करें',
+      title: 'Stock Screener',
+      description: 'Filter stocks according to your strategy',
       icon: <Search className="h-6 w-6" />,
       color: 'from-indigo-500 to-indigo-600'
     }
@@ -216,9 +216,9 @@ const StockMarket: React.FC = () => {
       <WhatsAppBanner />
       <AstroFinanceButton />
       <SEOHelmet
-        title="स्टॉक मार्केट कोर्स - शेयर मार्केट सीखें | MoneyCal.in"
-        description="भारत का सबसे व्यापक स्टॉक मार्केट कोर्स। शुरुआती से विशेषज्ञ स्तर तक शेयर मार्केट सीखें। फ्री टूल्स, कैलकुलेटर्स और प्रैक्टिकल गाइड के साथ।"
-        keywords="स्टॉक मार्केट कोर्स, शेयर मार्केट सीखें, ट्रेडिंग कोर्स, इन्वेस्टमेंट गाइड, स्टॉक मार्केट बेसिक्स, टेक्निकल एनालिसिस, फंडामेंटल एनालिसिस"
+        title="Stock Market Course - Learn Trading & Investment | MoneyCal.in"
+        description="India's most comprehensive stock market course. Learn from beginner to expert level with free tools, calculators and practical guides."
+        keywords="stock market course, learn trading, investment guide, stock market basics, technical analysis, fundamental analysis"
         url="/stock-market"
         structuredData={{}}
       />
@@ -236,11 +236,11 @@ const StockMarket: React.FC = () => {
               MoneyCal Varsity
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              स्टॉक मार्केट कोर्स
+              Stock Market Course
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-              भारत का सबसे व्यापक स्टॉक मार्केट शिक्षा प्लेटफॉर्म। शुरुआती से विशेषज्ञ स्तर तक, 
-              सभी कुछ हिंदी में सीखें और अपने निवेश ज्ञान को बढ़ाएं।
+              India's most comprehensive stock market education platform. Learn everything from beginner to expert level 
+              and enhance your investment knowledge with our structured courses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -248,14 +248,14 @@ const StockMarket: React.FC = () => {
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-2xl font-semibold hover:from-green-600 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all"
               >
                 <Play className="h-5 w-5 mr-2" />
-                कोर्स शुरू करें
+                Start Course
               </Link>
               <Link
                 to="#tools"
                 className="inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-2xl font-semibold hover:border-green-500 hover:text-green-600 transition-all"
               >
                 <Calculator className="h-5 w-5 mr-2" />
-                टूल्स देखें
+                View Tools
               </Link>
             </div>
           </motion.div>
@@ -269,19 +269,19 @@ const StockMarket: React.FC = () => {
           >
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
               <div className="text-3xl font-bold text-green-600 mb-2">7</div>
-              <div className="text-gray-600">कोर्स लेवल</div>
+              <div className="text-gray-600">Course Levels</div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">39</div>
-              <div className="text-gray-600">लेसन</div>
+              <div className="text-gray-600">Lessons</div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
               <div className="text-3xl font-bold text-purple-600 mb-2">24</div>
-              <div className="text-gray-600">घंटे कंटेंट</div>
+              <div className="text-gray-600">Hours Content</div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
               <div className="text-3xl font-bold text-orange-600 mb-2">100%</div>
-              <div className="text-gray-600">फ्री</div>
+              <div className="text-gray-600">Free</div>
             </div>
           </motion.div>
 
@@ -296,7 +296,7 @@ const StockMarket: React.FC = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
-                placeholder="कोर्स या टॉपिक खोजें..."
+                placeholder="Search courses or topics..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white shadow-sm"
@@ -336,8 +336,8 @@ const StockMarket: React.FC = () => {
             className="mb-16"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">कोर्स लेवल्स</h2>
-              <p className="text-lg text-gray-600">शुरुआती से विशेषज्ञ स्तर तक स्टेप-बाय-स्टेप सीखें</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Course Levels</h2>
+              <p className="text-lg text-gray-600">Learn step-by-step from beginner to expert level</p>
             </div>
             
             <div className={`${
@@ -386,7 +386,7 @@ const StockMarket: React.FC = () => {
                       ))}
                       {level.topics.length > 3 && (
                         <div className="text-sm text-gray-500">
-                          +{level.topics.length - 3} और टॉपिक्स
+                          +{level.topics.length - 3} more topics
                         </div>
                       )}
                     </div>
@@ -395,7 +395,7 @@ const StockMarket: React.FC = () => {
                       to={`/stock-market/${level.id}`}
                       className="inline-flex items-center w-full justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-xl font-semibold hover:from-green-600 hover:to-blue-700 transition-all group"
                     >
-                      कोर्स शुरू करें
+                      Start Course
                       <ChevronRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -413,8 +413,8 @@ const StockMarket: React.FC = () => {
             className="mb-16"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">फ्री टूल्स</h2>
-              <p className="text-lg text-gray-600">स्टॉक मार्केट एनालिसिस के लिए उपयोगी कैलकुलेटर्स और टूल्स</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Free Tools</h2>
+              <p className="text-lg text-gray-600">Useful calculators and tools for stock market analysis</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -446,8 +446,8 @@ const StockMarket: React.FC = () => {
             className="mb-16"
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">विशेषताएं</h2>
-              <p className="text-lg text-gray-600">हमारे स्टॉक मार्केट प्लेटफॉर्म की मुख्य विशेषताएं</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Features</h2>
+              <p className="text-lg text-gray-600">Key features of our stock market platform</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -455,32 +455,32 @@ const StockMarket: React.FC = () => {
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">व्यापक कोर्स</h3>
-                <p className="text-gray-600 text-sm">7 लेवल में 39 लेसन के साथ पूर्ण शिक्षा</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Comprehensive Courses</h3>
+                <p className="text-gray-600 text-sm">Complete education with 39 lessons in 7 levels</p>
               </div>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-4">
                   <Calculator className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">फ्री टूल्स</h3>
-                <p className="text-gray-600 text-sm">6 उपयोगी कैलकुलेटर्स और एनालिसिस टूल्स</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Free Tools</h3>
+                <p className="text-gray-600 text-sm">6 useful calculators and analysis tools</p>
               </div>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
                   <Award className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">सर्टिफिकेट</h3>
-                <p className="text-gray-600 text-sm">कोर्स पूरा करने पर फ्री सर्टिफिकेट</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Certificate</h3>
+                <p className="text-gray-600 text-sm">Free certificate upon course completion</p>
               </div>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
                 <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">कम्युनिटी</h3>
-                <p className="text-gray-600 text-sm">अन्य निवेशकों के साथ चर्चा और सीखें</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Community</h3>
+                <p className="text-gray-600 text-sm">Discuss and learn with other investors</p>
               </div>
             </div>
           </motion.div>
@@ -492,9 +492,9 @@ const StockMarket: React.FC = () => {
             transition={{ delay: 0.6 }}
             className="bg-gradient-to-br from-green-600 to-blue-700 rounded-3xl p-12 text-center text-white"
           >
-            <h2 className="text-3xl font-bold mb-4">आज ही शुरू करें</h2>
+            <h2 className="text-3xl font-bold mb-4">Start Today</h2>
             <p className="text-xl mb-8 text-green-100">
-              स्टॉक मार्केट की दुनिया में अपनी यात्रा शुरू करें और अपने वित्तीय लक्ष्यों को प्राप्त करें
+              Begin your journey in the stock market world and achieve your financial goals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -502,14 +502,14 @@ const StockMarket: React.FC = () => {
                 className="inline-flex items-center px-8 py-4 bg-white text-green-600 rounded-2xl font-semibold hover:bg-gray-100 transition-all"
               >
                 <Play className="h-5 w-5 mr-2" />
-                कोर्स शुरू करें
+                Start Course
               </Link>
               <Link
                 to="#tools"
                 className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-2xl font-semibold hover:bg-white hover:text-green-600 transition-all"
               >
                 <Calculator className="h-5 w-5 mr-2" />
-                टूल्स देखें
+                View Tools
               </Link>
             </div>
           </motion.div>

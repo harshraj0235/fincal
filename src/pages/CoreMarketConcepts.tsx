@@ -15,40 +15,40 @@ import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 
-const StockMarketBasics: React.FC = () => {
+const CoreMarketConcepts: React.FC = () => {
   const navigate = useNavigate();
   const [completedLessons, setCompletedLessons] = useState<number[]>([]);
 
   const lessons = [
     {
       id: 1,
-      title: 'शेयर मार्केट क्या है?',
-      duration: '25 मिनट',
-      description: 'शेयर मार्केट की बुनियादी परिभाषा और इसका महत्व समझें'
+      title: 'Bull and Bear Markets',
+      duration: '30 minutes',
+      description: 'Understand the difference between bull and bear markets and their characteristics'
     },
     {
       id: 2,
-      title: 'मुख्य बाजार प्रतिभागी',
-      duration: '30 मिनट',
-      description: 'शेयर मार्केट में शामिल विभिन्न प्रतिभागियों को जानें'
+      title: 'Market Capitalization',
+      duration: '35 minutes',
+      description: 'Learn about market cap and how it categorizes companies'
     },
     {
       id: 3,
-      title: 'डीमैट और ट्रेडिंग अकाउंट',
-      duration: '35 मिनट',
-      description: 'डीमैट और ट्रेडिंग अकाउंट के बारे में विस्तार से जानें'
+      title: 'Dividends and Types',
+      duration: '40 minutes',
+      description: 'Explore different types of dividends and their importance'
     },
     {
       id: 4,
-      title: 'आईपीओ क्या है?',
-      duration: '40 मिनट',
-      description: 'आईपीओ की अवधारणा और इसकी प्रक्रिया समझें'
+      title: 'Sectors and Indices',
+      duration: '45 minutes',
+      description: 'Understand market sectors and major stock indices'
     },
     {
       id: 5,
-      title: 'बुनियादी शेयर मार्केट शब्दावली',
-      duration: '45 मिनट',
-      description: 'शेयर मार्केट में उपयोग होने वाले महत्वपूर्ण शब्दों को जानें'
+      title: 'Economic Cycles and Market Impact',
+      duration: '50 minutes',
+      description: 'Learn how economic cycles affect stock markets'
     }
   ];
 
@@ -65,10 +65,10 @@ const StockMarketBasics: React.FC = () => {
       <WhatsAppBanner />
       <AstroFinanceButton />
       <SEOHelmet
-        title="स्टॉक मार्केट बेसिक्स - शेयर मार्केट की बुनियादी जानकारी | MoneyCal.in"
-        description="स्टॉक मार्केट की बुनियादी जानकारी सीखें। शेयर मार्केट क्या है, आईपीओ, डीमैट अकाउंट और बुनियादी शब्दावली। पूरी तरह से हिंदी में।"
-        keywords="स्टॉक मार्केट बेसिक्स, शेयर मार्केट सीखें, आईपीओ क्या है, डीमैट अकाउंट, ट्रेडिंग अकाउंट, शेयर मार्केट शब्दावली"
-        url="/stock-market/stock-market-basics"
+        title="Core Market Concepts - Stock Market Course | MoneyCal.in"
+        description="Learn core market concepts including bull and bear markets, market capitalization, dividends, sectors and economic cycles."
+        keywords="core market concepts, bull market, bear market, market capitalization, dividends, stock market sectors"
+        url="/stock-market/core-market-concepts"
         structuredData={{}}
       />
 
@@ -85,24 +85,24 @@ const StockMarketBasics: React.FC = () => {
               className="inline-flex items-center text-gray-600 hover:text-green-600 transition-colors mb-6"
             >
               <ArrowLeft className="h-5 w-5 mr-2" />
-              सभी कोर्स वापस जाएं
+              Back to All Courses
             </button>
             
             <div className="flex items-center mb-6">
-              <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mr-6 shadow-lg">
+              <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mr-6 shadow-lg">
                 <BookOpen className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">स्टॉक मार्केट बेसिक्स</h1>
-                <p className="text-xl text-gray-600">शेयर मार्केट की बुनियादी जानकारी और शुरुआती अवधारणाएं</p>
+                <h1 className="text-4xl font-bold text-gray-900 mb-2">Core Market Concepts</h1>
+                <p className="text-xl text-gray-600">Bull and Bear markets, Market cap, Dividends and Sectors</p>
               </div>
             </div>
 
             {/* Progress Bar */}
             <div className="bg-white rounded-2xl p-6 shadow-lg mb-8">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">कोर्स प्रगति</h3>
-                <span className="text-sm text-gray-600">{completedLessons.length}/{lessons.length} पूर्ण</span>
+                <h3 className="text-lg font-semibold text-gray-900">Course Progress</h3>
+                <span className="text-sm text-gray-600">{completedLessons.length}/{lessons.length} completed</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-3">
                 <div 
@@ -111,8 +111,8 @@ const StockMarketBasics: React.FC = () => {
                 ></div>
               </div>
               <div className="flex items-center justify-between mt-4 text-sm text-gray-600">
-                <span>शुरुआती</span>
-                <span>{Math.round(progress)}% पूर्ण</span>
+                <span>Intermediate</span>
+                <span>{Math.round(progress)}% complete</span>
               </div>
             </div>
           </motion.div>
@@ -126,19 +126,19 @@ const StockMarketBasics: React.FC = () => {
           >
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
               <div className="text-2xl font-bold text-blue-600 mb-2">{lessons.length}</div>
-              <div className="text-gray-600">लेसन</div>
+              <div className="text-gray-600">Lessons</div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
-              <div className="text-2xl font-bold text-green-600 mb-2">3 घंटे</div>
-              <div className="text-gray-600">कुल समय</div>
+              <div className="text-2xl font-bold text-green-600 mb-2">3 hours</div>
+              <div className="text-gray-600">Total Time</div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
-              <div className="text-2xl font-bold text-purple-600 mb-2">शुरुआती</div>
-              <div className="text-gray-600">स्तर</div>
+              <div className="text-2xl font-bold text-purple-600 mb-2">Intermediate</div>
+              <div className="text-gray-600">Level</div>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
-              <div className="text-2xl font-bold text-orange-600 mb-2">फ्री</div>
-              <div className="text-gray-600">कीमत</div>
+              <div className="text-2xl font-bold text-orange-600 mb-2">Free</div>
+              <div className="text-gray-600">Price</div>
             </div>
           </motion.div>
 
@@ -149,7 +149,7 @@ const StockMarketBasics: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="space-y-6"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">लेसन</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Lessons</h2>
             
             {lessons.map((lesson, index) => (
               <motion.div
@@ -179,7 +179,7 @@ const StockMarketBasics: React.FC = () => {
                           <h3 className="text-xl font-bold text-gray-900 mr-3">{lesson.title}</h3>
                           {completedLessons.includes(lesson.id) && (
                             <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                              पूर्ण
+                              Completed
                             </span>
                           )}
                         </div>
@@ -192,11 +192,11 @@ const StockMarketBasics: React.FC = () => {
                           </div>
                           <div className="flex items-center">
                             <Video className="h-4 w-4 mr-1" />
-                            वीडियो लेसन
+                            Video Lesson
                           </div>
                           <div className="flex items-center">
                             <CheckSquare className="h-4 w-4 mr-1" />
-                            क्विज
+                            Quiz
                           </div>
                         </div>
                       </div>
@@ -211,11 +211,11 @@ const StockMarketBasics: React.FC = () => {
                             : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
                         }`}
                       >
-                        {completedLessons.includes(lesson.id) ? 'पूर्ण' : 'पूर्ण करें'}
+                        {completedLessons.includes(lesson.id) ? 'Completed' : 'Mark Complete'}
                       </button>
                       
                       <Link
-                        to={`/stock-market/stock-market-basics/lesson/${lesson.id}`}
+                        to={`/stock-market/core-market-concepts/lesson/${lesson.id}`}
                         className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg text-sm font-medium hover:from-green-600 hover:to-blue-700 transition-all"
                       >
                         <Play className="h-4 w-4 mr-1" />
@@ -235,15 +235,15 @@ const StockMarketBasics: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="mt-16 bg-gradient-to-br from-green-600 to-blue-700 rounded-3xl p-12 text-center text-white"
           >
-            <h2 className="text-3xl font-bold mb-4">अगला कोर्स</h2>
+            <h2 className="text-3xl font-bold mb-4">Next Course</h2>
             <p className="text-xl mb-8 text-green-100">
-              इस कोर्स को पूरा करने के बाद "मुख्य बाजार अवधारणाएं" कोर्स में आगे बढ़ें
+              After completing this course, move on to "Fundamental Analysis" to learn about company financial health
             </p>
             <Link
-              to="/stock-market/core-market-concepts"
+              to="/stock-market/fundamental-analysis"
               className="inline-flex items-center px-8 py-4 bg-white text-green-600 rounded-2xl font-semibold hover:bg-gray-100 transition-all"
             >
-              अगला कोर्स शुरू करें
+              Start Next Course
               <ChevronRight className="h-5 w-5 ml-2" />
             </Link>
           </motion.div>
@@ -253,4 +253,4 @@ const StockMarketBasics: React.FC = () => {
   );
 };
 
-export default StockMarketBasics;
+export default CoreMarketConcepts;
