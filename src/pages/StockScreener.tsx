@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, TrendingUp, Info, BarChart3, RefreshCw, Star, TrendingDown, DollarSign, Target, Zap } from 'lucide-react';
+import { Search, Filter, TrendingUp, Info, BarChart3, RefreshCw, Star, TrendingDown, Target, Zap, PieChart } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
+import PortfolioTracker from '../components/PortfolioTracker';
 
 interface StockData {
   symbol: string;
@@ -35,6 +36,7 @@ const StockScreener: React.FC = () => {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [viewMode, setViewMode] = useState<'table' | 'cards'>('table');
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [showPortfolio, setShowPortfolio] = useState(false);
 
   const [filters, setFilters] = useState({
     priceRange: { min: 0, max: 10000 },
@@ -231,19 +233,20 @@ const StockScreener: React.FC = () => {
 
     // Sorting
     filtered.sort((a, b) => {
-      let aValue: any = a[sortBy as keyof StockData];
-      let bValue: any = b[sortBy as keyof StockData];
+      const aValue = a[sortBy as keyof StockData];
+      const bValue = b[sortBy as keyof StockData];
 
-      if (typeof aValue === 'string') {
-        aValue = aValue.toLowerCase();
-        bValue = bValue.toLowerCase();
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
+        const aLower = aValue.toLowerCase();
+        const bLower = bValue.toLowerCase();
+        return sortOrder === 'asc' ? aLower.localeCompare(bLower) : bLower.localeCompare(aLower);
       }
 
-      if (sortOrder === 'asc') {
-        return aValue > bValue ? 1 : -1;
-      } else {
-        return aValue < bValue ? 1 : -1;
+      if (typeof aValue === 'number' && typeof bValue === 'number') {
+        return sortOrder === 'asc' ? aValue - bValue : bValue - aValue;
       }
+
+      return 0;
     });
 
     setFilteredStocks(filtered);
@@ -580,6 +583,13 @@ const StockScreener: React.FC = () => {
                     <span className="text-sm text-gray-500">
                       Last updated: {lastUpdated.toLocaleTimeString()}
                     </span>
+                    <button
+                      onClick={() => setShowPortfolio(!showPortfolio)}
+                      className="flex items-center px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                    >
+                      <PieChart className="h-4 w-4 mr-2" />
+                      Portfolio
+                    </button>
                   </div>
                   
                   <div className="flex items-center gap-4">
@@ -806,6 +816,17 @@ const StockScreener: React.FC = () => {
               )}
             </motion.div>
           </div>
+
+          {/* Portfolio Tracker */}
+          {showPortfolio && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-8"
+            >
+              <PortfolioTracker />
+            </motion.div>
+          )}
 
           {/* Information Section */}
           <motion.div
