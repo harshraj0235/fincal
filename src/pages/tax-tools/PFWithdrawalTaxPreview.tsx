@@ -335,15 +335,15 @@ const PFWithdrawalTaxPreview: React.FC = () => {
                   <h3 className="text-lg font-semibold text-gray-800 mb-4">TDS Rates</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm font-medium">Service < 5 years</span>
+                      <span className="text-sm font-medium">Service &lt; 5 years</span>
                       <span className="text-sm font-bold text-red-600">10% TDS</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm font-medium">Service ≥ 5 years, Employed</span>
+                      <span className="text-sm font-medium">Service &ge; 5 years, Employed</span>
                       <span className="text-sm font-bold text-orange-600">5% TDS</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm font-medium">Service ≥ 5 years, Unemployed</span>
+                      <span className="text-sm font-medium">Service &ge; 5 years, Unemployed</span>
                       <span className="text-sm font-bold text-green-600">No TDS</span>
                     </div>
                   </div>
