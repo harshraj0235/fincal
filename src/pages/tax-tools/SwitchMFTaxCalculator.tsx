@@ -380,8 +380,8 @@ const SwitchMFTaxCalculator: React.FC = () => {
                 <ul className="space-y-2 text-yellow-700">
                   <li>• Exit load varies by fund and holding period</li>
                   <li>• STT is 0.1% on redemption value</li>
-                  <li>• STCG: 15% if held ≤ 1 year</li>
-                  <li>• LTCG: 10% with ₹1L exemption if held > 1 year</li>
+                  <li>• STCG: 15% if held &le; 1 year</li>
+                  <li>• LTCG: 10% with ₹1L exemption if held &gt; 1 year</li>
                   <li>• Consider total cost before switching</li>
                 </ul>
               </div>
