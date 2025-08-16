@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, TrendingUp, Info, BarChart3, RefreshCw, Star, TrendingDown, Target, Zap, PieChart } from 'lucide-react';
+import { Search, Filter, TrendingUp, Info, BarChart3, RefreshCw, Star, TrendingDown, Target, Zap, PieChart, Newspaper, Eye } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import PortfolioTracker from '../components/PortfolioTracker';
+import StockNews from '../components/StockNews';
+import MarketWatchlist from '../components/MarketWatchlist';
 
 interface StockData {
   symbol: string;
@@ -37,6 +39,8 @@ const StockScreener: React.FC = () => {
   const [viewMode, setViewMode] = useState<'table' | 'cards'>('table');
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showPortfolio, setShowPortfolio] = useState(false);
+  const [showNews, setShowNews] = useState(false);
+  const [showWatchlist, setShowWatchlist] = useState(false);
 
   const [filters, setFilters] = useState({
     priceRange: { min: 0, max: 10000 },
@@ -590,6 +594,20 @@ const StockScreener: React.FC = () => {
                       <PieChart className="h-4 w-4 mr-2" />
                       Portfolio
                     </button>
+                    <button
+                      onClick={() => setShowNews(!showNews)}
+                      className="flex items-center px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      <Newspaper className="h-4 w-4 mr-2" />
+                      News
+                    </button>
+                    <button
+                      onClick={() => setShowWatchlist(!showWatchlist)}
+                      className="flex items-center px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                    >
+                      <Eye className="h-4 w-4 mr-2" />
+                      Watchlist
+                    </button>
                   </div>
                   
                   <div className="flex items-center gap-4">
@@ -825,6 +843,28 @@ const StockScreener: React.FC = () => {
               className="mt-8"
             >
               <PortfolioTracker />
+            </motion.div>
+          )}
+
+          {/* Stock News */}
+          {showNews && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-8"
+            >
+              <StockNews />
+            </motion.div>
+          )}
+
+          {/* Market Watchlist */}
+          {showWatchlist && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-8"
+            >
+              <MarketWatchlist />
             </motion.div>
           )}
 
