@@ -411,6 +411,17 @@ const TaxToolsHub: React.FC = () => {
         isNew: true,
         color: 'from-red-500 to-red-600',
         status: 'available'
+      },
+      {
+        id: 'exit-strategy-tax-visualizer',
+        name: 'Exit Strategy Tax Visualizer',
+        description: 'Plan and visualize tax implications of different exit strategies',
+        icon: <Target className="h-6 w-6" />,
+        category: 'Tax Planning',
+        path: '/tax-tools/exit-strategy-tax-visualizer',
+        isNew: true,
+        color: 'from-purple-500 to-purple-600',
+        status: 'available'
       }
   ];
 
