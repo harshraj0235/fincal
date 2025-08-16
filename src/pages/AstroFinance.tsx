@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -12,7 +12,6 @@ import {
   ArrowLeft,
   Grid,
   List,
-  Flame,
   Star,
   Sparkles
 } from 'lucide-react';
@@ -29,16 +28,15 @@ const AstroFinance: React.FC = () => {
   const [sortBy, setSortBy] = useState('latest');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
-  const [showBlogs, setShowBlogs] = useState(false);
   const postsPerPage = 6;
 
   // Combine all astro blogs
   const allAstroBlogs = [
-    { ...astroBlog1, date: '2024-12-15', readingTime: 8, views: 1250, featured: true },
-    { ...astroBlog2, date: '2024-12-14', readingTime: 6, views: 980, featured: false },
-    { ...astroBlog3, date: '2024-12-13', readingTime: 10, views: 1450, featured: true },
-    { ...astroBlog4, date: '2024-12-12', readingTime: 7, views: 890, featured: false },
-    { ...astroBlog5, date: '2024-12-11', readingTime: 9, views: 1120, featured: true }
+    { ...astroBlog1, date: '2024-12-15', readingTime: 8, views: 1250, featured: true, authorTitle: 'Vedic Astrology Specialist' },
+    { ...astroBlog2, date: '2024-12-14', readingTime: 6, views: 980, featured: false, authorTitle: 'Vedic Astrology Specialist' },
+    { ...astroBlog3, date: '2024-12-13', readingTime: 10, views: 1450, featured: true, authorTitle: 'Vedic Astrology Specialist' },
+    { ...astroBlog4, date: '2024-12-12', readingTime: 7, views: 890, featured: false, authorTitle: 'Vedic Astrology Specialist' },
+    { ...astroBlog5, date: '2024-12-11', readingTime: 9, views: 1120, featured: true, authorTitle: 'Vedic Astrology Specialist' }
   ];
 
   // Categories for astro blogs
@@ -84,17 +82,7 @@ const AstroFinance: React.FC = () => {
     });
   };
 
-  const getCategoryColor = (category: string) => {
-    const colors = {
-      'Zodiac': 'from-purple-500 to-pink-600',
-      'Vedic': 'from-orange-500 to-red-600',
-      'Investment': 'from-green-500 to-emerald-600',
-      'Wealth': 'from-yellow-500 to-orange-600',
-      'Compatibility': 'from-blue-500 to-indigo-600',
-      'Gemstones': 'from-pink-500 to-purple-600'
-    };
-    return colors[category as keyof typeof colors] || 'from-gray-500 to-gray-600';
-  };
+
 
   return (
     <>
@@ -320,16 +308,20 @@ const AstroFinance: React.FC = () => {
                 }
               >
                 {currentPosts.map((post, index) => (
-                  <motion.article
+                  <Link
                     key={post.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ y: -5 }}
-                    className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden transition-all ${
-                      viewMode === 'list' ? 'flex flex-col lg:flex-row' : ''
-                    } ${post.featured ? 'ring-2 ring-purple-500' : ''}`}
+                    to={`/astro-finance/blog/${post.slug}`}
+                    className="block"
                   >
+                    <motion.article
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ y: -5 }}
+                      className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden transition-all cursor-pointer ${
+                        viewMode === 'list' ? 'flex flex-col lg:flex-row' : ''
+                      } ${post.featured ? 'ring-2 ring-purple-500' : ''}`}
+                    >
                     {/* Featured Image */}
                     <div className={`relative overflow-hidden ${
                       viewMode === 'list' ? 'lg:w-1/3' : ''
@@ -417,6 +409,7 @@ const AstroFinance: React.FC = () => {
                       </div>
                     </div>
                   </motion.article>
+                  </Link>
                 ))}
               </motion.div>
             </AnimatePresence>

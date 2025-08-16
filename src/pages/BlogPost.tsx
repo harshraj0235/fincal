@@ -23,11 +23,11 @@ const AUTHOR_BIO = "Harsh Raj is a Software Engineer with years of experience he
 
 // Helper functions for astro blogs
 const allAstroBlogs = [
-  { ...astroBlog1, date: '2024-12-15', readingTime: 8, views: 1250, featured: true },
-  { ...astroBlog2, date: '2024-12-14', readingTime: 6, views: 980, featured: false },
-  { ...astroBlog3, date: '2024-12-13', readingTime: 10, views: 1450, featured: true },
-  { ...astroBlog4, date: '2024-12-12', readingTime: 7, views: 890, featured: false },
-  { ...astroBlog5, date: '2024-12-11', readingTime: 9, views: 1120, featured: true }
+  { ...astroBlog1, date: '2024-12-15', readingTime: 8, views: 1250, featured: true, authorTitle: 'Vedic Astrology Specialist' },
+  { ...astroBlog2, date: '2024-12-14', readingTime: 6, views: 980, featured: false, authorTitle: 'Vedic Astrology Specialist' },
+  { ...astroBlog3, date: '2024-12-13', readingTime: 10, views: 1450, featured: true, authorTitle: 'Vedic Astrology Specialist' },
+  { ...astroBlog4, date: '2024-12-12', readingTime: 7, views: 890, featured: false, authorTitle: 'Vedic Astrology Specialist' },
+  { ...astroBlog5, date: '2024-12-11', readingTime: 9, views: 1120, featured: true, authorTitle: 'Vedic Astrology Specialist' }
 ];
 
 const getAstroBlogBySlug = (slug: string) => {
@@ -300,7 +300,7 @@ export const BlogPost: React.FC = () => {
                 {relatedPosts.map((relatedPost) => (
                   <Link
                     key={relatedPost.id}
-                    to={`/blog/${relatedPost.slug}`}
+                    to={isAstroBlog ? `/astro-finance/blog/${relatedPost.slug}` : `/blog/${relatedPost.slug}`}
                     className="block group"
                   >
                     <div className="flex items-start">
