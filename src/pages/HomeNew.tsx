@@ -215,6 +215,8 @@ export const HomeNew: React.FC = () => {
                 <Link to="/exceltool" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Excel Tools</Link>
                 <Link to="/crypto" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Crypto</Link>
                 <Link to="/astro-finance" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Astro Finance</Link>
+                <Link to="/stock-market" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Stock Market</Link>
+                <Link to="/tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Tools Hub</Link>
                 <Link to="/contact-us" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Contact Us</Link>
               </nav>
             </motion.div>
@@ -234,6 +236,8 @@ export const HomeNew: React.FC = () => {
           <Link to="/exceltool" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Excel</Link>
           <Link to="/crypto" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Crypto</Link>
           <Link to="/astro-finance" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Astro</Link>
+          <Link to="/stock-market" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Stock</Link>
+          <Link to="/tools" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Tools</Link>
         </div>
 
         {/* Mobile Menu Button */}

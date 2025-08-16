@@ -59,6 +59,7 @@ const TechnicalAnalysis = lazy(() => import('./pages/TechnicalAnalysis'));
 const AdvancedTradingStrategies = lazy(() => import('./pages/AdvancedTradingStrategies'));
 const ToolsPracticalApplication = lazy(() => import('./pages/ToolsPracticalApplication'));
 const CaseStudiesMarketPsychology = lazy(() => import('./pages/CaseStudiesMarketPsychology'));
+const ToolsHub = lazy(() => import('./pages/ToolsHub'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -196,6 +197,7 @@ function App() {
                   <Route path="/stock-market/advanced-trading-strategies" element={<AdvancedTradingStrategies />} />
                   <Route path="/stock-market/tools-practical-application" element={<ToolsPracticalApplication />} />
                   <Route path="/stock-market/case-studies-market-psychology" element={<CaseStudiesMarketPsychology />} />
+                  <Route path="/tools" element={<ToolsHub />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
