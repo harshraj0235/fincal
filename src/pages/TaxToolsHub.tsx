@@ -365,6 +365,17 @@ const TaxToolsHub: React.FC = () => {
         isNew: true,
         color: 'from-green-500 to-green-600',
         status: 'available'
+      },
+      {
+        id: 'pf-withdrawal-tax-preview',
+        name: 'PF Withdrawal Tax Preview',
+        description: 'Calculate tax implications of PF withdrawals',
+        icon: <Shield className="h-6 w-6" />,
+        category: 'Retirement Planning',
+        path: '/tax-tools/pf-withdrawal-tax-preview',
+        isNew: true,
+        color: 'from-blue-500 to-blue-600',
+        status: 'available'
       }
     ];
 

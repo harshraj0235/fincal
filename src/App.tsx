@@ -91,6 +91,7 @@ const TraderTurnoverEstimatorITR = lazy(() => import('./pages/tax-tools/TraderTu
 const IntraYearRedemptionTaxTracker = lazy(() => import('./pages/tax-tools/IntraYearRedemptionTaxTracker'));
 const DoubleTaxReliefTool = lazy(() => import('./pages/tax-tools/DoubleTaxReliefTool'));
 const TaxEfficientWithdrawalPlanner = lazy(() => import('./pages/tax-tools/TaxEfficientWithdrawalPlanner'));
+const PFWithdrawalTaxPreview = lazy(() => import('./pages/tax-tools/PFWithdrawalTaxPreview'));
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
@@ -260,6 +261,7 @@ function App() {
                   <Route path="/tax-tools/intra-year-redemption-tax-tracker" element={<IntraYearRedemptionTaxTracker />} />
                   <Route path="/tax-tools/double-tax-relief-tool" element={<DoubleTaxReliefTool />} />
                   <Route path="/tax-tools/tax-efficient-withdrawal-planner" element={<TaxEfficientWithdrawalPlanner />} />
+                  <Route path="/tax-tools/pf-withdrawal-tax-preview" element={<PFWithdrawalTaxPreview />} />
                   <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
