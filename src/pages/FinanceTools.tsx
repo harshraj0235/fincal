@@ -610,7 +610,7 @@ const FinanceTools: React.FC = () => {
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-br from-green-600 via-blue-600 to-purple-600">
+        <section className="py-12 md:py-16 bg-gradient-to-br from-green-600 via-blue-600 to-purple-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -618,18 +618,18 @@ const FinanceTools: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center justify-center mb-4">
-                <Link to="/" className="text-white hover:text-blue-200 transition-colors">
-                  <ArrowLeft className="h-5 w-5 mr-2" />
+                <Link to="/" className="text-white hover:text-blue-200 transition-colors text-sm md:text-base">
+                  <ArrowLeft className="h-4 w-4 md:h-5 md:w-5 mr-2" />
                   Back to Home
                 </Link>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
                 Finance Tools Hub
               </h1>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-blue-100 mb-6 md:mb-8 max-w-3xl mx-auto px-4">
                 Comprehensive investment and financial planning tools to help you make informed decisions
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-blue-100">
+              <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm text-blue-100 px-4">
                 <span>📈 Investment Analysis</span>
                 <span>💰 Portfolio Management</span>
                 <span>🎯 Goal Planning</span>
@@ -640,25 +640,25 @@ const FinanceTools: React.FC = () => {
         </section>
 
         {/* Search and Filter Section */}
-        <section className="py-8 bg-white border-b">
+        <section className="py-6 md:py-8 bg-white border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col gap-4">
               <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 md:h-5 md:w-5" />
                 <input
                   type="text"
                   placeholder="Search finance tools..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-9 md:pl-10 pr-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm md:text-base"
                 />
               </div>
-              <div className="flex gap-2 overflow-x-auto">
+              <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
                 {categories.map((category) => (
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                    className={`px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm font-medium whitespace-nowrap transition-all ${
                       selectedCategory === category
                         ? 'bg-blue-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -672,20 +672,20 @@ const FinanceTools: React.FC = () => {
           </div>
         </section>
 
-        {/* Popular Tools Section */}
-        <section className="py-12 bg-gradient-to-r from-yellow-50 to-orange-50">
+                {/* Popular Tools Section */}
+        <section className="py-8 md:py-12 bg-gradient-to-r from-yellow-50 to-orange-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-12"
+              className="text-center mb-8 md:mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">🔥 Popular Finance Tools</h2>
-              <p className="text-lg text-gray-600">Most used tools by our community</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">🔥 Popular Finance Tools</h2>
+              <p className="text-base md:text-lg text-gray-600">Most used tools by our community</p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {popularTools.map((tool, index) => (
                 <motion.div
                   key={tool.id}
@@ -695,19 +695,19 @@ const FinanceTools: React.FC = () => {
                 >
                   <Link
                     to={tool.path}
-                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
+                    className="group bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
                   >
-                    <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <div className={`h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform`}>
                       {tool.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {tool.name}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-4">{tool.description}</p>
+                    <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4">{tool.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-blue-600 group-hover:text-blue-700 font-semibold text-sm flex items-center">
+                      <span className="text-blue-600 group-hover:text-blue-700 font-semibold text-xs md:text-sm flex items-center">
                         Try Tool
-                        <ArrowRight className="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="h-3 w-3 md:h-4 md:w-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
                       </span>
                       <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Popular</span>
                     </div>
@@ -719,18 +719,18 @@ const FinanceTools: React.FC = () => {
         </section>
 
         {/* All Tools Grid */}
-        <section className="py-16">
+        <section className="py-8 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-12"
+              className="text-center mb-8 md:mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 {searchTerm || selectedCategory !== 'all' ? 'Filtered Results' : 'All Finance Tools'}
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-base md:text-lg text-gray-600">
                 {filteredTools.length} tools found
               </p>
             </motion.div>
@@ -739,23 +739,23 @@ const FinanceTools: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-center py-12"
+                className="text-center py-8 md:py-12"
               >
-                <Search className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">No tools found</h3>
-                <p className="text-gray-600 mb-4">Try adjusting your search or filter criteria</p>
+                <Search className="h-12 w-12 md:h-16 md:w-16 text-gray-400 mx-auto mb-4" />
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">No tools found</h3>
+                <p className="text-gray-600 mb-4 text-sm md:text-base">Try adjusting your search or filter criteria</p>
                 <button
                   onClick={() => {
                     setSearchTerm('');
                     setSelectedCategory('all');
                   }}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="bg-blue-600 text-white px-4 md:px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
                 >
                   Clear Filters
                 </button>
               </motion.div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {filteredTools.map((tool, index) => (
                   <motion.div
                     key={tool.id}
@@ -765,19 +765,19 @@ const FinanceTools: React.FC = () => {
                   >
                     <Link
                       to={tool.path}
-                      className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block h-full"
+                      className="group bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block h-full"
                     >
-                      <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <div className={`h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform`}>
                         {tool.icon}
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {tool.name}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4 flex-grow">{tool.description}</p>
+                      <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 flex-grow">{tool.description}</p>
                       <div className="flex items-center justify-between">
-                        <span className="text-blue-600 group-hover:text-blue-700 font-semibold text-sm flex items-center">
+                        <span className="text-blue-600 group-hover:text-blue-700 font-semibold text-xs md:text-sm flex items-center">
                           Try Tool
-                          <ArrowRight className="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                          <ArrowRight className="h-3 w-3 md:h-4 md:w-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
                         </span>
                         <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
                           {tool.category}
@@ -792,69 +792,69 @@ const FinanceTools: React.FC = () => {
         </section>
 
         {/* Related Tools Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-8 md:py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-12"
+              className="text-center mb-8 md:mb-12"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Explore More Tools</h2>
-              <p className="text-lg text-gray-600">Discover other specialized tool categories</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Explore More Tools</h2>
+              <p className="text-base md:text-lg text-gray-600">Discover other specialized tool categories</p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               <Link
                 to="/tax-tools"
-                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-purple-200 transform hover:-translate-y-1 duration-300 block text-center"
+                className="group bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-purple-200 transform hover:-translate-y-1 duration-300 block text-center"
               >
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <DollarSign className="h-6 w-6 text-white" />
+                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <DollarSign className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
                   Tax Tools
                 </h3>
-                <p className="text-gray-600 text-sm">Advanced tax planning and calculation tools</p>
+                <p className="text-gray-600 text-xs md:text-sm">Advanced tax planning and calculation tools</p>
               </Link>
               
               <Link
                 to="/tools"
-                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block text-center"
+                className="group bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block text-center"
               >
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Calculator className="h-6 w-6 text-white" />
+                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <Calculator className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   All Tools Hub
                 </h3>
-                <p className="text-gray-600 text-sm">Complete collection of financial tools</p>
+                <p className="text-gray-600 text-xs md:text-sm">Complete collection of financial tools</p>
               </Link>
               
               <Link
                 to="/calculators"
-                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-green-200 transform hover:-translate-y-1 duration-300 block text-center"
+                className="group bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-green-200 transform hover:-translate-y-1 duration-300 block text-center"
               >
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <BarChart3 className="h-6 w-6 text-white" />
+                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <BarChart3 className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
                   Calculators
                 </h3>
-                <p className="text-gray-600 text-sm">Basic and advanced financial calculators</p>
+                <p className="text-gray-600 text-xs md:text-sm">Basic and advanced financial calculators</p>
               </Link>
               
               <Link
                 to="/stock-market"
-                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-orange-200 transform hover:-translate-y-1 duration-300 block text-center"
+                className="group bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-orange-200 transform hover:-translate-y-1 duration-300 block text-center"
               >
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <TrendingUp className="h-6 w-6 text-white" />
+                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <TrendingUp className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
                   Stock Market
                 </h3>
-                <p className="text-gray-600 text-sm">Stock analysis and trading tools</p>
+                <p className="text-gray-600 text-xs md:text-sm">Stock analysis and trading tools</p>
               </Link>
             </div>
           </div>
