@@ -68,6 +68,7 @@ const LumpsumVsSIPAnalyzer = lazy(() => import('./pages/finance-tools/LumpsumVsS
 const RealVsNominalReturnCalculator = lazy(() => import('./pages/finance-tools/RealVsNominalReturnCalculator'));
 const FDVsMutualFundReturnTool = lazy(() => import('./pages/finance-tools/FDVsMutualFundReturnTool'));
 const StockCAGRCalculator = lazy(() => import('./pages/finance-tools/StockCAGRCalculator'));
+const PortfolioDiversificationVisualizer = lazy(() => import('./pages/finance-tools/PortfolioDiversificationVisualizer'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -251,6 +252,7 @@ function App() {
                    <Route path="/finance-tools/real-vs-nominal-return-calculator" element={<RealVsNominalReturnCalculator />} />
                    <Route path="/finance-tools/fd-vs-mutual-fund-return-tool" element={<FDVsMutualFundReturnTool />} />
                    <Route path="/finance-tools/stock-cagr-calculator" element={<StockCAGRCalculator />} />
+                   <Route path="/finance-tools/portfolio-diversification-visualizer" element={<PortfolioDiversificationVisualizer />} />
                    <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
