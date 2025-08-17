@@ -65,6 +65,7 @@ const FinanceTools = lazy(() => import('./pages/FinanceTools'));
 const SIPDelayLossCalculator = lazy(() => import('./pages/finance-tools/SIPDelayLossCalculator'));
 const SIPStepUpPlanner = lazy(() => import('./pages/finance-tools/SIPStepUpPlanner'));
 const LumpsumVsSIPAnalyzer = lazy(() => import('./pages/finance-tools/LumpsumVsSIPAnalyzer'));
+const RealVsNominalReturnCalculator = lazy(() => import('./pages/finance-tools/RealVsNominalReturnCalculator'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -245,6 +246,7 @@ function App() {
                    <Route path="/finance-tools/sip-delay-loss-calculator" element={<SIPDelayLossCalculator />} />
                    <Route path="/finance-tools/sip-step-up-planner" element={<SIPStepUpPlanner />} />
                    <Route path="/finance-tools/lumpsum-vs-sip-analyzer" element={<LumpsumVsSIPAnalyzer />} />
+                   <Route path="/finance-tools/real-vs-nominal-return-calculator" element={<RealVsNominalReturnCalculator />} />
                    <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
