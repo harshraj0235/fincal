@@ -69,6 +69,9 @@ const RealVsNominalReturnCalculator = lazy(() => import('./pages/finance-tools/R
 const FDVsMutualFundReturnTool = lazy(() => import('./pages/finance-tools/FDVsMutualFundReturnTool'));
 const StockCAGRCalculator = lazy(() => import('./pages/finance-tools/StockCAGRCalculator'));
 const PortfolioDiversificationVisualizer = lazy(() => import('./pages/finance-tools/PortfolioDiversificationVisualizer'));
+const DividendTracker = lazy(() => import('./pages/finance-tools/DividendTracker'));
+const XIRRCalculator = lazy(() => import('./pages/finance-tools/XIRRCalculator'));
+const MutualFundExpenseRatioEstimator = lazy(() => import('./pages/finance-tools/MutualFundExpenseRatioEstimator'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -109,7 +112,7 @@ const OldVsNewTaxRegimeHelper = lazy(() => import('./pages/tax-tools/OldVsNewTax
 const CAGRCalculator = lazy(() => import('./pages/CAGRCalculator'));
 const PERatioCalculator = lazy(() => import('./pages/PERatioCalculator'));
 const IntrinsicValueCalculator = lazy(() => import('./pages/IntrinsicValueCalculator'));
-const XIRRCalculator = lazy(() => import('./pages/XIRRCalculator'));
+
 const StockScreener = lazy(() => import('./pages/StockScreener'));
 const AstroFinanceHoroscope = lazy(() => import('./pages/AstroFinanceHoroscope'));
 const AstroFinanceZodiacTips = lazy(() => import('./pages/AstroFinanceZodiacTips'));
@@ -253,6 +256,9 @@ function App() {
                    <Route path="/finance-tools/fd-vs-mutual-fund-return-tool" element={<FDVsMutualFundReturnTool />} />
                    <Route path="/finance-tools/stock-cagr-calculator" element={<StockCAGRCalculator />} />
                    <Route path="/finance-tools/portfolio-diversification-visualizer" element={<PortfolioDiversificationVisualizer />} />
+                   <Route path="/finance-tools/dividend-tracker" element={<DividendTracker />} />
+                   <Route path="/finance-tools/xirr-calculator" element={<XIRRCalculator />} />
+                   <Route path="/finance-tools/mutual-fund-expense-ratio-estimator" element={<MutualFundExpenseRatioEstimator />} />
                    <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
@@ -293,7 +299,7 @@ function App() {
                     <Route path="/calculators/cagr-calculator" element={<CAGRCalculator />} />
                   <Route path="/calculators/pe-ratio-calculator" element={<PERatioCalculator />} />
                   <Route path="/calculators/intrinsic-value-calculator" element={<IntrinsicValueCalculator />} />
-                  <Route path="/calculators/xirr-calculator" element={<XIRRCalculator />} />
+                  
                   <Route path="/calculators/stock-screener" element={<StockScreener />} />
                 <Route path="/astro-finance/horoscope" element={<AstroFinanceHoroscope />} />
                 <Route path="/astro-finance/zodiac-tips" element={<AstroFinanceZodiacTips />} />
