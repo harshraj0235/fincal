@@ -72,6 +72,7 @@ const PortfolioDiversificationVisualizer = lazy(() => import('./pages/finance-to
 const DividendTracker = lazy(() => import('./pages/finance-tools/DividendTracker'));
 const XIRRCalculator = lazy(() => import('./pages/finance-tools/XIRRCalculator'));
 const MutualFundExpenseRatioEstimator = lazy(() => import('./pages/finance-tools/MutualFundExpenseRatioEstimator'));
+const NiftyVsSensexPerformanceTracker = lazy(() => import('./pages/finance-tools/NiftyVsSensexPerformanceTracker'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -259,6 +260,7 @@ function App() {
                    <Route path="/finance-tools/dividend-tracker" element={<DividendTracker />} />
                    <Route path="/finance-tools/xirr-calculator" element={<XIRRCalculator />} />
                    <Route path="/finance-tools/mutual-fund-expense-ratio-estimator" element={<MutualFundExpenseRatioEstimator />} />
+                   <Route path="/finance-tools/nifty-vs-sensex-performance-tracker" element={<NiftyVsSensexPerformanceTracker />} />
                    <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
