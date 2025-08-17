@@ -7312,13 +7312,31 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+    <url>
     <loc>https://moneycal.in/finance-tools/mutual-fund-exit-load-tracker</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://moneycal.in/finance-tools/sip-missed-payment-loss-estimator</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/finance-tools/sip-withdrawal-planner</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/finance-tools/sip-vs-swp-tool</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Tax Tools Section - Added from STCGLTCGClassifier.tsx and other tax tools -->
   <url>
     <loc>https://moneycal.in/tax-tools</loc>

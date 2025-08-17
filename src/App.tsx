@@ -78,6 +78,9 @@ const SIPInflationAdjustedCalculator = lazy(() => import('./pages/finance-tools/
 const EquityVsDebtSplitRecommender = lazy(() => import('./pages/finance-tools/EquityVsDebtSplitRecommender'));
 const AssetAllocationTool = lazy(() => import('./pages/finance-tools/AssetAllocationTool'));
 const MutualFundExitLoadTracker = lazy(() => import('./pages/finance-tools/MutualFundExitLoadTracker'));
+const SIPMissedPaymentLossEstimator = lazy(() => import('./pages/finance-tools/SIPMissedPaymentLossEstimator'));
+const SIPWithdrawalPlanner = lazy(() => import('./pages/finance-tools/SIPWithdrawalPlanner'));
+const SIPVsSWPTool = lazy(() => import('./pages/finance-tools/SIPVsSWPTool'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -269,9 +272,12 @@ function App() {
                    <Route path="/finance-tools/index-fund-return-comparison" element={<IndexFundReturnComparison />} />
                    <Route path="/finance-tools/sip-inflation-adjusted-calculator" element={<SIPInflationAdjustedCalculator />} />
                    <Route path="/finance-tools/equity-vs-debt-split-recommender" element={<EquityVsDebtSplitRecommender />} />
-                   <Route path="/finance-tools/asset-allocation-tool" element={<AssetAllocationTool />} />
-                   <Route path="/finance-tools/mutual-fund-exit-load-tracker" element={<MutualFundExitLoadTracker />} />
-                   <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
+                                   <Route path="/finance-tools/asset-allocation-tool" element={<AssetAllocationTool />} />
+                <Route path="/finance-tools/mutual-fund-exit-load-tracker" element={<MutualFundExitLoadTracker />} />
+                <Route path="/finance-tools/sip-missed-payment-loss-estimator" element={<SIPMissedPaymentLossEstimator />} />
+                <Route path="/finance-tools/sip-withdrawal-planner" element={<SIPWithdrawalPlanner />} />
+                <Route path="/finance-tools/sip-vs-swp-tool" element={<SIPVsSWPTool />} />
+                <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
                   <Route path="/tax-tools/dividend-tax-estimator" element={<DividendTaxEstimator />} />
