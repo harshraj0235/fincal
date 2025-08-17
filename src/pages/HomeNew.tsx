@@ -17,7 +17,14 @@ import {
   Smartphone,
   Clock,
   BarChart3,
-  Newspaper
+  Newspaper,
+  Home,
+  FileText,
+  Wrench,
+  Building2,
+  Table,
+  Bitcoin,
+  Zap
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { allBlogPosts } from '../data/allBlogData';
@@ -25,6 +32,7 @@ import SEOHelmet from '../components/SEOHelmet';
 
 
 export const HomeNew: React.FC = () => {
+  console.log('HomeNew component is loading...'); // Debug log
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [searchTerm, setSearchTerm] = useState('');
@@ -37,7 +45,17 @@ export const HomeNew: React.FC = () => {
     url: string;
   }>>([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
   const navigate = useNavigate();
+
+  // Add loading effect
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      console.log('HomeNew component loaded successfully');
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Intersection Observer for smooth scrolling navigation
   useEffect(() => {
@@ -171,12 +189,24 @@ export const HomeNew: React.FC = () => {
   // Quick search suggestions
   const searchSuggestions = ['EMI', 'SIP', 'Income Tax', 'Mutual Fund', 'PPF', 'FD', 'GST', 'TDS'];
 
+    // Show loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading MoneyCal.in...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
-      <SEOHelmet 
+      <SEOHelmet
         title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
         description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more."
-        keywords="financial calculator india, EMI calculator, SIP calculator, income tax calculator"
+        keywords="financial calculator india, EMI calculator, SIP calculator, income tax"
         url="/"
         structuredData={{}}
         tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax"]}
