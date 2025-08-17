@@ -13,8 +13,7 @@ import {
   PieChart
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const LumpsumVsSIPAnalyzer: React.FC = () => {
   const [lumpsumAmount, setLumpsumAmount] = useState(100000);
@@ -68,8 +67,7 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
         description="Compare lumpsum vs SIP investment strategies for optimal returns. Use our analyzer to understand which approach works better for your financial goals."
         keywords="lumpsum vs SIP, investment comparison, lumpsum investment, SIP calculator, investment strategy, wealth creation"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
+
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

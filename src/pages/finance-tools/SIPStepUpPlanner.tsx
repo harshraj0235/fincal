@@ -11,8 +11,7 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const SIPStepUpPlanner: React.FC = () => {
   const [initialAmount, setInitialAmount] = useState(5000);
@@ -61,8 +60,7 @@ const SIPStepUpPlanner: React.FC = () => {
         description="Plan and visualize your step-up SIP strategy for wealth creation. Use our SIP step-up planner to understand how increasing your investments systematically can boost your returns."
         keywords="SIP step-up planner, step up SIP calculator, systematic investment plan, wealth creation, investment strategy, SIP increase calculator"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
+
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

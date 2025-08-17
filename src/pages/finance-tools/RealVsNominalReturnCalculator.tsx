@@ -13,8 +13,7 @@ import {
   AlertTriangle
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const RealVsNominalReturnCalculator: React.FC = () => {
   const [nominalReturn, setNominalReturn] = useState(12);
@@ -65,8 +64,7 @@ const RealVsNominalReturnCalculator: React.FC = () => {
         description="Calculate real returns by adjusting nominal returns for inflation. Understand the true purchasing power of your investments with our inflation-adjusted return calculator."
         keywords="real return calculator, nominal return, inflation adjustment, purchasing power, investment returns, inflation impact"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
+
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}

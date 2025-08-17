@@ -228,20 +228,20 @@ export const HomeNew: React.FC = () => {
 
       <div className="min-h-screen bg-white">
         {/* Floating Navigation Bar */}
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40 bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-gray-200 px-4 py-2 hidden lg:flex items-center space-x-1">
-          <button onClick={() => scrollToSection('hero')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'hero' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Home</button>
-          <button onClick={() => scrollToSection('popular')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'popular' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Popular</button>
-          <button onClick={() => scrollToSection('categories')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
-          <button onClick={() => scrollToSection('blog')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Blog</button>
-          <button onClick={() => scrollToSection('news')} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
-          <Link to="/tools" className="px-4 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold">🛠️ Tools</Link>
-          <Link to="/tax-tools" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">💰 Tax</Link>
-          <Link to="/finance-tools" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">📈 Finance</Link>
-          <Link to="/government-schemes" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Schemes</Link>
-          <Link to="/exceltool" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Excel</Link>
-          <Link to="/crypto" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Crypto</Link>
-          <Link to="/astro-finance" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Astro</Link>
-          <Link to="/stock-market" className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all">Stock</Link>
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40 bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-gray-200 px-6 py-3 hidden lg:flex items-center space-x-2 max-w-4xl overflow-x-auto">
+          <button onClick={() => scrollToSection('hero')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'hero' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Home</button>
+          <button onClick={() => scrollToSection('popular')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'popular' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Popular</button>
+          <button onClick={() => scrollToSection('categories')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
+          <button onClick={() => scrollToSection('blog')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Blog</button>
+          <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
+          <Link to="/tools" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
+          <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
+          <Link to="/finance-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📈 Finance</Link>
+          <Link to="/government-schemes" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Schemes</Link>
+          <Link to="/exceltool" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Excel</Link>
+          <Link to="/crypto" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Crypto</Link>
+          <Link to="/astro-finance" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Astro</Link>
+          <Link to="/stock-market" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Stock</Link>
         </div>
 
         {/* Mobile Menu Button */}

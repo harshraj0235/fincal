@@ -13,8 +13,7 @@ import {
   BarChart3
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const SIPDelayLossCalculator: React.FC = () => {
   const [monthlyInvestment, setMonthlyInvestment] = useState(10000);
@@ -58,8 +57,7 @@ const SIPDelayLossCalculator: React.FC = () => {
         description="Calculate how much money you lose by delaying your SIP investments. Use our SIP delay loss calculator to understand the opportunity cost of postponing your investment decisions."
         keywords="SIP delay loss calculator, investment timing, opportunity cost calculator, SIP investment loss, delayed investment impact, SIP postponement cost"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
+
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}

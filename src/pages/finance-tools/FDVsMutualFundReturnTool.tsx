@@ -15,8 +15,7 @@ import {
   Zap
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
+
 
 const FDVsMutualFundReturnTool: React.FC = () => {
   const [investmentAmount, setInvestmentAmount] = useState(100000);
@@ -78,8 +77,7 @@ const FDVsMutualFundReturnTool: React.FC = () => {
         description="Compare Fixed Deposit vs Mutual Fund returns with tax implications. Make informed investment decisions with our comprehensive FD vs Mutual Fund comparison tool."
         keywords="FD vs mutual fund, fixed deposit calculator, mutual fund returns, investment comparison, tax implications, FD returns"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
+
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
         {/* Hero Section */}
