@@ -227,8 +227,8 @@ export const HomeNew: React.FC = () => {
       </AnimatePresence>
 
       <div className="min-h-screen bg-white">
-        {/* Floating Navigation Bar */}
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40 bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-gray-200 px-6 py-3 hidden lg:flex items-center space-x-2 max-w-4xl overflow-x-auto">
+        {/* Floating Navigation Bar - Show only when scrolling */}
+        <div className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-40 bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-gray-200 px-6 py-3 hidden lg:flex items-center space-x-2 max-w-4xl overflow-x-auto transition-all duration-300 ${activeSection !== 'hero' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
           <button onClick={() => scrollToSection('hero')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'hero' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Home</button>
           <button onClick={() => scrollToSection('popular')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'popular' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Popular</button>
           <button onClick={() => scrollToSection('categories')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
