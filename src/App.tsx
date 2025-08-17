@@ -81,6 +81,9 @@ const MutualFundExitLoadTracker = lazy(() => import('./pages/finance-tools/Mutua
 const SIPMissedPaymentLossEstimator = lazy(() => import('./pages/finance-tools/SIPMissedPaymentLossEstimator'));
 const SIPWithdrawalPlanner = lazy(() => import('./pages/finance-tools/SIPWithdrawalPlanner'));
 const SIPVsSWPTool = lazy(() => import('./pages/finance-tools/SIPVsSWPTool'));
+const MutualFundSIPvsLumpsumAnalyzer = lazy(() => import('./pages/finance-tools/MutualFundSIPvsLumpsumAnalyzer'));
+const MutualFundGoalPlanner = lazy(() => import('./pages/finance-tools/MutualFundGoalPlanner'));
+const MutualFundPortfolioRebalancer = lazy(() => import('./pages/finance-tools/MutualFundPortfolioRebalancer'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -277,6 +280,9 @@ function App() {
                 <Route path="/finance-tools/sip-missed-payment-loss-estimator" element={<SIPMissedPaymentLossEstimator />} />
                 <Route path="/finance-tools/sip-withdrawal-planner" element={<SIPWithdrawalPlanner />} />
                 <Route path="/finance-tools/sip-vs-swp-tool" element={<SIPVsSWPTool />} />
+                <Route path="/finance-tools/mutual-fund-sip-vs-lumpsum-analyzer" element={<MutualFundSIPvsLumpsumAnalyzer />} />
+                <Route path="/finance-tools/mutual-fund-goal-planner" element={<MutualFundGoalPlanner />} />
+                <Route path="/finance-tools/mutual-fund-portfolio-rebalancer" element={<MutualFundPortfolioRebalancer />} />
                 <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />

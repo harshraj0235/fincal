@@ -7336,6 +7336,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://moneycal.in/finance-tools/mutual-fund-sip-vs-lumpsum-analyzer</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/finance-tools/mutual-fund-goal-planner</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/finance-tools/mutual-fund-portfolio-rebalancer</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- Tax Tools Section - Added from STCGLTCGClassifier.tsx and other tax tools -->
   <url>
