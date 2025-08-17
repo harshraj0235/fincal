@@ -237,11 +237,11 @@ export const HomeNew: React.FC = () => {
           <Link to="/tools" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
           <Link to="/finance-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📈 Finance</Link>
-          <Link to="/government-schemes" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Schemes</Link>
-          <Link to="/exceltool" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Excel</Link>
-          <Link to="/crypto" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Crypto</Link>
-          <Link to="/astro-finance" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Astro</Link>
-          <Link to="/stock-market" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">Stock</Link>
+          <Link to="/stock-market" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📊 Stock</Link>
+          <Link to="/government-schemes" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">🏛️ Schemes</Link>
+          <Link to="/exceltool" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📊 Excel</Link>
+          <Link to="/crypto" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">₿ Crypto</Link>
+          <Link to="/astro-finance" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">⭐ Astro</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -974,6 +974,214 @@ export const HomeNew: React.FC = () => {
                   </Link>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Actions Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Quick Actions</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Access the most popular financial tools and calculators instantly
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <Link
+                  to="/calculators/emi-calculator"
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center border border-gray-100"
+                >
+                  <div className="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Calculator className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">EMI Calculator</h3>
+                  <p className="text-sm text-gray-600">Calculate loan EMIs</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Link
+                  to="/calculators/income-tax-calculator"
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center border border-gray-100"
+                >
+                  <div className="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <DollarSign className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Income Tax</h3>
+                  <p className="text-sm text-gray-600">Calculate tax liability</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <Link
+                  to="/calculators/sip-calculator"
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center border border-gray-100"
+                >
+                  <div className="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">SIP Calculator</h3>
+                  <p className="text-sm text-gray-600">Plan your investments</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <Link
+                  to="/calculators/mutual-fund-calculator"
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center border border-gray-100"
+                >
+                  <div className="h-12 w-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="h-6 w-6 text-orange-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Mutual Fund</h3>
+                  <p className="text-sm text-gray-600">Analyze fund returns</p>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Main Sections */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Main Sections</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Explore our comprehensive financial tools and resources
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <Link
+                  to="/"
+                  className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Home className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Home</h3>
+                  <p className="text-blue-100">Main dashboard and overview</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Link
+                  to="/blog"
+                  className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <FileText className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Blog</h3>
+                  <p className="text-green-100">Financial insights and guides</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <Link
+                  to="/government-schemes"
+                  className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Building2 className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Government Schemes</h3>
+                  <p className="text-purple-100">Explore government benefits</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <Link
+                  to="/exceltool"
+                  className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Table className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Excel Tools</h3>
+                  <p className="text-orange-100">Advanced spreadsheet tools</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <Link
+                  to="/crypto"
+                  className="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Bitcoin className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Crypto</h3>
+                  <p className="text-yellow-100">Cryptocurrency tools</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <Link
+                  to="/tools"
+                  className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Wrench className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">All Tools</h3>
+                  <p className="text-indigo-100">Complete tool collection</p>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
