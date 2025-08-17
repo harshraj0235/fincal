@@ -203,7 +203,7 @@ export const HomeNew: React.FC = () => {
 
   return (
     <>
-      <SEOHelmet
+      <SEOHelmet 
         title="Free Financial Calculators for India - EMI, SIP, Tax, Investment Tools"
         description="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more."
         keywords="financial calculator india, EMI calculator, SIP calculator, income tax"
