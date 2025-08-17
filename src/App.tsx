@@ -87,6 +87,9 @@ const MutualFundPortfolioRebalancer = lazy(() => import('./pages/finance-tools/M
 const MutualFundTaxEfficiencyCalculator = lazy(() => import('./pages/finance-tools/MutualFundTaxEfficiencyCalculator'));
 const MutualFundRiskAnalyzer = lazy(() => import('./pages/finance-tools/MutualFundRiskAnalyzer'));
 const MutualFundPerformanceTracker = lazy(() => import('./pages/finance-tools/MutualFundPerformanceTracker'));
+const MutualFundExpenseRatioCalculator = lazy(() => import('./pages/finance-tools/MutualFundExpenseRatioCalculator'));
+const MutualFundExitLoadCalculator = lazy(() => import('./pages/finance-tools/MutualFundExitLoadCalculator'));
+const MutualFundSwitchCalculator = lazy(() => import('./pages/finance-tools/MutualFundSwitchCalculator'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -289,6 +292,9 @@ function App() {
                 <Route path="/finance-tools/mutual-fund-tax-efficiency-calculator" element={<MutualFundTaxEfficiencyCalculator />} />
                 <Route path="/finance-tools/mutual-fund-risk-analyzer" element={<MutualFundRiskAnalyzer />} />
                 <Route path="/finance-tools/mutual-fund-performance-tracker" element={<MutualFundPerformanceTracker />} />
+                <Route path="/finance-tools/mutual-fund-expense-ratio-calculator" element={<MutualFundExpenseRatioCalculator />} />
+                <Route path="/finance-tools/mutual-fund-exit-load-calculator" element={<MutualFundExitLoadCalculator />} />
+                <Route path="/finance-tools/mutual-fund-switch-calculator" element={<MutualFundSwitchCalculator />} />
                 <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
