@@ -240,7 +240,7 @@ export const HomeNew: React.FC = () => {
                 <button onClick={() => scrollToSection('blog')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Blog</button>
                 <button onClick={() => scrollToSection('news')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">News</button>
                 <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Features</button>
-                <Link to="/tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
+                <Link to="/tools/" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
                 <Link to="/tax-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">💰 Tax Tools</Link>
                 <Link to="/finance-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📈 Finance Tools</Link>
                 <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">View All Blog Posts</Link>
@@ -264,7 +264,7 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('categories')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
           <button onClick={() => scrollToSection('blog')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Blog</button>
           <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
-          <Link to="/tools" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
+          <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
           <Link to="/finance-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📈 Finance</Link>
           <Link to="/stock-market" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📊 Stock</Link>
@@ -355,6 +355,67 @@ export const HomeNew: React.FC = () => {
                   <div className="text-center">
                     <div className="text-2xl font-bold text-gray-900">24/7</div>
                     <div className="text-gray-600 text-sm">Available</div>
+                  </div>
+                </motion.div>
+
+                {/* Top Navigation Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="mt-12"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center lg:text-left">Navigation</h3>
+                  <p className="text-sm text-gray-600 mb-6 text-center lg:text-left">Find your financial tools</p>
+                  <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                    <Link 
+                      to="/calculators" 
+                      className="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors text-sm font-medium"
+                    >
+                      Calculators
+                    </Link>
+                    <Link 
+                      to="/blog" 
+                      className="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors text-sm font-medium"
+                    >
+                      Blog
+                    </Link>
+                    <Link 
+                      to="/tools/" 
+                      className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm font-medium"
+                    >
+                      Tools
+                    </Link>
+                    <Link 
+                      to="/government-schemes" 
+                      className="px-4 py-2 bg-amber-100 text-amber-700 rounded-lg hover:bg-amber-200 transition-colors text-sm font-medium"
+                    >
+                      Schemes
+                    </Link>
+                    <Link 
+                      to="/astro-finance" 
+                      className="px-4 py-2 bg-pink-100 text-pink-700 rounded-lg hover:bg-pink-200 transition-colors text-sm font-medium"
+                    >
+                      Astro
+                    </Link>
+                    <Link 
+                      to="/tax-tools" 
+                      className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors text-sm font-medium"
+                    >
+                      Tax Tools
+                    </Link>
+                    <Link 
+                      to="/finance-tools" 
+                      className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-lg hover:bg-emerald-200 transition-colors text-sm font-medium"
+                    >
+                      Finance Tools
+                    </Link>
+                    <Link 
+                      to="/stock-market" 
+                      className="px-4 py-2 bg-cyan-100 text-cyan-700 rounded-lg hover:bg-cyan-200 transition-colors text-sm font-medium"
+                    >
+                      Stock Market
+                    </Link>
                   </div>
                 </motion.div>
               </div>
@@ -1023,7 +1084,7 @@ export const HomeNew: React.FC = () => {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1091,6 +1152,57 @@ export const HomeNew: React.FC = () => {
                   <p className="text-sm text-gray-600">Analyze fund returns</p>
                 </Link>
               </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <Link
+                  to="/tax-tools"
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center border border-gray-100"
+                >
+                  <div className="h-12 w-12 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <DollarSign className="h-6 w-6 text-red-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Tax Tools</h3>
+                  <p className="text-sm text-gray-600">Tax planning tools</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <Link
+                  to="/finance-tools"
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center border border-gray-100"
+                >
+                  <div className="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="h-6 w-6 text-emerald-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Finance Tools</h3>
+                  <p className="text-sm text-gray-600">Investment tools</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                <Link
+                  to="/stock-market"
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center border border-gray-100"
+                >
+                  <div className="h-12 w-12 bg-cyan-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="h-6 w-6 text-cyan-600" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Stock Market</h3>
+                  <p className="text-sm text-gray-600">Stock analysis</p>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -1151,7 +1263,7 @@ export const HomeNew: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <Link
-                  to="/tools"
+                  to="/tools/"
                   className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
                 >
                   <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">

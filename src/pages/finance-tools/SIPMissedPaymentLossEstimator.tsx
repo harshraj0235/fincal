@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { 
   TrendingUp, 
   AlertTriangle, 
-  BarChart3, 
+  BarChart3,
   ArrowRight, 
   Target 
 } from 'lucide-react';
@@ -63,78 +63,78 @@ const SIPMissedPaymentLossEstimator: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
           className="text-center mb-8"
-        >
-          <div className="flex items-center justify-center mb-4">
+            >
+              <div className="flex items-center justify-center mb-4">
             <Link to="/finance-tools" className="text-blue-600 hover:text-blue-700 flex items-center text-sm font-medium">
               <ArrowRight className="h-4 w-4 rotate-180 mr-1" />
-              Back to Finance Tools
-            </Link>
-          </div>
+                  Back to Finance Tools
+                </Link>
+              </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             SIP Missed Payment Loss Estimator
-          </h1>
+              </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Calculate the impact of missing SIP payments on your investment goals and understand the long-term consequences of skipped investments.
-          </p>
-        </motion.div>
+              </p>
+            </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white rounded-2xl shadow-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <TrendingUp className="h-6 w-6 mr-2 text-blue-600" />
               Investment Parameters
-            </h2>
-
-            <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                </h2>
+                
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                   Monthly SIP Amount (₹)
-                </label>
-                <input
-                  type="number"
+                    </label>
+                    <input
+                      type="number"
                   value={monthlySIP}
                   onChange={(e) => setMonthlySIP(Number(e.target.value))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="10000"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="10000"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                   Expected Annual Return (%)
-                </label>
-                <input
-                  type="number"
+                    </label>
+                    <input
+                      type="number"
                   value={expectedReturn}
                   onChange={(e) => setExpectedReturn(Number(e.target.value))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="12"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="12"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                   Investment Period (Years)
-                </label>
-                <input
-                  type="number"
+                    </label>
+                    <input
+                      type="number"
                   value={investmentPeriod}
                   onChange={(e) => setInvestmentPeriod(Number(e.target.value))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="10"
-                />
-              </div>
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="10"
+                    />
+                  </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -174,16 +174,16 @@ const SIPMissedPaymentLossEstimator: React.FC = () => {
                   placeholder="2000000"
                 />
               </div>
-            </div>
-          </motion.div>
+                </div>
+              </motion.div>
 
           {/* Results Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-6"
-          >
+                className="space-y-6"
+              >
             {/* Impact Summary */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -197,7 +197,7 @@ const SIPMissedPaymentLossEstimator: React.FC = () => {
                   <p className="text-2xl font-bold text-green-900">
                     ₹{results.regularCorpus.toLocaleString('en-IN', { maximumFractionDigits: 0 })}
                   </p>
-                </div>
+                  </div>
 
                 <div className="bg-red-50 rounded-lg p-4">
                   <h3 className="text-sm font-medium text-red-800 mb-2">Corpus with Missed Payments</h3>
@@ -211,14 +211,14 @@ const SIPMissedPaymentLossEstimator: React.FC = () => {
                   <p className="text-2xl font-bold text-orange-900">
                     ₹{results.corpusLoss.toLocaleString('en-IN', { maximumFractionDigits: 0 })}
                   </p>
-                </div>
+                    </div>
 
                 <div className="bg-purple-50 rounded-lg p-4">
                   <h3 className="text-sm font-medium text-purple-800 mb-2">Percentage Loss</h3>
                   <p className="text-2xl font-bold text-purple-900">
                     {results.percentageLoss.toFixed(2)}%
                   </p>
-                </div>
+                    </div>
               </div>
             </div>
 
@@ -249,10 +249,10 @@ const SIPMissedPaymentLossEstimator: React.FC = () => {
                   <span className="text-xl font-bold text-red-900">
                     ₹{(results.corpusLoss + results.missedOpportunity).toLocaleString('en-IN', { maximumFractionDigits: 0 })}
                   </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </motion.div>
+              </motion.div>
         </div>
 
         {/* Key Insights */}

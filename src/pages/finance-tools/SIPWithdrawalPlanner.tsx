@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { 
   TrendingUp, 
   DollarSign, 
-  BarChart3, 
+  BarChart3,
   ArrowRight, 
   Target,
   Calendar,
@@ -98,42 +98,42 @@ const SIPWithdrawalPlanner: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
           className="text-center mb-8"
-        >
-          <div className="flex items-center justify-center mb-4">
+            >
+              <div className="flex items-center justify-center mb-4">
             <Link to="/finance-tools" className="text-blue-600 hover:text-blue-700 flex items-center text-sm font-medium">
               <ArrowRight className="h-4 w-4 rotate-180 mr-1" />
-              Back to Finance Tools
-            </Link>
-          </div>
+                  Back to Finance Tools
+                </Link>
+              </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             SIP Withdrawal Planner
-          </h1>
+              </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Plan systematic withdrawals from your SIP investments and ensure your corpus lasts throughout your retirement years.
-          </p>
-        </motion.div>
+              </p>
+            </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white rounded-2xl shadow-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <TrendingUp className="h-6 w-6 mr-2 text-blue-600" />
               Withdrawal Parameters
-            </h2>
-
-            <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                </h2>
+                
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                   Current Corpus (₹)
                 </label>
                 <input
@@ -161,51 +161,51 @@ const SIPWithdrawalPlanner: React.FC = () => {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Expected Annual Return (%)
-                </label>
-                <input
-                  type="number"
+                    </label>
+                    <input
+                      type="number"
                   value={expectedReturn}
                   onChange={(e) => setExpectedReturn(Number(e.target.value))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="8"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                   Withdrawal Period (Years)
-                </label>
-                <input
-                  type="number"
+                    </label>
+                    <input
+                      type="number"
                   value={withdrawalPeriod}
                   onChange={(e) => setWithdrawalPeriod(Number(e.target.value))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="20"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                   Inflation Rate (%)
-                </label>
-                <input
-                  type="number"
+                    </label>
+                    <input
+                      type="number"
                   value={inflationRate}
                   onChange={(e) => setInflationRate(Number(e.target.value))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="6"
-                />
-              </div>
-            </div>
-          </motion.div>
+                    />
+                  </div>
+                </div>
+              </motion.div>
 
           {/* Results Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-6"
-          >
+                className="space-y-6"
+              >
             {/* Summary */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -228,7 +228,7 @@ const SIPWithdrawalPlanner: React.FC = () => {
                   <p className="text-2xl font-bold text-blue-900">
                     {results.sustainableWithdrawalRate.toFixed(2)}%
                   </p>
-                </div>
+                  </div>
 
                 <div className="bg-purple-50 rounded-lg p-4">
                   <h3 className="text-sm font-medium text-purple-800 mb-2">Years to Depletion</h3>
@@ -244,7 +244,7 @@ const SIPWithdrawalPlanner: React.FC = () => {
                   </p>
                 </div>
               </div>
-            </div>
+                    </div>
 
             {/* Yearly Breakdown */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
@@ -277,9 +277,9 @@ const SIPWithdrawalPlanner: React.FC = () => {
                     ... and {results.yearlyBreakdown.length - 10} more years
                   </p>
                 )}
-              </div>
-            </div>
-          </motion.div>
+                  </div>
+                </div>
+              </motion.div>
         </div>
 
         {/* Key Insights */}
