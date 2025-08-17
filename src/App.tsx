@@ -84,6 +84,9 @@ const SIPVsSWPTool = lazy(() => import('./pages/finance-tools/SIPVsSWPTool'));
 const MutualFundSIPvsLumpsumAnalyzer = lazy(() => import('./pages/finance-tools/MutualFundSIPvsLumpsumAnalyzer'));
 const MutualFundGoalPlanner = lazy(() => import('./pages/finance-tools/MutualFundGoalPlanner'));
 const MutualFundPortfolioRebalancer = lazy(() => import('./pages/finance-tools/MutualFundPortfolioRebalancer'));
+const MutualFundTaxEfficiencyCalculator = lazy(() => import('./pages/finance-tools/MutualFundTaxEfficiencyCalculator'));
+const MutualFundRiskAnalyzer = lazy(() => import('./pages/finance-tools/MutualFundRiskAnalyzer'));
+const MutualFundPerformanceTracker = lazy(() => import('./pages/finance-tools/MutualFundPerformanceTracker'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -283,6 +286,9 @@ function App() {
                 <Route path="/finance-tools/mutual-fund-sip-vs-lumpsum-analyzer" element={<MutualFundSIPvsLumpsumAnalyzer />} />
                 <Route path="/finance-tools/mutual-fund-goal-planner" element={<MutualFundGoalPlanner />} />
                 <Route path="/finance-tools/mutual-fund-portfolio-rebalancer" element={<MutualFundPortfolioRebalancer />} />
+                <Route path="/finance-tools/mutual-fund-tax-efficiency-calculator" element={<MutualFundTaxEfficiencyCalculator />} />
+                <Route path="/finance-tools/mutual-fund-risk-analyzer" element={<MutualFundRiskAnalyzer />} />
+                <Route path="/finance-tools/mutual-fund-performance-tracker" element={<MutualFundPerformanceTracker />} />
                 <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
