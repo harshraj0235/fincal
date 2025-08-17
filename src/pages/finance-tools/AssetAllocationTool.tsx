@@ -272,13 +272,13 @@ const AssetAllocationTool: React.FC = () => {
                       className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Risk Profile</label>
                     <div className="space-y-3">
                       {['conservative', 'moderate', 'aggressive'].map((profile) => (
                         <label key={profile} className="flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50">
-                          <input
+                    <input
                             type="radio"
                             name="riskProfile"
                             value={profile}
@@ -298,7 +298,7 @@ const AssetAllocationTool: React.FC = () => {
                       ))}
                     </div>
                   </div>
-
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Investment Amount (₹)</label>
@@ -309,10 +309,10 @@ const AssetAllocationTool: React.FC = () => {
                         className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
                       />
                     </div>
-                    <div>
+                  <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Investment Horizon (Years)</label>
-                      <input
-                        type="number"
+                    <input
+                      type="number"
                         value={investmentHorizon}
                         onChange={(e) => setInvestmentHorizon(Number(e.target.value))}
                         className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
@@ -346,7 +346,7 @@ const AssetAllocationTool: React.FC = () => {
                   <>
                     {/* Portfolio Summary */}
                     <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 md:p-8 text-white shadow-xl">
-                      <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-4">
                         <h3 className="text-lg md:text-xl font-bold">Portfolio Allocation</h3>
                         <PieChart className="h-5 w-5 md:h-6 md:w-6" />
                       </div>
@@ -375,16 +375,16 @@ const AssetAllocationTool: React.FC = () => {
                           <span>Expected Return:</span>
                           <span className="font-bold">{result.expectedReturn.toFixed(2)}%</span>
                         </div>
-                      </div>
-                    </div>
+                  </div>
+                </div>
 
                     {/* Asset Allocation Chart */}
                     <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
                       <h4 className="font-semibold text-gray-900 mb-4 flex items-center text-sm md:text-base">
                         <BarChart3 className="h-4 w-4 md:h-5 md:w-5 mr-2 text-indigo-600" />
                         Asset Allocation Breakdown
-                      </h4>
-                      <div className="space-y-3">
+                  </h4>
+                  <div className="space-y-3">
                         {Object.entries(result.allocation).map(([asset, percentage]) => {
                           const assetClass = assetClasses.find(a => a.id === asset);
                           if (!assetClass) return null;

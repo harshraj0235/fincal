@@ -137,7 +137,7 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                       placeholder="10000"
                     />
                   </div>
-
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -151,21 +151,21 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                         placeholder="10"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Expected Return (%)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         step="0.1"
                         value={expectedReturn}
                         onChange={(e) => setExpectedReturn(Number(e.target.value))}
                         className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
-                        placeholder="12"
-                      />
+                      placeholder="12"
+                    />
                     </div>
                   </div>
-
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -180,18 +180,18 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                         placeholder="6"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         SIP Increase (% per year)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         step="0.1"
                         value={sipIncrease}
                         onChange={(e) => setSipIncrease(Number(e.target.value))}
                         className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
-                        placeholder="10"
-                      />
+                      placeholder="10"
+                    />
                     </div>
                   </div>
 

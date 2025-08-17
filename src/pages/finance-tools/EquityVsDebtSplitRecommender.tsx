@@ -149,7 +149,7 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                       className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm md:text-base"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Risk Profile</label>
                     <div className="space-y-3">
@@ -170,7 +170,7 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                             </div>
                             <p className="text-xs md:text-sm text-gray-600">{profile.description}</p>
                           </div>
-                        </label>
+                    </label>
                       ))}
                     </div>
                   </div>
@@ -187,15 +187,15 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Monthly Income (₹)</label>
-                      <input
-                        type="number"
+                    <input
+                      type="number"
                         value={monthlyIncome}
                         onChange={(e) => setMonthlyIncome(Number(e.target.value))}
                         className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm md:text-base"
                       />
                     </div>
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Existing Investments (₹)</label>
                     <input
@@ -217,7 +217,7 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                 {result ? (
                   <>
                     <div className="bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl p-6 md:p-8 text-white shadow-xl">
-                      <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-4">
                         <h3 className="text-lg md:text-xl font-bold">Recommended Allocation</h3>
                         <PieChart className="h-5 w-5 md:h-6 md:w-6" />
                       </div>
@@ -239,8 +239,8 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                         <div className="flex justify-between items-center">
                           <span>Expected Return:</span>
                           <span className="font-bold">{result.expectedReturn.toFixed(2)}%</span>
-                        </div>
-                      </div>
+                  </div>
+                </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">

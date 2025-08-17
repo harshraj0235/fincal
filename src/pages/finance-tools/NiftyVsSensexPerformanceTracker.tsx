@@ -188,7 +188,7 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                       placeholder="e.g., Nifty 50, Sensex, Bank Nifty"
                     />
                   </div>
-
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -202,12 +202,12 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                         placeholder="22500"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Previous Value
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         value={newIndex.previousValue}
                         onChange={(e) => setNewIndex({...newIndex, previousValue: Number(e.target.value)})}
                         className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
@@ -215,7 +215,7 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                       />
                     </div>
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Date

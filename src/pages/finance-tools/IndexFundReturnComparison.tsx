@@ -199,7 +199,7 @@ const IndexFundReturnComparison: React.FC = () => {
                       placeholder="e.g., Nifty 50 Index Fund"
                     />
                   </div>
-
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -243,12 +243,12 @@ const IndexFundReturnComparison: React.FC = () => {
                         placeholder="12.5"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Fund Return (%)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         step="0.1"
                         value={newFund.fundReturn}
                         onChange={(e) => setNewFund({...newFund, fundReturn: Number(e.target.value)})}
@@ -257,7 +257,7 @@ const IndexFundReturnComparison: React.FC = () => {
                       />
                     </div>
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Investment Amount (₹)
@@ -388,14 +388,14 @@ const IndexFundReturnComparison: React.FC = () => {
                                 ₹{metrics.trackingDifference.toLocaleString()}
                               </span>
                             </div>
-                          </div>
-                        </div>
+                    </div>
+                    </div>
                       );
                     })}
                     {funds.length === 0 && (
                       <div className="text-center py-4 text-gray-500 text-sm">
                         No index funds added yet
-                      </div>
+                    </div>
                     )}
                   </div>
                 </div>

@@ -77,6 +77,7 @@ const IndexFundReturnComparison = lazy(() => import('./pages/finance-tools/Index
 const SIPInflationAdjustedCalculator = lazy(() => import('./pages/finance-tools/SIPInflationAdjustedCalculator'));
 const EquityVsDebtSplitRecommender = lazy(() => import('./pages/finance-tools/EquityVsDebtSplitRecommender'));
 const AssetAllocationTool = lazy(() => import('./pages/finance-tools/AssetAllocationTool'));
+const MutualFundExitLoadTracker = lazy(() => import('./pages/finance-tools/MutualFundExitLoadTracker'));
 const STCGLTCGClassifier = lazy(() => import('./pages/tax-tools/STCGLTCGClassifier'));
 const EquityTaxEstimator = lazy(() => import('./pages/tax-tools/EquityTaxEstimator'));
 const MutualFundExitLoadChecker = lazy(() => import('./pages/tax-tools/MutualFundExitLoadChecker'));
@@ -269,6 +270,7 @@ function App() {
                    <Route path="/finance-tools/sip-inflation-adjusted-calculator" element={<SIPInflationAdjustedCalculator />} />
                    <Route path="/finance-tools/equity-vs-debt-split-recommender" element={<EquityVsDebtSplitRecommender />} />
                    <Route path="/finance-tools/asset-allocation-tool" element={<AssetAllocationTool />} />
+                   <Route path="/finance-tools/mutual-fund-exit-load-tracker" element={<MutualFundExitLoadTracker />} />
                    <Route path="/tax-tools/stcg-ltcg-classifier" element={<STCGLTCGClassifier />} />
                   <Route path="/tax-tools/equity-tax-estimator" element={<EquityTaxEstimator />} />
                   <Route path="/tax-tools/mutual-fund-exit-load-checker" element={<MutualFundExitLoadChecker />} />
