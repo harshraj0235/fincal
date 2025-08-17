@@ -1121,14 +1121,14 @@ export const HomeNew: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <Link
-                  to="/government-schemes"
-                  className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                  to="/tools"
+                  className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
                 >
                   <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Building2 className="h-8 w-8" />
+                    <Wrench className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Government Schemes</h3>
-                  <p className="text-purple-100">Explore government benefits</p>
+                  <h3 className="text-xl font-bold mb-3">All Tools</h3>
+                  <p className="text-indigo-100">Complete tool collection</p>
                 </Link>
               </motion.div>
 
@@ -1136,6 +1136,74 @@ export const HomeNew: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <Link
+                  to="/tax-tools"
+                  className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <DollarSign className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Tax Tools</h3>
+                  <p className="text-purple-100">Tax planning and calculations</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <Link
+                  to="/finance-tools"
+                  className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <TrendingUp className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Finance Tools</h3>
+                  <p className="text-emerald-100">Investment and financial tools</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <Link
+                  to="/stock-market"
+                  className="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <BarChart3 className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Stock Market</h3>
+                  <p className="text-cyan-100">Stock analysis and trading</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                <Link
+                  to="/government-schemes"
+                  className="bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                >
+                  <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Building2 className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Government Schemes</h3>
+                  <p className="text-amber-100">Explore government benefits</p>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
               >
                 <Link
                   to="/exceltool"
@@ -1152,7 +1220,7 @@ export const HomeNew: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
               >
                 <Link
                   to="/crypto"
@@ -1169,17 +1237,17 @@ export const HomeNew: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
               >
                 <Link
-                  to="/tools"
-                  className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
+                  to="/astro-finance"
+                  className="bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 block text-center text-white"
                 >
                   <div className="h-16 w-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Wrench className="h-8 w-8" />
+                    <Zap className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">All Tools</h3>
-                  <p className="text-indigo-100">Complete tool collection</p>
+                  <h3 className="text-xl font-bold mb-3">Astro Finance</h3>
+                  <p className="text-pink-100">Astrological financial guidance</p>
                 </Link>
               </motion.div>
             </div>
