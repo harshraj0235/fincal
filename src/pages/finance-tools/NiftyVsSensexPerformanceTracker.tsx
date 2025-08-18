@@ -1,460 +1,641 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { 
-  Calculator, 
   TrendingUp, 
-  ArrowLeft, 
-  DollarSign,
-  BarChart3,
-  Calendar,
+  BarChart3, 
+  Calculator, 
+  DollarSign, 
+  PieChart, 
+  LineChart, 
+  Activity,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Clock,
   Target,
+  Zap,
+  Shield,
+  Globe,
+  Smartphone,
   TrendingDown,
-  Activity
+  Percent,
+  TrendingUpIcon
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface IndexData {
-  id: string;
   name: string;
   currentValue: number;
   previousValue: number;
-  date: string;
-  color: string;
+  change: number;
+  changePercentage: number;
+  yearHigh: number;
+  yearLow: number;
+  marketCap: number;
+  peRatio: number;
+  dividendYield: number;
+}
+
+interface PerformanceComparison {
+  nifty: IndexData;
+  sensex: IndexData;
+  correlation: number;
+  volatility: {
+    nifty: number;
+    sensex: number;
+  };
+  returns: {
+    nifty: number;
+    sensex: number;
+  };
+  riskMetrics: {
+    nifty: number;
+    sensex: number;
+  };
+  monthlyData: {
+    month: string;
+    niftyValue: number;
+    sensexValue: number;
+    niftyReturn: number;
+    sensexReturn: number;
+  }[];
 }
 
 const NiftyVsSensexPerformanceTracker: React.FC = () => {
-  const [indices, setIndices] = useState<IndexData[]>([
-    {
-      id: '1',
-      name: 'Nifty 50',
+  const [timePeriod, setTimePeriod] = useState('1');
+  const [comparison, setComparison] = useState<PerformanceComparison | null>(null);
+  const [showAnalysis, setShowAnalysis] = useState(false);
+
+  // Mock data - in real implementation, this would come from API
+  const generateMockData = () => {
+    const niftyData: IndexData = {
+      name: 'NIFTY 50',
       currentValue: 22500,
-      previousValue: 22000,
-      date: '2025-01-15',
-      color: '#3B82F6'
-    },
-    {
-      id: '2',
-      name: 'Sensex',
+      previousValue: 22300,
+      change: 200,
+      changePercentage: 0.90,
+      yearHigh: 23000,
+      yearLow: 18000,
+      marketCap: 2500000,
+      peRatio: 22.5,
+      dividendYield: 1.2
+    };
+
+    const sensexData: IndexData = {
+      name: 'SENSEX',
       currentValue: 74000,
-      previousValue: 72000,
-      date: '2025-01-15',
-      color: '#10B981'
-    }
-  ]);
+      previousValue: 73200,
+      change: 800,
+      changePercentage: 1.09,
+      yearHigh: 75000,
+      yearLow: 60000,
+      marketCap: 3500000,
+      peRatio: 23.1,
+      dividendYield: 1.1
+    };
 
-  const [newIndex, setNewIndex] = useState({
-    name: '',
-    currentValue: 0,
-    previousValue: 0,
-    date: ''
-  });
+    const correlation = 0.95; // High correlation between Nifty and Sensex
+    const volatility = {
+      nifty: 15.2,
+      sensex: 14.8
+    };
+    const returns = {
+      nifty: 12.5,
+      sensex: 11.8
+    };
+    const riskMetrics = {
+      nifty: 0.82,
+      sensex: 0.80
+    };
 
-  const addIndex = () => {
-    if (newIndex.name && newIndex.currentValue > 0 && newIndex.previousValue > 0) {
-      const index: IndexData = {
-        id: Date.now().toString(),
-        name: newIndex.name,
-        currentValue: newIndex.currentValue,
-        previousValue: newIndex.previousValue,
-        date: newIndex.date,
-        color: `hsl(${Math.random() * 360}, 70%, 50%)`
-      };
-      setIndices([...indices, index]);
-      setNewIndex({
-        name: '',
-        currentValue: 0,
-        previousValue: 0,
-        date: ''
+    // Generate monthly data
+    const monthlyData = [];
+    const months = parseInt(timePeriod) * 12;
+    let niftyBase = 20000;
+    let sensexBase = 65000;
+
+    for (let i = 1; i <= Math.min(months, 24); i++) {
+      const niftyGrowth = 1 + (Math.random() - 0.5) * 0.1;
+      const sensexGrowth = 1 + (Math.random() - 0.5) * 0.1;
+      
+      niftyBase *= niftyGrowth;
+      sensexBase *= sensexGrowth;
+      
+      const niftyReturn = ((niftyBase / 20000) - 1) * 100;
+      const sensexReturn = ((sensexBase / 65000) - 1) * 100;
+
+      monthlyData.push({
+        month: `Month ${i}`,
+        niftyValue: niftyBase,
+        sensexValue: sensexBase,
+        niftyReturn,
+        sensexReturn
       });
     }
+
+    return {
+      nifty: niftyData,
+      sensex: sensexData,
+      correlation,
+      volatility,
+      returns,
+      riskMetrics,
+      monthlyData
+    };
   };
 
-  const removeIndex = (id: string) => {
-    setIndices(indices.filter(index => index.id !== id));
+  const calculateComparison = () => {
+    const data = generateMockData();
+    setComparison(data);
+    setShowAnalysis(true);
   };
 
-  const calculatePerformance = (index: IndexData) => {
-    const change = index.currentValue - index.previousValue;
-    const changePercent = (change / index.previousValue) * 100;
-    const isPositive = change >= 0;
+  const resetForm = () => {
+    setTimePeriod('1');
+    setComparison(null);
+    setShowAnalysis(false);
+  };
+
+  const getPerformanceAssessment = () => {
+    if (!comparison) return '';
     
-    return {
-      change,
-      changePercent,
-      isPositive
-    };
+    if (comparison.returns.nifty > comparison.returns.sensex) {
+      return 'NIFTY 50 is outperforming SENSEX in the selected period.';
+    } else if (comparison.returns.sensex > comparison.returns.nifty) {
+      return 'SENSEX is outperforming NIFTY 50 in the selected period.';
+    } else {
+      return 'Both indices are performing similarly in the selected period.';
+    }
   };
 
-  const calculatePortfolioMetrics = () => {
-    const totalChange = indices.reduce((sum, index) => {
-      const perf = calculatePerformance(index);
-      return sum + perf.change;
-    }, 0);
-
-    const averageChangePercent = indices.length > 0 ? 
-      indices.reduce((sum, index) => {
-        const perf = calculatePerformance(index);
-        return sum + perf.changePercent;
-      }, 0) / indices.length : 0;
-
-    const bestPerformer = indices.length > 0 ? 
-      indices.reduce((best, current) => {
-        const bestPerf = calculatePerformance(best);
-        const currentPerf = calculatePerformance(current);
-        return currentPerf.changePercent > bestPerf.changePercent ? current : best;
-      }) : null;
-
-    const worstPerformer = indices.length > 0 ? 
-      indices.reduce((worst, current) => {
-        const worstPerf = calculatePerformance(worst);
-        const currentPerf = calculatePerformance(current);
-        return currentPerf.changePercent < worstPerf.changePercent ? current : worst;
-      }) : null;
-
-    return {
-      totalChange,
-      averageChangePercent,
-      bestPerformer,
-      worstPerformer
-    };
+  const getRiskAssessment = () => {
+    if (!comparison) return '';
+    
+    if (comparison.volatility.nifty < comparison.volatility.sensex) {
+      return 'NIFTY 50 shows lower volatility compared to SENSEX.';
+    } else {
+      return 'SENSEX shows lower volatility compared to NIFTY 50.';
+    }
   };
 
-  const result = calculatePortfolioMetrics();
+  const getCorrelationAssessment = () => {
+    if (!comparison) return '';
+    
+    if (comparison.correlation > 0.9) {
+      return 'Very high correlation - both indices move almost in sync.';
+    } else if (comparison.correlation > 0.7) {
+      return 'High correlation - indices generally move together.';
+    } else if (comparison.correlation > 0.5) {
+      return 'Moderate correlation - some independent movement.';
+    } else {
+      return 'Low correlation - indices move independently.';
+    }
+  };
 
   return (
     <>
       <SEOHelmet
-        title="Nifty vs Sensex Performance Tracker - Compare Market Indices | MoneyCal"
-        description="Track and compare the performance of Nifty 50 vs Sensex indices. Analyze market trends and index performance with our comprehensive tracker."
-        keywords="nifty vs sensex, market indices comparison, nifty 50 tracker, sensex tracker, market performance, index comparison"
+        title="Nifty vs Sensex Performance Tracker - Index Comparison | MoneyCal"
+        description="Track and compare Nifty 50 vs Sensex performance. Analyze returns, volatility, and correlation between India's major stock market indices with our comprehensive comparison tool."
+        keywords="Nifty vs Sensex, index comparison, Nifty 50 performance, Sensex performance, stock market indices, market analysis"
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
 
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-16 bg-gradient-to-br from-green-600 via-blue-600 to-purple-600">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center justify-center mb-4">
-                <Link to="/finance-tools" className="text-white hover:text-indigo-200 transition-colors text-sm md:text-base">
-                  <ArrowLeft className="h-4 w-4 md:h-5 md:w-5 mr-2" />
-                  Back to Finance Tools
-                </Link>
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Nifty vs Sensex Performance Tracker
               </h1>
-              <p className="text-lg md:text-xl text-indigo-100 mb-6 md:mb-8 max-w-3xl mx-auto px-4">
-                Track and compare the performance of market indices
+              <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
+                Track and compare Nifty 50 vs Sensex performance. Analyze returns, 
+                volatility, and correlation between India's major stock market indices.
               </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-green-100">
+                <div className="flex items-center">
+                  <TrendingUpIcon className="w-4 h-4 mr-2" />
+                  Index Comparison
+                </div>
+                <div className="flex items-center">
+                  <BarChart3 className="w-4 h-4 mr-2" />
+                  Performance Analysis
+                </div>
+                <div className="flex items-center">
+                  <Activity className="w-4 h-4 mr-2" />
+                  Market Insights
+                </div>
+                <div className="flex items-center">
+                  <Smartphone className="w-4 h-4 mr-2" />
+                  Mobile Friendly
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Calculator Section */}
-        <section className="py-8 md:py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* Input Form */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100"
-              >
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <Calculator className="h-5 w-5 md:h-6 md:w-6 mr-3 text-indigo-600" />
-                  Add Market Index
-                </h2>
-                
-                <div className="space-y-4 md:space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Index Name
-                    </label>
-                    <input
-                      type="text"
-                      value={newIndex.name}
-                      onChange={(e) => setNewIndex({...newIndex, name: e.target.value})}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
-                      placeholder="e.g., Nifty 50, Sensex, Bank Nifty"
-                    />
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Current Value
-                      </label>
-                      <input
-                        type="number"
-                        value={newIndex.currentValue}
-                        onChange={(e) => setNewIndex({...newIndex, currentValue: Number(e.target.value)})}
-                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
-                        placeholder="22500"
-                      />
-                    </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Previous Value
-                    </label>
-                    <input
-                      type="number"
-                        value={newIndex.previousValue}
-                        onChange={(e) => setNewIndex({...newIndex, previousValue: Number(e.target.value)})}
-                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
-                        placeholder="22000"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Date
-                    </label>
-                    <input
-                      type="date"
-                      value={newIndex.date}
-                      onChange={(e) => setNewIndex({...newIndex, date: e.target.value})}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
-                    />
-                  </div>
-
-                  <button
-                    onClick={addIndex}
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-sm md:text-base"
-                  >
-                    Add Index
-                  </button>
-                </div>
-              </motion.div>
-
-              {/* Results */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-4 md:space-y-6"
-              >
-                {/* Market Summary */}
-                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 md:p-8 text-white shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg md:text-xl font-bold">Market Performance</h3>
-                    <Activity className="h-5 w-5 md:h-6 md:w-6" />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <div className="text-2xl md:text-3xl font-bold mb-1">
-                        {result.averageChangePercent >= 0 ? '+' : ''}{result.averageChangePercent.toFixed(2)}%
-                      </div>
-                      <p className="text-indigo-100 text-sm">Average Change</p>
-                    </div>
-                    <div>
-                      <div className="text-2xl md:text-3xl font-bold mb-1">
-                        {result.totalChange >= 0 ? '+' : ''}{result.totalChange.toLocaleString()}
-                      </div>
-                      <p className="text-indigo-100 text-sm">Total Change</p>
-                    </div>
-                  </div>
-                  <div className="mt-4 p-2 rounded-lg text-sm bg-indigo-500/20">
-                    Tracking {indices.length} market indices
-                  </div>
-                </div>
-
-                {/* Best/Worst Performers */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                    <div className="flex items-center mb-3">
-                      <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-green-600 mr-2" />
-                      <h4 className="font-semibold text-gray-900 text-sm md:text-base">Best Performer</h4>
-                    </div>
-                    {result.bestPerformer ? (
-                      <>
-                        <div className="text-lg md:text-2xl font-bold text-green-600 mb-1">
-                          {result.bestPerformer.name}
-                        </div>
-                        <div className="text-sm text-gray-600">
-                          {calculatePerformance(result.bestPerformer).changePercent.toFixed(2)}% gain
-                        </div>
-                      </>
-                    ) : (
-                      <div className="text-sm text-gray-500">No data available</div>
-                    )}
-                  </div>
-
-                  <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                    <div className="flex items-center mb-3">
-                      <TrendingDown className="h-4 w-4 md:h-5 md:w-5 text-red-600 mr-2" />
-                      <h4 className="font-semibold text-gray-900 text-sm md:text-base">Worst Performer</h4>
-                    </div>
-                    {result.worstPerformer ? (
-                      <>
-                        <div className="text-lg md:text-2xl font-bold text-red-600 mb-1">
-                          {result.worstPerformer.name}
-                        </div>
-                        <div className="text-sm text-gray-600">
-                          {calculatePerformance(result.worstPerformer).changePercent.toFixed(2)}% change
-                        </div>
-                      </>
-                    ) : (
-                      <div className="text-sm text-gray-500">No data available</div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Index List */}
-                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-4 flex items-center text-sm md:text-base">
-                    <BarChart3 className="h-4 w-4 md:h-5 md:w-5 mr-2 text-indigo-600" />
-                    Market Indices ({indices.length})
-                  </h4>
-                  <div className="space-y-3">
-                    {indices.map((index) => {
-                      const perf = calculatePerformance(index);
-                      
-                      return (
-                        <div key={index.id} className="p-3 bg-gray-50 rounded-lg">
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center">
-                              <div 
-                                className="w-3 h-3 rounded-full mr-3" 
-                                style={{ backgroundColor: index.color }}
-                              ></div>
-                              <div>
-                                <div className="font-medium text-sm">{index.name}</div>
-                                <div className="text-xs text-gray-500">{new Date(index.date).toLocaleDateString()}</div>
-                              </div>
-                            </div>
-                            <button
-                              onClick={() => removeIndex(index.id)}
-                              className="text-xs text-red-500 hover:text-red-700"
-                            >
-                              Remove
-                            </button>
-                          </div>
-                          <div className="grid grid-cols-3 gap-2 text-xs">
-                            <div>
-                              <span className="text-gray-600">Current:</span>
-                              <span className="font-semibold ml-1">{index.currentValue.toLocaleString()}</span>
-                            </div>
-                            <div>
-                              <span className="text-gray-600">Previous:</span>
-                              <span className="font-semibold ml-1">{index.previousValue.toLocaleString()}</span>
-                            </div>
-                            <div>
-                              <span className="text-gray-600">Change:</span>
-                              <span className={`font-semibold ml-1 ${perf.isPositive ? 'text-green-600' : 'text-red-600'}`}>
-                                {perf.isPositive ? '+' : ''}{perf.changePercent.toFixed(2)}%
-                              </span>
-                            </div>
-                          </div>
-                          <div className="mt-2 text-xs">
-                            <span className="text-gray-600">Absolute Change:</span>
-                            <span className={`font-semibold ml-1 ${perf.isPositive ? 'text-green-600' : 'text-red-600'}`}>
-                              {perf.isPositive ? '+' : ''}{perf.change.toLocaleString()}
-                            </span>
-                          </div>
-                        </div>
-                      );
-                    })}
-                    {indices.length === 0 && (
-                      <div className="text-center py-4 text-gray-500 text-sm">
-                        No market indices added yet
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Market Insights */}
-                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-4 flex items-center text-sm md:text-base">
-                    <Target className="h-4 w-4 md:h-5 md:w-5 mr-2 text-indigo-600" />
-                    Market Insights
-                  </h4>
-                  <div className="space-y-2 text-xs md:text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Market Sentiment:</span>
-                      <span className={`font-semibold ${result.averageChangePercent >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                        {result.averageChangePercent >= 0 ? 'Bullish' : 'Bearish'}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Volatility Level:</span>
-                      <span className="font-semibold text-gray-900">
-                        {Math.abs(result.averageChangePercent) > 2 ? 'High' : Math.abs(result.averageChangePercent) > 1 ? 'Medium' : 'Low'}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Performance Range:</span>
-                      <span className="font-semibold text-gray-900">
-                        {indices.length > 0 ? 
-                          `${Math.min(...indices.map(i => calculatePerformance(i).changePercent)).toFixed(2)}% to ${Math.max(...indices.map(i => calculatePerformance(i).changePercent)).toFixed(2)}%` : 
-                          'N/A'
-                        }
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Tools Section */}
-        <section className="py-8 md:py-16 bg-white">
+        {/* Control Section */}
+        <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-12"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Related Finance Tools</h2>
-              <p className="text-base md:text-lg text-gray-600">Explore other tools to enhance your investment planning</p>
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                  <Calculator className="h-6 w-6 mr-3 text-green-600" />
+                  Analysis Parameters
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Time Period (Years)
+                  </label>
+                  <select
+                    value={timePeriod}
+                    onChange={(e) => setTimePeriod(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  >
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="5">5 Years</option>
+                    <option value="10">10 Years</option>
+                  </select>
+                </div>
+
+                <div className="flex items-end">
+                  <button
+                    onClick={calculateComparison}
+                    className="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors font-semibold"
+                  >
+                    Compare Performance
+                  </button>
+                </div>
+
+                <div className="flex items-end">
+                  <button
+                    onClick={resetForm}
+                    className="w-full bg-gray-500 text-white py-3 px-6 rounded-lg hover:bg-gray-600 transition-colors font-semibold"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
             </motion.div>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              <Link
-                to="/finance-tools/stock-cagr-calculator"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
+        {/* Index Cards */}
+        {showAnalysis && comparison && (
+          <section className="py-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
               >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-3 md:mb-4">
-                  <Calculator className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Stock CAGR Calculator</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Calculate Compound Annual Growth Rate for stock investments</p>
-              </Link>
+                {/* Nifty Card */}
+                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900">{comparison.nifty.name}</h3>
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${comparison.nifty.change >= 0 ? 'text-green-600 bg-green-100' : 'text-red-600 bg-red-100'}`}>
+                      {comparison.nifty.change >= 0 ? '+' : ''}{comparison.nifty.changePercentage.toFixed(2)}%
+                    </span>
+                  </div>
 
-              <Link
-                to="/finance-tools/portfolio-diversification-visualizer"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
-              >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center mb-3 md:mb-4">
-                  <BarChart3 className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Portfolio Diversification Visualizer</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Visualize and analyze your portfolio diversification across asset classes</p>
-              </Link>
+                  <div className="space-y-4">
+                    <div className="text-center">
+                      <p className="text-3xl font-bold text-gray-900">{comparison.nifty.currentValue.toLocaleString()}</p>
+                      <p className="text-sm text-gray-600">Current Value</p>
+                    </div>
 
-              <Link
-                to="/finance-tools/mutual-fund-expense-ratio-estimator"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
-              >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center mb-3 md:mb-4">
-                  <DollarSign className="h-5 w-5 md:h-6 md:w-6 text-white" />
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-gray-600">Year High</p>
+                        <p className="font-semibold text-gray-900">{comparison.nifty.yearHigh.toLocaleString()}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">Year Low</p>
+                        <p className="font-semibold text-gray-900">{comparison.nifty.yearLow.toLocaleString()}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">P/E Ratio</p>
+                        <p className="font-semibold text-gray-900">{comparison.nifty.peRatio}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">Dividend Yield</p>
+                        <p className="font-semibold text-gray-900">{comparison.nifty.dividendYield}%</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Mutual Fund Expense Ratio Estimator</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Calculate the impact of expense ratios on mutual fund returns</p>
-              </Link>
+
+                {/* Sensex Card */}
+                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
+                  <div className="flex justify-between items-start mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900">{comparison.sensex.name}</h3>
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${comparison.sensex.change >= 0 ? 'text-green-600 bg-green-100' : 'text-red-600 bg-red-100'}`}>
+                      {comparison.sensex.change >= 0 ? '+' : ''}{comparison.sensex.changePercentage.toFixed(2)}%
+                    </span>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="text-center">
+                      <p className="text-3xl font-bold text-gray-900">{comparison.sensex.currentValue.toLocaleString()}</p>
+                      <p className="text-sm text-gray-600">Current Value</p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-gray-600">Year High</p>
+                        <p className="font-semibold text-gray-900">{comparison.sensex.yearHigh.toLocaleString()}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">Year Low</p>
+                        <p className="font-semibold text-gray-900">{comparison.sensex.yearLow.toLocaleString()}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">P/E Ratio</p>
+                        <p className="font-semibold text-gray-900">{comparison.sensex.peRatio}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-600">Dividend Yield</p>
+                        <p className="font-semibold text-gray-900">{comparison.sensex.dividendYield}%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
+          </section>
+        )}
+
+        {/* Performance Analysis */}
+        {showAnalysis && comparison && (
+          <section className="py-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <BarChart3 className="h-6 w-6 mr-3 text-green-600" />
+                  Performance Analysis
+                </h2>
+
+                {/* Key Metrics */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-blue-800 mb-2">Correlation</h3>
+                    <p className="text-2xl font-bold text-blue-900">{(comparison.correlation * 100).toFixed(1)}%</p>
+                    <p className="text-sm text-blue-700">Index correlation</p>
+                  </div>
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-green-800 mb-2">Nifty Returns</h3>
+                    <p className="text-2xl font-bold text-green-900">{comparison.returns.nifty.toFixed(2)}%</p>
+                    <p className="text-sm text-green-700">Annual returns</p>
+                  </div>
+                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-purple-800 mb-2">Sensex Returns</h3>
+                    <p className="text-2xl font-bold text-purple-900">{comparison.returns.sensex.toFixed(2)}%</p>
+                    <p className="text-sm text-purple-700">Annual returns</p>
+                  </div>
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-orange-800 mb-2">Volatility</h3>
+                    <p className="text-2xl font-bold text-orange-900">{comparison.volatility.nifty.toFixed(1)}%</p>
+                    <p className="text-sm text-orange-700">Nifty volatility</p>
+                  </div>
+                </div>
+
+                {/* Risk Metrics */}
+                <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-8">
+                  <h3 className="text-lg font-semibold text-red-800 mb-4">Risk Metrics</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="text-center">
+                      <p className="text-sm text-red-600">Nifty Volatility</p>
+                      <p className="text-xl font-bold text-red-900">{comparison.volatility.nifty.toFixed(1)}%</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-red-600">Sensex Volatility</p>
+                      <p className="text-xl font-bold text-red-900">{comparison.volatility.sensex.toFixed(1)}%</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-red-600">Nifty Risk Score</p>
+                      <p className="text-xl font-bold text-red-900">{comparison.riskMetrics.nifty.toFixed(2)}</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-red-600">Sensex Risk Score</p>
+                      <p className="text-xl font-bold text-red-900">{comparison.riskMetrics.sensex.toFixed(2)}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Assessments */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <h3 className="text-lg font-semibold text-yellow-800 mb-3 flex items-center">
+                      <Info className="h-5 w-5 mr-2" />
+                      Performance Assessment
+                    </h3>
+                    <p className="text-yellow-700">{getPerformanceAssessment()}</p>
+                  </div>
+
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h3 className="text-lg font-semibold text-blue-800 mb-3">Risk Assessment</h3>
+                    <p className="text-blue-700">{getRiskAssessment()}</p>
+                  </div>
+
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <h3 className="text-lg font-semibold text-green-800 mb-3">Correlation Assessment</h3>
+                    <p className="text-green-700">{getCorrelationAssessment()}</p>
+                  </div>
+                </div>
+
+                {/* Monthly Performance Chart */}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Monthly Performance Comparison</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-gray-200">
+                          <th className="text-left py-3 px-4 font-semibold text-gray-900">Month</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Nifty Value</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Sensex Value</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Nifty Return</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Sensex Return</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Difference</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {comparison.monthlyData.slice(0, 20).map((data, index) => (
+                          <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                            <td className="py-3 px-4 font-medium text-gray-900">{data.month}</td>
+                            <td className="py-3 px-4 text-right">{data.niftyValue.toLocaleString()}</td>
+                            <td className="py-3 px-4 text-right">{data.sensexValue.toLocaleString()}</td>
+                            <td className={`py-3 px-4 text-right font-semibold ${data.niftyReturn >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                              {data.niftyReturn.toFixed(2)}%
+                            </td>
+                            <td className={`py-3 px-4 text-right font-semibold ${data.sensexReturn >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                              {data.sensexReturn.toFixed(2)}%
+                            </td>
+                            <td className={`py-3 px-4 text-right font-semibold ${data.niftyReturn > data.sensexReturn ? 'text-green-600' : 'text-red-600'}`}>
+                              {(data.niftyReturn - data.sensexReturn).toFixed(2)}%
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* Information Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Understanding Nifty vs Sensex
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-blue-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <TrendingUpIcon className="w-5 h-5 mr-2 text-blue-600" />
+                    NIFTY 50
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    India's premier stock market index representing 50 large-cap companies.
+                  </p>
+                  <div className="space-y-2 text-sm text-blue-700">
+                    <p><strong>Composition:</strong> 50 largest companies by market cap</p>
+                    <p><strong>Weighting:</strong> Free-float market capitalization</p>
+                    <p><strong>Base Year:</strong> 1995 (Base: 1000)</p>
+                    <p><strong>Exchange:</strong> NSE (National Stock Exchange)</p>
+                  </div>
+                </div>
+
+                <div className="bg-green-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Activity className="w-5 h-5 mr-2 text-green-600" />
+                    SENSEX
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    India's oldest stock market index representing 30 large-cap companies.
+                  </p>
+                  <div className="space-y-2 text-sm text-green-700">
+                    <p><strong>Composition:</strong> 30 largest companies by market cap</p>
+                    <p><strong>Weighting:</strong> Free-float market capitalization</p>
+                    <p><strong>Base Year:</strong> 1978-79 (Base: 100)</p>
+                    <p><strong>Exchange:</strong> BSE (Bombay Stock Exchange)</p>
+                  </div>
+                </div>
+
+                <div className="bg-purple-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Target className="w-5 h-5 mr-2 text-purple-600" />
+                    Key Differences
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    Understanding the differences between these major indices.
+                  </p>
+                  <div className="space-y-2 text-sm text-purple-700">
+                    <p><strong>Number of Stocks:</strong> Nifty 50 vs Sensex 30</p>
+                    <p><strong>Exchange:</strong> NSE vs BSE</p>
+                    <p><strong>Calculation:</strong> Similar methodology</p>
+                    <p><strong>Correlation:</strong> Very high (95%+)</p>
+                  </div>
+                </div>
+
+                <div className="bg-orange-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Shield className="w-5 h-5 mr-2 text-orange-600" />
+                    Investment Implications
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    How these indices affect investment decisions.
+                  </p>
+                  <div className="space-y-2 text-sm text-orange-700">
+                    <p><strong>Diversification:</strong> Both provide broad market exposure</p>
+                    <p><strong>Liquidity:</strong> High liquidity in both indices</p>
+                    <p><strong>Performance:</strong> Similar long-term returns</p>
+                    <p><strong>Risk:</strong> Market risk applies to both</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                  <Info className="h-5 w-5 mr-2" />
+                  Why Track Both Indices?
+                </h3>
+                <div className="space-y-4 text-blue-700">
+                  <p>
+                    <strong>Market Sentiment:</strong> Both indices reflect overall market sentiment 
+                    and economic conditions, helping investors understand market trends.
+                  </p>
+                  <p>
+                    <strong>Performance Comparison:</strong> Comparing your portfolio performance 
+                    against these benchmarks helps assess investment strategy effectiveness.
+                  </p>
+                  <p>
+                    <strong>Risk Assessment:</strong> Understanding index volatility and correlation 
+                    helps in portfolio risk management and asset allocation decisions.
+                  </p>
+                  <p>
+                    <strong>Investment Decisions:</strong> Index performance can guide decisions 
+                    about market timing, sector allocation, and investment strategy adjustments.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 bg-green-50 border border-green-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                  <CheckCircle className="h-5 w-5 mr-2" />
+                  Best Practices for Index Tracking
+                </h3>
+                <div className="space-y-4 text-green-700">
+                  <p>
+                    <strong>Regular Monitoring:</strong> Track both indices regularly to understand 
+                    market trends and identify potential investment opportunities or risks.
+                  </p>
+                  <p>
+                    <strong>Long-term Perspective:</strong> Focus on long-term trends rather than 
+                    short-term fluctuations for better investment decision-making.
+                  </p>
+                  <p>
+                    <strong>Correlation Analysis:</strong> Understand that both indices are highly 
+                    correlated, so tracking one provides insights into the other.
+                  </p>
+                  <p>
+                    <strong>Benchmark Comparison:</strong> Use these indices as benchmarks to 
+                    evaluate your portfolio performance and make necessary adjustments.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
       </div>
