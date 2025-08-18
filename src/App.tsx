@@ -156,6 +156,8 @@ const SeniorCitizenSavingsPlanner = lazy(() => import('./calculators/SeniorCitiz
 const MSMELoanEligibilityChecker = lazy(() => import('./calculators/MSMELoanEligibilityChecker'));
 const GreenEnergyInvestmentCalculator = lazy(() => import('./calculators/GreenEnergyInvestmentCalculator'));
 const AuthorProfilePage = lazy(() => import('./pages/AuthorProfilePage'));
+const RealTimeStockPortfolioTracker = lazy(() => import('./pages/RealTimeStockPortfolioTracker'));
+const InvestingToolsHub = lazy(() => import('./pages/InvestingToolsHub'));
 
 function App() {
   useEffect(() => {
@@ -367,6 +369,8 @@ function App() {
                 <Route path="/calculators/msme-loan-eligibility" element={<MSMELoanEligibilityChecker />} />
                 <Route path="/calculators/green-energy-investment-calculator" element={<GreenEnergyInvestmentCalculator />} />
                 <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
+                <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
+                <Route path="/investing-tools" element={<InvestingToolsHub />} />
                 <Route path="/tools/discount-profit" element={<DiscountProfitCalculator />} />
                 <Route path="/tools/product-comparison" element={<ProductComparisonMatrix />} />
                 <Route path="/tools/emi-affordability" element={<EMIAffordabilityChecker />} />
