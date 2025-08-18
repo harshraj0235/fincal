@@ -2581,6 +2581,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://moneycal.in/finance-tools/stock-cagr-calculator</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/finance-tools/portfolio-diversification-visualizer</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/finance-tools/dividend-tracker</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://moneycal.in/finance-tools/mutual-fund-star-ratings-explorer</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>

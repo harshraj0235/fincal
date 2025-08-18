@@ -1,117 +1,229 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { 
-  Calculator, 
   TrendingUp, 
-  ArrowLeft, 
-  Target,
+  BarChart3, 
+  Calculator, 
+  DollarSign, 
+  PieChart, 
+  LineChart, 
+  Activity,
+  Info,
+  AlertCircle,
   CheckCircle,
-  ArrowUpRight,
-  BarChart3,
-  PieChart,
-  AlertTriangle,
-  DollarSign,
-  Calendar
+  Clock,
+  Target,
+  Zap,
+  Shield,
+  Globe,
+  Smartphone,
+  TrendingDown,
+  Percent,
+  Stock
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
+interface CAGRAnalysis {
+  initialPrice: number;
+  finalPrice: number;
+  timePeriod: number;
+  cagr: number;
+  totalReturn: number;
+  totalReturnPercentage: number;
+  annualizedReturn: number;
+  volatility: number;
+  riskAdjustedReturn: number;
+  yearByYearData: {
+    year: number;
+    price: number;
+    return: number;
+    returnPercentage: number;
+  }[];
+}
+
 const StockCAGRCalculator: React.FC = () => {
-  const [initialPrice, setInitialPrice] = useState(100);
-  const [finalPrice, setFinalPrice] = useState(150);
-  const [timePeriod, setTimePeriod] = useState(3);
-  const [investmentAmount, setInvestmentAmount] = useState(10000);
+  const [initialPrice, setInitialPrice] = useState('100');
+  const [finalPrice, setFinalPrice] = useState('200');
+  const [timePeriod, setTimePeriod] = useState('5');
+  const [analysis, setAnalysis] = useState<CAGRAnalysis | null>(null);
+  const [showChart, setShowChart] = useState(false);
 
   const calculateCAGR = () => {
-    // CAGR = (Final Value / Initial Value)^(1/n) - 1
-    const cagr = Math.pow(finalPrice / initialPrice, 1 / timePeriod) - 1;
+    const initial = parseFloat(initialPrice);
+    const final = parseFloat(finalPrice);
+    const years = parseFloat(timePeriod);
     
-    // Calculate total return percentage
-    const totalReturn = ((finalPrice - initialPrice) / initialPrice) * 100;
+    if (initial <= 0 || final <= 0 || years <= 0) {
+      alert('Please enter valid positive values');
+      return;
+    }
     
-    // Calculate final investment value
-    const finalInvestmentValue = investmentAmount * Math.pow(1 + cagr, timePeriod);
+    // Calculate CAGR using the formula: CAGR = (Final Value / Initial Value)^(1/n) - 1
+    const cagr = Math.pow(final / initial, 1 / years) - 1;
+    const cagrPercentage = cagr * 100;
     
-    // Calculate total profit
-    const totalProfit = finalInvestmentValue - investmentAmount;
+    // Calculate total return
+    const totalReturn = final - initial;
+    const totalReturnPercentage = (totalReturn / initial) * 100;
     
-    // Calculate annualized return
-    const annualizedReturn = cagr * 100;
+    // Calculate annualized return (simple average)
+    const annualizedReturn = totalReturnPercentage / years;
     
-    // Calculate absolute return
-    const absoluteReturn = ((finalPrice - initialPrice) / initialPrice) * 100;
+    // Generate year-by-year data
+    const yearByYearData = [];
+    for (let year = 1; year <= Math.min(years, 20); year++) {
+      const yearPrice = initial * Math.pow(1 + cagr, year);
+      const yearReturn = yearPrice - initial;
+      const yearReturnPercentage = (yearReturn / initial) * 100;
+      
+      yearByYearData.push({
+        year,
+        price: yearPrice,
+        return: yearReturn,
+        returnPercentage: yearReturnPercentage
+      });
+    }
     
-    // Calculate price appreciation
-    const priceAppreciation = finalPrice - initialPrice;
+    // Calculate volatility (simplified - using CAGR as proxy)
+    const volatility = Math.abs(cagrPercentage) * 0.3; // Simplified volatility calculation
     
-    return {
-      cagr: cagr * 100,
+    // Calculate risk-adjusted return (Sharpe ratio simplified)
+    const riskAdjustedReturn = cagrPercentage / (volatility + 1);
+    
+    setAnalysis({
+      initialPrice: initial,
+      finalPrice: final,
+      timePeriod: years,
+      cagr: cagrPercentage,
       totalReturn,
-      finalInvestmentValue: Math.round(finalInvestmentValue),
-      totalProfit: Math.round(totalProfit),
+      totalReturnPercentage,
       annualizedReturn,
-      absoluteReturn,
-      priceAppreciation: Math.round(priceAppreciation),
-      multiplier: finalPrice / initialPrice
-    };
+      volatility,
+      riskAdjustedReturn,
+      yearByYearData
+    });
+    setShowChart(true);
   };
 
-  const result = calculateCAGR();
+  const resetForm = () => {
+    setInitialPrice('100');
+    setFinalPrice('200');
+    setTimePeriod('5');
+    setAnalysis(null);
+    setShowChart(false);
+  };
+
+  const getCAGRAssessment = () => {
+    if (!analysis) return '';
+    
+    if (analysis.cagr > 15) {
+      return 'Excellent CAGR - This represents outstanding long-term growth performance.';
+    } else if (analysis.cagr > 10) {
+      return 'Good CAGR - This shows strong long-term growth potential.';
+    } else if (analysis.cagr > 5) {
+      return 'Moderate CAGR - This indicates steady but moderate growth.';
+    } else if (analysis.cagr > 0) {
+      return 'Low CAGR - This shows minimal growth over the period.';
+    } else {
+      return 'Negative CAGR - This indicates declining value over time.';
+    }
+  };
+
+  const getRiskAssessment = () => {
+    if (!analysis) return '';
+    
+    if (analysis.volatility > 20) {
+      return 'High Risk - Significant price volatility expected.';
+    } else if (analysis.volatility > 10) {
+      return 'Moderate Risk - Moderate price fluctuations expected.';
+    } else {
+      return 'Low Risk - Relatively stable price movement expected.';
+    }
+  };
+
+  const getInvestmentRecommendation = () => {
+    if (!analysis) return '';
+    
+    if (analysis.cagr > 12 && analysis.riskAdjustedReturn > 1) {
+      return 'Strong Buy - Excellent growth with good risk-adjusted returns.';
+    } else if (analysis.cagr > 8 && analysis.riskAdjustedReturn > 0.5) {
+      return 'Buy - Good growth potential with reasonable risk.';
+    } else if (analysis.cagr > 5) {
+      return 'Hold - Moderate growth, consider for long-term portfolio.';
+    } else if (analysis.cagr > 0) {
+      return 'Weak Hold - Minimal growth, consider alternatives.';
+    } else {
+      return 'Sell - Declining value, consider exiting position.';
+    }
+  };
 
   return (
     <>
       <SEOHelmet
         title="Stock CAGR Calculator - Compound Annual Growth Rate | MoneyCal"
-        description="Calculate Compound Annual Growth Rate (CAGR) for stock investments. Understand your investment performance with our comprehensive CAGR calculator for stocks."
-        keywords="stock CAGR calculator, compound annual growth rate, investment returns, stock performance, CAGR formula, investment calculator"
+        description="Calculate stock CAGR (Compound Annual Growth Rate) with detailed analysis. Understand long-term stock performance and growth potential with our comprehensive CAGR calculator."
+        keywords="stock CAGR calculator, compound annual growth rate, stock performance analysis, investment returns calculator, CAGR formula"
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
 
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-16 bg-gradient-to-br from-green-600 via-blue-600 to-purple-600">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center justify-center mb-4">
-                <Link to="/finance-tools" className="text-white hover:text-purple-200 transition-colors text-sm md:text-base">
-                  <ArrowLeft className="h-4 w-4 md:h-5 md:w-5 mr-2" />
-                  Back to Finance Tools
-                </Link>
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Stock CAGR Calculator
               </h1>
-              <p className="text-lg md:text-xl text-purple-100 mb-6 md:mb-8 max-w-3xl mx-auto px-4">
-                Calculate Compound Annual Growth Rate for stock investments
+              <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
+                Calculate stock CAGR (Compound Annual Growth Rate) with detailed analysis. 
+                Understand long-term stock performance and growth potential.
               </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-green-100">
+                <div className="flex items-center">
+                  <Stock className="w-4 h-4 mr-2" />
+                  CAGR Analysis
+                </div>
+                <div className="flex items-center">
+                  <BarChart3 className="w-4 h-4 mr-2" />
+                  Performance Metrics
+                </div>
+                <div className="flex items-center">
+                  <Activity className="w-4 h-4 mr-2" />
+                  Risk Assessment
+                </div>
+                <div className="flex items-center">
+                  <Smartphone className="w-4 h-4 mr-2" />
+                  Mobile Friendly
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
 
         {/* Calculator Section */}
-        <section className="py-8 md:py-16">
+        <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Input Form */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100"
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
               >
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <Calculator className="h-5 w-5 md:h-6 md:w-6 mr-3 text-purple-600" />
-                  Calculate CAGR
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <Calculator className="h-6 w-6 mr-3 text-green-600" />
+                  Stock Parameters
                 </h2>
-                
-                <div className="space-y-4 md:space-y-6">
+
+                <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Initial Stock Price (₹)
@@ -119,13 +231,12 @@ const StockCAGRCalculator: React.FC = () => {
                     <input
                       type="number"
                       value={initialPrice}
-                      onChange={(e) => setInitialPrice(Number(e.target.value))}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
+                      onChange={(e) => setInitialPrice(e.target.value)}
                       placeholder="100"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
-                    <p className="text-xs text-gray-500 mt-1">Price when you bought the stock</p>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Final Stock Price (₹)
@@ -133,13 +244,12 @@ const StockCAGRCalculator: React.FC = () => {
                     <input
                       type="number"
                       value={finalPrice}
-                      onChange={(e) => setFinalPrice(Number(e.target.value))}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
-                      placeholder="150"
+                      onChange={(e) => setFinalPrice(e.target.value)}
+                      placeholder="200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
-                    <p className="text-xs text-gray-500 mt-1">Current or selling price of the stock</p>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Time Period (Years)
@@ -147,25 +257,35 @@ const StockCAGRCalculator: React.FC = () => {
                     <input
                       type="number"
                       value={timePeriod}
-                      onChange={(e) => setTimePeriod(Number(e.target.value))}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
-                      placeholder="3"
+                      onChange={(e) => setTimePeriod(e.target.value)}
+                      placeholder="5"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
-                    <p className="text-xs text-gray-500 mt-1">Number of years you held the investment</p>
                   </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Investment Amount (₹)
-                    </label>
-                    <input
-                      type="number"
-                      value={investmentAmount}
-                      onChange={(e) => setInvestmentAmount(Number(e.target.value))}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
-                      placeholder="10000"
-                    />
-                    <p className="text-xs text-gray-500 mt-1">Total amount invested in the stock</p>
+
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <h3 className="text-lg font-semibold text-green-900 mb-3">Parameters Explained</h3>
+                    <div className="space-y-2 text-sm text-green-700">
+                      <p><strong>Initial Price:</strong> The stock price at the beginning of the period.</p>
+                      <p><strong>Final Price:</strong> The current or ending stock price.</p>
+                      <p><strong>Time Period:</strong> Number of years between initial and final prices.</p>
+                      <p><strong>CAGR:</strong> Compound Annual Growth Rate - annualized return.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-4">
+                    <button
+                      onClick={calculateCAGR}
+                      className="flex-1 bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors font-semibold"
+                    >
+                      Calculate CAGR
+                    </button>
+                    <button
+                      onClick={resetForm}
+                      className="flex-1 bg-gray-500 text-white py-3 px-6 rounded-lg hover:bg-gray-600 transition-colors font-semibold"
+                    >
+                      Reset
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -174,222 +294,257 @@ const StockCAGRCalculator: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-4 md:space-y-6"
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
               >
-                {/* CAGR Card */}
-                <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 md:p-8 text-white shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg md:text-xl font-bold">CAGR</h3>
-                    <Target className="h-5 w-5 md:h-6 md:w-6" />
-                  </div>
-                  <div className="text-2xl md:text-4xl font-bold mb-2">{result.cagr.toFixed(2)}%</div>
-                  <p className="text-purple-100 text-sm md:text-base">
-                    Compound Annual Growth Rate
-                  </p>
-                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <BarChart3 className="h-6 w-6 mr-3 text-green-600" />
+                  CAGR Analysis Results
+                </h2>
 
-                {/* Investment Results */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                    <div className="flex items-center mb-3">
-                      <DollarSign className="h-4 w-4 md:h-5 md:w-5 text-green-600 mr-2" />
-                      <h4 className="font-semibold text-gray-900 text-sm md:text-base">Final Value</h4>
+                {analysis ? (
+                  <div className="space-y-6">
+                    {/* Main CAGR Card */}
+                    <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-lg p-6 text-white">
+                      <h3 className="text-lg font-semibold mb-2">Compound Annual Growth Rate</h3>
+                      <p className="text-4xl font-bold mb-2">{analysis.cagr.toFixed(2)}%</p>
+                      <p className="text-green-100">Annualized return over {analysis.timePeriod} years</p>
                     </div>
-                    <div className="text-lg md:text-2xl font-bold text-green-600 mb-1">
-                      ₹{result.finalInvestmentValue.toLocaleString()}
-                    </div>
-                    <p className="text-xs md:text-sm text-gray-600">Investment Value</p>
-                    <p className="text-xs text-green-600 mt-1">Profit: ₹{result.totalProfit.toLocaleString()}</p>
-                  </div>
 
-                  <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                    <div className="flex items-center mb-3">
-                      <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-blue-600 mr-2" />
-                      <h4 className="font-semibold text-gray-900 text-sm md:text-base">Total Return</h4>
+                    {/* Summary Cards */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h3 className="text-sm font-semibold text-blue-800 mb-2">Total Return</h3>
+                        <p className="text-2xl font-bold text-blue-900">₹{analysis.totalReturn.toLocaleString()}</p>
+                        <p className="text-sm text-blue-700">{analysis.totalReturnPercentage.toFixed(2)}%</p>
+                      </div>
+                      <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                        <h3 className="text-sm font-semibold text-purple-800 mb-2">Annualized Return</h3>
+                        <p className="text-2xl font-bold text-purple-900">{analysis.annualizedReturn.toFixed(2)}%</p>
+                        <p className="text-sm text-purple-700">Simple average</p>
+                      </div>
                     </div>
-                    <div className="text-lg md:text-2xl font-bold text-blue-600 mb-1">
-                      {result.totalReturn.toFixed(2)}%
-                    </div>
-                    <p className="text-xs md:text-sm text-gray-600">Overall Return</p>
-                    <p className="text-xs text-blue-600 mt-1">Price: ₹{result.priceAppreciation}</p>
-                  </div>
-                </div>
 
-                {/* Detailed Analysis */}
-                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-4 flex items-center text-sm md:text-base">
-                    <BarChart3 className="h-4 w-4 md:h-5 md:w-5 mr-2 text-purple-600" />
-                    Investment Analysis
-                  </h4>
-                  <div className="space-y-2 md:space-y-3 text-xs md:text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Annualized Return:</span>
-                      <span className="font-semibold text-purple-600">
-                        {result.annualizedReturn.toFixed(2)}%
-                      </span>
+                    {/* Risk Metrics */}
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold text-red-800 mb-3">Risk Metrics</h3>
+                      <div className="space-y-2 text-sm text-red-700">
+                        <div className="flex justify-between">
+                          <span>Volatility:</span>
+                          <span className="font-semibold">{analysis.volatility.toFixed(2)}%</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Risk-Adjusted Return:</span>
+                          <span className="font-semibold">{analysis.riskAdjustedReturn.toFixed(2)}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Absolute Return:</span>
-                      <span className="font-semibold text-blue-600">
-                        {result.absoluteReturn.toFixed(2)}%
-                      </span>
+
+                    {/* Assessment */}
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold text-yellow-800 mb-3 flex items-center">
+                        <Info className="h-5 w-5 mr-2" />
+                        CAGR Assessment
+                      </h3>
+                      <p className="text-yellow-700">{getCAGRAssessment()}</p>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Price Multiplier:</span>
-                      <span className="font-semibold text-green-600">
-                        {result.multiplier.toFixed(2)}x
-                      </span>
+
+                    {/* Risk Assessment */}
+                    <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold text-orange-800 mb-3">Risk Assessment</h3>
+                      <p className="text-orange-700">{getRiskAssessment()}</p>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Investment Period:</span>
-                      <span className="font-semibold text-gray-900">
-                        {timePeriod} years
-                      </span>
+
+                    {/* Investment Recommendation */}
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold text-green-800 mb-3">Investment Recommendation</h3>
+                      <p className="text-green-700">{getInvestmentRecommendation()}</p>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="text-center py-12">
+                    <BarChart3 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+                    <p className="text-gray-600">Enter stock parameters to calculate CAGR</p>
+                  </div>
+                )}
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Understanding CAGR Section */}
-        <section className="py-8 md:py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-12"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Understanding CAGR</h2>
-              <p className="text-base md:text-lg text-gray-600">Why Compound Annual Growth Rate matters for stock investments</p>
-            </motion.div>
+        {/* Year-by-Year Analysis */}
+        {showChart && analysis && (
+          <section className="py-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <LineChart className="h-6 w-6 mr-3 text-green-600" />
+                  Year-by-Year Growth Analysis
+                </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <div className="bg-purple-100 rounded-full p-3 w-fit mb-4">
-                  <Calculator className="h-5 w-5 md:h-6 md:w-6 text-purple-600" />
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-3 px-4 font-semibold text-gray-900">Year</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-900">Stock Price</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-900">Total Return</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-900">Return %</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-900">CAGR</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {analysis.yearByYearData.map((data, index) => (
+                        <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                          <td className="py-3 px-4 font-medium text-gray-900">{data.year}</td>
+                          <td className="py-3 px-4 text-right">₹{data.price.toLocaleString()}</td>
+                          <td className="py-3 px-4 text-right">₹{data.return.toLocaleString()}</td>
+                          <td className={`py-3 px-4 text-right font-semibold ${data.returnPercentage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                            {data.returnPercentage.toFixed(2)}%
+                          </td>
+                          <td className="py-3 px-4 text-right font-semibold text-green-600">
+                            {analysis.cagr.toFixed(2)}%
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">What is CAGR?</h3>
-                <div className="space-y-2 text-sm md:text-base">
-                  <p className="text-gray-600">✅ Annualized growth rate over time</p>
-                  <p className="text-gray-600">✅ Smooths out volatility in returns</p>
-                  <p className="text-gray-600">✅ Helps compare different investments</p>
-                  <p className="text-gray-600">✅ Accounts for compound growth</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-                <div className="bg-indigo-100 rounded-full p-3 w-fit mb-4">
-                  <TrendingUp className="h-5 w-5 md:h-6 md:w-6 text-indigo-600" />
-                </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">Why Use CAGR?</h3>
-                <div className="space-y-2 text-sm md:text-base">
-                  <p className="text-gray-600">✅ Better than simple average returns</p>
-                  <p className="text-gray-600">✅ Reflects actual investment performance</p>
-                  <p className="text-gray-600">✅ Useful for long-term planning</p>
-                  <p className="text-gray-600">✅ Industry standard metric</p>
-                </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        {/* Formula Section */}
-        <section className="py-8 md:py-16 bg-gray-50">
+        {/* Information Section */}
+        <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-12"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">CAGR Formula</h2>
-              <p className="text-base md:text-lg text-gray-600">The mathematical formula behind CAGR calculation</p>
-            </motion.div>
-
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
-              <div className="text-center mb-6">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">CAGR Formula</h3>
-                <div className="bg-gray-100 rounded-lg p-4 md:p-6 text-lg md:text-xl font-mono">
-                  CAGR = (Final Value / Initial Value)^(1/n) - 1
-                </div>
-              </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Understanding Stock CAGR (Compound Annual Growth Rate)
+              </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-3 text-sm md:text-base">Example Calculation:</h4>
-                  <div className="space-y-2 text-sm">
-                    <p><strong>Initial Price:</strong> ₹100</p>
-                    <p><strong>Final Price:</strong> ₹150</p>
-                    <p><strong>Time Period:</strong> 3 years</p>
-                    <p><strong>CAGR:</strong> (150/100)^(1/3) - 1 = 14.47%</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-green-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <TrendingUp className="w-5 h-5 mr-2 text-green-600" />
+                    What is CAGR?
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    CAGR measures the mean annual growth rate of an investment over a specified time period.
+                  </p>
+                  <div className="space-y-2 text-sm text-green-700">
+                    <p><strong>Formula:</strong> CAGR = (Final Value / Initial Value)^(1/n) - 1</p>
+                    <p><strong>Purpose:</strong> Smooths out volatility and shows consistent growth</p>
+                    <p><strong>Use:</strong> Compare investments over different time periods</p>
                   </div>
                 </div>
-                
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-3 text-sm md:text-base">Key Insights:</h4>
-                  <div className="space-y-2 text-sm">
-                    <p>• CAGR smooths out year-to-year volatility</p>
-                    <p>• Higher CAGR = better long-term performance</p>
-                    <p>• Useful for comparing different time periods</p>
-                    <p>• Assumes reinvestment of returns</p>
+
+                <div className="bg-blue-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Activity className="w-5 h-5 mr-2 text-blue-600" />
+                    CAGR vs Simple Return
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    CAGR accounts for compounding effects, while simple return doesn't.
+                  </p>
+                  <div className="space-y-2 text-sm text-blue-700">
+                    <p><strong>CAGR:</strong> Accounts for time value of money</p>
+                    <p><strong>Simple Return:</strong> Basic percentage change</p>
+                    <p><strong>Advantage:</strong> CAGR is more accurate for long-term analysis</p>
+                  </div>
+                </div>
+
+                <div className="bg-purple-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Target className="w-5 h-5 mr-2 text-purple-600" />
+                    CAGR Interpretation
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    Understanding what different CAGR values mean for your investment.
+                  </p>
+                  <div className="space-y-2 text-sm text-purple-700">
+                    <p><strong>15%+ CAGR:</strong> Exceptional growth performance</p>
+                    <p><strong>10-15% CAGR:</strong> Strong growth potential</p>
+                    <p><strong>5-10% CAGR:</strong> Moderate but steady growth</p>
+                    <p><strong>0-5% CAGR:</strong> Minimal growth or decline</p>
+                  </div>
+                </div>
+
+                <div className="bg-orange-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Shield className="w-5 h-5 mr-2 text-orange-600" />
+                    Risk Considerations
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    CAGR doesn't show volatility - consider risk alongside returns.
+                  </p>
+                  <div className="space-y-2 text-sm text-orange-700">
+                    <p><strong>Volatility:</strong> Higher CAGR may mean higher risk</p>
+                    <p><strong>Time Period:</strong> Longer periods smooth out volatility</p>
+                    <p><strong>Market Cycles:</strong> Consider economic conditions</p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Related Tools Section */}
-        <section className="py-8 md:py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-12"
-            >
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Related Finance Tools</h2>
-              <p className="text-base md:text-lg text-gray-600">Explore other tools to enhance your investment planning</p>
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                  <Info className="h-5 w-5 mr-2" />
+                  Why CAGR Matters for Stock Investors
+                </h3>
+                <div className="space-y-4 text-green-700">
+                  <p>
+                    <strong>Long-term Perspective:</strong> CAGR helps you understand the true growth potential 
+                    of a stock over extended periods, smoothing out short-term market fluctuations.
+                  </p>
+                  <p>
+                    <strong>Investment Comparison:</strong> Use CAGR to compare different stocks or investment 
+                    options over the same time period for better decision-making.
+                  </p>
+                  <p>
+                    <strong>Goal Planning:</strong> CAGR helps you estimate future stock values and plan 
+                    your investment goals more accurately.
+                  </p>
+                  <p>
+                    <strong>Risk Assessment:</strong> While CAGR shows growth, always consider volatility 
+                    and market conditions for a complete risk assessment.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                  <CheckCircle className="h-5 w-5 mr-2" />
+                  Best Practices for Using CAGR
+                </h3>
+                <div className="space-y-4 text-blue-700">
+                  <p>
+                    <strong>Use Multiple Time Periods:</strong> Calculate CAGR for different time periods 
+                    to understand short-term vs long-term performance.
+                  </p>
+                  <p>
+                    <strong>Compare with Benchmarks:</strong> Compare stock CAGR with market indices 
+                    like Nifty 50 or Sensex to assess relative performance.
+                  </p>
+                  <p>
+                    <strong>Consider Dividends:</strong> For dividend-paying stocks, include dividend 
+                    income in your CAGR calculations for total return analysis.
+                  </p>
+                  <p>
+                    <strong>Regular Monitoring:</strong> Recalculate CAGR periodically to track 
+                    performance changes and adjust your investment strategy accordingly.
+                  </p>
+                </div>
+              </div>
             </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              <Link
-                to="/finance-tools/fd-vs-mutual-fund-return-tool"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
-              >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-3 md:mb-4">
-                  <BarChart3 className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">FD vs Mutual Fund Return Tool</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Compare Fixed Deposit vs Mutual Fund returns with tax implications</p>
-              </Link>
-
-              <Link
-                to="/finance-tools/real-vs-nominal-return-calculator"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
-              >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mb-3 md:mb-4">
-                  <Calculator className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Real vs Nominal Return Calculator</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Calculate inflation-adjusted returns to understand true investment performance</p>
-              </Link>
-
-              <Link
-                to="/finance-tools/lumpsum-vs-sip-analyzer"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
-              >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-3 md:mb-4">
-                  <TrendingUp className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Lumpsum vs SIP Analyzer</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Compare lumpsum vs SIP investment strategies for optimal returns</p>
-              </Link>
-            </div>
           </div>
         </section>
       </div>

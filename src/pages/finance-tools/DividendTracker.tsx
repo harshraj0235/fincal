@@ -1,15 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { 
-  Calculator, 
   TrendingUp, 
-  ArrowLeft, 
-  DollarSign,
-  BarChart3,
-  PieChart,
-  Calendar,
-  Target
+  BarChart3, 
+  Calculator, 
+  DollarSign, 
+  PieChart, 
+  LineChart, 
+  Activity,
+  Info,
+  AlertCircle,
+  CheckCircle,
+  Clock,
+  Target,
+  Zap,
+  Shield,
+  Globe,
+  Smartphone,
+  TrendingDown,
+  Percent,
+  Receipt
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
@@ -17,407 +27,649 @@ import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface DividendStock {
   id: string;
-  name: string;
+  symbol: string;
+  companyName: string;
   shares: number;
+  avgPrice: number;
+  currentPrice: number;
   dividendPerShare: number;
-  frequency: 'quarterly' | 'semi-annual' | 'annual';
+  dividendYield: number;
+  dividendFrequency: 'quarterly' | 'semi-annual' | 'annual';
   lastDividendDate: string;
   nextDividendDate: string;
-  color: string;
+}
+
+interface DividendAnalysis {
+  totalInvestment: number;
+  currentValue: number;
+  totalDividends: number;
+  dividendYield: number;
+  annualDividendIncome: number;
+  monthlyDividendIncome: number;
+  totalReturn: number;
+  totalReturnPercentage: number;
+  dividendStocks: DividendStock[];
+  monthlyDividendData: {
+    month: string;
+    dividendIncome: number;
+    cumulativeIncome: number;
+  }[];
 }
 
 const DividendTracker: React.FC = () => {
   const [stocks, setStocks] = useState<DividendStock[]>([
     {
       id: '1',
-      name: 'HDFC Bank',
+      symbol: 'RELIANCE',
+      companyName: 'Reliance Industries Ltd',
       shares: 100,
-      dividendPerShare: 19.5,
-      frequency: 'quarterly',
-      lastDividendDate: '2024-12-15',
-      nextDividendDate: '2025-03-15',
-      color: '#3B82F6'
+      avgPrice: 2500,
+      currentPrice: 2800,
+      dividendPerShare: 10,
+      dividendYield: 0.36,
+      dividendFrequency: 'quarterly',
+      lastDividendDate: '2024-12-01',
+      nextDividendDate: '2025-03-01'
     },
     {
       id: '2',
-      name: 'ITC Limited',
+      symbol: 'HDFCBANK',
+      companyName: 'HDFC Bank Ltd',
       shares: 50,
-      dividendPerShare: 12.5,
-      frequency: 'quarterly',
-      lastDividendDate: '2024-11-20',
-      nextDividendDate: '2025-02-20',
-      color: '#10B981'
-    },
-    {
-      id: '3',
-      name: 'Reliance Industries',
-      shares: 25,
-      dividendPerShare: 9.0,
-      frequency: 'quarterly',
-      lastDividendDate: '2024-12-10',
-      nextDividendDate: '2025-03-10',
-      color: '#F59E0B'
+      avgPrice: 1600,
+      currentPrice: 1700,
+      dividendPerShare: 19,
+      dividendYield: 4.47,
+      dividendFrequency: 'annual',
+      lastDividendDate: '2024-07-15',
+      nextDividendDate: '2025-07-15'
     }
   ]);
+  const [analysis, setAnalysis] = useState<DividendAnalysis | null>(null);
+  const [showAnalysis, setShowAnalysis] = useState(false);
 
-  const [newStock, setNewStock] = useState({
-    name: '',
-    shares: 0,
-    dividendPerShare: 0,
-    frequency: 'quarterly' as const,
-    lastDividendDate: '',
-    nextDividendDate: ''
-  });
-
-  const addStock = () => {
-    if (newStock.name && newStock.shares > 0 && newStock.dividendPerShare > 0) {
-      const stock: DividendStock = {
-        id: Date.now().toString(),
-        name: newStock.name,
-        shares: newStock.shares,
-        dividendPerShare: newStock.dividendPerShare,
-        frequency: newStock.frequency,
-        lastDividendDate: newStock.lastDividendDate,
-        nextDividendDate: newStock.nextDividendDate,
-        color: `hsl(${Math.random() * 360}, 70%, 50%)`
-      };
-      setStocks([...stocks, stock]);
-      setNewStock({
-        name: '',
-        shares: 0,
-        dividendPerShare: 0,
-        frequency: 'quarterly',
-        lastDividendDate: '',
-        nextDividendDate: ''
+  const calculateAnalysis = () => {
+    const totalInvestment = stocks.reduce((sum, stock) => sum + (stock.shares * stock.avgPrice), 0);
+    const currentValue = stocks.reduce((sum, stock) => sum + (stock.shares * stock.currentPrice), 0);
+    
+    // Calculate total dividends
+    const totalDividends = stocks.reduce((sum, stock) => {
+      const annualDividend = stock.dividendPerShare * stock.shares;
+      let multiplier = 1;
+      
+      switch (stock.dividendFrequency) {
+        case 'quarterly':
+          multiplier = 4;
+          break;
+        case 'semi-annual':
+          multiplier = 2;
+          break;
+        case 'annual':
+          multiplier = 1;
+          break;
+      }
+      
+      return sum + (annualDividend * multiplier);
+    }, 0);
+    
+    const dividendYield = (totalDividends / totalInvestment) * 100;
+    const annualDividendIncome = totalDividends;
+    const monthlyDividendIncome = annualDividendIncome / 12;
+    const totalReturn = currentValue + totalDividends - totalInvestment;
+    const totalReturnPercentage = (totalReturn / totalInvestment) * 100;
+    
+    // Generate monthly dividend data
+    const monthlyDividendData = [];
+    let cumulativeIncome = 0;
+    
+    for (let month = 1; month <= 12; month++) {
+      const monthDividend = stocks.reduce((sum, stock) => {
+        const annualDividend = stock.dividendPerShare * stock.shares;
+        let monthlyDividend = 0;
+        
+        switch (stock.dividendFrequency) {
+          case 'quarterly':
+            if (month % 3 === 0) monthlyDividend = annualDividend / 4;
+            break;
+          case 'semi-annual':
+            if (month % 6 === 0) monthlyDividend = annualDividend / 2;
+            break;
+          case 'annual':
+            if (month === 12) monthlyDividend = annualDividend;
+            break;
+        }
+        
+        return sum + monthlyDividend;
+      }, 0);
+      
+      cumulativeIncome += monthDividend;
+      
+      monthlyDividendData.push({
+        month: `Month ${month}`,
+        dividendIncome: monthDividend,
+        cumulativeIncome
       });
     }
+    
+    setAnalysis({
+      totalInvestment,
+      currentValue,
+      totalDividends,
+      dividendYield,
+      annualDividendIncome,
+      monthlyDividendIncome,
+      totalReturn,
+      totalReturnPercentage,
+      dividendStocks: stocks,
+      monthlyDividendData
+    });
+    setShowAnalysis(true);
+  };
+
+  const addStock = () => {
+    const newStock: DividendStock = {
+      id: Date.now().toString(),
+      symbol: '',
+      companyName: '',
+      shares: 0,
+      avgPrice: 0,
+      currentPrice: 0,
+      dividendPerShare: 0,
+      dividendYield: 0,
+      dividendFrequency: 'quarterly',
+      lastDividendDate: new Date().toISOString().split('T')[0],
+      nextDividendDate: new Date().toISOString().split('T')[0]
+    };
+    setStocks([...stocks, newStock]);
+  };
+
+  const updateStock = (id: string, field: keyof DividendStock, value: any) => {
+    setStocks(stocks.map(stock => {
+      if (stock.id === id) {
+        const updatedStock = { ...stock, [field]: value };
+        
+        // Auto-calculate dividend yield
+        if (field === 'dividendPerShare' || field === 'currentPrice') {
+          if (updatedStock.currentPrice > 0) {
+            updatedStock.dividendYield = (updatedStock.dividendPerShare / updatedStock.currentPrice) * 100;
+          }
+        }
+        
+        return updatedStock;
+      }
+      return stock;
+    }));
   };
 
   const removeStock = (id: string) => {
     setStocks(stocks.filter(stock => stock.id !== id));
   };
 
-  const calculateMetrics = () => {
-    const totalShares = stocks.reduce((sum, stock) => sum + stock.shares, 0);
-    const totalDividendIncome = stocks.reduce((sum, stock) => {
-      const annualDividend = stock.dividendPerShare * stock.shares;
-      const frequencyMultiplier = stock.frequency === 'quarterly' ? 4 : stock.frequency === 'semi-annual' ? 2 : 1;
-      return sum + (annualDividend * frequencyMultiplier);
-    }, 0);
-
-    const averageDividendYield = stocks.length > 0 ? 
-      stocks.reduce((sum, stock) => sum + stock.dividendPerShare, 0) / stocks.length : 0;
-
-    const monthlyDividendIncome = totalDividendIncome / 12;
-    const quarterlyDividendIncome = totalDividendIncome / 4;
-
-    const nextDividendDate = stocks.length > 0 ? 
-      stocks.reduce((earliest, stock) => 
-        new Date(stock.nextDividendDate) < new Date(earliest.nextDividendDate) ? stock : earliest
-      ).nextDividendDate : '';
-
-    return {
-      totalShares,
-      totalDividendIncome,
-      averageDividendYield,
-      monthlyDividendIncome,
-      quarterlyDividendIncome,
-      nextDividendDate
-    };
+  const getDividendFrequencyColor = (frequency: string) => {
+    switch (frequency) {
+      case 'quarterly': return 'text-green-600 bg-green-100';
+      case 'semi-annual': return 'text-yellow-600 bg-yellow-100';
+      case 'annual': return 'text-blue-600 bg-blue-100';
+      default: return 'text-gray-600 bg-gray-100';
+    }
   };
 
-  const result = calculateMetrics();
+  const getReturnColor = (returnValue: number) => {
+    return returnValue >= 0 ? 'text-green-600' : 'text-red-600';
+  };
 
   return (
     <>
       <SEOHelmet
-        title="Dividend Tracker - Track Dividend Income & Yields | MoneyCal"
-        description="Track your dividend income, yields, and upcoming dividend payments. Monitor your dividend portfolio with our comprehensive dividend tracker."
-        keywords="dividend tracker, dividend income, dividend yield, dividend calculator, dividend portfolio, dividend payments"
+        title="Dividend Tracker - Track Dividend Income & Returns | MoneyCal"
+        description="Track your dividend income and analyze dividend stock performance. Monitor dividend yields, income streams, and total returns with our comprehensive dividend tracking tool."
+        keywords="dividend tracker, dividend income, dividend yield calculator, dividend stock analysis, passive income tracker"
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
         {/* Hero Section */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-green-600 via-blue-600 to-green-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-16 bg-gradient-to-br from-green-600 via-blue-600 to-purple-600">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center justify-center mb-4">
-                <Link to="/finance-tools" className="text-white hover:text-green-200 transition-colors text-sm md:text-base">
-                  <ArrowLeft className="h-4 w-4 md:h-5 md:w-5 mr-2" />
-                  Back to Finance Tools
-                </Link>
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Dividend Tracker
               </h1>
-              <p className="text-lg md:text-xl text-green-100 mb-6 md:mb-8 max-w-3xl mx-auto px-4">
-                Track your dividend income, yields, and upcoming dividend payments
+              <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
+                Track your dividend income and analyze dividend stock performance. 
+                Monitor dividend yields, income streams, and total returns.
               </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-green-100">
+                <div className="flex items-center">
+                  <Receipt className="w-4 h-4 mr-2" />
+                  Dividend Income
+                </div>
+                <div className="flex items-center">
+                  <BarChart3 className="w-4 h-4 mr-2" />
+                  Yield Analysis
+                </div>
+                <div className="flex items-center">
+                  <Activity className="w-4 h-4 mr-2" />
+                  Performance Tracking
+                </div>
+                <div className="flex items-center">
+                  <Smartphone className="w-4 h-4 mr-2" />
+                  Mobile Friendly
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Calculator Section */}
-        <section className="py-8 md:py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-              {/* Input Form */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100"
-              >
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <Calculator className="h-5 w-5 md:h-6 md:w-6 mr-3 text-green-600" />
-                  Add Dividend Stock
-                </h2>
-                
-                <div className="space-y-4 md:space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Stock Name
-                    </label>
-                    <input
-                      type="text"
-                      value={newStock.name}
-                      onChange={(e) => setNewStock({...newStock, name: e.target.value})}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm md:text-base"
-                      placeholder="e.g., HDFC Bank"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Number of Shares
-                      </label>
-                      <input
-                        type="number"
-                        value={newStock.shares}
-                        onChange={(e) => setNewStock({...newStock, shares: Number(e.target.value)})}
-                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm md:text-base"
-                        placeholder="100"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Dividend per Share (₹)
-                      </label>
-                      <input
-                        type="number"
-                        value={newStock.dividendPerShare}
-                        onChange={(e) => setNewStock({...newStock, dividendPerShare: Number(e.target.value)})}
-                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm md:text-base"
-                        placeholder="19.5"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Dividend Frequency
-                    </label>
-                    <select
-                      value={newStock.frequency}
-                      onChange={(e) => setNewStock({...newStock, frequency: e.target.value as any})}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm md:text-base"
-                    >
-                      <option value="quarterly">Quarterly</option>
-                      <option value="semi-annual">Semi-Annual</option>
-                      <option value="annual">Annual</option>
-                    </select>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Last Dividend Date
-                      </label>
-                      <input
-                        type="date"
-                        value={newStock.lastDividendDate}
-                        onChange={(e) => setNewStock({...newStock, lastDividendDate: e.target.value})}
-                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm md:text-base"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Next Dividend Date
-                      </label>
-                      <input
-                        type="date"
-                        value={newStock.nextDividendDate}
-                        onChange={(e) => setNewStock({...newStock, nextDividendDate: e.target.value})}
-                        className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm md:text-base"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={addStock}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-sm md:text-base"
-                  >
-                    Add Stock
-                  </button>
-                </div>
-              </motion.div>
-
-              {/* Results */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-4 md:space-y-6"
-              >
-                {/* Portfolio Summary */}
-                <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 md:p-8 text-white shadow-xl">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg md:text-xl font-bold">Dividend Portfolio</h3>
-                    <DollarSign className="h-5 w-5 md:h-6 md:w-6" />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <div className="text-2xl md:text-3xl font-bold mb-1">₹{result.totalDividendIncome.toLocaleString()}</div>
-                      <p className="text-green-100 text-sm">Annual Dividend Income</p>
-                    </div>
-                    <div>
-                      <div className="text-2xl md:text-3xl font-bold mb-1">{result.totalShares}</div>
-                      <p className="text-green-100 text-sm">Total Shares</p>
-                    </div>
-                  </div>
-                  <div className="mt-4 p-2 rounded-lg text-sm bg-green-500/20">
-                    Next Dividend: {result.nextDividendDate ? new Date(result.nextDividendDate).toLocaleDateString() : 'No upcoming dividends'}
-                  </div>
-                </div>
-
-                {/* Monthly/Quarterly Breakdown */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                    <div className="flex items-center mb-3">
-                      <Calendar className="h-4 w-4 md:h-5 md:w-5 text-blue-600 mr-2" />
-                      <h4 className="font-semibold text-gray-900 text-sm md:text-base">Monthly Income</h4>
-                    </div>
-                    <div className="text-lg md:text-2xl font-bold text-blue-600 mb-1">
-                      ₹{result.monthlyDividendIncome.toLocaleString()}
-                    </div>
-                    <p className="text-xs md:text-sm text-gray-600">Average monthly dividend</p>
-                  </div>
-
-                  <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                    <div className="flex items-center mb-3">
-                      <Target className="h-4 w-4 md:h-5 md:w-5 text-purple-600 mr-2" />
-                      <h4 className="font-semibold text-gray-900 text-sm md:text-base">Quarterly Income</h4>
-                    </div>
-                    <div className="text-lg md:text-2xl font-bold text-purple-600 mb-1">
-                      ₹{result.quarterlyDividendIncome.toLocaleString()}
-                    </div>
-                    <p className="text-xs md:text-sm text-gray-600">Average quarterly dividend</p>
-                  </div>
-                </div>
-
-                {/* Stock List */}
-                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border border-gray-100">
-                  <h4 className="font-semibold text-gray-900 mb-4 flex items-center text-sm md:text-base">
-                    <BarChart3 className="h-4 w-4 md:h-5 md:w-5 mr-2 text-green-600" />
-                    Dividend Stocks ({stocks.length})
-                  </h4>
-                  <div className="space-y-3">
-                    {stocks.map((stock) => {
-                      const annualDividend = stock.dividendPerShare * stock.shares;
-                      const frequencyMultiplier = stock.frequency === 'quarterly' ? 4 : stock.frequency === 'semi-annual' ? 2 : 1;
-                      const totalAnnualDividend = annualDividend * frequencyMultiplier;
-                      
-                      return (
-                        <div key={stock.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                          <div className="flex items-center">
-                            <div 
-                              className="w-3 h-3 rounded-full mr-3" 
-                              style={{ backgroundColor: stock.color }}
-                            ></div>
-                            <div>
-                              <div className="font-medium text-sm">{stock.name}</div>
-                              <div className="text-xs text-gray-500">{stock.shares} shares • ₹{stock.dividendPerShare}/share</div>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="font-semibold text-sm">₹{totalAnnualDividend.toLocaleString()}</div>
-                            <div className="text-xs text-gray-500">{stock.frequency}</div>
-                            <button
-                              onClick={() => removeStock(stock.id)}
-                              className="text-xs text-red-500 hover:text-red-700 mt-1"
-                            >
-                              Remove
-                            </button>
-                          </div>
-                        </div>
-                      );
-                    })}
-                    {stocks.length === 0 && (
-                      <div className="text-center py-4 text-gray-500 text-sm">
-                        No dividend stocks added yet
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Tools Section */}
-        <section className="py-8 md:py-16 bg-white">
+        {/* Stock Input Section */}
+        <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-12"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Related Finance Tools</h2>
-              <p className="text-base md:text-lg text-gray-600">Explore other tools to enhance your investment planning</p>
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                  <Calculator className="h-6 w-6 mr-3 text-green-600" />
+                  Dividend Stocks
+                </h2>
+                <button
+                  onClick={addStock}
+                  className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                >
+                  Add Stock
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                {stocks.map((stock, index) => (
+                  <div key={stock.id} className="border border-gray-200 rounded-lg p-4">
+                    <div className="grid grid-cols-1 md:grid-cols-8 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Symbol</label>
+                        <input
+                          type="text"
+                          value={stock.symbol}
+                          onChange={(e) => updateStock(stock.id, 'symbol', e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          placeholder="RELIANCE"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                        <input
+                          type="text"
+                          value={stock.companyName}
+                          onChange={(e) => updateStock(stock.id, 'companyName', e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          placeholder="Reliance Industries"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Shares</label>
+                        <input
+                          type="number"
+                          value={stock.shares}
+                          onChange={(e) => updateStock(stock.id, 'shares', parseFloat(e.target.value) || 0)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          placeholder="100"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Avg Price</label>
+                        <input
+                          type="number"
+                          value={stock.avgPrice}
+                          onChange={(e) => updateStock(stock.id, 'avgPrice', parseFloat(e.target.value) || 0)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          placeholder="2500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Current Price</label>
+                        <input
+                          type="number"
+                          value={stock.currentPrice}
+                          onChange={(e) => updateStock(stock.id, 'currentPrice', parseFloat(e.target.value) || 0)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          placeholder="2800"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Dividend/Share</label>
+                        <input
+                          type="number"
+                          value={stock.dividendPerShare}
+                          onChange={(e) => updateStock(stock.id, 'dividendPerShare', parseFloat(e.target.value) || 0)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                          placeholder="10"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Frequency</label>
+                        <select
+                          value={stock.dividendFrequency}
+                          onChange={(e) => updateStock(stock.id, 'dividendFrequency', e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                        >
+                          <option value="quarterly">Quarterly</option>
+                          <option value="semi-annual">Semi-Annual</option>
+                          <option value="annual">Annual</option>
+                        </select>
+                      </div>
+                      <div className="flex items-end">
+                        <button
+                          onClick={() => removeStock(stock.id)}
+                          className="bg-red-600 text-white px-3 py-2 rounded-md hover:bg-red-700 transition-colors"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </div>
+                    
+                    {/* Stock Summary */}
+                    <div className="mt-3 grid grid-cols-3 gap-4 text-sm">
+                      <div className="text-center">
+                        <span className="text-gray-600">Dividend Yield:</span>
+                        <span className="ml-1 font-semibold text-green-600">{stock.dividendYield.toFixed(2)}%</span>
+                      </div>
+                      <div className="text-center">
+                        <span className="text-gray-600">Total Value:</span>
+                        <span className="ml-1 font-semibold">₹{(stock.shares * stock.currentPrice).toLocaleString()}</span>
+                      </div>
+                      <div className="text-center">
+                        <span className="text-gray-600">Annual Dividend:</span>
+                        <span className="ml-1 font-semibold text-green-600">₹{(stock.dividendPerShare * stock.shares).toLocaleString()}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6">
+                <button
+                  onClick={calculateAnalysis}
+                  className="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors font-semibold"
+                >
+                  Analyze Dividend Portfolio
+                </button>
+              </div>
             </motion.div>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              <Link
-                to="/finance-tools/portfolio-diversification-visualizer"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
+        {/* Analysis Results */}
+        {showAnalysis && analysis && (
+          <section className="py-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
               >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center mb-3 md:mb-4">
-                  <PieChart className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Portfolio Diversification Visualizer</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Visualize and analyze your portfolio diversification across asset classes</p>
-              </Link>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <BarChart3 className="h-6 w-6 mr-3 text-green-600" />
+                  Dividend Portfolio Analysis
+                </h2>
 
-              <Link
-                to="/finance-tools/stock-cagr-calculator"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
-              >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-3 md:mb-4">
-                  <Calculator className="h-5 w-5 md:h-6 md:w-6 text-white" />
+                {/* Key Metrics */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-blue-800 mb-2">Total Investment</h3>
+                    <p className="text-2xl font-bold text-blue-900">₹{analysis.totalInvestment.toLocaleString()}</p>
+                  </div>
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-green-800 mb-2">Annual Dividend Income</h3>
+                    <p className="text-2xl font-bold text-green-900">₹{analysis.annualDividendIncome.toLocaleString()}</p>
+                  </div>
+                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-purple-800 mb-2">Dividend Yield</h3>
+                    <p className="text-2xl font-bold text-purple-900">{analysis.dividendYield.toFixed(2)}%</p>
+                  </div>
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-orange-800 mb-2">Total Return</h3>
+                    <p className={`text-2xl font-bold ${getReturnColor(analysis.totalReturn)}`}>
+                      ₹{analysis.totalReturn.toLocaleString()}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">Stock CAGR Calculator</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Calculate Compound Annual Growth Rate for stock investments</p>
-              </Link>
 
-              <Link
-                to="/finance-tools/fd-vs-mutual-fund-return-tool"
-                className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-1 duration-300 block"
-              >
-                <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-3 md:mb-4">
-                  <BarChart3 className="h-5 w-5 md:h-6 md:w-6 text-white" />
+                {/* Monthly Dividend Income */}
+                <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
+                  <h3 className="text-lg font-semibold text-green-800 mb-4">Monthly Dividend Income</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="text-center">
+                      <p className="text-sm text-green-600">Monthly Average</p>
+                      <p className="text-xl font-bold text-green-900">₹{analysis.monthlyDividendIncome.toLocaleString()}</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-green-600">Current Value</p>
+                      <p className="text-xl font-bold text-green-900">₹{analysis.currentValue.toLocaleString()}</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-green-600">Total Dividends</p>
+                      <p className="text-xl font-bold text-green-900">₹{analysis.totalDividends.toLocaleString()}</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-green-600">Return %</p>
+                      <p className={`text-xl font-bold ${getReturnColor(analysis.totalReturnPercentage)}`}>
+                        {analysis.totalReturnPercentage.toFixed(2)}%
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2">FD vs Mutual Fund Return Tool</h3>
-                <p className="text-gray-600 text-xs md:text-sm">Compare Fixed Deposit vs Mutual Fund returns with tax implications</p>
-              </Link>
+
+                {/* Monthly Dividend Chart */}
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Monthly Dividend Income Breakdown</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-gray-200">
+                          <th className="text-left py-3 px-4 font-semibold text-gray-900">Month</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Dividend Income</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Cumulative Income</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {analysis.monthlyDividendData.map((data, index) => (
+                          <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                            <td className="py-3 px-4 font-medium text-gray-900">{data.month}</td>
+                            <td className="py-3 px-4 text-right text-green-600 font-semibold">
+                              ₹{data.dividendIncome.toLocaleString()}
+                            </td>
+                            <td className="py-3 px-4 text-right font-semibold">
+                              ₹{data.cumulativeIncome.toLocaleString()}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Stock Details */}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Individual Stock Analysis</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-gray-200">
+                          <th className="text-left py-3 px-4 font-semibold text-gray-900">Stock</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Shares</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Current Value</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Dividend/Share</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Annual Dividend</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Yield</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-900">Frequency</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {analysis.dividendStocks.map((stock, index) => (
+                          <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
+                            <td className="py-3 px-4">
+                              <div>
+                                <p className="font-medium text-gray-900">{stock.symbol}</p>
+                                <p className="text-xs text-gray-600">{stock.companyName}</p>
+                              </div>
+                            </td>
+                            <td className="py-3 px-4 text-right">{stock.shares}</td>
+                            <td className="py-3 px-4 text-right">₹{(stock.shares * stock.currentPrice).toLocaleString()}</td>
+                            <td className="py-3 px-4 text-right">₹{stock.dividendPerShare}</td>
+                            <td className="py-3 px-4 text-right text-green-600 font-semibold">
+                              ₹{(stock.dividendPerShare * stock.shares).toLocaleString()}
+                            </td>
+                            <td className="py-3 px-4 text-right font-semibold text-green-600">
+                              {stock.dividendYield.toFixed(2)}%
+                            </td>
+                            <td className="py-3 px-4 text-right">
+                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDividendFrequencyColor(stock.dividendFrequency)}`}>
+                                {stock.dividendFrequency}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </motion.div>
             </div>
+          </section>
+        )}
+
+        {/* Information Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Understanding Dividend Investing
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-green-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Receipt className="w-5 h-5 mr-2 text-green-600" />
+                    What are Dividends?
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    Regular payments made by companies to shareholders from profits.
+                  </p>
+                  <div className="space-y-2 text-sm text-green-700">
+                    <p><strong>Source:</strong> Company profits</p>
+                    <p><strong>Frequency:</strong> Quarterly, semi-annual, or annual</p>
+                    <p><strong>Benefit:</strong> Passive income stream</p>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Percent className="w-5 h-5 mr-2 text-blue-600" />
+                    Dividend Yield
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    Annual dividend income as a percentage of current stock price.
+                  </p>
+                  <div className="space-y-2 text-sm text-blue-700">
+                    <p><strong>Formula:</strong> (Annual Dividend / Current Price) × 100</p>
+                    <p><strong>High Yield:</strong> 4%+ (higher risk)</p>
+                    <p><strong>Low Yield:</strong> 1-3% (lower risk)</p>
+                  </div>
+                </div>
+
+                <div className="bg-purple-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Target className="w-5 h-5 mr-2 text-purple-600" />
+                    Dividend Investing Benefits
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    Advantages of focusing on dividend-paying stocks.
+                  </p>
+                  <div className="space-y-2 text-sm text-purple-700">
+                    <p><strong>Passive Income:</strong> Regular cash flow</p>
+                    <p><strong>Compounding:</strong> Reinvest dividends</p>
+                    <p><strong>Stability:</strong> Less volatile than growth stocks</p>
+                  </div>
+                </div>
+
+                <div className="bg-orange-50 p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Shield className="w-5 h-5 mr-2 text-orange-600" />
+                    Risk Considerations
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    Important factors to consider in dividend investing.
+                  </p>
+                  <div className="space-y-2 text-sm text-orange-700">
+                    <p><strong>Dividend Cuts:</strong> Companies can reduce dividends</p>
+                    <p><strong>Market Risk:</strong> Stock prices can fall</p>
+                    <p><strong>Taxation:</strong> Dividends are taxable income</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                  <Info className="h-5 w-5 mr-2" />
+                  Dividend Investing Strategies
+                </h3>
+                <div className="space-y-4 text-green-700">
+                  <p>
+                    <strong>Dividend Growth Investing:</strong> Focus on companies that consistently increase 
+                    their dividend payments over time, providing growing income streams.
+                  </p>
+                  <p>
+                    <strong>High-Yield Investing:</strong> Target stocks with above-average dividend yields 
+                    for maximum current income, though this often comes with higher risk.
+                  </p>
+                  <p>
+                    <strong>Dividend Aristocrats:</strong> Invest in companies that have increased dividends 
+                    for 25+ consecutive years, indicating financial stability and commitment to shareholders.
+                  </p>
+                  <p>
+                    <strong>DRIP (Dividend Reinvestment):</strong> Automatically reinvest dividends to 
+                    purchase additional shares, accelerating wealth building through compounding.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                  <CheckCircle className="h-5 w-5 mr-2" />
+                  Best Practices for Dividend Investing
+                </h3>
+                <div className="space-y-4 text-blue-700">
+                  <p>
+                    <strong>Diversification:</strong> Spread investments across different sectors and 
+                    companies to reduce risk and ensure consistent dividend income.
+                  </p>
+                  <p>
+                    <strong>Quality Over Yield:</strong> Focus on financially strong companies with 
+                    sustainable dividend policies rather than just high yields.
+                  </p>
+                  <p>
+                    <strong>Regular Monitoring:</strong> Track dividend payments, company financials, 
+                    and market conditions to make informed decisions.
+                  </p>
+                  <p>
+                    <strong>Long-term Perspective:</strong> Dividend investing works best as a long-term 
+                    strategy, allowing time for compounding and dividend growth.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
       </div>
