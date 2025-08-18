@@ -222,7 +222,7 @@ const StockCAGRCalculator: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-green-600" />
                   Stock Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -236,7 +236,7 @@ const StockCAGRCalculator: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Final Stock Price (₹)
@@ -249,7 +249,7 @@ const StockCAGRCalculator: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Time Period (Years)
@@ -272,7 +272,7 @@ const StockCAGRCalculator: React.FC = () => {
                       <p><strong>CAGR:</strong> Compound Annual Growth Rate - annualized return.</p>
                     </div>
                   </div>
-
+                  
                   <div className="flex space-x-4">
                     <button
                       onClick={calculateCAGR}
@@ -317,12 +317,12 @@ const StockCAGRCalculator: React.FC = () => {
                         <h3 className="text-sm font-semibold text-blue-800 mb-2">Total Return</h3>
                         <p className="text-2xl font-bold text-blue-900">₹{analysis.totalReturn.toLocaleString()}</p>
                         <p className="text-sm text-blue-700">{analysis.totalReturnPercentage.toFixed(2)}%</p>
-                      </div>
+                    </div>
                       <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-purple-800 mb-2">Annualized Return</h3>
                         <p className="text-2xl font-bold text-purple-900">{analysis.annualizedReturn.toFixed(2)}%</p>
                         <p className="text-sm text-purple-700">Simple average</p>
-                      </div>
+                  </div>
                     </div>
 
                     {/* Risk Metrics */}
@@ -332,12 +332,12 @@ const StockCAGRCalculator: React.FC = () => {
                         <div className="flex justify-between">
                           <span>Volatility:</span>
                           <span className="font-semibold">{analysis.volatility.toFixed(2)}%</span>
-                        </div>
+                    </div>
                         <div className="flex justify-between">
                           <span>Risk-Adjusted Return:</span>
                           <span className="font-semibold">{analysis.riskAdjustedReturn.toFixed(2)}</span>
-                        </div>
-                      </div>
+                  </div>
+                </div>
                     </div>
 
                     {/* Assessment */}
@@ -365,7 +365,7 @@ const StockCAGRCalculator: React.FC = () => {
                   <div className="text-center py-12">
                     <BarChart3 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Enter stock parameters to calculate CAGR</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>
@@ -376,8 +376,8 @@ const StockCAGRCalculator: React.FC = () => {
         {showChart && analysis && (
           <section className="py-8">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
@@ -416,8 +416,8 @@ const StockCAGRCalculator: React.FC = () => {
                   </table>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -460,9 +460,9 @@ const StockCAGRCalculator: React.FC = () => {
                     <p><strong>CAGR:</strong> Accounts for time value of money</p>
                     <p><strong>Simple Return:</strong> Basic percentage change</p>
                     <p><strong>Advantage:</strong> CAGR is more accurate for long-term analysis</p>
-                  </div>
                 </div>
-
+              </div>
+              
                 <div className="bg-purple-50 p-6 rounded-xl">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                     <Target className="w-5 h-5 mr-2 text-purple-600" />
@@ -478,7 +478,7 @@ const StockCAGRCalculator: React.FC = () => {
                     <p><strong>0-5% CAGR:</strong> Minimal growth or decline</p>
                   </div>
                 </div>
-
+                
                 <div className="bg-orange-50 p-6 rounded-xl">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                     <Shield className="w-5 h-5 mr-2 text-orange-600" />
@@ -518,7 +518,7 @@ const StockCAGRCalculator: React.FC = () => {
                     and market conditions for a complete risk assessment.
                   </p>
                 </div>
-              </div>
+                </div>
 
               <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
@@ -543,7 +543,7 @@ const StockCAGRCalculator: React.FC = () => {
                     performance changes and adjust your investment strategy accordingly.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

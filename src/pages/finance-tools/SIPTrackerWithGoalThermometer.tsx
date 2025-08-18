@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
-  BarChart3, 
+  BarChart3,
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -319,8 +319,8 @@ const SIPTrackerWithGoalThermometer: React.FC = () => {
                       <div className="flex items-center space-x-2">
                         {renderThermometer(goal.progress)}
                       </div>
-                    </div>
-
+                  </div>
+                  
                     <div className="space-y-3">
                       <div className="flex justify-between">
                         <span className="text-gray-600">Target:</span>
@@ -338,8 +338,8 @@ const SIPTrackerWithGoalThermometer: React.FC = () => {
                         <span className="text-gray-600">Monthly SIP:</span>
                         <span className="font-semibold">₹{goal.monthlyInvestment.toLocaleString()}</span>
                       </div>
-                    </div>
-
+                  </div>
+                  
                     <div className="mt-4 pt-4 border-t border-gray-200">
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
@@ -349,9 +349,9 @@ const SIPTrackerWithGoalThermometer: React.FC = () => {
                             goal.progress >= 50 ? 'bg-yellow-500' : 'bg-red-500'
                           }`}
                           style={{ width: `${Math.min(goal.progress, 100)}%` }}
-                        />
-                      </div>
-                    </div>
+                    />
+                  </div>
+                </div>
                   </div>
                 </motion.div>
               ))}
@@ -375,7 +375,7 @@ const SIPTrackerWithGoalThermometer: React.FC = () => {
                 >
                   <AlertCircle className="w-6 h-6" />
                 </button>
-              </div>
+                </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
@@ -549,9 +549,9 @@ const SIPTrackerWithGoalThermometer: React.FC = () => {
                 >
                   Cancel
                 </button>
-              </div>
-            </motion.div>
-          </div>
+                </div>
+              </motion.div>
+            </div>
         )}
 
         {/* Information Section */}

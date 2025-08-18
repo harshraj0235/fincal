@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
-  BarChart3, 
+  BarChart3,
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -312,17 +312,17 @@ const MutualFundStarRatingsExplorer: React.FC = () => {
         {/* Filters Section */}
         <section className="py-8">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-2xl p-6 shadow-xl border border-gray-200"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <Filter className="h-6 w-6 mr-3 text-yellow-600" />
                 Fund Filters & Search
-              </h2>
-
+                </h2>
+                
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
@@ -337,7 +337,7 @@ const MutualFundStarRatingsExplorer: React.FC = () => {
                   </select>
                 </div>
 
-                <div>
+                  <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Star Rating</label>
                   <select
                     value={selectedRating}
@@ -348,9 +348,9 @@ const MutualFundStarRatingsExplorer: React.FC = () => {
                       <option key={rating} value={rating}>{rating}</option>
                     ))}
                   </select>
-                </div>
-
-                <div>
+                  </div>
+                  
+                  <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Risk Level</label>
                   <select
                     value={selectedRisk}
@@ -361,9 +361,9 @@ const MutualFundStarRatingsExplorer: React.FC = () => {
                       <option key={risk} value={risk}>{risk}</option>
                     ))}
                   </select>
-                </div>
-
-                <div>
+                  </div>
+                  
+                  <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Search Funds</label>
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -498,14 +498,14 @@ const MutualFundStarRatingsExplorer: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </motion.div>
+              </motion.div>
           </div>
         </section>
 
         {/* Fund Details Modal */}
         {selectedFund && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="bg-white rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
@@ -603,9 +603,9 @@ const MutualFundStarRatingsExplorer: React.FC = () => {
                     : 'This fund has lower ratings. Consider exploring other options with better performance.'
                   }
                 </p>
-              </div>
-            </motion.div>
-          </div>
+                </div>
+              </motion.div>
+            </div>
         )}
 
         {/* Information Section */}

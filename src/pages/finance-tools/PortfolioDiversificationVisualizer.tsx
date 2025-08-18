@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
-  BarChart3, 
+  BarChart3,
   Calculator, 
   DollarSign, 
-  PieChart, 
+  PieChart,
   LineChart, 
   Activity,
   Info,
@@ -46,7 +46,7 @@ interface PortfolioAnalysis {
     percentage: number;
   }[];
   riskBreakdown: {
-    risk: string;
+  risk: string;
     amount: number;
     percentage: number;
   }[];
@@ -106,7 +106,7 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
     const riskBreakdown = riskLevels.map(risk => {
       const riskAssets = updatedAssets.filter(a => a.risk === risk);
       const amount = riskAssets.reduce((sum, asset) => sum + asset.amount, 0);
-      return {
+    return {
         risk: risk.charAt(0).toUpperCase() + risk.slice(1),
         amount,
         percentage: (amount / totalValue) * 100
@@ -237,7 +237,7 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
         {/* Portfolio Input Section */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -270,16 +270,16 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                           placeholder="e.g., Equity Mutual Funds"
                         />
                       </div>
-                      <div>
+                  <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Amount (₹)</label>
-                        <input
-                          type="number"
+                    <input
+                      type="number"
                           value={asset.amount}
                           onChange={(e) => updateAsset(asset.id, 'amount', parseFloat(e.target.value) || 0)}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           placeholder="500000"
-                        />
-                      </div>
+                    />
+                  </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
                         <select
@@ -303,7 +303,7 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                             <option key={risk} value={risk}>{risk.charAt(0).toUpperCase() + risk.slice(1)}</option>
                           ))}
                         </select>
-                      </div>
+                        </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Expected Return (%)</label>
                         <input
@@ -323,9 +323,9 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                         </button>
                       </div>
                     </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
               <div className="mt-6">
                 <button
@@ -334,8 +334,8 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                 >
                   Analyze Portfolio
                 </button>
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
           </div>
         </section>
 
@@ -365,13 +365,13 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                     <p className={`text-2xl font-bold ${getDiversificationColor(analysis.diversificationScore)}`}>
                       {analysis.diversificationScore.toFixed(1)}%
                     </p>
-                  </div>
+                    </div>
                   <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                     <h3 className="text-sm font-semibold text-red-800 mb-2">Risk Score</h3>
                     <p className={`text-2xl font-bold ${getRiskScoreColor(analysis.riskScore)}`}>
                       {analysis.riskScore.toFixed(1)}%
                     </p>
-                  </div>
+                    </div>
                   <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
                     <h3 className="text-sm font-semibold text-purple-800 mb-2">Expected Return</h3>
                     <p className="text-2xl font-bold text-purple-900">{analysis.expectedReturn.toFixed(2)}%</p>
@@ -382,18 +382,18 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Asset Allocation by Category</h3>
-                    <div className="space-y-3">
+                  <div className="space-y-3">
                       {analysis.assetAllocation.map((item, index) => (
                         <div key={index} className="flex justify-between items-center">
                           <span className="text-gray-700">{item.category}</span>
                           <div className="flex items-center space-x-4">
                             <span className="text-sm text-gray-600">₹{item.amount.toLocaleString()}</span>
                             <span className="font-semibold text-gray-900">{item.percentage.toFixed(1)}%</span>
-                          </div>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
 
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Risk Distribution</h3>
@@ -402,12 +402,12 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                         <div key={index} className="flex justify-between items-center">
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${getRiskColor(item.risk.toLowerCase())}`}>
                             {item.risk}
-                          </span>
+                      </span>
                           <div className="flex items-center space-x-4">
                             <span className="text-sm text-gray-600">₹{item.amount.toLocaleString()}</span>
                             <span className="font-semibold text-gray-900">{item.percentage.toFixed(1)}%</span>
-                          </div>
-                        </div>
+                    </div>
+                    </div>
                       ))}
                     </div>
                   </div>
@@ -426,8 +426,8 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -503,7 +503,7 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                     <p><strong>Goal-based:</strong> Align with financial goals</p>
                   </div>
                 </div>
-              </div>
+                </div>
 
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
@@ -528,7 +528,7 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                     growth across different sectors and asset classes.
                   </p>
                 </div>
-              </div>
+                </div>
 
               <div className="mt-8 bg-green-50 border border-green-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
@@ -552,7 +552,7 @@ const PortfolioDiversificationVisualizer: React.FC = () => {
                     <strong>Regular Rebalancing:</strong> Periodically review and rebalance your portfolio 
                     to maintain your target asset allocation and risk profile.
                   </p>
-                </div>
+            </div>
               </div>
             </motion.div>
           </div>

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
-  BarChart3, 
+  BarChart3,
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -210,7 +210,7 @@ const RealEstateVsStockROITool: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-blue-600" />
                   Investment Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -224,7 +224,7 @@ const RealEstateVsStockROITool: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Investment Time Period (Years)
@@ -237,7 +237,7 @@ const RealEstateVsStockROITool: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -293,16 +293,16 @@ const RealEstateVsStockROITool: React.FC = () => {
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           />
                         </div>
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                             Annual Property Tax (₹)
-                          </label>
-                          <input
-                            type="number"
+                    </label>
+                    <input
+                      type="number"
                             value={propertyTaxes}
                             onChange={(e) => setPropertyTaxes(e.target.value)}
                             placeholder="15000"
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           />
                         </div>
                       </div>
@@ -375,7 +375,7 @@ const RealEstateVsStockROITool: React.FC = () => {
                       <div className="flex items-center">
                         <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
                         <p className="text-blue-800 font-medium">{getRecommendation()}</p>
-                      </div>
+                </div>
                     </div>
 
                     {/* Real Estate Results */}
@@ -482,7 +482,7 @@ const RealEstateVsStockROITool: React.FC = () => {
                   <div className="text-center py-12">
                     <Calculator className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Enter investment parameters to see ROI comparison</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>

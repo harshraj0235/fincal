@@ -4,7 +4,7 @@ import {
   TrendingUp, 
   BarChart3, 
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -121,7 +121,7 @@ const XIRRCalculator: React.FC = () => {
     const totalReturnPercentage = (totalReturn / totalInvestment) * 100;
     
     // Calculate investment period in years
-    const startDate = new Date(sortedFlows[0].date);
+      const startDate = new Date(sortedFlows[0].date);
     const endDate = new Date(sortedFlows[sortedFlows.length - 1].date);
     const investmentPeriod = (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 365);
     
@@ -286,7 +286,7 @@ const XIRRCalculator: React.FC = () => {
         {/* Cash Flow Input Section */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -303,7 +303,7 @@ const XIRRCalculator: React.FC = () => {
                 >
                   Add Cash Flow
                 </button>
-              </div>
+                  </div>
 
               <div className="space-y-4">
                 {cashFlows.map((flow, index) => (
@@ -318,17 +318,17 @@ const XIRRCalculator: React.FC = () => {
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                         />
                       </div>
-                      <div>
+                    <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Amount (₹)</label>
-                        <input
-                          type="number"
+                      <input
+                        type="number"
                           value={flow.amount}
                           onChange={(e) => updateCashFlow(flow.id, 'amount', parseFloat(e.target.value) || 0)}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                           placeholder="100000"
                         />
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Type</label>
                         <select
                           value={flow.type}
@@ -342,14 +342,14 @@ const XIRRCalculator: React.FC = () => {
                       </div>
                       <div className="md:col-span-2">
                         <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
-                        <input
+                      <input
                           type="text"
                           value={flow.description}
                           onChange={(e) => updateCashFlow(flow.id, 'description', e.target.value)}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                           placeholder="e.g., Initial Investment"
-                        />
-                      </div>
+                      />
+                    </div>
                       <div className="flex items-end">
                         <button
                           onClick={() => removeCashFlow(flow.id)}
@@ -371,17 +371,17 @@ const XIRRCalculator: React.FC = () => {
                     </div>
                   </div>
                 ))}
-              </div>
+                  </div>
 
               <div className="mt-6">
-                <button
+                  <button
                   onClick={calculateXIRR}
                   className="w-full bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors font-semibold"
-                >
+                  >
                   Calculate XIRR
-                </button>
-              </div>
-            </motion.div>
+                  </button>
+                </div>
+              </motion.div>
           </div>
         </section>
 
@@ -412,11 +412,11 @@ const XIRRCalculator: React.FC = () => {
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                     <h3 className="text-sm font-semibold text-blue-800 mb-2">Total Investment</h3>
                     <p className="text-2xl font-bold text-blue-900">₹{analysis.totalInvestment.toLocaleString()}</p>
-                  </div>
+                    </div>
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                     <h3 className="text-sm font-semibold text-green-800 mb-2">Total Withdrawals</h3>
                     <p className="text-2xl font-bold text-green-900">₹{analysis.totalWithdrawals.toLocaleString()}</p>
-                  </div>
+                    </div>
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                     <h3 className="text-sm font-semibold text-yellow-800 mb-2">Total Dividends</h3>
                     <p className="text-2xl font-bold text-yellow-900">₹{analysis.totalDividends.toLocaleString()}</p>
@@ -460,7 +460,7 @@ const XIRRCalculator: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Cash Flow Breakdown</h3>
-                    <div className="space-y-3">
+                  <div className="space-y-3">
                       {analysis.cashFlowBreakdown.map((item, index) => (
                         <div key={index} className="flex justify-between items-center">
                           <span className="text-gray-700">{item.type}</span>
@@ -470,16 +470,16 @@ const XIRRCalculator: React.FC = () => {
                           </div>
                         </div>
                       ))}
-                    </div>
-                  </div>
+                          </div>
+                        </div>
 
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">XIRR Assessment</h3>
                     <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                       <p className="text-yellow-700">{getXIRRAssessment()}</p>
-                    </div>
-                  </div>
-                </div>
+                          </div>
+                        </div>
+                      </div>
 
                 {/* Monthly Cash Flow Chart */}
                 <div>
@@ -512,8 +512,8 @@ const XIRRCalculator: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -589,7 +589,7 @@ const XIRRCalculator: React.FC = () => {
                     <p><strong>0-5% XIRR:</strong> Poor performance</p>
                   </div>
                 </div>
-              </div>
+                </div>
 
               <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
@@ -614,7 +614,7 @@ const XIRRCalculator: React.FC = () => {
                     continuing, modifying, or exiting investment strategies.
                   </p>
                 </div>
-              </div>
+                </div>
 
               <div className="mt-8 bg-green-50 border border-green-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
@@ -638,7 +638,7 @@ const XIRRCalculator: React.FC = () => {
                     <strong>Compare with Benchmarks:</strong> Compare your XIRR with market indices 
                     and similar investment strategies to assess relative performance.
                   </p>
-                </div>
+            </div>
               </div>
             </motion.div>
           </div>

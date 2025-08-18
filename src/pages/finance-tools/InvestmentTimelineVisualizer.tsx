@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
-  BarChart3, 
+  BarChart3,
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -221,7 +221,7 @@ const InvestmentTimelineVisualizer: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-purple-600" />
                   Investment Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -236,12 +236,12 @@ const InvestmentTimelineVisualizer: React.FC = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Retirement Age
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         value={retirementAge}
                         onChange={(e) => setRetirementAge(e.target.value)}
                         placeholder="60"
@@ -249,26 +249,26 @@ const InvestmentTimelineVisualizer: React.FC = () => {
                       />
                     </div>
                   </div>
-
+                  
                   <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Monthly Investment (₹)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         value={monthlyInvestment}
                         onChange={(e) => setMonthlyInvestment(e.target.value)}
                         placeholder="10000"
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Expected Return (%)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         value={expectedReturn}
                         onChange={(e) => setExpectedReturn(e.target.value)}
                         placeholder="12"
@@ -352,8 +352,8 @@ const InvestmentTimelineVisualizer: React.FC = () => {
                         <div>
                           <p className="text-purple-700">Expected Return:</p>
                           <p className="font-bold text-purple-900">{selectedGoal.expectedReturn}%</p>
-                        </div>
-                      </div>
+                  </div>
+                </div>
                     </div>
 
                     {/* Timeline */}
@@ -419,7 +419,7 @@ const InvestmentTimelineVisualizer: React.FC = () => {
                   <div className="text-center py-12">
                     <Calendar className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Select a financial goal to visualize your investment timeline</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
-  BarChart3, 
+  BarChart3,
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -187,7 +187,7 @@ const GoldSIPVsGoldETFReturnVisualizer: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-yellow-600" />
                   Investment Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -214,7 +214,7 @@ const GoldSIPVsGoldETFReturnVisualizer: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Current Gold Price (₹ per 10g)
@@ -227,7 +227,7 @@ const GoldSIPVsGoldETFReturnVisualizer: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Expected Annual Gold Return (%)
@@ -304,7 +304,7 @@ const GoldSIPVsGoldETFReturnVisualizer: React.FC = () => {
                       <div className="flex items-center">
                         <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
                         <p className="text-blue-800 font-medium">{getRecommendation()}</p>
-                      </div>
+                </div>
                     </div>
 
                     {/* Gold SIP Results */}
@@ -411,7 +411,7 @@ const GoldSIPVsGoldETFReturnVisualizer: React.FC = () => {
                   <div className="text-center py-12">
                     <Calculator className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Enter investment parameters to see comparison results</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>

@@ -243,7 +243,7 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-orange-600" />
                   Investment Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -257,53 +257,53 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         FD Rate (%)
-                      </label>
-                      <input
-                        type="number"
-                        value={fdRate}
+                    </label>
+                    <input
+                      type="number"
+                      value={fdRate}
                         onChange={(e) => setFdRate(e.target.value)}
-                        placeholder="7.5"
+                      placeholder="7.5"
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         MF Return (%)
-                      </label>
-                      <input
-                        type="number"
-                        value={mutualFundReturn}
+                    </label>
+                    <input
+                      type="number"
+                      value={mutualFundReturn}
                         onChange={(e) => setMutualFundReturn(e.target.value)}
-                        placeholder="12"
+                      placeholder="12"
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                      />
+                    />
                     </div>
                   </div>
-
+                  
                   <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Time Period (Years)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         value={timePeriod}
                         onChange={(e) => setTimePeriod(e.target.value)}
-                        placeholder="5"
+                      placeholder="5"
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Tax Slab (%)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         value={taxSlab}
                         onChange={(e) => setTaxSlab(e.target.value)}
                         placeholder="30"
@@ -359,13 +359,13 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                         <p className="text-2xl font-bold text-blue-900">₹{comparison.fd.finalValue.toLocaleString()}</p>
                         <p className="text-sm text-blue-700">Post-tax: ₹{comparison.fd.postTaxReturns.toLocaleString()}</p>
                         <p className="text-sm text-blue-700">CAGR: {comparison.fd.cagr.toFixed(2)}%</p>
-                      </div>
+                  </div>
                       <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-green-800 mb-2">Mutual Fund</h3>
                         <p className="text-2xl font-bold text-green-900">₹{comparison.mutualFund.finalValue.toLocaleString()}</p>
                         <p className="text-sm text-green-700">Post-tax: ₹{comparison.mutualFund.postTaxReturns.toLocaleString()}</p>
                         <p className="text-sm text-green-700">CAGR: {comparison.mutualFund.cagr.toFixed(2)}%</p>
-                      </div>
+                </div>
                     </div>
 
                     {/* Tax Analysis */}
@@ -379,12 +379,12 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                         <div className="flex justify-between">
                           <span>MF Tax Paid:</span>
                           <span className="font-semibold">₹{comparison.mutualFund.taxDeduction.toLocaleString()}</span>
-                        </div>
+                    </div>
                         <div className="flex justify-between">
                           <span>Tax Difference:</span>
                           <span className="font-semibold">₹{(comparison.fd.taxDeduction - comparison.mutualFund.taxDeduction).toLocaleString()}</span>
-                        </div>
-                      </div>
+                  </div>
+                    </div>
                     </div>
 
                     {/* Return Comparison */}
@@ -394,16 +394,16 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                         <div className="flex justify-between">
                           <span>FD Post-tax Return:</span>
                           <span className="font-semibold">{((comparison.fd.postTaxReturns / comparison.fd.totalInvestment) * 100).toFixed(2)}%</span>
-                        </div>
+                  </div>
                         <div className="flex justify-between">
                           <span>MF Post-tax Return:</span>
                           <span className="font-semibold">{((comparison.mutualFund.postTaxReturns / comparison.mutualFund.totalInvestment) * 100).toFixed(2)}%</span>
-                        </div>
-                        <div className="flex justify-between">
+                </div>
+                    <div className="flex justify-between">
                           <span>Return Difference:</span>
                           <span className={`font-semibold ${comparison.mutualFund.postTaxReturns > comparison.fd.postTaxReturns ? 'text-green-600' : 'text-red-600'}`}>
                             {(((comparison.mutualFund.postTaxReturns - comparison.fd.postTaxReturns) / comparison.fd.totalInvestment) * 100).toFixed(2)}%
-                          </span>
+                      </span>
                         </div>
                       </div>
                     </div>
@@ -427,7 +427,7 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                   <div className="text-center py-12">
                     <BarChart3 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Enter parameters to compare returns</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>
@@ -438,8 +438,8 @@ const FDVsMutualFundReturnTool: React.FC = () => {
         {showChart && comparison && (
           <section className="py-8">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
@@ -478,8 +478,8 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                   </table>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -510,7 +510,7 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                     <p><strong>Best for:</strong> Capital preservation, short-term goals</p>
                   </div>
                 </div>
-
+                
                 <div className="bg-green-50 p-6 rounded-xl">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                     <TrendingUp className="w-5 h-5 mr-2 text-green-600" />
@@ -540,8 +540,8 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                     <p><strong>MF Tax:</strong> LTCG at 10% after 1 year, STCG at 15%</p>
                     <p><strong>Tax Efficiency:</strong> Mutual funds generally more tax-efficient</p>
                     <p><strong>Planning:</strong> Consider tax implications in investment decisions</p>
-                  </div>
-                </div>
+              </div>
+            </div>
 
                 <div className="bg-purple-50 p-6 rounded-xl">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
@@ -556,7 +556,7 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                     <p><strong>Long-term:</strong> Mutual funds for wealth creation</p>
                     <p><strong>Balanced:</strong> Mix of both for diversification</p>
                     <p><strong>Goal-based:</strong> Align investments with specific goals</p>
-                  </div>
+          </div>
                 </div>
               </div>
 
@@ -608,7 +608,7 @@ const FDVsMutualFundReturnTool: React.FC = () => {
                     based on your overall financial plan.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

@@ -4,8 +4,8 @@ import {
   TrendingUp, 
   BarChart3, 
   Calculator, 
-  DollarSign, 
-  PieChart, 
+  DollarSign,
+  PieChart,
   LineChart, 
   Activity,
   Info,
@@ -278,7 +278,7 @@ const MutualFundExpenseRatioEstimator: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-blue-600" />
                   Fund Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -391,12 +391,12 @@ const MutualFundExpenseRatioEstimator: React.FC = () => {
                     >
                       Calculate Impact
                     </button>
-                    <button
+                  <button
                       onClick={resetForm}
                       className="flex-1 bg-gray-500 text-white py-3 px-6 rounded-lg hover:bg-gray-600 transition-colors font-semibold"
-                    >
+                  >
                       Reset
-                    </button>
+                  </button>
                   </div>
                 </div>
               </motion.div>
@@ -420,18 +420,18 @@ const MutualFundExpenseRatioEstimator: React.FC = () => {
                       <h3 className="text-lg font-semibold mb-2">Total Expense Ratio</h3>
                       <p className="text-4xl font-bold mb-2">{analysis.totalExpenseRatio.toFixed(2)}%</p>
                       <p className="text-blue-100">Annual cost of fund ownership</p>
-                    </div>
+                </div>
 
                     {/* Key Metrics */}
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-green-800 mb-2">Gross Return</h3>
                         <p className="text-2xl font-bold text-green-900">₹{analysis.grossReturn.toLocaleString()}</p>
-                      </div>
+                    </div>
                       <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-red-800 mb-2">Net Return</h3>
                         <p className="text-2xl font-bold text-red-900">₹{analysis.netReturn.toLocaleString()}</p>
-                      </div>
+                    </div>
                     </div>
 
                     {/* Expense Impact */}
@@ -441,11 +441,11 @@ const MutualFundExpenseRatioEstimator: React.FC = () => {
                         <div className="flex justify-between">
                           <span>Total Expenses:</span>
                           <span className="font-semibold">₹{analysis.totalExpense.toLocaleString()}</span>
-                        </div>
+                                </div>
                         <div className="flex justify-between">
                           <span>Annual Expenses:</span>
                           <span className="font-semibold">₹{analysis.annualExpense.toLocaleString()}</span>
-                        </div>
+                              </div>
                         <div className="flex justify-between">
                           <span>Impact on Returns:</span>
                           <span className="font-semibold">{analysis.expenseImpactPercentage.toFixed(2)}%</span>
@@ -472,7 +472,7 @@ const MutualFundExpenseRatioEstimator: React.FC = () => {
                   <div className="text-center py-12">
                     <BarChart3 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Enter fund parameters to calculate expense impact</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>
@@ -532,7 +532,7 @@ const MutualFundExpenseRatioEstimator: React.FC = () => {
         {/* Year-by-Year Analysis */}
         {showAnalysis && analysis && (
           <section className="py-8">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -700,7 +700,7 @@ const MutualFundExpenseRatioEstimator: React.FC = () => {
                     alongside other factors like performance, risk, and investment strategy.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

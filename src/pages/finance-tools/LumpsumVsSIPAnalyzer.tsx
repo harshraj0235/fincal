@@ -211,7 +211,7 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-purple-600" />
                   Investment Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -225,7 +225,7 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Monthly SIP Amount (₹)
@@ -238,7 +238,7 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -252,20 +252,20 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Expected Return (%)
-                      </label>
-                      <input
-                        type="number"
-                        value={expectedReturn}
+                    </label>
+                    <input
+                      type="number"
+                      value={expectedReturn}
                         onChange={(e) => setExpectedReturn(e.target.value)}
-                        placeholder="12"
+                      placeholder="12"
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      />
+                    />
                     </div>
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Market Volatility (%)
@@ -326,32 +326,32 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                         <p className="text-2xl font-bold text-blue-900">₹{comparison.lumpsum.finalValue.toLocaleString()}</p>
                         <p className="text-sm text-blue-700">Returns: ₹{comparison.lumpsum.totalReturns.toLocaleString()}</p>
                         <p className="text-sm text-blue-700">CAGR: {comparison.lumpsum.cagr.toFixed(2)}%</p>
-                      </div>
+                    </div>
                       <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-green-800 mb-2">SIP Investment</h3>
                         <p className="text-2xl font-bold text-green-900">₹{comparison.sip.finalValue.toLocaleString()}</p>
                         <p className="text-sm text-green-700">Returns: ₹{comparison.sip.totalReturns.toLocaleString()}</p>
                         <p className="text-sm text-green-700">CAGR: {comparison.sip.cagr.toFixed(2)}%</p>
-                      </div>
-                    </div>
+                  </div>
+                </div>
 
                     {/* Investment Comparison */}
                     <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">Investment Comparison</h3>
                       <div className="space-y-3 text-sm">
-                        <div className="flex justify-between">
+                    <div className="flex justify-between">
                           <span className="text-gray-600">Total Investment (Lumpsum):</span>
                           <span className="font-semibold">₹{comparison.lumpsum.totalInvestment.toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between">
+                    </div>
+                    <div className="flex justify-between">
                           <span className="text-gray-600">Total Investment (SIP):</span>
                           <span className="font-semibold">₹{comparison.sip.totalInvestment.toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between">
+                    </div>
+                    <div className="flex justify-between">
                           <span className="text-gray-600">Return Difference:</span>
                           <span className={`font-semibold ${comparison.lumpsum.totalReturns > comparison.sip.totalReturns ? 'text-blue-600' : 'text-green-600'}`}>
                             ₹{Math.abs(comparison.lumpsum.totalReturns - comparison.sip.totalReturns).toLocaleString()}
-                          </span>
+                      </span>
                         </div>
                       </div>
                     </div>
@@ -380,7 +380,7 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                   <div className="text-center py-12">
                     <BarChart3 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Enter investment parameters to compare strategies</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>
@@ -486,7 +486,7 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                     <p><strong>Investment Horizon:</strong> Longer periods favor lumpsum</p>
                     <p><strong>Risk Tolerance:</strong> SIP is less risky for beginners</p>
                     <p><strong>Cash Flow:</strong> SIP requires regular income</p>
-                  </div>
+              </div>
                 </div>
 
                 <div className="bg-orange-50 p-6 rounded-xl">
@@ -522,7 +522,7 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                     to get the benefits of both strategies.
                   </p>
                 </div>
-              </div>
+                </div>
 
               <div className="mt-8 bg-green-50 border border-green-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
@@ -543,7 +543,7 @@ const LumpsumVsSIPAnalyzer: React.FC = () => {
                     <strong>Focus on Goals:</strong> Align your investment strategy with your financial goals and timeline.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

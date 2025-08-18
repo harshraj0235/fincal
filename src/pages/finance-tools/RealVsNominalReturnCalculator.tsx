@@ -193,7 +193,7 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-indigo-600" />
                   Return Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -220,7 +220,7 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Inflation Rate (%)
@@ -233,7 +233,7 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Time Period (Years)
@@ -293,12 +293,12 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                         <h3 className="text-sm font-semibold text-blue-800 mb-2">Nominal Return</h3>
                         <p className="text-2xl font-bold text-blue-900">{analysis.nominalReturn.toFixed(2)}%</p>
                         <p className="text-sm text-blue-700">Stated return</p>
-                      </div>
+                  </div>
                       <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-green-800 mb-2">Real Return</h3>
                         <p className="text-2xl font-bold text-green-900">{analysis.realReturn.toFixed(2)}%</p>
                         <p className="text-sm text-green-700">Inflation adjusted</p>
-                      </div>
+                </div>
                     </div>
 
                     {/* Inflation Impact */}
@@ -312,12 +312,12 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                         <div className="flex justify-between">
                           <span>Purchasing Power:</span>
                           <span className="font-semibold">{analysis.purchasingPower.toFixed(1)}%</span>
-                        </div>
+                    </div>
                         <div className="flex justify-between">
                           <span>Power Loss:</span>
                           <span className="font-semibold">{analysis.purchasingPowerLoss.toFixed(1)}%</span>
-                        </div>
-                      </div>
+                  </div>
+                    </div>
                     </div>
 
                     {/* Final Values */}
@@ -327,12 +327,12 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                         <div className="flex justify-between">
                           <span>Nominal Value:</span>
                           <span className="font-semibold">₹{(parseFloat(initialInvestment) * Math.pow(1 + analysis.nominalReturn/100, parseInt(timePeriod))).toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between">
+                </div>
+                    <div className="flex justify-between">
                           <span>Real Value:</span>
                           <span className="font-semibold">₹{analysis.inflationAdjustedValue.toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between">
+                    </div>
+                    <div className="flex justify-between">
                           <span>Value Difference:</span>
                           <span className="font-semibold">₹{((parseFloat(initialInvestment) * Math.pow(1 + analysis.nominalReturn/100, parseInt(timePeriod))) - analysis.inflationAdjustedValue).toLocaleString()}</span>
                         </div>
@@ -353,7 +353,7 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                   <div className="text-center py-12">
                     <BarChart3 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Enter parameters to calculate real returns</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>
@@ -364,8 +364,8 @@ const RealVsNominalReturnCalculator: React.FC = () => {
         {showChart && analysis && (
           <section className="py-8">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200"
@@ -402,8 +402,8 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                   </table>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -446,9 +446,9 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                     <p><strong>Formula:</strong> (1 + Nominal) / (1 + Inflation) - 1</p>
                     <p><strong>Benefit:</strong> Shows true wealth creation</p>
                     <p><strong>Use:</strong> For long-term planning</p>
-                  </div>
                 </div>
-
+              </div>
+              
                 <div className="bg-red-50 p-6 rounded-xl">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                     <TrendingDown className="w-5 h-5 mr-2 text-red-600" />
@@ -463,7 +463,7 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                     <p><strong>Protection:</strong> Invest in inflation-beating assets</p>
                   </div>
                 </div>
-
+                
                 <div className="bg-purple-50 p-6 rounded-xl">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                     <Target className="w-5 h-5 mr-2 text-purple-600" />
@@ -503,7 +503,7 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                     purchasing power over time.
                   </p>
                 </div>
-              </div>
+                </div>
 
               <div className="mt-8 bg-green-50 border border-green-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
@@ -525,7 +525,7 @@ const RealVsNominalReturnCalculator: React.FC = () => {
                     <strong>Inflation-Protected Securities:</strong> Government bonds that adjust for inflation.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

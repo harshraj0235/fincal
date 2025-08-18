@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
-  BarChart3, 
+  BarChart3,
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -232,7 +232,7 @@ const SIPReturnDeviationChart: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-blue-600" />
                   SIP Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -246,7 +246,7 @@ const SIPReturnDeviationChart: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Investment Time Period (Months)
@@ -259,7 +259,7 @@ const SIPReturnDeviationChart: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -273,16 +273,16 @@ const SIPReturnDeviationChart: React.FC = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Market Volatility (%)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         value={volatility}
                         onChange={(e) => setVolatility(e.target.value)}
                         placeholder="15"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -342,13 +342,13 @@ const SIPReturnDeviationChart: React.FC = () => {
                         <p className={`text-2xl font-bold ${getReturnColor(analysis.totalReturns)}`}>
                           ₹{analysis.totalReturns.toLocaleString()}
                         </p>
-                      </div>
+                  </div>
                       <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-orange-800 mb-2">Return %</h3>
                         <p className={`text-2xl font-bold ${getReturnColor(analysis.returnPercentage)}`}>
                           {analysis.returnPercentage.toFixed(2)}%
                         </p>
-                      </div>
+                </div>
                     </div>
 
                     {/* Performance Metrics */}

@@ -4,7 +4,7 @@ import {
   TrendingUp, 
   BarChart3, 
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -134,7 +134,7 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
         sensexReturn
       });
     }
-
+    
     return {
       nifty: niftyData,
       sensex: sensexData,
@@ -245,7 +245,7 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
         {/* Control Section */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -256,13 +256,13 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-green-600" />
                   Analysis Parameters
                 </h2>
-              </div>
-
+                  </div>
+                  
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
                     Time Period (Years)
-                  </label>
+                      </label>
                   <select
                     value={timePeriod}
                     onChange={(e) => setTimePeriod(e.target.value)}
@@ -274,8 +274,8 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                     <option value="5">5 Years</option>
                     <option value="10">10 Years</option>
                   </select>
-                </div>
-
+                  </div>
+                  
                 <div className="flex items-end">
                   <button
                     onClick={calculateComparison}
@@ -283,7 +283,7 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                   >
                     Compare Performance
                   </button>
-                </div>
+                  </div>
 
                 <div className="flex items-end">
                   <button
@@ -293,8 +293,8 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                     Reset
                   </button>
                 </div>
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
           </div>
         </section>
 
@@ -323,8 +323,8 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                       <p className="text-sm text-gray-600">Current Value</p>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
                         <p className="text-sm text-gray-600">Year High</p>
                         <p className="font-semibold text-gray-900">{comparison.nifty.yearHigh.toLocaleString()}</p>
                       </div>
@@ -335,8 +335,8 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                       <div>
                         <p className="text-sm text-gray-600">P/E Ratio</p>
                         <p className="font-semibold text-gray-900">{comparison.nifty.peRatio}</p>
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                         <p className="text-sm text-gray-600">Dividend Yield</p>
                         <p className="font-semibold text-gray-900">{comparison.nifty.dividendYield}%</p>
                       </div>
@@ -360,27 +360,27 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                      <div>
+                              <div>
                         <p className="text-sm text-gray-600">Year High</p>
                         <p className="font-semibold text-gray-900">{comparison.sensex.yearHigh.toLocaleString()}</p>
-                      </div>
-                      <div>
+                          </div>
+                            <div>
                         <p className="text-sm text-gray-600">Year Low</p>
                         <p className="font-semibold text-gray-900">{comparison.sensex.yearLow.toLocaleString()}</p>
-                      </div>
-                      <div>
+                            </div>
+                            <div>
                         <p className="text-sm text-gray-600">P/E Ratio</p>
                         <p className="font-semibold text-gray-900">{comparison.sensex.peRatio}</p>
-                      </div>
-                      <div>
+                            </div>
+                            <div>
                         <p className="text-sm text-gray-600">Dividend Yield</p>
                         <p className="font-semibold text-gray-900">{comparison.sensex.dividendYield}%</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
               </motion.div>
-            </div>
+                      </div>
           </section>
         )}
 
@@ -504,8 +504,8 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -634,7 +634,7 @@ const NiftyVsSensexPerformanceTracker: React.FC = () => {
                     evaluate your portfolio performance and make necessary adjustments.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

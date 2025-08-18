@@ -4,8 +4,8 @@ import {
   TrendingUp, 
   BarChart3, 
   Calculator, 
-  DollarSign, 
-  PieChart, 
+  DollarSign,
+  PieChart,
   LineChart, 
   Activity,
   Info,
@@ -168,13 +168,13 @@ const DividendTracker: React.FC = () => {
 
   const addStock = () => {
     const newStock: DividendStock = {
-      id: Date.now().toString(),
+        id: Date.now().toString(),
       symbol: '',
       companyName: '',
-      shares: 0,
+        shares: 0,
       avgPrice: 0,
       currentPrice: 0,
-      dividendPerShare: 0,
+        dividendPerShare: 0,
       dividendYield: 0,
       dividendFrequency: 'quarterly',
       lastDividendDate: new Date().toISOString().split('T')[0],
@@ -269,7 +269,7 @@ const DividendTracker: React.FC = () => {
         {/* Stock Input Section */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -302,27 +302,27 @@ const DividendTracker: React.FC = () => {
                           placeholder="RELIANCE"
                         />
                       </div>
-                      <div>
+                  <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
-                        <input
-                          type="text"
+                    <input
+                      type="text"
                           value={stock.companyName}
                           onChange={(e) => updateStock(stock.id, 'companyName', e.target.value)}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
                           placeholder="Reliance Industries"
-                        />
-                      </div>
-                      <div>
+                    />
+                  </div>
+                    <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Shares</label>
-                        <input
-                          type="number"
+                      <input
+                        type="number"
                           value={stock.shares}
                           onChange={(e) => updateStock(stock.id, 'shares', parseFloat(e.target.value) || 0)}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                          placeholder="100"
-                        />
-                      </div>
-                      <div>
+                        placeholder="100"
+                      />
+                    </div>
+                    <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Avg Price</label>
                         <input
                           type="number"
@@ -334,14 +334,14 @@ const DividendTracker: React.FC = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Current Price</label>
-                        <input
-                          type="number"
+                      <input
+                        type="number"
                           value={stock.currentPrice}
                           onChange={(e) => updateStock(stock.id, 'currentPrice', parseFloat(e.target.value) || 0)}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
                           placeholder="2800"
-                        />
-                      </div>
+                      />
+                    </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Dividend/Share</label>
                         <input
@@ -351,19 +351,19 @@ const DividendTracker: React.FC = () => {
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
                           placeholder="10"
                         />
-                      </div>
-                      <div>
+                  </div>
+                  <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Frequency</label>
-                        <select
+                    <select
                           value={stock.dividendFrequency}
                           onChange={(e) => updateStock(stock.id, 'dividendFrequency', e.target.value)}
                           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                        >
-                          <option value="quarterly">Quarterly</option>
-                          <option value="semi-annual">Semi-Annual</option>
-                          <option value="annual">Annual</option>
-                        </select>
-                      </div>
+                    >
+                      <option value="quarterly">Quarterly</option>
+                      <option value="semi-annual">Semi-Annual</option>
+                      <option value="annual">Annual</option>
+                    </select>
+                  </div>
                       <div className="flex items-end">
                         <button
                           onClick={() => removeStock(stock.id)}
@@ -371,9 +371,9 @@ const DividendTracker: React.FC = () => {
                         >
                           Remove
                         </button>
-                      </div>
                     </div>
-                    
+                  </div>
+
                     {/* Stock Summary */}
                     <div className="mt-3 grid grid-cols-3 gap-4 text-sm">
                       <div className="text-center">
@@ -394,14 +394,14 @@ const DividendTracker: React.FC = () => {
               </div>
 
               <div className="mt-6">
-                <button
+                  <button
                   onClick={calculateAnalysis}
                   className="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors font-semibold"
-                >
+                  >
                   Analyze Dividend Portfolio
-                </button>
-              </div>
-            </motion.div>
+                  </button>
+                </div>
+              </motion.div>
           </div>
         </section>
 
@@ -429,11 +429,11 @@ const DividendTracker: React.FC = () => {
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                     <h3 className="text-sm font-semibold text-green-800 mb-2">Annual Dividend Income</h3>
                     <p className="text-2xl font-bold text-green-900">₹{analysis.annualDividendIncome.toLocaleString()}</p>
-                  </div>
+                    </div>
                   <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
                     <h3 className="text-sm font-semibold text-purple-800 mb-2">Dividend Yield</h3>
                     <p className="text-2xl font-bold text-purple-900">{analysis.dividendYield.toFixed(2)}%</p>
-                  </div>
+                    </div>
                   <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
                     <h3 className="text-sm font-semibold text-orange-800 mb-2">Total Return</h3>
                     <p className={`text-2xl font-bold ${getReturnColor(analysis.totalReturn)}`}>
@@ -457,7 +457,7 @@ const DividendTracker: React.FC = () => {
                     <div className="text-center">
                       <p className="text-sm text-green-600">Total Dividends</p>
                       <p className="text-xl font-bold text-green-900">₹{analysis.totalDividends.toLocaleString()}</p>
-                    </div>
+                  </div>
                     <div className="text-center">
                       <p className="text-sm text-green-600">Return %</p>
                       <p className={`text-xl font-bold ${getReturnColor(analysis.totalReturnPercentage)}`}>
@@ -493,8 +493,8 @@ const DividendTracker: React.FC = () => {
                         ))}
                       </tbody>
                     </table>
-                  </div>
-                </div>
+                            </div>
+                          </div>
 
                 {/* Stock Details */}
                 <div>
@@ -519,7 +519,7 @@ const DividendTracker: React.FC = () => {
                               <div>
                                 <p className="font-medium text-gray-900">{stock.symbol}</p>
                                 <p className="text-xs text-gray-600">{stock.companyName}</p>
-                              </div>
+                          </div>
                             </td>
                             <td className="py-3 px-4 text-right">{stock.shares}</td>
                             <td className="py-3 px-4 text-right">₹{(stock.shares * stock.currentPrice).toLocaleString()}</td>
@@ -542,8 +542,8 @@ const DividendTracker: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -618,7 +618,7 @@ const DividendTracker: React.FC = () => {
                     <p><strong>Taxation:</strong> Dividends are taxable income</p>
                   </div>
                 </div>
-              </div>
+                </div>
 
               <div className="bg-green-50 border border-green-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
@@ -643,7 +643,7 @@ const DividendTracker: React.FC = () => {
                     purchase additional shares, accelerating wealth building through compounding.
                   </p>
                 </div>
-              </div>
+                </div>
 
               <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
@@ -667,7 +667,7 @@ const DividendTracker: React.FC = () => {
                     <strong>Long-term Perspective:</strong> Dividend investing works best as a long-term 
                     strategy, allowing time for compounding and dividend growth.
                   </p>
-                </div>
+            </div>
               </div>
             </motion.div>
           </div>
