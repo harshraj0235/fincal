@@ -4,7 +4,7 @@ import {
   TrendingUp, 
   BarChart3, 
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -239,7 +239,7 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-orange-600" />
                   Investment Parameters
                 </h2>
-
+                
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -253,7 +253,7 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -267,20 +267,20 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                         Expected Return (%)
-                      </label>
-                      <input
-                        type="number"
+                    </label>
+                    <input
+                      type="number"
                         value={expectedReturn}
                         onChange={(e) => setExpectedReturn(e.target.value)}
-                        placeholder="12"
+                      placeholder="12"
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                      />
+                    />
                     </div>
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Expected Inflation Rate (%)
@@ -340,10 +340,10 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                       <h3 className="text-lg font-semibold mb-2">Inflation-Adjusted Return</h3>
                       <p className="text-4xl font-bold mb-2">{analysis.inflationAdjustedReturn.toFixed(2)}%</p>
                       <p className="text-orange-100">Real annual return after inflation</p>
-                    </div>
+                  </div>
 
                     {/* Key Metrics */}
-                    <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-4">
                       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-blue-800 mb-2">Nominal Value</h3>
                         <p className="text-2xl font-bold text-blue-900">₹{analysis.nominalValue.toLocaleString()}</p>
@@ -351,8 +351,8 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                       <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                         <h3 className="text-sm font-semibold text-green-800 mb-2">Real Value</h3>
                         <p className="text-2xl font-bold text-green-900">₹{analysis.realValue.toLocaleString()}</p>
-                      </div>
-                    </div>
+                  </div>
+                </div>
 
                     {/* Inflation Impact */}
                     <div className="bg-red-50 border border-red-200 rounded-lg p-4">
@@ -361,7 +361,7 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                         <div className="flex justify-between">
                           <span>Purchasing Power Loss:</span>
                           <span className="font-semibold">{analysis.purchasingPowerLoss.toFixed(2)}%</span>
-                        </div>
+                    </div>
                         <div className="flex justify-between">
                           <span>Value Eroded:</span>
                           <span className="font-semibold">₹{(analysis.nominalValue - analysis.realValue).toLocaleString()}</span>
@@ -389,14 +389,14 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                         {analysis.recommendations.map((recommendation, index) => (
                           <p key={index} className="text-green-700">• {recommendation}</p>
                         ))}
-                      </div>
+                    </div>
                     </div>
                   </div>
                 ) : (
                   <div className="text-center py-12">
                     <BarChart3 className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Enter parameters to calculate inflation-adjusted returns</p>
-                  </div>
+                </div>
                 )}
               </motion.div>
             </div>
@@ -406,7 +406,7 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
         {/* Year-by-Year Analysis */}
         {showAnalysis && analysis && (
           <section className="py-8">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -573,7 +573,7 @@ const SIPInflationAdjustedCalculator: React.FC = () => {
                     strategy and adjust based on changing inflation expectations.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

@@ -297,7 +297,7 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
         {/* Input Section */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -306,8 +306,8 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <Calculator className="h-6 w-6 mr-3 text-blue-600" />
                 Personal Profile & Goals
-              </h2>
-
+                </h2>
+                
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Personal Information */}
                 <div className="space-y-6">
@@ -323,12 +323,12 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
-
+                  
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Risk Profile</label>
                     <select
                       value={riskProfile}
-                      onChange={(e) => setRiskProfile(e.target.value)}
+                            onChange={(e) => setRiskProfile(e.target.value)}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="conservative">Conservative</option>
@@ -337,11 +337,11 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                     </select>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Investment Horizon (Years)</label>
-                    <input
-                      type="number"
-                      value={investmentHorizon}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Investment Horizon (Years)</label>
+                      <input
+                        type="number"
+                        value={investmentHorizon}
                       onChange={(e) => setInvestmentHorizon(e.target.value)}
                       placeholder="15"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -356,10 +356,10 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                       onChange={(e) => setCurrentIncome(e.target.value)}
                       placeholder="1000000"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                  </div>
+                      />
+                    </div>
 
-                  <div>
+                    <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Emergency Fund (₹)</label>
                     <input
                       type="number"
@@ -367,8 +367,8 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                       onChange={(e) => setEmergencyFund(e.target.value)}
                       placeholder="300000"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                  </div>
+                      />
+                    </div>
                 </div>
 
                 {/* Financial Goals & Current Investments */}
@@ -440,8 +440,8 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                 >
                   Reset
                 </button>
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
           </div>
         </section>
 
@@ -467,23 +467,23 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                     <div>
                       <p className="text-sm text-blue-600">Age</p>
                       <p className="font-semibold text-blue-900">{analysis.age} years</p>
-                    </div>
+                      </div>
                     <div>
                       <p className="text-sm text-blue-600">Risk Profile</p>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${getRiskProfileColor(analysis.riskProfile)}`}>
                         {analysis.riskProfile.charAt(0).toUpperCase() + analysis.riskProfile.slice(1)}
                       </span>
-                    </div>
+                          </div>
                     <div>
                       <p className="text-sm text-blue-600">Investment Horizon</p>
                       <p className="font-semibold text-blue-900">{analysis.investmentHorizon} years</p>
-                    </div>
+                        </div>
                     <div>
                       <p className="text-sm text-blue-600">Goals</p>
                       <p className="font-semibold text-blue-900">{analysis.financialGoals.length}</p>
-                    </div>
-                  </div>
-                </div>
+                          </div>
+                        </div>
+                      </div>
 
                 {/* Recommended Allocation */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -524,16 +524,16 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                       <p className="text-sm text-yellow-600">Volatility</p>
                       <p className="font-semibold text-yellow-900">{analysis.riskMetrics.volatility.toFixed(2)}%</p>
                     </div>
-                    <div>
+                          <div>
                       <p className="text-sm text-yellow-600">Max Drawdown</p>
                       <p className="font-semibold text-yellow-900">{analysis.riskMetrics.maxDrawdown.toFixed(2)}%</p>
-                    </div>
-                    <div>
+                        </div>
+                          <div>
                       <p className="text-sm text-yellow-600">Sharpe Ratio</p>
                       <p className="font-semibold text-yellow-900">{analysis.riskMetrics.sharpeRatio.toFixed(2)}</p>
-                    </div>
-                  </div>
-                </div>
+                            </div>
+                          </div>
+                        </div>
 
                 {/* Recommendations */}
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8">
@@ -542,8 +542,8 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                     {analysis.recommendations.map((recommendation, index) => (
                       <p key={index} className="text-green-700">• {recommendation}</p>
                     ))}
-                  </div>
-                </div>
+                      </div>
+                    </div>
 
                 {/* Year-by-Year Projection */}
                 <div>
@@ -580,8 +580,8 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -707,7 +707,7 @@ const EquityVsDebtSplitRecommender: React.FC = () => {
                     for complex allocation decisions.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

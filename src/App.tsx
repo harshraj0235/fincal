@@ -163,6 +163,10 @@ const CustomInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/Custom
 const InvoiceDueDateTracker = lazy(() => import('./pages/invoicing-tools/InvoiceDueDateTracker'));
 const RecurringInvoiceScheduler = lazy(() => import('./pages/invoicing-tools/RecurringInvoiceScheduler'));
 const InvoiceAgeingReportVisualizer = lazy(() => import('./pages/invoicing-tools/InvoiceAgeingReportVisualizer'));
+const GSTTaxAutoFillInvoiceTool = lazy(() => import('./pages/invoicing-tools/GSTTaxAutoFillInvoiceTool'));
+const MultiCurrencyInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/MultiCurrencyInvoiceGenerator'));
+const InvoiceToCashCycleTracker = lazy(() => import('./pages/invoicing-tools/InvoiceToCashCycleTracker'));
+const PaymentReminderTool = lazy(() => import('./pages/invoicing-tools/PaymentReminderTool'));
 
 function App() {
   useEffect(() => {
@@ -381,6 +385,10 @@ function App() {
         <Route path="/invoicing-tools/invoice-due-date-tracker" element={<InvoiceDueDateTracker />} />
         <Route path="/invoicing-tools/recurring-invoice-scheduler" element={<RecurringInvoiceScheduler />} />
         <Route path="/invoicing-tools/invoice-ageing-report-visualizer" element={<InvoiceAgeingReportVisualizer />} />
+        <Route path="/invoicing-tools/gst-tax-auto-fill-invoice-tool" element={<GSTTaxAutoFillInvoiceTool />} />
+        <Route path="/invoicing-tools/multi-currency-invoice-generator" element={<MultiCurrencyInvoiceGenerator />} />
+        <Route path="/invoicing-tools/invoice-to-cash-cycle-tracker" element={<InvoiceToCashCycleTracker />} />
+        <Route path="/invoicing-tools/payment-reminder-tool" element={<PaymentReminderTool />} />
                 <Route path="/tools/discount-profit" element={<DiscountProfitCalculator />} />
                 <Route path="/tools/product-comparison" element={<ProductComparisonMatrix />} />
                 <Route path="/tools/emi-affordability" element={<EMIAffordabilityChecker />} />

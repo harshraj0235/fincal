@@ -4,7 +4,7 @@ import {
   TrendingUp, 
   BarChart3, 
   Calculator, 
-  DollarSign, 
+  DollarSign,
   PieChart, 
   LineChart, 
   Activity,
@@ -370,7 +370,7 @@ const IndexFundReturnComparison: React.FC = () => {
         {/* Fund Selection Section */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -381,21 +381,21 @@ const IndexFundReturnComparison: React.FC = () => {
                   <Calculator className="h-6 w-6 mr-3 text-indigo-600" />
                   Fund Selection & Parameters
                 </h2>
-              </div>
-
+                  </div>
+                  
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Investment Amount (₹)
-                  </label>
-                  <input
-                    type="number"
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Investment Amount (₹)
+                    </label>
+                    <input
+                      type="number"
                     value={investmentAmount}
                     onChange={(e) => setInvestmentAmount(e.target.value)}
-                    placeholder="100000"
+                      placeholder="100000"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                  />
-                </div>
+                    />
+                  </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -449,8 +449,8 @@ const IndexFundReturnComparison: React.FC = () => {
                           <div className="flex items-center space-x-4 mt-2 text-sm">
                             <span className="text-gray-600">Expense: {fund.expenseRatio}%</span>
                             <span className="text-gray-600">AUM: ₹{fund.aum} Cr</span>
-                          </div>
-                        </div>
+                  </div>
+                      </div>
                         <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                           selectedFunds.includes(fund.id)
                             ? 'border-indigo-500 bg-indigo-500'
@@ -459,7 +459,7 @@ const IndexFundReturnComparison: React.FC = () => {
                           {selectedFunds.includes(fund.id) && (
                             <CheckCircle className="w-3 h-3 text-white" />
                           )}
-                        </div>
+                    </div>
                       </div>
                     </div>
                   ))}
@@ -529,10 +529,10 @@ const IndexFundReturnComparison: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Performance Ranking</h3>
-                    <div className="space-y-3">
+                  <div className="space-y-3">
                       {analysis.performanceRanking.map((item, index) => (
                         <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                          <div className="flex items-center">
+                            <div className="flex items-center">
                             <span className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm ${
                               index === 0 ? 'bg-yellow-500' : 
                               index === 1 ? 'bg-gray-400' : 
@@ -545,12 +545,12 @@ const IndexFundReturnComparison: React.FC = () => {
                           <span className={`font-semibold ${getPerformanceColor(item.score)}`}>
                             {item.score.toFixed(2)}%
                           </span>
-                        </div>
+                            </div>
                       ))}
-                    </div>
-                  </div>
+                            </div>
+                            </div>
 
-                  <div>
+                            <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Risk Analysis</h3>
                     <div className="space-y-3">
                       {analysis.riskAnalysis.map((item, index) => (
@@ -559,13 +559,13 @@ const IndexFundReturnComparison: React.FC = () => {
                             <span className="font-medium text-gray-900">{item.fundName}</span>
                             <span className={`font-semibold ${getRiskColor(item.riskScore)}`}>
                               Risk Score: {item.riskScore.toFixed(1)}
-                            </span>
-                          </div>
+                              </span>
+                            </div>
                           <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
                             <span>Volatility: {item.volatility.toFixed(1)}%</span>
                             <span>Sharpe Ratio: {item.sharpeRatio.toFixed(2)}</span>
-                          </div>
-                        </div>
+                    </div>
+                    </div>
                       ))}
                     </div>
                   </div>
@@ -602,8 +602,8 @@ const IndexFundReturnComparison: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* Information Section */}
@@ -730,7 +730,7 @@ const IndexFundReturnComparison: React.FC = () => {
                     and lower trading costs.
                   </p>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </section>

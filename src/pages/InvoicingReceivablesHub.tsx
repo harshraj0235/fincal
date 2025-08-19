@@ -12,7 +12,7 @@ import {
   Users,
   CreditCard,
   Receipt,
-  FileInvoice,
+  FileText,
   PieChart,
   Activity,
   Target,
@@ -140,7 +140,7 @@ const InvoicingReceivablesHub: React.FC = () => {
       description: 'Convert purchase orders to invoices automatically',
       category: 'automation',
       slug: 'po-to-invoice-converter',
-      icon: <FileInvoice className="w-6 h-6" />,
+                    icon: <FileText className="w-6 h-6" />,
       features: ['PO Conversion', 'Auto Generation', 'Template Matching'],
       keywords: ['PO converter', 'purchase order', 'invoice conversion']
     },

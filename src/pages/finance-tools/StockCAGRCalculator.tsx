@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
   BarChart3, 
   Calculator, 
-  DollarSign, 
-  PieChart, 
   LineChart, 
   Activity,
   Info,
-  AlertCircle,
   CheckCircle,
-  Clock,
   Target,
-  Zap,
   Shield,
-  Globe,
-  Smartphone,
-  TrendingDown,
-  Percent,
-  Stock
+  Smartphone
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
@@ -187,7 +178,7 @@ const StockCAGRCalculator: React.FC = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-green-100">
                 <div className="flex items-center">
-                  <Stock className="w-4 h-4 mr-2" />
+                  <TrendingUp className="w-4 h-4 mr-2" />
                   CAGR Analysis
                 </div>
                 <div className="flex items-center">
