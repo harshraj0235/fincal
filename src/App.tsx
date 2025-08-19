@@ -167,6 +167,10 @@ const GSTTaxAutoFillInvoiceTool = lazy(() => import('./pages/invoicing-tools/GST
 const MultiCurrencyInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/MultiCurrencyInvoiceGenerator'));
 const InvoiceToCashCycleTracker = lazy(() => import('./pages/invoicing-tools/InvoiceToCashCycleTracker'));
 const PaymentReminderTool = lazy(() => import('./pages/invoicing-tools/PaymentReminderTool'));
+const InvoiceDisputeTracker = lazy(() => import('./pages/invoicing-tools/InvoiceDisputeTracker'));
+const POToInvoiceConverter = lazy(() => import('./pages/invoicing-tools/POToInvoiceConverter'));
+const ReceivablesVsPayablesDashboard = lazy(() => import('./pages/invoicing-tools/ReceivablesVsPayablesDashboard'));
+const InvoiceTermsExplainer = lazy(() => import('./pages/invoicing-tools/InvoiceTermsExplainer'));
 
 function App() {
   useEffect(() => {
@@ -390,6 +394,10 @@ function App() {
         <Route path="/invoicing-tools/multi-currency-invoice-generator" element={<MultiCurrencyInvoiceGenerator />} />
         <Route path="/invoicing-tools/invoice-to-cash-cycle-tracker" element={<InvoiceToCashCycleTracker />} />
         <Route path="/invoicing-tools/payment-reminder-tool" element={<PaymentReminderTool />} />
+        <Route path="/invoicing-tools/invoice-dispute-tracker" element={<InvoiceDisputeTracker />} />
+        <Route path="/invoicing-tools/po-to-invoice-converter" element={<POToInvoiceConverter />} />
+        <Route path="/invoicing-tools/receivables-vs-payables-dashboard" element={<ReceivablesVsPayablesDashboard />} />
+        <Route path="/invoicing-tools/invoice-terms-explainer" element={<InvoiceTermsExplainer />} />
                 <Route path="/tools/discount-profit" element={<DiscountProfitCalculator />} />
                 <Route path="/tools/product-comparison" element={<ProductComparisonMatrix />} />
                 <Route path="/tools/emi-affordability" element={<EMIAffordabilityChecker />} />
