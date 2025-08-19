@@ -22,7 +22,8 @@ import {
   Target,
   Zap,
   Sparkles,
-  BarChart
+  BarChart,
+  FileText
 } from "lucide-react";
 
 const Navbar = () => {
@@ -261,7 +262,7 @@ const Navbar = () => {
           Investing Tools
         </Link>
         <Link
-          to="/invoicing-receivables"
+          to="/invoicing-tools"
           className="text-white bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 text-sm font-medium flex items-center"
           aria-label="Invoicing & Receivables Hub"
           style={{ marginLeft: '8px' }}

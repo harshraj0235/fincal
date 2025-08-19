@@ -381,6 +381,7 @@ function App() {
                 <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
                 <Route path="/investing-tools" element={<InvestingToolsHub />} />
         <Route path="/invoicing-receivables" element={<InvoicingReceivablesHub />} />
+        <Route path="/invoicing-tools" element={<InvoicingReceivablesHub />} />
         <Route path="/invoicing-tools/custom-invoice-generator" element={<CustomInvoiceGenerator />} />
         <Route path="/invoicing-tools/invoice-due-date-tracker" element={<InvoiceDueDateTracker />} />
         <Route path="/invoicing-tools/recurring-invoice-scheduler" element={<RecurringInvoiceScheduler />} />
