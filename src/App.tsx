@@ -171,6 +171,10 @@ const InvoiceDisputeTracker = lazy(() => import('./pages/invoicing-tools/Invoice
 const POToInvoiceConverter = lazy(() => import('./pages/invoicing-tools/POToInvoiceConverter'));
 const ReceivablesVsPayablesDashboard = lazy(() => import('./pages/invoicing-tools/ReceivablesVsPayablesDashboard'));
 const InvoiceTermsExplainer = lazy(() => import('./pages/invoicing-tools/InvoiceTermsExplainer'));
+const ClientWiseInvoiceHistoryVisualizer = lazy(() => import('./pages/invoicing-tools/ClientWiseInvoiceHistoryVisualizer'));
+const CustomInvoiceThemeCreator = lazy(() => import('./pages/invoicing-tools/CustomInvoiceThemeCreator'));
+const ClientPaymentBehaviorScoreTool = lazy(() => import('./pages/invoicing-tools/ClientPaymentBehaviorScoreTool'));
+const PartialPaymentInvoiceTracker = lazy(() => import('./pages/invoicing-tools/PartialPaymentInvoiceTracker'));
 
 function App() {
   useEffect(() => {
@@ -398,6 +402,10 @@ function App() {
         <Route path="/invoicing-tools/po-to-invoice-converter" element={<POToInvoiceConverter />} />
         <Route path="/invoicing-tools/receivables-vs-payables-dashboard" element={<ReceivablesVsPayablesDashboard />} />
         <Route path="/invoicing-tools/invoice-terms-explainer" element={<InvoiceTermsExplainer />} />
+        <Route path="/invoicing-tools/client-wise-invoice-history-visualizer" element={<ClientWiseInvoiceHistoryVisualizer />} />
+        <Route path="/invoicing-tools/custom-invoice-theme-creator" element={<CustomInvoiceThemeCreator />} />
+        <Route path="/invoicing-tools/client-payment-behavior-score-tool" element={<ClientPaymentBehaviorScoreTool />} />
+        <Route path="/invoicing-tools/partial-payment-invoice-tracker" element={<PartialPaymentInvoiceTracker />} />
                 <Route path="/tools/discount-profit" element={<DiscountProfitCalculator />} />
                 <Route path="/tools/product-comparison" element={<ProductComparisonMatrix />} />
                 <Route path="/tools/emi-affordability" element={<EMIAffordabilityChecker />} />
