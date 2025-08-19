@@ -251,15 +251,24 @@ const Navbar = () => {
               <BarChart className="w-4 h-4 mr-1" />
               Portfolio Tracker
             </Link>
-            <Link 
-              to="/investing-tools" 
-              className="text-white bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 rounded-lg shadow-md hover:from-purple-700 hover:to-pink-700 transition-all duration-200 text-sm font-medium flex items-center" 
-              aria-label="Investing Tools Hub"
-              style={{ marginLeft: '8px' }}
-            >
-              <TrendingUp className="w-4 h-4 mr-1" />
-              Investing Tools
-            </Link>
+                    <Link
+          to="/investing-tools"
+          className="text-white bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 rounded-lg shadow-md hover:from-purple-700 hover:to-pink-700 transition-all duration-200 text-sm font-medium flex items-center"
+          aria-label="Investing Tools Hub"
+          style={{ marginLeft: '8px' }}
+        >
+          <TrendingUp className="w-4 h-4 mr-1" />
+          Investing Tools
+        </Link>
+        <Link
+          to="/invoicing-receivables"
+          className="text-white bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2 rounded-lg shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 text-sm font-medium flex items-center"
+          aria-label="Invoicing & Receivables Hub"
+          style={{ marginLeft: '8px' }}
+        >
+          <FileText className="w-4 h-4 mr-1" />
+          Invoicing Tools
+        </Link>
               
               {/* Bank Tools Dropdown */}
             <div className="relative group">

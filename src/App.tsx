@@ -158,6 +158,11 @@ const GreenEnergyInvestmentCalculator = lazy(() => import('./calculators/GreenEn
 const AuthorProfilePage = lazy(() => import('./pages/AuthorProfilePage'));
 const RealTimeStockPortfolioTracker = lazy(() => import('./pages/RealTimeStockPortfolioTracker'));
 const InvestingToolsHub = lazy(() => import('./pages/InvestingToolsHub'));
+const InvoicingReceivablesHub = lazy(() => import('./pages/InvoicingReceivablesHub'));
+const CustomInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/CustomInvoiceGenerator'));
+const InvoiceDueDateTracker = lazy(() => import('./pages/invoicing-tools/InvoiceDueDateTracker'));
+const RecurringInvoiceScheduler = lazy(() => import('./pages/invoicing-tools/RecurringInvoiceScheduler'));
+const InvoiceAgeingReportVisualizer = lazy(() => import('./pages/invoicing-tools/InvoiceAgeingReportVisualizer'));
 
 function App() {
   useEffect(() => {
@@ -371,6 +376,11 @@ function App() {
                 <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
                 <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
                 <Route path="/investing-tools" element={<InvestingToolsHub />} />
+        <Route path="/invoicing-receivables" element={<InvoicingReceivablesHub />} />
+        <Route path="/invoicing-tools/custom-invoice-generator" element={<CustomInvoiceGenerator />} />
+        <Route path="/invoicing-tools/invoice-due-date-tracker" element={<InvoiceDueDateTracker />} />
+        <Route path="/invoicing-tools/recurring-invoice-scheduler" element={<RecurringInvoiceScheduler />} />
+        <Route path="/invoicing-tools/invoice-ageing-report-visualizer" element={<InvoiceAgeingReportVisualizer />} />
                 <Route path="/tools/discount-profit" element={<DiscountProfitCalculator />} />
                 <Route path="/tools/product-comparison" element={<ProductComparisonMatrix />} />
                 <Route path="/tools/emi-affordability" element={<EMIAffordabilityChecker />} />
