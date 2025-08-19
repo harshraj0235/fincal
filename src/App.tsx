@@ -175,6 +175,10 @@ const ClientWiseInvoiceHistoryVisualizer = lazy(() => import('./pages/invoicing-
 const CustomInvoiceThemeCreator = lazy(() => import('./pages/invoicing-tools/CustomInvoiceThemeCreator'));
 const ClientPaymentBehaviorScoreTool = lazy(() => import('./pages/invoicing-tools/ClientPaymentBehaviorScoreTool'));
 const PartialPaymentInvoiceTracker = lazy(() => import('./pages/invoicing-tools/PartialPaymentInvoiceTracker'));
+const TimeVsBillableHoursGraph = lazy(() => import('./pages/invoicing-tools/TimeVsBillableHoursGraph'));
+const InvoiceEmailTracker = lazy(() => import('./pages/invoicing-tools/InvoiceEmailTracker'));
+const GSTInclusiveInvoiceBuilder = lazy(() => import('./pages/invoicing-tools/GSTInclusiveInvoiceBuilder'));
+const OutstandingReceivableHeatmap = lazy(() => import('./pages/invoicing-tools/OutstandingReceivableHeatmap'));
 
 function App() {
   useEffect(() => {
@@ -406,6 +410,10 @@ function App() {
         <Route path="/invoicing-tools/custom-invoice-theme-creator" element={<CustomInvoiceThemeCreator />} />
         <Route path="/invoicing-tools/client-payment-behavior-score-tool" element={<ClientPaymentBehaviorScoreTool />} />
         <Route path="/invoicing-tools/partial-payment-invoice-tracker" element={<PartialPaymentInvoiceTracker />} />
+        <Route path="/invoicing-tools/time-vs-billable-hours-graph" element={<TimeVsBillableHoursGraph />} />
+        <Route path="/invoicing-tools/invoice-email-tracker" element={<InvoiceEmailTracker />} />
+        <Route path="/invoicing-tools/gst-inclusive-invoice-builder" element={<GSTInclusiveInvoiceBuilder />} />
+        <Route path="/invoicing-tools/outstanding-receivable-heatmap" element={<OutstandingReceivableHeatmap />} />
                 <Route path="/tools/discount-profit" element={<DiscountProfitCalculator />} />
                 <Route path="/tools/product-comparison" element={<ProductComparisonMatrix />} />
                 <Route path="/tools/emi-affordability" element={<EMIAffordabilityChecker />} />
