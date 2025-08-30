@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Shield, Calculator, TrendingUp, Users, DollarSign, Info, AlertCircle } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, Shield, Calculator, TrendingUp, Users, DollarSign, Info, AlertCircle, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 export const LifeInsuranceCalculator: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [inputs, setInputs] = useState({
     annualIncome: 500000,
     dependents: 2,
@@ -87,6 +90,43 @@ export const LifeInsuranceCalculator: React.FC = () => {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('life-insurance-calculator-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -303,13 +343,22 @@ export const LifeInsuranceCalculator: React.FC = () => {
             </div>
 
             {/* Results Section */}
-            <div className="space-y-6">
+            <div ref={resultsRef} className="space-y-6">
               {/* Main Result */}
               <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-8 text-white">
-                <h2 className="text-2xl font-bold mb-4 flex items-center">
-                  <TrendingUp className="h-6 w-6 mr-2" />
-                  Recommended Coverage
-                </h2>
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-2xl font-bold flex items-center">
+                    <TrendingUp className="h-6 w-6 mr-2" />
+                    Recommended Coverage
+                  </h2>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </button>
+                </div>
                 <div className="text-4xl font-bold mb-2">
                   {formatCurrency(results.totalCoverage)}
                 </div>
@@ -405,6 +454,7 @@ export const LifeInsuranceCalculator: React.FC = () => {
               <p className="mb-4">
                 Life insurance is a crucial financial tool that provides financial security to your family in case of your untimely demise. 
                 The Human Life Value (HLV) method is one of the most widely used approaches to determine how much life insurance coverage you need.
+                For more comprehensive financial planning, explore our <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">How the Human Life Value Method Works:</h3>
@@ -421,6 +471,19 @@ export const LifeInsuranceCalculator: React.FC = () => {
                 <li><strong>Section 10(10D):</strong> Maturity proceeds are generally tax-free if certain conditions are met</li>
                 <li><strong>Section 80CCC:</strong> Additional deduction for pension plans</li>
               </ul>
+              
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-blue-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/term-insurance-planner" className="text-blue-600 hover:text-blue-800 underline">Term Insurance Planner</RouterLink>
+                  <RouterLink to="/insurance-tools/health-insurance-estimator" className="text-blue-600 hover:text-blue-800 underline">Health Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/ulip-calculator" className="text-blue-600 hover:text-blue-800 underline">ULIP Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-blue-600 hover:text-blue-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Factors to Consider:</h3>
               <ul className="list-disc pl-6 space-y-2">

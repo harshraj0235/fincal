@@ -269,6 +269,67 @@ export const InsuranceTools: React.FC = () => {
             </div>
           </div>
 
+          {/* More Features Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">More Advanced Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <DollarSign className="h-6 w-6 text-blue-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">PDF Download</h3>
+                <p className="text-gray-600 text-sm">
+                  Download your calculation results as PDF reports for offline reference and sharing with family members.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div className="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Renewal Reminders</h3>
+                <p className="text-gray-600 text-sm">
+                  Set up automatic reminders for policy renewals and never miss important insurance deadlines.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div className="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-purple-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Family Planning</h3>
+                <p className="text-gray-600 text-sm">
+                  Plan insurance coverage for your entire family with comprehensive family insurance calculators.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div className="h-12 w-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                  <TrendingUp className="h-6 w-6 text-orange-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Market Analysis</h3>
+                <p className="text-gray-600 text-sm">
+                  Get insights into current insurance market trends and premium fluctuations across providers.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div className="h-12 w-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                  <Award className="h-6 w-6 text-red-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Expert Recommendations</h3>
+                <p className="text-gray-600 text-sm">
+                  Receive personalized insurance recommendations based on your profile and financial goals.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <div className="h-12 w-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                  <PieChart className="h-6 w-6 text-teal-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Visual Analytics</h3>
+                <p className="text-gray-600 text-sm">
+                  Interactive charts and graphs to visualize your insurance portfolio and coverage gaps.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* CTA Section */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-center text-white">
             <h2 className="text-3xl font-bold mb-4">Start Planning Your Insurance Today</h2>

@@ -1,12 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Car, Calculator, TrendingUp, Users, DollarSign, Info, AlertCircle, Shield } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ArrowLeft, Car, Calculator, TrendingUp, AlertCircle, Shield, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
+const providers = [
+  { name: 'Bajaj Allianz', factor: 1.0, rating: 4.5, features: ['Quick Claims', 'Wide Network', '24/7 Support'] },
+  { name: 'ICICI Lombard', factor: 1.05, rating: 4.4, features: ['Cashless Repairs', 'Roadside Assistance', 'Zero Depreciation'] },
+  { name: 'HDFC ERGO', factor: 1.08, rating: 4.3, features: ['Instant Policy', 'Digital Claims', 'Garage Network'] },
+  { name: 'New India Assurance', factor: 0.95, rating: 4.2, features: ['Government Backed', 'Reliable Claims', 'Pan India'] },
+  { name: 'Oriental Insurance', factor: 0.98, rating: 4.1, features: ['Affordable Premiums', 'Easy Renewal', 'Good Coverage'] },
+  { name: 'United India Insurance', factor: 0.92, rating: 4.0, features: ['Budget Friendly', 'Simple Process', 'Trusted Brand'] }
+];
+
 export const CarInsuranceCalculator: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [inputs, setInputs] = useState({
     vehicleType: 'sedan',
     vehicleAge: 2,
@@ -26,23 +38,20 @@ export const CarInsuranceCalculator: React.FC = () => {
     cityFactor: 0,
     coverageFactor: 0,
     totalPremium: 0,
-    providers: []
+    providers: [] as Array<{
+      name: string;
+      factor: number;
+      rating: number;
+      features: string[];
+      premium: number;
+    }>
   });
 
-  const providers = [
-    { name: 'Bajaj Allianz', factor: 1.0, rating: 4.5, features: ['Quick Claims', 'Wide Network', '24/7 Support'] },
-    { name: 'ICICI Lombard', factor: 1.05, rating: 4.4, features: ['Cashless Repairs', 'Roadside Assistance', 'Zero Depreciation'] },
-    { name: 'HDFC ERGO', factor: 1.08, rating: 4.3, features: ['Instant Policy', 'Digital Claims', 'Garage Network'] },
-    { name: 'New India Assurance', factor: 0.95, rating: 4.2, features: ['Government Backed', 'Reliable Claims', 'Pan India'] },
-    { name: 'Oriental Insurance', factor: 0.98, rating: 4.1, features: ['Affordable Premiums', 'Easy Renewal', 'Good Coverage'] },
-    { name: 'United India Insurance', factor: 0.92, rating: 4.0, features: ['Budget Friendly', 'Simple Process', 'Trusted Brand'] }
-  ];
-
-  const calculateCarInsurance = () => {
-    const { vehicleType, vehicleAge, city, coverageType, vehicleValue, engineCapacity, previousClaims, noClaimBonus, voluntaryDeductible } = inputs;
+  const calculateCarInsurance = useCallback(() => {
+    const { vehicleType, vehicleAge, city, coverageType, engineCapacity, previousClaims, noClaimBonus, voluntaryDeductible } = inputs;
     
     // Base premium calculation
-    let basePremium = 5000; // Base premium for third-party
+    const basePremium = 5000; // Base premium for third-party
     
     // Vehicle type factor
     const vehicleFactors = {
@@ -102,13 +111,13 @@ export const CarInsuranceCalculator: React.FC = () => {
       totalPremium,
       providers: providerPremiums
     });
-  };
+  }, [inputs]);
 
   useEffect(() => {
     calculateCarInsurance();
-  }, [inputs]);
+  }, [inputs, calculateCarInsurance]);
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | number) => {
     setInputs(prev => ({
       ...prev,
       [field]: value
@@ -121,6 +130,43 @@ export const CarInsuranceCalculator: React.FC = () => {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('car-insurance-calculator-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -345,13 +391,22 @@ export const CarInsuranceCalculator: React.FC = () => {
             </div>
 
             {/* Results Section */}
-            <div className="space-y-6">
+            <div ref={resultsRef} className="space-y-6">
               {/* Provider Comparison */}
               <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                  <TrendingUp className="h-5 w-5 text-green-600 mr-2" />
-                  Provider Comparison
-                </h3>
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 flex items-center">
+                    <TrendingUp className="h-5 w-5 text-green-600 mr-2" />
+                    Provider Comparison
+                  </h3>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </button>
+                </div>
                 <div className="space-y-3">
                   {results.providers.map((provider, index) => (
                     <div key={index} className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
@@ -442,7 +497,9 @@ export const CarInsuranceCalculator: React.FC = () => {
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="mb-4">
                 Car insurance in India is mandatory as per the Motor Vehicles Act, 1988. Understanding the different types 
-                of coverage and factors affecting premiums helps you make informed decisions about your vehicle insurance.
+                of coverage and factors affecting premiums helps you make informed decisions about your vehicle insurance. 
+                For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Types of Car Insurance Coverage:</h3>
@@ -462,6 +519,19 @@ export const CarInsuranceCalculator: React.FC = () => {
                 <li><strong>Previous Claims:</strong> History of claims increases premium rates</li>
                 <li><strong>No Claim Bonus:</strong> Discount for claim-free years, up to 50%</li>
               </ul>
+
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-green-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/two-wheeler-tracker" className="text-green-600 hover:text-green-800 underline">Two-Wheeler Insurance Tracker</RouterLink>
+                  <RouterLink to="/insurance-tools/home-insurance-estimator" className="text-green-600 hover:text-green-800 underline">Home Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-green-600 hover:text-green-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-green-600 hover:text-green-800 underline">Life Insurance Calculator</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Tips for Lower Car Insurance Premiums:</h3>
               <ul className="list-disc pl-6 space-y-2">

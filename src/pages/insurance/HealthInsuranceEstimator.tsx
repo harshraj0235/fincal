@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Heart, Calculator, TrendingUp, Users, DollarSign, Info, AlertCircle, Shield } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, Heart, Calculator, TrendingUp, Users, DollarSign, Info, AlertCircle, Shield, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 export const HealthInsuranceEstimator: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [inputs, setInputs] = useState({
     familyMembers: 2,
     adults: 2,
@@ -106,6 +109,43 @@ export const HealthInsuranceEstimator: React.FC = () => {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('health-insurance-estimator-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -346,13 +386,22 @@ export const HealthInsuranceEstimator: React.FC = () => {
             </div>
 
             {/* Results Section */}
-            <div className="space-y-6">
+            <div ref={resultsRef} className="space-y-6">
               {/* Provider Comparison */}
               <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                  <TrendingUp className="h-5 w-5 text-red-600 mr-2" />
-                  Provider Comparison
-                </h3>
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 flex items-center">
+                    <TrendingUp className="h-5 w-5 text-red-600 mr-2" />
+                    Provider Comparison
+                  </h3>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </button>
+                </div>
                 <div className="space-y-3">
                   {results.providers.map((provider, index) => (
                     <div key={index} className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
@@ -465,7 +514,8 @@ export const HealthInsuranceEstimator: React.FC = () => {
               <p className="mb-4">
                 Health insurance premiums in India are calculated based on several factors including age, family size, 
                 coverage amount, location, and medical history. Understanding these factors helps you make informed 
-                decisions about your health insurance coverage.
+                decisions about your health insurance coverage. For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Factors Affecting Health Insurance Premiums:</h3>
@@ -485,6 +535,19 @@ export const HealthInsuranceEstimator: React.FC = () => {
                 <li><strong>Preventive Health Check-up:</strong> Up to ₹5,000 within the overall limit</li>
                 <li><strong>Total Maximum:</strong> Up to ₹1,00,000 in deductions possible</li>
               </ul>
+
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-red-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-red-600 hover:text-red-800 underline">Life Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/critical-illness-calculator" className="text-red-600 hover:text-red-800 underline">Critical Illness Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/term-insurance-planner" className="text-red-600 hover:text-red-800 underline">Term Insurance Planner</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-red-600 hover:text-red-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Tips for Choosing Health Insurance:</h3>
               <ul className="list-disc pl-6 space-y-2">

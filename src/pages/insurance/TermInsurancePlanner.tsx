@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Target, Calculator, TrendingUp, Users, DollarSign, Info, AlertCircle, Shield } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, Target, Calculator, TrendingUp, Users, DollarSign, Info, AlertCircle, Shield, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 export const TermInsurancePlanner: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [inputs, setInputs] = useState({
     age: 30,
     annualIncome: 500000,
@@ -88,6 +91,43 @@ export const TermInsurancePlanner: React.FC = () => {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('term-insurance-planner-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -257,13 +297,22 @@ export const TermInsurancePlanner: React.FC = () => {
             </div>
 
             {/* Results Section */}
-            <div className="space-y-6">
+            <div ref={resultsRef} className="space-y-6">
               {/* Premium Estimates */}
               <div className="bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl p-8 text-white">
-                <h2 className="text-2xl font-bold mb-4 flex items-center">
-                  <TrendingUp className="h-6 w-6 mr-2" />
-                  Premium Estimates
-                </h2>
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-2xl font-bold flex items-center">
+                    <TrendingUp className="h-6 w-6 mr-2" />
+                    Premium Estimates
+                  </h2>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </button>
+                </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-white/20 rounded-lg">
                     <div className="text-2xl font-bold">
@@ -351,7 +400,8 @@ export const TermInsurancePlanner: React.FC = () => {
               <p className="mb-4">
                 Term insurance is the most affordable form of life insurance that provides pure life cover without any 
                 investment component. It offers high coverage at low premiums, making it ideal for young families and 
-                individuals with financial dependents.
+                individuals with financial dependents. For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Benefits of Term Insurance:</h3>
@@ -372,6 +422,19 @@ export const TermInsurancePlanner: React.FC = () => {
                 <li><strong>Coverage Amount:</strong> Higher sum assured results in higher premiums</li>
                 <li><strong>Policy Term:</strong> Longer terms may have different premium structures</li>
               </ul>
+
+              <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-purple-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-purple-600 hover:text-purple-800 underline">Life Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/health-insurance-estimator" className="text-purple-600 hover:text-purple-800 underline">Health Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/ulip-calculator" className="text-purple-600 hover:text-purple-800 underline">ULIP Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-purple-600 hover:text-purple-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Tips for Choosing Term Insurance:</h3>
               <ul className="list-disc pl-6 space-y-2">
