@@ -392,7 +392,7 @@ export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryRes
 
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
-
+  
   // Stock queries with real-time data
   if (queryLower.includes('stock') || queryLower.includes('share') || queryLower.includes('price') || 
       queryLower.includes('शेयर') || queryLower.includes('मूल्य') || queryLower.includes('स्टॉक')) {
@@ -400,10 +400,10 @@ export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryRes
     const stockName = extractStockName(query);
     if (stockName && mockStockData[stockName]) {
       const stock = mockStockData[stockName];
-      const content = lang === 'hi'
+      const content = lang === 'hi' 
         ? `${stock.name} (${stock.symbol}) का वर्तमान मूल्य ₹${stock.price.toFixed(2)} है।\n\n📊 मार्केट डेटा:\n• परिवर्तन: ₹${stock.change.toFixed(2)} (${stock.changePercent.toFixed(2)}%)\n• वॉल्यूम: ${(stock.volume / 100000).toFixed(1)}L\n• मार्केट कैप: ${stock.marketCap}\n• 52-सप्ताह उच्च: ₹${stock.high52Week}\n• 52-सप्ताह निम्न: ₹${stock.low52Week}\n• P/E अनुपात: ${stock.pe}\n• सेक्टर: ${stock.sector}\n\n🕐 अंतिम अपडेट: ${stock.lastUpdated.toLocaleTimeString('hi-IN')}`
         : `${stock.name} (${stock.symbol}) is currently trading at ₹${stock.price.toFixed(2)}.\n\n📊 Market Data:\n• Change: ₹${stock.change.toFixed(2)} (${stock.changePercent.toFixed(2)}%)\n• Volume: ${(stock.volume / 100000).toFixed(1)}L\n• Market Cap: ${stock.marketCap}\n• 52-Week High: ₹${stock.high52Week}\n• 52-Week Low: ₹${stock.low52Week}\n• P/E Ratio: ${stock.pe}\n• Sector: ${stock.sector}\n\n🕐 Last Updated: ${stock.lastUpdated.toLocaleTimeString('en-IN')}`;
-
+      
       return {
         query: request.query,
         response: {
@@ -440,7 +440,7 @@ export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryRes
       const content = lang === 'hi'
         ? `${market.index} वर्तमान में ${market.value.toLocaleString('hi-IN')} पर ट्रेड कर रहा है।\n\n📈 मार्केट स्टेटस:\n• परिवर्तन: ${market.change.toLocaleString('hi-IN')} (${market.changePercent.toFixed(2)}%)\n• वॉल्यूम: ${(market.volume / 10000000).toFixed(1)}Cr\n• ट्रेंड: ${market.change >= 0 ? 'बुलिश' : 'बेयरिश'}\n\n🕐 अंतिम अपडेट: ${market.lastUpdated.toLocaleTimeString('hi-IN')}`
         : `${market.index} is currently trading at ${market.value.toLocaleString('en-IN')}.\n\n📈 Market Status:\n• Change: ${market.change.toLocaleString('en-IN')} (${market.changePercent.toFixed(2)}%)\n• Volume: ${(market.volume / 10000000).toFixed(1)}Cr\n• Trend: ${market.change >= 0 ? 'Bullish' : 'Bearish'}\n\n🕐 Last Updated: ${market.lastUpdated.toLocaleTimeString('en-IN')}`;
-
+      
       return {
         query: request.query,
         response: {
@@ -496,30 +496,30 @@ export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryRes
         confidence: 0.92,
         lastUpdated: new Date(),
         realTimeData: false
-      },
-      timestamp: new Date()
-    };
-  }
-
-  // Tax queries
+        },
+        timestamp: new Date()
+      };
+    }
+    
+    // Tax queries
   if (queryLower.includes('tax') || queryLower.includes('income tax') || queryLower.includes('कर') || 
       queryLower.includes('आयकर')) {
-    const content = lang === 'hi'
+      const content = lang === 'hi'
       ? '2024-25 के लिए नई कर व्यवस्था (New Tax Regime):\n\n' + mockTaxSlabs.map(slab => 
           `• ₹${slab.minIncome.toLocaleString('hi-IN')} - ₹${slab.maxIncome === Infinity ? '∞' : slab.maxIncome.toLocaleString('hi-IN')}: ${slab.rate}% कर\n  ${slab.description}\n`
         ).join('\n') + '\n💡 सुझाव: अपनी आय के अनुसार सबसे अच्छी कर व्यवस्था चुनें।'
       : 'Income Tax Slabs 2024-25 (New Tax Regime):\n\n' + mockTaxSlabs.map(slab => 
           `• ₹${slab.minIncome.toLocaleString('en-IN')} - ₹${slab.maxIncome === Infinity ? '∞' : slab.maxIncome.toLocaleString('en-IN')}: ${slab.rate}% tax\n  ${slab.description}\n`
         ).join('\n') + '\n💡 Tip: Choose the best tax regime based on your income and deductions.';
-
-    return {
-      query: request.query,
-      response: {
-        type: 'tax',
-        content,
+      
+      return {
+        query: request.query,
+        response: {
+          type: 'tax',
+          content,
         data: { slabs: mockTaxSlabs },
-        suggestions: [
-          'Calculate my tax liability',
+          suggestions: [
+            'Calculate my tax liability',
           'Compare old vs new regime',
           'Find tax saving options',
           'Check deductions available',
@@ -566,11 +566,11 @@ export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryRes
         confidence: 0.94,
         lastUpdated: new Date(),
         realTimeData: true
-      },
-      timestamp: new Date()
-    };
-  }
-
+        },
+        timestamp: new Date()
+      };
+    }
+    
   // Crypto queries
   if (queryLower.includes('crypto') || queryLower.includes('bitcoin') || queryLower.includes('ethereum') ||
       queryLower.includes('क्रिप्टो') || queryLower.includes('बिटकॉइन')) {
@@ -581,7 +581,7 @@ export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryRes
       const content = lang === 'hi'
         ? `${crypto.name} (${crypto.symbol}) का वर्तमान मूल्य ₹${crypto.price.toLocaleString('hi-IN')} है।\n\n💰 क्रिप्टो डेटा:\n• 24h परिवर्तन: ₹${crypto.change24h.toLocaleString('hi-IN')} (${crypto.changePercent24h.toFixed(2)}%)\n• मार्केट कैप: ${crypto.marketCap}\n• 24h वॉल्यूम: ${crypto.volume24h}\n• ट्रेंड: ${crypto.changePercent24h >= 0 ? 'बुलिश' : 'बेयरिश'}\n\n🕐 अंतिम अपडेट: ${crypto.lastUpdated.toLocaleTimeString('hi-IN')}`
         : `${crypto.name} (${crypto.symbol}) is currently trading at ₹${crypto.price.toLocaleString('en-IN')}.\n\n💰 Crypto Data:\n• 24h Change: ₹${crypto.change24h.toLocaleString('en-IN')} (${crypto.changePercent24h.toFixed(2)}%)\n• Market Cap: ${crypto.marketCap}\n• 24h Volume: ${crypto.volume24h}\n• Trend: ${crypto.changePercent24h >= 0 ? 'Bullish' : 'Bearish'}\n\n🕐 Last Updated: ${crypto.lastUpdated.toLocaleTimeString('en-IN')}`;
-
+      
       return {
         query: request.query,
         response: {
@@ -605,20 +605,20 @@ export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryRes
         timestamp: new Date()
       };
     }
-  }
-
-  // General financial advice
+    }
+    
+    // General financial advice
   const content = lang === 'hi'
     ? `मैं आपकी वित्तीय जरूरतों में मदद कर सकता हूं! मैं निम्नलिखित विषयों पर जानकारी प्रदान कर सकता हूं:\n\n📈 **स्टॉक और मार्केट**: शेयर कीमतें, निफ्टी, सेंसेक्स\n💰 **निवेश**: म्यूचुअल फंड, SIP, पोर्टफोलियो\n🏦 **बैंकिंग**: लोन, EMI, बचत खाते\n🛡️ **बीमा**: जीवन बीमा, स्वास्थ्य बीमा\n📊 **कर**: आयकर, कर बचत योजनाएं\n💎 **क्रिप्टो**: बिटकॉइन, एथेरियम\n\nकृपया अपना सवाल पूछें!`
     : `I can help you with your financial needs! I can provide information on:\n\n📈 **Stocks & Market**: Share prices, Nifty, Sensex\n💰 **Investments**: Mutual funds, SIP, portfolio\n🏦 **Banking**: Loans, EMI, savings accounts\n🛡️ **Insurance**: Life insurance, health insurance\n📊 **Taxes**: Income tax, tax saving schemes\n💎 **Crypto**: Bitcoin, Ethereum\n\nPlease ask me your question!`;
-
-  return {
-    query: request.query,
-    response: {
-      type: 'general',
+    
+    return {
+      query: request.query,
+      response: {
+        type: 'general',
       content,
       data: { category: 'general' },
-      suggestions: [
+        suggestions: [
         'What is the current Nifty 50?',
         'Best mutual funds for SIP',
         'Income tax slabs 2024',
@@ -630,8 +630,8 @@ export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryRes
       confidence: 0.85,
       lastUpdated: new Date(),
       realTimeData: false
-    },
-    timestamp: new Date()
+      },
+      timestamp: new Date()
   };
 };
 
