@@ -68,6 +68,10 @@ interface Message {
   suggestions?: string[];
   chartData?: any;
   isTyping?: boolean;
+  sources?: string[];
+  confidence?: number;
+  realTimeData?: boolean;
+  lastUpdated?: Date;
 }
 
 interface FinoChatProps {
@@ -85,6 +89,8 @@ const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
   const [isTyping, setIsTyping] = useState(false);
   const [queryCount, setQueryCount] = useState(0);
   const [badge, setBadge] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [lastUpdateTime, setLastUpdateTime] = useState<Date | null>(null);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -192,7 +198,11 @@ const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
         timestamp: new Date(),
         data: response.response.data,
         suggestions: response.response.suggestions,
-        chartData: response.response.chartData
+        chartData: response.response.chartData,
+        sources: response.response.sources,
+        confidence: response.response.confidence,
+        realTimeData: response.response.realTimeData,
+        lastUpdated: response.response.lastUpdated
       };
       
       setMessages(prev => [...prev, botMessage]);
@@ -259,13 +269,78 @@ const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
   const renderChart = (chartData: any) => {
     if (!chartData) return null;
     
+    const defaultOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top' as const,
+          labels: {
+            color: isDarkMode ? '#ffffff' : '#374151'
+          }
+        },
+        tooltip: {
+          backgroundColor: isDarkMode ? '#374151' : '#ffffff',
+          titleColor: isDarkMode ? '#ffffff' : '#374151',
+          bodyColor: isDarkMode ? '#ffffff' : '#374151',
+          borderColor: isDarkMode ? '#6B7280' : '#D1D5DB',
+          borderWidth: 1
+        }
+      },
+      scales: chartData.type === 'line' || chartData.type === 'bar' ? {
+        x: {
+          ticks: { color: isDarkMode ? '#ffffff' : '#374151' },
+          grid: { color: isDarkMode ? '#374151' : '#E5E7EB' }
+        },
+        y: {
+          ticks: { color: isDarkMode ? '#ffffff' : '#374151' },
+          grid: { color: isDarkMode ? '#374151' : '#E5E7EB' }
+        }
+      } : undefined
+    };
+    
+    const chartOptions = { ...defaultOptions, ...chartData.options };
+    
     switch (chartData.type) {
       case 'line':
-        return <Line data={chartData.data} options={chartData.options} />;
+        return (
+          <div className="h-64 w-full">
+            <Line data={chartData.data} options={chartOptions} />
+          </div>
+        );
       case 'bar':
-        return <Bar data={chartData.data} options={chartData.options} />;
+        return (
+          <div className="h-64 w-full">
+            <Bar data={chartData.data} options={chartOptions} />
+          </div>
+        );
       case 'doughnut':
-        return <Doughnut data={chartData.data} options={chartData.options} />;
+        return (
+          <div className="h-64 w-full">
+            <Doughnut data={chartData.data} options={chartOptions} />
+          </div>
+        );
+      case 'pie':
+        return (
+          <div className="h-64 w-full">
+            <Doughnut data={chartData.data} options={chartOptions} />
+          </div>
+        );
+      case 'area':
+        return (
+          <div className="h-64 w-full">
+            <Line 
+              data={{
+                ...chartData.data,
+                datasets: chartData.data.datasets.map((dataset: any) => ({
+                  ...dataset,
+                  fill: true
+                }))
+              }} 
+              options={chartOptions} 
+            />
+          </div>
+        );
       default:
         return null;
     }
@@ -387,6 +462,40 @@ const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
                           : 'bg-gray-100 text-gray-900'
                     }`}>
                       <p className="text-sm leading-relaxed">{message.content}</p>
+                      
+                      {/* Enhanced message metadata */}
+                      {message.type === 'bot' && (
+                        <div className="mt-2 pt-2 border-t border-gray-300 dark:border-gray-600">
+                          <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                            <div className="flex items-center space-x-3">
+                              {message.realTimeData && (
+                                <div className="flex items-center space-x-1">
+                                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                  <span>Live Data</span>
+                                </div>
+                              )}
+                              {message.confidence && (
+                                <div className="flex items-center space-x-1">
+                                  <CheckCircle className="w-3 h-3" />
+                                  <span>{Math.round(message.confidence * 100)}% confidence</span>
+                                </div>
+                              )}
+                              {message.lastUpdated && (
+                                <div className="flex items-center space-x-1">
+                                  <Clock className="w-3 h-3" />
+                                  <span>Updated {message.lastUpdated.toLocaleTimeString()}</span>
+                                </div>
+                              )}
+                            </div>
+                            {message.sources && message.sources.length > 0 && (
+                              <div className="flex items-center space-x-1">
+                                <span>Sources: {message.sources.slice(0, 2).join(', ')}</span>
+                                {message.sources.length > 2 && <span>+{message.sources.length - 2}</span>}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
                       
                       {/* Chart */}
                       {message.chartData && (
