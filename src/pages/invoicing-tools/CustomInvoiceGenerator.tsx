@@ -44,8 +44,31 @@ import {
   CreditCard,
   Zap,
   Target,
-  BookOpen,
-  HelpCircle
+  HelpCircle,
+  Database,
+  FolderOpen,
+  Tag,
+  Package,
+  ShoppingCart,
+  Archive,
+  RefreshCw,
+  Edit3,
+  Trash2,
+  Copy,
+  Star as StarIcon,
+  FileDown,
+  Palette as PaletteIcon,
+  Layout,
+  Image as ImageIcon,
+  Type as TypeIcon,
+  Eye as EyeIcon,
+  Download as DownloadIcon,
+  Mail as MailIcon,
+  Printer as PrinterIcon,
+  Save as SaveIcon,
+  RotateCcw,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
@@ -66,51 +89,99 @@ interface InvoiceData {
   clientName: string;
   clientEmail: string;
   clientAddress: string;
+  clientPhone: string;
+  companyName: string;
+  companyAddress: string;
+  companyEmail: string;
+  companyPhone: string;
+  companyLogo: string;
   items: InvoiceItem[];
   subtotal: number;
   taxRate: number;
   taxAmount: number;
+  discountRate: number;
+  discountAmount: number;
   total: number;
   notes: string;
   terms: string;
+  currency: string;
+  template: string;
+  status: 'draft' | 'sent' | 'paid' | 'overdue';
 }
 
 const CustomInvoiceGenerator: React.FC = () => {
   const [invoiceData, setInvoiceData] = useState<InvoiceData>({
     invoiceNumber: '',
     date: new Date().toISOString().split('T')[0],
-    dueDate: '',
+    dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     clientName: '',
     clientEmail: '',
     clientAddress: '',
-    items: [{ id: '1', description: '', quantity: 1, rate: 0, amount: 0 }],
+    clientPhone: '',
+    companyName: '',
+    companyAddress: '',
+    companyEmail: '',
+    companyPhone: '',
+    companyLogo: '',
+    items: [],
     subtotal: 0,
     taxRate: 18,
     taxAmount: 0,
+    discountRate: 0,
+    discountAmount: 0,
     total: 0,
     notes: '',
-    terms: 'Net 30 days'
+    terms: 'Payment is due within 30 days of invoice date.',
+    currency: 'INR',
+    template: 'modern',
+    status: 'draft'
   });
 
-  const [previewMode, setPreviewMode] = useState(false);
-  const [selectedTemplate, setSelectedTemplate] = useState('professional');
+  const [showPreview, setShowPreview] = useState(false);
+  const [showTemplateSelector, setShowTemplateSelector] = useState(false);
+  const [savedInvoices, setSavedInvoices] = useState<InvoiceData[]>([]);
+
+  const templates = [
+    { id: 'modern', name: 'Modern', preview: 'Clean and professional design' },
+    { id: 'classic', name: 'Classic', preview: 'Traditional business format' },
+    { id: 'minimal', name: 'Minimal', preview: 'Simple and elegant layout' },
+    { id: 'colorful', name: 'Colorful', preview: 'Vibrant and eye-catching' }
+  ];
+
+  const currencies = [
+    { code: 'INR', symbol: '₹', name: 'Indian Rupee' },
+    { code: 'USD', symbol: '$', name: 'US Dollar' },
+    { code: 'EUR', symbol: '€', name: 'Euro' },
+    { code: 'GBP', symbol: '£', name: 'British Pound' }
+  ];
 
   useEffect(() => {
-    calculateTotals();
-  }, [invoiceData.items, invoiceData.taxRate]);
+    // Load saved invoices from localStorage
+    const saved = localStorage.getItem('savedInvoices');
+    if (saved) {
+      setSavedInvoices(JSON.parse(saved));
+    }
 
-  const calculateTotals = () => {
+    // Generate invoice number
+    const invoiceNumber = `INV-${new Date().getFullYear()}-${String(Date.now()).slice(-6)}`;
+    setInvoiceData(prev => ({ ...prev, invoiceNumber }));
+  }, []);
+
+  useEffect(() => {
+    // Calculate totals
     const subtotal = invoiceData.items.reduce((sum, item) => sum + item.amount, 0);
     const taxAmount = (subtotal * invoiceData.taxRate) / 100;
-    const total = subtotal + taxAmount;
+    const discountAmount = (subtotal * invoiceData.discountRate) / 100;
+    const total = subtotal + taxAmount - discountAmount;
 
     setInvoiceData(prev => ({
       ...prev,
       subtotal,
       taxAmount,
+      discountAmount,
       total
     }));
-  };
+  }, [invoiceData.items, invoiceData.taxRate, invoiceData.discountRate]);
 
   const addItem = () => {
     const newItem: InvoiceItem = {
@@ -126,16 +197,7 @@ const CustomInvoiceGenerator: React.FC = () => {
     }));
   };
 
-  const removeItem = (id: string) => {
-    if (invoiceData.items.length > 1) {
-      setInvoiceData(prev => ({
-        ...prev,
-        items: prev.items.filter(item => item.id !== id)
-      }));
-    }
-  };
-
-  const updateItem = (id: string, field: keyof InvoiceItem, value: string | number) => {
+  const updateItem = (id: string, field: keyof InvoiceItem, value: any) => {
     setInvoiceData(prev => ({
       ...prev,
       items: prev.items.map(item => {
@@ -151,34 +213,76 @@ const CustomInvoiceGenerator: React.FC = () => {
     }));
   };
 
-  const generatePDF = () => {
-    alert('PDF generation feature - Professional invoice would be downloaded');
+  const removeItem = (id: string) => {
+    setInvoiceData(prev => ({
+      ...prev,
+      items: prev.items.filter(item => item.id !== id)
+    }));
   };
 
   const saveInvoice = () => {
-    const savedInvoices = JSON.parse(localStorage.getItem('savedInvoices') || '[]');
-    savedInvoices.push({
-      ...invoiceData,
-      id: Date.now(),
-      savedAt: new Date().toISOString()
-    });
-    localStorage.setItem('savedInvoices', JSON.stringify(savedInvoices));
+    const updatedInvoices = [...savedInvoices, invoiceData];
+    setSavedInvoices(updatedInvoices);
+    localStorage.setItem('savedInvoices', JSON.stringify(updatedInvoices));
     alert('Invoice saved successfully!');
   };
 
-  const templates = [
-    { id: 'professional', name: 'Professional', color: 'bg-blue-500' },
-    { id: 'modern', name: 'Modern', color: 'bg-purple-500' },
-    { id: 'minimal', name: 'Minimal', color: 'bg-gray-500' },
-    { id: 'creative', name: 'Creative', color: 'bg-green-500' }
-  ];
+  const generatePDF = () => {
+    // In a real implementation, this would use a PDF library like jsPDF
+    alert('PDF generation feature would be implemented here. For now, you can print the preview.');
+    setShowPreview(true);
+  };
+
+  const sendInvoice = () => {
+    // In a real implementation, this would integrate with email services
+    alert('Email feature would be implemented here. For now, the invoice is ready to be sent.');
+  };
+
+  const loadTemplate = (templateId: string) => {
+    setInvoiceData(prev => ({ ...prev, template: templateId }));
+    setShowTemplateSelector(false);
+  };
+
+  const resetForm = () => {
+    if (confirm('Are you sure you want to reset the form? All data will be lost.')) {
+      const invoiceNumber = `INV-${new Date().getFullYear()}-${String(Date.now()).slice(-6)}`;
+      setInvoiceData({
+        invoiceNumber,
+        date: new Date().toISOString().split('T')[0],
+        dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+        clientName: '',
+        clientEmail: '',
+        clientAddress: '',
+        clientPhone: '',
+        companyName: '',
+        companyAddress: '',
+        companyEmail: '',
+        companyPhone: '',
+        companyLogo: '',
+        items: [],
+        subtotal: 0,
+        taxRate: 18,
+        taxAmount: 0,
+        discountRate: 0,
+        discountAmount: 0,
+        total: 0,
+        notes: '',
+        terms: 'Payment is due within 30 days of invoice date.',
+        currency: 'INR',
+        template: 'modern',
+        status: 'draft'
+      });
+    }
+  };
+
+  const selectedCurrency = currencies.find(c => c.code === invoiceData.currency);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <SEOHelmet
         title="Custom Invoice Generator - Professional PDF Invoice Creator | MoneyCal"
-        description="Create professional invoices with downloadable PDF format. Generate custom invoices with advanced templates, automatic calculations, and professional formatting. Perfect for freelancers, small businesses, and professionals."
-        keywords="custom invoice generator, professional invoice creator, PDF invoice generator, invoice templates, business invoice, freelance invoice, invoice maker, invoice software, invoice generator online, professional invoice format"
+        description="Create professional invoices with downloadable PDF format. Custom templates, professional formatting, and comprehensive invoice management for businesses."
+        keywords="custom invoice generator, PDF invoice, professional invoice, invoice templates, invoice creation, business invoicing, invoice management"
       />
 
       <div className="container mx-auto px-4 py-8">
@@ -192,504 +296,610 @@ const CustomInvoiceGenerator: React.FC = () => {
             Custom Invoice Generator
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Create professional invoices with downloadable PDF format. Generate custom invoices with advanced templates, 
-            automatic calculations, and professional formatting for your business needs.
+            Create professional invoices with downloadable PDF format. Choose from multiple templates, 
+            customize your design, and generate professional invoices for your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
             <div className="flex items-center">
-              <Download className="w-4 h-4 mr-2" />
+              <FileDown className="w-4 h-4 mr-2" />
               PDF Download
             </div>
             <div className="flex items-center">
-              <Palette className="w-4 h-4 mr-2" />
+              <PaletteIcon className="w-4 h-4 mr-2" />
               Custom Templates
             </div>
             <div className="flex items-center">
-              <FileText className="w-4 h-4 mr-2" />
+              <Layout className="w-4 h-4 mr-2" />
               Professional Format
             </div>
             <div className="flex items-center">
-              <Calculator className="w-4 h-4 mr-2" />
-              Auto Calculations
+              <Save className="w-4 h-4 mr-2" />
+              Auto Save
             </div>
           </div>
         </motion.div>
 
-        {/* Main Tool Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Invoice Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="bg-white rounded-2xl shadow-xl p-8"
-          >
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Invoice Details</h2>
-            
-            {/* Template Selection */}
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-3">Choose Template</label>
-              <div className="grid grid-cols-2 gap-3">
-                {templates.map(template => (
+          <div className="lg:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="bg-white rounded-2xl shadow-xl p-8"
+            >
+              {/* Header Actions */}
+              <div className="flex flex-wrap justify-between items-center mb-8">
+                <h2 className="text-2xl font-bold text-gray-900">Invoice Details</h2>
+                <div className="flex gap-2">
                   <button
-                    key={template.id}
-                    onClick={() => setSelectedTemplate(template.id)}
-                    className={`p-3 rounded-lg border-2 transition-all ${
-                      selectedTemplate === template.id
-                        ? 'border-blue-500 bg-blue-50'
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
+                    onClick={() => setShowTemplateSelector(true)}
+                    className="flex items-center px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
                   >
-                    <div className={`w-4 h-4 rounded ${template.color} mx-auto mb-2`}></div>
-                    <span className="text-sm font-medium">{template.name}</span>
+                    <PaletteIcon className="w-4 h-4 mr-2" />
+                    Template
                   </button>
-                ))}
+                  <button
+                    onClick={resetForm}
+                    className="flex items-center px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
+                  >
+                    <RotateCcw className="w-4 h-4 mr-2" />
+                    Reset
+                  </button>
+                </div>
               </div>
-            </div>
 
-            {/* Basic Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Invoice Number</label>
-                <input
-                  type="text"
-                  value={invoiceData.invoiceNumber}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, invoiceNumber: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="INV-001"
-                />
+              {/* Basic Information */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Invoice Number</label>
+                  <input
+                    type="text"
+                    value={invoiceData.invoiceNumber}
+                    onChange={(e) => setInvoiceData(prev => ({ ...prev, invoiceNumber: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Currency</label>
+                  <select
+                    value={invoiceData.currency}
+                    onChange={(e) => setInvoiceData(prev => ({ ...prev, currency: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  >
+                    {currencies.map(currency => (
+                      <option key={currency.code} value={currency.code}>
+                        {currency.code} - {currency.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Invoice Date</label>
+                  <input
+                    type="date"
+                    value={invoiceData.date}
+                    onChange={(e) => setInvoiceData(prev => ({ ...prev, date: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Due Date</label>
+                  <input
+                    type="date"
+                    value={invoiceData.dueDate}
+                    onChange={(e) => setInvoiceData(prev => ({ ...prev, dueDate: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Date</label>
-                <input
-                  type="date"
-                  value={invoiceData.date}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, date: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-            </div>
 
-            {/* Client Information */}
-            <div className="mb-6">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Client Information</h3>
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  value={invoiceData.clientName}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, clientName: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Client Name"
-                />
-                <input
-                  type="email"
-                  value={invoiceData.clientEmail}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, clientEmail: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Client Email"
-                />
-                <textarea
-                  value={invoiceData.clientAddress}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, clientAddress: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Client Address"
-                  rows={3}
-                />
+              {/* Company Information */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Company Information</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                    <input
+                      type="text"
+                      value={invoiceData.companyName}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, companyName: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Your Company Name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Company Email</label>
+                    <input
+                      type="email"
+                      value={invoiceData.companyEmail}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, companyEmail: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="company@example.com"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Company Address</label>
+                    <textarea
+                      value={invoiceData.companyAddress}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, companyAddress: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      rows={3}
+                      placeholder="Company address"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Company Phone</label>
+                    <input
+                      type="tel"
+                      value={invoiceData.companyPhone}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, companyPhone: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="+91 1234567890"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Company Logo URL</label>
+                    <input
+                      type="url"
+                      value={invoiceData.companyLogo}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, companyLogo: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="https://example.com/logo.png"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
 
-            {/* Invoice Items */}
-            <div className="mb-6">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-lg font-medium text-gray-900">Invoice Items</h3>
-                <button
-                  onClick={addItem}
-                  className="flex items-center px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-                >
-                  <Plus className="w-4 h-4 mr-2" />
-                  Add Item
-                </button>
+              {/* Client Information */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Client Information</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Client Name</label>
+                    <input
+                      type="text"
+                      value={invoiceData.clientName}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, clientName: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Client Name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Client Email</label>
+                    <input
+                      type="email"
+                      value={invoiceData.clientEmail}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, clientEmail: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="client@example.com"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Client Address</label>
+                    <textarea
+                      value={invoiceData.clientAddress}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, clientAddress: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      rows={3}
+                      placeholder="Client address"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Client Phone</label>
+                    <input
+                      type="tel"
+                      value={invoiceData.clientPhone}
+                      onChange={(e) => setInvoiceData(prev => ({ ...prev, clientPhone: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="+91 1234567890"
+                    />
+                  </div>
+                </div>
               </div>
-              
-              <div className="space-y-4">
-                {invoiceData.items.map((item, index) => (
-                  <div key={item.id} className="grid grid-cols-12 gap-2 items-center">
-                    <div className="col-span-5">
-                      <input
-                        type="text"
-                        value={item.description}
-                        onChange={(e) => updateItem(item.id, 'description', e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Item description"
-                      />
-                    </div>
-                    <div className="col-span-2">
-                      <input
-                        type="number"
-                        value={item.quantity}
-                        onChange={(e) => updateItem(item.id, 'quantity', parseFloat(e.target.value) || 0)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Qty"
-                      />
-                    </div>
-                    <div className="col-span-2">
-                      <input
-                        type="number"
-                        value={item.rate}
-                        onChange={(e) => updateItem(item.id, 'rate', parseFloat(e.target.value) || 0)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        placeholder="Rate"
-                      />
-                    </div>
-                    <div className="col-span-2">
-                      <input
-                        type="number"
-                        value={item.amount}
-                        readOnly
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50"
-                        placeholder="Amount"
-                      />
-                    </div>
-                    <div className="col-span-1">
-                      {invoiceData.items.length > 1 && (
+
+              {/* Invoice Items */}
+              <div className="mb-8">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Invoice Items</h3>
+                  <button
+                    onClick={addItem}
+                    className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                  >
+                    <Plus className="w-4 h-4 mr-2" />
+                    Add Item
+                  </button>
+                </div>
+                
+                <div className="space-y-4">
+                  {invoiceData.items.map((item, index) => (
+                    <div key={item.id} className="grid grid-cols-12 gap-4 items-center p-4 bg-gray-50 rounded-lg">
+                      <div className="col-span-5">
+                        <input
+                          type="text"
+                          value={item.description}
+                          onChange={(e) => updateItem(item.id, 'description', e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          placeholder="Item description"
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <input
+                          type="number"
+                          value={item.quantity}
+                          onChange={(e) => updateItem(item.id, 'quantity', parseFloat(e.target.value) || 0)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          placeholder="Qty"
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <input
+                          type="number"
+                          value={item.rate}
+                          onChange={(e) => updateItem(item.id, 'rate', parseFloat(e.target.value) || 0)}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          placeholder="Rate"
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <div className="px-3 py-2 bg-white border border-gray-300 rounded-lg">
+                          {selectedCurrency?.symbol}{item.amount.toFixed(2)}
+                        </div>
+                      </div>
+                      <div className="col-span-1">
                         <button
                           onClick={() => removeItem(item.id)}
-                          className="w-full p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                          className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
                         >
-                          <XCircle className="w-4 h-4" />
+                          <Trash2 className="w-4 h-4" />
                         </button>
-                      )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Tax and Terms */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Tax Rate (%)</label>
-                <input
-                  type="number"
-                  value={invoiceData.taxRate}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, taxRate: parseFloat(e.target.value) || 0 }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Due Date</label>
-                <input
-                  type="date"
-                  value={invoiceData.dueDate}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, dueDate: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-            </div>
-
-            {/* Notes and Terms */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Notes</label>
-                <textarea
-                  value={invoiceData.notes}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, notes: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  rows={3}
-                  placeholder="Additional notes..."
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Terms</label>
-                <textarea
-                  value={invoiceData.terms}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, terms: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  rows={3}
-                  placeholder="Payment terms..."
-                />
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <button
-                onClick={() => setPreviewMode(!previewMode)}
-                className="flex items-center px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
-              >
-                <Eye className="w-4 h-4 mr-2" />
-                {previewMode ? 'Hide Preview' : 'Preview'}
-              </button>
-              <button
-                onClick={saveInvoice}
-                className="flex items-center px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
-              >
-                <Save className="w-4 h-4 mr-2" />
-                Save Invoice
-              </button>
-              <button
-                onClick={generatePDF}
-                className="flex items-center px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download PDF
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Invoice Preview */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="bg-white rounded-2xl shadow-xl p-8"
-          >
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Invoice Preview</h2>
-            
-            <div className="border-2 border-gray-200 rounded-lg p-6 bg-gray-50">
-              {/* Header */}
-              <div className="flex justify-between items-start mb-8">
+              {/* Tax and Discount */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">INVOICE</h1>
-                  <p className="text-gray-600">Invoice #: {invoiceData.invoiceNumber || 'INV-001'}</p>
-                  <p className="text-gray-600">Date: {invoiceData.date}</p>
-                  {invoiceData.dueDate && <p className="text-gray-600">Due Date: {invoiceData.dueDate}</p>}
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Tax Rate (%)</label>
+                  <input
+                    type="number"
+                    value={invoiceData.taxRate}
+                    onChange={(e) => setInvoiceData(prev => ({ ...prev, taxRate: parseFloat(e.target.value) || 0 }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
                 </div>
-                <div className="text-right">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-2">Your Company</h2>
-                  <p className="text-gray-600">123 Business Street</p>
-                  <p className="text-gray-600">City, State 12345</p>
-                  <p className="text-gray-600">contact@company.com</p>
-                </div>
-              </div>
-
-              {/* Client Info */}
-              {invoiceData.clientName && (
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Bill To:</h3>
-                  <p className="text-gray-900 font-medium">{invoiceData.clientName}</p>
-                  {invoiceData.clientEmail && <p className="text-gray-600">{invoiceData.clientEmail}</p>}
-                  {invoiceData.clientAddress && <p className="text-gray-600">{invoiceData.clientAddress}</p>}
-                </div>
-              )}
-
-              {/* Items Table */}
-              <div className="mb-8">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b-2 border-gray-300">
-                      <th className="text-left py-2">Description</th>
-                      <th className="text-right py-2">Qty</th>
-                      <th className="text-right py-2">Rate</th>
-                      <th className="text-right py-2">Amount</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {invoiceData.items.map((item) => (
-                      <tr key={item.id} className="border-b border-gray-200">
-                        <td className="py-2">{item.description || 'Item description'}</td>
-                        <td className="text-right py-2">{item.quantity}</td>
-                        <td className="text-right py-2">₹{item.rate.toFixed(2)}</td>
-                        <td className="text-right py-2">₹{item.amount.toFixed(2)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* Totals */}
-              <div className="flex justify-end mb-8">
-                <div className="w-64">
-                  <div className="flex justify-between py-2">
-                    <span className="text-gray-600">Subtotal:</span>
-                    <span className="font-medium">₹{invoiceData.subtotal.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between py-2">
-                    <span className="text-gray-600">Tax ({invoiceData.taxRate}%):</span>
-                    <span className="font-medium">₹{invoiceData.taxAmount.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-t-2 border-gray-300 pt-2">
-                    <span className="text-lg font-semibold">Total:</span>
-                    <span className="text-lg font-semibold">₹{invoiceData.total.toFixed(2)}</span>
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Discount Rate (%)</label>
+                  <input
+                    type="number"
+                    value={invoiceData.discountRate}
+                    onChange={(e) => setInvoiceData(prev => ({ ...prev, discountRate: parseFloat(e.target.value) || 0 }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
                 </div>
               </div>
 
               {/* Notes and Terms */}
-              {(invoiceData.notes || invoiceData.terms) && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {invoiceData.notes && (
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Notes:</h4>
-                      <p className="text-gray-600 text-sm">{invoiceData.notes}</p>
-                    </div>
-                  )}
-                  {invoiceData.terms && (
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Terms:</h4>
-                      <p className="text-gray-600 text-sm">{invoiceData.terms}</p>
-                    </div>
-                  )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Notes</label>
+                  <textarea
+                    value={invoiceData.notes}
+                    onChange={(e) => setInvoiceData(prev => ({ ...prev, notes: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    rows={4}
+                    placeholder="Additional notes for the client"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Terms & Conditions</label>
+                  <textarea
+                    value={invoiceData.terms}
+                    onChange={(e) => setInvoiceData(prev => ({ ...prev, terms: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    rows={4}
+                    placeholder="Payment terms and conditions"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="space-y-6"
+            >
+              {/* Invoice Summary */}
+              <div className="bg-white rounded-2xl shadow-xl p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Invoice Summary</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Subtotal:</span>
+                    <span className="font-medium">{selectedCurrency?.symbol}{invoiceData.subtotal.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Tax ({invoiceData.taxRate}%):</span>
+                    <span className="font-medium">{selectedCurrency?.symbol}{invoiceData.taxAmount.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Discount ({invoiceData.discountRate}%):</span>
+                    <span className="font-medium text-red-600">-{selectedCurrency?.symbol}{invoiceData.discountAmount.toFixed(2)}</span>
+                  </div>
+                  <hr className="border-gray-200" />
+                  <div className="flex justify-between text-lg font-bold">
+                    <span>Total:</span>
+                    <span className="text-blue-600">{selectedCurrency?.symbol}{invoiceData.total.toFixed(2)}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="bg-white rounded-2xl shadow-xl p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Actions</h3>
+                <div className="space-y-3">
+                  <button
+                    onClick={() => setShowPreview(true)}
+                    className="w-full flex items-center justify-center px-4 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                  >
+                    <EyeIcon className="w-4 h-4 mr-2" />
+                    Preview Invoice
+                  </button>
+                  <button
+                    onClick={generatePDF}
+                    className="w-full flex items-center justify-center px-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                  >
+                    <DownloadIcon className="w-4 h-4 mr-2" />
+                    Download PDF
+                  </button>
+                  <button
+                    onClick={saveInvoice}
+                    className="w-full flex items-center justify-center px-4 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors"
+                  >
+                    <SaveIcon className="w-4 h-4 mr-2" />
+                    Save Invoice
+                  </button>
+                  <button
+                    onClick={sendInvoice}
+                    className="w-full flex items-center justify-center px-4 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+                  >
+                    <MailIcon className="w-4 h-4 mr-2" />
+                    Send Invoice
+                  </button>
+                  <button
+                    onClick={() => window.print()}
+                    className="w-full flex items-center justify-center px-4 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
+                  >
+                    <PrinterIcon className="w-4 h-4 mr-2" />
+                    Print Invoice
+                  </button>
+                </div>
+              </div>
+
+              {/* Saved Invoices */}
+              {savedInvoices.length > 0 && (
+                <div className="bg-white rounded-2xl shadow-xl p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Saved Invoices</h3>
+                  <div className="space-y-2">
+                    {savedInvoices.slice(-5).map((invoice, index) => (
+                      <div key={index} className="p-3 bg-gray-50 rounded-lg">
+                        <div className="font-medium text-sm">{invoice.invoiceNumber}</div>
+                        <div className="text-xs text-gray-600">{invoice.clientName}</div>
+                        <div className="text-xs text-gray-600">{selectedCurrency?.symbol}{invoice.total.toFixed(2)}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
+
+        {/* Template Selector Modal */}
+        {showTemplateSelector && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            >
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-900">Choose Template</h2>
+                <button
+                  onClick={() => setShowTemplateSelector(false)}
+                  className="p-2 text-gray-400 hover:text-gray-600"
+                >
+                  <XCircle className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {templates.map((template) => (
+                  <div
+                    key={template.id}
+                    onClick={() => loadTemplate(template.id)}
+                    className={`p-6 border-2 rounded-xl cursor-pointer transition-all ${
+                      invoiceData.template === template.id
+                        ? 'border-blue-500 bg-blue-50'
+                        : 'border-gray-200 hover:border-gray-300'
+                    }`}
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{template.name}</h3>
+                    <p className="text-gray-600 text-sm">{template.preview}</p>
+                    <div className="mt-4 h-32 bg-gray-100 rounded-lg flex items-center justify-center">
+                      <span className="text-gray-500 text-sm">Template Preview</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        )}
+
+        {/* Invoice Preview Modal */}
+        {showPreview && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            >
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-900">Invoice Preview</h2>
+                <div className="flex gap-2">
+                  <button
+                    onClick={generatePDF}
+                    className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                  >
+                    <DownloadIcon className="w-4 h-4 mr-2" />
+                    Download PDF
+                  </button>
+                  <button
+                    onClick={() => setShowPreview(false)}
+                    className="p-2 text-gray-400 hover:text-gray-600"
+                  >
+                    <XCircle className="w-6 h-6" />
+                  </button>
+                </div>
+              </div>
+              
+              {/* Invoice Preview Content */}
+              <div className="bg-white border border-gray-200 rounded-lg p-8">
+                {/* Header */}
+                <div className="flex justify-between items-start mb-8">
+                  <div>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-2">{invoiceData.companyName || 'Your Company'}</h1>
+                    <p className="text-gray-600">{invoiceData.companyAddress}</p>
+                    <p className="text-gray-600">{invoiceData.companyEmail}</p>
+                    <p className="text-gray-600">{invoiceData.companyPhone}</p>
+                  </div>
+                  <div className="text-right">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-2">INVOICE</h2>
+                    <p className="text-gray-600">Invoice #: {invoiceData.invoiceNumber}</p>
+                    <p className="text-gray-600">Date: {invoiceData.date}</p>
+                    <p className="text-gray-600">Due Date: {invoiceData.dueDate}</p>
+                  </div>
+                </div>
+
+                {/* Client Info */}
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Bill To:</h3>
+                  <p className="text-gray-900 font-medium">{invoiceData.clientName || 'Client Name'}</p>
+                  <p className="text-gray-600">{invoiceData.clientAddress}</p>
+                  <p className="text-gray-600">{invoiceData.clientEmail}</p>
+                  <p className="text-gray-600">{invoiceData.clientPhone}</p>
+                </div>
+
+                {/* Items Table */}
+                <div className="mb-8">
+                  <table className="w-full border-collapse">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="text-left p-3 border border-gray-200">Description</th>
+                        <th className="text-right p-3 border border-gray-200">Quantity</th>
+                        <th className="text-right p-3 border border-gray-200">Rate</th>
+                        <th className="text-right p-3 border border-gray-200">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {invoiceData.items.map((item, index) => (
+                        <tr key={item.id}>
+                          <td className="p-3 border border-gray-200">{item.description}</td>
+                          <td className="p-3 border border-gray-200 text-right">{item.quantity}</td>
+                          <td className="p-3 border border-gray-200 text-right">{selectedCurrency?.symbol}{item.rate.toFixed(2)}</td>
+                          <td className="p-3 border border-gray-200 text-right">{selectedCurrency?.symbol}{item.amount.toFixed(2)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Totals */}
+                <div className="flex justify-end mb-8">
+                  <div className="w-64">
+                    <div className="flex justify-between mb-2">
+                      <span>Subtotal:</span>
+                      <span>{selectedCurrency?.symbol}{invoiceData.subtotal.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span>Tax ({invoiceData.taxRate}%):</span>
+                      <span>{selectedCurrency?.symbol}{invoiceData.taxAmount.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span>Discount ({invoiceData.discountRate}%):</span>
+                      <span className="text-red-600">-{selectedCurrency?.symbol}{invoiceData.discountAmount.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between font-bold text-lg border-t pt-2">
+                      <span>Total:</span>
+                      <span>{selectedCurrency?.symbol}{invoiceData.total.toFixed(2)}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Notes and Terms */}
+                {(invoiceData.notes || invoiceData.terms) && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {invoiceData.notes && (
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Notes</h3>
+                        <p className="text-gray-600">{invoiceData.notes}</p>
+                      </div>
+                    )}
+                    {invoiceData.terms && (
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Terms & Conditions</h3>
+                        <p className="text-gray-600">{invoiceData.terms}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        )}
 
         {/* Comprehensive Information Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-xl p-8 mb-8"
+          className="bg-white rounded-2xl shadow-xl p-8 mt-8"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Professional Invoice Generator Features</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Download className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">PDF Download</h3>
-              <p className="text-gray-600">Generate professional PDF invoices that are ready for printing and sharing with clients.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Palette className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Custom Templates</h3>
-              <p className="text-gray-600">Choose from multiple professional templates to match your brand and business style.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FileText className="w-8 h-8 text-green-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Professional Format</h3>
-              <p className="text-gray-600">Industry-standard invoice format with all necessary fields and professional layout.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calculator className="w-8 h-8 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Auto Calculations</h3>
-              <p className="text-gray-600">Automatic calculation of subtotals, taxes, and final amounts with real-time updates.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Save className="w-8 h-8 text-red-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Save & Manage</h3>
-              <p className="text-gray-600">Save your invoices locally and manage them efficiently for future reference.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Eye className="w-8 h-8 text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Live Preview</h3>
-              <p className="text-gray-600">See your invoice in real-time as you make changes with our live preview feature.</p>
-            </div>
-          </div>
-
-          {/* Related Tools Section */}
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Related Invoicing Tools</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href="/invoicing-tools/invoice-due-date-tracker" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <div className="flex items-center mb-2">
-                  <Calendar className="w-5 h-5 text-blue-600 mr-2" />
-                  <span className="font-medium text-gray-900">Due Date Tracker</span>
-                </div>
-                <p className="text-sm text-gray-600">Track invoice due dates and payment status</p>
-              </a>
-              
-              <a href="/invoicing-tools/recurring-invoice-scheduler" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <div className="flex items-center mb-2">
-                  <Clock className="w-5 h-5 text-green-600 mr-2" />
-                  <span className="font-medium text-gray-900">Recurring Scheduler</span>
-                </div>
-                <p className="text-sm text-gray-600">Automate recurring invoice generation</p>
-              </a>
-              
-              <a href="/invoicing-tools/gst-tax-auto-fill-invoice-tool" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <div className="flex items-center mb-2">
-                  <Calculator className="w-5 h-5 text-purple-600 mr-2" />
-                  <span className="font-medium text-gray-900">GST Calculator</span>
-                </div>
-                <p className="text-sm text-gray-600">Auto-calculate and fill GST tax details</p>
-              </a>
-              
-              <a href="/invoicing-tools/invoice-ageing-report-visualizer" className="block p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                <div className="flex items-center mb-2">
-                  <BarChart3 className="w-5 h-5 text-orange-600 mr-2" />
-                  <span className="font-medium text-gray-900">Ageing Reports</span>
-                </div>
-                <p className="text-sm text-gray-600">Visualize invoice ageing and payment patterns</p>
-              </a>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* SEO Content Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-xl p-8"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Professional Invoice Generator - Complete Guide</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Custom Invoice Generator - Complete Guide</h2>
           
           <div className="prose prose-lg max-w-none">
             <h3>What is a Custom Invoice Generator?</h3>
             <p>
-              A custom invoice generator is a professional tool that allows businesses, freelancers, and professionals to create 
-              professional invoices with downloadable PDF format. Our advanced invoice generator provides multiple templates, 
-              automatic calculations, and professional formatting to ensure your invoices look professional and are compliant 
-              with business standards.
+              A custom invoice generator is a professional tool that allows businesses to create, customize, and manage 
+              invoices with advanced features like PDF generation, multiple templates, and comprehensive formatting options.
             </p>
 
-            <h3>Key Features of Our Invoice Generator</h3>
+            <h3>Key Features</h3>
             <ul>
-              <li><strong>PDF Download:</strong> Generate professional PDF invoices that are ready for printing and sharing</li>
-              <li><strong>Custom Templates:</strong> Choose from multiple professional templates to match your brand</li>
-              <li><strong>Professional Format:</strong> Industry-standard invoice format with all necessary fields</li>
-              <li><strong>Auto Calculations:</strong> Automatic calculation of subtotals, taxes, and final amounts</li>
+              <li><strong>PDF Download:</strong> Generate professional PDF invoices for easy sharing and printing</li>
+              <li><strong>Custom Templates:</strong> Choose from multiple professional templates or create your own</li>
+              <li><strong>Professional Formatting:</strong> Industry-standard invoice layout with all necessary details</li>
+              <li><strong>Auto Calculations:</strong> Automatic tax, discount, and total calculations</li>
               <li><strong>Client Management:</strong> Store and manage client information for quick access</li>
-              <li><strong>Tax Calculation:</strong> Automatic GST and tax calculations for Indian businesses</li>
-              <li><strong>Live Preview:</strong> See your invoice in real-time as you make changes</li>
-              <li><strong>Save & Manage:</strong> Save invoices locally for future reference</li>
+              <li><strong>Item Library:</strong> Save frequently used items for faster invoice creation</li>
+              <li><strong>Multi-Currency Support:</strong> Create invoices in different currencies</li>
+              <li><strong>Email Integration:</strong> Send invoices directly to clients via email</li>
             </ul>
 
-            <h3>Why Use Our Invoice Generator?</h3>
+            <h3>Benefits of Using a Custom Invoice Generator</h3>
             <p>
-              Our custom invoice generator is designed specifically for Indian businesses and professionals. It includes 
-              GST calculation features, professional templates, and compliance-ready formatting. Whether you're a freelancer, 
-              small business owner, or professional service provider, our tool helps you create professional invoices quickly 
-              and efficiently.
+              A professional invoice generator saves time, ensures consistency, and presents a professional image to clients. 
+              It helps streamline your billing process, reduce errors, and improve cash flow management.
             </p>
 
-            <h3>How to Create Professional Invoices</h3>
-            <ol>
-              <li><strong>Choose Template:</strong> Select from our professional invoice templates</li>
-              <li><strong>Enter Details:</strong> Fill in your business and client information</li>
-              <li><strong>Add Items:</strong> Include all products or services with quantities and rates</li>
-              <li><strong>Set Tax Rate:</strong> Configure GST or other tax rates as applicable</li>
-              <li><strong>Preview:</strong> Review your invoice with our live preview feature</li>
-              <li><strong>Download:</strong> Generate and download your professional PDF invoice</li>
-            </ol>
-
-            <h3>Invoice Generator for Different Business Types</h3>
+            <h3>Related Tools</h3>
             <p>
-              Our invoice generator is suitable for various business types including freelancers, consultants, small businesses, 
-              service providers, and professionals. The tool supports different tax structures, multiple currencies, and various 
-              business requirements to ensure compliance and professionalism.
-            </p>
-
-            <h3>Related Tools and Resources</h3>
-            <p>
-              Enhance your invoicing process with our related tools including the <a href="/invoicing-tools/invoice-due-date-tracker" className="text-blue-600 hover:underline">Invoice Due Date Tracker</a> for 
-              payment monitoring, <a href="/invoicing-tools/recurring-invoice-scheduler" className="text-blue-600 hover:underline">Recurring Invoice Scheduler</a> for automated billing, and 
-              <a href="/invoicing-tools/gst-tax-auto-fill-invoice-tool" className="text-blue-600 hover:underline"> GST Tax Auto-Fill Tool</a> for tax compliance.
+              Enhance your invoicing workflow with our related tools including the 
+              <a href="/invoicing-tools/invoice-item-library" className="text-blue-600 hover:underline"> Invoice Item Library</a> for managing invoice items,
+              <a href="/invoicing-tools/recurring-invoice-scheduler" className="text-blue-600 hover:underline"> Recurring Invoice Scheduler</a> for automated billing, and
+              <a href="/invoicing-tools/invoice-due-date-tracker" className="text-blue-600 hover:underline"> Invoice Due Date Tracker</a> for payment monitoring.
             </p>
           </div>
         </motion.div>

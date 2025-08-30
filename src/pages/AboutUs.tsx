@@ -27,9 +27,18 @@ export const AboutUs: React.FC = () => {
       
       <div className="text-center mb-16">
         <h1 className="text-4xl font-bold text-neutral-900 mb-4">About MoneyCal India</h1>
-        <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-          Empowering Indians to make informed financial decisions through accurate calculations and educational resources. Explore our <Link to="/blog" className="text-blue-600 underline hover:text-blue-800">blog</Link> and <Link to="/calculators/emi-calculator" className="text-blue-600 underline hover:text-blue-800">calculators</Link>.
+        <p className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+          MoneyCal India is India's most comprehensive financial calculator platform, empowering millions of Indians to make informed financial decisions through accurate calculations, educational resources, and expert insights. Since our launch, we've helped over 500,000 users plan their financial future with our free tools and calculators.
         </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <Link to="/blog" className="text-blue-600 underline hover:text-blue-800 font-medium">Financial Blog</Link>
+          <span className="text-gray-400">•</span>
+          <Link to="/calculators/emi-calculator" className="text-blue-600 underline hover:text-blue-800 font-medium">EMI Calculator</Link>
+          <span className="text-gray-400">•</span>
+          <Link to="/tax-tools" className="text-blue-600 underline hover:text-blue-800 font-medium">Tax Tools</Link>
+          <span className="text-gray-400">•</span>
+          <Link to="/finance-tools" className="text-blue-600 underline hover:text-blue-800 font-medium">Investment Tools</Link>
+        </div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
@@ -142,17 +151,149 @@ export const AboutUs: React.FC = () => {
         </div>
       </div>
       
+      {/* Our Impact Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Our Impact & Achievements</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white rounded-xl shadow-md p-6 text-center">
+            <div className="text-3xl font-bold text-blue-600 mb-2">500K+</div>
+            <div className="text-gray-600">Users Helped</div>
+            <p className="text-sm text-gray-500 mt-2">Monthly active users planning their financial future</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6 text-center">
+            <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
+            <div className="text-gray-600">Financial Tools</div>
+            <p className="text-sm text-gray-500 mt-2">Comprehensive calculators for all financial needs</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6 text-center">
+            <div className="text-3xl font-bold text-purple-600 mb-2">100+</div>
+            <div className="text-gray-600">Educational Articles</div>
+            <p className="text-sm text-gray-500 mt-2">In-depth guides and financial insights</p>
+          </div>
+        </div>
+      </div>
+
+      {/* What We Offer Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">What We Offer</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Financial Calculators</h3>
+            <p className="text-gray-600 mb-4">Comprehensive suite of calculators including EMI, SIP, tax, investment, and retirement planning tools.</p>
+            <Link to="/calculators" className="text-blue-600 hover:text-blue-800 font-medium">Explore Calculators →</Link>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Educational Content</h3>
+            <p className="text-gray-600 mb-4">In-depth articles, guides, and tutorials to help you understand complex financial concepts.</p>
+            <Link to="/blog" className="text-blue-600 hover:text-blue-800 font-medium">Read Our Blog →</Link>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Tax Planning Tools</h3>
+            <p className="text-gray-600 mb-4">Advanced tax calculation tools and strategies to help you optimize your tax savings.</p>
+            <Link to="/tax-tools" className="text-blue-600 hover:text-blue-800 font-medium">Tax Tools →</Link>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Investment Analysis</h3>
+            <p className="text-gray-600 mb-4">Tools to analyze mutual funds, stocks, and other investment options for better returns.</p>
+            <Link to="/finance-tools" className="text-blue-600 hover:text-blue-800 font-medium">Investment Tools →</Link>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Government Schemes</h3>
+            <p className="text-gray-600 mb-4">Information and calculators for various government schemes and benefits available to Indians.</p>
+            <Link to="/government-schemes" className="text-blue-600 hover:text-blue-800 font-medium">Explore Schemes →</Link>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Astro Finance</h3>
+            <p className="text-gray-600 mb-4">Unique blend of Vedic astrology and financial planning for auspicious investment timing.</p>
+            <Link to="/astro-finance" className="text-blue-600 hover:text-blue-800 font-medium">Astro Finance →</Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Why Choose Us Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Why Choose MoneyCal India?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <div className="flex items-start">
+              <div className="h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <span className="text-blue-600 font-semibold text-sm">1</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Indian Context</h3>
+                <p className="text-gray-600">All our calculators and content are specifically designed for the Indian financial landscape, including local tax laws, investment options, and regulatory requirements.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="h-8 w-8 bg-green-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <span className="text-green-600 font-semibold text-sm">2</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">100% Free</h3>
+                <p className="text-gray-600">All our financial calculators and educational content are completely free to use. No hidden charges, no premium tiers - just valuable tools for everyone.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="h-8 w-8 bg-purple-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <span className="text-purple-600 font-semibold text-sm">3</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Regular Updates</h3>
+                <p className="text-gray-600">We continuously update our calculators and content to reflect the latest changes in tax laws, interest rates, and financial regulations.</p>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-6">
+            <div className="flex items-start">
+              <div className="h-8 w-8 bg-orange-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <span className="text-orange-600 font-semibold text-sm">4</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Educational Focus</h3>
+                <p className="text-gray-600">We don't just provide calculators - we educate users about financial concepts, helping them make informed decisions and build financial literacy.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="h-8 w-8 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <span className="text-red-600 font-semibold text-sm">5</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Mobile Optimized</h3>
+                <p className="text-gray-600">Our platform is fully responsive and optimized for mobile devices, ensuring you can access financial tools anytime, anywhere.</p>
+              </div>
+            </div>
+            <div className="flex items-start">
+              <div className="h-8 w-8 bg-indigo-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                <span className="text-indigo-600 font-semibold text-sm">6</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">Privacy First</h3>
+                <p className="text-gray-600">We respect your privacy and don't store sensitive financial data. All calculations are performed locally in your browser.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-primary-50 rounded-xl p-8 border border-primary-100 text-center">
         <h2 className="text-2xl font-bold text-primary-900 mb-4">Join Us in Our Mission</h2>
         <p className="text-lg text-primary-700 mb-6 max-w-3xl mx-auto">
           We're committed to improving financial literacy across India. Whether you're a financial expert interested in contributing to our blog or a user with feedback on our calculators, we'd love to hear from you.
         </p>
-        <Link 
-          to="/contact-us" 
-          className="btn bg-primary-600 text-white hover:bg-primary-700 inline-flex items-center"
-        >
-          Get in Touch
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link 
+            to="/contact-us" 
+            className="btn bg-primary-600 text-white hover:bg-primary-700 inline-flex items-center px-6 py-3 rounded-lg"
+          >
+            Get in Touch
+          </Link>
+          <Link 
+            to="/blog" 
+            className="btn bg-white text-primary-600 border border-primary-600 hover:bg-primary-50 inline-flex items-center px-6 py-3 rounded-lg"
+          >
+            Read Our Blog
+          </Link>
+        </div>
       </div>
     </div>
     </>

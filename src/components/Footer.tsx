@@ -42,6 +42,8 @@ export const Footer: React.FC = () => {
       links: [
         { name: 'Home', href: '/' },
         { name: 'Blog', href: '/blog' },
+        { name: 'Financial Education', href: '/financial-education' },
+        { name: 'Help Center', href: '/help-center' },
         { name: 'Government Schemes', href: '/government-schemes' },
         { name: 'Excel Tools', href: '/exceltool' },
         { name: 'Crypto', href: '/crypto' },
@@ -54,9 +56,11 @@ export const Footer: React.FC = () => {
         { name: 'About Us', href: '/about-us' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms & Conditions', href: '/terms-and-conditions' },
-        { name: 'Help Center', href: '/help' },
-        { name: 'FAQ', href: '/faq' },
-        { name: 'Feedback', href: '/feedback' },
+        { name: 'Disclaimer', href: '/disclaimer' },
+        { name: 'Editorial Policy', href: '/editorial-policy' },
+        { name: 'Cookie Policy', href: '/cookie-policy' },
+        { name: 'Help Center', href: '/help-center' },
+        { name: 'Contact Us', href: '/contact-us' },
       ]
     }
   ];

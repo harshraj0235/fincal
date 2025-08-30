@@ -26,10 +26,19 @@ export const ContactUs: React.FC = () => {
       </div>
       
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-neutral-900 mb-4">Contact Us</h1>
-        <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-          Have questions, feedback, or suggestions? We'd love to hear from you. Get in touch with our team.
+        <h1 className="text-4xl font-bold text-neutral-900 mb-4">Contact MoneyCal India</h1>
+        <p className="text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+          We're here to help you with all your financial planning needs. Whether you have questions about our calculators, need technical support, want to provide feedback, or are interested in partnerships, our team is ready to assist you. We typically respond within 24 hours during business days.
         </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <span className="text-sm text-gray-500">📧 Email Support</span>
+          <span className="text-gray-400">•</span>
+          <span className="text-sm text-gray-500">📞 Phone Support</span>
+          <span className="text-gray-400">•</span>
+          <span className="text-sm text-gray-500">💬 Live Chat</span>
+          <span className="text-gray-400">•</span>
+          <span className="text-sm text-gray-500">📝 Feedback Form</span>
+        </div>
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -138,12 +147,16 @@ export const ContactUs: React.FC = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-neutral-900 mb-1">Email Us</h3>
                   <p className="text-neutral-600 mb-1">For general inquiries:</p>
-                  <a href="mailto:info@fincalcindia.com" className="text-primary-600 hover:text-primary-700">
-                    info@fincalcindia.com
+                  <a href="mailto:info@moneycal.in" className="text-primary-600 hover:text-primary-700">
+                    info@moneycal.in
                   </a>
                   <p className="text-neutral-600 mt-2 mb-1">For support:</p>
-                  <a href="mailto:support@fincalcindia.com" className="text-primary-600 hover:text-primary-700">
-                    support@fincalcindia.com
+                  <a href="mailto:support@moneycal.in" className="text-primary-600 hover:text-primary-700">
+                    support@moneycal.in
+                  </a>
+                  <p className="text-neutral-600 mt-2 mb-1">For partnerships:</p>
+                  <a href="mailto:partnerships@moneycal.in" className="text-primary-600 hover:text-primary-700">
+                    partnerships@moneycal.in
                   </a>
                 </div>
               </div>
@@ -176,8 +189,8 @@ export const ContactUs: React.FC = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-neutral-900 mb-1">Visit Us</h3>
                   <p className="text-neutral-600">
-                    FinCalc India<br />
-                    123 Financial District<br />
+                    MoneyCal India<br />
+                    Financial Technology Hub<br />
                     Bandra Kurla Complex<br />
                     Mumbai, Maharashtra 400051<br />
                     India
@@ -207,6 +220,60 @@ export const ContactUs: React.FC = () => {
         </div>
       </div>
       
+      {/* FAQ Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">Frequently Asked Questions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">How accurate are your calculators?</h3>
+            <p className="text-gray-600">Our calculators are built using the latest financial formulas and are regularly updated to reflect current market conditions and regulatory changes. However, results are for educational purposes only and should not be considered as financial advice.</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Are your services really free?</h3>
+            <p className="text-gray-600">Yes, all our financial calculators and educational content are completely free to use. We believe in making financial planning accessible to everyone in India.</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Do you store my financial data?</h3>
+            <p className="text-gray-600">No, we don't store any of your personal financial information. All calculations are performed locally in your browser, ensuring complete privacy and security.</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Can I suggest new calculators?</h3>
+            <p className="text-gray-600">Absolutely! We love hearing from our users. If you have ideas for new calculators or improvements to existing ones, please reach out to us through our contact form.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Support Types Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">How We Can Help You</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 text-center">
+            <div className="h-16 w-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MessageSquare className="h-8 w-8 text-white" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Technical Support</h3>
+            <p className="text-gray-600 mb-4">Having trouble with our calculators? Our technical team is here to help you resolve any issues quickly.</p>
+            <a href="mailto:support@moneycal.in" className="text-blue-600 hover:text-blue-800 font-medium">Get Support →</a>
+          </div>
+          <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 text-center">
+            <div className="h-16 w-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Mail className="h-8 w-8 text-white" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">General Inquiries</h3>
+            <p className="text-gray-600 mb-4">Questions about our services, partnerships, or media inquiries? We're here to help with all your questions.</p>
+            <a href="mailto:info@moneycal.in" className="text-green-600 hover:text-green-800 font-medium">Contact Us →</a>
+          </div>
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 text-center">
+            <div className="h-16 w-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Send className="h-8 w-8 text-white" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 mb-3">Feedback & Suggestions</h3>
+            <p className="text-gray-600 mb-4">Help us improve by sharing your feedback, suggestions, or ideas for new features and calculators.</p>
+            <button className="text-purple-600 hover:text-purple-800 font-medium">Share Feedback →</button>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-white rounded-xl shadow-md overflow-hidden">
         <div className="h-96 w-full">
           {/* In a real application, you would embed a Google Map here */}
