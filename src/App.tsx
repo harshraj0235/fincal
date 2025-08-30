@@ -244,6 +244,8 @@ function App() {
         {/* Fino Finance Chat System routes - outside Layout */}
         <Route path="/fino" element={<FinoChat />} />
         <Route path="/fino-home" element={<FinoHome />} />
+        {/* Test route to verify routing is working */}
+        <Route path="/fino-test" element={<div className="p-8 text-center text-2xl font-bold text-green-600">Fino Test Route Working!</div>} />
         {/* All other routes inside Layout */}
         <Route path="*" element={
           <Layout>

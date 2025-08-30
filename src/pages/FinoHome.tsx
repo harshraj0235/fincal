@@ -22,6 +22,11 @@ import {
 const FinoHome: React.FC = () => {
   console.log('FinoHome component is loading...');
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Test if component is rendering
+  useEffect(() => {
+    console.log('FinoHome component mounted successfully!');
+  }, []);
 
   useEffect(() => {
     setIsVisible(true);
