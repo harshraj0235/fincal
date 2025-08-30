@@ -9,7 +9,8 @@ import {
   FileText, 
   Settings,
   MessageCircle,
-  Sparkles
+  Sparkles,
+  Shield
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -33,6 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
     { name: 'Calculators', href: '/calculators', icon: Calculator },
     { name: 'Blog', href: '/blog', icon: FileText },
     { name: 'Tools', href: '/exceltool', icon: TrendingUp },
+    { name: 'Insurance', href: '/insurance-tools', icon: Shield },
     { name: 'Education', href: '/financial-education', icon: FileText },
     { name: 'Help', href: '/help-center', icon: MessageCircle },
     { name: 'Schemes', href: '/government-schemes', icon: Settings },

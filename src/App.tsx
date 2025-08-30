@@ -160,6 +160,17 @@ const RealTimeStockPortfolioTracker = lazy(() => import('./pages/RealTimeStockPo
 const InvestingToolsHub = lazy(() => import('./pages/InvestingToolsHub'));
 const FinancialEducationHub = lazy(() => import('./pages/FinancialEducationHub'));
 const HelpCenter = lazy(() => import('./pages/HelpCenter'));
+const InsuranceTools = lazy(() => import('./pages/InsuranceTools'));
+const LifeInsuranceCalculator = lazy(() => import('./pages/insurance/LifeInsuranceCalculator'));
+const HealthInsuranceEstimator = lazy(() => import('./pages/insurance/HealthInsuranceEstimator'));
+const CarInsuranceCalculator = lazy(() => import('./pages/insurance/CarInsuranceCalculator'));
+const TermInsurancePlanner = lazy(() => import('./pages/insurance/TermInsurancePlanner'));
+const TravelInsuranceSelector = lazy(() => import('./pages/insurance/TravelInsuranceSelector'));
+const HomeInsuranceEstimator = lazy(() => import('./pages/insurance/HomeInsuranceEstimator'));
+const TwoWheelerTracker = lazy(() => import('./pages/insurance/TwoWheelerTracker'));
+const CriticalIllnessCalculator = lazy(() => import('./pages/insurance/CriticalIllnessCalculator'));
+const PortfolioDashboard = lazy(() => import('./pages/insurance/PortfolioDashboard'));
+const ULIPCalculator = lazy(() => import('./pages/insurance/ULIPCalculator'));
 const InvoicingReceivablesHub = lazy(() => import('./pages/InvoicingReceivablesHub'));
 const CustomInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/CustomInvoiceGenerator'));
 const InvoiceDueDateTracker = lazy(() => import('./pages/invoicing-tools/InvoiceDueDateTracker'));
@@ -394,8 +405,19 @@ function App() {
                 <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
                 <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
                 <Route path="/investing-tools" element={<InvestingToolsHub />} />
-                <Route path="/financial-education" element={<FinancialEducationHub />} />
-                <Route path="/help-center" element={<HelpCenter />} />
+                            <Route path="/financial-education" element={<FinancialEducationHub />} />
+            <Route path="/help-center" element={<HelpCenter />} />
+            <Route path="/insurance-tools" element={<InsuranceTools />} />
+            <Route path="/insurance-tools/life-insurance-calculator" element={<LifeInsuranceCalculator />} />
+            <Route path="/insurance-tools/health-insurance-estimator" element={<HealthInsuranceEstimator />} />
+            <Route path="/insurance-tools/car-insurance-calculator" element={<CarInsuranceCalculator />} />
+            <Route path="/insurance-tools/term-insurance-planner" element={<TermInsurancePlanner />} />
+            <Route path="/insurance-tools/travel-insurance-selector" element={<TravelInsuranceSelector />} />
+            <Route path="/insurance-tools/home-insurance-estimator" element={<HomeInsuranceEstimator />} />
+            <Route path="/insurance-tools/two-wheeler-tracker" element={<TwoWheelerTracker />} />
+            <Route path="/insurance-tools/critical-illness-calculator" element={<CriticalIllnessCalculator />} />
+            <Route path="/insurance-tools/portfolio-dashboard" element={<PortfolioDashboard />} />
+            <Route path="/insurance-tools/ulip-calculator" element={<ULIPCalculator />} />
         <Route path="/invoicing-receivables" element={<InvoicingReceivablesHub />} />
         <Route path="/invoicing-tools" element={<InvoicingReceivablesHub />} />
         <Route path="/invoicing-tools/custom-invoice-generator" element={<CustomInvoiceGenerator />} />
