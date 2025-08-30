@@ -194,6 +194,8 @@ const GSTInclusiveInvoiceBuilder = lazy(() => import('./pages/invoicing-tools/GS
 const OutstandingReceivableHeatmap = lazy(() => import('./pages/invoicing-tools/OutstandingReceivableHeatmap'));
 const FinoHome = lazy(() => import('./pages/FinoHome'));
 const FinoChat = lazy(() => import('./components/FinoChat'));
+const FinoHomeSimple = lazy(() => import('./pages/FinoHomeSimple'));
+const FinoChatSimple = lazy(() => import('./components/FinoChatSimple'));
 
 function App() {
   useEffect(() => {
@@ -244,6 +246,11 @@ function App() {
         {/* Fino Finance Chat System routes - outside Layout */}
         <Route path="/fino" element={<FinoChat />} />
         <Route path="/fino-home" element={<FinoHome />} />
+        {/* Simplified Fino components for testing */}
+        <Route path="/fino-simple-chat" element={<FinoChatSimple />} />
+        <Route path="/fino-simple-home" element={<FinoHomeSimple />} />
+        {/* Simple test components to verify imports */}
+        <Route path="/fino-simple" element={<div className="p-8 text-center text-2xl font-bold text-blue-600">Fino Simple Test - Import Working!</div>} />
         {/* Test route to verify routing is working */}
         <Route path="/fino-test" element={<div className="p-8 text-center text-2xl font-bold text-green-600">Fino Test Route Working!</div>} />
         {/* All other routes inside Layout */}
