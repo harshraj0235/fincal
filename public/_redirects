@@ -1,1 +1,6 @@
-/*    /index.html   200 
+# Netlify redirects for SPA routing
+/*    /index.html   200
+
+# Fino Finance Chat System routes
+/fino    /index.html   200
+/fino-home    /index.html   200

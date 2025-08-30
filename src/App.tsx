@@ -192,8 +192,8 @@ const TimeVsBillableHoursGraph = lazy(() => import('./pages/invoicing-tools/Time
 const InvoiceEmailTracker = lazy(() => import('./pages/invoicing-tools/InvoiceEmailTracker'));
 const GSTInclusiveInvoiceBuilder = lazy(() => import('./pages/invoicing-tools/GSTInclusiveInvoiceBuilder'));
 const OutstandingReceivableHeatmap = lazy(() => import('./pages/invoicing-tools/OutstandingReceivableHeatmap'));
-const FinoHome = lazy(() => import('./fino').then(module => ({ default: module.FinoHome })));
-const FinoChat = lazy(() => import('./fino').then(module => ({ default: module.FinoChat })));
+const FinoHome = lazy(() => import('./fino/pages/FinoHome'));
+const FinoChat = lazy(() => import('./fino/components/FinoChat'));
 
 function App() {
   useEffect(() => {
