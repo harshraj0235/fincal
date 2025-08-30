@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Bike, Calculator, Calendar, Shield, AlertCircle, Plus, Trash2, Edit3 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, Bike, Calculator, Calendar, Shield, AlertCircle, Plus, Trash2, Edit3, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 export const TwoWheelerTracker: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [vehicles, setVehicles] = useState([]);
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingVehicle, setEditingVehicle] = useState(null);
@@ -130,6 +133,43 @@ export const TwoWheelerTracker: React.FC = () => {
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-IN');
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('two-wheeler-insurance-tracker-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -511,11 +551,20 @@ export const TwoWheelerTracker: React.FC = () => {
 
           {/* Summary */}
           {vehicles.length > 0 && (
-            <div className="mt-8 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                <Shield className="h-5 w-5 text-cyan-600 mr-2" />
-                Portfolio Summary
-              </h3>
+            <div ref={resultsRef} className="mt-8 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-xl font-bold text-gray-900 flex items-center">
+                  <Shield className="h-5 w-5 text-cyan-600 mr-2" />
+                  Portfolio Summary
+                </h3>
+                <button
+                  onClick={downloadPDF}
+                  className="flex items-center px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-colors"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download PDF
+                </button>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center p-4 bg-cyan-50 rounded-lg">
                   <div className="text-2xl font-bold text-cyan-600">{vehicles.length}</div>
@@ -544,7 +593,8 @@ export const TwoWheelerTracker: React.FC = () => {
               <p className="mb-4">
                 Two-wheeler insurance is mandatory in India and provides financial protection against various risks 
                 including accidents, theft, and third-party liability. It's essential for all bike and scooter owners 
-                to have adequate insurance coverage.
+                to have adequate insurance coverage. For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Types of Two-Wheeler Insurance:</h3>
@@ -564,6 +614,19 @@ export const TwoWheelerTracker: React.FC = () => {
                 <li><strong>Coverage Type:</strong> Comprehensive coverage costs more than third-party</li>
                 <li><strong>No Claim Bonus:</strong> Discounts for claim-free years</li>
               </ul>
+
+              <div className="bg-cyan-50 border border-cyan-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-cyan-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/car-insurance-calculator" className="text-cyan-600 hover:text-cyan-800 underline">Car Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/home-insurance-estimator" className="text-cyan-600 hover:text-cyan-800 underline">Home Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-cyan-600 hover:text-cyan-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-cyan-600 hover:text-cyan-800 underline">Life Insurance Calculator</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Tips for Two-Wheeler Insurance:</h3>
               <ul className="list-disc pl-6 space-y-2">

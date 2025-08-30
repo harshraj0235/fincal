@@ -1,12 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Stethoscope, Calculator, Heart, AlertCircle, Shield, TrendingUp } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ArrowLeft, Stethoscope, Calculator, Heart, AlertCircle, Shield, TrendingUp, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
+const criticalIllnesses = [
+  { name: 'Cancer', cost: 1500000, probability: 0.12, description: 'All types of cancer' },
+  { name: 'Heart Attack', cost: 800000, probability: 0.15, description: 'Myocardial infarction' },
+  { name: 'Stroke', cost: 600000, probability: 0.08, description: 'Cerebrovascular accident' },
+  { name: 'Kidney Failure', cost: 1200000, probability: 0.05, description: 'End-stage renal disease' },
+  { name: 'Liver Disease', cost: 1000000, probability: 0.04, description: 'Major organ failure' },
+  { name: 'Paralysis', cost: 500000, probability: 0.03, description: 'Permanent paralysis' },
+  { name: 'Multiple Sclerosis', cost: 800000, probability: 0.02, description: 'Neurological disorder' },
+  { name: 'Parkinson\'s Disease', cost: 600000, probability: 0.02, description: 'Neurodegenerative disorder' }
+];
+
+const providers = [
+  { name: 'HDFC Life', factor: 1.0, rating: 4.4, features: ['Comprehensive Coverage', 'Quick Claims', 'Good Service'] },
+  { name: 'ICICI Prudential', factor: 1.05, rating: 4.3, features: ['Wide Coverage', 'Online Process', 'Competitive Rates'] },
+  { name: 'Bajaj Allianz', factor: 0.98, rating: 4.2, features: ['Affordable Premiums', 'Fast Processing', 'Customer Support'] },
+  { name: 'SBI Life', factor: 1.02, rating: 4.1, features: ['Bank Backed', 'Reliable', 'Wide Network'] },
+  { name: 'Max Life', factor: 1.08, rating: 4.0, features: ['Specialized Plans', 'Good Coverage', 'Trusted Brand'] }
+];
+
+const preExistingConditions = [
+  'Diabetes', 'Hypertension', 'Heart Disease', 'Cancer History', 'Kidney Disease', 
+  'Liver Disease', 'Mental Health', 'Autoimmune Disease', 'None'
+];
+
 export const CriticalIllnessCalculator: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [inputs, setInputs] = useState({
     age: 35,
     annualIncome: 800000,
@@ -24,34 +51,16 @@ export const CriticalIllnessCalculator: React.FC = () => {
     recommendedCoverage: 0,
     estimatedPremium: 0,
     coverageGap: 0,
-    providers: []
+    providers: [] as Array<{
+      name: string;
+      factor: number;
+      rating: number;
+      features: string[];
+      premium: number;
+    }>
   });
 
-  const criticalIllnesses = [
-    { name: 'Cancer', cost: 1500000, probability: 0.12, description: 'All types of cancer' },
-    { name: 'Heart Attack', cost: 800000, probability: 0.15, description: 'Myocardial infarction' },
-    { name: 'Stroke', cost: 600000, probability: 0.08, description: 'Cerebrovascular accident' },
-    { name: 'Kidney Failure', cost: 1200000, probability: 0.05, description: 'End-stage renal disease' },
-    { name: 'Liver Disease', cost: 1000000, probability: 0.04, description: 'Major organ failure' },
-    { name: 'Paralysis', cost: 500000, probability: 0.03, description: 'Permanent paralysis' },
-    { name: 'Multiple Sclerosis', cost: 800000, probability: 0.02, description: 'Neurological disorder' },
-    { name: 'Parkinson\'s Disease', cost: 600000, probability: 0.02, description: 'Neurodegenerative disorder' }
-  ];
-
-  const providers = [
-    { name: 'HDFC Life', factor: 1.0, rating: 4.4, features: ['Comprehensive Coverage', 'Quick Claims', 'Good Service'] },
-    { name: 'ICICI Prudential', factor: 1.05, rating: 4.3, features: ['Wide Coverage', 'Online Process', 'Competitive Rates'] },
-    { name: 'Bajaj Allianz', factor: 0.98, rating: 4.2, features: ['Affordable Premiums', 'Fast Processing', 'Customer Support'] },
-    { name: 'SBI Life', factor: 1.02, rating: 4.1, features: ['Bank Backed', 'Reliable', 'Wide Network'] },
-    { name: 'Max Life', factor: 1.08, rating: 4.0, features: ['Specialized Plans', 'Good Coverage', 'Trusted Brand'] }
-  ];
-
-  const preExistingConditions = [
-    'Diabetes', 'Hypertension', 'Heart Disease', 'Cancer History', 'Kidney Disease', 
-    'Liver Disease', 'Mental Health', 'Autoimmune Disease', 'None'
-  ];
-
-  const calculateCriticalIllnessCoverage = () => {
+  const calculateCriticalIllnessCoverage = useCallback(() => {
     const { age, annualIncome, existingHealthInsurance, familyHistory, lifestyle, coverageAmount, policyTerm, smoking, preExistingConditions } = inputs;
     
     // Calculate recommended coverage based on income and potential costs
@@ -105,13 +114,13 @@ export const CriticalIllnessCalculator: React.FC = () => {
       coverageGap,
       providers: providerPremiums
     });
-  };
+  }, [inputs]);
 
   useEffect(() => {
     calculateCriticalIllnessCoverage();
-  }, [inputs]);
+  }, [calculateCriticalIllnessCoverage]);
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | number | boolean | string[]) => {
     setInputs(prev => ({
       ...prev,
       [field]: value
@@ -134,6 +143,43 @@ export const CriticalIllnessCalculator: React.FC = () => {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('critical-illness-calculator-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -339,13 +385,22 @@ export const CriticalIllnessCalculator: React.FC = () => {
             </div>
 
             {/* Results Section */}
-            <div className="space-y-6">
+            <div ref={resultsRef} className="space-y-6">
               {/* Coverage Analysis */}
               <div className="bg-gradient-to-br from-pink-600 to-red-600 rounded-xl p-8 text-white">
-                <h2 className="text-2xl font-bold mb-4 flex items-center">
-                  <Heart className="h-6 w-6 mr-2" />
-                  Coverage Analysis
-                </h2>
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-2xl font-bold flex items-center">
+                    <Heart className="h-6 w-6 mr-2" />
+                    Coverage Analysis
+                  </h2>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </button>
+                </div>
                 <div className="space-y-4">
                   <div className="text-center p-4 bg-white/20 rounded-lg">
                     <div className="text-2xl font-bold">
@@ -476,7 +531,8 @@ export const CriticalIllnessCalculator: React.FC = () => {
               <p className="mb-4">
                 Critical illness insurance provides a lump sum payment upon diagnosis of a covered critical illness, 
                 helping you manage medical expenses, loss of income, and other financial obligations during recovery. 
-                It's designed to complement your health insurance and provide financial security during challenging times.
+                It's designed to complement your health insurance and provide financial security during challenging times. For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Benefits of Critical Illness Insurance:</h3>
@@ -499,6 +555,19 @@ export const CriticalIllnessCalculator: React.FC = () => {
                 <li><strong>Multiple Sclerosis:</strong> Neurological disorder with specific criteria</li>
                 <li><strong>Parkinson's Disease:</strong> Neurodegenerative disorder</li>
               </ul>
+
+              <div className="bg-pink-50 border border-pink-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-pink-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/health-insurance-estimator" className="text-pink-600 hover:text-pink-800 underline">Health Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-pink-600 hover:text-pink-800 underline">Life Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-pink-600 hover:text-pink-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                  <RouterLink to="/insurance-tools/term-insurance-planner" className="text-pink-600 hover:text-pink-800 underline">Term Insurance Planner</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Tips for Choosing Critical Illness Insurance:</h3>
               <ul className="list-disc pl-6 space-y-2">

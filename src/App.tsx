@@ -192,6 +192,8 @@ const TimeVsBillableHoursGraph = lazy(() => import('./pages/invoicing-tools/Time
 const InvoiceEmailTracker = lazy(() => import('./pages/invoicing-tools/InvoiceEmailTracker'));
 const GSTInclusiveInvoiceBuilder = lazy(() => import('./pages/invoicing-tools/GSTInclusiveInvoiceBuilder'));
 const OutstandingReceivableHeatmap = lazy(() => import('./pages/invoicing-tools/OutstandingReceivableHeatmap'));
+const FinoHome = lazy(() => import('./pages/FinoHome'));
+const FinoChat = lazy(() => import('./components/FinoChat'));
 
 function App() {
   useEffect(() => {
@@ -456,6 +458,9 @@ function App() {
                 <Route path="/tools/proposal-template" element={<OfferProposalTemplateBuilder />} />
                 <Route path="/tools/feedback-form" element={<SimpleFeedbackFormGenerator />} />
                 <Route path="/tools/:toolId" element={<ToolPlaceholder />} />
+                {/* Fino Finance Chat System Routes */}
+                <Route path="/fino" element={<FinoChat />} />
+                <Route path="/fino-home" element={<FinoHome />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>

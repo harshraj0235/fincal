@@ -24,7 +24,9 @@ import {
   Building2,
   Table,
   Bitcoin,
-  Zap
+  Zap,
+  MessageCircle,
+  Mic
 } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { allBlogPosts } from '../data/allBlogData';
@@ -240,7 +242,7 @@ export const HomeNew: React.FC = () => {
                 <button onClick={() => scrollToSection('blog')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Blog</button>
                 <button onClick={() => scrollToSection('news')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">News</button>
                 <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Features</button>
-                <Link to="/tools/" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
+                <Link to="/tools/" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-blue-600 font-semibold">🛠️ All Tools Hub</Link>
                 <Link to="/tax-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">💰 Tax Tools</Link>
                 <Link to="/finance-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📈 Finance Tools</Link>
                 <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">View All Blog Posts</Link>
@@ -264,7 +266,7 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('categories')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
           <button onClick={() => scrollToSection('blog')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Blog</button>
           <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
-          <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
+          <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-semibold text-blue-600 hover:text-blue-700 transition-all whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
           <Link to="/finance-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📈 Finance</Link>
           <Link to="/stock-market" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📊 Stock</Link>
@@ -465,6 +467,79 @@ export const HomeNew: React.FC = () => {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Fino AI Finance Chat Banner */}
+        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 relative overflow-hidden">
+          <div className="absolute inset-0 bg-black opacity-10"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
+                <Zap className="w-4 h-4 mr-2" />
+                New: AI-Powered Finance Assistant
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Meet <span className="text-yellow-300">Fino</span> - Your AI Finance Companion
+              </h2>
+              
+              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Get instant answers to any financial question. Ask about stocks, insurance, loans, taxes, and more. 
+                Features voice input, real-time data, and multi-language support (English & Hindi).
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                <Link
+                  to="/fino"
+                  className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Start Chatting with Fino
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                
+                <Link
+                  to="/fino-home"
+                  className="inline-flex items-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300"
+                >
+                  Learn More About Fino
+                </Link>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <MessageCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-sm text-blue-100">AI Chat</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Mic className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-sm text-blue-100">Voice Input</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <BarChart3 className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-sm text-blue-100">Real-time Data</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <Globe className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-sm text-blue-100">Multi-language</div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 

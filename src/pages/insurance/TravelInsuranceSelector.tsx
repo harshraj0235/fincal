@@ -1,12 +1,69 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Plane, Calculator, MapPin, Shield, AlertCircle, Globe, Home } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ArrowLeft, Plane, Calculator, MapPin, Shield, AlertCircle, Globe, Home, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
+const destinations = {
+  domestic: [
+    { name: 'North India', factor: 1.0, risk: 'low' },
+    { name: 'South India', factor: 1.0, risk: 'low' },
+    { name: 'East India', factor: 1.0, risk: 'low' },
+    { name: 'West India', factor: 1.0, risk: 'low' },
+    { name: 'Northeast India', factor: 1.2, risk: 'medium' }
+  ],
+  international: [
+    { name: 'Europe', factor: 1.5, risk: 'medium' },
+    { name: 'USA/Canada', factor: 2.0, risk: 'high' },
+    { name: 'Southeast Asia', factor: 1.2, risk: 'low' },
+    { name: 'Middle East', factor: 1.3, risk: 'medium' },
+    { name: 'Australia/NZ', factor: 1.8, risk: 'medium' },
+    { name: 'Africa', factor: 1.4, risk: 'high' }
+  ]
+};
+
+const insurancePlans = [
+  {
+    name: 'Basic Plan',
+    basePrice: 500,
+    coverage: {
+      medical: 100000,
+      tripCancellation: 50000,
+      baggage: 25000,
+      personalAccident: 200000
+    },
+    features: ['Emergency Medical', 'Trip Cancellation', 'Baggage Loss']
+  },
+  {
+    name: 'Standard Plan',
+    basePrice: 800,
+    coverage: {
+      medical: 200000,
+      tripCancellation: 100000,
+      baggage: 50000,
+      personalAccident: 500000
+    },
+    features: ['Emergency Medical', 'Trip Cancellation', 'Baggage Loss', 'Personal Accident']
+  },
+  {
+    name: 'Comprehensive Plan',
+    basePrice: 1200,
+    coverage: {
+      medical: 500000,
+      tripCancellation: 200000,
+      baggage: 100000,
+      personalAccident: 1000000
+    },
+    features: ['Emergency Medical', 'Trip Cancellation', 'Baggage Loss', 'Personal Accident', 'Adventure Sports']
+  }
+];
+
 export const TravelInsuranceSelector: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [inputs, setInputs] = useState({
     tripType: 'international',
     destination: 'europe',
@@ -18,66 +75,29 @@ export const TravelInsuranceSelector: React.FC = () => {
   });
 
   const [results, setResults] = useState({
-    recommendedPlans: [],
+    recommendedPlans: [] as Array<{
+      name: string;
+      basePrice: number;
+      coverage: {
+        medical: number;
+        tripCancellation: number;
+        baggage: number;
+        personalAccident: number;
+      };
+      features: string[];
+      cost: number;
+      costPerPerson: number;
+    }>,
     totalCost: 0,
-    coverageDetails: {}
+    coverageDetails: {} as {
+      medical: number;
+      tripCancellation: number;
+      baggage: number;
+      personalAccident: number;
+    }
   });
 
-  const destinations = {
-    domestic: [
-      { name: 'North India', factor: 1.0, risk: 'low' },
-      { name: 'South India', factor: 1.0, risk: 'low' },
-      { name: 'East India', factor: 1.0, risk: 'low' },
-      { name: 'West India', factor: 1.0, risk: 'low' },
-      { name: 'Northeast India', factor: 1.2, risk: 'medium' }
-    ],
-    international: [
-      { name: 'Europe', factor: 1.5, risk: 'medium' },
-      { name: 'USA/Canada', factor: 2.0, risk: 'high' },
-      { name: 'Southeast Asia', factor: 1.2, risk: 'low' },
-      { name: 'Middle East', factor: 1.3, risk: 'medium' },
-      { name: 'Australia/NZ', factor: 1.8, risk: 'medium' },
-      { name: 'Africa', factor: 1.4, risk: 'high' }
-    ]
-  };
-
-  const insurancePlans = [
-    {
-      name: 'Basic Plan',
-      basePrice: 500,
-      coverage: {
-        medical: 100000,
-        tripCancellation: 50000,
-        baggage: 25000,
-        personalAccident: 200000
-      },
-      features: ['Emergency Medical', 'Trip Cancellation', 'Baggage Loss']
-    },
-    {
-      name: 'Standard Plan',
-      basePrice: 800,
-      coverage: {
-        medical: 200000,
-        tripCancellation: 100000,
-        baggage: 50000,
-        personalAccident: 500000
-      },
-      features: ['Emergency Medical', 'Trip Cancellation', 'Baggage Loss', 'Personal Accident']
-    },
-    {
-      name: 'Comprehensive Plan',
-      basePrice: 1200,
-      coverage: {
-        medical: 500000,
-        tripCancellation: 200000,
-        baggage: 100000,
-        personalAccident: 1000000
-      },
-      features: ['Emergency Medical', 'Trip Cancellation', 'Baggage Loss', 'Personal Accident', 'Adventure Sports']
-    }
-  ];
-
-  const calculateTravelInsurance = () => {
+  const calculateTravelInsurance = useCallback(() => {
     const { tripType, destination, duration, travelers, age, coverage, activities } = inputs;
     
     // Get destination factor
@@ -107,7 +127,7 @@ export const TravelInsuranceSelector: React.FC = () => {
     
     // Generate recommended plans
     const recommendedPlans = insurancePlans.map(plan => {
-      let planCost = plan.basePrice * destinationFactor * durationFactor * ageFactor * activityFactor * travelers;
+      const planCost = plan.basePrice * destinationFactor * durationFactor * ageFactor * activityFactor * travelers;
       return {
         ...plan,
         cost: planCost,
@@ -120,13 +140,13 @@ export const TravelInsuranceSelector: React.FC = () => {
       totalCost,
       coverageDetails: plan.coverage
     });
-  };
+  }, [inputs]);
 
   useEffect(() => {
     calculateTravelInsurance();
-  }, [inputs]);
+  }, [calculateTravelInsurance]);
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | number | string[]) => {
     setInputs(prev => ({
       ...prev,
       [field]: value
@@ -139,6 +159,43 @@ export const TravelInsuranceSelector: React.FC = () => {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('travel-insurance-selector-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -346,13 +403,22 @@ export const TravelInsuranceSelector: React.FC = () => {
             </div>
 
             {/* Results Section */}
-            <div className="space-y-6">
+            <div ref={resultsRef} className="space-y-6">
               {/* Cost Summary */}
               <div className="bg-gradient-to-br from-orange-600 to-red-600 rounded-xl p-8 text-white">
-                <h2 className="text-2xl font-bold mb-4 flex items-center">
-                  <Shield className="h-6 w-6 mr-2" />
-                  Estimated Cost
-                </h2>
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-2xl font-bold flex items-center">
+                    <Shield className="h-6 w-6 mr-2" />
+                    Estimated Cost
+                  </h2>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </button>
+                </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold mb-2">
                     {formatCurrency(results.totalCost)}
@@ -449,7 +515,8 @@ export const TravelInsuranceSelector: React.FC = () => {
               <p className="mb-4">
                 Travel insurance provides financial protection against unexpected events during your trip, 
                 including medical emergencies, trip cancellations, lost baggage, and personal accidents. 
-                It's essential for both domestic and international travel.
+                It's essential for both domestic and international travel. For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Types of Travel Insurance:</h3>
@@ -470,6 +537,19 @@ export const TravelInsuranceSelector: React.FC = () => {
                 <li><strong>Emergency Evacuation:</strong> Medical evacuation to nearest suitable facility</li>
                 <li><strong>Travel Delay:</strong> Compensation for flight delays and missed connections</li>
               </ul>
+
+              <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-orange-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/health-insurance-estimator" className="text-orange-600 hover:text-orange-800 underline">Health Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/critical-illness-calculator" className="text-orange-600 hover:text-orange-800 underline">Critical Illness Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-orange-600 hover:text-orange-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-orange-600 hover:text-orange-800 underline">Life Insurance Calculator</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Tips for Choosing Travel Insurance:</h3>
               <ul className="list-disc pl-6 space-y-2">

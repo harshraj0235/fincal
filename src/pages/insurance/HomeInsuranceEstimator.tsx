@@ -1,12 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Home, Calculator, MapPin, Shield, AlertCircle, Building, DollarSign } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ArrowLeft, Home, Calculator, Shield, AlertCircle, Building, DollarSign, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
+const locations = [
+  { name: 'Metro City', factor: 1.2, risk: 'medium' },
+  { name: 'Tier 1 City', factor: 1.0, risk: 'low' },
+  { name: 'Tier 2 City', factor: 0.9, risk: 'low' },
+  { name: 'Tier 3 City', factor: 0.8, risk: 'low' },
+  { name: 'Rural Area', factor: 0.7, risk: 'low' }
+];
+
+const propertyTypes = [
+  { name: 'Apartment', factor: 1.0, risk: 'low' },
+  { name: 'Independent House', factor: 1.1, risk: 'medium' },
+  { name: 'Villa', factor: 1.3, risk: 'medium' },
+  { name: 'Penthouse', factor: 1.2, risk: 'medium' },
+  { name: 'Duplex', factor: 1.15, risk: 'medium' }
+];
+
+const coverageTypes = [
+  {
+    name: 'Basic',
+    structureRate: 0.15,
+    contentsRate: 0.25,
+    coverage: {
+      structure: 0.8,
+      contents: 0.5,
+      features: ['Fire', 'Lightning', 'Explosion']
+    }
+  },
+  {
+    name: 'Standard',
+    structureRate: 0.20,
+    contentsRate: 0.35,
+    coverage: {
+      structure: 0.9,
+      contents: 0.7,
+      features: ['Fire', 'Lightning', 'Explosion', 'Theft', 'Burglary']
+    }
+  },
+  {
+    name: 'Comprehensive',
+    structureRate: 0.25,
+    contentsRate: 0.45,
+    coverage: {
+      structure: 1.0,
+      contents: 0.8,
+      features: ['Fire', 'Lightning', 'Explosion', 'Theft', 'Burglary', 'Natural Disasters']
+    }
+  }
+];
+
+const addOns = [
+  { name: 'earthquake', cost: 0.05, description: 'Earthquake Coverage' },
+  { name: 'flood', cost: 0.08, description: 'Flood Coverage' },
+  { name: 'terrorism', cost: 0.03, description: 'Terrorism Coverage' },
+  { name: 'renovation', cost: 0.04, description: 'Renovation Coverage' },
+  { name: 'jewelry', cost: 0.10, description: 'Jewelry Coverage' }
+];
+
 export const HomeInsuranceEstimator: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [inputs, setInputs] = useState({
     propertyValue: 5000000,
     location: 'metro',
@@ -21,69 +81,16 @@ export const HomeInsuranceEstimator: React.FC = () => {
     structurePremium: 0,
     contentsPremium: 0,
     totalPremium: 0,
-    coverageDetails: {},
-    addOnCosts: {}
+    coverageDetails: {} as {
+      structure: number;
+      contents: number;
+      features: string[];
+    },
+    addOnCosts: {} as Record<string, number>
   });
 
-  const locations = [
-    { name: 'Metro City', factor: 1.2, risk: 'medium' },
-    { name: 'Tier 1 City', factor: 1.0, risk: 'low' },
-    { name: 'Tier 2 City', factor: 0.9, risk: 'low' },
-    { name: 'Tier 3 City', factor: 0.8, risk: 'low' },
-    { name: 'Rural Area', factor: 0.7, risk: 'low' }
-  ];
-
-  const propertyTypes = [
-    { name: 'Apartment', factor: 1.0, risk: 'low' },
-    { name: 'Independent House', factor: 1.1, risk: 'medium' },
-    { name: 'Villa', factor: 1.3, risk: 'medium' },
-    { name: 'Penthouse', factor: 1.2, risk: 'medium' },
-    { name: 'Duplex', factor: 1.15, risk: 'medium' }
-  ];
-
-  const coverageTypes = [
-    {
-      name: 'Basic',
-      structureRate: 0.15,
-      contentsRate: 0.25,
-      coverage: {
-        structure: 0.8,
-        contents: 0.5,
-        features: ['Fire', 'Lightning', 'Explosion']
-      }
-    },
-    {
-      name: 'Standard',
-      structureRate: 0.20,
-      contentsRate: 0.35,
-      coverage: {
-        structure: 0.9,
-        contents: 0.7,
-        features: ['Fire', 'Lightning', 'Explosion', 'Theft', 'Burglary']
-      }
-    },
-    {
-      name: 'Comprehensive',
-      structureRate: 0.25,
-      contentsRate: 0.45,
-      coverage: {
-        structure: 1.0,
-        contents: 0.8,
-        features: ['Fire', 'Lightning', 'Explosion', 'Theft', 'Burglary', 'Natural Disasters']
-      }
-    }
-  ];
-
-  const addOns = [
-    { name: 'earthquake', cost: 0.05, description: 'Earthquake Coverage' },
-    { name: 'flood', cost: 0.08, description: 'Flood Coverage' },
-    { name: 'terrorism', cost: 0.03, description: 'Terrorism Coverage' },
-    { name: 'renovation', cost: 0.04, description: 'Renovation Coverage' },
-    { name: 'jewelry', cost: 0.10, description: 'Jewelry Coverage' }
-  ];
-
-  const calculateHomeInsurance = () => {
-    const { propertyValue, location, propertyType, constructionYear, area, coverageType, addOns: selectedAddOns } = inputs;
+  const calculateHomeInsurance = useCallback(() => {
+    const { propertyValue, location, propertyType, constructionYear, coverageType, addOns: selectedAddOns } = inputs;
     
     // Get location and property type factors
     const locationData = locations.find(l => l.name.toLowerCase().includes(location.toLowerCase()));
@@ -108,7 +115,7 @@ export const HomeInsuranceEstimator: React.FC = () => {
     const contentsPremium = (contentsValue / 100000) * coverage.contentsRate * locationFactor;
     
     // Calculate add-on costs
-    const addOnCosts = {};
+    const addOnCosts: Record<string, number> = {};
     let totalAddOnCost = 0;
     selectedAddOns.forEach(addOnName => {
       const addOn = addOns.find(a => a.name === addOnName);
@@ -128,13 +135,13 @@ export const HomeInsuranceEstimator: React.FC = () => {
       coverageDetails: coverage.coverage,
       addOnCosts
     });
-  };
+  }, [inputs]);
 
   useEffect(() => {
     calculateHomeInsurance();
-  }, [inputs]);
+  }, [calculateHomeInsurance]);
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | number | string[]) => {
     setInputs(prev => ({
       ...prev,
       [field]: value
@@ -147,6 +154,43 @@ export const HomeInsuranceEstimator: React.FC = () => {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('home-insurance-estimator-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -343,13 +387,22 @@ export const HomeInsuranceEstimator: React.FC = () => {
             </div>
 
             {/* Results Section */}
-            <div className="space-y-6">
+            <div ref={resultsRef} className="space-y-6">
               {/* Premium Summary */}
               <div className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl p-8 text-white">
-                <h2 className="text-2xl font-bold mb-4 flex items-center">
-                  <Shield className="h-6 w-6 mr-2" />
-                  Premium Estimate
-                </h2>
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-2xl font-bold flex items-center">
+                    <Shield className="h-6 w-6 mr-2" />
+                    Premium Estimate
+                  </h2>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </button>
+                </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold mb-2">
                     {formatCurrency(results.totalPremium)}
@@ -467,7 +520,8 @@ export const HomeInsuranceEstimator: React.FC = () => {
               <p className="mb-4">
                 Home insurance provides financial protection for your property against various risks including fire, 
                 natural disasters, theft, and other perils. It's essential for homeowners to protect their most 
-                valuable asset and ensure financial security.
+                valuable asset and ensure financial security. For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Types of Home Insurance Coverage:</h3>
@@ -487,6 +541,19 @@ export const HomeInsuranceEstimator: React.FC = () => {
                 <li><strong>Security Features:</strong> Security systems can reduce premiums</li>
                 <li><strong>Claim History:</strong> Previous claims may affect premium rates</li>
               </ul>
+
+              <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-indigo-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/car-insurance-calculator" className="text-indigo-600 hover:text-indigo-800 underline">Car Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/two-wheeler-tracker" className="text-indigo-600 hover:text-indigo-800 underline">Two-Wheeler Insurance Tracker</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-indigo-600 hover:text-indigo-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-indigo-600 hover:text-indigo-800 underline">Life Insurance Calculator</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Tips for Choosing Home Insurance:</h3>
               <ul className="list-disc pl-6 space-y-2">

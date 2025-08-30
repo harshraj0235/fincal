@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, PieChart, Plus, Edit3, Trash2, Calendar, DollarSign, Shield, AlertCircle, TrendingUp, Users } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, PieChart, Plus, Edit3, Trash2, Calendar, DollarSign, Shield, AlertCircle, TrendingUp, Users, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 export const PortfolioDashboard: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [policies, setPolicies] = useState([]);
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingPolicy, setEditingPolicy] = useState(null);
@@ -110,6 +113,43 @@ export const PortfolioDashboard: React.FC = () => {
 
   const getPolicyTypeData = (type) => {
     return policyTypes.find(t => t.name.toLowerCase().includes(type.toLowerCase())) || policyTypes[0];
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('insurance-portfolio-dashboard-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   // Calculate portfolio statistics
@@ -391,16 +431,25 @@ export const PortfolioDashboard: React.FC = () => {
 
           {/* Portfolio Summary */}
           {policies.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div ref={resultsRef} className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
               <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                <div className="flex items-center">
-                  <div className="p-3 bg-teal-100 rounded-lg">
-                    <Shield className="h-6 w-6 text-teal-600" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="p-3 bg-teal-100 rounded-lg">
+                      <Shield className="h-6 w-6 text-teal-600" />
+                    </div>
+                    <div className="ml-4">
+                      <div className="text-2xl font-bold text-gray-900">{policies.length}</div>
+                      <div className="text-sm text-gray-600">Total Policies</div>
+                    </div>
                   </div>
-                  <div className="ml-4">
-                    <div className="text-2xl font-bold text-gray-900">{policies.length}</div>
-                    <div className="text-sm text-gray-600">Total Policies</div>
-                  </div>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-3 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition-colors text-sm"
+                  >
+                    <Download className="h-4 w-4 mr-1" />
+                    PDF
+                  </button>
                 </div>
               </div>
 
@@ -595,7 +644,8 @@ export const PortfolioDashboard: React.FC = () => {
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="mb-4">
                 An insurance portfolio dashboard helps you manage all your insurance policies in one place, 
-                track premiums, monitor coverage, and ensure you have adequate protection for all aspects of your life.
+                track premiums, monitor coverage, and ensure you have adequate protection for all aspects of your life. For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Benefits of Portfolio Management:</h3>
@@ -615,6 +665,19 @@ export const PortfolioDashboard: React.FC = () => {
                 <li><strong>Policy Distribution:</strong> Spread of coverage across different insurance types</li>
                 <li><strong>Renewal Schedule:</strong> Timeline of upcoming policy renewals</li>
               </ul>
+
+              <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-teal-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-teal-600 hover:text-teal-800 underline">Life Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/health-insurance-estimator" className="text-teal-600 hover:text-teal-800 underline">Health Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/car-insurance-calculator" className="text-teal-600 hover:text-teal-800 underline">Car Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/term-insurance-planner" className="text-teal-600 hover:text-teal-800 underline">Term Insurance Planner</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Portfolio Optimization Tips:</h3>
               <ul className="list-disc pl-6 space-y-2">

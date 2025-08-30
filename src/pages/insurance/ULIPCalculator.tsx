@@ -1,12 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, TrendingUp, Calculator, Target, DollarSign, AlertCircle, BarChart3, PieChart } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { ArrowLeft, TrendingUp, Calculator, Target, DollarSign, AlertCircle, BarChart3, PieChart, Download, Link } from 'lucide-react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 
+const riskProfiles = [
+  { name: 'Conservative', equity: 20, debt: 70, balanced: 10, expectedReturn: 8 },
+  { name: 'Moderate', equity: 60, debt: 30, balanced: 10, expectedReturn: 10 },
+  { name: 'Aggressive', equity: 80, debt: 15, balanced: 5, expectedReturn: 12 }
+];
+
+const fundTypes = [
+  { name: 'Equity Funds', expectedReturn: 12, risk: 'High', description: 'Invests in stocks and equity instruments' },
+  { name: 'Debt Funds', expectedReturn: 7, risk: 'Low', description: 'Invests in bonds and fixed income securities' },
+  { name: 'Balanced Funds', expectedReturn: 9, risk: 'Medium', description: 'Mix of equity and debt investments' }
+];
+
 export const ULIPCalculator: React.FC = () => {
   const navigate = useNavigate();
+  const resultsRef = useRef<HTMLDivElement>(null);
   const [inputs, setInputs] = useState({
     age: 30,
     annualPremium: 100000,
@@ -27,23 +42,16 @@ export const ULIPCalculator: React.FC = () => {
     expectedMaturityValue: 0,
     expectedReturns: 0,
     annualizedReturn: 0,
-    fundAllocation: {},
-    yearWiseProjection: []
+    fundAllocation: {} as Record<string, number>,
+    yearWiseProjection: [] as Array<{
+      year: number;
+      premiumPaid: number;
+      cumulativeValue: number;
+      returns: number;
+    }>
   });
 
-  const riskProfiles = [
-    { name: 'Conservative', equity: 20, debt: 70, balanced: 10, expectedReturn: 8 },
-    { name: 'Moderate', equity: 60, debt: 30, balanced: 10, expectedReturn: 10 },
-    { name: 'Aggressive', equity: 80, debt: 15, balanced: 5, expectedReturn: 12 }
-  ];
-
-  const fundTypes = [
-    { name: 'Equity Funds', expectedReturn: 12, risk: 'High', description: 'Invests in stocks and equity instruments' },
-    { name: 'Debt Funds', expectedReturn: 7, risk: 'Low', description: 'Invests in bonds and fixed income securities' },
-    { name: 'Balanced Funds', expectedReturn: 9, risk: 'Medium', description: 'Mix of equity and debt investments' }
-  ];
-
-  const calculateULIPReturns = () => {
+  const calculateULIPReturns = useCallback(() => {
     const { annualPremium, policyTerm, premiumPaymentTerm, riskProfile, expectedReturn, sumAssured } = inputs;
     
     // Get risk profile data
@@ -101,13 +109,13 @@ export const ULIPCalculator: React.FC = () => {
       fundAllocation,
       yearWiseProjection
     });
-  };
+  }, [inputs]);
 
   useEffect(() => {
     calculateULIPReturns();
-  }, [inputs]);
+  }, [calculateULIPReturns]);
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | number | object) => {
     setInputs(prev => ({
       ...prev,
       [field]: value
@@ -136,6 +144,43 @@ export const ULIPCalculator: React.FC = () => {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
+  };
+
+  const downloadPDF = async () => {
+    if (!resultsRef.current) return;
+    
+    try {
+      const canvas = await html2canvas(resultsRef.current, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+      
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      
+      let position = 0;
+      
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+      
+      pdf.save('ulip-calculator-results.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF. Please try again.');
+    }
   };
 
   return (
@@ -399,13 +444,22 @@ export const ULIPCalculator: React.FC = () => {
             </div>
 
             {/* Results Section */}
-            <div className="space-y-6">
+            <div ref={resultsRef} className="space-y-6">
               {/* Returns Summary */}
               <div className="bg-gradient-to-br from-emerald-600 to-green-600 rounded-xl p-8 text-white">
-                <h2 className="text-2xl font-bold mb-4 flex items-center">
-                  <Target className="h-6 w-6 mr-2" />
-                  Expected Returns
-                </h2>
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-2xl font-bold flex items-center">
+                    <Target className="h-6 w-6 mr-2" />
+                    Expected Returns
+                  </h2>
+                  <button
+                    onClick={downloadPDF}
+                    className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download PDF
+                  </button>
+                </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-white/20 rounded-lg">
                     <div className="text-2xl font-bold">
@@ -563,7 +617,8 @@ export const ULIPCalculator: React.FC = () => {
               <p className="mb-4">
                 Unit-Linked Insurance Plans (ULIPs) combine life insurance with investment opportunities, 
                 allowing you to build wealth while securing your family's future. They offer flexibility 
-                in fund selection and premium allocation based on your risk appetite.
+                in fund selection and premium allocation based on your risk appetite. For comprehensive insurance planning, explore our 
+                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Benefits of ULIPs:</h3>
@@ -584,6 +639,19 @@ export const ULIPCalculator: React.FC = () => {
                 <li><strong>Money Market Funds:</strong> Short-term investments for liquidity</li>
                 <li><strong>Index Funds:</strong> Track market indices for diversified exposure</li>
               </ul>
+
+              <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-emerald-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-emerald-600 hover:text-emerald-800 underline">Life Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/term-insurance-planner" className="text-emerald-600 hover:text-emerald-800 underline">Term Insurance Planner</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-emerald-600 hover:text-emerald-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                  <RouterLink to="/insurance-tools/health-insurance-estimator" className="text-emerald-600 hover:text-emerald-800 underline">Health Insurance Estimator</RouterLink>
+                </div>
+              </div>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Factors to Consider:</h3>
               <ul className="list-disc pl-6 space-y-2">
