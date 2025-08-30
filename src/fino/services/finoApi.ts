@@ -1,5 +1,5 @@
-// Mock API service for Fino Finance Chat System
-// This simulates the backend functionality described in the requirements
+// Fino Finance Chat API Service
+// Connects to the Python FastAPI backend for real-time financial data
 
 export interface FinoQueryRequest {
   query: string;
@@ -213,8 +213,40 @@ const generateTaxChart = () => {
   };
 };
 
+// API Configuration
+const API_BASE_URL = process.env.REACT_APP_FINO_API_URL || 'http://localhost:8000';
+
 // Main API function
 export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryResponse> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/query`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: request.query,
+        lang: request.lang,
+        timestamp: request.timestamp || new Date()
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error calling Fino API:', error);
+    
+    // Fallback to mock data if API is unavailable
+    return await getMockResponse(request);
+  }
+};
+
+// Fallback mock response function
+const getMockResponse = async (request: FinoQueryRequest): Promise<FinoQueryResponse> => {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
   
@@ -430,8 +462,86 @@ export const getMarketStatus = () => {
   };
 };
 
+// Additional API functions
+export const getPopularQueriesFromAPI = async (lang: 'en' | 'hi' = 'en'): Promise<string[]> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/popular-queries?lang=${lang}`);
+    if (response.ok) {
+      const data = await response.json();
+      return data.queries;
+    }
+  } catch (error) {
+    console.error('Error fetching popular queries:', error);
+  }
+  
+  // Fallback to local data
+  return getPopularQueries(lang);
+};
+
+export const getMarketStatusFromAPI = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/market-status`);
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (error) {
+    console.error('Error fetching market status:', error);
+  }
+  
+  // Fallback to local function
+  return getMarketStatus();
+};
+
+export const checkAPIHealth = async (): Promise<boolean> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/health`);
+    return response.ok;
+  } catch (error) {
+    console.error('API health check failed:', error);
+    return false;
+  }
+};
+
+// WebSocket connection for live data
+export const createWebSocketConnection = (onMessage: (data: any) => void) => {
+  try {
+    const wsUrl = API_BASE_URL.replace('http', 'ws');
+    const ws = new WebSocket(`${wsUrl}/live-data`);
+    
+    ws.onopen = () => {
+      console.log('WebSocket connected');
+    };
+    
+    ws.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        onMessage(data);
+      } catch (error) {
+        console.error('Error parsing WebSocket message:', error);
+      }
+    };
+    
+    ws.onerror = (error) => {
+      console.error('WebSocket error:', error);
+    };
+    
+    ws.onclose = () => {
+      console.log('WebSocket disconnected');
+    };
+    
+    return ws;
+  } catch (error) {
+    console.error('Error creating WebSocket connection:', error);
+    return null;
+  }
+};
+
 export default {
   queryFino,
   getPopularQueries,
-  getMarketStatus
+  getPopularQueriesFromAPI,
+  getMarketStatus,
+  getMarketStatusFromAPI,
+  checkAPIHealth,
+  createWebSocketConnection
 };
