@@ -1,41 +1,8 @@
 # Fino - AI Finance Chat System
 
-## 🚀 Overview
+## Overview
 
-Fino is an advanced AI-powered finance chat system designed for the Indian market. It provides instant answers to any financial question with features like voice input, real-time data visualization, multi-language support (English & Hindi), and beautiful UI. Built with Next.js frontend and Python FastAPI backend, it's optimized for SEO and designed to drive millions of organic visitors to moneycal.in.
-
-## 🌟 Key Features
-
-### 🤖 AI-Powered Intelligence
-- Advanced natural language processing for English and Hindi
-- Context-aware responses with intelligent query classification
-- Real-time financial data integration from multiple sources
-- Personalized suggestions based on user queries
-
-### 🎤 Voice & Multi-Language Support
-- Speech recognition in English (`en-IN`) and Hindi (`hi-IN`)
-- Hands-free interaction with Web Speech API
-- Dynamic language switching with localized responses
-- Cultural context awareness for Indian users
-
-### 📊 Real-time Data & Visualizations
-- Live stock prices from BSE/NSE via Moneycontrol
-- Interactive charts using Chart.js (line, bar, doughnut)
-- Insurance plan comparisons from Policybazaar
-- Tax slab visualizations from ClearTax
-- Market status indicators and trends
-
-### 🔒 Privacy & Security
-- No login required - instant access for all users
-- Local storage for chat history persistence
-- Secure data handling with GDPR compliance
-- No personal data collection or storage
-
-### 📱 Modern UI/UX
-- Mobile-first responsive design
-- Dark/Light mode toggle
-- Touch-friendly interface with smooth animations
-- Cross-platform compatibility (Web, iOS, Android ready)
+Fino is an advanced AI-powered finance chat system designed for the Indian market. It provides instant answers to any financial question with features like voice input, real-time data visualization, multi-language support (English & Hindi), and beautiful UI.
 
 ## Features
 
@@ -114,59 +81,12 @@ Fino is an advanced AI-powered finance chat system designed for the Indian marke
 - Response formatting
 - Error handling
 
-## 🚀 Quick Start
+## Usage
 
 ### Accessing Fino
 1. **Main Chat**: Visit `/fino` for the chat interface
 2. **Home Page**: Visit `/fino-home` for the landing page
 3. **From Home**: Click the Fino banner on the main homepage
-
-### Local Development
-
-#### Frontend Setup
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-```
-
-#### Backend Setup
-```bash
-# Navigate to backend directory
-cd src/fino/backend
-
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Download spaCy model
-python -m spacy download en_core_web_sm
-
-# Start the server
-python start.py
-```
-
-#### Full Stack Setup
-```bash
-# Terminal 1: Start backend
-cd src/fino/backend
-python start.py
-
-# Terminal 2: Start frontend
-npm run dev
-```
-
-### Production Deployment
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment guide.
-
-**Quick Deploy Options:**
-- **Vercel + Railway**: Recommended for easy deployment
-- **Netlify + Heroku**: Alternative cloud deployment
-- **Docker**: Self-hosted deployment with Docker Compose
 
 ### Supported Queries
 

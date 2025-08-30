@@ -272,10 +272,34 @@ const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 to-purple-50'} ${className}`}>
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50'} ${className}`}>
       <Helmet>
         <title>Fino Chat - AI Finance Assistant | Get Instant Financial Advice</title>
         <meta name="description" content="Chat with Fino, your AI finance assistant. Get instant answers about stocks, insurance, loans, taxes, and more. Features voice input, real-time data, and multi-language support." />
+        <meta name="keywords" content="finance chat, AI financial advice, voice finance assistant, Hindi finance chatbot, real-time stock data, financial calculator" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Fino - AI Finance Chat System",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "INR"
+            },
+            "description": "AI-powered finance chat system with voice input, real-time data, and multi-language support",
+            "featureList": [
+              "AI-Powered Chat",
+              "Voice Input (English/Hindi)",
+              "Real-time Financial Data",
+              "Multi-language Support",
+              "Secure & Private",
+              "No Login Required"
+            ]
+          })}
+        </script>
       </Helmet>
 
       {/* Header */}

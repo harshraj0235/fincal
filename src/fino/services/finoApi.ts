@@ -1,5 +1,5 @@
-// Fino Finance Chat API Service
-// Connects to the Python FastAPI backend for real-time financial data
+// Mock API service for Fino Finance Chat System
+// This simulates the backend functionality described in the requirements
 
 export interface FinoQueryRequest {
   query: string;
@@ -88,6 +88,66 @@ const mockStockData: { [key: string]: StockData } = {
     marketCap: '12.8L Cr',
     high52Week: 1800.00,
     low52Week: 1400.00
+  },
+  'hdfc bank': {
+    name: 'HDFC Bank',
+    price: 1650.80,
+    change: 12.40,
+    changePercent: 0.76,
+    volume: 1100000,
+    marketCap: '12.8L Cr',
+    high52Week: 1800.00,
+    low52Week: 1400.00
+  },
+  'icici': {
+    name: 'ICICI Bank',
+    price: 950.45,
+    change: 8.20,
+    changePercent: 0.87,
+    volume: 980000,
+    marketCap: '6.7L Cr',
+    high52Week: 1050.00,
+    low52Week: 750.00
+  },
+  'sbi': {
+    name: 'State Bank of India',
+    price: 580.30,
+    change: 5.15,
+    changePercent: 0.89,
+    volume: 1200000,
+    marketCap: '5.2L Cr',
+    high52Week: 650.00,
+    low52Week: 450.00
+  },
+  'wipro': {
+    name: 'Wipro',
+    price: 420.75,
+    change: -3.25,
+    changePercent: -0.77,
+    volume: 750000,
+    marketCap: '2.3L Cr',
+    high52Week: 480.00,
+    low52Week: 380.00
+  },
+  'bharti': {
+    name: 'Bharti Airtel',
+    price: 1120.50,
+    change: 18.75,
+    changePercent: 1.70,
+    volume: 890000,
+    marketCap: '6.1L Cr',
+    high52Week: 1250.00,
+    low52Week: 850.00
+  },
+  'itc': {
+    name: 'ITC',
+    price: 485.25,
+    change: 2.80,
+    changePercent: 0.58,
+    volume: 650000,
+    marketCap: '6.0L Cr',
+    high52Week: 520.00,
+    low52Week: 420.00
   }
 };
 
@@ -213,40 +273,8 @@ const generateTaxChart = () => {
   };
 };
 
-// API Configuration
-const API_BASE_URL = process.env.REACT_APP_FINO_API_URL || 'http://localhost:8000';
-
 // Main API function
 export const queryFino = async (request: FinoQueryRequest): Promise<FinoQueryResponse> => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/query`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: request.query,
-        lang: request.lang,
-        timestamp: request.timestamp || new Date()
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error calling Fino API:', error);
-    
-    // Fallback to mock data if API is unavailable
-    return await getMockResponse(request);
-  }
-};
-
-// Fallback mock response function
-const getMockResponse = async (request: FinoQueryRequest): Promise<FinoQueryResponse> => {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
   
@@ -256,13 +284,43 @@ const getMockResponse = async (request: FinoQueryRequest): Promise<FinoQueryResp
   try {
     // Stock price queries
     if (query.includes('stock') || query.includes('share') || query.includes('price') || 
-        query.includes('शेयर') || query.includes('स्टॉक') || query.includes('मूल्य')) {
+        query.includes('शेयर') || query.includes('स्टॉक') || query.includes('मूल्य') ||
+        query.includes('nifty') || query.includes('sensex') || query.includes('market')) {
       const stockName = extractStockName(request.query);
       const stockData = mockStockData[stockName];
       
+      if (query.includes('nifty') || query.includes('sensex')) {
+        const marketData = {
+          nifty: { name: 'Nifty 50', price: 19500.25, change: 125.50, changePercent: 0.65 },
+          sensex: { name: 'Sensex', price: 65250.75, change: 425.30, changePercent: 0.66 }
+        };
+        const market = query.includes('nifty') ? marketData.nifty : marketData.sensex;
+        
+        const content = lang === 'hi' 
+          ? `${market.name} का वर्तमान मूल्य ${market.price.toFixed(2)} है। यह ${market.change.toFixed(2)} (${market.changePercent.toFixed(2)}%) ${market.change >= 0 ? 'बढ़ा' : 'गिरा'} है।`
+          : `The current ${market.name} is at ${market.price.toFixed(2)}. It has ${market.change >= 0 ? 'gained' : 'lost'} ${market.change.toFixed(2)} (${market.changePercent.toFixed(2)}%).`;
+        
+        return {
+          query: request.query,
+          response: {
+            type: 'stock',
+            content,
+            data: market,
+            suggestions: [
+              'Show me top gainers today',
+              'Show me top losers today',
+              'What are the market trends?',
+              'Compare with previous day'
+            ],
+            source: 'NSE/BSE'
+          },
+          timestamp: new Date()
+        };
+      }
+      
       const content = lang === 'hi' 
-        ? `${stockData.name} का वर्तमान शेयर मूल्य ₹${stockData.price.toFixed(2)} है। यह ₹${stockData.change.toFixed(2)} (${stockData.changePercent.toFixed(2)}%) ${stockData.change >= 0 ? 'बढ़ा' : 'गिरा'} है।`
-        : `The current stock price of ${stockData.name} is ₹${stockData.price.toFixed(2)}. It has ${stockData.change >= 0 ? 'increased' : 'decreased'} by ₹${stockData.change.toFixed(2)} (${stockData.changePercent.toFixed(2)}%).`;
+        ? `${stockData.name} का वर्तमान शेयर मूल्य ₹${stockData.price.toFixed(2)} है। यह ₹${stockData.change.toFixed(2)} (${stockData.changePercent.toFixed(2)}%) ${stockData.change >= 0 ? 'बढ़ा' : 'गिरा'} है।\n\n52-सप्ताह उच्च: ₹${stockData.high52Week}\n52-सप्ताह निम्न: ₹${stockData.low52Week}\nबाजार पूंजीकरण: ${stockData.marketCap}`
+        : `The current stock price of ${stockData.name} is ₹${stockData.price.toFixed(2)}. It has ${stockData.change >= 0 ? 'increased' : 'decreased'} by ₹${stockData.change.toFixed(2)} (${stockData.changePercent.toFixed(2)}%).\n\n52-Week High: ₹${stockData.high52Week}\n52-Week Low: ₹${stockData.low52Week}\nMarket Cap: ${stockData.marketCap}`;
       
       return {
         query: request.query,
@@ -274,7 +332,8 @@ const getMockResponse = async (request: FinoQueryRequest): Promise<FinoQueryResp
             'Show me the price trend',
             'Compare with other stocks',
             'Calculate my investment returns',
-            'What is the 52-week high/low?'
+            'What is the 52-week high/low?',
+            'Show me similar stocks'
           ],
           chartData: generateStockChart(stockData),
           source: 'Moneycontrol'
@@ -344,7 +403,7 @@ const getMockResponse = async (request: FinoQueryRequest): Promise<FinoQueryResp
     
     // Loan queries
     if (query.includes('loan') || query.includes('emi') || query.includes('ऋण') || 
-        query.includes('home loan') || query.includes('personal loan')) {
+        query.includes('home loan') || query.includes('personal loan') || query.includes('car loan')) {
       const content = lang === 'hi'
         ? 'होम लोन के लिए EMI कैलकुलेट करने के लिए, मुझे निम्नलिखित जानकारी दें:\n\n• लोन राशि (₹)\n• ब्याज दर (% प्रति वर्ष)\n• अवधि (वर्षों में)\n\nमैं आपके लिए विस्तृत EMI गणना और ब्याज ब्रेकडाउन प्रदान करूंगा।'
         : 'To calculate EMI for home loan, please provide me with:\n\n• Loan amount (₹)\n• Interest rate (% per annum)\n• Tenure (in years)\n\nI\'ll provide you with detailed EMI calculation and interest breakdown.';
@@ -359,9 +418,62 @@ const getMockResponse = async (request: FinoQueryRequest): Promise<FinoQueryResp
             'Calculate EMI for ₹50L loan at 8.5% for 20 years',
             'Compare different loan options',
             'Show me personal loan rates',
-            'What is the processing fee?'
+            'What is the processing fee?',
+            'Show me car loan rates'
           ],
           source: 'BankBazaar'
+        },
+        timestamp: new Date()
+      };
+    }
+    
+    // Mutual Fund queries
+    if (query.includes('mutual fund') || query.includes('sip') || query.includes('mf') || 
+        query.includes('म्यूचुअल फंड') || query.includes('एसआईपी') || query.includes('निवेश')) {
+      const content = lang === 'hi'
+        ? 'भारत में शीर्ष म्यूचुअल फंड:\n\n• लार्ज कैप: HDFC Top 100, ICICI Prudential Bluechip\n• मिड कैप: HDFC Mid-Cap Opportunities, Franklin India Prima\n• स्मॉल कैप: Nippon India Small Cap, HDFC Small Cap\n• हाइब्रिड: HDFC Balanced Advantage, ICICI Prudential Balanced\n\nSIP शुरू करने के लिए न्यूनतम ₹500 प्रति माह है।'
+        : 'Top Mutual Funds in India:\n\n• Large Cap: HDFC Top 100, ICICI Prudential Bluechip\n• Mid Cap: HDFC Mid-Cap Opportunities, Franklin India Prima\n• Small Cap: Nippon India Small Cap, HDFC Small Cap\n• Hybrid: HDFC Balanced Advantage, ICICI Prudential Balanced\n\nMinimum SIP amount is ₹500 per month.';
+      
+      return {
+        query: request.query,
+        response: {
+          type: 'general',
+          content,
+          data: { category: 'mutual_funds' },
+          suggestions: [
+            'Calculate SIP returns for ₹5000/month',
+            'Compare different fund categories',
+            'Show me best performing funds',
+            'What is the expense ratio?',
+            'How to start SIP?'
+          ],
+          source: 'AMFI'
+        },
+        timestamp: new Date()
+      };
+    }
+    
+    // Investment queries
+    if (query.includes('investment') || query.includes('invest') || query.includes('portfolio') || 
+        query.includes('निवेश') || query.includes('पोर्टफोलियो') || query.includes('बचत')) {
+      const content = lang === 'hi'
+        ? 'निवेश के लिए सर्वोत्तम विकल्प:\n\n• स्टॉक मार्केट: उच्च रिटर्न, उच्च जोखिम\n• म्यूचुअल फंड: विविधीकरण, पेशेवर प्रबंधन\n• PPF: सरकारी गारंटी, कर लाभ\n• FD: सुरक्षित, निश्चित रिटर्न\n• गोल्ड: मुद्रास्फीति हेज\n\nआपकी आयु और जोखिम सहनशीलता के अनुसार सलाह दी जाती है।'
+        : 'Best Investment Options:\n\n• Stock Market: High returns, high risk\n• Mutual Funds: Diversification, professional management\n• PPF: Government guarantee, tax benefits\n• FD: Safe, fixed returns\n• Gold: Inflation hedge\n\nAdvice varies based on your age and risk tolerance.';
+      
+      return {
+        query: request.query,
+        response: {
+          type: 'general',
+          content,
+          data: { category: 'investment' },
+          suggestions: [
+            'Create a balanced portfolio',
+            'Calculate retirement corpus',
+            'Show me tax-saving investments',
+            'What is asset allocation?',
+            'How to start investing?'
+          ],
+          source: 'SEBI'
         },
         timestamp: new Date()
       };
@@ -429,7 +541,14 @@ export const getPopularQueries = (lang: 'en' | 'hi' = 'en') => {
       'Compare mutual fund returns',
       'What are the tax saving options?',
       'Stock market trends today',
-      'Best investment options for beginners'
+      'Best investment options for beginners',
+      'What is the current Nifty 50?',
+      'How to start SIP investment?',
+      'Compare different loan rates',
+      'What is PPF interest rate?',
+      'Best credit cards in India',
+      'How to save tax legally?',
+      'What is the current Sensex?'
     ],
     hi: [
       'रिलायंस का वर्तमान शेयर मूल्य क्या है?',
@@ -439,7 +558,14 @@ export const getPopularQueries = (lang: 'en' | 'hi' = 'en') => {
       'म्यूचुअल फंड रिटर्न की तुलना करें',
       'कर बचत के विकल्प क्या हैं?',
       'आज के स्टॉक मार्केट ट्रेंड',
-      'शुरुआती लोगों के लिए सर्वश्रेष्ठ निवेश विकल्प'
+      'शुरुआती लोगों के लिए सर्वश्रेष्ठ निवेश विकल्प',
+      'वर्तमान निफ्टी 50 क्या है?',
+      'SIP निवेश कैसे शुरू करें?',
+      'विभिन्न लोन दरों की तुलना करें',
+      'PPF ब्याज दर क्या है?',
+      'भारत में सर्वश्रेष्ठ क्रेडिट कार्ड',
+      'कानूनी रूप से कर कैसे बचाएं?',
+      'वर्तमान सेंसेक्स क्या है?'
     ]
   };
   
@@ -462,86 +588,8 @@ export const getMarketStatus = () => {
   };
 };
 
-// Additional API functions
-export const getPopularQueriesFromAPI = async (lang: 'en' | 'hi' = 'en'): Promise<string[]> => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/popular-queries?lang=${lang}`);
-    if (response.ok) {
-      const data = await response.json();
-      return data.queries;
-    }
-  } catch (error) {
-    console.error('Error fetching popular queries:', error);
-  }
-  
-  // Fallback to local data
-  return getPopularQueries(lang);
-};
-
-export const getMarketStatusFromAPI = async () => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/market-status`);
-    if (response.ok) {
-      return await response.json();
-    }
-  } catch (error) {
-    console.error('Error fetching market status:', error);
-  }
-  
-  // Fallback to local function
-  return getMarketStatus();
-};
-
-export const checkAPIHealth = async (): Promise<boolean> => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/health`);
-    return response.ok;
-  } catch (error) {
-    console.error('API health check failed:', error);
-    return false;
-  }
-};
-
-// WebSocket connection for live data
-export const createWebSocketConnection = (onMessage: (data: any) => void) => {
-  try {
-    const wsUrl = API_BASE_URL.replace('http', 'ws');
-    const ws = new WebSocket(`${wsUrl}/live-data`);
-    
-    ws.onopen = () => {
-      console.log('WebSocket connected');
-    };
-    
-    ws.onmessage = (event) => {
-      try {
-        const data = JSON.parse(event.data);
-        onMessage(data);
-      } catch (error) {
-        console.error('Error parsing WebSocket message:', error);
-      }
-    };
-    
-    ws.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
-    
-    ws.onclose = () => {
-      console.log('WebSocket disconnected');
-    };
-    
-    return ws;
-  } catch (error) {
-    console.error('Error creating WebSocket connection:', error);
-    return null;
-  }
-};
-
 export default {
   queryFino,
   getPopularQueries,
-  getPopularQueriesFromAPI,
-  getMarketStatus,
-  getMarketStatusFromAPI,
-  checkAPIHealth,
-  createWebSocketConnection
+  getMarketStatus
 };
