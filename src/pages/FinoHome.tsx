@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 
 const FinoHome: React.FC = () => {
+  console.log('FinoHome component is loading...');
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

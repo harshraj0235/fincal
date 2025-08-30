@@ -75,6 +75,7 @@ interface FinoChatProps {
 }
 
 const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
+  console.log('FinoChat component is loading...');
   const [messages, setMessages] = useState<Message[]>([]);
   
   const [inputValue, setInputValue] = useState('');
