@@ -241,6 +241,9 @@ function App() {
       <Routes>
         {/* Missed Call Banking Directory route - outside Layout */}
         <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
+        {/* Fino Finance Chat System routes - outside Layout */}
+        <Route path="/fino" element={<FinoChat />} />
+        <Route path="/fino-home" element={<FinoHome />} />
         {/* All other routes inside Layout */}
         <Route path="*" element={
           <Layout>
@@ -458,9 +461,6 @@ function App() {
                 <Route path="/tools/proposal-template" element={<OfferProposalTemplateBuilder />} />
                 <Route path="/tools/feedback-form" element={<SimpleFeedbackFormGenerator />} />
                 <Route path="/tools/:toolId" element={<ToolPlaceholder />} />
-                {/* Fino Finance Chat System Routes */}
-                <Route path="/fino" element={<FinoChat />} />
-                <Route path="/fino-home" element={<FinoHome />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>
