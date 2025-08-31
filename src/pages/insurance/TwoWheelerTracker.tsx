@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, Bike, Calculator, Calendar, Shield, AlertCircle, Plus, Trash2, Edit3, Download, Link } from 'lucide-react';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 export const TwoWheelerTracker: React.FC = () => {
   const navigate = useNavigate();
@@ -137,7 +137,7 @@ export const TwoWheelerTracker: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
-    
+
     try {
       const canvas = await html2canvas(resultsRef.current, {
         scale: 2,
@@ -165,10 +165,9 @@ export const TwoWheelerTracker: React.FC = () => {
         heightLeft -= pageHeight;
       }
       
-      pdf.save('two-wheeler-insurance-tracker-results.pdf');
+      pdf.save('two-wheeler-insurance-tracker.pdf');
     } catch (error) {
       console.error('Error generating PDF:', error);
-      alert('Error generating PDF. Please try again.');
     }
   };
 
@@ -552,7 +551,7 @@ export const TwoWheelerTracker: React.FC = () => {
           {/* Summary */}
           {vehicles.length > 0 && (
             <div ref={resultsRef} className="mt-8 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-bold text-gray-900 flex items-center">
                   <Shield className="h-5 w-5 text-cyan-600 mr-2" />
                   Portfolio Summary
@@ -593,8 +592,7 @@ export const TwoWheelerTracker: React.FC = () => {
               <p className="mb-4">
                 Two-wheeler insurance is mandatory in India and provides financial protection against various risks 
                 including accidents, theft, and third-party liability. It's essential for all bike and scooter owners 
-                to have adequate insurance coverage. For comprehensive insurance planning, explore our 
-                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
+                to have adequate insurance coverage.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Types of Two-Wheeler Insurance:</h3>
@@ -615,19 +613,6 @@ export const TwoWheelerTracker: React.FC = () => {
                 <li><strong>No Claim Bonus:</strong> Discounts for claim-free years</li>
               </ul>
 
-              <div className="bg-cyan-50 border border-cyan-200 rounded-lg p-4 mb-6">
-                <h4 className="font-semibold text-cyan-900 mb-2 flex items-center">
-                  <Link className="h-4 w-4 mr-2" />
-                  Related Insurance Tools
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                  <RouterLink to="/insurance-tools/car-insurance-calculator" className="text-cyan-600 hover:text-cyan-800 underline">Car Insurance Calculator</RouterLink>
-                  <RouterLink to="/insurance-tools/home-insurance-estimator" className="text-cyan-600 hover:text-cyan-800 underline">Home Insurance Estimator</RouterLink>
-                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-cyan-600 hover:text-cyan-800 underline">Insurance Portfolio Dashboard</RouterLink>
-                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-cyan-600 hover:text-cyan-800 underline">Life Insurance Calculator</RouterLink>
-                </div>
-              </div>
-
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Tips for Two-Wheeler Insurance:</h3>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Compare quotes from multiple insurers before purchasing</li>
@@ -637,6 +622,19 @@ export const TwoWheelerTracker: React.FC = () => {
                 <li>Keep all documents safe and accessible</li>
                 <li>Update your policy when making modifications to your vehicle</li>
               </ul>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-blue-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/car-insurance-calculator" className="text-blue-600 hover:text-blue-800 underline">Car Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/home-insurance-estimator" className="text-blue-600 hover:text-blue-800 underline">Home Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/portfolio-dashboard" className="text-blue-600 hover:text-blue-800 underline">Insurance Portfolio Dashboard</RouterLink>
+                  <RouterLink to="/insurance-tools/travel-insurance-selector" className="text-blue-600 hover:text-blue-800 underline">Travel Insurance Selector</RouterLink>
+                </div>
+              </div>
             </div>
           </div>
         </div>

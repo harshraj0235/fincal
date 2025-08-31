@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, PieChart, Plus, Edit3, Trash2, Calendar, DollarSign, Shield, AlertCircle, TrendingUp, Users, Download, Link } from 'lucide-react';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 export const PortfolioDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -111,13 +111,9 @@ export const PortfolioDashboard: React.FC = () => {
     return new Date(dateString).toLocaleDateString('en-IN');
   };
 
-  const getPolicyTypeData = (type) => {
-    return policyTypes.find(t => t.name.toLowerCase().includes(type.toLowerCase())) || policyTypes[0];
-  };
-
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
-    
+
     try {
       const canvas = await html2canvas(resultsRef.current, {
         scale: 2,
@@ -145,11 +141,14 @@ export const PortfolioDashboard: React.FC = () => {
         heightLeft -= pageHeight;
       }
       
-      pdf.save('insurance-portfolio-dashboard-results.pdf');
+      pdf.save('insurance-portfolio-dashboard.pdf');
     } catch (error) {
       console.error('Error generating PDF:', error);
-      alert('Error generating PDF. Please try again.');
     }
+  };
+
+  const getPolicyTypeData = (type) => {
+    return policyTypes.find(t => t.name.toLowerCase().includes(type.toLowerCase())) || policyTypes[0];
   };
 
   // Calculate portfolio statistics
@@ -431,25 +430,30 @@ export const PortfolioDashboard: React.FC = () => {
 
           {/* Portfolio Summary */}
           {policies.length > 0 && (
-            <div ref={resultsRef} className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div className="mb-8">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                  <PieChart className="h-6 w-6 text-teal-600 mr-2" />
+                  Portfolio Summary
+                </h2>
+                <button
+                  onClick={downloadPDF}
+                  className="flex items-center px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition-colors"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download PDF
+                </button>
+              </div>
+              <div ref={resultsRef} className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="p-3 bg-teal-100 rounded-lg">
-                      <Shield className="h-6 w-6 text-teal-600" />
-                    </div>
-                    <div className="ml-4">
-                      <div className="text-2xl font-bold text-gray-900">{policies.length}</div>
-                      <div className="text-sm text-gray-600">Total Policies</div>
-                    </div>
+                <div className="flex items-center">
+                  <div className="p-3 bg-teal-100 rounded-lg">
+                    <Shield className="h-6 w-6 text-teal-600" />
                   </div>
-                  <button
-                    onClick={downloadPDF}
-                    className="flex items-center px-3 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition-colors text-sm"
-                  >
-                    <Download className="h-4 w-4 mr-1" />
-                    PDF
-                  </button>
+                  <div className="ml-4">
+                    <div className="text-2xl font-bold text-gray-900">{policies.length}</div>
+                    <div className="text-sm text-gray-600">Total Policies</div>
+                  </div>
                 </div>
               </div>
 
@@ -487,6 +491,7 @@ export const PortfolioDashboard: React.FC = () => {
                     <div className="text-sm text-gray-600">Expiring Soon</div>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           )}
@@ -644,8 +649,7 @@ export const PortfolioDashboard: React.FC = () => {
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="mb-4">
                 An insurance portfolio dashboard helps you manage all your insurance policies in one place, 
-                track premiums, monitor coverage, and ensure you have adequate protection for all aspects of your life. For comprehensive insurance planning, explore our 
-                <RouterLink to="/insurance-tools" className="text-blue-600 hover:text-blue-800 underline">complete suite of insurance tools</RouterLink>.
+                track premiums, monitor coverage, and ensure you have adequate protection for all aspects of your life.
               </p>
               
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Benefits of Portfolio Management:</h3>
@@ -666,19 +670,6 @@ export const PortfolioDashboard: React.FC = () => {
                 <li><strong>Renewal Schedule:</strong> Timeline of upcoming policy renewals</li>
               </ul>
 
-              <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 mb-6">
-                <h4 className="font-semibold text-teal-900 mb-2 flex items-center">
-                  <Link className="h-4 w-4 mr-2" />
-                  Related Insurance Tools
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-teal-600 hover:text-teal-800 underline">Life Insurance Calculator</RouterLink>
-                  <RouterLink to="/insurance-tools/health-insurance-estimator" className="text-teal-600 hover:text-teal-800 underline">Health Insurance Estimator</RouterLink>
-                  <RouterLink to="/insurance-tools/car-insurance-calculator" className="text-teal-600 hover:text-teal-800 underline">Car Insurance Calculator</RouterLink>
-                  <RouterLink to="/insurance-tools/term-insurance-planner" className="text-teal-600 hover:text-teal-800 underline">Term Insurance Planner</RouterLink>
-                </div>
-              </div>
-
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Portfolio Optimization Tips:</h3>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Review your portfolio annually to ensure adequate coverage</li>
@@ -689,6 +680,19 @@ export const PortfolioDashboard: React.FC = () => {
                 <li>Keep all policy documents organized and accessible</li>
                 <li>Monitor claim settlement ratios of your insurance providers</li>
               </ul>
+
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                <h4 className="font-semibold text-blue-900 mb-2 flex items-center">
+                  <Link className="h-4 w-4 mr-2" />
+                  Related Insurance Tools
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <RouterLink to="/insurance-tools/life-insurance-calculator" className="text-blue-600 hover:text-blue-800 underline">Life Insurance Calculator</RouterLink>
+                  <RouterLink to="/insurance-tools/health-insurance-estimator" className="text-blue-600 hover:text-blue-800 underline">Health Insurance Estimator</RouterLink>
+                  <RouterLink to="/insurance-tools/term-insurance-planner" className="text-blue-600 hover:text-blue-800 underline">Term Insurance Planner</RouterLink>
+                  <RouterLink to="/insurance-tools/ulip-calculator" className="text-blue-600 hover:text-blue-800 underline">ULIP Calculator</RouterLink>
+                </div>
+              </div>
             </div>
           </div>
         </div>
