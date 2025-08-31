@@ -161,6 +161,8 @@ const InvestingToolsHub = lazy(() => import('./pages/InvestingToolsHub'));
 const FinancialEducationHub = lazy(() => import('./pages/FinancialEducationHub'));
 const HelpCenter = lazy(() => import('./pages/HelpCenter'));
 const InsuranceTools = lazy(() => import('./pages/InsuranceTools'));
+const CorporateFinance = lazy(() => import('./pages/CorporateFinance'));
+const BusinessValuationCalculator = lazy(() => import('./pages/corporate/BusinessValuationCalculator'));
 const LifeInsuranceCalculator = lazy(() => import('./pages/insurance/LifeInsuranceCalculator'));
 const HealthInsuranceEstimator = lazy(() => import('./pages/insurance/HealthInsuranceEstimator'));
 const CarInsuranceCalculator = lazy(() => import('./pages/insurance/CarInsuranceCalculator'));
@@ -408,6 +410,8 @@ function App() {
                             <Route path="/financial-education" element={<FinancialEducationHub />} />
             <Route path="/help-center" element={<HelpCenter />} />
             <Route path="/insurance-tools" element={<InsuranceTools />} />
+            <Route path="/corporate-finance" element={<CorporateFinance />} />
+            <Route path="/corporate-finance/business-valuation-calculator" element={<BusinessValuationCalculator />} />
             <Route path="/insurance-tools/life-insurance-calculator" element={<LifeInsuranceCalculator />} />
             <Route path="/insurance-tools/health-insurance-estimator" element={<HealthInsuranceEstimator />} />
             <Route path="/insurance-tools/car-insurance-calculator" element={<CarInsuranceCalculator />} />

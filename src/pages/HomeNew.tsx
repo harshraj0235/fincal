@@ -428,6 +428,12 @@ export const HomeNew: React.FC = () => {
                     >
                       Insurance Tools
                     </Link>
+                    <Link 
+                      to="/corporate-finance" 
+                      className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors text-sm font-medium"
+                    >
+                      Corporate Finance
+                    </Link>
                   </div>
                 </motion.div>
               </div>
@@ -617,7 +623,7 @@ export const HomeNew: React.FC = () => {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
               {[
                 { 
                   name: 'Financial Calculators', 
@@ -632,6 +638,13 @@ export const HomeNew: React.FC = () => {
                   icon: Shield,
                   color: 'from-orange-500 to-orange-600',
                   path: '/insurance-tools'
+                },
+                { 
+                  name: 'Corporate Finance', 
+                  description: 'Business valuation, M&A, and financial analysis',
+                  icon: Building,
+                  color: 'from-slate-500 to-slate-600',
+                  path: '/corporate-finance'
                 },
                 { 
                   name: 'Tax Tools Hub', 
