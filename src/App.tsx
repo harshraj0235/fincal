@@ -166,6 +166,8 @@ const BusinessValuationCalculator = lazy(() => import('./pages/corporate/Busines
 const LoanAmortizationGenerator = lazy(() => import('./pages/corporate/LoanAmortizationGenerator'));
 const MASynergyEstimator = lazy(() => import('./pages/corporate/MASynergyEstimator'));
 const WorkingCapitalOptimizer = lazy(() => import('./pages/corporate/WorkingCapitalOptimizer'));
+const CapitalStructureAnalyzer = lazy(() => import('./pages/corporate/CapitalStructureAnalyzer'));
+const BreakEvenCalculator = lazy(() => import('./pages/corporate/BreakEvenCalculator'));
 const LifeInsuranceCalculator = lazy(() => import('./pages/insurance/LifeInsuranceCalculator'));
 const HealthInsuranceEstimator = lazy(() => import('./pages/insurance/HealthInsuranceEstimator'));
 const CarInsuranceCalculator = lazy(() => import('./pages/insurance/CarInsuranceCalculator'));
@@ -418,6 +420,8 @@ function App() {
             <Route path="/corporate-finance/loan-amortization-generator" element={<LoanAmortizationGenerator />} />
             <Route path="/corporate-finance/ma-synergy-estimator" element={<MASynergyEstimator />} />
             <Route path="/corporate-finance/working-capital-optimizer" element={<WorkingCapitalOptimizer />} />
+            <Route path="/corporate-finance/capital-structure-analyzer" element={<CapitalStructureAnalyzer />} />
+            <Route path="/corporate-finance/break-even-calculator" element={<BreakEvenCalculator />} />
             <Route path="/insurance-tools/life-insurance-calculator" element={<LifeInsuranceCalculator />} />
             <Route path="/insurance-tools/health-insurance-estimator" element={<HealthInsuranceEstimator />} />
             <Route path="/insurance-tools/car-insurance-calculator" element={<CarInsuranceCalculator />} />
