@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef, Suspense } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, ChevronRight, Search, Menu, X, Star, Users, Zap, Globe, Smartphone, Sparkles } from 'lucide-react';
+import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, Menu, X, Star, Globe, Smartphone, Sparkles, Heart, Car, Target, Plane } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
-import { CategorySection } from '../components/CategorySection';
 import { SearchBar } from '../components/SearchBar';
-import { governmentSchemes } from '../data/governmentSchemesData';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
@@ -15,7 +13,6 @@ export const Home: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const location = useLocation();
-  const categoriesRef = useRef<HTMLElement>(null);
   const allCalculatorsRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -498,6 +495,116 @@ export const Home: React.FC = () => {
         </div>
       </div>
 
+      {/* Insurance Tools Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium mb-6">
+              <Shield className="w-4 h-4 mr-2" />
+              Insurance Planning Tools
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive Insurance Solutions</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Protect your family and assets with our advanced insurance planning tools. Calculate coverage needs, compare premiums, and make informed decisions.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Life Insurance Calculator",
+                description: "Calculate the right amount of life insurance coverage based on your income, dependents, and financial goals using the Human Life Value method.",
+                icon: Shield,
+                color: "from-blue-500 to-blue-600",
+                link: "/insurance-tools/life-insurance-calculator",
+                features: ["HLV Method", "Income Analysis", "Dependent Coverage", "Tax Benefits"]
+              },
+              {
+                title: "Health Insurance Estimator",
+                description: "Compare health insurance premiums across top providers and find the best family health insurance plans with comprehensive coverage.",
+                icon: Heart,
+                color: "from-red-500 to-red-600",
+                link: "/insurance-tools/health-insurance-estimator",
+                features: ["Provider Comparison", "Family Coverage", "Pre-existing Conditions", "Section 80D Benefits"]
+              },
+              {
+                title: "Car Insurance Calculator",
+                description: "Calculate comprehensive car insurance premiums based on vehicle details, location, and coverage options for optimal protection.",
+                icon: Car,
+                color: "from-green-500 to-green-600",
+                link: "/insurance-tools/car-insurance-calculator",
+                features: ["IDV Calculation", "Premium Estimation", "Add-on Coverage", "NCB Benefits"]
+              },
+              {
+                title: "Term Insurance Planner",
+                description: "Plan your term insurance coverage with detailed analysis of premium payments, coverage duration, and beneficiary planning.",
+                icon: Target,
+                color: "from-purple-500 to-purple-600",
+                link: "/insurance-tools/term-insurance-planner",
+                features: ["Coverage Planning", "Premium Analysis", "Beneficiary Setup", "Tax Benefits"]
+              },
+              {
+                title: "Travel Insurance Selector",
+                description: "Find the perfect travel insurance plan for domestic and international trips with comprehensive coverage options.",
+                icon: Plane,
+                color: "from-orange-500 to-orange-600",
+                link: "/insurance-tools/travel-insurance-selector",
+                features: ["Trip Coverage", "Medical Emergency", "Baggage Protection", "Trip Cancellation"]
+              },
+              {
+                title: "Insurance Portfolio Dashboard",
+                description: "Visualize and manage all your insurance policies in one place. Track premiums, coverage, and renewal dates.",
+                icon: PieChart,
+                color: "from-teal-500 to-teal-600",
+                link: "/insurance-tools/portfolio-dashboard",
+                features: ["Policy Visualization", "Premium Tracking", "Renewal Alerts", "Coverage Analysis"]
+              }
+            ].map((tool) => (
+              <Link
+                key={tool.title}
+                to={tool.link}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 duration-300 overflow-hidden"
+              >
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center mr-4 shadow-lg`}>
+                      <tool.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {tool.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    {tool.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {tool.features.map((feature, idx) => (
+                      <span key={idx} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center text-blue-600 group-hover:text-blue-700 font-medium">
+                    Try Tool
+                    <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link 
+              to="/insurance-tools" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-semibold hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all"
+            >
+              Explore All Insurance Tools
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Astro Finance Blog Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -538,7 +645,7 @@ export const Home: React.FC = () => {
                 category: "कुंडली विश्लेषण",
                 readingTime: "10 min read"
               }
-            ].map((blog, index) => (
+            ].map((blog) => (
               <Link
                 key={blog.slug}
                 to={`/astro-finance/blog/${blog.slug}`}

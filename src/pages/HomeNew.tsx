@@ -240,8 +240,7 @@ export const HomeNew: React.FC = () => {
                 <button onClick={() => scrollToSection('blog')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Blog</button>
                 <button onClick={() => scrollToSection('news')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">News</button>
                 <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Features</button>
-                <Link to="/fino" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 font-bold bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700">🤖 Fino AI Chat</Link>
-                <Link to="/tools/" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
+                <Link to="/tools/" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
                 <Link to="/tax-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">💰 Tax Tools</Link>
                 <Link to="/finance-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📈 Finance Tools</Link>
                 <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">View All Blog Posts</Link>
@@ -265,8 +264,7 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('categories')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
           <button onClick={() => scrollToSection('blog')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Blog</button>
           <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
-          <Link to="/fino" className="px-3 py-2 rounded-full text-sm text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transition-all font-bold whitespace-nowrap">🤖 Fino AI</Link>
-          <Link to="/tools/" className="px-3 py-2 rounded-full text-sm text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
+          <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
           <Link to="/finance-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📈 Finance</Link>
           <Link to="/stock-market" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📊 Stock</Link>
@@ -314,32 +312,6 @@ export const HomeNew: React.FC = () => {
                   India's most comprehensive financial calculator platform. Plan loans, investments, taxes, and more with confidence.
                 </motion.p>
                 
-                {/* Fino AI Chat Banner */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="mb-8"
-                >
-                  <Link 
-                    to="/fino" 
-                    className="group relative bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 shadow-2xl hover:shadow-3xl transition-all duration-300 px-8 py-6 text-lg font-bold rounded-2xl flex items-center justify-center overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative flex items-center">
-                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-3">
-                        <Zap className="h-5 w-5 text-white" />
-                      </div>
-                      <div className="text-left">
-                        <div className="text-sm opacity-90">NEW: AI Finance Assistant</div>
-                        <div className="text-xl font-bold">Chat with Fino</div>
-                        <div className="text-sm opacity-90">Ask any finance question in English or Hindi</div>
-                      </div>
-                      <ArrowRight className="h-6 w-6 ml-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                </motion.div>
-
                 {/* Quick Action Buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -419,12 +391,6 @@ export const HomeNew: React.FC = () => {
                       className="px-4 py-2 bg-amber-100 text-amber-700 rounded-lg hover:bg-amber-200 transition-colors text-sm font-medium"
                     >
                       Schemes
-                    </Link>
-                    <Link 
-                      to="/fino" 
-                      className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-lg hover:from-purple-200 hover:to-blue-200 transition-colors text-sm font-bold"
-                    >
-                      🤖 Fino AI
                     </Link>
                     <Link 
                       to="/astro-finance" 

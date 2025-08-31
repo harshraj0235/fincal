@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Plus, Edit, Trash2, Download, FileText, FileSpreadsheet, FileHtml } from 'lucide-react';
+import { Plus, Edit, Trash2, Download, FileText, FileSpreadsheet, File } from 'lucide-react';
 
 const initialRow = { customer: '', invoiceNumber: '', dueDate: '', amount: '', status: 'Pending' };
 
@@ -96,7 +96,7 @@ const AccountsReceivableTracker: React.FC = () => {
       <div className="flex gap-2 mb-4">
         <button onClick={handleExcel} className="bg-green-600 text-white px-4 py-2 rounded flex items-center gap-2"><FileSpreadsheet size={18}/> Excel</button>
         <button onClick={handlePDF} className="bg-red-600 text-white px-4 py-2 rounded flex items-center gap-2"><FileText size={18}/> PDF</button>
-        <button onClick={handleHTML} className="bg-yellow-500 text-white px-4 py-2 rounded flex items-center gap-2"><FileHtml size={18}/> HTML</button>
+        <button onClick={handleHTML} className="bg-yellow-500 text-white px-4 py-2 rounded flex items-center gap-2"><File size={18}/> HTML</button>
       </div>
       <div className="overflow-x-auto">
         <table id="receivables-table" className="min-w-full border border-gray-200 rounded">
