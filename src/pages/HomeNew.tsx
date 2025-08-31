@@ -422,6 +422,12 @@ export const HomeNew: React.FC = () => {
                     >
                       Stock Market
                     </Link>
+                    <Link 
+                      to="/insurance-tools" 
+                      className="px-4 py-2 bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 transition-colors text-sm font-medium"
+                    >
+                      Insurance Tools
+                    </Link>
                   </div>
                 </motion.div>
               </div>
@@ -611,7 +617,7 @@ export const HomeNew: React.FC = () => {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               {[
                 { 
                   name: 'Financial Calculators', 
@@ -619,6 +625,13 @@ export const HomeNew: React.FC = () => {
                   icon: Calculator,
                   color: 'from-blue-500 to-blue-600',
                   path: '/calculators'
+                },
+                { 
+                  name: 'Insurance Tools', 
+                  description: 'Life, Health, Car & Travel insurance calculators',
+                  icon: Shield,
+                  color: 'from-orange-500 to-orange-600',
+                  path: '/insurance-tools'
                 },
                 { 
                   name: 'Tax Tools Hub', 
@@ -652,7 +665,7 @@ export const HomeNew: React.FC = () => {
                     to={tool.path}
                     className="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2 duration-300 block"
                   >
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                    <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
                       <tool.icon className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
@@ -827,6 +840,103 @@ export const HomeNew: React.FC = () => {
             >
               <Link to="/blog" className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-2xl font-semibold hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all">
                 View All Blog Posts
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Insurance Tools Section */}
+        <section id="insurance-tools" className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Insurance Planning Tools</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive insurance calculators to help you make informed decisions about your coverage needs
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+              {[
+                { 
+                  name: 'Life Insurance Calculator', 
+                  description: 'Calculate your life insurance needs',
+                  icon: Shield,
+                  path: '/insurance-tools/life-insurance-calculator',
+                  color: 'from-blue-500 to-blue-600'
+                },
+                { 
+                  name: 'Health Insurance Estimator', 
+                  description: 'Estimate health insurance premiums',
+                  icon: Building,
+                  path: '/insurance-tools/health-insurance-estimator',
+                  color: 'from-green-500 to-green-600'
+                },
+                { 
+                  name: 'Car Insurance Calculator', 
+                  description: 'Calculate car insurance costs',
+                  icon: TrendingUp,
+                  path: '/insurance-tools/car-insurance-calculator',
+                  color: 'from-purple-500 to-purple-600'
+                },
+                { 
+                  name: 'Travel Insurance Selector', 
+                  description: 'Find the best travel insurance',
+                  icon: Globe,
+                  path: '/insurance-tools/travel-insurance-selector',
+                  color: 'from-cyan-500 to-cyan-600'
+                },
+                { 
+                  name: 'Home Insurance Estimator', 
+                  description: 'Estimate home insurance premiums',
+                  icon: Home,
+                  path: '/insurance-tools/home-insurance-estimator',
+                  color: 'from-orange-500 to-orange-600'
+                }
+              ].map((tool, index) => (
+                <motion.div
+                  key={tool.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Link 
+                    to={tool.path}
+                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-orange-200 transform hover:-translate-y-1 duration-300 block"
+                  >
+                    <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-md`}>
+                      <tool.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                      {tool.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                      {tool.description}
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <span className="text-orange-600 group-hover:text-orange-700 font-semibold text-sm flex items-center">
+                        Try Now
+                        <ArrowRight className="h-3 w-3 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-center mt-12"
+            >
+              <Link to="/insurance-tools" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-2xl font-semibold hover:from-orange-700 hover:to-red-700 shadow-lg hover:shadow-xl transition-all">
+                View All Insurance Tools
                 <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
             </motion.div>
