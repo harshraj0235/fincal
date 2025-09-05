@@ -52,6 +52,13 @@ export class SitemapGenerator {
         priority: 1.0
       },
       {
+        loc: `${this.baseUrl}/tools`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      
+      {
         loc: `${this.baseUrl}/blog`,
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'daily' as const,
@@ -59,6 +66,30 @@ export class SitemapGenerator {
       },
       {
         loc: `${this.baseUrl}/calculators`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/finance-tools`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/tax-tools`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/insurance-tools`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/corporate-finance`,
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly' as const,
         priority: 0.8
@@ -121,6 +152,74 @@ export class SitemapGenerator {
   }
 
   /**
+   * Generate XML sitemap for insurance tools
+   */
+  generateInsuranceSitemap(): string {
+    const tools = [
+      'life-insurance-calculator',
+      'health-insurance-estimator',
+      'car-insurance-calculator',
+      'term-insurance-planner',
+      'travel-insurance-selector',
+      'home-insurance-estimator',
+      'two-wheeler-tracker',
+      'critical-illness-calculator',
+      'portfolio-dashboard',
+      'ulip-calculator'
+    ];
+    const today = new Date().toISOString().split('T')[0];
+    const urls: SitemapUrl[] = [
+      {
+        loc: `${this.baseUrl}/insurance-tools`,
+        lastmod: today,
+        changefreq: 'weekly' as const,
+        priority: 0.9
+      },
+      ...tools.map((slug): SitemapUrl => ({
+        loc: `${this.baseUrl}/insurance-tools/${slug}`,
+        lastmod: today,
+        changefreq: 'weekly' as const,
+        priority: 0.9
+      }))
+    ];
+    return this.generateXMLSitemap(urls);
+  }
+
+  /**
+   * Generate XML sitemap for corporate finance tools
+   */
+  generateCorporateFinanceSitemap(): string {
+    const tools = [
+      'business-valuation-calculator',
+      'loan-amortization-generator',
+      'ma-synergy-estimator',
+      'working-capital-optimizer',
+      'capital-structure-analyzer',
+      'break-even-calculator',
+      'dividend-policy-impact-tool',
+      'fx-exposure-risk-calculator',
+      'cost-capital-benchmarking',
+      'scenario-analysis-simulator'
+    ];
+    const today = new Date().toISOString().split('T')[0];
+    const urls: SitemapUrl[] = [
+      {
+        loc: `${this.baseUrl}/corporate-finance`,
+        lastmod: today,
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      ...tools.map((slug): SitemapUrl => ({
+        loc: `${this.baseUrl}/corporate-finance/${slug}`,
+        lastmod: today,
+        changefreq: 'weekly' as const,
+        priority: 0.7
+      }))
+    ];
+    return this.generateXMLSitemap(urls);
+  }
+
+  /**
    * Generate sitemap index
    */
   generateSitemapIndex(): string {
@@ -135,6 +234,14 @@ export class SitemapGenerator {
       },
       {
         loc: `${this.baseUrl}/sitemap-calculators.xml`,
+        lastmod: new Date().toISOString().split('T')[0]
+      },
+      {
+        loc: `${this.baseUrl}/sitemap-insurance.xml`,
+        lastmod: new Date().toISOString().split('T')[0]
+      },
+      {
+        loc: `${this.baseUrl}/sitemap-corporate.xml`,
         lastmod: new Date().toISOString().split('T')[0]
       }
     ];
@@ -197,6 +304,16 @@ ${latestPosts.map(post => `    <item>
     const post = allBlogPosts.find(p => p.slug === slug);
     if (!post) return '';
 
+    const isRecord = (obj: unknown): obj is Record<string, unknown> => {
+      return obj !== null && typeof obj === 'object';
+    };
+    let imageUrl = `${this.baseUrl}/images/blog-default.jpg`;
+    if (isRecord(post)) {
+      const maybeImage = post['image'];
+      if (typeof maybeImage === 'string' && maybeImage.length > 0) {
+        imageUrl = maybeImage;
+      }
+    }
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -208,7 +325,7 @@ ${latestPosts.map(post => `    <item>
       },
       "datePublished": post.date,
       "dateModified": post.date,
-      "image": post.image || `${this.baseUrl}/images/blog-default.jpg`,
+      "image": imageUrl,
       "url": `${this.baseUrl}/blog/${post.slug}`,
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -318,6 +435,8 @@ ${urls.map(url => `  <url>
     main: string;
     blog: string;
     calculators: string;
+    insurance: string;
+    corporate: string;
     index: string;
     rss: string;
     robots: string;
@@ -326,6 +445,8 @@ ${urls.map(url => `  <url>
       main: this.generateMainSitemap(),
       blog: this.generateBlogSitemap(),
       calculators: this.generateCalculatorSitemap(),
+      insurance: this.generateInsuranceSitemap(),
+      corporate: this.generateCorporateFinanceSitemap(),
       index: this.generateSitemapIndex(),
       rss: this.generateRSSFeed(),
       robots: this.generateRobotsTxt()
