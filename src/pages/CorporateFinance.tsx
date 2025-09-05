@@ -80,7 +80,7 @@ export const CorporateFinance: React.FC = () => {
       color: 'from-pink-500 to-pink-600',
       features: ['Payout Ratio Analysis', 'Share Price Impact', 'Growth Model', 'Valuation Impact'],
       keywords: 'dividend calculator corporate, payout ratio tool, dividend impact on valuation',
-      path: '/corporate-finance/dividend-policy-impact'
+      path: '/corporate-finance/dividend-policy-impact-tool'
     },
     {
       id: 'break-even',
@@ -100,7 +100,7 @@ export const CorporateFinance: React.FC = () => {
       color: 'from-cyan-500 to-cyan-600',
       features: ['Currency Risk', 'Hedge Suggestions', 'Real-time Rates', 'Risk Analysis'],
       keywords: 'fx exposure calculator, currency risk tool, forex risk corporate',
-      path: '/corporate-finance/fx-exposure-calculator'
+      path: '/corporate-finance/fx-exposure-risk-calculator'
     },
     {
       id: 'cost-capital',

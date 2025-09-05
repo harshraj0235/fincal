@@ -168,6 +168,8 @@ const MASynergyEstimator = lazy(() => import('./pages/corporate/MASynergyEstimat
 const WorkingCapitalOptimizer = lazy(() => import('./pages/corporate/WorkingCapitalOptimizer'));
 const CapitalStructureAnalyzer = lazy(() => import('./pages/corporate/CapitalStructureAnalyzer'));
 const BreakEvenCalculator = lazy(() => import('./pages/corporate/BreakEvenCalculator'));
+const DividendPolicyImpactTool = lazy(() => import('./pages/corporate/DividendPolicyImpactTool'));
+const FXExposureRiskCalculator = lazy(() => import('./pages/corporate/FXExposureRiskCalculator'));
 const LifeInsuranceCalculator = lazy(() => import('./pages/insurance/LifeInsuranceCalculator'));
 const HealthInsuranceEstimator = lazy(() => import('./pages/insurance/HealthInsuranceEstimator'));
 const CarInsuranceCalculator = lazy(() => import('./pages/insurance/CarInsuranceCalculator'));
@@ -422,6 +424,8 @@ function App() {
             <Route path="/corporate-finance/working-capital-optimizer" element={<WorkingCapitalOptimizer />} />
             <Route path="/corporate-finance/capital-structure-analyzer" element={<CapitalStructureAnalyzer />} />
             <Route path="/corporate-finance/break-even-calculator" element={<BreakEvenCalculator />} />
+            <Route path="/corporate-finance/dividend-policy-impact-tool" element={<DividendPolicyImpactTool />} />
+            <Route path="/corporate-finance/fx-exposure-risk-calculator" element={<FXExposureRiskCalculator />} />
             <Route path="/insurance-tools/life-insurance-calculator" element={<LifeInsuranceCalculator />} />
             <Route path="/insurance-tools/health-insurance-estimator" element={<HealthInsuranceEstimator />} />
             <Route path="/insurance-tools/car-insurance-calculator" element={<CarInsuranceCalculator />} />
