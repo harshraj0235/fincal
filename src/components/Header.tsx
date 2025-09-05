@@ -31,10 +31,13 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   }, []);
 
   const navItems = [
+    { name: 'All Tools', href: '/tools', icon: Calculator },
     { name: 'Calculators', href: '/calculators', icon: Calculator },
-    { name: 'Blog', href: '/blog', icon: FileText },
-    { name: 'Tools', href: '/exceltool', icon: TrendingUp },
+    { name: 'Finance Tools', href: '/finance-tools', icon: TrendingUp },
+    { name: 'Tax Tools', href: '/tax-tools', icon: FileText },
+    { name: 'Corporate Finance', href: '/corporate-finance', icon: TrendingUp },
     { name: 'Insurance', href: '/insurance-tools', icon: Shield },
+    { name: 'Blog', href: '/blog', icon: FileText },
     { name: 'Education', href: '/financial-education', icon: FileText },
     { name: 'Help', href: '/help-center', icon: MessageCircle },
     { name: 'Schemes', href: '/government-schemes', icon: Settings },
