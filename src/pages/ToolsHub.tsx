@@ -57,6 +57,35 @@ const ToolsHub: React.FC = () => {
       isPopular: true,
       color: 'from-blue-500 to-blue-600'
     },
+    // Corporate & Insurance Hubs
+    {
+      id: 'corporate-finance',
+      name: 'Corporate Finance Tools',
+      description: 'Business valuation, M&A synergy, working capital, WACC, more',
+      icon: <Building2 className="h-6 w-6" />,
+      category: 'Corporate Finance',
+      path: '/corporate-finance',
+      color: 'from-slate-500 to-slate-600'
+    },
+    {
+      id: 'insurance-tools',
+      name: 'Insurance Planning Tools',
+      description: 'Life, health, car, travel, home, ULIP and more',
+      icon: <Shield className="h-6 w-6" />,
+      category: 'Insurance',
+      path: '/insurance-tools',
+      color: 'from-orange-500 to-orange-600'
+    },
+    {
+      id: 'gst-tools',
+      name: 'GST Tools Hub',
+      description: 'GST calculator, due dates, GSTR-3B, HSN finder, invoice, ITC',
+      icon: <FileText className="h-6 w-6" />,
+      category: 'Tax Tools',
+      path: '/gst-tools',
+      isNew: true,
+      color: 'from-yellow-500 to-amber-600'
+    },
     {
       id: 'sip-calculator',
       name: 'SIP Calculator',
@@ -340,6 +369,8 @@ const ToolsHub: React.FC = () => {
     { id: 'all', name: 'All Tools', icon: <Zap className="h-5 w-5" /> },
     { id: 'Financial Calculators', name: 'Financial Calculators', icon: <Calculator className="h-5 w-5" /> },
     { id: 'Stock Market Tools', name: 'Stock Market Tools', icon: <TrendingUp className="h-5 w-5" /> },
+    { id: 'Corporate Finance', name: 'Corporate Finance', icon: <Building2 className="h-5 w-5" /> },
+    { id: 'Insurance', name: 'Insurance', icon: <Shield className="h-5 w-5" /> },
     { id: 'Business Tools', name: 'Business Tools', icon: <Building2 className="h-5 w-5" /> },
     { id: 'Productivity Tools', name: 'Productivity Tools', icon: <Wrench className="h-5 w-5" /> },
     { id: 'Sales & Marketing', name: 'Sales & Marketing', icon: <Target className="h-5 w-5" /> },

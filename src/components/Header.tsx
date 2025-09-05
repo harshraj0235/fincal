@@ -35,6 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
     { name: 'Calculators', href: '/calculators', icon: Calculator },
     { name: 'Finance Tools', href: '/finance-tools', icon: TrendingUp },
     { name: 'Tax Tools', href: '/tax-tools', icon: FileText },
+    { name: 'GST Tools', href: '/gst-tools', icon: FileText },
     { name: 'Corporate Finance', href: '/corporate-finance', icon: TrendingUp },
     { name: 'Insurance', href: '/insurance-tools', icon: Shield },
     { name: 'Blog', href: '/blog', icon: FileText },

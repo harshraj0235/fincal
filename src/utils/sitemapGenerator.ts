@@ -243,6 +243,10 @@ export class SitemapGenerator {
       {
         loc: `${this.baseUrl}/sitemap-corporate.xml`,
         lastmod: new Date().toISOString().split('T')[0]
+      },
+      {
+        loc: `${this.baseUrl}/sitemap-gst.xml`,
+        lastmod: new Date().toISOString().split('T')[0]
       }
     ];
 
@@ -437,6 +441,7 @@ ${urls.map(url => `  <url>
     calculators: string;
     insurance: string;
     corporate: string;
+    gst: string;
     index: string;
     rss: string;
     robots: string;
@@ -447,10 +452,40 @@ ${urls.map(url => `  <url>
       calculators: this.generateCalculatorSitemap(),
       insurance: this.generateInsuranceSitemap(),
       corporate: this.generateCorporateFinanceSitemap(),
+      gst: this.generateGSTSitemap(),
       index: this.generateSitemapIndex(),
       rss: this.generateRSSFeed(),
       robots: this.generateRobotsTxt()
     };
+  }
+
+  /**
+   * Generate XML sitemap for GST tools
+   */
+  generateGSTSitemap(): string {
+    const gstTools = [
+      'gst-calculator',
+      'gst-due-date-tracker',
+      'gstr-3b-preparation',
+      'gst-hsn-sac-finder',
+      'gst-penalty-interest-calculator',
+      'gst-composition-eligibility',
+      'gst-rcm-calculator',
+      'gst-einvoice-qr-validator',
+      'gst-itc-reconciliation',
+      'gst-slab-finder',
+      'gst-invoice-generator',
+      'gst-eway-distance-calculator',
+      'gst-liability-calculator',
+      'gst-turnover-tracker',
+      'gst-rate-impact-analyzer'
+    ];
+    const today = new Date().toISOString().split('T')[0];
+    const urls: SitemapUrl[] = [
+      { loc: `${this.baseUrl}/gst-tools`, lastmod: today, changefreq: 'weekly', priority: 0.8 },
+      ...gstTools.map((slug): SitemapUrl => ({ loc: `${this.baseUrl}/gst-tools/${slug}`, lastmod: today, changefreq: 'weekly', priority: 0.8 }))
+    ];
+    return this.generateXMLSitemap(urls);
   }
 }
 

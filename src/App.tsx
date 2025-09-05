@@ -182,6 +182,9 @@ const TwoWheelerTracker = lazy(() => import('./pages/insurance/TwoWheelerTracker
 const CriticalIllnessCalculator = lazy(() => import('./pages/insurance/CriticalIllnessCalculator'));
 const PortfolioDashboard = lazy(() => import('./pages/insurance/PortfolioDashboard'));
 const ULIPCalculator = lazy(() => import('./pages/insurance/ULIPCalculator'));
+const GSTTools = lazy(() => import('./pages/GSTTools'));
+const GSTCalculator = lazy(() => import('./pages/gst/GSTCalculator'));
+const GSTToolPlaceholder = lazy(() => import('./pages/gst/GSTToolPlaceholder'));
 const InvoicingReceivablesHub = lazy(() => import('./pages/InvoicingReceivablesHub'));
 const CustomInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/CustomInvoiceGenerator'));
 const InvoiceDueDateTracker = lazy(() => import('./pages/invoicing-tools/InvoiceDueDateTracker'));
@@ -440,6 +443,9 @@ function App() {
             <Route path="/insurance-tools/critical-illness-calculator" element={<CriticalIllnessCalculator />} />
             <Route path="/insurance-tools/portfolio-dashboard" element={<PortfolioDashboard />} />
             <Route path="/insurance-tools/ulip-calculator" element={<ULIPCalculator />} />
+            <Route path="/gst-tools" element={<GSTTools />} />
+            <Route path="/gst-tools/gst-calculator" element={<GSTCalculator />} />
+            <Route path="/gst-tools/:slug" element={<GSTToolPlaceholder />} />
         <Route path="/invoicing-receivables" element={<InvoicingReceivablesHub />} />
         <Route path="/invoicing-tools" element={<InvoicingReceivablesHub />} />
         <Route path="/invoicing-tools/custom-invoice-generator" element={<CustomInvoiceGenerator />} />

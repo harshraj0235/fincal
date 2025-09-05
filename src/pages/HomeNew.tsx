@@ -243,6 +243,7 @@ export const HomeNew: React.FC = () => {
                 <Link to="/tools/" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
                 <Link to="/tax-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">💰 Tax Tools</Link>
                 <Link to="/finance-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📈 Finance Tools</Link>
+                <Link to="/gst-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🧾 GST Tools</Link>
                 <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">View All Blog Posts</Link>
                 <Link to="/government-schemes" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Government Schemes</Link>
                 <Link to="/exceltool" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Excel Tools</Link>
@@ -267,6 +268,7 @@ export const HomeNew: React.FC = () => {
           <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
           <Link to="/finance-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📈 Finance</Link>
+          <Link to="/gst-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">🧾 GST</Link>
           <Link to="/stock-market" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📊 Stock</Link>
           <Link to="/government-schemes" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">🏛️ Schemes</Link>
           <Link to="/exceltool" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📊 Excel</Link>
@@ -434,6 +436,12 @@ export const HomeNew: React.FC = () => {
                     >
                       Corporate Finance
                     </Link>
+                    <Link 
+                      to="/gst-tools" 
+                      className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-lg hover:bg-yellow-200 transition-colors text-sm font-medium"
+                    >
+                      GST Tools
+                    </Link>
                   </div>
                 </motion.div>
               </div>
@@ -512,7 +520,7 @@ export const HomeNew: React.FC = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl z-50 max-h-96 overflow-y-auto"
+                      className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl z-50 max_h-96 overflow-y-auto"
                     >
                       {searchResults.map((result) => (
                         <button
