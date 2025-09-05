@@ -32,7 +32,7 @@ const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
-const SitemapXml = lazy(() => import('./pages/SitemapXml'));
+const SitemapXml = lazy(() => import('./pages/SitemapXml').then(m => ({ default: m.SitemapXml })));
 const Disclaimer = lazy(() => import('./pages/Disclaimer'));
 const CookiePolicy = lazy(() => import('./pages/CookiePolicy'));
 const EditorialPolicy = lazy(() => import('./pages/EditorialPolicy'));
@@ -170,6 +170,7 @@ const CapitalStructureAnalyzer = lazy(() => import('./pages/corporate/CapitalStr
 const BreakEvenCalculator = lazy(() => import('./pages/corporate/BreakEvenCalculator'));
 const DividendPolicyImpactTool = lazy(() => import('./pages/corporate/DividendPolicyImpactTool'));
 const FXExposureRiskCalculator = lazy(() => import('./pages/corporate/FXExposureRiskCalculator'));
+const CostOfCapitalBenchmarking = lazy(() => import('./pages/corporate/CostOfCapitalBenchmarking'));
 const LifeInsuranceCalculator = lazy(() => import('./pages/insurance/LifeInsuranceCalculator'));
 const HealthInsuranceEstimator = lazy(() => import('./pages/insurance/HealthInsuranceEstimator'));
 const CarInsuranceCalculator = lazy(() => import('./pages/insurance/CarInsuranceCalculator'));
@@ -426,6 +427,7 @@ function App() {
             <Route path="/corporate-finance/break-even-calculator" element={<BreakEvenCalculator />} />
             <Route path="/corporate-finance/dividend-policy-impact-tool" element={<DividendPolicyImpactTool />} />
             <Route path="/corporate-finance/fx-exposure-risk-calculator" element={<FXExposureRiskCalculator />} />
+            <Route path="/corporate-finance/cost-capital-benchmarking" element={<CostOfCapitalBenchmarking />} />
             <Route path="/insurance-tools/life-insurance-calculator" element={<LifeInsuranceCalculator />} />
             <Route path="/insurance-tools/health-insurance-estimator" element={<HealthInsuranceEstimator />} />
             <Route path="/insurance-tools/car-insurance-calculator" element={<CarInsuranceCalculator />} />
