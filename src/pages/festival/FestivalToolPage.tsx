@@ -239,6 +239,410 @@ const TravelTool: React.FC = () => {
   );
 };
 
+const DiscountTool: React.FC = () => {
+  const [mrp, setMrp] = useState<number>(20000);
+  const [salePct, setSalePct] = useState<number>(20);
+  const [couponAmt, setCouponAmt] = useState<number>(500);
+  const [bankPct, setBankPct] = useState<number>(10);
+  const [bankCap, setBankCap] = useState<number>(1500);
+  const saleOff = useMemo(() => (mrp * salePct) / 100, [mrp, salePct]);
+  const afterSale = useMemo(() => Math.max(0, mrp - saleOff), [mrp, saleOff]);
+  const afterCoupon = useMemo(() => Math.max(0, afterSale - couponAmt), [afterSale, couponAmt]);
+  const bankOffRaw = useMemo(() => (afterCoupon * bankPct) / 100, [afterCoupon, bankPct]);
+  const bankOff = useMemo(() => Math.min(bankOffRaw, bankCap), [bankOffRaw, bankCap]);
+  const finalPrice = useMemo(() => Math.max(0, afterCoupon - bankOff), [afterCoupon, bankOff]);
+  const totalSavings = useMemo(() => mrp - finalPrice, [mrp, finalPrice]);
+  const chartData = [
+    { name: 'Sale', value: saleOff, color: '#f59e0b' },
+    { name: 'Coupon', value: couponAmt, color: '#22c55e' },
+    { name: 'Bank', value: bankOff, color: '#60a5fa' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">MRP (₹)</label>
+          <input type="number" min={0} value={mrp} onChange={(e) => setMrp(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Sale Discount (%)</label>
+          <input type="number" min={0} max={100} step={0.1} value={salePct} onChange={(e) => setSalePct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Coupon Amount (₹)</label>
+          <input type="number" min={0} value={couponAmt} onChange={(e) => setCouponAmt(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Bank Discount (%)</label>
+          <input type="number" min={0} max={100} step={0.1} value={bankPct} onChange={(e) => setBankPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Bank Discount Cap (₹)</label>
+          <input type="number" min={0} value={bankCap} onChange={(e) => setBankCap(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-emerald-50 border col-span-2">Final Price: ₹{finalPrice.toFixed(2)} | Total Savings: ₹{totalSavings.toFixed(2)}</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`SAVE\n₹${Math.round(totalSavings).toLocaleString()}`} />
+      </div>
+    </div>
+  );
+};
+
+const EMITool: React.FC = () => {
+  const [principal, setPrincipal] = useState<number>(30000);
+  const [rate, setRate] = useState<number>(14);
+  const [months, setMonths] = useState<number>(12);
+  const i = rate / 100 / 12;
+  const emi = useMemo(() => (i === 0 ? principal / months : principal * i * Math.pow(1 + i, months) / (Math.pow(1 + i, months) - 1)), [principal, i, months]);
+  const total = useMemo(() => emi * months, [emi, months]);
+  const interest = useMemo(() => total - principal, [total, principal]);
+  const chartData = [
+    { name: 'Principal', value: principal, color: '#60a5fa' },
+    { name: 'Interest', value: interest, color: '#f97316' }
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Amount (₹)</label>
+          <input type="number" min={0} value={principal} onChange={(e) => setPrincipal(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Rate (% p.a.)</label>
+          <input type="number" min={0} step={0.1} value={rate} onChange={(e) => setRate(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Tenure (months)</label>
+          <input type="number" min={1} value={months} onChange={(e) => setMonths(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-blue-50 border col-span-3">EMI: ₹{emi.toFixed(2)} | Interest: ₹{interest.toFixed(2)}</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`EMI\n₹${Math.round(emi).toLocaleString()}`} />
+      </div>
+    </div>
+  );
+};
+
+const MakingChargesTool: React.FC = () => {
+  const [weight, setWeight] = useState<number>(10);
+  const [purityPct, setPurityPct] = useState<number>(91.6);
+  const [pricePerGram, setPricePerGram] = useState<number>(6500);
+  const [makingPct, setMakingPct] = useState<number>(8);
+  const [wastagePct, setWastagePct] = useState<number>(2);
+  const [gstPct, setGstPct] = useState<number>(3);
+  const pureGrams = useMemo(() => (weight * purityPct) / 100, [weight, purityPct]);
+  const metalValue = useMemo(() => pureGrams * pricePerGram, [pureGrams, pricePerGram]);
+  const makingValue = useMemo(() => (metalValue * makingPct) / 100, [metalValue, makingPct]);
+  const wastageValue = useMemo(() => (metalValue * wastagePct) / 100, [metalValue, wastagePct]);
+  const subTotal = useMemo(() => metalValue + makingValue + wastageValue, [metalValue, makingValue, wastageValue]);
+  const gstValue = useMemo(() => (subTotal * gstPct) / 100, [subTotal, gstPct]);
+  const totalInvoice = useMemo(() => subTotal + gstValue, [subTotal, gstValue]);
+  const chartData = [
+    { name: 'Metal', value: metalValue, color: '#facc15' },
+    { name: 'Making', value: makingValue, color: '#fb923c' },
+    { name: 'Wastage', value: wastageValue, color: '#f43f5e' },
+    { name: 'GST', value: gstValue, color: '#60a5fa' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Weight (g)</label>
+          <input type="number" min={0} value={weight} onChange={(e) => setWeight(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Purity (%)</label>
+          <input type="number" min={0} max={100} step={0.1} value={purityPct} onChange={(e) => setPurityPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Price/Gram (₹)</label>
+          <input type="number" min={0} value={pricePerGram} onChange={(e) => setPricePerGram(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Making (%)</label>
+          <input type="number" min={0} step={0.1} value={makingPct} onChange={(e) => setMakingPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Wastage (%)</label>
+          <input type="number" min={0} step={0.1} value={wastagePct} onChange={(e) => setWastagePct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">GST (%)</label>
+          <input type="number" min={0} step={0.1} value={gstPct} onChange={(e) => setGstPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-emerald-50 border col-span-2">Invoice: ₹{totalInvoice.toFixed(2)}</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`TOTAL\n₹${Math.round(totalInvoice).toLocaleString()}`} />
+      </div>
+    </div>
+  );
+};
+
+const PriceDropTool: React.FC = () => {
+  const [prevPrice, setPrevPrice] = useState<number>(2500);
+  const [currentPrice, setCurrentPrice] = useState<number>(1999);
+  const drop = useMemo(() => Math.max(0, prevPrice - currentPrice), [prevPrice, currentPrice]);
+  const dropPct = useMemo(() => (prevPrice > 0 ? (drop / prevPrice) * 100 : 0), [drop, prevPrice]);
+  const chartData = [
+    { name: 'Prev', value: prevPrice, color: '#60a5fa' },
+    { name: 'Now', value: currentPrice, color: '#22c55e' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Previous Price (₹)</label>
+          <input type="number" min={0} value={prevPrice} onChange={(e) => setPrevPrice(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Current Price (₹)</label>
+          <input type="number" min={0} value={currentPrice} onChange={(e) => setCurrentPrice(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-amber-50 border col-span-2">Drop: ₹{drop.toFixed(2)} ({dropPct.toFixed(2)}%)</div>
+      </div>
+      <div className="h-64">
+        <BarChart data={chartData.map(d => ({ name: d.name, value: d.value }))} xKey="name" yKey="value" color="#60a5fa" xLabel="" yLabel="₹" />
+      </div>
+    </div>
+  );
+};
+
+const CashbackTool: React.FC = () => {
+  const [amount, setAmount] = useState<number>(10000);
+  const [cashbackPct, setCashbackPct] = useState<number>(5);
+  const [cap, setCap] = useState<number>(1000);
+  const cbRaw = useMemo(() => (amount * cashbackPct) / 100, [amount, cashbackPct]);
+  const cb = useMemo(() => Math.min(cbRaw, cap), [cbRaw, cap]);
+  const effective = useMemo(() => amount - cb, [amount, cb]);
+  const chartData = [
+    { name: 'Cashback', value: cb, color: '#22c55e' },
+    { name: 'Net Pay', value: effective, color: '#f59e0b' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Amount (₹)</label>
+          <input type="number" min={0} value={amount} onChange={(e) => setAmount(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Cashback (%)</label>
+          <input type="number" min={0} step={0.1} value={cashbackPct} onChange={(e) => setCashbackPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Cap (₹)</label>
+          <input type="number" min={0} value={cap} onChange={(e) => setCap(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`CB\n₹${Math.round(cb).toLocaleString()}`} />
+      </div>
+    </div>
+  );
+};
+
+const MonthlyGoalTool: React.FC = () => {
+  const [targetAmount, setTargetAmount] = useState<number>(50000);
+  const [years, setYears] = useState<number>(1);
+  const [rate, setRate] = useState<number>(8);
+  const periods = years * 12;
+  const i = rate / 100 / 12;
+  const sipNeeded = useMemo(() => (i === 0 ? targetAmount / periods : targetAmount / (((Math.pow(1 + i, periods) - 1) / i) * (1 + i))), [targetAmount, i, periods]);
+  const chartData = [
+    { name: 'Target', value: targetAmount, color: '#22c55e' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Target (₹)</label>
+          <input type="number" min={0} value={targetAmount} onChange={(e) => setTargetAmount(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Years</label>
+          <input type="number" min={1} value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Expected Return (% p.a.)</label>
+          <input type="number" min={0} step={0.1} value={rate} onChange={(e) => setRate(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-blue-50 border col-span-3">Required Monthly Savings: ₹{sipNeeded.toFixed(2)}</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`SIP\n₹${Math.round(sipNeeded).toLocaleString()}/mo`} />
+      </div>
+    </div>
+  );
+};
+
+const QuantityEstimatorTool: React.FC = () => {
+  const [guests, setGuests] = useState<number>(20);
+  const [sweetsPerPerson, setSweetsPerPerson] = useState<number>(2);
+  const [bufferPct, setBufferPct] = useState<number>(10);
+  const baseQty = useMemo(() => guests * sweetsPerPerson, [guests, sweetsPerPerson]);
+  const totalQty = useMemo(() => Math.ceil(baseQty * (1 + bufferPct / 100)), [baseQty, bufferPct]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Guests</label>
+        <input type="number" min={0} value={guests} onChange={(e) => setGuests(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Sweets per guest</label>
+        <input type="number" min={0} value={sweetsPerPerson} onChange={(e) => setSweetsPerPerson(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Buffer (%)</label>
+        <input type="number" min={0} value={bufferPct} onChange={(e) => setBufferPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="p-4 rounded bg-amber-50 border">Total Sweets: {totalQty}</div>
+    </div>
+  );
+};
+
+const DonationSplitterTool: React.FC = () => {
+  const [items] = useState<BudgetItem[]>([
+    { name: 'Education', qty: 1, price: 2000 },
+    { name: 'Food Kits', qty: 1, price: 1500 },
+    { name: 'Community', qty: 1, price: 1000 },
+  ]);
+  const total = useMemo(() => items.reduce((s, it) => s + (Number(it.qty || 0) * Number(it.price || 0)), 0), [items]);
+  const data = items.map((it, i) => ({ name: it.name, value: (Number(it.qty || 0) * Number(it.price || 0)), color: ['#60a5fa', '#f97316', '#22c55e', '#a78bfa'][i % 4] }));
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <BudgetTool tool={{ slug: 'donation', name: 'Donation', type: 'budget', description: 'Donation Plan' }} />
+      <div className="h-64">
+        <ResultChart data={data} centerText={`TOTAL\n₹${Math.round(total).toLocaleString()}`} />
+      </div>
+    </div>
+  );
+};
+
+const CalorieTool: React.FC = () => {
+  const [ladoo, setLadoo] = useState<number>(10);
+  const [barfi, setBarfi] = useState<number>(8);
+  const [kajuKatli, setKajuKatli] = useState<number>(12);
+  const cal = useMemo(() => ladoo * 125 + barfi * 117 + kajuKatli * 95, [ladoo, barfi, kajuKatli]);
+  const data = [
+    { name: 'Ladoo', value: ladoo * 125, color: '#f59e0b' },
+    { name: 'Barfi', value: barfi * 117, color: '#22c55e' },
+    { name: 'Kaju Katli', value: kajuKatli * 95, color: '#60a5fa' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Ladoo (pcs)</label>
+          <input type="number" min={0} value={ladoo} onChange={(e) => setLadoo(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Barfi (pcs)</label>
+          <input type="number" min={0} value={barfi} onChange={(e) => setBarfi(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Kaju Katli (pcs)</label>
+          <input type="number" min={0} value={kajuKatli} onChange={(e) => setKajuKatli(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-amber-50 border col-span-3">Total Calories: {cal.toLocaleString()} kcal</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={data} centerText={`${cal.toLocaleString()}\nkcal`} />
+      </div>
+    </div>
+  );
+};
+
+const WishCardTool: React.FC = () => {
+  const [name, setName] = useState<string>('Family');
+  const [message, setMessage] = useState<string>('Wishing you a Happy Diwali filled with joy and prosperity!');
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">To (name)</label>
+          <input value={name} onChange={(e) => setName(e.target.value)} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Message</label>
+          <textarea value={message} onChange={(e) => setMessage(e.target.value)} className="w-full border rounded px-2 py-1" rows={4} />
+        </div>
+      </div>
+      <div className="bg-gradient-to-br from-yellow-100 via-white to-amber-100 border rounded-xl p-6">
+        <div className="text-center">
+          <div className="text-2xl font-extrabold text-amber-700">Happy Diwali</div>
+          <div className="mt-2 text-gray-700">Dear {name},</div>
+          <div className="mt-2 text-gray-800">{message}</div>
+          <div className="mt-4 text-sm text-amber-800">— MoneyCal.in</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ValueMetalTool: React.FC = () => {
+  const [metal, setMetal] = useState<string>('Gold');
+  const [weight, setWeight] = useState<number>(10);
+  const [purityPct, setPurityPct] = useState<number>(91.6);
+  const [pricePerGram, setPricePerGram] = useState<number>(6500);
+  const pureGrams = useMemo(() => (weight * purityPct) / 100, [weight, purityPct]);
+  const value = useMemo(() => pureGrams * pricePerGram, [pureGrams, pricePerGram]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Metal</label>
+        <select value={metal} onChange={(e) => setMetal(e.target.value)} className="w-full border rounded px-2 py-1">
+          <option>Gold</option>
+          <option>Silver</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Weight (g)</label>
+        <input type="number" min={0} value={weight} onChange={(e) => setWeight(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Purity (%)</label>
+        <input type="number" min={0} max={100} step={0.1} value={purityPct} onChange={(e) => setPurityPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Price/Gram (₹)</label>
+        <input type="number" min={0} value={pricePerGram} onChange={(e) => setPricePerGram(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="md:col-span-4 p-4 rounded bg-emerald-50 border">Estimated {metal} Value: ₹{value.toFixed(2)}</div>
+    </div>
+  );
+};
+
+const MuhuratTool: React.FC = () => {
+  const [city, setCity] = useState<string>('Mumbai');
+  const [date, setDate] = useState<string>('2025-10-20');
+  const [start, setStart] = useState<string>('18:30');
+  const [end, setEnd] = useState<string>('20:00');
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">City</label>
+        <input value={city} onChange={(e) => setCity(e.target.value)} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Date</label>
+        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Start</label>
+        <input type="time" value={start} onChange={(e) => setStart(e.target.value)} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">End</label>
+        <input type="time" value={end} onChange={(e) => setEnd(e.target.value)} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="md:col-span-4 p-4 rounded bg-yellow-50 border">Suggested Muhurat for Lakshmi Puja in {city} on {date}: {start} – {end}. Please verify with your local panchang.</div>
+    </div>
+  );
+};
+
 const FestivalToolPage: React.FC = () => {
   const { festivalSlug, toolSlug } = useParams();
   const found = festivalSlug && toolSlug ? findFestivalTool(festivalSlug, toolSlug) : undefined;
@@ -332,6 +736,18 @@ const FestivalToolPage: React.FC = () => {
             {tool.type === 'fastingDuration' && <FastingDurationTool />}
             {tool.type === 'zakat' && <ZakatTool />}
             {tool.type === 'travel' && <TravelTool />}
+            {tool.type === 'discount' && <DiscountTool />}
+            {tool.type === 'emi' && <EMITool />}
+            {tool.type === 'makingCharges' && <MakingChargesTool />}
+            {tool.type === 'priceDrop' && <PriceDropTool />}
+            {tool.type === 'cashback' && <CashbackTool />}
+            {tool.type === 'monthlyGoal' && <MonthlyGoalTool />}
+            {tool.type === 'quantity' && <QuantityEstimatorTool />}
+            {tool.type === 'donation' && <DonationSplitterTool />}
+            {tool.type === 'calorie' && <CalorieTool />}
+            {tool.type === 'wishCard' && <WishCardTool />}
+            {tool.type === 'valueMetal' && <ValueMetalTool />}
+            {tool.type === 'muhurat' && <MuhuratTool />}
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
               <h4 className="font-semibold text-blue-900 mb-2 flex items-center">

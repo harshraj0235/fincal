@@ -3,7 +3,19 @@ export type FestivalToolType =
   | 'travel'
   | 'electricity'
   | 'fastingDuration'
-  | 'zakat';
+  | 'zakat'
+  | 'discount'
+  | 'emi'
+  | 'cashback'
+  | 'priceDrop'
+  | 'monthlyGoal'
+  | 'quantity'
+  | 'donation'
+  | 'calorie'
+  | 'wishCard'
+  | 'makingCharges'
+  | 'valueMetal'
+  | 'muhurat';
 
 export interface FestivalToolConfig {
   slug: string;
@@ -46,7 +58,26 @@ export const festivalList: FestivalConfig[] = [
         name: 'Electricity Cost Calculator for Diwali Lights',
         type: 'electricity',
         description: 'Estimate power cost for serial lights and decorative lighting.'
-      }
+      },
+      { slug: 'diwali-gift-budget-splitter', name: 'Diwali Gift Budget Splitter', type: 'budget', description: 'Split gift budget across family and friends.', defaultItems: [ { name: 'Parents', qty: 2, price: 1500 }, { name: 'Siblings', qty: 2, price: 800 }, { name: 'Friends', qty: 4, price: 500 } ] },
+      { slug: 'diwali-discount-offer-savings', name: 'Discount/Offer Savings Calculator', type: 'discount', description: 'Stack bank/coupon offers on sale price and estimate final price.' },
+      { slug: 'diwali-emi-calculator', name: 'EMI Calculator for Festive Shopping', type: 'emi', description: 'Monthly EMI and interest for festival purchases.' },
+      { slug: 'dhanteras-gold-silver-value', name: 'Gold/Silver Price Estimator (Dhanteras)', type: 'valueMetal', description: 'Estimate value by metal, weight and price per gram.' },
+      { slug: 'sweet-calorie-calculator', name: 'Sweet Calorie Calculator (Ladoo, Barfi, etc.)', type: 'calorie', description: 'Estimate calories for popular Diwali sweets.' },
+      { slug: 'firecracker-budget-splitter', name: 'Firecracker Budget Splitter', type: 'budget', description: 'Allocate budget across different crackers.', defaultItems: [ { name: 'Sparklers', qty: 5, price: 50 }, { name: 'Flower Pots', qty: 3, price: 120 }, { name: 'Anars', qty: 2, price: 250 } ] },
+      { slug: 'diwali-wish-card-generator', name: 'Diwali Card/Wish Generator (Image + Text)', type: 'wishCard', description: 'Generate a festive card with your message and export.' },
+      { slug: 'puja-samagri-checklist', name: 'Puja Samagri Checklist Tool', type: 'budget', description: 'Checklist and budget for samagri.', defaultItems: [ { name: 'Agarbatti', qty: 2, price: 40 }, { name: 'Ghee', qty: 1, price: 200 } ] },
+      { slug: 'diwali-decoration-budget', name: 'Diwali Decoration Budget Estimator', type: 'budget', description: 'Rangoli, toran, lights and decor.', defaultItems: [ { name: 'Rangoli', qty: 1, price: 200 }, { name: 'Toran', qty: 2, price: 150 } ] },
+      { slug: 'festival-loan-emi-planner', name: 'Festival Loan EMI Planner', type: 'emi', description: 'Compare EMIs for festival loans.' },
+      { slug: 'gold-making-charges-calculator', name: 'Gold Making Charges Calculator', type: 'makingCharges', description: 'Estimate jewellery invoice with making, wastage and GST.' },
+      { slug: 'shopping-cart-price-drop-tracker', name: 'Diwali Shopping Cart Price Drop Tracker', type: 'priceDrop', description: 'Track and compare current vs sale price.' },
+      { slug: 'diwali-2026-goal-tracker', name: 'Personal Finance Goal Tracker (Save for Diwali 2026)', type: 'monthlyGoal', description: 'Monthly saving required to reach your goal.' },
+      { slug: 'credit-card-cashback-calculator', name: 'Credit Card Cashback Calculator (Festival Offers)', type: 'cashback', description: 'Cashback estimate on festival transactions.' },
+      { slug: 'lakshmi-puja-muhurat-finder', name: 'Best Muhurat Finder (Lakshmi Puja)', type: 'muhurat', description: 'Find auspicious time window (user inputs city/date).'},
+      { slug: 'diwali-holiday-travel-expense', name: 'Diwali Holiday Travel Expense Calculator', type: 'travel', description: 'Trip cost with fuel, tolls and per-head split.' },
+      { slug: 'sweet-quantity-estimator', name: 'Sweet Quantity Estimator for Guests', type: 'quantity', description: 'Estimate sweets quantity for expected guests.' },
+      { slug: 'festival-dress-budget-planner', name: 'Festival Dress Budget Planner', type: 'budget', description: 'Plan outfits and accessories.', defaultItems: [ { name: 'Outfit', qty: 2, price: 2500 }, { name: 'Accessories', qty: 2, price: 600 } ] },
+      { slug: 'charity-donation-splitter', name: 'Charity/Donation Splitter', type: 'donation', description: 'Split donations across causes with visual share.' }
     ]
   },
   {
