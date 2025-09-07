@@ -9408,4 +9408,31 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Gold Tools Hub and Pages -->
+  <url>
+    <loc>https://moneycal.in/gold-tools</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://moneycal.in/gold-tools/gold-purity-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-weight-converter</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-value-estimator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-making-charges-gst</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-sip-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-lumpsum-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-etf-vs-physical</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/sovereign-gold-bond-interest</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-cagr-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-loan-emi-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/jewellery-price-estimator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-scrap-resale-value</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/monthly-goal-in-gold</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/melt-loss-estimator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/price-per-gram-from-10g</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/karat-to-purity</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gram-to-tola</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gram-to-ounce</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/gold-etf-sip-value</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://moneycal.in/gold-tools/sovereign-gold-bond-redemption</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

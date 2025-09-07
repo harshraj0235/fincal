@@ -222,6 +222,8 @@ const OutstandingReceivableHeatmap = lazy(() => import('./pages/invoicing-tools/
 const FestivalTools = lazy(() => import('./pages/FestivalTools'));
 const FestivalLanding = lazy(() => import('./pages/FestivalLanding'));
 const FestivalToolPage = lazy(() => import('./pages/festival/FestivalToolPage'));
+const GoldTools = lazy(() => import('./pages/GoldTools'));
+const GoldToolPage = lazy(() => import('./pages/gold/GoldToolPage'));
 
 function App() {
   useEffect(() => {
@@ -437,6 +439,8 @@ function App() {
                 <Route path="/festival-tools" element={<FestivalTools />} />
                 <Route path="/festival-tools/:festivalSlug" element={<FestivalLanding />} />
                 <Route path="/festival-tools/:festivalSlug/:toolSlug" element={<FestivalToolPage />} />
+                <Route path="/gold-tools" element={<GoldTools />} />
+                <Route path="/gold-tools/:toolSlug" element={<GoldToolPage />} />
                 <Route path="/investing-tools" element={<InvestingToolsHub />} />
                             <Route path="/financial-education" element={<FinancialEducationHub />} />
             <Route path="/help-center" element={<HelpCenter />} />

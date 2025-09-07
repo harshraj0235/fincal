@@ -238,7 +238,7 @@ export const HomeNew: React.FC = () => {
                 <button onClick={() => scrollToSection('popular')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Popular Tools</button>
                 <button onClick={() => scrollToSection('categories')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">All Categories</button>
                 <button onClick={() => scrollToSection('blog')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Blog</button>
-                <button onClick={() => scrollToSection('news')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">News</button>
+                <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
                 <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Features</button>
                 <Link to="/tools/" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
                 <Link to="/tax-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">💰 Tax Tools</Link>
@@ -267,6 +267,7 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
           <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/festival-tools" className="px-3 py-2 rounded-full text-sm font-medium text-rose-700 hover:text-rose-800 transition-all whitespace-nowrap">🎉 Festival Tools</Link>
+          <Link to="/gold-tools" className="px-3 py-2 rounded-full text-sm font-medium text-amber-700 hover:text-amber-800 transition-all whitespace-nowrap">🥇 Gold Tools</Link>
           <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
           <Link to="/finance-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📈 Finance</Link>
           <Link to="/gst-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">🧾 GST</Link>
