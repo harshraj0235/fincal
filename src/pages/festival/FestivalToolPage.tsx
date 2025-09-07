@@ -131,6 +131,49 @@ const ZakatTool: React.FC = () => {
   );
 };
 
+const TravelTool: React.FC = () => {
+  const [distanceKm, setDistanceKm] = useState<number>(50);
+  const [mileageKmPerLitre, setMileageKmPerLitre] = useState<number>(15);
+  const [fuelPricePerLitre, setFuelPricePerLitre] = useState<number>(105);
+  const [tollCharges, setTollCharges] = useState<number>(0);
+  const [persons, setPersons] = useState<number>(2);
+
+  const fuelLitres = useMemo(() => (distanceKm > 0 && mileageKmPerLitre > 0) ? distanceKm / mileageKmPerLitre : 0, [distanceKm, mileageKmPerLitre]);
+  const fuelCost = useMemo(() => fuelLitres * fuelPricePerLitre, [fuelLitres, fuelPricePerLitre]);
+  const totalCost = useMemo(() => fuelCost + (Number(tollCharges) || 0), [fuelCost, tollCharges]);
+  const perHead = useMemo(() => persons > 0 ? totalCost / persons : totalCost, [totalCost, persons]);
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Distance (km)</label>
+        <input type="number" min={0} value={distanceKm} onChange={(e) => setDistanceKm(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Mileage (km/l)</label>
+        <input type="number" min={0} value={mileageKmPerLitre} onChange={(e) => setMileageKmPerLitre(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Fuel Price (₹/l)</label>
+        <input type="number" min={0} value={fuelPricePerLitre} onChange={(e) => setFuelPricePerLitre(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Tolls (₹)</label>
+        <input type="number" min={0} value={tollCharges} onChange={(e) => setTollCharges(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Persons</label>
+        <input type="number" min={1} value={persons} onChange={(e) => setPersons(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="md:col-span-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="p-4 rounded bg-blue-50 border">Fuel Needed: {fuelLitres.toFixed(2)} l</div>
+        <div className="p-4 rounded bg-amber-50 border">Total Cost: ₹{totalCost.toFixed(2)}</div>
+        <div className="p-4 rounded bg-emerald-50 border">Per Head: ₹{perHead.toFixed(2)}</div>
+      </div>
+    </div>
+  );
+};
+
 const FestivalToolPage: React.FC = () => {
   const { festivalSlug, toolSlug } = useParams();
   const found = festivalSlug && toolSlug ? findFestivalTool(festivalSlug, toolSlug) : undefined;
@@ -193,6 +236,7 @@ const FestivalToolPage: React.FC = () => {
             {tool.type === 'electricity' && <ElectricityTool />}
             {tool.type === 'fastingDuration' && <FastingDurationTool />}
             {tool.type === 'zakat' && <ZakatTool />}
+            {tool.type === 'travel' && <TravelTool />}
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
               <h4 className="font-semibold text-blue-900 mb-2 flex items-center">
