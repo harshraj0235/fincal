@@ -118,7 +118,7 @@ export const festivalList: FestivalConfig[] = [
       { slug: 'kids-safety-checklist-rath', name: 'Kids Safety Checklist Tool', type: 'checklist', description: 'Safety reminders for kids.' },
       { slug: 'rath-greeting-card-generator', name: 'Rath Yatra Greeting Card Generator', type: 'wishCard', description: 'Create greeting card.' }
     ]
-  }
+  },
   {
     slug: 'pongal',
     name: 'Pongal (Tamil Nadu)',
