@@ -254,10 +254,6 @@ export class SitemapGenerator {
       {
         loc: `${this.baseUrl}/sitemap-gst.xml`,
         lastmod: new Date().toISOString().split('T')[0]
-      },
-      {
-        loc: `${this.baseUrl}/sitemap-festival.xml`,
-        lastmod: new Date().toISOString().split('T')[0]
       }
     ];
 
