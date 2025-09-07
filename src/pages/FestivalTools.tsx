@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Gift, Sparkles, PartyPopper, Calendar } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
-import { festivalList } from '../data/festivalTools';
+import { festivalList, FestivalToolType } from '../data/festivalTools';
 import ToolArticle from '../components/ToolArticle';
 
 const FestivalTools: React.FC = () => {
+  const [query, setQuery] = useState('');
+  const [activeTypes, setActiveTypes] = useState<FestivalToolType[]>([]);
+  const [sortBy, setSortBy] = useState<'az' | 'za'>('az');
+
+  const allTypes = useMemo(() => Array.from(new Set(festivalList.flatMap(f => f.tools.map(t => t.type)))), []);
+  const filteredFestivals = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    let list = festivalList.filter(f => {
+      const matchesQuery = q.length === 0 || f.name.toLowerCase().includes(q) || f.tools.some(t => t.name.toLowerCase().includes(q) || t.description.toLowerCase().includes(q));
+      const matchesType = activeTypes.length === 0 || f.tools.some(t => activeTypes.includes(t.type));
+      return matchesQuery && matchesType;
+    });
+    list = list.sort((a, b) => sortBy === 'az' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+    return list;
+  }, [query, activeTypes, sortBy]);
+
+  const toggleType = (type: FestivalToolType) => {
+    setActiveTypes(prev => prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]);
+  };
+
+  const clearFilters = () => { setQuery(''); setActiveTypes([]); setSortBy('az'); };
   return (
     <>
       <SEOHelmet
@@ -27,7 +48,7 @@ const FestivalTools: React.FC = () => {
           {
             "@context": "https://schema.org",
             "@type": "ItemList",
-            "itemListElement": festivalList.flatMap(f => f.tools.map((t, i) => ({
+            "itemListElement": filteredFestivals.flatMap(f => f.tools.map((t, i) => ({
               "@type": "ListItem",
               "position": i + 1,
               "name": `${f.name} – ${t.name}`,
@@ -48,10 +69,46 @@ const FestivalTools: React.FC = () => {
             <p className="text-gray-600 max-w-3xl mx-auto">Plan budgets, travel, electricity, fasting hours, donations and more across India’s biggest festivals. Each tool includes SEO content, internal links, and PDF export.</p>
           </div>
 
+          {/* Filters & Search */}
+          <div className="bg-white/80 backdrop-blur-md border border-rose-100 rounded-2xl p-4 mb-6 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+              <div>
+                <label className="block text-sm font-semibold text-rose-800 mb-1">Search festivals/tools</label>
+                <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by festival or tool..." className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-rose-400" />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-rose-800 mb-1">Filter by tool type</label>
+                <div className="flex flex-wrap gap-2">
+                  {allTypes.map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => toggleType(t)}
+                      className={`px-3 py-1 rounded-full border text-sm ${activeTypes.includes(t) ? 'bg-rose-600 text-white border-rose-600' : 'bg-white text-rose-700 border-rose-300 hover:bg-rose-50'}`}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-rose-800 mb-1">Sort</label>
+                <select value={sortBy} onChange={(e) => setSortBy(e.target.value as 'az' | 'za')} className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-rose-400">
+                  <option value="az">A → Z</option>
+                  <option value="za">Z → A</option>
+                </select>
+              </div>
+            </div>
+            {(query || activeTypes.length > 0 || sortBy !== 'az') && (
+              <div className="mt-3 text-right">
+                <button onClick={clearFilters} className="text-sm text-rose-700 underline">Clear filters</button>
+              </div>
+            )}
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {festivalList.map((f, index) => (
+            {filteredFestivals.map((f, index) => (
               <motion.div key={f.slug} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.03 }}>
-                <RouterLink to={`/festival-tools/${f.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-rose-200 transform hover:-translate-y-2 transition-all block h-full">
+                <RouterLink to={`/festival-tools/${f.slug}`} className="group bg-gradient-to-br from-white to-rose-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-rose-100 hover:border-rose-200 transform hover:-translate-y-2 transition-all block h-full">
                   <div className="flex items-start justify-between mb-4">
                     <div className="h-12 w-12 rounded-xl bg-rose-100 flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
                       <Gift className="h-6 w-6 text-rose-700" />
@@ -60,6 +117,7 @@ const FestivalTools: React.FC = () => {
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 group-hover:text-rose-700 transition-colors">{f.name}</h3>
                   <p className="text-sm text-gray-600 mt-1">{f.blurb}</p>
+                  <div className="mt-3 text-xs text-rose-700">{f.tools.length} tools</div>
                   <div className="mt-4 inline-flex items-center text-rose-700 font-semibold text-sm">
                     <Calendar className="h-4 w-4 mr-1" /> View festival tools →
                   </div>
