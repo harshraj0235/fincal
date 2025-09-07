@@ -565,6 +565,34 @@ const GoldToolPage: React.FC = () => {
           { name: 'Gold Tools', url: '/gold-tools' },
           { name: tool.name, url: `/gold-tools/${tool.slug}` },
         ]}
+        calculatorData={{
+          name: tool.name,
+          description: tool.description,
+          category: 'Gold Tools',
+          features: (
+            tool.type === 'purity' || tool.type === 'karatToPurity' ? ['Karat to fineness', 'Purity %', 'Pure grams'] :
+            tool.type === 'weightConvert' || tool.type === 'gramToTola' || tool.type === 'gramToOunce' ? ['Gram to tola', 'Gram to troy ounce', 'Reverse conversion'] :
+            tool.type === 'value' ? ['Pure grams', 'Value by price/gram', 'Instant estimate'] :
+            tool.type === 'makingCharges' || tool.type === 'jewelleryEstimator' ? ['Making charges', 'Wastage', 'GST invoice'] :
+            tool.type === 'sip' || tool.type === 'goldETFSIP' ? ['Monthly SIP', 'Future value', 'ETF expense ratio'] :
+            tool.type === 'lumpsum' ? ['Future value', 'Annualized return', 'Scenario compare'] :
+            tool.type === 'etfVsPhysical' ? ['ETF expense', 'Making + wastage', 'Storage cost'] :
+            tool.type === 'sovereignBond' || tool.type === 'sovereignRedemption' ? ['Annual interest', 'Maturity value', 'Fixed tenure'] :
+            tool.type === 'returns' ? ['Total return %', 'CAGR %', 'Buy vs sell chart'] :
+            tool.type === 'loanEmi' ? ['EMI', 'Total interest', 'Tenure compare'] :
+            tool.type === 'scrapValue' ? ['Resale base', 'Deduction %', 'Net value'] :
+            tool.type === 'monthlyGoal' ? ['Target amount', 'Required SIP', 'Future value'] :
+            tool.type === 'meltLoss' ? ['Melt loss %', 'Net weight', 'Net value'] :
+            tool.type === 'pricePerGram' ? ['10g to per gram', 'Quick estimate', 'Fast pricing'] :
+            ['Gold calculator']
+          )
+        }}
+        faqData={[
+          { question: `How do I use the ${tool.name}?`, answer: 'Enter the values in the inputs at the top, review the instant results and charts below, and export a PDF to share.' },
+          { question: 'Is this tool free?', answer: 'Yes, all gold tools are free, mobile-friendly, and require no login.' },
+          { question: 'Are values exact?', answer: 'These are intelligent estimates for planning purposes. Verify final numbers with your jeweller or advisor.' },
+          { question: 'Can I share results?', answer: 'Yes. Use the Download PDF button to save or share your calculation.' }
+        ]}
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
