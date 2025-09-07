@@ -4,43 +4,32 @@ import { motion } from 'framer-motion';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
-import { goldTools } from '../data/goldTools';
+import { goldTools, GoldToolType } from '../data/goldTools';
 import ToolArticle from '../components/ToolArticle';
-import { Crown, Percent, Scale, Receipt, TrendingUp, PiggyBank, Shield, RefreshCw } from 'lucide-react';
 
 const GoldTools: React.FC = () => {
+  // Filters
   const [query, setQuery] = useState('');
-  const [activeFilter, setActiveFilter] = useState<'all' | 'conversion' | 'pricing' | 'investment' | 'etf' | 'sgb' | 'loan'>('all');
+  const [activeTypes, setActiveTypes] = useState<GoldToolType[]>([]);
+  const [sortBy, setSortBy] = useState<'az' | 'za'>('az');
 
-  const typeToGroup: Record<string, typeof activeFilter> = {
-    purity: 'conversion', karatToPurity: 'conversion', weightConvert: 'conversion', gramToTola: 'conversion', gramToOunce: 'conversion',
-    value: 'pricing', jewelleryEstimator: 'pricing', scrapValue: 'pricing', pricePerGram: 'pricing', makingCharges: 'pricing',
-    sip: 'investment', goldETFSIP: 'investment', lumpsum: 'investment', returns: 'investment', monthlyGoal: 'investment',
-    etfVsPhysical: 'etf',
-    sovereignBond: 'sgb', sovereignRedemption: 'sgb',
-    loanEmi: 'loan'
-  };
-
-  const groupMeta: Record<typeof activeFilter, { label: string; color: string; icon: React.ReactNode }> = {
-    all: { label: 'All', color: 'from-amber-500 to-yellow-600', icon: <Crown className="h-4 w-4" /> },
-    conversion: { label: 'Conversion & Purity', color: 'from-rose-500 to-pink-600', icon: <Scale className="h-4 w-4" /> },
-    pricing: { label: 'Pricing & Invoice', color: 'from-amber-500 to-orange-600', icon: <Receipt className="h-4 w-4" /> },
-    investment: { label: 'Investment & Returns', color: 'from-emerald-500 to-green-600', icon: <TrendingUp className="h-4 w-4" /> },
-    etf: { label: 'ETF vs Physical', color: 'from-blue-500 to-indigo-600', icon: <Percent className="h-4 w-4" /> },
-    sgb: { label: 'Sovereign Gold Bond', color: 'from-violet-500 to-purple-600', icon: <Shield className="h-4 w-4" /> },
-    loan: { label: 'Loans', color: 'from-cyan-500 to-sky-600', icon: <PiggyBank className="h-4 w-4" /> },
-  };
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return goldTools.filter(t => {
-      const inFilter = activeFilter === 'all' ? true : typeToGroup[t.type] === activeFilter;
-      const inSearch = !q || t.name.toLowerCase().includes(q) || t.slug.includes(q) || t.description.toLowerCase().includes(q);
-      return inFilter && inSearch;
+  const allTypes = useMemo(() => Array.from(new Set(goldTools.map(t => t.type))), []);
+  const filteredTools = useMemo(() => {
+    let list = goldTools.filter(t => {
+      const q = query.trim().toLowerCase();
+      const matchesQuery = q.length === 0 || t.name.toLowerCase().includes(q) || t.description.toLowerCase().includes(q);
+      const matchesType = activeTypes.length === 0 || activeTypes.includes(t.type);
+      return matchesQuery && matchesType;
     });
-  }, [activeFilter, query]);
+    list = list.sort((a, b) => sortBy === 'az' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+    return list;
+  }, [query, activeTypes, sortBy]);
 
-  const clearFilters = () => { setQuery(''); setActiveFilter('all'); };
+  const toggleType = (type: GoldToolType) => {
+    setActiveTypes(prev => prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]);
+  };
+
+  const clearFilters = () => { setQuery(''); setActiveTypes([]); setSortBy('az'); };
 
   return (
     <>
@@ -60,7 +49,7 @@ const GoldTools: React.FC = () => {
           {
             "@context": "https://schema.org",
             "@type": "ItemList",
-            "itemListElement": goldTools.map((t, i) => ({
+            "itemListElement": filteredTools.map((t, i) => ({
               "@type": "ListItem",
               "position": i + 1,
               "name": t.name,
@@ -78,46 +67,49 @@ const GoldTools: React.FC = () => {
             <p className="text-gray-600 max-w-3xl mx-auto">Calculate purity, convert weights, estimate value, compare ETF vs physical, compute SGB interest, and plan SIP/lumpsum investments in gold.</p>
           </div>
 
-          {/* Search and Filters */}
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-amber-100 shadow-lg p-4 mb-6">
+          {/* Filters & Search */}
+          <div className="bg-white/80 backdrop-blur-md border border-amber-100 rounded-2xl p-4 mb-6 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-              <div className="md:col-span-2">
-                <input
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search gold tools (e.g., purity, SIP, SGB, jewellery invoice)"
-                  className="w-full rounded-xl border border-amber-200 focus:border-amber-400 focus:ring-2 focus:ring-amber-200 px-4 py-3 text-sm"
-                  aria-label="Search gold tools"
-                />
+              <div>
+                <label className="block text-sm font-semibold text-amber-800 mb-1">Search tools</label>
+                <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by name or feature..." className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400" />
               </div>
-              <div className="flex items-center justify-between md:justify-end gap-2">
-                <button onClick={clearFilters} className="inline-flex items-center px-3 py-2 rounded-lg bg-amber-600 text-white hover:bg-amber-700">
-                  <RefreshCw className="h-4 w-4 mr-1" /> Reset
-                </button>
-                <div className="text-sm text-gray-600">{filtered.length} results</div>
+              <div>
+                <label className="block text-sm font-semibold text-amber-800 mb-1">Filter by type</label>
+                <div className="flex flex-wrap gap-2">
+                  {allTypes.map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => toggleType(t)}
+                      className={`px-3 py-1 rounded-full border text-sm ${activeTypes.includes(t) ? 'bg-amber-600 text-white border-amber-600' : 'bg-white text-amber-700 border-amber-300 hover:bg-amber-50'}`}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-amber-800 mb-1">Sort</label>
+                <select value={sortBy} onChange={(e) => setSortBy(e.target.value as 'az' | 'za')} className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                  <option value="az">A → Z</option>
+                  <option value="za">Z → A</option>
+                </select>
               </div>
             </div>
-            <div className="flex flex-wrap gap-2 mt-3">
-              {(['all','conversion','pricing','investment','etf','sgb','loan'] as const).map(k => (
-                <button
-                  key={k}
-                  onClick={() => setActiveFilter(k)}
-                  className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm border transition-all ${activeFilter===k ? 'text-white border-transparent bg-gradient-to-r '+groupMeta[k].color : 'text-amber-800 border-amber-200 bg-amber-50 hover:bg-amber-100'}`}
-                >
-                  {groupMeta[k].icon}
-                  {groupMeta[k].label}
-                </button>
-              ))}
-            </div>
+            {(query || activeTypes.length > 0 || sortBy !== 'az') && (
+              <div className="mt-3 text-right">
+                <button onClick={clearFilters} className="text-sm text-amber-700 underline">Clear filters</button>
+              </div>
+            )}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((t, index) => (
+            {filteredTools.map((t, index) => (
               <motion.div key={t.slug} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: index * 0.03 }}>
-                <RouterLink to={`/gold-tools/${t.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-100 hover:border-amber-200 transform hover:-translate-y-2 transition-all block h-full">
+                <RouterLink to={`/gold-tools/${t.slug}`} className="group bg-gradient-to-br from-white to-amber-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-amber-100 hover:border-amber-300 transform hover:-translate-y-2 transition-all block h-full">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition-colors">{t.name}</h3>
-                    <span className="text-[10px] font-semibold px-2 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">{groupMeta[typeToGroup[t.type]].label}</span>
+                    <span className="px-2 py-1 text-xs rounded-full bg-amber-100 text-amber-800 border border-amber-200">{t.type}</span>
                   </div>
                   <p className="text-sm text-gray-600 mt-1">{t.description}</p>
                   <div className="mt-4 inline-flex items-center text-amber-700 font-semibold text-sm">Open tool →</div>
