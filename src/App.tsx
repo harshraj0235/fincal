@@ -193,6 +193,8 @@ const GSTCompositionEligibility = lazy(() => import('./pages/gst/GSTCompositionE
 const GSTLiabilityCalculator = lazy(() => import('./pages/gst/GSTLiabilityCalculator'));
 const GSTPenaltyInterestCalculator = lazy(() => import('./pages/gst/GSTPenaltyInterestCalculator'));
 const GSTEInvoiceQRValidator = lazy(() => import('./pages/gst/GSTEInvoiceQRValidator'));
+const GSTInvoiceGenerator = lazy(() => import('./pages/gst/GSTInvoiceGenerator'));
+const GSTEWayDistanceCalculator = lazy(() => import('./pages/gst/GSTEWayDistanceCalculator'));
 const GSTRCMCalculator = lazy(() => import('./pages/gst/GSTRCMCalculator'));
 const InvoicingReceivablesHub = lazy(() => import('./pages/InvoicingReceivablesHub'));
 const CustomInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/CustomInvoiceGenerator'));
@@ -463,6 +465,8 @@ function App() {
             <Route path="/gst-tools/gst-rcm-calculator" element={<GSTRCMCalculator />} />
             <Route path="/gst-tools/gst-composition-eligibility" element={<GSTCompositionEligibility />} />
             <Route path="/gst-tools/gst-einvoice-qr-validator" element={<GSTEInvoiceQRValidator />} />
+            <Route path="/gst-tools/gst-invoice-generator" element={<GSTInvoiceGenerator />} />
+            <Route path="/gst-tools/gst-eway-distance-calculator" element={<GSTEWayDistanceCalculator />} />
             <Route path="/gst-tools/:slug" element={<GSTToolPlaceholder />} />
         <Route path="/invoicing-receivables" element={<InvoicingReceivablesHub />} />
         <Route path="/invoicing-tools" element={<InvoicingReceivablesHub />} />
