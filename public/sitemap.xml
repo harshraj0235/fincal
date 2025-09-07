@@ -9583,4 +9583,25 @@
   <url><loc>https://moneycal.in/festival-tools/pongal/pongal-event-reminder-calendar</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://moneycal.in/festival-tools/pongal/pongal-song-beat-timer</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <!-- Baisakhi & Onam & Rath Yatra Tool index entries present via hubs; add specifics as needed -->
+  <!-- Baisakhi Tools (examples) -->
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/wheat-harvest-yield-estimator</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/tractor-farming-cost-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/bhangra-playlist-randomizer</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/lohri-bonfire-expense-planner</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/baisakhi-sweet-calories</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/fairs-travel-expense-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/langar-food-plate-cost-estimator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/langar-guest-count-planner</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/farming-loan-benefit-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/baisakhi/farmer-subsidy-estimator</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <!-- Onam Tools (examples) -->
+  <url><loc>https://moneycal.in/festival-tools/onam/onam-sadya-dish-quantity</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/onam/sadya-calories-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/onam/pookalam-pattern-generator</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/onam/onam-boat-race-travel-cost</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/onam/onam-dress-budget-calculator</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <!-- Rath Yatra Tools (examples) -->
+  <url><loc>https://moneycal.in/festival-tools/rath-yatra/rath-yatra-travel-expense</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/rath-yatra/crowd-density-awareness</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://moneycal.in/festival-tools/rath-yatra/rath-puja-samagri-checklist</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
 </urlset>

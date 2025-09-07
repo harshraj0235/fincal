@@ -92,6 +92,34 @@ export const festivalList: FestivalConfig[] = [
     ]
   },
   {
+    slug: 'rath-yatra',
+    name: 'Rath Yatra (Puri, Odisha)',
+    blurb: 'Travel, darshan, safety and cultural planning.',
+    keywords: ['rath yatra travel', 'puri darshan checklist'],
+    tools: [
+      { slug: 'rath-yatra-travel-expense', name: 'Rath Yatra Travel Expense Calculator', type: 'travel', description: 'Travel to Puri with per-head split.' },
+      { slug: 'crowd-density-awareness', name: 'Crowd Density Awareness Tool', type: 'usage', description: 'Rough crowd level estimator.' },
+      { slug: 'rath-puja-samagri-checklist', name: 'Puja Samagri Checklist Tool', type: 'checklist', description: 'Checklist for puja items.' },
+      { slug: 'rath-decoration-cost-estimator', name: 'Rath Decoration Cost Estimator', type: 'budget', description: 'Decoration items and costs.', defaultItems: [ { name: 'Flowers', qty: 10, price: 50 } ] },
+      { slug: 'rath-train-bus-fare-estimator', name: 'Train/Bus Fare Estimator', type: 'travel', description: 'Approx fares.' },
+      { slug: 'hotel-stay-budget-calculator', name: 'Hotel Stay Budget Calculator', type: 'budget', description: 'Stay duration and cost.', defaultItems: [ { name: 'Hotel', qty: 3, price: 2000 } ] },
+      { slug: 'prasad-quantity-estimator-rath', name: 'Prasad Quantity Estimator (Khaja, Laddu)', type: 'quantity', description: 'Estimate prasad quantities.' },
+      { slug: 'volunteer-duty-scheduler-rath', name: 'Volunteer Duty Scheduler', type: 'checklist', description: 'Assign volunteers.' },
+      { slug: 'guest-management-tool-rath', name: 'Guest Management Tool', type: 'checklist', description: 'Guest list and statuses.' },
+      { slug: 'rath-yatra-donation-splitter', name: 'Rath Yatra Donation Splitter', type: 'donation', description: 'Split donations.' },
+      { slug: 'travel-bag-checklist-rath', name: 'Travel Bag Checklist Generator', type: 'checklist', description: 'Packing list.' },
+      { slug: 'food-budget-planner-pilgrims', name: 'Food Budget Planner for Pilgrims', type: 'budget', description: 'Food costs.', defaultItems: [ { name: 'Meals', qty: 10, price: 80 } ] },
+      { slug: 'event-photography-checklist-rath', name: 'Event Photography Checklist Tool', type: 'checklist', description: 'Shot list.' },
+      { slug: 'festival-reminder-calendar', name: 'Festival Reminder Calendar Tool', type: 'checklist', description: 'Calendar checklist.' },
+      { slug: 'cultural-program-planner', name: 'Cultural Program Planner Tool', type: 'checklist', description: 'Plan cultural events.' },
+      { slug: 'local-market-shopping-budget-rath', name: 'Local Market Shopping Budget Planner', type: 'budget', description: 'Shopping costs.', defaultItems: [ { name: 'Souvenirs', qty: 1, price: 1500 } ] },
+      { slug: 'rath-route-live-reminder', name: 'Rath Yatra Live Map/Route Reminder Tool', type: 'caption', description: 'Frontend route reminder text prompts.' },
+      { slug: 'puja-calendar-tithi-reminder-rath', name: 'Puja Calendar with Tithi Reminder', type: 'checklist', description: 'Checklist calendar.' },
+      { slug: 'kids-safety-checklist-rath', name: 'Kids Safety Checklist Tool', type: 'checklist', description: 'Safety reminders for kids.' },
+      { slug: 'rath-greeting-card-generator', name: 'Rath Yatra Greeting Card Generator', type: 'wishCard', description: 'Create greeting card.' }
+    ]
+  }
+  {
     slug: 'pongal',
     name: 'Pongal (Tamil Nadu)',
     blurb: 'Harvest festival – food, farming, rituals and travel.',
