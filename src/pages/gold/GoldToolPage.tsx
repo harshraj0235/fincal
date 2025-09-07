@@ -52,6 +52,264 @@ const ValueEstimator: React.FC = () => {
   );
 };
 
+const JewelleryEstimator: React.FC = () => {
+  const [weight, setWeight] = useState<number>(10);
+  const [purityPct, setPurityPct] = useState<number>(91.6);
+  const [basePricePerGram, setBasePricePerGram] = useState<number>(6500);
+  const [makingPct, setMakingPct] = useState<number>(8);
+  const [wastagePct, setWastagePct] = useState<number>(2);
+  const [gstPct, setGstPct] = useState<number>(3);
+  const pureGrams = useMemo(() => (weight * purityPct) / 100, [weight, purityPct]);
+  const metalValue = useMemo(() => pureGrams * basePricePerGram, [pureGrams, basePricePerGram]);
+  const makingValue = useMemo(() => (metalValue * makingPct) / 100, [metalValue, makingPct]);
+  const wastageValue = useMemo(() => (metalValue * wastagePct) / 100, [metalValue, wastagePct]);
+  const subTotal = useMemo(() => metalValue + makingValue + wastageValue, [metalValue, makingValue, wastageValue]);
+  const gstValue = useMemo(() => (subTotal * gstPct) / 100, [subTotal, gstPct]);
+  const totalInvoice = useMemo(() => subTotal + gstValue, [subTotal, gstValue]);
+  const chartData = [
+    { name: 'Metal', value: metalValue, color: '#facc15' },
+    { name: 'Making', value: makingValue, color: '#fb923c' },
+    { name: 'Wastage', value: wastageValue, color: '#f43f5e' },
+    { name: 'GST', value: gstValue, color: '#60a5fa' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Weight (g)</label>
+          <input type="number" min={0} value={weight} onChange={(e) => setWeight(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Purity (%)</label>
+          <input type="number" min={0} max={100} step={0.1} value={purityPct} onChange={(e) => setPurityPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Base Price/Gram (₹)</label>
+          <input type="number" min={0} value={basePricePerGram} onChange={(e) => setBasePricePerGram(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Making (% of metal)</label>
+          <input type="number" min={0} step={0.1} value={makingPct} onChange={(e) => setMakingPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Wastage (% of metal)</label>
+          <input type="number" min={0} step={0.1} value={wastagePct} onChange={(e) => setWastagePct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">GST (%)</label>
+          <input type="number" min={0} step={0.1} value={gstPct} onChange={(e) => setGstPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-emerald-50 border col-span-2">Total Invoice: ₹{totalInvoice.toFixed(2)}</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`TOTAL\n₹${Math.round(totalInvoice).toLocaleString()}`} />
+      </div>
+    </div>
+  );
+};
+
+const ScrapResaleEstimator: React.FC = () => {
+  const [weight, setWeight] = useState<number>(10);
+  const [purityPct, setPurityPct] = useState<number>(91.6);
+  const [pricePerGram, setPricePerGram] = useState<number>(6400);
+  const [deductionPct, setDeductionPct] = useState<number>(5);
+  const pureGrams = useMemo(() => (weight * purityPct) / 100, [weight, purityPct]);
+  const baseValue = useMemo(() => pureGrams * pricePerGram, [pureGrams, pricePerGram]);
+  const deductionValue = useMemo(() => (baseValue * deductionPct) / 100, [baseValue, deductionPct]);
+  const netResale = useMemo(() => baseValue - deductionValue, [baseValue, deductionValue]);
+  const chartData = [
+    { name: 'Base', value: baseValue, color: '#60a5fa' },
+    { name: 'Deduction', value: deductionValue, color: '#f43f5e' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Weight (g)</label>
+          <input type="number" min={0} value={weight} onChange={(e) => setWeight(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Purity (%)</label>
+          <input type="number" min={0} max={100} step={0.1} value={purityPct} onChange={(e) => setPurityPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Price/Gram (₹)</label>
+          <input type="number" min={0} value={pricePerGram} onChange={(e) => setPricePerGram(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Deduction (%)</label>
+          <input type="number" min={0} step={0.1} value={deductionPct} onChange={(e) => setDeductionPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-amber-50 border col-span-2">Estimated Resale: ₹{netResale.toFixed(2)}</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`NET\n₹${Math.round(netResale).toLocaleString()}`} />
+      </div>
+    </div>
+  );
+};
+
+const MonthlyGoalTool: React.FC = () => {
+  const [targetAmount, setTargetAmount] = useState<number>(200000);
+  const [years, setYears] = useState<number>(5);
+  const [rate, setRate] = useState<number>(10);
+  const periods = years * 12;
+  const i = rate / 100 / 12;
+  const sipNeeded = useMemo(() => {
+    if (i === 0) return targetAmount / periods;
+    return targetAmount / (((Math.pow(1 + i, periods) - 1) / i) * (1 + i));
+  }, [targetAmount, i, periods]);
+  const chartData = [
+    { name: 'Target', value: targetAmount, color: '#22c55e' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Target Amount (₹)</label>
+          <input type="number" min={0} value={targetAmount} onChange={(e) => setTargetAmount(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Years</label>
+          <input type="number" min={1} value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Expected Return (% p.a.)</label>
+          <input type="number" min={0} step={0.1} value={rate} onChange={(e) => setRate(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-blue-50 border col-span-3">Required Monthly Savings (₹): {sipNeeded.toFixed(2)}</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`SIP\n₹${Math.round(sipNeeded).toLocaleString()}/mo`} />
+      </div>
+    </div>
+  );
+};
+
+const MeltLossEstimator: React.FC = () => {
+  const [weight, setWeight] = useState<number>(20);
+  const [meltLossPct, setMeltLossPct] = useState<number>(3);
+  const [pricePerGram, setPricePerGram] = useState<number>(6500);
+  const netWeight = useMemo(() => weight * (1 - meltLossPct / 100), [weight, meltLossPct]);
+  const netValue = useMemo(() => netWeight * pricePerGram, [netWeight, pricePerGram]);
+  const chartData = [
+    { name: 'Loss', value: weight - netWeight, color: '#f43f5e' },
+    { name: 'Net', value: netWeight, color: '#22c55e' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Weight (g)</label>
+          <input type="number" min={0} value={weight} onChange={(e) => setWeight(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Melt Loss (%)</label>
+          <input type="number" min={0} step={0.1} value={meltLossPct} onChange={(e) => setMeltLossPct(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Price/Gram (₹)</label>
+          <input type="number" min={0} value={pricePerGram} onChange={(e) => setPricePerGram(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-amber-50 border col-span-3">Net Weight: {netWeight.toFixed(2)} g | Net Value: ₹{netValue.toFixed(2)}</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`NET\n${netWeight.toFixed(2)}g`} />
+      </div>
+    </div>
+  );
+};
+
+const PricePerGramTool: React.FC = () => {
+  const [rate10g, setRate10g] = useState<number>(65000);
+  const perGram = useMemo(() => rate10g / 10, [rate10g]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Price for 10g (₹)</label>
+        <input type="number" min={0} value={rate10g} onChange={(e) => setRate10g(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="p-4 rounded bg-blue-50 border">Price per Gram: ₹{perGram.toFixed(2)}</div>
+      <div className="p-4 rounded bg-emerald-50 border">Handy Tip: Multiply by weight (in grams) for quick estimates.</div>
+    </div>
+  );
+};
+
+const CAGRTool: React.FC = () => {
+  const [buy, setBuy] = useState<number>(45000);
+  const [sell, setSell] = useState<number>(65000);
+  const [years, setYears] = useState<number>(3);
+  const totalReturnPct = useMemo(() => ((sell - buy) / buy) * 100, [buy, sell]);
+  const cagr = useMemo(() => (Math.pow(sell / buy, 1 / years) - 1) * 100, [buy, sell, years]);
+  const chartData = [
+    { name: 'Buy', value: buy, color: '#60a5fa' },
+    { name: 'Sell', value: sell, color: '#22c55e' },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Buy Price (₹/10g)</label>
+          <input type="number" min={0} value={buy} onChange={(e) => setBuy(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Sell Price (₹/10g)</label>
+          <input type="number" min={0} value={sell} onChange={(e) => setSell(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Years</label>
+          <input type="number" min={0.1} step={0.1} value={years} onChange={(e) => setYears(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-amber-50 border col-span-3">Total Return: {totalReturnPct.toFixed(2)}% | CAGR: {cagr.toFixed(2)}%</div>
+      </div>
+      <div className="h-64">
+        <BarChart data={chartData.map(d => ({ name: d.name, value: d.value }))} xKey="name" yKey="value" color="#60a5fa" xLabel="" yLabel="₹ per 10g" />
+      </div>
+    </div>
+  );
+};
+
+const SGBRedemptionTool: React.FC = () => {
+  const [units, setUnits] = useState<number>(10);
+  const [redemptionPrice, setRedemptionPrice] = useState<number>(6500);
+  const [interestRate, setInterestRate] = useState<number>(2.5);
+  const [faceValue, setFaceValue] = useState<number>(6000);
+  const years = 8;
+  const annualInterest = useMemo(() => units * faceValue * (interestRate / 100), [units, faceValue, interestRate]);
+  const totalInterest = useMemo(() => annualInterest * years, [annualInterest]);
+  const redemptionAmount = useMemo(() => units * redemptionPrice, [units, redemptionPrice]);
+  const chartData = [
+    { name: 'Redemption', value: redemptionAmount, color: '#22c55e' },
+    { name: 'Total Interest', value: totalInterest, color: '#f59e0b' }
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">Units</label>
+          <input type="number" min={0} value={units} onChange={(e) => setUnits(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Expected Redemption Price (₹/unit)</label>
+          <input type="number" min={0} value={redemptionPrice} onChange={(e) => setRedemptionPrice(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Face Value (₹/unit)</label>
+          <input type="number" min={0} value={faceValue} onChange={(e) => setFaceValue(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Interest Rate (% p.a.)</label>
+          <input type="number" min={0} step={0.1} value={interestRate} onChange={(e) => setInterestRate(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+        </div>
+        <div className="p-4 rounded bg-blue-50 border col-span-2">Maturity: ₹{(redemptionAmount + totalInterest).toFixed(2)} (Principal + Interest)</div>
+      </div>
+      <div className="h-64">
+        <ResultChart data={chartData} centerText={`MATURITY\n₹${Math.round(redemptionAmount + totalInterest).toLocaleString()}`} />
+      </div>
+    </div>
+  );
+};
+
 const WeightConverter: React.FC = () => {
   const [grams, setGrams] = useState<number>(10);
   const tola = useMemo(() => grams / 11.6638, [grams]);
@@ -68,12 +326,14 @@ const WeightConverter: React.FC = () => {
   );
 };
 
-const SIPTool: React.FC = () => {
+const SIPTool: React.FC<{ includeExpenseRatio?: boolean }> = ({ includeExpenseRatio = false }) => {
   const [monthly, setMonthly] = useState<number>(5000);
   const [years, setYears] = useState<number>(5);
   const [rate, setRate] = useState<number>(10);
+  const [expenseRatio, setExpenseRatio] = useState<number>(0.6);
   const periods = years * 12;
-  const i = rate / 100 / 12;
+  const effectiveRate = includeExpenseRatio ? Math.max(0, rate - expenseRatio) : rate;
+  const i = effectiveRate / 100 / 12;
   const fv = useMemo(() => monthly * ((Math.pow(1 + i, periods) - 1) / i) * (1 + i), [monthly, i, periods]);
   const invested = useMemo(() => monthly * periods, [monthly, periods]);
   const gain = useMemo(() => Math.max(0, fv - invested), [fv, invested]);
@@ -96,6 +356,12 @@ const SIPTool: React.FC = () => {
           <label className="block text-sm font-medium mb-1">Expected Return (% p.a.)</label>
           <input type="number" min={0} step={0.1} value={rate} onChange={(e) => setRate(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
         </div>
+        {includeExpenseRatio && (
+          <div>
+            <label className="block text-sm font-medium mb-1">Expense Ratio (% p.a.)</label>
+            <input type="number" min={0} step={0.01} value={expenseRatio} onChange={(e) => setExpenseRatio(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+          </div>
+        )}
         <div className="p-4 rounded bg-emerald-50 border col-span-2">Future Value: ₹{fv.toFixed(2)}</div>
       </div>
       <div className="h-64">
@@ -317,13 +583,21 @@ const GoldToolPage: React.FC = () => {
 
           <div ref={resultsRef} className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
             {(tool.type === 'purity' || tool.type === 'karatToPurity') && <PurityTool />}
-            {(tool.type === 'value' || tool.type === 'jewelleryEstimator' || tool.type === 'scrapValue' || tool.type === 'pricePerGram') && <ValueEstimator />}
+            {tool.type === 'value' && <ValueEstimator />}
+            {tool.type === 'jewelleryEstimator' && <JewelleryEstimator />}
+            {tool.type === 'scrapValue' && <ScrapResaleEstimator />}
+            {tool.type === 'pricePerGram' && <PricePerGramTool />}
             {(tool.type === 'weightConvert' || tool.type === 'gramToTola' || tool.type === 'gramToOunce') && <WeightConverter />}
-            {(tool.type === 'sip' || tool.type === 'goldETFSIP') && <SIPTool />}
-            {(tool.type === 'lumpsum' || tool.type === 'returns') && <LumpsumTool />}
+            {tool.type === 'sip' && <SIPTool />}
+            {tool.type === 'goldETFSIP' && <SIPTool includeExpenseRatio />}
+            {tool.type === 'lumpsum' && <LumpsumTool />}
+            {tool.type === 'returns' && <CAGRTool />}
             {tool.type === 'etfVsPhysical' && <ETFComparison />}
-            {(tool.type === 'sovereignBond' || tool.type === 'sovereignRedemption') && <SGBInterestTool />}
+            {tool.type === 'sovereignBond' && <SGBInterestTool />}
+            {tool.type === 'sovereignRedemption' && <SGBRedemptionTool />}
             {tool.type === 'loanEmi' && <LoanEMITool />}
+            {tool.type === 'monthlyGoal' && <MonthlyGoalTool />}
+            {tool.type === 'meltLoss' && <MeltLossEstimator />}
 
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-6">
               <h4 className="font-semibold text-amber-900 mb-2 flex items-center">
