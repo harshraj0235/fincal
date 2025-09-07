@@ -92,6 +92,34 @@ export const festivalList: FestivalConfig[] = [
     ]
   },
   {
+    slug: 'pongal',
+    name: 'Pongal (Tamil Nadu)',
+    blurb: 'Harvest festival – food, farming, rituals and travel.',
+    keywords: ['pongal dish calculator', 'kolam generator', 'sugarcane cost'],
+    tools: [
+      { slug: 'pongal-dish-ingredient-calculator', name: 'Pongal Dish Ingredient Calculator', type: 'quantity', description: 'Estimate ingredients for pongal dishes.' },
+      { slug: 'sugarcane-cost-estimator', name: 'Sugarcane Cost Estimator', type: 'budget', description: 'Estimate sugarcane costs.', defaultItems: [ { name: 'Sugarcane', qty: 10, price: 30 } ] },
+      { slug: 'kolam-pattern-generator', name: 'Kolam (Rangoli) Pattern Generator', type: 'caption', description: 'Frontend prompts/patterns for kolam.' },
+      { slug: 'pongal-sweet-calories-calculator', name: 'Pongal Sweet Calories Calculator', type: 'calorie', description: 'Estimate sweet calories.' },
+      { slug: 'milk-boiling-time-reminder', name: 'Milk Boiling Time Reminder Tool', type: 'usage', description: 'Simple reminder timing for milk boiling.' },
+      { slug: 'cattle-decoration-budget-calculator', name: 'Cattle Decoration Budget Calculator', type: 'budget', description: 'Budget for cattle decoration.', defaultItems: [ { name: 'Paint/Acc', qty: 1, price: 600 } ] },
+      { slug: 'pongal-donation-splitter', name: 'Pongal Donation Splitter', type: 'donation', description: 'Split donations across causes.' },
+      { slug: 'pongal-travel-expense-estimator', name: 'Travel Expense Estimator for Pongal Visits', type: 'travel', description: 'Trip cost and per‑head split.' },
+      { slug: 'harvest-yield-estimator', name: 'Harvest Yield Estimator', type: 'howMany', description: 'Frontend farm yield estimate.' },
+      { slug: 'pongal-puja-samagri-checklist', name: 'Puja Samagri Checklist Generator', type: 'checklist', description: 'Checklist for samagri.' },
+      { slug: 'pongal-dress-budget-planner', name: 'Pongal Dress Budget Planner', type: 'budget', description: 'Outfit budget.', defaultItems: [ { name: 'Mundu', qty: 1, price: 1200 } ] },
+      { slug: 'pongal-prasad-quantity-calculator', name: 'Prasad Quantity Calculator', type: 'quantity', description: 'Estimate prasad portions.' },
+      { slug: 'farming-loan-emi-planner', name: 'Farming Loan EMI Planner', type: 'emi', description: 'Loan EMI with festival bonus.' },
+      { slug: 'guest-food-quantity-estimator', name: 'Guest Food Quantity Estimator', type: 'quantity', description: 'Estimate servings per guest.' },
+      { slug: 'pongal-travel-bag-checklist', name: 'Travel Bag Checklist (Village Visit)', type: 'checklist', description: 'Packing checklist.' },
+      { slug: 'local-market-shopping-budget-planner', name: 'Local Market Shopping Budget Estimator', type: 'budget', description: 'Plan local shopping.', defaultItems: [ { name: 'Groceries', qty: 1, price: 1200 } ] },
+      { slug: 'pongal-muhurat-finder', name: 'Pongal Muhurat Finder', type: 'muhurat', description: 'Find auspicious time window.' },
+      { slug: 'pongal-greetings-card-generator', name: 'Pongal Greetings Card Generator', type: 'wishCard', description: 'Create a greetings card.' },
+      { slug: 'pongal-event-reminder-calendar', name: 'Pongal Event Reminder Calendar', type: 'checklist', description: 'Checklist calendar.' },
+      { slug: 'pongal-song-beat-timer', name: 'Pongal Song/Drum Beat Timer', type: 'usage', description: 'Timer for beats.' }
+    ]
+  },
+  {
     slug: 'holi',
     name: 'Holi',
     blurb: 'Festival of colors – DIY natural color costs and party budgets.',
