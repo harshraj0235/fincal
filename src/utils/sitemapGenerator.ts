@@ -95,6 +95,12 @@ export class SitemapGenerator {
         priority: 0.8
       },
       {
+        loc: `${this.baseUrl}/festival-tools`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
         loc: `${this.baseUrl}/about`,
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'monthly' as const,
@@ -442,6 +448,7 @@ ${urls.map(url => `  <url>
     insurance: string;
     corporate: string;
     gst: string;
+    festival?: string;
     index: string;
     rss: string;
     robots: string;
@@ -453,6 +460,7 @@ ${urls.map(url => `  <url>
       insurance: this.generateInsuranceSitemap(),
       corporate: this.generateCorporateFinanceSitemap(),
       gst: this.generateGSTSitemap(),
+      festival: this.generateXMLSitemap([{ loc: `${this.baseUrl}/festival-tools`, lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.8 }]),
       index: this.generateSitemapIndex(),
       rss: this.generateRSSFeed(),
       robots: this.generateRobotsTxt()

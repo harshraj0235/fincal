@@ -219,6 +219,9 @@ const TimeVsBillableHoursGraph = lazy(() => import('./pages/invoicing-tools/Time
 const InvoiceEmailTracker = lazy(() => import('./pages/invoicing-tools/InvoiceEmailTracker'));
 const GSTInclusiveInvoiceBuilder = lazy(() => import('./pages/invoicing-tools/GSTInclusiveInvoiceBuilder'));
 const OutstandingReceivableHeatmap = lazy(() => import('./pages/invoicing-tools/OutstandingReceivableHeatmap'));
+const FestivalTools = lazy(() => import('./pages/FestivalTools'));
+const FestivalLanding = lazy(() => import('./pages/FestivalLanding'));
+const FestivalToolPage = lazy(() => import('./pages/festival/FestivalToolPage'));
 
 function App() {
   useEffect(() => {
@@ -431,6 +434,9 @@ function App() {
                 <Route path="/calculators/green-energy-investment-calculator" element={<GreenEnergyInvestmentCalculator />} />
                 <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
                 <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
+                <Route path="/festival-tools" element={<FestivalTools />} />
+                <Route path="/festival-tools/:festivalSlug" element={<FestivalLanding />} />
+                <Route path="/festival-tools/:festivalSlug/:toolSlug" element={<FestivalToolPage />} />
                 <Route path="/investing-tools" element={<InvestingToolsHub />} />
                             <Route path="/financial-education" element={<FinancialEducationHub />} />
             <Route path="/help-center" element={<HelpCenter />} />
