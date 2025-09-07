@@ -239,6 +239,221 @@ const TravelTool: React.FC = () => {
   );
 };
 
+const ChecklistTool: React.FC<{ initial?: string[] }> = ({ initial }) => {
+  const [items, setItems] = useState<string[]>(initial && initial.length ? initial : ['']);
+  const update = (idx: number, value: string) => setItems(prev => prev.map((v, i) => i === idx ? value : v));
+  const add = () => setItems(prev => [...prev, '']);
+  const remove = (idx: number) => setItems(prev => prev.filter((_, i) => i !== idx));
+  return (
+    <div>
+      <div className="space-y-2">
+        {items.map((v, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <input className="flex-1 border rounded px-2 py-1" value={v} onChange={(e) => update(i, e.target.value)} placeholder={`Item ${i + 1}`} />
+            {items.length > 1 && (
+              <button onClick={() => remove(i)} className="text-red-600 hover:text-red-800 text-sm">Remove</button>
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="mt-3">
+        <button onClick={add} className="px-3 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700">Add Item</button>
+      </div>
+    </div>
+  );
+};
+
+const CompareTool: React.FC = () => {
+  const [aLabel, setALabel] = useState<string>('Organic');
+  const [bLabel, setBLabel] = useState<string>('Synthetic');
+  const [aValue, setAValue] = useState<number>(70);
+  const [bValue, setBValue] = useState<number>(50);
+  const data = [
+    { name: aLabel, value: aValue, color: '#22c55e' },
+    { name: bLabel, value: bValue, color: '#f59e0b' }
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-1">A Label</label>
+          <input className="w-full border rounded px-2 py-1" value={aLabel} onChange={(e) => setALabel(e.target.value)} />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">B Label</label>
+          <input className="w-full border rounded px-2 py-1" value={bLabel} onChange={(e) => setBLabel(e.target.value)} />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">A Score</label>
+          <input type="number" className="w-full border rounded px-2 py-1" value={aValue} onChange={(e) => setAValue(Number(e.target.value))} />
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">B Score</label>
+          <input type="number" className="w-full border rounded px-2 py-1" value={bValue} onChange={(e) => setBValue(Number(e.target.value))} />
+        </div>
+      </div>
+      <div className="h-64">
+        <BarChart data={data.map(d => ({ name: d.name, value: d.value }))} xKey="name" yKey="value" color="#22c55e" xLabel="" yLabel="Score" />
+      </div>
+    </div>
+  );
+};
+
+const LengthTool: React.FC = () => {
+  const [meters, setMeters] = useState<number>(500);
+  const [rollMeters, setRollMeters] = useState<number>(100);
+  const rollsNeeded = useMemo(() => (rollMeters > 0 ? Math.ceil(meters / rollMeters) : 0), [meters, rollMeters]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">String Length (m)</label>
+        <input type="number" min={0} value={meters} onChange={(e) => setMeters(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Per Roll (m)</label>
+        <input type="number" min={1} value={rollMeters} onChange={(e) => setRollMeters(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="p-4 rounded bg-amber-50 border">Rolls Needed: {rollsNeeded}</div>
+    </div>
+  );
+};
+
+const MarginTool: React.FC = () => {
+  const [cost, setCost] = useState<number>(10);
+  const [sell, setSell] = useState<number>(15);
+  const profit = useMemo(() => Math.max(0, sell - cost), [sell, cost]);
+  const marginPct = useMemo(() => (sell > 0 ? (profit / sell) * 100 : 0), [profit, sell]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Cost Price (₹)</label>
+        <input type="number" min={0} value={cost} onChange={(e) => setCost(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Selling Price (₹)</label>
+        <input type="number" min={0} value={sell} onChange={(e) => setSell(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="p-4 rounded bg-blue-50 border">Profit: ₹{profit.toFixed(2)}</div>
+      <div className="p-4 rounded bg-emerald-50 border">Margin: {marginPct.toFixed(2)}%</div>
+    </div>
+  );
+};
+
+const HowManyTool: React.FC = () => {
+  const [budget, setBudget] = useState<number>(500);
+  const [pricePerUnit, setPricePerUnit] = useState<number>(25);
+  const count = useMemo(() => (pricePerUnit > 0 ? Math.floor(budget / pricePerUnit) : 0), [budget, pricePerUnit]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Budget (₹)</label>
+        <input type="number" min={0} value={budget} onChange={(e) => setBudget(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Price per unit (₹)</label>
+        <input type="number" min={0} value={pricePerUnit} onChange={(e) => setPricePerUnit(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="p-4 rounded bg-amber-50 border">You can buy: {count}</div>
+    </div>
+  );
+};
+
+const LuckyColorTool: React.FC = () => {
+  const [date, setDate] = useState<string>('2025-01-26');
+  const color = useMemo(() => {
+    const d = new Date(date);
+    const day = d.getDay();
+    return ['Green', 'Red', 'Blue', 'Yellow', 'White', 'Black', 'Purple'][day];
+  }, [date]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Date</label>
+        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="p-4 rounded bg-emerald-50 border">Lucky Color: {color}</div>
+    </div>
+  );
+};
+
+const SymptomCheckerTool: React.FC = () => {
+  const [sneeze, setSneeze] = useState<boolean>(false);
+  const [rash, setRash] = useState<boolean>(false);
+  const [itch, setItch] = useState<boolean>(false);
+  const score = Number(sneeze) + Number(rash) + Number(itch);
+  const severity = score === 0 ? 'None' : score === 1 ? 'Mild' : score === 2 ? 'Moderate' : 'Severe';
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <label className="inline-flex items-center gap-2"><input type="checkbox" checked={sneeze} onChange={(e) => setSneeze(e.target.checked)} /> Sneezing</label>
+      <label className="inline-flex items-center gap-2"><input type="checkbox" checked={rash} onChange={(e) => setRash(e.target.checked)} /> Rash</label>
+      <label className="inline-flex items-center gap-2"><input type="checkbox" checked={itch} onChange={(e) => setItch(e.target.checked)} /> Itching</label>
+      <div className="p-4 rounded bg-amber-50 border">Severity: {severity}</div>
+    </div>
+  );
+};
+
+const CaptionGeneratorTool: React.FC = () => {
+  const ideas = [
+    'Let the colors speak louder than words!',
+    'Rang barse, dil tarse!',
+    'Safe, colorful, and happy Holi!',
+    'Uttarayan vibes: fly high!'
+  ];
+  const [caption, setCaption] = useState<string>(ideas[0]);
+  const randomize = () => setCaption(ideas[Math.floor(Math.random() * ideas.length)]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+      <button onClick={randomize} className="px-3 py-2 rounded-lg bg-amber-600 text-white hover:bg-amber-700 w-max">Randomize</button>
+      <div className="p-4 rounded border bg-white">{caption}</div>
+    </div>
+  );
+};
+
+const UsageTool: React.FC = () => {
+  const [buckets, setBuckets] = useState<number>(5);
+  const [litrePerBucket, setLitrePerBucket] = useState<number>(15);
+  const [balloons, setBalloons] = useState<number>(50);
+  const perBalloon = 0.05; // litres
+  const total = useMemo(() => buckets * litrePerBucket + balloons * perBalloon, [buckets, litrePerBucket, balloons]);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div>
+        <label className="block text-sm font-medium mb-1">Buckets</label>
+        <input type="number" min={0} value={buckets} onChange={(e) => setBuckets(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Litres per bucket</label>
+        <input type="number" min={0} value={litrePerBucket} onChange={(e) => setLitrePerBucket(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Balloons</label>
+        <input type="number" min={0} value={balloons} onChange={(e) => setBalloons(Number(e.target.value))} className="w-full border rounded px-2 py-1" />
+      </div>
+      <div className="p-4 rounded bg-emerald-50 border">Total Water: {total.toFixed(2)} L</div>
+    </div>
+  );
+};
+
+const ScoreTrackerTool: React.FC = () => {
+  const [scores, setScores] = useState<Array<{ name: string; score: number }>>([
+    { name: 'Team A', score: 0 },
+    { name: 'Team B', score: 0 }
+  ]);
+  const addTeam = () => setScores(prev => [...prev, { name: `Team ${String.fromCharCode(65 + prev.length)}`, score: 0 }]);
+  const update = (idx: number, patch: Partial<{ name: string; score: number }>) => setScores(prev => prev.map((t, i) => i === idx ? { ...t, ...patch } : t));
+  return (
+    <div className="space-y-2">
+      {scores.map((t, i) => (
+        <div key={i} className="flex items-center gap-2">
+          <input className="border rounded px-2 py-1" value={t.name} onChange={(e) => update(i, { name: e.target.value })} />
+          <input type="number" className="border rounded px-2 py-1 w-24" value={t.score} onChange={(e) => update(i, { score: Number(e.target.value) })} />
+        </div>
+      ))}
+      <button onClick={addTeam} className="px-3 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700">Add Team</button>
+    </div>
+  );
+};
+
 const DiscountTool: React.FC = () => {
   const [mrp, setMrp] = useState<number>(20000);
   const [salePct, setSalePct] = useState<number>(20);
@@ -748,6 +963,17 @@ const FestivalToolPage: React.FC = () => {
             {tool.type === 'wishCard' && <WishCardTool />}
             {tool.type === 'valueMetal' && <ValueMetalTool />}
             {tool.type === 'muhurat' && <MuhuratTool />}
+            {tool.type === 'checklist' && <ChecklistTool />}
+            {tool.type === 'compare' && <CompareTool />}
+            {tool.type === 'length' && <LengthTool />}
+            {tool.type === 'margin' && <MarginTool />}
+            {tool.type === 'howMany' && <HowManyTool />}
+            {tool.type === 'luckyColor' && <LuckyColorTool />}
+            {tool.type === 'symptom' && <SymptomCheckerTool />}
+            {tool.type === 'caption' && <CaptionGeneratorTool />}
+            {tool.type === 'usage' && <UsageTool />}
+            {tool.type === 'score' && <ScoreTrackerTool />}
+            {tool.type === 'match' && <CompareTool />}
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
               <h4 className="font-semibold text-blue-900 mb-2 flex items-center">

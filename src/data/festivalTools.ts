@@ -15,7 +15,18 @@ export type FestivalToolType =
   | 'wishCard'
   | 'makingCharges'
   | 'valueMetal'
-  | 'muhurat';
+  | 'muhurat'
+  | 'checklist'
+  | 'compare'
+  | 'length'
+  | 'margin'
+  | 'howMany'
+  | 'luckyColor'
+  | 'symptom'
+  | 'caption'
+  | 'usage'
+  | 'score'
+  | 'match';
 
 export interface FestivalToolConfig {
   slug: string;
@@ -107,7 +118,27 @@ export const festivalList: FestivalConfig[] = [
           { name: 'Snacks', qty: 10, price: 100 },
           { name: 'Drinks', qty: 10, price: 60 }
         ]
-      }
+      },
+      { slug: 'holi-colors-allergen-checker', name: 'Holi Colors Allergen Checker', type: 'checklist', description: 'Check common allergens and safety tips.' },
+      { slug: 'water-balloon-cost-estimator', name: 'Water Balloon Cost Estimator', type: 'budget', description: 'Estimate cost with packs and quantities.', defaultItems: [ { name: 'Balloon Pack', qty: 5, price: 90 } ] },
+      { slug: 'organic-vs-synthetic-colors-compare', name: 'Organic vs Synthetic Colors Comparison', type: 'compare', description: 'Compare cost and risk between organic and synthetic colors.' },
+      { slug: 'holi-playlist-randomizer', name: 'Holi Playlist Randomizer', type: 'caption', description: 'Paste songs, randomize and copy list.' },
+      { slug: 'safe-skin-care-checklist', name: 'Safe Skin‑Care Checklist', type: 'checklist', description: 'Skin protection dos and don’ts for Holi.' },
+      { slug: 'holi-travel-expense-calculator', name: 'Holi Travel Expense Calculator', type: 'travel', description: 'City‑to‑city travel estimator with per‑head split.' },
+      { slug: 'gujiya-thandai-calories', name: 'Sweet (Gujiya, Thandai) Calories Calculator', type: 'calorie', description: 'Estimate calories for Gujiya and Thandai.' },
+      { slug: 'water-usage-calculator', name: 'Water Usage Calculator (Eco‑friendly Holi)', type: 'usage', description: 'Estimate water saved with eco‑friendly play.' },
+      { slug: 'color-stain-removal-guide', name: 'Color Stain Removal Guide', type: 'checklist', description: 'Removal steps by fabric type.' },
+      { slug: 'friends-party-budget-splitter', name: 'Budget Splitter for Friends’ Party', type: 'budget', description: 'Split party budget across friends.', defaultItems: [ { name: 'Friend A', qty: 1, price: 500 }, { name: 'Friend B', qty: 1, price: 500 } ] },
+      { slug: 'group-outfit-planner', name: 'Costume/Outfit Planner for Group Holi', type: 'budget', description: 'Coordinate outfits and accessories.', defaultItems: [ { name: 'T‑shirts', qty: 10, price: 250 } ] },
+      { slug: 'diy-color-ingredients', name: 'DIY Color Ingredients Calculator', type: 'budget', description: 'Ingredients for natural colors.', defaultItems: [ { name: 'Cornstarch', qty: 2, price: 120 }, { name: 'Food Colors', qty: 1, price: 100 } ] },
+      { slug: 'holi-event-ticket-cost', name: 'Holi Event Ticket Cost Estimator', type: 'budget', description: 'Tickets, GST, and convenience fees.', defaultItems: [ { name: 'Ticket', qty: 2, price: 999 }, { name: 'Convenience', qty: 2, price: 50 } ] },
+      { slug: 'vehicle-cleaning-cost-estimator', name: 'Car/Bike Cleaning Cost Estimator', type: 'budget', description: 'Estimate post‑Holi cleaning costs.', defaultItems: [ { name: 'Car Cleaning', qty: 1, price: 600 } ] },
+      { slug: 'holi-travel-bag-checklist', name: 'Travel Bag Checklist (Festival Travel)', type: 'checklist', description: 'Checklist for travel essentials.' },
+      { slug: 'holi-caption-generator', name: 'Social Media Caption Generator (Holi Quotes)', type: 'caption', description: 'Generate captions and copy.' },
+      { slug: 'allergy-symptoms-quick-checker', name: 'Allergy Symptoms Quick Checker', type: 'symptom', description: 'Frontend quick checker with common symptoms.' },
+      { slug: 'thandai-ingredient-quantity', name: 'Thandai Ingredient Quantity Estimator', type: 'quantity', description: 'Estimate thandai ingredients for guests.' },
+      { slug: 'holi-selfie-frame-generator', name: 'Holi Selfie Frame Generator', type: 'wishCard', description: 'Generate a selfie frame with text overlay.' },
+      { slug: 'waste-management-checklist', name: 'Waste Management Checklist Tool', type: 'checklist', description: 'Checklist for eco‑friendly cleanup.' }
     ]
   },
   {
@@ -264,7 +295,26 @@ export const festivalList: FestivalConfig[] = [
           { name: 'Sevai/Sheer Khurma', qty: 1, price: 400 },
           { name: 'Biryani', qty: 1, price: 1200 }
         ]
-      }
+      },
+      { slug: 'eid-gift-budget-splitter', name: 'Eid Gift Budget Splitter', type: 'budget', description: 'Split gift budget for family and friends.', defaultItems: [ { name: 'Eidi', qty: 5, price: 200 } ] },
+      { slug: 'iftar-meal-planner', name: 'Iftar Meal Planner (Guest‑based)', type: 'budget', description: 'Plan iftar menu and cost per guest.', defaultItems: [ { name: 'Dates', qty: 2, price: 200 }, { name: 'Juice', qty: 2, price: 150 } ] },
+      { slug: 'biryani-ingredient-quantity', name: 'Biryani Ingredient Quantity Estimator', type: 'quantity', description: 'Estimate biryani ingredients per guest.' },
+      { slug: 'sheer-khurma-calories', name: 'Calories in Sheer Khurma Calculator', type: 'calorie', description: 'Estimate calories per serving.' },
+      { slug: 'eid-dress-budget-calculator', name: 'Eid Dress Budget Calculator', type: 'budget', description: 'Outfits and accessories.', defaultItems: [ { name: 'Outfit', qty: 2, price: 2500 } ] },
+      { slug: 'eid-travel-expense', name: 'Travel Expense Estimator for Eid Visits', type: 'travel', description: 'Trip cost and per‑head split.' },
+      { slug: 'eid-wishes-image-generator', name: 'Eid Wishes Image Generator', type: 'wishCard', description: 'Generate Eid card with message.' },
+      { slug: 'family-event-cost-planner', name: 'Family Event Cost Planner', type: 'budget', description: 'Budget for Eid party.', defaultItems: [ { name: 'Food', qty: 1, price: 3000 }, { name: 'Decor', qty: 1, price: 800 } ] },
+      { slug: 'qurbani-animal-cost-estimator', name: 'Qurbani Animal Cost Estimator', type: 'budget', description: 'Estimate qurbani cost.', defaultItems: [ { name: 'Goat', qty: 1, price: 12000 } ] },
+      { slug: 'meat-distribution-calculator', name: 'Meat Distribution Calculator', type: 'donation', description: 'Split meat across charity, family, neighbors.' },
+      { slug: 'eid-shopping-offer-tracker', name: 'Eid Shopping Offer Tracker', type: 'priceDrop', description: 'Track active offers and price drops.' },
+      { slug: 'ramadan-fasting-timer', name: 'Ramadan Fasting Timer Tool', type: 'fastingDuration', description: 'Compute fasting hours by sunrise/sunset.' },
+      { slug: 'prayer-times-reminder', name: 'Prayer Times Reminder Tool', type: 'checklist', description: 'Quick checklist for prayer timings.' },
+      { slug: 'eid-photography-checklist', name: 'Eid Photography Checklist Tool', type: 'checklist', description: 'Shot list for Eid photos.' },
+      { slug: 'kids-eid-gift-tracker', name: 'Kids Eid Gift Tracker', type: 'budget', description: 'Track kids’ gifts and budget.', defaultItems: [ { name: 'Kid 1', qty: 1, price: 500 } ] },
+      { slug: 'eid-greeting-caption-generator', name: 'Eid Greeting Caption Generator', type: 'caption', description: 'Generate caption ideas.' },
+      { slug: 'safe-cooking-checklist', name: 'Festival Safe Cooking Checklist Tool', type: 'checklist', description: 'Kitchen safety list.' },
+      { slug: 'eid-travel-bag-checklist', name: 'Travel Bag Checklist Tool', type: 'checklist', description: 'Checklist for travel packing.' },
+      { slug: 'home-decoration-budget-planner', name: 'Home Decoration Budget Planner', type: 'budget', description: 'Plan Eid home decor.', defaultItems: [ { name: 'Lights', qty: 2, price: 600 } ] }
     ]
   },
   {
@@ -368,7 +418,27 @@ export const festivalList: FestivalConfig[] = [
           { name: 'Tilgul', qty: 1, price: 400 },
           { name: 'Ingredients', qty: 1, price: 1200 }
         ]
-      }
+      },
+      { slug: 'kite-cost-estimator', name: 'Kite Cost Estimator', type: 'budget', description: 'Estimate kite spend by types.', defaultItems: [ { name: 'Patang', qty: 10, price: 20 }, { name: 'Firki', qty: 1, price: 100 } ] },
+      { slug: 'kite-battle-score-tracker', name: 'Kite Battle Score Tracker', type: 'score', description: 'Track points across rounds.' },
+      { slug: 'kite-string-length-calculator', name: 'Kite String Length Calculator', type: 'length', description: 'Convert meters/yards and estimate rolls needed.' },
+      { slug: 'wind-speed-kite-match', name: 'Wind‑Speed vs Kite Type Match', type: 'match', description: 'Choose kite type based on wind range.' },
+      { slug: 'kite-shop-profit-margin', name: 'Kite Shop Profit Margin Calculator', type: 'margin', description: 'Margin from cost price and selling price.' },
+      { slug: 'kite-festival-travel-cost', name: 'Kite Festival Travel Cost Calculator', type: 'travel', description: 'Travel cost with per‑head split.' },
+      { slug: 'tilgul-quantity-estimator', name: 'Tilgul Sweet Quantity Estimator', type: 'quantity', description: 'Estimate tilgul per guest.' },
+      { slug: 'tilgul-calories-calculator', name: 'Calories in Traditional Tilgul Calculator', type: 'calorie', description: 'Estimate calories for tilgul.' },
+      { slug: 'kite-muhurat-finder', name: 'Muhurat Finder for Kite Flying', type: 'muhurat', description: 'Find auspicious time window.' },
+      { slug: 'lucky-color-finder', name: 'Astrology‑based Lucky Color Finder', type: 'luckyColor', description: 'Find lucky color for the day.' },
+      { slug: 'kite-travel-packing-checklist', name: 'Travel Packing Checklist', type: 'checklist', description: 'Checklist for festival travel.' },
+      { slug: 'family-event-budget-planner', name: 'Family Event Budget Planner', type: 'budget', description: 'Budget across family items.', defaultItems: [ { name: 'Food', qty: 1, price: 3000 }, { name: 'Gifts', qty: 1, price: 2000 } ] },
+      { slug: 'upi-cashback-calculator', name: 'UPI Cashback Calculator (Festival Shopping)', type: 'cashback', description: 'Cashback estimate on UPI spends.' },
+      { slug: 'loan-emi-pause-checker', name: 'Loan EMI Pause Checker (Festival Reliefs)', type: 'emi', description: 'Check EMI pause impact on total interest.' },
+      { slug: 'kite-safety-checklist', name: 'Child Safety Checklist (Kite Flying)', type: 'checklist', description: 'Child safety dos and don’ts.' },
+      { slug: 'first-aid-checklist-kite-cuts', name: 'First Aid Checklist (for kite cuts)', type: 'checklist', description: 'Quick first‑aid list.' },
+      { slug: 'old-kite-paper-recycling-guide', name: 'Old Kite Paper Recycling Guide', type: 'checklist', description: 'Steps to recycle kite paper.' },
+      { slug: 'kite-photography-angle-guide', name: 'Kite Photography Angle Guide', type: 'checklist', description: 'Angles and tips for photos.' },
+      { slug: 'how-many-kites-in-500', name: 'How Many Kites You Can Buy with ₹500', type: 'howMany', description: 'Estimate number of kites by price.' },
+      { slug: 'guest-distribution-budget', name: 'Guest Distribution Budget Tool', type: 'donation', description: 'Distribute budget per guest.' }
     ]
   },
   {
