@@ -1,6 +1,7 @@
 import { blogPosts as oldPosts } from '../data/blogData';
 import { blogPosts as newPosts } from '../data/blogData1';
 import { blogs as newFolderBlogs } from '../data/blogs';
+import { festivalList } from '../data/festivalTools';
 
 const allBlogPosts = [...newFolderBlogs, ...newPosts, ...oldPosts];
 
@@ -253,6 +254,10 @@ export class SitemapGenerator {
       {
         loc: `${this.baseUrl}/sitemap-gst.xml`,
         lastmod: new Date().toISOString().split('T')[0]
+      },
+      {
+        loc: `${this.baseUrl}/sitemap-festival.xml`,
+        lastmod: new Date().toISOString().split('T')[0]
       }
     ];
 
@@ -460,7 +465,7 @@ ${urls.map(url => `  <url>
       insurance: this.generateInsuranceSitemap(),
       corporate: this.generateCorporateFinanceSitemap(),
       gst: this.generateGSTSitemap(),
-      festival: this.generateXMLSitemap([{ loc: `${this.baseUrl}/festival-tools`, lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.8 }]),
+      festival: this.generateFestivalSitemap(),
       index: this.generateSitemapIndex(),
       rss: this.generateRSSFeed(),
       robots: this.generateRobotsTxt()
@@ -492,6 +497,19 @@ ${urls.map(url => `  <url>
     const urls: SitemapUrl[] = [
       { loc: `${this.baseUrl}/gst-tools`, lastmod: today, changefreq: 'weekly', priority: 0.8 },
       ...gstTools.map((slug): SitemapUrl => ({ loc: `${this.baseUrl}/gst-tools/${slug}`, lastmod: today, changefreq: 'weekly', priority: 0.8 }))
+    ];
+    return this.generateXMLSitemap(urls);
+  }
+
+  /**
+   * Generate XML sitemap for Festival tools
+   */
+  generateFestivalSitemap(): string {
+    const today = new Date().toISOString().split('T')[0];
+    const urls: SitemapUrl[] = [
+      { loc: `${this.baseUrl}/festival-tools`, lastmod: today, changefreq: 'weekly', priority: 0.8 },
+      ...festivalList.map(f => ({ loc: `${this.baseUrl}/festival-tools/${f.slug}`, lastmod: today, changefreq: 'weekly', priority: 0.7 }) as SitemapUrl),
+      ...festivalList.flatMap(f => f.tools.map(t => ({ loc: `${this.baseUrl}/festival-tools/${f.slug}/${t.slug}`, lastmod: today, changefreq: 'weekly', priority: 0.7 }) as SitemapUrl))
     ];
     return this.generateXMLSitemap(urls);
   }

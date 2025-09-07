@@ -8,6 +8,36 @@ import { ArrowLeft, Link as LinkIcon, Download } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
+function buildSoftwareAppJsonLd(title: string, url: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": title,
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": url,
+    "description": description,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR",
+      "category": "Free"
+    }
+  };
+}
+
+function buildFaqJsonLd(qa: Array<{ q: string; a: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": qa.map(({ q, a }) => ({
+      "@type": "Question",
+      "name": q,
+      "acceptedAnswer": { "@type": "Answer", "text": a }
+    }))
+  };
+}
+
 const BudgetTool: React.FC<{ tool: FestivalToolConfig }> = ({ tool }) => {
   const [items, setItems] = useState(tool.defaultItems || []);
   const update = (idx: number, patch: any) => setItems(prev => prev.map((r, i) => i === idx ? { ...r, ...patch } : r));
@@ -216,6 +246,30 @@ const FestivalToolPage: React.FC = () => {
         image="/images/festival-tools.jpg"
         tags={[festival.slug, tool.slug]}
       />
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            [
+              buildSoftwareAppJsonLd(
+                `${tool.name} | ${festival.name}`,
+                `${window.location.origin}/festival-tools/${festival.slug}/${tool.slug}`,
+                tool.description
+              ),
+              buildFaqJsonLd([
+                { q: `How do I use the ${tool.name}?`, a: 'Enter the requested details in the inputs, review the instant results, and export a PDF for record keeping.' },
+                { q: `Is the ${tool.name} free?`, a: 'Yes, this tool is completely free to use on MoneyCal.in and works on mobile and desktop.' },
+                { q: 'Can I download the results?', a: 'Yes. Click the Download PDF button to save or share your results.' },
+                { q: 'Are the results accurate for my city?', a: 'These tools provide intelligent estimates. For legal or accounting needs, consult your advisor.' },
+                { q: 'Will more festival tools be added?', a: 'Yes. We regularly publish new festival tools and improvements based on user requests.' }
+              ])
+            ],
+            null,
+            2
+          )
+        }}
+      />
       <WhatsAppBanner />
       <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-fuchsia-50 via-white to-rose-50">
@@ -264,6 +318,17 @@ const FestivalToolPage: React.FC = () => {
               <li>Quickly estimate electricity, travel, or donation values</li>
               <li>SEO-friendly content for discoverability</li>
             </ul>
+            <h2>Frequently Asked Questions</h2>
+            <h3>Is this tool free?</h3>
+            <p>Yes, all festival tools on MoneyCal.in are free and require no login.</p>
+            <h3>Can I share the results with family?</h3>
+            <p>Use the PDF export to share your plans on WhatsApp or email.</p>
+            <h3>Do you store my data?</h3>
+            <p>No. Calculations happen on your device; we do not store your entries.</p>
+            <h3>Will this work on mobile?</h3>
+            <p>Yes. The UI is mobile‑friendly and optimized for small screens.</p>
+            <h3>Where can I find more tools?</h3>
+            <p>Explore <RouterLink to="/festival-tools" className="text-rose-700 underline">Festival Tools</RouterLink>, <RouterLink to="/gst-tools" className="text-rose-700 underline">GST Tools</RouterLink>, <RouterLink to="/finance-tools" className="text-rose-700 underline">Finance Tools</RouterLink>, and <RouterLink to="/corporate-finance" className="text-rose-700 underline">Corporate Finance</RouterLink>.</p>
           </div>
         </div>
       </div>
