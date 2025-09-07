@@ -9,6 +9,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { ResultChart } from '../../components/ResultChart';
 import { BarChart } from '../../components/BarChart';
+import ToolArticle from '../../components/ToolArticle';
 
 function buildSoftwareAppJsonLd(title: string, url: string, description: string) {
   return {
@@ -349,35 +350,16 @@ const FestivalToolPage: React.FC = () => {
             </button>
           </div>
 
-          <div className="mt-10 prose prose-rose max-w-none">
-            <h2>About this {tool.name}</h2>
-            <p>
-              Celebrate {festival.name} with clarity and confidence. This {tool.name.toLowerCase()} helps you plan budgets, estimate electricity and travel costs, compute donations and fasting durations, and organize purchases without stress. It is designed for Indian families who want quick answers with a pleasant interface, charts, and a shareable PDF report.
-            </p>
-            <h3>How to use the calculator</h3>
-            <ol>
-              <li>Enter your data, such as quantities and prices (for budgets), lights and hours (for electricity), or distance and mileage (for travel).</li>
-              <li>Review the visual breakdown to understand where the money goes and how to optimize.</li>
-              <li>Export a PDF to coordinate with family, friends, or event volunteers.</li>
-            </ol>
-            <h3>Tips to optimize your {festival.name} spending</h3>
-            <ul>
-              <li>Group purchases for better discounts on sweets, flowers, or decor.</li>
-              <li>Use LED lights and reasonable hours to reduce power bills during {festival.name}.</li>
-              <li>For group travel, use the per‑head cost to split expenses fairly.</li>
-            </ul>
-            <h3>Frequently asked questions</h3>
-            <p><strong>Is this {tool.name.toLowerCase()} free?</strong> Yes, it is free, mobile‑friendly, and requires no login.</p>
-            <p><strong>Can I download or share results?</strong> Yes, click Download PDF.</p>
-            <p><strong>Are results exact?</strong> These are smart estimates for planning. For legal or tax queries, consult an advisor.</p>
-            <h3>Related tools</h3>
-            <ul>
-              <li><RouterLink to="/festival-tools" className="text-rose-700 underline">Festival Tools Hub</RouterLink> – all festival planners</li>
-              <li><RouterLink to="/gold-tools" className="text-rose-700 underline">Gold Tools</RouterLink> – purity, value, SIP, and SGB</li>
-              <li><RouterLink to="/finance-tools" className="text-rose-700 underline">Finance Tools</RouterLink> – plan investments with data</li>
-            </ul>
-            <h3>Disclaimer</h3>
-            <p>All calculations are estimates intended for education and planning. Double‑check critical prices with your vendor or electricity bill.</p>
+          <div className="mt-10">
+            <ToolArticle
+              title={`${tool.name} for ${festival.name}`}
+              context={{ name: tool.name, category: 'Festival Tools', keywords: ['festival budget calculator india', 'diwali lights electricity cost', 'navratri fasting meal planner', 'pandal hopping travel cost estimator', 'eid zakat calculator', 'christmas decoration lighting cost'] }}
+              links={[
+                { href: '/festival-tools', label: 'Festival Tools Hub' },
+                { href: '/gold-tools', label: 'Gold Tools' },
+                { href: '/finance-tools', label: 'Finance Tools' }
+              ]}
+            />
           </div>
         </div>
       </div>

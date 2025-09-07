@@ -3,12 +3,13 @@ import { useParams, Link as RouterLink } from 'react-router-dom';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
-import { findGoldTool, GoldToolConfig } from '../../data/goldTools';
+import { findGoldTool } from '../../data/goldTools';
 import { ArrowLeft, Download, Link as LinkIcon } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { BarChart } from '../../components/BarChart';
 import { ResultChart } from '../../components/ResultChart';
+import ToolArticle from '../../components/ToolArticle';
 
 const PurityTool: React.FC = () => {
   const [karat, setKarat] = useState<number>(22);
@@ -174,7 +175,7 @@ const ETFComparison: React.FC = () => {
         </div>
       </div>
       <div className="md:col-span-3 h-72">
-        <BarChart data={data.map(d => ({ name: d.label, value: d.value }))} xKey="name" yKey="value" color={(d: any) => d.name === 'ETF Cost' ? '#60a5fa' : '#fb923c'} xLabel="Type" yLabel="Total Cost (₹)" />
+        <BarChart data={data.map(d => ({ name: d.label, value: d.value }))} xKey="name" yKey="value" color={(d: { name: string }) => d.name === 'ETF Cost' ? '#60a5fa' : '#fb923c'} xLabel="Type" yLabel="Total Cost (₹)" />
       </div>
     </div>
   );
@@ -341,41 +342,16 @@ const GoldToolPage: React.FC = () => {
             </button>
           </div>
           {/* Long-form SEO content */}
-          <div className="mt-10 prose prose-amber max-w-none">
-            <h2>About this {tool.name}</h2>
-            <p>
-              Use this advanced {tool.name.toLowerCase()} to plan your gold purchases and investments with confidence. It combines clear inputs, instant results, and visual charts so you can understand costs, returns, and trade-offs in seconds. Whether you are comparing ETF expense ratios to physical gold making charges, estimating Sovereign Gold Bond interest, or planning a long-term SIP, this tool gives you the clarity you need to decide quickly and smartly.
-            </p>
-            <h3>How to use</h3>
-            <ol>
-              <li>Fill the input fields with your numbers like weight, purity, price per gram, or investment horizon.</li>
-              <li>Review the smart breakdown and charts for contribution versus gains, cost comparison, or annual interest streams.</li>
-              <li>Export a branded PDF summary to share with your family, jeweller, or financial advisor.</li>
-            </ol>
-            <h3>When to use this calculator</h3>
-            <p>
-              This tool is perfect when you are: (a) buying jewellery and want to estimate the invoice including making charges and GST; (b) converting between grams, tola and troy ounces for pricing; (c) choosing between Gold ETF and physical gold; (d) planning a gold SIP or a lumpsum investment; or (e) evaluating SGB interest over 8 years. Long-tail use cases include “how to calculate gold purity from karat in India,” “best way to compare gold etf vs physical making charges,” and “Sovereign Gold Bond interest calculation example”.
-            </p>
-            <h3>Pro tips to save more</h3>
-            <ul>
-              <li>Compare making charges and wastage across stores; even a 2% difference can be meaningful on high-ticket jewellery.</li>
-              <li>For long horizons, consider SGBs for interest plus potential price appreciation and tax benefits on redemption.</li>
-              <li>Use ETFs for transparent pricing and lower spreads if you do not need physical delivery.</li>
-            </ul>
-            <h3>Frequently asked questions</h3>
-            <p><strong>Is this {tool.name.toLowerCase()} free?</strong> Yes, it is completely free, mobile-friendly, and requires no login.</p>
-            <p><strong>Can I download results?</strong> Click “Download PDF” to save or share your calculation.</p>
-            <p><strong>Is GST included?</strong> The making charges + GST estimator includes the standard GST for jewellery invoices.</p>
-            <h3>Related tools and guides</h3>
-            <ul>
-              <li><RouterLink to="/gold-tools" className="text-amber-700 underline">Gold Tools Hub</RouterLink> – discover all gold calculators in one place</li>
-              <li><RouterLink to="/finance-tools/asset-allocation-tool" className="text-amber-700 underline">Asset Allocation Tool</RouterLink> – balance gold with equity and debt</li>
-              <li><RouterLink to="/tax-tools" className="text-amber-700 underline">Tax Tools</RouterLink> – plan capital gains and redemption tax</li>
-            </ul>
-            <h3>Disclaimer</h3>
-            <p>
-              Values are estimates and for educational purposes. For purchase decisions or tax advice, consult a qualified professional.
-            </p>
+          <div className="mt-10">
+            <ToolArticle
+              title={tool.name}
+              context={{ name: tool.name, category: 'Gold Tools', keywords: ['gold purity calculator india', 'gold sip calculator', 'gold value per gram today india', 'sovereign gold bond interest calculator', 'gold etf vs physical calculator', 'gold loan emi calculator'] }}
+              links={[
+                { href: '/gold-tools', label: 'Gold Tools Hub' },
+                { href: '/finance-tools/asset-allocation-tool', label: 'Asset Allocation Tool' },
+                { href: '/tax-tools', label: 'Tax Tools' }
+              ]}
+            />
           </div>
         </div>
       </div>
