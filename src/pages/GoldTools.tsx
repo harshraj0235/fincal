@@ -5,6 +5,7 @@ import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import { goldTools } from '../data/goldTools';
+import ToolArticle from '../components/ToolArticle';
 
 const GoldTools: React.FC = () => {
   return (
@@ -17,6 +18,22 @@ const GoldTools: React.FC = () => {
         type="website"
         image="/android-chrome-512x512.png"
         tags={["gold", "jewellery", "SGB", "ETF", "SIP"]}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Gold Tools', url: '/gold-tools' }
+        ]}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": goldTools.map((t, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "name": t.name,
+              "url": `https://moneycal.in/gold-tools/${t.slug}`
+            }))
+          }
+        ]}
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
@@ -37,6 +54,29 @@ const GoldTools: React.FC = () => {
                 </RouterLink>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <ToolArticle
+              title="Gold Tools Hub"
+              context={{
+                name: 'Gold Tools',
+                category: 'Gold Tools',
+                keywords: [
+                  'gold purity calculator india',
+                  'gold value calculator per gram',
+                  'gold sip calculator',
+                  'sovereign gold bond interest calculator',
+                  'gold etf vs physical calculator',
+                  'gold jewellery making charges gst invoice'
+                ]
+              }}
+              links={[
+                { href: '/gold-tools/gold-purity-calculator', label: 'Gold Purity Calculator' },
+                { href: '/gold-tools/gold-value-estimator', label: 'Gold Value Estimator' },
+                { href: '/gold-tools/gold-sip-calculator', label: 'Gold SIP Calculator' }
+              ]}
+            />
           </div>
         </div>
       </div>

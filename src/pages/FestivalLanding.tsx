@@ -6,6 +6,7 @@ import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import { findFestival } from '../data/festivalTools';
 import { Gift, Sparkles } from 'lucide-react';
+import ToolArticle from '../components/ToolArticle';
 
 const FestivalLanding: React.FC = () => {
   const { festivalSlug } = useParams();
@@ -32,6 +33,11 @@ const FestivalLanding: React.FC = () => {
         type="website"
         image="/images/festival-tools.jpg"
         tags={[fest.slug, 'festival', 'tools']}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Festival Tools', url: '/festival-tools' },
+          { name: fest.name, url: `/festival-tools/${fest.slug}` }
+        ]}
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
@@ -63,11 +69,15 @@ const FestivalLanding: React.FC = () => {
           </div>
 
           <div className="prose prose-rose max-w-none mt-12">
-            <h2>About {fest.name}</h2>
-            <p>
-              {fest.name} is a cherished celebration in India. Use these intelligent tools to plan your expenses, 
-              estimate electricity or travel costs, and organize rituals more efficiently. Each tool is designed with SEO-friendly content, internal links, and PDF exports to help you share plans.
-            </p>
+            <ToolArticle
+              title={`${fest.name} Tools`}
+              context={{ name: `${fest.name} Tools`, category: 'Festival Tools', keywords: fest.keywords }}
+              links={[
+                { href: '/festival-tools', label: 'Festival Tools Hub' },
+                { href: '/gold-tools', label: 'Gold Tools' },
+                { href: '/finance-tools', label: 'Finance Tools' }
+              ]}
+            />
           </div>
         </div>
       </div>

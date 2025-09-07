@@ -6,6 +6,7 @@ import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import { festivalList } from '../data/festivalTools';
+import ToolArticle from '../components/ToolArticle';
 
 const FestivalTools: React.FC = () => {
   return (
@@ -18,6 +19,22 @@ const FestivalTools: React.FC = () => {
         type="website"
         image="/images/festival-tools.jpg"
         tags={["festival", "india", "budget", "travel", "electricity", "fasting", "zakat"]}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Festival Tools', url: '/festival-tools' }
+        ]}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": festivalList.flatMap(f => f.tools.map((t, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "name": `${f.name} – ${t.name}`,
+              "url": `https://moneycal.in/festival-tools/${f.slug}/${t.slug}`
+            })))
+          }
+        ]}
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
@@ -49,6 +66,29 @@ const FestivalTools: React.FC = () => {
                 </RouterLink>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <ToolArticle
+              title="Festival Tools Hub"
+              context={{
+                name: 'Festival Tools',
+                category: 'Festival Tools',
+                keywords: [
+                  'festival budget calculator',
+                  'diwali lights electricity cost',
+                  'navratri fasting planner',
+                  'pandal hopping travel cost',
+                  'eid zakat calculator',
+                  'christmas decoration lighting cost'
+                ]
+              }}
+              links={[
+                { href: '/festival-tools/diwali/diwali-budget-calculator', label: 'Diwali Budget Calculator' },
+                { href: '/festival-tools/durga-puja/pandal-hopping-travel-cost', label: 'Pandal Travel Cost Estimator' },
+                { href: '/festival-tools/navratri/navratri-fasting-meal-planner', label: 'Navratri Fasting Meal Planner' }
+              ]}
+            />
           </div>
         </div>
       </div>
