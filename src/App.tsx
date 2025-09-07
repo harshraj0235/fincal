@@ -188,6 +188,7 @@ const GSTToolPlaceholder = lazy(() => import('./pages/gst/GSTToolPlaceholder'));
 const GSTDueDateTracker = lazy(() => import('./pages/gst/GSTDueDateTracker'));
 const GSTR3BAutoPrep = lazy(() => import('./pages/gst/GSTR3BAutoPrep'));
 const GSTHSNSACFinder = lazy(() => import('./pages/gst/GSTHSNSACFinder'));
+const GSTSlabFinder = lazy(() => import('./pages/gst/GSTSlabFinder'));
 const GSTCompositionEligibility = lazy(() => import('./pages/gst/GSTCompositionEligibility'));
 const GSTLiabilityCalculator = lazy(() => import('./pages/gst/GSTLiabilityCalculator'));
 const GSTPenaltyInterestCalculator = lazy(() => import('./pages/gst/GSTPenaltyInterestCalculator'));
@@ -455,6 +456,7 @@ function App() {
             <Route path="/gst-tools/gst-due-date-tracker" element={<GSTDueDateTracker />} />
             <Route path="/gst-tools/gstr-3b-preparation" element={<GSTR3BAutoPrep />} />
             <Route path="/gst-tools/gst-hsn-sac-finder" element={<GSTHSNSACFinder />} />
+            <Route path="/gst-tools/gst-slab-finder" element={<GSTSlabFinder />} />
             <Route path="/gst-tools/gst-liability-calculator" element={<GSTLiabilityCalculator />} />
             <Route path="/gst-tools/gst-penalty-interest-calculator" element={<GSTPenaltyInterestCalculator />} />
             <Route path="/gst-tools/gst-rcm-calculator" element={<GSTRCMCalculator />} />
