@@ -490,6 +490,35 @@ export const HomeNew: React.FC = () => {
           </div>
         </section>
 
+        {/* Featured Hubs: Festival & Gold */}
+        <section className="relative py-12 sm:py-16 bg-gradient-to-br from-rose-50 via-white to-amber-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link to="/festival-tools" className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-rose-100">
+                <img src="/images/optimized/pexels-photo-7063778.jpeg" alt="Festival Tools" className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/90 text-rose-700 text-xs font-semibold mb-3">New</div>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-white">Festival Tools</h3>
+                  <p className="text-white/90 text-sm mt-1">Plan budgets, travel, electricity, fasting hours, Zakat and more.</p>
+                  <div className="mt-3 inline-flex items-center text-white font-semibold">Explore now <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" /></div>
+                </div>
+              </Link>
+
+              <Link to="/gold-tools" className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-amber-100">
+                <img src="/images/optimized/pexels-photo-7876708.jpeg" alt="Gold Tools" className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/90 text-amber-700 text-xs font-semibold mb-3">Hot</div>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-white">Gold Tools</h3>
+                  <p className="text-white/90 text-sm mt-1">Purity, weight, value, SIP, SGB interest, invoice & more.</p>
+                  <div className="mt-3 inline-flex items-center text-white font-semibold">Explore now <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" /></div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Smart Search Section */}
         <section className="py-16 bg-white relative z-20 -mt-8">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
