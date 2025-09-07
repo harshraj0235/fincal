@@ -75,15 +75,18 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
       if (robots) robots.remove();
     }
 
-    // Canonical
-    if (url) {
+    // Canonical (fallbacks to current URL if not provided)
+    {
+      const canonicalHref = url
+        ? (url.startsWith('http') ? url : `https://moneycal.in${url}`)
+        : window.location.href;
       let canonical = document.querySelector('link[rel="canonical"]');
       if (!canonical) {
         canonical = document.createElement('link');
         canonical.setAttribute('rel', 'canonical');
         document.head.appendChild(canonical);
       }
-      canonical.setAttribute('href', url.startsWith('http') ? url : `https://moneycal.in${url}`);
+      canonical.setAttribute('href', canonicalHref);
     }
 
     // Open Graph tags
@@ -92,7 +95,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
     setMeta('og:type', type, 'property');
     setMeta('og:url', url ? (url.startsWith('http') ? url : `https://moneycal.in${url}`) : window.location.href, 'property');
     setMeta('og:site_name', siteName, 'property');
-    if (image) setMeta('og:image', image, 'property');
+    setMeta('og:image', image || 'https://moneycal.in/android-chrome-512x512.png', 'property');
     if (articlePublishedTime) setMeta('article:published_time', articlePublishedTime, 'property');
     if (articleModifiedTime) setMeta('article:modified_time', articleModifiedTime, 'property');
     if (author) setMeta('article:author', author, 'property');
@@ -100,10 +103,10 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
     if (tags && tags.length) setMeta('article:tag', tags.join(','), 'property');
 
     // Twitter Card tags
-    setMeta('twitter:card', image ? 'summary_large_image' : 'summary');
+    setMeta('twitter:card', (image || 'https://moneycal.in/android-chrome-512x512.png') ? 'summary_large_image' : 'summary');
     setMeta('twitter:title', fullTitle);
     setMeta('twitter:description', description);
-    if (image) setMeta('twitter:image', image);
+    setMeta('twitter:image', image || 'https://moneycal.in/android-chrome-512x512.png');
     setMeta('twitter:site', '@MoneyCalIN');
 
     // Alternate language links (hreflang)
@@ -205,12 +208,15 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
       }
     }
 
-    // Structured Data (JSON-LD)
-    let jsonLdScript: HTMLScriptElement | null = document.querySelector('script[type="application/ld+json"]');
+    // Structured Data (JSON-LD) - isolate per-page script to avoid clobbering global ones
+    const dataHash = btoa(unescape(encodeURIComponent(JSON.stringify({ title, url: url || window.location.pathname })))).slice(0, 12);
+    const scriptId = `jsonld-${dataHash}`;
+    let jsonLdScript = document.querySelector(`script#${scriptId}`) as HTMLScriptElement | null;
     if (finalStructuredData) {
       if (!jsonLdScript) {
         jsonLdScript = document.createElement('script');
         jsonLdScript.type = 'application/ld+json';
+        jsonLdScript.id = scriptId;
         document.head.appendChild(jsonLdScript);
       }
       jsonLdScript.textContent = JSON.stringify(finalStructuredData);
