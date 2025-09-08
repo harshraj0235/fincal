@@ -116,9 +116,9 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
     return (
       <>
         <SEOHelmet
-          title="Calculator Not Found - FinanceGurus Directory"
+          title="Calculator Not Found - MoneyCal India"
           description="The requested financial calculator could not be found. Browse our comprehensive collection of 50+ financial calculators for Indian users."
-          url={`https://moneycal.in/calculators/${calculatorId}`}
+          url={`/calculators/${calculatorId}`}
           noIndex={true}
         />
       <div className="text-center py-16">
@@ -153,7 +153,7 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
     },
     "provider": {
       "@type": "Organization",
-      "name": "FinanceGurus Directory",
+      "name": "MoneyCal India",
       "url": "https://moneycal.in"
     },
     "featureList": [
@@ -421,13 +421,20 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
   return (
     <>
       <SEOHelmet
-        title={`${calculator.name} - Free Online Calculator | FinanceGurus Directory`}
+        title={`${calculator.name} - Free Online Calculator | MoneyCal India`}
         description={generateDescription()}
         keywords={generateKeywords()}
-        url={`https://moneycal.in/calculators/${calculatorId}`}
+        url={`/calculators/${calculatorId}`}
         image="/images/calculator-default.jpg"
         type="website"
         structuredData={calculatorStructuredData}
+        faqData={calculator.faqs}
+        calculatorData={{
+          name: calculator.name,
+          description: calculator.description,
+          category: calculator.category,
+          features: (calculator.keywords || []).slice(0, 5)
+        }}
         tags={[calculator.name, 'financial calculator', 'india', 'free calculator']}
         alternateLanguages={{
           'en-IN': `https://moneycal.in/calculators/${calculatorId}`,

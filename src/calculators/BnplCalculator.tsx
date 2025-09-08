@@ -182,13 +182,7 @@ export const BnplCalculator: React.FC = () => {
   // ---- Main Render ----
   return (
     <main className="max-w-5xl mx-auto px-2 py-8" itemScope itemType="https://schema.org/FinancialProduct">
-      {/* SEO Meta & JSON-LD (move to Head if using react-helmet or similar) */}
-      <title>BNPL Calculator India – EMI, Eligibility, FAQs | Fincal</title>
-      <meta
-        name="description"
-        content="Free online BNPL calculator for India. Calculate Buy Now Pay Later EMI, compare providers, see eligibility, and get answers to all BNPL FAQs. Updated for 2024 RBI rules."
-      />
-      <link rel="canonical" href="https://fincal.vercel.app/calculators/BnplCalculator" />
+      {/* SEO is handled globally by SEOHelmet via CalculatorPage */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* End SEO */}
 

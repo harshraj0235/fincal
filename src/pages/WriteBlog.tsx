@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHelmet from '../components/SEOHelmet';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import WhatsAppBanner from '../components/WhatsAppBanner';
@@ -9,6 +10,13 @@ export const WriteBlog: React.FC = () => {
   
   return (
     <>
+      <SEOHelmet
+        title="Write for Our Finance Blog | MoneyCal India"
+        description="Submit your finance article ideas. This submission page is not indexed."
+        url="/blog/write"
+        noIndex={true}
+        noFollow={true}
+      />
       <WhatsAppBanner />
       <AstroFinanceButton />
       <div className="min-h-screen flex flex-col bg-neutral-50">

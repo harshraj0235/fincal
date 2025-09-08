@@ -58,23 +58,8 @@ const injectSchema = () => {
   return () => { document.head.removeChild(script); };
 };
 
-// Google EEAT: Author/Source meta tags
-const SEO = () => (
-  <>
-    <title>Best Savings Account Interest Calculator India 2025 | Accurate, RBI-compliant & Customizable</title>
-    <meta name="description" content="Calculate your savings account interest with India's most advanced calculator. Manual input, latest rates, tax tips, FAQs, RBI guidelines & more. Perfect for NRIs, senior citizens, and all Indian residents." />
-    <meta name="keywords" content="savings account calculator, interest rate, India 2025, RBI, compound interest, best account, NRE, NRO, tax, high yield, digital bank, sweep-in, minimum balance, TDS" />
-    <meta name="author" content="Fincal by Harsh Raj" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://fincal.in/savings-account-calculator" />
-    <meta property="og:title" content="Best Savings Account Calculator India 2025" />
-    <meta property="og:description" content="Calculate latest interest, compare banks, and maximize your savings with authentic data and RBI-compliant rules!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fincal.in/savings-account-calculator" />
-    <meta property="og:site_name" content="Fincal" />
-    <meta property="og:image" content="https://fincal.in/og-savings-calc.png" />
-  </>
-);
+// SEO is handled globally by SEOHelmet at the page level
+const SEO = () => null;
 
 export const SavingsAccountCalculator: React.FC = () => {
   // Inputs

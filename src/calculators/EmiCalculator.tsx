@@ -82,23 +82,8 @@ const injectSchema = () => {
   return () => { document.head.removeChild(script); };
 };
 
-// SEO meta, OG, canonical, and keywords (for 1st page ranking)
-const SEO = () => (
-  <>
-    <title>EMI Calculator India 2025 | Home, Car, Personal Loan EMI, Chart & FAQ</title>
-    <meta name="description" content="India's #1 EMI calculator for home loan, car loan, personal loan. Get accurate EMI, interest, breakup, pros and cons, prepayment, RBI links & FAQ. SEO, EEAT, and user-loved features." />
-    <meta name="keywords" content="emi calculator, emi calculator india, home loan emi calculator, car loan emi calculator, personal loan emi calculator, emi chart, how to calculate emi, rbi, best emi calculator, prepayment, emi schedule, interest, principal, yearly breakup, compare, bankbazaar, paisabazaar, loan calculator india" />
-    <meta name="author" content="Fincal by Harsh Raj" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    <link rel="canonical" href="https://fincal.in/emi-calculator" />
-    <meta property="og:title" content="Best EMI Calculator India 2025" />
-    <meta property="og:description" content="Calculate EMI for any Indian loan. Instant, accurate, chart, prepayment, FAQ, pros and cons, and RBI links. Trusted by millions." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fincal.in/emi-calculator" />
-    <meta property="og:site_name" content="Fincal" />
-    <meta property="og:image" content="https://fincal.in/og-emi-calc.png" />
-  </>
-);
+// SEO is handled globally by SEOHelmet at the page level
+const SEO = () => null;
 
 export const EmiCalculator: React.FC = () => {
   const [loanAmount, setLoanAmount] = useState<number>(1000000);

@@ -67,23 +67,8 @@ const injectSchema = () => {
   return () => { document.head.removeChild(script); };
 };
 
-// Google EEAT & SEO
-const SEO = () => (
-  <>
-    <title>Term Insurance Calculator India 2025 | Premium, Benefits, IRDAI, Compare Online</title>
-    <meta name="description" content="Calculate your term insurance premium for India 2025 with EEAT-compliant, SEO-optimized, user-friendly calculator. Enter custom data, view IRDAI stats, compare features, get tax info & authentic external links." />
-    <meta name="keywords" content="term insurance calculator, premium, India 2025, IRDAI, sum assured, compare, online, best plan, tax, claim settlement, buy term plan, death benefit" />
-    <meta name="author" content="Fincal by Harsh Raj" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    <link rel="canonical" href="https://fincal.in/term-insurance-calculator" />
-    <meta property="og:title" content="Best Term Insurance Calculator India 2025" />
-    <meta property="og:description" content="Instantly calculate your term plan premium, compare features, IRDAI claim ratios, and get the best coverage for your family. Trusted, authentic, and always up to date!" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fincal.in/term-insurance-calculator" />
-    <meta property="og:site_name" content="Fincal" />
-    <meta property="og:image" content="https://fincal.in/og-term-calc.png" />
-  </>
-);
+// SEO is handled globally by SEOHelmet at the page level
+const SEO = () => null;
 
 export const TermInsuranceCalculator: React.FC = () => {
   // State
