@@ -162,7 +162,7 @@ export function calculateReadingTime(content: any[] = []): number {
 
 // Generate Schema.org markup
 export function generateSchema(post: ExistingBlogPost & { focusKeyword: string }): any {
-  const baseUrl = 'https://yoursite.com';
+  const baseUrl = 'https://moneycal.in';
   const publishedDate = post.date || new Date().toISOString();
   
   return {
@@ -190,7 +190,7 @@ export function generateSchema(post: ExistingBlogPost & { focusKeyword: string }
 
 // Generate Open Graph metadata
 export function generateOpenGraph(post: ExistingBlogPost & { focusKeyword: string }): any {
-  const baseUrl = 'https://yoursite.com';
+  const baseUrl = 'https://moneycal.in';
   
   return {
     title: `${post.title} | Your Financial Site`,
@@ -222,7 +222,7 @@ export function enhanceBlogPostSEO(post: ExistingBlogPost): ExistingBlogPost & E
   const optimizedMetaDescription = optimizeMetaDescription(post.title, focusKeyword, post.categories);
   const readingTime = calculateReadingTime(post.content);
   
-  const baseUrl = 'https://yoursite.com';
+  const baseUrl = 'https://moneycal.in';
   const canonicalUrl = `${baseUrl}/${post.slug}`;
   const now = new Date().toISOString();
   

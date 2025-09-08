@@ -110,7 +110,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "FinanceGurus",
+                "name": "MoneyCal India",
                 "url": "https://moneycal.in"
               }
             }
@@ -136,7 +136,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "FinanceGurus",
+                "name": "MoneyCal India",
                 "url": "https://moneycal.in"
               },
               "articleSection": blogData.category,
@@ -159,7 +159,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
               "numberOfItems": categoryData.calculatorCount,
               "publisher": {
                 "@type": "Organization",
-                "name": "FinanceGurus",
+                "name": "MoneyCal India",
                 "url": "https://moneycal.in"
               }
             }
