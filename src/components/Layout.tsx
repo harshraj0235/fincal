@@ -53,6 +53,13 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* Accessibility: Skip to main content */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only fixed top-2 left-2 z-[100] bg-white text-neutral-900 border border-neutral-200 rounded px-3 py-2 shadow"
+      >
+        Skip to main content
+      </a>
       {/* Loading Screen */}
       <AnimatePresence>
         {isLoading && (
@@ -105,7 +112,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className="relative z-10 min-h-screen flex flex-col">
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
         
-        <main className="flex-grow flex relative">
+        <main className="flex-grow flex relative" role="main" aria-label="Main content">
           {/* Sidebar for non-home pages */}
           {!isHomePage && !isMoneyPage && (
             <AnimatePresence>
@@ -146,7 +153,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           </AnimatePresence>
           
           {/* Main Content Area */}
-          <div className="flex-1 relative">
+          <div className="flex-1 relative" id="main-content">
             <motion.div
               key={location.pathname}
               initial="initial"

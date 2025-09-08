@@ -53,6 +53,19 @@ export const BlogPost: React.FC = () => {
   const post = isAstroBlog ? getAstroBlogBySlug(slug || '') : getBlogPostBySlug(slug || '');
   const relatedPosts = isAstroBlog ? getRelatedAstroPosts(slug || '', 3) : getRelatedPosts(slug || '', 3);
 
+  // Content typing helpers to avoid implicit any and union issues
+  type BlogContentSection = {
+    type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'image' | 'quote';
+    content?: string;
+    items?: string[];
+    url?: string;
+    caption?: string;
+    author?: string;
+  };
+
+  const astroHtml: string = typeof (post as { content?: unknown })?.content === 'string' ? (post as { content: string }).content : '';
+  const sections: BlogContentSection[] = Array.isArray((post as { content?: unknown })?.content) ? ((post as { content: unknown[] }).content as BlogContentSection[]) : [];
+
   function shareOn(platform: 'facebook' | 'twitter' | 'linkedin') {
     const url = window.location.href;
     const text = post?.title || "Check out this blog on Fincal!";
@@ -95,7 +108,7 @@ export const BlogPost: React.FC = () => {
         title={post.title}
         description={post.excerpt}
         image={post.coverImage}
-        url={`${window.location.origin}${isAstroBlog ? '/astro-finance/blog/' : '/blog/'}${post.slug}`}
+        url={`${isAstroBlog ? '/astro-finance/blog/' : '/blog/'}${post.slug}`}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         {/* Back button */}
@@ -128,6 +141,8 @@ export const BlogPost: React.FC = () => {
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-1" />
                     <span>{post.date}</span>
+                    <span className="mx-2">•</span>
+                    <span>Last updated: {new Date().toISOString().split('T')[0]}</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {post.categories.map((category) => (
@@ -160,24 +175,24 @@ export const BlogPost: React.FC = () => {
                  {isAstroBlog ? (
                    // For astro blogs, content is HTML string
                    <div 
-                     dangerouslySetInnerHTML={{ __html: post.content }}
-                     className="astro-blog-content"
-                   />
+                    dangerouslySetInnerHTML={{ __html: astroHtml }}
+                    className="astro-blog-content"
+                  />
                  ) : (
                    // For regular blogs, content is structured array
-                   post.content.map((section, index) => (
+                  sections.map((section: BlogContentSection, index: number) => (
                   <div key={index} className="mb-8">
                     {section.type === 'paragraph' && <p>{section.content}</p>}
                     {section.type === 'heading' && <h2 className="text-2xl font-bold mt-8 mb-4">{section.content}</h2>}
                     {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{section.content}</h3>}
                     {section.type === 'list' && (
                       <ul className="list-disc pl-6 space-y-2">
-                        {section.items.map((item, i) => (
+                        {(section.items || []).map((item: string, i: number) => (
                           <li key={i}>{item}</li>
                         ))}
                       </ul>
                     )}
-                    {section.type === 'image' && (
+                    {section.type === 'image' && section.url && (
                       <figure className="my-6">
                         <picture>
                           <source srcSet={section.url.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
@@ -299,6 +314,16 @@ export const BlogPost: React.FC = () => {
                     View Full Profile →
                   </Link>
                 </div>
+              </section>
+
+              {/* References / Sources */}
+              <section className="bg-white rounded-xl border border-neutral-200 p-6 mb-8">
+                <h3 className="text-xl font-semibold text-neutral-900 mb-3">References and Sources</h3>
+                <ul className="list-disc pl-5 space-y-2 text-neutral-700">
+                  <li><a href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Reserve Bank of India (RBI)</a></li>
+                  <li><a href="https://www.sebi.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Securities and Exchange Board of India (SEBI)</a></li>
+                  <li><a href="https://www.incometax.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Income Tax Department (India)</a></li>
+                </ul>
               </section>
             </article>
           </div>
