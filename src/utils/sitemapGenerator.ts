@@ -31,12 +31,25 @@ export class SitemapGenerator {
    * Generate XML sitemap for blog posts
    */
   generateBlogSitemap(): string {
-    const urls: SitemapUrl[] = allBlogPosts.map(post => ({
-      loc: `${this.baseUrl}/blog/${post.slug}`,
-      lastmod: new Date(post.date).toISOString().split('T')[0],
-      changefreq: 'weekly' as const,
-      priority: 0.8
-    }));
+    const urls: SitemapUrl[] = allBlogPosts
+      .filter((post: { content?: unknown; excerpt?: string; slug: string; date: string }) => {
+        const isStringContent = typeof post.content === 'string';
+        const isArrayContent = Array.isArray(post.content);
+        const content = isStringContent
+          ? (post.content as string)
+          : isArrayContent
+            ? JSON.stringify(post.content)
+            : (post.excerpt || '');
+        const text = String(content).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+        const wordCount = text.split(/\s+/).filter(Boolean).length;
+        return wordCount >= 300; // exclude thin content from sitemap
+      })
+      .map((post: { slug: string; date: string }) => ({
+        loc: `${this.baseUrl}/blog/${post.slug}`,
+        lastmod: new Date(post.date).toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      }));
 
     return this.generateXMLSitemap(urls);
   }
@@ -52,12 +65,7 @@ export class SitemapGenerator {
         changefreq: 'daily' as const,
         priority: 1.0
       },
-      {
-        loc: `${this.baseUrl}/tools`,
-        lastmod: new Date().toISOString().split('T')[0],
-        changefreq: 'weekly' as const,
-        priority: 0.8
-      },
+      // Exclude deprecated or empty hubs to reduce low-value entries
       
       {
         loc: `${this.baseUrl}/blog`,
@@ -72,12 +80,6 @@ export class SitemapGenerator {
         priority: 0.8
       },
       {
-        loc: `${this.baseUrl}/finance-tools`,
-        lastmod: new Date().toISOString().split('T')[0],
-        changefreq: 'weekly' as const,
-        priority: 0.8
-      },
-      {
         loc: `${this.baseUrl}/tax-tools`,
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly' as const,
@@ -85,12 +87,6 @@ export class SitemapGenerator {
       },
       {
         loc: `${this.baseUrl}/insurance-tools`,
-        lastmod: new Date().toISOString().split('T')[0],
-        changefreq: 'weekly' as const,
-        priority: 0.8
-      },
-      {
-        loc: `${this.baseUrl}/corporate-finance`,
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly' as const,
         priority: 0.8

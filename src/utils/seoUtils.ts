@@ -1,4 +1,4 @@
-// SEO Utility Functions for FinanceGurus Website
+// SEO Utility Functions for MoneyCal India Website
 
 export interface SEOPage {
   url: string;
@@ -33,7 +33,7 @@ export const generateCalculatorMeta = (calculator: Calculator): SEOPage => {
 
   return {
     url: `/calculators/${calculator.id}`,
-    title: `${calculator.name} - Free Online Calculator | FinanceGurus`,
+    title: `${calculator.name} - Free Online Calculator | MoneyCal India`,
     description: `${calculator.description} Use our free ${calculator.name.toLowerCase()} to make informed financial decisions. Quick, accurate, and easy to use.`,
     keywords: [...calculator.keywords, ...baseKeywords].join(', '),
     priority: 0.8,
@@ -47,7 +47,7 @@ export const generateCalculatorMeta = (calculator: Calculator): SEOPage => {
 export const generateCategoryMeta = (categoryId: string, categoryName: string, calculatorCount: number): SEOPage => {
   return {
     url: `/category/${categoryId}`,
-    title: `${categoryName} - ${calculatorCount} Free Calculators | FinanceGurus`,
+    title: `${categoryName} - ${calculatorCount} Free Calculators | MoneyCal India`,
     description: `Explore ${calculatorCount} free ${categoryName.toLowerCase()} tools. Calculate EMI, SIP, taxes, and more with our comprehensive financial calculators designed for Indian users.`,
     keywords: `${categoryName.toLowerCase()}, financial calculators, india, free tools, ${categoryId.replace('-', ' ')}`,
     priority: 0.7,
@@ -61,7 +61,7 @@ export const generateCategoryMeta = (categoryId: string, categoryName: string, c
 export const generateBlogMeta = (slug: string, title: string, excerpt: string, category: string, tags: string[], publishDate: string): SEOPage => {
   return {
     url: `/blog/${slug}`,
-    title: `${title} | FinanceGurus Blog`,
+    title: `${title} | MoneyCal India Blog`,
     description: excerpt,
     keywords: [...tags, 'financial advice', 'money management', 'investment tips', 'india finance'].join(', '),
     priority: 0.6,
@@ -130,7 +130,7 @@ export const generateStructuredData = (page: SEOPage, additionalData?: any) => {
       dateModified: page.lastmod || new Date().toISOString(),
       author: {
         '@type': 'Organization',
-        name: 'FinanceGurus'
+        name: 'MoneyCal India'
       },
       publisher: {
         '@type': 'Organization',
@@ -175,7 +175,7 @@ export const generateOpenGraphTags = (page: SEOPage): Array<{ property: string; 
     { property: 'og:image', content: page.image || 'https://moneycal.in/og-image.jpg' },
     { property: 'og:image:width', content: '1200' },
     { property: 'og:image:height', content: '630' },
-    { property: 'og:site_name', content: 'FinanceGurus' },
+    { property: 'og:site_name', content: 'MoneyCal India' },
     { property: 'og:locale', content: 'en_IN' }
   ];
 };
@@ -187,8 +187,8 @@ export const generateTwitterTags = (page: SEOPage): Array<{ name: string; conten
     { name: 'twitter:title', content: page.title },
     { name: 'twitter:description', content: page.description },
     { name: 'twitter:image', content: page.image || 'https://moneycal.in/og-image.jpg' },
-    { name: 'twitter:site', content: '@FinanceGurusIN' },
-    { name: 'twitter:creator', content: '@FinanceGurusIN' }
+    { name: 'twitter:site', content: '@MoneyCalIN' },
+    { name: 'twitter:creator', content: '@MoneyCalIN' }
   ];
 };
 
@@ -307,6 +307,32 @@ export const calculateSEOScore = (page: SEOPage, content?: string): { score: num
   return { score: Math.max(0, score), issues };
 };
 
+// Content quality checks for low-value/thin content
+export const isLowValueContent = (content?: string, minWords: number = 300): boolean => {
+  if (!content) return true;
+  const text = content
+    .replace(/<[^>]*>/g, ' ') // strip HTML
+    .replace(/\s+/g, ' ') // collapse whitespace
+    .trim();
+  const wordCount = text.split(/\s+/).filter(Boolean).length;
+  return wordCount < minWords;
+};
+
+export const shouldIndexPage = (page: SEOPage, content?: string): { index: boolean; reasons: string[] } => {
+  const reasons: string[] = [];
+  // Auto noindex for obvious thin/utility pages
+  if (page.url.includes('/blog/write') || page.url.includes('/admin') || page.url.includes('/private')) {
+    reasons.push('Utility or submission page');
+    return { index: false, reasons };
+  }
+  // Content length gate
+  if (isLowValueContent(content)) {
+    reasons.push('Content below minimum quality threshold');
+    return { index: false, reasons };
+  }
+  return { index: true, reasons };
+};
+
 // Generate robots meta tag
 export const generateRobotsMeta = (index: boolean = true, follow: boolean = true, otherDirectives: string[] = []): string => {
   const directives = [
@@ -333,7 +359,9 @@ export const SEOUtils = {
   analyzeKeywordDensity,
   generateMetaDescription,
   calculateSEOScore,
-  generateRobotsMeta
+  generateRobotsMeta,
+  isLowValueContent,
+  shouldIndexPage
 };
 
 export default SEOUtils;
