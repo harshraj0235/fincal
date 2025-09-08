@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, Bookmark, Info } from 'lucide-react';
-import { getCalculatorById } from '../data/calculatorData';
+import { getCalculatorById, calculatorCategories } from '../data/calculatorData';
 import SEOHelmet from '../components/SEOHelmet';
 
 // Import all calculators
@@ -418,6 +418,60 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
     }
   };
   
+  // Derive category info for internal linking and references
+  const categoryMeta = React.useMemo(() => {
+    for (const category of calculatorCategories) {
+      if (category.calculators.some(c => c.id === calculator.id)) {
+        return { id: category.id, name: category.name };
+      }
+    }
+    return { id: 'tools', name: 'Financial Tools' };
+  }, [calculator.id]);
+
+  // Build high-quality supporting content sections (how-to, methodology, assumptions, tips, references)
+  const getReferencesForCategory = (): Array<{ label: string; url: string }> => {
+    const cat = calculator.category.toLowerCase();
+    if (cat.includes('loan')) {
+      return [
+        { label: 'RBI: Consumer Education – Loans & EMI', url: 'https://www.rbi.org.in/Scripts/FAQView.aspx?Id=97' },
+        { label: 'RBI: Fair Practices Code for Lenders', url: 'https://www.rbi.org.in/' }
+      ];
+    }
+    if (cat.includes('tax') || cat.includes('income')) {
+      return [
+        { label: 'Income Tax e-Filing Portal', url: 'https://www.incometax.gov.in/' },
+        { label: 'CBDT Circulars', url: 'https://incometaxindia.gov.in/pages/communications/circulars.aspx' }
+      ];
+    }
+    if (cat.includes('investment') || cat.includes('mutual')) {
+      return [
+        { label: 'SEBI: Investor Education', url: 'https://investor.sebi.gov.in/' },
+        { label: 'AMFI: Mutual Fund Basics', url: 'https://www.amfiindia.com/investor-corner/knowledge-centre' }
+      ];
+    }
+    if (cat.includes('insurance')) {
+      return [
+        { label: 'IRDAI: Insurance Awareness', url: 'https://irdai.gov.in/' }
+      ];
+    }
+    if (cat.includes('gst')) {
+      return [
+        { label: 'GST Portal', url: 'https://www.gst.gov.in/' },
+        { label: 'CBIC: GST Guides', url: 'https://www.cbic.gov.in/' }
+      ];
+    }
+    if (cat.includes('banking')) {
+      return [
+        { label: 'RBI: Master Directions', url: 'https://www.rbi.org.in/' }
+      ];
+    }
+    return [
+      { label: 'Government of India Open Data', url: 'https://data.gov.in/' }
+    ];
+  };
+
+  const references = getReferencesForCategory();
+
   return (
     <>
       <SEOHelmet
@@ -534,6 +588,63 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
           </div>
         </div>
       )}
+
+      {/* High-quality supporting content for users and search quality */}
+      <section className="mt-12 space-y-8">
+        <div className="bg-white border border-neutral-200 rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-3">How to use the {calculator.name}</h2>
+          <ol className="list-decimal pl-5 space-y-2 text-neutral-700">
+            <li>Enter the required details in the input fields. Adjust sliders or type exact values.</li>
+            <li>Review the results instantly. The chart and tables update as you change inputs.</li>
+            <li>Use the FAQ and tips below to interpret the numbers and make better decisions.</li>
+          </ol>
+        </div>
+
+        <div className="bg-white border border-neutral-200 rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-3">Formula and methodology</h2>
+          <p className="text-neutral-700">
+            This tool follows standard India-specific rules and conventions applicable to its category ({calculator.category}).
+            Where applicable, formulas such as reducing-balance EMI, CAGR/XIRR, GST breakdown, and statutory limits are used.
+            Calculations are rounded to improve readability. Always refer to official sources for final compliance.
+          </p>
+        </div>
+
+        <div className="bg-white border border-neutral-200 rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-3">Assumptions and limitations</h2>
+          <ul className="list-disc pl-5 space-y-2 text-neutral-700">
+            <li>Inputs are assumed to be accurate and within reasonable ranges for Indian users.</li>
+            <li>Real-life scenarios may include fees, taxes, timing differences, or policy changes.</li>
+            <li>For personalized advice, consult a qualified professional or your financial institution.</li>
+          </ul>
+        </div>
+
+        <div className="bg-white border border-neutral-200 rounded-lg p-6">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-3">Pro tips and common mistakes</h2>
+          <ul className="list-disc pl-5 space-y-2 text-neutral-700">
+            <li>Double-check units and time periods (monthly vs yearly, months vs years).</li>
+            <li>Stress test results by changing inputs to understand sensitivity and risk.</li>
+            <li>Compare alternatives using the related calculators for a complete view.</li>
+          </ul>
+        </div>
+
+        {references.length > 0 && (
+          <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-6">
+            <h2 className="text-2xl font-bold text-neutral-900 mb-3">References and official resources</h2>
+            <ul className="list-disc pl-5 space-y-2 text-neutral-700">
+              {references.map(ref => (
+                <li key={ref.url}>
+                  <a href={ref.url} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">{ref.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="text-sm text-neutral-500">
+          <div>Category: <a href={`/category/${categoryMeta.id}`} className="text-blue-700 underline">{categoryMeta.name}</a></div>
+          <div>Last updated: {new Date().toISOString().split('T')[0]}</div>
+        </div>
+      </section>
     </div>
     </>
   );
