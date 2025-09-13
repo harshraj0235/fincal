@@ -28,11 +28,39 @@ export class SitemapGenerator {
   }
 
   /**
+   * Validate URL to ensure it's not problematic for indexing
+   */
+  private isValidUrl(url: string): boolean {
+    const urlLower = url.toLowerCase();
+    
+    // Skip problematic patterns that cause indexing issues
+    const problematicPatterns = [
+      'redirect',
+      '404',
+      'error',
+      'not-found',
+      'duplicate',
+      'copy',
+      'write',
+      'submit',
+      'admin',
+      'private',
+      'api',
+      'test',
+      'demo',
+      'staging'
+    ];
+    
+    return !problematicPatterns.some(pattern => urlLower.includes(pattern));
+  }
+
+  /**
    * Generate XML sitemap for blog posts
    */
   generateBlogSitemap(): string {
     const urls: SitemapUrl[] = allBlogPosts
-      .filter((post: { content?: unknown; excerpt?: string; slug: string; date: string }) => {
+      .filter((post: { content?: unknown; excerpt?: string; slug: string; date: string; title?: string }) => {
+        // Exclude thin content, redirect pages, and problematic URLs
         const isStringContent = typeof post.content === 'string';
         const isArrayContent = Array.isArray(post.content);
         const content = isStringContent
@@ -42,14 +70,26 @@ export class SitemapGenerator {
             : (post.excerpt || '');
         const text = String(content).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
         const wordCount = text.split(/\s+/).filter(Boolean).length;
-        return wordCount >= 300; // exclude thin content from sitemap
+        
+        // Exclude problematic patterns
+        const slug = post.slug.toLowerCase();
+        const title = (post.title || '').toLowerCase();
+        
+        // Skip redirect pages, soft 404s, and duplicates
+        const isRedirectPage = slug.includes('redirect') || title.includes('redirect');
+        const isSoft404 = slug.includes('404') || title.includes('not found') || title.includes('error');
+        const isDuplicate = slug.includes('copy') || slug.includes('duplicate');
+        const isUtilityPage = slug.includes('write') || slug.includes('submit') || slug.includes('admin');
+        
+        return wordCount >= 300 && !isRedirectPage && !isSoft404 && !isDuplicate && !isUtilityPage;
       })
       .map((post: { slug: string; date: string }) => ({
-        loc: `${this.baseUrl}/blog/${post.slug}`,
-        lastmod: new Date(post.date).toISOString().split('T')[0],
-        changefreq: 'weekly' as const,
-        priority: 0.8
-      }));
+      loc: `${this.baseUrl}/blog/${post.slug}`,
+      lastmod: new Date(post.date).toISOString().split('T')[0],
+      changefreq: 'weekly' as const,
+      priority: 0.8
+    }))
+      .filter(url => this.isValidUrl(url.loc));
 
     return this.generateXMLSitemap(urls);
   }
@@ -65,8 +105,6 @@ export class SitemapGenerator {
         changefreq: 'daily' as const,
         priority: 1.0
       },
-      // Exclude deprecated or empty hubs to reduce low-value entries
-      
       {
         loc: `${this.baseUrl}/blog`,
         lastmod: new Date().toISOString().split('T')[0],
@@ -93,6 +131,12 @@ export class SitemapGenerator {
       },
       {
         loc: `${this.baseUrl}/festival-tools`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/gst-tools`,
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly' as const,
         priority: 0.8
@@ -148,8 +192,38 @@ export class SitemapGenerator {
         lastmod: new Date().toISOString().split('T')[0],
         changefreq: 'weekly' as const,
         priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/calculators/home-loan-calculator`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/calculators/personal-loan-calculator`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/calculators/car-loan-calculator`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/calculators/mutual-fund-calculator`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
+      },
+      {
+        loc: `${this.baseUrl}/calculators/retirement-calculator`,
+        lastmod: new Date().toISOString().split('T')[0],
+        changefreq: 'weekly' as const,
+        priority: 0.8
       }
-    ];
+    ].filter(url => this.isValidUrl(url.loc));
 
     return this.generateXMLSitemap(calculatorUrls);
   }
@@ -184,7 +258,7 @@ export class SitemapGenerator {
         changefreq: 'weekly' as const,
         priority: 0.9
       }))
-    ];
+    ].filter(url => this.isValidUrl(url.loc));
     return this.generateXMLSitemap(urls);
   }
 
@@ -218,7 +292,7 @@ export class SitemapGenerator {
         changefreq: 'weekly' as const,
         priority: 0.7
       }))
-    ];
+    ].filter(url => this.isValidUrl(url.loc));
     return this.generateXMLSitemap(urls);
   }
 
@@ -267,13 +341,21 @@ ${sitemaps.map(sitemap => `  <sitemap>
    */
   generateRSSFeed(): string {
     const latestPosts = allBlogPosts
+      .filter((post: { slug: string; title?: string }) => {
+        const slug = post.slug.toLowerCase();
+        const title = (post.title || '').toLowerCase();
+        return this.isValidUrl(`/blog/${post.slug}`) && 
+               !slug.includes('redirect') && 
+               !title.includes('not found') &&
+               !slug.includes('error');
+      })
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, 20);
 
     return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FinanceGurus Directory Blog</title>
+    <title>MoneyCal India Blog</title>
     <link>${this.baseUrl}/blog</link>
     <description>Expert financial insights, tips, and guides for Indian users</description>
     <language>en-IN</language>
@@ -328,7 +410,7 @@ ${latestPosts.map(post => `    <item>
       "description": post.excerpt,
       "author": {
         "@type": "Person",
-        "name": post.author || "FinanceGurus Team"
+        "name": post.author || "MoneyCal India Team"
       },
       "datePublished": post.date,
       "dateModified": post.date,
@@ -340,7 +422,7 @@ ${latestPosts.map(post => `    <item>
       },
       "publisher": {
         "@type": "Organization",
-        "name": "FinanceGurus Directory",
+        "name": "MoneyCal India",
         "url": this.baseUrl,
         "logo": {
           "@type": "ImageObject",
@@ -355,7 +437,7 @@ ${latestPosts.map(post => `    <item>
       "isAccessibleForFree": true,
       "isPartOf": {
         "@type": "Blog",
-        "name": "FinanceGurus Directory Blog",
+        "name": "MoneyCal India Blog",
         "url": `${this.baseUrl}/blog`
       }
     };
@@ -374,20 +456,34 @@ Allow: /
 Sitemap: ${this.baseUrl}/sitemap.xml
 Sitemap: ${this.baseUrl}/sitemap-blog.xml
 Sitemap: ${this.baseUrl}/sitemap-calculators.xml
+Sitemap: ${this.baseUrl}/sitemap-insurance.xml
+Sitemap: ${this.baseUrl}/sitemap-corporate.xml
+Sitemap: ${this.baseUrl}/sitemap-gst.xml
+Sitemap: ${this.baseUrl}/sitemap-festival.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Disallow admin and private areas
+# Disallow problematic pages that cause indexing issues
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
+Disallow: /blog/write
+Disallow: /blog/submit
+Disallow: /calculators/redirect
+Disallow: /404
+Disallow: /error
+Disallow: /duplicate
+Disallow: /copy
 
 # Allow important pages
 Allow: /blog/
 Allow: /calculators/
 Allow: /about/
 Allow: /contact/
+Allow: /festival-tools/
+Allow: /gst-tools/
+Allow: /insurance-tools/
 
 # Google Discover optimization
 User-agent: Googlebot-News
@@ -487,9 +583,9 @@ ${urls.map(url => `  <url>
     ];
     const today = new Date().toISOString().split('T')[0];
     const urls: SitemapUrl[] = [
-      { loc: `${this.baseUrl}/gst-tools`, lastmod: today, changefreq: 'weekly', priority: 0.8 },
-      ...gstTools.map((slug): SitemapUrl => ({ loc: `${this.baseUrl}/gst-tools/${slug}`, lastmod: today, changefreq: 'weekly', priority: 0.8 }))
-    ];
+      { loc: `${this.baseUrl}/gst-tools`, lastmod: today, changefreq: 'weekly' as const, priority: 0.8 },
+      ...gstTools.map((slug): SitemapUrl => ({ loc: `${this.baseUrl}/gst-tools/${slug}`, lastmod: today, changefreq: 'weekly' as const, priority: 0.8 }))
+    ].filter(url => this.isValidUrl(url.loc));
     return this.generateXMLSitemap(urls);
   }
 
@@ -499,10 +595,10 @@ ${urls.map(url => `  <url>
   generateFestivalSitemap(): string {
     const today = new Date().toISOString().split('T')[0];
     const urls: SitemapUrl[] = [
-      { loc: `${this.baseUrl}/festival-tools`, lastmod: today, changefreq: 'weekly', priority: 0.8 },
-      ...festivalList.map(f => ({ loc: `${this.baseUrl}/festival-tools/${f.slug}`, lastmod: today, changefreq: 'weekly', priority: 0.7 }) as SitemapUrl),
-      ...festivalList.flatMap(f => f.tools.map(t => ({ loc: `${this.baseUrl}/festival-tools/${f.slug}/${t.slug}`, lastmod: today, changefreq: 'weekly', priority: 0.7 }) as SitemapUrl))
-    ];
+      { loc: `${this.baseUrl}/festival-tools`, lastmod: today, changefreq: 'weekly' as const, priority: 0.8 },
+      ...festivalList.map(f => ({ loc: `${this.baseUrl}/festival-tools/${f.slug}`, lastmod: today, changefreq: 'weekly' as const, priority: 0.7 }) as SitemapUrl),
+      ...festivalList.flatMap(f => f.tools.map(t => ({ loc: `${this.baseUrl}/festival-tools/${f.slug}/${t.slug}`, lastmod: today, changefreq: 'weekly' as const, priority: 0.7 }) as SitemapUrl))
+    ].filter(url => this.isValidUrl(url.loc));
     return this.generateXMLSitemap(urls);
   }
 }
