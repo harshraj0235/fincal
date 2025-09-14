@@ -158,6 +158,61 @@ export const Sitemap: React.FC = () => {
             </li>
           </ul>
         </div>
+        
+        {/* Loan Tools */}
+        <div>
+          <h2 className="text-xl font-semibold text-neutral-900 mb-4 flex items-center">
+            <Calculator className="h-5 w-5 mr-2 text-[--primary-600]" />
+            Loan Tools
+          </h2>
+          <ul className="space-y-2">
+            <li>
+              <Link to="/loan-tools" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Loan Tools Hub
+              </Link>
+            </li>
+            <li>
+              <Link to="/loan-tools/emi-calculator" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                EMI Calculator (Reducing Balance)
+              </Link>
+            </li>
+            <li>
+              <Link to="/loan-tools/flat-rate-calculator" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Flat Rate Loan EMI Calculator
+              </Link>
+            </li>
+            <li>
+              <Link to="/loan-tools/prepayment-calculator" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Extra Payment Impact Calculator
+              </Link>
+            </li>
+            <li>
+              <Link to="/loan-tools/debt-strategies" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Debt Snowball vs Avalanche Simulator
+              </Link>
+            </li>
+            <li>
+              <Link to="/loan-tools/refinancing-calculator" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Loan Refinancing Calculator
+              </Link>
+            </li>
+            <li>
+              <Link to="/loan-tools/loan-affordability" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Loan Affordability Calculator
+              </Link>
+            </li>
+            <li>
+              <Link to="/loan-tools/debt-consolidation" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Debt Consolidation Calculator
+              </Link>
+            </li>
+            <li>
+              <Link to="/loan-tools/amortization-schedule" className="text-neutral-700 hover:text-[--primary-600] transition-colors">
+                Amortization Schedule Viewer
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
       
       {/* Calculator Categories */}
