@@ -23,6 +23,30 @@ import { blog669 } from './669';
 import { blog670 } from './670';
 import { blog671 } from './671';
 import { blog672 } from './672';
+import { blog673 } from './673';
+import { blog674 } from './674';
+import { blog675 } from './675';
+import { blog676 } from './676';
+import { blog677 } from './677';
+import { blog678 } from './678';
+import { blog679 } from './679';
+import { blog680 } from './680';
+import { blog681 } from './681';
+import { blog682 } from './682';
+import { investmentGuides } from './investment-guides';
+import { equityInvestmentForBeginners } from './equity-investment-for-beginners';
+import { coreConcepts } from './core-concepts';
+import { taxSavingInvestmentOptions } from './tax-saving-investment-options';
+import { cryptocurrency } from './cryptocurrency';
+import { personalFinance } from './personal-finance';
+import { mutualFunds } from './mutual-funds';
+import { stockMarket } from './stock-market';
+import { banking } from './banking';
+import { creditCards } from './credit-cards';
+import { insurance } from './insurance';
+import { news } from './news';
+import { calculators } from './calculators';
+import { excelTools } from './excel-tools';
 
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
@@ -48,6 +72,30 @@ export const blogs: BlogPost[] = [
   blog670,
   blog671,
   blog672,
+  blog673,
+  blog674,
+  blog675,
+  blog676,
+  blog677,
+  blog678,
+  blog679,
+  blog680,
+  blog681,
+  blog682,
+  investmentGuides,
+  equityInvestmentForBeginners,
+  coreConcepts,
+  taxSavingInvestmentOptions,
+  cryptocurrency,
+  personalFinance,
+  mutualFunds,
+  stockMarket,
+  banking,
+  creditCards,
+  insurance,
+  news,
+  calculators,
+  excelTools,
 ];
 
 // Auto-update blog dates
@@ -83,3 +131,27 @@ export { blog669 } from './669';
 export { blog670 } from './670';
 export { blog671 } from './671';
 export { blog672 } from './672';
+export { blog673 } from './673';
+export { blog674 } from './674';
+export { blog675 } from './675';
+export { blog676 } from './676';
+export { blog677 } from './677';
+export { blog678 } from './678';
+export { blog679 } from './679';
+export { blog680 } from './680';
+export { blog681 } from './681';
+export { blog682 } from './682';
+export { investmentGuides } from './investment-guides';
+export { equityInvestmentForBeginners } from './equity-investment-for-beginners';
+export { coreConcepts } from './core-concepts';
+export { taxSavingInvestmentOptions } from './tax-saving-investment-options';
+export { cryptocurrency } from './cryptocurrency';
+export { personalFinance } from './personal-finance';
+export { mutualFunds } from './mutual-funds';
+export { stockMarket } from './stock-market';
+export { banking } from './banking';
+export { creditCards } from './credit-cards';
+export { insurance } from './insurance';
+export { news } from './news';
+export { calculators } from './calculators';
+export { excelTools } from './excel-tools';
