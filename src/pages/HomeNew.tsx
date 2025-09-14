@@ -268,6 +268,7 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
           <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/festival-tools" className="px-3 py-2 rounded-full text-sm font-medium text-rose-700 hover:text-rose-800 transition-all whitespace-nowrap">🎉 Festival Tools</Link>
+          <Link to="/loan-tools" className="px-3 py-2 rounded-full text-sm font-medium text-blue-700 hover:text-blue-800 transition-all whitespace-nowrap">🏦 Loan Tools</Link>
           <Link to="/gold-tools" className="px-3 py-2 rounded-full text-sm font-medium text-amber-700 hover:text-amber-800 transition-all whitespace-nowrap">🥇 Gold Tools</Link>
           <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
           <Link to="/finance-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">📈 Finance</Link>
@@ -338,6 +339,14 @@ export const HomeNew: React.FC = () => {
                   >
                     <DollarSign className="h-5 w-5 mr-2" />
                     Income Tax
+                    <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link 
+                    to="/loan-tools" 
+                    className="group bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-xl hover:shadow-2xl transition-all px-8 py-4 text-lg font-semibold rounded-2xl flex items-center justify-center"
+                  >
+                    <Building className="h-5 w-5 mr-2" />
+                    🏦 Loan Tools
                     <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
@@ -491,10 +500,10 @@ export const HomeNew: React.FC = () => {
           </div>
         </section>
 
-        {/* Featured Hubs: Festival & Gold */}
+        {/* Featured Hubs: Festival, Loan & Gold */}
         <section className="relative py-12 sm:py-16 bg-gradient-to-br from-rose-50 via-white to-amber-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Link to="/festival-tools" className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-rose-100">
                 <img src="/images/optimized/pexels-photo-7063778.jpeg" alt="Festival Tools" className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -502,6 +511,17 @@ export const HomeNew: React.FC = () => {
                   <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/90 text-rose-700 text-xs font-semibold mb-3">New</div>
                   <h3 className="text-2xl md:text-3xl font-extrabold text-white">Festival Tools</h3>
                   <p className="text-white/90 text-sm mt-1">Plan budgets, travel, electricity, fasting hours, Zakat and more.</p>
+                  <div className="mt-3 inline-flex items-center text-white font-semibold">Explore now <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" /></div>
+                </div>
+              </Link>
+
+              <Link to="/loan-tools" className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-blue-100">
+                <img src="/images/optimized/pexels-photo-4386431.jpeg" alt="Loan Tools" className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/90 text-blue-700 text-xs font-semibold mb-3">New</div>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-white">Loan Tools</h3>
+                  <p className="text-white/90 text-sm mt-1">EMI, prepayment, refinancing, affordability & debt strategies.</p>
                   <div className="mt-3 inline-flex items-center text-white font-semibold">Explore now <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" /></div>
                 </div>
               </Link>
