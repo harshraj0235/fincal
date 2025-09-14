@@ -241,6 +241,7 @@ export const HomeNew: React.FC = () => {
                 <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
                 <button onClick={() => scrollToSection('features')} className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Features</button>
                 <Link to="/tools/" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900 font-semibold text-blue-600">🛠️ All Tools Hub</Link>
+                <Link to="/loan-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🏦 Loan Tools</Link>
                 <Link to="/tax-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">💰 Tax Tools</Link>
                 <Link to="/finance-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📈 Finance Tools</Link>
                 <Link to="/gst-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🧾 GST Tools</Link>
@@ -684,6 +685,13 @@ export const HomeNew: React.FC = () => {
                   icon: Building,
                   color: 'from-slate-500 to-slate-600',
                   path: '/corporate-finance'
+                },
+                { 
+                  name: 'Loan Tools', 
+                  description: 'Market-sensitive, trend-aware loan calculators',
+                  icon: Calculator,
+                  color: 'from-blue-500 to-blue-600',
+                  path: '/loan-tools'
                 },
                 { 
                   name: 'Tax Tools Hub', 
@@ -1588,6 +1596,12 @@ export const HomeNew: React.FC = () => {
                   className="bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 px-8 py-4 rounded-2xl font-semibold transition-all shadow-lg hover:shadow-xl"
                 >
                   🛠️ All Tools Hub
+                </Link>
+                <Link
+                  to="/loan-tools"
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 px-8 py-4 rounded-2xl font-semibold transition-all shadow-lg hover:shadow-xl"
+                >
+                  🏦 Loan Tools
                 </Link>
                 <Link
                   to="/tax-tools"
