@@ -100,6 +100,16 @@ const LoanToolsHub: React.FC = () => {
       path: '/loan-tools/debt-consolidation',
       color: 'from-pink-500 to-pink-600',
       keywords: ['debt consolidation', 'multiple loans', 'loan combination']
+    },
+    {
+      id: 'amortization-schedule',
+      name: 'Amortization Schedule Viewer',
+      description: 'Detailed month-by-month breakdown of principal and interest',
+      icon: <BarChart3 className="h-6 w-6" />,
+      category: 'Analysis Tools',
+      path: '/loan-tools/amortization-schedule',
+      color: 'from-purple-500 to-purple-600',
+      keywords: ['amortization', 'loan schedule', 'principal interest breakdown']
     }
   ];
 
