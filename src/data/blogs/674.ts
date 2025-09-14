@@ -69,7 +69,7 @@ export const blog674: BlogPost = {
   faqSchema: [
     { question: 'What are the key factors to consider for financial investment guide 674?', answer: 'Key factors include market trends, risk tolerance, investment horizon, and tax implications.' },
     { question: 'How can I start investing in this area?', answer: 'Start by researching the market, understanding your goals, and consulting with financial advisors.' },
-    { question: 'What are the risks involved?', answer: 'All investments carry some risk. It's important to diversify and understand your risk tolerance.' },
+    { question: 'What are the risks involved?', answer: 'All investments carry some risk. It\'s important to diversify and understand your risk tolerance.' },
     { question: 'How often should I review my investments?', answer: 'Regular reviews, at least quarterly, help ensure your portfolio aligns with your goals.' }
   ],
   openGraph: {
