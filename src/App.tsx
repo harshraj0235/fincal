@@ -225,15 +225,6 @@ const FestivalToolPage = lazy(() => import('./pages/festival/FestivalToolPage'))
 const GoldTools = lazy(() => import('./pages/GoldTools'));
 const GoldToolPage = lazy(() => import('./pages/gold/GoldToolPage'));
 const Top10 = lazy(() => import('./pages/Top10'));
-const LoanToolsHub = lazy(() => import('./pages/loan-tools/LoanToolsHub'));
-const EMICalculator = lazy(() => import('./pages/loan-tools/EMICalculator'));
-const FlatRateCalculator = lazy(() => import('./pages/loan-tools/FlatRateCalculator'));
-const PrepaymentCalculator = lazy(() => import('./pages/loan-tools/PrepaymentCalculator'));
-const DebtStrategies = lazy(() => import('./pages/loan-tools/DebtStrategies'));
-const RefinancingCalculator = lazy(() => import('./pages/loan-tools/RefinancingCalculator'));
-const LoanAffordabilityCalculator = lazy(() => import('./pages/loan-tools/LoanAffordabilityCalculator'));
-const DebtConsolidationCalculator = lazy(() => import('./pages/loan-tools/DebtConsolidationCalculator'));
-const AmortizationScheduleViewer = lazy(() => import('./pages/loan-tools/AmortizationScheduleViewer'));
 
 function App() {
   useEffect(() => {
@@ -465,16 +456,6 @@ function App() {
                 <Route path="/top-10" element={<Top10 />} />
                 <Route path="/financial-navigator" element={<Navigate to="/financial-education" replace />} />
                 <Route path="/excel" element={<Navigate to="/excel-tools" replace />} />
-                {/* Loan Tools Routes */}
-                <Route path="/loan-tools" element={<LoanToolsHub />} />
-                <Route path="/loan-tools/emi-calculator" element={<EMICalculator />} />
-                <Route path="/loan-tools/flat-rate-calculator" element={<FlatRateCalculator />} />
-                <Route path="/loan-tools/prepayment-calculator" element={<PrepaymentCalculator />} />
-                <Route path="/loan-tools/debt-strategies" element={<DebtStrategies />} />
-                <Route path="/loan-tools/refinancing-calculator" element={<RefinancingCalculator />} />
-                <Route path="/loan-tools/loan-affordability" element={<LoanAffordabilityCalculator />} />
-                <Route path="/loan-tools/debt-consolidation-calculator" element={<DebtConsolidationCalculator />} />
-                <Route path="/loan-tools/amortization-schedule-viewer" element={<AmortizationScheduleViewer />} />
                 <Route path="/investing-tools" element={<InvestingToolsHub />} />
                             <Route path="/financial-education" element={<FinancialEducationHub />} />
             <Route path="/help-center" element={<HelpCenter />} />
