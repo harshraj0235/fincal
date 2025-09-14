@@ -1,4 +1,4 @@
-import { BlogPost } from '../types';
+import { BlogPost } from './types';
 
 export const blog673: BlogPost = {
   id: 673,
@@ -33,18 +33,14 @@ export const blog673: BlogPost = {
     { type: 'paragraph', content: 'Financial Investment Guide 673 offers significant opportunities for Indian investors. By following sound investment principles and staying informed about market trends, you can build a strong financial foundation for the future.' }
   ],
   featuredImage: 'https://moneycal.in/images/blogs/financial-investment-guide-673-featured.jpg',
-  publishedDate: new Date().toISOString(),
-  lastModified: new Date().toISOString(),
+  publishedDate: '2025-08-15',
+  lastModified: '2025-08-15',
   readingTime: 5,
-  schema: {
+  structuredData: {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
+    "@type": "Article",
     "headline": "Financial Investment Guide 673",
-    "image": [
-      "https://moneycal.in/images/blogs/financial-investment-guide-673.jpg"
-    ],
-    "datePublished": new Date().toISOString(),
-    "dateModified": new Date().toISOString(),
+    "description": "Comprehensive guide on financial investment guide 673. Learn about the latest trends, strategies, and opportunities in the Indian financial market.",
     "author": {
       "@type": "Person",
       "name": "Finance Expert",
@@ -52,24 +48,22 @@ export const blog673: BlogPost = {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Moneycal.in",
+      "name": "MoneyCal.in",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://moneycal.in/images/logo.png"
+        "url": "https://moneycal.in/logo.png"
       }
     },
+    "datePublished": "2025-08-15",
+    "dateModified": "2025-08-15",
     "mainEntityOfPage": "https://moneycal.in/blog/financial-investment-guide-673",
-    "articleSection": "Investment, Finance, India",
-    "keywords": "financial investment guide 673, investment, finance, india, financial planning",
-    "wordCount": 1200,
-    "timeRequired": "PT5M",
-    "inLanguage": "en-IN",
-    "isAccessibleForFree": true
+    "image": "https://moneycal.in/images/blogs/financial-investment-guide-673.jpg",
+    "url": "https://moneycal.in/blog/financial-investment-guide-673"
   },
   faqSchema: [
     { question: 'What are the key factors to consider for financial investment guide 673?', answer: 'Key factors include market trends, risk tolerance, investment horizon, and tax implications.' },
     { question: 'How can I start investing in this area?', answer: 'Start by researching the market, understanding your goals, and consulting with financial advisors.' },
-    { question: 'What are the risks involved?', answer: 'All investments carry some risk. It's important to diversify and understand your risk tolerance.' },
+    { question: 'What are the risks involved?', answer: 'All investments carry some risk. It\'s important to diversify and understand your risk tolerance.' },
     { question: 'How often should I review my investments?', answer: 'Regular reviews, at least quarterly, help ensure your portfolio aligns with your goals.' }
   ],
   openGraph: {
@@ -78,7 +72,7 @@ export const blog673: BlogPost = {
     image: "https://moneycal.in/images/blogs/financial-investment-guide-673.jpg",
     url: "https://moneycal.in/blog/financial-investment-guide-673",
     type: "article",
-    siteName: "Moneycal.in"
+    siteName: "MoneyCal.in"
   },
   discoverOptimized: {
     highQualityImages: true,
@@ -87,5 +81,3 @@ export const blog673: BlogPost = {
     freshContent: true
   }
 };
-
-export default blog673;
