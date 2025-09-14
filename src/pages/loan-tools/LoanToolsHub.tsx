@@ -40,14 +40,25 @@ const LoanToolsHub: React.FC = () => {
       keywords: ['flat rate EMI', 'loan comparison', 'interest calculation']
     },
     {
-      id: 'amortization-schedule',
+      id: 'amortization-schedule-viewer',
       name: 'Amortization Schedule Viewer',
-      description: 'Detailed month-by-month breakdown of principal and interest',
+      description: 'Detailed month-by-month breakdown of principal and interest with export options',
       icon: <BarChart3 className="h-6 w-6" />,
       category: 'Analysis Tools',
-      path: '/loan-tools/amortization-schedule',
+      path: '/loan-tools/amortization-schedule-viewer',
+      color: 'from-teal-500 to-teal-600',
+      keywords: ['amortization', 'loan schedule', 'principal interest breakdown', 'export CSV']
+    },
+    {
+      id: 'debt-consolidation-calculator',
+      name: 'Debt Consolidation Calculator',
+      description: 'Compare consolidating multiple loans into one with savings analysis',
+      icon: <Target className="h-6 w-6" />,
+      category: 'Debt Management',
+      path: '/loan-tools/debt-consolidation-calculator',
+      isPopular: true,
       color: 'from-purple-500 to-purple-600',
-      keywords: ['amortization', 'loan schedule', 'principal interest breakdown']
+      keywords: ['debt consolidation', 'multiple loans', 'debt management', 'loan comparison']
     },
     {
       id: 'prepayment-calculator',

@@ -232,6 +232,8 @@ const PrepaymentCalculator = lazy(() => import('./pages/loan-tools/PrepaymentCal
 const DebtStrategies = lazy(() => import('./pages/loan-tools/DebtStrategies'));
 const RefinancingCalculator = lazy(() => import('./pages/loan-tools/RefinancingCalculator'));
 const LoanAffordabilityCalculator = lazy(() => import('./pages/loan-tools/LoanAffordabilityCalculator'));
+const DebtConsolidationCalculator = lazy(() => import('./pages/loan-tools/DebtConsolidationCalculator'));
+const AmortizationScheduleViewer = lazy(() => import('./pages/loan-tools/AmortizationScheduleViewer'));
 
 function App() {
   useEffect(() => {
@@ -471,6 +473,8 @@ function App() {
                 <Route path="/loan-tools/debt-strategies" element={<DebtStrategies />} />
                 <Route path="/loan-tools/refinancing-calculator" element={<RefinancingCalculator />} />
                 <Route path="/loan-tools/loan-affordability" element={<LoanAffordabilityCalculator />} />
+                <Route path="/loan-tools/debt-consolidation-calculator" element={<DebtConsolidationCalculator />} />
+                <Route path="/loan-tools/amortization-schedule-viewer" element={<AmortizationScheduleViewer />} />
                 <Route path="/investing-tools" element={<InvestingToolsHub />} />
                             <Route path="/financial-education" element={<FinancialEducationHub />} />
             <Route path="/help-center" element={<HelpCenter />} />
