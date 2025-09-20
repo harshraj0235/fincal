@@ -1,230 +1,111 @@
 import React from 'react';
-import SEOHelmet from './SEOHelmet';
+import { Helmet } from 'react-helmet-async';
 
 interface EnhancedSEOProps {
-  pageType: 'calculator' | 'blog' | 'category' | 'home' | 'about' | 'contact';
   title: string;
   description: string;
-  url: string;
-  image?: string;
-  keywords?: string;
-  calculatorData?: {
-    name: string;
-    description: string;
-    category: string;
-    features: string[];
-    faqData?: Array<{ question: string; answer: string }>;
-  };
-  blogData?: {
-    publishedTime: string;
-    modifiedTime?: string;
-    author: string;
-    tags: string[];
-    category: string;
-  };
-  categoryData?: {
-    name: string;
-    description: string;
-    calculatorCount: number;
-  };
+  keywords?: string[];
+  canonicalUrl?: string;
+  ogImage?: string;
+  structuredData?: any;
+  noIndex?: boolean;
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  section?: string;
+  tags?: string[];
 }
 
 const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
-  pageType,
   title,
   description,
-  url,
-  image,
-  keywords,
-  calculatorData,
-  blogData,
-  categoryData
+  keywords = [],
+  canonicalUrl,
+  ogImage = 'https://moneycal.in/images/og-default.jpg',
+  structuredData,
+  noIndex = false,
+  author = 'MoneyCal India Team',
+  publishedTime,
+  modifiedTime,
+  section = 'Finance',
+  tags = []
 }) => {
-  // Generate breadcrumbs based on page type
-  const generateBreadcrumbs = () => {
-    const baseBreadcrumbs = [{ name: 'Home', url: '/' }];
-    
-    switch (pageType) {
-      case 'calculator':
-        return [
-          ...baseBreadcrumbs,
-          { name: 'Calculators', url: '/calculators' },
-          { name: calculatorData?.category || 'Calculator', url: '/calculators' },
-          { name: calculatorData?.name || 'Calculator', url }
-        ];
-      case 'blog':
-        return [
-          ...baseBreadcrumbs,
-          { name: 'Blog', url: '/blog' },
-          { name: blogData?.category || 'Article', url: '/blog' },
-          { name: title, url }
-        ];
-      case 'category':
-        return [
-          ...baseBreadcrumbs,
-          { name: 'Calculators', url: '/calculators' },
-          { name: categoryData?.name || 'Category', url }
-        ];
-      default:
-        return baseBreadcrumbs;
-    }
-  };
-
-  // Generate structured data based on page type
-  const generateStructuredData = () => {
-    const baseData = {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": title,
-      "description": description,
-      "url": url.startsWith('http') ? url : `https://moneycal.in${url}`,
-      "inLanguage": "en-IN",
-      "isPartOf": {
-        "@type": "WebSite",
-        "@id": "https://moneycal.in/#website"
-      }
-    };
-
-    switch (pageType) {
-      case 'calculator':
-        if (calculatorData) {
-          return [
-            baseData,
-            {
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": calculatorData.name,
-              "description": calculatorData.description,
-              "url": url.startsWith('http') ? url : `https://moneycal.in${url}`,
-              "applicationCategory": "FinanceApplication",
-              "operatingSystem": "Web Browser",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "INR"
-              },
-              "featureList": calculatorData.features,
-              "audience": {
-                "@type": "Audience",
-                "audienceType": "Indian Financial Users"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "MoneyCal India",
-                "url": "https://moneycal.in"
-              }
-            }
-          ];
-        }
-        break;
-      
-      case 'blog':
-        if (blogData) {
-          return [
-            baseData,
-            {
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "headline": title,
-              "description": description,
-              "url": url.startsWith('http') ? url : `https://moneycal.in${url}`,
-              "datePublished": blogData.publishedTime,
-              "dateModified": blogData.modifiedTime || blogData.publishedTime,
-              "author": {
-                "@type": "Person",
-                "name": blogData.author
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "MoneyCal India",
-                "url": "https://moneycal.in"
-              },
-              "articleSection": blogData.category,
-              "keywords": blogData.tags.join(', ')
-            }
-          ];
-        }
-        break;
-      
-      case 'category':
-        if (categoryData) {
-          return [
-            baseData,
-            {
-              "@context": "https://schema.org",
-              "@type": "CollectionPage",
-              "name": categoryData.name,
-              "description": categoryData.description,
-              "url": url.startsWith('http') ? url : `https://moneycal.in${url}`,
-              "numberOfItems": categoryData.calculatorCount,
-              "publisher": {
-                "@type": "Organization",
-                "name": "MoneyCal India",
-                "url": "https://moneycal.in"
-              }
-            }
-          ];
-        }
-        break;
-    }
-
-    return baseData;
-  };
-
-  // Generate FAQ data if available
-  const getFAQData = () => {
-    if (pageType === 'calculator' && calculatorData?.faqData) {
-      return calculatorData.faqData;
-    }
-    return undefined;
-  };
-
-  // Generate enhanced keywords
-  const getEnhancedKeywords = () => {
-    const baseKeywords = 'financial calculator india, EMI calculator, SIP calculator, income tax calculator, mutual fund calculator, loan calculator, investment calculator, personal finance tools, financial planning india, free financial calculator';
-    
-    if (keywords) {
-      return `${keywords}, ${baseKeywords}`;
-    }
-    
-    switch (pageType) {
-      case 'calculator':
-        return `${calculatorData?.name || 'Financial Calculator'}, ${baseKeywords}`;
-      case 'blog':
-        return `${blogData?.tags?.join(', ') || ''}, financial blog india, investment advice, tax planning, ${baseKeywords}`;
-      case 'category':
-        return `${categoryData?.name || 'Financial Tools'}, ${baseKeywords}`;
-      default:
-        return baseKeywords;
-    }
-  };
-
-  // Generate enhanced description
-  const getEnhancedDescription = () => {
-    if (description.length > 160) {
-      return description.substring(0, 157) + '...';
-    }
-    return description;
-  };
+  const fullTitle = title.includes('MoneyCal') ? title : `${title} | MoneyCal India`;
+  const fullDescription = description.length > 160 ? description.substring(0, 157) + '...' : description;
+  const fullKeywords = [
+    'financial calculators',
+    'personal finance',
+    'investment planning',
+    'tax calculations',
+    'India finance',
+    ...keywords
+  ].join(', ');
 
   return (
-    <SEOHelmet
-      title={title}
-      description={getEnhancedDescription()}
-      keywords={getEnhancedKeywords()}
-      url={url}
-      image={image || 'https://moneycal.in/android-chrome-512x512.png'}
-      type={pageType === 'blog' ? 'article' : 'website'}
-      structuredData={generateStructuredData()}
-      breadcrumbs={generateBreadcrumbs()}
-      faqData={getFAQData()}
-      calculatorData={calculatorData}
-      articlePublishedTime={blogData?.publishedTime}
-      articleModifiedTime={blogData?.modifiedTime}
-      author={blogData?.author}
-      section={blogData?.category}
-      tags={blogData?.tags}
-    />
+    <Helmet>
+      {/* Basic Meta Tags */}
+      <title>{fullTitle}</title>
+      <meta name="description" content={fullDescription} />
+      <meta name="keywords" content={fullKeywords} />
+      <meta name="author" content={author} />
+      <meta name="robots" content={noIndex ? 'noindex,nofollow' : 'index,follow'} />
+      <meta name="googlebot" content={noIndex ? 'noindex,nofollow' : 'index,follow'} />
+      
+      {/* Canonical URL */}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      
+      {/* Open Graph Tags */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={fullDescription} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={canonicalUrl || window.location.href} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:site_name" content="MoneyCal India" />
+      <meta property="og:locale" content="en_IN" />
+      
+      {/* Article specific Open Graph tags */}
+      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      <meta property="article:author" content={author} />
+      <meta property="article:section" content={section} />
+      {tags.map((tag, index) => (
+        <meta key={index} property="article:tag" content={tag} />
+      ))}
+      
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={fullDescription} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:site" content="@moneycalindia" />
+      <meta name="twitter:creator" content="@moneycalindia" />
+      
+      {/* Additional SEO Tags */}
+      <meta name="theme-color" content="#2563eb" />
+      <meta name="msapplication-TileColor" content="#2563eb" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+      {/* Language and Region */}
+      <meta httpEquiv="content-language" content="en-IN" />
+      <meta name="geo.region" content="IN" />
+      <meta name="geo.country" content="India" />
+      
+      {/* Structured Data */}
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      )}
+      
+      {/* Preconnect to external domains for performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+      
+      {/* DNS Prefetch for better performance */}
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    </Helmet>
   );
 };
 
