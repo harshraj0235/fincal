@@ -247,6 +247,9 @@ const SocialMediaHub = lazy(() => import('./components/SocialMediaHub'));
 const UserEngagementHub = lazy(() => import('./components/UserEngagementHub'));
 const LocalSEOHub = lazy(() => import('./components/LocalSEOHub'));
 const BacklinkHub = lazy(() => import('./components/BacklinkHub'));
+const VideoContentHub = lazy(() => import('./components/VideoContentHub'));
+const AIPersonalizationHub = lazy(() => import('./components/AIPersonalizationHub'));
+const CommunityHub = lazy(() => import('./components/CommunityHub'));
 
 function App() {
   useEffect(() => {
@@ -349,6 +352,9 @@ function App() {
                 <Route path="/user-engagement" element={<UserEngagementHub />} />
                 <Route path="/local-seo" element={<LocalSEOHub />} />
                 <Route path="/backlink-building" element={<BacklinkHub />} />
+                <Route path="/video-content" element={<VideoContentHub />} />
+                <Route path="/ai-personalization" element={<AIPersonalizationHub />} />
+                <Route path="/community" element={<CommunityHub />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
