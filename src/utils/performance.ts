@@ -173,9 +173,7 @@ export const initPerformanceMonitoring = () => {
 export const optimizeBundleSize = () => {
   // Dynamic imports for non-critical components
   const lazyComponents = {
-    Chart: () => import('../components/Chart'),
-    AdvancedCalculator: () => import('../components/AdvancedCalculator'),
-    MarketWidget: () => import('../components/MarketWidget')
+    // Add lazy components here when they are created
   };
 
   return lazyComponents;
