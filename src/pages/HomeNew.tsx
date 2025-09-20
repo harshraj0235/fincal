@@ -265,6 +265,9 @@ export const HomeNew: React.FC = () => {
           <Link to="/content-marketing" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📈 Content Marketing</Link>
           <Link to="/keyword-research" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🔍 Keyword Research</Link>
           <Link to="/social-media" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📱 Social Media</Link>
+          <Link to="/user-engagement" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">⭐ User Reviews</Link>
+          <Link to="/local-seo" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📍 Local SEO</Link>
+          <Link to="/backlink-building" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🔗 Backlink Building</Link>
                 <Link to="/government-schemes" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Government Schemes</Link>
                 <Link to="/exceltool" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Excel Tools</Link>
                 <Link to="/crypto" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Crypto</Link>
@@ -288,6 +291,9 @@ export const HomeNew: React.FC = () => {
           <Link to="/content-marketing" className="px-3 py-2 rounded-full text-sm font-medium text-purple-700 hover:text-purple-800 transition-all whitespace-nowrap">📈 Content Marketing</Link>
           <Link to="/keyword-research" className="px-3 py-2 rounded-full text-sm font-medium text-indigo-700 hover:text-indigo-800 transition-all whitespace-nowrap">🔍 Keywords</Link>
           <Link to="/social-media" className="px-3 py-2 rounded-full text-sm font-medium text-pink-700 hover:text-pink-800 transition-all whitespace-nowrap">📱 Social</Link>
+          <Link to="/user-engagement" className="px-3 py-2 rounded-full text-sm font-medium text-green-700 hover:text-green-800 transition-all whitespace-nowrap">⭐ Reviews</Link>
+          <Link to="/local-seo" className="px-3 py-2 rounded-full text-sm font-medium text-orange-700 hover:text-orange-800 transition-all whitespace-nowrap">📍 Local</Link>
+          <Link to="/backlink-building" className="px-3 py-2 rounded-full text-sm font-medium text-indigo-700 hover:text-indigo-800 transition-all whitespace-nowrap">🔗 Links</Link>
           <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
           <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/festival-tools" className="px-3 py-2 rounded-full text-sm font-medium text-rose-700 hover:text-rose-800 transition-all whitespace-nowrap">🎉 Festival Tools</Link>
