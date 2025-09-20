@@ -242,6 +242,8 @@ const MarketAnalysis = lazy(() => import('./pages/MarketAnalysis'));
 const SEOBlogManager = lazy(() => import('./components/SEOBlogManager'));
 const SEOBlogPost = lazy(() => import('./pages/SEOBlogPost'));
 const ContentMarketingHub = lazy(() => import('./components/ContentMarketingHub'));
+const KeywordResearchHub = lazy(() => import('./components/KeywordResearchHub'));
+const SocialMediaHub = lazy(() => import('./components/SocialMediaHub'));
 
 function App() {
   useEffect(() => {
@@ -338,6 +340,9 @@ function App() {
                 <Route path="/finance-blog/:slug" element={<SEOBlogPost />} />
                 {/* Content Marketing Hub */}
                 <Route path="/content-marketing" element={<ContentMarketingHub />} />
+                {/* SEO and Marketing Tools */}
+                <Route path="/keyword-research" element={<KeywordResearchHub />} />
+                <Route path="/social-media" element={<SocialMediaHub />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
