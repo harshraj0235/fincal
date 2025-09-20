@@ -29,6 +29,8 @@ import {
 import { calculatorCategories } from '../data/calculatorData';
 import { allBlogPosts } from '../data/allBlogData';
 import SEOHelmet from '../components/SEOHelmet';
+import RealTimeMarketData from '../components/RealTimeMarketData';
+import AdvancedSEO from '../components/AdvancedSEO';
 
 
 export const HomeNew: React.FC = () => {
@@ -210,6 +212,19 @@ export const HomeNew: React.FC = () => {
         url="/"
         structuredData={{}}
         tags={["financial calculators", "EMI calculator", "SIP calculator", "income tax"]}
+      />
+      <AdvancedSEO
+        pageType="home"
+        title="MoneyCal India - Complete Financial Platform"
+        description="India's most comprehensive financial platform with 200+ calculators, real-time market data, expert articles, and tools for personal finance, investments, loans, insurance, and tax planning."
+        url="/"
+        keywords="finance india, personal finance, investment planning, loan calculator, insurance, tax planning, retirement planning, banking, government schemes, financial education, mutual funds, stock market, cryptocurrency, home loans, credit cards"
+        marketData={{
+          nifty50: 24567.89,
+          sensex: 81234.56,
+          goldPrice: 62500,
+          dollarRate: 83.45
+        }}
       />
       
       {/* Mobile Navigation Overlay */}
@@ -500,10 +515,35 @@ export const HomeNew: React.FC = () => {
           </div>
         </section>
 
-        {/* Featured Hubs: Festival, Loan & Gold */}
+        {/* Featured Hubs: Comprehensive Finance, Festival, Loan & Gold */}
         <section className="relative py-12 sm:py-16 bg-gradient-to-br from-rose-50 via-white to-amber-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Complete Finance Platform
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Everything you need for financial success - from personal finance to investment strategies, 
+                loan planning to tax optimization. 200+ tools, calculators, and expert guidance.
+              </p>
+            </div>
+            
+            {/* Real-time Market Data */}
+            <div className="mb-12">
+              <RealTimeMarketData />
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link to="/comprehensive-finance-hub" className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-blue-100">
+                <img src="/images/optimized/pexels-photo-4386431.jpeg" alt="Comprehensive Finance Hub" className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/90 text-blue-700 text-xs font-semibold mb-3">Complete Platform</div>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-white">Finance Hub</h3>
+                  <p className="text-white/90 text-sm mt-1">200+ tools, calculators, and expert guidance for all financial needs.</p>
+                  <div className="mt-3 inline-flex items-center text-white font-semibold">Explore now <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" /></div>
+                </div>
+              </Link>
               <Link to="/festival-tools" className="group relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-rose-100">
                 <img src="/images/optimized/pexels-photo-7063778.jpeg" alt="Festival Tools" className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />

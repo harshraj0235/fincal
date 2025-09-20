@@ -234,6 +234,7 @@ const RefinancingCalculator = lazy(() => import('./pages/loan-tools/RefinancingC
 const LoanAffordabilityCalculator = lazy(() => import('./pages/loan-tools/LoanAffordabilityCalculator'));
 const DebtConsolidationCalculator = lazy(() => import('./pages/loan-tools/DebtConsolidationCalculator'));
 const AmortizationScheduleViewer = lazy(() => import('./pages/loan-tools/AmortizationScheduleViewer'));
+const ComprehensiveFinanceHub = lazy(() => import('./pages/ComprehensiveFinanceHub'));
 
 function App() {
   useEffect(() => {
@@ -339,6 +340,8 @@ function App() {
                 <Route path="/credit-card-finder" element={<CreditCardFinder />} />
                 {/* Crypto Section route */}
                 <Route path="/crypto" element={<CryptoSection />} />
+                {/* Comprehensive Finance Hub */}
+                <Route path="/comprehensive-finance-hub" element={<ComprehensiveFinanceHub />} />
                 <Route path="/crypto/:slug" element={<CryptoArticlePost />} />
                 {/* AstroFinance route */}
                 <Route path="/astro-finance" element={<AstroFinance />} />
