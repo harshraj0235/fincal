@@ -9633,6 +9633,23 @@
   <!-- Community Hub -->
   <url><loc>https://moneycal.in/community</loc><lastmod>2025-01-15</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   
+  <!-- Finance Categories Hub -->
+  <url><loc>https://moneycal.in/finance-categories</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  
+  <!-- Analytics Dashboard -->
+  <url><loc>https://moneycal.in/analytics</loc><lastmod>2025-01-15</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  
+  <!-- Individual Finance Categories -->
+  <url><loc>https://moneycal.in/finance-categories/personal-finance-management</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/finance-categories/investment-planning-strategy</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/finance-categories/loan-calculators-tools</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/finance-categories/insurance-planning</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/finance-categories/tax-planning-optimization</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/finance-categories/retirement-planning</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/finance-categories/banking-services</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/finance-categories/government-schemes</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/finance-categories/financial-education-hub</loc><lastmod>2025-01-15</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  
   <!-- Finance Blog Hub -->
   <url><loc>https://moneycal.in/finance-blog</loc><lastmod>2025-01-15</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
   

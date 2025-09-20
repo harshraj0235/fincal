@@ -251,6 +251,7 @@ const VideoContentHub = lazy(() => import('./components/VideoContentHub'));
 const AIPersonalizationHub = lazy(() => import('./components/AIPersonalizationHub'));
 const CommunityHub = lazy(() => import('./components/CommunityHub'));
 const FinanceCategoriesHub = lazy(() => import('./components/FinanceCategoriesHub'));
+const AnalyticsDashboard = lazy(() => import('./components/AnalyticsDashboard'));
 
 function App() {
   useEffect(() => {
@@ -357,6 +358,7 @@ function App() {
                 <Route path="/ai-personalization" element={<AIPersonalizationHub />} />
                 <Route path="/community" element={<CommunityHub />} />
                 <Route path="/finance-categories" element={<FinanceCategoriesHub />} />
+                <Route path="/analytics" element={<AnalyticsDashboard />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
