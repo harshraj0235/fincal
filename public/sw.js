@@ -1,90 +1,260 @@
-// Service Worker for FinanceGurus PWA
-const CACHE_NAME = 'financegurus-v1.0.0';
-const urlsToCache = [
+// Service Worker for MoneyCal India
+const CACHE_NAME = 'moneycal-v1.0.0';
+const STATIC_CACHE = 'moneycal-static-v1.0.0';
+const DYNAMIC_CACHE = 'moneycal-dynamic-v1.0.0';
+
+// Static assets to cache
+const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/static/js/bundle.js',
-  '/static/css/main.css',
-  '/favicon.ico',
-  '/android-chrome-192x192.png',
-  '/android-chrome-512x512.png',
-  '/apple-touch-icon.png',
-  '/site.webmanifest'
+  '/manifest.json',
+  '/images/logo.svg',
+  '/images/hero-bg.webp',
+  '/fonts/inter-var.woff2',
+  '/css/main.css',
+  '/js/main.js'
 ];
 
-// Install event - cache resources
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
-});
+// API endpoints to cache
+const API_CACHE_PATTERNS = [
+  /^https:\/\/api\.moneycal\.in\/market-data/,
+  /^https:\/\/api\.moneycal\.in\/news/,
+  /^https:\/\/api\.moneycal\.in\/calculators/
+];
 
-// Fetch event - serve from cache if available
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Return cached version or fetch from network
-        return response || fetch(event.request);
+// Install event - cache static assets
+self.addEventListener('install', (event) => {
+  console.log('Service Worker installing...');
+  
+  event.waitUntil(
+    caches.open(STATIC_CACHE)
+      .then((cache) => {
+        console.log('Caching static assets');
+        return cache.addAll(STATIC_ASSETS);
+      })
+      .then(() => {
+        console.log('Static assets cached successfully');
+        return self.skipWaiting();
+      })
+      .catch((error) => {
+        console.error('Failed to cache static assets:', error);
       })
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
+  console.log('Service Worker activating...');
+  
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
+    caches.keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+              console.log('Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+      .then(() => {
+        console.log('Service Worker activated');
+        return self.clients.claim();
+      })
   );
 });
 
-// Background sync for offline functionality
+// Fetch event - serve from cache or network
+self.addEventListener('fetch', (event) => {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  // Skip non-GET requests
+  if (request.method !== 'GET') {
+    return;
+  }
+
+  // Skip chrome-extension and other non-http requests
+  if (!url.protocol.startsWith('http')) {
+    return;
+  }
+
+  // Handle different types of requests
+  if (isStaticAsset(request)) {
+    event.respondWith(handleStaticAsset(request));
+  } else if (isAPIRequest(request)) {
+    event.respondWith(handleAPIRequest(request));
+  } else if (isPageRequest(request)) {
+    event.respondWith(handlePageRequest(request));
+  } else {
+    event.respondWith(handleOtherRequest(request));
+  }
+});
+
+// Check if request is for static asset
+function isStaticAsset(request) {
+  const url = new URL(request.url);
+  return url.pathname.match(/\.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|ico)$/);
+}
+
+// Check if request is for API
+function isAPIRequest(request) {
+  const url = new URL(request.url);
+  return API_CACHE_PATTERNS.some(pattern => pattern.test(url.href));
+}
+
+// Check if request is for page
+function isPageRequest(request) {
+  const url = new URL(request.url);
+  return url.origin === location.origin && !isStaticAsset(request) && !isAPIRequest(request);
+}
+
+// Handle static assets - cache first strategy
+async function handleStaticAsset(request) {
+  try {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(STATIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.error('Failed to handle static asset:', error);
+    return new Response('Asset not available', { status: 404 });
+  }
+}
+
+// Handle API requests - network first with cache fallback
+async function handleAPIRequest(request) {
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Network failed, trying cache for API request');
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    return new Response('API not available', { status: 503 });
+  }
+}
+
+// Handle page requests - network first with cache fallback
+async function handlePageRequest(request) {
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Network failed, trying cache for page request');
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    // Fallback to index.html for SPA routing
+    if (request.mode === 'navigate') {
+      const indexResponse = await caches.match('/index.html');
+      if (indexResponse) {
+        return indexResponse;
+      }
+    }
+    
+    return new Response('Page not available', { status: 404 });
+  }
+}
+
+// Handle other requests - network only
+async function handleOtherRequest(request) {
+  try {
+    return await fetch(request);
+  } catch (error) {
+    console.error('Failed to handle request:', error);
+    return new Response('Request failed', { status: 503 });
+  }
+}
+
+// Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
     event.waitUntil(doBackgroundSync());
   }
 });
 
-// Push notification handling
-self.addEventListener('push', (event) => {
-  const options = {
-    body: event.data ? event.data.text() : 'New update available!',
-    icon: '/android-chrome-192x192.png',
-    badge: '/android-chrome-192x192.png',
-    vibrate: [100, 50, 100],
-    data: {
-      dateOfArrival: Date.now(),
-      primaryKey: 1
-    },
-    actions: [
-      {
-        action: 'explore',
-        title: 'Explore Calculators',
-        icon: '/android-chrome-192x192.png'
-      },
-      {
-        action: 'close',
-        title: 'Close',
-        icon: '/android-chrome-192x192.png'
+async function doBackgroundSync() {
+  try {
+    // Sync offline data when connection is restored
+    console.log('Performing background sync...');
+    
+    // Get offline data from IndexedDB
+    const offlineData = await getOfflineData();
+    
+    // Sync with server
+    for (const data of offlineData) {
+      try {
+        await fetch('/api/sync', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+        
+        // Remove from offline storage after successful sync
+        await removeOfflineData(data.id);
+      } catch (error) {
+        console.error('Failed to sync data:', error);
       }
-    ]
-  };
+    }
+  } catch (error) {
+    console.error('Background sync failed:', error);
+  }
+}
 
-  event.waitUntil(
-    self.registration.showNotification('FinanceGurus', options)
-  );
+// Push notifications
+self.addEventListener('push', (event) => {
+  if (event.data) {
+    const data = event.data.json();
+    const options = {
+      body: data.body,
+      icon: '/images/icon-192x192.png',
+      badge: '/images/badge-72x72.png',
+      vibrate: [100, 50, 100],
+      data: {
+        dateOfArrival: Date.now(),
+        primaryKey: data.primaryKey
+      },
+      actions: [
+        {
+          action: 'explore',
+          title: 'View Details',
+          icon: '/images/checkmark.png'
+        },
+        {
+          action: 'close',
+          title: 'Close',
+          icon: '/images/xmark.png'
+        }
+      ]
+    };
+
+    event.waitUntil(
+      self.registration.showNotification(data.title, options)
+    );
+  }
 });
 
 // Notification click handling
@@ -93,13 +263,25 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
+      clients.openWindow('/market-analysis')
+    );
+  } else if (event.action === 'close') {
+    // Just close the notification
+  } else {
+    // Default action - open the app
+    event.waitUntil(
       clients.openWindow('/')
     );
   }
 });
 
-// Background sync function
-function doBackgroundSync() {
-  // Implement background sync logic here
-  console.log('Background sync completed');
+// Helper functions for offline data management
+async function getOfflineData() {
+  // Implementation would depend on your IndexedDB setup
+  return [];
+}
+
+async function removeOfflineData(id) {
+  // Implementation would depend on your IndexedDB setup
+  console.log('Removing offline data:', id);
 }

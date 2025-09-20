@@ -52,6 +52,10 @@ export const Sitemap: React.FC = () => {
       { title: 'Debt Consolidation Calculator', url: '/loan-tools/debt-consolidation', category: 'loan' },
       { title: 'Amortization Schedule Viewer', url: '/loan-tools/amortization-schedule', category: 'loan' },
       
+      // New Platform Features
+      { title: 'Comprehensive Finance Hub', url: '/comprehensive-finance-hub', category: 'platform' },
+      { title: 'Market Analysis & Trends', url: '/market-analysis', category: 'platform' },
+      
       // Calculator Categories
       ...calculatorCategories.flatMap(category => 
         category.calculators.map(calculator => ({

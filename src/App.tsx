@@ -1,4 +1,7 @@
 import { useEffect, Suspense, lazy } from 'react';
+import { initPerformanceOptimizations } from './utils/performance';
+import { initAnalytics } from './utils/analytics';
+import WebVitalsMonitor from './components/WebVitalsMonitor';
 
 import { Layout } from './components/Layout';
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -239,6 +242,12 @@ const MarketAnalysis = lazy(() => import('./pages/MarketAnalysis'));
 
 function App() {
   useEffect(() => {
+    // Initialize performance optimizations
+    initPerformanceOptimizations();
+    
+    // Initialize analytics
+    initAnalytics();
+    
     const CONSENT_KEY = 'fincal_cookie_consent_v1';
     const loadAds = () => {
       if (document.querySelector('script[data-adsbygoogle-script]')) return;
@@ -279,8 +288,10 @@ function App() {
   }, []);
 
   return (
-    <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
-      <Routes>
+    <>
+      <WebVitalsMonitor />
+      <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
+        <Routes>
         {/* Missed Call Banking Directory route - outside Layout */}
         <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
         {/* All other routes inside Layout */}
@@ -565,8 +576,9 @@ function App() {
             </Suspense>
           </Layout>
         } />
-      </Routes>
-    </Suspense>
+        </Routes>
+      </Suspense>
+    </>
   );
 }
 
