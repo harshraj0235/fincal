@@ -49,19 +49,19 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
       .then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cacheName) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
             if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-              console.log('Deleting old cache:', cacheName);
-              return caches.delete(cacheName);
-            }
-          })
-        );
-      })
+            console.log('Deleting old cache:', cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
       .then(() => {
         console.log('Service Worker activated');
         return self.clients.claim();
-      })
+    })
   );
 });
 
@@ -228,32 +228,32 @@ async function doBackgroundSync() {
 self.addEventListener('push', (event) => {
   if (event.data) {
     const data = event.data.json();
-    const options = {
+  const options = {
       body: data.body,
       icon: '/images/icon-192x192.png',
       badge: '/images/badge-72x72.png',
-      vibrate: [100, 50, 100],
-      data: {
-        dateOfArrival: Date.now(),
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
         primaryKey: data.primaryKey
-      },
-      actions: [
-        {
-          action: 'explore',
+    },
+    actions: [
+      {
+        action: 'explore',
           title: 'View Details',
           icon: '/images/checkmark.png'
-        },
-        {
-          action: 'close',
-          title: 'Close',
+      },
+      {
+        action: 'close',
+        title: 'Close',
           icon: '/images/xmark.png'
-        }
-      ]
-    };
+      }
+    ]
+  };
 
-    event.waitUntil(
+  event.waitUntil(
       self.registration.showNotification(data.title, options)
-    );
+  );
   }
 });
 

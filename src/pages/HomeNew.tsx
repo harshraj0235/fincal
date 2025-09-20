@@ -261,6 +261,7 @@ export const HomeNew: React.FC = () => {
                 <Link to="/finance-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📈 Finance Tools</Link>
                 <Link to="/gst-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🧾 GST Tools</Link>
                 <Link to="/blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">View All Blog Posts</Link>
+          <Link to="/finance-blog" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📚 Finance Blog</Link>
                 <Link to="/government-schemes" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Government Schemes</Link>
                 <Link to="/exceltool" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Excel Tools</Link>
                 <Link to="/crypto" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Crypto</Link>
@@ -280,6 +281,7 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('popular')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'popular' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Popular</button>
           <button onClick={() => scrollToSection('categories')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'categories' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Categories</button>
           <button onClick={() => scrollToSection('blog')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>Blog</button>
+          <Link to="/finance-blog" className="px-3 py-2 rounded-full text-sm font-medium text-green-700 hover:text-green-800 transition-all whitespace-nowrap">📚 Finance Blog</Link>
           <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
           <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/festival-tools" className="px-3 py-2 rounded-full text-sm font-medium text-rose-700 hover:text-rose-800 transition-all whitespace-nowrap">🎉 Festival Tools</Link>

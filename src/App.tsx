@@ -239,6 +239,8 @@ const DebtConsolidationCalculator = lazy(() => import('./pages/loan-tools/DebtCo
 const AmortizationScheduleViewer = lazy(() => import('./pages/loan-tools/AmortizationScheduleViewer'));
 const ComprehensiveFinanceHub = lazy(() => import('./pages/ComprehensiveFinanceHub'));
 const MarketAnalysis = lazy(() => import('./pages/MarketAnalysis'));
+const SEOBlogManager = lazy(() => import('./components/SEOBlogManager'));
+const SEOBlogPost = lazy(() => import('./pages/SEOBlogPost'));
 
 function App() {
   useEffect(() => {
@@ -290,8 +292,8 @@ function App() {
   return (
     <>
       <WebVitalsMonitor />
-      <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
-        <Routes>
+    <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
+      <Routes>
         {/* Missed Call Banking Directory route - outside Layout */}
         <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
         {/* All other routes inside Layout */}
@@ -330,6 +332,9 @@ function App() {
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/blog/write" element={<WriteBlog />} />
                 <Route path="/blog/category/banking" element={<BankingKnowledge />} />
+                {/* SEO Blog Routes */}
+                <Route path="/finance-blog" element={<SEOBlogManager />} />
+                <Route path="/finance-blog/:slug" element={<SEOBlogPost />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
@@ -576,8 +581,8 @@ function App() {
             </Suspense>
           </Layout>
         } />
-        </Routes>
-      </Suspense>
+      </Routes>
+    </Suspense>
     </>
   );
 }
