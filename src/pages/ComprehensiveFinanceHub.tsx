@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   TrendingUp, 
   TrendingDown, 
-  DollarSign, 
-  PieChart, 
   Building, 
   Shield, 
   Calculator,
@@ -19,28 +17,20 @@ import {
   ArrowRight,
   Search,
   Filter,
-  Clock,
   Star,
   Award,
   Briefcase,
   Home,
-  Car,
-  GraduationCap,
   Heart,
-  Plane,
-  ShoppingCart,
   CreditCard,
-  Banknote,
   PiggyBank,
   TrendingUp as Investment,
   FileText,
   Newspaper,
-  Lightbulb,
-  CheckCircle,
-  AlertCircle,
-  Info
+  Lightbulb
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
+import FinancialNewsFeed from '../components/FinancialNewsFeed';
 
 interface MarketData {
   nifty50: number;
@@ -77,7 +67,6 @@ const ComprehensiveFinanceHub: React.FC = () => {
   const [marketData, setMarketData] = useState<MarketData | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [isLoading, setIsLoading] = useState(true);
 
   // Comprehensive finance topics covering all major areas
   const financeTopics: FinanceTopic[] = [
@@ -488,7 +477,6 @@ const ComprehensiveFinanceHub: React.FC = () => {
   // Simulate market data fetch
   useEffect(() => {
     const fetchMarketData = async () => {
-      setIsLoading(true);
       // Simulate API call
       setTimeout(() => {
         setMarketData({
@@ -507,7 +495,6 @@ const ComprehensiveFinanceHub: React.FC = () => {
             bitcoinPrice: 2.34
           }
         });
-        setIsLoading(false);
       }, 1000);
     };
 
@@ -657,6 +644,13 @@ const ComprehensiveFinanceHub: React.FC = () => {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </div>
+
+        {/* Financial News Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="mb-16">
+            <FinancialNewsFeed />
           </div>
         </div>
 
