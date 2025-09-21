@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, X, Calculator, FileText, TrendingUp, Home, CreditCard, Shield, PiggyBank, Building, GraduationCap, Users } from 'lucide-react';
+import { Search, X, Calculator, FileText, TrendingUp, Home, CreditCard, Shield, PiggyBank, Building, GraduationCap, Users, Globe, Star, Zap, Target, Award, Briefcase, Heart, Lightbulb, Newspaper, BookOpen, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface SearchResult {
@@ -74,10 +74,41 @@ const GlobalSearch: React.FC = () => {
     { id: 'tax-category', title: 'Tax Planning & Optimization', description: 'Income tax planning, deductions, and tax-saving investment strategies', type: 'category', url: '/finance-categories/tax-planning-optimization', category: 'Tax', icon: <Shield className="w-5 h-5" />, tags: ['tax planning', 'deductions', 'optimization', 'savings'] },
     { id: 'insurance-category', title: 'Insurance Planning', description: 'Life, health, motor, and general insurance planning and comparison', type: 'category', url: '/finance-categories/insurance-planning', category: 'Insurance', icon: <Shield className="w-5 h-5" />, tags: ['insurance', 'planning', 'comparison', 'coverage'] },
 
+    // Government Schemes
+    { id: 'pm-kisan', title: 'PM Kisan Scheme', description: 'Pradhan Mantri Kisan Samman Nidhi - Direct income support to farmers', type: 'tool', url: '/government-schemes/pm-kisan', category: 'Government Schemes', icon: <Globe className="w-5 h-5" />, tags: ['pm kisan', 'farmer', 'income support', 'government'] },
+    { id: 'pm-awas-yojana', title: 'PM Awas Yojana', description: 'Pradhan Mantri Awas Yojana - Housing for all scheme', type: 'tool', url: '/government-schemes/pm-awas-yojana', category: 'Government Schemes', icon: <Home className="w-5 h-5" />, tags: ['pm awas yojana', 'housing', 'home loan', 'subsidy'] },
+    { id: 'mudra-loan', title: 'MUDRA Loan Calculator', description: 'Micro Units Development and Refinance Agency loan calculator', type: 'tool', url: '/government-schemes/mudra-loan', category: 'Government Schemes', icon: <Calculator className="w-5 h-5" />, tags: ['mudra', 'loan', 'msme', 'business'] },
+    { id: 'stand-up-india', title: 'Stand Up India Scheme', description: 'Bank loan scheme for SC/ST and women entrepreneurs', type: 'tool', url: '/government-schemes/stand-up-india', category: 'Government Schemes', icon: <Star className="w-5 h-5" />, tags: ['stand up india', 'entrepreneur', 'sc st', 'women'] },
+    { id: 'pm-svanidhi', title: 'PM SVANidhi Scheme', description: 'Pradhan Mantri Street Vendor AtmaNirbhar Nidhi scheme', type: 'tool', url: '/government-schemes/pm-svanidhi', category: 'Government Schemes', icon: <Building className="w-5 h-5" />, tags: ['pm svanidhi', 'street vendor', 'loan', 'micro credit'] },
+
+    // Cryptocurrency & Digital Assets
+    { id: 'crypto-calculator', title: 'Cryptocurrency Calculator', description: 'Calculate crypto investment returns and portfolio value', type: 'tool', url: '/cryptocurrency/crypto-calculator', category: 'Cryptocurrency', icon: <Zap className="w-5 h-5" />, tags: ['cryptocurrency', 'bitcoin', 'ethereum', 'crypto investment'] },
+    { id: 'defi-calculator', title: 'DeFi Calculator', description: 'Decentralized Finance yield farming and staking calculator', type: 'tool', url: '/cryptocurrency/defi-calculator', category: 'Cryptocurrency', icon: <TrendingUp className="w-5 h-5" />, tags: ['defi', 'yield farming', 'staking', 'decentralized'] },
+    { id: 'nft-calculator', title: 'NFT Investment Calculator', description: 'Calculate returns from NFT investments and trading', type: 'tool', url: '/cryptocurrency/nft-calculator', category: 'Cryptocurrency', icon: <Star className="w-5 h-5" />, tags: ['nft', 'non fungible token', 'digital art', 'blockchain'] },
+    { id: 'crypto-tax-calculator', title: 'Crypto Tax Calculator', description: 'Calculate tax liability on cryptocurrency transactions', type: 'tool', url: '/cryptocurrency/crypto-tax-calculator', category: 'Cryptocurrency', icon: <Calculator className="w-5 h-5" />, tags: ['crypto tax', 'bitcoin tax', 'capital gains', 'cryptocurrency tax'] },
+
+    // Banking & Financial Services
+    { id: 'bank-account-comparison', title: 'Bank Account Comparison', description: 'Compare savings accounts, current accounts, and banking services', type: 'tool', url: '/banking/bank-account-comparison', category: 'Banking', icon: <Building className="w-5 h-5" />, tags: ['bank account', 'savings account', 'current account', 'banking'] },
+    { id: 'credit-card-comparison', title: 'Credit Card Comparison', description: 'Compare credit cards, rewards, and benefits', type: 'tool', url: '/banking/credit-card-comparison', category: 'Banking', icon: <CreditCard className="w-5 h-5" />, tags: ['credit card', 'rewards', 'benefits', 'comparison'] },
+    { id: 'upi-calculator', title: 'UPI Payment Calculator', description: 'Calculate UPI transaction fees and limits', type: 'tool', url: '/banking/upi-calculator', category: 'Banking', icon: <Smartphone className="w-5 h-5" />, tags: ['upi', 'digital payment', 'mobile payment', 'transaction'] },
+    { id: 'fd-calculator', title: 'Fixed Deposit Calculator', description: 'Calculate FD returns and maturity amount', type: 'tool', url: '/banking/fd-calculator', category: 'Banking', icon: <PiggyBank className="w-5 h-5" />, tags: ['fixed deposit', 'fd', 'savings', 'interest'] },
+
+    // Real Estate Investment
+    { id: 'property-investment-calculator', title: 'Property Investment Calculator', description: 'Calculate returns from real estate investments', type: 'tool', url: '/real-estate/property-investment-calculator', category: 'Real Estate', icon: <Home className="w-5 h-5" />, tags: ['property investment', 'real estate', 'rental yield', 'property returns'] },
+    { id: 'reit-calculator', title: 'REIT Calculator', description: 'Calculate returns from Real Estate Investment Trusts', type: 'tool', url: '/real-estate/reit-calculator', category: 'Real Estate', icon: <Building className="w-5 h-5" />, tags: ['reit', 'real estate investment trust', 'dividend', 'property investment'] },
+    { id: 'rental-yield-calculator', title: 'Rental Yield Calculator', description: 'Calculate rental yield and property investment returns', type: 'tool', url: '/real-estate/rental-yield-calculator', category: 'Real Estate', icon: <TrendingUp className="w-5 h-5" />, tags: ['rental yield', 'property investment', 'rental income', 'real estate'] },
+
+    // Financial Education & Literacy
+    { id: 'financial-literacy-course', title: 'Financial Literacy Course', description: 'Complete course on financial literacy and money management', type: 'article', url: '/financial-education/financial-literacy-course', category: 'Financial Education', icon: <BookOpen className="w-5 h-5" />, tags: ['financial literacy', 'money management', 'education', 'course'] },
+    { id: 'investment-basics', title: 'Investment Basics Guide', description: 'Learn the fundamentals of investing in India', type: 'article', url: '/financial-education/investment-basics', category: 'Financial Education', icon: <Lightbulb className="w-5 h-5" />, tags: ['investment basics', 'investing guide', 'financial education', 'beginner'] },
+    { id: 'market-analysis-tools', title: 'Market Analysis Tools', description: 'Tools for analyzing stock market trends and patterns', type: 'tool', url: '/market-analysis/tools', category: 'Market Analysis', icon: <TrendingUp className="w-5 h-5" />, tags: ['market analysis', 'stock market', 'trends', 'technical analysis'] },
+
     // Pages
     { id: 'finance-categories', title: 'Finance Categories', description: 'Explore all finance categories and tools', type: 'page', url: '/finance-categories', category: 'Navigation', icon: <Building className="w-5 h-5" />, tags: ['categories', 'finance', 'tools', 'navigation'] },
     { id: 'analytics', title: 'Analytics Dashboard', description: 'Comprehensive platform analytics and performance metrics', type: 'page', url: '/analytics', category: 'Analytics', icon: <TrendingUp className="w-5 h-5" />, tags: ['analytics', 'dashboard', 'metrics', 'performance'] },
-    { id: 'community', title: 'Community Hub', description: 'Join our finance community and discussions', type: 'page', url: '/community', category: 'Community', icon: <Users className="w-5 h-5" />, tags: ['community', 'discussions', 'forum', 'interaction'] }
+    { id: 'community', title: 'Community Hub', description: 'Join our finance community and discussions', type: 'page', url: '/community', category: 'Community', icon: <Users className="w-5 h-5" />, tags: ['community', 'discussions', 'forum', 'interaction'] },
+    { id: 'comprehensive-finance-hub', title: 'Comprehensive Finance Hub', description: 'Complete finance platform with all tools and resources', type: 'page', url: '/comprehensive-finance-hub', category: 'Main Platform', icon: <Globe className="w-5 h-5" />, tags: ['finance hub', 'complete platform', 'all tools', 'resources'] },
+    { id: 'market-analysis', title: 'Market Analysis', description: 'Real-time market analysis and financial news', type: 'page', url: '/market-analysis', category: 'Market Analysis', icon: <Newspaper className="w-5 h-5" />, tags: ['market analysis', 'financial news', 'market trends', 'analysis'] }
   ];
 
   // Search function
