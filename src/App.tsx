@@ -266,6 +266,8 @@ const InsuranceCalculator = lazy(() => import('./pages/tools/InsuranceCalculator
 const CreditScoreCalculator = lazy(() => import('./pages/tools/CreditScoreCalculator'));
 const IncomeTaxCalculator = lazy(() => import('./pages/tools/IncomeTaxCalculator'));
 const LoanEMICalculator = lazy(() => import('./pages/tools/LoanEMICalculator'));
+const MutualFundCalculator = lazy(() => import('./pages/tools/MutualFundCalculator'));
+const HomeLoanCalculator = lazy(() => import('./pages/tools/HomeLoanCalculator'));
 
 function App() {
   useEffect(() => {
@@ -387,6 +389,8 @@ function App() {
                 <Route path="/tools/credit-score-calculator" element={<CreditScoreCalculator />} />
                 <Route path="/tools/income-tax-calculator" element={<IncomeTaxCalculator />} />
                 <Route path="/tools/loan-emi-calculator" element={<LoanEMICalculator />} />
+                <Route path="/tools/mutual-fund-calculator" element={<MutualFundCalculator />} />
+                <Route path="/tools/home-loan-calculator" element={<HomeLoanCalculator />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
