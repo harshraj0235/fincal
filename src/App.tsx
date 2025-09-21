@@ -258,6 +258,14 @@ const EmergencyFundCalculator = lazy(() => import('./pages/tools/EmergencyFundCa
 const DebtPayoffCalculator = lazy(() => import('./pages/tools/DebtPayoffCalculator'));
 const SavingsGoalCalculator = lazy(() => import('./pages/tools/SavingsGoalCalculator'));
 const NetWorthCalculator = lazy(() => import('./pages/tools/NetWorthCalculator'));
+const RetirementCalculator = lazy(() => import('./pages/tools/RetirementCalculator'));
+const FinancialGoalPlanner = lazy(() => import('./pages/tools/FinancialGoalPlanner'));
+const InvestmentCalculator = lazy(() => import('./pages/tools/InvestmentCalculator'));
+const TaxCalculator = lazy(() => import('./pages/tools/TaxCalculator'));
+const InsuranceCalculator = lazy(() => import('./pages/tools/InsuranceCalculator'));
+const CreditScoreCalculator = lazy(() => import('./pages/tools/CreditScoreCalculator'));
+const IncomeTaxCalculator = lazy(() => import('./pages/tools/IncomeTaxCalculator'));
+const LoanEMICalculator = lazy(() => import('./pages/tools/LoanEMICalculator'));
 
 function App() {
   useEffect(() => {
@@ -371,6 +379,14 @@ function App() {
                 <Route path="/tools/debt-payoff-calculator" element={<DebtPayoffCalculator />} />
                 <Route path="/tools/savings-goal-calculator" element={<SavingsGoalCalculator />} />
                 <Route path="/tools/net-worth-calculator" element={<NetWorthCalculator />} />
+                <Route path="/tools/retirement-calculator" element={<RetirementCalculator />} />
+                <Route path="/tools/financial-goal-planner" element={<FinancialGoalPlanner />} />
+                <Route path="/tools/investment-calculator" element={<InvestmentCalculator />} />
+                <Route path="/tools/tax-calculator" element={<TaxCalculator />} />
+                <Route path="/tools/insurance-calculator" element={<InsuranceCalculator />} />
+                <Route path="/tools/credit-score-calculator" element={<CreditScoreCalculator />} />
+                <Route path="/tools/income-tax-calculator" element={<IncomeTaxCalculator />} />
+                <Route path="/tools/loan-emi-calculator" element={<LoanEMICalculator />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
