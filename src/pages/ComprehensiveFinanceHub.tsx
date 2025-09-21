@@ -30,7 +30,6 @@ import {
   Lightbulb
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import FinancialNewsFeed from '../components/FinancialNewsFeed';
 
 interface MarketData {
   nifty50: number;
@@ -647,12 +646,6 @@ const ComprehensiveFinanceHub: React.FC = () => {
           </div>
         </div>
 
-        {/* Financial News Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="mb-16">
-            <FinancialNewsFeed />
-          </div>
-        </div>
 
         {/* Finance Topics Grid */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

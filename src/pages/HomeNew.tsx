@@ -31,6 +31,7 @@ import { allBlogPosts } from '../data/allBlogData';
 import SEOHelmet from '../components/SEOHelmet';
 import RealTimeMarketData from '../components/RealTimeMarketData';
 import AdvancedSEO from '../components/AdvancedSEO';
+import GlobalSearch from '../components/GlobalSearch';
 
 
 export const HomeNew: React.FC = () => {
@@ -356,6 +357,16 @@ export const HomeNew: React.FC = () => {
                 >
                   India's most comprehensive financial calculator platform. Plan loans, investments, taxes, and more with confidence.
                 </motion.p>
+                
+                {/* Global Search */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="mb-8 flex justify-center lg:justify-start"
+                >
+                  <GlobalSearch />
+                </motion.div>
                 
                 {/* Quick Action Buttons */}
                 <motion.div
