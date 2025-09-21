@@ -254,6 +254,8 @@ const FinanceCategoriesHub = lazy(() => import('./components/FinanceCategoriesHu
 const AnalyticsDashboard = lazy(() => import('./components/AnalyticsDashboard'));
 const BudgetCalculator = lazy(() => import('./pages/tools/BudgetCalculator'));
 const ExpenseTracker = lazy(() => import('./pages/tools/ExpenseTracker'));
+const EmergencyFundCalculator = lazy(() => import('./pages/tools/EmergencyFundCalculator'));
+const DebtPayoffCalculator = lazy(() => import('./pages/tools/DebtPayoffCalculator'));
 
 function App() {
   useEffect(() => {
@@ -363,6 +365,8 @@ function App() {
                 <Route path="/analytics" element={<AnalyticsDashboard />} />
                 <Route path="/tools/budget-calculator" element={<BudgetCalculator />} />
                 <Route path="/tools/expense-tracker" element={<ExpenseTracker />} />
+                <Route path="/tools/emergency-fund-calculator" element={<EmergencyFundCalculator />} />
+                <Route path="/tools/debt-payoff-calculator" element={<DebtPayoffCalculator />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
