@@ -270,6 +270,10 @@ const MutualFundCalculator = lazy(() => import('./pages/tools/MutualFundCalculat
 const HomeLoanCalculator = lazy(() => import('./pages/tools/HomeLoanCalculator'));
 const PersonalLoanCalculator = lazy(() => import('./pages/tools/PersonalLoanCalculator'));
 const SIPCalculator = lazy(() => import('./pages/tools/SIPCalculator'));
+const PortfolioAnalyzer = lazy(() => import('./pages/tools/PortfolioAnalyzer'));
+const RiskAssessment = lazy(() => import('./pages/tools/RiskAssessment'));
+const AssetAllocation = lazy(() => import('./pages/tools/AssetAllocation'));
+const LumpsumCalculator = lazy(() => import('./pages/tools/LumpsumCalculator'));
 
 function App() {
   useEffect(() => {
@@ -395,6 +399,10 @@ function App() {
                 <Route path="/tools/home-loan-calculator" element={<HomeLoanCalculator />} />
                 <Route path="/tools/personal-loan-calculator" element={<PersonalLoanCalculator />} />
                 <Route path="/tools/sip-calculator" element={<SIPCalculator />} />
+            <Route path="/tools/portfolio-analyzer" element={<PortfolioAnalyzer />} />
+            <Route path="/tools/risk-assessment" element={<RiskAssessment />} />
+            <Route path="/tools/asset-allocation" element={<AssetAllocation />} />
+            <Route path="/tools/lumpsum-calculator" element={<LumpsumCalculator />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
