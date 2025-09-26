@@ -274,6 +274,9 @@ const PortfolioAnalyzer = lazy(() => import('./pages/tools/PortfolioAnalyzer'));
 const RiskAssessment = lazy(() => import('./pages/tools/RiskAssessment'));
 const AssetAllocation = lazy(() => import('./pages/tools/AssetAllocation'));
 const LumpsumCalculator = lazy(() => import('./pages/tools/LumpsumCalculator'));
+const StockAnalyzer = lazy(() => import('./pages/tools/StockAnalyzer'));
+const MutualFundAnalyzer = lazy(() => import('./pages/tools/MutualFundAnalyzer'));
+const TaxSavingCalculator = lazy(() => import('./pages/tools/TaxSavingCalculator'));
 
 function App() {
   useEffect(() => {
@@ -403,6 +406,9 @@ function App() {
             <Route path="/tools/risk-assessment" element={<RiskAssessment />} />
             <Route path="/tools/asset-allocation" element={<AssetAllocation />} />
             <Route path="/tools/lumpsum-calculator" element={<LumpsumCalculator />} />
+            <Route path="/tools/stock-analyzer" element={<StockAnalyzer />} />
+            <Route path="/tools/mutual-fund-analyzer" element={<MutualFundAnalyzer />} />
+            <Route path="/tools/tax-saving-calculator" element={<TaxSavingCalculator />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />
