@@ -279,6 +279,14 @@ export const HomeNew: React.FC = () => {
                 <Link to="/crypto" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Crypto</Link>
                 <Link to="/astro-finance" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Astro Finance</Link>
                 <Link to="/stock-market" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Stock Market</Link>
+                <div className="border-t border-gray-200 my-4"></div>
+                <div className="text-sm font-semibold text-gray-500 px-3 py-2">Professional Tools</div>
+                <Link to="/accounting-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">📊 Accounting & Audit</Link>
+                <Link to="/payroll-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">👥 Payroll & HR</Link>
+                <Link to="/business-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🏢 Business & Startup</Link>
+                <Link to="/legal-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">⚖️ Legal & Compliance</Link>
+                <Link to="/utilities" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🔧 Utilities & Converters</Link>
+                <Link to="/real-estate-tools" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">🏠 Real Estate & Property</Link>
                 <Link to="/contact-us" className="block w-full text-left p-3 rounded-lg hover:bg-gray-100 text-gray-900">Contact Us</Link>
               </nav>
             </motion.div>
@@ -308,6 +316,12 @@ export const HomeNew: React.FC = () => {
           <button onClick={() => scrollToSection('news')} className={`px-3 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${activeSection === 'news' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-gray-900'}`}>News</button>
           <Link to="/tools/" className="px-3 py-2 rounded-full text-sm font-medium text-blue-600 hover:text-blue-700 transition-all font-semibold whitespace-nowrap">🛠️ Tools</Link>
           <Link to="/festival-tools" className="px-3 py-2 rounded-full text-sm font-medium text-rose-700 hover:text-rose-800 transition-all whitespace-nowrap">🎉 Festival Tools</Link>
+          <Link to="/accounting-tools" className="px-3 py-2 rounded-full text-sm font-medium text-indigo-700 hover:text-indigo-800 transition-all whitespace-nowrap">📊 Accounting</Link>
+          <Link to="/payroll-tools" className="px-3 py-2 rounded-full text-sm font-medium text-pink-700 hover:text-pink-800 transition-all whitespace-nowrap">👥 Payroll</Link>
+          <Link to="/business-tools" className="px-3 py-2 rounded-full text-sm font-medium text-teal-700 hover:text-teal-800 transition-all whitespace-nowrap">🏢 Business</Link>
+          <Link to="/legal-tools" className="px-3 py-2 rounded-full text-sm font-medium text-red-700 hover:text-red-800 transition-all whitespace-nowrap">⚖️ Legal</Link>
+          <Link to="/utilities" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-800 transition-all whitespace-nowrap">🔧 Utilities</Link>
+          <Link to="/real-estate-tools" className="px-3 py-2 rounded-full text-sm font-medium text-emerald-700 hover:text-emerald-800 transition-all whitespace-nowrap">🏠 Real Estate</Link>
           <Link to="/loan-tools" className="px-3 py-2 rounded-full text-sm font-medium text-blue-700 hover:text-blue-800 transition-all whitespace-nowrap">🏦 Loan Tools</Link>
           <Link to="/gold-tools" className="px-3 py-2 rounded-full text-sm font-medium text-amber-700 hover:text-amber-800 transition-all whitespace-nowrap">🥇 Gold Tools</Link>
           <Link to="/tax-tools" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 transition-all whitespace-nowrap">💰 Tax</Link>
@@ -609,6 +623,191 @@ export const HomeNew: React.FC = () => {
                   <h3 className="text-2xl md:text-3xl font-extrabold text-white">Gold Tools</h3>
                   <p className="text-white/90 text-sm mt-1">Purity, weight, value, SIP, SGB interest, invoice & more.</p>
                   <div className="mt-3 inline-flex items-center text-white font-semibold">Explore now <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" /></div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Professional Finance Tools Section */}
+        <section className="py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Professional Finance Tools
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Comprehensive financial solutions for businesses, professionals, and individuals. 
+                From tax management to investment planning, we have everything you need.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {/* GST & Indirect Tax */}
+              <Link to="/gst-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-green-100 bg-white hover:bg-green-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+                    <Calculator className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">GST & Indirect Tax</h3>
+                  <p className="text-gray-600 text-sm mb-4">GST calculator, HSN codes, compliance tools, and tax planning</p>
+                  <div className="flex items-center text-green-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Income Tax & TDS */}
+              <Link to="/tax-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-blue-100 bg-white hover:bg-blue-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+                    <FileText className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Income Tax & TDS</h3>
+                  <p className="text-gray-600 text-sm mb-4">Tax calculator, TDS management, deductions, and filing assistance</p>
+                  <div className="flex items-center text-blue-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Loans & EMI */}
+              <Link to="/loan-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-purple-100 bg-white hover:bg-purple-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
+                    <Building className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Loans & EMI</h3>
+                  <p className="text-gray-600 text-sm mb-4">Home loans, personal loans, EMI calculator, and refinancing</p>
+                  <div className="flex items-center text-purple-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Investments & Retirement */}
+              <Link to="/finance-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-orange-100 bg-white hover:bg-orange-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
+                    <TrendingUp className="w-8 h-8 text-orange-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Investments & Retirement</h3>
+                  <p className="text-gray-600 text-sm mb-4">SIP calculator, mutual funds, retirement planning, and portfolio analysis</p>
+                  <div className="flex items-center text-orange-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Accounting & Audit */}
+              <Link to="/accounting-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-indigo-100 bg-white hover:bg-indigo-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-indigo-200 transition-colors">
+                    <BarChart3 className="w-8 h-8 text-indigo-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Accounting & Audit</h3>
+                  <p className="text-gray-600 text-sm mb-4">Financial statements, audit tools, and accounting calculators</p>
+                  <div className="flex items-center text-indigo-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Payroll & HR */}
+              <Link to="/payroll-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-pink-100 bg-white hover:bg-pink-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-pink-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-pink-200 transition-colors">
+                    <Users className="w-8 h-8 text-pink-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Payroll & HR</h3>
+                  <p className="text-gray-600 text-sm mb-4">Salary calculator, PF, ESI, and HR management tools</p>
+                  <div className="flex items-center text-pink-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Business & Startup */}
+              <Link to="/business-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-teal-100 bg-white hover:bg-teal-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors">
+                    <Building2 className="w-8 h-8 text-teal-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Business & Startup</h3>
+                  <p className="text-gray-600 text-sm mb-4">Business valuation, startup funding, and growth planning</p>
+                  <div className="flex items-center text-teal-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Legal & Compliance */}
+              <Link to="/legal-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-red-100 bg-white hover:bg-red-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors">
+                    <Shield className="w-8 h-8 text-red-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Legal & Compliance</h3>
+                  <p className="text-gray-600 text-sm mb-4">Legal calculators, compliance tools, and regulatory guidance</p>
+                  <div className="flex items-center text-red-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Crypto & Forex */}
+              <Link to="/crypto" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-yellow-100 bg-white hover:bg-yellow-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-yellow-200 transition-colors">
+                    <Bitcoin className="w-8 h-8 text-yellow-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Crypto & Forex</h3>
+                  <p className="text-gray-600 text-sm mb-4">Cryptocurrency tools, forex calculator, and trading analysis</p>
+                  <div className="flex items-center text-yellow-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Utilities & Converters */}
+              <Link to="/utilities" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-gray-100 bg-white hover:bg-gray-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gray-200 transition-colors">
+                    <Wrench className="w-8 h-8 text-gray-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Utilities & Converters</h3>
+                  <p className="text-gray-600 text-sm mb-4">Currency converter, unit converter, and utility calculators</p>
+                  <div className="flex items-center text-gray-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Real Estate & Property */}
+              <Link to="/real-estate-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-emerald-100 bg-white hover:bg-emerald-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-200 transition-colors">
+                    <Home className="w-8 h-8 text-emerald-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Real Estate & Property</h3>
+                  <p className="text-gray-600 text-sm mb-4">Property valuation, rental yield, and real estate investment tools</p>
+                  <div className="flex items-center text-emerald-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Insurance & Risk Management */}
+              <Link to="/insurance-tools" className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-cyan-100 bg-white hover:bg-cyan-50 transition-all duration-300">
+                <div className="p-6">
+                  <div className="w-16 h-16 bg-cyan-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-200 transition-colors">
+                    <Shield className="w-8 h-8 text-cyan-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Insurance & Risk Management</h3>
+                  <p className="text-gray-600 text-sm mb-4">Insurance calculator, premium planning, and risk assessment</p>
+                  <div className="flex items-center text-cyan-600 font-semibold text-sm">
+                    Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </Link>
             </div>
