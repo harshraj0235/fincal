@@ -277,6 +277,12 @@ const LumpsumCalculator = lazy(() => import('./pages/tools/LumpsumCalculator'));
 const StockAnalyzer = lazy(() => import('./pages/tools/StockAnalyzer'));
 const MutualFundAnalyzer = lazy(() => import('./pages/tools/MutualFundAnalyzer'));
 const TaxSavingCalculator = lazy(() => import('./pages/tools/TaxSavingCalculator'));
+const InvestmentGoalPlanner = lazy(() => import('./pages/tools/InvestmentGoalPlanner'));
+const CompoundInterestCalculator = lazy(() => import('./pages/tools/CompoundInterestCalculator'));
+const PersonalFinanceManagement = lazy(() => import('./pages/PersonalFinanceManagement'));
+const MonthlyBudgetPlanner = lazy(() => import('./pages/tools/MonthlyBudgetPlanner'));
+const PersonalFinanceDashboard = lazy(() => import('./pages/tools/PersonalFinanceDashboard'));
+const HowToManagePersonalFinancesIndiaBeginners = lazy(() => import('./pages/personal-finance/HowToManagePersonalFinancesIndiaBeginners'));
 
 function App() {
   useEffect(() => {
@@ -409,6 +415,13 @@ function App() {
             <Route path="/tools/stock-analyzer" element={<StockAnalyzer />} />
             <Route path="/tools/mutual-fund-analyzer" element={<MutualFundAnalyzer />} />
             <Route path="/tools/tax-saving-calculator" element={<TaxSavingCalculator />} />
+            <Route path="/tools/investment-goal-planner" element={<InvestmentGoalPlanner />} />
+            <Route path="/tools/compound-interest-calculator" element={<CompoundInterestCalculator />} />
+            <Route path="/personal-finance-management" element={<PersonalFinanceManagement />} />
+            <Route path="/tools/monthly-budget-planner" element={<MonthlyBudgetPlanner />} />
+            <Route path="/tools/personal-finance-dashboard" element={<PersonalFinanceDashboard />} />
+            <Route path="/tools/savings-goal-calculator" element={<SavingsGoalCalculator />} />
+            <Route path="/personal-finance/how-to-manage-personal-finances-india-beginners" element={<HowToManagePersonalFinancesIndiaBeginners />} />
                 {/* Excel Tool blog section routes */}
                 <Route path="/exceltool" element={<ExcelTool />} />
                 <Route path="/exceltool/:slug" element={<ExcelToolPost />} />

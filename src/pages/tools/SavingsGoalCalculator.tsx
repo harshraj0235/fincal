@@ -1,637 +1,446 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Target, PiggyBank, Calendar, TrendingUp, DollarSign, Clock, BarChart3, CheckCircle, AlertCircle, Zap, Info, Star } from 'lucide-react';
+import React, { useState } from 'react';
 import SEOHelmet from '../../components/SEOHelmet';
-
-interface SavingsGoal {
-  id: string;
-  name: string;
-  targetAmount: number;
-  currentAmount: number;
-  targetDate: string;
-  priority: 'high' | 'medium' | 'low';
-  category: string;
-}
-
-interface SavingsAnalysis {
-  totalTargetAmount: number;
-  totalCurrentAmount: number;
-  totalRemainingAmount: number;
-  totalMonthlyContribution: number;
-  averageTimeToGoal: number;
-  goals: Array<{
-    goal: SavingsGoal;
-    monthlyContribution: number;
-    monthsToTarget: number;
-    isOnTrack: boolean;
-    recommendations: string[];
-  }>;
-  overallRecommendations: string[];
-  scenarios: Array<{
-    scenario: string;
-    monthlyContribution: number;
-    description: string;
-    benefits: string[];
-  }>;
-}
+import { Target, Calendar, TrendingUp, Calculator, AlertCircle, DollarSign, Clock, PieChart } from 'lucide-react';
 
 const SavingsGoalCalculator: React.FC = () => {
-  const [goals, setGoals] = useState<SavingsGoal[]>([
-    {
-      id: '1',
-      name: 'Emergency Fund',
-      targetAmount: 100000,
-      currentAmount: 25000,
-      targetDate: '2025-12-31',
-      priority: 'high',
-      category: 'emergency'
-    }
-  ]);
-  const [analysis, setAnalysis] = useState<SavingsAnalysis | null>(null);
-  const [showResults, setShowResults] = useState(false);
+  const [goal, setGoal] = useState({
+    targetAmount: 500000,
+    currentAmount: 50000,
+    targetDate: '2025-12-31',
+    expectedReturn: 8
+  });
 
-  const categories = [
-    { id: 'emergency', name: 'Emergency Fund', icon: <AlertCircle className="w-5 h-5" />, color: 'bg-red-500' },
-    { id: 'vacation', name: 'Vacation', icon: <Star className="w-5 h-5" />, color: 'bg-blue-500' },
-    { id: 'home', name: 'Home Purchase', icon: <Target className="w-5 h-5" />, color: 'bg-green-500' },
-    { id: 'car', name: 'Car Purchase', icon: <TrendingUp className="w-5 h-5" />, color: 'bg-yellow-500' },
-    { id: 'education', name: 'Education', icon: <Info className="w-5 h-5" />, color: 'bg-purple-500' },
-    { id: 'wedding', name: 'Wedding', icon: <Star className="w-5 h-5" />, color: 'bg-pink-500' },
-    { id: 'retirement', name: 'Retirement', icon: <PiggyBank className="w-5 h-5" />, color: 'bg-indigo-500' },
-    { id: 'other', name: 'Other', icon: <DollarSign className="w-5 h-5" />, color: 'bg-gray-500' }
-  ];
+  const [monthlyContribution, setMonthlyContribution] = useState(0);
 
-  const addGoal = () => {
-    const newGoal: SavingsGoal = {
-      id: Date.now().toString(),
-      name: '',
-      targetAmount: 0,
-      currentAmount: 0,
-      targetDate: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // 1 year from now
-      priority: 'medium',
-      category: 'other'
-    };
-    setGoals([...goals, newGoal]);
-  };
-
-  const updateGoal = (id: string, field: keyof SavingsGoal, value: any) => {
-    setGoals(goals.map(goal => 
-      goal.id === id ? { ...goal, [field]: value } : goal
-    ));
-  };
-
-  const removeGoal = (id: string) => {
-    setGoals(goals.filter(goal => goal.id !== id));
-  };
-
-  const calculateSavingsPlan = () => {
-    if (goals.length === 0 || goals.some(goal => !goal.name || goal.targetAmount <= 0)) {
-      alert('Please enter valid savings goal information');
-      return;
-    }
-
-    const totalTargetAmount = goals.reduce((sum, goal) => sum + goal.targetAmount, 0);
-    const totalCurrentAmount = goals.reduce((sum, goal) => sum + goal.currentAmount, 0);
-    const totalRemainingAmount = totalTargetAmount - totalCurrentAmount;
-
-    // Calculate individual goal analysis
-    const goalAnalysis = goals.map(goal => {
-      const remainingAmount = goal.targetAmount - goal.currentAmount;
-      const targetDate = new Date(goal.targetDate);
-      const currentDate = new Date();
-      const monthsToTarget = Math.max(1, Math.ceil((targetDate.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24 * 30)));
-      
-      const monthlyContribution = remainingAmount / monthsToTarget;
-      const isOnTrack = monthlyContribution > 0 && monthlyContribution <= (goal.targetAmount * 0.1); // Reasonable monthly contribution
-
-      const recommendations: string[] = [];
-      
-      if (goal.currentAmount === 0) {
-        recommendations.push("Start saving immediately, even small amounts add up over time.");
-      }
-      
-      if (monthlyContribution > goal.targetAmount * 0.2) {
-        recommendations.push("Consider extending your target date or reducing the goal amount.");
-      }
-      
-      if (goal.priority === 'high' && monthlyContribution < goal.targetAmount * 0.05) {
-        recommendations.push("This is a high-priority goal. Consider increasing your monthly contribution.");
-      }
-      
-      if (goal.currentAmount / goal.targetAmount > 0.8) {
-        recommendations.push("Great progress! You're almost at your goal.");
-      }
-
-      return {
-        goal,
-        monthlyContribution,
-        monthsToTarget,
-        isOnTrack,
-        recommendations
-      };
-    });
-
-    const totalMonthlyContribution = goalAnalysis.reduce((sum, analysis) => sum + analysis.monthlyContribution, 0);
-    const averageTimeToGoal = goalAnalysis.reduce((sum, analysis) => sum + analysis.monthsToTarget, 0) / goalAnalysis.length;
-
-    // Generate overall recommendations
-    const overallRecommendations: string[] = [];
+  const calculateRequiredMonthlyContribution = () => {
+    const months = getMonthsBetween(new Date(), new Date(goal.targetDate));
+    const futureValue = goal.targetAmount - goal.currentAmount;
+    const monthlyRate = goal.expectedReturn / 100 / 12;
     
-    if (totalMonthlyContribution > totalTargetAmount * 0.3) {
-      overallRecommendations.push("Your total monthly savings target is quite high. Consider prioritizing your goals.");
+    if (months > 0 && monthlyRate > 0) {
+      return futureValue * monthlyRate / (Math.pow(1 + monthlyRate, months) - 1);
+    }
+    return 0;
+  };
+
+  const getMonthsBetween = (date1: Date, date2: Date) => {
+    const yearDiff = date2.getFullYear() - date1.getFullYear();
+    const monthDiff = date2.getMonth() - date1.getMonth();
+    return yearDiff * 12 + monthDiff;
+  };
+
+  const getProjectedValue = () => {
+    const months = getMonthsBetween(new Date(), new Date(goal.targetDate));
+    const monthlyRate = goal.expectedReturn / 100 / 12;
+    const requiredMonthly = calculateRequiredMonthlyContribution();
+    
+    // Calculate future value of current amount
+    const currentFutureValue = goal.currentAmount * Math.pow(1 + monthlyRate, months);
+    
+    // Calculate future value of monthly contributions
+    const contributionFutureValue = requiredMonthly * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+    
+    return currentFutureValue + contributionFutureValue;
+  };
+
+  const getGoalProgress = () => {
+    return (goal.currentAmount / goal.targetAmount) * 100;
+  };
+
+  const getTimeToGoal = () => {
+    const months = getMonthsBetween(new Date(), new Date(goal.targetDate));
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+    
+    if (years > 0 && remainingMonths > 0) {
+      return `${years} year${years > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`;
+    } else if (years > 0) {
+      return `${years} year${years > 1 ? 's' : ''}`;
+    } else {
+      return `${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`;
+    }
+  };
+
+  const getAchievabilityStatus = () => {
+    const requiredMonthly = calculateRequiredMonthlyContribution();
+    const projectedValue = getProjectedValue();
+    
+    if (projectedValue >= goal.targetAmount * 0.95) {
+      return { status: 'Achievable', color: 'text-green-600', bg: 'bg-green-50' };
+    } else if (projectedValue >= goal.targetAmount * 0.8) {
+      return { status: 'Challenging', color: 'text-yellow-600', bg: 'bg-yellow-50' };
+    } else {
+      return { status: 'Difficult', color: 'text-red-600', bg: 'bg-red-50' };
+    }
+  };
+
+  const achievabilityStatus = getAchievabilityStatus();
+
+  const getRecommendations = () => {
+    const recommendations = [];
+    const requiredMonthly = calculateRequiredMonthlyContribution();
+    const projectedValue = getProjectedValue();
+    
+    if (projectedValue < goal.targetAmount) {
+      recommendations.push({
+        type: 'warning',
+        message: 'Consider increasing your monthly contribution or extending the timeline to reach your goal.'
+      });
     }
     
-    if (goals.filter(g => g.priority === 'high').length > 3) {
-      overallRecommendations.push("You have many high-priority goals. Consider focusing on 2-3 most important ones first.");
+    if (goal.expectedReturn < 6) {
+      recommendations.push({
+        type: 'info',
+        message: 'Consider higher-return investments like equity funds for long-term goals.'
+      });
     }
     
-    if (totalCurrentAmount / totalTargetAmount < 0.1) {
-      overallRecommendations.push("You're just starting your savings journey. Focus on building momentum with smaller, achievable goals.");
+    if (getGoalProgress() < 10) {
+      recommendations.push({
+        type: 'info',
+        message: 'Start with a smaller initial amount and gradually increase your contributions.'
+      });
     }
     
-    if (averageTimeToGoal < 6) {
-      overallRecommendations.push("Some of your goals have very short timelines. Consider if they're realistic.");
-    }
+    return recommendations;
+  };
 
-    // Generate different scenarios
-    const scenarios = [
-      {
-        scenario: "Conservative Approach",
-        monthlyContribution: Math.ceil(totalRemainingAmount / 24), // 2 years
-        description: "Spread savings over 2 years",
-        benefits: ["Lower monthly commitment", "More manageable", "Less financial stress"]
-      },
-      {
-        scenario: "Moderate Approach",
-        monthlyContribution: Math.ceil(totalRemainingAmount / 18), // 1.5 years
-        description: "Spread savings over 1.5 years",
-        benefits: ["Balanced approach", "Reasonable timeline", "Good progress"]
-      },
-      {
-        scenario: "Aggressive Approach",
-        monthlyContribution: Math.ceil(totalRemainingAmount / 12), // 1 year
-        description: "Spread savings over 1 year",
-        benefits: ["Faster goal achievement", "More motivation", "Earlier financial freedom"]
+  const recommendations = getRecommendations();
+
+  const getYearlyBreakdown = () => {
+    const months = getMonthsBetween(new Date(), new Date(goal.targetDate));
+    const yearlyBreakdown = [];
+    const monthlyRate = goal.expectedReturn / 100 / 12;
+    const requiredMonthly = calculateRequiredMonthlyContribution();
+    
+    let currentValue = goal.currentAmount;
+    
+    for (let year = 1; year <= Math.ceil(months / 12); year++) {
+      const yearStartValue = currentValue;
+      
+      // Calculate value at end of year
+      for (let month = 1; month <= 12 && (year - 1) * 12 + month <= months; month++) {
+        currentValue = currentValue * (1 + monthlyRate) + requiredMonthly;
       }
-    ];
-
-    setAnalysis({
-      totalTargetAmount,
-      totalCurrentAmount,
-      totalRemainingAmount,
-      totalMonthlyContribution,
-      averageTimeToGoal,
-      goals: goalAnalysis,
-      overallRecommendations,
-      scenarios
-    });
-    
-    setShowResults(true);
-  };
-
-  const getCategoryIcon = (categoryId: string) => {
-    const category = categories.find(c => c.id === categoryId);
-    return category?.icon || <DollarSign className="w-5 h-5" />;
-  };
-
-  const getCategoryColor = (categoryId: string) => {
-    const category = categories.find(c => c.id === categoryId);
-    return category?.color || 'bg-gray-500';
-  };
-
-  const getPriorityColor = (priority: string) => {
-    switch (priority) {
-      case 'high': return 'bg-red-100 text-red-800';
-      case 'medium': return 'bg-yellow-100 text-yellow-800';
-      case 'low': return 'bg-green-100 text-green-800';
-      default: return 'bg-gray-100 text-gray-800';
+      
+      const yearEndValue = currentValue;
+      const yearContribution = Math.min(12, months - (year - 1) * 12) * requiredMonthly;
+      const yearGrowth = yearEndValue - yearStartValue - yearContribution;
+      
+      yearlyBreakdown.push({
+        year,
+        yearStartValue,
+        yearContribution,
+        yearGrowth,
+        yearEndValue
+      });
     }
+    
+    return yearlyBreakdown;
   };
 
-  const resetCalculator = () => {
-    setGoals([{
-      id: '1',
-      name: 'Emergency Fund',
-      targetAmount: 100000,
-      currentAmount: 25000,
-      targetDate: '2025-12-31',
-      priority: 'high',
-      category: 'emergency'
-    }]);
-    setAnalysis(null);
-    setShowResults(false);
-  };
+  const yearlyBreakdown = getYearlyBreakdown();
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-100">
       <SEOHelmet
-        title="Free Savings Goal Calculator - Plan & Track Your Financial Goals | MoneyCal India"
-        description="Set and track multiple savings goals with our comprehensive calculator. Get personalized plans, timelines, and recommendations to achieve your financial objectives."
-        keywords="savings goal calculator, financial goals, savings plan, goal tracking, emergency fund, vacation savings, home purchase, financial planning"
-        url="/tools/savings-goal-calculator"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Savings Goal Calculator",
-          "description": "Plan and track multiple savings goals with personalized recommendations",
-          "url": "https://moneycal.in/tools/savings-goal-calculator",
-          "applicationCategory": "FinanceApplication",
-          "operatingSystem": "Web Browser"
-        }}
+        title="Savings Goal Calculator India - Calculate Monthly Savings Required | MoneyCal India"
+        description="Calculate how much you need to save monthly to reach your financial goals. Plan for house purchase, education, retirement, and other major expenses with our savings goal calculator."
+        keywords="savings goal calculator, monthly savings calculator, financial goal planning, savings target, goal calculator, savings planner, financial planning calculator"
+        canonicalUrl="https://moneycal.in/tools/savings-goal-calculator"
       />
-
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">
-                  Savings Goal Calculator
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Set and track multiple savings goals with personalized plans, timelines, and recommendations. 
-                Turn your financial dreams into achievable targets.
-              </p>
-            </motion.div>
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Savings Goal Calculator India
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Calculate how much you need to save monthly to reach your financial goals. Plan for major expenses like house purchase, education, retirement, and more.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Input Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-lg p-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Target className="w-6 h-6 mr-3 text-blue-600" />
-                Savings Goals
-              </h2>
-
-              {/* Goals List */}
-              <div className="space-y-4 mb-6">
-                {goals.map((goal, index) => (
-                  <div key={goal.id} className="p-4 border border-gray-200 rounded-lg">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="font-semibold text-gray-900">Goal #{index + 1}</h3>
-                      {goals.length > 1 && (
-                        <button
-                          onClick={() => removeGoal(goal.id)}
-                          className="text-red-600 hover:text-red-800"
-                        >
-                          Remove
-                        </button>
-                      )}
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Goal Name</label>
-                        <input
-                          type="text"
-                          value={goal.name}
-                          onChange={(e) => updateGoal(goal.id, 'name', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                          placeholder="e.g., Emergency Fund, Vacation"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
-                        <select
-                          value={goal.category}
-                          onChange={(e) => updateGoal(goal.id, 'category', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        >
-                          {categories.map(category => (
-                            <option key={category.id} value={category.id}>{category.name}</option>
-                          ))}
-                        </select>
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Target Amount (₹)</label>
-                        <input
-                          type="number"
-                          value={goal.targetAmount}
-                          onChange={(e) => updateGoal(goal.id, 'targetAmount', Number(e.target.value))}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                          placeholder="Enter target amount"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Current Amount (₹)</label>
-                        <input
-                          type="number"
-                          value={goal.currentAmount}
-                          onChange={(e) => updateGoal(goal.id, 'currentAmount', Number(e.target.value))}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                          placeholder="Enter current savings"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Target Date</label>
-                        <input
-                          type="date"
-                          value={goal.targetDate}
-                          onChange={(e) => updateGoal(goal.id, 'targetDate', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Priority</label>
-                        <select
-                          value={goal.priority}
-                          onChange={(e) => updateGoal(goal.id, 'priority', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                        >
-                          <option value="high">High Priority</option>
-                          <option value="medium">Medium Priority</option>
-                          <option value="low">Low Priority</option>
-                        </select>
-                      </div>
-                    </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Input Section */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Goal Details */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+                  <Target className="w-6 h-6 mr-2 text-blue-600" />
+                  Goal Details
+                </h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Target Amount (₹)
+                    </label>
+                    <input
+                      type="number"
+                      value={goal.targetAmount}
+                      onChange={(e) => setGoal({ ...goal, targetAmount: Number(e.target.value) })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Enter target amount"
+                    />
                   </div>
-                ))}
-              </div>
-
-              {/* Add Goal Button */}
-              <button
-                onClick={addGoal}
-                className="w-full bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 mb-6"
-              >
-                + Add Another Goal
-              </button>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={calculateSavingsPlan}
-                  className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
-                >
-                  <Target className="w-5 h-5 mr-2" />
-                  Calculate Savings Plan
-                </button>
-                <button
-                  onClick={resetCalculator}
-                  className="flex-1 bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors duration-200"
-                >
-                  Reset
-                </button>
-              </div>
-            </motion.div>
-
-            {/* Results */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-6"
-            >
-              {showResults && analysis && (
-                <>
-                  {/* Summary Cards */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-white rounded-2xl shadow-lg p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900">Total Target</h3>
-                        <Target className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <p className="text-3xl font-bold text-blue-600">₹{analysis.totalTargetAmount.toLocaleString()}</p>
-                    </div>
-                    
-                    <div className="bg-white rounded-2xl shadow-lg p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900">Total Saved</h3>
-                        <PiggyBank className="w-6 h-6 text-green-600" />
-                      </div>
-                      <p className="text-3xl font-bold text-green-600">₹{analysis.totalCurrentAmount.toLocaleString()}</p>
-                    </div>
-                    
-                    <div className="bg-white rounded-2xl shadow-lg p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900">Remaining</h3>
-                        <DollarSign className="w-6 h-6 text-orange-600" />
-                      </div>
-                      <p className="text-3xl font-bold text-orange-600">₹{analysis.totalRemainingAmount.toLocaleString()}</p>
-                    </div>
-                    
-                    <div className="bg-white rounded-2xl shadow-lg p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-lg font-semibold text-gray-900">Monthly Need</h3>
-                        <Calendar className="w-6 h-6 text-purple-600" />
-                      </div>
-                      <p className="text-3xl font-bold text-purple-600">₹{analysis.totalMonthlyContribution.toLocaleString()}</p>
-                    </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Current Amount (₹)
+                    </label>
+                    <input
+                      type="number"
+                      value={goal.currentAmount}
+                      onChange={(e) => setGoal({ ...goal, currentAmount: Number(e.target.value) })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Enter current amount"
+                    />
                   </div>
-
-                  {/* Individual Goals */}
-                  <div className="bg-white rounded-2xl shadow-lg p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                      <BarChart3 className="w-6 h-6 mr-3 text-blue-600" />
-                      Goal Analysis
-                    </h3>
-                    
-                    <div className="space-y-4">
-                      {analysis.goals.map((goalAnalysis, index) => (
-                        <div key={index} className="p-4 border border-gray-200 rounded-lg">
-                          <div className="flex items-center justify-between mb-3">
-                            <div className="flex items-center">
-                              <div className={`p-2 rounded-lg ${getCategoryColor(goalAnalysis.goal.category)} text-white mr-3`}>
-                                {getCategoryIcon(goalAnalysis.goal.category)}
-                              </div>
-                              <div>
-                                <h4 className="font-semibold text-gray-900">{goalAnalysis.goal.name}</h4>
-                                <div className="flex items-center gap-2">
-                                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(goalAnalysis.goal.priority)}`}>
-                                    {goalAnalysis.goal.priority} priority
-                                  </span>
-                                  {goalAnalysis.isOnTrack ? (
-                                    <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
-                                      On Track
-                                    </span>
-                                  ) : (
-                                    <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">
-                                      Needs Attention
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm mb-3">
-                            <div>
-                              <p className="text-gray-500">Target</p>
-                              <p className="font-semibold text-gray-900">₹{goalAnalysis.goal.targetAmount.toLocaleString()}</p>
-                            </div>
-                            <div>
-                              <p className="text-gray-500">Current</p>
-                              <p className="font-semibold text-gray-900">₹{goalAnalysis.goal.currentAmount.toLocaleString()}</p>
-                            </div>
-                            <div>
-                              <p className="text-gray-500">Monthly Need</p>
-                              <p className="font-semibold text-gray-900">₹{goalAnalysis.monthlyContribution.toLocaleString()}</p>
-                            </div>
-                            <div>
-                              <p className="text-gray-500">Time Left</p>
-                              <p className="font-semibold text-gray-900">{goalAnalysis.monthsToTarget} months</p>
-                            </div>
-                          </div>
-                          
-                          {/* Progress Bar */}
-                          <div className="mb-3">
-                            <div className="flex justify-between text-sm text-gray-600 mb-1">
-                              <span>Progress</span>
-                              <span>{((goalAnalysis.goal.currentAmount / goalAnalysis.goal.targetAmount) * 100).toFixed(1)}%</span>
-                            </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2">
-                              <div 
-                                className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-1000"
-                                style={{ width: `${Math.min(100, (goalAnalysis.goal.currentAmount / goalAnalysis.goal.targetAmount) * 100)}%` }}
-                              ></div>
-                            </div>
-                          </div>
-                          
-                          {/* Recommendations */}
-                          {goalAnalysis.recommendations.length > 0 && (
-                            <div className="mt-3">
-                              <p className="text-sm font-medium text-gray-700 mb-2">Recommendations:</p>
-                              <ul className="space-y-1">
-                                {goalAnalysis.recommendations.map((rec, recIndex) => (
-                                  <li key={recIndex} className="text-sm text-gray-600 flex items-start">
-                                    <CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                                    {rec}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Target Date
+                    </label>
+                    <input
+                      type="date"
+                      value={goal.targetDate}
+                      onChange={(e) => setGoal({ ...goal, targetDate: e.target.value })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
                   </div>
-
-                  {/* Different Scenarios */}
-                  <div className="bg-white rounded-2xl shadow-lg p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                      <TrendingUp className="w-6 h-6 mr-3 text-blue-600" />
-                      Savings Scenarios
-                    </h3>
-                    
-                    <div className="space-y-4">
-                      {analysis.scenarios.map((scenario, index) => (
-                        <div key={index} className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-                          <div className="flex items-center justify-between mb-3">
-                            <h4 className="font-semibold text-gray-900">{scenario.scenario}</h4>
-                            <span className="text-sm font-semibold text-blue-600">₹{scenario.monthlyContribution.toLocaleString()}/month</span>
-                          </div>
-                          <p className="text-sm text-gray-600 mb-3">{scenario.description}</p>
-                          <div className="flex flex-wrap gap-2">
-                            {scenario.benefits.map((benefit, benefitIndex) => (
-                              <span key={benefitIndex} className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
-                                {benefit}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Expected Annual Return (%)
+                    </label>
+                    <input
+                      type="number"
+                      step="0.1"
+                      value={goal.expectedReturn}
+                      onChange={(e) => setGoal({ ...goal, expectedReturn: Number(e.target.value) })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Enter expected return"
+                    />
                   </div>
-
-                  {/* Overall Recommendations */}
-                  <div className="bg-white rounded-2xl shadow-lg p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                      <Zap className="w-6 h-6 mr-3 text-blue-600" />
-                      Overall Recommendations
-                    </h3>
-                    
-                    <div className="space-y-3">
-                      {analysis.overallRecommendations.map((recommendation, index) => (
-                        <div key={index} className="flex items-start p-3 bg-blue-50 rounded-lg">
-                          <CheckCircle className="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" />
-                          <p className="text-gray-700">{recommendation}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </>
-              )}
-
-              {!showResults && (
-                <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-                  <Target className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Ready to Set Your Savings Goals?</h3>
-                  <p className="text-gray-600">
-                    Add your financial goals to get a personalized savings plan with timelines and recommendations.
-                  </p>
                 </div>
-              )}
-            </motion.div>
+              </div>
+
+              {/* Yearly Breakdown */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+                  <Calendar className="w-6 h-6 mr-2 text-green-600" />
+                  Yearly Breakdown
+                </h2>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-3 px-4 font-semibold text-gray-900">Year</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-900">Start Value</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-900">Contributions</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-900">Growth</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-900">End Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {yearlyBreakdown.map((item) => (
+                        <tr key={item.year} className="border-b border-gray-100 hover:bg-gray-50">
+                          <td className="py-3 px-4 text-gray-900">{item.year}</td>
+                          <td className="py-3 px-4 text-right text-gray-900">₹{item.yearStartValue.toLocaleString()}</td>
+                          <td className="py-3 px-4 text-right text-blue-600">₹{item.yearContribution.toLocaleString()}</td>
+                          <td className="py-3 px-4 text-right text-green-600">₹{item.yearGrowth.toLocaleString()}</td>
+                          <td className="py-3 px-4 text-right text-purple-600 font-semibold">₹{item.yearEndValue.toLocaleString()}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Results Section */}
+            <div className="space-y-6">
+              {/* Goal Summary */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <Calculator className="w-6 h-6 mr-2 text-purple-600" />
+                  Goal Summary
+                </h2>
+                
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                    <span className="text-blue-700">Target Amount</span>
+                    <span className="font-semibold text-blue-600">₹{goal.targetAmount.toLocaleString()}</span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                    <span className="text-green-700">Current Amount</span>
+                    <span className="font-semibold text-green-600">₹{goal.currentAmount.toLocaleString()}</span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
+                    <span className="text-purple-700">Required Monthly</span>
+                    <span className="font-semibold text-purple-600">₹{calculateRequiredMonthlyContribution().toLocaleString()}</span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
+                    <span className="text-orange-700">Time to Goal</span>
+                    <span className="font-semibold text-orange-600">{getTimeToGoal()}</span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center p-3 bg-teal-50 rounded-lg">
+                    <span className="text-teal-700">Projected Value</span>
+                    <span className="font-semibold text-teal-600">₹{getProjectedValue().toLocaleString()}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Progress Tracking */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <PieChart className="w-6 h-6 mr-2 text-green-600" />
+                  Progress Tracking
+                </h2>
+                
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-gray-700">Goal Progress</span>
+                      <span className="text-sm text-gray-600">{getGoalProgress().toFixed(1)}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3">
+                      <div
+                        className="bg-green-500 h-3 rounded-full"
+                        style={{ width: `${getGoalProgress()}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                  
+                  <div className={`p-3 rounded-lg ${achievabilityStatus.bg}`}>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-gray-700">Achievability</span>
+                      <span className={`font-semibold ${achievabilityStatus.color}`}>
+                        {achievabilityStatus.status}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Key Insights */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <TrendingUp className="w-6 h-6 mr-2 text-blue-600" />
+                  Key Insights
+                </h2>
+                
+                <div className="space-y-3">
+                  <div className="p-3 bg-blue-50 rounded-lg">
+                    <p className="text-sm text-blue-800">
+                      <strong>Total Contributions:</strong> ₹{(calculateRequiredMonthlyContribution() * getMonthsBetween(new Date(), new Date(goal.targetDate))).toLocaleString()}
+                    </p>
+                  </div>
+                  
+                  <div className="p-3 bg-green-50 rounded-lg">
+                    <p className="text-sm text-green-800">
+                      <strong>Interest Earned:</strong> ₹{(getProjectedValue() - goal.currentAmount - (calculateRequiredMonthlyContribution() * getMonthsBetween(new Date(), new Date(goal.targetDate)))).toLocaleString()}
+                    </p>
+                  </div>
+                  
+                  <div className="p-3 bg-purple-50 rounded-lg">
+                    <p className="text-sm text-purple-800">
+                      <strong>Monthly Rate:</strong> {(goal.expectedReturn / 12).toFixed(2)}%
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Recommendations */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <AlertCircle className="w-6 h-6 mr-2 text-orange-600" />
+                  Recommendations
+                </h2>
+                
+                <div className="space-y-3">
+                  {recommendations.map((rec, index) => (
+                    <div key={index} className={`p-3 rounded-lg ${
+                      rec.type === 'warning' ? 'bg-yellow-50 border border-yellow-200' :
+                      'bg-blue-50 border border-blue-200'
+                    }`}>
+                      <p className={`text-sm ${
+                        rec.type === 'warning' ? 'text-yellow-800' : 'text-blue-800'
+                      }`}>
+                        {rec.message}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Educational Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-16 bg-white rounded-2xl shadow-lg p-8"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Savings Goals Guide</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Setting SMART Goals</h3>
-                <p className="text-gray-600 mb-4">
-                  Make your savings goals Specific, Measurable, Achievable, Relevant, and Time-bound.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Specific: Define exactly what you're saving for</li>
-                  <li>• Measurable: Set clear amounts and deadlines</li>
-                  <li>• Achievable: Ensure goals are realistic</li>
-                  <li>• Relevant: Align with your priorities</li>
-                  <li>• Time-bound: Set specific target dates</li>
-                </ul>
-              </div>
+          <div className="mt-8 bg-white rounded-xl shadow-lg p-6">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Savings Goal Planning Guide</h2>
+            
+            <div className="prose max-w-none">
+              <h3>What is a Savings Goal?</h3>
+              <p>
+                A savings goal is a specific financial target you want to achieve within a certain timeframe. 
+                It could be for a house down payment, education expenses, retirement, or any other major financial objective.
+              </p>
               
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Priority-Based Saving</h3>
-                <p className="text-gray-600 mb-4">
-                  Prioritize your goals to focus on what matters most and avoid spreading yourself too thin.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• High Priority: Emergency fund, essential needs</li>
-                  <li>• Medium Priority: Important wants, future needs</li>
-                  <li>• Low Priority: Nice-to-have items, luxuries</li>
-                  <li>• Focus on 2-3 goals at a time maximum</li>
-                </ul>
-              </div>
+              <h3>Types of Savings Goals</h3>
+              <ul>
+                <li><strong>Short-term Goals (1-3 years):</strong> Emergency fund, vacation, car purchase</li>
+                <li><strong>Medium-term Goals (3-7 years):</strong> House down payment, education expenses</li>
+                <li><strong>Long-term Goals (7+ years):</strong> Retirement, children's education, wealth building</li>
+              </ul>
               
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Automation & Tracking</h3>
-                <p className="text-gray-600 mb-4">
-                  Automate your savings and track progress regularly to stay motivated and on track.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Set up automatic transfers</li>
-                  <li>• Use separate savings accounts</li>
-                  <li>• Review progress monthly</li>
-                  <li>• Celebrate milestones</li>
-                </ul>
-              </div>
+              <h3>How to Set Realistic Savings Goals</h3>
+              <ol>
+                <li><strong>Define Your Goal:</strong> Be specific about what you want to achieve</li>
+                <li><strong>Set a Timeline:</strong> Determine when you want to achieve the goal</li>
+                <li><strong>Calculate the Amount:</strong> Estimate the total amount needed</li>
+                <li><strong>Consider Inflation:</strong> Factor in price increases over time</li>
+                <li><strong>Plan Monthly Contributions:</strong> Calculate required monthly savings</li>
+                <li><strong>Choose Investment Vehicle:</strong> Select appropriate savings/investment options</li>
+              </ol>
+              
+              <h3>Investment Options for Different Goals</h3>
+              <ul>
+                <li><strong>Short-term Goals:</strong> Fixed deposits, liquid funds, short-term debt funds</li>
+                <li><strong>Medium-term Goals:</strong> Balanced funds, hybrid funds, large-cap funds</li>
+                <li><strong>Long-term Goals:</strong> Equity funds, index funds, direct equity</li>
+              </ul>
+              
+              <h3>Tips for Achieving Savings Goals</h3>
+              <ul>
+                <li>Start early to benefit from compound interest</li>
+                <li>Automate your savings contributions</li>
+                <li>Increase contributions annually</li>
+                <li>Review and adjust goals regularly</li>
+                <li>Use windfalls (bonuses, tax refunds) for goals</li>
+                <li>Cut unnecessary expenses to boost savings</li>
+              </ul>
+              
+              <h3>Common Mistakes to Avoid</h3>
+              <ul>
+                <li>Setting unrealistic timelines or amounts</li>
+                <li>Not considering inflation in calculations</li>
+                <li>Choosing inappropriate investment vehicles</li>
+                <li>Not reviewing and adjusting goals regularly</li>
+                <li>Dipping into goal savings for other expenses</li>
+              </ul>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
