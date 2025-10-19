@@ -39,11 +39,12 @@ const EmiCalculator: React.FC = () => {
   useEffect(() => {
     const tenureMonths = tenureType === 'years' ? loanTenure * 12 : loanTenure;
     const emiResult = calculateEMI(loanAmount, interestRate, tenureMonths);
-    const breakupResult = calculateLoanBreakup(loanAmount, interestRate, tenureMonths);
     
     setEmi(emiResult);
-    setTotalInterest(breakupResult.totalInterest);
-    setTotalPayment(breakupResult.totalPayment);
+    const calculatedTotalPayment = emiResult * tenureMonths;
+    const calculatedTotalInterest = calculatedTotalPayment - loanAmount;
+    setTotalInterest(calculatedTotalInterest);
+    setTotalPayment(calculatedTotalPayment);
     
     // Generate year-wise breakup
     const yearlyBreakup: { principal: number; interest: number; balance: number; year: number }[] = [];
