@@ -204,6 +204,7 @@ const GSTRCMCalculator = lazy(() => import('./pages/gst/GSTRCMCalculator'));
 const GSTTurnoverTracker = lazy(() => import('./pages/gst/GSTTurnoverTracker'));
 const GSTRateImpactAnalyzer = lazy(() => import('./pages/gst/GSTRateImpactAnalyzer'));
 const Gstr1DeadlineCalculatorPage = lazy(() => import('./pages/Gstr1DeadlineCalculatorPage'));
+const EmiCalculatorPage = lazy(() => import('./pages/EmiCalculatorPage'));
 const GSTAmountCalculatorPage = lazy(() => import('./pages/gst/GSTAmountCalculatorPage'));
 const ReverseGSTCalculatorPage = lazy(() => import('./pages/gst/ReverseGSTCalculatorPage'));
 const GSTSlabCalculatorPage = lazy(() => import('./pages/gst/GSTSlabCalculatorPage'));
@@ -361,7 +362,7 @@ function App() {
                 <Route path="/home-old" element={<HomeOld />} />
                 <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
                 {/* Direct Calculator Routes */}
-                <Route path="/calculators/emi-calculator" element={<CalculatorPage calculatorId="emi-calculator" />} />
+                <Route path="/calculators/emi-calculator" element={<EmiCalculatorPage />} />
                 {/* Math & Education Calculators */}
                 <Route path="/calculators/lcm-hcf-calculator" element={<CalculatorPage calculatorId="lcm-hcf-calculator" />} />
                 {calculatorCategories.flatMap(category =>
