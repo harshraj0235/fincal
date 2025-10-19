@@ -61,12 +61,12 @@ const HomeInvestopedia: React.FC = () => {
         subtitle: 'Most popular calculators used by Indian investors'
       },
       categories: [
-        { name: 'Investment Tools', icon: TrendingUp, count: 50, color: 'from-blue-500 to-indigo-600' },
-        { name: 'Tax Calculators', icon: Calculator, count: 30, color: 'from-green-500 to-emerald-600' },
-        { name: 'GST Tools', icon: BarChart3, count: 100, color: 'from-purple-500 to-pink-600' },
-        { name: 'Loan Calculators', icon: DollarSign, count: 25, color: 'from-orange-500 to-red-600' },
-        { name: 'Banking Tools', icon: Building, count: 20, color: 'from-cyan-500 to-blue-600' },
-        { name: 'Insurance Tools', icon: Shield, count: 15, color: 'from-violet-500 to-purple-600' }
+        { name: 'Investment Tools', icon: TrendingUp, count: 50, color: 'from-blue-500 to-indigo-600', url: '/investing-tools' },
+        { name: 'Tax Calculators', icon: Calculator, count: 30, color: 'from-green-500 to-emerald-600', url: '/tax-tools' },
+        { name: 'GST Tools', icon: BarChart3, count: 100, color: 'from-purple-500 to-pink-600', url: '/gst-tools' },
+        { name: 'Loan Calculators', icon: DollarSign, count: 25, color: 'from-orange-500 to-red-600', url: '/loan-tools' },
+        { name: 'Banking Tools', icon: Building, count: 20, color: 'from-cyan-500 to-blue-600', url: '/bank-tools' },
+        { name: 'Insurance Tools', icon: Shield, count: 15, color: 'from-violet-500 to-purple-600', url: '/insurance-tools' }
       ],
       news: {
         title: 'Latest Financial News',
@@ -94,7 +94,15 @@ const HomeInvestopedia: React.FC = () => {
       featured: {
         title: 'विशेष टूल्स',
         subtitle: 'भारतीय निवेशकों द्वारा सबसे अधिक उपयोग किए जाने वाले कैलकुलेटर'
-      }
+      },
+      categories: [
+        { name: 'निवेश उपकरण', icon: TrendingUp, count: 50, color: 'from-blue-500 to-indigo-600', url: '/investing-tools' },
+        { name: 'कर कैलकुलेटर', icon: Calculator, count: 30, color: 'from-green-500 to-emerald-600', url: '/tax-tools' },
+        { name: 'GST उपकरण', icon: BarChart3, count: 100, color: 'from-purple-500 to-pink-600', url: '/gst-tools' },
+        { name: 'लोन कैलकुलेटर', icon: DollarSign, count: 25, color: 'from-orange-500 to-red-600', url: '/loan-tools' },
+        { name: 'बैंकिंग उपकरण', icon: Building, count: 20, color: 'from-cyan-500 to-blue-600', url: '/bank-tools' },
+        { name: 'बीमा उपकरण', icon: Shield, count: 15, color: 'from-violet-500 to-purple-600', url: '/insurance-tools' }
+      ]
     }
   };
 
@@ -249,7 +257,7 @@ const HomeInvestopedia: React.FC = () => {
                     <h3 className="text-2xl font-bold mb-2 text-gray-900">{category.name}</h3>
                     <p className="text-gray-600 mb-4">{category.count} {language === 'en' ? 'Tools Available' : 'टूल्स उपलब्ध'}</p>
                     <Link
-                      to={`/tools/${category.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      to={category.url}
                       className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform"
                     >
                       {language === 'en' ? 'Explore' : 'देखें'}
