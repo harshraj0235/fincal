@@ -47,11 +47,7 @@ const HSNSACFinderPage: React.FC = () => {
           { name: 'HSN/SAC Finder', url: 'https://moneycal.in/gst-tools/gst-hsn-sac-finder' }
         ]}
       />
-      <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50">
-        <div className="container mx-auto px-4 py-8">
-          <HSNSACFinder />
-        </div>
-      </div>
+      <HSNSACFinder />
     </>
   );
 };

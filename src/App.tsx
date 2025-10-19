@@ -649,6 +649,7 @@ function App() {
             <Route path="/tools/gstr-3b-deadline-calculator" element={<GSTR3BDeadlineCalculatorPage />} />
             <Route path="/gst-tools/gst-hsn-sac-finder" element={<HSNSACFinderPage />} />
             <Route path="/tools/hsn-sac-finder" element={<HSNSACFinderPage />} />
+            <Route path="/tools/gst-hsn-sac-finder" element={<HSNSACFinderPage />} />
             <Route path="/gst-tools/gst-liability-calculator" element={<GSTLiabilityCalculatorPage />} />
             <Route path="/tools/gst-liability-calculator" element={<GSTLiabilityCalculatorPage />} />
             <Route path="/gst-tools/composition-scheme-eligibility-checker" element={<CompositionSchemeCheckerPage />} />
