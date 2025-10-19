@@ -1305,3 +1305,4 @@ export const EmiCalculator: React.FC = () => {
 };
 
 export default EmiCalculator;
+export { EmiCalculator };
