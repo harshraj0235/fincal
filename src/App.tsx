@@ -208,6 +208,8 @@ const GSTSlabCalculatorPage = lazy(() => import('./pages/gst/GSTSlabCalculatorPa
 const GSTR3BDeadlineCalculatorPage = lazy(() => import('./pages/gst/GSTR3BDeadlineCalculatorPage'));
 const HSNSACFinderPage = lazy(() => import('./pages/gst/HSNSACFinderPage'));
 const GSTLiabilityCalculatorPage = lazy(() => import('./pages/gst/GSTLiabilityCalculatorPage'));
+const CompositionSchemeCheckerPage = lazy(() => import('./pages/gst/CompositionSchemeCheckerPage'));
+const ITCEligibilityCheckerPage = lazy(() => import('./pages/gst/ITCEligibilityCheckerPage'));
 const InvoicingReceivablesHub = lazy(() => import('./pages/InvoicingReceivablesHub'));
 const CustomInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/CustomInvoiceGenerator'));
 const InvoiceDueDateTracker = lazy(() => import('./pages/invoicing-tools/InvoiceDueDateTracker'));
@@ -645,6 +647,10 @@ function App() {
             <Route path="/tools/hsn-sac-finder" element={<HSNSACFinderPage />} />
             <Route path="/gst-tools/gst-liability-calculator" element={<GSTLiabilityCalculatorPage />} />
             <Route path="/tools/gst-liability-calculator" element={<GSTLiabilityCalculatorPage />} />
+            <Route path="/gst-tools/composition-scheme-eligibility-checker" element={<CompositionSchemeCheckerPage />} />
+            <Route path="/tools/composition-scheme-checker" element={<CompositionSchemeCheckerPage />} />
+            <Route path="/gst-tools/itc-eligibility-checker" element={<ITCEligibilityCheckerPage />} />
+            <Route path="/tools/itc-eligibility-checker" element={<ITCEligibilityCheckerPage />} />
             <Route path="/gst-tools/:slug" element={<GSTToolPlaceholder />} />
         <Route path="/invoicing-receivables" element={<InvoicingReceivablesHub />} />
         <Route path="/invoicing-tools" element={<InvoicingReceivablesHub />} />
