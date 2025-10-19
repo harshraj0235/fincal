@@ -210,7 +210,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
 
     // Structured Data (JSON-LD) - isolate per-page script to avoid clobbering global ones
     const dataHash = btoa(unescape(encodeURIComponent(JSON.stringify({ title, url: url || window.location.pathname })))).slice(0, 12);
-    const scriptId = `jsonld-${dataHash}`;
+    const scriptId = `jsonld-helm-${dataHash}`;
     let jsonLdScript = document.querySelector(`script#${scriptId}`) as HTMLScriptElement | null;
     if (finalStructuredData) {
       if (!jsonLdScript) {
@@ -232,9 +232,8 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
           if (link) link.remove();
         });
       }
-      if (finalStructuredData && jsonLdScript) {
-        jsonLdScript.remove();
-      }
+      // Do not remove other JSON-LD scripts; only remove our own tagged one
+      if (jsonLdScript) jsonLdScript.remove();
     };
   }, [title, description, keywords, image, url, type, structuredData, articlePublishedTime, articleModifiedTime, author, section, tags, noIndex, noFollow, alternateLanguages, breadcrumbs, faqData, calculatorData]);
 
