@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
+import { formatCurrency, calculateEMI } from '../utils/calculatorUtils';
 import { 
   Sliders, Calculator, TrendingUp, Info, ExternalLink, DollarSign, 
   Calendar, Percent, Award, Download, Share2, BookOpen, CheckCircle2,
-  Target, Sparkles, Home, Car, Briefcase, GraduationCap, Building2,
+  Target, Sparkles, Home, Car, Briefcase, Building2,
   ChevronDown, ChevronUp, BarChart3, PieChart as PieChartIcon, LineChart,
-  Zap, ArrowRight, Clock, AlertCircle, FileText, RefreshCw
+  ArrowRight, FileText
 } from 'lucide-react';
 import { ResultChart } from '../components/ResultChart';
 import { BarChart } from '../components/BarChart';
@@ -17,7 +17,6 @@ const EmiCalculator: React.FC = () => {
   const [interestRate, setInterestRate] = useState<number>(8.5);
   const [loanTenure, setLoanTenure] = useState<number>(20);
   const [tenureType, setTenureType] = useState<'years' | 'months'>('years');
-  const [prepayment, setPrepayment] = useState<number>(0);
   const [emi, setEmi] = useState<number>(0);
   const [totalInterest, setTotalInterest] = useState<number>(0);
   const [totalPayment, setTotalPayment] = useState<number>(0);
@@ -28,12 +27,11 @@ const EmiCalculator: React.FC = () => {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [loanType, setLoanType] = useState<'home' | 'car' | 'personal' | 'business'>('home');
   const [showAmortization, setShowAmortization] = useState<boolean>(false);
-  
+
   // Manual input states
   const [manualLoanAmount, setManualLoanAmount] = useState<string>(loanAmount.toString());
   const [manualInterestRate, setManualInterestRate] = useState<string>(interestRate.toString());
   const [manualTenure, setManualTenure] = useState<string>(loanTenure.toString());
-  const [manualPrepayment, setManualPrepayment] = useState<string>(prepayment.toString());
 
   // Calculate EMI and breakup
   useEffect(() => {
@@ -74,15 +72,14 @@ const EmiCalculator: React.FC = () => {
     }
     
     setBreakup(yearlyBreakup);
-  }, [loanAmount, interestRate, loanTenure, tenureType, prepayment]);
+  }, [loanAmount, interestRate, loanTenure, tenureType]);
 
   // Update manual inputs when sliders change
   useEffect(() => {
     setManualLoanAmount(loanAmount.toString());
     setManualInterestRate(interestRate.toString());
     setManualTenure(loanTenure.toString());
-    setManualPrepayment(prepayment.toString());
-  }, [loanAmount, interestRate, loanTenure, prepayment]);
+  }, [loanAmount, interestRate, loanTenure]);
 
   // Handle manual input changes
   const handleManualLoanAmount = (value: string) => {
@@ -106,11 +103,6 @@ const EmiCalculator: React.FC = () => {
     }
   };
 
-  const handleManualPrepayment = (value: string) => {
-    setManualPrepayment(value);
-    const num = parseFloat(value);
-    if (!isNaN(num) && num >= 0 && num <= loanAmount) setPrepayment(num);
-  };
 
   // Loan type presets
   const loanTypePresets = {
@@ -462,8 +454,10 @@ const EmiCalculator: React.FC = () => {
       >
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="absolute top-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        
+        <div
+          className="absolute bottom-10 left-10 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: '1s' }}
+        ></div>
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ scale: 0 }}
@@ -612,7 +606,7 @@ const EmiCalculator: React.FC = () => {
                           <input 
                             type="number"
                             value={manualLoanAmount}
-                            onChange={(e) => handleManualLoanAmount(e.target.value)}
+                            onChange={(e: { target: { value: string; }; }) => handleManualLoanAmount(e.target.value)}
                             className="w-32 px-3 py-2 text-sm border-2 border-blue-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                             min="100000"
                             max="50000000"
