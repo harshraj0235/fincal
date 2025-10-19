@@ -6,9 +6,11 @@ import {
   ArrowRight, Star, Zap, Shield, Award, BarChart3, Target,
   Sparkles, Rocket, Heart, CheckCircle, Play, Search, ChevronRight,
   DollarSign, Building, Briefcase, Umbrella, PartyPopper, GraduationCap,
-  HelpCircle, Gift, Sparkle, Layout, FileText, Building2
+  HelpCircle, Gift, Sparkle, Layout, FileText, Building2, Clock, Tag
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
+import { blogPosts as blogPosts0 } from '../data/blogData';
+import { blogPosts as blogPosts1 } from '../data/blogData1';
 
 const HomeInvestopedia: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -569,6 +571,106 @@ const HomeInvestopedia: React.FC = () => {
                     <p className="text-sm text-gray-600">{course.lessons} {language === 'en' ? 'lessons' : 'पाठ'}</p>
                   </motion.div>
                 ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Latest Blog Posts & News */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  {language === 'en' ? 'Latest Financial Articles & Guides' : 'नवीनतम वित्तीय लेख और गाइड'}
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                {language === 'en' ? 'Expert insights, tips, and comprehensive guides to master your finances' : 'विशेषज्ञ अंतर्दृष्टि, टिप्स और अपने वित्त में महारत हासिल करने के लिए व्यापक गाइड'}
+              </p>
+            </motion.div>
+
+            {/* Blog Posts Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {[...blogPosts0, ...blogPosts1].slice(0, 6).map((post, index) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="group"
+                >
+                  <Link to={`/blog/${post.slug}`} className="block">
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                      {/* Image */}
+                      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100">
+                        <img 
+                          src={post.coverImage} 
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-purple-700">
+                            {post.categories[0]}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="p-6">
+                        <div className="flex items-center gap-3 mb-3 text-sm text-gray-600">
+                          <div className="flex items-center">
+                            <Clock className="w-4 h-4 mr-1" />
+                            {post.date}
+                          </div>
+                          <div className="flex items-center">
+                            <Tag className="w-4 h-4 mr-1" />
+                            {post.author}
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                          {post.title}
+                        </h3>
+                        
+                        <p className="text-gray-600 line-clamp-3 mb-4">
+                          {post.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
+                          {language === 'en' ? 'Read More' : 'और पढ़ें'}
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All Blog Button */}
+            <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all"
+                >
+                  <Newspaper className="w-5 h-5 mr-2" />
+                  {language === 'en' ? 'View All Articles' : 'सभी लेख देखें'}
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
               </motion.div>
             </div>
           </div>
