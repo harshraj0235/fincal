@@ -145,12 +145,12 @@ export const PpfCalculator: React.FC = () => {
   ];
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen w-full bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 -mx-4 -my-4 md:-mx-8 md:-my-8">
       {/* Hero Header with Glassmorphism */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-16 px-4"
+        className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 md:py-16 px-4 md:px-8"
       >
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="relative max-w-7xl mx-auto text-center">
@@ -192,8 +192,8 @@ export const PpfCalculator: React.FC = () => {
       </motion.div>
 
       {/* Tab Navigation */}
-      <div className="max-w-7xl mx-auto px-4 -mt-8">
-        <div className="bg-white rounded-2xl shadow-xl p-2 flex flex-wrap gap-2">
+      <div className="w-full px-4 md:px-8 -mt-8">
+        <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-2 flex flex-wrap gap-2">
           {[
             { id: 'calculator', label: 'Calculator', icon: Calculator },
             { id: 'guide', label: 'How to Use', icon: BookOpen },
@@ -217,7 +217,8 @@ export const PpfCalculator: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="w-full px-4 md:px-8 py-6 md:py-8">
+        <div className="max-w-7xl mx-auto">
         <AnimatePresence mode="wait">
           {activeTab === 'calculator' && (
             <motion.div
@@ -465,8 +466,8 @@ export const PpfCalculator: React.FC = () => {
                       <Shield className="w-5 h-5" />
                       Tax Benefits
                     </motion.button>
-                  </div>
-
+        </div>
+        
                   {/* Tax Benefits Breakdown */}
                   <AnimatePresence>
                     {showTaxBenefits && (
@@ -1267,6 +1268,7 @@ export const PpfCalculator: React.FC = () => {
             </a>
           </div>
         </motion.div>
+        </div>
       </div>
     </div>
   );
