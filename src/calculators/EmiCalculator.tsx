@@ -12,7 +12,7 @@ import { ResultChart } from '../components/ResultChart';
 import { BarChart } from '../components/BarChart';
 import WhyChooseUs from '../components/WhyChooseUs';
 
-export const EmiCalculator: React.FC = () => {
+const EmiCalculator: React.FC = () => {
   const [loanAmount, setLoanAmount] = useState<number>(2500000);
   const [interestRate, setInterestRate] = useState<number>(8.5);
   const [loanTenure, setLoanTenure] = useState<number>(20);
