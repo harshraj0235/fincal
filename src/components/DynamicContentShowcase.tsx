@@ -148,73 +148,78 @@ export const DynamicContentShowcase: React.FC<DynamicContentShowcaseProps> = ({ 
         </div>
 
         {/* Featured Item (First Large Card) */}
-        {displayItems[0] && (
-          <motion.div
-            key={`featured-${displayItems[0].id}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
-          >
-            <Link to={displayItems[0].url}>
-              <motion.div
-                whileHover={{ y: -5, scale: 1.01 }}
-                className={`bg-gradient-to-r ${displayItems[0].color} rounded-3xl shadow-2xl overflow-hidden`}
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  <div className="p-8 md:p-12 text-white flex flex-col justify-center">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold">
-                        ⭐ FEATURED
-                      </div>
-                      {displayItems[0].badge && (
-                        <div className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">
-                          {displayItems[0].badge}
+        {displayItems[0] && (() => {
+          const FeaturedIcon = displayItems[0].icon;
+          return (
+            <motion.div
+              key={`featured-${displayItems[0].id}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8"
+            >
+              <Link to={displayItems[0].url}>
+                <motion.div
+                  whileHover={{ y: -5, scale: 1.01 }}
+                  className={`bg-gradient-to-r ${displayItems[0].color} rounded-3xl shadow-2xl overflow-hidden`}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div className="p-8 md:p-12 text-white flex flex-col justify-center">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold">
+                          ⭐ FEATURED
                         </div>
-                      )}
+                        {displayItems[0].badge && (
+                          <div className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">
+                            {displayItems[0].badge}
+                          </div>
+                        )}
+                      </div>
+                      <h3 className="text-3xl md:text-4xl font-bold mb-4">{displayItems[0].title}</h3>
+                      <p className="text-xl text-white/90 mb-6">{displayItems[0].description}</p>
+                      <div className="flex items-center text-white font-semibold text-lg">
+                        {language === 'en' ? 'Try Now' : 'अभी आज़माएं'}
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </div>
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold mb-4">{displayItems[0].title}</h3>
-                    <p className="text-xl text-white/90 mb-6">{displayItems[0].description}</p>
-                    <div className="flex items-center text-white font-semibold text-lg">
-                      {language === 'en' ? 'Try Now' : 'अभी आज़माएं'}
-                      <ArrowRight className="w-5 h-5 ml-2" />
+                    <div className="hidden md:flex items-center justify-center p-12 bg-white/10 backdrop-blur-sm">
+                      <motion.div
+                        animate={{ 
+                          scale: [1, 1.1, 1],
+                          rotate: [0, 5, -5, 0]
+                        }}
+                        transition={{ duration: 4, repeat: Infinity }}
+                      >
+                        <FeaturedIcon className="w-32 h-32 text-white opacity-80" />
+                      </motion.div>
                     </div>
                   </div>
-                  <div className="hidden md:flex items-center justify-center p-12 bg-white/10 backdrop-blur-sm">
-                    <motion.div
-                      animate={{ 
-                        scale: [1, 1.1, 1],
-                        rotate: [0, 5, -5, 0]
-                      }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                    >
-                      <displayItems[0].icon className="w-32 h-32 text-white opacity-80" />
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
-          </motion.div>
-        )}
+                </motion.div>
+              </Link>
+            </motion.div>
+          );
+        })()}
 
         {/* News-Style Grid (Remaining 14 Items) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayItems.slice(1, 15).map((item, index) => (
-            <motion.div
-              key={`${item.id}-${index}`}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: index * 0.05 }}
-              whileHover={{ y: -8, scale: 1.03 }}
-              className="group"
-            >
-              <Link to={item.url}>
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 h-full">
-                  {/* Icon Header */}
-                  <div className={`bg-gradient-to-r ${item.color} p-6 relative`}>
-                    <div className="flex items-start justify-between">
-                      <div className={`bg-white/20 backdrop-blur-sm p-3 rounded-xl`}>
-                        <item.icon className="w-8 h-8 text-white" />
-                      </div>
+          {displayItems.slice(1, 15).map((item, index) => {
+            const ItemIcon = item.icon;
+            return (
+              <motion.div
+                key={`${item.id}-${index}`}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ y: -8, scale: 1.03 }}
+                className="group"
+              >
+                <Link to={item.url}>
+                  <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 h-full">
+                    {/* Icon Header */}
+                    <div className={`bg-gradient-to-r ${item.color} p-6 relative`}>
+                      <div className="flex items-start justify-between">
+                        <div className={`bg-white/20 backdrop-blur-sm p-3 rounded-xl`}>
+                          <ItemIcon className="w-8 h-8 text-white" />
+                        </div>
                       {item.badge && (
                         <motion.div
                           initial={{ scale: 0 }}
@@ -256,7 +261,8 @@ export const DynamicContentShowcase: React.FC<DynamicContentShowcaseProps> = ({ 
                 </div>
               </Link>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Auto-refresh indicator */}
