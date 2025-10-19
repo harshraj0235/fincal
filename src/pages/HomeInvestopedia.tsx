@@ -12,6 +12,7 @@ import SEOHelmet from '../components/SEOHelmet';
 import { blogPosts as blogPosts0 } from '../data/blogData';
 import { blogPosts as blogPosts1 } from '../data/blogData1';
 import DynamicContentShowcase from '../components/DynamicContentShowcase';
+import FinancialChatAssistant from '../components/FinancialChatAssistant';
 
 const HomeInvestopedia: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -712,6 +713,9 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
       </div>
+
+      {/* Financial Chat Assistant - Floating */}
+      <FinancialChatAssistant language={language} />
 
     </>
   );
