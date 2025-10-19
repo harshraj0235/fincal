@@ -189,6 +189,13 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
+        {/* Financial Chat Assistant - Embedded at Top */}
+        <section className="py-12 bg-gradient-to-br from-white via-purple-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-4">
+            <FinancialChatAssistant language={language} embedded={true} />
+          </div>
+        </section>
+
         {/* Dynamic Content Showcase - Trending Tools */}
         <DynamicContentShowcase language={language} />
 
@@ -713,9 +720,6 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
       </div>
-
-      {/* Financial Chat Assistant - Floating */}
-      <FinancialChatAssistant language={language} />
 
     </>
   );

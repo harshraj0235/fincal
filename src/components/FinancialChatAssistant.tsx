@@ -12,10 +12,11 @@ interface Message {
 
 interface FinancialChatAssistantProps {
   language?: 'en' | 'hi';
+  embedded?: boolean;
 }
 
-export const FinancialChatAssistant: React.FC<FinancialChatAssistantProps> = ({ language = 'en' }) => {
-  const [isOpen, setIsOpen] = useState(false);
+export const FinancialChatAssistant: React.FC<FinancialChatAssistantProps> = ({ language = 'en', embedded = false }) => {
+  const [isOpen, setIsOpen] = useState(embedded ? true : false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -127,6 +128,175 @@ export const FinancialChatAssistant: React.FC<FinancialChatAssistantProps> = ({ 
     'आयकर कैलकुलेटर'
   ];
 
+  // If embedded mode, render inline chat
+  if (embedded) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full"
+      >
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-purple-200">
+          {/* Header */}
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
+            <div className="flex items-center gap-4 mb-3">
+              <div className="bg-white/20 backdrop-blur-sm p-3 rounded-2xl">
+                <Bot className="w-8 h-8" />
+              </div>
+              <div>
+                <h2 className="font-bold text-2xl">
+                  {language === 'en' ? '💬 Ask Our Financial Assistant' : '💬 हमारे वित्तीय सहायक से पूछें'}
+                </h2>
+                <div className="flex items-center gap-2 text-sm text-white/90">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  {language === 'en' ? 'Online • Instant Answers' : 'ऑनलाइन • त्वरित उत्तर'}
+                </div>
+              </div>
+            </div>
+            <p className="text-white/90">
+              {language === 'en' 
+                ? 'Get instant answers about PPF, SIP, GST, Income Tax, Loans, and more. Ask anything!'
+                : 'PPF, SIP, GST, आयकर, ऋण और अधिक के बारे में त्वरित उत्तर प्राप्त करें। कुछ भी पूछें!'}
+            </p>
+          </div>
+
+          {/* Chat Messages */}
+          <div className="h-96 overflow-y-auto p-6 bg-gradient-to-br from-gray-50 to-blue-50 space-y-4">
+            {messages.map((message) => (
+              <motion.div
+                key={message.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+              >
+                <div className={`flex items-start gap-3 max-w-[85%] ${message.sender === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                  <div className={`p-2.5 rounded-full ${message.sender === 'user' ? 'bg-blue-600' : 'bg-purple-600'}`}>
+                    {message.sender === 'user' ? (
+                      <User className="w-5 h-5 text-white" />
+                    ) : (
+                      <Bot className="w-5 h-5 text-white" />
+                    )}
+                  </div>
+                  <div>
+                    <div
+                      className={`px-5 py-4 rounded-2xl ${
+                        message.sender === 'user'
+                          ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                          : 'bg-white border-2 border-purple-200 text-gray-800 shadow-md'
+                      }`}
+                    >
+                      <div 
+                        className="text-sm leading-relaxed whitespace-pre-line"
+                        dangerouslySetInnerHTML={{ 
+                          __html: message.text
+                            .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold">$1</strong>')
+                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="underline font-semibold hover:text-blue-600">$1</a>')
+                        }}
+                      />
+                    </div>
+                    <div className="text-xs text-gray-400 mt-1.5 px-2">
+                      {message.timestamp.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+            
+            {isTyping && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="flex justify-start"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-full bg-purple-600">
+                    <Bot className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="bg-white border-2 border-purple-200 px-5 py-4 rounded-2xl shadow-md">
+                    <div className="flex gap-1.5">
+                      <motion.div
+                        animate={{ scale: [1, 1.3, 1] }}
+                        transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
+                        className="w-2.5 h-2.5 bg-purple-600 rounded-full"
+                      />
+                      <motion.div
+                        animate={{ scale: [1, 1.3, 1] }}
+                        transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
+                        className="w-2.5 h-2.5 bg-purple-600 rounded-full"
+                      />
+                      <motion.div
+                        animate={{ scale: [1, 1.3, 1] }}
+                        transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }}
+                        className="w-2.5 h-2.5 bg-purple-600 rounded-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          {/* Quick Questions */}
+          {messages.length === 1 && (
+            <div className="px-6 py-4 bg-white border-t-2 border-purple-100">
+              <p className="text-sm font-bold text-gray-700 mb-3 flex items-center">
+                <Sparkles className="w-4 h-4 mr-2 text-purple-600" />
+                {language === 'en' ? 'Popular Questions - Click to Ask:' : 'लोकप्रिय प्रश्न - पूछने के लिए क्लिक करें:'}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {quickQuestions.map((q, idx) => (
+                  <motion.button
+                    key={idx}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      setInputText(q);
+                      setTimeout(() => handleSend(), 100);
+                    }}
+                    className="px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 text-gray-700 hover:text-blue-700 rounded-full text-sm font-medium transition-all border border-purple-200 hover:border-purple-400"
+                  >
+                    {q}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Input Area */}
+          <div className="p-6 bg-white border-t-2 border-purple-100">
+            <div className="flex gap-3">
+              <input
+                type="text"
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder={language === 'en' ? '💭 Ask anything about finance... (PPF, SIP, GST, Tax, Loans)' : '💭 वित्त के बारे में कुछ भी पूछें...'}
+                className="flex-1 px-5 py-4 border-2 border-purple-300 rounded-xl focus:border-purple-500 focus:ring-4 focus:ring-purple-200 transition-all text-base"
+              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleSend}
+                disabled={!inputText.trim()}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl transition-all flex items-center gap-2"
+              >
+                <Send className="w-5 h-5" />
+                {language === 'en' ? 'Send' : 'भेजें'}
+              </motion.button>
+            </div>
+            <p className="text-xs text-gray-500 mt-3 text-center">
+              {language === 'en' 
+                ? '🤖 Powered by MoneyCal AI • 200+ Financial Topics • Instant Answers'
+                : '🤖 MoneyCal AI द्वारा संचालित • 200+ वित्तीय विषय • त्वरित उत्तर'}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
+  // Default: Floating chat button mode
   return (
     <>
       {/* Floating Chat Button */}
