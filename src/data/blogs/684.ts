@@ -1,4 +1,4 @@
-import { BlogPost } from '../blogData';
+﻿import { BlogPost } from '../blogData';
 
 const getCurrentDate = () => {
   const now = new Date();
@@ -33,12 +33,12 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Wax:** ₹1200 - Paraffin (₹200/kg) या Soy wax (₹400/kg)',
-        '**Fragrance Oils:** ₹600 - Lavender, Rose, Sandalwood, Vanilla',
-        '**Wicks:** ₹250 - Cotton wicks (different sizes)',
-        '**Containers:** ₹700 - Glass jars, tin containers',
-        '**Colors:** ₹150 - Candle dyes',
-        '**Thermometer:** ₹100'
+        'Wax: ₹1200 - Paraffin (₹200/kg) या Soy wax (₹400/kg)',
+        'Fragrance Oils: ₹600 - Lavender, Rose, Sandalwood, Vanilla',
+        'Wicks: ₹250 - Cotton wicks (different sizes)',
+        'Containers: ₹700 - Glass jars, tin containers',
+        'Colors: ₹150 - Candle dyes',
+        'Thermometer: ₹100'
       ]
     },
     {
@@ -48,12 +48,12 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Container Candles:** Glass jars में - सबसे popular (₹200-400)',
-        '**Pillar Candles:** Stand-alone, decorative (₹150-300)',
-        '**Tealight Candles:** Small, bulk में बिकते हैं (₹10-20/piece)',
-        '**Floating Candles:** Decorative, weddings में demand (₹30-60)',
-        '**Scented Wax Melts:** Trendinginstead (₹100-200)',
-        '**Shaped Candles:** Flowers, hearts, तc. (₹200-500)'
+        'Container Candles: Glass jars में - सबसे popular (₹200-400)',
+        'Pillar Candles: Stand-alone, decorative (₹150-300)',
+        'Tealight Candles: Small, bulk में बिकते हैं (₹10-20/piece)',
+        'Floating Candles: Decorative, weddings में demand (₹30-60)',
+        'Scented Wax Melts: Trendinginstead (₹100-200)',
+        'Shaped Candles: Flowers, hearts, तc. (₹200-500)'
       ]
     },
     {
@@ -63,13 +63,13 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Step 1:** Wax को double boiler में melt करें (65-70°C)',
-        '**Step 2:** Fragrance oil add करें (8-10% of wax weight)',
-        '**Step 3:** Color add करें (optional)',
-        '**Step 4:** Wick को container में fix करें',
-        '**Step 5:** Wax को pour करें (slowly)',
-        '**Step 6:** 24-48 hours cure होने दें',
-        '**Step 7:** Trim wick और packaging करें'
+        'Step 1: Wax को double boiler में melt करें (65-70°C)',
+        'Step 2: Fragrance oil add करें (8-10% of wax weight)',
+        'Step 3: Color add करें (optional)',
+        'Step 4: Wick को container में fix करें',
+        'Step 5: Wax को pour करें (slowly)',
+        'Step 6: 24-48 hours cure होने दें',
+        'Step 7: Trim wick और packaging करें'
       ]
     },
     {
@@ -79,12 +79,12 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**200g Container Candle:**',
+        '200g Container Candle:',
         '• Material Cost: ₹70-80',
         '• Selling Price: ₹300-400',
         '• Profit: ₹220-320 (280% margin)',
         '',
-        '**Tealights (Set of 10):**',
+        'Tealights (Set of 10):',
         '• Cost: ₹25',
         '• Sell: ₹100-150',
         '• Profit: ₹75-125'
@@ -101,12 +101,12 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Soap Base:** ₹1500 - Glycerin base (5 kg)',
-        '**Essential Oils:** ₹700 - Tea tree, lavender, peppermint',
-        '**Natural Additives:** ₹500 - Oats, honey, charcoal, rose petals',
-        '**Colors:** ₹200 - Natural/food-grade colors',
-        '**Molds:** ₹400 - Silicone molds (different shapes)',
-        '**Mixing Tools:** ₹200'
+        'Soap Base: ₹1500 - Glycerin base (5 kg)',
+        'Essential Oils: ₹700 - Tea tree, lavender, peppermint',
+        'Natural Additives: ₹500 - Oats, honey, charcoal, rose petals',
+        'Colors: ₹200 - Natural/food-grade colors',
+        'Molds: ₹400 - Silicone molds (different shapes)',
+        'Mixing Tools: ₹200'
       ]
     },
     {
@@ -116,14 +116,14 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Charcoal Soap:** Acne-prone skin (₹200-300/100g)',
-        '**Oatmeal & Honey:** Dry skin (₹150-250)',
-        '**Neem & Tulsi:** Anti-bacterial (₹120-200)',
-        '**Rose Petal:** Brightening (₹180-280)',
-        '**Coffee Scrub Soap:** Exfoliating (₹200-350)',
-        '**Goat Milk Soap:** Premium, sensitive skin (₹250-400)',
-        '**Lavender:** Relaxation (₹150-250)',
-        '**Tea Tree:** Acne treatment (₹180-280)'
+        'Charcoal Soap: Acne-prone skin (₹200-300/100g)',
+        'Oatmeal & Honey: Dry skin (₹150-250)',
+        'Neem & Tulsi: Anti-bacterial (₹120-200)',
+        'Rose Petal: Brightening (₹180-280)',
+        'Coffee Scrub Soap: Exfoliating (₹200-350)',
+        'Goat Milk Soap: Premium, sensitive skin (₹250-400)',
+        'Lavender: Relaxation (₹150-250)',
+        'Tea Tree: Acne treatment (₹180-280)'
       ]
     },
     {
@@ -133,14 +133,14 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Step 1:** Soap base को small pieces में cut करें',
-        '**Step 2:** Microwave/double boiler में melt करें',
-        '**Step 3:** Essential oils add करें (2-3%)',
-        '**Step 4:** Natural additives mix करें',
-        '**Step 5:** Color add करें (optional)',
-        '**Step 6:** Molds में pour करें',
-        '**Step 7:** 2-4 hours set होने दें',
-        '**Step 8:** De-mold करें और cure करें (2-3 days)'
+        'Step 1: Soap base को small pieces में cut करें',
+        'Step 2: Microwave/double boiler में melt करें',
+        'Step 3: Essential oils add करें (2-3%)',
+        'Step 4: Natural additives mix करें',
+        'Step 5: Color add करें (optional)',
+        'Step 6: Molds में pour करें',
+        'Step 7: 2-4 hours set होने दें',
+        'Step 8: De-mold करें और cure करें (2-3 days)'
       ]
     },
     {
@@ -150,12 +150,12 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**100g Handmade Soap:**',
+        '100g Handmade Soap:',
         '• Material Cost: ₹35-50',
         '• Selling Price: ₹150-300',
         '• Profit: ₹100-250 (300% margin)',
         '',
-        '**Soap Set (3 bars):**',
+        'Soap Set (3 bars):',
         '• Cost: ₹120',
         '• Sell: ₹500-700',
         '• Profit: ₹380-580'
@@ -168,14 +168,14 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Brand Name:** Catchy, easy to remember (e.g., "PureGlow", "NatureScent")',
-        '**Logo Design:** Canva पर free में बनाएं',
-        '**Label Design:** Ingredients, benefits, weight mention करें',
-        '**Packaging Ideas:**',
+        'Brand Name: Catchy, easy to remember (e.g., "PureGlow", "NatureScent")',
+        'Logo Design: Canva पर free में बनाएं',
+        'Label Design: Ingredients, benefits, weight mention करें',
+        'Packaging Ideas:',
         '• Candles: Kraft boxes, transparent boxes, gift bags',
         '• Soaps: Butter paper wrapping, boxes, pouches',
-        '**Cost:** ₹10-30 per unit packaging',
-        '**Eco-Friendly:** Recycled paper use करें (premium image)'
+        'Cost: ₹10-30 per unit packaging',
+        'Eco-Friendly: Recycled paper use करें (premium image)'
       ]
     },
     {
@@ -189,14 +189,14 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram Business:**',
+        'Instagram Business:',
         '• Aesthetic product photography',
         '• Reels: Making process videos (viral होते हैं)',
         '• Stories: Customer testimonials, offers',
         '• Hashtags: #handmadesoap #organiccandles #naturalsoap #eco friendly',
         '• Influencer collaborations',
         '',
-        '**E-commerce Platforms:**',
+        'E-commerce Platforms:',
         '• Amazon Handmade (premium customers)',
         '• Etsy India (international reach)',
         '• Meesho (zero commission)',
@@ -210,14 +210,14 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Retail Partnerships:**',
+        'Retail Partnerships:',
         '• Organic stores',
         '• Spa & salons',
         '• Gift shops',
         '• Boutiques',
         '• Health food stores',
         '',
-        '**Direct Selling:**',
+        'Direct Selling:',
         '• Weekend markets/flea markets',
         '• Exhibition stalls',
         '• Corporate gifting',
@@ -232,11 +232,11 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Hotels & Resorts:** Branded guest amenities',
-        '**Spa Centers:** Customized products',
-        '**Corporate Gifts:** Diwali, New Year gifts',
-        '**Wedding Planners:** Bulk orders for favors',
-        '**Margin:** 30-40% less but volume compensates'
+        'Hotels & Resorts: Branded guest amenities',
+        'Spa Centers: Customized products',
+        'Corporate Gifts: Diwali, New Year gifts',
+        'Wedding Planners: Bulk orders for favors',
+        'Margin: 30-40% less but volume compensates'
       ]
     },
     {
@@ -250,11 +250,11 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Candle Making:** ₹3,000',
-        '**Soap Making:** ₹3,500',
-        '**Packaging & Branding:** ₹1,500',
-        '**Marketing:** ₹1,000',
-        '**Total:** ₹9,000-10,000'
+        'Candle Making: ₹3,000',
+        'Soap Making: ₹3,500',
+        'Packaging & Branding: ₹1,500',
+        'Marketing: ₹1,000',
+        'Total: ₹9,000-10,000'
       ]
     },
     {
@@ -264,17 +264,17 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Part-Time (100 units/month):**',
+        'Part-Time (100 units/month):',
         '• 50 candles × ₹250 profit = ₹12,500',
         '• 50 soaps × ₹150 profit = ₹7,500',
-        '• **Total: ₹20,000/month**',
+        '• Total: ₹20,000/month',
         '',
-        '**Full-Time (250 units/month):**',
+        'Full-Time (250 units/month):',
         '• 150 candles × ₹250 = ₹37,500',
         '• 100 soaps × ₹150 = ₹15,000',
-        '• **Total: ₹52,500/month**',
+        '• Total: ₹52,500/month',
         '',
-        '**Peak Season (Diwali/Christmas):**',
+        'Peak Season (Diwali/Christmas):',
         '• Monthly sales ₹1,00,000-1,50,000 possible!'
       ]
     },
@@ -285,11 +285,11 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**FSSAI License:** Soaps के लिए (if claiming edible ingredients)',
-        '**GST Registration:** Turnover > ₹20L (₹40L for some states)',
-        '**Udyam Registration:** MSME benefits (free online)',
-        '**Product Liability Insurance:** Recommended',
-        '**Label Requirements:**',
+        'FSSAI License: Soaps के लिए (if claiming edible ingredients)',
+        'GST Registration: Turnover > ₹20L (₹40L for some states)',
+        'Udyam Registration: MSME benefits (free online)',
+        'Product Liability Insurance: Recommended',
+        'Label Requirements:',
         '• Product name',
         '• Ingredients list',
         '• Net weight',
@@ -297,7 +297,7 @@ export const candlesSoapsBusiness: BlogPost = {
         '• Best before date',
         '• Manufacturer details',
         '• Batch number',
-        '**Trademark (Optional):** ₹5000-10000 for brand protection'
+        'Trademark (Optional): ₹5000-10000 for brand protection'
       ]
     },
     {
@@ -316,24 +316,24 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram Reels:**',
+        'Instagram Reels:',
         '• Candle making ASMR videos (highly engaging)',
         '• Soap cutting/unwrapping videos',
         '• Before-after skin transformation',
         '• Gift hamper ideas',
         '',
-        '**Content Ideas:**',
+        'Content Ideas:',
         '• "Benefits of soy candles vs paraffin"',
         '• "5 reasons to switch to handmade soaps"',
         '• Customer unboxing videos',
         '• Behind-the-scenes production',
         '',
-        '**Collaborations:**',
+        'Collaborations:',
         '• Beauty bloggers को free products',
         '• Spa reviews',
         '• Lifestyle influencers',
         '',
-        '**Festive Campaigns:**',
+        'Festive Campaigns:',
         '• Diwali gift sets (Oct-Nov)',
         '• Christmas hampers (Dec)',
         '• Valentine\'s Day special (Feb)',
@@ -347,14 +347,14 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**❌ Cheap Materials:** Quality compromise reputation बिगाड़ती है',
-        '**❌ Strong Fragrances:** हल्की fragrance बेहतर है, headache नहीं होता',
-        '**❌ Poor Packaging:** First impression बहुत important है',
-        '**❌ No Testing:** नए products पहले खुद test करें',
-        '**❌ Overpricing Initially:** Market research करें, competitive रहें',
-        '**❌ No Shelf Life:** Soaps को 12 months, candles को 18 months shelf life दें',
-        '**❌ Ignoring Feedback:** Customers की complaints seriously लें',
-        '**❌ No Safety Info:** Candle burning instructions जरूर दें'
+        '❌ Cheap Materials: Quality compromise reputation बिगाड़ती है',
+        '❌ Strong Fragrances: हल्की fragrance बेहतर है, headache नहीं होता',
+        '❌ Poor Packaging: First impression बहुत important है',
+        '❌ No Testing: नए products पहले खुद test करें',
+        '❌ Overpricing Initially: Market research करें, competitive रहें',
+        '❌ No Shelf Life: Soaps को 12 months, candles को 18 months shelf life दें',
+        '❌ Ignoring Feedback: Customers की complaints seriously लें',
+        '❌ No Safety Info: Candle burning instructions जरूर दें'
       ]
     },
     {
@@ -364,25 +364,25 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Unique Selling Points:**',
+        'Unique Selling Points:',
         '• "100% Natural Ingredients"',
         '• "Eco-Friendly Packaging"',
         '• "Handcrafted with Love"',
         '• "Cruelty-Free & Vegan"',
         '',
-        '**Product Differentiation:**',
+        'Product Differentiation:',
         '• Seasonal limited editions',
         '• Customization (names, messages)',
         '• Gift combos',
         '• Subscription boxes',
         '',
-        '**Quality Control:**',
+        'Quality Control:',
         '• Consistent fragrance strength',
         '• Even burn in candles',
         '• Good lather in soaps',
         '• Professional finishing',
         '',
-        '**Customer Service:**',
+        'Customer Service:',
         '• Quick response (within 2 hours)',
         '• Sample packs offer करें',
         '• Loyalty discounts',
@@ -396,17 +396,17 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**YouTube Channels:**',
+        'YouTube Channels:',
         '• Soap Queen TV',
         '• Royalty Soaps',
         '• Candlescience',
         '• The Sage',
         '',
-        '**Online Courses:**',
+        'Online Courses:',
         '• Udemy: Soap making basics (₹500-1000)',
         '• Skillshare: Candle business',
         '',
-        '**Books:**',
+        'Books:',
         '• "The Complete Photo Guide to Soap Making"',
         '• "Candle Making for Beginners"'
       ]
@@ -418,11 +418,11 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Budget Calculator](https://moneycal.in/calculators/budget-calculator)** - Monthly expenses track करें',
-        '**[Profit Margin Calculator](https://moneycal.in/corporate-finance)** - Pricing optimize करें',
-        '**[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator)** - Funding planning',
-        '**[GST Calculator](https://moneycal.in/tools/gst-amount-calculator)** - Tax calculations',
-        '**[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator)** - Tax planning'
+        '[Budget Calculator](https://moneycal.in/calculators/budget-calculator) - Monthly expenses track करें',
+        '[Profit Margin Calculator](https://moneycal.in/corporate-finance) - Pricing optimize करें',
+        '[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) - Funding planning',
+        '[GST Calculator](https://moneycal.in/tools/gst-amount-calculator) - Tax calculations',
+        '[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator) - Tax planning'
       ]
     },
     {
@@ -432,11 +432,11 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[PM Mudra Loan](https://moneycal.in/government-schemes):** ₹50,000-10 लाख (no collateral)',
-        '**Stand-Up India:** Women entrepreneurs के लिए',
-        '**MSME Subsidies:** Manufacturing unit setup',
-        '**Skill India:** Free training programs',
-        '**Make in India:** Exhibition participation support'
+        '[PM Mudra Loan](https://moneycal.in/government-schemes): ₹50,000-10 लाख (no collateral)',
+        'Stand-Up India: Women entrepreneurs के लिए',
+        'MSME Subsidies: Manufacturing unit setup',
+        'Skill India: Free training programs',
+        'Make in India: Exhibition participation support'
       ]
     },
     {
@@ -450,9 +450,9 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 1-3:** YouTube tutorials देखें, notes बनाएं',
-        '**Day 4-5:** Market research - competitors, pricing',
-        '**Day 6-7:** Brand name, logo finalize करें'
+        'Day 1-3: YouTube tutorials देखें, notes बनाएं',
+        'Day 4-5: Market research - competitors, pricing',
+        'Day 6-7: Brand name, logo finalize करें'
       ]
     },
     {
@@ -462,8 +462,8 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 8-10:** सभी materials खरीदें',
-        '**Day 11-14:** 10-15 practice batches बनाएं'
+        'Day 8-10: सभी materials खरीदें',
+        'Day 11-14: 10-15 practice batches बनाएं'
       ]
     },
     {
@@ -473,9 +473,9 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 15-17:** Final products बनाएं (50-60 units)',
-        '**Day 18-19:** Packaging, labeling करें',
-        '**Day 20-21:** Product photography'
+        'Day 15-17: Final products बनाएं (50-60 units)',
+        'Day 18-19: Packaging, labeling करें',
+        'Day 20-21: Product photography'
       ]
     },
     {
@@ -485,10 +485,10 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 22-23:** Social media pages setup',
-        '**Day 24-25:** First posts, friends/family को share',
-        '**Day 26-28:** Daily content, reels',
-        '**Day 29-30:** First orders deliver, feedback collect'
+        'Day 22-23: Social media pages setup',
+        'Day 24-25: First posts, friends/family को share',
+        'Day 26-28: Daily content, reels',
+        'Day 29-30: First orders deliver, feedback collect'
       ]
     },
     {
@@ -501,7 +501,7 @@ export const candlesSoapsBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Handmade soaps: 10-12 months, Candles: 18-24 months. Proper storage important है।'
+      content: 'Answer: Handmade soaps: 10-12 months, Candles: 18-24 months. Proper storage important है।'
     },
     {
       type: 'subheading',
@@ -509,7 +509,7 @@ export const candlesSoapsBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** हाँ! Natural soap base, essential oils, natural colors use करें। "100% Natural" label premium price justify करता है।'
+      content: 'Answer: हाँ! Natural soap base, essential oils, natural colors use करें। "100% Natural" label premium price justify करता है।'
     },
     {
       type: 'subheading',
@@ -517,7 +517,7 @@ export const candlesSoapsBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Soaps के लिए generally नहीं (unless edible ingredients claim करें)। Candles के लिए बिल्कुल नहीं। लेकिन GST (>₹20L) जरूरी है।'
+      content: 'Answer: Soaps के लिए generally नहीं (unless edible ingredients claim करें)। Candles के लिए बिल्कुल नहीं। लेकिन GST (>₹20L) जरूरी है।'
     },
     {
       type: 'subheading',
@@ -525,7 +525,7 @@ export const candlesSoapsBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Unique fragrances, better packaging, customization, excellent customer service से differentiate करें। Quality पर कभी compromise न करें।'
+      content: 'Answer: Unique fragrances, better packaging, customization, excellent customer service से differentiate करें। Quality पर कभी compromise न करें।'
     },
     {
       type: 'subheading',
@@ -533,7 +533,7 @@ export const candlesSoapsBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Hotels, spas, wedding planners को directly approach करें। Corporate offices को Diwali/New Year gifting के लिए pitch करें। LinkedIn पर network बनाएं।'
+      content: 'Answer: Hotels, spas, wedding planners को directly approach करें। Corporate offices को Diwali/New Year gifting के लिए pitch करें। LinkedIn पर network बनाएं।'
     },
     {
       type: 'heading',
@@ -545,15 +545,15 @@ export const candlesSoapsBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Success Formula:**\n• High Quality Products\n• Beautiful Packaging\n• Strong Brand Identity\n• Consistent Marketing\n• Excellent Customer Service\n• = Successful Business!'
+      content: 'Success Formula:\n• High Quality Products\n• Beautiful Packaging\n• Strong Brand Identity\n• Consistent Marketing\n• Excellent Customer Service\n• = Successful Business!'
     },
     {
       type: 'paragraph',
-      content: '**आज ही शुरू करें!** Materials खरीदें, YouTube tutorials देखें, practice करें, और अपने eco-friendly business की journey start करें! 🕯️🧼✨'
+      content: 'आज ही शुरू करें! Materials खरीदें, YouTube tutorials देखें, practice करें, और अपने eco-friendly business की journey start करें! 🕯️🧼✨'
     },
     {
       type: 'paragraph',
-      content: '**All the best for your handmade product business! 💚🌿**'
+      content: 'All the best for your handmade product business! 💚🌿'
     },
     {
       type: 'heading',
@@ -562,11 +562,11 @@ export const candlesSoapsBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[MSME Portal](https://msme.gov.in/)** - Government schemes',
-        '**[Udyam Registration](https://udyamregistration.gov.in/)** - Free MSME registration',
-        '**[FSSAI](https://www.fssai.gov.in/)** - Food safety license',
-        '**[Startup India](https://www.startupindia.gov.in/)** - Support programs',
-        '**[Amazon Handmade](https://sell.amazon.in/handmade)** - Selling platform'
+        '[MSME Portal](https://msme.gov.in/) - Government schemes',
+        '[Udyam Registration](https://udyamregistration.gov.in/) - Free MSME registration',
+        '[FSSAI](https://www.fssai.gov.in/) - Food safety license',
+        '[Startup India](https://www.startupindia.gov.in/) - Support programs',
+        '[Amazon Handmade](https://sell.amazon.in/handmade) - Selling platform'
       ]
     }
   ]

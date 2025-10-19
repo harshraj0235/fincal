@@ -1,4 +1,4 @@
-import { BlogPost } from '../blogData';
+﻿import { BlogPost } from '../blogData';
 
 const getCurrentDate = () => {
   const now = new Date();
@@ -33,14 +33,14 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**कम निवेश:** सिर्फ ₹5000-10,000 में शुरू कर सकते हैं',
-        '**घर से काम:** कोई shop या office की जरूरत नहीं',
-        '**High Profit Margin:** 200-400% तक का मुनाफा',
-        '**कोई degree नहीं चाहिए:** YouTube tutorials देखकर सीख सकते हैं',
-        '**Flexible timing:** अपने हिसाब से काम करें',
-        '**Growing market:** शादी, festivals, occasions पर हमेशा demand',
-        '**Online selling:** Instagram, Facebook, Amazon Handmade, Etsy पर बेचें',
-        '**Creative satisfaction:** अपनी creativity use करें और पैसे भी कमाएं'
+        'कम निवेश: सिर्फ ₹5000-10,000 में शुरू कर सकते हैं',
+        'घर से काम: कोई shop या office की जरूरत नहीं',
+        'High Profit Margin: 200-400% तक का मुनाफा',
+        'कोई degree नहीं चाहिए: YouTube tutorials देखकर सीख सकते हैं',
+        'Flexible timing: अपने हिसाब से काम करें',
+        'Growing market: शादी, festivals, occasions पर हमेशा demand',
+        'Online selling: Instagram, Facebook, Amazon Handmade, Etsy पर बेचें',
+        'Creative satisfaction: अपनी creativity use करें और पैसे भी कमाएं'
       ]
     },
     {
@@ -58,12 +58,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Beads (मोती):** ₹800 - Glass beads, plastic beads, wooden beads (different colors)',
-        '**Threads & Wires:** ₹300 - Nylon thread, elastic, copper wire',
-        '**Jump Rings & Clasps:** ₹400 - सभी size के jump rings और lobster clasps',
-        '**Earring Hooks:** ₹200 - 50 pairs stainless steel hooks',
-        '**Pendant Bases:** ₹300 - Metal और resin pendant bases',
-        '**Chains:** ₹500 - Golden, silver-plated chains (5-10 pieces)'
+        'Beads (मोती): ₹800 - Glass beads, plastic beads, wooden beads (different colors)',
+        'Threads & Wires: ₹300 - Nylon thread, elastic, copper wire',
+        'Jump Rings & Clasps: ₹400 - सभी size के jump rings और lobster clasps',
+        'Earring Hooks: ₹200 - 50 pairs stainless steel hooks',
+        'Pendant Bases: ₹300 - Metal और resin pendant bases',
+        'Chains: ₹500 - Golden, silver-plated chains (5-10 pieces)'
       ]
     },
     {
@@ -73,13 +73,13 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Pliers Set:** ₹300 - Round nose, flat nose, cutting pliers',
-        '**Glue:** ₹150 - Fevicol, Super glue',
-        '**Scissors:** ₹50 - Small cutting scissors',
-        '**Measuring Tape:** ₹30',
-        '**Storage Boxes:** ₹200 - Plastic organizers for beads',
-        '**Work Mat:** ₹70 - Velvet mat to prevent beads from rolling',
-        '**Other Tools:** ₹700 - Wire cutters, needle set, tweezers'
+        'Pliers Set: ₹300 - Round nose, flat nose, cutting pliers',
+        'Glue: ₹150 - Fevicol, Super glue',
+        'Scissors: ₹50 - Small cutting scissors',
+        'Measuring Tape: ₹30',
+        'Storage Boxes: ₹200 - Plastic organizers for beads',
+        'Work Mat: ₹70 - Velvet mat to prevent beads from rolling',
+        'Other Tools: ₹700 - Wire cutters, needle set, tweezers'
       ]
     },
     {
@@ -89,11 +89,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Gift Boxes:** ₹300 - 20 small jewelry boxes',
-        '**Pouches:** ₹200 - Velvet pouches for earrings',
-        '**Business Cards:** ₹150 - 100 cards (print at local shop)',
-        '**Plastic Bags:** ₹50 - Zip lock bags',
-        '**Stickers/Labels:** ₹100 - Brand name stickers'
+        'Gift Boxes: ₹300 - 20 small jewelry boxes',
+        'Pouches: ₹200 - Velvet pouches for earrings',
+        'Business Cards: ₹150 - 100 cards (print at local shop)',
+        'Plastic Bags: ₹50 - Zip lock bags',
+        'Stickers/Labels: ₹100 - Brand name stickers'
       ]
     },
     {
@@ -103,13 +103,13 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Phone Data:** ₹100 - Internet for social media posting',
-        '**Photography:** ₹100 - Good lighting setup (DIY with white cloth)'
+        'Phone Data: ₹100 - Internet for social media posting',
+        'Photography: ₹100 - Good lighting setup (DIY with white cloth)'
       ]
     },
     {
       type: 'paragraph',
-      content: '**Total: ₹5000** (इसमें आपको 20-30 pieces बनाने की material मिल जाएगी)'
+      content: 'Total: ₹5000 (इसमें आपको 20-30 pieces बनाने की material मिल जाएगी)'
     },
     {
       type: 'heading',
@@ -126,12 +126,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**YouTube Channels देखें:** "Beads Art", "DIY Jewelry India", "Craft Passion"',
-        '**Basic Techniques:** Wire wrapping, beading, knotting, crimping',
-        '**Practice करें:** पहले 10-15 pieces बनाएं (अपने लिए या दोस्तों के लिए)',
-        '**Feedback लें:** Family/friends को दिखाएं, suggestions लें',
-        '**Pinterest Ideas:** Latest trending designs देखें',
-        '**Instagram Research:** Popular jewelry pages follow करें'
+        'YouTube Channels देखें: "Beads Art", "DIY Jewelry India", "Craft Passion"',
+        'Basic Techniques: Wire wrapping, beading, knotting, crimping',
+        'Practice करें: पहले 10-15 pieces बनाएं (अपने लिए या दोस्तों के लिए)',
+        'Feedback लें: Family/friends को दिखाएं, suggestions लें',
+        'Pinterest Ideas: Latest trending designs देखें',
+        'Instagram Research: Popular jewelry pages follow करें'
       ]
     },
     {
@@ -145,12 +145,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Variety बनाएं:** Earrings (70%), Necklace (15%), Bracelets (10%), Anklets (5%)',
-        '**Price Range:** ₹150-500 के products बनाएं (mass market)',
-        '**Trending Designs:** Oxidized, kundan-look, tassel earrings popular हैं',
-        '**Quality Focus:** Strong joints, smooth edges, professional finish',
-        '**Quantity:** शुरुआत में 25-30 pieces बनाएं',
-        '**Photography:** White background में clear photos लें (mobile से ठीक है)'
+        'Variety बनाएं: Earrings (70%), Necklace (15%), Bracelets (10%), Anklets (5%)',
+        'Price Range: ₹150-500 के products बनाएं (mass market)',
+        'Trending Designs: Oxidized, kundan-look, tassel earrings popular हैं',
+        'Quality Focus: Strong joints, smooth edges, professional finish',
+        'Quantity: शुरुआत में 25-30 pieces बनाएं',
+        'Photography: White background में clear photos लें (mobile से ठीक है)'
       ]
     },
     {
@@ -160,12 +160,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram Business Account:** Free, सबसे important platform',
-        '**Facebook Page:** Create करें, friends/family को invite करें',
-        '**WhatsApp Business:** Product catalog बनाएं',
-        '**Profile Optimization:** Bio में "Handmade Jewelry | ₹150 onwards | DM to order"',
-        '**First Post:** Introduction post with all products',
-        '**Hashtags Use:** #handmadejewelry #earrings #affordablejewelry #indianjewelry'
+        'Instagram Business Account: Free, सबसे important platform',
+        'Facebook Page: Create करें, friends/family को invite करें',
+        'WhatsApp Business: Product catalog बनाएं',
+        'Profile Optimization: Bio में "Handmade Jewelry | ₹150 onwards | DM to order"',
+        'First Post: Introduction post with all products',
+        'Hashtags Use: #handmadejewelry #earrings #affordablejewelry #indianjewelry'
       ]
     },
     {
@@ -179,12 +179,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Daily Posts:** कम से कम 1 post और 3-4 stories',
-        '**Reels बनाएं:** Making process videos viral होते हैं',
-        '**Hashtag Strategy:** 20-25 relevant hashtags use करें',
-        '**Collaboration:** Local influencers को free में earrings दें, tag मांगें',
-        '**DM Response:** Quick reply करें (24 hours में)',
-        '**Offers:** "First 10 customers को 20% off" जैसे offers दें'
+        'Daily Posts: कम से कम 1 post और 3-4 stories',
+        'Reels बनाएं: Making process videos viral होते हैं',
+        'Hashtag Strategy: 20-25 relevant hashtags use करें',
+        'Collaboration: Local influencers को free में earrings दें, tag मांगें',
+        'DM Response: Quick reply करें (24 hours में)',
+        'Offers: "First 10 customers को 20% off" जैसे offers दें'
       ]
     },
     {
@@ -194,11 +194,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Catalog बनाएं:** सभी products with prices',
-        '**Status Updates:** Daily 2-3 status डालें',
-        '**Groups Join:** Ladies groups, local area groups',
-        '**Quick Replies:** Common questions के ready answers',
-        '**Payment:** Google Pay, PhonePe, Paytm QR code ready रखें'
+        'Catalog बनाएं: सभी products with prices',
+        'Status Updates: Daily 2-3 status डालें',
+        'Groups Join: Ladies groups, local area groups',
+        'Quick Replies: Common questions के ready answers',
+        'Payment: Google Pay, PhonePe, Paytm QR code ready रखें'
       ]
     },
     {
@@ -208,11 +208,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Friends & Family:** सबसे पहले अपने circle में बेचें',
-        '**Office Colleagues:** Office में display करें (permission लेकर)',
-        '**Local Exhibitions:** Society fairs, kitty parties में stall लगाएं',
-        '**Boutiques Tie-up:** Local boutiques को commission basis पर रखें (30-40%)',
-        '**College Fests:** College events में stall (students अच्छे customers हैं)'
+        'Friends & Family: सबसे पहले अपने circle में बेचें',
+        'Office Colleagues: Office में display करें (permission लेकर)',
+        'Local Exhibitions: Society fairs, kitty parties में stall लगाएं',
+        'Boutiques Tie-up: Local boutiques को commission basis पर रखें (30-40%)',
+        'College Fests: College events में stall (students अच्छे customers हैं)'
       ]
     },
     {
@@ -222,11 +222,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Meesho:** Zero commission, easy to start',
-        '**GlowRoad:** Women-focused platform',
-        '**Amazon Handmade:** Premium customers, but higher commission',
-        '**Etsy India:** International exposure (ship carefully)',
-        '**Flipkart Samarth:** For artisans, good support'
+        'Meesho: Zero commission, easy to start',
+        'GlowRoad: Women-focused platform',
+        'Amazon Handmade: Premium customers, but higher commission',
+        'Etsy India: International exposure (ship carefully)',
+        'Flipkart Samarth: For artisans, good support'
       ]
     },
     {
@@ -249,15 +249,15 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Material Cost** (जो खर्चा आया): ₹50',
-        '**Labour Cost** (आपका time value): ₹80 (30 min work at ₹160/hour)',
-        '**Packaging:** ₹20',
-        '**Profit Margin:** ₹100 (50-70%)',
-        '**Total Selling Price:** ₹250',
+        'Material Cost (जो खर्चा आया): ₹50',
+        'Labour Cost (आपका time value): ₹80 (30 min work at ₹160/hour)',
+        'Packaging: ₹20',
+        'Profit Margin: ₹100 (50-70%)',
+        'Total Selling Price: ₹250',
         '',
-        '**Competition Check:** Similar items की online price देखें',
-        '**Platform Commission:** Meesho (0%), Instagram (0%), Amazon (15-20%)',
-        '**Bulk Orders:** 5+ pieces पर 10-15% discount दें'
+        'Competition Check: Similar items की online price देखें',
+        'Platform Commission: Meesho (0%), Instagram (0%), Amazon (15-20%)',
+        'Bulk Orders: 5+ pieces पर 10-15% discount दें'
       ]
     },
     {
@@ -267,11 +267,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Tassel Earrings:** Cost ₹40, Sell ₹180-250',
-        '**Oxidized Jhumkas:** Cost ₹60, Sell ₹250-400',
-        '**Beaded Necklace:** Cost ₹120, Sell ₹500-700',
-        '**Bracelet Set:** Cost ₹30, Sell ₹150-200',
-        '**Anklets (Payal):** Cost ₹80, Sell ₹350-500'
+        'Tassel Earrings: Cost ₹40, Sell ₹180-250',
+        'Oxidized Jhumkas: Cost ₹60, Sell ₹250-400',
+        'Beaded Necklace: Cost ₹120, Sell ₹500-700',
+        'Bracelet Set: Cost ₹30, Sell ₹150-200',
+        'Anklets (Payal): Cost ₹80, Sell ₹350-500'
       ]
     },
     {
@@ -285,11 +285,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Tassel Earrings:** सबसे easy, trending, high demand',
-        '**Beaded Bracelets:** Simple threading work',
-        '**Anklets with Ghungroo:** Traditional, festive demand',
-        '**Simple Necklaces:** Wire और beads से',
-        '**Keychains:** Practice के लिए perfect'
+        'Tassel Earrings: सबसे easy, trending, high demand',
+        'Beaded Bracelets: Simple threading work',
+        'Anklets with Ghungroo: Traditional, festive demand',
+        'Simple Necklaces: Wire और beads से',
+        'Keychains: Practice के लिए perfect'
       ]
     },
     {
@@ -299,12 +299,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Navratri/Garba Jewelry:** October में heavy demand',
-        '**Karva Chauth Sets:** October-November',
-        '**Diwali Collection:** Gold-plated designs',
-        '**Wedding Season:** December-March (bridal jewelry)',
-        '**Raksha Bandhan:** Matching brother-sister sets',
-        '**Valentine\'s Day:** Couple jewelry (Jan-Feb)'
+        'Navratri/Garba Jewelry: October में heavy demand',
+        'Karva Chauth Sets: October-November',
+        'Diwali Collection: Gold-plated designs',
+        'Wedding Season: December-March (bridal jewelry)',
+        'Raksha Bandhan: Matching brother-sister sets',
+        'Valentine\'s Day: Couple jewelry (Jan-Feb)'
       ]
     },
     {
@@ -314,12 +314,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Oxidized Silver Look:** सबसे ज्यादा demand',
-        '**Chandbali Earrings:** Traditional yet modern',
-        '**Layered Necklaces:** Boho style',
-        '**Personalized Name Jewelry:** High margin item',
-        '**Temple Jewelry:** South Indian designs popular',
-        '**Contemporary Minimal:** Office wear के लिए'
+        'Oxidized Silver Look: सबसे ज्यादा demand',
+        'Chandbali Earrings: Traditional yet modern',
+        'Layered Necklaces: Boho style',
+        'Personalized Name Jewelry: High margin item',
+        'Temple Jewelry: South Indian designs popular',
+        'Contemporary Minimal: Office wear के लिए'
       ]
     },
     {
@@ -333,13 +333,13 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Profile Setup:** Professional bio, contact details, website link',
-        '**Content Mix:** 50% product photos, 30% reels, 20% stories',
-        '**Best Posting Time:** 7-9 AM, 12-2 PM, 7-9 PM (जब लोग phone देखते हैं)',
-        '**Hashtags:** #handmadejewelry #earringslove #affordablejewelry #indianjewelry #fashionjewelry #jhumkas #oxidizedjewelry #ethnicwear #festivejewelry #madeinindia',
-        '**Reels Ideas:** Making process, before-after, styling tips, customer reviews',
-        '**Engagement:** दूसरों के posts पर genuine comments करें',
-        '**Giveaways:** हर 100 followers पर small giveaway (reach बढ़ती है)'
+        'Profile Setup: Professional bio, contact details, website link',
+        'Content Mix: 50% product photos, 30% reels, 20% stories',
+        'Best Posting Time: 7-9 AM, 12-2 PM, 7-9 PM (जब लोग phone देखते हैं)',
+        'Hashtags: #handmadejewelry #earringslove #affordablejewelry #indianjewelry #fashionjewelry #jhumkas #oxidizedjewelry #ethnicwear #festivejewelry #madeinindia',
+        'Reels Ideas: Making process, before-after, styling tips, customer reviews',
+        'Engagement: दूसरों के posts पर genuine comments करें',
+        'Giveaways: हर 100 followers पर small giveaway (reach बढ़ती है)'
       ]
     },
     {
@@ -349,16 +349,16 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 1-5:** Product showcase posts',
-        '**Day 6:** Behind-the-scenes reel (making process)',
-        '**Day 7-10:** Customer testimonial reposts',
-        '**Day 11:** "How I started with ₹5000" story',
-        '**Day 12-15:** Product close-up photography',
-        '**Day 16:** Discount offer announcement',
-        '**Day 17-20:** Styling reels (how to wear)',
-        '**Day 21:** Customer order packaging video',
-        '**Day 22-25:** New collection launch',
-        '**Day 26-30:** Festival special collection teasers'
+        'Day 1-5: Product showcase posts',
+        'Day 6: Behind-the-scenes reel (making process)',
+        'Day 7-10: Customer testimonial reposts',
+        'Day 11: "How I started with ₹5000" story',
+        'Day 12-15: Product close-up photography',
+        'Day 16: Discount offer announcement',
+        'Day 17-20: Styling reels (how to wear)',
+        'Day 21: Customer order packaging video',
+        'Day 22-25: New collection launch',
+        'Day 26-30: Festival special collection teasers'
       ]
     },
     {
@@ -372,15 +372,15 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**1. Inquiry Receive:** Instagram DM या WhatsApp message',
-        '**2. Product Details:** Photos, price, customization options बताएं',
-        '**3. Payment:** 50% advance लें (Google Pay/PhonePe)',
-        '**4. Making Time:** 2-3 days बताएं (rush में 1 day)',
-        '**5. Final Photos:** बनने के बाद customer को भेजें',
-        '**6. Balance Payment:** Delivery से पहले remaining 50%',
-        '**7. Packaging:** Neat packing करें, business card डालें',
-        '**8. Delivery:** Local courier या hand delivery',
-        '**9. Follow-up:** Delivery के बाद feedback मांगें'
+        '1. Inquiry Receive: Instagram DM या WhatsApp message',
+        '2. Product Details: Photos, price, customization options बताएं',
+        '3. Payment: 50% advance लें (Google Pay/PhonePe)',
+        '4. Making Time: 2-3 days बताएं (rush में 1 day)',
+        '5. Final Photos: बनने के बाद customer को भेजें',
+        '6. Balance Payment: Delivery से पहले remaining 50%',
+        '7. Packaging: Neat packing करें, business card डालें',
+        '8. Delivery: Local courier या hand delivery',
+        '9. Follow-up: Delivery के बाद feedback मांगें'
       ]
     },
     {
@@ -390,11 +390,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Local (Same City):** ₹40-60 (Dunzo, Porter, या खुद deliver)',
-        '**India Post:** ₹30-50 (सस्ता but slow 5-7 days)',
-        '**Delhivery/DTDC:** ₹60-80 (fast 2-3 days)',
-        '**Tracking:** हमेशा tracking number दें',
-        '**Insurance:** Valuable items (>₹1000) को insure करें'
+        'Local (Same City): ₹40-60 (Dunzo, Porter, या खुद deliver)',
+        'India Post: ₹30-50 (सस्ता but slow 5-7 days)',
+        'Delhivery/DTDC: ₹60-80 (fast 2-3 days)',
+        'Tracking: हमेशा tracking number दें',
+        'Insurance: Valuable items (>₹1000) को insure करें'
       ]
     },
     {
@@ -408,11 +408,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Sales:** 10-15 pieces',
-        '**Average Price:** ₹250',
-        '**Revenue:** ₹3,000-4,000',
-        '**Profit:** ₹1,500-2,000 (50% margin)',
-        '**Status:** Investment recovery + small profit'
+        'Sales: 10-15 pieces',
+        'Average Price: ₹250',
+        'Revenue: ₹3,000-4,000',
+        'Profit: ₹1,500-2,000 (50% margin)',
+        'Status: Investment recovery + small profit'
       ]
     },
     {
@@ -422,11 +422,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Sales:** 40-50 pieces',
-        '**Revenue:** ₹15,000-18,000',
-        '**Profit:** ₹8,000-10,000',
-        '**Repeat Customers:** 20-30%',
-        '**Instagram Followers:** 500-800'
+        'Sales: 40-50 pieces',
+        'Revenue: ₹15,000-18,000',
+        'Profit: ₹8,000-10,000',
+        'Repeat Customers: 20-30%',
+        'Instagram Followers: 500-800'
       ]
     },
     {
@@ -436,11 +436,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Sales:** 80-100 pieces',
-        '**Revenue:** ₹30,000-40,000',
-        '**Profit:** ₹18,000-25,000',
-        '**Bulk Orders:** 2-3 per month',
-        '**Followers:** 2,000-3,000'
+        'Sales: 80-100 pieces',
+        'Revenue: ₹30,000-40,000',
+        'Profit: ₹18,000-25,000',
+        'Bulk Orders: 2-3 per month',
+        'Followers: 2,000-3,000'
       ]
     },
     {
@@ -449,7 +449,7 @@ export const diyJewelryBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Monthly Revenue:** ₹50,000-80,000\n**Monthly Profit:** ₹30,000-50,000\n**Status:** Full-time income replacement possible!'
+      content: 'Monthly Revenue: ₹50,000-80,000\nMonthly Profit: ₹30,000-50,000\nStatus: Full-time income replacement possible!'
     },
     {
       type: 'heading',
@@ -458,16 +458,16 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Quality > Quantity:** पहले quality पर focus करें, quantity बाद में बढ़ाएं',
-        '**Customer Service:** हमेशा polite रहें, quick respond करें',
-        '**Unique Designs:** Copy न करें, अपनी creativity use करें',
-        '**Seasonal Planning:** Festival के 1 महीने पहले से prepare करें',
-        '**Bulk Orders:** शादी, corporate gifts के लिए ready रहें',
-        '**Packaging Matters:** अच्छी packing customer को impress करती है',
-        '**Customer Photos:** Customers को wearing photos share करने के लिए encourage करें',
-        '**Feedback:** Negative feedback से सीखें, improve करें',
-        '**Competitor Analysis:** Monthly 1-2 घंटे competitors के pages देखें',
-        '**Reinvest:** First 3 months की earning को फिर से business में लगाएं'
+        'Quality > Quantity: पहले quality पर focus करें, quantity बाद में बढ़ाएं',
+        'Customer Service: हमेशा polite रहें, quick respond करें',
+        'Unique Designs: Copy न करें, अपनी creativity use करें',
+        'Seasonal Planning: Festival के 1 महीने पहले से prepare करें',
+        'Bulk Orders: शादी, corporate gifts के लिए ready रहें',
+        'Packaging Matters: अच्छी packing customer को impress करती है',
+        'Customer Photos: Customers को wearing photos share करने के लिए encourage करें',
+        'Feedback: Negative feedback से सीखें, improve करें',
+        'Competitor Analysis: Monthly 1-2 घंटे competitors के pages देखें',
+        'Reinvest: First 3 months की earning को फिर से business में लगाएं'
       ]
     },
     {
@@ -477,14 +477,14 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Overpricing शुरुआत में:** पहले affordable prices रखें, reputation बनाएं',
-        '**Poor Quality:** सस्ती material से भी अच्छी finishing possible है',
-        '**Irregular Posting:** Daily consistency बहुत important है',
-        '**No Response:** Messages का reply늦 से देना (customers खो जाते हैं)',
-        '**Only One Platform:** Multiple platforms use करें',
-        '**No Record Keeping:** Sales, expenses का record रखें (Excel में)',
-        '**No Customization:** Customers को customization option दें (ज्यादा पैसे मिलते हैं)',
-        '**Ignoring Feedback:** Customer reviews seriously लें'
+        'Overpricing शुरुआत में: पहले affordable prices रखें, reputation बनाएं',
+        'Poor Quality: सस्ती material से भी अच्छी finishing possible है',
+        'Irregular Posting: Daily consistency बहुत important है',
+        'No Response: Messages का reply늦 से देना (customers खो जाते हैं)',
+        'Only One Platform: Multiple platforms use करें',
+        'No Record Keeping: Sales, expenses का record रखें (Excel में)',
+        'No Customization: Customers को customization option दें (ज्यादा पैसे मिलते हैं)',
+        'Ignoring Feedback: Customer reviews seriously लें'
       ]
     },
     {
@@ -498,12 +498,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Team Hire:** 1-2 helpers को train करें (₹200-300/day)',
-        '**Bulk Material:** Wholesale में खरीदें (30-40% सस्ता)',
-        '**Variety Increase:** 50-60 different designs रखें',
-        '**Website Launch:** Shopify/Instamojo पर simple website',
-        '**Paid Ads:** ₹50-100/day Facebook/Instagram ads',
-        '**Collaborations:** YouTubers, bloggers के साथ paid promotions'
+        'Team Hire: 1-2 helpers को train करें (₹200-300/day)',
+        'Bulk Material: Wholesale में खरीदें (30-40% सस्ता)',
+        'Variety Increase: 50-60 different designs रखें',
+        'Website Launch: Shopify/Instamojo पर simple website',
+        'Paid Ads: ₹50-100/day Facebook/Instagram ads',
+        'Collaborations: YouTubers, bloggers के साथ paid promotions'
       ]
     },
     {
@@ -513,12 +513,12 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**GST Registration:** Turnover > ₹20L होने पर (mandatory)',
-        '**Physical Store:** Small kiosk या shared space',
-        '**Wholesale Supply:** Boutiques को bulk supply',
-        '**Export:** Etsy international orders fulfill करें',
-        '**Training Classes:** Jewelry making workshops दें (extra income)',
-        '**YouTube Channel:** Tutorials डालें, monetize करें'
+        'GST Registration: Turnover > ₹20L होने पर (mandatory)',
+        'Physical Store: Small kiosk या shared space',
+        'Wholesale Supply: Boutiques को bulk supply',
+        'Export: Etsy international orders fulfill करें',
+        'Training Classes: Jewelry making workshops दें (extra income)',
+        'YouTube Channel: Tutorials डालें, monetize करें'
       ]
     },
     {
@@ -528,18 +528,18 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**YouTube Channels:**',
+        'YouTube Channels:',
         '• Beads Art by Sangeeta Gupta',
         '• DIY Jewelry Making India',
         '• Craft Passion',
         '• The Corner of Craft',
         '',
-        '**Instagram Accounts to Follow:**',
+        'Instagram Accounts to Follow:',
         '• @handmadejewelryindia',
         '• @indianjewelrydesigns',
         '• @earringslove',
         '',
-        '**Where to Buy Materials:**',
+        'Where to Buy Materials:',
         '• Sadar Bazaar, Delhi (wholesale)',
         '• Chickpet, Bangalore',
         '• Zaveri Bazaar, Mumbai',
@@ -557,11 +557,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Budget Calculator](https://moneycal.in/calculators/budget-calculator)** - Monthly expenses plan करें',
-        '**[Profit Margin Calculator](https://moneycal.in/corporate-finance)** - सही pricing calculate करें',
-        '**[GST Calculator](https://moneycal.in/tools/gst-amount-calculator)** - जब turnover बढ़े',
-        '**[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator)** - Profit पर tax calculate करें',
-        '**[Loan Calculator](https://moneycal.in/calculators/business-loan-calculator)** - अगर business loan लेना हो'
+        '[Budget Calculator](https://moneycal.in/calculators/budget-calculator) - Monthly expenses plan करें',
+        '[Profit Margin Calculator](https://moneycal.in/corporate-finance) - सही pricing calculate करें',
+        '[GST Calculator](https://moneycal.in/tools/gst-amount-calculator) - जब turnover बढ़े',
+        '[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator) - Profit पर tax calculate करें',
+        '[Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) - अगर business loan लेना हो'
       ]
     },
     {
@@ -575,13 +575,13 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**₹0-20L Turnover:** कोई registration नहीं चाहिए (छोटा business)',
-        '**₹20L+ Turnover:** GST registration mandatory',
-        '**Udyam Registration:** MSME benefits के लिए (free, online)',
-        '**Bank Account:** Separate business account खोलें',
-        '**Shop Act License:** अगर physical shop खोलें',
-        '**Trade License:** Local municipal corporation से',
-        '**Brand Trademark:** अगर unique brand name हो (₹5000-10000)'
+        '₹0-20L Turnover: कोई registration नहीं चाहिए (छोटा business)',
+        '₹20L+ Turnover: GST registration mandatory',
+        'Udyam Registration: MSME benefits के लिए (free, online)',
+        'Bank Account: Separate business account खोलें',
+        'Shop Act License: अगर physical shop खोलें',
+        'Trade License: Local municipal corporation से',
+        'Brand Trademark: अगर unique brand name हो (₹5000-10000)'
       ]
     },
     {
@@ -591,11 +591,11 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[PM Mudra Loan](https://moneycal.in/government-schemes):** ₹50,000-10 लाख तक loan (no collateral)',
-        '**Stand-Up India:** महिला उद्यमियों के लिए ₹10L-₹1Cr loan',
-        '**MSME Schemes:** Subsidy और support',
-        '**Skill India:** Free training programs',
-        '**Make in India:** Exhibition opportunities'
+        '[PM Mudra Loan](https://moneycal.in/government-schemes): ₹50,000-10 लाख तक loan (no collateral)',
+        'Stand-Up India: महिला उद्यमियों के लिए ₹10L-₹1Cr loan',
+        'MSME Schemes: Subsidy और support',
+        'Skill India: Free training programs',
+        'Make in India: Exhibition opportunities'
       ]
     },
     {
@@ -605,14 +605,14 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Branding:** Logo design करवाएं (Canva free में)',
-        '**Email Marketing:** Customer database बनाएं, monthly newsletter',
-        '**Subscription Box:** Monthly jewelry box service (₹500/month)',
-        '**Workshops:** Jewelry making classes दें (₹500-1000/person)',
-        '**YouTube:** Tutorial videos डालें, monetization करें',
-        '**Affiliate:** Meesho, GlowRoad का affiliate program join करें',
-        '**Influencer Collaboration:** Micro-influencers (5K-50K followers) को free products दें',
-        '**Seasonal Catalog:** हर season के लिए digital catalog बनाएं'
+        'Branding: Logo design करवाएं (Canva free में)',
+        'Email Marketing: Customer database बनाएं, monthly newsletter',
+        'Subscription Box: Monthly jewelry box service (₹500/month)',
+        'Workshops: Jewelry making classes दें (₹500-1000/person)',
+        'YouTube: Tutorial videos डालें, monetization करें',
+        'Affiliate: Meesho, GlowRoad का affiliate program join करें',
+        'Influencer Collaboration: Micro-influencers (5K-50K followers) को free products दें',
+        'Seasonal Catalog: हर season के लिए digital catalog बनाएं'
       ]
     },
     {
@@ -625,7 +625,7 @@ export const diyJewelryBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** हाँ! YouTube पर thousands of free tutorials हैं। 1-2 हफ्ते practice करें, फिर शुरू करें। Basic designs बहुत आसान हैं।'
+      content: 'Answer: हाँ! YouTube पर thousands of free tutorials हैं। 1-2 हफ्ते practice करें, फिर शुरू करें। Basic designs बहुत आसान हैं।'
     },
     {
       type: 'subheading',
@@ -633,7 +633,7 @@ export const diyJewelryBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** शुरुआत में local craft stores या online (Meesho Supply, Amazon). जब business बढ़े तो wholesale market (Sadar Bazaar Delhi, Chickpet Bangalore) से खरीदें - 50-60% सस्ता मिलता है।'
+      content: 'Answer: शुरुआत में local craft stores या online (Meesho Supply, Amazon). जब business बढ़े तो wholesale market (Sadar Bazaar Delhi, Chickpet Bangalore) से खरीदें - 50-60% सस्ता मिलता है।'
     },
     {
       type: 'subheading',
@@ -641,7 +641,7 @@ export const diyJewelryBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** शुरुआत में 2-3 घंटे daily enough है। 1 pair earrings बनने में 20-40 minutes (experience के साथ fast होंगे)। Weekend में ज्यादा time दें।'
+      content: 'Answer: शुरुआत में 2-3 घंटे daily enough है। 1 pair earrings बनने में 20-40 minutes (experience के साथ fast होंगे)। Weekend में ज्यादा time दें।'
     },
     {
       type: 'subheading',
@@ -649,7 +649,7 @@ export const diyJewelryBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Trending designs बनाएं, pricing competitive रखें। Local exhibitions में participate करें। Friends/family में gift दें (word of mouth marketing)। Meesho पर list करें (free platform, no risk)।'
+      content: 'Answer: Trending designs बनाएं, pricing competitive रखें। Local exhibitions में participate करें। Friends/family में gift दें (word of mouth marketing)। Meesho पर list करें (free platform, no risk)।'
     },
     {
       type: 'subheading',
@@ -657,7 +657,7 @@ export const diyJewelryBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Unique designs बनाएं, excellent customer service दें, customization offer करें, affordable pricing रखें। Your USP (Unique Selling Point) clear करें - "Handmade with Love" या "Customized Designs"।'
+      content: 'Answer: Unique designs बनाएं, excellent customer service दें, customization offer करें, affordable pricing रखें। Your USP (Unique Selling Point) clear करें - "Handmade with Love" या "Customized Designs"।'
     },
     {
       type: 'heading',
@@ -670,9 +670,9 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 1-2:** 10 YouTube tutorials देखें, notes बनाएं',
-        '**Day 3-4:** Basic tools और ₹2000 का material खरीदें',
-        '**Day 5-7:** 5-7 practice pieces बनाएं'
+        'Day 1-2: 10 YouTube tutorials देखें, notes बनाएं',
+        'Day 3-4: Basic tools और ₹2000 का material खरीदें',
+        'Day 5-7: 5-7 practice pieces बनाएं'
       ]
     },
     {
@@ -682,9 +682,9 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 8-10:** 15-20 selling pieces बनाएं',
-        '**Day 11-12:** Product photography, pricing decide करें',
-        '**Day 13-14:** Instagram/Facebook page बनाएं, setup करें'
+        'Day 8-10: 15-20 selling pieces बनाएं',
+        'Day 11-12: Product photography, pricing decide करें',
+        'Day 13-14: Instagram/Facebook page बनाएं, setup करें'
       ]
     },
     {
@@ -694,9 +694,9 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 15:** पहला post - All products showcase',
-        '**Day 16-18:** Daily posts, stories, hashtags use करें',
-        '**Day 19-21:** Friends/family को share करें, first sale target करें'
+        'Day 15: पहला post - All products showcase',
+        'Day 16-18: Daily posts, stories, hashtags use करें',
+        'Day 19-21: Friends/family को share करें, first sale target करें'
       ]
     },
     {
@@ -706,7 +706,7 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 22-28:** Reels बनाएं, Meesho पर list करें, local selling शुरू करें'
+        'Day 22-28: Reels बनाएं, Meesho पर list करें, local selling शुरू करें'
       ]
     },
     {
@@ -719,11 +719,11 @@ export const diyJewelryBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**याद रखें:**\n• पहले 3 महीने सबसे challenging हैं\n• Consistency बनाए रखें\n• हर failure से सीखें\n• Customers की feedback seriously लें\n• अपनी creativity पर trust रखें'
+      content: 'याद रखें:\n• पहले 3 महीने सबसे challenging हैं\n• Consistency बनाए रखें\n• हर failure से सीखें\n• Customers की feedback seriously लें\n• अपनी creativity पर trust रखें'
     },
     {
       type: 'paragraph',
-      content: '**Success Formula:** Quality Products + Good Marketing + Excellent Customer Service = Successful Business!'
+      content: 'Success Formula: Quality Products + Good Marketing + Excellent Customer Service = Successful Business!'
     },
     {
       type: 'heading',
@@ -732,20 +732,20 @@ export const diyJewelryBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[MSME Ministry](https://msme.gov.in/)** - Government support schemes',
-        '**[Udyam Registration](https://udyamregistration.gov.in/)** - Free MSME registration',
-        '**[GeM Portal](https://gem.gov.in/)** - Government procurement',
-        '**[Startup India](https://www.startupindia.gov.in/)** - Funding opportunities',
-        '**[Skill India](https://www.skillindia.gov.in/)** - Free training programs'
+        '[MSME Ministry](https://msme.gov.in/) - Government support schemes',
+        '[Udyam Registration](https://udyamregistration.gov.in/) - Free MSME registration',
+        '[GeM Portal](https://gem.gov.in/) - Government procurement',
+        '[Startup India](https://www.startupindia.gov.in/) - Funding opportunities',
+        '[Skill India](https://www.skillindia.gov.in/) - Free training programs'
       ]
     },
     {
       type: 'paragraph',
-      content: '💰 **Business Planning Tools:** अपने jewelry business की financial planning के लिए हमारे [Budget Calculator](https://moneycal.in/calculators/budget-calculator) और [Profit Margin Calculator](https://moneycal.in/corporate-finance) use करें। अगर business loan की जरूरत हो तो [Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) से EMI calculate करें।'
+      content: '💰 Business Planning Tools: अपने jewelry business की financial planning के लिए हमारे [Budget Calculator](https://moneycal.in/calculators/budget-calculator) और [Profit Margin Calculator](https://moneycal.in/corporate-finance) use करें। अगर business loan की जरूरत हो तो [Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) से EMI calculate करें।'
     },
     {
       type: 'paragraph',
-      content: '**सभी तैयारी हो गई? तो आज ही शुरू करें! Best wishes for your entrepreneurial journey! 🎉💍✨**'
+      content: 'सभी तैयारी हो गई? तो आज ही शुरू करें! Best wishes for your entrepreneurial journey! 🎉💍✨'
     }
   ]
 };

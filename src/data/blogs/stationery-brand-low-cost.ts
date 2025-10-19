@@ -1,4 +1,4 @@
-import { BlogPost } from '../blogData';
+﻿import { BlogPost } from '../blogData';
 
 const getCurrentDate = () => {
   const now = new Date();
@@ -29,14 +29,14 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Evergreen Market:** पूरे साल demand रहती है (खासकर June-August)',
-        '**Low Investment:** ₹10,000-20,000 में शुरू हो जाता है',
-        '**High Margin:** 40-60% profit margin possible',
-        '**No Special Skills:** Koi technical knowledge नहीं चाहिए',
-        '**Scalable:** छोटे से शुरू करके बड़ा brand बना सकते हैं',
-        '**Multiple Channels:** Schools, colleges, offices, retail shops, online',
-        '**Brand Value:** अपना खुद का brand बना सकते हैं',
-        '**Repeat Business:** Customers बार-बार खरीदते हैं'
+        'Evergreen Market: पूरे साल demand रहती है (खासकर June-August)',
+        'Low Investment: ₹10,000-20,000 में शुरू हो जाता है',
+        'High Margin: 40-60% profit margin possible',
+        'No Special Skills: Koi technical knowledge नहीं चाहिए',
+        'Scalable: छोटे से शुरू करके बड़ा brand बना सकते हैं',
+        'Multiple Channels: Schools, colleges, offices, retail shops, online',
+        'Brand Value: अपना खुद का brand बना सकते हैं',
+        'Repeat Business: Customers बार-बार खरीदते हैं'
       ]
     },
     {
@@ -50,14 +50,14 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Notebooks:** ₹2000 - 100 pieces (different sizes)',
-        '**Pens:** ₹800 - 200 pieces (ballpoint, gel)',
-        '**Pencils & Erasers:** ₹400',
-        '**Geometry Box:** ₹600 - 20 sets',
-        '**Sticky Notes:** ₹300 - 50 pads',
-        '**Files & Folders:** ₹500',
-        '**Art Supplies:** ₹700 - Colors, crayons',
-        '**Miscellaneous:** ₹700 - Staplers, clips, rulers'
+        'Notebooks: ₹2000 - 100 pieces (different sizes)',
+        'Pens: ₹800 - 200 pieces (ballpoint, gel)',
+        'Pencils & Erasers: ₹400',
+        'Geometry Box: ₹600 - 20 sets',
+        'Sticky Notes: ₹300 - 50 pads',
+        'Files & Folders: ₹500',
+        'Art Supplies: ₹700 - Colors, crayons',
+        'Miscellaneous: ₹700 - Staplers, clips, rulers'
       ]
     },
     {
@@ -67,12 +67,12 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Logo Design:** ₹500 (Canva Pro या Fiverr)',
-        '**Stickers/Labels:** ₹800 - 500 branded stickers',
-        '**Business Cards:** ₹200 - 100 cards',
-        '**Packaging Bags:** ₹400 - Branded plastic bags',
-        '**Stamp:** ₹300 - Company name stamp',
-        '**Catalog Printing:** ₹300 - 50 copies'
+        'Logo Design: ₹500 (Canva Pro या Fiverr)',
+        'Stickers/Labels: ₹800 - 500 branded stickers',
+        'Business Cards: ₹200 - 100 cards',
+        'Packaging Bags: ₹400 - Branded plastic bags',
+        'Stamp: ₹300 - Company name stamp',
+        'Catalog Printing: ₹300 - 50 copies'
       ]
     },
     {
@@ -82,10 +82,10 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Sample Set:** ₹400 - Samples for showing',
-        '**Flex Banner:** ₹300 - Small promotional banner',
-        '**Social Media:** ₹200 - Boosted posts',
-        '**Transport:** ₹100 - Delivery charges'
+        'Sample Set: ₹400 - Samples for showing',
+        'Flex Banner: ₹300 - Small promotional banner',
+        'Social Media: ₹200 - Boosted posts',
+        'Transport: ₹100 - Delivery charges'
       ]
     },
     {
@@ -95,9 +95,9 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Display Box:** ₹200',
-        '**Price Tags:** ₹100',
-        '**Emergency Fund:** ₹200'
+        'Display Box: ₹200',
+        'Price Tags: ₹100',
+        'Emergency Fund: ₹200'
       ]
     },
     {
@@ -111,13 +111,13 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Notebooks:** A4 (₹40-60), Single line (₹20-30), Spiral (₹50-80)',
-        '**Pens:** Blue/Black ballpoint (₹5-10), Gel pens (₹10-20)',
-        '**Pencils:** HB, 2B (₹3-5 each)',
-        '**Erasers & Sharpeners:** (₹2-5)',
-        '**Geometry Box:** (₹50-80)',
-        '**Sticky Notes:** Different colors (₹20-40)',
-        '**Files & Folders:** Plastic (₹10-20), Paper (₹5-10)'
+        'Notebooks: A4 (₹40-60), Single line (₹20-30), Spiral (₹50-80)',
+        'Pens: Blue/Black ballpoint (₹5-10), Gel pens (₹10-20)',
+        'Pencils: HB, 2B (₹3-5 each)',
+        'Erasers & Sharpeners: (₹2-5)',
+        'Geometry Box: (₹50-80)',
+        'Sticky Notes: Different colors (₹20-40)',
+        'Files & Folders: Plastic (₹10-20), Paper (₹5-10)'
       ]
     },
     {
@@ -127,12 +127,12 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Designer Notebooks:** Customized covers (₹100-200)',
-        '**Fountain Pens:** (₹150-500)',
-        '**Art Sets:** Complete painting sets (₹200-500)',
-        '**Planners & Organizers:** (₹150-300)',
-        '**Gift Sets:** Combo packs (₹300-800)',
-        '**Customized Items:** Name/photo printed (₹200-500)'
+        'Designer Notebooks: Customized covers (₹100-200)',
+        'Fountain Pens: (₹150-500)',
+        'Art Sets: Complete painting sets (₹200-500)',
+        'Planners & Organizers: (₹150-300)',
+        'Gift Sets: Combo packs (₹300-800)',
+        'Customized Items: Name/photo printed (₹200-500)'
       ]
     },
     {
@@ -142,12 +142,12 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Eco-Friendly Products:** Recycled paper notebooks, bamboo pens',
-        '**Aesthetic Stationery:** Korean/Japanese style',
-        '**Bullet Journals:** Dotted notebooks for planning',
-        '**Washi Tapes:** Decorative tapes',
-        '**Brush Pens:** For calligraphy',
-        '**Digital Tablet Compatible:** Stylus pens'
+        'Eco-Friendly Products: Recycled paper notebooks, bamboo pens',
+        'Aesthetic Stationery: Korean/Japanese style',
+        'Bullet Journals: Dotted notebooks for planning',
+        'Washi Tapes: Decorative tapes',
+        'Brush Pens: For calligraphy',
+        'Digital Tablet Compatible: Stylus pens'
       ]
     },
     {
@@ -161,14 +161,14 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Delhi:** Nai Sarak, Dariba Kalan, Chandni Chowk',
-        '**Mumbai:** Masjid Bunder, Bhuleshwar',
-        '**Bangalore:** Chickpet, Avenue Road',
-        '**Kolkata:** College Street, Bara Bazaar',
-        '**Chennai:** Parrys Corner, George Town',
+        'Delhi: Nai Sarak, Dariba Kalan, Chandni Chowk',
+        'Mumbai: Masjid Bunder, Bhuleshwar',
+        'Bangalore: Chickpet, Avenue Road',
+        'Kolkata: College Street, Bara Bazaar',
+        'Chennai: Parrys Corner, George Town',
         '',
-        '**Discount:** Wholesale में 40-50% सस्ता मिलता है',
-        '**Minimum Order:** Usually 50-100 pieces per item'
+        'Discount: Wholesale में 40-50% सस्ता मिलता है',
+        'Minimum Order: Usually 50-100 pieces per item'
       ]
     },
     {
@@ -178,13 +178,13 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**IndiaMART:** सबसे popular, thousands of suppliers',
-        '**TradeIndia:** Good for bulk orders',
-        '**Alibaba India:** Chinese products भी available',
-        '**Udaan:** Fast delivery, good prices',
-        '**JioMart Wholesale:** Easy ordering',
+        'IndiaMART: सबसे popular, thousands of suppliers',
+        'TradeIndia: Good for bulk orders',
+        'Alibaba India: Chinese products भी available',
+        'Udaan: Fast delivery, good prices',
+        'JioMart Wholesale: Easy ordering',
         '',
-        '**Tips:** Compare 4-5 suppliers, ask for samples, negotiate prices'
+        'Tips: Compare 4-5 suppliers, ask for samples, negotiate prices'
       ]
     },
     {
@@ -194,14 +194,14 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Cello:** Pens, stationery',
-        '**Reynolds:** Writing instruments',
-        '**Camlin:** Art supplies',
-        '**Doms:** Pencils, colors',
-        '**ITC Classmate:** Notebooks',
+        'Cello: Pens, stationery',
+        'Reynolds: Writing instruments',
+        'Camlin: Art supplies',
+        'Doms: Pencils, colors',
+        'ITC Classmate: Notebooks',
         '',
-        '**Advantage:** सीधे manufacturer से मिलेगा (50-60% सस्ता)',
-        '**Minimum Order:** Usually higher (₹20,000-50,000)'
+        'Advantage: सीधे manufacturer से मिलेगा (50-60% सस्ता)',
+        'Minimum Order: Usually higher (₹20,000-50,000)'
       ]
     },
     {
@@ -215,11 +215,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Name Ideas:** StudyMate, SmartWrite, PenCraft, BookWorm, ClassPro',
-        '**Easy to Remember:** छोटा, catchy name चुनें',
-        '**Logo Design:** Canva पर free में बनाएं (या Fiverr से ₹500 में)',
-        '**Color Scheme:** Bright colors (kids के लिए), Professional (offices के लिए)',
-        '**Tagline:** "Quality Stationery, Affordable Prices" जैसा short tagline'
+        'Name Ideas: StudyMate, SmartWrite, PenCraft, BookWorm, ClassPro',
+        'Easy to Remember: छोटा, catchy name चुनें',
+        'Logo Design: Canva पर free में बनाएं (या Fiverr से ₹500 में)',
+        'Color Scheme: Bright colors (kids के लिए), Professional (offices के लिए)',
+        'Tagline: "Quality Stationery, Affordable Prices" जैसा short tagline'
       ]
     },
     {
@@ -229,11 +229,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Stickers:** हर product पर अपना logo sticker लगाएं',
-        '**Price Tags:** Clear pricing with brand name',
-        '**Packaging:** Branded plastic bags (minimum 500 bags ₹400-500 में)',
-        '**Business Card:** हर sale के साथ business card दें',
-        '**Quality Promise:** "100% Quality Guarantee" label लगाएं'
+        'Stickers: हर product पर अपना logo sticker लगाएं',
+        'Price Tags: Clear pricing with brand name',
+        'Packaging: Branded plastic bags (minimum 500 bags ₹400-500 में)',
+        'Business Card: हर sale के साथ business card दें',
+        'Quality Promise: "100% Quality Guarantee" label लगाएं'
       ]
     },
     {
@@ -243,11 +243,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram:** @yourbrandname - Daily product posts',
-        '**Facebook Page:** Business page with catalog',
-        '**WhatsApp Business:** Product catalog feature use करें',
-        '**Google My Business:** Local searches में show होंगे',
-        '**Website (Optional):** Shopify/Instamojo (₹300-500/month)'
+        'Instagram: @yourbrandname - Daily product posts',
+        'Facebook Page: Business page with catalog',
+        'WhatsApp Business: Product catalog feature use करें',
+        'Google My Business: Local searches में show होंगे',
+        'Website (Optional): Shopify/Instamojo (₹300-500/month)'
       ]
     },
     {
@@ -261,13 +261,13 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Approach:** Principal/Management से मिलें',
-        '**Catalog:** Professional catalog दिखाएं',
-        '**Samples:** Free samples दें (10-15 items)',
-        '**Bulk Discount:** Schools को 20-30% discount offer करें',
-        '**Credit Period:** Trusted schools को 15-30 days credit दें',
-        '**Contract:** Annual contract try करें (guaranteed sales)',
-        '**Best Time:** May-June (नए session से पहले)'
+        'Approach: Principal/Management से मिलें',
+        'Catalog: Professional catalog दिखाएं',
+        'Samples: Free samples दें (10-15 items)',
+        'Bulk Discount: Schools को 20-30% discount offer करें',
+        'Credit Period: Trusted schools को 15-30 days credit दें',
+        'Contract: Annual contract try करें (guaranteed sales)',
+        'Best Time: May-June (नए session से पहले)'
       ]
     },
     {
@@ -277,12 +277,12 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Target:** Small stationery shops, general stores, book shops',
-        '**Margin:** Shopkeepers को 15-20% margin दें',
-        '**Payment:** Cash on delivery या immediate payment',
-        '**Regular Supply:** Weekly/monthly supply करते रहें',
-        '**Display:** Shop में attractive display करवाएं',
-        '**Return Policy:** Damaged goods return accept करें'
+        'Target: Small stationery shops, general stores, book shops',
+        'Margin: Shopkeepers को 15-20% margin दें',
+        'Payment: Cash on delivery या immediate payment',
+        'Regular Supply: Weekly/monthly supply करते रहें',
+        'Display: Shop में attractive display करवाएं',
+        'Return Policy: Damaged goods return accept करें'
       ]
     },
     {
@@ -292,13 +292,13 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram:** Daily posts, reels, stories',
-        '**Facebook Marketplace:** Local selling के लिए best',
-        '**WhatsApp Status:** अपने contacts में viral करें',
-        '**Amazon:** Amazon Launchpad program (for new brands)',
-        '**Flipkart:** Flipkart Samarth (artisans के लिए)',
-        '**Meesho:** Zero commission, easy listing',
-        '**ShopClues:** Low competition'
+        'Instagram: Daily posts, reels, stories',
+        'Facebook Marketplace: Local selling के लिए best',
+        'WhatsApp Status: अपने contacts में viral करें',
+        'Amazon: Amazon Launchpad program (for new brands)',
+        'Flipkart: Flipkart Samarth (artisans के लिए)',
+        'Meesho: Zero commission, easy listing',
+        'ShopClues: Low competition'
       ]
     },
     {
@@ -308,11 +308,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**School Fairs:** Stall लगाएं (₹500-1000 stall rent)',
-        '**College Fests:** Students अच्छे customers हैं',
-        '**Office Exhibitions:** Corporate complexes में',
-        '**Trade Fairs:** Local trade fairs में participate करें',
-        '**Societies:** Residential societies में table लगाएं'
+        'School Fairs: Stall लगाएं (₹500-1000 stall rent)',
+        'College Fests: Students अच्छे customers हैं',
+        'Office Exhibitions: Corporate complexes में',
+        'Trade Fairs: Local trade fairs में participate करें',
+        'Societies: Residential societies में table लगाएं'
       ]
     },
     {
@@ -339,12 +339,12 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Wholesale Price (आपको मिला):** ₹10',
-        '**Your Selling Price (Retail):** ₹18-20 (80-100% markup)',
-        '**Profit Per Unit:** ₹8-10',
+        'Wholesale Price (आपको मिला): ₹10',
+        'Your Selling Price (Retail): ₹18-20 (80-100% markup)',
+        'Profit Per Unit: ₹8-10',
         '',
-        '**To Retailers:** ₹15 (50% markup) - उनका profit ₹3-5',
-        '**To Schools (Bulk):** ₹13-14 (30-40% markup)'
+        'To Retailers: ₹15 (50% markup) - उनका profit ₹3-5',
+        'To Schools (Bulk): ₹13-14 (30-40% markup)'
       ]
     },
     {
@@ -354,16 +354,16 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Notebook (Single Line 180 pages):**',
+        'Notebook (Single Line 180 pages):',
         '• Wholesale: ₹20, Retail: ₹40-45, School: ₹30-35',
         '',
-        '**Blue Pen (Pack of 10):**',
+        'Blue Pen (Pack of 10):',
         '• Wholesale: ₹30, Retail: ₹60, School: ₹45',
         '',
-        '**Geometry Box:**',
+        'Geometry Box:',
         '• Wholesale: ₹40, Retail: ₹80-90, School: ₹60',
         '',
-        '**Art Set (24 Colors):**',
+        'Art Set (24 Colors):',
         '• Wholesale: ₹150, Retail: ₹300, School: ₹220'
       ]
     },
@@ -378,9 +378,9 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Sales:** ₹15,000-20,000',
-        '**Profit:** ₹6,000-8,000 (40% margin)',
-        '**Status:** Investment partially recovered'
+        'Sales: ₹15,000-20,000',
+        'Profit: ₹6,000-8,000 (40% margin)',
+        'Status: Investment partially recovered'
       ]
     },
     {
@@ -390,10 +390,10 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Sales:** ₹40,000-50,000',
-        '**Profit:** ₹18,000-22,000',
-        '**Schools Tied-up:** 3-5',
-        '**Retail Shops:** 10-15'
+        'Sales: ₹40,000-50,000',
+        'Profit: ₹18,000-22,000',
+        'Schools Tied-up: 3-5',
+        'Retail Shops: 10-15'
       ]
     },
     {
@@ -403,11 +403,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Sales:** ₹80,000-1,20,000',
-        '**Profit:** ₹35,000-50,000',
-        '**Schools:** 10-15',
-        '**Retail Shops:** 30-40',
-        '**Online Orders:** ₹10,000-15,000'
+        'Sales: ₹80,000-1,20,000',
+        'Profit: ₹35,000-50,000',
+        'Schools: 10-15',
+        'Retail Shops: 30-40',
+        'Online Orders: ₹10,000-15,000'
       ]
     },
     {
@@ -416,7 +416,7 @@ export const stationeryBrandBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Sales:** ₹2,00,000-3,00,000\n**Profit:** ₹80,000-1,20,000\n**यह 3 महीने में साल का 40-50% business होता है!**'
+      content: 'Sales: ₹2,00,000-3,00,000\nProfit: ₹80,000-1,20,000\nयह 3 महीने में साल का 40-50% business होता है!'
     },
     {
       type: 'heading',
@@ -429,13 +429,13 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Direct Approach:** Principal से मिलने के लिए appointment लें',
-        '**Catalog Presentation:** Professional catalog बनाकर ले जाएं',
-        '**Competitive Pricing:** दूसरे suppliers से 5-10% सस्ता quote करें',
-        '**Sample Box:** 20-30 items की sample box दें',
-        '**References:** Already tied-up schools के references दें',
-        '**Annual Contract:** Exclusive supply agreement try करें',
-        '**Payment Terms:** Flexible payment options offer करें'
+        'Direct Approach: Principal से मिलने के लिए appointment लें',
+        'Catalog Presentation: Professional catalog बनाकर ले जाएं',
+        'Competitive Pricing: दूसरे suppliers से 5-10% सस्ता quote करें',
+        'Sample Box: 20-30 items की sample box दें',
+        'References: Already tied-up schools के references दें',
+        'Annual Contract: Exclusive supply agreement try करें',
+        'Payment Terms: Flexible payment options offer करें'
       ]
     },
     {
@@ -445,14 +445,14 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram Strategy:**',
+        'Instagram Strategy:',
         '• Daily 1-2 product posts',
         '• Reels: Stationery haul, organization tips',
         '• Stories: Behind-the-scenes, new arrivals',
         '• Hashtags: #stationery #studygram #stationeryaddict #bulletjournal',
         '• Collaboration: Student influencers को free products दें',
         '',
-        '**Facebook Groups:**',
+        'Facebook Groups:',
         '• Parents groups join करें',
         '• Study material groups',
         '• Local buying/selling groups',
@@ -466,11 +466,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**New Session (June-July):** "Back to School Sale - 20% Off"',
-        '**Exam Time (Oct-Nov, Feb-Mar):** "Exam Special Combo Packs"',
-        '**Diwali:** "Gift Stationery Sets - 15% Off"',
-        '**New Year:** "2025 Planners & Organizers"',
-        '**Valentine\'s Day:** "Gift Hampers for Students"'
+        'New Session (June-July): "Back to School Sale - 20% Off"',
+        'Exam Time (Oct-Nov, Feb-Mar): "Exam Special Combo Packs"',
+        'Diwali: "Gift Stationery Sets - 15% Off"',
+        'New Year: "2025 Planners & Organizers"',
+        'Valentine\'s Day: "Gift Hampers for Students"'
       ]
     },
     {
@@ -480,13 +480,13 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Trade License:** Local municipal corporation से (₹500-2000)',
-        '**GST Registration:** Turnover > ₹20L होने पर mandatory',
-        '**Udyam Registration:** MSME benefits के लिए (free online)',
-        '**Bank Account:** Separate business current account',
-        '**PAN Card:** Business transactions के लिए',
-        '**Shop Act License:** अगर physical shop हो',
-        '**Trademark (Optional):** Brand protection (₹5000-10000)'
+        'Trade License: Local municipal corporation से (₹500-2000)',
+        'GST Registration: Turnover > ₹20L होने पर mandatory',
+        'Udyam Registration: MSME benefits के लिए (free online)',
+        'Bank Account: Separate business current account',
+        'PAN Card: Business transactions के लिए',
+        'Shop Act License: अगर physical shop हो',
+        'Trademark (Optional): Brand protection (₹5000-10000)'
       ]
     },
     {
@@ -496,16 +496,16 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Quality Never Compromise:** Cheap products reputation बिगाड़ देते हैं',
-        '**Seasonal Stock:** May-June में heavy stocking करें (session start)',
-        '**Credit Policy:** नए customers को credit न दें (पहले cash)',
-        '**Inventory Management:** Fast-moving items की stock हमेशा रखें',
-        '**Customer Service:** हमेशा polite और helpful रहें',
-        '**Delivery:** Time पर delivery करें (especially schools को)',
-        '**Packaging:** Professional packaging customer को impress करती है',
-        '**Feedback:** Regular feedback लें, improve करते रहें',
-        '**Networking:** Teachers, principals, shopkeepers से अच्छे relations रखें',
-        '**Reinvest:** Initial profit को business में लगाएं'
+        'Quality Never Compromise: Cheap products reputation बिगाड़ देते हैं',
+        'Seasonal Stock: May-June में heavy stocking करें (session start)',
+        'Credit Policy: नए customers को credit न दें (पहले cash)',
+        'Inventory Management: Fast-moving items की stock हमेशा रखें',
+        'Customer Service: हमेशा polite और helpful रहें',
+        'Delivery: Time पर delivery करें (especially schools को)',
+        'Packaging: Professional packaging customer को impress करती है',
+        'Feedback: Regular feedback लें, improve करते रहें',
+        'Networking: Teachers, principals, shopkeepers से अच्छे relations रखें',
+        'Reinvest: Initial profit को business में लगाएं'
       ]
     },
     {
@@ -515,14 +515,14 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**❌ बहुत ज्यादा Stock:** पैसे फंस जाते हैं, storage issue',
-        '**❌ Credit देना:** Bad debts का risk (especially नए customers को)',
-        '**❌ Single Channel:** केवल schools या केवल online - diversify करें',
-        '**❌ Low Quality:** सस्ता लेकर बेचने पर reputation खराब होती है',
-        '**❌ Poor Record Keeping:** Sales, expenses track न करना',
-        '**❌ Seasonal Ignorance:** Peak season (June-Aug) में ready न रहना',
-        '**❌ No Marketing:** केवल wait करना, aggressive marketing जरूरी है',
-        '**❌ Overpricing:** Market research करें, competitive pricing रखें'
+        '❌ बहुत ज्यादा Stock: पैसे फंस जाते हैं, storage issue',
+        '❌ Credit देना: Bad debts का risk (especially नए customers को)',
+        '❌ Single Channel: केवल schools या केवल online - diversify करें',
+        '❌ Low Quality: सस्ता लेकर बेचने पर reputation खराब होती है',
+        '❌ Poor Record Keeping: Sales, expenses track न करना',
+        '❌ Seasonal Ignorance: Peak season (June-Aug) में ready न रहना',
+        '❌ No Marketing: केवल wait करना, aggressive marketing जरूरी है',
+        '❌ Overpricing: Market research करें, competitive pricing रखें'
       ]
     },
     {
@@ -536,12 +536,12 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Expand Product Range:** 200+ SKUs (Stock Keeping Units)',
-        '**Hire Helper:** ₹8,000-10,000/month salary',
-        '**Vehicle:** Two-wheeler for delivery',
-        '**Office Setup:** Small office/godown rent (₹5,000-8,000/month)',
-        '**More Schools:** Target 20-30 schools',
-        '**Wholesale Business:** Become distributor for smaller retailers'
+        'Expand Product Range: 200+ SKUs (Stock Keeping Units)',
+        'Hire Helper: ₹8,000-10,000/month salary',
+        'Vehicle: Two-wheeler for delivery',
+        'Office Setup: Small office/godown rent (₹5,000-8,000/month)',
+        'More Schools: Target 20-30 schools',
+        'Wholesale Business: Become distributor for smaller retailers'
       ]
     },
     {
@@ -551,12 +551,12 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Physical Store:** Open retail store (if location good)',
-        '**Team:** 2-3 employees (sales, delivery, accounts)',
-        '**Bulk Import:** Direct import from China (higher margin)',
-        '**Private Label:** अपने brand का manufacturing start करें',
-        '**Franchise:** Successful model को franchise दें',
-        '**B2B Platform:** Udaan, JioMart पर wholesale seller बनें'
+        'Physical Store: Open retail store (if location good)',
+        'Team: 2-3 employees (sales, delivery, accounts)',
+        'Bulk Import: Direct import from China (higher margin)',
+        'Private Label: अपने brand का manufacturing start करें',
+        'Franchise: Successful model को franchise दें',
+        'B2B Platform: Udaan, JioMart पर wholesale seller बनें'
       ]
     },
     {
@@ -566,11 +566,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator)** - अगर loan लेना हो',
-        '**[GST Calculator](https://moneycal.in/tools/gst-amount-calculator)** - GST calculations के लिए',
-        '**[Profit Margin Calculator](https://moneycal.in/corporate-finance)** - Pricing decide करने के लिए',
-        '**[Budget Calculator](https://moneycal.in/calculators/budget-calculator)** - Monthly planning',
-        '**[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator)** - Tax planning'
+        '[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) - अगर loan लेना हो',
+        '[GST Calculator](https://moneycal.in/tools/gst-amount-calculator) - GST calculations के लिए',
+        '[Profit Margin Calculator](https://moneycal.in/corporate-finance) - Pricing decide करने के लिए',
+        '[Budget Calculator](https://moneycal.in/calculators/budget-calculator) - Monthly planning',
+        '[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator) - Tax planning'
       ]
     },
     {
@@ -580,11 +580,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[PM Mudra Loan](https://moneycal.in/government-schemes):** ₹50,000-10 लाख तक (no collateral)',
-        '**Stand-Up India:** SC/ST/Women के लिए ₹10L-₹1Cr',
-        '**MSME Subsidies:** Manufacturing setup के लिए',
-        '**Startup India:** Tax benefits, easier compliance',
-        '**Credit Guarantee Scheme:** Collateral-free loans'
+        '[PM Mudra Loan](https://moneycal.in/government-schemes): ₹50,000-10 लाख तक (no collateral)',
+        'Stand-Up India: SC/ST/Women के लिए ₹10L-₹1Cr',
+        'MSME Subsidies: Manufacturing setup के लिए',
+        'Startup India: Tax benefits, easier compliance',
+        'Credit Guarantee Scheme: Collateral-free loans'
       ]
     },
     {
@@ -597,7 +597,7 @@ export const stationeryBrandBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** हाँ! ₹20 लाख तक की turnover पर GST mandatory नहीं है। शुरुआत में आप बिना GST के चला सकते हैं। जब turnover बढ़े तो register करें।'
+      content: 'Answer: हाँ! ₹20 लाख तक की turnover पर GST mandatory नहीं है। शुरुआत में आप बिना GST के चला सकते हैं। जब turnover बढ़े तो register करें।'
     },
     {
       type: 'subheading',
@@ -605,7 +605,7 @@ export const stationeryBrandBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** हाँ, लेकिन trust build करना होगा। Proper catalog, samples, competitive pricing दें। पहले छोटे schools से शुरू करें, references build करें, फिर बड़े schools approach करें।'
+      content: 'Answer: हाँ, लेकिन trust build करना होगा। Proper catalog, samples, competitive pricing दें। पहले छोटे schools से शुरू करें, references build करें, फिर बड़े schools approach करें।'
     },
     {
       type: 'subheading',
@@ -613,7 +613,7 @@ export const stationeryBrandBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Stationery में offline (B2B) sales ज्यादा होती है। Online केवल 20-30% होती है। Best strategy: 70% offline (schools/shops), 30% online।'
+      content: 'Answer: Stationery में offline (B2B) sales ज्यादा होती है। Online केवल 20-30% होती है। Best strategy: 70% offline (schools/shops), 30% online।'
     },
     {
       type: 'subheading',
@@ -621,7 +621,7 @@ export const stationeryBrandBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Quality focus करें, better service दें, competitive pricing रखें, on-time delivery करें। Personal relationships build करें customers के साथ।'
+      content: 'Answer: Quality focus करें, better service दें, competitive pricing रखें, on-time delivery करें। Personal relationships build करें customers के साथ।'
     },
     {
       type: 'subheading',
@@ -629,7 +629,7 @@ export const stationeryBrandBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Office supplies पर focus करें, online sales बढ़ाएं, retail shops को push करें, exam season special items (Oct-Nov, Feb-Mar) promote करें।'
+      content: 'Answer: Office supplies पर focus करें, online sales बढ़ाएं, retail shops को push करें, exam season special items (Oct-Nov, Feb-Mar) promote करें।'
     },
     {
       type: 'heading',
@@ -642,10 +642,10 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 1-2:** Market research - competitors, pricing',
-        '**Day 3-4:** Supplier research - 5-7 suppliers shortlist करें',
-        '**Day 5:** Brand name, logo finalize करें',
-        '**Day 6-7:** Budget planning, product list बनाएं'
+        'Day 1-2: Market research - competitors, pricing',
+        'Day 3-4: Supplier research - 5-7 suppliers shortlist करें',
+        'Day 5: Brand name, logo finalize करें',
+        'Day 6-7: Budget planning, product list बनाएं'
       ]
     },
     {
@@ -655,9 +655,9 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 8-10:** Products खरीदें (wholesale market या online)',
-        '**Day 11-12:** Branding material - stickers, business cards print करवाएं',
-        '**Day 13-14:** Social media accounts setup, catalog बनाएं'
+        'Day 8-10: Products खरीदें (wholesale market या online)',
+        'Day 11-12: Branding material - stickers, business cards print करवाएं',
+        'Day 13-14: Social media accounts setup, catalog बनाएं'
       ]
     },
     {
@@ -667,9 +667,9 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 15-17:** 5-7 schools visit करें, catalog दिखाएं',
-        '**Day 18-20:** 10-15 retail shops approach करें',
-        '**Day 21:** Social media पर first post, friends/family को share करें'
+        'Day 15-17: 5-7 schools visit करें, catalog दिखाएं',
+        'Day 18-20: 10-15 retail shops approach करें',
+        'Day 21: Social media पर first post, friends/family को share करें'
       ]
     },
     {
@@ -679,9 +679,9 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 22-25:** Follow-up करें schools/shops को',
-        '**Day 26-28:** First orders deliver करें, feedback लें',
-        '**Day 29-30:** Monthly review, next month planning'
+        'Day 22-25: Follow-up करें schools/shops को',
+        'Day 26-28: First orders deliver करें, feedback लें',
+        'Day 29-30: Monthly review, next month planning'
       ]
     },
     {
@@ -694,7 +694,7 @@ export const stationeryBrandBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Success Mantra:**\n• Quality products select करें\n• Competitive pricing रखें\n• On-time delivery guarantee दें\n• Good relationships build करें\n• Seasonal planning करें\n• Consistent marketing करें'
+      content: 'Success Mantra:\n• Quality products select करें\n• Competitive pricing रखें\n• On-time delivery guarantee दें\n• Good relationships build करें\n• Seasonal planning करें\n• Consistent marketing करें'
     },
     {
       type: 'paragraph',
@@ -702,11 +702,11 @@ export const stationeryBrandBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**आज ही शुरू करें! Market research करें, suppliers contact करें, और अपने stationery brand की journey start करें! 📚✏️🎨**'
+      content: 'आज ही शुरू करें! Market research करें, suppliers contact करें, और अपने stationery brand की journey start करें! 📚✏️🎨'
     },
     {
       type: 'paragraph',
-      content: '💡 **Financial Planning:** Business setup और growth planning के लिए हमारे calculators use करें। [Budget Calculator](https://moneycal.in/calculators/budget-calculator) से monthly expenses plan करें और [Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) से funding options explore करें।'
+      content: '💡 Financial Planning: Business setup और growth planning के लिए हमारे calculators use करें। [Budget Calculator](https://moneycal.in/calculators/budget-calculator) से monthly expenses plan करें और [Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) से funding options explore करें।'
     },
     {
       type: 'heading',
@@ -715,11 +715,11 @@ export const stationeryBrandBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[MSME Ministry](https://msme.gov.in/)** - Government schemes and support',
-        '**[Udyam Registration](https://udyamregistration.gov.in/)** - Free MSME registration',
-        '**[IndiaMART](https://www.indiamart.com/)** - Wholesale suppliers',
-        '**[Udaan App](https://udaan.com/)** - B2B platform for traders',
-        '**[GeM Portal](https://gem.gov.in/)** - Sell to government institutions'
+        '[MSME Ministry](https://msme.gov.in/) - Government schemes and support',
+        '[Udyam Registration](https://udyamregistration.gov.in/) - Free MSME registration',
+        '[IndiaMART](https://www.indiamart.com/) - Wholesale suppliers',
+        '[Udaan App](https://udaan.com/) - B2B platform for traders',
+        '[GeM Portal](https://gem.gov.in/) - Sell to government institutions'
       ]
     }
   ]

@@ -1,4 +1,4 @@
-import { BlogPost } from '../blogData';
+﻿import { BlogPost } from '../blogData';
 
 const getCurrentDate = () => {
   const now = new Date();
@@ -29,14 +29,14 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Almost Free Raw Material:** पुराना सामान use करें',
-        '**Trending Market:** Eco-conscious buyers बढ़ रहे हैं',
-        '**Unique Products:** हर piece one-of-a-kind',
-        '**High Margins:** 300-500% profit possible',
-        '**Feel-Good Factor:** Environment help करते हैं',
-        '**Unlimited Creativity:** कोई limits नहीं',
-        '**Celebrity Trend:** Influencers promote कर रहे हैं',
-        '**Premium Pricing:** "Recycled" label value add करता है'
+        'Almost Free Raw Material: पुराना सामान use करें',
+        'Trending Market: Eco-conscious buyers बढ़ रहे हैं',
+        'Unique Products: हर piece one-of-a-kind',
+        'High Margins: 300-500% profit possible',
+        'Feel-Good Factor: Environment help करते हैं',
+        'Unlimited Creativity: कोई limits नहीं',
+        'Celebrity Trend: Influencers promote कर रहे हैं',
+        'Premium Pricing: "Recycled" label value add करता है'
       ]
     },
     {
@@ -50,11 +50,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Painted Vases:** ₹10 bottle → ₹250-400 vase',
-        '**Hanging Planters:** Rope के साथ',
-        '**Candle Holders:** Cut bottles',
-        '**Table Lamps:** Wire और bulb add करके',
-        '**Fairy Light Jars:** LED lights के साथ'
+        'Painted Vases: ₹10 bottle → ₹250-400 vase',
+        'Hanging Planters: Rope के साथ',
+        'Candle Holders: Cut bottles',
+        'Table Lamps: Wire और bulb add करके',
+        'Fairy Light Jars: LED lights के साथ'
       ]
     },
     {
@@ -64,11 +64,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Tote Bags:** Jeans से बने (₹5 cloth → ₹300-500 bag)',
-        '**Cushion Covers:** Old sarees/dresses से',
-        '**Quilts:** Fabric pieces को patch करके',
-        '**Rugs:** T-shirts को cut करके',
-        '**Wall Hangings:** Embroidery के साथ'
+        'Tote Bags: Jeans से बने (₹5 cloth → ₹300-500 bag)',
+        'Cushion Covers: Old sarees/dresses से',
+        'Quilts: Fabric pieces को patch करके',
+        'Rugs: T-shirts को cut करके',
+        'Wall Hangings: Embroidery के साथ'
       ]
     },
     {
@@ -78,11 +78,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Desk Organizers:** Pen stand, stationery holder',
-        '**Planters:** Paint करके vertical garden',
-        '**Storage Boxes:** Decorative covering',
-        '**Bird Feeders:** Garden décor',
-        '**Piggy Banks:** Kids के लिए'
+        'Desk Organizers: Pen stand, stationery holder',
+        'Planters: Paint करके vertical garden',
+        'Storage Boxes: Decorative covering',
+        'Bird Feeders: Garden décor',
+        'Piggy Banks: Kids के लिए'
       ]
     },
     {
@@ -92,11 +92,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Paper Baskets:** Rolled newspaper से',
-        '**Wall Art:** Collage work',
-        '**Coasters:** Layered और varnish',
-        '**Photo Frames:** Decorative borders',
-        '**Gift Bags:** Fold करके'
+        'Paper Baskets: Rolled newspaper से',
+        'Wall Art: Collage work',
+        'Coasters: Layered और varnish',
+        'Photo Frames: Decorative borders',
+        'Gift Bags: Fold करके'
       ]
     },
     {
@@ -106,11 +106,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Coffee Tables:** ₹200 pallet → ₹2000-3000 table',
-        '**Wall Shelves:** Simple mounting',
-        '**Planters:** Vertical garden',
-        '**Shoe Racks:** Multi-tier',
-        '**Book Shelves:** Wall-mounted'
+        'Coffee Tables: ₹200 pallet → ₹2000-3000 table',
+        'Wall Shelves: Simple mounting',
+        'Planters: Vertical garden',
+        'Shoe Racks: Multi-tier',
+        'Book Shelves: Wall-mounted'
       ]
     },
     {
@@ -120,11 +120,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Pen Holders:** Paint या fabric cover',
-        '**Planters:** Drainage holes के साथ',
-        '**Lanterns:** Cut designs',
-        '**Storage Jars:** Kitchen organizers',
-        '**Wind Chimes:** Hanging décor'
+        'Pen Holders: Paint या fabric cover',
+        'Planters: Drainage holes के साथ',
+        'Lanterns: Cut designs',
+        'Storage Jars: Kitchen organizers',
+        'Wind Chimes: Hanging décor'
       ]
     },
     {
@@ -138,11 +138,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Paint:** ₹400 (acrylic, spray)',
-        '**Glue & Adhesives:** ₹200',
-        '**Tools:** ₹400 (scissors, cutter, drill)',
-        '**Decorative Items:** ₹300 (ribbons, lace, buttons)',
-        '**Varnish:** ₹200'
+        'Paint: ₹400 (acrylic, spray)',
+        'Glue & Adhesives: ₹200',
+        'Tools: ₹400 (scissors, cutter, drill)',
+        'Decorative Items: ₹300 (ribbons, lace, buttons)',
+        'Varnish: ₹200'
       ]
     },
     {
@@ -152,7 +152,7 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Collection Sources:**',
+        'Collection Sources:',
         '• अपने घर का waste',
         '• Neighbors से मांगें',
         '• Scrap dealers (bulk में free/₹1-2/kg)',
@@ -173,7 +173,7 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Wine Bottle Vase:**',
+        'Wine Bottle Vase:',
         '• Bottle: Free',
         '• Paint: ₹10',
         '• Decorations: ₹5',
@@ -181,7 +181,7 @@ export const recycledHomeDecorBlog: BlogPost = {
         '• Selling Price: ₹300-500',
         '• Profit: ₹285-485 (1900-3200% margin!)',
         '',
-        '**Jeans Tote Bag:**',
+        'Jeans Tote Bag:',
         '• Old jeans: Free',
         '• Thread: ₹5',
         '• Decorations: ₹10',
@@ -189,7 +189,7 @@ export const recycledHomeDecorBlog: BlogPost = {
         '• Selling Price: ₹400-600',
         '• Profit: ₹385-585',
         '',
-        '**Wooden Pallet Coffee Table:**',
+        'Wooden Pallet Coffee Table:',
         '• Pallet: ₹200',
         '• Paint/Polish: ₹150',
         '• Hardware: ₹100',
@@ -205,16 +205,16 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Part-Time (20 small items/month):**',
+        'Part-Time (20 small items/month):',
         '• Profit per item: ₹300',
         '• Monthly: ₹6,000',
         '',
-        '**Regular (50 items + 5 furniture pieces):**',
+        'Regular (50 items + 5 furniture pieces):',
         '• Small items: 50 × ₹300 = ₹15,000',
         '• Furniture: 5 × ₹2000 = ₹10,000',
-        '• **Total: ₹25,000**',
+        '• Total: ₹25,000',
         '',
-        '**Full-Time (100 items + 10 furniture):**',
+        'Full-Time (100 items + 10 furniture):',
         '• Monthly: ₹50,000-70,000'
       ]
     },
@@ -229,16 +229,16 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Content:**',
+        'Content:',
         '• Before-after transformation videos (viral होते हैं!)',
         '• Making process reels',
         '• Eco-friendly tips',
         '• Customer testimonials',
         '',
-        '**Hashtags:**',
+        'Hashtags:',
         '#upcycling #recycledart #sustainableliving #zerowaste #ecofriendly #handmade #homedecor #gogreen',
         '',
-        '**Target Audience:**',
+        'Target Audience:',
         '• Eco-conscious millennials',
         '• Interior designers',
         '• Boutique hotels/cafes'
@@ -251,11 +251,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Etsy:** International market (premium pricing)',
-        '**Amazon Handmade:** Good visibility',
-        '**Meesho:** Domestic market',
-        '**Instagram Shop:** Direct checkout',
-        '**Your Website:** Complete control'
+        'Etsy: International market (premium pricing)',
+        'Amazon Handmade: Good visibility',
+        'Meesho: Domestic market',
+        'Instagram Shop: Direct checkout',
+        'Your Website: Complete control'
       ]
     },
     {
@@ -265,11 +265,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Home Décor Stores:** Consignment (30% commission)',
-        '**Cafes & Restaurants:** Rustic décor demand',
-        '**Interior Designers:** Bulk custom orders',
-        '**Flea Markets:** Direct sales',
-        '**Exhibition Stalls:** Eco-fairs, craft melas'
+        'Home Décor Stores: Consignment (30% commission)',
+        'Cafes & Restaurants: Rustic décor demand',
+        'Interior Designers: Bulk custom orders',
+        'Flea Markets: Direct sales',
+        'Exhibition Stalls: Eco-fairs, craft melas'
       ]
     },
     {
@@ -279,11 +279,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Hotels/Resorts:** Themed décor',
-        '**Corporate Offices:** CSR initiatives',
-        '**NGOs:** Sustainability projects',
-        '**Boutique Stores:** Unique fixtures',
-        '**Event Planners:** Eco-friendly events'
+        'Hotels/Resorts: Themed décor',
+        'Corporate Offices: CSR initiatives',
+        'NGOs: Sustainability projects',
+        'Boutique Stores: Unique fixtures',
+        'Event Planners: Eco-friendly events'
       ]
     },
     {
@@ -302,16 +302,16 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Storytelling:** हर product की "before" story बताएं',
-        '**Educational Content:** Recycling tips share करें',
-        '**Collaborations:** Eco-influencers के साथ',
-        '**Workshops:** Paid upcycling workshops conduct करें',
-        '**Blog/YouTube:** DIY tutorials (audience building)',
-        '**PR:** Local newspapers में feature करवाएं',
-        '**Corporate CSR:** Companies को sustainability pitch करें',
-        '**Customer Content:** Customers के घर में photos',
-        '**Seasonal Collections:** Diwali eco-décor, etc.',
-        '**Certifications:** "100% Recycled" labels'
+        'Storytelling: हर product की "before" story बताएं',
+        'Educational Content: Recycling tips share करें',
+        'Collaborations: Eco-influencers के साथ',
+        'Workshops: Paid upcycling workshops conduct करें',
+        'Blog/YouTube: DIY tutorials (audience building)',
+        'PR: Local newspapers में feature करवाएं',
+        'Corporate CSR: Companies को sustainability pitch करें',
+        'Customer Content: Customers के घर में photos',
+        'Seasonal Collections: Diwali eco-décor, etc.',
+        'Certifications: "100% Recycled" labels'
       ]
     },
     {
@@ -321,14 +321,14 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**❌ Poor Cleaning:** Items को properly clean न करना',
-        '**❌ Weak Finishing:** Varnish/sealing important है',
-        '**❌ Not Highlighting "Recycled":** यही USP है!',
-        '**❌ Overcomplicating:** Simple designs better sell होते हैं',
-        '**❌ No Safety:** Sharp edges, toxic paints avoid करें',
-        '**❌ Inconsistent Quality:** हर piece uniform हो',
-        '**❌ Poor Photography:** Transformation दिखाना जरूरी',
-        '**❌ Underpricing:** "Recycled" premium justify करता है'
+        '❌ Poor Cleaning: Items को properly clean न करना',
+        '❌ Weak Finishing: Varnish/sealing important है',
+        '❌ Not Highlighting "Recycled": यही USP है!',
+        '❌ Overcomplicating: Simple designs better sell होते हैं',
+        '❌ No Safety: Sharp edges, toxic paints avoid करें',
+        '❌ Inconsistent Quality: हर piece uniform हो',
+        '❌ Poor Photography: Transformation दिखाना जरूरी',
+        '❌ Underpricing: "Recycled" premium justify करता है'
       ]
     },
     {
@@ -338,16 +338,16 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Signature Style:** अपनी unique style develop करें',
-        '**Quality Materials:** पुराना हो लेकिन sturdy होना चाहिए',
-        '**Trending Designs:** Pinterest, Instagram trends follow',
-        '**Multi-functional:** Products useful होने चाहिए',
-        '**Safety First:** No sharp edges, stable construction',
-        '**Eco-Friendly Paints:** Non-toxic, water-based',
-        '**Before-After Photos:** Transformation दिखाएं हमेशा',
-        '**Custom Orders:** Personalization की offer दें',
-        '**Bulk Collection:** Scrap dealers से relationship बनाएं',
-        '**Continuous Learning:** New techniques सीखते रहें'
+        'Signature Style: अपनी unique style develop करें',
+        'Quality Materials: पुराना हो लेकिन sturdy होना चाहिए',
+        'Trending Designs: Pinterest, Instagram trends follow',
+        'Multi-functional: Products useful होने चाहिए',
+        'Safety First: No sharp edges, stable construction',
+        'Eco-Friendly Paints: Non-toxic, water-based',
+        'Before-After Photos: Transformation दिखाएं हमेशा',
+        'Custom Orders: Personalization की offer दें',
+        'Bulk Collection: Scrap dealers से relationship बनाएं',
+        'Continuous Learning: New techniques सीखते रहें'
       ]
     },
     {
@@ -357,10 +357,10 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Budget Calculator](https://moneycal.in/calculators/budget-calculator)** - Material expenses track',
-        '**[Profit Margin Calculator](https://moneycal.in/corporate-finance)** - Pricing optimize करें',
-        '**[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator)** - Workshop setup',
-        '**[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator)** - Tax planning'
+        '[Budget Calculator](https://moneycal.in/calculators/budget-calculator) - Material expenses track',
+        '[Profit Margin Calculator](https://moneycal.in/corporate-finance) - Pricing optimize करें',
+        '[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) - Workshop setup',
+        '[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator) - Tax planning'
       ]
     },
     {
@@ -370,11 +370,11 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[PM Mudra Loan](https://moneycal.in/government-schemes):** ₹50,000-10 लाख',
-        '**Swachh Bharat Mission:** Waste management initiatives',
-        '**MSME Schemes:** Sustainable business support',
-        '**Skill India:** Upcycling training programs',
-        '**Startup India:** Green startup recognition'
+        '[PM Mudra Loan](https://moneycal.in/government-schemes): ₹50,000-10 लाख',
+        'Swachh Bharat Mission: Waste management initiatives',
+        'MSME Schemes: Sustainable business support',
+        'Skill India: Upcycling training programs',
+        'Startup India: Green startup recognition'
       ]
     },
     {
@@ -387,7 +387,7 @@ export const recycledHomeDecorBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** अपने घर, neighbors, scrap dealers, offices, restaurants से। Networking करें, लोगों को बताएं कि आप क्या collect करते हैं।'
+      content: 'Answer: अपने घर, neighbors, scrap dealers, offices, restaurants से। Networking करें, लोगों को बताएं कि आप क्या collect करते हैं।'
     },
     {
       type: 'subheading',
@@ -395,7 +395,7 @@ export const recycledHomeDecorBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Formal training नहीं। YouTube tutorials enough हैं। Practice important है। छोटे projects से शुरू करें।'
+      content: 'Answer: Formal training नहीं। YouTube tutorials enough हैं। Practice important है। छोटे projects से शुरू करें।'
     },
     {
       type: 'subheading',
@@ -403,7 +403,7 @@ export const recycledHomeDecorBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** सभी items को properly wash/sanitize करें। Gloves पहनें। Sharp tools carefully use करें। Final product safe होनी चाहिए।'
+      content: 'Answer: सभी items को properly wash/sanitize करें। Gloves पहनें। Sharp tools carefully use करें। Final product safe होनी चाहिए।'
     },
     {
       type: 'subheading',
@@ -411,7 +411,7 @@ export const recycledHomeDecorBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** "Recycled", "Eco-friendly", "Handmade", "One-of-a-kind" - ये सब premium justify करते हैं। Story telling important है।'
+      content: 'Answer: "Recycled", "Eco-friendly", "Handmade", "One-of-a-kind" - ये सब premium justify करते हैं। Story telling important है।'
     },
     {
       type: 'subheading',
@@ -419,7 +419,7 @@ export const recycledHomeDecorBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** दोनों करें। B2C (individuals) छोटे items, B2B (cafes, offices) furniture। Mix strategy best है।'
+      content: 'Answer: दोनों करें। B2C (individuals) छोटे items, B2B (cafes, offices) furniture। Mix strategy best है।'
     },
     {
       type: 'heading',
@@ -431,15 +431,15 @@ export const recycledHomeDecorBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Success Formula:**\n• Creative Designs\n• Quality Finishing\n• Strong Storytelling\n• Eco-Friendly Messaging\n• Good Photography\n• Fair Pricing\n= Successful Upcycling Business!'
+      content: 'Success Formula:\n• Creative Designs\n• Quality Finishing\n• Strong Storytelling\n• Eco-Friendly Messaging\n• Good Photography\n• Fair Pricing\n= Successful Upcycling Business!'
     },
     {
       type: 'paragraph',
-      content: '**आज ही शुरू करें!** अपने घर का waste देखें, कुछ simple items बनाएं, Instagram पर post करें। Your sustainable journey begins now! ♻️🌱✨'
+      content: 'आज ही शुरू करें! अपने घर का waste देखें, कुछ simple items बनाएं, Instagram पर post करें। Your sustainable journey begins now! ♻️🌱✨'
     },
     {
       type: 'paragraph',
-      content: '**All the best for your eco-friendly business! 💚🌍**'
+      content: 'All the best for your eco-friendly business! 💚🌍'
     },
     {
       type: 'heading',
@@ -448,10 +448,10 @@ export const recycledHomeDecorBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Pinterest](https://www.pinterest.com/)** - Unlimited design ideas',
-        '**[Etsy Upcycling](https://www.etsy.com/)** - International market',
-        '**[Swachh Bharat](https://swachhbharatmission.gov.in/)** - Government initiatives',
-        '**[Waste to Wealth](https://dste.py.gov.in/)** - Government programs'
+        '[Pinterest](https://www.pinterest.com/) - Unlimited design ideas',
+        '[Etsy Upcycling](https://www.etsy.com/) - International market',
+        '[Swachh Bharat](https://swachhbharatmission.gov.in/) - Government initiatives',
+        '[Waste to Wealth](https://dste.py.gov.in/) - Government programs'
       ]
     }
   ]

@@ -1,4 +1,4 @@
-import { BlogPost } from '../blogData';
+﻿import { BlogPost } from '../blogData';
 
 const getCurrentDate = () => {
   const now = new Date();
@@ -29,14 +29,14 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**कम निवेश:** ₹2000-5000 में शुरू कर सकते हैं',
-        '**घर से काम:** कोई shop की जरूरत नहीं',
-        '**Flexible Timing:** अपने हिसाब से काम करें',
-        '**High Profit:** 200-400% तक का margin',
-        '**Growing Market:** हर दिन demand बढ़ रही है',
-        '**Creative Satisfaction:** अपनी creativity use करें',
-        '**Multiple Products:** एक साथ कई products बना सकते हैं',
-        '**Online Selling:** Instagram, Meesho, Amazon Handmade पर बेचें'
+        'कम निवेश: ₹2000-5000 में शुरू कर सकते हैं',
+        'घर से काम: कोई shop की जरूरत नहीं',
+        'Flexible Timing: अपने हिसाब से काम करें',
+        'High Profit: 200-400% तक का margin',
+        'Growing Market: हर दिन demand बढ़ रही है',
+        'Creative Satisfaction: अपनी creativity use करें',
+        'Multiple Products: एक साथ कई products बना सकते हैं',
+        'Online Selling: Instagram, Meesho, Amazon Handmade पर बेचें'
       ]
     },
     {
@@ -62,12 +62,12 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Card Stock Paper:** ₹400 (100 sheets)',
-        '**Decorative Paper:** ₹300',
-        '**Ribbons & Lace:** ₹200',
-        '**Glue & Tape:** ₹150',
-        '**Stickers & Embellishments:** ₹250',
-        '**Markers & Pens:** ₹200'
+        'Card Stock Paper: ₹400 (100 sheets)',
+        'Decorative Paper: ₹300',
+        'Ribbons & Lace: ₹200',
+        'Glue & Tape: ₹150',
+        'Stickers & Embellishments: ₹250',
+        'Markers & Pens: ₹200'
       ]
     },
     {
@@ -77,11 +77,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Material Cost per Card:** ₹15-20',
-        '**Selling Price:** ₹100-250',
-        '**Profit per Card:** ₹80-230',
-        '**Time per Card:** 20-30 minutes',
-        '**Monthly Potential:** ₹15,000-25,000 (100 cards)'
+        'Material Cost per Card: ₹15-20',
+        'Selling Price: ₹100-250',
+        'Profit per Card: ₹80-230',
+        'Time per Card: 20-30 minutes',
+        'Monthly Potential: ₹15,000-25,000 (100 cards)'
       ]
     },
     {
@@ -111,12 +111,12 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Plain Canvas Bags:** ₹800 (20 pieces)',
-        '**Fabric Paint:** ₹400',
-        '**Stencils:** ₹200',
-        '**Brushes:** ₹150',
-        '**Heat Transfer Paper:** ₹300 (for printing)',
-        '**Accessories:** ₹150'
+        'Plain Canvas Bags: ₹800 (20 pieces)',
+        'Fabric Paint: ₹400',
+        'Stencils: ₹200',
+        'Brushes: ₹150',
+        'Heat Transfer Paper: ₹300 (for printing)',
+        'Accessories: ₹150'
       ]
     },
     {
@@ -126,11 +126,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Material Cost:** ₹40-60',
-        '**Selling Price:** ₹250-500',
-        '**Profit:** ₹190-440',
-        '**Time:** 1-2 hours',
-        '**Monthly Potential:** ₹20,000-35,000'
+        'Material Cost: ₹40-60',
+        'Selling Price: ₹250-500',
+        'Profit: ₹190-440',
+        'Time: 1-2 hours',
+        'Monthly Potential: ₹20,000-35,000'
       ]
     },
     {
@@ -152,11 +152,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Wax (Paraffin/Soy):** ₹1000 (5 kg)',
-        '**Fragrance Oils:** ₹500',
-        '**Wicks:** ₹200',
-        '**Glass Jars/Molds:** ₹600 (20 pieces)',
-        '**Colors:** ₹200'
+        'Wax (Paraffin/Soy): ₹1000 (5 kg)',
+        'Fragrance Oils: ₹500',
+        'Wicks: ₹200',
+        'Glass Jars/Molds: ₹600 (20 pieces)',
+        'Colors: ₹200'
       ]
     },
     {
@@ -166,11 +166,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Material Cost:** ₹50-80',
-        '**Selling Price:** ₹200-400',
-        '**Profit:** ₹120-320',
-        '**Time:** 2-3 hours (including setting)',
-        '**Monthly Potential:** ₹25,000-40,000'
+        'Material Cost: ₹50-80',
+        'Selling Price: ₹200-400',
+        'Profit: ₹120-320',
+        'Time: 2-3 hours (including setting)',
+        'Monthly Potential: ₹25,000-40,000'
       ]
     },
     {
@@ -205,12 +205,12 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Soap Base (Glycerin):** ₹1200 (5 kg)',
-        '**Essential Oils:** ₹600',
-        '**Natural Colors:** ₹300',
-        '**Molds:** ₹400',
-        '**Additives (Oats, Honey etc):** ₹300',
-        '**Packaging:** ₹200'
+        'Soap Base (Glycerin): ₹1200 (5 kg)',
+        'Essential Oils: ₹600',
+        'Natural Colors: ₹300',
+        'Molds: ₹400',
+        'Additives (Oats, Honey etc): ₹300',
+        'Packaging: ₹200'
       ]
     },
     {
@@ -220,12 +220,12 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Material Cost:** ₹30-50',
-        '**Selling Price:** ₹150-300',
-        '**Profit:** ₹100-250',
-        '**Monthly Potential:** ₹30,000-50,000',
+        'Material Cost: ₹30-50',
+        'Selling Price: ₹150-300',
+        'Profit: ₹100-250',
+        'Monthly Potential: ₹30,000-50,000',
         '',
-        '**Variants to Try:**',
+        'Variants to Try:',
         '• Charcoal Soap: ₹200-300',
         '• Oatmeal & Honey: ₹150-250',
         '• Rose Petals: ₹180-280',
@@ -243,12 +243,12 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Plain Wooden Frames:** ₹800 (15 pieces)',
-        '**Acrylic Paint:** ₹300',
-        '**Decorative Items:** ₹400',
-        '**Glue Gun:** ₹200',
-        '**Varnish:** ₹150',
-        '**Brushes:** ₹150'
+        'Plain Wooden Frames: ₹800 (15 pieces)',
+        'Acrylic Paint: ₹300',
+        'Decorative Items: ₹400',
+        'Glue Gun: ₹200',
+        'Varnish: ₹150',
+        'Brushes: ₹150'
       ]
     },
     {
@@ -258,10 +258,10 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Single Frame:** Cost ₹60, Sell ₹300-500, Profit ₹240-440',
-        '**Collage Frame:** Cost ₹150, Sell ₹800-1200, Profit ₹650-1050',
-        '**Wall Hanging:** Cost ₹100, Sell ₹600-1000, Profit ₹500-900',
-        '**Monthly Potential:** ₹20,000-35,000'
+        'Single Frame: Cost ₹60, Sell ₹300-500, Profit ₹240-440',
+        'Collage Frame: Cost ₹150, Sell ₹800-1200, Profit ₹650-1050',
+        'Wall Hanging: Cost ₹100, Sell ₹600-1000, Profit ₹500-900',
+        'Monthly Potential: ₹20,000-35,000'
       ]
     },
     {
@@ -279,11 +279,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Wooden Boards/Boxes:** ₹1000',
-        '**Velvet/Satin Fabric:** ₹400',
-        '**Hooks & Holders:** ₹500',
-        '**Paint & Polish:** ₹300',
-        '**Decorative Items:** ₹300'
+        'Wooden Boards/Boxes: ₹1000',
+        'Velvet/Satin Fabric: ₹400',
+        'Hooks & Holders: ₹500',
+        'Paint & Polish: ₹300',
+        'Decorative Items: ₹300'
       ]
     },
     {
@@ -293,10 +293,10 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Earring Stand:** Cost ₹80, Sell ₹350-500',
-        '**Ring Box:** Cost ₹100, Sell ₹400-600',
-        '**Multi-tier Organizer:** Cost ₹200, Sell ₹1000-1500',
-        '**Travel Jewelry Case:** Cost ₹150, Sell ₹700-1000'
+        'Earring Stand: Cost ₹80, Sell ₹350-500',
+        'Ring Box: Cost ₹100, Sell ₹400-600',
+        'Multi-tier Organizer: Cost ₹200, Sell ₹1000-1500',
+        'Travel Jewelry Case: Cost ₹150, Sell ₹700-1000'
       ]
     },
     {
@@ -318,10 +318,10 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Cotton Rope/Cord:** ₹800 (5-6 rolls)',
-        '**Wooden Rings:** ₹300',
-        '**Metal Rings:** ₹200',
-        '**Beads:** ₹200'
+        'Cotton Rope/Cord: ₹800 (5-6 rolls)',
+        'Wooden Rings: ₹300',
+        'Metal Rings: ₹200',
+        'Beads: ₹200'
       ]
     },
     {
@@ -331,10 +331,10 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Plant Hanger:** Cost ₹40, Sell ₹250-400, Profit ₹210-360',
-        '**Wall Hanging (Small):** Cost ₹80, Sell ₹500-800',
-        '**Wall Hanging (Large):** Cost ₹200, Sell ₹1500-2500',
-        '**Monthly Potential:** ₹25,000-45,000'
+        'Plant Hanger: Cost ₹40, Sell ₹250-400, Profit ₹210-360',
+        'Wall Hanging (Small): Cost ₹80, Sell ₹500-800',
+        'Wall Hanging (Large): Cost ₹200, Sell ₹1500-2500',
+        'Monthly Potential: ₹25,000-45,000'
       ]
     },
     {
@@ -364,12 +364,12 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Epoxy Resin:** ₹1500 (1 kg)',
-        '**Hardener:** (resin के साथ आता है)',
-        '**Molds:** ₹600 (coaster, keychain, bookmark)',
-        '**Colors & Pigments:** ₹400',
-        '**Glitter & Dried Flowers:** ₹300',
-        '**Mixing Tools:** ₹200'
+        'Epoxy Resin: ₹1500 (1 kg)',
+        'Hardener: (resin के साथ आता है)',
+        'Molds: ₹600 (coaster, keychain, bookmark)',
+        'Colors & Pigments: ₹400',
+        'Glitter & Dried Flowers: ₹300',
+        'Mixing Tools: ₹200'
       ]
     },
     {
@@ -379,11 +379,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Coaster Set (4):** Cost ₹100, Sell ₹500-800',
-        '**Keychain:** Cost ₹15, Sell ₹100-150',
-        '**Bookmark:** Cost ₹20, Sell ₹120-200',
-        '**Phone Stand:** Cost ₹50, Sell ₹350-500',
-        '**Monthly Potential:** ₹30,000-50,000'
+        'Coaster Set (4): Cost ₹100, Sell ₹500-800',
+        'Keychain: Cost ₹15, Sell ₹100-150',
+        'Bookmark: Cost ₹20, Sell ₹120-200',
+        'Phone Stand: Cost ₹50, Sell ₹350-500',
+        'Monthly Potential: ₹30,000-50,000'
       ]
     },
     {
@@ -417,11 +417,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Fabric (Different Prints):** ₹500',
-        '**Elastic:** ₹150',
-        '**Hair Clips/Bands:** ₹200',
-        '**Ribbons:** ₹100',
-        '**Thread:** ₹50'
+        'Fabric (Different Prints): ₹500',
+        'Elastic: ₹150',
+        'Hair Clips/Bands: ₹200',
+        'Ribbons: ₹100',
+        'Thread: ₹50'
       ]
     },
     {
@@ -431,11 +431,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Scrunchie:** Cost ₹8-10, Sell ₹50-80, Profit ₹40-70',
-        '**Scrunchie Set (3):** Sell ₹150-200',
-        '**Hair Clip:** Cost ₹15, Sell ₹80-120',
-        '**Headband:** Cost ₹25, Sell ₹150-250',
-        '**Monthly Potential:** ₹15,000-25,000'
+        'Scrunchie: Cost ₹8-10, Sell ₹50-80, Profit ₹40-70',
+        'Scrunchie Set (3): Sell ₹150-200',
+        'Hair Clip: Cost ₹15, Sell ₹80-120',
+        'Headband: Cost ₹25, Sell ₹150-250',
+        'Monthly Potential: ₹15,000-25,000'
       ]
     },
     {
@@ -463,11 +463,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Heat Press Machine:** ₹2500 (one-time investment)',
-        '**Plain Mugs:** ₹600 (20 pieces @ ₹30)',
-        '**Plain T-Shirts:** ₹800 (10 @ ₹80)',
-        '**Transfer Paper:** ₹500',
-        '**Printing (Cyber Café):** ₹300'
+        'Heat Press Machine: ₹2500 (one-time investment)',
+        'Plain Mugs: ₹600 (20 pieces @ ₹30)',
+        'Plain T-Shirts: ₹800 (10 @ ₹80)',
+        'Transfer Paper: ₹500',
+        'Printing (Cyber Café): ₹300'
       ]
     },
     {
@@ -477,10 +477,10 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Personalized Mug:** Cost ₹50, Sell ₹250-400, Profit ₹200-350',
-        '**Printed T-Shirt:** Cost ₹100, Sell ₹400-600, Profit ₹300-500',
-        '**Combo (Mug + T-Shirt):** Sell ₹800-1000',
-        '**Monthly Potential:** ₹25,000-40,000'
+        'Personalized Mug: Cost ₹50, Sell ₹250-400, Profit ₹200-350',
+        'Printed T-Shirt: Cost ₹100, Sell ₹400-600, Profit ₹300-500',
+        'Combo (Mug + T-Shirt): Sell ₹800-1000',
+        'Monthly Potential: ₹25,000-40,000'
       ]
     },
     {
@@ -508,10 +508,10 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**2-3 Products शुरू करें:** ₹5,000-8,000',
-        '**All 10 Products:** ₹20,000-25,000',
+        '2-3 Products शुरू करें: ₹5,000-8,000',
+        'All 10 Products: ₹20,000-25,000',
         '',
-        '**Smart Strategy:** पहले 2-3 products से शुरू करें, profit से बाकी add करें'
+        'Smart Strategy: पहले 2-3 products से शुरू करें, profit से बाकी add करें'
       ]
     },
     {
@@ -521,9 +521,9 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Part-Time (2-3 hours daily):** ₹15,000-25,000',
-        '**Full-Time (6-8 hours daily):** ₹40,000-70,000',
-        '**Peak Season (Diwali, New Year):** ₹80,000-1,50,000'
+        'Part-Time (2-3 hours daily): ₹15,000-25,000',
+        'Full-Time (6-8 hours daily): ₹40,000-70,000',
+        'Peak Season (Diwali, New Year): ₹80,000-1,50,000'
       ]
     },
     {
@@ -537,10 +537,10 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram:** सबसे important! Daily posts, reels viral होते हैं',
-        '**Facebook:** Marketplace, local groups',
-        '**WhatsApp Business:** Catalog feature',
-        '**Pinterest:** DIY products के लिए best traffic source'
+        'Instagram: सबसे important! Daily posts, reels viral होते हैं',
+        'Facebook: Marketplace, local groups',
+        'WhatsApp Business: Catalog feature',
+        'Pinterest: DIY products के लिए best traffic source'
       ]
     },
     {
@@ -550,11 +550,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Meesho:** Zero commission, easiest',
-        '**Amazon Handmade:** Premium customers',
-        '**Etsy India:** International exposure',
-        '**GlowRoad:** Women-focused',
-        '**Flipkart Samarth:** Good support'
+        'Meesho: Zero commission, easiest',
+        'Amazon Handmade: Premium customers',
+        'Etsy India: International exposure',
+        'GlowRoad: Women-focused',
+        'Flipkart Samarth: Good support'
       ]
     },
     {
@@ -578,16 +578,16 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram Reels:** Making process videos बनाएं (viral होते हैं)',
-        '**Before-After:** Transformation videos डालें',
-        '**Customer Reviews:** Satisfied customers के testimonials share करें',
-        '**Hashtags:** #handmade #diy #madeinindia #supportsmallbusiness #handcrafted',
-        '**Giveaways:** Monthly एक giveaway करें (reach बढ़ती है)',
-        '**Collaboration:** Micro-influencers को free products दें',
-        '**Festive Collections:** हर festival के लिए special collection',
-        '**Custom Orders:** Personalization premium price पर मिलती है',
-        '**Bundle Offers:** 3 items खरीदो, 1 free पाओ',
-        '**Loyalty Program:** Repeat customers को discount'
+        'Instagram Reels: Making process videos बनाएं (viral होते हैं)',
+        'Before-After: Transformation videos डालें',
+        'Customer Reviews: Satisfied customers के testimonials share करें',
+        'Hashtags: #handmade #diy #madeinindia #supportsmallbusiness #handcrafted',
+        'Giveaways: Monthly एक giveaway करें (reach बढ़ती है)',
+        'Collaboration: Micro-influencers को free products दें',
+        'Festive Collections: हर festival के लिए special collection',
+        'Custom Orders: Personalization premium price पर मिलती है',
+        'Bundle Offers: 3 items खरीदो, 1 free पाओ',
+        'Loyalty Program: Repeat customers को discount'
       ]
     },
     {
@@ -606,14 +606,14 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**❌ बहुत सारे Products एक साथ:** 2-3 से शुरू करें, perfect करें',
-        '**❌ Poor Quality:** सस्ते materials से बचें, reputation बिगड़ती है',
-        '**❌ Under-Pricing:** अपने time और effort की value समझें',
-        '**❌ No Marketing:** Product अच्छा हो लेकिन marketing न हो तो नहीं बिकेगा',
-        '**❌ Irregular Posting:** Consistency बहुत जरूरी है',
-        '**❌ No Product Photos:** Professional-looking photos जरूरी हैं',
-        '**❌ Copy करना:** Unique designs बनाएं, copy न करें',
-        '**❌ Customer Service Ignore:** Quick responses, polite behavior important है'
+        '❌ बहुत सारे Products एक साथ: 2-3 से शुरू करें, perfect करें',
+        '❌ Poor Quality: सस्ते materials से बचें, reputation बिगड़ती है',
+        '❌ Under-Pricing: अपने time और effort की value समझें',
+        '❌ No Marketing: Product अच्छा हो लेकिन marketing न हो तो नहीं बिकेगा',
+        '❌ Irregular Posting: Consistency बहुत जरूरी है',
+        '❌ No Product Photos: Professional-looking photos जरूरी हैं',
+        '❌ Copy करना: Unique designs बनाएं, copy न करें',
+        '❌ Customer Service Ignore: Quick responses, polite behavior important है'
       ]
     },
     {
@@ -623,19 +623,19 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**YouTube Channels:**',
+        'YouTube Channels:',
         '• 5-Minute Crafts',
         '• DIY Queen',
         '• The Crafty',
         '• Kreative Kavita',
         '• Art & Craft Ideas',
         '',
-        '**Instagram Accounts:**',
+        'Instagram Accounts:',
         '• @indiancrafters',
         '• @handmadeindia',
         '• @diyblogger',
         '',
-        '**Websites:**',
+        'Websites:',
         '• Pinterest (design ideas)',
         '• Instructables (tutorials)',
         '• Craftsy (online courses - paid/free)'
@@ -648,11 +648,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Budget Calculator](https://moneycal.in/calculators/budget-calculator)** - Monthly expenses track करें',
-        '**[Profit Margin Calculator](https://moneycal.in/corporate-finance)** - Pricing calculate करें',
-        '**[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator)** - अगर loan लेना हो',
-        '**[GST Calculator](https://moneycal.in/tools/gst-amount-calculator)** - जब turnover बढ़े',
-        '**[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator)** - Tax planning'
+        '[Budget Calculator](https://moneycal.in/calculators/budget-calculator) - Monthly expenses track करें',
+        '[Profit Margin Calculator](https://moneycal.in/corporate-finance) - Pricing calculate करें',
+        '[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) - अगर loan लेना हो',
+        '[GST Calculator](https://moneycal.in/tools/gst-amount-calculator) - जब turnover बढ़े',
+        '[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator) - Tax planning'
       ]
     },
     {
@@ -662,11 +662,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[PM Mudra Loan](https://moneycal.in/government-schemes):** ₹50,000-10 लाख तक (no collateral)',
-        '**Stand-Up India:** Women entrepreneurs के लिए',
-        '**MSME Registration:** Free, online, tax benefits',
-        '**Skill India:** Free training programs',
-        '**Startup India:** Recognition और support'
+        '[PM Mudra Loan](https://moneycal.in/government-schemes): ₹50,000-10 लाख तक (no collateral)',
+        'Stand-Up India: Women entrepreneurs के लिए',
+        'MSME Registration: Free, online, tax benefits',
+        'Skill India: Free training programs',
+        'Startup India: Recognition और support'
       ]
     },
     {
@@ -680,9 +680,9 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 1-2:** ऊपर के 10 में से 2 products select करें',
-        '**Day 3-5:** YouTube tutorials देखें, practice करें',
-        '**Day 6-7:** Material shopping list बनाएं'
+        'Day 1-2: ऊपर के 10 में से 2 products select करें',
+        'Day 3-5: YouTube tutorials देखें, practice करें',
+        'Day 6-7: Material shopping list बनाएं'
       ]
     },
     {
@@ -692,8 +692,8 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 8-10:** सभी materials खरीदें',
-        '**Day 11-14:** 10-15 sample products बनाएं'
+        'Day 8-10: सभी materials खरीदें',
+        'Day 11-14: 10-15 sample products बनाएं'
       ]
     },
     {
@@ -703,9 +703,9 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 15-17:** Instagram/Facebook page setup करें',
-        '**Day 18-19:** Product photography करें',
-        '**Day 20-21:** First posts, friends/family को share करें'
+        'Day 15-17: Instagram/Facebook page setup करें',
+        'Day 18-19: Product photography करें',
+        'Day 20-21: First posts, friends/family को share करें'
       ]
     },
     {
@@ -715,9 +715,9 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Day 22-25:** Daily posting, reels बनाएं',
-        '**Day 26-28:** First orders fulfill करें',
-        '**Day 29-30:** Review और next month planning'
+        'Day 22-25: Daily posting, reels बनाएं',
+        'Day 26-28: First orders fulfill करें',
+        'Day 29-30: Review और next month planning'
       ]
     },
     {
@@ -727,16 +727,16 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Start Small:** एक ही बार में सब न करें',
-        '**Practice Makes Perfect:** पहले 20-30 pieces बनाकर master करें',
-        '**Quality Focus:** हर product में अपना 100% दें',
-        '**Unique Designs:** Copy न करें, अपनी creativity use करें',
-        '**Customer First:** Feedback seriously लें, improve करें',
-        '**Consistent Marketing:** Daily posting जरूरी है',
-        '**Reinvest:** Initial profit को business में लगाएं',
-        '**Patience:** First 3-6 months challenging हैं, give up न करें',
-        '**Learn Continuously:** New techniques सीखते रहें',
-        '**Network:** Other DIY sellers से connect करें'
+        'Start Small: एक ही बार में सब न करें',
+        'Practice Makes Perfect: पहले 20-30 pieces बनाकर master करें',
+        'Quality Focus: हर product में अपना 100% दें',
+        'Unique Designs: Copy न करें, अपनी creativity use करें',
+        'Customer First: Feedback seriously लें, improve करें',
+        'Consistent Marketing: Daily posting जरूरी है',
+        'Reinvest: Initial profit को business में लगाएं',
+        'Patience: First 3-6 months challenging हैं, give up न करें',
+        'Learn Continuously: New techniques सीखते रहें',
+        'Network: Other DIY sellers से connect करें'
       ]
     },
     {
@@ -749,7 +749,7 @@ export const diyProductsProfitBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** बिल्कुल! YouTube पर हर product के tutorials हैं। 1-2 हफ्ते practice करें और शुरू करें।'
+      content: 'Answer: बिल्कुल! YouTube पर हर product के tutorials हैं। 1-2 हफ्ते practice करें और शुरू करें।'
     },
     {
       type: 'subheading',
@@ -757,7 +757,7 @@ export const diyProductsProfitBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Greeting cards और scrunchies सबसे आसान हैं। कम materials, कम time, और अच्छी demand।'
+      content: 'Answer: Greeting cards और scrunchies सबसे आसान हैं। कम materials, कम time, और अच्छी demand।'
     },
     {
       type: 'subheading',
@@ -765,7 +765,7 @@ export const diyProductsProfitBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** शुरुआत में नहीं। जब monthly ₹50,000+ sales हो तो GST registration करें।'
+      content: 'Answer: शुरुआत में नहीं। जब monthly ₹50,000+ sales हो तो GST registration करें।'
     },
     {
       type: 'subheading',
@@ -773,7 +773,7 @@ export const diyProductsProfitBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** DIY products के लिए online (Instagram) best है। 70% online, 30% offline (exhibitions/local) ideal mix है।'
+      content: 'Answer: DIY products के लिए online (Instagram) best है। 70% online, 30% offline (exhibitions/local) ideal mix है।'
     },
     {
       type: 'subheading',
@@ -781,7 +781,7 @@ export const diyProductsProfitBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Part-time: 2-3 hours (₹15K-25K), Full-time: 6-8 hours (₹40K-70K) monthly कमा सकते हैं।'
+      content: 'Answer: Part-time: 2-3 hours (₹15K-25K), Full-time: 6-8 hours (₹40K-70K) monthly कमा सकते हैं।'
     },
     {
       type: 'heading',
@@ -793,15 +793,15 @@ export const diyProductsProfitBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**आज ही करें:**\n1. 2 products select करें\n2. YouTube tutorials देखें\n3. Material list बनाएं\n4. Shopping करें\n5. Practice शुरू करें'
+      content: 'आज ही करें:\n1. 2 products select करें\n2. YouTube tutorials देखें\n3. Material list बनाएं\n4. Shopping करें\n5. Practice शुरू करें'
     },
     {
       type: 'paragraph',
-      content: '**Remember:** हर successful business छोटे से शुरू हुआ था। आपका भी हो सकता है! 💪✨'
+      content: 'Remember: हर successful business छोटे से शुरू हुआ था। आपका भी हो सकता है! 💪✨'
     },
     {
       type: 'paragraph',
-      content: '**All the best for your DIY business journey! 🎨🚀**'
+      content: 'All the best for your DIY business journey! 🎨🚀'
     },
     {
       type: 'heading',
@@ -810,11 +810,11 @@ export const diyProductsProfitBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[MSME Portal](https://msme.gov.in/)** - Government schemes',
-        '**[Udyam Registration](https://udyamregistration.gov.in/)** - Free registration',
-        '**[Startup India](https://www.startupindia.gov.in/)** - Support programs',
-        '**[Meesho Seller](https://www.meesho.com/sell)** - Start selling',
-        '**[Amazon Handmade](https://sell.amazon.in/handmade)** - Premium platform'
+        '[MSME Portal](https://msme.gov.in/) - Government schemes',
+        '[Udyam Registration](https://udyamregistration.gov.in/) - Free registration',
+        '[Startup India](https://www.startupindia.gov.in/) - Support programs',
+        '[Meesho Seller](https://www.meesho.com/sell) - Start selling',
+        '[Amazon Handmade](https://sell.amazon.in/handmade) - Premium platform'
       ]
     }
   ]

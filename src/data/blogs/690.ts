@@ -1,4 +1,4 @@
-import { BlogPost } from '../blogData';
+﻿import { BlogPost } from '../blogData';
 
 const getCurrentDate = () => {
   const now = new Date();
@@ -29,14 +29,14 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**High Demand:** हर घर में brothers हैं, rakhi चाहिए',
-        '**Premium Pricing:** Festival season में लोग premium pay करते हैं',
-        '**Low Investment:** ₹5000-10000 में शुरू',
-        '**High Margin:** 200-400% profit',
-        '**Bulk Orders:** Offices, schools, societies',
-        '**Online + Offline:** दोनों markets में sell होता है',
-        '**Quick Returns:** 2 महीने में investment back + profit',
-        '**Repeat Customers:** अगले साल फिर आएंगे'
+        'High Demand: हर घर में brothers हैं, rakhi चाहिए',
+        'Premium Pricing: Festival season में लोग premium pay करते हैं',
+        'Low Investment: ₹5000-10000 में शुरू',
+        'High Margin: 200-400% profit',
+        'Bulk Orders: Offices, schools, societies',
+        'Online + Offline: दोनों markets में sell होता है',
+        'Quick Returns: 2 महीने में investment back + profit',
+        'Repeat Customers: अगले साल फिर आएंगे'
       ]
     },
     {
@@ -50,11 +50,11 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Mauli/Kalava Rakhi:** Simple, cost ₹2-3, sell ₹20-30',
-        '**Zari/Gota Rakhi:** Traditional, cost ₹5-8, sell ₹50-80',
-        '**Lumba (Bhabhi ke liye):** Trending, cost ₹10-15, sell ₹80-120',
-        '**Pearl Rakhi:** Premium, cost ₹15-20, sell ₹120-180',
-        '**Silver/Gold Plated:** High-end, cost ₹50-80, sell ₹300-500'
+        'Mauli/Kalava Rakhi: Simple, cost ₹2-3, sell ₹20-30',
+        'Zari/Gota Rakhi: Traditional, cost ₹5-8, sell ₹50-80',
+        'Lumba (Bhabhi ke liye): Trending, cost ₹10-15, sell ₹80-120',
+        'Pearl Rakhi: Premium, cost ₹15-20, sell ₹120-180',
+        'Silver/Gold Plated: High-end, cost ₹50-80, sell ₹300-500'
       ]
     },
     {
@@ -64,12 +64,12 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Cartoon Character:** Kids के लिए (Doraemon, Chota Bheem)',
-        '**Bracelet Style:** Youth prefer करते हैं',
-        '**Personalized:** Name/photo printing',
-        '**Quirky Messages:** "Best Bro Ever", "Bhai Zoned"',
-        '**LED Rakhis:** Lights वाली (very trending!)',
-        '**Eco-Friendly:** Seed/wooden rakhis'
+        'Cartoon Character: Kids के लिए (Doraemon, Chota Bheem)',
+        'Bracelet Style: Youth prefer करते हैं',
+        'Personalized: Name/photo printing',
+        'Quirky Messages: "Best Bro Ever", "Bhai Zoned"',
+        'LED Rakhis: Lights वाली (very trending!)',
+        'Eco-Friendly: Seed/wooden rakhis'
       ]
     },
     {
@@ -79,11 +79,11 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Kundan Work:** Cost ₹50-100, Sell ₹400-700',
-        '**Designer Sets:** Rakhi + sweets + dry fruits combo',
-        '**Customized:** Photo, name engraving',
-        '**International Shipping:** NRI market (USD pricing)',
-        '**Corporate Gifting:** Branded, bulk packaging'
+        'Kundan Work: Cost ₹50-100, Sell ₹400-700',
+        'Designer Sets: Rakhi + sweets + dry fruits combo',
+        'Customized: Photo, name engraving',
+        'International Shipping: NRI market (USD pricing)',
+        'Corporate Gifting: Branded, bulk packaging'
       ]
     },
     {
@@ -97,20 +97,20 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Basic Supplies (₹2500):**',
+        'Basic Supplies (₹2500):',
         '• Threads (mauli, silk, cotton) - ₹600',
         '• Decorative items (beads, stones, lace) - ₹800',
         '• Base materials (cardboard, plastic discs) - ₹400',
         '• Glue, tape - ₹200',
         '• Zari, gota, ribbons - ₹500',
         '',
-        '**Packaging (₹1500):**',
+        'Packaging (₹1500):',
         '• Transparent pouches - ₹600',
         '• Gift boxes - ₹400',
         '• Decorative cards - ₹300',
         '• Stickers, tags - ₹200',
         '',
-        '**Marketing (₹1000):**',
+        'Marketing (₹1000):',
         '• Samples - ₹400',
         '• Photography setup - ₹300',
         '• Business cards - ₹150',
@@ -123,7 +123,7 @@ export const handmadeRakhiBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**With ₹5000 investment:** 200-250 rakhis बना सकते हैं (mix of simple and premium)'
+      content: 'With ₹5000 investment: 200-250 rakhis बना सकते हैं (mix of simple and premium)'
     },
     {
       type: 'heading',
@@ -136,9 +136,9 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Week 1-2:** Market research, design selection',
-        '**Week 3:** Materials खरीदें (wholesale)',
-        '**Week 4:** 50-100 samples बनाएं, photography करें'
+        'Week 1-2: Market research, design selection',
+        'Week 3: Materials खरीदें (wholesale)',
+        'Week 4: 50-100 samples बनाएं, photography करें'
       ]
     },
     {
@@ -148,9 +148,9 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Week 1:** Online presence setup (Instagram, WhatsApp catalog)',
-        '**Week 2:** Local shops approach करें, samples दें',
-        '**Week 3-4:** Production शुरू करें, pre-orders लें'
+        'Week 1: Online presence setup (Instagram, WhatsApp catalog)',
+        'Week 2: Local shops approach करें, samples दें',
+        'Week 3-4: Production शुरू करें, pre-orders लें'
       ]
     },
     {
@@ -160,9 +160,9 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Week 1-2:** Full production mode',
-        '**Week 3:** Festival के 1 week पहले - peak sales',
-        '**Week 4:** Last-minute orders, discounts'
+        'Week 1-2: Full production mode',
+        'Week 3: Festival के 1 week पहले - peak sales',
+        'Week 4: Last-minute orders, discounts'
       ]
     },
     {
@@ -176,24 +176,24 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Instagram:**',
+        'Instagram:',
         '• Daily posts (designs showcase)',
         '• Reels: Making process (viral)',
         '• Stories: Offers, countdown',
         '• Hashtags: #rakhi #rakshabandhan #handmaderakhi #rakhigifts',
         '',
-        '**WhatsApp Business:**',
+        'WhatsApp Business:',
         '• Complete catalog',
         '• Status updates daily',
         '• Quick replies setup',
         '• Payment links ready',
         '',
-        '**Amazon/Flipkart:**',
+        'Amazon/Flipkart:',
         '• List 1-2 months advance',
         '• Good photos जरूरी',
         '• Competitive pricing',
         '',
-        '**Meesho/GlowRoad:**',
+        'Meesho/GlowRoad:',
         '• Zero commission',
         '• Easy listing'
       ]
@@ -205,11 +205,11 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Gift Shops:** 30% commission, bulk orders',
-        '**Stationery Shops:** Display counter',
-        '**Supermarkets:** Seasonal section',
-        '**Exhibition Stalls:** Mall, market fairs (₹500-1000/day rent)',
-        '**School Tie-ups:** Bulk orders (100-500 rakhis)'
+        'Gift Shops: 30% commission, bulk orders',
+        'Stationery Shops: Display counter',
+        'Supermarkets: Seasonal section',
+        'Exhibition Stalls: Mall, market fairs (₹500-1000/day rent)',
+        'School Tie-ups: Bulk orders (100-500 rakhis)'
       ]
     },
     {
@@ -219,11 +219,11 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Corporate Offices:** Employee gifting (100-500 rakhis)',
-        '**Housing Societies:** Bulk orders for residents',
-        '**Schools:** Student bulk buying',
-        '**NGOs:** CSR activities',
-        '**Pricing:** 20-30% wholesale discount but volume compensates'
+        'Corporate Offices: Employee gifting (100-500 rakhis)',
+        'Housing Societies: Bulk orders for residents',
+        'Schools: Student bulk buying',
+        'NGOs: CSR activities',
+        'Pricing: 20-30% wholesale discount but volume compensates'
       ]
     },
     {
@@ -237,12 +237,12 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Production:** 500 rakhis',
-        '**Average Price:** ₹50/rakhi',
-        '**Revenue:** ₹25,000',
-        '**Investment:** ₹5,000',
-        '**Profit:** ₹20,000 (400% ROI)',
-        '**Time:** 1.5-2 months'
+        'Production: 500 rakhis',
+        'Average Price: ₹50/rakhi',
+        'Revenue: ₹25,000',
+        'Investment: ₹5,000',
+        'Profit: ₹20,000 (400% ROI)',
+        'Time: 1.5-2 months'
       ]
     },
     {
@@ -252,10 +252,10 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Production:** 1500-2000 rakhis',
-        '**Revenue:** ₹80,000-1,00,000',
-        '**Expenses:** ₹15,000 (material) + ₹10,000 (labor)',
-        '**Profit:** ₹55,000-75,000'
+        'Production: 1500-2000 rakhis',
+        'Revenue: ₹80,000-1,00,000',
+        'Expenses: ₹15,000 (material) + ₹10,000 (labor)',
+        'Profit: ₹55,000-75,000'
       ]
     },
     {
@@ -265,10 +265,10 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Retail:** 1000 rakhis × ₹60 = ₹60,000',
-        '**Bulk Orders:** 2000 rakhis × ₹30 = ₹60,000',
-        '**Total Revenue:** ₹1,20,000',
-        '**Profit:** ₹80,000-1,00,000'
+        'Retail: 1000 rakhis × ₹60 = ₹60,000',
+        'Bulk Orders: 2000 rakhis × ₹30 = ₹60,000',
+        'Total Revenue: ₹1,20,000',
+        'Profit: ₹80,000-1,00,000'
       ]
     },
     {
@@ -287,16 +287,16 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Early Bird Offers:** June में 20% off (early production planning)',
-        '**Combo Packs:** Rakhi + sweets + card (₹50 extra)',
-        '**Free Shipping:** Orders > ₹500',
-        '**Referral Discount:** Refer करने पर ₹50 off',
-        '**Instagram Contest:** Free rakhi giveaway (reach बढ़ेगी)',
-        '**Influencer Collaboration:** Mommy bloggers को free samples',
-        '**WhatsApp Groups:** Join करें, share करें (not spam)',
-        '**Countdown Posts:** "Only 10 days left!"',
-        '**Customer Testimonials:** Previous customers के reviews',
-        '**Video Marketing:** Unboxing, making process videos'
+        'Early Bird Offers: June में 20% off (early production planning)',
+        'Combo Packs: Rakhi + sweets + card (₹50 extra)',
+        'Free Shipping: Orders > ₹500',
+        'Referral Discount: Refer करने पर ₹50 off',
+        'Instagram Contest: Free rakhi giveaway (reach बढ़ेगी)',
+        'Influencer Collaboration: Mommy bloggers को free samples',
+        'WhatsApp Groups: Join करें, share करें (not spam)',
+        'Countdown Posts: "Only 10 days left!"',
+        'Customer Testimonials: Previous customers के reviews',
+        'Video Marketing: Unboxing, making process videos'
       ]
     },
     {
@@ -306,14 +306,14 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**❌ Late Start:** June से पहले planning जरूरी',
-        '**❌ Poor Quality:** Cheap materials reputation खराब करते हैं',
-        '**❌ Limited Variety:** Minimum 15-20 designs रखें',
-        '**❌ No Online Presence:** Instagram बहुत जरूरी है',
-        '**❌ Overpricing:** Market competitive है',
-        '**❌ No Packaging:** Beautiful packaging value add करती है',
-        '**❌ Ignoring Bulk Orders:** यहाँ maximum profit है',
-        '**❌ No Follow-up:** Previous customers को reminder भेजें'
+        '❌ Late Start: June से पहले planning जरूरी',
+        '❌ Poor Quality: Cheap materials reputation खराब करते हैं',
+        '❌ Limited Variety: Minimum 15-20 designs रखें',
+        '❌ No Online Presence: Instagram बहुत जरूरी है',
+        '❌ Overpricing: Market competitive है',
+        '❌ No Packaging: Beautiful packaging value add करती है',
+        '❌ Ignoring Bulk Orders: यहाँ maximum profit है',
+        '❌ No Follow-up: Previous customers को reminder भेजें'
       ]
     },
     {
@@ -323,16 +323,16 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Wholesale Material:** Bulk में खरीदें (40-50% सस्ता)',
-        '**Pre-Orders:** May-June में लें (cash flow management)',
-        '**Price Range:** ₹20-500 - सभी budgets cover करें',
-        '**Customization:** Extra ₹50-100 charge करें',
-        '**Customer Database:** Numbers save करें next year के लिए',
-        '**Seasonal Expansion:** Diwali diyas भी बना सकते हैं',
-        '**Photography:** Good photos = higher perceived value',
-        '**Packaging Quality:** ₹5 extra packaging में लगाएं',
-        '**Delivery Promise:** On-time delivery guarantee',
-        '**Post-Festival:** 50% off clearance sale'
+        'Wholesale Material: Bulk में खरीदें (40-50% सस्ता)',
+        'Pre-Orders: May-June में लें (cash flow management)',
+        'Price Range: ₹20-500 - सभी budgets cover करें',
+        'Customization: Extra ₹50-100 charge करें',
+        'Customer Database: Numbers save करें next year के लिए',
+        'Seasonal Expansion: Diwali diyas भी बना सकते हैं',
+        'Photography: Good photos = higher perceived value',
+        'Packaging Quality: ₹5 extra packaging में लगाएं',
+        'Delivery Promise: On-time delivery guarantee',
+        'Post-Festival: 50% off clearance sale'
       ]
     },
     {
@@ -342,15 +342,15 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**YouTube Channels:**',
+        'YouTube Channels:',
         '• Rakhi Making Ideas',
         '• DIY Rakhi Designs',
         '• Traditional Crafts India',
         '',
-        '**Pinterest:** Unlimited design inspiration',
-        '**Instagram:** #rakhimaking #rakhidesigns trending देखें',
+        'Pinterest: Unlimited design inspiration',
+        'Instagram: #rakhimaking #rakhidesigns trending देखें',
         '',
-        '**Material Sources:**',
+        'Material Sources:',
         '• Local craft markets (Sadar Bazaar Delhi, Chickpet Bangalore)',
         '• IndiaMART (wholesale)',
         '• Amazon/Flipkart (small quantities)'
@@ -363,10 +363,10 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Budget Calculator](https://moneycal.in/calculators/budget-calculator)** - Material expenses plan करें',
-        '**[Profit Margin Calculator](https://moneycal.in/corporate-finance)** - Pricing optimize करें',
-        '**[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator)** - Scale करने के लिए',
-        '**[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator)** - Profit पर tax calculate'
+        '[Budget Calculator](https://moneycal.in/calculators/budget-calculator) - Material expenses plan करें',
+        '[Profit Margin Calculator](https://moneycal.in/corporate-finance) - Pricing optimize करें',
+        '[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) - Scale करने के लिए',
+        '[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator) - Profit पर tax calculate'
       ]
     },
     {
@@ -376,10 +376,10 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[PM Mudra Loan](https://moneycal.in/government-schemes):** ₹50,000-10 लाख',
-        '**Handicraft Board:** Exhibition support',
-        '**MSME Registration:** Seasonal business benefits',
-        '**Skill India:** Handicraft training'
+        '[PM Mudra Loan](https://moneycal.in/government-schemes): ₹50,000-10 लाख',
+        'Handicraft Board: Exhibition support',
+        'MSME Registration: Seasonal business benefits',
+        'Skill India: Handicraft training'
       ]
     },
     {
@@ -392,7 +392,7 @@ export const handmadeRakhiBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** June से planning, July से production। August में festival है तो May end से prepare रहें।'
+      content: 'Answer: June से planning, July से production। August में festival है तो May end से prepare रहें।'
     },
     {
       type: 'subheading',
@@ -400,7 +400,7 @@ export const handmadeRakhiBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Leftover stock को 50% off में clear करें। Customer database बनाएं next year के लिए। दूसरे festivals (Diwali, Holi) में भी seasonal products try करें।'
+      content: 'Answer: Leftover stock को 50% off में clear करें। Customer database बनाएं next year के लिए। दूसरे festivals (Diwali, Holi) में भी seasonal products try करें।'
     },
     {
       type: 'subheading',
@@ -408,7 +408,7 @@ export const handmadeRakhiBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Mix strategy best है। Online में reach ज्यादा, offline में instant cash। 60% online, 40% offline ideal है।'
+      content: 'Answer: Mix strategy best है। Online में reach ज्यादा, offline में instant cash। 60% online, 40% offline ideal है।'
     },
     {
       type: 'subheading',
@@ -416,7 +416,7 @@ export const handmadeRakhiBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Offices, schools को directly approach करें May-June में। LinkedIn पर HR/Admin को message करें। Samples भेजें।'
+      content: 'Answer: Offices, schools को directly approach करें May-June में। LinkedIn पर HR/Admin को message करें। Samples भेजें।'
     },
     {
       type: 'subheading',
@@ -424,7 +424,7 @@ export const handmadeRakhiBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Unique designs बनाएं, quality focus करें, customization offer करें। Market बहुत बड़ी है, सबके लिए है।'
+      content: 'Answer: Unique designs बनाएं, quality focus करें, customization offer करें। Market बहुत बड़ी है, सबके लिए है।'
     },
     {
       type: 'heading',
@@ -436,15 +436,15 @@ export const handmadeRakhiBusiness: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Success Formula:**\n• Early Planning (June se)\n• Variety of Designs (15-20)\n• Quality Materials\n• Good Photography\n• Online + Offline Mix\n• Bulk Orders Focus\n= ₹50K-1L in 2 Months!'
+      content: 'Success Formula:\n• Early Planning (June se)\n• Variety of Designs (15-20)\n• Quality Materials\n• Good Photography\n• Online + Offline Mix\n• Bulk Orders Focus\n= ₹50K-1L in 2 Months!'
     },
     {
       type: 'paragraph',
-      content: '**आज ही planning शुरू करें!** अगले Raksha Bandhan के लिए ready रहें। Materials research करें, designs finalize करें। Your seasonal success journey begins now! 🎨💰✨'
+      content: 'आज ही planning शुरू करें! अगले Raksha Bandhan के लिए ready रहें। Materials research करें, designs finalize करें। Your seasonal success journey begins now! 🎨💰✨'
     },
     {
       type: 'paragraph',
-      content: '**All the best for your Rakhi business! 🌺👫**'
+      content: 'All the best for your Rakhi business! 🌺👫'
     },
     {
       type: 'heading',
@@ -453,10 +453,10 @@ export const handmadeRakhiBusiness: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Amazon Seller](https://sell.amazon.in/)** - Selling platform',
-        '**[Meesho Supplier](https://www.meesho.com/sell)** - Zero commission',
-        '**[Handicrafts Board](https://handicrafts.nic.in/)** - Exhibitions',
-        '**[Pinterest Ideas](https://www.pinterest.com/)** - Design inspiration'
+        '[Amazon Seller](https://sell.amazon.in/) - Selling platform',
+        '[Meesho Supplier](https://www.meesho.com/sell) - Zero commission',
+        '[Handicrafts Board](https://handicrafts.nic.in/) - Exhibitions',
+        '[Pinterest Ideas](https://www.pinterest.com/) - Design inspiration'
       ]
     }
   ]

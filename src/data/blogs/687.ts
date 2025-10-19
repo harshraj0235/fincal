@@ -1,4 +1,4 @@
-import { BlogPost } from '../blogData';
+﻿import { BlogPost } from '../blogData';
 
 const getCurrentDate = () => {
   const now = new Date();
@@ -29,14 +29,14 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Growing Market:** हर दिन demand बढ़ रही है',
-        '**Plastic Ban:** Compulsory replacement',
-        '**Low Investment:** ₹8000-15000 में शुरू',
-        '**Government Support:** Subsidies और schemes available',
-        '**Eco-Friendly:** Feel-good business',
-        '**B2B Market:** Bulk orders easily मिलते हैं',
-        '**Scalable:** छोटे से शुरू, बड़ा करें',
-        '**Year-round Demand:** Seasonal नहीं है'
+        'Growing Market: हर दिन demand बढ़ रही है',
+        'Plastic Ban: Compulsory replacement',
+        'Low Investment: ₹8000-15000 में शुरू',
+        'Government Support: Subsidies और schemes available',
+        'Eco-Friendly: Feel-good business',
+        'B2B Market: Bulk orders easily मिलते हैं',
+        'Scalable: छोटे से शुरू, बड़ा करें',
+        'Year-round Demand: Seasonal नहीं है'
       ]
     },
     {
@@ -50,11 +50,11 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Paper Cutting Machine:** ₹3000',
-        '**Glue:** ₹500',
-        '**Paper Kraft Rolls:** ₹3000 (3-4 rolls)',
-        '**Hand Tools:** ₹800 (ruler, cutter, brushes)',
-        '**Working Table:** ₹700'
+        'Paper Cutting Machine: ₹3000',
+        'Glue: ₹500',
+        'Paper Kraft Rolls: ₹3000 (3-4 rolls)',
+        'Hand Tools: ₹800 (ruler, cutter, brushes)',
+        'Working Table: ₹700'
       ]
     },
     {
@@ -64,10 +64,10 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Paper Bag Making Machine:** ₹35,000-45,000',
-        '**Capacity:** 30-40 bags/hour',
-        '**ROI:** 6-8 months',
-        '**Advantage:** Consistent quality, faster production'
+        'Paper Bag Making Machine: ₹35,000-45,000',
+        'Capacity: 30-40 bags/hour',
+        'ROI: 6-8 months',
+        'Advantage: Consistent quality, faster production'
       ]
     },
     {
@@ -77,19 +77,19 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Grocery Bags:** किराना stores के लिए (10" × 12")',
+        'Grocery Bags: किराना stores के लिए (10" × 12")',
         '• Cost: ₹2-3, Sell: ₹5-7',
         '',
-        '**Shopping Bags:** Boutiques, gift shops (12" × 15")',
+        'Shopping Bags: Boutiques, gift shops (12" × 15")',
         '• Cost: ₹4-5, Sell: ₹10-15',
         '',
-        '**Restaurant Bags:** Food delivery (8" × 10")',
+        'Restaurant Bags: Food delivery (8" × 10")',
         '• Cost: ₹3-4, Sell: ₹8-10',
         '',
-        '**Gift Bags:** Premium, printed (10" × 12")',
+        'Gift Bags: Premium, printed (10" × 12")',
         '• Cost: ₹6-8, Sell: ₹20-30',
         '',
-        '**Bread Bags:** Bakeries के लिए (6" × 10")',
+        'Bread Bags: Bakeries के लिए (6" × 10")',
         '• Cost: ₹1.5-2, Sell: ₹4-5'
       ]
     },
@@ -104,13 +104,13 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Step 1:** Paper roll को required size में cut करें',
-        '**Step 2:** Fold lines mark करें (ruler से)',
-        '**Step 3:** Bottom fold बनाएं',
-        '**Step 4:** Sides को glue से paste करें',
-        '**Step 5:** Handles attach करें (paper twist या ribbon)',
-        '**Step 6:** Press करके dry करें (1-2 hours)',
-        '**Step 7:** Quality check और pack करें (50-100 bags per bundle)'
+        'Step 1: Paper roll को required size में cut करें',
+        'Step 2: Fold lines mark करें (ruler से)',
+        'Step 3: Bottom fold बनाएं',
+        'Step 4: Sides को glue से paste करें',
+        'Step 5: Handles attach करें (paper twist या ribbon)',
+        'Step 6: Press करके dry करें (1-2 hours)',
+        'Step 7: Quality check और pack करें (50-100 bags per bundle)'
       ]
     },
     {
@@ -120,10 +120,10 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Manual (Self):** 30-40 bags/day',
-        '**Manual (2 workers):** 100-120 bags/day',
-        '**Semi-Automatic Machine:** 250-300 bags/day',
-        '**Fully Automatic:** 1000+ bags/day (investment: ₹2-3 lakhs)'
+        'Manual (Self): 30-40 bags/day',
+        'Manual (2 workers): 100-120 bags/day',
+        'Semi-Automatic Machine: 250-300 bags/day',
+        'Fully Automatic: 1000+ bags/day (investment: ₹2-3 lakhs)'
       ]
     },
     {
@@ -137,12 +137,12 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Target:** Kirana stores, supermarkets, boutiques',
-        '**Pitch:** "Plastic ban - legal requirement"',
-        '**Minimum Order:** 500-1000 bags',
-        '**Pricing:** Wholesale (₹3-5 per bag)',
-        '**Payment:** 50% advance, 50% on delivery',
-        '**Repeat:** Monthly regular orders'
+        'Target: Kirana stores, supermarkets, boutiques',
+        'Pitch: "Plastic ban - legal requirement"',
+        'Minimum Order: 500-1000 bags',
+        'Pricing: Wholesale (₹3-5 per bag)',
+        'Payment: 50% advance, 50% on delivery',
+        'Repeat: Monthly regular orders'
       ]
     },
     {
@@ -152,11 +152,11 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Demand:** Daily 50-100 bags',
-        '**Customization:** Logo printing possible (extra charge)',
-        '**Contract:** Monthly supply agreements',
-        '**Pricing:** ₹6-10 per bag',
-        '**Advantage:** Regular, predictable income'
+        'Demand: Daily 50-100 bags',
+        'Customization: Logo printing possible (extra charge)',
+        'Contract: Monthly supply agreements',
+        'Pricing: ₹6-10 per bag',
+        'Advantage: Regular, predictable income'
       ]
     },
     {
@@ -166,10 +166,10 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Bulk Orders:** 10,000-50,000 bags',
-        '**Margin:** Lower (₹0.50-1 per bag) but volume compensates',
-        '**Payment:** 30-45 days credit',
-        '**Advantage:** Guaranteed large orders'
+        'Bulk Orders: 10,000-50,000 bags',
+        'Margin: Lower (₹0.50-1 per bag) but volume compensates',
+        'Payment: 30-45 days credit',
+        'Advantage: Guaranteed large orders'
       ]
     },
     {
@@ -179,11 +179,11 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**IndiaMART:** List your products',
-        '**TradeIndia:** B2B marketplace',
-        '**Udaan:** Growing platform',
-        '**Just Dial:** Local visibility',
-        '**Advantage:** Pan-India reach'
+        'IndiaMART: List your products',
+        'TradeIndia: B2B marketplace',
+        'Udaan: Growing platform',
+        'Just Dial: Local visibility',
+        'Advantage: Pan-India reach'
       ]
     },
     {
@@ -197,18 +197,18 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Paper Cost:** ₹2.5',
-        '**Glue:** ₹0.5',
-        '**Handle:** ₹0.5',
-        '**Labor:** ₹0.5 (self-labor)',
-        '**Total Cost:** ₹4',
+        'Paper Cost: ₹2.5',
+        'Glue: ₹0.5',
+        'Handle: ₹0.5',
+        'Labor: ₹0.5 (self-labor)',
+        'Total Cost: ₹4',
         '',
-        '**Selling Price:** ₹10-12',
-        '**Profit per Bag:** ₹6-8 (150-200% margin)',
+        'Selling Price: ₹10-12',
+        'Profit per Bag: ₹6-8 (150-200% margin)',
         '',
-        '**Daily Production:** 100 bags',
-        '**Daily Profit:** ₹600-800',
-        '**Monthly Profit:** ₹18,000-24,000'
+        'Daily Production: 100 bags',
+        'Daily Profit: ₹600-800',
+        'Monthly Profit: ₹18,000-24,000'
       ]
     },
     {
@@ -218,12 +218,12 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Daily Production:** 300 bags',
-        '**Profit per Bag:** ₹5 (machine cost recovery)',
-        '**Daily Profit:** ₹1,500',
-        '**Monthly Profit:** ₹45,000',
+        'Daily Production: 300 bags',
+        'Profit per Bag: ₹5 (machine cost recovery)',
+        'Daily Profit: ₹1,500',
+        'Monthly Profit: ₹45,000',
         '',
-        '**With 2 Machines + 4 Workers:**',
+        'With 2 Machines + 4 Workers:',
         '• Production: 2000 bags/day',
         '• Monthly Profit: ₹2,00,000-3,00,000'
       ]
@@ -235,11 +235,11 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**GST Registration:** Turnover > ₹20 lakhs (recommended earlier for B2B)',
-        '**Udyam Registration:** Free MSME registration',
-        '**Trade License:** Local municipal corporation',
-        '**Pollution Certificate:** Environment-friendly business',
-        '**ISI Mark (Optional):** Quality certification (premium pricing)'
+        'GST Registration: Turnover > ₹20 lakhs (recommended earlier for B2B)',
+        'Udyam Registration: Free MSME registration',
+        'Trade License: Local municipal corporation',
+        'Pollution Certificate: Environment-friendly business',
+        'ISI Mark (Optional): Quality certification (premium pricing)'
       ]
     },
     {
@@ -258,16 +258,16 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Free Samples:** हर shop को 50-100 bags free दें',
-        '**Quality Demo:** Strength test करके दिखाएं',
-        '**Customization:** Logo printing service offer करें',
-        '**Bulk Discounts:** Volume orders पर 10-15% off',
-        '**WhatsApp Groups:** Retailers, restaurateurs groups में',
-        '**Local Directory:** Just Dial listing (₹2000/year)',
-        '**Vehicle Branding:** अपनी गाड़ी पर contact details',
-        '**Word of Mouth:** Satisfied clients का best marketing',
-        '**Government Tenders:** Municipal contracts apply करें',
-        '**Exhibition Stalls:** Business trade fairs में'
+        'Free Samples: हर shop को 50-100 bags free दें',
+        'Quality Demo: Strength test करके दिखाएं',
+        'Customization: Logo printing service offer करें',
+        'Bulk Discounts: Volume orders पर 10-15% off',
+        'WhatsApp Groups: Retailers, restaurateurs groups में',
+        'Local Directory: Just Dial listing (₹2000/year)',
+        'Vehicle Branding: अपनी गाड़ी पर contact details',
+        'Word of Mouth: Satisfied clients का best marketing',
+        'Government Tenders: Municipal contracts apply करें',
+        'Exhibition Stalls: Business trade fairs में'
       ]
     },
     {
@@ -277,14 +277,14 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**❌ Poor Quality Paper:** Cheap paper फट जाता है',
-        '**❌ Weak Handles:** सबसे common complaint',
-        '**❌ Inconsistent Sizing:** Standard sizes maintain करें',
-        '**❌ Overpricing:** Market competitive है',
-        '**❌ No GST:** B2B clients GST bill मांगते हैं',
-        '**❌ Delayed Supply:** Regular supply बहुत important',
-        '**❌ No Credit:** Trusted clients को credit दें',
-        '**❌ Limited Sizes:** Variety रखें'
+        '❌ Poor Quality Paper: Cheap paper फट जाता है',
+        '❌ Weak Handles: सबसे common complaint',
+        '❌ Inconsistent Sizing: Standard sizes maintain करें',
+        '❌ Overpricing: Market competitive है',
+        '❌ No GST: B2B clients GST bill मांगते हैं',
+        '❌ Delayed Supply: Regular supply बहुत important',
+        '❌ No Credit: Trusted clients को credit दें',
+        '❌ Limited Sizes: Variety रखें'
       ]
     },
     {
@@ -294,16 +294,16 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**Kraft Paper:** Brown paper सबसे eco-friendly और popular',
-        '**Handle Options:** Flat, twisted, या rope handles',
-        '**Printing:** Simple logo printing extra ₹1-2/bag charge करें',
-        '**Moisture Resistance:** Wax coating option offer करें',
-        '**Bulk Storage:** Paper rolls को dry place में store करें',
-        '**Quality Test:** Weight capacity test करके दिखाएं',
-        '**Seasonal Planning:** Diwali, Christmas में demand 3x',
-        '**B2B Focus:** Retail से ज्यादा shops को target करें',
-        '**Payment Terms:** 50% advance mandatory',
-        '**Expansion:** Machine investment से scale करें'
+        'Kraft Paper: Brown paper सबसे eco-friendly और popular',
+        'Handle Options: Flat, twisted, या rope handles',
+        'Printing: Simple logo printing extra ₹1-2/bag charge करें',
+        'Moisture Resistance: Wax coating option offer करें',
+        'Bulk Storage: Paper rolls को dry place में store करें',
+        'Quality Test: Weight capacity test करके दिखाएं',
+        'Seasonal Planning: Diwali, Christmas में demand 3x',
+        'B2B Focus: Retail से ज्यादा shops को target करें',
+        'Payment Terms: 50% advance mandatory',
+        'Expansion: Machine investment से scale करें'
       ]
     },
     {
@@ -313,11 +313,11 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator)** - Machine के लिए loan',
-        '**[Profit Margin Calculator](https://moneycal.in/corporate-finance)** - Pricing optimize करें',
-        '**[Budget Calculator](https://moneycal.in/calculators/budget-calculator)** - Monthly planning',
-        '**[GST Calculator](https://moneycal.in/tools/gst-amount-calculator)** - B2B billing',
-        '**[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator)** - Tax planning'
+        '[Business Loan Calculator](https://moneycal.in/calculators/business-loan-calculator) - Machine के लिए loan',
+        '[Profit Margin Calculator](https://moneycal.in/corporate-finance) - Pricing optimize करें',
+        '[Budget Calculator](https://moneycal.in/calculators/budget-calculator) - Monthly planning',
+        '[GST Calculator](https://moneycal.in/tools/gst-amount-calculator) - B2B billing',
+        '[Income Tax Calculator](https://moneycal.in/calculators/income-tax-calculator) - Tax planning'
       ]
     },
     {
@@ -327,11 +327,11 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[PM Mudra Loan](https://moneycal.in/government-schemes):** ₹50,000-10 लाख',
-        '**MSME Subsidy:** Machine purchase पर 25-35% subsidy',
-        '**Plastic Ban Initiative:** Government procurement contracts',
-        '**Skill India:** Free packaging training',
-        '**Credit Guarantee:** Collateral-free loans'
+        '[PM Mudra Loan](https://moneycal.in/government-schemes): ₹50,000-10 लाख',
+        'MSME Subsidy: Machine purchase पर 25-35% subsidy',
+        'Plastic Ban Initiative: Government procurement contracts',
+        'Skill India: Free packaging training',
+        'Credit Guarantee: Collateral-free loans'
       ]
     },
     {
@@ -344,7 +344,7 @@ export const paperBagBusinessBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** शुरुआत में नहीं। Manual से शुरू करें, profit से machine खरीदें। Machine ROI 6-8 months में हो जाता है।'
+      content: 'Answer: शुरुआत में नहीं। Manual से शुरू करें, profit से machine खरीदें। Machine ROI 6-8 months में हो जाता है।'
     },
     {
       type: 'subheading',
@@ -352,7 +352,7 @@ export const paperBagBusinessBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Local paper mills, wholesale markets, या IndiaMART। Bulk में खरीदें (30-40% सस्ता)। Quality check जरूर करें।'
+      content: 'Answer: Local paper mills, wholesale markets, या IndiaMART। Bulk में खरीदें (30-40% सस्ता)। Quality check जरूर करें।'
     },
     {
       type: 'subheading',
@@ -360,7 +360,7 @@ export const paperBagBusinessBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Quality पर focus करें, on-time delivery guarantee दें, customization offer करें। Market बहुत बड़ी है, सबके लिए है।'
+      content: 'Answer: Quality पर focus करें, on-time delivery guarantee दें, customization offer करें। Market बहुत बड़ी है, सबके लिए है।'
     },
     {
       type: 'subheading',
@@ -368,7 +368,7 @@ export const paperBagBusinessBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Paper bags में B2B (shops, restaurants) बेहतर है। Bulk orders, regular income, less marketing effort।'
+      content: 'Answer: Paper bags में B2B (shops, restaurants) बेहतर है। Bulk orders, regular income, less marketing effort।'
     },
     {
       type: 'subheading',
@@ -376,7 +376,7 @@ export const paperBagBusinessBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Answer:** Legally ₹20L+ turnover पर। लेकिन B2B clients GST bill मांगते हैं, इसलिए जल्दी कर लें। Benefits भी मिलते हैं।'
+      content: 'Answer: Legally ₹20L+ turnover पर। लेकिन B2B clients GST bill मांगते हैं, इसलिए जल्दी कर लें। Benefits भी मिलते हैं।'
     },
     {
       type: 'heading',
@@ -388,15 +388,15 @@ export const paperBagBusinessBlog: BlogPost = {
     },
     {
       type: 'paragraph',
-      content: '**Success Formula:**\n• Quality Paper\n• Strong Handles\n• Competitive Pricing\n• On-time Delivery\n• B2B Focus\n= Successful Paper Bag Business!'
+      content: 'Success Formula:\n• Quality Paper\n• Strong Handles\n• Competitive Pricing\n• On-time Delivery\n• B2B Focus\n= Successful Paper Bag Business!'
     },
     {
       type: 'paragraph',
-      content: '**आज ही शुरू करें!** Local shops visit करें, samples दें, orders collect करें। Contribute to Plastic-Free India! 📦🌿✨'
+      content: 'आज ही शुरू करें! Local shops visit करें, samples दें, orders collect करें। Contribute to Plastic-Free India! 📦🌿✨'
     },
     {
       type: 'paragraph',
-      content: '**All the best for your eco-friendly paper bag business! 💚🇮🇳**'
+      content: 'All the best for your eco-friendly paper bag business! 💚🇮🇳'
     },
     {
       type: 'heading',
@@ -405,11 +405,11 @@ export const paperBagBusinessBlog: BlogPost = {
     {
       type: 'list',
       items: [
-        '**[MSME Portal](https://msme.gov.in/)** - Subsidy schemes',
-        '**[Udyam Registration](https://udyamregistration.gov.in/)** - Free registration',
-        '**[IndiaMART](https://www.indiamart.com/)** - B2B selling',
-        '**[GeM Portal](https://gem.gov.in/)** - Government procurement',
-        '**[Startup India](https://www.startupindia.gov.in/)** - Support programs'
+        '[MSME Portal](https://msme.gov.in/) - Subsidy schemes',
+        '[Udyam Registration](https://udyamregistration.gov.in/) - Free registration',
+        '[IndiaMART](https://www.indiamart.com/) - B2B selling',
+        '[GeM Portal](https://gem.gov.in/) - Government procurement',
+        '[Startup India](https://www.startupindia.gov.in/) - Support programs'
       ]
     }
   ]
