@@ -36,13 +36,13 @@ const AboutUs: React.FC = () => {
             >
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-6">
                 <Heart className="w-16 h-16" />
-              </div>
+        </div>
             </motion.div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">About MoneyCal</h1>
             <p className="text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               Empowering India with free, accurate financial tools and education since 2023
-            </p>
-          </div>
+          </p>
+        </div>
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-4 py-16">
@@ -56,7 +56,7 @@ const AboutUs: React.FC = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6 flex items-center">
               <BookOpen className="w-10 h-10 mr-4 text-blue-600" />
               Our Story
-            </h2>
+          </h2>
             <div className="prose max-w-none text-lg text-gray-700 leading-relaxed">
               <p className="mb-4">
                 <strong>MoneyCal</strong> was born from a simple observation: millions of Indians struggle with financial planning 
@@ -77,8 +77,8 @@ const AboutUs: React.FC = () => {
                 Our platform is completely <strong>free, with no registration required</strong>, because we believe financial 
                 empowerment should have no barriers. We're proudly Indian, built for Indians, supporting both 
                 <strong> Hindi and English</strong> to serve our diverse nation.
-              </p>
-            </div>
+          </p>
+        </div>
           </motion.div>
 
           {/* Mission & Vision */}
@@ -110,8 +110,8 @@ const AboutUs: React.FC = () => {
                 access world-class tools and knowledge to build wealth, secure their future, and achieve financial independence.
               </p>
             </motion.div>
-          </div>
-
+      </div>
+      
           {/* Core Values */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -120,7 +120,7 @@ const AboutUs: React.FC = () => {
             className="bg-white rounded-3xl shadow-2xl p-10 mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Our Core Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
                   icon: Shield,
@@ -170,12 +170,12 @@ const AboutUs: React.FC = () => {
                 >
                   <div className={`w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
                     <value.icon className="w-10 h-10 text-white" />
-                  </div>
+          </div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">{value.title}</h3>
                   <p className="text-gray-600">{value.description}</p>
                 </motion.div>
               ))}
-            </div>
+          </div>
           </motion.div>
 
           {/* What We Offer */}
@@ -205,11 +205,11 @@ const AboutUs: React.FC = () => {
                 >
                   <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-3 rounded-xl mr-4 flex-shrink-0">
                     <item.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
+              </div>
+              <div>
                     <h3 className="font-bold text-lg text-gray-900 mb-1">{item.title}</h3>
                     <p className="text-gray-600">{item.desc}</p>
-                  </div>
+              </div>
                 </motion.div>
               ))}
             </div>
@@ -240,12 +240,12 @@ const AboutUs: React.FC = () => {
                 >
                   <div className="bg-gradient-to-br from-blue-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <stat.icon className="w-8 h-8 text-white" />
-                  </div>
+              </div>
                   <div className="text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
                   <div className="text-gray-600">{stat.label}</div>
                 </motion.div>
               ))}
-            </div>
+              </div>
           </motion.div>
 
           {/* Why Trust Us */}
@@ -326,12 +326,12 @@ const AboutUs: React.FC = () => {
                 >
                   <div className={`w-24 h-24 bg-gradient-to-br ${team.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl`}>
                     <team.icon className="w-12 h-12 text-white" />
-                  </div>
+              </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">{team.role}</h3>
                   <p className="text-gray-600">{team.description}</p>
                 </motion.div>
               ))}
-            </div>
+              </div>
           </motion.div>
 
           {/* CTA Section */}
@@ -362,10 +362,10 @@ const AboutUs: React.FC = () => {
               >
                 Contact Us
               </motion.a>
-            </div>
-          </motion.div>
         </div>
+          </motion.div>
       </div>
+    </div>
     </>
   );
 };

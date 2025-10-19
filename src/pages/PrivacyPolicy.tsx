@@ -25,13 +25,13 @@ const PrivacyPolicy: React.FC = () => {
             >
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
                 <Shield className="w-12 h-12" />
-              </div>
+          </div>
             </motion.div>
             <h1 className="text-5xl font-bold mb-4">Privacy Policy</h1>
             <p className="text-xl text-white/90">Last Updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+            </div>
           </div>
-        </div>
-
+      
         <div className="max-w-4xl mx-auto px-4 py-12">
           {/* Introduction */}
           <motion.div
@@ -88,9 +88,9 @@ const PrivacyPolicy: React.FC = () => {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
               <Database className="w-8 h-8 mr-3 text-purple-600" />
-              Information We Collect
-            </h2>
-
+                    Information We Collect
+                  </h2>
+                  
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">1. Information You Do NOT Need to Provide</h3>
@@ -105,7 +105,7 @@ const PrivacyPolicy: React.FC = () => {
                   <li>No phone number collected</li>
                   <li>No registration or signup</li>
                   <li>All calculators work anonymously</li>
-                </ul>
+                  </ul>
               </div>
 
               <div>
@@ -144,8 +144,8 @@ const PrivacyPolicy: React.FC = () => {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
               <Eye className="w-8 h-8 mr-3 text-green-600" />
-              How We Use Your Information
-            </h2>
+                    How We Use Your Information
+                  </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               We use the collected information for the following purposes:
             </p>
@@ -209,7 +209,7 @@ const PrivacyPolicy: React.FC = () => {
                   <li><strong>Analytics Cookies:</strong> Google Analytics to understand user behavior (anonymous)</li>
                   <li><strong>Preference Cookies:</strong> To remember your language choice and settings</li>
                   <li><strong>Advertising Cookies:</strong> May be used if you consent (for Google AdSense)</li>
-                </ul>
+                  </ul>
               </div>
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
                 <p className="text-gray-800">
@@ -278,11 +278,11 @@ const PrivacyPolicy: React.FC = () => {
               <p className="text-gray-800">
                 <strong>Important:</strong> While we strive to use commercially acceptable means to protect your information, 
                 no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.
-              </p>
-            </div>
+                  </p>
+                </div>
           </motion.div>
 
-          {/* Your Rights */}
+              {/* Your Rights */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -309,16 +309,16 @@ const PrivacyPolicy: React.FC = () => {
                   <div>
                     <h3 className="font-bold text-gray-900">{item.right}</h3>
                     <p className="text-gray-700">{item.desc}</p>
-                  </div>
                 </div>
+              </div>
               ))}
-            </div>
+                </div>
             <div className="mt-6 bg-blue-50 p-4 rounded-lg">
               <p className="text-gray-800">
                 To exercise any of these rights, please contact us at <strong>privacy@moneycal.in</strong> or use our 
                 <a href="/contact" className="text-blue-600 underline ml-1">Contact page</a>.
               </p>
-            </div>
+              </div>
           </motion.div>
 
           {/* Children's Privacy */}
@@ -378,7 +378,7 @@ const PrivacyPolicy: React.FC = () => {
               <div className="flex items-center">
                 <strong className="w-32">Email:</strong>
                 <span>privacy@moneycal.in</span>
-              </div>
+                </div>
               <div className="flex items-center">
                 <strong className="w-32">Website:</strong>
                 <a href="https://moneycal.in" className="underline">https://moneycal.in</a>
@@ -386,15 +386,15 @@ const PrivacyPolicy: React.FC = () => {
               <div className="flex items-center">
                 <strong className="w-32">Contact Form:</strong>
                 <a href="/contact" className="underline">moneycal.in/contact</a>
-              </div>
             </div>
+          </div>
             <div className="mt-6 pt-6 border-t border-white/20">
               <p className="text-sm">
                 <strong>Governing Law:</strong> This Privacy Policy is governed by and construed in accordance with the 
                 laws of India, including the Information Technology Act, 2000 and the Information Technology 
                 (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.
-              </p>
-            </div>
+            </p>
+          </div>
           </motion.div>
         </div>
       </div>

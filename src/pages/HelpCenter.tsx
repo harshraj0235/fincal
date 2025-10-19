@@ -564,13 +564,13 @@ const HelpCenter: React.FC = () => {
                     </div>
                     <h3 className="font-bold text-gray-900 text-xl leading-tight">{faq.question}</h3>
                   </div>
-                  {expandedFAQ === index ? (
+                        {expandedFAQ === index ? (
                     <ChevronUp className="w-7 h-7 text-blue-600 flex-shrink-0 mt-1" />
-                  ) : (
+                        ) : (
                     <ChevronDown className="w-7 h-7 text-gray-400 flex-shrink-0 mt-1" />
-                  )}
-                </button>
-                {expandedFAQ === index && (
+                        )}
+                      </button>
+                      {expandedFAQ === index && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
@@ -613,7 +613,7 @@ const HelpCenter: React.FC = () => {
               >
                 Read Blog
               </motion.a>
-            </div>
+                </div>
           </motion.div>
         </div>
       </div>
