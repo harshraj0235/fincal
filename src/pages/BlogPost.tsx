@@ -180,15 +180,58 @@ export const BlogPost: React.FC = () => {
                   />
                  ) : (
                    // For regular blogs, content is structured array
-                  sections.map((section: BlogContentSection, index: number) => (
+                  sections.map((section: BlogContentSection, index: number) => {
+                    // Helper function to render text with links as cards
+                    const renderTextWithLinks = (text: string) => {
+                      const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+                      const parts: (string | JSX.Element)[] = [];
+                      let lastIndex = 0;
+                      let match;
+                      
+                      while ((match = linkRegex.exec(text)) !== null) {
+                        // Add text before link
+                        if (match.index > lastIndex) {
+                          parts.push(text.substring(lastIndex, match.index));
+                        }
+                        
+                        // Add link as card
+                        const linkText = match[1];
+                        const linkUrl = match[2];
+                        parts.push(
+                          <Link
+                            key={match.index}
+                            to={linkUrl}
+                            className="inline-flex items-center gap-2 px-4 py-2 my-2 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 border-2 border-blue-200 hover:border-blue-400 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-md font-medium text-blue-700 hover:text-blue-900"
+                          >
+                            <span>🔗</span>
+                            <span>{linkText}</span>
+                            <span className="text-xs opacity-70">→</span>
+                          </Link>
+                        );
+                        
+                        lastIndex = match.index + match[0].length;
+                      }
+                      
+                      // Add remaining text
+                      if (lastIndex < text.length) {
+                        parts.push(text.substring(lastIndex));
+                      }
+                      
+                      return parts.length > 0 ? parts : text;
+                    };
+                    
+                    return (
                   <div key={index} className="mb-8">
-                    {section.type === 'paragraph' && <p>{section.content}</p>}
-                    {section.type === 'heading' && <h2 className="text-2xl font-bold mt-8 mb-4">{section.content}</h2>}
-                    {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{section.content}</h3>}
+                    {section.type === 'paragraph' && <p>{renderTextWithLinks(section.content || '')}</p>}
+                    {section.type === 'heading' && <h2 className="text-2xl font-bold mt-8 mb-4">{renderTextWithLinks(section.content || '')}</h2>}
+                    {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{renderTextWithLinks(section.content || '')}</h3>}
                     {section.type === 'list' && (
-                      <ul className="list-disc pl-6 space-y-2">
+                      <ul className="list-none pl-0 space-y-3">
                         {(section.items || []).map((item: string, i: number) => (
-                          <li key={i}>{item}</li>
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="text-blue-600 mt-1">•</span>
+                            <span className="flex-1">{renderTextWithLinks(item)}</span>
+                          </li>
                         ))}
                       </ul>
                     )}
@@ -212,14 +255,15 @@ export const BlogPost: React.FC = () => {
                     )}
                     {section.type === 'quote' && (
                       <blockquote className="border-l-4 border-primary-500 pl-4 py-2 my-6 text-neutral-700 italic">
-                        {section.content}
+                        {renderTextWithLinks(section.content || '')}
                         {section.author && (
                           <footer className="text-sm text-neutral-500 mt-2">— {section.author}</footer>
                         )}
                       </blockquote>
                     )}
                   </div>
-                   ))
+                    );
+                  })
                  )}
               </div>
               {/* Social Share & Save */}
