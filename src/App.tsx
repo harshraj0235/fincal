@@ -205,6 +205,7 @@ const Gstr1DeadlineCalculatorPage = lazy(() => import('./pages/Gstr1DeadlineCalc
 const GSTAmountCalculatorPage = lazy(() => import('./pages/gst/GSTAmountCalculatorPage'));
 const ReverseGSTCalculatorPage = lazy(() => import('./pages/gst/ReverseGSTCalculatorPage'));
 const GSTSlabCalculatorPage = lazy(() => import('./pages/gst/GSTSlabCalculatorPage'));
+const GSTR3BDeadlineCalculatorPage = lazy(() => import('./pages/gst/GSTR3BDeadlineCalculatorPage'));
 const InvoicingReceivablesHub = lazy(() => import('./pages/InvoicingReceivablesHub'));
 const CustomInvoiceGenerator = lazy(() => import('./pages/invoicing-tools/CustomInvoiceGenerator'));
 const InvoiceDueDateTracker = lazy(() => import('./pages/invoicing-tools/InvoiceDueDateTracker'));
@@ -636,6 +637,8 @@ function App() {
             <Route path="/tools/reverse-gst-calculator" element={<ReverseGSTCalculatorPage />} />
             <Route path="/gst-tools/gst-slab-calculator" element={<GSTSlabCalculatorPage />} />
             <Route path="/tools/gst-slab-calculator" element={<GSTSlabCalculatorPage />} />
+            <Route path="/gst-tools/gstr-3b-deadline-calculator" element={<GSTR3BDeadlineCalculatorPage />} />
+            <Route path="/tools/gstr-3b-deadline-calculator" element={<GSTR3BDeadlineCalculatorPage />} />
             <Route path="/gst-tools/:slug" element={<GSTToolPlaceholder />} />
         <Route path="/invoicing-receivables" element={<InvoicingReceivablesHub />} />
         <Route path="/invoicing-tools" element={<InvoicingReceivablesHub />} />
