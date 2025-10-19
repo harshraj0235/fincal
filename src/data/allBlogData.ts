@@ -1,9 +1,10 @@
 import { blogPosts as blogPosts0 } from './blogData';
 import { blogPosts as blogPosts1 } from './blogData1';
 import { blogs as newFolderBlogs } from './blogs';
+import { diyBusinessBlogs } from './blogData2';
 
 // Combine all blog posts from different sources
-export const allBlogPosts = [...newFolderBlogs, ...blogPosts1, ...blogPosts0];
+export const allBlogPosts = [...diyBusinessBlogs, ...newFolderBlogs, ...blogPosts1, ...blogPosts0];
 
 // Helper function to get blog post by slug
 export function getBlogPostBySlug(slug: string) {
