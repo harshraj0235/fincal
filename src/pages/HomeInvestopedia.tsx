@@ -15,6 +15,19 @@ import { blogPosts as blogPosts1 } from '../data/blogData1';
 const HomeInvestopedia: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [language, setLanguage] = useState<'en' | 'hi'>('en');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [tickerIndex, setTickerIndex] = useState(0);
+
+  // Combine all blog posts
+  const allBlogPosts = [...blogPosts0, ...blogPosts1];
+  
+  // Get unique categories
+  const blogCategories = ['All', ...Array.from(new Set(allBlogPosts.flatMap(post => post.categories)))];
+  
+  // Filter posts by category
+  const filteredPosts = selectedCategory === 'All' 
+    ? allBlogPosts 
+    : allBlogPosts.filter(post => post.categories.includes(selectedCategory));
 
   const heroSlides = [
     {
@@ -43,6 +56,14 @@ const HomeInvestopedia: React.FC = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // News ticker effect
+  useEffect(() => {
+    const ticker = setInterval(() => {
+      setTickerIndex((prev) => (prev + 1) % allBlogPosts.length);
+    }, 4000);
+    return () => clearInterval(ticker);
+  }, [allBlogPosts.length]);
 
   const content = {
     en: {
@@ -219,6 +240,261 @@ const HomeInvestopedia: React.FC = () => {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* Breaking News Ticker */}
+        <section className="bg-gradient-to-r from-red-600 to-orange-600 text-white py-3 overflow-hidden">
+          <div className="flex items-center">
+            <div className="bg-white text-red-600 px-6 py-2 font-bold flex items-center flex-shrink-0">
+              <Zap className="w-5 h-5 mr-2 animate-pulse" />
+              {language === 'en' ? 'LATEST' : 'ताज़ा खबर'}
+            </div>
+            <motion.div
+              animate={{ x: ['100%', '-100%'] }}
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+              className="whitespace-nowrap px-8"
+            >
+              {allBlogPosts.slice(0, 10).map((post, index) => (
+                <Link 
+                  key={post.id}
+                  to={`/blog/${post.slug}`}
+                  className="inline-block mr-12 hover:text-yellow-300 transition-colors"
+                >
+                  <span className="font-semibold">📰 {post.title}</span>
+                  <span className="mx-3 text-yellow-300">•</span>
+                </Link>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Featured News & Articles Section - News Style */}
+        <section className="py-12 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-2">
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      {language === 'en' ? '📰 Latest Financial News & Insights' : '📰 नवीनतम वित्तीय समाचार और अंतर्दृष्टि'}
+                    </span>
+                  </h2>
+                  <p className="text-lg text-gray-600">
+                    {language === 'en' ? 'Expert analysis, market updates, and actionable financial advice' : 'विशेषज्ञ विश्लेषण, बाजार अपडेट और व्यावहारिक वित्तीय सलाह'}
+                  </p>
+                </div>
+                <Link
+                  to="/blog"
+                  className="hidden md:flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-xl transition-all"
+                >
+                  {language === 'en' ? 'View All' : 'सभी देखें'}
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </div>
+
+              {/* Category Filter Tabs */}
+              <div className="flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
+                {blogCategories.slice(0, 8).map((category) => (
+                  <motion.button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`px-6 py-2 rounded-full font-semibold whitespace-nowrap transition-all ${
+                      selectedCategory === category
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                        : 'bg-white text-gray-700 hover:shadow-md border border-gray-200'
+                    }`}
+                  >
+                    {category}
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Featured Article - Large Card */}
+            {filteredPosts.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mb-8"
+              >
+                <Link to={`/blog/${filteredPosts[0].slug}`}>
+                  <div className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 group">
+                    <div className="grid md:grid-cols-2 gap-0">
+                      {/* Image */}
+                      <div className="relative h-80 md:h-96 overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100">
+                        <img 
+                          src={filteredPosts[0].coverImage}
+                          alt={filteredPosts[0].title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute top-6 left-6">
+                          <span className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold uppercase">
+                            🔥 Featured
+                          </span>
+                        </div>
+                        <div className="absolute bottom-6 left-6">
+                          <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold text-purple-700">
+                            {filteredPosts[0].categories[0]}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="p-8 md:p-10 flex flex-col justify-center">
+                        <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                          <div className="flex items-center">
+                            <Clock className="w-4 h-4 mr-1" />
+                            {filteredPosts[0].date}
+                          </div>
+                          <div className="flex items-center">
+                            <Tag className="w-4 h-4 mr-1" />
+                            {filteredPosts[0].author}
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors leading-tight">
+                          {filteredPosts[0].title}
+                        </h3>
+                        
+                        <p className="text-gray-600 text-lg mb-6 line-clamp-4">
+                          {filteredPosts[0].excerpt}
+                        </p>
+                        
+                        <div className="flex items-center text-blue-600 font-bold text-lg group-hover:gap-3 transition-all">
+                          {language === 'en' ? 'Read Full Story' : 'पूरी कहानी पढ़ें'}
+                          <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            )}
+
+            {/* News Grid - 3 Column Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              {filteredPosts.slice(1, 7).map((post, index) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -8, scale: 1.03 }}
+                  className="group"
+                >
+                  <Link to={`/blog/${post.slug}`}>
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+                      {/* Image */}
+                      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100">
+                        <img 
+                          src={post.coverImage}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-3 left-3">
+                          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+                            {post.categories[0]}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="p-5 flex-1 flex flex-col">
+                        <div className="flex items-center gap-2 mb-3 text-xs text-gray-500">
+                          <Clock className="w-3 h-3" />
+                          {post.date}
+                        </div>
+                        
+                        <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-3 group-hover:text-blue-600 transition-colors leading-snug">
+                          {post.title}
+                        </h3>
+                        
+                        <p className="text-gray-600 text-sm line-clamp-2 mb-4 flex-1">
+                          {post.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                          <span className="text-xs text-gray-500">{post.author}</span>
+                          <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:gap-1 transition-all">
+                            {language === 'en' ? 'Read' : 'पढ़ें'}
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* More News - Compact List */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              {filteredPosts.slice(7, 13).map((post, index) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link to={`/blog/${post.slug}`}>
+                    <div className="bg-white rounded-xl shadow hover:shadow-lg transition-all p-4 flex gap-4 group">
+                      <img 
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-24 h-24 object-cover rounded-lg flex-shrink-0 group-hover:scale-105 transition-transform"
+                        loading="lazy"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">
+                            {post.categories[0]}
+                          </span>
+                          <span className="text-xs text-gray-500">{post.date}</span>
+                        </div>
+                        <h4 className="font-bold text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors mb-1">
+                          {post.title}
+                        </h4>
+                        <p className="text-sm text-gray-600 line-clamp-1">{post.excerpt}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All Button */}
+            <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-full font-bold text-xl hover:shadow-2xl transition-all group"
+                >
+                  <Newspaper className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
+                  {language === 'en' ? 'Explore All Articles' : 'सभी लेख देखें'}
+                  <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
+                </Link>
+                <p className="mt-4 text-gray-600">
+                  {language === 'en' ? `${allBlogPosts.length}+ Educational Articles Available` : `${allBlogPosts.length}+ शैक्षिक लेख उपलब्ध`}
+                </p>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -571,106 +847,6 @@ const HomeInvestopedia: React.FC = () => {
                     <p className="text-sm text-gray-600">{course.lessons} {language === 'en' ? 'lessons' : 'पाठ'}</p>
                   </motion.div>
                 ))}
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Latest Blog Posts & News */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {language === 'en' ? 'Latest Financial Articles & Guides' : 'नवीनतम वित्तीय लेख और गाइड'}
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600">
-                {language === 'en' ? 'Expert insights, tips, and comprehensive guides to master your finances' : 'विशेषज्ञ अंतर्दृष्टि, टिप्स और अपने वित्त में महारत हासिल करने के लिए व्यापक गाइड'}
-              </p>
-            </motion.div>
-
-            {/* Blog Posts Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {[...blogPosts0, ...blogPosts1].slice(0, 6).map((post, index) => (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="group"
-                >
-                  <Link to={`/blog/${post.slug}`} className="block">
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                      {/* Image */}
-                      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100">
-                        <img 
-                          src={post.coverImage} 
-                          alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          loading="lazy"
-                        />
-                        <div className="absolute top-4 left-4">
-                          <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-purple-700">
-                            {post.categories[0]}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="p-6">
-                        <div className="flex items-center gap-3 mb-3 text-sm text-gray-600">
-                          <div className="flex items-center">
-                            <Clock className="w-4 h-4 mr-1" />
-                            {post.date}
-                          </div>
-                          <div className="flex items-center">
-                            <Tag className="w-4 h-4 mr-1" />
-                            {post.author}
-                          </div>
-                        </div>
-                        
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                          {post.title}
-                        </h3>
-                        
-                        <p className="text-gray-600 line-clamp-3 mb-4">
-                          {post.excerpt}
-                        </p>
-                        
-                        <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
-                          {language === 'en' ? 'Read More' : 'और पढ़ें'}
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* View All Blog Button */}
-            <div className="text-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-              >
-                <Link
-                  to="/blog"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all"
-                >
-                  <Newspaper className="w-5 h-5 mr-2" />
-                  {language === 'en' ? 'View All Articles' : 'सभी लेख देखें'}
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
               </motion.div>
             </div>
           </div>
