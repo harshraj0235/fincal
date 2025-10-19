@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, TrendingUp, Info } from 'lucide-react';
+import { Calculator, TrendingUp, Info, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
+import WhyChooseUs from '../components/WhyChooseUs';
 
 const CAGRCalculator: React.FC = () => {
   const [initialValue, setInitialValue] = useState('');
@@ -173,6 +174,77 @@ const CAGRCalculator: React.FC = () => {
                       <p className="text-2xl font-bold text-green-600">14.47%</p>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Additional FAQs */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 mt-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <Info className="h-6 w-6 mr-2 text-blue-600" />
+                  CAGR Calculator - FAQs (2025)
+                </h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-gray-800 mb-2">How to calculate CAGR in India for mutual funds?</h3>
+                    <p className="text-gray-600">
+                      Use initial NAV and current NAV with the holding period. Our calculator provides instant results. 
+                      Compare with our <a href="https://moneycal.in/calculators/mutual-fund-returns-calculator" className="underline text-blue-700">Mutual Fund Returns Calculator</a> for detailed analysis.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800 mb-2">What's the difference between CAGR and absolute returns?</h3>
+                    <p className="text-gray-600">
+                      CAGR smooths out volatility and shows annualized returns, while absolute returns show total percentage gain/loss. 
+                      CAGR is better for comparing investments with different time periods.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800 mb-2">What is a good CAGR for stock investments in India?</h3>
+                    <p className="text-gray-600">
+                      10-15% CAGR is considered good for equity investments. Nifty 50 has delivered ~12% CAGR historically. 
+                      Check real-time data on <a href="https://www.nseindia.com/" target="_blank" rel="noopener noreferrer" className="underline text-blue-700">NSE India <ExternalLink className="w-3 h-3 inline" /></a>.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800 mb-2">Can I use CAGR for SIP investments?</h3>
+                    <p className="text-gray-600">
+                      For SIP (multiple investments over time), use XIRR instead of CAGR for accurate returns. 
+                      Try our <a href="https://moneycal.in/finance-tools/xirr-calculator" className="underline text-blue-700">XIRR Calculator</a> for SIP return calculations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Why Choose Us */}
+              <div className="mt-8">
+                <WhyChooseUs />
+              </div>
+
+              {/* Related Calculators */}
+              <div className="mt-8 bg-gray-50 rounded-2xl p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Investment Calculators</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <a
+                    href="https://moneycal.in/finance-tools/xirr-calculator"
+                    className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+                  >
+                    <div className="font-medium text-gray-900">XIRR Calculator</div>
+                    <div className="text-sm text-gray-600">Calculate returns for irregular investments</div>
+                  </a>
+                  <a
+                    href="https://moneycal.in/calculators/sip-calculator"
+                    className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+                  >
+                    <div className="font-medium text-gray-900">SIP Calculator</div>
+                    <div className="text-sm text-gray-600">Calculate SIP returns</div>
+                  </a>
+                  <a
+                    href="https://moneycal.in/calculators/mutual-fund-returns-calculator"
+                    className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+                  >
+                    <div className="font-medium text-gray-900">Mutual Fund Calculator</div>
+                    <div className="text-sm text-gray-600">Analyze mutual fund performance</div>
+                  </a>
                 </div>
               </div>
             </motion.div>

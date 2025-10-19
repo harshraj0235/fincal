@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Code, Tag, Filter, Download, ExternalLink, Info, CheckCircle, AlertCircle, Package, Zap, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { hsnSacDatabase, searchHSNSAC, getAllCategories, getAllGSTRates, HSNSACItem } from '../data/hsnSacData';
+import WhyChooseUs from '../components/WhyChooseUs';
 
 export const HSNSACFinder: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -385,6 +386,9 @@ export const HSNSACFinder: React.FC = () => {
             </ul>
           </div>
         </motion.div>
+
+        {/* Why Choose Us */}
+        <WhyChooseUs />
 
         {/* FAQ */}
         <motion.div
