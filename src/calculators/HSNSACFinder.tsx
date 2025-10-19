@@ -688,15 +688,36 @@ export const HSNSACFinder: React.FC = () => {
                   <label className="block text-lg font-bold text-gray-900 mb-3">
                     🔍 Search HSN/SAC Code by Product or Service Name
                   </label>
-                  <div className="relative">
-                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
+                  <div className="relative group">
+                    <motion.div
+                      animate={{
+                        scale: searchQuery ? [1, 1.1, 1] : 1
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2"
+                    >
+                      <Search className={`w-6 h-6 transition-colors ${searchQuery ? 'text-cyan-600' : 'text-gray-400'}`} />
+                    </motion.div>
                     <input
                       type="text"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder="Type product name (e.g., 'mobile phone', 'laptop', 'consulting') or code (e.g., '8517')..."
-                      className="w-full pl-14 pr-4 py-5 text-lg border-2 border-gray-300 rounded-xl focus:border-cyan-500 focus:ring-4 focus:ring-cyan-200 transition-all"
+                      className="w-full pl-14 pr-4 py-5 text-lg border-2 border-gray-300 rounded-xl focus:border-cyan-500 focus:ring-4 focus:ring-cyan-200 focus:shadow-xl transition-all hover:border-cyan-300 hover:shadow-lg"
                     />
+                    {searchQuery && (
+                      <motion.button
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        onClick={() => setSearchQuery('')}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-red-500 transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </motion.button>
+                    )}
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
                     💡 <strong>Pro Tip:</strong> Search by product name, HSN code, SAC code, or category. 
@@ -818,13 +839,26 @@ export const HSNSACFinder: React.FC = () => {
                   {searchResults.map((item, index) => (
                     <motion.div
                       key={`${item.code}-${index}`}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ delay: index * 0.02 }}
-                      whileHover={{ scale: 1.03, y: -5 }}
-                      className={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border-2 ${getRateBorderColor(item.gstRate)}`}
+                      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                      transition={{ 
+                        delay: index * 0.03,
+                        type: "spring",
+                        stiffness: 100
+                      }}
+                      whileHover={{ 
+                        scale: 1.05, 
+                        y: -8,
+                        rotate: [0, -1, 1, 0],
+                        transition: { duration: 0.3 }
+                      }}
+                      className={`bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border-2 ${getRateBorderColor(item.gstRate)} cursor-pointer relative overflow-hidden group`}
                     >
+                      {/* Animated background gradient on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-blue-50/0 group-hover:from-cyan-50/50 group-hover:to-blue-50/50 transition-all duration-300 rounded-2xl"></div>
+                      
+                      <div className="relative z-10">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center space-x-2">
                           <div className={`px-4 py-2 rounded-xl font-bold text-base ${
@@ -864,6 +898,7 @@ export const HSNSACFinder: React.FC = () => {
                         <span className={`text-sm font-bold ${getRateColor(item.gstRate)}`}>
                           Rate: {item.gstRate}%
                         </span>
+                      </div>
                       </div>
                     </motion.div>
                   ))}

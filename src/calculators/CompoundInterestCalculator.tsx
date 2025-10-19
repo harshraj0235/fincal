@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Info, ExternalLink, TrendingUp } from 'lucide-react';
+import { Info, ExternalLink, TrendingUp, DollarSign, Calculator as CalcIcon, Sparkles } from 'lucide-react';
 import WhyChooseUs from '../components/WhyChooseUs';
+import { motion } from 'framer-motion';
 
 export const CompoundInterestCalculator: React.FC = () => {
   // State variables for inputs
@@ -50,14 +51,53 @@ export const CompoundInterestCalculator: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100 flex items-center justify-center p-4 sm:p-6 font-inter">
-      <div className="bg-white shadow-2xl rounded-xl p-6 sm:p-8 w-full max-w-4xl border border-gray-200">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center p-4 sm:p-6 font-inter">
+      <motion.div 
+        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.5, type: "spring" }}
+        className="bg-white shadow-2xl rounded-3xl p-6 sm:p-10 w-full max-w-5xl border-2 border-indigo-100 relative overflow-hidden"
+      >
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full blur-3xl opacity-30 -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-pink-100 to-purple-100 rounded-full blur-3xl opacity-30 -z-10"></div>
+        
+        {/* Header with Icon */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-center mb-8"
+        >
+          <motion.div
+            animate={{ rotate: [0, 5, -5, 0] }}
+            transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+            className="inline-block mb-4"
+          >
+            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-4 rounded-2xl shadow-lg">
+              <Sparkles className="w-12 h-12 text-white" />
+            </div>
+          </motion.div>
+          <h1 className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+            Compound Interest Calculator
+          </h1>
+          <p className="text-gray-600 text-lg">Watch your money grow with the power of compounding</p>
+        </motion.div>
         {/* The main title of the page was here, now removed as per request */}
 
         {/* Calculator Inputs */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 bg-gray-50 p-6 rounded-lg shadow-inner border border-gray-100">
-          <div className="flex flex-col">
-            <label htmlFor="principal" className="text-sm font-medium text-gray-700 mb-2">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 bg-gradient-to-br from-gray-50 to-indigo-50 p-8 rounded-2xl shadow-inner border border-indigo-100"
+        >
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="flex flex-col"
+          >
+            <label htmlFor="principal" className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+              <DollarSign className="w-4 h-4 mr-1 text-indigo-600" />
               Initial Investment (Principal)
             </label>
             <input
@@ -65,14 +105,18 @@ export const CompoundInterestCalculator: React.FC = () => {
               id="principal"
               value={principal}
               onChange={(e) => setPrincipal(Number(e.target.value))}
-              className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full transition duration-150 ease-in-out"
+              className="mt-1 p-4 border-2 border-indigo-200 rounded-xl shadow-sm focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 block w-full transition-all duration-200 hover:border-indigo-300"
               placeholder="e.g., 10000"
               aria-label="Initial Investment"
             />
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col">
-            <label htmlFor="rate" className="text-sm font-medium text-gray-700 mb-2">
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="flex flex-col"
+          >
+            <label htmlFor="rate" className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+              <TrendingUp className="w-4 h-4 mr-1 text-green-600" />
               Annual Interest Rate (%)
             </label>
             <input
@@ -80,15 +124,19 @@ export const CompoundInterestCalculator: React.FC = () => {
               id="rate"
               value={rate}
               onChange={(e) => setRate(Number(e.target.value))}
-              className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full transition duration-150 ease-in-out"
+              className="mt-1 p-4 border-2 border-green-200 rounded-xl shadow-sm focus:ring-4 focus:ring-green-300 focus:border-green-500 block w-full transition-all duration-200 hover:border-green-300"
               placeholder="e.g., 5"
               step="0.1"
               aria-label="Annual Interest Rate"
             />
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col">
-            <label htmlFor="time" className="text-sm font-medium text-gray-700 mb-2">
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="flex flex-col"
+          >
+            <label htmlFor="time" className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+              <CalcIcon className="w-4 h-4 mr-1 text-purple-600" />
               Time Period (Years)
             </label>
             <input
@@ -96,21 +144,25 @@ export const CompoundInterestCalculator: React.FC = () => {
               id="time"
               value={time}
               onChange={(e) => setTime(Number(e.target.value))}
-              className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full transition duration-150 ease-in-out"
+              className="mt-1 p-4 border-2 border-purple-200 rounded-xl shadow-sm focus:ring-4 focus:ring-purple-300 focus:border-purple-500 block w-full transition-all duration-200 hover:border-purple-300"
               placeholder="e.g., 10"
               aria-label="Time Period in Years"
             />
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col">
-            <label htmlFor="compoundingFrequency" className="text-sm font-medium text-gray-700 mb-2">
-              Compounding Frequency (Times per Year)
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="flex flex-col"
+          >
+            <label htmlFor="compoundingFrequency" className="text-sm font-bold text-gray-800 mb-2 flex items-center">
+              <Sparkles className="w-4 h-4 mr-1 text-pink-600" />
+              Compounding Frequency
             </label>
             <select
               id="compoundingFrequency"
               value={compoundingFrequency}
               onChange={(e) => setCompoundingFrequency(Number(e.target.value))}
-              className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full bg-white transition duration-150 ease-in-out"
+              className="mt-1 p-4 border-2 border-pink-200 rounded-xl shadow-sm focus:ring-4 focus:ring-pink-300 focus:border-pink-500 block w-full bg-white transition-all duration-200 hover:border-pink-300"
               aria-label="Compounding Frequency"
             >
               <option value={1}>Annually (1)</option>
@@ -119,27 +171,48 @@ export const CompoundInterestCalculator: React.FC = () => {
               <option value={12}>Monthly (12)</option>
               <option value={365}>Daily (365)</option>
             </select>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Calculator Results */}
-        <div className="bg-indigo-600 text-white p-6 sm:p-8 rounded-lg shadow-xl text-center mb-8"> {/* Added mb-8 for spacing before SEO content */}
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Your Investment Growth:</h2>
-          <div className="flex flex-col sm:flex-row justify-around items-center gap-4 sm:gap-8">
-            <div className="bg-white text-indigo-800 p-4 rounded-lg shadow-md flex-1 w-full sm:w-auto">
-              <p className="text-sm font-medium opacity-90 mb-1">Future Value</p>
-              <p className="text-3xl sm:text-4xl font-extrabold">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, type: "spring" }}
+          className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-8 sm:p-10 rounded-2xl shadow-2xl text-center mb-8 relative overflow-hidden"
+        >
+          {/* Animated background */}
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotate: [0, 90, 0]
+            }}
+            transition={{ duration: 20, repeat: Infinity }}
+            className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+          ></motion.div>
+          
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 relative z-10">✨ Your Investment Growth</h2>
+          <div className="flex flex-col sm:flex-row justify-around items-center gap-6 relative z-10">
+            <motion.div 
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              className="bg-white text-indigo-800 p-6 rounded-2xl shadow-lg flex-1 w-full sm:w-auto border-4 border-indigo-200"
+            >
+              <p className="text-sm font-bold text-indigo-600 mb-2">💰 Future Value</p>
+              <p className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                 {formatCurrency(futureValue)}
               </p>
-            </div>
-            <div className="bg-white text-indigo-800 p-4 rounded-lg shadow-md flex-1 w-full sm:w-auto">
-              <p className="text-sm font-medium opacity-90 mb-1">Total Interest Earned</p>
-              <p className="text-3xl sm:text-4xl font-extrabold">
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05, rotate: -2 }}
+              className="bg-white text-green-800 p-6 rounded-2xl shadow-lg flex-1 w-full sm:w-auto border-4 border-green-200"
+            >
+              <p className="text-sm font-bold text-green-600 mb-2">📈 Interest Earned</p>
+              <p className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                 {formatCurrency(totalInterest)}
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* SEO Content */}
         <section className="mb-8 text-gray-700 text-lg">
@@ -242,7 +315,7 @@ export const CompoundInterestCalculator: React.FC = () => {
           <p>&copy; {new Date().getFullYear()} Compound Interest Calculator. All rights reserved.</p>
           <p className="mt-2">Disclaimer: This calculator is for educational purposes only and should not be considered financial advice. Please consult with a financial professional for personalized guidance.</p>
         </footer>
-      </div>
+      </motion.div>
     </div>
   );
 };
