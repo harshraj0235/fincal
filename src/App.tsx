@@ -25,7 +25,8 @@ import OfferProposalTemplateBuilder from './pages/tools/OfferProposalTemplateBui
 import SimpleFeedbackFormGenerator from './pages/tools/SimpleFeedbackFormGenerator';
 
 // Lazy load all page-level components
-const Home = lazy(() => import('./pages/HomeNew'));
+const Home = lazy(() => import('./pages/HomeInvestopedia'));
+const HomeOld = lazy(() => import('./pages/HomeNew'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
@@ -356,6 +357,7 @@ function App() {
             <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/home-old" element={<HomeOld />} />
                 <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
                 {/* Direct Calculator Routes */}
                 <Route path="/calculators/emi-calculator" element={<CalculatorPage calculatorId="emi-calculator" />} />
