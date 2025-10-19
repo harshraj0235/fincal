@@ -73,12 +73,15 @@ Allow: /news-reel/
 Allow: /about-us
 Allow: /contact-us
 Allow: /privacy-policy
+Allow: /terms-of-service
 Allow: /terms-and-conditions
+Allow: /help-center
 Allow: /disclaimer
 Allow: /cookie-policy
 Allow: /editorial-policy
 Allow: /sitemap
 Allow: /sitemap.xml
+Allow: /ads.txt
 Allow: /credit-card-finder
 
 # Allow category pages

@@ -9,6 +9,99 @@
   status = 301
   force = true
 
+# HTTP to HTTPS redirect
+[[redirects]]
+  from = "http://moneycal.in/*"
+  to = "https://moneycal.in/:splat"
+  status = 301
+  force = true
+
+# Old URL redirects to new structure
+[[redirects]]
+  from = "/feedback"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/help"
+  to = "/help-center"
+  status = 301
+
+[[redirects]]
+  from = "/real-estate/*"
+  to = "/finance-tools"
+  status = 301
+
+[[redirects]]
+  from = "/cryptocurrency/*"
+  to = "/crypto"
+  status = 301
+
+[[redirects]]
+  from = "/banking/*"
+  to = "/bank-tools"
+  status = 301
+
+[[redirects]]
+  from = "/finance-categories/*"
+  to = "/finance-tools"
+  status = 301
+
+[[redirects]]
+  from = "/business-tools"
+  to = "/corporate-finance"
+  status = 301
+
+[[redirects]]
+  from = "/payroll-tools"
+  to = "/corporate-finance"
+  status = 301
+
+[[redirects]]
+  from = "/accounting-tools"
+  to = "/corporate-finance"
+  status = 301
+
+[[redirects]]
+  from = "/loan-app-directory"
+  to = "/bank-tools"
+  status = 301
+
+[[redirects]]
+  from = "/loan-app-directory.html"
+  to = "/bank-tools"
+  status = 301
+
+[[redirects]]
+  from = "/financial-navigator"
+  to = "/tools"
+  status = 301
+
+[[redirects]]
+  from = "/amp-index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/fixed-deposit-calculator"
+  to = "/calculators/fd-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/lcm-hcf-calculator"
+  to = "/calculators/lcm-hcf-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/invoicing-receivables"
+  to = "/corporate-finance"
+  status = 301
+
+[[redirects]]
+  from = "/astro-finance-insights"
+  to = "/astro-finance"
+  status = 301
+
 # Handle all other routes for SPA
 [[redirects]]
   from = "/*"
