@@ -5,7 +5,8 @@ import {
   TrendingUp, Calculator, BookOpen, Newspaper, Users, Globe, 
   ArrowRight, Star, Zap, Shield, Award, BarChart3, Target,
   Sparkles, Rocket, Heart, CheckCircle, Play, Search, ChevronRight,
-  DollarSign, Building
+  DollarSign, Building, Briefcase, Umbrella, PartyPopper, GraduationCap,
+  HelpCircle, Gift, Sparkle, Layout, FileText, Building2
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 
@@ -216,6 +217,68 @@ const HomeInvestopedia: React.FC = () => {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* Quick Navigation - All Sections */}
+        <section className="py-16 bg-white border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  {language === 'en' ? 'Explore All Sections' : 'सभी अनुभाग देखें'}
+                </span>
+              </h2>
+              <p className="text-gray-600">
+                {language === 'en' ? 'Your complete financial toolkit in one place' : 'एक ही स्थान पर आपका पूरा वित्तीय टूलकिट'}
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+              {[
+                { name: language === 'en' ? 'All Tools' : 'सभी टूल्स', icon: Layout, url: '/tools', color: 'from-blue-500 to-indigo-600' },
+                { name: language === 'en' ? 'Calculators' : 'कैलकुलेटर', icon: Calculator, url: '/calculators', color: 'from-green-500 to-emerald-600' },
+                { name: language === 'en' ? 'Finance Tools' : 'वित्त टूल्स', icon: TrendingUp, url: '/finance-tools', color: 'from-purple-500 to-pink-600' },
+                { name: language === 'en' ? 'Tax Tools' : 'कर टूल्स', icon: FileText, url: '/tax-tools', color: 'from-orange-500 to-red-600' },
+                { name: language === 'en' ? 'GST Tools' : 'GST टूल्स', icon: BarChart3, url: '/gst-tools', color: 'from-cyan-500 to-blue-600' },
+                { name: language === 'en' ? 'Corporate' : 'कॉर्पोरेट', icon: Building2, url: '/corporate-finance', color: 'from-violet-500 to-purple-600' },
+                { name: language === 'en' ? 'Insurance' : 'बीमा', icon: Umbrella, url: '/insurance-tools', color: 'from-teal-500 to-cyan-600' },
+                { name: language === 'en' ? 'Festival' : 'त्योहार', icon: PartyPopper, url: '/festival-tools', color: 'from-pink-500 to-rose-600' },
+                { name: language === 'en' ? 'Blog' : 'ब्लॉग', icon: Newspaper, url: '/blog', color: 'from-amber-500 to-orange-600' },
+                { name: language === 'en' ? 'Education' : 'शिक्षा', icon: GraduationCap, url: '/financial-education', color: 'from-indigo-500 to-purple-600' },
+                { name: language === 'en' ? 'Help' : 'सहायता', icon: HelpCircle, url: '/help-center', color: 'from-blue-500 to-cyan-600' },
+                { name: language === 'en' ? 'Schemes' : 'योजनाएं', icon: Gift, url: '/government-schemes', color: 'from-green-500 to-teal-600' },
+                { name: language === 'en' ? 'Astro' : 'ज्योतिष', icon: Sparkle, url: '/astro-finance', color: 'from-purple-500 to-pink-600' },
+                { name: language === 'en' ? 'Loan Tools' : 'लोन टूल्स', icon: DollarSign, url: '/loan-tools', color: 'from-red-500 to-orange-600' }
+              ].map((section, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="group"
+                >
+                  <Link
+                    to={section.url}
+                    className="block text-center"
+                  >
+                    <div className={`w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br ${section.color} rounded-3xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
+                      <section.icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
+                    </div>
+                    <p className="text-sm md:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {section.name}
+                    </p>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
