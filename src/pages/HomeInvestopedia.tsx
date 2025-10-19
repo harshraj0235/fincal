@@ -54,12 +54,6 @@ const HomeInvestopedia: React.FC = () => {
         cta: 'Explore Tools',
         cta2: 'Start Learning'
       },
-      stats: [
-        { value: '100+', label: 'Tools & Calculators', icon: Calculator },
-        { value: '10,000+', label: 'Articles & Guides', icon: BookOpen },
-        { value: '1M+', label: 'Users Helped', icon: Users },
-        { value: 'Daily', label: 'Market Updates', icon: TrendingUp }
-      ],
       featured: {
         title: 'Featured Tools',
         subtitle: 'Most popular calculators used by Indian investors'
@@ -89,12 +83,6 @@ const HomeInvestopedia: React.FC = () => {
         cta: 'टूल्स देखें',
         cta2: 'सीखना शुरू करें'
       },
-      stats: [
-        { value: '100+', label: 'टूल्स और कैलकुलेटर', icon: Calculator },
-        { value: '10,000+', label: 'लेख और गाइड', icon: BookOpen },
-        { value: '1M+', label: 'उपयोगकर्ताओं की मदद की', icon: Users },
-        { value: 'दैनिक', label: 'बाजार अपडेट', icon: TrendingUp }
-      ],
       featured: {
         title: 'विशेष टूल्स',
         subtitle: 'भारतीय निवेशकों द्वारा सबसे अधिक उपयोग किए जाने वाले कैलकुलेटर'
@@ -197,29 +185,6 @@ const HomeInvestopedia: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
-            >
-              {t.stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl text-center"
-                >
-                  <stat.icon className="w-8 h-8 mx-auto mb-3 text-blue-600" />
-                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
           </div>
         </section>
 
