@@ -561,3 +561,5 @@ export const Gstr1DeadlineCalculator: React.FC = () => {
     </>
   );
 };
+
+export default Gstr1DeadlineCalculator;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Gstr1DeadlineCalculator } from '../calculators/Gstr1DeadlineCalculator';
+import Gstr1DeadlineCalculator from '../calculators/Gstr1DeadlineCalculator';
 import SEOHelmet from '../components/SEOHelmet';
 
-export const Gstr1DeadlineCalculatorPage: React.FC = () => {
+const Gstr1DeadlineCalculatorPage: React.FC = () => {
   return (
     <>
       <SEOHelmet
@@ -53,3 +53,6 @@ export const Gstr1DeadlineCalculatorPage: React.FC = () => {
     </>
   );
 };
+
+export default Gstr1DeadlineCalculatorPage;
+export { Gstr1DeadlineCalculatorPage };

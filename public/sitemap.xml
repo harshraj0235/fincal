@@ -8873,6 +8873,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://moneycal.in/gst-tools/gstr-1-deadline-calculator</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/tools/gstr-1-deadline-calculator</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://moneycal.in/festival-tools</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>

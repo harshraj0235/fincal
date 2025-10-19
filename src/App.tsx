@@ -625,6 +625,7 @@ function App() {
             <Route path="/gst-tools/gst-eway-distance-calculator" element={<GSTEWayDistanceCalculator />} />
             <Route path="/gst-tools/gst-turnover-tracker" element={<GSTTurnoverTracker />} />
             <Route path="/gst-tools/gst-rate-impact-analyzer" element={<GSTRateImpactAnalyzer />} />
+            <Route path="/gst-tools/gstr-1-deadline-calculator" element={<Gstr1DeadlineCalculatorPage />} />
             <Route path="/tools/gstr-1-deadline-calculator" element={<Gstr1DeadlineCalculatorPage />} />
             <Route path="/gst-tools/:slug" element={<GSTToolPlaceholder />} />
         <Route path="/invoicing-receivables" element={<InvoicingReceivablesHub />} />
