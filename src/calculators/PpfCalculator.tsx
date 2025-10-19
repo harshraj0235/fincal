@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { formatCurrency, calculatePPF } from '../utils/calculatorUtils';
-import { Sliders, Calculator, LineChart } from 'lucide-react';
+import { Sliders, Calculator, LineChart, Info, ExternalLink, TrendingUp, PiggyBank } from 'lucide-react';
 import { ResultChart } from '../components/ResultChart';
 import { BarChart } from '../components/BarChart';
+import WhyChooseUs from '../components/WhyChooseUs';
 
 export const PpfCalculator: React.FC = () => {
   const [yearlyInvestment, setYearlyInvestment] = useState<number>(150000);
@@ -268,6 +269,110 @@ export const PpfCalculator: React.FC = () => {
               </tbody>
             </table>
           </div>
+        </div>
+      </div>
+
+      {/* Why Choose Us Section */}
+      <WhyChooseUs />
+
+      {/* FAQ Section */}
+      <div className="mt-16 bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+        <h2 className="text-2xl font-semibold text-gray-900 flex items-center mb-6">
+          <Info className="w-6 h-6 mr-2 text-blue-600" />
+          PPF Calculator - Frequently Asked Questions (2025)
+        </h2>
+        <div className="space-y-6 text-sm">
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-2">What is PPF (Public Provident Fund)?</h3>
+            <p className="text-gray-600">
+              PPF is a long-term savings scheme backed by the Government of India. It offers guaranteed returns with EEE (Exempt-Exempt-Exempt) tax benefits. 
+              Current interest rate is 7.1% p.a. (updated quarterly). Visit <a href="https://www.nsiindia.gov.in/" target="_blank" rel="noopener noreferrer" className="underline text-blue-700">NSI India <ExternalLink className="w-3 h-3 inline" /></a> for official information.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-2">What is the minimum and maximum investment in PPF?</h3>
+            <p className="text-gray-600">
+              Minimum: ₹500 per year. Maximum: ₹1,50,000 per year (₹1.5 lakh). You can invest in lump sum or installments (max 12 per year).
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-2">How is PPF interest calculated?</h3>
+            <p className="text-gray-600">
+              Interest is calculated on the minimum balance between the 5th and last day of each month. It's compounded annually and credited at year-end.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-2">What is the lock-in period for PPF?</h3>
+            <p className="text-gray-600">
+              PPF has a lock-in period of 15 years from the end of the financial year in which the account was opened. 
+              It can be extended in blocks of 5 years. Partial withdrawals allowed from 7th year.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-2">What are the tax benefits of PPF?</h3>
+            <p className="text-gray-600">
+              PPF offers triple tax benefits (EEE): Investment eligible for deduction under Section 80C (up to ₹1.5 lakh), 
+              Interest earned is tax-free, Maturity amount is tax-free. Learn more about <a href="https://moneycal.in/calculators/section-80c-calculator" className="underline text-blue-700">Section 80C deductions</a>.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-2">Can I withdraw from PPF before maturity?</h3>
+            <p className="text-gray-600">
+              Partial withdrawals are allowed from the 7th financial year. Loans can be taken from the 3rd to 6th year. 
+              Premature closure allowed only in specific cases like medical emergencies or higher education.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-2">Is PPF better than other tax-saving investments?</h3>
+            <p className="text-gray-600">
+              PPF offers guaranteed returns with zero risk and complete tax exemption. Compare with other options using our 
+              <a href="https://moneycal.in/calculators/tax-saving-investment-calculator" className="underline text-blue-700 ml-1">Tax Saving Investment Calculator</a> and 
+              <a href="https://moneycal.in/calculators/nps-calculator" className="underline text-blue-700 ml-1">NPS Calculator</a> to make informed decisions.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-gray-800 mb-2">How to open a PPF account?</h3>
+            <p className="text-gray-600">
+              You can open PPF accounts at any nationalized bank, post office, or online through internet banking. 
+              Documents required: PAN card, Aadhaar, address proof, and passport-size photograph. Visit 
+              <a href="https://www.indiapost.gov.in/" target="_blank" rel="noopener noreferrer" className="underline text-blue-700 ml-1">India Post <ExternalLink className="w-3 h-3 inline" /></a> or your bank's website.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Calculators */}
+      <div className="mt-8 bg-gray-50 rounded-2xl p-6">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Investment Calculators</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a
+            href="https://moneycal.in/calculators/nps-calculator"
+            className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+          >
+            <div className="font-medium text-gray-900">NPS Calculator</div>
+            <div className="text-sm text-gray-600">Calculate NPS returns and tax benefits</div>
+          </a>
+          <a
+            href="https://moneycal.in/calculators/sip-calculator"
+            className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+          >
+            <div className="font-medium text-gray-900">SIP Calculator</div>
+            <div className="text-sm text-gray-600">Calculate mutual fund SIP returns</div>
+          </a>
+          <a
+            href="https://moneycal.in/calculators/sukanya-samriddhi-calculator"
+            className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+          >
+            <div className="font-medium text-gray-900">Sukanya Samriddhi</div>
+            <div className="text-sm text-gray-600">Girl child savings scheme</div>
+          </a>
         </div>
       </div>
     </div>
