@@ -33,6 +33,7 @@ const BlogPost = lazy(() => import('./pages/BlogPost'));
 const WriteBlog = lazy(() => import('./pages/WriteBlog'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
@@ -446,12 +447,15 @@ function App() {
                 <Route path="/government-schemes/:slug" element={<GovernmentSchemePost />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+                <Route path="/terms-of-service" element={<TermsOfService />} />
+                <Route path="/terms" element={<Navigate to="/terms-of-service" replace />} />
                 <Route path="/disclaimer" element={<Disclaimer />} />
                 <Route path="/cookie-policy" element={<CookiePolicy />} />
                 <Route path="/editorial-policy" element={<EditorialPolicy />} />
                 <Route path="/about" element={<Navigate to="/about-us" replace />} />
                 <Route path="/about-us" element={<AboutUs />} />
                 <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
                 <Route path="/sitemap" element={<Sitemap />} />
                 <Route path="/sitemap.xml" element={<SitemapXml />} />
                 <Route path="/credit-card-finder" element={<CreditCardFinder />} />
