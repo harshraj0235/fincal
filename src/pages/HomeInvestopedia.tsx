@@ -11,6 +11,7 @@ import {
 import SEOHelmet from '../components/SEOHelmet';
 import { blogPosts as blogPosts0 } from '../data/blogData';
 import { blogPosts as blogPosts1 } from '../data/blogData1';
+import DynamicContentShowcase from '../components/DynamicContentShowcase';
 
 const HomeInvestopedia: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -221,6 +222,9 @@ const HomeInvestopedia: React.FC = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Dynamic Content Showcase - Trending Tools */}
+        <DynamicContentShowcase language={language} />
 
         {/* Quick Navigation - All Sections */}
         <section className="py-16 bg-white border-b border-gray-200">
