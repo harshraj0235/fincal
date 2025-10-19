@@ -143,7 +143,7 @@ export const PpfCalculator: React.FC = () => {
       keywords: "Multiple PPF accounts rules, PPF account for wife, PPF for minor child, family PPF investment strategy"
     }
   ];
-
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       {/* Hero Header with Glassmorphism */}
@@ -228,7 +228,7 @@ export const PpfCalculator: React.FC = () => {
               className="grid grid-cols-1 lg:grid-cols-2 gap-8"
             >
               {/* Left Column - Inputs */}
-              <div className="space-y-6">
+      <div className="space-y-6">
                 {/* Quick Presets */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
@@ -266,132 +266,132 @@ export const PpfCalculator: React.FC = () => {
                   className="bg-white rounded-2xl shadow-xl p-6"
                 >
                   <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-6">
-                    <Sliders className="w-5 h-5 mr-2 text-primary-600" />
-                    PPF Investment Details
-                  </h2>
-                  
+          <Sliders className="w-5 h-5 mr-2 text-primary-600" />
+          PPF Investment Details
+        </h2>
+        
                   <div className="space-y-6">
                     {/* Yearly Investment */}
-                    <div>
+          <div>
                       <div className="flex justify-between items-center mb-3">
                         <label className="text-sm font-medium text-neutral-700 flex items-center">
                           <DollarSign className="w-4 h-4 mr-1 text-green-600" />
-                          Yearly Investment (₹)
-                        </label>
+                Yearly Investment (₹)
+              </label>
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-semibold text-indigo-600">
-                            {formatCurrency(yearlyInvestment)}
-                          </span>
-                          <input 
-                            type="number"
-                            value={manualYearlyInvestment}
-                            onChange={(e) => handleManualYearlyInvestmentChange(e.target.value)}
+                  {formatCurrency(yearlyInvestment)}
+                </span>
+                <input 
+                  type="number"
+                  value={manualYearlyInvestment}
+                  onChange={(e) => handleManualYearlyInvestmentChange(e.target.value)}
                             className="w-28 px-3 py-2 text-sm border-2 border-indigo-200 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all"
-                            min="500"
-                            max="150000"
-                            step="500"
-                          />
-                        </div>
-                      </div>
-                      <input 
-                        type="range" 
-                        min="500" 
-                        max="150000" 
-                        step="500" 
-                        value={yearlyInvestment} 
-                        onChange={(e) => setYearlyInvestment(Number(e.target.value))}
+                  min="500"
+                  max="150000"
+                  step="500"
+                />
+              </div>
+            </div>
+            <input 
+              type="range" 
+              min="500" 
+              max="150000" 
+              step="500" 
+              value={yearlyInvestment} 
+              onChange={(e) => setYearlyInvestment(Number(e.target.value))}
                         className="w-full h-3 bg-gradient-to-r from-indigo-200 to-purple-200 rounded-lg appearance-none cursor-pointer slider-thumb"
                         style={{
                           background: `linear-gradient(to right, #6366f1 0%, #6366f1 ${((yearlyInvestment - 500) / (150000 - 500)) * 100}%, #e0e7ff ${((yearlyInvestment - 500) / (150000 - 500)) * 100}%, #e0e7ff 100%)`
                         }}
-                      />
+            />
                       <div className="flex justify-between mt-2 text-xs text-neutral-500">
-                        <span>₹500</span>
+              <span>₹500</span>
                         <span>₹1,50,000 (Max)</span>
-                      </div>
-                    </div>
-                    
+            </div>
+          </div>
+          
                     {/* Interest Rate */}
-                    <div>
+          <div>
                       <div className="flex justify-between items-center mb-3">
                         <label className="text-sm font-medium text-neutral-700 flex items-center">
                           <Percent className="w-4 h-4 mr-1 text-blue-600" />
-                          Interest Rate (% p.a.)
-                        </label>
+                Interest Rate (% p.a.)
+              </label>
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-semibold text-indigo-600">
-                            {interestRate.toFixed(2)}%
-                          </span>
-                          <input 
-                            type="number"
-                            value={manualInterestRate}
-                            onChange={(e) => handleManualInterestRateChange(e.target.value)}
+                  {interestRate.toFixed(2)}%
+                </span>
+                <input 
+                  type="number"
+                  value={manualInterestRate}
+                  onChange={(e) => handleManualInterestRateChange(e.target.value)}
                             className="w-20 px-3 py-2 text-sm border-2 border-blue-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
-                            min="5"
-                            max="10"
-                            step="0.1"
-                          />
-                        </div>
-                      </div>
-                      <input 
-                        type="range" 
-                        min="5" 
-                        max="10" 
-                        step="0.1" 
-                        value={interestRate} 
-                        onChange={(e) => setInterestRate(Number(e.target.value))}
+                  min="5"
+                  max="10"
+                  step="0.1"
+                />
+              </div>
+            </div>
+            <input 
+              type="range" 
+              min="5" 
+              max="10" 
+              step="0.1" 
+              value={interestRate} 
+              onChange={(e) => setInterestRate(Number(e.target.value))}
                         className="w-full h-3 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-lg appearance-none cursor-pointer"
                         style={{
                           background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${((interestRate - 5) / (10 - 5)) * 100}%, #dbeafe ${((interestRate - 5) / (10 - 5)) * 100}%, #dbeafe 100%)`
                         }}
-                      />
+            />
                       <div className="flex justify-between mt-2 text-xs text-neutral-500">
-                        <span>5%</span>
+              <span>5%</span>
                         <span className="text-green-600 font-semibold">Current: 7.1%</span>
-                        <span>10%</span>
-                      </div>
-                    </div>
-                    
+              <span>10%</span>
+            </div>
+          </div>
+          
                     {/* Time Period */}
-                    <div>
+          <div>
                       <div className="flex justify-between items-center mb-3">
                         <label className="text-sm font-medium text-neutral-700 flex items-center">
                           <Calendar className="w-4 h-4 mr-1 text-purple-600" />
-                          Time Period (Years)
-                        </label>
+                Time Period (Years)
+              </label>
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-semibold text-indigo-600">
-                            {timePeriod} years
-                          </span>
-                          <input 
-                            type="number"
-                            value={manualTimePeriod}
-                            onChange={(e) => handleManualTimePeriodChange(e.target.value)}
+                  {timePeriod} years
+                </span>
+                <input 
+                  type="number"
+                  value={manualTimePeriod}
+                  onChange={(e) => handleManualTimePeriodChange(e.target.value)}
                             className="w-20 px-3 py-2 text-sm border-2 border-purple-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all"
-                            min="15"
-                            max="50"
-                            step="5"
-                          />
-                        </div>
-                      </div>
-                      <input 
-                        type="range" 
-                        min="15" 
-                        max="50" 
-                        step="5" 
-                        value={timePeriod} 
-                        onChange={(e) => setTimePeriod(Number(e.target.value))}
+                  min="15"
+                  max="50"
+                  step="5"
+                />
+              </div>
+            </div>
+            <input 
+              type="range" 
+              min="15" 
+              max="50" 
+              step="5" 
+              value={timePeriod} 
+              onChange={(e) => setTimePeriod(Number(e.target.value))}
                         className="w-full h-3 bg-gradient-to-r from-purple-200 to-pink-200 rounded-lg appearance-none cursor-pointer"
                         style={{
                           background: `linear-gradient(to right, #a855f7 0%, #a855f7 ${((timePeriod - 15) / (50 - 15)) * 100}%, #f3e8ff ${((timePeriod - 15) / (50 - 15)) * 100}%, #f3e8ff 100%)`
                         }}
-                      />
+            />
                       <div className="flex justify-between mt-2 text-xs text-neutral-500">
                         <span>15 Years (Min)</span>
-                        <span>50 Years</span>
-                      </div>
-                    </div>
-                  </div>
+              <span>50 Years</span>
+            </div>
+          </div>
+        </div>
                 </motion.div>
 
                 {/* Results Summary */}
@@ -488,20 +488,20 @@ export const PpfCalculator: React.FC = () => {
                           <div className="flex justify-between">
                             <span>Interest Tax-Free:</span>
                             <span className="font-bold text-yellow-300">✓ Yes</span>
-                          </div>
+            </div>
                           <div className="flex justify-between">
                             <span>Maturity Tax-Free:</span>
                             <span className="font-bold text-yellow-300">✓ Yes</span>
-                          </div>
+            </div>
                           <div className="pt-2 border-t border-white/20 mt-2">
                             <div className="flex justify-between items-center">
                               <span className="font-semibold">Total Tax Saved ({timePeriod} yrs):</span>
                               <span className="font-bold text-xl text-yellow-300">
                                 {formatCurrency(taxSavings * timePeriod)}
                               </span>
-                            </div>
-                          </div>
-                        </div>
+            </div>
+          </div>
+        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -514,9 +514,9 @@ export const PpfCalculator: React.FC = () => {
                   transition={{ delay: 0.3 }}
                   className="p-5 bg-blue-50 rounded-xl border-l-4 border-blue-500"
                 >
-                  <div className="flex items-start">
+          <div className="flex items-start">
                     <Info className="h-6 w-6 text-blue-600 mt-0.5 mr-3 flex-shrink-0" />
-                    <div>
+            <div>
                       <p className="text-sm text-blue-900 font-medium mb-2">
                         💡 Pro Tip: Invest before 5th of every month
                       </p>
@@ -526,14 +526,14 @@ export const PpfCalculator: React.FC = () => {
                         <span className="font-semibold">{interestRate}% p.a.</span> will grow to{' '}
                         <span className="font-semibold text-green-700">{formatCurrency(maturityValue)}</span>, generating{' '}
                         <span className="font-semibold text-green-700">{formatCurrency(totalInterest)}</span> in tax-free interest!
-                      </p>
-                    </div>
-                  </div>
+              </p>
+            </div>
+          </div>
                 </motion.div>
-              </div>
-              
+      </div>
+      
               {/* Right Column - Charts & Breakup */}
-              <div className="space-y-6">
+      <div className="space-y-6">
                 {/* Pie Chart */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
@@ -542,17 +542,17 @@ export const PpfCalculator: React.FC = () => {
                   className="bg-white rounded-2xl shadow-xl p-6"
                 >
                   <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-                    <Calculator className="w-5 h-5 mr-2 text-primary-600" />
+            <Calculator className="w-5 h-5 mr-2 text-primary-600" />
                     PPF Amount Breakup
-                  </h2>
+          </h2>
                   <div className="h-72">
-                    <ResultChart 
-                      data={[
-                        { name: 'Total Investment', value: totalInvestment, color: '#3b82f6' },
-                        { name: 'Interest Earned', value: totalInterest, color: '#22c55e' }
-                      ]}
-                      centerText={`${formatCurrency(maturityValue)}\nMaturity Value`}
-                    />
+            <ResultChart 
+              data={[
+                { name: 'Total Investment', value: totalInvestment, color: '#3b82f6' },
+                { name: 'Interest Earned', value: totalInterest, color: '#22c55e' }
+              ]}
+              centerText={`${formatCurrency(maturityValue)}\nMaturity Value`}
+            />
                   </div>
                   <div className="mt-4 grid grid-cols-2 gap-4">
                     <div className="text-center p-3 bg-blue-50 rounded-lg">
@@ -572,8 +572,8 @@ export const PpfCalculator: React.FC = () => {
                       <p className="text-lg font-bold text-green-700">
                         {((totalInterest / maturityValue) * 100).toFixed(1)}%
                       </p>
-                    </div>
-                  </div>
+          </div>
+        </div>
                 </motion.div>
                 
                 {/* Bar Chart */}
@@ -584,20 +584,20 @@ export const PpfCalculator: React.FC = () => {
                   className="bg-white rounded-2xl shadow-xl p-6"
                 >
                   <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
-                    <LineChart className="w-5 h-5 mr-2 text-primary-600" />
+            <LineChart className="w-5 h-5 mr-2 text-primary-600" />
                     Year-wise Balance Growth
-                  </h2>
+          </h2>
                   <div className="h-72">
-                    <BarChart 
-                      data={yearlyBreakup.filter((_, index) => index % 5 === 0 || index === yearlyBreakup.length - 1)}
-                      xKey="year"
-                      yKey="balance"
+            <BarChart 
+              data={yearlyBreakup.filter((_, index) => index % 5 === 0 || index === yearlyBreakup.length - 1)}
+              xKey="year"
+              yKey="balance"
                       color="#8b5cf6"
-                      xLabel="Year"
-                      yLabel="Balance (₹)"
-                      formatY={(value) => formatCurrency(value)}
-                    />
-                  </div>
+              xLabel="Year"
+              yLabel="Balance (₹)"
+              formatY={(value) => formatCurrency(value)}
+            />
+          </div>
                   <p className="text-sm text-gray-600 mt-4 text-center">
                     📈 Your PPF balance grows exponentially due to compounding interest
                   </p>
@@ -613,9 +613,9 @@ export const PpfCalculator: React.FC = () => {
                   <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-4">
                     <FileText className="w-5 h-5 mr-2 text-primary-600" />
                     Yearly Investment Breakup
-                  </h2>
+          </h2>
                   <div className="overflow-auto max-h-96 rounded-lg border border-neutral-200">
-                    <table className="min-w-full divide-y divide-neutral-200">
+            <table className="min-w-full divide-y divide-neutral-200">
                       <thead className="bg-gradient-to-r from-indigo-50 to-purple-50 sticky top-0">
                         <tr>
                           <th className="px-4 py-3 text-left text-xs font-bold text-indigo-700 uppercase tracking-wider">
@@ -630,10 +630,10 @@ export const PpfCalculator: React.FC = () => {
                           <th className="px-4 py-3 text-left text-xs font-bold text-indigo-700 uppercase tracking-wider">
                             Balance
                           </th>
-                        </tr>
-                      </thead>
+                </tr>
+              </thead>
                       <tbody className="bg-white divide-y divide-neutral-100">
-                        {yearlyBreakup.map((year, index) => (
+                {yearlyBreakup.map((year, index) => (
                           <motion.tr 
                             key={index}
                             initial={{ opacity: 0, x: -20 }}
@@ -656,10 +656,10 @@ export const PpfCalculator: React.FC = () => {
                               {formatCurrency(year.balance)}
                             </td>
                           </motion.tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                ))}
+              </tbody>
+            </table>
+          </div>
                 </motion.div>
               </div>
             </motion.div>
@@ -884,7 +884,7 @@ export const PpfCalculator: React.FC = () => {
                         <div>
                           <p className="font-semibold text-gray-900">Scenario Analysis</p>
                           <p className="text-sm text-gray-700">Test different interest rates and time periods</p>
-                        </div>
+        </div>
                       </div>
                     </div>
                   </motion.div>
