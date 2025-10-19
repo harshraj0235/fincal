@@ -318,17 +318,16 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
   };
 
   const injectStructuredData = (data: object) => {
-    // Remove existing structured data
-    const existingScript = document.querySelector('script[type="application/ld+json"]');
-    if (existingScript) {
-      existingScript.remove();
+    const hash = btoa(unescape(encodeURIComponent(JSON.stringify({ key: 'adv', pageType, url })))).slice(0, 12);
+    const scriptId = `jsonld-adv-${hash}`;
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = scriptId;
+      document.head.appendChild(script);
     }
-
-    // Add new structured data
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
     script.textContent = JSON.stringify(data);
-    document.head.appendChild(script);
   };
 
   const injectBreadcrumbStructuredData = (breadcrumbs: Array<{ name: string; url: string }>) => {
@@ -343,10 +342,16 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       }))
     };
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
+    const hash = btoa(unescape(encodeURIComponent(JSON.stringify(breadcrumbData)))).slice(0, 12);
+    const scriptId = `jsonld-bc-${hash}`;
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = scriptId;
+      document.head.appendChild(script);
+    }
     script.textContent = JSON.stringify(breadcrumbData);
-    document.head.appendChild(script);
   };
 
   const injectFAQStructuredData = (faqData: Array<{ question: string; answer: string }>) => {
@@ -363,10 +368,16 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       }))
     };
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
+    const hash = btoa(unescape(encodeURIComponent(JSON.stringify(faqStructuredData)))).slice(0, 12);
+    const scriptId = `jsonld-faq-${hash}`;
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.id = scriptId;
+      document.head.appendChild(script);
+    }
     script.textContent = JSON.stringify(faqStructuredData);
-    document.head.appendChild(script);
   };
 
   return null; // This component doesn't render anything
