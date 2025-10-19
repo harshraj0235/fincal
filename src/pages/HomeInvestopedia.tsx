@@ -12,7 +12,6 @@ import SEOHelmet from '../components/SEOHelmet';
 import { blogPosts as blogPosts0 } from '../data/blogData';
 import { blogPosts as blogPosts1 } from '../data/blogData1';
 import DynamicContentShowcase from '../components/DynamicContentShowcase';
-import FinancialChatAssistant from '../components/FinancialChatAssistant';
 
 const HomeInvestopedia: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -186,13 +185,6 @@ const HomeInvestopedia: React.FC = () => {
               </div>
             </motion.div>
 
-          </div>
-        </section>
-
-        {/* Financial Chat Assistant - Embedded at Top */}
-        <section className="py-12 bg-gradient-to-br from-white via-purple-50 to-blue-50">
-          <div className="max-w-7xl mx-auto px-4">
-            <FinancialChatAssistant language={language} embedded={true} />
           </div>
         </section>
 
