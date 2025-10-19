@@ -1,6 +1,6 @@
 import React from 'react';
 import { Gstr1DeadlineCalculator } from '../calculators/Gstr1DeadlineCalculator';
-import { SEOHelmet } from '../components/SEOHelmet';
+import SEOHelmet from '../components/SEOHelmet';
 
 export const Gstr1DeadlineCalculatorPage: React.FC = () => {
   return (
@@ -9,12 +9,9 @@ export const Gstr1DeadlineCalculatorPage: React.FC = () => {
         title="GSTR-1 Deadline Calculator India 2025 - GST Return Filing Date, Penalty & Interest Calculator"
         description="Free GSTR-1 deadline calculator for GST return filing in India. Calculate due dates, penalties, interest charges for late filing. Monthly & quarterly filers. Updated for 2025 with accurate penalty calculations."
         keywords="GSTR-1 deadline calculator, GST return filing date, GSTR-1 due date, GST penalty calculator, GST interest calculator, late filing penalty, GST return deadline, monthly GST filing, quarterly GST filing, GST compliance, GST return calculator, GST filing date, GST late fee calculator, GSTR-1 filing deadline, GST return due date calculator, GST penalty for late filing, GST interest on late payment, GST return filing calculator, GST compliance calculator, GST filing reminder, GST return date calculator"
-        canonicalUrl="https://moneycal.in/tools/gstr-1-deadline-calculator"
-        ogTitle="GSTR-1 Deadline Calculator - Calculate GST Return Filing Dates & Penalties"
-        ogDescription="Calculate your GSTR-1 filing deadline, penalties, and interest charges. Stay compliant with GST return filing requirements for 2025. Free, accurate, and instant results."
-        ogImage="https://moneycal.in/images/gstr-1-deadline-calculator-og.jpg"
-        twitterTitle="GSTR-1 Deadline Calculator - GST Return Filing Date & Penalty Calculator"
-        twitterDescription="Free GSTR-1 deadline calculator for GST return filing. Calculate due dates, penalties, interest charges for late filing. Monthly & quarterly filers."
+        url="https://moneycal.in/tools/gstr-1-deadline-calculator"
+        image="https://moneycal.in/images/gstr-1-deadline-calculator-og.jpg"
+        type="website"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
