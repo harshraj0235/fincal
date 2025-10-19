@@ -450,7 +450,7 @@ const EmiCalculator: React.FC = () => {
     }
   ];
 
-  const currentPreset = loanTypePresets[loanType];
+  const currentPreset = loanTypePresets[loanType as keyof typeof loanTypePresets];
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 -mx-4 -my-4 md:-mx-8 md:-my-8">
