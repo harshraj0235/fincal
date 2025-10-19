@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Info, ExternalLink, TrendingUp } from 'lucide-react';
+import WhyChooseUs from '../components/WhyChooseUs';
 
 export const CompoundInterestCalculator: React.FC = () => {
   // State variables for inputs
@@ -191,8 +193,50 @@ export const CompoundInterestCalculator: React.FC = () => {
               <h3 className="font-semibold text-lg text-gray-800 mb-2">Q: What is a good interest rate for compound interest?</h3>
               <p>A: A "good" interest rate depends on the type of investment and associated risks. High-yield savings accounts might offer 4-5%, while stock market investments could average 7-10% historically, but with higher volatility. Always consider your risk tolerance and <strong className="font-semibold">financial goals</strong> when evaluating rates.</p>
             </div>
+            <div className="bg-gray-50 p-4 rounded-md shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">Q: How does compound interest differ from simple interest?</h3>
+              <p>A: Simple interest is calculated only on the principal amount, while compound interest is calculated on the principal plus accumulated interest. 
+              Compare using our <a href="https://moneycal.in/calculators/simple-interest-calculator" className="underline text-blue-700">Simple Interest Calculator</a>.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-md shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">Q: Which investments offer compound interest in India?</h3>
+              <p>A: Fixed Deposits, PPF, NPS, Mutual Funds (SIP), and Bonds offer compound interest. 
+              Explore our <a href="https://moneycal.in/calculators/ppf-calculator" className="underline text-blue-700">PPF Calculator</a> and 
+              <a href="https://moneycal.in/calculators/sip-calculator" className="underline text-blue-700 ml-1">SIP Calculator</a> for specific investments.</p>
+            </div>
           </div>
         </section>
+
+        {/* Why Choose Us Section */}
+        <WhyChooseUs />
+
+        {/* Related Calculators */}
+        <div className="mt-8 bg-gray-50 rounded-2xl p-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Investment Calculators</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a
+              href="https://moneycal.in/calculators/sip-calculator"
+              className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+            >
+              <div className="font-medium text-gray-900">SIP Calculator</div>
+              <div className="text-sm text-gray-600">Calculate mutual fund SIP returns</div>
+            </a>
+            <a
+              href="https://moneycal.in/calculators/ppf-calculator"
+              className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+            >
+              <div className="font-medium text-gray-900">PPF Calculator</div>
+              <div className="text-sm text-gray-600">Public Provident Fund calculator</div>
+            </a>
+            <a
+              href="https://moneycal.in/calculators/nps-calculator"
+              className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+            >
+              <div className="font-medium text-gray-900">NPS Calculator</div>
+              <div className="text-sm text-gray-600">National Pension System returns</div>
+            </a>
+          </div>
+        </div>
 
         <footer className="text-center text-gray-500 text-sm mt-10 pt-6 border-t border-gray-200">
           <p>&copy; {new Date().getFullYear()} Compound Interest Calculator. All rights reserved.</p>
