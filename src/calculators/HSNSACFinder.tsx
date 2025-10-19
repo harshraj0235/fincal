@@ -570,12 +570,12 @@ export const HSNSACFinder: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-purple-50">
+    <div className="min-h-screen w-full bg-gradient-to-br from-cyan-50 via-blue-50 to-purple-50 -mx-4 -my-4 md:-mx-8 md:-my-8">
       {/* Premium Hero Section */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative overflow-hidden bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 text-white py-20 px-4"
+        className="relative overflow-hidden bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 text-white py-16 md:py-20 px-4 md:px-8"
       >
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="absolute inset-0">
@@ -646,8 +646,8 @@ export const HSNSACFinder: React.FC = () => {
       </motion.div>
 
       {/* Tab Navigation */}
-      <div className="max-w-7xl mx-auto px-4 -mt-8">
-        <div className="bg-white rounded-2xl shadow-2xl p-2 flex flex-wrap gap-2">
+      <div className="w-full px-4 md:px-8 -mt-8">
+        <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-2xl p-2 flex flex-wrap gap-2">
           {[
             { id: 'finder', label: 'HSN/SAC Finder', icon: Search },
             { id: 'guide', label: 'Complete Guide', icon: BookOpen },
@@ -671,7 +671,8 @@ export const HSNSACFinder: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="w-full px-4 md:px-8 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto">
         <AnimatePresence mode="wait">
           {activeTab === 'finder' && (
             <motion.div
@@ -1258,6 +1259,7 @@ export const HSNSACFinder: React.FC = () => {
             </a>
           </div>
         </motion.div>
+        </div>
       </div>
     </div>
   );
