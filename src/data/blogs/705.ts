@@ -115,7 +115,8 @@ export const onlineBusiness10KBlog: BlogPost = {
     {
       type: 'subheading',
       content: '7. Graphic Design Services (Investment: ₹2000)'
-    |    {
+    },
+    {
       type: 'list',
       items: [
         'Tools: Canva Pro (₹1000/year), Adobe (learn free trial)',
