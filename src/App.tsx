@@ -373,16 +373,6 @@ function App() {
                     />
                   ))
                 )}
-                {/* Hindi Calculator Routes */}
-                {calculatorCategories.flatMap(category =>
-                  category.calculators.map(calculator => (
-                    <Route
-                      key={`hi-${calculator.id}`}
-                      path={`/hi/calculators/${calculator.id}`}
-                      element={<CalculatorPage calculatorId={calculator.id} />}
-                    />
-                  ))
-                )}
                 <Route path="/category/:categoryId" element={<CategoryPage />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />

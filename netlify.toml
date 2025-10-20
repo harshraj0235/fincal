@@ -102,6 +102,22 @@
   to = "/astro-finance"
   status = 301
 
+# Hindi language redirects (redirect all /hi/* to English with 301)
+[[redirects]]
+  from = "/hi/calculators/*"
+  to = "/calculators/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/hi/blog/*"
+  to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/hi/*"
+  to = "/:splat"
+  status = 301
+
 # Handle all other routes for SPA
 [[redirects]]
   from = "/*"

@@ -18,8 +18,10 @@
 /banking/bank-account-comparison             /bank-tools                              301
 /banking/upi-calculator                      /bank-tools                              301
 
-# Hindi language redirects (if not implemented, redirect to English)
+# Hindi language redirects (redirect to English with 301 for SEO)
+/hi/*                                        /:splat                                  301
 /hi/calculators/*                            /calculators/:splat                      301
+/hi/blog/*                                   /blog/:splat                             301
 
 # Finance categories redirects
 /finance-categories/*                        /finance-tools                           301
