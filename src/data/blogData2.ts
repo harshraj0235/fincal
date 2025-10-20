@@ -1,7 +1,8 @@
-// DIY & Small Business Blogs Collection
+// DIY, Service & Online Business Blogs Collection
 // All blogs are SEO-optimized with 2000+ words, dynamic dates, long-tail keywords
 // Internal and external links included
 
+// DIY Business Blogs (683-690 + 2 extras)
 import diyJewelryBusiness from './blogs/diy-jewelry-business-5000';
 import stationeryBrandBusiness from './blogs/stationery-brand-low-cost';
 import diyProductsProfitBusiness from './blogs/683';
@@ -13,8 +14,33 @@ import crossStitchCrochetBlog from './blogs/688';
 import recycledHomeDecorBlog from './blogs/689';
 import handmadeRakhiBusiness from './blogs/690';
 
-// Export all DIY business blogs as a collection
+// Service Business Blogs (691-700)
+import freelanceContentWriterBlog from './blogs/691';
+import onlineTuitionBlog from './blogs/692';
+import dogWalkingPetSittingBlog from './blogs/693';
+import eventDecorationBlog from './blogs/694';
+import virtualAssistantBlog from './blogs/695';
+import homeBeautyServiceBlog from './blogs/696';
+import carWashingServiceBlog from './blogs/697';
+import yogaCoachingBlog from './blogs/698';
+import phonePhotographyBlog from './blogs/699';
+import instagramReelsBlog from './blogs/700';
+
+// Online Business Blogs (701-710)
+import dropshippingBlog from './blogs/701';
+import bloggingMoneyBlog from './blogs/702';
+import affiliateMarketingBlog from './blogs/703';
+import sellOldClothesBlog from './blogs/704';
+import onlineBusiness10KBlog from './blogs/705';
+import stockPhotosBlog from './blogs/706';
+import socialMediaBrandingBlog from './blogs/707';
+import youtubeChannelBlog from './blogs/708';
+import productPromotionBlog from './blogs/709';
+import whatsappBusinessBlog from './blogs/710';
+
+// Export all business blogs as a collection
 export const diyBusinessBlogs = [
+  // DIY Blogs (10)
   diyJewelryBusiness,
   stationeryBrandBusiness,
   diyProductsProfitBusiness,
@@ -24,7 +50,31 @@ export const diyBusinessBlogs = [
   paperBagBusinessBlog,
   crossStitchCrochetBlog,
   recycledHomeDecorBlog,
-  handmadeRakhiBusiness
+  handmadeRakhiBusiness,
+  
+  // Service Blogs (10)
+  freelanceContentWriterBlog,
+  onlineTuitionBlog,
+  dogWalkingPetSittingBlog,
+  eventDecorationBlog,
+  virtualAssistantBlog,
+  homeBeautyServiceBlog,
+  carWashingServiceBlog,
+  yogaCoachingBlog,
+  phonePhotographyBlog,
+  instagramReelsBlog,
+  
+  // Online Business Blogs (10)
+  dropshippingBlog,
+  bloggingMoneyBlog,
+  affiliateMarketingBlog,
+  sellOldClothesBlog,
+  onlineBusiness10KBlog,
+  stockPhotosBlog,
+  socialMediaBrandingBlog,
+  youtubeChannelBlog,
+  productPromotionBlog,
+  whatsappBusinessBlog
 ];
 
 // Export default for easy import
