@@ -296,6 +296,7 @@ const PersonalFinanceManagement = lazy(() => import('./pages/PersonalFinanceMana
 const MonthlyBudgetPlanner = lazy(() => import('./pages/tools/MonthlyBudgetPlanner'));
 const PersonalFinanceDashboard = lazy(() => import('./pages/tools/PersonalFinanceDashboard'));
 const HowToManagePersonalFinancesIndiaBeginners = lazy(() => import('./pages/personal-finance/HowToManagePersonalFinancesIndiaBeginners'));
+const NotFound404 = lazy(() => import('./pages/NotFound404'));
 
 function App() {
   useEffect(() => {
@@ -693,7 +694,7 @@ function App() {
                 <Route path="/tools/proposal-template" element={<OfferProposalTemplateBuilder />} />
                 <Route path="/tools/feedback-form" element={<SimpleFeedbackFormGenerator />} />
                 <Route path="/tools/:toolId" element={<ToolPlaceholder />} />
-                <Route path="*" element={<Navigate to="/" replace />} />
+                <Route path="*" element={<NotFound404 />} />
               </Routes>
             </Suspense>
           </Layout>

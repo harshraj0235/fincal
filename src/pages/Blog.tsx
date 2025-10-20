@@ -98,12 +98,33 @@ export const Blog: React.FC = () => {
     <>
 
       <SEOHelmet
-        title="Financial Blog - Latest Articles, Tips & Insights | MoneyCal.in"
-        description="Stay updated with the latest financial news, investment tips, tax updates, and money management advice. Expert insights for better financial decisions."
-        keywords="financial blog, investment tips, tax advice, money management, financial news"
-        url="/blog"
-        structuredData={{}}
-        tags={["financial blog", "investment tips", "tax advice", "money management"]}
+        title={selectedCategory !== 'all' ? `${selectedCategory} Articles - Expert Insights & Tips | MoneyCal.in` : "Financial Blog - Latest Articles, Tips & Insights | MoneyCal.in"}
+        description={selectedCategory !== 'all' ? `Explore expert ${selectedCategory.toLowerCase()} articles, guides, and insights for Indian users. Get practical advice and strategies for better financial decisions.` : "Stay updated with the latest financial news, investment tips, tax updates, and money management advice. Expert insights for better financial decisions."}
+        keywords={selectedCategory !== 'all' ? `${selectedCategory.toLowerCase()} articles, ${selectedCategory.toLowerCase()} tips, ${selectedCategory.toLowerCase()} advice, financial blog` : "financial blog, investment tips, tax advice, money management, financial news"}
+        url={selectedCategory !== 'all' ? `/blog?category=${selectedCategory}` : "/blog"}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": selectedCategory !== 'all' ? `${selectedCategory} Blog - MoneyCal India` : "MoneyCal India Financial Blog",
+          "description": selectedCategory !== 'all' ? `Expert ${selectedCategory.toLowerCase()} articles and insights for Indian users` : "Comprehensive financial blog covering investments, taxes, banking, and more",
+          "url": `https://moneycal.in/blog${selectedCategory !== 'all' ? '?category=' + selectedCategory : ''}`,
+          "publisher": {
+            "@type": "Organization",
+            "name": "MoneyCal India",
+            "url": "https://moneycal.in"
+          },
+          "blogPost": currentPosts.slice(0, 5).map(post => ({
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "description": post.excerpt,
+            "datePublished": post.date,
+            "author": {
+              "@type": "Person",
+              "name": "Harsh Raj"
+            }
+          }))
+        }}
+        tags={selectedCategory !== 'all' ? [`${selectedCategory.toLowerCase()} articles`, `${selectedCategory.toLowerCase()} tips`] : ["financial blog", "investment tips", "tax advice", "money management"]}
       />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
@@ -125,6 +146,39 @@ export const Blog: React.FC = () => {
               Stay updated with the latest financial news, investment tips, tax updates, and expert insights to make better financial decisions.
             </p>
           </motion.div>
+
+          {/* Category-Specific Content Section */}
+          {selectedCategory !== 'all' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-8 text-white shadow-xl"
+            >
+              <h2 className="text-3xl font-bold mb-4">{selectedCategory} Articles</h2>
+              <p className="text-lg opacity-90 mb-4">
+                {selectedCategory === 'Finance' && 'Discover comprehensive guides on personal finance, budgeting, savings strategies, and financial planning for Indians. Learn how to manage your money effectively, build wealth, and achieve financial independence.'}
+                {selectedCategory === 'Investment' && 'Explore investment opportunities in India including mutual funds, stocks, bonds, real estate, and alternative investments. Get expert insights on portfolio diversification, risk management, and long-term wealth creation strategies.'}
+                {selectedCategory === 'Tax' && 'Stay updated with the latest tax regulations, deductions, and filing procedures in India. Learn about income tax planning, GST compliance, tax-saving investments under Section 80C, and strategies to minimize your tax liability legally.'}
+                {selectedCategory === 'Insurance' && 'Understand different types of insurance products including life insurance, health insurance, motor insurance, and property insurance. Learn how to choose the right coverage, compare policies, and protect your family\'s financial future.'}
+                {selectedCategory === 'Banking' && 'Everything you need to know about banking in India - from opening accounts to digital banking services, loan products, credit cards, and managing your finances with modern banking tools and apps.'}
+                {selectedCategory === 'Crypto' && 'Navigate the world of cryptocurrency and blockchain technology. Learn about Bitcoin, Ethereum, altcoins, crypto trading strategies, regulations in India, and how to invest safely in digital assets.'}
+                {selectedCategory === 'Real Estate' && 'Get insights into the Indian real estate market, property investment strategies, home loans, legal aspects of property buying, and tips for first-time homebuyers and real estate investors.'}
+                {(!['Finance', 'Investment', 'Tax', 'Insurance', 'Banking', 'Crypto', 'Real Estate'].includes(selectedCategory)) && `Explore our curated collection of ${selectedCategory} articles featuring expert analysis, practical tips, and actionable insights to help you make informed financial decisions.`}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                  <span className="text-sm font-semibold">{filteredPosts.length} Articles</span>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                  <span className="text-sm font-semibold">Updated Regularly</span>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
+                  <span className="text-sm font-semibold">Expert Insights</span>
+                </div>
+              </div>
+            </motion.div>
+          )}
 
           {/* Search and Filters */}
           <motion.div

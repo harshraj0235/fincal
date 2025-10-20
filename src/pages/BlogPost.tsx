@@ -86,19 +86,92 @@ export const BlogPost: React.FC = () => {
   }
 
   if (!post) {
+    // Return 404 status - this helps Google understand it's a real 404, not soft 404
+    if (typeof window !== 'undefined') {
+      window.document.title = '404 - Blog Post Not Found | MoneyCal';
+    }
     return (
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <h1 className="text-2xl font-bold text-neutral-900 mb-4">Blog Post Not Found</h1>
-        <p className="text-neutral-600 mb-8">The blog post you're looking for doesn't exist or may have been moved.</p>
-        <button
-          onClick={() => navigate(isAstroBlog ? '/astro-finance' : '/blog')}
-          className="btn btn-primary"
-        >
-          Back to {isAstroBlog ? 'Astro Finance' : 'Blog'}
-        </button>
-      </div>
+      <>
+        <SEOHelmet
+          title="404 - Blog Post Not Found"
+          description="The blog post you're looking for doesn't exist or may have been moved."
+          url={window.location.pathname}
+        />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <h1 className="text-2xl font-bold text-neutral-900 mb-4">404 - Blog Post Not Found</h1>
+          <p className="text-neutral-600 mb-8">The blog post you're looking for doesn't exist or may have been moved.</p>
+          <button
+            onClick={() => navigate(isAstroBlog ? '/astro-finance' : '/blog')}
+            className="btn btn-primary"
+          >
+            Back to {isAstroBlog ? 'Astro Finance' : 'Blog'}
+          </button>
+        </div>
+      </>
     );
   }
+
+  // Calculate reading time
+  const calculateReadingTime = () => {
+    if (Array.isArray(post.content)) {
+      const wordCount = post.content.reduce((count, section: BlogContentSection) => {
+        if (section.type === 'paragraph' || section.type === 'heading' || section.type === 'subheading') {
+          return count + (section.content?.split(' ').length || 0);
+        }
+        if (section.type === 'list' && section.items) {
+          return count + section.items.join(' ').split(' ').length;
+        }
+        return count;
+      }, 0);
+      return Math.ceil(wordCount / 200); // Average reading speed
+    }
+    return 5;
+  };
+
+  const readingTime = calculateReadingTime();
+  const wordCount = Array.isArray(post.content) ? post.content.reduce((count, section: BlogContentSection) => {
+    if (section.type === 'paragraph' || section.type === 'heading' || section.type === 'subheading') {
+      return count + (section.content?.split(' ').length || 0);
+    }
+    if (section.type === 'list' && section.items) {
+      return count + section.items.join(' ').split(' ').length;
+    }
+    return count;
+  }, 0) : 500;
+
+  // Generate structured data for SEO
+  const generateStructuredData = () => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "image": post.coverImage,
+      "author": {
+        "@type": "Person",
+        "name": AUTHOR_NAME,
+        "url": "https://moneycal.in/author/harsh-raj",
+        "sameAs": [AUTHOR_LINKEDIN, AUTHOR_TWITTER]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MoneyCal India",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://moneycal.in/logo.png"
+        }
+      },
+      "datePublished": post.date,
+      "dateModified": new Date().toISOString().split('T')[0],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://moneycal.in${isAstroBlog ? '/astro-finance/blog/' : '/blog/'}${post.slug}`
+      },
+      "wordCount": wordCount,
+      "articleBody": post.excerpt,
+      "keywords": post.categories.join(', ')
+    };
+  };
 
   return (
     <>
@@ -110,6 +183,10 @@ export const BlogPost: React.FC = () => {
         image={post.coverImage}
         url={`${isAstroBlog ? '/astro-finance/blog/' : '/blog/'}${post.slug}`}
       />
+      {/* Add structured data for rich snippets */}
+      <script type="application/ld+json">
+        {JSON.stringify(generateStructuredData())}
+      </script>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         {/* Back button */}
         <div className="mb-6">
@@ -143,6 +220,10 @@ export const BlogPost: React.FC = () => {
                     <span>{post.date}</span>
                     <span className="mx-2">•</span>
                     <span>Last updated: {new Date().toISOString().split('T')[0]}</span>
+                    <span className="mx-2">•</span>
+                    <span>{readingTime} min read</span>
+                    <span className="mx-2">•</span>
+                    <span>{wordCount.toLocaleString()} words</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {post.categories.map((category) => (
