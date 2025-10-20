@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, Menu, X, Star, Globe, Smartphone, Sparkles, Heart, Car, Target, Plane } from 'lucide-react';
+import { Calculator, ArrowRight, TrendingUp, DollarSign, PieChart, Building, Shield, Menu, X, Star, Globe, Smartphone, Sparkles, Heart, Car, Target, Plane, Calendar, ShoppingBag, Wallet, Church, PartyPopper, Palette, BookOpen, Briefcase, Languages, LineChart } from 'lucide-react';
 import { calculatorCategories } from '../data/calculatorData';
 import { SearchBar } from '../components/SearchBar';
 import SEOHelmet from '../components/SEOHelmet';
@@ -350,6 +350,224 @@ export const Home: React.FC = () => {
               <Link to="/calculators" className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-2xl font-semibold hover:bg-primary-700 shadow-lg hover:shadow-xl transition-all">
               View All Calculators
                 <ArrowRight className="h-5 w-5 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Festival Tools Categories */}
+      <section className="py-20 bg-gradient-to-br from-orange-50 via-yellow-50 to-pink-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-orange-600 to-pink-600 text-white text-sm font-medium mb-6">
+              <Sparkles className="w-4 h-4 mr-2" />
+              Festival Planning Made Easy
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Festival Tools & Calculators</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Celebrate every occasion with our comprehensive festival planning tools. Budget, plan, and enjoy worry-free celebrations!
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {/* Festival Date & Calendar Tools */}
+            <Link
+              to="/festival-tools/date-calendar"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Calendar className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Festival Dates & Calendar</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Plan ahead with muhurat, dates & reminders</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Festival Planning & Shopping */}
+            <Link
+              to="/festival-tools/planning-shopping"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <ShoppingBag className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Planning & Shopping</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Budget planners & shopping checklists</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Festival Finance & Money */}
+            <Link
+              to="/festival-tools/finance-money"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Wallet className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Finance & Money</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">EMI, savings & financial planning</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Religious & Traditional */}
+            <Link
+              to="/festival-tools/religious-traditional"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-violet-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Church className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Religious & Traditional</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Puja samagri, rituals & traditions</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Fun & Engagement */}
+            <Link
+              to="/festival-tools/fun-engagement"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-orange-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <PartyPopper className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Fun & Engagement</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Games, quizzes & entertainment</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Design & Creator */}
+            <Link
+              to="/festival-tools/design-creator"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Palette className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Design & Creator</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Cards, wishes & creative tools</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Information & History */}
+            <Link
+              to="/festival-tools/information-history"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <BookOpen className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Information & History</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Stories, origins & cultural insights</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Corporate & Professional */}
+            <Link
+              to="/festival-tools/corporate-professional"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-500 to-gray-700 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Briefcase className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Corporate & Professional</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Office celebrations & bonuses</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Regional & Language */}
+            <Link
+              to="/festival-tools/regional-language"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-cyan-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <Languages className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Regional & Language</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Multilingual wishes & content</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* SEO & Monetization */}
+            <Link
+              to="/festival-tools/seo-monetization"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-pink-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                  <LineChart className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">SEO & Monetization</h3>
+                <p className="text-white/90 text-sm leading-relaxed mb-auto">Traffic, analytics & growth tools</p>
+                <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link 
+              to="/festival-tools" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-pink-600 text-white rounded-2xl font-semibold hover:from-orange-700 hover:to-pink-700 shadow-lg hover:shadow-xl transition-all"
+            >
+              Explore All Festival Tools
+              <ArrowRight className="h-5 w-5 ml-2" />
             </Link>
           </div>
         </div>
