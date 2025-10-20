@@ -1,8 +1,9 @@
-import { BlogPost } from '../blogData';
+﻿import { BlogPost } from '../blogData';
 
 const getCurrentDate = () => {
   const now = new Date();
-  return now.toLocaleDateString('hi-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+  // Return ISO date for proper sorting, will be formatted in display
+  return now.toISOString().split('T')[0]; // Returns YYYY-MM-DD format
 };
 
 export const dogWalkingPetSittingBlog: BlogPost = {
