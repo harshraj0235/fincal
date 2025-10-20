@@ -372,7 +372,7 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {/* Festival Date & Calendar Tools */}
             <Link
-              to="/festival-tools/date-calendar"
+              to="/festival-dates"
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
@@ -391,7 +391,7 @@ export const Home: React.FC = () => {
 
             {/* Festival Planning & Shopping */}
             <Link
-              to="/festival-tools/planning-shopping"
+              to="/festival-shopping"
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>

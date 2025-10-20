@@ -577,8 +577,8 @@ function App() {
                 <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
                 <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
                 <Route path="/festival-tools" element={<FestivalTools />} />
-                <Route path="/festival-tools/date-calendar" element={<FestivalDateCalendar />} />
-                <Route path="/festival-tools/planning-shopping" element={<FestivalPlanningShopping />} />
+                <Route path="/festival-dates" element={<FestivalDateCalendar />} />
+                <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
                 <Route path="/festival-tools/:festivalSlug" element={<FestivalLanding />} />
                 <Route path="/festival-tools/:festivalSlug/:toolSlug" element={<FestivalToolPage />} />
                 <Route path="/gold-tools" element={<GoldTools />} />

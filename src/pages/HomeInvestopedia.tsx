@@ -399,7 +399,7 @@ const HomeInvestopedia: React.FC = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <Link
-                  to="/festival-tools/date-calendar"
+                  to="/festival-dates"
                   className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
@@ -430,7 +430,7 @@ const HomeInvestopedia: React.FC = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <Link
-                  to="/festival-tools/planning-shopping"
+                  to="/festival-shopping"
                   className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>

@@ -548,7 +548,7 @@ const FestivalPlanningShopping: React.FC = () => {
         title="Festival Planning & Shopping Tools 2025 | Diwali Gift Ideas, Holi Decor, Budget Planner"
         description="Plan festival shopping with 50+ tools: Diwali gift ideas, Holi decoration planner, festival budget calculator, best deals finder, cashback tracker. Find gifts, offers, and save money!"
         keywords="diwali gift ideas, holi decoration, festival shopping planner, festival budget planner, diwali offers, festival deals, rakhi gifts, puja samagri, diwali bonus calculator, amazon festival sale"
-        url="/festival-tools/planning-shopping"
+        url="/festival-shopping"
         type="website"
       />
 
@@ -566,7 +566,7 @@ const FestivalPlanningShopping: React.FC = () => {
                 Festival Tools
               </Link>
               <ChevronRight className="w-4 h-4 mx-2" />
-              <span className="text-pink-600 font-medium">Festival Planning & Shopping</span>
+              <span className="text-pink-600 font-medium">Festival Shopping</span>
             </div>
           </div>
         </div>

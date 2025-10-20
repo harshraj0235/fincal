@@ -480,7 +480,7 @@ const FestivalDateCalendar: React.FC = () => {
         title="Festival Date & Calendar Tools 2025-2026 | Indian Festival Dates Calculator"
         description="Find dates for Diwali 2025, Holi 2026, Karwa Chauth moonrise time, Eid dates, Christmas countdown, and 45+ Indian festival calendar tools. Get muhurat, tithi, and panchang information."
         keywords="festival dates 2025, diwali date 2025, holi date 2026, karwa chauth moonrise time, eid date converter, indian festival calendar, hindu panchang, muhurat finder, festival countdown, tithi calculator"
-        url="/festival-tools/date-calendar"
+        url="/festival-dates"
         type="website"
       />
 
@@ -498,7 +498,7 @@ const FestivalDateCalendar: React.FC = () => {
                 Festival Tools
               </Link>
               <ChevronRight className="w-4 h-4 mx-2" />
-              <span className="text-orange-600 font-medium">Festival Date & Calendar</span>
+              <span className="text-orange-600 font-medium">Festival Dates</span>
             </div>
           </div>
         </div>
