@@ -57,6 +57,7 @@ export const HealthInsuranceCalculator: React.FC = () => {
   };
   
   return (
+    <>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div className="space-y-6">
         <h2 className="text-xl font-semibold text-neutral-900 flex items-center">

@@ -155,6 +155,7 @@ export const AdvanceTaxCalculator: React.FC = () => {
   }, []);
 
   return (
+    <>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" style={{ scrollMarginTop: '120px' }}>
       {/* SEO: Hidden h1 and meta for better ranking */}
       <h1 className="sr-only">Advance Tax Calculator India 2025-26 - Accurate, Updated, Free Online</h1>
