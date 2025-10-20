@@ -243,7 +243,6 @@ const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShop
 const FestivalFinanceMoney = lazy(() => import('./pages/FestivalFinanceMoney'));
 const ReligiousTraditionalTools = lazy(() => import('./pages/ReligiousTraditionalTools'));
 const FunEngagementTools = lazy(() => import('./pages/FunEngagementTools'));
-const FunEngagementTools = lazy(() => import('./pages/FunEngagementTools'));
 const GoldTools = lazy(() => import('./pages/GoldTools'));
 const GoldToolPage = lazy(() => import('./pages/gold/GoldToolPage'));
 const Top10 = lazy(() => import('./pages/Top10'));
