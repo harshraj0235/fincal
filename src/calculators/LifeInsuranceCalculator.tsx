@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { formatCurrency } from '../utils/calculatorUtils';
 import { Sliders, Calculator, Shield } from 'lucide-react';
+import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
+import { CalculatorSchema } from '../components/CalculatorSchema';
 
 type PolicyType = 'endowment' | 'moneyBack' | 'ulip' | 'wholeLife';
 
@@ -276,5 +278,7 @@ export const LifeInsuranceCalculator: React.FC = () => {
         </div>
       </div>
     </div>
+      <div className="mx-auto max-w-5xl px-4 mt-12"><CalculatorContentWrapper title="Life Insurance Calculator" description="Calculate life insurance coverage needed for family financial security. Compare endowment, money-back, ULIP, and whole life policies. Plan adequate protection." benefits={["Calculate required life cover for family","Compare different policy types","Understand returns vs pure protection","Plan adequate financial security"]} howToSteps={[{step:"Assess Coverage",details:"Calculate based on income replacement, debts, and future goals"},{step:"Choose Policy Type",details:"Term for pure protection, endowment for savings+insurance"}]} examples={[{scenario:"Family Protection",inputs:[{label:"Age",value:"35"},{label:"Cover",value:"₹50L"}],result:"Adequate for family security",explanation:"Covers 10x annual income for dependents"}]} tips:["Buy term insurance early","Separate insurance from investment","Review coverage every 3-5 years"]} mistakes={["Buying insufficient cover","Mixing insurance with investment in expensive ULIPs"]} faqs={[{question:"How much life insurance do I need?",answer:"10-15x annual income + debts + goals. Term insurance is cheapest way to get adequate cover."}]} relatedCalculators={[{name:"Term Insurance",url:"/calculators/term-insurance-calculator",description:"Term insurance premium"}]} lastUpdated="2025-01-20"/></div>
+    </>
   );
 };

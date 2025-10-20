@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { formatCurrency } from '../utils/calculatorUtils';
 import { Sliders, Calculator } from 'lucide-react';
+import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
+import { CalculatorSchema } from '../components/CalculatorSchema';
 
 type AssetType = 'equity' | 'debt' | 'property';
 type HoldingPeriod = 'shortTerm' | 'longTerm';
@@ -235,5 +237,7 @@ export const CapitalGainsTaxCalculator: React.FC = () => {
         </div>
       </div>
     </div>
+      <div className="mx-auto max-w-5xl px-4 mt-12"><CalculatorContentWrapper title="Capital Gains Tax Calculator" description="Calculate capital gains tax on equity, debt mutual funds, property sale in India. Understand STCG, LTCG tax rates and exemptions for FY 2024-25. Free capital gains calculator." benefits={["Calculate STCG and LTCG tax on investments","Understand equity, debt, property tax rules","See tax on mutual funds, stocks, real estate","Plan tax-efficient investment exits"]} howToSteps={[{step:"Select Asset Type",details:"Equity, debt mutual funds, or property have different tax rules"},{step:"Enter Purchase and Sale",details:"Calculate gain and holding period"},{step:"Check Tax Rate",details:"LTCG equity 10% >₹1L, STCG 15%. Debt LTCG 20% with indexation"}]} examples={[{scenario:"Equity MF sale",inputs:[{label:"Buy",value:"₹5L"},{label:"Sell",value:"₹8L"},{label:"Hold",value:"2 years"}],result:"LTCG: ₹3L | Tax: ₹20K (₹1L exempt, ₹2L @ 10%)",explanation:"Long-term equity taxed at 10% above ₹1L"}]} tips={["Hold equity >1 year for LTCG benefit","Use ₹1L exemption annually","Consider tax loss harvesting"]} mistakes={["Selling just before 1 year (STCG 15% vs LTCG 10%)","Not using ₹1L annual exemption"]} faqs={[{question:"What is LTCG and STCG on equity?",answer:"Equity held >1 year = LTCG (10% tax above ₹1L exemption). <1 year = STCG (15% tax, no exemption)."}]} relatedCalculators={[{name:"Income Tax",url:"/calculators/income-tax-calculator",description:"Total tax calculation"}]} lastUpdated="2025-01-20"/></div>
+    </>
   );
 };

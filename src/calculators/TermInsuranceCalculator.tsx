@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Sliders, Calculator, Shield, Info, ExternalLink, Twitter, Facebook, Share2 } from "lucide-react";
+import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
+import { CalculatorSchema } from '../components/CalculatorSchema';
 
 // Utility to format numbers as Indian currency
 const formatCurrency = (amount: number) => {
@@ -565,6 +567,7 @@ export const TermInsuranceCalculator: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className="mx-auto max-w-5xl px-4 mt-12"><CalculatorContentWrapper title="Term Insurance Calculator" description="Calculate term insurance coverage needed for family protection. Plan affordable term insurance with our premium calculator." benefits={["Calculate required life cover","Compare premium costs","Understand riders and benefits","Plan family financial security"]} howToSteps={[{step:"Calculate Coverage",details:"Use income multiplier method - 10-15x annual income for adequate protection"},{step:"Choose Term",details:"Select policy term until retirement age or till kids are independent"},{step:"Add Riders",details:"Consider critical illness, accidental death riders for comprehensive coverage"}]} examples={[{scenario:"Young Professional",inputs:[{label:"Age",value:"30"},{label:"Cover",value:"₹1 Cr"}],result:"₹10-12K annual premium",explanation:"Affordable protection for young families"}]} tips={["Buy early for lower premiums","Choose adequate cover (10-15x income)","Compare multiple insurers"]} mistakes={["Buying insufficient cover","Delaying purchase (premiums increase with age)"]} faqs={[{question:"How much term insurance do I need?",answer:"10-15x your annual income + outstanding debts + future goals. Example: ₹10L salary needs ₹1-1.5 Cr cover."}]} relatedCalculators={[{name:"Life Insurance Calculator",url:"/calculators/life-insurance-calculator",description:"Life insurance planning"}]} lastUpdated="2025-01-20"/></div>
     </>
   );
 };

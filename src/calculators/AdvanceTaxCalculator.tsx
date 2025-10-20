@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { formatCurrency } from '../utils/calculatorUtils';
 import { Calculator, Calendar, TrendingUp, FileText } from 'lucide-react';
+import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
+import { CalculatorSchema } from '../components/CalculatorSchema';
 
 /**
  * AdvanceTaxCalculator
@@ -470,5 +472,7 @@ export const AdvanceTaxCalculator: React.FC = () => {
         </section>
       </div>
     </div>
+      <div className="mx-auto max-w-5xl px-4 mt-12"><CalculatorContentWrapper title="Advance Tax Calculator" description="Calculate advance tax due dates and installments for India FY 2024-25. Avoid interest penalty under Section 234B, 234C. Free advance tax calculator for salaried, business, freelancers." benefits={["Calculate quarterly advance tax installments","Understand due dates (15 Jun, 15 Sep, 15 Dec, 15 Mar)","Avoid interest penalty 1% per month","Plan tax payments for salaried, business, professionals"]} howToSteps={[{step:"Estimate Annual Income",details:"Calculate total income from salary, business, capital gains, other sources"},{step:"Calculate Tax Liability",details:"Use income tax calculator to find total tax due"},{step:"Pay Quarterly",details:"15% by Jun, 45% by Sep, 75% by Dec, 100% by Mar"}]} examples={[{scenario:"Freelancer with ₹15L income",inputs:[{label:"Annual Income",value:"₹15L"},{label:"Tax Due",value:"₹1.5L"}],result:"Jun: ₹22.5K | Sep: ₹67.5K | Dec: ₹1.125L | Mar: ₹1.5L",explanation:"Quarterly advance tax prevents year-end penalty"}]} tips:{["Calculate tax liability accurately","Pay on time to avoid 1% monthly interest","Salaried with TDS may not need advance tax"]} mistakes={["Not paying advance tax (₹10K+ tax liability)","Missing due dates (interest charged)"]} faqs={[{question:"Who must pay advance tax?",answer:"Anyone with tax liability >₹10K after TDS. Includes freelancers, business owners, professionals, investors with capital gains."}]} relatedCalculators={[{name:"Income Tax",url:"/calculators/income-tax-calculator",description:"Calculate total tax"}]} lastUpdated="2025-01-20"/></div>
+    </>
   );
 };

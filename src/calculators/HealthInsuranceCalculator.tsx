@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { formatCurrency } from '../utils/calculatorUtils';
 import { Sliders, Calculator, Heart } from 'lucide-react';
+import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
+import { CalculatorSchema } from '../components/CalculatorSchema';
 
 interface FamilyMember {
   age: number;
@@ -241,5 +243,7 @@ export const HealthInsuranceCalculator: React.FC = () => {
         </div>
       </div>
     </div>
+      <div className="mx-auto max-w-5xl px-4 mt-12"><CalculatorContentWrapper title="Health Insurance Calculator" description="Calculate health insurance premium and coverage needed for family. Compare individual vs family floater policies. Plan adequate medical insurance for India." benefits={["Calculate health insurance premium","Compare individual vs family floater","Understand coverage needs by age","Plan adequate medical protection"]} howToSteps={[{step:"Choose Coverage Amount",details:"₹5-10L for individuals, ₹10-20L for families in metro cities"},{step:"Add Family Members",details:"Family floater covers spouse + kids at lower cost than individual policies"}]} examples={[{scenario:"Family of 4",inputs:[{label:"Cover",value:"₹10L"},{label:"Members",value:"Self+Spouse+2 Kids"}],result:"₹15-20K annual premium",explanation:"Adequate coverage for family medical needs"}]} tips:["Buy ₹10L+ cover minimum","Take family floater for cost savings","Add top-up/super top-up for high coverage at low cost"]} mistakes:{["Buying insufficient ₹3-5L cover in metro cities","Not disclosing pre-existing conditions"]} faqs={[{question:"How much health insurance do I need?",answer:"₹10-20L for families in metro cities considering medical inflation. Add super top-up for extra ₹30-50L at low cost."}]} relatedCalculators={[{name:"Term Insurance",url:"/calculators/term-insurance-calculator",description:"Life insurance planning"}]} lastUpdated="2025-01-20"/></div>
+    </>
   );
 };
