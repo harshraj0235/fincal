@@ -6,7 +6,8 @@ import {
   ArrowRight, Star, Zap, Shield, Award, BarChart3, Target,
   Sparkles, Rocket, Heart, CheckCircle, Play, Search, ChevronRight,
   DollarSign, Building, Briefcase, Umbrella, PartyPopper, GraduationCap,
-  HelpCircle, Gift, Sparkle, Layout, FileText, Building2, Clock, Tag
+  HelpCircle, Gift, Sparkle, Layout, FileText, Building2, Clock, Tag,
+  Calendar, ShoppingBag, Wallet, Church, Palette, Languages, LineChart
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { blogPosts as blogPosts0 } from '../data/blogData';
@@ -357,6 +358,363 @@ const HomeInvestopedia: React.FC = () => {
                   </Link>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Festival Tools Categories */}
+        <section className="py-20 bg-gradient-to-br from-orange-50 via-yellow-50 to-pink-50">
+          <div className="max-w-7xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-600 to-pink-600 text-white px-4 py-2 rounded-full mb-6">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-semibold">
+                  {language === 'en' ? 'Festival Planning Made Easy' : 'त्योहार योजना आसान बनी'}
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+                  {language === 'en' ? 'Festival Tools & Calculators' : 'त्योहार टूल्स और कैलकुलेटर'}
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                {language === 'en' 
+                  ? 'Celebrate every occasion with our comprehensive festival planning tools. Budget, plan, and enjoy worry-free celebrations!'
+                  : 'हमारे व्यापक त्योहार योजना उपकरणों के साथ हर अवसर मनाएं। बजट बनाएं, योजना बनाएं और चिंता मुक्त उत्सव का आनंद लें!'}
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {/* Festival Date & Calendar Tools */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/date-calendar"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <Calendar className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Festival Dates & Calendar' : 'त्योहार तिथि और कैलेंडर'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Plan ahead with muhurat, dates & reminders' : 'मुहूर्त, तिथि और अनुस्मारक के साथ आगे की योजना बनाएं'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Festival Planning & Shopping */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/planning-shopping"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <ShoppingBag className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Planning & Shopping' : 'योजना और खरीदारी'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Budget planners & shopping checklists' : 'बजट योजनाकार और खरीदारी चेकलिस्ट'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Festival Finance & Money */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 2 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/finance-money"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <Wallet className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Finance & Money' : 'वित्त और धन'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'EMI, savings & financial planning' : 'EMI, बचत और वित्तीय योजना'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Religious & Traditional */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 3 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/religious-traditional"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-violet-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <Church className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Religious & Traditional' : 'धार्मिक और पारंपरिक'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Puja samagri, rituals & traditions' : 'पूजा सामग्री, अनुष्ठान और परंपराएं'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Fun & Engagement */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 4 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/fun-engagement"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-orange-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <PartyPopper className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Fun & Engagement' : 'मनोरंजन और भागीदारी'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Games, quizzes & entertainment' : 'गेम्स, क्विज़ और मनोरंजन'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Design & Creator */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 5 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/design-creator"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <Palette className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Design & Creator' : 'डिज़ाइन और रचनाकार'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Cards, wishes & creative tools' : 'कार्ड, शुभकामनाएं और रचनात्मक टूल्स'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Information & History */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 6 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/information-history"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <BookOpen className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Information & History' : 'जानकारी और इतिहास'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Stories, origins & cultural insights' : 'कहानियां, मूल और सांस्कृतिक अंतर्दृष्टि'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Corporate & Professional */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 7 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/corporate-professional"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-500 to-gray-700 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <Briefcase className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Corporate & Professional' : 'कॉर्पोरेट और पेशेवर'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Office celebrations & bonuses' : 'कार्यालय उत्सव और बोनस'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Regional & Language */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 8 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/regional-language"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-cyan-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <Languages className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'Regional & Language' : 'क्षेत्रीय और भाषा'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Multilingual wishes & content' : 'बहुभाषी शुभकामनाएं और सामग्री'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* SEO & Monetization */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 9 * 0.05 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <Link
+                  to="/festival-tools/seo-monetization"
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-pink-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                      <LineChart className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {language === 'en' ? 'SEO & Monetization' : 'SEO और मुद्रीकरण'}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
+                      {language === 'en' ? 'Traffic, analytics & growth tools' : 'ट्रैफ़िक, विश्लेषण और विकास टूल्स'}
+                    </p>
+                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
+                      {language === 'en' ? 'Explore' : 'देखें'}
+                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            </div>
+
+            <div className="text-center mt-12">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                <Link 
+                  to="/festival-tools" 
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-pink-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all"
+                >
+                  {language === 'en' ? 'Explore All Festival Tools' : 'सभी त्योहार टूल्स देखें'}
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
