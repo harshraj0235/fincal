@@ -240,6 +240,7 @@ const FestivalLanding = lazy(() => import('./pages/FestivalLanding'));
 const FestivalToolPage = lazy(() => import('./pages/festival/FestivalToolPage'));
 const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
+const FestivalFinanceMoney = lazy(() => import('./pages/FestivalFinanceMoney'));
 const GoldTools = lazy(() => import('./pages/GoldTools'));
 const GoldToolPage = lazy(() => import('./pages/gold/GoldToolPage'));
 const Top10 = lazy(() => import('./pages/Top10'));
@@ -579,6 +580,7 @@ function App() {
                 <Route path="/festival-tools" element={<FestivalTools />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
+                <Route path="/festival-finance" element={<FestivalFinanceMoney />} />
                 <Route path="/festival-tools/:festivalSlug" element={<FestivalLanding />} />
                 <Route path="/festival-tools/:festivalSlug/:toolSlug" element={<FestivalToolPage />} />
                 <Route path="/gold-tools" element={<GoldTools />} />
