@@ -60,6 +60,77 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- PRIORITY 0.9: FESTIVAL TOOL CATEGORY HUB PAGES - 10 Major Categories -->
+  <url>
+    <loc>https://moneycal.in/festival-dates/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/festival-shopping/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/festival-finance/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/religious-tools/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/fun-engagement/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/design-tools/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/festival-info/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/festival-corporate-tools/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/regional-tools/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/festival-tools/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- PRIORITY 0.9: TOP 19 ENHANCED CALCULATORS - Updated Today! -->
   <url>
     <loc>https://moneycal.in/calculators/emi-calculator</loc>
