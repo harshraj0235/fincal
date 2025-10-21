@@ -119,7 +119,6 @@ export const banking: BlogPost = {
   ],
   lastModified: '2025-01-07',
   readingTime: 8,
-  views: 0,
   featured: true,
   structuredData: {
     "@context": "https://schema.org",
