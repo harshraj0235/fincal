@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { BookOpen, TrendingUp, Award, Search, Home, Car, GraduationCap, Briefcase, CreditCard, BarChart3, Coins, UserCheck } from 'lucide-react';
+import { BookOpen, TrendingUp, Award, Search, Home, Car, GraduationCap, Briefcase, CreditCard, BarChart3, Coins, UserCheck, Globe, Sparkles, ArrowRight, Play, CheckCircle, Star, Zap } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import { loanCategories } from '../../data/learn/loansLessons';
 
 const LearnHome: React.FC = () => {
-  const [searchQuery, setSearchQuery] = React.useState('');
-  const [showAllCategories, setShowAllCategories] = React.useState(false);
-  const [activeCard, setActiveCard] = React.useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showAllCategories, setShowAllCategories] = useState(false);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [language, setLanguage] = useState<'en' | 'hi'>('en');
 
   return (
     <>
@@ -18,41 +19,79 @@ const LearnHome: React.FC = () => {
         keywords="finance education, learn finance, loan guide, EMI calculator, investment tutorial, tax guide, financial literacy India"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        {/* Header */}
-        <header className="bg-white shadow-md sticky top-0 z-50">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        {/* Top Bar - Investopedia Style */}
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2">
+          <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-sm">
+            <div className="flex items-center space-x-6">
+              <span className="flex items-center">
+                <Sparkles className="w-4 h-4 mr-1 text-yellow-300" />
+                <span className="font-bold text-yellow-300">7 Lessons Live!</span>
+              </span>
+              <span className="hidden md:inline">
+                <span className="text-white/80">18,000+ words |</span>
+                <span className="font-bold ml-1 text-green-300">3 Interactive Calculators</span>
+              </span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                className="flex items-center space-x-1 hover:text-yellow-300 transition-colors"
+              >
+                <Globe className="w-4 h-4" />
+                <span>{language === 'en' ? 'हिंदी' : 'English'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Header - Sticky */}
+        <header className="bg-white shadow-md sticky top-0 z-50 border-b-2 border-gray-100">
           <div className="max-w-7xl mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <Link to="/" className="flex items-center gap-3">
-                <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg">
+                <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg">
                   <BookOpen className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-900">
-                    MoneyCal <span className="text-blue-600">Learn</span>
+                  <h1 className="text-2xl font-bold">
+                    <span className="text-gray-900">MoneyCal</span>{' '}
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      Learn
+                    </span>
                   </h1>
-                  <p className="text-sm text-gray-600">Learn Finance the Easy Way</p>
+                  <p className="text-xs text-gray-600">India's Finance Academy</p>
                 </div>
               </Link>
 
               <div className="hidden md:flex items-center gap-6">
-                <Link to="/calculators" className="text-gray-700 hover:text-blue-600 font-semibold">
-                  Calculators
+                <Link to="/calculators" className="text-gray-700 hover:text-blue-600 font-semibold transition-colors">
+                  🧮 Calculators
                 </Link>
-                <Link to="/blog" className="text-gray-700 hover:text-blue-600 font-semibold">
-                  Blog
+                <Link to="/blog" className="text-gray-700 hover:text-blue-600 font-semibold transition-colors">
+                  📰 Blog
                 </Link>
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all font-semibold">
-                  हिंदी
-                </button>
+                <Link to="/festival-tools" className="text-gray-700 hover:text-blue-600 font-semibold transition-colors">
+                  🎊 Festival Tools
+                </Link>
+                <Link to="/" className="text-gray-700 hover:text-blue-600 font-semibold transition-colors">
+                  🏠 Home
+                </Link>
               </div>
             </div>
           </div>
         </header>
 
-        {/* Credit Card Style Hero */}
-        <section className="py-12 px-4">
-          <div className="max-w-7xl mx-auto">
+        {/* Credit Card Style Hero with Animated Background */}
+        <section className="relative py-16 px-4 overflow-hidden">
+          {/* Animated Blob Background */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
