@@ -19,7 +19,7 @@ $subscribersData = Get-Content "subscribers.json" -Raw | ConvertFrom-Json
 $activeSubscribers = $subscribersData.subscribers | Where-Object { $_.active -eq $true }
 $totalSubscribers = $activeSubscribers.Count
 
-Write-Host "📧 Total Active Subscribers: $totalSubscribers" -ForegroundColor Green
+Write-Host "[+] Total Active Subscribers: $totalSubscribers" -ForegroundColor Green
 Write-Host ""
 
 # Load content database
@@ -29,7 +29,7 @@ $allContent = $contentData.content
 # Pick one random content
 $randomContent = $allContent | Get-Random
 
-Write-Host "📝 Selected Content:" -ForegroundColor Yellow
+Write-Host "[*] Selected Content:" -ForegroundColor Yellow
 Write-Host "   Title: $($randomContent.title)" -ForegroundColor White
 Write-Host "   URL: $($randomContent.url)" -ForegroundColor White
 Write-Host ""
@@ -156,7 +156,7 @@ $emailBody = $emailBodyTemplate `
 $successCount = 0
 $failCount = 0
 
-Write-Host "🚀 Starting email send to $totalSubscribers subscribers..." -ForegroundColor Cyan
+Write-Host "[>>] Starting email send to $totalSubscribers subscribers..." -ForegroundColor Cyan
 Write-Host ""
 
 foreach ($subscriber in $activeSubscribers) {
@@ -178,14 +178,14 @@ foreach ($subscriber in $activeSubscribers) {
         
         Send-MailMessage @mailParams
         $successCount++
-        Write-Host "✅ Sent to: $($subscriber.email)" -ForegroundColor Green
+        Write-Host "[OK] Sent to: $($subscriber.email)" -ForegroundColor Green
         
         # Delay to avoid rate limiting (1 second between emails)
         Start-Sleep -Seconds 1
     }
     catch {
         $failCount++
-        Write-Host "❌ Failed to send to: $($subscriber.email) - $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "[FAIL] Failed to send to: $($subscriber.email) - $($_.Exception.Message)" -ForegroundColor Red
     }
 }
 
@@ -194,13 +194,13 @@ Write-Host "============================================" -ForegroundColor Cyan
 Write-Host "   EMAIL CAMPAIGN COMPLETED" -ForegroundColor Cyan
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "✅ Successfully sent: $successCount emails" -ForegroundColor Green
-Write-Host "❌ Failed: $failCount emails" -ForegroundColor Red
-Write-Host "📧 Total attempted: $totalSubscribers emails" -ForegroundColor Cyan
+Write-Host "[SUCCESS] Successfully sent: $successCount emails" -ForegroundColor Green
+Write-Host "[FAILED] Failed: $failCount emails" -ForegroundColor Red
+Write-Host "[TOTAL] Total attempted: $totalSubscribers emails" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "📝 Content sent: $($randomContent.title)" -ForegroundColor Yellow
-Write-Host "🔗 URL: $($randomContent.url)" -ForegroundColor White
+Write-Host "[CONTENT] Content sent: $($randomContent.title)" -ForegroundColor Yellow
+Write-Host "[URL] $($randomContent.url)" -ForegroundColor White
 Write-Host ""
-Write-Host "🎉 ALL DONE! Check your email for results." -ForegroundColor Green
+Write-Host "[DONE] ALL DONE! Check your email for results." -ForegroundColor Green
 Write-Host ""
 
