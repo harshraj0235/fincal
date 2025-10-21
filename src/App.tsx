@@ -256,6 +256,7 @@ const BuddhaPurnimaConverter = lazy(() => import('./pages/festival/BuddhaPurnima
 const EidDateConverter = lazy(() => import('./pages/festival/EidDateConverter'));
 const RamadanTimetable = lazy(() => import('./pages/festival/RamadanTimetable'));
 const ChristmasCountdown = lazy(() => import('./pages/festival/ChristmasCountdown'));
+const IslamicCalendarSync = lazy(() => import('./pages/festival/IslamicCalendarSync'));
 const AkshayaTritiyaMuhurat = lazy(() => import('./pages/festival/AkshayaTritiyaMuhurat'));
 const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
@@ -623,6 +624,7 @@ function App() {
                 <Route path="/festival-tools/eid-date-converter" element={<EidDateConverter />} />
                 <Route path="/festival-tools/ramadan-timetable" element={<RamadanTimetable />} />
                 <Route path="/festival-tools/christmas-countdown" element={<ChristmasCountdown />} />
+                <Route path="/festival-tools/islamic-calendar-sync" element={<IslamicCalendarSync />} />
                 <Route path="/festival-tools/akshaya-tritiya-muhurat" element={<AkshayaTritiyaMuhurat />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
