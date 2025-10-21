@@ -12,27 +12,34 @@ $activeSubscribers = $subscribersData.subscribers | Where-Object { $_.active -eq
 
 Write-Host "Active subscribers: $($activeSubscribers.Count)" -ForegroundColor Green
 
-# Load content
-$contentData = Get-Content (Join-Path $PSScriptRoot "content-database-FULL.json") -Raw | ConvertFrom-Json
+# Load MASSIVE content database
+$contentData = Get-Content (Join-Path $PSScriptRoot "content-database-MASSIVE.json") -Raw | ConvertFrom-Json
 
 $allContent = @()
-@('latest_tools', 'finance_tools', 'tax_tools', 'festival_tools', 'loan_tools', 'insurance_tools', 'government_schemes', 'gst_tools', 'educational', 'astro_finance', 'trending_calculators', 'festival_dates', 'bank_tools', 'business_tools', 'crypto') | ForEach-Object {
+@('priority_festival_tools', 'top_calculators', 'finance_tools_advanced', 'tax_tools_essential', 'government_schemes_popular', 'festival_tools_complete', 'trending_calculators', 'insurance_tools', 'crypto_finance', 'religious_spiritual', 'education_finance', 'astro_finance') | ForEach-Object {
     if ($contentData.$_) {
         $contentData.$_ | ForEach-Object { $allContent += $_ }
     }
 }
 
-Write-Host "Content items loaded: $($allContent.Count)`n" -ForegroundColor Green
+Write-Host "Content items loaded: $($allContent.Count) (from sitemap & codebase)`n" -ForegroundColor Green
 
-# Select random content
-$content = Get-Random -InputObject $allContent
+# Prioritize latest/high priority content (70% chance)
+$highPriorityContent = $allContent | Where-Object { $_.priority -eq 'high' -or $_.category -like '*NEW*' }
+if ($highPriorityContent -and ((Get-Random -Minimum 1 -Maximum 100) -le 70)) {
+    $content = Get-Random -InputObject $highPriorityContent
+    Write-Host "Selected HIGH PRIORITY content" -ForegroundColor Magenta
+} else {
+    $content = Get-Random -InputObject $allContent
+}
 
 Write-Host "Selected: $($content.title)" -ForegroundColor Yellow
 Write-Host "Category: $($content.category)" -ForegroundColor Cyan
 Write-Host "URL: $($content.url)`n" -ForegroundColor Blue
 
-# Load template
-$template = Get-Content (Join-Path $PSScriptRoot "email-template-PROFESSIONAL.html") -Raw -Encoding UTF8
+# Load ULTIMATE professional template (inbox-optimized)
+Write-Host "Loading ultimate professional email template...`n" -ForegroundColor Yellow
+$template = Get-Content (Join-Path $PSScriptRoot "email-template-ULTIMATE.html") -Raw -Encoding UTF8
 
 # Send to each subscriber
 $success = 0
@@ -61,7 +68,15 @@ foreach ($sub in $activeSubscribers) {
         $msg.Subject = "$($content.title) | MoneyCal"
         $msg.Body = $html
         $msg.IsBodyHtml = $true
+        $msg.Priority = [System.Net.Mail.MailPriority]::Normal
+        
+        # Anti-spam headers (ensures inbox delivery)
         $msg.Headers.Add("List-Unsubscribe", "<https://moneycal.in/unsubscribe>")
+        $msg.Headers.Add("List-Unsubscribe-Post", "List-Unsubscribe=One-Click")
+        $msg.Headers.Add("X-Auto-Response-Suppress", "OOF, DR, RN, NRN, AutoReply")
+        $msg.Headers.Add("Importance", "Normal")
+        $msg.Headers.Add("X-Priority", "3")
+        $msg.Headers.Add("X-MSMail-Priority", "Normal")
         
         $smtp.Send($msg)
         
