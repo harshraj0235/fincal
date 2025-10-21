@@ -239,6 +239,9 @@ const FestivalTools = lazy(() => import('./pages/FestivalTools'));
 const FestivalLanding = lazy(() => import('./pages/FestivalLanding'));
 const FestivalToolPage = lazy(() => import('./pages/festival/FestivalToolPage'));
 const DiwaliDateFinder = lazy(() => import('./pages/festival/DiwaliDateFinder'));
+const DhanterasDateFinder = lazy(() => import('./pages/festival/DhanterasDateFinder'));
+const GovardhanPujaFinder = lazy(() => import('./pages/festival/GovardhanPujaFinder'));
+const BhaiDoojDateFinder = lazy(() => import('./pages/festival/BhaiDoojDateFinder'));
 const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
 const FestivalFinanceMoney = lazy(() => import('./pages/FestivalFinanceMoney'));
@@ -587,6 +590,9 @@ function App() {
                 <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
                 <Route path="/festival-tools" element={<FestivalTools />} />
                 <Route path="/festival-tools/diwali-date-finder" element={<DiwaliDateFinder />} />
+                <Route path="/festival-tools/dhanteras-date-finder" element={<DhanterasDateFinder />} />
+                <Route path="/festival-tools/govardhan-puja-finder" element={<GovardhanPujaFinder />} />
+                <Route path="/festival-tools/bhai-dooj-date-finder" element={<BhaiDoojDateFinder />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
                 <Route path="/festival-finance" element={<FestivalFinanceMoney />} />
