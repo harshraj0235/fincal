@@ -184,6 +184,83 @@ const HomeInvestopedia: React.FC = () => {
                 {t.hero.subtitle}
               </p>
 
+              {/* Credit Card Learn Button */}
+              <div className="max-w-4xl mx-auto mb-12">
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  whileHover={{ scale: 1.02 }}
+                  className="relative"
+                >
+                  <Link to="/learn" className="block">
+                    <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden group cursor-pointer">
+                      {/* Animated Background Circles */}
+                      <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -mr-24 -mt-24 group-hover:scale-150 transition-transform duration-500"></div>
+                      <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full -ml-20 -mb-20 group-hover:scale-150 transition-transform duration-500"></div>
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-start justify-between mb-6">
+                          <div className="flex items-center gap-4">
+                            <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl group-hover:rotate-12 transition-transform">
+                              <BookOpen className="w-10 h-10 text-white" />
+                            </div>
+                            <div className="text-left">
+                              <h3 className="text-3xl md:text-4xl font-bold text-white mb-1">
+                                {language === 'en' ? 'MoneyCal Learn Academy' : 'MoneyCal लर्न अकादमी'}
+                              </h3>
+                              <p className="text-white/90">
+                                {language === 'en' ? 'Free Finance Education Platform' : 'मुफ्त वित्त शिक्षा मंच'}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="hidden md:block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                            <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Lessons' : 'पाठ'}</div>
+                            <div className="text-white text-2xl font-bold">20</div>
+                          </div>
+                        </div>
+
+                        {/* Stats Grid */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
+                            <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Categories' : 'श्रेणियाँ'}</div>
+                            <div className="text-white text-xl font-bold">9</div>
+                          </div>
+                          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
+                            <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Calculators' : 'कैलकुलेटर'}</div>
+                            <div className="text-white text-xl font-bold">5</div>
+                          </div>
+                          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
+                            <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Words' : 'शब्द'}</div>
+                            <div className="text-white text-xl font-bold">50K+</div>
+                          </div>
+                          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
+                            <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Cost' : 'मूल्य'}</div>
+                            <div className="text-white text-xl font-bold">FREE</div>
+                          </div>
+                        </div>
+
+                        {/* Action Row */}
+                        <div className="flex items-center justify-between">
+                          <div className="text-white">
+                            <p className="text-lg font-semibold mb-1">
+                              🎓 {language === 'en' ? '20 Loan Lessons Complete!' : '20 लोन पाठ पूर्ण!'}
+                            </p>
+                            <p className="text-sm text-white/80">
+                              {language === 'en' ? 'Click to start your finance journey →' : 'अपनी वित्त यात्रा शुरू करने के लिए क्लिक करें →'}
+                            </p>
+                          </div>
+                          <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-6 py-3 rounded-full font-bold group-hover:scale-110 transition-transform flex items-center gap-2">
+                            <Sparkles className="w-5 h-5 animate-pulse" />
+                            <span className="hidden sm:inline">{language === 'en' ? 'Start Learning' : 'सीखना शुरू करें'}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
                   to="/tools"
