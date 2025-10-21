@@ -230,7 +230,8 @@ $logEntry = @{
 $logFile = Join-Path $PSScriptRoot "email-activity-log.json"
 $logs = @()
 if (Test-Path $logFile) {
-    $logs = Get-Content $logFile -Raw | ConvertFrom-Json
+    $existingLogs = Get-Content $logFile -Raw | ConvertFrom-Json
+    $logs = @($existingLogs)
 }
 $logs += $logEntry
 $logs | Select-Object -Last 100 | ConvertTo-Json -Depth 5 | Set-Content $logFile -Encoding UTF8
