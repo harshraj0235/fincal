@@ -330,7 +330,7 @@ const WhatIsEMI: React.FC = () => {
                 <div className="bg-white p-4 rounded-lg border-2 border-red-200">
                   <div className="text-3xl mb-2">❌</div>
                   <h4 className="font-bold text-red-800 mb-2">Danger Zone</h4>
-                  <p className="text-sm text-gray-700">EMI > 50% of income</p>
+                  <p className="text-sm text-gray-700">EMI &gt; 50% of income</p>
                   <p className="text-xs text-gray-600 mt-2">High stress, risk of default, no emergency fund</p>
                 </div>
               </div>
@@ -447,7 +447,7 @@ const WhatIsEMI: React.FC = () => {
                 </summary>
                 <p className="mt-3 text-gray-700">
                   Compare returns: If loan interest is 10% and you can earn 12%+ from investments (mutual funds, stocks), invest instead. 
-                  If loan is 14%+ (personal loan), prepay immediately as safe returns >14% are rare. For home loans (8-9%), it's a judgment call.
+                  If loan is 14%+ (personal loan), prepay immediately as safe returns &gt;14% are rare. For home loans (8-9%), it's a judgment call.
                 </p>
               </details>
 
