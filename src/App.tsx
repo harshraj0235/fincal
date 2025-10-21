@@ -238,6 +238,7 @@ const OutstandingReceivableHeatmap = lazy(() => import('./pages/invoicing-tools/
 const FestivalTools = lazy(() => import('./pages/FestivalTools'));
 const FestivalLanding = lazy(() => import('./pages/FestivalLanding'));
 const FestivalToolPage = lazy(() => import('./pages/festival/FestivalToolPage'));
+const DiwaliDateFinder = lazy(() => import('./pages/festival/DiwaliDateFinder'));
 const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
 const FestivalFinanceMoney = lazy(() => import('./pages/FestivalFinanceMoney'));
@@ -585,6 +586,7 @@ function App() {
                 <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
                 <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
                 <Route path="/festival-tools" element={<FestivalTools />} />
+                <Route path="/festival-tools/diwali-date-finder" element={<DiwaliDateFinder />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
                 <Route path="/festival-finance" element={<FestivalFinanceMoney />} />
