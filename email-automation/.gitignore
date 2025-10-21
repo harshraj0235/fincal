@@ -13,6 +13,8 @@ node_modules/
 
 # Email password (never commit!)
 email-password.txt
+config-DONOTCOMMIT.ps1
+send-email-python.py
 
 # Excel files (may contain private data)
 *.xlsx
@@ -21,4 +23,7 @@ subscribers.xlsx
 # Backup files
 *.backup
 *.bak
+
+# Demo generated files
+demo-email-preview.html
 

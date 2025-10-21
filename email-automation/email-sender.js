@@ -18,7 +18,7 @@ const EMAIL_CONFIG = {
   secure: false,
   auth: {
     user: 'moneycalx9@gmail.com',
-    pass: process.env.EMAIL_PASSWORD || 'YOUR_APP_PASSWORD_HERE' // Use Gmail App Password
+    pass: process.env.EMAIL_PASSWORD || 'YOUR_PASSWORD_HERE' // Set EMAIL_PASSWORD environment variable
   }
 };
 

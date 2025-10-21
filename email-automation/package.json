@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node email-sender.js start",
     "test": "node email-sender.js test",
+    "send-now": "node send-test-now.js",
     "demo": "node demo.js",
     "add-subscriber": "node email-sender.js add-subscriber",
     "admin": "start admin-panel.html"
