@@ -245,6 +245,7 @@ const BhaiDoojDateFinder = lazy(() => import('./pages/festival/BhaiDoojDateFinde
 const HoliDateCalculator = lazy(() => import('./pages/festival/HoliDateCalculator'));
 const KarwaChouthMoonrise = lazy(() => import('./pages/festival/KarwaChouthMoonrise'));
 const RakshaBandhanMuhurat = lazy(() => import('./pages/festival/RakshaBandhanMuhurat'));
+const NavratriDatesFinder = lazy(() => import('./pages/festival/NavratriDatesFinder'));
 const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
 const FestivalFinanceMoney = lazy(() => import('./pages/FestivalFinanceMoney'));
@@ -599,6 +600,7 @@ function App() {
                 <Route path="/festival-tools/holi-date-calculator" element={<HoliDateCalculator />} />
                 <Route path="/festival-tools/karwa-chauth-moonrise" element={<KarwaChouthMoonrise />} />
                 <Route path="/festival-tools/raksha-bandhan-muhurat" element={<RakshaBandhanMuhurat />} />
+                <Route path="/festival-tools/navratri-dates" element={<NavratriDatesFinder />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
                 <Route path="/festival-finance" element={<FestivalFinanceMoney />} />
