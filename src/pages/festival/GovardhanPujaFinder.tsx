@@ -9,9 +9,7 @@ import SEOHelmet from '../../components/SEOHelmet';
 
 // Govardhan Puja is 1 day after Diwali
 const GOVARDHAN_DATA = {
-  2020: { date: '2020-11-15', day: 'Sunday', diwaliDate: '2020-11-14', annak
-
-utMuhurat: '06:43 - 08:30', govardhanaPooja: '14:30 - 16:00', sunrise: '06:43', sunset: '17:29' },
+  2020: { date: '2020-11-15', day: 'Sunday', diwaliDate: '2020-11-14', annakutMuhurat: '06:43 - 08:30', govardhanaPooja: '14:30 - 16:00', sunrise: '06:43', sunset: '17:29' },
   2021: { date: '2021-11-05', day: 'Friday', diwaliDate: '2021-11-04', annakutMuhurat: '06:32 - 08:15', govardhanaPooja: '14:30 - 16:00', sunrise: '06:32', sunset: '17:38' },
   2022: { date: '2022-10-25', day: 'Tuesday', diwaliDate: '2022-10-24', annakutMuhurat: '06:25 - 08:05', govardhanaPooja: '14:30 - 16:00', sunrise: '06:25', sunset: '17:47' },
   2023: { date: '2023-11-13', day: 'Monday', diwaliDate: '2023-11-12', annakutMuhurat: '06:41 - 08:25', govardhanaPooja: '14:30 - 16:00', sunrise: '06:41', sunset: '17:32' },
