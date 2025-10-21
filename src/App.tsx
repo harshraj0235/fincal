@@ -411,6 +411,31 @@ function App() {
       <Routes>
         {/* Missed Call Banking Directory route - outside Layout */}
         <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
+        
+        {/* Learn Platform Routes - Standalone (No footer/sidebar) */}
+        <Route path="/learn" element={<LearnHome />} />
+        <Route path="/learn/loans" element={<LoansHub />} />
+        <Route path="/learn/loans/what-is-loan" element={<WhatIsLoan />} />
+        <Route path="/learn/loans/types-of-loans" element={<TypesOfLoans />} />
+        <Route path="/learn/loans/secured-vs-unsecured" element={<SecuredVsUnsecured />} />
+        <Route path="/learn/loans/what-is-emi" element={<WhatIsEMI />} />
+        <Route path="/learn/loans/simple-vs-compound-interest" element={<SimpleVsCompoundInterest />} />
+        <Route path="/learn/loans/how-banks-evaluate" element={<HowBanksEvaluate />} />
+        <Route path="/learn/loans/loan-tenure-explained" element={<LoanTenureExplained />} />
+        <Route path="/learn/loans/fixed-vs-floating-rates" element={<FixedVsFloatingRates />} />
+        <Route path="/learn/loans/understanding-collateral" element={<UnderstandingCollateral />} />
+        <Route path="/learn/loans/check-eligibility" element={<CheckLoanEligibility />} />
+        <Route path="/learn/loans/loan-agreement-guide" element={<LoanAgreementGuide />} />
+        <Route path="/learn/loans/co-applicant-benefits" element={<CoApplicantBenefits />} />
+        <Route path="/learn/loans/cibil-score-impact" element={<CIBILScoreImpact />} />
+        <Route path="/learn/loans/calculate-true-cost" element={<CalculateTrueCost />} />
+        <Route path="/learn/loans/loan-default-consequences" element={<LoanDefaultConsequences />} />
+        <Route path="/learn/loans/repayment-options" element={<LoanRepaymentOptions />} />
+        <Route path="/learn/loans/loan-application-process" element={<LoanApplicationProcess />} />
+        <Route path="/learn/loans/compare-loan-offers" element={<CompareLoanOffers />} />
+        <Route path="/learn/loans/documents-required" element={<DocumentsRequired />} />
+        <Route path="/learn/loans/common-loan-terms" element={<CommonLoanTerms />} />
+        
         {/* All other routes inside Layout */}
         <Route path="*" element={
           <Layout>
@@ -664,30 +689,6 @@ function App() {
                 <Route path="/religious-tools" element={<ReligiousTraditionalTools />} />
                 <Route path="/religious-tools/puja-vidhi-generator" element={<PujaVidhiGenerator />} />
                 <Route path="/fun-engagement" element={<FunEngagementTools />} />
-                
-                {/* Learn Platform Routes */}
-                <Route path="/learn" element={<LearnHome />} />
-                <Route path="/learn/loans" element={<LoansHub />} />
-                <Route path="/learn/loans/what-is-loan" element={<WhatIsLoan />} />
-                <Route path="/learn/loans/types-of-loans" element={<TypesOfLoans />} />
-                <Route path="/learn/loans/secured-vs-unsecured" element={<SecuredVsUnsecured />} />
-                <Route path="/learn/loans/what-is-emi" element={<WhatIsEMI />} />
-                <Route path="/learn/loans/simple-vs-compound-interest" element={<SimpleVsCompoundInterest />} />
-                <Route path="/learn/loans/how-banks-evaluate" element={<HowBanksEvaluate />} />
-                <Route path="/learn/loans/loan-tenure-explained" element={<LoanTenureExplained />} />
-                <Route path="/learn/loans/fixed-vs-floating-rates" element={<FixedVsFloatingRates />} />
-                <Route path="/learn/loans/understanding-collateral" element={<UnderstandingCollateral />} />
-                <Route path="/learn/loans/check-eligibility" element={<CheckLoanEligibility />} />
-                <Route path="/learn/loans/loan-agreement-guide" element={<LoanAgreementGuide />} />
-                <Route path="/learn/loans/co-applicant-benefits" element={<CoApplicantBenefits />} />
-                <Route path="/learn/loans/cibil-score-impact" element={<CIBILScoreImpact />} />
-                <Route path="/learn/loans/calculate-true-cost" element={<CalculateTrueCost />} />
-                <Route path="/learn/loans/loan-default-consequences" element={<LoanDefaultConsequences />} />
-                <Route path="/learn/loans/repayment-options" element={<LoanRepaymentOptions />} />
-                <Route path="/learn/loans/loan-application-process" element={<LoanApplicationProcess />} />
-                <Route path="/learn/loans/compare-loan-offers" element={<CompareLoanOffers />} />
-                <Route path="/learn/loans/documents-required" element={<DocumentsRequired />} />
-                <Route path="/learn/loans/common-loan-terms" element={<CommonLoanTerms />} />
                 <Route path="/design-tools" element={<DesignCreatorTools />} />
                 <Route path="/festival-info" element={<FestivalInformationHistory />} />
                 <Route path="/festival-corporate-tools" element={<CorporateProfessionalTools />} />
