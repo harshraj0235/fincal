@@ -253,6 +253,7 @@ const ChhatPujaArghya = lazy(() => import('./pages/festival/ChhatPujaArghya'));
 const MahaShivratriDuration = lazy(() => import('./pages/festival/MahaShivratriDuration'));
 const GuruPurnimaCalendar = lazy(() => import('./pages/festival/GuruPurnimaCalendar'));
 const BuddhaPurnimaConverter = lazy(() => import('./pages/festival/BuddhaPurnimaConverter'));
+const EidDateConverter = lazy(() => import('./pages/festival/EidDateConverter'));
 const AkshayaTritiyaMuhurat = lazy(() => import('./pages/festival/AkshayaTritiyaMuhurat'));
 const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
@@ -617,6 +618,7 @@ function App() {
                 <Route path="/festival-tools/maha-shivratri-duration" element={<MahaShivratriDuration />} />
                 <Route path="/festival-tools/guru-purnima-calendar" element={<GuruPurnimaCalendar />} />
                 <Route path="/festival-tools/buddha-purnima-converter" element={<BuddhaPurnimaConverter />} />
+                <Route path="/festival-tools/eid-date-converter" element={<EidDateConverter />} />
                 <Route path="/festival-tools/akshaya-tritiya-muhurat" element={<AkshayaTritiyaMuhurat />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
