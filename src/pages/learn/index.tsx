@@ -200,7 +200,7 @@ const LearnHome: React.FC = () => {
                         <div className="flex items-start justify-between mb-4">
                           <div className="text-4xl">{category.icon}</div>
                           <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-                            {category.lessons.length} lessons
+                            {category.id === 'loans' ? '20' : category.lessons.length} lessons
                           </span>
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">

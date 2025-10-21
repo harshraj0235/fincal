@@ -4,7 +4,7 @@ import { Home, Car, GraduationCap, Briefcase, CreditCard, Coins, Building, UserC
 import LearnLayout from '../../../components/learn/LearnLayout';
 import SEOHelmet from '../../../components/SEOHelmet';
 
-const TypesOfLoo: React.FC = () => {
+const TypesOfLoans: React.FC = () => {
   return (
     <>
       <SEOHelmet
