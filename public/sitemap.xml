@@ -116,6 +116,20 @@
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://moneycal.in/festival-tools/maha-shivratri-duration</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://moneycal.in/festival-tools/guru-purnima-calendar</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
   <!-- PRIORITY 0.9: FESTIVAL TOOL CATEGORY HUB PAGES - 10 Major Categories -->
   <url>
     <loc>https://moneycal.in/festival-dates/</loc>
