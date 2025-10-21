@@ -268,6 +268,29 @@ const FestivalFinanceMoney = lazy(() => import('./pages/FestivalFinanceMoney'));
 const ReligiousTraditionalTools = lazy(() => import('./pages/ReligiousTraditionalTools'));
 const PujaVidhiGenerator = lazy(() => import('./pages/religious/PujaVidhiGenerator'));
 const FunEngagementTools = lazy(() => import('./pages/FunEngagementTools'));
+
+// Learn Platform - Loan Basics (20 lessons)
+const LearnHome = lazy(() => import('./pages/learn/index'));
+const WhatIsLoan = lazy(() => import('./pages/learn/loans/WhatIsLoan'));
+const TypesOfLoans = lazy(() => import('./pages/learn/loans/TypesOfLoans'));
+const SecuredVsUnsecured = lazy(() => import('./pages/learn/loans/SecuredVsUnsecured'));
+const WhatIsEMI = lazy(() => import('./pages/learn/loans/WhatIsEMI'));
+const SimpleVsCompoundInterest = lazy(() => import('./pages/learn/loans/SimpleVsCompoundInterest'));
+const HowBanksEvaluate = lazy(() => import('./pages/learn/loans/HowBanksEvaluate'));
+const LoanTenureExplained = lazy(() => import('./pages/learn/loans/LoanTenureExplained'));
+const FixedVsFloatingRates = lazy(() => import('./pages/learn/loans/FixedVsFloatingRates'));
+const UnderstandingCollateral = lazy(() => import('./pages/learn/loans/UnderstandingCollateral'));
+const CheckLoanEligibility = lazy(() => import('./pages/learn/loans/CheckLoanEligibility'));
+const LoanAgreementGuide = lazy(() => import('./pages/learn/loans/LoanAgreementGuide'));
+const CoApplicantBenefits = lazy(() => import('./pages/learn/loans/CoApplicantBenefits'));
+const CIBILScoreImpact = lazy(() => import('./pages/learn/loans/CIBILScoreImpact'));
+const CalculateTrueCost = lazy(() => import('./pages/learn/loans/CalculateTrueCost'));
+const LoanDefaultConsequences = lazy(() => import('./pages/learn/loans/LoanDefaultConsequences'));
+const LoanRepaymentOptions = lazy(() => import('./pages/learn/loans/LoanRepaymentOptions'));
+const LoanApplicationProcess = lazy(() => import('./pages/learn/loans/LoanApplicationProcess'));
+const CompareLoanOffers = lazy(() => import('./pages/learn/loans/CompareLoanOffers'));
+const DocumentsRequired = lazy(() => import('./pages/learn/loans/DocumentsRequired'));
+const CommonLoanTerms = lazy(() => import('./pages/learn/loans/CommonLoanTerms'));
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
 const CorporateProfessionalTools = lazy(() => import('./pages/CorporateProfessionalTools'));
@@ -640,6 +663,29 @@ function App() {
                 <Route path="/religious-tools" element={<ReligiousTraditionalTools />} />
                 <Route path="/religious-tools/puja-vidhi-generator" element={<PujaVidhiGenerator />} />
                 <Route path="/fun-engagement" element={<FunEngagementTools />} />
+                
+                {/* Learn Platform Routes */}
+                <Route path="/learn" element={<LearnHome />} />
+                <Route path="/learn/loans/what-is-loan" element={<WhatIsLoan />} />
+                <Route path="/learn/loans/types-of-loans" element={<TypesOfLoans />} />
+                <Route path="/learn/loans/secured-vs-unsecured" element={<SecuredVsUnsecured />} />
+                <Route path="/learn/loans/what-is-emi" element={<WhatIsEMI />} />
+                <Route path="/learn/loans/simple-vs-compound-interest" element={<SimpleVsCompoundInterest />} />
+                <Route path="/learn/loans/how-banks-evaluate" element={<HowBanksEvaluate />} />
+                <Route path="/learn/loans/loan-tenure-explained" element={<LoanTenureExplained />} />
+                <Route path="/learn/loans/fixed-vs-floating-rates" element={<FixedVsFloatingRates />} />
+                <Route path="/learn/loans/understanding-collateral" element={<UnderstandingCollateral />} />
+                <Route path="/learn/loans/check-eligibility" element={<CheckLoanEligibility />} />
+                <Route path="/learn/loans/loan-agreement-guide" element={<LoanAgreementGuide />} />
+                <Route path="/learn/loans/co-applicant-benefits" element={<CoApplicantBenefits />} />
+                <Route path="/learn/loans/cibil-score-impact" element={<CIBILScoreImpact />} />
+                <Route path="/learn/loans/calculate-true-cost" element={<CalculateTrueCost />} />
+                <Route path="/learn/loans/loan-default-consequences" element={<LoanDefaultConsequences />} />
+                <Route path="/learn/loans/repayment-options" element={<LoanRepaymentOptions />} />
+                <Route path="/learn/loans/loan-application-process" element={<LoanApplicationProcess />} />
+                <Route path="/learn/loans/compare-loan-offers" element={<CompareLoanOffers />} />
+                <Route path="/learn/loans/documents-required" element={<DocumentsRequired />} />
+                <Route path="/learn/loans/common-loan-terms" element={<CommonLoanTerms />} />
                 <Route path="/design-tools" element={<DesignCreatorTools />} />
                 <Route path="/festival-info" element={<FestivalInformationHistory />} />
                 <Route path="/festival-corporate-tools" element={<CorporateProfessionalTools />} />
