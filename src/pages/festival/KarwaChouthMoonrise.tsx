@@ -90,7 +90,7 @@ const INDIAN_CITIES = [
   { name: 'Haridwar', state: 'Uttarakhand', lat: 29.9457, lon: 78.1642, moonriseOffset: +2 },
   { name: 'Ujjain', state: 'Madhya Pradesh', lat: 23.1765, lon: 75.7885, moonriseOffset: +3 },
   { name: 'Ajmer', state: 'Rajasthan', lat: 26.4499, lon: 74.6399, moonriseOffset: -6 }
-};
+];
 
 const KarwaChouthMoonrise: React.FC = () => {
   const currentYear = new Date().getFullYear();
