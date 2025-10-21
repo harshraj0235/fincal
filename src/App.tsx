@@ -271,6 +271,7 @@ const FunEngagementTools = lazy(() => import('./pages/FunEngagementTools'));
 
 // Learn Platform - Loan Basics (20 lessons)
 const LearnHome = lazy(() => import('./pages/learn/index'));
+const LoansHub = lazy(() => import('./pages/learn/loans/index'));
 const WhatIsLoan = lazy(() => import('./pages/learn/loans/WhatIsLoan'));
 const TypesOfLoans = lazy(() => import('./pages/learn/loans/TypesOfLoans'));
 const SecuredVsUnsecured = lazy(() => import('./pages/learn/loans/SecuredVsUnsecured'));
@@ -666,6 +667,7 @@ function App() {
                 
                 {/* Learn Platform Routes */}
                 <Route path="/learn" element={<LearnHome />} />
+                <Route path="/learn/loans" element={<LoansHub />} />
                 <Route path="/learn/loans/what-is-loan" element={<WhatIsLoan />} />
                 <Route path="/learn/loans/types-of-loans" element={<TypesOfLoans />} />
                 <Route path="/learn/loans/secured-vs-unsecured" element={<SecuredVsUnsecured />} />

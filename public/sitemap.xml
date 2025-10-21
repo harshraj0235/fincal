@@ -40,6 +40,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- PRIORITY 0.95: LOANS & CREDIT HUB PAGE -->
+  <url>
+    <loc>https://moneycal.in/learn/loans</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- PRIORITY 0.9: LOAN BASICS LESSONS (20 Complete Lessons) -->
   <url>
     <loc>https://moneycal.in/learn/loans/what-is-loan</loc>

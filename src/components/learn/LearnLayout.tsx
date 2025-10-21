@@ -110,22 +110,29 @@ const LearnLayout: React.FC<LearnLayoutProps> = ({
                     </span>
                   </Link>
 
-                  {/* Show lessons if current category */}
-                  {category === cat.id && cat.lessons.length > 0 && (
+                  {/* Show lessons if current category and has lessons */}
+                  {category === cat.id && cat.id === 'loans' && (
                     <div className="ml-4 mt-2 space-y-1">
-                      {cat.lessons.map((lesson) => (
-                        <Link
-                          key={lesson.id}
-                          to={`/learn/${cat.id}/${lesson.slug}`}
-                          className={`block px-3 py-2 text-sm rounded ${
-                            currentLesson === lesson.slug
-                              ? 'bg-green-100 text-green-700 font-semibold'
-                              : 'text-gray-600 hover:bg-gray-50'
-                          }`}
-                        >
-                          {lesson.order}. {lesson.title.split(':')[0].substring(0, 40)}...
-                        </Link>
-                      ))}
+                      <Link to="/learn/loans/what-is-loan" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'what-is-loan' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>1. What Is a Loan?</Link>
+                      <Link to="/learn/loans/types-of-loans" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'types-of-loans' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>2. Types of Loans</Link>
+                      <Link to="/learn/loans/secured-vs-unsecured" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'secured-vs-unsecured' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>3. Secured vs Unsecured</Link>
+                      <Link to="/learn/loans/what-is-emi" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'what-is-emi' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>4. What Is EMI?</Link>
+                      <Link to="/learn/loans/simple-vs-compound-interest" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'simple-vs-compound-interest' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>5. Simple vs Compound</Link>
+                      <Link to="/learn/loans/how-banks-evaluate" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'how-banks-evaluate' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>6. How Banks Evaluate</Link>
+                      <Link to="/learn/loans/loan-tenure-explained" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'loan-tenure-explained' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>7. Loan Tenure</Link>
+                      <Link to="/learn/loans/fixed-vs-floating-rates" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'fixed-vs-floating-rates' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>8. Fixed vs Floating</Link>
+                      <Link to="/learn/loans/understanding-collateral" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'understanding-collateral' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>9. Understanding Collateral</Link>
+                      <Link to="/learn/loans/check-eligibility" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'check-eligibility' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>10. Check Eligibility</Link>
+                      <Link to="/learn/loans/loan-agreement-guide" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'loan-agreement-guide' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>11. Loan Agreement</Link>
+                      <Link to="/learn/loans/co-applicant-benefits" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'co-applicant-benefits' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>12. Co-Applicant Benefits</Link>
+                      <Link to="/learn/loans/cibil-score-impact" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'cibil-score-impact' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>13. CIBIL Score Impact</Link>
+                      <Link to="/learn/loans/calculate-true-cost" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'calculate-true-cost' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>14. Calculate True Cost</Link>
+                      <Link to="/learn/loans/loan-default-consequences" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'loan-default-consequences' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>15. Loan Default</Link>
+                      <Link to="/learn/loans/repayment-options" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'repayment-options' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>16. Repayment Options</Link>
+                      <Link to="/learn/loans/loan-application-process" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'loan-application-process' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>17. Application Process</Link>
+                      <Link to="/learn/loans/compare-loan-offers" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'compare-loan-offers' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>18. Compare Loan Offers</Link>
+                      <Link to="/learn/loans/documents-required" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'documents-required' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>19. Documents Required</Link>
+                      <Link to="/learn/loans/common-loan-terms" className={`block px-3 py-2 text-sm rounded ${currentLesson === 'common-loan-terms' ? 'bg-green-100 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50'}`}>20. Common Loan Terms</Link>
                     </div>
                   )}
                 </div>
