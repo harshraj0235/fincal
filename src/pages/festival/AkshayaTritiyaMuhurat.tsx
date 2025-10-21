@@ -8,6 +8,14 @@ import {
   Coins, DollarSign, Sparkles, Target, BookOpen, AlertCircle
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { 
+  generateAkshayaTritiyaFAQSchema, 
+  generateAkshayaTritiyaEventSchema,
+  generateHowToSchema,
+  generateBreadcrumbSchema,
+  HISTORICAL_GOLD_PRICES,
+  HINDI_TRANSLATIONS
+} from '../../data/akshayaTritiyaSchema';
 
 // Akshaya Tritiya falls on Tritiya (3rd day) of Shukla Paksha in Vaishakha month (April-May)
 // The entire day is considered auspicious - no muhurat needed for gold/investment
@@ -173,6 +181,30 @@ const AkshayaTritiyaMuhurat: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  // Generate structured data schemas
+  const faqSchema = useMemo(() => akshayaData ? generateAkshayaTritiyaFAQSchema({
+    year: selectedYear,
+    date: new Date(akshayaData.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }),
+    city: selectedCity.name,
+    abhijitStart: akshayaData.abhijitStart,
+    abhijitEnd: akshayaData.abhijitEnd,
+    rahuStart: akshayaData.rahuStart,
+    rahuEnd: akshayaData.rahuEnd
+  }) : null, [akshayaData, selectedYear, selectedCity]);
+
+  const eventSchema = useMemo(() => akshayaData ? generateAkshayaTritiyaEventSchema({
+    year: selectedYear,
+    date: akshayaData.date,
+    city: selectedCity.name,
+    abhijitStart: akshayaData.abhijitStart,
+    abhijitEnd: akshayaData.abhijitEnd,
+    rahuStart: akshayaData.rahuStart,
+    rahuEnd: akshayaData.rahuEnd
+  }) : null, [akshayaData, selectedYear, selectedCity]);
+
+  const howToSchema = useMemo(() => generateHowToSchema(), []);
+  const breadcrumbSchema = useMemo(() => generateBreadcrumbSchema(selectedCity.name), [selectedCity]);
+
   return (
     <>
       <SEOHelmet
@@ -182,6 +214,24 @@ const AkshayaTritiyaMuhurat: React.FC = () => {
         url={`/festival-tools/akshaya-tritiya-muhurat?year=${selectedYear}&city=${selectedCity.name}`}
         type="website"
       />
+      
+      {/* JSON-LD Structured Data for Rich Results */}
+      {faqSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      )}
+      {eventSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(eventSchema)}
+        </script>
+      )}
+      <script type="application/ld+json">
+        {JSON.stringify(howToSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
 
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
         {/* Breadcrumb */}
@@ -745,6 +795,227 @@ const AkshayaTritiyaMuhurat: React.FC = () => {
                       Google Pay Gold
                     </a>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Historical Gold Price Trends */}
+            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-2 border-amber-200 mb-8">
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <TrendingUp className="w-6 h-6 mr-2 text-amber-600" />
+                📈 Historical Gold Prices on Akshaya Tritiya (₹ per 10g)
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-amber-100">
+                      <th className="p-3 font-bold border-b-2 border-amber-300">Year</th>
+                      <th className="p-3 font-bold border-b-2 border-amber-300">24K Gold</th>
+                      <th className="p-3 font-bold border-b-2 border-amber-300">22K Gold</th>
+                      <th className="p-3 font-bold border-b-2 border-amber-300">YoY Growth</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {HISTORICAL_GOLD_PRICES.map((data) => (
+                      <tr key={data.year} className={`${data.year === selectedYear ? 'bg-amber-200 font-bold' : 'bg-white'} hover:bg-amber-50 transition-colors`}>
+                        <td className="p-3 border-b border-amber-200">{data.year}</td>
+                        <td className="p-3 border-b border-amber-200">₹{data.price24k.toLocaleString()}</td>
+                        <td className="p-3 border-b border-amber-200">₹{data.price22k.toLocaleString()}</td>
+                        <td className="p-3 border-b border-amber-200">
+                          <span className={`inline-flex items-center ${data.growth > 10 ? 'text-green-600' : 'text-blue-600'}`}>
+                            <TrendingUp className="w-4 h-4 mr-1" />
+                            +{data.growth}%
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-sm text-gray-600 mt-4 italic">
+                * Prices are approximate and vary by city and jeweler. Gold purchased on Akshaya Tritiya historically shows strong long-term appreciation.
+              </p>
+            </div>
+
+            {/* Comparison: Akshaya Tritiya vs Other Auspicious Days */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg mb-8 border-2 border-purple-200">
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <Star className="w-6 h-6 mr-2 text-purple-600" />
+                ⚖️ Akshaya Tritiya vs Other Auspicious Days for Gold Buying
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-purple-100">
+                      <th className="p-3 font-bold border-b-2 border-purple-300">Feature</th>
+                      <th className="p-3 font-bold border-b-2 border-purple-300">Akshaya Tritiya</th>
+                      <th className="p-3 font-bold border-b-2 border-purple-300">Dhanteras</th>
+                      <th className="p-3 font-bold border-b-2 border-purple-300">Regular Day</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white hover:bg-purple-50">
+                      <td className="p-3 border-b border-purple-200 font-semibold">Muhurat Required?</td>
+                      <td className="p-3 border-b border-purple-200">
+                        <span className="text-green-600 font-bold">❌ No - Entire day auspicious!</span>
+                      </td>
+                      <td className="p-3 border-b border-purple-200">
+                        <span className="text-orange-600">✅ Yes - Specific timings needed</span>
+                      </td>
+                      <td className="p-3 border-b border-purple-200">
+                        <span className="text-red-600">✅ Yes - Must consult pandit</span>
+                      </td>
+                    </tr>
+                    <tr className="bg-purple-50 hover:bg-purple-100">
+                      <td className="p-3 border-b border-purple-200 font-semibold">Spiritual Significance</td>
+                      <td className="p-3 border-b border-purple-200">⭐⭐⭐⭐⭐ "Never Diminishing"</td>
+                      <td className="p-3 border-b border-purple-200">⭐⭐⭐⭐ Wealth Goddess worship</td>
+                      <td className="p-3 border-b border-purple-200">⭐⭐ Depends on nakshatra</td>
+                    </tr>
+                    <tr className="bg-white hover:bg-purple-50">
+                      <td className="p-3 border-b border-purple-200 font-semibold">Gold Prices</td>
+                      <td className="p-3 border-b border-purple-200">📈 Often elevated due to demand</td>
+                      <td className="p-3 border-b border-purple-200">📈 Peak festival season</td>
+                      <td className="p-3 border-b border-purple-200">➡️ Market rates</td>
+                    </tr>
+                    <tr className="bg-purple-50 hover:bg-purple-100">
+                      <td className="p-3 border-b border-purple-200 font-semibold">Activities Permitted</td>
+                      <td className="p-3 border-b border-purple-200">✅ Gold, investments, business, property, charity - ALL</td>
+                      <td className="p-3 border-b border-purple-200">✅ Gold, silver, utensils, vehicles</td>
+                      <td className="p-3 border-b border-purple-200">✅ Depends on personal horoscope</td>
+                    </tr>
+                    <tr className="bg-white hover:bg-purple-50">
+                      <td className="p-3 border-b border-purple-200 font-semibold">Crowd at Jewelers</td>
+                      <td className="p-3 border-b border-purple-200">👥👥👥👥 Very High</td>
+                      <td className="p-3 border-b border-purple-200">👥👥👥👥👥 Extremely High</td>
+                      <td className="p-3 border-b border-purple-200">👥 Normal</td>
+                    </tr>
+                    <tr className="bg-purple-50 hover:bg-purple-100">
+                      <td className="p-3 border-b border-purple-200 font-semibold">Best For</td>
+                      <td className="p-3 border-b border-purple-200 font-bold text-green-700">
+                        🏆 Investments, starting new ventures, eternal wealth
+                      </td>
+                      <td className="p-3 border-b border-purple-200">
+                        Goddess Lakshmi blessings, traditional gold
+                      </td>
+                      <td className="p-3 border-b border-purple-200">
+                        Planned purchases, better negotiation
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Video Tutorial Section */}
+            <div className="bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-2xl border-2 border-red-200 mb-8">
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <Star className="w-6 h-6 mr-2 text-red-600" />
+                📺 Akshaya Tritiya {selectedYear} - Complete Video Guide
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white p-4 rounded-xl shadow-md">
+                  <div className="aspect-video bg-gradient-to-br from-yellow-100 to-orange-100 rounded-lg mb-3 flex items-center justify-center">
+                    <div className="text-center">
+                      <ExternalLink className="w-12 h-12 text-yellow-600 mx-auto mb-2" />
+                      <p className="text-sm font-semibold text-gray-700">Gold Buying Guide Video</p>
+                    </div>
+                  </div>
+                  <h4 className="font-bold mb-2">How to Buy Gold on Akshaya Tritiya</h4>
+                  <p className="text-sm text-gray-600 mb-3">Complete guide with tips on purity checking, making charges, and certification</p>
+                  <a href="https://www.youtube.com/results?search_query=akshaya+tritiya+gold+buying+guide" target="_blank" rel="noopener noreferrer" className="text-yellow-600 hover:underline flex items-center text-sm font-semibold">
+                    <ExternalLink className="w-4 h-4 mr-1" />
+                    Watch on YouTube
+                  </a>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-md">
+                  <div className="aspect-video bg-gradient-to-br from-green-100 to-emerald-100 rounded-lg mb-3 flex items-center justify-center">
+                    <div className="text-center">
+                      <ExternalLink className="w-12 h-12 text-green-600 mx-auto mb-2" />
+                      <p className="text-sm font-semibold text-gray-700">Puja Vidhi Tutorial</p>
+                    </div>
+                  </div>
+                  <h4 className="font-bold mb-2">Akshaya Tritiya Puja at Home</h4>
+                  <p className="text-sm text-gray-600 mb-3">Step-by-step Lakshmi puja vidhi, mantras, and offerings for prosperity</p>
+                  <a href="https://www.youtube.com/results?search_query=akshaya+tritiya+puja+vidhi" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline flex items-center text-sm font-semibold">
+                    <ExternalLink className="w-4 h-4 mr-1" />
+                    Watch on YouTube
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Hindi Translation Section */}
+            <div className="bg-gradient-to-r from-orange-100 to-amber-100 p-8 rounded-2xl border-2 border-orange-300 mb-8">
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <BookOpen className="w-6 h-6 mr-2 text-orange-600" />
+                🇮🇳 हिंदी में अक्षय तृतीया {selectedYear} (Hindi)
+              </h3>
+              <div className="bg-white p-6 rounded-xl mb-4">
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {HINDI_TRANSLATIONS.akshayaTritiya} {selectedYear} - {selectedCity.name}
+                </h4>
+                <div className="space-y-3 text-gray-700">
+                  <p><strong>📅 तिथि:</strong> {new Date(akshayaData?.date || '').toLocaleDateString('hi-IN', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
+                  <p><strong>🌅 सूर्योदय:</strong> {akshayaData?.sunrise} ({HINDI_TRANSLATIONS.sunrise})</p>
+                  <p><strong>🌇 सूर्यास्त:</strong> {akshayaData?.sunset} ({HINDI_TRANSLATIONS.sunset})</p>
+                  <p><strong>⭐ अभिजीत मुहूर्त:</strong> {akshayaData?.abhijitStart} - {akshayaData?.abhijitEnd}</p>
+                  <p><strong>⚠️ राहु काल:</strong> {akshayaData?.rahuStart} - {akshayaData?.rahuEnd}</p>
+                </div>
+              </div>
+              <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-orange-500">
+                <p className="text-gray-700 leading-relaxed">
+                  <strong>अक्षय तृतीया</strong> को सोना खरीदने, नया व्यवसाय शुरू करने, संपत्ति खरीदने और निवेश करने के लिए सबसे शुभ दिन माना जाता है। 
+                  इस दिन खरीदा गया सोना और किया गया निवेश कभी नहीं घटता - यह हमेशा बढ़ता रहता है। 
+                  पूरा दिन शुभ है, कोई विशेष मुहूर्त देखने की जरूरत नहीं।
+                </p>
+              </div>
+            </div>
+
+            {/* Visual Infographic Section */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg mb-8 border-2 border-blue-200">
+              <h3 className="text-2xl font-bold mb-6 flex items-center">
+                <Info className="w-6 h-6 mr-2 text-blue-600" />
+                📊 Akshaya Tritiya {selectedYear} - Quick Visual Guide
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-xl border-2 border-yellow-200">
+                  <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Coins className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="font-bold text-center text-lg mb-3">What to Buy?</h4>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li>✅ Gold coins (1g, 5g, 10g)</li>
+                    <li>✅ Gold jewelry</li>
+                    <li>✅ Digital gold</li>
+                    <li>✅ Silver items</li>
+                    <li>✅ Gold ETFs</li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-200">
+                  <div className="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="font-bold text-center text-lg mb-3">Best Timing</h4>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li>⏰ Abhijit: {akshayaData?.abhijitStart}-{akshayaData?.abhijitEnd}</li>
+                    <li>🌅 After Sunrise: {akshayaData?.sunrise}</li>
+                    <li>🕐 Morning 9AM-12PM</li>
+                    <li>❌ Avoid: {akshayaData?.rahuStart}-{akshayaData?.rahuEnd}</li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200">
+                  <div className="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Heart className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="font-bold text-center text-lg mb-3">Rituals</h4>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li>🛁 Early morning bath</li>
+                    <li>🙏 Lakshmi-Ganesha puja</li>
+                    <li>🪔 Light diya</li>
+                    <li>🎵 Chant mantras</li>
+                    <li>💝 Donate to needy</li>
+                  </ul>
                 </div>
               </div>
             </div>
