@@ -22,21 +22,30 @@ Write-Host "`n============================================================" -For
 Write-Host "  MONEYCAL EMAIL AUTOMATION SYSTEM" -ForegroundColor Cyan
 Write-Host "============================================================`n" -ForegroundColor Cyan
 
-# Load content database
-Write-Host "Loading content database..." -ForegroundColor Yellow
-$contentPath = Join-Path $PSScriptRoot "content-database.json"
+# Load content database (FULL version with all tools)
+Write-Host "Loading comprehensive content database..." -ForegroundColor Yellow
+$contentPath = Join-Path $PSScriptRoot "content-database-FULL.json"
 $contentData = Get-Content -Path $contentPath -Raw | ConvertFrom-Json
 
-# Collect all content
+# Collect all content from all categories
 $allContent = @()
-foreach ($tool in $contentData.tools) {
-    $allContent += [PSCustomObject]@{
-        title = $tool.title
-        url = $tool.url
-        description = $tool.description
-        category = $tool.category
+$categories = @('latest_tools', 'finance_tools', 'tax_tools', 'festival_tools', 'loan_tools', 'insurance_tools', 'government_schemes', 'gst_tools', 'educational', 'astro_finance', 'trending_calculators', 'festival_dates', 'bank_tools', 'business_tools', 'crypto')
+
+foreach ($category in $categories) {
+    if ($contentData.$category) {
+        foreach ($item in $contentData.$category) {
+            $allContent += [PSCustomObject]@{
+                title = $item.title
+                url = $item.url
+                description = $item.description
+                category = $item.category
+                priority = if ($item.priority) { $item.priority } else { 'medium' }
+            }
+        }
     }
 }
+
+Write-Host "Loaded $($allContent.Count) content items from MoneyCal" -ForegroundColor Green
 
 # Select random content
 $randomContent = Get-Random -InputObject $allContent
@@ -46,68 +55,20 @@ Write-Host "  Title: $($randomContent.title)" -ForegroundColor White
 Write-Host "  Category: $($randomContent.category)" -ForegroundColor Yellow
 Write-Host "  URL: $($randomContent.url)`n" -ForegroundColor Blue
 
-# Create email HTML
-$emailHTML = @"
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 0 auto; background: white; }
-        .header { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); padding: 30px; text-align: center; }
-        .logo { font-size: 32px; font-weight: bold; color: white; margin-bottom: 10px; }
-        .tagline { color: white; font-size: 14px; }
-        .content { padding: 30px 20px; }
-        .greeting { font-size: 18px; color: #333; margin-bottom: 20px; }
-        .featured { background: linear-gradient(135deg, #FFF5E6 0%, #FFE8CC 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #FF6B35; }
-        .badge { display: inline-block; background: #FF6B35; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 15px; }
-        .title { font-size: 24px; font-weight: bold; color: #222; margin-bottom: 12px; }
-        .description { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 20px; }
-        .button { display: inline-block; background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); color: white; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; }
-        .footer { background: #2C3E50; color: white; padding: 25px; text-align: center; font-size: 13px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">💰 MoneyCal</div>
-            <div class="tagline">Your Trusted Financial & Festival Companion</div>
-        </div>
-        <div class="content">
-            <div class="greeting">🙏 Namaste $ToName,</div>
-            <p style="font-size: 15px; color: #555; margin-bottom: 25px;">
-                We thought you'd love this! Here's something special we handpicked for you from MoneyCal:
-            </p>
-            <div class="featured">
-                <span class="badge">$($randomContent.category)</span>
-                <h2 class="title">$($randomContent.title)</h2>
-                <p class="description">$($randomContent.description)</p>
-                <a href="$($randomContent.url)" class="button">📖 Read Full Article →</a>
-            </div>
-            <div style="text-align: center; margin: 20px 0;">
-                <div style="display: inline-block; margin: 0 15px; text-align: center;">
-                    <div style="font-size: 28px; font-weight: bold; color: #FF6B35;">500+</div>
-                    <div style="font-size: 12px; color: #777;">Calculators</div>
-                </div>
-                <div style="display: inline-block; margin: 0 15px; text-align: center;">
-                    <div style="font-size: 28px; font-weight: bold; color: #FF6B35;">50+</div>
-                    <div style="font-size: 12px; color: #777;">Festival Tools</div>
-                </div>
-                <div style="display: inline-block; margin: 0 15px; text-align: center;">
-                    <div style="font-size: 28px; font-weight: bold; color: #FF6B35;">100%</div>
-                    <div style="font-size: 12px; color: #777;">Free</div>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <strong>MoneyCal.in</strong> - Making Finance Simple & Spiritual<br>
-            <a href="https://moneycal.in/unsubscribe" style="color: #FF6B35; margin-top: 10px; display: inline-block;">Unsubscribe</a>
-        </div>
-    </div>
-</body>
-</html>
-"@
+# Load professional email template
+Write-Host "Loading professional email template..." -ForegroundColor Yellow
+$templatePath = Join-Path $PSScriptRoot "email-template-PROFESSIONAL.html"
+$emailTemplate = Get-Content -Path $templatePath -Raw -Encoding UTF8
+
+# Replace placeholders in template
+$emailHTML = $emailTemplate
+$emailHTML = $emailHTML.Replace('{{SUBSCRIBER_NAME}}', $ToName)
+$emailHTML = $emailHTML.Replace('{{SUBJECT}}', $randomContent.title)
+$emailHTML = $emailHTML.Replace('{{CATEGORY}}', $randomContent.category)
+$emailHTML = $emailHTML.Replace('{{TITLE}}', $randomContent.title)
+$emailHTML = $emailHTML.Replace('{{DESCRIPTION}}', $randomContent.description)
+$emailHTML = $emailHTML.Replace('{{URL}}', $randomContent.url)
+$emailHTML = $emailHTML.Replace('{{UNSUBSCRIBE_URL}}', 'https://moneycal.in/unsubscribe')
 
 # Send email
 try {

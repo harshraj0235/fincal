@@ -11,6 +11,42 @@
         "schemes": true,
         "festivals": true
       }
+    },
+    {
+      "email": "anandkumarkr6@gmail.com",
+      "name": "Anand Kumar",
+      "subscribed_date": "2025-10-21",
+      "active": true,
+      "preferences": {
+        "blogs": true,
+        "tools": true,
+        "schemes": true,
+        "festivals": true
+      }
+    },
+    {
+      "email": "prit3467gggh@gmail.com",
+      "name": "Prit",
+      "subscribed_date": "2025-10-21",
+      "active": true,
+      "preferences": {
+        "blogs": true,
+        "tools": true,
+        "schemes": true,
+        "festivals": true
+      }
+    },
+    {
+      "email": "harshitpatelz0235@gmail.com",
+      "name": "Harshit Patel",
+      "subscribed_date": "2025-10-21",
+      "active": true,
+      "preferences": {
+        "blogs": true,
+        "tools": true,
+        "schemes": true,
+        "festivals": true
+      }
     }
   ],
   "settings": {
