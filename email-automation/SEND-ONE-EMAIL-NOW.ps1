@@ -24,14 +24,28 @@ Write-Host ""
 
 # Load content database
 $contentData = Get-Content "content-database-MASSIVE.json" -Raw | ConvertFrom-Json
-$allContent = $contentData.content
+$allContent = $contentData.priority_festival_tools
 
 # Pick one random content
 $randomContent = $allContent | Get-Random
 
+# Map category to emoji
+$categoryEmoji = switch -Wildcard ($randomContent.category) {
+    "*Gold*" { "📿" }
+    "*Festival*" { "🎊" }
+    "*Religious*" { "🙏" }
+    "*Loan*" { "💰" }
+    "*Calculator*" { "🧮" }
+    "*Government*" { "🏛️" }
+    "*Tax*" { "📊" }
+    "*Investment*" { "📈" }
+    default { "💡" }
+}
+
 Write-Host "[*] Selected Content:" -ForegroundColor Yellow
 Write-Host "   Title: $($randomContent.title)" -ForegroundColor White
 Write-Host "   URL: $($randomContent.url)" -ForegroundColor White
+Write-Host "   Category: $($randomContent.category)" -ForegroundColor Cyan
 Write-Host ""
 
 # Email HTML template
@@ -149,7 +163,7 @@ $emailBodyTemplate = @"
 $emailBody = $emailBodyTemplate `
     -replace "{{TITLE}}", $randomContent.title `
     -replace "{{DESCRIPTION}}", $randomContent.description `
-    -replace "{{CATEGORY_EMOJI}}", $randomContent.emoji `
+    -replace "{{CATEGORY_EMOJI}}", $categoryEmoji `
     -replace "{{URL}}", $randomContent.url
 
 # Send to all subscribers
