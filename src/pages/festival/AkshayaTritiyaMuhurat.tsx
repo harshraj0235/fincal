@@ -8,6 +8,7 @@ import {
   Coins, DollarSign, Sparkles, Target, BookOpen, AlertCircle
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import GoldPriceWidget from '../../components/GoldPriceWidget';
 import { 
   generateAkshayaTritiyaFAQSchema, 
   generateAkshayaTritiyaEventSchema,
@@ -595,12 +596,21 @@ const AkshayaTritiyaMuhurat: React.FC = () => {
                       </div>
 
                       <button
-                        onClick={() => window.print()}
+                        onClick={() => {
+                          // Open print dialog which allows saving as PDF
+                          window.print();
+                        }}
                         className="flex items-center space-x-2 px-6 py-3 bg-white border-2 border-orange-600 text-orange-600 rounded-xl font-bold hover:bg-orange-50 transition-all"
+                        title="Print or Save as PDF"
                       >
                         <Download className="w-5 h-5" />
-                        <span>Print Muhurat</span>
+                        <span>Download PDF Guide</span>
                       </button>
+                    </div>
+
+                    {/* Live Gold Price Widget */}
+                    <div className="mb-8">
+                      <GoldPriceWidget city={selectedCity.name} />
                     </div>
 
                     {/* Gold Buying Tips */}
