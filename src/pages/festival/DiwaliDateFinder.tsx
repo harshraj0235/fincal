@@ -485,7 +485,7 @@ const DiwaliDateFinder: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Festival Dates {selectedYear}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Link to={`/festival-dates`} className="group bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-2xl border-2 border-yellow-200 hover:shadow-xl transition-all">
+              <Link to="/festival-tools/dhanteras-date-finder" className="group bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-2xl border-2 border-yellow-200 hover:shadow-xl transition-all">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center">
                     <Sun className="w-6 h-6 text-white" />
@@ -499,7 +499,7 @@ const DiwaliDateFinder: React.FC = () => {
                 </div>
               </Link>
 
-              <Link to={`/festival-dates`} className="group bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-2xl border-2 border-red-200 hover:shadow-xl transition-all">
+              <Link to="/festival-tools/govardhan-puja-finder" className="group bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-2xl border-2 border-red-200 hover:shadow-xl transition-all">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
                     <Sparkles className="w-6 h-6 text-white" />
@@ -513,7 +513,7 @@ const DiwaliDateFinder: React.FC = () => {
                 </div>
               </Link>
 
-              <Link to={`/festival-dates`} className="group bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border-2 border-purple-200 hover:shadow-xl transition-all">
+              <Link to="/festival-tools/bhai-dooj-date-finder" className="group bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border-2 border-purple-200 hover:shadow-xl transition-all">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
                     <Heart className="w-6 h-6 text-white" />
