@@ -120,11 +120,27 @@ const HomeInvestopedia: React.FC = () => {
                 <TrendingUp className="w-4 h-4 mr-1" />
                 NIFTY: <span className="font-bold ml-1 text-green-300">22,456 ▲ 1.2%</span>
               </span>
-              <span className="flex items-center">
+              <span className="hidden md:flex items-center">
                 SENSEX: <span className="font-bold ml-1 text-green-300">74,123 ▲ 0.8%</span>
               </span>
+              <Link
+                to="/learn"
+                className="hidden md:flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-white/30 transition-all group"
+              >
+                <BookOpen className="w-4 h-4 text-yellow-300" />
+                <span className="font-bold text-yellow-300">15 Lessons Live!</span>
+                <Sparkles className="w-3 h-3 text-yellow-300 animate-pulse" />
+              </Link>
             </div>
             <div className="flex items-center space-x-4">
+              <Link
+                to="/learn"
+                className="flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-4 py-1.5 rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all"
+              >
+                <BookOpen className="w-4 h-4" />
+                <span className="hidden sm:inline">{language === 'en' ? 'Learn' : 'सीखें'}</span>
+                <span className="sm:hidden">📚</span>
+              </Link>
               <button
                 onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
                 className="flex items-center space-x-1 hover:text-yellow-300 transition-colors"
