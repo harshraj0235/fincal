@@ -9,7 +9,7 @@ import SEOHelmet from '../../components/SEOHelmet';
 
 // Bhai Dooj is 2 days after Diwali
 const BHAI_DOOJ_DATA = {
-  2020: { date: '2020-11-16', day: 'Monday', diwaliDate: '2020-11-14', tika Muhurat: '13:10 - 15:22', aparahna: '13:10 - 15:22', sunrise: '06:44', sunset: '17:29' },
+  2020: { date: '2020-11-16', day: 'Monday', diwaliDate: '2020-11-14', tikaMuhurat: '13:10 - 15:22', aparahna: '13:10 - 15:22', sunrise: '06:44', sunset: '17:29' },
   2021: { date: '2021-11-06', day: 'Saturday', diwaliDate: '2021-11-04', tikaMuhurat: '13:12 - 15:24', aparahna: '13:12 - 15:24', sunrise: '06:33', sunset: '17:38' },
   2022: { date: '2022-10-26', day: 'Wednesday', diwaliDate: '2022-10-24', tikaMuhurat: '13:16 - 15:30', aparahna: '13:16 - 15:30', sunrise: '06:26', sunset: '17:47' },
   2023: { date: '2023-11-14', day: 'Tuesday', diwaliDate: '2023-11-12', tikaMuhurat: '13:10 - 15:21', aparahna: '13:10 - 15:21', sunrise: '06:42', sunset: '17:32' },
