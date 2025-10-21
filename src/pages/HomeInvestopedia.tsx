@@ -616,7 +616,7 @@ const HomeInvestopedia: React.FC = () => {
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <Link
-                  to="/festival-tools/corporate-professional"
+                  to="/festival-corporate-tools"
                   className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-500 to-gray-700 opacity-90 group-hover:opacity-100 transition-opacity"></div>

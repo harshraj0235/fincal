@@ -505,7 +505,7 @@ export const Home: React.FC = () => {
 
             {/* Corporate & Professional */}
             <Link
-              to="/festival-tools/corporate-professional"
+              to="/festival-corporate-tools"
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 bg-white"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-slate-500 to-gray-700 opacity-90 group-hover:opacity-100 transition-opacity"></div>

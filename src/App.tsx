@@ -245,6 +245,7 @@ const ReligiousTraditionalTools = lazy(() => import('./pages/ReligiousTraditiona
 const FunEngagementTools = lazy(() => import('./pages/FunEngagementTools'));
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
+const CorporateProfessionalTools = lazy(() => import('./pages/CorporateProfessionalTools'));
 const GoldTools = lazy(() => import('./pages/GoldTools'));
 const GoldToolPage = lazy(() => import('./pages/gold/GoldToolPage'));
 const Top10 = lazy(() => import('./pages/Top10'));
@@ -589,6 +590,7 @@ function App() {
                 <Route path="/fun-engagement" element={<FunEngagementTools />} />
                 <Route path="/design-tools" element={<DesignCreatorTools />} />
                 <Route path="/festival-info" element={<FestivalInformationHistory />} />
+                <Route path="/festival-corporate-tools" element={<CorporateProfessionalTools />} />
                 <Route path="/festival-tools/:festivalSlug" element={<FestivalLanding />} />
                 <Route path="/festival-tools/:festivalSlug/:toolSlug" element={<FestivalToolPage />} />
                 <Route path="/gold-tools" element={<GoldTools />} />
