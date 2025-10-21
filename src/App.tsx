@@ -248,6 +248,7 @@ const RakshaBandhanMuhurat = lazy(() => import('./pages/festival/RakshaBandhanMu
 const NavratriDatesFinder = lazy(() => import('./pages/festival/NavratriDatesFinder'));
 const GaneshChaturthiCountdown = lazy(() => import('./pages/festival/GaneshChaturthiCountdown'));
 const JanmashtamiFasting = lazy(() => import('./pages/festival/JanmashtamiFasting'));
+const DussehraDates = lazy(() => import('./pages/festival/DussehraDates'));
 const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
 const FestivalFinanceMoney = lazy(() => import('./pages/FestivalFinanceMoney'));
@@ -605,6 +606,7 @@ function App() {
                 <Route path="/festival-tools/navratri-dates" element={<NavratriDatesFinder />} />
                 <Route path="/festival-tools/ganesh-chaturthi-countdown" element={<GaneshChaturthiCountdown />} />
                 <Route path="/festival-tools/janmashtami-fasting" element={<JanmashtamiFasting />} />
+                <Route path="/festival-tools/dussehra-dates" element={<DussehraDates />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
                 <Route path="/festival-finance" element={<FestivalFinanceMoney />} />
