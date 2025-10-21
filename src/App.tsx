@@ -259,6 +259,7 @@ const ChristmasCountdown = lazy(() => import('./pages/festival/ChristmasCountdow
 const IslamicCalendarSync = lazy(() => import('./pages/festival/IslamicCalendarSync'));
 const EasterDateTool = lazy(() => import('./pages/festival/EasterDateTool'));
 const PongalCalendar = lazy(() => import('./pages/festival/PongalCalendar'));
+const OnamDateReminder = lazy(() => import('./pages/festival/OnamDateReminder'));
 const AkshayaTritiyaMuhurat = lazy(() => import('./pages/festival/AkshayaTritiyaMuhurat'));
 const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
@@ -629,6 +630,7 @@ function App() {
                 <Route path="/festival-tools/islamic-calendar-sync" element={<IslamicCalendarSync />} />
                 <Route path="/festival-tools/easter-date-tool" element={<EasterDateTool />} />
                 <Route path="/festival-tools/pongal-calendar" element={<PongalCalendar />} />
+                <Route path="/festival-tools/onam-date-reminder" element={<OnamDateReminder />} />
                 <Route path="/festival-tools/akshaya-tritiya-muhurat" element={<AkshayaTritiyaMuhurat />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
