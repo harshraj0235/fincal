@@ -346,7 +346,7 @@ const HowBanksEvaluate: React.FC = () => {
                 </li>
               </ul>
             </div>
-          </section>
+          </div>
 
           {/* Common Rejection Reasons */}
           <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8 rounded-r-lg">
