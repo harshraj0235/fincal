@@ -33,7 +33,7 @@ try {
     Write-Host "  - First email: In 5 minutes ($(Get-Date (Get-Date).AddMinutes(5) -Format 'HH:mm'))" -ForegroundColor White
     Write-Host "  - Then: Every 3 hours automatically" -ForegroundColor White
     Write-Host "  - Emails per day: 8" -ForegroundColor White
-    Write-Host "  - Subscribers: 4 (Harsh, Anand, Prit, Harshit)" -ForegroundColor White
+    Write-Host "  - Subscribers: 234 ACTIVE" -ForegroundColor White
     Write-Host ""
     Write-Host "To verify:" -ForegroundColor Cyan
     Write-Host "  1. Open Task Scheduler (taskschd.msc)" -ForegroundColor White
