@@ -7,6 +7,8 @@ import { loanCategories } from '../../data/learn/loansLessons';
 
 const LearnHome: React.FC = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
+  const [showAllCategories, setShowAllCategories] = React.useState(false);
+  const [activeCard, setActiveCard] = React.useState<number | null>(null);
 
   return (
     <>
@@ -48,54 +50,171 @@ const LearnHome: React.FC = () => {
           </div>
         </header>
 
-        {/* Hero Section */}
-        <section className="py-16 px-4">
+        {/* Credit Card Style Hero */}
+        <section className="py-12 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              {/* Main Credit Card */}
+              <div 
+                className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-8 md:p-12 shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-3xl overflow-hidden"
+                onClick={() => setShowAllCategories(!showAllCategories)}
+              >
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -ml-24 -mb-24"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="flex items-center gap-4">
+                      <div className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl">
+                        <BookOpen className="w-12 h-12 text-white" />
+                      </div>
+                      <div className="text-left">
+                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                          MoneyCal Learn
+                        </h1>
+                        <p className="text-white/90 text-lg">
+                          Your Personal Finance Academy
+                        </p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block">
+                      <div className="text-right">
+                        <div className="text-white/70 text-sm mb-1">Total Lessons</div>
+                        <div className="text-white text-4xl font-bold">150+</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quick Stats */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div className="text-white/70 text-sm mb-1">Categories</div>
+                      <div className="text-white text-2xl font-bold">9</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div className="text-white/70 text-sm mb-1">Calculators</div>
+                      <div className="text-white text-2xl font-bold">50+</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div className="text-white/70 text-sm mb-1">Languages</div>
+                      <div className="text-white text-2xl font-bold">2</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div className="text-white/70 text-sm mb-1">Cost</div>
+                      <div className="text-white text-2xl font-bold">FREE</div>
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="flex items-center justify-between">
+                    <div className="text-white/90">
+                      <p className="text-lg font-semibold mb-1">🎓 Learn • 🧮 Calculate • 📊 Master</p>
+                      <p className="text-sm text-white/70">Click to explore all categories →</p>
+                    </div>
+                    <motion.div
+                      animate={{ rotate: showAllCategories ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="bg-white/20 backdrop-blur-sm rounded-full p-3"
+                    >
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Expandable Categories Section */}
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ 
+                  height: showAllCategories ? 'auto' : 0,
+                  opacity: showAllCategories ? 1 : 0
+                }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                className="overflow-hidden"
+              >
+                <div className="mt-6 grid md:grid-cols-3 gap-4">
+                  {loanCategories.map((category, index) => (
+                    <Link 
+                      key={category.id}
+                      to={`/learn/${category.id}`}
+                      onMouseEnter={() => setActiveCard(index)}
+                      onMouseLeave={() => setActiveCard(null)}
+                    >
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className={`relative bg-white rounded-2xl p-6 shadow-lg border-2 transition-all duration-300 ${
+                          activeCard === index 
+                            ? 'border-purple-500 shadow-xl scale-105' 
+                            : 'border-gray-200 hover:border-purple-300'
+                        }`}
+                      >
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="text-4xl">{category.icon}</div>
+                          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            {category.lessons.length} lessons
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                          {category.name}
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-4">
+                          {category.description}
+                        </p>
+                        <div className="flex items-center text-purple-600 font-semibold text-sm">
+                          Start Learning →
+                        </div>
+                      </motion.div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Search Bar Below Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="max-w-2xl mx-auto mt-8"
+            >
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
+                <input
+                  type="text"
+                  placeholder="Search for loans, EMI, investment, tax..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-14 pr-4 py-4 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none text-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-8 px-4">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-5xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
                 Master Financial Literacy
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                150+ Free Tutorials | Interactive Calculators | Hindi + English | Real Indian Examples
+                Interactive Calculators | Hindi + English | Real Indian Examples
               </p>
-
-              {/* Search Bar */}
-              <div className="max-w-2xl mx-auto mb-12">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
-                  <input
-                    type="text"
-                    placeholder="Search for loans, EMI, investment, tax..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-14 pr-4 py-4 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:outline-none text-lg"
-                  />
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-blue-200">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">150+</div>
-                  <div className="text-gray-600">Free Lessons</div>
-                </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-green-200">
-                  <div className="text-4xl font-bold text-green-600 mb-2">9</div>
-                  <div className="text-gray-600">Categories</div>
-                </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-purple-200">
-                  <div className="text-4xl font-bold text-purple-600 mb-2">50+</div>
-                  <div className="text-gray-600">Calculators</div>
-                </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg border-2 border-orange-200">
-                  <div className="text-4xl font-bold text-orange-600 mb-2">100%</div>
-                  <div className="text-gray-600">Free Forever</div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </section>
