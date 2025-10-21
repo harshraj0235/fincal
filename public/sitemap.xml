@@ -137,6 +137,13 @@
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://moneycal.in/religious-tools/puja-vidhi-generator</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
   <!-- PRIORITY 0.9: FESTIVAL TOOL CATEGORY HUB PAGES - 10 Major Categories -->
   <url>
     <loc>https://moneycal.in/festival-dates/</loc>

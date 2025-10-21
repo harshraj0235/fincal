@@ -257,6 +257,7 @@ const FestivalDateCalendar = lazy(() => import('./pages/FestivalDateCalendar'));
 const FestivalPlanningShopping = lazy(() => import('./pages/FestivalPlanningShopping'));
 const FestivalFinanceMoney = lazy(() => import('./pages/FestivalFinanceMoney'));
 const ReligiousTraditionalTools = lazy(() => import('./pages/ReligiousTraditionalTools'));
+const PujaVidhiGenerator = lazy(() => import('./pages/religious/PujaVidhiGenerator'));
 const FunEngagementTools = lazy(() => import('./pages/FunEngagementTools'));
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
@@ -619,6 +620,7 @@ function App() {
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
                 <Route path="/festival-finance" element={<FestivalFinanceMoney />} />
                 <Route path="/religious-tools" element={<ReligiousTraditionalTools />} />
+                <Route path="/religious-tools/puja-vidhi-generator" element={<PujaVidhiGenerator />} />
                 <Route path="/fun-engagement" element={<FunEngagementTools />} />
                 <Route path="/design-tools" element={<DesignCreatorTools />} />
                 <Route path="/festival-info" element={<FestivalInformationHistory />} />
