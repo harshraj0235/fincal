@@ -1,0 +1,23 @@
+{
+  "subscribers": [
+    {
+      "email": "harshraj0235@gmail.com",
+      "name": "Harsh Raj",
+      "subscribed_date": "2025-10-21",
+      "active": true,
+      "preferences": {
+        "blogs": true,
+        "tools": true,
+        "schemes": true,
+        "festivals": true
+      }
+    }
+  ],
+  "settings": {
+    "sender_email": "moneycalx9@gmail.com",
+    "sender_name": "MoneyCal - Your Financial Companion",
+    "interval_hours": 3,
+    "emails_per_batch": 50
+  }
+}
+

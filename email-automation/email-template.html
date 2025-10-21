@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{SUBJECT}}</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .header {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            color: #ffffff;
+            font-size: 14px;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .greeting {
+            font-size: 18px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .intro-text {
+            font-size: 15px;
+            color: #555555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .featured-content {
+            background: linear-gradient(135deg, #FFF5E6 0%, #FFE8CC 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid #FF6B35;
+        }
+        .category-badge {
+            display: inline-block;
+            background-color: #FF6B35;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .content-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222222;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .content-description {
+            font-size: 15px;
+            color: #555555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+        }
+        .quick-links {
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .quick-links h3 {
+            font-size: 18px;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+        .link-item {
+            display: block;
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #FF6B35;
+            font-weight: 500;
+            border: 1px solid #eeeeee;
+            transition: all 0.2s;
+        }
+        .link-item:hover {
+            background-color: #FFF5E6;
+            border-color: #FF6B35;
+        }
+        .stats-box {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #FF6B35;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #777777;
+            text-transform: uppercase;
+        }
+        .footer {
+            background-color: #2C3E50;
+            color: #ffffff;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .footer-links {
+            margin: 15px 0;
+        }
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 13px;
+        }
+        .social-icons {
+            margin: 15px 0;
+        }
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 0 8px;
+            background-color: #FF6B35;
+            border-radius: 50%;
+            line-height: 40px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .unsubscribe {
+            font-size: 11px;
+            color: #999999;
+            margin-top: 15px;
+        }
+        .unsubscribe a {
+            color: #FF6B35;
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 600px) {
+            .content {
+                padding: 20px 15px;
+            }
+            .content-title {
+                font-size: 20px;
+            }
+            .stats-box {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">💰 MoneyCal</div>
+            <div class="tagline">Your Trusted Financial & Festival Companion</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="greeting">
+                🙏 Namaste {{SUBSCRIBER_NAME}},
+            </div>
+
+            <div class="intro-text">
+                We thought you'd love this! Here's something special we handpicked for you from MoneyCal:
+            </div>
+
+            <!-- Featured Content -->
+            <div class="featured-content">
+                <span class="category-badge">{{CATEGORY}}</span>
+                <h2 class="content-title">{{TITLE}}</h2>
+                <p class="content-description">{{DESCRIPTION}}</p>
+                <a href="{{URL}}" class="cta-button">
+                    📖 Read Full Article →
+                </a>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-box">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Calculators</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Festival Tools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free</div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h3>🔥 Trending on MoneyCal</h3>
+                <a href="https://moneycal.in/festival-tools/akshaya-tritiya-muhurat" class="link-item">
+                    🪙 Akshaya Tritiya Gold Buying Muhurat
+                </a>
+                <a href="https://moneycal.in/religious-tools/puja-vidhi-generator" class="link-item">
+                    🕉️ Complete Puja Vidhi Generator
+                </a>
+                <a href="https://moneycal.in/calculators/sip-calculator" class="link-item">
+                    📈 SIP Calculator - Plan Your Future
+                </a>
+                <a href="https://moneycal.in/festival-dates" class="link-item">
+                    📅 Festival Calendar 2025
+                </a>
+            </div>
+
+            <div class="intro-text" style="text-align: center; margin-top: 20px;">
+                <strong>💡 Why MoneyCal?</strong><br>
+                We combine traditional wisdom with modern finance tools to help you make better financial decisions during festivals and throughout the year!
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>
+                <strong>MoneyCal.in</strong> - Making Finance Simple & Spiritual
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://moneycal.in/">Home</a> |
+                <a href="https://moneycal.in/blog">Blog</a> |
+                <a href="https://moneycal.in/festival-tools">Festival Tools</a> |
+                <a href="https://moneycal.in/calculators">Calculators</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://facebook.com/moneycal" class="social-icon">f</a>
+                <a href="https://twitter.com/moneycal" class="social-icon">𝕏</a>
+                <a href="https://instagram.com/moneycal" class="social-icon">📷</a>
+            </div>
+
+            <div class="unsubscribe">
+                You're receiving this because you subscribed to MoneyCal updates.<br>
+                <a href="{{UNSUBSCRIBE_URL}}">Unsubscribe</a> | <a href="https://moneycal.in/privacy-policy">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

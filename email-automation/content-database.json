@@ -1,0 +1,88 @@
+{
+  "blogs": [
+    {
+      "title": "Complete Guide to SIP Investment in 2025",
+      "url": "https://moneycal.in/blog/sip-investment-guide-2025",
+      "description": "Learn how Systematic Investment Plans can help you build wealth over time. Start with just ₹500/month!",
+      "category": "Investment",
+      "image": "https://moneycal.in/images/sip-guide.jpg"
+    },
+    {
+      "title": "Gold Price Trends for Akshaya Tritiya 2025",
+      "url": "https://moneycal.in/blog/gold-price-trends-akshaya-tritiya",
+      "description": "Should you buy gold on Akshaya Tritiya? Historical data shows 12% average annual returns!",
+      "category": "Gold Investment",
+      "image": "https://moneycal.in/images/gold-trends.jpg"
+    }
+  ],
+  "tools": [
+    {
+      "title": "Akshaya Tritiya Muhurat Finder 2025",
+      "url": "https://moneycal.in/festival-tools/akshaya-tritiya-muhurat",
+      "description": "Find the perfect time to buy gold in your city! Complete with Abhijit Muhurat, Rahu Kaal timings, and historical gold prices.",
+      "category": "Festival Tool",
+      "image": "https://moneycal.in/images/akshaya-tritiya.jpg"
+    },
+    {
+      "title": "Puja Vidhi Generator - Complete Ritual Guide",
+      "url": "https://moneycal.in/religious-tools/puja-vidhi-generator",
+      "description": "Step-by-step puja procedures for Lakshmi, Ganesha, Shiva & more! Available in English & Hindi with mantras.",
+      "category": "Religious Tool",
+      "image": "https://moneycal.in/images/puja-vidhi.jpg"
+    },
+    {
+      "title": "SIP Calculator - Plan Your Investments",
+      "url": "https://moneycal.in/calculators/sip-calculator",
+      "description": "Calculate your SIP returns with our advanced calculator. See how ₹5,000/month becomes ₹50 lakhs in 15 years!",
+      "category": "Financial Calculator",
+      "image": "https://moneycal.in/images/sip-calculator.jpg"
+    },
+    {
+      "title": "Chhath Puja Arghya Time Finder",
+      "url": "https://moneycal.in/festival-tools/chhath-puja-arghya",
+      "description": "Get exact Sandhya Arghya (sunset) & Usha Arghya (sunrise) timings for your city. Complete 4-day schedule!",
+      "category": "Festival Tool",
+      "image": "https://moneycal.in/images/chhath-puja.jpg"
+    },
+    {
+      "title": "Maha Shivratri Night Duration Calculator",
+      "url": "https://moneycal.in/festival-tools/maha-shivratri-duration",
+      "description": "Find 4 prahar timings for all-night Shiva worship. City-wise sunset to sunrise calculations!",
+      "category": "Festival Tool",
+      "image": "https://moneycal.in/images/shivratri.jpg"
+    }
+  ],
+  "schemes": [
+    {
+      "title": "PM Kisan Samman Nidhi Yojana 2025",
+      "url": "https://moneycal.in/government-schemes/pm-kisan",
+      "description": "Get ₹6,000 annually directly to your bank account! Check eligibility and apply online now.",
+      "category": "Government Scheme",
+      "image": "https://moneycal.in/images/pm-kisan.jpg"
+    },
+    {
+      "title": "Sukanya Samriddhi Yojana - Girl Child Savings",
+      "url": "https://moneycal.in/government-schemes/sukanya-samriddhi",
+      "description": "Best savings scheme for daughters! Invest ₹250-1.5L/year, get tax-free returns at 8%+",
+      "category": "Government Scheme",
+      "image": "https://moneycal.in/images/sukanya.jpg"
+    }
+  ],
+  "festivals": [
+    {
+      "title": "Guru Purnima 2025 Calendar",
+      "url": "https://moneycal.in/festival-tools/guru-purnima-calendar",
+      "description": "Find exact Purnima tithi timings for honoring your spiritual teachers. Complete guide with puja muhurat!",
+      "category": "Festival Calendar",
+      "image": "https://moneycal.in/images/guru-purnima.jpg"
+    },
+    {
+      "title": "Diwali 2025 Date Finder",
+      "url": "https://moneycal.in/festival-tools/diwali-date-finder",
+      "description": "Get complete 5-day Diwali schedule with Lakshmi Puja muhurat, Dhanteras, Govardhan Puja timings!",
+      "category": "Festival Tool",
+      "image": "https://moneycal.in/images/diwali.jpg"
+    }
+  ]
+}
+

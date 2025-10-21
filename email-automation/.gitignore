@@ -1,0 +1,24 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Logs
+email-logs.json
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Email password (never commit!)
+email-password.txt
+
+# Excel files (may contain private data)
+*.xlsx
+subscribers.xlsx
+
+# Backup files
+*.backup
+*.bak
+
