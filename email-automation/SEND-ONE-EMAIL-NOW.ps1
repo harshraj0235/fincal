@@ -29,18 +29,13 @@ $allContent = $contentData.priority_festival_tools
 # Pick one random content
 $randomContent = $allContent | Get-Random
 
-# Map category to emoji
-$categoryEmoji = switch -Wildcard ($randomContent.category) {
-    "*Gold*" { "📿" }
-    "*Festival*" { "🎊" }
-    "*Religious*" { "🙏" }
-    "*Loan*" { "💰" }
-    "*Calculator*" { "🧮" }
-    "*Government*" { "🏛️" }
-    "*Tax*" { "📊" }
-    "*Investment*" { "📈" }
-    default { "💡" }
-}
+# Map category to simple icon (no emojis - PowerShell encoding issue)
+$categoryIcon = "[NEW]"
+if ($randomContent.category -like "*Gold*") { $categoryIcon = "[GOLD]" }
+if ($randomContent.category -like "*Festival*") { $categoryIcon = "[FESTIVAL]" }
+if ($randomContent.category -like "*Religious*") { $categoryIcon = "[RELIGIOUS]" }
+if ($randomContent.category -like "*Loan*") { $categoryIcon = "[LOAN]" }
+if ($randomContent.category -like "*Calculator*") { $categoryIcon = "[CALCULATOR]" }
 
 Write-Host "[*] Selected Content:" -ForegroundColor Yellow
 Write-Host "   Title: $($randomContent.title)" -ForegroundColor White
@@ -93,7 +88,7 @@ $emailBodyTemplate = @"
     </div>
     
     <div class="content">
-      <div class="emoji">{{CATEGORY_EMOJI}}</div>
+      <div class="emoji">&#127891;</div>
       
       <h2>{{TITLE}}</h2>
       
@@ -163,7 +158,6 @@ $emailBodyTemplate = @"
 $emailBody = $emailBodyTemplate `
     -replace "{{TITLE}}", $randomContent.title `
     -replace "{{DESCRIPTION}}", $randomContent.description `
-    -replace "{{CATEGORY_EMOJI}}", $categoryEmoji `
     -replace "{{URL}}", $randomContent.url
 
 # Send to all subscribers
