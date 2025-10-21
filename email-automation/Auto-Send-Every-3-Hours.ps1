@@ -158,8 +158,8 @@ Write-Host "  Last Updated: $($selectedContent.lastmod) ($($selectedContent.days
 
 Write-Host "`n[4/4] Sending emails to all subscribers..." -ForegroundColor Yellow
 
-# Load email template
-$templatePath = Join-Path $PSScriptRoot "email-template-ULTIMATE.html"
+# Load PROFESSIONAL email template
+$templatePath = Join-Path $PSScriptRoot "email-template-PROFESSIONAL.html"
 $template = Get-Content $templatePath -Raw -Encoding UTF8
 
 # Send to each subscriber
@@ -183,11 +183,11 @@ foreach ($sub in $activeSubscribers) {
         # Create SMTP client
         $smtp = New-Object System.Net.Mail.SmtpClient("smtp.gmail.com", 587)
         $smtp.EnableSsl = $true
-        $smtp.Credentials = New-Object System.Net.NetworkCredential($script:SenderEmail, $script:SenderPassword)
+        $smtp.Credentials = New-Object System.Net.NetworkCredential($SENDER_EMAIL, $APP_PASSWORD)
         
         # Create message with INBOX-optimized headers
         $msg = New-Object System.Net.Mail.MailMessage
-        $msg.From = New-Object System.Net.Mail.MailAddress($script:SenderEmail, $script:SenderName)
+        $msg.From = New-Object System.Net.Mail.MailAddress($SENDER_EMAIL, $SENDER_NAME)
         $msg.To.Add($sub.email)
         $msg.Subject = "$($selectedContent.title) | MoneyCal"
         $msg.Body = $html
