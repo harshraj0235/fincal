@@ -161,10 +161,12 @@ Write-Host ""
 
 foreach ($subscriber in $activeSubscribers) {
     try {
+        $subjectLine = "New: " + $randomContent.title + " | MoneyCal Learn"
+        
         $mailParams = @{
             To = $subscriber.email
             From = $SENDER_EMAIL
-            Subject = "📚 New: $($randomContent.title) | MoneyCal Learn"
+            Subject = $subjectLine
             Body = $emailBody
             BodyAsHtml = $true
             SmtpServer = "smtp.gmail.com"
