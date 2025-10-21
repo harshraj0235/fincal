@@ -19,6 +19,7 @@ const PujaVidhiGenerator: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [activeStep, setActiveStep] = useState<number | null>(null);
   const [completedSteps, setCompletedSteps] = useState<Set<number>>(new Set());
+  const [language, setLanguage] = useState<'english' | 'hindi'>('english');
 
   const years = [2024, 2025, 2026, 2027, 2028];
 
@@ -152,7 +153,7 @@ const PujaVidhiGenerator: React.FC = () => {
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-orange-200">
                 {/* Puja Selector */}
                 <div className="bg-gradient-to-r from-orange-600 to-red-600 p-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
                       <label className="block text-white font-semibold mb-3 flex items-center">
                         <Flame className="w-5 h-5 mr-2" />
@@ -193,6 +194,21 @@ const PujaVidhiGenerator: React.FC = () => {
                             {year}
                           </option>
                         ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-white font-semibold mb-3 flex items-center">
+                        <BookOpen className="w-5 h-5 mr-2" />
+                        Language / भाषा
+                      </label>
+                      <select
+                        value={language}
+                        onChange={(e) => setLanguage(e.target.value as 'english' | 'hindi')}
+                        className="w-full px-4 py-3 rounded-xl border-2 border-white/20 bg-white/10 text-white font-bold text-lg focus:outline-none focus:border-white backdrop-blur-sm cursor-pointer"
+                      >
+                        <option value="english" className="text-gray-900">English</option>
+                        <option value="hindi" className="text-gray-900">हिंदी (Hindi)</option>
                       </select>
                     </div>
                   </div>
