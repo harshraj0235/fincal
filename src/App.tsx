@@ -26,6 +26,7 @@ import SimpleFeedbackFormGenerator from './pages/tools/SimpleFeedbackFormGenerat
 
 // Lazy load all page-level components
 const Home = lazy(() => import('./pages/HomeInvestopedia'));
+const LoanCalculator = lazy(() => import('./calculators/LoanCalculator'));
 const HomeOld = lazy(() => import('./pages/HomeNew'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
 const Blog = lazy(() => import('./pages/Blog'));
@@ -492,6 +493,7 @@ function App() {
                 <Route path="/home-old" element={<HomeOld />} />
                 <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
                 {/* Direct Calculator Routes */}
+                <Route path="/calculators/loan-calculator" element={<LoanCalculator />} />
                 <Route path="/calculators/emi-calculator" element={<CalculatorPage calculatorId="emi-calculator" />} />
                 {/* Math & Education Calculators */}
                 <Route path="/calculators/lcm-hcf-calculator" element={<CalculatorPage calculatorId="lcm-hcf-calculator" />} />
