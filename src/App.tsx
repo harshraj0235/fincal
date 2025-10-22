@@ -382,6 +382,10 @@ const WorkingCapitalLoan = lazy(() => import('./pages/learn/business-loans/Worki
 const StartupLoan = lazy(() => import('./pages/learn/business-loans/StartupLoan'));
 const BusinessLoanEMI = lazy(() => import('./pages/learn/business-loans/EMICalculator'));
 const BusinessGovernmentSchemes = lazy(() => import('./pages/learn/business-loans/GovernmentSchemes'));
+const BusinessLoanEligibility = lazy(() => import('./pages/learn/business-loans/EligibilityCalculator'));
+const BusinessLoanDocuments = lazy(() => import('./pages/learn/business-loans/DocumentsRequired'));
+const BusinessLoanApplication = lazy(() => import('./pages/learn/business-loans/ApplicationProcess'));
+const BusinessLoanInterestRates = lazy(() => import('./pages/learn/business-loans/InterestRates'));
 
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
@@ -613,6 +617,10 @@ function App() {
         <Route path="/learn/business-loans/startup-loan" element={<StartupLoan />} />
         <Route path="/learn/business-loans/emi-calculator" element={<BusinessLoanEMI />} />
         <Route path="/learn/business-loans/government-schemes" element={<BusinessGovernmentSchemes />} />
+        <Route path="/learn/business-loans/eligibility-calculator" element={<BusinessLoanEligibility />} />
+        <Route path="/learn/business-loans/documents-required" element={<BusinessLoanDocuments />} />
+        <Route path="/learn/business-loans/application-process" element={<BusinessLoanApplication />} />
+        <Route path="/learn/business-loans/interest-rates" element={<BusinessLoanInterestRates />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
