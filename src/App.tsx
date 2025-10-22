@@ -342,6 +342,24 @@ const PersonalLoanFraud = lazy(() => import('./pages/learn/personal-loans/LoanFr
 const PersonalLoanMyths = lazy(() => import('./pages/learn/personal-loans/LoanMythsDebunked'));
 const PersonalLoanClosure = lazy(() => import('./pages/learn/personal-loans/LoanClosureProcess'));
 
+// Learn Platform - Vehicle Loans (15 lessons) - COMPLETE!
+const VehicleLoansHub = lazy(() => import('./pages/learn/vehicle-loans/index'));
+const CarLoanBasics = lazy(() => import('./pages/learn/vehicle-loans/CarLoanBasics'));
+const TwoWheelerLoan = lazy(() => import('./pages/learn/vehicle-loans/TwoWheelerLoan'));
+const NewVsUsedCarLoan = lazy(() => import('./pages/learn/vehicle-loans/NewVsUsedCarLoan'));
+const VehicleLoanEligibility = lazy(() => import('./pages/learn/vehicle-loans/EligibilityCalculator'));
+const VehicleLoanInterestRates = lazy(() => import('./pages/learn/vehicle-loans/InterestRates'));
+const DownPaymentStrategy = lazy(() => import('./pages/learn/vehicle-loans/DownPaymentStrategy'));
+const VehicleLoanDocuments = lazy(() => import('./pages/learn/vehicle-loans/DocumentsRequired'));
+const VehicleLoanApplication = lazy(() => import('./pages/learn/vehicle-loans/ApplicationProcess'));
+const VehicleInsurance = lazy(() => import('./pages/learn/vehicle-loans/VehicleInsurance'));
+const VehicleLoanEMI = lazy(() => import('./pages/learn/vehicle-loans/EMICalculator'));
+const VehicleLoanBalanceTransfer = lazy(() => import('./pages/learn/vehicle-loans/BalanceTransfer'));
+const VehicleLoanPrepayment = lazy(() => import('./pages/learn/vehicle-loans/PrepaymentGuide'));
+const VehicleLoanBestBanks = lazy(() => import('./pages/learn/vehicle-loans/BestBanks'));
+const DealerVsBank = lazy(() => import('./pages/learn/vehicle-loans/DealerVsBank'));
+const EVLoanSubsidy = lazy(() => import('./pages/learn/vehicle-loans/EVLoanSubsidy'));
+
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
 const CorporateProfessionalTools = lazy(() => import('./pages/CorporateProfessionalTools'));
@@ -531,6 +549,24 @@ function App() {
         <Route path="/learn/personal-loans/loan-fraud-protection" element={<PersonalLoanFraud />} />
         <Route path="/learn/personal-loans/loan-myths-debunked" element={<PersonalLoanMyths />} />
         <Route path="/learn/personal-loans/loan-closure-process" element={<PersonalLoanClosure />} />
+        
+        {/* Learn Platform - Vehicle Loans (15 lessons) - COMPLETE! */}
+        <Route path="/learn/vehicle-loans" element={<VehicleLoansHub />} />
+        <Route path="/learn/vehicle-loans/car-loan-basics" element={<CarLoanBasics />} />
+        <Route path="/learn/vehicle-loans/two-wheeler-loan" element={<TwoWheelerLoan />} />
+        <Route path="/learn/vehicle-loans/new-vs-used-car-loan" element={<NewVsUsedCarLoan />} />
+        <Route path="/learn/vehicle-loans/eligibility-calculator" element={<VehicleLoanEligibility />} />
+        <Route path="/learn/vehicle-loans/interest-rates" element={<VehicleLoanInterestRates />} />
+        <Route path="/learn/vehicle-loans/down-payment-strategy" element={<DownPaymentStrategy />} />
+        <Route path="/learn/vehicle-loans/documents-required" element={<VehicleLoanDocuments />} />
+        <Route path="/learn/vehicle-loans/application-process" element={<VehicleLoanApplication />} />
+        <Route path="/learn/vehicle-loans/vehicle-insurance" element={<VehicleInsurance />} />
+        <Route path="/learn/vehicle-loans/emi-calculator" element={<VehicleLoanEMI />} />
+        <Route path="/learn/vehicle-loans/balance-transfer" element={<VehicleLoanBalanceTransfer />} />
+        <Route path="/learn/vehicle-loans/prepayment-guide" element={<VehicleLoanPrepayment />} />
+        <Route path="/learn/vehicle-loans/best-banks" element={<VehicleLoanBestBanks />} />
+        <Route path="/learn/vehicle-loans/dealer-vs-bank" element={<DealerVsBank />} />
+        <Route path="/learn/vehicle-loans/ev-loan-subsidy" element={<EVLoanSubsidy />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
