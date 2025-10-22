@@ -91,7 +91,7 @@ const BihuDateCalendar: React.FC = () => {
       {
         name: 'Bohag Bihu',
         englishName: 'Rongali Bihu (Spring Festival)',
-        assamName: 'ব'হাগ বিহু',
+        assamName: 'বহাগ বিহু',
         date: bihuDates.bohag,
         duration: 7,
         color: 'from-green-500 to-emerald-600',
