@@ -733,8 +733,10 @@ function App() {
                 <Route path="/festival-tools/onam-date-reminder" element={<OnamDateReminder />} />
                 <Route path="/festival-tools/makar-sankranti-tithi" element={<MakarSankrantiTithi />} />
                 <Route path="/festival-tools/akshaya-tritiya-muhurat" element={<AkshayaTritiyaMuhurat />} />
+                {/* NEW FESTIVAL TOOLS - Must be BEFORE generic routes */}
                 <Route path="/festival-tools/lohri-sunrise-sunset" element={<LohriSunriseSunset />} />
                 <Route path="/festival-tools/bihu-date-calendar" element={<BihuDateCalendar />} />
+                {/* Other routes */}
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
                 <Route path="/festival-finance" element={<FestivalFinanceMoney />} />
@@ -746,6 +748,7 @@ function App() {
                 <Route path="/festival-corporate-tools" element={<CorporateProfessionalTools />} />
                 <Route path="/regional-tools" element={<RegionalLanguageTools />} />
                 <Route path="/seo-tools" element={<SEOMonetizationTools />} />
+                {/* Generic festival tool routes - MUST be LAST */}
                 <Route path="/festival-tools/:festivalSlug" element={<FestivalLanding />} />
                 <Route path="/festival-tools/:festivalSlug/:toolSlug" element={<FestivalToolPage />} />
                 <Route path="/gold-tools" element={<GoldTools />} />
