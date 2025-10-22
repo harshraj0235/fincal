@@ -341,10 +341,10 @@ const PrepaymentOptions: React.FC = () => {
                         <div className="bg-green-100 p-1 rounded-full mt-1">
                           <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                         </div>
-                        <div>
-                          <h5 className="font-semibold text-blue-900">If loan rate > 15%:</h5>
-                          <p className="text-blue-800 text-sm">Prepay immediately - guaranteed high returns</p>
-                        </div>
+                          <div>
+                            <h5 className="font-semibold text-blue-900">If loan rate &gt; 15%:</h5>
+                            <p className="text-blue-800 text-sm">Prepay immediately - guaranteed high returns</p>
+                          </div>
                       </div>
 
                       <div className="flex items-start space-x-3">
@@ -361,10 +361,10 @@ const PrepaymentOptions: React.FC = () => {
                         <div className="bg-red-100 p-1 rounded-full mt-1">
                           <div className="w-2 h-2 bg-red-600 rounded-full"></div>
                         </div>
-                        <div>
-                          <h5 className="font-semibold text-blue-900">If loan rate < 12%:</h5>
-                          <p className="text-blue-800 text-sm">Consider investing instead of prepaying</p>
-                        </div>
+                          <div>
+                            <h5 className="font-semibold text-blue-900">If loan rate &lt; 12%:</h5>
+                            <p className="text-blue-800 text-sm">Consider investing instead of prepaying</p>
+                          </div>
                       </div>
                     </div>
                   </div>
