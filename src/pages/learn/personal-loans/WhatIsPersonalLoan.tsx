@@ -232,3 +232,4 @@ const WhatIsPersonalLoan: React.FC = () => {
 
 export default WhatIsPersonalLoan;
 
+

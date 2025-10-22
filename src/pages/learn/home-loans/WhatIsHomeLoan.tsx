@@ -26,16 +26,9 @@ const WhatIsHomeLoan: React.FC = () => {
       />
       
       <LearnLayout
-        title="What is a Home Loan?"
-        description="Your complete guide to understanding home loans in India - from basics to benefits 🏠"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="8 min read"
-        prevLesson={null}
-        nextLesson={{
-          title: 'Types of Home Loans in India',
-          slug: '/learn/home-loans/types-of-home-loans'
-        }}
+        category="home-loans"
+        currentLesson="what-is-home-loan"
+        breadcrumb={['Learn', 'Home Loans', 'What is a Home Loan?']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-8">
@@ -445,5 +438,6 @@ const WhatIsHomeLoan: React.FC = () => {
 };
 
 export default WhatIsHomeLoan;
+
 
 

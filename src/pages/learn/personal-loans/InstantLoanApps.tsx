@@ -389,3 +389,4 @@ const InstantLoanApps: React.FC = () => {
 };
 
 export default InstantLoanApps;
+

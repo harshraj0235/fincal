@@ -390,3 +390,4 @@ const TypesOfPersonalLoans: React.FC = () => {
 };
 
 export default TypesOfPersonalLoans;
+

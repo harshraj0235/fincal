@@ -280,3 +280,4 @@ npm run dev
 ---
 
 **Next:** Continue with Personal Loans (10/20 complete) or other categories! 🚀
+
