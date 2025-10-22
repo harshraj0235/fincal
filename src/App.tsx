@@ -391,6 +391,12 @@ const BusinessLoanPrepayment = lazy(() => import('./pages/learn/business-loans/P
 const BusinessLoanBestBanks = lazy(() => import('./pages/learn/business-loans/BestBanks'));
 const BusinessLoanTaxBenefits = lazy(() => import('./pages/learn/business-loans/TaxBenefits'));
 
+// Learn Platform - Gold Loans (10 lessons) - IN PROGRESS
+const GoldLoansHub = lazy(() => import('./pages/learn/gold-loans/index'));
+const WhatIsGoldLoan = lazy(() => import('./pages/learn/gold-loans/WhatIsGoldLoan'));
+const GoldLoanInterestRates = lazy(() => import('./pages/learn/gold-loans/InterestRates'));
+const GoldLoanEligibility = lazy(() => import('./pages/learn/gold-loans/EligibilityCalculator'));
+
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
 const CorporateProfessionalTools = lazy(() => import('./pages/CorporateProfessionalTools'));
@@ -629,6 +635,12 @@ function App() {
         <Route path="/learn/business-loans/prepayment-guide" element={<BusinessLoanPrepayment />} />
         <Route path="/learn/business-loans/best-banks" element={<BusinessLoanBestBanks />} />
         <Route path="/learn/business-loans/tax-benefits" element={<BusinessLoanTaxBenefits />} />
+        
+        {/* Learn Platform - Gold Loans (10 lessons) - IN PROGRESS */}
+        <Route path="/learn/gold-loans" element={<GoldLoansHub />} />
+        <Route path="/learn/gold-loans/what-is-gold-loan" element={<WhatIsGoldLoan />} />
+        <Route path="/learn/gold-loans/interest-rates" element={<GoldLoanInterestRates />} />
+        <Route path="/learn/gold-loans/eligibility-calculator" element={<GoldLoanEligibility />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
