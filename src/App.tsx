@@ -386,6 +386,8 @@ const BusinessLoanEligibility = lazy(() => import('./pages/learn/business-loans/
 const BusinessLoanDocuments = lazy(() => import('./pages/learn/business-loans/DocumentsRequired'));
 const BusinessLoanApplication = lazy(() => import('./pages/learn/business-loans/ApplicationProcess'));
 const BusinessLoanInterestRates = lazy(() => import('./pages/learn/business-loans/InterestRates'));
+const BusinessLoanCollateral = lazy(() => import('./pages/learn/business-loans/CollateralRequirements'));
+const BusinessLoanPrepayment = lazy(() => import('./pages/learn/business-loans/PrepaymentGuide'));
 
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
@@ -621,6 +623,8 @@ function App() {
         <Route path="/learn/business-loans/documents-required" element={<BusinessLoanDocuments />} />
         <Route path="/learn/business-loans/application-process" element={<BusinessLoanApplication />} />
         <Route path="/learn/business-loans/interest-rates" element={<BusinessLoanInterestRates />} />
+        <Route path="/learn/business-loans/collateral-requirements" element={<BusinessLoanCollateral />} />
+        <Route path="/learn/business-loans/prepayment-guide" element={<BusinessLoanPrepayment />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
