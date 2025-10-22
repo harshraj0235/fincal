@@ -46,7 +46,7 @@ const INDIAN_CITIES = [
   { name: 'Jammu', lat: 32.7266, lon: 74.8570, timezone: 'Asia/Kolkata', state: 'Jammu & Kashmir' }
 ];
 
-// Simplified sunrise/sunset calculation (for accuracy, you'd use a library like suncalc)
+// Simplified sunrise/sunset calculation (for accuracy, you would use a library like suncalc)
 // This is a basic implementation of the solar position algorithm
 const calculateSunTimes = (date: Date, lat: number, lon: number) => {
   // Julian date calculation
@@ -699,7 +699,7 @@ const LohriSunriseSunset: React.FC = () => {
                   
                   <p>
                     <strong>Significance:</strong> Lohri marks the end of winter and celebrates the winter crop harvest. 
-                    It's primarily celebrated in Punjab and northern India.
+                    It is primarily celebrated in Punjab and northern India.
                   </p>
                   
                   <p>
@@ -869,8 +869,8 @@ const LohriSunriseSunset: React.FC = () => {
                     a: "While both fall around the same time, Lohri (January 13) is primarily a Punjabi festival celebrating the harvest and winter solstice. Makar Sankranti varies by region and celebrates the sun's northward journey. They share agricultural significance but have different cultural traditions."
                   },
                   {
-                    q: "Can I celebrate Lohri if it's cloudy?",
-                    a: "Yes! The astronomical times remain the same regardless of weather. Even if you can't see the actual sunset, the bonfire timing stays consistent. The celebration is about community, harvest, and tradition rather than observing the sun directly."
+                    q: "Can I celebrate Lohri if it is cloudy?",
+                    a: "Yes! The astronomical times remain the same regardless of weather. Even if you cannot see the actual sunset, the bonfire timing stays consistent. The celebration is about community, harvest, and tradition rather than observing the sun directly."
                   },
                   {
                     q: "What offerings are thrown in the Lohri bonfire?",
@@ -996,7 +996,7 @@ const LohriSunriseSunset: React.FC = () => {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">📍 Regional Variations</h3>
                 
                 <p className="mb-4">
-                  While Lohri is primarily a Punjabi festival, it's celebrated across northern India with slight variations:
+                  While Lohri is primarily a Punjabi festival, it is celebrated across northern India with slight variations:
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
