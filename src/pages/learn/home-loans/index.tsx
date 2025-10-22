@@ -23,32 +23,39 @@ const homeLoansLessons = [
   { id: 11, title: 'Tax Benefits on Home Loans', slug: 'tax-benefits', icon: DollarSign, color: 'from-purple-500 to-indigo-500', difficulty: 'Intermediate', duration: '13 min' },
   { id: 12, title: 'Home Loan Pre-Approval Process', slug: 'pre-approval', icon: CheckCircle, color: 'from-blue-500 to-indigo-500', difficulty: 'Beginner', duration: '8 min' },
   { id: 13, title: 'Co-Applicant & Joint Home Loans', slug: 'co-applicant-benefits', icon: Users, color: 'from-teal-500 to-green-500', difficulty: 'Intermediate', duration: '11 min' },
+  { id: 14, title: 'Home Loan Prepayment & Foreclosure', slug: 'prepayment-foreclosure', icon: Target, color: 'from-orange-500 to-amber-500', difficulty: 'Intermediate', duration: '10 min' },
+  { id: 15, title: 'Balance Transfer: When & How?', slug: 'balance-transfer', icon: CreditCard, color: 'from-pink-500 to-purple-500', difficulty: 'Advanced', duration: '12 min' },
+  { id: 16, title: 'Top-Up Home Loans Explained', slug: 'top-up-loans', icon: TrendingUp, color: 'from-cyan-500 to-teal-500', difficulty: 'Intermediate', duration: '9 min' },
+  { id: 17, title: 'Home Loan Insurance (Must or Skip?)', slug: 'home-loan-insurance', icon: Shield, color: 'from-red-500 to-orange-500', difficulty: 'Intermediate', duration: '10 min' },
+  { id: 18, title: 'Property Valuation Process', slug: 'property-valuation', icon: MapPin, color: 'from-green-500 to-lime-500', difficulty: 'Intermediate', duration: '8 min' },
+  { id: 19, title: 'Common Home Loan Mistakes to Avoid', slug: 'common-mistakes', icon: AlertCircle, color: 'from-yellow-500 to-red-500', difficulty: 'Beginner', duration: '11 min' },
+  { id: 20, title: 'How to Choose Best Home Loan?', slug: 'choose-best-loan', icon: Briefcase, color: 'from-indigo-500 to-blue-500', difficulty: 'Advanced', duration: '14 min' },
 ];
 
 const HomeLoansHub: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Home Loans in India: Complete Guide (13 Lessons + Calculators) | MoneyCal"
-        description="Master home loans in India with 13 comprehensive lessons. Learn eligibility, EMI calculation, tax benefits, interest rates, and smart strategies. 3 free calculators included!"
+        title="Home Loans in India: Complete Guide (20 Lessons + Calculators) | MoneyCal"
+        description="Master home loans in India with 20 comprehensive lessons. Learn eligibility, EMI calculation, tax benefits, interest rates, prepayment, balance transfer and smart strategies. 3 free calculators included!"
         keywords="home loan India, home loan eligibility, home loan EMI calculator, home loan interest rates, tax benefits home loan, CIBIL score home loan"
         canonicalUrl="https://moneycal.in/learn/home-loans"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Course',
           name: 'Home Loans in India: Complete Guide',
-          description: 'Comprehensive 13-lesson course on home loans in India covering eligibility, types, EMI calculation, tax benefits, and smart strategies.',
+          description: 'Comprehensive 20-lesson course on home loans in India covering eligibility, types, EMI calculation, tax benefits, prepayment, balance transfer, and smart strategies.',
           provider: {
             '@type': 'Organization',
             name: 'MoneyCal',
             sameAs: 'https://moneycal.in',
           },
-          numberOfCredits: 13,
+          numberOfCredits: 20,
           courseCode: 'HOME-LOANS-101',
           hasCourseInstance: {
             '@type': 'CourseInstance',
             courseMode: 'online',
-            courseWorkload: 'PT2H15M',
+            courseWorkload: 'PT3H30M',
           },
         }}
       />
@@ -76,11 +83,11 @@ const HomeLoansHub: React.FC = () => {
             {/* Stats */}
             <div className="flex flex-wrap justify-center gap-6 mt-8">
               <div className="bg-white rounded-xl shadow-md p-4 min-w-[140px]">
-                <div className="text-3xl font-bold text-blue-600">13</div>
+                <div className="text-3xl font-bold text-blue-600">20</div>
                 <div className="text-sm text-gray-600">Lessons</div>
               </div>
               <div className="bg-white rounded-xl shadow-md p-4 min-w-[140px]">
-                <div className="text-3xl font-bold text-green-600">2.25h</div>
+                <div className="text-3xl font-bold text-green-600">3.5h</div>
                 <div className="text-sm text-gray-600">Total Duration</div>
               </div>
               <div className="bg-white rounded-xl shadow-md p-4 min-w-[140px]">

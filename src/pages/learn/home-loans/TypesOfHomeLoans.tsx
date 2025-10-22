@@ -645,3 +645,4 @@ const TypesOfHomeLoans: React.FC = () => {
 
 export default TypesOfHomeLoans;
 
+
