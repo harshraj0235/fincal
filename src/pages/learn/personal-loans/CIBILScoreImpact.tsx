@@ -14,19 +14,9 @@ const CIBILScoreImpact: React.FC = () => {
       />
       
       <LearnLayout
-        title="CIBIL Score Impact on Personal Loans"
-        description="Understand how your credit score affects loan approval and rates! 📊"
-        category="Personal Loans"
-        difficulty="Intermediate"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'Personal Loan Application Process',
-          slug: '/learn/personal-loans/application-process'
-        }}
-        nextLesson={{
-          title: 'Personal Loan for Debt Consolidation',
-          slug: '/learn/personal-loans/debt-consolidation'
-        }}
+        category="personal-loans"
+        currentLesson="cibil-score-impact"
+        breadcrumb={['Learn', 'Personal Loans', 'CIBIL Score Impact']}
       >
         {/* Introduction */}
         <section className="mb-12">

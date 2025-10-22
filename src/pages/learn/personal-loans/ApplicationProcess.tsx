@@ -14,19 +14,9 @@ const ApplicationProcess: React.FC = () => {
       />
       
       <LearnLayout
-        title="Personal Loan Application Process"
-        description="Step-by-step guide to apply for personal loan successfully! 📝"
-        category="Personal Loans"
-        difficulty="Beginner"
-        readTime="9 min read"
-        prevLesson={{
-          title: 'Documents Required for Personal Loan',
-          slug: '/learn/personal-loans/documents-required'
-        }}
-        nextLesson={{
-          title: 'CIBIL Score Impact on Personal Loans',
-          slug: '/learn/personal-loans/cibil-score-impact'
-        }}
+        category="personal-loans"
+        currentLesson="application-process"
+        breadcrumb={['Learn', 'Personal Loans', 'Application Process']}
       >
         {/* Introduction */}
         <section className="mb-12">

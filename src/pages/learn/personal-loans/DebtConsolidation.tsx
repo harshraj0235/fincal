@@ -14,19 +14,9 @@ const DebtConsolidation: React.FC = () => {
       />
       
       <LearnLayout
-        title="Personal Loan for Debt Consolidation"
-        description="Merge multiple debts into one low-interest loan and save money! 🔄"
-        category="Personal Loans"
-        difficulty="Intermediate"
-        readTime="11 min read"
-        prevLesson={{
-          title: 'CIBIL Score Impact on Personal Loans',
-          slug: '/learn/personal-loans/cibil-score-impact'
-        }}
-        nextLesson={{
-          title: 'Tax Implications of Personal Loans',
-          slug: '/learn/personal-loans/tax-implications'
-        }}
+        category="personal-loans"
+        currentLesson="debt-consolidation"
+        breadcrumb={['Learn', 'Personal Loans', 'Debt Consolidation']}
       >
         {/* Introduction */}
         <section className="mb-12">

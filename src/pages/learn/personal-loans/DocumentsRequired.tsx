@@ -14,19 +14,9 @@ const DocumentsRequired: React.FC = () => {
       />
       
       <LearnLayout
-        title="Documents Required for Personal Loan"
-        description="Complete checklist of documents you need to apply! 📄"
-        category="Personal Loans"
-        difficulty="Beginner"
-        readTime="7 min read"
-        prevLesson={{
-          title: 'Instant Personal Loan Apps Explained',
-          slug: '/learn/personal-loans/instant-loan-apps'
-        }}
-        nextLesson={{
-          title: 'Personal Loan Application Process',
-          slug: '/learn/personal-loans/application-process'
-        }}
+        category="personal-loans"
+        currentLesson="documents-required"
+        breadcrumb={['Learn', 'Personal Loans', 'Documents Required']}
       >
         {/* Introduction */}
         <section className="mb-12">
