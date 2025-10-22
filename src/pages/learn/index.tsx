@@ -26,11 +26,11 @@ const LearnHome: React.FC = () => {
             <div className="flex items-center space-x-6">
               <span className="flex items-center">
                 <Sparkles className="w-4 h-4 mr-1 text-yellow-300" />
-                <span className="font-bold text-yellow-300">7 Lessons Live!</span>
+                <span className="font-bold text-yellow-300">40 Lessons Live!</span>
               </span>
               <span className="hidden md:inline">
-                <span className="text-white/80">18,000+ words |</span>
-                <span className="font-bold ml-1 text-green-300">3 Interactive Calculators</span>
+                <span className="text-white/80">120,000+ words |</span>
+                <span className="font-bold ml-1 text-green-300">8 Interactive Calculators</span>
               </span>
             </div>
             <div className="flex items-center space-x-4">
@@ -124,8 +124,8 @@ const LearnHome: React.FC = () => {
                     </div>
                     <div className="hidden md:block">
                       <div className="text-right">
-                        <div className="text-white/70 text-sm mb-1">Total Lessons</div>
-                        <div className="text-white text-4xl font-bold">150+</div>
+                        <div className="text-white/70 text-sm mb-1">Live Lessons</div>
+                        <div className="text-white text-4xl font-bold">40</div>
                       </div>
                     </div>
                   </div>
