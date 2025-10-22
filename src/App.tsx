@@ -373,6 +373,9 @@ const CollateralVsNonCollateral = lazy(() => import('./pages/learn/education-loa
 const EducationLoanEMI = lazy(() => import('./pages/learn/education-loans/EMICalculator'));
 const ScholarshipsAlternatives = lazy(() => import('./pages/learn/education-loans/ScholarshipsAlternatives'));
 
+// Learn Platform - Business Loans (15 lessons) - IN PROGRESS
+const BusinessLoansHub = lazy(() => import('./pages/learn/business-loans/index'));
+
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
 const CorporateProfessionalTools = lazy(() => import('./pages/CorporateProfessionalTools'));
@@ -593,6 +596,9 @@ function App() {
         <Route path="/learn/education-loans/collateral-vs-non-collateral" element={<CollateralVsNonCollateral />} />
         <Route path="/learn/education-loans/emi-calculator" element={<EducationLoanEMI />} />
         <Route path="/learn/education-loans/scholarships-alternatives" element={<ScholarshipsAlternatives />} />
+        
+        {/* Learn Platform - Business Loans (15 lessons) - IN PROGRESS */}
+        <Route path="/learn/business-loans" element={<BusinessLoansHub />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
