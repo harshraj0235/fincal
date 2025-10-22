@@ -371,3 +371,5 @@ const SimpleVsCompoundInterest: React.FC = () => {
 
 export default SimpleVsCompoundInterest;
 
+
+

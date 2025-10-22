@@ -173,3 +173,5 @@ const CompareLoanOffers: React.FC = () => {
 
 export default CompareLoanOffers;
 
+
+

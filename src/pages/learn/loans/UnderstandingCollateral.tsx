@@ -243,3 +243,5 @@ const UnderstandingCollateral: React.FC = () => {
 
 export default UnderstandingCollateral;
 
+
+

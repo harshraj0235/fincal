@@ -241,3 +241,5 @@ export const easterCalculationExplanation = {
   note: 'This formula was established by the Council of Nicaea in 325 AD to ensure Easter falls in spring and after Passover.'
 };
 
+
+

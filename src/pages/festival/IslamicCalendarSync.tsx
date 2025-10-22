@@ -775,3 +775,5 @@ const IslamicCalendarSync: React.FC = () => {
 
 export default IslamicCalendarSync;
 
+
+

@@ -230,3 +230,4 @@ const CIBILScoreImpact: React.FC = () => {
 
 export default CIBILScoreImpact;
 
+

@@ -180,3 +180,4 @@ const GoldPriceWidget: React.FC<GoldPriceWidgetProps> = ({ city }) => {
 
 export default GoldPriceWidget;
 
+

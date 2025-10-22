@@ -434,3 +434,5 @@ const LoanTenureExplained: React.FC = () => {
 
 export default LoanTenureExplained;
 
+
+

@@ -248,3 +248,5 @@ const LoanDefaultConsequences: React.FC = () => {
 
 export default LoanDefaultConsequences;
 
+
+
