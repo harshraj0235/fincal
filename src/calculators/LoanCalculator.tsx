@@ -1061,7 +1061,7 @@ export const LoanCalculator: React.FC = () => {
               {[
                 {
                   q: "What is EMI and how is it calculated?",
-                  a: "EMI (Equated Monthly Installment) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. It's calculated using the formula: EMI = [P × R × (1+R)^N] / [(1+R)^N – 1], where P is principal, R is monthly interest rate, and N is number of months."
+                  a: "EMI (Equated Monthly Installment) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. It is calculated using the formula: EMI = [P × R × (1+R)^N] / [(1+R)^N – 1], where P is principal, R is monthly interest rate, and N is number of months."
                 },
                 {
                   q: "Should I choose reducing balance or flat rate interest?",
@@ -1089,7 +1089,7 @@ export const LoanCalculator: React.FC = () => {
                 },
                 {
                   q: "Can I claim tax benefits on my loan?",
-                  a: "Yes, for home loans: Up to ₹1.5 lakh on principal under Section 80C and up to ₹2 lakh on interest under Section 24(b). Education loans offer unlimited interest deduction under Section 80E. Personal and car loans don't offer tax benefits."
+                  a: "Yes, for home loans: Up to ₹1.5 lakh on principal under Section 80C and up to ₹2 lakh on interest under Section 24(b). Education loans offer unlimited interest deduction under Section 80E. Personal and car loans do not offer tax benefits."
                 }
               ].map((faq, index) => (
                 <div key={index} className="border-b border-gray-200 pb-6 last:border-0">
