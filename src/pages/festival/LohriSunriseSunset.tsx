@@ -65,8 +65,19 @@ const calculateSunTimes = (date: Date, lat: number, lon: number) => {
                 (Math.cos(lat * Math.PI / 180) * Math.cos(declination * Math.PI / 180));
   
   if (cosH > 1 || cosH < -1) {
-    // Polar day/night
-    return null;
+    // Polar day/night - use approximate values for edge cases
+    const H = 0;
+    const sunriseLocal = 6;
+    const sunsetLocal = 18;
+    return {
+      sunrise: sunriseLocal,
+      sunset: sunsetLocal,
+      solarNoon: 12,
+      civilDawn: 5.5,
+      civilDusk: 18.5,
+      dayLength: 12,
+      declination
+    };
   }
   
   const H = Math.acos(cosH) * 180 / Math.PI;
