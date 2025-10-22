@@ -14,16 +14,9 @@ const WhatIsPersonalLoan: React.FC = () => {
       />
       
       <LearnLayout
-        title="What is a Personal Loan?"
-        description="Quick, unsecured finance explained - get money in 24 hours! ⚡"
-        category="Personal Loans"
-        difficulty="Beginner"
-        readTime="8 min read"
-        prevLesson={null}
-        nextLesson={{
-          title: 'Types of Personal Loans in India',
-          slug: '/learn/personal-loans/types-of-personal-loans'
-        }}
+        category="personal-loans"
+        currentLesson="what-is-personal-loan"
+        breadcrumb={['Learn', 'Personal Loans', 'What is a Personal Loan?']}
       >
         {/* What is Personal Loan */}
         <section className="mb-12">
