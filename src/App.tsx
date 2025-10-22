@@ -362,6 +362,7 @@ const EVLoanSubsidy = lazy(() => import('./pages/learn/vehicle-loans/EVLoanSubsi
 
 // Learn Platform - Education Loans (10 lessons) - IN PROGRESS
 const EducationLoansHub = lazy(() => import('./pages/learn/education-loans/index'));
+const WhatIsEducationLoan = lazy(() => import('./pages/learn/education-loans/WhatIsEducationLoan'));
 
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
@@ -573,6 +574,7 @@ function App() {
         
         {/* Learn Platform - Education Loans (10 lessons) - IN PROGRESS */}
         <Route path="/learn/education-loans" element={<EducationLoansHub />} />
+        <Route path="/learn/education-loans/what-is-education-loan" element={<WhatIsEducationLoan />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
