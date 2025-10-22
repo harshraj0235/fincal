@@ -360,6 +360,9 @@ const VehicleLoanBestBanks = lazy(() => import('./pages/learn/vehicle-loans/Best
 const DealerVsBank = lazy(() => import('./pages/learn/vehicle-loans/DealerVsBank'));
 const EVLoanSubsidy = lazy(() => import('./pages/learn/vehicle-loans/EVLoanSubsidy'));
 
+// Learn Platform - Education Loans (10 lessons) - IN PROGRESS
+const EducationLoansHub = lazy(() => import('./pages/learn/education-loans/index'));
+
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
 const CorporateProfessionalTools = lazy(() => import('./pages/CorporateProfessionalTools'));
@@ -567,6 +570,9 @@ function App() {
         <Route path="/learn/vehicle-loans/best-banks" element={<VehicleLoanBestBanks />} />
         <Route path="/learn/vehicle-loans/dealer-vs-bank" element={<DealerVsBank />} />
         <Route path="/learn/vehicle-loans/ev-loan-subsidy" element={<EVLoanSubsidy />} />
+        
+        {/* Learn Platform - Education Loans (10 lessons) - IN PROGRESS */}
+        <Route path="/learn/education-loans" element={<EducationLoansHub />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
