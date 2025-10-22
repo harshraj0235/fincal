@@ -14,19 +14,9 @@ const InstantLoanApps: React.FC = () => {
       />
       
       <LearnLayout
-        title="Instant Personal Loan Apps Explained"
-        description="Get money in 24 hours with these digital lending apps! ⚡"
-        category="Personal Loans"
-        difficulty="Beginner"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'Secured vs Unsecured Personal Loans',
-          slug: '/learn/personal-loans/secured-vs-unsecured'
-        }}
-        nextLesson={{
-          title: 'Documents Required for Personal Loan',
-          slug: '/learn/personal-loans/documents-required'
-        }}
+        category="personal-loans"
+        currentLesson="instant-loan-apps"
+        breadcrumb={['Learn', 'Personal Loans', 'Instant Loan Apps']}
       >
         {/* Introduction */}
         <section className="mb-12">

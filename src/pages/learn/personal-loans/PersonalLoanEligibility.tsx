@@ -75,19 +75,9 @@ const PersonalLoanEligibility: React.FC = () => {
       />
       
       <LearnLayout
-        title="Personal Loan Eligibility Calculator"
-        description="Calculate how much personal loan you can get and your EMI! 📊"
-        category="Personal Loans"
-        difficulty="Beginner"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'Types of Personal Loans in India',
-          slug: '/learn/personal-loans/types-of-personal-loans'
-        }}
-        nextLesson={{
-          title: 'Interest Rates Explained (11-15%)',
-          slug: '/learn/personal-loans/interest-rates-explained'
-        }}
+        category="personal-loans"
+        currentLesson="personal-loan-eligibility"
+        breadcrumb={['Learn', 'Personal Loans', 'Personal Loan Eligibility']}
       >
         {/* Calculator Section */}
         <section className="mb-12">

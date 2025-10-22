@@ -14,19 +14,9 @@ const TypesOfPersonalLoans: React.FC = () => {
       />
       
       <LearnLayout
-        title="Types of Personal Loans in India"
-        description="8 categories of personal loans - choose the perfect one for your need! 💳"
-        category="Personal Loans"
-        difficulty="Beginner"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'What is a Personal Loan?',
-          slug: '/learn/personal-loans/what-is-personal-loan'
-        }}
-        nextLesson={{
-          title: 'Personal Loan Eligibility Calculator',
-          slug: '/learn/personal-loans/personal-loan-eligibility'
-        }}
+        category="personal-loans"
+        currentLesson="types-of-personal-loans"
+        breadcrumb={['Learn', 'Personal Loans', 'Types of Personal Loans']}
       >
         {/* Introduction */}
         <section className="mb-12">

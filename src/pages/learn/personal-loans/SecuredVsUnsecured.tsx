@@ -14,19 +14,9 @@ const SecuredVsUnsecured: React.FC = () => {
       />
       
       <LearnLayout
-        title="Secured vs Unsecured Personal Loans"
-        description="Understand the key differences and choose the right option! 🛡️"
-        category="Personal Loans"
-        difficulty="Beginner"
-        readTime="8 min read"
-        prevLesson={{
-          title: 'Interest Rates Explained (11-15%)',
-          slug: '/learn/personal-loans/interest-rates-explained'
-        }}
-        nextLesson={{
-          title: 'Instant Personal Loan Apps Explained',
-          slug: '/learn/personal-loans/instant-loan-apps'
-        }}
+        category="personal-loans"
+        currentLesson="secured-vs-unsecured"
+        breadcrumb={['Learn', 'Personal Loans', 'Secured vs Unsecured']}
       >
         {/* Introduction */}
         <section className="mb-12">

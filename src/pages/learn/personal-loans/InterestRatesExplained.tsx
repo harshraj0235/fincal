@@ -14,19 +14,9 @@ const InterestRatesExplained: React.FC = () => {
       />
       
       <LearnLayout
-        title="Interest Rates Explained (11-15%)"
-        description="Master personal loan interest rates - get the lowest rates possible! 💰"
-        category="Personal Loans"
-        difficulty="Intermediate"
-        readTime="9 min read"
-        prevLesson={{
-          title: 'Personal Loan Eligibility Calculator',
-          slug: '/learn/personal-loans/personal-loan-eligibility'
-        }}
-        nextLesson={{
-          title: 'Secured vs Unsecured Personal Loans',
-          slug: '/learn/personal-loans/secured-vs-unsecured'
-        }}
+        category="personal-loans"
+        currentLesson="interest-rates-explained"
+        breadcrumb={['Learn', 'Personal Loans', 'Interest Rates Explained']}
       >
         {/* Introduction */}
         <section className="mb-12">
