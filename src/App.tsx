@@ -375,6 +375,7 @@ const ScholarshipsAlternatives = lazy(() => import('./pages/learn/education-loan
 
 // Learn Platform - Business Loans (15 lessons) - IN PROGRESS
 const BusinessLoansHub = lazy(() => import('./pages/learn/business-loans/index'));
+const BusinessLoanBasics = lazy(() => import('./pages/learn/business-loans/BusinessLoanBasics'));
 
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
@@ -599,6 +600,7 @@ function App() {
         
         {/* Learn Platform - Business Loans (15 lessons) - IN PROGRESS */}
         <Route path="/learn/business-loans" element={<BusinessLoansHub />} />
+        <Route path="/learn/business-loans/business-loan-basics" element={<BusinessLoanBasics />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
