@@ -20,14 +20,9 @@ const InterestRates: React.FC = () => {
   };
 
   const lessonData = {
-    title: "Gold Loan Interest Rates 2024 - Compare Best Rates | MoneyCal",
     category: "gold-loans",
     currentLesson: "interest-rates",
-    breadcrumb: [
-      { name: "Learn", url: "/learn" },
-      { name: "Gold Loans", url: "/learn/gold-loans" },
-      { name: "Interest Rates", url: "/learn/gold-loans/interest-rates" }
-    ]
+    breadcrumb: ['Learn', 'Gold Loans', 'Interest Rates']
   };
 
   return (

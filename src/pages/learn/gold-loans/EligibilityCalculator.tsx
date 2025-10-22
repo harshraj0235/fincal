@@ -29,14 +29,9 @@ const EligibilityCalculator: React.FC = () => {
   };
 
   const lessonData = {
-    title: "Gold Loan Eligibility Calculator - Check Your Gold Loan Eligibility | MoneyCal",
     category: "gold-loans",
     currentLesson: "eligibility-calculator",
-    breadcrumb: [
-      { name: "Learn", url: "/learn" },
-      { name: "Gold Loans", url: "/learn/gold-loans" },
-      { name: "Eligibility Calculator", url: "/learn/gold-loans/eligibility-calculator" }
-    ]
+    breadcrumb: ['Learn', 'Gold Loans', 'Eligibility Calculator']
   };
 
   return (

@@ -4,14 +4,9 @@ import LearnLayout from '../../../components/learn/LearnLayout';
 
 const WhatIsGoldLoan: React.FC = () => {
   const lessonData = {
-    title: "What is Gold Loan? - स्वर्ण ऋण क्या है?",
     category: "gold-loans",
     currentLesson: "what-is-gold-loan",
-    breadcrumb: [
-      { name: "Learn", url: "/learn" },
-      { name: "Gold Loans", url: "/learn/gold-loans" },
-      { name: "What is Gold Loan", url: "/learn/gold-loans/what-is-gold-loan" }
-    ]
+    breadcrumb: ['Learn', 'Gold Loans', 'What is Gold Loan?']
   };
 
   return (
