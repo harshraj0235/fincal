@@ -379,6 +379,9 @@ const BusinessLoanBasics = lazy(() => import('./pages/learn/business-loans/Busin
 const MSMELoanGuide = lazy(() => import('./pages/learn/business-loans/MSMELoanGuide'));
 const MudraLoan = lazy(() => import('./pages/learn/business-loans/MudraLoan'));
 const WorkingCapitalLoan = lazy(() => import('./pages/learn/business-loans/WorkingCapitalLoan'));
+const StartupLoan = lazy(() => import('./pages/learn/business-loans/StartupLoan'));
+const BusinessLoanEMI = lazy(() => import('./pages/learn/business-loans/EMICalculator'));
+const BusinessGovernmentSchemes = lazy(() => import('./pages/learn/business-loans/GovernmentSchemes'));
 
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
@@ -607,6 +610,9 @@ function App() {
         <Route path="/learn/business-loans/msme-loan-guide" element={<MSMELoanGuide />} />
         <Route path="/learn/business-loans/mudra-loan" element={<MudraLoan />} />
         <Route path="/learn/business-loans/working-capital-loan" element={<WorkingCapitalLoan />} />
+        <Route path="/learn/business-loans/startup-loan" element={<StartupLoan />} />
+        <Route path="/learn/business-loans/emi-calculator" element={<BusinessLoanEMI />} />
+        <Route path="/learn/business-loans/government-schemes" element={<BusinessGovernmentSchemes />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
