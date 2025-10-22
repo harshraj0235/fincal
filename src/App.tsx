@@ -364,7 +364,10 @@ const EVLoanSubsidy = lazy(() => import('./pages/learn/vehicle-loans/EVLoanSubsi
 const EducationLoansHub = lazy(() => import('./pages/learn/education-loans/index'));
 const WhatIsEducationLoan = lazy(() => import('./pages/learn/education-loans/WhatIsEducationLoan'));
 const StudyInIndia = lazy(() => import('./pages/learn/education-loans/StudyInIndia'));
+const StudyAbroad = lazy(() => import('./pages/learn/education-loans/StudyAbroad'));
 const EducationLoanEMI = lazy(() => import('./pages/learn/education-loans/EMICalculator'));
+const EducationTaxBenefits = lazy(() => import('./pages/learn/education-loans/TaxBenefits'));
+const RepaymentMoratorium = lazy(() => import('./pages/learn/education-loans/RepaymentMoratorium'));
 
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
@@ -578,7 +581,10 @@ function App() {
         <Route path="/learn/education-loans" element={<EducationLoansHub />} />
         <Route path="/learn/education-loans/what-is-education-loan" element={<WhatIsEducationLoan />} />
         <Route path="/learn/education-loans/study-in-india" element={<StudyInIndia />} />
+        <Route path="/learn/education-loans/study-abroad" element={<StudyAbroad />} />
         <Route path="/learn/education-loans/emi-calculator" element={<EducationLoanEMI />} />
+        <Route path="/learn/education-loans/tax-benefits" element={<EducationTaxBenefits />} />
+        <Route path="/learn/education-loans/repayment-moratorium" element={<RepaymentMoratorium />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
