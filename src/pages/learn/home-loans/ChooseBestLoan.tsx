@@ -14,16 +14,9 @@ const ChooseBestLoan: React.FC = () => {
       />
       
       <LearnLayout
-        title="How to Choose Best Home Loan?"
-        description="Complete decision framework + 15-point checklist! Make the perfect choice 🎯"
-        category="Home Loans"
-        difficulty="Advanced"
-        readTime="14 min read"
-        prevLesson={{
-          title: 'Common Home Loan Mistakes to Avoid',
-          slug: '/learn/home-loans/common-mistakes'
-        }}
-        nextLesson={null}
+        category="home-loans"
+        currentLesson="choose-best-loan"
+        breadcrumb={['Learn', 'Home Loans', 'Choose Best Loan']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mb-8">

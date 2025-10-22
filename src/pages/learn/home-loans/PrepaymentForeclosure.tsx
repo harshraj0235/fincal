@@ -14,19 +14,9 @@ const PrepaymentForeclosure: React.FC = () => {
       />
       
       <LearnLayout
-        title="Home Loan Prepayment & Foreclosure"
-        description="Prepay smartly and save ₹5-10 lakhs in interest! Complete strategy 💰"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'Co-Applicant & Joint Home Loans',
-          slug: '/learn/home-loans/co-applicant-benefits'
-        }}
-        nextLesson={{
-          title: 'Balance Transfer: When & How?',
-          slug: '/learn/home-loans/balance-transfer'
-        }}
+        category="home-loans"
+        currentLesson="prepayment-foreclosure"
+        breadcrumb={['Learn', 'Home Loans', 'Prepayment & Foreclosure']}
       >
         {/* What is Prepayment */}
         <section className="mb-12">

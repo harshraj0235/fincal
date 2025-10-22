@@ -36,19 +36,9 @@ const LoanToValueRatio: React.FC = () => {
       />
       
       <LearnLayout
-        title="Understanding Loan-to-Value (LTV) Ratio"
-        description="Master LTV ratio and optimize your down payment strategy 📊"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="9 min read"
-        prevLesson={{
-          title: 'Home Loan Eligibility Calculator',
-          slug: '/learn/home-loans/home-loan-eligibility'
-        }}
-        nextLesson={{
-          title: 'Home Loan Interest Rates Explained',
-          slug: '/learn/home-loans/interest-rates-explained'
-        }}
+        category="home-loans"
+        currentLesson="loan-to-value-ratio"
+        breadcrumb={['Learn', 'Home Loans', 'LTV Ratio']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-orange-50 to-red-50 border-l-4 border-orange-500 p-6 rounded-r-lg mb-8">

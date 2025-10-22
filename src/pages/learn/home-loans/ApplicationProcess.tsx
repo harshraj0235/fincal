@@ -14,19 +14,9 @@ const ApplicationProcess: React.FC = () => {
       />
       
       <LearnLayout
-        title="Home Loan Application Process"
-        description="Complete step-by-step guide from application to disbursement! 🚀"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="12 min read"
-        prevLesson={{
-          title: 'Documents Required for Home Loan',
-          slug: '/learn/home-loans/documents-required'
-        }}
-        nextLesson={{
-          title: 'CIBIL Score & Home Loan Approval',
-          slug: '/learn/home-loans/cibil-score-impact'
-        }}
+        category="home-loans"
+        currentLesson="application-process"
+        breadcrumb={['Learn', 'Home Loans', 'Application Process']}
       >
         {/* Timeline Overview */}
         <section className="mb-12">

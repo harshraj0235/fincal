@@ -14,19 +14,9 @@ const PreApproval: React.FC = () => {
       />
       
       <LearnLayout
-        title="Home Loan Pre-Approval Process"
-        description="Get approved BEFORE house hunting - gain negotiation power! ⚡"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="8 min read"
-        prevLesson={{
-          title: 'Tax Benefits on Home Loans',
-          slug: '/learn/home-loans/tax-benefits'
-        }}
-        nextLesson={{
-          title: 'Co-Applicant & Joint Home Loans',
-          slug: '/learn/home-loans/co-applicant-benefits'
-        }}
+        category="home-loans"
+        currentLesson="pre-approval"
+        breadcrumb={['Learn', 'Home Loans', 'Pre-Approval']}
       >
         {/* What is Pre-Approval */}
         <section className="mb-12">

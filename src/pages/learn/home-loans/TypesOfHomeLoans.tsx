@@ -22,19 +22,9 @@ const TypesOfHomeLoans: React.FC = () => {
       />
       
       <LearnLayout
-        title="Types of Home Loans in India"
-        description="Understand all 8 types of home loans and choose the perfect one for your needs 🏠"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'What is a Home Loan?',
-          slug: '/learn/home-loans/what-is-home-loan'
-        }}
-        nextLesson={{
-          title: 'Home Loan Eligibility Calculator',
-          slug: '/learn/home-loans/home-loan-eligibility'
-        }}
+        category="home-loans"
+        currentLesson="types-of-home-loans"
+        breadcrumb={['Learn', 'Home Loans', 'Types of Home Loans']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-500 p-6 rounded-r-lg mb-8">

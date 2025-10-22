@@ -14,19 +14,9 @@ const TaxBenefits: React.FC = () => {
       />
       
       <LearnLayout
-        title="Tax Benefits on Home Loans"
-        description="Save ₹1+ lakh in taxes every year! Complete guide 💰"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="13 min read"
-        prevLesson={{
-          title: 'CIBIL Score & Home Loan Approval',
-          slug: '/learn/home-loans/cibil-score-impact'
-        }}
-        nextLesson={{
-          title: 'Home Loan Pre-Approval Process',
-          slug: '/learn/home-loans/pre-approval'
-        }}
+        category="home-loans"
+        currentLesson="tax-benefits"
+        breadcrumb={['Learn', 'Home Loans', 'Tax Benefits']}
       >
         {/* Main Benefits Overview */}
         <section className="mb-12">

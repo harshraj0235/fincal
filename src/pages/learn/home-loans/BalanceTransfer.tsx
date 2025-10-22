@@ -14,19 +14,9 @@ const BalanceTransfer: React.FC = () => {
       />
       
       <LearnLayout
-        title="Balance Transfer: When & How?"
-        description="Switch to lower rates and save ₹5-10 lakhs! Complete guide 🔄"
-        category="Home Loans"
-        difficulty="Advanced"
-        readTime="12 min read"
-        prevLesson={{
-          title: 'Home Loan Prepayment & Foreclosure',
-          slug: '/learn/home-loans/prepayment-foreclosure'
-        }}
-        nextLesson={{
-          title: 'Top-Up Home Loans Explained',
-          slug: '/learn/home-loans/top-up-loans'
-        }}
+        category="home-loans"
+        currentLesson="balance-transfer"
+        breadcrumb={['Learn', 'Home Loans', 'Balance Transfer']}
       >
         {/* What is Balance Transfer */}
         <section className="mb-12">

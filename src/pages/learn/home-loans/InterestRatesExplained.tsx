@@ -14,19 +14,9 @@ const InterestRatesExplained: React.FC = () => {
       />
       
       <LearnLayout
-        title="Home Loan Interest Rates Explained"
-        description="Master interest rates and save lakhs on your home loan! 📈"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'Understanding Loan-to-Value (LTV) Ratio',
-          slug: '/learn/home-loans/loan-to-value-ratio'
-        }}
-        nextLesson={{
-          title: 'Fixed vs Floating Rate Home Loans',
-          slug: '/learn/home-loans/fixed-vs-floating'
-        }}
+        category="home-loans"
+        currentLesson="interest-rates-explained"
+        breadcrumb={['Learn', 'Home Loans', 'Interest Rates']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mb-8">

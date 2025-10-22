@@ -14,19 +14,9 @@ const CommonMistakes: React.FC = () => {
       />
       
       <LearnLayout
-        title="Common Home Loan Mistakes to Avoid"
-        description="Don't make these 10 costly mistakes - save lakhs! ⚠️"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="11 min read"
-        prevLesson={{
-          title: 'Property Valuation Process',
-          slug: '/learn/home-loans/property-valuation'
-        }}
-        nextLesson={{
-          title: 'How to Choose Best Home Loan?',
-          slug: '/learn/home-loans/choose-best-loan'
-        }}
+        category="home-loans"
+        currentLesson="common-mistakes"
+        breadcrumb={['Learn', 'Home Loans', 'Common Mistakes']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 p-6 rounded-r-lg mb-8">

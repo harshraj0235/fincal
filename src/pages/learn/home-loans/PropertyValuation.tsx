@@ -14,19 +14,9 @@ const PropertyValuation: React.FC = () => {
       />
       
       <LearnLayout
-        title="Property Valuation Process"
-        description="How banks value property & what if it's lower than agreed price! 🏠"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="8 min read"
-        prevLesson={{
-          title: 'Home Loan Insurance (Must or Skip?)',
-          slug: '/learn/home-loans/home-loan-insurance'
-        }}
-        nextLesson={{
-          title: 'Common Home Loan Mistakes to Avoid',
-          slug: '/learn/home-loans/common-mistakes'
-        }}
+        category="home-loans"
+        currentLesson="property-valuation"
+        breadcrumb={['Learn', 'Home Loans', 'Property Valuation']}
       >
         {/* What is Valuation */}
         <section className="mb-12">

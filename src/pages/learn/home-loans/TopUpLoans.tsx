@@ -14,19 +14,9 @@ const TopUpLoans: React.FC = () => {
       />
       
       <LearnLayout
-        title="Top-Up Home Loans Explained"
-        description="Need extra funds? Get them at 9% instead of 15%! 💸"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="9 min read"
-        prevLesson={{
-          title: 'Balance Transfer: When & How?',
-          slug: '/learn/home-loans/balance-transfer'
-        }}
-        nextLesson={{
-          title: 'Home Loan Insurance (Must or Skip?)',
-          slug: '/learn/home-loans/home-loan-insurance'
-        }}
+        category="home-loans"
+        currentLesson="top-up-loans"
+        breadcrumb={['Learn', 'Home Loans', 'Top-Up Loans']}
       >
         {/* What is Top-Up */}
         <section className="mb-12">

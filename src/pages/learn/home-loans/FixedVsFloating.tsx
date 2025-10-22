@@ -34,19 +34,9 @@ const FixedVsFloating: React.FC = () => {
       />
       
       <LearnLayout
-        title="Fixed vs Floating Rate Home Loans"
-        description="Make the right choice and save lakhs! Complete comparison 🏠"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="11 min read"
-        prevLesson={{
-          title: 'Home Loan Interest Rates Explained',
-          slug: '/learn/home-loans/interest-rates-explained'
-        }}
-        nextLesson={{
-          title: 'EMI Calculator & How to Use It',
-          slug: '/learn/home-loans/emi-calculator-guide'
-        }}
+        category="home-loans"
+        currentLesson="fixed-vs-floating"
+        breadcrumb={['Learn', 'Home Loans', 'Fixed vs Floating']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-pink-50 to-rose-50 border-l-4 border-pink-500 p-6 rounded-r-lg mb-8">

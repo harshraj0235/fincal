@@ -14,19 +14,9 @@ const CoApplicantBenefits: React.FC = () => {
       />
       
       <LearnLayout
-        title="Co-Applicant & Joint Home Loans"
-        description="Add co-applicant → Get 60% more loan + double tax benefits! 👥"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="11 min read"
-        prevLesson={{
-          title: 'Home Loan Pre-Approval Process',
-          slug: '/learn/home-loans/pre-approval'
-        }}
-        nextLesson={{
-          title: 'Home Loan Prepayment & Foreclosure',
-          slug: '/learn/home-loans/prepayment-foreclosure'
-        }}
+        category="home-loans"
+        currentLesson="co-applicant-benefits"
+        breadcrumb={['Learn', 'Home Loans', 'Co-Applicant Benefits']}
       >
         {/* Main Benefits */}
         <section className="mb-12">

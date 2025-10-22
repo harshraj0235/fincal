@@ -14,19 +14,9 @@ const CIBILScoreImpact: React.FC = () => {
       />
       
       <LearnLayout
-        title="CIBIL Score & Home Loan Approval"
-        description="750+ score = best rates! Learn how to achieve it 📊"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'Home Loan Application Process',
-          slug: '/learn/home-loans/application-process'
-        }}
-        nextLesson={{
-          title: 'Tax Benefits on Home Loans',
-          slug: '/learn/home-loans/tax-benefits'
-        }}
+        category="home-loans"
+        currentLesson="cibil-score-impact"
+        breadcrumb={['Learn', 'Home Loans', 'CIBIL Score']}
       >
         {/* Score Impact Table */}
         <section className="mb-12">

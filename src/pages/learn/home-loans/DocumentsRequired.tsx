@@ -14,19 +14,9 @@ const DocumentsRequired: React.FC = () => {
       />
       
       <LearnLayout
-        title="Documents Required for Home Loan"
-        description="Complete checklist - never miss a document! 📄"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="9 min read"
-        prevLesson={{
-          title: 'EMI Calculator & How to Use It',
-          slug: '/learn/home-loans/emi-calculator-guide'
-        }}
-        nextLesson={{
-          title: 'Home Loan Application Process',
-          slug: '/learn/home-loans/application-process'
-        }}
+        category="home-loans"
+        currentLesson="documents-required"
+        breadcrumb={['Learn', 'Home Loans', 'Documents Required']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-6 rounded-r-lg mb-8">

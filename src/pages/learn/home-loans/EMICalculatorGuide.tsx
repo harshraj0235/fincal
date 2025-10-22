@@ -43,19 +43,9 @@ const EMICalculatorGuide: React.FC = () => {
       />
       
       <LearnLayout
-        title="EMI Calculator & How to Use It"
-        description="Master EMI calculation and plan your repayment strategy! 🧮"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'Fixed vs Floating Rate Home Loans',
-          slug: '/learn/home-loans/fixed-vs-floating'
-        }}
-        nextLesson={{
-          title: 'Documents Required for Home Loan',
-          slug: '/learn/home-loans/documents-required'
-        }}
+        category="home-loans"
+        currentLesson="emi-calculator-guide"
+        breadcrumb={['Learn', 'Home Loans', 'EMI Calculator']}
       >
         {/* What is EMI */}
         <section className="mb-12">

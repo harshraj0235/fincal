@@ -14,19 +14,9 @@ const HomeLoanInsurance: React.FC = () => {
       />
       
       <LearnLayout
-        title="Home Loan Insurance (Must or Skip?)"
-        description="Property insurance mandatory, life insurance optional - full guide! 🛡️"
-        category="Home Loans"
-        difficulty="Intermediate"
-        readTime="10 min read"
-        prevLesson={{
-          title: 'Top-Up Home Loans Explained',
-          slug: '/learn/home-loans/top-up-loans'
-        }}
-        nextLesson={{
-          title: 'Property Valuation Process',
-          slug: '/learn/home-loans/property-valuation'
-        }}
+        category="home-loans"
+        currentLesson="home-loan-insurance"
+        breadcrumb={['Learn', 'Home Loans', 'Home Loan Insurance']}
       >
         {/* Two Types */}
         <section className="mb-12">

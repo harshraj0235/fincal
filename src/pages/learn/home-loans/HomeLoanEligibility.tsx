@@ -95,19 +95,9 @@ const HomeLoanEligibility: React.FC = () => {
       />
       
       <LearnLayout
-        title="Home Loan Eligibility Calculator"
-        description="Find out exactly how much home loan you can get - with instant calculation! 🧮"
-        category="Home Loans"
-        difficulty="Beginner"
-        readTime="12 min read"
-        prevLesson={{
-          title: 'Types of Home Loans in India',
-          slug: '/learn/home-loans/types-of-home-loans'
-        }}
-        nextLesson={{
-          title: 'Understanding Loan-to-Value (LTV) Ratio',
-          slug: '/learn/home-loans/loan-to-value-ratio'
-        }}
+        category="home-loans"
+        currentLesson="home-loan-eligibility"
+        breadcrumb={['Learn', 'Home Loans', 'Home Loan Eligibility']}
       >
         {/* Introduction */}
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-6 rounded-r-lg mb-8">
