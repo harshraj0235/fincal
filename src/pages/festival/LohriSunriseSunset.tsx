@@ -91,7 +91,7 @@ const LohriSunriseSunset: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Lohri {currentYear} Sunrise Sunset Time {selectedCity.name} | Bonfire Timing Calculator India</title>
+        <title>{`Lohri ${currentYear} Sunrise Sunset Time ${selectedCity.name} | Bonfire Timing Calculator India`}</title>
         <meta name="description" content={`Lohri ${currentYear} sunrise sunset time for ${selectedCity.name}. Sunrise: ${selectedCity.sunrise}, Sunset: ${selectedCity.sunset}. Best bonfire time and celebration guide. Download calendar.`} />
         <meta name="keywords" content={`lohri sunrise time ${currentYear}, lohri sunset time ${selectedCity.name}, lohri bonfire timing ${currentYear}, lohri date ${currentYear}, when to light lohri bonfire, lohri celebration time india`} />
         <link rel="canonical" href="https://moneycal.in/festival-tools/lohri-sunrise-sunset" />
