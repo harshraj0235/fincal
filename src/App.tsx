@@ -239,6 +239,7 @@ const OutstandingReceivableHeatmap = lazy(() => import('./pages/invoicing-tools/
 const FestivalTools = lazy(() => import('./pages/FestivalTools'));
 const FestivalLanding = lazy(() => import('./pages/FestivalLanding'));
 const FestivalToolPage = lazy(() => import('./pages/festival/FestivalToolPage'));
+const LohriSunriseSunset = lazy(() => import('./pages/festival/LohriSunriseSunset'));
 const DiwaliDateFinder = lazy(() => import('./pages/festival/DiwaliDateFinder'));
 const DhanterasDateFinder = lazy(() => import('./pages/festival/DhanterasDateFinder'));
 const GovardhanPujaFinder = lazy(() => import('./pages/festival/GovardhanPujaFinder'));
@@ -731,6 +732,7 @@ function App() {
                 <Route path="/festival-tools/onam-date-reminder" element={<OnamDateReminder />} />
                 <Route path="/festival-tools/makar-sankranti-tithi" element={<MakarSankrantiTithi />} />
                 <Route path="/festival-tools/akshaya-tritiya-muhurat" element={<AkshayaTritiyaMuhurat />} />
+                <Route path="/festival-tools/lohri-sunrise-sunset" element={<LohriSunriseSunset />} />
                 <Route path="/festival-dates" element={<FestivalDateCalendar />} />
                 <Route path="/festival-shopping" element={<FestivalPlanningShopping />} />
                 <Route path="/festival-finance" element={<FestivalFinanceMoney />} />
