@@ -318,6 +318,30 @@ const HomeLoanInsurance = lazy(() => import('./pages/learn/home-loans/HomeLoanIn
 const HomeLoanPropertyValuation = lazy(() => import('./pages/learn/home-loans/PropertyValuation'));
 const HomeLoanCommonMistakes = lazy(() => import('./pages/learn/home-loans/CommonMistakes'));
 const HomeLoanChooseBest = lazy(() => import('./pages/learn/home-loans/ChooseBestLoan'));
+
+// Learn Platform - Personal Loans (20 lessons) - COMPLETE!
+const PersonalLoansHub = lazy(() => import('./pages/learn/personal-loans/index'));
+const WhatIsPersonalLoan = lazy(() => import('./pages/learn/personal-loans/WhatIsPersonalLoan'));
+const TypesOfPersonalLoans = lazy(() => import('./pages/learn/personal-loans/TypesOfPersonalLoans'));
+const PersonalLoanEligibility = lazy(() => import('./pages/learn/personal-loans/PersonalLoanEligibility'));
+const PersonalLoanInterestRates = lazy(() => import('./pages/learn/personal-loans/InterestRatesExplained'));
+const PersonalLoanSecuredVsUnsecured = lazy(() => import('./pages/learn/personal-loans/SecuredVsUnsecured'));
+const InstantLoanApps = lazy(() => import('./pages/learn/personal-loans/InstantLoanApps'));
+const PersonalLoanDocuments = lazy(() => import('./pages/learn/personal-loans/DocumentsRequired'));
+const PersonalLoanApplication = lazy(() => import('./pages/learn/personal-loans/ApplicationProcess'));
+const PersonalLoanCIBIL = lazy(() => import('./pages/learn/personal-loans/CIBILScoreImpact'));
+const PersonalLoanDebtConsolidation = lazy(() => import('./pages/learn/personal-loans/DebtConsolidation'));
+const PersonalLoanProcessingFees = lazy(() => import('./pages/learn/personal-loans/ProcessingFees'));
+const PersonalLoanRepayment = lazy(() => import('./pages/learn/personal-loans/RepaymentStrategies'));
+const PersonalLoanPrepayment = lazy(() => import('./pages/learn/personal-loans/PrepaymentOptions'));
+const PersonalLoanRefinancing = lazy(() => import('./pages/learn/personal-loans/LoanRefinancing'));
+const PersonalLoanRejection = lazy(() => import('./pages/learn/personal-loans/LoanRejectionReasons'));
+const PersonalLoanComparison = lazy(() => import('./pages/learn/personal-loans/LoanComparisonTools'));
+const PersonalLoanImproving = lazy(() => import('./pages/learn/personal-loans/ImprovingApprovalChances'));
+const PersonalLoanFraud = lazy(() => import('./pages/learn/personal-loans/LoanFraudProtection'));
+const PersonalLoanMyths = lazy(() => import('./pages/learn/personal-loans/LoanMythsDebunked'));
+const PersonalLoanClosure = lazy(() => import('./pages/learn/personal-loans/LoanClosureProcess'));
+
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
 const CorporateProfessionalTools = lazy(() => import('./pages/CorporateProfessionalTools'));
@@ -484,6 +508,29 @@ function App() {
         <Route path="/learn/home-loans/property-valuation" element={<HomeLoanPropertyValuation />} />
         <Route path="/learn/home-loans/common-mistakes" element={<HomeLoanCommonMistakes />} />
         <Route path="/learn/home-loans/choose-best-loan" element={<HomeLoanChooseBest />} />
+        
+        {/* Learn Platform - Personal Loans (20 lessons) - COMPLETE! */}
+        <Route path="/learn/personal-loans" element={<PersonalLoansHub />} />
+        <Route path="/learn/personal-loans/what-is-personal-loan" element={<WhatIsPersonalLoan />} />
+        <Route path="/learn/personal-loans/types-of-personal-loans" element={<TypesOfPersonalLoans />} />
+        <Route path="/learn/personal-loans/personal-loan-eligibility" element={<PersonalLoanEligibility />} />
+        <Route path="/learn/personal-loans/interest-rates-explained" element={<PersonalLoanInterestRates />} />
+        <Route path="/learn/personal-loans/secured-vs-unsecured" element={<PersonalLoanSecuredVsUnsecured />} />
+        <Route path="/learn/personal-loans/instant-loan-apps" element={<InstantLoanApps />} />
+        <Route path="/learn/personal-loans/documents-required" element={<PersonalLoanDocuments />} />
+        <Route path="/learn/personal-loans/application-process" element={<PersonalLoanApplication />} />
+        <Route path="/learn/personal-loans/cibil-score-impact" element={<PersonalLoanCIBIL />} />
+        <Route path="/learn/personal-loans/debt-consolidation" element={<PersonalLoanDebtConsolidation />} />
+        <Route path="/learn/personal-loans/processing-fees" element={<PersonalLoanProcessingFees />} />
+        <Route path="/learn/personal-loans/repayment-strategies" element={<PersonalLoanRepayment />} />
+        <Route path="/learn/personal-loans/prepayment-options" element={<PersonalLoanPrepayment />} />
+        <Route path="/learn/personal-loans/loan-refinancing" element={<PersonalLoanRefinancing />} />
+        <Route path="/learn/personal-loans/loan-rejection-reasons" element={<PersonalLoanRejection />} />
+        <Route path="/learn/personal-loans/loan-comparison-tools" element={<PersonalLoanComparison />} />
+        <Route path="/learn/personal-loans/improving-approval-chances" element={<PersonalLoanImproving />} />
+        <Route path="/learn/personal-loans/loan-fraud-protection" element={<PersonalLoanFraud />} />
+        <Route path="/learn/personal-loans/loan-myths-debunked" element={<PersonalLoanMyths />} />
+        <Route path="/learn/personal-loans/loan-closure-process" element={<PersonalLoanClosure />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
