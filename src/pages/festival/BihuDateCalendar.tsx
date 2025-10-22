@@ -316,7 +316,7 @@ const BihuDateCalendar: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Bihu Calendar {selectedYear} - {selectedCity.name} | Bohag Kati Magh Bihu Dates Assam</title>
+        <title>{`Bihu Calendar ${selectedYear} - ${selectedCity.name} | Bohag Kati Magh Bihu Dates Assam`}</title>
         <meta name="description" content={`Complete Bihu festival calendar ${selectedYear} for ${selectedCity.name}, Assam. Bohag Bihu: ${bihuDates.bohag.toLocaleDateString()}, Kati Bihu: ${bihuDates.kati.toLocaleDateString()}, Magh Bihu: ${bihuDates.magh.toLocaleDateString()}. Download calendar, rituals, celebrations guide.`} />
         <meta name="keywords" content={`bihu calendar ${selectedYear}, bohag bihu date ${selectedYear}, rongali bihu ${selectedYear}, kati bihu ${selectedYear}, magh bihu ${selectedYear}, bhogali bihu ${selectedYear}, assam bihu festival dates, ${selectedCity.name} bihu ${selectedYear}, bihu celebration dates assam`} />
         <link rel="canonical" href="https://moneycal.in/festival-tools/bihu-date-calendar" />

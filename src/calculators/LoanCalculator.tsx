@@ -390,7 +390,7 @@ export const LoanCalculator: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Advanced Loan Calculator 2024 - EMI, Interest & Prepayment Calculator India | MoneyCal</title>
+        <title>Advanced Loan Calculator 2024 - EMI, Interest and Prepayment Calculator India | MoneyCal</title>
         <meta name="description" content="Best loan calculator in India 2024. Calculate EMI, total interest, prepayment savings for home loans, personal loans, car loans. Compare loan offers, download amortization schedule PDF/Excel. Get AI-powered financial insights." />
         <meta name="keywords" content="loan calculator india, emi calculator, home loan calculator, personal loan calculator, loan prepayment calculator, loan comparison tool, amortization schedule, best loan calculator 2024, loan emi calculator with prepayment" />
         <link rel="canonical" href="https://moneycal.in/calculators/loan-calculator" />
