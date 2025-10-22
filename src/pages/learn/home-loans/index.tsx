@@ -12,50 +12,43 @@ import SEOHelmet from '../../../components/SEOHelmet';
 const homeLoansLessons = [
   { id: 1, title: 'What is a Home Loan?', slug: 'what-is-home-loan', icon: Home, color: 'from-blue-500 to-cyan-500', difficulty: 'Beginner', duration: '8 min' },
   { id: 2, title: 'Types of Home Loans in India', slug: 'types-of-home-loans', icon: BookOpen, color: 'from-purple-500 to-pink-500', difficulty: 'Beginner', duration: '10 min' },
-  { id: 3, title: 'Home Loan Eligibility Calculator', slug: 'home-loan-eligibility', icon: Calculator, color: 'from-green-500 to-emerald-500', difficulty: 'Beginner', duration: '12 min' },
-  { id: 4, title: 'Understanding Loan-to-Value (LTV) Ratio', slug: 'loan-to-value-ratio', icon: PieChart, color: 'from-orange-500 to-red-500', difficulty: 'Intermediate', duration: '9 min' },
+  { id: 3, title: 'Home Loan Eligibility Calculator', slug: 'home-loan-eligibility', icon: Calculator, color: 'from-green-500 to-emerald-500', difficulty: 'Beginner', duration: '12 min', badge: 'Calculator' },
+  { id: 4, title: 'Understanding Loan-to-Value (LTV) Ratio', slug: 'loan-to-value-ratio', icon: PieChart, color: 'from-orange-500 to-red-500', difficulty: 'Intermediate', duration: '9 min', badge: 'Calculator' },
   { id: 5, title: 'Home Loan Interest Rates Explained', slug: 'interest-rates-explained', icon: TrendingUp, color: 'from-indigo-500 to-purple-500', difficulty: 'Beginner', duration: '10 min' },
   { id: 6, title: 'Fixed vs Floating Rate Home Loans', slug: 'fixed-vs-floating', icon: Settings, color: 'from-pink-500 to-rose-500', difficulty: 'Intermediate', duration: '11 min' },
-  { id: 7, title: 'EMI Calculator & How to Use It', slug: 'emi-calculator-guide', icon: Calculator, color: 'from-cyan-500 to-blue-500', difficulty: 'Beginner', duration: '10 min' },
+  { id: 7, title: 'EMI Calculator & How to Use It', slug: 'emi-calculator-guide', icon: Calculator, color: 'from-cyan-500 to-blue-500', difficulty: 'Beginner', duration: '10 min', badge: 'Calculator' },
   { id: 8, title: 'Documents Required for Home Loan', slug: 'documents-required', icon: FileText, color: 'from-yellow-500 to-orange-500', difficulty: 'Beginner', duration: '9 min' },
   { id: 9, title: 'Home Loan Application Process', slug: 'application-process', icon: Search, color: 'from-green-500 to-teal-500', difficulty: 'Beginner', duration: '12 min' },
   { id: 10, title: 'CIBIL Score & Home Loan Approval', slug: 'cibil-score-impact', icon: Award, color: 'from-red-500 to-pink-500', difficulty: 'Intermediate', duration: '10 min' },
-  { id: 11, title: 'Tax Benefits on Home Loans (Section 80C, 24)', slug: 'tax-benefits', icon: DollarSign, color: 'from-purple-500 to-indigo-500', difficulty: 'Intermediate', duration: '13 min' },
+  { id: 11, title: 'Tax Benefits on Home Loans', slug: 'tax-benefits', icon: DollarSign, color: 'from-purple-500 to-indigo-500', difficulty: 'Intermediate', duration: '13 min' },
   { id: 12, title: 'Home Loan Pre-Approval Process', slug: 'pre-approval', icon: CheckCircle, color: 'from-blue-500 to-indigo-500', difficulty: 'Beginner', duration: '8 min' },
   { id: 13, title: 'Co-Applicant & Joint Home Loans', slug: 'co-applicant-benefits', icon: Users, color: 'from-teal-500 to-green-500', difficulty: 'Intermediate', duration: '11 min' },
-  { id: 14, title: 'Home Loan Prepayment & Foreclosure', slug: 'prepayment-foreclosure', icon: Target, color: 'from-orange-500 to-amber-500', difficulty: 'Intermediate', duration: '10 min' },
-  { id: 15, title: 'Balance Transfer: When & How?', slug: 'balance-transfer', icon: CreditCard, color: 'from-pink-500 to-purple-500', difficulty: 'Advanced', duration: '12 min' },
-  { id: 16, title: 'Top-Up Home Loans Explained', slug: 'top-up-loans', icon: TrendingUp, color: 'from-cyan-500 to-teal-500', difficulty: 'Intermediate', duration: '9 min' },
-  { id: 17, title: 'Home Loan Insurance (Must or Skip?)', slug: 'home-loan-insurance', icon: Shield, color: 'from-red-500 to-orange-500', difficulty: 'Intermediate', duration: '10 min' },
-  { id: 18, title: 'Property Valuation Process', slug: 'property-valuation', icon: MapPin, color: 'from-green-500 to-lime-500', difficulty: 'Intermediate', duration: '8 min' },
-  { id: 19, title: 'Common Home Loan Mistakes to Avoid', slug: 'common-mistakes', icon: AlertCircle, color: 'from-yellow-500 to-red-500', difficulty: 'Beginner', duration: '11 min' },
-  { id: 20, title: 'How to Choose Best Home Loan?', slug: 'choose-best-loan', icon: Briefcase, color: 'from-indigo-500 to-blue-500', difficulty: 'Advanced', duration: '14 min' },
 ];
 
 const HomeLoansHub: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Home Loans in India: Complete Guide (20 Lessons) | MoneyCal Learn"
-        description="Master home loans in India with 20 comprehensive lessons. Learn about types, eligibility, EMI calculation, tax benefits, interest rates, and smart borrowing strategies. Free calculators included!"
-        keywords="home loan India, home loan eligibility, home loan EMI calculator, home loan interest rates, tax benefits home loan, CIBIL score home loan, home loan guide"
+        title="Home Loans in India: Complete Guide (13 Lessons + Calculators) | MoneyCal"
+        description="Master home loans in India with 13 comprehensive lessons. Learn eligibility, EMI calculation, tax benefits, interest rates, and smart strategies. 3 free calculators included!"
+        keywords="home loan India, home loan eligibility, home loan EMI calculator, home loan interest rates, tax benefits home loan, CIBIL score home loan"
         canonicalUrl="https://moneycal.in/learn/home-loans"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Course',
           name: 'Home Loans in India: Complete Guide',
-          description: 'Comprehensive 20-lesson course on home loans in India covering eligibility, types, EMI calculation, tax benefits, and smart strategies.',
+          description: 'Comprehensive 13-lesson course on home loans in India covering eligibility, types, EMI calculation, tax benefits, and smart strategies.',
           provider: {
             '@type': 'Organization',
             name: 'MoneyCal',
             sameAs: 'https://moneycal.in',
           },
-          numberOfCredits: 20,
+          numberOfCredits: 13,
           courseCode: 'HOME-LOANS-101',
           hasCourseInstance: {
             '@type': 'CourseInstance',
             courseMode: 'online',
-            courseWorkload: 'PT3H30M',
+            courseWorkload: 'PT2H15M',
           },
         }}
       />
@@ -83,15 +76,15 @@ const HomeLoansHub: React.FC = () => {
             {/* Stats */}
             <div className="flex flex-wrap justify-center gap-6 mt-8">
               <div className="bg-white rounded-xl shadow-md p-4 min-w-[140px]">
-                <div className="text-3xl font-bold text-blue-600">20</div>
+                <div className="text-3xl font-bold text-blue-600">13</div>
                 <div className="text-sm text-gray-600">Lessons</div>
               </div>
               <div className="bg-white rounded-xl shadow-md p-4 min-w-[140px]">
-                <div className="text-3xl font-bold text-green-600">3.5h</div>
+                <div className="text-3xl font-bold text-green-600">2.25h</div>
                 <div className="text-sm text-gray-600">Total Duration</div>
               </div>
               <div className="bg-white rounded-xl shadow-md p-4 min-w-[140px]">
-                <div className="text-3xl font-bold text-purple-600">5</div>
+                <div className="text-3xl font-bold text-purple-600">3</div>
                 <div className="text-sm text-gray-600">Calculators</div>
               </div>
               <div className="bg-white rounded-xl shadow-md p-4 min-w-[140px]">
@@ -122,8 +115,15 @@ const HomeLoansHub: React.FC = () => {
                           <div className="bg-white/20 backdrop-blur-sm p-3 rounded-xl">
                             <Icon className="h-8 w-8" />
                           </div>
-                          <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
-                            #{lesson.id}
+                          <div className="flex flex-col items-end gap-1">
+                            <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
+                              #{lesson.id}
+                            </div>
+                            {lesson.badge && (
+                              <div className="bg-green-500 px-2 py-1 rounded-full text-xs font-bold">
+                                {lesson.badge}
+                              </div>
+                            )}
                           </div>
                         </div>
                         <h3 className="text-xl font-bold leading-tight group-hover:scale-105 transition-transform">
@@ -179,36 +179,36 @@ const HomeLoansHub: React.FC = () => {
               <div className="flex items-start">
                 <CheckCircle className="h-6 w-6 mr-3 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-lg mb-1">EMI Calculation</h3>
-                  <p className="text-blue-100">Master EMI formulas, use calculators, plan repayments</p>
+                  <h3 className="font-bold text-lg mb-1">Financial Calculations</h3>
+                  <p className="text-blue-100">3 interactive calculators: Eligibility, LTV, EMI</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-6 w-6 mr-3 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg mb-1">Tax Benefits</h3>
-                  <p className="text-blue-100">Section 80C, 24(b), first-time buyer benefits</p>
+                  <p className="text-blue-100">Section 80C, 24(b) - Save ₹1+ lakh in taxes annually</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-6 w-6 mr-3 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg mb-1">Smart Strategies</h3>
-                  <p className="text-blue-100">Prepayment, balance transfer, choosing best rates</p>
+                  <p className="text-blue-100">Pre-approval, joint loans, choosing best rates</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-6 w-6 mr-3 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-lg mb-1">Credit Score Impact</h3>
-                  <p className="text-blue-100">CIBIL requirements, improving score, approval chances</p>
+                  <p className="text-blue-100">CIBIL 750+ strategy, improving score in 6 months</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="h-6 w-6 mr-3 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Advanced Topics</h3>
-                  <p className="text-blue-100">Top-up loans, insurance, property valuation, mistakes to avoid</p>
+                  <h3 className="font-bold text-lg mb-1">Interest Rates</h3>
+                  <p className="text-blue-100">Fixed vs floating, negotiation tips, saving lakhs</p>
                 </div>
               </div>
             </div>
@@ -233,4 +233,3 @@ const HomeLoansHub: React.FC = () => {
 };
 
 export default HomeLoansHub;
-

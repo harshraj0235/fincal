@@ -292,6 +292,22 @@ const LoanApplicationProcess = lazy(() => import('./pages/learn/loans/LoanApplic
 const CompareLoanOffers = lazy(() => import('./pages/learn/loans/CompareLoanOffers'));
 const DocumentsRequired = lazy(() => import('./pages/learn/loans/DocumentsRequired'));
 const CommonLoanTerms = lazy(() => import('./pages/learn/loans/CommonLoanTerms'));
+
+// Learn Platform - Home Loans (13 lessons)
+const HomeLoansHub = lazy(() => import('./pages/learn/home-loans/index'));
+const WhatIsHomeLoan = lazy(() => import('./pages/learn/home-loans/WhatIsHomeLoan'));
+const TypesOfHomeLoans = lazy(() => import('./pages/learn/home-loans/TypesOfHomeLoans'));
+const HomeLoanEligibility = lazy(() => import('./pages/learn/home-loans/HomeLoanEligibility'));
+const LoanToValueRatio = lazy(() => import('./pages/learn/home-loans/LoanToValueRatio'));
+const InterestRatesExplained = lazy(() => import('./pages/learn/home-loans/InterestRatesExplained'));
+const FixedVsFloating = lazy(() => import('./pages/learn/home-loans/FixedVsFloating'));
+const EMICalculatorGuide = lazy(() => import('./pages/learn/home-loans/EMICalculatorGuide'));
+const HomeLoanDocuments = lazy(() => import('./pages/learn/home-loans/DocumentsRequired'));
+const HomeLoanApplicationProcess = lazy(() => import('./pages/learn/home-loans/ApplicationProcess'));
+const HomeLoanCIBIL = lazy(() => import('./pages/learn/home-loans/CIBILScoreImpact'));
+const HomeLoanTaxBenefits = lazy(() => import('./pages/learn/home-loans/TaxBenefits'));
+const HomeLoanPreApproval = lazy(() => import('./pages/learn/home-loans/PreApproval'));
+const HomeLoanCoApplicant = lazy(() => import('./pages/learn/home-loans/CoApplicantBenefits'));
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
 const CorporateProfessionalTools = lazy(() => import('./pages/CorporateProfessionalTools'));
@@ -435,6 +451,22 @@ function App() {
         <Route path="/learn/loans/compare-loan-offers" element={<CompareLoanOffers />} />
         <Route path="/learn/loans/documents-required" element={<DocumentsRequired />} />
         <Route path="/learn/loans/common-loan-terms" element={<CommonLoanTerms />} />
+        
+        {/* Learn Platform - Home Loans (13 lessons) */}
+        <Route path="/learn/home-loans" element={<HomeLoansHub />} />
+        <Route path="/learn/home-loans/what-is-home-loan" element={<WhatIsHomeLoan />} />
+        <Route path="/learn/home-loans/types-of-home-loans" element={<TypesOfHomeLoans />} />
+        <Route path="/learn/home-loans/home-loan-eligibility" element={<HomeLoanEligibility />} />
+        <Route path="/learn/home-loans/loan-to-value-ratio" element={<LoanToValueRatio />} />
+        <Route path="/learn/home-loans/interest-rates-explained" element={<InterestRatesExplained />} />
+        <Route path="/learn/home-loans/fixed-vs-floating" element={<FixedVsFloating />} />
+        <Route path="/learn/home-loans/emi-calculator-guide" element={<EMICalculatorGuide />} />
+        <Route path="/learn/home-loans/documents-required" element={<HomeLoanDocuments />} />
+        <Route path="/learn/home-loans/application-process" element={<HomeLoanApplicationProcess />} />
+        <Route path="/learn/home-loans/cibil-score-impact" element={<HomeLoanCIBIL />} />
+        <Route path="/learn/home-loans/tax-benefits" element={<HomeLoanTaxBenefits />} />
+        <Route path="/learn/home-loans/pre-approval" element={<HomeLoanPreApproval />} />
+        <Route path="/learn/home-loans/co-applicant-benefits" element={<HomeLoanCoApplicant />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
