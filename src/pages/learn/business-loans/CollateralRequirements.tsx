@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import LearnLayout from '../../components/learn/LearnLayout';
+import LearnLayout from '../../../components/learn/LearnLayout';
 
 const CollateralRequirements: React.FC = () => {
   const lessonData = {

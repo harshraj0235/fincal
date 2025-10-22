@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import LearnLayout from '../../components/learn/LearnLayout';
+import LearnLayout from '../../../components/learn/LearnLayout';
 
 const InterestRates: React.FC = () => {
   const [loanAmount, setLoanAmount] = useState('100000');
