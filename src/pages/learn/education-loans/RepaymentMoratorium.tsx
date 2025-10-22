@@ -324,7 +324,7 @@ const RepaymentMoratorium: React.FC = () => {
           <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-600">
             <h4 className="font-bold text-xl text-gray-900 mb-3">Strategy 4: Negotiate Longer Repayment Tenure</h4>
             <p className="text-gray-700 mb-4">
-              After getting a job, if EMI is too high (>40% of salary), request bank to extend tenure from 10 to 12-15 years. 
+              After getting a job, if EMI is too high (&gt;40% of salary), request bank to extend tenure from 10 to 12-15 years. 
               This reduces monthly EMI burden.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
