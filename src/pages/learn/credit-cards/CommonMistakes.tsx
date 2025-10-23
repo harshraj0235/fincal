@@ -36,10 +36,10 @@ const CommonMistakes: React.FC = () => {
             <AlertTriangle className="h-6 w-6 text-red-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Avoid These Mistakes - Save ₹10 Lakhs+!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 These common credit card mistakes cost Indians lakhs every year! Learn what NOT to do, 
                 why it's costly, and the right alternative. Don't learn the hard way! ⚠️💰
-              </p>
+          </p>
             </div>
           </div>
         </div>
@@ -361,24 +361,24 @@ const CommonMistakes: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Other costly mistakes: Cash withdrawal, late payments, maxing out cards, closing old cards</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Total potential loss: ₹20+ lakhs if you make all these mistakes!</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Solutions: Set auto-pay, use debit for cash, keep utilization &lt; 30%, maintain old cards</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Security: Never share CVV/OTP/PIN with anyone - banks never ask!</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Check statements weekly, redeem rewards timely, read T&C before applying</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-red-500 to-orange-600 rounded-2xl p-8 text-white">

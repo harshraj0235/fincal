@@ -64,8 +64,8 @@ const EmiOnCreditCard: React.FC = () => {
                 <p className="text-sm text-gray-700">
                   Bought ₹50,000 phone → Can't pay full → Convert to 12-month EMI @ 15% → 
                   Pay ₹4,500/month instead of ₹50K at once or paying 42% interest!
-                </p>
-              </div>
+          </p>
+        </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">

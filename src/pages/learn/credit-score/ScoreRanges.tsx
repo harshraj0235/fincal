@@ -37,7 +37,7 @@ const ScoreRanges: React.FC = () => {
             <TrendingUp className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Your Score Determines Your Financial Future!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Understanding credit score ranges is crucial! Each range (300-900) affects loan approvals, interest rates, and financial opportunities. 
                 Learn what your score means and how to move to the next level! 📊💰
               </p>
@@ -190,8 +190,8 @@ const ScoreRanges: React.FC = () => {
                   <div className="mt-3 p-2 bg-green-100 rounded">
                     <p className="text-xs text-gray-700">
                       <strong>Annual Savings:</strong> ₹2-5 lakhs on home loans vs poor credit!
-                    </p>
-                  </div>
+          </p>
+        </div>
                 </div>
               </div>
 
@@ -658,24 +658,24 @@ const ScoreRanges: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Credit score ranges: 750-900 (excellent), 700-749 (good), 650-699 (fair), 550-649 (poor), 300-549 (very poor)</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">750+ score gets lowest interest rates and instant approvals</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Poor credit can cost ₹26+ lakhs extra on a ₹30L home loan over 20 years!</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Each range offers different loan approval chances and interest rates</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Focus on reaching 750+ for maximum financial benefits and opportunities</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
@@ -684,10 +684,10 @@ const ScoreRanges: React.FC = () => {
             Check your credit score now and see which range you're in. Then work on improving it to unlock better financial opportunities!
           </p>
           <div className="flex flex-wrap gap-4">
-            <a
+          <a
               href="/learn/credit-score/check-score-free"
-              className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-xl hover:bg-blue-50 transition-colors"
-            >
+            className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-xl hover:bg-blue-50 transition-colors"
+          >
               Check Score Free →
             </a>
             <a

@@ -36,11 +36,11 @@ const DisputeErrors: React.FC = () => {
             <AlertCircle className="h-6 w-6 text-orange-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">30% of Credit Reports Have Errors - Fix Them!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Wrong loan entries, incorrect late payments, identity theft - errors can cost you lakhs in higher interest rates! 
                 Learn how to spot and fix them in 30 days. 🔍✅
-              </p>
-            </div>
+          </p>
+        </div>
           </div>
         </div>
 
@@ -325,24 +325,24 @@ const DisputeErrors: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Common errors: Wrong payments, unrecognized accounts, incorrect balances, outdated info</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">5-step process: Get report → Identify errors → File dispute → Wait 30 days → Verify fix</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">File online via CIBIL dispute center or email with proof documents</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Resolution time: 30 days maximum (by RBI law)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Fixing errors can boost score by 50-100 points instantly!</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl p-8 text-white">

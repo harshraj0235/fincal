@@ -36,7 +36,7 @@ const CreditLimit: React.FC = () => {
             <Target className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Your Credit Limit = Your Financial Power!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Understanding credit limits helps you manage finances better and improve credit score. Learn how limits are set, 
                 how to increase them, and optimal utilization strategies! 💳📈
               </p>
@@ -400,8 +400,8 @@ const CreditLimit: React.FC = () => {
                 <p className="text-sm text-gray-700">
                   Banks increase limits for active users. Use card for 60-70% of limit monthly, but pay in full. 
                   Shows you need and can manage higher limit.
-                </p>
-              </div>
+          </p>
+        </div>
 
               <div className="bg-orange-50 p-4 rounded-lg border-2 border-orange-300">
                 <div className="flex items-center mb-2">
@@ -552,24 +552,24 @@ const CreditLimit: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Credit utilization ratio: Keep below 30% for best credit score impact</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">8 factors decide limit: Income, credit score, employment, debt ratio, bank relationship, history, payments, assets</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Increase limit: Wait 6 months, pay on time, use regularly, update income, maintain 750+ score</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Cash withdrawal limit: Only 20-40% of total limit (avoid - expensive!)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Avoid: Maxing out card, missing payments, requesting increase too soon, zero usage</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">

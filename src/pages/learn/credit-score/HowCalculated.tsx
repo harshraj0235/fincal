@@ -37,7 +37,7 @@ const HowCalculated: React.FC = () => {
             <Calculator className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Unlock the Secret Formula!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Understanding how your credit score is calculated helps you improve it strategically. 
                 Focus on the right factors and boost your score by 100+ points in months! 📊✨
               </p>
@@ -442,8 +442,8 @@ const HowCalculated: React.FC = () => {
                 <div className="bg-green-100 p-3 rounded">
                   <p className="text-sm text-gray-800">
                     <strong>✅ Example:</strong> 1 credit card + 1 home loan = Good mix
-                  </p>
-                </div>
+          </p>
+        </div>
 
                 <div className="bg-red-100 p-3 rounded mt-2">
                   <p className="text-sm text-gray-800">
@@ -623,24 +623,24 @@ const HowCalculated: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Payment history most important - never miss payments, pay on time!</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Keep utilization under 30% - pay before statement date for best results</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Don't close old cards - reduces average account age (15% of score)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Space out loan/card applications - wait 6 months between to minimize hard inquiries</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Ideal mix: 1-2 credit cards + 1-2 loans (don't force it though!)</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">

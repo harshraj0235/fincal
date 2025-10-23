@@ -36,7 +36,7 @@ const BillingCycle: React.FC = () => {
             <Calendar className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Master the Billing Cycle - Never Pay Interest!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Understanding billing cycles helps you time purchases perfectly, maximize interest-free period (up to 50 days!), 
                 and never pay a rupee in interest. This is the secret to smart credit card usage! 📅💰
               </p>
@@ -156,8 +156,8 @@ const BillingCycle: React.FC = () => {
                     </div>
                     <p className="text-sm text-gray-700">
                       <strong>Last date</strong> to pay without late fee. Pay before this date!
-                    </p>
-                  </div>
+          </p>
+        </div>
 
                   <div className="bg-red-100 p-4 rounded border-2 border-red-500">
                     <div className="flex items-center mb-2">
@@ -541,24 +541,24 @@ const BillingCycle: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Key dates: Statement date → Due date (15-25 days later) → Grace period</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Interest-free period: 20-50 days (maximum if you buy just after statement date)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Pay 3 days BEFORE due date to ensure payment credits on time</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Credit utilization reported on statement date, not due date - pay early to show low utilization</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Optimize: Large purchases after statement date, pay before statement for low utilization, set reminders</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">

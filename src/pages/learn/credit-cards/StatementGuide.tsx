@@ -36,7 +36,7 @@ const StatementGuide: React.FC = () => {
             <FileText className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Decode Your Statement - Spot Errors & Save Money!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Credit card statements contain critical information that can save you thousands! Learn to read every section, 
                 spot unauthorized charges, understand fees, and avoid costly mistakes. 📊💰
               </p>
@@ -428,8 +428,8 @@ const StatementGuide: React.FC = () => {
                 </p>
                 <p className="text-sm text-gray-700">
                   Your 5,586 points = ₹1,396-5,586 value
-                </p>
-              </div>
+          </p>
+        </div>
 
               <div className="bg-green-100 p-3 rounded border border-green-400">
                 <p className="font-bold text-gray-900 mb-1">✅ Redemption Options:</p>
@@ -558,24 +558,24 @@ const StatementGuide: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">ALWAYS pay "Total Amount Due" not "Minimum Due" to avoid 42% interest</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Check every transaction - unauthorized charges must be reported within 3 days for zero liability</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Verify all fees - late fees, annual fees, GST, cash advance charges</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Track reward points - redeem before expiry (usually 2-3 years)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Read statement within 3 days of generation to catch errors early</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">

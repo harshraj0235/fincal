@@ -36,7 +36,7 @@ const ChooseBestCard: React.FC = () => {
             <Target className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Find Your Perfect Credit Card Match!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 With 500+ credit cards in India, choosing the right one is crucial! Wrong card = wasted benefits. 
                 Right card = ₹50,000+ annual rewards. This guide helps you make the perfect choice! 💳✨
               </p>
@@ -209,8 +209,8 @@ const ChooseBestCard: React.FC = () => {
                   </ul>
                   <p className="text-xs text-gray-600 mt-2">
                     <strong>Benefits:</strong> 20-33% value, unlimited lounges, concierge, luxury perks
-                  </p>
-                </div>
+          </p>
+        </div>
               </div>
             </div>
           </div>
@@ -434,24 +434,24 @@ const ChooseBestCard: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Match card to income: Entry (₹15K+), Mid (₹30K+), Premium (₹75K+), Super Premium (₹2L+)</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Beginners: Start with lifetime free cards (Flipkart Axis, Amazon Pay ICICI)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Consider annual fee vs benefits: High fee cards need ₹2-3L+ annual spend to be worth it</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Avoid: Choosing by brand, ignoring fees, applying for multiple cards simultaneously</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Pro strategy: Use 2-3 cards for different categories to maximize rewards</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">

@@ -37,7 +37,7 @@ const BalanceTransfer: React.FC = () => {
             <ArrowRightLeft className="h-6 w-6 text-green-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Save ₹10 Lakhs+ with Balance Transfer!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Transfer high-interest credit card debt to lower rates and save thousands! This comprehensive guide shows exactly how to do it, 
                 which banks offer best rates, and common mistakes to avoid. 💰📈
               </p>
@@ -519,8 +519,8 @@ const BalanceTransfer: React.FC = () => {
                 <p className="font-bold text-gray-900 mb-2">4. High Processing Fees</p>
                 <p className="text-sm text-gray-700">
                   If processing fee is more than 3-4%, the savings might not be worth it.
-                </p>
-              </div>
+          </p>
+        </div>
 
               <div className="bg-white p-4 rounded border-2 border-yellow-300">
                 <p className="font-bold text-gray-900 mb-2">5. Short Promotional Period</p>
@@ -569,24 +569,24 @@ const BalanceTransfer: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Best offers: SBI (0%), ICICI (1%), HDFC (1.5%) for 12 months</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Process: Apply → Transfer → Pay EMI → Save thousands!</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Requirements: Good credit score (650+), regular income, ₹25K+ debt</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Avoid: Using new card for purchases, missing EMI payments, not reading terms</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Plan ahead: Clear debt or transfer again before promotional period ends</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl p-8 text-white">
@@ -601,12 +601,12 @@ const BalanceTransfer: React.FC = () => {
             >
               Next: Application Process →
             </a>
-            <a
-              href="/learn/credit-cards"
+          <a
+            href="/learn/credit-cards"
               className="inline-block bg-green-700 text-white font-bold py-3 px-8 rounded-xl hover:bg-green-800 transition-colors"
-            >
+          >
               All Credit Card Lessons
-            </a>
+          </a>
           </div>
         </div>
       </LearnLayout>

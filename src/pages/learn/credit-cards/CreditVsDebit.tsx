@@ -36,7 +36,7 @@ const CreditVsDebit: React.FC = () => {
             <CreditCard className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Credit vs Debit - Know the Difference!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Both look similar but work VERY differently! Understanding when to use which can save you money, 
                 protect from fraud, and help build credit. Complete comparison guide! 💳📊
               </p>
@@ -222,8 +222,8 @@ const CreditVsDebit: React.FC = () => {
                   <p className="font-bold text-gray-900 mb-2">6. Budget Control</p>
                   <p className="text-sm text-gray-600">
                     Natural spending limit = your balance. Helps avoid overspending.
-                  </p>
-                </div>
+          </p>
+        </div>
 
                 <div className="bg-white p-4 rounded">
                   <p className="font-bold text-gray-900 mb-2">7. Simpler to Manage</p>
@@ -550,24 +550,24 @@ const CreditVsDebit: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Credit card benefits: Rewards (₹20-50K/year), credit history, fraud protection, EMI, insurance</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Debit card benefits: No debt risk, zero interest, free cash withdrawal, budget control</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Use credit for: Online shopping, travel, large purchases, rewards | Debit for: Cash, daily expenses</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Best strategy: Use both! Credit for benefits (pay full), debit for cash & budget control</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Never use credit card for cash withdrawal - use debit instead (saves 2.5% fee + 42% interest)</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">

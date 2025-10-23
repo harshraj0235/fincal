@@ -37,11 +37,11 @@ const BuildFromScratch: React.FC = () => {
             <Rocket className="h-6 w-6 text-green-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Start from Zero - Reach 750+ in 12-18 Months!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 No credit history? No problem! Follow this proven step-by-step plan to build excellent credit score from scratch. 
                 College students, first-time borrowers - this is your complete roadmap! 🚀📈
-              </p>
-            </div>
+          </p>
+        </div>
           </div>
         </div>
 
@@ -228,24 +228,24 @@ const BuildFromScratch: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Month 1-6: Build payment history, use 10-30%, pay in full → Reach 650-700</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Month 7-12: Get 2nd card, increase limits, maintain perfect record → Reach 720-760</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Month 13-18: Optimize mix, keep utilization low, perfect payments → Reach 750-800+</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Timeline: 0 → 750+ in 12-18 months with disciplined approach</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Golden rules: Pay full always, keep utilization &lt; 30%, never miss due dates</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-green-500 to-blue-600 rounded-2xl p-8 text-white">

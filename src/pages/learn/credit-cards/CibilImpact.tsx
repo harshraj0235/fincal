@@ -36,7 +36,7 @@ const CibilImpact: React.FC = () => {
             <Target className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Credit Cards: Your Score's Best Friend or Worst Enemy!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Credit cards can boost your score by 100+ points OR destroy it by 200+ points! It all depends on HOW you use them. 
                 This guide shows exactly how credit cards affect CIBIL and how to optimize usage. 📊✨
               </p>
@@ -130,8 +130,8 @@ const CibilImpact: React.FC = () => {
                 </div>
                 <p className="text-gray-700 text-sm">
                   First credit card is the easiest way to start building credit from scratch (vs loans that need existing score).
-                </p>
-              </div>
+          </p>
+        </div>
 
               <div className="bg-white p-5 rounded-lg border-2 border-green-300">
                 <div className="flex items-center mb-3">
@@ -481,24 +481,24 @@ const CibilImpact: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Positive: On-time payments, low utilization (&lt; 30%), long history, credit mix</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Negative: Late payments, high utilization, multiple applications, closing old cards, defaults</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Best strategy: Pay full bill, use &lt; 30% limit, keep old cards active, 2-3 cards max</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Timeline: +10-20 points (3 months), +50-80 points (12 months), +80-120 points (24 months)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Score improvement: 650 → 750+ possible in 12-18 months with perfect usage!</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">

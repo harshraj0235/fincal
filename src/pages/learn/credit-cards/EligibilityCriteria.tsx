@@ -143,8 +143,8 @@ const EligibilityCriteria: React.FC = () => {
                 </div>
                 <p className="text-sm text-gray-600 mt-3">
                   Below 650? Consider <strong>secured credit cards</strong> (FD-backed) to build credit history.
-                </p>
-              </div>
+          </p>
+        </div>
 
               <div className="bg-white p-5 rounded-lg border-2 border-orange-300">
                 <div className="flex items-center mb-3">

@@ -41,7 +41,7 @@ const InterestRatesCharges: React.FC = () => {
             <AlertCircle className="h-6 w-6 text-red-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Critical Financial Knowledge!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Credit card interest rates are the HIGHEST in India (36-42% per year)! Understanding all charges can save you lakhs. 
                 This comprehensive guide reveals every fee and how to avoid them! 💰⚠️
               </p>
@@ -538,8 +538,8 @@ const InterestRatesCharges: React.FC = () => {
 
               <p className="text-sm text-gray-600 mt-3">
                 Learn more: <a href="/learn/credit-cards/types-of-credit-cards" className="text-blue-600 hover:underline">Fuel Credit Cards Guide</a>
-              </p>
-            </div>
+          </p>
+        </div>
 
             {/* 8. Balance Transfer Fee */}
             <div className="bg-white border-2 border-purple-400 rounded-xl p-6">
@@ -788,24 +788,24 @@ const InterestRatesCharges: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Main charges: Late fee (₹500-1,500), Annual fee (₹0-50K), Cash advance (2.5%+42% interest)</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">18% GST applicable on most fees (not on interest)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">ALWAYS pay full bill to avoid 42% interest - this is the golden rule!</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Cash withdrawal most expensive: 2.5% fee + 42% interest from day 1 (total 6%+ for 1 month!)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Use fuel cards to save 1% surcharge + get extra cashback (₹3,000/year savings)</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-red-500 to-orange-600 rounded-2xl p-8 text-white">

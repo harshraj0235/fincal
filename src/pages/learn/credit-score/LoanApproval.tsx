@@ -36,11 +36,11 @@ const LoanApproval: React.FC = () => {
             <TrendingUp className="h-6 w-6 text-green-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Your Score = Your Loan Power!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Credit score directly impacts loan approval chances AND interest rates. A 750+ score can save you ₹7+ lakhs on a ₹30L home loan! 
                 Learn exactly how it affects every loan type. 💰📊
-              </p>
-            </div>
+          </p>
+        </div>
           </div>
         </div>
 
@@ -503,24 +503,24 @@ const LoanApproval: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Poor credit score can cost ₹26+ lakhs extra on ₹30L home loan!</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Minimum scores: Home loans 650+, Personal loans 700+, Credit cards 650-750+</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Interest rate difference: 8.5% (750+) vs 14% (below 550) = 5.5% extra!</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Other factors matter too: income, debt ratio, down payment, co-applicant</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Use loan calculators to plan EMI based on your likely interest rate</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
@@ -529,10 +529,10 @@ const LoanApproval: React.FC = () => {
             Improve your credit score to unlock better loan approvals and save lakhs in interest!
           </p>
           <div className="flex flex-wrap gap-4">
-            <a
+          <a
               href="/learn/credit-score/improve-score"
-              className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-xl hover:bg-blue-50 transition-colors"
-            >
+            className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-xl hover:bg-blue-50 transition-colors"
+          >
               Improve Credit Score →
             </a>
             <a

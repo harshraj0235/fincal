@@ -36,7 +36,7 @@ const ScoreVsReport: React.FC = () => {
             <FileText className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Score vs Report - Know the Difference!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Many confuse credit score with credit report! They're different but related. Understanding both is crucial for loan approvals and financial health. 
                 Complete comparison guide! 📊📄
               </p>
@@ -281,8 +281,8 @@ const ScoreVsReport: React.FC = () => {
                 </div>
                 <p className="text-xs text-gray-600 mt-3 bg-blue-100 p-2 rounded">
                   <strong>Frequency:</strong> Monthly via free platforms (Paisabazaar, BankBazaar)
-                </p>
-              </div>
+          </p>
+        </div>
 
               <div>
                 <h3 className="font-bold text-lg text-green-900 mb-4">📄 Check Credit REPORT When:</h3>
@@ -349,24 +349,24 @@ const ScoreVsReport: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Credit Score = 1 number (300-900), Credit Report = Detailed document (10-20 pages)</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Score: Quick eligibility, monthly monitoring | Report: Error checking, fraud detection, detailed analysis</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Report contains: Personal info, all accounts, 36-month payment history, inquiries, employment</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Check score monthly (free unlimited), report quarterly or before major loans</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Both needed: Score for quick check, report for complete understanding and error detection</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">

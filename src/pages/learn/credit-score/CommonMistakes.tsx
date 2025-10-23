@@ -36,10 +36,10 @@ const CommonMistakes: React.FC = () => {
             <AlertTriangle className="h-6 w-6 text-red-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">These Mistakes Cost You ₹7+ Lakhs on Loans!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Small credit score mistakes have HUGE financial consequences! A 750+ score vs 650 score = ₹7 lakhs difference on home loans. 
                 Avoid these 10 mistakes to protect your score and save money! ⚠️💰
-              </p>
+          </p>
             </div>
           </div>
         </div>
@@ -344,24 +344,24 @@ const CommonMistakes: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Other major mistakes: High utilization, closing old cards, multiple applications, settlements</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Combined impact: Can cost ₹10-15 lakhs in extra interest over lifetime</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Prevention: Auto-pay, keep utilization &lt; 30%, maintain old accounts, space applications</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Check credit report monthly for errors - 30% reports have mistakes that hurt score</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Recovery: Most mistakes recoverable in 6-24 months with perfect behavior</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-red-500 to-orange-600 rounded-2xl p-8 text-white">

@@ -579,11 +579,11 @@ const RewardsCashback: React.FC = () => {
 
           <div className="mt-4 p-4 bg-green-100 rounded-lg border-2 border-green-400">
             <p className="font-bold text-gray-900 mb-2">💡 Realistic Goal:</p>
-            <p className="text-gray-700">
+          <p className="text-gray-700">
               With smart card selection and strategic usage, aim for <strong>2.5-3.5% average return</strong> on all spending.
               On ₹5L annual, that's <strong>₹12,500-17,500 free per year!</strong>
-            </p>
-          </div>
+          </p>
+        </div>
         </section>
 
         {/* Tools & Resources */}

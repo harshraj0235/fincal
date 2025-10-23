@@ -37,7 +37,7 @@ const FraudSafety: React.FC = () => {
             <Shield className="h-6 w-6 text-red-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Protect Yourself from ₹ Lakhs in Losses!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Credit card fraud is rising in India! But with the right knowledge, you can protect yourself 100%. 
                 This guide covers all scams and safety measures. 🔒⚠️
               </p>
@@ -500,8 +500,8 @@ const FraudSafety: React.FC = () => {
                       <p className="text-xs text-gray-700">
                         If you report within 3 working days, you have ZERO liability for unauthorized transactions!
                         Bank must refund within 10 days.
-                      </p>
-                    </div>
+          </p>
+        </div>
                   </div>
                 </div>
               </div>
@@ -630,24 +630,24 @@ const FraudSafety: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Enable SMS alerts for ALL transactions to detect fraud instantly</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">If card lost/stolen: Block within minutes via app or helpline</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Zero liability if you report fraud within 3 working days (RBI rule)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Common scams: Phishing (fake emails), OTP fraud, card cloning, fake websites</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Always use HTTPS sites, avoid public WiFi for transactions, review statements weekly</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
@@ -662,12 +662,12 @@ const FraudSafety: React.FC = () => {
             >
               Next: Statement Guide →
             </a>
-            <a
-              href="/learn/credit-cards"
+          <a
+            href="/learn/credit-cards"
               className="inline-block bg-blue-700 text-white font-bold py-3 px-8 rounded-xl hover:bg-blue-800 transition-colors"
-            >
+          >
               All Credit Card Lessons
-            </a>
+          </a>
           </div>
         </div>
       </LearnLayout>

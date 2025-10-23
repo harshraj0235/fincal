@@ -390,8 +390,8 @@ const CheckScoreFree: React.FC = () => {
               <div className="bg-yellow-100 p-3 rounded border border-yellow-400">
                 <p className="text-sm text-gray-800">
                   <strong>💡 Important:</strong> Check every section carefully! Errors in personal info, wrong loan entries, or incorrect payment status can hurt your score.
-                </p>
-              </div>
+          </p>
+        </div>
             </div>
           </div>
         </section>

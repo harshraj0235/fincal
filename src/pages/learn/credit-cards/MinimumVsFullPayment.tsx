@@ -664,7 +664,7 @@ const MinimumVsFullPayment: React.FC = () => {
                   <p className="font-bold text-gray-900 mb-2">5. Use Budgeting Apps</p>
                   <p className="text-gray-700 text-sm mb-2">Track all card spending in real-time</p>
                   <div className="bg-blue-50 p-2 rounded text-xs">
-                    <p className="text-gray-700">
+          <p className="text-gray-700">
                       Recommended: <a href="https://www.walnut.in" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Walnut</a>, 
                       <a href="https://www.moneyview.in" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline ml-1">MoneyView</a>, 
                       or our own <a href="/tools/budget-calculator" className="text-blue-600 hover:underline">Budget Calculator</a>
@@ -737,8 +737,8 @@ const MinimumVsFullPayment: React.FC = () => {
               </div>
               <p className="text-xs text-gray-600 mt-3">
                 Learn more: <a href="/learn/credit-cards/emi-on-credit-card" className="text-blue-600 hover:underline">EMI Conversion Guide</a>
-              </p>
-            </div>
+          </p>
+        </div>
 
             <div className="bg-white border-2 border-yellow-400 rounded-xl p-6">
               <h3 className="font-bold text-lg text-yellow-900 mb-3">Option 4: Gold Loan</h3>
@@ -967,24 +967,24 @@ const MinimumVsFullPayment: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">₹50,000 debt takes 30+ years to clear with minimum payments (₹2L+ total cost)</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">ALWAYS pay full bill to enjoy interest-free credit (45-50 days free!)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">If stuck in debt: Stop using card, consider personal loan/balance transfer (save 27-31% interest)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Set up auto-pay for full amount to never fall into minimum payment trap</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Golden Rule: Only charge what you can pay in FULL by month-end</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-red-500 to-orange-600 rounded-2xl p-8 text-white">
