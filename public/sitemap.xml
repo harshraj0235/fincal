@@ -355,6 +355,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
+  <url>
+    <loc>https://moneycal.in/festival-tools/shubh-muhurat-reminder</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
 
   <!-- PRIORITY 0.95: LOANS & CREDIT HUB PAGE -->
   <url>

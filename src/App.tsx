@@ -252,6 +252,7 @@ const MoonPhaseFestivals = lazy(() => import('./pages/festival-tools/MoonPhaseFe
 const PurnimaAmavasya = lazy(() => import('./pages/festival-tools/PurnimaAmavasya'));
 const VratUpavasCalendar = lazy(() => import('./pages/festival-tools/VratUpavasCalendar'));
 const NakshatraFestival = lazy(() => import('./pages/festival-tools/NakshatraFestival'));
+const ShubhMuhuratReminder = lazy(() => import('./pages/festival-tools/ShubhMuhuratReminder'));
 const BhaiDoojDateFinder = lazy(() => import('./pages/festival/BhaiDoojDateFinder'));
 const HoliDateCalculator = lazy(() => import('./pages/festival/HoliDateCalculator'));
 const KarwaChouthMoonrise = lazy(() => import('./pages/festival/KarwaChouthMoonrise'));
@@ -974,6 +975,7 @@ function App() {
                 <Route path="/festival-tools/purnima-amavasya-dates" element={<PurnimaAmavasya />} />
                 <Route path="/festival-tools/vrat-upavas-calendar" element={<VratUpavasCalendar />} />
                 <Route path="/festival-tools/nakshatra-festival" element={<NakshatraFestival />} />
+                <Route path="/festival-tools/shubh-muhurat-reminder" element={<ShubhMuhuratReminder />} />
                 <Route path="/festival-tools/raksha-bandhan-muhurat" element={<RakshaBandhanMuhurat />} />
                 <Route path="/festival-tools/navratri-dates" element={<NavratriDatesFinder />} />
                 <Route path="/festival-tools/ganesh-chaturthi-countdown" element={<GaneshChaturthiCountdown />} />
