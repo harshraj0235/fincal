@@ -56,7 +56,7 @@ const PurnimaAmavasya: React.FC = () => {
         date: amavasyaDate,
         type: 'Amavasya',
         lunarMonth: lunarMonths[month],
-        festival: getAmavasya Festival(month),
+        festival: getAmavasyaFestival(month),
         icon: '🌑',
         color: 'from-gray-100 to-slate-100',
         borderColor: 'border-gray-500',
