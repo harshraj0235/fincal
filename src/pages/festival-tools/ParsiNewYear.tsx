@@ -87,7 +87,7 @@ END:VCALENDAR`;
           offers: {
             '@type': 'Offer',
             price: '0',
-            priceCurrency': 'INR'
+            priceCurrency: 'INR'
           }
         }}
       />
