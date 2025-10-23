@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-<parameter name="Calculator, CheckCircle, AlertCircle, TrendingDown, DollarSign, CreditCard } from 'lucide-react';
+import { Calculator, CheckCircle, AlertCircle, TrendingDown, DollarSign, CreditCard } from 'lucide-react';
 import LearnLayout from '../../../components/learn/LearnLayout';
 import SEOHelmet from '../../../components/SEOHelmet';
 
