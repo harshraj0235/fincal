@@ -20,7 +20,7 @@ const ClosureProcess: React.FC = () => {
             { '@type': 'HowToStep', name: 'Clear outstanding balance', text: 'Pay all dues in full' },
             { '@type': 'HowToStep', name: 'Redeem rewards', text: 'Use all points before closure' },
             { '@type': 'HowToStep', name: 'Request closure', text: 'Call customer care or submit written request' },
-            { '@type': 'HowToStep', name': 'Get confirmation', text: 'Obtain closure certificate from bank' }
+            { '@type': 'HowToStep', name: 'Get confirmation', text: 'Obtain closure certificate from bank' }
           ]
         }}
       />
@@ -36,7 +36,7 @@ const ClosureProcess: React.FC = () => {
             <AlertCircle className="h-6 w-6 text-orange-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Think Before You Close - It Affects Your Credit Score!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 Closing a credit card can drop your CIBIL score by 20-100 points! Learn the right way to close, 
                 when to close (and when NOT to), and how to minimize impact. ⚠️📉
               </p>
@@ -367,8 +367,8 @@ const ClosureProcess: React.FC = () => {
                   <p className="font-bold text-gray-900 mb-1">5. Convert to Add-On Card</p>
                   <p className="text-sm text-gray-700">
                     Make it an add-on to another card (if same bank). Maintains history, no separate fees.
-                  </p>
-                </div>
+          </p>
+        </div>
               </div>
             </div>
           </div>
@@ -470,24 +470,24 @@ const ClosureProcess: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Impact: Reduced credit limit, lower average account age, worse credit mix</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">7-step process: Clear dues → Redeem points → Cancel auto-pay → Request closure → Cut card → Get certificate → Verify report</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Alternatives: Downgrade to free card, negotiate fee waiver, minimal usage, freeze card</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">NEVER close: Oldest card, if it's your only card, without clearing 100% dues</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Verify: Credit report shows "CLOSED" not "SETTLED" after 45 days</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl p-8 text-white">
