@@ -391,11 +391,54 @@ const BusinessLoanPrepayment = lazy(() => import('./pages/learn/business-loans/P
 const BusinessLoanBestBanks = lazy(() => import('./pages/learn/business-loans/BestBanks'));
 const BusinessLoanTaxBenefits = lazy(() => import('./pages/learn/business-loans/TaxBenefits'));
 
-// Learn Platform - Gold Loans (10 lessons) - IN PROGRESS
+// Learn Platform - Gold Loans (10 lessons) - COMPLETE!
 const GoldLoansHub = lazy(() => import('./pages/learn/gold-loans/index'));
 const WhatIsGoldLoan = lazy(() => import('./pages/learn/gold-loans/WhatIsGoldLoan'));
 const GoldLoanInterestRates = lazy(() => import('./pages/learn/gold-loans/InterestRates'));
 const GoldLoanEligibility = lazy(() => import('./pages/learn/gold-loans/EligibilityCalculator'));
+const GoldLoanDocumentsRequired = lazy(() => import('./pages/learn/gold-loans/DocumentsRequired'));
+const GoldLoanApplicationProcess = lazy(() => import('./pages/learn/gold-loans/ApplicationProcess'));
+const GoldLoanValuationProcess = lazy(() => import('./pages/learn/gold-loans/ValuationProcess'));
+const GoldLoanRepaymentOptions = lazy(() => import('./pages/learn/gold-loans/RepaymentOptions'));
+const GoldVsPersonalLoan = lazy(() => import('./pages/learn/gold-loans/GoldVsPersonalLoan'));
+const GoldLoanBestBanks = lazy(() => import('./pages/learn/gold-loans/BestBanks'));
+const GoldLoanTaxBenefits = lazy(() => import('./pages/learn/gold-loans/TaxBenefits'));
+
+// Learn Platform - Credit Cards (20 lessons) - COMPLETE!
+const CreditCardsHub = lazy(() => import('./pages/learn/credit-cards/index'));
+const WhatIsCreditCard = lazy(() => import('./pages/learn/credit-cards/WhatIsCreditCard'));
+const TypesOfCreditCards = lazy(() => import('./pages/learn/credit-cards/TypesOfCreditCards'));
+const ChooseBestCard = lazy(() => import('./pages/learn/credit-cards/ChooseBestCard'));
+const CreditCardApplication = lazy(() => import('./pages/learn/credit-cards/ApplicationProcess'));
+const CreditCardDocuments = lazy(() => import('./pages/learn/credit-cards/DocumentsRequired'));
+const CreditCardEligibility = lazy(() => import('./pages/learn/credit-cards/EligibilityCriteria'));
+const CreditCardLimit = lazy(() => import('./pages/learn/credit-cards/CreditLimit'));
+const CreditCardInterestRates = lazy(() => import('./pages/learn/credit-cards/InterestRatesCharges'));
+const CreditCardStatement = lazy(() => import('./pages/learn/credit-cards/StatementGuide'));
+const CreditCardBillingCycle = lazy(() => import('./pages/learn/credit-cards/BillingCycle'));
+const MinimumVsFullPayment = lazy(() => import('./pages/learn/credit-cards/MinimumVsFullPayment'));
+const CreditCardRewards = lazy(() => import('./pages/learn/credit-cards/RewardsCashback'));
+const CreditCardFraud = lazy(() => import('./pages/learn/credit-cards/FraudSafety'));
+const CreditVsDebit = lazy(() => import('./pages/learn/credit-cards/CreditVsDebit'));
+const CreditCardEMI = lazy(() => import('./pages/learn/credit-cards/EmiOnCreditCard'));
+const CreditCardBalanceTransfer = lazy(() => import('./pages/learn/credit-cards/BalanceTransfer'));
+const CreditCardClosure = lazy(() => import('./pages/learn/credit-cards/ClosureProcess'));
+const CreditCardCIBIL = lazy(() => import('./pages/learn/credit-cards/CibilImpact'));
+const BestCreditCards = lazy(() => import('./pages/learn/credit-cards/BestCreditCards'));
+const CreditCardMistakes = lazy(() => import('./pages/learn/credit-cards/CommonMistakes'));
+
+// Learn Platform - Credit Score (10 lessons) - COMPLETE!
+const CreditScoreHub = lazy(() => import('./pages/learn/credit-score/index'));
+const WhatIsCreditScore = lazy(() => import('./pages/learn/credit-score/WhatIsCreditScore'));
+const HowCreditScoreCalculated = lazy(() => import('./pages/learn/credit-score/HowCalculated'));
+const CreditScoreRanges = lazy(() => import('./pages/learn/credit-score/ScoreRanges'));
+const CheckCreditScoreFree = lazy(() => import('./pages/learn/credit-score/CheckScoreFree'));
+const ImproveCreditScore = lazy(() => import('./pages/learn/credit-score/ImproveScore'));
+const CreditScoreMistakes = lazy(() => import('./pages/learn/credit-score/CommonMistakes'));
+const CreditScoreVsReport = lazy(() => import('./pages/learn/credit-score/ScoreVsReport'));
+const DisputeCreditErrors = lazy(() => import('./pages/learn/credit-score/DisputeErrors'));
+const CreditScoreLoanApproval = lazy(() => import('./pages/learn/credit-score/LoanApproval'));
+const BuildCreditFromScratch = lazy(() => import('./pages/learn/credit-score/BuildFromScratch'));
 
 const DesignCreatorTools = lazy(() => import('./pages/DesignCreatorTools'));
 const FestivalInformationHistory = lazy(() => import('./pages/FestivalInformationHistory'));
@@ -636,11 +679,54 @@ function App() {
         <Route path="/learn/business-loans/best-banks" element={<BusinessLoanBestBanks />} />
         <Route path="/learn/business-loans/tax-benefits" element={<BusinessLoanTaxBenefits />} />
         
-        {/* Learn Platform - Gold Loans (10 lessons) - IN PROGRESS */}
+        {/* Learn Platform - Gold Loans (10 lessons) - COMPLETE! */}
         <Route path="/learn/gold-loans" element={<GoldLoansHub />} />
         <Route path="/learn/gold-loans/what-is-gold-loan" element={<WhatIsGoldLoan />} />
         <Route path="/learn/gold-loans/interest-rates" element={<GoldLoanInterestRates />} />
         <Route path="/learn/gold-loans/eligibility-calculator" element={<GoldLoanEligibility />} />
+        <Route path="/learn/gold-loans/documents-required" element={<GoldLoanDocumentsRequired />} />
+        <Route path="/learn/gold-loans/application-process" element={<GoldLoanApplicationProcess />} />
+        <Route path="/learn/gold-loans/valuation-process" element={<GoldLoanValuationProcess />} />
+        <Route path="/learn/gold-loans/repayment-options" element={<GoldLoanRepaymentOptions />} />
+        <Route path="/learn/gold-loans/gold-vs-personal-loan" element={<GoldVsPersonalLoan />} />
+        <Route path="/learn/gold-loans/best-banks" element={<GoldLoanBestBanks />} />
+        <Route path="/learn/gold-loans/tax-benefits" element={<GoldLoanTaxBenefits />} />
+        
+        {/* Learn Platform - Credit Cards (20 lessons) - COMPLETE! */}
+        <Route path="/learn/credit-cards" element={<CreditCardsHub />} />
+        <Route path="/learn/credit-cards/what-is-credit-card" element={<WhatIsCreditCard />} />
+        <Route path="/learn/credit-cards/types-of-credit-cards" element={<TypesOfCreditCards />} />
+        <Route path="/learn/credit-cards/choose-best-card" element={<ChooseBestCard />} />
+        <Route path="/learn/credit-cards/application-process" element={<CreditCardApplication />} />
+        <Route path="/learn/credit-cards/documents-required" element={<CreditCardDocuments />} />
+        <Route path="/learn/credit-cards/eligibility-criteria" element={<CreditCardEligibility />} />
+        <Route path="/learn/credit-cards/credit-limit" element={<CreditCardLimit />} />
+        <Route path="/learn/credit-cards/interest-rates-charges" element={<CreditCardInterestRates />} />
+        <Route path="/learn/credit-cards/statement-guide" element={<CreditCardStatement />} />
+        <Route path="/learn/credit-cards/billing-cycle" element={<CreditCardBillingCycle />} />
+        <Route path="/learn/credit-cards/minimum-vs-full-payment" element={<MinimumVsFullPayment />} />
+        <Route path="/learn/credit-cards/rewards-cashback" element={<CreditCardRewards />} />
+        <Route path="/learn/credit-cards/fraud-safety" element={<CreditCardFraud />} />
+        <Route path="/learn/credit-cards/credit-vs-debit" element={<CreditVsDebit />} />
+        <Route path="/learn/credit-cards/emi-on-credit-card" element={<CreditCardEMI />} />
+        <Route path="/learn/credit-cards/balance-transfer" element={<CreditCardBalanceTransfer />} />
+        <Route path="/learn/credit-cards/closure-process" element={<CreditCardClosure />} />
+        <Route path="/learn/credit-cards/cibil-impact" element={<CreditCardCIBIL />} />
+        <Route path="/learn/credit-cards/best-credit-cards" element={<BestCreditCards />} />
+        <Route path="/learn/credit-cards/common-mistakes" element={<CreditCardMistakes />} />
+        
+        {/* Learn Platform - Credit Score (10 lessons) - COMPLETE! */}
+        <Route path="/learn/credit-score" element={<CreditScoreHub />} />
+        <Route path="/learn/credit-score/what-is-credit-score" element={<WhatIsCreditScore />} />
+        <Route path="/learn/credit-score/how-calculated" element={<HowCreditScoreCalculated />} />
+        <Route path="/learn/credit-score/score-ranges" element={<CreditScoreRanges />} />
+        <Route path="/learn/credit-score/check-score-free" element={<CheckCreditScoreFree />} />
+        <Route path="/learn/credit-score/improve-score" element={<ImproveCreditScore />} />
+        <Route path="/learn/credit-score/common-mistakes" element={<CreditScoreMistakes />} />
+        <Route path="/learn/credit-score/score-vs-report" element={<CreditScoreVsReport />} />
+        <Route path="/learn/credit-score/dispute-errors" element={<DisputeCreditErrors />} />
+        <Route path="/learn/credit-score/loan-approval" element={<CreditScoreLoanApproval />} />
+        <Route path="/learn/credit-score/build-from-scratch" element={<BuildCreditFromScratch />} />
         
         {/* All other routes inside Layout */}
         <Route path="*" element={
