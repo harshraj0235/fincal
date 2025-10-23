@@ -85,7 +85,7 @@ const PurnimaAmavasya: React.FC = () => {
     return festivals[month] || 'Purnima';
   };
 
-  const getAmavasya Festival = (month: number): string => {
+  const getAmavasyaFestival = (month: number): string => {
     const festivals: { [key: number]: string } = {
       0: 'Chaitra Amavasya',
       1: 'Vaishakha Amavasya',
@@ -105,7 +105,7 @@ const PurnimaAmavasya: React.FC = () => {
 
   const lunarDates = generateLunarDates();
   const purnimaDates = lunarDates.filter(d => d.type === 'Purnima');
-  const amavasya Dates = lunarDates.filter(d => d.type === 'Amavasya');
+  const amavasyaDates = lunarDates.filter(d => d.type === 'Amavasya');
 
   const downloadICS = () => {
     let icsContent = `BEGIN:VCALENDAR
@@ -260,7 +260,7 @@ END:VEVENT
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">Amavasya Dates</h3>
                 <p className="text-xl text-gray-700 mb-4">New Moon (अमावस्या)</p>
                 <div className="bg-white rounded-xl p-4 inline-block">
-                  <p className="text-5xl font-bold text-gray-700">{amavasya Dates.length}</p>
+                  <p className="text-5xl font-bold text-gray-700">{amavasyaDates.length}</p>
                   <p className="text-sm text-gray-600">New Moons in {selectedYear}</p>
                 </div>
               </div>
@@ -334,7 +334,7 @@ END:VEVENT
                 </div>
                 
                 <div className="space-y-3">
-                  {amavasya Dates.map((lunar, idx) => (
+                  {amavasyaDates.map((lunar, idx) => (
                     <div key={idx} className={`bg-gradient-to-br ${lunar.color} rounded-xl p-5 border-4 ${lunar.borderColor} hover:shadow-lg transition-all`}>
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center">
@@ -450,7 +450,7 @@ END:VEVENT
                 },
                 {
                   q: `When is Amavasya (New Moon) in ${selectedYear}?`,
-                  a: `There are ${amavasya Dates.length} Amavasya (New Moon) dates in ${selectedYear}. Important dates include Mauni Amavasya (January), Hariyali Amavasya, Diwali Amavasya (most significant), and Kartik Amavasya. Full calendar above.`
+                  a: `There are ${amavasyaDates.length} Amavasya (New Moon) dates in ${selectedYear}. Important dates include Mauni Amavasya (January), Hariyali Amavasya, Diwali Amavasya (most significant), and Kartik Amavasya. Full calendar above.`
                 },
                 {
                   q: "What is the significance of Purnima?",
