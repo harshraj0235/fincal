@@ -77,10 +77,10 @@ const LoanApproval: React.FC = () => {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <div className="bg-red-50 p-3 rounded">
-                      <p className="font-bold text-red-900 mb-1">Challenging: Below 650</p>
-                      <p className="text-sm text-gray-700">• Low approval rate (< 40%)</p>
-                      <p className="text-sm text-gray-700">• High interest (12-14%)</p>
+                      <div className="bg-red-50 p-3 rounded">
+                        <p className="font-bold text-red-900 mb-1">Challenging: Below 650</p>
+                        <p className="text-sm text-gray-700">• Low approval rate (&lt; 40%)</p>
+                        <p className="text-sm text-gray-700">• High interest (12-14%)</p>
                       <p className="text-sm text-gray-700">• More documentation needed</p>
                       <p className="text-sm text-gray-700">• Higher down payment required</p>
                     </div>
@@ -128,7 +128,7 @@ const LoanApproval: React.FC = () => {
                     </div>
                     <div className="bg-red-50 p-3 rounded">
                       <p className="font-bold text-red-900 mb-1">Very Difficult: Below 650</p>
-                      <p className="text-sm text-gray-700">• Very low approval (< 20%)</p>
+                      <p className="text-sm text-gray-700">• Very low approval (&lt; 20%)</p>
                       <p className="text-sm text-gray-700">• Interest: 25-30%</p>
                       <p className="text-sm text-gray-700">• Secured loan recommended</p>
                     </div>
@@ -177,7 +177,7 @@ const LoanApproval: React.FC = () => {
                     </div>
                     <div className="bg-red-50 p-3 rounded">
                       <p className="font-bold text-red-900 mb-1">Difficult: Below 650</p>
-                      <p className="text-sm text-gray-700">• Limited approval (< 40%)</p>
+                      <p className="text-sm text-gray-700">• Limited approval (&lt; 40%)</p>
                       <p className="text-sm text-gray-700">• Interest: 14-16%</p>
                       <p className="text-sm text-gray-700">• Only 70% financing</p>
                     </div>
