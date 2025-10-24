@@ -126,6 +126,7 @@ const HomeInvestopedia: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(getCurrentDate());
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const navigate = useNavigate();
 
   // Update date every minute
@@ -184,71 +185,115 @@ const HomeInvestopedia: React.FC = () => {
         canonicalUrl="https://moneycal.in"
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950">
+      <div className={`min-h-screen transition-colors duration-500 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' 
+          : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'
+      }`}>
         {/* Animated Background */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ top: '10%', left: '10%' }}></div>
-          <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ top: '50%', right: '10%', animationDelay: '1s' }}></div>
-          <div className="absolute w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ bottom: '10%', left: '50%', animationDelay: '2s' }}></div>
+          <div className={`absolute w-96 h-96 rounded-full blur-3xl animate-pulse ${
+            theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-400/20'
+          }`} style={{ top: '10%', left: '10%' }}></div>
+          <div className={`absolute w-96 h-96 rounded-full blur-3xl animate-pulse ${
+            theme === 'dark' ? 'bg-purple-500/10' : 'bg-purple-400/20'
+          }`} style={{ top: '50%', right: '10%', animationDelay: '1s' }}></div>
+          <div className={`absolute w-96 h-96 rounded-full blur-3xl animate-pulse ${
+            theme === 'dark' ? 'bg-pink-500/10' : 'bg-pink-400/20'
+          }`} style={{ bottom: '10%', left: '50%', animationDelay: '2s' }}></div>
         </div>
 
-        {/* Top Bar with Live Date & Time */}
-        <div className="relative z-10 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-2 border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-between items-center text-xs md:text-sm gap-2">
-            <div className="flex items-center space-x-4">
-              <motion.div 
-                className="flex items-center gap-2"
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <Clock className="w-4 h-4" />
-                <span className="font-bold">{currentDate.dayName}, {currentDate.fullDate} • {currentDate.time}</span>
-              </motion.div>
-              <div className="hidden md:flex items-center space-x-4">
-                <span className="flex items-center gap-1">
-                  <TrendingUp className="w-4 h-4" />
-                  NIFTY: <span className="font-bold text-green-300">22,456 ▲ 1.2%</span>
-                </span>
-                <span className="flex items-center gap-1">
-                  <TrendingUp className="w-4 h-4" />
-                  SENSEX: <span className="font-bold text-green-300">74,123 ▲ 0.8%</span>
-                </span>
+        {/* Top Navigation Bar */}
+        <div className={`relative z-10 border-b ${
+          theme === 'dark' 
+            ? 'bg-slate-900/95 border-white/10' 
+            : 'bg-white/95 border-gray-200'
+        } backdrop-blur-xl sticky top-0 shadow-lg`}>
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex flex-wrap justify-between items-center gap-3">
+              <div className="flex items-center space-x-4">
+                <Link to="/" className="flex items-center gap-2 group">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <span className="text-white font-bold text-xl">M</span>
+                  </div>
+                  <span className={`text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}>
+                    MoneyCal
+                  </span>
+                </Link>
+                
+                <motion.div 
+                  className={`hidden md:flex items-center gap-2 text-xs ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <Clock className="w-4 h-4" />
+                  <span className="font-medium">{currentDate.dayName}, {currentDate.fullDate} • {currentDate.time}</span>
+                </motion.div>
               </div>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Link
-                to="/learn"
-                className="flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-3 py-1.5 rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all"
-              >
-                <Flame className="w-4 h-4" />
-                <span>40 Lessons FREE</span>
-                <Sparkles className="w-3 h-3" />
-              </Link>
-              <button
-                onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
-                className="flex items-center gap-1 hover:text-yellow-300 transition-colors"
-              >
-                <Globe className="w-4 h-4" />
-                <span>{language === 'en' ? 'हिंदी' : 'English'}</span>
-              </button>
+
+              <div className="flex items-center space-x-3">
+                <Link
+                  to="/learn"
+                  className="flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-4 py-2 rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all text-sm"
+                >
+                  <BookOpen className="w-4 h-4" />
+                  <span className="hidden sm:inline">MoneyCal Learn</span>
+                  <span className="sm:hidden">Learn</span>
+                </Link>
+
+                <button
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  className={`p-2 rounded-full transition-all ${
+                    theme === 'dark' 
+                      ? 'bg-slate-800 text-yellow-400 hover:bg-slate-700' 
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                </button>
+
+                <button
+                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                  className={`flex items-center gap-1 px-3 py-2 rounded-full transition-all text-sm font-medium ${
+                    theme === 'dark'
+                      ? 'bg-slate-800 text-gray-300 hover:bg-slate-700'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  <Globe className="w-4 h-4" />
+                  <span>{language === 'en' ? 'हिंदी' : 'English'}</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Mega Search Bar - Sticky */}
-        <div className="sticky top-0 z-50 bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 border-b border-white/10 shadow-2xl backdrop-blur-xl">
-          <div className="max-w-7xl mx-auto px-4 py-4">
+        {/* Mega Search Bar */}
+        <div className={`border-b ${
+          theme === 'dark' 
+            ? 'bg-slate-900/95 border-white/10' 
+            : 'bg-white/95 border-gray-200'
+        } backdrop-blur-xl shadow-xl`}>
+          <div className="max-w-7xl mx-auto px-4 py-6">
             <div className="relative">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                 <div className="relative">
-                  <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 w-6 h-6 text-blue-400" />
+                  <Search className={`absolute left-5 top-1/2 transform -translate-y-1/2 w-6 h-6 ${
+                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                  }`} />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={language === 'en' ? '🔍 Search anything... GST, SIP, EMI, Eclipse, Marriage Dates, Lessons, Blogs' : '🔍 कुछ भी खोजें... GST, SIP, EMI, ग्रहण, शादी की तारीखें'}
-                    className="w-full pl-16 pr-16 py-5 text-lg bg-slate-800/50 backdrop-blur-xl border-2 border-white/10 rounded-3xl focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500 transition-all outline-none text-white placeholder-gray-400 font-medium"
+                    className={`w-full pl-16 pr-16 py-5 text-lg backdrop-blur-xl border-2 rounded-3xl focus:ring-4 transition-all outline-none font-medium ${
+                      theme === 'dark'
+                        ? 'bg-slate-800/50 border-white/10 focus:ring-blue-500/30 focus:border-blue-500 text-white placeholder-gray-400'
+                        : 'bg-white border-gray-300 focus:ring-blue-200 focus:border-blue-500 text-gray-900 placeholder-gray-500'
+                    }`}
                   />
                   {searchQuery && (
                     <button
@@ -271,7 +316,9 @@ const HomeInvestopedia: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="mt-4 flex flex-wrap gap-2"
                 >
-                  <span className="text-sm text-gray-400 font-semibold flex items-center gap-1">
+                  <span className={`text-sm font-semibold flex items-center gap-1 ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}>
                     <Flame className="w-4 h-4 text-orange-500" />
                     {language === 'en' ? 'Popular:' : 'लोकप्रिय:'}
                   </span>
@@ -304,12 +351,20 @@ const HomeInvestopedia: React.FC = () => {
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    className="absolute top-full left-0 right-0 mt-2 bg-slate-800/95 backdrop-blur-2xl rounded-3xl shadow-2xl border-2 border-white/10 max-h-[500px] overflow-y-auto"
+                    className={`absolute top-full left-0 right-0 mt-2 backdrop-blur-2xl rounded-3xl shadow-2xl border-2 max-h-[500px] overflow-y-auto ${
+                      theme === 'dark'
+                        ? 'bg-slate-800/95 border-white/10'
+                        : 'bg-white/95 border-gray-200'
+                    }`}
                   >
                     <div className="p-3">
-                      <div className="text-xs text-gray-400 px-4 py-2 font-semibold flex items-center justify-between">
+                      <div className={`text-xs px-4 py-2 font-semibold flex items-center justify-between ${
+                        theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                      }`}>
                         <span>{searchResults.length} {language === 'en' ? 'results found' : 'परिणाम मिले'}</span>
-                        <span className="text-blue-400">{language === 'en' ? 'Click to open' : 'खोलने के लिए क्लिक करें'}</span>
+                        <span className={theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}>
+                          {language === 'en' ? 'Click to open' : 'खोलने के लिए क्लिक करें'}
+                        </span>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {searchResults.map((result, idx) => (
@@ -317,22 +372,34 @@ const HomeInvestopedia: React.FC = () => {
                             key={idx}
                             onClick={() => handleSearchItemClick(result.path)}
                             whileHover={{ scale: 1.02, x: 5 }}
-                            className="text-left px-4 py-3 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-2xl transition-all group border border-transparent hover:border-white/10"
+                            className={`text-left px-4 py-3 rounded-2xl transition-all group border border-transparent ${
+                              theme === 'dark'
+                                ? 'hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 hover:border-white/10'
+                                : 'hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 hover:border-gray-300'
+                            }`}
                           >
                             <div className="flex items-center gap-3">
                               <div className="text-3xl">{result.emoji}</div>
                               <div className="flex-1 min-w-0">
-                                <div className="font-bold text-white group-hover:text-blue-400 mb-1 truncate">
+                                <div className={`font-bold mb-1 truncate ${
+                                  theme === 'dark'
+                                    ? 'text-white group-hover:text-blue-400'
+                                    : 'text-gray-900 group-hover:text-blue-600'
+                                }`}>
                                   {result.name}
                                 </div>
                                 <div className="flex items-center gap-2 flex-wrap">
                                   <span className="px-2 py-0.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-xs font-bold">
                                     {result.category}
                                   </span>
-                                  <span className="text-xs text-gray-500 truncate">{result.path}</span>
+                                  <span className={`text-xs truncate ${
+                                    theme === 'dark' ? 'text-gray-500' : 'text-gray-600'
+                                  }`}>{result.path}</span>
                                 </div>
                               </div>
-                              <ArrowRight className="w-5 h-5 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                              <ArrowRight className={`w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 ${
+                                theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                              }`} />
                             </div>
                           </motion.button>
                         ))}
@@ -394,20 +461,44 @@ const HomeInvestopedia: React.FC = () => {
                   : '🚀 100+ मुफ्त कैलकुलेटर • 40 पाठ • 11 त्योहार टूल • लाइव बाजार डेटा'}
               </p>
 
-              {/* Feature Pills */}
-              <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {/* Quick Access Grid - All Sections */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-12 max-w-6xl mx-auto">
                 {[
-                  { icon: '⚡', text: language === 'en' ? 'Lightning Fast' : 'बिजली तेज़', color: 'from-yellow-500 to-orange-500' },
-                  { icon: '🔒', text: language === 'en' ? '100% Free' : '100% मुफ्त', color: 'from-green-500 to-emerald-500' },
-                  { icon: '🇮🇳', text: language === 'en' ? 'Made for India' : 'भारत के लिए', color: 'from-orange-500 to-red-500' },
-                  { icon: '🎯', text: language === 'en' ? 'E-E-A-T Compliant' : 'E-E-A-T अनुपालन', color: 'from-blue-500 to-cyan-500' }
-                ].map((pill, idx) => (
+                  { name: language === 'en' ? 'All Tools' : 'सभी टूल्स', icon: Layout, url: '/tools', emoji: '🧰', color: 'from-blue-500 to-cyan-500' },
+                  { name: language === 'en' ? 'Calculators' : 'कैलकुलेटर', icon: Calculator, url: '/calculators', emoji: '🧮', color: 'from-green-500 to-emerald-500' },
+                  { name: language === 'en' ? 'GST Tools' : 'GST टूल्स', icon: BarChart3, url: '/gst-tools', emoji: '💰', color: 'from-purple-500 to-pink-500' },
+                  { name: language === 'en' ? 'Tax Tools' : 'कर टूल्स', icon: FileText, url: '/tax-tools', emoji: '📄', color: 'from-orange-500 to-red-500' },
+                  { name: language === 'en' ? 'Loan Tools' : 'लोन टूल्स', icon: Home, url: '/loan-tools', emoji: '🏠', color: 'from-indigo-500 to-purple-500' },
+                  { name: language === 'en' ? 'Insurance' : 'बीमा', icon: Shield, url: '/insurance-tools', emoji: '🛡️', color: 'from-teal-500 to-cyan-500' },
+                  { name: language === 'en' ? 'Festival' : 'त्योहार', icon: PartyPopper, url: '/festival-tools', emoji: '🎉', color: 'from-pink-500 to-rose-500' },
+                  { name: language === 'en' ? 'Learn' : 'सीखें', icon: BookOpen, url: '/learn', emoji: '📚', color: 'from-yellow-500 to-orange-500' },
+                  { name: language === 'en' ? 'Blog' : 'ब्लॉग', icon: Newspaper, url: '/blog', emoji: '📰', color: 'from-cyan-500 to-blue-500' },
+                  { name: language === 'en' ? 'Banking' : 'बैंकिंग', icon: Building, url: '/bank-tools', emoji: '🏦', color: 'from-blue-500 to-indigo-500' },
+                  { name: language === 'en' ? 'Corporate' : 'कॉर्पोरेट', icon: Briefcase, url: '/corporate-finance', emoji: '💼', color: 'from-violet-500 to-purple-500' },
+                  { name: language === 'en' ? 'Help' : 'सहायता', icon: HelpCircle, url: '/help-center', emoji: '❓', color: 'from-gray-500 to-slate-500' }
+                ].map((section, idx) => (
                   <motion.div
                     key={idx}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`px-6 py-3 bg-gradient-to-r ${pill.color} rounded-full font-bold text-white shadow-lg`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: idx * 0.05 }}
+                    whileHover={{ scale: 1.1, y: -5 }}
                   >
-                    {pill.icon} {pill.text}
+                    <Link
+                      to={section.url}
+                      className={`block p-4 rounded-2xl text-center transition-all ${
+                        theme === 'dark'
+                          ? 'bg-slate-800/50 border border-white/10 hover:border-white/30'
+                          : 'bg-white border-2 border-gray-200 hover:border-gray-400 shadow-lg hover:shadow-xl'
+                      }`}
+                    >
+                      <div className={`text-4xl mb-2`}>{section.emoji}</div>
+                      <div className={`text-sm font-bold truncate ${
+                        theme === 'dark' ? 'text-white' : 'text-gray-900'
+                      }`}>
+                        {section.name}
+                      </div>
+                    </Link>
                   </motion.div>
                 ))}
               </div>
@@ -437,53 +528,41 @@ const HomeInvestopedia: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Live Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto"
-            >
-              {[
-                { icon: Users, number: '1M+', text: language === 'en' ? 'Happy Users' : 'खुश उपयोगकर्ता', color: 'from-blue-500 to-cyan-500' },
-                { icon: Calculator, number: '100+', text: language === 'en' ? 'Free Tools' : 'मुफ्त टूल्स', color: 'from-green-500 to-emerald-500' },
-                { icon: BookOpen, number: '40', text: language === 'en' ? 'Learn Lessons' : 'सीखने के पाठ', color: 'from-purple-500 to-pink-500' },
-                { icon: Eye, number: '10M+', text: language === 'en' ? 'Page Views' : 'पेज व्यू', color: 'from-orange-500 to-red-500' }
-              ].map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-slate-800/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg`}>
-                    <stat.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-black text-white mb-1">{stat.number}</div>
-                  <div className="text-sm text-gray-400 font-medium">{stat.text}</div>
-                </motion.div>
-              ))}
-            </motion.div>
           </div>
         </section>
 
         {/* Category Filters */}
-        <section className="relative py-8 border-y border-white/10 bg-slate-900/50">
+        <section className={`relative py-8 border-y ${
+          theme === 'dark'
+            ? 'border-white/10 bg-slate-900/50'
+            : 'border-gray-200 bg-gray-50/50'
+        }`}>
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                <Filter className="w-6 h-6 text-blue-400" />
+              <h2 className={`text-2xl font-bold flex items-center gap-2 ${
+                theme === 'dark' ? 'text-white' : 'text-gray-900'
+              }`}>
+                <Filter className={`w-6 h-6 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
                 {language === 'en' ? 'Browse by Category' : 'श्रेणी के अनुसार ब्राउज़ करें'}
               </h2>
               <div className="flex gap-2">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-blue-500 text-white' : 'bg-slate-800 text-gray-400'}`}
+                  className={`p-2 rounded-lg transition-all ${
+                    viewMode === 'grid' 
+                      ? 'bg-blue-500 text-white' 
+                      : theme === 'dark' ? 'bg-slate-800 text-gray-400' : 'bg-gray-200 text-gray-600'
+                  }`}
                 >
                   <Grid className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-blue-500 text-white' : 'bg-slate-800 text-gray-400'}`}
+                  className={`p-2 rounded-lg transition-all ${
+                    viewMode === 'list' 
+                      ? 'bg-blue-500 text-white' 
+                      : theme === 'dark' ? 'bg-slate-800 text-gray-400' : 'bg-gray-200 text-gray-600'
+                  }`}
                 >
                   <List className="w-5 h-5" />
                 </button>
@@ -499,7 +578,9 @@ const HomeInvestopedia: React.FC = () => {
                   className={`relative flex-shrink-0 px-6 py-3 rounded-2xl font-bold transition-all ${
                     selectedCategory === cat.id
                       ? `bg-gradient-to-r ${cat.color} text-white shadow-lg`
-                      : 'bg-slate-800/50 text-gray-400 hover:text-white border border-white/10'
+                      : theme === 'dark'
+                        ? 'bg-slate-800/50 text-gray-400 hover:text-white border border-white/10'
+                        : 'bg-white text-gray-700 hover:text-gray-900 border-2 border-gray-200 hover:border-gray-400'
                   }`}
                 >
                   <div className="flex items-center gap-2">
@@ -536,22 +617,36 @@ const HomeInvestopedia: React.FC = () => {
                 >
                   <Link
                     to={tool.path}
-                    className={`block h-full bg-slate-800/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 transition-all group ${
-                      viewMode === 'list' ? 'flex items-center gap-4' : ''
-                    }`}
+                    className={`block h-full backdrop-blur-xl border rounded-2xl p-6 transition-all group ${
+                      theme === 'dark'
+                        ? 'bg-slate-800/50 border-white/10 hover:border-blue-500/50'
+                        : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-lg hover:shadow-xl'
+                    } ${viewMode === 'list' ? 'flex items-center gap-4' : ''}`}
                   >
                     <div className={`text-4xl mb-4 group-hover:scale-110 transition-transform ${viewMode === 'list' ? 'mb-0' : ''}`}>
                       {tool.emoji}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      <h3 className={`text-lg font-bold mb-2 transition-colors ${
+                        theme === 'dark'
+                          ? 'text-white group-hover:text-blue-400'
+                          : 'text-gray-900 group-hover:text-blue-600'
+                      }`}>
                         {tool.name}
                       </h3>
                       <div className="flex items-center justify-between">
-                        <span className="text-xs px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 rounded-full font-bold border border-blue-500/30">
+                        <span className={`text-xs px-3 py-1 rounded-full font-bold border ${
+                          theme === 'dark'
+                            ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 border-blue-500/30'
+                            : 'bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 border-blue-300'
+                        }`}>
                           {tool.category}
                         </span>
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                        <ArrowRight className={`w-5 h-5 group-hover:translate-x-1 transition-all ${
+                          theme === 'dark'
+                            ? 'text-gray-400 group-hover:text-blue-400'
+                            : 'text-gray-600 group-hover:text-blue-600'
+                        }`} />
                       </div>
                     </div>
                   </Link>
@@ -576,13 +671,21 @@ const HomeInvestopedia: React.FC = () => {
         </section>
 
         {/* Trust & E-E-A-T Section */}
-        <section className="relative py-16 border-y border-white/10 bg-slate-900/50">
+        <section className={`relative py-16 border-y ${
+          theme === 'dark'
+            ? 'border-white/10 bg-slate-900/50'
+            : 'border-gray-200 bg-gray-50/50'
+        }`}>
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                {language === 'en' ? '🏆 Why 1M+ Users Trust MoneyCal' : '🏆 क्यों 1M+ उपयोगकर्ता MoneyCal पर भरोसा करते हैं'}
+              <h2 className={`text-4xl font-bold mb-4 ${
+                theme === 'dark' ? 'text-white' : 'text-gray-900'
+              }`}>
+                {language === 'en' ? '🏆 Why Trust MoneyCal' : '🏆 MoneyCal पर क्यों भरोसा करें'}
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className={`text-lg ${
+                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+              }`}>
                 {language === 'en' ? 'Google E-E-A-T Compliant • Expert Verified • RBI Guidelines' : 'Google E-E-A-T अनुपालन • विशेषज्ञ सत्यापित • RBI दिशानिर्देश'}
               </p>
             </div>
@@ -596,13 +699,21 @@ const HomeInvestopedia: React.FC = () => {
                 <motion.div
                   key={idx}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-slate-800/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center"
+                  className={`backdrop-blur-xl border rounded-2xl p-6 text-center ${
+                    theme === 'dark'
+                      ? 'bg-slate-800/50 border-white/10'
+                      : 'bg-white border-2 border-gray-200 shadow-lg'
+                  }`}
                 >
                   <div className={`w-16 h-16 bg-gradient-to-br ${trust.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
                     <trust.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{trust.title}</h3>
-                  <p className="text-sm text-gray-400">{trust.desc}</p>
+                  <h3 className={`text-lg font-bold mb-2 ${
+                    theme === 'dark' ? 'text-white' : 'text-gray-900'
+                  }`}>{trust.title}</h3>
+                  <p className={`text-sm ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}>{trust.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -650,9 +761,13 @@ const HomeInvestopedia: React.FC = () => {
         </section>
 
         {/* Mini Footer */}
-        <footer className="relative py-8 bg-slate-950 border-t border-white/10">
+        <footer className={`relative py-8 border-t ${
+          theme === 'dark'
+            ? 'bg-slate-950 border-white/10'
+            : 'bg-gray-100 border-gray-200'
+        }`}>
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-gray-400 text-sm">
+            <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
               {language === 'en' 
                 ? `© ${currentDate.year} MoneyCal India. Made with 💙 for India. Last updated: ${currentDate.fullDate}`
                 : `© ${currentDate.year} MoneyCal India. भारत के लिए 💙 के साथ बनाया गया। अंतिम अपडेट: ${currentDate.fullDate}`}
