@@ -198,40 +198,50 @@ const HomeInvestopedia: React.FC = () => {
     return recent;
   }, [language]);
 
-  // Dynamic category content pools
+  // Dynamic category content pools - 7+ items each!
   const categoryPools = useMemo(() => ({
     calculators: [
-      { name: 'SIP Calculator', path: '/calculators/sip-calculator', emoji: '📈', desc: 'Calculate SIP returns', users: '50K+' },
-      { name: 'Home Loan EMI', path: '/calculators/home-loan-emi-calculator', emoji: '🏠', desc: 'Housing loan EMI calculator', users: '45K+' },
+      { name: 'SIP Calculator', path: '/calculators/sip-calculator', emoji: '📈', desc: 'Calculate SIP returns & wealth', users: '50K+' },
+      { name: 'Home Loan EMI', path: '/calculators/home-loan-emi-calculator', emoji: '🏠', desc: 'Housing loan calculator', users: '45K+' },
+      { name: 'Personal Loan EMI', path: '/calculators/personal-loan-emi-calculator', emoji: '💵', desc: 'Instant personal loan EMI', users: '42K+' },
+      { name: 'Car Loan EMI', path: '/calculators/car-loan-emi-calculator', emoji: '🚗', desc: 'Auto loan calculator', users: '38K+' },
       { name: 'GST Calculator', path: '/tools/gst-amount-calculator', emoji: '💰', desc: 'GST amount calculator', users: '40K+' },
       { name: 'PPF Calculator', path: '/calculators/ppf-calculator', emoji: '🏦', desc: 'Public Provident Fund', users: '35K+' },
       { name: 'Income Tax', path: '/tools/income-tax-calculator', emoji: '📄', desc: 'Tax calculator 2025', users: '38K+' },
       { name: 'EMI Calculator', path: '/calculators/emi-calculator', emoji: '🧮', desc: 'General EMI calculator', users: '42K+' },
       { name: 'FD Calculator', path: '/calculators/compound-interest-calculator', emoji: '💰', desc: 'Fixed deposit calculator', users: '30K+' },
-      { name: 'Retirement Planner', path: '/calculators/retirement-calculator', emoji: '👴', desc: 'Retirement corpus calculator', users: '25K+' }
+      { name: 'Retirement Planner', path: '/calculators/retirement-calculator', emoji: '👴', desc: 'Retirement corpus planner', users: '25K+' },
+      { name: 'Loan Comparison', path: '/calculators/loan-comparison-calculator', emoji: '📊', desc: 'Compare loan offers', users: '28K+' },
+      { name: 'Prepayment Calculator', path: '/calculators/prepayment-calculator', emoji: '💰', desc: 'Calculate prepayment savings', users: '22K+' }
     ],
     learning: [
       { name: 'Gold Loans Mastery', path: '/learn/gold-loans', emoji: '🏆', desc: '10 comprehensive lessons', lessons: '10' },
       { name: 'Credit Card Secrets', path: '/learn/credit-cards', emoji: '💳', desc: '20 detailed lessons', lessons: '20' },
       { name: 'Credit Score Guide', path: '/learn/credit-score', emoji: '📊', desc: '10 expert lessons', lessons: '10' },
-      { name: 'Loan Approval Tips', path: '/learn/gold-loans/loan-approval', emoji: '✅', desc: 'Get approved faster', lessons: '1' },
-      { name: 'Interest Calculation', path: '/learn/gold-loans/interest-calculation', emoji: '💰', desc: 'Understand interest rates', lessons: '1' },
-      { name: 'Balance Transfer', path: '/learn/credit-cards/balance-transfer', emoji: '🔄', desc: 'Save on interest', lessons: '1' }
+      { name: 'What is Gold Loan', path: '/learn/gold-loans/what-is-gold-loan', emoji: '🏆', desc: 'Gold loan basics explained', lessons: '1' },
+      { name: 'Interest Rates Guide', path: '/learn/gold-loans/interest-rates', emoji: '💰', desc: 'Understand interest rates', lessons: '1' },
+      { name: 'Balance Transfer Tips', path: '/learn/credit-cards/balance-transfer', emoji: '🔄', desc: 'Save on interest payments', lessons: '1' },
+      { name: 'Improve Credit Score', path: '/learn/credit-score/improve-score', emoji: '📈', desc: 'Boost your CIBIL score', lessons: '1' },
+      { name: 'Loan Eligibility', path: '/learn/gold-loans/eligibility-calculator', emoji: '✅', desc: 'Check loan eligibility', lessons: '1' },
+      { name: 'Credit Card Types', path: '/learn/credit-cards/types-of-credit-cards', emoji: '💳', desc: 'All credit card types', lessons: '1' }
     ],
     festivals: [
-      { name: 'Eclipse Predictor 2025', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', desc: '11 eclipses with timings', events: '11' },
-      { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', desc: '40+ wedding dates', events: '40+' },
-      { name: 'Daily Panchang', path: '/festival-tools/panchang-today', emoji: '📅', desc: 'Tithi, Nakshatra, Yoga', events: '365' },
-      { name: 'Weekly Tithi', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', desc: '7-day lunar calendar', events: '52' },
-      { name: 'Purnima Dates', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', desc: 'Full & new moon dates', events: '24' },
-      { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', desc: '50+ fasting dates', events: '50+' }
+      { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', desc: '11 eclipses with sutak timings', events: '11' },
+      { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', desc: '40+ auspicious wedding dates', events: '40+' },
+      { name: 'Daily Panchang', path: '/festival-tools/panchang-today', emoji: '📅', desc: 'Today\'s tithi & nakshatra', events: '365' },
+      { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', desc: '7-day lunar calendar view', events: '52' },
+      { name: 'Purnima & Amavasya', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', desc: 'Full & new moon dates', events: '24' },
+      { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', desc: '50+ Hindu fasting dates', events: '50+' },
+      { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', emoji: '⭐', desc: 'Birth star for festivals', events: '27' },
+      { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', desc: 'Auspicious timing alerts', events: '100+' },
+      { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', desc: 'Complete yearly calendar', events: '365' }
     ],
     blogs: [
       ...blogPosts0.slice(0, 10).map(post => ({ 
         name: post.title, 
         path: `/blog/${post.slug}`, 
         emoji: '📰', 
-        desc: post.excerpt.slice(0, 60) + '...',
+        desc: post.excerpt.slice(0, 55) + '...',
         category: post.categories[0]
       }))
     ]
@@ -244,10 +254,10 @@ const HomeInvestopedia: React.FC = () => {
   };
 
   const dynamicContent = useMemo(() => ({
-    calculators: getRandomItems(categoryPools.calculators, 4),
-    learning: getRandomItems(categoryPools.learning, 4),
-    festivals: getRandomItems(categoryPools.festivals, 4),
-    blogs: getRandomItems(categoryPools.blogs, 4)
+    calculators: getRandomItems(categoryPools.calculators, 7),
+    learning: getRandomItems(categoryPools.learning, 7),
+    festivals: getRandomItems(categoryPools.festivals, 7),
+    blogs: getRandomItems(categoryPools.blogs, 7)
   }), [categoryPools, rotationKey]);
 
   const mainSections = [
@@ -579,7 +589,7 @@ const HomeInvestopedia: React.FC = () => {
                       >
                         <span className="text-lg">{cat.emoji}</span>
                         <span>{cat.name}</span>
-                    </Link>
+                  </Link>
               ))}
             </div>
           </div>
@@ -593,10 +603,10 @@ const HomeInvestopedia: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <h2 className={`text-4xl font-black text-center mb-12 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               🔥 {language === 'en' ? 'Trending & New' : 'ट्रेंडिंग और नया'}
-            </h2>
+              </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {trendingItems.map((item, idx) => (
-                <Link
+                    <Link
                   key={idx}
                   to={item.path}
                   className={`relative p-6 rounded-2xl transition-all hover:scale-105 active:scale-95 ${
@@ -642,7 +652,7 @@ const HomeInvestopedia: React.FC = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Category 1: Calculators */}
-              <motion.div
+                <motion.div
                 key={`calc-${rotationKey}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -656,7 +666,7 @@ const HomeInvestopedia: React.FC = () => {
                   <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-blue-300' : 'text-blue-700'}`}>
                     🧮 {language === 'en' ? 'Top Calculators' : 'टॉप कैलकुलेटर'}
                   </h3>
-                </div>
+                      </div>
                 <div className="space-y-3">
                   {dynamicContent.calculators.map((item, idx) => (
                     <Link
@@ -679,18 +689,18 @@ const HomeInvestopedia: React.FC = () => {
                           </p>
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>
                             👥 {item.users} users
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+                      </span>
+                    </div>
+                    </div>
+                  </Link>
+              ))}
+            </div>
               </motion.div>
 
               {/* Category 2: Learning */}
-              <motion.div
+            <motion.div
                 key={`learn-${rotationKey}`}
-                initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 className={`rounded-2xl p-6 border-2 ${
@@ -726,18 +736,18 @@ const HomeInvestopedia: React.FC = () => {
                           </p>
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`}>
                             📖 {item.lessons} lessons
-                          </span>
-                        </div>
+                </span>
                       </div>
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
+                    </div>
+                  </Link>
+              ))}
+            </div>
+            </motion.div>
 
               {/* Category 3: Festival Tools */}
-              <motion.div
+                <motion.div
                 key={`festival-${rotationKey}`}
-                initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className={`rounded-2xl p-6 border-2 ${
@@ -774,17 +784,17 @@ const HomeInvestopedia: React.FC = () => {
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-orange-400' : 'text-orange-600'}`}>
                             🎊 {item.events} events
                           </span>
-                        </div>
+                  </div>
                       </div>
                     </Link>
-                  ))}
-                </div>
-              </motion.div>
+              ))}
+            </div>
+            </motion.div>
 
               {/* Category 4: Latest Blogs */}
-              <motion.div
+                <motion.div
                 key={`blog-${rotationKey}`}
-                initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className={`rounded-2xl p-6 border-2 ${
@@ -797,10 +807,10 @@ const HomeInvestopedia: React.FC = () => {
                   <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-green-300' : 'text-green-700'}`}>
                     📰 {language === 'en' ? 'Latest Articles' : 'नवीनतम लेख'}
                   </h3>
-                </div>
+            </div>
                 <div className="space-y-3">
                   {dynamicContent.blogs.map((item, idx) => (
-                    <Link
+              <Link
                       key={idx}
                       to={item.path}
                       className={`block p-4 rounded-xl transition-all hover:scale-105 active:scale-95 ${
@@ -820,10 +830,10 @@ const HomeInvestopedia: React.FC = () => {
                           </p>
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>
                             📂 {item.category}
-                          </span>
-                        </div>
+                  </span>
+                </div>
                       </div>
-                    </Link>
+                </Link>
                   ))}
                 </div>
               </motion.div>
@@ -837,10 +847,10 @@ const HomeInvestopedia: React.FC = () => {
                 <Sparkles className="w-4 h-4 animate-pulse text-yellow-500" />
                 <span className="text-sm font-semibold">
                   {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
-                </span>
-              </div>
-            </div>
-          </div>
+                          </span>
+                        </div>
+                      </div>
+                          </div>
         </section>
 
         {/* Trust */}
@@ -859,9 +869,9 @@ const HomeInvestopedia: React.FC = () => {
                 <div key={i} className={`p-6 rounded-2xl text-center ${theme === 'dark' ? 'bg-slate-800/50' : 'bg-white shadow-lg'}`}>
                   <div className={`w-16 h-16 bg-gradient-to-br ${t.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                     <t.icon className="w-8 h-8 text-white" />
-            </div>
+                        </div>
                   <h3 className={`text-lg font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{t.title}</h3>
-          </div>
+                      </div>
               ))}
             </div>
           </div>

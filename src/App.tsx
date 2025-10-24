@@ -500,6 +500,12 @@ const LoanEMICalculator = lazy(() => import('./pages/tools/LoanEMICalculator'));
 const MutualFundCalculator = lazy(() => import('./pages/tools/MutualFundCalculator'));
 const HomeLoanCalculator = lazy(() => import('./pages/tools/HomeLoanCalculator'));
 const HomeLoanEmiCalculator = lazy(() => import('./calculators/HomeLoanEmiCalculator'));
+const PersonalLoanEmiCalculator = lazy(() => import('./calculators/PersonalLoanEmiCalculator'));
+const CarLoanEmiCalculator = lazy(() => import('./calculators/CarLoanEmiCalculator'));
+const LoanComparisonCalculator = lazy(() => import('./calculators/LoanComparisonCalculator'));
+const LoanPrepaymentCalculator = lazy(() => import('./calculators/LoanPrepaymentCalculator'));
+const LoanEligibilityCalculator = lazy(() => import('./calculators/LoanEligibilityCalculator'));
+const PropertyCalculator = lazy(() => import('./calculators/PropertyCalculator'));
 const PersonalLoanCalculator = lazy(() => import('./pages/tools/PersonalLoanCalculator'));
 const SIPCalculator = lazy(() => import('./pages/tools/SIPCalculator'));
 const PortfolioAnalyzer = lazy(() => import('./pages/tools/PortfolioAnalyzer'));
@@ -801,6 +807,12 @@ function App() {
                 <Route path="/tools/mutual-fund-calculator" element={<MutualFundCalculator />} />
                 <Route path="/tools/home-loan-calculator" element={<HomeLoanCalculator />} />
                 <Route path="/calculators/home-loan-emi-calculator" element={<HomeLoanEmiCalculator />} />
+                <Route path="/calculators/personal-loan-emi-calculator" element={<PersonalLoanEmiCalculator />} />
+                <Route path="/calculators/car-loan-emi-calculator" element={<CarLoanEmiCalculator />} />
+                <Route path="/calculators/loan-comparison-calculator" element={<LoanComparisonCalculator />} />
+                <Route path="/calculators/prepayment-calculator" element={<LoanPrepaymentCalculator />} />
+                <Route path="/calculators/loan-eligibility" element={<LoanEligibilityCalculator />} />
+                <Route path="/calculators/property-calculator" element={<PropertyCalculator />} />
                 <Route path="/tools/personal-loan-calculator" element={<PersonalLoanCalculator />} />
                 <Route path="/tools/sip-calculator" element={<SIPCalculator />} />
             <Route path="/tools/portfolio-analyzer" element={<PortfolioAnalyzer />} />

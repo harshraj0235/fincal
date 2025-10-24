@@ -36,11 +36,11 @@ const BestCreditCards: React.FC = () => {
             <Award className="h-6 w-6 text-yellow-600 mr-3 flex-shrink-0 mt-1" />
             <div>
               <h3 className="font-bold text-lg text-gray-900 mb-2">Find Your Perfect Credit Card Match!</h3>
-              <p className="text-gray-700">
+          <p className="text-gray-700">
                 With 500+ cards available, we've shortlisted the BEST in each category. 
                 Whether you want cashback, travel rewards, or lifetime free - we've got you covered! 🏆💳
-              </p>
-            </div>
+          </p>
+        </div>
           </div>
         </div>
 
@@ -409,24 +409,24 @@ const BestCreditCards: React.FC = () => {
               <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Best cashback: SBI Cashback (5% online = ₹10K/year on ₹2L spend)</span>
             </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Best travel: Axis Magnus (25K bonus/month), HDFC Diners Black (unlimited lounges)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Beginners: Start with lifetime free cards (Flipkart/Amazon) - zero risk, good rewards</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Premium cards worth it only if annual spend &gt; ₹5-10 lakhs (else stick to free cards)</span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <span className="text-gray-800">Check income eligibility before applying - wrong applications hurt credit score</span>
-            </li>
-          </ul>
-        </div>
+              </li>
+            </ul>
+          </div>
 
         {/* Next Steps */}
         <div className="bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl p-8 text-white">
