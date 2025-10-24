@@ -185,6 +185,12 @@ const HomeInvestopedia: React.FC = () => {
     setShowSearchResults(false);
   };
 
+  // Helper function - Get random items from any array
+  const getRandomItems = (pool: any[], count: number) => {
+    const shuffled = [...pool].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+  };
+
   // DYNAMIC Trending Items - Auto-updates with new content from entire codebase
   const allTrendingItems = useMemo(() => [
     // NEW Additions (Mark new tools here)
@@ -272,12 +278,6 @@ const HomeInvestopedia: React.FC = () => {
       }))
     ]
   }), []);
-
-  // Get random items from each category
-  const getRandomItems = (pool: any[], count: number) => {
-    const shuffled = [...pool].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, count);
-  };
 
   // COMPREHENSIVE DATA POOLS - All content from entire codebase
   const allPlatformCategories = useMemo(() => [
@@ -576,7 +576,6 @@ const HomeInvestopedia: React.FC = () => {
 
               {/* Global Search */}
               <div className="max-w-4xl mx-auto mb-12 relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-40"></div>
                 <div className="relative">
                   <Search className={`absolute left-6 top-1/2 -translate-y-1/2 w-7 h-7 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
                       <input
@@ -817,7 +816,7 @@ const HomeInvestopedia: React.FC = () => {
                     </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {dynamicFestivalTools.map((tool, idx) => (
-                <Link
+                    <Link
                   key={idx}
                   to={tool.path}
                   className={`relative p-5 rounded-xl transition-all hover:scale-105 active:scale-95 ${
@@ -837,7 +836,7 @@ const HomeInvestopedia: React.FC = () => {
                       }`}>
                         {tool.tag}
                       </span>
-                    </div>
+                  </div>
                   )}
                   <div className="text-5xl mb-3">{tool.emoji}</div>
                   <h3 className={`text-sm font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
