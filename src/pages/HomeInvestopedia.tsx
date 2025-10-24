@@ -557,23 +557,24 @@ const HomeInvestopedia: React.FC = () => {
                   )}
                     </div>
 
-                {/* Popular Tags - Dynamic & Clickable */}
+                {/* Popular Tags - Dynamic & Triggers Search */}
                 {!searchQuery && (
                   <div className="mt-6 flex flex-wrap justify-center gap-2.5">
                     <span className={`text-sm font-bold ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                       <Flame className="w-5 h-5 inline mr-1 text-orange-500 animate-pulse" /> Popular:
                     </span>
                     {dynamicPopularTags.map((tag, i) => (
-                      <Link
+                      <button
                         key={i}
-                        to={tag.path}
-                        className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-bold shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all"
+                        onClick={() => setSearchQuery(tag.searchTerm)}
+                        className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-bold shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5"
                       >
-                        {tag.emoji} {tag.label}
-                      </Link>
+                        <span className="text-lg">{tag.emoji}</span>
+                        <span>{tag.label}</span>
+                      </button>
                     ))}
                     <span className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'} italic`}>
-                      • Refresh for new suggestions
+                      • Click to search • Refresh for new suggestions
                     </span>
                   </div>
                 )}
