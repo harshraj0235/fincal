@@ -24,7 +24,7 @@ const getCurrentDate = () => {
     day: now.getDate(),
     month: now.toLocaleDateString('en-IN', { month: 'long' }),
     year: now.getFullYear(),
-    time: now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: 'digit' }),
+    time: now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }),
     dayName: now.toLocaleDateString('en-IN', { weekday: 'long' }),
     fullDate: now.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
   };
