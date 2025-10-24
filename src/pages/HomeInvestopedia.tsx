@@ -11,7 +11,7 @@ import {
   Bell, TrendingDown, Menu, X, ChevronDown, Filter, SlidersHorizontal,
   ExternalLink, Share2, Bookmark, Moon, Sun, Flame, Percent, CreditCard,
   Home, PiggyBank, Smartphone, Trophy, Grid,
-  List, Mail, Phone, MessageCircle, ThumbsUp, Eye, Download, Upload
+  List, Mail, Phone, MessageCircle, ThumbsUp, Eye, Download, Upload, Copy
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { blogPosts as blogPosts0 } from '../data/blogData';
@@ -120,6 +120,28 @@ const HomeInvestopedia: React.FC = () => {
     setShowSearchResults(false);
   };
 
+  const handleShare = async (toolName: string, toolPath: string) => {
+    const shareUrl = `https://moneycal.in${toolPath}`;
+    const shareText = `Check out ${toolName} on MoneyCal.in - India's #1 Financial Platform!`;
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: toolName,
+          text: shareText,
+          url: shareUrl
+        });
+      } catch (err) {
+        // Fallback to copy
+        navigator.clipboard.writeText(`${toolName}: ${shareUrl}`);
+        alert('Link copied to clipboard!');
+      }
+    } else {
+      navigator.clipboard.writeText(`${toolName}: ${shareUrl}`);
+      alert('Link copied to clipboard!');
+    }
+  };
+
   const categories = [
     { id: 'all', name: language === 'en' ? 'All Tools' : 'सभी टूल्स', icon: Grid, color: 'from-blue-500 to-cyan-500', count: '100+' },
     { id: 'investment', name: language === 'en' ? 'Investment' : 'निवेश', icon: TrendingUp, color: 'from-green-500 to-emerald-500', count: '15+' },
@@ -162,32 +184,40 @@ const HomeInvestopedia: React.FC = () => {
           }`} style={{ bottom: '10%', left: '50%', animationDelay: '2s' }}></div>
         </div>
 
-        {/* Simple Top Navbar */}
+        {/* Simple Top Navbar - Mobile Optimized */}
         <div className={`relative z-10 ${
           theme === 'dark' 
-            ? 'bg-slate-900/95 border-white/10' 
-            : 'bg-white/95 border-gray-200'
+            ? 'bg-slate-900/98 border-white/10' 
+            : 'bg-white/98 border-gray-200'
         } backdrop-blur-xl sticky top-0 shadow-lg border-b`}>
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3">
             <div className="flex justify-between items-center">
-              {/* Logo */}
-              <Link to="/" className="flex items-center gap-2 group">
-                <div className="w-9 h-9 sm:w-11 sm:h-11 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                  <span className="text-white font-bold text-xl sm:text-2xl">M</span>
+              {/* Logo - Clean */}
+              <Link to="/" className="flex items-center gap-2 sm:gap-2.5 group">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all shadow-lg">
+                  <span className="text-white font-black text-xl sm:text-2xl">💰</span>
                 </div>
-                <span className="text-lg sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  MoneyCal
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-lg sm:text-xl md:text-2xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                    MoneyCal.in
+                  </span>
+                  <span className={`text-[9px] sm:text-[10px] font-medium -mt-0.5 ${
+                    theme === 'dark' ? 'text-gray-500' : 'text-gray-600'
+                  }`}>
+                    {language === 'en' ? 'Smart Financial Tools' : 'स्मार्ट वित्तीय टूल्स'}
+                  </span>
+                </div>
               </Link>
 
-              {/* Right Actions */}
-              <div className="flex items-center gap-2 sm:gap-3">
+              {/* Right Actions - Better Positioned */}
+              <div className="flex items-center gap-2 sm:gap-2.5">
                 <button
                   onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                  className={`p-2 sm:p-2.5 rounded-xl transition-all active:scale-95 ${
+                  title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                  className={`p-2 sm:p-2.5 rounded-xl transition-all active:scale-90 shadow-md ${
                     theme === 'dark' 
-                      ? 'bg-slate-800 text-yellow-400 hover:bg-slate-700' 
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      ? 'bg-gradient-to-br from-yellow-500 to-orange-500 text-white hover:shadow-lg' 
+                      : 'bg-gradient-to-br from-slate-700 to-blue-900 text-white hover:shadow-lg'
                   }`}
                 >
                   {theme === 'dark' ? <Sun className="w-5 h-5 sm:w-6 sm:h-6" /> : <Moon className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -195,10 +225,11 @@ const HomeInvestopedia: React.FC = () => {
 
                 <button
                   onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
-                  className={`flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all text-sm sm:text-base font-bold active:scale-95 ${
+                  title="Change Language"
+                  className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all text-xs sm:text-sm font-bold active:scale-90 shadow-md hover:shadow-lg ${
                     theme === 'dark'
-                      ? 'bg-slate-800 text-gray-300 hover:bg-slate-700'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white'
+                      : 'bg-gradient-to-br from-blue-600 to-purple-600 text-white'
                   }`}
                 >
                   <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -301,56 +332,86 @@ const HomeInvestopedia: React.FC = () => {
                     </motion.div>
                   )}
 
-                  {/* Search Results Dropdown */}
+                  {/* Enhanced Search Results Dropdown - Mobile Optimized */}
                   <AnimatePresence>
                     {showSearchResults && searchResults.length > 0 && (
                       <motion.div
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className={`absolute top-full left-0 right-0 mt-3 backdrop-blur-2xl rounded-2xl sm:rounded-3xl shadow-2xl border-2 max-h-[400px] overflow-y-auto z-50 ${
+                        className={`absolute top-full left-0 right-0 mt-3 backdrop-blur-2xl rounded-2xl sm:rounded-3xl shadow-2xl border-2 max-h-[70vh] overflow-y-auto z-50 ${
                           theme === 'dark'
-                            ? 'bg-slate-800/98 border-white/10'
-                            : 'bg-white/98 border-gray-300'
+                            ? 'bg-slate-900/98 border-white/10'
+                            : 'bg-white/98 border-gray-300 shadow-xl'
                         }`}
                       >
-                        <div className="p-3 sm:p-4">
-                          <div className={`text-xs sm:text-sm px-3 py-2 font-bold mb-2 ${
+                        <div className="p-2 sm:p-3 md:p-4">
+                          <div className={`text-xs sm:text-sm px-3 sm:px-4 py-2 font-bold mb-2 flex items-center justify-between ${
                             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
                           }`}>
-                            {searchResults.length} {language === 'en' ? 'found' : 'मिले'}
+                            <span>✨ {searchResults.length} {language === 'en' ? 'Results' : 'परिणाम'}</span>
+                            <span className={`text-[10px] sm:text-xs ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>
+                              {language === 'en' ? 'Tap to open' : 'खोलने के लिए टैप करें'}
+                            </span>
                           </div>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          <div className="space-y-1.5 sm:space-y-2">
                             {searchResults.map((result, idx) => (
-                              <motion.button
+                              <motion.div
                                 key={idx}
-                                onClick={() => handleSearchItemClick(result.path)}
-                                whileTap={{ scale: 0.98 }}
-                                className={`text-left px-3 sm:px-4 py-3 rounded-xl sm:rounded-2xl transition-all group ${
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.05 }}
+                                className={`relative rounded-xl sm:rounded-2xl overflow-hidden border ${
                                   theme === 'dark'
-                                    ? 'hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20'
-                                    : 'hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 border border-transparent hover:border-gray-200'
+                                    ? 'bg-slate-800/50 border-white/10'
+                                    : 'bg-white border-gray-200 shadow-sm'
                                 }`}
                               >
-                                <div className="flex items-center gap-2 sm:gap-3">
-                                  <div className="text-2xl sm:text-3xl">{result.emoji}</div>
-                                  <div className="flex-1 min-w-0">
-                                    <div className={`font-bold text-sm sm:text-base mb-0.5 truncate ${
-                                      theme === 'dark'
-                                        ? 'text-white group-hover:text-blue-400'
-                                        : 'text-gray-900 group-hover:text-blue-600'
-                                    }`}>
-                                      {result.name}
+                                <div className="flex items-center">
+                                  <button
+                                    onClick={() => handleSearchItemClick(result.path)}
+                                    className="flex-1 flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-3 sm:py-4 text-left active:scale-98 transition-transform"
+                                  >
+                                    <div className="text-2xl sm:text-3xl flex-shrink-0">{result.emoji}</div>
+                                    <div className="flex-1 min-w-0">
+                                      <div className={`font-bold text-sm sm:text-base mb-1 line-clamp-1 ${
+                                        theme === 'dark' ? 'text-white' : 'text-gray-900'
+                                      }`}>
+                                        {result.name}
+                                      </div>
+                                      <div className="flex items-center gap-2 flex-wrap">
+                                        <span className="px-2 py-0.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-[10px] sm:text-xs font-bold">
+                                          {result.category}
+                                        </span>
+                                        <span className={`text-[10px] sm:text-xs ${
+                                          theme === 'dark' ? 'text-gray-500' : 'text-gray-600'
+                                        } line-clamp-1`}>
+                                          {result.path}
+                                        </span>
+                                      </div>
                                     </div>
-                                    <span className="px-2 py-0.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-[10px] sm:text-xs font-bold">
-                                      {result.category}
-                                    </span>
-                                  </div>
-                                  <ArrowRight className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 ${
-                                    theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                                  }`} />
+                                    <ChevronRight className={`w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 ${
+                                      theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                                    }`} />
+                                  </button>
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleShare(result.name, result.path);
+                                    }}
+                                    className={`px-3 sm:px-4 py-3 sm:py-4 border-l active:scale-90 transition-all ${
+                                      theme === 'dark'
+                                        ? 'border-white/10 hover:bg-blue-500/20'
+                                        : 'border-gray-200 hover:bg-blue-50'
+                                    }`}
+                                    title="Share"
+                                  >
+                                    <Share2 className={`w-4 h-4 sm:w-5 sm:h-5 ${
+                                      theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
+                                    }`} />
+                                  </button>
                                 </div>
-                              </motion.button>
+                              </motion.div>
                             ))}
                           </div>
                         </div>
@@ -436,28 +497,44 @@ const HomeInvestopedia: React.FC = () => {
                       whileHover={{ scale: 1.08, y: -3 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Link
-                        to={folder.path}
-                        className={`block p-2.5 sm:p-3 md:p-4 rounded-xl sm:rounded-2xl text-center transition-all relative overflow-hidden group ${
-                          theme === 'dark'
-                            ? 'bg-slate-800/40 border border-white/10 hover:border-white/30'
-                            : 'bg-white border border-gray-200 hover:border-gray-400 shadow-md hover:shadow-lg'
-                        }`}
-                      >
-                        <div className="text-2xl sm:text-3xl md:text-4xl mb-1 sm:mb-2">{folder.emoji}</div>
-                        <div className={`text-[10px] sm:text-xs md:text-sm font-bold mb-1 truncate ${
-                          theme === 'dark' ? 'text-white' : 'text-gray-900'
-                        }`}>
-                          {folder.name}
-                        </div>
-                        <div className={`text-[9px] sm:text-[10px] md:text-xs px-1.5 sm:px-2 py-0.5 rounded-full inline-block font-semibold ${
-                          theme === 'dark'
-                            ? 'bg-blue-500/20 text-blue-400'
-                            : 'bg-blue-100 text-blue-700'
-                        }`}>
-                          {folder.count}
-                        </div>
-                      </Link>
+                      <div className="relative group">
+                        <Link
+                          to={folder.path}
+                          className={`block p-3 sm:p-3.5 md:p-4 rounded-xl sm:rounded-2xl text-center transition-all overflow-hidden active:scale-95 ${
+                            theme === 'dark'
+                              ? 'bg-slate-800/50 border border-white/10 hover:border-blue-500/50 hover:bg-slate-700/50'
+                              : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-md hover:shadow-xl'
+                          }`}
+                        >
+                          <div className="text-3xl sm:text-4xl md:text-5xl mb-1.5 sm:mb-2">{folder.emoji}</div>
+                          <div className={`text-xs sm:text-sm md:text-base font-bold mb-1 truncate ${
+                            theme === 'dark' ? 'text-white' : 'text-gray-900'
+                          }`}>
+                            {folder.name}
+                          </div>
+                          <div className={`text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full inline-block font-bold ${
+                            theme === 'dark'
+                              ? 'bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-blue-300'
+                              : 'bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700'
+                          }`}>
+                            {folder.count}
+                          </div>
+                        </Link>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleShare(folder.name, folder.path);
+                          }}
+                          className={`absolute top-2 right-2 p-1.5 sm:p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all active:scale-90 ${
+                            theme === 'dark'
+                              ? 'bg-blue-600 hover:bg-blue-500'
+                              : 'bg-blue-600 hover:bg-blue-700'
+                          }`}
+                          title="Share"
+                        >
+                          <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                        </button>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
@@ -508,24 +585,24 @@ const HomeInvestopedia: React.FC = () => {
                 <motion.div whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/tools"
-                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-xl active:scale-95 transition-transform"
+                    className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-2xl active:scale-95 transition-all hover:shadow-blue-500/50"
                   >
                     <Calculator className="w-5 h-5 sm:w-6 sm:h-6" />
-                    {language === 'en' ? 'Explore 100+ Tools' : '100+ टूल्स'}
+                    <span>{language === 'en' ? 'Explore 100+ Tools' : '100+ टूल्स'}</span>
                     <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
                   </Link>
                 </motion.div>
                 <motion.div whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/learn"
-                    className={`inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 backdrop-blur-xl border-2 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-xl active:scale-95 transition-transform ${
+                    className={`inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 md:py-5 backdrop-blur-xl border-3 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-2xl active:scale-95 transition-all ${
                       theme === 'dark'
-                        ? 'bg-slate-800/50 border-white/20 text-white hover:bg-slate-700/50'
-                        : 'bg-white border-gray-300 text-gray-900 hover:bg-gray-50'
+                        ? 'bg-slate-800/70 border-white/30 text-white hover:bg-slate-700/70 hover:border-white/50'
+                        : 'bg-white border-gray-400 text-gray-900 hover:bg-gray-50 hover:border-gray-600'
                     }`}
                   >
                     <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />
-                    {language === 'en' ? 'Start Learning FREE' : 'मुफ्त सीखें'}
+                    <span>{language === 'en' ? 'Start Learning FREE' : 'मुफ्त सीखें'}</span>
                   </Link>
                 </motion.div>
               </div>
