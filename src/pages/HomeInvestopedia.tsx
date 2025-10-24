@@ -185,18 +185,44 @@ const HomeInvestopedia: React.FC = () => {
     setShowSearchResults(false);
   };
 
-  // Get random trending items
-  const trendingItems = useMemo(() => {
-    const recent = [
-      { name: language === 'en' ? 'Lunar Eclipse 2025' : 'चंद्र ग्रहण 2025', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', tag: 'NEW', desc: '11 eclipse dates with Sutak timings' },
-      { name: language === 'en' ? 'Marriage Muhurat' : 'विवाह मुहूर्त', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', tag: 'HOT', desc: '40+ auspicious wedding dates' },
-      { name: language === 'en' ? 'Credit Score Guide' : 'क्रेडिट स्कोर गाइड', path: '/learn/credit-score', emoji: '📊', tag: 'POPULAR', desc: '10 lessons to boost CIBIL score' },
-      { name: language === 'en' ? 'GST Calculator' : 'GST कैलकुलेटर', path: '/tools/gst-amount-calculator', emoji: '💰', tag: 'TRENDING', desc: 'Calculate GST inclusive/exclusive' },
-      { name: language === 'en' ? 'SIP Returns' : 'SIP रिटर्न', path: '/calculators/sip-calculator', emoji: '📈', tag: 'POPULAR', desc: 'Mutual fund SIP calculator' },
-      { name: language === 'en' ? 'Income Tax 2025' : 'आयकर 2025', path: '/tools/income-tax-calculator', emoji: '📄', tag: 'NEW', desc: 'Old vs New regime comparison' }
-    ];
-    return recent;
-  }, [language]);
+  // DYNAMIC Trending Items - Auto-updates with new content from entire codebase
+  const allTrendingItems = useMemo(() => [
+    // NEW Additions (Mark new tools here)
+    { name: 'Salary Calculator', path: '/calculators/salary-calculator', emoji: '💵', tag: 'NEW', desc: 'Complete salary breakdown with CTC' },
+    { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', tag: 'NEW', desc: '11 eclipse dates with Sutak timings' },
+    { name: 'Car Loan EMI', path: '/calculators/car-loan-emi-calculator', emoji: '🚗', tag: 'NEW', desc: 'Auto loan calculator with down payment' },
+    { name: 'Property Calculator', path: '/calculators/property-calculator', emoji: '🏘️', tag: 'NEW', desc: 'Stamp duty & registration charges' },
+    
+    // HOT/Trending (Most popular)
+    { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', tag: 'HOT', desc: '40+ auspicious wedding dates' },
+    { name: 'GST Calculator', path: '/tools/gst-amount-calculator', emoji: '💰', tag: 'HOT', desc: 'Calculate GST inclusive/exclusive' },
+    { name: 'Home Loan EMI', path: '/calculators/home-loan-emi-calculator', emoji: '🏠', tag: 'HOT', desc: 'Housing loan EMI calculator' },
+    { name: 'Panchang Today', path: '/festival-tools/panchang-today', emoji: '📅', tag: 'HOT', desc: 'Daily tithi & nakshatra' },
+    
+    // POPULAR (High traffic)
+    { name: 'SIP Calculator', path: '/calculators/sip-calculator', emoji: '📈', tag: 'POPULAR', desc: 'Mutual fund SIP returns' },
+    { name: 'Income Tax 2025', path: '/tools/income-tax-calculator', emoji: '📄', tag: 'POPULAR', desc: 'Old vs New regime comparison' },
+    { name: 'Credit Score Guide', path: '/learn/credit-score', emoji: '📊', tag: 'POPULAR', desc: '10 lessons to boost CIBIL' },
+    { name: 'PPF Calculator', path: '/calculators/ppf-calculator', emoji: '🏦', tag: 'POPULAR', desc: 'Retirement planning tool' },
+    
+    // Calculators
+    { name: 'Personal Loan EMI', path: '/calculators/personal-loan-emi-calculator', emoji: '💵', tag: 'TRENDING', desc: 'Instant personal loan calculator' },
+    { name: 'Loan Comparison', path: '/calculators/loan-comparison-calculator', emoji: '📊', tag: 'TRENDING', desc: 'Compare multiple loan offers' },
+    { name: 'Prepayment Calculator', path: '/calculators/prepayment-calculator', emoji: '💰', tag: 'TRENDING', desc: 'Calculate prepayment savings' },
+    
+    // Learn Content
+    { name: 'Gold Loans', path: '/learn/gold-loans', emoji: '🏆', tag: 'TRENDING', desc: '10 comprehensive lessons' },
+    { name: 'Credit Cards', path: '/learn/credit-cards', emoji: '💳', tag: 'TRENDING', desc: '20 detailed lessons' },
+    
+    // Festival Tools
+    { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', tag: 'TRENDING', desc: '50+ fasting dates' },
+    { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', tag: 'TRENDING', desc: 'Auspicious timing alerts' }
+  ], []);
+
+  // Get random trending items - changes on page load
+  const trendingItems = useMemo(() => 
+    getRandomItems(allTrendingItems, 6), [allTrendingItems]
+  );
 
   // Dynamic category content pools - 7+ items each!
   const categoryPools = useMemo(() => ({
@@ -300,21 +326,37 @@ const HomeInvestopedia: React.FC = () => {
     { name: 'Stock Market', path: '/stock-market', emoji: '📈', count: '20+', tag: '' }
   ], []);
 
+  // COMPREHENSIVE Festival Tools Pool - Auto-grows with new additions
   const allFestivalTools = useMemo(() => [
-    { name: 'Parsi New Year', path: '/festival-tools/parsi-new-year', emoji: '🎊', category: 'Festival' },
-    { name: 'Panchang Today', path: '/festival-tools/panchang-today', emoji: '📅', category: 'Festival' },
-    { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', category: 'Festival' },
-    { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', category: 'Festival' },
-    { name: 'Moon Phase Festivals', path: '/festival-tools/moon-phase-festivals', emoji: '🌙', category: 'Festival' },
-    { name: 'Purnima Amavasya Dates', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', category: 'Festival' },
-    { name: 'Vrat Upavas Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', category: 'Festival' },
-    { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', emoji: '⭐', category: 'Festival' },
-    { name: 'Shubh Muhurat Reminder', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', category: 'Festival' },
-    { name: 'Auspicious Marriage Days', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', category: 'Festival' },
-    { name: 'Lunar Eclipse Predictor', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', category: 'Festival' },
-    { name: 'Diwali Date Finder', path: '/festival-tools/diwali-date-finder', emoji: '🪔', category: 'Festival' },
-    { name: 'Holi Date Calculator', path: '/festival-tools/holi-date-calculator', emoji: '🎨', category: 'Festival' },
-    { name: 'Raksha Bandhan Muhurat', path: '/festival-tools/raksha-bandhan-muhurat', emoji: '🎀', category: 'Festival' }
+    { name: 'Parsi New Year', path: '/festival-tools/parsi-new-year', emoji: '🎊', category: 'Festival', tag: '' },
+    { name: 'Panchang Today', path: '/festival-tools/panchang-today', emoji: '📅', category: 'Festival', tag: 'Popular' },
+    { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', category: 'Festival', tag: '' },
+    { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', category: 'Festival', tag: '' },
+    { name: 'Moon Phase Festivals', path: '/festival-tools/moon-phase-festivals', emoji: '🌙', category: 'Festival', tag: '' },
+    { name: 'Purnima Amavasya', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', category: 'Festival', tag: 'Trending' },
+    { name: 'Vrat Upavas Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', category: 'Festival', tag: 'Popular' },
+    { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', emoji: '⭐', category: 'Festival', tag: '' },
+    { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', category: 'Festival', tag: 'Hot' },
+    { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', category: 'Festival', tag: 'Hot' },
+    { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', category: 'Festival', tag: 'New' },
+    { name: 'Diwali Date Finder', path: '/festival-tools/diwali-date-finder', emoji: '🪔', category: 'Festival', tag: '' },
+    { name: 'Holi Date Calculator', path: '/festival-tools/holi-date-calculator', emoji: '🎨', category: 'Festival', tag: '' },
+    { name: 'Raksha Bandhan', path: '/festival-tools/raksha-bandhan-muhurat', emoji: '🎀', category: 'Festival', tag: '' },
+    { name: 'Navratri Dates', path: '/festival-tools/navratri-dates-finder', emoji: '🪔', category: 'Festival', tag: '' },
+    { name: 'Ganesh Chaturthi', path: '/festival-tools/ganesh-chaturthi-countdown', emoji: '🐘', category: 'Festival', tag: '' },
+    { name: 'Janmashtami Fasting', path: '/festival-tools/janmashtami-fasting', emoji: '🦚', category: 'Festival', tag: '' },
+    { name: 'Dussehra Dates', path: '/festival-tools/dussehra-dates', emoji: '🏹', category: 'Festival', tag: '' },
+    { name: 'Chhath Puja', path: '/festival-tools/chhat-puja-arghya', emoji: '☀️', category: 'Festival', tag: '' },
+    { name: 'Maha Shivratri', path: '/festival-tools/maha-shivratri-duration', emoji: '🔱', category: 'Festival', tag: '' },
+    { name: 'Guru Purnima', path: '/festival-tools/guru-purnima-calendar', emoji: '🙏', category: 'Festival', tag: '' },
+    { name: 'Buddha Purnima', path: '/festival-tools/buddha-purnima-converter', emoji: '☸️', category: 'Festival', tag: '' },
+    { name: 'Eid Date Converter', path: '/festival-tools/eid-date-converter', emoji: '🌙', category: 'Festival', tag: '' },
+    { name: 'Ramadan Timetable', path: '/festival-tools/ramadan-timetable', emoji: '🕌', category: 'Festival', tag: '' },
+    { name: 'Christmas Countdown', path: '/festival-tools/christmas-countdown', emoji: '🎄', category: 'Festival', tag: '' },
+    { name: 'Pongal Calendar', path: '/festival-tools/pongal-calendar', emoji: '🌾', category: 'Festival', tag: '' },
+    { name: 'Onam Date Reminder', path: '/festival-tools/onam-date-reminder', emoji: '🌺', category: 'Festival', tag: '' },
+    { name: 'Lohri Sunrise', path: '/festival-tools/lohri-sunrise-sunset', emoji: '🔥', category: 'Festival', tag: '' },
+    { name: 'Bihu Date Calendar', path: '/festival-tools/bihu-date-calendar', emoji: '🎶', category: 'Festival', tag: '' }
   ], []);
 
   // Dynamic content that changes based on rotationKey
@@ -326,8 +368,9 @@ const HomeInvestopedia: React.FC = () => {
     getRandomItems(allQuickCategories, 8), [allQuickCategories, rotationKey]
   );
 
+  // Dynamic Festival Tools - Shows random selection each time
   const dynamicFestivalTools = useMemo(() => 
-    allFestivalTools, [allFestivalTools] // Show all festival tools
+    getRandomItems(allFestivalTools, 12), [allFestivalTools] // Show random 12 from 29 tools
   );
 
   // Dynamic Popular Search Tags - Changes on every page load
@@ -654,7 +697,7 @@ const HomeInvestopedia: React.FC = () => {
                   <Rocket className="w-6 h-6 inline mr-2" />
                   {language === 'en' ? 'Start Learning' : 'सीखें'}
                 </Link>
-              </div>
+                            </div>
 
               {/* Complete Platform Stats Grid */}
               <div className={`max-w-6xl mx-auto p-8 rounded-3xl border-2 mb-12 ${
@@ -663,12 +706,12 @@ const HomeInvestopedia: React.FC = () => {
                 <div className="text-center mb-8">
                   <h3 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                     📁 {language === 'en' ? 'Complete Platform' : 'संपूर्ण मंच'}
-                  </h3>
+                              </h3>
                   <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                     <Sparkles className="w-4 h-4 inline mr-1 text-yellow-500 animate-pulse" />
                     {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
-                  </p>
-                </div>
+                              </p>
+                            </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {dynamicPlatformCategories.map((item, idx) => (
                     <Link
@@ -684,10 +727,10 @@ const HomeInvestopedia: React.FC = () => {
                       <div className={`text-xs font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.name}</div>
                       <div className={`text-[10px] px-2 py-0.5 rounded-full inline-block font-semibold ${theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700'}`}>
                         {item.count}
-                  </div>
+                    </div>
                   </Link>
               ))}
-            </div>
+              </div>
 
                 {/* Festival Tool Categories */}
                 <div className={`mt-8 p-6 rounded-2xl ${
@@ -698,7 +741,7 @@ const HomeInvestopedia: React.FC = () => {
                   </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                     {dynamicFestivalCategories.map((cat, i) => (
-                    <Link
+                <Link
                         key={i}
                         to={cat.path}
                         className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95 ${
@@ -707,11 +750,11 @@ const HomeInvestopedia: React.FC = () => {
                       >
                         <span className="text-2xl">{cat.emoji}</span>
                         <span>{cat.name}</span>
-                  </Link>
+                </Link>
               ))}
-            </div>
+              </div>
           </div>
-                      </div>
+                  </div>
             </div>
           </div>
         </section>
@@ -755,7 +798,7 @@ const HomeInvestopedia: React.FC = () => {
                   }`}>
                     {cat.count}
                   </div>
-                </Link>
+                  </Link>
               ))}
             </div>
           </div>
@@ -771,18 +814,31 @@ const HomeInvestopedia: React.FC = () => {
               <p className={`text-lg ${theme === 'dark' ? 'text-orange-300' : 'text-orange-600'}`}>
                 {language === 'en' ? 'Complete festival planning and cultural tools' : 'संपूर्ण त्योहार योजना'}
               </p>
-            </div>
+                    </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {dynamicFestivalTools.map((tool, idx) => (
                 <Link
                   key={idx}
                   to={tool.path}
-                  className={`p-5 rounded-xl transition-all hover:scale-105 active:scale-95 ${
+                  className={`relative p-5 rounded-xl transition-all hover:scale-105 active:scale-95 ${
                     theme === 'dark'
                       ? 'bg-slate-800/70 border border-orange-500/30 hover:border-orange-400'
                       : 'bg-white border-2 border-orange-200 hover:border-orange-400 shadow-lg'
                   }`}
                 >
+                  {tool.tag && (
+                    <div className="absolute top-2 right-2">
+                      <span className={`px-2 py-0.5 rounded-full text-[9px] font-black ${
+                        tool.tag === 'New' ? 'bg-green-500 text-white' :
+                        tool.tag === 'Hot' ? 'bg-red-500 text-white' :
+                        tool.tag === 'Popular' ? 'bg-blue-500 text-white' :
+                        tool.tag === 'Trending' ? 'bg-purple-500 text-white' :
+                        'bg-orange-500 text-white'
+                      }`}>
+                        {tool.tag}
+                      </span>
+                    </div>
+                  )}
                   <div className="text-5xl mb-3">{tool.emoji}</div>
                   <h3 className={`text-sm font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                     {tool.name}
@@ -794,6 +850,14 @@ const HomeInvestopedia: React.FC = () => {
                   </span>
                 </Link>
               ))}
+            </div>
+            
+            {/* Refresh Note */}
+            <div className="text-center mt-8">
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                <Sparkles className="w-4 h-4 inline mr-1 text-orange-500 animate-pulse" />
+                {language === 'en' ? 'Showing 12 random tools • Refresh to see more' : '12 यादृच्छिक उपकरण • अधिक देखने के लिए रीफ्रेश करें'}
+              </p>
             </div>
           </div>
         </section>
@@ -822,8 +886,8 @@ const HomeInvestopedia: React.FC = () => {
                       'bg-blue-500 text-white'
                     }`}>
                       {item.tag}
-                    </span>
-                  </div>
+                      </span>
+                    </div>
                   <div className="text-6xl mb-4">{item.emoji}</div>
                   <h3 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                     {item.name}
@@ -832,7 +896,7 @@ const HomeInvestopedia: React.FC = () => {
                     {item.desc}
                   </p>
                   <ArrowRight className={`w-6 h-6 mt-3 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
-                </Link>
+                  </Link>
               ))}
             </div>
           </div>
@@ -890,17 +954,17 @@ const HomeInvestopedia: React.FC = () => {
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>
                             👥 {item.users} users
                       </span>
-                    </div>
+                      </div>
                     </div>
                   </Link>
               ))}
             </div>
-              </motion.div>
+            </motion.div>
 
               {/* Category 2: Learning */}
-            <motion.div
+                <motion.div
                 key={`learn-${rotationKey}`}
-              initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 className={`rounded-2xl p-6 border-2 ${
@@ -937,7 +1001,7 @@ const HomeInvestopedia: React.FC = () => {
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`}>
                             📖 {item.lessons} lessons
                 </span>
-                      </div>
+                  </div>
                     </div>
                   </Link>
               ))}
@@ -960,10 +1024,10 @@ const HomeInvestopedia: React.FC = () => {
                   <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-orange-300' : 'text-orange-700'}`}>
                     🎉 {language === 'en' ? 'Festival Tools' : 'त्योहार टूल्स'}
                   </h3>
-                </div>
+            </div>
                 <div className="space-y-3">
                   {dynamicContent.festivals.map((item, idx) => (
-                    <Link
+              <Link
                       key={idx}
                       to={item.path}
                       className={`block p-4 rounded-xl transition-all hover:scale-105 active:scale-95 ${
@@ -983,10 +1047,10 @@ const HomeInvestopedia: React.FC = () => {
                           </p>
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-orange-400' : 'text-orange-600'}`}>
                             🎊 {item.events} events
-                          </span>
-                  </div>
+                  </span>
+                </div>
                       </div>
-                    </Link>
+                </Link>
               ))}
             </div>
             </motion.div>
@@ -1030,15 +1094,15 @@ const HomeInvestopedia: React.FC = () => {
                           </p>
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>
                             📂 {item.category}
-                  </span>
-                </div>
+                          </span>
+                        </div>
                       </div>
                 </Link>
                   ))}
-                </div>
+                          </div>
               </motion.div>
-            </div>
-
+                        </div>
+                        
             {/* Refresh Indicator */}
             <div className="text-center mt-8">
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${
@@ -1050,7 +1114,7 @@ const HomeInvestopedia: React.FC = () => {
                           </span>
                         </div>
                       </div>
-                          </div>
+                    </div>
         </section>
 
         {/* Trust */}
