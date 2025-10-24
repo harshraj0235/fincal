@@ -203,73 +203,106 @@ const HomeInvestopedia: React.FC = () => {
           }`} style={{ bottom: '10%', left: '50%', animationDelay: '2s' }}></div>
                 </div>
 
-        {/* Top Navigation Bar - Mobile Optimized */}
-        <div className={`relative z-10 border-b ${
+        {/* Top Navigation Menu Bar - Beautiful Structure */}
+        <div className={`relative z-10 ${
           theme === 'dark' 
-            ? 'bg-slate-900/95 border-white/10' 
-            : 'bg-white/95 border-gray-200'
-        } backdrop-blur-xl sticky top-0 shadow-lg`}>
-          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
-            <div className="flex justify-between items-center gap-2">
-              {/* Logo - Optimized for mobile */}
-              <Link to="/" className="flex items-center gap-1.5 sm:gap-2 group flex-shrink-0">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <span className="text-white font-bold text-lg sm:text-xl">M</span>
-                </div>
-                <span className={`text-base sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}>
-                  MoneyCal
-                </span>
-              </Link>
+            ? 'bg-slate-900/95' 
+            : 'bg-white/95'
+        } backdrop-blur-xl sticky top-0 shadow-2xl`}>
+          {/* Main Navigation */}
+          <div className={`border-b ${theme === 'dark' ? 'border-white/10' : 'border-gray-200'}`}>
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
+              <div className="flex justify-between items-center gap-2">
+                {/* Logo */}
+                <Link to="/" className="flex flex-col group flex-shrink-0">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                      <span className="text-white font-bold text-lg sm:text-xl">M</span>
+                    </div>
+                    <div>
+                      <span className={`text-base sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block`}>
+                        MoneyCal.in
+                      </span>
+                      <span className={`text-[9px] sm:text-xs font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                        Smart Financial Tools
+                      </span>
+                    </div>
+                  </div>
+                </Link>
 
-              {/* Right Actions - Mobile Optimized */}
-              <div className="flex items-center gap-1.5 sm:gap-2">
+                {/* Right Actions */}
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   <Link
-                  to="/learn"
-                  className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold hover:shadow-lg active:scale-95 transition-all text-xs sm:text-sm"
-                >
-                  <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  <span className="hidden xs:inline">Learn</span>
-                  <span className="xs:hidden">📚</span>
+                    to="/learn"
+                    className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold hover:shadow-lg active:scale-95 transition-all text-xs sm:text-sm"
+                  >
+                    <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline">📚</span>
                   </Link>
 
-                <button
-                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                  className={`p-1.5 sm:p-2 rounded-full transition-all active:scale-95 ${
-                    theme === 'dark' 
-                      ? 'bg-slate-800 text-yellow-400 hover:bg-slate-700' 
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
-                >
-                  {theme === 'dark' ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
-                </button>
+                  <button
+                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                    className={`p-1.5 sm:p-2 rounded-full transition-all active:scale-95 ${
+                      theme === 'dark' 
+                        ? 'bg-slate-800 text-yellow-400 hover:bg-slate-700' 
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    }`}
+                  >
+                    {theme === 'dark' ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
+                  </button>
 
-                <button
-                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
-                  className={`flex items-center gap-0.5 sm:gap-1 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full transition-all text-xs sm:text-sm font-medium active:scale-95 ${
-                    theme === 'dark'
-                      ? 'bg-slate-800 text-gray-300 hover:bg-slate-700'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
-                >
-                  <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  <span className="hidden xs:inline">{language === 'en' ? 'हिंदी' : 'EN'}</span>
-                </button>
+                  <button
+                    onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                    className={`flex items-center gap-0.5 sm:gap-1 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full transition-all text-xs sm:text-sm font-medium active:scale-95 ${
+                      theme === 'dark'
+                        ? 'bg-slate-800 text-gray-300 hover:bg-slate-700'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    }`}
+                  >
+                    <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    <span className="hidden xs:inline">{language === 'en' ? 'हिंदी' : 'EN'}</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
-            {/* Date/Time - Mobile: Below nav */}
-              <motion.div
-              className={`flex md:hidden items-center gap-1.5 text-xs mt-2 pb-1 ${
-                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-              }`}
-              animate={{ scale: [1, 1.01, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <Clock className="w-3.5 h-3.5" />
-              <span className="font-medium truncate">{currentDate.dayName}, {currentDate.day} {currentDate.month} • {currentDate.time}</span>
-              </motion.div>
+          {/* Mega Menu - All Sections */}
+          <div className={`${theme === 'dark' ? 'bg-slate-800/50' : 'bg-gray-50/80'} border-b ${theme === 'dark' ? 'border-white/10' : 'border-gray-200'}`}>
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
+              <div className="flex overflow-x-auto gap-1.5 sm:gap-2 pb-2 scrollbar-thin scrollbar-thumb-blue-500 -mx-3 sm:-mx-0 px-3 sm:px-0">
+                {[
+                  { name: language === 'en' ? 'All Tools' : 'सभी', path: '/tools', emoji: '🧰' },
+                  { name: language === 'en' ? 'Calculators' : 'कैलकुलेटर', path: '/calculators', emoji: '🧮' },
+                  { name: language === 'en' ? 'Finance' : 'वित्त', path: '/finance-tools', emoji: '💵' },
+                  { name: language === 'en' ? 'Tax' : 'कर', path: '/tax-tools', emoji: '📄' },
+                  { name: 'GST', path: '/gst-tools', emoji: '💰' },
+                  { name: language === 'en' ? 'Corporate' : 'कॉर्पोरेट', path: '/corporate-finance', emoji: '💼' },
+                  { name: language === 'en' ? 'Insurance' : 'बीमा', path: '/insurance-tools', emoji: '🛡️' },
+                  { name: language === 'en' ? 'Festival' : 'त्योहार', path: '/festival-tools', emoji: '🎉' },
+                  { name: language === 'en' ? 'Blog' : 'ब्लॉग', path: '/blog', emoji: '📰' },
+                  { name: language === 'en' ? 'Education' : 'शिक्षा', path: '/learn', emoji: '🎓' },
+                  { name: language === 'en' ? 'Help' : 'सहायता', path: '/help-center', emoji: '❓' },
+                  { name: language === 'en' ? 'Schemes' : 'योजना', path: '/government-schemes', emoji: '🎁' },
+                  { name: language === 'en' ? 'Astro' : 'ज्योतिष', path: '/astro-finance', emoji: '⭐' }
+                ].map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.path}
+                    className={`flex-shrink-0 flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all whitespace-nowrap active:scale-95 ${
+                      theme === 'dark'
+                        ? 'bg-slate-700/50 text-gray-300 hover:bg-slate-600/70 hover:text-white'
+                        : 'bg-white text-gray-700 hover:bg-gray-100 hover:text-gray-900 border border-gray-200'
+                    }`}
+                  >
+                    <span className="text-base sm:text-lg">{item.emoji}</span>
+                    <span>{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-                  </div>
 
         {/* Mega Search Bar - Mobile Optimized */}
         <div className={`border-b ${
@@ -471,21 +504,21 @@ const HomeInvestopedia: React.FC = () => {
               </p>
 
               {/* All Folders Navigation - Comprehensive */}
-              <div className={`max-w-6xl mx-auto mb-8 sm:mb-10 md:mb-12 p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border-2 ${
+              <div className={`max-w-6xl mx-auto mb-6 sm:mb-8 md:mb-10 p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border-2 ${
                 theme === 'dark'
                   ? 'bg-slate-800/30 border-white/10 backdrop-blur-xl'
                   : 'bg-white/80 border-gray-200 backdrop-blur-xl shadow-xl'
               }`}>
                 <div className="flex items-center justify-center gap-2 mb-4 sm:mb-5 md:mb-6">
                   <Layout className={`w-5 h-5 sm:w-6 sm:h-6 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
-                  <h3 className={`text-lg sm:text-xl md:text-2xl font-bold ${
+                  <h3 className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold ${
                     theme === 'dark' ? 'text-white' : 'text-gray-900'
                   }`}>
-                    {language === 'en' ? '📁 Complete Platform Navigation' : '📁 पूर्ण प्लेटफॉर्म नेविगेशन'}
+                    {language === 'en' ? '📁 Complete Platform' : '📁 पूर्ण प्लेटफॉर्म'}
                   </h3>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-2.5 md:gap-3">
                   {[
                     // Main Page Folders
                     { name: language === 'en' ? 'Calculators' : 'कैलकुलेटर', path: '/calculators', emoji: '🧮', count: '107', color: 'from-green-500 to-emerald-500' },
@@ -545,49 +578,47 @@ const HomeInvestopedia: React.FC = () => {
                     </motion.div>
                   ))}
                 </div>
-              </div>
 
-              {/* Quick Access Grid - Mobile Optimized */}
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-2.5 md:gap-3 mb-8 sm:mb-10 md:mb-12 max-w-6xl mx-auto">
-                {[
-                  { name: language === 'en' ? 'All Tools' : 'सभी टूल्स', icon: Layout, url: '/tools', emoji: '🧰', color: 'from-blue-500 to-cyan-500' },
-                  { name: language === 'en' ? 'Calculators' : 'कैलकुलेटर', icon: Calculator, url: '/calculators', emoji: '🧮', color: 'from-green-500 to-emerald-500' },
-                  { name: language === 'en' ? 'GST Tools' : 'GST टूल्स', icon: BarChart3, url: '/gst-tools', emoji: '💰', color: 'from-purple-500 to-pink-500' },
-                  { name: language === 'en' ? 'Tax Tools' : 'कर टूल्स', icon: FileText, url: '/tax-tools', emoji: '📄', color: 'from-orange-500 to-red-500' },
-                  { name: language === 'en' ? 'Loan Tools' : 'लोन टूल्स', icon: Home, url: '/loan-tools', emoji: '🏠', color: 'from-indigo-500 to-purple-500' },
-                  { name: language === 'en' ? 'Insurance' : 'बीमा', icon: Shield, url: '/insurance-tools', emoji: '🛡️', color: 'from-teal-500 to-cyan-500' },
-                  { name: language === 'en' ? 'Festival' : 'त्योहार', icon: PartyPopper, url: '/festival-tools', emoji: '🎉', color: 'from-pink-500 to-rose-500' },
-                  { name: language === 'en' ? 'Learn' : 'सीखें', icon: BookOpen, url: '/learn', emoji: '📚', color: 'from-yellow-500 to-orange-500' },
-                  { name: language === 'en' ? 'Blog' : 'ब्लॉग', icon: Newspaper, url: '/blog', emoji: '📰', color: 'from-cyan-500 to-blue-500' },
-                  { name: language === 'en' ? 'Banking' : 'बैंकिंग', icon: Building, url: '/bank-tools', emoji: '🏦', color: 'from-blue-500 to-indigo-500' },
-                  { name: language === 'en' ? 'Corporate' : 'कॉर्पोरेट', icon: Briefcase, url: '/corporate-finance', emoji: '💼', color: 'from-violet-500 to-purple-500' },
-                  { name: language === 'en' ? 'Help' : 'सहायता', icon: HelpCircle, url: '/help-center', emoji: '❓', color: 'from-gray-500 to-slate-500' }
-                ].map((section, idx) => (
-                <motion.div
-                    key={idx}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: idx * 0.05 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  >
-                    <Link
-                      to={section.url}
-                      className={`block p-2 sm:p-3 md:p-4 rounded-xl sm:rounded-2xl text-center transition-all active:scale-95 ${
-                        theme === 'dark'
-                          ? 'bg-slate-800/50 border border-white/10 hover:border-white/30'
-                          : 'bg-white border border-gray-200 hover:border-gray-400 shadow-md hover:shadow-lg'
-                      }`}
-                    >
-                      <div className={`text-2xl sm:text-3xl md:text-4xl mb-1 sm:mb-1.5 md:mb-2`}>{section.emoji}</div>
-                      <div className={`text-xs sm:text-xs md:text-sm font-bold truncate ${
-                        theme === 'dark' ? 'text-white' : 'text-gray-900'
-                      }`}>
-                      {section.name}
-                      </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+                {/* Festival Categories Section */}
+                <div className={`mt-6 sm:mt-8 p-4 sm:p-5 rounded-2xl border ${
+                  theme === 'dark'
+                    ? 'bg-gradient-to-br from-orange-900/20 to-pink-900/20 border-orange-500/30'
+                    : 'bg-gradient-to-br from-orange-50 to-pink-50 border-orange-300'
+                }`}>
+                  <h4 className={`text-sm sm:text-base md:text-lg font-bold mb-3 sm:mb-4 text-center ${
+                    theme === 'dark' ? 'text-orange-400' : 'text-orange-700'
+                  }`}>
+                    🎊 {language === 'en' ? 'Festival Tool Categories' : 'त्योहार टूल श्रेणियां'}
+                  </h4>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-2.5">
+                    {[
+                      { name: language === 'en' ? 'Date & Calendar' : 'तिथि कैलेंडर', path: '/festival-dates', emoji: '📅' },
+                      { name: language === 'en' ? 'Planning & Shopping' : 'योजना खरीदारी', path: '/festival-shopping', emoji: '🛍️' },
+                      { name: language === 'en' ? 'Finance & Money' : 'वित्त धन', path: '/festival-finance', emoji: '💰' },
+                      { name: language === 'en' ? 'Religious' : 'धार्मिक', path: '/religious-tools', emoji: '🙏' },
+                      { name: language === 'en' ? 'Fun & Games' : 'मज़ेदार', path: '/fun-engagement', emoji: '🎮' },
+                      { name: language === 'en' ? 'Design' : 'डिज़ाइन', path: '/design-tools', emoji: '🎨' },
+                      { name: language === 'en' ? 'Information' : 'जानकारी', path: '/festival-info', emoji: '📖' },
+                      { name: language === 'en' ? 'Corporate' : 'कॉर्पोरेट', path: '/festival-corporate-tools', emoji: '💼' },
+                      { name: language === 'en' ? 'Regional' : 'क्षेत्रीय', path: '/regional-tools', emoji: '🗺️' },
+                      { name: 'SEO', path: '/seo-tools', emoji: '📊' }
+                    ].map((cat, idx) => (
+                      <Link
+                        key={idx}
+                        to={cat.path}
+                        className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-bold transition-all active:scale-95 ${
+                          theme === 'dark'
+                            ? 'bg-slate-700/50 text-orange-300 hover:bg-slate-600/70'
+                            : 'bg-white text-orange-700 hover:bg-orange-100 border border-orange-200'
+                        }`}
+                      >
+                        <span className="text-base sm:text-lg">{cat.emoji}</span>
+                        <span className="truncate">{cat.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               {/* CTA Buttons - Mobile Optimized */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
@@ -817,12 +848,12 @@ const HomeInvestopedia: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-4 sm:mb-5 md:mb-6 px-2">
-                {language === 'en' ? '🚀 Ready to Master Your Finances?' : '🚀 वित्त में महारत?'}
+                {language === 'en' ? '🚀 Ready to Master Finances?' : '🚀 वित्त में महारत?'}
               </h2>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-7 md:mb-8 px-2">
                 {language === 'en' 
-                  ? 'Join 1M+ Indians making smarter decisions'
-                  : '1M+ भारतीयों के साथ जुड़ें'}
+                  ? 'Join India\'s #1 Financial Platform'
+                  : 'भारत के #1 वित्तीय प्लेटफॉर्म से जुड़ें'}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
                 <motion.div whileTap={{ scale: 0.95 }}>
