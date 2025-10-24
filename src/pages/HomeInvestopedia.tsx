@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   TrendingUp, Calculator, BookOpen, Newspaper, Users, Globe, 
   ArrowRight, Star, Zap, Shield, Award, BarChart3, Target,
   Sparkles, Rocket, Heart, CheckCircle, Play, Search, ChevronRight,
   DollarSign, Building, Briefcase, Umbrella, PartyPopper, GraduationCap,
   HelpCircle, Gift, Sparkle, Layout, FileText, Building2, Clock, Tag,
-  Calendar, ShoppingBag, Wallet, Church, Palette, Languages, LineChart
+  Calendar, ShoppingBag, Wallet, Church, Palette, Languages, LineChart,
+  Bell, TrendingDown, Menu, X, ChevronDown, Filter, SlidersHorizontal,
+  ExternalLink, Share2, Bookmark
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { blogPosts as blogPosts0 } from '../data/blogData';
@@ -17,6 +19,11 @@ import DynamicContentShowcase from '../components/DynamicContentShowcase';
 const HomeInvestopedia: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [language, setLanguage] = useState<'en' | 'hi'>('en');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchFocused, setSearchFocused] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [showNotification, setShowNotification] = useState(true);
 
   const heroSlides = [
     {
@@ -46,14 +53,26 @@ const HomeInvestopedia: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Auto-hide notification after 10 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowNotification(false);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const content = {
     en: {
-      nav: ['News', 'Investing', 'Banking', 'Tools', 'Learn', 'Reviews'],
+      nav: ['Tools', 'Learn', 'Blog', 'News', 'Help'],
       hero: {
         title: 'Master Your Financial Future',
         subtitle: 'India\'s Trusted Source for Financial Education, Tools & Market Insights',
         cta: 'Explore Tools',
         cta2: 'Start Learning'
+      },
+      search: {
+        placeholder: 'Search calculators, guides, tools...',
+        trending: ['SIP Calculator', 'GST Calculator', 'Tax Planning', 'EMI Calculator']
       },
       featured: {
         title: 'Featured Tools',
@@ -66,23 +85,19 @@ const HomeInvestopedia: React.FC = () => {
         { name: 'Loan Calculators', icon: DollarSign, count: 25, color: 'from-orange-500 to-red-600', url: '/loan-tools' },
         { name: 'Banking Tools', icon: Building, count: 20, color: 'from-cyan-500 to-blue-600', url: '/bank-tools' },
         { name: 'Insurance Tools', icon: Shield, count: 15, color: 'from-violet-500 to-purple-600', url: '/insurance-tools' }
-      ],
-      news: {
-        title: 'Latest Financial News',
-        subtitle: 'Stay updated with real-time market news and analysis'
-      },
-      learn: {
-        title: 'Start Learning',
-        subtitle: 'Build your financial knowledge from basics to advanced'
-      }
+      ]
     },
     hi: {
-      nav: ['समाचार', 'निवेश', 'बैंकिंग', 'टूल्स', 'सीखें', 'समीक्षा'],
+      nav: ['टूल्स', 'सीखें', 'ब्लॉग', 'समाचार', 'सहायता'],
       hero: {
         title: 'अपने वित्तीय भविष्य में महारत हासिल करें',
         subtitle: 'वित्तीय शिक्षा, उपकरण और बाजार अंतर्दृष्टि के लिए भारत का विश्वसनीय स्रोत',
         cta: 'टूल्स देखें',
         cta2: 'सीखना शुरू करें'
+      },
+      search: {
+        placeholder: 'कैलकुलेटर, गाइड, टूल्स खोजें...',
+        trending: ['SIP कैलकुलेटर', 'GST कैलकुलेटर', 'टैक्स योजना', 'EMI कैलकुलेटर']
       },
       featured: {
         title: 'विशेष टूल्स',
@@ -101,6 +116,17 @@ const HomeInvestopedia: React.FC = () => {
 
   const t = content[language];
 
+  // Search suggestions
+  const popularSearches = [
+    'SIP Calculator', 'GST Calculator', 'Income Tax Calculator', 'EMI Calculator',
+    'PPF Calculator', 'Home Loan', 'Credit Score', 'Mutual Funds',
+    'Stock Market', 'Gold Rate', 'FD Calculator', 'Retirement Planning'
+  ];
+
+  const filteredSearches = searchQuery 
+    ? popularSearches.filter(s => s.toLowerCase().includes(searchQuery.toLowerCase()))
+    : [];
+
   return (
     <>
       <SEOHelmet
@@ -112,47 +138,164 @@ const HomeInvestopedia: React.FC = () => {
       />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-        {/* Top Bar */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2">
-          <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-6">
-              <span className="flex items-center">
-                <TrendingUp className="w-4 h-4 mr-1" />
-                NIFTY: <span className="font-bold ml-1 text-green-300">22,456 ▲ 1.2%</span>
-              </span>
-              <span className="hidden md:flex items-center">
-                SENSEX: <span className="font-bold ml-1 text-green-300">74,123 ▲ 0.8%</span>
-              </span>
-              <Link
-                to="/learn"
-                className="hidden md:flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full hover:bg-white/30 transition-all group"
-              >
-                <BookOpen className="w-4 h-4 text-yellow-300" />
-                <span className="font-bold text-yellow-300">15 Lessons Live!</span>
-                <Sparkles className="w-3 h-3 text-yellow-300 animate-pulse" />
+        {/* Sticky Top Navigation Bar */}
+        <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
+              {/* Logo */}
+              <Link to="/" className="flex items-center space-x-2 group">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <span className="text-white font-bold text-xl">M</span>
+                </div>
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  MoneyCal
+                </span>
               </Link>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Link
-                to="/learn"
-                className="flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-4 py-1.5 rounded-full font-bold hover:shadow-lg transform hover:scale-105 transition-all"
-              >
-                <BookOpen className="w-4 h-4" />
-                <span className="hidden sm:inline">{language === 'en' ? 'Learn' : 'सीखें'}</span>
-                <span className="sm:hidden">📚</span>
-              </Link>
-              <button
-                onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
-                className="flex items-center space-x-1 hover:text-yellow-300 transition-colors"
-              >
-                <Globe className="w-4 h-4" />
-                <span>{language === 'en' ? 'हिंदी' : 'English'}</span>
-              </button>
+
+              {/* Desktop Navigation */}
+              <nav className="hidden lg:flex items-center space-x-1">
+                {[
+                  { name: language === 'en' ? 'Tools' : 'टूल्स', url: '/tools', icon: Calculator },
+                  { name: language === 'en' ? 'Learn' : 'सीखें', url: '/learn', icon: BookOpen, badge: '40' },
+                  { name: language === 'en' ? 'Blog' : 'ब्लॉग', url: '/blog', icon: Newspaper },
+                  { name: language === 'en' ? 'Festival' : 'त्योहार', url: '/festival-tools', icon: PartyPopper, badge: 'New' },
+                  { name: language === 'en' ? 'Help' : 'सहायता', url: '/help-center', icon: HelpCircle }
+                ].map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.url}
+                    className="relative px-4 py-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all font-medium group flex items-center gap-2"
+                  >
+                    <item.icon className="w-4 h-4" />
+                    {item.name}
+                    {item.badge && (
+                      <span className="absolute -top-1 -right-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Right Actions */}
+              <div className="flex items-center space-x-3">
+                <button
+                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                  className="hidden md:flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-700"
+                >
+                  <Globe className="w-4 h-4" />
+                  <span className="text-sm font-medium">{language === 'en' ? 'हिंदी' : 'English'}</span>
+                </button>
+
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+              </div>
             </div>
           </div>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="lg:hidden border-t border-gray-200 bg-white"
+              >
+                <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
+                  {[
+                    { name: language === 'en' ? 'Tools' : 'टूल्स', url: '/tools', icon: Calculator },
+                    { name: language === 'en' ? 'Learn' : 'सीखें', url: '/learn', icon: BookOpen },
+                    { name: language === 'en' ? 'Blog' : 'ब्लॉग', url: '/blog', icon: Newspaper },
+                    { name: language === 'en' ? 'Festival' : 'त्योहार', url: '/festival-tools', icon: PartyPopper },
+                    { name: language === 'en' ? 'Help' : 'सहायता', url: '/help-center', icon: HelpCircle }
+                  ].map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.url}
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-50 transition-all"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <item.icon className="w-5 h-5 text-blue-600" />
+                      <span className="font-medium">{item.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        {/* Hero Section */}
+        {/* Floating Notification Banner */}
+        <AnimatePresence>
+          {showNotification && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="fixed top-20 left-1/2 transform -translate-x-1/2 z-40 max-w-2xl w-full mx-4"
+            >
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-2xl shadow-2xl p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Bell className="w-6 h-6 animate-bounce" />
+                  <div>
+                    <p className="font-bold">{language === 'en' ? '🎉 40 New Lessons Added!' : '🎉 40 नए पाठ जोड़े गए!'}</p>
+                    <p className="text-sm text-white/90">
+                      {language === 'en' ? 'Gold Loans, Credit Cards & Credit Score' : 'गोल्ड लोन, क्रेडिट कार्ड और क्रेडिट स्कोर'}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Link
+                    to="/learn"
+                    className="bg-white text-orange-600 px-4 py-2 rounded-lg font-bold text-sm hover:bg-gray-100 transition-all"
+                  >
+                    {language === 'en' ? 'Explore' : 'देखें'}
+                  </Link>
+                  <button
+                    onClick={() => setShowNotification(false)}
+                    className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Live Market Ticker */}
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 overflow-hidden">
+          <motion.div
+            animate={{ x: [0, -1000] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="flex items-center space-x-8 whitespace-nowrap"
+          >
+            {[
+              { name: 'NIFTY 50', value: '22,456', change: '+1.2%', positive: true },
+              { name: 'SENSEX', value: '74,123', change: '+0.8%', positive: true },
+              { name: 'BANK NIFTY', value: '48,321', change: '-0.3%', positive: false },
+              { name: 'GOLD', value: '₹62,450', change: '+0.5%', positive: true },
+              { name: 'USD/INR', value: '83.25', change: '+0.1%', positive: true }
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center space-x-2">
+                <span className="font-semibold">{item.name}:</span>
+                <span className="font-bold">{item.value}</span>
+                <span className={`flex items-center ${item.positive ? 'text-green-300' : 'text-red-300'}`}>
+                  {item.positive ? <TrendingUp className="w-3 h-3 mr-1" /> : <TrendingDown className="w-3 h-3 mr-1" />}
+                  {item.change}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Enhanced Hero Section with Search */}
         <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -167,13 +310,7 @@ const HomeInvestopedia: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg mb-6">
-                <Sparkles className="w-4 h-4 text-yellow-500" />
-                <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {language === 'en' ? '100+ New Tools Added!' : '100+ नए टूल्स जोड़े गए!'}
-                </span>
-              </div>
-
+              {/* Hero Title */}
               <h1 className="text-5xl md:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   {t.hero.title}
@@ -184,7 +321,89 @@ const HomeInvestopedia: React.FC = () => {
                 {t.hero.subtitle}
               </p>
 
-              {/* Credit Card Learn Button */}
+              {/* Advanced Search Bar */}
+              <div className="max-w-3xl mx-auto mb-12">
+                <div className="relative">
+                  <div className={`relative bg-white rounded-2xl shadow-2xl transition-all duration-300 ${searchFocused ? 'ring-4 ring-blue-500/20' : ''}`}>
+                    <div className="flex items-center px-6 py-4">
+                      <Search className="w-6 h-6 text-gray-400 mr-3" />
+                      <input
+                        type="text"
+                        placeholder={t.search.placeholder}
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        onFocus={() => setSearchFocused(true)}
+                        onBlur={() => setTimeout(() => setSearchFocused(false), 200)}
+                        className="flex-1 outline-none text-lg text-gray-900 placeholder-gray-400"
+                      />
+                      <button className="ml-3 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                        <SlidersHorizontal className="w-5 h-5 text-gray-600" />
+                      </button>
+                    </div>
+
+                    {/* Search Suggestions Dropdown */}
+                    <AnimatePresence>
+                      {searchFocused && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
+                        >
+                          {searchQuery ? (
+                            <div className="p-4">
+                              <p className="text-sm text-gray-600 mb-3 font-semibold">
+                                {language === 'en' ? 'Search Results' : 'खोज परिणाम'}
+                              </p>
+                              {filteredSearches.length > 0 ? (
+                                <div className="space-y-2">
+                                  {filteredSearches.slice(0, 5).map((item, idx) => (
+                                    <Link
+                                      key={idx}
+                                      to="/tools"
+                                      className="block px-4 py-3 hover:bg-blue-50 rounded-lg transition-colors flex items-center justify-between group"
+                                    >
+                                      <div className="flex items-center gap-3">
+                                        <Calculator className="w-5 h-5 text-blue-600" />
+                                        <span className="font-medium text-gray-900">{item}</span>
+                                      </div>
+                                      <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
+                                    </Link>
+                                  ))}
+                                </div>
+                              ) : (
+                                <p className="text-gray-500 text-center py-4">
+                                  {language === 'en' ? 'No results found' : 'कोई परिणाम नहीं मिला'}
+                                </p>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="p-4">
+                              <p className="text-sm text-gray-600 mb-3 font-semibold flex items-center gap-2">
+                                <Sparkles className="w-4 h-4 text-yellow-500" />
+                                {language === 'en' ? 'Trending Searches' : 'ट्रेंडिंग खोज'}
+                              </p>
+                              <div className="flex flex-wrap gap-2">
+                                {t.search.trending.map((item, idx) => (
+                                  <button
+                                    key={idx}
+                                    onClick={() => setSearchQuery(item)}
+                                    className="px-3 py-2 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 rounded-lg text-sm font-medium text-gray-700 transition-all"
+                                  >
+                                    {item}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </div>
+
+              {/* MoneyCal Learn Academy Card */}
               <div className="max-w-4xl mx-auto mb-12">
                 <motion.div
                   initial={{ scale: 0.95, opacity: 0 }}
@@ -195,7 +414,6 @@ const HomeInvestopedia: React.FC = () => {
                 >
                   <Link to="/learn" className="block">
                     <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden group cursor-pointer">
-                      {/* Animated Background Circles */}
                       <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -mr-24 -mt-24 group-hover:scale-150 transition-transform duration-500"></div>
                       <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full -ml-20 -mb-20 group-hover:scale-150 transition-transform duration-500"></div>
                       
@@ -216,19 +434,18 @@ const HomeInvestopedia: React.FC = () => {
                           </div>
                           <div className="hidden md:block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
                             <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Lessons' : 'पाठ'}</div>
-                            <div className="text-white text-2xl font-bold">20</div>
+                            <div className="text-white text-2xl font-bold">40</div>
                           </div>
                         </div>
 
-                        {/* Stats Grid */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
                           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
                             <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Categories' : 'श्रेणियाँ'}</div>
-                            <div className="text-white text-xl font-bold">9</div>
+                            <div className="text-white text-xl font-bold">3</div>
                           </div>
                           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
-                            <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Calculators' : 'कैलकुलेटर'}</div>
-                            <div className="text-white text-xl font-bold">5</div>
+                            <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Tools' : 'टूल्स'}</div>
+                            <div className="text-white text-xl font-bold">100+</div>
                           </div>
                           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
                             <div className="text-white/70 text-xs mb-1">{language === 'en' ? 'Words' : 'शब्द'}</div>
@@ -240,19 +457,18 @@ const HomeInvestopedia: React.FC = () => {
                           </div>
                         </div>
 
-                        {/* Action Row */}
                         <div className="flex items-center justify-between">
                           <div className="text-white">
                             <p className="text-lg font-semibold mb-1">
-                              🎓 {language === 'en' ? '20 Loan Lessons Complete!' : '20 लोन पाठ पूर्ण!'}
+                              🎓 {language === 'en' ? '40 Comprehensive Lessons Live!' : '40 व्यापक पाठ लाइव!'}
                             </p>
                             <p className="text-sm text-white/80">
-                              {language === 'en' ? 'Click to start your finance journey →' : 'अपनी वित्त यात्रा शुरू करने के लिए क्लिक करें →'}
+                              {language === 'en' ? 'Gold Loans • Credit Cards • Credit Score' : 'गोल्ड लोन • क्रेडिट कार्ड • क्रेडिट स्कोर'}
                             </p>
                           </div>
                           <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-6 py-3 rounded-full font-bold group-hover:scale-110 transition-transform flex items-center gap-2">
                             <Sparkles className="w-5 h-5 animate-pulse" />
-                            <span className="hidden sm:inline">{language === 'en' ? 'Start Learning' : 'सीखना शुरू करें'}</span>
+                            <span className="hidden sm:inline">{language === 'en' ? 'Start Free' : 'मुफ्त शुरू करें'}</span>
                           </div>
                         </div>
                       </div>
@@ -261,28 +477,59 @@ const HomeInvestopedia: React.FC = () => {
                 </motion.div>
               </div>
 
+              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
                   to="/tools"
                   className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center"
                 >
+                  <Calculator className="w-5 h-5 mr-2" />
                   {t.hero.cta}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  to="/financial-education"
+                  to="/learn"
                   className="px-8 py-4 bg-white text-gray-900 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center border-2 border-gray-200"
                 >
+                  <BookOpen className="w-5 h-5 mr-2" />
                   {t.hero.cta2}
                   <Play className="w-5 h-5 ml-2" />
                 </Link>
               </div>
             </motion.div>
-
           </div>
         </section>
 
-        {/* Dynamic Content Showcase - Trending Tools */}
+        {/* Trust Indicators - Moved Up */}
+        <section className="py-8 bg-white border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { icon: Users, number: '1M+', text: language === 'en' ? 'Happy Users' : 'खुश उपयोगकर्ता', color: 'from-blue-500 to-cyan-500' },
+                { icon: Calculator, number: '100+', text: language === 'en' ? 'Free Tools' : 'मुफ्त टूल्स', color: 'from-green-500 to-emerald-500' },
+                { icon: BookOpen, number: '40+', text: language === 'en' ? 'Learn Lessons' : 'सीखने के पाठ', color: 'from-purple-500 to-pink-500' },
+                { icon: Star, number: '4.8/5', text: language === 'en' ? 'User Rating' : 'उपयोगकर्ता रेटिंग', color: 'from-yellow-500 to-orange-500' }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="text-center group"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform shadow-lg`}>
+                    <item.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 mb-1">{item.number}</div>
+                  <div className="text-sm text-gray-600">{item.text}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Dynamic Content Showcase */}
         <DynamicContentShowcase language={language} />
 
         {/* Quick Navigation - All Sections */}
@@ -313,7 +560,7 @@ const HomeInvestopedia: React.FC = () => {
                 { name: language === 'en' ? 'GST Tools' : 'GST टूल्स', icon: BarChart3, url: '/gst-tools', color: 'from-cyan-500 to-blue-600' },
                 { name: language === 'en' ? 'Corporate' : 'कॉर्पोरेट', icon: Building2, url: '/corporate-finance', color: 'from-violet-500 to-purple-600' },
                 { name: language === 'en' ? 'Insurance' : 'बीमा', icon: Umbrella, url: '/insurance-tools', color: 'from-teal-500 to-cyan-600' },
-                { name: language === 'en' ? 'Festival' : 'त्योहार', icon: PartyPopper, url: '/festival-tools', color: 'from-pink-500 to-rose-600' },
+                { name: language === 'en' ? 'Festival' : 'त्योहार', icon: PartyPopper, url: '/festival-tools', color: 'from-pink-500 to-rose-600', badge: 'Hot' },
                 { name: language === 'en' ? 'Blog' : 'ब्लॉग', icon: Newspaper, url: '/blog', color: 'from-amber-500 to-orange-600' },
                 { name: language === 'en' ? 'Education' : 'शिक्षा', icon: GraduationCap, url: '/financial-education', color: 'from-indigo-500 to-purple-600' },
                 { name: language === 'en' ? 'Help' : 'सहायता', icon: HelpCircle, url: '/help-center', color: 'from-blue-500 to-cyan-600' },
@@ -328,18 +575,20 @@ const HomeInvestopedia: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  className="group"
+                  className="group relative"
                 >
-                  <Link
-                    to={section.url}
-                    className="block text-center"
-                  >
+                  <Link to={section.url} className="block text-center">
                     <div className={`w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br ${section.color} rounded-3xl flex items-center justify-center mx-auto mb-3 shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
                       <section.icon className="w-10 h-10 md:w-12 md:h-12 text-white" />
                     </div>
                     <p className="text-sm md:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                       {section.name}
                     </p>
+                    {section.badge && (
+                      <span className="absolute top-0 right-0 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                        {section.badge}
+                      </span>
+                    )}
                   </Link>
                 </motion.div>
               ))}
@@ -348,7 +597,7 @@ const HomeInvestopedia: React.FC = () => {
         </section>
 
         {/* Quick Access Categories */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -358,7 +607,7 @@ const HomeInvestopedia: React.FC = () => {
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  {language === 'en' ? 'Explore Our Tools' : 'हमारे टूल्स देखें'}
+                  {language === 'en' ? 'Popular Tool Categories' : 'लोकप्रिय टूल श्रेणियां'}
                 </span>
               </h2>
               <p className="text-xl text-gray-600">
@@ -383,12 +632,12 @@ const HomeInvestopedia: React.FC = () => {
                       <category.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-gray-900">{category.name}</h3>
-                    <p className="text-gray-600 mb-4">{category.count} {language === 'en' ? 'Tools Available' : 'टूल्स उपलब्ध'}</p>
+                    <p className="text-gray-600 mb-4">{category.count}+ {language === 'en' ? 'Tools Available' : 'टूल्स उपलब्ध'}</p>
                     <Link
                       to={category.url}
                       className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform"
                     >
-                      {language === 'en' ? 'Explore' : 'देखें'}
+                      {language === 'en' ? 'Explore Now' : 'अभी देखें'}
                       <ChevronRight className="w-5 h-5 ml-1" />
                     </Link>
                   </div>
@@ -399,7 +648,7 @@ const HomeInvestopedia: React.FC = () => {
         </section>
 
         {/* Featured Tools Carousel */}
-        <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0 }}
@@ -412,18 +661,19 @@ const HomeInvestopedia: React.FC = () => {
                   {language === 'en' ? 'Most Used Tools' : 'सबसे अधिक उपयोग किए जाने वाले टूल्स'}
                 </span>
               </h2>
+              <p className="text-gray-600">{language === 'en' ? 'Join millions of users making smart financial decisions' : 'स्मार्ट वित्तीय निर्णय लेने वाले लाखों उपयोगकर्ताओं से जुड़ें'}</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { name: 'SIP Calculator', icon: TrendingUp, users: '50K+', url: '/tools/sip-calculator' },
-                { name: 'GST Calculator', icon: Calculator, users: '40K+', url: '/tools/gst-amount-calculator' },
-                { name: 'Income Tax', icon: BarChart3, users: '35K+', url: '/tools/income-tax-calculator' },
-                { name: 'EMI Calculator', icon: DollarSign, users: '30K+', url: '/tools/loan-emi-calculator' },
-                { name: 'PPF Calculator', icon: Target, users: '25K+', url: '/calculators/ppf-calculator' },
-                { name: 'FD Calculator', icon: Sparkles, users: '20K+', url: '/calculators/compound-interest-calculator' },
-                { name: 'HSN/SAC Finder', icon: Search, users: '15K+', url: '/tools/gst-hsn-sac-finder' },
-                { name: 'CAGR Calculator', icon: TrendingUp, users: '10K+', url: '/calculators/cagr-calculator' }
+                { name: 'SIP Calculator', icon: TrendingUp, users: '50K+', url: '/tools/sip-calculator', color: 'from-blue-500 to-cyan-500' },
+                { name: 'GST Calculator', icon: Calculator, users: '40K+', url: '/tools/gst-amount-calculator', color: 'from-green-500 to-emerald-500' },
+                { name: 'Income Tax', icon: BarChart3, users: '35K+', url: '/tools/income-tax-calculator', color: 'from-purple-500 to-pink-500' },
+                { name: 'EMI Calculator', icon: DollarSign, users: '30K+', url: '/tools/loan-emi-calculator', color: 'from-orange-500 to-red-500' },
+                { name: 'PPF Calculator', icon: Target, users: '25K+', url: '/calculators/ppf-calculator', color: 'from-indigo-500 to-purple-500' },
+                { name: 'FD Calculator', icon: Sparkles, users: '20K+', url: '/calculators/compound-interest-calculator', color: 'from-teal-500 to-cyan-500' },
+                { name: 'HSN/SAC Finder', icon: Search, users: '15K+', url: '/tools/gst-hsn-sac-finder', color: 'from-pink-500 to-rose-500' },
+                { name: 'CAGR Calculator', icon: TrendingUp, users: '10K+', url: '/calculators/cagr-calculator', color: 'from-yellow-500 to-orange-500' }
               ].map((tool, index) => (
                 <motion.div
                   key={index}
@@ -431,19 +681,18 @@ const HomeInvestopedia: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
+                  whileHover={{ y: -10, scale: 1.03 }}
                 >
-                  <Link
-                    to={tool.url}
-                    className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all"
-                  >
+                  <Link to={tool.url} className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all border border-gray-100 h-full">
                     <div className="flex items-center justify-between mb-4">
-                      <tool.icon className="w-10 h-10 text-blue-600" />
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-semibold">
-                        {tool.users} {language === 'en' ? 'users' : 'उपयोगकर्ता'}
+                      <div className={`w-12 h-12 bg-gradient-to-br ${tool.color} rounded-xl flex items-center justify-center`}>
+                        <tool.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">
+                        {tool.users}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{tool.name}</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">{tool.name}</h3>
                     <div className="flex items-center text-blue-600 font-semibold text-sm">
                       {language === 'en' ? 'Use Now' : 'अभी उपयोग करें'}
                       <ArrowRight className="w-4 h-4 ml-1" />
@@ -475,7 +724,7 @@ const HomeInvestopedia: React.FC = () => {
                   {language === 'en' ? 'Festival Tools & Calculators' : 'त्योहार टूल्स और कैलकुलेटर'}
                 </span>
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {language === 'en' 
                   ? 'Celebrate every occasion with our comprehensive festival planning tools. Budget, plan, and enjoy worry-free celebrations!'
                   : 'हमारे व्यापक त्योहार योजना उपकरणों के साथ हर अवसर मनाएं। बजट बनाएं, योजना बनाएं और चिंता मुक्त उत्सव का आनंद लें!'}
@@ -483,331 +732,51 @@ const HomeInvestopedia: React.FC = () => {
             </motion.div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {/* Festival Date & Calendar Tools */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/festival-dates"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
+              {[
+                { name: language === 'en' ? 'Festival Dates' : 'त्योहार तिथि', icon: Calendar, url: '/festival-dates', color: 'from-blue-500 to-indigo-600' },
+                { name: language === 'en' ? 'Shopping' : 'खरीदारी', icon: ShoppingBag, url: '/festival-shopping', color: 'from-pink-500 to-rose-600' },
+                { name: language === 'en' ? 'Finance' : 'वित्त', icon: Wallet, url: '/festival-finance', color: 'from-green-500 to-emerald-600' },
+                { name: language === 'en' ? 'Religious' : 'धार्मिक', icon: Church, url: '/religious-tools', color: 'from-purple-500 to-violet-600' },
+                { name: language === 'en' ? 'Fun' : 'मनोरंजन', icon: PartyPopper, url: '/fun-engagement', color: 'from-yellow-500 to-orange-600' },
+                { name: language === 'en' ? 'Design' : 'डिज़ाइन', icon: Palette, url: '/design-tools', color: 'from-cyan-500 to-blue-600' },
+                { name: language === 'en' ? 'Information' : 'जानकारी', icon: BookOpen, url: '/festival-info', color: 'from-amber-500 to-orange-600' },
+                { name: language === 'en' ? 'Corporate' : 'कॉर्पोरेट', icon: Briefcase, url: '/festival-corporate-tools', color: 'from-slate-500 to-gray-700' },
+                { name: language === 'en' ? 'Regional' : 'क्षेत्रीय', icon: Languages, url: '/regional-tools', color: 'from-teal-500 to-cyan-600' },
+                { name: language === 'en' ? 'SEO' : 'SEO', icon: LineChart, url: '/seo-tools', color: 'from-red-500 to-pink-600' }
+              ].map((category, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <Calendar className="h-8 w-8 text-white" />
+                  <Link to={category.url} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-90 group-hover:opacity-100 transition-opacity`}></div>
+                    <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
+                      <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                        <category.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white mb-2">{category.name}</h3>
+                      <div className="mt-auto flex items-center text-white text-sm font-semibold">
+                        {language === 'en' ? 'Explore' : 'देखें'}
+                        <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Festival Dates & Calendar' : 'त्योहार तिथि और कैलेंडर'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Plan ahead with muhurat, dates & reminders' : 'मुहूर्त, तिथि और अनुस्मारक के साथ आगे की योजना बनाएं'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* Festival Planning & Shopping */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/festival-shopping"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <ShoppingBag className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Planning & Shopping' : 'योजना और खरीदारी'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Budget planners & shopping checklists' : 'बजट योजनाकार और खरीदारी चेकलिस्ट'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* Festival Finance & Money */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 2 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/festival-finance"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <Wallet className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Finance & Money' : 'वित्त और धन'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'EMI, savings & financial planning' : 'EMI, बचत और वित्तीय योजना'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* Religious & Traditional */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 3 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/religious-tools"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-violet-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <Church className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Religious & Traditional' : 'धार्मिक और पारंपरिक'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Puja samagri, rituals & traditions' : 'पूजा सामग्री, अनुष्ठान और परंपराएं'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* Fun & Engagement */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 4 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/fun-engagement"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-500 to-orange-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <PartyPopper className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Fun & Engagement' : 'मनोरंजन और भागीदारी'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Games, quizzes & entertainment' : 'गेम्स, क्विज़ और मनोरंजन'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* Design & Creator */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 5 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/design-tools"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <Palette className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Design & Creator' : 'डिज़ाइन और रचनाकार'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Cards, wishes & creative tools' : 'कार्ड, शुभकामनाएं और रचनात्मक टूल्स'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* Information & History */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 6 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/festival-info"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <BookOpen className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Information & History' : 'जानकारी और इतिहास'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Stories, origins & cultural insights' : 'कहानियां, मूल और सांस्कृतिक अंतर्दृष्टि'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* Corporate & Professional */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 7 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/festival-corporate-tools"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-500 to-gray-700 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <Briefcase className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Corporate & Professional' : 'कॉर्पोरेट और पेशेवर'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Office celebrations & bonuses' : 'कार्यालय उत्सव और बोनस'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* Regional & Language */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 8 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/regional-tools"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-cyan-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <Languages className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'Regional & Language' : 'क्षेत्रीय और भाषा'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Multilingual wishes & content' : 'बहुभाषी शुभकामनाएं और सामग्री'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-
-              {/* SEO & Monetization */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 9 * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <Link
-                  to="/seo-tools"
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all h-full block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-pink-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                  <div className="relative z-10 p-6 h-full flex flex-col items-center text-center">
-                    <div className="h-16 w-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
-                      <LineChart className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">
-                      {language === 'en' ? 'SEO & Monetization' : 'SEO और मुद्रीकरण'}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed mb-auto">
-                      {language === 'en' ? 'Traffic, analytics & growth tools' : 'ट्रैफ़िक, विश्लेषण और विकास टूल्स'}
-                    </p>
-                    <div className="mt-4 flex items-center text-white text-sm font-semibold">
-                      {language === 'en' ? 'Explore' : 'देखें'}
-                      <ArrowRight className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
 
             <div className="text-center mt-12">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+              <Link 
+                to="/festival-tools" 
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-pink-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all"
               >
-                <Link 
-                  to="/festival-tools" 
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-pink-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all"
-                >
-                  {language === 'en' ? 'Explore All Festival Tools' : 'सभी त्योहार टूल्स देखें'}
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Link>
-              </motion.div>
+                {language === 'en' ? 'Explore All Festival Tools' : 'सभी त्योहार टूल्स देखें'}
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </Link>
             </div>
           </div>
         </section>
@@ -826,46 +795,17 @@ const HomeInvestopedia: React.FC = () => {
                   {language === 'en' ? 'Why Choose MoneyCal?' : 'MoneyCal क्यों चुनें?'}
                 </span>
               </h2>
+              <p className="text-xl text-gray-600">{language === 'en' ? 'Trusted by millions for accurate, fast, and free financial tools' : 'सटीक, तेज़ और मुफ्त वित्तीय उपकरणों के लिए लाखों लोगों द्वारा विश्वसनीय'}</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                {
-                  icon: Zap,
-                  title: language === 'en' ? 'Lightning Fast' : 'बिजली की तेजी से',
-                  description: language === 'en' ? 'Instant calculations with real-time results' : 'वास्तविक समय परिणामों के साथ त्वरित गणना',
-                  color: 'from-yellow-400 to-orange-500'
-                },
-                {
-                  icon: Shield,
-                  title: language === 'en' ? '100% Free' : '100% मुफ्त',
-                  description: language === 'en' ? 'No registration, no hidden costs, forever free' : 'कोई पंजीकरण नहीं, कोई छिपी लागत नहीं, हमेशा के लिए मुफ्त',
-                  color: 'from-green-400 to-emerald-500'
-                },
-                {
-                  icon: Award,
-                  title: language === 'en' ? 'Most Comprehensive' : 'सबसे व्यापक',
-                  description: language === 'en' ? '100+ tools - more than any other platform' : '100+ टूल्स - किसी अन्य प्लेटफ़ॉर्म से अधिक',
-                  color: 'from-blue-400 to-indigo-500'
-                },
-                {
-                  icon: Globe,
-                  title: language === 'en' ? 'Bilingual Support' : 'द्विभाषी समर्थन',
-                  description: language === 'en' ? 'Available in Hindi & English' : 'हिंदी और अंग्रेजी में उपलब्ध',
-                  color: 'from-purple-400 to-pink-500'
-                },
-                {
-                  icon: Users,
-                  title: language === 'en' ? 'Trusted by Millions' : 'लाखों द्वारा भरोसा',
-                  description: language === 'en' ? 'Join 1M+ users making smarter financial decisions' : '1M+ उपयोगकर्ताओं के साथ जुड़ें',
-                  color: 'from-teal-400 to-cyan-500'
-                },
-                {
-                  icon: Rocket,
-                  title: language === 'en' ? 'Always Updated' : 'हमेशा अपडेट',
-                  description: language === 'en' ? 'Latest tax rates, GST slabs, and regulations' : 'नवीनतम टैक्स दरें, GST स्लैब और नियम',
-                  color: 'from-red-400 to-rose-500'
-                }
+                { icon: Zap, title: language === 'en' ? 'Lightning Fast' : 'बिजली की तेजी से', description: language === 'en' ? 'Instant calculations with real-time results' : 'वास्तविक समय परिणामों के साथ त्वरित गणना', color: 'from-yellow-400 to-orange-500' },
+                { icon: Shield, title: language === 'en' ? '100% Free' : '100% मुफ्त', description: language === 'en' ? 'No registration, no hidden costs, forever free' : 'कोई पंजीकरण नहीं, कोई छिपी लागत नहीं, हमेशा के लिए मुफ्त', color: 'from-green-400 to-emerald-500' },
+                { icon: Award, title: language === 'en' ? 'Most Comprehensive' : 'सबसे व्यापक', description: language === 'en' ? '100+ tools - more than any other platform' : '100+ टूल्स - किसी अन्य प्लेटफ़ॉर्म से अधिक', color: 'from-blue-400 to-indigo-500' },
+                { icon: Globe, title: language === 'en' ? 'Bilingual Support' : 'द्विभाषी समर्थन', description: language === 'en' ? 'Available in Hindi & English' : 'हिंदी और अंग्रेजी में उपलब्ध', color: 'from-purple-400 to-pink-500' },
+                { icon: Users, title: language === 'en' ? 'Trusted by Millions' : 'लाखों द्वारा भरोसा', description: language === 'en' ? 'Join 1M+ users making smarter financial decisions' : '1M+ उपयोगकर्ताओं के साथ जुड़ें', color: 'from-teal-400 to-cyan-500' },
+                { icon: Rocket, title: language === 'en' ? 'Always Updated' : 'हमेशा अपडेट', description: language === 'en' ? 'Latest tax rates, GST slabs, and regulations' : 'नवीनतम टैक्स दरें, GST स्लैब और नियम', color: 'from-red-400 to-rose-500' }
               ].map((feature, index) => (
                 <motion.div
                   key={index}
@@ -911,10 +851,10 @@ const HomeInvestopedia: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all"
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all group"
                 >
                   <div className="text-xs text-blue-300 mb-2">2 hours ago</div>
-                  <h3 className="text-lg font-bold mb-2">Market hits new high as tech stocks rally</h3>
+                  <h3 className="text-lg font-bold mb-2 group-hover:text-blue-300 transition-colors">Market hits new high as tech stocks rally</h3>
                   <p className="text-sm text-gray-300 mb-4">Nifty and Sensex reach record levels on strong FII inflows...</p>
                   <Link to="/news" className="text-blue-400 hover:text-blue-300 font-semibold text-sm flex items-center">
                     Read More <ArrowRight className="w-4 h-4 ml-1" />
@@ -961,7 +901,7 @@ const HomeInvestopedia: React.FC = () => {
                     : 'शुरुआती मूल बातें से उन्नत रणनीतियों तक। सरल भाषा में निवेश, ट्रेडिंग, कराधान और व्यक्तिगत वित्त सीखें।'}
                 </p>
                 <Link
-                  to="/financial-education"
+                  to="/learn"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-bold hover:shadow-xl transform hover:scale-105 transition-all"
                 >
                   {language === 'en' ? 'Start Learning' : 'सीखना शुरू करें'}
@@ -976,18 +916,18 @@ const HomeInvestopedia: React.FC = () => {
                 className="grid grid-cols-2 gap-4"
               >
                 {[
-                  { title: 'Stock Market Basics', lessons: 50 },
-                  { title: 'Mutual Funds Guide', lessons: 40 },
-                  { title: 'Tax Planning', lessons: 35 },
-                  { title: 'Retirement Planning', lessons: 30 }
+                  { title: language === 'en' ? 'Gold Loans' : 'गोल्ड लोन', lessons: 10, icon: '🏆' },
+                  { title: language === 'en' ? 'Credit Cards' : 'क्रेडिट कार्ड', lessons: 20, icon: '💳' },
+                  { title: language === 'en' ? 'Credit Score' : 'क्रेडिट स्कोर', lessons: 10, icon: '📊' },
+                  { title: language === 'en' ? 'More Coming' : 'और आ रहा है', lessons: '∞', icon: '🚀' }
                 ].map((course, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-white rounded-2xl p-6 shadow-lg"
+                    className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
                   >
-                    <div className="text-3xl mb-3">📚</div>
-                    <h4 className="font-bold mb-2">{course.title}</h4>
+                    <div className="text-4xl mb-3">{course.icon}</div>
+                    <h4 className="font-bold mb-2 text-gray-900">{course.title}</h4>
                     <p className="text-sm text-gray-600">{course.lessons} {language === 'en' ? 'lessons' : 'पाठ'}</p>
                   </motion.div>
                 ))}
@@ -996,7 +936,7 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* Latest Blog Posts & News */}
+        {/* Latest Blog Posts */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
@@ -1015,7 +955,6 @@ const HomeInvestopedia: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Blog Posts Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {[...blogPosts0, ...blogPosts1].slice(0, 6).map((post, index) => (
                 <motion.div
@@ -1028,8 +967,7 @@ const HomeInvestopedia: React.FC = () => {
                   className="group"
                 >
                   <Link to={`/blog/${post.slug}`} className="block">
-                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                      {/* Image */}
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full flex flex-col">
                       <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100">
                         <img 
                           src={post.coverImage} 
@@ -1044,16 +982,11 @@ const HomeInvestopedia: React.FC = () => {
                         </div>
                       </div>
                       
-                      {/* Content */}
-                      <div className="p-6">
+                      <div className="p-6 flex-1 flex flex-col">
                         <div className="flex items-center gap-3 mb-3 text-sm text-gray-600">
                           <div className="flex items-center">
                             <Clock className="w-4 h-4 mr-1" />
                             {post.date}
-                          </div>
-                          <div className="flex items-center">
-                            <Tag className="w-4 h-4 mr-1" />
-                            {post.author}
                           </div>
                         </div>
                         
@@ -1061,11 +994,11 @@ const HomeInvestopedia: React.FC = () => {
                           {post.title}
                         </h3>
                         
-                        <p className="text-gray-600 line-clamp-3 mb-4">
+                        <p className="text-gray-600 line-clamp-3 mb-4 flex-1">
                           {post.excerpt}
                         </p>
                         
-                        <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
+                        <div className="flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all mt-auto">
                           {language === 'en' ? 'Read More' : 'और पढ़ें'}
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -1076,22 +1009,15 @@ const HomeInvestopedia: React.FC = () => {
               ))}
             </div>
 
-            {/* View All Blog Button */}
             <div className="text-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+              <Link
+                to="/blog"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all"
               >
-                <Link
-                  to="/blog"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all"
-                >
-                  <Newspaper className="w-5 h-5 mr-2" />
-                  {language === 'en' ? 'View All Articles' : 'सभी लेख देखें'}
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </motion.div>
+                <Newspaper className="w-5 h-5 mr-2" />
+                {language === 'en' ? 'View All Articles' : 'सभी लेख देखें'}
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </div>
           </div>
         </section>
@@ -1108,7 +1034,7 @@ const HomeInvestopedia: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Heart className="w-16 h-16 mx-auto mb-6 text-pink-300" />
+              <Heart className="w-16 h-16 mx-auto mb-6 text-pink-300 animate-pulse" />
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 {language === 'en' ? 'Join India\'s Fastest Growing Financial Community' : 'भारत के सबसे तेजी से बढ़ते वित्तीय समुदाय में शामिल हों'}
               </h2>
@@ -1126,7 +1052,7 @@ const HomeInvestopedia: React.FC = () => {
                   <Zap className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
-                  to="/financial-education"
+                  to="/learn"
                   className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center"
                 >
                   {language === 'en' ? 'Start Learning Free' : 'मुफ्त सीखना शुरू करें'}
@@ -1137,33 +1063,32 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* Trust Indicators */}
-        <section className="py-12 bg-gray-50">
+        {/* E-E-A-T Trust Section */}
+        <section className="py-12 bg-gradient-to-r from-gray-50 to-blue-50 border-t border-gray-200">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="flex flex-wrap justify-center items-center gap-8 text-gray-600">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { icon: CheckCircle, text: language === 'en' ? 'RBI Guidelines Compliant' : 'RBI दिशानिर्देश अनुपालन' },
-                { icon: Shield, text: language === 'en' ? 'Secure & Private' : 'सुरक्षित और निजी' },
-                { icon: Star, text: language === 'en' ? '4.8/5 User Rating' : '4.8/5 उपयोगकर्ता रेटिंग' },
-                { icon: Users, text: language === 'en' ? '1M+ Happy Users' : '1M+ खुश उपयोगकर्ता' }
+                { icon: CheckCircle, text: language === 'en' ? 'RBI Guidelines Compliant' : 'RBI दिशानिर्देश अनुपालन', color: 'text-green-600' },
+                { icon: Shield, text: language === 'en' ? 'Secure & Private' : 'सुरक्षित और निजी', color: 'text-blue-600' },
+                { icon: Star, text: language === 'en' ? '4.8/5 User Rating' : '4.8/5 उपयोगकर्ता रेटिंग', color: 'text-yellow-600' },
+                { icon: Award, text: language === 'en' ? 'Expert Verified' : 'विशेषज्ञ सत्यापित', color: 'text-purple-600' }
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center space-x-2"
+                  className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <item.icon className="w-5 h-5 text-green-600" />
-                  <span className="font-semibold">{item.text}</span>
+                  <item.icon className={`w-8 h-8 ${item.color} mb-2`} />
+                  <span className="font-semibold text-gray-900 text-sm">{item.text}</span>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
       </div>
-
     </>
   );
 };
