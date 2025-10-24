@@ -529,71 +529,185 @@ const HomeInvestopedia: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Platform Grid */}
-              <div className={`max-w-6xl mx-auto p-6 rounded-3xl border-2 mb-12 ${
+              {/* Complete Platform Stats Grid */}
+              <div className={`max-w-6xl mx-auto p-8 rounded-3xl border-2 mb-12 ${
                 theme === 'dark' ? 'bg-slate-800/40 border-white/10' : 'bg-white/90 border-gray-200 shadow-2xl'
               }`}>
-                <h3 className={`text-2xl font-bold text-center mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                  📁 {language === 'en' ? 'All Sections' : 'सभी अनुभाग'}
+                <h3 className={`text-3xl font-black text-center mb-8 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  📁 {language === 'en' ? 'Complete Platform' : 'संपूर्ण मंच'}
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {[
                     { name: 'Calculators', path: '/calculators', emoji: '🧮', count: '107' },
                     { name: 'Learn', path: '/learn', emoji: '📚', count: '40' },
                     { name: 'Festival', path: '/festival-tools', emoji: '🎉', count: '11' },
                     { name: 'GST', path: '/gst-tools', emoji: '💰', count: '20+' },
                     { name: 'Tax', path: '/tax-tools', emoji: '📄', count: '15+' },
+                    { name: 'Loans', path: '/loan-tools', emoji: '🏠', count: '12+' },
+                    { name: 'Insurance', path: '/insurance-tools', emoji: '🛡️', count: '8+' },
+                    { name: 'Corporate', path: '/corporate-finance', emoji: '💼', count: '25+' },
+                    { name: 'Gold', path: '/gold-tools', emoji: '🏆', count: '10+' },
+                    { name: 'Finance', path: '/finance-tools', emoji: '💵', count: '30+' },
+                    { name: 'Personal', path: '/tools', emoji: '👤', count: '15+' },
+                    { name: 'Religious', path: '/religious-tools', emoji: '🙏', count: '10+' },
+                    { name: 'Invoicing', path: '/invoicing-tools', emoji: '📋', count: '8+' },
                     { name: 'Blog', path: '/blog', emoji: '📰', count: '150+' },
+                    { name: 'Crypto', path: '/crypto', emoji: '₿', count: '50+' },
+                    { name: 'Excel Tools', path: '/excel-tools', emoji: '📊', count: '100+' },
+                    { name: 'Banking', path: '/banking', emoji: '🏦', count: '15+' },
+                    { name: 'Market', path: '/stock-market', emoji: '📈', count: '20+' },
                     { name: 'Schemes', path: '/government-schemes', emoji: '🎁', count: '50+' },
                     { name: 'Astro', path: '/astro-finance', emoji: '⭐', count: '12+' }
               ].map((item, idx) => (
                     <Link
                   key={idx}
                       to={item.path}
-                      className={`p-5 rounded-2xl text-center transition-all hover:scale-105 active:scale-95 ${
+                      className={`p-4 rounded-xl text-center transition-all hover:scale-105 active:scale-95 ${
                         theme === 'dark'
                           ? 'bg-slate-800/60 border border-white/10 hover:border-blue-500/50'
                           : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-lg'
                       }`}
                     >
-                      <div className="text-5xl mb-2">{item.emoji}</div>
-                      <div className={`text-sm font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.name}</div>
-                      <div className={`text-xs px-2 py-1 rounded-full inline-block ${theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700'}`}>
+                      <div className="text-4xl mb-2">{item.emoji}</div>
+                      <div className={`text-xs font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.name}</div>
+                      <div className={`text-[10px] px-2 py-0.5 rounded-full inline-block font-semibold ${theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700'}`}>
                         {item.count}
                   </div>
                   </Link>
               ))}
             </div>
 
-                {/* Festival Categories */}
-                <div className={`mt-8 p-5 rounded-2xl ${
-                  theme === 'dark' ? 'bg-orange-900/20 border border-orange-500/30' : 'bg-orange-50 border border-orange-300'
+                {/* Festival Tool Categories */}
+                <div className={`mt-8 p-6 rounded-2xl ${
+                  theme === 'dark' ? 'bg-orange-900/20 border-2 border-orange-500/30' : 'bg-orange-50 border-2 border-orange-300'
                 }`}>
-                  <h4 className={`text-lg font-bold text-center mb-4 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-700'}`}>
-                    🎊 {language === 'en' ? 'Festival Categories' : 'त्योहार श्रेणियां'}
+                  <h4 className={`text-2xl font-black text-center mb-6 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-700'}`}>
+                    🎊 {language === 'en' ? 'Festival Tool Categories' : 'त्योहार श्रेणियां'}
                   </h4>
-                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                     {[
-                      { name: 'Calendar', path: '/festival-dates', emoji: '📅' },
-                      { name: 'Shopping', path: '/festival-shopping', emoji: '🛍️' },
-                      { name: 'Finance', path: '/festival-finance', emoji: '💰' },
+                      { name: 'Date & Calendar', path: '/festival-dates', emoji: '📅' },
+                      { name: 'Planning & Shopping', path: '/festival-shopping', emoji: '🛍️' },
+                      { name: 'Finance & Money', path: '/festival-finance', emoji: '💰' },
                       { name: 'Religious', path: '/religious-tools', emoji: '🙏' },
-                      { name: 'Design', path: '/design-tools', emoji: '🎨' }
+                      { name: 'Fun & Games', path: '/fun-engagement', emoji: '🎮' },
+                      { name: 'Design', path: '/design-tools', emoji: '🎨' },
+                      { name: 'Information', path: '/festival-info', emoji: '📖' },
+                      { name: 'Corporate', path: '/festival-corporate-tools', emoji: '💼' },
+                      { name: 'Regional', path: '/regional-tools', emoji: '🗺️' },
+                      { name: 'SEO', path: '/seo-tools', emoji: '📊' }
                     ].map((cat, i) => (
                     <Link
                         key={i}
                         to={cat.path}
-                        className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-bold active:scale-95 ${
-                          theme === 'dark' ? 'bg-slate-700/50 text-orange-300' : 'bg-white text-orange-700 border border-orange-200'
+                        className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95 ${
+                          theme === 'dark' ? 'bg-slate-700/50 text-orange-300 hover:bg-slate-600/60' : 'bg-white text-orange-700 border-2 border-orange-200 hover:border-orange-400 shadow-md'
                         }`}
                       >
-                        <span className="text-lg">{cat.emoji}</span>
+                        <span className="text-2xl">{cat.emoji}</span>
                         <span>{cat.name}</span>
                   </Link>
               ))}
             </div>
           </div>
                       </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Categories Quick Links */}
+        <section className={`py-12 ${theme === 'dark' ? 'bg-slate-900/70' : 'bg-gray-50'}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 className={`text-3xl font-black text-center mb-8 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+              📂 {language === 'en' ? 'Categories' : 'श्रेणियां'}
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4">
+              {[
+                { name: 'All Tools', path: '/tools', emoji: '🧰', count: '100+', tag: '' },
+                { name: 'Investment', path: '/finance-tools', emoji: '📈', count: '15+', tag: '' },
+                { name: 'GST', path: '/gst-tools', emoji: '💰', count: '20+', tag: '' },
+                { name: 'Tax', path: '/tax-tools', emoji: '📄', count: '10+', tag: '' },
+                { name: 'Loans', path: '/loan-tools', emoji: '🏠', count: '8+', tag: '' },
+                { name: 'Festival', path: '/festival-tools', emoji: '🎉', count: '11', tag: 'Hot' },
+                { name: 'Learn', path: '/learn', emoji: '🏆', count: '40', tag: 'New' },
+                { name: 'Blog', path: '/blog', emoji: '📰', count: '50+', tag: '' }
+              ].map((cat, idx) => (
+                <Link
+                  key={idx}
+                  to={cat.path}
+                  className={`relative p-4 rounded-xl text-center transition-all hover:scale-105 active:scale-95 ${
+                    theme === 'dark'
+                      ? 'bg-slate-800/60 border border-white/10 hover:border-blue-500/50'
+                      : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-md'
+                  }`}
+                >
+                  {cat.tag && (
+                    <div className={`absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[10px] font-black ${
+                      cat.tag === 'Hot' ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
+                    }`}>
+                      {cat.tag}
+                    </div>
+                  )}
+                  <div className="text-3xl mb-2">{cat.emoji}</div>
+                  <div className={`text-xs font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                    {cat.name}
+                  </div>
+                  <div className={`text-[10px] px-2 py-0.5 rounded-full inline-block font-semibold ${
+                    theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-600'
+                  }`}>
+                    {cat.count}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* All Festival Tools */}
+        <section className={`py-16 ${theme === 'dark' ? 'bg-gradient-to-br from-orange-950/30 to-red-950/30' : 'bg-gradient-to-br from-orange-50 to-red-50'}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="text-center mb-12">
+              <h2 className={`text-4xl font-black mb-3 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-700'}`}>
+                🎊 {language === 'en' ? 'Festival Tools' : 'त्योहार के औजार'}
+              </h2>
+              <p className={`text-lg ${theme === 'dark' ? 'text-orange-300' : 'text-orange-600'}`}>
+                {language === 'en' ? 'Complete festival planning and cultural tools' : 'संपूर्ण त्योहार योजना'}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[
+                { name: 'Parsi New Year', path: '/festival-tools/parsi-new-year', emoji: '🎊', category: 'Festival' },
+                { name: 'Panchang Today', path: '/festival-tools/panchang-today', emoji: '📅', category: 'Festival' },
+                { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', category: 'Festival' },
+                { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', category: 'Festival' },
+                { name: 'Moon Phase Festivals', path: '/festival-tools/moon-phase-festivals', emoji: '🌙', category: 'Festival' },
+                { name: 'Purnima Amavasya Dates', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', category: 'Festival' },
+                { name: 'Vrat Upavas Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', category: 'Festival' },
+                { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', emoji: '⭐', category: 'Festival' },
+                { name: 'Shubh Muhurat Reminder', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', category: 'Festival' },
+                { name: 'Auspicious Marriage Days', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', category: 'Festival' },
+                { name: 'Lunar Eclipse Predictor', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', category: 'Festival' }
+              ].map((tool, idx) => (
+                <Link
+                  key={idx}
+                  to={tool.path}
+                  className={`p-5 rounded-xl transition-all hover:scale-105 active:scale-95 ${
+                    theme === 'dark'
+                      ? 'bg-slate-800/70 border border-orange-500/30 hover:border-orange-400'
+                      : 'bg-white border-2 border-orange-200 hover:border-orange-400 shadow-lg'
+                  }`}
+                >
+                  <div className="text-5xl mb-3">{tool.emoji}</div>
+                  <h3 className={`text-sm font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                    {tool.name}
+                  </h3>
+                  <span className={`text-[10px] px-2 py-1 rounded-full inline-block font-semibold ${
+                    theme === 'dark' ? 'bg-orange-500/20 text-orange-400' : 'bg-orange-100 text-orange-700'
+                  }`}>
+                    {tool.category}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
