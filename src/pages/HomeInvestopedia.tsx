@@ -327,7 +327,53 @@ const HomeInvestopedia: React.FC = () => {
   );
 
   const dynamicFestivalTools = useMemo(() => 
-    allFestivalTools, [allFestivalTools] // Show all festival tools (static for now)
+    allFestivalTools, [allFestivalTools] // Show all festival tools
+  );
+
+  // Dynamic Popular Search Tags - Changes on every page load
+  const allPopularTags = useMemo(() => [
+    { emoji: '💰', label: 'GST', path: '/gst-tools', searchTerm: 'GST' },
+    { emoji: '📈', label: 'SIP', path: '/calculators/sip-calculator', searchTerm: 'SIP' },
+    { emoji: '🏠', label: 'EMI', path: '/calculators/emi-calculator', searchTerm: 'EMI' },
+    { emoji: '🌑', label: 'Eclipse', path: '/festival-tools/lunar-eclipse-predictor', searchTerm: 'Eclipse' },
+    { emoji: '💍', label: 'Marriage', path: '/festival-tools/auspicious-marriage-days', searchTerm: 'Marriage' },
+    { emoji: '📊', label: 'Tax', path: '/tax-tools', searchTerm: 'Tax' },
+    { emoji: '🏆', label: 'Learn', path: '/learn', searchTerm: 'Learn' },
+    { emoji: '💵', label: 'Salary', path: '/calculators/salary-calculator', searchTerm: 'Salary' },
+    { emoji: '🏦', label: 'PPF', path: '/calculators/ppf-calculator', searchTerm: 'PPF' },
+    { emoji: '📄', label: 'Income Tax', path: '/tools/income-tax-calculator', searchTerm: 'Income Tax' },
+    { emoji: '💳', label: 'Credit Card', path: '/learn/credit-cards', searchTerm: 'Credit Card' },
+    { emoji: '🏡', label: 'Home Loan', path: '/calculators/home-loan-emi-calculator', searchTerm: 'Home Loan' },
+    { emoji: '🚗', label: 'Car Loan', path: '/calculators/car-loan-emi-calculator', searchTerm: 'Car Loan' },
+    { emoji: '🎉', label: 'Festival', path: '/festival-tools', searchTerm: 'Festival' },
+    { emoji: '📅', label: 'Panchang', path: '/festival-tools/panchang-today', searchTerm: 'Panchang' },
+    { emoji: '👴', label: 'Retirement', path: '/calculators/retirement-calculator', searchTerm: 'Retirement' },
+    { emoji: '💼', label: 'Business', path: '/calculators/business-loan-calculator', searchTerm: 'Business' },
+    { emoji: '🏆', label: 'Gold', path: '/gold-tools', searchTerm: 'Gold' },
+    { emoji: '₿', label: 'Crypto', path: '/crypto', searchTerm: 'Crypto' },
+    { emoji: '📊', label: 'Excel', path: '/excel-tools', searchTerm: 'Excel' }
+  ], []);
+
+  const dynamicPopularTags = useMemo(() => 
+    getRandomItems(allPopularTags, 7), [allPopularTags] // Shuffle on every page load
+  );
+
+  // All Festival Categories - Comprehensive pool
+  const allFestivalCategories = useMemo(() => [
+    { name: 'Date & Calendar', path: '/festival-dates', emoji: '📅' },
+    { name: 'Planning & Shopping', path: '/festival-shopping', emoji: '🛍️' },
+    { name: 'Finance & Money', path: '/festival-finance', emoji: '💰' },
+    { name: 'Religious', path: '/religious-tools', emoji: '🙏' },
+    { name: 'Fun & Games', path: '/fun-engagement', emoji: '🎮' },
+    { name: 'Design', path: '/design-tools', emoji: '🎨' },
+    { name: 'Information', path: '/festival-info', emoji: '📖' },
+    { name: 'Corporate', path: '/festival-corporate-tools', emoji: '💼' },
+    { name: 'Regional', path: '/regional-tools', emoji: '🗺️' },
+    { name: 'SEO', path: '/seo-tools', emoji: '📊' }
+  ], []);
+
+  const dynamicFestivalCategories = useMemo(() => 
+    allFestivalCategories.sort(() => Math.random() - 0.5), [allFestivalCategories] // Shuffle on load
   );
 
   const dynamicContent = useMemo(() => ({
@@ -511,21 +557,24 @@ const HomeInvestopedia: React.FC = () => {
                   )}
                     </div>
 
-                {/* Popular Tags */}
+                {/* Popular Tags - Dynamic & Clickable */}
                 {!searchQuery && (
                   <div className="mt-6 flex flex-wrap justify-center gap-2.5">
                     <span className={`text-sm font-bold ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                      <Flame className="w-5 h-5 inline mr-1 text-orange-500" /> Popular:
+                      <Flame className="w-5 h-5 inline mr-1 text-orange-500 animate-pulse" /> Popular:
                     </span>
-                    {['💰 GST', '📈 SIP', '🏠 EMI', '🌑 Eclipse', '💍 Marriage', '📊 Tax', '🏆 Learn'].map((tag, i) => (
-                      <button
+                    {dynamicPopularTags.map((tag, i) => (
+                      <Link
                         key={i}
-                        onClick={() => setSearchQuery(tag.split(' ')[1])}
-                        className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-bold shadow-lg hover:shadow-2xl active:scale-95 transition-all"
+                        to={tag.path}
+                        className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-bold shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all"
                       >
-                        {tag}
-                      </button>
+                        {tag.emoji} {tag.label}
+                      </Link>
                     ))}
+                    <span className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'} italic`}>
+                      • Refresh for new suggestions
+                    </span>
                   </div>
                 )}
 
@@ -647,18 +696,7 @@ const HomeInvestopedia: React.FC = () => {
                     🎊 {language === 'en' ? 'Festival Tool Categories' : 'त्योहार श्रेणियां'}
                   </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-                    {[
-                      { name: 'Date & Calendar', path: '/festival-dates', emoji: '📅' },
-                      { name: 'Planning & Shopping', path: '/festival-shopping', emoji: '🛍️' },
-                      { name: 'Finance & Money', path: '/festival-finance', emoji: '💰' },
-                      { name: 'Religious', path: '/religious-tools', emoji: '🙏' },
-                      { name: 'Fun & Games', path: '/fun-engagement', emoji: '🎮' },
-                      { name: 'Design', path: '/design-tools', emoji: '🎨' },
-                      { name: 'Information', path: '/festival-info', emoji: '📖' },
-                      { name: 'Corporate', path: '/festival-corporate-tools', emoji: '💼' },
-                      { name: 'Regional', path: '/regional-tools', emoji: '🗺️' },
-                      { name: 'SEO', path: '/seo-tools', emoji: '📊' }
-                    ].map((cat, i) => (
+                    {dynamicFestivalCategories.map((cat, i) => (
                     <Link
                         key={i}
                         to={cat.path}
