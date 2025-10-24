@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { DollarSign, TrendingDown, Calculator } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 
-const LoanPrepaymentCalculator: React.FC = () => {
+export const LoanPrepaymentCalculator: React.FC = () => {
   const [loanAmount, setLoanAmount] = useState(1000000);
   const [interestRate, setInterestRate] = useState(9);
   const [tenure, setTenure] = useState(10);
@@ -120,5 +120,3 @@ const LoanPrepaymentCalculator: React.FC = () => {
     </>
   );
 };
-
-export default LoanPrepaymentCalculator;
