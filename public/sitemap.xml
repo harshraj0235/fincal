@@ -367,6 +367,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
+  <url>
+    <loc>https://moneycal.in/festival-tools/lunar-eclipse-predictor</loc>
+    <lastmod>2025-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
 
   <!-- PRIORITY 0.95: LOANS & CREDIT HUB PAGE -->
   <url>
