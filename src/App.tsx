@@ -499,6 +499,7 @@ const IncomeTaxCalculator = lazy(() => import('./pages/tools/IncomeTaxCalculator
 const LoanEMICalculator = lazy(() => import('./pages/tools/LoanEMICalculator'));
 const MutualFundCalculator = lazy(() => import('./pages/tools/MutualFundCalculator'));
 const HomeLoanCalculator = lazy(() => import('./pages/tools/HomeLoanCalculator'));
+const HomeLoanEmiCalculator = lazy(() => import('./calculators/HomeLoanEmiCalculator'));
 const PersonalLoanCalculator = lazy(() => import('./pages/tools/PersonalLoanCalculator'));
 const SIPCalculator = lazy(() => import('./pages/tools/SIPCalculator'));
 const PortfolioAnalyzer = lazy(() => import('./pages/tools/PortfolioAnalyzer'));
@@ -799,6 +800,7 @@ function App() {
                 <Route path="/tools/loan-emi-calculator" element={<LoanEMICalculator />} />
                 <Route path="/tools/mutual-fund-calculator" element={<MutualFundCalculator />} />
                 <Route path="/tools/home-loan-calculator" element={<HomeLoanCalculator />} />
+                <Route path="/calculators/home-loan-emi-calculator" element={<HomeLoanEmiCalculator />} />
                 <Route path="/tools/personal-loan-calculator" element={<PersonalLoanCalculator />} />
                 <Route path="/tools/sip-calculator" element={<SIPCalculator />} />
             <Route path="/tools/portfolio-analyzer" element={<PortfolioAnalyzer />} />
