@@ -253,6 +253,83 @@ const HomeInvestopedia: React.FC = () => {
     return shuffled.slice(0, count);
   };
 
+  // COMPREHENSIVE DATA POOLS - All content from entire codebase
+  const allPlatformCategories = useMemo(() => [
+    { name: 'Calculators', path: '/calculators', emoji: '🧮', count: '107' },
+    { name: 'Learn', path: '/learn', emoji: '📚', count: '40' },
+    { name: 'Festival', path: '/festival-tools', emoji: '🎉', count: '11' },
+    { name: 'GST', path: '/gst-tools', emoji: '💰', count: '20+' },
+    { name: 'Tax', path: '/tax-tools', emoji: '📄', count: '15+' },
+    { name: 'Loans', path: '/loan-tools', emoji: '🏠', count: '12+' },
+    { name: 'Insurance', path: '/insurance-tools', emoji: '🛡️', count: '8+' },
+    { name: 'Corporate', path: '/corporate-finance', emoji: '💼', count: '25+' },
+    { name: 'Gold', path: '/gold-tools', emoji: '🏆', count: '10+' },
+    { name: 'Finance', path: '/finance-tools', emoji: '💵', count: '30+' },
+    { name: 'Personal', path: '/tools', emoji: '👤', count: '15+' },
+    { name: 'Religious', path: '/religious-tools', emoji: '🙏', count: '10+' },
+    { name: 'Invoicing', path: '/invoicing-tools', emoji: '📋', count: '8+' },
+    { name: 'Blog', path: '/blog', emoji: '📰', count: '150+' },
+    { name: 'Crypto', path: '/crypto', emoji: '₿', count: '50+' },
+    { name: 'Excel Tools', path: '/excel-tools', emoji: '📊', count: '100+' },
+    { name: 'Banking', path: '/banking', emoji: '🏦', count: '15+' },
+    { name: 'Market', path: '/stock-market', emoji: '📈', count: '20+' },
+    { name: 'Schemes', path: '/government-schemes', emoji: '🎁', count: '50+' },
+    { name: 'Astro', path: '/astro-finance', emoji: '⭐', count: '12+' },
+    { name: 'Retirement', path: '/calculators/retirement-calculator', emoji: '👴', count: '5+' },
+    { name: 'Investment', path: '/calculators/sip-calculator', emoji: '💹', count: '20+' },
+    { name: 'Property', path: '/calculators/property-calculator', emoji: '🏘️', count: '8+' },
+    { name: 'Business', path: '/calculators/business-loan-calculator', emoji: '💼', count: '15+' }
+  ], []);
+
+  const allQuickCategories = useMemo(() => [
+    { name: 'All Tools', path: '/tools', emoji: '🧰', count: '100+', tag: '' },
+    { name: 'Investment', path: '/finance-tools', emoji: '📈', count: '15+', tag: '' },
+    { name: 'GST', path: '/gst-tools', emoji: '💰', count: '20+', tag: '' },
+    { name: 'Tax', path: '/tax-tools', emoji: '📄', count: '10+', tag: '' },
+    { name: 'Loans', path: '/loan-tools', emoji: '🏠', count: '8+', tag: '' },
+    { name: 'Festival', path: '/festival-tools', emoji: '🎉', count: '11', tag: 'Hot' },
+    { name: 'Learn', path: '/learn', emoji: '🏆', count: '40', tag: 'New' },
+    { name: 'Blog', path: '/blog', emoji: '📰', count: '50+', tag: '' },
+    { name: 'Gold Tools', path: '/gold-tools', emoji: '🏆', count: '10+', tag: '' },
+    { name: 'Insurance', path: '/insurance-tools', emoji: '🛡️', count: '8+', tag: '' },
+    { name: 'Corporate', path: '/corporate-finance', emoji: '💼', count: '25+', tag: '' },
+    { name: 'Invoicing', path: '/invoicing-tools', emoji: '📋', count: '8+', tag: '' },
+    { name: 'Crypto', path: '/crypto', emoji: '₿', count: '50+', tag: 'Hot' },
+    { name: 'Excel', path: '/excel-tools', emoji: '📊', count: '100+', tag: '' },
+    { name: 'Banking', path: '/banking', emoji: '🏦', count: '15+', tag: '' },
+    { name: 'Stock Market', path: '/stock-market', emoji: '📈', count: '20+', tag: '' }
+  ], []);
+
+  const allFestivalTools = useMemo(() => [
+    { name: 'Parsi New Year', path: '/festival-tools/parsi-new-year', emoji: '🎊', category: 'Festival' },
+    { name: 'Panchang Today', path: '/festival-tools/panchang-today', emoji: '📅', category: 'Festival' },
+    { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', category: 'Festival' },
+    { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', category: 'Festival' },
+    { name: 'Moon Phase Festivals', path: '/festival-tools/moon-phase-festivals', emoji: '🌙', category: 'Festival' },
+    { name: 'Purnima Amavasya Dates', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', category: 'Festival' },
+    { name: 'Vrat Upavas Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', category: 'Festival' },
+    { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', emoji: '⭐', category: 'Festival' },
+    { name: 'Shubh Muhurat Reminder', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', category: 'Festival' },
+    { name: 'Auspicious Marriage Days', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', category: 'Festival' },
+    { name: 'Lunar Eclipse Predictor', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', category: 'Festival' },
+    { name: 'Diwali Date Finder', path: '/festival-tools/diwali-date-finder', emoji: '🪔', category: 'Festival' },
+    { name: 'Holi Date Calculator', path: '/festival-tools/holi-date-calculator', emoji: '🎨', category: 'Festival' },
+    { name: 'Raksha Bandhan Muhurat', path: '/festival-tools/raksha-bandhan-muhurat', emoji: '🎀', category: 'Festival' }
+  ], []);
+
+  // Dynamic content that changes based on rotationKey
+  const dynamicPlatformCategories = useMemo(() => 
+    getRandomItems(allPlatformCategories, 20), [allPlatformCategories, rotationKey]
+  );
+
+  const dynamicQuickCategories = useMemo(() => 
+    getRandomItems(allQuickCategories, 8), [allQuickCategories, rotationKey]
+  );
+
+  const dynamicFestivalTools = useMemo(() => 
+    allFestivalTools, [allFestivalTools] // Show all festival tools (static for now)
+  );
+
   const dynamicContent = useMemo(() => ({
     calculators: getRandomItems(categoryPools.calculators, 7),
     learning: getRandomItems(categoryPools.learning, 7),
@@ -533,32 +610,17 @@ const HomeInvestopedia: React.FC = () => {
               <div className={`max-w-6xl mx-auto p-8 rounded-3xl border-2 mb-12 ${
                 theme === 'dark' ? 'bg-slate-800/40 border-white/10' : 'bg-white/90 border-gray-200 shadow-2xl'
               }`}>
-                <h3 className={`text-3xl font-black text-center mb-8 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                  📁 {language === 'en' ? 'Complete Platform' : 'संपूर्ण मंच'}
-                </h3>
+                <div className="text-center mb-8">
+                  <h3 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                    📁 {language === 'en' ? 'Complete Platform' : 'संपूर्ण मंच'}
+                  </h3>
+                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <Sparkles className="w-4 h-4 inline mr-1 text-yellow-500 animate-pulse" />
+                    {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
+                  </p>
+                </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                  {[
-                    { name: 'Calculators', path: '/calculators', emoji: '🧮', count: '107' },
-                    { name: 'Learn', path: '/learn', emoji: '📚', count: '40' },
-                    { name: 'Festival', path: '/festival-tools', emoji: '🎉', count: '11' },
-                    { name: 'GST', path: '/gst-tools', emoji: '💰', count: '20+' },
-                    { name: 'Tax', path: '/tax-tools', emoji: '📄', count: '15+' },
-                    { name: 'Loans', path: '/loan-tools', emoji: '🏠', count: '12+' },
-                    { name: 'Insurance', path: '/insurance-tools', emoji: '🛡️', count: '8+' },
-                    { name: 'Corporate', path: '/corporate-finance', emoji: '💼', count: '25+' },
-                    { name: 'Gold', path: '/gold-tools', emoji: '🏆', count: '10+' },
-                    { name: 'Finance', path: '/finance-tools', emoji: '💵', count: '30+' },
-                    { name: 'Personal', path: '/tools', emoji: '👤', count: '15+' },
-                    { name: 'Religious', path: '/religious-tools', emoji: '🙏', count: '10+' },
-                    { name: 'Invoicing', path: '/invoicing-tools', emoji: '📋', count: '8+' },
-                    { name: 'Blog', path: '/blog', emoji: '📰', count: '150+' },
-                    { name: 'Crypto', path: '/crypto', emoji: '₿', count: '50+' },
-                    { name: 'Excel Tools', path: '/excel-tools', emoji: '📊', count: '100+' },
-                    { name: 'Banking', path: '/banking', emoji: '🏦', count: '15+' },
-                    { name: 'Market', path: '/stock-market', emoji: '📈', count: '20+' },
-                    { name: 'Schemes', path: '/government-schemes', emoji: '🎁', count: '50+' },
-                    { name: 'Astro', path: '/astro-finance', emoji: '⭐', count: '12+' }
-              ].map((item, idx) => (
+                  {dynamicPlatformCategories.map((item, idx) => (
                     <Link
                   key={idx}
                       to={item.path}
@@ -618,20 +680,17 @@ const HomeInvestopedia: React.FC = () => {
         {/* Categories Quick Links */}
         <section className={`py-12 ${theme === 'dark' ? 'bg-slate-900/70' : 'bg-gray-50'}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 className={`text-3xl font-black text-center mb-8 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              📂 {language === 'en' ? 'Categories' : 'श्रेणियां'}
-            </h2>
+            <div className="text-center mb-8">
+              <h2 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                📂 {language === 'en' ? 'Categories' : 'श्रेणियां'}
+              </h2>
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                <Clock className="w-4 h-4 inline mr-1 text-blue-500 animate-spin" style={{ animationDuration: '10s' }} />
+                {language === 'en' ? 'Refreshes every 10 seconds • Random selection' : 'हर 10 सेकंड में बदलता है'}
+              </p>
+            </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4">
-              {[
-                { name: 'All Tools', path: '/tools', emoji: '🧰', count: '100+', tag: '' },
-                { name: 'Investment', path: '/finance-tools', emoji: '📈', count: '15+', tag: '' },
-                { name: 'GST', path: '/gst-tools', emoji: '💰', count: '20+', tag: '' },
-                { name: 'Tax', path: '/tax-tools', emoji: '📄', count: '10+', tag: '' },
-                { name: 'Loans', path: '/loan-tools', emoji: '🏠', count: '8+', tag: '' },
-                { name: 'Festival', path: '/festival-tools', emoji: '🎉', count: '11', tag: 'Hot' },
-                { name: 'Learn', path: '/learn', emoji: '🏆', count: '40', tag: 'New' },
-                { name: 'Blog', path: '/blog', emoji: '📰', count: '50+', tag: '' }
-              ].map((cat, idx) => (
+              {dynamicQuickCategories.map((cat, idx) => (
                 <Link
                   key={idx}
                   to={cat.path}
@@ -675,19 +734,7 @@ const HomeInvestopedia: React.FC = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { name: 'Parsi New Year', path: '/festival-tools/parsi-new-year', emoji: '🎊', category: 'Festival' },
-                { name: 'Panchang Today', path: '/festival-tools/panchang-today', emoji: '📅', category: 'Festival' },
-                { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', category: 'Festival' },
-                { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', category: 'Festival' },
-                { name: 'Moon Phase Festivals', path: '/festival-tools/moon-phase-festivals', emoji: '🌙', category: 'Festival' },
-                { name: 'Purnima Amavasya Dates', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', category: 'Festival' },
-                { name: 'Vrat Upavas Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', category: 'Festival' },
-                { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', emoji: '⭐', category: 'Festival' },
-                { name: 'Shubh Muhurat Reminder', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', category: 'Festival' },
-                { name: 'Auspicious Marriage Days', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', category: 'Festival' },
-                { name: 'Lunar Eclipse Predictor', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', category: 'Festival' }
-              ].map((tool, idx) => (
+              {dynamicFestivalTools.map((tool, idx) => (
                 <Link
                   key={idx}
                   to={tool.path}
