@@ -30,32 +30,101 @@ export const Sidebar: React.FC = () => {
     { name: 'Mutual Fund', href: '/calculators/mutual-fund-returns-calculator', icon: Building, color: 'from-orange-500 to-orange-600' },
   ];
 
-  const getCategoryIcon = (categoryId: string) => {
-    switch(categoryId) {
-      case 'loan-calculators': return <Building className="w-5 h-5" />;
-      case 'investment-calculators': return <TrendingUp className="w-5 h-5" />;
-      case 'tax-calculators': return <DollarSign className="w-5 h-5" />;
-      case 'retirement-calculators': return <Shield className="w-5 h-5" />;
-      case 'business-calculators': return <Building className="w-5 h-5" />;
-      case 'property-calculators': return <Building className="w-5 h-5" />;
-      case 'insurance-calculators': return <Shield className="w-5 h-5" />;
-      case 'banking-calculators': return <Building className="w-5 h-5" />;
-      default: return <Calculator className="w-5 h-5" />;
+  const customCategories = [
+    {
+      id: 'loan-calculators',
+      name: 'Loan Calculators',
+      icon: <Building className="w-5 h-5" />,
+      color: 'from-blue-500 to-blue-600',
+      route: '/calculators/loan'
+    },
+    {
+      id: 'investment-calculators',
+      name: 'Investment Calculators',
+      icon: <TrendingUp className="w-5 h-5" />,
+      color: 'from-green-500 to-green-600',
+      route: '/calculators/investment'
+    },
+    {
+      id: 'tax-calculators',
+      name: 'Tax Calculators',
+      icon: <DollarSign className="w-5 h-5" />,
+      color: 'from-purple-500 to-purple-600',
+      route: '/tax-tools'
+    },
+    {
+      id: 'retirement-calculators',
+      name: 'Retirement Calculators',
+      icon: <Shield className="w-5 h-5" />,
+      color: 'from-orange-500 to-orange-600',
+      route: '/calculators/retirement'
+    },
+    {
+      id: 'business-calculators',
+      name: 'Business Calculators',
+      icon: <Building className="w-5 h-5" />,
+      color: 'from-indigo-500 to-indigo-600',
+      route: '/calculators/business'
+    },
+    {
+      id: 'property-calculators',
+      name: 'Property Calculators',
+      icon: <Building className="w-5 h-5" />,
+      color: 'from-red-500 to-red-600',
+      route: '/calculators/property'
+    },
+    {
+      id: 'insurance-calculators',
+      name: 'Insurance Calculators',
+      icon: <Shield className="w-5 h-5" />,
+      color: 'from-pink-500 to-pink-600',
+      route: '/calculators/insurance'
+    },
+    {
+      id: 'banking-finance-tools',
+      name: 'Banking & Finance Tools',
+      icon: <Building className="w-5 h-5" />,
+      color: 'from-cyan-500 to-cyan-600',
+      route: '/bank-tools'
+    },
+    {
+      id: 'fintech-payments',
+      name: 'FinTech & Payments',
+      icon: <Zap className="w-5 h-5" />,
+      color: 'from-violet-500 to-violet-600',
+      route: '/fintech-tools'
+    },
+    {
+      id: 'investments-wealth',
+      name: 'Investments & Wealth Management',
+      icon: <Star className="w-5 h-5" />,
+      color: 'from-amber-500 to-amber-600',
+      route: '/investing-tools'
+    },
+    {
+      id: 'personal-finance',
+      name: 'Personal Finance',
+      icon: <Users className="w-5 h-5" />,
+      color: 'from-teal-500 to-teal-600',
+      route: '/finance-tools'
+    },
+    {
+      id: 'math-education',
+      name: 'Math & Education Calculators',
+      icon: <Calculator className="w-5 h-5" />,
+      color: 'from-rose-500 to-rose-600',
+      route: '/calculators/education'
     }
+  ];
+
+  const getCategoryIcon = (categoryId: string) => {
+    const category = customCategories.find(cat => cat.id === categoryId);
+    return category?.icon || <Calculator className="w-5 h-5" />;
   };
 
   const getCategoryColor = (categoryId: string) => {
-    switch(categoryId) {
-      case 'loan-calculators': return 'from-blue-500 to-blue-600';
-      case 'investment-calculators': return 'from-green-500 to-green-600';
-      case 'tax-calculators': return 'from-purple-500 to-purple-600';
-      case 'retirement-calculators': return 'from-orange-500 to-orange-600';
-      case 'business-calculators': return 'from-indigo-500 to-indigo-600';
-      case 'property-calculators': return 'from-red-500 to-red-600';
-      case 'insurance-calculators': return 'from-pink-500 to-pink-600';
-      case 'banking-calculators': return 'from-cyan-500 to-cyan-600';
-      default: return 'from-gray-500 to-gray-600';
-    }
+    const category = customCategories.find(cat => cat.id === categoryId);
+    return category?.color || 'from-gray-500 to-gray-600';
   };
   
   return (
@@ -152,22 +221,20 @@ export const Sidebar: React.FC = () => {
             Calculator Categories
           </h3>
           <div className="space-y-1">
-            {calculatorCategories.map((category) => {
-              const isExpanded = expandedCategory === category.id;
-              const isActive = location.pathname.includes('/calculators/') && 
-                             category.calculators.some(calc => 
-                               location.pathname.includes(calc.id)
-                             );
+            {customCategories.map((category) => {
+              const isActive = location.pathname.includes(category.route);
               
               return (
-                <div key={category.id}>
-                  <motion.button
-                    whileHover={{ x: 4 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => setExpandedCategory(isExpanded ? null : category.id)}
+                <motion.div
+                  key={category.id}
+                  whileHover={{ x: 4 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Link
+                    to={category.route}
                     className={`w-full flex items-center justify-between p-3 rounded-xl transition-all duration-300 ${
                       isActive
-                        ? 'bg-gradient-to-r ' + getCategoryColor(category.id) + ' text-white shadow-lg'
+                        ? 'bg-gradient-to-r ' + category.color + ' text-white shadow-lg'
                         : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
                     }`}
                   >
@@ -175,68 +242,13 @@ export const Sidebar: React.FC = () => {
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
                         isActive ? 'bg-white/20' : 'bg-gray-100'
                       }`}>
-                        {getCategoryIcon(category.id)}
+                        {category.icon}
                       </div>
                       <span className="font-medium text-sm">{category.name}</span>
                     </div>
-                    <motion.div
-                      animate={{ rotate: isExpanded ? 90 : 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </motion.div>
-                  </motion.button>
-                  
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="ml-11 mt-2 space-y-1"
-                      >
-                        {category.calculators.slice(0, 6).map((calculator) => {
-                          const isCalculatorActive = location.pathname.includes(calculator.id);
-                  
-                  return (
-                            <motion.div
-                      key={calculator.id}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: 0.1 }}
-                            >
-                              <Link
-                                to={`/calculators/${calculator.id}`}
-                                className={`block p-2 rounded-lg text-sm transition-all duration-300 ${
-                                  isCalculatorActive
-                                    ? 'bg-blue-100 text-blue-700 font-medium'
-                                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                      }`}
-                    >
-                      {calculator.name}
-                              </Link>
-                            </motion.div>
-                          );
-                        })}
-                        {category.calculators.length > 6 && (
-                          <motion.div
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                          >
-                            <Link
-                              to={`/#${category.id}`}
-                              className="block p-2 rounded-lg text-sm text-blue-600 hover:bg-blue-50 font-medium"
-                            >
-                              View all {category.calculators.length} calculators →
-                            </Link>
-                          </motion.div>
-                        )}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
               );
             })}
           </div>
