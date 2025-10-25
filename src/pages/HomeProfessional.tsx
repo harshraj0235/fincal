@@ -8,7 +8,7 @@ import {
   Newspaper, Clock, Flame, Globe, Sun, Moon, X, Menu
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import BeautifulFooter from '../components/BeautifulFooter';
+// Footer handled by Layout component
 import LightweightTrustBadges from '../components/LightweightTrustBadges';
 import GlobalSearch from '../components/GlobalSearch';
 import { loadBlogData } from '../data/lazyBlogData';
@@ -616,7 +616,7 @@ const HomeProfessional: React.FC = () => {
           </div>
         </section>
 
-        <BeautifulFooter />
+        {/* Footer handled by Layout component - No duplicate footer here */}
       </div>
     </>
   );
