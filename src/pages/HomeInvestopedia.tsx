@@ -773,17 +773,17 @@ const HomeInvestopedia: React.FC = () => {
                   </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                     {dynamicFestivalCategories.map((cat, i) => (
-                      <Link
+                <Link
                         key={i}
                         to={cat.path}
                         className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-105 bg-white text-orange-700 border border-orange-200 hover:border-orange-500 shadow-sm hover:shadow-md"
                       >
                         <span className="text-2xl">{cat.emoji}</span>
                         <span>{cat.name}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                </Link>
+              ))}
+              </div>
+          </div>
                   </div>
             </div>
           </div>
@@ -829,27 +829,35 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* All Festival Tools */}
-        <section className={`py-16 ${theme === 'dark' ? 'bg-gradient-to-br from-orange-950/30 to-red-950/30' : 'bg-gradient-to-br from-orange-50 to-red-50'}`}>
+        {/* Professional Festival Tools Section */}
+        <section className="py-16 bg-gradient-to-br from-orange-50 to-red-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-12">
-              <h2 className={`text-4xl font-black mb-3 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-700'}`}>
+              <h2 className="text-4xl font-bold mb-3 text-orange-700">
                 🎊 {language === 'en' ? 'Festival Tools' : 'त्योहार के औजार'}
               </h2>
-              <p className={`text-lg ${theme === 'dark' ? 'text-orange-300' : 'text-orange-600'}`}>
+              <p className="text-lg text-orange-600 mb-4">
                 {language === 'en' ? 'Complete festival planning and cultural tools' : 'संपूर्ण त्योहार योजना'}
               </p>
+              {/* Internal Links to Related Pages */}
+              <div className="flex flex-wrap justify-center gap-2 mt-4">
+                <Link to="/festival-tools" className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">
+                  View All Festival Tools →
+                </Link>
+                <Link to="/religious-tools" className="px-4 py-2 bg-white border border-orange-300 text-orange-700 rounded-lg text-sm font-semibold hover:border-orange-500 transition-colors">
+                  Religious Tools
+                </Link>
+                <Link to="/astro-finance" className="px-4 py-2 bg-white border border-orange-300 text-orange-700 rounded-lg text-sm font-semibold hover:border-orange-500 transition-colors">
+                  Astro Finance
+                </Link>
+              </div>
                     </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {dynamicFestivalTools.map((tool, idx) => (
                     <Link
                   key={idx}
                   to={tool.path}
-                  className={`relative p-5 rounded-xl transition-all hover:scale-105 active:scale-95 ${
-                    theme === 'dark'
-                      ? 'bg-slate-800/70 border border-orange-500/30 hover:border-orange-400'
-                      : 'bg-white border-2 border-orange-200 hover:border-orange-400 shadow-lg'
-                  }`}
+                  className="relative p-5 rounded-xl transition-all hover:scale-105 bg-white border border-orange-200 hover:border-orange-500 shadow-md hover:shadow-lg"
                 >
                   {tool.tag && (
                     <div className="absolute top-2 right-2">
@@ -877,32 +885,53 @@ const HomeInvestopedia: React.FC = () => {
               ))}
             </div>
             
-            {/* Refresh Note */}
-            <div className="text-center mt-8">
-              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                <Sparkles className="w-4 h-4 inline mr-1 text-orange-500 animate-pulse" />
-                {language === 'en' ? 'Showing 12 random tools • Refresh to see more' : '12 यादृच्छिक उपकरण • अधिक देखने के लिए रीफ्रेश करें'}
-              </p>
+            {/* Internal Links Network */}
+            <div className="text-center mt-10">
+              <div className="inline-flex flex-wrap justify-center gap-3 bg-white p-4 rounded-xl border border-orange-200 shadow-md">
+                <span className="text-sm font-semibold text-gray-700">🔗 Related:</span>
+                <Link to="/festival-tools/panchang-today" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">Daily Panchang</Link>
+                <span className="text-gray-300">•</span>
+                <Link to="/festival-tools/auspicious-marriage-days" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">Marriage Dates</Link>
+                <span className="text-gray-300">•</span>
+                <Link to="/festival-tools/lunar-eclipse-predictor" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">Eclipse 2025</Link>
+                <span className="text-gray-300">•</span>
+                <Link to="/festival-tools/vrat-upavas-calendar" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">Vrat Calendar</Link>
+                <span className="text-gray-300">•</span>
+                <Link to="/religious-tools" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">All Religious Tools</Link>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Trending & New */}
-        <section className={`py-16 border-y ${theme === 'dark' ? 'border-white/10 bg-slate-900/50' : 'border-gray-200 bg-white/50'}`}>
+        {/* Professional Trending Section with Internal Links */}
+        <section className="py-16 border-y border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 className={`text-4xl font-black text-center mb-12 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              🔥 {language === 'en' ? 'Trending & New' : 'ट्रेंडिंग और नया'}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-3 text-gray-900">
+                🔥 {language === 'en' ? 'Trending & New Tools' : 'ट्रेंडिंग और नया'}
               </h2>
+              {/* Quick Navigation to Categories */}
+              <div className="flex flex-wrap justify-center gap-2 mt-4">
+                <Link to="/calculators" className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100">
+                  📊 All Calculators
+                </Link>
+                <Link to="/finance-tools" className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100">
+                  💵 Finance Tools
+                </Link>
+                <Link to="/tax-tools" className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100">
+                  📄 Tax Tools
+                </Link>
+                <Link to="/learn" className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100">
+                  📚 Learn Finance
+                </Link>
+              </div>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {trendingItems.map((item, idx) => (
-                    <Link
+                <Link
                   key={idx}
                   to={item.path}
-                  className={`relative p-6 rounded-2xl transition-all hover:scale-105 active:scale-95 ${
-                    theme === 'dark'
-                      ? 'bg-slate-800/70 border-2 border-white/10 hover:border-purple-500/50'
-                      : 'bg-white border-2 border-gray-200 hover:border-purple-500 shadow-lg hover:shadow-2xl'
-                  }`}
+                  className="relative p-6 rounded-2xl transition-all hover:scale-105 bg-white border border-gray-200 hover:border-blue-500 shadow-md hover:shadow-xl"
                 >
                   <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-black ${
@@ -914,42 +943,104 @@ const HomeInvestopedia: React.FC = () => {
                       </span>
                     </div>
                   <div className="text-6xl mb-4">{item.emoji}</div>
-                  <h3 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">
                     {item.name}
                   </h3>
-                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className="text-sm text-gray-600 mb-3">
                     {item.desc}
                   </p>
-                  <ArrowRight className={`w-6 h-6 mt-3 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
-                  </Link>
+                  <ArrowRight className="w-6 h-6 mt-2 text-blue-600" />
+                </Link>
               ))}
+            </div>
+
+            {/* Comprehensive Internal Links Network */}
+            <div className="mt-12 bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
+              <h3 className="text-2xl font-bold text-center mb-6 text-gray-900">
+                🔗 {language === 'en' ? 'Explore More Tools & Resources' : 'और उपकरण देखें'}
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* Column 1: Top Calculators */}
+                <div>
+                  <h4 className="font-bold text-sm mb-3 text-gray-700 uppercase">Popular Calculators</h4>
+                  <div className="space-y-2">
+                    <Link to="/calculators/emi-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ EMI Calculator</Link>
+                    <Link to="/calculators/sip-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ SIP Calculator</Link>
+                    <Link to="/tools/income-tax-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Income Tax Calculator</Link>
+                    <Link to="/tools/gst-amount-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ GST Calculator</Link>
+                    <Link to="/calculators/home-loan-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Home Loan EMI</Link>
+                    <Link to="/calculators/ppf-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ PPF Calculator</Link>
+                    <Link to="/calculators" className="block text-sm font-semibold text-orange-600 hover:text-orange-800 hover:underline mt-3">View All 100+ Calculators →</Link>
+                  </div>
+                </div>
+
+                {/* Column 2: Learning & Resources */}
+                <div>
+                  <h4 className="font-bold text-sm mb-3 text-gray-700 uppercase">Learn & Resources</h4>
+                  <div className="space-y-2">
+                    <Link to="/learn/gold-loans" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Gold Loans (10 Lessons)</Link>
+                    <Link to="/learn/credit-cards" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Credit Cards (20 Lessons)</Link>
+                    <Link to="/learn/credit-score" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Credit Score Guide</Link>
+                    <Link to="/blog" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Finance Blog</Link>
+                    <Link to="/government-schemes" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Government Schemes</Link>
+                    <Link to="/excel-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Excel Templates</Link>
+                    <Link to="/learn" className="block text-sm font-semibold text-orange-600 hover:text-orange-800 hover:underline mt-3">Start Learning Free →</Link>
+                  </div>
+                </div>
+
+                {/* Column 3: Tools by Category */}
+                <div>
+                  <h4 className="font-bold text-sm mb-3 text-gray-700 uppercase">Tools by Category</h4>
+                  <div className="space-y-2">
+                    <Link to="/loan-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Loan & EMI Tools</Link>
+                    <Link to="/tax-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Tax Planning Tools</Link>
+                    <Link to="/gst-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ GST Tools</Link>
+                    <Link to="/insurance-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Insurance Calculators</Link>
+                    <Link to="/corporate-finance" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Corporate Finance</Link>
+                    <Link to="/gold-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Gold Investment Tools</Link>
+                    <Link to="/tools" className="block text-sm font-semibold text-orange-600 hover:text-orange-800 hover:underline mt-3">Browse All Categories →</Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Dynamic Rotating Categories - Refreshes Every 10 Seconds */}
-        <section className={`py-16 ${theme === 'dark' ? 'bg-slate-950/50' : 'bg-gradient-to-br from-blue-50 to-purple-50'}`}>
+        {/* Professional Discover Section with Cross-Links */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="text-center mb-12">
-              <h2 className={`text-4xl font-black mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                ✨ {language === 'en' ? 'Discover More' : 'और खोजें'}
+              <h2 className="text-4xl font-bold mb-3 text-gray-900">
+                ✨ {language === 'en' ? 'Discover Financial Tools' : 'वित्तीय उपकरण खोजें'}
               </h2>
-              <p className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                {language === 'en' ? 'Content refreshes every 10 seconds • Explore our platform' : 'हर 10 सेकंड में नया कंटेंट'}
+              <p className="text-lg text-gray-600 mb-4">
+                {language === 'en' ? 'Comprehensive resources for every financial decision' : 'हर वित्तीय निर्णय के लिए संसाधन'}
               </p>
+              {/* Top Category Links */}
+              <div className="flex flex-wrap justify-center gap-2">
+                <Link to="/calculators/sip-calculator" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700">
+                  📈 SIP Calculator
+                </Link>
+                <Link to="/calculators/home-loan-calculator" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700">
+                  🏠 Home Loan
+                </Link>
+                <Link to="/tools/income-tax-calculator" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700">
+                  📄 Income Tax
+                </Link>
+                <Link to="/learn/gold-loans" className="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700">
+                  🏆 Learn Gold Loans
+                </Link>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Category 1: Calculators */}
-                <motion.div
+              {/* Category 1: Top Calculators with Internal Links */}
+              <motion.div
                 key={`calc-${rotationKey}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`rounded-2xl p-6 border-2 ${
-                  theme === 'dark'
-                    ? 'bg-gradient-to-br from-blue-900/40 to-cyan-900/40 border-blue-500/30'
-                    : 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-300'
-                }`}>
+                className="rounded-2xl p-6 border border-blue-200 bg-white shadow-md"
+              >
                 <div className="flex items-center gap-3 mb-4">
                   <Calculator className={`w-8 h-8 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
                   <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-blue-300' : 'text-blue-700'}`}>
