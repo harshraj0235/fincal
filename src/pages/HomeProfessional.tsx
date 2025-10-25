@@ -278,69 +278,9 @@ const HomeProfessional: React.FC = () => {
         canonicalUrl="https://moneycal.in"
       />
 
-      <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'}`}>
+      <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'}`} style={{ paddingTop: '72px' }}>
         
-        {/* DYNAMIC Navbar */}
-        <nav className={`relative z-40 ${theme === 'dark' ? 'bg-slate-900/95' : 'bg-white/95'} backdrop-blur-lg sticky top-0 shadow-lg border-b ${theme === 'dark' ? 'border-white/10' : 'border-gray-200'}`} style={{ minHeight: '72px', contain: 'layout style paint' }}>
-          <div className="max-w-7xl mx-auto px-4 py-3">
-            <div className="flex justify-between items-center">
-              <Link to="/" className="flex items-center gap-3 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                  <span className="text-white font-black text-2xl">💰</span>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    MoneyCal.in
-                  </div>
-                  <div className="text-xs text-gray-600 -mt-1 hidden sm:block">Smart Financial Tools</div>
-                </div>
-              </Link>
-
-              <div className="hidden lg:flex items-center gap-1">
-                {mainSections.slice(0, 6).map((item, idx) => (
-                  <Link key={idx} to={item.path} className={`flex items-center gap-2 px-3 py-2 rounded-lg font-semibold text-sm transition-colors ${theme === 'dark' ? 'text-gray-300 hover:bg-slate-700' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'}`}>
-                    <span className="text-lg">{item.emoji}</span>
-                    <span>{item.name}</span>
-                  </Link>
-                ))}
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <Link to="/learn" className="hidden md:flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg transition-shadow">
-                  <BookOpen className="w-4 h-4" />
-                  MoneyLearn
-                </Link>
-                <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-3 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-xl" aria-label="Menu">
-                  {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                </button>
-                <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className={`hidden md:block p-2.5 rounded-lg ${theme === 'dark' ? 'bg-yellow-500 text-white' : 'bg-slate-700 text-white'}`} aria-label="Toggle theme">
-                  {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                </button>
-                <button onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')} className="hidden md:block px-3 py-2 rounded-lg text-sm font-bold bg-blue-600 text-white">
-                  <Globe className="w-4 h-4 inline mr-1" />
-                  {language === 'en' ? 'हिंदी' : 'EN'}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {mobileMenuOpen && (
-            <div className={`lg:hidden border-t ${theme === 'dark' ? 'border-white/10 bg-slate-800/95' : 'border-gray-200 bg-white/95'}`}>
-              <div className="px-4 py-4 space-y-1">
-                {mainSections.map((item, idx) => (
-                  <Link key={idx} to={item.path} onClick={() => setMobileMenuOpen(false)} className={`flex items-center gap-3 px-4 py-3 rounded-lg font-semibold text-sm ${theme === 'dark' ? 'bg-slate-700/60 text-white' : 'bg-gray-100 text-gray-900 hover:bg-blue-50'}`}>
-                    <span className="text-2xl">{item.emoji}</span>
-                    <span>{item.name}</span>
-                  </Link>
-                ))}
-                <Link to="/learn" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold mt-2">
-                  <BookOpen className="w-5 h-5" />
-                  MoneyLearn
-                </Link>
-              </div>
-            </div>
-          )}
-        </nav>
+        {/* Navbar handled by Layout component - No duplicate navbar here */}
 
         {/* Hero */}
         <section className="pt-24 pb-16 px-4" style={{ minHeight: '650px' }}>
@@ -393,22 +333,36 @@ const HomeProfessional: React.FC = () => {
               )}
               
               {showSearchResults && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-gray-200 max-h-96 overflow-y-auto z-50">
-                  <div className="p-4">
-                    {searchResults.map((result, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => { navigate(result.path); setSearchQuery(''); setShowSearchResults(false); }}
-                        className="w-full text-left px-4 py-3 hover:bg-blue-50 transition-colors border-b border-gray-100 last:border-0 flex items-center gap-3"
-                      >
-                        <span className="text-2xl">{result.emoji}</span>
-                        <div className="flex-1">
-                          <div className="font-semibold text-gray-900">{result.name}</div>
-                          <div className="text-sm text-gray-600">{result.category}</div>
-                        </div>
-                        <ChevronRight className="w-5 h-5 text-gray-400" />
-                      </button>
-                    ))}
+                <div className={`absolute top-full left-0 right-0 mt-4 rounded-3xl shadow-2xl border-2 max-h-[70vh] overflow-y-auto z-50 ${theme === 'dark' ? 'bg-slate-900/98 border-white/20 backdrop-blur-xl' : 'bg-white/98 border-gray-300 backdrop-blur-xl'}`}>
+                  <div className="p-5">
+                    <div className={`px-4 py-3 font-bold mb-3 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                      ✨ {searchResults.length} {language === 'en' ? 'Results Found - Click to Open' : 'परिणाम'}
+                    </div>
+                    <div className="space-y-2">
+                      {searchResults.map((result, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => { navigate(result.path); setSearchQuery(''); setShowSearchResults(false); }}
+                          className={`w-full flex items-center gap-4 px-5 py-5 text-left rounded-2xl border-2 transition-all hover:scale-[1.02] ${theme === 'dark' ? 'bg-slate-800/80 border-white/10 hover:border-blue-500/70' : 'bg-white border-gray-200 hover:border-blue-500 hover:shadow-lg'}`}
+                        >
+                          <div className="text-4xl flex-shrink-0">{result.emoji}</div>
+                          <div className="flex-1 min-w-0">
+                            <div className={`font-bold text-lg mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                              {result.name}
+                            </div>
+                            <div className="flex items-center gap-2.5 flex-wrap">
+                              <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-xs font-bold">
+                                {result.category}
+                              </span>
+                              <span className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-600'}`}>
+                                {result.path}
+                              </span>
+                            </div>
+                          </div>
+                          <ChevronRight className={`w-7 h-7 flex-shrink-0 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -416,7 +370,7 @@ const HomeProfessional: React.FC = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Link to="/calculators/emi-calculator" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-lg hover:shadow-xl transition-shadow">
+              <Link to="/calculators" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-lg hover:shadow-xl transition-shadow">
                 <Calculator className="w-5 h-5" />
                 {language === 'en' ? 'Start Calculating Free' : 'गणना शुरू करें'}
               </Link>

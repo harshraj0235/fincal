@@ -20,7 +20,7 @@ export const ProfessionalNavbar: React.FC = () => {
   const navLinks = [
     { name: 'Home', path: '/', icon: Home },
     { name: 'Calculators', path: '/calculators', icon: Calculator },
-    { name: 'Investment', path: '/finance-tools', icon: TrendingUp },
+    { name: 'Finance', path: '/finance-tools', icon: TrendingUp },
     { name: 'Learn', path: '/learn', icon: BookOpen },
     { name: 'Blog', path: '/blog', icon: Newspaper },
     { name: 'Tools', path: '/tools', icon: Settings },
@@ -73,12 +73,12 @@ export const ProfessionalNavbar: React.FC = () => {
 
           {/* Right Side - Desktop */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="tel:+919876543210" className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 transition-colors">
-              <Phone className="w-4 h-4" />
-              <span>+91 98765 43210</span>
-            </a>
+            <Link to="/learn" className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg transition-shadow">
+              <BookOpen className="w-4 h-4" />
+              MoneyLearn
+            </Link>
             <Link
-              to="/calculators/emi-calculator"
+              to="/calculators"
               className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-shadow"
             >
               <Calculator className="w-4 h-4" />
@@ -120,27 +120,23 @@ export const ProfessionalNavbar: React.FC = () => {
                 );
               })}
               
-              {/* Mobile CTA */}
+              {/* Mobile CTAs */}
               <Link
-                to="/calculators/emi-calculator"
+                to="/learn"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 px-4 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold mt-2"
+                className="flex items-center justify-center gap-2 px-4 py-3.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold mt-2"
+              >
+                <BookOpen className="w-5 h-5" />
+                MoneyLearn
+              </Link>
+              <Link
+                to="/calculators"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 px-4 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold"
               >
                 <Calculator className="w-5 h-5" />
                 Calculate Now
               </Link>
-
-              {/* Contact Info - Mobile */}
-              <div className="pt-4 mt-4 border-t border-gray-200 space-y-2">
-                <a href="tel:+919876543210" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600">
-                  <Phone className="w-4 h-4" />
-                  +91 98765 43210
-                </a>
-                <a href="mailto:support@moneycal.in" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600">
-                  <Mail className="w-4 h-4" />
-                  support@moneycal.in
-                </a>
-              </div>
             </div>
           </div>
         )}
