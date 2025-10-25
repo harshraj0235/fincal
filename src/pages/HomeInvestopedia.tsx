@@ -7,11 +7,11 @@ import {
   Sun, Moon, X, Flame, Menu, Clock, Sparkles, Heart, CheckCircle,
   TrendingDown, DollarSign, Home, PiggyBank, FileText, Target,
   BarChart3, Gift, Building, Umbrella, PartyPopper, HelpCircle,
-  Rocket, Bell, Calendar, Tag
+  Rocket, Bell, Calendar, Tag, Lock, BadgeCheck, Users, TrendingUpIcon
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import { blogPosts as blogPosts0 } from '../data/blogData';
-import { blogPosts as blogPosts1 } from '../data/blogData1';
+import { loadBlogData } from '../data/lazyBlogData';
+import TrustBadges from '../components/TrustBadges';
 
 // Get current date
 const getCurrentDate = () => {
@@ -23,7 +23,7 @@ const getCurrentDate = () => {
 };
 
 // COMPREHENSIVE Search Database - ALL 107 Calculators + More
-const buildSearchDatabase = () => {
+const buildSearchDatabase = (blogPosts: any[] = []) => {
   const calculators = [
     // Investment (20+)
     { name: 'SIP Calculator', path: '/calculators/sip-calculator', category: 'Investment', emoji: '📈', keywords: 'sip mutual fund systematic' },
@@ -121,20 +121,13 @@ const buildSearchDatabase = () => {
     { name: 'Inflation Adjusted SIP', path: '/calculators/inflation-adjusted-sip-calculator', category: 'Investment', emoji: '📊', keywords: 'inflation adjusted sip' },
     { name: 'Financial Goal Calculator', path: '/calculators/financial-goal-calculator', category: 'Planning', emoji: '🎯', keywords: 'financial goal planning' },
     
-    // Blogs
-    ...blogPosts0.slice(0, 20).map(post => ({ 
-      name: post.title, 
-      path: `/blog/${post.slug}`, 
+    // Blogs (loaded dynamically)
+    ...blogPosts.slice(0, 30).map((post: any) => ({ 
+      name: post?.title || '', 
+      path: `/blog/${post?.slug || ''}`, 
       category: 'Blog', 
       emoji: '📰',
-      keywords: post.categories.join(' ')
-    })),
-    ...blogPosts1.slice(0, 20).map(post => ({ 
-      name: post.title, 
-      path: `/blog/${post.slug}`, 
-      category: 'Blog', 
-      emoji: '📰',
-      keywords: post.categories.join(' ')
+      keywords: post?.categories?.join(' ') || ''
     }))
   ];
   
@@ -148,10 +141,23 @@ const HomeInvestopedia: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [rotationKey, setRotationKey] = useState(0);
+  const [blogPostsData, setBlogPostsData] = useState<any[]>([]);
+  const [isLoadingBlogs, setIsLoadingBlogs] = useState(true);
+
+  // Lazy load blog data
+  useEffect(() => {
+    loadBlogData().then(data => {
+      const allPosts = [...(data.blogPosts0 || []), ...(data.blogPosts1 || [])];
+      setBlogPostsData(allPosts);
+      setIsLoadingBlogs(false);
+    }).catch(() => {
+      setIsLoadingBlogs(false);
+    });
+  }, []);
   const navigate = useNavigate();
   const currentDate = getCurrentDate();
 
-  const searchDatabase = useMemo(() => buildSearchDatabase(), []);
+  const searchDatabase = useMemo(() => buildSearchDatabase(blogPostsData), [blogPostsData]);
 
   // Auto-refresh random content every 10 seconds
   useEffect(() => {
@@ -269,15 +275,15 @@ const HomeInvestopedia: React.FC = () => {
       { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', desc: 'Complete yearly calendar', events: '365' }
     ],
     blogs: [
-      ...blogPosts0.slice(0, 10).map(post => ({ 
-        name: post.title, 
-        path: `/blog/${post.slug}`, 
+      ...blogPostsData.slice(0, 10).map((post: any) => ({ 
+        name: post?.title || '', 
+        path: `/blog/${post?.slug || ''}`, 
         emoji: '📰', 
-        desc: post.excerpt.slice(0, 55) + '...',
-        category: post.categories[0]
+        desc: (post?.excerpt || '').slice(0, 55) + '...',
+        category: post?.categories?.[0] || 'Finance'
       }))
     ]
-  }), []);
+  }), [blogPostsData]);
 
   // COMPREHENSIVE DATA POOLS - All content from entire codebase
   const allPlatformCategories = useMemo(() => [
@@ -1139,6 +1145,9 @@ const HomeInvestopedia: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Trust & Credibility Section */}
+        <TrustBadges />
 
         {/* Footer CTA */}
         <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
