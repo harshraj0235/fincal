@@ -469,9 +469,9 @@ const HomeInvestopedia: React.FC = () => {
         </div>
 
         {/* Top Navigation - Floating Style */}
-        <nav className={`relative z-50 ${
-          theme === 'dark' ? 'bg-slate-900/98' : 'bg-white/98'
-        } backdrop-blur-xl sticky top-0 shadow-2xl border-b ${theme === 'dark' ? 'border-white/10' : 'border-gray-200'}`}>
+        <nav className={`relative z-40 ${
+          theme === 'dark' ? 'bg-slate-900/95' : 'bg-white/95'
+        } backdrop-blur-lg sticky top-0 shadow-lg border-b ${theme === 'dark' ? 'border-white/10' : 'border-gray-200'}`} style={{ minHeight: '64px' }}>
           <div className="max-w-7xl mx-auto px-4 py-3">
             <div className="flex justify-between items-center">
               {/* Logo */}
@@ -507,7 +507,10 @@ const HomeInvestopedia: React.FC = () => {
                 {/* Mobile Menu */}
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="lg:hidden p-3 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-xl active:scale-90 transition-all"
+                  className="lg:hidden p-3 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-xl transition-colors"
+                  aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={mobileMenuOpen}
+                  aria-controls="mobile-menu"
                 >
                   {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                 </button>
@@ -536,35 +539,34 @@ const HomeInvestopedia: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Dropdown */}
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                className={`lg:hidden border-t ${theme === 'dark' ? 'border-white/10 bg-slate-800/98' : 'border-gray-200 bg-white/98'}`}
-              >
-                <div className="px-4 py-4 grid grid-cols-2 gap-2.5">
-                  {mainSections.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      to={item.path}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center gap-2 px-4 py-3 rounded-xl font-bold text-sm active:scale-95 transition-all ${
-                        theme === 'dark'
-                          ? 'bg-slate-700/60 text-white'
-                          : 'bg-gray-100 text-gray-900'
-                      }`}
-                    >
-                      <span className="text-2xl">{item.emoji}</span>
-                      <span>{item.name}</span>
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Mobile Menu Dropdown - No animations for better performance */}
+          {mobileMenuOpen && (
+            <div 
+              id="mobile-menu"
+              className={`lg:hidden border-t ${theme === 'dark' ? 'border-white/10 bg-slate-800/95' : 'border-gray-200 bg-white/95'}`}
+              role="navigation"
+              aria-label="Mobile navigation"
+            >
+              <div className="px-4 py-4 grid grid-cols-2 gap-2.5">
+                {mainSections.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center gap-2 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
+                      theme === 'dark'
+                        ? 'bg-slate-700/60 text-white hover:bg-slate-600/60'
+                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    }`}
+                    aria-label={`Navigate to ${item.name}`}
+                  >
+                    <span className="text-2xl" aria-hidden="true">{item.emoji}</span>
+                    <span>{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </nav>
 
         {/* Hero + Search */}
