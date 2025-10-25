@@ -10,10 +10,12 @@ import {
   CreditCard, Landmark, Wallet, Receipt,
   LineChart, BarChart, Activity,
   Users, UserCheck, Building2, Car, Palmtree,
-  GraduationCap, Trophy, Gem, RefreshCw, Grid
+  GraduationCap, Trophy, Gem, RefreshCw, Grid,
+  BookOpen, ArrowRight, Flame, Zap
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { blogPosts as blogPosts0 } from '../data/blogData';
+import { blogPosts as blogPosts1 } from '../data/blogData1';
 
 /**
  * ╔═══════════════════════════════════════════════════════════════════╗
@@ -190,13 +192,27 @@ const buildComprehensiveSearchDatabase = (): SearchItem[] => {
 
 const HomeInvestopedia: React.FC = () => {
   // ═══ STATE MANAGEMENT ═══
+  const [language, setLanguage] = useState<'en' | 'hi'>('en');
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [rotationKey, setRotationKey] = useState(0);
   const navigate = useNavigate();
+
+  // Auto-refresh random content every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRotationKey(prev => prev + 1);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Helper function - Get random items from any array
+  const getRandomItems = <T,>(pool: T[], count: number): T[] => {
+    const shuffled = [...pool].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+  };
 
   // ═══ SEARCH DATABASE ═══
   const searchDatabase = useMemo(() => buildComprehensiveSearchDatabase(), []);
@@ -306,6 +322,40 @@ const HomeInvestopedia: React.FC = () => {
     return groups;
   }, [searchDatabase]);
 
+  // ═══ DYNAMIC CONTENT POOLS ═══
+  const categoryPools = useMemo(() => ({
+    calculators: searchDatabase.filter(item => ['Investment', 'Loan', 'Salary', 'Finance'].includes(item.category)).slice(0, 20),
+    learning: searchDatabase.filter(item => item.category === 'Learn').slice(0, 10),
+    festivals: searchDatabase.filter(item => item.category === 'Festival').slice(0, 20),
+    blogs: blogPosts0.slice(0, 20).map(post => ({ 
+      name: post.title, 
+      path: `/blog/${post.slug}`, 
+      emoji: '📰', 
+      desc: post.excerpt.slice(0, 80) + '...',
+      category: post.categories[0]
+    }))
+  }), [searchDatabase]);
+
+  // Dynamic rotating content - changes every 10 seconds
+  const dynamicContent = useMemo(() => ({
+    calculators: getRandomItems(categoryPools.calculators, 8),
+    learning: getRandomItems(categoryPools.learning, 6),
+    festivals: getRandomItems(categoryPools.festivals, 8),
+    blogs: getRandomItems(categoryPools.blogs, 6)
+  }), [categoryPools, rotationKey]);
+
+  // Quick access categories
+  const quickAccessCategories = useMemo(() => [
+    { name: language === 'en' ? 'Calculators' : 'कैलकुलेटर', path: '/calculators', emoji: '🧮', count: '107', color: 'from-blue-500 to-cyan-500' },
+    { name: language === 'en' ? 'GST Tools' : 'जीएसटी', path: '/gst-tools', emoji: '💰', count: '20+', color: 'from-green-500 to-emerald-500' },
+    { name: language === 'en' ? 'Tax Tools' : 'कर', path: '/tax-tools', emoji: '📄', count: '15+', color: 'from-purple-500 to-pink-500' },
+    { name: language === 'en' ? 'Loan Tools' : 'ऋण', path: '/loan-tools', emoji: '🏠', count: '12+', color: 'from-orange-500 to-red-500' },
+    { name: language === 'en' ? 'Festival' : 'त्योहार', path: '/festival-tools', emoji: '🎉', count: '30+', color: 'from-yellow-500 to-orange-500' },
+    { name: language === 'en' ? 'Learn' : 'सीखें', path: '/learn', emoji: '🎓', count: '40', color: 'from-indigo-500 to-purple-500' },
+    { name: language === 'en' ? 'Blog' : 'ब्लॉग', path: '/blog', emoji: '📰', count: '150+', color: 'from-pink-500 to-rose-500' },
+    { name: language === 'en' ? 'Insurance' : 'बीमा', path: '/insurance-tools', emoji: '🛡️', count: '8+', color: 'from-teal-500 to-cyan-500' }
+  ], [language]);
+
   // ═══ RENDER ═══
   return (
     <>
@@ -411,6 +461,22 @@ const HomeInvestopedia: React.FC = () => {
 
               {/* Actions */}
               <div className="flex items-center gap-2">
+                {/* Language Toggle */}
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                  className={`px-3 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-1 ${
+                    theme === 'dark'
+                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500'
+                      : 'bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600'
+                  }`}
+                >
+                  <Globe className="w-4 h-4" />
+                  {language === 'en' ? 'हिंदी' : 'EN'}
+                </motion.button>
+
+                {/* Theme Toggle */}
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -424,6 +490,7 @@ const HomeInvestopedia: React.FC = () => {
                   {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
                 </motion.button>
 
+                {/* Mobile Menu */}
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   className={`lg:hidden p-2 rounded-lg ${
@@ -495,14 +562,21 @@ const HomeInvestopedia: React.FC = () => {
                     ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]'
                     : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 drop-shadow-[0_0_20px_rgba(147,51,234,0.3)]'
                 }`}>
-                  Smart Finance<br/>Made Simple
-              </h1>
+                  {language === 'en' ? (
+                    <>Smart Finance<br/>Made Simple</>
+                  ) : (
+                    <>स्मार्ट फाइनेंस<br/>आसान बनाया</>
+                  )}
+                </h1>
                 <p className={`text-xl sm:text-2xl md:text-3xl font-bold ${
                   theme === 'dark' 
                     ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300' 
                     : 'text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-purple-700'
                 }`}>
-                  500+ Free Tools • AI-Powered Search • Trusted by 1M+ Indians
+                  {language === 'en' 
+                    ? '500+ Free Tools • AI-Powered Search • Trusted by 1M+ Indians'
+                    : '500+ मुफ्त टूल्स • AI खोज • 1M+ भारतीयों द्वारा विश्वसनीय'
+                  }
                 </p>
               </motion.div>
 
@@ -517,11 +591,14 @@ const HomeInvestopedia: React.FC = () => {
                   <div className="absolute left-6 top-1/2 -translate-y-1/2">
                     <Search className={`w-6 h-6 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
                   </div>
-                      <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="🔍 Search anything... EMI, SIP, GST, Diwali, Tax, Loan..."
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder={language === 'en' 
+                      ? '🔍 Search anything... EMI, SIP, GST, Diwali, Tax, Loan...'
+                      : '🔍 कुछ भी खोजें... EMI, SIP, GST, दिवाली, टैक्स, लोन...'
+                    }
                     className={`w-full pl-16 pr-16 py-6 text-lg sm:text-xl rounded-2xl border-2 focus:ring-4 outline-none font-medium shadow-2xl transition-all ${
                       theme === 'dark'
                         ? 'bg-gray-800/90 border-gray-700 focus:border-blue-500 focus:ring-blue-500/30 text-white placeholder-gray-500'
@@ -809,7 +886,7 @@ const HomeInvestopedia: React.FC = () => {
                   className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-2"
                 >
                   <Rocket className="w-5 h-5" />
-                  Explore 500+ Tools
+                  {language === 'en' ? 'Explore 500+ Tools' : '500+ टूल्स देखें'}
                 </Link>
                 <Link
                   to="/learn"
@@ -820,7 +897,7 @@ const HomeInvestopedia: React.FC = () => {
                   }`}
                 >
                   <GraduationCap className="w-5 h-5" />
-                  Start Learning
+                  {language === 'en' ? 'Start Learning' : 'सीखना शुरू करें'}
                 </Link>
               </motion.div>
 
@@ -856,15 +933,50 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
+        {/* ═══ QUICK ACCESS CATEGORIES ═══ */}
+        <section className={`py-12 ${theme === 'dark' ? 'bg-gray-800/30' : 'bg-white/70'} border-y ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                ⚡ {language === 'en' ? 'Quick Access' : 'त्वरित पहुंच'}
+              </h2>
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                {language === 'en' ? 'Jump to your favorite section' : 'अपने पसंदीदा अनुभाग पर जाएं'}
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4">
+              {quickAccessCategories.map((cat, idx) => (
+                <Link
+                  key={idx}
+                  to={cat.path}
+                  className={`group p-5 rounded-xl text-center transition-all hover:scale-110 active:scale-95 ${
+                    theme === 'dark'
+                      ? 'bg-gray-800/70 border-2 border-gray-700 hover:border-purple-500'
+                      : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-lg hover:shadow-xl'
+                  }`}
+                >
+                  <div className="text-4xl mb-2">{cat.emoji}</div>
+                  <div className={`text-xs font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                    {cat.name}
+                  </div>
+                  <div className={`text-xs px-2 py-1 rounded-full inline-block font-bold bg-gradient-to-r ${cat.color} text-white`}>
+                    {cat.count}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ═══ TRENDING & POPULAR ═══ */}
         <section className={`py-16 ${theme === 'dark' ? 'bg-gray-900/50' : 'bg-white/50'}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className={`text-4xl font-black mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                🔥 Trending Now
+                🔥 {language === 'en' ? 'Trending Now' : 'ट्रेंडिंग अभी'}
               </h2>
               <p className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                Most popular tools used by 1M+ Indians
+                {language === 'en' ? 'Most popular tools used by 1M+ Indians' : '1M+ भारतीयों द्वारा उपयोग किए जाने वाले सबसे लोकप्रिय टूल'}
               </p>
             </div>
 
@@ -913,13 +1025,13 @@ const HomeInvestopedia: React.FC = () => {
           <section className={`py-16 ${theme === 'dark' ? 'bg-gradient-to-br from-green-900/20 to-emerald-900/20' : 'bg-gradient-to-br from-green-50 to-emerald-50'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-                <h2 className={`text-4xl font-black mb-4 ${theme === 'dark' ? 'text-green-400' : 'text-green-700'}`}>
-                  ✨ New Tools
+              <h2 className={`text-4xl font-black mb-4 ${theme === 'dark' ? 'text-green-400' : 'text-green-700'}`}>
+                ✨ {language === 'en' ? 'New Tools' : 'नए टूल्स'}
               </h2>
-                <p className={`text-lg ${theme === 'dark' ? 'text-green-300' : 'text-green-600'}`}>
-                  Latest additions to our platform
-                </p>
-                  </div>
+              <p className={`text-lg ${theme === 'dark' ? 'text-green-300' : 'text-green-600'}`}>
+                {language === 'en' ? 'Latest additions to our platform' : 'हमारे प्लेटफॉर्म में नवीनतम जोड़'}
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {newItems.map((item, idx) => (
@@ -957,15 +1069,223 @@ const HomeInvestopedia: React.FC = () => {
         </section>
         )}
 
+        {/* ═══ DYNAMIC ROTATING CONTENT ═══ */}
+        <section className={`py-16 ${theme === 'dark' ? 'bg-gradient-to-br from-purple-900/20 to-blue-900/20' : 'bg-gradient-to-br from-purple-50 to-blue-50'}`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className={`text-4xl font-black mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                ✨ {language === 'en' ? 'Discover More Tools' : 'और टूल्स खोजें'}
+              </h2>
+              <p className={`text-lg flex items-center justify-center gap-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                <Clock className="w-5 h-5 text-purple-500 animate-spin" style={{ animationDuration: '10s' }} />
+                {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में बदलता है'}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Top Calculators */}
+              <motion.div
+                key={`calc-${rotationKey}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`rounded-2xl p-6 border-2 ${
+                  theme === 'dark'
+                    ? 'bg-gradient-to-br from-blue-900/40 to-cyan-900/40 border-blue-500/30'
+                    : 'bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-300'
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <Calculator className={`w-7 h-7 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
+                  <h3 className={`text-lg font-black ${theme === 'dark' ? 'text-blue-300' : 'text-blue-700'}`}>
+                    {language === 'en' ? 'Top Calculators' : 'टॉप कैलकुलेटर'}
+                  </h3>
+                </div>
+                <div className="space-y-2">
+                  {dynamicContent.calculators.slice(0, 6).map((item: any, idx: number) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      className={`block p-3 rounded-xl transition-all hover:scale-105 active:scale-95 ${
+                        theme === 'dark'
+                          ? 'bg-gray-800/60 hover:bg-gray-700/60'
+                          : 'bg-white hover:shadow-md border border-gray-200'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{item.emoji}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className={`font-bold text-sm ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                            {item.name}
+                          </div>
+                          <div className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                            {item.description?.slice(0, 40) || item.category}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Learning Platform */}
+              <motion.div
+                key={`learn-${rotationKey}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className={`rounded-2xl p-6 border-2 ${
+                  theme === 'dark'
+                    ? 'bg-gradient-to-br from-purple-900/40 to-pink-900/40 border-purple-500/30'
+                    : 'bg-gradient-to-br from-purple-50 to-pink-50 border-purple-300'
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <BookOpen className={`w-7 h-7 ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`} />
+                  <h3 className={`text-lg font-black ${theme === 'dark' ? 'text-purple-300' : 'text-purple-700'}`}>
+                    {language === 'en' ? 'Learn Finance' : 'वित्त सीखें'}
+                  </h3>
+                </div>
+                <div className="space-y-2">
+                  {dynamicContent.learning.map((item: any, idx: number) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      className={`block p-3 rounded-xl transition-all hover:scale-105 active:scale-95 ${
+                        theme === 'dark'
+                          ? 'bg-gray-800/60 hover:bg-gray-700/60'
+                          : 'bg-white hover:shadow-md border border-gray-200'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{item.emoji}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className={`font-bold text-sm ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                            {item.name}
+                          </div>
+                          <div className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                            {item.description?.slice(0, 40) || item.category}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Festival Tools */}
+              <motion.div
+                key={`festival-${rotationKey}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className={`rounded-2xl p-6 border-2 ${
+                  theme === 'dark'
+                    ? 'bg-gradient-to-br from-orange-900/40 to-red-900/40 border-orange-500/30'
+                    : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-300'
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <PartyPopper className={`w-7 h-7 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-600'}`} />
+                  <h3 className={`text-lg font-black ${theme === 'dark' ? 'text-orange-300' : 'text-orange-700'}`}>
+                    {language === 'en' ? 'Festival Tools' : 'त्योहार टूल्स'}
+                  </h3>
+                </div>
+                <div className="space-y-2">
+                  {dynamicContent.festivals.slice(0, 6).map((item: any, idx: number) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      className={`block p-3 rounded-xl transition-all hover:scale-105 active:scale-95 ${
+                        theme === 'dark'
+                          ? 'bg-gray-800/60 hover:bg-gray-700/60'
+                          : 'bg-white hover:shadow-md border border-gray-200'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{item.emoji}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className={`font-bold text-sm ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                            {item.name}
+                          </div>
+                          <div className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                            {item.description?.slice(0, 40) || item.category}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Latest Blogs */}
+              <motion.div
+                key={`blog-${rotationKey}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className={`rounded-2xl p-6 border-2 ${
+                  theme === 'dark'
+                    ? 'bg-gradient-to-br from-green-900/40 to-emerald-900/40 border-green-500/30'
+                    : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300'
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <Newspaper className={`w-7 h-7 ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`} />
+                  <h3 className={`text-lg font-black ${theme === 'dark' ? 'text-green-300' : 'text-green-700'}`}>
+                    {language === 'en' ? 'Latest Articles' : 'नवीनतम लेख'}
+                  </h3>
+                </div>
+                <div className="space-y-2">
+                  {dynamicContent.blogs.map((item: any, idx: number) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      className={`block p-3 rounded-xl transition-all hover:scale-105 active:scale-95 ${
+                        theme === 'dark'
+                          ? 'bg-gray-800/60 hover:bg-gray-700/60'
+                          : 'bg-white hover:shadow-md border border-gray-200'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{item.emoji}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className={`font-bold text-sm line-clamp-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                            {item.name}
+                          </div>
+                          <div className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                            {item.category}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Refresh Indicator */}
+            <div className="text-center mt-8">
+              <div className={`inline-flex items-center gap-2 px-5 py-3 rounded-full ${
+                theme === 'dark' ? 'bg-gray-800/60 text-gray-300' : 'bg-white text-gray-700 shadow-lg border-2 border-purple-200'
+              }`}>
+                <Sparkles className="w-5 h-5 text-yellow-500 animate-pulse" />
+                <span className="text-sm font-bold">
+                  {language === 'en' ? 'Content auto-refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ═══ ALL CATEGORIES ═══ */}
         <section className={`py-16 ${theme === 'dark' ? 'bg-gray-900/30' : 'bg-gray-50'}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className={`text-4xl font-black mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                📂 Explore by Category
+                📂 {language === 'en' ? 'Explore by Category' : 'श्रेणी के अनुसार देखें'}
               </h2>
               <p className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                Browse our comprehensive collection
+                {language === 'en' ? 'Browse our comprehensive collection' : 'हमारे व्यापक संग्रह को ब्राउज़ करें'}
               </p>
             </div>
 
@@ -1005,8 +1325,8 @@ const HomeInvestopedia: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className={`text-4xl font-black mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                🏆 Why Trust MoneyCal.in?
-                </h2>
+                🏆 {language === 'en' ? 'Why Trust MoneyCal.in?' : 'MoneyCal.in पर भरोसा क्यों करें?'}
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1038,28 +1358,45 @@ const HomeInvestopedia: React.FC = () => {
         </section>
 
         {/* ═══ FINAL CTA ═══ */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
-              🚀 Ready to Get Started?
+        <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 relative overflow-hidden">
+          {/* Animated Background */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute w-64 h-64 bg-white/30 rounded-full blur-3xl top-0 left-0 animate-pulse" />
+            <div className="absolute w-64 h-64 bg-white/30 rounded-full blur-3xl bottom-0 right-0 animate-pulse" style={{ animationDelay: '1s' }} />
+          </div>
+          
+          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-2xl">
+                🚀 {language === 'en' ? 'Ready to Get Started?' : 'शुरू करने के लिए तैयार हैं?'}
               </h2>
-            <p className="text-2xl text-white/90 mb-8">
-              Join 1 Million+ Indians using India's smartest financial platform
+              <p className="text-2xl text-white/95 mb-8 font-bold">
+                {language === 'en' 
+                  ? 'Join 1 Million+ Indians using India\'s smartest financial platform'
+                  : '1 मिलियन+ भारतीयों के साथ भारत के सबसे स्मार्ट फाइनेंशियल प्लेटफॉर्म में शामिल हों'
+                }
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/tools"
-                className="px-10 py-5 bg-white text-purple-600 rounded-2xl font-black text-xl shadow-2xl hover:scale-105 transition-all"
-              >
-                Explore All Tools
+                <Link
+                  to="/tools"
+                  className="px-10 py-5 bg-white text-purple-600 rounded-2xl font-black text-xl shadow-2xl hover:scale-105 hover:shadow-3xl transition-all flex items-center justify-center gap-2"
+                >
+                  <Rocket className="w-6 h-6" />
+                  {language === 'en' ? 'Explore All Tools' : 'सभी टूल्स देखें'}
                 </Link>
-              <Link
-                to="/learn"
-                className="px-10 py-5 border-2 border-white text-white rounded-2xl font-black text-xl hover:bg-white/10 transition-all"
-              >
-                Start Learning Free
+                <Link
+                  to="/learn"
+                  className="px-10 py-5 border-2 border-white text-white rounded-2xl font-black text-xl hover:bg-white/20 hover:scale-105 transition-all flex items-center justify-center gap-2"
+                >
+                  <GraduationCap className="w-6 h-6" />
+                  {language === 'en' ? 'Start Learning Free' : 'मुफ्त सीखना शुरू करें'}
                 </Link>
               </div>
+            </motion.div>
           </div>
         </section>
 
