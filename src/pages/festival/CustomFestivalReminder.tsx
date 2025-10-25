@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bell, Calendar, Clock, Plus, Trash2, Edit, Share2, Download, Star, AlertCircle, Check } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';

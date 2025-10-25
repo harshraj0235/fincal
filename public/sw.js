@@ -3,13 +3,11 @@ const CACHE_NAME = 'moneycal-v1.0.1';
 const STATIC_CACHE = 'moneycal-static-v1.0.1';
 const DYNAMIC_CACHE = 'moneycal-dynamic-v1.0.1';
 
-// Minimal static assets to cache (avoid module scripts)
+// Minimal static assets to cache (avoid module scripts and images that don't exist)
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/favicon.ico',
-  '/android-chrome-192x192.png',
-  '/android-chrome-512x512.png'
+  '/favicon.ico'
 ];
 
 // API endpoints to cache
@@ -77,9 +75,13 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip module scripts and dynamic imports to avoid MIME type issues
-  if (request.destination === 'script' && url.pathname.includes('/assets/')) {
-    return; // Let browser handle module scripts natively
+  // Skip module scripts, stylesheets and dynamic imports to avoid MIME type issues
+  if (request.destination === 'script' || request.destination === 'style') {
+    return; // Let browser handle scripts and styles natively
+  }
+  
+  if (url.pathname.includes('/assets/')) {
+    return; // Never cache bundled assets
   }
 
   // Handle different types of requests

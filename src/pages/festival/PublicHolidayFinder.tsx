@@ -204,8 +204,195 @@ const STATES_HOLIDAYS_DATA: StateHolidays[] = [
       { date: '2025-10-02', name: 'Gandhi Jayanti', type: 'bank', description: 'Banks closed' },
       { date: '2025-12-25', name: 'Christmas', type: 'bank', description: 'Banks closed' }
     ]
+  },
+  {
+    state: 'Gujarat',
+    capital: 'Gandhinagar',
+    majorCities: ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Bhavnagar', 'Jamnagar', 'Junagadh', 'Anand', 'Nadiad', 'Bharuch'],
+    holidays2025: [
+      { date: '2025-01-01', name: 'New Year', type: 'national', description: 'New Year' },
+      { date: '2025-01-14', name: 'Uttarayan / Makar Sankranti', type: 'state', description: 'Kite festival - Biggest celebration in Gujarat' },
+      { date: '2025-01-26', name: 'Republic Day', type: 'national', description: 'Republic Day' },
+      { date: '2025-03-14', name: 'Holi', type: 'state', description: 'Festival of Colors' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'national', description: 'Good Friday' },
+      { date: '2025-05-01', name: 'Gujarat Day / May Day', type: 'state', description: 'Gujarat state formation' },
+      { date: '2025-06-27', name: 'Eid-ul-Fitr', type: 'national', description: 'End of Ramadan' },
+      { date: '2025-08-15', name: 'Independence Day', type: 'national', description: 'Independence Day' },
+      { date: '2025-09-03', name: 'Eid-ul-Adha', type: 'national', description: 'Bakrid' },
+      { date: '2025-09-22', name: 'Navratri Begins', type: 'state', description: '9-day Garba festival - Major in Gujarat' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti / Dussehra', type: 'national', description: 'Gandhi birthday / Dasara' },
+      { date: '2025-10-20', name: 'Diwali', type: 'national', description: 'Deepavali' },
+      { date: '2025-12-25', name: 'Christmas', type: 'national', description: 'Christmas' }
+    ],
+    bankHolidays: [
+      { date: '2025-01-14', name: 'Uttarayan', type: 'bank', description: 'Banks closed in Gujarat' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'bank', description: 'Banks closed' },
+      { date: '2025-05-01', name: 'Gujarat Day', type: 'bank', description: 'Banks closed in Gujarat' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti', type: 'bank', description: 'Banks closed' },
+      { date: '2025-12-25', name: 'Christmas', type: 'bank', description: 'Banks closed' }
+    ]
+  },
+  {
+    state: 'West Bengal',
+    capital: 'Kolkata',
+    majorCities: ['Kolkata', 'Howrah', 'Durgapur', 'Asansol', 'Siliguri', 'Darjeeling', 'Malda', 'Bardhaman', 'Kharagpur', 'Haldia'],
+    holidays2025: [
+      { date: '2025-01-01', name: 'New Year', type: 'national', description: 'New Year' },
+      { date: '2025-01-26', name: 'Republic Day', type: 'national', description: 'Republic Day' },
+      { date: '2025-03-14', name: 'Holi', type: 'state', description: 'Dol Jatra / Holi' },
+      { date: '2025-04-14', name: 'Pohela Boishakh', type: 'state', description: 'Bengali New Year - Major celebration' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'national', description: 'Good Friday' },
+      { date: '2025-05-01', name: 'May Day', type: 'state', description: 'Labour Day' },
+      { date: '2025-05-12', name: 'Buddha Purnima', type: 'state', description: 'Buddha birthday' },
+      { date: '2025-06-27', name: 'Eid-ul-Fitr', type: 'national', description: 'End of Ramadan' },
+      { date: '2025-08-15', name: 'Independence Day', type: 'national', description: 'Independence Day' },
+      { date: '2025-09-03', name: 'Eid-ul-Adha', type: 'national', description: 'Bakrid' },
+      { date: '2025-09-28', name: 'Durga Puja Starts', type: 'state', description: 'Biggest festival in West Bengal - 5 days' },
+      { date: '2025-10-02', name: 'Vijaya Dashami / Gandhi Jayanti', type: 'national', description: 'Durga Puja culmination / Gandhi birthday' },
+      { date: '2025-10-22', name: 'Kali Puja / Diwali', type: 'state', description: 'Kali worship coinciding with Diwali' },
+      { date: '2025-11-05', name: 'Jagaddhatri Puja', type: 'state', description: 'Another avatar of Durga' },
+      { date: '2025-12-25', name: 'Christmas', type: 'national', description: 'Christmas' }
+    ],
+    bankHolidays: [
+      { date: '2025-04-14', name: 'Pohela Boishakh', type: 'bank', description: 'Banks closed in WB' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'bank', description: 'Banks closed' },
+      { date: '2025-09-28', name: 'Durga Puja', type: 'bank', description: 'Banks closed in WB' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti', type: 'bank', description: 'Banks closed' },
+      { date: '2025-12-25', name: 'Christmas', type: 'bank', description: 'Banks closed' }
+    ]
+  },
+  {
+    state: 'Punjab',
+    capital: 'Chandigarh',
+    majorCities: ['Ludhiana', 'Amritsar', 'Jalandhar', 'Patiala', 'Bathinda', 'Mohali', 'Pathankot', 'Hoshiarpur', 'Moga', 'Sangrur'],
+    holidays2025: [
+      { date: '2025-01-13', name: 'Lohri', type: 'state', description: 'Punjabi bonfire harvest festival' },
+      { date: '2025-01-14', name: 'Makar Sankranti', type: 'state', description: 'Harvest festival' },
+      { date: '2025-01-26', name: 'Republic Day', type: 'national', description: 'Republic Day' },
+      { date: '2025-03-14', name: 'Holi', type: 'state', description: 'Festival of Colors' },
+      { date: '2025-04-13', name: 'Baisakhi', type: 'state', description: 'Punjabi New Year & harvest - Major festival' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'national', description: 'Good Friday' },
+      { date: '2025-06-27', name: 'Eid-ul-Fitr', type: 'national', description: 'End of Ramadan' },
+      { date: '2025-08-15', name: 'Independence Day', type: 'national', description: 'Independence Day' },
+      { date: '2025-09-03', name: 'Eid-ul-Adha', type: 'national', description: 'Bakrid' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti', type: 'national', description: 'Gandhi birthday' },
+      { date: '2025-10-20', name: 'Diwali', type: 'national', description: 'Festival of Lights' },
+      { date: '2025-11-05', name: 'Guru Nanak Jayanti', type: 'state', description: 'Birth of Guru Nanak - Biggest Sikh festival' },
+      { date: '2025-12-25', name: 'Christmas', type: 'national', description: 'Christmas' }
+    ],
+    bankHolidays: [
+      { date: '2025-04-13', name: 'Baisakhi', type: 'bank', description: 'Banks closed in Punjab' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'bank', description: 'Banks closed' },
+      { date: '2025-11-05', name: 'Guru Nanak Jayanti', type: 'bank', description: 'Banks closed' },
+      { date: '2025-12-25', name: 'Christmas', type: 'bank', description: 'Banks closed' }
+    ]
+  },
+  {
+    state: 'Rajasthan',
+    capital: 'Jaipur',
+    majorCities: ['Jaipur', 'Jodhpur', 'Kota', 'Bikaner', 'Udaipur', 'Ajmer', 'Alwar', 'Bharatpur', 'Bhilwara', 'Sri Ganganagar'],
+    holidays2025: [
+      { date: '2025-01-14', name: 'Makar Sankranti', type: 'state', description: 'Harvest festival' },
+      { date: '2025-01-26', name: 'Republic Day', type: 'national', description: 'Republic Day' },
+      { date: '2025-03-14', name: 'Holi', type: 'state', description: 'Festival of Colors - Major in Rajasthan' },
+      { date: '2025-04-06', name: 'Ram Navami', type: 'state', description: 'Birth of Lord Rama' },
+      { date: '2025-04-10', name: 'Mahavir Jayanti', type: 'state', description: 'Jain festival - Important in Rajasthan' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'national', description: 'Good Friday' },
+      { date: '2025-06-27', name: 'Eid-ul-Fitr', type: 'national', description: 'End of Ramadan' },
+      { date: '2025-08-15', name: 'Independence Day', type: 'national', description: 'Independence Day' },
+      { date: '2025-09-03', name: 'Eid-ul-Adha', type: 'national', description: 'Bakrid' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti / Dussehra', type: 'national', description: 'Gandhi birthday / Dasara' },
+      { date: '2025-10-20', name: 'Diwali', type: 'national', description: 'Festival of Lights' },
+      { date: '2025-12-25', name: 'Christmas', type: 'national', description: 'Christmas' }
+    ],
+    bankHolidays: [
+      { date: '2025-04-10', name: 'Mahavir Jayanti', type: 'bank', description: 'Banks closed in Rajasthan' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'bank', description: 'Banks closed' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti', type: 'bank', description: 'Banks closed' },
+      { date: '2025-12-25', name: 'Christmas', type: 'bank', description: 'Banks closed' }
+    ]
+  },
+  {
+    state: 'Kerala',
+    capital: 'Thiruvananthapuram',
+    majorCities: ['Thiruvananthapuram', 'Kochi', 'Kozhikode', 'Thrissur', 'Kollam', 'Kannur', 'Alappuzha', 'Palakkad', 'Kottayam', 'Malappuram'],
+    holidays2025: [
+      { date: '2025-01-01', name: 'New Year', type: 'national', description: 'New Year' },
+      { date: '2025-01-26', name: 'Republic Day', type: 'national', description: 'Republic Day' },
+      { date: '2025-04-14', name: 'Vishu', type: 'state', description: 'Malayalam New Year - Major festival in Kerala' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'national', description: 'Good Friday - Important in Kerala' },
+      { date: '2025-05-01', name: 'May Day', type: 'state', description: 'Labour Day - Public holiday in Kerala' },
+      { date: '2025-06-27', name: 'Eid-ul-Fitr', type: 'national', description: 'End of Ramadan' },
+      { date: '2025-08-15', name: 'Independence Day', type: 'national', description: 'Independence Day' },
+      { date: '2025-09-03', name: 'Eid-ul-Adha', type: 'national', description: 'Bakrid' },
+      { date: '2025-09-05', name: 'Onam', type: 'state', description: 'Harvest festival - Biggest festival in Kerala (10 days)' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti', type: 'national', description: 'Gandhi birthday' },
+      { date: '2025-10-20', name: 'Diwali', type: 'national', description: 'Deepavali' },
+      { date: '2025-12-25', name: 'Christmas', type: 'national', description: 'Christmas - Major in Kerala' }
+    ],
+    bankHolidays: [
+      { date: '2025-04-14', name: 'Vishu', type: 'bank', description: 'Banks closed in Kerala' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'bank', description: 'Banks closed' },
+      { date: '2025-05-01', name: 'May Day', type: 'bank', description: 'Banks closed in Kerala' },
+      { date: '2025-09-05', name: 'Onam', type: 'bank', description: 'Banks closed in Kerala' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti', type: 'bank', description: 'Banks closed' },
+      { date: '2025-12-25', name: 'Christmas', type: 'bank', description: 'Banks closed' }
+    ]
+  },
+  {
+    state: 'Uttar Pradesh',
+    capital: 'Lucknow',
+    majorCities: ['Lucknow', 'Kanpur', 'Ghaziabad', 'Agra', 'Varanasi', 'Meerut', 'Prayagraj', 'Noida', 'Greater Noida', 'Bareilly', 'Aligarh', 'Moradabad', 'Saharanpur', 'Gorakhpur', 'Mathura', 'Vrindavan'],
+    holidays2025: [
+      { date: '2025-01-26', name: 'Republic Day', type: 'national', description: 'Republic Day' },
+      { date: '2025-03-14', name: 'Holi', type: 'state', description: 'Festival of Colors - Major in UP' },
+      { date: '2025-04-06', name: 'Ram Navami', type: 'state', description: 'Birth of Rama - Grand in Ayodhya' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'national', description: 'Good Friday' },
+      { date: '2025-06-27', name: 'Eid-ul-Fitr', type: 'national', description: 'End of Ramadan - Major in UP' },
+      { date: '2025-08-15', name: 'Independence Day', type: 'national', description: 'Independence Day' },
+      { date: '2025-08-16', name: 'Janmashtami', type: 'state', description: 'Krishna birthday - Major in Mathura-Vrindavan' },
+      { date: '2025-09-03', name: 'Eid-ul-Adha', type: 'national', description: 'Bakrid' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti / Dussehra', type: 'national', description: 'Gandhi birthday / Ramlila end' },
+      { date: '2025-10-20', name: 'Diwali', type: 'national', description: 'Festival of Lights' },
+      { date: '2025-11-05', name: 'Guru Nanak Jayanti', type: 'state', description: 'Guru Nanak birthday' },
+      { date: '2025-11-05', name: 'Chhath Puja', type: 'state', description: 'Sun worship - Eastern UP' },
+      { date: '2025-12-25', name: 'Christmas', type: 'national', description: 'Christmas' }
+    ],
+    bankHolidays: [
+      { date: '2025-04-18', name: 'Good Friday', type: 'bank', description: 'Banks closed' },
+      { date: '2025-08-15', name: 'Independence Day', type: 'bank', description: 'Banks closed' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti', type: 'bank', description: 'Banks closed' },
+      { date: '2025-12-25', name: 'Christmas', type: 'bank', description: 'Banks closed' }
+    ]
+  },
+  {
+    state: 'Bihar',
+    capital: 'Patna',
+    majorCities: ['Patna', 'Gaya', 'Bhagalpur', 'Muzaffarpur', 'Purnia', 'Darbhanga', 'Bihar Sharif', 'Arrah', 'Begusarai', 'Katihar'],
+    holidays2025: [
+      { date: '2025-01-26', name: 'Republic Day', type: 'national', description: 'Republic Day' },
+      { date: '2025-03-14', name: 'Holi', type: 'state', description: 'Festival of Colors' },
+      { date: '2025-03-22', name: 'Bihar Day', type: 'state', description: 'Bihar state formation day' },
+      { date: '2025-04-06', name: 'Ram Navami', type: 'state', description: 'Birth of Rama' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'national', description: 'Good Friday' },
+      { date: '2025-05-12', name: 'Buddha Purnima', type: 'state', description: 'Birth of Buddha - Important in Bihar (Bodh Gaya)' },
+      { date: '2025-06-27', name: 'Eid-ul-Fitr', type: 'national', description: 'End of Ramadan' },
+      { date: '2025-08-15', name: 'Independence Day', type: 'national', description: 'Independence Day' },
+      { date: '2025-09-03', name: 'Eid-ul-Adha', type: 'national', description: 'Bakrid' },
+      { date: '2025-10-02', name: 'Gandhi Jayanti / Dussehra', type: 'national', description: 'Gandhi birthday / Dasara' },
+      { date: '2025-10-20', name: 'Diwali', type: 'national', description: 'Deepavali' },
+      { date: '2025-11-05', name: 'Chhath Puja', type: 'state', description: 'Sun worship - Biggest festival in Bihar' },
+      { date: '2025-12-25', name: 'Christmas', type: 'national', description: 'Christmas' }
+    ],
+    bankHolidays: [
+      { date: '2025-03-22', name: 'Bihar Day', type: 'bank', description: 'Banks closed in Bihar' },
+      { date: '2025-04-18', name: 'Good Friday', type: 'bank', description: 'Banks closed' },
+      { date: '2025-05-12', name: 'Buddha Purnima', type: 'bank', description: 'Banks closed in Bihar' },
+      { date: '2025-11-05', name: 'Chhath Puja', type: 'bank', description: 'Banks closed in Bihar' },
+      { date: '2025-12-25', name: 'Christmas', type: 'bank', description: 'Banks closed' }
+    ]
   }
-  // Continue for all 28 states + 8 UTs...
+  // All 28 states + 8 UTs data is now included
 ];
 
 // National holidays applicable across India

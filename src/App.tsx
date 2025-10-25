@@ -261,6 +261,7 @@ const IndianHolidayCalendarSync = lazy(() => import('./pages/festival/IndianHoli
 const FestivalClashChecker = lazy(() => import('./pages/festival/FestivalClashChecker'));
 const IndianSeasonCalendar = lazy(() => import('./pages/festival/IndianSeasonCalendar'));
 const FestivalMonthlyList = lazy(() => import('./pages/festival/FestivalMonthlyList'));
+const CityFestivalWidget = lazy(() => import('./pages/festival/CityFestivalWidget'));
 const AuspiciousMarriageDays = lazy(() => import('./pages/festival-tools/AuspiciousMarriageDays'));
 const LunarEclipsePredictor = lazy(() => import('./pages/festival-tools/LunarEclipsePredictor'));
 const BhaiDoojDateFinder = lazy(() => import('./pages/festival/BhaiDoojDateFinder'));
@@ -1011,6 +1012,7 @@ function App() {
                 <Route path="/festival-tools/festival-clash-checker" element={<FestivalClashChecker />} />
                 <Route path="/festival-tools/indian-season-calendar" element={<IndianSeasonCalendar />} />
                 <Route path="/festival-tools/festival-monthly-list" element={<FestivalMonthlyList />} />
+                <Route path="/festival-tools/city-festival-widget" element={<CityFestivalWidget />} />
                 <Route path="/festival-tools/auspicious-marriage-days" element={<AuspiciousMarriageDays />} />
                 <Route path="/festival-tools/lunar-eclipse-predictor" element={<LunarEclipsePredictor />} />
                 <Route path="/festival-tools/raksha-bandhan-muhurat" element={<RakshaBandhanMuhurat />} />
