@@ -729,7 +729,7 @@ const HomeInvestopedia: React.FC = () => {
                   <p className={`text-sm ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                     <Sparkles className="w-4 h-4 inline mr-1 text-yellow-500 animate-pulse" />
                     {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
-                  </p>
+                              </p>
                             </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {dynamicPlatformCategories.map((item, idx) => (

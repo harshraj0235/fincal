@@ -12,8 +12,8 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
+//import WhatsAppBanner from '../components/WhatsAppBanner';
+//import AstroFinanceButton from '../components/AstroFinanceButton';
 
 interface FinanceTool {
   id: string;
