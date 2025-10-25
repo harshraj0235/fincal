@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, Download, Share2, RefreshCw, CheckCircle, Link as LinkIcon } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar, Download, Share2, RefreshCw, CheckCircle, Link as LinkIcon, MapPin, Home, ChevronRight, Copy, Check, ExternalLink, Search, Info, Sparkles, Clock, Star, Bell, Globe } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllCities, getStateByCity } from '../../data/indiaLocations';
 
 const IndianHolidayCalendarSync: React.FC = () => {
   const [selectedState, setSelectedState] = useState('All India');

@@ -1,7 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { AlertTriangle, Calendar, CheckCircle, XCircle, Download, Filter } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { AlertTriangle, Calendar, CheckCircle, XCircle, Download, Filter, MapPin, Home, ChevronRight, Copy, Check, ExternalLink, Search, Info, Sparkles, Clock, Star, Bell, Globe, Share2 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllCities, getStateByCity } from '../../data/indiaLocations';
 
 interface Festival {
   id: string;

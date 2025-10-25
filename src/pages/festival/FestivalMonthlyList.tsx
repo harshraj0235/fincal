@@ -1,7 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, ChevronLeft, ChevronRight, Download, Search, Filter } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar, ChevronLeft, ChevronRight, Download, Search, Filter, MapPin, Home, Copy, Check, ExternalLink, Info, Sparkles, Clock, Star, Bell, Globe, Share2 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllCities, getStateByCity } from '../../data/indiaLocations';
 
 interface MonthlyFestival {
   date: number;

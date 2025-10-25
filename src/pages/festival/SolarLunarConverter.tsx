@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Sun, Moon, Calendar, ArrowRightLeft, Info, Share2 } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Sun, Moon, Calendar, ArrowRightLeft, Info, Share2, MapPin, Home, ChevronRight, Copy, Check, ExternalLink, Search, Sparkles, Clock, Globe, Star, Download } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllCities, getStateByCity } from '../../data/indiaLocations';
 
 // Hindu months (lunar)
 const HINDU_MONTHS = [

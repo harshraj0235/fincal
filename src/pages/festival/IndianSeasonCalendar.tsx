@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Sun, Cloud, CloudRain, Wind, Snowflake, Leaf } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Sun, Cloud, CloudRain, Wind, Snowflake, Leaf, MapPin, Home, ChevronRight, Copy, Check, ExternalLink, Search, Info, Calendar, Download, Share2, Globe, Star, Clock, Sparkles } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllCities, getStateByCity } from '../../data/indiaLocations';
 
 const RITU_CHAKRA = [
   {

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bell, Calendar, Clock, Plus, Trash2, Edit, Share2, Download, Star, AlertCircle, Check } from 'lucide-react';
+import { Bell, Calendar, Clock, Plus, Trash2, Edit, Share2, Download, Star, AlertCircle, Check, MapPin, Home, ChevronRight, Copy, ExternalLink, Search, Settings, Info, Sparkles } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllCities, getStateByCity } from '../../data/indiaLocations';
 
 interface CustomReminder {
   id: string;
