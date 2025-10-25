@@ -49,8 +49,9 @@ const HomeProfessional: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // DYNAMIC: Build search database from actual codebase data
+  // COMPREHENSIVE: Build search database from ENTIRE codebase (250+ items)
   const searchDatabase = useMemo(() => {
+    // 1. ALL CALCULATORS from actual data
     const allCalculators = calculatorCategories.flatMap(cat => 
       cat.calculators.map(calc => ({
         name: calc.name,
@@ -58,36 +59,134 @@ const HomeProfessional: React.FC = () => {
         category: cat.name,
         emoji: cat.name.includes('Loan') ? '🏠' : cat.name.includes('Investment') ? '📈' : 
                cat.name.includes('Tax') ? '📄' : cat.name.includes('Retirement') ? '👴' : '🧮',
-        keywords: calc.keywords.join(' ')
+        keywords: calc.keywords.join(' ') + ' ' + calc.description,
+        description: calc.description
       }))
     );
 
+    // 2. FESTIVAL TOOLS (Complete list)
     const festivalTools = [
-      { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', category: 'Festival', emoji: '🌑', keywords: 'eclipse grahan' },
-      { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', category: 'Festival', emoji: '💍', keywords: 'marriage wedding' },
-      { name: 'Panchang Today', path: '/festival-tools/panchang-today', category: 'Festival', emoji: '📅', keywords: 'panchang tithi' },
-      { name: 'Weekly Tithi', path: '/festival-tools/weekly-tithi-finder', category: 'Festival', emoji: '📆', keywords: 'tithi' },
+      { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', category: 'Festival', emoji: '🌑', keywords: 'eclipse grahan sutak timings', description: '11 eclipse dates with Sutak timings' },
+      { name: 'Marriage Muhurat 2025', path: '/festival-tools/auspicious-marriage-days', category: 'Festival', emoji: '💍', keywords: 'marriage wedding muhurat auspicious dates', description: '40+ auspicious wedding dates' },
+      { name: 'Panchang Today', path: '/festival-tools/panchang-today', category: 'Festival', emoji: '📅', keywords: 'panchang tithi nakshatra daily', description: 'Daily tithi & nakshatra' },
+      { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', category: 'Festival', emoji: '📆', keywords: 'tithi weekly lunar calendar', description: '7-day lunar calendar view' },
+      { name: 'Purnima Amavasya Dates', path: '/festival-tools/purnima-amavasya-dates', category: 'Festival', emoji: '🌕', keywords: 'purnima amavasya full moon new moon', description: 'Full & new moon dates' },
+      { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', category: 'Festival', emoji: '🙏', keywords: 'vrat upavas fasting hindu', description: '50+ fasting dates' },
+      { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', category: 'Festival', emoji: '⭐', keywords: 'nakshatra birth star', description: 'Birth star for festivals' },
+      { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', category: 'Festival', emoji: '🔔', keywords: 'muhurat auspicious timing alerts', description: 'Auspicious timing alerts' },
     ];
 
+    // 3. TAX TOOLS
+    const taxTools = [
+      { name: 'Income Tax Calculator', path: '/tools/income-tax-calculator', category: 'Tax', emoji: '📄', keywords: 'income tax calculator old new regime', description: 'Calculate income tax liability' },
+      { name: 'GST Calculator', path: '/gst-tools/gst-calculator', category: 'GST', emoji: '💰', keywords: 'gst calculator inclusive exclusive', description: 'Calculate GST on goods and services' },
+      { name: 'TDS Calculator', path: '/tools/tds-calculator', category: 'Tax', emoji: '💵', keywords: 'tds tax deducted source', description: 'Calculate Tax Deducted at Source' },
+      { name: 'GST HSN/SAC Finder', path: '/gst-tools/gst-hsn-sac-finder', category: 'GST', emoji: '🔍', keywords: 'hsn sac code finder gst', description: 'Find HSN and SAC codes' },
+      { name: 'GST Slab Calculator', path: '/gst-tools/gst-slab-calculator', category: 'GST', emoji: '💹', keywords: 'gst rate slab percentage', description: 'Find GST tax rates and slabs' },
+    ];
+
+    // 4. INSURANCE TOOLS
+    const insuranceTools = [
+      { name: 'Life Insurance Calculator', path: '/insurance-tools/life-insurance-calculator', category: 'Insurance', emoji: '🛡️', keywords: 'life insurance coverage premium', description: 'Calculate life insurance needs' },
+      { name: 'Health Insurance Calculator', path: '/insurance-tools/health-insurance-estimator', category: 'Insurance', emoji: '❤️', keywords: 'health insurance premium medical', description: 'Calculate health insurance premium' },
+      { name: 'Term Insurance Planner', path: '/insurance-tools/term-insurance-planner', category: 'Insurance', emoji: '🛡️', keywords: 'term insurance planning coverage', description: 'Plan term insurance needs' },
+    ];
+
+    // 5. GOVERNMENT SCHEMES
+    const governmentSchemes = [
+      { name: 'PM Kisan Scheme', path: '/government-schemes/pm-kisan', category: 'Schemes', emoji: '🌾', keywords: 'pm kisan farmer income support', description: 'Pradhan Mantri Kisan Samman Nidhi' },
+      { name: 'PM Awas Yojana', path: '/government-schemes/pm-awas-yojana', category: 'Schemes', emoji: '🏠', keywords: 'pm awas yojana housing subsidy', description: 'Housing for all scheme' },
+      { name: 'MUDRA Loan', path: '/government-schemes/mudra-loan', category: 'Schemes', emoji: '💼', keywords: 'mudra loan msme business', description: 'Micro business loan calculator' },
+    ];
+
+    // 6. EXCEL TOOLS
+    const excelTools = [
+      { name: 'Excel Budget Template', path: '/excel-tools/budget-template', category: 'Excel', emoji: '📊', keywords: 'excel budget template spreadsheet', description: 'Free Excel budget templates' },
+      { name: 'Excel Investment Tracker', path: '/excel-tools/investment-tracker', category: 'Excel', emoji: '📈', keywords: 'excel investment tracker portfolio', description: 'Track investments in Excel' },
+      { name: 'Excel Expense Tracker', path: '/excel-tools/expense-tracker', category: 'Excel', emoji: '📉', keywords: 'excel expense tracker budget', description: 'Track expenses in Excel' },
+    ];
+
+    // 7. CRYPTO TOOLS
+    const cryptoTools = [
+      { name: 'Crypto Calculator', path: '/crypto/crypto-calculator', category: 'Crypto', emoji: '₿', keywords: 'cryptocurrency bitcoin ethereum calculator', description: 'Calculate crypto returns' },
+      { name: 'Crypto Tax Calculator', path: '/crypto/crypto-tax-calculator', category: 'Crypto', emoji: '💰', keywords: 'crypto tax bitcoin capital gains', description: 'Calculate crypto tax liability' },
+      { name: 'Crypto Portfolio Tracker', path: '/crypto/portfolio-tracker', category: 'Crypto', emoji: '📊', keywords: 'crypto portfolio tracker performance', description: 'Track crypto portfolio' },
+    ];
+
+    // 8. GOLD TOOLS
+    const goldTools = [
+      { name: 'Gold Price Calculator', path: '/gold-tools/gold-price-calculator', category: 'Gold', emoji: '🏆', keywords: 'gold price calculator investment', description: 'Calculate gold prices and returns' },
+      { name: 'Gold SIP Calculator', path: '/gold-tools/gold-sip-calculator', category: 'Gold', emoji: '💰', keywords: 'gold sip systematic investment', description: 'Gold SIP investment calculator' },
+      { name: 'Gold Loan Calculator', path: '/gold-tools/gold-loan-calculator', category: 'Gold', emoji: '🏆', keywords: 'gold loan collateral financing', description: 'Calculate gold loan amount' },
+    ];
+
+    // 9. BANKING TOOLS
+    const bankingTools = [
+      { name: 'Bank Account Comparison', path: '/banking/bank-account-comparison', category: 'Banking', emoji: '🏦', keywords: 'bank account savings comparison', description: 'Compare bank accounts' },
+      { name: 'Credit Card Comparison', path: '/banking/credit-card-comparison', category: 'Banking', emoji: '💳', keywords: 'credit card rewards benefits', description: 'Compare credit cards' },
+      { name: 'FD Calculator', path: '/banking/fd-calculator', category: 'Banking', emoji: '💰', keywords: 'fixed deposit fd interest calculator', description: 'Calculate FD returns' },
+      { name: 'Credit Card Finder', path: '/credit-card-finder', category: 'Banking', emoji: '💳', keywords: 'credit card finder best card', description: 'Find the best credit card' },
+    ];
+
+    // 10. BLOGS
     const blogs = blogPostsData.slice(0, 30).map((post: any) => ({
       name: post?.title || '',
       path: `/blog/${post?.slug || ''}`,
       category: 'Blog',
       emoji: '📰',
-      keywords: post?.categories?.join(' ') || ''
+      keywords: post?.categories?.join(' ') || '',
+      description: (post?.excerpt || '').slice(0, 80) + '...'
     }));
 
-    return [...allCalculators, ...festivalTools, ...blogs];
+    // 11. MAIN PAGES
+    const mainPages = [
+      { name: 'All Calculators', path: '/calculators', category: 'Calculators', emoji: '🧮', keywords: 'all calculators financial tools', description: '107+ financial calculators' },
+      { name: 'Learn Finance', path: '/learn', category: 'Education', emoji: '📚', keywords: 'learn finance education courses', description: '40 comprehensive lessons' },
+      { name: 'Finance Blog', path: '/blog', category: 'Blog', emoji: '📰', keywords: 'finance blog articles guides', description: 'Latest finance articles' },
+      { name: 'Festival Tools', path: '/festival-tools', category: 'Festival', emoji: '🎉', keywords: 'festival tools panchang muhurat', description: '11 festival tools' },
+      { name: 'Government Schemes', path: '/government-schemes', category: 'Schemes', emoji: '🎁', keywords: 'government schemes subsidies', description: 'PM schemes and subsidies' },
+      { name: 'Excel Tools', path: '/excel-tools', category: 'Excel', emoji: '📊', keywords: 'excel tools templates formulas', description: '100+ Excel templates' },
+      { name: 'Crypto Tools', path: '/crypto', category: 'Crypto', emoji: '₿', keywords: 'cryptocurrency tools bitcoin', description: 'Crypto investment tools' },
+      { name: 'Gold Tools', path: '/gold-tools', category: 'Gold', emoji: '🏆', keywords: 'gold tools investment calculator', description: 'Gold investment calculators' },
+      { name: 'Stock Market', path: '/stock-market', category: 'Stock Market', emoji: '📈', keywords: 'stock market trading analysis', description: 'Stock market education' },
+    ];
+
+    return [
+      ...allCalculators,
+      ...festivalTools,
+      ...taxTools,
+      ...insuranceTools,
+      ...governmentSchemes,
+      ...excelTools,
+      ...cryptoTools,
+      ...goldTools,
+      ...bankingTools,
+      ...blogs,
+      ...mainPages
+    ];
   }, [blogPostsData]);
 
+  // Enhanced search with better ranking
   const searchResults = useMemo(() => {
     if (searchQuery.trim().length > 1) {
       const query = searchQuery.toLowerCase();
-      return searchDatabase.filter(item => 
+      const filtered = searchDatabase.filter(item => 
         item.name.toLowerCase().includes(query) ||
         item.category.toLowerCase().includes(query) ||
-        item.keywords?.toLowerCase().includes(query)
-      ).slice(0, 15);
+        item.keywords?.toLowerCase().includes(query) ||
+        item.description?.toLowerCase().includes(query)
+      );
+
+      // Sort by relevance: title match first, then category, then keywords
+      const sorted = filtered.sort((a, b) => {
+        const aTitle = a.name.toLowerCase().includes(query);
+        const bTitle = b.name.toLowerCase().includes(query);
+        if (aTitle && !bTitle) return -1;
+        if (!aTitle && bTitle) return 1;
+        return 0;
+      });
+
+      return sorted.slice(0, 20); // Show top 20 results
     }
     return [];
   }, [searchQuery, searchDatabase]);
@@ -333,35 +432,60 @@ const HomeProfessional: React.FC = () => {
               )}
               
               {showSearchResults && (
-                <div className={`absolute top-full left-0 right-0 mt-4 rounded-3xl shadow-2xl border-2 max-h-[70vh] overflow-y-auto z-50 ${theme === 'dark' ? 'bg-slate-900/98 border-white/20 backdrop-blur-xl' : 'bg-white/98 border-gray-300 backdrop-blur-xl'}`}>
-                  <div className="p-5">
-                    <div className={`px-4 py-3 font-bold mb-3 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                      ✨ {searchResults.length} {language === 'en' ? 'Results Found - Click to Open' : 'परिणाम'}
+                <div className={`absolute top-full left-0 right-0 mt-4 rounded-2xl shadow-2xl max-h-[75vh] overflow-hidden z-50 ${theme === 'dark' ? 'bg-slate-900/98 backdrop-blur-xl border border-white/20' : 'bg-white/98 backdrop-blur-xl border border-gray-200'}`}>
+                  {/* Header */}
+                  <div className={`px-6 py-4 border-b ${theme === 'dark' ? 'border-white/10 bg-slate-800/50' : 'border-gray-200 bg-gray-50/50'}`}>
+                    <div className="flex items-center justify-between">
+                      <div className={`font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                        ✨ {searchResults.length} {language === 'en' ? 'Results from Entire Codebase' : 'परिणाम'}
+                      </div>
+                      <button
+                        onClick={() => { setSearchQuery(''); setShowSearchResults(false); }}
+                        className={`p-1.5 rounded-lg ${theme === 'dark' ? 'hover:bg-slate-700' : 'hover:bg-gray-200'}`}
+                      >
+                        <X className="w-5 h-5" />
+                      </button>
                     </div>
-                    <div className="space-y-2">
+                  </div>
+
+                  {/* Results */}
+                  <div className="overflow-y-auto max-h-[60vh] p-3">
+                    <div className="space-y-1.5">
                       {searchResults.map((result, idx) => (
                         <button
                           key={idx}
                           onClick={() => { navigate(result.path); setSearchQuery(''); setShowSearchResults(false); }}
-                          className={`w-full flex items-center gap-4 px-5 py-5 text-left rounded-2xl border-2 transition-all hover:scale-[1.02] ${theme === 'dark' ? 'bg-slate-800/80 border-white/10 hover:border-blue-500/70' : 'bg-white border-gray-200 hover:border-blue-500 hover:shadow-lg'}`}
+                          className={`w-full flex items-center gap-3 px-4 py-3.5 text-left rounded-xl transition-all ${theme === 'dark' ? 'hover:bg-slate-800' : 'hover:bg-blue-50'}`}
                         >
-                          <div className="text-4xl flex-shrink-0">{result.emoji}</div>
+                          <div className="text-3xl flex-shrink-0">{result.emoji}</div>
                           <div className="flex-1 min-w-0">
-                            <div className={`font-bold text-lg mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                            <div className={`font-semibold mb-0.5 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                               {result.name}
                             </div>
-                            <div className="flex items-center gap-2.5 flex-wrap">
-                              <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-xs font-bold">
+                            {result.description && (
+                              <div className={`text-xs mb-1.5 line-clamp-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                                {result.description}
+                              </div>
+                            )}
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700'}`}>
                                 {result.category}
                               </span>
-                              <span className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-600'}`}>
+                              <span className={`text-[10px] ${theme === 'dark' ? 'text-gray-600' : 'text-gray-500'}`}>
                                 {result.path}
                               </span>
                             </div>
                           </div>
-                          <ChevronRight className={`w-7 h-7 flex-shrink-0 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
+                          <ChevronRight className={`w-5 h-5 flex-shrink-0 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
                         </button>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Footer */}
+                  <div className={`px-6 py-3 border-t ${theme === 'dark' ? 'border-white/10 bg-slate-800/50' : 'border-gray-200 bg-gray-50/50'}`}>
+                    <div className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                      💡 Searching across 250+ calculators, tools, articles & pages
                     </div>
                   </div>
                 </div>
