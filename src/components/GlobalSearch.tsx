@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, X, Calculator, FileText, TrendingUp, Home, CreditCard, Shield, PiggyBank, Building, GraduationCap, Users, Globe, Star, Zap, Target, Briefcase, Heart, Lightbulb, Newspaper, BookOpen, Smartphone, Calendar } from 'lucide-react';
+import { Search, X, Calculator, FileText, TrendingUp, Home, CreditCard, Shield, PiggyBank, Building, GraduationCap, Users, Globe, Star, Zap, Target, Briefcase, Heart, Lightbulb, Newspaper, BookOpen, Smartphone, Calendar, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface SearchResult {
