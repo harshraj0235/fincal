@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Star, Calendar, Moon, Sun, Sparkles, Download, Share2, Info, Search } from 'lucide-react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Star, Calendar, Moon, Sun, Sparkles, Download, Share2, Info, Search, MapPin, Home, ChevronRight, Copy, Check, ExternalLink, AlertCircle, Clock } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllCities, getStateByCity } from '../../data/indiaLocations';
 
 // Comprehensive Nakshatra data with extensive details
 const NAKSHATRAS = [
@@ -157,9 +159,22 @@ const INDIAN_STATES_CITIES = {
 
 const NakshatraFestival: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
+  const [selectedCity, setSelectedCity] = useState(INDIAN_CITIES[0]);
   const [nakshatra, setNakshatra] = useState<typeof NAKSHATRAS[0] | null>(null);
   const [isCalculating, setIsCalculating] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchCity, setSearchCity] = useState('');
+  const [showShareMenu, setShowShareMenu] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const filteredCities = useMemo(() => {
+    if (!searchCity) return INDIAN_CITIES.slice(0, 100);
+    return INDIAN_CITIES.filter(city => 
+      city.toLowerCase().includes(searchCity.toLowerCase())
+    ).slice(0, 50);
+  }, [searchCity]);
+
+  const stateName = useMemo(() => getStateByCity(selectedCity), [selectedCity]);
 
   // Calculate Nakshatra for given date using astronomical algorithm
   const calculateNakshatra = (dateStr: string) => {
