@@ -49,51 +49,7 @@ const HomeProfessional: React.FC = () => {
   }, []);
 
   // DYNAMIC: Build search database from actual codebase data
-  const searchDatabase = useMemo(() => {
-    const allCalculators = calculatorCategories.flatMap(cat => 
-      cat.calculators.map(calc => ({
-        name: calc.name,
-        path: `/calculators/${calc.id}`,
-        category: cat.name,
-        emoji: cat.name.includes('Loan') ? '🏠' : cat.name.includes('Investment') ? '📈' : 
-               cat.name.includes('Tax') ? '📄' : cat.name.includes('Retirement') ? '👴' : '🧮',
-        keywords: calc.keywords.join(' ')
-      }))
-    );
-
-    const festivalTools = [
-      { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', category: 'Festival', emoji: '🌑', keywords: 'eclipse grahan' },
-      { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', category: 'Festival', emoji: '💍', keywords: 'marriage wedding' },
-      { name: 'Panchang Today', path: '/festival-tools/panchang-today', category: 'Festival', emoji: '📅', keywords: 'panchang tithi' },
-      { name: 'Weekly Tithi', path: '/festival-tools/weekly-tithi-finder', category: 'Festival', emoji: '📆', keywords: 'tithi' },
-    ];
-
-    const blogs = blogPostsData.slice(0, 30).map((post: any) => ({
-      name: post?.title || '',
-      path: `/blog/${post?.slug || ''}`,
-      category: 'Blog',
-      emoji: '📰',
-      keywords: post?.categories?.join(' ') || ''
-    }));
-
-    return [...allCalculators, ...festivalTools, ...blogs];
-  }, [blogPostsData]);
-
-  const searchResults = useMemo(() => {
-    if (searchQuery.trim().length > 1) {
-      const query = searchQuery.toLowerCase();
-      return searchDatabase.filter(item => 
-        item.name.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query) ||
-        item.keywords?.toLowerCase().includes(query)
-      ).slice(0, 15);
-    }
-    return [];
-  }, [searchQuery, searchDatabase]);
-
-  useEffect(() => {
-    setShowSearchResults(searchResults.length > 0 && searchQuery.length > 1);
-  }, [searchResults, searchQuery]);
+  // Search is now handled by GlobalSearch component - no local search state needed
 
   const getRandomItems = (pool: any[], count: number) => {
     const shuffled = [...pool].sort(() => Math.random() - 0.5);
