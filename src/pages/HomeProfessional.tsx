@@ -15,8 +15,6 @@ import { loadBlogData } from '../data/lazyBlogData';
 import { calculatorCategories } from '../data/calculatorData';
 
 const HomeProfessional: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showSearchResults, setShowSearchResults] = useState(false);
   const [blogPostsData, setBlogPostsData] = useState<any[]>([]);
   const [rotationKey, setRotationKey] = useState(0);
   const [language, setLanguage] = useState<'en' | 'hi'>('en');
@@ -260,14 +258,19 @@ const HomeProfessional: React.FC = () => {
   ];
 
   const mainSections = [
-    { name: language === 'en' ? 'All Tools' : 'सभी', path: '/tools', emoji: '🧰' },
+    { name: language === 'en' ? 'All Tools' : 'सभी टूल्स', path: '/tools', emoji: '🧰' },
     { name: language === 'en' ? 'Calculators' : 'कैलकुलेटर', path: '/calculators', emoji: '🧮' },
-    { name: language === 'en' ? 'Finance' : 'वित्त', path: '/finance-tools', emoji: '💵' },
-    { name: language === 'en' ? 'Tax' : 'कर', path: '/tax-tools', emoji: '📄' },
-    { name: 'GST', path: '/gst-tools', emoji: '💰' },
+    { name: language === 'en' ? 'Finance Tools' : 'वित्त टूल्स', path: '/finance-tools', emoji: '💵' },
+    { name: language === 'en' ? 'Tax Tools' : 'कर टूल्स', path: '/tax-tools', emoji: '📄' },
+    { name: language === 'en' ? 'GST Tools' : 'जीएसटी टूल्स', path: '/gst-tools', emoji: '💰' },
+    { name: language === 'en' ? 'Corporate Finance' : 'कॉर्पोरेट', path: '/corporate-finance', emoji: '💼' },
+    { name: language === 'en' ? 'Insurance' : 'बीमा', path: '/insurance-tools', emoji: '🛡️' },
     { name: language === 'en' ? 'Festival' : 'त्योहार', path: '/festival-tools', emoji: '🎉' },
     { name: language === 'en' ? 'Blog' : 'ब्लॉग', path: '/blog', emoji: '📰' },
-    { name: language === 'en' ? 'Learn' : 'सीखें', path: '/learn', emoji: '📚' },
+    { name: language === 'en' ? 'Education' : 'शिक्षा', path: '/learn', emoji: '🎓' },
+    { name: language === 'en' ? 'Help' : 'सहायता', path: '/help-center', emoji: '❓' },
+    { name: language === 'en' ? 'Schemes' : 'योजना', path: '/government-schemes', emoji: '🎁' },
+    { name: language === 'en' ? 'Astro' : 'ज्योतिष', path: '/astro-finance', emoji: '⭐' }
   ];
 
   return (
@@ -279,9 +282,108 @@ const HomeProfessional: React.FC = () => {
         canonicalUrl="https://moneycal.in"
       />
 
-      <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'}`} style={{ paddingTop: '72px' }}>
+      <div className={`min-h-screen ${theme === 'dark' ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'}`}>
         
-        {/* Navbar handled by Layout component - No duplicate navbar here */}
+        {/* Beautiful Comprehensive Navbar */}
+        <nav className={`relative z-40 ${theme === 'dark' ? 'bg-slate-900/95' : 'bg-white/95'} backdrop-blur-lg sticky top-0 shadow-lg border-b ${theme === 'dark' ? 'border-white/10' : 'border-gray-200'}`} style={{ minHeight: '72px' }}>
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex justify-between items-center">
+              {/* Logo */}
+              <Link to="/" className="flex items-center gap-3 group">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all shadow-xl">
+                  <span className="text-white font-black text-2xl">💰</span>
+                </div>
+                <div>
+                  <span className="text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    MoneyCal.in
+                  </span>
+                  <div className={`text-xs font-medium -mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    Smart Financial Tools
+                  </div>
+                </div>
+              </Link>
+
+              {/* Desktop Navigation Pills */}
+              <div className="hidden lg:flex items-center gap-1.5 bg-gradient-to-r from-slate-800/50 to-slate-900/50 backdrop-blur-xl px-2 py-2 rounded-2xl border border-white/10 shadow-2xl">
+                {mainSections.slice(0, 8).map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.path}
+                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl font-semibold text-xs transition-all hover:scale-105 ${
+                      theme === 'dark'
+                        ? 'text-gray-300 hover:bg-slate-700/70'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    <span className="text-lg">{item.emoji}</span>
+                    <span className="hidden xl:inline">{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Controls */}
+              <div className="flex items-center gap-2.5">
+                {/* Mobile Menu */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="lg:hidden p-3 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-xl transition-colors"
+                  aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={mobileMenuOpen}
+                >
+                  {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                </button>
+
+                {/* Theme Toggle */}
+                <button
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  className={`p-3 rounded-xl transition-all active:scale-90 shadow-xl ${
+                    theme === 'dark' 
+                      ? 'bg-gradient-to-br from-yellow-500 to-orange-500 text-white' 
+                      : 'bg-gradient-to-br from-slate-700 to-blue-900 text-white'
+                  }`}
+                  aria-label="Toggle theme"
+                >
+                  {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                </button>
+
+                {/* Language Toggle */}
+                <button
+                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                  className="px-4 py-3 rounded-xl text-sm font-bold active:scale-90 shadow-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white transition-all"
+                  aria-label="Toggle language"
+                >
+                  <Globe className="w-4 h-4 inline mr-1" />
+                  {language === 'en' ? 'हिंदी' : 'EN'}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Menu Dropdown */}
+          {mobileMenuOpen && (
+            <div 
+              className={`lg:hidden border-t ${theme === 'dark' ? 'border-white/10 bg-slate-800/95' : 'border-gray-200 bg-white/95'}`}
+            >
+              <div className="px-4 py-4 grid grid-cols-2 gap-2.5 max-h-[70vh] overflow-y-auto">
+                {mainSections.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center gap-2 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
+                      theme === 'dark'
+                        ? 'bg-slate-700/60 text-white hover:bg-slate-600/60'
+                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    }`}
+                  >
+                    <span className="text-2xl">{item.emoji}</span>
+                    <span>{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </nav>
 
         {/* Hero */}
         <section className="pt-24 pb-16 px-4" style={{ minHeight: '650px' }}>
