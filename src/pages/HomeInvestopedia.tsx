@@ -1,1287 +1,346 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { 
-  TrendingUp, Calculator, BookOpen, Newspaper, Globe, 
-  ArrowRight, Star, Zap, Shield, Award, Search, ChevronRight,
-  Sun, Moon, X, Flame, Menu, Clock, Sparkles, Heart, CheckCircle,
-  TrendingDown, DollarSign, Home, PiggyBank, FileText, Target,
-  BarChart3, Gift, Building, Umbrella, PartyPopper, HelpCircle,
-  Rocket, Bell, Calendar, Tag, Lock, BadgeCheck, Users, TrendingUpIcon
+  Calculator, TrendingUp, Shield, Users, Award, CheckCircle,
+  ArrowRight, Star, Lock, FileText, BarChart3, PiggyBank,
+  Home, CreditCard, Landmark, TrendingDown, Search, Menu, X
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import { loadBlogData } from '../data/lazyBlogData';
-import LightweightTrustBadges from '../components/LightweightTrustBadges';
-
-// Get current date
-const getCurrentDate = () => {
-  const now = new Date();
-  return {
-    year: now.getFullYear(),
-    fullDate: now.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })
-  };
-};
-
-// COMPREHENSIVE Search Database - ENTIRE CODEBASE (250+ items)
-const buildSearchDatabase = (blogPosts: any[] = []) => {
-  const allItems = [
-    // Investment Tools (20+)
-    { name: 'SIP Calculator', path: '/calculators/sip-calculator', category: 'Investment', emoji: '📈', keywords: 'sip mutual fund systematic investment' },
-    { name: 'PPF Calculator', path: '/calculators/ppf-calculator', category: 'Investment', emoji: '🏦', keywords: 'ppf provident fund retirement' },
-    { name: 'FD Calculator', path: '/calculators/compound-interest-calculator', category: 'Investment', emoji: '💰', keywords: 'fixed deposit fd interest compound' },
-    { name: 'CAGR Calculator', path: '/calculators/cagr-calculator', category: 'Investment', emoji: '📊', keywords: 'cagr growth rate returns' },
-    { name: 'Lumpsum Calculator', path: '/calculators/lumpsum-calculator', category: 'Investment', emoji: '💵', keywords: 'lumpsum investment one time' },
-    { name: 'SWP Calculator', path: '/calculators/swp-calculator', category: 'Investment', emoji: '👛', keywords: 'systematic withdrawal plan' },
-    { name: 'Mutual Fund Returns', path: '/calculators/mutual-fund-returns-calculator', category: 'Investment', emoji: '📊', keywords: 'mutual fund returns calculator' },
-    { name: 'Asset Allocation', path: '/calculators/asset-allocation-planner', category: 'Investment', emoji: '🎯', keywords: 'asset allocation portfolio diversification' },
-    { name: 'XIRR Tracker', path: '/calculators/xirr-tracker', category: 'Investment', emoji: '📈', keywords: 'xirr returns tracking irr' },
-    { name: 'Gold Investment', path: '/calculators/gold-investment-calculator', category: 'Investment', emoji: '🏆', keywords: 'gold investment calculator' },
-    { name: 'Dividend Yield', path: '/calculators/dividend-yield-calculator', category: 'Investment', emoji: '💰', keywords: 'dividend yield stock returns' },
-    { name: 'Step-Up SIP', path: '/calculators/step-up-sip-calculator', category: 'Investment', emoji: '📈', keywords: 'step up sip increase annual' },
-    { name: 'Sukanya Samriddhi', path: '/calculators/sukanya-samriddhi-calculator', category: 'Investment', emoji: '👧', keywords: 'sukanya samriddhi girl child scheme' },
-    
-    // Loan Tools (15+)
-    { name: 'EMI Calculator', path: '/calculators/emi-calculator', category: 'Loan', emoji: '🧮', keywords: 'emi loan monthly installment equated' },
-    { name: 'Home Loan EMI', path: '/calculators/home-loan-calculator', category: 'Loan', emoji: '🏠', keywords: 'home loan housing property mortgage' },
-    { name: 'Personal Loan', path: '/calculators/personal-loan-calculator', category: 'Loan', emoji: '💵', keywords: 'personal loan instant unsecured' },
-    { name: 'Car Loan', path: '/calculators/car-loan-calculator', category: 'Loan', emoji: '🚗', keywords: 'car auto vehicle loan' },
-    { name: 'Loan Comparison', path: '/calculators/loan-comparison-calculator', category: 'Loan', emoji: '📊', keywords: 'compare loans interest rates' },
-    { name: 'Loan Prepayment', path: '/calculators/loan-prepayment-calculator', category: 'Loan', emoji: '💰', keywords: 'prepayment foreclosure part payment' },
-    { name: 'Loan Affordability', path: '/loan-tools/loan-affordability', category: 'Loan', emoji: '🎯', keywords: 'affordability eligibility income' },
-    { name: 'Business Loan', path: '/calculators/business-loan-calculator', category: 'Loan', emoji: '💼', keywords: 'business loan msme commercial' },
-    { name: 'Education Loan', path: '/loan-tools/education-loan-calculator', category: 'Loan', emoji: '🎓', keywords: 'education loan student study' },
-    { name: 'Gold Loan EMI', path: '/calculators/gold-loan-emi-calculator', category: 'Loan', emoji: '🏆', keywords: 'gold loan emi collateral' },
-    
-    // GST Tools (20+)
-    { name: 'GST Calculator', path: '/tools/gst-amount-calculator', category: 'GST', emoji: '🧮', keywords: 'gst goods services tax calculator' },
-    { name: 'HSN/SAC Finder', path: '/tools/gst-hsn-sac-finder', category: 'GST', emoji: '🔍', keywords: 'hsn sac code finder gst' },
-    { name: 'Reverse GST', path: '/tools/reverse-gst-calculator', category: 'GST', emoji: '🔄', keywords: 'reverse gst backward inclusive' },
-    { name: 'GST Slab Calculator', path: '/tools/gst-slab-calculator', category: 'GST', emoji: '💹', keywords: 'gst rate slab percentage' },
-    { name: 'GSTR-1 Deadline', path: '/tools/gstr-1-deadline-calculator', category: 'GST', emoji: '📅', keywords: 'gstr1 filing deadline due date' },
-    { name: 'GSTR-3B Deadline', path: '/tools/gstr-3b-deadline-calculator', category: 'GST', emoji: '📆', keywords: 'gstr3b return filing' },
-    { name: 'GST Liability', path: '/tools/gst-liability-calculator', category: 'GST', emoji: '💰', keywords: 'gst liability total payable' },
-    { name: 'ITC Eligibility', path: '/tools/itc-eligibility-checker', category: 'GST', emoji: '✅', keywords: 'itc input tax credit eligibility' },
-    
-    // Tax Tools (15+)
-    { name: 'Income Tax Calculator', path: '/tools/income-tax-calculator', category: 'Tax', emoji: '📄', keywords: 'income tax calculator old new regime' },
-    { name: 'HRA Calculator', path: '/calculators/hra-calculator', category: 'Tax', emoji: '🏠', keywords: 'hra house rent allowance exemption' },
-    { name: 'Capital Gains Tax', path: '/calculators/capital-gains-tax-calculator', category: 'Tax', emoji: '💹', keywords: 'capital gains ltcg stcg tax' },
-    { name: 'TDS Calculator', path: '/calculators/tds-calculator', category: 'Tax', emoji: '💰', keywords: 'tds tax deducted at source' },
-    { name: '80C Calculator', path: '/calculators/section-80c-calculator', category: 'Tax', emoji: '🏦', keywords: '80c deduction tax saving investment' },
-    { name: '80D Calculator', path: '/calculators/section-80d-calculator', category: 'Tax', emoji: '🛡️', keywords: '80d health insurance medical' },
-    { name: 'Advance Tax', path: '/calculators/advance-tax-calculator', category: 'Tax', emoji: '📅', keywords: 'advance tax quarterly payment' },
-    
-    // Retirement Tools (10+)
-    { name: 'Retirement Calculator', path: '/calculators/retirement-calculator', category: 'Retirement', emoji: '👴', keywords: 'retirement planning corpus savings' },
-    { name: 'NPS Calculator', path: '/calculators/nps-calculator', category: 'Retirement', emoji: '🎯', keywords: 'nps national pension system' },
-    { name: 'EPF Calculator', path: '/calculators/epf-calculator', category: 'Retirement', emoji: '🏢', keywords: 'epf provident fund employee' },
-    { name: 'Pension Calculator', path: '/calculators/pension-calculator', category: 'Retirement', emoji: '💰', keywords: 'pension monthly retirement' },
-    { name: 'Gratuity Calculator', path: '/calculators/gratuity-calculator', category: 'Retirement', emoji: '🎁', keywords: 'gratuity calculation terminal benefits' },
-    
-    // Insurance Tools (10+)
-    { name: 'Life Insurance', path: '/calculators/life-insurance-calculator', category: 'Insurance', emoji: '🛡️', keywords: 'life insurance term cover protection' },
-    { name: 'Health Insurance', path: '/calculators/health-insurance-calculator', category: 'Insurance', emoji: '❤️', keywords: 'health insurance premium medical' },
-    { name: 'Term Insurance', path: '/calculators/term-insurance-calculator', category: 'Insurance', emoji: '🛡️', keywords: 'term insurance pure protection' },
-    { name: 'ULIP Calculator', path: '/insurance-tools/ulip-calculator', category: 'Insurance', emoji: '📊', keywords: 'ulip unit linked insurance plan' },
-    
-    // Festival Tools (All 11+)
-    { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', category: 'Festival', emoji: '🌑', keywords: 'lunar eclipse grahan sutak timings 2025' },
-    { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', category: 'Festival', emoji: '💍', keywords: 'marriage wedding muhurat auspicious dates' },
-    { name: 'Panchang Today', path: '/festival-tools/panchang-today', category: 'Festival', emoji: '📅', keywords: 'panchang tithi nakshatra daily hindu' },
-    { name: 'Weekly Tithi', path: '/festival-tools/weekly-tithi-finder', category: 'Festival', emoji: '📆', keywords: 'tithi lunar week calendar' },
-    { name: 'Purnima Amavasya', path: '/festival-tools/purnima-amavasya-dates', category: 'Festival', emoji: '🌕', keywords: 'full moon new moon purnima amavasya' },
-    { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', category: 'Festival', emoji: '🙏', keywords: 'vrat upavas fasting hindu calendar' },
-    { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', category: 'Festival', emoji: '⭐', keywords: 'nakshatra birth star constellation' },
-    { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', category: 'Festival', emoji: '🔔', keywords: 'muhurat auspicious timing good time' },
-    
-    // Banking & Finance (15+)
-    { name: 'Salary Calculator', path: '/calculators/salary-calculator', category: 'Salary', emoji: '💰', keywords: 'salary take home ctc in hand' },
-    { name: 'Budget Calculator', path: '/calculators/budget-calculator', category: 'Finance', emoji: '💵', keywords: 'budget planner monthly expense' },
-    { name: 'Currency Converter', path: '/calculators/currency-converter', category: 'Finance', emoji: '🌍', keywords: 'currency exchange forex conversion' },
-    { name: 'Inflation Calculator', path: '/calculators/inflation-calculator', category: 'Finance', emoji: '📈', keywords: 'inflation rate future value purchasing power' },
-    { name: 'Net Worth Calculator', path: '/calculators/net-worth-calculator', category: 'Finance', emoji: '💎', keywords: 'net worth assets liabilities wealth' },
-    
-    // Business Tools (10+)
-    { name: 'Break Even Calculator', path: '/calculators/break-even-calculator', category: 'Business', emoji: '🎯', keywords: 'break even analysis business' },
-    { name: 'Margin Calculator', path: '/calculators/profit-margin-calculator', category: 'Business', emoji: '💹', keywords: 'profit margin markup business' },
-    { name: 'ROI Calculator', path: '/finance-tools/roi-calculator', category: 'Business', emoji: '💼', keywords: 'roi return on investment business' },
-    
-    // Property & Real Estate (8+)
-    { name: 'Property Registration', path: '/calculators/property-registration-calculator', category: 'Property', emoji: '🏘️', keywords: 'property registration stamp duty charges' },
-    { name: 'Rent vs Buy', path: '/calculators/rent-vs-buy-calculator', category: 'Property', emoji: '🏠', keywords: 'rent buy home property comparison' },
-    { name: 'Property Investment', path: '/real-estate/property-investment-calculator', category: 'Property', emoji: '🏠', keywords: 'property investment real estate returns' },
-    
-    // Stock Market & Trading (15+)
-    { name: 'Brokerage Calculator', path: '/calculators/brokerage-calculator', category: 'Trading', emoji: '📊', keywords: 'brokerage charges trading stock' },
-    { name: 'Stock Screener', path: '/stock-market/stock-screener', category: 'Stock Market', emoji: '🔍', keywords: 'stock screener filter analysis' },
-    { name: 'Portfolio Tracker', path: '/stock-market/portfolio-tracker', category: 'Stock Market', emoji: '📈', keywords: 'portfolio tracker stock investment' },
-    
-    // Crypto Tools (10+)
-    { name: 'Crypto Tax Estimator', path: '/calculators/crypto-tax-estimator', category: 'Crypto', emoji: '₿', keywords: 'crypto tax bitcoin ethereum calculator' },
-    { name: 'Crypto Calculator', path: '/crypto/crypto-calculator', category: 'Crypto', emoji: '₿', keywords: 'cryptocurrency bitcoin returns' },
-    { name: 'Crypto Portfolio', path: '/crypto/portfolio-tracker', category: 'Crypto', emoji: '📊', keywords: 'crypto portfolio tracker bitcoin' },
-    
-    // Gold Tools (5+)
-    { name: 'Gold Price Calculator', path: '/gold-tools/gold-price-calculator', category: 'Gold', emoji: '🏆', keywords: 'gold price calculator investment' },
-    { name: 'Gold SIP Calculator', path: '/gold-tools/gold-sip-calculator', category: 'Gold', emoji: '💰', keywords: 'gold sip systematic investment' },
-    { name: 'Gold Loan Calculator', path: '/gold-tools/gold-loan-calculator', category: 'Gold', emoji: '🏆', keywords: 'gold loan collateral financing' },
-    
-    // Government Schemes (15+)
-    { name: 'PM Kisan Scheme', path: '/government-schemes/pm-kisan', category: 'Schemes', emoji: '🌾', keywords: 'pm kisan farmer income support government' },
-    { name: 'PM Awas Yojana', path: '/government-schemes/pm-awas-yojana', category: 'Schemes', emoji: '🏠', keywords: 'pm awas yojana housing subsidy government' },
-    { name: 'MUDRA Loan', path: '/government-schemes/mudra-loan', category: 'Schemes', emoji: '💼', keywords: 'mudra loan msme business micro' },
-    
-    // Excel Tools (10+)
-    { name: 'Excel Budget Template', path: '/excel-tools/budget-template', category: 'Excel', emoji: '📊', keywords: 'excel budget template spreadsheet download' },
-    { name: 'Excel Investment Tracker', path: '/excel-tools/investment-tracker', category: 'Excel', emoji: '📈', keywords: 'excel investment tracker portfolio spreadsheet' },
-    { name: 'Excel Expense Tracker', path: '/excel-tools/expense-tracker', category: 'Excel', emoji: '📉', keywords: 'excel expense tracker budget spreadsheet' },
-    
-    // Banking Tools (10+)
-    { name: 'Bank Account Comparison', path: '/banking/bank-account-comparison', category: 'Banking', emoji: '🏦', keywords: 'bank account savings comparison' },
-    { name: 'Credit Card Comparison', path: '/banking/credit-card-comparison', category: 'Banking', emoji: '💳', keywords: 'credit card rewards benefits comparison' },
-    { name: 'Credit Card Finder', path: '/credit-card-finder', category: 'Banking', emoji: '💳', keywords: 'credit card finder best card recommendation' },
-    
-    // Learning Courses (40 lessons)
-    { name: 'Gold Loans Course', path: '/learn/gold-loans', category: 'Learn', emoji: '🏆', keywords: 'gold loan education lessons course tutorial' },
-    { name: 'Credit Cards Course', path: '/learn/credit-cards', category: 'Learn', emoji: '💳', keywords: 'credit card lessons guide course tutorial' },
-    { name: 'Credit Score Course', path: '/learn/credit-score', category: 'Learn', emoji: '📊', keywords: 'credit score cibil lessons course improve' },
-    
-    // Main Pages & Categories (20+)
-    { name: 'All Calculators', path: '/calculators', category: 'Hub', emoji: '🧮', keywords: 'all calculators list financial tools' },
-    { name: 'Finance Tools Hub', path: '/finance-tools', category: 'Hub', emoji: '💵', keywords: 'finance tools hub advanced calculators' },
-    { name: 'Tax Tools Hub', path: '/tax-tools', category: 'Hub', emoji: '📄', keywords: 'tax tools hub income tax calculators' },
-    { name: 'GST Tools Hub', path: '/gst-tools', category: 'Hub', emoji: '💰', keywords: 'gst tools hub calculators compliance' },
-    { name: 'Loan Tools Hub', path: '/loan-tools', category: 'Hub', emoji: '🏠', keywords: 'loan tools hub emi calculators' },
-    { name: 'Insurance Tools Hub', path: '/insurance-tools', category: 'Hub', emoji: '🛡️', keywords: 'insurance tools hub calculators planning' },
-    { name: 'Festival Tools Hub', path: '/festival-tools', category: 'Hub', emoji: '🎉', keywords: 'festival tools hub panchang muhurat' },
-    { name: 'Corporate Finance Hub', path: '/corporate-finance', category: 'Hub', emoji: '💼', keywords: 'corporate finance hub business tools' },
-    { name: 'Government Schemes Hub', path: '/government-schemes', category: 'Hub', emoji: '🎁', keywords: 'government schemes hub pm schemes subsidies' },
-    { name: 'Excel Tools Hub', path: '/excel-tools', category: 'Hub', emoji: '📊', keywords: 'excel tools hub templates formulas' },
-    { name: 'Crypto Hub', path: '/crypto', category: 'Hub', emoji: '₿', keywords: 'cryptocurrency hub bitcoin tools' },
-    { name: 'Gold Tools Hub', path: '/gold-tools', category: 'Hub', emoji: '🏆', keywords: 'gold tools hub investment calculator' },
-    { name: 'Stock Market Hub', path: '/stock-market', category: 'Hub', emoji: '📈', keywords: 'stock market hub trading education' },
-    { name: 'Banking Hub', path: '/banking', category: 'Hub', emoji: '🏦', keywords: 'banking hub tools comparison' },
-    { name: 'Blog & Articles', path: '/blog', category: 'Blog', emoji: '📰', keywords: 'blog articles finance guides news' },
-    { name: 'Financial Education', path: '/learn', category: 'Learn', emoji: '📚', keywords: 'financial education learning courses lessons' },
-    { name: 'Help Center', path: '/help-center', category: 'Help', emoji: '❓', keywords: 'help center support faq assistance' },
-    
-    // Additional Calculators (30+)
-    { name: 'Emergency Fund', path: '/calculators/emergency-fund-calculator', category: 'Finance', emoji: '🆘', keywords: 'emergency fund savings calculator' },
-    { name: 'Human Life Value', path: '/calculators/human-life-value-calculator', category: 'Insurance', emoji: '👤', keywords: 'human life value hlv insurance' },
-    { name: 'Discount Calculator', path: '/calculators/discount-calculator', category: 'Shopping', emoji: '🏷️', keywords: 'discount percentage off shopping' },
-    { name: 'Financial Goal', path: '/calculators/financial-goal-calculator', category: 'Planning', emoji: '🎯', keywords: 'financial goal planning target savings' },
-    
-    // Blogs (dynamic from entire blog database)
-    ...blogPosts.slice(0, 50).map((post: any) => ({ 
-      name: post?.title || '', 
-      path: `/blog/${post?.slug || ''}`, 
-      category: 'Blog', 
-      emoji: '📰',
-      keywords: `${post?.categories?.join(' ') || ''} blog article guide tutorial`
-    }))
-  ];
-  
-  return allItems;
-};
 
 const HomeInvestopedia: React.FC = () => {
-  const [language, setLanguage] = useState<'en' | 'hi'>('en');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showSearchResults, setShowSearchResults] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [rotationKey, setRotationKey] = useState(0);
-  const [blogPostsData, setBlogPostsData] = useState<any[]>([]);
-  const [isLoadingBlogs, setIsLoadingBlogs] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  // Lazy load blog data
-  useEffect(() => {
-    loadBlogData().then(data => {
-      const allPosts = [...(data.blogPosts0 || []), ...(data.blogPosts1 || [])];
-      setBlogPostsData(allPosts);
-      setIsLoadingBlogs(false);
-    }).catch(() => {
-      setIsLoadingBlogs(false);
-    });
-  }, []);
-  const navigate = useNavigate();
-  const currentDate = getCurrentDate();
+  const calculatorCategories = [
+    {
+      title: 'Investment Calculators',
+      icon: TrendingUp,
+      color: 'blue',
+      calculators: [
+        { name: 'SIP Calculator', path: '/calculators/sip-calculator' },
+        { name: 'Mutual Fund Returns', path: '/calculators/mutual-fund-returns-calculator' },
+        { name: 'PPF Calculator', path: '/calculators/ppf-calculator' },
+        { name: 'FD Calculator', path: '/calculators/fixed-deposit-calculator' },
+      ]
+    },
+    {
+      title: 'Loan Calculators',
+      icon: Home,
+      color: 'green',
+      calculators: [
+        { name: 'EMI Calculator', path: '/calculators/emi-calculator' },
+        { name: 'Home Loan Calculator', path: '/calculators/home-loan-calculator' },
+        { name: 'Personal Loan', path: '/calculators/personal-loan-calculator' },
+        { name: 'Car Loan', path: '/calculators/car-loan-calculator' },
+      ]
+    },
+    {
+      title: 'Tax Calculators',
+      icon: FileText,
+      color: 'purple',
+      calculators: [
+        { name: 'Income Tax Calculator', path: '/tools/income-tax-calculator' },
+        { name: 'HRA Calculator', path: '/calculators/hra-calculator' },
+        { name: 'Capital Gains Tax', path: '/calculators/capital-gains-tax-calculator' },
+        { name: 'TDS Calculator', path: '/calculators/tds-calculator' },
+      ]
+    },
+    {
+      title: 'GST Tools',
+      icon: BarChart3,
+      color: 'orange',
+      calculators: [
+        { name: 'GST Calculator', path: '/tools/gst-amount-calculator' },
+        { name: 'HSN/SAC Finder', path: '/tools/gst-hsn-sac-finder' },
+        { name: 'Reverse GST', path: '/tools/reverse-gst-calculator' },
+        { name: 'GST Liability', path: '/tools/gst-liability-calculator' },
+      ]
+    },
+  ];
 
-  const searchDatabase = useMemo(() => buildSearchDatabase(blogPostsData), [blogPostsData]);
+  const trustIndicators = [
+    { icon: Shield, title: '100% Free', description: 'All tools are completely free to use' },
+    { icon: Lock, title: 'Secure & Private', description: 'Your data is never stored or shared' },
+    { icon: CheckCircle, title: 'Accurate Results', description: 'Calculations verified by experts' },
+    { icon: Users, title: '1M+ Users', description: 'Trusted by millions across India' },
+  ];
 
-  // Auto-refresh random content every 10 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRotationKey(prev => prev + 1);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Enhanced search with fuzzy matching
-  const searchResults = useMemo(() => {
-    if (searchQuery.trim().length > 1) {
-      const query = searchQuery.toLowerCase();
-      return searchDatabase.filter(item => 
-        item.name.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query) ||
-        item.keywords?.toLowerCase().includes(query) ||
-        item.path.toLowerCase().includes(query)
-      ).slice(0, 15);
-    }
-    return [];
-  }, [searchQuery, searchDatabase]);
-
-  useEffect(() => {
-    setShowSearchResults(searchResults.length > 0 && searchQuery.length > 1);
-  }, [searchResults, searchQuery]);
-
-  const handleSearchItemClick = (path: string) => {
-    navigate(path);
-    setSearchQuery('');
-    setShowSearchResults(false);
-  };
-
-  // Helper function - Get random items from any array
-  const getRandomItems = (pool: any[], count: number) => {
-    const shuffled = [...pool].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, count);
-  };
-
-  // DYNAMIC Trending Items - Auto-updates with new content from entire codebase
-  const allTrendingItems = useMemo(() => [
-    // NEW Additions (Mark new tools here)
-    { name: 'Salary Calculator', path: '/calculators/salary-calculator', emoji: '💵', tag: 'NEW', desc: 'Complete salary breakdown with CTC' },
-    { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', tag: 'NEW', desc: '11 eclipse dates with Sutak timings' },
-    { name: 'Car Loan EMI', path: '/calculators/car-loan-emi-calculator', emoji: '🚗', tag: 'NEW', desc: 'Auto loan calculator with down payment' },
-    { name: 'Property Calculator', path: '/calculators/property-calculator', emoji: '🏘️', tag: 'NEW', desc: 'Stamp duty & registration charges' },
-    
-    // HOT/Trending (Most popular)
-    { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', tag: 'HOT', desc: '40+ auspicious wedding dates' },
-    { name: 'GST Calculator', path: '/tools/gst-amount-calculator', emoji: '💰', tag: 'HOT', desc: 'Calculate GST inclusive/exclusive' },
-    { name: 'Home Loan EMI', path: '/calculators/home-loan-emi-calculator', emoji: '🏠', tag: 'HOT', desc: 'Housing loan EMI calculator' },
-    { name: 'Panchang Today', path: '/festival-tools/panchang-today', emoji: '📅', tag: 'HOT', desc: 'Daily tithi & nakshatra' },
-    
-    // POPULAR (High traffic)
-    { name: 'SIP Calculator', path: '/calculators/sip-calculator', emoji: '📈', tag: 'POPULAR', desc: 'Mutual fund SIP returns' },
-    { name: 'Income Tax 2025', path: '/tools/income-tax-calculator', emoji: '📄', tag: 'POPULAR', desc: 'Old vs New regime comparison' },
-    { name: 'Credit Score Guide', path: '/learn/credit-score', emoji: '📊', tag: 'POPULAR', desc: '10 lessons to boost CIBIL' },
-    { name: 'PPF Calculator', path: '/calculators/ppf-calculator', emoji: '🏦', tag: 'POPULAR', desc: 'Retirement planning tool' },
-    
-    // Calculators
-    { name: 'Personal Loan EMI', path: '/calculators/personal-loan-emi-calculator', emoji: '💵', tag: 'TRENDING', desc: 'Instant personal loan calculator' },
-    { name: 'Loan Comparison', path: '/calculators/loan-comparison-calculator', emoji: '📊', tag: 'TRENDING', desc: 'Compare multiple loan offers' },
-    { name: 'Prepayment Calculator', path: '/calculators/prepayment-calculator', emoji: '💰', tag: 'TRENDING', desc: 'Calculate prepayment savings' },
-    
-    // Learn Content
-    { name: 'Gold Loans', path: '/learn/gold-loans', emoji: '🏆', tag: 'TRENDING', desc: '10 comprehensive lessons' },
-    { name: 'Credit Cards', path: '/learn/credit-cards', emoji: '💳', tag: 'TRENDING', desc: '20 detailed lessons' },
-    
-    // Festival Tools
-    { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', tag: 'TRENDING', desc: '50+ fasting dates' },
-    { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', tag: 'TRENDING', desc: 'Auspicious timing alerts' }
-  ], []);
-
-  // Get random trending items - changes on page load
-  const trendingItems = useMemo(() => 
-    getRandomItems(allTrendingItems, 6), [allTrendingItems]
-  );
-
-  // Dynamic category content pools - 7+ items each!
-  const categoryPools = useMemo(() => ({
-    calculators: [
-      { name: 'SIP Calculator', path: '/calculators/sip-calculator', emoji: '📈', desc: 'Calculate SIP returns & wealth', users: '50K+' },
-      { name: 'Home Loan EMI', path: '/calculators/home-loan-emi-calculator', emoji: '🏠', desc: 'Housing loan calculator', users: '45K+' },
-      { name: 'Personal Loan EMI', path: '/calculators/personal-loan-emi-calculator', emoji: '💵', desc: 'Instant personal loan EMI', users: '42K+' },
-      { name: 'Car Loan EMI', path: '/calculators/car-loan-emi-calculator', emoji: '🚗', desc: 'Auto loan calculator', users: '38K+' },
-      { name: 'GST Calculator', path: '/tools/gst-amount-calculator', emoji: '💰', desc: 'GST amount calculator', users: '40K+' },
-      { name: 'PPF Calculator', path: '/calculators/ppf-calculator', emoji: '🏦', desc: 'Public Provident Fund', users: '35K+' },
-      { name: 'Income Tax', path: '/tools/income-tax-calculator', emoji: '📄', desc: 'Tax calculator 2025', users: '38K+' },
-      { name: 'EMI Calculator', path: '/calculators/emi-calculator', emoji: '🧮', desc: 'General EMI calculator', users: '42K+' },
-      { name: 'FD Calculator', path: '/calculators/compound-interest-calculator', emoji: '💰', desc: 'Fixed deposit calculator', users: '30K+' },
-      { name: 'Retirement Planner', path: '/calculators/retirement-calculator', emoji: '👴', desc: 'Retirement corpus planner', users: '25K+' },
-      { name: 'Loan Comparison', path: '/calculators/loan-comparison-calculator', emoji: '📊', desc: 'Compare loan offers', users: '28K+' },
-      { name: 'Prepayment Calculator', path: '/calculators/prepayment-calculator', emoji: '💰', desc: 'Calculate prepayment savings', users: '22K+' }
-    ],
-    learning: [
-      { name: 'Gold Loans Mastery', path: '/learn/gold-loans', emoji: '🏆', desc: '10 comprehensive lessons', lessons: '10' },
-      { name: 'Credit Card Secrets', path: '/learn/credit-cards', emoji: '💳', desc: '20 detailed lessons', lessons: '20' },
-      { name: 'Credit Score Guide', path: '/learn/credit-score', emoji: '📊', desc: '10 expert lessons', lessons: '10' },
-      { name: 'What is Gold Loan', path: '/learn/gold-loans/what-is-gold-loan', emoji: '🏆', desc: 'Gold loan basics explained', lessons: '1' },
-      { name: 'Interest Rates Guide', path: '/learn/gold-loans/interest-rates', emoji: '💰', desc: 'Understand interest rates', lessons: '1' },
-      { name: 'Balance Transfer Tips', path: '/learn/credit-cards/balance-transfer', emoji: '🔄', desc: 'Save on interest payments', lessons: '1' },
-      { name: 'Improve Credit Score', path: '/learn/credit-score/improve-score', emoji: '📈', desc: 'Boost your CIBIL score', lessons: '1' },
-      { name: 'Loan Eligibility', path: '/learn/gold-loans/eligibility-calculator', emoji: '✅', desc: 'Check loan eligibility', lessons: '1' },
-      { name: 'Credit Card Types', path: '/learn/credit-cards/types-of-credit-cards', emoji: '💳', desc: 'All credit card types', lessons: '1' }
-    ],
-    festivals: [
-      { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', desc: '11 eclipses with sutak timings', events: '11' },
-      { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', desc: '40+ auspicious wedding dates', events: '40+' },
-      { name: 'Daily Panchang', path: '/festival-tools/panchang-today', emoji: '📅', desc: 'Today\'s tithi & nakshatra', events: '365' },
-      { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', desc: '7-day lunar calendar view', events: '52' },
-      { name: 'Purnima & Amavasya', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', desc: 'Full & new moon dates', events: '24' },
-      { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', desc: '50+ Hindu fasting dates', events: '50+' },
-      { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', emoji: '⭐', desc: 'Birth star for festivals', events: '27' },
-      { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', desc: 'Auspicious timing alerts', events: '100+' },
-      { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', desc: 'Complete yearly calendar', events: '365' }
-    ],
-    blogs: [
-      ...blogPostsData.slice(0, 10).map((post: any) => ({ 
-        name: post?.title || '', 
-        path: `/blog/${post?.slug || ''}`, 
-        emoji: '📰', 
-        desc: (post?.excerpt || '').slice(0, 55) + '...',
-        category: post?.categories?.[0] || 'Finance'
-      }))
-    ]
-  }), [blogPostsData]);
-
-  // COMPREHENSIVE DATA POOLS - All content from entire codebase
-  const allPlatformCategories = useMemo(() => [
-    { name: 'Calculators', path: '/calculators', emoji: '🧮', count: '107' },
-    { name: 'Learn', path: '/learn', emoji: '📚', count: '40' },
-    { name: 'Festival', path: '/festival-tools', emoji: '🎉', count: '11' },
-    { name: 'GST', path: '/gst-tools', emoji: '💰', count: '20+' },
-    { name: 'Tax', path: '/tax-tools', emoji: '📄', count: '15+' },
-    { name: 'Loans', path: '/loan-tools', emoji: '🏠', count: '12+' },
-    { name: 'Insurance', path: '/insurance-tools', emoji: '🛡️', count: '8+' },
-    { name: 'Corporate', path: '/corporate-finance', emoji: '💼', count: '25+' },
-    { name: 'Gold', path: '/gold-tools', emoji: '🏆', count: '10+' },
-    { name: 'Finance', path: '/finance-tools', emoji: '💵', count: '30+' },
-    { name: 'Personal', path: '/tools', emoji: '👤', count: '15+' },
-    { name: 'Religious', path: '/religious-tools', emoji: '🙏', count: '10+' },
-    { name: 'Invoicing', path: '/invoicing-tools', emoji: '📋', count: '8+' },
-    { name: 'Blog', path: '/blog', emoji: '📰', count: '150+' },
-    { name: 'Crypto', path: '/crypto', emoji: '₿', count: '50+' },
-    { name: 'Excel Tools', path: '/excel-tools', emoji: '📊', count: '100+' },
-    { name: 'Banking', path: '/banking', emoji: '🏦', count: '15+' },
-    { name: 'Market', path: '/stock-market', emoji: '📈', count: '20+' },
-    { name: 'Schemes', path: '/government-schemes', emoji: '🎁', count: '50+' },
-    { name: 'Astro', path: '/astro-finance', emoji: '⭐', count: '12+' },
-    { name: 'Retirement', path: '/calculators/retirement-calculator', emoji: '👴', count: '5+' },
-    { name: 'Investment', path: '/calculators/sip-calculator', emoji: '💹', count: '20+' },
-    { name: 'Property', path: '/calculators/property-calculator', emoji: '🏘️', count: '8+' },
-    { name: 'Business', path: '/calculators/business-loan-calculator', emoji: '💼', count: '15+' }
-  ], []);
-
-  const allQuickCategories = useMemo(() => [
-    { name: 'All Tools', path: '/tools', emoji: '🧰', count: '100+', tag: '' },
-    { name: 'Investment', path: '/finance-tools', emoji: '📈', count: '15+', tag: '' },
-    { name: 'GST', path: '/gst-tools', emoji: '💰', count: '20+', tag: '' },
-    { name: 'Tax', path: '/tax-tools', emoji: '📄', count: '10+', tag: '' },
-    { name: 'Loans', path: '/loan-tools', emoji: '🏠', count: '8+', tag: '' },
-    { name: 'Festival', path: '/festival-tools', emoji: '🎉', count: '11', tag: 'Hot' },
-    { name: 'Learn', path: '/learn', emoji: '🏆', count: '40', tag: 'New' },
-    { name: 'Blog', path: '/blog', emoji: '📰', count: '50+', tag: '' },
-    { name: 'Gold Tools', path: '/gold-tools', emoji: '🏆', count: '10+', tag: '' },
-    { name: 'Insurance', path: '/insurance-tools', emoji: '🛡️', count: '8+', tag: '' },
-    { name: 'Corporate', path: '/corporate-finance', emoji: '💼', count: '25+', tag: '' },
-    { name: 'Invoicing', path: '/invoicing-tools', emoji: '📋', count: '8+', tag: '' },
-    { name: 'Crypto', path: '/crypto', emoji: '₿', count: '50+', tag: 'Hot' },
-    { name: 'Excel', path: '/excel-tools', emoji: '📊', count: '100+', tag: '' },
-    { name: 'Banking', path: '/banking', emoji: '🏦', count: '15+', tag: '' },
-    { name: 'Stock Market', path: '/stock-market', emoji: '📈', count: '20+', tag: '' }
-  ], []);
-
-  // COMPREHENSIVE Festival Tools Pool - Auto-grows with new additions
-  const allFestivalTools = useMemo(() => [
-    { name: 'Parsi New Year', path: '/festival-tools/parsi-new-year', emoji: '🎊', category: 'Festival', tag: '' },
-    { name: 'Panchang Today', path: '/festival-tools/panchang-today', emoji: '📅', category: 'Festival', tag: 'Popular' },
-    { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', emoji: '📖', category: 'Festival', tag: '' },
-    { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', emoji: '📆', category: 'Festival', tag: '' },
-    { name: 'Moon Phase Festivals', path: '/festival-tools/moon-phase-festivals', emoji: '🌙', category: 'Festival', tag: '' },
-    { name: 'Purnima Amavasya', path: '/festival-tools/purnima-amavasya-dates', emoji: '🌕', category: 'Festival', tag: 'Trending' },
-    { name: 'Vrat Upavas Calendar', path: '/festival-tools/vrat-upavas-calendar', emoji: '🙏', category: 'Festival', tag: 'Popular' },
-    { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', emoji: '⭐', category: 'Festival', tag: '' },
-    { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', emoji: '🔔', category: 'Festival', tag: 'Hot' },
-    { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', emoji: '💍', category: 'Festival', tag: 'Hot' },
-    { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', emoji: '🌑', category: 'Festival', tag: 'New' },
-    { name: 'Diwali Date Finder', path: '/festival-tools/diwali-date-finder', emoji: '🪔', category: 'Festival', tag: '' },
-    { name: 'Holi Date Calculator', path: '/festival-tools/holi-date-calculator', emoji: '🎨', category: 'Festival', tag: '' },
-    { name: 'Raksha Bandhan', path: '/festival-tools/raksha-bandhan-muhurat', emoji: '🎀', category: 'Festival', tag: '' },
-    { name: 'Navratri Dates', path: '/festival-tools/navratri-dates-finder', emoji: '🪔', category: 'Festival', tag: '' },
-    { name: 'Ganesh Chaturthi', path: '/festival-tools/ganesh-chaturthi-countdown', emoji: '🐘', category: 'Festival', tag: '' },
-    { name: 'Janmashtami Fasting', path: '/festival-tools/janmashtami-fasting', emoji: '🦚', category: 'Festival', tag: '' },
-    { name: 'Dussehra Dates', path: '/festival-tools/dussehra-dates', emoji: '🏹', category: 'Festival', tag: '' },
-    { name: 'Chhath Puja', path: '/festival-tools/chhat-puja-arghya', emoji: '☀️', category: 'Festival', tag: '' },
-    { name: 'Maha Shivratri', path: '/festival-tools/maha-shivratri-duration', emoji: '🔱', category: 'Festival', tag: '' },
-    { name: 'Guru Purnima', path: '/festival-tools/guru-purnima-calendar', emoji: '🙏', category: 'Festival', tag: '' },
-    { name: 'Buddha Purnima', path: '/festival-tools/buddha-purnima-converter', emoji: '☸️', category: 'Festival', tag: '' },
-    { name: 'Eid Date Converter', path: '/festival-tools/eid-date-converter', emoji: '🌙', category: 'Festival', tag: '' },
-    { name: 'Ramadan Timetable', path: '/festival-tools/ramadan-timetable', emoji: '🕌', category: 'Festival', tag: '' },
-    { name: 'Christmas Countdown', path: '/festival-tools/christmas-countdown', emoji: '🎄', category: 'Festival', tag: '' },
-    { name: 'Pongal Calendar', path: '/festival-tools/pongal-calendar', emoji: '🌾', category: 'Festival', tag: '' },
-    { name: 'Onam Date Reminder', path: '/festival-tools/onam-date-reminder', emoji: '🌺', category: 'Festival', tag: '' },
-    { name: 'Lohri Sunrise', path: '/festival-tools/lohri-sunrise-sunset', emoji: '🔥', category: 'Festival', tag: '' },
-    { name: 'Bihu Date Calendar', path: '/festival-tools/bihu-date-calendar', emoji: '🎶', category: 'Festival', tag: '' }
-  ], []);
-
-  // Dynamic content that changes based on rotationKey
-  const dynamicPlatformCategories = useMemo(() => 
-    getRandomItems(allPlatformCategories, 20), [allPlatformCategories, rotationKey]
-  );
-
-  const dynamicQuickCategories = useMemo(() => 
-    getRandomItems(allQuickCategories, 8), [allQuickCategories, rotationKey]
-  );
-
-  // Dynamic Festival Tools - Shows random selection each time
-  const dynamicFestivalTools = useMemo(() => 
-    getRandomItems(allFestivalTools, 12), [allFestivalTools] // Show random 12 from 29 tools
-  );
-
-  // Dynamic Popular Search Tags - Changes on every page load
-  const allPopularTags = useMemo(() => [
-    { emoji: '💰', label: 'GST', path: '/gst-tools', searchTerm: 'GST' },
-    { emoji: '📈', label: 'SIP', path: '/calculators/sip-calculator', searchTerm: 'SIP' },
-    { emoji: '🏠', label: 'EMI', path: '/calculators/emi-calculator', searchTerm: 'EMI' },
-    { emoji: '🌑', label: 'Eclipse', path: '/festival-tools/lunar-eclipse-predictor', searchTerm: 'Eclipse' },
-    { emoji: '💍', label: 'Marriage', path: '/festival-tools/auspicious-marriage-days', searchTerm: 'Marriage' },
-    { emoji: '📊', label: 'Tax', path: '/tax-tools', searchTerm: 'Tax' },
-    { emoji: '🏆', label: 'Learn', path: '/learn', searchTerm: 'Learn' },
-    { emoji: '💵', label: 'Salary', path: '/calculators/salary-calculator', searchTerm: 'Salary' },
-    { emoji: '🏦', label: 'PPF', path: '/calculators/ppf-calculator', searchTerm: 'PPF' },
-    { emoji: '📄', label: 'Income Tax', path: '/tools/income-tax-calculator', searchTerm: 'Income Tax' },
-    { emoji: '💳', label: 'Credit Card', path: '/learn/credit-cards', searchTerm: 'Credit Card' },
-    { emoji: '🏡', label: 'Home Loan', path: '/calculators/home-loan-emi-calculator', searchTerm: 'Home Loan' },
-    { emoji: '🚗', label: 'Car Loan', path: '/calculators/car-loan-emi-calculator', searchTerm: 'Car Loan' },
-    { emoji: '🎉', label: 'Festival', path: '/festival-tools', searchTerm: 'Festival' },
-    { emoji: '📅', label: 'Panchang', path: '/festival-tools/panchang-today', searchTerm: 'Panchang' },
-    { emoji: '👴', label: 'Retirement', path: '/calculators/retirement-calculator', searchTerm: 'Retirement' },
-    { emoji: '💼', label: 'Business', path: '/calculators/business-loan-calculator', searchTerm: 'Business' },
-    { emoji: '🏆', label: 'Gold', path: '/gold-tools', searchTerm: 'Gold' },
-    { emoji: '₿', label: 'Crypto', path: '/crypto', searchTerm: 'Crypto' },
-    { emoji: '📊', label: 'Excel', path: '/excel-tools', searchTerm: 'Excel' }
-  ], []);
-
-  const dynamicPopularTags = useMemo(() => 
-    getRandomItems(allPopularTags, 7), [allPopularTags] // Shuffle on every page load
-  );
-
-  // All Festival Categories - Comprehensive pool
-  const allFestivalCategories = useMemo(() => [
-    { name: 'Date & Calendar', path: '/festival-dates', emoji: '📅' },
-    { name: 'Planning & Shopping', path: '/festival-shopping', emoji: '🛍️' },
-    { name: 'Finance & Money', path: '/festival-finance', emoji: '💰' },
-    { name: 'Religious', path: '/religious-tools', emoji: '🙏' },
-    { name: 'Fun & Games', path: '/fun-engagement', emoji: '🎮' },
-    { name: 'Design', path: '/design-tools', emoji: '🎨' },
-    { name: 'Information', path: '/festival-info', emoji: '📖' },
-    { name: 'Corporate', path: '/festival-corporate-tools', emoji: '💼' },
-    { name: 'Regional', path: '/regional-tools', emoji: '🗺️' },
-    { name: 'SEO', path: '/seo-tools', emoji: '📊' }
-  ], []);
-
-  const dynamicFestivalCategories = useMemo(() => 
-    allFestivalCategories.sort(() => Math.random() - 0.5), [allFestivalCategories] // Shuffle on load
-  );
-
-  const dynamicContent = useMemo(() => ({
-    calculators: getRandomItems(categoryPools.calculators, 7),
-    learning: getRandomItems(categoryPools.learning, 7),
-    festivals: getRandomItems(categoryPools.festivals, 7),
-    blogs: getRandomItems(categoryPools.blogs, 7)
-  }), [categoryPools, rotationKey]);
-
-  const mainSections = [
-    { name: language === 'en' ? 'All Tools' : 'सभी', path: '/tools', emoji: '🧰' },
-    { name: language === 'en' ? 'Calculators' : 'कैलकुलेटर', path: '/calculators', emoji: '🧮' },
-    { name: language === 'en' ? 'Finance' : 'वित्त', path: '/finance-tools', emoji: '💵' },
-    { name: language === 'en' ? 'Tax' : 'कर', path: '/tax-tools', emoji: '📄' },
-    { name: 'GST', path: '/gst-tools', emoji: '💰' },
-    { name: language === 'en' ? 'Corporate' : 'कॉर्पोरेट', path: '/corporate-finance', emoji: '💼' },
-    { name: language === 'en' ? 'Insurance' : 'बीमा', path: '/insurance-tools', emoji: '🛡️' },
-    { name: language === 'en' ? 'Festival' : 'त्योहार', path: '/festival-tools', emoji: '🎉' },
-    { name: language === 'en' ? 'Blog' : 'ब्लॉग', path: '/blog', emoji: '📰' },
-    { name: language === 'en' ? 'Education' : 'शिक्षा', path: '/learn', emoji: '🎓' },
-    { name: language === 'en' ? 'Help' : 'सहायता', path: '/help-center', emoji: '❓' },
-    { name: language === 'en' ? 'Schemes' : 'योजना', path: '/government-schemes', emoji: '🎁' },
-    { name: language === 'en' ? 'Astro' : 'ज्योतिष', path: '/astro-finance', emoji: '⭐' }
+  const stats = [
+    { number: '107+', label: 'Financial Calculators' },
+    { number: '1M+', label: 'Happy Users' },
+    { number: '5M+', label: 'Calculations Done' },
+    { number: '100%', label: 'Free Forever' },
   ];
 
   return (
     <>
       <SEOHelmet
-        title="MoneyCal India - 100+ Free Financial Calculators & Tools | #1 Platform"
-        description="India's most comprehensive financial platform. 100+ free calculators, 40 lessons, 11 festival tools. GST, Tax, SIP, EMI, Eclipse dates. Mobile-friendly."
-        keywords="financial calculators India, GST calculator, SIP calculator, EMI calculator, eclipse 2025, marriage muhurat, income tax"
+        title="MoneyCal.in - Free Financial Calculators for India | EMI, SIP, Tax, GST"
+        description="India's most trusted financial calculator platform. Calculate EMI, SIP returns, income tax, GST, and more. 100% free, secure, and accurate financial planning tools."
         canonicalUrl="https://moneycal.in"
       />
 
-      <div className="min-h-screen bg-white">
-        {/* Subtle Professional Background */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
-          <div className="absolute w-96 h-96 rounded-full blur-3xl bg-blue-100" style={{ top: '5%', left: '5%' }}></div>
-          <div className="absolute w-96 h-96 rounded-full blur-3xl bg-purple-100" style={{ top: '40%', right: '5%' }}></div>
-          <div className="absolute w-96 h-96 rounded-full blur-3xl bg-pink-100" style={{ bottom: '10%', left: '50%' }}></div>
+      {/* Professional Header */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Calculator className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">MoneyCal.in</h1>
+                <p className="text-xs text-gray-600">Financial Calculators</p>
+              </div>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <Link to="/calculators" className="text-gray-700 hover:text-blue-600 font-medium">Calculators</Link>
+              <Link to="/blog" className="text-gray-700 hover:text-blue-600 font-medium">Blog</Link>
+              <Link to="/learn" className="text-gray-700 hover:text-blue-600 font-medium">Learn</Link>
+              <Link to="/about-us" className="text-gray-700 hover:text-blue-600 font-medium">About</Link>
+              <Link to="/contact-us" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                Contact Us
+              </Link>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
-        {/* Professional Clean Navigation */}
-        <nav className="relative z-40 bg-white/95 backdrop-blur-lg sticky top-0 shadow-md border-b border-gray-200" style={{ minHeight: '72px' }}>
-          <div className="max-w-7xl mx-auto px-4 py-3">
-            <div className="flex justify-between items-center">
-              {/* Professional Logo */}
-              <Link to="/" className="flex items-center gap-3 group">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center group-hover:scale-105 transition-all shadow-lg">
-                  <span className="text-white font-black text-3xl">💰</span>
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-black text-gray-900">
-                    MoneyCal<span className="text-blue-600">.in</span>
-                  </div>
-                  <div className="text-xs font-medium text-gray-600 -mt-1">
-                    Smart Financial Tools
-                  </div>
-                </div>
-              </Link>
-
-              {/* Clean Professional Nav Links - Desktop */}
-              <div className="hidden lg:flex items-center gap-1">
-                {mainSections.slice(0, 8).map((item, idx) => (
-                  <Link
-                    key={idx}
-                    to={item.path}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg font-semibold text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all"
-                  >
-                    <span className="text-lg">{item.emoji}</span>
-                    <span className="hidden xl:inline">{item.name}</span>
-                  </Link>
-                ))}
-              </div>
-
-              {/* Controls */}
-              <div className="flex items-center gap-3">
-                {/* Language */}
-                <button
-                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
-                  className="px-4 py-2 rounded-lg text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-all flex items-center gap-1.5"
-                  aria-label="Toggle language"
-                >
-                  <Globe className="w-4 h-4" />
-                  {language === 'en' ? 'हिंदी' : 'EN'}
-                </button>
-
-                {/* Mobile Menu */}
-                <button
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="lg:hidden p-2.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-900 transition-colors"
-                  aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-                  aria-expanded={mobileMenuOpen}
-                  aria-controls="mobile-menu"
-                >
-                  {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                </button>
-              </div>
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 bg-white">
+            <div className="px-4 py-4 space-y-3">
+              <Link to="/calculators" className="block py-2 text-gray-700 hover:text-blue-600">Calculators</Link>
+              <Link to="/blog" className="block py-2 text-gray-700 hover:text-blue-600">Blog</Link>
+              <Link to="/learn" className="block py-2 text-gray-700 hover:text-blue-600">Learn</Link>
+              <Link to="/about-us" className="block py-2 text-gray-700 hover:text-blue-600">About</Link>
+              <Link to="/contact-us" className="block py-2 px-4 bg-blue-600 text-white rounded-lg text-center">Contact Us</Link>
             </div>
           </div>
+        )}
+      </header>
 
-          {/* Clean Mobile Menu */}
-            {mobileMenuOpen && (
-            <div 
-              id="mobile-menu"
-              className="lg:hidden border-t border-gray-200 bg-white"
-              role="navigation"
-              aria-label="Mobile navigation"
+      {/* Hero Section - Professional White Theme */}
+      <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="px-4 py-4 grid grid-cols-2 gap-2.5 max-h-[70vh] overflow-y-auto">
-                  {mainSections.map((item, idx) => (
+              <div className="inline-flex items-center space-x-2 bg-blue-100 px-4 py-2 rounded-full mb-6">
+                <Award className="w-5 h-5 text-blue-600" />
+                <span className="text-blue-700 font-semibold">India's Most Trusted Financial Platform</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Make Smarter <span className="text-blue-600">Financial Decisions</span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Access 107+ professional financial calculators for EMI, SIP, Tax, GST, and more. 
+                Trusted by over 1 million Indians for accurate financial planning.
+              </p>
+
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto mb-8">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search for calculators (EMI, SIP, Tax, GST...)"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none shadow-lg"
+                  />
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  to="/calculators"
+                  className="px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl flex items-center space-x-2"
+                >
+                  <Calculator className="w-5 h-5" />
+                  <span>Explore All Calculators</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  to="/blog"
+                  className="px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-gray-200"
+                >
+                  Learn Financial Planning
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Indicators */}
+      <section className="py-16 bg-white border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {trustIndicators.map((indicator, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <indicator.icon className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{indicator.title}</h3>
+                <p className="text-gray-600">{indicator.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Calculator Categories */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Popular Financial Calculators
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Professional tools for every financial need - from loans to investments, tax planning to GST
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {calculatorCategories.map((category, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200"
+              >
+                <div className={`w-12 h-12 bg-${category.color}-100 rounded-lg flex items-center justify-center mb-4`}>
+                  <category.icon className={`w-6 h-6 text-${category.color}-600`} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{category.title}</h3>
+                <div className="space-y-2">
+                  {category.calculators.map((calc, idx) => (
                     <Link
                       key={idx}
-                      to={item.path}
-                      onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2 px-4 py-3 rounded-lg font-semibold text-sm bg-gray-50 text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                    aria-label={`Navigate to ${item.name}`}
-                  >
-                    <span className="text-2xl" aria-hidden="true">{item.emoji}</span>
-                      <span>{item.name}</span>
+                      to={calc.path}
+                      className="block text-gray-700 hover:text-blue-600 hover:pl-2 transition-all font-medium"
+                    >
+                      → {calc.name}
                     </Link>
                   ))}
                 </div>
-            </div>
-            )}
-        </nav>
-
-        {/* Professional Hero Section */}
-        <section className="relative py-20 md:py-28 hero-section bg-gradient-to-b from-white to-gray-50" style={{ minHeight: '650px' }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div className="text-center">
-              {/* Trust Badge */}
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-50 border border-green-200 text-green-700 rounded-full text-sm font-semibold mb-6 shadow-sm">
-                <CheckCircle className="w-4 h-4" />
-                {language === 'en' ? 'Trusted by 1,000,000+ Indians' : '10 लाख+ भारतीयों का विश्वास'}
-              </div>
-
-              {/* Professional Title */}
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-gray-900 leading-tight">
-                {language === 'en' ? "India's #1 Financial" : 'भारत का #1 वित्तीय'}<br />
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  {language === 'en' ? 'Calculator Platform' : 'कैलकुलेटर प्लेटफ़ॉर्म'}
-                </span>
-              </h1>
-
-              {/* Inspiring Quote */}
-              <div className="max-w-3xl mx-auto mb-8">
-                <p className="text-xl md:text-2xl text-gray-700 font-medium mb-4">
-                  {language === 'en' 
-                    ? '"Financial freedom is available to those who learn about it and work for it"' 
-                    : '"वित्तीय स्वतंत्रता उन लोगों के लिए है जो इसे सीखते और काम करते हैं"'}
-                </p>
-                <p className="text-sm text-gray-500 italic">
-                  {language === 'en' ? '— Robert Kiyosaki' : '— रॉबर्ट कियोसाकी'}
-                </p>
-              </div>
-
-              <p className="text-lg md:text-xl mb-12 text-gray-600">
-                {language === 'en' ? '🎯 100+ Free Calculators • 📚 40 Expert Lessons • 🎉 11 Festival Tools' : '🎯 100+ मुफ्त कैलकुलेटर • 📚 40 पाठ • 🎉 11 उत्सव उपकरण'}
-              </p>
-
-              {/* Professional Search Bar */}
-              <div className="max-w-3xl mx-auto mb-12 relative">
-                <div className="relative">
-                  <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" />
-                      <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder={language === 'en' ? '🔍 Search calculators, tools, guides... Try: GST, SIP, EMI, Marriage' : '🔍 खोजें...'}
-                    className="w-full pl-14 pr-14 py-5 text-lg rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none font-medium shadow-lg bg-white text-gray-900 placeholder-gray-500 transition-all"
-                  />
-                  {searchQuery && (
-                    <button
-                      onClick={() => { setSearchQuery(''); setShowSearchResults(false); }}
-                      className="absolute right-5 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-gray-100 active:scale-90 transition-all"
-                    >
-                      <X className="w-5 h-5 text-gray-400" />
-                      </button>
-                  )}
-                    </div>
-
-                {/* Clean Popular Tags */}
-                {!searchQuery && (
-                  <div className="mt-5 flex flex-wrap justify-center gap-2">
-                    <span className="text-sm font-semibold text-gray-600">
-                      <Flame className="w-4 h-4 inline mr-1 text-orange-500" /> Popular:
-                    </span>
-                    {dynamicPopularTags.map((tag, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setSearchQuery(tag.searchTerm)}
-                        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm hover:shadow-md transition-all flex items-center gap-1.5"
-                      >
-                        <span>{tag.emoji}</span>
-                        <span>{tag.label}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-
-                {/* Professional Search Results */}
-                    <AnimatePresence>
-                  {showSearchResults && (
-                        <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 right-0 mt-4 rounded-2xl shadow-2xl border border-gray-200 max-h-[70vh] overflow-y-auto z-50 bg-white"
-                    >
-                      <div className="p-4">
-                        <div className="px-4 py-3 font-bold mb-3 text-sm text-gray-600 border-b border-gray-100">
-                          ✨ {searchResults.length} {language === 'en' ? 'Results Found' : 'परिणाम'}
-                        </div>
-                        <div className="space-y-1.5">
-                          {searchResults.map((result, idx) => (
-                            <motion.button
-                                      key={idx}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: idx * 0.02 }}
-                              onClick={() => handleSearchItemClick(result.path)}
-                              className="w-full flex items-center gap-4 px-4 py-4 text-left rounded-xl border border-transparent hover:border-blue-200 hover:bg-blue-50 transition-all group"
-                            >
-                              <div className="text-3xl flex-shrink-0">{result.emoji}</div>
-                              <div className="flex-1 min-w-0">
-                                <div className="font-bold text-base mb-1 text-gray-900 group-hover:text-blue-600">
-                                  {result.name}
-                                      </div>
-                                <div className="flex items-center gap-2 flex-wrap">
-                                  <span className="px-2.5 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
-                                    {result.category}
-                                  </span>
-                                  <span className="text-xs text-gray-500">
-                                    {result.path}
-                                  </span>
-                                </div>
-                            </div>
-                              <ChevronRight className="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-blue-600" />
-                            </motion.button>
-                                ))}
-                              </div>
-                            </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-              </div>
-
-              {/* Professional CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Link
                   to="/calculators"
-                  className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+                  className="mt-4 inline-flex items-center text-blue-600 font-semibold hover:text-blue-700"
                 >
-                  <Calculator className="w-6 h-6" />
-                  {language === 'en' ? 'Start Calculating Free' : 'गणना शुरू करें'}
+                  View All <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
-                <Link
-                  to="/learn"
-                  className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white border-2 border-gray-300 hover:border-blue-500 text-gray-900 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
-                >
-                  <Rocket className="w-6 h-6" />
-                  {language === 'en' ? 'Start Learning (40 Lessons)' : 'सीखें (40 पाठ)'}
-                </Link>
-                            </div>
-
-              {/* Professional Stats Grid */}
-              <div className="max-w-6xl mx-auto p-8 rounded-2xl border border-gray-200 mb-12 bg-white shadow-lg">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold mb-2 text-gray-900">
-                    📊 {language === 'en' ? 'Complete Financial Platform' : 'संपूर्ण वित्तीय मंच'}
-                              </h3>
-                  <p className="text-sm text-gray-600">
-                    <Sparkles className="w-4 h-4 inline mr-1 text-blue-500" />
-                    {language === 'en' ? 'Comprehensive tools for every financial need' : 'हर वित्तीय आवश्यकता के लिए'}
-                              </p>
-                            </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                  {dynamicPlatformCategories.map((item, idx) => (
-                    <Link
-                  key={idx}
-                      to={item.path}
-                      className="p-5 rounded-xl text-center transition-all hover:scale-105 bg-white border border-gray-200 hover:border-blue-500 hover:shadow-md"
-                    >
-                      <div className="text-4xl mb-3">{item.emoji}</div>
-                      <div className="text-sm font-bold mb-1 text-gray-900">{item.name}</div>
-                      <div className="text-xs px-2 py-1 rounded-full inline-block font-semibold bg-blue-100 text-blue-700">
-                        {item.count}
-                    </div>
-                  </Link>
-              ))}
-              </div>
-
-                {/* Festival Tool Categories */}
-                <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200">
-                  <h4 className="text-2xl font-bold text-center mb-6 text-orange-700">
-                    🎊 {language === 'en' ? 'Festival Tool Categories' : 'त्योहार श्रेणियां'}
-                  </h4>
-                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-                    {dynamicFestivalCategories.map((cat, i) => (
-                <Link
-                        key={i}
-                        to={cat.path}
-                        className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-105 bg-white text-orange-700 border border-orange-200 hover:border-orange-500 shadow-sm hover:shadow-md"
-                      >
-                        <span className="text-2xl">{cat.emoji}</span>
-                        <span>{cat.name}</span>
-                </Link>
-              ))}
-              </div>
-          </div>
-                  </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Categories Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10">
-              <h2 className="text-4xl font-bold mb-3 text-gray-900">
-                📂 {language === 'en' ? 'All Categories' : 'सभी श्रेणियां'}
-              </h2>
-              <p className="text-base text-gray-600">
-                {language === 'en' ? 'Explore our comprehensive financial tools by category' : 'श्रेणी के अनुसार उपकरण खोजें'}
-              </p>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4">
-              {dynamicQuickCategories.map((cat, idx) => (
-                <Link
-                  key={idx}
-                  to={cat.path}
-                  className="relative p-4 rounded-xl text-center transition-all hover:scale-105 bg-white border border-gray-200 hover:border-blue-500 hover:shadow-md"
-                >
-                  {cat.tag && (
-                    <div className={`absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[10px] font-black ${
-                      cat.tag === 'Hot' ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
-                    }`}>
-                      {cat.tag}
-                    </div>
-                  )}
-                  <div className="text-3xl mb-2">{cat.emoji}</div>
-                  <div className={`text-xs font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                    {cat.name}
-                  </div>
-                  <div className={`text-[10px] px-2 py-0.5 rounded-full inline-block font-semibold ${
-                    theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-600'
-                  }`}>
-                    {cat.count}
-                  </div>
-                  </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Festival Tools Section */}
-        <section className="py-16 bg-gradient-to-br from-orange-50 to-red-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-3 text-orange-700">
-                🎊 {language === 'en' ? 'Festival Tools' : 'त्योहार के औजार'}
-              </h2>
-              <p className="text-lg text-orange-600 mb-4">
-                {language === 'en' ? 'Complete festival planning and cultural tools' : 'संपूर्ण त्योहार योजना'}
-              </p>
-              {/* Internal Links to Related Pages */}
-              <div className="flex flex-wrap justify-center gap-2 mt-4">
-                <Link to="/festival-tools" className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors">
-                  View All Festival Tools →
-                </Link>
-                <Link to="/religious-tools" className="px-4 py-2 bg-white border border-orange-300 text-orange-700 rounded-lg text-sm font-semibold hover:border-orange-500 transition-colors">
-                  Religious Tools
-                </Link>
-                <Link to="/astro-finance" className="px-4 py-2 bg-white border border-orange-300 text-orange-700 rounded-lg text-sm font-semibold hover:border-orange-500 transition-colors">
-                  Astro Finance
-                </Link>
-              </div>
-                    </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {dynamicFestivalTools.map((tool, idx) => (
-                    <Link
-                  key={idx}
-                  to={tool.path}
-                  className="relative p-5 rounded-xl transition-all hover:scale-105 bg-white border border-orange-200 hover:border-orange-500 shadow-md hover:shadow-lg"
-                >
-                  {tool.tag && (
-                    <div className="absolute top-2 right-2">
-                      <span className={`px-2 py-0.5 rounded-full text-[9px] font-black ${
-                        tool.tag === 'New' ? 'bg-green-500 text-white' :
-                        tool.tag === 'Hot' ? 'bg-red-500 text-white' :
-                        tool.tag === 'Popular' ? 'bg-blue-500 text-white' :
-                        tool.tag === 'Trending' ? 'bg-purple-500 text-white' :
-                        'bg-orange-500 text-white'
-                      }`}>
-                        {tool.tag}
-                      </span>
-                  </div>
-                  )}
-                  <div className="text-5xl mb-3">{tool.emoji}</div>
-                  <h3 className={`text-sm font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                    {tool.name}
-                  </h3>
-                  <span className={`text-[10px] px-2 py-1 rounded-full inline-block font-semibold ${
-                    theme === 'dark' ? 'bg-orange-500/20 text-orange-400' : 'bg-orange-100 text-orange-700'
-                  }`}>
-                    {tool.category}
-                  </span>
-                </Link>
-              ))}
-            </div>
-            
-            {/* Internal Links Network */}
-            <div className="text-center mt-10">
-              <div className="inline-flex flex-wrap justify-center gap-3 bg-white p-4 rounded-xl border border-orange-200 shadow-md">
-                <span className="text-sm font-semibold text-gray-700">🔗 Related:</span>
-                <Link to="/festival-tools/panchang-today" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">Daily Panchang</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/festival-tools/auspicious-marriage-days" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">Marriage Dates</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/festival-tools/lunar-eclipse-predictor" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">Eclipse 2025</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/festival-tools/vrat-upavas-calendar" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">Vrat Calendar</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/religious-tools" className="text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">All Religious Tools</Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Trending Section with Internal Links */}
-        <section className="py-16 border-y border-gray-200 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-3 text-gray-900">
-                🔥 {language === 'en' ? 'Trending & New Tools' : 'ट्रेंडिंग और नया'}
-              </h2>
-              {/* Quick Navigation to Categories */}
-              <div className="flex flex-wrap justify-center gap-2 mt-4">
-                <Link to="/calculators" className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100">
-                  📊 All Calculators
-                </Link>
-                <Link to="/finance-tools" className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100">
-                  💵 Finance Tools
-                </Link>
-                <Link to="/tax-tools" className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100">
-                  📄 Tax Tools
-                </Link>
-                <Link to="/learn" className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100">
-                  📚 Learn Finance
-                </Link>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {trendingItems.map((item, idx) => (
-                <Link
-                  key={idx}
-                  to={item.path}
-                  className="relative p-6 rounded-2xl transition-all hover:scale-105 bg-white border border-gray-200 hover:border-blue-500 shadow-md hover:shadow-xl"
-                >
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-black ${
-                      item.tag === 'NEW' ? 'bg-green-500 text-white' :
-                      item.tag === 'HOT' ? 'bg-red-500 text-white' :
-                      'bg-blue-500 text-white'
-                    }`}>
-                      {item.tag}
-                      </span>
-                    </div>
-                  <div className="text-6xl mb-4">{item.emoji}</div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {item.desc}
-                  </p>
-                  <ArrowRight className="w-6 h-6 mt-2 text-blue-600" />
-                </Link>
-              ))}
-            </div>
-
-            {/* Comprehensive Internal Links Network */}
-            <div className="mt-12 bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
-              <h3 className="text-2xl font-bold text-center mb-6 text-gray-900">
-                🔗 {language === 'en' ? 'Explore More Tools & Resources' : 'और उपकरण देखें'}
-              </h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                {/* Column 1: Top Calculators */}
-                <div>
-                  <h4 className="font-bold text-sm mb-3 text-gray-700 uppercase">Popular Calculators</h4>
-                  <div className="space-y-2">
-                    <Link to="/calculators/emi-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ EMI Calculator</Link>
-                    <Link to="/calculators/sip-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ SIP Calculator</Link>
-                    <Link to="/tools/income-tax-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Income Tax Calculator</Link>
-                    <Link to="/tools/gst-amount-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ GST Calculator</Link>
-                    <Link to="/calculators/home-loan-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Home Loan EMI</Link>
-                    <Link to="/calculators/ppf-calculator" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ PPF Calculator</Link>
-                    <Link to="/calculators" className="block text-sm font-semibold text-orange-600 hover:text-orange-800 hover:underline mt-3">View All 100+ Calculators →</Link>
-                  </div>
-                </div>
-
-                {/* Column 2: Learning & Resources */}
-                <div>
-                  <h4 className="font-bold text-sm mb-3 text-gray-700 uppercase">Learn & Resources</h4>
-                  <div className="space-y-2">
-                    <Link to="/learn/gold-loans" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Gold Loans (10 Lessons)</Link>
-                    <Link to="/learn/credit-cards" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Credit Cards (20 Lessons)</Link>
-                    <Link to="/learn/credit-score" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Credit Score Guide</Link>
-                    <Link to="/blog" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Finance Blog</Link>
-                    <Link to="/government-schemes" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Government Schemes</Link>
-                    <Link to="/excel-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Excel Templates</Link>
-                    <Link to="/learn" className="block text-sm font-semibold text-orange-600 hover:text-orange-800 hover:underline mt-3">Start Learning Free →</Link>
-                  </div>
-                </div>
-
-                {/* Column 3: Tools by Category */}
-                <div>
-                  <h4 className="font-bold text-sm mb-3 text-gray-700 uppercase">Tools by Category</h4>
-                  <div className="space-y-2">
-                    <Link to="/loan-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Loan & EMI Tools</Link>
-                    <Link to="/tax-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Tax Planning Tools</Link>
-                    <Link to="/gst-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ GST Tools</Link>
-                    <Link to="/insurance-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Insurance Calculators</Link>
-                    <Link to="/corporate-finance" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Corporate Finance</Link>
-                    <Link to="/gold-tools" className="block text-sm text-blue-600 hover:text-blue-800 hover:underline">→ Gold Investment Tools</Link>
-                    <Link to="/tools" className="block text-sm font-semibold text-orange-600 hover:text-orange-800 hover:underline mt-3">Browse All Categories →</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Professional Discover Section with Cross-Links */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-3 text-gray-900">
-                ✨ {language === 'en' ? 'Discover Financial Tools' : 'वित्तीय उपकरण खोजें'}
-              </h2>
-              <p className="text-lg text-gray-600 mb-4">
-                {language === 'en' ? 'Comprehensive resources for every financial decision' : 'हर वित्तीय निर्णय के लिए संसाधन'}
-              </p>
-              {/* Top Category Links */}
-              <div className="flex flex-wrap justify-center gap-2">
-                <Link to="/calculators/sip-calculator" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700">
-                  📈 SIP Calculator
-                </Link>
-                <Link to="/calculators/home-loan-calculator" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700">
-                  🏠 Home Loan
-                </Link>
-                <Link to="/tools/income-tax-calculator" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700">
-                  📄 Income Tax
-                </Link>
-                <Link to="/learn/gold-loans" className="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-semibold hover:bg-purple-700">
-                  🏆 Learn Gold Loans
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Category 1: Top Calculators with Internal Links */}
-              <motion.div
-                key={`calc-${rotationKey}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="rounded-2xl p-6 border border-blue-200 bg-white shadow-md"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Calculator className={`w-8 h-8 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
-                  <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-blue-300' : 'text-blue-700'}`}>
-                    🧮 {language === 'en' ? 'Top Calculators' : 'टॉप कैलकुलेटर'}
-                  </h3>
-                      </div>
-                <div className="space-y-3">
-                  {dynamicContent.calculators.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      to={item.path}
-                      className={`block p-4 rounded-xl transition-all hover:scale-105 active:scale-95 ${
-                        theme === 'dark'
-                          ? 'bg-slate-800/60 hover:bg-slate-700/60'
-                          : 'bg-white hover:shadow-lg'
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="text-3xl">{item.emoji}</span>
-                        <div className="flex-1 min-w-0">
-                          <h4 className={`font-bold text-sm mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                            {item.name}
-                          </h4>
-                          <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                            {item.desc}
-                          </p>
-                          <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>
-                            👥 {item.users} users
-                      </span>
-                      </div>
-                    </div>
-                  </Link>
-              ))}
-            </div>
-            </motion.div>
-
-              {/* Category 2: Learning */}
-                <motion.div
-                key={`learn-${rotationKey}`}
-                  initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className={`rounded-2xl p-6 border-2 ${
-                  theme === 'dark'
-                    ? 'bg-gradient-to-br from-purple-900/40 to-pink-900/40 border-purple-500/30'
-                    : 'bg-gradient-to-br from-purple-50 to-pink-50 border-purple-300'
-                }`}>
-                <div className="flex items-center gap-3 mb-4">
-                  <BookOpen className={`w-8 h-8 ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`} />
-                  <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-purple-300' : 'text-purple-700'}`}>
-                    📚 {language === 'en' ? 'Learn Finance' : 'वित्त सीखें'}
-                  </h3>
-                </div>
-                <div className="space-y-3">
-                  {dynamicContent.learning.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      to={item.path}
-                      className={`block p-4 rounded-xl transition-all hover:scale-105 active:scale-95 ${
-                        theme === 'dark'
-                          ? 'bg-slate-800/60 hover:bg-slate-700/60'
-                          : 'bg-white hover:shadow-lg'
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="text-3xl">{item.emoji}</span>
-                        <div className="flex-1 min-w-0">
-                          <h4 className={`font-bold text-sm mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                            {item.name}
-                          </h4>
-                          <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                            {item.desc}
-                          </p>
-                          <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`}>
-                            📖 {item.lessons} lessons
-                </span>
-                  </div>
-                    </div>
-                  </Link>
-              ))}
-            </div>
-            </motion.div>
-
-              {/* Category 3: Festival Tools */}
-                <motion.div
-                key={`festival-${rotationKey}`}
-                  initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className={`rounded-2xl p-6 border-2 ${
-                  theme === 'dark'
-                    ? 'bg-gradient-to-br from-orange-900/40 to-red-900/40 border-orange-500/30'
-                    : 'bg-gradient-to-br from-orange-50 to-red-50 border-orange-300'
-                }`}>
-                <div className="flex items-center gap-3 mb-4">
-                  <PartyPopper className={`w-8 h-8 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-600'}`} />
-                  <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-orange-300' : 'text-orange-700'}`}>
-                    🎉 {language === 'en' ? 'Festival Tools' : 'त्योहार टूल्स'}
-                  </h3>
-            </div>
-                <div className="space-y-3">
-                  {dynamicContent.festivals.map((item, idx) => (
-              <Link
-                      key={idx}
-                      to={item.path}
-                      className={`block p-4 rounded-xl transition-all hover:scale-105 active:scale-95 ${
-                        theme === 'dark'
-                          ? 'bg-slate-800/60 hover:bg-slate-700/60'
-                          : 'bg-white hover:shadow-lg'
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="text-3xl">{item.emoji}</span>
-                        <div className="flex-1 min-w-0">
-                          <h4 className={`font-bold text-sm mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                            {item.name}
-                          </h4>
-                          <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                            {item.desc}
-                          </p>
-                          <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-orange-400' : 'text-orange-600'}`}>
-                            🎊 {item.events} events
-                  </span>
-                </div>
-                      </div>
-                </Link>
-              ))}
-            </div>
-            </motion.div>
-
-              {/* Category 4: Latest Blogs */}
-                <motion.div
-                key={`blog-${rotationKey}`}
-                  initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className={`rounded-2xl p-6 border-2 ${
-                  theme === 'dark'
-                    ? 'bg-gradient-to-br from-green-900/40 to-emerald-900/40 border-green-500/30'
-                    : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-300'
-                }`}>
-                <div className="flex items-center gap-3 mb-4">
-                  <Newspaper className={`w-8 h-8 ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`} />
-                  <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-green-300' : 'text-green-700'}`}>
-                    📰 {language === 'en' ? 'Latest Articles' : 'नवीनतम लेख'}
-                  </h3>
-            </div>
-                <div className="space-y-3">
-                  {dynamicContent.blogs.map((item, idx) => (
-              <Link
-                      key={idx}
-                      to={item.path}
-                      className={`block p-4 rounded-xl transition-all hover:scale-105 active:scale-95 ${
-                        theme === 'dark'
-                          ? 'bg-slate-800/60 hover:bg-slate-700/60'
-                          : 'bg-white hover:shadow-lg'
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="text-3xl">{item.emoji}</span>
-                        <div className="flex-1 min-w-0">
-                          <h4 className={`font-bold text-sm mb-1 line-clamp-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                            {item.name}
-                          </h4>
-                          <p className={`text-xs line-clamp-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                            {item.desc}
-                          </p>
-                          <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>
-                            📂 {item.category}
-                          </span>
-                        </div>
-                      </div>
-                </Link>
-                  ))}
-                          </div>
               </motion.div>
-                        </div>
-                        
-            {/* Refresh Indicator */}
-            <div className="text-center mt-8">
-              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${
-                theme === 'dark' ? 'bg-slate-800/60 text-gray-400' : 'bg-white text-gray-600 shadow-md'
-              }`}>
-                <Sparkles className="w-4 h-4 animate-pulse text-yellow-500" />
-                <span className="text-sm font-semibold">
-                  {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-        </section>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* Trust */}
-        <section className={`py-16 ${theme === 'dark' ? 'bg-slate-900/30' : 'bg-gray-50/50'}`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 className={`text-4xl font-black text-center mb-12 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              🏆 {language === 'en' ? 'Why Trust MoneyCal' : 'क्यों भरोसा करें'}
-                </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { icon: CheckCircle, title: 'RBI Compliant', color: 'from-green-500 to-emerald-500' },
-                { icon: Shield, title: 'Secure', color: 'from-blue-500 to-cyan-500' },
-                { icon: Award, title: 'Expert Verified', color: 'from-purple-500 to-pink-500' },
-                { icon: Star, title: '4.9/5 Rating', color: 'from-yellow-500 to-orange-500' }
-              ].map((t, i) => (
-                <div key={i} className={`p-6 rounded-2xl text-center ${theme === 'dark' ? 'bg-slate-800/50' : 'bg-white shadow-lg'}`}>
-                  <div className={`w-16 h-16 bg-gradient-to-br ${t.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <t.icon className="w-8 h-8 text-white" />
-                        </div>
-                  <h3 className={`text-lg font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{t.title}</h3>
-                      </div>
-              ))}
+      {/* Stats Section */}
+      <section className="py-16 bg-blue-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-blue-100 font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Why Choose MoneyCal.in?
+              </h2>
+              <div className="space-y-6">
+                {[
+                  { title: 'Accurate & Reliable', desc: 'All calculators are verified by financial experts and updated with latest regulations' },
+                  { title: 'Easy to Use', desc: 'Simple, intuitive interface designed for everyone - no financial expertise needed' },
+                  { title: 'Completely Free', desc: 'No hidden charges, no registration required. All tools are 100% free forever' },
+                  { title: 'Privacy First', desc: 'We don\'t store any of your personal data. All calculations happen in your browser' },
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">{feature.title}</h3>
+                      <p className="text-gray-600">{feature.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
+              <div className="text-center">
+                <div className="text-6xl mb-4">🏆</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Trusted Partner</h3>
+                <p className="text-gray-700 mb-6">
+                  Join over 1 million Indians who trust MoneyCal.in for their financial calculations
+                </p>
+                <div className="flex items-center justify-center space-x-2">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+                  ))}
+                </div>
+                <p className="text-gray-600 mt-2">4.9/5 Average Rating</p>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Trust & Credibility Section */}
-        <LightweightTrustBadges />
-
-        {/* Footer CTA */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 cta-section" style={{ minHeight: '400px', contain: 'layout style' }}>
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
-              🚀 {language === 'en' ? 'Ready?' : 'तैयार हैं?'}
-              </h2>
-            <p className="text-2xl text-white/90 mb-8">
-              {language === 'en' ? 'Join India\'s #1 Platform' : 'भारत का #1'}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/tools" className="px-10 py-5 bg-white text-purple-600 rounded-2xl font-black text-xl shadow-2xl active:scale-95">
-                {language === 'en' ? 'Start FREE' : 'शुरू करें'}
-                </Link>
-              <Link to="/learn" className="px-10 py-5 border-2 border-white text-white rounded-2xl font-black text-xl active:scale-95">
-                {language === 'en' ? '40 Lessons' : '40 पाठ'}
-                </Link>
-              </div>
-          </div>
-        </section>
-
-        {/* Footer handled by Layout component */}
-      </div>
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Make Better Financial Decisions?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Start using our free calculators today and take control of your finances
+          </p>
+          <Link
+            to="/calculators"
+            className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-xl"
+          >
+            Get Started Free <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
+        </div>
+      </section>
     </>
   );
 };

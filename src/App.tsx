@@ -2,8 +2,8 @@ import { useEffect, Suspense, lazy } from 'react';
 import { initPerformanceOptimizations } from './utils/performance';
 import { initAnalytics } from './utils/analytics';
 import WebVitalsMonitor from './components/WebVitalsMonitor';
-import { Layout } from './components/Layout';
 
+import { Layout } from './components/Layout';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
@@ -26,8 +26,6 @@ import SimpleFeedbackFormGenerator from './pages/tools/SimpleFeedbackFormGenerat
 
 // Lazy load all page-level components
 const Home = lazy(() => import('./pages/HomeInvestopedia'));
-const HomeOld2 = lazy(() => import('./pages/HomeProfessional'));
-const HomeOld3 = lazy(() => import('./pages/HomeOptimized'));
 const LoanCalculator = lazy(() => import('./calculators/LoanCalculator'));
 const HomeOld = lazy(() => import('./pages/HomeNew'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
