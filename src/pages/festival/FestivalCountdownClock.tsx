@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Timer, Calendar, Bell, Share2, Download, Star, Sparkles, Clock } from 'lucide-react';
+import { Timer, Calendar, Bell, Share2, Download, Star, Sparkles, Clock, MapPin, Search, Filter } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllStateNames, getCitiesByState } from '../../data/indiaLocations';
 
 interface Festival {
   name: string;

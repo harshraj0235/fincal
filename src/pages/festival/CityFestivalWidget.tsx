@@ -1,61 +1,71 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Code, Download, Eye, Settings } from 'lucide-react';
+import { MapPin, Calendar, Code, Download, Eye, Settings, Search } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import { getAllCities, getStateByCity, ALL_STATES_UTS } from '../../data/indiaLocations';
 
-// City-specific festival data
-const CITY_FESTIVALS = {
-  'Mumbai': [
-    { date: '2025-03-31', name: 'Gudi Padwa', description: 'Marathi New Year' },
-    { date: '2025-08-27', name: 'Ganesh Chaturthi', description: '10-day grand celebration' },
-    { date: '2025-10-20', name: 'Diwali', description: 'Festival of Lights' }
-  ],
-  'Delhi': [
-    { date: '2025-03-14', name: 'Holi', description: 'Festival of Colors' },
-    { date: '2025-06-27', name: 'Eid-ul-Fitr', description: 'Grand celebration in Old Delhi' },
-    { date: '2025-10-02', name: 'Dussehra', description: 'Ramlila and Ravana burning' }
-  ],
-  'Bangalore': [
-    { date: '2025-04-06', name: 'Ugadi', description: 'Kannada New Year' },
-    { date: '2025-08-27', name: 'Ganesh Chaturthi', description: 'Ganesha festival' },
-    { date: '2025-11-01', name: 'Karnataka Rajyotsava', description: 'State formation day' }
-  ],
-  'Kolkata': [
-    { date: '2025-04-14', name: 'Pohela Boishakh', description: 'Bengali New Year' },
-    { date: '2025-09-28', name: 'Durga Puja', description: 'Biggest festival - 5 days' },
-    { date: '2025-10-22', name: 'Kali Puja', description: 'Kali worship' }
-  ],
-  'Chennai': [
-    { date: '2025-01-14', name: 'Pongal', description: '4-day harvest festival' },
-    { date: '2025-04-14', name: 'Tamil New Year', description: 'Puthandu celebration' },
-    { date: '2025-10-20', name: 'Deepavali', description: 'Festival of Lights' }
-  ],
-  'Hyderabad': [
-    { date: '2025-03-30', name: 'Ugadi', description: 'Telugu New Year' },
-    { date: '2025-06-27', name: 'Eid-ul-Fitr', description: 'Major celebration in old city' },
-    { date: '2025-09-03', name: 'Eid-ul-Adha', description: 'Bakrid celebrations' }
-  ],
-  'Ahmedabad': [
-    { date: '2025-01-14', name: 'Uttarayan', description: 'International kite festival' },
-    { date: '2025-09-22', name: 'Navratri', description: '9 nights of Garba' },
-    { date: '2025-10-20', name: 'Diwali', description: 'New Year for Gujaratis' }
-  ],
-  'Pune': [
-    { date: '2025-03-31', name: 'Gudi Padwa', description: 'Marathi New Year' },
-    { date: '2025-08-27', name: 'Ganesh Chaturthi', description: '10-day celebration' },
-    { date: '2025-10-20', name: 'Diwali', description: 'Lakshmi Puja' }
-  ]
+// Major National Festivals applicable to all cities
+const NATIONAL_FESTIVALS = [
+  { date: '2025-01-26', name: 'Republic Day', description: 'National holiday' },
+  { date: '2025-08-15', name: 'Independence Day', description: 'National holiday' },
+  { date: '2025-10-02', name: 'Gandhi Jayanti', description: 'Birth of Mahatma Gandhi' },
+  { date: '2025-10-20', name: 'Diwali', description: 'Festival of Lights' },
+  { date: '2025-12-25', name: 'Christmas', description: 'Birth of Jesus Christ' }
+];
+
+// Get state-specific major festivals dynamically
+const getStateFestivals = (cityName: string) => {
+  const stateName = getStateByCity(cityName);
+  if (!stateName) return NATIONAL_FESTIVALS;
+  
+  const state = ALL_STATES_UTS.find(s => s.name === stateName);
+  if (!state || !state.majorFestivals) return NATIONAL_FESTIVALS;
+  
+  // Map state festivals to dates (simplified for demo)
+  const festivalMap: Record<string, { date: string; description: string }> = {
+    'Ugadi': { date: '2025-03-30', description: 'Telugu/Kannada New Year' },
+    'Sankranti': { date: '2025-01-14', description: 'Harvest festival' },
+    'Pongal': { date: '2025-01-14', description: '4-day harvest festival' },
+    'Onam': { date: '2025-09-05', description: 'Kerala harvest festival' },
+    'Durga Puja': { date: '2025-09-28', description: 'Biggest festival in Bengal' },
+    'Navratri': { date: '2025-09-22', description: '9 nights of dance' },
+    'Baisakhi': { date: '2025-04-13', description: 'Punjabi New Year & harvest' },
+    'Ganesh Chaturthi': { date: '2025-08-27', description: 'Birth of Ganesha' },
+    'Gudi Padwa': { date: '2025-03-31', description: 'Marathi New Year' },
+    'Bihu': { date: '2025-04-14', description: 'Assamese New Year' },
+    'Pohela Boishakh': { date: '2025-04-14', description: 'Bengali New Year' },
+    'Vishu': { date: '2025-04-14', description: 'Malayalam New Year' }
+  };
+  
+  const stateFestivals = state.majorFestivals
+    .map(festName => {
+      const festData = festivalMap[festName];
+      return festData ? { date: festData.date, name: festName, description: festData.description } : null;
+    })
+    .filter(Boolean) as { date: string; name: string; description: string }[];
+  
+  // Combine with national festivals and sort by date
+  const allFestivals = [...NATIONAL_FESTIVALS, ...stateFestivals];
+  return allFestivals.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 };
 
-const INDIAN_CITIES = Object.keys(CITY_FESTIVALS);
+const INDIAN_CITIES = getAllCities();
 
 const CityFestivalWidget: React.FC = () => {
-  const [selectedCity, setSelectedCity] = useState('Mumbai');
+  const [selectedCity, setSelectedCity] = useState(INDIAN_CITIES[0]);
+  const [searchCity, setSearchCity] = useState('');
   const [widgetTheme, setWidgetTheme] = useState<'light' | 'dark'>('light');
   const [widgetSize, setWidgetSize] = useState<'small' | 'medium' | 'large'>('medium');
   const [showCode, setShowCode] = useState(false);
 
-  const cityFestivals = CITY_FESTIVALS[selectedCity as keyof typeof CITY_FESTIVALS] || [];
+  const filteredCities = useMemo(() => {
+    if (!searchCity) return INDIAN_CITIES.slice(0, 100); // Show first 100
+    return INDIAN_CITIES.filter(city => 
+      city.toLowerCase().includes(searchCity.toLowerCase())
+    ).slice(0, 50);
+  }, [searchCity]);
+
+  const cityFestivals = useMemo(() => getStateFestivals(selectedCity), [selectedCity]);
 
   const widgetCode = `<!-- MoneyCal Festival Widget for ${selectedCity} -->
 <iframe 
@@ -140,14 +150,25 @@ const CityFestivalWidget: React.FC = () => {
 
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Select City</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Select City ({INDIAN_CITIES.length}+ cities)</label>
+                  <div className="relative mb-2">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="text"
+                      value={searchCity}
+                      onChange={(e) => setSearchCity(e.target.value)}
+                      placeholder="Search city..."
+                      className="w-full pl-10 pr-4 py-2 border-2 border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-200 outline-none"
+                    />
+                  </div>
                   <select
                     value={selectedCity}
                     onChange={(e) => setSelectedCity(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-blue-300 rounded-xl focus:ring-4 focus:ring-blue-200 outline-none text-lg"
+                    size={5}
                   >
-                    {INDIAN_CITIES.map(city => (
-                      <option key={city} value={city}>{city}</option>
+                    {filteredCities.map(city => (
+                      <option key={city} value={city}>{city} ({getStateByCity(city)})</option>
                     ))}
                   </select>
                 </div>
