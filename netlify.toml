@@ -1,144 +1,16 @@
-[build]
-  publish = "dist"
-  command = "npm run build:deploy"
-
-# Redirect www to non-www for consistency
-[[redirects]]
-  from = "https://www.moneycal.in/*"
-  to = "https://moneycal.in/:splat"
-  status = 301
-  force = true
-
-# HTTP to HTTPS redirect
-[[redirects]]
-  from = "http://moneycal.in/*"
-  to = "https://moneycal.in/:splat"
-  status = 301
-  force = true
-
-# Old URL redirects to new structure
-[[redirects]]
-  from = "/feedback"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/help"
-  to = "/help-center"
-  status = 301
-
-[[redirects]]
-  from = "/real-estate/*"
-  to = "/finance-tools"
-  status = 301
-
-[[redirects]]
-  from = "/cryptocurrency/*"
-  to = "/crypto"
-  status = 301
-
-[[redirects]]
-  from = "/banking/*"
-  to = "/bank-tools"
-  status = 301
-
-[[redirects]]
-  from = "/finance-categories/*"
-  to = "/finance-tools"
-  status = 301
-
-[[redirects]]
-  from = "/business-tools"
-  to = "/corporate-finance"
-  status = 301
-
-[[redirects]]
-  from = "/payroll-tools"
-  to = "/corporate-finance"
-  status = 301
-
-[[redirects]]
-  from = "/accounting-tools"
-  to = "/corporate-finance"
-  status = 301
-
-[[redirects]]
-  from = "/loan-app-directory"
-  to = "/bank-tools"
-  status = 301
-
-[[redirects]]
-  from = "/loan-app-directory.html"
-  to = "/bank-tools"
-  status = 301
-
-[[redirects]]
-  from = "/financial-navigator"
-  to = "/tools"
-  status = 301
-
-[[redirects]]
-  from = "/amp-index.html"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/fixed-deposit-calculator"
-  to = "/calculators/fd-calculator"
-  status = 301
-
-[[redirects]]
-  from = "/lcm-hcf-calculator"
-  to = "/calculators/lcm-hcf-calculator"
-  status = 301
-
-[[redirects]]
-  from = "/invoicing-receivables"
-  to = "/corporate-finance"
-  status = 301
-
-[[redirects]]
-  from = "/astro-finance-insights"
-  to = "/astro-finance"
-  status = 301
-
-# Hindi language redirects (redirect all /hi/* to English with 301)
-[[redirects]]
-  from = "/hi/calculators/*"
-  to = "/calculators/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/hi/blog/*"
-  to = "/blog/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/hi/*"
-  to = "/:splat"
-  status = 301
-
-# Handle all other routes for SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Cache static assets for 1 year
 [[headers]]
-  for = "/images/*"
+  for = "/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/_app/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
 
 [[headers]]
   for = "/assets/*"
@@ -146,9 +18,78 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/sw.js"
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ttf"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.gif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/index.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
 [build.environment]
-  NODE_VERSION = "18" 
+  NODE_VERSION = "18"

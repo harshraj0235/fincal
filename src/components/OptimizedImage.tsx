@@ -132,11 +132,18 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     setImageSrc(fallback);
   };
 
+  // Calculate aspect ratio to prevent layout shift
+  const aspectRatio = width && height ? (height / width) * 100 : undefined;
+  
   return (
     <div 
       ref={imgRef}
       className={`relative overflow-hidden ${className}`}
-      style={{ width, height }}
+      style={{ 
+        width: width ? `${width}px` : '100%',
+        paddingBottom: aspectRatio ? `${aspectRatio}%` : height ? `${height}px` : undefined,
+        height: !aspectRatio ? (height ? `${height}px` : 'auto') : undefined
+      }}
     >
       {/* Placeholder/Loading state */}
       {!isLoaded && (
@@ -168,10 +175,10 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         onError={handleError}
         className={`transition-opacity duration-300 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
-        } ${className}`}
+        } ${aspectRatio ? 'absolute inset-0' : ''} ${className}`}
         style={{
-          width: width ? `${width}px` : '100%',
-          height: height ? `${height}px` : 'auto',
+          width: '100%',
+          height: '100%',
           objectFit: 'cover'
         }}
         sizes={sizes}

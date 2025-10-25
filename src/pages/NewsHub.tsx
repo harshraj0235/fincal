@@ -53,19 +53,28 @@ const NewsHub: React.FC = () => {
     ...calculators
   ];
 
-  // State for search
+  // State for search and pagination
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
 
   // Filter blogs by search
   const filteredBlogs = useMemo(() => {
-    if (!search.trim()) return getRandomElements(allBlogs, 40);
+    if (!search.trim()) return allBlogs;
     const s = search.trim().toLowerCase();
     return allBlogs.filter(item =>
       item.title.toLowerCase().includes(s) ||
       item.summary.toLowerCase().includes(s) ||
       item.category.toLowerCase().includes(s)
-    ).slice(0, 40);
+    );
   }, [search, allBlogs]);
+
+  // Pagination
+  const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
+  const currentItems = filteredBlogs.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   // NewsList expects a click handler to open the slug
   const handleNewsClick = (slug: string) => {
@@ -92,9 +101,58 @@ const NewsHub: React.FC = () => {
             className="w-full p-3 rounded-lg border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-lg mb-6"
             placeholder="Search blogs/news/calculators..."
             value={search}
-            onChange={e => setSearch(e.target.value)}
+            onChange={e => {
+              setSearch(e.target.value);
+              setCurrentPage(1); // Reset to first page on search
+            }}
           />
-          <NewsList news={filteredBlogs} onNewsClick={handleNewsClick} />
+          <NewsList news={currentItems} onNewsClick={handleNewsClick} />
+          
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-2 mt-8">
+              <button
+                onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+                disabled={currentPage === 1}
+                className="px-4 py-2 bg-white rounded-lg border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Previous
+              </button>
+              
+              {[...Array(totalPages)].map((_, index) => {
+                const page = index + 1;
+                const isActive = page === currentPage;
+                const isNearActive = Math.abs(page - currentPage) <= 2;
+
+                if (isActive || isNearActive || page === 1 || page === totalPages) {
+                  return (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`px-4 py-2 rounded-lg ${
+                        isActive
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-white border border-gray-300 hover:bg-gray-50'
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  );
+                } else if (page === currentPage - 3 || page === currentPage + 3) {
+                  return <span key={page} className="px-2 text-gray-500">...</span>;
+                }
+                return null;
+              })}
+              
+              <button
+                onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
+                disabled={currentPage === totalPages}
+                className="px-4 py-2 bg-white rounded-lg border border-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Next
+              </button>
+            </div>
+          )}
           </div>
         </div>
       </div>

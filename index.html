@@ -14,13 +14,20 @@
     <!-- Google AdSense Account Verification -->
     <meta name="google-adsense-account" content="ca-pub-4446717165665089">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HGE6528Q4"></script>
+    <!-- Google tag (gtag.js) - Deferred for performance -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-8HGE6528Q4');
+      
+      // Load gtag.js after page load
+      window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8HGE6528Q4';
+        script.async = true;
+        document.head.appendChild(script);
+      });
     </script>
     
     <!-- Open Graph Meta Tags -->
@@ -40,9 +47,14 @@
     <!-- Canonical is managed dynamically by SEOHelmet -->
     
     <!-- Preconnect to external domains for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://images.pexels.com" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" as="script" href="/src/main.tsx" crossorigin />
+    <link rel="modulepreload" href="/src/main.tsx" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -71,6 +83,18 @@
     </script>
   </head>
   <body>
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #fff3cd; border: 2px solid #856404; margin: 20px;">
+        <h2 style="color: #856404;">JavaScript Required</h2>
+        <p style="color: #856404;">This application requires JavaScript to be enabled. Please enable JavaScript in your browser settings to access all features.</p>
+        <h3 style="color: #856404; margin-top: 20px;">Quick Links (No JavaScript Required):</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="/sitemap.xml" style="color: #0066cc;">View Sitemap</a></li>
+          <li><a href="https://moneycal.in" style="color: #0066cc;">Home Page</a></li>
+        </ul>
+        <p style="margin-top: 20px; color: #856404;">MoneyCal.in offers comprehensive financial calculators for EMI, SIP, Tax, and more. Enable JavaScript for the best experience.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

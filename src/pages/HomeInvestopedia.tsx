@@ -567,7 +567,7 @@ const HomeInvestopedia: React.FC = () => {
             <div className="text-center">
               {/* Title */}
               <h1 className="text-6xl sm:text-7xl md:text-8xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
-                {language === 'en' ? 'Money Made Easy 💰' : 'पैसा आसान 💰'}
+                {language === 'en' ? 'Know Your Money 💰' : 'पैसा आसान 💰'}
               </h1>
 
               <p className={`text-2xl md:text-3xl mb-12 font-bold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
