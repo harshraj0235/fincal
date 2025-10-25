@@ -1,6 +1,6 @@
 import React from 'react';
 import ModernNavbar from './ModernNavbar';
-import SimpleFooter from './SimpleFooter';
+import BeautifulFooter from './BeautifulFooter';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="flex-grow pt-16" style={{ contain: 'layout style paint' }} role="main" id="main-content">
         {children}
       </main>
-      <SimpleFooter />
+      <BeautifulFooter />
     </div>
   );
 };

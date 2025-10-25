@@ -8,7 +8,7 @@ import {
   Newspaper, Clock, Flame, Globe, Sun, Moon, X, Menu
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import SimpleFooter from '../components/SimpleFooter';
+import BeautifulFooter from '../components/BeautifulFooter';
 import LightweightTrustBadges from '../components/LightweightTrustBadges';
 import { loadBlogData } from '../data/lazyBlogData';
 import { calculatorCategories } from '../data/calculatorData';
@@ -668,7 +668,7 @@ const HomeProfessional: React.FC = () => {
           </div>
         </section>
 
-        <SimpleFooter />
+        <BeautifulFooter />
       </div>
     </>
   );
