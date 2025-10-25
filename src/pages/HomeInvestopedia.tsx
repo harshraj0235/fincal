@@ -484,10 +484,10 @@ const HomeInvestopedia: React.FC = () => {
                   <Link
                     key={idx}
                     to={item.path}
-                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl font-semibold text-xs transition-all hover:scale-105 ${
+                      className={`flex items-center gap-1.5 px-3 py-2 rounded-xl font-semibold text-xs transition-all hover:scale-105 ${
                       theme === 'dark'
-                        ? 'text-gray-300 hover:bg-slate-700/70'
-                        : 'text-gray-700 hover:bg-gray-100'
+                        ? 'text-gray-100 hover:bg-slate-700/70'
+                        : 'text-gray-800 hover:bg-gray-100'
                     }`}
                   >
                     <span className="text-lg">{item.emoji}</span>
@@ -566,11 +566,15 @@ const HomeInvestopedia: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center">
               {/* Title */}
-              <h1 className="text-6xl sm:text-7xl md:text-8xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
+              <h1 className={`text-6xl sm:text-7xl md:text-8xl font-black mb-6 leading-tight ${
+                theme === 'dark'
+                  ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent'
+                  : 'bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 bg-clip-text text-transparent'
+              }`}>
                 {language === 'en' ? 'Make Smarter Financial Decisions 💰' : 'पैसा आसान 💰'}
               </h1>
 
-              <p className={`text-2xl md:text-3xl mb-12 font-bold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+              <p className={`text-2xl md:text-3xl mb-12 font-bold ${theme === 'dark' ? 'text-gray-200' : 'text-gray-800'}`}>
                 {language === 'en' ? '🚀 100+ Tools • 40 Lessons • 11 Festival Tools' : '🚀 100+ टूल्स • 40 पाठ'}
               </p>
 
@@ -602,7 +606,7 @@ const HomeInvestopedia: React.FC = () => {
                 {/* Popular Tags - Dynamic & Triggers Search */}
                 {!searchQuery && (
                   <div className="mt-6 flex flex-wrap justify-center gap-2.5">
-                    <span className={`text-sm font-bold ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <span className={`text-sm font-bold ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                       <Flame className="w-5 h-5 inline mr-1 text-orange-500 animate-pulse" /> Popular:
                     </span>
                     {dynamicPopularTags.map((tag, i) => (
@@ -651,7 +655,7 @@ const HomeInvestopedia: React.FC = () => {
                       }`}
                     >
                       <div className="p-5">
-                        <div className={`px-4 py-3 font-bold mb-3 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                        <div className={`px-4 py-3 font-bold mb-3 text-sm ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                           ✨ {searchResults.length} {language === 'en' ? 'Results - Click to open' : 'परिणाम - क्लिक करें'}
                         </div>
                                 <div className="space-y-2">
@@ -677,7 +681,7 @@ const HomeInvestopedia: React.FC = () => {
                                   <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-xs font-bold">
                                     {result.category}
                                   </span>
-                                  <span className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-600'}`}>
+                                  <span className={`text-xs ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                                     {result.path}
                                   </span>
                                 </div>
@@ -722,10 +726,10 @@ const HomeInvestopedia: React.FC = () => {
                   <h3 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                     📁 {language === 'en' ? 'Complete Platform' : 'संपूर्ण मंच'}
                               </h3>
-                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                     <Sparkles className="w-4 h-4 inline mr-1 text-yellow-500 animate-pulse" />
                     {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
-                              </p>
+                  </p>
                             </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {dynamicPlatformCategories.map((item, idx) => (
@@ -781,7 +785,7 @@ const HomeInvestopedia: React.FC = () => {
               <h2 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 📂 {language === 'en' ? 'Categories' : 'श्रेणियां'}
               </h2>
-              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                 <Clock className="w-4 h-4 inline mr-1 text-blue-500 animate-spin" style={{ animationDuration: '10s' }} />
                 {language === 'en' ? 'Refreshes every 10 seconds • Random selection' : 'हर 10 सेकंड में बदलता है'}
               </p>
@@ -869,7 +873,7 @@ const HomeInvestopedia: React.FC = () => {
             
             {/* Refresh Note */}
             <div className="text-center mt-8">
-              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                 <Sparkles className="w-4 h-4 inline mr-1 text-orange-500 animate-pulse" />
                 {language === 'en' ? 'Showing 12 random tools • Refresh to see more' : '12 यादृच्छिक उपकरण • अधिक देखने के लिए रीफ्रेश करें'}
               </p>
@@ -907,7 +911,7 @@ const HomeInvestopedia: React.FC = () => {
                   <h3 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                     {item.name}
                   </h3>
-                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                     {item.desc}
                   </p>
                   <ArrowRight className={`w-6 h-6 mt-3 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
@@ -924,7 +928,7 @@ const HomeInvestopedia: React.FC = () => {
               <h2 className={`text-4xl font-black mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 ✨ {language === 'en' ? 'Discover More' : 'और खोजें'}
               </h2>
-              <p className={`text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              <p className={`text-lg ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                 {language === 'en' ? 'Content refreshes every 10 seconds • Explore our platform' : 'हर 10 सेकंड में नया कंटेंट'}
               </p>
             </div>
@@ -1010,7 +1014,7 @@ const HomeInvestopedia: React.FC = () => {
                           <h4 className={`font-bold text-sm mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                             {item.name}
                           </h4>
-                          <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                          <p className={`text-xs ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                             {item.desc}
                           </p>
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`}>
@@ -1057,7 +1061,7 @@ const HomeInvestopedia: React.FC = () => {
                           <h4 className={`font-bold text-sm mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                             {item.name}
                           </h4>
-                          <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                          <p className={`text-xs ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                             {item.desc}
                           </p>
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-orange-400' : 'text-orange-600'}`}>
@@ -1104,7 +1108,7 @@ const HomeInvestopedia: React.FC = () => {
                           <h4 className={`font-bold text-sm mb-1 line-clamp-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                             {item?.name || 'Article'}
                           </h4>
-                          <p className={`text-xs line-clamp-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                          <p className={`text-xs line-clamp-2 ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                             {item?.desc || 'Read more...'}
                           </p>
                           <span className={`text-xs font-semibold mt-1 inline-block ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>
@@ -1121,7 +1125,7 @@ const HomeInvestopedia: React.FC = () => {
             {/* Refresh Indicator */}
             <div className="text-center mt-8">
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${
-                theme === 'dark' ? 'bg-slate-800/60 text-gray-400' : 'bg-white text-gray-600 shadow-md'
+                theme === 'dark' ? 'bg-slate-800/60 text-gray-200' : 'bg-white text-gray-700 shadow-md'
               }`}>
                 <Sparkles className="w-4 h-4 animate-pulse text-yellow-500" />
                 <span className="text-sm font-semibold">
