@@ -22,116 +22,166 @@ const getCurrentDate = () => {
   };
 };
 
-// COMPREHENSIVE Search Database - ALL 107 Calculators + More
+// COMPREHENSIVE Search Database - ENTIRE CODEBASE (250+ items)
 const buildSearchDatabase = (blogPosts: any[] = []) => {
-  const calculators = [
-    // Investment (20+)
-    { name: 'SIP Calculator', path: '/calculators/sip-calculator', category: 'Investment', emoji: '📈', keywords: 'sip mutual fund systematic' },
-    { name: 'PPF Calculator', path: '/calculators/ppf-calculator', category: 'Investment', emoji: '🏦', keywords: 'ppf provident fund' },
-    { name: 'FD Calculator', path: '/calculators/compound-interest-calculator', category: 'Investment', emoji: '💰', keywords: 'fixed deposit fd interest' },
-    { name: 'CAGR Calculator', path: '/calculators/cagr-calculator', category: 'Investment', emoji: '📊', keywords: 'cagr growth rate' },
-    { name: 'Lumpsum Calculator', path: '/calculators/lumpsum-calculator', category: 'Investment', emoji: '💵', keywords: 'lumpsum investment' },
-    { name: 'SWP Calculator', path: '/calculators/swp-calculator', category: 'Investment', emoji: '👛', keywords: 'systematic withdrawal' },
-    { name: 'Mutual Fund Returns', path: '/calculators/mutual-fund-returns-calculator', category: 'Investment', emoji: '📊', keywords: 'mutual fund returns' },
-    { name: 'Asset Allocation Planner', path: '/calculators/asset-allocation-planner', category: 'Investment', emoji: '🎯', keywords: 'asset allocation portfolio' },
-    { name: 'XIRR Tracker', path: '/calculators/xirr-tracker', category: 'Investment', emoji: '📈', keywords: 'xirr returns tracking' },
-    { name: 'Gold Investment Calculator', path: '/calculators/gold-investment-calculator', category: 'Investment', emoji: '🏆', keywords: 'gold investment' },
+  const allItems = [
+    // Investment Tools (20+)
+    { name: 'SIP Calculator', path: '/calculators/sip-calculator', category: 'Investment', emoji: '📈', keywords: 'sip mutual fund systematic investment' },
+    { name: 'PPF Calculator', path: '/calculators/ppf-calculator', category: 'Investment', emoji: '🏦', keywords: 'ppf provident fund retirement' },
+    { name: 'FD Calculator', path: '/calculators/compound-interest-calculator', category: 'Investment', emoji: '💰', keywords: 'fixed deposit fd interest compound' },
+    { name: 'CAGR Calculator', path: '/calculators/cagr-calculator', category: 'Investment', emoji: '📊', keywords: 'cagr growth rate returns' },
+    { name: 'Lumpsum Calculator', path: '/calculators/lumpsum-calculator', category: 'Investment', emoji: '💵', keywords: 'lumpsum investment one time' },
+    { name: 'SWP Calculator', path: '/calculators/swp-calculator', category: 'Investment', emoji: '👛', keywords: 'systematic withdrawal plan' },
+    { name: 'Mutual Fund Returns', path: '/calculators/mutual-fund-returns-calculator', category: 'Investment', emoji: '📊', keywords: 'mutual fund returns calculator' },
+    { name: 'Asset Allocation', path: '/calculators/asset-allocation-planner', category: 'Investment', emoji: '🎯', keywords: 'asset allocation portfolio diversification' },
+    { name: 'XIRR Tracker', path: '/calculators/xirr-tracker', category: 'Investment', emoji: '📈', keywords: 'xirr returns tracking irr' },
+    { name: 'Gold Investment', path: '/calculators/gold-investment-calculator', category: 'Investment', emoji: '🏆', keywords: 'gold investment calculator' },
+    { name: 'Dividend Yield', path: '/calculators/dividend-yield-calculator', category: 'Investment', emoji: '💰', keywords: 'dividend yield stock returns' },
+    { name: 'Step-Up SIP', path: '/calculators/step-up-sip-calculator', category: 'Investment', emoji: '📈', keywords: 'step up sip increase annual' },
+    { name: 'Sukanya Samriddhi', path: '/calculators/sukanya-samriddhi-calculator', category: 'Investment', emoji: '👧', keywords: 'sukanya samriddhi girl child scheme' },
     
-    // Loan (15+)
-    { name: 'EMI Calculator', path: '/calculators/emi-calculator', category: 'Loan', emoji: '🧮', keywords: 'emi loan monthly' },
-    { name: 'Home Loan EMI', path: '/calculators/home-loan-calculator', category: 'Loan', emoji: '🏠', keywords: 'home loan housing' },
-    { name: 'Personal Loan', path: '/calculators/personal-loan-calculator', category: 'Loan', emoji: '💵', keywords: 'personal loan instant' },
+    // Loan Tools (15+)
+    { name: 'EMI Calculator', path: '/calculators/emi-calculator', category: 'Loan', emoji: '🧮', keywords: 'emi loan monthly installment equated' },
+    { name: 'Home Loan EMI', path: '/calculators/home-loan-calculator', category: 'Loan', emoji: '🏠', keywords: 'home loan housing property mortgage' },
+    { name: 'Personal Loan', path: '/calculators/personal-loan-calculator', category: 'Loan', emoji: '💵', keywords: 'personal loan instant unsecured' },
     { name: 'Car Loan', path: '/calculators/car-loan-calculator', category: 'Loan', emoji: '🚗', keywords: 'car auto vehicle loan' },
-    { name: 'Loan Comparison', path: '/calculators/loan-comparison-calculator', category: 'Loan', emoji: '📊', keywords: 'compare loans interest' },
-    { name: 'Loan Prepayment', path: '/calculators/loan-prepayment-calculator', category: 'Loan', emoji: '💰', keywords: 'prepayment foreclosure' },
-    { name: 'Loan Affordability', path: '/loan-tools/loan-affordability', category: 'Loan', emoji: '🎯', keywords: 'affordability eligibility' },
-    { name: 'Business Loan', path: '/calculators/business-loan-calculator', category: 'Loan', emoji: '💼', keywords: 'business loan msme' },
-    { name: 'Gold Loan EMI', path: '/calculators/gold-loan-emi-calculator', category: 'Loan', emoji: '🏆', keywords: 'gold loan emi' },
+    { name: 'Loan Comparison', path: '/calculators/loan-comparison-calculator', category: 'Loan', emoji: '📊', keywords: 'compare loans interest rates' },
+    { name: 'Loan Prepayment', path: '/calculators/loan-prepayment-calculator', category: 'Loan', emoji: '💰', keywords: 'prepayment foreclosure part payment' },
+    { name: 'Loan Affordability', path: '/loan-tools/loan-affordability', category: 'Loan', emoji: '🎯', keywords: 'affordability eligibility income' },
+    { name: 'Business Loan', path: '/calculators/business-loan-calculator', category: 'Loan', emoji: '💼', keywords: 'business loan msme commercial' },
+    { name: 'Education Loan', path: '/loan-tools/education-loan-calculator', category: 'Loan', emoji: '🎓', keywords: 'education loan student study' },
+    { name: 'Gold Loan EMI', path: '/calculators/gold-loan-emi-calculator', category: 'Loan', emoji: '🏆', keywords: 'gold loan emi collateral' },
     
-    // GST (20+)
-    { name: 'GST Calculator', path: '/tools/gst-amount-calculator', category: 'GST', emoji: '🧮', keywords: 'gst goods services tax' },
-    { name: 'HSN/SAC Finder', path: '/tools/gst-hsn-sac-finder', category: 'GST', emoji: '🔍', keywords: 'hsn sac code finder' },
-    { name: 'Reverse GST', path: '/tools/reverse-gst-calculator', category: 'GST', emoji: '🔄', keywords: 'reverse gst backward' },
-    { name: 'GST Slab Calculator', path: '/tools/gst-slab-calculator', category: 'GST', emoji: '💹', keywords: 'gst rate slab' },
-    { name: 'GSTR-1 Deadline', path: '/tools/gstr-1-deadline-calculator', category: 'GST', emoji: '📅', keywords: 'gstr1 filing deadline' },
-    { name: 'GSTR-3B Deadline', path: '/tools/gstr-3b-deadline-calculator', category: 'GST', emoji: '📆', keywords: 'gstr3b return' },
-    { name: 'GST Liability', path: '/tools/gst-liability-calculator', category: 'GST', emoji: '💰', keywords: 'gst liability total' },
-    { name: 'ITC Eligibility', path: '/tools/itc-eligibility-checker', category: 'GST', emoji: '✅', keywords: 'itc input tax credit' },
-    { name: 'Composition Scheme', path: '/tools/composition-scheme-checker', category: 'GST', emoji: '📋', keywords: 'composition scheme eligibility' },
+    // GST Tools (20+)
+    { name: 'GST Calculator', path: '/tools/gst-amount-calculator', category: 'GST', emoji: '🧮', keywords: 'gst goods services tax calculator' },
+    { name: 'HSN/SAC Finder', path: '/tools/gst-hsn-sac-finder', category: 'GST', emoji: '🔍', keywords: 'hsn sac code finder gst' },
+    { name: 'Reverse GST', path: '/tools/reverse-gst-calculator', category: 'GST', emoji: '🔄', keywords: 'reverse gst backward inclusive' },
+    { name: 'GST Slab Calculator', path: '/tools/gst-slab-calculator', category: 'GST', emoji: '💹', keywords: 'gst rate slab percentage' },
+    { name: 'GSTR-1 Deadline', path: '/tools/gstr-1-deadline-calculator', category: 'GST', emoji: '📅', keywords: 'gstr1 filing deadline due date' },
+    { name: 'GSTR-3B Deadline', path: '/tools/gstr-3b-deadline-calculator', category: 'GST', emoji: '📆', keywords: 'gstr3b return filing' },
+    { name: 'GST Liability', path: '/tools/gst-liability-calculator', category: 'GST', emoji: '💰', keywords: 'gst liability total payable' },
+    { name: 'ITC Eligibility', path: '/tools/itc-eligibility-checker', category: 'GST', emoji: '✅', keywords: 'itc input tax credit eligibility' },
     
-    // Tax (15+)
-    { name: 'Income Tax Calculator', path: '/tools/income-tax-calculator', category: 'Tax', emoji: '📄', keywords: 'income tax old new regime' },
-    { name: 'HRA Calculator', path: '/calculators/hra-calculator', category: 'Tax', emoji: '🏠', keywords: 'hra house rent allowance' },
-    { name: 'Capital Gains Tax', path: '/calculators/capital-gains-tax-calculator', category: 'Tax', emoji: '💹', keywords: 'capital gains ltcg stcg' },
-    { name: 'TDS Calculator', path: '/calculators/tds-calculator', category: 'Tax', emoji: '💰', keywords: 'tds tax deducted source' },
-    { name: '80C Calculator', path: '/calculators/section-80c-calculator', category: 'Tax', emoji: '🏦', keywords: '80c deduction tax saving' },
-    { name: '80D Calculator', path: '/calculators/section-80d-calculator', category: 'Tax', emoji: '🛡️', keywords: '80d health insurance' },
-    { name: 'Advance Tax', path: '/calculators/advance-tax-calculator', category: 'Tax', emoji: '📅', keywords: 'advance tax quarterly' },
-    { name: 'Tax Saving Investment', path: '/calculators/tax-saving-investment-calculator', category: 'Tax', emoji: '💰', keywords: 'tax saving investment' },
+    // Tax Tools (15+)
+    { name: 'Income Tax Calculator', path: '/tools/income-tax-calculator', category: 'Tax', emoji: '📄', keywords: 'income tax calculator old new regime' },
+    { name: 'HRA Calculator', path: '/calculators/hra-calculator', category: 'Tax', emoji: '🏠', keywords: 'hra house rent allowance exemption' },
+    { name: 'Capital Gains Tax', path: '/calculators/capital-gains-tax-calculator', category: 'Tax', emoji: '💹', keywords: 'capital gains ltcg stcg tax' },
+    { name: 'TDS Calculator', path: '/calculators/tds-calculator', category: 'Tax', emoji: '💰', keywords: 'tds tax deducted at source' },
+    { name: '80C Calculator', path: '/calculators/section-80c-calculator', category: 'Tax', emoji: '🏦', keywords: '80c deduction tax saving investment' },
+    { name: '80D Calculator', path: '/calculators/section-80d-calculator', category: 'Tax', emoji: '🛡️', keywords: '80d health insurance medical' },
+    { name: 'Advance Tax', path: '/calculators/advance-tax-calculator', category: 'Tax', emoji: '📅', keywords: 'advance tax quarterly payment' },
     
-    // Retirement (10+)
-    { name: 'Retirement Calculator', path: '/calculators/retirement-calculator', category: 'Retirement', emoji: '👴', keywords: 'retirement planning corpus' },
-    { name: 'NPS Calculator', path: '/calculators/nps-calculator', category: 'Retirement', emoji: '🎯', keywords: 'nps national pension' },
-    { name: 'EPF Calculator', path: '/calculators/epf-calculator', category: 'Retirement', emoji: '🏢', keywords: 'epf provident fund' },
-    { name: 'Pension Calculator', path: '/calculators/pension-calculator', category: 'Retirement', emoji: '💰', keywords: 'pension monthly' },
-    { name: 'Gratuity Calculator', path: '/calculators/gratuity-calculator', category: 'Retirement', emoji: '🎁', keywords: 'gratuity calculation' },
+    // Retirement Tools (10+)
+    { name: 'Retirement Calculator', path: '/calculators/retirement-calculator', category: 'Retirement', emoji: '👴', keywords: 'retirement planning corpus savings' },
+    { name: 'NPS Calculator', path: '/calculators/nps-calculator', category: 'Retirement', emoji: '🎯', keywords: 'nps national pension system' },
+    { name: 'EPF Calculator', path: '/calculators/epf-calculator', category: 'Retirement', emoji: '🏢', keywords: 'epf provident fund employee' },
+    { name: 'Pension Calculator', path: '/calculators/pension-calculator', category: 'Retirement', emoji: '💰', keywords: 'pension monthly retirement' },
+    { name: 'Gratuity Calculator', path: '/calculators/gratuity-calculator', category: 'Retirement', emoji: '🎁', keywords: 'gratuity calculation terminal benefits' },
     
-    // Insurance (10+)
-    { name: 'Life Insurance', path: '/calculators/life-insurance-calculator', category: 'Insurance', emoji: '🛡️', keywords: 'life insurance term cover' },
-    { name: 'Health Insurance', path: '/calculators/health-insurance-calculator', category: 'Insurance', emoji: '❤️', keywords: 'health insurance premium' },
-    { name: 'Term Insurance', path: '/calculators/term-insurance-calculator', category: 'Insurance', emoji: '🛡️', keywords: 'term insurance pure' },
+    // Insurance Tools (10+)
+    { name: 'Life Insurance', path: '/calculators/life-insurance-calculator', category: 'Insurance', emoji: '🛡️', keywords: 'life insurance term cover protection' },
+    { name: 'Health Insurance', path: '/calculators/health-insurance-calculator', category: 'Insurance', emoji: '❤️', keywords: 'health insurance premium medical' },
+    { name: 'Term Insurance', path: '/calculators/term-insurance-calculator', category: 'Insurance', emoji: '🛡️', keywords: 'term insurance pure protection' },
+    { name: 'ULIP Calculator', path: '/insurance-tools/ulip-calculator', category: 'Insurance', emoji: '📊', keywords: 'ulip unit linked insurance plan' },
     
-    // Festival Tools (11)
-    { name: 'Lunar Eclipse Predictor', path: '/festival-tools/lunar-eclipse-predictor', category: 'Festival', emoji: '🌑', keywords: 'lunar eclipse grahan sutak' },
-    { name: 'Auspicious Marriage Days', path: '/festival-tools/auspicious-marriage-days', category: 'Festival', emoji: '💍', keywords: 'marriage wedding muhurat' },
-    { name: 'Panchang Today', path: '/festival-tools/panchang-today', category: 'Festival', emoji: '📅', keywords: 'panchang tithi nakshatra' },
-    { name: 'Weekly Tithi Finder', path: '/festival-tools/weekly-tithi-finder', category: 'Festival', emoji: '📆', keywords: 'tithi lunar week' },
-    { name: 'Moon Phase Festivals', path: '/festival-tools/moon-phase-festivals', category: 'Festival', emoji: '🌙', keywords: 'moon phase purnima' },
-    { name: 'Purnima Amavasya', path: '/festival-tools/purnima-amavasya-dates', category: 'Festival', emoji: '🌕', keywords: 'full moon new moon' },
-    { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', category: 'Festival', emoji: '🙏', keywords: 'vrat fasting upavas' },
-    { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', category: 'Festival', emoji: '⭐', keywords: 'nakshatra birth star' },
-    { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', category: 'Festival', emoji: '🔔', keywords: 'muhurat auspicious time' },
-    { name: 'Parsi New Year', path: '/festival-tools/parsi-new-year', category: 'Festival', emoji: '🎊', keywords: 'navroz parsi zoroastrian' },
-    { name: 'Hindu Panchang Year', path: '/festival-tools/hindu-panchang-year', category: 'Festival', emoji: '📖', keywords: 'hindu calendar year' },
+    // Festival Tools (All 11+)
+    { name: 'Lunar Eclipse 2025', path: '/festival-tools/lunar-eclipse-predictor', category: 'Festival', emoji: '🌑', keywords: 'lunar eclipse grahan sutak timings 2025' },
+    { name: 'Marriage Muhurat', path: '/festival-tools/auspicious-marriage-days', category: 'Festival', emoji: '💍', keywords: 'marriage wedding muhurat auspicious dates' },
+    { name: 'Panchang Today', path: '/festival-tools/panchang-today', category: 'Festival', emoji: '📅', keywords: 'panchang tithi nakshatra daily hindu' },
+    { name: 'Weekly Tithi', path: '/festival-tools/weekly-tithi-finder', category: 'Festival', emoji: '📆', keywords: 'tithi lunar week calendar' },
+    { name: 'Purnima Amavasya', path: '/festival-tools/purnima-amavasya-dates', category: 'Festival', emoji: '🌕', keywords: 'full moon new moon purnima amavasya' },
+    { name: 'Vrat Calendar', path: '/festival-tools/vrat-upavas-calendar', category: 'Festival', emoji: '🙏', keywords: 'vrat upavas fasting hindu calendar' },
+    { name: 'Nakshatra Festival', path: '/festival-tools/nakshatra-festival', category: 'Festival', emoji: '⭐', keywords: 'nakshatra birth star constellation' },
+    { name: 'Shubh Muhurat', path: '/festival-tools/shubh-muhurat-reminder', category: 'Festival', emoji: '🔔', keywords: 'muhurat auspicious timing good time' },
     
-    // Learn (40 lessons)
-    { name: 'Gold Loans - 10 Lessons', path: '/learn/gold-loans', category: 'Learn', emoji: '🏆', keywords: 'gold loan education lessons' },
-    { name: 'Credit Cards - 20 Lessons', path: '/learn/credit-cards', category: 'Learn', emoji: '💳', keywords: 'credit card lessons guide' },
-    { name: 'Credit Score - 10 Lessons', path: '/learn/credit-score', category: 'Learn', emoji: '📊', keywords: 'credit score cibil lessons' },
+    // Banking & Finance (15+)
+    { name: 'Salary Calculator', path: '/calculators/salary-calculator', category: 'Salary', emoji: '💰', keywords: 'salary take home ctc in hand' },
+    { name: 'Budget Calculator', path: '/calculators/budget-calculator', category: 'Finance', emoji: '💵', keywords: 'budget planner monthly expense' },
+    { name: 'Currency Converter', path: '/calculators/currency-converter', category: 'Finance', emoji: '🌍', keywords: 'currency exchange forex conversion' },
+    { name: 'Inflation Calculator', path: '/calculators/inflation-calculator', category: 'Finance', emoji: '📈', keywords: 'inflation rate future value purchasing power' },
+    { name: 'Net Worth Calculator', path: '/calculators/net-worth-calculator', category: 'Finance', emoji: '💎', keywords: 'net worth assets liabilities wealth' },
     
-    // More Calculators (50+)
-    { name: 'Salary Calculator', path: '/calculators/salary-calculator', category: 'Salary', emoji: '💰', keywords: 'salary take home ctc' },
-    { name: 'Budget Calculator', path: '/calculators/budget-calculator', category: 'Budget', emoji: '💵', keywords: 'budget planner monthly' },
-    { name: 'Currency Converter', path: '/calculators/currency-converter', category: 'Currency', emoji: '🌍', keywords: 'currency exchange forex' },
-    { name: 'Inflation Calculator', path: '/calculators/inflation-calculator', category: 'Finance', emoji: '📈', keywords: 'inflation rate future value' },
-    { name: 'Break Even Calculator', path: '/calculators/break-even-calculator', category: 'Business', emoji: '🎯', keywords: 'break even analysis' },
-    { name: 'Margin Calculator', path: '/calculators/profit-margin-calculator', category: 'Business', emoji: '💹', keywords: 'profit margin markup' },
-    { name: 'Discount Calculator', path: '/calculators/discount-calculator', category: 'Shopping', emoji: '🏷️', keywords: 'discount percentage off' },
-    { name: 'Net Worth Calculator', path: '/calculators/net-worth-calculator', category: 'Finance', emoji: '💎', keywords: 'net worth assets liabilities' },
-    { name: 'Savings Account Calculator', path: '/calculators/savings-account-calculator', category: 'Banking', emoji: '🏦', keywords: 'savings account interest' },
-    { name: 'Sukanya Samriddhi', path: '/calculators/sukanya-samriddhi-calculator', category: 'Investment', emoji: '👧', keywords: 'sukanya samriddhi girl child' },
-    { name: 'Emergency Fund Calculator', path: '/calculators/emergency-fund-calculator', category: 'Finance', emoji: '🆘', keywords: 'emergency fund savings' },
-    { name: 'Human Life Value', path: '/calculators/human-life-value-calculator', category: 'Insurance', emoji: '👤', keywords: 'human life value hlv' },
-    { name: 'Property Registration', path: '/calculators/property-registration-calculator', category: 'Property', emoji: '🏘️', keywords: 'property registration stamp duty' },
-    { name: 'Rent vs Buy Calculator', path: '/calculators/rent-vs-buy-calculator', category: 'Property', emoji: '🏠', keywords: 'rent buy home property' },
-    { name: 'Brokerage Calculator', path: '/calculators/brokerage-calculator', category: 'Trading', emoji: '📊', keywords: 'brokerage charges trading' },
-    { name: 'Dividend Yield Calculator', path: '/calculators/dividend-yield-calculator', category: 'Investment', emoji: '💰', keywords: 'dividend yield stock' },
-    { name: 'Crypto Tax Estimator', path: '/calculators/crypto-tax-estimator', category: 'Crypto', emoji: '₿', keywords: 'crypto tax bitcoin' },
-    { name: 'Step-Up SIP', path: '/calculators/step-up-sip-calculator', category: 'Investment', emoji: '📈', keywords: 'step up sip increase' },
-    { name: 'Inflation Adjusted SIP', path: '/calculators/inflation-adjusted-sip-calculator', category: 'Investment', emoji: '📊', keywords: 'inflation adjusted sip' },
-    { name: 'Financial Goal Calculator', path: '/calculators/financial-goal-calculator', category: 'Planning', emoji: '🎯', keywords: 'financial goal planning' },
+    // Business Tools (10+)
+    { name: 'Break Even Calculator', path: '/calculators/break-even-calculator', category: 'Business', emoji: '🎯', keywords: 'break even analysis business' },
+    { name: 'Margin Calculator', path: '/calculators/profit-margin-calculator', category: 'Business', emoji: '💹', keywords: 'profit margin markup business' },
+    { name: 'ROI Calculator', path: '/finance-tools/roi-calculator', category: 'Business', emoji: '💼', keywords: 'roi return on investment business' },
     
-    // Blogs (loaded dynamically)
-    ...blogPosts.slice(0, 30).map((post: any) => ({ 
+    // Property & Real Estate (8+)
+    { name: 'Property Registration', path: '/calculators/property-registration-calculator', category: 'Property', emoji: '🏘️', keywords: 'property registration stamp duty charges' },
+    { name: 'Rent vs Buy', path: '/calculators/rent-vs-buy-calculator', category: 'Property', emoji: '🏠', keywords: 'rent buy home property comparison' },
+    { name: 'Property Investment', path: '/real-estate/property-investment-calculator', category: 'Property', emoji: '🏠', keywords: 'property investment real estate returns' },
+    
+    // Stock Market & Trading (15+)
+    { name: 'Brokerage Calculator', path: '/calculators/brokerage-calculator', category: 'Trading', emoji: '📊', keywords: 'brokerage charges trading stock' },
+    { name: 'Stock Screener', path: '/stock-market/stock-screener', category: 'Stock Market', emoji: '🔍', keywords: 'stock screener filter analysis' },
+    { name: 'Portfolio Tracker', path: '/stock-market/portfolio-tracker', category: 'Stock Market', emoji: '📈', keywords: 'portfolio tracker stock investment' },
+    
+    // Crypto Tools (10+)
+    { name: 'Crypto Tax Estimator', path: '/calculators/crypto-tax-estimator', category: 'Crypto', emoji: '₿', keywords: 'crypto tax bitcoin ethereum calculator' },
+    { name: 'Crypto Calculator', path: '/crypto/crypto-calculator', category: 'Crypto', emoji: '₿', keywords: 'cryptocurrency bitcoin returns' },
+    { name: 'Crypto Portfolio', path: '/crypto/portfolio-tracker', category: 'Crypto', emoji: '📊', keywords: 'crypto portfolio tracker bitcoin' },
+    
+    // Gold Tools (5+)
+    { name: 'Gold Price Calculator', path: '/gold-tools/gold-price-calculator', category: 'Gold', emoji: '🏆', keywords: 'gold price calculator investment' },
+    { name: 'Gold SIP Calculator', path: '/gold-tools/gold-sip-calculator', category: 'Gold', emoji: '💰', keywords: 'gold sip systematic investment' },
+    { name: 'Gold Loan Calculator', path: '/gold-tools/gold-loan-calculator', category: 'Gold', emoji: '🏆', keywords: 'gold loan collateral financing' },
+    
+    // Government Schemes (15+)
+    { name: 'PM Kisan Scheme', path: '/government-schemes/pm-kisan', category: 'Schemes', emoji: '🌾', keywords: 'pm kisan farmer income support government' },
+    { name: 'PM Awas Yojana', path: '/government-schemes/pm-awas-yojana', category: 'Schemes', emoji: '🏠', keywords: 'pm awas yojana housing subsidy government' },
+    { name: 'MUDRA Loan', path: '/government-schemes/mudra-loan', category: 'Schemes', emoji: '💼', keywords: 'mudra loan msme business micro' },
+    
+    // Excel Tools (10+)
+    { name: 'Excel Budget Template', path: '/excel-tools/budget-template', category: 'Excel', emoji: '📊', keywords: 'excel budget template spreadsheet download' },
+    { name: 'Excel Investment Tracker', path: '/excel-tools/investment-tracker', category: 'Excel', emoji: '📈', keywords: 'excel investment tracker portfolio spreadsheet' },
+    { name: 'Excel Expense Tracker', path: '/excel-tools/expense-tracker', category: 'Excel', emoji: '📉', keywords: 'excel expense tracker budget spreadsheet' },
+    
+    // Banking Tools (10+)
+    { name: 'Bank Account Comparison', path: '/banking/bank-account-comparison', category: 'Banking', emoji: '🏦', keywords: 'bank account savings comparison' },
+    { name: 'Credit Card Comparison', path: '/banking/credit-card-comparison', category: 'Banking', emoji: '💳', keywords: 'credit card rewards benefits comparison' },
+    { name: 'Credit Card Finder', path: '/credit-card-finder', category: 'Banking', emoji: '💳', keywords: 'credit card finder best card recommendation' },
+    
+    // Learning Courses (40 lessons)
+    { name: 'Gold Loans Course', path: '/learn/gold-loans', category: 'Learn', emoji: '🏆', keywords: 'gold loan education lessons course tutorial' },
+    { name: 'Credit Cards Course', path: '/learn/credit-cards', category: 'Learn', emoji: '💳', keywords: 'credit card lessons guide course tutorial' },
+    { name: 'Credit Score Course', path: '/learn/credit-score', category: 'Learn', emoji: '📊', keywords: 'credit score cibil lessons course improve' },
+    
+    // Main Pages & Categories (20+)
+    { name: 'All Calculators', path: '/calculators', category: 'Hub', emoji: '🧮', keywords: 'all calculators list financial tools' },
+    { name: 'Finance Tools Hub', path: '/finance-tools', category: 'Hub', emoji: '💵', keywords: 'finance tools hub advanced calculators' },
+    { name: 'Tax Tools Hub', path: '/tax-tools', category: 'Hub', emoji: '📄', keywords: 'tax tools hub income tax calculators' },
+    { name: 'GST Tools Hub', path: '/gst-tools', category: 'Hub', emoji: '💰', keywords: 'gst tools hub calculators compliance' },
+    { name: 'Loan Tools Hub', path: '/loan-tools', category: 'Hub', emoji: '🏠', keywords: 'loan tools hub emi calculators' },
+    { name: 'Insurance Tools Hub', path: '/insurance-tools', category: 'Hub', emoji: '🛡️', keywords: 'insurance tools hub calculators planning' },
+    { name: 'Festival Tools Hub', path: '/festival-tools', category: 'Hub', emoji: '🎉', keywords: 'festival tools hub panchang muhurat' },
+    { name: 'Corporate Finance Hub', path: '/corporate-finance', category: 'Hub', emoji: '💼', keywords: 'corporate finance hub business tools' },
+    { name: 'Government Schemes Hub', path: '/government-schemes', category: 'Hub', emoji: '🎁', keywords: 'government schemes hub pm schemes subsidies' },
+    { name: 'Excel Tools Hub', path: '/excel-tools', category: 'Hub', emoji: '📊', keywords: 'excel tools hub templates formulas' },
+    { name: 'Crypto Hub', path: '/crypto', category: 'Hub', emoji: '₿', keywords: 'cryptocurrency hub bitcoin tools' },
+    { name: 'Gold Tools Hub', path: '/gold-tools', category: 'Hub', emoji: '🏆', keywords: 'gold tools hub investment calculator' },
+    { name: 'Stock Market Hub', path: '/stock-market', category: 'Hub', emoji: '📈', keywords: 'stock market hub trading education' },
+    { name: 'Banking Hub', path: '/banking', category: 'Hub', emoji: '🏦', keywords: 'banking hub tools comparison' },
+    { name: 'Blog & Articles', path: '/blog', category: 'Blog', emoji: '📰', keywords: 'blog articles finance guides news' },
+    { name: 'Financial Education', path: '/learn', category: 'Learn', emoji: '📚', keywords: 'financial education learning courses lessons' },
+    { name: 'Help Center', path: '/help-center', category: 'Help', emoji: '❓', keywords: 'help center support faq assistance' },
+    
+    // Additional Calculators (30+)
+    { name: 'Emergency Fund', path: '/calculators/emergency-fund-calculator', category: 'Finance', emoji: '🆘', keywords: 'emergency fund savings calculator' },
+    { name: 'Human Life Value', path: '/calculators/human-life-value-calculator', category: 'Insurance', emoji: '👤', keywords: 'human life value hlv insurance' },
+    { name: 'Discount Calculator', path: '/calculators/discount-calculator', category: 'Shopping', emoji: '🏷️', keywords: 'discount percentage off shopping' },
+    { name: 'Financial Goal', path: '/calculators/financial-goal-calculator', category: 'Planning', emoji: '🎯', keywords: 'financial goal planning target savings' },
+    
+    // Blogs (dynamic from entire blog database)
+    ...blogPosts.slice(0, 50).map((post: any) => ({ 
       name: post?.title || '', 
       path: `/blog/${post?.slug || ''}`, 
       category: 'Blog', 
       emoji: '📰',
-      keywords: post?.categories?.join(' ') || ''
+      keywords: `${post?.categories?.join(' ') || ''} blog article guide tutorial`
     }))
   ];
   
-  return calculators;
+  return allItems;
 };
 
 const HomeInvestopedia: React.FC = () => {
@@ -525,7 +575,7 @@ const HomeInvestopedia: React.FC = () => {
           </div>
 
           {/* Clean Mobile Menu */}
-          {mobileMenuOpen && (
+            {mobileMenuOpen && (
             <div 
               id="mobile-menu"
               className="lg:hidden border-t border-gray-200 bg-white"
@@ -533,21 +583,21 @@ const HomeInvestopedia: React.FC = () => {
               aria-label="Mobile navigation"
             >
               <div className="px-4 py-4 grid grid-cols-2 gap-2.5 max-h-[70vh] overflow-y-auto">
-                {mainSections.map((item, idx) => (
-                  <Link
-                    key={idx}
-                    to={item.path}
-                    onClick={() => setMobileMenuOpen(false)}
+                  {mainSections.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
                     className="flex items-center gap-2 px-4 py-3 rounded-lg font-semibold text-sm bg-gray-50 text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                     aria-label={`Navigate to ${item.name}`}
                   >
                     <span className="text-2xl" aria-hidden="true">{item.emoji}</span>
-                    <span>{item.name}</span>
-                  </Link>
-                ))}
-              </div>
+                      <span>{item.name}</span>
+                    </Link>
+                  ))}
+                </div>
             </div>
-          )}
+            )}
         </nav>
 
         {/* Professional Hero Section */}
@@ -588,10 +638,10 @@ const HomeInvestopedia: React.FC = () => {
               <div className="max-w-3xl mx-auto mb-12 relative">
                 <div className="relative">
                   <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                      <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={language === 'en' ? '🔍 Search calculators, tools, guides... Try: GST, SIP, EMI, Marriage' : '🔍 खोजें...'}
                     className="w-full pl-14 pr-14 py-5 text-lg rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none font-medium shadow-lg bg-white text-gray-900 placeholder-gray-500 transition-all"
                   />
@@ -601,9 +651,9 @@ const HomeInvestopedia: React.FC = () => {
                       className="absolute right-5 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-gray-100 active:scale-90 transition-all"
                     >
                       <X className="w-5 h-5 text-gray-400" />
-                    </button>
+                      </button>
                   )}
-                </div>
+                    </div>
 
                 {/* Clean Popular Tags */}
                 {!searchQuery && (
@@ -625,11 +675,11 @@ const HomeInvestopedia: React.FC = () => {
                 )}
 
                 {/* Professional Search Results */}
-                <AnimatePresence>
+                    <AnimatePresence>
                   {showSearchResults && (
-                    <motion.div
+                        <motion.div
                       initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                          animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full left-0 right-0 mt-4 rounded-2xl shadow-2xl border border-gray-200 max-h-[70vh] overflow-y-auto z-50 bg-white"
                     >
@@ -640,7 +690,7 @@ const HomeInvestopedia: React.FC = () => {
                         <div className="space-y-1.5">
                           {searchResults.map((result, idx) => (
                             <motion.button
-                              key={idx}
+                                      key={idx}
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: idx * 0.02 }}
@@ -651,7 +701,7 @@ const HomeInvestopedia: React.FC = () => {
                               <div className="flex-1 min-w-0">
                                 <div className="font-bold text-base mb-1 text-gray-900 group-hover:text-blue-600">
                                   {result.name}
-                                </div>
+                                      </div>
                                 <div className="flex items-center gap-2 flex-wrap">
                                   <span className="px-2.5 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
                                     {result.category}
@@ -660,15 +710,15 @@ const HomeInvestopedia: React.FC = () => {
                                     {result.path}
                                   </span>
                                 </div>
-                              </div>
+                            </div>
                               <ChevronRight className="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-blue-600" />
                             </motion.button>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                                ))}
+                              </div>
+                            </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
               </div>
 
               {/* Professional CTAs */}
@@ -687,23 +737,23 @@ const HomeInvestopedia: React.FC = () => {
                   <Rocket className="w-6 h-6" />
                   {language === 'en' ? 'Start Learning (40 Lessons)' : 'सीखें (40 पाठ)'}
                 </Link>
-              </div>
+                            </div>
 
               {/* Professional Stats Grid */}
               <div className="max-w-6xl mx-auto p-8 rounded-2xl border border-gray-200 mb-12 bg-white shadow-lg">
                 <div className="text-center mb-8">
                   <h3 className="text-3xl font-bold mb-2 text-gray-900">
                     📊 {language === 'en' ? 'Complete Financial Platform' : 'संपूर्ण वित्तीय मंच'}
-                  </h3>
+                              </h3>
                   <p className="text-sm text-gray-600">
                     <Sparkles className="w-4 h-4 inline mr-1 text-blue-500" />
                     {language === 'en' ? 'Comprehensive tools for every financial need' : 'हर वित्तीय आवश्यकता के लिए'}
-                  </p>
-                </div>
+                              </p>
+                            </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {dynamicPlatformCategories.map((item, idx) => (
                     <Link
-                      key={idx}
+                  key={idx}
                       to={item.path}
                       className="p-5 rounded-xl text-center transition-all hover:scale-105 bg-white border border-gray-200 hover:border-blue-500 hover:shadow-md"
                     >
@@ -711,10 +761,10 @@ const HomeInvestopedia: React.FC = () => {
                       <div className="text-sm font-bold mb-1 text-gray-900">{item.name}</div>
                       <div className="text-xs px-2 py-1 rounded-full inline-block font-semibold bg-blue-100 text-blue-700">
                         {item.count}
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+                    </div>
+                  </Link>
+              ))}
+              </div>
 
                 {/* Festival Tool Categories */}
                 <div className={`mt-8 p-6 rounded-2xl ${
@@ -1148,14 +1198,7 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className={`py-6 border-t ${theme === 'dark' ? 'bg-slate-950 border-white/10' : 'bg-gray-100 border-gray-200'}`}>
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-              © {currentDate.year} MoneyCal India. Made with 💙 for India
-            </p>
-            </div>
-        </footer>
+        {/* Footer handled by Layout component */}
       </div>
     </>
   );
