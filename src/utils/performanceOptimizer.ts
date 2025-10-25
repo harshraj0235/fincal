@@ -73,23 +73,10 @@ export const lazyLoadBelowFold = () => {
   lazyElements.forEach(el => observer.observe(el));
 };
 
-// Prefetch critical resources
+// Prefetch critical resources - disabled to prevent 503 errors
 export const prefetchCritical = () => {
-  if (typeof window === 'undefined') return;
-
-  const prefetch = (href: string, as: string) => {
-    const link = document.createElement('link');
-    link.rel = 'prefetch';
-    link.as = as;
-    link.href = href;
-    document.head.appendChild(link);
-  };
-
-  // Prefetch likely next pages
-  setTimeout(() => {
-    prefetch('/calculators/emi-calculator', 'document');
-    prefetch('/calculators/sip-calculator', 'document');
-  }, 5000);
+  // Disabled: was causing 503 errors
+  // Will enable after site is stable
 };
 
 // Initialize all optimizations

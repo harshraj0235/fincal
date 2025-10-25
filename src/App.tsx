@@ -2,7 +2,7 @@ import { useEffect, Suspense, lazy } from 'react';
 import { initPerformanceOptimizations } from './utils/performance';
 import { initAnalytics } from './utils/analytics';
 import WebVitalsMonitor from './components/WebVitalsMonitor';
-import ModernNavbar from './components/ModernNavbar';
+import { Layout } from './components/Layout';
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
