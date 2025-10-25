@@ -453,13 +453,41 @@ const HomeInvestopedia: React.FC = () => {
 
       <div className={`min-h-screen transition-colors duration-500 ${
         theme === 'dark' 
-          ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' 
-          : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'
+          ? 'bg-gradient-to-br from-gray-950 via-purple-950 to-blue-950' 
+          : 'bg-gradient-to-br from-cyan-50 via-blue-50 via-purple-50 to-pink-50'
       }`}>
-        {/* Background */}
+        {/* Animated Background */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className={`absolute w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-400/20'}`} style={{ top: '10%', left: '10%' }}></div>
-          <div className={`absolute w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-purple-500/10' : 'bg-purple-400/20'}`} style={{ top: '50%', right: '10%' }}></div>
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.3, 1],
+              x: [0, 50, 0],
+              y: [0, 30, 0]
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            className={`absolute w-[500px] h-[500px] rounded-full blur-3xl ${theme === 'dark' ? 'bg-cyan-500/20' : 'bg-cyan-400/30'}`} 
+            style={{ top: '5%', left: '5%' }}
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1.2, 1, 1.2],
+              x: [0, -50, 0],
+              y: [0, 50, 0]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className={`absolute w-[600px] h-[600px] rounded-full blur-3xl ${theme === 'dark' ? 'bg-purple-500/20' : 'bg-purple-400/30'}`} 
+            style={{ top: '30%', right: '5%' }}
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              x: [0, 30, 0],
+              y: [0, -30, 0]
+            }}
+            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+            className={`absolute w-[450px] h-[450px] rounded-full blur-3xl ${theme === 'dark' ? 'bg-pink-500/20' : 'bg-pink-400/30'}`} 
+            style={{ bottom: '10%', left: '30%' }}
+          />
         </div>
 
         {/* Top Navigation - Floating Style */}
@@ -565,43 +593,109 @@ const HomeInvestopedia: React.FC = () => {
         <section className="relative py-20 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center">
-              {/* Title */}
-              <h1 className={`text-6xl sm:text-7xl md:text-8xl font-black mb-6 leading-tight ${
-                theme === 'dark'
-                  ? 'bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent'
-                  : 'bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 bg-clip-text text-transparent'
-              }`}>
-                {language === 'en' ? 'Make Smarter Financial Decisions 💰' : 'पैसा आसान 💰'}
-              </h1>
+              {/* Title with Enhanced Typography */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <h1 className={`text-6xl sm:text-7xl md:text-8xl font-black mb-6 leading-tight ${
+                  theme === 'dark'
+                    ? 'bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(168,85,247,0.6)]'
+                    : 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent drop-shadow-[0_5px_10px_rgba(147,51,234,0.3)]'
+                }`}>
+                  {language === 'en' ? (
+                    <>
+                      Make Smarter<br/>
+                      <span className={theme === 'dark' ? 'bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent' : 'bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent'}>
+                        Financial Decisions
+                      </span> 💰
+                    </>
+                  ) : (
+                    <>पैसा आसान 💰</>
+                  )}
+                </h1>
 
-              <p className={`text-2xl md:text-3xl mb-12 font-bold ${theme === 'dark' ? 'text-gray-200' : 'text-gray-800'}`}>
-                {language === 'en' ? '🚀 100+ Tools • 40 Lessons • 11 Festival Tools' : '🚀 100+ टूल्स • 40 पाठ'}
-              </p>
+                <p className={`text-2xl md:text-3xl mb-6 font-bold ${
+                  theme === 'dark' 
+                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300' 
+                    : 'text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-purple-700 to-pink-700'
+                }`}>
+                  {language === 'en' ? '🚀 500+ Premium Tools • 40 Expert Lessons • 30+ Festival Tools' : '🚀 500+ टूल्स • 40 पाठ • 30+ त्योहार'}
+                </p>
 
-              {/* Global Search */}
-              <div className="max-w-4xl mx-auto mb-12 relative">
-                <div className="relative">
-                  <Search className={`absolute left-6 top-1/2 -translate-y-1/2 w-7 h-7 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
-                      <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder={language === 'en' ? '🔍 Search... GST, SIP, EMI, Eclipse, Marriage' : '🔍 खोजें...'}
-                    className={`w-full pl-16 pr-16 py-6 text-xl rounded-3xl border-2 focus:ring-4 outline-none font-semibold shadow-2xl transition-all ${
+                {/* Stats Pills */}
+                <div className="flex flex-wrap justify-center gap-3 mb-12">
+                  <div className={`px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 ${
+                    theme === 'dark'
+                      ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border-2 border-cyan-500/30 text-cyan-300'
+                      : 'bg-gradient-to-r from-cyan-100 to-blue-100 border-2 border-cyan-300 text-cyan-700'
+                  }`}>
+                    <CheckCircle className="w-4 h-4" />
+                    100% Free Forever
+                  </div>
+                  <div className={`px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 ${
+                    theme === 'dark'
+                      ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-2 border-purple-500/30 text-purple-300'
+                      : 'bg-gradient-to-r from-purple-100 to-pink-100 border-2 border-purple-300 text-purple-700'
+                  }`}>
+                    <Star className="w-4 h-4" />
+                    1M+ Trusted Users
+                  </div>
+                  <div className={`px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 ${
+                    theme === 'dark'
+                      ? 'bg-gradient-to-r from-green-500/20 to-emerald-500/20 border-2 border-green-500/30 text-green-300'
+                      : 'bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-300 text-green-700'
+                  }`}>
+                    <Zap className="w-4 h-4" />
+                    AI-Powered Search
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Enhanced Global Search */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="max-w-4xl mx-auto mb-12 relative"
+              >
+                <div className="relative group">
+                  {/* Search Icon */}
+                  <div className={`absolute left-6 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-all ${
+                    theme === 'dark' ? 'bg-purple-500/20 group-focus-within:bg-purple-500/30' : 'bg-purple-100 group-focus-within:bg-purple-200'
+                  }`}>
+                    <Search className={`w-6 h-6 ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`} />
+                  </div>
+                  
+                  {/* Search Input */}
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder={language === 'en' ? '✨ Search anything... GST, SIP, EMI, Diwali, Marriage, Tax...' : '✨ कुछ भी खोजें... GST, SIP, EMI, दिवाली, शादी...'}
+                    className={`w-full pl-20 pr-16 py-7 text-xl rounded-3xl border-3 focus:ring-4 outline-none font-semibold shadow-2xl transition-all ${
                       theme === 'dark'
-                        ? 'bg-slate-800/90 border-white/20 focus:ring-blue-500/50 text-white placeholder-gray-400'
-                        : 'bg-white border-gray-300 focus:ring-blue-300 text-gray-900 placeholder-gray-500'
+                        ? 'bg-gradient-to-r from-gray-900/95 to-gray-800/95 border-purple-500/40 focus:border-purple-400 focus:ring-purple-500/30 text-white placeholder-gray-400'
+                        : 'bg-white border-purple-300 focus:border-purple-500 focus:ring-purple-300 text-gray-900 placeholder-gray-500'
                     }`}
                   />
+                  
+                  {/* Clear Button */}
                   {searchQuery && (
-                    <button
+                    <motion.button
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      exit={{ scale: 0 }}
                       onClick={() => { setSearchQuery(''); setShowSearchResults(false); }}
-                      className="absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-gray-200/30 active:scale-90 transition-all"
+                      className={`absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full transition-all hover:scale-110 active:scale-90 ${
+                        theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600 text-gray-300' : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+                      }`}
                     >
-                      <X className="w-6 h-6" />
-                      </button>
+                      <X className="w-5 h-5" />
+                    </motion.button>
                   )}
-                    </div>
+                </div>
 
                 {/* Popular Tags - Dynamic & Triggers Search */}
                 {!searchQuery && (
@@ -696,128 +790,199 @@ const HomeInvestopedia: React.FC = () => {
                     </AnimatePresence>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              {/* Beautiful CTAs */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex flex-col sm:flex-row gap-5 justify-center mb-16"
+              >
                 <Link
                   to="/tools"
-                  className="px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-2xl font-bold text-lg shadow-2xl hover:shadow-blue-500/50 active:scale-95 transition-all"
+                  className="group px-10 py-5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white rounded-2xl font-black text-lg shadow-2xl hover:shadow-cyan-500/50 hover:scale-105 active:scale-95 transition-all relative overflow-hidden"
                 >
-                  <Calculator className="w-6 h-6 inline mr-2" />
-                  {language === 'en' ? 'Explore Tools' : 'टूल्स देखें'}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative flex items-center justify-center gap-2">
+                    <Calculator className="w-6 h-6" />
+                    {language === 'en' ? 'Explore 500+ Tools' : '500+ टूल्स देखें'}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </Link>
                 <Link
                   to="/learn"
-                  className={`px-10 py-5 border-2 rounded-2xl font-bold text-lg shadow-2xl active:scale-95 transition-all ${
+                  className={`group px-10 py-5 border-3 rounded-2xl font-black text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all relative overflow-hidden ${
                     theme === 'dark'
-                      ? 'bg-slate-800/70 border-white/30 text-white'
-                      : 'bg-white border-gray-400 text-gray-900'
+                      ? 'bg-gradient-to-r from-purple-900/40 to-blue-900/40 border-purple-400/50 text-white hover:bg-purple-900/60'
+                      : 'bg-gradient-to-r from-purple-50 to-blue-50 border-purple-400 text-purple-700 hover:bg-purple-100'
                   }`}
                 >
-                  <Rocket className="w-6 h-6 inline mr-2" />
-                  {language === 'en' ? 'Start Learning' : 'सीखें'}
+                  <span className="relative flex items-center justify-center gap-2">
+                    <Rocket className="w-6 h-6" />
+                    {language === 'en' ? 'Start Learning Free' : 'मुफ्त सीखें'}
+                    <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  </span>
                 </Link>
-                            </div>
+              </motion.div>
 
-              {/* Complete Platform Stats Grid */}
-              <div className={`max-w-6xl mx-auto p-8 rounded-3xl border-2 mb-12 ${
-                theme === 'dark' ? 'bg-slate-800/40 border-white/10' : 'bg-white/90 border-gray-200 shadow-2xl'
-              }`}>
+              {/* Beautiful Platform Stats Grid */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className={`max-w-6xl mx-auto p-8 rounded-3xl border-2 mb-12 backdrop-blur-xl ${
+                  theme === 'dark' 
+                    ? 'bg-gradient-to-br from-gray-900/60 to-purple-900/40 border-purple-500/30 shadow-2xl shadow-purple-500/10' 
+                    : 'bg-gradient-to-br from-white/95 to-purple-50/80 border-purple-200 shadow-2xl shadow-purple-500/10'
+                }`}
+              >
                 <div className="text-center mb-8">
-                  <h3 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  <h3 className={`text-3xl md:text-4xl font-black mb-3 ${
+                    theme === 'dark' 
+                      ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400' 
+                      : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600'
+                  }`}>
                     📁 {language === 'en' ? 'Complete Platform' : 'संपूर्ण मंच'}
-                              </h3>
-                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
-                    <Sparkles className="w-4 h-4 inline mr-1 text-yellow-500 animate-pulse" />
-                    {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
-                              </p>
-                            </div>
+                  </h3>
+                  <div className="flex items-center justify-center gap-2">
+                    <Clock className={`w-5 h-5 animate-spin ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`} style={{ animationDuration: '10s' }} />
+                    <p className={`text-sm font-semibold ${theme === 'dark' ? 'text-purple-300' : 'text-purple-700'}`}>
+                      {language === 'en' ? 'Live Content • Refreshes Every 10s' : 'लाइव कंटेंट • हर 10 सेकंड'}
+                    </p>
+                    <Sparkles className="w-5 h-5 text-yellow-500 animate-pulse" />
+                  </div>
+                </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {dynamicPlatformCategories.map((item, idx) => (
-                    <Link
-                  key={idx}
-                      to={item.path}
-                      className={`p-4 rounded-xl text-center transition-all hover:scale-105 active:scale-95 ${
-                        theme === 'dark'
-                          ? 'bg-slate-800/60 border border-white/10 hover:border-blue-500/50'
-                          : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-lg'
-                      }`}
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: idx * 0.03 }}
                     >
-                      <div className="text-4xl mb-2">{item.emoji}</div>
-                      <div className={`text-xs font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.name}</div>
-                      <div className={`text-[10px] px-2 py-0.5 rounded-full inline-block font-semibold ${theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700'}`}>
-                        {item.count}
-                    </div>
-                  </Link>
-              ))}
-              </div>
+                      <Link
+                        to={item.path}
+                        className={`group block p-5 rounded-2xl text-center transition-all hover:scale-110 active:scale-95 relative overflow-hidden ${
+                          theme === 'dark'
+                            ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 border-2 border-purple-500/20 hover:border-cyan-400/60 shadow-lg hover:shadow-cyan-400/30'
+                            : 'bg-gradient-to-br from-white to-purple-50/50 border-2 border-purple-200 hover:border-blue-400 shadow-lg hover:shadow-blue-500/30'
+                        }`}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 transition-all duration-300" />
+                        <div className="relative">
+                          <div className="text-4xl mb-2 transform group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">{item.emoji}</div>
+                          <div className={`text-xs font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.name}</div>
+                          <div className="px-3 py-1 rounded-full inline-block font-bold text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg">
+                            {item.count}
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
 
-                {/* Festival Tool Categories */}
-                <div className={`mt-8 p-6 rounded-2xl ${
-                  theme === 'dark' ? 'bg-orange-900/20 border-2 border-orange-500/30' : 'bg-orange-50 border-2 border-orange-300'
-                }`}>
-                  <h4 className={`text-2xl font-black text-center mb-6 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-700'}`}>
-                    🎊 {language === 'en' ? 'Festival Tool Categories' : 'त्योहार श्रेणियां'}
+                {/* Enhanced Festival Tool Categories */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
+                  className={`mt-8 p-8 rounded-3xl backdrop-blur-sm ${
+                    theme === 'dark' 
+                      ? 'bg-gradient-to-br from-orange-900/30 to-red-900/30 border-2 border-orange-500/40 shadow-xl shadow-orange-500/20' 
+                      : 'bg-gradient-to-br from-orange-50 to-pink-50 border-2 border-orange-300 shadow-xl shadow-orange-500/20'
+                  }`}
+                >
+                  <h4 className={`text-2xl md:text-3xl font-black text-center mb-6 flex items-center justify-center gap-3 ${
+                    theme === 'dark' 
+                      ? 'text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-400' 
+                      : 'text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-600'
+                  }`}>
+                    <PartyPopper className={`w-8 h-8 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-600'}`} />
+                    {language === 'en' ? 'Festival Tool Categories' : 'त्योहार श्रेणियां'}
                   </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                     {dynamicFestivalCategories.map((cat, i) => (
-                <Link
+                      <Link
                         key={i}
                         to={cat.path}
-                        className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95 ${
-                          theme === 'dark' ? 'bg-slate-700/50 text-orange-300 hover:bg-slate-600/60' : 'bg-white text-orange-700 border-2 border-orange-200 hover:border-orange-400 shadow-md'
+                        className={`group flex items-center justify-center gap-2 px-4 py-4 rounded-xl text-sm font-bold transition-all hover:scale-110 active:scale-95 relative overflow-hidden ${
+                          theme === 'dark' 
+                            ? 'bg-gradient-to-br from-gray-800/70 to-gray-900/70 border-2 border-orange-500/30 hover:border-orange-400 text-orange-300 shadow-lg hover:shadow-orange-400/30' 
+                            : 'bg-gradient-to-br from-white to-orange-50 border-2 border-orange-200 hover:border-orange-400 text-orange-700 shadow-md hover:shadow-orange-400/40'
                         }`}
                       >
-                        <span className="text-2xl">{cat.emoji}</span>
-                        <span>{cat.name}</span>
-                </Link>
-              ))}
-              </div>
-          </div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-pink-500/0 to-red-500/0 group-hover:from-orange-500/20 group-hover:via-pink-500/20 group-hover:to-red-500/20 transition-all duration-300" />
+                        <span className="relative text-2xl transform group-hover:rotate-12 transition-transform">{cat.emoji}</span>
+                        <span className="relative">{cat.name}</span>
+                      </Link>
+                    ))}
                   </div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Categories Quick Links */}
-        <section className={`py-12 ${theme === 'dark' ? 'bg-slate-900/70' : 'bg-gray-50'}`}>
+        {/* Beautiful Categories Quick Links */}
+        <section className={`py-16 border-y ${
+          theme === 'dark' 
+            ? 'bg-gradient-to-br from-blue-950/50 to-purple-950/50 border-purple-500/20' 
+            : 'bg-gradient-to-br from-blue-50 to-purple-50 border-purple-200'
+        }`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-8">
-              <h2 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                📂 {language === 'en' ? 'Categories' : 'श्रेणियां'}
+            <div className="text-center mb-10">
+              <h2 className={`text-4xl md:text-5xl font-black mb-3 ${
+                theme === 'dark' 
+                  ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400' 
+                  : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-600'
+              }`}>
+                ⚡ {language === 'en' ? 'Quick Access' : 'त्वरित पहुंच'}
               </h2>
-              <p className={`text-sm ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
-                <Clock className="w-4 h-4 inline mr-1 text-blue-500 animate-spin" style={{ animationDuration: '10s' }} />
-                {language === 'en' ? 'Refreshes every 10 seconds • Random selection' : 'हर 10 सेकंड में बदलता है'}
+              <p className={`text-base font-semibold flex items-center justify-center gap-2 ${theme === 'dark' ? 'text-purple-300' : 'text-purple-700'}`}>
+                <Sparkles className="w-5 h-5 text-yellow-500 animate-pulse" />
+                {language === 'en' ? 'Fresh Content Every 10 Seconds' : 'हर 10 सेकंड में नया'}
+                <Clock className="w-5 h-5 animate-spin" style={{ animationDuration: '10s' }} />
               </p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4">
               {dynamicQuickCategories.map((cat, idx) => (
-                <Link
+                <motion.div
                   key={idx}
-                  to={cat.path}
-                  className={`relative p-4 rounded-xl text-center transition-all hover:scale-105 active:scale-95 ${
-                    theme === 'dark'
-                      ? 'bg-slate-800/60 border border-white/10 hover:border-blue-500/50'
-                      : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-md'
-                  }`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.05 }}
                 >
-                  {cat.tag && (
-                    <div className={`absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[10px] font-black ${
-                      cat.tag === 'Hot' ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
-                    }`}>
-                      {cat.tag}
+                  <Link
+                    to={cat.path}
+                    className={`group relative block p-5 rounded-2xl text-center transition-all hover:scale-110 active:scale-90 overflow-hidden ${
+                      theme === 'dark'
+                        ? 'bg-gradient-to-br from-gray-800/70 to-gray-900/70 border-2 border-purple-500/30 hover:border-cyan-400 shadow-lg hover:shadow-cyan-400/40'
+                        : 'bg-gradient-to-br from-white to-blue-50 border-2 border-blue-200 hover:border-purple-400 shadow-lg hover:shadow-purple-400/40'
+                    }`}
+                  >
+                    {/* Animated Background on Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/20 group-hover:via-purple-500/20 group-hover:to-pink-500/20 transition-all duration-500" />
+                    
+                    {/* Badge */}
+                    {cat.tag && (
+                      <div className={`absolute -top-2 -right-2 px-2 py-1 rounded-full text-[10px] font-black shadow-lg ${
+                        cat.tag === 'Hot' ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white animate-pulse' : 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+                      }`}>
+                        {cat.tag === 'Hot' ? '🔥 HOT' : '✨ NEW'}
+                      </div>
+                    )}
+                    
+                    {/* Content */}
+                    <div className="relative">
+                      <div className="text-4xl mb-3 transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{cat.emoji}</div>
+                      <div className={`text-xs font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                        {cat.name}
+                      </div>
+                      <div className="px-3 py-1 rounded-full inline-block font-bold text-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md">
+                        {cat.count}
+                      </div>
                     </div>
-                  )}
-                  <div className="text-3xl mb-2">{cat.emoji}</div>
-                  <div className={`text-xs font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                    {cat.name}
-                  </div>
-                  <div className={`text-[10px] px-2 py-0.5 rounded-full inline-block font-semibold ${
-                    theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-600'
-                  }`}>
-                    {cat.count}
-                  </div>
                   </Link>
+                </motion.div>
               ))}
             </div>
           </div>
