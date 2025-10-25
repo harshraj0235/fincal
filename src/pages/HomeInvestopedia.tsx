@@ -614,7 +614,7 @@ const HomeInvestopedia: React.FC = () => {
                   ) : (
                     <>पैसा आसान 💰</>
                   )}
-                </h1>
+              </h1>
 
                 <p className={`text-2xl md:text-3xl mb-6 font-bold ${
                   theme === 'dark' 
@@ -633,7 +633,7 @@ const HomeInvestopedia: React.FC = () => {
                   }`}>
                     <CheckCircle className="w-4 h-4" />
                     100% Free Forever
-                  </div>
+              </div>
                   <div className={`px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 ${
                     theme === 'dark'
                       ? 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-2 border-purple-500/30 text-purple-300'
@@ -669,10 +669,10 @@ const HomeInvestopedia: React.FC = () => {
                   </div>
                   
                   {/* Search Input */}
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                      <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={language === 'en' ? '✨ Search anything... GST, SIP, EMI, Diwali, Marriage, Tax...' : '✨ कुछ भी खोजें... GST, SIP, EMI, दिवाली, शादी...'}
                     className={`w-full pl-20 pr-16 py-7 text-xl rounded-3xl border-3 focus:ring-4 outline-none font-semibold shadow-2xl transition-all ${
                       theme === 'dark'
@@ -695,7 +695,7 @@ const HomeInvestopedia: React.FC = () => {
                       <X className="w-5 h-5" />
                     </motion.button>
                   )}
-                </div>
+                    </div>
 
                 {/* Popular Tags - Dynamic & Triggers Search */}
                 {!searchQuery && (
@@ -803,7 +803,7 @@ const HomeInvestopedia: React.FC = () => {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative flex items-center justify-center gap-2">
-                    <Calculator className="w-6 h-6" />
+                  <Calculator className="w-6 h-6" />
                     {language === 'en' ? 'Explore 500+ Tools' : '500+ टूल्स देखें'}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -817,7 +817,7 @@ const HomeInvestopedia: React.FC = () => {
                   }`}
                 >
                   <span className="relative flex items-center justify-center gap-2">
-                    <Rocket className="w-6 h-6" />
+                  <Rocket className="w-6 h-6" />
                     {language === 'en' ? 'Start Learning Free' : 'मुफ्त सीखें'}
                     <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   </span>
@@ -842,7 +842,7 @@ const HomeInvestopedia: React.FC = () => {
                       : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600'
                   }`}>
                     📁 {language === 'en' ? 'Complete Platform' : 'संपूर्ण मंच'}
-                  </h3>
+                              </h3>
                   <div className="flex items-center justify-center gap-2">
                     <Clock className={`w-5 h-5 animate-spin ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'}`} style={{ animationDuration: '10s' }} />
                     <p className={`text-sm font-semibold ${theme === 'dark' ? 'text-purple-300' : 'text-purple-700'}`}>
@@ -850,17 +850,17 @@ const HomeInvestopedia: React.FC = () => {
                     </p>
                     <Sparkles className="w-5 h-5 text-yellow-500 animate-pulse" />
                   </div>
-                </div>
+                            </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {dynamicPlatformCategories.map((item, idx) => (
                     <motion.div
-                      key={idx}
+                  key={idx}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.03 }}
                     >
                       <Link
-                        to={item.path}
+                      to={item.path}
                         className={`group block p-5 rounded-2xl text-center transition-all hover:scale-110 active:scale-95 relative overflow-hidden ${
                           theme === 'dark'
                             ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 border-2 border-purple-500/20 hover:border-cyan-400/60 shadow-lg hover:shadow-cyan-400/30'
@@ -872,13 +872,13 @@ const HomeInvestopedia: React.FC = () => {
                           <div className="text-4xl mb-2 transform group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300">{item.emoji}</div>
                           <div className={`text-xs font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.name}</div>
                           <div className="px-3 py-1 rounded-full inline-block font-bold text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg">
-                            {item.count}
+                        {item.count}
                           </div>
-                        </div>
-                      </Link>
+                    </div>
+                  </Link>
                     </motion.div>
-                  ))}
-                </div>
+              ))}
+              </div>
 
                 {/* Enhanced Festival Tool Categories */}
                 <motion.div 
@@ -901,7 +901,7 @@ const HomeInvestopedia: React.FC = () => {
                   </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                     {dynamicFestivalCategories.map((cat, i) => (
-                      <Link
+                <Link
                         key={i}
                         to={cat.path}
                         className={`group flex items-center justify-center gap-2 px-4 py-4 rounded-xl text-sm font-bold transition-all hover:scale-110 active:scale-95 relative overflow-hidden ${
@@ -913,9 +913,9 @@ const HomeInvestopedia: React.FC = () => {
                         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-pink-500/0 to-red-500/0 group-hover:from-orange-500/20 group-hover:via-pink-500/20 group-hover:to-red-500/20 transition-all duration-300" />
                         <span className="relative text-2xl transform group-hover:rotate-12 transition-transform">{cat.emoji}</span>
                         <span className="relative">{cat.name}</span>
-                      </Link>
-                    ))}
-                  </div>
+                </Link>
+              ))}
+              </div>
                 </motion.div>
               </motion.div>
             </div>
@@ -952,7 +952,7 @@ const HomeInvestopedia: React.FC = () => {
                   transition={{ delay: idx * 0.05 }}
                 >
                   <Link
-                    to={cat.path}
+                  to={cat.path}
                     className={`group relative block p-5 rounded-2xl text-center transition-all hover:scale-110 active:scale-90 overflow-hidden ${
                       theme === 'dark'
                         ? 'bg-gradient-to-br from-gray-800/70 to-gray-900/70 border-2 border-purple-500/30 hover:border-cyan-400 shadow-lg hover:shadow-cyan-400/40'
@@ -963,24 +963,24 @@ const HomeInvestopedia: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/20 group-hover:via-purple-500/20 group-hover:to-pink-500/20 transition-all duration-500" />
                     
                     {/* Badge */}
-                    {cat.tag && (
+                  {cat.tag && (
                       <div className={`absolute -top-2 -right-2 px-2 py-1 rounded-full text-[10px] font-black shadow-lg ${
                         cat.tag === 'Hot' ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white animate-pulse' : 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
-                      }`}>
+                    }`}>
                         {cat.tag === 'Hot' ? '🔥 HOT' : '✨ NEW'}
-                      </div>
-                    )}
+                    </div>
+                  )}
                     
                     {/* Content */}
                     <div className="relative">
                       <div className="text-4xl mb-3 transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{cat.emoji}</div>
                       <div className={`text-xs font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                        {cat.name}
-                      </div>
+                    {cat.name}
+                  </div>
                       <div className="px-3 py-1 rounded-full inline-block font-bold text-xs bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md">
-                        {cat.count}
+                    {cat.count}
                       </div>
-                    </div>
+                  </div>
                   </Link>
                 </motion.div>
               ))}
