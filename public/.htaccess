@@ -1,5 +1,18 @@
 # Performance optimizations
 
+# FIX: Set correct MIME types for JavaScript modules
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType application/javascript .mjs
+  AddType text/javascript .js
+  AddType text/javascript .mjs
+  AddType text/css .css
+  AddType application/json .json
+  AddType image/svg+xml .svg
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+</IfModule>
+
 # Enable compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml application/rss+xml application/atom+xml application/xhtml+xml image/svg+xml

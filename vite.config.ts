@@ -31,18 +31,18 @@ export default defineConfig({
     target: 'es2020',
     minify: 'terser',
     cssMinify: true,
+    modulePreload: {
+      polyfill: true,
+    },
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug'],
-        passes: 3,
-        unsafe_arrows: true,
-        unsafe_methods: true,
-        toplevel: true,
+        passes: 2,
       },
       mangle: {
-        toplevel: true,
+        safari10: true,
       },
       format: {
         comments: false,
@@ -51,51 +51,42 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // AGGRESSIVE CODE SPLITTING for <1 MB bundles
+          // FIX: More conservative code splitting to prevent module errors
           if (id.includes('node_modules')) {
-            // Core React
-            if (id.includes('react/') || id.includes('react-dom/')) {
-              return 'react-core';
+            // Keep React together to prevent context errors
+            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
+              return 'vendor-react';
             }
             // Router
             if (id.includes('react-router')) {
-              return 'router';
+              return 'vendor-router';
             }
-            // Icons - load on demand
-            if (id.includes('lucide-react')) {
-              return 'icons';
+            // Icons
+            if (id.includes('lucide-react') || id.includes('react-icons')) {
+              return 'vendor-icons';
             }
-            // Charts - separate and lazy
+            // Charts
             if (id.includes('recharts') || id.includes('d3') || id.includes('chart')) {
-              return 'charts';
+              return 'vendor-charts';
             }
-            // Helmet - separate
-            if (id.includes('helmet')) {
-              return 'helmet';
-            }
-            // All other vendors
-            return 'vendors';
+            // All other vendors together
+            return 'vendor-libs';
           }
           
-          // Lazy load ALL blog data
-          if (id.includes('blogData') || id.includes('allBlogData')) {
+          // Lazy load blog data
+          if (id.includes('blogData1')) {
+            return 'blog-data-1';
+          }
+          if (id.includes('blogData') && !id.includes('blogData1')) {
             return 'blog-data';
           }
+          if (id.includes('allBlogData')) {
+            return 'all-blog-data';
+          }
           
-          // Lazy load crypto data
+          // Lazy load crypto
           if (id.includes('crypto')) {
             return 'crypto-data';
-          }
-          
-          // Lazy load calculators
-          if (id.includes('/calculators/')) {
-            return 'calculators';
-          }
-          
-          // Lazy load pages
-          if (id.includes('/pages/')) {
-            const match = id.match(/pages\/([^\/]+)/);
-            if (match) return `page-${match[1]}`;
           }
         },
         chunkFileNames: 'assets/[name]-[hash].js',
