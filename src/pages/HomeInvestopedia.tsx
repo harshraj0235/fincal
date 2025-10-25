@@ -621,6 +621,22 @@ const HomeInvestopedia: React.FC = () => {
                   </div>
                 )}
 
+                {/* Money Learn Quick Access */}
+                <div className="mt-6 flex justify-center">
+                  <Link
+                    to="/learn"
+                    className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-sm shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all ${
+                      theme === 'dark'
+                        ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'
+                        : 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+                    }`}
+                  >
+                    <BookOpen className="w-5 h-5" />
+                    <span>{language === 'en' ? '🎓 Money Learn - Free Lessons' : '🎓 मनी लर्न - मुफ्त पाठ'}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+
                 {/* Search Results - Clear & Clickable */}
                     <AnimatePresence>
                   {showSearchResults && (
@@ -1160,14 +1176,6 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className={`py-6 border-t ${theme === 'dark' ? 'bg-slate-950 border-white/10' : 'bg-gray-100 border-gray-200'}`}>
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-              © {currentDate.year} MoneyCal India. Made with 💙 for India
-            </p>
-            </div>
-        </footer>
       </div>
     </>
   );
