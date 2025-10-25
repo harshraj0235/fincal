@@ -138,7 +138,7 @@ const HomeInvestopedia: React.FC = () => {
   const [language, setLanguage] = useState<'en' | 'hi'>('en');
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchResults, setShowSearchResults] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [rotationKey, setRotationKey] = useState(0);
   const [blogPostsData, setBlogPostsData] = useState<any[]>([]);
@@ -457,44 +457,40 @@ const HomeInvestopedia: React.FC = () => {
         canonicalUrl="https://moneycal.in"
       />
 
-      <div className={`min-h-screen transition-colors duration-500 ${
-        theme === 'dark' 
-          ? 'bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950' 
-          : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'
-      }`}>
-        {/* Background */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className={`absolute w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-400/20'}`} style={{ top: '10%', left: '10%' }}></div>
-          <div className={`absolute w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-purple-500/10' : 'bg-purple-400/20'}`} style={{ top: '50%', right: '10%' }}></div>
+      <div className="min-h-screen bg-white">
+        {/* Subtle Professional Background */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-30">
+          <div className="absolute w-96 h-96 rounded-full blur-3xl bg-blue-100" style={{ top: '5%', left: '5%' }}></div>
+          <div className="absolute w-96 h-96 rounded-full blur-3xl bg-purple-100" style={{ top: '40%', right: '5%' }}></div>
+          <div className="absolute w-96 h-96 rounded-full blur-3xl bg-pink-100" style={{ bottom: '10%', left: '50%' }}></div>
         </div>
 
-        {/* Top Navigation - Floating Style */}
-        <nav className={`relative z-40 ${
-          theme === 'dark' ? 'bg-slate-900/95' : 'bg-white/95'
-        } backdrop-blur-lg sticky top-0 shadow-lg border-b ${theme === 'dark' ? 'border-white/10' : 'border-gray-200'}`} style={{ minHeight: '64px' }}>
+        {/* Professional Clean Navigation */}
+        <nav className="relative z-40 bg-white/95 backdrop-blur-lg sticky top-0 shadow-md border-b border-gray-200" style={{ minHeight: '72px' }}>
           <div className="max-w-7xl mx-auto px-4 py-3">
             <div className="flex justify-between items-center">
-              {/* Logo */}
+              {/* Professional Logo */}
               <Link to="/" className="flex items-center gap-3 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all shadow-xl">
-                  <span className="text-white font-black text-2xl">💰</span>
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center group-hover:scale-105 transition-all shadow-lg">
+                  <span className="text-white font-black text-3xl">💰</span>
                 </div>
-                <span className="text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  MoneyCal.in
-                </span>
+                <div>
+                  <div className="text-2xl md:text-3xl font-black text-gray-900">
+                    MoneyCal<span className="text-blue-600">.in</span>
+                  </div>
+                  <div className="text-xs font-medium text-gray-600 -mt-1">
+                    Smart Financial Tools
+                  </div>
+                </div>
               </Link>
 
-              {/* Floating Nav Pills - Desktop */}
-              <div className="hidden lg:flex items-center gap-1.5 bg-gradient-to-r from-slate-800/50 to-slate-900/50 backdrop-blur-xl px-2 py-2 rounded-2xl border border-white/10 shadow-2xl">
-                {mainSections.map((item, idx) => (
+              {/* Clean Professional Nav Links - Desktop */}
+              <div className="hidden lg:flex items-center gap-1">
+                {mainSections.slice(0, 8).map((item, idx) => (
                   <Link
                     key={idx}
                     to={item.path}
-                    className={`flex items-center gap-1.5 px-3 py-2 rounded-xl font-semibold text-xs transition-all hover:scale-105 ${
-                      theme === 'dark'
-                        ? 'text-gray-300 hover:bg-slate-700/70'
-                        : 'text-gray-700 hover:bg-gray-100'
-                    }`}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg font-semibold text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all"
                   >
                     <span className="text-lg">{item.emoji}</span>
                     <span className="hidden xl:inline">{item.name}</span>
@@ -503,61 +499,46 @@ const HomeInvestopedia: React.FC = () => {
               </div>
 
               {/* Controls */}
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
+                {/* Language */}
+                <button
+                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                  className="px-4 py-2 rounded-lg text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-all flex items-center gap-1.5"
+                  aria-label="Toggle language"
+                >
+                  <Globe className="w-4 h-4" />
+                  {language === 'en' ? 'हिंदी' : 'EN'}
+                </button>
+
                 {/* Mobile Menu */}
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="lg:hidden p-3 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-xl transition-colors"
+                  className="lg:hidden p-2.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-900 transition-colors"
                   aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                   aria-expanded={mobileMenuOpen}
                   aria-controls="mobile-menu"
                 >
                   {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                 </button>
-
-                {/* Theme */}
-                <button
-                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                  className={`p-3 rounded-xl transition-all active:scale-90 shadow-xl ${
-                    theme === 'dark' 
-                      ? 'bg-gradient-to-br from-yellow-500 to-orange-500 text-white' 
-                      : 'bg-gradient-to-br from-slate-700 to-blue-900 text-white'
-                  }`}
-                >
-                  {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                </button>
-
-                {/* Language */}
-                <button
-                  onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
-                  className="px-4 py-3 rounded-xl text-sm font-bold active:scale-90 shadow-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white transition-all"
-                >
-                  <Globe className="w-4 h-4 inline mr-1" />
-                  {language === 'en' ? 'हिंदी' : 'EN'}
-                </button>
               </div>
             </div>
           </div>
 
-          {/* Mobile Menu Dropdown - No animations for better performance */}
+          {/* Clean Mobile Menu */}
           {mobileMenuOpen && (
             <div 
               id="mobile-menu"
-              className={`lg:hidden border-t ${theme === 'dark' ? 'border-white/10 bg-slate-800/95' : 'border-gray-200 bg-white/95'}`}
+              className="lg:hidden border-t border-gray-200 bg-white"
               role="navigation"
               aria-label="Mobile navigation"
             >
-              <div className="px-4 py-4 grid grid-cols-2 gap-2.5">
+              <div className="px-4 py-4 grid grid-cols-2 gap-2.5 max-h-[70vh] overflow-y-auto">
                 {mainSections.map((item, idx) => (
                   <Link
                     key={idx}
                     to={item.path}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center gap-2 px-4 py-3 rounded-xl font-bold text-sm transition-colors ${
-                      theme === 'dark'
-                        ? 'bg-slate-700/60 text-white hover:bg-slate-600/60'
-                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                    }`}
+                    className="flex items-center gap-2 px-4 py-3 rounded-lg font-semibold text-sm bg-gray-50 text-gray-900 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                     aria-label={`Navigate to ${item.name}`}
                   >
                     <span className="text-2xl" aria-hidden="true">{item.emoji}</span>
@@ -569,175 +550,171 @@ const HomeInvestopedia: React.FC = () => {
           )}
         </nav>
 
-        {/* Hero + Search */}
-        <section className="relative py-20 md:py-24 hero-section" style={{ minHeight: '600px', contain: 'layout style' }}>
+        {/* Professional Hero Section */}
+        <section className="relative py-20 md:py-28 hero-section bg-gradient-to-b from-white to-gray-50" style={{ minHeight: '650px' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center">
-              {/* Title */}
-              <h1 className="text-6xl sm:text-7xl md:text-8xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
-                {language === 'en' ? 'Know Your Money 💰' : 'पैसा आसान 💰'}
+              {/* Trust Badge */}
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-50 border border-green-200 text-green-700 rounded-full text-sm font-semibold mb-6 shadow-sm">
+                <CheckCircle className="w-4 h-4" />
+                {language === 'en' ? 'Trusted by 1,000,000+ Indians' : '10 लाख+ भारतीयों का विश्वास'}
+              </div>
+
+              {/* Professional Title */}
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-gray-900 leading-tight">
+                {language === 'en' ? "India's #1 Financial" : 'भारत का #1 वित्तीय'}<br />
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  {language === 'en' ? 'Calculator Platform' : 'कैलकुलेटर प्लेटफ़ॉर्म'}
+                </span>
               </h1>
 
-              <p className={`text-2xl md:text-3xl mb-12 font-bold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                {language === 'en' ? '🚀 100+ Tools • 40 Lessons • 11 Festival Tools' : '🚀 100+ टूल्स • 40 पाठ'}
+              {/* Inspiring Quote */}
+              <div className="max-w-3xl mx-auto mb-8">
+                <p className="text-xl md:text-2xl text-gray-700 font-medium mb-4">
+                  {language === 'en' 
+                    ? '"Financial freedom is available to those who learn about it and work for it"' 
+                    : '"वित्तीय स्वतंत्रता उन लोगों के लिए है जो इसे सीखते और काम करते हैं"'}
+                </p>
+                <p className="text-sm text-gray-500 italic">
+                  {language === 'en' ? '— Robert Kiyosaki' : '— रॉबर्ट कियोसाकी'}
+                </p>
+              </div>
+
+              <p className="text-lg md:text-xl mb-12 text-gray-600">
+                {language === 'en' ? '🎯 100+ Free Calculators • 📚 40 Expert Lessons • 🎉 11 Festival Tools' : '🎯 100+ मुफ्त कैलकुलेटर • 📚 40 पाठ • 🎉 11 उत्सव उपकरण'}
               </p>
 
-              {/* Global Search */}
-              <div className="max-w-4xl mx-auto mb-12 relative">
+              {/* Professional Search Bar */}
+              <div className="max-w-3xl mx-auto mb-12 relative">
                 <div className="relative">
-                  <Search className={`absolute left-6 top-1/2 -translate-y-1/2 w-7 h-7 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
-                      <input
-                        type="text"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder={language === 'en' ? '🔍 Search... GST, SIP, EMI, Eclipse, Marriage' : '🔍 खोजें...'}
-                    className={`w-full pl-16 pr-16 py-6 text-xl rounded-3xl border-2 focus:ring-4 outline-none font-semibold shadow-2xl transition-all ${
-                      theme === 'dark'
-                        ? 'bg-slate-800/90 border-white/20 focus:ring-blue-500/50 text-white placeholder-gray-400'
-                        : 'bg-white border-gray-300 focus:ring-blue-300 text-gray-900 placeholder-gray-500'
-                    }`}
+                  <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder={language === 'en' ? '🔍 Search calculators, tools, guides... Try: GST, SIP, EMI, Marriage' : '🔍 खोजें...'}
+                    className="w-full pl-14 pr-14 py-5 text-lg rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none font-medium shadow-lg bg-white text-gray-900 placeholder-gray-500 transition-all"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => { setSearchQuery(''); setShowSearchResults(false); }}
-                      className="absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-gray-200/30 active:scale-90 transition-all"
+                      className="absolute right-5 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-gray-100 active:scale-90 transition-all"
                     >
-                      <X className="w-6 h-6" />
-                      </button>
+                      <X className="w-5 h-5 text-gray-400" />
+                    </button>
                   )}
-                    </div>
+                </div>
 
-                {/* Popular Tags - Dynamic & Triggers Search */}
+                {/* Clean Popular Tags */}
                 {!searchQuery && (
-                  <div className="mt-6 flex flex-wrap justify-center gap-2.5">
-                    <span className={`text-sm font-bold ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                      <Flame className="w-5 h-5 inline mr-1 text-orange-500 animate-pulse" /> Popular:
+                  <div className="mt-5 flex flex-wrap justify-center gap-2">
+                    <span className="text-sm font-semibold text-gray-600">
+                      <Flame className="w-4 h-4 inline mr-1 text-orange-500" /> Popular:
                     </span>
                     {dynamicPopularTags.map((tag, i) => (
                       <button
                         key={i}
                         onClick={() => setSearchQuery(tag.searchTerm)}
-                        className="px-5 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-bold shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5"
+                        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-sm hover:shadow-md transition-all flex items-center gap-1.5"
                       >
-                        <span className="text-lg">{tag.emoji}</span>
+                        <span>{tag.emoji}</span>
                         <span>{tag.label}</span>
                       </button>
                     ))}
-                    <span className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'} italic`}>
-                      • Click to search • Refresh for new suggestions
-                    </span>
                   </div>
                 )}
 
-                {/* Search Results - Clear & Clickable */}
-                    <AnimatePresence>
+                {/* Professional Search Results */}
+                <AnimatePresence>
                   {showSearchResults && (
-                        <motion.div
+                    <motion.div
                       initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
+                      animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className={`absolute top-full left-0 right-0 mt-4 rounded-3xl shadow-2xl border-2 max-h-[70vh] overflow-y-auto z-50 ${
-                        theme === 'dark'
-                          ? 'bg-slate-900/98 border-white/20 backdrop-blur-2xl'
-                          : 'bg-white/98 border-gray-300 backdrop-blur-2xl'
-                      }`}
+                      className="absolute top-full left-0 right-0 mt-4 rounded-2xl shadow-2xl border border-gray-200 max-h-[70vh] overflow-y-auto z-50 bg-white"
                     >
-                      <div className="p-5">
-                        <div className={`px-4 py-3 font-bold mb-3 text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                          ✨ {searchResults.length} {language === 'en' ? 'Results - Click to open' : 'परिणाम - क्लिक करें'}
+                      <div className="p-4">
+                        <div className="px-4 py-3 font-bold mb-3 text-sm text-gray-600 border-b border-gray-100">
+                          ✨ {searchResults.length} {language === 'en' ? 'Results Found' : 'परिणाम'}
                         </div>
-                                <div className="space-y-2">
+                        <div className="space-y-1.5">
                           {searchResults.map((result, idx) => (
                             <motion.button
-                                      key={idx}
+                              key={idx}
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: idx * 0.03 }}
+                              transition={{ delay: idx * 0.02 }}
                               onClick={() => handleSearchItemClick(result.path)}
-                              className={`w-full flex items-center gap-4 px-5 py-5 text-left rounded-2xl border-2 transition-all active:scale-[0.98] ${
-                                theme === 'dark'
-                                  ? 'bg-slate-800/80 border-white/10 hover:border-blue-500/70 hover:bg-slate-700/80'
-                                  : 'bg-white border-gray-200 hover:border-blue-500 hover:shadow-lg'
-                              }`}
+                              className="w-full flex items-center gap-4 px-4 py-4 text-left rounded-xl border border-transparent hover:border-blue-200 hover:bg-blue-50 transition-all group"
                             >
-                              <div className="text-4xl flex-shrink-0">{result.emoji}</div>
+                              <div className="text-3xl flex-shrink-0">{result.emoji}</div>
                               <div className="flex-1 min-w-0">
-                                <div className={`font-bold text-lg mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                                <div className="font-bold text-base mb-1 text-gray-900 group-hover:text-blue-600">
                                   {result.name}
-                                      </div>
-                                <div className="flex items-center gap-2.5">
-                                  <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-xs font-bold">
+                                </div>
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <span className="px-2.5 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
                                     {result.category}
                                   </span>
-                                  <span className={`text-xs ${theme === 'dark' ? 'text-gray-500' : 'text-gray-600'}`}>
+                                  <span className="text-xs text-gray-500">
                                     {result.path}
                                   </span>
                                 </div>
-                            </div>
-                              <ChevronRight className={`w-7 h-7 flex-shrink-0 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
-                            </motion.button>
-                                ))}
                               </div>
-                            </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                              <ChevronRight className="w-5 h-5 flex-shrink-0 text-gray-400 group-hover:text-blue-600" />
+                            </motion.button>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
-              {/* CTAs */}
+              {/* Professional CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Link
-                  to="/tools"
-                  className="px-10 py-5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-2xl font-bold text-lg shadow-2xl hover:shadow-blue-500/50 active:scale-95 transition-all"
+                  to="/calculators"
+                  className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
                 >
-                  <Calculator className="w-6 h-6 inline mr-2" />
-                  {language === 'en' ? 'Explore Tools' : 'टूल्स देखें'}
+                  <Calculator className="w-6 h-6" />
+                  {language === 'en' ? 'Start Calculating Free' : 'गणना शुरू करें'}
                 </Link>
                 <Link
                   to="/learn"
-                  className={`px-10 py-5 border-2 rounded-2xl font-bold text-lg shadow-2xl active:scale-95 transition-all ${
-                    theme === 'dark'
-                      ? 'bg-slate-800/70 border-white/30 text-white'
-                      : 'bg-white border-gray-400 text-gray-900'
-                  }`}
+                  className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white border-2 border-gray-300 hover:border-blue-500 text-gray-900 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
                 >
-                  <Rocket className="w-6 h-6 inline mr-2" />
-                  {language === 'en' ? 'Start Learning' : 'सीखें'}
+                  <Rocket className="w-6 h-6" />
+                  {language === 'en' ? 'Start Learning (40 Lessons)' : 'सीखें (40 पाठ)'}
                 </Link>
-                            </div>
+              </div>
 
-              {/* Complete Platform Stats Grid */}
-              <div className={`max-w-6xl mx-auto p-8 rounded-3xl border-2 mb-12 ${
-                theme === 'dark' ? 'bg-slate-800/40 border-white/10' : 'bg-white/90 border-gray-200 shadow-2xl'
-              }`}>
+              {/* Professional Stats Grid */}
+              <div className="max-w-6xl mx-auto p-8 rounded-2xl border border-gray-200 mb-12 bg-white shadow-lg">
                 <div className="text-center mb-8">
-                  <h3 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                    📁 {language === 'en' ? 'Complete Platform' : 'संपूर्ण मंच'}
-                              </h3>
-                  <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    <Sparkles className="w-4 h-4 inline mr-1 text-yellow-500 animate-pulse" />
-                    {language === 'en' ? 'Content refreshes every 10 seconds' : 'हर 10 सेकंड में नया कंटेंट'}
-                              </p>
-                            </div>
+                  <h3 className="text-3xl font-bold mb-2 text-gray-900">
+                    📊 {language === 'en' ? 'Complete Financial Platform' : 'संपूर्ण वित्तीय मंच'}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    <Sparkles className="w-4 h-4 inline mr-1 text-blue-500" />
+                    {language === 'en' ? 'Comprehensive tools for every financial need' : 'हर वित्तीय आवश्यकता के लिए'}
+                  </p>
+                </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {dynamicPlatformCategories.map((item, idx) => (
                     <Link
-                  key={idx}
+                      key={idx}
                       to={item.path}
-                      className={`p-4 rounded-xl text-center transition-all hover:scale-105 active:scale-95 ${
-                        theme === 'dark'
-                          ? 'bg-slate-800/60 border border-white/10 hover:border-blue-500/50'
-                          : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-lg'
-                      }`}
+                      className="p-5 rounded-xl text-center transition-all hover:scale-105 bg-white border border-gray-200 hover:border-blue-500 hover:shadow-md"
                     >
-                      <div className="text-4xl mb-2">{item.emoji}</div>
-                      <div className={`text-xs font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.name}</div>
-                      <div className={`text-[10px] px-2 py-0.5 rounded-full inline-block font-semibold ${theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700'}`}>
+                      <div className="text-4xl mb-3">{item.emoji}</div>
+                      <div className="text-sm font-bold mb-1 text-gray-900">{item.name}</div>
+                      <div className="text-xs px-2 py-1 rounded-full inline-block font-semibold bg-blue-100 text-blue-700">
                         {item.count}
-                    </div>
-                  </Link>
-              ))}
-              </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
 
                 {/* Festival Tool Categories */}
                 <div className={`mt-8 p-6 rounded-2xl ${
