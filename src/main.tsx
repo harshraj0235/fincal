@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
+import './utils/preloadCritical';
 
 // Performance monitoring
 const reportWebVitals = (onPerfEntry: any) => {

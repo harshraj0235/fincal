@@ -28,7 +28,7 @@ export default defineConfig({
     },
   },
   build: {
-    target: 'es2015',
+    target: 'es2020',
     minify: 'terser',
     cssMinify: true,
     terserOptions: {
@@ -36,10 +36,16 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug'],
-        passes: 2,
+        passes: 3,
+        unsafe_arrows: true,
+        unsafe_methods: true,
+        toplevel: true,
       },
       mangle: {
-        safari10: true,
+        toplevel: true,
+      },
+      format: {
+        comments: false,
       },
     },
     rollupOptions: {

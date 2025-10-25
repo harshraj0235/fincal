@@ -14,8 +14,8 @@ import {
   List,
   Flame
 } from 'lucide-react';
-import { allBlogPosts } from '../data/allBlogData';
 import SEOHelmet from '../components/SEOHelmet';
+import { loadAllBlogData } from '../data/lazyBlogData';
 
 
 export const Blog: React.FC = () => {
@@ -25,7 +25,18 @@ export const Blog: React.FC = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [allBlogPosts, setAllBlogPosts] = useState<any[]>([]);
   const postsPerPage = 12;
+  
+  // Lazy load blog data
+  useEffect(() => {
+    loadAllBlogData().then(posts => {
+      setAllBlogPosts(posts);
+      setIsLoading(false);
+    }).catch(() => {
+      setIsLoading(false);
+    });
+  }, []);
 
   // Get unique categories
   const categories = ['all', ...Array.from(new Set(allBlogPosts.flatMap(post => post.categories || [])))];

@@ -25,6 +25,9 @@ export const Footer: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Reserve space for footer to prevent layout shift
+  const footerMinHeight = '600px';
+
   const footerSections = [
     {
       title: 'Popular Calculators',
@@ -75,7 +78,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden" style={{ minHeight: footerMinHeight }}>
       {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent"></div>

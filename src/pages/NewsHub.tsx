@@ -1,7 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import NewsList, { NewsItem } from "../components/NewsList";
-import { blogPosts as blogPosts0 } from "../data/blogData";
-import { blogPosts as blogPosts1 } from "../data/blogData1";
+import { loadBlogData } from "../data/lazyBlogData";
 import { governmentSchemes } from "../data/governmentSchemesData";
 import { calculatorCategories } from "../data/calculatorData";
 import WhatsAppBanner from "../components/WhatsAppBanner";
@@ -14,52 +13,74 @@ function getRandomElements<T>(arr: T[], n: number): T[] {
 }
 
 const NewsHub: React.FC = () => {
-  // Flatten calculators
-  const calculators: NewsItem[] = calculatorCategories.flatMap(cat => cat.calculators.map(calc => ({
-    id: String(calc.id),
-    title: calc.name,
-    summary: calc.description,
-    category: cat.name,
-    date: "",
-    slug: `/calculators/${calc.id}`
-  })));
-
-  // Map blog posts
-  const allBlogs: NewsItem[] = [
-    ...blogPosts0.map(post => ({
-      id: String(post.id),
-      title: post.title,
-      summary: post.excerpt || "",
-      category: post.categories?.[0] || "अन्य",
-      date: post.date || "",
-      slug: `/blog/${post.slug}`
-    })),
-    ...blogPosts1.map(post => ({
-      id: String(post.id),
-      title: post.title,
-      summary: post.excerpt || "",
-      category: post.categories?.[0] || "अन्य",
-      date: post.date || "",
-      slug: `/blog/${post.slug}`
-    })),
-    ...governmentSchemes.map(scheme => ({
-      id: String(scheme.id),
-      title: scheme.title,
-      summary: scheme.seoDescription || "",
-      category: scheme.category || "सरकारी योजना",
-      date: "",
-      slug: `/government-schemes/${scheme.slug}`
-    })),
-    ...calculators
-  ];
-
+  const [allBlogs, setAllBlogs] = useState<NewsItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  
   // State for search and pagination
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
+  
+  // Lazy load blog data
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        // Flatten calculators
+        const calculators: NewsItem[] = calculatorCategories.flatMap(cat => cat.calculators.map(calc => ({
+          id: String(calc.id),
+          title: calc.name,
+          summary: calc.description,
+          category: cat.name,
+          date: "",
+          slug: `/calculators/${calc.id}`
+        })));
+
+        // Load blog posts lazily
+        const { blogPosts0, blogPosts1 } = await loadBlogData();
+
+        // Map blog posts
+        const blogs: NewsItem[] = [
+          ...(blogPosts0 || []).map((post: any) => ({
+            id: String(post.id),
+            title: post.title,
+            summary: post.excerpt || "",
+            category: post.categories?.[0] || "अन्य",
+            date: post.date || "",
+            slug: `/blog/${post.slug}`
+          })),
+          ...(blogPosts1 || []).map((post: any) => ({
+            id: String(post.id),
+            title: post.title,
+            summary: post.excerpt || "",
+            category: post.categories?.[0] || "अन्य",
+            date: post.date || "",
+            slug: `/blog/${post.slug}`
+          })),
+          ...governmentSchemes.map(scheme => ({
+            id: String(scheme.id),
+            title: scheme.title,
+            summary: scheme.seoDescription || "",
+            category: scheme.category || "सरकारी योजना",
+            date: "",
+            slug: `/government-schemes/${scheme.slug}`
+          })),
+          ...calculators
+        ];
+
+        setAllBlogs(blogs);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error loading data:', error);
+        setIsLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
 
   // Filter blogs by search
   const filteredBlogs = useMemo(() => {
+    if (!allBlogs.length) return [];
     if (!search.trim()) return allBlogs;
     const s = search.trim().toLowerCase();
     return allBlogs.filter(item =>
@@ -106,7 +127,15 @@ const NewsHub: React.FC = () => {
               setCurrentPage(1); // Reset to first page on search
             }}
           />
-          <NewsList news={currentItems} onNewsClick={handleNewsClick} />
+          {isLoading ? (
+            <div className="text-center py-8">
+              <div className="skeleton w-full h-40 rounded-lg mb-4"></div>
+              <div className="skeleton w-full h-40 rounded-lg mb-4"></div>
+              <div className="skeleton w-full h-40 rounded-lg"></div>
+            </div>
+          ) : (
+            <NewsList news={currentItems} onNewsClick={handleNewsClick} />
+          )}
           
           {/* Pagination */}
           {totalPages > 1 && (
