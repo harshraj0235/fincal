@@ -25,7 +25,7 @@ export const Sidebar: React.FC = () => {
 
   const quickActions = [
     { name: 'EMI Calculator', href: '/calculators/emi-calculator', icon: Calculator, color: 'from-blue-500 to-blue-600' },
-    { name: 'Income Tax', href: '/calculators/income-tax-calculator', icon: DollarSign, color: 'from-green-500 to-green-600' },
+    { name: 'Income Tax', href: '/tools/income-tax-calculator', icon: DollarSign, color: 'from-green-500 to-green-600' },
     { name: 'SIP Calculator', href: '/calculators/sip-calculator', icon: TrendingUp, color: 'from-purple-500 to-purple-600' },
     { name: 'Mutual Fund', href: '/calculators/mutual-fund-returns-calculator', icon: Building, color: 'from-orange-500 to-orange-600' },
   ];
@@ -36,84 +36,96 @@ export const Sidebar: React.FC = () => {
       name: 'Loan Calculators',
       icon: <Building className="w-5 h-5" />,
       color: 'from-blue-500 to-blue-600',
-      route: '/calculators/loan'
+      route: '/calculators',
+      count: 15
     },
     {
       id: 'investment-calculators',
       name: 'Investment Calculators',
       icon: <TrendingUp className="w-5 h-5" />,
       color: 'from-green-500 to-green-600',
-      route: '/calculators/investment'
+      route: '/calculators',
+      count: 20
     },
     {
       id: 'tax-calculators',
       name: 'Tax Calculators',
       icon: <DollarSign className="w-5 h-5" />,
       color: 'from-purple-500 to-purple-600',
-      route: '/tax-tools'
+      route: '/tax-tools',
+      count: 12
     },
     {
       id: 'retirement-calculators',
       name: 'Retirement Calculators',
       icon: <Shield className="w-5 h-5" />,
       color: 'from-orange-500 to-orange-600',
-      route: '/calculators/retirement'
+      route: '/calculators',
+      count: 8
     },
     {
       id: 'business-calculators',
       name: 'Business Calculators',
       icon: <Building className="w-5 h-5" />,
       color: 'from-indigo-500 to-indigo-600',
-      route: '/calculators/business'
+      route: '/calculators',
+      count: 12
     },
     {
       id: 'property-calculators',
       name: 'Property Calculators',
       icon: <Building className="w-5 h-5" />,
       color: 'from-red-500 to-red-600',
-      route: '/calculators/property'
+      route: '/calculators',
+      count: 10
     },
     {
       id: 'insurance-calculators',
       name: 'Insurance Calculators',
       icon: <Shield className="w-5 h-5" />,
       color: 'from-pink-500 to-pink-600',
-      route: '/calculators/insurance'
+      route: '/calculators',
+      count: 10
     },
     {
       id: 'banking-finance-tools',
       name: 'Banking & Finance Tools',
       icon: <Building className="w-5 h-5" />,
       color: 'from-cyan-500 to-cyan-600',
-      route: '/bank-tools'
+      route: '/bank-tools',
+      count: 10
     },
     {
       id: 'fintech-payments',
       name: 'FinTech & Payments',
       icon: <Zap className="w-5 h-5" />,
       color: 'from-violet-500 to-violet-600',
-      route: '/fintech-tools'
+      route: '/fintech-tools',
+      count: 10
     },
     {
       id: 'investments-wealth',
       name: 'Investments & Wealth Management',
       icon: <Star className="w-5 h-5" />,
       color: 'from-amber-500 to-amber-600',
-      route: '/investing-tools'
+      route: '/investing-tools',
+      count: 15
     },
     {
       id: 'personal-finance',
       name: 'Personal Finance',
       icon: <Users className="w-5 h-5" />,
       color: 'from-teal-500 to-teal-600',
-      route: '/finance-tools'
+      route: '/finance-tools',
+      count: 18
     },
     {
       id: 'math-education',
       name: 'Math & Education Calculators',
       icon: <Calculator className="w-5 h-5" />,
       color: 'from-rose-500 to-rose-600',
-      route: '/calculators/education'
+      route: '/calculators',
+      count: 25
     }
   ];
 
@@ -187,6 +199,7 @@ export const Sidebar: React.FC = () => {
               { name: 'Government Schemes', href: '/government-schemes', icon: Shield },
               { name: 'Excel Tools', href: '/exceltool', icon: BookOpen },
               { name: 'Crypto', href: '/crypto', icon: TrendingUp },
+              { name: 'Learn', href: '/learn', icon: BookOpen },
             ].map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.href;
@@ -298,8 +311,8 @@ export const Sidebar: React.FC = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-4 mb-3">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">50+</div>
-                <div className="text-xs text-gray-600">Calculators</div>
+                <div className="text-2xl font-bold text-blue-600">500+</div>
+                <div className="text-xs text-gray-600">Tools</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-600">1M+</div>
