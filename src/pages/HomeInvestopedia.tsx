@@ -285,16 +285,6 @@ const HomeInvestopedia: React.FC = () => {
     setShowSearchResults(false);
   };
 
-  // ═══ CATEGORIES ═══
-  const categories = useMemo(() => {
-    const catSet = new Set(searchDatabase.map(item => item.category));
-    return ['All', ...Array.from(catSet).sort()];
-  }, [searchDatabase]);
-
-  const filteredByCategory = useMemo(() => {
-    if (selectedCategory === 'All') return searchDatabase;
-    return searchDatabase.filter(item => item.category === selectedCategory);
-  }, [selectedCategory, searchDatabase]);
 
   // ═══ POPULAR & TRENDING ═══
   const popularItems = useMemo(() => 

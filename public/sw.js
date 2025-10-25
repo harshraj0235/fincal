@@ -7,7 +7,11 @@ const DYNAMIC_CACHE = 'moneycal-dynamic-v1.0.1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/favicon.ico'
+  '/favicon.ico',
+  '/android-chrome-192x192.png',
+  '/android-chrome-512x512.png',
+  '/apple-touch-icon.png',
+  '/favicon.svg'
 ];
 
 // API endpoints to cache
