@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import SimpleFooter from '../components/SimpleFooter';
+import LightweightTrustBadges from '../components/LightweightTrustBadges';
 import { loadBlogData } from '../data/lazyBlogData';
 import { calculatorCategories } from '../data/calculatorData';
 
