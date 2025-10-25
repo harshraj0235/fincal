@@ -69,8 +69,109 @@ const IndianSeasonCalendar: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [locationLoading, setLocationLoading] = useState(false);
+  const [locationError, setLocationError] = useState<string>('');
 
   const allCities = useMemo(() => getAllCities(), []);
+
+  // City-to-coordinates mapping (major Indian cities)
+  const CITY_COORDINATES: Record<string, { lat: number; lon: number }> = {
+    'Mumbai': { lat: 19.0760, lon: 72.8777 },
+    'Delhi': { lat: 28.7041, lon: 77.1025 },
+    'Bangalore': { lat: 12.9716, lon: 77.5946 },
+    'Hyderabad': { lat: 17.3850, lon: 78.4867 },
+    'Ahmedabad': { lat: 23.0225, lon: 72.5714 },
+    'Chennai': { lat: 13.0827, lon: 80.2707 },
+    'Kolkata': { lat: 22.5726, lon: 88.3639 },
+    'Pune': { lat: 18.5204, lon: 73.8567 },
+    'Jaipur': { lat: 26.9124, lon: 75.7873 },
+    'Surat': { lat: 21.1702, lon: 72.8311 },
+    'Lucknow': { lat: 26.8467, lon: 80.9462 },
+    'Kanpur': { lat: 26.4499, lon: 80.3319 },
+    'Nagpur': { lat: 21.1458, lon: 79.0882 },
+    'Indore': { lat: 22.7196, lon: 75.8577 },
+    'Thane': { lat: 19.2183, lon: 72.9781 },
+    'Bhopal': { lat: 23.2599, lon: 77.4126 },
+    'Visakhapatnam': { lat: 17.6868, lon: 83.2185 },
+    'Patna': { lat: 25.5941, lon: 85.1376 },
+    'Vadodara': { lat: 22.3072, lon: 73.1812 },
+    'Ghaziabad': { lat: 28.6692, lon: 77.4538 },
+    'Ludhiana': { lat: 30.9010, lon: 75.8573 },
+    'Agra': { lat: 27.1767, lon: 78.0081 },
+    'Nashik': { lat: 19.9975, lon: 73.7898 },
+    'Faridabad': { lat: 28.4089, lon: 77.3178 },
+    'Meerut': { lat: 28.9845, lon: 77.7064 },
+    'Rajkot': { lat: 22.3039, lon: 70.8022 },
+    'Varanasi': { lat: 25.3176, lon: 82.9739 },
+    'Srinagar': { lat: 34.0837, lon: 74.7973 },
+    'Amritsar': { lat: 31.6340, lon: 74.8723 },
+    'Chandigarh': { lat: 30.7333, lon: 76.7794 },
+    'Guwahati': { lat: 26.1445, lon: 91.7362 },
+    'Coimbatore': { lat: 11.0168, lon: 76.9558 },
+    'Kochi': { lat: 9.9312, lon: 76.2673 },
+    'Thiruvananthapuram': { lat: 8.5241, lon: 76.9366 },
+    'Mysore': { lat: 12.2958, lon: 76.6394 },
+    'Bhubaneswar': { lat: 20.2961, lon: 85.8245 },
+    'Dehradun': { lat: 30.3165, lon: 78.0322 },
+    'Ranchi': { lat: 23.3441, lon: 85.3096 },
+    'Raipur': { lat: 21.2514, lon: 81.6296 },
+    'Shimla': { lat: 31.1048, lon: 77.1734 },
+    'Jammu': { lat: 32.7266, lon: 74.8570 }
+  };
+
+  // Auto-detect location on mount
+  useEffect(() => {
+    const detectLocation = async () => {
+      if (!navigator.geolocation) {
+        console.log('Geolocation not supported');
+        return;
+      }
+
+      setLocationLoading(true);
+      
+      try {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const { latitude, longitude } = position.coords;
+            
+            // Find nearest city
+            let nearestCity = 'Delhi';
+            let minDistance = Infinity;
+
+            Object.entries(CITY_COORDINATES).forEach(([city, coords]) => {
+              const distance = Math.sqrt(
+                Math.pow(coords.lat - latitude, 2) + 
+                Math.pow(coords.lon - longitude, 2)
+              );
+              if (distance < minDistance) {
+                minDistance = distance;
+                nearestCity = city;
+              }
+            });
+
+            setSelectedCity(nearestCity);
+            setLocationLoading(false);
+            console.log(`Auto-detected location: ${nearestCity}`);
+          },
+          (error) => {
+            console.error('Geolocation error:', error);
+            setLocationError('Unable to detect location');
+            setLocationLoading(false);
+          },
+          {
+            enableHighAccuracy: false,
+            timeout: 5000,
+            maximumAge: 0
+          }
+        );
+      } catch (error) {
+        console.error('Location detection failed:', error);
+        setLocationLoading(false);
+      }
+    };
+
+    detectLocation();
+  }, []);
 
   // 6 Vedic Seasons (Ritu Chakra)
   const RITU_DATA: Record<string, Ritu> = {
@@ -540,14 +641,30 @@ const IndianSeasonCalendar: React.FC = () => {
                 <label className="block text-sm font-bold text-gray-700 mb-3 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-green-600" />
                   Select Your City
+                  {locationLoading && (
+                    <span className="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full flex items-center gap-1">
+                      <RefreshCw className="w-3 h-3 animate-spin" />
+                      Auto-detecting...
+                    </span>
+                  )}
                 </label>
-                <input
-                  type="text"
-                  placeholder="Search 600+ Indian cities..."
-                  value={searchCity || selectedCity}
-                  onChange={(e) => setSearchCity(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-green-300 rounded-xl focus:ring-4 focus:ring-green-200 outline-none text-lg bg-green-50"
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder={locationLoading ? "Detecting your location..." : "Search 600+ Indian cities..."}
+                    value={searchCity || selectedCity}
+                    onChange={(e) => setSearchCity(e.target.value)}
+                    disabled={locationLoading}
+                    className="w-full px-4 py-3 border-2 border-green-300 rounded-xl focus:ring-4 focus:ring-green-200 outline-none text-lg bg-green-50 disabled:opacity-60 disabled:cursor-not-allowed"
+                  />
+                  {!locationLoading && !searchCity && (
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                      <span className="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">
+                        📍 Auto-detected
+                      </span>
+                    </div>
+                  )}
+                </div>
                 {searchCity && filteredCities.length > 0 && (
                   <div className="mt-2 max-h-48 overflow-y-auto border-2 border-green-200 rounded-xl bg-white shadow-lg">
                     {filteredCities.map(city => (
