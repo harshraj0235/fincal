@@ -51,42 +51,51 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Core dependencies
+          // AGGRESSIVE CODE SPLITTING for <1 MB bundles
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'vendor-react';
+            // Core React
+            if (id.includes('react/') || id.includes('react-dom/')) {
+              return 'react-core';
             }
-            if (id.includes('react-router-dom')) {
-              return 'vendor-router';
+            // Router
+            if (id.includes('react-router')) {
+              return 'router';
             }
-            if (id.includes('lucide-react') || id.includes('react-icons')) {
-              return 'vendor-icons';
+            // Icons - load on demand
+            if (id.includes('lucide-react')) {
+              return 'icons';
             }
-            if (id.includes('recharts') || id.includes('d3') || id.includes('chart.js')) {
-              return 'vendor-charts';
+            // Charts - separate and lazy
+            if (id.includes('recharts') || id.includes('d3') || id.includes('chart')) {
+              return 'charts';
             }
-            if (id.includes('framer-motion')) {
-              return 'vendor-animation';
+            // Helmet - separate
+            if (id.includes('helmet')) {
+              return 'helmet';
             }
-            // All other node_modules
-            return 'vendor-misc';
+            // All other vendors
+            return 'vendors';
           }
           
-          // Split large blog data files
-          if (id.includes('blogData1')) {
-            return 'blog-data-1';
-          }
-          if (id.includes('blogData2')) {
-            return 'blog-data-2';
-          }
-          if (id.includes('blogData') && !id.includes('blogData1') && !id.includes('blogData2')) {
+          // Lazy load ALL blog data
+          if (id.includes('blogData') || id.includes('allBlogData')) {
             return 'blog-data';
           }
-          if (id.includes('cryptoData') || id.includes('/crypto/')) {
+          
+          // Lazy load crypto data
+          if (id.includes('crypto')) {
             return 'crypto-data';
           }
-          if (id.includes('allBlogData')) {
-            return 'all-blog-data';
+          
+          // Lazy load calculators
+          if (id.includes('/calculators/')) {
+            return 'calculators';
+          }
+          
+          // Lazy load pages
+          if (id.includes('/pages/')) {
+            const match = id.match(/pages\/([^\/]+)/);
+            if (match) return `page-${match[1]}`;
           }
         },
         chunkFileNames: 'assets/[name]-[hash].js',
