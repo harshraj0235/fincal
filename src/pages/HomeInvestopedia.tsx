@@ -788,7 +788,7 @@ const HomeInvestopedia: React.FC = () => {
                         </motion.div>
                       )}
                     </AnimatePresence>
-              </div>
+              </motion.div>
 
               {/* Beautiful CTAs */}
               <motion.div 
