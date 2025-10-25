@@ -1,13 +1,16 @@
 [[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
-  status = 200
-  force = false
-
-[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
+  conditions = {Role = ["visitor"]}
+  
+  # Don't redirect assets
+  [[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = true
 
 # FIX: Correct MIME types for JavaScript modules
 [[headers]]
