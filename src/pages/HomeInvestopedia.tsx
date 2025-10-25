@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -10,11 +10,10 @@ import {
   CreditCard, Landmark, Wallet, Receipt,
   LineChart, BarChart, Activity,
   Users, UserCheck, Building2, Car, Palmtree,
-  GraduationCap, Trophy, Gem, RefreshCw
+  GraduationCap, Trophy, Gem, RefreshCw, Grid
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { blogPosts as blogPosts0 } from '../data/blogData';
-import { blogPosts as blogPosts1 } from '../data/blogData1';
 
 /**
  * ╔═══════════════════════════════════════════════════════════════════╗
