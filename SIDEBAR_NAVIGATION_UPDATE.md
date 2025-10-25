@@ -144,3 +144,4 @@ The sidebar navigation integrates with:
 4. Include "Most Used" indicators
 5. Add tooltips with category descriptions
 
+

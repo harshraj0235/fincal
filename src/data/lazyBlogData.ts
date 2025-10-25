@@ -37,3 +37,4 @@ export const loadAllBlogData = async () => {
   return allBlogPosts;
 };
 
+

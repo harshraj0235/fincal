@@ -87,3 +87,4 @@ The optional chaining pattern should be used throughout the app when rendering d
 
 This prevents React from trying to render `undefined` as text, which causes error #306.
 
+

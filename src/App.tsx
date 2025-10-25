@@ -251,8 +251,11 @@ const WeeklyTithiFinder = lazy(() => import('./pages/festival-tools/WeeklyTithiF
 const MoonPhaseFestivals = lazy(() => import('./pages/festival-tools/MoonPhaseFestivals'));
 const PurnimaAmavasya = lazy(() => import('./pages/festival-tools/PurnimaAmavasya'));
 const VratUpavasCalendar = lazy(() => import('./pages/festival-tools/VratUpavasCalendar'));
-const NakshatraFestival = lazy(() => import('./pages/festival-tools/NakshatraFestival'));
-const ShubhMuhuratReminder = lazy(() => import('./pages/festival-tools/ShubhMuhuratReminder'));
+const NakshatraFestival = lazy(() => import('./pages/festival/NakshatraFestival'));
+const ShubhMuhuratReminder = lazy(() => import('./pages/festival/ShubhMuhuratReminder'));
+const SolarLunarConverter = lazy(() => import('./pages/festival/SolarLunarConverter'));
+const PublicHolidayFinder = lazy(() => import('./pages/festival/PublicHolidayFinder'));
+const FestivalCountdownClock = lazy(() => import('./pages/festival/FestivalCountdownClock'));
 const AuspiciousMarriageDays = lazy(() => import('./pages/festival-tools/AuspiciousMarriageDays'));
 const LunarEclipsePredictor = lazy(() => import('./pages/festival-tools/LunarEclipsePredictor'));
 const BhaiDoojDateFinder = lazy(() => import('./pages/festival/BhaiDoojDateFinder'));
@@ -995,6 +998,9 @@ function App() {
                 <Route path="/festival-tools/vrat-upavas-calendar" element={<VratUpavasCalendar />} />
                 <Route path="/festival-tools/nakshatra-festival" element={<NakshatraFestival />} />
                 <Route path="/festival-tools/shubh-muhurat-reminder" element={<ShubhMuhuratReminder />} />
+                <Route path="/festival-tools/solar-lunar-converter" element={<SolarLunarConverter />} />
+                <Route path="/festival-tools/public-holiday-finder" element={<PublicHolidayFinder />} />
+                <Route path="/festival-tools/festival-countdown-clock" element={<FestivalCountdownClock />} />
                 <Route path="/festival-tools/auspicious-marriage-days" element={<AuspiciousMarriageDays />} />
                 <Route path="/festival-tools/lunar-eclipse-predictor" element={<LunarEclipsePredictor />} />
                 <Route path="/festival-tools/raksha-bandhan-muhurat" element={<RakshaBandhanMuhurat />} />
