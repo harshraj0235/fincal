@@ -570,7 +570,7 @@ const HomeInvestopedia: React.FC = () => {
         </nav>
 
         {/* Hero + Search */}
-        <section className="relative py-20 md:py-24">
+        <section className="relative py-20 md:py-24 hero-section" style={{ minHeight: '600px', contain: 'layout style' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center">
               {/* Title */}
@@ -1152,7 +1152,7 @@ const HomeInvestopedia: React.FC = () => {
         <LightweightTrustBadges />
 
         {/* Footer CTA */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+        <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 cta-section" style={{ minHeight: '400px', contain: 'layout style' }}>
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
               🚀 {language === 'en' ? 'Ready?' : 'तैयार हैं?'}

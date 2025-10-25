@@ -94,10 +94,15 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 300,
     cssCodeSplit: true,
     sourcemap: false,
     reportCompressedSize: false,
+    assetsInlineLimit: 4096,
+  },
+  esbuild: {
+    drop: ['console', 'debugger'],
+    legalComments: 'none',
   },
   server: {
     port: 5173,
