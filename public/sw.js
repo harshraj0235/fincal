@@ -1,18 +1,15 @@
-// Service Worker for MoneyCal India
-const CACHE_NAME = 'moneycal-v1.0.0';
-const STATIC_CACHE = 'moneycal-static-v1.0.0';
-const DYNAMIC_CACHE = 'moneycal-dynamic-v1.0.0';
+// Service Worker for MoneyCal India - Disabled for module scripts compatibility
+const CACHE_NAME = 'moneycal-v1.0.1';
+const STATIC_CACHE = 'moneycal-static-v1.0.1';
+const DYNAMIC_CACHE = 'moneycal-dynamic-v1.0.1';
 
-// Static assets to cache
+// Minimal static assets to cache (avoid module scripts)
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/manifest.json',
-  '/images/logo.svg',
-  '/images/hero-bg.webp',
-  '/fonts/inter-var.woff2',
-  '/css/main.css',
-  '/js/main.js'
+  '/favicon.ico',
+  '/android-chrome-192x192.png',
+  '/android-chrome-512x512.png'
 ];
 
 // API endpoints to cache
@@ -80,6 +77,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Skip module scripts and dynamic imports to avoid MIME type issues
+  if (request.destination === 'script' && url.pathname.includes('/assets/')) {
+    return; // Let browser handle module scripts natively
+  }
+
   // Handle different types of requests
   if (isStaticAsset(request)) {
     event.respondWith(handleStaticAsset(request));
@@ -118,10 +120,14 @@ async function handleStaticAsset(request) {
       return cachedResponse;
     }
 
-    const networkResponse = await fetch(request);
+    const networkResponse = await fetch(request, { redirect: 'follow' });
     if (networkResponse.ok) {
       const cache = await caches.open(STATIC_CACHE);
-      cache.put(request, networkResponse.clone());
+      // Only cache if it's a valid response
+      const contentType = networkResponse.headers.get('content-type');
+      if (contentType && !contentType.includes('text/html')) {
+        cache.put(request, networkResponse.clone());
+      }
     }
     return networkResponse;
   } catch (error) {
@@ -152,7 +158,7 @@ async function handleAPIRequest(request) {
 // Handle page requests - network first with cache fallback
 async function handlePageRequest(request) {
   try {
-    const networkResponse = await fetch(request);
+    const networkResponse = await fetch(request, { redirect: 'follow' });
     if (networkResponse.ok) {
       const cache = await caches.open(DYNAMIC_CACHE);
       cache.put(request, networkResponse.clone());

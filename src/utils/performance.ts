@@ -131,14 +131,23 @@ export const addResourceHints = () => {
   });
 };
 
-// Service Worker registration for caching
+// Service Worker registration - DISABLED to fix module script MIME type issues
+// Will be re-enabled after proper configuration
 export const registerServiceWorker = async () => {
-  if ('serviceWorker' in navigator) {
+  if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production-disabled') {
     try {
-      const registration = await navigator.serviceWorker.register('/sw.js');
-      console.log('Service Worker registered:', registration);
+      // Unregister existing service workers first
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (const registration of registrations) {
+        await registration.unregister();
+        console.log('Service Worker unregistered');
+      }
+      
+      // Register new service worker (currently disabled)
+      // const registration = await navigator.serviceWorker.register('/sw.js');
+      // console.log('Service Worker registered:', registration);
     } catch (error) {
-      console.log('Service Worker registration failed:', error);
+      console.log('Service Worker operation failed:', error);
     }
   }
 };
