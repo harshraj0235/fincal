@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { loadBlogData } from '../data/lazyBlogData';
-import TrustBadges from '../components/TrustBadges';
+import LightweightTrustBadges from '../components/LightweightTrustBadges';
 
 // Get current date
 const getCurrentDate = () => {
@@ -1147,7 +1147,7 @@ const HomeInvestopedia: React.FC = () => {
         </section>
 
         {/* Trust & Credibility Section */}
-        <TrustBadges />
+        <LightweightTrustBadges />
 
         {/* Footer CTA */}
         <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">

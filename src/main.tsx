@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
 import './utils/preloadCritical';
+import './utils/performanceOptimizer';
 
 // Performance monitoring
 const reportWebVitals = (onPerfEntry: any) => {

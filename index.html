@@ -96,9 +96,14 @@
       }
       header {
         min-height: 64px;
+        contain: layout style;
       }
       footer {
-        min-height: 600px;
+        min-height: 650px;
+        contain: layout style;
+      }
+      main {
+        contain: layout style paint;
       }
       .skeleton {
         background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);

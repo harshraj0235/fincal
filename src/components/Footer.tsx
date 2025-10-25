@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
   };
 
   // Reserve space for footer to prevent layout shift
-  const footerMinHeight = '600px';
+  const footerMinHeight = '650px';
 
   const footerSections = [
     {
