@@ -312,53 +312,72 @@ const GlobalSearch: React.FC = () => {
 
   return (
     <div className="relative" ref={searchRef}>
-      {/* Search Button */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-sm"
-      >
-        <Search className="w-5 h-5 text-gray-500" />
-        <span className="text-gray-500 hidden sm:block">Search tools, articles, guides...</span>
-        <span className="text-gray-500 sm:hidden">Search</span>
-      </button>
+      {/* Enhanced Search Input */}
+      <div className="relative">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 z-10" />
+        <input
+          type="search"
+          value={query}
+          onChange={handleSearch}
+          onFocus={() => setIsOpen(true)}
+          onKeyDown={handleKeyDown}
+          placeholder="🔍 Search... GST, SIP, EMI, Eclipse, Marriage, Tools..."
+          className="w-full pl-12 pr-12 py-4 text-lg rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none bg-white shadow-lg"
+        />
+        {query && (
+          <button
+            onClick={() => {
+              setQuery('');
+              setResults([]);
+              setIsOpen(false);
+            }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-1.5 rounded-full hover:bg-gray-200 z-10"
+          >
+            <X className="w-5 h-5 text-gray-400" />
+          </button>
+        )}
+      </div>
 
-      {/* Search Modal */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20">
-          <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden">
-            {/* Search Header */}
-            <div className="flex items-center p-4 border-b border-gray-200">
-              <Search className="w-5 h-5 text-gray-500 mr-3" />
-              <input
-                ref={inputRef}
-                type="text"
-                value={query}
-                onChange={handleSearch}
-                onKeyDown={handleKeyDown}
-                placeholder="Search for tools, articles, guides, categories..."
-                className="flex-1 text-lg border-none outline-none placeholder-gray-500"
-              />
+      {/* Enhanced Search Results Dropdown */}
+      {isOpen && (query || results.length > 0) && (
+        <div className="absolute top-full left-0 right-0 mt-4 rounded-3xl shadow-2xl border-2 max-h-[75vh] overflow-hidden z-50 bg-white/98 border-gray-300 backdrop-blur-xl">
+          {/* Header */}
+          <div className="px-6 py-4 border-b border-gray-200 bg-gray-50/80 backdrop-blur-sm">
+            <div className="flex items-center justify-between">
+              <div className="font-bold text-gray-900">
+                {results.length > 0 && (
+                  <>✨ {results.length} Results from Entire Codebase</>
+                )}
+                {results.length === 0 && query && (
+                  <>🔍 No results found</>
+                )}
+                {results.length === 0 && !query && (
+                  <>💡 Search 250+ tools, calculators, and guides</>
+                )}
+              </div>
               <button
                 onClick={() => {
                   setIsOpen(false);
                   setQuery('');
                   setResults([]);
                 }}
-                className="ml-3 p-1 hover:bg-gray-100 rounded-full"
+                className="p-1.5 rounded-lg hover:bg-gray-200"
               >
-                <X className="w-5 h-5 text-gray-500" />
+                <X className="w-5 h-5" />
               </button>
             </div>
+          </div>
 
-            {/* Search Results */}
-            <div className="max-h-96 overflow-y-auto">
-              {isLoading ? (
-                <div className="p-8 text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                  <p className="text-gray-600">Searching...</p>
-                </div>
-              ) : results.length > 0 ? (
-                <div className="p-2">
+          {/* Results Container */}
+          <div className="overflow-y-auto max-h-[60vh]">
+            {isLoading ? (
+              <div className="p-8 text-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                <p className="text-gray-600">Searching entire codebase...</p>
+              </div>
+            ) : results.length > 0 ? (
+              <div className="p-3">
+                <div className="space-y-1.5">
                   {results.map((result) => (
                     <Link
                       key={result.id}
@@ -368,61 +387,65 @@ const GlobalSearch: React.FC = () => {
                         setQuery('');
                         setResults([]);
                       }}
-                      className="flex items-center p-3 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                      className="flex items-center gap-4 p-4 hover:bg-blue-50 rounded-xl transition-all hover:scale-[1.01] border border-transparent hover:border-blue-200 group"
                     >
-                      <div className="flex-shrink-0 mr-3 text-gray-600">
+                      <div className="flex-shrink-0 text-gray-600 group-hover:scale-110 transition-transform text-3xl">
                         {result.icon}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center space-x-2 mb-1">
-                          <h3 className="text-sm font-medium text-gray-900 truncate">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className="text-base font-bold text-gray-900 truncate group-hover:text-blue-600">
                             {result.title}
                           </h3>
-                          <span className={`px-2 py-1 text-xs font-medium rounded-full ${getTypeColor(result.type)}`}>
+                          <span className={`px-2.5 py-0.5 text-xs font-semibold rounded-full ${getTypeColor(result.type)}`}>
                             {result.type}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-600 line-clamp-2">
+                        <p className="text-sm text-gray-600 line-clamp-2 mb-1.5">
                           {result.description}
                         </p>
-                        <p className="text-xs text-gray-500 mt-1">
-                          {result.category}
-                        </p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
+                            {result.category}
+                          </span>
+                          <span className="text-xs text-gray-500">
+                            {result.url}
+                          </span>
+                        </div>
                       </div>
+                      <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 flex-shrink-0" />
                     </Link>
                   ))}
                 </div>
-              ) : query ? (
-                <div className="p-8 text-center">
-                  <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                  <p className="text-gray-600">No results found for "{query}"</p>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Try searching for tools, articles, or categories
-                  </p>
-                </div>
-              ) : (
-                <div className="p-8 text-center">
-                  <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                  <p className="text-gray-600">Start typing to search</p>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Search for tools, articles, guides, and categories
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Search Footer */}
-            <div className="p-4 border-t border-gray-200 bg-gray-50">
-              <div className="flex items-center justify-between text-sm text-gray-600">
-                <div className="flex items-center space-x-4">
-                  <span>Press <kbd className="px-2 py-1 bg-white border border-gray-300 rounded text-xs">Esc</kbd> to close</span>
-                </div>
-                <div>
-                  {results.length > 0 && (
-                    <span>{results.length} result{results.length !== 1 ? 's' : ''} found</span>
-                  )}
-                </div>
               </div>
+            ) : query ? (
+              <div className="p-10 text-center">
+                <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                <p className="text-gray-700 font-medium text-lg">No results found for "{query}"</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  Try different keywords like: SIP, GST, EMI, Tax, Calculator
+                </p>
+              </div>
+            ) : (
+              <div className="p-10 text-center">
+                <Zap className="w-16 h-16 text-blue-400 mx-auto mb-4" />
+                <p className="text-gray-700 font-medium text-lg">Search 250+ Tools & Guides</p>
+                <p className="text-sm text-gray-500 mt-2">
+                  Calculators • Tax Tools • GST • Festival Tools • Learning • Blog
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Footer */}
+          <div className="px-6 py-3 border-t border-gray-200 bg-gray-50/80 backdrop-blur-sm">
+            <div className="flex items-center justify-between text-xs text-gray-600">
+              <span>
+                💡 Press <kbd className="px-2 py-1 bg-white border border-gray-300 rounded text-[10px] font-mono">Esc</kbd> to close
+              </span>
+              {results.length > 0 && (
+                <span className="font-medium">{results.length} result{results.length !== 1 ? 's' : ''}</span>
+              )}
             </div>
           </div>
         </div>

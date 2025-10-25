@@ -28,66 +28,59 @@ export default defineConfig({
     },
   },
   build: {
-    target: 'esnext',
+    target: 'es2015',
     minify: 'terser',
     cssMinify: true,
-    cssCodeSplit: false,
-    modulePreload: {
-      polyfill: false,
-    },
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn', 'console.error'],
-        passes: 3,
-        unsafe: true,
-        unsafe_arrows: true,
-        unsafe_methods: true,
-        unsafe_proto: true,
-        unsafe_regexp: true,
-        toplevel: true,
-        dead_code: true,
-        collapse_vars: true,
-        reduce_vars: true,
-        join_vars: true,
-        sequences: true,
-        properties: true,
-        evaluate: true,
-        booleans: true,
-        loops: true,
-        unused: true,
-        hoist_funs: true,
-        hoist_vars: true,
-        if_return: true,
-        inline: 3,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        passes: 2,
       },
       mangle: {
-        toplevel: true,
         safari10: true,
-        properties: false,
-      },
-      format: {
-        comments: false,
-        ecma: 2020,
       },
     },
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // ULTRA-AGGRESSIVE: Minimal chunks for fastest load
+          // Core dependencies
           if (id.includes('node_modules')) {
-            // Single vendor chunk for critical dependencies only
-            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler') || id.includes('react-router')) {
-              return 'vendor';
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor-react';
             }
-            // Everything else lazy loaded on demand
-            return undefined;
+            if (id.includes('react-router-dom')) {
+              return 'vendor-router';
+            }
+            if (id.includes('lucide-react') || id.includes('react-icons')) {
+              return 'vendor-icons';
+            }
+            if (id.includes('recharts') || id.includes('d3') || id.includes('chart.js')) {
+              return 'vendor-charts';
+            }
+            if (id.includes('framer-motion')) {
+              return 'vendor-animation';
+            }
+            // All other node_modules
+            return 'vendor-misc';
           }
           
-          // DO NOT load blog data initially - pure lazy
-          if (id.includes('blogData') || id.includes('allBlogData') || id.includes('crypto')) {
-            return undefined;
+          // Split large blog data files
+          if (id.includes('blogData1')) {
+            return 'blog-data-1';
+          }
+          if (id.includes('blogData2')) {
+            return 'blog-data-2';
+          }
+          if (id.includes('blogData') && !id.includes('blogData1') && !id.includes('blogData2')) {
+            return 'blog-data';
+          }
+          if (id.includes('cryptoData') || id.includes('/crypto/')) {
+            return 'crypto-data';
+          }
+          if (id.includes('allBlogData')) {
+            return 'all-blog-data';
           }
         },
         chunkFileNames: 'assets/[name]-[hash].js',
@@ -95,19 +88,10 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
-    chunkSizeWarningLimit: 200,
-    cssCodeSplit: false,
+    chunkSizeWarningLimit: 500,
+    cssCodeSplit: true,
     sourcemap: false,
     reportCompressedSize: false,
-    assetsInlineLimit: 8192,
-  },
-  esbuild: {
-    drop: ['console', 'debugger'],
-    legalComments: 'none',
-    treeShaking: true,
-    minifyIdentifiers: true,
-    minifySyntax: true,
-    minifyWhitespace: true,
   },
   server: {
     port: 5173,

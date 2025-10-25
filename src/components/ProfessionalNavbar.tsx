@@ -72,7 +72,28 @@ export const ProfessionalNavbar: React.FC = () => {
           </div>
 
           {/* Right Side - Desktop */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2.5">
+            {/* Theme Toggle */}
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className={`p-2.5 rounded-lg transition-all ${theme === 'dark' ? 'bg-yellow-500 text-white' : 'bg-slate-700 text-white'} hover:scale-110`}
+              aria-label="Toggle theme"
+              title={theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+
+            {/* Language Toggle */}
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+              aria-label="Toggle language"
+              title={language === 'en' ? 'Switch to Hindi' : 'Switch to English'}
+            >
+              <Globe className="w-4 h-4" />
+              {language === 'en' ? 'हिंदी' : 'EN'}
+            </button>
+
             <Link to="/learn" className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold text-sm hover:shadow-lg transition-shadow">
               <BookOpen className="w-4 h-4" />
               MoneyLearn
@@ -120,11 +141,34 @@ export const ProfessionalNavbar: React.FC = () => {
                 );
               })}
               
+              {/* Mobile Controls */}
+              <div className="pt-4 mt-4 border-t border-gray-200 space-y-3">
+                <div className="flex items-center justify-between px-4">
+                  <span className="text-sm font-medium text-gray-700">Theme</span>
+                  <button
+                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                    className={`p-2.5 rounded-lg ${theme === 'dark' ? 'bg-yellow-500 text-white' : 'bg-slate-700 text-white'}`}
+                  >
+                    {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                  </button>
+                </div>
+                <div className="flex items-center justify-between px-4">
+                  <span className="text-sm font-medium text-gray-700">Language</span>
+                  <button
+                    onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold"
+                  >
+                    <Globe className="w-4 h-4" />
+                    {language === 'en' ? 'हिंदी' : 'EN'}
+                  </button>
+                </div>
+              </div>
+
               {/* Mobile CTAs */}
               <Link
                 to="/learn"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 px-4 py-3.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold mt-2"
+                className="flex items-center justify-center gap-2 px-4 py-3.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold mt-4"
               >
                 <BookOpen className="w-5 h-5" />
                 MoneyLearn
