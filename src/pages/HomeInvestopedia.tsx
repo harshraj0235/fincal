@@ -767,42 +767,37 @@ const HomeInvestopedia: React.FC = () => {
               </div>
 
                 {/* Festival Tool Categories */}
-                <div className={`mt-8 p-6 rounded-2xl ${
-                  theme === 'dark' ? 'bg-orange-900/20 border-2 border-orange-500/30' : 'bg-orange-50 border-2 border-orange-300'
-                }`}>
-                  <h4 className={`text-2xl font-black text-center mb-6 ${theme === 'dark' ? 'text-orange-400' : 'text-orange-700'}`}>
+                <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200">
+                  <h4 className="text-2xl font-bold text-center mb-6 text-orange-700">
                     🎊 {language === 'en' ? 'Festival Tool Categories' : 'त्योहार श्रेणियां'}
                   </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                     {dynamicFestivalCategories.map((cat, i) => (
-                <Link
+                      <Link
                         key={i}
                         to={cat.path}
-                        className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95 ${
-                          theme === 'dark' ? 'bg-slate-700/50 text-orange-300 hover:bg-slate-600/60' : 'bg-white text-orange-700 border-2 border-orange-200 hover:border-orange-400 shadow-md'
-                        }`}
+                        className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all hover:scale-105 bg-white text-orange-700 border border-orange-200 hover:border-orange-500 shadow-sm hover:shadow-md"
                       >
                         <span className="text-2xl">{cat.emoji}</span>
                         <span>{cat.name}</span>
-                </Link>
-              ))}
-              </div>
-          </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
                   </div>
             </div>
           </div>
         </section>
 
-        {/* Categories Quick Links */}
-        <section className={`py-12 ${theme === 'dark' ? 'bg-slate-900/70' : 'bg-gray-50'}`}>
+        {/* Professional Categories Section */}
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="text-center mb-8">
-              <h2 className={`text-3xl font-black mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                📂 {language === 'en' ? 'Categories' : 'श्रेणियां'}
+            <div className="text-center mb-10">
+              <h2 className="text-4xl font-bold mb-3 text-gray-900">
+                📂 {language === 'en' ? 'All Categories' : 'सभी श्रेणियां'}
               </h2>
-              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                <Clock className="w-4 h-4 inline mr-1 text-blue-500 animate-spin" style={{ animationDuration: '10s' }} />
-                {language === 'en' ? 'Refreshes every 10 seconds • Random selection' : 'हर 10 सेकंड में बदलता है'}
+              <p className="text-base text-gray-600">
+                {language === 'en' ? 'Explore our comprehensive financial tools by category' : 'श्रेणी के अनुसार उपकरण खोजें'}
               </p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4">
@@ -810,11 +805,7 @@ const HomeInvestopedia: React.FC = () => {
                 <Link
                   key={idx}
                   to={cat.path}
-                  className={`relative p-4 rounded-xl text-center transition-all hover:scale-105 active:scale-95 ${
-                    theme === 'dark'
-                      ? 'bg-slate-800/60 border border-white/10 hover:border-blue-500/50'
-                      : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-md'
-                  }`}
+                  className="relative p-4 rounded-xl text-center transition-all hover:scale-105 bg-white border border-gray-200 hover:border-blue-500 hover:shadow-md"
                 >
                   {cat.tag && (
                     <div className={`absolute -top-2 -right-2 px-2 py-0.5 rounded-full text-[10px] font-black ${
