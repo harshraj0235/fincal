@@ -158,7 +158,7 @@ const buildComprehensiveSearchDatabase = (): SearchItem[] => {
       id: `blog-${i}`,
       name: post.title,
       path: `/blog/${post.slug}`,
-      category: 'Blog',
+      category: 'Blog', 
       subcategory: post.categories[0],
       emoji: '📰',
       icon: Newspaper,
@@ -318,8 +318,8 @@ const HomeInvestopedia: React.FC = () => {
 
       <div className={`min-h-screen transition-colors duration-300 ${
         theme === 'dark'
-          ? 'bg-gradient-to-br from-gray-900 via-slate-900 to-black'
-          : 'bg-gradient-to-br from-white via-blue-50 to-purple-50'
+          ? 'bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900'
+          : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'
       }`}>
         {/* ═══ FLOATING BACKGROUND ELEMENTS ═══ */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -492,13 +492,15 @@ const HomeInvestopedia: React.FC = () => {
               >
                 <h1 className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 ${
                   theme === 'dark'
-                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400'
-                    : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600'
+                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]'
+                    : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 drop-shadow-[0_0_20px_rgba(147,51,234,0.3)]'
                 }`}>
                   Smart Finance<br/>Made Simple
-                </h1>
-                <p className={`text-xl sm:text-2xl md:text-3xl font-semibold ${
-                  theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+              </h1>
+                <p className={`text-xl sm:text-2xl md:text-3xl font-bold ${
+                  theme === 'dark' 
+                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300' 
+                    : 'text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-purple-700'
                 }`}>
                   500+ Free Tools • AI-Powered Search • Trusted by 1M+ Indians
                 </p>
@@ -515,10 +517,10 @@ const HomeInvestopedia: React.FC = () => {
                   <div className="absolute left-6 top-1/2 -translate-y-1/2">
                     <Search className={`w-6 h-6 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} />
                   </div>
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                      <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="🔍 Search anything... EMI, SIP, GST, Diwali, Tax, Loan..."
                     className={`w-full pl-16 pr-16 py-6 text-lg sm:text-xl rounded-2xl border-2 focus:ring-4 outline-none font-medium shadow-2xl transition-all ${
                       theme === 'dark'
@@ -535,107 +537,244 @@ const HomeInvestopedia: React.FC = () => {
                       className="absolute right-6 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-gray-200/30"
                     >
                       <X className="w-5 h-5" />
-                    </button>
+                      </button>
                   )}
-                </div>
+                    </div>
 
-                {/* Search Results Dropdown */}
-                <AnimatePresence>
+                {/* Enhanced Search Results Dropdown */}
+                    <AnimatePresence>
                   {showSearchResults && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className={`absolute top-full left-0 right-0 mt-4 rounded-2xl shadow-2xl border-2 max-h-[70vh] overflow-y-auto z-50 ${
+                        <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className={`absolute top-full left-0 right-0 mt-4 rounded-3xl shadow-2xl border-2 max-h-[75vh] overflow-hidden z-50 ${
                         theme === 'dark'
-                          ? 'bg-gray-900/98 border-gray-700 backdrop-blur-2xl'
-                          : 'bg-white/98 border-gray-300 backdrop-blur-2xl'
+                          ? 'bg-gradient-to-br from-gray-900/98 to-gray-800/98 border-purple-500/30 backdrop-blur-2xl'
+                          : 'bg-gradient-to-br from-white/98 to-gray-50/98 border-blue-300/50 backdrop-blur-2xl'
                       }`}
                     >
-                      <div className="p-6">
-                        <div className={`flex items-center justify-between mb-4 ${
-                          theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                        }`}>
-                          <span className="text-sm font-bold">
-                            ✨ {searchResults.length} Results Found
-                          </span>
-                          <span className="text-xs text-gray-500">
-                            Powered by AI Search
-                          </span>
+                      {/* Search Header */}
+                      <div className={`sticky top-0 px-6 py-4 border-b ${
+                        theme === 'dark'
+                          ? 'bg-gradient-to-r from-purple-900/50 to-blue-900/50 border-purple-500/30'
+                          : 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200'
+                      }`}>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className={`p-2 rounded-lg ${
+                              theme === 'dark' ? 'bg-purple-500/20' : 'bg-purple-100'
+                            }`}>
+                              <Search className={`w-5 h-5 ${
+                                theme === 'dark' ? 'text-purple-400' : 'text-purple-600'
+                              }`} />
                         </div>
-                        <div className="space-y-2">
+                            <div>
+                              <h3 className={`text-lg font-black ${
+                                theme === 'dark' ? 'text-white' : 'text-gray-900'
+                              }`}>
+                                ✨ {searchResults.length} Result{searchResults.length !== 1 ? 's' : ''} Found
+                              </h3>
+                              <p className={`text-xs ${
+                                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                              }`}>
+                                Searching across 500+ tools • Click to open
+                              </p>
+                            </div>
+                          </div>
+                          <button
+                            onClick={() => {
+                              setSearchQuery('');
+                              setShowSearchResults(false);
+                            }}
+                            className={`p-2 rounded-lg transition-all hover:scale-110 ${
+                              theme === 'dark'
+                                ? 'bg-gray-800 hover:bg-gray-700 text-gray-400'
+                                : 'bg-gray-100 hover:bg-gray-200 text-gray-600'
+                            }`}
+                          >
+                            <X className="w-5 h-5" />
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Search Results Grid */}
+                      <div className="p-4 overflow-y-auto max-h-[calc(75vh-100px)] custom-scrollbar">
+                        <div className="grid gap-3">
                           {searchResults.map((result, idx) => (
                             <motion.button
                               key={result.id}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: idx * 0.03 }}
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.03, duration: 0.2 }}
                               onClick={() => handleSearchItemClick(result.path)}
-                              className={`w-full flex items-center gap-4 p-4 rounded-xl border-2 transition-all ${
+                              className={`group relative overflow-hidden rounded-2xl border-2 p-5 text-left transition-all hover:scale-[1.02] active:scale-[0.98] ${
                                 theme === 'dark'
-                                  ? 'bg-gray-800/50 border-gray-700 hover:border-blue-500 hover:bg-gray-800'
-                                  : 'bg-white border-gray-200 hover:border-blue-500 hover:shadow-lg'
+                                  ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 border-gray-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20'
+                                  : 'bg-gradient-to-br from-white to-gray-50 border-gray-200 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10'
                               }`}
                             >
-                              <div className="text-3xl">{result.emoji}</div>
-                              <div className="flex-1 text-left">
-                                <div className={`font-bold text-base mb-1 ${
-                                  theme === 'dark' ? 'text-white' : 'text-gray-900'
+                              {/* Hover Gradient Effect */}
+                              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-pink-500/5 transition-all duration-300" />
+                              
+                              <div className="relative flex items-start gap-4">
+                                {/* Icon */}
+                                <div className={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-3xl transition-transform group-hover:scale-110 group-hover:rotate-6 ${
+                                  theme === 'dark'
+                                    ? 'bg-gradient-to-br from-purple-900/50 to-blue-900/50'
+                                    : 'bg-gradient-to-br from-purple-100 to-blue-100'
                                 }`}>
-                                  {result.name}
-                                  {result.nameHindi && (
-                                    <span className={`ml-2 text-sm ${
-                                      theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                                  {result.emoji}
+                                </div>
+
+                                {/* Content */}
+                              <div className="flex-1 min-w-0">
+                                  {/* Title */}
+                                  <div className="flex items-start justify-between gap-2 mb-2">
+                                    <h4 className={`font-bold text-lg leading-tight ${
+                                      theme === 'dark' ? 'text-white' : 'text-gray-900'
                                     }`}>
-                                      ({result.nameHindi})
-                                    </span>
-                                  )}
-                                </div>
-                                <div className={`text-sm ${
-                                  theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                                }`}>
-                                  {result.description}
-                                </div>
-                                <div className="flex items-center gap-2 mt-2">
-                                  <span className="px-2 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-xs font-bold">
+                                  {result.name}
+                                      {result.nameHindi && (
+                                        <span className={`block text-sm font-normal mt-0.5 ${
+                                          theme === 'dark' ? 'text-purple-400' : 'text-purple-600'
+                                        }`}>
+                                          {result.nameHindi}
+                                        </span>
+                                      )}
+                                    </h4>
+                                    <ChevronRight className={`flex-shrink-0 w-6 h-6 transition-transform group-hover:translate-x-1 ${
+                                      theme === 'dark' ? 'text-purple-400' : 'text-blue-600'
+                                    }`} />
+                                      </div>
+
+                                  {/* Description */}
+                                  <p className={`text-sm mb-3 line-clamp-2 ${
+                                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                                  }`}>
+                                    {result.description}
+                                  </p>
+
+                                  {/* Tags & Meta */}
+                                  <div className="flex flex-wrap items-center gap-2">
+                                    {/* Category Badge */}
+                                    <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-xs font-bold shadow-lg">
                                     {result.category}
                                   </span>
-                                  {result.subcategory && (
-                                    <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                                      theme === 'dark' ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'
-                                    }`}>
-                                      {result.subcategory}
-                                    </span>
-                                  )}
-                                  {result.usageCount && (
-                                    <span className={`text-xs ${
-                                      theme === 'dark' ? 'text-gray-500' : 'text-gray-500'
-                                    }`}>
-                                      👥 {result.usageCount} users
-                                    </span>
-                                  )}
-                                  {result.isNew && (
-                                    <span className="px-2 py-1 bg-green-500 text-white rounded-full text-xs font-bold">
-                                      NEW
-                                    </span>
-                                  )}
-                                  {result.isTrending && (
-                                    <span className="px-2 py-1 bg-red-500 text-white rounded-full text-xs font-bold">
-                                      🔥 HOT
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                              <ChevronRight className={`w-6 h-6 ${
-                                theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                              }`} />
+
+                                    {/* Subcategory */}
+                                    {result.subcategory && (
+                                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                                        theme === 'dark'
+                                          ? 'bg-gray-700 text-gray-300'
+                                          : 'bg-gray-100 text-gray-700 border border-gray-300'
+                                      }`}>
+                                        {result.subcategory}
+                                  </span>
+                                    )}
+
+                                    {/* Usage Count */}
+                                    {result.usageCount && (
+                                      <span className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold ${
+                                        theme === 'dark'
+                                          ? 'bg-blue-900/30 text-blue-400'
+                                          : 'bg-blue-50 text-blue-700 border border-blue-200'
+                                      }`}>
+                                        <Users className="w-3 h-3" />
+                                        {result.usageCount}
+                                      </span>
+                                    )}
+
+                                    {/* New Badge */}
+                                    {result.isNew && (
+                                      <span className="px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-xs font-bold shadow-lg animate-pulse">
+                                        ✨ NEW
+                                      </span>
+                                    )}
+
+                                    {/* Trending Badge */}
+                                    {result.isTrending && (
+                                      <span className="px-3 py-1 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full text-xs font-bold shadow-lg">
+                                        🔥 TRENDING
+                                      </span>
+                                    )}
+
+                                    {/* Tags */}
+                                    {result.tags && result.tags.slice(0, 2).map((tag, i) => (
+                                      <span
+                        key={i}
+                                        className={`px-2 py-1 rounded-md text-xs font-medium ${
+                                          theme === 'dark'
+                                            ? 'bg-purple-900/30 text-purple-300'
+                                            : 'bg-purple-50 text-purple-700'
+                                        }`}
+                                      >
+                                        {tag}
+                                      </span>
+              ))}
+              </div>
+          </div>
+                  </div>
                             </motion.button>
                           ))}
-                        </div>
-                      </div>
+            </div>
+
+                        {/* No Results Message */}
+                        {searchResults.length === 0 && searchQuery.length > 0 && (
+                          <div className="text-center py-12">
+                            <div className={`text-6xl mb-4 ${
+                              theme === 'dark' ? 'opacity-30' : 'opacity-20'
+                            }`}>
+                              🔍
+            </div>
+                            <p className={`text-lg font-bold mb-2 ${
+                              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                            }`}>
+                              No results found for "{searchQuery}"
+                            </p>
+                            <p className={`text-sm ${
+                              theme === 'dark' ? 'text-gray-500' : 'text-gray-500'
+                            }`}>
+                              Try different keywords or browse our categories below
+                            </p>
+                    </div>
+                  )}
+                  </div>
+
+                      {/* Search Footer Tip */}
+                      <div className={`px-6 py-3 border-t text-center ${
+                        theme === 'dark'
+                          ? 'bg-gray-900/50 border-gray-700'
+                          : 'bg-gray-50 border-gray-200'
+                      }`}>
+                        <p className={`text-xs ${
+                          theme === 'dark' ? 'text-gray-500' : 'text-gray-600'
+                        }`}>
+                          💡 <strong>Pro Tip:</strong> Try searching for "EMI", "Tax", "Festival", "GST", or any calculator name
+                        </p>
+              </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
+
+                {/* Custom Scrollbar Styles */}
+                <style>{`
+                  .custom-scrollbar::-webkit-scrollbar {
+                    width: 8px;
+                  }
+                  .custom-scrollbar::-webkit-scrollbar-track {
+                    background: ${theme === 'dark' ? 'rgba(31, 41, 55, 0.5)' : 'rgba(243, 244, 246, 0.5)'};
+                    border-radius: 10px;
+                  }
+                  .custom-scrollbar::-webkit-scrollbar-thumb {
+                    background: ${theme === 'dark' ? 'linear-gradient(to bottom, #8b5cf6, #3b82f6)' : 'linear-gradient(to bottom, #60a5fa, #a78bfa)'};
+                    border-radius: 10px;
+                  }
+                  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                    background: ${theme === 'dark' ? 'linear-gradient(to bottom, #7c3aed, #2563eb)' : 'linear-gradient(to bottom, #3b82f6, #8b5cf6)'};
+                  }
+                `}</style>
 
                 {/* Popular Searches */}
                 {!searchQuery && (
@@ -644,7 +783,7 @@ const HomeInvestopedia: React.FC = () => {
                       theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
                     }`}>
                       🔥 Popular:
-                    </span>
+                  </span>
                     {['EMI', 'SIP', 'GST', 'Income Tax', 'Diwali', 'Home Loan', 'PPF', 'Credit Score'].map((term, i) => (
                       <button
                         key={i}
@@ -653,8 +792,8 @@ const HomeInvestopedia: React.FC = () => {
                       >
                         {term}
                       </button>
-                    ))}
-                  </div>
+              ))}
+            </div>
                 )}
               </motion.div>
 
@@ -699,18 +838,18 @@ const HomeInvestopedia: React.FC = () => {
                   { icon: Shield, label: '100% Secure', color: 'from-green-500 to-emerald-500' }
                 ].map((stat, i) => (
                   <div
-                    key={i}
+                        key={i}
                     className={`p-6 rounded-xl ${
                       theme === 'dark' ? 'bg-gray-800/50' : 'bg-white/80'
                     } backdrop-blur-sm shadow-xl`}
                   >
                     <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-lg flex items-center justify-center mx-auto mb-3`}>
                       <stat.icon className="w-6 h-6 text-white" />
-                    </div>
+                  </div>
                     <p className={`font-bold text-lg ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                       {stat.label}
-                    </p>
-                  </div>
+              </p>
+                </div>
                 ))}
               </motion.div>
             </div>
@@ -731,24 +870,24 @@ const HomeInvestopedia: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {popularItems.map((item, idx) => (
-                <motion.div
+              <motion.div
                   key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
                 >
-                  <Link
-                    to={item.path}
+                    <Link
+                      to={item.path}
                     className={`block p-6 rounded-xl border-2 transition-all hover:scale-105 ${
-                      theme === 'dark'
+                        theme === 'dark'
                         ? 'bg-gray-800/50 border-gray-700 hover:border-blue-500'
                         : 'bg-white border-gray-200 hover:border-blue-500 hover:shadow-2xl'
                     }`}
                   >
                     <div className="text-5xl mb-4">{item.emoji}</div>
                     <h3 className={`text-lg font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                      {item.name}
-                    </h3>
+                            {item.name}
+                  </h3>
                     <p className={`text-sm mb-3 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                       {item.description}
                     </p>
@@ -766,56 +905,56 @@ const HomeInvestopedia: React.FC = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
+                </div>
         </section>
 
         {/* ═══ NEW TOOLS ═══ */}
         {newItems.length > 0 && (
           <section className={`py-16 ${theme === 'dark' ? 'bg-gradient-to-br from-green-900/20 to-emerald-900/20' : 'bg-gradient-to-br from-green-50 to-emerald-50'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
+            <div className="text-center mb-12">
                 <h2 className={`text-4xl font-black mb-4 ${theme === 'dark' ? 'text-green-400' : 'text-green-700'}`}>
                   ✨ New Tools
-                </h2>
+              </h2>
                 <p className={`text-lg ${theme === 'dark' ? 'text-green-300' : 'text-green-600'}`}>
                   Latest additions to our platform
                 </p>
-              </div>
+                  </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {newItems.map((item, idx) => (
-                  <motion.div
+                <motion.div
                     key={item.id}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.1 }}
                   >
-                    <Link
+              <Link
                       to={item.path}
                       className={`block p-6 rounded-xl border-2 transition-all hover:scale-105 relative ${
                         theme === 'dark'
                           ? 'bg-gray-800/50 border-green-500/30 hover:border-green-500'
                           : 'bg-white border-green-200 hover:border-green-500 hover:shadow-2xl'
                       }`}
-                    >
-                      <div className="absolute top-4 right-4">
+                >
+                  <div className="absolute top-4 right-4">
                         <span className="px-2 py-1 bg-green-500 text-white rounded-full text-xs font-bold">
                           NEW
-                        </span>
-                      </div>
+                  </span>
+                </div>
                       <div className="text-5xl mb-4">{item.emoji}</div>
                       <h3 className={`text-lg font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                        {item.name}
-                      </h3>
+                    {item.name}
+                  </h3>
                       <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                         {item.description}
-                      </p>
-                    </Link>
+                  </p>
+                </Link>
                   </motion.div>
-                ))}
-              </div>
+              ))}
             </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* ═══ ALL CATEGORIES ═══ */}
@@ -836,11 +975,11 @@ const HomeInvestopedia: React.FC = () => {
                 const firstItem = categoryGroups[category][0];
                 
                 return (
-                  <Link
+              <Link
                     key={category}
                     to={firstItem?.path.split('/').slice(0, 2).join('/') || '/tools'}
                     className={`p-6 rounded-xl text-center transition-all hover:scale-105 ${
-                      theme === 'dark'
+                        theme === 'dark'
                         ? 'bg-gray-800/50 border border-gray-700 hover:border-blue-500'
                         : 'bg-white border-2 border-gray-200 hover:border-blue-500 shadow-lg'
                     }`}
@@ -848,17 +987,17 @@ const HomeInvestopedia: React.FC = () => {
                     <div className="text-4xl mb-3">{firstItem?.emoji || '📁'}</div>
                     <div className={`text-sm font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                       {category}
-                    </div>
+                        </div>
                     <div className={`text-xs px-3 py-1 rounded-full inline-block font-semibold ${
                       theme === 'dark' ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700'
                     }`}>
                       {count} tools
-                    </div>
-                  </Link>
+                      </div>
+                </Link>
                 );
               })}
-            </div>
-          </div>
+                      </div>
+                    </div>
         </section>
 
         {/* ═══ TRUST SECTION ═══ */}
@@ -867,7 +1006,7 @@ const HomeInvestopedia: React.FC = () => {
             <div className="text-center mb-12">
               <h2 className={`text-4xl font-black mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 🏆 Why Trust MoneyCal.in?
-              </h2>
+                </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -885,14 +1024,14 @@ const HomeInvestopedia: React.FC = () => {
                 >
                   <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                     <item.icon className="w-8 h-8 text-white" />
-                  </div>
+                        </div>
                   <h3 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                     {item.title}
                   </h3>
                   <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                    {item.desc}
-                  </p>
-                </div>
+                            {item.desc}
+                          </p>
+                      </div>
               ))}
             </div>
           </div>
@@ -903,24 +1042,24 @@ const HomeInvestopedia: React.FC = () => {
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
               🚀 Ready to Get Started?
-            </h2>
+              </h2>
             <p className="text-2xl text-white/90 mb-8">
               Join 1 Million+ Indians using India's smartest financial platform
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/tools"
                 className="px-10 py-5 bg-white text-purple-600 rounded-2xl font-black text-xl shadow-2xl hover:scale-105 transition-all"
               >
                 Explore All Tools
-              </Link>
+                </Link>
               <Link
                 to="/learn"
                 className="px-10 py-5 border-2 border-white text-white rounded-2xl font-black text-xl hover:bg-white/10 transition-all"
               >
                 Start Learning Free
-              </Link>
-            </div>
+                </Link>
+              </div>
           </div>
         </section>
 
