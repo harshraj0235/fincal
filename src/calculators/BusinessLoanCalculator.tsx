@@ -201,7 +201,7 @@ export const BusinessLoanCalculator: React.FC = () => {
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Business Loan Calculator</h1>
         <p className="text-lg text-gray-700">Calculate EMI for MSME, startup, and business expansion loans</p>
       </div>
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div className="space-y-6">
         <h2 className="text-xl font-semibold text-neutral-900 flex items-center">
           <Building2 className="w-5 h-5 mr-2 text-[--primary-600]" />
