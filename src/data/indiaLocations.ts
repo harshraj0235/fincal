@@ -376,3 +376,4 @@ export const TOTAL_CITIES = getAllCities().length; // 600+
 
 export default ALL_STATES_UTS;
 
+

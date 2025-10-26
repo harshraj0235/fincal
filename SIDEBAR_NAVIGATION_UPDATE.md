@@ -145,3 +145,4 @@ The sidebar navigation integrates with:
 5. Add tooltips with category descriptions
 
 
+

@@ -11,6 +11,37 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    X-Robots-Tag = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+
+[[headers]]
+  for = "/calculators/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/blog/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/learn/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/tools/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/government-schemes/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow, max-image-preview:large"
+    Cache-Control = "public, max-age=3600, must-revalidate"
 
 [[headers]]
   for = "/assets/*"

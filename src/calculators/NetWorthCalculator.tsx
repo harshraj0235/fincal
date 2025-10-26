@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { TrendingUp, TrendingDown, DollarSign, PieChart } from 'lucide-react';
+import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
+import { CalculatorSchema } from '../components/CalculatorSchema';
 
 export const NetWorthCalculator: React.FC = () => {
   const [assets, setAssets] = useState({
