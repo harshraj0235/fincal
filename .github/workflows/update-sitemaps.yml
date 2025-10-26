@@ -1,0 +1,58 @@
+name: Auto-Update Sitemaps Every 36 Hours
+
+on:
+  schedule:
+    # Runs every 36 hours (cron doesn't support 36h, so we run every day + manual)
+    - cron: '0 */12 * * *'  # Every 12 hours (3 times daily for 36h coverage)
+  
+  workflow_dispatch:  # Manual trigger
+  
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/calculators/**'
+      - 'src/pages/**'
+      - 'scripts/generate-sitemaps.js'
+
+jobs:
+  update-sitemaps:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Generate Dynamic Sitemaps
+        run: |
+          node scripts/generate-sitemaps.js
+      
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code public/sitemap*.xml || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and Push if changes
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "Sitemap Auto-Updater"
+          git config user.email "noreply@moneycal.in"
+          git add public/sitemap*.xml
+          git commit -m "chore: Auto-update sitemaps with fresh timestamps [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Notify Completion
+        run: |
+          echo "✅ Sitemaps updated successfully!"
+          echo "📅 Timestamp: $(date)"
+          echo "🔄 Next update: In 12 hours"
+

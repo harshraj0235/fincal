@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run generate-sitemaps && tsc && vite build",
     "build:deploy": "npm install && npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "generate-blogs": "node automated-blog-generator.cjs",
     "generate-crypto": "node crypto-blog-generator.cjs",
     "generate-manual": "node manual-blog-generator.cjs",
+    "generate-sitemaps": "node scripts/extract-and-categorize-sitemaps.js",
+    "generate-sitemaps-fresh": "node scripts/generate-sitemaps.js",
     "deploy": "node deploy.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
     "lhci:autorun": "lhci autorun"

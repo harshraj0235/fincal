@@ -101,12 +101,12 @@ export const InflationCalculator: React.FC = () => {
               <p className="text-sm text-gray-600 mb-1">Future Price/Cost</p>
               <p className="text-4xl font-bold text-red-600">{formatCurrency(futurePrice)}</p>
               <p className="text-xs text-gray-500 mt-1">What you'll need in {years} years</p>
-            </div>
-            
+        </div>
+
             <div className="bg-white rounded-lg p-5 shadow-sm">
               <p className="text-sm text-gray-600 mb-1">Today's Amount</p>
               <p className="text-3xl font-bold text-gray-700">{formatCurrency(currentAmount)}</p>
-        </div>
+            </div>
 
             <div className="bg-white rounded-lg p-5 shadow-sm">
               <p className="text-sm text-gray-600 mb-1">Purchasing Power Loss</p>

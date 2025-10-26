@@ -1,10 +1,15 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Sitemaps - Multiple categorized sitemaps for better indexing
 Sitemap: https://moneycal.in/sitemap.xml
-Sitemap: https://moneycal.in/sitemap-blog.xml
 Sitemap: https://moneycal.in/sitemap-calculators.xml
+Sitemap: https://moneycal.in/sitemap-learn.xml
+Sitemap: https://moneycal.in/sitemap-blog.xml
+Sitemap: https://moneycal.in/sitemap-tools.xml
+Sitemap: https://moneycal.in/sitemap-government.xml
+Sitemap: https://moneycal.in/sitemap-crypto.xml
+Sitemap: https://moneycal.in/sitemap-pages.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

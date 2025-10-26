@@ -110,8 +110,8 @@ export const EmergencyFundCalculator: React.FC = () => {
               <p className="text-sm text-gray-600 mb-1">Coverage Period</p>
               <p className="text-2xl font-bold text-blue-600">{monthsOfCoverage} months</p>
             </div>
-          </div>
-          
+        </div>
+
           <div className="mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded-lg flex items-start">
             <AlertTriangle className="w-5 h-5 text-yellow-700 mt-0.5 mr-2 flex-shrink-0" />
             <div className="text-sm text-yellow-800">
@@ -119,10 +119,10 @@ export const EmergencyFundCalculator: React.FC = () => {
               <p>• ₹{formatCurrency(emergencyFund * 0.2)} in Savings Account (instant access)</p>
               <p>• ₹{formatCurrency(emergencyFund * 0.6)} in Liquid Mutual Funds (1-day access, 5-6% return)</p>
               <p>• ₹{formatCurrency(emergencyFund * 0.2)} in Ultra-Short Debt Funds (3-day access, 6-7% return)</p>
-            </div>
+          </div>
           </div>
         </div>
-        
+
         <div className="bg-blue-50 p-4 rounded-lg">
           <h4 className="font-medium text-blue-900 mb-2 flex items-center">
             <Shield className="w-4 h-4 mr-2" />
@@ -138,7 +138,7 @@ export const EmergencyFundCalculator: React.FC = () => {
           </ul>
         </div>
       </div>
-      </div>
+    </div>
       </div>
       
       {/* Comprehensive E-E-A-T Content */}
