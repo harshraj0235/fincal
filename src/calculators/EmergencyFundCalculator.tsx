@@ -139,6 +139,7 @@ export const EmergencyFundCalculator: React.FC = () => {
         </div>
       </div>
       </div>
+      </div>
       
       {/* Comprehensive E-E-A-T Content */}
       <div className="mt-12">
