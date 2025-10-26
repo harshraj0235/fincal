@@ -30,29 +30,17 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Generate Dynamic Sitemaps
+      - name: Generate and Verify Sitemaps
         run: |
+          echo "🚀 Generating sitemaps..."
           node scripts/generate-complete-sitemaps.cjs
-      
-      - name: Check for changes
-        id: git-check
-        run: |
-          git diff --exit-code public/sitemap*.xml || echo "changed=true" >> $GITHUB_OUTPUT
-      
-      - name: Commit and Push if changes
-        if: steps.git-check.outputs.changed == 'true'
-        run: |
-          git config user.name "Sitemap Auto-Updater"
-          git config user.email "noreply@moneycal.in"
-          git add public/sitemap*.xml
-          git commit -m "chore: Auto-update sitemaps with fresh timestamps [skip ci]"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Notify Completion
-        run: |
-          echo "✅ Sitemaps updated successfully!"
+          echo "✅ Sitemaps generated successfully!"
+          echo "📊 Verifying sitemap files..."
+          ls -la public/sitemap*.xml
           echo "📅 Timestamp: $(date)"
-          echo "🔄 Next update: In 12 hours"
+          echo ""
+          echo "ℹ️  Note: Sitemaps are generated but NOT auto-committed."
+          echo "   They will be deployed automatically on next manual push or PR merge."
+          echo "   Build process also generates sitemaps on every deployment."
+          echo "🔄 Next auto-generation: In 12 hours"
 
