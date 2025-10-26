@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_URL = 'https://moneycal.in';
-const INPUT_FILE = path.join(__dirname, '../public/all-urls-extracted.txt');
+const INPUT_FILE = path.join(__dirname, '../public/all-urls-complete.txt');
 const OUTPUT_DIR = path.join(__dirname, '../public');
 
 // Current timestamp
@@ -120,39 +120,30 @@ const categorizeUrl = (url) => {
     return { category: 'blog', priority: 0.75, changefreq: 'daily' };
   }
   
-  // Finance blog
-  if (urlPath.includes('/finance-blog/')) {
-    return { category: 'blog', priority: 0.7, changefreq: 'weekly' };
+  // Main Hub Pages (High Priority)
+  const mainHubPages = [
+    '/calculators', '/blog', '/learn', '/tools', '/finance-tools',
+    '/bank-tools', '/tax-tools', '/gst-tools', '/excel-tools',
+    '/corporate-finance', '/insurance-tools', '/astro-finance',
+    '/crypto', '/government-schemes', '/news', '/news-reel',
+    '/comprehensive-finance-hub', '/market-analysis', '/financial-education',
+    '/seo-tools', '/festival-shopping', '/missed-call-banking-directory',
+    '/credit-card-finder', '/finance-categories', '/analytics', '/community'
+  ];
+  
+  if (mainHubPages.some(page => urlPath === page || urlPath === page + '/')) {
+    return { category: 'pages', priority: 0.85, changefreq: 'weekly' };
   }
   
-  // Static/Important Pages (VERIFIED routes from App.tsx)
+  // Static/Important Pages
   const staticPages = [
     '/about-us', '/contact-us', '/privacy-policy', '/terms-of-service',
     '/terms-and-conditions', '/help-center', '/disclaimer', '/cookie-policy',
-    '/editorial-policy', '/sitemap', '/credit-card-finder', '/bank-tools',
-    '/missed-call-banking-directory', '/news-reel', '/calculators', '/tools',
-    '/finance-tools', '/tax-tools', '/gst-tools', '/exceltool', '/excel-tool-builder'
+    '/editorial-policy', '/sitemap', '/top-10', '/help', '/feedback'
   ];
   
   if (staticPages.some(page => urlPath === page || urlPath === page + '/')) {
     return { category: 'pages', priority: 0.6, changefreq: 'yearly' };
-  }
-  
-  // Filter out invalid/non-existent routes
-  const invalidPatterns = [
-    '/corporate-finance', // Not a real route
-    '/insurance-tools/', // Individual tools, not hub
-    '/invoicing-tools/', // Not in current routes
-    '/real-estate/', // Old route
-    '/loan-app-directory', // Removed
-    '/financial-navigator', // Removed
-    '/business-tools', // Removed
-    '/accounting-tools', // Removed
-    '/payroll-tools', // Removed
-  ];
-  
-  if (invalidPatterns.some(pattern => urlPath.includes(pattern))) {
-    return null; // Skip this URL
   }
   
   // Default fallback
@@ -207,7 +198,6 @@ const categorizeAllUrls = (urls) => {
   
   const duplicateCheck = new Set();
   let duplicates = 0;
-  let invalid = 0;
   
   urls.forEach(url => {
     // Skip duplicates
@@ -217,24 +207,12 @@ const categorizeAllUrls = (urls) => {
     }
     duplicateCheck.add(url);
     
-    const result = categorizeUrl(url);
-    
-    // Skip invalid URLs (where categorizeUrl returned null)
-    if (!result) {
-      invalid++;
-      return;
-    }
-    
-    const { category, priority, changefreq } = result;
+    const { category, priority, changefreq } = categorizeUrl(url);
     categorized[category].push({ url, priority, changefreq });
   });
   
   if (duplicates > 0) {
     console.log(`⚠️  Removed ${duplicates} duplicate URLs`);
-  }
-  
-  if (invalid > 0) {
-    console.log(`⚠️  Removed ${invalid} invalid/non-existent route URLs`);
   }
   
   return categorized;
