@@ -35,6 +35,9 @@ const WriteBlog = lazy(() => import('./pages/WriteBlog'));
 const ChhathPuja2025Schedule = lazy(() => import('./pages/blog/ChhathPuja2025Schedule'));
 const ChhathPujaPreparationGuide = lazy(() => import('./pages/blog/ChhathPujaPreparationGuide'));
 const ChhathPujaPrasadRecipes = lazy(() => import('./pages/blog/ChhathPujaPrasadRecipes'));
+const ChhathPujaRitualsExplained = lazy(() => import('./pages/blog/ChhathPujaRitualsExplained'));
+const ChhathPujaHealthBenefits = lazy(() => import('./pages/blog/ChhathPujaHealthBenefits'));
+const ChhathPujaTravelGuide = lazy(() => import('./pages/blog/ChhathPujaTravelGuide'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
@@ -791,6 +794,9 @@ function App() {
                 <Route path="/blog/chhath-puja-2025-schedule" element={<ChhathPuja2025Schedule />} />
                 <Route path="/blog/chhath-puja-preparation-guide" element={<ChhathPujaPreparationGuide />} />
                 <Route path="/blog/chhath-puja-prasad-recipes" element={<ChhathPujaPrasadRecipes />} />
+                <Route path="/blog/chhath-puja-rituals-explained" element={<ChhathPujaRitualsExplained />} />
+                <Route path="/blog/chhath-puja-health-benefits" element={<ChhathPujaHealthBenefits />} />
+                <Route path="/blog/chhath-puja-travel-guide" element={<ChhathPujaTravelGuide />} />
                 {/* SEO Blog Routes */}
                 <Route path="/finance-blog" element={<SEOBlogManager />} />
                 <Route path="/finance-blog/:slug" element={<SEOBlogPost />} />
