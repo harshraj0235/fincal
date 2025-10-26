@@ -32,7 +32,7 @@ jobs:
       
       - name: Generate Dynamic Sitemaps
         run: |
-          node scripts/generate-sitemaps.js
+          node scripts/generate-complete-sitemaps.cjs
       
       - name: Check for changes
         id: git-check
