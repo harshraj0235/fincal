@@ -120,16 +120,39 @@ const categorizeUrl = (url) => {
     return { category: 'blog', priority: 0.75, changefreq: 'daily' };
   }
   
-  // Static/Important Pages
+  // Finance blog
+  if (urlPath.includes('/finance-blog/')) {
+    return { category: 'blog', priority: 0.7, changefreq: 'weekly' };
+  }
+  
+  // Static/Important Pages (VERIFIED routes from App.tsx)
   const staticPages = [
     '/about-us', '/contact-us', '/privacy-policy', '/terms-of-service',
     '/terms-and-conditions', '/help-center', '/disclaimer', '/cookie-policy',
     '/editorial-policy', '/sitemap', '/credit-card-finder', '/bank-tools',
-    '/corporate-finance', '/insurance-tools', '/excel-tools', '/missed-call-banking-directory'
+    '/missed-call-banking-directory', '/news-reel', '/calculators', '/tools',
+    '/finance-tools', '/tax-tools', '/gst-tools', '/exceltool', '/excel-tool-builder'
   ];
   
   if (staticPages.some(page => urlPath === page || urlPath === page + '/')) {
     return { category: 'pages', priority: 0.6, changefreq: 'yearly' };
+  }
+  
+  // Filter out invalid/non-existent routes
+  const invalidPatterns = [
+    '/corporate-finance', // Not a real route
+    '/insurance-tools/', // Individual tools, not hub
+    '/invoicing-tools/', // Not in current routes
+    '/real-estate/', // Old route
+    '/loan-app-directory', // Removed
+    '/financial-navigator', // Removed
+    '/business-tools', // Removed
+    '/accounting-tools', // Removed
+    '/payroll-tools', // Removed
+  ];
+  
+  if (invalidPatterns.some(pattern => urlPath.includes(pattern))) {
+    return null; // Skip this URL
   }
   
   // Default fallback
@@ -184,6 +207,7 @@ const categorizeAllUrls = (urls) => {
   
   const duplicateCheck = new Set();
   let duplicates = 0;
+  let invalid = 0;
   
   urls.forEach(url => {
     // Skip duplicates
@@ -193,12 +217,24 @@ const categorizeAllUrls = (urls) => {
     }
     duplicateCheck.add(url);
     
-    const { category, priority, changefreq } = categorizeUrl(url);
+    const result = categorizeUrl(url);
+    
+    // Skip invalid URLs (where categorizeUrl returned null)
+    if (!result) {
+      invalid++;
+      return;
+    }
+    
+    const { category, priority, changefreq } = result;
     categorized[category].push({ url, priority, changefreq });
   });
   
   if (duplicates > 0) {
     console.log(`⚠️  Removed ${duplicates} duplicate URLs`);
+  }
+  
+  if (invalid > 0) {
+    console.log(`⚠️  Removed ${invalid} invalid/non-existent route URLs`);
   }
   
   return categorized;
