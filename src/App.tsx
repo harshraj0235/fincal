@@ -33,6 +33,8 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const WriteBlog = lazy(() => import('./pages/WriteBlog'));
 const ChhathPuja2025Schedule = lazy(() => import('./pages/blog/ChhathPuja2025Schedule'));
+const ChhathPujaPreparationGuide = lazy(() => import('./pages/blog/ChhathPujaPreparationGuide'));
+const ChhathPujaPrasadRecipes = lazy(() => import('./pages/blog/ChhathPujaPrasadRecipes'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
@@ -787,6 +789,8 @@ function App() {
                 <Route path="/blog/category/banking" element={<BankingKnowledge />} />
                 {/* Chhath Puja Blog Posts */}
                 <Route path="/blog/chhath-puja-2025-schedule" element={<ChhathPuja2025Schedule />} />
+                <Route path="/blog/chhath-puja-preparation-guide" element={<ChhathPujaPreparationGuide />} />
+                <Route path="/blog/chhath-puja-prasad-recipes" element={<ChhathPujaPrasadRecipes />} />
                 {/* SEO Blog Routes */}
                 <Route path="/finance-blog" element={<SEOBlogManager />} />
                 <Route path="/finance-blog/:slug" element={<SEOBlogPost />} />
