@@ -14,6 +14,30 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
 
+# Disallow old pages that return 410 Gone
+Disallow: /hi/
+Disallow: /finance-categories/
+Disallow: /banking/
+Disallow: /loan-tools/
+Disallow: /real-estate/
+Disallow: /real-estate-tools
+Disallow: /cryptocurrency/
+Disallow: /business-tools
+Disallow: /accounting-tools
+Disallow: /payroll-tools
+Disallow: /stock-market/
+Disallow: /financial-education/
+Disallow: /market-analysis/
+Disallow: /excel-templates/
+Disallow: /invoicing-receivables
+Disallow: /invoicing-tools/
+Disallow: /insurance-tools/
+Disallow: /astro-finance-insights
+Disallow: /tools/
+Disallow: /financial-navigator
+Disallow: /loan-app-directory
+Disallow: /amp-*.html
+
 # Allow important pages
 Allow: /blog/
 Disallow: /blog/write
@@ -40,13 +64,13 @@ Allow: /blog/*
 # Allow government schemes
 Allow: /government-schemes/*
 
-# Allow crypto content
+# Allow crypto content (NEW location, not /cryptocurrency/)
 Allow: /crypto/*
 
-# Allow astro finance content
+# Allow astro finance content (NEW location, not /astro-finance-insights)
 Allow: /astro-finance/*
 
-# Allow excel tools
+# Allow excel tools (NEW location, not /excel-templates/)
 Allow: /excel-tools/*
 Allow: /exceltool/*
 

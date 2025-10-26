@@ -1,17 +1,61 @@
 # Netlify Redirects Configuration
-# CRITICAL: Minimal redirects to avoid Google Search Console "Page with redirect" errors
+# Strategy: Return 410 Gone for pages that don't exist, minimal 301 redirects
 
 # HTTP to HTTPS redirect (essential for security)
 http://moneycal.in/*                         https://moneycal.in/:splat               301!
 
-# Specific old URL redirects only (not wildcard)
-/feedback                                    /                                        301
-/help                                        /                                        301
-/payroll-tools                               /                                        301
-/amp-index.html                              /                                        301
-/loan-app-directory.html                     /                                        301
+# Hindi pages - Return 410 Gone (no longer available)
+/hi/*                                        /404                                     410
+
+# Old category pages - Return 410 Gone
+/finance-categories/*                        /404                                     410
+/banking/*                                   /404                                     410
+/loan-tools/*                                /404                                     410
+/real-estate/*                               /404                                     410
+/real-estate-tools                           /404                                     410
+/cryptocurrency/*                            /404                                     410
+/business-tools                              /404                                     410
+/accounting-tools                            /404                                     410
+/payroll-tools                               /404                                     410
+
+# Stock market education pages - 410 Gone
+/stock-market/*                              /404                                     410
+/financial-education/*                       /404                                     410
+/market-analysis/*                           /404                                     410
+
+# Excel templates - 410 Gone (if not serving actual files)
+/excel-templates/*                           /404                                     410
+
+# Invoice/Insurance old URLs - 410 Gone
+/invoicing-receivables                       /404                                     410
+/invoicing-tools/*                           /404                                     410
+/insurance-tools/*                           /404                                     410
+
+# Astro finance old URLs - 410 Gone  
+/astro-finance-insights                      /404                                     410
+
+# Old tool pages - 410 Gone
+/tools/*                                     /404                                     410
+/financial-navigator                         /404                                     410
+/loan-app-directory                          /404                                     410
+/loan-app-directory.html                     /404                                     410
+
+# AMP pages - 410 Gone
+/amp-index.html                              /404                                     410
+/amp-*.html                                  /404                                     410
+
+# Specific redirects to correct calculator pages
 /lcm-hcf-calculator                          /calculators/lcm-hcf-calculator          301
-/fixed-deposit-calculator                    /calculators/savings-account-calculator  301
+/fixed-deposit-calculator                    /calculators/fd-calculator               301
+/calculators/lumpsum-calculator              /calculators/sip-calculator              301
+/calculators/personal-finance                /calculators                             301
+/calculators/banking-calculators             /calculators                             301
+/calculators/business-calculators            /calculators                             301
+/calculators/finance-banking-tools           /calculators                             301
+
+# Old feedback/help pages
+/feedback                                    /contact-us                              301
+/help                                        /help-center                             301
 
 # Catch-all for SPA (must be last, status 200 for client-side routing)
 /*                                           /index.html                              200
