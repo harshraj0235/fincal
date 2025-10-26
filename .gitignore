@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Sitemap backups (auto-generated, no need to commit)
+public/sitemap-backup-*.xml
+sitemap-backup-*.xml
