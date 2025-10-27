@@ -1,50 +1,65 @@
-# Netlify Redirects Configuration
-# Strategy: Return 410 Gone for pages that don't exist, minimal 301 redirects
+# Netlify Redirects Configuration - COMPREHENSIVE FIX for 114 redirect errors
+# Strategy: Eliminate ALL redirects causing Google Search Console errors
 
-# HTTP to HTTPS redirect (essential for security)
+# === FORCE HTTPS (High Priority) ===
+# HTTP to HTTPS redirect (essential, but prevent sitemap inclusion)
 http://moneycal.in/*                         https://moneycal.in/:splat               301!
 
-# Hindi pages - Return 410 Gone (no longer available)
+# === HINDI PAGES - 410 GONE (Complete elimination) ===
 /hi/*                                        /404                                     410
 
-# Old category pages - Return 410 Gone
+# === OLD CATEGORY PAGES - 410 GONE ===
 /finance-categories/*                        /404                                     410
 /banking/*                                   /404                                     410
-/loan-tools/*                                /404                                     410
 /real-estate/*                               /404                                     410
 /real-estate-tools                           /404                                     410
 /cryptocurrency/*                            /404                                     410
+
+# === BUSINESS/TOOL CATEGORIES - 410 GONE ===
 /business-tools                              /404                                     410
 /accounting-tools                            /404                                     410
 /payroll-tools                               /404                                     410
+/loan-tools/*                                /404                                     410
 
-# Stock market education pages - 410 Gone
+# === EDUCATION/MARKET PAGES - 410 GONE ===
 /stock-market/*                              /404                                     410
 /financial-education/*                       /404                                     410
 /market-analysis/*                           /404                                     410
 
-# Excel templates - 410 Gone (if not serving actual files)
+# === EXCEL TEMPLATES - 410 GONE ===
 /excel-templates/*                           /404                                     410
 
-# Invoice/Insurance old URLs - 410 Gone
-/invoicing-receivables                       /404                                     410
+# === INVOICING/INSURANCE - 410 GONE ===
 /invoicing-tools/*                           /404                                     410
 /insurance-tools/*                           /404                                     410
+/invoicing-receivables                       /404                                     410
 
-# Astro finance old URLs - 410 Gone  
+# === ASTRO FINANCE - 410 GONE ===
 /astro-finance-insights                      /404                                     410
+/astro-finance-insights/*                    /404                                     410
+/astro-finance/muhurat-calculator            /404                                     410
+/astro-finance/compatibility-calculator      /404                                     410
+/astro-finance/savings-calculator            /404                                     410
 
-# Old tool pages - 410 Gone
+# === OLD FINANCE TOOLS - 410 GONE ===
+/finance-tools/*                             /404                                     410
+/tax-tools/*                                 /404                                     410
+
+# === GENERAL TOOLS - 410 GONE ===
 /tools/*                                     /404                                     410
 /financial-navigator                         /404                                     410
 /loan-app-directory                          /404                                     410
 /loan-app-directory.html                     /404                                     410
 
-# AMP pages - 410 Gone
+# === AMP PAGES - 410 GONE ===
 /amp-index.html                              /404                                     410
 /amp-*.html                                  /404                                     410
 
-# Specific redirects to correct calculator pages
+# === SPECIFIC PROBLEMATIC URLS - 410 GONE ===
+/calculators/pe-ratio-calculator             /404                                     410
+/calculators/post-office-schemes-calculator  /404                                     410
+
+# === ESSENTIAL 301 REDIRECTS (Minimal, valid moves only) ===
 /lcm-hcf-calculator                          /calculators/lcm-hcf-calculator          301
 /fixed-deposit-calculator                    /calculators/fd-calculator               301
 /calculators/lumpsum-calculator              /calculators/sip-calculator              301
@@ -53,9 +68,9 @@ http://moneycal.in/*                         https://moneycal.in/:splat         
 /calculators/business-calculators            /calculators                             301
 /calculators/finance-banking-tools           /calculators                             301
 
-# Old feedback/help pages
+# === HELP/FEEDBACK REDIRECTS ===
 /feedback                                    /contact-us                              301
 /help                                        /help-center                             301
 
-# Catch-all for SPA (must be last, status 200 for client-side routing)
+# === SPA FALLBACK (Must be last) ===
 /*                                           /index.html                              200

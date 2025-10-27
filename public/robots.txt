@@ -1,7 +1,53 @@
 User-agent: *
 Allow: /
 
-# Sitemaps - Multiple categorized sitemaps for better indexing
+# === COMPREHENSIVE DISALLOW - All 410 Gone paths ===
+# Prevent crawling of URLs that return 410 Gone to eliminate redirect errors
+
+# Hindi pages (complete elimination)
+Disallow: /hi/
+
+# Old category structures (410 Gone)
+Disallow: /finance-categories/
+Disallow: /banking/
+Disallow: /real-estate/
+Disallow: /cryptocurrency/
+
+# Business/Tool categories (410 Gone)
+Disallow: /business-tools
+Disallow: /accounting-tools
+Disallow: /payroll-tools
+Disallow: /loan-tools/
+
+# Education/Market pages (410 Gone)
+Disallow: /stock-market/
+Disallow: /financial-education/
+Disallow: /market-analysis/
+
+# Excel templates (410 Gone)
+Disallow: /excel-templates/
+
+# Old tool paths (410 Gone)
+Disallow: /invoicing-tools/
+Disallow: /insurance-tools/
+Disallow: /finance-tools/
+Disallow: /tax-tools/
+Disallow: /tools/
+
+# AMP pages (410 Gone)
+Disallow: /amp-*.html
+
+# === ALLOW ACTIVE SECTIONS ===
+Allow: /calculators/
+Allow: /blog/
+Allow: /learn/
+Allow: /government-schemes/
+Allow: /exceltool/
+Allow: /festival-tools/
+Allow: /crypto/
+Allow: /astro-finance
+
+# === CLEAN SITEMAPS (Only valid URLs - 1740 clean URLs) ===
 Sitemap: https://moneycal.in/sitemap.xml
 Sitemap: https://moneycal.in/sitemap-calculators.xml
 Sitemap: https://moneycal.in/sitemap-learn.xml
