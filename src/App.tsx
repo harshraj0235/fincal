@@ -31,6 +31,7 @@ const HomeOld = lazy(() => import('./pages/HomeNew'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
+const BlogCategory = lazy(() => import('./pages/BlogCategory'));
 const WriteBlog = lazy(() => import('./pages/WriteBlog'));
 const ChhathPuja2025Schedule = lazy(() => import('./pages/blog/ChhathPuja2025Schedule'));
 const ChhathPujaPreparationGuide = lazy(() => import('./pages/blog/ChhathPujaPreparationGuide'));
@@ -791,6 +792,7 @@ function App() {
                 )}
                 <Route path="/category/:categoryId" element={<CategoryPage />} />
                 <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/category/:category" element={<BlogCategory />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/blog/write" element={<WriteBlog />} />
                 <Route path="/blog/category/banking" element={<BankingKnowledge />} />
