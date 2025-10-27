@@ -29,7 +29,7 @@ const FestivalLanding: React.FC = () => {
         title={`${fest.name} Tools – Budget, Travel, Electricity & More | MoneyCal.in`}
         description={fest.blurb}
         keywords={fest.keywords.join(', ')}
-        url={`/festival-tools/${fest.slug}`}
+        url={`https://moneycal.in/festival-tools/${fest.slug}`}
         type="website"
         image="/images/festival-tools.jpg"
         tags={[fest.slug, 'festival', 'tools']}

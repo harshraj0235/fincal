@@ -895,7 +895,7 @@ const FestivalToolPage: React.FC = () => {
         title={`${tool.seo?.title || tool.name} | ${festival.name} | MoneyCal.in`}
         description={tool.seo?.description || tool.description}
         keywords={(tool.seo?.keywords || [festival.slug, tool.slug, 'festival tool']).join(', ')}
-        url={`/festival-tools/${festival.slug}/${tool.slug}`}
+        url={`https://moneycal.in/festival-tools/${festival.slug}/${tool.slug}`}
         type="website"
         image="/images/festival-tools.jpg"
         tags={[festival.slug, tool.slug]}

@@ -89,8 +89,25 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
     setMeta('geo.country', 'India');
     setMeta('geo.placename', 'India');
 
-    // Canonical URL
-    const canonicalHref = url.startsWith('http') ? url : `https://moneycal.in${url}`;
+    // Enhanced Canonical URL handling
+    let canonicalHref = url.startsWith('http') ? url : `https://moneycal.in${url}`;
+    
+    // Normalize URL to prevent duplicates
+    canonicalHref = canonicalHref
+      .replace(/\/+/g, '/') // Remove multiple slashes
+      .replace(/\?.*$/, '') // Remove query parameters  
+      .replace(/#.*$/, '') // Remove hash fragments
+      .replace(/\/$/, '') // Remove trailing slash except for root
+      .replace('://', '://'); // Fix protocol separator
+    
+    // Ensure it's always https://moneycal.in (no www)
+    canonicalHref = canonicalHref.replace('https://www.moneycal.in', 'https://moneycal.in');
+    
+    // Handle root URL special case
+    if (canonicalHref === 'https://moneycal.in') {
+      canonicalHref = 'https://moneycal.in/';
+    }
+    
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');

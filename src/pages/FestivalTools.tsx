@@ -36,7 +36,7 @@ const FestivalTools: React.FC = () => {
         title="Festival Tools Hub – Budget, Travel, Electricity & More | MoneyCal.in"
         description="Explore festival-wise tools for Diwali, Holi, Navratri, Eid, Christmas, Onam and more. Plan budgets, calculate electricity and travel costs, fasting hours, Zakat, and download PDF reports."
         keywords="festival tools india, diwali budget calculator, fasting hours, zakat calculator, travel cost, electricity cost"
-        url="/festival-tools"
+        url="https://moneycal.in/festival-tools"
         type="website"
         image="/images/festival-tools.jpg"
         tags={["festival", "india", "budget", "travel", "electricity", "fasting", "zakat"]}

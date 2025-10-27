@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import UniversalCanonical from './UniversalCanonical';
 import { Sidebar } from './Sidebar';
 import { useLocation } from 'react-router-dom';
 import CookieConsent from './CookieConsent';
@@ -53,6 +54,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <UniversalCanonical />
       {/* Accessibility: Skip to main content */}
       <a
         href="#main-content"

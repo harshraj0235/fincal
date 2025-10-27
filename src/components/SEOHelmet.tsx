@@ -75,11 +75,28 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
       if (robots) robots.remove();
     }
 
-    // Canonical (fallbacks to current URL if not provided)
+    // Enhanced Canonical URL handling
     {
-      const canonicalHref = url
+      let canonicalHref = url
         ? (url.startsWith('http') ? url : `https://moneycal.in${url}`)
         : window.location.href;
+      
+      // Normalize URL to prevent duplicates
+      canonicalHref = canonicalHref
+        .replace(/\/+/g, '/') // Remove multiple slashes
+        .replace(/\?.*$/, '') // Remove query parameters
+        .replace(/#.*$/, '') // Remove hash fragments
+        .replace(/\/$/, '') // Remove trailing slash except for root
+        .replace('://', '://'); // Fix protocol separator
+
+      // Ensure it's always https://moneycal.in (no www)
+      canonicalHref = canonicalHref.replace('https://www.moneycal.in', 'https://moneycal.in');
+      
+      // Handle root URL special case
+      if (canonicalHref === 'https://moneycal.in') {
+        canonicalHref = 'https://moneycal.in/';
+      }
+      
       let canonical = document.querySelector('link[rel="canonical"]');
       if (!canonical) {
         canonical = document.createElement('link');
@@ -87,6 +104,9 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
         document.head.appendChild(canonical);
       }
       canonical.setAttribute('href', canonicalHref);
+      
+      // Also set og:url to match canonical
+      setMeta('og:url', canonicalHref, 'property');
     }
 
     // Open Graph tags
