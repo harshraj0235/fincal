@@ -150,15 +150,46 @@ const categorizeUrl = (url) => {
   return { category: 'pages', priority: 0.5, changefreq: 'monthly' };
 };
 
+// Patterns to exclude (410 Gone URLs that should never be in sitemaps)
+const EXCLUDE_PATTERNS = [
+  /\/hi\//,
+  /\/tools\//,
+  /\/tax-tools\//,
+  /\/finance-tools\//,
+  /\/stock-market\//,
+  /\/insurance-tools\//,
+  /\/invoicing-tools\//,
+  /\/loan-tools\//,
+  /\/regional-tools\//,
+  /\/religious-tools\//,
+  /\/finance-categories\//,
+  /\/banking\//,
+  /\/real-estate\//,
+  /\/cryptocurrency\//,
+  /\/business-tools/,
+  /\/accounting-tools/,
+  /\/payroll-tools/,
+  /\/financial-education\//,
+  /\/market-analysis\//,
+  /\/excel-templates\//,
+  /\/astro-finance-insights/,
+  /\/financial-navigator/,
+  /\/loan-app-directory/,
+  /\/invoicing-receivables/,
+  /\/excel-tool-builder/,
+  /calculators\/(loan-eligibility|property-calculator|personal-loan-emi-calculator|home-loan-emi-calculator|car-loan-emi-calculator|debt-consolidation-calculator|refinancing-calculator|insurance-calculator|fixed-deposit-calculator|mutual-fund-calculator|EmiCalculator|pe-ratio-calculator|post-office-schemes-calculator)$/
+];
+
 // Read and parse URLs
 const readAllUrls = () => {
   try {
     const content = fs.readFileSync(INPUT_FILE, 'utf-8');
-    const urls = content.split('\n')
-      .map(url => url.trim())
-      .filter(url => url && url.startsWith('http'));
+    const allLines = content.split('\n').map(url => url.trim()).filter(url => url && url.startsWith('http'));
+    const urls = allLines.filter(url => !EXCLUDE_PATTERNS.some(pattern => pattern.test(url)));
     
-    console.log(`📖 Read ${urls.length} URLs from all-urls-extracted.txt`);
+    const excluded = allLines.length - urls.length;
+    console.log(`📖 Read ${urls.length} clean URLs from source file`);
+    console.log(`🗑️ Auto-filtered ${excluded} URLs matching 410 Gone patterns`);
     return urls;
   } catch (error) {
     console.error('❌ Error reading URL file:', error.message);
