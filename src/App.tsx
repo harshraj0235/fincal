@@ -33,6 +33,11 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const BlogCategory = lazy(() => import('./pages/BlogCategory'));
 const WriteBlog = lazy(() => import('./pages/WriteBlog'));
+
+// News Portal Components
+const NewsHomePage = lazy(() => import('./pages/news/NewsHomePage'));
+const NewsCategoryPage = lazy(() => import('./pages/news/NewsCategoryPage'));
+const NewsArticlePage = lazy(() => import('./pages/news/NewsArticlePage'));
 const ChhathPuja2025Schedule = lazy(() => import('./pages/blog/ChhathPuja2025Schedule'));
 const ChhathPujaPreparationGuide = lazy(() => import('./pages/blog/ChhathPujaPreparationGuide'));
 const ChhathPujaPrasadRecipes = lazy(() => import('./pages/blog/ChhathPujaPrasadRecipes'));
@@ -796,6 +801,11 @@ function App() {
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/blog/write" element={<WriteBlog />} />
                 <Route path="/blog/category/banking" element={<BankingKnowledge />} />
+                
+                {/* News Portal Routes */}
+                <Route path="/news" element={<NewsHomePage />} />
+                <Route path="/news/:categorySlug" element={<NewsCategoryPage />} />
+                <Route path="/news/:categorySlug/:articleId" element={<NewsArticlePage />} />
                 {/* Chhath Puja Blog Posts */}
                 <Route path="/blog/chhath-puja-2025-schedule" element={<ChhathPuja2025Schedule />} />
                 <Route path="/blog/chhath-puja-preparation-guide" element={<ChhathPujaPreparationGuide />} />
