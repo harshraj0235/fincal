@@ -67,6 +67,10 @@ http://moneycal.in/*                         https://moneycal.in/:splat         
 /calculators/pe-ratio-calculator             /404                                     410
 /calculators/post-office-schemes-calculator  /404                                     410
 
+# === CASE-SENSITIVITY FIXES (301 redirects for canonical enforcement) ===
+/ExcelTool                                   /exceltool                               301!
+/ExcelTool/*                                 /exceltool/:splat                        301!
+
 # === ESSENTIAL 301 REDIRECTS (Minimal, valid moves only) ===
 /lcm-hcf-calculator                          /calculators/lcm-hcf-calculator          301
 /fixed-deposit-calculator                    /calculators/fd-calculator               301
