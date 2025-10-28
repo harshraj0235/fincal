@@ -893,7 +893,7 @@ function App() {
                 <Route path="/editorial-policy" element={<EditorialPolicy />} />
                 <Route path="/about" element={<Navigate to="/about-us" replace />} />
                 <Route path="/about-us" element={<AboutUs />} />
-                //                 <Route path="/team" element={<TeamPage />} />  // DISABLED
+                {/* <Route path="/team" element={<TeamPage />} /> DISABLED */}
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
                 <Route path="/sitemap" element={<Sitemap />} />
