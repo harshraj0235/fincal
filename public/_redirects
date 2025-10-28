@@ -6,6 +6,7 @@
 http://moneycal.in/*                         https://moneycal.in/:splat               301!
 
 # === HINDI PAGES - 410 GONE (Complete elimination) ===
+# Block ALL Hindi calculator and content pages
 /hi/*                                        /404                                     410
 
 # === OLD CATEGORY PAGES - 410 GONE ===

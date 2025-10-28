@@ -1,7 +1,19 @@
 [[redirects]]
+  from = "/hi/*"
+  to = "/404"
+  status = 410
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/hi/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
   for = "/*"
