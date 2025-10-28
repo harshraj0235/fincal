@@ -95,6 +95,8 @@ const UniversalCanonical: React.FC<UniversalCanonicalProps> = ({
 
     // Enhanced structured data for better content understanding
     const generateStructuredData = () => {
+      const currentPath = location.pathname;
+      
       const baseStructuredData = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -124,19 +126,19 @@ const UniversalCanonical: React.FC<UniversalCanonicalProps> = ({
         }
       };
 
-      // Add page-specific structured data
-      if (cleanPath.includes('/festival-tools/')) {
+      // Add page-specific structured data based on current path
+      if (currentPath.includes('/festival-tools/')) {
         baseStructuredData["@type"] = "SoftwareApplication";
         baseStructuredData["applicationCategory"] = "FinanceApplication";
         baseStructuredData["operatingSystem"] = "Web";
-      } else if (cleanPath.includes('/calculators/')) {
+      } else if (currentPath.includes('/calculators/')) {
         baseStructuredData["@type"] = "SoftwareApplication";
         baseStructuredData["applicationCategory"] = "CalculatorApplication";
         baseStructuredData["operatingSystem"] = "Web";
-      } else if (cleanPath.includes('/government-schemes/')) {
+      } else if (currentPath.includes('/government-schemes/')) {
         baseStructuredData["@type"] = "GovernmentService";
         baseStructuredData["serviceType"] = "Government Scheme Information";
-      } else if (cleanPath.includes('/exceltool/')) {
+      } else if (currentPath.includes('/exceltool/')) {
         baseStructuredData["@type"] = "SoftwareApplication";
         baseStructuredData["applicationCategory"] = "ProductivityApplication";
         baseStructuredData["operatingSystem"] = "Any";
