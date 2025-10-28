@@ -189,3 +189,4 @@ console.log(`📝 Note: Manual content review recommended for E-E-A-T compliance
 console.log(`🔗 External links: RBI.org.in, Income Tax India, GST Portal`);
 console.log(`📅 All calculators now use dynamic dates: ${currentYear}\n`);
 
+

@@ -53,6 +53,7 @@ const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
+const TeamPage = lazy(() => import('./pages/TeamPage'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
 const SitemapXml = lazy(() => import('./pages/SitemapXml').then(m => ({ default: m.SitemapXml })));
 const Disclaimer = lazy(() => import('./pages/Disclaimer'));
@@ -892,6 +893,7 @@ function App() {
                 <Route path="/editorial-policy" element={<EditorialPolicy />} />
                 <Route path="/about" element={<Navigate to="/about-us" replace />} />
                 <Route path="/about-us" element={<AboutUs />} />
+                <Route path="/team" element={<TeamPage />} />
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
                 <Route path="/sitemap" element={<Sitemap />} />
