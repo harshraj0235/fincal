@@ -322,3 +322,4 @@ const BlogCategory: React.FC = () => {
 };
 
 export default BlogCategory;
+

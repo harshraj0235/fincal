@@ -167,3 +167,4 @@ const UniversalCanonical: React.FC<UniversalCanonicalProps> = ({
 };
 
 export default UniversalCanonical;
+
