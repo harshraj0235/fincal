@@ -152,6 +152,8 @@ const categorizeUrl = (url) => {
 
 // Patterns to exclude (410 Gone URLs that should never be in sitemaps)
 const EXCLUDE_PATTERNS = [
+  /#/,  // No hash/anchor URLs in sitemaps
+  /\/$/, // No trailing slashes (except handled separately for root)
   /\/hi\//,
   /\/tools\//,
   /\/tax-tools\//,
@@ -177,6 +179,11 @@ const EXCLUDE_PATTERNS = [
   /\/loan-app-directory/,
   /\/invoicing-receivables/,
   /\/excel-tool-builder/,
+  /\/design-tools/,
+  /\/festival-corporate-tools/,
+  /\/fun-engagement/,
+  /\/local-seo/,
+  /\/seo-tools\//,
   /calculators\/(loan-eligibility|property-calculator|personal-loan-emi-calculator|home-loan-emi-calculator|car-loan-emi-calculator|debt-consolidation-calculator|refinancing-calculator|insurance-calculator|fixed-deposit-calculator|mutual-fund-calculator|EmiCalculator|pe-ratio-calculator|post-office-schemes-calculator)$/
 ];
 

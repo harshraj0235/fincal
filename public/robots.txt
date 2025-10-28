@@ -37,6 +37,15 @@ Disallow: /tools/
 # AMP pages (410 Gone)
 Disallow: /amp-*.html
 
+# Additional deprecated patterns (410 Gone)
+Disallow: /design-tools/
+Disallow: /festival-corporate-tools/
+Disallow: /fun-engagement/
+Disallow: /local-seo
+Disallow: /seo-tools/
+Disallow: /regional-tools/
+Disallow: /religious-tools/
+
 # === ALLOW ACTIVE SECTIONS ===
 Allow: /calculators/
 Allow: /blog/

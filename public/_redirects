@@ -51,6 +51,13 @@ http://moneycal.in/*                         https://moneycal.in/:splat         
 /financial-navigator                         /404                                     410
 /loan-app-directory                          /404                                     410
 /loan-app-directory.html                     /404                                     410
+/design-tools/*                              /404                                     410
+/festival-corporate-tools/*                  /404                                     410
+/fun-engagement/*                            /404                                     410
+/local-seo                                   /404                                     410
+/seo-tools/*                                 /404                                     410
+/regional-tools/*                            /404                                     410
+/religious-tools/*                           /404                                     410
 
 # === AMP PAGES - 410 GONE ===
 /amp-index.html                              /404                                     410
