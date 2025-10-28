@@ -9,7 +9,8 @@ import {
   Target,
   CheckCircle,
   ExternalLink,
-  Calculator
+  Calculator,
+  ArrowRight
 } from 'lucide-react';
 
 /**
