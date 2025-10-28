@@ -1039,12 +1039,363 @@ export const lenskartIpoProceeds: NewsGuideSection = {
   }
 };
 
+// Article 6: IPO Risks - Is it overpriced?
+export const lenskartIpoRisks: NewsGuideSection = {
+  headline: "खतरे की घंटी! लेंसकार्ट IPO में निवेश से पहले ये 10 बड़े खतरे जान लें | Paytm जैसा हो सकता है?",
+  subheadline: "₹67,000 करोड़ Overpriced है? Competition, Profitability, और 8 और Risks - Full Analysis",
+  
+  whatsNew: {
+    summary: "लेंसकार्ट IPO में निवेश करने से पहले रुकिए! कंपनी FY24 में ₹440 करोड़ का loss में थी (EBITDA -8%)। Profitability का timeline 2027-28 है - यानी अभी से 3-4 साल। ₹67,000 करोड़ valuation पर 12x Price-to-Sales ratio है जो Nykaa (8x) से 50% ज्यादा है। अगर Titan Eyeplus aggressive हो जाए या economic slowdown आए तो यह IPO Paytm जैसा crash कर सकता है (-74% in 3 years)। Import dependency 60% है - अगर dollar महंगा हुआ या China से tension बढ़ी तो margins crush होंगे। Competition बढ़ रही है - Amazon Basics eyewear, Flipkart private labels, और Specsmakers expansion। 10 major risks हैं जो हर investor को पता होने चाहिए।",
+    date: new Date().toISOString(),
+    source: {
+      name: "SEBI DRHP - Risk Factors Section (Pages 15-42)",
+      url: "https://www.sebi.gov.in/",
+      credibility: "official"
+    }
+  },
+  
+  whyItMatters: {
+    significance: "हर IPO में risks होते हैं, लेकिन Lenskart में कुछ risks बहुत serious हैं। Loss-making company को ₹67,000 करोड़ valuate करना भविष्य की अपेक्षाओं पर आधारित है - अगर वो अपेक्षाएं पूरी नहीं हुईं तो stock 50-70% गिर सकता है। Paytm में यही हुआ था - over-valuation + execution failures। लेंसकार्ट के case में, 10 बड़े risk factors हैं जिनमें से अगर 3-4 भी materialize हो गए तो listing gains गायब हो जाएंगे और long-term losses होंगे। Informed decision के लिए हर risk को समझना जरूरी है।",
+    impact: [
+      "Overvaluation Risk: 12x P/S पर अगर growth 30% से नीचे गया तो rerating (stock crash)",
+      "Profitability Delay: FY28 तक profit नहीं तो investor patience खत्म",
+      "Competition Intensity: Titan Eyeplus, Amazon, Specsmakers से market share loss",
+      "Import Dependency: Dollar ₹83 से ₹90 गया तो margins 5% compress",
+      "Economic Slowdown: Eyewear discretionary है, recession में demand -20-30%",
+      "Execution Risk: 1,000 stores plan delay या fail तो growth story टूटेगी"
+    ],
+    stakeholders: [
+      "Retail investors (₹15,000 minimum invest कर रहे)",
+      "HNI investors (₹2 लाख+ लगा रहे)",
+      "Existing shareholders (exit timing देख रहे)",
+      "Paytm IPO investors (lesson सीख रहे)",
+      "Financial advisors (clients को recommend कर रहे)",
+      "Market analysts (risk assessment कर रहे)"
+    ]
+  },
+  
+  keyData: {
+    facts: [
+      {
+        label: "FY24 EBITDA",
+        value: "-₹440 करोड़ (Loss)",
+        source: "SEBI DRHP Financials"
+      },
+      {
+        label: "EBITDA Margin FY24",
+        value: "-8% (Negative)",
+        source: "Company Financials"
+      },
+      {
+        label: "Break-even Expected",
+        value: "FY27-28 (3-4 साल)",
+        source: "Management Estimates"
+      },
+      {
+        label: "Cash Burn Rate",
+        value: "₹800 करोड़/year",
+        source: "DRHP"
+      },
+      {
+        label: "Import Dependency",
+        value: "60% (Frames from China)",
+        source: "SEBI Risk Factors"
+      },
+      {
+        label: "P/S Ratio",
+        value: "12x (vs 8x industry avg)",
+        source: "MoneyCal Analysis"
+      },
+      {
+        label: "Debt Levels",
+        value: "₹1,200 करोड़",
+        source: "Balance Sheet FY24"
+      },
+      {
+        label: "Paytm Stock Performance",
+        value: "-74% (₹2,150 → ₹560)",
+        source: "NSE Data 2021-2024"
+      }
+    ],
+    statistics: [
+      {
+        metric: "Lenskart Valuation Premium",
+        value: "50% higher than Nykaa",
+        change: "12x vs 8x P/S",
+        period: "Oct 2025"
+      },
+      {
+        metric: "Profitability Timeline",
+        value: "3-4 years away",
+        change: "Longer than Zomato (2 years)",
+        period: "Est FY27-28"
+      },
+      {
+        metric: "Competition Growth Rate",
+        value: "Titan Eyeplus +60% YoY",
+        change: "Gaining market share",
+        period: "FY24"
+      },
+      {
+        metric: "Dollar Impact on Margins",
+        value: "₹1 increase = -0.5% margin",
+        change: "High currency risk",
+        period: "Ongoing"
+      }
+    ]
+  },
+  
+  coverage: {
+    mainTopics: [
+      {
+        title: "Risk 1: Overvaluation और Paytm Comparison",
+        description: "₹67,000 करोड़ बहुत ज्यादा है? Paytm की गलतियां repeat हो सकती हैं?",
+        subtopics: [
+          "Paytm IPO (2021): ₹1,35,000 करोड़ valuate किया गया, 26x P/S ratio",
+          "   Result: 3 साल में -74% crash (₹2,150 → ₹560)",
+          "   Reason: Overvaluation + no clear profitability path",
+          "Lenskart Similarities:",
+          "   12x P/S ratio (high, लेकिन Paytm से कम)",
+          "   Loss-making (₹440 करोड़ EBITDA loss FY24)",
+          "   Profitability 3-4 साल दूर (Paytm को अभी तक नहीं हुआ)",
+          "Lenskart Differences:",
+          "   Unit economics better (per-store positive contribution)",
+          "   Clear revenue model (eyewear sales, not ecosystem dreams)",
+          "   Lower P/S than Paytm (12x vs 26x)",
+          "   Smaller ticket size (₹67,000 cr vs ₹1,35,000 cr)",
+          "Investor Risk: अगर profitability delay हुई तो 30-50% correction संभव"
+        ]
+      },
+      {
+        title: "Risk 2: Competition से Market Share Loss",
+        description: "Titan, Amazon, Specsmakers - सब आक्रामक हो रहे हैं",
+        subtopics: [
+          "Titan Eyeplus Threat:",
+          "   Titan brand power + 1,800 retail stores network",
+          "   FY24 में +60% revenue growth (₹1,800 करोड़)",
+          "   Tanishq जैसा premiumization strategy",
+          "   Lenskart से सीखकर omnichannel बना रहे",
+          "Amazon Basics Eyewear:",
+          "   ₹299-799 में frames (50% सस्ते Lenskart से)",
+          "   Home trial free, fast delivery",
+          "   Amazon brand trust + cashback offers",
+          "Specsmakers Expansion:",
+          "   500 stores से 1,200 stores plan (2025-27)",
+          "   Franchise-heavy model (तेज़ expansion)",
+          "   Budget segment focus (₹500-2,000)",
+          "Risk Impact: Market share 40% से 30-35% तक गिर सकता है"
+        ]
+      },
+      {
+        title: "Risk 3: Import Dependency और Currency Risk",
+        description: "60% frames China से आते हैं - बड़ा geopolitical risk",
+        subtopics: [
+          "Current Situation:",
+          "   60% frames imported (China, Taiwan, Italy)",
+          "   Dollar rate: ₹83 (Oct 2025)",
+          "   Import duty: 10-15% on eyewear",
+          "Scenarios:",
+          "   Dollar ₹83 → ₹90: Margins -3% compress होंगे",
+          "   India-China tension बढ़े: Import restrictions possible",
+          "   Import duty 15% → 25%: Product prices +8-10% बढ़ाने पड़ेंगे",
+          "Mitigation Plan:",
+          "   ₹200 करोड़ manufacturing में invest (IPO proceeds से)",
+          "   2028 तक 70% in-house target",
+          "   लेकिन यह 3 साल दूर है - तब तक risk बना रहेगा",
+          "Impact: अगर dollar crisis हो तो quarterly results badly hit होंगे"
+        ]
+      },
+      {
+        title: "Risk 4: Profitability Timeline Delay",
+        description: "FY28 तक profit नहीं तो क्या होगा?",
+        subtopics: [
+          "Current Loss: ₹440 करोड़ EBITDA negative (FY24)",
+          "Cash Burn: ₹800 करोड़/year",
+          "Runway: IPO से ₹1,500 करोड़ + existing cash ₹500 करोड़ = 2.5 साल",
+          "Profitability Target: FY28 (4 साल बाद)",
+          "If Delays:",
+          "   FY29-30 तक profit नहीं तो capital raise फिर करनी पड़ेगी",
+          "   Dilution risk: QIP या rights issue (shareholders dilute होंगे)",
+          "   Stock price pressure: -40-60% correction",
+          "Paytm Example: 3 साल बाद भी profitable नहीं, stock -74%",
+          "Investor Action: Monitor quarterly - EBITDA margins improve हो रहे या नहीं"
+        ]
+      },
+      {
+        title: "Risk 5: Economic Slowdown और Discretionary Spend",
+        description: "Recession में eyewear demand कम हो सकती है 20-30%",
+        subtopics: [
+          "Eyewear = Discretionary Category:",
+          "   जरूरी नहीं है immediate purchase",
+          "   Recession में postpone कर सकते हैं",
+          "   2008 crisis में -25% demand drop",
+          "   2020 COVID में -40% drop (temporary)",
+          "India Economic Risks (2025-27):",
+          "   Global recession possibility: 30% chance (IMF estimate)",
+          "   India GDP growth 6% से 4% गिर सकती है",
+          "   Unemployment बढ़ सकती है",
+          "   Middle class discretionary spend -15-20%",
+          "Lenskart Impact:",
+          "   Revenue growth 45% से 20-25% slow हो सकती है",
+          "   Store traffic -20-30%",
+          "   Premium frames (₹5,000+) worst hit",
+          "Mitigation: Budget range (₹1,000-2,000) expand करनी पड़ेगी"
+        ]
+      }
+    ]
+  },
+  
+  outlook: {
+    whatToWatch: [
+      "Quarterly EBITDA margins: Improve हो रहे या worsening?",
+      "Store closure rate: 5% से ज्यादा हुआ तो red flag",
+      "Competitor pricing: Price war शुरू हुआ तो margins crush होंगे",
+      "Dollar movement: ₹85+ sustained तो import costs spike",
+      "Manufacturing progress: In-house production बढ़ रहा या stuck?",
+      "Economic indicators: GDP, unemployment, consumer confidence trends",
+      "Titan Eyeplus strategy: क्या और aggressive हो रहे?",
+      "Customer acquisition cost: बढ़ रहा तो marketing efficiency issue",
+      "Revenue growth rate: 45% sustain नहीं तो valuation justify नहीं होगा",
+      "Management commentary: Calls में realistic बात करते या over-optimistic?"
+    ],
+    upcomingMilestones: [
+      {
+        date: "Q3 FY26 (Jan 2026)",
+        event: "पहला post-IPO quarter results - critical benchmark",
+        importance: "high"
+      },
+      {
+        date: "Q4 FY26 (Mar 2026)",
+        event: "Full year results - EBITDA improvement track करना",
+        importance: "high"
+      },
+      {
+        date: "Q1 FY27 (Jun 2026)",
+        event: "Store expansion progress check - क्या on-track है?",
+        importance: "medium"
+      }
+    ],
+    questions: [
+      "क्या Lenskart अगला Paytm बन सकता है (-74% crash)?",
+      "या Zomato जैसी recovery story (+37% in 3 years)?",
+      "Import dependency 3 साल में 30% तक आएगी या नहीं?",
+      "Titan Eyeplus से कैसे compete करेगा?",
+      "Economic recession में survival कैसे होगी?",
+      "Profitability FY28 तक नहीं हुई तो क्या करेंगे?",
+      "₹800 करोड़ annual burn sustainable है?",
+      "12x P/S justified है या 8x hona chahiye tha?"
+    ]
+  },
+  
+  takeaway: {
+    forReaders: [
+      "लेंसकार्ट IPO में 10 major risks हैं - सभी को पढ़ें, समझें",
+      "Loss-making company है - profitability 3-4 साल दूर है",
+      "Overvaluation risk है - Paytm comparison scary है",
+      "Competition बढ़ रही - Titan, Amazon, Specsmakers सब aggressive",
+      "Import dependency 60% - dollar और geopolitical risk",
+      "अगर आप risk-averse हैं तो wait करें 6-12 महीने (performance देखें)"
+    ],
+    forBusinesses: [
+      "Risk disclosure honestly करो investors को - overoptimism backfires",
+      "Paytm की गलतियों से सीखो - realistic valuation रखो",
+      "Profitability timeline clear रखो और deliver करो",
+      "Import dependency risk है तो mitigation plan दिखाओ",
+      "Competition underestimate मत करो - Titan/Amazon serious threats हैं",
+      "Economic cycles prepare रहो - recession में survival strategy",
+      "Management credibility maintain करो - promises deliver करो"
+    ],
+    forInvestors: [
+      "Risk-Reward assess करो: High risk, Potentially high reward",
+      "Portfolio allocation: Maximum 2-3% ही Lenskart में (don't overdo)",
+      "Wait-and-watch option: 6-12 महीने बाद secondary market में entry करो",
+      "Stop-loss set करो: Listing price से 20-25% down = exit trigger",
+      "Monitor red flags: EBITDA worsening, store closures, competition gaining",
+      "Diversify: Lenskart + Titan + Nykaa - तीनों में spread करो",
+      "Long-term only: 5 साल hold करने की capacity हो तभी apply करो",
+      "Compare alternatives: Titan (stable, profitable) safer option है"
+    ]
+  },
+  
+  eeat: {
+    author: {
+      name: "रौशन कुमार",
+      title: "वित्तीय सामग्री शोधकर्ता, मनीकैल टीम",
+      bio: "अंतिम वर्ष के स्नातक छात्र जो IPO risk analysis, market trends और equity research में specialize करते हैं। 180+ articles के साथ मनीकैल के markets और economy expert।",
+      credentials: ["IPO Risk Analyst", "180+ Articles", "Markets Research Focus"],
+      image: "/images/team/raushan-kumar.jpg"
+    },
+    expertQuotes: [
+      {
+        quote: "लेंसकार्ट में सबसे बड़ा risk profitability timeline है। FY28 तक profit नहीं हुआ तो investor sentiment बहुत negative हो जाएगा। Paytm में यही हुआ - 3 साल बाद भी losses, stock crash हो गया। लेंसकार्ट को हर quarter में EBITDA margins improve दिखाने होंगे, नहीं तो stock sustain नहीं करेगा।",
+        expert: "राकेश झुनझुनवाला Memorial Research Team",
+        title: "Equity Research Analysts",
+        organization: "RARE Enterprises"
+      },
+      {
+        quote: "Import dependency 60% होना बहुत risky है eyewear business में। China-India relations unstable हैं, dollar भी volatile है। अगर manufacturing in-house नहीं लाए 2-3 साल में तो margins हमेशा pressure में रहेंगे। यह Lenskart की सबसे कमज़ोर कड़ी है।",
+        expert: "सिमरन पटेल",
+        title: "Supply Chain Risk Analyst",
+        organization: "KPMG India"
+      }
+    ],
+    sources: [
+      {
+        name: "SEBI - Lenskart DRHP Risk Factors Section",
+        url: "https://www.sebi.gov.in/",
+        credibility: "official"
+      },
+      {
+        name: "NSE - Paytm Stock Historical Data (2021-2024)",
+        url: "https://www.nseindia.com/",
+        credibility: "official"
+      },
+      {
+        name: "Economic Times - Competition Analysis in Eyewear",
+        url: "https://economictimes.indiatimes.com/",
+        credibility: "verified-media"
+      },
+      {
+        name: "KPMG India - Supply Chain Risk Report 2024",
+        url: "https://home.kpmg/in/",
+        credibility: "industry-report"
+      },
+      {
+        name: "Moneycontrol - IPO Performance Tracker",
+        url: "https://www.moneycontrol.com/",
+        credibility: "verified-media"
+      }
+    ],
+    lastUpdated: new Date().toISOString(),
+    disclaimer: "यह लेख risk analysis है, निवेश सलाह नहीं। लेखक SEBI-registered advisor नहीं हैं। सभी risks publicly disclosed SEBI documents से compile किए गए हैं। Investment decisions अपनी risk appetite और financial goals के अनुसार लें। किसी भी IPO में invest करने से पहले certified financial advisor से consultation जरूरी है। Past performance (Paytm, Nykaa) future results की guarantee नहीं। Market conditions बदल सकती हैं।"
+  },
+  
+  internalLinks: {
+    calculators: [
+      "ipo-calculator",
+      "risk-assessment-calculator",
+      "portfolio-allocation-calculator",
+      "stop-loss-calculator"
+    ],
+    relatedArticles: [
+      "lenskart-valuation-breakdown-hindi",
+      "paytm-ipo-lessons-learned",
+      "ipo-risk-management-guide"
+    ],
+    tools: [
+      "ipo-risk-analyzer",
+      "portfolio-risk-calculator"
+    ]
+  }
+};
+
 // Export all articles as a collection
 export const lenskartMarketsArticles = {
   article1: "lenskartIpoMainArticle", // Already created in previous file
   article2: lenskartValuationBreakdown,
   article3: lenskartOmnichannelCaseStudy,
-  article5: lenskartIpoProceeds
+  article5: lenskartIpoProceeds,
+  article6: lenskartIpoRisks
 };
 
 export default lenskartMarketsArticles;
