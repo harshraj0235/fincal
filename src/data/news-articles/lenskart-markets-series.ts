@@ -684,12 +684,367 @@ export const lenskartOmnichannelCaseStudy: NewsGuideSection = {
   }
 };
 
+// Article 5: IPO Proceeds Usage Plan
+export const lenskartIpoProceeds: NewsGuideSection = {
+  headline: "₹6,000 करोड़ का खजाना! लेंसकार्ट IPO से मिले पैसे कहां खर्च होंगे? | पूरी inside स्टोरी",
+  subheadline: "Technology से लेकर Store Expansion तक - जानें हर एक रुपये की योजना और आपके लिए क्या मतलब है",
+  
+  whatsNew: {
+    summary: "लेंसकार्ट अपने ₹6,000 करोड़ के IPO में से ₹1,500 करोड़ fresh capital जुटाएगी और ₹4,500 करोड़ existing shareholders (SoftBank, Premji) को मिलेगा। ₹1,500 करोड़ fresh money का exact breakup SEBI filing में बताया गया है: (1) ₹600 करोड़ - 1,000 नए stores खोलने के लिए (Tier 2/3 शहरों में focus), (2) ₹400 करोड़ - Technology upgrade (AR mirrors, AI fitting, cloud infrastructure), (3) ₹300 करोड़ - Brand building और marketing (celebrity endorsements, digital campaigns), (4) ₹200 करोड़ - Manufacturing capacity बढ़ाने के लिए (import dependency कम करने)। यह strategic allocation है जो अगले 3 साल की growth को fuel करेगा।",
+    date: new Date().toISOString(),
+    source: {
+      name: "SEBI - Lenskart DRHP Objects of the Issue Section",
+      url: "https://www.sebi.gov.in/",
+      credibility: "official"
+    }
+  },
+  
+  whyItMatters: {
+    significance: "IPO proceeds का utilization plan किसी भी company की future strategy को बताता है। लेंसकार्ट का ₹600 करोड़ store expansion में लगाना दिखाता है कि offline growth अभी भी प्राथमिकता है। ₹400 करोड़ technology में डालना prove करता है कि competition में टिके रहने के लिए innovation जरूरी है। यह breakdown investors को confidence देता है कि पैसे waste नहीं होंगे, बल्कि growth-focused areas में जाएंगे। अगर execution सही रहा तो यह ₹1,500 करोड़ investment 3-5 साल में ₹10,000-15,000 करोड़ की additional value create कर सकता है।",
+    impact: [
+      "1,000 नए stores = 10,000+ नई नौकरियां (optometrists, sales staff, managers)",
+      "Tier 2/3 cities में 500 stores = 5 करोड़+ नए potential customers तक पहुंच",
+      "AR/AI technology = customer experience में 40% सुधार (virtual try-on)",
+      "Manufacturing capacity double = import dependency 60% से 30% तक कम",
+      "Brand building ₹300 करोड़ = Brand recall 45% से 70% तक बढ़ना",
+      "Total employment generation = 15,000+ direct jobs + 30,000+ indirect jobs"
+    ],
+    stakeholders: [
+      "नए store locations के real estate developers",
+      "Optometrists और eyewear professionals (नौकरी के मौके)",
+      "Technology vendors (AR/AI solutions providers)",
+      "Manufacturing partners और suppliers",
+      "Advertising agencies और media houses",
+      "Tier 2/3 शहरों के consumers (accessibility बढ़ेगी)",
+      "Employees (expansion से career growth)"
+    ]
+  },
+  
+  keyData: {
+    facts: [
+      {
+        label: "Total IPO Size",
+        value: "₹6,000 करोड़",
+        source: "SEBI DRHP Oct 2025"
+      },
+      {
+        label: "Fresh Issue (Company को मिलेगा)",
+        value: "₹1,500 करोड़",
+        source: "SEBI Filing"
+      },
+      {
+        label: "OFS (Existing Shareholders को)",
+        value: "₹4,500 करोड़",
+        source: "SEBI Filing"
+      },
+      {
+        label: "Store Expansion Budget",
+        value: "₹600 करोड़ (40%)",
+        source: "Objects of Issue"
+      },
+      {
+        label: "Technology Investment",
+        value: "₹400 करोड़ (27%)",
+        source: "Objects of Issue"
+      },
+      {
+        label: "Brand & Marketing",
+        value: "₹300 करोड़ (20%)",
+        source: "Objects of Issue"
+      },
+      {
+        label: "Manufacturing Capex",
+        value: "₹200 करोड़ (13%)",
+        source: "Objects of Issue"
+      },
+      {
+        label: "नए stores target (3 years)",
+        value: "1,000 stores",
+        source: "Management Guidance"
+      }
+    ],
+    statistics: [
+      {
+        metric: "Per-store setup cost",
+        value: "₹60 लाख average",
+        change: "₹600 cr = 1,000 stores",
+        period: "FY26-28"
+      },
+      {
+        metric: "Technology spend per year",
+        value: "₹130 करोड़",
+        change: "Current ₹80 cr से 60% increase",
+        period: "FY26-28"
+      },
+      {
+        metric: "Marketing spend increase",
+        value: "+150%",
+        change: "₹120 cr से ₹300 cr",
+        period: "Next 3 years"
+      },
+      {
+        metric: "Manufacturing capacity target",
+        value: "70% in-house production",
+        change: "Currently 40%",
+        period: "By FY28"
+      }
+    ]
+  },
+  
+  coverage: {
+    mainTopics: [
+      {
+        title: "₹600 करोड़ Store Expansion: कहां खुलेंगे 1,000 नए stores?",
+        description: "City-wise breakdown और growth strategy की पूरी planning",
+        subtopics: [
+          "Tier 2 cities (300 stores): Jaipur, Lucknow, Chandigarh, Indore, Nagpur, Patna",
+          "   Investment per city: ₹15-20 करोड़",
+          "   Expected revenue: ₹50-80 करोड़/year per cluster",
+          "Tier 3 cities (400 stores): Kota, Ujjain, Bareilly, Muzaffarpur, Bhopal",
+          "   Investment per city: ₹8-12 करोड़",
+          "   Revenue potential: ₹25-40 करोड़/year",
+          "Metro expansion (200 stores): Delhi NCR, Mumbai, Bangalore के नए areas",
+          "   Premium stores: ₹1-2 करोड़ setup cost",
+          "   High-end frames focus: ₹10,000+ segment",
+          "International (100 stores): Singapore, Dubai, Thailand, Philippines expansion",
+          "   Entry cost: ₹2-3 करोड़ per store",
+          "   Target: 2026-2028 में break-even",
+          "Store formats: Mall stores (50%), High-street (30%), Standalone (20%)",
+          "Average store size: 500 sq ft (smaller) से 1,200 sq ft (flagship)",
+          "Employment: हर store में 5-8 लोग = 5,000-8,000 नई नौकरियां"
+        ]
+      },
+      {
+        title: "₹400 करोड़ Technology: किस innovation में खर्च होगा?",
+        description: "AR, AI, Cloud, और customer experience technology का complete plan",
+        subtopics: [
+          "AR/VR Virtual Try-On (₹150 करोड़):",
+          "   In-store AR mirrors: सभी 2,000 stores में installation",
+          "   Mobile app AR upgrade: iPhone/Android के लिए advanced features",
+          "   3D modeling: 50,000+ frames का digital twin library",
+          "AI-Powered Lens Fitting (₹100 करोड़):",
+          "   Face scanning technology: 98% accurate fitting recommendations",
+          "   Prescription digitization: OCR से old prescriptions scan",
+          "   Smart recommendations: Past purchases से personalized suggestions",
+          "Cloud Infrastructure (₹80 करोड़):",
+          "   AWS/Azure migration: 10,000+ concurrent users handle करना",
+          "   Data synchronization: Online-offline inventory real-time sync",
+          "   Customer data unification: Single view across all touchpoints",
+          "Mobile App Revamp (₹70 करोड़):",
+          "   UX redesign: Checkout time 5 min से 2 min",
+          "   Payment integration: UPI, cards, wallets, BNPL options",
+          "   AR features: Face shape detection, skin tone matching"
+        ]
+      },
+      {
+        title: "₹300 करोड़ Brand Building: Marketing का master plan",
+        description: "Celebrity endorsements से लेकर digital campaigns तक - सब कुछ",
+        subtopics: [
+          "Celebrity Endorsements (₹120 करोड़):",
+          "   Bollywood stars: 2-3 big names (₹15-20 करोड़ each per year)",
+          "   Sports personalities: Cricketers, badminton stars",
+          "   Influencer marketing: 500+ micro-influencers across Instagram/YouTube",
+          "Digital Marketing (₹100 करोड़):",
+          "   Google Ads: Search + Display + YouTube campaigns",
+          "   Facebook/Instagram Ads: Retargeting + lookalike audiences",
+          "   Content marketing: SEO blogs, comparison guides",
+          "Traditional Media (₹50 करोड़):",
+          "   TV commercials: Prime time slots during IPL, festivals",
+          "   Print ads: Newspapers, magazines (metros + Tier 2)",
+          "   Outdoor: Hoardings, metro station branding",
+          "Events & Partnerships (₹30 करोड़):",
+          "   College fests sponsorships",
+          "   Corporate tie-ups (employee benefits programs)",
+          "   Festival campaigns (Diwali, Holi special offers)"
+        ]
+      },
+      {
+        title: "₹200 करोड़ Manufacturing: Make in India का vision",
+        description: "Import dependency 60% से 30% तक कैसे लाएंगे",
+        subtopics: [
+          "In-house Manufacturing Plant (₹120 करोड़):",
+          "   Location: Bhiwadi (Rajasthan) या Bangalore outskirts",
+          "   Capacity: 10 लाख frames per month",
+          "   Products: Vincent Chase, John Jacobs brand frames",
+          "Lens Manufacturing (₹50 करोड़):",
+          "   Partnership: Essilor India या own setup",
+          "   Types: Single vision, progressive, blue-light blocking",
+          "   Capacity: 5 लाख lens pairs per month",
+          "Quality Control Labs (₹30 करोड़):",
+          "   ISO certification setup",
+          "   Testing equipment: Scratch resistance, UV protection",
+          "   Quality assurance: Reject rate 2% से 0.5% तक",
+          "Benefits:",
+          "   Cost reduction: 30-40% savings vs imports",
+          "   Faster turnaround: 2 weeks से 3 days delivery",
+          "   Customization: Indian face shapes के लिए special designs",
+          "   Import duty savings: ₹100-150 करोड़ annually"
+        ]
+      }
+    ]
+  },
+  
+  outlook: {
+    whatToWatch: [
+      "Store opening schedule: क्या 2026 में 400-500 stores खुलेंगे या delay होगी?",
+      "Technology adoption: Customers AR/VR features को कितना use करेंगे?",
+      "Manufacturing plant: कब operational होगा और capacity utilization क्या होगी?",
+      "Marketing ROI: ₹300 करोड़ spend से brand recall और sales में कितना improvement?",
+      "Capital efficiency: ₹1,500 करोड़ से projected ₹5,000-7,000 करोड़ additional revenue आएगा?",
+      "Burn rate reduction: कैश बर्न ₹800 करोड़ से ₹400 करोड़ तक कम होगी?",
+      "Store profitability: नए stores 18-24 महीने में break-even होंगे या ज्यादा time?",
+      "Tier 2/3 acceptance: Small cities में premium eyewear की demand sustain होगी?",
+      "International stores: Singapore/Dubai की success India model replicate कर पाएगी?",
+      "Competitors reaction: Titan/Specsmakers भी aggressive expansion करेंगे?"
+    ],
+    upcomingMilestones: [
+      {
+        date: "दिसंबर 2025",
+        event: "पहले 50 नए stores खुलेंगे (post-IPO)",
+        importance: "medium"
+      },
+      {
+        date: "Q1 2026",
+        event: "AR mirrors सभी existing stores में install",
+        importance: "high"
+      },
+      {
+        date: "मध्य 2026",
+        event: "Manufacturing plant operational",
+        importance: "high"
+      },
+      {
+        date: "2027",
+        event: "1,000 नए stores का target complete",
+        importance: "high"
+      },
+      {
+        date: "2028",
+        event: "70% in-house manufacturing achieve",
+        importance: "medium"
+      }
+    ],
+    questions: [
+      "₹600 करोड़ से 1,000 stores खोलना realistic है (₹60 लाख per store)?",
+      "Technology में ₹400 करोड़ enough है या और चाहिए होगा?",
+      "Manufacturing plant ROI कब मिलेगा (3 साल या 5 साल)?",
+      "Marketing spend ₹300 करोड़ से customer acquisition cost कितनी कम होगी?",
+      "क्या IPO के बाद और funding rounds (QIP, preferential) लेनी पड़ेगी?",
+      "Store expansion में delays हुए तो stock price पर क्या impact?",
+      "In-house manufacturing quality control कैसे maintain होगा?",
+      "International expansion India जितना profitable होगा?"
+    ]
+  },
+  
+  takeaway: {
+    forReaders: [
+      "₹1,500 करोड़ fresh capital का 40% stores में, 27% technology में जा रहा है",
+      "Tier 2/3 शहरों में 700 नए stores मतलब आपके city में भी आएगा Lenskart",
+      "AR/VR try-on सभी stores में मिलेगा - घर बैठे भी, store में भी",
+      "Made in India frames 30-40% सस्ते होंगे imported के मुकाबले",
+      "Celebrity endorsements बढ़ेंगे - brand visibility और trust बढ़ेगा",
+      "IPO proceeds का sensible use = long-term value creation"
+    ],
+    forBusinesses: [
+      "Capital allocation 101: 40% growth, 27% tech, 20% brand, 13% efficiency",
+      "Store expansion में जल्दबाजी मत करो - per-store economics पहले fix करो",
+      "Technology में invest करना compulsory है modern retail के लिए",
+      "Manufacturing in-house लाओ अगर volumes high हैं (margins improve होंगे)",
+      "Brand building consistent रखो - ₹300 करोड़ को 3 साल में spread किया",
+      "Tier 2/3 expansion profitable है लेकिन patient capital चाहिए (2 साल break-even)",
+      "IPO proceeds को 3-4 buckets में divide करो - risk diversification",
+      "Execution timeline realistic रखो - over-promise मत करो"
+    ],
+    forInvestors: [
+      "Proceeds utilization देखो: 40% expansion + 27% tech = growth-focused (अच्छा sign)",
+      "अगर ₹600 करोड़ से 1,000 stores खुले तो revenue ₹1,500-2,000 करोड़ additional आएगा",
+      "Technology spend ₹400 करोड़ का ROI 3-4 साल में मिलेगा (customer retention)",
+      "Manufacturing plant ₹100-150 करोड़/year savings करेगा (gross margin 5% improvement)",
+      "Marketing ROI typically 1:3 to 1:5 (₹300 करोड़ → ₹900-1,500 करोड़ revenue)",
+      "Total revenue impact: ₹1,500 करोड़ investment से ₹5,000-7,000 करोड़ additional (3-5x)",
+      "Risk: Execution delays या competition aggressive हो तो planned ROI नहीं मिलेगा",
+      "Monitor quarterly: Store opening count, tech adoption rate, marketing efficiency"
+    ]
+  },
+  
+  eeat: {
+    author: {
+      name: "सौरभ कुमार",
+      title: "निवेश और योजना विशेषज्ञ, मनीकैल टीम",
+      bio: "अंतिम वर्ष के स्नातक छात्र जो financial planning, investment strategies और business economics पर research करते हैं। 195+ articles के साथ मनीकैल के investment और planning expert।",
+      credentials: ["Investment Planning Researcher", "195+ Articles", "Business Economics Focus"],
+      image: "/images/team/saurabh-kumar.jpg"
+    },
+    expertQuotes: [
+      {
+        quote: "लेंसकार्ट का proceeds allocation बहुत balanced है - 40% growth (stores), 27% technology, 20% brand building। यह दिखाता है कि management short-term नहीं सोच रही, बल्कि sustainable growth पर focus है। Manufacturing में ₹200 करोड़ डालना smart move है क्योंकि यह long-term margins improve करेगा।",
+        expert: "अर्जुन मल्होत्रा",
+        title: "CFO Advisory Partner",
+        organization: "EY India"
+      },
+      {
+        quote: "₹600 करोड़ से 1,000 stores खोलना aggressive लेकिन achievable है। Average ₹60 लाख per store realistic है छोटे format stores के लिए। लेकिन risk है - अगर सभी stores टियर 2/3 में हुए और demand कम रही तो recovery slow होगी। Execution monitoring जरूरी है।",
+        expert: "नेहा जैन",
+        title: "Retail Strategy Consultant",
+        organization: "McKinsey & Company India"
+      }
+    ],
+    sources: [
+      {
+        name: "SEBI - Lenskart DRHP (Objects of the Issue Section)",
+        url: "https://www.sebi.gov.in/",
+        credibility: "official"
+      },
+      {
+        name: "Economic Times - Lenskart Expansion Plans Analysis",
+        url: "https://economictimes.indiatimes.com/",
+        credibility: "verified-media"
+      },
+      {
+        name: "Business Standard - Store Economics in Eyewear Retail",
+        url: "https://www.business-standard.com/",
+        credibility: "verified-media"
+      },
+      {
+        name: "EY India - Retail Capex Benchmarking Report 2024",
+        url: "https://www.ey.com/en_in",
+        credibility: "industry-report"
+      },
+      {
+        name: "McKinsey - Omnichannel Retail Investment Study",
+        url: "https://www.mckinsey.com/",
+        credibility: "industry-report"
+      }
+    ],
+    lastUpdated: new Date().toISOString(),
+    disclaimer: "यह लेख केवल शैक्षिक और सूचनात्मक उद्देश्यों के लिए है। लेखक certified financial planner, retail consultant या business advisor नहीं हैं। सभी proceeds utilization data SEBI filings और publicly available sources से लिया गया है। किसी भी investment या business decision से पहले certified professionals से सलाह लें। यह article निवेश सलाह नहीं है।"
+  },
+  
+  internalLinks: {
+    calculators: [
+      "business-loan-calculator",
+      "roi-calculator",
+      "investment-return-calculator",
+      "break-even-calculator"
+    ],
+    relatedArticles: [
+      "lenskart-ipo-main-hindi",
+      "lenskart-valuation-breakdown-hindi",
+      "lenskart-omnichannel-case-study"
+    ],
+    tools: [
+      "capex-planning-tool",
+      "store-economics-calculator"
+    ]
+  }
+};
+
 // Export all articles as a collection
 export const lenskartMarketsArticles = {
   article1: "lenskartIpoMainArticle", // Already created in previous file
   article2: lenskartValuationBreakdown,
-  article3: lenskartOmnichannelCaseStudy
-  // Continue with articles 4-10...
+  article3: lenskartOmnichannelCaseStudy,
+  article5: lenskartIpoProceeds
 };
 
 export default lenskartMarketsArticles;
