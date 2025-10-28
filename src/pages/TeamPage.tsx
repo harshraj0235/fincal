@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Mail, 
@@ -18,7 +18,7 @@ const TeamPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
       <SEOHelmet
-        title="Meet Our Team - MoneyCal Research Writers | मनीकैल टीम"
+        title="Meet Our Team - MoneyCal Research Writers | à¤®à¤¨à¥€à¤•à¥ˆà¤² à¤Ÿà¥€à¤®"
         description="Get to know the passionate research team behind MoneyCal.in. Final year graduation students dedicated to providing well-researched financial content for Indian readers."
         keywords="moneycal team, financial writers india, finance research team, harsh raj, raushan kumar, vikram kumar, saurabh kumar"
         url="/team"
@@ -34,7 +34,7 @@ const TeamPage: React.FC = () => {
                 Meet Our Team
               </h1>
             </div>
-            <p className="text-xl text-white/90 mb-2">मनीकैल रिसर्च टीम से मिलें</p>
+            <p className="text-xl text-white/90 mb-2">à¤®à¤¨à¥€à¤•à¥ˆà¤² à¤°à¤¿à¤¸à¤°à¥à¤š à¤Ÿà¥€à¤® à¤¸à¥‡ à¤®à¤¿à¤²à¥‡à¤‚</p>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
               Passionate final-year graduation students committed to providing well-researched, 
               accurate financial content for Indian readers. We love finance and share our knowledge 
@@ -117,7 +117,7 @@ const TeamPage: React.FC = () => {
                   <div className={`mb-6 p-4 border-l-4 ${colorScheme.border} bg-gradient-to-r from-neutral-50 to-white rounded-r-lg`}>
                     <div className="flex items-center gap-2 mb-2">
                       <Award className="h-5 w-5 text-primary-600" />
-                      <span className="text-base font-bold text-neutral-900">शिक्षा / Education:</span>
+                      <span className="text-base font-bold text-neutral-900">à¤¶à¤¿à¤•à¥à¤·à¤¾ / Education:</span>
                     </div>
                     <p className="text-neutral-900 font-semibold text-base">{member.education}</p>
                     <p className="text-neutral-700 text-sm mt-1">{member.educationHindi}</p>
@@ -125,14 +125,14 @@ const TeamPage: React.FC = () => {
 
                   {/* Bio - Improved Readability */}
                   <div className="mb-6">
-                    <h3 className="text-base font-bold text-neutral-900 mb-3">About / परिचय:</h3>
+                    <h3 className="text-base font-bold text-neutral-900 mb-3">About / à¤ªà¤°à¤¿à¤šà¤¯:</h3>
                     <p className="text-neutral-800 text-base leading-relaxed mb-3">{member.bio}</p>
                     <p className="text-neutral-700 text-sm leading-relaxed">{member.bioHindi}</p>
                   </div>
 
                   {/* Expertise Tags - Colorful */}
                   <div className="mb-6">
-                    <h3 className="text-base font-bold text-neutral-900 mb-3">विशेषज्ञता / Expertise:</h3>
+                    <h3 className="text-base font-bold text-neutral-900 mb-3">à¤µà¤¿à¤¶à¥‡à¤·à¤œà¥à¤žà¤¤à¤¾ / Expertise:</h3>
                     <div className="flex flex-wrap gap-2">
                       {member.expertise.map((exp, index) => (
                         <span 
@@ -160,21 +160,21 @@ const TeamPage: React.FC = () => {
                     <div className={`text-center p-4 bg-gradient-to-br from-primary-50 to-blue-50 rounded-xl border ${colorScheme.border}`}>
                       <div className="text-3xl font-bold text-primary-600">{member.articlesCount}</div>
                       <div className="text-sm text-neutral-700 font-medium">Articles Published</div>
-                      <div className="text-xs text-neutral-600">प्रकाशित लेख</div>
+                      <div className="text-xs text-neutral-600">à¤ªà¥à¤°à¤•à¤¾à¤¶à¤¿à¤¤ à¤²à¥‡à¤–</div>
                     </div>
                     <div className={`text-center p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border ${colorScheme.border}`}>
                       <div className="text-3xl font-bold text-green-600">
                         {new Date().getFullYear() - new Date(member.joinedDate).getFullYear()}+
                       </div>
                       <div className="text-sm text-neutral-700 font-medium">Years Experience</div>
-                      <div className="text-xs text-neutral-600">वर्षों का अनुभव</div>
+                      <div className="text-xs text-neutral-600">à¤µà¤°à¥à¤·à¥‹à¤‚ à¤•à¤¾ à¤…à¤¨à¥à¤­à¤µ</div>
                     </div>
                   </div>
 
                   {/* Social Links - Enhanced */}
                   {Object.keys(member.socialProfiles).length > 0 && (
                     <div className="border-t pt-5">
-                      <h3 className="text-base font-bold text-neutral-900 mb-3">Connect / जुड़ें:</h3>
+                      <h3 className="text-base font-bold text-neutral-900 mb-3">Connect / à¤œà¥à¤¡à¤¼à¥‡à¤‚:</h3>
                       <div className="flex gap-3">
                         {member.socialProfiles.facebook && (
                           <a
@@ -236,7 +236,7 @@ const TeamPage: React.FC = () => {
                       </svg>
                       <span className="text-sm font-semibold">Verified Team Member</span>
                     </div>
-                    <p className="text-xs text-green-600 mt-1">सत्यापित टीम सदस्य - मनीकैल की आधिकारिक टीम का हिस्सा</p>
+                    <p className="text-xs text-green-600 mt-1">à¤¸à¤¤à¥à¤¯à¤¾à¤ªà¤¿à¤¤ à¤Ÿà¥€à¤® à¤¸à¤¦à¤¸à¥à¤¯ - à¤®à¤¨à¥€à¤•à¥ˆà¤² à¤•à¥€ à¤†à¤§à¤¿à¤•à¤¾à¤°à¤¿à¤• à¤Ÿà¥€à¤® à¤•à¤¾ à¤¹à¤¿à¤¸à¥à¤¸à¤¾</p>
                   </div>
                 </div>
               </div>
@@ -249,7 +249,7 @@ const TeamPage: React.FC = () => {
       <div className="bg-yellow-50 border-t border-yellow-200 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-neutral-900 mb-4 text-center">
-            📢 Important Disclaimer | महत्वपूर्ण अस्वीकरण
+            ðŸ“¢ Important Disclaimer | à¤®à¤¹à¤¤à¥à¤µà¤ªà¥‚à¤°à¥à¤£ à¤…à¤¸à¥à¤µà¥€à¤•à¤°à¤£
           </h2>
           <div className="prose prose-sm max-w-none text-neutral-700">
             <p className="mb-3">
@@ -261,12 +261,12 @@ const TeamPage: React.FC = () => {
               before making any investment or financial decisions.
             </p>
             <p>
-              <strong>हिंदी:</strong> सभी मनीकैल टीम सदस्य अंतिम वर्ष के स्नातक छात्र हैं जो वित्तीय शोध 
-              और सामग्री निर्माण के प्रति जुनूनी हैं। हमारे किसी भी लेखक SEBI-पंजीकृत वित्तीय सलाहकार, 
-              प्रमाणित वित्तीय योजनाकार (CFP), या चार्टर्ड अकाउंटेंट (CA) नहीं हैं। मनीकैल.इन पर प्रकाशित 
-              सभी सामग्री आधिकारिक स्रोतों से गहन शोध पर आधारित है लेकिन केवल शैक्षिक और सूचनात्मक 
-              उद्देश्यों के लिए उपयोग की जानी चाहिए। हम दृढ़ता से अनुशंसा करते हैं कि किसी भी निवेश या 
-              वित्तीय निर्णय लेने से पहले प्रमाणित वित्तीय पेशेवरों से परामर्श लें।
+              <strong>à¤¹à¤¿à¤‚à¤¦à¥€:</strong> à¤¸à¤­à¥€ à¤®à¤¨à¥€à¤•à¥ˆà¤² à¤Ÿà¥€à¤® à¤¸à¤¦à¤¸à¥à¤¯ à¤…à¤‚à¤¤à¤¿à¤® à¤µà¤°à¥à¤· à¤•à¥‡ à¤¸à¥à¤¨à¤¾à¤¤à¤• à¤›à¤¾à¤¤à¥à¤° à¤¹à¥ˆà¤‚ à¤œà¥‹ à¤µà¤¿à¤¤à¥à¤¤à¥€à¤¯ à¤¶à¥‹à¤§ 
+              à¤”à¤° à¤¸à¤¾à¤®à¤—à¥à¤°à¥€ à¤¨à¤¿à¤°à¥à¤®à¤¾à¤£ à¤•à¥‡ à¤ªà¥à¤°à¤¤à¤¿ à¤œà¥à¤¨à¥‚à¤¨à¥€ à¤¹à¥ˆà¤‚à¥¤ à¤¹à¤®à¤¾à¤°à¥‡ à¤•à¤¿à¤¸à¥€ à¤­à¥€ à¤²à¥‡à¤–à¤• SEBI-à¤ªà¤‚à¤œà¥€à¤•à¥ƒà¤¤ à¤µà¤¿à¤¤à¥à¤¤à¥€à¤¯ à¤¸à¤²à¤¾à¤¹à¤•à¤¾à¤°, 
+              à¤ªà¥à¤°à¤®à¤¾à¤£à¤¿à¤¤ à¤µà¤¿à¤¤à¥à¤¤à¥€à¤¯ à¤¯à¥‹à¤œà¤¨à¤¾à¤•à¤¾à¤° (CFP), à¤¯à¤¾ à¤šà¤¾à¤°à¥à¤Ÿà¤°à¥à¤¡ à¤…à¤•à¤¾à¤‰à¤‚à¤Ÿà¥‡à¤‚à¤Ÿ (CA) à¤¨à¤¹à¥€à¤‚ à¤¹à¥ˆà¤‚à¥¤ à¤®à¤¨à¥€à¤•à¥ˆà¤².à¤‡à¤¨ à¤ªà¤° à¤ªà¥à¤°à¤•à¤¾à¤¶à¤¿à¤¤ 
+              à¤¸à¤­à¥€ à¤¸à¤¾à¤®à¤—à¥à¤°à¥€ à¤†à¤§à¤¿à¤•à¤¾à¤°à¤¿à¤• à¤¸à¥à¤°à¥‹à¤¤à¥‹à¤‚ à¤¸à¥‡ à¤—à¤¹à¤¨ à¤¶à¥‹à¤§ à¤ªà¤° à¤†à¤§à¤¾à¤°à¤¿à¤¤ à¤¹à¥ˆ à¤²à¥‡à¤•à¤¿à¤¨ à¤•à¥‡à¤µà¤² à¤¶à¥ˆà¤•à¥à¤·à¤¿à¤• à¤”à¤° à¤¸à¥‚à¤šà¤¨à¤¾à¤¤à¥à¤®à¤• 
+              à¤‰à¤¦à¥à¤¦à¥‡à¤¶à¥à¤¯à¥‹à¤‚ à¤•à¥‡ à¤²à¤¿à¤ à¤‰à¤ªà¤¯à¥‹à¤— à¤•à¥€ à¤œà¤¾à¤¨à¥€ à¤šà¤¾à¤¹à¤¿à¤à¥¤ à¤¹à¤® à¤¦à¥ƒà¤¢à¤¼à¤¤à¤¾ à¤¸à¥‡ à¤…à¤¨à¥à¤¶à¤‚à¤¸à¤¾ à¤•à¤°à¤¤à¥‡ à¤¹à¥ˆà¤‚ à¤•à¤¿ à¤•à¤¿à¤¸à¥€ à¤­à¥€ à¤¨à¤¿à¤µà¥‡à¤¶ à¤¯à¤¾ 
+              à¤µà¤¿à¤¤à¥à¤¤à¥€à¤¯ à¤¨à¤¿à¤°à¥à¤£à¤¯ à¤²à¥‡à¤¨à¥‡ à¤¸à¥‡ à¤ªà¤¹à¤²à¥‡ à¤ªà¥à¤°à¤®à¤¾à¤£à¤¿à¤¤ à¤µà¤¿à¤¤à¥à¤¤à¥€à¤¯ à¤ªà¥‡à¤¶à¥‡à¤µà¤°à¥‹à¤‚ à¤¸à¥‡ à¤ªà¤°à¤¾à¤®à¤°à¥à¤¶ à¤²à¥‡à¤‚à¥¤
             </p>
           </div>
         </div>
