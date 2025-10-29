@@ -12,7 +12,7 @@ export const indianEyewearGrowth: NewsGuideSection = {
   subheadline: "18% CAGR Growth - Lenskart, Titan, Amazon सब के लिए सोने की खान | Data-Driven Analysis",
   
   whatsNew: {
-    summary: "Grand View Research की latest report के अनुसार, भारत का eyewear बाजार 2024 में ₹45,000 करोड़ से बढ़कर 2030 तक ₹1,05,000 करोड़ हो जाएगा - यह 18% CAGR (Compound Annual Growth Rate) है। यह growth दुनिया में सबसे तेज है (Global average 6-8% है)। मुख्य drivers हैं: (1) 35 करोड़ से 55 करोड़ eyewear users में वृद्धि (+57%), (2) Organized sector 25% से 50% market share तक expansion, (3) Average selling price ₹1,200 से ₹2,500 तक doubling (premiumization), (4) Replacement frequency 4 साल से 2.5 साल तक improvement। China (₹3 लाख करोड़) और US (₹2 लाख करोड़) के बाद भारत दुनिया का तीसरा सबसे बड़ा eyewear market बन जाएगा।",
+    summary: "Grand View Research की latest report के अनुसार, भारत का eyewear बाजार 2025 में ₹45,000 करोड़ से बढ़कर 2030 तक ₹1,05,000 करोड़ हो जाएगा - यह 18% CAGR (Compound Annual Growth Rate) है। यह growth दुनिया में सबसे तेज है (Global average 6-8% है)। मुख्य drivers हैं: (1) 35 करोड़ से 55 करोड़ eyewear users में वृद्धि (+57%), (2) Organized sector 25% से 50% market share तक expansion, (3) Average selling price ₹1,200 से ₹2,500 तक doubling (premiumization), (4) Replacement frequency 4 साल से 2.5 साल तक improvement। China (₹3 लाख करोड़) और US (₹2 लाख करोड़) के बाद भारत दुनिया का तीसरा सबसे बड़ा eyewear market बन जाएगा।",
     date: new Date().toISOString(),
     source: {
       name: "Grand View Research - Global Eyewear Market Report 2024",
@@ -45,7 +45,7 @@ export const indianEyewearGrowth: NewsGuideSection = {
   keyData: {
     facts: [
       {
-        label: "Market Size FY24",
+        label: "Market Size FY25",
         value: "₹45,000 करोड़",
         source: "CRISIL Report"
       },
@@ -72,7 +72,7 @@ export const indianEyewearGrowth: NewsGuideSection = {
       {
         label: "Organized Sector Share",
         value: "25% (₹11,250 cr)",
-        source: "Current FY24"
+        source: "Current FY25"
       },
       {
         label: "Organized Share Target 2030",
@@ -90,25 +90,25 @@ export const indianEyewearGrowth: NewsGuideSection = {
         metric: "China Eyewear Market",
         value: "₹3,00,000 करोड़ ($35B)",
         change: "India 7x smaller",
-        period: "2024"
+        period: "2025"
       },
       {
         metric: "US Eyewear Market",
         value: "₹2,00,000 करोड़ ($24B)",
         change: "India 4.5x smaller",
-        period: "2024"
+        period: "2025"
       },
       {
         metric: "India Growth Rate",
         value: "18% CAGR",
         change: "vs Global 6-8%",
-        period: "2024-30"
+        period: "2025-30"
       },
       {
         metric: "Per Capita Spending",
         value: "₹350/year (India)",
         change: "vs ₹2,500 (China), ₹5,000 (US)",
-        period: "2024"
+        period: "2025"
       }
     ]
   },
@@ -120,7 +120,7 @@ export const indianEyewearGrowth: NewsGuideSection = {
         description: "Aging population और young screen users - दोनों demand बढ़ा रहे",
         subtopics: [
           "Aging Population (60+ age):",
-          "   2024: 14 करोड़ seniors (10% of population)",
+          "   2025: 14 करोड़ seniors (10% of population)",
           "   2030: 18 करोड़ seniors (12% of population)",
           "   Age-related vision issues: 80% seniors को चाहिए glasses",
           "   Presbyopia (near vision loss): 11 करोड़+ affected",
@@ -144,7 +144,7 @@ export const indianEyewearGrowth: NewsGuideSection = {
         description: "Middle class expansion eyewear को affordable बना रहा है",
         subtopics: [
           "Income Growth:",
-          "   Middle class households: 30 करोड़ से 40 करोड़ (2024-2030)",
+          "   Middle class households: 30 करोड़ से 40 करोड़ (2025-2030)",
           "   Per capita income: ₹1.5 lakh → ₹2.5 lakh annually",
           "   Discretionary spend: +15% of income (eyewear में जा सकता है)",
           "Affordability Improving:",
@@ -169,7 +169,7 @@ export const indianEyewearGrowth: NewsGuideSection = {
           "E-commerce Penetration:",
           "   2015: 5% eyewear sales online",
           "   2020: 15% online (COVID boost)",
-          "   2024: 30% online",
+          "   2025: 30% online",
           "   2030: 40% online expected",
           "Technology Benefits:",
           "   Virtual try-on: Gharpe 1000+ frames try karo",
@@ -234,7 +234,7 @@ export const indianEyewearGrowth: NewsGuideSection = {
     upcomingMilestones: [
       {
         date: "2026",
-        event: "₹55,000 करोड़ market size (22% growth from 2024)",
+        event: "₹55,000 करोड़ market size (22% growth from 2025)",
         importance: "medium"
       },
       {
@@ -364,4 +364,10 @@ export const indianEyewearGrowth: NewsGuideSection = {
 };
 
 export default indianEyewearGrowth;
+
+
+
+
+
+
 

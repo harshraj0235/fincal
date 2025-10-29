@@ -261,3 +261,23 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
 };
 
 export default SEOHelmet;
+    }
+
+    // Cleanup function: remove alternate links and JSON-LD if component unmounts
+    return () => {
+      if (alternateLanguages) {
+        Object.keys(alternateLanguages).forEach((lang) => {
+          const link = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+          if (link) link.remove();
+        });
+      }
+      // Do not remove other JSON-LD scripts; only remove our own tagged one
+      if (jsonLdScript) jsonLdScript.remove();
+    };
+  }, [title, description, keywords, image, url, type, structuredData, articlePublishedTime, articleModifiedTime, author, section, tags, noIndex, noFollow, alternateLanguages, breadcrumbs, faqData, calculatorData]);
+
+  return null;
+};
+
+export default SEOHelmet;
+

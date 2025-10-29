@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { Sliders, PieChart, Calendar, Info, ExternalLink } from 'lucide-react';
@@ -5,8 +6,86 @@ import { ResultChart } from '../components/ResultChart';
 import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper';
 import { CalculatorSchema } from '../components/CalculatorSchema';
 
+// Inject FAQ schema for Google EEAT, rich snippets
+const injectSchema = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is EMI calculated in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "EMI is calculated using the reducing balance method: EMI = [P x R x (1+R)^N]/[(1+R)^N-1], where P = principal, R = monthly interest rate, N = tenure in months. Use this EMI calculator for instant and accurate results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this EMI calculator suitable for home, car, and personal loans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this EMI calculator works for all types of loans in India: home, car, personal, education, gold, and business loans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I manually enter loan amount, interest rate, or tenure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can enter or adjust any value to get a personalized EMI calculation. All results are updated instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the benefit of using an EMI calculator before taking a loan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It helps you plan monthly cashflow, compare loan offers, check affordability, and avoid over-borrowing. It also helps you see the total interest and payment schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator show a year-wise EMI breakup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you get a detailed yearly schedule showing principal, interest paid, and outstanding balance for each year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it support prepayment calculation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can enter a prepayment amount to see the effect on EMI, interest, and tenure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the pros and cons of EMI loans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pros: Easy budgeting, affordable purchases, helps build credit. Cons: High total interest, risk of missed payments, possible prepayment penalties."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I check the latest loan rates and RBI guidelines?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For official information, visit the RBI website (https://rbi.org.in/) and compare rates on portals like BankBazaar and PaisaBazaar."
+        }
+      }
+    ]
+  };
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.innerHTML = JSON.stringify(schema);
+  document.head.appendChild(script);
+  return () => { document.head.removeChild(script); };
+};
+
 // SEO is handled globally by SEOHelmet at the page level
-// FAQ schema is handled by CalculatorSchema component to prevent duplicates
 const SEO = () => null;
 
 export const EmiCalculator: React.FC = () => {
@@ -26,7 +105,9 @@ export const EmiCalculator: React.FC = () => {
   const [prepayment, setPrepayment] = useState<number>(0);
   const [showProsCons, setShowProsCons] = useState<boolean>(false);
 
-  // Schema is handled by CalculatorSchema component - no manual injection needed
+  useEffect(() => {
+    injectSchema();
+  }, []);
 
   useEffect(() => {
     let tenureInMonths = tenureType === 'years' ? loanTenure * 12 : loanTenure;

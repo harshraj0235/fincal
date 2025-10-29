@@ -139,3 +139,83 @@ export const SimpleInterestCalculator: React.FC = () => {
     </>
   );
 };
+            min="0"
+            step="0.1"
+          />
+        </div>
+
+        </div>
+      </div>
+      
+      <div className="space-y-6">
+        <h2 className="text-xl font-semibold text-gray-900 flex items-center">
+          <TrendingUp className="w-5 h-5 mr-2 text-primary-600" />
+          Results
+        </h2>
+        
+        <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border-2 border-blue-200">
+          <div className="grid grid-cols-1 gap-4">
+            <div className="bg-white rounded-lg p-4">
+              <p className="text-sm text-gray-600 mb-1">Simple Interest</p>
+              <p className="text-3xl font-bold text-blue-600">{formatCurrency(interest)}</p>
+            </div>
+            <div className="bg-white rounded-lg p-4">
+              <p className="text-sm text-gray-600 mb-1">Total Amount</p>
+              <p className="text-3xl font-bold text-gray-900">{formatCurrency(totalAmount)}</p>
+            </div>
+            <div className="bg-white rounded-lg p-4">
+              <p className="text-sm text-gray-600 mb-1">Principal Amount</p>
+              <p className="text-2xl font-semibold text-gray-700">{formatCurrency(principal)}</p>
+            </div>
+          </div>
+          
+          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <p className="text-sm font-semibold text-yellow-900 mb-1">Formula Used:</p>
+            <p className="text-sm text-yellow-800">SI = (P × R × T) / 100</p>
+            <p className="text-xs text-yellow-700 mt-1">
+              = ({formatCurrency(principal)} × {rate}% × {time} years) / 100 = {formatCurrency(interest)}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Comprehensive E-E-A-T Content */}
+    <div className="mt-12">
+      <CalculatorContentWrapper {...contentData} />
+    </div>
+    </div>
+    </>
+  );
+};
+        <button
+          onClick={calculateInterest}
+          className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+        >
+          <Calculator className="w-5 h-5 mr-2" />
+          Calculate Interest
+        </button>
+
+        {interest > 0 && (
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <h3 className="text-lg font-medium text-gray-900">Results</h3>
+            <div className="mt-2 grid gap-4">
+              <div>
+                <p className="text-sm text-gray-500">Simple Interest</p>
+                <p className="text-2xl font-semibold text-gray-900">
+                  ₹{interest.toFixed(2)}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500">Total Amount</p>
+                <p className="text-2xl font-semibold text-gray-900">
+                  ₹{(principal + interest).toFixed(2)}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};

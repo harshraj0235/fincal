@@ -347,3 +347,53 @@ export const LoanComparisonCalculator: React.FC = () => {
     </>
   );
 };
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white rounded-lg p-4">
+            <p className="text-sm text-neutral-500 mb-1">Monthly EMI</p>
+            <p className="text-xl font-bold text-[--success-700]">{formatCurrency(bestOption.emi)}</p>
+          </div>
+          <div className="bg-white rounded-lg p-4">
+            <p className="text-sm text-neutral-500 mb-1">Interest Rate</p>
+            <p className="text-xl font-bold text-[--success-700]">{bestOption.interestRate}%</p>
+          </div>
+          <div className="bg-white rounded-lg p-4">
+            <p className="text-sm text-neutral-500 mb-1">Total Interest</p>
+            <p className="text-xl font-bold text-[--success-700]">{formatCurrency(bestOption.totalInterest)}</p>
+          </div>
+          <div className="bg-white rounded-lg p-4">
+            <p className="text-sm text-neutral-500 mb-1">Total Payment</p>
+            <p className="text-xl font-bold text-[--success-700]">{formatCurrency(bestOption.totalPayment)}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h2 className="text-xl font-semibold text-neutral-900 flex items-center mb-6">
+          <Calculator className="w-5 h-5 mr-2 text-[--primary-600]" />
+          Comparison Chart
+        </h2>
+        <div className="h-80">
+          <BarChart 
+            data={loanOptions.map(option => ({
+              label: option.bank || `Option ${option.id}`,
+              value: option.totalPayment,
+              color: option.id === bestOption.id ? '#22c55e' : '#3b82f6'
+            }))}
+            xKey="label"
+            yKey="value"
+            color="color"
+            xLabel="Banks"
+            yLabel="Total Payment (₹)"
+            formatY={(value) => formatCurrency(value)}
+          />
+        </div>
+      </div>
+      
+      {/* Comprehensive E-E-A-T Content */}
+      <div className="mt-12 max-w-6xl mx-auto">
+        <CalculatorContentWrapper {...contentData} />
+      </div>
+    </div>
+    </>
+  );
+};

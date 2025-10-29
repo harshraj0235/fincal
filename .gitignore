@@ -23,7 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 .env
-
+# Sitemap backups (auto-generated, no need to commit)
+public/sitemap-backup-*.xml
+sitemap-backup-*.xml
+# Temporary URL extraction files (generated during build)
+public/main-hub-pages.txt
+public/all-urls-extracted.txt
 # Sitemap backups (auto-generated, no need to commit)
 public/sitemap-backup-*.xml
 sitemap-backup-*.xml

@@ -165,4 +165,6 @@ export const NetWorthCalculator: React.FC = () => {
       </div>
     </div>
   );
+};    </div>
+  );
 };
