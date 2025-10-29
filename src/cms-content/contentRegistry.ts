@@ -18,7 +18,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-01-lenskart-ipo-matters',
     slug: 'lenskart-ipo-announcement-hindi',
     category: 'markets',
-    title: 'Why Lenskart's upcoming IPO matters for Indian eyewear',
+    title: 'Why Lenskart\'s upcoming IPO matters for Indian eyewear',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-15',
     image: '/images/news/lenskart-ipo.jpg'
@@ -27,7 +27,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-02-valuation-breakdown',
     slug: 'lenskart-valuation-67000-crore-analysis',
     category: 'markets',
-    title: 'Breaking down Lenskart's valuation: What ₹70,000 crore means',
+    title: 'Breaking down Lenskart\'s valuation: What ₹70,000 crore means',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-16',
     image: '/images/news/lenskart-valuation.jpg'
@@ -36,7 +36,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-06-ipo-risks',
     slug: 'lenskart-ipo-10-risks-paytm-comparison',
     category: 'markets',
-    title: 'Is Lenskart's IPO over-priced? Risks investors should know',
+    title: 'Is Lenskart\'s IPO over-priced? Risks investors should know',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-20',
     image: '/images/news/lenskart-risks.jpg'
@@ -45,7 +45,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-10-retail-investor-guide',
     slug: 'lenskart-ipo-retail-investor-guide',
     category: 'markets',
-    title: 'Lenskart's IPO: What retail investors should watch',
+    title: 'Lenskart\'s IPO: What retail investors should watch',
     authorId: 'saurabh-kumar',
     datePublished: '2025-01-24',
     image: '/images/news/lenskart-retail.jpg'
@@ -74,7 +74,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-09-market-trends-support',
     slug: 'eyewear-market-trends-2025',
     category: 'business-analysis',
-    title: 'How the eyewear market trend supports Lenskart's growth story',
+    title: 'How the eyewear market trend supports Lenskart\'s growth story',
     authorId: 'harsh-raj',
     datePublished: '2025-01-23',
     image: '/images/news/eyewear-trends.jpg'
@@ -94,7 +94,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-04-major-investors',
     slug: 'lenskart-investors-softbank-premji-returns',
     category: 'startups',
-    title: 'Major investors behind Lenskart: Who's backing the eyewear boom?',
+    title: 'Major investors behind Lenskart: Who\'s backing the eyewear boom?',
     authorId: 'vikram-kumar',
     datePublished: '2025-01-18',
     image: '/images/news/lenskart-investors.jpg'
