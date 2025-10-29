@@ -18,6 +18,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   
   const isHomePage = location.pathname === '/';
   const isMoneyPage = location.pathname.startsWith('/money/');
+  const isNewsPage = location.pathname.startsWith('/news');
   const isCalculatorPage = location.pathname.includes('/calculators/');
   const isBlogPage = location.pathname.includes('/blog');
 
@@ -115,8 +116,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
         
         <main className="flex-grow flex relative" role="main" aria-label="Main content">
-          {/* Sidebar for non-home pages */}
-          {!isHomePage && !isMoneyPage && (
+          {/* Sidebar for non-home pages (hide on home, money, news pages) */}
+          {!isHomePage && !isMoneyPage && !isNewsPage && (
             <AnimatePresence>
               <motion.div
                 initial={{ x: -300, opacity: 0 }}

@@ -5,6 +5,7 @@ import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
 import SEOHelmet from '../../components/SEOHelmet';
+import NewsSearch from '../../components/NewsSearch';
 import { formatStaticDate, formatStaticShortDate } from '../../utils/randomCalculators';
 
 const ARTICLES_PER_PAGE = 15;
@@ -65,6 +66,13 @@ const NewsHomePage: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Search Section - Powerful & Beautiful */}
+      <div className="bg-gradient-to-b from-blue-50 to-white border-b">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
+          <NewsSearch />
         </div>
       </div>
 
