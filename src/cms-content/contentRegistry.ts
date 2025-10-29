@@ -24,22 +24,27 @@ export const contentRegistry: NewsArticleMetadata[] = [
     category: 'markets',
     subCategory: 'IPOs & Listings',
     title: 'Why Lenskart\'s upcoming IPO matters for Indian eyewear',
-    excerpt: 'Lenskart\'s ₹6,000 crore IPO at ₹67,000 crore valuation marks India\'s first exclusive eyewear retail listing. Complete analysis of what retail investors should know before applying.',
+    excerpt: 'Lenskart का ₹6,000 करोड़ IPO at ₹67,000 करोड़ valuation - India की पहली exclusive eyewear retail listing। Retail investors के लिए complete analysis in Hindi.',
     authorId: 'raushan-kumar',
-    datePublished: '2025-01-15',
-    dateModified: '2025-01-16',
+    datePublished: '2025-10-06',
+    dateModified: '2025-10-29',
     image: '/images/news/lenskart-ipo.jpg',
     readTime: 10,
-    tags: ['Lenskart IPO', 'IPO 2025', 'eyewear stocks', 'retail investors', 'SEBI approval']
+    tags: ['Lenskart IPO', 'IPO 2025', 'eyewear stocks', 'retail investors', 'SEBI approval', 'Hindi news']
   },
   {
     id: 'article-02-valuation-breakdown',
     slug: 'lenskart-valuation-67000-crore-analysis',
     category: 'markets',
+    subCategory: 'IPOs & Listings',
     title: 'Breaking down Lenskart\'s valuation: What ₹70,000 crore means',
+    excerpt: 'Lenskart ki ₹67,000 crore valuation expensive hai ya sahi? Complete breakdown - 12.9x P/S ratio analysis, comparison with Nykaa, Titan aur global peers। Hindi mein samjho.',
     authorId: 'raushan-kumar',
-    datePublished: '2025-01-16',
-    image: '/images/news/lenskart-valuation.jpg'
+    datePublished: '2025-10-07',
+    dateModified: '2025-10-29',
+    image: '/images/news/lenskart-valuation.jpg',
+    readTime: 12,
+    tags: ['Lenskart valuation', 'IPO analysis', 'P/S ratio', 'stock valuation', 'investment guide', 'Hindi finance']
   },
   {
     id: 'article-06-ipo-risks',
