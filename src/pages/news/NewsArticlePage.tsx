@@ -14,6 +14,8 @@ import {
 import SEOHelmet from '../../components/SEOHelmet';
 import NewsArticleSchema from '../../components/NewsArticleSchema';
 import { contentRegistry } from '../../cms-content/contentRegistry';
+import { getArticleContent } from '../../cms-content/articleLoader';
+import { NewsGuideTemplate } from '../../components/NewsGuideTemplate';
 import { teamProfiles } from '../../data/teamProfiles';
 import { newsCategories } from '../../data/newsCategories';
 
@@ -216,11 +218,21 @@ const NewsArticlePage: React.FC = () => {
 
       {/* Article Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Article Body - Display HTML content */}
-        <div 
-          className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-neutral-900 prose-p:text-neutral-700 prose-p:leading-relaxed prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-neutral-900 prose-ul:list-disc prose-ul:pl-6 prose-ol:list-decimal prose-ol:pl-6"
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        />
+        {/* Check if CMS content is available */}
+        {(() => {
+          const cmsContent = getArticleContent(article.id);
+          if (cmsContent) {
+            return <NewsGuideTemplate section={cmsContent} />;
+          }
+          
+          // Fallback to HTML content if no CMS content
+          return (
+            <div 
+              className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-neutral-900 prose-p:text-neutral-700 prose-p:leading-relaxed prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-neutral-900 prose-ul:list-disc prose-ul:pl-6 prose-ol:list-decimal prose-ol:pl-6"
+              dangerouslySetInnerHTML={{ __html: article.content }}
+            />
+          );
+        })()}
 
         {/* Tags */}
         {article.tags && article.tags.length > 0 && (
