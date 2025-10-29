@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Startups Category News Articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/lenskart-investors-softbank-premji-returns</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Major investors behind Lenskart: Who's backing the eyewear boom?</news:title>
+      <news:keywords>startup investors India, SoftBank investments, venture capital</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/founder-stake-increase-strategy</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>How the founder increased his stake ahead of listing</news:title>
+      <news:keywords>founder stake strategy, IPO preparation, startup equity</news:keywords>
+    </news:news>
+  </url>
+  
+</urlset>
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Economy Category News Articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/sebi-approval-lenskart-eyewear-industry-impact</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Lenskart gets regulatory nod for IPO — what this means for the Indian eyewear sector</news:title>
+      <news:keywords>SEBI approval, regulatory news India, IPO clearance</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-eyewear-market-growth-forecast</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Why the eyewear market in India is poised to grow at double-digit rates</news:title>
+      <news:keywords>India economy growth, eyewear industry forecast, market trends</news:keywords>
+    </news:news>
+  </url>
+  
+</urlset>
+

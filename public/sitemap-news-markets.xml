@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Markets Category News Articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/lenskart-ipo-announcement-hindi</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Why Lenskart's upcoming IPO matters for Indian eyewear</news:title>
+      <news:keywords>Lenskart IPO, eyewear market India, IPO 2025</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=1200&amp;h=630&amp;fit=crop&amp;q=80</image:loc>
+      <image:title>Lenskart eyewear store display</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/lenskart-valuation-67000-crore-analysis</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Breaking down Lenskart's valuation: What ₹70,000 crore means</news:title>
+      <news:keywords>Lenskart valuation, IPO analysis, startup valuation India</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/lenskart-ipo-10-risks-paytm-comparison</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Is Lenskart's IPO over-priced? Risks investors should know</news:title>
+      <news:keywords>IPO risks, Lenskart investment, Paytm comparison</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/lenskart-ipo-retail-investor-guide</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Lenskart's IPO: What retail investors should watch</news:title>
+      <news:keywords>retail investors IPO guide, IPO application India</news:keywords>
+    </news:news>
+  </url>
+  
+</urlset>
+

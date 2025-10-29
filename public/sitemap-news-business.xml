@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Business Analysis Category News Articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/lenskart-2000-stores-omnichannel-strategy</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>From online to 2,000+ stores: How Lenskart built its omnichannel footprint</news:title>
+      <news:keywords>omnichannel retail, D2C strategy India, retail expansion</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/lenskart-ipo-6000-crore-spending-plan</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>What Lenskart will do with IPO proceeds: Expansion, tech &amp; brand building</news:title>
+      <news:keywords>IPO proceeds usage, business expansion strategy</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/eyewear-market-trends-2025</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>How the eyewear market trend supports Lenskart's growth story</news:title>
+      <news:keywords>eyewear market trends India, market analysis 2025</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/eyewear-purchase-behavior-trends</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Emerging eyewear purchase behaviour: More frequent buys, style changes</news:title>
+      <news:keywords>consumer behavior India, eyewear shopping trends</news:keywords>
+    </news:news>
+  </url>
+  
+</urlset>
+

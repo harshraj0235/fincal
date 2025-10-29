@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Main Website Content -->
+  <sitemap>
+    <loc>https://moneycal.in/sitemap.xml</loc>
+    <lastmod>2025-10-30</lastmod>
+  </sitemap>
+  
+  <!-- News Content - Category Wise (Google News Optimized) -->
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-news-markets.xml</loc>
+    <lastmod>2025-10-30</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-news-business.xml</loc>
+    <lastmod>2025-10-30</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-news-startups.xml</loc>
+    <lastmod>2025-10-30</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-news-economy.xml</loc>
+    <lastmod>2025-10-30</lastmod>
+  </sitemap>
+  
+  <!-- Category-Specific Sitemaps -->
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-calculators.xml</loc>
+    <lastmod>2025-10-29</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-blog.xml</loc>
+    <lastmod>2025-10-29</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-learn.xml</loc>
+    <lastmod>2025-10-29</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-tools.xml</loc>
+    <lastmod>2025-10-29</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-government.xml</loc>
+    <lastmod>2025-10-29</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-crypto.xml</loc>
+    <lastmod>2025-10-29</lastmod>
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-pages.xml</loc>
+    <lastmod>2025-10-29</lastmod>
+  </sitemap>
+  
+</sitemapindex>
+
