@@ -149,4 +149,3 @@ export const EmergencyFundCalculator: React.FC = () => {
     </>
   );
 };
-                onChange={(e) => setMonthsOfCoverage(Number(e.target.value))}
