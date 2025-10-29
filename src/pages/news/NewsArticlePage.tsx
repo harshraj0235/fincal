@@ -99,7 +99,8 @@ const NewsArticlePage: React.FC = () => {
   const author = teamProfiles.find(p => p.id === article.authorId);
   const category = newsCategories.find(cat => cat.slug === categorySlug);
 
-  const formattedDate = new Date(article.datePublished).toLocaleDateString('en-IN', {
+  // Always show current date
+  const formattedDate = new Date().toLocaleDateString('en-IN', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
@@ -171,23 +172,24 @@ const NewsArticlePage: React.FC = () => {
             {article.title}
           </h1>
 
-          {/* Author Info - Clickable */}
-          <Link 
-            to={`/news/author/${article.authorId}`}
-            className="inline-flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl hover:shadow-md transition-all mb-6 border border-blue-100"
-          >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-600 to-blue-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg flex-shrink-0">
-              {author?.name.split(' ').map(n => n[0]).join('') || 'MC'}
-            </div>
-            <div className="flex-1">
-              <div className="font-bold text-neutral-900 text-lg">{author?.name || 'MoneyCal Team'}</div>
-              <div className="text-sm text-neutral-600 font-medium">{author?.role || 'Financial Writer'}</div>
-              {author?.bio && (
-                <div className="text-sm text-neutral-500 mt-1 line-clamp-1">{author.bio}</div>
-              )}
-            </div>
-            <ArrowRight className="h-5 w-5 text-primary-600 flex-shrink-0" />
-          </Link>
+          {/* Author Info - Text Link Only */}
+          <div className="mb-6 p-5 bg-neutral-900 rounded-xl border-2 border-neutral-700">
+            <Link 
+              to={`/news/author/${article.authorId}`}
+              className="block hover:opacity-90 transition-opacity"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-2xl font-black text-white mb-1">{author?.name || 'MoneyCal Team'}</div>
+                  <div className="text-base text-yellow-400 font-bold">{author?.role || 'Financial Writer'}</div>
+                  {author?.bio && (
+                    <div className="text-sm text-neutral-300 mt-2 font-medium">{author.bio}</div>
+                  )}
+                </div>
+                <ArrowRight className="h-6 w-6 text-yellow-400 flex-shrink-0" />
+              </div>
+            </Link>
+          </div>
 
           <div className="bg-white rounded-lg p-4 shadow-sm border border-neutral-200">
             <div className="flex flex-wrap items-center gap-6 text-sm">
@@ -263,6 +265,14 @@ const NewsArticlePage: React.FC = () => {
               {article.content && (
                 <div dangerouslySetInnerHTML={{ __html: article.content }} />
               )}
+              
+              {/* Disclaimer for non-CMS articles */}
+              <div className="mt-12 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-xl shadow-lg p-8">
+                <h3 className="text-2xl font-black text-neutral-900 mb-4">⚠️ Disclaimer</h3>
+                <p className="text-base text-neutral-800 leading-relaxed font-medium">
+                  This content is for educational purposes only. I am not a certified financial expert or advisor. All information is based on personal experience, research, and knowledge, and should not be considered as professional or legal advice. Please consult with a qualified expert before making any financial decisions. All risks associated with your actions are your own responsibility. If you find any mistakes or inaccuracies, please contact me as soon as possible so I can make corrections. I try my best to comply with all applicable laws in India.
+                </p>
+              </div>
             </div>
           );
         })()}
@@ -282,33 +292,28 @@ const NewsArticlePage: React.FC = () => {
           </div>
         )}
 
-        {/* About the Author - Enhanced with High Visibility */}
+        {/* About the Author - Clean Text Link */}
         {author && (
-          <div className="mt-12 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl shadow-2xl overflow-hidden border-4 border-blue-300">
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-neutral-900 px-8 py-5">
-              <h3 className="text-3xl font-black flex items-center gap-3">
-                <User className="h-8 w-8" />
+          <div className="mt-12 bg-neutral-900 rounded-2xl shadow-2xl overflow-hidden border-2 border-neutral-700">
+            <div className="bg-black px-8 py-5">
+              <h3 className="text-3xl font-black text-white flex items-center gap-3">
+                <User className="h-8 w-8 text-yellow-400" />
                 About the Author
               </h3>
             </div>
-            <div className="p-10 bg-white">
-              <div className="flex flex-col md:flex-row items-start gap-8">
-                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 flex items-center justify-center text-white font-black text-5xl shadow-2xl flex-shrink-0 border-4 border-yellow-400">
-                  {author.name.split(' ').map(n => n[0]).join('')}
+            <div className="p-10 bg-neutral-900">
+              <Link
+                to={`/news/author/${article.authorId}`}
+                className="block hover:opacity-90 transition-all"
+              >
+                <h4 className="text-4xl font-black text-white mb-3 hover:text-yellow-400 transition-colors">{author.name}</h4>
+                <p className="text-2xl text-yellow-400 font-black mb-5">{author.role}</p>
+                <p className="text-lg text-neutral-300 leading-relaxed mb-6 font-medium">{author.bio}</p>
+                <div className="inline-flex items-center gap-3 px-8 py-4 bg-white text-neutral-900 rounded-xl hover:bg-yellow-400 transition-all font-black text-lg shadow-xl uppercase tracking-wide">
+                  View All Articles by {author.name.split(' ')[0]}
+                  <ArrowRight className="h-6 w-6" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-3xl font-black text-neutral-900 mb-2">{author.name}</h4>
-                  <p className="text-xl text-blue-700 font-black mb-4 bg-blue-50 inline-block px-4 py-2 rounded-lg">{author.role}</p>
-                  <p className="text-lg text-neutral-800 leading-relaxed mb-6 font-medium">{author.bio}</p>
-                  <Link
-                    to={`/news/author/${article.authorId}`}
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all font-black text-lg shadow-xl hover:shadow-2xl uppercase tracking-wide"
-                  >
-                    View All Articles by {author.name.split(' ')[0]}
-                    <ArrowRight className="h-6 w-6" />
-                  </Link>
-                </div>
-              </div>
+              </Link>
             </div>
           </div>
         )}

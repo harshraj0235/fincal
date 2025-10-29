@@ -383,34 +383,51 @@ export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) =
         </div>
       </section>
 
-      {/* Internal Links - Smart Calculator Integration */}
+      {/* Internal Links - Smart Calculator Integration - HIGHLY VISIBLE */}
       {guide.internalLinks.calculators.length > 0 && (
         <section className="mb-12">
-          <div className="bg-gradient-to-r from-primary-600 to-blue-600 text-white p-8 rounded-xl">
-            <div className="flex items-center gap-3 mb-4">
-              <Calculator className="h-8 w-8" />
-              <h3 className="text-2xl font-bold">Calculate Your Impact</h3>
+          <div className="bg-black rounded-2xl shadow-2xl overflow-hidden border-4 border-yellow-400">
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-neutral-900 px-8 py-6">
+              <div className="flex items-center gap-4 mb-2">
+                <Calculator className="h-10 w-10" />
+                <h3 className="text-3xl font-black">Calculate Your Impact</h3>
+              </div>
+              <p className="text-lg font-bold text-neutral-800">
+                Use our free financial calculators to understand how this news affects your finances:
+              </p>
             </div>
-            <p className="text-white/90 mb-6">
-              Use our free financial calculators to understand how this news affects your finances:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {guide.internalLinks.calculators.map((calcId, index) => (
-                <Link
-                  key={index}
-                  to={`/calculators/${calcId}`}
-                  className="flex items-center justify-between p-4 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-all border border-white/20"
-                >
-                  <span className="font-semibold">
-                    {calcId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
-                  </span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              ))}
+            <div className="p-8 bg-neutral-900">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {guide.internalLinks.calculators.map((calcId, index) => (
+                  <Link
+                    key={index}
+                    to={`/calculators/${calcId}`}
+                    className="flex items-center justify-between p-5 bg-white rounded-xl hover:bg-yellow-400 transition-all border-2 border-neutral-700 hover:border-yellow-400 group shadow-lg hover:shadow-2xl"
+                  >
+                    <span className="font-black text-neutral-900 text-base">
+                      {calcId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                    </span>
+                    <ArrowRight className="h-5 w-5 text-neutral-900 group-hover:translate-x-2 transition-transform" />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
+
+      {/* Disclaimer Section - Legal Compliance */}
+      <section className="mb-12">
+        <div className="bg-yellow-50 border-l-4 border-yellow-500 rounded-r-xl shadow-lg p-8">
+          <h3 className="text-2xl font-black text-neutral-900 mb-4 flex items-center gap-3">
+            <AlertCircle className="h-6 w-6 text-yellow-600" />
+            Disclaimer
+          </h3>
+          <p className="text-base text-neutral-800 leading-relaxed font-medium">
+            This content is for educational purposes only. I am not a certified financial expert or advisor. All information is based on personal experience, research, and knowledge, and should not be considered as professional or legal advice. Please consult with a qualified expert before making any financial decisions. All risks associated with your actions are your own responsibility. If you find any mistakes or inaccuracies, please contact me as soon as possible so I can make corrections. I try my best to comply with all applicable laws in India.
+          </p>
+        </div>
+      </section>
 
       {/* E-E-A-T Section - Author & Sources */}
       <section className="mb-12">
