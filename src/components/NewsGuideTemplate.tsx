@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Lightbulb, 
@@ -12,6 +12,7 @@ import {
   Calculator,
   ArrowRight
 } from 'lucide-react';
+import { getRandomCalculators } from '../utils/randomCalculators';
 
 /**
  * NewsGuideTemplate Component
@@ -131,6 +132,9 @@ interface NewsGuideTemplateProps {
 }
 
 export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) => {
+  // Generate random calculators (memoized to stay consistent during re-renders)
+  const randomCalculators = useMemo(() => getRandomCalculators(4), []);
+  
   return (
     <div className="max-w-4xl mx-auto">
       {/* Section 1: What's New - Mobile Optimized */}
@@ -383,38 +387,36 @@ export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) =
         </div>
       </section>
 
-      {/* Internal Links - Smart Calculator Integration - HIGHLY VISIBLE */}
-      {guide.internalLinks.calculators.length > 0 && (
-        <section className="mb-8 sm:mb-12">
-          <div className="bg-black rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden border-2 sm:border-4 border-yellow-400">
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-neutral-900 px-4 sm:px-8 py-4 sm:py-6">
-              <div className="flex items-center gap-2 sm:gap-4 mb-2">
-                <Calculator className="h-7 w-7 sm:h-10 sm:w-10 flex-shrink-0" />
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-black">Calculate Your Impact</h3>
-              </div>
-              <p className="text-sm sm:text-base md:text-lg font-bold text-neutral-800">
-                Use our free financial calculators to understand how this news affects your finances:
-              </p>
+      {/* Internal Links - Smart Calculator Integration - HIGHLY VISIBLE - DYNAMIC */}
+      <section className="mb-8 sm:mb-12">
+        <div className="bg-black rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden border-2 sm:border-4 border-yellow-400">
+          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-neutral-900 px-4 sm:px-8 py-4 sm:py-6">
+            <div className="flex items-center gap-2 sm:gap-4 mb-2">
+              <Calculator className="h-7 w-7 sm:h-10 sm:w-10 flex-shrink-0" />
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black">Calculate Your Impact</h3>
             </div>
-            <div className="p-4 sm:p-6 md:p-8 bg-neutral-900">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                {guide.internalLinks.calculators.map((calcId, index) => (
-                  <Link
-                    key={index}
-                    to={`/calculators/${calcId}`}
-                    className="flex items-center justify-between p-4 sm:p-5 bg-white rounded-lg sm:rounded-xl hover:bg-yellow-400 active:bg-yellow-500 transition-all border-2 border-neutral-700 hover:border-yellow-400 active:border-yellow-500 group shadow-lg hover:shadow-2xl active:scale-95"
-                  >
-                    <span className="font-black text-neutral-900 text-sm sm:text-base">
-                      {calcId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
-                    </span>
-                    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-900 group-hover:translate-x-2 transition-transform flex-shrink-0" />
-                  </Link>
-                ))}
-              </div>
+            <p className="text-sm sm:text-base md:text-lg font-bold text-neutral-800">
+              Use our free financial calculators to understand how this news affects your finances:
+            </p>
+          </div>
+          <div className="p-4 sm:p-6 md:p-8 bg-neutral-900">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              {randomCalculators.map((calcId, index) => (
+                <Link
+                  key={index}
+                  to={`/calculators/${calcId}`}
+                  className="flex items-center justify-between p-4 sm:p-5 bg-white rounded-lg sm:rounded-xl hover:bg-yellow-400 active:bg-yellow-500 transition-all border-2 border-neutral-700 hover:border-yellow-400 active:border-yellow-500 group shadow-lg hover:shadow-2xl active:scale-95"
+                >
+                  <span className="font-black text-neutral-900 text-sm sm:text-base">
+                    {calcId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                  </span>
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-900 group-hover:translate-x-2 transition-transform flex-shrink-0" />
+                </Link>
+              ))}
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Disclaimer Section - Legal Compliance - Mobile Optimized */}
       <section className="mb-8 sm:mb-12">

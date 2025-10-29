@@ -19,6 +19,7 @@ import { getArticleContent } from '../../cms-content/articleLoader';
 import { NewsGuideTemplate } from '../../components/NewsGuideTemplate';
 import { teamProfiles } from '../../data/teamProfiles';
 import { newsCategories } from '../../data/newsCategories';
+import { formatDisplayDate } from '../../utils/randomCalculators';
 
 interface Article {
   id: string;
@@ -99,18 +100,8 @@ const NewsArticlePage: React.FC = () => {
   const author = teamProfiles.find(p => p.id === article.authorId);
   const category = newsCategories.find(cat => cat.slug === categorySlug);
 
-  // Always show current date
-  const formattedDate = new Date().toLocaleDateString('en-IN', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-  
-  const updateDate = new Date().toLocaleDateString('en-IN', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
+  // Always show current system date (dynamic)
+  const formattedDate = formatDisplayDate();
 
   return (
     <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
