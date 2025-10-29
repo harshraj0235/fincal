@@ -22,10 +22,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-01-lenskart-ipo-matters',
     slug: 'lenskart-ipo-announcement-hindi',
     category: 'markets',
+    subCategory: 'IPOs & Listings',
     title: 'Why Lenskart\'s upcoming IPO matters for Indian eyewear',
+    excerpt: 'Lenskart\'s ₹6,000 crore IPO at ₹67,000 crore valuation marks India\'s first exclusive eyewear retail listing. Complete analysis of what retail investors should know before applying.',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-15',
-    image: '/images/news/lenskart-ipo.jpg'
+    dateModified: '2025-01-16',
+    image: '/images/news/lenskart-ipo.jpg',
+    readTime: 10,
+    tags: ['Lenskart IPO', 'IPO 2025', 'eyewear stocks', 'retail investors', 'SEBI approval']
   },
   {
     id: 'article-02-valuation-breakdown',

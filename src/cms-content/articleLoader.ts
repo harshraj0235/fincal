@@ -9,7 +9,7 @@ import { NewsGuideSection } from '../components/NewsGuideTemplate';
 import { indianEyewearGrowth } from './news-articles/economy/article-11-eyewear-market-growth';
 
 // Markets Articles
-// Add more market articles as they are created
+import { lenskartIPOMatters } from './news-articles/markets/article-01-lenskart-ipo-matters';
 
 // Business Analysis Articles
 // Add more business analysis articles as they are created
@@ -23,7 +23,7 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'article-11-eyewear-market-growth': indianEyewearGrowth,
   
   // Markets
-  // 'article-01-lenskart-ipo-matters': lenskartIPOMatters,
+  'article-01-lenskart-ipo-matters': lenskartIPOMatters,
   // 'article-02-valuation-breakdown': valuationBreakdown,
   // 'article-06-ipo-risks': ipoRisks,
   // 'article-10-retail-investor-guide': retailInvestorGuide,
