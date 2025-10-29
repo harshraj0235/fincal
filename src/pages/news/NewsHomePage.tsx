@@ -39,60 +39,50 @@ const NewsHomePage: React.FC = () => {
         url="/news"
       />
 
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-blue-600 to-purple-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <TrendingUp className="h-6 w-6 text-yellow-300" />
-              <span className="font-semibold text-blue-100">Breaking Financial News</span>
+      {/* Hero Section - Google News Style */}
+      <div className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h1 className="text-4xl font-bold text-neutral-900 mb-2">
+                MoneyCal News
+              </h1>
+              <p className="text-lg text-neutral-600">
+                Business news, IPO coverage, market insights, and economic trends
+              </p>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
-              MoneyCal News Hub
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              Business news, IPO coverage, market insights, and economic trends - All in one place
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                <div className="text-3xl font-bold">{contentRegistry.length}</div>
-                <div className="text-sm text-blue-100">Articles</div>
-              </div>
-              <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                <div className="text-3xl font-bold">{newsCategories.length}</div>
-                <div className="text-sm text-blue-100">Categories</div>
-              </div>
-              <div className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                <div className="text-3xl font-bold">{teamProfiles.length}</div>
-                <div className="text-sm text-blue-100">Expert Writers</div>
+            <div className="hidden md:flex items-center gap-3">
+              <div className="text-center px-4 py-2 bg-blue-50 rounded-lg">
+                <div className="text-2xl font-bold text-blue-700">{contentRegistry.length}</div>
+                <div className="text-xs text-neutral-600">Articles</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Category Filter */}
-      <div className="bg-white border-b-2 shadow-lg sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="flex flex-wrap gap-3">
+      {/* Category Filter - Clean Google News Style */}
+      <div className="bg-white border-b sticky top-0 z-10 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide">
             <button
               onClick={() => handleCategoryChange('all')}
-              className={`px-6 py-3 rounded-lg font-bold text-base transition-all shadow-md ${
+              className={`px-5 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all ${
                 selectedCategory === 'all'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl scale-105 ring-2 ring-blue-300'
-                  : 'bg-white text-neutral-800 hover:bg-neutral-100 border-2 border-neutral-300 hover:border-primary-400'
+                  ? 'bg-blue-700 text-white'
+                  : 'text-neutral-700 hover:bg-neutral-100'
               }`}
             >
-              All News
+              For you
             </button>
             {newsCategories.map((category) => (
               <button
                 key={category.slug}
                 onClick={() => handleCategoryChange(category.slug)}
-                className={`px-6 py-3 rounded-lg font-bold text-base transition-all shadow-md ${
+                className={`px-5 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all ${
                   selectedCategory === category.slug
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl scale-105 ring-2 ring-blue-300'
-                    : 'bg-white text-neutral-800 hover:bg-neutral-100 border-2 border-neutral-300 hover:border-primary-400'
+                    ? 'bg-blue-700 text-white'
+                    : 'text-neutral-700 hover:bg-neutral-100'
                 }`}
               >
                 {category.name}
@@ -102,80 +92,54 @@ const NewsHomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Featured Article */}
+      {/* Featured Article - Google News Style */}
       {selectedCategory === 'all' && featuredArticle && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold text-neutral-900 flex items-center gap-3">
-              <div className="w-2 h-8 bg-gradient-to-b from-primary-600 to-purple-600 rounded"></div>
-              Featured Story
-            </h2>
-          </div>
-          <Link
-            to={`/news/${featuredArticle.category}/${featuredArticle.slug}`}
-            className="block rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all border-4 border-black dark:border-yellow-400 group"
-          >
-            <div className="md:flex bg-white dark:bg-neutral-900">
-              <div className="md:w-1/2 relative overflow-hidden">
-                <img
-                  src={featuredArticle.image}
-                  alt={featuredArticle.title}
-                  className="w-full h-full min-h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=Featured+Article';
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                
-                {/* Featured Badge */}
-                <div className="absolute top-6 left-6">
-                  <div className="px-6 py-3 bg-red-600 text-white rounded-xl font-black text-lg shadow-2xl border-4 border-white animate-pulse uppercase tracking-wider">
-                    🔥 FEATURED
+        <div className="bg-white border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <Link
+              to={`/news/${featuredArticle.category}/${featuredArticle.slug}`}
+              className="block group"
+            >
+              <div className="md:flex gap-8">
+                <div className="md:w-3/5 mb-6 md:mb-0">
+                  <div className="relative overflow-hidden rounded-lg">
+                    <img
+                      src={featuredArticle.image}
+                      alt={featuredArticle.title}
+                      className="w-full h-[400px] object-cover group-hover:opacity-90 transition-opacity"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x400?text=Featured+Article';
+                      }}
+                    />
                   </div>
                 </div>
                 
-                {/* Category on Image */}
-                <div className="absolute bottom-6 left-6">
-                  <div className="px-6 py-3 bg-black text-white rounded-xl font-black text-xl shadow-2xl border-4 border-yellow-400 uppercase tracking-wider">
-                    {newsCategories.find(c => c.slug === featuredArticle.category)?.name || featuredArticle.category}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center bg-gradient-to-br from-white to-blue-50 dark:from-neutral-900 dark:to-neutral-800">
-                <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-8 leading-tight group-hover:text-blue-700 dark:group-hover:text-yellow-400 transition-colors">
-                  {featuredArticle.title}
-                </h2>
-                
-                <div className="space-y-4 mb-10">
-                  {/* Date Box */}
-                  <div className="bg-black dark:bg-white px-6 py-4 rounded-xl shadow-lg">
-                    <div className="flex items-center gap-3">
-                      <Calendar className="h-6 w-6 text-yellow-400 dark:text-black" />
-                      <span className="font-black text-white dark:text-black text-lg">29 October 2025</span>
-                    </div>
+                <div className="md:w-2/5 flex flex-col justify-center">
+                  <div className="mb-3">
+                    <span className="inline-block text-xs font-semibold text-blue-700 uppercase tracking-wider">
+                      {newsCategories.find(c => c.slug === featuredArticle.category)?.name || featuredArticle.category}
+                    </span>
                   </div>
                   
-                  {/* Author Box */}
-                  <div className="bg-yellow-400 px-6 py-4 rounded-xl shadow-lg">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-black text-sm">
-                        {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                      <span className="font-black text-black text-lg">
-                        {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name}
-                      </span>
-                    </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 leading-tight group-hover:text-blue-700 transition-colors">
+                    {featuredArticle.title}
+                  </h2>
+                  
+                  <div className="text-sm text-neutral-600 mb-4">
+                    <Link 
+                      to={`/news/author/${featuredArticle.authorId}`}
+                      className="hover:text-blue-700 font-medium"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name}
+                    </Link>
+                    <span className="mx-2">•</span>
+                    <time>29 October 2025</time>
                   </div>
                 </div>
-                
-                <div className="inline-flex items-center gap-4 px-12 py-6 bg-black dark:bg-white text-white dark:text-black rounded-2xl hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all font-black text-2xl shadow-2xl hover:shadow-3xl uppercase tracking-wider border-4 border-yellow-400">
-                  <span>Read Full Story</span>
-                  <ArrowRight className="h-8 w-8 group-hover:translate-x-3 transition-transform" />
-                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       )}
 
