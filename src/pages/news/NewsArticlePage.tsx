@@ -53,16 +53,23 @@ const NewsArticlePage: React.FC = () => {
           return;
         }
 
-        // Dynamically import the article content based on category
-        const categoryPath = articleMeta.category;
+        // Create article object from metadata
+        // CMS content will be loaded separately via getArticleContent
+        const articleData: Article = {
+          id: articleMeta.id,
+          slug: articleMeta.slug,
+          title: articleMeta.title,
+          content: '', // Content comes from CMS via getArticleContent
+          category: articleMeta.category,
+          authorId: articleMeta.authorId,
+          datePublished: articleMeta.datePublished,
+          image: articleMeta.image,
+          tags: [],
+          readTime: 8,
+          views: Math.floor(Math.random() * 5000) + 1000, // Simulated views
+        };
         
-        try {
-          const module = await import(`../../cms-content/news-articles/${categoryPath}/${articleMeta.id}.ts`);
-          setArticle(module.default);
-        } catch (error) {
-          console.error('Failed to load article:', error);
-        }
-        
+        setArticle(articleData);
         setLoading(false);
       } catch (error) {
         console.error('Error loading article:', error);
@@ -225,12 +232,19 @@ const NewsArticlePage: React.FC = () => {
             return <NewsGuideTemplate guide={cmsContent} />;
           }
           
-          // Fallback to HTML content if no CMS content
+          // Fallback to placeholder content if no CMS content
           return (
-            <div 
-              className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-neutral-900 prose-p:text-neutral-700 prose-p:leading-relaxed prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-neutral-900 prose-ul:list-disc prose-ul:pl-6 prose-ol:list-decimal prose-ol:pl-6"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
+            <div className="prose prose-lg max-w-none">
+              <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg mb-8">
+                <p className="text-lg font-semibold text-yellow-900 mb-2">📝 Article Content Coming Soon</p>
+                <p className="text-neutral-700">
+                  This article is currently being prepared. Check back soon for the full content!
+                </p>
+              </div>
+              {article.content && (
+                <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              )}
+            </div>
           );
         })()}
 
