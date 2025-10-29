@@ -37,17 +37,30 @@ function hashCode(str: string): number {
 }
 
 /**
- * Get current date in ISO format
+ * Get current date in ISO format (for dateModified in schema)
  */
-export const getCurrentDate = (): string => {
+export const getCurrentDateISO = (): string => {
   return new Date().toISOString();
 };
 
 /**
- * Format date for display
+ * Format "Latest Update" timestamp - DYNAMIC (updates daily)
+ * Example: "Latest Update • 10/30/2025"
  */
-export const formatDisplayDate = (locale: string = 'en-IN'): string => {
-  return new Date().toLocaleDateString(locale, {
+export const formatLatestUpdate = (): string => {
+  const now = new Date();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const year = now.getFullYear();
+  return `${month}/${day}/${year}`;
+};
+
+/**
+ * Format static date from ISO string for display
+ * @param isoDate - ISO date string from article metadata
+ */
+export const formatStaticDate = (isoDate: string, locale: string = 'en-IN'): string => {
+  return new Date(isoDate).toLocaleDateString(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
@@ -55,10 +68,11 @@ export const formatDisplayDate = (locale: string = 'en-IN'): string => {
 };
 
 /**
- * Format short date for display (e.g., "29 Oct 2025")
+ * Format static short date from ISO string
+ * @param isoDate - ISO date string from article metadata
  */
-export const formatShortDate = (locale: string = 'en-IN'): string => {
-  return new Date().toLocaleDateString(locale, {
+export const formatStaticShortDate = (isoDate: string, locale: string = 'en-IN'): string => {
+  return new Date(isoDate).toLocaleDateString(locale, {
     year: 'numeric',
     month: 'short',
     day: 'numeric'

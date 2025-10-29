@@ -5,7 +5,7 @@ import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
 import SEOHelmet from '../../components/SEOHelmet';
-import { formatDisplayDate, formatShortDate } from '../../utils/randomCalculators';
+import { formatStaticDate, formatStaticShortDate } from '../../utils/randomCalculators';
 
 const ARTICLES_PER_PAGE = 15;
 
@@ -141,7 +141,7 @@ const NewsHomePage: React.FC = () => {
                       {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name}
                     </Link>
                     <span className="mx-2">•</span>
-                    <time>{formatDisplayDate()}</time>
+                    <time>{formatStaticDate(featuredArticle.datePublished)}</time>
                   </div>
                 </div>
               </div>
@@ -202,7 +202,7 @@ const NewsHomePage: React.FC = () => {
                       {author?.name || 'MoneyCal Team'}
                     </Link>
                     <span>•</span>
-                    <time>{formatShortDate()}</time>
+                    <time>{formatStaticShortDate(article.datePublished)}</time>
                   </div>
                 </div>
               </Link>

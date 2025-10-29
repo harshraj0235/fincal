@@ -19,7 +19,7 @@ import { getArticleContent } from '../../cms-content/articleLoader';
 import { NewsGuideTemplate } from '../../components/NewsGuideTemplate';
 import { teamProfiles } from '../../data/teamProfiles';
 import { newsCategories } from '../../data/newsCategories';
-import { formatDisplayDate } from '../../utils/randomCalculators';
+import { formatStaticDate, formatLatestUpdate, getCurrentDateISO } from '../../utils/randomCalculators';
 
 interface Article {
   id: string;
@@ -100,8 +100,19 @@ const NewsArticlePage: React.FC = () => {
   const author = teamProfiles.find(p => p.id === article.authorId);
   const category = newsCategories.find(cat => cat.slug === categorySlug);
 
-  // Always show current system date (dynamic)
-  const formattedDate = formatDisplayDate();
+  // Static date from article metadata
+  const publishedDate = article.datePublished;
+  const modifiedDate = article.dateModified || article.datePublished;
+  
+  // Format static dates for display
+  const formattedPublishedDate = formatStaticDate(publishedDate);
+  const formattedModifiedDate = formatStaticDate(modifiedDate);
+  
+  // Dynamic "Latest Update" timestamp
+  const latestUpdate = formatLatestUpdate();
+  
+  // Current date ISO for schema (always fresh)
+  const currentDateISO = getCurrentDateISO();
 
   return (
     <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
@@ -124,8 +135,8 @@ const NewsArticlePage: React.FC = () => {
         description={article.excerpt || article.title}
         url={`/news/${categorySlug}/${articleId}`}
         image={article.image}
-        datePublished={article.datePublished}
-        dateModified={article.dateModified || article.datePublished}
+        datePublished={publishedDate}
+        dateModified={currentDateISO}
         author={{ name: author?.name || 'MoneyCal Team', image: author?.socialProfiles?.linkedin || '' }}
         category={article.category}
         keywords={article.tags || []}
@@ -168,22 +179,38 @@ const NewsArticlePage: React.FC = () => {
             </Link>
           </div>
 
-          <div className="bg-neutral-50 rounded-lg p-3 sm:p-4 border border-neutral-200">
+          {/* Article Metadata - Published, Modified, Latest Update */}
+          <div className="bg-neutral-50 rounded-lg p-3 sm:p-4 border border-neutral-200 space-y-3">
+            {/* Primary metadata row */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm">
               <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-700">
-                <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600" />
-                <span className="font-medium">{formattedDate}</span>
+                <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 flex-shrink-0" />
+                <span className="font-medium">
+                  <strong className="text-neutral-900">Published:</strong> {formattedPublishedDate}
+                </span>
               </div>
               <span className="text-neutral-300">•</span>
               <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-700">
-                <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600" />
+                <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 flex-shrink-0" />
                 <span className="font-medium">{article.readTime || 8} min read</span>
               </div>
               <span className="text-neutral-300">•</span>
               <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-700">
-                <Eye className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600" />
+                <Eye className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 flex-shrink-0" />
                 <span className="font-medium">{(article.views || 0).toLocaleString()} views</span>
               </div>
+            </div>
+            
+            {/* Latest Update row (dynamic) */}
+            <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm border-t border-neutral-200 pt-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 text-green-700 rounded-full font-semibold">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span>Latest Update • {latestUpdate}</span>
+              </div>
+              <span className="text-neutral-400">•</span>
+              <span className="text-neutral-600">
+                <strong className="text-neutral-900">Last Modified:</strong> {formattedModifiedDate}
+              </span>
             </div>
           </div>
 

@@ -53,14 +53,23 @@ const NewsArticleSchema: React.FC<NewsArticleSchemaProps> = ({
         name: publisher.name,
         logo: {
           '@type': 'ImageObject',
-          url: publisher.logo,
+          url: publisher.logo || 'https://moneycal.in/logo.png',
+          width: 600,
+          height: 60,
         },
       },
       ...(category && { articleSection: category }),
       ...(keywords && keywords.length > 0 && { keywords: keywords.join(', ') }),
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': url,
+        '@id': `https://moneycal.in${url}`,
+      },
+      // Additional Google News requirements
+      inLanguage: 'en-IN',
+      copyrightYear: new Date(datePublished).getFullYear(),
+      copyrightHolder: {
+        '@type': 'Organization',
+        name: 'MoneyCal',
       },
     };
 
