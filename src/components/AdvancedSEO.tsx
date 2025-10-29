@@ -401,20 +401,3 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
 };
 
 export default AdvancedSEO;
-    const hash = btoa(unescape(encodeURIComponent(JSON.stringify(faqStructuredData)))).slice(0, 12);
-    const scriptId = `jsonld-faq-${hash}`;
-    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
-    if (!script) {
-      script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.id = scriptId;
-      document.head.appendChild(script);
-    }
-    script.textContent = JSON.stringify(faqStructuredData);
-  };
-
-  return null; // This component doesn't render anything
-};
-
-export default AdvancedSEO;
-
