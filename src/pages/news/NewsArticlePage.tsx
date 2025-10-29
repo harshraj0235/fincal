@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { 
-  ArrowLeft, 
+  ArrowLeft,
+  ArrowRight,
   Calendar, 
   Clock, 
   Eye, 
