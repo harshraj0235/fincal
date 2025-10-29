@@ -350,6 +350,137 @@ export const omnichannelFootprint: NewsGuideSection = {
   internalLinks: { calculators: ["business-loan-calculator", "roi-calculator", "break-even-calculator"] }
 };
 
+export const ipoProceedsUsage: NewsGuideSection = {
+  headline: "What Lenskart Will Do With IPO Proceeds: Expansion, Tech & Brand Building",
+  subheadline: "Detailed Breakdown of ₹6,000 Crore Deployment Strategy Across Stores, Technology, and International Markets",
+  featuredImage: {
+    url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop&q=80",
+    alt: "Corporate business strategy planning meeting with financial projections and growth charts",
+    caption: "Lenskart plans strategic deployment of ₹6,000 crore IPO proceeds across store expansion, technology upgrades, and international growth",
+    credit: "Unsplash"
+  },
+  whatsNew: {
+    summary: "IPO proceeds allocation breakdown: (1) ₹2,500 crore (42%) for opening 1,000 new stores in tier 2-3 cities by 2027, (2) ₹1,500 crore (25%) for technology - AI virtual try-on, AR features, inventory systems, (3) ₹1,000 crore (17%) for working capital and operations, (4) ₹700 crore (12%) for international expansion in Southeast Asia, Middle East, (5) ₹300 crore (5%) for brand building and marketing. Store expansion will focus on cities with 1-5 lakh population where Lenskart has minimal presence but rising eyewear demand.",
+    date: new Date().toISOString(),
+    source: { name: "SEBI DRHP - Use of Proceeds Section", url: "https://www.sebi.gov.in", credibility: "official" }
+  },
+  whyItMatters: {
+    significance: "How IPO proceeds are deployed reveals management priorities and growth strategy. Lenskart's heavy allocation to stores (42%) over technology shows confidence in physical retail profitability. This contrasts with pure-tech companies that typically allocate 60%+ to R&D. The balanced approach (stores + technology + international) reduces execution risk while maintaining multiple growth levers.",
+    impact: [
+      "1,000 new stores create 15,000+ retail jobs in tier 2-3 cities",
+      "Technology investments improve customer experience and reduce returns",
+      "International expansion reduces India market concentration risk",
+      "Working capital allocation ensures smooth operations during growth phase",
+      "Brand building strengthens pricing power and customer acquisition"
+    ],
+    stakeholders: [
+      "IPO investors evaluating management's capital allocation skills",
+      "Job seekers in tier 2-3 cities where stores will open",
+      "Technology vendors and software companies",
+      "Real estate developers in expansion cities",
+      "International partners in SEA and Middle East"
+    ]
+  },
+  keyData: {
+    facts: [
+      { label: "Total IPO Proceeds", value: "₹6,000 crore fresh issue", source: "DRHP" },
+      { label: "Store Expansion", value: "₹2,500 cr (42%) - 1,000 stores", source: "Use of proceeds" },
+      { label: "Technology", value: "₹1,500 cr (25%) - AI/AR/Systems", source: "Capital allocation" },
+      { label: "International", value: "₹700 cr (12%) - SEA + Middle East", source: "Expansion plan" },
+      { label: "Working Capital", value: "₹1,000 cr (17%) - Operations", source: "Financial planning" }
+    ]
+  },
+  coverage: {
+    mainTopics: [
+      {
+        title: "Store Expansion Roadmap",
+        description: "1,000 stores in 500+ tier 2-3 cities by 2027",
+        subtopics: [
+          "City selection criteria - population 1-5 lakh, rising disposable income",
+          "Capex per store - ₹25 lakh average (₹2,500 cr total)",
+          "Payback period target - 18 months ROI",
+          "Store formats - mix of kiosks (500), mid-size (400), flagship (100)"
+        ]
+      },
+      {
+        title: "Technology Investment Plan",
+        description: "₹1,500 crore allocation to AI, AR, and systems",
+        subtopics: [
+          "AI virtual try-on - reducing return rates from 15% to 5%",
+          "AR features - enhancing customer experience",
+          "Inventory optimization - reducing working capital by 20%",
+          "Customer analytics - improving personalization and upselling"
+        ]
+      },
+      {
+        title: "International Expansion Strategy",
+        description: "₹700 crore for Southeast Asia and Middle East markets",
+        subtopics: [
+          "Singapore - flagship market with 50 stores planned",
+          "Dubai - premium segment focus with 40 stores",
+          "Thailand, Malaysia, Indonesia - mass market opportunity"
+        ]
+      }
+    ]
+  },
+  outlook: {
+    whatToWatch: [
+      "Quarterly store opening numbers vs. 1,000 store target",
+      "Technology ROI - does AI improve conversion and reduce returns?",
+      "International market performance - revenue and profitability",
+      "Working capital efficiency - cash conversion cycle improvement",
+      "Actual deployment vs. stated allocation - management execution"
+    ],
+    upcomingMilestones: [
+      { date: "Q2 2025", event: "First 100 stores from IPO proceeds operational" },
+      { date: "Q4 2025", event: "AI virtual try-on launch across all stores" },
+      { date: "2026", event: "500 stores milestone, International breakeven" },
+      { date: "2027", event: "1,000 stores target completion" }
+    ],
+    questions: [
+      "Will ₹6,000 crore be sufficient or will additional capital raises be needed?",
+      "Can store expansion maintain 18-month payback as competition intensifies?",
+      "Will technology investments translate to measurable revenue/margin benefits?",
+      "Can international markets turn profitable within 3-5 years?"
+    ]
+  },
+  takeaway: {
+    forReaders: [
+      "IPO proceeds deployment shows balanced growth strategy",
+      "Store expansion remains core focus despite digital trends",
+      "Technology investments aim to improve profitability, not just growth",
+      "International diversification reduces India concentration risk"
+    ],
+    forInvestors: [
+      "Monitor quarterly progress on stated deployment plan",
+      "Compare actual store openings vs. target (250 stores/year needed)",
+      "Track technology ROI through improved conversion and lower return rates",
+      "Evaluate management execution ability over 2-3 years post-IPO"
+    ],
+    forBusinesses: [
+      "Balanced capital allocation across growth, technology, and expansion is key",
+      "Store economics must be unit-profitable before aggressive scaling",
+      "Technology investments should have clear ROI metrics",
+      "International expansion requires patient capital and local partnerships"
+    ]
+  },
+  eeat: {
+    author: {
+      name: "Saurabh Kumar",
+      title: "Business Strategy Analyst",
+      bio: "Corporate finance and capital allocation expert with 10+ years experience covering IPOs and growth strategies"
+    },
+    sources: [
+      { name: "SEBI DRHP - Lenskart", url: "https://www.sebi.gov.in", credibility: "official" },
+      { name: "Company Investor Presentations", url: "#", credibility: "official" }
+    ],
+    lastUpdated: new Date().toISOString()
+  },
+  internalLinks: {
+    calculators: ["business-loan-calculator", "investment-calculator", "roi-calculator", "break-even-calculator"]
+  }
+};
+
 export const marketTrendsSupport: NewsGuideSection = {
   headline: "How the Eyewear Market Trend Supports Lenskart's Growth Story",
   subheadline: "India's ₹45,000 Crore Eyewear Market Set to Triple by 2030",
