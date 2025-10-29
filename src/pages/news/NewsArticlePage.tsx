@@ -301,13 +301,13 @@ const NewsArticlePage: React.FC = () => {
           </div>
         )}
 
-        {/* Back to News */}
-        <div className="mt-12 text-center pb-8">
+        {/* Back to News - Mobile Optimized */}
+        <div className="mt-8 sm:mt-12 text-center pb-6 sm:pb-8">
           <Link 
             to="/news"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-neutral-800 to-neutral-900 text-white rounded-xl hover:from-neutral-900 hover:to-black transition-all font-black text-lg shadow-2xl hover:shadow-3xl uppercase tracking-wide"
+            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-5 bg-gradient-to-r from-neutral-800 to-neutral-900 text-white rounded-lg sm:rounded-xl hover:from-neutral-900 hover:to-black active:from-black active:to-neutral-800 transition-all font-black text-sm sm:text-base md:text-lg shadow-2xl hover:shadow-3xl active:scale-95 uppercase tracking-wide"
           >
-            <ArrowLeft className="h-6 w-6" />
+            <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
             Back to All News
           </Link>
         </div>

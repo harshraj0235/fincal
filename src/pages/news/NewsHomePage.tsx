@@ -67,10 +67,10 @@ const NewsHomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Category Filter - Clean Google News Style */}
+      {/* Category Filter - Clean Google News Style - Mobile Optimized */}
       <div className="bg-white border-b sticky top-16 z-30 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide -mx-4 px-4">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide px-3 sm:px-0" style={{ WebkitOverflowScrolling: 'touch' }}>
             <button
               onClick={() => handleCategoryChange('all')}
               className={`px-5 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all ${
