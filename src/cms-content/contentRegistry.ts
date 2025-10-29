@@ -21,7 +21,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'Why Lenskart\'s upcoming IPO matters for Indian eyewear',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-15',
-    image: '/images/news/lenskart-ipo.jpg'
+    image: 'https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=1200&h=630&fit=crop&q=80'
   },
   {
     id: 'article-02-valuation-breakdown',
@@ -30,7 +30,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'Breaking down Lenskart\'s valuation: What ₹70,000 crore means',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-16',
-    image: '/images/news/lenskart-valuation.jpg'
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80'
   },
   {
     id: 'article-06-ipo-risks',
@@ -39,7 +39,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'Is Lenskart\'s IPO over-priced? Risks investors should know',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-20',
-    image: '/images/news/lenskart-risks.jpg'
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80'
   },
   {
     id: 'article-10-retail-investor-guide',
@@ -48,7 +48,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'Lenskart\'s IPO: What retail investors should watch',
     authorId: 'saurabh-kumar',
     datePublished: '2025-01-24',
-    image: '/images/news/lenskart-retail.jpg'
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
   },
   
   // Business Analysis Category
@@ -59,7 +59,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'From online to 2,000+ stores: How Lenskart built its omnichannel footprint',
     authorId: 'harsh-raj',
     datePublished: '2025-01-17',
-    image: '/images/news/lenskart-stores.jpg'
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=630&fit=crop&q=80'
   },
   {
     id: 'article-05-ipo-proceeds-usage',
@@ -68,7 +68,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'What Lenskart will do with IPO proceeds: Expansion, tech & brand building',
     authorId: 'saurabh-kumar',
     datePublished: '2025-01-19',
-    image: '/images/news/lenskart-expansion.jpg'
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop&q=80'
   },
   {
     id: 'article-09-market-trends-support',
@@ -77,7 +77,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'How the eyewear market trend supports Lenskart\'s growth story',
     authorId: 'harsh-raj',
     datePublished: '2025-01-23',
-    image: '/images/news/eyewear-trends.jpg'
+    image: 'https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=1200&h=630&fit=crop&q=80'
   },
   {
     id: 'article-12-eyewear-purchase-behavior',
@@ -86,7 +86,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'Emerging eyewear purchase behaviour: More frequent buys, style changes',
     authorId: 'harsh-raj',
     datePublished: '2025-01-26',
-    image: '/images/news/consumer-behavior.jpg'
+    image: 'https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=1200&h=630&fit=crop&q=80'
   },
   
   // Startups Category
@@ -97,7 +97,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'Major investors behind Lenskart: Who\'s backing the eyewear boom?',
     authorId: 'vikram-kumar',
     datePublished: '2025-01-18',
-    image: '/images/news/lenskart-investors.jpg'
+    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=630&fit=crop&q=80'
   },
   {
     id: 'article-08-founder-stake-strategy',
@@ -106,7 +106,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'How the founder increased his stake ahead of listing',
     authorId: 'harsh-raj',
     datePublished: '2025-01-22',
-    image: '/images/news/founder-strategy.jpg'
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&h=630&fit=crop&q=80'
   },
   
   // Economy Category
@@ -117,7 +117,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'Lenskart gets regulatory nod for IPO — what this means for the Indian eyewear sector',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-21',
-    image: '/images/news/sebi-approval.jpg'
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=630&fit=crop&q=80'
   },
   {
     id: 'article-11-eyewear-market-growth',
@@ -126,7 +126,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     title: 'Why the eyewear market in India is poised to grow at double-digit rates',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-25',
-    image: '/images/news/market-growth.jpg'
+    image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
