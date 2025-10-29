@@ -10,9 +10,17 @@ import { indianEyewearGrowth } from './news-articles/economy/article-11-eyewear-
 
 // Markets Articles
 import { lenskartIPOMatters } from './news-articles/markets/article-01-lenskart-ipo-matters';
-
-// Business Analysis Articles
-// Add more business analysis articles as they are created
+import { 
+  valuationBreakdown, 
+  ipoRisks, 
+  retailInvestorGuide,
+  omnichannelFootprint,
+  ipoProceedsUsage,
+  marketTrendsSupport,
+  purchaseBehavior,
+  majorInvestors,
+  regulatoryNod
+} from './news-articles/createAllArticles';
 
 // Startups Articles
 import { founderStakeStrategy } from './news-articles/startups/article-08-founder-stake-strategy';
@@ -21,24 +29,23 @@ import { founderStakeStrategy } from './news-articles/startups/article-08-founde
 export const articleContentMap: Record<string, NewsGuideSection> = {
   // Economy
   'article-11-eyewear-market-growth': indianEyewearGrowth,
+  'article-07-regulatory-nod': regulatoryNod,
   
   // Markets
   'article-01-lenskart-ipo-matters': lenskartIPOMatters,
-  // 'article-02-valuation-breakdown': valuationBreakdown,
-  // 'article-06-ipo-risks': ipoRisks,
-  // 'article-10-retail-investor-guide': retailInvestorGuide,
+  'article-02-valuation-breakdown': valuationBreakdown,
+  'article-06-ipo-risks': ipoRisks,
+  'article-10-retail-investor-guide': retailInvestorGuide,
   
   // Business Analysis
-  // 'article-03-omnichannel-footprint': omnichannelFootprint,
-  // 'article-05-ipo-proceeds-usage': ipoProceedsUsage,
-  // 'article-09-market-trends-support': marketTrendsSupport,
-  // 'article-12-eyewear-purchase-behavior': purchaseBehavior,
+  'article-03-omnichannel-footprint': omnichannelFootprint,
+  'article-05-ipo-proceeds-usage': ipoProceedsUsage,
+  'article-09-market-trends-support': marketTrendsSupport,
+  'article-12-eyewear-purchase-behavior': purchaseBehavior,
   
   // Startups
-  // 'article-04-major-investors': majorInvestors,
+  'article-04-major-investors': majorInvestors,
   'article-08-founder-stake-strategy': founderStakeStrategy,
-  
-  // Add more articles as they are imported above
 };
 
 /**

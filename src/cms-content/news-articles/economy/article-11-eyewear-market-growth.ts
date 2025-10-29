@@ -11,6 +11,13 @@ export const indianEyewearGrowth: NewsGuideSection = {
   headline: "₹45,000 से ₹1,05,000 करोड़! भारत का आईवियर बाजार 5 सालों में दोगुना होगा | पूरी रिपोर्ट",
   subheadline: "18% CAGR Growth - Lenskart, Titan, Amazon सब के लिए सोने की खान | Data-Driven Analysis",
   
+  featuredImage: {
+    url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&h=630&fit=crop&q=80",
+    alt: "India's eyewear market growth chart showing upward trend - ₹45,000 crore to ₹1,05,000 crore projection by 2030",
+    caption: "भारत का eyewear बाजार 18% CAGR से बढ़कर 2030 तक ₹1,05,000 करोड़ तक पहुंचने की उम्मीद है",
+    credit: "Unsplash"
+  },
+  
   whatsNew: {
     summary: "Grand View Research की latest report के अनुसार, भारत का eyewear बाजार 2025 में ₹45,000 करोड़ से बढ़कर 2030 तक ₹1,05,000 करोड़ हो जाएगा - यह 18% CAGR (Compound Annual Growth Rate) है। यह growth दुनिया में सबसे तेज है (Global average 6-8% है)। मुख्य drivers हैं: (1) 35 करोड़ से 55 करोड़ eyewear users में वृद्धि (+57%), (2) Organized sector 25% से 50% market share तक expansion, (3) Average selling price ₹1,200 से ₹2,500 तक doubling (premiumization), (4) Replacement frequency 4 साल से 2.5 साल तक improvement। China (₹3 लाख करोड़) और US (₹2 लाख करोड़) के बाद भारत दुनिया का तीसरा सबसे बड़ा eyewear market बन जाएगा।",
     date: new Date().toISOString(),
