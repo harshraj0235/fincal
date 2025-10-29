@@ -179,10 +179,6 @@ const NewsArticlePage: React.FC = () => {
               <Clock className="h-4 w-4" />
               <span>{article.readTime || 8} min read</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Eye className="h-4 w-4" />
-              <span>{(article.views || 0).toLocaleString()} views</span>
-            </div>
           </div>
 
           {/* Social Share */}
