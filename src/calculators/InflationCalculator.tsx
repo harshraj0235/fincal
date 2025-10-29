@@ -139,4 +139,3 @@ export const InflationCalculator: React.FC = () => {
     </>
   );
 };
-              onChange={(e) => setYears(Number(e.target.value))}
