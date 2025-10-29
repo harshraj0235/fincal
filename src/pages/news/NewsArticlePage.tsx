@@ -222,7 +222,7 @@ const NewsArticlePage: React.FC = () => {
         {(() => {
           const cmsContent = getArticleContent(article.id);
           if (cmsContent) {
-            return <NewsGuideTemplate section={cmsContent} />;
+            return <NewsGuideTemplate guide={cmsContent} />;
           }
           
           // Fallback to HTML content if no CMS content
