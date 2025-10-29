@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Calendar, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Calendar, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
 import SEOHelmet from '../../components/SEOHelmet';
 
+const ARTICLES_PER_PAGE = 15;
+
 const NewsCategoryPage: React.FC = () => {
   const { categorySlug } = useParams();
+  const [currentPage, setCurrentPage] = useState(1);
 
   const category = newsCategories.find(c => c.slug === categorySlug);
-  const articles = contentRegistry.filter(article => article.category === categorySlug);
+  const allArticles = contentRegistry.filter(article => article.category === categorySlug);
+  
+  // Pagination
+  const totalPages = Math.ceil(allArticles.length / ARTICLES_PER_PAGE);
+  const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const endIndex = startIndex + ARTICLES_PER_PAGE;
+  const articles = allArticles.slice(startIndex, endIndex);
 
   if (!category) {
     return <Navigate to="/news" replace />;
@@ -42,12 +51,15 @@ const NewsCategoryPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Articles Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-neutral-900">
-            {articles.length} Article{articles.length !== 1 ? 's' : ''}
+      {/* Articles Grid - With Pagination */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
+            {category.name} News
           </h2>
+          <p className="text-sm sm:text-base text-neutral-600">
+            Showing {startIndex + 1}-{Math.min(endIndex, allArticles.length)} of {allArticles.length} article{allArticles.length !== 1 ? 's' : ''}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -114,6 +126,98 @@ const NewsCategoryPage: React.FC = () => {
               <ArrowLeft className="h-4 w-4" />
               Back to All News
             </Link>
+          </div>
+        )}
+
+        {/* Pagination Controls - Mobile Friendly */}
+        {totalPages > 1 && (
+          <div className="mt-8 sm:mt-12 pb-6">
+            {/* Mobile: Show only prev/next and current page */}
+            <div className="flex sm:hidden items-center justify-between px-4">
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                disabled={currentPage === 1}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold ${
+                  currentPage === 1
+                    ? 'text-neutral-300 cursor-not-allowed'
+                    : 'text-neutral-700 bg-white border border-neutral-300 active:bg-neutral-100'
+                }`}
+              >
+                <ChevronLeft className="h-4 w-4" />
+                Prev
+              </button>
+              
+              <div className="text-sm font-semibold text-neutral-700">
+                Page {currentPage} of {totalPages}
+              </div>
+              
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                disabled={currentPage === totalPages}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold ${
+                  currentPage === totalPages
+                    ? 'text-neutral-300 cursor-not-allowed'
+                    : 'text-neutral-700 bg-white border border-neutral-300 active:bg-neutral-100'
+                }`}
+              >
+                Next
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Desktop: Show full pagination */}
+            <div className="hidden sm:flex items-center justify-center gap-2">
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                disabled={currentPage === 1}
+                className={`p-2 rounded-full transition-all ${
+                  currentPage === 1
+                    ? 'text-neutral-300 cursor-not-allowed'
+                    : 'text-neutral-700 hover:bg-neutral-100'
+                }`}
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+
+              {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
+                let pageNum;
+                if (totalPages <= 5) {
+                  pageNum = i + 1;
+                } else if (currentPage <= 3) {
+                  pageNum = i + 1;
+                } else if (currentPage >= totalPages - 2) {
+                  pageNum = totalPages - 4 + i;
+                } else {
+                  pageNum = currentPage - 2 + i;
+                }
+                
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={`w-10 h-10 rounded-full font-semibold text-sm transition-all ${
+                      currentPage === pageNum
+                        ? 'bg-blue-700 text-white'
+                        : 'text-neutral-700 hover:bg-neutral-100'
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                disabled={currentPage === totalPages}
+                className={`p-2 rounded-full transition-all ${
+                  currentPage === totalPages
+                    ? 'text-neutral-300 cursor-not-allowed'
+                    : 'text-neutral-700 hover:bg-neutral-100'
+                }`}
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
+            </div>
           </div>
         )}
       </div>

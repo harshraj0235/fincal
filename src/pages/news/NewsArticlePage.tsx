@@ -140,107 +140,95 @@ const NewsArticlePage: React.FC = () => {
         keywords={article.tags || []}
       />
 
-      {/* Article Header */}
+      {/* Article Header - Mobile Responsive */}
       <div className="bg-white border-b shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center text-neutral-600 hover:text-neutral-900 mb-4 transition-colors"
+            className="flex items-center text-neutral-600 hover:text-neutral-900 mb-3 sm:mb-4 transition-colors text-sm sm:text-base active:scale-95"
           >
             <ArrowLeft className="h-4 w-4 mr-1" />
-            Back to News
+            Back
           </button>
 
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm text-neutral-600 mb-4">
-            <Link to="/news" className="hover:text-primary-600 transition-colors">News</Link>
-            <span>/</span>
-            <Link to={`/news/${categorySlug}`} className="hover:text-primary-600 transition-colors capitalize">
-              {category?.name || categorySlug}
-            </Link>
-          </div>
-
           {/* Category Badge */}
-          <div className="mb-4">
-            <span className="inline-block px-4 py-2 bg-primary-100 text-primary-800 rounded-full font-semibold text-sm">
+          <div className="mb-3 sm:mb-4">
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-blue-50 text-blue-700 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wide">
               {category?.name || article.category}
             </span>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
+          {/* Headline - Mobile Optimized */}
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4 sm:mb-6 leading-tight">
             {article.title}
           </h1>
 
-          {/* Author Info - Simple Text Link */}
-          <div className="mb-6">
+          {/* Author Info - Mobile Friendly */}
+          <div className="mb-4 sm:mb-6">
             <Link 
               to={`/news/author/${article.authorId}`}
-              className="inline-flex items-center gap-2 text-xl font-bold text-neutral-800 dark:text-neutral-200 hover:text-blue-700 dark:hover:text-yellow-400 transition-colors group"
+              className="inline-flex items-center gap-2 text-base sm:text-lg md:text-xl font-medium text-neutral-700 hover:text-blue-700 transition-colors group"
             >
-              <span>Written by</span>
-              <span className="font-black text-blue-700 dark:text-yellow-400 underline decoration-2 underline-offset-4 group-hover:decoration-4">
+              <span className="text-neutral-600">Written by</span>
+              <span className="font-bold text-blue-700 underline decoration-2 underline-offset-2 group-hover:decoration-4">
                 {author?.name || 'MoneyCal Team'}
               </span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          <div className="bg-white rounded-lg p-4 shadow-sm border border-neutral-200">
-            <div className="flex flex-wrap items-center gap-6 text-sm">
-              <div className="flex items-center gap-2 text-neutral-700 font-medium">
-                <Calendar className="h-4 w-4 text-primary-600" />
-                <span className="font-semibold">Published:</span> {formattedDate}
+          <div className="bg-neutral-50 rounded-lg p-3 sm:p-4 border border-neutral-200">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-700">
+                <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600" />
+                <span className="font-medium">{formattedDate}</span>
               </div>
-              <div className="flex items-center gap-2 text-neutral-700 font-medium">
-                <Clock className="h-4 w-4 text-primary-600" />
-                <span className="font-semibold">Read Time:</span> {article.readTime || 8} min
+              <span className="text-neutral-300">•</span>
+              <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-700">
+                <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600" />
+                <span className="font-medium">{article.readTime || 8} min read</span>
               </div>
-              <div className="flex items-center gap-2 text-neutral-700 font-medium">
-                <Eye className="h-4 w-4 text-primary-600" />
-                <span className="font-semibold">Views:</span> {(article.views || 0).toLocaleString()}
-              </div>
-            </div>
-            <div className="mt-3 pt-3 border-t border-neutral-200">
-              <div className="text-xs text-neutral-500">
-                <span className="font-semibold">Last Updated:</span> {updateDate}
+              <span className="text-neutral-300">•</span>
+              <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-700">
+                <Eye className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600" />
+                <span className="font-medium">{(article.views || 0).toLocaleString()} views</span>
               </div>
             </div>
           </div>
 
-          {/* Social Share */}
-          <div className="flex items-center gap-4 pt-6 mt-6 border-t">
-            <span className="text-sm font-semibold text-neutral-700 flex items-center">
-              <Share2 className="h-4 w-4 mr-2" />
+          {/* Social Share - Mobile Optimized */}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-4 sm:pt-6 mt-4 sm:mt-6 border-t">
+            <span className="text-xs sm:text-sm font-semibold text-neutral-700 flex items-center">
+              <Share2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
               Share:
             </span>
             <button 
               onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank')}
-              className="p-2 hover:bg-blue-50 rounded-full transition-colors"
+              className="p-2 hover:bg-blue-50 rounded-full transition-colors active:scale-95"
               aria-label="Share on Facebook"
             >
-              <Facebook className="h-5 w-5 text-blue-600" />
+              <Facebook className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
             </button>
             <button 
               onClick={() => window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(article.title)}`, '_blank')}
-              className="p-2 hover:bg-sky-50 rounded-full transition-colors"
+              className="p-2 hover:bg-sky-50 rounded-full transition-colors active:scale-95"
               aria-label="Share on Twitter"
             >
-              <Twitter className="h-5 w-5 text-sky-500" />
+              <Twitter className="h-4 w-4 sm:h-5 sm:w-5 text-sky-500" />
             </button>
             <button 
               onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank')}
-              className="p-2 hover:bg-blue-50 rounded-full transition-colors"
+              className="p-2 hover:bg-blue-50 rounded-full transition-colors active:scale-95"
               aria-label="Share on LinkedIn"
             >
-              <Linkedin className="h-5 w-5 text-blue-700" />
+              <Linkedin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-700" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Article Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Article Content - Mobile Optimized */}
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
         {/* Check if CMS content is available */}
         {(() => {
           const cmsContent = getArticleContent(article.id);
@@ -287,26 +275,26 @@ const NewsArticlePage: React.FC = () => {
           </div>
         )}
 
-        {/* About the Author - Clean Text Link */}
+        {/* About the Author - Mobile Responsive */}
         {author && (
-          <div className="mt-12 bg-neutral-900 rounded-2xl shadow-2xl overflow-hidden border-2 border-neutral-700">
-            <div className="bg-black px-8 py-5">
-              <h3 className="text-3xl font-black text-white flex items-center gap-3">
-                <User className="h-8 w-8 text-yellow-400" />
+          <div className="mt-8 sm:mt-12 bg-neutral-900 rounded-lg sm:rounded-2xl shadow-xl overflow-hidden border-2 border-neutral-700">
+            <div className="bg-black px-4 sm:px-8 py-3 sm:py-5">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white flex items-center gap-2 sm:gap-3">
+                <User className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-400" />
                 About the Author
               </h3>
             </div>
-            <div className="p-10 bg-neutral-900">
+            <div className="p-6 sm:p-8 md:p-10 bg-neutral-900">
               <Link
                 to={`/news/author/${article.authorId}`}
-                className="block hover:opacity-90 transition-all"
+                className="block hover:opacity-90 transition-all active:scale-95"
               >
-                <h4 className="text-4xl font-black text-white mb-3 hover:text-yellow-400 transition-colors">{author.name}</h4>
-                <p className="text-2xl text-yellow-400 font-black mb-5">{author.role}</p>
-                <p className="text-lg text-neutral-300 leading-relaxed mb-6 font-medium">{author.bio}</p>
-                <div className="inline-flex items-center gap-3 px-8 py-4 bg-white text-neutral-900 rounded-xl hover:bg-yellow-400 transition-all font-black text-lg shadow-xl uppercase tracking-wide">
-                  View All Articles by {author.name.split(' ')[0]}
-                  <ArrowRight className="h-6 w-6" />
+                <h4 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-2 sm:mb-3 hover:text-yellow-400 transition-colors">{author.name}</h4>
+                <p className="text-lg sm:text-xl md:text-2xl text-yellow-400 font-black mb-3 sm:mb-5">{author.role}</p>
+                <p className="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed mb-4 sm:mb-6 font-medium">{author.bio}</p>
+                <div className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-white text-neutral-900 rounded-lg sm:rounded-xl hover:bg-yellow-400 transition-all font-bold sm:font-black text-sm sm:text-base md:text-lg shadow-xl uppercase tracking-wide active:scale-95">
+                  View All Articles
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
                 </div>
               </Link>
             </div>

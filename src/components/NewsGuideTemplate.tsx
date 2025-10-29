@@ -429,37 +429,9 @@ export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) =
         </div>
       </section>
 
-      {/* E-E-A-T Section - Author & Sources */}
+      {/* E-E-A-T Section - Sources Only (Author shown separately) */}
       <section className="mb-12">
         <div className="bg-neutral-100 p-6 rounded-xl">
-          {/* Author Attribution */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-3">About the Author</h3>
-            <div className="flex items-start gap-4">
-              {guide.eeat.author.image && (
-                <img 
-                  src={guide.eeat.author.image} 
-                  alt={guide.eeat.author.name}
-                  className="w-16 h-16 rounded-full"
-                />
-              )}
-              <div>
-                <p className="font-bold text-neutral-900">{guide.eeat.author.name}</p>
-                <p className="text-sm text-neutral-600 mb-2">{guide.eeat.author.title}</p>
-                <p className="text-sm text-neutral-700">{guide.eeat.author.bio}</p>
-                {guide.eeat.author.credentials && guide.eeat.author.credentials.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {guide.eeat.author.credentials.map((cred, index) => (
-                      <span key={index} className="text-xs bg-neutral-200 text-neutral-700 px-2 py-1 rounded">
-                        {cred}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
           {/* Expert Quotes (E-E-A-T Signal) */}
           {guide.eeat.expertQuotes && guide.eeat.expertQuotes.length > 0 && (
             <div className="mb-6">
