@@ -93,5 +93,5 @@
 # HTTP to HTTPS redirect
 http://moneycal.in/*                         https://moneycal.in/:splat               301!
 
-# Catch-all for SPA
+# Catch-all for SPA - must be last (Cloudflare Pages handles assets automatically)
 /*                                           /index.html                              200
