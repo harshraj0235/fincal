@@ -25,7 +25,7 @@ const AuthorPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
       <SEOHelmet
         title={`${author.name} - Author Profile | MoneyCal`}
         description={`Read all articles by ${author.name}, ${author.role} at MoneyCal. ${author.bio}`}
@@ -38,7 +38,7 @@ const AuthorPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <Link
             to="/news"
-            className="inline-flex items-center gap-2 text-blue-100 hover:text-white mb-4 sm:mb-6 transition-colors text-sm sm:text-base active:scale-95"
+            className="inline-flex items-center gap-2 px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 active:bg-white/20 rounded-lg mb-4 sm:mb-6 transition-all text-sm sm:text-base touch-manipulation active:scale-95 -ml-3"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to All News

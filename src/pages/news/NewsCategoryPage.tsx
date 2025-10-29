@@ -26,7 +26,7 @@ const NewsCategoryPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
       <SEOHelmet
         title={`${category.name} News | MoneyCal`}
         description={category.description}
@@ -34,18 +34,18 @@ const NewsCategoryPage: React.FC = () => {
         url={`/news/${categorySlug}`}
       />
 
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-blue-600 to-purple-600 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - Mobile Optimized */}
+      <div className="bg-gradient-to-br from-primary-600 via-blue-600 to-purple-600 text-white py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <Link
             to="/news"
-            className="inline-flex items-center gap-2 text-blue-100 hover:text-white mb-4 transition-colors"
+            className="inline-flex items-center gap-2 px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 active:bg-white/20 rounded-lg mb-4 transition-all text-sm sm:text-base touch-manipulation active:scale-95 -ml-3"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to All News
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{category.name}</h1>
-          <p className="text-xl text-blue-100 max-w-3xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">{category.name}</h1>
+          <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl">
             {category.description}
           </p>
         </div>

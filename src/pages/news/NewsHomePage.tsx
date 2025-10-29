@@ -31,7 +31,7 @@ const NewsHomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
       <SEOHelmet
         title="Financial News & Market Analysis | MoneyCal"
         description="Latest financial news, market analysis, IPO updates, and economic insights. Expert coverage of Indian markets, startups, and business trends."
@@ -68,15 +68,15 @@ const NewsHomePage: React.FC = () => {
       </div>
 
       {/* Category Filter - Clean Google News Style - Mobile Optimized */}
-      <div className="bg-white border-b sticky top-16 z-30 shadow-sm">
+      <div className="bg-white border-b sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
           <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide px-3 sm:px-0" style={{ WebkitOverflowScrolling: 'touch' }}>
             <button
               onClick={() => handleCategoryChange('all')}
-              className={`px-5 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all ${
+              className={`px-4 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation ${
                 selectedCategory === 'all'
-                  ? 'bg-blue-700 text-white'
-                  : 'text-neutral-700 hover:bg-neutral-100'
+                  ? 'bg-blue-700 text-white shadow-md'
+                  : 'text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200'
               }`}
             >
               For you
@@ -85,10 +85,10 @@ const NewsHomePage: React.FC = () => {
               <button
                 key={category.slug}
                 onClick={() => handleCategoryChange(category.slug)}
-                className={`px-5 py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all ${
+                className={`px-4 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation ${
                   selectedCategory === category.slug
-                    ? 'bg-blue-700 text-white'
-                    : 'text-neutral-700 hover:bg-neutral-100'
+                    ? 'bg-blue-700 text-white shadow-md'
+                    : 'text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200'
                 }`}
               >
                 {category.name}

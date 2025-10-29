@@ -113,7 +113,7 @@ const NewsArticlePage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
       <SEOHelmet
         title={`${article.title} | MoneyCal News`}
         description={article.excerpt || article.title}
@@ -145,9 +145,9 @@ const NewsArticlePage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center text-neutral-600 hover:text-neutral-900 mb-3 sm:mb-4 transition-colors text-sm sm:text-base active:scale-95"
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 active:bg-neutral-200 rounded-lg mb-3 sm:mb-4 transition-all text-sm sm:text-base active:scale-95 touch-manipulation -ml-3"
           >
-            <ArrowLeft className="h-4 w-4 mr-1" />
+            <ArrowLeft className="h-4 w-4" />
             Back
           </button>
 
