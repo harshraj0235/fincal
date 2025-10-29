@@ -58,15 +58,15 @@ const NewsHomePage: React.FC = () => {
       </div>
 
       {/* Category Filter */}
-      <div className="bg-white border-b shadow-sm sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-wrap gap-2">
+      <div className="bg-white border-b-2 shadow-lg sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <div className="flex flex-wrap gap-3">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-4 py-2 rounded-full font-medium transition-colors ${
+              className={`px-6 py-3 rounded-lg font-bold text-base transition-all shadow-md ${
                 selectedCategory === 'all'
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl scale-105 ring-2 ring-blue-300'
+                  : 'bg-white text-neutral-800 hover:bg-neutral-100 border-2 border-neutral-300 hover:border-primary-400'
               }`}
             >
               All News
@@ -75,10 +75,10 @@ const NewsHomePage: React.FC = () => {
               <button
                 key={category.slug}
                 onClick={() => setSelectedCategory(category.slug)}
-                className={`px-4 py-2 rounded-full font-medium transition-colors ${
+                className={`px-6 py-3 rounded-lg font-bold text-base transition-all shadow-md ${
                   selectedCategory === category.slug
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl scale-105 ring-2 ring-blue-300'
+                    : 'bg-white text-neutral-800 hover:bg-neutral-100 border-2 border-neutral-300 hover:border-primary-400'
                 }`}
               >
                 {category.name}
@@ -184,46 +184,41 @@ const NewsHomePage: React.FC = () => {
                       (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
                     }}
                   />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1.5 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-full text-xs font-bold shadow-lg">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute top-4 left-4">
+                    <span className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-black shadow-2xl border-2 border-white uppercase tracking-wide">
                       {category?.name || article.category}
                     </span>
                   </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex items-center gap-2 bg-black/70 backdrop-blur-md rounded-lg px-3 py-2 border border-white/20">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white font-black text-xs shadow-lg flex-shrink-0">
+                        {author?.name.split(' ').map(n => n[0]).join('') || 'MC'}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-black text-white text-xs">{author?.name || 'MoneyCal Team'}</div>
+                        <div className="text-[10px] text-yellow-300 font-bold">{author?.role || 'Writer'}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-neutral-900 mb-4 leading-snug group-hover:text-primary-600 transition-colors min-h-[3.5rem]">
+                  <h3 className="text-xl font-black text-neutral-900 mb-4 leading-tight group-hover:text-blue-700 transition-colors min-h-[4rem]">
                     {article.title}
                   </h3>
                   
-                  {/* Author Info */}
-                  <div 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.href = `/news/author/${article.authorId}`;
-                    }}
-                    className="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors mb-4 cursor-pointer"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-600 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md flex-shrink-0">
-                      {author?.name.split(' ').map(n => n[0]).join('') || 'MC'}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-bold text-neutral-900 text-sm">{author?.name || 'MoneyCal Team'}</div>
-                      <div className="text-xs text-neutral-600 font-medium">{author?.role || 'Writer'}</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-2 text-xs text-neutral-600 mb-4 font-semibold">
-                    <Calendar className="h-4 w-4 text-primary-600" />
-                    <span>{new Date(article.datePublished).toLocaleDateString('en-IN', { 
+                  <div className="flex items-center gap-2 text-sm text-neutral-700 mb-5 font-bold bg-neutral-50 px-4 py-2 rounded-lg">
+                    <Calendar className="h-4 w-4 text-blue-600" />
+                    <span className="text-neutral-900">{new Date(article.datePublished).toLocaleDateString('en-IN', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 
                     })}</span>
                   </div>
                   
-                  <div className="flex items-center gap-2 w-full justify-center px-6 py-3 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg group-hover:from-primary-700 group-hover:to-purple-700 transition-all font-bold shadow-md group-hover:shadow-lg">
+                  <div className="flex items-center gap-3 w-full justify-center px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-pink-700 transition-all font-black text-base shadow-xl group-hover:shadow-2xl uppercase tracking-wide">
                     <span>Read Full Article</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
               </Link>

@@ -55,43 +55,51 @@ const NewsCategoryPage: React.FC = () => {
             const author = teamProfiles.find(p => p.id === article.authorId);
 
             return (
-              <article
+              <Link
                 key={article.id}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+                to={`/news/${article.category}/${article.slug}`}
+                className="block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all hover:-translate-y-2 border border-neutral-200 hover:border-blue-400 group"
               >
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-48 object-cover"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
-                  }}
-                />
+                <div className="relative overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex items-center gap-2 bg-black/70 backdrop-blur-md rounded-lg px-3 py-2 border border-white/20">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white font-black text-xs shadow-lg flex-shrink-0">
+                        {author?.name.split(' ').map(n => n[0]).join('') || 'MC'}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-black text-white text-xs">{author?.name || 'MoneyCal Team'}</div>
+                        <div className="text-[10px] text-yellow-300 font-bold">{author?.role || 'Writer'}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-neutral-900 mb-3 line-clamp-2">
+                  <h3 className="text-xl font-black text-neutral-900 mb-4 leading-tight group-hover:text-blue-700 transition-colors min-h-[4rem]">
                     {article.title}
                   </h3>
-                  <div className="flex items-center gap-3 text-sm text-neutral-600 mb-4">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
-                      <span>{new Date(article.datePublished).toLocaleDateString('en-IN')}</span>
-                    </div>
-                    {author && (
-                      <>
-                        <span>•</span>
-                        <span>{author.name}</span>
-                      </>
-                    )}
+                  <div className="flex items-center gap-2 text-sm text-neutral-700 mb-5 font-bold bg-neutral-50 px-4 py-2 rounded-lg">
+                    <Calendar className="h-4 w-4 text-blue-600" />
+                    <span className="text-neutral-900">{new Date(article.datePublished).toLocaleDateString('en-IN', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}</span>
                   </div>
-                  <Link
-                    to={`/news/${article.category}/${article.slug}`}
-                    className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-800 font-semibold group"
-                  >
-                    Read More
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="flex items-center gap-3 w-full justify-center px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-pink-700 transition-all font-black text-base shadow-xl group-hover:shadow-2xl uppercase tracking-wide">
+                    <span>Read Full Article</span>
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                  </div>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

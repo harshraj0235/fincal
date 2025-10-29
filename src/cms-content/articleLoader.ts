@@ -15,7 +15,7 @@ import { lenskartIPOMatters } from './news-articles/markets/article-01-lenskart-
 // Add more business analysis articles as they are created
 
 // Startups Articles
-// Add more startup articles as they are created
+import { founderStakeStrategy } from './news-articles/startups/article-08-founder-stake-strategy';
 
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
@@ -36,7 +36,7 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   
   // Startups
   // 'article-04-major-investors': majorInvestors,
-  // 'article-08-founder-stake-strategy': founderStakeStrategy,
+  'article-08-founder-stake-strategy': founderStakeStrategy,
   
   // Add more articles as they are imported above
 };

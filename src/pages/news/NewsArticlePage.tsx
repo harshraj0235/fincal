@@ -282,30 +282,30 @@ const NewsArticlePage: React.FC = () => {
           </div>
         )}
 
-        {/* About the Author - Enhanced */}
+        {/* About the Author - Enhanced with High Visibility */}
         {author && (
-          <div className="mt-12 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-2xl shadow-lg overflow-hidden border border-blue-200">
-            <div className="bg-gradient-to-r from-primary-600 to-purple-600 text-white px-6 py-4">
-              <h3 className="text-2xl font-bold flex items-center gap-2">
-                <User className="h-6 w-6" />
+          <div className="mt-12 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl shadow-2xl overflow-hidden border-4 border-blue-300">
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-neutral-900 px-8 py-5">
+              <h3 className="text-3xl font-black flex items-center gap-3">
+                <User className="h-8 w-8" />
                 About the Author
               </h3>
             </div>
-            <div className="p-8">
-              <div className="flex items-start gap-6">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-600 to-blue-600 flex items-center justify-center text-white font-bold text-3xl shadow-2xl flex-shrink-0 border-4 border-white">
+            <div className="p-10 bg-white">
+              <div className="flex flex-col md:flex-row items-start gap-8">
+                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 flex items-center justify-center text-white font-black text-5xl shadow-2xl flex-shrink-0 border-4 border-yellow-400">
                   {author.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-2xl font-bold text-neutral-900 mb-1">{author.name}</h4>
-                  <p className="text-lg text-primary-600 font-semibold mb-3">{author.role}</p>
-                  <p className="text-neutral-700 text-base leading-relaxed mb-4">{author.bio}</p>
+                  <h4 className="text-3xl font-black text-neutral-900 mb-2">{author.name}</h4>
+                  <p className="text-xl text-blue-700 font-black mb-4 bg-blue-50 inline-block px-4 py-2 rounded-lg">{author.role}</p>
+                  <p className="text-lg text-neutral-800 leading-relaxed mb-6 font-medium">{author.bio}</p>
                   <Link
                     to={`/news/author/${article.authorId}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-semibold shadow-md hover:shadow-lg"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all font-black text-lg shadow-xl hover:shadow-2xl uppercase tracking-wide"
                   >
                     View All Articles by {author.name.split(' ')[0]}
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-6 w-6" />
                   </Link>
                 </div>
               </div>
@@ -314,12 +314,12 @@ const NewsArticlePage: React.FC = () => {
         )}
 
         {/* Back to News */}
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center pb-8">
           <Link 
             to="/news"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-semibold"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-neutral-800 to-neutral-900 text-white rounded-xl hover:from-neutral-900 hover:to-black transition-all font-black text-lg shadow-2xl hover:shadow-3xl uppercase tracking-wide"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-6 w-6" />
             Back to All News
           </Link>
         </div>

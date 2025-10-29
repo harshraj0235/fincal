@@ -117,7 +117,7 @@ const AuthorPage: React.FC = () => {
             <Link
               key={article.id}
               to={`/news/${article.category}/${article.slug}`}
-              className="block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all hover:-translate-y-2 border border-neutral-200 hover:border-primary-400 group"
+              className="block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all hover:-translate-y-2 border border-neutral-200 hover:border-blue-400 group"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -128,25 +128,26 @@ const AuthorPage: React.FC = () => {
                     (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
                   }}
                 />
-                <div className="absolute top-2 left-2">
-                  <span className="px-3 py-1.5 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-full text-xs font-bold shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                <div className="absolute top-3 left-3">
+                  <span className="px-3 py-1.5 bg-blue-600 text-white rounded-lg text-xs font-black shadow-2xl border-2 border-white uppercase">
                     {article.category.replace('-', ' ')}
                   </span>
                 </div>
               </div>
               <div className="p-5">
-                <h3 className="text-base font-bold text-neutral-900 mb-3 leading-snug group-hover:text-primary-600 transition-colors min-h-[3rem]">
+                <h3 className="text-lg font-black text-neutral-900 mb-3 leading-tight group-hover:text-blue-700 transition-colors min-h-[3.5rem]">
                   {article.title}
                 </h3>
-                <div className="flex items-center gap-2 text-xs text-neutral-600 mb-4 font-semibold">
-                  <Calendar className="h-3 w-3 text-primary-600" />
-                  <span>{new Date(article.datePublished).toLocaleDateString('en-IN', { 
+                <div className="flex items-center gap-2 text-xs text-neutral-700 mb-4 font-bold bg-neutral-50 px-3 py-2 rounded-lg">
+                  <Calendar className="h-3 w-3 text-blue-600" />
+                  <span className="text-neutral-900">{new Date(article.datePublished).toLocaleDateString('en-IN', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 
                   })}</span>
                 </div>
-                <div className="flex items-center gap-2 w-full justify-center px-4 py-2.5 bg-primary-600 text-white rounded-lg group-hover:bg-primary-700 transition-all font-bold text-sm shadow-md">
+                <div className="flex items-center gap-2 w-full justify-center px-4 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-lg group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-pink-700 transition-all font-black text-sm shadow-xl uppercase">
                   <span>Read Article</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
