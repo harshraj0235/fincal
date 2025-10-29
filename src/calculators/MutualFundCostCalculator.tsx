@@ -402,3 +402,5 @@ export const MutualFundCostCalculator: React.FC = () => {
     </>
   );
 };
+                { name: 'Investment', value: totalInvestment, color: '#3b82f6' },
+
