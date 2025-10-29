@@ -168,7 +168,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     slug: 'india-eyewear-market-growth-forecast',
     category: 'economy',
     title: 'Why the eyewear market in India is poised to grow at double-digit rates',
-    excerpt: 'India's eyewear market is set to grow from ₹45,000 crore to ₹1,05,000 crore by 2030 at 18% CAGR - the fastest in the world. Analysis of key drivers, opportunities, and what it means for Lenskart IPO investors.',
+    excerpt: 'India ka eyewear market ₹45,000 crore se ₹1,05,000 crore tak grow hoga 2030 tak - 18% CAGR. Key drivers, opportunities aur Lenskart IPO investors ke liye kya matlab। Hindi analysis.',
     authorId: 'raushan-kumar',
     datePublished: '2025-01-25',
     dateModified: '2025-01-26',
