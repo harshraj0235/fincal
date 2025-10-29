@@ -76,28 +76,28 @@ const NewsHomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Category Filter - Clean Google News Style - Mobile Optimized - WORKING FILTERS */}
-      <div className="bg-white border-b sticky top-0 z-40 shadow-md">
+      {/* Category Filter - Clean Google News Style - Mobile Optimized */}
+      <div className="bg-white border-b sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-          <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide px-3 sm:px-0" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide px-3 sm:px-0" style={{ WebkitOverflowScrolling: 'touch' }}>
             <button
               onClick={() => handleCategoryChange('all')}
-              className={`px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all touch-manipulation border-2 ${
+              className={`px-4 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation ${
                 selectedCategory === 'all'
-                  ? 'bg-blue-700 text-white shadow-lg border-blue-700 scale-105'
-                  : 'text-neutral-800 bg-white hover:bg-blue-50 active:bg-blue-100 border-neutral-300 hover:border-blue-400'
+                  ? 'bg-blue-700 text-white shadow-md'
+                  : 'text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200'
               }`}
             >
-              All News
+              For you
             </button>
             {newsCategories.map((category) => (
               <button
                 key={category.slug}
                 onClick={() => handleCategoryChange(category.slug)}
-                className={`px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-bold text-sm whitespace-nowrap transition-all touch-manipulation border-2 ${
+                className={`px-4 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation ${
                   selectedCategory === category.slug
-                    ? 'bg-blue-700 text-white shadow-lg border-blue-700 scale-105'
-                    : 'text-neutral-800 bg-white hover:bg-blue-50 active:bg-blue-100 border-neutral-300 hover:border-blue-400'
+                    ? 'bg-blue-700 text-white shadow-md'
+                    : 'text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200'
                 }`}
               >
                 {category.name}
