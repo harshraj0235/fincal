@@ -172,22 +172,17 @@ const NewsArticlePage: React.FC = () => {
             {article.title}
           </h1>
 
-          {/* Author Info - Text Link Only */}
-          <div className="mb-6 p-5 bg-neutral-900 rounded-xl border-2 border-neutral-700">
+          {/* Author Info - Simple Text Link */}
+          <div className="mb-6">
             <Link 
               to={`/news/author/${article.authorId}`}
-              className="block hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 text-xl font-bold text-neutral-800 dark:text-neutral-200 hover:text-blue-700 dark:hover:text-yellow-400 transition-colors group"
             >
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-2xl font-black text-white mb-1">{author?.name || 'MoneyCal Team'}</div>
-                  <div className="text-base text-yellow-400 font-bold">{author?.role || 'Financial Writer'}</div>
-                  {author?.bio && (
-                    <div className="text-sm text-neutral-300 mt-2 font-medium">{author.bio}</div>
-                  )}
-                </div>
-                <ArrowRight className="h-6 w-6 text-yellow-400 flex-shrink-0" />
-              </div>
+              <span>Written by</span>
+              <span className="font-black text-blue-700 dark:text-yellow-400 underline decoration-2 underline-offset-4 group-hover:decoration-4">
+                {author?.name || 'MoneyCal Team'}
+              </span>
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
