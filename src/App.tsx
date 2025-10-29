@@ -38,6 +38,7 @@ const WriteBlog = lazy(() => import('./pages/WriteBlog'));
 const NewsHomePage = lazy(() => import('./pages/news/NewsHomePage'));
 const NewsCategoryPage = lazy(() => import('./pages/news/NewsCategoryPage'));
 const NewsArticlePage = lazy(() => import('./pages/news/NewsArticlePage'));
+const AuthorPage = lazy(() => import('./pages/news/AuthorPage'));
 const ChhathPuja2025Schedule = lazy(() => import('./pages/blog/ChhathPuja2025Schedule'));
 const ChhathPujaPreparationGuide = lazy(() => import('./pages/blog/ChhathPujaPreparationGuide'));
 const ChhathPujaPrasadRecipes = lazy(() => import('./pages/blog/ChhathPujaPrasadRecipes'));
@@ -805,6 +806,7 @@ function App() {
                 
                 {/* News Portal Routes */}
                 <Route path="/news" element={<NewsHomePage />} />
+                <Route path="/news/author/:authorId" element={<AuthorPage />} />
                 <Route path="/news/:categorySlug" element={<NewsCategoryPage />} />
                 <Route path="/news/:categorySlug/:articleId" element={<NewsArticlePage />} />
                 {/* Chhath Puja Blog Posts */}

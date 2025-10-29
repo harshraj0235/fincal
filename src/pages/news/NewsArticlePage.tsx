@@ -9,7 +9,8 @@ import {
   Share2,
   Facebook,
   Twitter,
-  Linkedin
+  Linkedin,
+  User
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import NewsArticleSchema from '../../components/NewsArticleSchema';
@@ -103,6 +104,12 @@ const NewsArticlePage: React.FC = () => {
     month: 'long',
     day: 'numeric'
   });
+  
+  const updateDate = new Date().toLocaleDateString('en-IN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -164,31 +171,43 @@ const NewsArticlePage: React.FC = () => {
             {article.title}
           </h1>
 
-          {/* Meta Info */}
-          <div className="flex flex-wrap items-center gap-6 text-neutral-600 mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-600 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
-                {author?.name.split(' ').map(n => n[0]).join('') || 'MC'}
-              </div>
-              <div>
-                <div className="font-semibold text-neutral-900">{author?.name || 'MoneyCal Team'}</div>
-                <div className="text-sm text-neutral-500">{author?.role || 'Financial Writer'}</div>
-              </div>
+          {/* Author Info - Clickable */}
+          <Link 
+            to={`/news/author/${article.authorId}`}
+            className="inline-flex items-center gap-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl hover:shadow-md transition-all mb-6 border border-blue-100"
+          >
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-600 to-blue-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg flex-shrink-0">
+              {author?.name.split(' ').map(n => n[0]).join('') || 'MC'}
             </div>
-          </div>
+            <div className="flex-1">
+              <div className="font-bold text-neutral-900 text-lg">{author?.name || 'MoneyCal Team'}</div>
+              <div className="text-sm text-neutral-600 font-medium">{author?.role || 'Financial Writer'}</div>
+              {author?.bio && (
+                <div className="text-sm text-neutral-500 mt-1 line-clamp-1">{author.bio}</div>
+              )}
+            </div>
+            <ArrowRight className="h-5 w-5 text-primary-600 flex-shrink-0" />
+          </Link>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600">
-            <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4" />
-              <span>{formattedDate}</span>
+          <div className="bg-white rounded-lg p-4 shadow-sm border border-neutral-200">
+            <div className="flex flex-wrap items-center gap-6 text-sm">
+              <div className="flex items-center gap-2 text-neutral-700 font-medium">
+                <Calendar className="h-4 w-4 text-primary-600" />
+                <span className="font-semibold">Published:</span> {formattedDate}
+              </div>
+              <div className="flex items-center gap-2 text-neutral-700 font-medium">
+                <Clock className="h-4 w-4 text-primary-600" />
+                <span className="font-semibold">Read Time:</span> {article.readTime || 8} min
+              </div>
+              <div className="flex items-center gap-2 text-neutral-700 font-medium">
+                <Eye className="h-4 w-4 text-primary-600" />
+                <span className="font-semibold">Views:</span> {(article.views || 0).toLocaleString()}
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4" />
-              <span>{article.readTime || 8} min read</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Eye className="h-4 w-4" />
-              <span>{(article.views || 0).toLocaleString()} views</span>
+            <div className="mt-3 pt-3 border-t border-neutral-200">
+              <div className="text-xs text-neutral-500">
+                <span className="font-semibold">Last Updated:</span> {updateDate}
+              </div>
             </div>
           </div>
 
@@ -263,27 +282,31 @@ const NewsArticlePage: React.FC = () => {
           </div>
         )}
 
-        {/* Author Bio */}
+        {/* About the Author - Enhanced */}
         {author && (
-          <div className="mt-12 p-8 bg-gradient-to-br from-neutral-50 to-blue-50 rounded-xl border border-neutral-200">
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-600 to-blue-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg flex-shrink-0">
-                {author.name.split(' ').map(n => n[0]).join('')}
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-neutral-900 mb-2">{author.name}</h3>
-                <p className="text-neutral-700 mb-4">{author.bio}</p>
-                <div className="flex gap-3">
-                  {author.socialProfiles?.linkedin && (
-                    <a 
-                      href={author.socialProfiles.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary-600 hover:text-primary-800 font-medium text-sm"
-                    >
-                      View Profile →
-                    </a>
-                  )}
+          <div className="mt-12 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-2xl shadow-lg overflow-hidden border border-blue-200">
+            <div className="bg-gradient-to-r from-primary-600 to-purple-600 text-white px-6 py-4">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
+                <User className="h-6 w-6" />
+                About the Author
+              </h3>
+            </div>
+            <div className="p-8">
+              <div className="flex items-start gap-6">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-600 to-blue-600 flex items-center justify-center text-white font-bold text-3xl shadow-2xl flex-shrink-0 border-4 border-white">
+                  {author.name.split(' ').map(n => n[0]).join('')}
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-2xl font-bold text-neutral-900 mb-1">{author.name}</h4>
+                  <p className="text-lg text-primary-600 font-semibold mb-3">{author.role}</p>
+                  <p className="text-neutral-700 text-base leading-relaxed mb-4">{author.bio}</p>
+                  <Link
+                    to={`/news/author/${article.authorId}`}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-semibold shadow-md hover:shadow-lg"
+                  >
+                    View All Articles by {author.name.split(' ')[0]}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </div>

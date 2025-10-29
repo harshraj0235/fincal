@@ -13,7 +13,7 @@ export const lenskartIPOMatters: NewsGuideSection = {
   
   whatsNew: {
     summary: "Lenskart, India's leading eyewear retailer, has filed DRHP (Draft Red Herring Prospectus) with SEBI for an IPO expected to raise ₹6,000 crore through a fresh issue of shares and OFS (Offer for Sale). The company, valued at ₹67,000 crore in its last funding round, aims to list on both NSE and BSE in Q2 2025. This marks a significant milestone as the first pure-play eyewear company to go public in India. Lenskart currently operates 2,000+ stores across 175+ cities, serves 40 lakh+ customers annually, and holds approximately 40% market share in organized eyewear retail. The IPO proceeds will be used for: (1) Store expansion - adding 1,000 more stores by 2027, (2) Technology upgrades including AI-powered virtual try-on, (3) Working capital and brand building, (4) International expansion in Southeast Asia and Middle East.",
-    date: new Date('2025-01-15').toISOString(),
+    date: new Date().toISOString(), // Auto-updates to current date
     source: {
       name: "SEBI DRHP Filing - Lenskart Solutions Private Limited",
       url: "https://www.sebi.gov.in",
@@ -297,7 +297,7 @@ export const lenskartIPOMatters: NewsGuideSection = {
         credibility: "industry-report"
       }
     ],
-    lastUpdated: new Date('2025-01-15').toISOString(),
+    lastUpdated: new Date().toISOString(), // Auto-updates to current date
     disclaimer: "This article is for informational purposes only and should not be considered investment advice. IPO investments carry market risks. Please read the offer document carefully before investing and consult with a SEBI-registered financial advisor."
   },
   
