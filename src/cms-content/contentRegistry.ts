@@ -50,19 +50,29 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-06-ipo-risks',
     slug: 'lenskart-ipo-10-risks-paytm-comparison',
     category: 'markets',
+    subCategory: 'IPOs & Listings',
     title: 'Is Lenskart\'s IPO over-priced? Risks investors should know',
+    excerpt: '10 bade risks jo Lenskart IPO mein hain - Paytm jaisa crash ho sakta? Competition, China dependency, overvaluation। Hindi mein samjho har risk.',
     authorId: 'raushan-kumar',
-    datePublished: '2025-01-20',
-    image: '/images/news/lenskart-risks.jpg'
+    datePublished: '2025-10-20',
+    dateModified: '2025-10-29',
+    image: '/images/news/lenskart-risks.jpg',
+    readTime: 11,
+    tags: ['IPO risks', 'Lenskart dangers', 'Paytm comparison', 'investment warning', 'Hindi investor guide']
   },
   {
     id: 'article-10-retail-investor-guide',
     slug: 'lenskart-ipo-retail-investor-guide',
     category: 'markets',
+    subCategory: 'IPOs & Listings',
     title: 'Lenskart\'s IPO: What retail investors should watch',
+    excerpt: 'Lenskart IPO mein invest karne se pehle 7 cheezein jaan lo - Application process, allotment chances, listing strategy। Complete beginner guide Hindi mein.',
     authorId: 'saurabh-kumar',
-    datePublished: '2025-01-24',
-    image: '/images/news/lenskart-retail.jpg'
+    datePublished: '2025-10-24',
+    dateModified: '2025-10-29',
+    image: '/images/news/lenskart-retail.jpg',
+    readTime: 9,
+    tags: ['retail investor guide', 'IPO application process', 'Hindi investment', 'beginner IPO', 'UPI ASBA']
   },
   
   // Business Analysis Category
