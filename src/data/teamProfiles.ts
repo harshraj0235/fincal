@@ -4,6 +4,10 @@ export interface TeamProfile {
   role: string;
   bio?: string;
   image?: string;
+  socialProfiles?: {
+    linkedin?: string;
+    twitter?: string;
+  };
 }
 
 export const teamProfiles: TeamProfile[] = [

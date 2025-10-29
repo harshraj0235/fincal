@@ -120,7 +120,7 @@ const NewsArticlePage: React.FC = () => {
         image={article.image}
         datePublished={article.datePublished}
         dateModified={article.dateModified || article.datePublished}
-        author={{ name: author?.name || 'MoneyCal Team', image: author?.socialProfiles.linkedin || '' }}
+        author={{ name: author?.name || 'MoneyCal Team', image: author?.socialProfiles?.linkedin || '' }}
         category={article.category}
         keywords={article.tags || []}
       />
@@ -260,7 +260,7 @@ const NewsArticlePage: React.FC = () => {
                 <h3 className="text-xl font-bold text-neutral-900 mb-2">{author.name}</h3>
                 <p className="text-neutral-700 mb-4">{author.bio}</p>
                 <div className="flex gap-3">
-                  {author.socialProfiles.linkedin && (
+                  {author.socialProfiles?.linkedin && (
                     <a 
                       href={author.socialProfiles.linkedin} 
                       target="_blank" 

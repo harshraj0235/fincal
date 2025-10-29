@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 
 interface NewsArticleSchemaProps {
-  title: string;
+  headline: string;
   description: string;
   author: {
     name: string;
-    url?: string;
+    image?: string;
   };
   datePublished: string;
   dateModified?: string;
   image?: string;
   url: string;
+  category?: string;
+  keywords?: string[];
   publisher?: {
     name: string;
     logo?: string;
@@ -18,13 +20,15 @@ interface NewsArticleSchemaProps {
 }
 
 const NewsArticleSchema: React.FC<NewsArticleSchemaProps> = ({
-  title,
+  headline,
   description,
   author,
   datePublished,
   dateModified,
   image,
   url,
+  category,
+  keywords,
   publisher = {
     name: 'MoneyCal',
     logo: 'https://moneycal.in/logo.png',
@@ -34,7 +38,7 @@ const NewsArticleSchema: React.FC<NewsArticleSchemaProps> = ({
     const schema = {
       '@context': 'https://schema.org',
       '@type': 'NewsArticle',
-      headline: title,
+      headline: headline,
       description: description,
       image: image || 'https://moneycal.in/default-article-image.jpg',
       datePublished: datePublished,
@@ -42,7 +46,7 @@ const NewsArticleSchema: React.FC<NewsArticleSchemaProps> = ({
       author: {
         '@type': 'Person',
         name: author.name,
-        url: author.url,
+        ...(author.image && { image: author.image }),
       },
       publisher: {
         '@type': 'Organization',
@@ -52,6 +56,8 @@ const NewsArticleSchema: React.FC<NewsArticleSchemaProps> = ({
           url: publisher.logo,
         },
       },
+      ...(category && { articleSection: category }),
+      ...(keywords && keywords.length > 0 && { keywords: keywords.join(', ') }),
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': url,
@@ -76,7 +82,7 @@ const NewsArticleSchema: React.FC<NewsArticleSchemaProps> = ({
         existingScript.remove();
       }
     };
-  }, [title, description, author, datePublished, dateModified, image, url, publisher]);
+  }, [headline, description, author, datePublished, dateModified, image, url, category, keywords, publisher]);
 
   return null;
 };
