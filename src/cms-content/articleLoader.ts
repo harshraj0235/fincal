@@ -7,6 +7,7 @@ import { NewsGuideSection } from '../components/NewsGuideTemplate';
 
 // Economy Articles
 import { indianEyewearGrowth } from './news-articles/economy/article-11-eyewear-market-growth';
+import { regulatoryNod } from './news-articles/economy/article-07-regulatory-nod';
 
 // Markets Articles
 import { lenskartIPOMatters } from './news-articles/markets/article-01-lenskart-ipo-matters';
@@ -23,6 +24,7 @@ import { retailInvestorGuide } from './news-articles/markets/article-10-retail-i
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
   // Economy
+  'article-07-regulatory-nod': regulatoryNod,
   'article-11-eyewear-market-growth': indianEyewearGrowth,
   
   // Markets

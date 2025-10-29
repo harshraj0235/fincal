@@ -138,10 +138,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-07-regulatory-nod',
     slug: 'sebi-approval-lenskart-eyewear-industry-impact',
     category: 'economy',
+    subCategory: 'Government Policy & Regulation',
     title: 'Lenskart gets regulatory nod for IPO — what this means for the Indian eyewear sector',
+    excerpt: 'SEBI से approval मिला Lenskart को - eyewear sector organized होगा। Small shops के लिए warning, consumers के लिए फायदा। Complete impact analysis Hindi mein.',
     authorId: 'raushan-kumar',
-    datePublished: '2025-01-21',
-    image: '/images/news/sebi-approval.jpg'
+    datePublished: '2025-10-06',
+    dateModified: '2025-10-29',
+    image: '/images/news/sebi-approval.jpg',
+    readTime: 10,
+    tags: ['SEBI approval', 'eyewear regulation', 'organized retail', 'government policy', 'Hindi business news']
   },
   {
     id: 'article-11-eyewear-market-growth',
