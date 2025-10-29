@@ -118,19 +118,29 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-04-major-investors',
     slug: 'lenskart-investors-softbank-premji-returns',
     category: 'startups',
+    subCategory: 'Startup Funding & News',
     title: 'Major investors behind Lenskart: Who\'s backing the eyewear boom?',
+    excerpt: 'SoftBank, Premji Invest, Temasek ने कमाए 7-9x returns! Lenskart के बड़े investors की complete story - kitna lagaya, kitna kamaya। Hindi mein जानो।',
     authorId: 'vikram-kumar',
-    datePublished: '2025-01-18',
-    image: '/images/news/lenskart-investors.jpg'
+    datePublished: '2025-10-18',
+    dateModified: '2025-10-29',
+    image: '/images/news/lenskart-investors.jpg',
+    readTime: 12,
+    tags: ['SoftBank India', 'Premji Invest', 'startup funding', 'investor returns', 'Hindi startup news']
   },
   {
     id: 'article-08-founder-stake-strategy',
     slug: 'founder-stake-increase-strategy',
     category: 'startups',
+    subCategory: 'Founder Stories',
     title: 'How the founder increased his stake ahead of listing',
+    excerpt: 'Peyush Bansal ने ₹800 करोड़ लगाकर अपनी stake 18% से 22% बढ़ाई IPO से पहले। Genius strategy या risky bet? Complete analysis Hindi mein।',
     authorId: 'harsh-raj',
-    datePublished: '2025-01-22',
-    image: '/images/news/founder-strategy.jpg'
+    datePublished: '2025-10-22',
+    dateModified: '2025-10-29',
+    image: '/images/news/founder-strategy.jpg',
+    readTime: 11,
+    tags: ['Peyush Bansal', 'founder strategy', 'stake management', 'startup dilution', 'Shark Tank judge', 'Hindi startup']
   },
   
   // Economy Category

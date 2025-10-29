@@ -19,7 +19,8 @@ import { retailInvestorGuide } from './news-articles/markets/article-10-retail-i
 // Add more business analysis articles as they are created
 
 // Startups Articles
-// Add more startup articles as they are created
+import { lenskartInvestorsBacking } from './news-articles/startups/article-04-major-investors';
+import { founderStakeStrategy } from './news-articles/startups/article-08-founder-stake-strategy';
 
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
@@ -40,8 +41,8 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   // 'article-12-eyewear-purchase-behavior': purchaseBehavior,
   
   // Startups
-  // 'article-04-major-investors': majorInvestors,
-  // 'article-08-founder-stake-strategy': founderStakeStrategy,
+  'article-04-major-investors': lenskartInvestorsBacking,
+  'article-08-founder-stake-strategy': founderStakeStrategy,
   
   // Add more articles as they are imported above
 };
