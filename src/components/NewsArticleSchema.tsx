@@ -40,7 +40,12 @@ const NewsArticleSchema: React.FC<NewsArticleSchemaProps> = ({
       '@type': 'NewsArticle',
       headline: headline,
       description: description,
-      image: image || 'https://moneycal.in/default-article-image.jpg',
+      image: {
+        '@type': 'ImageObject',
+        url: image || 'https://moneycal.in/default-article-image.jpg',
+        width: 1200,
+        height: 630,
+      },
       datePublished: datePublished,
       dateModified: dateModified || datePublished,
       author: {

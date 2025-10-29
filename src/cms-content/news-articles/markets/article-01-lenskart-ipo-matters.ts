@@ -11,6 +11,13 @@ export const lenskartIPOMatters: NewsGuideSection = {
   headline: "Why Lenskart's ₹6,000 Crore IPO Could Transform India's Eyewear Industry",
   subheadline: "From Online Startup to Market Leader: How Lenskart's Public Listing Will Reshape the ₹45,000 Crore Indian Eyewear Market",
   
+  featuredImage: {
+    url: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=1200&h=630&fit=crop&q=80",
+    alt: "Lenskart eyewear store display showcasing premium glasses and frames - India's leading eyewear retailer preparing for IPO",
+    caption: "Lenskart operates 2,000+ retail stores across India and is valued at ₹67,000 crore ahead of its landmark IPO",
+    credit: "Unsplash"
+  },
+  
   whatsNew: {
     summary: "Lenskart, India's leading eyewear retailer, has filed DRHP (Draft Red Herring Prospectus) with SEBI for an IPO expected to raise ₹6,000 crore through a fresh issue of shares and OFS (Offer for Sale). The company, valued at ₹67,000 crore in its last funding round, aims to list on both NSE and BSE in Q2 2025. This marks a significant milestone as the first pure-play eyewear company to go public in India. Lenskart currently operates 2,000+ stores across 175+ cities, serves 40 lakh+ customers annually, and holds approximately 40% market share in organized eyewear retail. The IPO proceeds will be used for: (1) Store expansion - adding 1,000 more stores by 2027, (2) Technology upgrades including AI-powered virtual try-on, (3) Working capital and brand building, (4) International expansion in Southeast Asia and Middle East.",
     date: new Date().toISOString(), // Auto-updates to current date

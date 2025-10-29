@@ -25,6 +25,14 @@ export interface NewsGuideSection {
   headline: string;
   subheadline?: string;
   
+  // Featured Image (SEO optimized)
+  featuredImage?: {
+    url: string;
+    alt: string;
+    caption?: string;
+    credit?: string;
+  };
+  
   // Section 1: What's New (Latest Update)
   whatsNew: {
     summary: string;
@@ -137,6 +145,40 @@ export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) =
   
   return (
     <div className="max-w-4xl mx-auto">
+      {/* Featured Image - SEO Optimized for Google Images */}
+      {guide.featuredImage && (
+        <figure className="mb-8 sm:mb-12 -mx-3 sm:mx-0">
+          <div className="relative overflow-hidden rounded-none sm:rounded-2xl shadow-2xl">
+            <img
+              src={guide.featuredImage.url}
+              alt={guide.featuredImage.alt}
+              className="w-full h-auto object-cover"
+              loading="eager"
+              decoding="async"
+              itemProp="image"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://via.placeholder.com/1200x630?text=Article+Image';
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+          </div>
+          {(guide.featuredImage.caption || guide.featuredImage.credit) && (
+            <figcaption className="mt-3 sm:mt-4 px-3 sm:px-0 text-xs sm:text-sm text-neutral-600 leading-relaxed">
+              {guide.featuredImage.caption && (
+                <span className="block mb-1 text-neutral-700 font-medium">
+                  {guide.featuredImage.caption}
+                </span>
+              )}
+              {guide.featuredImage.credit && (
+                <span className="text-neutral-500 italic">
+                  Photo: {guide.featuredImage.credit}
+                </span>
+              )}
+            </figcaption>
+          )}
+        </figure>
+      )}
+
       {/* Section 1: What's New - Mobile Optimized */}
       <section className="mb-8 sm:mb-12">
         <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">

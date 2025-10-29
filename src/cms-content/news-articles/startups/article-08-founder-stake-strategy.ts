@@ -11,6 +11,13 @@ export const founderStakeStrategy: NewsGuideSection = {
   headline: "How Lenskart's Founder Increased His Stake from 12% to 19% Before IPO",
   subheadline: "Strategic Move: Peyush Bansal's ₹2,500 Crore Share Buyback Shows Founder Confidence in Company's Future",
   
+  featuredImage: {
+    url: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&h=630&fit=crop&q=80",
+    alt: "Business entrepreneur reviewing company shares and equity documents - founder stake increase strategy before IPO",
+    caption: "Lenskart founder Peyush Bansal strategically increased his stake from 12% to 19% through a ₹2,500 crore share buyback before the company's public listing",
+    credit: "Unsplash"
+  },
+  
   whatsNew: {
     summary: "In a significant pre-IPO move, Lenskart founder Peyush Bansal increased his stake from 12% to 19% through a combination of: (1) ₹1,500 crore share buyback from early investors including SAIF Partners and IDG Ventures, (2) ₹1,000 crore secondary purchase from employee ESOPs and angel investors. This 7 percentage point increase is one of the largest founder stake expansions in Indian startup history. The timing is strategic - done 6 moves before IPO listing to maximize founder control and signal confidence to public market investors. Post-buyback, Bansal's stake is valued at ₹12,730 crore at current ₹67,000 crore valuation. Other key moves: (1) Wife Latha Bansal's stake maintained at 8%, (2) Total promoter holding now 27% (vs. industry average 40-50%), (3) ESOPs expanded from 12% to 15% pool for employee retention.",
     date: new Date().toISOString(),
