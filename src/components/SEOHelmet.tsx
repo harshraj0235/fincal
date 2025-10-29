@@ -261,5 +261,3 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
 };
 
 export default SEOHelmet;
-    }
-
