@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight, User } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
@@ -113,9 +113,9 @@ const NewsHomePage: React.FC = () => {
           </div>
           <Link
             to={`/news/${featuredArticle.category}/${featuredArticle.slug}`}
-            className="block bg-white rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all border-2 border-neutral-200 hover:border-primary-400 group"
+            className="block rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all border-4 border-black dark:border-yellow-400 group"
           >
-            <div className="md:flex">
+            <div className="md:flex bg-white dark:bg-neutral-900">
               <div className="md:w-1/2 relative overflow-hidden">
                 <img
                   src={featuredArticle.image}
@@ -125,34 +125,53 @@ const NewsHomePage: React.FC = () => {
                     (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=Featured+Article';
                   }}
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="px-5 py-2.5 bg-red-600 text-white rounded-full font-bold text-sm shadow-xl animate-pulse">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                
+                {/* Featured Badge */}
+                <div className="absolute top-6 left-6">
+                  <div className="px-6 py-3 bg-red-600 text-white rounded-xl font-black text-lg shadow-2xl border-4 border-white animate-pulse uppercase tracking-wider">
                     🔥 FEATURED
-                  </span>
+                  </div>
+                </div>
+                
+                {/* Category on Image */}
+                <div className="absolute bottom-6 left-6">
+                  <div className="px-6 py-3 bg-black text-white rounded-xl font-black text-xl shadow-2xl border-4 border-yellow-400 uppercase tracking-wider">
+                    {newsCategories.find(c => c.slug === featuredArticle.category)?.name || featuredArticle.category}
+                  </div>
                 </div>
               </div>
-              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center bg-white">
-                <div className="mb-5">
-                  <span className="inline-block px-5 py-2.5 bg-black text-white rounded-lg font-black text-base shadow-xl uppercase tracking-wider">
-                    {newsCategories.find(c => c.slug === featuredArticle.category)?.name || featuredArticle.category}
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-black text-neutral-900 mb-6 leading-tight group-hover:text-blue-700 transition-colors">
+              
+              <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center bg-gradient-to-br from-white to-blue-50 dark:from-neutral-900 dark:to-neutral-800">
+                <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-8 leading-tight group-hover:text-blue-700 dark:group-hover:text-yellow-400 transition-colors">
                   {featuredArticle.title}
                 </h2>
-                <div className="flex flex-wrap items-center gap-4 text-base text-neutral-800 mb-8 pb-6 border-b-2 border-neutral-300">
-                  <div className="flex items-center gap-2 font-black">
-                    <Calendar className="h-5 w-5 text-blue-600" />
-                    <span>29 October 2025</span>
+                
+                <div className="space-y-4 mb-10">
+                  {/* Date Box */}
+                  <div className="bg-black dark:bg-white px-6 py-4 rounded-xl shadow-lg">
+                    <div className="flex items-center gap-3">
+                      <Calendar className="h-6 w-6 text-yellow-400 dark:text-black" />
+                      <span className="font-black text-white dark:text-black text-lg">29 October 2025</span>
+                    </div>
                   </div>
-                  <span className="text-neutral-400 font-black text-xl">•</span>
-                  <span className="font-black text-blue-700 text-base">
-                    By {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name}
-                  </span>
+                  
+                  {/* Author Box */}
+                  <div className="bg-yellow-400 px-6 py-4 rounded-xl shadow-lg">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white font-black text-sm">
+                        {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                      <span className="font-black text-black text-lg">
+                        {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="inline-flex items-center gap-3 px-10 py-5 bg-black text-white rounded-xl hover:bg-neutral-800 transition-all font-black text-xl shadow-2xl hover:shadow-3xl uppercase tracking-wider">
+                
+                <div className="inline-flex items-center gap-4 px-12 py-6 bg-black dark:bg-white text-white dark:text-black rounded-2xl hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all font-black text-2xl shadow-2xl hover:shadow-3xl uppercase tracking-wider border-4 border-yellow-400">
                   <span>Read Full Story</span>
-                  <ArrowRight className="h-7 w-7 group-hover:translate-x-2 transition-transform" />
+                  <ArrowRight className="h-8 w-8 group-hover:translate-x-3 transition-transform" />
                 </div>
               </div>
             </div>
