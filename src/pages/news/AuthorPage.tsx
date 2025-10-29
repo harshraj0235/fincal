@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Calendar, ArrowRight, ArrowLeft, User, Briefcase, BookOpen } from 'lucide-react';
+import { Calendar, ArrowRight, ArrowLeft, User, Briefcase, BookOpen, Facebook, Instagram, ChevronLeft, ChevronRight } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { teamProfiles } from '../../data/teamProfiles';
 import SEOHelmet from '../../components/SEOHelmet';
 
+const ARTICLES_PER_PAGE = 8;
+
 const AuthorPage: React.FC = () => {
   const { authorId } = useParams();
+  const [currentPage, setCurrentPage] = useState(1);
 
   const author = teamProfiles.find(p => p.id === authorId);
   const authorArticles = contentRegistry.filter(article => article.authorId === authorId);
+  
+  // Pagination
+  const totalPages = Math.ceil(authorArticles.length / ARTICLES_PER_PAGE);
+  const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const endIndex = startIndex + ARTICLES_PER_PAGE;
+  const paginatedArticles = authorArticles.slice(startIndex, endIndex);
 
   if (!author) {
     return <Navigate to="/news" replace />;
@@ -51,11 +60,39 @@ const AuthorPage: React.FC = () => {
               <p className="text-lg text-blue-50 max-w-3xl mb-6">
                 {author.bio}
               </p>
-              <div className="flex items-center gap-6 text-blue-100">
+              <div className="flex flex-wrap items-center gap-6 text-blue-100">
                 <div className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5" />
                   <span className="font-semibold">{authorArticles.length} Article{authorArticles.length !== 1 ? 's' : ''}</span>
                 </div>
+                
+                {/* Social Links */}
+                {author.socialProfiles && (
+                  <div className="flex items-center gap-3">
+                    {author.socialProfiles.facebook && (
+                      <a
+                        href={author.socialProfiles.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg transition-all border border-white/20"
+                      >
+                        <Facebook className="h-4 w-4" />
+                        <span className="font-medium text-sm">Facebook</span>
+                      </a>
+                    )}
+                    {author.socialProfiles.instagram && (
+                      <a
+                        href={author.socialProfiles.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg transition-all border border-white/20"
+                      >
+                        <Instagram className="h-4 w-4" />
+                        <span className="font-medium text-sm">Instagram</span>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -64,55 +101,57 @@ const AuthorPage: React.FC = () => {
 
       {/* Articles by Author */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-2">
-            Articles by {author.name}
-          </h2>
-          <p className="text-neutral-600">
-            {authorArticles.length} article{authorArticles.length !== 1 ? 's' : ''} published
-          </p>
+        <div className="mb-8 flex flex-wrap items-center justify-between">
+          <div>
+            <h2 className="text-3xl font-bold text-neutral-900 mb-2">
+              Articles by {author.name}
+            </h2>
+            <p className="text-neutral-600">
+              Showing {startIndex + 1}-{Math.min(endIndex, authorArticles.length)} of {authorArticles.length} article{authorArticles.length !== 1 ? 's' : ''} • Page {currentPage} of {totalPages}
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {authorArticles.map((article) => (
-            <article
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {paginatedArticles.map((article) => (
+            <Link
               key={article.id}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1"
+              to={`/news/${article.category}/${article.slug}`}
+              className="block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all hover:-translate-y-2 border border-neutral-200 hover:border-primary-400 group"
             >
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-48 object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
-                }}
-              />
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-xs font-semibold capitalize">
+              <div className="relative overflow-hidden">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
+                  }}
+                />
+                <div className="absolute top-2 left-2">
+                  <span className="px-3 py-1.5 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-full text-xs font-bold shadow-lg">
                     {article.category.replace('-', ' ')}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3 line-clamp-2">
+              </div>
+              <div className="p-5">
+                <h3 className="text-base font-bold text-neutral-900 mb-3 leading-snug group-hover:text-primary-600 transition-colors min-h-[3rem]">
                   {article.title}
                 </h3>
-                <div className="flex items-center gap-2 text-sm text-neutral-600 mb-4">
-                  <Calendar className="h-3 w-3" />
+                <div className="flex items-center gap-2 text-xs text-neutral-600 mb-4 font-semibold">
+                  <Calendar className="h-3 w-3 text-primary-600" />
                   <span>{new Date(article.datePublished).toLocaleDateString('en-IN', { 
                     year: 'numeric', 
                     month: 'long', 
                     day: 'numeric' 
                   })}</span>
                 </div>
-                <Link
-                  to={`/news/${article.category}/${article.slug}`}
-                  className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-800 font-semibold group"
-                >
-                  Read Article
+                <div className="flex items-center gap-2 w-full justify-center px-4 py-2.5 bg-primary-600 text-white rounded-lg group-hover:bg-primary-700 transition-all font-bold text-sm shadow-md">
+                  <span>Read Article</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
@@ -127,6 +166,53 @@ const AuthorPage: React.FC = () => {
               <ArrowLeft className="h-4 w-4" />
               Back to All News
             </Link>
+          </div>
+        )}
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
+                currentPage === 1
+                  ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
+                  : 'bg-primary-600 text-white hover:bg-primary-700 shadow-md'
+              }`}
+            >
+              <ChevronLeft className="h-4 w-4" />
+              Previous
+            </button>
+
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-10 h-10 rounded-lg font-bold transition-all ${
+                    currentPage === page
+                      ? 'bg-primary-600 text-white shadow-lg scale-110'
+                      : 'bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-300'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+              disabled={currentPage === totalPages}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all ${
+                currentPage === totalPages
+                  ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed'
+                  : 'bg-primary-600 text-white hover:bg-primary-700 shadow-md'
+              }`}
+            >
+              Next
+              <ChevronRight className="h-4 w-4" />
+            </button>
           </div>
         )}
       </div>

@@ -97,9 +97,12 @@ const NewsHomePage: React.FC = () => {
               Featured Story
             </h2>
           </div>
-          <div className="bg-white rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all border border-neutral-200">
+          <Link
+            to={`/news/${featuredArticle.category}/${featuredArticle.slug}`}
+            className="block bg-white rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all border-2 border-neutral-200 hover:border-primary-400 group"
+          >
             <div className="md:flex">
-              <div className="md:w-1/2 relative group">
+              <div className="md:w-1/2 relative overflow-hidden">
                 <img
                   src={featuredArticle.image}
                   alt={featuredArticle.title}
@@ -109,47 +112,41 @@ const NewsHomePage: React.FC = () => {
                   }}
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-4 py-2 bg-red-600 text-white rounded-full font-bold text-sm shadow-lg animate-pulse">
+                  <span className="px-5 py-2.5 bg-red-600 text-white rounded-full font-bold text-sm shadow-xl animate-pulse">
                     🔥 FEATURED
                   </span>
                 </div>
               </div>
-              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+              <div className="md:w-1/2 p-8 md:p-10 flex flex-col justify-center bg-gradient-to-br from-white to-blue-50">
                 <div className="mb-4">
-                  <span className="inline-block px-4 py-2 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-full font-semibold text-sm shadow-md">
+                  <span className="inline-block px-4 py-2 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-full font-bold text-sm shadow-md">
                     {newsCategories.find(c => c.slug === featuredArticle.category)?.name || featuredArticle.category}
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 leading-tight group-hover:text-primary-600 transition-colors">
                   {featuredArticle.title}
                 </h2>
-                <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 mb-6 pb-6 border-b border-neutral-200">
-                  <div className="flex items-center gap-2 font-medium">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-700 mb-6 pb-6 border-b border-neutral-200">
+                  <div className="flex items-center gap-2 font-bold">
                     <Calendar className="h-4 w-4 text-primary-600" />
-                    <span>{new Date(featuredArticle.datePublished).toLocaleDateString('en-IN', { 
+                    <span className="text-base">{new Date(featuredArticle.datePublished).toLocaleDateString('en-IN', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 
                     })}</span>
                   </div>
-                  <span className="text-neutral-400">•</span>
-                  <Link 
-                    to={`/news/author/${featuredArticle.authorId}`}
-                    className="font-semibold text-primary-600 hover:text-primary-800 hover:underline"
-                  >
+                  <span className="text-neutral-400 font-bold">•</span>
+                  <span className="font-bold text-primary-600 text-base">
                     {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name}
-                  </Link>
+                  </span>
                 </div>
-                <Link
-                  to={`/news/${featuredArticle.category}/${featuredArticle.slug}`}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-xl hover:from-primary-700 hover:to-purple-700 transition-all font-bold text-lg shadow-lg hover:shadow-xl group"
-                >
-                  Read Full Story
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-xl group-hover:from-primary-700 group-hover:to-purple-700 transition-all font-bold text-lg shadow-lg group-hover:shadow-xl">
+                  <span>Read Full Story</span>
+                  <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       )}
 
@@ -173,9 +170,10 @@ const NewsHomePage: React.FC = () => {
             const category = newsCategories.find(c => c.slug === article.category);
 
             return (
-              <article
+              <Link
                 key={article.id}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all hover:-translate-y-2 border border-neutral-200 group"
+                to={`/news/${article.category}/${article.slug}`}
+                className="block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all hover:-translate-y-2 border border-neutral-200 group"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -193,26 +191,29 @@ const NewsHomePage: React.FC = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-neutral-900 mb-4 line-clamp-2 leading-tight group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-lg font-bold text-neutral-900 mb-4 leading-snug group-hover:text-primary-600 transition-colors min-h-[3.5rem]">
                     {article.title}
                   </h3>
                   
                   {/* Author Info */}
-                  <Link 
-                    to={`/news/author/${article.authorId}`}
-                    className="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors mb-4"
+                  <div 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = `/news/author/${article.authorId}`;
+                    }}
+                    className="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors mb-4 cursor-pointer"
                   >
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-600 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md flex-shrink-0">
                       {author?.name.split(' ').map(n => n[0]).join('') || 'MC'}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-neutral-900 text-sm truncate">{author?.name || 'MoneyCal Team'}</div>
-                      <div className="text-xs text-neutral-500">{author?.role || 'Writer'}</div>
+                      <div className="font-bold text-neutral-900 text-sm">{author?.name || 'MoneyCal Team'}</div>
+                      <div className="text-xs text-neutral-600 font-medium">{author?.role || 'Writer'}</div>
                     </div>
-                  </Link>
+                  </div>
                   
-                  <div className="flex items-center gap-2 text-xs text-neutral-500 mb-4 font-medium">
-                    <Calendar className="h-3 w-3" />
+                  <div className="flex items-center gap-2 text-xs text-neutral-600 mb-4 font-semibold">
+                    <Calendar className="h-4 w-4 text-primary-600" />
                     <span>{new Date(article.datePublished).toLocaleDateString('en-IN', { 
                       year: 'numeric', 
                       month: 'long', 
@@ -220,15 +221,12 @@ const NewsHomePage: React.FC = () => {
                     })}</span>
                   </div>
                   
-                  <Link
-                    to={`/news/${article.category}/${article.slug}`}
-                    className="inline-flex items-center gap-2 w-full justify-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-bold shadow-md hover:shadow-lg"
-                  >
-                    Read Article
+                  <div className="flex items-center gap-2 w-full justify-center px-6 py-3 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg group-hover:from-primary-700 group-hover:to-purple-700 transition-all font-bold shadow-md group-hover:shadow-lg">
+                    <span>Read Full Article</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </div>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>
