@@ -16,7 +16,7 @@ import { ipoRisks } from './news-articles/markets/article-06-ipo-risks';
 import { retailInvestorGuide } from './news-articles/markets/article-10-retail-investor-guide';
 
 // Business Analysis Articles
-// Add more business analysis articles as they are created
+import { omnichannelFootprint } from './news-articles/business-analysis/article-03-omnichannel-footprint';
 
 // Startups Articles
 import { lenskartInvestorsBacking } from './news-articles/startups/article-04-major-investors';
@@ -35,7 +35,7 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'article-10-retail-investor-guide': retailInvestorGuide,
   
   // Business Analysis
-  // 'article-03-omnichannel-footprint': omnichannelFootprint,
+  'article-03-omnichannel-footprint': omnichannelFootprint,
   // 'article-05-ipo-proceeds-usage': ipoProceedsUsage,
   // 'article-09-market-trends-support': marketTrendsSupport,
   // 'article-12-eyewear-purchase-behavior': purchaseBehavior,

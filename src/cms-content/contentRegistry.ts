@@ -80,10 +80,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'article-03-omnichannel-footprint',
     slug: 'lenskart-2000-stores-omnichannel-strategy',
     category: 'business-analysis',
+    subCategory: 'Deep Dives & Case Studies',
     title: 'From online to 2,000+ stores: How Lenskart built its omnichannel footprint',
+    excerpt: 'Online से 2,000+ stores तक का journey - Lenskart ने omnichannel model crack कैसे किया? ₹2,000 करोड़ investment, 80% profitable stores। Hindi case study.',
     authorId: 'harsh-raj',
-    datePublished: '2025-01-17',
-    image: '/images/news/lenskart-stores.jpg'
+    datePublished: '2025-10-17',
+    dateModified: '2025-10-29',
+    image: '/images/news/lenskart-stores.jpg',
+    readTime: 10,
+    tags: ['omnichannel retail', 'Lenskart stores', 'business strategy', 'retail expansion', 'Hindi business']
   },
   {
     id: 'article-05-ipo-proceeds-usage',
