@@ -76,7 +76,15 @@ import {
 // NEW Tech Business Articles (10 comprehensive Google News-optimized articles)
 import {
   aiEnterpriseAdoption,
-  fiveGRolloutIndia
+  fiveGRolloutIndia,
+  itServicesAutomation,
+  semiconductorMission,
+  upiGlobalExpansion,
+  cloudAdoptionIndia,
+  cybersecurityIndia,
+  itExportsSlowdown,
+  manufacturingAutomation,
+  techTalentShortage
 } from './news-articles/tech-business/tech-business-2025';
 
 // Article content map - maps article IDs to their full content
@@ -144,6 +152,14 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   // Tech Business - NEW comprehensive Google News-optimized articles (10)
   'ai-enterprise-adoption-2025': aiEnterpriseAdoption,
   '5g-rollout-india-2025': fiveGRolloutIndia,
+  'it-services-automation-2025': itServicesAutomation,
+  'semiconductor-mission-india-2025': semiconductorMission,
+  'upi-global-expansion-2025': upiGlobalExpansion,
+  'cloud-computing-india-2025': cloudAdoptionIndia,
+  'cybersecurity-india-2025': cybersecurityIndia,
+  'it-exports-slowdown-2025': itExportsSlowdown,
+  'manufacturing-automation-2025': manufacturingAutomation,
+  'tech-talent-shortage-2025': techTalentShortage,
 };
 
 /**

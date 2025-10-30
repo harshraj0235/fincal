@@ -443,6 +443,78 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'harsh-raj',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'it-services-automation-2025',
+    slug: 'it-services-automation-tcs-infosys-margins-compression',
+    category: 'tech-business',
+    title: 'IT Services Automation: TCS, Infosys Margins Under Pressure - AI Eating Into Profits!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'semiconductor-mission-india-2025',
+    slug: 'india-semiconductor-mission-76000-crore-micron-tata-chip-fabs',
+    category: 'tech-business',
+    title: 'India Semiconductor Mission: ₹76,000 Crore for 3 Chip Fabs - Self-Reliance Dream!',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'upi-global-expansion-2025',
+    slug: 'upi-global-expansion-10-countries-200-billion-opportunity',
+    category: 'tech-business',
+    title: 'UPI Goes Global: India\'s Payment System in 10 Countries - $200 Billion Opportunity!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'cloud-computing-india-2025',
+    slug: 'cloud-computing-india-1-lakh-crore-aws-azure-google',
+    category: 'tech-business',
+    title: 'Cloud Computing India: ₹1 Lakh Crore Market - AWS, Azure, Google Fighting for Share!',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'cybersecurity-india-2025',
+    slug: 'cybersecurity-india-35000-crore-breaches-skills-shortage',
+    category: 'tech-business',
+    title: 'Cybersecurity India: ₹35,000 Crore Market - Breaches Up 40%, Skills Shortage Acute!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'it-exports-slowdown-2025',
+    slug: 'it-exports-slowdown-200-billion-us-recession-automation',
+    category: 'tech-business',
+    title: 'IT Exports Slowdown: $200 Billion at Risk - US Recession, Automation Threats!',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'manufacturing-automation-2025',
+    slug: 'manufacturing-automation-industry-4-robots-iot-tata-mahindra',
+    category: 'tech-business',
+    title: 'Industry 4.0 India: Manufacturing Automation ₹60,000 Cr Investment - Robots, IoT, AI!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'tech-talent-shortage-2025',
+    slug: 'tech-talent-shortage-india-ai-ml-cloud-cybersecurity-jobs',
+    category: 'tech-business',
+    title: 'Tech Talent Crisis: India Needs 2 Million Engineers But Quality Shortage Acute!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

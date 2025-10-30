@@ -32,6 +32,11 @@
     <lastmod>2025-10-30</lastmod>
     <!-- Economy Category: 10 comprehensive news articles -->
   </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-news-tech-business.xml</loc>
+    <lastmod>2025-10-30</lastmod>
+    <!-- Tech Business Category: 10 comprehensive news articles -->
+  </sitemap>
   
   <!-- Main Content Category Sitemaps -->
   <sitemap>
