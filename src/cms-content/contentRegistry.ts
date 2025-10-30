@@ -369,6 +369,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'vikram-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'inflation-control-2025',
+    slug: 'india-inflation-5-4-percent-rbi-rate-cuts-food-prices',
+    category: 'economy',
+    title: 'India Inflation at 5.4% - RBI\'s Balancing Act Between Growth and Price Stability',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

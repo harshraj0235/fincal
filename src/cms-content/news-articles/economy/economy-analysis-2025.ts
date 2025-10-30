@@ -269,11 +269,64 @@ export const exportGrowthChallenges2025: NewsGuideSection = {
   }
 };
 
-// Export all Economy articles (2/8 done, continuing systematically)
-export const allEconomyArticles2025 = {
-  indiaGDPGrowth2025,
-  exportGrowthChallenges2025
+// ARTICLES 3-8: Completing Economy category (6 more in proper Google News paragraph format)
+
+export const inflationControl2025: NewsGuideSection = {
+  headline: "India Inflation at 5.4% - RBI's Balancing Act Between Growth and Price Stability | Complete Analysis",
+  subheadline: "Food Prices Up 9%, Core Inflation 3.5% - Rate Cuts Coming Q2 2025?",
+  featuredImage: {
+    url: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80",
+    alt: "India inflation rate 5.4 percent RBI monetary policy food prices growth rate cuts analysis 2025",
+    caption: "RBI का inflation control balancing act - 5.4% CPI के साथ rate cuts का timing critical",
+    credit: "Unsplash"
+  },
+  whatsNew: {
+    summary: "India's retail inflation averaged 5.4% in FY24, staying within the Reserve Bank of India's tolerance band of 4% ± 2% but above the central target of 4%. This represents a delicate balancing act for policymakers who must control price rises without choking economic growth that's running at a robust 7.2% annually.\n\nThe inflation composition reveals a tale of two economies. Food inflation, accounting for 46% of the Consumer Price Index basket, has accelerated to 9% driven by volatile vegetable prices (onion, tomato seeing 30-50% seasonal spikes), elevated edible oil costs with global palm oil prices firm, and persistent cereals inflation as government procurement drives up mandi prices. Urban consumers feel the pinch acutely with monthly grocery bills rising ₹1,500-2,000 for an average household.\n\nIn contrast, core inflation (excluding food and fuel) has moderated to a comfortable 3.5%, suggesting that underlying demand pressures remain contained. This divergence is critical for RBI's policy calculus - high food inflation is largely supply-driven and less responsive to interest rate adjustments, while low core inflation suggests monetary policy transmission is working effectively in cooling demand-side pressures.\n\nThe RBI has maintained the repo rate at 6.5% for the past 8 months, prioritizing inflation control over growth support. However, with food price pressures expected to ease as Rabi crop arrivals pick up pace in February-March 2025 and global commodity prices softening, the central bank is widely expected to initiate a rate-cutting cycle from Q2 2025. Market consensus anticipates 25-50 basis points of cumulative cuts through FY26, bringing repo rate to 6-6.25% and providing relief to borrowers while supporting consumption and investment.",
+    date: new Date().toISOString(),
+    source: { name: "Ministry of Statistics, RBI Monetary Policy Reports", url: "https://www.rbi.org.in", credibility: "official" }
+  },
+  whyItMatters: {
+    significance: "Inflation directly erodes purchasing power and living standards for India's vast population. A 5.4% inflation rate means ₹100 today will purchase only ₹94.60 worth of goods/services next year. For salaried individuals whose wage growth averages 6-8%, real income growth shrinks to just 0.6-2.6% annually after accounting for price rises - barely enough to improve lifestyles meaningfully.\n\nThe RBI's policy response carries massive implications for markets and the broader economy. Interest rate cuts boost borrowing and spending - each 25 basis point reduction saves ₹2,500 annually on a ₹10 lakh home loan EMI, cumulatively putting thousands of crores back in consumers' pockets for discretionary spending. Lower rates also reduce corporate borrowing costs, potentially unlocking the long-awaited private sector capital expenditure cycle that's essential for sustaining 7%+ GDP growth beyond government spending-led expansion.",
+    impact: ["Household budgets strained - Food inflation 9% hitting lower-income families hardest as they spend 50-60% income on food; Middle class managing better with 30-35% food budget share but feeling pressure on eating out, processed foods categories", "Savings returns squeezed - FD rates 7-7.5% minus 30% tax minus 5.4% inflation = Real returns barely positive at 0.4-0.9%; Conservative savers losing purchasing power slowly, need equity allocation for real wealth building", "EMI relief coming - If RBI cuts rates 50 bps to 6%, home loan EMIs decrease ₹500-800 per ₹10 lakh borrowed benefiting 5 crore home loan borrowers putting ₹25,000-40,000 annually back in economy", "Market sentiment boost - Rate cuts historically trigger 10-15% equity rallies as valuations re-rate upward and financials benefit from credit growth acceleration; Nifty target revisions from 30,000 to 32,000-33,000 possible"],
+    stakeholders: ["Consumers - Food inflation eroding budgets, rate cuts will ease EMI burden but food prices need government intervention via buffer stock releases", "RBI - Difficult trade-off between inflation target miss risk and growth support necessity; Data-dependent approach critical, premature cuts risk credibility", "Borrowers - 15 crore retail loans outstanding totaling ₹45 lakh crore, even 25 bps rate cut saves ₹11,000 crore annually in interest payments", "Savers - FD investors suffering as real returns near-zero, equity/gold diversification necessary for beating inflation long-term"]
+  },
+  keyData: {
+    facts: [
+      { label: "Retail Inflation FY24", value: "5.4% average (vs 4% target)", source: "MoSPI CPI data" },
+      { label: "Food Inflation", value: "9% (46% of CPI basket)", source: "RBI analysis" },
+      { label: "Core Inflation", value: "3.5% (contained)", source: "RBI calculations" },
+      { label: "Repo Rate Current", value: "6.5% (held for 8 months)", source: "RBI MPC" }
+    ]
+  },
+  coverage: {
+    mainTopics: [{
+      title: "RBI's Policy Dilemma - Growth vs Inflation",
+      description: "Central bank navigating difficult trade-offs with data-dependent approach",
+      subtopics: ["Rate cuts too early risk re-accelerating inflation if food prices spike again; RBI's hard-earned credibility after taming 2022's 7%+ inflation at stake if inflation expectations unanchor. Conservative approach prioritizes 4% target achievement even if means growth sacrifice short-term. MPC doves arguing for front-loading cuts as core inflation benign, hawks wanting confirmation food pressures sustainably below 6% before easing. Consensus building around Q2 2025 start to cutting cycle with 25 bps moves rather than aggressive 50 bps.", "Growth concerns rising as high rates persist - Credit growth moderating to 16% from 20% peak, consumption demand showing softness in FMCG volumes, Auto sales growth decelerating. Private capex not picking up despite corporate balance sheets healthy as cost of capital at 10-11% (repo 6.5% + spread) discouraging investments. If inflation trajectory to 4.5-5% confirmed, rate cuts justified to support growth without compromising price stability."]
+    }]
+  },
+  outlook: {
+    whatToWatch: ["Food prices Feb-March - Rabi crop arrivals (wheat, vegetables) should cool inflation below 5%", "Global commodity prices - Crude oil, edible oils if stable support disinflation", "RBI MPC April meeting - Likely first rate cut 25 bps if inflation prints 4.5-5% range"],
+    questions: [{question: "When will RBI cut interest rates?", answer: "Most likely April 2025 MPC meeting (Q1 FY26) with 25 bps cut if inflation trajectory confirms moderation to 4.5-5% range. Another 25 bps in June possible if data cooperates. Full year FY26 could see 50-75 bps total cuts taking repo to 5.75-6%."}, {question: "Should I wait for rate cuts to take home loan?", answer: "No - timing market is futile. If you need home, take loan now and prepay partially when rates fall. Waiting 6 months for potential 25 bps (0.25%) cut on ₹50 lakh loan saves only ₹6,000 annually but you lose 6 months of home ownership and potential property appreciation 5-8%."}]
+  },
+  takeaway: {
+    forReaders: ["Inflation 5.4% above RBI's 4% comfort zone but within tolerance - Food prices 9% driving overall inflation while core 3.5% shows monetary policy working", "Rate cuts likely Q2 2025 (April-June) if food inflation moderates below 6% - 25-50 bps cumulative cuts expected FY26 providing EMI relief", "Real returns on FDs near-zero - 7.5% FD minus 30% tax minus 5.4% inflation = 0.85% real return insufficient for wealth building, equity allocation necessary"],
+    forInvestors: ["Rate cut cycle positive for equities - Historically 10-15% Nifty rallies following first cut as valuations re-rate and earnings growth supported; But current 22x PE limits upside, selectivity important", "Banking sector sweet spot - Loan growth 16% healthy, rate cuts help volumes but NIM compression limited at 25-50 bps; HDFC Bank, ICICI Bank, Axis Bank best positioned", "Bond opportunity emerging - 10-year GSec at 7% attractive if rates fall 50 bps, capital gains 4-5% plus coupon; Debt funds benefit from falling rates, consider allocation"]
+  },
+  eeat: {
+    author: { name: "Raushan Kumar", title: "Financial Writer", bio: "Financial writer at MoneyCal", credentials: ["Financial Writer at MoneyCal"] },
+    sources: [{ name: "RBI - Monetary Policy Reports", url: "https://www.rbi.org.in", credibility: "official" }, { name: "MoSPI - CPI Data", url: "https://www.mospi.gov.in", credibility: "official" }],
+    lastUpdated: new Date().toISOString()
+  },
+  internalLinks: { calculators: ["inflation-calculator", "fd-calculator", "home-loan-calculator", "emi-calculator"] }
 };
 
-// Economy: 2/8 new articles done. Continuing with remaining 6 in proper format...
+// Export all Economy articles (3/8 done)
+export const allEconomyArticles2025 = {
+  indiaGDPGrowth2025,
+  exportGrowthChallenges2025,
+  inflationControl2025
+};
+
+// Economy: 3/8 done. Creating final 5 to complete category systematically...
 
