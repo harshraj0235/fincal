@@ -16,6 +16,14 @@
     <meta name="googlebot-news" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
     
+    <!-- Performance Optimizations for Lighthouse 90+ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://news.google.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="preload" as="script" href="/src/main.tsx" />
+    
     <!-- Dynamic rendering detection for search bots -->
     <meta name="fragment" content="!" />
     <meta name="prerender-status-code" content="200" />
@@ -36,8 +44,8 @@
       });
     </script>
     
-    <!-- Google tag (gtag.js) - Heavily deferred for performance -->
-    <script>
+    <!-- Google tag (gtag.js) - Deferred for Lighthouse 90+ performance -->
+    <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());

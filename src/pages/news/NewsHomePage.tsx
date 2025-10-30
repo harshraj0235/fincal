@@ -123,6 +123,8 @@ const NewsHomePage: React.FC = () => {
                       alt={featuredArticle.title}
                       className="w-full h-56 sm:h-72 md:h-80 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="eager"
+                      fetchpriority="high"
+                      decoding="async"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x400?text=Featured+Article';
                       }}
@@ -188,6 +190,7 @@ const NewsHomePage: React.FC = () => {
                     alt={article.title}
                     className="w-full h-48 sm:h-52 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
                     }}
