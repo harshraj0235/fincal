@@ -354,6 +354,70 @@ const NewsArticlePage: React.FC = () => {
           </div>
         )}
 
+        {/* Related Articles Section - Standard News Website Feature */}
+        <div className="mt-16 sm:mt-20 border-t-2 border-neutral-200 pt-10 sm:pt-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-900 mb-6 sm:mb-10 flex items-center gap-3">
+            <div className="h-1 w-12 sm:w-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"></div>
+            Related Articles
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {contentRegistry
+              .filter(a => a.category === article.category && a.id !== article.id)
+              .slice(0, 4)
+              .map((relatedArticle) => {
+                const relatedAuthor = teamProfiles.find(p => p.id === relatedArticle.authorId);
+                const categoryInfo = newsCategories.find(c => c.id === relatedArticle.category);
+                
+                return (
+                  <Link
+                    key={relatedArticle.id}
+                    to={`/news/${relatedArticle.category}/${relatedArticle.slug}`}
+                    className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:scale-95"
+                  >
+                    {/* Image */}
+                    <div className="relative h-40 sm:h-48 overflow-hidden">
+                      <img
+                        src={relatedArticle.image}
+                        alt={relatedArticle.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      {/* Category Badge */}
+                      <div className="absolute top-3 left-3">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-xs font-bold text-neutral-900 shadow-lg">
+                          {categoryInfo?.icon && <categoryInfo.icon className="h-3.5 w-3.5" />}
+                          {categoryInfo?.name || relatedArticle.category}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-4 sm:p-5">
+                      <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-3 line-clamp-2 group-hover:text-indigo-600 transition-colors leading-snug">
+                        {relatedArticle.title}
+                      </h3>
+                      
+                      {/* Author & Date */}
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-600">
+                        <div className="flex items-center gap-2">
+                          <div className="h-6 w-6 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
+                            {relatedAuthor?.name.split(' ').map(n => n[0]).join('') || 'A'}
+                          </div>
+                          <span className="font-medium truncate">{relatedAuthor?.name || 'MoneyCal'}</span>
+                        </div>
+                        <span className="text-neutral-400">•</span>
+                        <time className="font-medium whitespace-nowrap">
+                          {formatStaticShortDate(relatedArticle.datePublished)}
+                        </time>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+          </div>
+        </div>
+
         {/* Back to News - Mobile Optimized */}
         <div className="mt-8 sm:mt-12 text-center pb-6 sm:pb-8">
           <Link 
