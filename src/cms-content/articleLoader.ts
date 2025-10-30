@@ -87,6 +87,20 @@ import {
   techTalentShortage
 } from './news-articles/tech-business/tech-business-2025';
 
+// Markets Trending 2025 - 10 Dynamic Market-Based Articles
+import {
+  sensexBearPhase2025,
+  rupeeSlips88Crisis,
+  metalStocksCollapse,
+  topBuyPicks2025,
+  sebiFeeCutImpact,
+  ipoSeasonExplodes,
+  foreignMoneyDoubleEdged,
+  smallCapRotation,
+  usRateHikeCrash,
+  goldVsEquities2025
+} from './news-articles/markets/markets-trending-2025';
+
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
   // Economy - Original Lenskart articles
@@ -160,6 +174,18 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'it-exports-slowdown-2025': itExportsSlowdown,
   'manufacturing-automation-2025': manufacturingAutomation,
   'tech-talent-shortage-2025': techTalentShortage,
+  
+  // Markets Trending 2025 - Dynamic market-based articles (10)
+  'sensex-bear-phase-2025': sensexBearPhase2025,
+  'rupee-crisis-88-2025': rupeeSlips88Crisis,
+  'metal-stocks-collapse-2025': metalStocksCollapse,
+  'top-stock-picks-oct-2025': topBuyPicks2025,
+  'sebi-fee-cut-amc-2025': sebiFeeCutImpact,
+  'ipo-season-8billion-2025': ipoSeasonExplodes,
+  'fii-double-edged-2025': foreignMoneyDoubleEdged,
+  'smallcap-rotation-2025': smallCapRotation,
+  'us-rate-hike-crash-2025': usRateHikeCrash,
+  'gold-vs-equities-2025': goldVsEquities2025,
 };
 
 /**

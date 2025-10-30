@@ -515,6 +515,98 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'saurabh-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // MARKETS TRENDING 2025 - 10 Dynamic Market-Based Articles
+  {
+    id: 'sensex-bear-phase-2025',
+    slug: 'sensex-plunges-500-points-india-bear-phase-analysis',
+    category: 'markets',
+    title: 'Sensex Plunges 500 Points - Is This the Start of India\'s Quiet Bear Phase?',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'rupee-crisis-88-2025',
+    slug: 'rupee-slips-88-43-dollar-currency-crash-portfolio-risk',
+    category: 'markets',
+    title: 'Rupee Slips to ₹88.43 vs Dollar - Is Your Portfolio at Risk from Currency Crash?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'metal-stocks-collapse-2025',
+    slug: 'metal-stocks-collapse-global-demand-china-slowdown',
+    category: 'markets',
+    title: 'Metal Stocks Collapse as Global Demand Evaporates - India\'s Commodity Bet Failing?',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'top-stock-picks-oct-2025',
+    slug: 'top-stock-picks-october-2025-hdfc-reliance-tcs',
+    category: 'markets',
+    title: 'Top Stock Picks for October 30, 2025: Stocks You\'ll Wish You Bought Yesterday',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'sebi-fee-cut-amc-2025',
+    slug: 'sebi-fee-cuts-amc-selloff-mutual-fund-impact',
+    category: 'markets',
+    title: 'SEBI Fee Cuts Trigger Sell-off in AMCs: Why Your Mutual Fund Might Be Next',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'ipo-season-8billion-2025',
+    slug: 'ipo-season-india-8-billion-hyundai-swiggy-ola',
+    category: 'markets',
+    title: 'IPO Season Set to Explode: India\'s $8 Billion Year-End Blitz About to Begin',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'fii-double-edged-2025',
+    slug: 'foreign-money-india-fii-inflows-two-edged-sword',
+    category: 'markets',
+    title: 'Foreign Money Rushing Into India: Two-Edged Sword for Markets',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'smallcap-rotation-2025',
+    slug: 'small-caps-surge-big-caps-stumble-market-rotation',
+    category: 'markets',
+    title: 'Small-Caps Surge While Big-Caps Stumble - Market Rotation You Shouldn\'t Ignore',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'us-rate-hike-crash-2025',
+    slug: 'us-interest-rate-hike-india-market-crash-risk',
+    category: 'markets',
+    title: 'US Interest Rate Hike: Could This Trigger a Crash in India?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'gold-vs-equities-2025',
+    slug: 'gold-vs-equities-india-investment-next-five-years',
+    category: 'markets',
+    title: 'Gold vs Equities: Where Should Indians Invest in the Next Five Years?',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
