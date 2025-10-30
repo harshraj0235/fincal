@@ -59,7 +59,7 @@ const NewsCategoryPage: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {category.description}
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Category Navigation - Show All Categories */}
