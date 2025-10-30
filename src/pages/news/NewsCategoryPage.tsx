@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Calendar, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Calendar, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight, TrendingUp, Filter } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
 import SEOHelmet from '../../components/SEOHelmet';
+import { formatStaticShortDate } from '../../utils/randomCalculators';
 
 const ARTICLES_PER_PAGE = 15;
 
@@ -26,7 +28,7 @@ const NewsCategoryPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
       <SEOHelmet
         title={`${category.name} News | MoneyCal`}
         description={category.description}
@@ -34,33 +36,81 @@ const NewsCategoryPage: React.FC = () => {
         url={`/news/${categorySlug}`}
       />
 
-      {/* Hero Section - Mobile Optimized */}
-      <div className="bg-gradient-to-br from-primary-600 via-blue-600 to-purple-600 text-white py-8 sm:py-12">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <Link
-            to="/news"
-            className="inline-flex items-center gap-2 px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 active:bg-white/20 rounded-lg mb-4 transition-all text-sm sm:text-base touch-manipulation active:scale-95 -ml-3"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to All News
-          </Link>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">{category.name}</h1>
-          <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl">
+      {/* Category Navigation Bar - Big News Website Style */}
+      <div className="bg-white border-b shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between mb-3">
+            <Link
+              to="/news"
+              className="inline-flex items-center gap-2 text-neutral-600 hover:text-neutral-900 transition-colors"
+            >
+              <ArrowLeft className="h-5 w-5" />
+              <span className="font-semibold">All News</span>
+            </Link>
+            <div className="text-sm text-neutral-600">
+              {allArticles.length} article{allArticles.length !== 1 ? 's' : ''}
+            </div>
+          </div>
+          
+          {/* Category Navigation - Clickable Tabs */}
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
+            <Link
+              to="/news"
+              className="px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 touch-manipulation flex-shrink-0"
+            >
+              <Filter className="inline h-4 w-4 mr-1" />
+              All
+            </Link>
+            {newsCategories.map((cat) => (
+              <Link
+                key={cat.slug}
+                to={`/news/${cat.slug}`}
+                className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all touch-manipulation flex-shrink-0 ${
+                  cat.slug === categorySlug
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300'
+                }`}
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Section - Compact & Clean */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-8"
+        >
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium mb-4">
+            <TrendingUp className="w-4 h-4 mr-2" />
+            {category.name} News
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-3">{category.name}</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {category.description}
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Articles Grid - With Pagination */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
-        <div className="mb-6 sm:mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
-            {category.name} News
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-8"
+        >
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+            Latest {category.name} Articles
           </h2>
-          <p className="text-sm sm:text-base text-neutral-600">
+          <p className="text-lg text-gray-600">
             Showing {startIndex + 1}-{Math.min(endIndex, allArticles.length)} of {allArticles.length} article{allArticles.length !== 1 ? 's' : ''}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article) => {
@@ -98,13 +148,10 @@ const NewsCategoryPage: React.FC = () => {
                   <h3 className="text-xl font-black text-neutral-900 mb-4 leading-tight group-hover:text-blue-700 transition-colors min-h-[4rem]">
                     {article.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-sm text-neutral-700 mb-5 font-bold bg-neutral-50 px-4 py-2 rounded-lg">
-                    <Calendar className="h-4 w-4 text-blue-600" />
-                    <span className="text-neutral-900">{new Date(article.datePublished).toLocaleDateString('en-IN', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}</span>
+                  <div className="flex items-center gap-2 text-sm text-neutral-600">
+                    <span className="font-medium">{author?.name || 'MoneyCal'}</span>
+                    <span>•</span>
+                    <time className="font-medium">{formatStaticShortDate(article.datePublished)}</time>
                   </div>
                   <div className="flex items-center gap-3 w-full justify-center px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-pink-700 transition-all font-black text-base shadow-xl group-hover:shadow-2xl uppercase tracking-wide">
                     <span>Read Full Article</span>
