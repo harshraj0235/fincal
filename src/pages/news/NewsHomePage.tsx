@@ -41,28 +41,22 @@ const NewsHomePage: React.FC = () => {
         url="/news"
       />
 
-      {/* Hero Section - Mobile Responsive */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+      {/* Hero Section - Enhanced Mobile Responsive */}
+      <div className="bg-gradient-to-b from-white to-neutral-50 border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             <div className="flex-1">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 mb-2">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-2 sm:mb-3">
                 MoneyCal News
               </h1>
-              <p className="text-sm sm:text-base md:text-lg text-neutral-600">
+              <p className="text-base sm:text-lg md:text-xl text-neutral-600 leading-relaxed">
                 Business news, IPO coverage, market insights, and economic trends
               </p>
             </div>
-            <div className="flex sm:hidden items-center gap-3">
-              <div className="text-center px-4 py-2 bg-blue-50 rounded-lg">
-                <div className="text-xl font-bold text-blue-700">{contentRegistry.length}</div>
-                <div className="text-xs text-neutral-600">Articles</div>
-              </div>
-            </div>
-            <div className="hidden sm:flex items-center gap-3">
-              <div className="text-center px-4 py-2 bg-blue-50 rounded-lg">
-                <div className="text-2xl font-bold text-blue-700">{contentRegistry.length}</div>
-                <div className="text-xs text-neutral-600">Articles</div>
+            <div className="flex items-center gap-3">
+              <div className="text-center px-5 py-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200 shadow-sm">
+                <div className="text-2xl sm:text-3xl font-bold text-blue-700">{contentRegistry.length}</div>
+                <div className="text-xs sm:text-sm text-neutral-600 font-medium">Articles</div>
               </div>
             </div>
           </div>
@@ -76,16 +70,16 @@ const NewsHomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Category Filter - Clean Google News Style - Mobile Optimized */}
-      <div className="bg-white border-b sticky top-0 z-40 shadow-sm">
+      {/* Category Filter - Enhanced Mobile-Friendly */}
+      <div className="bg-white border-b sticky top-0 z-40 shadow-md backdrop-blur-sm bg-white/95">
         <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide px-3 sm:px-0" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide px-4 sm:px-0" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
             <button
               onClick={() => handleCategoryChange('all')}
-              className={`px-4 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation ${
+              className={`px-5 py-3 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all touch-manipulation min-h-[44px] ${
                 selectedCategory === 'all'
-                  ? 'bg-blue-700 text-white shadow-md'
-                  : 'text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200'
+                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105'
+                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:scale-95'
               }`}
             >
               For you
@@ -94,10 +88,10 @@ const NewsHomePage: React.FC = () => {
               <button
                 key={category.slug}
                 onClick={() => handleCategoryChange(category.slug)}
-                className={`px-4 sm:px-5 py-2.5 sm:py-2 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation ${
+                className={`px-5 py-3 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all touch-manipulation min-h-[44px] ${
                   selectedCategory === category.slug
-                    ? 'bg-blue-700 text-white shadow-md'
-                    : 'text-neutral-700 hover:bg-neutral-100 active:bg-neutral-200'
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:scale-95'
                 }`}
               >
                 {category.name}
@@ -107,49 +101,57 @@ const NewsHomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Featured Article - Fully Mobile Responsive */}
+      {/* Featured Article - Enhanced Mobile Responsive */}
       {selectedCategory === 'all' && featuredArticle && (
-        <div className="bg-white border-b">
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="bg-gradient-to-b from-white to-neutral-50 border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
+            <div className="mb-4 sm:mb-6">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs sm:text-sm font-semibold shadow-lg">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Featured Story
+              </div>
+            </div>
             <Link
               to={`/news/${featuredArticle.category}/${featuredArticle.slug}`}
               className="block group"
             >
-              <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8">
+              <div className="flex flex-col md:flex-row gap-6 sm:gap-8 bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 border border-neutral-200">
                 <div className="w-full md:w-3/5">
-                  <div className="relative overflow-hidden rounded-lg">
+                  <div className="relative overflow-hidden">
                     <img
                       src={featuredArticle.image}
                       alt={featuredArticle.title}
-                      className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] object-cover group-hover:opacity-90 transition-opacity"
+                      className="w-full h-56 sm:h-72 md:h-80 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="eager"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x400?text=Featured+Article';
                       }}
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:hidden"></div>
                   </div>
                 </div>
                 
-                <div className="w-full md:w-2/5 flex flex-col justify-center">
-                  <div className="mb-2 sm:mb-3">
-                    <span className="inline-block text-xs font-semibold text-blue-700 uppercase tracking-wider">
+                <div className="w-full md:w-2/5 flex flex-col justify-center p-6 sm:p-8">
+                  <div className="mb-3 sm:mb-4">
+                    <span className="inline-block px-3 py-1 text-xs sm:text-sm font-bold text-blue-700 bg-blue-50 rounded-full uppercase tracking-wider">
                       {newsCategories.find(c => c.slug === featuredArticle.category)?.name || featuredArticle.category}
                     </span>
                   </div>
                   
-                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-3 sm:mb-4 leading-tight group-hover:text-blue-700 transition-colors">
+                  <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 sm:mb-6 leading-tight group-hover:text-blue-700 transition-colors">
                     {featuredArticle.title}
                   </h2>
                   
-                  <div className="text-xs sm:text-sm text-neutral-600">
+                  <div className="flex items-center gap-3 text-sm sm:text-base text-neutral-600">
                     <Link 
                       to={`/news/author/${featuredArticle.authorId}`}
-                      className="hover:text-blue-700 font-medium"
+                      className="hover:text-blue-700 font-semibold transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
                       {teamProfiles.find(p => p.id === featuredArticle.authorId)?.name}
                     </Link>
-                    <span className="mx-2">•</span>
-                    <time>{formatStaticDate(featuredArticle.datePublished)}</time>
+                    <span>•</span>
+                    <time className="font-medium">{formatStaticDate(featuredArticle.datePublished)}</time>
                   </div>
                 </div>
               </div>
@@ -158,18 +160,18 @@ const NewsHomePage: React.FC = () => {
         </div>
       )}
 
-      {/* Articles Grid - Mobile Optimized */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12 bg-neutral-50">
-        <div className="mb-6 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
+      {/* Articles Grid - Enhanced Mobile Optimized */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-neutral-50">
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 mb-3 sm:mb-4">
             {selectedCategory === 'all' ? 'Latest Articles' : newsCategories.find(c => c.slug === selectedCategory)?.name}
           </h2>
-          <p className="text-sm sm:text-base text-neutral-600">
+          <p className="text-base sm:text-lg text-neutral-600 font-medium">
             {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''} • Updated daily
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {paginatedArticles.map((article) => {
             const author = teamProfiles.find(p => p.id === article.authorId);
             const category = newsCategories.find(c => c.slug === article.category);
@@ -178,21 +180,23 @@ const NewsHomePage: React.FC = () => {
               <Link
                 key={article.id}
                 to={`/news/${article.category}/${article.slug}`}
-                className="block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow border border-neutral-200 group active:scale-95 active:shadow-sm"
+                className="block bg-white rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-neutral-200 group active:scale-98 transform"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={article.image}
                     alt={article.title}
-                    className="w-full h-40 sm:h-48 md:h-52 object-cover group-hover:opacity-90 transition-opacity"
+                    className="w-full h-48 sm:h-52 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
                     }}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent group-hover:from-black/20 transition-all"></div>
                 </div>
-                <div className="p-4 sm:p-5">
-                  <div className="mb-2 sm:mb-3">
-                    <span className="text-xs font-semibold text-blue-700 uppercase tracking-wide">
+                <div className="p-5 sm:p-6">
+                  <div className="mb-3">
+                    <span className="inline-block px-3 py-1 text-xs font-bold text-blue-700 bg-blue-50 rounded-full uppercase tracking-wider">
                       {category?.name || article.category}
                     </span>
                   </div>
@@ -230,51 +234,53 @@ const NewsHomePage: React.FC = () => {
           </div>
         )}
 
-        {/* Pagination Controls - Mobile Friendly */}
+        {/* Pagination Controls - Enhanced Mobile Friendly */}
         {totalPages > 1 && (
-          <div className="mt-8 sm:mt-12 pb-6">
+          <div className="mt-10 sm:mt-16 pb-8">
             {/* Mobile: Show only prev/next and current page */}
-            <div className="flex sm:hidden items-center justify-between px-4">
+            <div className="flex sm:hidden items-center justify-between gap-4">
               <button
                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                 disabled={currentPage === 1}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold ${
+                className={`flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold min-h-[44px] transition-all ${
                   currentPage === 1
-                    ? 'text-neutral-300 cursor-not-allowed'
-                    : 'text-neutral-700 bg-white border border-neutral-300 active:bg-neutral-100'
+                    ? 'text-neutral-300 bg-neutral-100 cursor-not-allowed'
+                    : 'text-white bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg active:scale-95'
                 }`}
               >
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="h-5 w-5" />
                 Prev
               </button>
               
-              <div className="text-sm font-semibold text-neutral-700">
-                Page {currentPage} of {totalPages}
+              <div className="flex-1 text-center px-4 py-3 bg-white rounded-xl border-2 border-blue-200 shadow-sm">
+                <span className="text-sm font-bold text-neutral-900">
+                  {currentPage} <span className="text-neutral-500">of</span> {totalPages}
+                </span>
               </div>
               
               <button
                 onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                 disabled={currentPage === totalPages}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold ${
+                className={`flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold min-h-[44px] transition-all ${
                   currentPage === totalPages
-                    ? 'text-neutral-300 cursor-not-allowed'
-                    : 'text-neutral-700 bg-white border border-neutral-300 active:bg-neutral-100'
+                    ? 'text-neutral-300 bg-neutral-100 cursor-not-allowed'
+                    : 'text-white bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg active:scale-95'
                 }`}
               >
                 Next
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-5 w-5" />
               </button>
             </div>
 
             {/* Desktop: Show full pagination */}
-            <div className="hidden sm:flex items-center justify-center gap-2">
+            <div className="hidden sm:flex items-center justify-center gap-3">
               <button
                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                 disabled={currentPage === 1}
-                className={`p-2 rounded-full transition-all ${
+                className={`p-3 rounded-full transition-all ${
                   currentPage === 1
-                    ? 'text-neutral-300 cursor-not-allowed'
-                    : 'text-neutral-700 hover:bg-neutral-100'
+                    ? 'text-neutral-300 cursor-not-allowed bg-neutral-100'
+                    : 'text-blue-700 hover:bg-blue-50 active:bg-blue-100'
                 }`}
               >
                 <ChevronLeft className="h-6 w-6" />
@@ -296,10 +302,10 @@ const NewsHomePage: React.FC = () => {
                   <button
                     key={pageNum}
                     onClick={() => setCurrentPage(pageNum)}
-                    className={`w-10 h-10 rounded-full font-semibold text-sm transition-all ${
+                    className={`min-w-[44px] h-11 rounded-xl font-bold text-sm transition-all ${
                       currentPage === pageNum
-                        ? 'bg-blue-700 text-white'
-                        : 'text-neutral-700 hover:bg-neutral-100'
+                        ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-110'
+                        : 'text-neutral-700 hover:bg-blue-50 active:bg-blue-100'
                     }`}
                   >
                     {pageNum}
@@ -310,10 +316,10 @@ const NewsHomePage: React.FC = () => {
               <button
                 onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                 disabled={currentPage === totalPages}
-                className={`p-2 rounded-full transition-all ${
+                className={`p-3 rounded-full transition-all ${
                   currentPage === totalPages
-                    ? 'text-neutral-300 cursor-not-allowed'
-                    : 'text-neutral-700 hover:bg-neutral-100'
+                    ? 'text-neutral-300 cursor-not-allowed bg-neutral-100'
+                    : 'text-blue-700 hover:bg-blue-50 active:bg-blue-100'
                 }`}
               >
                 <ChevronRight className="h-6 w-6" />
