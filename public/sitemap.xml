@@ -5,21 +5,25 @@
   <sitemap>
     <loc>https://moneycal.in/sitemap-news-markets.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Markets Category: 14 comprehensive news articles -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-news-business.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Business Analysis: 11 comprehensive news articles -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-news-startups.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Startups Category: 10 comprehensive news articles -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-news-economy.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Economy Category: 3 news articles (growing daily) -->
   </sitemap>
   
   <!-- Main Content Category Sitemaps -->
