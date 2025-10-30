@@ -354,7 +354,7 @@ const NewsArticlePage: React.FC = () => {
           </div>
         )}
 
-        {/* Related Articles Section - Standard News Website Feature */}
+        {/* Related Articles Section - Smart Topic + Latest Algorithm */}
         <div className="mt-16 sm:mt-20 border-t-2 border-neutral-200 pt-10 sm:pt-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-900 mb-6 sm:mb-10 flex items-center gap-3">
             <div className="h-1 w-12 sm:w-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"></div>
@@ -363,7 +363,28 @@ const NewsArticlePage: React.FC = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {contentRegistry
-              .filter(a => a.category === article.category && a.id !== article.id)
+              .filter(a => a.id !== article.id)
+              .map(a => {
+                // Smart relevance algorithm: topic similarity + recency
+                let relevanceScore = 0;
+                
+                // Same category bonus (high priority)
+                if (a.category === article.category) relevanceScore += 10;
+                
+                // Title keyword overlap (topic relevance)
+                const currentTitleWords = article.title.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+                const relatedTitleWords = a.title.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+                const commonWords = currentTitleWords.filter(w => relatedTitleWords.includes(w));
+                relevanceScore += commonWords.length * 3;
+                
+                // Recency bonus (prefer latest articles)
+                const daysSincePublished = (new Date().getTime() - new Date(a.datePublished).getTime()) / (1000 * 60 * 60 * 24);
+                if (daysSincePublished < 7) relevanceScore += 5;
+                else if (daysSincePublished < 30) relevanceScore += 2;
+                
+                return { ...a, relevanceScore };
+              })
+              .sort((a, b) => b.relevanceScore - a.relevanceScore)
               .slice(0, 4)
               .map((relatedArticle) => {
                 const relatedAuthor = teamProfiles.find(p => p.id === relatedArticle.authorId);
