@@ -337,7 +337,7 @@ const ReviewingBudget: React.FC = () => {
                       title: 'Compare vs Budget (2 mins)',
                       actions: [
                         'For each category: Actual - Planned = Variance',
-                        'Red flags: Wants overspent by >10%, Savings <20%',
+                        'Red flags: Wants overspent by &gt;10%, Savings &lt;20%',
                         'Green flags: All categories within ±5% of plan'
                       ]
                     },
@@ -539,13 +539,13 @@ const ReviewingBudget: React.FC = () => {
 
               <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg">
                 <strong className="text-blue-900">💡 Quarterly Action Items:</strong>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
-                  <li>• Adjust annual goals if life changed significantly</li>
-                  <li>• Rebalance investments (if equity >70%, move some to debt)</li>
-                  <li>• Review and cancel unused subscriptions</li>
-                  <li>• Check insurance coverage (is it still adequate?)</li>
-                  <li>• Plan for upcoming major expenses (festivals, vacations)</li>
-                </ul>
+                  <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                    <li>• Adjust annual goals if life changed significantly</li>
+                    <li>• Rebalance investments (if equity &gt;70%, move some to debt)</li>
+                    <li>• Review and cancel unused subscriptions</li>
+                    <li>• Check insurance coverage (is it still adequate?)</li>
+                    <li>• Plan for upcoming major expenses (festivals, vacations)</li>
+                  </ul>
               </div>
             </div>
           </motion.section>
@@ -568,7 +568,7 @@ const ReviewingBudget: React.FC = () => {
                 '5-step process: Gather data → Calculate actual → Compare → Find root causes → Adjust next month.',
                 'Life changes = budget changes: Salary increase? Save 70%. New baby? Cut wants, not savings.',
                 'Quarterly deep dive (1 hour): Check net worth, goal progress, investment performance, debt reduction.',
-                'Red flag: Savings <15% for 2+ months = lifestyle inflation or overspending (fix ASAP).',
+                'Red flag: Savings &lt;15% for 2+ months = lifestyle inflation or overspending (fix ASAP).',
                 'Green flag: Within ±5% of budget consistently = financial discipline mastered!',
                 'Tool recommendations: Use Money Manager, Walnut, or simple Excel tracker.',
                 'Adjust for seasonality: Diwali? Budget extra ₹10K for gifts/shopping in advance.',
