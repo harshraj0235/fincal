@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageSquare, Phone, MapPin, Send, CheckCircle, Globe } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin, Send, CheckCircle, Globe, Shield } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 
 const ContactUs: React.FC = () => {

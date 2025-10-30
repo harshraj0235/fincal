@@ -52,6 +52,7 @@ const ChhathPujaMythology = lazy(() => import('./pages/blog/ChhathPujaMythology'
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const EditorialPolicy = lazy(() => import('./pages/EditorialPolicy'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
 // const TeamPage = lazy(() => import('./pages/TeamPage'));  // DISABLED - file deleted
