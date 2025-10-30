@@ -378,6 +378,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'raushan-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'infrastructure-boom-2025',
+    slug: 'india-infrastructure-boom-111-lakh-crore-roads-metros-ports',
+    category: 'economy',
+    title: 'Infrastructure Boom: India Spending ₹111 Lakh Crore on Roads, Metros, Ports!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

@@ -65,7 +65,8 @@ import {
 import {
   indiaGDPGrowth2025,
   exportGrowthChallenges2025,
-  inflationControl2025
+  inflationControl2025,
+  infrastructureBoom2025
 } from './news-articles/economy/economy-analysis-2025';
 
 // Article content map - maps article IDs to their full content
@@ -78,6 +79,7 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'india-gdp-growth-2025': indiaGDPGrowth2025,
   'export-growth-challenges-2025': exportGrowthChallenges2025,
   'inflation-control-2025': inflationControl2025,
+  'infrastructure-boom-2025': infrastructureBoom2025,
   
   // Markets - Original Lenskart articles
   'article-01-lenskart-ipo-matters': lenskartIPOMatters,
