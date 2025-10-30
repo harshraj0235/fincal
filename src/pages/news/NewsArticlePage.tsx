@@ -44,6 +44,41 @@ const NewsArticlePage: React.FC = () => {
   const [article, setArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Google News Subscribe with Google (SWG) - Auto-loads for all news articles
+  useEffect(() => {
+    // Load SWG Basic script
+    const swgScript = document.createElement('script');
+    swgScript.src = 'https://news.google.com/swg/js/v1/swg-basic.js';
+    swgScript.async = true;
+    swgScript.type = 'application/javascript';
+    
+    // Initialize SWG after script loads
+    const swgInit = document.createElement('script');
+    swgInit.innerHTML = `
+      (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+        basicSubscriptions.init({
+          type: "NewsArticle",
+          isPartOfType: ["Product"],
+          isPartOfProductId: "CAowupDCDA:openaccess",
+          clientOptions: { theme: "light", lang: "en" },
+        });
+      });
+    `;
+    
+    // Only add if not already present
+    if (!document.querySelector('script[src*="swg-basic.js"]')) {
+      document.head.appendChild(swgScript);
+      swgScript.onload = () => {
+        document.head.appendChild(swgInit);
+      };
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      // Keep scripts for other news article navigations (SPA behavior)
+    };
+  }, []); // Run once on mount
+
   useEffect(() => {
     const loadArticle = async () => {
       try {
