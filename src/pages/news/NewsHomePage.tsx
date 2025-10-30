@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight, User } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
@@ -12,8 +12,10 @@ import { formatStaticDate, formatStaticShortDate } from '../../utils/randomCalcu
 const ARTICLES_PER_PAGE = 15;
 
 const NewsHomePage: React.FC = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
 
+  // Show all articles on homepage
   const filteredArticles = contentRegistry;
 
   // Pagination
@@ -23,6 +25,15 @@ const NewsHomePage: React.FC = () => {
   const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
 
   const featuredArticle = contentRegistry[0];
+  
+  // Navigate to category page when category is selected
+  const handleCategoryChange = (category: string) => {
+    if (category === 'all') {
+      navigate('/news');
+    } else {
+      navigate(`/news/${category}`);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
@@ -53,42 +64,37 @@ const NewsHomePage: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Search Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      {/* Search Section - Full Width No Overlap */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20"
+          className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200"
         >
-          <NewsSearch />
-        </motion.div>
-      </div>
+          {/* Search Bar */}
+          <div className="mb-6">
+            <NewsSearch />
+          </div>
 
-      {/* Category Navigation - Clickable Links (NOT filter) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="bg-white rounded-xl p-4 shadow-lg"
-        >
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <Link
-              to="/news"
-              className="px-5 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation min-h-[44px] flex-shrink-0 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
+          {/* Category Filter Row */}
+          <div className="flex items-center gap-3 flex-wrap">
+            <span className="text-sm font-semibold text-gray-700">Filter by category:</span>
+            <select
+              value="all"
+              onChange={(e) => handleCategoryChange(e.target.value)}
+              className="px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm font-medium"
             >
-              All
-            </Link>
-            {newsCategories.map((category) => (
-              <Link
-                key={category.slug}
-                to={`/news/${category.slug}`}
-                className="px-5 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation min-h-[44px] flex-shrink-0 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:scale-95"
-              >
-                {category.name}
-              </Link>
-            ))}
+              <option value="all">📰 All Categories</option>
+              {newsCategories.map((category) => (
+                <option key={category.slug} value={category.slug}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+            <span className="text-xs text-gray-500 ml-auto">
+              {contentRegistry.length} articles available
+            </span>
           </div>
         </motion.div>
       </div>
@@ -225,12 +231,6 @@ const NewsHomePage: React.FC = () => {
             );
           })}
         </div>
-
-        {filteredArticles.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-xl text-neutral-600">No articles found.</p>
-          </div>
-        )}
 
         {/* Pagination Controls - Enhanced Mobile Friendly */}
         {totalPages > 1 && (

@@ -158,7 +158,7 @@ const NewsArticlePage: React.FC = () => {
   const currentDateISO = getCurrentDateISO();
 
   return (
-    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 pt-20">
       {/* Reading Progress Bar */}
       <ReadingProgress />
       

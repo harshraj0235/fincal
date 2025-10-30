@@ -161,9 +161,9 @@ const NewsSearch: React.FC = () => {
         </div>
       </div>
 
-      {/* Search Results Dropdown - Enhanced UI No Overlap */}
+      {/* Search Results Dropdown */}
       {isOpen && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-xl shadow-2xl border-2 border-blue-200 max-h-[500px] overflow-y-auto z-[9999] backdrop-blur-sm">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl sm:rounded-2xl shadow-2xl border border-neutral-200 max-h-96 sm:max-h-[500px] overflow-y-auto z-50 animate-in fade-in slide-in-from-top-2">
           <div className="p-3 sm:p-4 border-b border-neutral-200">
             <div className="flex items-center justify-between">
               <p className="text-xs sm:text-sm font-semibold text-neutral-600">
@@ -246,7 +246,7 @@ const NewsSearch: React.FC = () => {
 
       {/* No Results */}
       {isOpen && query && results.length === 0 && (
-        <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-xl shadow-2xl border-2 border-blue-200 p-8 sm:p-12 z-[9999]">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl sm:rounded-2xl shadow-2xl border border-neutral-200 p-8 sm:p-12 z-50 animate-in fade-in slide-in-from-top-2">
           <div className="text-center">
             <FileText className="h-12 w-12 sm:h-16 sm:w-16 text-neutral-300 mx-auto mb-4" />
             <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-2">No results found</h3>
