@@ -313,6 +313,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'saurabh-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1526367790999-0150786686a2?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'd2c-brands-consolidation-2025',
+    slug: 'd2c-brands-consolidation-mamaearth-boat-survival',
+    category: 'startups',
+    title: 'D2C Brands की Consolidation शुरू! Mamaearth, boAt - Survive या Shutdown?',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

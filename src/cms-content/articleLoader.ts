@@ -54,7 +54,8 @@ import {
   indiaUnicornFactory2025,
   tier2StartupRevolution,
   aiStartupsBoom,
-  quickCommerceBattle
+  quickCommerceBattle,
+  d2cBrandsConsolidation
 } from './news-articles/startups/startups-funding-ecosystem-2025';
 
 // Article content map - maps article IDs to their full content
@@ -104,6 +105,7 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'tier2-startup-revolution': tier2StartupRevolution,
   'ai-startups-boom-2025': aiStartupsBoom,
   'quick-commerce-battle-2025': quickCommerceBattle,
+  'd2c-brands-consolidation-2025': d2cBrandsConsolidation,
 };
 
 /**
