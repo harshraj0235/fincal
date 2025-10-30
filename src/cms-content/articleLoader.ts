@@ -115,6 +115,20 @@ import {
   infraSpendingDelivery
 } from './news-articles/business/business-trending-2025';
 
+// Startups Trending 2025 - 10 Dynamic Startup Ecosystem Articles
+import {
+  campusStartupsRise,
+  deepTechFund,
+  tier2StartupBoom,
+  aiStartupWave,
+  startupIpoTracker,
+  vcPlaybookShift,
+  femaleFunderGap,
+  climateAgriFood,
+  foundersGoingGlobal,
+  privatVsPublicMarkets
+} from './news-articles/startups/startups-trending-2025';
+
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
   // Economy - Original Lenskart articles
@@ -212,6 +226,18 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'banks-fintech-2028': banksVsFintech2028,
   'real-estate-risk-2025': realEstateRisk,
   'infra-delivery-failure-2025': infraSpendingDelivery,
+  
+  // Startups Trending 2025 - Dynamic startup ecosystem articles (10)
+  'campus-startups-2025': campusStartupsRise,
+  'deeptech-fund-2025': deepTechFund,
+  'tier2-startup-boom-2025': tier2StartupBoom,
+  'ai-startup-wave-2025': aiStartupWave,
+  'startup-ipo-tracker-2025': startupIpoTracker,
+  'vc-playbook-shift-2025': vcPlaybookShift,
+  'female-founder-gap-2025': femaleFunderGap,
+  'climate-agri-food-2025': climateAgriFood,
+  'founders-global-2025': foundersGoingGlobal,
+  'private-vs-public-markets-2025': privatVsPublicMarkets,
 };
 
 /**

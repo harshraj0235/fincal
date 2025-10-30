@@ -23,6 +23,19 @@
     <!-- Google AdSense Account Verification -->
     <meta name="google-adsense-account" content="ca-pub-4446717165665089">
     
+    <!-- Google News Reader Revenue Manager (Subscribe with Google) -->
+    <script async type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+    <script>
+      (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+        basicSubscriptions.init({
+          type: "NewsArticle",
+          isPartOfType: ["Product"],
+          isPartOfProductId: "CAowupDCDA:openaccess",
+          clientOptions: { theme: "light", lang: "en" },
+        });
+      });
+    </script>
+    
     <!-- Google tag (gtag.js) - Heavily deferred for performance -->
     <script>
       window.dataLayer = window.dataLayer || [];

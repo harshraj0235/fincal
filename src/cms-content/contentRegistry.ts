@@ -699,6 +699,98 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'harsh-raj',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1590859808308-3d2d9c515b1a?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // STARTUPS TRENDING 2025 - 10 Dynamic Startup Ecosystem Articles
+  {
+    id: 'campus-startups-2025',
+    slug: 'campus-startups-india-next-unicorn-from-hostel',
+    category: 'startups',
+    title: 'Campus Startups Taking Over India: Next Unicorn Coming From a Hostel!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'deeptech-fund-2025',
+    slug: 'deeptech-battleground-10000-crore-fund-of-funds',
+    category: 'startups',
+    title: 'Deep-Tech Battleground: Government\'s ₹10,000 Crore Fund of Funds - India\'s Startup Future',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'tier2-startup-boom-2025',
+    slug: 'tier2-tier3-cities-india-hidden-startup-boom-zones',
+    category: 'startups',
+    title: 'Tier-2 & Tier-3 Cities: India\'s Hidden Startup Boom Zones - Jaipur, Indore Leading!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'ai-startup-wave-2025',
+    slug: 'ai-startup-wave-india-25000-crore-who-winning',
+    category: 'startups',
+    title: 'AI Startup Wave in India: Everyone\'s Talking, ₹25,000 Cr Invested - But Who\'s Winning?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'startup-ipo-tracker-2025',
+    slug: 'india-startup-ipo-tracker-2025-breakout-year',
+    category: 'startups',
+    title: 'India\'s Startup IPO Tracker 2025: Could Be the Breakout Year - ₹44,000 Cr Public Fundraising!',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'vc-playbook-shift-2025',
+    slug: 'vcs-india-shifting-playbook-profitability-over-growth',
+    category: 'startups',
+    title: 'VCs in India Shifting Playbook: Profitability Over Growth - Founders, Heads Up!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'female-founder-gap-2025',
+    slug: 'female-founder-funding-india-gap-how-changing',
+    category: 'startups',
+    title: 'Female-Founder Funding in India Still Lags: Apenas 3% of ₹1.2 Lakh Cr - How It\'s Changing',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'climate-agri-food-2025',
+    slug: 'climate-tech-agritech-foodtech-india-next-big-three',
+    category: 'startups',
+    title: 'Climate Tech, AgriTech & FoodTech: India\'s Next Startup Big Three - ₹35,000 Cr Opportunity',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'founders-global-2025',
+    slug: 'indian-founders-going-global-day-one-50000-crore',
+    category: 'startups',
+    title: 'Indian Founders Going Global from Day One: ₹50,000 Cr Revenue from Overseas!',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'private-vs-public-markets-2025',
+    slug: 'startups-preferring-public-markets-44000-crore-ipo',
+    category: 'startups',
+    title: 'Startups Preferring Public Markets: ₹44,000 Cr vs ₹22,000 Cr Private - What It Means',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
