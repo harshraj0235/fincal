@@ -430,6 +430,7 @@ const BudgetingGuide = lazy(() => import('./pages/learn/money-management/Budgeti
 const BuildingEmergencyFund = lazy(() => import('./pages/learn/money-management/BuildingEmergencyFund'));
 const CashFlowNetWorth = lazy(() => import('./pages/learn/money-management/CashFlowNetWorth'));
 const FinancialHabits = lazy(() => import('./pages/learn/money-management/FinancialHabits'));
+const ReviewingBudget = lazy(() => import('./pages/learn/money-management/ReviewingBudget'));
 const BusinessLoanEMI = lazy(() => import('./pages/learn/business-loans/EMICalculator'));
 const BusinessGovernmentSchemes = lazy(() => import('./pages/learn/business-loans/GovernmentSchemes'));
 const BusinessLoanEligibility = lazy(() => import('./pages/learn/business-loans/EligibilityCalculator'));
@@ -619,7 +620,7 @@ function App() {
         <Route path="/missed-call-banking-directory" element={<MissedCallBankingDirectory />} />
         
         {/* Learn Platform Routes - Standalone (No footer/sidebar) */}
-        <Route path="/learn" element={<LearnHome />} />
+        {/* Old /learn route removed - now using LearnHub inside Layout */}
         <Route path="/learn/loans" element={<LoansHub />} />
         <Route path="/learn/loans/what-is-loan" element={<WhatIsLoan />} />
         <Route path="/learn/loans/types-of-loans" element={<TypesOfLoans />} />
@@ -827,6 +828,7 @@ function App() {
                 <Route path="/learn/money-management/building-emergency-fund-india-6-12-months" element={<BuildingEmergencyFund />} />
                 <Route path="/learn/money-management/cash-flow-net-worth-tracking-india" element={<CashFlowNetWorth />} />
                 <Route path="/learn/money-management/building-good-financial-habits-daily" element={<FinancialHabits />} />
+                <Route path="/learn/money-management/reviewing-adjusting-budget-monthly-quarterly-annual" element={<ReviewingBudget />} />
                 
                 {/* News Portal Routes */}
                 <Route path="/news" element={<NewsHomePage />} />

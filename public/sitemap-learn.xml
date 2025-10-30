@@ -4,8 +4,8 @@
   <!-- 
     MoneyCal Learn Platform - Educational Content Sitemap
     Last Updated: 2025-10-30
-    Total Learn Articles: 8 (1 main hub + 1 category hub + 6 lessons)
-    Category: Money Management & Budgeting (8 lessons planned, 6 live)
+    Total Learn Articles: 9 (1 main hub + 1 category hub + 7 lessons)
+    Category: Money Management & Budgeting (8 lessons planned, 7 live)
   -->
   
   <!-- Learn Main Hub Page -->
@@ -67,6 +67,14 @@
   <!-- Lesson 6: Financial Habits -->
   <url>
     <loc>https://moneycal.in/learn/money-management/building-good-financial-habits-daily</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Lesson 7: Reviewing & Adjusting Budget -->
+  <url>
+    <loc>https://moneycal.in/learn/money-management/reviewing-adjusting-budget-monthly-quarterly-annual</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
