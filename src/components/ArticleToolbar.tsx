@@ -19,12 +19,25 @@ export const ArticleToolbar: React.FC<ArticleToolbarProps> = ({ articleTitle }) 
 
   const handleFontSize = (size: 'small' | 'medium' | 'large') => {
     setFontSize(size);
-    const article = document.querySelector('.article-content');
+    const root = document.documentElement;
+    
+    // Apply font size to entire article body
+    if (size === 'small') {
+      root.style.setProperty('--article-font-size', '14px');
+      root.style.setProperty('--article-line-height', '1.6');
+    } else if (size === 'medium') {
+      root.style.setProperty('--article-font-size', '16px');
+      root.style.setProperty('--article-line-height', '1.7');
+    } else {
+      root.style.setProperty('--article-font-size', '18px');
+      root.style.setProperty('--article-line-height', '1.8');
+    }
+    
+    // Also apply to prose elements directly
+    const article = document.querySelector('.prose');
     if (article) {
-      article.classList.remove('text-sm', 'text-base', 'text-lg');
-      if (size === 'small') article.classList.add('text-sm');
-      else if (size === 'medium') article.classList.add('text-base');
-      else article.classList.add('text-lg');
+      article.style.fontSize = size === 'small' ? '14px' : size === 'large' ? '18px' : '16px';
+      article.style.lineHeight = size === 'small' ? '1.6' : size === 'large' ? '1.8' : '1.7';
     }
   };
 

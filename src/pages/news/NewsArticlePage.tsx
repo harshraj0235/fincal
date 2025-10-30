@@ -26,6 +26,8 @@ import ArticleToolbar from '../../components/ArticleToolbar';
 import EnhancedSocialShare from '../../components/EnhancedSocialShare';
 import TrendingNewsSidebar from '../../components/TrendingNewsSidebar';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
+import Breadcrumbs from '../../components/Breadcrumbs';
+import TableOfContents from '../../components/TableOfContents';
 
 interface Article {
   id: string;
@@ -203,6 +205,13 @@ const NewsArticlePage: React.FC = () => {
             Back
           </button>
 
+          {/* Breadcrumbs - Google loves this for SEO */}
+          <Breadcrumbs 
+            category={article.category}
+            categoryName={category?.name || article.category}
+            articleTitle={article.title}
+          />
+
           {/* Category Badge */}
           <div className="mb-3 sm:mb-4">
             <span className="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-blue-50 text-blue-700 rounded-full font-semibold text-xs sm:text-sm uppercase tracking-wide">
@@ -295,14 +304,20 @@ const NewsArticlePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Article Content - Mobile Optimized */}
-      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
-        {/* Check if CMS content is available */}
-        {(() => {
-          const cmsContent = getArticleContent(article.slug);
-          if (cmsContent) {
-            return <NewsGuideTemplate guide={cmsContent} />;
-          }
+      {/* Article Content - Mobile Optimized with Sidebar */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Main Content */}
+          <div className="lg:col-span-8">
+            {/* Table of Contents - Google loves this */}
+            <TableOfContents articleTitle={article.title} />
+            
+            {/* Check if CMS content is available */}
+            {(() => {
+              const cmsContent = getArticleContent(article.slug);
+              if (cmsContent) {
+                return <NewsGuideTemplate guide={cmsContent} />;
+              }
           
           // Fallback to placeholder content if no CMS content
           return (
@@ -463,6 +478,17 @@ const NewsArticlePage: React.FC = () => {
             <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
             Back to All News
           </Link>
+        </div>
+          </div>
+
+          {/* Sidebar - Google Approved Features (Desktop Only) */}
+          <div className="hidden lg:block lg:col-span-4 space-y-6">
+            {/* Trending News */}
+            <TrendingNewsSidebar />
+            
+            {/* Newsletter Subscribe */}
+            <NewsletterSubscribe />
+          </div>
         </div>
       </div>
     </div>
