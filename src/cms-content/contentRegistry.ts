@@ -360,6 +360,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'harsh-raj',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'export-growth-challenges-2025',
+    slug: 'india-export-growth-1-trillion-target-2030-fta-challenges',
+    category: 'economy',
+    title: 'India Export Growth Slows to 5% - Can We Hit $1 Trillion Target by 2030?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
