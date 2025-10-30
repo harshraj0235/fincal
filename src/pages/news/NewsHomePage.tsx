@@ -33,7 +33,7 @@ const NewsHomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
+    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20 pb-safe">
       <SEOHelmet
         title="Financial News & Market Analysis | MoneyCal"
         description="Latest financial news, market analysis, IPO updates, and economic insights. Expert coverage of Indian markets, startups, and business trends."
@@ -70,13 +70,13 @@ const NewsHomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Category Filter - Enhanced Mobile-Friendly */}
-      <div className="bg-white border-b sticky top-0 z-40 shadow-md backdrop-blur-sm bg-white/95">
+      {/* Category Filter - STICKY ALL DEVICES - Enhanced Mobile-Friendly */}
+      <div className="bg-white border-b sticky top-[64px] lg:top-[80px] z-[100] shadow-lg backdrop-blur-md bg-white/98 safe-area-inset-top">
         <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-          <div className="flex gap-2 overflow-x-auto py-4 scrollbar-hide px-4 sm:px-0" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}>
+          <div className="flex gap-2 sm:gap-3 overflow-x-auto py-3 sm:py-4 scrollbar-hide px-3 sm:px-0 scroll-smooth" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             <button
               onClick={() => handleCategoryChange('all')}
-              className={`px-5 py-3 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all touch-manipulation min-h-[44px] ${
+              className={`px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-300 touch-manipulation min-h-[48px] flex-shrink-0 active:scale-95 ${
                 selectedCategory === 'all'
                   ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105'
                   : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:scale-95'
@@ -88,9 +88,9 @@ const NewsHomePage: React.FC = () => {
               <button
                 key={category.slug}
                 onClick={() => handleCategoryChange(category.slug)}
-                className={`px-5 py-3 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all touch-manipulation min-h-[44px] ${
+                className={`px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-300 touch-manipulation min-h-[48px] flex-shrink-0 active:scale-95 ${
                   selectedCategory === category.slug
-                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105'
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105 ring-2 ring-blue-300'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:scale-95'
                 }`}
               >
