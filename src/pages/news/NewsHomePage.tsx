@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight, User } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
@@ -33,7 +34,7 @@ const NewsHomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20 pb-safe">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
       <SEOHelmet
         title="Financial News & Market Analysis | MoneyCal"
         description="Latest financial news, market analysis, IPO updates, and economic insights. Expert coverage of Indian markets, startups, and business trends."
@@ -41,70 +42,67 @@ const NewsHomePage: React.FC = () => {
         url="/news"
       />
 
-      {/* Hero Section - Enhanced Mobile Responsive */}
-      <div className="bg-gradient-to-b from-white to-neutral-50 border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
-            <div className="flex-1">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-2 sm:mb-3">
-                MoneyCal News
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-neutral-600 leading-relaxed">
-                Business news, IPO coverage, market insights, and economic trends
-              </p>
+      {/* Hero Section - Simple & Clean Like Blog */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium mb-6">
+            <TrendingUp className="w-4 h-4 mr-2" />
+            Latest Financial News
+          </div>
+          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            MoneyCal News
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Business news, IPO coverage, market insights, and economic trends - {contentRegistry.length} articles
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Search and Filters - Clean Like Blog */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20"
+        >
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 gap-4">
+            {/* Search moved here */}
+            <div className="flex-1 max-w-md">
+              <NewsSearch />
             </div>
+
+            {/* Category Filter - Simple Dropdown */}
             <div className="flex items-center gap-3">
-              <div className="text-center px-5 py-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200 shadow-sm">
-                <div className="text-2xl sm:text-3xl font-bold text-blue-700">{contentRegistry.length}</div>
-                <div className="text-xs sm:text-sm text-neutral-600 font-medium">Articles</div>
-              </div>
+              <select
+                value={selectedCategory}
+                onChange={(e) => handleCategoryChange(e.target.value)}
+                className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all w-full sm:w-auto"
+              >
+                <option value="all">All Categories</option>
+                {newsCategories.map((category) => (
+                  <option key={category.slug} value={category.slug}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Search Section - Powerful & Beautiful */}
-      <div className="bg-gradient-to-b from-blue-50 to-white border-b">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
-          <NewsSearch />
-        </div>
-      </div>
-
-      {/* Category Filter - STICKY ALL DEVICES - Enhanced Mobile-Friendly */}
-      <div className="bg-white border-b sticky top-[64px] lg:top-[80px] z-[100] shadow-lg backdrop-blur-md bg-white/98 safe-area-inset-top">
-        <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-          <div className="flex gap-2 sm:gap-3 overflow-x-auto py-3 sm:py-4 scrollbar-hide px-3 sm:px-0 scroll-smooth" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            <button
-              onClick={() => handleCategoryChange('all')}
-              className={`px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-300 touch-manipulation min-h-[48px] flex-shrink-0 active:scale-95 ${
-                selectedCategory === 'all'
-                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105'
-                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:scale-95'
-              }`}
-            >
-              For you
-            </button>
-            {newsCategories.map((category) => (
-              <button
-                key={category.slug}
-                onClick={() => handleCategoryChange(category.slug)}
-                className={`px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base whitespace-nowrap transition-all duration-300 touch-manipulation min-h-[48px] flex-shrink-0 active:scale-95 ${
-                  selectedCategory === category.slug
-                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105 ring-2 ring-blue-300'
-                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:scale-95'
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Featured Article - Enhanced Mobile Responsive */}
+      {/* Featured Article - Clean & Simple */}
       {selectedCategory === 'all' && featuredArticle && (
-        <div className="bg-gradient-to-b from-white to-neutral-50 border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
             <div className="mb-4 sm:mb-6">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs sm:text-sm font-semibold shadow-lg">
                 <TrendingUp className="w-4 h-4 mr-2" />
@@ -158,20 +156,25 @@ const NewsHomePage: React.FC = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </motion.div>
         </div>
       )}
 
-      {/* Articles Grid - Enhanced Mobile Optimized */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 bg-neutral-50">
-        <div className="mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 mb-3 sm:mb-4">
-            {selectedCategory === 'all' ? 'Latest Articles' : newsCategories.find(c => c.slug === selectedCategory)?.name}
-          </h2>
-          <p className="text-base sm:text-lg text-neutral-600 font-medium">
-            {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''} • Updated daily
-          </p>
-        </div>
+      {/* Articles Grid - Clean & Simple Like Blog */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <div className="mb-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+              {selectedCategory === 'all' ? 'Latest Articles' : newsCategories.find(c => c.slug === selectedCategory)?.name}
+            </h2>
+            <p className="text-lg text-gray-600">
+              {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''} • Updated daily
+            </p>
+          </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {paginatedArticles.map((article) => {
@@ -330,6 +333,7 @@ const NewsHomePage: React.FC = () => {
             </div>
           </div>
         )}
+        </motion.div>
       </div>
     </div>
   );
