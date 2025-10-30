@@ -418,6 +418,10 @@ const MSMELoanGuide = lazy(() => import('./pages/learn/business-loans/MSMELoanGu
 const MudraLoan = lazy(() => import('./pages/learn/business-loans/MudraLoan'));
 const WorkingCapitalLoan = lazy(() => import('./pages/learn/business-loans/WorkingCapitalLoan'));
 const StartupLoan = lazy(() => import('./pages/learn/business-loans/StartupLoan'));
+
+// Learn Platform - Money Management & Budgeting (8 lessons) - NEW!
+const MoneyManagementHub = lazy(() => import('./pages/learn/money-management/index'));
+const WhatIsMoney = lazy(() => import('./pages/learn/money-management/WhatIsMoney'));
 const BusinessLoanEMI = lazy(() => import('./pages/learn/business-loans/EMICalculator'));
 const BusinessGovernmentSchemes = lazy(() => import('./pages/learn/business-loans/GovernmentSchemes'));
 const BusinessLoanEligibility = lazy(() => import('./pages/learn/business-loans/EligibilityCalculator'));
@@ -803,6 +807,10 @@ function App() {
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/blog/write" element={<WriteBlog />} />
                 <Route path="/blog/category/banking" element={<BankingKnowledge />} />
+                
+                {/* Learn Platform - Money Management & Budgeting (8 lessons) - NEW! */}
+                <Route path="/learn/money-management" element={<MoneyManagementHub />} />
+                <Route path="/learn/money-management/what-is-money-income-expenses-wealth" element={<WhatIsMoney />} />
                 
                 {/* News Portal Routes */}
                 <Route path="/news" element={<NewsHomePage />} />
