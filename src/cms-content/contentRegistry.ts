@@ -276,41 +276,16 @@ export const contentRegistry: NewsArticleMetadata[] = [
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?w=1200&h=630&fit=crop&q=80'
   },
+
+  // NEW STARTUPS ARTICLES - 8 comprehensive Google News-optimized articles
   {
-    id: 'telecom-consolidation-2025',
-    slug: 'telecom-jio-airtel-vi-tariff-hikes-arpu-battle',
-    category: 'business-analysis',
-    title: 'Telecom का तीन-Player Game: Jio, Airtel, VI - ARPU Battle',
-    authorId: 'raushan-kumar',
-    datePublished: '2025-10-30T10:00:00+05:30',
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=630&fit=crop&q=80'
-  },
-  {
-    id: 'aviation-capacity-boom-2025',
-    slug: 'indigo-air-india-aircraft-orders-aviation-expansion',
-    category: 'business-analysis',
-    title: 'Aviation Boom: IndiGo, Air India Ordering 1,000+ Aircraft',
-    authorId: 'saurabh-kumar',
-    datePublished: '2025-10-30T10:00:00+05:30',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=630&fit=crop&q=80'
-  },
-  {
-    id: 'steel-export-boom-2025',
-    slug: 'steel-exports-india-tata-jsw-sail-global-dominance',
-    category: 'business-analysis',
-    title: 'Steel Exports में India की Global Dominance! SAIL, Tata Steel',
+    id: 'india-unicorn-factory-2025',
+    slug: 'india-unicorn-startups-110-billion-dollar-companies-funding',
+    category: 'startups',
+    title: 'India\'s Unicorn Factory: 110+ Billion-Dollar Startups - Next Wave Coming!',
     authorId: 'vikram-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop&q=80'
-  },
-  {
-    id: 'qsr-expansion-battle-2025',
-    slug: 'qsr-mcdonalds-dominos-burger-king-expansion-zomato',
-    category: 'business-analysis',
-    title: 'QSR War: McDonald\'s, Domino\'s, Burger King - 10,000 Stores Race!',
-    authorId: 'harsh-raj',
-    datePublished: '2025-10-30T10:00:00+05:30',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&h=630&fit=crop&q=80'
+    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
