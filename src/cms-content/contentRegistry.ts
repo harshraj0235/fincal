@@ -434,6 +434,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'vikram-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: '5g-rollout-india-2025',
+    slug: '5g-india-rollout-500000-towers-jio-airtel-monetization',
+    category: 'tech-business',
+    title: '5G India Rollout: 500,000 Towers in 18 Months - Fastest Globally! But Monetization Challenge',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

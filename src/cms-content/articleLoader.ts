@@ -75,7 +75,8 @@ import {
 
 // NEW Tech Business Articles (10 comprehensive Google News-optimized articles)
 import {
-  aiEnterpriseAdoption
+  aiEnterpriseAdoption,
+  fiveGRolloutIndia
 } from './news-articles/tech-business/tech-business-2025';
 
 // Article content map - maps article IDs to their full content
@@ -142,6 +143,7 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   
   // Tech Business - NEW comprehensive Google News-optimized articles (10)
   'ai-enterprise-adoption-2025': aiEnterpriseAdoption,
+  '5g-rollout-india-2025': fiveGRolloutIndia,
 };
 
 /**
