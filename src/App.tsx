@@ -422,7 +422,7 @@ const StartupLoan = lazy(() => import('./pages/learn/business-loans/StartupLoan'
 // Learn Platform - Main Hub + Categories
 const LearnHub = lazy(() => import('./pages/LearnHub'));
 
-// Learn Platform - Money Management & Budgeting (8 lessons) - NEW!
+// Learn Platform - Money Management & Budgeting (8 lessons) - COMPLETE!
 const MoneyManagementHub = lazy(() => import('./pages/learn/money-management/index'));
 const WhatIsMoney = lazy(() => import('./pages/learn/money-management/WhatIsMoney'));
 const SettingFinancialGoals = lazy(() => import('./pages/learn/money-management/SettingFinancialGoals'));
@@ -431,6 +431,7 @@ const BuildingEmergencyFund = lazy(() => import('./pages/learn/money-management/
 const CashFlowNetWorth = lazy(() => import('./pages/learn/money-management/CashFlowNetWorth'));
 const FinancialHabits = lazy(() => import('./pages/learn/money-management/FinancialHabits'));
 const ReviewingBudget = lazy(() => import('./pages/learn/money-management/ReviewingBudget'));
+const CommonMistakes = lazy(() => import('./pages/learn/money-management/CommonMistakes'));
 const BusinessLoanEMI = lazy(() => import('./pages/learn/business-loans/EMICalculator'));
 const BusinessGovernmentSchemes = lazy(() => import('./pages/learn/business-loans/GovernmentSchemes'));
 const BusinessLoanEligibility = lazy(() => import('./pages/learn/business-loans/EligibilityCalculator'));
@@ -820,7 +821,7 @@ function App() {
                 {/* Learn Platform - Main Hub */}
                 <Route path="/learn" element={<LearnHub />} />
                 
-                {/* Learn Platform - Money Management & Budgeting (8 lessons) - NEW! */}
+                {/* Learn Platform - Money Management & Budgeting (8 lessons) - COMPLETE! */}
                 <Route path="/learn/money-management" element={<MoneyManagementHub />} />
                 <Route path="/learn/money-management/what-is-money-income-expenses-wealth" element={<WhatIsMoney />} />
                 <Route path="/learn/money-management/setting-financial-goals-short-medium-long-term" element={<SettingFinancialGoals />} />
@@ -829,6 +830,7 @@ function App() {
                 <Route path="/learn/money-management/cash-flow-net-worth-tracking-india" element={<CashFlowNetWorth />} />
                 <Route path="/learn/money-management/building-good-financial-habits-daily" element={<FinancialHabits />} />
                 <Route path="/learn/money-management/reviewing-adjusting-budget-monthly-quarterly-annual" element={<ReviewingBudget />} />
+                <Route path="/learn/money-management/financial-mistakes-to-avoid-impulse-spending-india" element={<CommonMistakes />} />
                 
                 {/* News Portal Routes */}
                 <Route path="/news" element={<NewsHomePage />} />
