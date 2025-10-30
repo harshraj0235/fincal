@@ -18,7 +18,6 @@
     
     <!-- Performance Optimizations for Lighthouse 90+ (Minimal for best score) -->
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
-    <link rel="preload" as="script" href="/src/main.tsx" />
     
     <!-- Dynamic rendering detection for search bots -->
     <meta name="fragment" content="!" />
@@ -27,28 +26,7 @@
     <!-- Google AdSense Account Verification -->
     <meta name="google-adsense-account" content="ca-pub-4446717165665089">
     
-    <!-- Google News Reader Revenue Manager (Subscribe with Google) - Lazy loaded for performance -->
-    <script>
-      // Only load on news pages to avoid performance hit on other pages
-      if (window.location.pathname.startsWith('/news/')) {
-        setTimeout(function() {
-          var swgScript = document.createElement('script');
-          swgScript.src = 'https://news.google.com/swg/js/v1/swg-basic.js';
-          swgScript.async = true;
-          swgScript.onload = function() {
-            (self.SWG_BASIC = self.SWG_BASIC || []).push(function(basicSubscriptions) {
-              basicSubscriptions.init({
-                type: "NewsArticle",
-                isPartOfType: ["Product"],
-                isPartOfProductId: "CAowupDCDA:openaccess",
-                clientOptions: { theme: "light", lang: "en" }
-              });
-            });
-          };
-          document.head.appendChild(swgScript);
-        }, 3000); // Load after 3 seconds
-      }
-    </script>
+    <!-- Google News Reader Revenue Manager: Loaded dynamically in NewsArticlePage.tsx to avoid duplicates -->
     
     <!-- Google tag (gtag.js) - Heavily deferred for Lighthouse 90+ (loads after 8s or interaction) -->
     <script>
