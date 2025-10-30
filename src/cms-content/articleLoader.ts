@@ -39,14 +39,18 @@ import {
   govPolicyImpact2025
 } from './news-articles/markets/new-markets-articles-2025';
 
-// NEW Business Analysis Articles (6 comprehensive articles)
+// NEW Business Analysis Articles (10 comprehensive articles)
 import {
   relianceDisneyMerger,
   manufacturingPLISuccess,
   tataEVDominance,
   pharmaAPIIndependence,
   realEstateOfficeCrisis,
-  fmcgRuralSlowdown
+  fmcgRuralSlowdown,
+  telecomConsolidation,
+  aviationCapacityBoom,
+  steelExportBoom,
+  qsrExpansionBattle
 } from './news-articles/business/business-analysis-articles-2025';
 
 // Article content map - maps article IDs to their full content
@@ -79,13 +83,17 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'article-09-market-trends-support': marketTrendsSupport,
   'article-12-eyewear-purchase-behavior': purchaseBehavior,
   
-  // Business Analysis - NEW comprehensive articles (6)
+  // Business Analysis - NEW comprehensive articles (10)
   'reliance-disney-merger-2025': relianceDisneyMerger,
   'manufacturing-pli-success-2025': manufacturingPLISuccess,
   'tata-ev-dominance-2025': tataEVDominance,
   'pharma-api-independence-2025': pharmaAPIIndependence,
   'office-real-estate-crisis-2025': realEstateOfficeCrisis,
   'fmcg-rural-slowdown-2025': fmcgRuralSlowdown,
+  'telecom-consolidation-2025': telecomConsolidation,
+  'aviation-capacity-boom-2025': aviationCapacityBoom,
+  'steel-export-boom-2025': steelExportBoom,
+  'qsr-expansion-battle-2025': qsrExpansionBattle,
   
   // Startups
   'article-04-major-investors': majorInvestors,
