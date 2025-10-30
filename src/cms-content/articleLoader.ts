@@ -208,15 +208,15 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'lenskart-investors-softbank-premji-returns': majorInvestors,
   'founder-stake-increase-strategy': founderStakeStrategy,
   
-  // Startups - NEW comprehensive Google News-optimized articles (8 - using SLUGS as keys)
-  'india-unicorns-110-billion-dollar-startups-funding-vc': indiaUnicornFactory2025,
-  'tier2-tier3-startups-jaipur-indore-coimbatore-funding': tier2StartupRevolution,
-  'ai-startups-india-10-billion-chatgpt-openai-boom': aiStartupsBoom,
-  'quick-commerce-zepto-blinkit-swiggy-10-minute-delivery': quickCommerceBattle,
-  'd2c-brands-consolidation-mamaearth-boat-sugar-survive': d2cBrandsConsolidation,
-  'edtech-crisis-byjus-unacademy-1-lakh-crore-collapse': edtechCrisis2025,
+  // Startups - NEW comprehensive Google News-optimized articles (8 - EXACT SLUGS from contentRegistry)
+  'india-unicorn-startups-110-billion-dollar-companies-funding': indiaUnicornFactory2025,
+  'tier-2-cities-startup-indore-jaipur-kochi-unicorns': tier2StartupRevolution,
+  'ai-startups-india-10-billion-funding-chatgpt-boom': aiStartupsBoom,
+  'zepto-blinkit-swiggy-instamart-10-minute-delivery-war': quickCommerceBattle,
+  'd2c-brands-consolidation-mamaearth-boat-survival': d2cBrandsConsolidation,
+  'edtech-crisis-byjus-collapse-unacademy-layoffs': edtechCrisis2025,
   'india-b2b-saas-exports-12-billion-freshworks-postman': b2bSaasExports,
-  'fintech-regulation-rbi-phonepe-paytm-razorpay-rules': fintechRegulation2025,
+  'fintech-regulation-rbi-phonepe-paytm-razorpay-compliance': fintechRegulation2025,
   
   // Tech Business - NEW comprehensive Google News-optimized articles (10 - using SLUGS as keys)
   'ai-enterprise-adoption-india-50000-crore-chatgpt-automation': aiEnterpriseAdoption,
@@ -275,16 +275,16 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'real-estate-india-risk-sector-12-lakh-crore-debt': realEstateRisk,
   'infrastructure-spending-delivery-mechanism-failing-11-lakh-stuck': infraSpendingDelivery,
   
-  // Startups Trending 2025 - Dynamic startup ecosystem articles (10 - using SLUGS as keys)
-  'campus-startups-india-next-unicorn-hostel': campusStartupsRise,
-  'deeptech-fund-10000-crore-government-india-startup-future': deepTechFund,
-  'tier2-tier3-cities-startup-boom-jaipur-indore': tier2StartupBoom,
-  'ai-startup-wave-india-25000-crore-winning-losing': aiStartupWave,
-  'india-startup-ipo-tracker-2025-44000-crore-public': startupIpoTracker,
-  'vcs-india-shifting-profitability-growth-founders': vcPlaybookShift,
-  'female-founder-funding-india-3-percent-1-2-lakh-crore': femaleFunderGap,
-  'climate-agri-foodtech-india-startup-35000-crore': climateAgriFood,
-  'indian-founders-global-day-one-50000-crore-overseas': foundersGoingGlobal,
+  // Startups Trending 2025 - Dynamic startup ecosystem articles (10 - EXACT SLUGS from contentRegistry)
+  'campus-startups-india-next-unicorn-from-hostel': campusStartupsRise,
+  'deeptech-battleground-10000-crore-fund-of-funds': deepTechFund,
+  'tier2-tier3-cities-india-hidden-startup-boom-zones': tier2StartupBoom,
+  'ai-startup-wave-india-25000-crore-who-winning': aiStartupWave,
+  'india-startup-ipo-tracker-2025-breakout-year': startupIpoTracker,
+  'vcs-india-shifting-playbook-profitability-over-growth': vcPlaybookShift,
+  'female-founder-funding-india-gap-how-changing': femaleFunderGap,
+  'climate-tech-agritech-foodtech-india-next-big-three': climateAgriFood,
+  'indian-founders-going-global-day-one-50000-crore': foundersGoingGlobal,
   'startups-preferring-public-markets-44000-crore-ipo': privatVsPublicMarkets,
 };
 
