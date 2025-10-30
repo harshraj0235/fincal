@@ -60,7 +60,6 @@ const Sitemap = lazy(() => import('./pages/Sitemap'));
 const SitemapXml = lazy(() => import('./pages/SitemapXml').then(m => ({ default: m.SitemapXml })));
 const Disclaimer = lazy(() => import('./pages/Disclaimer'));
 const CookiePolicy = lazy(() => import('./pages/CookiePolicy'));
-const EditorialPolicy = lazy(() => import('./pages/EditorialPolicy'));
 const BankingKnowledge = lazy(() => import('./pages/BankingKnowledge'));
 const CategoryPage = lazy(() => import('./pages/CategoryPage'));
 const CreditCardFinder = lazy(() => import('./calculators/CreditCardFinder'));
