@@ -424,6 +424,9 @@ const LearnHub = lazy(() => import('./pages/LearnHub'));
 
 // Learn Platform - Money Management & Budgeting (8 lessons) - COMPLETE!
 const MoneyManagementHub = lazy(() => import('./pages/learn/money-management/index'));
+
+// Learn Platform - Savings & Bank Products (8 lessons) - NEW!
+const SavingsBankHub = lazy(() => import('./pages/learn/savings-bank/index'));
 const WhatIsMoney = lazy(() => import('./pages/learn/money-management/WhatIsMoney'));
 const SettingFinancialGoals = lazy(() => import('./pages/learn/money-management/SettingFinancialGoals'));
 const BudgetingGuide = lazy(() => import('./pages/learn/money-management/BudgetingGuide'));
@@ -823,6 +826,9 @@ function App() {
                 
                 {/* Learn Platform - Money Management & Budgeting (8 lessons) - COMPLETE! */}
                 <Route path="/learn/money-management" element={<MoneyManagementHub />} />
+                
+                {/* Learn Platform - Savings & Bank Products (8 lessons) - NEW! */}
+                <Route path="/learn/savings-bank-products" element={<SavingsBankHub />} />
                 <Route path="/learn/money-management/what-is-money-income-expenses-wealth" element={<WhatIsMoney />} />
                 <Route path="/learn/money-management/setting-financial-goals-short-medium-long-term" element={<SettingFinancialGoals />} />
                 <Route path="/learn/money-management/budgeting-how-to-track-income-expenses-india" element={<BudgetingGuide />} />
