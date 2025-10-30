@@ -65,7 +65,7 @@ const NewsHomePage: React.FC = () => {
       </div>
 
       {/* Search Section - Full Width No Overlap */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -73,30 +73,29 @@ const NewsHomePage: React.FC = () => {
           className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200"
         >
           {/* Search Bar */}
-          <div className="mb-6">
-            <NewsSearch />
-          </div>
-
-          {/* Category Filter Row */}
-          <div className="flex items-center gap-3 flex-wrap">
-            <span className="text-sm font-semibold text-gray-700">Filter by category:</span>
-            <select
-              value="all"
-              onChange={(e) => handleCategoryChange(e.target.value)}
-              className="px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all text-sm font-medium"
-            >
-              <option value="all">📰 All Categories</option>
-              {newsCategories.map((category) => (
-                <option key={category.slug} value={category.slug}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
-            <span className="text-xs text-gray-500 ml-auto">
-              {contentRegistry.length} articles available
-            </span>
-          </div>
+          <NewsSearch />
         </motion.div>
+      </div>
+
+      {/* Category Buttons - Horizontal Scroll */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <button
+            onClick={() => handleCategoryChange('all')}
+            className="px-6 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-300 touch-manipulation min-h-[48px] flex-shrink-0 active:scale-95 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:shadow-xl"
+          >
+            All
+          </button>
+          {newsCategories.map((category) => (
+            <button
+              key={category.slug}
+              onClick={() => handleCategoryChange(category.slug)}
+              className="px-6 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-300 touch-manipulation min-h-[48px] flex-shrink-0 active:scale-95 bg-white text-gray-700 border-2 border-gray-300 hover:border-blue-500 hover:text-blue-700 hover:shadow-lg"
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Featured Article - Clean & Simple */}
