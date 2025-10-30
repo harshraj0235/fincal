@@ -806,7 +806,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'ai-call-center-jobs-risk',
     slug: 'ai-chatbots-replacing-call-centre-2-lakh-jobs',
     category: 'tech-business',
-    title: 'AI Chatbots Replacing India's Call-Center Workers: 2 Lakh Jobs at Risk!',
+    title: 'AI Chatbots Replacing India\'s Call-Center Workers: 2 Lakh Jobs at Risk!',
     authorId: 'vikram-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=630&fit=crop&q=80'

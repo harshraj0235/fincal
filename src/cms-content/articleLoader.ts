@@ -262,7 +262,6 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'fii-double-edged-2025': foreignMoneyDoubleEdged,
   'smallcap-rotation-2025': smallCapRotation,
   'us-rate-hike-crash-2025': usRateHikeCrash,
-  'gold-vs-equities-2025': goldVsEquities2025,
   
   // Business Analysis Trending 2025 - Dynamic business sector articles (10)
   'honda-india-growth-2025': hondaIndiaGrowth,
