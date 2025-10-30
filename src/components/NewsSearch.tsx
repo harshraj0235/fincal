@@ -132,38 +132,38 @@ const NewsSearch: React.FC = () => {
           )}
         </div>
 
-        {/* Category Filters */}
+        {/* Category Filters - WITH ROUTING */}
         <div className="flex flex-wrap gap-2 mt-3 sm:mt-4">
-          <button
-            onClick={() => handleCategoryChange('all')}
-            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+          <Link
+            to="/news"
+            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all inline-flex items-center touch-manipulation ${
               selectedCategory === 'all'
                 ? 'bg-blue-600 text-white shadow-md'
-                : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300'
             }`}
           >
-            <Filter className="inline h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+            <Filter className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
             All
-          </button>
+          </Link>
           {newsCategories.map((category) => (
-            <button
+            <Link
               key={category.slug}
-              onClick={() => handleCategoryChange(category.slug)}
-              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+              to={`/news/${category.slug}`}
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all whitespace-nowrap touch-manipulation ${
                 selectedCategory === category.slug
                   ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                  : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300'
               }`}
             >
               {category.name}
-            </button>
+            </Link>
           ))}
         </div>
       </div>
 
       {/* Search Results Dropdown */}
       {isOpen && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl sm:rounded-2xl shadow-2xl border-2 border-blue-300 max-h-96 sm:max-h-[500px] overflow-y-auto z-[999] animate-in fade-in slide-in-from-top-2">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl sm:rounded-2xl shadow-2xl border border-neutral-200 max-h-96 sm:max-h-[500px] overflow-y-auto z-50 animate-in fade-in slide-in-from-top-2">
           <div className="p-3 sm:p-4 border-b border-neutral-200">
             <div className="flex items-center justify-between">
               <p className="text-xs sm:text-sm font-semibold text-neutral-600">
@@ -246,7 +246,7 @@ const NewsSearch: React.FC = () => {
 
       {/* No Results */}
       {isOpen && query && results.length === 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl sm:rounded-2xl shadow-2xl border-2 border-blue-300 p-8 sm:p-12 z-[999] animate-in fade-in slide-in-from-top-2">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl sm:rounded-2xl shadow-2xl border border-neutral-200 p-8 sm:p-12 z-50 animate-in fade-in slide-in-from-top-2">
           <div className="text-center">
             <FileText className="h-12 w-12 sm:h-16 sm:w-16 text-neutral-300 mx-auto mb-4" />
             <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-2">No results found</h3>
