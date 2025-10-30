@@ -62,7 +62,7 @@ export interface NewsGuideSection {
   outlook: {
     whatToWatch: string[];
     upcomingMilestones?: Milestone[];
-    questions: string[];
+    questions: string[] | { question: string; answer: string }[];
   };
   
   // Section 6: Actionable Takeaway
@@ -366,11 +366,23 @@ export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) =
 
           <h3 className="text-lg font-semibold text-neutral-900 mb-3">Questions to Consider:</h3>
           <ul className="space-y-2">
-            {guide.outlook.questions.map((question, index) => (
-              <li key={index} className="text-neutral-700 pl-4 border-l-2 border-indigo-300">
-                {question}
-              </li>
-            ))}
+            {guide.outlook.questions.map((q, index) => {
+              // Handle both string[] and object[] formats
+              if (typeof q === 'string') {
+                return (
+                  <li key={index} className="text-neutral-700 pl-4 border-l-2 border-indigo-300">
+                    {q}
+                  </li>
+                );
+              } else {
+                return (
+                  <li key={index} className="mb-6 pl-4 border-l-2 border-indigo-300">
+                    <strong className="text-neutral-900 block mb-2">Q: {q.question}</strong>
+                    <span className="text-neutral-700">{q.answer}</span>
+                  </li>
+                );
+              }
+            })}
           </ul>
         </div>
       </section>
