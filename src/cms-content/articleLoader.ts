@@ -101,6 +101,20 @@ import {
   goldVsEquities2025
 } from './news-articles/markets/markets-trending-2025';
 
+// Business Analysis Trending 2025 - 10 Dynamic Business Sector Articles
+import {
+  hondaIndiaGrowth,
+  corporateDebtBomb,
+  manufacturing3States,
+  retailDisruption,
+  evSupplierTrap,
+  csrToEsg,
+  supplyChainIndia,
+  banksVsFintech2028,
+  realEstateRisk,
+  infraSpendingDelivery
+} from './news-articles/business/business-trending-2025';
+
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
   // Economy - Original Lenskart articles
@@ -186,6 +200,18 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'smallcap-rotation-2025': smallCapRotation,
   'us-rate-hike-crash-2025': usRateHikeCrash,
   'gold-vs-equities-2025': goldVsEquities2025,
+  
+  // Business Analysis Trending 2025 - Dynamic business sector articles (10)
+  'honda-india-growth-2025': hondaIndiaGrowth,
+  'corporate-debt-bomb-2025': corporateDebtBomb,
+  'manufacturing-states-2025': manufacturing3States,
+  'retail-disruption-2025': retailDisruption,
+  'ev-supplier-trap-2025': evSupplierTrap,
+  'csr-esg-transformation-2025': csrToEsg,
+  'supply-chain-india-2025': supplyChainIndia,
+  'banks-fintech-2028': banksVsFintech2028,
+  'real-estate-risk-2025': realEstateRisk,
+  'infra-delivery-failure-2025': infraSpendingDelivery,
 };
 
 /**

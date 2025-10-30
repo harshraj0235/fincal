@@ -166,5 +166,167 @@
     </news:news>
   </url>
   
+  <!-- BUSINESS ANALYSIS TRENDING 2025 - 10 NEW Dynamic Articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/honda-motors-india-key-growth-market-auto-sector</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Honda Motors Picks India as Key Growth Market - What It Means for Auto Sector</news:title>
+      <news:keywords>Honda India key market future growth 2025, auto sector analysis, EV investment India</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/india-corporate-debt-time-bomb-70-lakh-crore</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India's Corporate Debt Time-Bomb: ₹70 Lakh Cr Outstanding - Boom or Bubble?</news:title>
+      <news:keywords>India corporate debt time bomb analysis 2025, debt to EBITDA ratio, NPA risk banks</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/manufacturing-3-india-states-factory-hubs</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Manufacturing 3.0 in India: Which States Will Become the Next Factory Hubs?</news:title>
+      <news:keywords>Manufacturing 3.0 India states factory hubs 2025, Gujarat Tamil Nadu UP, PLI scheme impact</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/retail-giants-disrupted-quick-commerce-blinkit-zepto</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Retail Giants Being Disrupted Before You Realize: Quick Commerce Eating Market Share</news:title>
+      <news:keywords>India retail disruption retail giants 2025, quick commerce Blinkit Zepto, DMart Reliance threat</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/ev-push-trap-auto-suppliers-hidden-costs</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>EV Push Might Be a Trap for Auto Suppliers: Hidden Costs Crushing Margins</news:title>
+      <news:keywords>India EV push cost auto parts suppliers 2025, Motherson Bharat Forge margins, supplier crisis</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/csr-to-esg-indian-businesses-playbook-carbon-neutral</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>From CSR to ESG: Indian Businesses Changing Playbook - Are You Prepared?</news:title>
+      <news:keywords>India business CSR ESG transformation 2025, carbon neutral goals, SEBI ESG reporting</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/global-supply-chains-india-china-plus-one-ready</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Global Supply Chains Rerouting via India: China+1 Opportunity - But Is India Ready?</news:title>
+      <news:keywords>supply chain shift China to India readiness 2025, Apple Samsung manufacturing, infrastructure gaps</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/banks-vs-fintech-india-financial-sector-2028</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Banks vs Fintech: India's Financial Sector Will Look Totally Different by 2028</news:title>
+      <news:keywords>India banking fintech disruption 2028, PhonePe Paytm RBI regulation, financial sector transformation</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/real-estate-india-next-big-risk-sector-debt</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Real Estate Could Be India's Next Big Risk Sector: ₹12 Lakh Cr Debt, Demand Slowdown</news:title>
+      <news:keywords>India real estate risk sector next big thing 2025, DLF Oberoi debt, unsold inventory crisis</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/infrastructure-spending-delivery-mechanism-failing</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Infrastructure Spending Huge - But India's Delivery Mechanism Failing: ₹11L Cr Stuck</news:title>
+      <news:keywords>India infrastructure spending delivery failure 2025, PM Gati Shakti delays, project execution crisis</news:keywords>
+    </news:news>
+  </url>
+  
 </urlset>
 

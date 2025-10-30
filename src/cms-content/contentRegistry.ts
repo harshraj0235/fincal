@@ -607,6 +607,98 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'raushan-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // BUSINESS ANALYSIS TRENDING 2025 - 10 Dynamic Business Sector Articles
+  {
+    id: 'honda-india-growth-2025',
+    slug: 'honda-motors-india-key-growth-market-auto-sector',
+    category: 'business-analysis',
+    title: 'Honda Motors Picks India as Key Growth Market - What It Means for Auto Sector',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'corporate-debt-bomb-2025',
+    slug: 'india-corporate-debt-time-bomb-70-lakh-crore',
+    category: 'business-analysis',
+    title: 'India\'s Corporate Debt Time-Bomb: ₹70 Lakh Cr Outstanding - Boom or Bubble?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'manufacturing-states-2025',
+    slug: 'manufacturing-3-india-states-factory-hubs',
+    category: 'business-analysis',
+    title: 'Manufacturing 3.0 in India: Which States Will Become the Next Factory Hubs?',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'retail-disruption-2025',
+    slug: 'retail-giants-disrupted-quick-commerce-blinkit-zepto',
+    category: 'business-analysis',
+    title: 'Retail Giants Being Disrupted Before You Realize: Quick Commerce Eating Market Share',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'ev-supplier-trap-2025',
+    slug: 'ev-push-trap-auto-suppliers-hidden-costs',
+    category: 'business-analysis',
+    title: 'EV Push Might Be a Trap for Auto Suppliers: Hidden Costs Crushing Margins',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'csr-esg-transformation-2025',
+    slug: 'csr-to-esg-indian-businesses-playbook-carbon-neutral',
+    category: 'business-analysis',
+    title: 'From CSR to ESG: Indian Businesses Changing Playbook - Are You Prepared?',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'supply-chain-india-2025',
+    slug: 'global-supply-chains-india-china-plus-one-ready',
+    category: 'business-analysis',
+    title: 'Global Supply Chains Rerouting via India: China+1 Opportunity - But Is India Ready?',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'banks-fintech-2028',
+    slug: 'banks-vs-fintech-india-financial-sector-2028',
+    category: 'business-analysis',
+    title: 'Banks vs Fintech: India\'s Financial Sector Will Look Totally Different by 2028',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'real-estate-risk-2025',
+    slug: 'real-estate-india-next-big-risk-sector-debt',
+    category: 'business-analysis',
+    title: 'Real Estate Could Be India\'s Next Big Risk Sector: ₹12 Lakh Cr Debt, Demand Slowdown',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'infra-delivery-failure-2025',
+    slug: 'infrastructure-spending-delivery-mechanism-failing',
+    category: 'business-analysis',
+    title: 'Infrastructure Spending Huge - But India\'s Delivery Mechanism Failing: ₹11L Cr Stuck',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1590859808308-3d2d9c515b1a?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

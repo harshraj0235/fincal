@@ -235,5 +235,167 @@
     </news:news>
   </url>
   
+  <!-- MARKETS TRENDING 2025 - 10 NEW Dynamic Market Articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/sensex-plunges-500-points-india-bear-phase-analysis</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Sensex Plunges 500 Points - Is This the Start of India's Quiet Bear Phase?</news:title>
+      <news:keywords>Sensex falls 500 pts India bear phase 2025, FII outflows market correction</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/rupee-slips-88-43-dollar-currency-crash-portfolio-risk</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Rupee Slips to ₹88.43 vs Dollar - Is Your Portfolio at Risk from Currency Crash?</news:title>
+      <news:keywords>rupee falls 88.43 Indian portfolios risk 2025, RBI intervention currency crash</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/metal-stocks-collapse-global-demand-china-slowdown</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Metal Stocks Collapse as Global Demand Evaporates - India's Commodity Bet Failing?</news:title>
+      <news:keywords>India metal stocks demand collapse global 2025, Tata Steel JSW crash</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/top-stock-picks-october-2025-hdfc-reliance-tcs</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Top Stock Picks for October 30, 2025: Stocks You'll Wish You Bought Yesterday</news:title>
+      <news:keywords>stock recommendations India October 30 2025, HDFC Bank Reliance TCS</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/sebi-fee-cuts-amc-selloff-mutual-fund-impact</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>SEBI Fee Cuts Trigger Sell-off in AMCs: Why Your Mutual Fund Might Be Next</news:title>
+      <news:keywords>SEBI fee cut AMCs India sell off 2025, expense ratio reduction</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/ipo-season-india-8-billion-hyundai-swiggy-ola</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>IPO Season Set to Explode: India's $8 Billion Year-End Blitz About to Begin</news:title>
+      <news:keywords>India IPO rush year end 2025 8 billion, Hyundai Swiggy Ola</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/foreign-money-india-fii-inflows-two-edged-sword</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Foreign Money Rushing Into India: Two-Edged Sword for Markets</news:title>
+      <news:keywords>foreign capital India markets risk 2025, FII inflows 2 lakh crore</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/small-caps-surge-big-caps-stumble-market-rotation</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Small-Caps Surge While Big-Caps Stumble - Market Rotation You Shouldn't Ignore</news:title>
+      <news:keywords>India small cap rotation big cap stumble 2025, market rotation analysis</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/us-interest-rate-hike-india-market-crash-risk</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>US Interest Rate Hike: Could This Trigger a Crash in India?</news:title>
+      <news:keywords>US rate hike Indian market crash risk 2025, Federal Reserve impact India</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/gold-vs-equities-india-investment-next-five-years</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Gold vs Equities: Where Should Indians Invest in the Next Five Years?</news:title>
+      <news:keywords>gold vs equities India investment 2025 2030, asset allocation strategy</news:keywords>
+    </news:news>
+  </url>
+  
 </urlset>
 
