@@ -295,6 +295,24 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'harsh-raj',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'ai-startups-boom-2025',
+    slug: 'ai-startups-india-10-billion-funding-chatgpt-boom',
+    category: 'startups',
+    title: 'AI Startups India में $10 Billion Funding - ChatGPT के बाद Boom!',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'quick-commerce-battle-2025',
+    slug: 'zepto-blinkit-swiggy-instamart-10-minute-delivery-war',
+    category: 'startups',
+    title: '10-Minute Delivery War: Zepto, Blinkit, Swiggy Instamart - ₹50,000 Crore Battle!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526367790999-0150786686a2?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
