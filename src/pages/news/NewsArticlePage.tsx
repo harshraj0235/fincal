@@ -19,7 +19,7 @@ import { getArticleContent } from '../../cms-content/articleLoader';
 import { NewsGuideTemplate } from '../../components/NewsGuideTemplate';
 import { teamProfiles } from '../../data/teamProfiles';
 import { newsCategories } from '../../data/newsCategories';
-import { formatStaticDate, formatLatestUpdate, getCurrentDateISO } from '../../utils/randomCalculators';
+import { formatStaticDate, formatStaticShortDate, formatLatestUpdate, getCurrentDateISO } from '../../utils/randomCalculators';
 
 interface Article {
   id: string;
