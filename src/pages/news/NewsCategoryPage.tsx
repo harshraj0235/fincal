@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Calendar, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Calendar, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight, TrendingUp } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
 import SEOHelmet from '../../components/SEOHelmet';
+import { formatStaticShortDate } from '../../utils/randomCalculators';
 
 const ARTICLES_PER_PAGE = 15;
 
@@ -26,7 +28,7 @@ const NewsCategoryPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
       <SEOHelmet
         title={`${category.name} News | MoneyCal`}
         description={category.description}
@@ -34,81 +36,120 @@ const NewsCategoryPage: React.FC = () => {
         url={`/news/${categorySlug}`}
       />
 
-      {/* Hero Section - Mobile Optimized */}
-      <div className="bg-gradient-to-br from-primary-600 via-blue-600 to-purple-600 text-white py-8 sm:py-12">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <Link
-            to="/news"
-            className="inline-flex items-center gap-2 px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 active:bg-white/20 rounded-lg mb-4 transition-all text-sm sm:text-base touch-manipulation active:scale-95 -ml-3"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to All News
-          </Link>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">{category.name}</h1>
-          <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl">
+      {/* Hero Section - Clean Like Blog */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <Link
+          to="/news"
+          className="inline-flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg mb-6 transition-all text-sm font-semibold touch-manipulation active:scale-95"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to All News
+        </Link>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-8"
+        >
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium mb-4">
+            <TrendingUp className="w-4 h-4 mr-2" />
+            {category.name}
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{category.name}</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {category.description}
           </p>
         </div>
       </div>
 
-      {/* Articles Grid - With Pagination */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
-        <div className="mb-6 sm:mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
-            {category.name} News
-          </h2>
-          <p className="text-sm sm:text-base text-neutral-600">
-            Showing {startIndex + 1}-{Math.min(endIndex, allArticles.length)} of {allArticles.length} article{allArticles.length !== 1 ? 's' : ''}
-          </p>
-        </div>
+      {/* Category Navigation - Show All Categories */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="bg-white rounded-xl p-4 shadow-lg"
+        >
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <Link
+              to="/news"
+              className="px-5 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation min-h-[44px] flex-shrink-0 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:scale-95"
+            >
+              All
+            </Link>
+            {newsCategories.map((cat) => (
+              <Link
+                key={cat.slug}
+                to={`/news/${cat.slug}`}
+                className={`px-5 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation min-h-[44px] flex-shrink-0 ${
+                  cat.slug === categorySlug
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:scale-95'
+                }`}
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Articles Grid - With Pagination */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <div className="mb-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+              {category.name} Articles
+            </h2>
+            <p className="text-lg text-gray-600">
+              {allArticles.length} articles • Showing {startIndex + 1}-{Math.min(endIndex, allArticles.length)}
+            </p>
+          </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {articles.map((article) => {
             const author = teamProfiles.find(p => p.id === article.authorId);
+            const cat = newsCategories.find(c => c.slug === article.category);
 
             return (
               <Link
                 key={article.id}
                 to={`/news/${article.category}/${article.slug}`}
-                className="block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all hover:-translate-y-2 border border-neutral-200 hover:border-blue-400 group"
+                className="block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-neutral-200 group active:scale-98 transform"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={article.image}
                     alt={article.title}
-                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-48 sm:h-52 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=News';
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center gap-2 bg-black/70 backdrop-blur-md rounded-lg px-3 py-2 border border-white/20">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white font-black text-xs shadow-lg flex-shrink-0">
-                        {author?.name.split(' ').map(n => n[0]).join('') || 'MC'}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-black text-white text-xs">{author?.name || 'MoneyCal Team'}</div>
-                        <div className="text-[10px] text-yellow-300 font-bold">{author?.role || 'Writer'}</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent group-hover:from-black/20 transition-all"></div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-black text-neutral-900 mb-4 leading-tight group-hover:text-blue-700 transition-colors min-h-[4rem]">
+                
+                <div className="p-5 sm:p-6">
+                  <div className="mb-3">
+                    <span className="inline-block px-3 py-1 text-xs font-bold text-blue-700 bg-blue-50 rounded-full uppercase tracking-wider">
+                      {cat?.name || article.category}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 leading-tight line-clamp-3 group-hover:text-blue-700 transition-colors">
                     {article.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-sm text-neutral-700 mb-5 font-bold bg-neutral-50 px-4 py-2 rounded-lg">
-                    <Calendar className="h-4 w-4 text-blue-600" />
-                    <span className="text-neutral-900">{new Date(article.datePublished).toLocaleDateString('en-IN', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}</span>
-                  </div>
-                  <div className="flex items-center gap-3 w-full justify-center px-6 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl group-hover:from-blue-700 group-hover:via-purple-700 group-hover:to-pink-700 transition-all font-black text-base shadow-xl group-hover:shadow-2xl uppercase tracking-wide">
-                    <span>Read Full Article</span>
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                  
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <span className="font-medium">{author?.name || 'MoneyCal Team'}</span>
+                    <span>•</span>
+                    <time>{formatStaticShortDate(article.datePublished)}</time>
                   </div>
                 </div>
               </Link>
@@ -220,6 +261,7 @@ const NewsCategoryPage: React.FC = () => {
             </div>
           </div>
         )}
+        </motion.div>
       </div>
     </div>
   );

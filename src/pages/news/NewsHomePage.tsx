@@ -12,12 +12,9 @@ import { formatStaticDate, formatStaticShortDate } from '../../utils/randomCalcu
 const ARTICLES_PER_PAGE = 15;
 
 const NewsHomePage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState(1);
 
-  const filteredArticles = selectedCategory === 'all'
-    ? contentRegistry
-    : contentRegistry.filter(article => article.category === selectedCategory);
+  const filteredArticles = contentRegistry;
 
   // Pagination
   const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
@@ -26,12 +23,6 @@ const NewsHomePage: React.FC = () => {
   const paginatedArticles = filteredArticles.slice(startIndex, endIndex);
 
   const featuredArticle = contentRegistry[0];
-  
-  // Reset to page 1 when category changes
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
@@ -62,7 +53,7 @@ const NewsHomePage: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Search and Filters - Clean Like Blog */}
+      {/* Search Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,33 +61,40 @@ const NewsHomePage: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20"
         >
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 gap-4">
-            {/* Search moved here */}
-            <div className="flex-1 max-w-md">
-              <NewsSearch />
-            </div>
+          <NewsSearch />
+        </motion.div>
+      </div>
 
-            {/* Category Filter - Simple Dropdown */}
-            <div className="flex items-center gap-3">
-              <select
-                value={selectedCategory}
-                onChange={(e) => handleCategoryChange(e.target.value)}
-                className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all w-full sm:w-auto"
+      {/* Category Navigation - Clickable Links (NOT filter) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="bg-white rounded-xl p-4 shadow-lg"
+        >
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <Link
+              to="/news"
+              className="px-5 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation min-h-[44px] flex-shrink-0 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
+            >
+              All
+            </Link>
+            {newsCategories.map((category) => (
+              <Link
+                key={category.slug}
+                to={`/news/${category.slug}`}
+                className="px-5 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all touch-manipulation min-h-[44px] flex-shrink-0 bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:bg-neutral-300 active:scale-95"
               >
-                <option value="all">All Categories</option>
-                {newsCategories.map((category) => (
-                  <option key={category.slug} value={category.slug}>
-                    {category.name}
-                  </option>
-                ))}
-              </select>
-            </div>
+                {category.name}
+              </Link>
+            ))}
           </div>
         </motion.div>
       </div>
 
       {/* Featured Article - Clean & Simple */}
-      {selectedCategory === 'all' && featuredArticle && (
+      {featuredArticle && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -169,10 +167,10 @@ const NewsHomePage: React.FC = () => {
         >
           <div className="mb-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-              {selectedCategory === 'all' ? 'Latest Articles' : newsCategories.find(c => c.slug === selectedCategory)?.name}
+              Latest Articles
             </h2>
             <p className="text-lg text-gray-600">
-              {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''} • Updated daily
+              {filteredArticles.length} articles • Updated daily
             </p>
           </div>
 
@@ -230,13 +228,7 @@ const NewsHomePage: React.FC = () => {
 
         {filteredArticles.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-xl text-neutral-600">No articles found in this category.</p>
-            <button
-              onClick={() => handleCategoryChange('all')}
-              className="mt-4 text-primary-600 hover:text-primary-800 font-semibold"
-            >
-              View All Articles
-            </button>
+            <p className="text-xl text-neutral-600">No articles found.</p>
           </div>
         )}
 
