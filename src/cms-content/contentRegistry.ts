@@ -127,6 +127,154 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'raushan-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&h=630&fit=crop&q=80'
+  },
+
+  // NEW MARKETS ARTICLES - 10 comprehensive articles
+  {
+    id: 'stock-market-boom-2026',
+    slug: 'india-stock-market-boom-2026-30000-nifty',
+    category: 'markets',
+    title: 'Stock Market 2026 में 30,000 तक? GDP, Earnings Growth से Bull Run',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'rbi-repo-rate-impact-2025',
+    slug: 'rbi-repo-rate-cut-impact-stocks-bonds-fd',
+    category: 'markets',
+    title: 'RBI Repo Rate Cut का Portfolio पर Impact - Stocks, Bonds, FDs',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'midcap-stocks-outperform-2025',
+    slug: '3-midcap-stocks-hidden-gems-250-percent-return',
+    category: 'markets',
+    title: '3 Mid-Cap Stocks जो Large-Caps को पीछे छोड़ रहे - Hidden Gems',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1642790551116-18e150f248e8?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'rupee-volatility-risk-2025',
+    slug: 'rupee-dollar-volatility-portfolio-risk-2025',
+    category: 'markets',
+    title: 'Rupee Volatility: Dollar 83 to 85 - Portfolio Risk कैसे Manage करें',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'sector-rotation-strategy-2025',
+    slug: 'sector-rotation-strategy-portfolio-rebalancing',
+    category: 'markets',
+    title: 'Sector Rotation Strategy: IT से Banking में Shift - Timing Perfect करें',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'fixed-income-risk-2025',
+    slug: 'fixed-income-fd-bonds-hidden-risks-real-returns',
+    category: 'markets',
+    title: 'Fixed Income अब Safe नहीं! Bank FDs और Bonds में Hidden Risks',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'gold-vs-equities-2025',
+    slug: 'gold-vs-equities-2025-2030-investment-battle',
+    category: 'markets',
+    title: 'Gold vs Indian Equities: 2025-2030 में किसका Rule होगा?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'foreign-money-risks-2025',
+    slug: 'fii-foreign-investment-india-risks-opportunities',
+    category: 'markets',
+    title: 'Foreign Money India में आ रहा - लेकिन Hidden Risks क्या हैं?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'smallcap-bubble-2025',
+    slug: 'smallcap-bubble-warning-overvaluation-correction-risk',
+    category: 'markets',
+    title: 'Small-Cap Bubble Warning! India के Small Caps Overvalued हैं?',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'gov-policy-impact-2025',
+    slug: 'government-policy-portfolio-impact-budget-rbi',
+    category: 'markets',
+    title: 'Government Policy आपका Portfolio बना या बिगाड़ सकती है!',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop&q=80'
+  },
+
+  // NEW BUSINESS ANALYSIS ARTICLES - 6 comprehensive articles
+  {
+    id: 'reliance-disney-merger-2025',
+    slug: 'reliance-disney-merger-70000-crore-ott-jiocinema-hotstar',
+    category: 'business-analysis',
+    title: 'Reliance-Disney का ₹70,000 Crore Merger - OTT का नया राजा!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'manufacturing-pli-success-2025',
+    slug: 'make-in-india-pli-scheme-dixon-waaree-success',
+    category: 'business-analysis',
+    title: 'Make in India 2.0: PLI Schemes से Dixon, Waaree जैसी Companies 3x!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'tata-ev-dominance-2025',
+    slug: 'tata-motors-ev-market-share-70-percent-nexon-punch',
+    category: 'business-analysis',
+    title: 'Tata Motors का EV में Monopoly! Market Share 70%',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'pharma-api-independence-2025',
+    slug: 'pharma-api-india-china-independence-pli-laurus-divis',
+    category: 'business-analysis',
+    title: 'Pharma API में India का China से आज़ादी का सफर!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'office-real-estate-crisis-2025',
+    slug: 'office-real-estate-wfh-crisis-vacancy-dlf-prestige',
+    category: 'business-analysis',
+    title: 'Office Real Estate Crisis: WFH ने Property को ₹5 Lakh Crore Loss!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'fmcg-rural-slowdown-2025',
+    slug: 'fmcg-rural-demand-slowdown-hul-itc-growth-crisis',
+    category: 'business-analysis',
+    title: 'FMCG में Rural Slowdown! HUL, ITC Growth सिर्फ 2-3%',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
