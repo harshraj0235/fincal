@@ -286,6 +286,15 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'vikram-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'tier2-startup-revolution',
+    slug: 'tier-2-cities-startup-indore-jaipur-kochi-unicorns',
+    category: 'startups',
+    title: 'Tier-2 Cities Startup Revolution: Indore, Jaipur, Kochi की Companies Unicorn बन रही!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

@@ -51,7 +51,8 @@ import {
 
 // NEW Startups Articles (8 comprehensive Google News-optimized articles)
 import {
-  indiaUnicornFactory2025
+  indiaUnicornFactory2025,
+  tier2StartupRevolution
 } from './news-articles/startups/startups-funding-ecosystem-2025';
 
 // Article content map - maps article IDs to their full content
@@ -98,6 +99,7 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   
   // Startups - NEW comprehensive Google News-optimized articles (8)
   'india-unicorn-factory-2025': indiaUnicornFactory2025,
+  'tier2-startup-revolution': tier2StartupRevolution,
 };
 
 /**
