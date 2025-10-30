@@ -824,7 +824,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'digital-rupee-data-law-privacy',
     slug: 'digital-rupee-data-law-privacy-2026',
     category: 'tech-business',
-    title: 'Digital Rupee, Data Law & Privacy: India's Tech Regulation 2026 Playbook!',
+    title: 'Digital Rupee, Data Law & Privacy: India\'s Tech Regulation 2026 Playbook!',
     authorId: 'raushan-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&q=80'
@@ -959,7 +959,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'ai-factory-race-india',
     slug: 'india-ai-factory-reliance-tata-adani-1-lakh-crore',
     category: 'tech-business',
-    title: 'India's AI Factory Race: Reliance, Tata, Adani Investing ₹1L Cr',
+    title: 'India\'s AI Factory Race: Reliance, Tata, Adani Investing ₹1L Cr',
     authorId: 'saurabh-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
