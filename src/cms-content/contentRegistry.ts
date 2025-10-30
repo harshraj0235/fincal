@@ -896,7 +896,7 @@ export const contentRegistry: NewsArticleMetadata[] = [
     id: 'make-in-india-100-lakh-crore',
     slug: 'make-in-india-100-lakh-crore-30-delivered',
     category: 'economy',
-    title: 'Make in India's ₹100 Lakh Cr Dream: Only ₹30L Cr Delivered',
+    title: 'Make in India\'s ₹100 Lakh Cr Dream: Only ₹30L Cr Delivered',
     authorId: 'raushan-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=630&fit=crop&q=80'
