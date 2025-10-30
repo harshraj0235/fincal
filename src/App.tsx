@@ -429,6 +429,7 @@ const SettingFinancialGoals = lazy(() => import('./pages/learn/money-management/
 const BudgetingGuide = lazy(() => import('./pages/learn/money-management/BudgetingGuide'));
 const BuildingEmergencyFund = lazy(() => import('./pages/learn/money-management/BuildingEmergencyFund'));
 const CashFlowNetWorth = lazy(() => import('./pages/learn/money-management/CashFlowNetWorth'));
+const FinancialHabits = lazy(() => import('./pages/learn/money-management/FinancialHabits'));
 const BusinessLoanEMI = lazy(() => import('./pages/learn/business-loans/EMICalculator'));
 const BusinessGovernmentSchemes = lazy(() => import('./pages/learn/business-loans/GovernmentSchemes'));
 const BusinessLoanEligibility = lazy(() => import('./pages/learn/business-loans/EligibilityCalculator'));
@@ -825,6 +826,7 @@ function App() {
                 <Route path="/learn/money-management/budgeting-how-to-track-income-expenses-india" element={<BudgetingGuide />} />
                 <Route path="/learn/money-management/building-emergency-fund-india-6-12-months" element={<BuildingEmergencyFund />} />
                 <Route path="/learn/money-management/cash-flow-net-worth-tracking-india" element={<CashFlowNetWorth />} />
+                <Route path="/learn/money-management/building-good-financial-habits-daily" element={<FinancialHabits />} />
                 
                 {/* News Portal Routes */}
                 <Route path="/news" element={<NewsHomePage />} />

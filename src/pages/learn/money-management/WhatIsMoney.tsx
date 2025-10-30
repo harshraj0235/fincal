@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { 
   BookOpen, ArrowRight, ArrowLeft, Calculator, TrendingUp, DollarSign, 
   PiggyBank, Wallet, BarChart3, Target, CheckCircle, AlertCircle, 
-  Lightbulb, Star, Award, Globe, Home, Car, GraduationCap, Heart
+  Lightbulb, Star, Award, Globe, Home, Car, GraduationCap, Heart, Briefcase
 } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 
