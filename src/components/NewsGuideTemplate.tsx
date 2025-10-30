@@ -354,7 +354,7 @@ export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) =
                       milestone.importance === 'medium' ? 'bg-yellow-100 text-yellow-800' :
                       'bg-gray-100 text-gray-800'
                     }`}>
-                      {milestone.importance.toUpperCase()}
+                      {milestone.importance?.toUpperCase() || 'MEDIUM'}
                     </span>
                     <span className="text-sm font-medium text-neutral-600">{milestone.date}</span>
                     <span className="text-neutral-800">{milestone.event}</span>
@@ -450,7 +450,7 @@ export const NewsGuideTemplate: React.FC<NewsGuideTemplateProps> = ({ guide }) =
                   className="flex items-center justify-between p-4 sm:p-5 bg-white rounded-lg sm:rounded-xl hover:bg-yellow-400 active:bg-yellow-500 transition-all border-2 border-neutral-700 hover:border-yellow-400 active:border-yellow-500 group shadow-lg hover:shadow-2xl active:scale-95"
                 >
                   <span className="font-black text-neutral-900 text-sm sm:text-base">
-                    {calcId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                    {calcId?.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') || 'Calculator'}
                   </span>
                   <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-900 group-hover:translate-x-2 transition-transform flex-shrink-0" />
                 </Link>
