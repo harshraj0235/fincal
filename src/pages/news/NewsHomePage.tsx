@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, TrendingUp, ChevronLeft, ChevronRight, User } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
@@ -12,11 +12,12 @@ import { formatStaticDate, formatStaticShortDate } from '../../utils/randomCalcu
 const ARTICLES_PER_PAGE = 15;
 
 const NewsHomePage: React.FC = () => {
-  const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Show all articles on homepage
-  const filteredArticles = contentRegistry;
+  const filteredArticles = selectedCategory === 'all'
+    ? contentRegistry
+    : contentRegistry.filter(article => article.category === selectedCategory);
 
   // Pagination
   const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
@@ -26,13 +27,10 @@ const NewsHomePage: React.FC = () => {
 
   const featuredArticle = contentRegistry[0];
   
-  // Navigate to category page when category is selected
+  // Reset to page 1 when category changes
   const handleCategoryChange = (category: string) => {
-    if (category === 'all') {
-      navigate('/news');
-    } else {
-      navigate(`/news/${category}`);
-    }
+    setSelectedCategory(category);
+    setCurrentPage(1);
   };
 
   return (
@@ -64,42 +62,41 @@ const NewsHomePage: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Search Section - Full Width No Overlap */}
+      {/* Search and Filters - Clean Like Blog */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-200"
+          className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20"
         >
-          {/* Search Bar */}
-          <NewsSearch />
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0 gap-4">
+            {/* Search moved here */}
+            <div className="flex-1 max-w-md">
+              <NewsSearch />
+            </div>
+
+            {/* Category Filter - Simple Dropdown */}
+            <div className="flex items-center gap-3">
+              <select
+                value={selectedCategory}
+                onChange={(e) => handleCategoryChange(e.target.value)}
+                className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all w-full sm:w-auto"
+              >
+                <option value="all">All Categories</option>
+                {newsCategories.map((category) => (
+                  <option key={category.slug} value={category.slug}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
         </motion.div>
       </div>
 
-      {/* Category Buttons - Horizontal Scroll */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-          <button
-            onClick={() => handleCategoryChange('all')}
-            className="px-6 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-300 touch-manipulation min-h-[48px] flex-shrink-0 active:scale-95 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:shadow-xl"
-          >
-            All
-          </button>
-          {newsCategories.map((category) => (
-            <button
-              key={category.slug}
-              onClick={() => handleCategoryChange(category.slug)}
-              className="px-6 py-3 rounded-full font-semibold text-sm whitespace-nowrap transition-all duration-300 touch-manipulation min-h-[48px] flex-shrink-0 active:scale-95 bg-white text-gray-700 border-2 border-gray-300 hover:border-blue-500 hover:text-blue-700 hover:shadow-lg"
-            >
-              {category.name}
-            </button>
-          ))}
-        </div>
-      </div>
-
       {/* Featured Article - Clean & Simple */}
-      {featuredArticle && (
+      {selectedCategory === 'all' && featuredArticle && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -172,10 +169,10 @@ const NewsHomePage: React.FC = () => {
         >
           <div className="mb-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-              Latest Articles
+              {selectedCategory === 'all' ? 'Latest Articles' : newsCategories.find(c => c.slug === selectedCategory)?.name}
             </h2>
             <p className="text-lg text-gray-600">
-              {filteredArticles.length} articles • Updated daily
+              {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''} • Updated daily
             </p>
           </div>
 
@@ -230,6 +227,18 @@ const NewsHomePage: React.FC = () => {
             );
           })}
         </div>
+
+        {filteredArticles.length === 0 && (
+          <div className="text-center py-20">
+            <p className="text-xl text-neutral-600">No articles found in this category.</p>
+            <button
+              onClick={() => handleCategoryChange('all')}
+              className="mt-4 text-primary-600 hover:text-primary-800 font-semibold"
+            >
+              View All Articles
+            </button>
+          </div>
+        )}
 
         {/* Pagination Controls - Enhanced Mobile Friendly */}
         {totalPages > 1 && (

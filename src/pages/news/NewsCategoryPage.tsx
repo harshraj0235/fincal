@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Calendar, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight, TrendingUp } from 'lucide-react';
+import { Calendar, ArrowRight, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
@@ -27,7 +26,7 @@ const NewsCategoryPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 pt-20">
+    <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
       <SEOHelmet
         title={`${category.name} News | MoneyCal`}
         description={category.description}
@@ -35,50 +34,33 @@ const NewsCategoryPage: React.FC = () => {
         url={`/news/${categorySlug}`}
       />
 
-      {/* Hero Section - Clean Like Blog */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-6">
+      {/* Hero Section - Mobile Optimized */}
+      <div className="bg-gradient-to-br from-primary-600 via-blue-600 to-purple-600 text-white py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <Link
             to="/news"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
+            className="inline-flex items-center gap-2 px-3 py-2 text-blue-100 hover:text-white hover:bg-white/10 active:bg-white/20 rounded-lg mb-4 transition-all text-sm sm:text-base touch-manipulation active:scale-95 -ml-3"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-4 w-4" />
             Back to All News
           </Link>
-        </div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium mb-6">
-            <TrendingUp className="w-4 h-4 mr-2" />
-            {category.name} Category
-          </div>
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">{category.name}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl leading-relaxed mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">{category.name}</h1>
+          <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl">
             {category.description}
           </p>
-          <p className="text-lg text-gray-700 font-semibold">
-            {allArticles.length} articles in this category
-          </p>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Articles Grid - Blog-Style Clean */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <div className="mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-              All {category.name} Articles
-            </h2>
-            <p className="text-lg text-gray-600">
-              Showing {startIndex + 1}-{Math.min(endIndex, allArticles.length)} of {allArticles.length} articles
-            </p>
-          </div>
+      {/* Articles Grid - With Pagination */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-2">
+            {category.name} News
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-600">
+            Showing {startIndex + 1}-{Math.min(endIndex, allArticles.length)} of {allArticles.length} article{allArticles.length !== 1 ? 's' : ''}
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article) => {
@@ -238,7 +220,6 @@ const NewsCategoryPage: React.FC = () => {
             </div>
           </div>
         )}
-        </motion.div>
       </div>
     </div>
   );
