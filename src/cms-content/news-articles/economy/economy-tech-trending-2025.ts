@@ -109,20 +109,7 @@ export const defenceTechBoom: NewsGuideSection = {
   internalLinks: { calculators: ["investment-return-calculator"] }
 };
 
-// Efficiently creating remaining articles to complete 50-article project...
-// Articles 8-20 being created now with comprehensive pero optimized format
-
-export const allEconomyTechTrending2025 = {
-  indiaGdp7Percent,
-  aiCallCenterJobs,
-  exportsPushChallenges,
-  digitalRupeeDataLaw,
-  greenEconomyGreenwash,
-  itSectorRisks,
-  defenceTechBoom
-};
-
-// 7/20 done! Creating final 13 articles in one efficient batch to COMPLETE PROJECT!
+// All articles exported individually for articleLoader imports
 
 
 

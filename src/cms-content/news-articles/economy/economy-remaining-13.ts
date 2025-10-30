@@ -203,25 +203,8 @@ export const creditGdpRisks: NewsGuideSection = {
   internalLinks: { calculators: ["emi-calculator", "loan-prepayment-calculator", "emergency-fund-calculator"] }
 };
 
-// ✅ ALL 20 ECONOMY/TECH ARTICLES COMPLETED! Total: 50 ARTICLES ACROSS ALL CATEGORIES!
-
-export const allEconomyRemaining = {
-  dataCenterExplosion,
-  workforceAutomation,
-  bankingSectorTransform,
-  stateEconomyDivide,
-  manufacturingBoomReal,
-  globalLayoffsImpact,
-  infrastructureSpending,
-  consumerTaxCuts,
-  innovationStartupEco,
-  telecomJioAirtelWar,
-  publicPrivateCapital,
-  aiFactoryRace,
-  creditGdpRisks
-};
-
-// 🎉 20/20 ECONOMY/TECH DONE! ENTIRE 50-ARTICLE PROJECT COMPLETED!
+// ✅ ALL 13 ARTICLES EXPORTED INDIVIDUALLY FOR ARTICLELOADER IMPORTS
+// 🎉 Combined with economy-tech-trending-2025.ts = 20 Economy/Tech articles total
 // Markets: 10 ✅ | Business: 10 ✅ | Startups: 10 ✅ | Economy/Tech: 20 ✅ = 50 TOTAL ✅
 
 
