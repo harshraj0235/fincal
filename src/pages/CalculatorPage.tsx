@@ -589,6 +589,46 @@ export const CalculatorPage: React.FC<CalculatorPageProps> = ({ calculatorId }) 
         </div>
       )}
 
+      {/* Internal links: Learn lessons, News, Blog */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-6">Learn more and explore</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a href="/learn/money-management/what-is-money-income-expenses-wealth" className="block bg-white border border-neutral-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+            <div className="text-sm text-neutral-500 mb-1">Learn</div>
+            <div className="font-semibold text-neutral-900">What is Money? Income, Expenses & Wealth</div>
+            <div className="text-neutral-600 text-sm mt-1">Foundations of personal finance (Hindi + English)</div>
+          </a>
+          <a href="/learn/money-management/setting-financial-goals-short-medium-long-term" className="block bg-white border border-neutral-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+            <div className="text-sm text-neutral-500 mb-1">Learn</div>
+            <div className="font-semibold text-neutral-900">Setting Financial Goals (Short/Medium/Long)</div>
+            <div className="text-neutral-600 text-sm mt-1">SMART goals with Indian examples</div>
+          </a>
+          <a href="/learn/money-management/budgeting-how-to-track-income-expenses-india" className="block bg-white border border-neutral-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+            <div className="text-sm text-neutral-500 mb-1">Learn</div>
+            <div className="font-semibold text-neutral-900">Budgeting Guide: Track Income & Expenses</div>
+            <div className="text-neutral-600 text-sm mt-1">50-30-20, methods, expense tracking</div>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <a href="/news" className="block bg-white border border-neutral-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+            <div className="text-sm text-neutral-500 mb-1">News</div>
+            <div className="font-semibold text-neutral-900">MoneyCal News Hub</div>
+            <div className="text-neutral-600 text-sm mt-1">Markets, Business, Startups, Economy, Tech Business</div>
+          </a>
+          <a href="/news/markets" className="block bg-white border border-neutral-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+            <div className="text-sm text-neutral-500 mb-1">News</div>
+            <div className="font-semibold text-neutral-900">Markets</div>
+            <div className="text-neutral-600 text-sm mt-1">Daily market moves, insights, and analysis</div>
+          </a>
+          <a href="/blog" className="block bg-white border border-neutral-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+            <div className="text-sm text-neutral-500 mb-1">Blog</div>
+            <div className="font-semibold text-neutral-900">Latest from the Blog</div>
+            <div className="text-neutral-600 text-sm mt-1">Guides, strategies, and deep dives</div>
+          </a>
+        </div>
+      </section>
+
       {/* High-quality supporting content for users and search quality */}
       <section className="mt-12 space-y-8">
         <div className="bg-white border border-neutral-200 rounded-lg p-6">
