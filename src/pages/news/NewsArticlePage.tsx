@@ -20,6 +20,12 @@ import { NewsGuideTemplate } from '../../components/NewsGuideTemplate';
 import { teamProfiles } from '../../data/teamProfiles';
 import { newsCategories } from '../../data/newsCategories';
 import { formatStaticDate, formatStaticShortDate, formatLatestUpdate, getCurrentDateISO } from '../../utils/randomCalculators';
+import ReadingProgress from '../../components/ReadingProgress';
+import BreakingNewsBanner from '../../components/BreakingNewsBanner';
+import ArticleToolbar from '../../components/ArticleToolbar';
+import EnhancedSocialShare from '../../components/EnhancedSocialShare';
+import TrendingNewsSidebar from '../../components/TrendingNewsSidebar';
+import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 
 interface Article {
   id: string;
@@ -151,6 +157,15 @@ const NewsArticlePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-neutral-50 pt-16 lg:pt-20">
+      {/* Reading Progress Bar */}
+      <ReadingProgress />
+      
+      {/* Breaking News Banner */}
+      <BreakingNewsBanner />
+      
+      {/* Article Toolbar (Font Size, Print, Bookmark) */}
+      <ArticleToolbar articleTitle={article.title} />
+      
       <SEOHelmet
         title={`${article.title} | MoneyCal News`}
         description={article.excerpt || article.title}
