@@ -36,5 +36,135 @@
     </news:news>
   </url>
   
+  <!-- NEW ECONOMY ARTICLES - 8 comprehensive Google News-optimized articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-gdp-growth-7-2-percent-fastest-economy-china</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India GDP Growth 7.2% Beats China - World's Fastest Growing Major Economy!</news:title>
+      <news:keywords>India GDP growth, fastest growing economy, China comparison, economic analysis</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-export-growth-1-trillion-target-2030-fta-challenges</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India Export Growth Slows to 5% - Can We Hit $1 Trillion Target by 2030?</news:title>
+      <news:keywords>India exports, 1 trillion target, FTA UK EU, trade analysis</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-inflation-5-4-percent-rbi-rate-cuts-food-prices</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India Inflation at 5.4% - RBI's Balancing Act Between Growth and Price Stability</news:title>
+      <news:keywords>inflation India, RBI rate cuts, food prices, monetary policy</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-infrastructure-boom-111-lakh-crore-roads-metros-ports</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Infrastructure Boom: India Spending ₹111 Lakh Crore on Roads, Metros, Ports!</news:title>
+      <news:keywords>infrastructure India, PM Gati Shakti, roads metros ports, L&T IRB</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/digital-rupee-rbi-cbdc-pilot-10-lakh-users-upi</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Digital Rupee (e₹) Launch: RBI's CBDC Pilot - Will It Replace Cash & UPI?</news:title>
+      <news:keywords>digital rupee, RBI CBDC, central bank digital currency, UPI replacement</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-renewable-energy-500-gw-target-solar-wind-adani-tata</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Green Energy Revolution: India's 500 GW Renewable Target by 2030 - Solar, Wind Boom!</news:title>
+      <news:keywords>renewable energy India, 500 GW target, solar wind, Adani Tata Power</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-agriculture-crisis-farmer-income-stagnant-msp-rural</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Agriculture Crisis: Farmer Income Stagnant Despite MSP Hikes - Rural India Struggles!</news:title>
+      <news:keywords>agriculture crisis India, farmer income, MSP hikes, rural distress</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-employment-jobs-10-million-annually-gig-economy-youth</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India's Employment Challenge: Creating 10-15 Million Jobs Annually - Are We Succeeding?</news:title>
+      <news:keywords>India employment, jobs creation, gig economy, youth unemployment</news:keywords>
+    </news:news>
+  </url>
+  
 </urlset>
 

@@ -66,7 +66,11 @@ import {
   indiaGDPGrowth2025,
   exportGrowthChallenges2025,
   inflationControl2025,
-  infrastructureBoom2025
+  infrastructureBoom2025,
+  digitalRupeeLaunch,
+  greenEnergyTransition,
+  agricultureCrisis2025,
+  employmentChallenge2025
 } from './news-articles/economy/economy-analysis-2025';
 
 // Article content map - maps article IDs to their full content
@@ -80,6 +84,10 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'export-growth-challenges-2025': exportGrowthChallenges2025,
   'inflation-control-2025': inflationControl2025,
   'infrastructure-boom-2025': infrastructureBoom2025,
+  'digital-rupee-launch-2025': digitalRupeeLaunch,
+  'green-energy-transition-2025': greenEnergyTransition,
+  'agriculture-crisis-2025': agricultureCrisis2025,
+  'employment-challenge-2025': employmentChallenge2025,
   
   // Markets - Original Lenskart articles
   'article-01-lenskart-ipo-matters': lenskartIPOMatters,

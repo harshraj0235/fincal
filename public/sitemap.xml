@@ -23,49 +23,57 @@
   <sitemap>
     <loc>https://moneycal.in/sitemap-news-economy.xml</loc>
     <lastmod>2025-10-30</lastmod>
-    <!-- Economy Category: 3 news articles (growing daily) -->
+    <!-- Economy Category: 10 comprehensive news articles -->
   </sitemap>
   
   <!-- Main Content Category Sitemaps -->
   <sitemap>
     <loc>https://moneycal.in/sitemap-calculators.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Calculator Tools: 104 URLs -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-blog.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Blog Posts & Articles: 725 URLs -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-learn.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Educational Content: 150 URLs -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-tools.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Utilities & Tools: 280 URLs -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-government.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Government Schemes: 185 URLs -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-crypto.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Cryptocurrency Guides: 71 URLs -->
   </sitemap>
   
   <sitemap>
     <loc>https://moneycal.in/sitemap-pages.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Static & Hub Pages: 82 URLs -->
   </sitemap>
   
   <!-- Backup of all URLs (for reference) -->
   <sitemap>
     <loc>https://moneycal.in/sitemap-all-urls-backup.xml</loc>
     <lastmod>2025-10-30</lastmod>
+    <!-- Complete URL Backup: All Categories -->
   </sitemap>
   
 </sitemapindex>

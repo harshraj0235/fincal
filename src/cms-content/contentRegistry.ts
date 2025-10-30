@@ -387,6 +387,42 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'saurabh-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'digital-rupee-launch-2025',
+    slug: 'digital-rupee-rbi-cbdc-pilot-10-lakh-users-upi',
+    category: 'economy',
+    title: 'Digital Rupee (e₹) Launch: RBI\'s CBDC Pilot - Will It Replace Cash & UPI?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'green-energy-transition-2025',
+    slug: 'india-renewable-energy-500-gw-target-solar-wind-adani-tata',
+    category: 'economy',
+    title: 'Green Energy Revolution: India\'s 500 GW Renewable Target by 2030 - Solar, Wind Boom!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'agriculture-crisis-2025',
+    slug: 'india-agriculture-crisis-farmer-income-stagnant-msp-rural',
+    category: 'economy',
+    title: 'Agriculture Crisis: Farmer Income Stagnant Despite MSP Hikes - Rural India Struggles!',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'employment-challenge-2025',
+    slug: 'india-employment-jobs-10-million-annually-gig-economy-youth',
+    category: 'economy',
+    title: 'India\'s Employment Challenge: Creating 10-15 Million Jobs Annually - Are We Succeeding?',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
