@@ -1,6 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
+  <!-- 
+    MoneyCal News Portal - Complete Sitemap Index
+    Last Updated: 2025-10-30
+    Total News Articles: 45 (14 Markets + 11 Business + 10 Startups + 10 Economy)
+    Total URLs Across All Categories: 1,597+
+  -->
+  
   <!-- News Content - Category Wise (Google News Optimized) - UPDATED DAILY -->
   <sitemap>
     <loc>https://moneycal.in/sitemap-news-markets.xml</loc>
