@@ -68,5 +68,103 @@
     </news:news>
   </url>
   
+  <!-- NEW BUSINESS ANALYSIS ARTICLES - 6 comprehensive articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/reliance-disney-merger-70000-crore-ott-jiocinema-hotstar</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Reliance-Disney का ₹70,000 Crore Merger - OTT का नया राजा!</news:title>
+      <news:keywords>Reliance Disney merger, JioCinema Hotstar, OTT India market</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/make-in-india-pli-scheme-dixon-waaree-success</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Make in India 2.0: PLI Schemes से Dixon, Waaree जैसी Companies 3x!</news:title>
+      <news:keywords>PLI scheme success, Dixon Technologies, Waaree Energies, Make in India</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/tata-motors-ev-market-share-70-percent-nexon-punch</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Tata Motors का EV में Monopoly! Market Share 70%</news:title>
+      <news:keywords>Tata Motors EV, Nexon EV, electric vehicles India market share</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/pharma-api-india-china-independence-pli-laurus-divis</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Pharma API में India का China से आज़ादी का सफर!</news:title>
+      <news:keywords>pharma API India, Laurus Labs, China independence, PLI pharma</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/office-real-estate-wfh-crisis-vacancy-dlf-prestige</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Office Real Estate Crisis: WFH ने Property को ₹5 Lakh Crore Loss!</news:title>
+      <news:keywords>office real estate crisis, WFH impact, DLF Prestige vacancy rates</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/business-analysis/fmcg-rural-demand-slowdown-hul-itc-growth-crisis</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>FMCG में Rural Slowdown! HUL, ITC Growth सिर्फ 2-3%</news:title>
+      <news:keywords>FMCG rural slowdown, HUL growth crisis, ITC sales India</news:keywords>
+    </news:news>
+  </url>
+  
 </urlset>
 

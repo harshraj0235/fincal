@@ -55,7 +55,10 @@ import {
   tier2StartupRevolution,
   aiStartupsBoom,
   quickCommerceBattle,
-  d2cBrandsConsolidation
+  d2cBrandsConsolidation,
+  edtechCrisis2025,
+  b2bSaasExports,
+  fintechRegulation2025
 } from './news-articles/startups/startups-funding-ecosystem-2025';
 
 // Article content map - maps article IDs to their full content
@@ -106,6 +109,9 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'ai-startups-boom-2025': aiStartupsBoom,
   'quick-commerce-battle-2025': quickCommerceBattle,
   'd2c-brands-consolidation-2025': d2cBrandsConsolidation,
+  'edtech-crisis-2025': edtechCrisis2025,
+  'b2b-saas-exports-2025': b2bSaasExports,
+  'fintech-regulation-2025': fintechRegulation2025,
 };
 
 /**

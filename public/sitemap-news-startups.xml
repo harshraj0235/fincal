@@ -36,5 +36,135 @@
     </news:news>
   </url>
   
+  <!-- NEW STARTUPS ARTICLES - 8 comprehensive Google News-optimized articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/india-unicorn-startups-110-billion-dollar-companies-funding</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India's Unicorn Factory: 110+ Billion-Dollar Startups - Next Wave Coming!</news:title>
+      <news:keywords>India unicorns, startup funding, billion dollar companies India</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/tier-2-cities-startup-indore-jaipur-kochi-unicorns</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Tier-2 Cities Startup Revolution: Indore, Jaipur, Kochi की Companies Unicorn बन रही!</news:title>
+      <news:keywords>tier 2 cities startup, Indore Jaipur Kochi unicorns, startup ecosystem India</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/ai-startups-india-10-billion-funding-chatgpt-boom</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>AI Startups India में $10 Billion Funding - ChatGPT के बाद Boom!</news:title>
+      <news:keywords>AI startups India, artificial intelligence funding, ChatGPT India boom</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/zepto-blinkit-swiggy-instamart-10-minute-delivery-war</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>10-Minute Delivery War: Zepto, Blinkit, Swiggy Instamart - ₹50,000 Crore Battle!</news:title>
+      <news:keywords>Zepto Blinkit Instamart, quick commerce India, 10 minute delivery</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/d2c-brands-consolidation-mamaearth-boat-survival</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>D2C Brands की Consolidation शुरू! Mamaearth, boAt - Survive या Shutdown?</news:title>
+      <news:keywords>D2C brands India, Mamaearth boAt consolidation, direct to consumer</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/edtech-crisis-byjus-collapse-unacademy-layoffs</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>EdTech Crisis: Byju's Collapse, Unacademy Layoffs - ₹1 Lakh Crore से ₹10,000 Crore!</news:title>
+      <news:keywords>EdTech crisis India, Byju's collapse, Unacademy layoffs, online education</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/india-b2b-saas-exports-12-billion-freshworks-postman</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India's B2B SaaS Exports: $12 Billion+ Globally - Freshworks, Postman Leading!</news:title>
+      <news:keywords>B2B SaaS India, Freshworks Postman, software exports India</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/startups/fintech-regulation-rbi-phonepe-paytm-razorpay-compliance</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>FinTech Regulation Tightening: RBI Rules Reshaping PhonePe, Paytm, Razorpay!</news:title>
+      <news:keywords>FinTech regulation India, RBI compliance, PhonePe Paytm Razorpay</news:keywords>
+    </news:news>
+  </url>
+  
 </urlset>
 

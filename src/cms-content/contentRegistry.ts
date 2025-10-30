@@ -322,6 +322,33 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'harsh-raj',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1607082349566-187342175e2f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'edtech-crisis-2025',
+    slug: 'edtech-crisis-byjus-collapse-unacademy-layoffs',
+    category: 'startups',
+    title: 'EdTech Crisis: Byju\'s Collapse, Unacademy Layoffs - ₹1 Lakh Crore से ₹10,000 Crore!',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'b2b-saas-exports-2025',
+    slug: 'india-b2b-saas-exports-12-billion-freshworks-postman',
+    category: 'startups',
+    title: 'India\'s B2B SaaS Exports: $12 Billion+ Globally - Freshworks, Postman Leading!',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'fintech-regulation-2025',
+    slug: 'fintech-regulation-rbi-phonepe-paytm-razorpay-compliance',
+    category: 'startups',
+    title: 'FinTech Regulation Tightening: RBI Rules Reshaping PhonePe, Paytm, Razorpay!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

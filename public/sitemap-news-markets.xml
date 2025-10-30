@@ -72,6 +72,168 @@
       <news:keywords>retail investors IPO guide, IPO application India</news:keywords>
     </news:news>
   </url>
+
+  <!-- NEW MARKETS ARTICLES - 10 comprehensive Google News-optimized articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/india-stock-market-boom-2026-30000-nifty</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Stock Market 2026 में 30,000 तक? GDP, Earnings Growth से Bull Run</news:title>
+      <news:keywords>stock market 2026, Nifty 30000, bull run India, GDP growth</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/rbi-repo-rate-cut-impact-stocks-bonds-fd</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>RBI Repo Rate Cut का Portfolio पर Impact - Stocks, Bonds, FDs</news:title>
+      <news:keywords>RBI repo rate cut, monetary policy India, FD rates, bond yields</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/3-midcap-stocks-hidden-gems-250-percent-return</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>3 Mid-Cap Stocks जो Large-Caps को पीछे छोड़ रहे - Hidden Gems</news:title>
+      <news:keywords>mid cap stocks India, hidden gems stocks, multibagger stocks 2025</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/rupee-dollar-volatility-portfolio-risk-2025</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Rupee Volatility: Dollar 83 to 85 - Portfolio Risk कैसे Manage करें</news:title>
+      <news:keywords>rupee dollar volatility, currency risk India, forex hedging</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/sector-rotation-strategy-portfolio-rebalancing</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Sector Rotation Strategy: IT से Banking में Shift - Timing Perfect करें</news:title>
+      <news:keywords>sector rotation strategy, portfolio rebalancing, IT banking stocks</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/fixed-income-fd-bonds-hidden-risks-real-returns</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Fixed Income अब Safe नहीं! Bank FDs और Bonds में Hidden Risks</news:title>
+      <news:keywords>fixed deposit risks, bond investment India, real returns inflation</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/gold-vs-equities-2025-2030-investment-battle</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Gold vs Indian Equities: 2025-2030 में किसका Rule होगा?</news:title>
+      <news:keywords>gold vs equities, gold investment India, stock market vs gold</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/fii-foreign-investment-india-risks-opportunities</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Foreign Money India में आ रहा - लेकिन Hidden Risks क्या हैं?</news:title>
+      <news:keywords>FII flows India, foreign investment risks, FPI data</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/smallcap-bubble-warning-overvaluation-correction-risk</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Small-Cap Bubble Warning! India के Small Caps Overvalued हैं?</news:title>
+      <news:keywords>small cap bubble India, overvaluation warning, market correction 2025</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/markets/government-policy-portfolio-impact-budget-rbi</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Government Policy आपका Portfolio बना या बिगाड़ सकती है!</news:title>
+      <news:keywords>government policy India, budget impact stocks, RBI policy portfolio</news:keywords>
+    </news:news>
+  </url>
   
 </urlset>
 
