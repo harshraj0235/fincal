@@ -158,77 +158,77 @@ import {
 
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
-  // Economy - Original Lenskart articles
-  'article-11-eyewear-market-growth': indianEyewearGrowth,
-  'article-07-regulatory-nod': regulatoryNod,
+  // Economy - Original Lenskart articles (using SLUGS as keys)
+  'india-eyewear-market-growth-forecast': indianEyewearGrowth,
+  'sebi-approval-lenskart-eyewear-industry-impact': regulatoryNod,
   
-  // Economy - NEW comprehensive Google News-optimized articles (8)
-  'india-gdp-growth-2025': indiaGDPGrowth2025,
-  'export-growth-challenges-2025': exportGrowthChallenges2025,
-  'inflation-control-2025': inflationControl2025,
-  'infrastructure-boom-2025': infrastructureBoom2025,
-  'digital-rupee-launch-2025': digitalRupeeLaunch,
-  'green-energy-transition-2025': greenEnergyTransition,
-  'agriculture-crisis-2025': agricultureCrisis2025,
-  'employment-challenge-2025': employmentChallenge2025,
+  // Economy - NEW comprehensive Google News-optimized articles (8 - using SLUGS as keys)
+  'india-gdp-growth-7-2-percent-fastest-economy-china': indiaGDPGrowth2025,
+  'india-export-growth-1-trillion-target-2030-fta-challenges': exportGrowthChallenges2025,
+  'india-inflation-5-4-percent-rbi-rate-cuts-food-prices': inflationControl2025,
+  'india-infrastructure-boom-111-lakh-crore-roads-metros-ports': infrastructureBoom2025,
+  'digital-rupee-rbi-cbdc-pilot-10-lakh-users-upi': digitalRupeeLaunch,
+  'india-renewable-energy-500-gw-target-solar-wind-green-hydrogen': greenEnergyTransition,
+  'india-agriculture-crisis-farmer-income-msp-rural-distress': agricultureCrisis2025,
+  'india-employment-jobs-10-million-annually-gig-economy-youth': employmentChallenge2025,
   
-  // Markets - Original Lenskart articles
-  'article-01-lenskart-ipo-matters': lenskartIPOMatters,
-  'article-02-valuation-breakdown': valuationBreakdown,
-  'article-06-ipo-risks': ipoRisks,
-  'article-10-retail-investor-guide': retailInvestorGuide,
+  // Markets - Original Lenskart articles (using SLUGS as keys)
+  'lenskart-ipo-announcement-hindi': lenskartIPOMatters,
+  'lenskart-valuation-67000-crore-analysis': valuationBreakdown,
+  'lenskart-ipo-10-risks-paytm-comparison': ipoRisks,
+  'lenskart-ipo-retail-investor-guide': retailInvestorGuide,
   
-  // Markets - NEW comprehensive articles (10)
-  'stock-market-boom-2026': stockMarket2026Boom,
-  'rbi-repo-rate-impact-2025': rbiRepoRateImpact2025,
-  'midcap-stocks-outperform-2025': midCapStocksOutperform,
-  'rupee-volatility-risk-2025': rupeeVolatilityRisk2025,
-  'sector-rotation-strategy-2025': sectorRotationStrategy2025,
-  'fixed-income-risk-2025': fixedIncomeRisk2025,
-  'gold-vs-equities-2025': goldVsEquities2025,
-  'foreign-money-risks-2025': foreignMoneyRisks2025,
-  'smallcap-bubble-2025': smallCapBubble2025,
-  'gov-policy-impact-2025': govPolicyImpact2025,
+  // Markets - NEW comprehensive articles (10 - using SLUGS as keys)
+  'india-stock-market-boom-2026-30000-nifty': stockMarket2026Boom,
+  'rbi-repo-rate-cut-impact-stocks-bonds-fd': rbiRepoRateImpact2025,
+  '3-midcap-stocks-hidden-gems-250-percent-return': midCapStocksOutperform,
+  'rupee-dollar-volatility-portfolio-risk-2025': rupeeVolatilityRisk2025,
+  'sector-rotation-strategy-portfolio-rebalancing': sectorRotationStrategy2025,
+  'fixed-income-fd-bonds-hidden-risks-real-returns': fixedIncomeRisk2025,
+  'gold-vs-equities-2025-2030-investment-battle': goldVsEquities2025,
+  'fii-foreign-investment-india-risks-opportunities': foreignMoneyRisks2025,
+  'smallcap-bubble-warning-overvaluation-correction-risk': smallCapBubble2025,
+  'government-policy-portfolio-impact-budget-rbi': govPolicyImpact2025,
   
-  // Business Analysis - Original Lenskart articles
-  'article-03-omnichannel-footprint': omnichannelFootprint,
-  'article-05-ipo-proceeds-usage': ipoProceedsUsage,
-  'article-09-market-trends-support': marketTrendsSupport,
-  'article-12-eyewear-purchase-behavior': purchaseBehavior,
+  // Business Analysis - Original Lenskart articles (using SLUGS as keys)
+  'lenskart-2000-stores-omnichannel-strategy': omnichannelFootprint,
+  'lenskart-ipo-6000-crore-spending-plan': ipoProceedsUsage,
+  'eyewear-market-trends-2025': marketTrendsSupport,
+  'eyewear-purchase-behavior-trends': purchaseBehavior,
   
-  // Business Analysis - NEW comprehensive articles (6)
-  'reliance-disney-merger-2025': relianceDisneyMerger,
-  'manufacturing-pli-success-2025': manufacturingPLISuccess,
-  'tata-ev-dominance-2025': tataEVDominance,
-  'pharma-api-independence-2025': pharmaAPIIndependence,
-  'office-real-estate-crisis-2025': realEstateOfficeCrisis,
-  'fmcg-rural-slowdown-2025': fmcgRuralSlowdown,
+  // Business Analysis - NEW comprehensive articles (7 - using SLUGS as keys)
+  'reliance-disney-merger-70000-crore-ott-jiocinema-hotstar': relianceDisneyMerger,
+  'make-in-india-pli-scheme-dixon-waaree-success': manufacturingPLISuccess,
+  'tata-motors-ev-market-share-70-percent-nexon-punch': tataEVDominance,
+  'india-pharma-api-self-reliance-import-reduction-china': pharmaAPIIndependence,
+  'office-real-estate-vacancy-crisis-wfh-hybrid-bangalore-mumbai': realEstateOfficeCrisis,
+  'fmcg-rural-slowdown-india-hul-britannia-itc-demand-crisis': fmcgRuralSlowdown,
   
-  // Startups - Original Lenskart articles
-  'article-04-major-investors': majorInvestors,
-  'article-08-founder-stake-strategy': founderStakeStrategy,
+  // Startups - Original Lenskart articles (using SLUGS as keys)
+  'lenskart-investors-softbank-premji-returns': majorInvestors,
+  'founder-stake-increase-strategy': founderStakeStrategy,
   
-  // Startups - NEW comprehensive Google News-optimized articles (8)
-  'india-unicorn-factory-2025': indiaUnicornFactory2025,
-  'tier2-startup-revolution': tier2StartupRevolution,
-  'ai-startups-boom-2025': aiStartupsBoom,
-  'quick-commerce-battle-2025': quickCommerceBattle,
-  'd2c-brands-consolidation-2025': d2cBrandsConsolidation,
-  'edtech-crisis-2025': edtechCrisis2025,
-  'b2b-saas-exports-2025': b2bSaasExports,
-  'fintech-regulation-2025': fintechRegulation2025,
+  // Startups - NEW comprehensive Google News-optimized articles (8 - using SLUGS as keys)
+  'india-unicorns-110-billion-dollar-startups-funding-vc': indiaUnicornFactory2025,
+  'tier2-tier3-startups-jaipur-indore-coimbatore-funding': tier2StartupRevolution,
+  'ai-startups-india-10-billion-chatgpt-openai-boom': aiStartupsBoom,
+  'quick-commerce-zepto-blinkit-swiggy-10-minute-delivery': quickCommerceBattle,
+  'd2c-brands-consolidation-mamaearth-boat-sugar-survive': d2cBrandsConsolidation,
+  'edtech-crisis-byjus-unacademy-1-lakh-crore-collapse': edtechCrisis2025,
+  'india-b2b-saas-exports-12-billion-freshworks-postman': b2bSaasExports,
+  'fintech-regulation-rbi-phonepe-paytm-razorpay-rules': fintechRegulation2025,
   
-  // Tech Business - NEW comprehensive Google News-optimized articles (10)
-  'ai-enterprise-adoption-2025': aiEnterpriseAdoption,
-  '5g-rollout-india-2025': fiveGRolloutIndia,
-  'it-services-automation-2025': itServicesAutomation,
-  'semiconductor-mission-india-2025': semiconductorMission,
-  'upi-global-expansion-2025': upiGlobalExpansion,
-  'cloud-computing-india-2025': cloudAdoptionIndia,
-  'cybersecurity-india-2025': cybersecurityIndia,
-  'it-exports-slowdown-2025': itExportsSlowdown,
-  'manufacturing-automation-2025': manufacturingAutomation,
-  'tech-talent-shortage-2025': techTalentShortage,
+  // Tech Business - NEW comprehensive Google News-optimized articles (10 - using SLUGS as keys)
+  'ai-enterprise-adoption-india-50000-crore-chatgpt-automation': aiEnterpriseAdoption,
+  '5g-india-rollout-500000-towers-jio-airtel-monetization': fiveGRolloutIndia,
+  'it-services-automation-tcs-infosys-margins-ai-threat': itServicesAutomation,
+  'india-semiconductor-mission-76000-crore-chip-fabs': semiconductorMission,
+  'upi-global-expansion-10-countries-200-billion-opportunity': upiGlobalExpansion,
+  'cloud-computing-india-1-lakh-crore-aws-azure-google': cloudAdoptionIndia,
+  'cybersecurity-india-35000-crore-breaches-skills-shortage': cybersecurityIndia,
+  'it-exports-slowdown-200-billion-us-recession-automation': itExportsSlowdown,
+  'manufacturing-automation-industry-4-robots-iot-ai': manufacturingAutomation,
+  'tech-talent-shortage-india-ai-ml-cloud-cybersecurity-jobs': techTalentShortage,
   
   // Economy/Tech Trending 2025 - ALL 20 comprehensive articles
   'india-gdp-7-percent-growth-fy26-test': indiaGdp7Percent,
@@ -252,40 +252,40 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'india-ai-factory-reliance-tata-adani-1-lakh-crore': aiFactoryRace,
   'credit-gdp-ratio-58-percent-household-debt-risk': creditGdpRisks,
   
-  // Markets Trending 2025 - Dynamic market-based articles (10)
-  'sensex-bear-phase-2025': sensexBearPhase2025,
-  'rupee-crisis-88-2025': rupeeSlips88Crisis,
-  'metal-stocks-collapse-2025': metalStocksCollapse,
-  'top-stock-picks-oct-2025': topBuyPicks2025,
-  'sebi-fee-cut-amc-2025': sebiFeeCutImpact,
-  'ipo-season-8billion-2025': ipoSeasonExplodes,
-  'fii-double-edged-2025': foreignMoneyDoubleEdged,
-  'smallcap-rotation-2025': smallCapRotation,
-  'us-rate-hike-crash-2025': usRateHikeCrash,
+  // Markets Trending 2025 - Dynamic market-based articles (10 - using SLUGS as keys)
+  'sensex-plunges-500-points-india-bear-phase-analysis': sensexBearPhase2025,
+  'rupee-dollar-88-43-currency-crash-portfolio-risk': rupeeSlips88Crisis,
+  'metal-stocks-collapse-global-demand-commodity-bet-fail': metalStocksCollapse,
+  'top-stock-picks-october-30-2025-buy-wishlist': topBuyPicks2025,
+  'sebi-fee-cuts-amc-selloff-mutual-fund-impact': sebiFeeCutImpact,
+  'ipo-season-explodes-india-8-billion-yearend-blitz': ipoSeasonExplodes,
+  'foreign-money-india-two-edged-sword-markets': foreignMoneyDoubleEdged,
+  'small-caps-surge-big-caps-stumble-market-rotation': smallCapRotation,
+  'us-interest-rate-hike-india-crash-trigger': usRateHikeCrash,
   
-  // Business Analysis Trending 2025 - Dynamic business sector articles (10)
-  'honda-india-growth-2025': hondaIndiaGrowth,
-  'corporate-debt-bomb-2025': corporateDebtBomb,
-  'manufacturing-states-2025': manufacturing3States,
-  'retail-disruption-2025': retailDisruption,
-  'ev-supplier-trap-2025': evSupplierTrap,
-  'csr-esg-transformation-2025': csrToEsg,
-  'supply-chain-india-2025': supplyChainIndia,
-  'banks-fintech-2028': banksVsFintech2028,
-  'real-estate-risk-2025': realEstateRisk,
-  'infra-delivery-failure-2025': infraSpendingDelivery,
+  // Business Analysis Trending 2025 - Dynamic business sector articles (10 - using SLUGS as keys)
+  'honda-india-key-growth-market-auto-sector-impact': hondaIndiaGrowth,
+  'india-corporate-debt-70-lakh-crore-boom-bubble': corporateDebtBomb,
+  'manufacturing-3-india-states-factory-hubs-future': manufacturing3States,
+  'retail-disruption-quick-commerce-eating-market-share': retailDisruption,
+  'ev-push-trap-auto-suppliers-hidden-costs-margins': evSupplierTrap,
+  'csr-esg-transformation-indian-businesses-playbook': csrToEsg,
+  'supply-chains-india-china-plus-one-opportunity': supplyChainIndia,
+  'banks-fintech-india-financial-sector-2028-transformation': banksVsFintech2028,
+  'real-estate-india-risk-sector-12-lakh-crore-debt': realEstateRisk,
+  'infrastructure-spending-delivery-mechanism-failing-11-lakh-stuck': infraSpendingDelivery,
   
-  // Startups Trending 2025 - Dynamic startup ecosystem articles (10)
-  'campus-startups-2025': campusStartupsRise,
-  'deeptech-fund-2025': deepTechFund,
-  'tier2-startup-boom-2025': tier2StartupBoom,
-  'ai-startup-wave-2025': aiStartupWave,
-  'startup-ipo-tracker-2025': startupIpoTracker,
-  'vc-playbook-shift-2025': vcPlaybookShift,
-  'female-founder-gap-2025': femaleFunderGap,
-  'climate-agri-food-2025': climateAgriFood,
-  'founders-global-2025': foundersGoingGlobal,
-  'private-vs-public-markets-2025': privatVsPublicMarkets,
+  // Startups Trending 2025 - Dynamic startup ecosystem articles (10 - using SLUGS as keys)
+  'campus-startups-india-next-unicorn-hostel': campusStartupsRise,
+  'deeptech-fund-10000-crore-government-india-startup-future': deepTechFund,
+  'tier2-tier3-cities-startup-boom-jaipur-indore': tier2StartupBoom,
+  'ai-startup-wave-india-25000-crore-winning-losing': aiStartupWave,
+  'india-startup-ipo-tracker-2025-44000-crore-public': startupIpoTracker,
+  'vcs-india-shifting-profitability-growth-founders': vcPlaybookShift,
+  'female-founder-funding-india-3-percent-1-2-lakh-crore': femaleFunderGap,
+  'climate-agri-foodtech-india-startup-35000-crore': climateAgriFood,
+  'indian-founders-global-day-one-50000-crore-overseas': foundersGoingGlobal,
+  'startups-preferring-public-markets-44000-crore-ipo': privatVsPublicMarkets,
 };
 
 /**
