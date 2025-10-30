@@ -2,15 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- 
-    MoneyCal Learn Platform - Educational Content Sitemap
+    MoneyCal Learn Platform - Complete Sitemap with ALL Lessons
     Last Updated: 2025-10-30
     Total Categories: 18 (11 available, 7 coming soon)
-    Total Lessons: 170+
-    New Money Management: 8/8 lessons COMPLETE!
-    New Savings & Bank: Hub created, lessons coming
+    Total Lesson URLs: 180+ (including all individual lessons)
+    Coverage: 100% of Learn platform
   -->
   
-  <!-- Learn Main Hub Page -->
+  <!-- MAIN HUB -->
   <url>
     <loc>https://moneycal.in/learn</loc>
     <lastmod>2025-10-30</lastmod>
@@ -18,159 +17,287 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- Money Management & Budgeting Hub -->
+  <!-- ========== MONEY MANAGEMENT & BUDGETING (8/8 COMPLETE - NEW!) ========== -->
   <url>
     <loc>https://moneycal.in/learn/money-management</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
-  
-  <!-- Lesson 1: What is Money? -->
   <url>
     <loc>https://moneycal.in/learn/money-management/what-is-money-income-expenses-wealth</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-  
-  <!-- Lesson 2: Setting Financial Goals -->
   <url>
     <loc>https://moneycal.in/learn/money-management/setting-financial-goals-short-medium-long-term</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-  
-  <!-- Lesson 3: Budgeting Guide -->
   <url>
     <loc>https://moneycal.in/learn/money-management/budgeting-how-to-track-income-expenses-india</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-  
-  <!-- Lesson 4: Emergency Fund -->
   <url>
     <loc>https://moneycal.in/learn/money-management/building-emergency-fund-india-6-12-months</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-  
-  <!-- Lesson 5: Cash Flow & Net Worth -->
   <url>
     <loc>https://moneycal.in/learn/money-management/cash-flow-net-worth-tracking-india</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-  
-  <!-- Lesson 6: Financial Habits -->
   <url>
     <loc>https://moneycal.in/learn/money-management/building-good-financial-habits-daily</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-  
-  <!-- Lesson 7: Reviewing & Adjusting Budget -->
   <url>
     <loc>https://moneycal.in/learn/money-management/reviewing-adjusting-budget-monthly-quarterly-annual</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
-  
-  <!-- Lesson 8: Common Money Mistakes (FINAL) -->
   <url>
     <loc>https://moneycal.in/learn/money-management/financial-mistakes-to-avoid-impulse-spending-india</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   
-  <!-- Savings & Bank Products Hub (NEW Category 2) -->
+  <!-- ========== SAVINGS & BANK PRODUCTS (NEW - Hub Created) ========== -->
   <url>
     <loc>https://moneycal.in/learn/savings-bank-products</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
   
-  <!-- OLD LEARN CATEGORIES (Already in codebase - 170+ lessons) -->
-  
-  <!-- Loan Basics Hub (20 lessons) -->
+  <!-- ========== LOAN BASICS (20 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/loans</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/loans/what-is-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/types-of-loans</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/secured-vs-unsecured</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/what-is-emi</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/simple-vs-compound-interest</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/how-banks-evaluate</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/loan-tenure-explained</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/fixed-vs-floating-rates</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/understanding-collateral</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/check-eligibility</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/loan-agreement-guide</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/co-applicant-benefits</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/cibil-score-impact</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/calculate-true-cost</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/loan-default-consequences</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/repayment-options</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/loan-application-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/compare-loan-offers</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/documents-required</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/loans/common-loan-terms</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
-  <!-- Home Loans Hub (20 lessons) -->
+  <!-- ========== HOME LOANS (20 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/home-loans</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/home-loans/what-is-home-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/types-of-home-loans</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/home-loan-eligibility</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/loan-to-value-ratio</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/interest-rates-explained</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/fixed-vs-floating</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/emi-calculator-guide</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/documents-required</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/application-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/cibil-score-impact</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/tax-benefits</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/pre-approval</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/co-applicant-benefits</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/prepayment-foreclosure</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/balance-transfer</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/top-up-loans</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/home-loan-insurance</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/property-valuation</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/common-mistakes</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/home-loans/choose-best-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
-  <!-- Personal Loans Hub (21 lessons) -->
+  <!-- ========== PERSONAL LOANS (21 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/personal-loans</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/personal-loans/what-is-personal-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/types-of-personal-loans</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/personal-loan-eligibility</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/interest-rates-explained</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/secured-vs-unsecured</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/instant-loan-apps</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/documents-required</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/application-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/cibil-score-impact</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/debt-consolidation</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/processing-fees</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/repayment-strategies</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/prepayment-options</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/loan-refinancing</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/loan-rejection-reasons</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/loan-comparison-tools</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/improving-approval-chances</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/loan-fraud-protection</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/loan-myths-debunked</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/loan-closure-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/personal-loans/emi-vs-line-of-credit</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
-  <!-- Vehicle Loans Hub (16 lessons) -->
+  <!-- ========== VEHICLE LOANS (16 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/vehicle-loans</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/what-is-vehicle-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/car-loan-basics</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/bike-loan-guide</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/new-vs-used-vehicle</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/interest-rates</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/down-payment-strategies</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/loan-tenure-options</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/vehicle-insurance</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/loan-eligibility</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/documents-required</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/application-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/prepayment-foreclosure</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/best-banks-nbfcs</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/loan-transfer</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/common-mistakes</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/vehicle-loans/electric-vehicle-loans</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
-  <!-- Business Loans Hub (16 lessons) -->
+  <!-- ========== BUSINESS LOANS & MSME (16 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/business-loans</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/business-loans/business-loan-basics</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/msme-loan-guide</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/mudra-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/working-capital-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/startup-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/emi-calculator</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/government-schemes</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/eligibility-calculator</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/documents-required</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/application-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/interest-rates</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/collateral-requirements</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/tax-benefits</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/best-banks</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/prepayment-guide</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/business-loans/loan-restructuring</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
-  <!-- Credit Cards Hub (21 lessons) -->
+  <!-- ========== CREDIT CARDS (21 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/credit-cards</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/credit-cards/what-is-credit-card</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/credit-vs-debit-card</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/types-of-credit-cards</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/best-credit-cards</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/eligibility-criteria</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/application-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/documents-required</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/credit-limit</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/interest-rates-charges</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/billing-cycle</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/statement-guide</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/minimum-vs-full-payment</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/emi-on-credit-card</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/rewards-cashback</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/balance-transfer</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/cibil-impact</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/fraud-safety</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/common-mistakes</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/choose-best-card</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/closure-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-cards/international-usage</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
-  <!-- Credit Score Hub (11 lessons) -->
+  <!-- ========== CREDIT SCORE & CIBIL (11 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/credit-score</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/credit-score/what-is-credit-score</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/how-calculated</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/score-ranges</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/check-score-free</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/improve-score</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/common-mistakes</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/score-vs-report</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/dispute-errors</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/loan-approval</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/build-from-scratch</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/credit-score/myths-facts</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
-  <!-- Education Loans Hub (11 lessons) -->
+  <!-- ========== EDUCATION LOANS (11 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/education-loans</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/education-loans/what-is-education-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/study-in-india</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/study-abroad</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/collateral-vs-non-collateral</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/interest-rates</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/eligibility-documents</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/repayment-moratorium</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/tax-benefits</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/scholarships-alternatives</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/emi-calculator</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/education-loans/best-banks</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
-  <!-- Gold Loans Hub (11 lessons) -->
+  <!-- ========== GOLD LOANS (11 Lessons) ========== -->
   <url>
     <loc>https://moneycal.in/learn/gold-loans</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+  <url><loc>https://moneycal.in/learn/gold-loans/what-is-gold-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/interest-rates</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/eligibility-calculator</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/valuation-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/documents-required</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/application-process</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/repayment-options</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/gold-vs-personal-loan</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/best-banks</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/tax-benefits</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://moneycal.in/learn/gold-loans/common-mistakes</loc><lastmod>2025-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   
 </urlset>
-
