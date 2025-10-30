@@ -166,5 +166,135 @@
     </news:news>
   </url>
 
+  <!-- Tech Business Trending 2025 - 10 Articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/tech-business/ai-chatbots-replacing-call-centre-2-lakh-jobs</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>AI Chatbots Replacing India's Call-Center Workers: 2 Lakh Jobs at Risk!</news:title>
+      <news:keywords>AI automation, call center jobs, BPO layoffs, chatbot technology</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/tech-business/digital-rupee-data-law-privacy-2026</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Digital Rupee, Data Law &amp; Privacy: India's Tech Regulation 2026 Playbook!</news:title>
+      <news:keywords>digital rupee, DPDP Act, data privacy, RBI CBDC</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/tech-business/it-sector-200-billion-revenue-ai-recession-risk</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>IT Sector at Risk: $200B Revenue Threatened by AI, Recession</news:title>
+      <news:keywords>IT sector India, TCS Infosys, AI automation, US recession</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/tech-business/data-center-boom-2-lakh-crore-yotta-airtel</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Data Center Boom in India: ₹2 Lakh Cr Investment by 2027</news:title>
+      <news:keywords>data centers India, Yotta, Airtel Nxtra, AI cloud infrastructure</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/tech-business/global-tech-layoffs-350000-india-it-impact</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Global Tech Layoffs Hit 3.5 Lakh: Google, Meta, Amazon Cutting</news:title>
+      <news:keywords>tech layoffs, Google Meta Amazon, India IT impact, recession</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/tech-business/india-innovation-startups-150000-crore-funding</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India Innovation Economy: Startups Raising ₹1.5L Cr</news:title>
+      <news:keywords>Indian startups, unicorns, funding winter, venture capital</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/tech-business/telecom-war-jio-airtel-5g-tariff-hikes</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Telecom War: Jio vs Airtel - 5G, Tariff Hikes, ARPU Battle</news:title>
+      <news:keywords>Jio Airtel, 5G India, tariff hikes, Vi survival, ARPU</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/tech-business/india-ai-factory-reliance-tata-adani-1-lakh-crore</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India's AI Factory Race: Reliance, Tata, Adani Investing ₹1L Cr</news:title>
+      <news:keywords>AI India, Reliance Jio AI, Tata AI, GPU clusters, AI models</news:keywords>
+    </news:news>
+  </url>
+
 </urlset>
 

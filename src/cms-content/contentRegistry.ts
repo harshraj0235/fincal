@@ -791,6 +791,187 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'saurabh-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  // ECONOMY/TECH TRENDING 2025 - 20 ARTICLES
+  {
+    id: 'india-gdp-7-percent-fy26-test',
+    slug: 'india-gdp-7-percent-growth-fy26-test',
+    category: 'economy',
+    title: 'India on Track for 7%+ GDP Growth - But Real Test Starts in 2026!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'ai-call-center-jobs-risk',
+    slug: 'ai-chatbots-replacing-call-centre-2-lakh-jobs',
+    category: 'tech-business',
+    title: 'AI Chatbots Replacing India's Call-Center Workers: 2 Lakh Jobs at Risk!',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'india-export-1-trillion-challenge',
+    slug: 'india-exports-1-trillion-target-challenges',
+    category: 'economy',
+    title: 'India Export Growth Slows to 5%: Can We Hit $1 Trillion by 2030?',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'digital-rupee-data-law-privacy',
+    slug: 'digital-rupee-data-law-privacy-2026',
+    category: 'tech-business',
+    title: 'Digital Rupee, Data Law & Privacy: India's Tech Regulation 2026 Playbook!',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'green-economy-greenwashing',
+    slug: 'green-economy-15-lakh-crore-greenwashing',
+    category: 'economy',
+    title: 'Green Economy in India: ₹15 Lakh Cr Opportunity - or Greenwashing Trap?',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'it-sector-200b-risk',
+    slug: 'it-sector-200-billion-revenue-ai-recession-risk',
+    category: 'tech-business',
+    title: 'IT Sector at Risk: $200B Revenue Threatened by AI, Recession',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'defence-tech-75k-crore',
+    slug: 'defence-tech-spending-75000-crore-tata-lt',
+    category: 'economy',
+    title: 'Defence Tech Spending Creating Manufacturing Boom: ₹75k Cr Orders',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'data-center-2-lakh-crore',
+    slug: 'data-center-boom-2-lakh-crore-yotta-airtel',
+    category: 'tech-business',
+    title: 'Data Center Boom in India: ₹2 Lakh Cr Investment by 2027',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'workforce-automation-5-million-jobs',
+    slug: 'workforce-automation-5-million-jobs-risk',
+    category: 'economy',
+    title: 'Workforce Automation Hitting 5 Million Indian Jobs by 2030',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'banking-fintech-50k-crore',
+    slug: 'banking-sector-fintech-50000-crore-disruption',
+    category: 'economy',
+    title: 'Banking Sector Transformation: Fintech Eating ₹50k Cr Revenue',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'state-economy-divide',
+    slug: 'state-economy-divide-maharashtra-tn-up-bihar',
+    category: 'economy',
+    title: 'State Economy Divide Widening: Maharashtra, TN Leading - UP, Bihar Lagging',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'make-in-india-100-lakh-crore',
+    slug: 'make-in-india-100-lakh-crore-30-delivered',
+    category: 'economy',
+    title: 'Make in India's ₹100 Lakh Cr Dream: Only ₹30L Cr Delivered',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'global-tech-layoffs-350k',
+    slug: 'global-tech-layoffs-350000-india-it-impact',
+    category: 'tech-business',
+    title: 'Global Tech Layoffs Hit 3.5 Lakh: Google, Meta, Amazon Cutting',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'infrastructure-111-lakh-crore',
+    slug: 'infrastructure-spending-111-lakh-crore-lt-adani',
+    category: 'economy',
+    title: 'India Infrastructure Spending ₹111 Lakh Crore: Roads, Metros, Ports',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'tax-cuts-50k-relief',
+    slug: 'tax-cut-expectations-2026-50000-relief',
+    category: 'economy',
+    title: 'Tax Cut Expectations 2026: Will Modi Govt Deliver ₹50k Relief?',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'innovation-startup-150k-crore',
+    slug: 'india-innovation-startups-150000-crore-funding',
+    category: 'tech-business',
+    title: 'India Innovation Economy: Startups Raising ₹1.5L Cr',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'telecom-jio-airtel-war',
+    slug: 'telecom-war-jio-airtel-5g-tariff-hikes',
+    category: 'tech-business',
+    title: 'Telecom War: Jio vs Airtel - 5G, Tariff Hikes, ARPU Battle',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1556656793-08538906a9f8?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'public-private-capital-battle',
+    slug: 'public-private-capital-5-lakh-crore-psu',
+    category: 'economy',
+    title: 'Public vs Private Capital Battle: PSUs Getting ₹5L Cr',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'ai-factory-race-india',
+    slug: 'india-ai-factory-reliance-tata-adani-1-lakh-crore',
+    category: 'tech-business',
+    title: 'India's AI Factory Race: Reliance, Tata, Adani Investing ₹1L Cr',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'credit-gdp-ratio-58-percent',
+    slug: 'credit-gdp-ratio-58-percent-household-debt-risk',
+    category: 'economy',
+    title: 'India Credit-to-GDP Ratio Hits 58%: Household Debt Surging',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

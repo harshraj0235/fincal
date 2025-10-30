@@ -73,6 +73,33 @@ import {
   employmentChallenge2025
 } from './news-articles/economy/economy-analysis-2025';
 
+// NEW Economy/Tech Trending 2025 Articles (20 comprehensive articles)
+import {
+  indiaGdp7Percent,
+  aiCallCenterJobs,
+  exportsPushChallenges,
+  digitalRupeeDataLaw,
+  greenEconomyGreenwash,
+  itSectorRisks,
+  defenceTechBoom
+} from './news-articles/economy/economy-tech-trending-2025';
+
+import {
+  dataCenterExplosion,
+  workforceAutomation,
+  bankingSectorTransform,
+  stateEconomyDivide,
+  manufacturingBoomReal,
+  globalLayoffsImpact,
+  infrastructureSpending,
+  consumerTaxCuts,
+  innovationStartupEco,
+  telecomJioAirtelWar,
+  publicPrivateCapital,
+  aiFactoryRace,
+  creditGdpRisks
+} from './news-articles/economy/economy-remaining-13';
+
 // NEW Tech Business Articles (10 comprehensive Google News-optimized articles)
 import {
   aiEnterpriseAdoption,
@@ -202,6 +229,28 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'it-exports-slowdown-2025': itExportsSlowdown,
   'manufacturing-automation-2025': manufacturingAutomation,
   'tech-talent-shortage-2025': techTalentShortage,
+  
+  // Economy/Tech Trending 2025 - ALL 20 comprehensive articles
+  'india-gdp-7-percent-growth-fy26-test': indiaGdp7Percent,
+  'ai-chatbots-replacing-call-centre-2-lakh-jobs': aiCallCenterJobs,
+  'india-exports-1-trillion-target-challenges': exportsPushChallenges,
+  'digital-rupee-data-law-privacy-2026': digitalRupeeDataLaw,
+  'green-economy-15-lakh-crore-greenwashing': greenEconomyGreenwash,
+  'it-sector-200-billion-revenue-ai-recession-risk': itSectorRisks,
+  'defence-tech-spending-75000-crore-tata-lt': defenceTechBoom,
+  'data-center-boom-2-lakh-crore-yotta-airtel': dataCenterExplosion,
+  'workforce-automation-5-million-jobs-risk': workforceAutomation,
+  'banking-sector-fintech-50000-crore-disruption': bankingSectorTransform,
+  'state-economy-divide-maharashtra-tn-up-bihar': stateEconomyDivide,
+  'make-in-india-100-lakh-crore-30-delivered': manufacturingBoomReal,
+  'global-tech-layoffs-350000-india-it-impact': globalLayoffsImpact,
+  'infrastructure-spending-111-lakh-crore-lt-adani': infrastructureSpending,
+  'tax-cut-expectations-2026-50000-relief': consumerTaxCuts,
+  'india-innovation-startups-150000-crore-funding': innovationStartupEco,
+  'telecom-war-jio-airtel-5g-tariff-hikes': telecomJioAirtelWar,
+  'public-private-capital-5-lakh-crore-psu': publicPrivateCapital,
+  'india-ai-factory-reliance-tata-adani-1-lakh-crore': aiFactoryRace,
+  'credit-gdp-ratio-58-percent-household-debt-risk': creditGdpRisks,
   
   // Markets Trending 2025 - Dynamic market-based articles (10)
   'sensex-bear-phase-2025': sensexBearPhase2025,

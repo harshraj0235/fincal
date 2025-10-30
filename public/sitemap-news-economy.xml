@@ -166,5 +166,199 @@
     </news:news>
   </url>
   
+  <!-- Economy/Tech Trending 2025 - 10 Economy Articles -->
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-gdp-7-percent-growth-fy26-test</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India on Track for 7%+ GDP Growth - But Real Test Starts in 2026!</news:title>
+      <news:keywords>India GDP growth, economic forecast, FY26, recession risk</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/india-exports-1-trillion-target-challenges</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India Export Growth Slows to 5%: Can We Hit $1 Trillion by 2030?</news:title>
+      <news:keywords>India exports, 1 trillion target, FTA challenges, China competition</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/green-economy-15-lakh-crore-greenwashing</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Green Economy in India: ₹15 Lakh Cr Opportunity - or Greenwashing Trap?</news:title>
+      <news:keywords>green economy, renewable energy, greenwashing, ESG India</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/defence-tech-spending-75000-crore-tata-lt</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Defence Tech Spending Creating Manufacturing Boom: ₹75k Cr Orders</news:title>
+      <news:keywords>defence spending, Atmanirbhar Bharat, Tata, L&amp;T, HAL</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/workforce-automation-5-million-jobs-risk</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Workforce Automation Hitting 5 Million Indian Jobs by 2030</news:title>
+      <news:keywords>automation, job losses, AI robots, manufacturing retail</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/banking-sector-fintech-50000-crore-disruption</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Banking Sector Transformation: Fintech Eating ₹50k Cr Revenue</news:title>
+      <news:keywords>banking, fintech disruption, PhonePe, Paytm, digital payments</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/state-economy-divide-maharashtra-tn-up-bihar</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>State Economy Divide Widening: Maharashtra, TN Leading - UP, Bihar Lagging</news:title>
+      <news:keywords>state economy, regional disparity, GDP per capita, migration</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/make-in-india-100-lakh-crore-30-delivered</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Make in India's ₹100 Lakh Cr Dream: Only ₹30L Cr Delivered</news:title>
+      <news:keywords>Make in India, PLI, manufacturing, Atmanirbhar</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/infrastructure-spending-111-lakh-crore-lt-adani</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India Infrastructure Spending ₹111 Lakh Crore: Roads, Metros, Ports</news:title>
+      <news:keywords>infrastructure, PM Gati Shakti, roads, metros, ports</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/tax-cut-expectations-2026-50000-relief</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Tax Cut Expectations 2026: Will Modi Govt Deliver ₹50k Relief?</news:title>
+      <news:keywords>tax cuts, budget 2026, middle class relief, fiscal deficit</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/public-private-capital-5-lakh-crore-psu</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>Public vs Private Capital Battle: PSUs Getting ₹5L Cr</news:title>
+      <news:keywords>public investment, private sector, PSU, crowding out</news:keywords>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://moneycal.in/news/economy/credit-gdp-ratio-58-percent-household-debt-risk</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>en-IN</news:language>
+      </news:publication>
+      <news:publication_date>2025-10-30T10:00:00+05:30</news:publication_date>
+      <news:title>India Credit-to-GDP Ratio Hits 58%: Household Debt Surging</news:title>
+      <news:keywords>credit-to-GDP ratio, household debt, RBI warning, NPA cycle</news:keywords>
+    </news:news>
+  </url>
+  
 </urlset>
 
