@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { 
   BookOpen, Search, TrendingUp, Shield, CreditCard, Building2,
   Smartphone, Briefcase, Globe, Brain, ArrowRight, Star, Clock,
-  Target, Award, Users, Zap, ChevronRight, Filter, Sparkles
+  Target, Award, Users, Zap, ChevronRight, Filter, Sparkles, Wallet
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 
@@ -56,8 +56,125 @@ const LearnHub: React.FC = () => {
       estimatedHours: 5,
       difficulty: 'Beginner',
       color: 'from-blue-500 to-cyan-600',
-      status: 'coming-soon',
+      status: 'available',
       slug: 'savings-bank-products'
+    },
+    {
+      id: '11',
+      name: 'Loan Basics & Fundamentals',
+      nameHindi: 'लोन की बुनियादी बातें',
+      icon: <BookOpen className="w-8 h-8" />,
+      description: 'Understand loans: EMI, interest rates, CIBIL, eligibility, secured vs unsecured',
+      totalLessons: 20,
+      estimatedHours: 12,
+      difficulty: 'Beginner',
+      color: 'from-indigo-500 to-blue-600',
+      status: 'available',
+      slug: 'loans'
+    },
+    {
+      id: '12',
+      name: 'Home Loans Complete Guide',
+      nameHindi: 'होम लोन संपूर्ण गाइड',
+      icon: <Globe className="w-8 h-8" />,
+      description: 'Home loan eligibility, tax benefits, prepayment, balance transfer, documentation',
+      totalLessons: 20,
+      estimatedHours: 14,
+      difficulty: 'Intermediate',
+      color: 'from-orange-500 to-red-600',
+      status: 'available',
+      slug: 'home-loans'
+    },
+    {
+      id: '13',
+      name: 'Personal Loans Mastery',
+      nameHindi: 'पर्सनल लोन में महारत',
+      icon: <Wallet className="w-8 h-8" />,
+      description: 'Personal loan types, instant approval, interest rates, debt consolidation',
+      totalLessons: 21,
+      estimatedHours: 12,
+      difficulty: 'Beginner',
+      color: 'from-pink-500 to-rose-600',
+      status: 'available',
+      slug: 'personal-loans'
+    },
+    {
+      id: '14',
+      name: 'Vehicle Loans (Car, Bike)',
+      nameHindi: 'वाहन लोन (कार, बाइक)',
+      icon: <Target className="w-8 h-8" />,
+      description: 'Car loans, bike loans, interest rates, insurance, down payment strategies',
+      totalLessons: 16,
+      estimatedHours: 10,
+      difficulty: 'Beginner',
+      color: 'from-teal-500 to-cyan-600',
+      status: 'available',
+      slug: 'vehicle-loans'
+    },
+    {
+      id: '15',
+      name: 'Business Loans & MSME',
+      nameHindi: 'व्यवसाय लोन और एमएसएमई',
+      icon: <Briefcase className="w-8 h-8" />,
+      description: 'Business loans, MSME schemes, Mudra loan, working capital, startup financing',
+      totalLessons: 16,
+      estimatedHours: 11,
+      difficulty: 'Advanced',
+      color: 'from-purple-500 to-indigo-600',
+      status: 'available',
+      slug: 'business-loans'
+    },
+    {
+      id: '16',
+      name: 'Credit Cards Complete Guide',
+      nameHindi: 'क्रेडिट कार्ड संपूर्ण गाइड',
+      icon: <CreditCard className="w-8 h-8" />,
+      description: 'Credit card basics, rewards, EMI, interest charges, fraud protection, best cards',
+      totalLessons: 21,
+      estimatedHours: 13,
+      difficulty: 'Beginner',
+      color: 'from-yellow-500 to-amber-600',
+      status: 'available',
+      slug: 'credit-cards'
+    },
+    {
+      id: '17',
+      name: 'Credit Score & CIBIL',
+      nameHindi: 'क्रेडिट स्कोर और सिबिल',
+      icon: <Star className="w-8 h-8" />,
+      description: 'Check credit score free, improve CIBIL, dispute errors, loan approval impact',
+      totalLessons: 11,
+      estimatedHours: 7,
+      difficulty: 'Intermediate',
+      color: 'from-emerald-500 to-green-600',
+      status: 'available',
+      slug: 'credit-score'
+    },
+    {
+      id: '18',
+      name: 'Education Loans Guide',
+      nameHindi: 'शिक्षा लोन गाइड',
+      icon: <Users className="w-8 h-8" />,
+      description: 'Study in India/abroad, collateral-free loans, scholarships, tax benefits',
+      totalLessons: 11,
+      estimatedHours: 8,
+      difficulty: 'Intermediate',
+      color: 'from-blue-500 to-indigo-600',
+      status: 'available',
+      slug: 'education-loans'
+    },
+    {
+      id: '19',
+      name: 'Gold Loans Complete Guide',
+      nameHindi: 'गोल्ड लोन संपूर्ण गाइड',
+      icon: <Award className="w-8 h-8" />,
+      description: 'Gold loan basics, interest rates, best banks, valuation, repayment options',
+      totalLessons: 11,
+      estimatedHours: 7,
+      difficulty: 'Beginner',
+      color: 'from-yellow-500 to-orange-600',
+      status: 'available',
+      slug: 'gold-loans'
     },
     {
       id: '3',
