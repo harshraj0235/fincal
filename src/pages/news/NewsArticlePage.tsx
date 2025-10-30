@@ -284,7 +284,7 @@ const NewsArticlePage: React.FC = () => {
       <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
         {/* Check if CMS content is available */}
         {(() => {
-          const cmsContent = getArticleContent(article.id);
+          const cmsContent = getArticleContent(article.slug);
           if (cmsContent) {
             return <NewsGuideTemplate guide={cmsContent} />;
           }
