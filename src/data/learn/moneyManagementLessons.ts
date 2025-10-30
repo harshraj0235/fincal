@@ -65,12 +65,12 @@ export const moneyManagementLessons: LearnLesson[] = [
     slug: 'budgeting-how-to-track-income-expenses-india',
     title: 'Budgeting: How to Track Income & Expenses',
     titleHindi: 'बजट बनाना: आय और खर्चों को कैसे ट्रैक करें',
-    description: 'Master the art of budgeting with practical Indian examples, 50-30-20 rule, and effective expense tracking methods',
-    descriptionHindi: 'व्यावहारिक भारतीय उदाहरणों, 50-30-20 नियम और प्रभावी खर्च ट्रैकिंग विधियों के साथ बजट बनाने की कला में महारत हासिल करें',
+    description: 'Master the art of budgeting with practical Indian examples, 50-30-20 rule, 5 budgeting methods, and effective expense tracking',
+    descriptionHindi: 'व्यावहारिक भारतीय उदाहरणों, 50-30-20 नियम, 5 बजट विधियों और प्रभावी खर्च ट्रैकिंग के साथ बजट बनाने की कला में महारत हासिल करें',
     duration: '55 mins',
     difficulty: 'beginner',
-    tags: ['Budgeting', '50-30-20 Rule', 'Expense Tracking', 'Hindi'],
-    relatedCalculators: ['/calculators/budget-calculator', '/calculators/savings-calculator', '/calculators/expense-tracker'],
+    tags: ['Budgeting', '50-30-20 Rule', 'Expense Tracking', 'Zero-Based', 'Envelope Method', 'Hindi'],
+    relatedCalculators: ['/calculators/budget-calculator', '/calculators/budget-planner', '/calculators/expense-tracker'],
     order: 3
   },
   {
