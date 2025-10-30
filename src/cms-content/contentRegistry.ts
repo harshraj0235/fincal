@@ -349,6 +349,17 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'saurabh-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&q=80'
+  },
+
+  // NEW ECONOMY ARTICLES - 8 comprehensive Google News-optimized articles
+  {
+    id: 'india-gdp-growth-2025',
+    slug: 'india-gdp-growth-7-2-percent-fastest-economy-china',
+    category: 'economy',
+    title: 'India GDP Growth 7.2% Beats China - World\'s Fastest Growing Major Economy!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
   }
 ];
 

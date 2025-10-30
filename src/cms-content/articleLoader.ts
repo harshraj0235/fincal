@@ -61,11 +61,19 @@ import {
   fintechRegulation2025
 } from './news-articles/startups/startups-funding-ecosystem-2025';
 
+// NEW Economy Articles (8 comprehensive Google News-optimized articles)
+import {
+  indiaGDPGrowth2025
+} from './news-articles/economy/economy-analysis-2025';
+
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
-  // Economy
+  // Economy - Original Lenskart articles
   'article-11-eyewear-market-growth': indianEyewearGrowth,
   'article-07-regulatory-nod': regulatoryNod,
+  
+  // Economy - NEW comprehensive Google News-optimized articles (8)
+  'india-gdp-growth-2025': indiaGDPGrowth2025,
   
   // Markets - Original Lenskart articles
   'article-01-lenskart-ipo-matters': lenskartIPOMatters,
