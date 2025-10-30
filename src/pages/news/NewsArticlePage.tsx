@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { 
-  ArrowLeft,
+  ArrowLeft, 
   ArrowRight,
   Calendar, 
   Clock, 
@@ -257,15 +257,15 @@ const NewsArticlePage: React.FC = () => {
               <div className="flex items-center gap-1.5 sm:gap-2 text-neutral-700">
                 <Eye className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 flex-shrink-0" />
                 <span className="font-medium">{(article.views || 0).toLocaleString()} views</span>
-              </div>
             </div>
-            
+          </div>
+
             {/* Latest Update row (dynamic) */}
             <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm border-t border-neutral-200 pt-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 text-green-700 rounded-full font-semibold">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                 <span>Latest Update • {latestUpdate}</span>
-              </div>
+            </div>
               <span className="text-neutral-400">•</span>
               <span className="text-neutral-600">
                 <strong className="text-neutral-900">Last Modified:</strong> {formattedModifiedDate}
@@ -366,7 +366,7 @@ const NewsArticlePage: React.FC = () => {
                 <User className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-400" />
                 About the Author
               </h3>
-            </div>
+              </div>
             <div className="p-6 sm:p-8 md:p-10 bg-neutral-900">
               <Link
                 to={`/news/author/${article.authorId}`}
@@ -483,8 +483,14 @@ const NewsArticlePage: React.FC = () => {
 
           {/* Sidebar - Google Approved Features (Desktop Only) */}
           <div className="hidden lg:block lg:col-span-4 space-y-6">
-            {/* Trending News */}
-            <TrendingNewsSidebar />
+            {/* Context-Aware Trending News */}
+            <TrendingNewsSidebar 
+              currentArticle={{
+                id: article.id,
+                title: article.title,
+                category: article.category
+              }}
+            />
             
             {/* Newsletter Subscribe */}
             <NewsletterSubscribe />
