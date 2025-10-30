@@ -26,5 +26,10 @@ export const newsCategories: NewsCategory[] = [
     name: 'Economy',
     description: 'Economic news, policies, and macroeconomic trends',
   },
+  {
+    slug: 'tech-business',
+    name: 'Tech Business',
+    description: 'AI, automation, digital transformation, and technology trends',
+  },
 ];
 

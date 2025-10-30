@@ -73,6 +73,11 @@ import {
   employmentChallenge2025
 } from './news-articles/economy/economy-analysis-2025';
 
+// NEW Tech Business Articles (10 comprehensive Google News-optimized articles)
+import {
+  aiEnterpriseAdoption
+} from './news-articles/tech-business/tech-business-2025';
+
 // Article content map - maps article IDs to their full content
 export const articleContentMap: Record<string, NewsGuideSection> = {
   // Economy - Original Lenskart articles
@@ -134,6 +139,9 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'edtech-crisis-2025': edtechCrisis2025,
   'b2b-saas-exports-2025': b2bSaasExports,
   'fintech-regulation-2025': fintechRegulation2025,
+  
+  // Tech Business - NEW comprehensive Google News-optimized articles (10)
+  'ai-enterprise-adoption-2025': aiEnterpriseAdoption,
 };
 
 /**

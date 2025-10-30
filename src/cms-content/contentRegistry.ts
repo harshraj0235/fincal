@@ -423,6 +423,17 @@ export const contentRegistry: NewsArticleMetadata[] = [
     authorId: 'saurabh-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=630&fit=crop&q=80'
+  },
+
+  // NEW TECH BUSINESS ARTICLES - 10 comprehensive Google News-optimized articles
+  {
+    id: 'ai-enterprise-adoption-2025',
+    slug: 'ai-adoption-indian-enterprises-50000-crore-tcs-infosys-wipro',
+    category: 'tech-business',
+    title: 'Indian Companies Spending ₹50,000 Crore on AI - ChatGPT Revolution Hits Enterprises!',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-10-30T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
   }
 ];
 
