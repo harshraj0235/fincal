@@ -218,16 +218,16 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'india-b2b-saas-exports-12-billion-freshworks-postman': b2bSaasExports,
   'fintech-regulation-rbi-phonepe-paytm-razorpay-compliance': fintechRegulation2025,
   
-  // Tech Business - NEW comprehensive Google News-optimized articles (10 - using SLUGS as keys)
-  'ai-enterprise-adoption-india-50000-crore-chatgpt-automation': aiEnterpriseAdoption,
+  // Tech Business - NEW comprehensive Google News-optimized articles (10 - EXACT SLUGS from contentRegistry)
+  'ai-adoption-indian-enterprises-50000-crore-tcs-infosys-wipro': aiEnterpriseAdoption,
   '5g-india-rollout-500000-towers-jio-airtel-monetization': fiveGRolloutIndia,
-  'it-services-automation-tcs-infosys-margins-ai-threat': itServicesAutomation,
-  'india-semiconductor-mission-76000-crore-chip-fabs': semiconductorMission,
+  'it-services-automation-tcs-infosys-margins-compression': itServicesAutomation,
+  'india-semiconductor-mission-76000-crore-micron-tata-chip-fabs': semiconductorMission,
   'upi-global-expansion-10-countries-200-billion-opportunity': upiGlobalExpansion,
   'cloud-computing-india-1-lakh-crore-aws-azure-google': cloudAdoptionIndia,
   'cybersecurity-india-35000-crore-breaches-skills-shortage': cybersecurityIndia,
   'it-exports-slowdown-200-billion-us-recession-automation': itExportsSlowdown,
-  'manufacturing-automation-industry-4-robots-iot-ai': manufacturingAutomation,
+  'manufacturing-automation-industry-4-robots-iot-tata-mahindra': manufacturingAutomation,
   'tech-talent-shortage-india-ai-ml-cloud-cybersecurity-jobs': techTalentShortage,
   
   // Economy/Tech Trending 2025 - ALL 20 comprehensive articles
@@ -252,28 +252,29 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'india-ai-factory-reliance-tata-adani-1-lakh-crore': aiFactoryRace,
   'credit-gdp-ratio-58-percent-household-debt-risk': creditGdpRisks,
   
-  // Markets Trending 2025 - Dynamic market-based articles (10 - using SLUGS as keys)
+  // Markets Trending 2025 - Dynamic market-based articles (10 - EXACT SLUGS from contentRegistry)
   'sensex-plunges-500-points-india-bear-phase-analysis': sensexBearPhase2025,
-  'rupee-dollar-88-43-currency-crash-portfolio-risk': rupeeSlips88Crisis,
-  'metal-stocks-collapse-global-demand-commodity-bet-fail': metalStocksCollapse,
-  'top-stock-picks-october-30-2025-buy-wishlist': topBuyPicks2025,
+  'rupee-slips-88-43-dollar-currency-crash-portfolio-risk': rupeeSlips88Crisis,
+  'metal-stocks-collapse-global-demand-china-slowdown': metalStocksCollapse,
+  'top-stock-picks-october-2025-hdfc-reliance-tcs': topBuyPicks2025,
   'sebi-fee-cuts-amc-selloff-mutual-fund-impact': sebiFeeCutImpact,
-  'ipo-season-explodes-india-8-billion-yearend-blitz': ipoSeasonExplodes,
-  'foreign-money-india-two-edged-sword-markets': foreignMoneyDoubleEdged,
+  'ipo-season-india-8-billion-hyundai-swiggy-ola': ipoSeasonExplodes,
+  'foreign-money-india-fii-inflows-two-edged-sword': foreignMoneyDoubleEdged,
   'small-caps-surge-big-caps-stumble-market-rotation': smallCapRotation,
-  'us-interest-rate-hike-india-crash-trigger': usRateHikeCrash,
+  'us-interest-rate-hike-india-market-crash-risk': usRateHikeCrash,
+  'gold-vs-equities-india-investment-next-five-years': goldVsEquities2025,
   
-  // Business Analysis Trending 2025 - Dynamic business sector articles (10 - using SLUGS as keys)
-  'honda-india-key-growth-market-auto-sector-impact': hondaIndiaGrowth,
-  'india-corporate-debt-70-lakh-crore-boom-bubble': corporateDebtBomb,
-  'manufacturing-3-india-states-factory-hubs-future': manufacturing3States,
-  'retail-disruption-quick-commerce-eating-market-share': retailDisruption,
-  'ev-push-trap-auto-suppliers-hidden-costs-margins': evSupplierTrap,
-  'csr-esg-transformation-indian-businesses-playbook': csrToEsg,
-  'supply-chains-india-china-plus-one-opportunity': supplyChainIndia,
-  'banks-fintech-india-financial-sector-2028-transformation': banksVsFintech2028,
-  'real-estate-india-risk-sector-12-lakh-crore-debt': realEstateRisk,
-  'infrastructure-spending-delivery-mechanism-failing-11-lakh-stuck': infraSpendingDelivery,
+  // Business Analysis Trending 2025 - Dynamic business sector articles (10 - EXACT SLUGS from contentRegistry)
+  'honda-motors-india-key-growth-market-auto-sector': hondaIndiaGrowth,
+  'india-corporate-debt-time-bomb-70-lakh-crore': corporateDebtBomb,
+  'manufacturing-3-india-states-factory-hubs': manufacturing3States,
+  'retail-giants-disrupted-quick-commerce-blinkit-zepto': retailDisruption,
+  'ev-push-trap-auto-suppliers-hidden-costs': evSupplierTrap,
+  'csr-to-esg-indian-businesses-playbook-carbon-neutral': csrToEsg,
+  'global-supply-chains-india-china-plus-one-ready': supplyChainIndia,
+  'banks-vs-fintech-india-financial-sector-2028': banksVsFintech2028,
+  'real-estate-india-next-big-risk-sector-debt': realEstateRisk,
+  'infrastructure-spending-delivery-mechanism-failing': infraSpendingDelivery,
   
   // Startups Trending 2025 - Dynamic startup ecosystem articles (10 - EXACT SLUGS from contentRegistry)
   'campus-startups-india-next-unicorn-from-hostel': campusStartupsRise,
