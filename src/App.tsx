@@ -419,6 +419,9 @@ const MudraLoan = lazy(() => import('./pages/learn/business-loans/MudraLoan'));
 const WorkingCapitalLoan = lazy(() => import('./pages/learn/business-loans/WorkingCapitalLoan'));
 const StartupLoan = lazy(() => import('./pages/learn/business-loans/StartupLoan'));
 
+// Learn Platform - Main Hub + Categories
+const LearnHub = lazy(() => import('./pages/LearnHub'));
+
 // Learn Platform - Money Management & Budgeting (8 lessons) - NEW!
 const MoneyManagementHub = lazy(() => import('./pages/learn/money-management/index'));
 const WhatIsMoney = lazy(() => import('./pages/learn/money-management/WhatIsMoney'));
@@ -811,6 +814,9 @@ function App() {
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/blog/write" element={<WriteBlog />} />
                 <Route path="/blog/category/banking" element={<BankingKnowledge />} />
+                
+                {/* Learn Platform - Main Hub */}
+                <Route path="/learn" element={<LearnHub />} />
                 
                 {/* Learn Platform - Money Management & Budgeting (8 lessons) - NEW! */}
                 <Route path="/learn/money-management" element={<MoneyManagementHub />} />

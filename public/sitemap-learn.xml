@@ -4,9 +4,17 @@
   <!-- 
     MoneyCal Learn Platform - Educational Content Sitemap
     Last Updated: 2025-10-30
-    Total Learn Articles: 6 (1 hub + 5 lessons)
+    Total Learn Articles: 7 (1 main hub + 1 category hub + 5 lessons)
     Category: Money Management & Budgeting (8 lessons planned)
   -->
+  
+  <!-- Learn Main Hub Page -->
+  <url>
+    <loc>https://moneycal.in/learn</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
   
   <!-- Money Management & Budgeting Hub -->
   <url>
