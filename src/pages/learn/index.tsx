@@ -134,11 +134,11 @@ const LearnHome: React.FC = () => {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                       <div className="text-white/70 text-sm mb-1">Categories</div>
-                      <div className="text-white text-2xl font-bold">9</div>
+                      <div className="text-white text-2xl font-bold">{loanCategories.length}</div>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                      <div className="text-white/70 text-sm mb-1">Calculators</div>
-                      <div className="text-white text-2xl font-bold">50+</div>
+                      <div className="text-white/70 text-sm mb-1">Lessons</div>
+                      <div className="text-white text-2xl font-bold">200+</div>
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                       <div className="text-white/70 text-sm mb-1">Languages</div>
@@ -190,7 +190,7 @@ const LearnHome: React.FC = () => {
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
+                        transition={{ delay: index * 0.05 }}
                         className={`relative bg-white rounded-2xl p-6 shadow-lg border-2 transition-all duration-300 ${
                           activeCard === index 
                             ? 'border-purple-500 shadow-xl scale-105' 
@@ -200,15 +200,27 @@ const LearnHome: React.FC = () => {
                         <div className="flex items-start justify-between mb-4">
                           <div className="text-4xl">{category.icon}</div>
                           <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-                            {category.id === 'loans' ? '20' : category.lessons.length} lessons
+                            {category.lessonsCount} lessons
                           </span>
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">
                           {category.name}
                         </h3>
+                        <p className="text-xs text-gray-500 mb-2">{category.nameHindi}</p>
                         <p className="text-sm text-gray-600 mb-4">
                           {category.description}
                         </p>
+                        <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
+                          <span>⏱️ {category.duration}</span>
+                          <span className={`px-2 py-1 rounded-full ${
+                            category.level === 'Beginner' ? 'bg-green-100 text-green-700' :
+                            category.level === 'Intermediate' ? 'bg-yellow-100 text-yellow-700' :
+                            category.level === 'Advanced' ? 'bg-red-100 text-red-700' :
+                            'bg-blue-100 text-blue-700'
+                          }`}>
+                            {category.level}
+                          </span>
+                        </div>
                         <div className="flex items-center text-purple-600 font-semibold text-sm">
                           Start Learning →
                         </div>

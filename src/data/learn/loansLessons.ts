@@ -179,12 +179,15 @@ export const allLoansLessons = [
 // Category structure for navigation
 export const loanCategories = [
   {
-    id: 'basics',
+    id: 'loans',
     name: 'Loan Basics',
     nameHindi: 'लोन बेसिक्स',
     icon: '📚',
     lessons: loanBasicsLessons,
-    description: 'Fundamental concepts of loans, EMI, interest rates'
+    description: 'Fundamental concepts of loans, EMI, interest rates',
+    lessonsCount: 20,
+    duration: '8h',
+    level: 'Beginner'
   },
   {
     id: 'home-loans',
@@ -192,7 +195,10 @@ export const loanCategories = [
     nameHindi: 'होम लोन',
     icon: '🏠',
     lessons: homeLoansLessons,
-    description: 'Complete guide to housing finance and home loans'
+    description: 'Complete guide to housing finance and home loans',
+    lessonsCount: 20,
+    duration: '10h',
+    level: 'Intermediate'
   },
   {
     id: 'personal-loans',
@@ -200,7 +206,10 @@ export const loanCategories = [
     nameHindi: 'पर्सनल लोन',
     icon: '💳',
     lessons: personalLoansLessons,
-    description: 'Everything about unsecured personal loans'
+    description: 'Everything about unsecured personal loans',
+    lessonsCount: 20,
+    duration: '8h',
+    level: 'Beginner'
   },
   {
     id: 'vehicle-loans',
@@ -208,7 +217,10 @@ export const loanCategories = [
     nameHindi: 'वाहन लोन',
     icon: '🚗',
     lessons: [],
-    description: 'Car and two-wheeler loan guides'
+    description: 'Car and two-wheeler loan guides',
+    lessonsCount: 15,
+    duration: '6h',
+    level: 'Beginner'
   },
   {
     id: 'education-loans',
@@ -216,7 +228,10 @@ export const loanCategories = [
     nameHindi: 'शिक्षा लोन',
     icon: '🎓',
     lessons: [],
-    description: 'Student loans for India and abroad'
+    description: 'Student loans for India and abroad',
+    lessonsCount: 10,
+    duration: '5h',
+    level: 'Intermediate'
   },
   {
     id: 'business-loans',
@@ -224,7 +239,10 @@ export const loanCategories = [
     nameHindi: 'बिजनेस लोन',
     icon: '💼',
     lessons: [],
-    description: 'MSME and business financing'
+    description: 'MSME and business financing',
+    lessonsCount: 15,
+    duration: '7h',
+    level: 'Advanced'
   },
   {
     id: 'gold-loans',
@@ -232,7 +250,10 @@ export const loanCategories = [
     nameHindi: 'गोल्ड लोन',
     icon: '🏆',
     lessons: [],
-    description: 'Quick loans against gold'
+    description: 'Quick loans against gold',
+    lessonsCount: 10,
+    duration: '4h',
+    level: 'Beginner'
   },
   {
     id: 'credit-cards',
@@ -240,7 +261,10 @@ export const loanCategories = [
     nameHindi: 'क्रेडिट कार्ड',
     icon: '💳',
     lessons: [],
-    description: 'Credit card usage and management'
+    description: 'Credit card usage and management',
+    lessonsCount: 20,
+    duration: '8h',
+    level: 'Beginner'
   },
   {
     id: 'credit-score',
@@ -248,7 +272,109 @@ export const loanCategories = [
     nameHindi: 'क्रेडिट स्कोर',
     icon: '📊',
     lessons: [],
-    description: 'CIBIL score and credit reports'
+    description: 'CIBIL score and credit reports',
+    lessonsCount: 10,
+    duration: '4h',
+    level: 'Beginner'
+  },
+  {
+    id: 'money-management',
+    name: 'Money Management',
+    nameHindi: 'धन प्रबंधन',
+    icon: '💰',
+    lessons: [],
+    description: 'Budgeting, emergency fund, financial habits, and smart money management',
+    lessonsCount: 8,
+    duration: '6h',
+    level: 'Beginner'
+  },
+  {
+    id: 'savings-bank-products',
+    name: 'Savings & Bank Products',
+    nameHindi: 'बचत और बैंक उत्पाद',
+    icon: '🏦',
+    lessons: [],
+    description: 'FD, RD, savings accounts, and bank product comparison',
+    lessonsCount: 8,
+    duration: '5h',
+    level: 'Beginner'
+  },
+  {
+    id: 'investing-wealth',
+    name: 'Investing & Wealth Creation',
+    nameHindi: 'निवेश और संपत्ति निर्माण',
+    icon: '📈',
+    lessons: [],
+    description: 'Stocks, mutual funds, SIPs, asset allocation for long-term wealth',
+    lessonsCount: 10,
+    duration: '8h',
+    level: 'Mixed'
+  },
+  {
+    id: 'insurance-retirement',
+    name: 'Insurance, Retirement & Estate',
+    nameHindi: 'बीमा, सेवानिवृत्ति और संपत्ति',
+    icon: '🛡️',
+    lessons: [],
+    description: 'Life, health insurance, NPS, retirement planning, and estate basics',
+    lessonsCount: 7,
+    duration: '6h',
+    level: 'Intermediate'
+  },
+  {
+    id: 'taxation-compliance',
+    name: 'Taxation & Compliance',
+    nameHindi: 'कर और अनुपालन',
+    icon: '📋',
+    lessons: [],
+    description: 'Income tax, 80C deductions, ITR filing, and tax optimization',
+    lessonsCount: 7,
+    duration: '5h',
+    level: 'Intermediate'
+  },
+  {
+    id: 'fintech-digital-payments',
+    name: 'FinTech & Digital Payments',
+    nameHindi: 'फिनटेक और डिजिटल भुगतान',
+    icon: '📱',
+    lessons: [],
+    description: 'UPI, digital wallets, online banking, and cybersecurity',
+    lessonsCount: 6,
+    duration: '4h',
+    level: 'Beginner'
+  },
+  {
+    id: 'business-finance-entrepreneurship',
+    name: 'Business Finance & Entrepreneurship',
+    nameHindi: 'व्यवसाय वित्त और उद्यमिता',
+    icon: '🚀',
+    lessons: [],
+    description: 'Startup funding, business loans, cash flow, scaling strategies',
+    lessonsCount: 7,
+    duration: '6h',
+    level: 'Advanced'
+  },
+  {
+    id: 'advanced-specialised-finance',
+    name: 'Advanced Topics & Specialised Finance',
+    nameHindi: 'उन्नत विषय और विशेष वित्त',
+    icon: '⚡',
+    lessons: [],
+    description: 'Real estate, commodities, forex, global markets, derivatives',
+    lessonsCount: 7,
+    duration: '7h',
+    level: 'Advanced'
+  },
+  {
+    id: 'behavioural-finance-money-psychology',
+    name: 'Behavioural Finance & Money Psychology',
+    nameHindi: 'व्यवहार वित्त और पैसे की मनोविज्ञान',
+    icon: '🧠',
+    lessons: [],
+    description: 'Money mindset, biases, habits, emotional spending control',
+    lessonsCount: 7,
+    duration: '5h',
+    level: 'Mixed'
   }
 ];
 
