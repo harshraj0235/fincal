@@ -9,6 +9,17 @@ import {
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 
+// Import all lesson data for comprehensive search
+import { moneyManagementLessons } from '../../data/learn/moneyManagementLessons';
+import { savingsBankLessons } from '../../data/learn/savingsBankLessons';
+import { investingLessons } from '../../data/learn/investingLessons';
+import { insuranceRetirementLessons } from '../../data/learn/insuranceRetirementLessons';
+import { taxationLessons } from '../../data/learn/taxationLessons';
+import { fintechLessons } from '../../data/learn/fintechLessons';
+import { behaviouralFinanceLessons } from '../../data/learn/behaviouralFinanceLessons';
+import { businessFinanceLessons } from '../../data/learn/businessFinanceLessons';
+import { advancedFinanceLessons } from '../../data/learn/advancedFinanceLessons';
+
 /**
  * MoneyCal Learn - Premium Financial Education Platform
  * 18 Categories | 200+ Comprehensive Lessons
@@ -31,11 +42,132 @@ interface Category {
   featured?: boolean;
 }
 
+interface SearchableLesson {
+  id: string;
+  slug: string;
+  title: string;
+  titleHindi: string;
+  description: string;
+  tags: string[];
+  category: string;
+  categoryIcon: string;
+  route: string;
+  difficulty: string;
+  duration: string;
+}
+
 const LearnHome: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
   const [showFilters, setShowFilters] = useState(false);
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+  const [showSearchResults, setShowSearchResults] = useState(false);
+
+  // Comprehensive lesson database for search (ALL lessons from all categories)
+  const allLessons: SearchableLesson[] = useMemo(() => {
+    const lessons: SearchableLesson[] = [];
+    
+    // Money Management
+    moneyManagementLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'Money Management',
+        categoryIcon: '💰',
+        route: `/learn/money-management/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    // Savings & Bank
+    savingsBankLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'Savings & Bank Products',
+        categoryIcon: '🏦',
+        route: `/learn/savings-bank-products/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    // Investing
+    investingLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'Investing & Wealth',
+        categoryIcon: '📈',
+        route: `/learn/investing-wealth/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    // Insurance & Retirement
+    insuranceRetirementLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'Insurance & Retirement',
+        categoryIcon: '🛡️',
+        route: `/learn/insurance-retirement/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    // Taxation
+    taxationLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'Taxation & Compliance',
+        categoryIcon: '📋',
+        route: `/learn/taxation-compliance/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    // FinTech
+    fintechLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'FinTech & Digital Payments',
+        categoryIcon: '💳',
+        route: `/learn/fintech-digital-payments/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    // Behavioural Finance
+    behaviouralFinanceLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'Behavioural Finance',
+        categoryIcon: '🧠',
+        route: `/learn/behavioural-finance-money-psychology/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    // Business Finance
+    businessFinanceLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'Business Finance',
+        categoryIcon: '💼',
+        route: `/learn/business-finance-entrepreneurship/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    // Advanced Finance
+    advancedFinanceLessons.forEach(lesson => {
+      lessons.push({
+        ...lesson,
+        category: 'Advanced Finance',
+        categoryIcon: '🎓',
+        route: `/learn/advanced-specialised-finance/${lesson.slug}`,
+        difficulty: lesson.difficulty
+      });
+    });
+
+    return lessons;
+  }, []);
 
   // All 18 Categories with Complete Data
   const allCategories: Category[] = [
@@ -284,7 +416,7 @@ const LearnHome: React.FC = () => {
     }
   ];
 
-  // Advanced Search & Filter Logic
+  // Advanced Search & Filter Logic - Categories
   const filteredCategories = useMemo(() => {
     return allCategories.filter(category => {
       const searchLower = searchQuery.toLowerCase();
@@ -299,6 +431,22 @@ const LearnHome: React.FC = () => {
       return matchesSearch && matchesLevel;
     });
   }, [searchQuery, selectedLevel, allCategories]);
+
+  // Powerful Lesson-Level Search (searches through ALL lesson content)
+  const searchResults = useMemo(() => {
+    if (!searchQuery || searchQuery.trim().length < 2) return [];
+    
+    const searchLower = searchQuery.toLowerCase();
+    return allLessons.filter(lesson => {
+      return (
+        lesson.title.toLowerCase().includes(searchLower) ||
+        lesson.titleHindi.includes(searchQuery) ||
+        lesson.description.toLowerCase().includes(searchLower) ||
+        lesson.tags.some(tag => tag.toLowerCase().includes(searchLower)) ||
+        lesson.category.toLowerCase().includes(searchLower)
+      );
+    }).slice(0, 12); // Limit to 12 most relevant results
+  }, [searchQuery, allLessons]);
 
   const stats = {
     totalCategories: allCategories.length,
@@ -468,11 +616,98 @@ const LearnHome: React.FC = () => {
               {searchQuery && (
                 <div className="mt-4 p-3 bg-blue-50 rounded-lg">
                   <p className="text-sm text-blue-900">
-                    <strong>{filteredCategories.length}</strong> categor{filteredCategories.length === 1 ? 'y' : 'ies'} found matching "<strong>{searchQuery}</strong>"
+                    <strong>{searchResults.length}</strong> lesson{searchResults.length === 1 ? '' : 's'} + <strong>{filteredCategories.length}</strong> categor{filteredCategories.length === 1 ? 'y' : 'ies'} found matching "<strong>{searchQuery}</strong>"
                   </p>
                 </div>
               )}
             </motion.div>
+
+            {/* Lesson-Level Search Results (Priority Display) */}
+            {searchQuery && searchResults.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-8 border-2 border-purple-200"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <Zap className="w-6 h-6 text-purple-600" />
+                  📚 Matching Lessons ({searchResults.length})
+                </h3>
+                <p className="text-sm text-gray-600 mb-6">
+                  Click any lesson below to start learning immediately
+                </p>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {searchResults.map((lesson, index) => (
+                    <Link 
+                      key={lesson.id} 
+                      to={lesson.route}
+                      className="group"
+                    >
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: index * 0.05 }}
+                        className="bg-white rounded-xl p-5 shadow-md hover:shadow-xl transition-all border-2 border-transparent hover:border-purple-400 h-full flex flex-col"
+                      >
+                        {/* Category Badge */}
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-2xl">{lesson.categoryIcon}</span>
+                          <div className="flex-1">
+                            <div className="text-xs font-semibold text-purple-600">{lesson.category}</div>
+                            <div className={`text-xs px-2 py-0.5 rounded-full inline-block ${
+                              lesson.difficulty === 'beginner' ? 'bg-green-100 text-green-700' :
+                              lesson.difficulty === 'intermediate' ? 'bg-yellow-100 text-yellow-700' :
+                              'bg-red-100 text-red-700'
+                            }`}>
+                              {lesson.difficulty.charAt(0).toUpperCase() + lesson.difficulty.slice(1)}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Lesson Title */}
+                        <h4 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                          {lesson.title}
+                        </h4>
+                        <p className="text-xs text-gray-500 mb-3 italic">{lesson.titleHindi}</p>
+
+                        {/* Description */}
+                        <p className="text-sm text-gray-600 mb-4 line-clamp-2 flex-1">
+                          {lesson.description}
+                        </p>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-1 mb-3">
+                          {lesson.tags.slice(0, 3).map((tag, i) => (
+                            <span key={i} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Footer */}
+                        <div className="flex items-center justify-between text-sm pt-3 border-t border-gray-200">
+                          <span className="text-gray-600 flex items-center gap-1">
+                            <Clock className="w-4 h-4" />
+                            {lesson.duration}
+                          </span>
+                          <span className="text-purple-600 font-semibold group-hover:gap-2 flex items-center gap-1 transition-all">
+                            Start Now
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </span>
+                        </div>
+                      </motion.div>
+                    </Link>
+                  ))}
+                </div>
+
+                {searchResults.length === 12 && (
+                  <p className="text-center text-sm text-gray-600 mt-4">
+                    Showing top 12 results. Refine your search for more specific lessons.
+                  </p>
+                )}
+              </motion.div>
+            )}
           </div>
         </section>
 
