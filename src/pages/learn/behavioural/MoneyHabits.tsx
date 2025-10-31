@@ -347,13 +347,13 @@ const MoneyHabits: React.FC = () => {
                   habit: 'Not Tracking Expenses (Money disappears mysteriously)',
                   example: 'Month starts with ₹50K salary. Month ends with ₹3K in account. "Where did ₹47K go??" No idea!',
                   fix: `Track for apenas 1 month. Note every expense (coffee ₹100, Uber ₹200, online shopping ₹3K). You'll be shocked! Awareness = control.`,
-                  impact: 'Tracked expenses = 20-30% reduction automatically. On ₹50K expenses, that's ₹10-15K saved monthly = ₹1.2-1.8L/year!'
+                  impact: `Tracked expenses = 20-30% reduction automatically. On ₹50K expenses, that's ₹10-15K saved monthly = ₹1.2-1.8L/year!`
                 },
                 {
                   habit: 'Credit Card Minimum Payment Trap',
                   example: 'Outstanding ₹1L. Paying minimum ₹2K/month. Feels affordable pero ₹98K debt grows at 40%/year! Takes 10 years + ₹3L interest to clear!',
                   fix: `ALWAYS pay full amount. Credit card is for convenience + rewards, not loan. Can't pay full? You're living beyond means - cut expenses!`,
-                  impact: '₹1L card debt @ 40% for 5 years = ₹5.4L repaid! That ₹4.4L interest could've been ₹15L wealth if invested in SIP instead.'
+                  impact: `₹1L card debt @ 40% for 5 years = ₹5.4L repaid! That ₹4.4L interest could've been ₹15L wealth if invested in SIP instead.`
                 },
                 {
                   habit: `Subscriptions You Don't Use (₹3-5K/month drain)`,
