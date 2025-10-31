@@ -332,7 +332,7 @@ const MoneyHabits: React.FC = () => {
                   impact: 'Lifestyle inflation is #1 reason people earning ₹1L/month have zero savings while people earning ₹50K have ₹10L invested.'
                 },
                 {
-                  habit: 'Impulse Buying (Saw sale, bought ₹15K shoes you don\'t need)',
+                  habit: `Impulse Buying (Saw sale, bought ₹15K shoes you don't need)`,
                   example: 'Flipkart Big Billion Days. "50% off" on ₹8K laptop bag. Bought apenas porque discount. Used apenas twice. ₹8K wasted.',
                   fix: '30-Day Rule: Want something? Wait 30 days. Still want it? Buy. 80% times, urge disappears in 30 days. Saves lakhs annually!',
                   impact: `Indians waste ₹2-5K monthly on impulse buys. That's ₹24-60K/year. Invested for 15 years = ₹6-15 lakh wealth lost!`
@@ -352,7 +352,7 @@ const MoneyHabits: React.FC = () => {
                 {
                   habit: 'Credit Card Minimum Payment Trap',
                   example: 'Outstanding ₹1L. Paying minimum ₹2K/month. Feels affordable pero ₹98K debt grows at 40%/year! Takes 10 years + ₹3L interest to clear!',
-                  fix: 'ALWAYS pay full amount. Credit card is for convenience + rewards, not loan. Can\'t pay full? You\'re living beyond means - cut expenses!',
+                  fix: `ALWAYS pay full amount. Credit card is for convenience + rewards, not loan. Can't pay full? You're living beyond means - cut expenses!`,
                   impact: '₹1L card debt @ 40% for 5 years = ₹5.4L repaid! That ₹4.4L interest could've been ₹15L wealth if invested in SIP instead.'
                 },
                 {
