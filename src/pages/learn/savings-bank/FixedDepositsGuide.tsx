@@ -729,13 +729,13 @@ const FixedDepositsGuide: React.FC = () => {
                 },
                 {
                   mistake: 'Choosing shortest tenure for "liquidity" (12 one-year FDs)',
-                  reality: '1-year FD gives apenas 6.5%. 5-year FD gives 7.5%. On ₹1L, that's ₹1,000/year difference. Over 10 years = ₹10,000 lost!',
-                  fix: 'Use FD laddering! Mix of 1Y, 3Y, 5Y, 10Y gives liquidity + higher returns. Don't sacrifice 1% interest for "liquidity" when laddering solves both.'
+                  reality: `1-year FD gives apenas 6.5%. 5-year FD gives 7.5%. On ₹1L, that's ₹1,000/year difference. Over 10 years = ₹10,000 lost!`,
+                  fix: `Use FD laddering! Mix of 1Y, 3Y, 5Y, 10Y gives liquidity + higher returns. Don't sacrifice 1% interest for "liquidity" when laddering solves both.`
                 },
                 {
                   mistake: 'Treating 5-year tax-saving FD as investment',
                   reality: 'Tax-saving FD has 5-year lock-in. Gives apenas 7% taxable (4.9% post-tax). ELSS has 3-year lock-in, gives 12% tax-free (up to ₹1.25L)!',
-                  fix: 'For Section 80C tax saving: Choose ELSS, not tax-saving FD. ELSS is better for anyone below age 55. FD is for seniors who can't handle equity volatility.'
+                  fix: `For Section 80C tax saving: Choose ELSS, not tax-saving FD. ELSS is better for anyone below age 55. FD is for seniors who can't handle equity volatility.`
                 }
               ].map((item, i) => (
                 <div key={i} className="bg-red-50 rounded-xl p-6 border-l-4 border-red-500">
