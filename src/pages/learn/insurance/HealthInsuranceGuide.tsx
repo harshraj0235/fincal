@@ -260,7 +260,7 @@ const HealthInsuranceGuide: React.FC = () => {
                   </tr>
                   <tr className="border-b">
                     <td className="p-3 font-semibold">Best For</td>
-                    <td className="p-3 text-center">Young families (kids < 18, parents < 60)</td>
+                    <td className="p-3 text-center">Young families (kids &lt; 18, parents &lt; 60)</td>
                     <td className="p-3 text-center">Seniors, chronic conditions, large families</td>
                   </tr>
                   <tr className="border-b bg-gray-50">
