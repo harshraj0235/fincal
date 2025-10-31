@@ -201,7 +201,7 @@ const Section80CGuide: React.FC = () => {
                   return: '5-7% (traditional), -5% to 0% (term)',
                   lock: 'Policy term (10-30 years)',
                   minMax: 'Upto 10% of sum assured',
-                  pros: ['Life cover + tax benefit combo', 'Forced savings (can't withdraw)', 'Term insurance cheapest (₹1Cr cover = ₹15K premium)'],
+                  pros: ['Life cover + tax benefit combo', `Forced savings (can't withdraw)`, 'Term insurance cheapest (₹1Cr cover = ₹15K premium)'],
                   cons: ['Traditional policies have low returns (5-7%)', 'High charges eat returns', 'Term insurance gives zero returns (apenas insurance, no maturity)'],
                   bestFor: 'Term insurance ONLY for life cover. Avoid traditional/endowment policies!',
                   example: '₹1Cr term insurance costs ₹15K/year (₹4,680 tax saved @ 30% slab). Net cost: ₹10,320 for ₹1Cr cover!',
@@ -482,13 +482,13 @@ const Section80CGuide: React.FC = () => {
             <div className="space-y-4">
               {[
                 'Combine with 80CCD(1B): After ₹1.5L in 80C, invest ₹50K in NPS for EXTRA ₹15,600 tax saving (30% slab). Total: ₹62,400 saved!',
-                'Check Form 16: EPF auto-deducted might already fill ₹60-80K of 80C limit. Don't over-invest thinking you need full ₹1.5L!',
+                `Check Form 16: EPF auto-deducted might already fill ₹60-80K of 80C limit. Don't over-invest thinking you need full ₹1.5L!`,
                 'Start Early (April): ₹12.5K monthly SIP better than ₹1.5L lump sum in March. Better returns due to rupee cost averaging.',
                 'Home Loan? Use It!: Principal repayment gets 80C + interest gets 24(b) ₹2L deduction. Combined ₹3.5L deduction possible!',
                 'Direct ELSS Plans: Regular plans have 1% higher expense ratio. Over 20 years, direct plans give ₹5-8L extra! Always choose direct.',
                 'PPF + Sukanya Both?: If 2 daughters, open 2 Sukanya accounts (₹1.5L each = ₹3L total). Mother/father can have separate PPF (₹1.5L each = ₹3L). Combined ₹6L annual deduction possible!',
                 'Avoid ULIP/Endowment: These give apenas 5-7% returns vs ELSS 12-15%. High charges eat returns. Never mix insurance with investment!',
-                'Track Annually: Review which investments used for 80C. Don't accidentally invest ₹2L thinking limit is ₹2L (it's ₹1.5L!). Excess ₹50K gets no deduction.'
+                `Track Annually: Review which investments used for 80C. Don't accidentally invest ₹2L thinking limit is ₹2L (it's ₹1.5L!). Excess ₹50K gets no deduction.`
               ].map((tip, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 shadow border-l-4 border-yellow-500">
                   <div className="flex items-start gap-3">
@@ -517,7 +517,7 @@ const Section80CGuide: React.FC = () => {
                 'Check Form 16: How much EPF already deducted? (Subtract from ₹1.5L limit)',
                 'Choose combo: ELSS (growth) + PPF (safety) ideal for most investors',
                 'If girl child <10: Open Sukanya Samriddhi (8.2% tax-free beats everything!)',
-                'Start ₹12.5K monthly ELSS SIP (₹1.5L annual). Don't wait till March!',
+                `Start ₹12.5K monthly ELSS SIP (₹1.5L annual). Don't wait till March!`,
                 'Have home loan? Check principal repayment amount (auto-gets 80C benefit)',
                 'Open PPF account online (SBI, ICICI, post office). Invest ₹50K/year minimum.',
                 'Avoid traditional life insurance for 80C. Buy cheap term + invest in ELSS instead.',
