@@ -246,8 +246,8 @@ const Section80CGuide: React.FC = () => {
                   return: '8.2% (tax-free!)',
                   lock: '21 years (or marriage after 18)',
                   minMax: '₹250 - ₹1.5L/year',
-                  pros: ['Highest interest rate (8.2%!)', 'Tax-free returns (EEE)', 'Secures daughter's future (education/marriage)', 'Partial withdrawal allowed for education'],
-                  cons: ['Long 21-year lock-in', 'Apenas for girl child <10 years age', 'Max 2 girls per family'],
+                  pros: ['Highest interest rate (8.2%!)', 'Tax-free returns (EEE)', `Secures daughter's future (education/marriage)`, 'Partial withdrawal allowed for education'],
+                  cons: ['Long 21-year lock-in', 'Apenas for girl child &lt;10 years age', 'Max 2 girls per family'],
                   bestFor: 'Parents with daughter <10 years age',
                   example: '₹1.5L annual investment for 15 years @ 8.2% = ₹65.9 lakh maturity (tax-free!). Beats PPF by ₹25L!',
                   color: 'pink'
@@ -367,7 +367,7 @@ const Section80CGuide: React.FC = () => {
                 {
                   profile: 'Parent with Girl Child (<10 age)',
                   combo: '₹1L Sukanya + ₹50K ELSS',
-                  why: 'Sukanya 8.2% tax-free + ELSS growth. Secures daughter's education/marriage.',
+                  why: `Sukanya 8.2% tax-free + ELSS growth. Secures daughter's education/marriage.`,
                   returns: '15Y: Sukanya ₹1L → ₹43.9L, ELSS ₹50K → ₹16.5L. Total: ₹60.4L (₹44L tax-free!)'
                 },
                 {
