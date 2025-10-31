@@ -553,7 +553,7 @@ const BuildingEmergencyFund: React.FC = () => {
                       },
                       { 
                         option: '❌ Stocks / Equity Mutual Funds', 
-                        reason: "High volatility. When emergency hits (recession/market crash), stocks may be down 30-50%. You'll sell at loss!\" 
+                        reason: "High volatility. When emergency hits (recession/market crash), stocks may be down 30-50%. You'll sell at loss!" 
                       },
                       { 
                         option: '❌ PPF / EPF', 
@@ -561,7 +561,7 @@ const BuildingEmergencyFund: React.FC = () => {
                       },
                       { 
                         option: '❌ Real Estate', 
-                        reason: \"Can't sell property in 1 day. Takes 3-6 months minimum. Completely illiquid!" 
+                        reason: "Can't sell property in 1 day. Takes 3-6 months minimum. Completely illiquid!" 
                       },
                       { 
                         option: '❌ Gold / Gold Bonds', 
@@ -618,11 +618,11 @@ const BuildingEmergencyFund: React.FC = () => {
 
             <div className="prose max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Most people feel overwhelmed: "I need ₹3 lakhs? Impossible!\" But you don't build it overnight. 
+                Most people feel overwhelmed: "I need ₹3 lakhs? Impossible!" But you don't build it overnight. 
                 Here's the proven step-by-step strategy used by thousands of Indians.
               </p>
 
-              <div className=\"bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 mb-6 border-2 border-orange-300">
+              <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 mb-6 border-2 border-orange-300">
                 <h4 className="text-xl font-bold text-orange-900 mb-5">🚀 5-Step Emergency Fund Building System:</h4>
                 
                 <div className="space-y-5">
@@ -778,17 +778,17 @@ const BuildingEmergencyFund: React.FC = () => {
                     },
                     { 
                       emergency: '💼 Job Loss', 
-                      example: "Company laid off 30% staff. You're jobless. Monthly expenses ₹40K → Use emergency fund for 3-6 months while job hunting.\",
+                      example: "Company laid off 30% staff. You're jobless. Monthly expenses ₹40K → Use emergency fund for 3-6 months while job hunting.",
                       action: 'Use monthly as needed. Cut expenses to stretch fund longer.' 
                     },
                     { 
                       emergency: '🚗 Critical Vehicle Breakdown', 
-                      example: \"Bike accident. Can't reach office without bike. Repair ₹25K → Use emergency fund (essential for income).",
+                      example: "Bike accident. Can't reach office without bike. Repair ₹25K → Use emergency fund (essential for income).",
                       action: 'Use immediately. Replenish next month.' 
                     },
                     { 
                       emergency: '🏠 Home Emergency', 
-                      example: "Monsoon roof leak. Water damaging electronics. Repair ₹30K → Use emergency fund (can't delay).\",
+                      example: "Monsoon roof leak. Water damaging electronics. Repair ₹30K → Use emergency fund (can't delay).",
                       action: 'Use immediately. Claim insurance if applicable.' 
                     },
                     { 
@@ -797,7 +797,7 @@ const BuildingEmergencyFund: React.FC = () => {
                       action: 'Use immediately. Family comes first.' 
                     }
                   ].map((item, i) => (
-                    <div key={i} className=\"bg-white p-4 rounded-lg border-l-4 border-green-500">
+                    <div key={i} className="bg-white p-4 rounded-lg border-l-4 border-green-500">
                       <strong className="text-green-700 text-lg block mb-2">{item.emergency}</strong>
                       <p className="text-sm text-gray-700 mb-2 bg-gray-50 p-2 rounded italic">
                         <strong>Example:</strong> {item.example}
@@ -821,7 +821,7 @@ const BuildingEmergencyFund: React.FC = () => {
                     },
                     { 
                       temptation: '✈️ Vacation / Travel', 
-                      example: "Friends planning Goa trip. Costs ₹25K. You don't have money in \"wants\" budget.",
+                      example: `Friends planning Goa trip. Costs ₹25K. You don't have money in "wants" budget.`,
                       why: 'Vacation is planned, not emergency. Either skip or save for next time.' 
                     },
                     { 
@@ -831,7 +831,7 @@ const BuildingEmergencyFund: React.FC = () => {
                     },
                     { 
                       temptation: '💍 Wedding / Festival Shopping', 
-                      example: "Sister's wedding in 3 months. Need ₹1L for gifts/clothes. Haven't saved.\",
+                      example: "Sister's wedding in 3 months. Need ₹1L for gifts/clothes. Haven't saved.",
                       why: 'Weddings are predictable, not emergencies. Should have budgeted months ago.' 
                     },
                     { 
@@ -845,7 +845,7 @@ const BuildingEmergencyFund: React.FC = () => {
                       why: 'Car purchase is planned expense. Using emergency fund = leaving yourself exposed!' 
                     }
                   ].map((item, i) => (
-                    <div key={i} className=\"bg-white p-4 rounded-lg border-l-4 border-red-500">
+                    <div key={i} className="bg-white p-4 rounded-lg border-l-4 border-red-500">
                       <strong className="text-red-700 text-lg block mb-2">{item.temptation}</strong>
                       <p className="text-sm text-gray-700 mb-2 bg-gray-50 p-2 rounded italic">
                         <strong>Temptation:</strong> {item.example}
