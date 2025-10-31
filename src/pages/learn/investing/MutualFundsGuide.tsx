@@ -544,11 +544,11 @@ const MutualFundsGuide: React.FC = () => {
                 {
                   mistake: 'Putting emergency fund in equity mutual funds',
                   reality: 'Equity can fall 30-40% anytime. If you need money during crash, you sell at loss. Emergency fund should be liquid (withdrawable without loss).',
-                  fix: 'Emergency fund (6 months expenses): Keep in liquid fund or FD. Long-term money (> 5 years): Equity mutual funds. Don't mix them!'
+                  fix: `Emergency fund (6 months expenses): Keep in liquid fund or FD. Long-term money (> 5 years): Equity mutual funds. Don't mix them!`
                 },
                 {
                   mistake: 'Chasing NFO (New Fund Offer) at ₹10 NAV',
-                  reality: 'NAV ₹10 vs ₹100 doesn't matter! ₹10K buys 1,000 units @ ₹10 NAV or 100 units @ ₹100 NAV - same thing. NFOs are untested (no track record).',
+                  reality: `NAV ₹10 vs ₹100 doesn't matter! ₹10K buys 1,000 units @ ₹10 NAV or 100 units @ ₹100 NAV - same thing. NFOs are untested (no track record).`,
                   fix: 'Ignore NFOs. Choose funds with 5-10 year proven track record. NAV price is irrelevant - returns percentage matters!'
                 },
                 {
