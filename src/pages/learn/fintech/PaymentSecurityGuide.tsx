@@ -302,7 +302,7 @@ const PaymentSecurityGuide: React.FC = () => {
                   icon: '👆'
                 },
                 {
-                  title: 'Don't Save Card CVV',
+                  title: "Don't Save Card CVV",
                   desc: 'Never save CVV in phone notes/photos. Memorize it. If phone is hacked, saved CVV = instant card misuse.',
                   icon: '💳'
                 },
@@ -317,7 +317,7 @@ const PaymentSecurityGuide: React.FC = () => {
                   icon: '📊'
                 },
                 {
-                  title: 'Don't Use Public WiFi for Payments',
+                  title: "Don't Use Public WiFi for Payments",
                   desc: 'Public WiFi (cafes, airports) can be hacked. Use mobile data for UPI/banking. If must use WiFi, enable VPN.',
                   icon: '📶'
                 }
