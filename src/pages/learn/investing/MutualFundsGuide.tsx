@@ -266,7 +266,7 @@ const MutualFundsGuide: React.FC = () => {
                   taxation: 'Equity-oriented: LTCG 12.5% | Debt-oriented: as per slab',
                   timeline: '3-7 years',
                   subTypes: ['Aggressive Hybrid (65-80% equity)', 'Conservative Hybrid (10-25% equity)', 'Balanced Advantage (dynamic allocation)', 'Multi-Asset (equity + debt + gold)'],
-                  bestFor: 'Those who want equity returns pero can't handle 100% volatility. Good for age 45-60.',
+                  bestFor: `Those who want equity returns pero can't handle 100% volatility. Good for age 45-60.`,
                   examples: 'HDFC Hybrid Equity, ICICI Balanced Advantage, SBI Equity Hybrid',
                   color: 'yellow'
                 },
