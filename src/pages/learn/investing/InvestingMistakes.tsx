@@ -201,7 +201,7 @@ const InvestingMistakes: React.FC = () => {
                 {
                   mistake: 'Investing Without Emergency Fund',
                   example: 'Neha invested entire ₹8L savings in stocks. 6 months later, medical emergency needs ₹4L. Market down 25%. Forced to sell at ₹6L value = ₹1L loss. Emergency fund would have prevented this.',
-                  why: 'Greed (want ALL money earning high returns). Overconfidence (thinking emergencies won't happen). Lack of financial planning.',
+                  why: `Greed (want ALL money earning high returns). Overconfidence (thinking emergencies won't happen). Lack of financial planning.`,
                   fix: 'Rule: 6-12 months expenses in liquid emergency fund (savings account, liquid fund) FIRST. Only surplus money in stocks/equity. Never invest money needed in <5 years.',
                   realStat: '60% of Indians have zero emergency fund. One medical emergency wipes out investments. ₹5L emergency fund prevents ₹2-5L forced-sale losses.',
                   cost: '₹1-3 lakh forced-sale loss during emergencies'
@@ -210,7 +210,7 @@ const InvestingMistakes: React.FC = () => {
                   mistake: 'Not Diversifying (All Eggs in One Basket)',
                   example: 'Rohit put entire ₹12L in Yes Bank shares (₹350/share). Stock crashed to ₹15 (96% fall!). Portfolio: ₹48K from ₹12L. Lost ₹11.5 lakh porque no diversification.',
                   why: 'Overconfidence in one stock/sector. Greed (want maximum return from "best" stock). Laziness (easier to track 1 stock than 10).',
-                  fix: 'Never >5-10% in single stock. Diversify: 10-20 stocks across sectors. Or invest in index fund (diversified across 50 stocks automatically). Yes Bank won't crash index 96%!',
+                  fix: `Never >5-10% in single stock. Diversify: 10-20 stocks across sectors. Or invest in index fund (diversified across 50 stocks automatically). Yes Bank won't crash index 96%!`,
                   realStat: 'Even "safe" large-cap stocks crash: Yes Bank (-96%), Jet Airways (-100%), DHFL (-99%). Diversification = survival.',
                   cost: '₹5-15 lakh loss if concentrated stock crashes'
                 },
@@ -233,8 +233,8 @@ const InvestingMistakes: React.FC = () => {
                 {
                   mistake: 'Short-Term Thinking (Investing for <3 Years)',
                   example: 'Invested ₹5L for daughter's admission (2 years away). Market corrected 25% in year 2. Needed money, sold at ₹3.75L. Lost ₹1.25L. Should have kept in FD (7% safe return = ₹5.74L).',
-                  why: 'Greed (want equity returns but can't wait). Wrong asset allocation (equity for short-term goal). Lack of financial planning.',
-                  fix: '<3 years goal: Debt (FD, debt funds). 3-5 years: Hybrid funds (60% debt, 40% equity). 5+ years: 100% equity. Don't put short-term money in volatile assets!',
+                  why: `Greed (want equity returns but can't wait). Wrong asset allocation (equity for short-term goal). Lack of financial planning.`,
+                  fix: `<3 years goal: Debt (FD, debt funds). 3-5 years: Hybrid funds (60% debt, 40% equity). 5+ years: 100% equity. Don't put short-term money in volatile assets!`,
                   realStat: 'Equity returns: 1 year = -50% to +80% (very volatile). 5 years = 8-18% (moderate). 10+ years = 12-15% (consistent). Need patience!',
                   cost: '₹1-3 lakh loss selling at wrong time for short-term needs'
                 },
@@ -306,8 +306,8 @@ const InvestingMistakes: React.FC = () => {
                 {
                   name: 'DHFL Investors (2019)',
                   loss: '₹91,000 Cr defaults',
-                  story: 'DHFL was AAA-rated company (highest safety!). Suddenly declared bankrupt. Stock crashed from ₹600 to ₹10 (98% fall). FD holders lost money. Rating agencies failed. Showed AAA doesn't mean 100% safe.',
-                  lesson: 'Don't trust ratings blindly. Diversify even "safe" debt investments across 5-10 companies.'
+                  story: `DHFL was AAA-rated company (highest safety!). Suddenly declared bankrupt. Stock crashed from ₹600 to ₹10 (98% fall). FD holders lost money. Rating agencies failed. Showed AAA doesn't mean 100% safe.`,
+                  lesson: `Don't trust ratings blindly. Diversify even "safe" debt investments across 5-10 companies.`
                 },
                 {
                   name: 'Harshad Mehta Scam Victims (1992)',
@@ -362,12 +362,12 @@ const InvestingMistakes: React.FC = () => {
               {[
                 'Rule #1: Never lose money. Rule #2: Never forget Rule #1. (Meaning: Focus on NOT losing rather than maximizing gains. Avoid risky bets.)',
                 'Be fearful when others are greedy, greedy when others are fearful. (Buy in crashes when everyone is panic selling. Sell in euphoria when everyone is buying.)',
-                'Price is what you pay, value is what you get. (Don't buy overpriced stocks apenas porque they're rising. Check intrinsic value.)',
-                'If you aren't willing to own a stock for 10 years, don't even think about owning it for 10 minutes. (Long-term mindset. No trading, apenas investing.)',
-                'Diversification is protection against ignorance. (If you don't know what you're doing, diversify. Experts can concentrate pero beginners MUST diversify.)',
+                `Price is what you pay, value is what you get. (Don't buy overpriced stocks apenas porque they're rising. Check intrinsic value.)`,
+                `If you aren't willing to own a stock for 10 years, don't even think about owning it for 10 minutes. (Long-term mindset. No trading, apenas investing.)`,
+                `Diversification is protection against ignorance. (If you don't know what you're doing, diversify. Experts can concentrate pero beginners MUST diversify.)`,
                 'The stock market is a device for transferring money from the impatient to the patient. (Patient investors win. Traders lose.)',
-                'It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price. (Quality > cheap. Asian Paints at ₹3K > random penny stock at ₹10.)',
-                'Risk comes from not knowing what you're doing. (Educate yourself. Don't invest in things you don't understand. No crypto if you can't explain blockchain!)'
+                `It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price. (Quality > cheap. Asian Paints at ₹3K > random penny stock at ₹10.)`,
+                `Risk comes from not knowing what you're doing. (Educate yourself. Don't invest in things you don't understand. No crypto if you can't explain blockchain!)`
               ].map((tip, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 shadow border-l-4 border-yellow-500">
                   <div className="flex items-start gap-3">
@@ -394,13 +394,13 @@ const InvestingMistakes: React.FC = () => {
             <div className="space-y-3">
               {[
                 'Before investing ₹1: Do I have 6 months emergency fund? (If no, build emergency fund first!)',
-                'Is this money I can forget for 5+ years? (If no, don't invest in equity. Use FD/debt.)',
+                `Is this money I can forget for 5+ years? (If no, don't invest in equity. Use FD/debt.)`,
                 'Am I investing apenas porque friend/relative made money? (FOMO = bad reason. Skip!)',
-                'Can I explain why this stock/fund is good investment? (If no, don't invest. Do research first.)',
-                'Is this >10% of my portfolio? (If yes, you're not diversified. Reduce concentration.)',
-                'Am I chasing last year's high returns? (If yes, STOP. Past returns don't repeat.)',
+                `Can I explain why this stock/fund is good investment? (If no, don't invest. Do research first.)`,
+                `Is this >10% of my portfolio? (If yes, you're not diversified. Reduce concentration.)`,
+                `Am I chasing last year's high returns? (If yes, STOP. Past returns don't repeat.)`,
                 'Is expense ratio <1% (stocks) or <0.5% (index funds)? (If no, find cheaper alternative.)',
-                'Will I panic sell if this falls 30%? (If yes, you're taking too much risk. Add debt allocation.)',
+                `Will I panic sell if this falls 30%? (If yes, you're taking too much risk. Add debt allocation.)`,
                 'Have I reviewed portfolio in last 12 months? (If no, review NOW. Rebalance if needed.)',
                 'Am I getting this "tip" from WhatsApp/friend? (If yes, IGNORE. Do own research or invest in index fund.)'
               ].map((item, i) => (
