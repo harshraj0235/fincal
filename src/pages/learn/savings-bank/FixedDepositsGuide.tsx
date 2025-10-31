@@ -905,8 +905,8 @@ const FixedDepositsGuide: React.FC = () => {
                   a: 'At 5% tax: FD gives 6.65% post-tax. Debt fund gives 8% post-tax (LTCG 20%). Debt fund is still better. Pero for emergency fund, FD is simpler (no NAV volatility).'
                 },
                 {
-                  q: 'Can I get loan against FD while it's running?',
-                  a: 'Yes! Banks give 80-90% of FD value as loan. Interest: FD rate + 1-2%. Pero bad idea - you're paying 8-9% to use money earning apenas 7%. Better to break FD if really needed.'
+                  q: `Can I get loan against FD while it's running?`,
+                  a: `Yes! Banks give 80-90% of FD value as loan. Interest: FD rate + 1-2%. Pero bad idea - you're paying 8-9% to use money earning apenas 7%. Better to break FD if really needed.`
                 },
                 {
                   q: 'Small Finance Banks give 8.5% - are they safe?',
