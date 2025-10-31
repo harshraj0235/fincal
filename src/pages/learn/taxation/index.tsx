@@ -13,40 +13,76 @@ const TaxationComplianceHub: React.FC = () => {
         keywords="income tax India, 80C deductions, ITR filing guide, TDS explained, capital gains tax, advance tax, tax planning strategies, कर योजना, आयकर गाइड" 
         url="/learn/taxation-compliance" 
       />
-      <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 pt-20 px-4">
-        <div className="max-w-6xl mx-auto py-12">
-          <Link to="/learn" className="inline-flex items-center gap-2 text-gray-600 hover:text-yellow-600 mb-8 transition-colors">
-            <ArrowLeft className="w-5 h-5" />
-            <span className="font-medium">Back to Learn Hub</span>
-          </Link>
-
-          {/* Hero Section */}
-          <div className="bg-gradient-to-r from-yellow-500 to-amber-600 text-white rounded-2xl p-12 mb-12 shadow-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-5xl">📋</span>
-              <div>
-                <h1 className="text-4xl font-bold mb-2">Taxation & Compliance</h1>
-                <p className="text-xl opacity-90">कर और अनुपालन - भारतीय कर प्रणाली को समझें</p>
-              </div>
-            </div>
-            <p className="text-lg leading-relaxed mb-6">
-              Master income tax in India! Learn tax slabs, 80C deductions (save ₹46,800!), ITR filing online, TDS, capital gains tax (LTCG/STCG), and advanced tax planning strategies. Save ₹1 lakh/year legally! 🎯
-            </p>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5" />
-                <span><strong>7 Lessons</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span><strong>~5 Hours</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5" />
-                <span><strong>Save ₹1L+ Tax/Year</strong></span>
+      
+      <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
+        {/* Header */}
+        <header className="bg-white shadow-md sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <Link to="/learn" className="flex items-center gap-3">
+                <div className="p-2 bg-gradient-to-r from-yellow-600 to-amber-600 rounded-xl">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold">
+                    <span className="text-gray-900">MoneyCal</span>{' '}
+                    <span className="bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent">
+                      Learn
+                    </span>
+                  </h1>
+                  <p className="text-xs text-gray-600">Taxation & Compliance</p>
+                </div>
+              </Link>
+              <div className="flex items-center gap-4">
+                <Link to="/learn" className="text-gray-600 hover:text-yellow-600 font-semibold">
+                  ← All Categories
+                </Link>
               </div>
             </div>
           </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="text-6xl mb-6">📋</div>
+              <h2 className="text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent">
+                  Taxation & Compliance
+                </span>
+              </h2>
+              <p className="text-2xl text-gray-600 mb-4">कर और अनुपालन</p>
+              <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                Master income tax in India! Learn tax slabs, 80C deductions (save ₹46,800!), ITR filing, TDS, and tax planning strategies.
+              </p>
+
+              <div className="flex gap-6 justify-center mb-12">
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-yellow-600">7</div>
+                  <div className="text-sm text-gray-600">Lessons</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-green-600">5h</div>
+                  <div className="text-sm text-gray-600">Duration</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-amber-600">Intermediate</div>
+                  <div className="text-sm text-gray-600">Level</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-orange-600">FREE</div>
+                  <div className="text-sm text-gray-600">Forever</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* All Lessons Grid */}
+        <section className="py-8 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">All Lessons</h3>
 
           {/* Lessons Grid */}
           <div className="grid md:grid-cols-2 gap-6">
