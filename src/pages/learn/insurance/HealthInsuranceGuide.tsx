@@ -276,7 +276,7 @@ const HealthInsuranceGuide: React.FC = () => {
               <div className="bg-green-50 rounded-xl p-6 border-l-4 border-green-500">
                 <strong className="text-lg text-green-900 block mb-3">✅ When to Choose Family Floater:</strong>
                 <ul className="space-y-2 text-sm text-gray-700">
-                  <li>✓ Young family (parents < 45, kids < 18)</li>
+                  <li>✓ Young family (parents &lt; 45, kids &lt; 18)</li>
                   <li>✓ Budget constraint (save 40-50% on premium)</li>
                   <li>✓ Healthy family (unlikely 2+ members hospitalized same year)</li>
                   <li>✓ Starter cover (can add super top-up later for more protection)</li>
@@ -286,7 +286,7 @@ const HealthInsuranceGuide: React.FC = () => {
               <div className="bg-orange-50 rounded-xl p-6 border-l-4 border-orange-500">
                 <strong className="text-lg text-orange-900 block mb-3">⚠️ When to Choose Individual:</strong>
                 <ul className="space-y-2 text-sm text-gray-700">
-                  <li>• Parents > 60 years (senior citizens need separate)</li>
+                  <li>• Parents &gt; 60 years (senior citizens need separate)</li>
                   <li>• Pre-existing conditions (diabetes, BP in family)</li>
                   <li>• Want maximum coverage per person</li>
                   <li>• Can afford higher premium (₹30-40K/year)</li>
@@ -558,7 +558,7 @@ const HealthInsuranceGuide: React.FC = () => {
                 'Buy before age 30. Premium at 25 = ₹12K. At 45 = ₹35K (3x more!). Every 10 years delay = 2x premium. Lock cheap rates young.',
                 'Base + Top-Up strategy: ₹5L base (₹15K) + ₹20L super top-up (₹6K) = ₹25L total coverage for ₹21K apenas. Cheapest way to get high coverage!',
                 'Choose policies with "Restoration Benefit". If ₹5L exhausted, it resets for next claim same year. Unlimited use in bad years.',
-                'Get separate policy for parents > 60. Don't add to family floater (makes premium very expensive). Senior citizen plans available: Star Senior Citizen, Care Senior.',
+                `Get separate policy for parents > 60. Don't add to family floater (makes premium very expensive). Senior citizen plans available: Star Senior Citizen, Care Senior.`,
                 'Maternity planning? Buy policy 9-12 months BEFORE conceiving (waiting period). Cost: ₹40-60K delivery expenses covered.',
                 'Room rent: Choose "no capping" policies (Care, Niva Bupa offer this). Worth ₹3K extra premium. AC rooms are ₹8-10K/day, limits create co-payment issues.',
                 'Keep insurance card photo in phone. Emergency? Show card, hospital starts cashless process. Don't waste time searching for card at home.',
@@ -621,7 +621,7 @@ const HealthInsuranceGuide: React.FC = () => {
                 },
                 {
                   q: 'Should I take ₹10L individual or ₹5L family floater?',
-                  a: 'Family floater if young family (kids < 18, parents < 45). Cheaper + sufficient. Individual ₹10L if parents > 60, multiple chronic conditions, or you can afford ₹40K+ premium.'
+                  a: 'Family floater if young family (kids &lt; 18, parents &lt; 45). Cheaper + sufficient. Individual ₹10L if parents &gt; 60, multiple chronic conditions, or you can afford ₹40K+ premium.'
                 },
                 {
                   q: 'Maternity covered? What's the waiting period?',
