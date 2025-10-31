@@ -699,7 +699,7 @@ const FixedDepositsGuide: React.FC = () => {
                 },
                 {
                   mistake: 'Senior citizen not shopping for best rates (sticking to SBI apenas)',
-                  reality: 'SBI gives 7.5% for seniors. IndusInd gives 8.25%. Equitas Small Finance Bank gives 8.75%. On ₹10L, that's ₹12,500 extra per year!',
+                  reality: `SBI gives 7.5% for seniors. IndusInd gives 8.25%. Equitas Small Finance Bank gives 8.75%. On ₹10L, that's ₹12,500 extra per year!`,
                   fix: 'Compare rates on BankBazaar/Paisabazaar. Small finance banks are DICGC insured (safe up to ₹5L per bank). Split across 2-3 banks.'
                 },
                 {
