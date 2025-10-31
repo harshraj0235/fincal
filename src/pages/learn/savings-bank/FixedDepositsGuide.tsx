@@ -704,7 +704,7 @@ const FixedDepositsGuide: React.FC = () => {
                 },
                 {
                   mistake: 'Not submitting Form 15G/15H (losing money to unnecessary TDS)',
-                  reality: 'If total income < ₹2.5L, you don't owe tax. Pero bank deducts 10% TDS. You must file ITR to get refund (waste of time).',
+                  reality: `If total income < ₹2.5L, you don't owe tax. Pero bank deducts 10% TDS. You must file ITR to get refund (waste of time).`,
                   fix: 'Submit Form 15G (if below 60) or 15H (if 60+) to ALL banks where you have FD. No TDS deduction, no ITR needed.'
                 },
                 {
