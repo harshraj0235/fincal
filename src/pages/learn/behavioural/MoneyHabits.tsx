@@ -196,7 +196,7 @@ const MoneyHabits: React.FC = () => {
                   description: 'Track ALL expenses for 30 days. Every coffee, Uber ride, Swiggy order. Write in notebook or use app.',
                   bad: 'No tracking. "Where did my salary go?" Shock at month end when apenas ₹2K left.',
                   example: 'Priya tracked 30 days: ₹5.5K on Swiggy! ₹3K on unused subscriptions (Netflix, Prime, Hotstar all 3!). Canceled 2 = ₹24K saved/year.',
-                  impact: 'Awareness creates change. Can't manage what you don't measure. 1 month tracking changes lifetime habits.',
+                  impact: `Awareness creates change. Can't manage what you don't measure. 1 month tracking changes lifetime habits.`,
                   color: 'orange'
                 },
                 {
@@ -274,7 +274,7 @@ const MoneyHabits: React.FC = () => {
 
             <div className="bg-gradient-to-r from-brown-100 to-orange-100 rounded-xl p-6 border-2 border-brown-400 mb-6">
               <p className="text-gray-700 mb-4">
-                <strong>Small daily expenses</strong> seem harmless. "It's apenas ₹150 coffee!" 
+                <strong>Small daily expenses</strong> seem harmless. "It&apos;s apenas ₹150 coffee!" 
                 Pero over 10 years, that daily ₹150 becomes...
               </p>
 
@@ -299,13 +299,13 @@ const MoneyHabits: React.FC = () => {
               <div className="bg-white rounded-lg p-5">
                 <strong className="text-gray-900 text-lg block mb-3">😱 More "Latte Factor" Examples:</strong>
                 <ul className="space-y-2 text-gray-700 text-sm">
-                  <li>• <strong>Cigarettes ₹10/day:</strong> ₹3,650/year → Invested 20Y @ 12% = <strong className="text-green-700">₹2.97 lakh!</strong> (Plus you'll live longer!)</li>
+                  <li>• <strong>Cigarettes ₹10/day:</strong> ₹3,650/year → Invested 20Y @ 12% = <strong className="text-green-700">₹2.97 lakh!</strong> (Plus you&apos;ll live longer!)</li>
                   <li>• <strong>Swiggy lunch ₹200/day:</strong> ₹73K/year → Invested 15Y @ 12% = <strong className="text-green-700">₹24.8 lakh!</strong> (Cook at home 4 days/week)</li>
                   <li>• <strong>Unnecessary Uber ₹150/day:</strong> ₹54K/year → Invested 10Y @ 12% = <strong className="text-green-700">₹10.5 lakh!</strong> (Take bus/metro sometimes)</li>
                   <li>• <strong>Unused gym ₹2K/month:</strong> ₹24K/year → Invested 20Y @ 12% = <strong className="text-green-700">₹19.6 lakh!</strong> (Home workout for free)</li>
                 </ul>
                 <p className="text-purple-700 font-bold mt-4">
-                  Point: Not saying don't enjoy coffee/lunch. Saying: <strong>Be AWARE.</strong> 
+                  Point: Not saying don&apos;t enjoy coffee/lunch. Saying: <strong>Be AWARE.</strong> 
                   Small daily expenses compound negatively. Cut 1-2 small habits = lakhs saved!
                 </p>
               </div>
@@ -335,13 +335,13 @@ const MoneyHabits: React.FC = () => {
                   habit: 'Impulse Buying (Saw sale, bought ₹15K shoes you don\'t need)',
                   example: 'Flipkart Big Billion Days. "50% off" on ₹8K laptop bag. Bought apenas porque discount. Used apenas twice. ₹8K wasted.',
                   fix: '30-Day Rule: Want something? Wait 30 days. Still want it? Buy. 80% times, urge disappears in 30 days. Saves lakhs annually!',
-                  impact: 'Indians waste ₹2-5K monthly on impulse buys. That's ₹24-60K/year. Invested for 15 years = ₹6-15 lakh wealth lost!'
+                  impact: `Indians waste ₹2-5K monthly on impulse buys. That's ₹24-60K/year. Invested for 15 years = ₹6-15 lakh wealth lost!`
                 },
                 {
                   habit: 'Keeping Up with Joneses (Friends bought car, I MUST too!)',
-                  example: 'Colleague bought ₹15L car. You bought ₹12L car (couldn't afford ₹15L pero had to show off). EMI ₹25K/month, can barely manage.',
-                  fix: 'Compete on NET WORTH, not lifestyle. Joneses might have ₹30L loan. You have ₹15L savings. You're richer! Stop comparing possessions.',
-                  impact: 'Comparison kills wealth. Buy what YOU need/can afford, not what impresses others. Their validation isn't worth your financial stress.'
+                  example: `Colleague bought ₹15L car. You bought ₹12L car (couldn't afford ₹15L pero had to show off). EMI ₹25K/month, can barely manage.`,
+                  fix: `Compete on NET WORTH, not lifestyle. Joneses might have ₹30L loan. You have ₹15L savings. You're richer! Stop comparing possessions.`,
+                  impact: `Comparison kills wealth. Buy what YOU need/can afford, not what impresses others. Their validation isn't worth your financial stress.`
                 },
                 {
                   habit: 'Not Tracking Expenses (Money disappears mysteriously)',
@@ -412,7 +412,7 @@ const MoneyHabits: React.FC = () => {
 
             <div className="space-y-4">
               {[
-                'Set SIP on salary day. Auto-debit on 1st (right after salary). No willpower needed. "Out of sight, out of mind" - can't spend what's already invested.',
+                `Set SIP on salary day. Auto-debit on 1st (right after salary). No willpower needed. "Out of sight, out of mind" - can't spend what's already invested.`,
                 'Delete shopping apps from phone home screen. Add friction to buying. Want to shop? Must login browser (extra steps = time to think = avoid impulse).',
                 'Use cash for wants, card for needs. Withdraw ₹5K cash for entertainment monthly. When cash finishes, no more fun spending. Credit card apenas for groceries, bills.',
                 'Screenshot investment portfolio. Set as phone wallpaper. See ₹15L corpus daily → motivation to not waste money on ₹500 unnecessary purchase.',
