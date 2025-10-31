@@ -420,8 +420,6 @@ const WorkingCapitalLoan = lazy(() => import('./pages/learn/business-loans/Worki
 const StartupLoan = lazy(() => import('./pages/learn/business-loans/StartupLoan'));
 
 // Learn Platform - Main Hub + Categories
-const LearnHub = lazy(() => import('./pages/LearnHub'));
-
 // Learn Platform - Money Management & Budgeting (8 lessons) - COMPLETE!
 const MoneyManagementHub = lazy(() => import('./pages/learn/money-management/index'));
 
