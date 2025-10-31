@@ -48,12 +48,12 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'आवेगपूर्ण खरीदारी',
       severity: 'High',
       cost: '₹60,000 - ₹1,50,000 wasted annually on unnecessary purchases',
-      why: "Flipkart sales, Instagram ads, friend pressure → buy things you don't need. Salary increases but savings stay same (upgrade lifestyle instead of wealth).\",
+      why: "Flipkart sales, Instagram ads, friend pressure → buy things you don't need. Salary increases but savings stay same (upgrade lifestyle instead of wealth).",
       solution: [
         '24-hour rule: Wait 24 hours before buying anything &gt;₹2,000',
         'Uninstall shopping apps during weak moments',
         'When salary increases, save 70% of raise, spend 30%',
-        'Ask: \"Do I NEED it or just WANT it?"'
+        'Ask: "Do I NEED it or just WANT it?"'
       ],
       realExample: 'Priya earned ₹40K → ₹60K. Instead of saving ₹14K more, she upgraded apartment (₹10K extra rent), bought car (₹12K EMI). Savings unchanged at ₹6K. Wasted ₹20K raise opportunity!'
     },
@@ -78,7 +78,7 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'खर्चों को ट्रैक नहीं करना',
       severity: 'High',
       cost: '₹8,000 - ₹15,000 leaked monthly = ₹96K - ₹1.8L annually',
-      why: "Don't know where money goes. Common response: \"Pata nahi, khatam ho gaya!\" Small expenses (₹100 Starbucks, ₹50 auto) add up invisibly.",
+      why: `Don't know where money goes. Common response: "Pata nahi, khatam ho gaya!" Small expenses (₹100 Starbucks, ₹50 auto) add up invisibly.`,
       solution: [
         'Track EVERY expense for 30 days (use Money Manager app)',
         'Find top 3 leak categories (usually: food delivery, transport, subscriptions)',
@@ -123,7 +123,7 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'स्वास्थ्य बीमा नहीं',
       severity: 'Critical',
       cost: 'One hospitalization = ₹2L - ₹10L out of pocket → debt trap',
-      why: "Thought \"I'm young, healthy, don\"t need insurance." One accident/illness = entire savings + emergency fund wiped out.',
+      why: `Thought "I'm young, healthy, don't need insurance." One accident/illness = entire savings + emergency fund wiped out.`,
       solution: [
         'Get ₹5L family floater health insurance NOW (costs ₹12-15K/year)',
         'Increase to ₹10L after 30 years old',
@@ -141,7 +141,7 @@ const CommonMistakes: React.FC = () => {
       why: 'Saving for house down payment (₹10L goal). Saw car on discount. Used ₹3L from house fund for car. Now house delayed by 3 years!',
       solution: [
         'Separate account/SIP for each goal (house, car, vacation, retirement)',
-        'Label accounts clearly: "House DP SIP\", \"Emergency Fund", "Vacation Fund"',
+        `Label accounts clearly: "House DP SIP", "Emergency Fund", "Vacation Fund"`,
         'NEVER mix money between goals (treat as untouchable)',
         'If goal amount reached, use ONLY for that goal'
       ],
@@ -168,7 +168,7 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'बिना रिसर्च के निवेश',
       severity: 'High',
       cost: '₹50,000 - ₹2,00,000 lost in bad investments',
-      why: "Friend: \"Buy XYZ stock, it'll double!\" WhatsApp: "Invest in ABC scheme, 20% monthly returns!" → Lost money in scams/bad stocks.",
+      why: `Friend: "Buy XYZ stock, it'll double!" WhatsApp: "Invest in ABC scheme, 20% monthly returns!" → Lost money in scams/bad stocks.`,
       solution: [
         'NEVER invest based on tips (friends, family, WhatsApp groups)',
         'Do own research: Check company fundamentals, read balance sheet',
@@ -184,14 +184,14 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'कर योजना नहीं',
       severity: 'Medium',
       cost: '₹20,000 - ₹80,000 extra tax paid due to poor planning',
-      why: "Didn't invest in 80C throughout year. March comes → panic → dump ₹1.5L in random tax-saving schemes. Lost opportunity for better returns.\",
+      why: "Didn't invest in 80C throughout year. March comes → panic → dump ₹1.5L in random tax-saving schemes. Lost opportunity for better returns.",
       solution: [
         'Start 80C investments from April (not March!)',
         'Auto-SIP ₹12,500/month in ELSS (₹1.5L/year 80C done)',
         'Use: PPF (₹12.5K/month), ELSS (₹12.5K SIP), life insurance (₹25K/year)',
         'Plan in advance → better returns + tax saving'
       ],
-      realExample: \"Karan earned ₹12L/year. Didn't plan 80C. March rush: Invested ₹1.5L in random insurance (bad returns 4%). Could have done ELSS @ 12% returns if planned!"
+      realExample: `Karan earned ₹12L/year. Didn't plan 80C. March rush: Invested ₹1.5L in random insurance (bad returns 4%). Could have done ELSS @ 12% returns if planned!`
     },
     {
       id: 12,
@@ -215,7 +215,7 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'देर से शुरू करना',
       severity: 'High',
       cost: '₹50,00,000 - ₹1,00,00,000 lost compounding gains over 30 years',
-      why: "Thought \"I'm 25, retirement is 35 years away, I\"ll start at 30." Lost 5 years of compounding = massive wealth loss!',
+      why: `Thought "I'm 25, retirement is 35 years away, I'll start at 30." Lost 5 years of compounding = massive wealth loss!`,
       solution: [
         'Start investing the DAY you get first salary (even ₹1,000/month)',
         'Every year delayed = 30-40% less wealth at retirement',
@@ -245,14 +245,14 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'परिवार को शामिल नहीं करना',
       severity: 'Medium',
       cost: 'Family conflicts, hidden debts discovered, goals missed',
-      why: "Husband manages all money, wife doesn't know bank accounts, investments. Or vice versa. Leads to: conflict, financial abuse risk, family lost if sole manager dies.\",
+      why: `Husband manages all money, wife doesn't know bank accounts, investments. Or vice versa. Leads to: conflict, financial abuse risk, family lost if sole manager dies.`,
       solution: [
         'Monthly money meeting: 30 mins with spouse to discuss budget, goals',
         'Share all account details, passwords (in sealed envelope)',
         'Both should know: How much we have? Where? How to access?',
         'Joint financial goals: Both should agree on major expenses'
       ],
-      realExample: \"When Suresh died suddenly, wife Meera didn't know he had ₹15L debt. No will, no account info. Took 2 years legal battle to settle. Family suffered!"
+      realExample: `When Suresh died suddenly, wife Meera didn't know he had ₹15L debt. No will, no account info. Took 2 years legal battle to settle. Family suffered!`
     }
   ];
 
@@ -611,5 +611,6 @@ const CommonMistakes: React.FC = () => {
 };
 
 export default CommonMistakes;
+
 
 

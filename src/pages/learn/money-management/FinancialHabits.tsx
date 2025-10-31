@@ -71,7 +71,7 @@ const FinancialHabits: React.FC = () => {
       howTo: [
         'See something expensive? Add to cart but DON\'T buy',
         'Sleep on it for 24 hours',
-        'Next day, ask: "Do I still need it?\"',
+        'Next day, ask: "Do I still need it?"',
         '70% of time, you won\'t buy it!'
       ]
     },
@@ -130,12 +130,12 @@ const FinancialHabits: React.FC = () => {
       id: 1,
       habit: 'Impulse Shopping (Online/Offline)',
       habitHindi: 'आवेगपूर्ण खरीदारी',
-      damage: \"Wastes ₹5K-15K/month on things you don't need",
+      damage: "Wastes ₹5K-15K/month on things you don't need",
       howToBreak: [
         'Uninstall shopping apps (Flipkart, Myntra)',
         'Unsubscribe from promotional emails',
         'Use 24-hour rule for purchases > ₹2K',
-        'Ask: "Do I NEED it or just WANT it?\"'
+        'Ask: "Do I NEED it or just WANT it?"'
       ]
     },
     {
@@ -178,7 +178,7 @@ const FinancialHabits: React.FC = () => {
       id: 5,
       habit: 'Not Tracking Expenses',
       habitHindi: 'खर्चों को ट्रैक नहीं करना',
-      damage: \"Lose ₹8K-12K/month to \"invisible\" expenses (don't know where money goes)",
+      damage: `Lose ₹8K-12K/month to "invisible" expenses (don't know where money goes)`,
       howToBreak: [
         'Use Money Manager or Walnut app (SMS auto-tracking)',
         'Or simple notebook - write daily',

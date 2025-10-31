@@ -149,8 +149,8 @@ const ReviewingBudget: React.FC = () => {
                 <div className="space-y-3">
                   {[
                     { stat: '78% of Indians', fact: 'Never review their budget after creating it (2024 HDFC Survey)' },
-                    { stat: '65%', fact: "Don't know where their money went by month-end\" },
-                    { stat: '₹8,000/month', fact: \"Average "invisible" overspending Indians don't notice without reviews" },
+                    { stat: '65%', fact: "Don't know where their money went by month-end" },
+                    { stat: '₹8,000/month', fact: `Average "invisible" overspending Indians don't notice without reviews` },
                     { stat: '3 months', fact: 'Average time before a budget is completely abandoned (without reviews)' }
                   ].map((item, i) => (
                     <div key={i} className="bg-white p-4 rounded-lg border-l-4 border-red-500">
