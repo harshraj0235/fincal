@@ -647,7 +647,7 @@ const MutualFundsGuide: React.FC = () => {
                 },
                 {
                   q: 'Can I withdraw anytime or is there lock-in?',
-                  a: 'Most funds: No lock-in, withdraw anytime. ELSS funds: 3-year lock-in (tax-saving benefit). Pero mutual funds are for LONG-TERM. Don't withdraw in 1-2 years - you'll lose compounding magic!'
+                  a: `Most funds: No lock-in, withdraw anytime. ELSS funds: 3-year lock-in (tax-saving benefit). Pero mutual funds are for LONG-TERM. Don't withdraw in 1-2 years - you'll lose compounding magic!`
                 },
                 {
                   q: 'Where to buy mutual funds online? Groww vs Zerodha Coin vs ET Money?',
