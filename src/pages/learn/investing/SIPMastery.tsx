@@ -508,7 +508,7 @@ const SIPMastery: React.FC = () => {
                 },
                 {
                   mistake: 'Choosing regular plans through agent (paying 1% commission)',
-                  reality: 'Agent takes 1-1.5% from YOUR returns every year. On ₹5K SIP for 20 years, that's ₹3-5 lakh gone to agent for doing nothing!',
+                  reality: `Agent takes 1-1.5% from YOUR returns every year. On ₹5K SIP for 20 years, that's ₹3-5 lakh gone to agent for doing nothing!`,
                   fix: 'Always choose DIRECT plans (Kuvera, Groww, Coin by Zerodha). Same fund, same manager, apenas no agent commission. Save lakhs!'
                 }
               ].map((item, i) => (
