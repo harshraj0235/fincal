@@ -425,8 +425,88 @@ const LearnHub = lazy(() => import('./pages/LearnHub'));
 // Learn Platform - Money Management & Budgeting (8 lessons) - COMPLETE!
 const MoneyManagementHub = lazy(() => import('./pages/learn/money-management/index'));
 
-// Learn Platform - Savings & Bank Products (8 lessons) - NEW!
+// Learn Platform - Savings & Bank Products (8 lessons) - COMPLETE!
 const SavingsBankHub = lazy(() => import('./pages/learn/savings-bank/index'));
+const TypesOfSavingsAccounts = lazy(() => import('./pages/learn/savings-bank/TypesOfSavingsAccounts'));
+const FixedDepositsGuide = lazy(() => import('./pages/learn/savings-bank/FixedDepositsGuide'));
+const RecurringDeposits = lazy(() => import('./pages/learn/savings-bank/RecurringDeposits'));
+const HighInterestSavings = lazy(() => import('./pages/learn/savings-bank/HighInterestSavings'));
+const SeniorCitizenSchemes = lazy(() => import('./pages/learn/savings-bank/SeniorCitizenSchemes'));
+const SweepInAccounts = lazy(() => import('./pages/learn/savings-bank/SweepInAccounts'));
+const BankCharges = lazy(() => import('./pages/learn/savings-bank/BankCharges'));
+const MaximizingReturns = lazy(() => import('./pages/learn/savings-bank/MaximizingReturns'));
+
+// Learn Platform - Investing & Wealth Creation (10 lessons) - COMPLETE!
+const InvestingHub = lazy(() => import('./pages/learn/investing/index'));
+const StockMarketBasics = lazy(() => import('./pages/learn/investing/StockMarketBasics'));
+const MutualFundsGuide = lazy(() => import('./pages/learn/investing/MutualFundsGuide'));
+const SIPMastery = lazy(() => import('./pages/learn/investing/SIPMastery'));
+const IndexFundsETFs = lazy(() => import('./pages/learn/investing/IndexFundsETFs'));
+const AssetAllocation = lazy(() => import('./pages/learn/investing/AssetAllocation'));
+const DirectVsRegular = lazy(() => import('./pages/learn/investing/DirectVsRegular'));
+const TaxOnInvestments = lazy(() => import('./pages/learn/investing/TaxOnInvestments'));
+const ValueVsGrowth = lazy(() => import('./pages/learn/investing/ValueVsGrowth'));
+const NISMGuide = lazy(() => import('./pages/learn/investing/NISMGuide'));
+const InvestingMistakes = lazy(() => import('./pages/learn/investing/InvestingMistakes'));
+
+// Learn Platform - Insurance, Retirement & Estate (7 lessons) - COMPLETE!
+const InsuranceRetirementHub = lazy(() => import('./pages/learn/insurance/index'));
+const TermInsuranceGuide = lazy(() => import('./pages/learn/insurance/TermInsuranceGuide'));
+const HealthInsuranceGuide = lazy(() => import('./pages/learn/insurance/HealthInsuranceGuide'));
+const NPSGuide = lazy(() => import('./pages/learn/insurance/NPSGuide'));
+const RetirementPlanning = lazy(() => import('./pages/learn/insurance/RetirementPlanning'));
+const PPFGuide = lazy(() => import('./pages/learn/insurance/PPFGuide'));
+const EPFGuide = lazy(() => import('./pages/learn/insurance/EPFGuide'));
+const WillEstatePlanning = lazy(() => import('./pages/learn/insurance/WillEstatePlanning'));
+
+// Learn Platform - Taxation & Compliance (7 lessons) - COMPLETE!
+const TaxationComplianceHub = lazy(() => import('./pages/learn/taxation/index'));
+const IncomeTaxBasics = lazy(() => import('./pages/learn/taxation/IncomeTaxBasics'));
+const Section80CGuide = lazy(() => import('./pages/learn/taxation/Section80CGuide'));
+const ITRFilingGuide = lazy(() => import('./pages/learn/taxation/ITRFilingGuide'));
+const TDSExplained = lazy(() => import('./pages/learn/taxation/TDSExplained'));
+const CapitalGainsTax = lazy(() => import('./pages/learn/taxation/CapitalGainsTax'));
+const AdvanceTaxGuide = lazy(() => import('./pages/learn/taxation/AdvanceTaxGuide'));
+const TaxPlanningStrategies = lazy(() => import('./pages/learn/taxation/TaxPlanningStrategies'));
+
+// Learn Platform - FinTech & Digital Payments (6 lessons) - COMPLETE!
+const FinTechDigitalPaymentsHub = lazy(() => import('./pages/learn/fintech/index'));
+const UPICompleteGuide = lazy(() => import('./pages/learn/fintech/UPICompleteGuide'));
+const DigitalWalletsGuide = lazy(() => import('./pages/learn/fintech/DigitalWalletsGuide'));
+const OnlineBankingGuide = lazy(() => import('./pages/learn/fintech/OnlineBankingGuide'));
+const PaymentSecurityGuide = lazy(() => import('./pages/learn/fintech/PaymentSecurityGuide'));
+const FinTechAppsGuide = lazy(() => import('./pages/learn/fintech/FinTechAppsGuide'));
+const BuyNowPayLaterGuide = lazy(() => import('./pages/learn/fintech/BuyNowPayLaterGuide'));
+
+// Learn Platform - Business Finance & Entrepreneurship (7 lessons) - COMPLETE!
+const BusinessFinanceHub = lazy(() => import('./pages/learn/business/index'));
+const StartupFundingGuide = lazy(() => import('./pages/learn/business/StartupFundingGuide'));
+const BusinessLoansGuide = lazy(() => import('./pages/learn/business/BusinessLoansGuide'));
+const CashFlowManagement = lazy(() => import('./pages/learn/business/CashFlowManagement'));
+const GSTComplianceGuide = lazy(() => import('./pages/learn/business/GSTComplianceGuide'));
+const BusinessRegistrationGuide = lazy(() => import('./pages/learn/business/BusinessRegistrationGuide'));
+const ScalingBusinessStrategies = lazy(() => import('./pages/learn/business/ScalingBusinessStrategies'));
+const BusinessFinancialStatements = lazy(() => import('./pages/learn/business/BusinessFinancialStatements'));
+
+// Learn Platform - Advanced Topics / Specialised Finance (7 lessons) - COMPLETE!
+const AdvancedSpecialisedFinanceHub = lazy(() => import('./pages/learn/advanced/index'));
+const RealEstateInvestment = lazy(() => import('./pages/learn/advanced/RealEstateInvestment'));
+const CommoditiesTrading = lazy(() => import('./pages/learn/advanced/CommoditiesTrading'));
+const GlobalInvesting = lazy(() => import('./pages/learn/advanced/GlobalInvesting'));
+const DerivativesTrading = lazy(() => import('./pages/learn/advanced/DerivativesTrading'));
+const CryptocurrencyGuide = lazy(() => import('./pages/learn/advanced/CryptocurrencyGuide'));
+const AlternativeInvestments = lazy(() => import('./pages/learn/advanced/AlternativeInvestments'));
+const EstatePlanningInheritance = lazy(() => import('./pages/learn/advanced/EstatePlanningInheritance'));
+
+// Learn Platform - Behavioural Finance & Money Psychology (7 lessons) - COMPLETE!
+const BehaviouralFinanceHub = lazy(() => import('./pages/learn/behavioural/index'));
+const MoneyMindsetPsychology = lazy(() => import('./pages/learn/behavioural/MoneyMindsetPsychology'));
+const InvestingBiases = lazy(() => import('./pages/learn/behavioural/InvestingBiases'));
+const EmotionalInvesting = lazy(() => import('./pages/learn/behavioural/EmotionalInvesting'));
+const MoneyHabits = lazy(() => import('./pages/learn/behavioural/MoneyHabits'));
+const WealthBuildingStrategies = lazy(() => import('./pages/learn/behavioural/WealthBuildingStrategies'));
+const FinancialIndependence = lazy(() => import('./pages/learn/behavioural/FinancialIndependence'));
+const MoneyRelationships = lazy(() => import('./pages/learn/behavioural/MoneyRelationships'));
 const WhatIsMoney = lazy(() => import('./pages/learn/money-management/WhatIsMoney'));
 const SettingFinancialGoals = lazy(() => import('./pages/learn/money-management/SettingFinancialGoals'));
 const BudgetingGuide = lazy(() => import('./pages/learn/money-management/BudgetingGuide'));
@@ -827,8 +907,88 @@ function App() {
                 {/* Learn Platform - Money Management & Budgeting (8 lessons) - COMPLETE! */}
                 <Route path="/learn/money-management" element={<MoneyManagementHub />} />
                 
-                {/* Learn Platform - Savings & Bank Products (8 lessons) - NEW! */}
+                {/* Learn Platform - Savings & Bank Products (8 lessons) - COMPLETE! */}
                 <Route path="/learn/savings-bank-products" element={<SavingsBankHub />} />
+                <Route path="/learn/savings-bank-products/types-of-savings-accounts-zero-balance-salary-india" element={<TypesOfSavingsAccounts />} />
+                <Route path="/learn/savings-bank-products/fixed-deposits-fd-interest-rates-tax-ladder-strategy-india" element={<FixedDepositsGuide />} />
+                <Route path="/learn/savings-bank-products/recurring-deposits-rd-vs-sip-monthly-savings-india" element={<RecurringDeposits />} />
+                <Route path="/learn/savings-bank-products/high-interest-savings-accounts-digital-banks-india-comparison" element={<HighInterestSavings />} />
+                <Route path="/learn/savings-bank-products/senior-citizen-savings-schemes-scss-pmvvy-india-benefits" element={<SeniorCitizenSchemes />} />
+                <Route path="/learn/savings-bank-products/sweep-in-accounts-auto-sweep-facility-banks-india" element={<SweepInAccounts />} />
+                <Route path="/learn/savings-bank-products/bank-charges-hidden-fees-minimum-balance-penalty-india" element={<BankCharges />} />
+                <Route path="/learn/savings-bank-products/maximizing-bank-savings-returns-strategies-india-2025" element={<MaximizingReturns />} />
+                
+                {/* Learn Platform - Investing & Wealth Creation (10 lessons) - COMPLETE! */}
+                <Route path="/learn/investing-wealth" element={<InvestingHub />} />
+                <Route path="/learn/investing-wealth/stock-market-basics-shares-nse-bse-demat-india" element={<StockMarketBasics />} />
+                <Route path="/learn/investing-wealth/mutual-funds-complete-guide-sip-nav-expense-ratio-india" element={<MutualFundsGuide />} />
+                <Route path="/learn/investing-wealth/sip-systematic-investment-plan-strategy-india-wealth-building" element={<SIPMastery />} />
+                <Route path="/learn/investing-wealth/index-funds-etfs-nifty-sensex-passive-investing-india" element={<IndexFundsETFs />} />
+                <Route path="/learn/investing-wealth/asset-allocation-equity-debt-gold-diversification-india" element={<AssetAllocation />} />
+                <Route path="/learn/investing-wealth/direct-vs-regular-mutual-funds-expense-ratio-comparison-india" element={<DirectVsRegular />} />
+                <Route path="/learn/investing-wealth/taxation-on-investments-ltcg-stcg-equity-debt-india" element={<TaxOnInvestments />} />
+                <Route path="/learn/investing-wealth/value-investing-vs-growth-investing-warren-buffett-strategy-india" element={<ValueVsGrowth />} />
+                <Route path="/learn/investing-wealth/nism-certification-investment-advisor-mutual-fund-india" element={<NISMGuide />} />
+                <Route path="/learn/investing-wealth/investing-mistakes-to-avoid-panic-selling-timing-market-india" element={<InvestingMistakes />} />
+                
+                {/* Learn Platform - Insurance, Retirement & Estate (7 lessons) - COMPLETE! */}
+                <Route path="/learn/insurance-retirement" element={<InsuranceRetirementHub />} />
+                <Route path="/learn/insurance-retirement/term-insurance-complete-guide-1-crore-cover-india" element={<TermInsuranceGuide />} />
+                <Route path="/learn/insurance-retirement/health-insurance-india-5-lakh-cover-family-floater-portability" element={<HealthInsuranceGuide />} />
+                <Route path="/learn/insurance-retirement/nps-national-pension-system-tier-1-tier-2-tax-benefits-india" element={<NPSGuide />} />
+                <Route path="/learn/insurance-retirement/retirement-planning-india-corpus-calculation-60-years-goal" element={<RetirementPlanning />} />
+                <Route path="/learn/insurance-retirement/ppf-public-provident-fund-15-year-lock-in-tax-free-returns-india" element={<PPFGuide />} />
+                <Route path="/learn/insurance-retirement/epf-employee-provident-fund-withdrawal-interest-rate-pf-balance-india" element={<EPFGuide />} />
+                <Route path="/learn/insurance-retirement/will-estate-planning-india-succession-nomination-inheritance-tax" element={<WillEstatePlanning />} />
+                
+                {/* Learn Platform - Taxation & Compliance (7 lessons) - COMPLETE! */}
+                <Route path="/learn/taxation-compliance" element={<TaxationComplianceHub />} />
+                <Route path="/learn/taxation-compliance/income-tax-basics-india-slabs-old-vs-new-regime-2025" element={<IncomeTaxBasics />} />
+                <Route path="/learn/taxation-compliance/section-80c-deductions-ppf-elss-insurance-tax-saving-1-5-lakh-india" element={<Section80CGuide />} />
+                <Route path="/learn/taxation-compliance/itr-filing-complete-guide-online-income-tax-return-india-2025" element={<ITRFilingGuide />} />
+                <Route path="/learn/taxation-compliance/tds-tax-deducted-at-source-certificate-claim-refund-india" element={<TDSExplained />} />
+                <Route path="/learn/taxation-compliance/capital-gains-tax-ltcg-stcg-equity-debt-property-india-2025" element={<CapitalGainsTax />} />
+                <Route path="/learn/taxation-compliance/advance-tax-payment-due-dates-calculation-penalty-india" element={<AdvanceTaxGuide />} />
+                <Route path="/learn/taxation-compliance/tax-planning-strategies-minimize-liability-legally-india-2025" element={<TaxPlanningStrategies />} />
+                
+                {/* Learn Platform - FinTech & Digital Payments (6 lessons) - COMPLETE! */}
+                <Route path="/learn/fintech-digital-payments" element={<FinTechDigitalPaymentsHub />} />
+                <Route path="/learn/fintech-digital-payments/upi-complete-guide-gpay-phonepe-paytm-limit-charges-india-2025" element={<UPICompleteGuide />} />
+                <Route path="/learn/fintech-digital-payments/digital-wallets-paytm-phonepe-amazon-pay-google-pay-india-complete-guide" element={<DigitalWalletsGuide />} />
+                <Route path="/learn/fintech-digital-payments/online-banking-net-banking-mobile-banking-complete-guide-india-2025" element={<OnlineBankingGuide />} />
+                <Route path="/learn/fintech-digital-payments/payment-security-cyber-fraud-prevention-upi-scams-india-2025" element={<PaymentSecurityGuide />} />
+                <Route path="/learn/fintech-digital-payments/best-fintech-apps-india-cred-jupiter-fi-niyo-salary-accounts-2025" element={<FinTechAppsGuide />} />
+                <Route path="/learn/fintech-digital-payments/buy-now-pay-later-bnpl-lazypay-simpl-zestmoney-india-guide-2025" element={<BuyNowPayLaterGuide />} />
+                
+                {/* Learn Platform - Business Finance & Entrepreneurship (7 lessons) - COMPLETE! */}
+                <Route path="/learn/business-finance-entrepreneurship" element={<BusinessFinanceHub />} />
+                <Route path="/learn/business-finance-entrepreneurship/startup-funding-india-seed-angel-vc-bootstrapping-complete-guide-2025" element={<StartupFundingGuide />} />
+                <Route path="/learn/business-finance-entrepreneurship/business-loans-india-mudra-msme-working-capital-term-loan-guide-2025" element={<BusinessLoansGuide />} />
+                <Route path="/learn/business-finance-entrepreneurship/cash-flow-management-business-receivables-payables-working-capital-india" element={<CashFlowManagement />} />
+                <Route path="/learn/business-finance-entrepreneurship/gst-compliance-india-registration-filing-returns-input-credit-composition-scheme-2025" element={<GSTComplianceGuide />} />
+                <Route path="/learn/business-finance-entrepreneurship/business-registration-india-sole-proprietorship-llp-private-limited-company-guide-2025" element={<BusinessRegistrationGuide />} />
+                <Route path="/learn/business-finance-entrepreneurship/scaling-business-strategies-india-hiring-automation-expansion-profitability-2025" element={<ScalingBusinessStrategies />} />
+                <Route path="/learn/business-finance-entrepreneurship/business-financial-statements-profit-loss-balance-sheet-cash-flow-india-guide" element={<BusinessFinancialStatements />} />
+                
+                {/* Learn Platform - Advanced Topics / Specialised Finance (7 lessons) - COMPLETE! */}
+                <Route path="/learn/advanced-specialised-finance" element={<AdvancedSpecialisedFinanceHub />} />
+                <Route path="/learn/advanced-specialised-finance/real-estate-investment-india-residential-commercial-reits-property-guide-2025" element={<RealEstateInvestment />} />
+                <Route path="/learn/advanced-specialised-finance/commodities-trading-india-gold-silver-crude-oil-mcx-ncdex-guide-2025" element={<CommoditiesTrading />} />
+                <Route path="/learn/advanced-specialised-finance/global-investing-us-stocks-international-mutual-funds-liberalized-remittance-scheme-india-2025" element={<GlobalInvesting />} />
+                <Route path="/learn/advanced-specialised-finance/derivatives-trading-futures-options-nifty-bank-nifty-hedging-india-2025" element={<DerivativesTrading />} />
+                <Route path="/learn/advanced-specialised-finance/cryptocurrency-investment-bitcoin-ethereum-tax-regulations-india-2025" element={<CryptocurrencyGuide />} />
+                <Route path="/learn/advanced-specialised-finance/alternative-investments-india-aif-pms-gold-bonds-sovereign-bonds-invoice-discounting-2025" element={<AlternativeInvestments />} />
+                <Route path="/learn/advanced-specialised-finance/estate-planning-inheritance-tax-wealth-transfer-family-office-india-2025" element={<EstatePlanningInheritance />} />
+                
+                {/* Learn Platform - Behavioural Finance & Money Psychology (7 lessons) - COMPLETE! */}
+                <Route path="/learn/behavioural-finance-money-psychology" element={<BehaviouralFinanceHub />} />
+                <Route path="/learn/behavioural-finance-money-psychology/money-mindset-psychology-scarcity-vs-abundance-wealth-india-2025" element={<MoneyMindsetPsychology />} />
+                <Route path="/learn/behavioural-finance-money-psychology/investing-biases-cognitive-errors-herd-mentality-confirmation-bias-india-2025" element={<InvestingBiases />} />
+                <Route path="/learn/behavioural-finance-money-psychology/emotional-investing-fear-greed-panic-selling-fomo-india-2025" element={<EmotionalInvesting />} />
+                <Route path="/learn/behavioural-finance-money-psychology/money-habits-discipline-delayed-gratification-compound-effect-india-2025" element={<MoneyHabits />} />
+                <Route path="/learn/behavioural-finance-money-psychology/wealth-building-strategies-get-rich-slow-consistency-patience-india-2025" element={<WealthBuildingStrategies />} />
+                <Route path="/learn/behavioural-finance-money-psychology/financial-independence-fire-movement-early-retirement-india-2025" element={<FinancialIndependence />} />
+                <Route path="/learn/behavioural-finance-money-psychology/money-relationships-family-finance-couples-money-management-india-2025" element={<MoneyRelationships />} />
                 <Route path="/learn/money-management/what-is-money-income-expenses-wealth" element={<WhatIsMoney />} />
                 <Route path="/learn/money-management/setting-financial-goals-short-medium-long-term" element={<SettingFinancialGoals />} />
                 <Route path="/learn/money-management/budgeting-how-to-track-income-expenses-india" element={<BudgetingGuide />} />
