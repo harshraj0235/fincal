@@ -587,8 +587,8 @@ const MutualFundsGuide: React.FC = () => {
               {[
                 'Start SIP on 1st or 5th of month (right after salary). Auto-debit ensures you invest BEFORE spending. "Pay yourself first" principle.',
                 'Use Step-Up SIP: Increase SIP by 10% every year when salary increases. ₹5K becomes ₹5.5K next year, ₹6K year after. Builds massive wealth!',
-                'Don't withdraw for 10+ years. First 5 years: principal grows slowly. After 10 years: compounding explodes. ₹5K SIP for 10Y = ₹11.5L, for 20Y = ₹50L (4x more!)',
-                'Invest in "boring" funds (Nifty Index, Bluechip). Don't chase "hot" sector funds (pharma fund, tech fund). Boring steady wins long-term.',
+                `Don't withdraw for 10+ years. First 5 years: principal grows slowly. After 10 years: compounding explodes. ₹5K SIP for 10Y = ₹11.5L, for 20Y = ₹50L (4x more!)`,
+                `Invest in "boring" funds (Nifty Index, Bluechip). Don't chase "hot" sector funds (pharma fund, tech fund). Boring steady wins long-term.`,
                 'Set SIP date after salary date. Salary on 1st? SIP on 5th. Ensures money is in account when SIP deducts. Failed SIPs break rhythm.',
                 'ELSS for 80C tax-saving. 3-year lock-in pero 12% returns vs PPF 7.1%. For young investors (< 50 years), ELSS is no-brainer.',
                 'Use Coin by Zerodha or Kuvera for zero fees. Some platforms charge ₹50-100 per transaction. Over 20 years = ₹24K wasted!',
