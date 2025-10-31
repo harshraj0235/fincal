@@ -487,7 +487,7 @@ const FixedDepositsGuide: React.FC = () => {
                   <p className="text-gray-700 mb-2"><strong>Example:</strong></p>
                   <p className="text-sm text-gray-600 mb-3">
                     Retiree Mrs. Sharma (65) has apenas ₹8L FD. Interest ₹56K/year. Total income apenas ₹56K (below ₹3L senior citizen limit). 
-                    She submits Form 15H. Bank doesn't deduct TDS. She gets full ₹56,000.
+                    She submits Form 15H. Bank does not deduct TDS. She gets full ₹56,000.
                   </p>
                   <p className="text-sm text-green-700 font-semibold">
                     ✅ Saved ₹5,600 TDS deduction! No need to file ITR to claim refund.
@@ -579,7 +579,7 @@ const FixedDepositsGuide: React.FC = () => {
             <div className="mt-6 bg-purple-100 rounded-xl p-6">
               <strong className="text-purple-900 text-lg block mb-3">🎯 Which to Choose?</strong>
               <ul className="space-y-2 text-gray-700">
-                <li><strong>Age 25-50:</strong> Cumulative FD (higher returns, don't need monthly income)</li>
+                <li><strong>Age 25-50:</strong> Cumulative FD (higher returns, do not need monthly income)</li>
                 <li><strong>Age 60+ (Retired):</strong> Non-Cumulative monthly payout (use interest for expenses, preserve principal)</li>
                 <li><strong>Pro Tip:</strong> Cumulative gives ₹5-10K more on ₹1L FD over 5 years. Choose cumulative unless you specifically need monthly income.</li>
               </ul>
@@ -949,8 +949,8 @@ const FixedDepositsGuide: React.FC = () => {
                 'If total income < ₹2.5L: Submit Form 15G/15H to ALL banks (avoid TDS)',
                 'Keep apenas 6-12 months expenses in FD (emergency fund). Rest invest in mutual funds',
                 'Set calendar reminders 15 days before each FD maturity date',
-                'Don't auto-renew blindly - review rates, compare banks, then decide',
-                'For tax-saving under 80C: Choose ELSS (12%) over tax-saving FD (7%) if you're below age 55'
+                `Don't auto-renew blindly - review rates, compare banks, then decide`,
+                `For tax-saving under 80C: Choose ELSS (12%) over tax-saving FD (7%) if you're below age 55`
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 bg-white/20 backdrop-blur-sm rounded-lg p-4">
                   <span className="bg-white text-green-600 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">{i + 1}</span>
