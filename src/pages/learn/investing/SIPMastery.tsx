@@ -541,12 +541,12 @@ const SIPMastery: React.FC = () => {
             <div className="space-y-4">
               {[
                 'Start SIP on 1st or 5th of month (right after salary). "Pay yourself first" principle. Invest before spending. Auto-debit ensures discipline.',
-                'Use SIP pause feature wisely: Lost job/emergency? Pause SIP for 3-6 months (don't stop permanently). Resume when income stabilizes. Better than withdrawing corpus.',
+                `Use SIP pause feature wisely: Lost job/emergency? Pause SIP for 3-6 months (don't stop permanently). Resume when income stabilizes. Better than withdrawing corpus.`,
                 'Increase SIP by ₹500-1,000 every 6 months. Small increases add up. ₹5K → ₹5.5K → ₹6K feels painless pero builds ₹15-20L extra over 20 years!',
-                'Market crash = INCREASE SIP by 50-100%! March 2020 crash: Smart investors doubled SIP for 6 months. Bought Nifty at 8,000. Now it's 19,000. 2.4x return!',
+                `Market crash = INCREASE SIP by 50-100%! March 2020 crash: Smart investors doubled SIP for 6 months. Bought Nifty at 8,000. Now it's 19,000. 2.4x return!`,
                 'Never withdraw SIP for non-emergency. Vacation, gadget, wedding gift - save separately. SIP withdrawal breaks compounding = permanent wealth loss.',
                 'Choose multi-cap/flexi-cap over sector funds. Tech fund, pharma fund are risky (one sector crash = big loss). Flexi cap spreads across 20+ sectors.',
-                'Monitor apenas once per quarter. Don't check daily NAV. SIP is marathon, not sprint. Warren Buffett checks his portfolio apenas twice a year!',
+                `Monitor apenas once per quarter. Don't check daily NAV. SIP is marathon, not sprint. Warren Buffett checks his portfolio apenas twice a year!`,
                 'Use SIP for goals: Retirement (30Y), child education (15Y), house down payment (10Y). Each goal = separate SIP. Don't mix emergency fund with retirement fund!'
               ].map((tip, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 shadow border-l-4 border-yellow-500">
