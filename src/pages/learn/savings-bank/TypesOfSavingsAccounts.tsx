@@ -532,7 +532,7 @@ const TypesOfSavingsAccounts: React.FC = () => {
                   <li className="flex items-start gap-3">
                     <span className="bg-orange-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 font-bold text-sm">1</span>
                     <div>
-                      <strong>When to Consider:</strong> If you can't maintain minimum balance, or want to invest money instead, 
+                      <strong>When to Consider:</strong> If you cannot maintain minimum balance, or want to invest money instead, 
                       or lost job/income source.
                     </div>
                   </li>
@@ -553,7 +553,7 @@ const TypesOfSavingsAccounts: React.FC = () => {
                   <li className="flex items-start gap-3">
                     <span className="bg-orange-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 font-bold text-sm">4</span>
                     <div>
-                      <strong>No Penalty:</strong> Banks don't charge for downgrading. You can upgrade again anytime.
+                      <strong>No Penalty:</strong> Banks do not charge for downgrading. You can upgrade again anytime.
                     </div>
                   </li>
                 </ol>
@@ -604,39 +604,39 @@ const TypesOfSavingsAccounts: React.FC = () => {
             <div className="space-y-4">
               {[
                 {
-                  mistake: 'Opening premium account because "bank said it's better"',
-                  reality: 'Banks push premium for higher balance. Only worth if you genuinely have ₹10L+ to park idle.',
-                  fix: 'Stick to regular/salary account. Invest extra money in FD/mutual funds instead.'
+                  mistake: `Opening premium account because "bank said it's better"`,
+                  reality: `Banks push premium for higher balance. Only worth if you genuinely have ₹10L+ to park idle.`,
+                  fix: `Stick to regular/salary account. Invest extra money in FD/mutual funds instead.`
                 },
                 {
-                  mistake: 'Keeping all money in savings account',
-                  reality: 'Savings account gives apenas 3-4% interest. Inflation is 6%. You're losing 2% purchasing power every year.',
-                  fix: 'Keep apenas 3-6 months emergency fund in savings. Rest in FD (7%), mutual fund (12%), stocks.'
+                  mistake: `Keeping all money in savings account`,
+                  reality: `Savings account gives apenas 3-4% interest. Inflation is 6%. You're losing 2% purchasing power every year.`,
+                  fix: `Keep apenas 3-6 months emergency fund in savings. Rest in FD (7%), mutual fund (12%), stocks.`
                 },
                 {
-                  mistake: 'Not monitoring minimum balance',
-                  reality: '₹750 penalty every quarter = ₹3,000/year wasted! Many people don't even notice these deductions.',
-                  fix: 'Set mobile alert when balance drops below ₹12K (if ₹10K minimum needed). Switch to zero balance if struggling.'
+                  mistake: `Not monitoring minimum balance`,
+                  reality: `₹750 penalty every quarter = ₹3,000/year wasted! Many people don't even notice these deductions.`,
+                  fix: `Set mobile alert when balance drops below ₹12K (if ₹10K minimum needed). Switch to zero balance if struggling.`
                 },
                 {
-                  mistake: 'Ignoring salary account benefits',
-                  reality: 'Salary accounts have free insurance (₹5-10L), OD facility, pre-approved loans at lower rates.',
-                  fix: 'Use salary account for salary + bills. Open separate zero balance for savings/investments.'
+                  mistake: `Ignoring salary account benefits`,
+                  reality: `Salary accounts have free insurance (₹5-10L), OD facility, pre-approved loans at lower rates.`,
+                  fix: `Use salary account for salary + bills. Open separate zero balance for savings/investments.`
                 },
                 {
-                  mistake: 'Opening too many accounts for "offers"',
-                  reality: 'More accounts = more confusion, higher chance of penalties, difficult to track, KYC hassles.',
-                  fix: 'Maximum 2 accounts: 1 primary (salary/regular) + 1 backup (zero balance). Close unused accounts.'
+                  mistake: `Opening too many accounts for "offers"`,
+                  reality: `More accounts = more confusion, higher chance of penalties, difficult to track, KYC hassles.`,
+                  fix: `Maximum 2 accounts: 1 primary (salary/regular) + 1 backup (zero balance). Close unused accounts.`
                 },
                 {
-                  mistake: 'Not negotiating with bank',
-                  reality: 'Banks often waive penalties if you ask, especially for long-term customers. Interest rates can be negotiated for large deposits.',
-                  fix: 'Call customer care. Politely explain situation. Ask for one-time waiver. Works 60% of times!'
+                  mistake: `Not negotiating with bank`,
+                  reality: `Banks often waive penalties if you ask, especially for long-term customers. Interest rates can be negotiated for large deposits.`,
+                  fix: `Call customer care. Politely explain situation. Ask for one-time waiver. Works 60% of times!`
                 },
                 {
-                  mistake: 'Keeping premium account after retirement',
-                  reality: 'After 60, you need money for expenses, not ₹2L sitting idle for "VIP benefits". Airport lounge is useless if you barely travel.',
-                  fix: 'Downgrade to senior citizen savings account (higher interest 0.5% extra). Use freed ₹2L for better returns.'
+                  mistake: `Keeping premium account after retirement`,
+                  reality: `After 60, you need money for expenses, not ₹2L sitting idle for "VIP benefits". Airport lounge is useless if you barely travel.`,
+                  fix: `Downgrade to senior citizen savings account (higher interest 0.5% extra). Use freed ₹2L for better returns.`
                 }
               ].map((item, i) => (
                 <div key={i} className="bg-red-50 rounded-xl p-6 border-l-4 border-red-500">
@@ -674,7 +674,7 @@ const TypesOfSavingsAccounts: React.FC = () => {
                 'Senior citizens: Get SCSS (Senior Citizen Savings Scheme) - 8.2% interest (higher than premium account 5-6%). Better option than keeping ₹15L in savings.',
                 'Salary account holders: Negotiate for higher insurance cover. Banks give ₹10L, pero you can ask for ₹25-50L if good salary (₹1L+ per month).',
                 'Check SMS alerts daily. 90% frauds caught early if you notice unauthorized transactions within 24 hours.',
-                'Maintain ₹5K-10K buffer over minimum balance. Don't keep exact minimum. ATM charges, debit card annual fee can cause unexpected drops.'
+                `Maintain ₹5K-10K buffer over minimum balance. Don't keep exact minimum. ATM charges, debit card annual fee can cause unexpected drops.`
               ].map((tip, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 shadow border-l-4 border-yellow-500">
                   <div className="flex items-start gap-3">
