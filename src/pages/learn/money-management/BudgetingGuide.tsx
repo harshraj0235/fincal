@@ -137,20 +137,20 @@ const BudgetingGuide: React.FC = () => {
 
               <p className="text-lg text-gray-700 leading-relaxed mb-6 bg-amber-50 border-l-4 border-amber-500 p-4 italic">
                 <strong>Hindi में:</strong> भारतीय रिजर्व बैंक के 2024 सर्वेक्षण में, <strong>68% भारतीयों ने स्वीकार किया</strong> कि 
-                उन्हें नहीं पता कि उनका पैसा हर महीने कहां जाता है। आम जवाब: "पता नहीं, खत्म हो जाता है!"
+                उन्हें नहीं पता कि उनका पैसा हर महीने कहां जाता है। आम जवाब: "पता नहीं, खत्म हो जाता है!\"
               </p>
 
               {/* Without Budget */}
-              <div className="bg-red-50 rounded-xl p-6 mb-6 border-2 border-red-300">
+              <div className=\"bg-red-50 rounded-xl p-6 mb-6 border-2 border-red-300">
                 <h4 className="text-xl font-bold text-red-900 mb-4">❌ Life WITHOUT a Budget:</h4>
                 <div className="space-y-3">
                   {[
                     { day: 'Day 1-10', situation: 'Salary credited ₹60K. Feeling rich! Spend freely on shopping, dining, gadgets.', spent: '₹25,000' },
-                    { day: 'Day 11-20', situation: "Unexpected car repair ₹8K, friend's wedding gift ₹5K, phone bill ₹2K. Total shock!", spent: '₹15,000' },
+                    { day: 'Day 11-20', situation: "Unexpected car repair ₹8K, friend's wedding gift ₹5K, phone bill ₹2K. Total shock!\", spent: '₹15,000' },
                     { day: 'Day 21-25', situation: 'Realize: Only ₹20K left! Panic mode. Cut all spending. Survive on Maggi.', spent: '₹8,000' },
                     { day: 'Day 26-30', situation: 'Rent due ₹15K! Use credit card. Month ends with ₹3K in bank, ₹10K new credit card debt.', spent: '₹12,000 + Debt' }
                   ].map((item, i) => (
-                    <div key={i} className="bg-white p-4 rounded-lg border-l-4 border-red-500">
+                    <div key={i} className=\"bg-white p-4 rounded-lg border-l-4 border-red-500">
                       <div className="flex justify-between items-start mb-2">
                         <strong className="text-red-700">{item.day}</strong>
                         <span className="bg-red-200 px-3 py-1 rounded-full text-xs font-bold text-red-900">{item.spent}</span>
