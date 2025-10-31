@@ -215,10 +215,10 @@ const InvestingMistakes: React.FC = () => {
                   cost: '₹5-15 lakh loss if concentrated stock crashes'
                 },
                 {
-                  mistake: 'Chasing Past Returns (Last Year's Winner)',
+                  mistake: `Chasing Past Returns (Last Year's Winner)`,
                   example: '2017: Small-cap funds gave 60% return. Investors poured money in 2018. 2018-2019: Small-caps crashed 40%. Investors lost heavily. Past returns ≠ future returns!',
                   why: 'Recency bias (assuming recent trend continues forever). FOMO (everyone talking about high returns). Ignoring market cycles.',
-                  fix: 'Don't chase returns. High returns usually mean high risk taken. Returns normalize over time. Invest in balanced portfolio (large+mid+small cap, debt+equity). Think 10-year average, not last year.',
+                  fix: `Don't chase returns. High returns usually mean high risk taken. Returns normalize over time. Invest in balanced portfolio (large+mid+small cap, debt+equity). Think 10-year average, not last year.`,
                   realStat: 'Study: Funds in top 10% (last 5 years) fall to bottom 50% (next 5 years) 70% of times. Past performance is NOT indicator of future.',
                   cost: '₹1-4 lakh loss buying at peak after hot streak'
                 },
@@ -232,7 +232,7 @@ const InvestingMistakes: React.FC = () => {
                 },
                 {
                   mistake: 'Short-Term Thinking (Investing for <3 Years)',
-                  example: 'Invested ₹5L for daughter's admission (2 years away). Market corrected 25% in year 2. Needed money, sold at ₹3.75L. Lost ₹1.25L. Should have kept in FD (7% safe return = ₹5.74L).',
+                  example: `Invested ₹5L for daughter's admission (2 years away). Market corrected 25% in year 2. Needed money, sold at ₹3.75L. Lost ₹1.25L. Should have kept in FD (7% safe return = ₹5.74L).`,
                   why: `Greed (want equity returns but can't wait). Wrong asset allocation (equity for short-term goal). Lack of financial planning.`,
                   fix: `<3 years goal: Debt (FD, debt funds). 3-5 years: Hybrid funds (60% debt, 40% equity). 5+ years: 100% equity. Don't put short-term money in volatile assets!`,
                   realStat: 'Equity returns: 1 year = -50% to +80% (very volatile). 5 years = 8-18% (moderate). 10+ years = 12-15% (consistent). Need patience!',
@@ -312,19 +312,19 @@ const InvestingMistakes: React.FC = () => {
                 {
                   name: 'Harshad Mehta Scam Victims (1992)',
                   loss: '₹5,000 Cr scam',
-                  story: 'Harshad artificially pumped ACC, Videocon, Reliance. Retail followed. Stocks crashed 70-90% when scam exposed. Investors lost life savings. Lesson: Don't follow hot tips, sudden 100% rises are usually scams.',
+                  story: `Harshad artificially pumped ACC, Videocon, Reliance. Retail followed. Stocks crashed 70-90% when scam exposed. Investors lost life savings. Lesson: Don't follow hot tips, sudden 100% rises are usually scams.`,
                   lesson: 'If it sounds too good to be true, it IS. Avoid penny stocks, operator-driven stocks.'
                 },
                 {
                   name: 'Dot-Com Bubble Investors (2000)',
                   loss: 'Satyam, Infosys fell 70-90%',
-                  story: '2000: Everyone bought IT stocks. Infosys was ₹10,000 (pre-split). Bubble burst. IT stocks crashed 90%. Investors who bought at peak waited 7 years to recover. Lesson: Don't buy when everyone is euphoric.',
-                  lesson: 'Market cycles exist. Bull markets end. Don't invest when taxi drivers give stock tips (bubble sign!).'
+                  story: `2000: Everyone bought IT stocks. Infosys was ₹10,000 (pre-split). Bubble burst. IT stocks crashed 90%. Investors who bought at peak waited 7 years to recover. Lesson: Don't buy when everyone is euphoric.`,
+                  lesson: `Market cycles exist. Bull markets end. Don't invest when taxi drivers give stock tips (bubble sign!).`
                 },
                 {
                   name: 'Karvy Stock Broking Fraud (2019)',
                   loss: '₹2,000 Cr demat fraud',
-                  story: 'Karvy illegally pledged clients' demat shares for loans. When exposed, SEBI banned them. Thousands of investors lost shares. Lesson: Choose regulated, reputed brokers. Check demat holdings monthly!',
+                  story: `Karvy illegally pledged clients' demat shares for loans. When exposed, SEBI banned them. Thousands of investors lost shares. Lesson: Choose regulated, reputed brokers. Check demat holdings monthly!`,
                   lesson: 'Use apenas SEBI-registered brokers. Check CDSL/NSDL statement monthly to verify your holdings.'
                 }
               ].map((story, i) => (
