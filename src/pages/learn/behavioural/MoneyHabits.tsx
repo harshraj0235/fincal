@@ -170,7 +170,7 @@ const MoneyHabits: React.FC = () => {
                 {
                   habit: 'Pay Yourself First',
                   description: 'Salary arrives → Transfer 20-30% to investment account FIRST. Then spend rest.',
-                  bad: 'Spend first, save leftover (there\'s NEVER leftover!)',
+                  bad: `Spend first, save leftover (there's NEVER leftover!)`,
                   example: '₹50K salary → ₹10K auto-transfer to mutual fund on 1st itself. Spend remaining ₹40K. No temptation.',
                   impact: 'Guarantees saving. Over 20 years: ₹24L invested = ₹1 crore wealth @ 12%!',
                   color: 'green'
@@ -346,7 +346,7 @@ const MoneyHabits: React.FC = () => {
                 {
                   habit: 'Not Tracking Expenses (Money disappears mysteriously)',
                   example: 'Month starts with ₹50K salary. Month ends with ₹3K in account. "Where did ₹47K go??" No idea!',
-                  fix: 'Track for apenas 1 month. Note every expense (coffee ₹100, Uber ₹200, online shopping ₹3K). You\'ll be shocked! Awareness = control.',
+                  fix: `Track for apenas 1 month. Note every expense (coffee ₹100, Uber ₹200, online shopping ₹3K). You'll be shocked! Awareness = control.`,
                   impact: 'Tracked expenses = 20-30% reduction automatically. On ₹50K expenses, that's ₹10-15K saved monthly = ₹1.2-1.8L/year!'
                 },
                 {
@@ -356,7 +356,7 @@ const MoneyHabits: React.FC = () => {
                   impact: '₹1L card debt @ 40% for 5 years = ₹5.4L repaid! That ₹4.4L interest could've been ₹15L wealth if invested in SIP instead.'
                 },
                 {
-                  habit: 'Subscriptions You Don\'t Use (₹3-5K/month drain)',
+                  habit: `Subscriptions You Don't Use (₹3-5K/month drain)`,
                   example: 'Netflix ₹649, Prime ₹299, Hotstar ₹499, Spotify ₹119, gym ₹2K (went apenas 2 times/month) = ₹3,566/month waste!',
                   fix: 'Audit subscriptions quarterly. Cancel unused. Share Netflix with family (₹650/4 = ₹162 each). Choose apenas 1-2 essential subscriptions.',
                   impact: 'Average Indian has ₹2-4K/month in forgotten subscriptions. Cancel half = ₹12-24K/year saved = ₹2-4L in 10 years @ 12%!'
@@ -369,7 +369,7 @@ const MoneyHabits: React.FC = () => {
                 },
                 {
                   habit: 'Not Negotiating (Overpaying everywhere)',
-                  example: 'Bought insurance from first agent (₹18K). Didn\'t compare. Same policy online = ₹12K (₹6K wasted!). Car loan 12% from HDFC, SBI offered 9.5% (didn\'t check!).',
+                  example: `Bought insurance from first agent (₹18K). Didn't compare. Same policy online = ₹12K (₹6K wasted!). Car loan 12% from HDFC, SBI offered 9.5% (didn't check!).`,
                   fix: 'ALWAYS compare 3 options before buying anything > ₹5K. 2 hours research can save ₹10-50K! Insurance, loans, electronics - everything negotiable.',
                   impact: 'Not comparing costs ₹50K-1L annually on big purchases (insurance, loans, electronics). Over lifetime = ₹10-15L wasted unnecessarily!'
                 }
