@@ -619,7 +619,7 @@ const MutualFundsGuide: React.FC = () => {
               {[
                 {
                   q: 'What is NAV? Why does it change daily?',
-                  a: 'NAV (Net Asset Value) = Total fund value ÷ Total units. It's the price per unit. Changes daily porque stocks in fund go up/down daily. Calculated at 4:00 PM. If you invest at 2 PM, you get 4 PM NAV.'
+                  a: `NAV (Net Asset Value) = Total fund value ÷ Total units. It's the price per unit. Changes daily porque stocks in fund go up/down daily. Calculated at 4:00 PM. If you invest at 2 PM, you get 4 PM NAV.`
                 },
                 {
                   q: 'Should I buy mutual fund when NAV is low (₹20) or high (₹200)?',
