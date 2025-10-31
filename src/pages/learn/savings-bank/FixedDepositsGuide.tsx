@@ -791,7 +791,7 @@ const FixedDepositsGuide: React.FC = () => {
                 <ul className="space-y-3 text-sm text-gray-700">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span><strong>Medical Emergency:</strong> Health > wealth. Break FD, deal with 1% penalty later.</span>
+                    <span><strong>Medical Emergency:</strong> Health &gt; wealth. Break FD, deal with 1% penalty later.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
@@ -847,14 +847,14 @@ const FixedDepositsGuide: React.FC = () => {
             <div className="space-y-4">
               {[
                 'Open FDs in different banks (max ₹5L per bank). DICGC insurance covers apenas ₹5L per bank. If you have ₹15L, split across 3 banks = full coverage.',
-                'Senior citizens: Always mention age while opening FD. Extra 0.5% interest (7% becomes 7.5%). On ₹10L, that's ₹5,000 extra per year!',
-                'Use sweep-in FD facility: Savings account > ₹50K automatically becomes FD. Earn 7% instead of 3.5%. Liquidity remains (can withdraw anytime). Best of both worlds!',
+                `Senior citizens: Always mention age while opening FD. Extra 0.5% interest (7% becomes 7.5%). On ₹10L, that's ₹5,000 extra per year!`,
+                'Use sweep-in FD facility: Savings account &gt; ₹50K automatically becomes FD. Earn 7% instead of 3.5%. Liquidity remains (can withdraw anytime). Best of both worlds!',
                 'Book FD online vs branch: Same interest rate pero online is faster (5 mins vs 1 hour in queue). Plus digital record, easy renewal.',
-                'Don't fall for "special tenure" offers (441 days, 555 days). Banks push these for marketing. Regular 1Y, 3Y, 5Y tenures are simpler.',
-                'Cumulative FD for young (maximize compounding). Non-cumulative monthly payout for retirees (regular income). Don't mix them up!',
+                `Don't fall for "special tenure" offers (441 days, 555 days). Banks push these for marketing. Regular 1Y, 3Y, 5Y tenures are simpler.`,
+                `Cumulative FD for young (maximize compounding). Non-cumulative monthly payout for retirees (regular income). Don't mix them up!`,
                 'Set maturity amount goal before booking. Want ₹5L after 3 years? Principal needed = ₹5L / (1.071)^3 = ₹4.05L. Work backwards.',
-                'Ignore FD agent commission offers. "I'll give ₹500 if you book ₹5L FD through me." You're losing 1% for their commission. Book direct online.',
-                'If bank sends "renew now at 6.5%" SMS pero current rate is 7.5%, DON'T auto-renew. Withdraw, rebook at higher rate. Banks try to lock you at old rates.',
+                `Ignore FD agent commission offers. "I'll give ₹500 if you book ₹5L FD through me." You're losing 1% for their commission. Book direct online.`,
+                `If bank sends "renew now at 6.5%" SMS pero current rate is 7.5%, DON'T auto-renew. Withdraw, rebook at higher rate. Banks try to lock you at old rates.`,
                 'Link FD to different nominee in each bank (wife in SBI, son in HDFC, daughter in ICICI). If one nominee disputed, others are safe. Estate planning!'
               ].map((tip, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 shadow border-l-4 border-yellow-500">
