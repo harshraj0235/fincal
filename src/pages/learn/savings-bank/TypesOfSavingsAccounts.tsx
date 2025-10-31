@@ -701,7 +701,7 @@ const TypesOfSavingsAccounts: React.FC = () => {
               {[
                 {
                   q: 'Can I have both zero balance and regular account in same bank?',
-                  a: 'Yes! You can have multiple accounts. Pero it's usually not needed. Better to have accounts in 2 different banks for backup.'
+                  a: `Yes! You can have multiple accounts. Pero it's usually not needed. Better to have accounts in 2 different banks for backup.`
                 },
                 {
                   q: 'If my salary is ₹40K, should I keep ₹10K minimum or invest it?',
