@@ -153,7 +153,7 @@ const SettingFinancialGoals: React.FC = () => {
                   {[
                     { problem: 'No Clear Direction', result: 'Save ₹5K this month, spend ₹8K next month. Wealth = ZERO after 10 years.' },
                     { problem: 'Lifestyle Inflation', result: 'Salary ₹30K → ₹70K, but expenses also ₹27K → ₹68K. No wealth built!' },
-                    { problem: 'Impulse Spending', result: 'See sale, buy ₹15K shoes you don\'t need. Goal: delayed by 3 months.' },
+                    { problem: 'Impulse Spending', result: "See sale, buy ₹15K shoes you don't need. Goal: delayed by 3 months." },
                     { problem: 'Emergency Surprises', result: 'Medical emergency: ₹2L needed. No savings. Take 18% personal loan!' }
                   ].map((item, i) => (
                     <div key={i} className="bg-white p-4 rounded-lg border-l-4 border-red-500">
@@ -905,7 +905,7 @@ const SettingFinancialGoals: React.FC = () => {
                 },
                 { 
                   mistake: 'No Written Plan', 
-                  example: 'Goal in mind: "I\'ll buy a car someday." No amount, no date, no action. Result: Never happens.',
+                  example: "Goal in mind: "I'll buy a car someday." No amount, no date, no action. Result: Never happens.",
                   fix: 'Write it down! "₹5L down payment by Dec 2026. ₹12K SIP starting this month." Stick on wall!'
                 },
                 { 

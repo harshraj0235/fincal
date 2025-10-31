@@ -146,7 +146,7 @@ const BudgetingGuide: React.FC = () => {
                 <div className="space-y-3">
                   {[
                     { day: 'Day 1-10', situation: 'Salary credited ₹60K. Feeling rich! Spend freely on shopping, dining, gadgets.', spent: '₹25,000' },
-                    { day: 'Day 11-20', situation: 'Unexpected car repair ₹8K, friend\'s wedding gift ₹5K, phone bill ₹2K. Total shock!', spent: '₹15,000' },
+                    { day: 'Day 11-20', situation: "Unexpected car repair ₹8K, friend's wedding gift ₹5K, phone bill ₹2K. Total shock!", spent: '₹15,000' },
                     { day: 'Day 21-25', situation: 'Realize: Only ₹20K left! Panic mode. Cut all spending. Survive on Maggi.', spent: '₹8,000' },
                     { day: 'Day 26-30', situation: 'Rent due ₹15K! Use credit card. Month ends with ₹3K in bank, ₹10K new credit card debt.', spent: '₹12,000 + Debt' }
                   ].map((item, i) => (
