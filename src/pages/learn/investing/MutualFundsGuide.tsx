@@ -623,7 +623,7 @@ const MutualFundsGuide: React.FC = () => {
                 },
                 {
                   q: 'Should I buy mutual fund when NAV is low (₹20) or high (₹200)?',
-                  a: 'NAV price DOESN'T MATTER! ₹10K buys 500 units @ ₹20 NAV or 50 units @ ₹200 NAV - same value. What matters is FUTURE GROWTH %, not current NAV price. Ignore NAV, focus on fund quality.'
+                  a: `NAV price DOESN'T MATTER! ₹10K buys 500 units @ ₹20 NAV or 50 units @ ₹200 NAV - same value. What matters is FUTURE GROWTH %, not current NAV price. Ignore NAV, focus on fund quality.`
                 },
                 {
                   q: 'I started SIP in Jan. Market crashed in March. Should I stop SIP?',
