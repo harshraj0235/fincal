@@ -153,7 +153,8 @@ const FinTechDigitalPaymentsHub: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+          </div>
+        </section>
       </div>
     </>
   );

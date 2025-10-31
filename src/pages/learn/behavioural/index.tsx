@@ -151,7 +151,8 @@ const BehaviouralFinanceHub: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+          </div>
+        </section>
       </div>
     </>
   );

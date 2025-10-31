@@ -151,7 +151,8 @@ const AdvancedSpecialisedFinanceHub: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+          </div>
+        </section>
       </div>
     </>
   );
