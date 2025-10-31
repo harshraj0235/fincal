@@ -5,6 +5,7 @@ import { BookOpen, TrendingUp, Award, Search, Home, Car, GraduationCap, Briefcas
 import SEOHelmet from '../../components/SEOHelmet';
 import { loanCategories } from '../../data/learn/loansLessons';
 
+// Learn Platform v2.0 - All 18 Categories LIVE (Updated: Oct 31, 2025)
 const LearnHome: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [showAllCategories, setShowAllCategories] = useState(false);
