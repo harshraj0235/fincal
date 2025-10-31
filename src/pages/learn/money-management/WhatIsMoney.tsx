@@ -606,7 +606,7 @@ const WhatIsMoney: React.FC = () => {
                   {[
                     { mistake: 'Treating "Wants" as "Needs"', example: 'Daily ₹200 Starbucks coffee = ₹72,000/year! Make at home: ₹5,000/year.' },
                     { mistake: 'Lifestyle Inflation', example: 'Salary increases from ₹40K → ₹70K, but expenses also go from ₹35K → ₹65K. No wealth built!' },
-                    { mistake: 'Impulse Buying', example: "Flipkart sale: Buy ₹8,000 shoes you don't need because \"50% off\"" },
+                    { mistake: 'Impulse Buying', example: `Flipkart sale: Buy ₹8,000 shoes you don't need because "50% off"` },
                     { mistake: 'No Expense Tracking', example: '₹15,000 spent on "miscellaneous" every month. Where did it go? Unknown!' }
                   ].map((item, i) => (
                     <li key={i} className="bg-white p-3 rounded-lg">

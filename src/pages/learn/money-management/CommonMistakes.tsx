@@ -123,7 +123,7 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'स्वास्थ्य बीमा नहीं',
       severity: 'Critical',
       cost: 'One hospitalization = ₹2L - ₹10L out of pocket → debt trap',
-      why: "Thought \"I'm young, healthy, don\\"t need insurance." One accident/illness = entire savings + emergency fund wiped out.',
+      why: "Thought \"I'm young, healthy, don\"t need insurance." One accident/illness = entire savings + emergency fund wiped out.',
       solution: [
         'Get ₹5L family floater health insurance NOW (costs ₹12-15K/year)',
         'Increase to ₹10L after 30 years old',
@@ -215,7 +215,7 @@ const CommonMistakes: React.FC = () => {
       mistakeHindi: 'देर से शुरू करना',
       severity: 'High',
       cost: '₹50,00,000 - ₹1,00,00,000 lost compounding gains over 30 years',
-      why: "Thought \"I'm 25, retirement is 35 years away, I\\"ll start at 30." Lost 5 years of compounding = massive wealth loss!',
+      why: "Thought \"I'm 25, retirement is 35 years away, I\"ll start at 30." Lost 5 years of compounding = massive wealth loss!',
       solution: [
         'Start investing the DAY you get first salary (even ₹1,000/month)',
         'Every year delayed = 30-40% less wealth at retirement',

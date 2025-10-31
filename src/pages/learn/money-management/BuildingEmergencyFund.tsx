@@ -821,7 +821,7 @@ const BuildingEmergencyFund: React.FC = () => {
                     },
                     { 
                       temptation: '✈️ Vacation / Travel', 
-                      example: "Friends planning Goa trip. Costs ₹25K. You don't have money in \\"wants\\" budget.",
+                      example: "Friends planning Goa trip. Costs ₹25K. You don't have money in \"wants\" budget.",
                       why: 'Vacation is planned, not emergency. Either skip or save for next time.' 
                     },
                     { 

@@ -905,7 +905,7 @@ const SettingFinancialGoals: React.FC = () => {
                 },
                 { 
                   mistake: 'No Written Plan', 
-                  example: "Goal in mind: \\"I'll buy a car someday.\\" No amount, no date, no action. Result: Never happens.",
+                  example: "Goal in mind: \"I'll buy a car someday.\" No amount, no date, no action. Result: Never happens.",
                   fix: 'Write it down! "₹5L down payment by Dec 2026. ₹12K SIP starting this month." Stick on wall!'
                 },
                 { 
