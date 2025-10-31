@@ -399,10 +399,10 @@ const UPICompleteGuide: React.FC = () => {
                 <div className="bg-yellow-50 rounded-lg p-4">
                   <strong className="text-yellow-900">Security Tips:</strong>
                   <ul className="text-sm text-gray-700 space-y-1 mt-2">
-                    <li>• Don't use DOB, mobile number, or 123456</li>
+                    <li>• Don&apos;t use DOB, mobile number, or 123456</li>
                     <li>• Use random 6 digits you can remember</li>
                     <li>• NEVER share UPI PIN with anyone (not even bank)</li>
-                    <li>• Different from ATM PIN (don't use same)</li>
+                    <li>• Different from ATM PIN (don&apos;t use same)</li>
                   </ul>
                 </div>
               </div>
