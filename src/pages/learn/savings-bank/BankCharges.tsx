@@ -45,3 +45,4 @@ const BankCharges: React.FC = () => (
 export default BankCharges;
 
 
+

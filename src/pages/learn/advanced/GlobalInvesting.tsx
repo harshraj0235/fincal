@@ -31,3 +31,4 @@ const GlobalInvesting: React.FC = () => (
 export default GlobalInvesting;
 
 
+

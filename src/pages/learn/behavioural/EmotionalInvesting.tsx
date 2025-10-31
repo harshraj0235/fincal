@@ -31,3 +31,4 @@ const EmotionalInvesting: React.FC = () => (
 export default EmotionalInvesting;
 
 
+
