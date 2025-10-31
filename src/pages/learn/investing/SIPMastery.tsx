@@ -342,7 +342,7 @@ const SIPMastery: React.FC = () => {
             </div>
 
             <div className="mt-6 bg-blue-100 rounded-xl p-6 border-2 border-blue-500">
-              <strong className="text-blue-900 text-lg block mb-3">📈 Key Insight: Time > Amount!</strong>
+              <strong className="text-blue-900 text-lg block mb-3">📈 Key Insight: Time &gt; Amount!</strong>
               <p className="text-gray-700">
                 Notice: Starting at 25 needs apenas ₹6,500/month. Starting at 45 needs ₹55,000/month (8x more!) 
                 for same ₹1 Cr goal. <strong>10 years delay = 2-3x higher monthly requirement.</strong>
@@ -483,7 +483,7 @@ const SIPMastery: React.FC = () => {
                 },
                 {
                   mistake: 'Starting SIP in NFO (New Fund Offer) at ₹10 NAV',
-                  reality: 'NAV ₹10 sounds "cheap" pero it's meaningless! Returns % matters, not NAV price. NFOs have no track record - untested fund manager.',
+                  reality: `NAV ₹10 sounds "cheap" pero it's meaningless! Returns % matters, not NAV price. NFOs have no track record - untested fund manager.`,
                   fix: 'Choose funds with 5-10 year proven track record. NAV ₹200 is NOT expensive. ₹5K buys 25 units @ ₹200 or 500 units @ ₹10 - SAME value!'
                 },
                 {
