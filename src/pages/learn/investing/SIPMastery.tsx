@@ -574,7 +574,7 @@ const SIPMastery: React.FC = () => {
               {[
                 {
                   q: 'Should I stop SIP when market is at all-time high?',
-                  a: 'NO! Market has been at "all-time high" 100+ times in last 20 years. If you stopped each time, you'd never invest! Markets go higher over time. Continue SIP regardless of market levels.'
+                  a: `NO! Market has been at "all-time high" 100+ times in last 20 years. If you stopped each time, you'd never invest! Markets go higher over time. Continue SIP regardless of market levels.`
                 },
                 {
                   q: 'I started SIP 2 years ago. Returns are apenas 8%. Should I switch fund?',
