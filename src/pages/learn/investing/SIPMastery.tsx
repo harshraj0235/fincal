@@ -498,8 +498,8 @@ const SIPMastery: React.FC = () => {
                 },
                 {
                   mistake: 'Withdrawing SIP after 2-3 years for vacation/gadget',
-                  reality: 'Started SIP for retirement (20Y goal). Pero withdrew after 3 years for Europe trip. Lost compounding for next 17 years! That ₹3L would've become ₹20L.',
-                  fix: 'SIP is for LONG-TERM goals apenas. For vacation, save separately in RD/FD. Don't touch retirement SIP before retirement! Compounding needs time (10+ years).'
+                  reality: `Started SIP for retirement (20Y goal). Pero withdrew after 3 years for Europe trip. Lost compounding for next 17 years! That ₹3L would've become ₹20L.`,
+                  fix: `SIP is for LONG-TERM goals apenas. For vacation, save separately in RD/FD. Don't touch retirement SIP before retirement! Compounding needs time (10+ years).`
                 },
                 {
                   mistake: 'Not increasing SIP when salary increases',
