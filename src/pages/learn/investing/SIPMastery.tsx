@@ -582,7 +582,7 @@ const SIPMastery: React.FC = () => {
                 },
                 {
                   q: 'Can I pause SIP for 6 months if I lose job?',
-                  a: 'Yes! Most platforms allow pause for 1-6 months. Better to pause than withdraw corpus. When you get new job, resume SIP. Don't break compounding chain permanently.'
+                  a: `Yes! Most platforms allow pause for 1-6 months. Better to pause than withdraw corpus. When you get new job, resume SIP. Don't break compounding chain permanently.`
                 },
                 {
                   q: 'Should I increase SIP or start new SIP in different fund?',
