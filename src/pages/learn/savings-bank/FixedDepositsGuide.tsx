@@ -960,11 +960,11 @@ const FixedDepositsGuide: React.FC = () => {
             </div>
 
             <div className="mt-6 bg-white/30 rounded-xl p-5">
-              <p className="text-white text-lg">
-                <strong>💡 Golden Rule:</strong> FD is for SAFETY and LIQUIDITY (emergency fund), not for WEALTH CREATION. 
-                For wealth: Equity mutual funds (12% > 7%). For stability: FD. 
-                <strong> Use both wisely based on timeline!</strong>
-              </p>
+                <p className="text-white text-lg">
+                  <strong>💡 Golden Rule:</strong> FD is for SAFETY and LIQUIDITY (emergency fund), not for WEALTH CREATION. 
+                  For wealth: Equity mutual funds (12% &gt; 7%). For stability: FD. 
+                  <strong> Use both wisely based on timeline!</strong>
+                </p>
             </div>
           </motion.section>
 
