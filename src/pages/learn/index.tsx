@@ -528,8 +528,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/money-management" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-emerald-200 hover:border-emerald-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-emerald-200 hover:border-emerald-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-emerald-100 rounded-xl">
                       <span className="text-4xl">💰</span>
@@ -541,12 +544,17 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">
                     💰 Money Management
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">धन प्रबंधन</p>
                   <p className="text-gray-600 mb-4">
                     Budgeting, emergency fund, financial habits, and smart money management
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs">Budgeting</span>
                     <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs">Emergency Fund</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 6h Duration • 📊 Beginner</div>
+                  <div className="flex items-center text-emerald-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
@@ -555,8 +563,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/savings-bank-products" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-cyan-200 hover:border-cyan-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-cyan-200 hover:border-cyan-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-cyan-100 rounded-xl">
                       <span className="text-4xl">🏦</span>
@@ -568,12 +579,17 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-cyan-600">
                     🏦 Savings & Bank Products
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">बचत और बैंक उत्पाद</p>
                   <p className="text-gray-600 mb-4">
                     FD, RD, savings accounts, and bank product comparison
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full text-xs">FD</span>
                     <span className="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full text-xs">Savings</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 5h Duration • 📊 Beginner</div>
+                  <div className="flex items-center text-cyan-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
