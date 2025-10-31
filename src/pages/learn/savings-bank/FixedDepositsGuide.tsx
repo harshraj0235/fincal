@@ -901,7 +901,7 @@ const FixedDepositsGuide: React.FC = () => {
                   a: 'Special rates for specific tenures (e.g., 400 days), or bulk deposits (₹1 Cr+), or limited period offers. Read fine print. Regular FDs are 7-7.5% for most banks.'
                 },
                 {
-                  q: 'I'm in 5% tax bracket. Should I still choose debt funds over FD?',
+                  q: `I'm in 5% tax bracket. Should I still choose debt funds over FD?`,
                   a: 'At 5% tax: FD gives 6.65% post-tax. Debt fund gives 8% post-tax (LTCG 20%). Debt fund is still better. Pero for emergency fund, FD is simpler (no NAV volatility).'
                 },
                 {
