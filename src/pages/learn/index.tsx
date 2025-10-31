@@ -13,6 +13,7 @@ import SEOHelmet from '../../components/SEOHelmet';
  * MoneyCal Learn - Premium Financial Education Platform
  * 18 Categories | 200+ Comprehensive Lessons
  * Advanced Search | Mobile Optimized | Google-Friendly
+ * Build: Oct 31, 2025 - Retry after CF internal error
  */
 
 interface Category {
