@@ -582,8 +582,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/investing-wealth" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-purple-200 hover:border-purple-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-purple-200 hover:border-purple-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-purple-100 rounded-xl">
                       <TrendingUp className="w-10 h-10 text-purple-600" />
@@ -595,12 +598,18 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-purple-600">
                     📈 Investing & Wealth Creation
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">निवेश और संपत्ति निर्माण</p>
                   <p className="text-gray-600 mb-4">
                     Stocks, mutual funds, SIPs, asset allocation for long-term wealth
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">Stock Market</span>
                     <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">SIP</span>
+                    <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">Mutual Funds</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 8h Duration • 📊 Mixed Level</div>
+                  <div className="flex items-center text-purple-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
@@ -609,8 +618,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/insurance-retirement" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-red-200 hover:border-red-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-red-200 hover:border-red-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-red-100 rounded-xl">
                       <span className="text-4xl">🛡️</span>
@@ -622,12 +634,17 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-red-600">
                     🛡️ Insurance, Retirement & Estate
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">बीमा, सेवानिवृत्ति और संपत्ति</p>
                   <p className="text-gray-600 mb-4">
                     Life, health insurance, NPS, retirement planning, and estate basics
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-red-50 text-red-700 px-3 py-1 rounded-full text-xs">Term Insurance</span>
                     <span className="bg-red-50 text-red-700 px-3 py-1 rounded-full text-xs">NPS</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 6h Duration • 📊 Intermediate</div>
+                  <div className="flex items-center text-red-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
@@ -636,8 +653,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/taxation-compliance" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-amber-200 hover:border-amber-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-amber-200 hover:border-amber-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-amber-100 rounded-xl">
                       <span className="text-4xl">📋</span>
@@ -649,12 +669,17 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-amber-600">
                     📋 Taxation & Compliance
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">कर और अनुपालन</p>
                   <p className="text-gray-600 mb-4">
                     Income tax, 80C deductions, ITR filing, and tax optimization
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs">Income Tax</span>
                     <span className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs">80C</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 5h Duration • 📊 Intermediate</div>
+                  <div className="flex items-center text-amber-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
@@ -663,8 +688,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/fintech-digital-payments" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-sky-200 hover:border-sky-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-sky-200 hover:border-sky-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-sky-100 rounded-xl">
                       <span className="text-4xl">📱</span>
@@ -676,12 +704,17 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-sky-600">
                     📱 FinTech & Digital Payments
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">फिनटेक और डिजिटल भुगतान</p>
                   <p className="text-gray-600 mb-4">
                     UPI, digital wallets, online banking, and cybersecurity
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-sky-50 text-sky-700 px-3 py-1 rounded-full text-xs">UPI</span>
                     <span className="bg-sky-50 text-sky-700 px-3 py-1 rounded-full text-xs">Digital Wallets</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 4h Duration • 📊 Beginner</div>
+                  <div className="flex items-center text-sky-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
@@ -690,8 +723,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/business-finance-entrepreneurship" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-lime-200 hover:border-lime-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-lime-200 hover:border-lime-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-lime-100 rounded-xl">
                       <span className="text-4xl">🚀</span>
@@ -703,12 +739,17 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-lime-600">
                     🚀 Business Finance & Entrepreneurship
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">व्यवसाय वित्त और उद्यमिता</p>
                   <p className="text-gray-600 mb-4">
                     Startup funding, business loans, cash flow, scaling strategies
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-lime-50 text-lime-700 px-3 py-1 rounded-full text-xs">Startup Funding</span>
                     <span className="bg-lime-50 text-lime-700 px-3 py-1 rounded-full text-xs">GST</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 6h Duration • 📊 Advanced</div>
+                  <div className="flex items-center text-lime-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
@@ -717,8 +758,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/advanced-specialised-finance" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-violet-200 hover:border-violet-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-violet-200 hover:border-violet-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-violet-100 rounded-xl">
                       <span className="text-4xl">⚡</span>
@@ -730,12 +774,17 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-violet-600">
                     ⚡ Advanced Topics & Specialised Finance
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">उन्नत विषय और विशेष वित्त</p>
                   <p className="text-gray-600 mb-4">
                     Real estate, commodities, forex, global markets, derivatives
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-violet-50 text-violet-700 px-3 py-1 rounded-full text-xs">Real Estate</span>
                     <span className="bg-violet-50 text-violet-700 px-3 py-1 rounded-full text-xs">F&O</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 7h Duration • 📊 Advanced</div>
+                  <div className="flex items-center text-violet-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
@@ -744,8 +793,11 @@ const LearnHome: React.FC = () => {
               <Link to="/learn/behavioural-finance-money-psychology" className="group">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-fuchsia-200 hover:border-fuchsia-500 transition-all h-full"
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-fuchsia-200 hover:border-fuchsia-500 transition-all h-full relative"
                 >
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                    AVAILABLE NOW
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-4 bg-fuchsia-100 rounded-xl">
                       <span className="text-4xl">🧠</span>
@@ -757,12 +809,17 @@ const LearnHome: React.FC = () => {
                   <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-fuchsia-600">
                     🧠 Behavioural Finance & Money Psychology
                   </h4>
+                  <p className="text-xs text-gray-500 mb-2">व्यवहार वित्त और पैसे की मनोविज्ञान</p>
                   <p className="text-gray-600 mb-4">
                     Money mindset, biases, habits, emotional spending control
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <span className="bg-fuchsia-50 text-fuchsia-700 px-3 py-1 rounded-full text-xs">Money Mindset</span>
                     <span className="bg-fuchsia-50 text-fuchsia-700 px-3 py-1 rounded-full text-xs">FIRE</span>
+                  </div>
+                  <div className="text-xs text-gray-500 mb-2">⏱️ 5h Duration • 📊 Mixed</div>
+                  <div className="flex items-center text-fuchsia-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                    Start Learning Now →
                   </div>
                 </motion.div>
               </Link>
