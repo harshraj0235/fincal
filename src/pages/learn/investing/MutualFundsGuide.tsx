@@ -518,7 +518,7 @@ const MutualFundsGuide: React.FC = () => {
                 },
                 {
                   mistake: 'Checking mutual fund NAV daily',
-                  reality: 'Mutual funds are for 5+ years. Daily NAV changes don't matter. Checking daily causes panic - "Down 2% today! Should I sell?" NO!',
+                  reality: `Mutual funds are for 5+ years. Daily NAV changes don't matter. Checking daily causes panic - "Down 2% today! Should I sell?" NO!`,
                   fix: 'Check apenas once per quarter (every 3 months). Focus on 3-5 year returns, not daily noise. Delete apps from home screen to avoid temptation.'
                 },
                 {
