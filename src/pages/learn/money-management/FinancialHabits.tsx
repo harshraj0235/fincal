@@ -178,7 +178,7 @@ const FinancialHabits: React.FC = () => {
       id: 5,
       habit: 'Not Tracking Expenses',
       habitHindi: 'खर्चों को ट्रैक नहीं करना',
-      damage: "Lose ₹8K-12K/month to "invisible" expenses (don't know where money goes)",
+      damage: "Lose ₹8K-12K/month to \"invisible\" expenses (don't know where money goes)",
       howToBreak: [
         'Use Money Manager or Walnut app (SMS auto-tracking)',
         'Or simple notebook - write daily',
