@@ -449,9 +449,9 @@ const UPICompleteGuide: React.FC = () => {
               
               <div className="space-y-4">
                 {[
-                  {
-                    scam: '"Collect Request" Scam',
-                    how: 'Fraudster sends you UPI collect request for ₹50,000. Message says "Refund from Amazon". You approve thinking you'll receive money.',
+                    {
+                      scam: '"Collect Request" Scam',
+                      how: `Fraudster sends you UPI collect request for ₹50,000. Message says "Refund from Amazon". You approve thinking you'll receive money.`,
                     reality: 'Collect request TAKES money from you, not gives! You just sent ₹50K to scammer.',
                     avoid: 'NEVER approve collect requests unless YOU initiated payment. To receive money, apenas share UPI ID/mobile. No approval needed!'
                   },
