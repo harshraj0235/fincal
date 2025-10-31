@@ -1420,6 +1420,9 @@ https://moneycal.in/help-center
 https://moneycal.in/investing-tools
 https://moneycal.in/keyword-research
 https://moneycal.in/learn
+https://moneycal.in/learn/advanced-specialised-finance
+https://moneycal.in/learn/behavioural-finance
+https://moneycal.in/learn/business-finance
 https://moneycal.in/learn/business-loans
 https://moneycal.in/learn/business-loans/application-process
 https://moneycal.in/learn/business-loans/best-banks
@@ -1479,6 +1482,7 @@ https://moneycal.in/learn/education-loans/study-abroad
 https://moneycal.in/learn/education-loans/study-in-india
 https://moneycal.in/learn/education-loans/tax-benefits
 https://moneycal.in/learn/education-loans/what-is-education-loan
+https://moneycal.in/learn/fintech-digital-payments
 https://moneycal.in/learn/gold-loans
 https://moneycal.in/learn/gold-loans/application-process
 https://moneycal.in/learn/gold-loans/best-banks
@@ -1511,6 +1515,8 @@ https://moneycal.in/learn/home-loans/tax-benefits
 https://moneycal.in/learn/home-loans/top-up-loans
 https://moneycal.in/learn/home-loans/types-of-home-loans
 https://moneycal.in/learn/home-loans/what-is-home-loan
+https://moneycal.in/learn/insurance-retirement
+https://moneycal.in/learn/investing
 https://moneycal.in/learn/loans
 https://moneycal.in/learn/loans/calculate-true-cost
 https://moneycal.in/learn/loans/check-eligibility
@@ -1532,6 +1538,7 @@ https://moneycal.in/learn/loans/types-of-loans
 https://moneycal.in/learn/loans/understanding-collateral
 https://moneycal.in/learn/loans/what-is-emi
 https://moneycal.in/learn/loans/what-is-loan
+https://moneycal.in/learn/money-management
 https://moneycal.in/learn/personal-loans
 https://moneycal.in/learn/personal-loans/application-process
 https://moneycal.in/learn/personal-loans/cibil-score-impact
@@ -1553,6 +1560,8 @@ https://moneycal.in/learn/personal-loans/repayment-strategies
 https://moneycal.in/learn/personal-loans/secured-vs-unsecured
 https://moneycal.in/learn/personal-loans/types-of-personal-loans
 https://moneycal.in/learn/personal-loans/what-is-personal-loan
+https://moneycal.in/learn/savings-bank
+https://moneycal.in/learn/taxation-compliance
 https://moneycal.in/learn/vehicle-loans
 https://moneycal.in/learn/vehicle-loans/application-process
 https://moneycal.in/learn/vehicle-loans/balance-transfer
