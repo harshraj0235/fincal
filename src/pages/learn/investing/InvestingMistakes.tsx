@@ -22,7 +22,7 @@ const InvestingMistakes: React.FC = () => (
               { mistake: 'Following Hot Tips Blindly', cost: 'Invest in bad stocks, scams - lose ₹50K-2L' },
               { mistake: 'Investing Without Emergency Fund', cost: 'Forced to sell at loss during emergencies' },
               { mistake: 'Not Diversifying (All in 1 Stock)', cost: 'If stock crashes 80%, entire portfolio gone' },
-              { mistake: 'Chasing Past Returns', cost: 'Last year's winner often becomes this year's loser' },
+              { mistake: 'Chasing Past Returns', cost: "Last year's winner often becomes this year's loser" },
               { mistake: 'Ignoring Expense Ratio', cost: 'High fees (2%+) eat ₹15L over 30 years' },
               { mistake: 'Short-Term Thinking (&lt;3 Years)', cost: 'Market volatility destroys wealth. Need 5+ years minimum' },
               { mistake: 'Not Reviewing Portfolio Annually', cost: 'Asset allocation drifts, risk increases unknowingly' }
