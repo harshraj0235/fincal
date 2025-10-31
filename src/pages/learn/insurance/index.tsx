@@ -5,68 +5,159 @@ import { ArrowLeft, ArrowRight, BookOpen, Clock, Shield, CheckCircle } from 'luc
 import SEOHelmet from '../../../components/SEOHelmet';
 import { insuranceRetirementCategory, insuranceRetirementLessons, insuranceRetirementSEO } from '../../../data/learn/insuranceRetirementLessons';
 
-const InsuranceRetirementHub: React.FC = () => (
-  <>
-    <SEOHelmet title={insuranceRetirementSEO.metaTitle} description={insuranceRetirementSEO.metaDescription} keywords={insuranceRetirementSEO.keywords} url="/learn/insurance-retirement" />
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-red-50">
-      <header className="bg-white shadow-md sticky top-0 z-50 border-b">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/learn" className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition-colors"><ArrowLeft className="h-5 w-5" /><span className="font-semibold">All Categories</span></Link>
-            <span className="text-sm text-gray-600">{insuranceRetirementCategory.totalLessons} Lessons • {insuranceRetirementCategory.estimatedHours} Hours</span>
-          </div>
-        </div>
-      </header>
+const InsuranceRetirementHub: React.FC = () => {
+  return (
+    <>
+      <SEOHelmet title={insuranceRetirementSEO.metaTitle} description={insuranceRetirementSEO.metaDescription} keywords={insuranceRetirementSEO.keywords} url="/learn/insurance-retirement" />
       
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-          <div className="inline-flex items-center justify-center p-4 bg-gradient-to-r from-red-500 to-orange-600 rounded-2xl shadow-lg mb-6">
-            <Shield className="w-16 h-16 text-white" />
+      <div className="min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-red-50">
+        {/* Header */}
+        <header className="bg-white shadow-md sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <Link to="/learn" className="flex items-center gap-3">
+                <div className="p-2 bg-gradient-to-r from-red-600 to-orange-600 rounded-xl">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold">
+                    <span className="text-gray-900">MoneyCal</span>{' '}
+                    <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                      Learn
+                    </span>
+                  </h1>
+                  <p className="text-xs text-gray-600">Insurance, Retirement & Estate</p>
+                </div>
+              </Link>
+              <div className="flex items-center gap-4">
+                <Link to="/learn" className="text-gray-600 hover:text-red-600 font-semibold">
+                  ← All Categories
+                </Link>
+              </div>
+            </div>
           </div>
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">{insuranceRetirementCategory.name}</h1>
-          <p className="text-2xl text-gray-600 mb-2">{insuranceRetirementCategory.nameHindi}</p>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">{insuranceRetirementCategory.description}</p>
-        </motion.div>
+        </header>
 
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">📚 Course Lessons</h2>
-          <div className="grid gap-6">
-            {insuranceRetirementLessons.map((lesson, index) => (
-              <motion.div key={lesson.id} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
-                <Link to={`/learn/insurance-retirement/${lesson.slug}`} className="block bg-white rounded-xl shadow-md hover:shadow-2xl transition-all overflow-hidden group border-2 border-gray-200 hover:border-red-500">
-                  <div className="p-6">
+        {/* Hero Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="text-6xl mb-6">🛡️</div>
+              <h2 className="text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                  Insurance, Retirement & Estate
+                </span>
+              </h2>
+              <p className="text-2xl text-gray-600 mb-4">बीमा, सेवानिवृत्ति और संपत्ति</p>
+              <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                Life, health insurance, NPS, retirement planning, and estate basics
+              </p>
+
+              <div className="flex gap-6 justify-center mb-12">
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-red-600">7</div>
+                  <div className="text-sm text-gray-600">Lessons</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-green-600">6h</div>
+                  <div className="text-sm text-gray-600">Duration</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-orange-600">Intermediate</div>
+                  <div className="text-sm text-gray-600">Level</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-purple-600">FREE</div>
+                  <div className="text-sm text-gray-600">Forever</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* All Lessons Grid */}
+        <section className="py-8 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">All Lessons</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {insuranceRetirementLessons.map((lesson, index) => (
+                <Link key={lesson.id} to={`/learn/insurance-retirement/${lesson.slug}`} className="group">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    whileHover={{ scale: 1.03 }}
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border-2 border-gray-200 hover:border-red-500"
+                  >
                     <div className="flex items-start justify-between">
                       <div className="flex items-start gap-4 flex-1">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-500 to-orange-600 flex items-center justify-center text-white font-bold text-xl flex-shrink-0">{lesson.order}</div>
+                        <div className="text-4xl">{index === 0 ? '🛡️' : index === 1 ? '🏥' : index === 2 ? '💼' : index === 3 ? '👴' : index === 4 ? '🏦' : index === 5 ? '📊' : '📜'}</div>
                         <div className="flex-1">
-                          <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-red-600 transition-colors">{lesson.title}</h3>
-                          <p className="text-red-700 text-sm mb-2">{lesson.titleHindi}</p>
-                          <p className="text-gray-600 text-sm">{lesson.description}</p>
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-sm font-bold text-red-600">Lesson {lesson.order}</span>
+                          </div>
+                          <h4 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                            {lesson.title}
+                          </h4>
+                          <p className="text-xs text-red-700 mb-2">{lesson.titleHindi}</p>
+                          <div className="flex items-center gap-3 text-sm text-gray-600">
+                            <span className="flex items-center gap-1">
+                              <Clock className="w-4 h-4" />
+                              {lesson.duration}
+                            </span>
+                            <span className="flex items-center gap-1 text-yellow-600">
+                              <CheckCircle className="w-4 h-4" />
+                              Intermediate
+                            </span>
+                          </div>
                         </div>
                       </div>
-                      <div className="flex flex-col items-end gap-2 ml-4">
-                        <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold">{lesson.duration}</span>
-                      </div>
+                      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all" />
                     </div>
-                    <div className="flex items-center text-red-600 font-semibold group-hover:translate-x-1 transition-transform mt-4">Start Lesson <ArrowRight className="w-4 h-4 ml-1" /></div>
-                  </div>
+                  </motion.div>
                 </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+              ))}
+            </div>
 
-        <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl p-12 text-center text-white shadow-2xl">
-          <h3 className="text-3xl font-bold mb-4">Secure Your Financial Future</h3>
-          <p className="text-xl mb-8 text-white/90">Master insurance and retirement in 6 hours!</p>
-          <Link to={`/learn/insurance-retirement/${insuranceRetirementLessons[0].slug}`} className="inline-flex items-center gap-3 px-8 py-4 bg-white text-red-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">
-            <BookOpen className="w-6 h-6" />Start Lesson 1<ArrowRight className="w-6 h-6" />
-          </Link>
-        </div>
-      </section>
-    </div>
-  </>
-);
+            {/* Completion Badge */}
+            <div className="mt-12 bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-300 rounded-xl p-8 text-center">
+              <div className="text-5xl mb-4">🎓</div>
+              <h3 className="text-2xl font-bold text-green-900 mb-3">
+                Complete All Lessons & Secure Your Future!
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Finish all 7 lessons and build a robust financial protection plan
+              </p>
+              <div className="flex gap-4 justify-center">
+                <Link
+                  to={`/learn/insurance-retirement/${insuranceRetirementLessons[0].slug}`}
+                  className="bg-red-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-all"
+                >
+                  Start from Lesson 1 →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Insurance, Retirement & Estate Planning",
+          "description": "Complete course on insurance, retirement and estate planning in India",
+          "provider": {
+            "@type": "Organization",
+            "name": "MoneyCal Learn"
+          },
+          "numberOfCredits": 7,
+          "educationalLevel": "Intermediate"
+        })}
+      </script>
+    </>
+  );
+};
 
 export default InsuranceRetirementHub;
 
