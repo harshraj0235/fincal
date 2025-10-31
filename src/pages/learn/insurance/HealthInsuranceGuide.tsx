@@ -624,7 +624,7 @@ const HealthInsuranceGuide: React.FC = () => {
                   a: 'Family floater if young family (kids &lt; 18, parents &lt; 45). Cheaper + sufficient. Individual ₹10L if parents &gt; 60, multiple chronic conditions, or you can afford ₹40K+ premium.'
                 },
                 {
-                  q: 'Maternity covered? What's the waiting period?',
+                  q: `Maternity covered? What's the waiting period?`,
                   a: 'Most policies cover maternity after 9-12 month waiting period. Coverage: ₹40K-₹1L per delivery. Plan pregnancy after insurance! Buy policy → Wait 1 year → Conceive → Delivery covered.'
                 }
               ].map((faq, i) => (
