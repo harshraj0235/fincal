@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ArrowLeft, FileText, Clock, TrendingUp } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 import { taxationLessons } from '../../../data/learn/taxationLessons';
@@ -151,6 +152,7 @@ const TaxationComplianceHub: React.FC = () => {
                 Try Tax Calculator
               </Link>
             </div>
+          </div>
           </div>
         </section>
       </div>
