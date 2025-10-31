@@ -37,3 +37,4 @@ const BuyNowPayLaterGuide: React.FC = () => (
 
 export default BuyNowPayLaterGuide;
 
+

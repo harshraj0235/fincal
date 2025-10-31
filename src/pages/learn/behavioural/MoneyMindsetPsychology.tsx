@@ -46,3 +46,4 @@ const MoneyMindsetPsychology: React.FC = () => (
 
 export default MoneyMindsetPsychology;
 
+

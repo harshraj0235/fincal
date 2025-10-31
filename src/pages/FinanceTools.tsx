@@ -563,6 +563,7 @@ const FinanceTools: React.FC = () => {
       seoDescription: 'Basic stock valuation using PE ratio and EPS analysis.'
     },
     {
+      
       id: 'ulip-vs-term-insurance-return-calculator',
       name: 'ULIP vs Term Insurance Return Calculator',
       description: 'Compare returns from ULIP vs Term Insurance policies',

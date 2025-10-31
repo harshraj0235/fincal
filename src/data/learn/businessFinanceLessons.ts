@@ -135,3 +135,4 @@ export const businessFinanceSEO = {
   canonicalUrl: 'https://moneycal.in/learn/business-finance-entrepreneurship'
 };
 
+

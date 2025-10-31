@@ -29,3 +29,4 @@ const CapitalGainsTax: React.FC = () => (
 
 export default CapitalGainsTax;
 
+

@@ -29,3 +29,4 @@ const RealEstateInvestment: React.FC = () => (
 
 export default RealEstateInvestment;
 
+

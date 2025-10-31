@@ -135,3 +135,4 @@ export const behaviouralFinanceSEO = {
   canonicalUrl: 'https://moneycal.in/learn/behavioural-finance-money-psychology'
 };
 
+

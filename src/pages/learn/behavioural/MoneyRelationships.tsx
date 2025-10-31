@@ -38,3 +38,4 @@ const MoneyRelationships: React.FC = () => (
 
 export default MoneyRelationships;
 
+

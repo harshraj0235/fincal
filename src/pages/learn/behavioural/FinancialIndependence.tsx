@@ -31,3 +31,4 @@ const FinancialIndependence: React.FC = () => (
 
 export default FinancialIndependence;
 
+

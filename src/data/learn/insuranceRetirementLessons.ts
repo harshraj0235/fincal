@@ -135,3 +135,4 @@ export const insuranceRetirementSEO = {
   canonicalUrl: 'https://moneycal.in/learn/insurance-retirement'
 };
 
+

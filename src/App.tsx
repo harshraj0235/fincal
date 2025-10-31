@@ -75,7 +75,7 @@ const CryptoSection = lazy(() => import('./pages/CryptoSection'));
 const CryptoArticlePost = lazy(() => import('./pages/CryptoArticlePost'));
 const AstroFinance = lazy(() => import('./pages/AstroFinance'));
 const StockMarket = lazy(() => import('./pages/StockMarket'));
-const StockMarketBasics = lazy(() => import('./pages/StockMarketBasics'));
+const StockMarketBasicsTool = lazy(() => import('./pages/StockMarketBasics'));
 const StockMarketLesson = lazy(() => import('./pages/StockMarketLesson'));
 const CoreMarketConcepts = lazy(() => import('./pages/CoreMarketConcepts'));
 const FundamentalAnalysis = lazy(() => import('./pages/FundamentalAnalysis'));
@@ -636,7 +636,7 @@ const PersonalLoanCalculator = lazy(() => import('./pages/tools/PersonalLoanCalc
 const SIPCalculator = lazy(() => import('./pages/tools/SIPCalculator'));
 const PortfolioAnalyzer = lazy(() => import('./pages/tools/PortfolioAnalyzer'));
 const RiskAssessment = lazy(() => import('./pages/tools/RiskAssessment'));
-const AssetAllocation = lazy(() => import('./pages/tools/AssetAllocation'));
+const AssetAllocationToolPage = lazy(() => import('./pages/tools/AssetAllocation'));
 const LumpsumCalculator = lazy(() => import('./pages/tools/LumpsumCalculator'));
 const StockAnalyzer = lazy(() => import('./pages/tools/StockAnalyzer'));
 const MutualFundAnalyzer = lazy(() => import('./pages/tools/MutualFundAnalyzer'));
@@ -1059,7 +1059,7 @@ function App() {
                 <Route path="/tools/sip-calculator" element={<SIPCalculator />} />
             <Route path="/tools/portfolio-analyzer" element={<PortfolioAnalyzer />} />
             <Route path="/tools/risk-assessment" element={<RiskAssessment />} />
-            <Route path="/tools/asset-allocation" element={<AssetAllocation />} />
+            <Route path="/tools/asset-allocation" element={<AssetAllocationToolPage />} />
             <Route path="/tools/lumpsum-calculator" element={<LumpsumCalculator />} />
             <Route path="/tools/stock-analyzer" element={<StockAnalyzer />} />
             <Route path="/tools/mutual-fund-analyzer" element={<MutualFundAnalyzer />} />
@@ -1106,7 +1106,7 @@ function App() {
                 <Route path="/astro-finance" element={<AstroFinance />} />
                  {/* Stock Market route */}
                  <Route path="/stock-market" element={<StockMarket />} />
-                                   <Route path="/stock-market/stock-market-basics" element={<StockMarketBasics />} />
+                                   <Route path="/stock-market/stock-market-basics" element={<StockMarketBasicsTool />} />
                   <Route path="/stock-market/stock-market-basics/lesson/:lessonId" element={<StockMarketLesson />} />
                   <Route path="/stock-market/core-market-concepts" element={<CoreMarketConcepts />} />
                   <Route path="/stock-market/fundamental-analysis" element={<FundamentalAnalysis />} />

@@ -174,3 +174,4 @@ export const investingSEO = {
   canonicalUrl: 'https://moneycal.in/learn/investing-wealth'
 };
 
+

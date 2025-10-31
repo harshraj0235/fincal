@@ -135,3 +135,4 @@ export const advancedFinanceSEO = {
   canonicalUrl: 'https://moneycal.in/learn/advanced-specialised-finance'
 };
 
+

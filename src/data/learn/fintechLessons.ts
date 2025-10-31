@@ -122,3 +122,4 @@ export const fintechSEO = {
   canonicalUrl: 'https://moneycal.in/learn/fintech-digital-payments'
 };
 
+

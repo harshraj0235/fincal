@@ -37,3 +37,4 @@ const EstatePlanningInheritance: React.FC = () => (
 
 export default EstatePlanningInheritance;
 
+
