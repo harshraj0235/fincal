@@ -60,7 +60,7 @@ const LearnHome: React.FC = () => {
                       Learn
                     </span>
                   </h1>
-                  <p className="text-xs text-gray-600">India's Finance Academy</p>
+                  <p className="text-xs text-gray-600">India's #1 Finance Academy</p>
                 </div>
               </Link>
 
