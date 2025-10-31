@@ -283,7 +283,7 @@ const PaymentSecurityGuide: React.FC = () => {
               {[
                 {
                   title: 'Enable UPI Transaction Alerts',
-                  desc: 'Turn on SMS/email alerts for every UPI transaction. You'll know instantly if someone uses your account.',
+                  desc: "Turn on SMS/email alerts for every UPI transaction. You'll know instantly if someone uses your account.",
                   icon: '🔔'
                 },
                 {
@@ -293,12 +293,12 @@ const PaymentSecurityGuide: React.FC = () => {
                 },
                 {
                   title: 'Use Strong UPI PIN',
-                  desc: 'Don't use: 1234, 0000, birth year, mobile number. Use random 6-digit PIN. Change every 6 months.',
+                  desc: "Don't use: 1234, 0000, birth year, mobile number. Use random 6-digit PIN. Change every 6 months.",
                   icon: '🔢'
                 },
                 {
                   title: 'Enable Biometric Lock',
-                  desc: 'Use fingerprint/face unlock for payment apps. Even if someone steals your phone, they can't make payments.',
+                  desc: "Use fingerprint/face unlock for payment apps. Even if someone steals your phone, they can't make payments.",
                   icon: '👆'
                 },
                 {
