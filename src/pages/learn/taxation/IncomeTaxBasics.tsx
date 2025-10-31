@@ -807,7 +807,7 @@ const IncomeTaxBasics: React.FC = () => {
                 },
                 {
                   q: 'I invested ₹1.5L in January-March. Can I claim 80C for full year?',
-                  a: 'YES! Doesn't matter when in financial year (Apr-Mar) you invest. As long as it's invested before Mar 31, you can claim full deduction.'
+                  a: `YES! Doesn't matter when in financial year (Apr-Mar) you invest. As long as it's invested before Mar 31, you can claim full deduction.`
                 },
                 {
                   q: 'Should I take HRA or new regime (without HRA)?',
