@@ -655,7 +655,7 @@ const MutualFundsGuide: React.FC = () => {
                 },
                 {
                   q: 'How many mutual funds should I have in portfolio?',
-                  a: '3-5 is ideal. Example: 1 Large Cap (Nifty Index) + 1 Flexi Cap (Parag Parikh) + 1 Small Cap (Axis Small Cap) + 1 Debt fund (HDFC Liquid) = Complete portfolio. Don't buy 15 funds - over-diversification dilutes returns!'
+                  a: `3-5 is ideal. Example: 1 Large Cap (Nifty Index) + 1 Flexi Cap (Parag Parikh) + 1 Small Cap (Axis Small Cap) + 1 Debt fund (HDFC Liquid) = Complete portfolio. Don't buy 15 funds - over-diversification dilutes returns!`
                 }
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6">
@@ -682,11 +682,11 @@ const MutualFundsGuide: React.FC = () => {
               {[
                 'Download Groww or Zerodha Coin app (best for beginners)',
                 'Complete KYC online (PAN + Aadhaar + selfie = 10 minutes)',
-                'Start with ₹1,000-5,000/month SIP (don't wait to save big amount)',
+                `Start with ₹1,000-5,000/month SIP (don't wait to save big amount)`,
                 'Choose DIRECT plans only (save 1-1.5% expense ratio)',
                 'Pick 2-3 funds: Nifty Index Fund + Flexi Cap Fund',
                 'Set SIP date right after salary date (auto-debit)',
-                'DON'T check NAV daily (check apenas once per quarter)',
+                `DON'T check NAV daily (check apenas once per quarter)`,
                 'Continue SIP for minimum 5 years (10+ years ideal for wealth creation)'
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 bg-white/20 backdrop-blur-sm rounded-lg p-4">
