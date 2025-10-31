@@ -14,9 +14,9 @@ const LearnHome: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="MoneyCal Learn - Free Finance Education Platform | Loans, Investment, Tax"
-        description="Learn finance the easy way with 150+ free tutorials on loans, EMI, investment, taxation, credit score. Interactive calculators, Hindi+English, real Indian examples."
-        keywords="finance education, learn finance, loan guide, EMI calculator, investment tutorial, tax guide, financial literacy India"
+        title="MoneyCal Learn - Free Finance Education Platform | 200+ Lessons | Hindi+English"
+        description="India's largest free finance academy! 200+ lessons on loans, investing, taxation, insurance, retirement, FinTech, business finance. Interactive calculators, Hindi+English, real Indian examples. Master money management, stock market, mutual funds, SIP, tax saving, and more!"
+        keywords="finance education India, learn finance Hindi, loan guide, EMI calculator, investment tutorial, stock market guide, mutual funds SIP, tax guide, insurance NPS, retirement planning, budgeting, financial literacy India, निवेश गाइड, वित्तीय शिक्षा"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -26,11 +26,11 @@ const LearnHome: React.FC = () => {
             <div className="flex items-center space-x-6">
               <span className="flex items-center">
                 <Sparkles className="w-4 h-4 mr-1 text-yellow-300" />
-                <span className="font-bold text-yellow-300">40 Lessons Live!</span>
+                <span className="font-bold text-yellow-300">200+ Lessons Live!</span>
               </span>
               <span className="hidden md:inline">
-                <span className="text-white/80">120,000+ words |</span>
-                <span className="font-bold ml-1 text-green-300">8 Interactive Calculators</span>
+                <span className="text-white/80">18 Categories |</span>
+                <span className="font-bold ml-1 text-green-300">All Topics Available!</span>
               </span>
             </div>
             <div className="flex items-center space-x-4">
@@ -125,7 +125,7 @@ const LearnHome: React.FC = () => {
                     <div className="hidden md:block">
                       <div className="text-right">
                         <div className="text-white/70 text-sm mb-1">Live Lessons</div>
-                        <div className="text-white text-4xl font-bold">40</div>
+                        <div className="text-white text-4xl font-bold">200+</div>
                       </div>
                     </div>
                   </div>
@@ -519,6 +519,249 @@ const LearnHome: React.FC = () => {
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-xs">CIBIL</span>
                     <span className="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-xs">750+ Score</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Money Management */}
+              <Link to="/learn/money-management" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-emerald-200 hover:border-emerald-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-emerald-100 rounded-xl">
+                      <span className="text-4xl">💰</span>
+                    </div>
+                    <span className="bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      8 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">
+                    💰 Money Management
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Budgeting, emergency fund, financial habits, and smart money management
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs">Budgeting</span>
+                    <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs">Emergency Fund</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Savings & Bank Products */}
+              <Link to="/learn/savings-bank-products" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-cyan-200 hover:border-cyan-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-cyan-100 rounded-xl">
+                      <span className="text-4xl">🏦</span>
+                    </div>
+                    <span className="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      8 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-cyan-600">
+                    🏦 Savings & Bank Products
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    FD, RD, savings accounts, and bank product comparison
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full text-xs">FD</span>
+                    <span className="bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full text-xs">Savings</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Investing & Wealth Creation */}
+              <Link to="/learn/investing-wealth" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-purple-200 hover:border-purple-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-purple-100 rounded-xl">
+                      <TrendingUp className="w-10 h-10 text-purple-600" />
+                    </div>
+                    <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      10 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-purple-600">
+                    📈 Investing & Wealth Creation
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Stocks, mutual funds, SIPs, asset allocation for long-term wealth
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">Stock Market</span>
+                    <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs">SIP</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Insurance, Retirement & Estate */}
+              <Link to="/learn/insurance-retirement" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-red-200 hover:border-red-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-red-100 rounded-xl">
+                      <span className="text-4xl">🛡️</span>
+                    </div>
+                    <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      7 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-red-600">
+                    🛡️ Insurance, Retirement & Estate
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Life, health insurance, NPS, retirement planning, and estate basics
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-red-50 text-red-700 px-3 py-1 rounded-full text-xs">Term Insurance</span>
+                    <span className="bg-red-50 text-red-700 px-3 py-1 rounded-full text-xs">NPS</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Taxation & Compliance */}
+              <Link to="/learn/taxation-compliance" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-amber-200 hover:border-amber-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-amber-100 rounded-xl">
+                      <span className="text-4xl">📋</span>
+                    </div>
+                    <span className="bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      7 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-amber-600">
+                    📋 Taxation & Compliance
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Income tax, 80C deductions, ITR filing, and tax optimization
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs">Income Tax</span>
+                    <span className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs">80C</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* FinTech & Digital Payments */}
+              <Link to="/learn/fintech-digital-payments" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-sky-200 hover:border-sky-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-sky-100 rounded-xl">
+                      <span className="text-4xl">📱</span>
+                    </div>
+                    <span className="bg-sky-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      6 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-sky-600">
+                    📱 FinTech & Digital Payments
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    UPI, digital wallets, online banking, and cybersecurity
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-sky-50 text-sky-700 px-3 py-1 rounded-full text-xs">UPI</span>
+                    <span className="bg-sky-50 text-sky-700 px-3 py-1 rounded-full text-xs">Digital Wallets</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Business Finance & Entrepreneurship */}
+              <Link to="/learn/business-finance-entrepreneurship" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-lime-200 hover:border-lime-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-lime-100 rounded-xl">
+                      <span className="text-4xl">🚀</span>
+                    </div>
+                    <span className="bg-lime-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      7 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-lime-600">
+                    🚀 Business Finance & Entrepreneurship
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Startup funding, business loans, cash flow, scaling strategies
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-lime-50 text-lime-700 px-3 py-1 rounded-full text-xs">Startup Funding</span>
+                    <span className="bg-lime-50 text-lime-700 px-3 py-1 rounded-full text-xs">GST</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Advanced Topics & Specialised Finance */}
+              <Link to="/learn/advanced-specialised-finance" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-violet-200 hover:border-violet-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-violet-100 rounded-xl">
+                      <span className="text-4xl">⚡</span>
+                    </div>
+                    <span className="bg-violet-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      7 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-violet-600">
+                    ⚡ Advanced Topics & Specialised Finance
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Real estate, commodities, forex, global markets, derivatives
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-violet-50 text-violet-700 px-3 py-1 rounded-full text-xs">Real Estate</span>
+                    <span className="bg-violet-50 text-violet-700 px-3 py-1 rounded-full text-xs">F&O</span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Behavioural Finance & Money Psychology */}
+              <Link to="/learn/behavioural-finance-money-psychology" className="group">
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-white rounded-xl p-8 shadow-lg border-2 border-fuchsia-200 hover:border-fuchsia-500 transition-all h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-4 bg-fuchsia-100 rounded-xl">
+                      <span className="text-4xl">🧠</span>
+                    </div>
+                    <span className="bg-fuchsia-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      7 Lessons
+                    </span>
+                  </div>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-fuchsia-600">
+                    🧠 Behavioural Finance & Money Psychology
+                  </h4>
+                  <p className="text-gray-600 mb-4">
+                    Money mindset, biases, habits, emotional spending control
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-fuchsia-50 text-fuchsia-700 px-3 py-1 rounded-full text-xs">Money Mindset</span>
+                    <span className="bg-fuchsia-50 text-fuchsia-700 px-3 py-1 rounded-full text-xs">FIRE</span>
                   </div>
                 </motion.div>
               </Link>
