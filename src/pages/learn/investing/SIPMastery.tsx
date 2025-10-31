@@ -493,7 +493,7 @@ const SIPMastery: React.FC = () => {
                 },
                 {
                   mistake: 'Investing in too many SIPs (10-15 different funds)',
-                  reality: 'More funds = more confusion. Most large cap funds have same stocks (TCS, Reliance, HDFC Bank). You're just duplicating, not diversifying.',
+                  reality: `More funds = more confusion. Most large cap funds have same stocks (TCS, Reliance, HDFC Bank). You're just duplicating, not diversifying.`,
                   fix: 'Maximum 3-5 SIPs: 1 Large Cap (or Nifty Index) + 1 Flexi Cap + 1 Small Cap. Simple. Easier to track. Better returns than 15 funds.'
                 },
                 {
