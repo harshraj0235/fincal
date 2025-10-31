@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, FileText, Clock, Brain } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowRight, FileText, Clock, Brain, CheckCircle } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 import { behaviouralFinanceLessons } from '../../../data/learn/behaviouralFinanceLessons';
 
@@ -13,39 +14,76 @@ const BehaviouralFinanceHub: React.FC = () => {
         keywords="money mindset India, investing biases, emotional investing, FOMO, wealth habits, FIRE financial independence, money relationships, व्यवहारिक वित्त, धन मनोविज्ञान" 
         url="/learn/behavioural-finance-money-psychology" 
       />
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 pt-20 px-4">
-        <div className="max-w-6xl mx-auto py-12">
-          <Link to="/learn" className="inline-flex items-center gap-2 text-gray-600 hover:text-pink-600 mb-8 transition-colors">
-            <ArrowLeft className="w-5 h-5" />
-            <span className="font-medium">Back to Learn Hub</span>
-          </Link>
-
-          <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-2xl p-12 mb-12 shadow-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-5xl">🧠</span>
-              <div>
-                <h1 className="text-4xl font-bold mb-2">Behavioural Finance & Money Psychology</h1>
-                <p className="text-xl opacity-90">व्यवहारिक वित्त और धन मनोविज्ञान</p>
-              </div>
-            </div>
-            <p className="text-lg leading-relaxed mb-6">
-              Master the psychology of money! Understand money mindset (scarcity vs abundance), overcome investing biases (herd mentality, FOMO), control emotional investing (fear, greed), build wealth habits, achieve FIRE (Financial Independence Retire Early), and manage money in relationships. The mind matters more than math! 🧠💰
-            </p>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5" />
-                <span><strong>7 Lessons</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span><strong>~5 Hours</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Brain className="w-5 h-5" />
-                <span><strong>Change Your Money Mindset</strong></span>
+      
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50">
+        {/* Header */}
+        <header className="bg-white shadow-md sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <Link to="/learn" className="flex items-center gap-3">
+                <div className="p-2 bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl">
+                  <Brain className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold">
+                    <span className="text-gray-900">MoneyCal</span>{' '}
+                    <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                      Learn
+                    </span>
+                  </h1>
+                  <p className="text-xs text-gray-600">Behavioural Finance & Psychology</p>
+                </div>
+              </Link>
+              <div className="flex items-center gap-4">
+                <Link to="/learn" className="text-gray-600 hover:text-pink-600 font-semibold">
+                  ← All Categories
+                </Link>
               </div>
             </div>
           </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="text-6xl mb-6">🧠</div>
+              <h2 className="text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+                  Behavioural Finance & Money Psychology
+                </span>
+              </h2>
+              <p className="text-2xl text-gray-600 mb-4">व्यवहारिक वित्त और धन मनोविज्ञान</p>
+              <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                Master money mindset, overcome biases, control emotions, and build wealth habits
+              </p>
+
+              <div className="flex gap-6 justify-center mb-12">
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-pink-600">7</div>
+                  <div className="text-sm text-gray-600">Lessons</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-purple-600">5h</div>
+                  <div className="text-sm text-gray-600">Duration</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-indigo-600">Mixed</div>
+                  <div className="text-sm text-gray-600">Level</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-orange-600">FREE</div>
+                  <div className="text-sm text-gray-600">Forever</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* All Lessons Grid */}
+        <section className="py-8 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">All Lessons</h3>
 
           <div className="grid md:grid-cols-2 gap-6">
             {behaviouralFinanceLessons.map((lesson, index) => (

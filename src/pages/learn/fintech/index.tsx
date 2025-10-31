@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, FileText, Clock, TrendingUp, Smartphone } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowRight, FileText, Clock, Smartphone, CheckCircle } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 import { fintechLessons } from '../../../data/learn/fintechLessons';
 
@@ -13,40 +14,76 @@ const FinTechDigitalPaymentsHub: React.FC = () => {
         keywords="UPI guide India, digital wallet, GPay PhonePe Paytm, online banking, payment security, cyber fraud prevention, FinTech apps India, BNPL, UPI गाइड, डिजिटल भुगतान" 
         url="/learn/fintech-digital-payments" 
       />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 pt-20 px-4">
-        <div className="max-w-6xl mx-auto py-12">
-          <Link to="/learn" className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 mb-8 transition-colors">
-            <ArrowLeft className="w-5 h-5" />
-            <span className="font-medium">Back to Learn Hub</span>
-          </Link>
-
-          {/* Hero Section */}
-          <div className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-2xl p-12 mb-12 shadow-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-5xl">💳</span>
-              <div>
-                <h1 className="text-4xl font-bold mb-2">FinTech & Digital Payments</h1>
-                <p className="text-xl opacity-90">फिनटेक और डिजिटल भुगतान - भारत का डिजिटल क्रांति</p>
-              </div>
-            </div>
-            <p className="text-lg leading-relaxed mb-6">
-              Master digital payments in India! Learn UPI (GPay, PhonePe, Paytm), digital wallets, online banking (NEFT/RTGS/IMPS), payment security, avoid UPI scams, explore FinTech apps (CRED, Jupiter, Fi), and understand BNPL (Buy Now Pay Later). Become a digital payment expert! 🚀
-            </p>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5" />
-                <span><strong>6 Lessons</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span><strong>~4 Hours</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Smartphone className="w-5 h-5" />
-                <span><strong>100% Digital India Ready</strong></span>
+      
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50">
+        {/* Header */}
+        <header className="bg-white shadow-md sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <Link to="/learn" className="flex items-center gap-3">
+                <div className="p-2 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl">
+                  <Smartphone className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold">
+                    <span className="text-gray-900">MoneyCal</span>{' '}
+                    <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                      Learn
+                    </span>
+                  </h1>
+                  <p className="text-xs text-gray-600">FinTech & Digital Payments</p>
+                </div>
+              </Link>
+              <div className="flex items-center gap-4">
+                <Link to="/learn" className="text-gray-600 hover:text-blue-600 font-semibold">
+                  ← All Categories
+                </Link>
               </div>
             </div>
           </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="text-6xl mb-6">📱</div>
+              <h2 className="text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  FinTech & Digital Payments
+                </span>
+              </h2>
+              <p className="text-2xl text-gray-600 mb-4">फिनटेक और डिजिटल भुगतान</p>
+              <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                Master UPI, digital wallets, online banking, payment security, and FinTech apps
+              </p>
+
+              <div className="flex gap-6 justify-center mb-12">
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-blue-600">6</div>
+                  <div className="text-sm text-gray-600">Lessons</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-green-600">4h</div>
+                  <div className="text-sm text-gray-600">Duration</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-cyan-600">Beginner</div>
+                  <div className="text-sm text-gray-600">Level</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-orange-600">FREE</div>
+                  <div className="text-sm text-gray-600">Forever</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* All Lessons Grid */}
+        <section className="py-8 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">All Lessons</h3>
 
           {/* Lessons Grid */}
           <div className="grid md:grid-cols-2 gap-6">

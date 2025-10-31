@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, FileText, Clock, Target } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowRight, FileText, Clock, Target, CheckCircle } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 import { advancedFinanceLessons } from '../../../data/learn/advancedFinanceLessons';
 
@@ -13,39 +14,76 @@ const AdvancedSpecialisedFinanceHub: React.FC = () => {
         keywords="real estate investment India, commodities trading MCX, global investing US stocks, derivatives F&O, cryptocurrency Bitcoin, alternative investments AIF PMS, estate planning, उन्नत वित्त विषय" 
         url="/learn/advanced-specialised-finance" 
       />
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50 pt-20 px-4">
-        <div className="max-w-6xl mx-auto py-12">
-          <Link to="/learn" className="inline-flex items-center gap-2 text-gray-600 hover:text-purple-600 mb-8 transition-colors">
-            <ArrowLeft className="w-5 h-5" />
-            <span className="font-medium">Back to Learn Hub</span>
-          </Link>
-
-          <div className="bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-2xl p-12 mb-12 shadow-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-5xl">🎯</span>
-              <div>
-                <h1 className="text-4xl font-bold mb-2">Advanced Topics / Specialised Finance</h1>
-                <p className="text-xl opacity-90">उन्नत विषय / विशेष वित्त - अनुभवी निवेशकों के लिए</p>
-              </div>
-            </div>
-            <p className="text-lg leading-relaxed mb-6">
-              Take your investing to the next level! Master real estate (REITs, property investment), commodities trading (MCX gold/silver), global investing (US stocks), derivatives (F&O), cryptocurrency (Bitcoin/Ethereum), alternative investments (AIF/PMS), and estate planning. Advanced strategies for wealth multiplication! 📈
-            </p>
-            <div className="flex flex-wrap gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5" />
-                <span><strong>7 Lessons</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span><strong>~6 Hours</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Target className="w-5 h-5" />
-                <span><strong>For Experienced Investors</strong></span>
+      
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-rose-50">
+        {/* Header */}
+        <header className="bg-white shadow-md sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <Link to="/learn" className="flex items-center gap-3">
+                <div className="p-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-bold">
+                    <span className="text-gray-900">MoneyCal</span>{' '}
+                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                      Learn
+                    </span>
+                  </h1>
+                  <p className="text-xs text-gray-600">Advanced & Specialised Finance</p>
+                </div>
+              </Link>
+              <div className="flex items-center gap-4">
+                <Link to="/learn" className="text-gray-600 hover:text-purple-600 font-semibold">
+                  ← All Categories
+                </Link>
               </div>
             </div>
           </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="text-6xl mb-6">⚡</div>
+              <h2 className="text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Advanced Topics & Specialised Finance
+                </span>
+              </h2>
+              <p className="text-2xl text-gray-600 mb-4">उन्नत विषय और विशेष वित्त</p>
+              <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                Real estate, commodities, derivatives, cryptocurrency, and global investing
+              </p>
+
+              <div className="flex gap-6 justify-center mb-12">
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-purple-600">7</div>
+                  <div className="text-sm text-gray-600">Lessons</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-pink-600">7h</div>
+                  <div className="text-sm text-gray-600">Duration</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-rose-600">Advanced</div>
+                  <div className="text-sm text-gray-600">Level</div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-lg">
+                  <div className="text-3xl font-bold text-orange-600">FREE</div>
+                  <div className="text-sm text-gray-600">Forever</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* All Lessons Grid */}
+        <section className="py-8 px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">All Lessons</h3>
 
           <div className="grid md:grid-cols-2 gap-6">
             {advancedFinanceLessons.map((lesson, index) => (
