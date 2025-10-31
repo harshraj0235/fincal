@@ -496,7 +496,7 @@ const IncomeTaxBasics: React.FC = () => {
                   color: 'blue'
                 },
                 {
-                  situation: 'My income is < ₹7L and I don\'t invest much',
+                  situation: `My income is < ₹7L and I don't invest much`,
                   regime: 'NEW REGIME',
                   reason: 'New regime has higher exemption limit (₹3L vs ₹2.5L). Lower tax rates in ₹3-7L bracket.',
                   color: 'green'
@@ -510,13 +510,13 @@ const IncomeTaxBasics: React.FC = () => {
                 {
                   situation: 'My company provides HRA + I claim LTA/medical',
                   regime: 'OLD REGIME',
-                  reason: 'All these exemptions available in old regime. New regime doesn\'t allow them.',
+                  reason: `All these exemptions available in old regime. New regime doesn't allow them.`,
                   color: 'blue'
                 },
                 {
-                  situation: 'I'm freelancer/self-employed with few expenses',
+                  situation: `I'm freelancer/self-employed with few expenses`,
                   regime: 'NEW REGIME',
-                  reason: 'If not investing in 80C or paying home loan interest, new regime's lower rates are better.',
+                  reason: `If not investing in 80C or paying home loan interest, new regime's lower rates are better.`,
                   color: 'green'
                 }
               ].map((item, i) => (
@@ -707,11 +707,11 @@ const IncomeTaxBasics: React.FC = () => {
                 {
                   mistake: 'Investing in tax-saving FD instead of ELSS',
                   reality: 'Tax-saving FD gives 6.5% taxable returns. ELSS gives 12% tax-free (LTCG exempt up to ₹1.25L). Over 20 years: ELSS creates ₹1.3 Cr vs FD apenas ₹50L.',
-                  fix: 'Young? Choose ELSS for 80C. Senior citizen? Tax-saving FD is okay. Don't choose based on "safety" alone - choose based on AGE.'
+                  fix: `Young? Choose ELSS for 80C. Senior citizen? Tax-saving FD is okay. Don't choose based on "safety" alone - choose based on AGE.`
                 },
                 {
                   mistake: 'Not declaring interest income (FD, savings)',
-                  reality: 'Banks report your FD interest to Income Tax. If you don't declare, automatic notice. Penalty 50% of tax + interest!',
+                  reality: `Banks report your FD interest to Income Tax. If you don't declare, automatic notice. Penalty 50% of tax + interest!`,
                   fix: 'Declare ALL income: Salary + FD interest + rental + capital gains. Income Tax has your bank data anyway.'
                 },
                 {
@@ -720,9 +720,9 @@ const IncomeTaxBasics: React.FC = () => {
                   fix: 'Pay by June 15, Sept 15, Dec 15, Mar 15. Even rough estimates okay. Adjust in final ITR filing.'
                 },
                 {
-                  mistake: 'Not using employer\'s tax calculator',
+                  mistake: `Not using employer's tax calculator`,
                   reality: 'Many salaried people overpay tax all year, then wait for refund. Why give interest-free loan to government?',
-                  fix: 'At start of financial year, submit investment proofs to employer. They\'ll deduct correct TDS. No overpayment = no refund wait.'
+                  fix: `At start of financial year, submit investment proofs to employer. They'll deduct correct TDS. No overpayment = no refund wait.`
                 }
               ].map((item, i) => (
                 <div key={i} className="bg-red-50 rounded-xl p-6 border-l-4 border-red-500">
@@ -755,10 +755,10 @@ const IncomeTaxBasics: React.FC = () => {
               {[
                 'You can SWITCH regimes every year! Try new regime this year, if tax is higher, switch to old next year. Calculate both every year in April.',
                 'HRA exemption formula: Minimum of (Actual rent - 10% salary, 50% salary for metros, Actual HRA received). Use calculator for exact amount.',
-                'Standard deduction ₹50K is automatic for salaried. No proof needed. It's on top of 80C. So ₹2L deductions possible (₹1.5L 80C + ₹50K std).',
+                `Standard deduction ₹50K is automatic for salaried. No proof needed. It's on top of 80C. So ₹2L deductions possible (₹1.5L 80C + ₹50K std).`,
                 'If salary > ₹15L, definitely choose old regime. With 80C + home loan + HRA, you can save ₹1L-2L in tax vs new regime.',
-                'Don't wait till March to invest for tax saving. Start in April. ₹12,500/month ELSS SIP throughout year is better than ₹1.5L lump sum in March.',
-                'Senior citizens (60+) get higher exemption: ₹3L tax-free in old regime (vs ₹2.5L for others). Always choose old regime if you're 60+.',
+                `Don't wait till March to invest for tax saving. Start in April. ₹12,500/month ELSS SIP throughout year is better than ₹1.5L lump sum in March.`,
+                `Senior citizens (60+) get higher exemption: ₹3L tax-free in old regime (vs ₹2.5L for others). Always choose old regime if you're 60+.`,
                 'Form 12BB: Submit to employer by Feb to declare investments. They adjust TDS. Otherwise you pay full tax, get refund later (waste of time).',
                 'Use Income Tax Refund for investments. Many people spend ₹40K-60K refund. Instead invest it immediately in ELSS/PPF to compound for next year.'
               ].map((tip, i) => (
@@ -795,11 +795,11 @@ const IncomeTaxBasics: React.FC = () => {
                 },
                 {
                   q: 'What if I forget to declare ₹50K FD interest?',
-                  a: 'Income Tax already knows (banks report it). You'll get notice. Penalty: 50% of tax + interest @1% per month. Always declare all income - IT has your data via Form 26AS.'
+                  a: `Income Tax already knows (banks report it). You'll get notice. Penalty: 50% of tax + interest @1% per month. Always declare all income - IT has your data via Form 26AS.`
                 },
                 {
                   q: 'My employer deducted ₹80K TDS but actual tax is apenas ₹60K. How to get ₹20K back?',
-                  a: 'File ITR. Claim refund. It will be credited to your bank in 30-90 days. This happens when employer doesn't consider your 80C investments properly.'
+                  a: `File ITR. Claim refund. It will be credited to your bank in 30-90 days. This happens when employer doesn't consider your 80C investments properly.`
                 },
                 {
                   q: 'Is advance tax applicable for salaried employees?',
@@ -819,11 +819,11 @@ const IncomeTaxBasics: React.FC = () => {
                 },
                 {
                   q: 'New regime is "default" - what does it mean?',
-                  a: 'If you don't choose, Income Tax assumes new regime. You can still switch to old while filing ITR. Choose wisely based on investments. Don't just go with "default".'
+                  a: `If you don't choose, Income Tax assumes new regime. You can still switch to old while filing ITR. Choose wisely based on investments. Don't just go with "default".`
                 },
                 {
-                  q: 'I'm 62 years old. Different tax slabs for me?',
-                  a: 'Yes! Senior citizens (60-80 years): ₹3L tax-free in old regime. Super seniors (80+ years): ₹5L tax-free. New regime: Same slabs as everyone (no senior citizen benefit). Always choose old regime if you're 60+.'
+                  q: `I'm 62 years old. Different tax slabs for me?`,
+                  a: `Yes! Senior citizens (60-80 years): ₹3L tax-free in old regime. Super seniors (80+ years): ₹5L tax-free. New regime: Same slabs as everyone (no senior citizen benefit). Always choose old regime if you're 60+.`
                 }
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6">
@@ -854,7 +854,7 @@ const IncomeTaxBasics: React.FC = () => {
                 'Pay rent? Claim HRA (submit receipts + landlord PAN)',
                 'Have home loan? Claim principal (80C) + interest (24b) deductions',
                 'Buy term insurance (₹10-15K) + health insurance (₹15-25K) - protection + tax saving',
-                'File ITR by June 30 (don't wait till July 31)',
+                `File ITR by June 30 (don't wait till July 31)`,
                 'Check Form 26AS before filing (all TDS, interest income auto-populated)'
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 bg-white/20 backdrop-blur-sm rounded-lg p-4">
