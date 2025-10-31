@@ -483,13 +483,13 @@ const HealthInsuranceGuide: React.FC = () => {
                 },
                 {
                   mistake: 'Not disclosing pre-existing diseases (diabetes, BP)',
-                  reality: 'Claim time, insurance investigates medical history. Found diabetes pero you didn't declare? Claim REJECTED! ₹10L hospital bill, you pay from pocket.',
+                  reality: `Claim time, insurance investigates medical history. Found diabetes pero you didn't declare? Claim REJECTED! ₹10L hospital bill, you pay from pocket.`,
                   fix: 'Declare honestly. Premium increases 20-30% pero at least claims get paid. Hiding diseases = claim rejection risk.'
                 },
                 {
                   mistake: 'Buying health insurance apenas when sick',
                   reality: 'Got diabetes at age 45, NOW want insurance? Premium is 40-50% higher. Also 2-4 year waiting period for diabetes-related claims!',
-                  fix: 'Buy young (age 25-30) when healthy. Lock low premium. Pre-existing conditions covered after waiting period. Don't wait till sick!'
+                  fix: `Buy young (age 25-30) when healthy. Lock low premium. Pre-existing conditions covered after waiting period. Don't wait till sick!`
                 },
                 {
                   mistake: 'Not checking room rent limit',
@@ -503,8 +503,8 @@ const HealthInsuranceGuide: React.FC = () => {
                 },
                 {
                   mistake: 'Not porting to better insurer (stuck with bad claims company)',
-                  reality: 'Current insurer has 65% CSR (rejects 35% claims!). Pero stuck for 10 years thinking "I'll lose benefits". You won't!',
-                  fix: 'Portability allowed after 1 year. Keep accumulated benefits (no fresh waiting periods). Switch to 90%+ CSR company. Don't suffer bad service!'
+                  reality: `Current insurer has 65% CSR (rejects 35% claims!). Pero stuck for 10 years thinking "I'll lose benefits". You won't!`,
+                  fix: `Portability allowed after 1 year. Keep accumulated benefits (no fresh waiting periods). Switch to 90%+ CSR company. Don't suffer bad service!`
                 },
                 {
                   mistake: 'Buying health insurance with investment (ULIP health plans)',
@@ -519,7 +519,7 @@ const HealthInsuranceGuide: React.FC = () => {
                 {
                   mistake: 'Choosing cheapest policy (₹8K premium vs ₹15K)',
                   reality: 'Cheap policy has: Low network hospitals (800 vs 5,000), room rent limits (₹3K/day), copay 20% (you pay 20% of bill), claim rejection common.',
-                  fix: 'Don't choose based on premium alone. Check: CSR 85%+, network hospitals 5,000+, no room rent limit, zero copay. Worth paying ₹5-7K extra.'
+                  fix: `Don't choose based on premium alone. Check: CSR 85%+, network hospitals 5,000+, no room rent limit, zero copay. Worth paying ₹5-7K extra.`
                 },
                 {
                   mistake: 'Not buying critical illness rider',
@@ -561,7 +561,7 @@ const HealthInsuranceGuide: React.FC = () => {
                 `Get separate policy for parents > 60. Don't add to family floater (makes premium very expensive). Senior citizen plans available: Star Senior Citizen, Care Senior.`,
                 'Maternity planning? Buy policy 9-12 months BEFORE conceiving (waiting period). Cost: ₹40-60K delivery expenses covered.',
                 'Room rent: Choose "no capping" policies (Care, Niva Bupa offer this). Worth ₹3K extra premium. AC rooms are ₹8-10K/day, limits create co-payment issues.',
-                'Keep insurance card photo in phone. Emergency? Show card, hospital starts cashless process. Don't waste time searching for card at home.',
+                `Keep insurance card photo in phone. Emergency? Show card, hospital starts cashless process. Don't waste time searching for card at home.`,
                 'Renew ON TIME! Gap of even 1 day = fresh waiting periods (2-4 years for pre-existing). Set auto-debit or calendar reminder 15 days before expiry.'
               ].map((tip, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 shadow border-l-4 border-yellow-500">
@@ -612,8 +612,8 @@ const HealthInsuranceGuide: React.FC = () => {
                   a: 'Proportionate deduction! If room limit is 33% of actual (₹5K vs ₹15K), entire bill reduced by 33%. ₹3L bill becomes ₹2L claim. You pay ₹1L! Choose no-limit policies!'
                 },
                 {
-                  q: 'I'm 28, healthy. Should I buy health insurance now or wait?',
-                  a: 'Buy NOW! Age 28: ₹10L cover = ₹15K/year. Age 38: Same = ₹28K/year. Lock cheap rates now. Even if you don't claim for 10 years, premium saved vs buying later = ₹1.5 lakh!'
+                  q: `I'm 28, healthy. Should I buy health insurance now or wait?`,
+                  a: `Buy NOW! Age 28: ₹10L cover = ₹15K/year. Age 38: Same = ₹28K/year. Lock cheap rates now. Even if you don't claim for 10 years, premium saved vs buying later = ₹1.5 lakh!`
                 },
                 {
                   q: 'What is restoration benefit? Is it useful?',
@@ -657,7 +657,7 @@ const HealthInsuranceGuide: React.FC = () => {
                 'Declare ALL health issues honestly (avoid claim rejection)',
                 'Choose NO room rent limit policies (worth ₹3K extra premium)',
                 'Save TPA helpline number in phone contacts',
-                'Set auto-renewal (don't let policy lapse - fresh waiting periods!)'
+                `Set auto-renewal (don't let policy lapse - fresh waiting periods!)`
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 bg-white/20 backdrop-blur-sm rounded-lg p-4">
                   <span className="bg-white text-green-600 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">{i + 1}</span>
