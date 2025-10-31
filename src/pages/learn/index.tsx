@@ -5,7 +5,7 @@ import {
   BookOpen, Search, TrendingUp, Shield, Home, Car, GraduationCap, 
   Briefcase, CreditCard, BarChart3, Coins, UserCheck, Globe, Sparkles, 
   ArrowRight, Clock, Target, Award, Zap, Filter, ChevronDown, ChevronUp,
-  Smartphone, Brain, FileText, Wallet, PiggyBank, TrendingDown, X
+  Smartphone, Brain, FileText, Wallet, PiggyBank, TrendingDown, X, Star
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 
