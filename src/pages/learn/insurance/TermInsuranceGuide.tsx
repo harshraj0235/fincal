@@ -875,10 +875,10 @@ const TermInsuranceGuide: React.FC = () => {
               </div>
 
               <div className="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-500">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg">6</span>
-                  <strong className="text-lg text-blue-900">Medical Tests (If Cover > ₹1 Cr)</strong>
-                </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg">6</span>
+                    <strong className="text-lg text-blue-900">Medical Tests (If Cover &gt; ₹1 Cr)</strong>
+                  </div>
                 <p className="text-gray-700 mb-3">
                   For ₹50L-₹1 Cr cover: Usually no medical tests (apenas self-declaration). 
                   For ₹1 Cr+ cover or age 40+: Blood test, urine test, ECG, height/weight measurement.
