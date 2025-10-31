@@ -318,7 +318,7 @@ const UPICompleteGuide: React.FC = () => {
                   </li>
                 </ul>
                 <p className="text-xs text-blue-700 mt-4">
-                  <strong>Note:</strong> Merchants pay 0-1% to banks, consumers pay ₹0. That's why UPI is free for users!
+                  <strong>Note:</strong> Merchants pay 0-1% to banks, consumers pay ₹0. That&apos;s why UPI is free for users!
                 </p>
               </div>
             </div>
@@ -329,7 +329,7 @@ const UPICompleteGuide: React.FC = () => {
                 <p><strong>Via UPI:</strong> GPay → Friend's mobile number → ₹50,000 → Done in 5 seconds. Charge: ₹0</p>
                 <p><strong>Via NEFT/RTGS:</strong> Login netbanking → Add beneficiary → Wait 30 mins → Transfer. Charge: ₹5-25</p>
                 <p><strong>Via Cheque:</strong> Write cheque → Give to friend → He deposits → Clears in 2-3 days. Charge: ₹0 pero waste of time</p>
-                <p className="text-green-700 font-bold mt-3">✅ UPI is FASTEST + CHEAPEST + EASIEST. That's why 10 billion transactions/month!</p>
+                <p className="text-green-700 font-bold mt-3">✅ UPI is FASTEST + CHEAPEST + EASIEST. That&apos;s why 10 billion transactions/month!</p>
               </div>
             </div>
           </motion.section>
@@ -416,7 +416,7 @@ const UPICompleteGuide: React.FC = () => {
                   Your UPI ID is like email for payments. Format: yourname@bankname (e.g., rajesh@paytm, priya@ybl).
                 </p>
                 <p className="text-sm text-gray-600">
-                  <strong>Difference:</strong> Mobile number works too! Pero UPI ID is more private (don't need to share mobile number publicly).
+                  <strong>Difference:</strong> Mobile number works too! Pero UPI ID is more private (don&apos;t need to share mobile number publicly).
                 </p>
               </div>
             </div>
@@ -463,14 +463,14 @@ const UPICompleteGuide: React.FC = () => {
                   },
                   {
                     scam: '"Wrong Payment - Refund Me" Scam',
-                    how: 'Someone sends you ₹500. Then calls: "Sir I sent ₹5,000 by mistake, sent apenas ₹500. Please refund ₹5,000." You refund, thinking you'll get ₹4,500 more.',
+                    how: `Someone sends you ₹500. Then calls: "Sir I sent ₹5,000 by mistake, sent apenas ₹500. Please refund ₹5,000." You refund, thinking you'll get ₹4,500 more.`,
                     reality: 'The initial ₹500 was from stolen UPI. It gets reversed by bank. Pero your ₹5,000 refund is gone. You lose ₹5K!',
-                    avoid: 'If someone sends money by mistake, use UPI app's "Refund" button. Don't send new payment. Refund button reverses exact amount safely.'
+                    avoid: `If someone sends money by mistake, use UPI app's "Refund" button. Don't send new payment. Refund button reverses exact amount safely.`
                   },
                   {
                     scam: 'QR Code with Hidden Amount',
                     how: 'Shop bill is ₹500. Shopkeeper shows QR code. You scan + enter UPI PIN. Later see ₹5,000 deducted! QR had ₹5K hidden.',
-                    reality: 'Dynamic QR codes can have preset amounts. You don't see amount before entering PIN on some apps.',
+                    reality: `Dynamic QR codes can have preset amounts. You don't see amount before entering PIN on some apps.`,
                     avoid: 'ALWAYS check amount on screen before entering UPI PIN. If amount is wrong, cancel payment. Scan QR again carefully.'
                   },
                   {
@@ -526,9 +526,9 @@ const UPICompleteGuide: React.FC = () => {
                 'Open separate zero-balance account for UPI (₹10-20K max). If UPI hacked, loss is limited. Salary account with ₹5L stays safe!',
                 'Use 2 UPI apps (GPay + PhonePe). If one server is down during urgent payment, switch to other. Festival times, GPay often crashes.',
                 'For payments > ₹50K, use NEFT/IMPS instead of UPI. UPI is convenient pero no paper trail for disputes. NEFT has better record-keeping for big amounts.',
-                'Enable UPI transaction limit in app settings. Set max ₹10K/transaction. For bigger payments, you'll need to temporarily increase limit (prevents accidental high payments).',
-                'Don't save UPI PIN in apps or notes. Memorize it. If phone stolen, thief can't make payments without PIN (unless you saved it stupidly!).',
-                'For merchant payments, ask for invoice/bill before scanning QR. Shopkeepers can show higher QR amount - you won't know until deducted.',
+                `Enable UPI transaction limit in app settings. Set max ₹10K/transaction. For bigger payments, you'll need to temporarily increase limit (prevents accidental high payments).`,
+                `Don't save UPI PIN in apps or notes. Memorize it. If phone stolen, thief can't make payments without PIN (unless you saved it stupidly!).`,
+                `For merchant payments, ask for invoice/bill before scanning QR. Shopkeepers can show higher QR amount - you won't know until deducted.`,
                 'UPI cashback expires! GPay scratchers expire in 7 days, PhonePe cashback in 30 days. Use it or lose it. Set reminders.',
                 'Link UPI to credit card (HDFC, Axis offer this). Get 30-50 days interest-free + reward points + UPI convenience. Best of both worlds!'
               ].map((tip, i) => (
@@ -569,11 +569,11 @@ const UPICompleteGuide: React.FC = () => {
                 },
                 {
                   q: 'Is UPI safe? Can hackers steal money?',
-                  a: 'UPI is safe with 2-factor authentication (UPI PIN + mobile OTP). Pero social engineering frauds are common - people willingly give PIN/OTP thinking it's verification. Technology is safe, human error causes losses.'
+                  a: `UPI is safe with 2-factor authentication (UPI PIN + mobile OTP). Pero social engineering frauds are common - people willingly give PIN/OTP thinking it's verification. Technology is safe, human error causes losses.`
                 },
                 {
                   q: 'Someone sent money, says "refund urgently". Should I?',
-                  a: 'SCAM alert! Use UPI app's official "Refund Transaction" button only. Don't send fresh payment. Scammers send ₹500 from stolen account, ask for ₹5K refund. Initial ₹500 reverses, your ₹5K is gone!'
+                  a: `SCAM alert! Use UPI app's official "Refund Transaction" button only. Don't send fresh payment. Scammers send ₹500 from stolen account, ask for ₹5K refund. Initial ₹500 reverses, your ₹5K is gone!`
                 },
                 {
                   q: 'Bank customer care called asking for UPI PIN for "verification". Give it?',
@@ -589,7 +589,7 @@ const UPICompleteGuide: React.FC = () => {
                 },
                 {
                   q: 'Lost phone with UPI apps. Can someone steal money?',
-                  a: 'They need UPI PIN to make payments. If you didn't save PIN stupidly, money is safe. Immediately call bank to block UPI on that mobile number. Buy new SIM (same number), reinstall app, set new PIN.'
+                  a: `They need UPI PIN to make payments. If you didn't save PIN stupidly, money is safe. Immediately call bank to block UPI on that mobile number. Buy new SIM (same number), reinstall app, set new PIN.`
                 },
                 {
                   q: 'Should I use GPay, PhonePe, or both?',
