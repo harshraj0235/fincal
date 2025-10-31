@@ -19,7 +19,8 @@
 | 4 | `7e64904` | Apostrophes | PaymentSecurityGuide.tsx | 3 | ✅ |
 | 5 | `1894b28` | Apostrophes | Money-management (7 files) | 24 | ✅ |
 | 6 | `8853759` | Apostrophes | PaymentSecurityGuide.tsx | 2 | ✅ |
-| **TOTAL** | **6 commits** | **All types** | **10 files** | **33** | **✅ 100%** |
+| 7 | `8eb7823` | Nested Quotes | WhatIsMoney.tsx | 1 | ✅ |
+| **TOTAL** | **7 commits** | **All types** | **11 files** | **34** | **✅ 100%** |
 
 ---
 
