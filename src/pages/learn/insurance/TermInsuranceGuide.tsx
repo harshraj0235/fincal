@@ -80,7 +80,7 @@ const TermInsuranceGuide: React.FC = () => {
               </h3>
               <ul className="space-y-2">
                 {[
-                  'Understand what term insurance is and why it's the cheapest life cover',
+                  `Understand what term insurance is and why it's the cheapest life cover`,
                   'Calculate how much cover you need (15x income rule)',
                   'Compare online vs offline term plans (save 30-40% buying online)',
                   'Choose best insurance company (claim settlement ratio 95%+)',
@@ -533,7 +533,7 @@ const TermInsuranceGuide: React.FC = () => {
                   cover: 'Future premiums waived',
                   description: 'If you become disabled/critically ill, insurance company pays all future premiums for you',
                   worth: 'YES - 85% recommended',
-                  why: 'If you can't work (disability), at least your family stays protected even if you can't pay premium.',
+                  why: `If you can't work (disability), at least your family stays protected even if you can't pay premium.`,
                   example: 'Priya (30) had accident, 80% disabled. Insurance waived her ₹15K/year premium for remaining 25 years = ₹3.75L saved. Cover continued.'
                 },
                 {
@@ -543,8 +543,8 @@ const TermInsuranceGuide: React.FC = () => {
                   cover: 'Monthly income for 10-20 years',
                   description: 'Instead of lump sum, pays monthly income (₹50K/month for 20 years) to family',
                   worth: 'MAYBE - 40% recommended',
-                  why: 'Good if your spouse is not financially savvy (can't manage ₹1 Cr lump sum). Bad if they can invest properly.',
-                  example: 'Amit's wife doesn't understand investments. Opted for income rider. Gets ₹50K/month for 20 years = ₹1.2 Cr total (vs ₹1 Cr lump sum).'
+                  why: `Good if your spouse is not financially savvy (can't manage ₹1 Cr lump sum). Bad if they can invest properly.`,
+                  example: `Amit's wife doesn't understand investments. Opted for income rider. Gets ₹50K/month for 20 years = ₹1.2 Cr total (vs ₹1 Cr lump sum).`
                 },
                 {
                   name: 'Return of Premium Rider',
@@ -631,33 +631,33 @@ const TermInsuranceGuide: React.FC = () => {
             <div className="space-y-4">
               {[
                 {
-                  mistake: 'Buying LIC endowment plan thinking it\'s "better" than term',
+                  mistake: `Buying LIC endowment plan thinking it's "better" than term`,
                   reality: 'LIC endowment gives apenas 4-5% returns + expensive cover. Term (₹12K) + SIP (₹1L) gives ₹1 Cr cover + ₹3 Cr wealth. Endowment (₹1.12L) gives apenas ₹50L maturity.',
                   fix: 'Buy pure term insurance. Invest separately in mutual funds. NEVER mix insurance with investment.'
                 },
                 {
                   mistake: 'Buying insufficient cover (₹10-20L apenas)',
-                  reality: '₹20L sounds big pero it's apenas 3-4 years' expenses for family. If spouse is homemaker + 2 kids in school, they need ₹50L-1 Cr minimum.',
+                  reality: `₹20L sounds big pero it's apenas 3-4 years' expenses for family. If spouse is homemaker + 2 kids in school, they need ₹50L-1 Cr minimum.`,
                   fix: 'Use formula: Annual income × 15. If earning ₹6L/year, buy ₹90L-1 Cr cover minimum.'
                 },
                 {
-                  mistake: 'Delaying because "I'm young and healthy"',
+                  mistake: `Delaying because "I'm young and healthy"`,
                   reality: 'Age 25: ₹1 Cr cover = ₹8K/year. Age 40: Same cover = ₹25K/year. 15 years delay = ₹5.1 lakh extra paid over policy lifetime!',
                   fix: 'Buy before age 30. Even if unmarried. Lock low premium for 30-40 years. Increase cover later when salary increases.'
                 },
                 {
                   mistake: 'Hiding smoking/drinking habits',
                   reality: 'If claim investigation finds you smoked (pero declared non-smoker), claim can be REJECTED! Family gets nothing.',
-                  fix: 'Declare honestly. Smoker premium is 40% higher pero at least claim will be paid. Don't risk ₹1 Cr claim for ₹5K saving.'
+                  fix: `Declare honestly. Smoker premium is 40% higher pero at least claim will be paid. Don't risk ₹1 Cr claim for ₹5K saving.`
                 },
                 {
                   mistake: 'Buying from agent to "help relative/friend"',
                   reality: 'Offline plans are 30-40% costlier. Agent commission comes from YOUR pocket. Over 30 years = ₹1.5-2L extra paid!',
-                  fix: 'Buy online directly. If agent is close relative, explain politely. Your family's ₹1 Cr protection > agent's ₹15K commission.'
+                  fix: `Buy online directly. If agent is close relative, explain politely. Your family's ₹1 Cr protection > agent's ₹15K commission.`
                 },
                 {
                   mistake: 'Not adding critical illness rider',
-                  reality: '1 in 3 Indians get cancer/heart attack before 60. Treatment costs ₹15-30L. If you survive pero exhaust savings, family financially ruined even while you\'re alive.',
+                  reality: `1 in 3 Indians get cancer/heart attack before 60. Treatment costs ₹15-30L. If you survive pero exhaust savings, family financially ruined even while you're alive.`,
                   fix: 'Add critical illness rider (₹3-4K/year for ₹30L cover). Cheap insurance for expensive diseases.'
                 },
                 {
@@ -666,19 +666,19 @@ const TermInsuranceGuide: React.FC = () => {
                   fix: 'Buy regular term (₹12K). Invest ₹24K/year in mutual fund. After 30 years: ₹70L corpus vs apenas ₹10.8L premium refund.'
                 },
                 {
-                  mistake: 'Buying when you don\'t have dependents',
-                  reality: 'Single, no parents to support, no spouse/kids? Then you don\'t need life insurance. Nobody suffers financially if you die.',
+                  mistake: `Buying when you don't have dependents`,
+                  reality: `Single, no parents to support, no spouse/kids? Then you don't need life insurance. Nobody suffers financially if you die.`,
                   fix: 'Invest that ₹12K in equity mutual fund instead. Buy term insurance only when you marry or have dependent parents.'
                 },
                 {
                   mistake: 'Not reading policy exclusions',
                   reality: 'Suicide in first year = no payout. Death while skydiving/adventure sports = rejected. Pre-existing disease not disclosed = rejected.',
-                  fix: 'Read policy document pages 8-12 (exclusions section). Understand what's NOT covered. Declare all health issues honestly.'
+                  fix: `Read policy document pages 8-12 (exclusions section). Understand what's NOT covered. Declare all health issues honestly.`
                 },
                 {
                   mistake: 'Stopping premium payment midway',
                   reality: 'Miss 2-3 payments = policy lapses. All protection gone. Family gets ZERO if you die after lapse.',
-                  fix: 'Set auto-debit from bank. Never let it lapse. If struggling financially, reduce cover pero don't stop. Cheaper to continue ₹25L cover than buy new later.'
+                  fix: `Set auto-debit from bank. Never let it lapse. If struggling financially, reduce cover pero don't stop. Cheaper to continue ₹25L cover than buy new later.`
                 }
               ].map((item, i) => (
                 <div key={i} className="bg-red-50 rounded-xl p-6 border-l-4 border-red-500">
@@ -711,13 +711,13 @@ const TermInsuranceGuide: React.FC = () => {
               {[
                 'Buy 2 smaller plans instead of 1 big plan: ₹50L from HDFC + ₹50L from Max Life (₹1 Cr total). If one company rejects claim, other pays. Risk diversification.',
                 'Buy before age 30. Lock premium for lifetime. Even if unmarried now, premium stays same when you marry/have kids later.',
-                'Don't trust agent's "guaranteed returns" claim. Term insurance has NO returns if you survive. That's the point - cheap protection, not investment.',
+                `Don't trust agent's "guaranteed returns" claim. Term insurance has NO returns if you survive. That's the point - cheap protection, not investment.`,
                 'Declare ALL health issues. Even minor (diabetes, BP). Insurance companies investigate thoroughly during claims. Hiding info = claim rejection risk.',
                 'Increase cover when salary increases. Bought ₹50L at age 25? Increase to ₹1 Cr at age 30 when income doubles. Family needs grow, cover should too.',
                 'Online is 35% cheaper. ₹12K online vs ₹18K offline for same ₹1 Cr cover. Save ₹1.8L over 30 years. Buy from company website directly.',
                 'Take critical illness rider (₹3-4K/year for ₹30L cover). Cancer treatment alone costs ₹15-25L in India. This covers major diseases.',
                 'Policy term = Age 60 or 65. Most people retire by 60. After that, kids are settled, loans cleared. No need for huge cover post-retirement.',
-                'Don't buy if you're single with no dependents. Insurance protects DEPENDENTS. If parents are financially independent, skip it until you marry.',
+                `Don't buy if you're single with no dependents. Insurance protects DEPENDENTS. If parents are financially independent, skip it until you marry.`,
                 'Review every 5 years. If you bought ₹50L in 2015, it might be insufficient now. Top up to ₹1-2 Cr as income/responsibilities grow.'
               ].map((tip, i) => (
                 <div key={i} className="bg-white rounded-xl p-5 shadow border-l-4 border-yellow-500">
@@ -753,15 +753,15 @@ const TermInsuranceGuide: React.FC = () => {
                 },
                 {
                   q: 'Can insurance company reject my claim after taking premiums for 10 years?',
-                  a: 'Yes, if you provided false information (hid smoking, pre-existing disease). Otherwise no - after 3 years, claim cannot be rejected except for fraud. That's why honesty is critical.'
+                  a: `Yes, if you provided false information (hid smoking, pre-existing disease). Otherwise no - after 3 years, claim cannot be rejected except for fraud. That's why honesty is critical.`
                 },
                 {
-                  q: 'I'm 40, unmarried, no kids. Should I buy term insurance?',
+                  q: `I'm 40, unmarried, no kids. Should I buy term insurance?`,
                   a: 'Apenas if your parents depend on your income. If parents have own pension/savings and you have no spouse/kids, skip term insurance. Buy when you marry or have dependents.'
                 },
                 {
                   q: 'What happens if I stop paying premium after 5 years?',
-                  a: 'Policy lapses. All protection gone immediately. Family gets ₹0 if you die after lapse. Term insurance has no surrender value - you paid ₹60K (₹12K × 5), get back ₹0. That's why never lapse.'
+                  a: `Policy lapses. All protection gone immediately. Family gets ₹0 if you die after lapse. Term insurance has no surrender value - you paid ₹60K (₹12K × 5), get back ₹0. That's why never lapse.`
                 },
                 {
                   q: 'Online vs offline - any real difference or just price?',
@@ -773,7 +773,7 @@ const TermInsuranceGuide: React.FC = () => {
                 },
                 {
                   q: 'I have health issues (diabetes, BP). Can I still get term insurance?',
-                  a: 'Yes pero premium will be 30-50% higher. Declare honestly. Some companies specialize in substandard lives (Bajaj Allianz, PNB MetLife). Don't hide - claim can be rejected later.'
+                  a: `Yes pero premium will be 30-50% higher. Declare honestly. Some companies specialize in substandard lives (Bajaj Allianz, PNB MetLife). Don't hide - claim can be rejected later.`
                 },
                 {
                   q: 'Will insurance company investigate every claim?',
