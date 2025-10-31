@@ -821,7 +821,7 @@ const BuildingEmergencyFund: React.FC = () => {
                     },
                     { 
                       temptation: '✈️ Vacation / Travel', 
-                      example: "Friends planning Goa trip. Costs ₹25K. You don't have money in "wants" budget.",
+                      example: "Friends planning Goa trip. Costs ₹25K. You don't have money in \"wants\" budget.",
                       why: 'Vacation is planned, not emergency. Either skip or save for next time.' 
                     },
                     { 
@@ -831,7 +831,7 @@ const BuildingEmergencyFund: React.FC = () => {
                     },
                     { 
                       temptation: '💍 Wedding / Festival Shopping', 
-                      example: "Sister's wedding in 3 months. Need ₹1L for gifts/clothes. Haven\"t saved.',
+                      example: "Sister's wedding in 3 months. Need ₹1L for gifts/clothes. Haven't saved.",
                       why: 'Weddings are predictable, not emergencies. Should have budgeted months ago.' 
                     },
                     { 
