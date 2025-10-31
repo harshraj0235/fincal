@@ -471,7 +471,7 @@ const FixedDepositsGuide: React.FC = () => {
                 <div className="bg-white rounded-lg p-4 mb-3">
                   <p className="text-gray-700"><strong>Example:</strong></p>
                   <p className="text-sm text-gray-600">
-                    Rajesh has ₹8L FD @ 7% = ₹56,000 interest/year. Since > ₹40K, bank deducts 10% TDS = ₹5,600. 
+                    Rajesh has ₹8L FD @ 7% = ₹56,000 interest/year. Since &gt; ₹40K, bank deducts 10% TDS = ₹5,600. 
                     He receives ₹50,400. At ITR filing, if his actual tax slab is 30%, he must pay remaining ₹11,200.
                   </p>
                 </div>
@@ -689,7 +689,7 @@ const FixedDepositsGuide: React.FC = () => {
               {[
                 {
                   mistake: 'Putting ALL savings in FD (₹10-20 lakh just sitting)',
-                  reality: 'FD gives apenas 5-7% post-tax. Inflation is 6%. You're barely beating inflation, not building wealth. Rich people don't keep crores in FD!',
+                  reality: `FD gives apenas 5-7% post-tax. Inflation is 6%. You're barely beating inflation, not building wealth. Rich people don't keep crores in FD!`,
                   fix: 'Keep apenas 6-12 months emergency fund in FD. Rest invest in debt funds (8%), equity funds (12%). FD is for safety, not wealth.'
                 },
                 {
