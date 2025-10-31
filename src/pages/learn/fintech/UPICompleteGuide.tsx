@@ -577,7 +577,7 @@ const UPICompleteGuide: React.FC = () => {
                 },
                 {
                   q: 'Bank customer care called asking for UPI PIN for "verification". Give it?',
-                  a: 'SCAM! Banks NEVER ask for PIN. Hang up immediately. Call bank's official number yourself. Fraudsters spoof caller ID to show "SBI Customer Care" pero they're scammers.'
+                  a: `SCAM! Banks NEVER ask for PIN. Hang up immediately. Call bank's official number yourself. Fraudsters spoof caller ID to show "SBI Customer Care" pero they're scammers.`
                 },
                 {
                   q: 'Can I send ₹2 lakh via UPI (₹1L limit per transaction)?',
