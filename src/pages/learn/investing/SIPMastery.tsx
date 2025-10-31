@@ -589,7 +589,7 @@ const SIPMastery: React.FC = () => {
                   a: 'If existing fund is good (5Y returns 12%+), increase SIP amount in SAME fund. Simpler. If fund is underperforming (<10%), start new SIP in better fund + pause old one gradually.'
                 },
                 {
-                  q: 'What if I can't afford ₹10K/month SIP? Should I wait?',
+                  q: `What if I can't afford ₹10K/month SIP? Should I wait?`,
                   a: 'NO! Start with ₹500-1,000/month. Something is better than nothing. Even ₹1K SIP for 25 years @ 12% = ₹18.9 lakh! Increase to ₹2K, ₹3K slowly. Just START!'
                 },
                 {
