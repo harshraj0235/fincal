@@ -508,13 +508,13 @@ const MutualFundsGuide: React.FC = () => {
               {[
                 {
                   mistake: 'Buying regular plans through agents/bank branches',
-                  reality: 'Agent earns 1-1.5% commission EVERY YEAR from your investment. On ₹10L over 20 years, that's ₹3-5L gone!',
+                  reality: `Agent earns 1-1.5% commission EVERY YEAR from your investment. On ₹10L over 20 years, that's ₹3-5L gone!`,
                   fix: 'Buy direct plans from Kuvera, Groww, Paytm Money, or AMC websites. No agent needed. Save lakhs!'
                 },
                 {
                   mistake: 'Stopping SIP when market crashes (panic selling)',
                   reality: 'March 2020 COVID crash: Nifty fell 40%. People who stopped SIP missed the recovery. Market is now 100% higher! They lost biggest buying opportunity.',
-                  fix: 'Market crashes are BEST time to buy! Continue SIP. Better yet, INCREASE SIP by 50% during crashes. You\'re buying units at huge discount.'
+                  fix: `Market crashes are BEST time to buy! Continue SIP. Better yet, INCREASE SIP by 50% during crashes. You're buying units at huge discount.`
                 },
                 {
                   mistake: 'Checking mutual fund NAV daily',
@@ -528,7 +528,7 @@ const MutualFundsGuide: React.FC = () => {
                 },
                 {
                   mistake: 'Choosing funds based on 1-year returns (past performance)',
-                  reality: 'Fund gave 40% last year doesn\'t mean it will give 40% every year. Last year\'s winners become next year\'s losers often.',
+                  reality: `Fund gave 40% last year doesn't mean it will give 40% every year. Last year's winners become next year's losers often.`,
                   fix: 'Check 5-year and 10-year returns. Consistency matters more than 1-year spikes. Look for funds with steady 11-13% for 10 years.'
                 },
                 {
