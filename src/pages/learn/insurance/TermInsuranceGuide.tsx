@@ -84,10 +84,10 @@ const TermInsuranceGuide: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
-  </>
-);
+      </div>
+    </>
+  );
+};
 
 export default TermInsuranceGuide;
 
