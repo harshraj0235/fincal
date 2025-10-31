@@ -714,12 +714,12 @@ const FixedDepositsGuide: React.FC = () => {
                 },
                 {
                   mistake: 'Taking loan against FD instead of breaking it',
-                  reality: 'Loan against FD charges 1-2% ABOVE your FD rate. FD gives 7%, loan costs 8-9%. You're paying interest to use your own money!',
+                  reality: `Loan against FD charges 1-2% ABOVE your FD rate. FD gives 7%, loan costs 8-9%. You're paying interest to use your own money!`,
                   fix: 'If needed urgently, BREAK FD. Penalty is apenas 1%. Loan against FD makes sense apenas for very short term (< 1 month).'
                 },
                 {
                   mistake: 'Ignoring inflation (thinking 7% FD is "good returns")',
-                  reality: '7% interest - 30% tax = 4.9% post-tax. Inflation is 6%. Real return = 4.9% - 6% = NEGATIVE! You're losing purchasing power.',
+                  reality: `7% interest - 30% tax = 4.9% post-tax. Inflation is 6%. Real return = 4.9% - 6% = NEGATIVE! You're losing purchasing power.`,
                   fix: 'FD is for stability, not wealth creation. Long-term money (> 5 years) should be in equity mutual funds (12% average beats inflation).'
                 },
                 {
