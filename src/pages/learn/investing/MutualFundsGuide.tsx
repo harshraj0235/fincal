@@ -278,7 +278,7 @@ const MutualFundsGuide: React.FC = () => {
                   taxation: 'Same as equity funds (LTCG 12.5%)',
                   timeline: '7+ years',
                   subTypes: ['Nifty 50 Index (top 50 companies)', 'Nifty Next 50 (next 50 companies)', 'Sensex Index', 'Bank Nifty (banking stocks)'],
-                  bestFor: 'Passive investors who don't want to pick funds. Cheapest (expense ratio 0.1-0.3%).',
+                  bestFor: `Passive investors who don't want to pick funds. Cheapest (expense ratio 0.1-0.3%).`,
                   examples: 'UTI Nifty Index, HDFC Index Nifty 50, Nippon India ETF Nifty BeES',
                   color: 'purple'
                 },
