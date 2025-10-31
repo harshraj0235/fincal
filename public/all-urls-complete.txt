@@ -1421,8 +1421,8 @@ https://moneycal.in/investing-tools
 https://moneycal.in/keyword-research
 https://moneycal.in/learn
 https://moneycal.in/learn/advanced-specialised-finance
-https://moneycal.in/learn/behavioural-finance
-https://moneycal.in/learn/business-finance
+https://moneycal.in/learn/behavioural-finance-money-psychology
+https://moneycal.in/learn/business-finance-entrepreneurship
 https://moneycal.in/learn/business-loans
 https://moneycal.in/learn/business-loans/application-process
 https://moneycal.in/learn/business-loans/best-banks
@@ -1516,7 +1516,7 @@ https://moneycal.in/learn/home-loans/top-up-loans
 https://moneycal.in/learn/home-loans/types-of-home-loans
 https://moneycal.in/learn/home-loans/what-is-home-loan
 https://moneycal.in/learn/insurance-retirement
-https://moneycal.in/learn/investing
+https://moneycal.in/learn/investing-wealth
 https://moneycal.in/learn/loans
 https://moneycal.in/learn/loans/calculate-true-cost
 https://moneycal.in/learn/loans/check-eligibility
@@ -1560,7 +1560,7 @@ https://moneycal.in/learn/personal-loans/repayment-strategies
 https://moneycal.in/learn/personal-loans/secured-vs-unsecured
 https://moneycal.in/learn/personal-loans/types-of-personal-loans
 https://moneycal.in/learn/personal-loans/what-is-personal-loan
-https://moneycal.in/learn/savings-bank
+https://moneycal.in/learn/savings-bank-products
 https://moneycal.in/learn/taxation-compliance
 https://moneycal.in/learn/vehicle-loans
 https://moneycal.in/learn/vehicle-loans/application-process
