@@ -13,12 +13,32 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW: Diwali Market Rally 2025 - Comprehensive Analysis
+  {
+    id: 'markets-diwali-rally-2025-analysis-hindi',
+    slug: 'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis',
+    category: 'markets',
+    title: '🎆 दिवाली के बाद शेयर बाजार में धमाका! Nifty 26,000 पार—क्या अब खरीदें या इंतज़ार करें?',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-05T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  // NEW: Startup Funding Winter 2025 - Survival Guide
+  {
+    id: 'startups-funding-winter-2025-survival',
+    slug: 'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide',
+    category: 'startups',
+    title: '❄️ भारत में Startup Funding 65% गिरी! Founders अब क्या करें? (Survival Guide 2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-05T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&h=630&fit=crop&q=80'
+  },
   // Markets Category
   {
     id: 'article-01-lenskart-ipo-matters',
     slug: 'lenskart-ipo-announcement-hindi',
     category: 'markets',
-    title: 'Why Lenskart\'s upcoming IPO matters for Indian eyewear',
+    title: `Why Lenskart's upcoming IPO matters for Indian eyewear`,
     authorId: 'raushan-kumar',
     datePublished: '2025-10-30T10:00:00+05:30',
     image: 'https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=1200&h=630&fit=crop&q=80'
