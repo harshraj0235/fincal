@@ -902,7 +902,7 @@ function App() {
                 <Route path="/blog/category/banking" element={<BankingKnowledge />} />
                 
                 {/* Learn Platform - Main Hub */}
-                <Route path="/learn" element={<LearnHub />} />
+                <Route path="/learn" element={<LearnHome />} />
                 
                 {/* Learn Platform - Money Management & Budgeting (8 lessons) - COMPLETE! */}
                 <Route path="/learn/money-management" element={<MoneyManagementHub />} />
