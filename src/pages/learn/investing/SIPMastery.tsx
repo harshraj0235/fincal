@@ -578,7 +578,7 @@ const SIPMastery: React.FC = () => {
                 },
                 {
                   q: 'I started SIP 2 years ago. Returns are apenas 8%. Should I switch fund?',
-                  a: 'Mutual funds need minimum 5 years to judge. 2 years is too short. If fund has good 5-year track record (11-13%), continue. Don't switch based on 1-2 year performance.'
+                  a: `Mutual funds need minimum 5 years to judge. 2 years is too short. If fund has good 5-year track record (11-13%), continue. Don't switch based on 1-2 year performance.`
                 },
                 {
                   q: 'Can I pause SIP for 6 months if I lose job?',
