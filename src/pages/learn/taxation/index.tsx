@@ -152,7 +152,7 @@ const TaxationComplianceHub: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </>
   );
