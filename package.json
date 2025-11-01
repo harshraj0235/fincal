@@ -12,7 +12,7 @@
     "generate-blogs": "node automated-blog-generator.cjs",
     "generate-crypto": "node crypto-blog-generator.cjs",
     "generate-manual": "node manual-blog-generator.cjs",
-    "generate-sitemaps": "node scripts/generate-sitemaps-v2.cjs",
+    "generate-sitemaps": "node scripts/generate-sitemaps-final.cjs",
     "deploy": "node deploy.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
     "lhci:autorun": "lhci autorun"
