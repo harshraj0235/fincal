@@ -1,7 +1,8 @@
 # 🗺️ Sitemap System - Production Ready
 
 **Last Updated:** Nov 2025  
-**Version:** 2.0 (Complete Rebuild)
+**Version:** 3.0 (Complete Codebase Scan - ALL URLs!)  
+**Coverage:** 100% of codebase (617+ routes from App.tsx)
 
 ---
 
@@ -9,19 +10,32 @@
 
 ```
 scripts/
-  └── generate-sitemaps-production.cjs  ← Main generator (runs on build)
+  ├── extract-all-routes-from-code.cjs  ← Scans App.tsx (617 routes)
+  ├── merge-all-urls.cjs                ← Merges all sources
+  └── generate-sitemaps-production.cjs  ← Generates sitemaps
 
 public/
-  ├── all-urls-complete.txt             ← Master URL list (1,666 URLs)
-  ├── sitemap.xml                        ← Master index
-  ├── sitemap-news.xml                   ← News articles (Google News format)
-  ├── sitemap-calculators.xml            ← Calculators
-  ├── sitemap-learn.xml                  ← Learn platform
-  ├── sitemap-blog.xml                   ← Blog posts
-  ├── sitemap-tools.xml                  ← Tools
-  ├── sitemap-government.xml             ← Government schemes
-  ├── sitemap-crypto.xml                 ← Crypto content
-  └── sitemap-pages.xml                  ← Static pages
+  ├── all-urls-from-code.txt            ← From App.tsx (617 routes)
+  ├── all-urls-complete.txt             ← From manual list
+  ├── all-urls-master.txt               ← MERGED (deduplicated)
+  ├── sitemap.xml                       ← Master index ⭐
+  ├── sitemap-news.xml                  ← News (Google News format)
+  ├── sitemap-calculators.xml           ← Calculators
+  ├── sitemap-learn.xml                 ← Learn platform
+  ├── sitemap-blog.xml                  ← Blog posts
+  ├── sitemap-finance-tools.xml         ← Finance tools
+  ├── sitemap-tax-tools.xml             ← Tax tools
+  ├── sitemap-gst-tools.xml             ← GST tools
+  ├── sitemap-insurance-tools.xml       ← Insurance tools
+  ├── sitemap-festival-tools.xml        ← Festival tools
+  ├── sitemap-religious-tools.xml       ← Religious tools
+  ├── sitemap-invoicing-tools.xml       ← Invoicing tools
+  ├── sitemap-excel-tools.xml           ← Excel tools
+  ├── sitemap-bank-tools.xml            ← Bank tools
+  ├── sitemap-government.xml            ← Government schemes
+  ├── sitemap-crypto.xml                ← Crypto content
+  ├── sitemap-astro.xml                 ← Astro finance
+  └── sitemap-pages.xml                 ← Static pages
 ```
 
 ---
@@ -61,15 +75,24 @@ public/
 
 | Category | URLs | Priority | Changefreq |
 |----------|------|----------|------------|
-| **News** | 56 | 0.8 | daily |
-| **Calculators** | 104 | 0.9 | monthly |
-| **Learn** | 159 | 0.8 | weekly |
-| **Blog** | 727 | 0.7 | weekly |
-| **Tools** | 280 | 0.7 | monthly |
-| **Government** | 185 | 0.7 | monthly |
-| **Crypto** | 71 | 0.65 | weekly |
-| **Pages** | 82 | 0.6 | monthly |
-| **TOTAL** | **1,666** | — | — |
+| **News** | ~156 | 0.8 | daily |
+| **Calculators** | ~104 | 0.9 | monthly |
+| **Learn** | ~159 | 0.8 | weekly |
+| **Blog** | ~727 | 0.7 | weekly |
+| **Finance Tools** | ~80 | 0.75 | monthly |
+| **Tax Tools** | ~30 | 0.75 | monthly |
+| **GST Tools** | ~25 | 0.75 | monthly |
+| **Insurance Tools** | ~20 | 0.75 | monthly |
+| **Festival Tools** | ~40 | 0.7 | monthly |
+| **Religious Tools** | ~15 | 0.7 | monthly |
+| **Invoicing Tools** | ~10 | 0.75 | monthly |
+| **Excel Tools** | ~20 | 0.7 | monthly |
+| **Bank Tools** | ~15 | 0.75 | monthly |
+| **Government** | ~185 | 0.7 | monthly |
+| **Crypto** | ~71 | 0.65 | weekly |
+| **Astro** | ~30 | 0.65 | weekly |
+| **Pages** | ~82 | 0.6 | monthly |
+| **TOTAL** | **~1,770+** | — | — |
 
 ---
 
