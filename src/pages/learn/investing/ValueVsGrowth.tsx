@@ -262,7 +262,7 @@ const ValueVsGrowth: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-start gap-3 bg-white/20 backdrop-blur-sm rounded-lg p-4">
                   <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
-                  <p><strong>Value:</strong> Buy cheap (PE <15), patient 3-5 years. Indian examples: ITC, Tata Motors.</p>
+                    <p><strong>Value:</strong> Buy cheap (PE under 15), patient 3-5 years. Indian examples: ITC, Tata Motors.</p>
                 </div>
                 <div className="flex items-start gap-3 bg-white/20 backdrop-blur-sm rounded-lg p-4">
                   <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
