@@ -38,6 +38,11 @@ import { gstCollectionRecord2025 } from './news-articles/markets/gst-collection-
 import { digitalTransformationCompanies2025 } from './news-articles/business/digital-transformation-companies-cloud-ai-2025';
 import { govtSchemesGrantsStartups2025 } from './news-articles/startups/government-schemes-grants-startup-india-2025';
 import { cloudAIInfrastructureIndia2025 } from './news-articles/tech/cloud-ai-infrastructure-aws-azure-india-2025';
+import { retailInvestorsRoleIndia2025 } from './news-articles/markets/retail-investors-role-india-stock-market-2025';
+import { fdiForeignInvestmentIndia2025 } from './news-articles/business/fdi-foreign-investment-india-trends-2025';
+import { techUnicornDreamIndia2025 } from './news-articles/startups/tech-unicorn-dream-valuation-1-billion-india-2025';
+import { ewasteElectronicWasteIndia2025 } from './news-articles/tech/ewaste-electronic-waste-india-problem-solution-2025';
+import { povertyIncomeInequalityIndia2025 } from './news-articles/economy/poverty-income-inequality-wealth-gap-india-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -75,6 +80,11 @@ export const plainArticleContentMap: Record<string, any> = {
   'digital-transformation-cloud-ai-companies-bharat-reliance-tata-2025': digitalTransformationCompanies2025,
   'startup-india-govt-schemes-grants-seed-fund-tax-benefits-2025': govtSchemesGrantsStartups2025,
   'cloud-computing-ai-infrastructure-aws-azure-google-bharat-2025': cloudAIInfrastructureIndia2025,
+  'retail-investors-demat-accounts-sip-india-stock-market-2025': retailInvestorsRoleIndia2025,
+  'fdi-foreign-direct-investment-india-apple-tesla-china-plus-one-2025': fdiForeignInvestmentIndia2025,
+  'tech-unicorn-1-billion-valuation-zerodha-cred-razorpay-india-2025': techUnicornDreamIndia2025,
+  'ewaste-electronic-waste-recycling-india-32-lakh-tons-2025': ewasteElectronicWasteIndia2025,
+  'poverty-income-inequality-wealth-gap-gini-index-bharat-2025': povertyIncomeInequalityIndia2025,
 };
 
 /**

@@ -13,6 +13,66 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Economy Article: Poverty Income Inequality 2025
+  {
+    id: 'economy-poverty-income-inequality-2025',
+    slug: 'poverty-income-inequality-wealth-gap-gini-index-bharat-2025',
+    category: 'economy',
+    subCategory: 'income-inequality',
+    title: '📊 गरीबी और आय असमानता: Top 1% के पास 40% Wealth! Gini Index 0.82—क्या Solution है? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-08T15:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Tech Article: E-Waste Electronic Waste India 2025
+  {
+    id: 'tech-ewaste-electronic-waste-2025',
+    slug: 'ewaste-electronic-waste-recycling-india-32-lakh-tons-2025',
+    category: 'tech-business',
+    subCategory: 'e-waste',
+    title: '🗑️ इलेक्ट्रॉनिक कचरा (E-Waste): 32 Lakh Tons/Year! कहां जाता है पुराना Mobile-Laptop? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-08T14:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Startups Article: Tech Unicorn Dream India 2025
+  {
+    id: 'startups-tech-unicorn-dream-2025',
+    slug: 'tech-unicorn-1-billion-valuation-zerodha-cred-razorpay-india-2025',
+    category: 'startups',
+    subCategory: 'unicorns',
+    title: '🦄 Tech Unicorn बनने की चाहत: ₹8,500 Cr Valuation—कैसे मिलती है? Zerodha, CRED Story (2025)',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-08T13:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: FDI Foreign Investment India 2025
+  {
+    id: 'business-fdi-foreign-investment-2025',
+    slug: 'fdi-foreign-direct-investment-india-apple-tesla-china-plus-one-2025',
+    category: 'business',
+    subCategory: 'foreign-investment',
+    title: '🌍 FDI में बदलाव: Apple, Tesla India आ रहे! China+1 Strategy—₹5 Lakh Crore Opportunity (2025)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-08T12:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Markets Article: Retail Investors Role India 2025
+  {
+    id: 'markets-retail-investors-role-2025',
+    slug: 'retail-investors-demat-accounts-sip-india-stock-market-2025',
+    category: 'markets',
+    subCategory: 'retail-investing',
+    title: '📈 Retail Investors की भूमिका: 15 Crore Demat Accounts! Stock Market को Democratize कर रहे हैं (2025)',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-11-08T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Tech Article: Cloud AI Infrastructure AWS Azure 2025
   {
     id: 'tech-cloud-ai-infrastructure-2025',
