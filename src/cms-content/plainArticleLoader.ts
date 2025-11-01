@@ -17,6 +17,10 @@ import { inflationImpactCommonPeople2025 } from './news-articles/economy/inflati
 import { greenEnergyIndiaSector2025 } from './news-articles/business/green-energy-renewable-sector-india-2025';
 import { mutualFundsVsDirectStocks2025 } from './news-articles/markets/mutual-funds-vs-direct-stocks-comparison-2025';
 import { digitalEconomyIndia2025 } from './news-articles/economy/digital-economy-india-cashless-upi-2025';
+import { fiveGIoTSmartCities2025 } from './news-articles/tech/five-g-iot-smart-cities-india-2025';
+import { deepTechStartupsIndia2025 } from './news-articles/startups/deep-tech-startups-india-ai-robotics-2025';
+import { femalFoundersWomenStartups2025 } from './news-articles/startups/female-founders-women-startups-india-2025';
+import { cryptoVsStockMarket2025 } from './news-articles/markets/cryptocurrency-vs-stock-market-india-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -33,6 +37,10 @@ export const plainArticleContentMap: Record<string, any> = {
   'green-energy-solar-wind-renewable-bharat-sector-analysis-2025': greenEnergyIndiaSector2025,
   'mutual-fund-vs-khud-ka-stock-investment-kaun-behtar-2025': mutualFundsVsDirectStocks2025,
   'digital-economy-bharat-cashless-upi-fintech-2025-growth': digitalEconomyIndia2025,
+  '5g-iot-smart-cities-jio-airtel-bharat-2025-future': fiveGIoTSmartCities2025,
+  'deep-tech-startups-bharat-ai-robotics-quantum-drone-2025': deepTechStartupsIndia2025,
+  'mahila-female-founders-women-startups-bharat-funding-gap-2025': femalFoundersWomenStartups2025,
+  'cryptocurrency-vs-stock-market-bitcoin-ethereum-bharat-2025': cryptoVsStockMarket2025,
 };
 
 /**

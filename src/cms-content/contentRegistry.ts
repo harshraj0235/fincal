@@ -13,6 +13,54 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Markets Article: Cryptocurrency vs Stock Market 2025
+  {
+    id: 'markets-crypto-vs-stocks-2025',
+    slug: 'cryptocurrency-vs-stock-market-bitcoin-ethereum-bharat-2025',
+    category: 'markets',
+    subCategory: 'crypto-investment',
+    title: '₿ Crypto vs Stock Market: Bitcoin ₹75 Lakh! निवेश कहां करें? Risk-Return Analysis 2025',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-06T23:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Startups Article: Women Female Founders 2025
+  {
+    id: 'startups-female-founders-women-2025',
+    slug: 'mahila-female-founders-women-startups-bharat-funding-gap-2025',
+    category: 'startups',
+    subCategory: 'women-entrepreneurship',
+    title: '👩‍💼 महिला Founders का उभार: Nykaa से Mamaearth—₹1 Lakh Crore! लेकिन Funding Gap 90%',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-06T22:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Startups Article: Deep-Tech Startups India 2025
+  {
+    id: 'startups-deep-tech-india-2025',
+    slug: 'deep-tech-startups-bharat-ai-robotics-quantum-drone-2025',
+    category: 'startups',
+    subCategory: 'deep-technology',
+    title: '🔬 डीप-टेक स्टार्टअप्स का उभार: AI, Robotics, Drones—भारत का नया Future! (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-06T21:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Tech Article: 5G IoT Smart Cities 2025
+  {
+    id: 'tech-5g-iot-smart-cities-2025',
+    slug: '5g-iot-smart-cities-jio-airtel-bharat-2025-future',
+    category: 'tech-business',
+    subCategory: '5g-iot',
+    title: '📡 5G और Smart Cities: Jio-Airtel ने 5 Lakh Towers लगाए! IoT Revolution आ रहा है (2025)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-06T20:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Economy Article: Digital Economy UPI Cashless 2025
   {
     id: 'economy-digital-economy-upi-2025',
