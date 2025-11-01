@@ -13,6 +13,66 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Tech Article: Tech IPO Boom India 2025
+  {
+    id: 'tech-tech-ipo-boom-2025',
+    slug: 'tech-ipo-boom-zomato-paytm-nykaa-listing-gains-losses-2025',
+    category: 'tech-business',
+    subCategory: 'ipo',
+    title: '📈 टेक कंपनियों का IPO: Zomato +100%, Paytm -70%—किसमें Invest करें? (2025 Analysis)',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-08T20:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Economy Article: Foreign Trade Current Account 2025
+  {
+    id: 'economy-foreign-trade-current-account-2025',
+    slug: 'foreign-trade-current-account-deficit-exports-imports-bharat-2025',
+    category: 'economy',
+    subCategory: 'foreign-trade',
+    title: '🌍 विदेशी व्यापार और चालू खाता: Trade Deficit $250 Billion! Exports बढ़ाने का Plan? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-08T19:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Startups Article: Corporate Startup Partnerships 2025
+  {
+    id: 'startups-corporate-partnerships-2025',
+    slug: 'corporate-startup-partnerships-tata-reliance-accel-india-2025',
+    category: 'startups',
+    subCategory: 'corporate-partnerships',
+    title: '🤝 कॉरपोरेट-स्टार्टअप साझेदारी: Tata, Reliance ने ₹5,000 Cr Invest किया! Win-Win Strategy (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-08T18:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: Corporate Governance Scandals 2025
+  {
+    id: 'business-corporate-governance-2025',
+    slug: 'corporate-governance-scandals-satyam-pnb-fraud-sebi-reforms-2025',
+    category: 'business',
+    subCategory: 'corporate-governance',
+    title: '⚖️ कॉर्पोरेट गवर्नेंस मामले: PNB ₹14,000 Cr Scam, Satyam—क्यों Fail होते हैं Audits? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-08T17:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Tech Article: D2C Brands SaaS Tools 2025
+  {
+    id: 'tech-d2c-brands-saas-2025',
+    slug: 'd2c-brands-saas-shopify-woocommerce-razorpay-india-2025',
+    category: 'tech-business',
+    subCategory: 'saas-ecommerce',
+    title: '🛒 D2C ब्रांड्स के लिए SaaS: Shopify, Razorpay ने ₹10K Crore Market! किस Tool से Start करें? (2025)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-08T16:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1556742400-b5b7f3f333d0?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Economy Article: Poverty Income Inequality 2025
   {
     id: 'economy-poverty-income-inequality-2025',

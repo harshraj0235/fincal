@@ -43,6 +43,11 @@ import { fdiForeignInvestmentIndia2025 } from './news-articles/business/fdi-fore
 import { techUnicornDreamIndia2025 } from './news-articles/startups/tech-unicorn-dream-valuation-1-billion-india-2025';
 import { ewasteElectronicWasteIndia2025 } from './news-articles/tech/ewaste-electronic-waste-india-problem-solution-2025';
 import { povertyIncomeInequalityIndia2025 } from './news-articles/economy/poverty-income-inequality-wealth-gap-india-2025';
+import { d2cBrandsSaaSToolsIndia2025 } from './news-articles/tech/d2c-brands-saas-tools-shopify-india-2025';
+import { corporateGovernanceScandals2025 } from './news-articles/business/corporate-governance-scandals-india-2025';
+import { corporateStartupPartnerships2025 } from './news-articles/startups/corporate-startup-partnerships-collaboration-2025';
+import { foreignTradeCurrentAccount2025 } from './news-articles/economy/foreign-trade-current-account-deficit-exports-2025';
+import { techIPOBoomIndia2025 } from './news-articles/tech/tech-ipo-boom-zomato-paytm-nykaa-india-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -85,6 +90,11 @@ export const plainArticleContentMap: Record<string, any> = {
   'tech-unicorn-1-billion-valuation-zerodha-cred-razorpay-india-2025': techUnicornDreamIndia2025,
   'ewaste-electronic-waste-recycling-india-32-lakh-tons-2025': ewasteElectronicWasteIndia2025,
   'poverty-income-inequality-wealth-gap-gini-index-bharat-2025': povertyIncomeInequalityIndia2025,
+  'd2c-brands-saas-shopify-woocommerce-razorpay-india-2025': d2cBrandsSaaSToolsIndia2025,
+  'corporate-governance-scandals-satyam-pnb-fraud-sebi-reforms-2025': corporateGovernanceScandals2025,
+  'corporate-startup-partnerships-tata-reliance-accel-india-2025': corporateStartupPartnerships2025,
+  'foreign-trade-current-account-deficit-exports-imports-bharat-2025': foreignTradeCurrentAccount2025,
+  'tech-ipo-boom-zomato-paytm-nykaa-listing-gains-losses-2025': techIPOBoomIndia2025,
 };
 
 /**
