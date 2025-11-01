@@ -13,6 +13,42 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Startups Article: India Space-Tech Startups 2025
+  {
+    id: 'startups-space-tech-india-2025',
+    slug: 'bharat-space-tech-startups-agni-skyroot-pixxel-isro-2025',
+    category: 'startups',
+    subCategory: 'space-technology',
+    title: '🚀 भारत का Space-Tech Boom: ISRO के बाद अब Startups अंतरिक्ष में! Skyroot, Agnikul, Pixxel',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-06T15:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Markets Article: Gold Silver Commodities Boom 2025
+  {
+    id: 'markets-gold-silver-commodities-2025',
+    slug: 'sona-chandi-copper-commodities-teji-bharat-2025-munafa-jokhim',
+    category: 'markets',
+    subCategory: 'commodities',
+    title: '🪙 सोना ₹75,000/10g पार! Gold, Silver, Copper में तेजी—अब निवेश करें या इंतज़ार करें?',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-06T14:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: Manufacturing vs Services 2025
+  {
+    id: 'business-manufacturing-vs-services-2025',
+    slug: 'manufacturing-vs-services-sector-bharat-chunauti-avsar-2025',
+    category: 'business',
+    subCategory: 'sector-analysis',
+    title: '🏭 Manufacturing vs Services: भारत को कौन-सा सेक्टर बनाएगा Developed Nation? (2025 Analysis)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-06T13:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Tech Article: India AI Global Race 2025
   {
     id: 'tech-india-ai-global-race-2025',
