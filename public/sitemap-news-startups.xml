@@ -4,6 +4,23 @@
   
   <!-- Startups Category News Articles -->
   
+  <!-- NEW: Premium Hindi Article - Nov 5, 2025 -->
+  <url>
+    <loc>https://moneycal.in/news/startups/bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2025-11-05T11:00:00+05:30</news:publication_date>
+      <news:title>भारत में Startup Funding 65% गिरी! Founders अब क्या करें? Survival Guide 2025</news:title>
+      <news:keywords>startup funding winter, venture capital india, byju crisis, dunzo shutdown, स्टार्टअप फंडिंग, survival guide</news:keywords>
+    </news:news>
+  </url>
+  
   <url>
     <loc>https://moneycal.in/news/startups/lenskart-investors-softbank-premji-returns</loc>
     <lastmod>2025-10-30</lastmod>

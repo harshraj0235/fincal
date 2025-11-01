@@ -5,6 +5,27 @@
   
   <!-- Markets Category News Articles -->
   
+  <!-- NEW: Premium Hindi Article - Nov 5, 2025 -->
+  <url>
+    <loc>https://moneycal.in/news/markets/bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal News</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2025-11-05T09:00:00+05:30</news:publication_date>
+      <news:title>दिवाली के बाद शेयर बाजार में धमाका! Nifty 26,000 पार—क्या अब खरीदें या इंतज़ार करें?</news:title>
+      <news:keywords>share market diwali rally, nifty 26000, sensex 85000, FII buying, शेयर बाजार, दिवाली रैली, निवेश गाइड</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&amp;h=630&amp;fit=crop&amp;q=80</image:loc>
+      <image:title>Indian stock market Diwali rally 2025</image:title>
+    </image:image>
+  </url>
+  
   <url>
     <loc>https://moneycal.in/news/markets/lenskart-ipo-announcement-hindi</loc>
     <lastmod>2025-10-30</lastmod>
