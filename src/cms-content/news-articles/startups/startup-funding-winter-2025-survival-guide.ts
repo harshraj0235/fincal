@@ -455,9 +455,9 @@ Worst case: Acquisition by bigger player। Shut down se better।
 - [Emergency Fund Calculator](/calculators/emergency-fund-calculator)
 - [Business Loan EMI Calculator](/calculators/business-loan-calculator)
   `,
-
+  
   metaTitle: 'भारत में Startup Funding 65% गिरी 2025! Founders Survival Guide (Hindi Analysis)',
-  metaDescription: 'भारतीय स्टार्टअप्स के लिए funding winter 2025 की कड़वी सच्चाई। $9.5B से $3.3B। Byju's, Dunzo crisis। कौन survive करेगा? Founders और employees के लिए action plan। 1300+ शब्द विस्तृत विश्लेषण।',
+  metaDescription: `भारतीय स्टार्टअप्स के लिए funding winter 2025 की कड़वी सच्चाई। $9.5B से $3.3B। Byju's, Dunzo crisis। कौन survive करेगा? Founders और employees के लिए action plan। 1300+ शब्द विस्तृत विश्लेषण।`,
   keywords: 'startup funding india 2025, funding winter, byju crisis, dunzo shutdown, startup survival guide hindi, venture capital india, unit economics, भारत स्टार्टअप फंडिंग, स्टार्टअप संकट, फंडिंग विंटर',
   
   authorId: 'harsh-raj',
