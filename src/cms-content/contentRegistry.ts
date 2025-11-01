@@ -13,6 +13,102 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Startups Article: Scalable Business Models 2025
+  {
+    id: 'startups-scalable-business-models-2025',
+    slug: 'scalable-business-models-saas-marketplace-network-effects-india-2025',
+    category: 'startups',
+    subCategory: 'business-models',
+    title: '📈 स्केलेबल बिजनेस मॉडल: SaaS, Marketplace—कैसे 10x Growth करें? (2025 Guide)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-09T04:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Startups Article: Tier-3 City Startup Funding 2025
+  {
+    id: 'startups-tier3-city-funding-2025',
+    slug: 'tier-3-city-startup-funding-jaipur-indore-coimbatore-ecosystem-2025',
+    category: 'startups',
+    subCategory: 'tier-3-ecosystem',
+    title: '🌆 फंडिंग में तीसरा स्थान: Jaipur, Indore Startups ने ₹2,000 Cr Raise किया! (2025)',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-09T03:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: Top Companies Revenue Trends 2025
+  {
+    id: 'business-top-companies-revenue-2025',
+    slug: 'top-companies-revenue-trends-tcs-reliance-hdfc-tata-adani-2025',
+    category: 'business',
+    subCategory: 'revenue-analysis',
+    title: '📊 प्रमुख कंपनियों की राजस्व: Reliance ₹9L Cr, TCS ₹2.4L Cr—कौन बढ़ा, कौन गिरा? (2025)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-09T02:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Markets Article: Banking Regulation Policy Changes 2025
+  {
+    id: 'markets-banking-regulation-policy-2025',
+    slug: 'banking-regulation-rbi-policy-digital-lending-norms-reforms-2025',
+    category: 'markets',
+    subCategory: 'banking-regulation',
+    title: '🏛️ नीति बदलाव और बैंकिंग रेगुलेशन: RBI ने Digital Lending Rules सख्त किए! (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-09T01:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Tech Article: Global Tech Vendors India Entry 2025
+  {
+    id: 'tech-global-tech-vendors-india-2025',
+    slug: 'global-tech-vendors-india-google-meta-apple-data-centers-investment-2025',
+    category: 'tech-business',
+    subCategory: 'global-tech',
+    title: '🌐 ग्लोबल टेक वेंडर्स का भारत प्रवेश: Google, Meta ने ₹1 Lakh Cr Invest किया! (2025)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-09T00:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Economy Article: Climate Change Economic Impact 2025
+  {
+    id: 'economy-climate-change-impact-2025',
+    slug: 'climate-change-economic-impact-agriculture-gdp-carbon-tax-india-2025',
+    category: 'economy',
+    subCategory: 'climate-economics',
+    title: '🌡️ जलवायु परिवर्तन का आर्थिक असर: ₹35 Lakh Cr Loss! Agriculture, GDP Hit—क्या करें? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-08T23:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: High Debt Companies Risk 2025
+  {
+    id: 'business-high-debt-companies-2025',
+    slug: 'high-debt-companies-risk-vodafone-idea-suzlon-debt-equity-ratio-2025',
+    category: 'business',
+    subCategory: 'debt-analysis',
+    title: '⚠️ उच्च कर्ज वाली कंपनियां: Vodafone ₹2L Cr Debt! Debt-to-Equity 5+ = Red Flag? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-08T22:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Markets Article: Sectors Investors Exiting 2025
+  {
+    id: 'markets-sectors-investors-exiting-2025',
+    slug: 'sectors-investors-exiting-pharma-fmcg-it-valuation-concerns-2025',
+    category: 'markets',
+    subCategory: 'sector-rotation',
+    title: '📉 निवेशकों ने कौन-से सेक्टर छोड़े? Pharma -20%, FMCG Overvalued—क्या Avoid करें? (2025)',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-11-08T21:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Tech Article: Tech IPO Boom India 2025
   {
     id: 'tech-tech-ipo-boom-2025',

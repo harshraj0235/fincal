@@ -48,6 +48,14 @@ import { corporateGovernanceScandals2025 } from './news-articles/business/corpor
 import { corporateStartupPartnerships2025 } from './news-articles/startups/corporate-startup-partnerships-collaboration-2025';
 import { foreignTradeCurrentAccount2025 } from './news-articles/economy/foreign-trade-current-account-deficit-exports-2025';
 import { techIPOBoomIndia2025 } from './news-articles/tech/tech-ipo-boom-zomato-paytm-nykaa-india-2025';
+import { sectorsInvestorsExiting2025 } from './news-articles/markets/sectors-investors-exiting-selling-2025';
+import { highDebtCompaniesRisk2025 } from './news-articles/business/high-debt-companies-risk-analysis-2025';
+import { climateChangeEconomicImpact2025 } from './news-articles/economy/climate-change-economic-impact-india-2025';
+import { globalTechVendorsIndiaEntry2025 } from './news-articles/tech/global-tech-vendors-india-entry-google-meta-2025';
+import { bankingRegulationPolicyChanges2025 } from './news-articles/markets/banking-regulation-policy-changes-rbi-2025';
+import { topCompaniesRevenueTrends2025 } from './news-articles/business/top-companies-revenue-trends-tcs-reliance-2025';
+import { tier3CityStartupFunding2025 } from './news-articles/startups/tier-3-city-startup-funding-ecosystem-2025';
+import { scalableBusinessModels2025 } from './news-articles/startups/scalable-business-models-saas-marketplace-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -95,6 +103,14 @@ export const plainArticleContentMap: Record<string, any> = {
   'corporate-startup-partnerships-tata-reliance-accel-india-2025': corporateStartupPartnerships2025,
   'foreign-trade-current-account-deficit-exports-imports-bharat-2025': foreignTradeCurrentAccount2025,
   'tech-ipo-boom-zomato-paytm-nykaa-listing-gains-losses-2025': techIPOBoomIndia2025,
+  'sectors-investors-exiting-pharma-fmcg-it-valuation-concerns-2025': sectorsInvestorsExiting2025,
+  'high-debt-companies-risk-vodafone-idea-suzlon-debt-equity-ratio-2025': highDebtCompaniesRisk2025,
+  'climate-change-economic-impact-agriculture-gdp-carbon-tax-india-2025': climateChangeEconomicImpact2025,
+  'global-tech-vendors-india-google-meta-apple-data-centers-investment-2025': globalTechVendorsIndiaEntry2025,
+  'banking-regulation-rbi-policy-digital-lending-norms-reforms-2025': bankingRegulationPolicyChanges2025,
+  'top-companies-revenue-trends-tcs-reliance-hdfc-tata-adani-2025': topCompaniesRevenueTrends2025,
+  'tier-3-city-startup-funding-jaipur-indore-coimbatore-ecosystem-2025': tier3CityStartupFunding2025,
+  'scalable-business-models-saas-marketplace-network-effects-india-2025': scalableBusinessModels2025,
 };
 
 /**
