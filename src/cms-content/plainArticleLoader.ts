@@ -30,6 +30,7 @@ import { agricultureEconomyFarmerIncome2025 } from './news-articles/economy/agri
 import { industry40AutomationIndia2025 } from './news-articles/business/industry-4-0-automation-tata-mahindra-2025';
 import { greenTechClimateTech2025 } from './news-articles/tech/green-tech-climate-tech-startups-india-2025';
 import { bankingStocksVolatility2025 } from './news-articles/markets/banking-stocks-volatility-npa-2025';
+import { financialInclusionJanDhan2025 } from './news-articles/economy/financial-inclusion-jan-dhan-pmjdy-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -59,6 +60,7 @@ export const plainArticleContentMap: Record<string, any> = {
   'industry-4-0-automation-robots-iot-tata-mahindra-bharat-2025': industry40AutomationIndia2025,
   'green-tech-climate-tech-carbon-credits-ev-solar-bharat-2025': greenTechClimateTech2025,
   'banking-stocks-hdfc-icici-sbi-volatility-npa-analysis-2025': bankingStocksVolatility2025,
+  'financial-inclusion-jan-dhan-pmjdy-banking-bharat-2025': financialInclusionJanDhan2025,
 };
 
 /**

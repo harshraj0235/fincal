@@ -13,6 +13,18 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Economy Article: Financial Inclusion Jan Dhan 2025
+  {
+    id: 'economy-financial-inclusion-2025',
+    slug: 'financial-inclusion-jan-dhan-pmjdy-banking-bharat-2025',
+    category: 'economy',
+    subCategory: 'financial-inclusion',
+    title: '💳 वित्तीय समावेशन: 50 Crore Jan Dhan खाते! गरीबों तक Banking कैसे पहुंची? (2025)',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-11-07T18:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Markets Article: Banking Stocks Volatility NPA 2025
   {
     id: 'markets-banking-stocks-volatility-2025',
