@@ -13,6 +13,66 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Startups Article: Startup Failures Analysis 2025
+  {
+    id: 'startups-failures-analysis-2025',
+    slug: 'startup-failures-byju-dunzo-gomechanic-kyon-fail-2025',
+    category: 'startups',
+    subCategory: 'failure-analysis',
+    title: '💥 Startup Failures: Byju $22B → $3B! Dunzo, GoMechanic—क्यों Fail हुए? 10 Lessons (2025)',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-07T13:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Markets Article: FPI Foreign Investment Impact 2025
+  {
+    id: 'markets-fpi-foreign-investment-2025',
+    slug: 'fpi-foreign-portfolio-investment-bharat-market-impact-2025',
+    category: 'markets',
+    subCategory: 'foreign-investment',
+    title: '🌍 FPI का भारतीय बाजार पर असर: ₹94,000 Crore बेचा, फिर ₹40,000 Crore खरीदा—क्यों? (2025)',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-07T12:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Tech Article: Cybersecurity Data Privacy 2025
+  {
+    id: 'tech-cybersecurity-data-privacy-2025',
+    slug: 'cybersecurity-data-privacy-breaches-india-hacks-2025',
+    category: 'tech-business',
+    subCategory: 'cybersecurity',
+    title: '🔒 साइबरसिक्योरिटी Crisis: ₹35,000 Crore Breaches! आपका Data कितना Safe? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-07T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: VC Investment Decline Funding Winter 2025
+  {
+    id: 'business-vc-investment-decline-2025',
+    slug: 'venture-capital-investment-giravat-funding-winter-bharat-2025',
+    category: 'business',
+    subCategory: 'venture-capital',
+    title: '💰 V.C. Investment में 65% गिरावट! Funding Winter से कैसे निकलेंगे Startups? (2025)',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-07T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Economy Article: Job Market Employment 2025
+  {
+    id: 'economy-job-market-employment-2025',
+    slug: 'naukri-bazar-badlav-jobs-india-ai-automation-2025',
+    category: 'economy',
+    subCategory: 'employment',
+    title: '💼 नौकरी बाजार में बड़ा बदलाव: AI ने 5 Lakh Jobs खाईं, 10 Lakh नई बनीं! (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-07T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Markets Article: Cryptocurrency vs Stock Market 2025
   {
     id: 'markets-crypto-vs-stocks-2025',

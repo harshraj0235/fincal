@@ -21,6 +21,11 @@ import { fiveGIoTSmartCities2025 } from './news-articles/tech/five-g-iot-smart-c
 import { deepTechStartupsIndia2025 } from './news-articles/startups/deep-tech-startups-india-ai-robotics-2025';
 import { femalFoundersWomenStartups2025 } from './news-articles/startups/female-founders-women-startups-india-2025';
 import { cryptoVsStockMarket2025 } from './news-articles/markets/cryptocurrency-vs-stock-market-india-2025';
+import { jobMarketEmploymentIndia2025 } from './news-articles/economy/job-market-employment-india-2025';
+import { vcInvestmentDeclineFundingWinter2025 } from './news-articles/business/vc-investment-decline-funding-winter-2025';
+import { cybersecurityDataPrivacyIndia2025 } from './news-articles/tech/cybersecurity-data-privacy-india-2025';
+import { fpiImpactIndia2025 } from './news-articles/markets/fpi-foreign-investment-india-impact-2025';
+import { startupFailuresAnalysis2025 } from './news-articles/startups/startup-failures-analysis-byju-dunzo-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -41,6 +46,11 @@ export const plainArticleContentMap: Record<string, any> = {
   'deep-tech-startups-bharat-ai-robotics-quantum-drone-2025': deepTechStartupsIndia2025,
   'mahila-female-founders-women-startups-bharat-funding-gap-2025': femalFoundersWomenStartups2025,
   'cryptocurrency-vs-stock-market-bitcoin-ethereum-bharat-2025': cryptoVsStockMarket2025,
+  'naukri-bazar-badlav-jobs-india-ai-automation-2025': jobMarketEmploymentIndia2025,
+  'venture-capital-investment-giravat-funding-winter-bharat-2025': vcInvestmentDeclineFundingWinter2025,
+  'cybersecurity-data-privacy-breaches-india-hacks-2025': cybersecurityDataPrivacyIndia2025,
+  'fpi-foreign-portfolio-investment-bharat-market-impact-2025': fpiImpactIndia2025,
+  'startup-failures-byju-dunzo-gomechanic-kyon-fail-2025': startupFailuresAnalysis2025,
 };
 
 /**
