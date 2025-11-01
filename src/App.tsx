@@ -8,6 +8,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
 import ToolPlaceholder from './pages/tools/ToolPlaceholder';
+import BankReturnsOptimizer from './pages/tools/BankReturnsOptimizer';
 import DiscountProfitCalculator from './pages/tools/DiscountProfitCalculator';
 import ProductComparisonMatrix from './pages/tools/ProductComparisonMatrix';
 import EMIAffordabilityChecker from './pages/tools/EMIAffordabilityChecker';
@@ -1028,6 +1029,7 @@ function App() {
                 <Route path="/community" element={<CommunityHub />} />
                 <Route path="/finance-categories" element={<FinanceCategoriesHub />} />
                 <Route path="/analytics" element={<AnalyticsDashboard />} />
+                <Route path="/tools/bank-returns-optimizer" element={<BankReturnsOptimizer />} />
                 <Route path="/tools/budget-calculator" element={<BudgetCalculator />} />
                 <Route path="/tools/expense-tracker" element={<ExpenseTracker />} />
                 <Route path="/tools/emergency-fund-calculator" element={<EmergencyFundCalculator />} />
