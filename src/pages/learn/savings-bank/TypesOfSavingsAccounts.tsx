@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   BookOpen, ArrowRight, ArrowLeft, CreditCard, Check, X, DollarSign,
-  AlertTriangle, Target, CheckCircle, TrendingUp, Shield, Zap, Award, HelpCircle
+  AlertTriangle, Target, CheckCircle, TrendingUp, Shield, Zap, Award, HelpCircle, Lightbulb
 } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 
