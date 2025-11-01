@@ -878,6 +878,49 @@ const MaximizingReturns: React.FC = () => {
             </div>
           </motion.section>
 
+          {/* Featured Tool - Bank Returns Optimizer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <div className="bg-gradient-to-r from-green-600 to-teal-700 rounded-2xl p-8 shadow-2xl text-white">
+              <div className="flex items-center gap-3 mb-4">
+                <Zap className="w-10 h-10" />
+                <div>
+                  <div className="text-sm uppercase tracking-wide font-semibold opacity-90">🎯 Apply What You Learned</div>
+                  <h3 className="text-3xl font-bold">Free Bank Returns Optimizer Tool</h3>
+                </div>
+              </div>
+              <p className="text-xl mb-6">
+                Get AI-powered recommendations to maximize your bank returns. Calculate optimal allocation across FDs, high-interest accounts, and sweep-in facilities. See exactly how much more you can earn!
+              </p>
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-3xl font-bold mb-1">100%+</div>
+                  <div className="text-sm">More Returns Possible</div>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-3xl font-bold mb-1">₹30K+</div>
+                  <div className="text-sm">Extra on ₹10L Savings</div>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-3xl font-bold mb-1">2 Min</div>
+                  <div className="text-sm">Get Your Plan</div>
+                </div>
+              </div>
+              <Link
+                to="/tools/bank-returns-optimizer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-green-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all"
+              >
+                <Calculator className="w-6 h-6" />
+                Try Free Tool Now
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </motion.div>
+
           {/* Course Complete */}
           <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl p-8 text-white shadow-2xl text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
