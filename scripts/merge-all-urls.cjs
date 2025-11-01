@@ -25,11 +25,34 @@ console.log('══════════════════════�
 
 const allUrls = new Set();
 
+// First, build complete learn URLs
+console.log('📚 Step 1: Building complete learn URLs...\n');
+try {
+  require('./build-complete-learn-urls.cjs');
+} catch (error) {
+  console.log('⚠️  Learn URL builder failed:', error.message);
+}
+
 // ═══════════════════════════════════════════════════════════════════════
-// 1. FROM App.tsx (routes)
+// 1. FROM all-learn-urls.txt (complete learn platform)
 // ═══════════════════════════════════════════════════════════════════════
 
-console.log('📂 Source 1: App.tsx routes...');
+console.log('\n📂 Source 1: all-learn-urls.txt (complete learn platform)...');
+const learnPath = path.join(PUBLIC_DIR, 'all-learn-urls.txt');
+if (fs.existsSync(learnPath)) {
+  const content = fs.readFileSync(learnPath, 'utf-8');
+  content.split('\n').forEach(line => {
+    const url = line.trim();
+    if (url && url.startsWith('http')) allUrls.add(url);
+  });
+  console.log(`✅ Added ${allUrls.size} learn URLs`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// 2. FROM App.tsx (routes)
+// ═══════════════════════════════════════════════════════════════════════
+
+console.log('\n📂 Source 2: App.tsx routes...');
 const fromCodePath = path.join(PUBLIC_DIR, 'all-urls-from-code.txt');
 if (fs.existsSync(fromCodePath)) {
   const content = fs.readFileSync(fromCodePath, 'utf-8');
@@ -41,10 +64,10 @@ if (fs.existsSync(fromCodePath)) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// 2. FROM all-urls-complete.txt (existing)
+// 3. FROM all-urls-complete.txt (existing)
 // ═══════════════════════════════════════════════════════════════════════
 
-console.log('\n📂 Source 2: all-urls-complete.txt...');
+console.log('\n📂 Source 3: all-urls-complete.txt...');
 const completePath = path.join(PUBLIC_DIR, 'all-urls-complete.txt');
 const beforeCount = allUrls.size;
 if (fs.existsSync(completePath)) {
@@ -57,10 +80,10 @@ if (fs.existsSync(completePath)) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// 3. FROM contentRegistry.ts (all news)
+// 4. FROM contentRegistry.ts (all news)
 // ═══════════════════════════════════════════════════════════════════════
 
-console.log('\n📂 Source 3: contentRegistry.ts (news articles)...');
+console.log('\n📂 Source 4: contentRegistry.ts (news articles)...');
 const registryPath = path.join(SRC_DIR, 'cms-content/contentRegistry.ts');
 const beforeCount2 = allUrls.size;
 if (fs.existsSync(registryPath)) {
@@ -83,42 +106,6 @@ if (fs.existsSync(registryPath)) {
   
   console.log(`✅ Added ${allUrls.size - beforeCount2} news URLs (total now: ${allUrls.size})`);
 }
-
-// ═══════════════════════════════════════════════════════════════════════
-// 4. FROM Lesson Files (all learn URLs)
-// ═══════════════════════════════════════════════════════════════════════
-
-console.log('\n📂 Source 4: All lesson files...');
-const learnDataDir = path.join(SRC_DIR, 'data/learn');
-const beforeCount3 = allUrls.size;
-
-const categoryMappings = {
-  'loansLessons.ts': 'loans',
-  'moneyManagementLessons.ts': 'money-management',
-  'savingsBankLessons.ts': 'savings-bank',
-  'investingLessons.ts': 'investing-wealth',
-  'insuranceRetirementLessons.ts': 'insurance-retirement',
-  'taxationLessons.ts': 'taxation-compliance',
-  'fintechLessons.ts': 'fintech-digital',
-  'behaviouralFinanceLessons.ts': 'behavioural-finance-money-psychology',
-  'businessFinanceLessons.ts': 'business-finance',
-  'advancedFinanceLessons.ts': 'advanced-specialised-finance'
-};
-
-Object.entries(categoryMappings).forEach(([filename, categorySlug]) => {
-  const filePath = path.join(learnDataDir, filename);
-  if (!fs.existsSync(filePath)) return;
-  
-  const content = fs.readFileSync(filePath, 'utf-8');
-  const slugMatches = content.match(/slug:\s*['"]([^'"]+)['"]/g) || [];
-  
-  slugMatches.forEach(match => {
-    const slug = match.match(/['"]([^'"]+)['"]/)[1];
-    allUrls.add(`${BASE_URL}/learn/${categorySlug}/${slug}`);
-  });
-});
-
-console.log(`✅ Added ${allUrls.size - beforeCount3} learn lesson URLs (total now: ${allUrls.size})`);
 
 // ═══════════════════════════════════════════════════════════════════════
 // SAVE MERGED MASTER LIST
