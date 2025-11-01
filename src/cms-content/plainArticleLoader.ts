@@ -9,6 +9,7 @@ import { startupFundingWinter2025 } from './news-articles/startups/startup-fundi
 import { bullMarketRetailInvestors2025 } from './news-articles/markets/bull-market-coming-retail-investors-2025';
 import { ruralTier3StartupEcosystem2025 } from './news-articles/startups/rural-tier3-startup-ecosystem-2025';
 import { gdpGrowthRate202526 } from './news-articles/economy/gdp-growth-rate-2025-26-india';
+import { indiaAIGlobalRace2025 } from './news-articles/tech/india-ai-global-race-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -17,6 +18,7 @@ export const plainArticleContentMap: Record<string, any> = {
   'kya-agla-bull-market-aa-raha-hai-bharat-retail-investors-taiyari-2025': bullMarketRetailInvestors2025,
   'gramin-tier3-shahar-startup-ecosystem-avsar-chunauti-2025': ruralTier3StartupEcosystem2025,
   'bharat-gdp-growth-rate-2025-26-badhti-ghatati-economic-forecast': gdpGrowthRate202526,
+  'bharat-aur-ai-global-race-artificial-intelligence-india-2025': indiaAIGlobalRace2025,
 };
 
 /**

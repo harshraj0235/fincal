@@ -13,6 +13,18 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Tech Article: India AI Global Race 2025
+  {
+    id: 'tech-india-ai-global-race-2025',
+    slug: 'bharat-aur-ai-global-race-artificial-intelligence-india-2025',
+    category: 'tech-business',
+    subCategory: 'artificial-intelligence',
+    title: '🤖 भारत और AI: Global AI Race में India कैसे US-China को टक्कर दे रहा है? (2025 Analysis)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-06T12:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Economy Article: GDP Growth Rate 2025-26
   {
     id: 'economy-gdp-growth-2025-26',
