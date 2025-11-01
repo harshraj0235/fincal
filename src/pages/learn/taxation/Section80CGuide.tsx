@@ -192,7 +192,7 @@ const Section80CGuide: React.FC = () => {
                   minMax: '₹500 - No upper limit',
                   pros: ['Highest returns (12-15% average)', 'Shortest lock-in (apenas 3 years)', 'Unlimited investment (though 80C limit is ₹1.5L)', 'LTCG tax apenas 10% above ₹1L/year'],
                   cons: ['Market-linked (can fall 30-50% short term)', 'Returns not guaranteed', 'Need 5-10 year horizon for good returns'],
-                  bestFor: 'Young investors (<40 age), high risk appetite, 5+ year investment horizon',
+                  bestFor: 'Young investors (under 40 age), high risk appetite, 5+ year investment horizon',
                   example: '₹1.5L annual SIP in ELSS for 15 years @ 12% = ₹49.5 lakh! (vs PPF ₹40.7L). Extra ₹9L wealth!',
                   color: 'green'
                 },
@@ -365,7 +365,7 @@ const Section80CGuide: React.FC = () => {
                   returns: '10Y: PPF ₹1L → ₹20.3L, NSC ₹50K → ₹10.5L. Total: ₹30.8L (safe!)'
                 },
                 {
-                  profile: 'Parent with Girl Child (<10 age)',
+                  profile: 'Parent with Girl Child (under 10 age)',
                   combo: '₹1L Sukanya + ₹50K ELSS',
                   why: `Sukanya 8.2% tax-free + ELSS growth. Secures daughter's education/marriage.`,
                   returns: '15Y: Sukanya ₹1L → ₹43.9L, ELSS ₹50K → ₹16.5L. Total: ₹60.4L (₹44L tax-free!)'
