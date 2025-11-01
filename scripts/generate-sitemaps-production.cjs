@@ -1,24 +1,17 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════
- * PRODUCTION SITEMAP GENERATOR - BULLETPROOF & SCALABLE
+ * PRODUCTION SITEMAP GENERATOR - SCANS ENTIRE CODEBASE
  * ═══════════════════════════════════════════════════════════════════════
  * 
  * Built: Nov 2025
- * Purpose: Generate perfect sitemaps that handle INFINITE URLs
+ * Scans: contentRegistry.ts (news), lesson files (learn), all-urls-complete.txt (blog/calc/tools)
  * 
  * Features:
- * ✅ Extracts URLs from ENTIRE codebase (not just text file)
- * ✅ Handles 50,000+ URLs per category (Google limit)
- * ✅ Auto-splits large sitemaps (sitemap-news-1.xml, sitemap-news-2.xml)
- * ✅ Google News compliant for news articles
- * ✅ Never breaks - error handling for missing files
- * ✅ Future-proof - add 1000s of posts without changes
- * ✅ Validates all URLs before adding
- * 
- * URL Sources:
- * 1. News: plainArticleLoader.ts (dynamic scan)
- * 2. Learn: loansLessons.ts (dynamic scan)
- * 3. Blog/Calc/Tools: all-urls-complete.txt (static list)
+ * ✅ Extracts from ACTUAL code files (not just text file)
+ * ✅ Handles 1,000,000+ URLs (auto-splits at 50k)
+ * ✅ Google News compliant
+ * ✅ Never breaks build
+ * ✅ Future-proof
  */
 
 const fs = require('fs');
@@ -28,17 +21,16 @@ const BASE_URL = 'https://moneycal.in';
 const PUBLIC_DIR = path.join(__dirname, '../public');
 const SRC_DIR = path.join(__dirname, '../src');
 const TODAY = new Date().toISOString().split('T')[0];
-const MAX_URLS_PER_SITEMAP = 50000; // Google limit
+const MAX_URLS_PER_SITEMAP = 50000;
 
 console.log('═══════════════════════════════════════════════════════════════════════');
-console.log('🚀 PRODUCTION SITEMAP GENERATOR - SCALABLE ARCHITECTURE');
+console.log('🚀 PRODUCTION SITEMAP GENERATOR - COMPLETE CODEBASE SCAN');
 console.log('═══════════════════════════════════════════════════════════════════════');
-console.log(`📅 Build Date: ${TODAY}`);
-console.log(`📊 Max URLs per sitemap: ${MAX_URLS_PER_SITEMAP.toLocaleString()}`);
+console.log(`📅 Date: ${TODAY}`);
 console.log('');
 
 // ═══════════════════════════════════════════════════════════════════════
-// UTILITY FUNCTIONS
+// UTILITIES
 // ═══════════════════════════════════════════════════════════════════════
 
 function escapeXml(str) {
@@ -60,7 +52,7 @@ function createStandardUrl(url, priority, changefreq, lastmod = TODAY) {
   </url>`;
 }
 
-function createGoogleNewsUrl(url, title, pubDate, keywords, category) {
+function createGoogleNewsUrl(url, title, pubDate, keywords) {
   return `  <url>
     <loc>${escapeXml(url)}</loc>
     <news:news>
@@ -78,145 +70,150 @@ function createGoogleNewsUrl(url, title, pubDate, keywords, category) {
   </url>`;
 }
 
-function validateUrl(url) {
-  try {
-    new URL(url);
-    return url.startsWith(BASE_URL);
-  } catch {
-    return false;
-  }
-}
-
 // ═══════════════════════════════════════════════════════════════════════
-// 1. EXTRACT NEWS URLs FROM CODEBASE
+// 1. EXTRACT NEWS URLs FROM contentRegistry.ts
 // ═══════════════════════════════════════════════════════════════════════
 
-function extractNewsUrlsFromCode() {
-  console.log('📰 Scanning codebase for News Articles...');
+function extractNewsFromRegistry() {
+  console.log('📰 Scanning contentRegistry.ts for ALL news articles...');
   
   try {
-    const loaderPath = path.join(SRC_DIR, 'cms-content/plainArticleLoader.ts');
+    const registryPath = path.join(SRC_DIR, 'cms-content/contentRegistry.ts');
+    const content = fs.readFileSync(registryPath, 'utf-8');
     
-    if (!fs.existsSync(loaderPath)) {
-      console.log('⚠️  plainArticleLoader.ts not found - using backup list');
-      return extractNewsFromBackup();
-    }
-    
-    const content = fs.readFileSync(loaderPath, 'utf-8');
-    
-    // Extract all slug entries from the map
-    const slugMatches = content.match(/'([^']+)':\s*\w+2025/g) || [];
-    const slugs = slugMatches.map(match => match.match(/'([^']+)':/)[1]);
+    // Extract all slugs and categories
+    const slugMatches = content.match(/slug:\s*['"]([^'"]+)['"]/g) || [];
+    const categoryMatches = content.match(/category:\s*['"]([^'"]+)['"]/g) || [];
+    const dateMatches = content.match(/datePublished:\s*['"]([^'"T]+)/g) || [];
+    const titleMatches = content.match(/title:\s*['"]([^'"]+)['"]/g) || [];
     
     const articles = [];
     const urls = [];
     
-    // Determine category from slug patterns
-    slugs.forEach(slug => {
-      let category = 'markets'; // default
-      
-      if (slug.includes('startup') || slug.includes('unicorn') || slug.includes('founder')) category = 'startups';
-      else if (slug.includes('gdp') || slug.includes('inflation') || slug.includes('economy') || slug.includes('poverty') || slug.includes('trade')) category = 'economy';
-      else if (slug.includes('manufacturing') || slug.includes('fdi') || slug.includes('revenue') || slug.includes('merger') || slug.includes('governance') || slug.includes('debt') || slug.includes('industry')) category = 'business';
-      else if (slug.includes('ai-') || slug.includes('5g') || slug.includes('tech') || slug.includes('cloud') || slug.includes('cyber') || slug.includes('blockchain') || slug.includes('ewaste') || slug.includes('d2c') || slug.includes('ipo') || slug.includes('saas')) category = 'tech-business';
+    // Parse articles
+    for (let i = 0; i < slugMatches.length; i++) {
+      const slug = slugMatches[i].match(/['"]([^'"]+)['"]/)[1];
+      const category = categoryMatches[i] ? categoryMatches[i].match(/['"]([^'"]+)['"]/)[1] : 'markets';
+      const date = dateMatches[i] ? dateMatches[i].match(/['"]([^'"]+)/)[1] : TODAY;
+      const title = titleMatches[i] ? titleMatches[i].match(/['"]([^'"]+)['"]/)[1] : slug;
       
       const url = `${BASE_URL}/news/${category}/${slug}`;
-      articles.push({ slug, category, date: TODAY });
+      articles.push({ slug, category, date, title });
       urls.push(url);
-    });
+    }
     
-    // Add category index pages
-    const categories = ['markets', 'business', 'startups', 'economy', 'tech-business'];
+    // Add category pages
+    const categories = ['markets', 'business', 'business-analysis', 'startups', 'economy', 'tech-business'];
     categories.forEach(cat => urls.push(`${BASE_URL}/news/${cat}`));
-    urls.push(`${BASE_URL}/news`); // Main news page
+    urls.push(`${BASE_URL}/news`);
     
-    console.log(`✅ News: ${articles.length} articles + ${categories.length + 1} category pages = ${urls.length} URLs`);
+    console.log(`✅ News: ${articles.length} articles + ${categories.length + 1} pages = ${urls.length} URLs`);
     
     return { articles, urls };
     
   } catch (error) {
-    console.log(`⚠️  Error reading plainArticleLoader: ${error.message}`);
-    return extractNewsFromBackup();
+    console.log(`⚠️  Error reading contentRegistry: ${error.message}`);
+    console.log('   Using fallback from all-urls-complete.txt...');
+    return extractNewsFromFallback();
   }
 }
 
-function extractNewsFromBackup() {
-  // Fallback: extract from all-urls-complete.txt
+function extractNewsFromFallback() {
   const filePath = path.join(PUBLIC_DIR, 'all-urls-complete.txt');
   if (!fs.existsSync(filePath)) return { articles: [], urls: [] };
   
   const content = fs.readFileSync(filePath, 'utf-8');
   const newsUrls = content.split('\n')
     .map(line => line.trim())
-    .filter(line => line.startsWith(`${BASE_URL}/news/`));
+    .filter(line => line.startsWith(`${BASE_URL}/news/`))
+    .filter((url, index, self) => self.indexOf(url) === index); // Deduplicate
   
   const articles = newsUrls
-    .filter(url => !url.endsWith('/news') && url.split('/').length > 5)
+    .filter(url => url.split('/').length > 5) // Has category/slug
     .map(url => {
       const parts = url.split('/');
       const slug = parts[parts.length - 1];
       const category = parts[parts.length - 2];
-      return { slug, category, date: TODAY };
+      return { slug, category, date: TODAY, title: slug };
     });
   
-  console.log(`✅ News (from backup): ${newsUrls.length} URLs`);
+  console.log(`✅ News (fallback): ${newsUrls.length} URLs`);
   return { articles, urls: newsUrls };
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// 2. EXTRACT LEARN URLs FROM CODEBASE
+// 2. EXTRACT LEARN URLs FROM ALL LESSON FILES
 // ═══════════════════════════════════════════════════════════════════════
 
-function extractLearnUrls() {
-  console.log('\n📚 Scanning codebase for Learn Platform URLs...');
+function extractLearnFromLessonFiles() {
+  console.log('\n📚 Scanning ALL lesson files for Learn platform URLs...');
   
-  try {
-    // Known categories (18 total)
-    const categories = [
-      'loans', 'home-loans', 'personal-loans', 'credit-cards', 'credit-score',
-      'vehicle-loans', 'education-loans', 'business-loans', 'gold-loans',
-      'money-management', 'savings-bank', 'investing-wealth', 'insurance-retirement',
-      'taxation-compliance', 'fintech-digital', 'behavioural-finance-money-psychology',
-      'business-finance', 'advanced-specialised-finance'
-    ];
+  const learnDataDir = path.join(SRC_DIR, 'data/learn');
+  const urls = [];
+  
+  // Add main learn page
+  urls.push(`${BASE_URL}/learn`);
+  
+  // Categories and their slugs
+  const categoryMappings = {
+    'loansLessons.ts': 'loans',
+    'moneyManagementLessons.ts': 'money-management',
+    'savingsBankLessons.ts': 'savings-bank',
+    'investingLessons.ts': 'investing-wealth',
+    'insuranceRetirementLessons.ts': 'insurance-retirement',
+    'taxationLessons.ts': 'taxation-compliance',
+    'fintechLessons.ts': 'fintech-digital',
+    'behaviouralFinanceLessons.ts': 'behavioural-finance-money-psychology',
+    'businessFinanceLessons.ts': 'business-finance',
+    'advancedFinanceLessons.ts': 'advanced-specialised-finance'
+  };
+  
+  let totalLessons = 0;
+  
+  // Scan each lesson file
+  Object.entries(categoryMappings).forEach(([filename, categorySlug]) => {
+    const filePath = path.join(learnDataDir, filename);
     
-    const urls = [];
-    
-    // Add main learn page
-    urls.push(`${BASE_URL}/learn`);
-    
-    // Add all category hub pages
-    categories.forEach(cat => urls.push(`${BASE_URL}/learn/${cat}`));
-    
-    // Extract lesson URLs from all-urls-complete.txt (most reliable)
-    const filePath = path.join(PUBLIC_DIR, 'all-urls-complete.txt');
-    if (fs.existsSync(filePath)) {
-      const content = fs.readFileSync(filePath, 'utf-8');
-      const learnUrls = content.split('\n')
-        .map(line => line.trim())
-        .filter(line => line.startsWith(`${BASE_URL}/learn`));
-      
-      // Merge and deduplicate
-      learnUrls.forEach(url => {
-        if (!urls.includes(url)) urls.push(url);
-      });
+    if (!fs.existsSync(filePath)) {
+      console.log(`   ⚠️  ${filename} not found, skipping`);
+      return;
     }
     
-    console.log(`✅ Learn: ${urls.length} URLs (18 categories + lessons)`);
-    return urls;
+    // Add category hub page
+    urls.push(`${BASE_URL}/learn/${categorySlug}`);
     
-  } catch (error) {
-    console.log(`⚠️  Error: ${error.message}`);
-    return [`${BASE_URL}/learn`];
-  }
+    try {
+      const content = fs.readFileSync(filePath, 'utf-8');
+      
+      // Extract lesson slugs (look for slug: 'xxx' pattern)
+      const slugMatches = content.match(/slug:\s*['"]([^'"]+)['"]/g) || [];
+      const lessonSlugs = slugMatches.map(match => match.match(/['"]([^'"]+)['"]/)[1]);
+      
+      // Add each lesson URL
+      lessonSlugs.forEach(slug => {
+        const url = `${BASE_URL}/learn/${categorySlug}/${slug}`;
+        urls.push(url);
+      });
+      
+      totalLessons += lessonSlugs.length;
+      console.log(`   ✅ ${filename.padEnd(35)} → ${lessonSlugs.length} lessons`);
+      
+    } catch (error) {
+      console.log(`   ⚠️  Error reading ${filename}: ${error.message}`);
+    }
+  });
+  
+  console.log(`✅ Learn: ${urls.length} URLs (10 categories + ${totalLessons} lessons)`);
+  
+  return urls;
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// 3. EXTRACT OTHER URLs (Blog, Calculators, Tools, etc.)
+// 3. EXTRACT OTHER URLs FROM all-urls-complete.txt
 // ═══════════════════════════════════════════════════════════════════════
 
 function extractOtherUrls() {
-  console.log('\n📂 Extracting Blog, Calculator, Tool URLs...');
+  console.log('\n📂 Reading all-urls-complete.txt for Blog, Calculators, Tools...');
   
   const filePath = path.join(PUBLIC_DIR, 'all-urls-complete.txt');
   
@@ -241,8 +238,6 @@ function extractOtherUrls() {
   };
   
   allUrls.forEach(url => {
-    if (!validateUrl(url)) return; // Skip invalid URLs
-    
     const urlPath = url.replace(BASE_URL, '').toLowerCase();
     
     // Skip news and learn (handled separately)
@@ -267,19 +262,16 @@ function extractOtherUrls() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// GENERATE SITEMAP (WITH AUTO-SPLIT FOR LARGE CATEGORIES)
+// GENERATE SITEMAP (WITH AUTO-SPLIT)
 // ═══════════════════════════════════════════════════════════════════════
 
 function generateSitemap(name, urls, priority, changefreq, isGoogleNews = false, newsArticles = null) {
-  if (urls.length === 0) {
-    console.log(`⏭️  Skipping ${name} (0 URLs)`);
-    return [];
-  }
+  if (urls.length === 0) return [];
   
   const generatedFiles = [];
-  
-  // Split into chunks if needed (max 50,000 per file)
   const chunks = [];
+  
+  // Split into 50k chunks
   for (let i = 0; i < urls.length; i += MAX_URLS_PER_SITEMAP) {
     chunks.push(urls.slice(i, i + MAX_URLS_PER_SITEMAP));
   }
@@ -287,30 +279,27 @@ function generateSitemap(name, urls, priority, changefreq, isGoogleNews = false,
   chunks.forEach((chunk, index) => {
     const suffix = chunks.length > 1 ? `-${index + 1}` : '';
     const filename = `sitemap-${name}${suffix}.xml`;
-    const filepath = path.join(PUBLIC_DIR, filename);
     
     let xmlHeader;
     if (isGoogleNews) {
       xmlHeader = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  <!-- MoneyCal ${name.toUpperCase()} - Google News Compliant - ${chunk.length} URLs - ${TODAY} -->`;
+  <!-- MoneyCal ${name.toUpperCase()} - Google News Format - ${chunk.length} URLs - ${TODAY} -->`;
     } else {
       xmlHeader = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- MoneyCal ${name.toUpperCase()} - ${chunk.length} URLs - Updated: ${TODAY} -->`;
+  <!-- MoneyCal ${name.toUpperCase()} - ${chunk.length} URLs - ${TODAY} -->`;
     }
     
     let urlEntries;
     if (isGoogleNews && newsArticles) {
       urlEntries = chunk.map(url => {
         const article = newsArticles.find(a => url.includes(a.slug));
-        if (article) {
-          const titleWords = article.slug.split('-').slice(0, 10).join(' ');
-          const title = titleWords.charAt(0).toUpperCase() + titleWords.slice(1);
-          const pubDate = `${article.date}T10:00:00+05:30`;
-          const keywords = `${article.category}, India, Finance, News`;
-          return createGoogleNewsUrl(url, title, pubDate, keywords, article.category);
+        if (article && article.title && article.date) {
+          const pubDate = article.date.includes('T') ? article.date : `${article.date}T10:00:00+05:30`;
+          const keywords = `${article.category}, India, Finance, News, Markets, Business`;
+          return createGoogleNewsUrl(url, article.title, pubDate, keywords);
         }
         return createStandardUrl(url, priority, changefreq);
       });
@@ -319,35 +308,33 @@ function generateSitemap(name, urls, priority, changefreq, isGoogleNews = false,
     }
     
     const xml = `${xmlHeader}\n${urlEntries.join('\n')}\n</urlset>`;
-    fs.writeFileSync(filepath, xml);
+    fs.writeFileSync(path.join(PUBLIC_DIR, filename), xml);
     
     generatedFiles.push({ filename, count: chunk.length });
-    console.log(`✅ ${filename} → ${chunk.length} URLs (priority: ${priority})`);
+    console.log(`✅ ${filename.padEnd(30)} → ${chunk.length.toString().padStart(5)} URLs (priority: ${priority})`);
   });
   
   return generatedFiles;
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// GENERATE MASTER SITEMAP INDEX
+// GENERATE MASTER INDEX
 // ═══════════════════════════════════════════════════════════════════════
 
-function generateMasterIndex(allGeneratedFiles, urlCounts) {
+function generateMasterIndex(allFiles, urlCounts) {
   console.log('\n📋 Generating Master Sitemap Index...');
   
-  const totalUrls = Object.values(urlCounts).reduce((sum, count) => sum + count, 0);
-  const totalFiles = allGeneratedFiles.length;
+  const total = Object.values(urlCounts).reduce((sum, count) => sum + count, 0);
   
   const header = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!--
     🗺️ MoneyCal Master Sitemap Index
     📅 Generated: ${TODAY}
-    📊 Total Sitemaps: ${totalFiles}
-    📈 Total URLs: ${totalUrls}
+    📊 Sitemaps: ${allFiles.length}
+    📈 Total URLs: ${total}
     
-    Distribution:
-    📰 News: ${urlCounts.news || 0}
+    📰 News: ${urlCounts.news || 0} (Google News format)
     🔢 Calculators: ${urlCounts.calculators || 0}
     📚 Learn: ${urlCounts.learn || 0}
     📝 Blog: ${urlCounts.blog || 0}
@@ -357,24 +344,23 @@ function generateMasterIndex(allGeneratedFiles, urlCounts) {
     📄 Pages: ${urlCounts.pages || 0}
   -->`;
   
-  const entries = allGeneratedFiles.map(file => `  <sitemap>
-    <loc>${BASE_URL}/${file.filename}</loc>
+  const entries = allFiles.map(f => `  <sitemap>
+    <loc>${BASE_URL}/${f.filename}</loc>
     <lastmod>${TODAY}</lastmod>
   </sitemap>`);
   
   const xml = `${header}\n${entries.join('\n')}\n</sitemapindex>`;
   
-  // Backup old master sitemap
+  // Backup
   const masterPath = path.join(PUBLIC_DIR, 'sitemap.xml');
   if (fs.existsSync(masterPath)) {
     fs.copyFileSync(masterPath, path.join(PUBLIC_DIR, `sitemap-backup-${TODAY}.xml`));
   }
   
   fs.writeFileSync(masterPath, xml);
-  console.log(`✅ sitemap.xml (Master Index) → ${totalFiles} child sitemaps`);
-  console.log(`💾 Backup: sitemap-backup-${TODAY}.xml`);
+  console.log(`✅ sitemap.xml → ${allFiles.length} sitemaps, ${total} total URLs`);
   
-  return { totalFiles, totalUrls };
+  return { total, fileCount: allFiles.length };
 }
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -382,101 +368,98 @@ function generateMasterIndex(allGeneratedFiles, urlCounts) {
 // ═══════════════════════════════════════════════════════════════════════
 
 try {
-  // Step 1: Extract all URLs
+  // STEP 1: Extract all URLs
   console.log('🔍 STEP 1: EXTRACTING URLs FROM CODEBASE\n');
   
-  const newsData = extractNewsUrlsFromCode();
-  const learnUrls = extractLearnUrls();
+  const newsData = extractNewsFromRegistry();
+  const learnUrls = extractLearnFromLessonFiles();
   const otherCategories = extractOtherUrls();
   
-  // Step 2: Generate category sitemaps
-  console.log('\n📝 STEP 2: GENERATING CATEGORY SITEMAPS\n');
+  // STEP 2: Generate sitemaps
+  console.log('\n📝 STEP 2: GENERATING SITEMAPS\n');
   console.log('──────────────────────────────────────────────────────────────────────');
   
-  const allGeneratedFiles = [];
+  const allFiles = [];
   const urlCounts = {};
   
-  // News (with Google News format)
+  // News (Google News format with article metadata)
   if (newsData.urls.length > 0) {
     const files = generateSitemap('news', newsData.urls, 0.8, 'daily', true, newsData.articles);
-    allGeneratedFiles.push(...files);
+    allFiles.push(...files);
     urlCounts.news = newsData.urls.length;
   }
   
-  // Calculators (highest priority after news)
+  // Calculators (highest priority)
   if (otherCategories.calculators.length > 0) {
     const files = generateSitemap('calculators', otherCategories.calculators, 0.9, 'monthly');
-    allGeneratedFiles.push(...files);
+    allFiles.push(...files);
     urlCounts.calculators = otherCategories.calculators.length;
   }
   
   // Learn Platform
   if (learnUrls.length > 0) {
     const files = generateSitemap('learn', learnUrls, 0.8, 'weekly');
-    allGeneratedFiles.push(...files);
+    allFiles.push(...files);
     urlCounts.learn = learnUrls.length;
   }
   
   // Blog
   if (otherCategories.blog.length > 0) {
     const files = generateSitemap('blog', otherCategories.blog, 0.7, 'weekly');
-    allGeneratedFiles.push(...files);
+    allFiles.push(...files);
     urlCounts.blog = otherCategories.blog.length;
   }
   
   // Tools
   if (otherCategories.tools.length > 0) {
     const files = generateSitemap('tools', otherCategories.tools, 0.7, 'monthly');
-    allGeneratedFiles.push(...files);
+    allFiles.push(...files);
     urlCounts.tools = otherCategories.tools.length;
   }
   
   // Government
   if (otherCategories.government.length > 0) {
     const files = generateSitemap('government', otherCategories.government, 0.7, 'monthly');
-    allGeneratedFiles.push(...files);
+    allFiles.push(...files);
     urlCounts.government = otherCategories.government.length;
   }
   
   // Crypto
   if (otherCategories.crypto.length > 0) {
     const files = generateSitemap('crypto', otherCategories.crypto, 0.65, 'weekly');
-    allGeneratedFiles.push(...files);
+    allFiles.push(...files);
     urlCounts.crypto = otherCategories.crypto.length;
   }
   
-  // Static Pages
+  // Pages
   if (otherCategories.pages.length > 0) {
     const files = generateSitemap('pages', otherCategories.pages, 0.6, 'monthly');
-    allGeneratedFiles.push(...files);
+    allFiles.push(...files);
     urlCounts.pages = otherCategories.pages.length;
   }
   
   console.log('──────────────────────────────────────────────────────────────────────');
   
-  // Step 3: Generate master index
-  console.log('\n🔨 STEP 3: GENERATING MASTER INDEX\n');
-  const result = generateMasterIndex(allGeneratedFiles, urlCounts);
+  // STEP 3: Master index
+  const result = generateMasterIndex(allFiles, urlCounts);
   
-  // Final Summary
+  // Summary
   console.log('\n═══════════════════════════════════════════════════════════════════════');
   console.log('🎉 SITEMAP GENERATION COMPLETE!');
   console.log('═══════════════════════════════════════════════════════════════════════');
-  console.log(`✅ Success! ${result.totalFiles} sitemaps created`);
-  console.log(`📊 Total URLs: ${result.totalUrls.toLocaleString()}`);
-  console.log(`📁 Output Directory: ${PUBLIC_DIR}`);
-  console.log('\n🌐 Submit to Google:');
-  console.log(`   📍 https://moneycal.in/sitemap.xml`);
-  console.log(`   📰 https://moneycal.in/sitemap-news.xml (Google News Publisher)`);
-  console.log('\n✨ Future: Just add URLs to all-urls-complete.txt → Auto-categorized!');
+  console.log(`✅ ${result.fileCount} sitemap files generated`);
+  console.log(`📊 ${result.total.toLocaleString()} total URLs indexed`);
+  console.log(`📁 Output: ${PUBLIC_DIR}`);
+  console.log('\n🌐 Submit:');
+  console.log(`   Master: https://moneycal.in/sitemap.xml`);
+  console.log(`   News:   https://moneycal.in/sitemap-news.xml`);
+  console.log('\n✨ Future: Add URLs → Auto-categorized & indexed!');
   console.log('═══════════════════════════════════════════════════════════════════════\n');
   
   process.exit(0);
   
 } catch (error) {
-  console.error('\n❌ FATAL ERROR:');
-  console.error(error.message);
+  console.error('\n❌ FATAL ERROR:', error.message);
   console.error(error.stack);
   process.exit(1);
 }
-
