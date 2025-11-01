@@ -740,6 +740,67 @@ const SeniorCitizenSchemes: React.FC = () => {
             </div>
           </motion.section>
 
+          {/* Optimal Portfolio Strategy */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">💼 Optimal Portfolio Strategy for Retirees</h2>
+
+              <div className="space-y-6">
+                <div className="bg-gradient-to-r from-green-500 to-teal-600 text-white p-6 rounded-xl">
+                  <h3 className="text-2xl font-bold mb-4">For ₹30 Lakh Retirement Corpus:</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center bg-white/20 backdrop-blur-sm p-3 rounded">
+                      <span>SCSS (Maximum):</span>
+                      <span className="font-bold">₹15,00,000 @ 8.2%</span>
+                    </div>
+                    <div className="flex justify-between items-center bg-white/20 backdrop-blur-sm p-3 rounded">
+                      <span>Post Office MIS:</span>
+                      <span className="font-bold">₹9,00,000 @ 7.4%</span>
+                    </div>
+                    <div className="flex justify-between items-center bg-white/20 backdrop-blur-sm p-3 rounded">
+                      <span>Senior Citizen FD:</span>
+                      <span className="font-bold">₹5,00,000 @ 7.5%</span>
+                    </div>
+                    <div className="flex justify-between items-center bg-white/20 backdrop-blur-sm p-3 rounded">
+                      <span>Liquid Savings:</span>
+                      <span className="font-bold">₹1,00,000 @ 3%</span>
+                    </div>
+                  </div>
+                  <div className="mt-6 bg-yellow-400 text-yellow-900 p-4 rounded-lg font-bold text-center">
+                    Annual Income: ₹2,26,100 (₹18,841/month passive income!)
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 p-6 rounded-xl">
+                  <h4 className="font-bold text-lg text-gray-900 mb-3">✅ Why This Strategy Works:</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span><strong>Maximum safety:</strong> All government-backed schemes (zero risk)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span><strong>Regular income:</strong> POMIS gives monthly ₹5,550, SCSS quarterly ₹30,750</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span><strong>Tax efficient:</strong> 80C benefit on SCSS + 80TTB exemption</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span><strong>Liquidity:</strong> ₹1L liquid for emergencies, rest can be broken if needed</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* Related Calculators */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
