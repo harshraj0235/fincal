@@ -1,0 +1,144 @@
+/* Google News Optimized Article Styling */
+
+.article-intro {
+  margin-bottom: 2rem;
+}
+
+.section-heading {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin: 2rem 0 1rem;
+  line-height: 1.3;
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+.sub-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 1.5rem 0 1rem;
+  line-height: 1.4;
+}
+
+.lead-paragraph {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.article-content p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #4a5568;
+  margin-bottom: 1.25rem;
+}
+
+.article-content strong {
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.article-content ul, .article-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.article-content li {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.article-content ul li::marker {
+  color: #3b82f6;
+  font-size: 1.25rem;
+}
+
+.info-box {
+  background: linear-gradient(to right, #eff6ff, #dbeafe);
+  border-left: 4px solid #3b82f6;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.warning-box {
+  background: linear-gradient(to right, #fef3c7, #fde68a);
+  border-left: 4px solid #f59e0b;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.1);
+}
+
+.data-box {
+  background: linear-gradient(to right, #f0fdf4, #dcfce7);
+  border-left: 4px solid #10b981;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+}
+
+.section-divider {
+  border: 0;
+  border-top: 2px solid #e2e8f0;
+  margin: 3rem 0;
+}
+
+.article-content a {
+  color: #3b82f6;
+  text-decoration: underline;
+  font-weight: 600;
+  text-underline-offset: 3px;
+  transition: all 0.2s;
+}
+
+.article-content a:hover {
+  color: #2563eb;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.highlight-stat {
+  background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+}
+
+.expert-quote {
+  font-style: italic;
+  color: #4b5563;
+  border-left: 3px solid #d1d5db;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.125rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .section-heading {
+    font-size: 1.5rem;
+  }
+  
+  .sub-heading {
+    font-size: 1.25rem;
+  }
+  
+  .lead-paragraph {
+    font-size: 1.125rem;
+  }
+  
+  .article-content p,
+  .article-content li {
+    font-size: 1rem;
+  }
+}
+

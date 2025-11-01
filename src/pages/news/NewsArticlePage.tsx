@@ -29,6 +29,7 @@ import TrendingNewsSidebar from '../../components/TrendingNewsSidebar';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import TableOfContents from '../../components/TableOfContents';
+import '../../styles/news-article.css';
 
 interface Article {
   id: string;
