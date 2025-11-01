@@ -334,7 +334,7 @@ const IndexFundsETFs: React.FC = () => {
                       <strong>✅ Why Best:</strong>
                       <ul className="text-sm space-y-1 text-gray-700 mt-2">
                         <li>• Lowest cost: 0.05% (₹500 on ₹10L/year)</li>
-                        <li>• Tracking error: <0.05% (excellent!)</li>
+                        <li>• Tracking error: &lt;0.05% (excellent!)</li>
                         <li>• AUM: ₹30,000+ crore (large, stable)</li>
                         <li>• Min SIP: ₹500/month</li>
                       </ul>
