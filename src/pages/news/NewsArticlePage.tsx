@@ -16,6 +16,7 @@ import SEOHelmet from '../../components/SEOHelmet';
 import NewsArticleSchema from '../../components/NewsArticleSchema';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { getArticleContent } from '../../cms-content/articleLoader';
+import { getPlainArticleContent } from '../../cms-content/plainArticleLoader';
 import { NewsGuideTemplate } from '../../components/NewsGuideTemplate';
 import { teamProfiles } from '../../data/teamProfiles';
 import { newsCategories } from '../../data/newsCategories';
@@ -314,12 +315,38 @@ const NewsArticlePage: React.FC = () => {
             
             {/* Check if CMS content is available */}
             {(() => {
+              // First try to get structured NewsGuideSection content
               const cmsContent = getArticleContent(article.slug);
               if (cmsContent) {
                 return <NewsGuideTemplate guide={cmsContent} />;
               }
+              
+              // Then try to get plain article content (like Hindi news articles)
+              const plainContent = getPlainArticleContent(article.slug);
+              if (plainContent && plainContent.content) {
+                return (
+                  <div className="prose prose-lg max-w-none">
+                    <div 
+                      dangerouslySetInnerHTML={{ __html: plainContent.content }} 
+                      className="article-content text-neutral-800 leading-relaxed"
+                      style={{
+                        fontSize: '1.125rem',
+                        lineHeight: '1.75',
+                      }}
+                    />
+                    
+                    {/* Disclaimer for plain content articles */}
+                    <div className="mt-12 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-xl shadow-lg p-8">
+                      <h3 className="text-2xl font-black text-neutral-900 mb-4">⚠️ Disclaimer / अस्वीकरण</h3>
+                      <p className="text-base text-neutral-800 leading-relaxed font-medium">
+                        This content is for educational purposes only. I am not a certified financial expert or advisor. All information is based on personal experience, research, and knowledge, and should not be considered as professional or legal advice. Please consult with a qualified expert before making any financial decisions. All risks associated with your actions are your own responsibility. If you find any mistakes or inaccuracies, please contact me as soon as possible so I can make corrections. I try my best to comply with all applicable laws in India.
+                      </p>
+                    </div>
+                  </div>
+                );
+              }
           
-          // Fallback to placeholder content if no CMS content
+          // Fallback to placeholder content if no content available
           return (
             <div className="prose prose-lg max-w-none">
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg mb-8">
