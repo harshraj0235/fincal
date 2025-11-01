@@ -22,9 +22,9 @@ import { advancedFinanceLessons } from '../../data/learn/advancedFinanceLessons'
 
 /**
  * MoneyCal Learn - Premium Financial Education Platform
- * 18 Categories | 200+ Comprehensive Lessons
- * Advanced Search | Mobile Optimized | Google-Friendly
- * Build: Oct 31, 2025 - Retry after CF internal error
+ * 18 Categories | 200+ Comprehensive Lessons | 76+ Featured Lessons in 9 Core Categories
+ * Advanced Search | Mobile Optimized | SEO-Optimized | Google-Friendly
+ * Updated: Nov 1, 2025 - All core categories now have 8+ lessons
  */
 
 interface Category {
@@ -233,7 +233,7 @@ const LearnHome: React.FC = () => {
       nameHindi: 'कर और अनुपालन',
       icon: '📋',
       description: 'Income tax, 80C deductions, ITR filing, TDS, and tax optimization strategies',
-      lessonsCount: 7,
+      lessonsCount: 8,
       duration: '5h',
       level: 'Intermediate',
       route: '/learn/taxation-compliance',
@@ -247,8 +247,8 @@ const LearnHome: React.FC = () => {
       nameHindi: 'फिनटेक और डिजिटल भुगतान',
       icon: '📱',
       description: 'UPI, digital wallets, online banking, payment security, and cybersecurity',
-      lessonsCount: 6,
-      duration: '4h',
+      lessonsCount: 8,
+      duration: '5h',
       level: 'Beginner',
       route: '/learn/fintech-digital-payments',
       color: 'from-blue-500 to-cyan-600',
