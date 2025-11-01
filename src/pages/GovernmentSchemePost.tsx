@@ -27,7 +27,7 @@ const GovernmentSchemePost: React.FC = () => {
 
   // Table of Contents
   const toc = useMemo(() => {
-    if (!scheme) return [];
+    if (!scheme || !scheme.content) return [];
     return scheme.content
       .map((section, idx) => {
         if (section.type === 'heading' || section.type === 'subheading') {
@@ -170,7 +170,7 @@ const GovernmentSchemePost: React.FC = () => {
 
         {/* Blog Content Rendering */}
         <article className="prose prose-base sm:prose-lg max-w-none">
-          {scheme.content.map((section, idx) => {
+          {scheme.content && scheme.content.map((section, idx) => {
             switch (section.type) {
               case 'heading':
                 return <h2 id={`section-${idx}`} key={idx} className="text-2xl sm:text-3xl font-bold mt-10 mb-4 text-green-800">{section.content}</h2>;
