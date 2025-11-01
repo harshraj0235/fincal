@@ -1,9 +1,9 @@
 /**
  * FinTech & Digital Payments - Complete Lesson Registry
  * Category: fintech-digital-payments
- * Total Lessons: 6 comprehensive lessons
+ * Total Lessons: 8 comprehensive lessons
  * Target: Indian audience (Hindi + English)
- * SEO: Optimized for Google ranking
+ * SEO: Optimized for Google ranking with long-tail keywords
  */
 
 export interface LearnLesson {
@@ -29,8 +29,8 @@ export const fintechCategory = {
   description: 'UPI, digital wallets, online banking, payment security, and FinTech apps for Indians',
   descriptionHindi: 'UPI, डिजिटल वॉलेट, ऑनलाइन बैंकिंग, भुगतान सुरक्षा, और भारतीयों के लिए फिनटेक ऐप',
   color: 'from-blue-500 to-cyan-600',
-  totalLessons: 6,
-  estimatedHours: 4
+  totalLessons: 8,
+  estimatedHours: 5
 };
 
 export const fintechLessons: LearnLesson[] = [
@@ -111,14 +111,40 @@ export const fintechLessons: LearnLesson[] = [
     tags: ['BNPL', 'LazyPay', 'Simpl', 'Credit Score', 'Hindi'],
     relatedCalculators: [],
     order: 6
+  },
+  {
+    id: 'qr-code-payments-bharat-qr',
+    slug: 'qr-code-payments-bharat-qr-scan-and-pay-merchant-upi-india-complete-guide',
+    title: 'QR Code Payments & Bharat QR: How to Scan & Pay Safely (India Complete Guide)',
+    titleHindi: 'QR कोड भुगतान और भारत QR: सुरक्षित रूप से स्कैन करें और भुगतान करें (भारत पूर्ण गाइड)',
+    description: 'Master QR payments: Static vs Dynamic QR codes, Bharat QR explained, how merchant QR codes work, QR code scams to avoid, scanning safety tips, payment limits',
+    descriptionHindi: 'QR भुगतान में महारत: स्थिर बनाम गतिशील QR कोड, भारत QR समझाया, व्यापारी QR कोड कैसे काम करते हैं, QR कोड स्कैम से बचें, स्कैनिंग सुरक्षा टिप्स, भुगतान सीमा',
+    duration: '30 mins',
+    difficulty: 'beginner',
+    tags: ['QR Code', 'Bharat QR', 'UPI', 'Merchant Payments', 'Scan and Pay', 'Hindi'],
+    relatedCalculators: [],
+    order: 7
+  },
+  {
+    id: 'cryptocurrency-blockchain-india',
+    slug: 'cryptocurrency-blockchain-basics-bitcoin-ethereum-india-legal-guide-2025',
+    title: 'Cryptocurrency & Blockchain Basics: Bitcoin, Ethereum - Is Crypto Legal in India? (2025)',
+    titleHindi: 'क्रिप्टोकरेंसी और ब्लॉकचेन मूल बातें: Bitcoin, Ethereum - क्या भारत में क्रिप्टो कानूनी है? (2025)',
+    description: 'Understand crypto: What is cryptocurrency, how blockchain works, Bitcoin vs Ethereum, crypto trading in India, 30% tax on crypto gains, VDA rules 2022, risks & safety tips',
+    descriptionHindi: 'क्रिप्टो को समझें: क्रिप्टोकरेंसी क्या है, ब्लॉकचेन कैसे काम करती है, Bitcoin बनाम Ethereum, भारत में क्रिप्टो ट्रेडिंग, क्रिप्टो लाभ पर 30% कर, VDA नियम 2022, जोखिम और सुरक्षा टिप्स',
+    duration: '50 mins',
+    difficulty: 'advanced',
+    tags: ['Cryptocurrency', 'Blockchain', 'Bitcoin', 'Ethereum', 'Crypto Tax India', 'Hindi'],
+    relatedCalculators: [],
+    order: 8
   }
 ];
 
 // SEO keywords for the category
 export const fintechSEO = {
   metaTitle: 'FinTech & Digital Payments Guide for Indians | MoneyCal Learn',
-  metaDescription: 'Master UPI, digital wallets, online banking, payment security in Hindi & English. 6 comprehensive lessons on GPay, PhonePe, Paytm, CRED, Jupiter, and cyber fraud prevention.',
-  keywords: 'UPI guide India, digital wallet, GPay PhonePe Paytm, online banking, payment security, cyber fraud prevention, FinTech apps India, BNPL, UPI गाइड, डिजिटल भुगतान',
+  metaDescription: 'Master UPI, digital wallets, online banking, payment security in Hindi & English. 8 comprehensive lessons on GPay, PhonePe, Paytm, CRED, Jupiter, QR payments, crypto & cyber fraud prevention.',
+  keywords: 'UPI guide India, digital wallet, GPay PhonePe Paytm, online banking, payment security, cyber fraud prevention, FinTech apps India, BNPL, QR code payments, Bharat QR, cryptocurrency India, blockchain, UPI गाइड, डिजिटल भुगतान',
   canonicalUrl: 'https://moneycal.in/learn/fintech-digital-payments'
 };
 
