@@ -476,6 +476,8 @@ const OnlineBankingGuide = lazy(() => import('./pages/learn/fintech/OnlineBankin
 const PaymentSecurityGuide = lazy(() => import('./pages/learn/fintech/PaymentSecurityGuide'));
 const FinTechAppsGuide = lazy(() => import('./pages/learn/fintech/FinTechAppsGuide'));
 const BuyNowPayLaterGuide = lazy(() => import('./pages/learn/fintech/BuyNowPayLaterGuide'));
+const QRCodePayments = lazy(() => import('./pages/learn/fintech/QRCodePayments'));
+const CryptocurrencyBasics = lazy(() => import('./pages/learn/fintech/CryptocurrencyBasics'));
 
 // Learn Platform - Business Finance & Entrepreneurship (7 lessons) - COMPLETE!
 const BusinessFinanceHub = lazy(() => import('./pages/learn/business/index'));
@@ -958,6 +960,8 @@ function App() {
                 <Route path="/learn/fintech-digital-payments/payment-security-cyber-fraud-prevention-upi-scams-india-2025" element={<PaymentSecurityGuide />} />
                 <Route path="/learn/fintech-digital-payments/best-fintech-apps-india-cred-jupiter-fi-niyo-salary-accounts-2025" element={<FinTechAppsGuide />} />
                 <Route path="/learn/fintech-digital-payments/buy-now-pay-later-bnpl-lazypay-simpl-zestmoney-india-guide-2025" element={<BuyNowPayLaterGuide />} />
+                <Route path="/learn/fintech-digital-payments/qr-code-payments-bharat-qr-scan-and-pay-merchant-upi-india-complete-guide" element={<QRCodePayments />} />
+                <Route path="/learn/fintech-digital-payments/cryptocurrency-blockchain-basics-bitcoin-ethereum-india-legal-guide-2025" element={<CryptocurrencyBasics />} />
                 
                 {/* Learn Platform - Business Finance & Entrepreneurship (7 lessons) - COMPLETE! */}
                 <Route path="/learn/business-finance-entrepreneurship" element={<BusinessFinanceHub />} />
