@@ -330,13 +330,15 @@ const NewsArticlePage: React.FC = () => {
                 const htmlContent = convertMarkdownToHtml(plainContent.content);
                 
                 return (
-                  <div className="prose prose-lg max-w-none">
+                  <div className="prose prose-lg max-w-none px-0 sm:px-0">
                     <div 
                       dangerouslySetInnerHTML={{ __html: htmlContent }} 
-                      className="article-content text-neutral-800 leading-relaxed"
+                      className="article-content text-neutral-800 leading-relaxed text-base sm:text-lg"
                       style={{
-                        fontSize: '1.125rem',
-                        lineHeight: '1.75',
+                        fontSize: '1.0625rem', // 17px mobile optimal
+                        lineHeight: '1.7',
+                        wordWrap: 'break-word',
+                        overflowWrap: 'break-word',
                       }}
                     />
                     

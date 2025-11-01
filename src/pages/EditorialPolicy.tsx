@@ -114,7 +114,7 @@ const EditorialPolicy: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
+        </div>
           </motion.div>
 
           {/* Content Creation Process */}
@@ -135,8 +135,8 @@ const EditorialPolicy: React.FC = () => {
                   All articles are written by financial writers with expertise in their respective domains (markets, 
                   taxation, investments, business analysis). Writers must cite primary sources and cross-verify data 
                   from multiple authoritative references.
-                </p>
-              </div>
+              </p>
+            </div>
 
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">2. Fact-Checking</h3>
@@ -149,20 +149,20 @@ const EditorialPolicy: React.FC = () => {
                   <li>Tax rates and GST slabs verified against official government notifications</li>
                   <li>Calculations tested with multiple sample inputs</li>
                   <li>External links checked for credibility and accuracy</li>
-                </ul>
+            </ul>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">3. Editorial Review</h3>
-                <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
                   Senior editors review all content for accuracy, clarity, completeness, and adherence to editorial 
                   standards. Articles may be sent back for revision if they don't meet our quality benchmarks.
-                </p>
+            </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">4. Expert Validation (For Technical Content)</h3>
-                <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
                   Calculators, tax guides, and complex financial analyses are validated by Chartered Accountants, 
                   tax consultants, or certified financial advisors before publication.
                 </p>

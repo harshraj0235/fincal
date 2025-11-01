@@ -473,7 +473,7 @@ const LearnHome: React.FC = () => {
             <span className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-yellow-300" />
               <span className="font-bold text-yellow-300">200+ Lessons Live!</span>
-            </span>
+              </span>
             <span className="hidden md:inline">•</span>
             <span>18 Complete Categories</span>
             <span className="hidden md:inline">•</span>
@@ -544,27 +544,27 @@ const LearnHome: React.FC = () => {
               <div className="bg-white rounded-xl p-4 shadow-lg text-center">
                 <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   {stats.totalCategories}
-                </div>
+                      </div>
                 <div className="text-sm text-gray-600">Categories</div>
-              </div>
+                      </div>
               <div className="bg-white rounded-xl p-4 shadow-lg text-center">
                 <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                   {stats.totalLessons}+
-                </div>
+                    </div>
                 <div className="text-sm text-gray-600">Lessons</div>
-              </div>
+                      </div>
               <div className="bg-white rounded-xl p-4 shadow-lg text-center">
                 <div className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                   {stats.totalHours}h+
-                </div>
+                    </div>
                 <div className="text-sm text-gray-600">Content</div>
-              </div>
+                  </div>
               <div className="bg-white rounded-xl p-4 shadow-lg text-center">
                 <div className="text-3xl font-bold bg-gradient-to-r from-yellow-600 to-amber-600 bg-clip-text text-transparent">
                   FREE
-                </div>
+                    </div>
                 <div className="text-sm text-gray-600">Forever</div>
-              </div>
+                    </div>
             </motion.div>
 
             {/* Powerful Search Bar */}
@@ -593,7 +593,7 @@ const LearnHome: React.FC = () => {
                       <X className="w-5 h-5" />
                     </button>
                   )}
-                </div>
+                    </div>
 
                 {/* Level Filter */}
                 <div className="md:w-64 relative">
@@ -609,8 +609,8 @@ const LearnHome: React.FC = () => {
                     <option value="Advanced">Advanced</option>
                     <option value="Mixed">Mixed</option>
                   </select>
-                </div>
-              </div>
+                    </div>
+                  </div>
 
               {/* Search Results Info */}
               {searchQuery && (
@@ -618,7 +618,7 @@ const LearnHome: React.FC = () => {
                   <p className="text-sm text-blue-900">
                     <strong>{searchResults.length}</strong> lesson{searchResults.length === 1 ? '' : 's'} + <strong>{filteredCategories.length}</strong> categor{filteredCategories.length === 1 ? 'y' : 'ies'} found matching "<strong>{searchQuery}</strong>"
                   </p>
-                </div>
+                    </div>
               )}
             </motion.div>
 
@@ -644,7 +644,7 @@ const LearnHome: React.FC = () => {
                       to={lesson.route}
                       className="group"
                     >
-                      <motion.div
+                    <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: index * 0.05 }}
@@ -661,9 +661,9 @@ const LearnHome: React.FC = () => {
                               'bg-red-100 text-red-700'
                             }`}>
                               {lesson.difficulty.charAt(0).toUpperCase() + lesson.difficulty.slice(1)}
-                            </div>
-                          </div>
-                        </div>
+                  </div>
+                </div>
+              </div>
 
                         {/* Lesson Title */}
                         <h4 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors">
@@ -706,7 +706,7 @@ const LearnHome: React.FC = () => {
                     Showing top 12 results. Refine your search for more specific lessons.
                   </p>
                 )}
-              </motion.div>
+            </motion.div>
             )}
           </div>
         </section>
@@ -721,7 +721,7 @@ const LearnHome: React.FC = () => {
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
                 {featuredCategories.slice(0, 3).map((category, index) => (
-                  <motion.div
+            <motion.div
                     key={category.id}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -743,11 +743,11 @@ const LearnHome: React.FC = () => {
                         </div>
                       </div>
                     </Link>
-                  </motion.div>
+            </motion.div>
                 ))}
               </div>
-            </div>
-          </section>
+          </div>
+        </section>
         )}
 
         {/* All Categories Grid */}
@@ -766,7 +766,7 @@ const LearnHome: React.FC = () => {
                 className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {filteredCategories.map((category, index) => (
-                  <motion.div
+                <motion.div
                     key={category.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -781,14 +781,14 @@ const LearnHome: React.FC = () => {
                           {category.featured && (
                             <div className="absolute top-3 right-3 bg-yellow-400 text-gray-900 px-2 py-1 rounded-full text-xs font-bold animate-pulse">
                               ⭐ POPULAR
-                            </div>
+                    </div>
                           )}
                           <div className="text-5xl mb-3">{category.icon}</div>
                           <h4 className="text-2xl font-bold mb-1 group-hover:scale-105 transition-transform">
                             {category.name}
                           </h4>
                           <p className="text-sm opacity-90">{category.nameHindi}</p>
-                        </div>
+                  </div>
 
                         {/* Category Body */}
                         <div className="p-6 flex-1 flex flex-col">
@@ -804,20 +804,20 @@ const LearnHome: React.FC = () => {
                                 className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
                               >
                                 {tag}
-                              </span>
+                    </span>
                             ))}
-                          </div>
+                  </div>
 
                           {/* Stats Row */}
                           <div className="grid grid-cols-3 gap-2 mb-4">
                             <div className="text-center bg-gray-50 rounded-lg py-2">
                               <div className="text-lg font-bold text-gray-900">{category.lessonsCount}</div>
                               <div className="text-xs text-gray-600">Lessons</div>
-                            </div>
+                  </div>
                             <div className="text-center bg-gray-50 rounded-lg py-2">
                               <div className="text-lg font-bold text-gray-900">{category.duration}</div>
                               <div className="text-xs text-gray-600">Duration</div>
-                            </div>
+                    </div>
                             <div className={`text-center rounded-lg py-2 ${
                               category.level === 'Beginner' ? 'bg-green-100' :
                               category.level === 'Intermediate' ? 'bg-yellow-100' :
@@ -831,25 +831,25 @@ const LearnHome: React.FC = () => {
                                 'text-blue-700'
                               }`}>{category.level}</div>
                               <div className="text-xs text-gray-600">Level</div>
-                            </div>
-                          </div>
+                  </div>
+                  </div>
 
                           {/* CTA Button */}
                           <div className="flex items-center justify-between text-purple-600 font-semibold group-hover:text-purple-700">
                             <span>Start Learning Now</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                          </div>
-                        </div>
-                      </div>
+                    </div>
+                  </div>
+                  </div>
                     </Link>
                   </motion.div>
                 ))}
-              </motion.div>
+                </motion.div>
             </AnimatePresence>
 
             {/* No Results Message */}
             {filteredCategories.length === 0 && (
-              <motion.div
+                <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="text-center py-12"
@@ -868,7 +868,7 @@ const LearnHome: React.FC = () => {
                 </button>
               </motion.div>
             )}
-          </div>
+                    </div>
         </section>
 
         {/* Quick Links Section */}
@@ -894,11 +894,11 @@ const LearnHome: React.FC = () => {
                   <div className="text-3xl mb-2">{topic.icon}</div>
                   <div className="text-sm font-semibold text-gray-900 group-hover:text-purple-600">
                     {topic.name}
-                  </div>
+                    </div>
                 </Link>
               ))}
-            </div>
-          </div>
+                  </div>
+                  </div>
         </section>
 
         {/* Internal Linking - Related Resources */}
@@ -912,45 +912,45 @@ const LearnHome: React.FC = () => {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-3 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl text-white">
                     <Target className="w-8 h-8" />
-                  </div>
+                    </div>
                   <h4 className="text-2xl font-bold text-gray-900">100+ Calculators</h4>
-                </div>
-                <p className="text-gray-600 mb-4">
+                  </div>
+                  <p className="text-gray-600 mb-4">
                   Free financial calculators: EMI, SIP, tax, retirement, PPF, loan eligibility, and more
-                </p>
+                  </p>
                 <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-1 transition-transform">
                   Explore Calculators <ArrowRight className="w-5 h-5 ml-2" />
-                </div>
+                  </div>
               </Link>
 
               <Link to="/blog" className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all group">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-3 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl text-white">
                     <BookOpen className="w-8 h-8" />
-                  </div>
+                    </div>
                   <h4 className="text-2xl font-bold text-gray-900">Expert Blog</h4>
-                </div>
-                <p className="text-gray-600 mb-4">
+                  </div>
+                  <p className="text-gray-600 mb-4">
                   In-depth articles, how-to guides, and financial strategies for Indian investors
-                </p>
+                  </p>
                 <div className="flex items-center text-purple-600 font-semibold group-hover:translate-x-1 transition-transform">
                   Read Articles <ArrowRight className="w-5 h-5 ml-2" />
-                </div>
+                  </div>
               </Link>
 
               <Link to="/news" className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all group">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-3 bg-gradient-to-r from-red-500 to-orange-600 rounded-xl text-white">
                     <TrendingUp className="w-8 h-8" />
-                  </div>
+                    </div>
                   <h4 className="text-2xl font-bold text-gray-900">Financial News</h4>
-                </div>
-                <p className="text-gray-600 mb-4">
+                  </div>
+                  <p className="text-gray-600 mb-4">
                   Daily updates on markets, economy, IPOs, business trends, and policy changes
                 </p>
                 <div className="flex items-center text-red-600 font-semibold group-hover:translate-x-1 transition-transform">
                   Latest News <ArrowRight className="w-5 h-5 ml-2" />
-                </div>
+          </div>
               </Link>
             </div>
           </div>
@@ -980,13 +980,13 @@ const LearnHome: React.FC = () => {
                   <BookOpen className="w-6 h-6" />
                   Start with Budgeting
                 </Link>
-                <Link 
+            <Link 
                   to="/learn/investing-wealth" 
                   className="inline-flex items-center gap-3 px-8 py-4 bg-white/20 backdrop-blur-sm text-white border-2 border-white rounded-xl font-bold text-lg hover:bg-white hover:text-purple-600 transition-all"
-                >
+            >
                   <TrendingUp className="w-6 h-6" />
                   Learn Investing
-                </Link>
+            </Link>
               </div>
             </motion.div>
           </div>
@@ -1040,8 +1040,8 @@ const LearnHome: React.FC = () => {
 
             <div className="border-t border-gray-800 pt-8 text-center">
               <p className="text-gray-400 text-sm">
-                © 2025 MoneyCal Learn. Free Finance Education for Everyone. Made with ❤️ in India.
-              </p>
+              © 2025 MoneyCal Learn. Free Finance Education for Everyone. Made with ❤️ in India.
+            </p>
               <p className="text-gray-500 text-xs mt-2">
                 All content bilingual (Hindi + English) | 100% Free Forever | Expert Verified
               </p>

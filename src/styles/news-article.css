@@ -122,23 +122,88 @@
   font-size: 1.125rem;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive - Enhanced for Better Readability */
 @media (max-width: 640px) {
   .section-heading {
     font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
   }
   
   .sub-heading {
     font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 0.875rem;
   }
   
   .lead-paragraph {
     font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
   }
   
   .article-content p,
   .article-content li {
-    font-size: 1rem;
+    font-size: 1.0625rem; /* 17px - optimal for mobile reading */
+    line-height: 1.7;
+    margin-bottom: 1.125rem;
+  }
+  
+  .article-content strong {
+    font-size: 1.0625rem;
+  }
+  
+  .info-box,
+  .warning-box,
+  .data-box {
+    padding: 1.25rem;
+    margin: 1.25rem -0.75rem; /* extend to screen edges for better visual */
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  
+  .article-content ul,
+  .article-content ol {
+    padding-left: 1.5rem;
+    margin: 1.25rem 0;
+  }
+  
+  .article-content li {
+    padding-left: 0.25rem;
+    margin-bottom: 0.875rem;
+  }
+  
+  .article-content a {
+    word-break: break-word; /* prevent long URLs from causing horizontal scroll */
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px; /* more space for easier tap */
+  }
+  
+  /* Better touch targets on mobile */
+  .article-content a {
+    display: inline-block;
+    padding: 2px 0;
+    margin: -2px 0;
+    min-height: 44px; /* Apple HIG recommendation */
+    line-height: 44px;
+    vertical-align: middle;
+  }
+  
+  /* Prevent horizontal scroll */
+  .article-content {
+    overflow-x: hidden;
+    word-wrap: break-word;
+  }
+  
+  /* Images full-width on mobile */
+  .article-content img {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+    max-width: calc(100% + 2rem);
+  }
+  
+  .section-divider {
+    margin: 2rem 0;
   }
 }
 
