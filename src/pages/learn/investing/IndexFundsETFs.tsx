@@ -44,7 +44,7 @@ const IndexFundsETFs: React.FC = () => {
     },
     {
       question: "Best index funds in India for SIP?",
-      answer: "Top picks: (1) UTI Nifty 50 Index Fund (0.05% expense), (2) ICICI Pru Nifty 50 Index, (3) HDFC Index Fund - Nifty 50. All track Nifty 50 with minimal tracking error (<0.1%)."
+      answer: "Top picks: (1) UTI Nifty 50 Index Fund (0.05% expense), (2) ICICI Pru Nifty 50 Index, (3) HDFC Index Fund - Nifty 50. All track Nifty 50 with minimal tracking error (less than 0.1%)."
     },
     {
       question: "Should I invest in Nifty Next 50 or Nifty 50?",
@@ -56,7 +56,7 @@ const IndexFundsETFs: React.FC = () => {
     },
     {
       question: "What is tracking error in index funds?",
-      answer: "Difference between index return vs fund return. Good index fund: <0.2% tracking error. Example: Nifty 50 +12%, your fund +11.85% → 0.15% tracking error (excellent!)."
+      answer: "Difference between index return vs fund return. Good index fund: Less than 0.2% tracking error. Example: Nifty 50 +12%, your fund +11.85% → 0.15% tracking error (excellent!)."
     },
     {
       question: "Should I invest lump sum or SIP in index fund?",

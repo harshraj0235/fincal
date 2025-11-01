@@ -226,7 +226,7 @@ const InvestingMistakes: React.FC = () => {
                   mistake: 'Ignoring Expense Ratio (High Fees Eat Returns)',
                   example: 'Fund A: 12% return, 2.5% expense ratio = 9.5% net. Fund B: 12% return, 0.5% expense ratio = 11.5% net. On ₹10L invested for 20 years: Fund A = ₹61L, Fund B = ₹89L. Fund B is ₹28L richer!',
                   why: 'Not aware expense ratio exists. Thinking "apenas 2%" is small. Ignoring compounding effect of fees over 20-30 years.',
-                  fix: 'Choose low-cost index funds (expense ratio <0.5%). Direct plans (0.5% less expense than regular plans). Over 30 years, 1% expense difference = 30% wealth difference!',
+                  fix: 'Choose low-cost index funds (expense ratio under 0.5%). Direct plans (0.5% less expense than regular plans). Over 30 years, 1% expense difference = 30% wealth difference!',
                   realStat: 'Regular plan MF: 2% expense. Direct plan: 1%. On ₹1L SIP for 30 years @ 12%: Regular = ₹2.89 Cr, Direct = ₹3.53 Cr. Difference: ₹64 lakh!',
                   cost: '₹10-50 lakh lost to high fees over 30 years'
                 },
@@ -399,7 +399,7 @@ const InvestingMistakes: React.FC = () => {
                 `Can I explain why this stock/fund is good investment? (If no, don't invest. Do research first.)`,
                 `Is this >10% of my portfolio? (If yes, you're not diversified. Reduce concentration.)`,
                 `Am I chasing last year's high returns? (If yes, STOP. Past returns don't repeat.)`,
-                'Is expense ratio <1% (stocks) or <0.5% (index funds)? (If no, find cheaper alternative.)',
+                'Is expense ratio under 1% (stocks) or under 0.5% (index funds)? (If no, find cheaper alternative.)',
                 `Will I panic sell if this falls 30%? (If yes, you're taking too much risk. Add debt allocation.)`,
                 'Have I reviewed portfolio in last 12 months? (If no, review NOW. Rebalance if needed.)',
                 'Am I getting this "tip" from WhatsApp/friend? (If yes, IGNORE. Do own research or invest in index fund.)'
