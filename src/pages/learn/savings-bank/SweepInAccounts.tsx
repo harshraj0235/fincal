@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { 
   ArrowRight, ArrowLeft, Zap, TrendingUp, CheckCircle, Shield,
   AlertTriangle, DollarSign, Calculator, Target, HelpCircle, Award,
-  RefreshCw, Lock, Unlock, BarChart3, Sparkles, Clock
+  RefreshCw, Lock, Unlock, BarChart3, Sparkles, Clock, FileText
 } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 
