@@ -363,6 +363,165 @@ const ITRFilingGuide: React.FC = () => {
             </ul>
           </div>
 
+          {/* FAQ Section */}
+          <div className="mt-12 bg-white rounded-xl p-8 shadow-lg mb-8">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <FileText className="w-6 h-6 text-blue-600" />
+              ❓ ITR Filing FAQs
+            </h2>
+            <div className="space-y-6">
+              {[
+                {
+                  q: "What happens if I miss July 31 ITR deadline?",
+                  a: "You can file belated return till December 31 (but penalty ₹5,000). After Dec 31: Cannot file, lose refund + interest penalty + notice from IT department. File on time to avoid hassles!"
+                },
+                {
+                  q: "Do I need CA to file ITR?",
+                  a: "No! Salaried person can file ITR-1 themselves on incometax.gov.in in 30 minutes (free!). CA needed only for: Business income (ITR-3/4), complex capital gains, foreign income. CA fees: ₹500-5,000 depending on complexity."
+                },
+                {
+                  q: "How to download Form 16 from employer?",
+                  a: "Ask HR/Accounts department. Usually sent via email in May-June. Or: Download from employer's payroll portal. Form 16 = Your salary, TDS deducted, tax paid. Needed for ITR filing!"
+                },
+                {
+                  q: "What if Form 26AS shows less TDS than Form 16?",
+                  a: "Employer hasn't deposited your TDS with government! (1) Tell employer immediately, (2) File ITR based on Form 26AS only (actual TDS deposited), (3) Claim only verified amount. Employer liable for penalty + interest!"
+                },
+                {
+                  q: "Can I revise ITR after filing?",
+                  a: "YES! Can revise before December 31 if filed on time. Cannot revise belated returns. Common reasons: Forgot to claim deduction, wrong bank account, calculation error. Login → e-File → Revised Return → Submit again."
+                },
+                {
+                  q: "How long does IT refund take?",
+                  a: "Usually 2-4 weeks if ITR verified immediately. Delay reasons: Bank account not pre-validated, pending verification, processing queue. Track: Login to incometax.gov.in → View Returns → Refund Status. Refund comes via NEFT to bank account."
+                },
+                {
+                  q: "What if I have no income? Should I still file ITR?",
+                  a: "Not mandatory if income under ₹2.5L. But file if: (1) Want to claim TDS refund, (2) Need ITR for visa/loan, (3) Showing losses (can carry forward 8 years). Filing ITR even at zero income = good financial discipline!"
+                },
+                {
+                  q: "Can I claim deductions after filing ITR?",
+                  a: "NO! All deductions (80C, 80D, home loan) must be claimed while filing. Cannot add later. Only solution: File revised return before Dec 31. TIP: Keep all investment proofs ready before filing!"
+                },
+                {
+                  q: "What is ITR-V and how to verify?",
+                  a: "ITR-V = Acknowledgement after filing. Must verify within 30 days! 3 ways: (1) Aadhaar OTP (instant!), (2) Net banking (Bank account pre-validated), (3) Send physical ITR-V to CPC Bangalore (slow). Aadhaar OTP is fastest - done in 2 minutes!"
+                },
+                {
+                  q: "What documents needed for ITR filing?",
+                  a: "Essential: (1) PAN, Aadhaar, (2) Form 16 (salary), (3) Form 26AS (TDS), (4) Bank statements, (5) Investment proofs (80C, 80D), (6) Home loan certificate, (7) Capital gains statement if any. Keep ready before starting!"
+                },
+                {
+                  q: "Can I file ITR for previous years?",
+                  a: "Current year + 1 previous year only. Example: In FY 2024-25, can file for FY 2023-24 (current) + FY 2022-23 (1 previous year). Older returns cannot be filed. Will lose refund + face penalties!"
+                },
+                {
+                  q: "What is the difference between original and revised ITR?",
+                  a: "Original: First time filing for that year. Revised: Filing again to correct mistakes (can revise multiple times before Dec 31). Belated: Filed after deadline (July 31) - penalty ₹5,000, cannot claim carried forward losses."
+                },
+                {
+                  q: "How to check if my ITR is processed?",
+                  a: "Login to incometax.gov.in → e-File → View Filed Returns → Check 'Status'. Statuses: (1) ITR Filed (not verified yet), (2) ITR Verified (processing), (3) ITR Processed (done! - check intimation u/s 143(1) for any tax demand/refund)."
+                },
+                {
+                  q: "What if I receive notice u/s 143(1)?",
+                  a: "Don't panic! Intimation u/s 143(1) = IT department's response after processing. Check: (1) Refund amount matches? (2) Any tax demand? (3) Any adjustment made? If demand incorrect, file response online within 30 days. Most times it's informational only!"
+                },
+                {
+                  q: "Can NRI file ITR from abroad?",
+                  a: "YES! NRI can file online from anywhere. Need: (1) Indian bank account, (2) PAN, Aadhaar, (3) Form 16 if income in India, (4) Foreign income details if RNOR/Resident. File ITR-2 (not ITR-1). Can use CA or file yourself on incometax.gov.in."
+                }
+              ].map((faq, i) => (
+                <div key={i} className="border-b border-gray-200 pb-4 last:border-0">
+                  <h3 className="font-bold text-gray-900 mb-2">Q{i + 1}: {faq.q}</h3>
+                  <p className="text-gray-700">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Common Mistakes */}
+          <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <AlertTriangle className="w-6 h-6 text-red-600" />
+              ⚠️ Common ITR Filing Mistakes (Avoid These!)
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  mistake: 'Not Verifying ITR within 30 Days',
+                  impact: 'ITR becomes invalid! Refund not processed. Penalty notice.',
+                  fix: 'Verify immediately after filing via Aadhaar OTP (takes 2 minutes). Set reminder!'
+                },
+                {
+                  mistake: 'Wrong Bank Account (Not Pre-Validated)',
+                  impact: 'Refund delayed by months. Returns to IT department, re-credit hassle.',
+                  fix: 'Pre-validate bank account: Login → Profile → Pre-validate Bank → Enter IFSC + Account → Verify (1 day process).'
+                },
+                {
+                  mistake: 'Not Matching Form 16 with Form 26AS',
+                  impact: 'Employer may not have deposited TDS. Refund claim rejected!',
+                  fix: 'Compare Form 16 (from employer) with Form 26AS (from IT portal). Only claim TDS shown in 26AS!'
+                },
+                {
+                  mistake: 'Forgetting to Claim Deductions (80C, 80D)',
+                  impact: 'Pay more tax! On ₹1.5L 80C, you lose ₹46,500 in 30% bracket.',
+                  fix: 'Before filing, list all: PPF, EPF, ELSS, life insurance, NPS (80CCD 1B), health insurance (80D), home loan (24b).'
+                },
+                {
+                  mistake: 'Filing Wrong ITR Form',
+                  impact: 'ITR invalid, need to file again. Example: Salary + capital gains = ITR-2, not ITR-1.',
+                  fix: 'Check income sources: Only salary = ITR-1. Salary + house property/capital gains = ITR-2. Business = ITR-3.'
+                },
+                {
+                  mistake: 'Not Reporting All Income Sources',
+                  impact: 'Notice from IT department, penalty, interest! AI matches your bank deposits with declared income.',
+                  fix: 'Declare ALL: Salary, FD interest (TDS on ₹40K+), capital gains, rental income, freelance income. Be honest!'
+                }
+              ].map((item, i) => (
+                <div key={i} className="border-l-4 border-red-500 bg-red-50 p-6 rounded-r-xl">
+                  <h3 className="font-bold text-red-700 mb-2">❌ {item.mistake}</h3>
+                  <p className="text-gray-800 mb-2"><strong>Impact:</strong> {item.impact}</p>
+                  <div className="bg-white p-3 rounded">
+                    <strong className="text-green-700">✅ Fix:</strong> {item.fix}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Action Checklist */}
+          <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl p-8 shadow-lg mb-8">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <CheckCircle className="w-6 h-6" />
+              ✅ ITR Filing Checklist (Do Before July 31!)
+            </h2>
+            <div className="grid md:grid-cols-2 gap-3">
+              {[
+                'Download Form 16 from employer (May-June)',
+                'Check Form 26AS on IT portal (verify TDS deposited)',
+                'Pre-validate bank account for refund',
+                'Gather investment proofs (PPF, ELSS, insurance, NPS)',
+                'Calculate home loan interest (Section 24)',
+                'Get capital gains statement from broker (if sold shares)',
+                'Login to incometax.gov.in with PAN + password',
+                'Choose correct ITR form (ITR-1 for salaried)',
+                'Fill income details + claim deductions',
+                'Verify Form 26AS matches (TDS)',
+                'Preview & submit ITR',
+                'Verify via Aadhaar OTP immediately',
+                'Download ITR acknowledgement (save for records)',
+                'Track refund status after 2-4 weeks',
+                'File on time (avoid ₹5K penalty + interest)'
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2 bg-white/20 backdrop-blur-sm rounded-lg p-3">
+                  <div className="w-6 h-6 bg-white text-green-600 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm mt-0.5">{i + 1}</div>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Next Lesson CTA */}
           <div className="mt-12 bg-white rounded-xl p-8 shadow-lg text-center">
             <h3 className="text-2xl font-bold mb-4">🎓 Master TDS Next!</h3>
