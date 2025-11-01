@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   BookOpen, ArrowRight, ArrowLeft, CreditCard, Check, X, DollarSign,
-  AlertTriangle, Target, CheckCircle, TrendingUp, Shield, Zap, Award
+  AlertTriangle, Target, CheckCircle, TrendingUp, Shield, Zap, Award, HelpCircle
 } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 
@@ -771,12 +771,74 @@ const TypesOfSavingsAccounts: React.FC = () => {
             </div>
           </motion.section>
 
+          {/* FAQ Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                <HelpCircle className="w-8 h-8 text-blue-600" />
+                ❓ Frequently Asked Questions
+              </h2>
+
+              <div className="space-y-6">
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q1: Can I convert my regular savings account to zero balance account?</h3>
+                  <p className="text-gray-700">Yes! Visit your bank branch with ID proof and request conversion. Most banks allow this. If they refuse, simply open a new zero balance account and close the old one.</p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q2: If I leave my job, what happens to my salary account?</h3>
+                  <p className="text-gray-700">Your salary account automatically converts to a regular savings account after 3 months of no salary credit. If minimum balance requirement is high, convert to zero balance or close it.</p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q3: Which is the best zero balance account in India?</h3>
+                  <p className="text-gray-700">Top options: <strong>Kotak 811</strong> (fully digital), <strong>DBS Digibank</strong> (6% interest), <strong>Paytm Payments Bank</strong>, <strong>India Post Payments Bank</strong>. Choose based on features you need.</p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q4: Do premium accounts give higher FD interest rates?</h3>
+                  <p className="text-gray-700">Usually 0.25-0.50% higher on FDs, but the premium account fee (₹5,000-₹15,000/year) often outweighs this benefit. Calculate: If ₹5L FD, 0.25% extra = ₹1,250. Not worth ₹10K fee!</p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q5: What happens if I don't maintain minimum balance?</h3>
+                  <p className="text-gray-700">Penalty charged: ₹100-₹750/month depending on shortfall. Example: SBI charges ₹500/month for metro branches. Over 1 year = ₹6,000 wasted! Switch to zero balance immediately.</p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q6: Can I have multiple savings accounts in different banks?</h3>
+                  <p className="text-gray-700">Yes, unlimited! No restriction. Many people keep accounts in 2-3 banks for UPI limits, offers, and backup. But maintain minimum balance in all or choose zero balance options.</p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q7: Is interest from savings account taxable?</h3>
+                  <p className="text-gray-700">Yes, but ₹10,000/year interest is exempt under Section 80TTA. For seniors: ₹50,000 exempt under 80TTB. Interest above this added to income and taxed at your slab rate.</p>
+                </div>
+
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q8: Should I keep my emergency fund in savings account?</h3>
+                  <p className="text-gray-700">Yes, 3-6 months expenses in savings for instant access. Beyond that, invest in liquid funds or sweep-in FDs for better returns (6-7% vs 3%).</p>
+                </div>
+
+                <div className="pb-6">
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Q9: What is the daily withdrawal limit from ATM?</h3>
+                  <p className="text-gray-700">Typically ₹40,000/day for regular accounts, ₹1,00,000/day for premium accounts. Can be customized via netbanking. For large withdrawals, visit branch or use cheque.</p>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
           {/* Next Lesson */}
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-white shadow-2xl text-center">
             <h3 className="text-2xl font-bold mb-4">Next: Master Fixed Deposits (FD) Strategy</h3>
             <p className="mb-6 text-purple-100">Learn FD laddering, tax-saving FDs, when to break FD, and how to get 8%+ returns!</p>
             <Link
-              to="/learn/savings-bank-products/fixed-deposits-fd-interest-rates-tax-ladder-strategy-india"
+              to="/learn/savings-bank-products/fixed-deposits-fd-interest-rates-tax-laddering-strategy-india"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-purple-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all"
             >
               Next Lesson: FD Complete Guide
