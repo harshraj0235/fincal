@@ -29,6 +29,7 @@ import TrendingNewsSidebar from '../../components/TrendingNewsSidebar';
 import NewsletterSubscribe from '../../components/NewsletterSubscribe';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import TableOfContents from '../../components/TableOfContents';
+import { convertMarkdownToHtml } from '../../utils/markdownToHtml';
 import '../../styles/news-article.css';
 
 interface Article {
@@ -325,10 +326,13 @@ const NewsArticlePage: React.FC = () => {
               // Then try to get plain article content (like Hindi news articles)
               const plainContent = getPlainArticleContent(article.slug);
               if (plainContent && plainContent.content) {
+                // Convert markdown to HTML for better formatting
+                const htmlContent = convertMarkdownToHtml(plainContent.content);
+                
                 return (
                   <div className="prose prose-lg max-w-none">
                     <div 
-                      dangerouslySetInnerHTML={{ __html: plainContent.content }} 
+                      dangerouslySetInnerHTML={{ __html: htmlContent }} 
                       className="article-content text-neutral-800 leading-relaxed"
                       style={{
                         fontSize: '1.125rem',
