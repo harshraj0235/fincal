@@ -161,3 +161,5 @@ export const tier3CityStartupFunding2025: NewsArticle = {
   googleNewsKeywords: ['tier 3 startups India', 'Jaipur Indore funding', 'startup ecosystem']
 };
 
+
+

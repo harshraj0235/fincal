@@ -233,3 +233,5 @@ export const mutualFundsVsDirectStocks2025: NewsArticle = {
   googleNewsKeywords: ['mutual fund vs stocks', 'investment comparison', 'SIP vs direct equity']
 };
 
+
+

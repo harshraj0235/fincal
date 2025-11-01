@@ -194,3 +194,5 @@ export const sectorsInvestorsExiting2025: NewsArticle = {
   googleNewsKeywords: ['sector rotation India', 'pharma FMCG stocks', 'investor exit']
 };
 
+
+

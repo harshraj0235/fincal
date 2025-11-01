@@ -164,3 +164,5 @@ export const globalTechVendorsIndiaEntry2025: NewsArticle = {
   googleNewsKeywords: ['global tech India', 'Google Meta Apple', 'data centers investment']
 };
 
+
+

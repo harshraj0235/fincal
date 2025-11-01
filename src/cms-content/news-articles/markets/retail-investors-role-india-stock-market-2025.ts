@@ -199,3 +199,5 @@ export const retailInvestorsRoleIndia2025: NewsArticle = {
   googleNewsKeywords: ['retail investors India', 'demat accounts', 'SIP growth', 'stock market']
 };
 
+
+

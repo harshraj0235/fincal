@@ -143,3 +143,5 @@ export const bankingRegulationPolicyChanges2025: NewsArticle = {
   googleNewsKeywords: ['banking regulation India', 'RBI policy', 'digital lending rules']
 };
 
+
+

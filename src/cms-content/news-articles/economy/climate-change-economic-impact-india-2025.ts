@@ -138,3 +138,5 @@ export const climateChangeEconomicImpact2025: NewsArticle = {
   googleNewsKeywords: ['climate change India', 'economic impact', 'carbon tax']
 };
 
+
+

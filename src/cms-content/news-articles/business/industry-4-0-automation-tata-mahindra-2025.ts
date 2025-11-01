@@ -173,3 +173,5 @@ export const industry40AutomationIndia2025: NewsArticle = {
   googleNewsKeywords: ['Industry 4.0 India', 'manufacturing automation', 'smart factory']
 };
 
+
+

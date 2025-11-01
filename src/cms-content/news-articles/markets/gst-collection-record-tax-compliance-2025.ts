@@ -103,3 +103,5 @@ export const gstCollectionRecord2025: NewsArticle = {
   googleNewsKeywords: ['GST collection India', 'tax revenue', 'e-invoicing']
 };
 
+
+

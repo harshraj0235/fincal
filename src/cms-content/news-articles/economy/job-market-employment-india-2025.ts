@@ -140,3 +140,5 @@ export const jobMarketEmploymentIndia2025: NewsArticle = {
   googleNewsKeywords: ['job market India', 'AI automation jobs', 'employment trends', 'skill gap']
 };
 
+
+

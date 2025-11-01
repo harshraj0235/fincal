@@ -144,3 +144,5 @@ export const financialInclusionJanDhan2025: NewsArticle = {
   googleNewsKeywords: ['financial inclusion India', 'Jan Dhan Yojana', 'DBT Aadhaar']
 };
 
+
+

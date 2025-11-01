@@ -121,3 +121,5 @@ export const fiveGIoTSmartCities2025: NewsArticle = {
   googleNewsKeywords: ['5G India', 'smart cities', 'IoT revolution', 'Jio Airtel']
 };
 
+
+

@@ -137,3 +137,5 @@ export const femalFoundersWomenStartups2025: NewsArticle = {
   googleNewsKeywords: ['women founders', 'female entrepreneurs India', 'Nykaa Mamaearth']
 };
 
+
+

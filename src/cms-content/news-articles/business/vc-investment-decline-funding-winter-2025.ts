@@ -140,3 +140,5 @@ export const vcInvestmentDeclineFundingWinter2025: NewsArticle = {
   googleNewsKeywords: ['VC funding India', 'funding winter', 'startup investment']
 };
 
+
+

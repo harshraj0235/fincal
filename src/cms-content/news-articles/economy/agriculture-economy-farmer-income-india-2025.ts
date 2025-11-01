@@ -173,3 +173,5 @@ export const agricultureEconomyFarmerIncome2025: NewsArticle = {
   googleNewsKeywords: ['agriculture India', 'farmer income', 'MSP issues', 'rural distress']
 };
 
+
+

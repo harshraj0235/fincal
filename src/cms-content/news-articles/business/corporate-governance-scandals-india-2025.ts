@@ -200,3 +200,5 @@ export const corporateGovernanceScandals2025: NewsArticle = {
   googleNewsKeywords: ['corporate governance India', 'PNB scam', 'Satyam fraud', 'audit failures']
 };
 
+
+

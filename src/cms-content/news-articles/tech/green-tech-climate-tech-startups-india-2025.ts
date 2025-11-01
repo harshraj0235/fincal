@@ -113,3 +113,5 @@ export const greenTechClimateTech2025: NewsArticle = {
   googleNewsKeywords: ['green tech India', 'climate tech', 'EV market', 'carbon credits']
 };
 
+
+

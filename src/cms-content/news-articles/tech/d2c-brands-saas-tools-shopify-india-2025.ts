@@ -198,3 +198,5 @@ export const d2cBrandsSaaSToolsIndia2025: NewsArticle = {
   googleNewsKeywords: ['D2C brands India', 'SaaS tools', 'Shopify WooCommerce', 'ecommerce']
 };
 
+
+

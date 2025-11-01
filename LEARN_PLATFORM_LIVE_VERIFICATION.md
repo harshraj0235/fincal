@@ -141,3 +141,5 @@ If still seeing "Coming Soon", it's **browser cache only**. The code is 100% cor
 
 The "Coming Soon" you're seeing is cached. Once Cloudflare builds deploy (2-5 mins), or after clearing browser cache, you'll see all categories as **AVAILABLE NOW** with **Start Learning** buttons!
 
+
+
