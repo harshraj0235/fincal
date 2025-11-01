@@ -25,9 +25,10 @@ import {
 // Startups Articles
 import { founderStakeStrategy } from './news-articles/startups/article-08-founder-stake-strategy';
 
-// NEW 2025: Diwali Rally & Startup Funding Winter (Comprehensive Hindi Articles)
-import { marketRallyDiwali2025 } from './news-articles/markets/market-rally-diwali-2025-analysis';
-import { startupFundingWinter2025 } from './news-articles/startups/startup-funding-winter-2025-survival-guide';
+// NEW 2025: Diwali Rally & Startup Funding Winter articles are NewsArticle type (plain content)
+// They will render via the fallback path in NewsArticlePage, not via NewsGuideTemplate
+// import { marketRallyDiwali2025 } from './news-articles/markets/market-rally-diwali-2025-analysis';
+// import { startupFundingWinter2025 } from './news-articles/startups/startup-funding-winter-2025-survival-guide';
 
 // NEW Markets Articles (10 comprehensive articles)
 import {
@@ -176,9 +177,10 @@ export const articleContentMap: Record<string, NewsGuideSection> = {
   'india-agriculture-crisis-farmer-income-msp-rural-distress': agricultureCrisis2025,
   'india-employment-jobs-10-million-annually-gig-economy-youth': employmentChallenge2025,
   
-  // NEW 2025: Comprehensive Hindi News Articles
-  'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis': marketRallyDiwali2025,
-  'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide': startupFundingWinter2025,
+  // NEW 2025: Hindi News Articles are NOT in NewsGuideSection format, so not mapped here
+  // They will render as plain content via the fallback path in NewsArticlePage
+  // 'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis': marketRallyDiwali2025,
+  // 'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide': startupFundingWinter2025,
   
   // Markets - Original Lenskart articles (using SLUGS as keys)
   'lenskart-ipo-announcement-hindi': lenskartIPOMatters,
