@@ -16,7 +16,7 @@ export const startupFundingWinter2025: NewsArticle = {
   title: '❄️ भारत में Startup Funding 65% गिरी! Founders अब क्या करें? (Survival Guide 2025)',
   titleEnglish: 'India Startup Funding Crashed 65%! Founders Survival Guide 2025',
   
-  excerpt: `2025 में भारतीय स्टार्टअप्स के लिए Funding Winter कड़वी सच्चाई बन गई। $9.5 billion से घटकर $3.3 billion—65% की गिरावट! Byju's, Dunzo, GoMechanic जैसे unicorns भी संघर्ष कर रहे। इस लेख में जानिए कि founders अब कैसे जीवित रह सकते हैं, profitability क्यों नई sexy बन गई, और कौन-से sectors में अभी भी पैसा मिल रहा है।`,
+  excerpt: `2025 में भारतीय स्टार्टअप्स के लिए Funding Winter कड़वी सच्चाई बन गई। $9.5 billion से घटकर $3.3 billion—65% की गिरावट! Byju, Dunzo, GoMechanic जैसे unicorns भी संघर्ष कर रहे। इस लेख में जानिए कि founders अब कैसे जीवित रह सकते हैं, profitability क्यों नई sexy बन गई, और कौन-से sectors में अभी भी पैसा मिल रहा है।`,
   
   content: `
 ## परिचय: "Unicorn" से "Unit Economics" तक का सफर 🦄→📊
