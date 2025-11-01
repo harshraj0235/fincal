@@ -267,7 +267,7 @@ const TaxOnInvestments: React.FC = () => {
                 <div className="text-center">
                   <div className="text-5xl font-bold mb-2">15%</div>
                   <div className="text-xl">Tax on Equity STCG (No Exemption!)</div>
-                  <div className="text-sm mt-2 opacity-90">Hold >1 year to get LTCG benefit instead!</div>
+                    <div className="text-sm mt-2 opacity-90">Hold more than 1 year to get LTCG benefit instead!</div>
                 </div>
               </div>
 
@@ -500,7 +500,7 @@ const TaxOnInvestments: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-start gap-3 bg-white/20 backdrop-blur-sm rounded-lg p-4">
                   <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
-                  <p><strong>Equity LTCG:</strong> 10% tax above ₹1L. Hold >1 year! First ₹1L/year tax-free.</p>
+                    <p><strong>Equity LTCG:</strong> 10% tax above ₹1L. Hold more than 1 year! First ₹1L/year tax-free.</p>
                 </div>
                 <div className="flex items-start gap-3 bg-white/20 backdrop-blur-sm rounded-lg p-4">
                   <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5" />
