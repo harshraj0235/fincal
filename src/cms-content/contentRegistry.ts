@@ -13,6 +13,18 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Startups Article: Rural & Tier-3 Startup Ecosystem 2025
+  {
+    id: 'startups-rural-tier3-ecosystem-2025',
+    slug: 'gramin-tier3-shahar-startup-ecosystem-avsar-chunauti-2025',
+    category: 'startups',
+    subCategory: 'startup-ecosystem',
+    title: '🌾 ग्रामीण और Tier-3 शहरों में स्टार्टअप क्रांति: इंदौर से कोच्चि तक—नए Unicorns यहाँ बन रहे हैं!',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-06T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Markets Article: Bull Market Coming 2025
   {
     id: 'markets-bull-market-retail-investors-2025',
