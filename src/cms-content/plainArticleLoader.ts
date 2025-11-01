@@ -26,6 +26,10 @@ import { vcInvestmentDeclineFundingWinter2025 } from './news-articles/business/v
 import { cybersecurityDataPrivacyIndia2025 } from './news-articles/tech/cybersecurity-data-privacy-india-2025';
 import { fpiImpactIndia2025 } from './news-articles/markets/fpi-foreign-investment-india-impact-2025';
 import { startupFailuresAnalysis2025 } from './news-articles/startups/startup-failures-analysis-byju-dunzo-2025';
+import { agricultureEconomyFarmerIncome2025 } from './news-articles/economy/agriculture-economy-farmer-income-india-2025';
+import { industry40AutomationIndia2025 } from './news-articles/business/industry-4-0-automation-tata-mahindra-2025';
+import { greenTechClimateTech2025 } from './news-articles/tech/green-tech-climate-tech-startups-india-2025';
+import { bankingStocksVolatility2025 } from './news-articles/markets/banking-stocks-volatility-npa-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -51,6 +55,10 @@ export const plainArticleContentMap: Record<string, any> = {
   'cybersecurity-data-privacy-breaches-india-hacks-2025': cybersecurityDataPrivacyIndia2025,
   'fpi-foreign-portfolio-investment-bharat-market-impact-2025': fpiImpactIndia2025,
   'startup-failures-byju-dunzo-gomechanic-kyon-fail-2025': startupFailuresAnalysis2025,
+  'krishi-arthvyavastha-farmer-income-msp-rural-distress-2025': agricultureEconomyFarmerIncome2025,
+  'industry-4-0-automation-robots-iot-tata-mahindra-bharat-2025': industry40AutomationIndia2025,
+  'green-tech-climate-tech-carbon-credits-ev-solar-bharat-2025': greenTechClimateTech2025,
+  'banking-stocks-hdfc-icici-sbi-volatility-npa-analysis-2025': bankingStocksVolatility2025,
 };
 
 /**

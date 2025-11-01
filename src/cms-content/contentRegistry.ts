@@ -13,6 +13,54 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Markets Article: Banking Stocks Volatility NPA 2025
+  {
+    id: 'markets-banking-stocks-volatility-2025',
+    slug: 'banking-stocks-hdfc-icici-sbi-volatility-npa-analysis-2025',
+    category: 'markets',
+    subCategory: 'banking-sector',
+    title: '🏦 Banking Stocks में उतार-चढ़ाव: HDFC, ICICI, SBI—अब खरीदें या बेचें? (2025 Analysis)',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-11-07T17:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Tech Article: Green-Tech Climate-Tech 2025
+  {
+    id: 'tech-green-tech-climate-tech-2025',
+    slug: 'green-tech-climate-tech-carbon-credits-ev-solar-bharat-2025',
+    category: 'tech-business',
+    subCategory: 'climate-technology',
+    title: '🌱 Green-Tech और Climate-Tech: Carbon Credits से EV तक—भारत का ₹10 Lakh Crore Opportunity!',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-07T16:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: Industry 4.0 Automation Tata Mahindra 2025
+  {
+    id: 'business-industry-4-0-automation-2025',
+    slug: 'industry-4-0-automation-robots-iot-tata-mahindra-bharat-2025',
+    category: 'business',
+    subCategory: 'manufacturing-automation',
+    title: '🤖 उद्योग 4.0: Tata, Mahindra ने Robots लगाए! Manufacturing में AI-IoT Revolution (2025)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-07T15:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Economy Article: Agriculture Economy Farmer Income 2025
+  {
+    id: 'economy-agriculture-farmer-income-2025',
+    slug: 'krishi-arthvyavastha-farmer-income-msp-rural-distress-2025',
+    category: 'economy',
+    subCategory: 'agriculture',
+    title: '🌾 कृषि अर्थव्यवस्था: 2022 तक Income Double का वादा—हुआ क्या? Farmers की असली हालत (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-07T14:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Startups Article: Startup Failures Analysis 2025
   {
     id: 'startups-failures-analysis-2025',
