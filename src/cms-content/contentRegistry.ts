@@ -13,6 +13,18 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Business Article: Green Energy Renewable Sector 2025
+  {
+    id: 'business-green-energy-india-2025',
+    slug: 'green-energy-solar-wind-renewable-bharat-sector-analysis-2025',
+    category: 'business',
+    subCategory: 'renewable-energy',
+    title: '⚡ हरित ऊर्जा क्रांति: भारत 500 GW लक्ष्य की ओर! Solar, Wind—कहां निवेश करें? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-06T17:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Economy Article: Inflation Impact on Common People 2025
   {
     id: 'economy-inflation-impact-2025',
