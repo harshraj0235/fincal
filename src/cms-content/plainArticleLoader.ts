@@ -13,6 +13,7 @@ import { indiaAIGlobalRace2025 } from './news-articles/tech/india-ai-global-race
 import { manufacturingVsServices2025 } from './news-articles/business/manufacturing-vs-services-sector-india-2025';
 import { goldSilverCommoditiesBoom2025 } from './news-articles/markets/gold-silver-commodities-boom-2025';
 import { indiaSpaceTechStartups2025 } from './news-articles/startups/india-space-tech-startups-2025';
+import { inflationImpactCommonPeople2025 } from './news-articles/economy/inflation-impact-common-people-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -25,6 +26,7 @@ export const plainArticleContentMap: Record<string, any> = {
   'manufacturing-vs-services-sector-bharat-chunauti-avsar-2025': manufacturingVsServices2025,
   'sona-chandi-copper-commodities-teji-bharat-2025-munafa-jokhim': goldSilverCommoditiesBoom2025,
   'bharat-space-tech-startups-agni-skyroot-pixxel-isro-2025': indiaSpaceTechStartups2025,
+  'mehngai-inflation-aam-aadmi-assar-kharch-badha-bachat-ghati-2025': inflationImpactCommonPeople2025,
 };
 
 /**

@@ -13,6 +13,18 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Economy Article: Inflation Impact on Common People 2025
+  {
+    id: 'economy-inflation-impact-2025',
+    slug: 'mehngai-inflation-aam-aadmi-assar-kharch-badha-bachat-ghati-2025',
+    category: 'economy',
+    subCategory: 'inflation',
+    title: '💸 महंगाई का आम आदमी पर असर: प्याज ₹80, पेट्रोल ₹105—कैसे बचाएं अपना पैसा? (2025)',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-11-06T16:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Startups Article: India Space-Tech Startups 2025
   {
     id: 'startups-space-tech-india-2025',
