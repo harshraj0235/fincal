@@ -13,6 +13,18 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Economy Article: GDP Growth Rate 2025-26
+  {
+    id: 'economy-gdp-growth-2025-26',
+    slug: 'bharat-gdp-growth-rate-2025-26-badhti-ghatati-economic-forecast',
+    category: 'economy',
+    subCategory: 'economic-growth',
+    title: '📈 भारत की GDP ग्रोथ दर 2025-26: 7% रहेगी या गिरेगी 5% पर? पूरा Economic Forecast',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-06T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Startups Article: Rural & Tier-3 Startup Ecosystem 2025
   {
     id: 'startups-rural-tier3-ecosystem-2025',
