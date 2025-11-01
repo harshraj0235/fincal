@@ -13,6 +13,90 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Tech Article: Cloud AI Infrastructure AWS Azure 2025
+  {
+    id: 'tech-cloud-ai-infrastructure-2025',
+    slug: 'cloud-computing-ai-infrastructure-aws-azure-google-bharat-2025',
+    category: 'tech-business',
+    subCategory: 'cloud-computing',
+    title: '☁️ Cloud और AI Infrastructure: AWS, Azure ने ₹1 Lakh Crore Invest किया! (India 2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-08T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Startups Article: Govt Schemes Grants Startup India 2025
+  {
+    id: 'startups-govt-schemes-grants-2025',
+    slug: 'startup-india-govt-schemes-grants-seed-fund-tax-benefits-2025',
+    category: 'startups',
+    subCategory: 'government-schemes',
+    title: '🏛️ Startup India: Govt Schemes और ₹10,000 Cr Fund! कैसे लें Grants? (2025 Complete Guide)',
+    authorId: 'vikram-kumar',
+    datePublished: '2025-11-08T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: Digital Transformation Companies 2025
+  {
+    id: 'business-digital-transformation-2025',
+    slug: 'digital-transformation-cloud-ai-companies-bharat-reliance-tata-2025',
+    category: 'business',
+    subCategory: 'digital-transformation',
+    title: '💻 डिजिटल ट्रांसफॉर्मेशन: Reliance, Tata ने ₹50,000 Cr Invest किया! Cloud-AI Shift (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-07T23:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Markets Article: GST Collection Record 2025
+  {
+    id: 'markets-gst-collection-record-2025',
+    slug: 'gst-collection-record-1-87-lakh-crore-tax-compliance-bharat-2025',
+    category: 'markets',
+    subCategory: 'taxation',
+    title: '📊 GST Collection रिकॉर्ड ₹1.87 Lakh Crore/Month! क्या Economy Boom कर रही है? (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-07T22:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Economy Article: Global Recession Impact India 2025
+  {
+    id: 'economy-global-recession-india-2025',
+    slug: 'global-recession-us-europe-bharat-impact-exports-jobs-2025',
+    category: 'economy',
+    subCategory: 'global-economy',
+    title: '🌐 ग्लोबल मंदी का India पर असर: US-Europe Recession—हम कितने Safe हैं? (2025)',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-11-07T21:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Tech Article: Blockchain Supply Chain India 2025
+  {
+    id: 'tech-blockchain-supply-chain-2025',
+    slug: 'blockchain-supply-chain-logistics-transparency-fraud-bharat-2025',
+    category: 'tech-business',
+    subCategory: 'blockchain',
+    title: '⛓️ Blockchain और Supply Chain: Fake Products 40% कम! पारदर्शिता क्रांति (2025)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-07T20:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Business Article: M&A Mergers Acquisitions Trends 2025
+  {
+    id: 'business-ma-mergers-acquisitions-2025',
+    slug: 'mergers-acquisitions-ma-trends-reliance-disney-tata-air-india-2025',
+    category: 'business',
+    subCategory: 'mergers-acquisitions',
+    title: '🤝 M&A Boom: Reliance-Disney ₹70,000 Cr, Tata-Air India! भारत में Mega Mergers क्यों? (2025)',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-11-07T19:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Economy Article: Financial Inclusion Jan Dhan 2025
   {
     id: 'economy-financial-inclusion-2025',

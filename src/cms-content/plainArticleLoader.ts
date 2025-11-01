@@ -31,6 +31,13 @@ import { industry40AutomationIndia2025 } from './news-articles/business/industry
 import { greenTechClimateTech2025 } from './news-articles/tech/green-tech-climate-tech-startups-india-2025';
 import { bankingStocksVolatility2025 } from './news-articles/markets/banking-stocks-volatility-npa-2025';
 import { financialInclusionJanDhan2025 } from './news-articles/economy/financial-inclusion-jan-dhan-pmjdy-2025';
+import { maMergersAcquisitionsTrends2025 } from './news-articles/business/ma-mergers-acquisitions-trends-india-2025';
+import { blockchainSupplyChainIndia2025 } from './news-articles/tech/blockchain-supply-chain-logistics-india-2025';
+import { globalRecessionImpactIndia2025 } from './news-articles/economy/global-recession-impact-india-2025';
+import { gstCollectionRecord2025 } from './news-articles/markets/gst-collection-record-tax-compliance-2025';
+import { digitalTransformationCompanies2025 } from './news-articles/business/digital-transformation-companies-cloud-ai-2025';
+import { govtSchemesGrantsStartups2025 } from './news-articles/startups/government-schemes-grants-startup-india-2025';
+import { cloudAIInfrastructureIndia2025 } from './news-articles/tech/cloud-ai-infrastructure-aws-azure-india-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -61,6 +68,13 @@ export const plainArticleContentMap: Record<string, any> = {
   'green-tech-climate-tech-carbon-credits-ev-solar-bharat-2025': greenTechClimateTech2025,
   'banking-stocks-hdfc-icici-sbi-volatility-npa-analysis-2025': bankingStocksVolatility2025,
   'financial-inclusion-jan-dhan-pmjdy-banking-bharat-2025': financialInclusionJanDhan2025,
+  'mergers-acquisitions-ma-trends-reliance-disney-tata-air-india-2025': maMergersAcquisitionsTrends2025,
+  'blockchain-supply-chain-logistics-transparency-fraud-bharat-2025': blockchainSupplyChainIndia2025,
+  'global-recession-us-europe-bharat-impact-exports-jobs-2025': globalRecessionImpactIndia2025,
+  'gst-collection-record-1-87-lakh-crore-tax-compliance-bharat-2025': gstCollectionRecord2025,
+  'digital-transformation-cloud-ai-companies-bharat-reliance-tata-2025': digitalTransformationCompanies2025,
+  'startup-india-govt-schemes-grants-seed-fund-tax-benefits-2025': govtSchemesGrantsStartups2025,
+  'cloud-computing-ai-infrastructure-aws-azure-google-bharat-2025': cloudAIInfrastructureIndia2025,
 };
 
 /**
