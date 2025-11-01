@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--
+    MoneyCal Master Sitemap Index
+    Generated: 2025-11-01
+    Sitemaps: 17
+    Total URLs: ~1,800+
+    
+    Structure:
+    📰 News: sitemap-news.xml (Google News format)
+    🔢 Calculators: sitemap-calculators.xml
+    📚 Learn: sitemap-learn.xml
+    📝 Blog: sitemap-blog.xml
+    🛠️  Tools: 9 separate tool sitemaps
+    🏛️  Government: sitemap-government.xml
+    ₿  Crypto: sitemap-crypto.xml
+    ⭐ Astro: sitemap-astro.xml
+    📄 Pages: sitemap-pages.xml
+  -->
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-news.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-calculators.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-learn.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-blog.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-finance-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-tax-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-gst-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-insurance-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-festival-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-religious-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-invoicing-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-excel-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-bank-tools.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-government.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-crypto.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-astro.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://moneycal.in/sitemap-pages.xml</loc>
+    <lastmod>2025-11-01</lastmod>
+  </sitemap>
+</sitemapindex>
