@@ -13,6 +13,18 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Markets Article: Bull Market Coming 2025
+  {
+    id: 'markets-bull-market-retail-investors-2025',
+    slug: 'kya-agla-bull-market-aa-raha-hai-bharat-retail-investors-taiyari-2025',
+    category: 'markets',
+    subCategory: 'market-analysis',
+    title: '🚀 क्या अगला बुल मार्केट आ रहा है? भारत के घरेलू निवेशकों की तैयारियाँ और रणनीति 2025',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-11-06T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW: Diwali Market Rally 2025 - Comprehensive Analysis
   {
     id: 'markets-diwali-rally-2025-analysis-hindi',
