@@ -13,6 +13,30 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // NEW Economy Article: Digital Economy UPI Cashless 2025
+  {
+    id: 'economy-digital-economy-upi-2025',
+    slug: 'digital-economy-bharat-cashless-upi-fintech-2025-growth',
+    category: 'economy',
+    subCategory: 'digital-transformation',
+    title: '💳 डिजिटल अर्थव्यवस्था: UPI ने कैश को मार दिया! 15 Billion Transactions/Month (2025)',
+    authorId: 'harsh-raj',
+    datePublished: '2025-11-06T19:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&q=80'
+  },
+  
+  // NEW Markets Article: Mutual Funds vs Direct Stocks Comparison 2025
+  {
+    id: 'markets-mf-vs-stocks-comparison-2025',
+    slug: 'mutual-fund-vs-khud-ka-stock-investment-kaun-behtar-2025',
+    category: 'markets',
+    subCategory: 'investment-comparison',
+    title: '📊 Mutual Fund vs खुद का Stock निवेश: कौन बना रहा बेहतर Return? Complete Comparison 2025',
+    authorId: 'raushan-kumar',
+    datePublished: '2025-11-06T18:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=630&fit=crop&q=80'
+  },
+  
   // NEW Business Article: Green Energy Renewable Sector 2025
   {
     id: 'business-green-energy-india-2025',

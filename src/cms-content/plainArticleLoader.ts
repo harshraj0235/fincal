@@ -15,6 +15,8 @@ import { goldSilverCommoditiesBoom2025 } from './news-articles/markets/gold-silv
 import { indiaSpaceTechStartups2025 } from './news-articles/startups/india-space-tech-startups-2025';
 import { inflationImpactCommonPeople2025 } from './news-articles/economy/inflation-impact-common-people-2025';
 import { greenEnergyIndiaSector2025 } from './news-articles/business/green-energy-renewable-sector-india-2025';
+import { mutualFundsVsDirectStocks2025 } from './news-articles/markets/mutual-funds-vs-direct-stocks-comparison-2025';
+import { digitalEconomyIndia2025 } from './news-articles/economy/digital-economy-india-cashless-upi-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -29,6 +31,8 @@ export const plainArticleContentMap: Record<string, any> = {
   'bharat-space-tech-startups-agni-skyroot-pixxel-isro-2025': indiaSpaceTechStartups2025,
   'mehngai-inflation-aam-aadmi-assar-kharch-badha-bachat-ghati-2025': inflationImpactCommonPeople2025,
   'green-energy-solar-wind-renewable-bharat-sector-analysis-2025': greenEnergyIndiaSector2025,
+  'mutual-fund-vs-khud-ka-stock-investment-kaun-behtar-2025': mutualFundsVsDirectStocks2025,
+  'digital-economy-bharat-cashless-upi-fintech-2025-growth': digitalEconomyIndia2025,
 };
 
 /**
