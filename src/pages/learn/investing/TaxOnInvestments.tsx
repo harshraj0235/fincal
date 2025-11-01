@@ -48,7 +48,7 @@ const TaxOnInvestments: React.FC = () => {
   const faqData = [
     {
       question: "What is LTCG and STCG in simple terms?",
-      answer: "LTCG (Long-Term Capital Gains): Profit from selling after holding >1 year (equity) or >3 years (debt/gold). STCG (Short-Term): Profit from selling before this period. LTCG taxed lower than STCG!"
+      answer: "LTCG (Long-Term Capital Gains): Profit from selling after holding more than 1 year (equity) or more than 3 years (debt/gold). STCG (Short-Term): Profit from selling before this period. LTCG taxed lower than STCG!"
     },
     {
       question: "How much is LTCG tax on equity mutual funds/stocks?",
@@ -92,7 +92,7 @@ const TaxOnInvestments: React.FC = () => {
     },
     {
       question: "How to save tax on equity investment legally?",
-      answer: "5 ways: (1) Tax harvesting (use ₹1L exemption yearly), (2) Hold >1 year for LTCG, (3) Spread sales across years, (4) Use ₹1L exemption for family members, (5) Invest in ELSS for 80C (separate benefit)."
+      answer: "5 ways: (1) Tax harvesting (use ₹1L exemption yearly), (2) Hold more than 1 year for LTCG, (3) Spread sales across years, (4) Use ₹1L exemption for family members, (5) Invest in ELSS for 80C (separate benefit)."
     },
     {
       question: "What is Section 54/54F for capital gains tax exemption?",
