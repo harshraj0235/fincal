@@ -5,6 +5,7 @@
 
 const axios = require('axios');
 const config = require('./config');
+const { searchGoogleNews } = require('./google-news-scraper');
 
 /**
  * Fetch trending news topics for a category
@@ -21,7 +22,13 @@ async function fetchNewsForCategory(category, count = 2) {
   const { keywords, author, slug } = categoryConfig;
 
   try {
-    // Using GNews API (recommended)
+    // Using FREE Google News RSS (recommended - no API key needed!)
+    if (config.newsAPI.provider === 'demo' || config.newsAPI.provider === 'google-news-rss') {
+      console.log(`📡 Searching Google News for: ${keywords.substring(0, 50)}...`);
+      return await searchGoogleNews(category, categoryConfig, count);
+    }
+    
+    // Using GNews API (paid - requires API key)
     if (config.newsAPI.provider === 'gnews') {
       const response = await axios.get('https://gnews.io/api/v4/search', {
         params: {

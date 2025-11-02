@@ -10,8 +10,8 @@
 module.exports = {
   // 📰 News API Configuration
   newsAPI: {
-    provider: 'demo', // Options: 'gnews', 'newsapi', 'demo' (FREE - no API needed!)
-    apiKey: process.env.GNEWS_API_KEY || '', // Get from: gnews.io
+    provider: 'google-news-rss', // Options: 'google-news-rss' (FREE!), 'gnews' (paid), 'newsapi' (paid)
+    apiKey: process.env.GNEWS_API_KEY || '', // Only needed if using 'gnews'
     country: 'in', // India
     language: 'en',
     articlesPerCategory: 2, // 2 articles × 5 categories = 10 total/day
