@@ -1,36 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, ArrowLeft, PieChart, CheckCircle, Award, HelpCircle, Star } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 
-const AlternativeInvestments: React.FC = () => (
-  <>
-    <SEOHelmet title="Alternative Investments: AIF PMS Gold Bonds Sovereign Bonds Invoice Discounting India 2025 | MoneyCal" description="Explore alternatives. AIF (₹1Cr minimum, category I/II/III), PMS (₹50L), Sovereign Gold Bonds (2.5% interest + gold appreciation), invoice discounting, P2P lending." keywords="alternative investments India, AIF, PMS, Sovereign Gold Bonds, invoice discounting, P2P lending, वैकल्पिक निवेश" url="/learn/advanced-specialised-finance/alternative-investments-india-aif-pms-gold-bonds-sovereign-bonds-invoice-discounting-2025" />
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 to-cyan-50 pt-20 px-4">
-      <div className="max-w-4xl mx-auto py-12">
-        <div className="flex justify-between mb-8">
-          <Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 text-gray-600 hover:text-teal-600"><ArrowLeft className="w-5 h-5" />Back</Link>
-          <span className="text-sm text-gray-600">Lesson 6 of 7</span>
-        </div>
-        <h1 className="text-4xl font-bold mb-8">Alternative Investments: Beyond Stocks & MFs!</h1>
-        <div className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl p-8">
-          <h2 className="text-2xl font-bold mb-4">💎 High Net-Worth Investment Options</h2>
-          <ul className="space-y-2 text-sm">
-            <li>• <strong>AIF (Alternative Investment Fund):</strong> Minimum ₹1 Crore. Category I: Startups, SMEs. Category II: Private equity, debt funds. Category III: Hedge funds (high risk). Returns: 15-25%. Lock-in: 3-5 years. For HNIs only.</li>
-            <li>• <strong>PMS (Portfolio Management Service):</strong> Minimum ₹50 Lakh. Professional manager handles your portfolio. Customized strategy. Fees: 2-3% + 10-20% profit sharing. Better than MF for large amounts.</li>
-            <li>• <strong>Sovereign Gold Bonds (SGB):</strong> ₹1g minimum (₹6K). 2.5% annual interest + gold price appreciation. 8-year lock-in (can sell on exchange after 5 years). Tax-free if held till maturity. Best way to invest in gold (better than physical/ETF)!</li>
-            <li>• <strong>Invoice Discounting:</strong> Invest in bills receivable of companies. Returns: 10-14%. Tenure: 30-90 days. Platforms: KredX, Invoice Mart. Risk: Company default.</li>
-            <li>• <strong>P2P Lending:</strong> Lend to individuals. Returns: 12-18%. Platforms: Faircent, LendBox. Risk: Borrower may not repay. Diversify across 100+ borrowers to reduce risk.</li>
-          </ul>
+const AlternativeInvestments: React.FC = () => {
+  const faqData = [
+    { question: "What is AIF (Alternative Investment Fund)?", answer: "AIF = Pooled investment for HNI/institutions. 3 categories: (1) Category I: Startups, social ventures, infrastructure (low risk, govt incentives), (2) Category II: PE/VC funds, debt funds (medium risk), (3) Category III: Hedge funds (high risk, derivatives). Min investment: ₹1 Crore! Lock-in: 3-5 years. Returns: 12-20% (category II/III). Only for HNI (₹10Cr+ net worth)." },
+    { question: "What is PMS (Portfolio Management Service)?", answer: "PMS = Professional manages your stock portfolio. Min investment: ₹50 Lakh (SEBI regulation). Fees: 2-3% management + 15-20% performance fees. Returns: 15-25% (if good manager). Pros: Customized portfolio, tax efficiency, direct stock ownership. Cons: High fees (₹1.5-2L/year on ₹50L), manager risk. Better than MF if: ₹1Cr+ corpus, want customization. Below ₹50L: Use mutual funds (cheaper, regulated)!" },
+    { question: "What are Sovereign Gold Bonds (SGB)?", answer: "Govt-issued gold bonds. Interest: 2.5% p.a. + gold price appreciation! Tenure: 8 years (can exit after 5 years). Min: 1g (₹6,500). Max: 4kg/person/year. Tax: Gain tax-free if held till maturity (8 years)! Exit before 8 years: LTCG tax. Better than physical gold: (1) No making charges (save 10-15%), (2) 2.5% interest, (3) No storage hassle, (4) Can use as collateral for loans. Issued 4 times/year - subscribe!" },
+    { question: "What is invoice discounting?", answer: "Get immediate cash against pending invoices. Example: ₹10L invoice due in 60 days → Get ₹9.5L today (5% discount). Financier collects ₹10L from customer in 60 days. Use when: Urgent working capital need, reliable customers. Platforms: Indifi, FlexiLoans, KredX. Interest: 12-18% annualized. Better than: Business loan (20%+). Risk: If customer doesn't pay, you must repay financier!" },
+    { question: "What is P2P (Peer-to-Peer) lending?", answer: "Lend money directly to individuals/businesses via platforms (Faircent, LenDenClub, i2iFunding). Returns: 12-18% (higher than FD!). Min: ₹1,000. Risk: Borrower default (15-20% default rate!). Diversification: Lend ₹10K each to 50 borrowers (total ₹5L) to reduce risk. Tax: Interest taxable as per slab. Risky but regulated by RBI. Only invest 5-10% of portfolio!" },
+    { question: "What is fractional real estate investing?", answer: "Own part of commercial property via platforms (StataGrow, Myre Capital). Min: ₹25L. Returns: 8-12% (rental yield + appreciation). Tenure: 3-5 years lock-in. Pros: (1) Lower entry than full property (₹1Cr+), (2) Professional management, (3) Rental income quarterly. Cons: (1) Illiquid (cannot sell before tenure), (2) Platform risk, (3) Not SEBI regulated. For: HNI wanting real estate without buying full property!" },
+    { question: "What is Invoice Financing vs Invoice Discounting?", answer: "Invoice Discounting: You get 80-90% of invoice value immediately, retain customer relationship, repay when customer pays. Invoice Financing: Financier buys invoice 100%, directly collects from customer (customer knows!). Discounting = hidden from customer (you collect). Financing = customer pays financier. For small businesses: Discounting better (customer relationship maintained)!" },
+    { question: "What are Unlisted Shares?", answer: "Shares of private companies (not listed on stock exchange). Buy on: UnlistedZone, Planify. Popular: Reliance Retail (₹18,000/share), Ola Electric, Zepto, Byju's (crashed!). Risk: (1) No liquidity (can't sell easily), (2) No regulation (no SEBI protection), (3) Price manipulation, (4) Can lose 100% if company fails. Only for: HNI with ₹50L+ corpus, understand startup risk. Exit: IPO (5-10 years wait!)." },
+    { question: "What is Portfolio Management Service vs Mutual Fund?", answer: "MF: Pooled investment, min ₹500, SEBI regulated, pre-defined strategy, low fees (0.5-2%). PMS: Personalized, min ₹50L, customized strategy, high fees (2-3% + performance). Choose PMS if: ₹1Cr+ corpus, need tax harvesting, want specific stocks. Choose MF if: Below ₹50L, want simplicity, lower fees. MF wins for 95% of investors!" },
+    { question: "What is Gold ETF vs Sovereign Gold Bond?", answer: "Gold ETF: Trade on stock exchange, expense ratio 0.5%, buy/sell anytime, LTCG tax (12.5%). SGB: Govt bond, 2.5% interest, 8-year lock-in, tax-free if held till maturity. ETF = liquidity (can sell daily). SGB = higher returns (appreciation + 2.5% interest) but locked 8 years. For long-term (8+ years): SGB better. For flexibility: Gold ETF!" },
+    { question: "Should I invest in AIFs or stick to mutual funds?", answer: "Mutual funds BETTER for 99% investors! MF: ₹500 minimum, liquid, SEBI regulated, low fees, diversified. AIF: ₹1Cr minimum, 3-5 year lock-in, high fees (2% + 20% carry), less regulated. AIF benefits: (1) Access to unlisted stocks, (2) PE/VC strategies, (3) Tax benefits (category I). Only for HNI (₹10Cr+ net worth). Below ₹1Cr: Mutual funds sufficient!" }
+  ];
+
+  return (<><SEOHelmet title="Alternative Investments 2025: AIF, PMS, Sovereign Gold Bonds, Invoice Discounting India | MoneyCal" description="Explore alternative investments: AIF (₹1Cr minimum, categories I/II/III), PMS (₹50L minimum), Sovereign Gold Bonds (2.5% interest + gold appreciation, tax-free maturity), P2P lending, invoice discounting, fractional real estate. Hindi + English" keywords="alternative investments India 2025, AIF categories, PMS portfolio management, Sovereign Gold Bonds, P2P lending, invoice discounting, fractional real estate, वैकल्पिक निवेश गाइड" url="/learn/advanced-specialised-finance/alternative-investments-aif-pms-gold-bonds-sovereign-invoice-discounting-india-2025" faqData={faqData} />
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50"><header className="bg-white shadow-md sticky top-0 z-50 border-b"><div className="max-w-7xl mx-auto px-4 py-4"><div className="flex items-center justify-between"><Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 text-gray-600 hover:text-purple-600 transition-colors"><ArrowLeft className="w-5 h-5" /><span className="hidden sm:inline">Back</span></Link><div className="flex items-center gap-4"><span className="hidden sm:inline text-sm text-gray-600">Lesson 6 of 7</span><Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"><span className="hidden sm:inline">Hub</span><ArrowRight className="w-5 h-5" /></Link></div></div></div></header>
+        <div className="max-w-4xl mx-auto px-4 py-12"><motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12"><div className="flex items-center gap-3 mb-4"><div className="p-3 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl shadow-lg"><Star className="w-8 h-8 text-white" /></div><div><div className="text-sm font-semibold text-purple-600 uppercase tracking-wide">Lesson 6 • 55 Minutes • Advanced</div><h1 className="text-4xl font-bold text-gray-900">Alternative Investments 2025</h1><p className="text-xl text-gray-600 mt-1">AIF, PMS, Gold Bonds, P2P</p></div></div></motion.div>
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12"><div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100"><h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3"><HelpCircle className="w-8 h-8 text-blue-600" />❓ FAQs</h2><div className="space-y-6">{faqData.map((faq, index) => (<div key={index} className="border-b border-gray-200 pb-6 last:border-0"><h3 className="font-bold text-lg text-gray-900 mb-2">Q{index + 1}: {faq.question}</h3><p className="text-gray-700">{faq.answer}</p></div>))}</div></div></motion.section>
+          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-white shadow-2xl text-center"><Award className="w-12 h-12 mx-auto mb-4" /><h3 className="text-3xl font-bold mb-4">🎉 Done!</h3><Link to="/learn/advanced-specialised-finance" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-purple-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">Next<ArrowRight className="w-6 h-6" /></Link></div>
         </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 export default AlternativeInvestments;
-
-
-
-
-

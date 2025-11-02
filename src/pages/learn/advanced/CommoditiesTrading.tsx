@@ -1,35 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, ArrowLeft, TrendingUp, CheckCircle, Award, HelpCircle, Zap } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 
-const CommoditiesTrading: React.FC = () => (
-  <>
-    <SEOHelmet title="Commodities Trading India: Gold Silver Crude Oil MCX NCDEX Guide 2025 | MoneyCal" description="Trade commodities. MCX (Multi Commodity Exchange), NCDEX (agricultural), gold/silver futures, crude oil, margin trading, hedging strategies." keywords="commodities trading India, MCX, NCDEX, gold trading, crude oil futures, कमोडिटी ट्रेडिंग" url="/learn/advanced-specialised-finance/commodities-trading-india-gold-silver-crude-oil-mcx-ncdex-guide-2025" />
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-amber-50 pt-20 px-4">
-      <div className="max-w-4xl mx-auto py-12">
-        <div className="flex justify-between mb-8">
-          <Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 text-gray-600 hover:text-yellow-600"><ArrowLeft className="w-5 h-5" />Back</Link>
-          <span className="text-sm text-gray-600">Lesson 2 of 7</span>
-        </div>
-        <h1 className="text-4xl font-bold mb-8">Commodities Trading: Gold, Oil, Silver!</h1>
-        <div className="bg-gradient-to-r from-yellow-500 to-amber-600 text-white rounded-xl p-8">
-          <h2 className="text-2xl font-bold mb-4">💰 MCX & NCDEX Explained</h2>
-          <ul className="space-y-2 text-sm">
-            <li>• <strong>MCX (Multi Commodity Exchange):</strong> Trade gold, silver, crude oil, copper, zinc. Lot size: 1kg gold (₹6L), 100g gold mini (₹60K). Margin: 5-10% (₹3-6K for gold mini). Highly volatile!</li>
-            <li>• <strong>NCDEX (National Commodity & Derivatives Exchange):</strong> Agricultural commodities - wheat, soybean, cotton, sugar. For farmers & traders to hedge price risk.</li>
-            <li>• <strong>Gold Futures:</strong> Buy/sell gold at future date. If gold ₹6,000/g today, buy 1-month future at ₹6,050. If actual price in 1 month is ₹6,200 → Profit ₹150/g × 1000g = ₹1.5L profit!</li>
-            <li>• <strong>Risk:</strong> High leverage = High profit OR loss. Can lose entire margin (₹6K) if gold falls ₹60/g. Not for beginners!</li>
-          </ul>
+const CommoditiesTrading: React.FC = () => {
+  const faqData = [
+    { question: "What is commodity trading and how does it work?", answer: "Commodity trading = Buying/selling raw materials (gold, silver, oil, agricultural products) on exchanges. Two types: (1) Spot trading (immediate delivery), (2) Futures (agree price today, deliver later). In India: MCX (metals, energy), NCDEX (agri). Trade via: Brokers (Zerodha Commodity, Angel One). Margin: 5-15% (high leverage = high risk!). NOT for beginners!" },
+    { question: "MCX vs NCDEX: difference?", answer: "MCX (Multi Commodity Exchange): Non-agri commodities - gold, silver, crude oil, copper, zinc, natural gas. 95% of India's commodity trading. NCDEX: Agricultural - wheat, soy, cotton, sugar, turmeric. For farmers to hedge price risk. Investors: Trade on MCX (higher liquidity, better for gold/oil speculation)." },
+    { question: "How to trade gold on MCX?", answer: "Open commodity trading account (Zerodha, Groww). Lot sizes: (1) Gold (1kg = ₹6.5L), (2) Gold Mini (100g = ₹65K), (3) Gold Guinea (8g = ₹5K). Margin: 5-6% (₹3,250 for gold mini). Trade futures: Buy July contract at ₹65K, sell in June at ₹68K = ₹3K profit (on ₹3.25K margin = 92% return!). But: Can lose entire margin if gold falls!" },
+    { question: "What is margin in commodity trading?", answer: "Margin = Deposit required to trade (like security). Example: Gold futures worth ₹65K, margin apenas ₹3,250 (5%). This is leverage 20x! Profit/loss magnified 20x. If gold rises 2% = 40% gain on margin. If falls 2% = 40% loss! Margin call: If losses exceed margin, broker squares off position. Extremely risky - can lose everything!" },
+    { question: "Should I invest in physical gold or gold ETF or gold futures?", answer: "Physical gold: Safest, no annual returns, making charges 8-15%, storage hassle. Gold ETF: 0.5% expense ratio, can sell instantly, DEMAT form. Gold Futures: Highest risk, leverage 20x, for traders (not investors). Recommendation: Long-term wealth = Gold ETF (₹1L+). Leverage trading = Gold futures (apenas if experienced!). Jewellery = Physical gold." },
+    { question: "What is crude oil trading?", answer: "Crude oil futures on MCX. Lot size: 100 barrels (₹5-6L). Margin: 6-8% (₹35-50K). Price depends on: (1) Global demand, (2) OPEC decisions, (3) USD/INR exchange rate, (4) Geopolitical events (wars, sanctions). Extremely volatile! Example: COVID crash (2020): Oil fell from $60 to $20 (67% crash!). NOT for retail investors - for hedgers/speculators only!" },
+    { question: "Can I take delivery of gold from MCX?", answer: "YES but complicated! Most traders square off before expiry (99% trades are speculative). Taking delivery: (1) Pay full amount + delivery charges (₹500-2,000), (2) Provide delivery address, (3) Gold delivered in 7-15 days (physical form). Easier: Buy Gold ETF or physical gold from jeweller. Commodity trading = speculation, not for taking delivery!" },
+    { question: "What is hedging in commodity market?", answer: "Hedging = Reducing risk by taking opposite position. Example: Jeweller has 10kg gold inventory (₹65L). Fears gold price will fall. Solution: Sell 10kg gold futures at ₹65L. If gold falls to ₹60L → Physical inventory loss ₹5L BUT futures profit ₹5L (sold at ₹65L, buy at ₹60L). Net loss = zero! Hedging for businesses, not retail investors." },
+    { question: "What are commodity trading charges?", answer: "Brokerage: ₹10-20 per order (flat) or 0.01-0.03% of turnover. Example: Trade ₹1L gold → Brokerage ₹20. CTT (Commodity Transaction Tax): 0.01% on non-agri commodities. GST: 18% on brokerage. Total cost: ₹50-100 per ₹1L trade. Much cheaper than equity (₹500-1000 per ₹1L)!" },
+    { question: "Is commodity trading halal (Sharia-compliant)?", answer: "Debatable! Islamic scholars differ. Futures trading = Not halal (speculation, not physical delivery). Spot gold/silver = Halal (physical asset). Gold ETF = Halal (backed by physical gold). Gold futures = Not halal (leveraged speculation). Consult local Islamic scholar if following Sharia. Alternative: Gold ETF, Sovereign Gold Bonds (Sharia-compliant)." },
+    { question: "Can I trade commodities with small capital?", answer: "Gold Mini (100g): ₹3,250 margin. Silver Mini (5kg): ₹3,000 margin. Start with ₹10-20K. BUT: High risk! Beginners lose 80-90% within 6 months. Better: Learn for 6-12 months with paper trading (virtual money), then start with ₹50K-1L. Don't risk money you can't afford to lose. Commodities = advanced trading, not for beginners!" }
+  ];
+
+  return (<><SEOHelmet title="Commodities Trading India 2025: Gold, Silver, Crude Oil MCX NCDEX Complete Guide | MoneyCal" description="Trade commodities in India: MCX (gold, silver, crude oil), NCDEX (agricultural), gold futures, margin trading (5-10% leverage), hedging strategies, commodity ETFs vs futures. How to trade gold on MCX. Risks explained. Hindi + English" keywords="commodities trading India 2025, MCX NCDEX, gold trading, crude oil futures, silver futures, margin trading, hedging strategies, कमोडिटी ट्रेडिंग गाइड" url="/learn/advanced-specialised-finance/commodities-trading-india-gold-silver-crude-oil-mcx-ncdex-guide-2025" faqData={faqData} />
+      <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50"><header className="bg-white shadow-md sticky top-0 z-50 border-b"><div className="max-w-7xl mx-auto px-4 py-4"><div className="flex items-center justify-between"><Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 text-gray-600 hover:text-yellow-600 transition-colors"><ArrowLeft className="w-5 h-5" /><span className="hidden sm:inline">Back</span></Link><div className="flex items-center gap-4"><span className="hidden sm:inline text-sm text-gray-600">Lesson 2 of 7</span><Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors"><span className="hidden sm:inline">Hub</span><ArrowRight className="w-5 h-5" /></Link></div></div></div></header>
+        <div className="max-w-4xl mx-auto px-4 py-12"><motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12"><div className="flex items-center gap-3 mb-4"><div className="p-3 bg-gradient-to-r from-yellow-500 to-amber-600 rounded-xl shadow-lg"><TrendingUp className="w-8 h-8 text-white" /></div><div><div className="text-sm font-semibold text-yellow-600 uppercase tracking-wide">Lesson 2 • 50 Minutes • Advanced</div><h1 className="text-4xl font-bold text-gray-900">Commodities Trading 2025</h1><p className="text-xl text-gray-600 mt-1">Gold, Silver, Crude Oil - MCX Guide</p></div></div></motion.div>
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12"><div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100"><h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3"><HelpCircle className="w-8 h-8 text-blue-600" />❓ FAQs</h2><div className="space-y-6">{faqData.map((faq, index) => (<div key={index} className="border-b border-gray-200 pb-6 last:border-0"><h3 className="font-bold text-lg text-gray-900 mb-2">Q{index + 1}: {faq.question}</h3><p className="text-gray-700">{faq.answer}</p></div>))}</div></div></motion.section>
+          <div className="bg-gradient-to-r from-yellow-600 to-amber-600 rounded-2xl p-8 text-white shadow-2xl text-center"><Award className="w-12 h-12 mx-auto mb-4" /><h3 className="text-3xl font-bold mb-4">🎉 Done!</h3><Link to="/learn/advanced-specialised-finance" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-yellow-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">Next<ArrowRight className="w-6 h-6" /></Link></div>
         </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 export default CommoditiesTrading;
-
-
-
-
-

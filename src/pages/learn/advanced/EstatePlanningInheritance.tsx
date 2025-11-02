@@ -1,43 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, Award } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, ArrowLeft, Users, CheckCircle, Award, HelpCircle, Shield } from 'lucide-react';
 import SEOHelmet from '../../../components/SEOHelmet';
 
-const EstatePlanningInheritance: React.FC = () => (
-  <>
-    <SEOHelmet title="Estate Planning Inheritance: Wealth Transfer Family Office No Inheritance Tax India 2025 | MoneyCal" description="Plan wealth transfer. Will vs trust, succession planning, HUF (Hindu Undivided Family) benefits, family office (₹100Cr+ wealth), gifting strategies (no gift tax to relatives)." keywords="estate planning India, inheritance tax, will vs trust, HUF benefits, family office, wealth transfer, संपदा योजना विरासत" url="/learn/advanced-specialised-finance/estate-planning-inheritance-tax-wealth-transfer-family-office-india-2025" />
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50 pt-20 px-4">
-      <div className="max-w-4xl mx-auto py-12">
-        <div className="flex justify-between mb-8">
-          <Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 text-gray-600 hover:text-pink-600"><ArrowLeft className="w-5 h-5" />Back</Link>
-          <span className="text-sm text-gray-600">Lesson 7 of 7 - FINAL!</span>
-        </div>
-        <h1 className="text-4xl font-bold mb-8">Estate Planning: Secure Your Legacy!</h1>
-        <div className="bg-gradient-to-r from-pink-500 to-rose-600 text-white rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-4">🏛️ Good News: No Inheritance Tax in India!</h2>
-          <ul className="space-y-2 text-sm">
-            <li>• India abolished inheritance tax (Estate Duty) in 1985. Receiving property/money from parents/relatives = 100% tax-free! (Gift from non-relatives &gt; ₹50K is taxable at slab rates).</li>
-            <li>• <strong>Will vs Trust:</strong> Will = Executed after death. Simple. Trust = Active during lifetime. Complex but better for large estates (₹10Cr+). Trust assets bypass probate (court process).</li>
-            <li>• <strong>HUF (Hindu Undivided Family):</strong> Separate tax entity. Deductions: ₹1.5L (80C) + ₹50K (NPS). Effective tax planning for joint family businesses. Minimum 2 members.</li>
-            <li>• <strong>Family Office:</strong> For ultra-HNI (₹100Cr+ wealth). Dedicated team manages investments, tax, estate planning. Cost: ₹50L-₹2Cr/year. Examples: Premji Invest (Wipro), Ranjan Pai (Manipal).</li>
-            <li>• <strong>Succession Planning:</strong> Start early (age 50-55). Train next generation. Gradual transfer (gift ₹50L/year to children over 10 years = ₹5Cr transferred tax-free!).</li>
-          </ul>
-        </div>
-        <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl p-12 text-center shadow-2xl">
-          <h2 className="text-3xl font-bold mb-4">🎉 Advanced Topics / Specialised Finance Category Complete!</h2>
-          <p className="text-xl mb-6">You've mastered all 7 lessons on advanced investing strategies!</p>
-          <Link to="/learn" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-green-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">
-            Explore More Categories <ArrowRight className="w-6 h-6" />
-          </Link>
+const EstatePlanningInheritance: React.FC = () => {
+  const faqData = [
+    { question: "What is estate planning for HNI (₹100Cr+ wealth)?", answer: "Estate planning = Wealth transfer strategy. For HNI: (1) Will (basic), (2) Trust (tax planning + control), (3) Family office (₹100Cr+ - manages entire wealth), (4) Gifting strategy (₹50K to each relative tax-free annually), (5) HUF (Hindu Undivided Family - tax benefits). Goal: Minimize taxes, smooth succession, protect family, charity. Cost: ₹5-25L for setup. Hire: Wealth manager, lawyer, CA." },
+    { question: "What is a Family Office?", answer: "Family office = Dedicated team managing HNI family's wealth (₹100Cr+). Services: (1) Investments (equity, real estate, PE/VC), (2) Tax planning, (3) Estate planning, (4) Philanthropy, (5) Family governance, (6) Next-gen wealth education. Cost: ₹50L-2Cr/year (staff + office). India: 200+ family offices (Ambani, Tata, Birla levels). For: Ultra HNI only (₹500Cr+). Below ₹100Cr: Use wealth manager (cheaper)!" },
+    { question: "What is HUF (Hindu Undivided Family)?", answer: "HUF = Legal entity for Hindu families. Tax benefits: (1) Separate PAN, (2) Separate ₹2.5L basic exemption (family gets 2x exemption!), (3) Separate 80C ₹1.5L deduction, (4) Can buy property in HUF name. Setup: Draft HUF deed, get PAN, open bank account. Members: Karta (head) + family. Tax savings: ₹1-1.5L/year for ₹10L+ income families. All Hindus should consider!" },
+    { question: "Is there gift tax in India?", answer: "NO gift tax to relatives! Can gift unlimited to: Spouse, children, parents, siblings (tax-free!). Gift to non-relatives: (1) Below ₹50,000/year = tax-free, (2) Above ₹50K = taxable in receiver's hands (as 'income from other sources'). Strategy: HNI gift ₹50K each to 10 friends/staff = ₹5L transferred tax-free! Gift of property: Stamp duty applies (5-7%)." },
+    { question: "What is trust and when to create one?", answer: "Trust = Legal entity holding assets for beneficiaries. Create if: (1) Wealth above ₹50Cr (estate planning), (2) Minor/disabled beneficiaries (trustee manages), (3) Charitable goals (tax benefits u/s 80G). Types: Revocable (can modify) vs Irrevocable (cannot change). Setup cost: ₹1-5L. Annual compliance: ₹50K-2L. For HNI apenas - regular person: Will sufficient!" },
+    { question: "How to transfer wealth to next generation tax-free?", answer: "5 strategies: (1) Gift ₹50K/year to each relative (unlimited relatives!), (2) Create HUF (family gets separate tax benefits), (3) Gift via Will (no inheritance tax in India!), (4) Life insurance (₹1Cr term policy - nominees get tax-free), (5) Sovereign Gold Bonds (maturity proceeds tax-free). India advantage: NO inheritance/estate tax (unlike US 40%!). Transfers 100% tax-free!" },
+    { question: "What is succession planning?", answer: "Succession planning = Who takes over business after founder. For family businesses: (1) Groom next-gen (involve in operations), (2) Define roles clearly, (3) Create family constitution, (4) Separate ownership (shares) from management (CEO role), (5) External professionals on board. Common mistakes: (1) Delayed planning (health crisis then panic!), (2) Equal shares to unequal contributors (fights!), (3) No clarity (family court disputes!). Plan when healthy!" },
+    { question: "What is charitable trust tax benefit?", answer: "Create charitable trust (religion, education, medical). Tax benefits: (1) Trust income = tax-exempt (if spent on charity), (2) Donors get 50-100% deduction u/s 80G, (3) Can accumulate 15% for future use. Popular: Religious trusts (temples), educational trusts (schools), medical trusts. Setup: ₹50K-2L. Compliance: Annual ITR filing. For: Philanthropic HNI or religious institutions!" },
+    { question: "How does Will vs Trust differ for estate planning?", answer: "Will: Takes effect after death, simple, ₹0-5K cost, can be contested, goes through probate (6-12 months). Trust: Takes effect immediately, complex, ₹1-5L cost, harder to contest, avoids probate (immediate transfer). For: Regular wealth (below ₹10Cr) = Will enough. HNI (₹50Cr+) = Trust better (tax planning, control, privacy). Both needed: Trust for bulk assets, Will for residual!" },
+    { question: "Can I disinherit my children in India?", answer: "Partially! Hindu Succession Act: Children have coparcenary right to ancestral property (cannot fully disinherit). Self-acquired property: Can give to anyone via Will. Disinherit completely: Difficult (children can contest Will, court may grant minimum share). Better: Give unequal shares (80% to one child, 20% to another) with clear reasoning in Will. Avoid: Complete disinheritance (invites legal battle!)." },
+    { question: "What is Will registration cost and is it necessary?", answer: "Registration: ₹5,000-10,000 at sub-registrar office. NOT mandatory but recommended! Unregistered Will = valid but easier to contest. Registered Will = official record, harder to dispute. Cost: ₹5K for peace of mind worth it! For HNI (₹10Cr+ assets): Must register + keep multiple copies (lawyer, bank locker, trusted family member)." }
+  ];
+
+  return (<><SEOHelmet title="Estate Planning & Inheritance 2025: Wealth Transfer, Family Office, HUF, Trusts India | No Inheritance Tax! | MoneyCal" description="Plan wealth transfer for HNI in India: Will vs Trust, succession planning, Family Office (₹100Cr+ wealth), HUF benefits, gifting strategies (no gift tax to relatives), charitable trusts. No inheritance tax in India! Hindi + English" keywords="estate planning India 2025, inheritance wealth transfer, family office, HUF benefits, trust vs will, succession planning, no inheritance tax India, gifting strategy, संपदा योजना गाइड" url="/learn/advanced-specialised-finance/estate-planning-inheritance-wealth-transfer-family-office-no-inheritance-tax-india-2025" faqData={faqData} />
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-red-50"><header className="bg-white shadow-md sticky top-0 z-50 border-b"><div className="max-w-7xl mx-auto px-4 py-4"><div className="flex items-center justify-between"><Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 text-gray-600 hover:text-pink-600 transition-colors"><ArrowLeft className="w-5 h-5" /><span className="hidden sm:inline">Back</span></Link><div className="flex items-center gap-4"><span className="hidden sm:inline text-sm text-pink-600 font-semibold">Lesson 7 of 7 - FINAL!</span><Link to="/learn/advanced-specialised-finance" className="flex items-center gap-2 px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"><span className="hidden sm:inline">Hub</span><ArrowRight className="w-5 h-5" /></Link></div></div></div></header>
+        <div className="max-w-4xl mx-auto px-4 py-12"><motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12"><div className="flex items-center gap-3 mb-4"><div className="p-3 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl shadow-lg"><Users className="w-8 h-8 text-white" /></div><div><div className="text-sm font-semibold text-pink-600 uppercase tracking-wide">Lesson 7 • 55 Minutes • Advanced • FINAL</div><h1 className="text-4xl font-bold text-gray-900">Estate Planning & Inheritance 2025</h1><p className="text-xl text-gray-600 mt-1">Wealth Transfer, Family Office, HUF</p></div></div></motion.div>
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12"><div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100"><h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3"><HelpCircle className="w-8 h-8 text-blue-600" />❓ FAQs</h2><div className="space-y-6">{faqData.map((faq, index) => (<div key={index} className="border-b border-gray-200 pb-6 last:border-0"><h3 className="font-bold text-lg text-gray-900 mb-2">Q{index + 1}: {faq.question}</h3><p className="text-gray-700">{faq.answer}</p></div>))}</div></div></motion.section>
+          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-12 text-white shadow-2xl text-center"><Award className="w-16 h-16 mx-auto mb-6" /><h3 className="text-4xl font-bold mb-4">🎉 Advanced Finance Complete!</h3><p className="text-2xl mb-8">All 7 lessons mastered!</p><Link to="/learn" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-green-600 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">Explore More<ArrowRight className="w-6 h-6" /></Link></div>
         </div>
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 export default EstatePlanningInheritance;
-
-
-
-
-
