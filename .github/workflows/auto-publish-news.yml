@@ -34,15 +34,13 @@ jobs:
           cd scripts/auto-news-publisher
           npm install
 
-      - name: 🔧 Setup Environment Variables
-        run: |
-          echo "GNEWS_API_KEY=${{ secrets.GNEWS_API_KEY }}" >> .env
-          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
-          echo "UNSPLASH_ACCESS_KEY=${{ secrets.UNSPLASH_ACCESS_KEY }}" >> .env
-          echo "PEXELS_API_KEY=${{ secrets.PEXELS_API_KEY }}" >> .env
-
       - name: 🤖 Run Auto News Publisher
         run: node scripts/auto-news-publisher/main.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
 
       - name: 🏗️ Build Project (Verify No Errors)
         run: npm run build

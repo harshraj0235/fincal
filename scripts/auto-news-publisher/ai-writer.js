@@ -6,10 +6,19 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const config = require('./config');
 
-// Initialize AI client
+// Initialize AI client with API key from environment
 let aiClient;
 if (config.ai.provider === 'gemini') {
-  aiClient = new GoogleGenerativeAI(config.ai.apiKey);
+  const apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey;
+  
+  if (!apiKey) {
+    console.error('❌ GEMINI_API_KEY not found in environment variables!');
+    console.error('   Make sure to add GEMINI_API_KEY to GitHub Secrets');
+    throw new Error('GEMINI_API_KEY is required but not found');
+  }
+  
+  console.log(`✅ Gemini API key loaded (${apiKey.substring(0, 10)}...)`);
+  aiClient = new GoogleGenerativeAI(apiKey);
 }
 
 /**

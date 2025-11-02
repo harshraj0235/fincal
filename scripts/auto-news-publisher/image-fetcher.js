@@ -16,6 +16,12 @@ const config = require('./config');
  */
 async function fetchFromUnsplash(query, filename) {
   try {
+    const apiKey = process.env.UNSPLASH_ACCESS_KEY || config.images.unsplash.apiKey;
+    
+    if (!apiKey) {
+      throw new Error('UNSPLASH_ACCESS_KEY not found');
+    }
+    
     const response = await axios.get('https://api.unsplash.com/search/photos', {
       params: {
         query: query,
@@ -23,7 +29,7 @@ async function fetchFromUnsplash(query, filename) {
         orientation: config.images.unsplash.orientation
       },
       headers: {
-        'Authorization': `Client-ID ${config.images.unsplash.apiKey}`
+        'Authorization': `Client-ID ${apiKey}`
       }
     });
 
@@ -61,6 +67,12 @@ async function fetchFromUnsplash(query, filename) {
  */
 async function fetchFromPexels(query, filename) {
   try {
+    const apiKey = process.env.PEXELS_API_KEY || config.images.pexels.apiKey;
+    
+    if (!apiKey) {
+      throw new Error('PEXELS_API_KEY not found');
+    }
+    
     const response = await axios.get('https://api.pexels.com/v1/search', {
       params: {
         query: query,
@@ -68,7 +80,7 @@ async function fetchFromPexels(query, filename) {
         orientation: config.images.pexels.orientation
       },
       headers: {
-        'Authorization': config.images.pexels.apiKey
+        'Authorization': apiKey
       }
     });
 
