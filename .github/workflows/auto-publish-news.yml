@@ -19,6 +19,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true
+          fetch-depth: 1
 
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
@@ -29,10 +31,13 @@ jobs:
       - name: 📥 Install Main Dependencies
         run: npm ci
 
-      - name: 📥 Install Auto-Publisher Dependencies
+      - name: 📥 Install Auto-Publisher Dependencies (Fresh)
         run: |
           cd scripts/auto-news-publisher
+          rm -rf node_modules package-lock.json
           npm install
+          echo "Installed packages:"
+          npm list --depth=0
 
       - name: 🤖 Run Auto News Publisher
         run: node scripts/auto-news-publisher/main.js
