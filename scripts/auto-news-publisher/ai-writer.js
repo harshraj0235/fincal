@@ -94,8 +94,67 @@ Return ONLY valid JSON in this exact format (no markdown, no code blocks):
       console.error(`   Status: ${error.response.status}`);
       console.error(`   Data:`, JSON.stringify(error.response.data).substring(0, 200));
     }
-    throw error;
+    
+    // Fallback to template-based article
+    console.log(`↪️  Using template fallback for this article...`);
+    return generateTemplateArticle(newsTopic);
   }
+}
+
+/**
+ * Generate article using template (fallback when AI fails)
+ * @param {Object} newsTopic - News topic
+ * @returns {Object} Template-based article
+ */
+function generateTemplateArticle(newsTopic) {
+  const { title, description, keywords, category, author } = newsTopic;
+  
+  const content = `<div class="prose max-w-none">
+<p class="text-lg leading-relaxed mb-6">${description} This development marks a significant moment for the Indian financial landscape and has important implications for investors and market participants.</p>
+
+<h2 class="text-2xl font-bold mt-8 mb-4">Key Highlights</h2>
+<p class="mb-4">The announcement comes at a crucial time when Indian markets are experiencing dynamic changes. Here are the key points investors need to understand about this development and its potential impact on portfolio strategies.</p>
+
+<h2 class="text-2xl font-bold mt-8 mb-4">Market Impact Analysis</h2>
+<p class="mb-4">This news has created immediate ripples across various sectors of the Indian economy. Market analysts are closely watching how this will affect different asset classes and investment strategies in the coming weeks and months.</p>
+
+<h2 class="text-2xl font-bold mt-8 mb-4">What Indian Investors Should Know</h2>
+<p class="mb-4">For retail and institutional investors, understanding the nuances of this development is crucial. The implications extend beyond immediate market movements to longer-term investment strategies and portfolio positioning.</p>
+
+<ul class="list-disc pl-6 mb-6 space-y-2">
+<li>Short-term market volatility may present both opportunities and risks for active traders</li>
+<li>Long-term investors should consider rebalancing portfolios based on changing fundamentals</li>
+<li>Diversification remains key in navigating uncertain market conditions</li>
+<li>Regulatory changes may impact specific sectors more than others</li>
+</ul>
+
+<h2 class="text-2xl font-bold mt-8 mb-4">Expert Perspectives</h2>
+<p class="mb-4">Financial experts and market analysts suggest that investors should maintain a balanced approach during this period. Rather than making hasty decisions based on short-term news, focusing on long-term fundamentals and diversified asset allocation remains the prudent strategy.</p>
+
+<h2 class="text-2xl font-bold mt-8 mb-4">Action Plan for Investors</h2>
+<p class="mb-4">Investors can use <a href="/calculators/sip-calculator" class="text-blue-600 hover:underline">MoneyCal SIP Calculator</a> to plan systematic investments and <a href="/learn/investing-wealth-creation" class="text-blue-600 hover:underline">explore our comprehensive investing guides</a> to build a solid financial foundation.</p>
+
+<p class="mb-4">For tax-efficient investment planning, refer to our <a href="/learn/taxation-compliance" class="text-blue-600 hover:underline">Taxation Guide</a> and use the <a href="/calculators/tax-saving-calculator" class="text-blue-600 hover:underline">Tax Saving Calculator</a>.</p>
+
+<h2 class="text-2xl font-bold mt-8 mb-4">Looking Ahead</h2>
+<p class="mb-4">While near-term uncertainty exists, India's long-term growth story remains intact. Investors should focus on quality assets, maintain discipline, and avoid making emotional decisions based on short-term market movements.</p>
+
+<div class="mt-8 p-4 bg-gray-100 rounded-lg">
+<p class="text-sm text-gray-600"><em>Disclaimer: This article is for informational purposes only and should not be considered as investment advice. Please consult with a qualified financial advisor before making investment decisions.</em></p>
+</div>
+</div>`;
+
+  return {
+    title: title.substring(0, 60),
+    excerpt: description.substring(0, 155),
+    content: content,
+    seoKeywords: keywords.slice(0, 5),
+    readingTime: '8 mins',
+    focusKeywords: [keywords[0]],
+    wordCount: 450,
+    generatedAt: new Date().toISOString(),
+    sourceTopic: newsTopic
+  };
 }
 
 /**
@@ -105,8 +164,14 @@ Return ONLY valid JSON in this exact format (no markdown, no code blocks):
  */
 async function generateArticles(newsTopics) {
   console.log('═══════════════════════════════════════════════════════════════════════');
-  console.log('🤖 GENERATING AI ARTICLES (PURE REST API)');
+  console.log(`🤖 GENERATING ARTICLES (${config.ai.provider === 'gemini' ? 'AI' : 'TEMPLATE'})`);
   console.log('═══════════════════════════════════════════════════════════════════════\n');
+  
+  // If template mode, skip AI and use templates directly
+  if (config.ai.provider === 'template') {
+    console.log('📝 Using template-based generation (fallback mode)');
+    return newsTopics.map(topic => generateTemplateArticle(topic));
+  }
 
   const articles = [];
 

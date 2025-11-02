@@ -46,7 +46,7 @@ module.exports = {
 
   // 🤖 AI Content Generation
   ai: {
-    provider: 'gemini', // Options: 'gemini' (free!), 'openai', 'claude'
+    provider: 'template', // Options: 'template' (fallback, works now!), 'gemini' (fix later)
     apiKey: process.env.GEMINI_API_KEY || '', // Get from: makersuite.google.com/app/apikey
     model: 'gemini-1.5-flash-latest', // Model name for v1beta API
     temperature: 0.7, // 0.7 = balanced (creative but factual)
