@@ -1,13 +1,13 @@
 /**
  * 🤖 AI CONTENT WRITER
  * Generates unique, SEO-optimized news articles using AI
+ * Uses REST API directly (no SDK) for better compatibility
  */
 
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const axios = require('axios');
 const config = require('./config');
 
-// Initialize AI client with API key from environment
-let aiClient;
+// Validate API key on startup
 if (config.ai.provider === 'gemini') {
   const apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey;
   
@@ -18,7 +18,6 @@ if (config.ai.provider === 'gemini') {
   }
   
   console.log(`✅ Gemini API key loaded (${apiKey.substring(0, 10)}...)`);
-  aiClient = new GoogleGenerativeAI(apiKey);
 }
 
 /**
@@ -89,18 +88,19 @@ Write the article now. Make it informative, engaging, and valuable for Indian re
 
   try {
     if (config.ai.provider === 'gemini') {
-      // Use REST API directly (more reliable than SDK)
+      // Use REST API directly (more reliable, no SDK issues)
       let apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey;
       
-      // Clean API key (remove quotes, spaces, newlines)
+      // Clean API key (remove any quotes, spaces, newlines)
       apiKey = apiKey.trim().replace(/^["'\s]+|["'\s]+$/g, '');
       
       console.log(`🔑 Using API key: ${apiKey.substring(0, 15)}... (length: ${apiKey.length})`);
       
-      const axios = require('axios');
+      // Use v1beta API with correct endpoint
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${config.ai.model}:generateContent?key=${apiKey}`;
       
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`,
+        apiUrl,
         {
           contents: [{
             parts: [{
