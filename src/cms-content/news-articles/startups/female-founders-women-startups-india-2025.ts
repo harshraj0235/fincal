@@ -139,3 +139,4 @@ export const femalFoundersWomenStartups2025: NewsArticle = {
 
 
 
+

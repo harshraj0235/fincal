@@ -349,3 +349,4 @@ const FAQSection = ({ faqs }: { faqs: Array<{q: string, a: string}> }) => {
 **Last Updated:** November 1, 2025  
 **Status:** 2/8 lessons complete, 6 in planning/development
 
+

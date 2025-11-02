@@ -13,6 +13,18 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // DEMO Article: Nifty 50 Record High Nov 2025
+  {
+    id: 'nifty-50-record-high-fii-inflows-november-2025',
+    slug: 'nifty-50-record-high-fii-inflows-november-2025',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'Nifty 50 Hits Record High as FII Inflows Cross Rs 50,000 Crore in November 2025',
+    authorId: 'rajesh-sharma',
+    datePublished: '2025-11-02T14:30:00+05:30',
+    image: '/images/news/nifty-record-high-2025.jpg'
+  },
+
   // NEW Startups Article: Scalable Business Models 2025
   {
     id: 'startups-scalable-business-models-2025',

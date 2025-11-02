@@ -129,3 +129,4 @@ const QRCodePayments: React.FC = () => {
 };
 
 export default QRCodePayments;
+

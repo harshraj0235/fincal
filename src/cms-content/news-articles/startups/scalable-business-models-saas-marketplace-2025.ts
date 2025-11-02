@@ -186,3 +186,4 @@ export const scalableBusinessModels2025: NewsArticle = {
 
 
 
+

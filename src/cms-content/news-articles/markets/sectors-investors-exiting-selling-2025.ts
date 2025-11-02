@@ -196,3 +196,4 @@ export const sectorsInvestorsExiting2025: NewsArticle = {
 
 
 
+
