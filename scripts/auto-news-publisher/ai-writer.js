@@ -90,7 +90,13 @@ Write the article now. Make it informative, engaging, and valuable for Indian re
   try {
     if (config.ai.provider === 'gemini') {
       // Use REST API directly (more reliable than SDK)
-      const apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey;
+      let apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey;
+      
+      // Clean API key (remove quotes, spaces, newlines)
+      apiKey = apiKey.trim().replace(/^["'\s]+|["'\s]+$/g, '');
+      
+      console.log(`🔑 Using API key: ${apiKey.substring(0, 15)}... (length: ${apiKey.length})`);
+      
       const axios = require('axios');
       
       const response = await axios.post(
