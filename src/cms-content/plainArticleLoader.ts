@@ -43,7 +43,7 @@ import { retailInvestorsRoleIndia2025 } from './news-articles/markets/retail-inv
 import { fdiForeignInvestmentIndia2025 } from './news-articles/business/fdi-foreign-investment-india-trends-2025';
 import { techUnicornDreamIndia2025 } from './news-articles/startups/tech-unicorn-dream-valuation-1-billion-india-2025';
 import { ewasteElectronicWasteIndia2025 } from './news-articles/tech/ewaste-electronic-waste-india-problem-solution-2025';
-import { povertyIncomeInequalityIndia2025 } from './news-articles/economy/poverty-income-inequality-wealth-gap-india-2025';
+import povertyIncomeInequalityIndia2025 from './news-articles/economy/poverty-income-inequality-wealth-gap-india-2025';
 import { d2cBrandsSaaSToolsIndia2025 } from './news-articles/tech/d2c-brands-saas-tools-shopify-india-2025';
 import { corporateGovernanceScandals2025 } from './news-articles/business/corporate-governance-scandals-india-2025';
 import { corporateStartupPartnerships2025 } from './news-articles/startups/corporate-startup-partnerships-collaboration-2025';

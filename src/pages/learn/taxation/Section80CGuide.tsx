@@ -223,7 +223,6 @@ const Section80CGuide: React.FC = () => {
                   return: '7.7%',
                   lock: '5 years',
                   minMax: '₹1,000 - No limit',
-                  lock: '5 years',
                   pros: ['Safe (post office, government-backed)', 'Offline option (no demat/online needed)', 'Can use as collateral for loans'],
                   cons: ['Low returns (7.7%)', 'Interest taxable (apenas principal gets 80C)', '5-year lock-in'],
                   bestFor: 'Senior citizens, those without bank access, rural investors',
