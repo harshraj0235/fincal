@@ -99,6 +99,9 @@ Write the article now. Make it informative, engaging, and valuable for Indian re
       // Use v1beta API with correct endpoint
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${config.ai.model}:generateContent?key=${apiKey}`;
       
+      console.log(`📡 API URL: ${apiUrl.substring(0, 100)}...`);
+      console.log(`📦 Model: ${config.ai.model}`);
+      
       const response = await axios.post(
         apiUrl,
         {
