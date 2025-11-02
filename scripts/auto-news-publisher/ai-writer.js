@@ -89,11 +89,27 @@ Write the article now. Make it informative, engaging, and valuable for Indian re
 
   try {
     if (config.ai.provider === 'gemini') {
-      const model = aiClient.getGenerativeModel({ model: config.ai.model });
+      // Use REST API directly (more reliable than SDK)
+      const apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey;
+      const axios = require('axios');
       
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      const text = response.text();
+      const response = await axios.post(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`,
+        {
+          contents: [{
+            parts: [{
+              text: prompt
+            }]
+          }]
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      
+      const text = response.data.candidates[0].content.parts[0].text;
       
       // Parse JSON from AI response
       const jsonMatch = text.match(/\{[\s\S]*\}/);
