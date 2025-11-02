@@ -62,11 +62,18 @@ Value: [Your Pexels API key]
 
 ---
 
-### **STEP 3: Install Dependencies**
+### **STEP 3: Install Dependencies (When Running Locally)**
+
+**Note:** GitHub Actions will install these automatically. Only needed if testing locally.
 
 ```bash
-cd fincal
-npm install axios @google/generative-ai dotenv
+cd fincal/scripts/auto-news-publisher
+npm install
+
+# This installs:
+# - axios (for API calls)
+# - @google/generative-ai (for AI content)
+# - dotenv (for environment variables)
 ```
 
 ---

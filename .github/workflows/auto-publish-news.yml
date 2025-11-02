@@ -26,8 +26,13 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: 📥 Install Dependencies
+      - name: 📥 Install Main Dependencies
         run: npm ci
+
+      - name: 📥 Install Auto-Publisher Dependencies
+        run: |
+          cd scripts/auto-news-publisher
+          npm install
 
       - name: 🔧 Setup Environment Variables
         run: |

@@ -64,7 +64,19 @@ Value: [Paste your GNews key]
 
 ---
 
-## ✅ **STEP 3: Enable GitHub Actions (30 Seconds)**
+## ✅ **STEP 3: Install Dependencies (GitHub Actions)**
+
+**Note:** GitHub Actions will automatically install dependencies when it runs. No local installation needed unless you want to test locally.
+
+```bash
+# Only if testing locally:
+cd scripts/auto-news-publisher
+npm install
+```
+
+---
+
+## ✅ **STEP 4: Enable GitHub Actions (30 Seconds)**
 
 ```bash
 1. Go to: Repository → Actions tab
@@ -75,7 +87,7 @@ Value: [Paste your GNews key]
 
 ---
 
-## ✅ **STEP 4: Manual Test Run (Optional - 1 Minute)**
+## ✅ **STEP 5: Manual Test Run (Optional - 1 Minute)**
 
 ```bash
 1. Go to: Actions tab
