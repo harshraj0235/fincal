@@ -48,7 +48,7 @@ module.exports = {
   ai: {
     provider: 'gemini', // Options: 'gemini' (free!), 'openai', 'claude'
     apiKey: process.env.GEMINI_API_KEY || '', // Get from: makersuite.google.com/app/apikey
-    model: 'models/gemini-1.5-flash-latest', // Full model path required
+    model: 'gemini-1.5-flash-latest', // Model name for v1beta API
     temperature: 0.7, // 0.7 = balanced (creative but factual)
     minWords: 1000,
     maxWords: 1500,
