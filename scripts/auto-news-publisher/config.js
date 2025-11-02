@@ -10,7 +10,7 @@
 module.exports = {
   // 📰 News API Configuration
   newsAPI: {
-    provider: 'gnews', // Options: 'gnews', 'newsapi', 'google-news'
+    provider: 'demo', // Options: 'gnews', 'newsapi', 'demo' (FREE - no API needed!)
     apiKey: process.env.GNEWS_API_KEY || '', // Get from: gnews.io
     country: 'in', // India
     language: 'en',
