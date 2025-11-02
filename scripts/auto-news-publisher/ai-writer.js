@@ -1,183 +1,111 @@
 /**
- * 🤖 AI CONTENT WRITER
- * Generates unique, SEO-optimized news articles using AI
- * Uses REST API directly (no SDK) for better compatibility
+ * 🤖 AI CONTENT WRITER - PURE REST API VERSION
+ * Generates unique, SEO-optimized news articles using Gemini API
+ * NO SDK - Direct HTTP calls only
  */
 
 const axios = require('axios');
 const config = require('./config');
 
-// Validate API key on startup
-if (config.ai.provider === 'gemini') {
-  const apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey;
-  
-  if (!apiKey) {
-    console.error('❌ GEMINI_API_KEY not found in environment variables!');
-    console.error('   Make sure to add GEMINI_API_KEY to GitHub Secrets');
-    throw new Error('GEMINI_API_KEY is required but not found');
-  }
-  
-  console.log(`✅ Gemini API key loaded (${apiKey.substring(0, 10)}...)`);
-}
-
 /**
- * Generate article content using AI
+ * Generate article content using Gemini REST API
  * @param {Object} newsTopic - News topic object
- * @returns {Promise<Object>} Generated article with title, excerpt, content
+ * @returns {Promise<Object>} Generated article
  */
 async function generateArticle(newsTopic) {
   const { title, description, keywords, category, author, sourceName, publishedAt } = newsTopic;
 
   console.log(`\n🤖 Generating article: "${title.substring(0, 50)}..."`);
 
-  const prompt = `You are a professional financial journalist writing for MoneyCal.in, India's leading financial education platform.
+  const prompt = `You are a professional financial journalist writing for MoneyCal.in.
 
-TASK: Write a comprehensive, unique financial news article based on this topic:
+Write a comprehensive 1000-1500 word article on: ${title}
 
-TOPIC: ${title}
-BRIEF: ${description}
-SOURCE: ${sourceName}
-CATEGORY: ${category}
-KEYWORDS: ${keywords.join(', ')}
+Context: ${description}
+Category: ${category}
+Keywords: ${keywords.join(', ')}
 
-REQUIREMENTS:
-1. LENGTH: 1000-1500 words (STRICT - not less than 1000 words!)
-2. STRUCTURE:
-   - Engaging title (60 characters, SEO-optimized)
-   - Excerpt: 150 words summary
-   - Main content: 3-5 sections with H2 headings
-   - Conclusion with call-to-action
-
-3. CONTENT STYLE:
-   - Professional yet accessible
-   - Indian market perspective (use ₹, Indian examples, local context)
-   - Unique analysis (NOT just copy of source - add insights, implications)
-   - Include relevant statistics/data with context
-   - Avoid jargon or explain technical terms
-   - Factual and balanced (not sensational)
-
-4. SEO OPTIMIZATION:
-   - Use long-tail keywords naturally: "${keywords[0]}", "${keywords[1]}"
-   - Include entities: Companies, people, regulations mentioned
-   - Add 2-3 internal links: Mention MoneyCal calculators/tools naturally
-     Examples: "Use our FD Calculator", "Learn more in our Retirement Planning guide"
-
-5. INDIAN CONTEXT:
-   - Relate to Indian investors/readers
-   - Mention impact on Indian market/economy
-   - Reference SEBI, RBI, NSE, BSE if relevant
-   - Use rupee (₹) for all amounts
-
-6. UNIQUE PERSPECTIVE:
-   - What does this mean for Indian investors?
-   - Historical context if relevant
-   - Future implications
-   - Actionable insights (what should readers do?)
-
-7. FORMAT (Return as JSON):
+Return ONLY valid JSON in this exact format (no markdown, no code blocks):
 {
-  "title": "SEO-optimized title (60 chars)",
-  "excerpt": "150-word compelling summary",
-  "content": "Main article content in markdown (1000-1500 words, use ## for headings, **bold**, - bullet points)",
+  "title": "SEO title 60 chars",
+  "excerpt": "150 word summary",
+  "content": "Article in clean HTML format with <h2>, <p>, <ul>, <li> tags. 1000+ words. NO asterisks or hash symbols!",
   "seoKeywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"],
   "readingTime": "8 mins",
-  "focusKeywords": ["primary long-tail keyword"]
-}
-
-Write the article now. Make it informative, engaging, and valuable for Indian readers!`;
+  "focusKeywords": ["primary keyword"]
+}`;
 
   try {
-    if (config.ai.provider === 'gemini') {
-      // Use REST API directly (more reliable, no SDK issues)
-      let apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey;
-      
-      // Clean API key (remove any quotes, spaces, newlines)
-      apiKey = apiKey.trim().replace(/^["'\s]+|["'\s]+$/g, '');
-      
-      console.log(`🔑 Using API key: ${apiKey.substring(0, 15)}... (length: ${apiKey.length})`);
-      
-      // Use v1beta API with correct endpoint
-      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${config.ai.model}:generateContent?key=${apiKey}`;
-      
-      console.log(`📡 API URL: ${apiUrl.substring(0, 100)}...`);
-      console.log(`📦 Model: ${config.ai.model}`);
-      
-      const response = await axios.post(
-        apiUrl,
-        {
-          contents: [{
-            parts: [{
-              text: prompt
-            }]
-          }]
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-      
-      const text = response.data.candidates[0].content.parts[0].text;
-      
-      // Parse JSON from AI response
-      const jsonMatch = text.match(/\{[\s\S]*\}/);
-      if (!jsonMatch) {
-        throw new Error('AI did not return valid JSON');
-      }
-      
-      const article = JSON.parse(jsonMatch[0]);
-      
-      // Validate word count
-      const wordCount = article.content.split(/\s+/).length;
-      console.log(`✅ Article generated: ${wordCount} words`);
-      
-      if (wordCount < config.ai.minWords) {
-        console.warn(`⚠️ Article too short (${wordCount} words). Regenerating...`);
-        // Could retry here, but for now we'll accept it
-      }
-      
-      return {
-        ...article,
-        wordCount,
-        generatedAt: new Date().toISOString(),
-        sourceTopic: newsTopic
-      };
+    // Get clean API key from environment
+    let apiKey = process.env.GEMINI_API_KEY || config.ai.apiKey || '';
+    apiKey = apiKey.trim().replace(/^["'\s]+|["'\s]+$/g, '');
+    
+    if (!apiKey || apiKey.length < 30) {
+      throw new Error(`Invalid API key (length: ${apiKey.length})`);
     }
 
-    // Add OpenAI/Claude support here if needed
-    throw new Error(`Unsupported AI provider: ${config.ai.provider}`);
+    console.log(`🔑 API Key: ${apiKey.substring(0, 12)}...${apiKey.substring(apiKey.length - 3)} (${apiKey.length} chars)`);
+    
+    // Use Gemini v1beta REST API
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+    
+    console.log(`📡 Calling: https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent`);
+
+    const response = await axios.post(
+      apiUrl,
+      {
+        contents: [{
+          parts: [{ text: prompt }]
+        }]
+      },
+      {
+        headers: { 'Content-Type': 'application/json' },
+        timeout: 30000
+      }
+    );
+
+    if (!response.data || !response.data.candidates || !response.data.candidates[0]) {
+      throw new Error('Invalid API response structure');
+    }
+
+    const text = response.data.candidates[0].content.parts[0].text;
+    
+    // Parse JSON from response
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      throw new Error('AI did not return valid JSON');
+    }
+    
+    const article = JSON.parse(jsonMatch[0]);
+    const wordCount = article.content.split(/\s+/).length;
+    
+    console.log(`✅ Generated: ${wordCount} words`);
+    
+    return {
+      ...article,
+      wordCount,
+      generatedAt: new Date().toISOString(),
+      sourceTopic: newsTopic
+    };
 
   } catch (error) {
-    console.error(`❌ Error generating article:`, error.message);
-    
-    // Fallback: Return template article for testing
-    if (process.env.NODE_ENV === 'development') {
-      return {
-        title: title.substring(0, 60),
-        excerpt: description || 'Latest financial news analysis for Indian investors...',
-        content: `## Introduction\n\n${description}\n\n## Market Impact\n\nThis development has significant implications for Indian investors...\n\n## What It Means for You\n\nHere's how this affects your portfolio...`,
-        seoKeywords: keywords,
-        readingTime: '8 mins',
-        focusKeywords: [keywords[0]],
-        wordCount: 200,
-        generatedAt: new Date().toISOString(),
-        sourceTopic: newsTopic
-      };
+    console.error(`❌ Generation failed:`, error.message);
+    if (error.response) {
+      console.error(`   Status: ${error.response.status}`);
+      console.error(`   Data:`, JSON.stringify(error.response.data).substring(0, 200));
     }
-    
     throw error;
   }
 }
 
 /**
  * Generate multiple articles
- * @param {Array} newsTopics - Array of news topics
- * @returns {Promise<Array>} Array of generated articles
+ * @param {Array} newsTopics - News topics
+ * @returns {Promise<Array>} Generated articles
  */
 async function generateArticles(newsTopics) {
   console.log('═══════════════════════════════════════════════════════════════════════');
-  console.log('🤖 GENERATING AI ARTICLES');
+  console.log('🤖 GENERATING AI ARTICLES (PURE REST API)');
   console.log('═══════════════════════════════════════════════════════════════════════\n');
 
   const articles = [];
@@ -189,17 +117,19 @@ async function generateArticles(newsTopics) {
       const article = await generateArticle(topic);
       articles.push(article);
       
-      // Rate limiting: Wait 2 seconds between API calls
+      // Rate limiting
       if (index < newsTopics.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        console.log('⏳ Waiting 3 seconds (rate limit)...');
+        await new Promise(resolve => setTimeout(resolve, 3000));
       }
     } catch (error) {
-      console.error(`❌ Failed to generate article for "${topic.title}":`, error.message);
-      // Continue with other articles
+      console.error(`❌ Failed: "${topic.title.substring(0, 50)}..."`);
+      console.error(`   Error: ${error.message}`);
+      // Continue with others
     }
   }
 
-  console.log(`\n✅ TOTAL ARTICLES GENERATED: ${articles.length}/${newsTopics.length}`);
+  console.log(`\n✅ TOTAL GENERATED: ${articles.length}/${newsTopics.length}`);
   console.log('═══════════════════════════════════════════════════════════════════════\n');
 
   return articles;
@@ -209,5 +139,3 @@ module.exports = {
   generateArticle,
   generateArticles
 };
-
-
