@@ -15,11 +15,15 @@
     "generate-sitemaps": "node scripts/build-complete-learn-urls.cjs && node scripts/extract-all-routes-from-code.cjs && node scripts/merge-all-urls.cjs && node scripts/generate-sitemaps-production.cjs",
     "deploy": "node deploy.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
+    "publish-news": "node scripts/auto-news-publisher/main.js",
+    "test-news-system": "NODE_ENV=development node scripts/auto-news-publisher/main.js",
     "lhci:autorun": "lhci autorun"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.1.3",
     "@types/react-helmet-async": "^1.0.1",
     "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
     "chart.js": "^4.5.0",
     "d3": "^7.8.5",
     "firebase": "^11.10.0",
