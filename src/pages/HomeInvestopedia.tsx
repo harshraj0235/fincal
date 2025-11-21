@@ -216,6 +216,101 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
+        {/* Resources Section - New */}
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-10">
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <FolderOpen className="w-8 h-8 text-green-600" />
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Resources & Learning</h2>
+                </div>
+                <p className="text-gray-600 text-lg">Educational content, guides, news, and government schemes</p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { 
+                  name: 'Learn', 
+                  path: '/learn', 
+                  icon: BookOpen, 
+                  desc: '40+ expert lessons on loans, investments, taxes, and personal finance', 
+                  count: '40+',
+                  bgColor: 'bg-emerald-50',
+                  gradient: 'bg-gradient-to-br from-emerald-50 to-green-50'
+                },
+                { 
+                  name: 'Blog', 
+                  path: '/blog', 
+                  icon: FileText, 
+                  desc: '150+ articles on financial planning, investment strategies, and tips', 
+                  count: '150+',
+                  bgColor: 'bg-blue-50',
+                  gradient: 'bg-gradient-to-br from-blue-50 to-indigo-50'
+                },
+                { 
+                  name: 'News', 
+                  path: '/news', 
+                  icon: Newspaper, 
+                  desc: 'Latest financial news, market updates, and economic insights', 
+                  count: '100+',
+                  bgColor: 'bg-red-50',
+                  gradient: 'bg-gradient-to-br from-red-50 to-pink-50'
+                },
+                { 
+                  name: 'Government Schemes', 
+                  path: '/government-schemes', 
+                  icon: Gift, 
+                  desc: 'Complete guide to government schemes, benefits, and eligibility', 
+                  count: '50+',
+                  bgColor: 'bg-yellow-50',
+                  gradient: 'bg-gradient-to-br from-yellow-50 to-orange-50'
+                },
+                { 
+                  name: 'Crypto', 
+                  path: '/crypto', 
+                  icon: Coins, 
+                  desc: 'Cryptocurrency guides, tax calculator, and investment insights', 
+                  count: '30+',
+                  bgColor: 'bg-purple-50',
+                  gradient: 'bg-gradient-to-br from-purple-50 to-violet-50'
+                },
+                { 
+                  name: 'Astro Finance', 
+                  path: '/astro-finance', 
+                  icon: Sparkles, 
+                  desc: 'Astrological insights for financial decisions and auspicious dates', 
+                  count: '13+',
+                  bgColor: 'bg-indigo-50',
+                  gradient: 'bg-gradient-to-br from-indigo-50 to-purple-50'
+                },
+              ].map((resource, idx) => {
+                const Icon = resource.icon;
+                return (
+                  <Link
+                    key={idx}
+                    to={resource.path}
+                    className={`group relative overflow-hidden rounded-xl ${resource.gradient} border-2 border-gray-200 hover:border-gray-400 p-6 hover:shadow-xl transition-all transform hover:-translate-y-1`}
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`w-14 h-14 ${resource.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform border-2 border-white`}>
+                        <Icon className={`w-7 h-7 text-gray-700 group-hover:text-gray-900 transition-colors`} />
+                      </div>
+                      <span className="text-xs font-semibold bg-white/80 text-gray-700 px-3 py-1 rounded-full backdrop-blur-sm">{resource.count}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-900 transition-colors">{resource.name}</h3>
+                    <p className="text-sm text-gray-700 mb-4 line-clamp-2">{resource.desc}</p>
+                    <div className="flex items-center text-sm font-medium text-gray-700">
+                      Explore <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* Popular Calculators - Quick Access */}
         <section className="py-12 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
