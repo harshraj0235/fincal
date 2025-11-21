@@ -2,9 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global smooth scrolling for all devices */
+/* Global Styles - Clean White Theme */
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -47,7 +65,26 @@ html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
-  
+
+  /* Custom scrollbar for webkit browsers */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f9fafb;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+
   /* Safe area insets for modern mobile devices */
   .safe-area-inset-top {
     padding-top: env(safe-area-inset-top);
@@ -56,7 +93,7 @@ html {
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom);
   }
-  
+
   /* Sticky navigation optimization */
   .sticky-nav {
     position: sticky;
@@ -64,7 +101,7 @@ html {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  
+
   /* iOS safe area support */
   .safe-area-inset {
     padding-left: env(safe-area-inset-left);
@@ -93,8 +130,9 @@ html {
 
   /* Better focus states for accessibility & mobile */
   .focus-visible:focus-visible {
-    outline: 2px solid #3b82f6;
+    outline: 2px solid #2563eb;
     outline-offset: 2px;
+    border-radius: 4px;
   }
 
   /* Smooth transitions for interactions */
@@ -104,23 +142,68 @@ html {
 
   /* Active states for mobile tap feedback */
   .active-scale:active {
-    transform: scale(0.95);
+    transform: scale(0.98);
   }
 
   /* Prevent text overflow */
   .text-truncate-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
   .text-truncate-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Link styles */
+  .link-primary {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .link-primary:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+  }
+
+  /* Button base styles */
+  .btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+  .btn-primary {
+    background-color: #2563eb;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #1d4ed8;
+  }
+
+  .btn-secondary {
+    background-color: #f3f4f6;
+    color: #1f2937;
+  }
+
+  .btn-secondary:hover {
+    background-color: #e5e7eb;
+  }
 }
 
 /* Reduced motion support (Accessibility) */
@@ -152,10 +235,43 @@ html {
     opacity: 1;
   }
   50% {
-  opacity: 0.5;
-}
+    opacity: 0.5;
+  }
 }
 
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Skeleton loading animation */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f3f4f6 0px, #e5e7eb 40px, #f3f4f6 80px);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* Performance optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 }

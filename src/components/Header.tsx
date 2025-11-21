@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, 
   Search, 
   Calculator, 
-  TrendingUp, 
-  FileText, 
-  Settings,
-  MessageCircle,
-  Sparkles,
-  Shield
+  X,
+  ChevronDown
 } from 'lucide-react';
 
 interface HeaderProps {
@@ -20,182 +16,191 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState<string | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'All Tools', href: '/tools', icon: Calculator },
-    { name: 'Calculators', href: '/calculators', icon: Calculator },
-    { name: 'Finance Tools', href: '/finance-tools', icon: TrendingUp },
-    { name: 'Tax Tools', href: '/tax-tools', icon: FileText },
-    { name: 'GST Tools', href: '/gst-tools', icon: FileText },
-    { name: 'Corporate Finance', href: '/corporate-finance', icon: TrendingUp },
-    { name: 'Insurance', href: '/insurance-tools', icon: Shield },
-    { name: 'Festival', href: '/festival-tools', icon: Sparkles },
-    { name: 'Blog', href: '/blog', icon: FileText },
-    { name: 'Education', href: '/financial-education', icon: FileText },
-    { name: 'Help', href: '/help-center', icon: MessageCircle },
-    { name: 'Schemes', href: '/government-schemes', icon: Settings },
-    { name: 'Astro', href: '/astro-finance', icon: Sparkles },
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setIsSearchOpen(false);
+      setSearchQuery('');
+    }
+  };
+
+  const mainNavItems = [
+    { name: 'Calculators', href: '/calculators', submenu: [
+      { name: 'EMI Calculator', href: '/calculators/emi-calculator' },
+      { name: 'SIP Calculator', href: '/calculators/sip-calculator' },
+      { name: 'Income Tax', href: '/calculators/income-tax-calculator' },
+      { name: 'All Calculators', href: '/calculators' }
+    ]},
+    { name: 'Tools', href: '/tools', submenu: [
+      { name: 'Finance Tools', href: '/finance-tools' },
+      { name: 'Tax Tools', href: '/tax-tools' },
+      { name: 'GST Tools', href: '/gst-tools' },
+      { name: 'Excel Tools', href: '/exceltool' }
+    ]},
+    { name: 'Learn', href: '/learn' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'News', href: '/news' },
+    { name: 'Schemes', href: '/government-schemes' }
   ];
 
+  const isActive = (href: string) => {
+    if (href === '/') return location.pathname === '/';
+    return location.pathname.startsWith(href);
+  };
+
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-white/20' 
-          : 'bg-transparent'
+          ? 'bg-white shadow-sm border-b border-gray-100' 
+          : 'bg-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center"
+          <Link 
+            to="/" 
+            className="flex items-center space-x-2 flex-shrink-0"
+            aria-label="MoneyCal.in Home"
           >
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <Calculator className="w-6 h-6 text-white" />
-                </div>
-                <motion.div
-                  animate={{ 
-                    rotate: [0, 360],
-                    scale: [1, 1.2, 1]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"
-                />
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  MoneyCal.in
-                </h1>
-                <p className="text-xs text-gray-600">Smart Financial Tools</p>
-              </div>
+            <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
+              <Calculator className="w-5 h-5 text-white" />
+            </div>
+            <div className="hidden sm:block">
+              <h1 className="text-xl font-semibold text-gray-900">
+                MoneyCal.in
+              </h1>
+            </div>
           </Link>
-          </motion.div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isActive = location.pathname === item.href || 
-                             (item.href === '/calculators' && location.pathname.includes('/calculators')) ||
-                             (item.href === '/astro-finance' && location.pathname.includes('/astro-finance'));
+          <nav className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
+            {mainNavItems.map((item) => {
+              const hasSubmenu = item.submenu && item.submenu.length > 0;
               
               return (
-                <motion.div
+                <div
                   key={item.name}
-                  whileHover={{ y: -2 }}
                   className="relative"
+                  onMouseEnter={() => hasSubmenu && setIsDropdownOpen(item.name)}
+                  onMouseLeave={() => setIsDropdownOpen(null)}
                 >
-                            <Link
+                  <Link
                     to={item.href}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${
-                      isActive
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      isActive(item.href)
+                        ? 'text-blue-600 bg-blue-50'
+                        : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
-                    <span className="font-medium">{item.name}</span>
-                            </Link>
-                  {isActive && (
+                    <span className="flex items-center space-x-1">
+                      <span>{item.name}</span>
+                      {hasSubmenu && (
+                        <ChevronDown className="w-4 h-4" />
+                      )}
+                    </span>
+                  </Link>
+                  
+                  {/* Dropdown Menu */}
+                  {hasSubmenu && isDropdownOpen === item.name && (
                     <motion.div
-                      layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-                    />
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2"
+                    >
+                      {item.submenu?.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.href}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                          onClick={() => setIsDropdownOpen(null)}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </motion.div>
                   )}
-                </motion.div>
+                </div>
               );
             })}
           </nav>
           
           {/* Right Side Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 flex-shrink-0">
             {/* Search Button */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+            <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="p-2 rounded-xl bg-gray-100 hover:bg-blue-100 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Search"
             >
               <Search className="w-5 h-5 text-gray-600" />
-            </motion.button>
-
-            {/* WhatsApp Button */}
-            <motion.a
-              href="https://whatsapp.com/channel/0029Va4h1t39Gv7TgnHsR31j"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-xl bg-green-500 hover:bg-green-600 transition-colors"
-            >
-              <MessageCircle className="w-5 h-5 text-white" />
-            </motion.a>
+            </button>
 
             {/* Mobile Menu Button */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+            <button
               onClick={onMenuClick}
-              className="lg:hidden p-2 rounded-xl bg-gray-100 hover:bg-blue-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Menu"
             >
               <Menu className="w-6 h-6 text-gray-600" />
-            </motion.button>
+            </button>
+          </div>
         </div>
       </div>
       
-        {/* Search Bar */}
-        <AnimatePresence>
-          {isSearchOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="bg-white border-t border-gray-200 py-4"
-            >
-              <div className="max-w-2xl mx-auto px-4">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search calculators, tools, and more..."
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-          </div>
-        </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Progress Bar */}
-      <motion.div
-        className="h-1 bg-gradient-to-r from-blue-600 to-purple-600"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: isScrolled ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        style={{ transformOrigin: 'left' }}
-      />
-    </motion.header>
+      {/* Search Bar */}
+      <AnimatePresence>
+        {isSearchOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="bg-white border-t border-gray-100"
+          >
+            <div className="max-w-3xl mx-auto px-4 py-4">
+              <form onSubmit={handleSearch} className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search calculators, tools, articles..."
+                  className="w-full pl-10 pr-12 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                  autoFocus
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsSearchOpen(false);
+                    setSearchQuery('');
+                  }}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 p-1 hover:bg-gray-100 rounded"
+                  aria-label="Close search"
+                >
+                  <X className="w-4 h-4 text-gray-400" />
+                </button>
+              </form>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 
