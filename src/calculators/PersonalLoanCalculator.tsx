@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { Sliders, Calculator, PieChart, Calendar } from 'lucide-react';
 import { ResultChart } from '../components/ResultChart';
@@ -6,6 +7,21 @@ import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper
 import { CalculatorSchema } from '../components/CalculatorSchema';
 
 export const PersonalLoanCalculator: React.FC = () => {
+  // Quick presets for common personal loan scenarios
+  const personalLoanPresets = [
+    { name: "₹2L Loan", amount: 200000, rate: 12, tenure: 3, type: 'years' as const, income: 50000 },
+    { name: "₹5L Loan", amount: 500000, rate: 13, tenure: 3, type: 'years' as const, income: 75000 },
+    { name: "₹10L Loan", amount: 1000000, rate: 11.5, tenure: 5, type: 'years' as const, income: 150000 },
+    { name: "Medical Emergency", amount: 300000, rate: 11.5, tenure: 2, type: 'years' as const, income: 60000 }
+  ];
+
+  const applyPreset = (preset: typeof personalLoanPresets[0]) => {
+    setLoanAmount(preset.amount);
+    setInterestRate(preset.rate);
+    setLoanTenure(preset.tenure);
+    setTenureType(preset.type);
+    setMonthlyIncome(preset.income);
+  };
   const [loanAmount, setLoanAmount] = useState<number>(500000);
   const [interestRate, setInterestRate] = useState<number>(14);
   const [loanTenure, setLoanTenure] = useState<number>(3);
@@ -59,6 +75,23 @@ export const PersonalLoanCalculator: React.FC = () => {
           <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
           Personal Loan Details
         </h2>
+        
+        {/* Quick Presets for Common Personal Loan Scenarios */}
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 mb-4">
+          <p className="text-sm font-medium text-neutral-700 mb-2">Quick Presets (Common Scenarios):</p>
+          <div className="flex flex-wrap gap-2">
+            {personalLoanPresets.map((preset, idx) => (
+              <button
+                key={idx}
+                onClick={() => applyPreset(preset)}
+                className="px-3 py-1.5 text-xs bg-white border border-blue-200 rounded-md hover:bg-blue-100 hover:border-blue-300 transition-colors text-neutral-700 font-medium"
+              >
+                {preset.name}
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-neutral-600 mt-2">Click any preset to auto-fill with typical values</p>
+        </div>
         
         <div className="space-y-4">
           <div>
@@ -269,6 +302,30 @@ export const PersonalLoanCalculator: React.FC = () => {
     </div>
       <div className="mx-auto max-w-5xl px-4 mt-12">
         <CalculatorContentWrapper {...contentData} />
+        
+        {/* Additional Comprehensive Content Section - Personal Loan Analysis 2025 */}
+        <div className="mt-12 bg-white rounded-xl shadow-sm p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Personal Loan Calculator India 2025: Latest Rates, Trends & Complete Guide</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-6">
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Current Personal Loan Interest Rates in India (2025)</h3>
+              <p className="leading-relaxed mb-4">
+                Personal loan interest rates in India for 2025 range from <strong>10% to 18% per annum</strong> depending on lender, credit score, loan amount, and employment type. PSU banks (SBI, BOB, PNB) typically offer 10.5-13% for salaried individuals with good credit scores (750+). Private banks (HDFC Bank, ICICI Bank, Axis Bank) offer 11.5-14% with faster processing. NBFCs offer 13-18% with more flexible eligibility but higher rates.
+              </p>
+              <p className="leading-relaxed mb-4">
+                Factors affecting interest rate: <strong>Credit Score</strong> - 750+ gets best rates (10-12%), 700-750 gets 12-14%, below 700 gets 14-18% or rejection. <strong>Loan Amount</strong> - Loans above ₹5L often get 0.5-1% lower rates. <strong>Employment</strong> - Salaried employees get better rates than self-employed. <strong>Existing Relationship</strong> - Existing bank customers get 0.5-1% discount. Use our <Link to="/calculators/loan-comparison-calculator" className="text-primary-700 underline font-semibold">Loan Comparison Calculator</Link> to compare rates from multiple lenders.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Related Calculators for Complete Loan Planning</h3>
+              <p className="leading-relaxed mb-4">
+                Comprehensive loan planning requires multiple calculators. Use our <Link to="/calculators/emi-calculator" className="text-primary-700 underline font-semibold">EMI Calculator</Link> for general loan EMI calculations. Our <Link to="/calculators/loan-affordability-calculator" className="text-primary-700 underline font-semibold">Loan Affordability Calculator</Link> helps determine maximum loan eligibility. For comparing with other loan types, use our <Link to="/calculators/home-loan-calculator" className="text-primary-700 underline font-semibold">Home Loan Calculator</Link> and <Link to="/calculators/car-loan-calculator" className="text-primary-700 underline font-semibold">Car Loan Calculator</Link>.
+              </p>
+            </section>
+          </div>
+        </div>
       </div>
     </>
   );
