@@ -331,10 +331,10 @@ export const HomeLoanCalculator: React.FC = () => {
             <section>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">PMAY Scheme: Interest Subsidy for Affordable Housing</h3>
               <p className="leading-relaxed mb-4">
-                Pradhan Mantri Awas Yojana (PMAY) provides interest subsidy on home loans for eligible beneficiaries. <strong>CLSS (Credit Linked Subsidy Scheme)</strong> offers: ₹2.67L interest subsidy for EWS/LIG (income <₹18L, loan up to ₹9L), ₹2.3L subsidy for MIG-I (income ₹12-18L, loan up to ₹12L), ₹2.35L subsidy for MIG-II (income ₹18-25L, loan up to ₹12L). Subsidy is credited upfront to loan account, reducing effective interest rate and EMI.
+                Pradhan Mantri Awas Yojana (PMAY) provides interest subsidy on home loans for eligible beneficiaries. <strong>CLSS (Credit Linked Subsidy Scheme)</strong> offers: ₹2.67L interest subsidy for EWS/LIG (income &lt;₹18L, loan up to ₹9L), ₹2.3L subsidy for MIG-I (income ₹12-18L, loan up to ₹12L), ₹2.35L subsidy for MIG-II (income ₹18-25L, loan up to ₹12L). Subsidy is credited upfront to loan account, reducing effective interest rate and EMI.
               </p>
               <p className="leading-relaxed mb-4">
-                Eligibility: Annual household income <₹18L (EWS/LIG) or ₹12-25L (MIG), First-time homebuyer, Property cost <₹45L (EWS/LIG) or ₹65L (MIG), Property in eligible cities/towns. Benefits: Effective interest rate reduces to 4-6% after subsidy, Lower EMI burden, Faster loan repayment. Check PMAY eligibility and apply through participating banks/HFCs.
+                Eligibility: Annual household income &lt;₹18L (EWS/LIG) or ₹12-25L (MIG), First-time homebuyer, Property cost &lt;₹45L (EWS/LIG) or &lt;₹65L (MIG), Property in eligible cities/towns. Benefits: Effective interest rate reduces to 4-6% after subsidy, Lower EMI burden, Faster loan repayment. Check PMAY eligibility and apply through participating banks/HFCs.
               </p>
             </section>
 
