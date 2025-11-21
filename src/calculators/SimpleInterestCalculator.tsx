@@ -50,6 +50,31 @@ export const SimpleInterestCalculator: React.FC = () => {
       <p className="text-lg text-center text-gray-700 mb-8">Calculate interest using SI = (P × R × T) / 100 formula</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
     <div className="p-6">
+      {/* Quick Presets */}
+      <div className="bg-[--primary-50] p-4 rounded-lg border border-[--primary-100] mb-6">
+        <h3 className="text-sm font-semibold text-[--primary-900] mb-3">Quick Presets (2025-2027)</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {[
+            { label: 'FD 1 Year', p: 100000, r: 7, t: 1 },
+            { label: 'FD 3 Years', p: 500000, r: 7.5, t: 3 },
+            { label: 'Car Loan', p: 500000, r: 10, t: 5 },
+            { label: 'Gold Loan', p: 100000, r: 12, t: 0.5 },
+            { label: 'Short FD', p: 200000, r: 6.5, t: 1.5 },
+          ].map((preset, idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                setPrincipal(preset.p);
+                setRate(preset.r);
+                setTime(preset.t);
+              }}
+              className="px-3 py-2 text-xs font-medium bg-white border border-[--primary-200] rounded-md hover:bg-[--primary-100] hover:border-[--primary-300] transition-colors text-[--primary-700]"
+            >
+              {preset.label}
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="grid gap-6">
         <div className="space-y-2">
           <label htmlFor="principal" className="block text-sm font-medium text-gray-700">
