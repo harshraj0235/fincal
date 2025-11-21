@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
   Calculator, Search, TrendingUp, BookOpen, FileText, 
   ArrowRight, Star, Zap, Shield, Award, ChevronRight,
-  DollarSign, Building, TrendingDown, Home, PiggyBank,
-  Target, BarChart3, Gift, Umbrella, HelpCircle,
-  Rocket, Calendar, Tag, CheckCircle, Clock, Users,
-  CreditCard, Building2, Briefcase, Car, Heart, GraduationCap,
-  TrendingUp as TrendingUpIcon, Filter, Grid, List, X, Wrench,
-  Newspaper, Coins, FolderOpen, Sparkles
+  DollarSign, Building, Home, PiggyBank,
+  Target, BarChart3, Gift, Umbrella,
+  Rocket, Calendar, CheckCircle, Users,
+  CreditCard, Building2, Briefcase, Heart, GraduationCap,
+  Filter, Grid, List, X, Wrench,
+  Newspaper, Coins, FolderOpen, Sparkles, Menu
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { calculatorCategories } from '../data/calculatorData';
@@ -67,7 +67,7 @@ const HomeInvestopedia: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [activeTab, setActiveTab] = useState<'calculators' | 'tools' | 'resources'>('calculators');
   const navigate = useNavigate();
 
   const searchDatabase = useMemo(() => buildSearchDatabase(), []);
@@ -81,7 +81,7 @@ const HomeInvestopedia: React.FC = () => {
         item.keywords?.toLowerCase().includes(query) ||
         item.description?.toLowerCase().includes(query) ||
         item.path.toLowerCase().includes(query)
-      ).slice(0, 12);
+      ).slice(0, 10);
     }
     return [];
   }, [searchQuery, searchDatabase]);
@@ -109,16 +109,16 @@ const HomeInvestopedia: React.FC = () => {
     return calculatorCategories.filter(cat => cat.id === selectedCategory);
   }, [selectedCategory]);
 
-  // Popular calculators (most used)
+  // Popular calculators
   const popularCalculators = [
-    { id: 'emi-calculator', name: 'EMI Calculator', path: '/calculators/emi-calculator', icon: Calculator, desc: 'Calculate loan EMI instantly' },
-    { id: 'sip-calculator', name: 'SIP Calculator', path: '/calculators/sip-calculator', icon: TrendingUp, desc: 'Plan your SIP investments' },
-    { id: 'income-tax-calculator', name: 'Income Tax Calculator', path: '/calculators/income-tax-calculator', icon: FileText, desc: 'Calculate income tax liability' },
-    { id: 'gst-calculator', name: 'GST Calculator', path: '/calculators/gst-calculator', icon: DollarSign, desc: 'Calculate GST amount' },
-    { id: 'ppf-calculator', name: 'PPF Calculator', path: '/calculators/ppf-calculator', icon: PiggyBank, desc: 'Plan your PPF investment' },
-    { id: 'home-loan-calculator', name: 'Home Loan Calculator', path: '/calculators/home-loan-calculator', icon: Home, desc: 'Calculate home loan EMI' },
-    { id: 'fd-calculator', name: 'FD Calculator', path: '/calculators/fd-calculator', icon: Building2, desc: 'Fixed deposit calculator' },
-    { id: 'retirement-calculator', name: 'Retirement Calculator', path: '/calculators/retirement-calculator', icon: Umbrella, desc: 'Plan your retirement' },
+    { id: 'emi-calculator', name: 'EMI Calculator', path: '/calculators/emi-calculator', icon: Calculator },
+    { id: 'sip-calculator', name: 'SIP Calculator', path: '/calculators/sip-calculator', icon: TrendingUp },
+    { id: 'income-tax-calculator', name: 'Income Tax', path: '/calculators/income-tax-calculator', icon: FileText },
+    { id: 'gst-calculator', name: 'GST Calculator', path: '/calculators/gst-calculator', icon: DollarSign },
+    { id: 'ppf-calculator', name: 'PPF Calculator', path: '/calculators/ppf-calculator', icon: PiggyBank },
+    { id: 'home-loan-calculator', name: 'Home Loan', path: '/calculators/home-loan-calculator', icon: Home },
+    { id: 'fd-calculator', name: 'FD Calculator', path: '/calculators/fd-calculator', icon: Building2 },
+    { id: 'retirement-calculator', name: 'Retirement', path: '/calculators/retirement-calculator', icon: Umbrella },
   ];
 
   const totalCalculators = calculatorCategories.reduce((sum, cat) => sum + cat.calculators.length, 0);
@@ -133,216 +133,131 @@ const HomeInvestopedia: React.FC = () => {
       />
 
       <div className="min-h-screen bg-white">
-        {/* Hero Section - Lightweight & Clean */}
-        <section className="bg-gradient-to-b from-white to-gray-50 border-b border-gray-100 pt-24 pb-12">
+        {/* Hero Section - Compact */}
+        <section className="bg-white border-b border-gray-100 pt-20 pb-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+            <div className="text-center mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
                 Free Financial Calculators
-                <br />
-                <span className="text-blue-600">for India</span>
+                <span className="text-blue-600"> for India</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Calculate EMI, SIP, Income Tax, GST, PPF, FD, and more. {totalCalculators}+ free tools, expert guides, trusted by 1M+ users.
+              <p className="text-base md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                {totalCalculators}+ free tools • Expert guides • Trusted by 1M+ users
               </p>
 
-              {/* Enhanced Search Bar */}
-              <form onSubmit={handleSearch} className="max-w-3xl mx-auto mb-8 relative">
+              {/* Search Bar */}
+              <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-6 relative">
                 <div className="relative">
-                  <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search 100+ calculators, tools, articles..."
-                    className="w-full pl-14 pr-4 py-4 text-base md:text-lg border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm hover:shadow-md"
+                    placeholder="Search calculators, tools, articles..."
+                    className="w-full pl-12 pr-4 py-3 text-base border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
                   />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                     >
                       <X className="w-5 h-5" />
                     </button>
                   )}
                 </div>
 
-                {/* Enhanced Search Results */}
+                {/* Search Results */}
                 {showSearchResults && (
-                  <div className="absolute z-50 w-full mt-2 bg-white border border-gray-200 rounded-xl shadow-xl max-h-96 overflow-y-auto">
+                  <div className="absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-80 overflow-y-auto">
                     <div className="p-2">
                       {searchResults.map((result, idx) => (
                         <button
                           key={idx}
                           onClick={() => handleSearchItemClick(result.path)}
-                          className="w-full text-left px-4 py-3 hover:bg-blue-50 rounded-lg transition-colors flex items-start justify-between group"
+                          className="w-full text-left px-4 py-2.5 hover:bg-blue-50 rounded transition-colors flex items-center justify-between group"
                         >
-                          <div className="flex-1">
-                            <div className="font-medium text-gray-900 group-hover:text-blue-600">{result.name}</div>
-                            <div className="text-sm text-gray-500 mt-1">{result.category}</div>
-                            {result.description && (
-                              <div className="text-xs text-gray-400 mt-1 line-clamp-1">{result.description}</div>
-                            )}
+                          <div className="flex-1 min-w-0">
+                            <div className="font-medium text-gray-900 group-hover:text-blue-600 truncate">{result.name}</div>
+                            <div className="text-xs text-gray-500">{result.category}</div>
                           </div>
-                          <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 ml-4 flex-shrink-0" />
+                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 ml-2 flex-shrink-0" />
                         </button>
                       ))}
                     </div>
                   </div>
                 )}
               </form>
-
-              {/* Quick Stats */}
-              <div className="flex flex-wrap justify-center gap-8 text-center">
-                <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900">{totalCalculators}+</div>
-                  <div className="text-sm text-gray-600 mt-1">Calculators</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900">1M+</div>
-                  <div className="text-sm text-gray-600 mt-1">Users</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900">100%</div>
-                  <div className="text-sm text-gray-600 mt-1">Free</div>
-                </div>
-                <div>
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900">40+</div>
-                  <div className="text-sm text-gray-600 mt-1">Guides</div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Resources Section - New */}
-        <section className="py-16 bg-white border-b border-gray-100">
+        {/* Quick Access Tabs */}
+        <section className="bg-gray-50 border-b border-gray-100 sticky top-0 z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-10">
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <FolderOpen className="w-8 h-8 text-green-600" />
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Resources & Learning</h2>
-                </div>
-                <p className="text-gray-600 text-lg">Educational content, guides, news, and government schemes</p>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { 
-                  name: 'Learn', 
-                  path: '/learn', 
-                  icon: BookOpen, 
-                  desc: '40+ expert lessons on loans, investments, taxes, and personal finance', 
-                  count: '40+',
-                  bgColor: 'bg-emerald-50',
-                  gradient: 'bg-gradient-to-br from-emerald-50 to-green-50'
-                },
-                { 
-                  name: 'Blog', 
-                  path: '/blog', 
-                  icon: FileText, 
-                  desc: '150+ articles on financial planning, investment strategies, and tips', 
-                  count: '150+',
-                  bgColor: 'bg-blue-50',
-                  gradient: 'bg-gradient-to-br from-blue-50 to-indigo-50'
-                },
-                { 
-                  name: 'News', 
-                  path: '/news', 
-                  icon: Newspaper, 
-                  desc: 'Latest financial news, market updates, and economic insights', 
-                  count: '100+',
-                  bgColor: 'bg-red-50',
-                  gradient: 'bg-gradient-to-br from-red-50 to-pink-50'
-                },
-                { 
-                  name: 'Government Schemes', 
-                  path: '/government-schemes', 
-                  icon: Gift, 
-                  desc: 'Complete guide to government schemes, benefits, and eligibility', 
-                  count: '50+',
-                  bgColor: 'bg-yellow-50',
-                  gradient: 'bg-gradient-to-br from-yellow-50 to-orange-50'
-                },
-                { 
-                  name: 'Crypto', 
-                  path: '/crypto', 
-                  icon: Coins, 
-                  desc: 'Cryptocurrency guides, tax calculator, and investment insights', 
-                  count: '30+',
-                  bgColor: 'bg-purple-50',
-                  gradient: 'bg-gradient-to-br from-purple-50 to-violet-50'
-                },
-                { 
-                  name: 'Astro Finance', 
-                  path: '/astro-finance', 
-                  icon: Sparkles, 
-                  desc: 'Astrological insights for financial decisions and auspicious dates', 
-                  count: '13+',
-                  bgColor: 'bg-indigo-50',
-                  gradient: 'bg-gradient-to-br from-indigo-50 to-purple-50'
-                },
-              ].map((resource, idx) => {
-                const Icon = resource.icon;
-                return (
-                  <Link
-                    key={idx}
-                    to={resource.path}
-                    className={`group relative overflow-hidden rounded-xl ${resource.gradient} border-2 border-gray-200 hover:border-gray-400 p-6 hover:shadow-xl transition-all transform hover:-translate-y-1`}
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`w-14 h-14 ${resource.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform border-2 border-white`}>
-                        <Icon className={`w-7 h-7 text-gray-700 group-hover:text-gray-900 transition-colors`} />
-                      </div>
-                      <span className="text-xs font-semibold bg-white/80 text-gray-700 px-3 py-1 rounded-full backdrop-blur-sm">{resource.count}</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-900 transition-colors">{resource.name}</h3>
-                    <p className="text-sm text-gray-700 mb-4 line-clamp-2">{resource.desc}</p>
-                    <div className="flex items-center text-sm font-medium text-gray-700">
-                      Explore <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                );
-              })}
+            <div className="flex items-center justify-center gap-1 overflow-x-auto py-3">
+              <button
+                onClick={() => setActiveTab('calculators')}
+                className={`px-6 py-2.5 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
+                  activeTab === 'calculators'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <Calculator className="w-4 h-4 inline mr-2" />
+                Calculators ({totalCalculators}+)
+              </button>
+              <button
+                onClick={() => setActiveTab('tools')}
+                className={`px-6 py-2.5 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
+                  activeTab === 'tools'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <Wrench className="w-4 h-4 inline mr-2" />
+                Tools
+              </button>
+              <button
+                onClick={() => setActiveTab('resources')}
+                className={`px-6 py-2.5 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
+                  activeTab === 'resources'
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <FolderOpen className="w-4 h-4 inline mr-2" />
+                Resources
+              </button>
             </div>
           </div>
         </section>
 
-        {/* Popular Calculators - Quick Access */}
-        <section className="py-12 bg-white border-b border-gray-100">
+        {/* Popular Calculators - Always Visible */}
+        <section className="py-8 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Popular Calculators</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900">Popular Calculators</h2>
               <Link 
                 to="/calculators" 
-                className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 text-sm md:text-base"
+                className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
               >
                 View All <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
               {popularCalculators.map((calc) => {
                 const Icon = calc.icon;
                 return (
                   <Link
                     key={calc.id}
                     to={calc.path}
-                    className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all group"
+                    className="bg-white p-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all group text-center"
                   >
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0">
-                        <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                          <Icon className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors" />
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-sm font-semibold text-gray-900 mb-1 group-hover:text-blue-600 line-clamp-1">{calc.name}</h3>
-                        <p className="text-xs text-gray-600 line-clamp-2">{calc.desc}</p>
-                      </div>
+                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-blue-600 transition-colors">
+                      <Icon className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors" />
                     </div>
+                    <h3 className="text-xs font-semibold text-gray-900 group-hover:text-blue-600 line-clamp-2">{calc.name}</h3>
                   </Link>
                 );
               })}
@@ -350,283 +265,164 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* Category Filter & View Toggle */}
-        <section className="py-8 bg-gray-50 border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-              <div className="flex items-center gap-3">
-                <Filter className="w-5 h-5 text-gray-600" />
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">All Calculators</h2>
-                <span className="text-sm text-gray-500 bg-gray-200 px-2 py-1 rounded-full">{totalCalculators} tools</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-lg ${viewMode === 'grid' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
-                >
-                  <Grid className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-lg ${viewMode === 'list' ? 'bg-blue-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}
-                >
-                  <List className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              <button
-                onClick={() => setSelectedCategory(null)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === null
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                }`}
-              >
-                All Categories
-              </button>
-              {calculatorCategories.map((category) => {
-                const Icon = categoryIcons[category.name] || Calculator;
-                return (
+        {/* Tab Content */}
+        {activeTab === 'calculators' && (
+          <>
+            {/* Category Filter - Compact */}
+            <section className="py-4 bg-gray-50 border-b border-gray-100">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center gap-2 overflow-x-auto pb-2">
                   <button
-                    key={category.id}
-                    onClick={() => setSelectedCategory(category.id)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors flex items-center gap-2 ${
-                      selectedCategory === category.id
+                    onClick={() => setSelectedCategory(null)}
+                    className={`px-4 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
+                      selectedCategory === null
                         ? 'bg-blue-600 text-white'
                         : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
-                    {category.name} ({category.calculators.length})
+                    All
                   </button>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+                  {calculatorCategories.map((category) => {
+                    const Icon = categoryIcons[category.name] || Calculator;
+                    return (
+                      <button
+                        key={category.id}
+                        onClick={() => setSelectedCategory(category.id)}
+                        className={`px-4 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors flex items-center gap-1.5 ${
+                          selectedCategory === category.id
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                        }`}
+                      >
+                        <Icon className="w-3.5 h-3.5" />
+                        {category.name.split(' ')[0]} ({category.calculators.length})
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </section>
 
-        {/* All Calculators by Category */}
-        <section className="py-12 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {filteredCategories.map((category) => {
-              const CategoryIcon = categoryIcons[category.name] || Calculator;
-              return (
-                <div key={category.id} className="mb-12 last:mb-0">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
-                      <CategoryIcon className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900">{category.name}</h3>
-                      <p className="text-sm text-gray-600 mt-1">{category.description}</p>
-                    </div>
-                  </div>
-
-                  {viewMode === 'grid' ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                      {category.calculators.map((calc) => (
-                        <Link
-                          key={calc.id}
-                          to={`/calculators/${calc.id}`}
-                          className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all group"
-                        >
-                          <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 line-clamp-2">
-                            {calc.name}
-                          </h4>
-                          <p className="text-xs text-gray-600 line-clamp-2 mb-3">{calc.description}</p>
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-blue-600 font-medium">Use Calculator →</span>
-                            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600" />
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="space-y-2">
-                      {category.calculators.map((calc) => (
-                        <Link
-                          key={calc.id}
-                          to={`/calculators/${calc.id}`}
-                          className="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-sm transition-all group flex items-start justify-between"
-                        >
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-600">
+            {/* Calculators Grid - Compact */}
+            <section className="py-8 bg-white">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {filteredCategories.map((category) => {
+                  const CategoryIcon = categoryIcons[category.name] || Calculator;
+                  return (
+                    <div key={category.id} className="mb-8 last:mb-0">
+                      <div className="flex items-center gap-2 mb-4">
+                        <CategoryIcon className="w-5 h-5 text-blue-600" />
+                        <h3 className="text-lg font-bold text-gray-900">{category.name}</h3>
+                        <span className="text-xs text-gray-500">({category.calculators.length})</span>
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                        {category.calculators.map((calc) => (
+                          <Link
+                            key={calc.id}
+                            to={`/calculators/${calc.id}`}
+                            className="bg-white p-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all group"
+                          >
+                            <h4 className="font-semibold text-sm text-gray-900 mb-1 group-hover:text-blue-600 line-clamp-2">
                               {calc.name}
                             </h4>
-                            <p className="text-sm text-gray-600">{calc.description}</p>
-                            {calc.keywords && calc.keywords.length > 0 && (
-                              <div className="flex flex-wrap gap-1 mt-2">
-                                {calc.keywords.slice(0, 3).map((keyword, idx) => (
-                                  <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
-                                    {keyword}
-                                  </span>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                          <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 ml-4 flex-shrink-0" />
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Tools Section - Enhanced */}
-        <section className="py-16 bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-10">
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <Wrench className="w-8 h-8 text-blue-600" />
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Financial Tools</h2>
-                </div>
-                <p className="text-gray-600 text-lg">Specialized tools for finance, tax, GST, Excel, and banking</p>
-              </div>
-              <Link 
-                to="/tools" 
-                className="hidden sm:flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
-              >
-                View All Tools <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { 
-                  name: 'Finance Tools', 
-                  path: '/finance-tools', 
-                  icon: DollarSign, 
-                  desc: 'SIP calculators, mutual fund tools, portfolio analyzers, XIRR tracker', 
-                  count: '25+',
-                  color: 'from-blue-500 to-blue-600',
-                  bgColor: 'bg-blue-50'
-                },
-                { 
-                  name: 'Tax Tools', 
-                  path: '/tax-tools', 
-                  icon: FileText, 
-                  desc: 'Tax calculators, ITR helpers, deduction analyzers, capital gains', 
-                  count: '40+',
-                  color: 'from-green-500 to-green-600',
-                  bgColor: 'bg-green-50'
-                },
-                { 
-                  name: 'GST Tools', 
-                  path: '/gst-tools', 
-                  icon: Calculator, 
-                  desc: 'GST calculators, HSN finder, compliance tools, reverse GST', 
-                  count: '20+',
-                  color: 'from-purple-500 to-purple-600',
-                  bgColor: 'bg-purple-50'
-                },
-                { 
-                  name: 'Excel Tools', 
-                  path: '/excel-tools', 
-                  icon: BarChart3, 
-                  desc: 'Excel templates, formulas, financial spreadsheets, calculators', 
-                  count: '50+',
-                  color: 'from-orange-500 to-orange-600',
-                  bgColor: 'bg-orange-50'
-                },
-                { 
-                  name: 'Bank Tools', 
-                  path: '/bank-tools', 
-                  icon: Building2, 
-                  desc: 'IFSC finder, ATM locator, bank charges analyzer, holiday calendar', 
-                  count: '10+',
-                  color: 'from-cyan-500 to-cyan-600',
-                  bgColor: 'bg-cyan-50'
-                },
-                { 
-                  name: 'All Tools', 
-                  path: '/tools', 
-                  icon: Wrench, 
-                  desc: 'Browse all financial tools and utilities in one place', 
-                  count: '200+',
-                  color: 'from-indigo-500 to-indigo-600',
-                  bgColor: 'bg-indigo-50'
-                },
-              ].map((tool, idx) => {
-                const Icon = tool.icon;
-                return (
-                  <Link
-                    key={idx}
-                    to={tool.path}
-                    className="group relative overflow-hidden rounded-xl bg-white border-2 border-gray-200 hover:border-blue-500 p-6 hover:shadow-xl transition-all transform hover:-translate-y-1"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`w-14 h-14 ${tool.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                        <Icon className={`w-7 h-7 text-gray-700 group-hover:text-blue-600 transition-colors`} />
+                            <p className="text-xs text-gray-600 line-clamp-2">{calc.description}</p>
+                          </Link>
+                        ))}
                       </div>
-                      <span className="text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">{tool.count}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{tool.name}</h3>
-                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">{tool.desc}</p>
-                    <div className="flex items-center text-sm font-medium text-blue-600">
-                      Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+                  );
+                })}
+              </div>
+            </section>
+          </>
+        )}
 
-        {/* Features Section */}
-        <section className="py-16 bg-white">
+        {activeTab === 'tools' && (
+          <section className="py-8 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'Finance Tools', path: '/finance-tools', icon: DollarSign, count: '25+', color: 'bg-blue-50 text-blue-600' },
+                  { name: 'Tax Tools', path: '/tax-tools', icon: FileText, count: '40+', color: 'bg-green-50 text-green-600' },
+                  { name: 'GST Tools', path: '/gst-tools', icon: Calculator, count: '20+', color: 'bg-purple-50 text-purple-600' },
+                  { name: 'Excel Tools', path: '/excel-tools', icon: BarChart3, count: '50+', color: 'bg-orange-50 text-orange-600' },
+                  { name: 'Bank Tools', path: '/bank-tools', icon: Building2, count: '10+', color: 'bg-cyan-50 text-cyan-600' },
+                  { name: 'All Tools', path: '/tools', icon: Wrench, count: '200+', color: 'bg-indigo-50 text-indigo-600' },
+                ].map((tool, idx) => {
+                  const Icon = tool.icon;
+                  return (
+                    <Link
+                      key={idx}
+                      to={tool.path}
+                      className="bg-white p-4 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group"
+                    >
+                      <div className={`w-12 h-12 ${tool.color} rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-semibold text-sm text-gray-900 mb-1 group-hover:text-blue-600">{tool.name}</h3>
+                      <span className="text-xs text-gray-500">{tool.count}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {activeTab === 'resources' && (
+          <section className="py-8 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'Learn', path: '/learn', icon: BookOpen, count: '40+', color: 'bg-emerald-50 text-emerald-600' },
+                  { name: 'Blog', path: '/blog', icon: FileText, count: '150+', color: 'bg-blue-50 text-blue-600' },
+                  { name: 'News', path: '/news', icon: Newspaper, count: '100+', color: 'bg-red-50 text-red-600' },
+                  { name: 'Govt Schemes', path: '/government-schemes', icon: Gift, count: '50+', color: 'bg-yellow-50 text-yellow-600' },
+                  { name: 'Crypto', path: '/crypto', icon: Coins, count: '30+', color: 'bg-purple-50 text-purple-600' },
+                  { name: 'Astro Finance', path: '/astro-finance', icon: Sparkles, count: '13+', color: 'bg-indigo-50 text-indigo-600' },
+                ].map((resource, idx) => {
+                  const Icon = resource.icon;
+                  return (
+                    <Link
+                      key={idx}
+                      to={resource.path}
+                      className="bg-white p-4 rounded-lg border-2 border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all text-center group"
+                    >
+                      <div className={`w-12 h-12 ${resource.color} rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-semibold text-sm text-gray-900 mb-1">{resource.name}</h3>
+                      <span className="text-xs text-gray-500">{resource.count}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Features - Compact */}
+        <section className="py-12 bg-gray-50 border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Why Choose MoneyCal.in</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Why Choose MoneyCal.in</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: CheckCircle, title: '100% Free', desc: 'All tools and calculators are completely free forever' },
-                { icon: Shield, title: 'Secure & Private', desc: 'Your data is safe - we never store personal information' },
-                { icon: Award, title: 'Expert Verified', desc: 'All calculations verified by financial experts' },
-                { icon: Zap, title: 'Fast & Lightweight', desc: 'Lightning-fast calculations, optimized for speed' },
-                { icon: Star, title: 'Trusted', desc: 'Used by 1M+ users across India' },
-                { icon: Rocket, title: 'Always Updated', desc: 'Regularly updated with latest rates and rules' },
-                { icon: Users, title: 'Mobile Friendly', desc: 'Works perfectly on all devices' },
-                { icon: BookOpen, title: 'Learn & Grow', desc: '40+ expert guides to improve financial literacy' },
+                { icon: CheckCircle, title: '100% Free', desc: 'Completely free forever' },
+                { icon: Shield, title: 'Secure', desc: 'Your data is safe' },
+                { icon: Award, title: 'Expert Verified', desc: 'Verified calculations' },
+                { icon: Zap, title: 'Fast', desc: 'Lightning-fast tools' },
               ].map((feature, idx) => {
                 const Icon = feature.icon;
                 return (
-                  <div key={idx} className="bg-white p-6 rounded-lg border border-gray-200 text-center hover:shadow-md transition-shadow">
-                    <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-6 h-6 text-blue-600" />
+                  <div key={idx} className="bg-white p-4 rounded-lg border border-gray-200 text-center">
+                    <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <Icon className="w-5 h-5 text-blue-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-sm text-gray-600">{feature.desc}</p>
+                    <h3 className="font-semibold text-sm text-gray-900 mb-1">{feature.title}</h3>
+                    <p className="text-xs text-gray-600">{feature.desc}</p>
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
-            <p className="text-xl text-blue-100 mb-8">Explore {totalCalculators}+ free financial calculators and tools</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/calculators"
-                className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-              >
-                Browse All Calculators
-              </Link>
-              <Link
-                to="/learn"
-                className="px-8 py-4 bg-blue-800 text-white rounded-lg font-semibold hover:bg-blue-900 transition-colors border-2 border-white"
-              >
-                Start Learning
-              </Link>
             </div>
           </div>
         </section>
