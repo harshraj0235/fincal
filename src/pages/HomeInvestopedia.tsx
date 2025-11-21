@@ -6,7 +6,7 @@ import {
   DollarSign, Building, TrendingDown, Home, PiggyBank,
   Target, BarChart3, Gift, Umbrella, HelpCircle,
   Rocket, Calendar, Tag, CheckCircle, Clock, Users,
-  CreditCard, Bank, Briefcase, Car, Heart, GraduationCap,
+  CreditCard, Building2, Briefcase, Car, Heart, GraduationCap,
   TrendingUp as TrendingUpIcon, Filter, Grid, List, X
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
@@ -23,7 +23,7 @@ const categoryIcons: Record<string, any> = {
   'Business Calculators': Briefcase,
   'Property Calculators': Building,
   'Insurance Calculators': Heart,
-  'Banking & Finance Tools': Bank,
+  'Banking & Finance Tools': Building2,
   'FinTech & Payments': CreditCard,
   'Investments & Wealth Management': BarChart3,
   'Personal Finance': PiggyBank,
@@ -116,7 +116,7 @@ const HomeInvestopedia: React.FC = () => {
     { id: 'gst-calculator', name: 'GST Calculator', path: '/calculators/gst-calculator', icon: DollarSign, desc: 'Calculate GST amount' },
     { id: 'ppf-calculator', name: 'PPF Calculator', path: '/calculators/ppf-calculator', icon: PiggyBank, desc: 'Plan your PPF investment' },
     { id: 'home-loan-calculator', name: 'Home Loan Calculator', path: '/calculators/home-loan-calculator', icon: Home, desc: 'Calculate home loan EMI' },
-    { id: 'fd-calculator', name: 'FD Calculator', path: '/calculators/fd-calculator', icon: Bank, desc: 'Fixed deposit calculator' },
+    { id: 'fd-calculator', name: 'FD Calculator', path: '/calculators/fd-calculator', icon: Building2, desc: 'Fixed deposit calculator' },
     { id: 'retirement-calculator', name: 'Retirement Calculator', path: '/calculators/retirement-calculator', icon: Umbrella, desc: 'Plan your retirement' },
   ];
 
