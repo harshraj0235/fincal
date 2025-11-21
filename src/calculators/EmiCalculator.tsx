@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { Sliders, PieChart, Calendar, Info, ExternalLink } from 'lucide-react';
 import { ResultChart } from '../components/ResultChart';
@@ -176,10 +177,27 @@ export const EmiCalculator: React.FC = () => {
     </div>
   );
 
+  // Quick preset loan types with 2025 market rates
+  const loanPresets = [
+    { name: "Home Loan", amount: 5000000, rate: 8.75, tenure: 20, type: 'years' as const },
+    { name: "Car Loan", amount: 800000, rate: 9.25, tenure: 5, type: 'years' as const },
+    { name: "Personal Loan", amount: 500000, rate: 12.5, tenure: 3, type: 'years' as const },
+    { name: "Education Loan", amount: 1000000, rate: 9.5, tenure: 10, type: 'years' as const },
+    { name: "Business Loan", amount: 2000000, rate: 11.5, tenure: 5, type: 'years' as const }
+  ];
+
+  const applyPreset = (preset: typeof loanPresets[0]) => {
+    setLoanAmount(preset.amount);
+    setInterestRate(preset.rate);
+    setLoanTenure(preset.tenure);
+    setTenureType(preset.type);
+    setPrepayment(0);
+  };
+
   // Content data for CalculatorContentWrapper
   const contentData = {
     title: "EMI Calculator",
-    description: "An EMI (Equated Monthly Installment) Calculator helps you determine the monthly payment you need to make towards a loan. Whether it's a home loan, car loan, or personal loan, our EMI calculator provides instant, accurate calculations based on your loan amount, interest rate, and tenure. Understanding your EMI helps in better financial planning and ensures you choose a loan that fits your budget without straining your finances. This calculator uses the reducing balance method as per RBI guidelines and is updated for 2025.",
+    description: "An EMI (Equated Monthly Installment) Calculator is India's most trusted financial tool for calculating monthly loan payments. Whether you're planning a home loan for your dream house, a car loan for your vehicle, a personal loan for urgent expenses, an education loan for higher studies, or a business loan for your enterprise, our comprehensive EMI calculator provides instant, accurate calculations based on your loan amount, interest rate, and tenure. Understanding your EMI helps in better financial planning and ensures you choose a loan that fits your budget without straining your finances. This calculator uses the reducing balance method as per RBI guidelines and is updated with latest 2025 interest rates. Our EMI calculator works for all types of loans in India including home loans (8.5-10.5% interest), car loans (7-12% interest), personal loans (10-18% interest), education loans (8-15% interest), gold loans (9-12% interest), and business loans (10-16% interest). Calculate your EMI in seconds, compare different loan scenarios, understand total interest outgo, and make informed borrowing decisions with our free, accurate, and user-friendly EMI calculator.",
     
     benefits: [
       "Instant EMI calculation in seconds - no manual formulas needed",
@@ -254,13 +272,16 @@ export const EmiCalculator: React.FC = () => {
     ],
     
     tips: [
-      "Always maintain an emergency fund of 6 months' expenses before taking a loan - EMIs can severely strain finances if unexpected expenses arise like medical emergencies or job loss",
-      "Compare interest rates from at least 3-4 lenders including PSU banks (SBI, BOB, PNB), private banks (HDFC, ICICI, Axis), and NBFCs - even 0.5% difference saves lakhs over loan tenure",
-      "Opt for the shortest tenure you can comfortably afford - this drastically reduces total interest outgo, sometimes by 40-50%. A 15-year home loan can save ₹30-40L vs 25-year loan!",
-      "Use loan prepayment option whenever you have surplus funds - even ₹50K-1L annual prepayment can reduce tenure by 3-5 years and save lakhs in interest",
-      "Check your CIBIL score (aim for 750+) before applying - better scores get you 0.5-1.5% lower interest rates which translates to massive savings over tenure",
-      "Read loan agreement carefully for hidden charges like processing fees (0.5-2%), prepayment penalties (2-5%), part-payment restrictions, and foreclosure charges",
-      "Consider both fixed and floating rate options carefully - fixed rates offer stability (good when rates expected to rise), floating rates may decrease if RBI cuts repo rates"
+      "Always maintain an emergency fund of 6 months' expenses before taking a loan - EMIs can severely strain finances if unexpected expenses arise like medical emergencies or job loss. Use our Emergency Fund Calculator to determine how much you need.",
+      "Compare interest rates from at least 3-4 lenders including PSU banks (SBI, BOB, PNB), private banks (HDFC, ICICI, Axis), and NBFCs - even 0.5% difference saves lakhs over loan tenure. Use our Loan Comparison Calculator to compare multiple offers side by side.",
+      "Opt for the shortest tenure you can comfortably afford - this drastically reduces total interest outgo, sometimes by 40-50%. A 15-year home loan can save ₹30-40L vs 25-year loan! Calculate different tenure scenarios using this EMI calculator to see the impact.",
+      "Use loan prepayment option whenever you have surplus funds - even ₹50K-1L annual prepayment can reduce tenure by 3-5 years and save lakhs in interest. Check our Loan Prepayment Calculator to see exact savings.",
+      "Check your CIBIL score (aim for 750+) before applying - better scores get you 0.5-1.5% lower interest rates which translates to massive savings over tenure. A score above 750 can save you lakhs in interest over the loan tenure.",
+      "Read loan agreement carefully for hidden charges like processing fees (0.5-2%), prepayment penalties (2-5%), part-payment restrictions, and foreclosure charges. Factor these into your total cost calculation.",
+      "Consider both fixed and floating rate options carefully - fixed rates offer stability (good when rates expected to rise), floating rates may decrease if RBI cuts repo rates. As of 2025, most home loans in India use floating rates linked to MCLR or EBLR.",
+      "Calculate loan affordability before applying - your total EMI obligations (all loans combined) should not exceed 40-50% of your monthly take-home salary. Use our Loan Affordability Calculator to check how much you can borrow.",
+      "For home loans, consider tax benefits under Section 24(b) for interest deduction (up to ₹2 lakhs) and Section 80C for principal repayment (up to ₹1.5 lakhs). Use our Income Tax Calculator to see tax savings.",
+      "Keep track of your loan amortization schedule - initially 70-80% of EMI goes towards interest, only 20-30% towards principal. This changes over time as principal reduces. Understanding this helps in planning prepayments effectively."
     ],
     
     mistakes: [
@@ -353,6 +374,22 @@ export const EmiCalculator: React.FC = () => {
             <Sliders className="w-5 h-5 mr-2 text-primary-600" />
             Loan Details
           </h2>
+          {/* Quick Presets for 2025 Market Rates */}
+          <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <p className="text-sm font-medium text-neutral-700 mb-2">Quick Presets (2025 Rates):</p>
+            <div className="flex flex-wrap gap-2">
+              {loanPresets.map((preset, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => applyPreset(preset)}
+                  className="px-3 py-1.5 text-xs bg-white border border-blue-200 rounded-md hover:bg-blue-100 hover:border-blue-300 transition-colors text-neutral-700 font-medium"
+                >
+                  {preset.name}
+                </button>
+              ))}
+            </div>
+            <p className="text-xs text-neutral-600 mt-2">Click any preset to auto-fill with current market rates</p>
+          </div>
           <div className="space-y-4">
             {/* Loan Amount */}
             <div>
@@ -639,9 +676,86 @@ export const EmiCalculator: React.FC = () => {
         </div>
       </div>
 
-      {/* Educational Content Section - Adds 1000+ words for SEO */}
+      {/* Educational Content Section - Adds 1500+ words for SEO */}
       <div className="mx-auto max-w-5xl px-4 mt-12">
         <CalculatorContentWrapper {...contentData} />
+        
+        {/* Additional Comprehensive Content Section - Market Analysis & Trends 2025 */}
+        <div className="mt-12 bg-white rounded-xl shadow-sm p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">EMI Calculator India 2025: Latest Market Trends & Interest Rates</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-6">
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Current Interest Rate Scenario in India (2025)</h3>
+              <p className="leading-relaxed mb-4">
+                As of 2025, the Indian loan market has seen significant changes in interest rates across all loan categories. The Reserve Bank of India (RBI) has maintained a relatively stable monetary policy stance, with the repo rate hovering around 6.5-7%. This has directly impacted lending rates across banks and NBFCs. Home loan interest rates in India currently range from <strong>8.5% to 10.5% per annum</strong> for salaried individuals, with rates varying based on credit score, loan amount, and lender policies. Personal loans have higher interest rates ranging from <strong>10% to 18% per annum</strong>, while car loans typically range from <strong>7% to 12% per annum</strong>. Education loans for higher studies range from <strong>8% to 15% per annum</strong>, with government banks offering lower rates for premier institutions.
+              </p>
+              <p className="leading-relaxed mb-4">
+                The EMI calculator on this page uses the latest 2025 interest rate benchmarks to provide accurate calculations. When using this calculator, it's important to understand that actual rates may vary based on your credit profile, employment status, loan amount, and the lender's policies. We recommend comparing rates from multiple lenders including SBI, HDFC Bank, ICICI Bank, Axis Bank, Kotak Mahindra Bank, and other major banks before finalizing your loan decision.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Understanding EMI Calculation Formula: Reducing Balance Method</h3>
+              <p className="leading-relaxed mb-4">
+                The EMI (Equated Monthly Installment) calculation in India follows the reducing balance method, which is mandated by the Reserve Bank of India for home loans. The formula used is: <strong>EMI = [P × R × (1+R)^N] / [(1+R)^N - 1]</strong>, where P is the principal loan amount, R is the monthly interest rate (annual rate divided by 12 and then by 100), and N is the loan tenure in months. This formula ensures that each EMI payment consists of both principal and interest components, with the interest portion decreasing over time as the principal reduces.
+              </p>
+              <p className="leading-relaxed mb-4">
+                Our EMI calculator uses this exact formula to provide accurate results. The calculator shows you not just the monthly EMI amount, but also the total interest payable over the loan tenure, the total amount payable (principal + interest), and a year-wise breakup showing how much principal and interest you pay each year. This detailed breakdown helps you understand the true cost of borrowing and make informed financial decisions.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">How to Use EMI Calculator for Different Loan Types</h3>
+              <p className="leading-relaxed mb-4">
+                Our EMI calculator is versatile and works for all types of loans in India. For <strong>home loan EMI calculation</strong>, enter the loan amount (typically 75-90% of property value), current home loan interest rate (8.5-10.5% in 2025), and tenure (up to 30 years). For <strong>car loan EMI calculation</strong>, enter the vehicle loan amount, car loan interest rate (7-12% in 2025), and tenure (typically 1-7 years). For <strong>personal loan EMI calculation</strong>, enter the personal loan amount, interest rate (10-18% in 2025), and tenure (typically 1-5 years).
+              </p>
+              <p className="leading-relaxed mb-4">
+                The calculator also works for education loans, business loans, gold loans, and other secured and unsecured loans. Simply enter the loan parameters and get instant results. You can also use the prepayment feature to see how making partial payments affects your EMI, total interest, and loan tenure. This helps you plan your loan repayment strategy effectively.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">EMI vs Total Interest: Understanding the True Cost</h3>
+              <p className="leading-relaxed mb-4">
+                Many borrowers focus only on the EMI amount and ignore the total interest payable over the loan tenure. This is a critical mistake. For example, on a ₹50 lakh home loan at 8.5% interest for 20 years, the monthly EMI is ₹43,391, but the total interest payable is ₹54.14 lakhs - more than the principal amount! The total amount payable is ₹1.04 crores for a ₹50 lakh loan. This is why it's crucial to use an EMI calculator to understand the complete financial picture before taking a loan.
+              </p>
+              <p className="leading-relaxed mb-4">
+                Our EMI calculator shows you both the EMI amount and the total interest, helping you make informed decisions. You can experiment with different tenures to see how shorter tenures reduce total interest significantly. For instance, reducing tenure from 20 years to 15 years on the same loan can save you ₹15-20 lakhs in interest, even though the EMI increases slightly.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Loan Prepayment: How It Affects Your EMI</h3>
+              <p className="leading-relaxed mb-4">
+                Loan prepayment is one of the most effective ways to reduce your total interest burden. When you make a prepayment, you reduce the outstanding principal, which in turn reduces future interest calculations. Our EMI calculator allows you to enter a prepayment amount to see its impact. For home loans, RBI mandates that banks cannot charge prepayment penalties, making it an attractive option. However, for other loans like personal loans and car loans, some lenders may charge 2-5% penalty on prepayment, so check your loan agreement.
+              </p>
+              <p className="leading-relaxed mb-4">
+                When you prepay, you typically have two options: reduce EMI keeping tenure same, or reduce tenure keeping EMI same. The second option (reducing tenure) usually saves more interest. For example, on a ₹30 lakh home loan, a ₹3 lakh prepayment in year 2 can reduce tenure by 4-5 years and save ₹8-12 lakhs in interest. Use our <Link to="/calculators/loan-prepayment-calculator" className="text-primary-700 underline font-semibold">Loan Prepayment Calculator</Link> for detailed analysis.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Related Financial Calculators for Complete Planning</h3>
+              <p className="leading-relaxed mb-4">
+                While this EMI calculator helps you understand your monthly loan payments, comprehensive financial planning requires multiple tools. Use our <Link to="/calculators/home-loan-calculator" className="text-primary-700 underline font-semibold">Home Loan Calculator</Link> for property-specific calculations including stamp duty, registration charges, and processing fees. Our <Link to="/calculators/loan-affordability-calculator" className="text-primary-700 underline font-semibold">Loan Affordability Calculator</Link> helps you determine how much loan you can afford based on your income and existing obligations.
+              </p>
+              <p className="leading-relaxed mb-4">
+                For comparing multiple loan offers, use our <Link to="/calculators/loan-comparison-calculator" className="text-primary-700 underline font-semibold">Loan Comparison Calculator</Link>. For tax planning on home loans, use our <Link to="/calculators/income-tax-calculator" className="text-primary-700 underline font-semibold">Income Tax Calculator</Link> to see tax benefits under Section 24(b) and Section 80C. For investment planning alongside loans, use our <Link to="/calculators/sip-calculator" className="text-primary-700 underline font-semibold">SIP Calculator</Link> and <Link to="/calculators/ppf-calculator" className="text-primary-700 underline font-semibold">PPF Calculator</Link>.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">2025 Market Trends: What to Expect</h3>
+              <p className="leading-relaxed mb-4">
+                The Indian loan market in 2025 is characterized by increased digitalization, faster loan processing, and competitive interest rates. Banks are offering attractive rates to attract customers, with many providing special rates for women borrowers, first-time home buyers, and government employees. The trend towards digital lending has made loan applications faster and more convenient, with many banks offering instant approvals and disbursements.
+              </p>
+              <p className="leading-relaxed mb-4">
+                However, borrowers should be cautious about hidden charges, prepayment penalties, and processing fees. Always read the loan agreement carefully and use our EMI calculator to factor in all costs. The RBI has also introduced new guidelines for transparency in loan pricing, requiring banks to disclose all charges upfront. This makes it easier for borrowers to compare loans and make informed decisions.
+              </p>
+            </section>
+          </div>
+        </div>
       </div>
     </>
   );
