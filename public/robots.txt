@@ -1,43 +1,42 @@
+# MoneyCal.in Robots.txt - Optimized for Google Search
+# Last Updated: 2025-01-20
+# Total URLs: ~1,800+
+
 User-agent: *
 Allow: /
 
-# === COMPREHENSIVE DISALLOW - All 410 Gone paths ===
-# Prevent crawling of URLs that return 410 Gone to eliminate redirect errors
-
-# Hindi pages (complete elimination)
+# === DISALLOW DEPRECATED PATHS (410 Gone) ===
+# Hindi pages (removed)
 Disallow: /hi/
 
-# Old category structures (410 Gone)
+# Old category structures
 Disallow: /finance-categories/
 Disallow: /banking/
 Disallow: /real-estate/
 Disallow: /cryptocurrency/
+Disallow: /real-estate-tools
 
-# Business/Tool categories (410 Gone)
+# Business/Tool categories (deprecated)
 Disallow: /business-tools
 Disallow: /accounting-tools
 Disallow: /payroll-tools
 Disallow: /loan-tools/
 
-# Education/Market pages (410 Gone)
+# Education/Market pages (deprecated)
 Disallow: /stock-market/
 Disallow: /financial-education/
 Disallow: /market-analysis/
 
-# Excel templates (410 Gone)
+# Excel templates (old path)
 Disallow: /excel-templates/
 
-# Old tool paths (410 Gone)
+# Old tool paths (deprecated)
 Disallow: /invoicing-tools/
+Disallow: /invoicing-receivables
 Disallow: /insurance-tools/
 Disallow: /finance-tools/
 Disallow: /tax-tools/
 Disallow: /tools/
-
-# AMP pages (410 Gone)
-Disallow: /amp-*.html
-
-# Additional deprecated patterns (410 Gone)
 Disallow: /design-tools/
 Disallow: /festival-corporate-tools/
 Disallow: /fun-engagement/
@@ -45,6 +44,18 @@ Disallow: /local-seo
 Disallow: /seo-tools/
 Disallow: /regional-tools/
 Disallow: /religious-tools/
+Disallow: /astro-finance-insights
+Disallow: /financial-navigator
+Disallow: /loan-app-directory
+
+# AMP pages (deprecated)
+Disallow: /amp-*.html
+
+# Admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /blog/write
 
 # === ALLOW ACTIVE SECTIONS ===
 Allow: /calculators/
@@ -53,116 +64,17 @@ Allow: /news/
 Allow: /learn/
 Allow: /government-schemes/
 Allow: /exceltool/
+Allow: /excel-tools/
 Allow: /festival-tools/
-Allow: /crypto/
-Allow: /astro-finance
-
-# === CLEAN SITEMAPS (Only valid URLs - 1740+ clean URLs) ===
-Sitemap: https://moneycal.in/sitemap.xml
-Sitemap: https://moneycal.in/sitemap-calculators.xml
-Sitemap: https://moneycal.in/sitemap-learn.xml
-Sitemap: https://moneycal.in/sitemap-blog.xml
-Sitemap: https://moneycal.in/sitemap-tools.xml
-Sitemap: https://moneycal.in/sitemap-government.xml
-Sitemap: https://moneycal.in/sitemap-crypto.xml
-Sitemap: https://moneycal.in/sitemap-pages.xml
-
-# === NEWS SITEMAPS (100+ High-Quality News Articles) ===
-Sitemap: https://moneycal.in/sitemap-news-markets.xml
-Sitemap: https://moneycal.in/sitemap-news-business.xml
-Sitemap: https://moneycal.in/sitemap-news-startups.xml
-Sitemap: https://moneycal.in/sitemap-news-economy.xml
-Sitemap: https://moneycal.in/sitemap-news-tech-business.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Disallow admin and private areas
-Disallow: /admin/
-Disallow: /private/
-Disallow: /api/
-
-# Disallow old pages that return 410 Gone
-Disallow: /hi/
-Disallow: /finance-categories/
-Disallow: /banking/
-Disallow: /loan-tools/
-Disallow: /real-estate/
-Disallow: /real-estate-tools
-Disallow: /cryptocurrency/
-Disallow: /business-tools
-Disallow: /accounting-tools
-Disallow: /payroll-tools
-Disallow: /stock-market/
-Disallow: /financial-education/
-Disallow: /market-analysis/
-Disallow: /excel-templates/
-Disallow: /invoicing-receivables
-Disallow: /invoicing-tools/
-Disallow: /insurance-tools/
-Disallow: /astro-finance-insights
-Disallow: /tools/
-Disallow: /financial-navigator
-Disallow: /loan-app-directory
-Disallow: /amp-*.html
-
-# Allow important pages
-Allow: /blog/
-Disallow: /blog/write
-Allow: /calculators/
-Allow: /about/
-Allow: /contact/
-
-# Google Discover optimization
-User-agent: Googlebot-News
-Allow: /blog/
-Allow: /amp-blog.html
-
-# Mobile optimization
-User-agent: *
-Allow: /amp-*.html
-Allow: /mobile/
-
-# Allow all calculator pages
-Allow: /calculators/*
-
-# Allow all blog posts
-Allow: /blog/*
-
-# Allow government schemes
-Allow: /government-schemes/*
-
-# Allow crypto content (NEW location, not /cryptocurrency/)
-Allow: /crypto/*
-
-# Allow astro finance content (NEW location, not /astro-finance-insights)
-Allow: /astro-finance/*
-
-# Allow excel tools (NEW location, not /excel-templates/)
-Allow: /excel-tools/*
-Allow: /exceltool/*
-
-# Allow news reel
-Allow: /news-reel
-
-# Allow bank tools
-Allow: /bank-tools
-
-# Allow credit card finder
-Allow: /credit-card-finder
-
-# Allow missed call banking directory
-Allow: /missed-call-banking-directory
-
-# Allow all important pages and sections
-Allow: /calculators/
-Allow: /blog/
-Allow: /government-schemes/
-Allow: /exceltool/
 Allow: /crypto/
 Allow: /astro-finance/
 Allow: /news-reel/
+Allow: /bank-tools
+Allow: /credit-card-finder
+Allow: /missed-call-banking-directory
+Allow: /about/
 Allow: /about-us
+Allow: /contact/
 Allow: /contact-us
 Allow: /privacy-policy
 Allow: /terms-of-service
@@ -172,18 +84,46 @@ Allow: /disclaimer
 Allow: /cookie-policy
 Allow: /editorial-policy
 Allow: /sitemap
-Allow: /sitemap.xml
-Allow: /ads.txt
-Allow: /credit-card-finder
-
-# Allow category pages
 Allow: /category/
 Allow: /blog/category/
-
-# Allow search functionality
 Allow: /search
 
-# Google-specific bots
+# === SITEMAPS ===
+# Main sitemap index
+Sitemap: https://moneycal.in/sitemap.xml
+
+# Category-specific sitemaps
+Sitemap: https://moneycal.in/sitemap-calculators.xml
+Sitemap: https://moneycal.in/sitemap-learn.xml
+Sitemap: https://moneycal.in/sitemap-blog.xml
+Sitemap: https://moneycal.in/sitemap-government.xml
+Sitemap: https://moneycal.in/sitemap-crypto.xml
+Sitemap: https://moneycal.in/sitemap-pages.xml
+
+# Tool-specific sitemaps
+Sitemap: https://moneycal.in/sitemap-finance-tools.xml
+Sitemap: https://moneycal.in/sitemap-tax-tools.xml
+Sitemap: https://moneycal.in/sitemap-gst-tools.xml
+Sitemap: https://moneycal.in/sitemap-insurance-tools.xml
+Sitemap: https://moneycal.in/sitemap-festival-tools.xml
+Sitemap: https://moneycal.in/sitemap-religious-tools.xml
+Sitemap: https://moneycal.in/sitemap-invoicing-tools.xml
+Sitemap: https://moneycal.in/sitemap-excel-tools.xml
+Sitemap: https://moneycal.in/sitemap-bank-tools.xml
+Sitemap: https://moneycal.in/sitemap-astro.xml
+
+# News sitemaps (Google News format)
+Sitemap: https://moneycal.in/sitemap-news.xml
+Sitemap: https://moneycal.in/sitemap-news-markets.xml
+Sitemap: https://moneycal.in/sitemap-news-business.xml
+Sitemap: https://moneycal.in/sitemap-news-startups.xml
+Sitemap: https://moneycal.in/sitemap-news-economy.xml
+Sitemap: https://moneycal.in/sitemap-news-tech-business.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# === GOOGLE BOTS (Full Access) ===
 User-agent: Googlebot
 Allow: /
 
@@ -199,6 +139,16 @@ Allow: /*.svg$
 User-agent: Googlebot-Mobile
 Allow: /
 
+User-agent: Googlebot-News
+Allow: /blog/
+Allow: /news/
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-Favicon
+Allow: /
+
 User-agent: AdsBot-Google
 Allow: /
 
@@ -208,13 +158,7 @@ Allow: /
 User-agent: Mediapartners-Google
 Allow: /
 
-User-agent: Googlebot-Favicon
-Allow: /
-
-User-agent: Googlebot-Video
-Allow: /
-
-# Other search engines
+# === OTHER SEARCH ENGINES ===
 User-agent: Bingbot
 Allow: /
 
@@ -227,7 +171,7 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Social media bots
+# === SOCIAL MEDIA BOTS ===
 User-agent: facebookexternalhit
 Allow: /
 
@@ -249,7 +193,7 @@ Allow: /
 User-agent: Instagram
 Allow: /
 
-# Block aggressive scrapers and SEO tools
+# === BLOCK AGGRESSIVE SCRAPERS ===
 User-agent: AhrefsBot
 Disallow: /
 
@@ -279,87 +223,3 @@ Disallow: /
 
 User-agent: ia_archiver
 Disallow: /
-User-agent: Googlebot-Mobile
-Allow: /
-
-User-agent: AdsBot-Google
-Allow: /
-
-User-agent: AdsBot-Google-Mobile
-Allow: /
-
-User-agent: Mediapartners-Google
-Allow: /
-
-User-agent: Googlebot-Favicon
-Allow: /
-
-User-agent: Googlebot-Video
-Allow: /
-
-# Other search engines
-User-agent: Bingbot
-Allow: /
-
-User-agent: BingPreview
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-# Social media bots
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-User-agent: Pinterest
-Allow: /
-
-User-agent: Instagram
-Allow: /
-
-# Block aggressive scrapers and SEO tools
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-User-agent: BLEXBot
-Disallow: /
-
-User-agent: Screaming Frog SEO Spider
-Disallow: /
-
-User-agent: rogerbot
-Disallow: /
-
-User-agent: Exabot
-Disallow: /
-
-User-agent: Gigabot
-Disallow: /
-
-User-agent: ia_archiver
-Disallow: /
-

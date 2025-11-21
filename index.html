@@ -84,16 +84,34 @@
     <meta property="og:description" content="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://moneycal.in" />
-    <meta property="og:image" content="https://moneycal.in/images/og-image.jpg" />
+    <meta property="og:image" content="https://moneycal.in/android-chrome-512x512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="MoneyCal.in - Financial Calculators for India" />
     <meta property="og:site_name" content="MoneyCal.in" />
+    <meta property="og:locale" content="en_IN" />
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MoneyCal.in - Free Financial Calculators for India" />
     <meta name="twitter:description" content="India's most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more." />
-    <meta name="twitter:image" content="https://moneycal.in/images/twitter-card.jpg" />
+    <meta name="twitter:image" content="https://moneycal.in/android-chrome-512x512.png" />
+    <meta name="twitter:site" content="@MoneyCalIN" />
+    <meta name="twitter:creator" content="@MoneyCalIN" />
     
-    <!-- Canonical is managed dynamically by SEOHelmet -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://moneycal.in" />
+    
+    <!-- Hreflang Tags for International SEO -->
+    <link rel="alternate" hreflang="en" href="https://moneycal.in" />
+    <link rel="alternate" hreflang="en-IN" href="https://moneycal.in" />
+    <link rel="alternate" hreflang="x-default" href="https://moneycal.in" />
+    
+    <!-- Language and Region -->
+    <meta httpEquiv="content-language" content="en-IN" />
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.country" content="India" />
+    <meta name="geo.placename" content="India" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -140,7 +158,37 @@
       }
     </style>
     
-    <!-- Structured Data -->
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MoneyCal.in",
+      "alternateName": "MoneyCal India",
+      "url": "https://moneycal.in",
+      "logo": "https://moneycal.in/android-chrome-512x512.png",
+      "description": "India's most comprehensive financial calculator platform providing free online financial planning tools for Indian users",
+      "foundingDate": "2024",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://twitter.com/MoneyCalIN"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data - WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -148,10 +196,54 @@
       "name": "MoneyCal.in",
       "url": "https://moneycal.in",
       "description": "India's most comprehensive financial calculator platform",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MoneyCal.in"
+      },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://moneycal.in/search?q={search_term_string}",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://moneycal.in/search?q={search_term_string}"
+        },
         "query-input": "required name=search_term_string"
+      },
+      "inLanguage": "en-IN"
+    }
+    </script>
+    
+    <!-- Structured Data - WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MoneyCal.in Financial Calculators",
+      "description": "Comprehensive financial calculators for Indian users including EMI, SIP, tax, and investment calculators",
+      "url": "https://moneycal.in",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "featureList": [
+        "EMI Calculator",
+        "SIP Calculator",
+        "Income Tax Calculator",
+        "Mutual Fund Calculator",
+        "PPF Calculator",
+        "Retirement Calculator",
+        "Home Loan Calculator",
+        "Personal Loan Calculator"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Indian Financial Users",
+        "geographicArea": {
+          "@type": "Country",
+          "name": "India"
+        }
       }
     }
     </script>
