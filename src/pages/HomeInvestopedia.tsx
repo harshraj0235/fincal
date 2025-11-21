@@ -7,7 +7,7 @@ import {
   Target, BarChart3, Gift, Umbrella, HelpCircle,
   Rocket, Calendar, Tag, CheckCircle, Clock, Users,
   CreditCard, Building2, Briefcase, Car, Heart, GraduationCap,
-  TrendingUp as TrendingUpIcon, Filter, Grid, List, X
+  TrendingUp as TrendingUpIcon, Filter, Grid, List, X, Wrench
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { calculatorCategories } from '../data/calculatorData';
@@ -382,8 +382,192 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
+        {/* Tools Section */}
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Financial Tools</h2>
+                <p className="text-gray-600">Specialized tools for finance, tax, GST, Excel, and banking</p>
+              </div>
+              <Link 
+                to="/tools" 
+                className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 text-sm md:text-base"
+              >
+                View All Tools <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { 
+                  name: 'Finance Tools', 
+                  path: '/finance-tools', 
+                  icon: DollarSign, 
+                  desc: 'SIP calculators, mutual fund tools, portfolio analyzers', 
+                  count: '25+',
+                  color: 'from-blue-500 to-blue-600'
+                },
+                { 
+                  name: 'Tax Tools', 
+                  path: '/tax-tools', 
+                  icon: FileText, 
+                  desc: 'Tax calculators, ITR helpers, deduction analyzers', 
+                  count: '40+',
+                  color: 'from-green-500 to-green-600'
+                },
+                { 
+                  name: 'GST Tools', 
+                  path: '/gst-tools', 
+                  icon: Calculator, 
+                  desc: 'GST calculators, HSN finder, compliance tools', 
+                  count: '20+',
+                  color: 'from-purple-500 to-purple-600'
+                },
+                { 
+                  name: 'Excel Tools', 
+                  path: '/excel-tools', 
+                  icon: BarChart3, 
+                  desc: 'Excel templates, formulas, financial spreadsheets', 
+                  count: '50+',
+                  color: 'from-orange-500 to-orange-600'
+                },
+                { 
+                  name: 'Bank Tools', 
+                  path: '/bank-tools', 
+                  icon: Building2, 
+                  desc: 'IFSC finder, ATM locator, bank charges analyzer', 
+                  count: '10+',
+                  color: 'from-cyan-500 to-cyan-600'
+                },
+                { 
+                  name: 'All Tools', 
+                  path: '/tools', 
+                  icon: Wrench, 
+                  desc: 'Browse all financial tools and utilities', 
+                  count: '200+',
+                  color: 'from-indigo-500 to-indigo-600'
+                },
+              ].map((tool, idx) => {
+                const Icon = tool.icon;
+                return (
+                  <Link
+                    key={idx}
+                    to={tool.path}
+                    className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all group relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity" 
+                         style={{ background: `linear-gradient(to bottom right, var(--tw-gradient-stops))`, 
+                                  '--tw-gradient-from': tool.color.split(' ')[1], 
+                                  '--tw-gradient-to': tool.color.split(' ')[3] }} />
+                    <div className="flex items-start space-x-4 relative z-10">
+                      <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${tool.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600">{tool.name}</h3>
+                          <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded-full font-medium">{tool.count}</span>
+                        </div>
+                        <p className="text-sm text-gray-600 line-clamp-2">{tool.desc}</p>
+                        <div className="mt-3 flex items-center text-blue-600 text-sm font-medium">
+                          Explore <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Resources Section */}
+        <section className="py-16 bg-gray-50 border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Resources & Learning</h2>
+                <p className="text-gray-600">Educational content, guides, news, and government schemes</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { 
+                  name: 'Learn', 
+                  path: '/learn', 
+                  icon: BookOpen, 
+                  desc: 'Financial education, lessons, and guides', 
+                  count: '90+',
+                  color: 'from-emerald-500 to-emerald-600'
+                },
+                { 
+                  name: 'Blog', 
+                  path: '/blog', 
+                  icon: FileText, 
+                  desc: 'Financial articles, tips, and insights', 
+                  count: '700+',
+                  color: 'from-pink-500 to-pink-600'
+                },
+                { 
+                  name: 'News', 
+                  path: '/news', 
+                  icon: Calendar, 
+                  desc: 'Latest financial news and updates', 
+                  count: '160+',
+                  color: 'from-red-500 to-red-600'
+                },
+                { 
+                  name: 'Government Schemes', 
+                  path: '/government-schemes', 
+                  icon: Gift, 
+                  desc: 'Government financial schemes and benefits', 
+                  count: '180+',
+                  color: 'from-yellow-500 to-yellow-600'
+                },
+                { 
+                  name: 'Crypto', 
+                  path: '/crypto', 
+                  icon: TrendingUp, 
+                  desc: 'Cryptocurrency guides and calculators', 
+                  count: '75+',
+                  color: 'from-violet-500 to-violet-600'
+                },
+              ].map((resource, idx) => {
+                const Icon = resource.icon;
+                return (
+                  <Link
+                    key={idx}
+                    to={resource.path}
+                    className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all group relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity" 
+                         style={{ background: `linear-gradient(to bottom right, var(--tw-gradient-stops))`, 
+                                  '--tw-gradient-from': resource.color.split(' ')[1], 
+                                  '--tw-gradient-to': resource.color.split(' ')[3] }} />
+                    <div className="flex items-start space-x-4 relative z-10">
+                      <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${resource.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600">{resource.name}</h3>
+                          <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded-full font-medium">{resource.count}</span>
+                        </div>
+                        <p className="text-sm text-gray-600 line-clamp-2">{resource.desc}</p>
+                        <div className="mt-3 flex items-center text-blue-600 text-sm font-medium">
+                          Explore <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* Features Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Why Choose MoneyCal.in</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
