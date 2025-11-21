@@ -42,6 +42,21 @@ export const CompoundInterestCalculator: React.FC = () => {
     calculateCompoundInterest();
   }, [principal, rate, time, compoundingFrequency]);
 
+  const quickPresets = [
+    { label: 'FD 5 Years', principal: 500000, rate: 7, time: 5, freq: 4 },
+    { label: 'PPF 15 Years', principal: 150000, rate: 7.1, time: 15, freq: 1 },
+    { label: 'Equity MF 10Y', principal: 100000, rate: 12, time: 10, freq: 12 },
+    { label: 'Senior FD 3Y', principal: 1000000, rate: 7.75, time: 3, freq: 4 },
+    { label: 'Long Term 20Y', principal: 500000, rate: 10, time: 20, freq: 12 },
+  ];
+
+  const applyPreset = (preset: typeof quickPresets[0]) => {
+    setPrincipal(preset.principal);
+    setRate(preset.rate);
+    setTime(preset.time);
+    setCompoundingFrequency(preset.freq);
+  };
+
   // Helper function for formatting currency
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {
@@ -89,7 +104,29 @@ const contentData = {title:"Compound Interest Calculator",description:"Compound 
           </h1>
           <p className="text-gray-600 text-lg">Watch your money grow with the power of compounding</p>
         </motion.div>
-        {/* The main title of the page was here, now removed as per request */}
+
+        {/* Quick Presets */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25 }}
+          className="mb-6 bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl border border-indigo-200"
+        >
+          <h3 className="text-sm font-semibold text-indigo-900 mb-3 text-center">Quick Presets (2025-2027 Rates)</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+            {quickPresets.map((preset, idx) => (
+              <motion.button
+                key={idx}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => applyPreset(preset)}
+                className="px-3 py-2 text-xs font-medium bg-white border border-indigo-300 rounded-lg hover:bg-indigo-100 hover:border-indigo-400 transition-colors text-indigo-700 shadow-sm"
+              >
+                {preset.label}
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Calculator Inputs */}
         <motion.div 
