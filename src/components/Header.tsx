@@ -6,8 +6,17 @@ import {
   Search, 
   Calculator, 
   X,
-  ChevronDown
+  ChevronDown,
+  ChevronRight,
+  Home,
+  BookOpen,
+  FileText,
+  Shield,
+  TrendingUp,
+  DollarSign,
+  Building
 } from 'lucide-react';
+import { calculatorCategories } from '../data/calculatorData';
 
 interface HeaderProps {
   onMenuClick?: () => void;
@@ -18,6 +27,8 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -154,11 +165,18 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
 
             {/* Mobile Menu Button */}
             <button
-              onClick={onMenuClick}
+              onClick={() => {
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+                if (onMenuClick) onMenuClick();
+              }}
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label="Menu"
             >
-              <Menu className="w-6 h-6 text-gray-600" />
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-gray-600" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-600" />
+              )}
             </button>
           </div>
         </div>
@@ -198,6 +216,205 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
               </form>
             </div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu - Comprehensive Navigation */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-full max-w-sm bg-white z-50 lg:hidden shadow-2xl overflow-y-auto"
+            >
+              <div className="p-4">
+                {/* Mobile Menu Header */}
+                <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200">
+                  <h2 className="text-lg font-semibold text-gray-900">All Calculators & Tools</h2>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X className="w-5 h-5 text-gray-600" />
+                  </button>
+                </div>
+
+                {/* Quick Links */}
+                <div className="mb-6">
+                  <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                    Quick Links
+                  </h3>
+                  <div className="space-y-1">
+                    {[
+                      { name: 'Home', href: '/', icon: Home },
+                      { name: 'All Calculators', href: '/calculators', icon: Calculator },
+                      { name: 'Tools', href: '/tools', icon: Building },
+                      { name: 'Learn', href: '/learn', icon: BookOpen },
+                      { name: 'Blog', href: '/blog', icon: FileText },
+                      { name: 'News', href: '/news', icon: FileText },
+                      { name: 'Schemes', href: '/government-schemes', icon: Shield }
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      const active = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
+                      return (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                            active
+                              ? 'bg-blue-50 text-blue-600 font-medium'
+                              : 'text-gray-700 hover:bg-gray-50'
+                          }`}
+                        >
+                          <Icon className="w-4 h-4" />
+                          <span>{item.name}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Popular Calculators */}
+                <div className="mb-6">
+                  <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                    Popular Calculators
+                  </h3>
+                  <div className="space-y-1">
+                    {[
+                      { name: 'EMI Calculator', href: '/calculators/emi-calculator', icon: Calculator },
+                      { name: 'SIP Calculator', href: '/calculators/sip-calculator', icon: TrendingUp },
+                      { name: 'Income Tax Calculator', href: '/calculators/income-tax-calculator', icon: DollarSign },
+                      { name: 'GST Calculator', href: '/calculators/gst-calculator', icon: FileText },
+                      { name: 'PPF Calculator', href: '/calculators/ppf-calculator', icon: TrendingUp },
+                      { name: 'Home Loan Calculator', href: '/calculators/home-loan-calculator', icon: Building }
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      const active = location.pathname === item.href;
+                      return (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                            active
+                              ? 'bg-blue-50 text-blue-600 font-medium'
+                              : 'text-gray-700 hover:bg-gray-50'
+                          }`}
+                        >
+                          <Icon className="w-4 h-4" />
+                          <span>{item.name}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* All Calculator Categories */}
+                <div className="mb-6">
+                  <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                    All Calculator Categories
+                  </h3>
+                  <div className="space-y-1">
+                    {calculatorCategories.map((category) => (
+                      <div key={category.id}>
+                        <button
+                          onClick={() => setExpandedCategory(expandedCategory === category.id ? null : category.id)}
+                          className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                        >
+                          <div className="flex items-center space-x-2">
+                            <span>{category.name}</span>
+                            <span className="text-xs text-gray-400">({category.calculators.length})</span>
+                          </div>
+                          <ChevronRight
+                            className={`w-4 h-4 text-gray-400 transition-transform ${
+                              expandedCategory === category.id ? 'rotate-90' : ''
+                            }`}
+                          />
+                        </button>
+                        <AnimatePresence>
+                          {expandedCategory === category.id && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pl-4 pr-3 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
+                                {category.calculators.map((calc) => {
+                                  const active = location.pathname === `/calculators/${calc.id}`;
+                                  return (
+                                    <Link
+                                      key={calc.id}
+                                      to={`/calculators/${calc.id}`}
+                                      onClick={() => {
+                                        setIsMobileMenuOpen(false);
+                                        setExpandedCategory(null);
+                                      }}
+                                      className={`block px-3 py-2 rounded-md text-sm transition-colors ${
+                                        active
+                                          ? 'bg-blue-100 text-blue-700 font-medium'
+                                          : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                                      }`}
+                                    >
+                                      {calc.name}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tools Section */}
+                <div className="mb-6">
+                  <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                    Tools & Utilities
+                  </h3>
+                  <div className="space-y-1">
+                    {[
+                      { name: 'GST Tools', href: '/gst-tools' },
+                      { name: 'Tax Tools', href: '/tax-tools' },
+                      { name: 'Finance Tools', href: '/finance-tools' },
+                      { name: 'Excel Tools', href: '/exceltool' },
+                      { name: 'Bank Tools', href: '/bank-tools' }
+                    ].map((item) => {
+                      const active = location.pathname.startsWith(item.href);
+                      return (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className={`block px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                            active
+                              ? 'bg-blue-50 text-blue-600 font-medium'
+                              : 'text-gray-700 hover:bg-gray-50'
+                          }`}
+                        >
+                          {item.name}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
