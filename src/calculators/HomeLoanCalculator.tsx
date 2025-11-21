@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { Sliders, Calculator, PieChart, Calendar } from 'lucide-react';
 import { ResultChart } from '../components/ResultChart';
@@ -6,6 +7,21 @@ import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper
 import { CalculatorSchema } from '../components/CalculatorSchema';
 
 export const HomeLoanCalculator: React.FC = () => {
+  // Quick presets for common home loan scenarios
+  const homeLoanPresets = [
+    { name: "₹50L Property", property: 5000000, loan: 4000000, rate: 8.75, tenure: 20, type: 'years' as const },
+    { name: "₹1Cr Property", property: 10000000, loan: 8000000, rate: 8.5, tenure: 20, type: 'years' as const },
+    { name: "₹25L Affordable", property: 2500000, loan: 2000000, rate: 8.5, tenure: 20, type: 'years' as const },
+    { name: "Short Tenure", property: 5000000, loan: 4000000, rate: 8.75, tenure: 15, type: 'years' as const }
+  ];
+
+  const applyPreset = (preset: typeof homeLoanPresets[0]) => {
+    setPropertyValue(preset.property);
+    setLoanAmount(preset.loan);
+    setInterestRate(preset.rate);
+    setLoanTenure(preset.tenure);
+    setTenureType(preset.type);
+  };
   const [loanAmount, setLoanAmount] = useState<number>(3000000);
   const [interestRate, setInterestRate] = useState<number>(8.5);
   const [loanTenure, setLoanTenure] = useState<number>(20);
@@ -30,7 +46,7 @@ export const HomeLoanCalculator: React.FC = () => {
 
   const contentData = {
     title: "Home Loan Calculator",
-    description: "Home Loan Calculator helps you calculate EMI for your dream home purchase. Essential for planning home loans from banks and HFCs in India. Calculate monthly EMI, total interest, and payment schedule for properties ranging from ₹10 lakhs to ₹5 crores. Updated with latest 2025 home loan interest rates (8.5-10.5%) from major lenders like SBI, HDFC, ICICI, Axis Bank. Plan your home purchase wisely with accurate EMI calculations.",
+    description: "Home Loan Calculator is India's most comprehensive tool for calculating home loan EMI for your dream home purchase. Essential for planning home loans from banks and HFCs in India. Calculate monthly EMI, total interest, total payment, and detailed amortization schedule for properties ranging from ₹10 lakhs to ₹5 crores. Updated with latest 2025 home loan interest rates (8.5-10.5%) from major lenders including SBI, HDFC, ICICI, Axis Bank, Kotak Mahindra, and housing finance companies. Understand loan-to-value ratio (LTV), down payment requirements, prepayment benefits, and tax savings on home loans. Plan your home purchase wisely with accurate EMI calculations, compare different loan scenarios, and make informed borrowing decisions. Perfect for first-time homebuyers, property upgraders, and real estate investors planning home loan financing.",
     benefits: ["Calculate home loan EMI instantly for any property value and loan amount","Compare different loan amounts and down payment scenarios side-by-side","Understand total interest cost over 10-30 year loan tenure clearly","Plan affordable EMI within 30-40% of monthly income budget","Check loan-to-value ratio (LTV) and down payment requirements","Visualize principal vs interest breakup with detailed amortization schedule","100% free calculator with latest 2025 home loan rates from all banks","Mobile-friendly for property visits and instant EMI calculations"],
     howToSteps: [{step:"Enter Property Value",details:"Input total property cost including registration and stamp duty. Banks finance 75-90% of property value (LTV ratio). For ₹50L property, expect ₹37.5-45L loan maximum. Premium properties and good credit scores get higher LTV. Include all costs: property price, registration (1%), stamp duty (5-7%), legal fees."},{step:"Set Loan Amount",details:"Decide how much you want to borrow. Higher down payment (20-25%) reduces EMI and interest significantly. On ₹50L property, ₹10L down payment means ₹40L loan vs ₹12.5L down payment means ₹37.5L loan - saves ₹2.5L borrowing and ₹5-7L interest over 20 years!"},{step:"Choose Interest Rate",details:"Enter current home loan rate (8.5-10.5% in 2025). Rates vary by: credit score (750+ gets best rates), loan amount (₹30L+ gets priority rates), income level, employment type, existing customer benefits. Compare rates from PSU banks (8.5-9.5%), private banks (9-10%), and HFCs (9.5-10.5%)."},{step:"Select Loan Tenure",details:"Choose repayment period from 5 to 30 years. Longer tenure = lower EMI but 2-3x higher total interest! ₹50L loan: 15 years = ₹49L interest, 25 years = ₹86L interest - difference of ₹37L! Choose shortest tenure you can afford comfortably."},{step:"Review Complete Breakdown",details:"Analyze EMI amount, total interest, total payment, and year-wise schedule. Check if EMI is below 35-40% of monthly income. Review how principal and interest components change over tenure. Plan for prepayments in early years to save maximum interest."}],
     examples: [{scenario:"First-Time Homebuyer in Bangalore",inputs:[{label:"Property Value",value:"₹75,00,000"},{label:"Down Payment (20%)",value:"₹15,00,000"},{label:"Loan Amount",value:"₹60,00,000"},{label:"Interest Rate",value:"8.75% p.a."},{label:"Tenure",value:"20 years"}],result:"EMI: ₹52,935/month",explanation:"Priya buying ₹75L flat in Bangalore, arranges ₹15L down payment (from savings ₹10L + family gift ₹5L). Borrows ₹60L at 8.75% for 20 years. EMI: ₹52,935. Total payment: ₹1,27,04,400 (principal ₹60L + interest ₹67.04L). With monthly income of ₹1.5L, EMI is 35.3% - comfortable. She can prepay ₹2-3L annually from bonuses, reducing tenure to 14 years and saving ₹22L in interest!"},{scenario:"Upgrading to Larger Home in Mumbai",inputs:[{label:"New Property",value:"₹1,20,00,000"},{label:"Selling Old Home",value:"₹45,00,000 (down payment)"},{label:"Loan Amount",value:"₹75,00,000"},{label:"Interest Rate",value:"9% p.a."},{label:"Tenure",value:"15 years"}],result:"EMI: ₹76,050/month",explanation:"Rajesh upgrading from ₹55L flat (selling for ₹45L after 8 years) to ₹1.2Cr home in Mumbai. Uses ₹45L as down payment, borrows ₹75L for 15 years at 9%. EMI: ₹76,050. Total payment: ₹1,36,89,000 (principal ₹75L + interest ₹61.89L). Combined household income ₹2.5L makes this comfortable (30% EMI ratio). Shorter 15-year tenure saves ₹35L interest vs 25-year loan!"},{scenario:"Young Couple's Affordable Housing",inputs:[{label:"Property (PMAY scheme)",value:"₹25,00,000"},{label:"Subsidy",value:"₹2.67L (interest subsidy)"},{label:"Loan Amount",value:"₹20,00,000"},{label:"Interest Rate",value:"8.5% p.a."},{label:"Tenure",value:"20 years"}],result:"EMI: ₹17,356/month (Effective: ₹16,245 after subsidy)",explanation:"Amit and Sneha buying ₹25L flat under PMAY scheme. Down payment ₹5L (from savings). ₹20L loan at 8.5% for 20 years. Regular EMI: ₹17,356, but PMAY interest subsidy (₹2.67L over 20 years) reduces effective EMI to ₹16,245. Total interest: ₹41.65L, but subsidy reduces it to ₹38.98L. With combined income ₹75K, this 21.6% EMI ratio is very comfortable, leaving room for other goals!"}],
@@ -59,6 +75,23 @@ export const HomeLoanCalculator: React.FC = () => {
           <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
           Home Loan Details
         </h2>
+        
+        {/* Quick Presets for Common Home Loan Scenarios */}
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 mb-4">
+          <p className="text-sm font-medium text-neutral-700 mb-2">Quick Presets (Common Scenarios):</p>
+          <div className="flex flex-wrap gap-2">
+            {homeLoanPresets.map((preset, idx) => (
+              <button
+                key={idx}
+                onClick={() => applyPreset(preset)}
+                className="px-3 py-1.5 text-xs bg-white border border-blue-200 rounded-md hover:bg-blue-100 hover:border-blue-300 transition-colors text-neutral-700 font-medium"
+              >
+                {preset.name}
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-neutral-600 mt-2">Click any preset to auto-fill with typical values</p>
+        </div>
         
         <div className="space-y-4">
           <div>
@@ -269,6 +302,63 @@ export const HomeLoanCalculator: React.FC = () => {
     </div>
       <div className="mx-auto max-w-5xl px-4 mt-12">
         <CalculatorContentWrapper {...contentData} />
+        
+        {/* Additional Comprehensive Content Section - Home Loan Analysis 2025 */}
+        <div className="mt-12 bg-white rounded-xl shadow-sm p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Home Loan Calculator India 2025: Latest Rates, Trends & Complete Guide</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-6">
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Current Home Loan Interest Rates in India (2025)</h3>
+              <p className="leading-relaxed mb-4">
+                Home loan interest rates in India for 2025 range from <strong>8.5% to 10.5% per annum</strong> depending on lender, loan amount, credit score, and property type. PSU banks (SBI, BOB, PNB) typically offer 8.5-9.5% for salaried individuals with good credit scores (750+). Private banks (HDFC Bank, ICICI Bank, Axis Bank) offer 8.75-9.75% with faster processing. Housing Finance Companies (HDFC Ltd, LIC Housing) offer 9-10.5% with more flexible eligibility criteria.
+              </p>
+              <p className="leading-relaxed mb-4">
+                Factors affecting interest rate: <strong>Credit Score</strong> - 750+ gets best rates (8.5-9%), 700-750 gets 9-9.5%, below 700 gets 9.5-10.5% or rejection. <strong>Loan Amount</strong> - Loans above ₹30-50L often get 0.25-0.5% lower rates. <strong>Property Type</strong> - Ready-to-move properties get better rates than under-construction. <strong>Employment</strong> - MNC/PSU employees get preferential rates. <strong>Existing Relationship</strong> - Existing bank customers get 0.25-0.5% discount. Use our <Link to="/calculators/loan-comparison-calculator" className="text-primary-700 underline font-semibold">Loan Comparison Calculator</Link> to compare rates from multiple lenders.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Home Loan Tax Benefits: Complete Guide 2025</h3>
+              <p className="leading-relaxed mb-4">
+                Home loans offer significant tax benefits making them attractive investments: <strong>Section 80C</strong> - Principal repayment deduction up to ₹1.5 lakh annually (combined with other 80C investments like EPF, PPF, ELSS). <strong>Section 24(b)</strong> - Interest payment deduction up to ₹2 lakh annually for self-occupied property (no limit for let-out property). <strong>Section 80EEA</strong> - Additional ₹50,000 interest deduction for first-time homebuyers (loans sanctioned April 2019 - March 2022).
+              </p>
+              <p className="leading-relaxed mb-4">
+                Total tax savings calculation: For ₹50L loan at 8.5% interest, annual interest = ₹4.25L (first year). Tax benefit: ₹2L interest deduction + ₹1.5L principal (if maxed) = ₹3.5L deduction. At 30% tax bracket, saves ₹1.05L annually! Over 20 years, total tax savings = ₹15-20 lakhs. Use our <Link to="/calculators/income-tax-calculator" className="text-primary-700 underline font-semibold">Income Tax Calculator</Link> to see exact tax savings.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">PMAY Scheme: Interest Subsidy for Affordable Housing</h3>
+              <p className="leading-relaxed mb-4">
+                Pradhan Mantri Awas Yojana (PMAY) provides interest subsidy on home loans for eligible beneficiaries. <strong>CLSS (Credit Linked Subsidy Scheme)</strong> offers: ₹2.67L interest subsidy for EWS/LIG (income <₹18L, loan up to ₹9L), ₹2.3L subsidy for MIG-I (income ₹12-18L, loan up to ₹12L), ₹2.35L subsidy for MIG-II (income ₹18-25L, loan up to ₹12L). Subsidy is credited upfront to loan account, reducing effective interest rate and EMI.
+              </p>
+              <p className="leading-relaxed mb-4">
+                Eligibility: Annual household income <₹18L (EWS/LIG) or ₹12-25L (MIG), First-time homebuyer, Property cost <₹45L (EWS/LIG) or ₹65L (MIG), Property in eligible cities/towns. Benefits: Effective interest rate reduces to 4-6% after subsidy, Lower EMI burden, Faster loan repayment. Check PMAY eligibility and apply through participating banks/HFCs.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Related Calculators for Complete Home Purchase Planning</h3>
+              <p className="leading-relaxed mb-4">
+                Comprehensive home purchase planning requires multiple calculators. Use our <Link to="/calculators/loan-affordability-calculator" className="text-primary-700 underline font-semibold">Loan Affordability Calculator</Link> to determine maximum loan eligibility based on income. Our <Link to="/calculators/loan-prepayment-calculator" className="text-primary-700 underline font-semibold">Loan Prepayment Calculator</Link> shows savings from prepayments. For property costs, use our <Link to="/calculators/stamp-duty-calculator" className="text-primary-700 underline font-semibold">Stamp Duty Calculator</Link> and <Link to="/calculators/property-registration-calculator" className="text-primary-700 underline font-semibold">Property Registration Calculator</Link>.
+              </p>
+              <p className="leading-relaxed mb-4">
+                For decision making, use our <Link to="/calculators/rent-vs-buy-calculator" className="text-primary-700 underline font-semibold">Rent vs Buy Calculator</Link> to determine if buying makes financial sense. Our <Link to="/calculators/emi-calculator" className="text-primary-700 underline font-semibold">EMI Calculator</Link> helps compare with other loan types. For investment planning alongside home loan, use our <Link to="/calculators/sip-calculator" className="text-primary-700 underline font-semibold">SIP Calculator</Link>.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">2025 Home Loan Trends & Best Practices</h3>
+              <p className="leading-relaxed mb-4">
+                The home loan market in 2025 is characterized by: 1) <strong>Digitalization</strong> - Online application, instant approval, digital documentation, e-signing, 2) <strong>Competitive Rates</strong> - Banks competing aggressively, rates at multi-year lows, 3) <strong>Flexible Options</strong> - Step-up EMI, flexible tenure, balance transfer options, 4) <strong>Government Support</strong> - PMAY subsidies, affordable housing push, 5) <strong>Pre-approved Loans</strong> - Banks offering pre-approved loans for existing customers.
+              </p>
+              <p className="leading-relaxed mb-4">
+                Best practices for 2025: Maintain CIBIL score 750+ before applying, Compare rates from 5-6 lenders minimum, Negotiate rates based on credit profile and relationship, Choose shortest affordable tenure to save interest, Plan prepayments from bonuses/increments, Factor all costs (processing, insurance, legal) in budget, Get property valuation and legal clearance before loan application, Consider PMAY subsidy if eligible for maximum benefits.
+              </p>
+            </section>
+          </div>
+        </div>
       </div>
     </>
   );
