@@ -244,6 +244,33 @@ export const LoanPrepaymentCalculator: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="bg-white rounded-2xl shadow-2xl p-8 space-y-6">
+              {/* Quick Presets */}
+              <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                <h3 className="text-sm font-semibold text-green-900 mb-3">Quick Presets (2025-2027)</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {[
+                    { label: 'Home ₹50L Y2', loan: 5000000, rate: 8.5, ten: 20, prepay: 500000, month: 24 },
+                    { label: 'Car ₹6L Y1', loan: 600000, rate: 10, ten: 5, prepay: 50000, month: 12 },
+                    { label: 'Personal ₹5L M6', loan: 500000, rate: 16, ten: 3, prepay: 100000, month: 6 },
+                    { label: 'Home ₹40L Y3', loan: 4000000, rate: 8.5, ten: 20, prepay: 200000, month: 36 },
+                    { label: 'Home ₹75L Y5', loan: 7500000, rate: 9, ten: 20, prepay: 1500000, month: 60 },
+                  ].map((preset, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        setLoanAmount(preset.loan);
+                        setInterestRate(preset.rate);
+                        setTenure(preset.ten);
+                        setPrepaymentAmount(preset.prepay);
+                        setPrepaymentMonth(preset.month);
+                      }}
+                      className="px-3 py-2 text-xs font-medium bg-white border border-green-200 rounded-md hover:bg-green-100 hover:border-green-300 transition-colors text-green-700"
+                    >
+                      {preset.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
               <div>
                 <label className="block font-semibold mb-2">Original Loan Amount</label>
                 <input type="number" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value))} className="w-full px-4 py-3 border-2 rounded-xl font-bold" />

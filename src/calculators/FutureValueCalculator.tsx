@@ -54,6 +54,32 @@ export const FutureValueCalculator: React.FC = () => {
           <DollarSign className="w-5 h-5 mr-2 text-blue-600" />
           Investment Details
         </h2>
+
+        {/* Quick Presets */}
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+          <h3 className="text-sm font-semibold text-blue-900 mb-3">Quick Presets (2025-2027)</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            {[
+              { label: '₹10L 20Y 12%', p: 1000000, r: 12, t: 20 },
+              { label: '₹5L 15Y 11%', p: 500000, r: 11, t: 15 },
+              { label: '₹25L 10Y 10%', p: 2500000, r: 10, t: 10 },
+              { label: '₹1L 30Y 12%', p: 100000, r: 12, t: 30 },
+              { label: '₹50L 25Y 11%', p: 5000000, r: 11, t: 25 },
+            ].map((preset, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setPrincipal(preset.p);
+                  setRate(preset.r);
+                  setTime(preset.t);
+                }}
+                className="px-3 py-2 text-xs font-medium bg-white border border-blue-200 rounded-md hover:bg-blue-100 hover:border-blue-300 transition-colors text-blue-700"
+              >
+                {preset.label}
+              </button>
+            ))}
+          </div>
+        </div>
         
         <div className="space-y-4">
           <div>

@@ -50,6 +50,31 @@ export const InflationCalculator: React.FC = () => {
       <p className="text-lg text-center text-gray-700 mb-8">Calculate purchasing power erosion and future costs</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
     <div className="p-6">
+      {/* Quick Presets */}
+      <div className="bg-red-50 p-4 rounded-lg border border-red-100 mb-6">
+        <h3 className="text-sm font-semibold text-red-900 mb-3">Quick Presets (2025-2027)</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {[
+            { label: '₹1L 10Y 6%', amt: 100000, inf: 6, yrs: 10 },
+            { label: '₹50K 20Y 6%', amt: 50000, inf: 6, yrs: 20 },
+            { label: '₹10L 15Y 6%', amt: 1000000, inf: 6, yrs: 15 },
+            { label: '₹5L 25Y 6%', amt: 500000, inf: 6, yrs: 25 },
+            { label: '₹25L 30Y 6%', amt: 2500000, inf: 6, yrs: 30 },
+          ].map((preset, idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                setCurrentAmount(preset.amt);
+                setInflationRate(preset.inf);
+                setYears(preset.yrs);
+              }}
+              className="px-3 py-2 text-xs font-medium bg-white border border-red-200 rounded-md hover:bg-red-100 hover:border-red-300 transition-colors text-red-700"
+            >
+              {preset.label}
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="grid gap-6">
         <div className="space-y-4">
           <label className="block">
