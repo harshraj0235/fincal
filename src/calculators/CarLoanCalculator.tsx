@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { formatCurrency, calculateEMI, calculateLoanBreakup } from '../utils/calculatorUtils';
 import { Sliders, Calculator, PieChart, Calendar } from 'lucide-react';
 import { ResultChart } from '../components/ResultChart';
@@ -6,6 +7,21 @@ import { CalculatorContentWrapper } from '../components/CalculatorContentWrapper
 import { CalculatorSchema } from '../components/CalculatorSchema';
 
 export const CarLoanCalculator: React.FC = () => {
+  // Quick presets for common car loan scenarios
+  const carLoanPresets = [
+    { name: "Hatchback (₹8L)", car: 800000, loan: 640000, rate: 9.5, tenure: 5, type: 'years' as const },
+    { name: "Sedan (₹15L)", car: 1500000, loan: 1200000, rate: 9.0, tenure: 5, type: 'years' as const },
+    { name: "SUV (₹25L)", car: 2500000, loan: 2000000, rate: 9.5, tenure: 5, type: 'years' as const },
+    { name: "Used Car (₹12L)", car: 1200000, loan: 900000, rate: 11.5, tenure: 4, type: 'years' as const }
+  ];
+
+  const applyPreset = (preset: typeof carLoanPresets[0]) => {
+    setCarValue(preset.car);
+    setLoanAmount(preset.loan);
+    setInterestRate(preset.rate);
+    setLoanTenure(preset.tenure);
+    setTenureType(preset.type);
+  };
   const [carValue, setCarValue] = useState<number>(1000000);
   const [loanAmount, setLoanAmount] = useState<number>(800000);
   const [interestRate, setInterestRate] = useState<number>(9.5);
@@ -39,6 +55,23 @@ const contentData = {title:"Car Loan Calculator",description:"Car Loan Calculato
           <Sliders className="w-5 h-5 mr-2 text-[--primary-600]" />
           Car Loan Details
         </h2>
+        
+        {/* Quick Presets for Common Car Loan Scenarios */}
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 mb-4">
+          <p className="text-sm font-medium text-neutral-700 mb-2">Quick Presets (Common Scenarios):</p>
+          <div className="flex flex-wrap gap-2">
+            {carLoanPresets.map((preset, idx) => (
+              <button
+                key={idx}
+                onClick={() => applyPreset(preset)}
+                className="px-3 py-1.5 text-xs bg-white border border-blue-200 rounded-md hover:bg-blue-100 hover:border-blue-300 transition-colors text-neutral-700 font-medium"
+              >
+                {preset.name}
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-neutral-600 mt-2">Click any preset to auto-fill with typical values</p>
+        </div>
         
         <div className="space-y-4">
           <div>
@@ -247,7 +280,33 @@ const contentData = {title:"Car Loan Calculator",description:"Car Loan Calculato
         </div>
       </div>
     </div>
-      <div className="mx-auto max-w-5xl px-4 mt-12"><CalculatorContentWrapper {...contentData}/></div>
+      <div className="mx-auto max-w-5xl px-4 mt-12">
+        <CalculatorContentWrapper {...contentData}/>
+        
+        {/* Additional Comprehensive Content Section - Car Loan Analysis 2025 */}
+        <div className="mt-12 bg-white rounded-xl shadow-sm p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Car Loan Calculator India 2025: Latest Rates, Trends & Complete Guide</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-6">
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Current Car Loan Interest Rates in India (2025)</h3>
+              <p className="leading-relaxed mb-4">
+                Car loan interest rates in India for 2025 range from <strong>8.5% to 13% per annum</strong> depending on lender, car type, credit score, and loan amount. PSU banks (SBI, BOB, PNB) typically offer 8.5-9.5% for new cars with good credit scores (750+). Private banks (HDFC Bank, ICICI Bank, Axis Bank) offer 8.75-10% with faster processing. NBFCs offer 9-13% with more flexible eligibility. Used car loans typically have 1-2% higher rates (10-13%) due to higher risk.
+              </p>
+              <p className="leading-relaxed mb-4">
+                Factors affecting interest rate: <strong>Credit Score</strong> - 750+ gets best rates (8.5-9%), 700-750 gets 9-10%, below 700 gets 10-13% or rejection. <strong>Car Type</strong> - New cars get better rates than used cars. <strong>Loan Amount</strong> - Loans above ₹5-10L often get 0.25-0.5% lower rates. <strong>Employment</strong> - Salaried employees get preferential rates. <strong>Down Payment</strong> - Higher down payment (20%+) can get 0.25-0.5% discount. Use our <Link to="/calculators/loan-comparison-calculator" className="text-primary-700 underline font-semibold">Loan Comparison Calculator</Link> to compare rates from multiple lenders.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Related Calculators for Complete Car Purchase Planning</h3>
+              <p className="leading-relaxed mb-4">
+                Comprehensive car purchase planning requires multiple calculators. Use our <Link to="/calculators/emi-calculator" className="text-primary-700 underline font-semibold">EMI Calculator</Link> for general loan EMI calculations. Our <Link to="/calculators/loan-affordability-calculator" className="text-primary-700 underline font-semibold">Loan Affordability Calculator</Link> helps determine maximum loan eligibility. For comparing with other loan types, use our <Link to="/calculators/personal-loan-calculator" className="text-primary-700 underline font-semibold">Personal Loan Calculator</Link>.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
