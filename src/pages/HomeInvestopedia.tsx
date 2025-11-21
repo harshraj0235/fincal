@@ -7,7 +7,8 @@ import {
   Target, BarChart3, Gift, Umbrella, HelpCircle,
   Rocket, Calendar, Tag, CheckCircle, Clock, Users,
   CreditCard, Building2, Briefcase, Car, Heart, GraduationCap,
-  TrendingUp as TrendingUpIcon, Filter, Grid, List, X, Wrench
+  TrendingUp as TrendingUpIcon, Filter, Grid, List, X, Wrench,
+  Newspaper, Coins, FolderOpen, Sparkles
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { calculatorCategories } from '../data/calculatorData';
@@ -382,70 +383,80 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* Tools Section */}
-        <section className="py-16 bg-white border-b border-gray-100">
+        {/* Tools Section - Enhanced */}
+        <section className="py-16 bg-gradient-to-b from-gray-50 to-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Financial Tools</h2>
-                <p className="text-gray-600">Specialized tools for finance, tax, GST, Excel, and banking</p>
+                <div className="flex items-center gap-3 mb-2">
+                  <Wrench className="w-8 h-8 text-blue-600" />
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Financial Tools</h2>
+                </div>
+                <p className="text-gray-600 text-lg">Specialized tools for finance, tax, GST, Excel, and banking</p>
               </div>
               <Link 
                 to="/tools" 
-                className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1 text-sm md:text-base"
+                className="hidden sm:flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
               >
-                View All Tools <ArrowRight className="w-4 h-4" />
+                View All Tools <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { 
                   name: 'Finance Tools', 
                   path: '/finance-tools', 
                   icon: DollarSign, 
-                  desc: 'SIP calculators, mutual fund tools, portfolio analyzers', 
+                  desc: 'SIP calculators, mutual fund tools, portfolio analyzers, XIRR tracker', 
                   count: '25+',
-                  color: 'from-blue-500 to-blue-600'
+                  color: 'from-blue-500 to-blue-600',
+                  bgColor: 'bg-blue-50'
                 },
                 { 
                   name: 'Tax Tools', 
                   path: '/tax-tools', 
                   icon: FileText, 
-                  desc: 'Tax calculators, ITR helpers, deduction analyzers', 
+                  desc: 'Tax calculators, ITR helpers, deduction analyzers, capital gains', 
                   count: '40+',
-                  color: 'from-green-500 to-green-600'
+                  color: 'from-green-500 to-green-600',
+                  bgColor: 'bg-green-50'
                 },
                 { 
                   name: 'GST Tools', 
                   path: '/gst-tools', 
                   icon: Calculator, 
-                  desc: 'GST calculators, HSN finder, compliance tools', 
+                  desc: 'GST calculators, HSN finder, compliance tools, reverse GST', 
                   count: '20+',
-                  color: 'from-purple-500 to-purple-600'
+                  color: 'from-purple-500 to-purple-600',
+                  bgColor: 'bg-purple-50'
                 },
                 { 
                   name: 'Excel Tools', 
                   path: '/excel-tools', 
                   icon: BarChart3, 
-                  desc: 'Excel templates, formulas, financial spreadsheets', 
+                  desc: 'Excel templates, formulas, financial spreadsheets, calculators', 
                   count: '50+',
-                  color: 'from-orange-500 to-orange-600'
+                  color: 'from-orange-500 to-orange-600',
+                  bgColor: 'bg-orange-50'
                 },
                 { 
                   name: 'Bank Tools', 
                   path: '/bank-tools', 
                   icon: Building2, 
-                  desc: 'IFSC finder, ATM locator, bank charges analyzer', 
+                  desc: 'IFSC finder, ATM locator, bank charges analyzer, holiday calendar', 
                   count: '10+',
-                  color: 'from-cyan-500 to-cyan-600'
+                  color: 'from-cyan-500 to-cyan-600',
+                  bgColor: 'bg-cyan-50'
                 },
                 { 
                   name: 'All Tools', 
                   path: '/tools', 
                   icon: Wrench, 
-                  desc: 'Browse all financial tools and utilities', 
+                  desc: 'Browse all financial tools and utilities in one place', 
                   count: '200+',
-                  color: 'from-indigo-500 to-indigo-600'
+                  color: 'from-indigo-500 to-indigo-600',
+                  bgColor: 'bg-indigo-50'
                 },
               ].map((tool, idx) => {
                 const Icon = tool.icon;
@@ -453,26 +464,113 @@ const HomeInvestopedia: React.FC = () => {
                   <Link
                     key={idx}
                     to={tool.path}
-                    className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all group relative overflow-hidden"
+                    className="group relative overflow-hidden rounded-xl bg-white border-2 border-gray-200 hover:border-blue-500 p-6 hover:shadow-xl transition-all transform hover:-translate-y-1"
                   >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity" 
-                         style={{ background: `linear-gradient(to bottom right, var(--tw-gradient-stops))`, 
-                                  '--tw-gradient-from': tool.color.split(' ')[1], 
-                                  '--tw-gradient-to': tool.color.split(' ')[3] }} />
-                    <div className="flex items-start space-x-4 relative z-10">
-                      <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${tool.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                        <Icon className="w-6 h-6 text-white" />
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`w-14 h-14 ${tool.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                        <Icon className={`w-7 h-7 text-gray-700 group-hover:text-blue-600 transition-colors`} />
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600">{tool.name}</h3>
-                          <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded-full font-medium">{tool.count}</span>
-                        </div>
-                        <p className="text-sm text-gray-600 line-clamp-2">{tool.desc}</p>
-                        <div className="mt-3 flex items-center text-blue-600 text-sm font-medium">
-                          Explore <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                        </div>
+                      <span className="text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">{tool.count}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{tool.name}</h3>
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">{tool.desc}</p>
+                    <div className="flex items-center text-sm font-medium text-blue-600">
+                      Explore Tools <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Resources Section - New */}
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-10">
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <FolderOpen className="w-8 h-8 text-green-600" />
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Resources & Learning</h2>
+                </div>
+                <p className="text-gray-600 text-lg">Educational content, guides, news, and government schemes</p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { 
+                  name: 'Learn', 
+                  path: '/learn', 
+                  icon: BookOpen, 
+                  desc: '40+ expert lessons on loans, investments, taxes, and personal finance', 
+                  count: '40+',
+                  bgColor: 'bg-emerald-50',
+                  gradient: 'bg-gradient-to-br from-emerald-50 to-green-50'
+                },
+                { 
+                  name: 'Blog', 
+                  path: '/blog', 
+                  icon: FileText, 
+                  desc: '150+ articles on financial planning, investment strategies, and tips', 
+                  count: '150+',
+                  bgColor: 'bg-blue-50',
+                  gradient: 'bg-gradient-to-br from-blue-50 to-indigo-50'
+                },
+                { 
+                  name: 'News', 
+                  path: '/news', 
+                  icon: Newspaper, 
+                  desc: 'Latest financial news, market updates, and economic insights', 
+                  count: '100+',
+                  bgColor: 'bg-red-50',
+                  gradient: 'bg-gradient-to-br from-red-50 to-pink-50'
+                },
+                { 
+                  name: 'Government Schemes', 
+                  path: '/government-schemes', 
+                  icon: Gift, 
+                  desc: 'Complete guide to government schemes, benefits, and eligibility', 
+                  count: '50+',
+                  bgColor: 'bg-yellow-50',
+                  gradient: 'bg-gradient-to-br from-yellow-50 to-orange-50'
+                },
+                { 
+                  name: 'Crypto', 
+                  path: '/crypto', 
+                  icon: Coins, 
+                  desc: 'Cryptocurrency guides, tax calculator, and investment insights', 
+                  count: '30+',
+                  bgColor: 'bg-purple-50',
+                  gradient: 'bg-gradient-to-br from-purple-50 to-violet-50'
+                },
+                { 
+                  name: 'Astro Finance', 
+                  path: '/astro-finance', 
+                  icon: Sparkles, 
+                  desc: 'Astrological insights for financial decisions and auspicious dates', 
+                  count: '13+',
+                  bgColor: 'bg-indigo-50',
+                  gradient: 'bg-gradient-to-br from-indigo-50 to-purple-50'
+                },
+              ].map((resource, idx) => {
+                const Icon = resource.icon;
+                return (
+                  <Link
+                    key={idx}
+                    to={resource.path}
+                    className={`group relative overflow-hidden rounded-xl ${resource.gradient} border-2 border-gray-200 hover:border-gray-400 p-6 hover:shadow-xl transition-all transform hover:-translate-y-1`}
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`w-14 h-14 ${resource.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform border-2 border-white`}>
+                        <Icon className={`w-7 h-7 text-gray-700 group-hover:text-gray-900 transition-colors`} />
                       </div>
+                      <span className="text-xs font-semibold bg-white/80 text-gray-700 px-3 py-1 rounded-full backdrop-blur-sm">{resource.count}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-900 transition-colors">{resource.name}</h3>
+                    <p className="text-sm text-gray-700 mb-4 line-clamp-2">{resource.desc}</p>
+                    <div className="flex items-center text-sm font-medium text-gray-700">
+                      Explore <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
                 );
@@ -540,10 +638,7 @@ const HomeInvestopedia: React.FC = () => {
                     to={resource.path}
                     className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all group relative overflow-hidden"
                   >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity" 
-                         style={{ background: `linear-gradient(to bottom right, var(--tw-gradient-stops))`, 
-                                  '--tw-gradient-from': resource.color.split(' ')[1], 
-                                  '--tw-gradient-to': resource.color.split(' ')[3] }} />
+                    <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${resource.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
                     <div className="flex items-start space-x-4 relative z-10">
                       <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${resource.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
                         <Icon className="w-6 h-6 text-white" />
