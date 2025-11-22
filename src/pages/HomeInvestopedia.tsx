@@ -234,37 +234,39 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* Popular Calculators - Always Visible */}
-        <section className="py-8 bg-white border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900">Popular Calculators</h2>
-              <Link 
-                to="/calculators" 
-                className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
-              >
-                View All <ArrowRight className="w-4 h-4" />
-              </Link>
+        {/* Popular Calculators - Only visible when Calculators tab is active */}
+        {activeTab === 'calculators' && (
+          <section className="py-8 bg-white border-b border-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900">Popular Calculators</h2>
+                <Link 
+                  to="/calculators" 
+                  className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+                >
+                  View All <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+                {popularCalculators.map((calc) => {
+                  const Icon = calc.icon;
+                  return (
+                    <Link
+                      key={calc.id}
+                      to={calc.path}
+                      className="bg-white p-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all group text-center"
+                    >
+                      <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-blue-600 transition-colors">
+                        <Icon className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors" />
+                      </div>
+                      <h3 className="text-xs font-semibold text-gray-900 group-hover:text-blue-600 line-clamp-2">{calc.name}</h3>
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-              {popularCalculators.map((calc) => {
-                const Icon = calc.icon;
-                return (
-                  <Link
-                    key={calc.id}
-                    to={calc.path}
-                    className="bg-white p-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all group text-center"
-                  >
-                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-blue-600 transition-colors">
-                      <Icon className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors" />
-                    </div>
-                    <h3 className="text-xs font-semibold text-gray-900 group-hover:text-blue-600 line-clamp-2">{calc.name}</h3>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Tab Content */}
         {activeTab === 'calculators' && (
