@@ -131,7 +131,7 @@ const contentData = {title:"GST Calculator",description:"GST Calculator is India
             </div>
             <p className="text-xs text-neutral-600 mt-2">Click any preset to auto-fill with typical values</p>
           </div>
-
+          
           <div className="space-y-4">
             <div>
               <label htmlFor="amount" className="block text-sm font-medium text-neutral-700 mb-2">
