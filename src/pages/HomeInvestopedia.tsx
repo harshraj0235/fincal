@@ -353,7 +353,7 @@ const HomeInvestopedia: React.FC = () => {
                   { name: 'Gold Tools', path: '/gold-tools', icon: Gem, count: '5+', color: 'bg-yellow-50 text-yellow-600' },
                   { name: 'Invoicing Tools', path: '/invoicing-tools', icon: FileInvoice, count: '12+', color: 'bg-violet-50 text-violet-600' },
                   { name: 'Festival Tools', path: '/festival-tools', icon: CalendarIcon, count: '10+', color: 'bg-rose-50 text-rose-600' },
-                  { name: 'Corporate Tools', path: '/corporate-tools', icon: Briefcase, count: '20+', color: 'bg-slate-50 text-slate-600' },
+                  { name: 'Corporate Tools', path: '/corporate-finance', icon: Briefcase, count: '20+', color: 'bg-slate-50 text-slate-600' },
                   { name: 'All Tools', path: '/tools', icon: Wrench, count: '200+', color: 'bg-indigo-50 text-indigo-600' },
                 ].map((tool, idx) => {
                   const Icon = tool.icon;
@@ -387,10 +387,10 @@ const HomeInvestopedia: React.FC = () => {
                   { name: 'Govt Schemes', path: '/government-schemes', icon: Gift, count: '50+', color: 'bg-yellow-50 text-yellow-600' },
                   { name: 'Crypto', path: '/crypto', icon: Coins, count: '30+', color: 'bg-purple-50 text-purple-600' },
                   { name: 'Astro Finance', path: '/astro-finance', icon: Sparkles, count: '13+', color: 'bg-indigo-50 text-indigo-600' },
-                  { name: 'Festival', path: '/festival', icon: CalendarIcon, count: '25+', color: 'bg-rose-50 text-rose-600' },
-                  { name: 'Corporate', path: '/corporate', icon: Briefcase, count: '15+', color: 'bg-slate-50 text-slate-600' },
-                  { name: 'Personal Finance', path: '/personal-finance', icon: PiggyBank, count: '20+', color: 'bg-cyan-50 text-cyan-600' },
-                  { name: 'Religious', path: '/religious', icon: Scale, count: '10+', color: 'bg-amber-50 text-amber-600' },
+                  { name: 'Festival', path: '/festival-tools', icon: CalendarIcon, count: '25+', color: 'bg-rose-50 text-rose-600' },
+                  { name: 'Corporate', path: '/corporate-finance', icon: Briefcase, count: '15+', color: 'bg-slate-50 text-slate-600' },
+                  { name: 'Personal Finance', path: '/personal-finance-management', icon: PiggyBank, count: '20+', color: 'bg-cyan-50 text-cyan-600' },
+                  { name: 'Religious', path: '/religious-tools', icon: Scale, count: '10+', color: 'bg-amber-50 text-amber-600' },
                 ].map((resource, idx) => {
                   const Icon = resource.icon;
                   return (
