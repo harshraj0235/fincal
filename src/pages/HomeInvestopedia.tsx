@@ -8,7 +8,8 @@ import {
   Rocket, Calendar, CheckCircle, Users,
   CreditCard, Building2, Briefcase, Heart, GraduationCap,
   Filter, Grid, List, X, Wrench,
-  Newspaper, Coins, FolderOpen, Sparkles, Menu
+  Newspaper, Coins, FolderOpen, Sparkles, Menu,
+  Receipt, Calendar as CalendarIcon, Gem, FileInvoice, Scale
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { calculatorCategories } from '../data/calculatorData';
@@ -340,13 +341,19 @@ const HomeInvestopedia: React.FC = () => {
         {activeTab === 'tools' && (
           <section className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 {[
                   { name: 'Finance Tools', path: '/finance-tools', icon: DollarSign, count: '25+', color: 'bg-blue-50 text-blue-600' },
                   { name: 'Tax Tools', path: '/tax-tools', icon: FileText, count: '40+', color: 'bg-green-50 text-green-600' },
                   { name: 'GST Tools', path: '/gst-tools', icon: Calculator, count: '20+', color: 'bg-purple-50 text-purple-600' },
                   { name: 'Excel Tools', path: '/excel-tools', icon: BarChart3, count: '50+', color: 'bg-orange-50 text-orange-600' },
                   { name: 'Bank Tools', path: '/bank-tools', icon: Building2, count: '10+', color: 'bg-cyan-50 text-cyan-600' },
+                  { name: 'Loan Tools', path: '/loan-tools', icon: Home, count: '15+', color: 'bg-teal-50 text-teal-600' },
+                  { name: 'Insurance Tools', path: '/insurance-tools', icon: Heart, count: '8+', color: 'bg-pink-50 text-pink-600' },
+                  { name: 'Gold Tools', path: '/gold-tools', icon: Gem, count: '5+', color: 'bg-yellow-50 text-yellow-600' },
+                  { name: 'Invoicing Tools', path: '/invoicing-tools', icon: FileInvoice, count: '12+', color: 'bg-violet-50 text-violet-600' },
+                  { name: 'Festival Tools', path: '/festival-tools', icon: CalendarIcon, count: '10+', color: 'bg-rose-50 text-rose-600' },
+                  { name: 'Corporate Tools', path: '/corporate-tools', icon: Briefcase, count: '20+', color: 'bg-slate-50 text-slate-600' },
                   { name: 'All Tools', path: '/tools', icon: Wrench, count: '200+', color: 'bg-indigo-50 text-indigo-600' },
                 ].map((tool, idx) => {
                   const Icon = tool.icon;
@@ -372,7 +379,7 @@ const HomeInvestopedia: React.FC = () => {
         {activeTab === 'resources' && (
           <section className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 {[
                   { name: 'Learn', path: '/learn', icon: BookOpen, count: '40+', color: 'bg-emerald-50 text-emerald-600' },
                   { name: 'Blog', path: '/blog', icon: FileText, count: '150+', color: 'bg-blue-50 text-blue-600' },
@@ -380,6 +387,10 @@ const HomeInvestopedia: React.FC = () => {
                   { name: 'Govt Schemes', path: '/government-schemes', icon: Gift, count: '50+', color: 'bg-yellow-50 text-yellow-600' },
                   { name: 'Crypto', path: '/crypto', icon: Coins, count: '30+', color: 'bg-purple-50 text-purple-600' },
                   { name: 'Astro Finance', path: '/astro-finance', icon: Sparkles, count: '13+', color: 'bg-indigo-50 text-indigo-600' },
+                  { name: 'Festival', path: '/festival', icon: CalendarIcon, count: '25+', color: 'bg-rose-50 text-rose-600' },
+                  { name: 'Corporate', path: '/corporate', icon: Briefcase, count: '15+', color: 'bg-slate-50 text-slate-600' },
+                  { name: 'Personal Finance', path: '/personal-finance', icon: PiggyBank, count: '20+', color: 'bg-cyan-50 text-cyan-600' },
+                  { name: 'Religious', path: '/religious', icon: Scale, count: '10+', color: 'bg-amber-50 text-amber-600' },
                 ].map((resource, idx) => {
                   const Icon = resource.icon;
                   return (
