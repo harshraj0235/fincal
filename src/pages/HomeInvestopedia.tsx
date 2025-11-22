@@ -9,7 +9,7 @@ import {
   CreditCard, Building2, Briefcase, Heart, GraduationCap,
   Filter, Grid, List, X, Wrench,
   Newspaper, Coins, FolderOpen, Sparkles, Menu,
-  Receipt, Calendar as CalendarIcon, Gem, FileInvoice, Scale
+  Receipt, Calendar as CalendarIcon, Gem, Scale
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { calculatorCategories } from '../data/calculatorData';
@@ -351,7 +351,7 @@ const HomeInvestopedia: React.FC = () => {
                   { name: 'Loan Tools', path: '/loan-tools', icon: Home, count: '15+', color: 'bg-teal-50 text-teal-600' },
                   { name: 'Insurance Tools', path: '/insurance-tools', icon: Heart, count: '8+', color: 'bg-pink-50 text-pink-600' },
                   { name: 'Gold Tools', path: '/gold-tools', icon: Gem, count: '5+', color: 'bg-yellow-50 text-yellow-600' },
-                  { name: 'Invoicing Tools', path: '/invoicing-tools', icon: FileInvoice, count: '12+', color: 'bg-violet-50 text-violet-600' },
+                  { name: 'Invoicing Tools', path: '/invoicing-tools', icon: Receipt, count: '12+', color: 'bg-violet-50 text-violet-600' },
                   { name: 'Festival Tools', path: '/festival-tools', icon: CalendarIcon, count: '10+', color: 'bg-rose-50 text-rose-600' },
                   { name: 'Corporate Tools', path: '/corporate-finance', icon: Briefcase, count: '20+', color: 'bg-slate-50 text-slate-600' },
                   { name: 'All Tools', path: '/tools', icon: Wrench, count: '200+', color: 'bg-indigo-50 text-indigo-600' },
