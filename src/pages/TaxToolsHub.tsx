@@ -28,11 +28,12 @@ import {
   ArrowLeftRight,
   AlertTriangle,
   Home,
-  Scale
+  Scale,
+  ChevronDown,
+  ExternalLink,
+  BookOpen
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
 
 interface TaxTool {
   id: string;
@@ -50,6 +51,7 @@ interface TaxTool {
 const TaxToolsHub: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [expandedGuide, setExpandedGuide] = useState<string | null>('getting-started');
 
   const taxTools: TaxTool[] = [
     // Available Tools
@@ -457,6 +459,7 @@ const TaxToolsHub: React.FC = () => {
     { id: 'Loss Management', name: 'Loss Management', icon: <TrendingDown className="h-5 w-5" /> },
     { id: 'Tax Planning', name: 'Tax Planning', icon: <Percent className="h-5 w-5" /> },
     { id: 'Filing & Compliance', name: 'Filing & Compliance', icon: <FileText className="h-5 w-5" /> },
+    { id: 'Tax Filing', name: 'Tax Filing', icon: <FileText className="h-5 w-5" /> },
     { id: 'Advanced Tools', name: 'Advanced Tools', icon: <Wrench className="h-5 w-5" /> },
     { id: 'Data Analysis', name: 'Data Analysis', icon: <BarChart3 className="h-5 w-5" /> },
     { id: 'Retirement Planning', name: 'Retirement Planning', icon: <Shield className="h-5 w-5" /> },
@@ -475,11 +478,10 @@ const TaxToolsHub: React.FC = () => {
     <>
       <SEOHelmet
         title="Tax & Profit Simplifiers - Comprehensive Tax Tools Hub | MoneyCal"
-        description="Explore our comprehensive collection of tax and profit simplification tools. From STCG/LTCG classifiers to advanced tax planning calculators, find everything you need for smart tax management."
-        keywords="tax tools, profit simplifiers, capital gains tax calculator, STCG LTCG calculator, tax planning tools, mutual fund tax calculator, dividend tax calculator"
+        description="Free Indian tax tools hub: STCG/LTCG classifier, equity tax estimator, dividend tax, loss carry forward, ITR helpers, 80C analyzer, NPS comparison & more. How-to guides and calculators for 2026–2050."
+        keywords="tax tools India, capital gains calculator, STCG LTCG calculator, dividend tax calculator, ITR form helper, 80C deduction, tax planning tools, mutual fund tax, loss carry forward, tax filing India"
+        url="https://moneycal.in/tax-tools"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
@@ -490,11 +492,14 @@ const TaxToolsHub: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-white/20 text-white mb-6">
+                Tax Tools Hub • Valid 2026–2050
+              </span>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Tax & Profit Simplifiers
               </h1>
               <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Comprehensive collection of tax tools and calculators designed to simplify your financial planning and tax management.
+                Find the right tool with search and categories. Use calculators for capital gains, dividends, ITR, 80C, and more—all free.
               </p>
               
               {/* Search Bar */}
@@ -531,6 +536,58 @@ const TaxToolsHub: React.FC = () => {
                   {category.icon}
                   <span className="ml-2">{category.name}</span>
                 </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How to Use Guide */}
+        <section className="py-12 bg-gray-50 border-b border-gray-200">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <BookOpen className="h-7 w-7 text-blue-600" />
+              How to Use These Tax Tools
+            </h2>
+            <div className="space-y-2">
+              {[
+                {
+                  id: 'getting-started',
+                  title: 'Getting started',
+                  body: 'Use the search bar above to find a tool by name (e.g. "STCG", "dividend", "80C") or browse by category. Click any tool card to open it. All tools are free and work in the browser—no sign-up required.'
+                },
+                {
+                  id: 'by-category',
+                  title: 'Browse by category',
+                  body: 'Capital Gains: STCG/LTCG classifier, equity tax estimator, partial selloff, bonus shares. Dividends: dividend tax estimator, reinvestment comparison. Loss Management: carry forward, loss offset visualizer. Tax Planning: 80C, NPS, ELSS, regime comparison. Filing: ITR form helper, turnover calculator, deadline reminder.'
+                },
+                {
+                  id: 'popular-first',
+                  title: 'Popular tools',
+                  body: 'Start with STCG vs LTCG Classifier to know your gain type, Equity Tax Estimator by Assessment Year for liability, Dividend Tax Estimator for post-2020 rules, and Loss Carry Forward Estimator. For planning, try Section 80C Tally Analyzer and Old vs New Tax Regime Helper.'
+                },
+                {
+                  id: 'data-and-filing',
+                  title: 'Data & filing',
+                  body: 'Use CSV to Tax Summary Tool to turn broker statements into tax reports. ITR Form Type Helper and Turnover Calculator help you pick the right form and report turnover. Tax Filing Deadline Reminder Widget keeps you on track for due dates.'
+                }
+              ].map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+                >
+                  <button
+                    onClick={() => setExpandedGuide(expandedGuide === item.id ? null : item.id)}
+                    className="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-gray-900 hover:bg-gray-50 transition-colors"
+                  >
+                    {item.title}
+                    <ChevronDown className={`h-5 w-5 text-gray-500 transition-transform ${expandedGuide === item.id ? 'rotate-180' : ''}`} />
+                  </button>
+                  {expandedGuide === item.id && (
+                    <div className="px-5 pb-4 pt-0 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+                      {item.body}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -613,6 +670,76 @@ const TaxToolsHub: React.FC = () => {
                 ))}
               </div>
             )}
+          </div>
+        </section>
+
+        {/* SEO & Guide Content */}
+        <section className="py-16 bg-white border-t border-gray-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg prose-gray max-w-none">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Tax Tools Hub: Plan, Calculate & File Smarter</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              MoneyCal&apos;s tax tools hub helps you with capital gains tax, dividend tax, loss carry forward, Section 80C, NPS, ITR form selection, and more. Whether you trade equity, invest in mutual funds, or plan retirement, these calculators and helpers are built for Indian tax rules and updated for current assessment years.
+            </p>
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Capital gains & equity</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Use the <Link to="/tax-tools/stcg-ltcg-classifier" className="text-blue-600 hover:underline font-medium">STCG vs LTCG Classifier</Link> to see if your gains are short-term or long-term. The <Link to="/tax-tools/equity-tax-estimator" className="text-blue-600 hover:underline font-medium">Equity Tax Estimator by Assessment Year</Link> gives you tax liability by FY/AY. For partial sales, bonus shares, and gifted shares, use the dedicated calculators so cost and period are applied correctly.
+            </p>
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Dividends & mutual funds</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Dividend income is taxable under the post-2020 regime. The <Link to="/tax-tools/dividend-tax-estimator" className="text-blue-600 hover:underline font-medium">Dividend Tax Estimator</Link> and <Link to="/tax-tools/dividend-reinvestment-tax-comparison" className="text-blue-600 hover:underline font-medium">Dividend Reinvestment Tax Comparison</Link> help you estimate and compare. For mutual funds, try the <Link to="/tax-tools/mutual-fund-exit-load-checker" className="text-blue-600 hover:underline font-medium">Exit Load Checker</Link>, <Link to="/tax-tools/debt-fund-tax-calculator" className="text-blue-600 hover:underline font-medium">Debt Fund Tax Calculator</Link>, and <Link to="/tax-tools/switch-mf-tax-calculator" className="text-blue-600 hover:underline font-medium">Switch MF Tax Calculator</Link>.
+            </p>
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Losses & tax optimization</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Track and use losses with the <Link to="/tax-tools/loss-carry-forward-estimator" className="text-blue-600 hover:underline font-medium">Loss Carry Forward Estimator</Link> and <Link to="/tax-tools/short-term-loss-offset-visualizer" className="text-blue-600 hover:underline font-medium">Short-Term Loss Offset Visualizer</Link>. The <Link to="/tax-tools/tax-loss-harvesting-calculator" className="text-blue-600 hover:underline font-medium">Tax Loss Harvesting Calculator</Link> helps plan loss utilization. For exemptions, use the <Link to="/tax-tools/offset-ltcg-with-annual-exemptions-tool" className="text-blue-600 hover:underline font-medium">Offset LTCG with Annual Exemptions</Link> tool.
+            </p>
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Tax planning & filing</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Compare regimes with the <Link to="/tax-tools/old-vs-new-tax-regime-helper" className="text-blue-600 hover:underline font-medium">Old vs New Tax Regime Helper</Link>. Optimize 80C with the <Link to="/tax-tools/section-80c-tally-analyzer" className="text-blue-600 hover:underline font-medium">Section 80C Tally Analyzer</Link> and <Link to="/tax-tools/80c-deduction-bucket-visualizer" className="text-blue-600 hover:underline font-medium">80C Deduction Bucket Visualizer</Link>. For ITR, use the <Link to="/tax-tools/itr-form-type-helper" className="text-blue-600 hover:underline font-medium">ITR Form Type Helper</Link>, <Link to="/tax-tools/turnover-calculator-itr" className="text-blue-600 hover:underline font-medium">Turnover Calculator for ITR</Link>, and <Link to="/tax-tools/tax-filing-deadline-reminder-widget" className="text-blue-600 hover:underline font-medium">Tax Filing Deadline Reminder Widget</Link>. Official returns are filed at the Income Tax e-Filing portal.
+            </p>
+            <p className="text-gray-600 leading-relaxed mt-6">
+              For official e-filing and forms, visit <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium inline-flex items-center gap-1">incometax.gov.in <ExternalLink className="h-4 w-4" /></a>. This hub is for estimation and planning only; always confirm with a tax professional for your situation.
+            </p>
+          </div>
+        </section>
+
+        {/* Explore More */}
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Explore More</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link to="/tools" className="flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all group">
+                <Wrench className="h-8 w-8 text-blue-600 group-hover:scale-110 transition-transform" />
+                <div>
+                  <div className="font-semibold text-gray-900 group-hover:text-blue-600">All Tools</div>
+                  <div className="text-sm text-gray-500">Calculators & utilities</div>
+                </div>
+                <ArrowRight className="h-5 w-5 text-gray-400 ml-auto group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link to="/finance-tools" className="flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all group">
+                <DollarSign className="h-8 w-8 text-green-600 group-hover:scale-110 transition-transform" />
+                <div>
+                  <div className="font-semibold text-gray-900 group-hover:text-blue-600">Finance Tools</div>
+                  <div className="text-sm text-gray-500">Investments & planning</div>
+                </div>
+                <ArrowRight className="h-5 w-5 text-gray-400 ml-auto group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link to="/blog" className="flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all group">
+                <FileText className="h-8 w-8 text-purple-600 group-hover:scale-110 transition-transform" />
+                <div>
+                  <div className="font-semibold text-gray-900 group-hover:text-blue-600">Blog</div>
+                  <div className="text-sm text-gray-500">Articles & updates</div>
+                </div>
+                <ArrowRight className="h-5 w-5 text-gray-400 ml-auto group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all group">
+                <Globe className="h-8 w-8 text-indigo-600 group-hover:scale-110 transition-transform" />
+                <div>
+                  <div className="font-semibold text-gray-900 group-hover:text-blue-600">Income Tax Portal</div>
+                  <div className="text-sm text-gray-500">Official e-filing</div>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400 ml-auto" />
+              </a>
+            </div>
           </div>
         </section>
 
