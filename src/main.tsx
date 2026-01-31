@@ -6,31 +6,37 @@ import App from './App.tsx';
 import './index.css';
 import './utils/preloadCritical';
 
-// Performance monitoring
-const reportWebVitals = (onPerfEntry: any) => {
-  if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
-    });
+// Soft 404 fix: redirect duplicate path /moneycal.in/... to /... (client-side fallback if server redirect missed)
+if (typeof window !== 'undefined' && window.location.pathname.toLowerCase().startsWith('/moneycal.in/')) {
+  const path = window.location.pathname.replace(/^\/moneycal\.in/i, '') || '/';
+  window.location.replace(window.location.origin + path + window.location.search + window.location.hash);
+} else {
+  // Performance monitoring
+  const reportWebVitals = (onPerfEntry: any) => {
+    if (onPerfEntry && onPerfEntry instanceof Function) {
+      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+        getCLS(onPerfEntry);
+        getFID(onPerfEntry);
+        getFCP(onPerfEntry);
+        getLCP(onPerfEntry);
+        getTTFB(onPerfEntry);
+      });
+    }
+  };
+
+  // Create root with concurrent mode
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <HelmetProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </HelmetProvider>
+    </StrictMode>
+  );
+
+  // Report web vitals if in production
+  if (process.env.NODE_ENV === 'production') {
+    reportWebVitals(console.log);
   }
-};
-
-// Create root with concurrent mode
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
-  </StrictMode>
-);
-
-// Report web vitals if in production
-if (process.env.NODE_ENV === 'production') {
-  reportWebVitals(console.log);
 }

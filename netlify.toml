@@ -21,6 +21,18 @@
   status = 301
   force = true
 
+# Soft 404 fix: duplicate path /moneycal.in/* -> /* (301)
+[[redirects]]
+  from = "/moneycal.in/*"
+  to = "/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/moneycal.in"
+  to = "/"
+  status = 301
+  force = true
+
 # SPA fallback
 [[redirects]]
   from = "/*"
