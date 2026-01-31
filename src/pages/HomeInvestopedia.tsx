@@ -18,6 +18,7 @@ import { calculatorCategories } from '../data/calculatorData';
 import { getStaticSearchItems, searchStatic, type SearchItem, type SearchItemType } from '../data/siteSearchIndex';
 import { loadAllBlogData } from '../data/lazyBlogData';
 import { contentRegistry } from '../cms-content/contentRegistry';
+import NewsShortsSection from '../components/NewsShortsSection';
 
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   'Loan Calculators': Home,
@@ -349,6 +350,9 @@ const HomeInvestopedia: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Moneycal News in 60 Seconds – just above Explore by category */}
+        <NewsShortsSection />
 
         {/* Explore by category – Tax, Gold, GST, etc. */}
         <section className="py-10 bg-white border-b border-slate-100">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { TrendingUp, ChevronLeft, ChevronRight, Newspaper, LayoutGrid } from 'lucide-react';
+import { TrendingUp, ChevronLeft, ChevronRight, Newspaper, LayoutGrid, Clock } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
@@ -85,6 +85,25 @@ const NewsHomePage: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* News in 60 Seconds – Inshorts-style shorts */}
+        <section className="mb-8">
+          <Link
+            to="/news/shorts"
+            className="flex items-center justify-between gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 hover:border-blue-200 hover:shadow-md transition-all"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
+                <Clock className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h2 className="font-bold text-slate-900">Moneycal News in 60 Seconds</h2>
+                <p className="text-sm text-slate-600">Short. Clear. Actionable. Read in 30–45 seconds.</p>
+              </div>
+            </div>
+            <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
+          </Link>
+        </section>
+
         {/* Top story / For you – big card (only when All) */}
         {selectedCategory === 'all' && featuredArticle && (
           <motion.section
