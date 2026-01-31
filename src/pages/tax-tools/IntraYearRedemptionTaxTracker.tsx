@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Calculator, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calculator, TrendingUp, Info, AlertCircle, CheckCircle, BarChart3, Clock, ChevronRight, ChevronDown, Sparkles, FileText, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 interface RedemptionEntry {
   id: string;
@@ -32,6 +33,7 @@ const IntraYearRedemptionTaxTracker: React.FC = () => {
   const [newAmount, setNewAmount] = useState<string>('');
   const [newHoldingPeriod, setNewHoldingPeriod] = useState<string>('');
   const [tracker, setTracker] = useState<RedemptionTracker | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const addRedemption = () => {
     if (!newDate || !newAmount || !newHoldingPeriod) {
@@ -131,26 +133,34 @@ const IntraYearRedemptionTaxTracker: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Intra-Year Redemption Tax Tracker - Track Multiple Redemptions | MoneyCal"
-        description="Track tax implications of multiple redemptions within a year. Monitor STCG and LTCG tax burden with our comprehensive intra-year redemption tracker."
-        keywords="intra-year redemption tracker, multiple redemptions tax, STCG LTCG tracker, redemption tax calculator, tax burden tracker"
+        title="Intra-Year Redemption Tax Tracker – Multiple Redemptions 2024-25 | MoneyCal"
+        description="Track tax on multiple redemptions in a year. STCG 20%, LTCG 12.5%, ₹1.25L exemption. Cumulative STCG/LTCG and tax burden."
+        keywords="intra-year redemption tracker, multiple redemptions tax, STCG LTCG tracker 2024, redemption tax calculator"
+        canonicalUrl="/tax-tools/intra-year-redemption-tax-tracker"
       />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Intra-Year Redemption Tax Tracker
-              </h1>
-              <p className="text-xl text-blue-100 mb-8">
-                Track tax implications of multiple redemptions within a year
-              </p>
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        <div className="bg-white border-b border-slate-200">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav className="flex items-center gap-2 text-sm text-slate-600">
+              <Link to="/" className="hover:text-blue-600">Home</Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link to="/tax-tools" className="hover:text-blue-600">Tax Tools</Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-slate-900 font-medium">Intra-Year Redemption Tax Tracker</span>
+            </nav>
+          </div>
+        </div>
+        <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700 text-white pt-12 pb-16">
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
+              <Sparkles className="w-4 h-4" /> Capital Gains • Budget 2024/2025
             </motion.div>
+            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-4xl md:text-5xl font-bold mb-4">
+              Intra-Year Redemption Tax Tracker
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-lg text-indigo-100 max-w-2xl mx-auto">
+              Track tax on multiple redemptions. STCG 20%, LTCG 12.5%, ₹1.25L exemption.
+            </motion.p>
           </div>
         </section>
 
@@ -354,7 +364,7 @@ const IntraYearRedemptionTaxTracker: React.FC = () => {
                       </h3>
                       <div className="space-y-2 text-purple-700 text-sm">
                         <p>• Consider spreading redemptions across years</p>
-                        <p>• Utilize ₹1L LTCG exemption effectively</p>
+                        <p>• Utilize ₹1.25L LTCG exemption effectively</p>
                         <p>• Plan redemptions around tax slabs</p>
                         <p>• Monitor cumulative tax burden</p>
                       </div>
@@ -425,30 +435,72 @@ const IntraYearRedemptionTaxTracker: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="mt-8 bg-purple-50 p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
-                  <Info className="h-5 w-5 mr-2" />
-                  Related Tax Tools
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <a href="/tax-tools/stcg-ltcg-classifier" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
-                    <span className="font-semibold text-purple-800">STCG vs LTCG Classifier</span>
-                    <p className="text-sm text-purple-600">Determine capital gains category</p>
-                  </a>
-                  <a href="/tax-tools/equity-tax-estimator" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
-                    <span className="font-semibold text-purple-800">Equity Tax Estimator</span>
-                    <p className="text-sm text-purple-600">Calculate equity tax by year</p>
-                  </a>
-                  <a href="/tax-tools/loss-carry-forward-estimator" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
-                    <span className="font-semibold text-purple-800">Loss Carry Forward</span>
-                    <p className="text-sm text-purple-600">Estimate loss carry forward</p>
-                  </a>
-                  <a href="/tax-tools/offset-ltcg-with-annual-exemptions-tool" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
-                    <span className="font-semibold text-purple-800">LTCG Offset Tool</span>
-                    <p className="text-sm text-purple-600">Offset LTCG with exemptions</p>
-                  </a>
-                </div>
+              <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Related tax tools</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'STCG vs LTCG Classifier', path: '/tax-tools/stcg-ltcg-classifier', desc: 'Classify gains' },
+                  { name: 'Equity Tax Estimator', path: '/tax-tools/equity-tax-estimator', desc: 'Tax by year' },
+                  { name: 'Offset LTCG', path: '/tax-tools/offset-ltcg-with-annual-exemptions-tool', desc: 'Plan exemptions' },
+                  { name: 'Tax on Partial Selloff', path: '/tax-tools/tax-on-partial-selloff-calculator', desc: 'Partial sales' },
+                  { name: 'Intraday vs Delivery', path: '/tax-tools/intraday-vs-delivery-tax-calculator', desc: 'Trading tax' },
+                  { name: 'Gifted Shares Tax', path: '/tax-tools/gifted-shares-tax-estimator', desc: 'Gift tax' },
+                  { name: 'Bonus Shares Tax', path: '/tax-tools/bonus-shares-tax-impact-tool', desc: 'Bonus tax' },
+                  { name: 'Tax Loss Harvesting', path: '/tax-tools/tax-loss-harvesting-calculator', desc: 'Offset gains' },
+                ].map((tool) => (
+                  <Link key={tool.path} to={tool.path} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all">
+                    <ChevronRight className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0 group-hover:translate-x-0.5" />
+                    <div>
+                      <p className="font-semibold text-slate-900 group-hover:text-indigo-700">{tool.name}</p>
+                      <p className="text-sm text-slate-500">{tool.desc}</p>
+                    </div>
+                  </Link>
+                ))}
               </div>
+
+              <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Frequently asked questions</h2>
+              <div className="space-y-2">
+                {[
+                  { q: 'How is tax calculated for each redemption?', a: 'Each redemption is classified as STCG (holding ≤365 days) or LTCG (>365 days). STCG is taxed at 20%; LTCG at 12.5%. The ₹1.25L LTCG exemption is applied at the year level when you file; this tracker shows per-redemption tax for planning.' },
+                  { q: 'What are the current STCG and LTCG rates (2024-25)?', a: 'As per Budget 2024: STCG on listed equity/equity funds is 20%; LTCG is 12.5% with an annual exemption of ₹1,25,000. Only LTCG above ₹1.25L in the financial year is taxable.' },
+                  { q: 'Why track multiple redemptions?', a: 'Tracking helps you see cumulative STCG and LTCG and total tax burden in a year. You can plan timing of redemptions and use the ₹1.25L LTCG exemption effectively. Use our Offset LTCG Tool to plan exemption usage.' },
+                ].map((faq, i) => (
+                  <div key={i} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                    <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left font-medium text-slate-900 hover:bg-slate-50">
+                      {faq.q}
+                      <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
+                    </button>
+                    <AnimatePresence>
+                      {openFaq === i && (
+                        <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="border-t border-slate-200">
+                          <p className="p-4 text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
+
+              <article className="mt-12 pt-12 border-t border-slate-200">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Intra-Year Redemption Tax Guide (2024-25)</h2>
+                <p className="text-slate-700 leading-relaxed mb-4">When you have multiple redemptions in a year, track cumulative STCG and LTCG and total tax. The ₹1.25L LTCG exemption is applied to total LTCG when you file. Use our <Link to="/tax-tools/offset-ltcg-with-annual-exemptions-tool" className="text-indigo-600 hover:underline font-medium">Offset LTCG Tool</Link> and <Link to="/tax-tools/stcg-ltcg-classifier" className="text-indigo-600 hover:underline font-medium">STCG vs LTCG Classifier</Link>. <a href="https://www.incometax.gov.in" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Income Tax India</a>. More: <Link to="/blog?category=Tax" className="text-indigo-600 hover:underline">Blog</Link>, <Link to="/news" className="text-indigo-600 hover:underline">News</Link>, <Link to="/tax-tools" className="text-indigo-600 hover:underline">Tax Tools</Link>.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+                  <Link to="/blog?category=Tax" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 flex items-center gap-4">
+                    <FileText className="h-10 w-10 text-indigo-600" />
+                    <div><p className="font-semibold text-slate-900">Tax blog</p><p className="text-sm text-slate-500">Capital gains</p></div>
+                    <ChevronRight className="w-5 h-5 text-slate-400 ml-auto" />
+                  </Link>
+                  <Link to="/news" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 flex items-center gap-4">
+                    <ExternalLink className="h-10 w-10 text-indigo-600" />
+                    <div><p className="font-semibold text-slate-900">News</p><p className="text-sm text-slate-500">Markets & tax</p></div>
+                    <ChevronRight className="w-5 h-5 text-slate-400 ml-auto" />
+                  </Link>
+                  <Link to="/tax-tools" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 flex items-center gap-4">
+                    <Calculator className="h-10 w-10 text-indigo-600" />
+                    <div><p className="font-semibold text-slate-900">All tax tools</p><p className="text-sm text-slate-500">Calculators</p></div>
+                    <ChevronRight className="w-5 h-5 text-slate-400 ml-auto" />
+                  </Link>
+                </div>
+              </article>
             </motion.div>
           </div>
         </section>

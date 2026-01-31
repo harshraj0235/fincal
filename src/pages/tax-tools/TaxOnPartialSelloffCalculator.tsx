@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Calculator, Info, TrendingUp, PieChart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calculator, Info, TrendingUp, PieChart, ChevronRight, ChevronDown, Sparkles, FileText, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 interface PartialSelloffResult {
   totalShares: number;
@@ -25,6 +26,7 @@ const TaxOnPartialSelloffCalculator: React.FC = () => {
   const [purchaseDate, setPurchaseDate] = useState('');
   const [saleDate, setSaleDate] = useState('');
   const [result, setResult] = useState<PartialSelloffResult | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const calculateTax = () => {
     if (!totalShares || !sharesSold || !averageCost || !salePrice || !purchaseDate || !saleDate) {
@@ -96,28 +98,54 @@ const TaxOnPartialSelloffCalculator: React.FC = () => {
     setResult(null);
   };
 
+  const relatedTools = [
+    { name: 'STCG vs LTCG Classifier', path: '/tax-tools/stcg-ltcg-classifier', desc: 'Classify gains' },
+    { name: 'Equity Tax Estimator', path: '/tax-tools/equity-tax-estimator', desc: 'Tax by AY' },
+    { name: 'Intraday vs Delivery', path: '/tax-tools/intraday-vs-delivery-tax-calculator', desc: 'Trading comparison' },
+    { name: 'Offset LTCG', path: '/tax-tools/offset-ltcg-with-annual-exemptions-tool', desc: 'Plan exemptions' },
+    { name: 'Gifted Shares Tax', path: '/tax-tools/gifted-shares-tax-estimator', desc: 'Gift tax' },
+    { name: 'Bonus Shares Tax', path: '/tax-tools/bonus-shares-tax-impact-tool', desc: 'Bonus tax' },
+    { name: 'Intra-Year Redemption', path: '/tax-tools/intra-year-redemption-tax-tracker', desc: 'Multiple redemptions' },
+    { name: 'Tax Loss Harvesting', path: '/tax-tools/tax-loss-harvesting-calculator', desc: 'Offset gains' },
+  ];
+
+  const faqs = [
+    { q: 'How is tax calculated on partial sale of shares?', a: 'Tax is calculated on the capital gain from the shares sold. If holding period is ≤12 months, STCG at 20% (Budget 2024) applies. If >12 months, LTCG at 12.5% applies; the first ₹1,25,000 of LTCG in the financial year is exempt.' },
+    { q: 'What is the LTCG exemption for partial selloff?', a: 'The ₹1,25,000 LTCG exemption is per financial year and applies to your total LTCG from equity/equity funds. For a single partial sale, we show tax after applying this exemption to the gain from this sale; when filing, aggregate all LTCG for the year.' },
+    { q: 'Does selling part of my holding change cost basis of remaining shares?', a: 'No. Your remaining shares retain the same cost per share. Only the sold portion\'s gain is taxed. Use our calculator to see sale proceeds, tax, and net proceeds for the partial selloff.' },
+  ];
+
   return (
     <>
       <SEOHelmet
-        title="Tax on Partial Selloff Calculator - Calculate Tax on Partial Share Sales | MoneyCal"
-        description="Calculate tax implications when selling only a portion of your holdings. Understand STCG vs LTCG tax rates."
-        keywords="partial selloff tax calculator, share sale tax, STCG LTCG calculator, capital gains tax"
+        title="Tax on Partial Selloff Calculator – STCG LTCG on Partial Sales 2024-25 | MoneyCal"
+        description="Calculate tax when selling part of your holdings. Budget 2024: STCG 20%, LTCG 12.5%, ₹1.25L exemption. Net proceeds and tax breakdown."
+        keywords="partial selloff tax calculator, partial share sale tax, STCG LTCG partial sale, capital gains tax India 2024"
+        canonicalUrl="/tax-tools/tax-on-partial-selloff-calculator"
       />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Tax on Partial Selloff Calculator
-              </h1>
-              <p className="text-xl text-blue-100 mb-8">
-                Calculate tax implications when selling only a portion of your holdings
-              </p>
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        <div className="bg-white border-b border-slate-200">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav className="flex items-center gap-2 text-sm text-slate-600">
+              <Link to="/" className="hover:text-blue-600">Home</Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link to="/tax-tools" className="hover:text-blue-600">Tax Tools</Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-slate-900 font-medium">Tax on Partial Selloff</span>
+            </nav>
+          </div>
+        </div>
+        <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700 text-white pt-12 pb-16">
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
+              <Sparkles className="w-4 h-4" /> Capital Gains • Budget 2024/2025
             </motion.div>
+            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-4xl md:text-5xl font-bold mb-4">
+              Tax on Partial Selloff Calculator
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-lg text-indigo-100 max-w-2xl mx-auto">
+              Calculate tax when selling only a portion of your holdings. STCG 20%, LTCG 12.5%, ₹1.25L exemption.
+            </motion.p>
           </div>
         </section>
 
@@ -304,6 +332,69 @@ const TaxOnPartialSelloffCalculator: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Related tools */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">Related tax tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedTools.map((tool) => (
+              <Link key={tool.path} to={tool.path} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all">
+                <ChevronRight className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0 group-hover:translate-x-0.5" />
+                <div>
+                  <p className="font-semibold text-slate-900 group-hover:text-indigo-700">{tool.name}</p>
+                  <p className="text-sm text-slate-500">{tool.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently asked questions</h2>
+          <div className="space-y-2">
+            {faqs.map((faq, i) => (
+              <div key={i} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left font-medium text-slate-900 hover:bg-slate-50">
+                  {faq.q}
+                  <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {openFaq === i && (
+                    <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="border-t border-slate-200">
+                      <p className="p-4 text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* SEO + Explore */}
+        <article className="bg-slate-50 border-t border-slate-200">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Partial Selloff Tax Guide (2024-25)</h2>
+            <p className="text-slate-700 leading-relaxed mb-4">When you sell only part of your equity holdings, tax is due on the capital gain from the sold portion. Holding period (purchase to sale) decides STCG (≤12 months, 20%) or LTCG (&gt;12 months, 12.5% with ₹1.25L annual exemption). Use our <Link to="/tax-tools/stcg-ltcg-classifier" className="text-indigo-600 hover:underline font-medium">STCG vs LTCG Classifier</Link> and <Link to="/tax-tools/offset-ltcg-with-annual-exemptions-tool" className="text-indigo-600 hover:underline font-medium">Offset LTCG Tool</Link> to plan. <a href="https://www.incometax.gov.in" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Income Tax India</a>. More: <Link to="/blog?category=Tax" className="text-indigo-600 hover:underline">Blog</Link>, <Link to="/news" className="text-indigo-600 hover:underline">News</Link>, <Link to="/tax-tools" className="text-indigo-600 hover:underline">Tax Tools</Link>.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+              <Link to="/blog?category=Tax" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 flex items-center gap-4">
+                <FileText className="h-10 w-10 text-indigo-600" />
+                <div><p className="font-semibold text-slate-900">Tax blog</p><p className="text-sm text-slate-500">Capital gains & planning</p></div>
+                <ChevronRight className="w-5 h-5 text-slate-400 ml-auto" />
+              </Link>
+              <Link to="/news" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 flex items-center gap-4">
+                <ExternalLink className="h-10 w-10 text-indigo-600" />
+                <div><p className="font-semibold text-slate-900">News</p><p className="text-sm text-slate-500">Markets & tax</p></div>
+                <ChevronRight className="w-5 h-5 text-slate-400 ml-auto" />
+              </Link>
+              <Link to="/tax-tools" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 flex items-center gap-4">
+                <Calculator className="h-10 w-10 text-indigo-600" />
+                <div><p className="font-semibold text-slate-900">All tax tools</p><p className="text-sm text-slate-500">Calculators</p></div>
+                <ChevronRight className="w-5 h-5 text-slate-400 ml-auto" />
+              </Link>
+            </div>
+          </div>
+        </article>
       </div>
     </>
   );
