@@ -12,8 +12,6 @@ import {
   ArrowLeft
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
-//import WhatsAppBanner from '../components/WhatsAppBanner';
-//import AstroFinanceButton from '../components/AstroFinanceButton';
 
 interface FinanceTool {
   id: string;
@@ -605,9 +603,8 @@ const FinanceTools: React.FC = () => {
         title="Finance Tools Hub - Investment & Financial Planning Tools | MoneyCal"
         description="Access comprehensive finance tools including SIP calculators, mutual fund analyzers, portfolio trackers, and investment planning tools. Make informed financial decisions with our expert tools."
         keywords="finance tools, investment tools, SIP calculator, mutual fund tools, portfolio tracker, investment planning, financial calculators"
+        url="https://moneycal.in/finance-tools"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
