@@ -1,10 +1,12 @@
 
 # Netlify Redirects Configuration
-# Redirect old/broken URLs to correct pages
+# Redirect old/broken URLs to correct pages (301 so Google indexes destination)
 
-# Help & Feedback redirects
+# Help, Contact, Excel
 /feedback                                    /contact-us                              301
 /help                                        /help-center                             301
+/contact                                     /contact-us                               301
+/excel                                       /excel-tools                              301
 
 # Real Estate Tools redirects
 /real-estate/*                               /finance-tools                           301
@@ -19,7 +21,8 @@
 /banking/bank-account-comparison             /bank-tools                              301
 /banking/upi-calculator                      /bank-tools                              301
 
-# Hindi language redirects (redirect to English with 301 for SEO)
+# Hindi language redirects (301 to English so Google indexes destination)
+/hi                                          /                                         301
 /hi/*                                        /:splat                                  301
 /hi/calculators/*                            /calculators/:splat                      301
 /hi/blog/*                                   /blog/:splat                             301

@@ -3,15 +3,31 @@
 # Last Updated: 2025-01-20
 
 # === REDIRECTS ===
+# Hindi URLs -> English (301 so Google indexes destination; was 410 which blocked equity)
 [[redirects]]
   from = "/hi/*"
-  to = "/404"
-  status = 410
+  to = "/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/hi"
+  to = "/"
+  status = 301
   force = true
 
 [[redirects]]
   from = "/ExcelTool"
   to = "/exceltool"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/excel"
+  to = "/excel-tools"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/contact"
+  to = "/contact-us"
   status = 301
   force = true
 
@@ -40,12 +56,7 @@
   status = 200
 
 # === HEADERS ===
-# Deprecated Hindi pages - noindex
-[[headers]]
-  for = "/hi/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-    Cache-Control = "no-cache, no-store, must-revalidate"
+# (Hindi URLs redirect 301 to English - no separate headers needed)
 
 # Global headers for all pages
 [[headers]]
