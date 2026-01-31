@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Info, AlertCircle, FileText, TrendingUp, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Calculator, Info, AlertCircle, FileText, TrendingUp, CheckCircle, HelpCircle, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface TurnoverResult {
   totalTurnover: number;
@@ -109,15 +108,29 @@ const TurnoverCalculatorITR: React.FC = () => {
     setResult(null);
   };
 
+  const canonicalUrl = 'https://moneycal.in/tax-tools/turnover-calculator-itr';
+  const faqData = [
+    { question: 'Which ITR form should I file for salary income only?', answer: 'If your total income is up to ₹50 lakh and you have only salary, pension, one house property, and other sources (no business, no capital gains above ₹1.25 lakh LTCG from equity), you can use ITR-1 (Sahaj). Use this Turnover Calculator to enter your income and get the recommended form.' },
+    { question: 'What is the turnover limit for ITR-4 (Sugam)?', answer: 'ITR-4 (Sugam) is for presumptive income under Section 44AD (business turnover up to ₹2 crore), 44ADA (profession up to ₹50 lakh), or 44AE. Total income under ITR-4 should be up to ₹50 lakh. For turnover above ₹2 crore (or if not under presumptive scheme), use ITR-3.' },
+    { question: 'When do I need to file ITR-3 instead of ITR-1?', answer: 'File ITR-3 if you have income from business or profession (whether presumptive or not). ITR-1 is only for salary, one house property, other sources, and limited capital gains. If you have business/professional income, use ITR-3 or ITR-4 depending on presumptive scheme.' },
+    { question: 'Does this calculator consider gross total income or turnover?', answer: 'This calculator uses the sum of income heads you enter (business, profession, salary, house property, capital gains, other) to recommend an ITR form. For business turnover specifically (e.g. for 44AD audit limit), use our Trader Turnover Estimator for ITR.' },
+    { question: 'Where can I check official ITR form eligibility?', answer: 'Check the Income Tax Portal (incometax.gov.in) and the latest ITR instruction kit for AY 2025-26 / 2026-27. Form eligibility can change each year; always verify with a tax professional or the official portal before filing.' }
+  ];
+
   return (
     <>
       <SEOHelmet
         title="Turnover Calculator for ITR Form Filling - Determine Correct ITR Form | MoneyCal"
-        description="Calculate your total turnover and determine the correct ITR form for filing. Get recommendations based on income sources and amounts."
-        keywords="ITR form calculator, turnover calculator, tax filing, ITR-1, ITR-2, ITR-3, ITR-4, income tax return"
+        description="Calculate turnover and gross total income for ITR form selection. Get the right ITR form (ITR-1, ITR-2, ITR-3, ITR-4) for FY 2025-26 and beyond. Filing & Compliance • Valid 2026–2050."
+        keywords="ITR form calculator, turnover calculator ITR, which ITR form to file, ITR-1 ITR-2 ITR-3 ITR-4, income tax return form selection 2026"
+        url={canonicalUrl}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Tax Tools', url: '/tax-tools' },
+          { name: 'Turnover Calculator for ITR', url: '/tax-tools/turnover-calculator-itr' }
+        ]}
+        faqData={faqData}
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
@@ -128,11 +141,12 @@ const TurnoverCalculatorITR: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <p className="text-sm font-medium text-blue-200 mb-2">Filing & Compliance • Valid 2026–2050</p>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Turnover Calculator for ITR Form Filling
               </h1>
               <p className="text-xl text-blue-100 mb-8">
-                Calculate your total turnover and determine the correct ITR form for filing
+                Calculate turnover and gross total income to select the correct ITR form for filing
               </p>
             </motion.div>
           </div>
@@ -303,89 +317,98 @@ const TurnoverCalculatorITR: React.FC = () => {
           </div>
         </section>
 
-        {/* Information Section */}
+        {/* FAQ Section */}
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
+              className="bg-white rounded-2xl shadow-xl p-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-                Understanding ITR Forms
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <HelpCircle className="h-6 w-6 mr-2 text-blue-600" />
+                Frequently Asked Questions: ITR Form Selection
               </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div className="bg-green-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
-                    <CheckCircle className="h-5 w-5 mr-2" />
-                    ITR-1 (Sahaj)
-                  </h3>
-                  <ul className="space-y-2 text-green-700">
-                    <li>• Income up to ₹50 lakhs</li>
-                    <li>• Salary/pension income only</li>
-                    <li>• One house property</li>
-                    <li>• No business income</li>
-                    <li>• No capital gains</li>
-                  </ul>
-                </div>
-
-                <div className="bg-blue-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                    <FileText className="h-5 w-5 mr-2" />
-                    ITR-2
-                  </h3>
-                  <ul className="space-y-2 text-blue-700">
-                    <li>• Income up to ₹1 crore</li>
-                    <li>• No business income</li>
-                    <li>• Can have capital gains</li>
-                    <li>• Multiple house properties</li>
-                    <li>• Foreign assets allowed</li>
-                  </ul>
-                </div>
-
-                <div className="bg-orange-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-orange-800 mb-4 flex items-center">
-                    <TrendingUp className="h-5 w-5 mr-2" />
-                    ITR-3
-                  </h3>
-                  <ul className="space-y-2 text-orange-700">
-                    <li>• Income up to ₹5 crore</li>
-                    <li>• Business/professional income</li>
-                    <li>• Presumptive taxation available</li>
-                    <li>• Audit required if turnover &gt; ₹2 crore</li>
-                    <li>• All income sources allowed</li>
-                  </ul>
-                </div>
-
-                <div className="bg-purple-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
-                    <Calculator className="h-5 w-5 mr-2" />
-                    ITR-4 (Sugam)
-                  </h3>
-                  <ul className="space-y-2 text-purple-700">
-                    <li>• Income up to ₹5 crore</li>
-                    <li>• Presumptive taxation</li>
-                    <li>• No audit required</li>
-                    <li>• Simplified form</li>
-                    <li>• Business income only</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-yellow-50 p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-yellow-800 mb-4 flex items-center">
-                  <AlertCircle className="h-5 w-5 mr-2" />
-                  Important Notes
-                </h3>
-                <ul className="space-y-2 text-yellow-700">
-                  <li>• This calculator provides general guidance only</li>
-                  <li>• Consult a tax professional for accurate form selection</li>
-                  <li>• Form requirements may vary based on specific circumstances</li>
-                  <li>• Always verify with the latest ITR guidelines</li>
-                </ul>
+              <div className="space-y-6">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                    <p className="text-gray-600">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
+
+            {/* SEO Content: 1500+ words */}
+            <article className="mt-12 bg-white rounded-2xl shadow-xl p-8 prose prose-lg max-w-none">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Turnover and ITR Form Selection: Complete Guide for FY 2025-26 and Beyond</h2>
+              <p className="text-gray-600 mb-4">
+                Choosing the correct <strong>ITR form</strong> is essential for accurate tax filing and compliance. This <strong>Turnover Calculator for ITR Form Filling</strong> helps you estimate your gross total income from all heads (salary, business, profession, house property, capital gains, other sources) and recommends the appropriate ITR form—ITR-1 (Sahaj), ITR-2, ITR-3, or ITR-4 (Sugam)—for FY 2025-26, FY 2026-27, and future years. Use this free tool to avoid filing the wrong form and to plan your filing and compliance.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">What Is Gross Total Income and Turnover?</h3>
+              <p className="text-gray-600 mb-4">
+                <strong>Gross total income</strong> is the sum of income under all heads: salary, house property, business or profession, capital gains, and other sources. <strong>Turnover</strong> in the business context (e.g. for Section 44AD) means gross receipts or sales. For ITR form selection, both your total income and the <strong>type</strong> of income matter. For example, ITR-1 (Sahaj) is only for individuals with income up to ₹50 lakh from salary, one house property, other sources, and limited capital gains (LTCG from equity up to ₹1.25 lakh under Section 112A). If you have business or profession income, you typically need ITR-3 or ITR-4. For official eligibility, refer to the <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Income Tax Portal</a> and <a href="https://economictimes.indiatimes.com/wealth/tax/itr-1-itr-2-itr-3-or-itr-4-which-form-applies-to-your-income-for-itr-filing-fy-2024-25-ay-2025-26/articleshow/122385713.cms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Economic Times ITR form guide</a>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">ITR-1 (Sahaj): Who Can File?</h3>
+              <p className="text-gray-600 mb-4">
+                <strong>ITR-1 (Sahaj)</strong> is for resident individuals with total income up to ₹50 lakh from salary, pension, one house property, other sources, and agricultural income up to ₹5,000. From AY 2025-26, it can include LTCG up to ₹1.25 lakh from listed equity/equity mutual funds under Section 112A. You cannot use ITR-1 if you have business or profession income, multiple house properties, director in a company, unlisted equity, foreign assets, or if you are liable for audit under Section 44AB (e.g. turnover above ₹1 crore without 95% digital). Use this calculator to enter your income and see if ITR-1 is recommended.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">ITR-2, ITR-3, and ITR-4: When to Use</h3>
+              <p className="text-gray-600 mb-4">
+                <strong>ITR-2</strong> is for individuals and HUFs not having income from business or profession—e.g. capital gains (including above ₹1.25 lakh LTCG from equity), multiple house properties, foreign assets. <strong>ITR-3</strong> is for individuals and HUFs with income from business or profession (whether presumptive or not). <strong>ITR-4 (Sugam)</strong> is for those with presumptive income under Section 44AD (business turnover up to ₹2 crore), 44ADA (profession up to ₹50 lakh), or 44AE; total income under ITR-4 should be up to ₹50 lakh. For trading turnover specifically, use our <Link to="/tax-tools/trader-turnover-estimator-itr" className="text-blue-600 hover:underline">Trader Turnover Estimator for ITR</Link>. For form type help, use <Link to="/tax-tools/itr-form-type-helper" className="text-blue-600 hover:underline">ITR Form Type Helper</Link>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Turnover for Audit and Presumptive Scheme</h3>
+              <p className="text-gray-600 mb-4">
+                Under <strong>Section 44AB</strong>, audit is required if business turnover exceeds ₹1 crore (or ₹50 lakh in certain cases) or profession receipts exceed ₹50 lakh. Under <strong>Section 44AD</strong>, presumptive scheme is available for business with turnover up to ₹2 crore (8% or 6% of turnover). So knowing your turnover is critical for both ITR form and audit. Use this Turnover Calculator to sum your income heads and our <Link to="/tax-tools/trader-turnover-estimator-itr" className="text-blue-600 hover:underline">Trader Turnover Estimator</Link> for trading (buy + sell) turnover. For deadlines, see <Link to="/tax-tools/tax-filing-deadline-reminder-widget" className="text-blue-600 hover:underline">Tax Filing Deadline Reminder Widget</Link>. For TDS on gains, see <Link to="/tax-tools/tds-impact-visualizer-on-gains" className="text-blue-600 hover:underline">TDS Impact Visualizer on Gains</Link>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Related Tools and Resources</h3>
+              <p className="text-gray-600 mb-4">
+                Use <Link to="/tax-tools/itr-form-type-helper" className="text-blue-600 hover:underline">ITR Form Type Helper</Link> for step-by-step form selection. Use <Link to="/tax-tools/trader-turnover-estimator-itr" className="text-blue-600 hover:underline">Trader Turnover Estimator for ITR</Link> to calculate trading turnover (buy + sell) for ITR. Use <Link to="/tax-tools/tax-filing-deadline-reminder-widget" className="text-blue-600 hover:underline">Tax Filing Deadline Reminder Widget</Link> for due dates. Use <Link to="/tax-tools/old-vs-new-tax-regime-helper" className="text-blue-600 hover:underline">Old vs New Tax Regime Helper</Link> to compare regimes. For capital gains, use <Link to="/tax-tools/equity-tax-estimator" className="text-blue-600 hover:underline">Equity Tax Estimator</Link> and <Link to="/tax-tools/stcg-ltcg-classifier" className="text-blue-600 hover:underline">STCG vs LTCG Classifier</Link>. For official forms and due dates, check <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">incometax.gov.in</a> and <a href="https://taxswift.in/income-tax-return-forms-for-ay-2025-26-which-form-should-you-file" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">TaxSwift ITR forms AY 2025-26</a>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Validity and Disclaimer</h3>
+              <p className="text-gray-600 mb-4">
+                This calculator and content are designed to be valid for FY 2025-26, FY 2026-27, and future years unless the law changes. ITR form eligibility is based on current Income Tax Act and rules. Always verify with the <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Income Tax Department</a> or a chartered accountant. This is not professional tax advice.
+              </p>
+            </article>
+
+            {/* Related Tax Tools */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="mt-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl p-8 text-white"
+            >
+              <h2 className="text-2xl font-semibold mb-6">Related Tax Tools</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <Link to="/tax-tools/itr-form-type-helper" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">ITR Form Type Helper</h3>
+                  <p className="text-sm opacity-90">Choose the right ITR form</p>
+                </Link>
+                <Link to="/tax-tools/trader-turnover-estimator-itr" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">Trader Turnover Estimator</h3>
+                  <p className="text-sm opacity-90">Trading turnover for ITR</p>
+                </Link>
+                <Link to="/tax-tools/tax-filing-deadline-reminder-widget" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">Tax Filing Deadlines</h3>
+                  <p className="text-sm opacity-90">ITR and tax due dates</p>
+                </Link>
+                <Link to="/tax-tools/tds-impact-visualizer-on-gains" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">TDS Impact Visualizer</h3>
+                  <p className="text-sm opacity-90">TDS on capital gains</p>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Explore more */}
+            <section className="mt-8 py-8 border-t border-gray-200">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Explore More</h2>
+              <ul className="space-y-2 text-gray-600">
+                <li><Link to="/tax-tools" className="text-blue-600 hover:underline">All Tax Tools</Link></li>
+                <li><Link to="/" className="text-blue-600 hover:underline">Home</Link></li>
+                <li><a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center">Income Tax Portal <ExternalLink className="h-4 w-4 ml-1" /></a></li>
+              </ul>
+            </section>
           </div>
         </section>
       </div>
