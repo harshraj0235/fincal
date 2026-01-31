@@ -86,7 +86,7 @@ const AddShortsNewsPage: React.FC = () => {
     }
   })();
 
-  const handlePublish = (e: React.FormEvent) => {
+  const handlePublish = async (e: React.FormEvent) => {
     e.preventDefault();
     setPublishError('');
     if (!headline.trim()) {
