@@ -206,21 +206,18 @@ export const BlogPost: React.FC = () => {
                 <div className="flex flex-wrap items-center text-sm text-neutral-500 gap-x-6 gap-y-2">
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-1" />
+                    <span className="mr-1.5 font-medium text-neutral-600">Written By</span>
                     <Link 
                       to={`/author/${displayAuthor?.slug || 'harsh-raj'}`}
-                      className="hover:text-blue-600 transition-colors"
+                      className="hover:text-blue-600 transition-colors font-medium"
                     >
                       {displayAuthor?.name || 'MoneyCal Team'}
                     </Link>
                   </div>
-                  <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    <span>{post.date}</span>
-                    <span className="mx-2">•</span>
-                    <span>Last updated: {dateModified}</span>
-                    <span className="mx-2">•</span>
+                  <div className="flex items-center flex-wrap gap-x-4 gap-y-1">
+                    <span><span className="font-medium text-neutral-600">Published:</span> {post.date}</span>
+                    <span><span className="font-medium text-neutral-600">Updated:</span> {dateModified}</span>
                     <span>{readingTime} min read</span>
-                    <span className="mx-2">•</span>
                     <span>{wordCount.toLocaleString()} words</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -436,7 +433,8 @@ export const BlogPost: React.FC = () => {
               {/* Internal links – browse by category */}
               {!isAstroBlog && (post.categories || []).length > 0 && (
                 <section className="bg-white rounded-xl border border-neutral-200 p-6 mb-8">
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-3">More in this topic</h3>
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">ये भी पढ़ें</h3>
+                  <p className="text-sm text-neutral-500 mb-3">More in this topic</p>
                   <div className="flex flex-wrap gap-2">
                     {post.categories.slice(0, 5).map((cat: string) => (
                       <Link
@@ -466,7 +464,8 @@ export const BlogPost: React.FC = () => {
           <aside className="lg:col-span-1 space-y-8">
             {/* Suggested / Related Articles */}
             <section className="bg-white rounded-xl shadow-md p-6" aria-label="Suggested articles">
-              <h3 className="text-xl font-semibold text-neutral-900 mb-4">Suggested for you</h3>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-1">ये भी पढ़ें</h3>
+              <p className="text-sm text-neutral-500 mb-4">Suggested for you</p>
               <div className="space-y-4">
                 {relatedPosts.map((relatedPost) => (
                   <Link
