@@ -10,7 +10,6 @@ import {
   Grid,
   List,
   Flame,
-  BookOpen,
   Calculator,
   GraduationCap,
   TrendingUp,
@@ -21,6 +20,11 @@ import SEOHelmet from '../components/SEOHelmet';
 import { loadAllBlogData } from '../data/lazyBlogData';
 
 const POSTS_PER_PAGE = 12;
+
+const fadeInUp = { initial: { opacity: 0, y: 16 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.4 } };
+const stagger = (i: number) => ({ delay: i * 0.05, duration: 0.35 });
+const cardHover = { y: -6, transition: { duration: 0.2 } };
+const tapScale = { scale: 0.98 };
 
 export const Blog: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -208,13 +212,13 @@ export const Blog: React.FC = () => {
         Skip to main content
       </a>
 
-      <div className="min-h-screen bg-slate-50 pt-20">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           {/* Breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="mb-6">
+          <motion.nav aria-label="Breadcrumb" className="mb-8" {...fadeInUp}>
             <ol className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
               <li>
-                <Link to="/" className="hover:text-blue-600 transition-colors">Home</Link>
+                <Link to="/" className="hover:text-blue-600 transition-colors duration-200">Home</Link>
               </li>
               <li aria-hidden="true">
                 <ChevronRight className="w-4 h-4 inline text-slate-400" />
@@ -222,7 +226,7 @@ export const Blog: React.FC = () => {
               <li>
                 {selectedCategory !== 'all' ? (
                   <>
-                    <Link to="/blog" className="hover:text-blue-600 transition-colors">Blog</Link>
+                    <Link to="/blog" className="hover:text-blue-600 transition-colors duration-200">Blog</Link>
                     <span className="mx-2 text-slate-400">/</span>
                     <span className="text-slate-900 font-medium">{selectedCategory}</span>
                   </>
@@ -231,56 +235,78 @@ export const Blog: React.FC = () => {
                 )}
               </li>
             </ol>
-          </nav>
+          </motion.nav>
 
           {/* Hero */}
-          <header className="text-center mb-10 lg:mb-14">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6">
-              <Flame className="w-4 h-4" />
+          <motion.header
+            className="text-center mb-12 lg:mb-16"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.span
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-violet-500/10 text-blue-700 text-sm font-medium mb-6 border border-blue-200/50"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+            >
+              <Flame className="w-4 h-4 text-orange-500" />
               Latest financial insights
-            </span>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-4 tracking-tight">
+            </motion.span>
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-5 tracking-tight leading-[1.1]">
               {selectedCategory !== 'all' ? `${selectedCategory} Articles` : 'Financial Blog'}
             </h1>
-            <p className="text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
               {selectedCategory !== 'all'
                 ? `Expert ${selectedCategory.toLowerCase()} guides and tips for Indian readers.`
-                : 'Expert articles on investments, tax, banking and personal finance. Easy to navigate and always up to date.'}
+                : 'Expert articles on investments, tax, banking and personal finance. Easy to read, easy to navigate.'}
             </p>
-          </header>
+          </motion.header>
 
-          {/* Browse by category – SEO-friendly navigation */}
-          <section aria-label="Browse by category" className="mb-10">
+          {/* Browse by category */}
+          <motion.section aria-label="Browse by category" className="mb-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.4 }}>
             <h2 className="sr-only">Browse by category</h2>
             <div className="flex flex-wrap gap-2 justify-center">
-              <button
+              <motion.button
                 onClick={() => setCategory('all')}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                whileHover={{ scale: 1.02 }}
+                whileTap={tapScale}
+                className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   selectedCategory === 'all'
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-300 hover:bg-blue-50'
+                    ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/25'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/80 hover:shadow-md'
                 }`}
               >
                 All ({allBlogPosts.length})
-              </button>
-              {categoriesWithCount.slice(0, 14).map(({ name, count }) => (
-                <button
+              </motion.button>
+              {categoriesWithCount.slice(0, 14).map(({ name, count }, i) => (
+                <motion.button
                   key={name}
                   onClick={() => setCategory(name)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={tapScale}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={stagger(i)}
+                  className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === name
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-300 hover:bg-blue-50'
+                      ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/25'
+                      : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/80 hover:shadow-md'
                   }`}
                 >
                   {name} ({count})
-                </button>
+                </motion.button>
               ))}
             </div>
-          </section>
+          </motion.section>
 
           {/* Search & filters */}
-          <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 lg:p-6 mb-8">
+          <motion.section
+            className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-200/80 p-4 lg:p-6 mb-10"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.4 }}
+          >
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
@@ -324,109 +350,134 @@ export const Blog: React.FC = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
 
-          {/* Recent posts (latest 5 when no filter) */}
+          {/* Recent posts */}
           {selectedCategory === 'all' && !searchTerm && recentPosts.length > 0 && (
-            <section className="mb-12" aria-label="Recent articles">
+            <motion.section className="mb-14" aria-label="Recent articles" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
               <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <Clock className="w-6 h-6 text-blue-600" />
+                <span className="p-1.5 rounded-lg bg-blue-100">
+                  <Clock className="w-5 h-5 text-blue-600" />
+                </span>
                 Recent posts
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                {recentPosts.map((post: any) => (
-                  <article key={post.id || post.slug} className="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                {recentPosts.map((post: any, i: number) => (
+                  <motion.article
+                    key={post.id || post.slug}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35 + i * 0.06, duration: 0.35 }}
+                    whileHover={cardHover}
+                    className="group bg-white rounded-2xl shadow-md shadow-slate-200/50 border border-slate-200/80 overflow-hidden hover:shadow-xl hover:shadow-slate-300/30 hover:border-slate-300 transition-all duration-300"
+                  >
                     <Link to={`/blog/${post.slug}`} className="block">
                       <div className="aspect-video overflow-hidden bg-slate-100">
-                        <img src={post.coverImage || post.featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400'} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <img src={post.coverImage || post.featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400'} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" loading="lazy" />
                       </div>
-                      <div className="p-3">
-                        <h3 className="font-semibold text-slate-900 text-sm line-clamp-2 group-hover:text-blue-600 transition-colors">{post.title}</h3>
-                        <p className="text-xs text-slate-500 mt-1">{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-slate-900 text-sm line-clamp-2 group-hover:text-blue-600 transition-colors leading-snug">{post.title}</h3>
+                        <p className="text-xs text-slate-500 mt-2">{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
                       </div>
                     </Link>
-                  </article>
+                  </motion.article>
                 ))}
               </div>
-            </section>
+            </motion.section>
           )}
 
           {/* New this week */}
           {selectedCategory === 'all' && !searchTerm && newThisWeek.length > 0 && (
-            <section className="mb-12" aria-label="New this week">
+            <motion.section className="mb-14" aria-label="New this week" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
               <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <Flame className="w-6 h-6 text-orange-500" />
+                <span className="p-1.5 rounded-lg bg-orange-100">
+                  <Flame className="w-5 h-5 text-orange-500" />
+                </span>
                 New this week
               </h2>
               <div className="flex flex-wrap gap-3">
-                {newThisWeek.slice(0, 6).map((post: any) => (
-                  <Link key={post.id || post.slug} to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-orange-50 text-orange-800 border border-orange-200 hover:bg-orange-100 text-sm font-medium transition-colors">
-                    {post.title?.slice(0, 40)}{post.title?.length > 40 ? '…' : ''}
-                    <ArrowRight className="w-4 h-4 flex-shrink-0" />
-                  </Link>
+                {newThisWeek.slice(0, 6).map((post: any, i: number) => (
+                  <motion.div key={post.id || post.slug} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.45 + i * 0.05 }}>
+                    <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-orange-50 to-amber-50 text-orange-800 border border-orange-200/80 hover:from-orange-100 hover:to-amber-100 hover:shadow-md hover:border-orange-300 text-sm font-medium transition-all duration-300 group">
+                      {post.title?.slice(0, 42)}{post.title?.length > 42 ? '…' : ''}
+                      <ArrowRight className="w-4 h-4 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
-            </section>
+            </motion.section>
           )}
 
-          {/* Suggested by category – when a category is selected */}
+          {/* Suggested by category */}
           {selectedCategory !== 'all' && suggestedByCategory.length > 0 && (
-            <section className="mb-12" aria-label={`Suggested ${selectedCategory} articles`}>
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
-                Suggested in {selectedCategory}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {suggestedByCategory.map((post: any) => (
-                  <article key={post.id || post.slug} className="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+            <motion.section className="mb-14" aria-label={`Suggested ${selectedCategory} articles`} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Suggested in {selectedCategory}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                {suggestedByCategory.map((post: any, i: number) => (
+                  <motion.article
+                    key={post.id || post.slug}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.08, duration: 0.35 }}
+                    whileHover={cardHover}
+                    className="group bg-white rounded-2xl shadow-md shadow-slate-200/50 border border-slate-200/80 overflow-hidden hover:shadow-xl transition-all duration-300"
+                  >
                     <Link to={`/blog/${post.slug}`} className="block">
                       <div className="aspect-video overflow-hidden bg-slate-100">
-                        <img src={post.coverImage || post.featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400'} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <img src={post.coverImage || post.featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400'} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                       </div>
-                      <div className="p-3">
-                        <h3 className="font-semibold text-slate-900 text-sm line-clamp-2 group-hover:text-blue-600 transition-colors">{post.title}</h3>
-                        <p className="text-xs text-slate-500 mt-1">{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}</p>
+                      <div className="p-4">
+                        <h3 className="font-semibold text-slate-900 text-sm line-clamp-2 group-hover:text-blue-600 transition-colors leading-snug">{post.title}</h3>
+                        <p className="text-xs text-slate-500 mt-2">{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}</p>
                       </div>
                     </Link>
-                  </article>
+                  </motion.article>
                 ))}
               </div>
-            </section>
+            </motion.section>
           )}
 
-          {/* Featured (top 3 when no filter) */}
+          {/* Featured */}
           {selectedCategory === 'all' && !searchTerm && featuredPosts.length >= 3 && (
-            <section className="mb-12" aria-label="Featured articles">
+            <motion.section className="mb-14" aria-label="Featured articles" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}>
               <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <TrendingUp className="w-6 h-6 text-blue-600" />
+                <span className="p-1.5 rounded-lg bg-violet-100">
+                  <TrendingUp className="w-5 h-5 text-violet-600" />
+                </span>
                 Featured articles
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {featuredPosts.map((post, idx) => (
-                  <article
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {featuredPosts.map((post: any, idx: number) => (
+                  <motion.article
                     key={post.id || post.slug}
-                    className="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all"
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + idx * 0.1, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ y: -8, transition: { duration: 0.25 } }}
+                    className="group bg-white rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-200/80 overflow-hidden hover:shadow-xl hover:shadow-slate-300/40 hover:border-slate-300 transition-all duration-300"
                   >
                     <Link to={`/blog/${post.slug}`} className="block">
                       <div className="aspect-[16/10] overflow-hidden bg-slate-100">
                         <img
-                          src={post.coverImage || (post as any).featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800'}
+                          src={post.coverImage || post.featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800'}
                           alt=""
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                          loading="lazy"
                         />
                       </div>
-                      <div className="p-5">
-                        <div className="flex flex-wrap gap-2 mb-2">
+                      <div className="p-6">
+                        <div className="flex flex-wrap gap-2 mb-3">
                           {(post.categories || []).slice(0, 2).map((cat: string) => (
-                            <span key={cat} className={`px-2 py-0.5 rounded text-xs font-medium ${getCategoryColor(cat)}`}>
+                            <span key={cat} className={`px-2.5 py-1 rounded-lg text-xs font-medium ${getCategoryColor(cat)}`}>
                               {cat}
                             </span>
                           ))}
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 mb-2">
+                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 mb-2 leading-snug">
                           {post.title}
                         </h3>
-                        <p className="text-slate-600 text-sm line-clamp-2 mb-3">{post.excerpt}</p>
-                        <div className="flex items-center gap-3 text-xs text-slate-500">
+                        <p className="text-slate-600 text-sm line-clamp-2 mb-4 leading-relaxed">{post.excerpt}</p>
+                        <div className="flex items-center gap-4 text-xs text-slate-500">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-3.5 h-3.5" />
                             {formatDate(post.date)}
@@ -438,21 +489,21 @@ export const Blog: React.FC = () => {
                         </div>
                       </div>
                     </Link>
-                  </article>
+                  </motion.article>
                 ))}
               </div>
-            </section>
+            </motion.section>
           )}
 
           {/* Results count */}
-          <p className="text-slate-600 mb-6" id="blog-main">
+          <motion.p className="text-slate-600 mb-6 font-medium" id="blog-main" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
             Showing {currentPosts.length} of {filteredPosts.length} articles
             {searchTerm && (
               <span className="ml-2">
-                for &quot;<strong>{searchTerm}</strong>&quot;
+                for &quot;<strong className="text-slate-800">{searchTerm}</strong>&quot;
               </span>
             )}
-          </p>
+          </motion.p>
 
           {/* Article grid/list */}
           <main id="blog-main" tabIndex={-1}>
@@ -461,79 +512,100 @@ export const Blog: React.FC = () => {
             </h2>
             <AnimatePresence mode="wait">
               {isLoading ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <motion.div
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
                   {[...Array(6)].map((_, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-6 animate-pulse">
-                      <div className="h-48 bg-slate-200 rounded-xl mb-4" />
-                      <div className="h-4 bg-slate-200 rounded mb-2 w-3/4" />
-                      <div className="h-3 bg-slate-200 rounded w-1/2" />
+                    <div key={i} className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-md">
+                      <div className="h-52 bg-gradient-to-br from-slate-200 to-slate-100 animate-pulse" />
+                      <div className="p-5 space-y-3">
+                        <div className="h-4 bg-slate-200 rounded-lg w-3/4 animate-pulse" />
+                        <div className="h-3 bg-slate-100 rounded w-1/2 animate-pulse" />
+                        <div className="h-3 bg-slate-100 rounded w-full animate-pulse" />
+                      </div>
                     </div>
                   ))}
-                </div>
+                </motion.div>
               ) : currentPosts.length === 0 ? (
-                <div className="text-center py-16 bg-white rounded-2xl border border-slate-200">
-                  <Search className="w-14 h-14 text-slate-300 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">No articles found</h3>
-                  <p className="text-slate-600 mb-6">Try changing search or category.</p>
-                  <button
+                <motion.div
+                  className="text-center py-20 bg-white rounded-2xl border border-slate-200 shadow-lg"
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <Search className="w-16 h-16 text-slate-300 mx-auto mb-5" />
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">No articles found</h3>
+                  <p className="text-slate-600 mb-8 max-w-sm mx-auto">Try changing your search or category to find what you need.</p>
+                  <motion.button
                     onClick={() => {
                       setSearchTerm('');
                       setCategory('all');
                       setSortBy('latest');
                     }}
-                    className="px-5 py-2.5 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={tapScale}
+                    className="px-6 py-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white rounded-xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-xl transition-shadow"
                   >
                     Clear filters
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
               ) : (
                 <motion.div
                   key={`${viewMode}-${safePage}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                   className={
                     viewMode === 'grid'
-                      ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-                      : 'space-y-4'
+                      ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
+                      : 'space-y-5'
                   }
                 >
-                  {currentPosts.map((post, index) => (
+                  {currentPosts.map((post: any, index: number) => (
                     <motion.article
                       key={post.id || post.slug}
-                      initial={{ opacity: 0, y: 12 }}
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.03 }}
-                      className={`bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all ${
+                      exit={{ opacity: 0 }}
+                      transition={{ delay: index * 0.04, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      whileHover={cardHover}
+                      className={`bg-white rounded-2xl shadow-md shadow-slate-200/50 border border-slate-200/80 overflow-hidden hover:shadow-xl hover:border-slate-300 transition-all duration-300 ${
                         viewMode === 'list' ? 'flex flex-col sm:flex-row' : ''
                       }`}
                     >
                       <Link
                         to={`/blog/${post.slug}`}
-                        className={`block overflow-hidden ${viewMode === 'list' ? 'sm:w-72 flex-shrink-0' : ''}`}
+                        className={`block overflow-hidden ${viewMode === 'list' ? 'sm:w-80 flex-shrink-0' : ''}`}
                       >
-                        <div className={`overflow-hidden bg-slate-100 ${viewMode === 'list' ? 'sm:h-full aspect-video sm:aspect-auto' : 'aspect-video'}`}>
+                        <div className={`overflow-hidden bg-slate-100 ${viewMode === 'list' ? 'sm:h-full aspect-video sm:aspect-auto sm:min-h-[200px]' : 'aspect-video'}`}>
                           <img
                             src={post.coverImage || (post as any).featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600'}
                             alt=""
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                            loading="lazy"
                           />
                         </div>
                       </Link>
-                      <div className={`p-5 flex-1 flex flex-col ${viewMode === 'list' ? 'sm:justify-center' : ''}`}>
-                        <div className="flex flex-wrap gap-2 mb-2">
+                      <div className={`p-6 flex-1 flex flex-col ${viewMode === 'list' ? 'sm:justify-center' : ''}`}>
+                        <div className="flex flex-wrap gap-2 mb-3">
                           {(post.categories || []).slice(0, 2).map((cat: string) => (
-                            <span key={cat} className={`px-2 py-0.5 rounded text-xs font-medium ${getCategoryColor(cat)}`}>
+                            <span key={cat} className={`px-2.5 py-1 rounded-lg text-xs font-medium ${getCategoryColor(cat)}`}>
                               {cat}
                             </span>
                           ))}
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 hover:text-blue-600 transition-colors">
-                          <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                        <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 leading-snug group">
+                          <Link to={`/blog/${post.slug}`} className="hover:text-blue-600 transition-colors duration-200">
+                            {post.title}
+                          </Link>
                         </h3>
-                        <p className="text-slate-600 text-sm line-clamp-2 mb-4 flex-1">{post.excerpt}</p>
+                        <p className="text-slate-600 text-sm line-clamp-2 mb-5 flex-1 leading-relaxed">{post.excerpt}</p>
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3 text-xs text-slate-500">
+                          <div className="flex items-center gap-4 text-xs text-slate-500">
                             <span className="flex items-center gap-1">
                               <Calendar className="w-3.5 h-3.5" />
                               {formatDate(post.date)}
@@ -545,7 +617,7 @@ export const Blog: React.FC = () => {
                           </div>
                           <Link
                             to={`/blog/${post.slug}`}
-                            className="inline-flex items-center gap-1 text-blue-600 font-medium text-sm hover:underline"
+                            className="inline-flex items-center gap-1.5 text-blue-600 font-semibold text-sm hover:gap-2 transition-all duration-200"
                           >
                             Read <ArrowRight className="w-4 h-4" />
                           </Link>
@@ -560,15 +632,23 @@ export const Blog: React.FC = () => {
 
           {/* Pagination */}
           {totalPages > 1 && (
-            <nav aria-label="Blog pagination" className="flex flex-wrap justify-center gap-2 mt-12">
-              <button
+            <motion.nav
+              aria-label="Blog pagination"
+              className="flex flex-wrap justify-center gap-2 mt-14"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <motion.button
                 onClick={() => setPage(safePage - 1)}
                 disabled={safePage <= 1}
-                className="p-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                whileHover={{ scale: safePage > 1 ? 1.05 : 1 }}
+                whileTap={tapScale}
+                className="p-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
                 aria-label="Previous page"
               >
                 <ArrowLeft className="w-5 h-5" />
-              </button>
+              </motion.button>
               {Array.from({ length: totalPages }, (_, i) => i + 1)
                 .filter((p) => p === 1 || p === totalPages || Math.abs(p - safePage) <= 2)
                 .map((p, i, arr) => (
@@ -578,76 +658,89 @@ export const Blog: React.FC = () => {
                         …
                       </span>
                     )}
-                    <button
+                    <motion.button
                       onClick={() => setPage(p)}
-                      className={`min-w-[2.5rem] py-2.5 px-3 rounded-xl font-medium transition-colors ${
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={tapScale}
+                      className={`min-w-[2.75rem] py-3 px-3 rounded-xl font-semibold transition-all duration-200 ${
                         p === safePage
-                          ? 'bg-blue-600 text-white shadow'
-                          : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
+                          ? 'bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-500/25'
+                          : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 shadow-sm'
                       }`}
                       aria-label={`Page ${p}`}
                       aria-current={p === safePage ? 'page' : undefined}
                     >
                       {p}
-                    </button>
+                    </motion.button>
                   </React.Fragment>
                 ))}
-              <button
+              <motion.button
                 onClick={() => setPage(safePage + 1)}
                 disabled={safePage >= totalPages}
-                className="p-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                whileHover={{ scale: safePage < totalPages ? 1.05 : 1 }}
+                whileTap={tapScale}
+                className="p-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
                 aria-label="Next page"
               >
                 <ArrowRight className="w-5 h-5" />
-              </button>
-            </nav>
+              </motion.button>
+            </motion.nav>
           )}
 
-          {/* Explore more – internal links for SEO */}
-          <section className="mt-16 pt-12 border-t border-slate-200" aria-label="Explore more">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Explore more</h2>
+          {/* Explore more */}
+          <motion.section
+            className="mt-20 pt-14 border-t border-slate-200/80"
+            aria-label="Explore more"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-2xl font-bold text-slate-900 mb-8">Explore more</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <Link
-                to="/calculators"
-                className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-200 hover:shadow-md transition-all group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                  <Calculator className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Calculators</h3>
-                  <p className="text-sm text-slate-600">EMI, SIP, tax & 100+ tools</p>
-                </div>
-                <ChevronRight className="w-5 h-5 text-slate-400 ml-auto group-hover:text-blue-600" />
-              </Link>
-              <Link
-                to="/learn"
-                className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-200 hover:shadow-md transition-all group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
-                  <GraduationCap className="w-6 h-6 text-emerald-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Learn</h3>
-                  <p className="text-sm text-slate-600">Guides on loans, tax & more</p>
-                </div>
-                <ChevronRight className="w-5 h-5 text-slate-400 ml-auto group-hover:text-emerald-600" />
-              </Link>
-              <Link
-                to="/finance-tools"
-                className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-200 hover:shadow-md transition-all group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-violet-100 flex items-center justify-center group-hover:bg-violet-200 transition-colors">
-                  <LayoutGrid className="w-6 h-6 text-violet-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 group-hover:text-violet-600 transition-colors">Finance tools</h3>
-                  <p className="text-sm text-slate-600">Trackers & planners</p>
-                </div>
-                <ChevronRight className="w-5 h-5 text-slate-400 ml-auto group-hover:text-violet-600" />
-              </Link>
+              {[
+                { to: '/calculators', icon: Calculator, label: 'Calculators', desc: 'EMI, SIP, tax & 100+ tools', color: 'blue' },
+                { to: '/learn', icon: GraduationCap, label: 'Learn', desc: 'Guides on loans, tax & more', color: 'emerald' },
+                { to: '/finance-tools', icon: LayoutGrid, label: 'Finance tools', desc: 'Trackers & planners', color: 'violet' },
+              ].map((item, i) => {
+                const Icon = item.icon;
+                return (
+                <motion.div
+                  key={item.to}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.4 }}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                >
+                  <Link
+                    to={item.to}
+                    className={`flex items-center gap-5 p-6 bg-white rounded-2xl border border-slate-200/80 shadow-md hover:shadow-xl hover:border-slate-300 transition-all duration-300 group bg-gradient-to-br from-white to-slate-50/50 ${
+                      item.color === 'blue' ? 'hover:from-blue-50/30' : item.color === 'emerald' ? 'hover:from-emerald-50/30' : 'hover:from-violet-50/30'
+                    }`}
+                  >
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${
+                      item.color === 'blue' ? 'bg-blue-100 text-blue-600' : item.color === 'emerald' ? 'bg-emerald-100 text-emerald-600' : 'bg-violet-100 text-violet-600'
+                    }`}>
+                      <Icon className="w-7 h-7" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className={`font-bold text-slate-900 transition-colors ${
+                        item.color === 'blue' ? 'group-hover:text-blue-600' : item.color === 'emerald' ? 'group-hover:text-emerald-600' : 'group-hover:text-violet-600'
+                      }`}>
+                        {item.label}
+                      </h3>
+                      <p className="text-sm text-slate-600 mt-0.5">{item.desc}</p>
+                    </div>
+                    <ChevronRight className={`w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-0.5 ${
+                      item.color === 'blue' ? 'text-blue-500' : item.color === 'emerald' ? 'text-emerald-500' : 'text-violet-500'
+                    }`} />
+                  </Link>
+                </motion.div>
+              );
+              })}
             </div>
-          </section>
+          </motion.section>
         </div>
       </div>
     </>
