@@ -100,6 +100,16 @@ export const Blog: React.FC = () => {
   );
 
   const featuredPosts = useMemo(() => filteredPosts.slice(0, 3), [filteredPosts]);
+  const recentPosts = useMemo(() => filteredPosts.slice(0, 5), [filteredPosts]);
+  const newThisWeek = useMemo(() => {
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - 7);
+    return filteredPosts.filter((p: any) => new Date(p.date) >= cutoff);
+  }, [filteredPosts]);
+  const suggestedByCategory = useMemo(() => {
+    if (selectedCategory === 'all' || !selectedCategory) return [];
+    return filteredPosts.slice(0, 4);
+  }, [filteredPosts, selectedCategory]);
 
   const setCategory = (cat: string) => {
     setSelectedCategory(cat);
@@ -315,6 +325,73 @@ export const Blog: React.FC = () => {
               </div>
             </div>
           </section>
+
+          {/* Recent posts (latest 5 when no filter) */}
+          {selectedCategory === 'all' && !searchTerm && recentPosts.length > 0 && (
+            <section className="mb-12" aria-label="Recent articles">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Clock className="w-6 h-6 text-blue-600" />
+                Recent posts
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                {recentPosts.map((post: any) => (
+                  <article key={post.id || post.slug} className="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+                    <Link to={`/blog/${post.slug}`} className="block">
+                      <div className="aspect-video overflow-hidden bg-slate-100">
+                        <img src={post.coverImage || post.featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400'} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      </div>
+                      <div className="p-3">
+                        <h3 className="font-semibold text-slate-900 text-sm line-clamp-2 group-hover:text-blue-600 transition-colors">{post.title}</h3>
+                        <p className="text-xs text-slate-500 mt-1">{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
+                      </div>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* New this week */}
+          {selectedCategory === 'all' && !searchTerm && newThisWeek.length > 0 && (
+            <section className="mb-12" aria-label="New this week">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <Flame className="w-6 h-6 text-orange-500" />
+                New this week
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {newThisWeek.slice(0, 6).map((post: any) => (
+                  <Link key={post.id || post.slug} to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-orange-50 text-orange-800 border border-orange-200 hover:bg-orange-100 text-sm font-medium transition-colors">
+                    {post.title?.slice(0, 40)}{post.title?.length > 40 ? '…' : ''}
+                    <ArrowRight className="w-4 h-4 flex-shrink-0" />
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Suggested by category – when a category is selected */}
+          {selectedCategory !== 'all' && suggestedByCategory.length > 0 && (
+            <section className="mb-12" aria-label={`Suggested ${selectedCategory} articles`}>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+                Suggested in {selectedCategory}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {suggestedByCategory.map((post: any) => (
+                  <article key={post.id || post.slug} className="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+                    <Link to={`/blog/${post.slug}`} className="block">
+                      <div className="aspect-video overflow-hidden bg-slate-100">
+                        <img src={post.coverImage || post.featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400'} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      </div>
+                      <div className="p-3">
+                        <h3 className="font-semibold text-slate-900 text-sm line-clamp-2 group-hover:text-blue-600 transition-colors">{post.title}</h3>
+                        <p className="text-xs text-slate-500 mt-1">{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}</p>
+                      </div>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Featured (top 3 when no filter) */}
           {selectedCategory === 'all' && !searchTerm && featuredPosts.length >= 3 && (

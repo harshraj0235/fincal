@@ -2,9 +2,10 @@ import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft, Calendar, User, Tag, Bookmark,
-  Facebook, Twitter, Linkedin, Copy
+  Facebook, Twitter, Linkedin, Copy, ChevronRight
 } from 'lucide-react';
 import { getBlogPostBySlug, getRelatedPosts } from '../data/allBlogData';
+import { getAuthorBySlug } from '../data/blogAuthors';
 import { astroBlog1 } from '../data/astroBlogs/astroBlog1';
 import { astroBlog2 } from '../data/astroBlogs/astroBlog2';
 import { astroBlog3 } from '../data/astroBlogs/astroBlog3';
@@ -14,13 +15,6 @@ import { astroBlog6 } from '../data/astroBlogs/astroBlog6';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import SEOHelmet from '../components/SEOHelmet';
-
-const AUTHOR_NAME = "Harsh Raj";
-const AUTHOR_LINKEDIN = "https://www.linkedin.com/in/harshitpatel9/";
-const AUTHOR_TWITTER = "https://x.com/harshitx9";
-const AUTHOR_IMAGE = "https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png";
-const AUTHOR_TITLE = "Software Engineer & Content Creator";
-const AUTHOR_BIO = "Harsh Raj is a Software Engineer with years of experience helping people make smart investment decisions. Passionate about financial literacy and transparent, trustworthy guidance.";
 
 // Helper functions for astro blogs
 const allAstroBlogs = [
@@ -51,7 +45,12 @@ export const BlogPost: React.FC = () => {
   const isAstroBlog = location.includes('/astro-finance/blog/');
 
   const post = isAstroBlog ? getAstroBlogBySlug(slug || '') : getBlogPostBySlug(slug || '');
-  const relatedPosts = isAstroBlog ? getRelatedAstroPosts(slug || '', 3) : getRelatedPosts(slug || '', 3);
+  const relatedPosts = isAstroBlog ? getRelatedAstroPosts(slug || '', 3) : getRelatedPosts(slug || '', 4);
+  const authorSlug = (post as any)?.authorSlug || 'harsh-raj';
+  const author = isAstroBlog ? { name: 'Harsh Raj', slug: 'harsh-raj', role: 'Vedic Astrology Specialist', bio: 'Vedic Astrology Specialist', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop', sameAs: [] } : getAuthorBySlug(authorSlug);
+  const displayAuthor = author || getAuthorBySlug('harsh-raj');
+  const lastUpdated = (post as any)?.lastUpdated || post?.date || new Date().toISOString().split('T')[0];
+  const dateModified = lastUpdated;
 
   // Content typing helpers to avoid implicit any and union issues
   type BlogContentSection = {
@@ -139,7 +138,9 @@ export const BlogPost: React.FC = () => {
     return count;
   }, 0) : 500;
 
-  // Generate structured data for SEO
+  const searchableKeywords = (post as any)?.searchableKeywords || post.categories || [];
+  const keywordsStr = Array.isArray(searchableKeywords) ? searchableKeywords.join(', ') : (post.categories || []).join(', ');
+
   const generateStructuredData = () => {
     return {
       "@context": "https://schema.org",
@@ -149,27 +150,25 @@ export const BlogPost: React.FC = () => {
       "image": post.coverImage,
       "author": {
         "@type": "Person",
-        "name": AUTHOR_NAME,
-        "url": "https://moneycal.in/author/harsh-raj",
-        "sameAs": [AUTHOR_LINKEDIN, AUTHOR_TWITTER]
+        "name": displayAuthor?.name || 'MoneyCal Team',
+        "url": `https://moneycal.in/author/${displayAuthor?.slug || 'harsh-raj'}`,
+        "image": displayAuthor?.image,
+        "sameAs": (displayAuthor as any)?.sameAs || []
       },
       "publisher": {
         "@type": "Organization",
         "name": "MoneyCal India",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://moneycal.in/logo.png"
-        }
+        "logo": { "@type": "ImageObject", "url": "https://moneycal.in/logo.png" }
       },
       "datePublished": post.date,
-      "dateModified": new Date().toISOString().split('T')[0],
+      "dateModified": dateModified,
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": `https://moneycal.in${isAstroBlog ? '/astro-finance/blog/' : '/blog/'}${post.slug}`
       },
       "wordCount": wordCount,
       "articleBody": post.excerpt,
-      "keywords": post.categories.join(', ')
+      "keywords": keywordsStr
     };
   };
 
@@ -180,8 +179,11 @@ export const BlogPost: React.FC = () => {
       <SEOHelmet
         title={post.title}
         description={post.excerpt}
+        keywords={keywordsStr}
         image={post.coverImage}
         url={`${isAstroBlog ? '/astro-finance/blog/' : '/blog/'}${post.slug}`}
+        author={displayAuthor?.name}
+        articleModifiedTime={dateModified}
       />
       {/* Add structured data for rich snippets */}
       <script type="application/ld+json">
@@ -209,17 +211,17 @@ export const BlogPost: React.FC = () => {
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-1" />
                     <Link 
-                      to="/author/harsh-raj" 
+                      to={`/author/${displayAuthor?.slug || 'harsh-raj'}`}
                       className="hover:text-blue-600 transition-colors"
                     >
-                      {AUTHOR_NAME}
+                      {displayAuthor?.name || 'MoneyCal Team'}
                     </Link>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-1" />
                     <span>{post.date}</span>
                     <span className="mx-2">•</span>
-                    <span>Last updated: {new Date().toISOString().split('T')[0]}</span>
+                    <span>Last updated: {dateModified}</span>
                     <span className="mx-2">•</span>
                     <span>{readingTime} min read</span>
                     <span className="mx-2">•</span>
@@ -389,7 +391,7 @@ export const BlogPost: React.FC = () => {
                   </button>
                 </div>
               </div>
-              {/* Author box */}
+              {/* Author box – EEAT */}
               <section
                 className="bg-neutral-50 rounded-xl p-6 mb-8 flex flex-col sm:flex-row items-center gap-4"
                 itemScope
@@ -397,8 +399,8 @@ export const BlogPost: React.FC = () => {
               >
                 <div className="h-16 w-16 rounded-full overflow-hidden flex-shrink-0 shadow">
                   <img
-                    src={AUTHOR_IMAGE}
-                    alt={AUTHOR_NAME}
+                    src={displayAuthor?.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200'}
+                    alt={displayAuthor?.name || 'Author'}
                     className="h-full w-full object-cover"
                     itemProp="image"
                   />
@@ -406,40 +408,52 @@ export const BlogPost: React.FC = () => {
                 <div>
                   <h4 className="text-lg font-bold text-neutral-900 flex items-center gap-2" itemProp="name">
                     <Link 
-                      to="/author/harsh-raj" 
+                      to={`/author/${displayAuthor?.slug || 'harsh-raj'}`}
                       className="hover:text-blue-600 transition-colors"
                     >
-                      {AUTHOR_NAME}
+                      {displayAuthor?.name || 'MoneyCal Team'}
                     </Link>
-                    <a
-                      href={AUTHOR_LINKEDIN}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Harsh Raj on LinkedIn"
-                      className="ml-2 hover:text-[#0A66C2]"
-                    >
-                      <Linkedin className="inline h-5 w-5" />
-                    </a>
-                    <a
-                      href={AUTHOR_TWITTER}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Harsh Raj on Twitter/X"
-                      className="ml-2 hover:text-[#1DA1F2]"
-                    >
-                      <Twitter className="inline h-5 w-5" />
-                    </a>
+                    {(displayAuthor as any)?.sameAs?.filter(Boolean).map((url: string, i: number) => (
+                      <a
+                        key={i}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${displayAuthor?.name} on social`}
+                        className="ml-2 hover:opacity-80"
+                      >
+                        {url.includes('linkedin') ? <Linkedin className="inline h-5 w-5 text-[#0A66C2]" /> : <Twitter className="inline h-5 w-5 text-[#1DA1F2]" />}
+                      </a>
+                    ))}
                   </h4>
-                  <p className="text-sm text-neutral-600" itemProp="jobTitle">{AUTHOR_TITLE}</p>
-                  <p className="text-neutral-700 mt-1" itemProp="description">{AUTHOR_BIO}</p>
+                  <p className="text-sm text-neutral-600" itemProp="jobTitle">{displayAuthor?.role || 'Finance & Content'}</p>
+                  <p className="text-neutral-700 mt-1" itemProp="description">{displayAuthor?.bio || ''}</p>
                   <Link 
-                    to="/author/harsh-raj" 
+                    to={`/author/${displayAuthor?.slug || 'harsh-raj'}`}
                     className="inline-flex items-center mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium"
                   >
-                    View Full Profile →
+                    View Full Profile <ChevronRight className="w-4 h-4 ml-0.5" />
                   </Link>
                 </div>
               </section>
+
+              {/* Internal links – browse by category */}
+              {!isAstroBlog && (post.categories || []).length > 0 && (
+                <section className="bg-white rounded-xl border border-neutral-200 p-6 mb-8">
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-3">More in this topic</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {post.categories.slice(0, 5).map((cat: string) => (
+                      <Link
+                        key={cat}
+                        to={`/blog?category=${encodeURIComponent(cat)}`}
+                        className="inline-flex items-center px-3 py-1.5 rounded-lg bg-neutral-100 text-neutral-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors"
+                      >
+                        {cat} <ChevronRight className="w-3.5 h-3.5 ml-1" />
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               {/* References / Sources */}
               <section className="bg-white rounded-xl border border-neutral-200 p-6 mb-8">
@@ -454,9 +468,9 @@ export const BlogPost: React.FC = () => {
           </div>
           {/* Sidebar */}
           <aside className="lg:col-span-1 space-y-8">
-            {/* Related Articles */}
-            <section className="bg-white rounded-xl shadow-md p-6">
-              <h3 className="text-xl font-semibold text-neutral-900 mb-4">Related Articles</h3>
+            {/* Suggested / Related Articles */}
+            <section className="bg-white rounded-xl shadow-md p-6" aria-label="Suggested articles">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-4">Suggested for you</h3>
               <div className="space-y-4">
                 {relatedPosts.map((relatedPost) => (
                   <Link
@@ -467,7 +481,7 @@ export const BlogPost: React.FC = () => {
                     <div className="flex items-start">
                       <div className="h-16 w-16 rounded-lg overflow-hidden flex-shrink-0 mr-3">
                         <img
-                          src={relatedPost.coverImage}
+                          src={relatedPost.coverImage || (relatedPost as any).featuredImage || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200'}
                           alt={relatedPost.title}
                           className="h-full w-full object-cover"
                         />
