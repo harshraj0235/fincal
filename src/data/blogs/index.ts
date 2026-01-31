@@ -47,6 +47,8 @@ import { insurance } from './insurance';
 import { news } from './news';
 import { calculators } from './calculators';
 import { excelTools } from './excel-tools';
+import { personalFinanceKyaHai2026 } from './personal-finance-kya-hai-2026-shuruaati-guide';
+import { paiseBachaye202615Tarike } from './2026-paise-kaise-bachaye-15-tarike';
 
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
@@ -96,6 +98,8 @@ export const blogs: BlogPost[] = [
   news,
   calculators,
   excelTools,
+  personalFinanceKyaHai2026,
+  paiseBachaye202615Tarike,
 ];
 
 // Auto-update blog dates
@@ -155,3 +159,5 @@ export { insurance } from './insurance';
 export { news } from './news';
 export { calculators } from './calculators';
 export { excelTools } from './excel-tools';
+export { personalFinanceKyaHai2026 } from './personal-finance-kya-hai-2026-shuruaati-guide';
+export { paiseBachaye202615Tarike } from './2026-paise-kaise-bachaye-15-tarike';
