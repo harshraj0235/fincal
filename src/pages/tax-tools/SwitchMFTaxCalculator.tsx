@@ -376,7 +376,7 @@ const SwitchMFTaxCalculator: React.FC = () => {
 
               <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Tax on debt MF switch (2025-26)</h3>
               <p>
-                For <strong>debt mutual funds</strong>, from investments made on or after 1 April 2023, the entire gain on redemption or switch is treated as <strong>short-term capital gain</strong> and is <strong>taxed at your applicable income tax slab rate</strong>. There is no separate LTCG rate or indexation. So when you switch a debt fund, you pay tax at 5%, 20%, or 30% depending on your slab. Use our <Link to="/tax-tools/debt-fund-tax-calculator" className="text-sky-600 hover:underline font-medium">Debt Fund Tax Calculator</Link> to see tax at different slabs. For pre-April 2023 debt fund investments, LTCG (holding >36 months) was taxed at 20% with indexation; that treatment continues for those old investments.
+                For <strong>debt mutual funds</strong>, from investments made on or after 1 April 2023, the entire gain on redemption or switch is treated as <strong>short-term capital gain</strong> and is <strong>taxed at your applicable income tax slab rate</strong>. There is no separate LTCG rate or indexation. So when you switch a debt fund, you pay tax at 5%, 20%, or 30% depending on your slab. Use our <Link to="/tax-tools/debt-fund-tax-calculator" className="text-sky-600 hover:underline font-medium">Debt Fund Tax Calculator</Link> to see tax at different slabs. For pre-April 2023 debt fund investments, LTCG (holding &gt;36 months) was taxed at 20% with indexation; that treatment continues for those old investments.
               </p>
 
               <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Switch vs redeem and reinvest</h3>
