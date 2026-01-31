@@ -204,7 +204,7 @@ const DebtFundTaxCalculator: React.FC = () => {
                   Tax result
                 </h2>
                 <AnimatePresence mode="wait">
-                  {result ? (
+                {result ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-4">
                       <div className="grid grid-cols-2 gap-3">
                         <div className="bg-white p-4 rounded-xl border border-slate-200">
@@ -222,7 +222,7 @@ const DebtFundTaxCalculator: React.FC = () => {
                       </div>
                       <div className="p-4 rounded-xl bg-slate-100 border border-slate-200">
                         <p className="text-sm text-slate-600">{result.recommendation}</p>
-                      </div>
+                    </div>
                     </motion.div>
                   ) : (
                     <div className="text-center py-12">
@@ -231,8 +231,8 @@ const DebtFundTaxCalculator: React.FC = () => {
                     </div>
                   )}
                 </AnimatePresence>
-              </div>
-            </div>
+                    </div>
+                  </div>
           </motion.div>
         </section>
 
@@ -249,7 +249,7 @@ const DebtFundTaxCalculator: React.FC = () => {
                 </div>
               </Link>
             ))}
-          </div>
+                  </div>
         </section>
 
         {/* FAQ */}

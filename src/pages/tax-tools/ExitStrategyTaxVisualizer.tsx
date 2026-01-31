@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Calculator, 
-  TrendingUp, 
-  TrendingDown, 
-  DollarSign, 
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Calculator,
+  TrendingUp,
+  DollarSign,
   Calendar,
   Info,
   FileText,
   Target,
   CheckCircle,
-  ArrowRight,
-  Download,
-  Share2,
   BarChart3,
-  Clock,
-  AlertTriangle
+  AlertTriangle,
+  ChevronRight,
+  ChevronDown,
+  Sparkles,
+  ExternalLink,
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface ExitStrategy {
   name: string;
@@ -56,19 +54,19 @@ const ExitStrategyTaxVisualizer: React.FC = () => {
     {
       name: 'Immediate Exit',
       description: 'Sell immediately regardless of holding period',
-      taxRate: 15,
+      taxRate: 20,
       holdingPeriod: 'Any period',
       advantages: ['Quick liquidity', 'No further market risk', 'Immediate cash flow'],
-      disadvantages: ['Highest tax rate', 'No LTCG benefits', 'May trigger STCG'],
+      disadvantages: ['Highest tax rate (STCG 20%)', 'No LTCG benefits', 'May trigger STCG'],
       bestFor: 'Emergency funds or urgent cash needs',
       color: 'from-red-500 to-red-600'
     },
     {
       name: 'Wait for LTCG',
       description: 'Hold until qualifying for long-term capital gains',
-      taxRate: 10,
+      taxRate: 12.5,
       holdingPeriod: '1+ years',
-      advantages: ['Lower tax rate', '₹1L annual exemption', 'Better tax efficiency'],
+      advantages: ['Lower tax rate', '₹1.25L annual exemption (Budget 2024)', 'Better tax efficiency'],
       disadvantages: ['Market risk during holding', 'Delayed liquidity', 'Opportunity cost'],
       bestFor: 'Non-urgent exits with growth potential',
       color: 'from-green-500 to-green-600'
@@ -111,16 +109,18 @@ const ExitStrategyTaxVisualizer: React.FC = () => {
       let effectiveRate = 0;
 
       if (strategy.name === 'Immediate Exit') {
-        taxAmount = profit * (strategy.taxRate / 100);
-        effectiveRate = strategy.taxRate;
+        const stcgRate = 20; // Budget 2024
+        taxAmount = profit * (stcgRate / 100);
+        effectiveRate = stcgRate;
       } else if (strategy.name === 'Wait for LTCG') {
         if (holdingMonths >= 12) {
-          const taxableAmount = Math.max(0, profit - 100000);
-          taxAmount = taxableAmount * (strategy.taxRate / 100);
+          const ltcgExemption = 125000; // Budget 2024
+          const taxableAmount = Math.max(0, profit - ltcgExemption);
+          taxAmount = taxableAmount * (12.5 / 100); // LTCG 12.5% Budget 2024
           effectiveRate = taxableAmount > 0 ? (taxAmount / profit) * 100 : 0;
         } else {
-          taxAmount = profit * 15 / 100;
-          effectiveRate = 15;
+          taxAmount = profit * 20 / 100; // STCG 20% Budget 2024
+          effectiveRate = 20;
         }
       } else if (strategy.name === 'Staggered Exit') {
         const immediateTax = (profit * 0.5) * 15 / 100;
@@ -149,8 +149,8 @@ const ExitStrategyTaxVisualizer: React.FC = () => {
       recommendations.push('Consider waiting for LTCG qualification to reduce tax burden');
     }
 
-    if (profit > 100000) {
-      recommendations.push('Plan exits to maximize ₹1L annual exemption benefit');
+    if (profit > 125000) {
+      recommendations.push('Plan exits to maximize ₹1.25L annual exemption benefit (Budget 2024)');
     }
 
     if (profit > 500000) {
@@ -177,28 +177,34 @@ const ExitStrategyTaxVisualizer: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Exit Strategy Tax Visualizer - Investment Exit Tax Calculator | MoneyCal"
-        description="Visualize and compare tax implications of different investment exit strategies. Plan your exits to minimize tax burden and maximize returns with our advanced exit strategy calculator."
-        keywords="exit strategy tax calculator, investment exit planning, capital gains tax optimization, LTCG STCG calculator, tax-efficient exits, investment withdrawal strategy"
+        title="Exit Strategy Tax Visualizer – LTCG ₹1.25L 2026–2050 | MoneyCal"
+        description="Plan and visualize tax implications of different exit strategies. LTCG ₹1.25L exemption, 12.5%. Valid 2026 onwards."
+        keywords="exit strategy tax calculator India 2026, LTCG STCG exit planner, investment exit tax visualizer, capital gains exit strategy"
+        canonicalUrl="/tax-tools/exit-strategy-tax-visualizer"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
-
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        <section className="py-16 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Exit Strategy Tax Visualizer
-              </h1>
-              <p className="text-xl text-purple-100 mb-8">
-                Plan your investment exits to minimize tax burden and maximize returns
-              </p>
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        <div className="bg-white border-b border-slate-200">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav className="flex items-center gap-2 text-sm text-slate-600">
+              <Link to="/" className="hover:text-blue-600">Home</Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link to="/tax-tools" className="hover:text-blue-600">Tax Tools</Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-slate-900 font-medium">Exit Strategy Tax Visualizer</span>
+            </nav>
+          </div>
+        </div>
+        <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700 text-white pt-12 pb-16">
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
+              <Sparkles className="w-4 h-4" /> Tax Planning • Valid 2026–2050
             </motion.div>
+            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-5xl font-bold mb-4">
+              Exit Strategy Tax Visualizer
+            </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-indigo-100 max-w-2xl mx-auto">
+              Plan and visualize tax implications of different exit strategies. LTCG ₹1.25L, 12.5%.
+            </motion.p>
           </div>
         </section>
 
@@ -376,47 +382,76 @@ const ExitStrategyTaxVisualizer: React.FC = () => {
               </motion.div>
             )}
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl p-8 text-white mt-8"
-            >
-              <h2 className="text-2xl font-semibold mb-6">Related Tax Tools</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <a 
-                  href="/tax-tools/stcg-ltcg-classifier" 
-                  className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors"
-                >
-                  <h3 className="font-semibold mb-2">STCG vs LTCG</h3>
-                  <p className="text-sm opacity-90">Classify your capital gains</p>
-                </a>
-                <a 
-                  href="/tax-tools/short-term-loss-offset-visualizer" 
-                  className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors"
-                >
-                  <h3 className="font-semibold mb-2">Loss Offset</h3>
-                  <p className="text-sm opacity-90">Optimize loss utilization</p>
-                </a>
-                <a 
-                  href="/tax-tools/tax-efficient-withdrawal-planner" 
-                  className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors"
-                >
-                  <h3 className="font-semibold mb-2">Withdrawal Planner</h3>
-                  <p className="text-sm opacity-90">Plan tax-efficient withdrawals</p>
-                </a>
-                <a 
-                  href="/tax-tools/offset-ltcg-with-annual-exemptions-tool" 
-                  className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors"
-                >
-                  <h3 className="font-semibold mb-2">LTCG Exemptions</h3>
-                  <p className="text-sm opacity-90">Maximize annual exemptions</p>
-                </a>
+            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Related tools</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <Link to="/tax-tools/stcg-ltcg-classifier" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all">
+                  <ChevronRight className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0 group-hover:translate-x-0.5" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">STCG vs LTCG Classifier</p>
+                    <p className="text-sm text-slate-500">Classify capital gains</p>
+                  </div>
+                </Link>
+                <Link to="/tax-tools/short-term-loss-offset-visualizer" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all">
+                  <ChevronRight className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0 group-hover:translate-x-0.5" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Short-Term Loss Offset</p>
+                    <p className="text-sm text-slate-500">Optimize loss utilization</p>
+                  </div>
+                </Link>
+                <Link to="/tax-tools/tax-efficient-withdrawal-planner" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all">
+                  <ChevronRight className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0 group-hover:translate-x-0.5" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Tax-Efficient Withdrawal Planner</p>
+                    <p className="text-sm text-slate-500">Plan withdrawals</p>
+                  </div>
+                </Link>
+                <Link to="/tax-tools/offset-ltcg-with-annual-exemptions-tool" className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all">
+                  <ChevronRight className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0 group-hover:translate-x-0.5" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Offset LTCG with Exemptions</p>
+                    <p className="text-sm text-slate-500">Maximize exemption</p>
+                  </div>
+                </Link>
               </div>
-            </motion.div>
-
-            <WhatsAppBanner />
-            <AstroFinanceButton />
+            </section>
+            <article className="bg-slate-50 border-t border-slate-200">
+              <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 id="exit-guide" className="text-2xl font-bold text-slate-900 mb-4">Exit Strategy Tax Guide (Valid 2026–2050)</h2>
+                <p className="text-slate-700 leading-relaxed">
+                  Plan exits using LTCG ₹1.25L exemption and 12.5% rate (Budget 2024). Use our <Link to="/tax-tools/exit-strategy-tax-visualizer" className="text-indigo-600 hover:underline font-medium">Exit Strategy Tax Visualizer</Link>, <Link to="/tax-tools/offset-ltcg-with-annual-exemptions-tool" className="text-indigo-600 hover:underline font-medium">Offset LTCG with Exemptions Tool</Link>, and <Link to="/tax-tools/tax-efficient-withdrawal-planner" className="text-indigo-600 hover:underline font-medium">Tax-Efficient Withdrawal Planner</Link>. Valid for 2026–2050 unless the law is amended. <a href="https://economictimes.indiatimes.com/wealth/tax/capital-gains-exemption-limit-hiked-to-rs-1-25-lakh-stcg-tax-rate-changed-to-20-ltcg-hiked-to-12-5-on-certain-assets-in-budget-2024/articleshow/111951361.cms" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Economic Times – LTCG Budget 2024</a>.
+                </p>
+              </div>
+            </article>
+            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Explore more</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <Link to="/blog?category=Tax" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
+                  <FileText className="h-10 w-10 text-indigo-600" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Tax &amp; investment blog</p>
+                    <p className="text-sm text-slate-500">Articles on exits and tax</p>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
+                </Link>
+                <Link to="/news" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
+                  <ExternalLink className="h-10 w-10 text-indigo-600" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Latest news</p>
+                    <p className="text-sm text-slate-500">Markets and tax updates</p>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
+                </Link>
+                <Link to="/tax-tools" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
+                  <Calculator className="h-10 w-10 text-indigo-600" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">All tax tools</p>
+                    <p className="text-sm text-slate-500">Calculators for tax planning</p>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
+                </Link>
+              </div>
+            </section>
           </div>
         </section>
       </div>

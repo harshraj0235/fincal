@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calculator, Download, Info, TrendingUp, AlertTriangle, FileText, DollarSign, BarChart3, Calendar, ArrowLeftRight, Percent, TrendingDown } from 'lucide-react';
+import { Calculator, Info, FileText, DollarSign, BarChart3, Calendar, ArrowLeftRight, ChevronRight, Sparkles, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface TaxYearData {
   year: string;
@@ -133,12 +132,24 @@ const TaxYearComparisonSliderTool: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Tax Year Comparison Slider Tool - Tax Comparison Calculator | MoneyCal"
-        description="Compare tax implications across different financial years with interactive sliders. Analyze tax changes, effective rates, and optimize your tax planning with our comprehensive comparison tool."
-        keywords="tax year comparison, tax comparison calculator, tax slab comparison, financial year tax calculator, tax planning tool, tax rate comparison"
+        title="Tax Year Comparison Slider Tool – FY Comparison 2026–2050 | MoneyCal"
+        description="Compare tax implications across different financial years. Tax slab comparison, effective rates. Valid 2026 onwards."
+        keywords="tax year comparison India 2026, tax slab comparison calculator, financial year tax comparison, tax planning tool"
+        canonicalUrl="/tax-tools/tax-year-comparison-slider-tool"
       />
-      
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+        <div className="bg-white border-b border-slate-200">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav className="flex items-center gap-2 text-sm text-slate-600">
+              <Link to="/" className="hover:text-blue-600">Home</Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link to="/tax-tools" className="hover:text-blue-600">Tax Tools</Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-slate-900 font-medium">Tax Year Comparison Slider Tool</span>
+            </nav>
+          </div>
+        </div>
         <div className="container mx-auto px-4 py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -146,22 +157,18 @@ const TaxYearComparisonSliderTool: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="max-w-6xl mx-auto"
           >
-            {/* Header */}
             <div className="text-center mb-8">
-              <motion.div
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-4"
-              >
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-4">
+                <Sparkles className="w-4 h-4" /> Tax Planning • Valid 2026–2050
+              </motion.div>
+              <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} transition={{ duration: 0.5 }} className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mb-4">
                 <ArrowLeftRight className="h-8 w-8 text-white" />
               </motion.div>
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 Tax Year Comparison Slider Tool
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Compare tax implications across different financial years with interactive sliders. 
-                Analyze tax changes, effective rates, and optimize your tax planning strategy.
+                Compare tax implications across different financial years with interactive sliders. Valid 2026 onwards.
               </p>
             </div>
 
@@ -509,8 +516,35 @@ const TaxYearComparisonSliderTool: React.FC = () => {
               </div>
             </motion.div>
 
-            <WhatsAppBanner />
-            <AstroFinanceButton />
+            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Explore more</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <Link to="/tax-tools/old-vs-new-tax-regime-helper" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
+                  <Calculator className="h-10 w-10 text-indigo-600" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Old vs New Tax Regime Helper</p>
+                    <p className="text-sm text-slate-500">Compare regimes</p>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
+                </Link>
+                <Link to="/blog?category=Tax" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
+                  <FileText className="h-10 w-10 text-indigo-600" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Tax &amp; investment blog</p>
+                    <p className="text-sm text-slate-500">Articles on tax</p>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
+                </Link>
+                <Link to="/tax-tools" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
+                  <DollarSign className="h-10 w-10 text-indigo-600" />
+                  <div>
+                    <p className="font-semibold text-slate-900 group-hover:text-indigo-700">All tax tools</p>
+                    <p className="text-sm text-slate-500">Calculators for tax planning</p>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
+                </Link>
+              </div>
+            </section>
           </motion.div>
         </div>
       </div>

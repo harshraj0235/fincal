@@ -60,22 +60,22 @@ const SwitchMFTaxCalculator: React.FC = () => {
     const current = parseFloat(currentValue);
     const original = parseFloat(originalInvestment);
     const exitLoadPct = exitLoadPercentage ? parseFloat(exitLoadPercentage) : 0;
-
+    
     const purchase = new Date(purchaseDate);
     const switchDateObj = new Date(switchDate);
     const holdingPeriod = Math.floor((switchDateObj.getTime() - purchase.getTime()) / (1000 * 60 * 60 * 24));
-
+    
     const capitalGain = current - original;
     const exitLoadAmount = (current * exitLoadPct) / 100;
     const stt = fundType === 'equity' ? current * STT_RATE : 0;
     const totalCharges = exitLoadAmount + stt;
-
+    
     let taxRate: number;
     let taxAmount: number;
     let recommendation: string;
     let color: string;
     let icon: React.ReactNode;
-
+    
     if (capitalGain <= 0) {
       taxRate = 0;
       taxAmount = 0;
@@ -101,11 +101,11 @@ const SwitchMFTaxCalculator: React.FC = () => {
         const taxableLTCG = Math.max(0, capitalGain - LTCG_EXEMPTION);
         taxAmount = (taxableLTCG * LTCG_RATE_EQUITY) / 100;
         recommendation = `Equity-oriented MF: LTCG at ${LTCG_RATE_EQUITY}% on gains above ₹${LTCG_EXEMPTION.toLocaleString()} (held >12 months).`;
-        color = 'text-blue-600';
-        icon = <Info className="h-5 w-5" />;
+      color = 'text-blue-600';
+      icon = <Info className="h-5 w-5" />;
       }
     }
-
+    
     const netAmount = current - totalCharges - taxAmount;
 
     setCalculation({
@@ -247,7 +247,7 @@ const SwitchMFTaxCalculator: React.FC = () => {
                       <label className="block text-sm font-medium text-slate-700 mb-1">Purchase date</label>
                       <input type="date" value={purchaseDate} onChange={(e) => setPurchaseDate(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sky-500" />
                     </div>
-                    <div>
+                  <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">Switch date</label>
                       <input type="date" value={switchDate} onChange={(e) => setSwitchDate(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-sky-500" />
                     </div>
@@ -269,11 +269,11 @@ const SwitchMFTaxCalculator: React.FC = () => {
                   Tax analysis
                 </h2>
                 <AnimatePresence mode="wait">
-                  {calculation ? (
+                {calculation ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-4">
                       <div className={`text-center p-4 rounded-xl border ${calculation.color.includes('green') ? 'bg-green-50 border-green-200' : calculation.color.includes('amber') ? 'bg-amber-50 border-amber-200' : 'bg-sky-50 border-sky-200'}`}>
                         <div className={`flex items-center justify-center gap-2 mb-2 ${calculation.color}`}>
-                          {calculation.icon}
+                        {calculation.icon}
                           <span className="font-bold">Tax status</span>
                         </div>
                         <p className="text-sm text-slate-600">{calculation.recommendation}</p>
@@ -291,7 +291,7 @@ const SwitchMFTaxCalculator: React.FC = () => {
                           <div className="flex justify-between p-3 bg-slate-100 rounded-xl">
                             <span className="text-slate-700">STT (0.001%)</span>
                             <span className="font-bold text-slate-700">₹{calculation.stt.toLocaleString()}</span>
-                          </div>
+                        </div>
                         )}
                         <div className="flex justify-between p-3 bg-red-50 rounded-xl">
                           <span className="text-slate-700">Tax ({calculation.taxRate}%)</span>
@@ -310,7 +310,7 @@ const SwitchMFTaxCalculator: React.FC = () => {
                     </div>
                   )}
                 </AnimatePresence>
-              </div>
+                  </div>
             </div>
           </motion.div>
         </section>
@@ -358,7 +358,7 @@ const SwitchMFTaxCalculator: React.FC = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 id="switch-mf-tax-guide" className="text-3xl font-bold text-slate-900 mb-6">
               Mutual Fund Switch Tax: Complete Guide (2025-26, AY 2026-27)
-            </h2>
+              </h2>
             <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
               <p>
                 When you <strong>switch from one mutual fund to another</strong> (e.g. from a growth option to a dividend option, or from one scheme to another within the same fund house), the transaction is treated as a <strong>redemption</strong> for tax purposes. You must pay <strong>capital gains tax</strong> on the gain, and you may also incur <strong>exit load</strong> and <strong>Securities Transaction Tax (STT)</strong> where applicable. This guide explains how switch tax works for equity and debt funds in FY 2025-26 and AY 2026-27, and how to use our <strong>Switch MF Tax Calculator</strong>. The framework remains valid for future years unless the law changes.
@@ -417,7 +417,7 @@ const SwitchMFTaxCalculator: React.FC = () => {
               <div>
                 <p className="font-semibold text-slate-900 group-hover:text-sky-700">Latest news</p>
                 <p className="text-sm text-slate-500">Markets and tax updates</p>
-              </div>
+                </div>
               <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-sky-600 ml-auto" />
             </Link>
             <Link to="/tax-tools" className="group p-5 rounded-xl border border-slate-200 hover:border-sky-300 hover:shadow-md transition-all flex items-center gap-4">
