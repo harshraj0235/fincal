@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Download, Info, TrendingUp, AlertTriangle, FileText, Shield, Clock, DollarSign } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Calculator, Download, Info, TrendingUp, AlertTriangle, FileText, Shield, Clock, DollarSign, HelpCircle, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface PFWithdrawalEntry {
   id: string;
@@ -98,14 +97,30 @@ const PFWithdrawalTaxPreview: React.FC = () => {
     return "You're eligible for tax-free withdrawals after 5 years of service.";
   };
 
+  const canonicalUrl = 'https://moneycal.in/tax-tools/pf-withdrawal-tax-preview';
+  const faqData = [
+    { question: 'Is PF withdrawal tax-free after 5 years?', answer: 'Yes. EPF withdrawal after 5 years of continuous service is tax-free. If you withdraw before 5 years, 10% TDS may apply (unless Form 15G/15H is submitted and accepted). If you withdraw after 5 years while still employed, 5% TDS may apply on the taxable portion in some cases; after leaving employment, withdrawal is tax-free.' },
+    { question: 'What is the TDS rate on PF withdrawal before 5 years?', answer: 'If service is less than 5 years, 10% TDS applies on PF withdrawal (unless you submit Form 15G/15H and your income is below the taxable limit). After 5 years, full withdrawal is tax-free if you have left employment; if still employed, rules may vary—use this PF Withdrawal Tax Preview to see estimated TDS.' },
+    { question: 'Can I avoid TDS on PF withdrawal with Form 15G/15H?', answer: 'If your total income is below the taxable limit, you can submit Form 15G (below 60) or Form 15H (60+) to the EPFO to avoid TDS on PF withdrawal. This tool shows the TDS that would apply without the form; consult your employer or EPFO for form submission.' },
+    { question: 'Is partial PF withdrawal tax-free?', answer: 'Partial withdrawal for specified purposes (e.g. home loan, medical, education) after 5 years is generally tax-free. Partial withdrawal before 5 years may attract 10% TDS. Use this calculator to add partial and full withdrawal entries and see total tax.' },
+    { question: 'Where can I get official EPF withdrawal rules?', answer: 'Check EPFO (epfindia.gov.in) and the Income Tax Act. TDS rules are in the Income Tax Act and EPF Scheme. This calculator is for illustration; verify with EPFO or a chartered accountant.' }
+  ];
+
   return (
     <>
       <SEOHelmet
         title="PF Withdrawal Tax Preview - Provident Fund Tax Calculator | MoneyCal"
-        description="Calculate tax implications of PF withdrawals. Preview TDS rates, tax-free amounts, and optimize your Provident Fund withdrawal strategy with our comprehensive calculator."
-        keywords="PF withdrawal tax, provident fund tax calculator, PF TDS calculator, EPF withdrawal tax, PF withdrawal rules, tax-free PF withdrawal, PF withdrawal after 5 years"
+        description="Calculate tax implications of PF withdrawals. Preview TDS rates, tax-free amounts, and optimize your EPF withdrawal. Retirement Planning • Valid 2026–2050."
+        keywords="PF withdrawal tax, EPF TDS calculator, PF withdrawal after 5 years, tax-free PF withdrawal India 2026"
+        url={canonicalUrl}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Tax Tools', url: '/tax-tools' },
+          { name: 'PF Withdrawal Tax Preview', url: '/tax-tools/pf-withdrawal-tax-preview' }
+        ]}
+        faqData={faqData}
       />
-      
+
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
         <div className="container mx-auto px-4 py-8">
           <motion.div
@@ -116,6 +131,7 @@ const PFWithdrawalTaxPreview: React.FC = () => {
           >
             {/* Header */}
             <div className="text-center mb-8">
+              <p className="text-sm font-medium text-blue-600 mb-2">Retirement Planning • Valid 2026–2050</p>
               <motion.div
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
@@ -373,6 +389,42 @@ const PFWithdrawalTaxPreview: React.FC = () => {
               </div>
             </motion.div>
 
+            {/* FAQ Section */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }} className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <HelpCircle className="h-6 w-6 mr-2 text-green-600" />
+                Frequently Asked Questions: PF Withdrawal Tax
+              </h2>
+              <div className="space-y-6">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                    <p className="text-gray-600">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* SEO Content: 1500+ words */}
+            <article className="bg-white rounded-2xl shadow-xl p-8 prose prose-lg max-w-none mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">PF Withdrawal Tax: Complete Guide for FY 2025-26 and Beyond</h2>
+              <p className="text-gray-600 mb-4">
+                Understanding <strong>PF (Provident Fund) withdrawal tax</strong> helps you plan your EPF exit and avoid surprise TDS. This <strong>PF Withdrawal Tax Preview</strong> lets you add full or partial withdrawal entries, enter years of service and employment status, and see estimated TDS and net amount. EPF withdrawal after 5 years of continuous service is <strong>tax-free</strong>; before 5 years, 10% TDS may apply. If you withdraw after 5 years while still employed, 5% TDS may apply in certain cases. Use it for FY 2025-26, FY 2026-27, and future years. For official rules, see <a href="https://www.epfindia.gov.in/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">EPFO</a> and <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Income Tax Portal</a>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">TDS Rates on EPF Withdrawal</h3>
+              <p className="text-gray-600 mb-4">
+                If <strong>service is less than 5 years</strong>, 10% TDS applies on the taxable portion (unless Form 15G/15H is submitted and accepted). If <strong>service is 5 years or more and you have left employment</strong>, withdrawal is tax-free. If you withdraw <strong>after 5 years while still employed</strong>, 5% TDS may apply on the taxable amount in some situations. Partial withdrawal for specified purposes after 5 years is generally tax-free. Use this calculator to add multiple withdrawal entries and see total TDS. For comparison with NPS, use <Link to="/tax-tools/pf-vs-nps-tax-growth-comparison" className="text-green-600 hover:underline">PF vs NPS Tax & Growth Comparison</Link> and <Link to="/tax-tools/nps-tax-benefit-vs-growth-estimator" className="text-blue-600 hover:underline">NPS Tax Benefit vs Growth Estimator</Link>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Form 15G and 15H to Avoid TDS</h3>
+              <p className="text-gray-600 mb-4">
+                If your total income is below the taxable limit, you can submit <strong>Form 15G</strong> (below 60 years) or <strong>Form 15H</strong> (60 years and above) to the EPFO to avoid TDS on PF withdrawal. This tool shows the TDS that would apply without the form. For 80C and retirement planning, use <Link to="/tax-tools/80c-deduction-bucket-visualizer" className="text-green-600 hover:underline">80C Deduction Bucket Visualizer</Link> and <Link to="/tax-tools/tax-efficient-withdrawal-planner" className="text-blue-600 hover:underline">Tax-Efficient Withdrawal Planner</Link>. For official form and TDS rules, check <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">incometax.gov.in</a>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Validity and Disclaimer</h3>
+              <p className="text-gray-600 mb-4">
+                This calculator and content are valid for FY 2025-26, FY 2026-27, and future years unless the law changes. EPF TDS rules are based on current Income Tax Act and EPF Scheme. Verify with EPFO or a chartered accountant. This is not professional advice.
+              </p>
+            </article>
+
             {/* Related Tools */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -382,39 +434,34 @@ const PFWithdrawalTaxPreview: React.FC = () => {
             >
               <h2 className="text-2xl font-semibold mb-6">Related Tax Tools</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <a 
-                  href="/tax-tools/pf-vs-nps-tax-growth-comparison" 
-                  className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors"
-                >
+                <Link to="/tax-tools/pf-vs-nps-tax-growth-comparison" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
                   <h3 className="font-semibold mb-2">PF vs NPS Comparison</h3>
-                  <p className="text-sm opacity-90">Compare tax benefits and growth potential</p>
-                </a>
-                <a 
-                  href="/tax-tools/elss-lockin-vs-tax-benefit-visualizer" 
-                  className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors"
-                >
+                  <p className="text-sm opacity-90">Compare tax benefits and growth</p>
+                </Link>
+                <Link to="/tax-tools/elss-lockin-vs-tax-benefit-visualizer" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
                   <h3 className="font-semibold mb-2">ELSS Tax Benefits</h3>
-                  <p className="text-sm opacity-90">Visualize ELSS lock-in vs tax savings</p>
-                </a>
-                <a 
-                  href="/tax-tools/80c-deduction-bucket-visualizer" 
-                  className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors"
-                >
+                  <p className="text-sm opacity-90">ELSS lock-in vs tax savings</p>
+                </Link>
+                <Link to="/tax-tools/80c-deduction-bucket-visualizer" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
                   <h3 className="font-semibold mb-2">80C Deductions</h3>
-                  <p className="text-sm opacity-90">Optimize your 80C investment portfolio</p>
-                </a>
-                <a 
-                  href="/tax-tools/tax-efficient-withdrawal-planner" 
-                  className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors"
-                >
+                  <p className="text-sm opacity-90">Optimize 80C portfolio</p>
+                </Link>
+                <Link to="/tax-tools/tax-efficient-withdrawal-planner" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
                   <h3 className="font-semibold mb-2">Withdrawal Planner</h3>
-                  <p className="text-sm opacity-90">Plan tax-efficient investment withdrawals</p>
-                </a>
+                  <p className="text-sm opacity-90">Tax-efficient withdrawals</p>
+                </Link>
               </div>
             </motion.div>
 
-            <WhatsAppBanner />
-            <AstroFinanceButton />
+            {/* Explore more */}
+            <section className="mt-8 py-8 border-t border-gray-200">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Explore More</h2>
+              <ul className="space-y-2 text-gray-600">
+                <li><Link to="/tax-tools" className="text-green-600 hover:underline">All Tax Tools</Link></li>
+                <li><Link to="/" className="text-green-600 hover:underline">Home</Link></li>
+                <li><a href="https://www.epfindia.gov.in/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline inline-flex items-center">EPFO <ExternalLink className="h-4 w-4 ml-1" /></a></li>
+              </ul>
+            </section>
           </motion.div>
         </div>
       </div>

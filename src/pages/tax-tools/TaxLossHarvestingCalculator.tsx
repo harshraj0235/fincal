@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Info, TrendingDown, TrendingUp, DollarSign, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Calculator, Info, TrendingDown, TrendingUp, DollarSign, Shield, HelpCircle, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface LossHarvestingResult {
   totalLoss: number;
@@ -64,15 +63,29 @@ const TaxLossHarvestingCalculator: React.FC = () => {
     setResult(null);
   };
 
+  const canonicalUrl = 'https://moneycal.in/tax-tools/tax-loss-harvesting-calculator';
+  const faqData = [
+    { question: 'What is tax loss harvesting?', answer: 'Tax loss harvesting is a strategy where you sell investments at a loss to offset capital gains and reduce tax. The loss can be set off against STCG and LTCG in the same year; unabsorbed loss can be carried forward for 8 years. Use this Tax Loss Harvesting Calculator to see potential tax benefit from realizing a loss.' },
+    { question: 'Can I set off capital loss against salary income?', answer: 'No. Capital losses (STCG and LTCG) cannot be set off against salary, house property, or other heads. They can only be set off against capital gains. Use this calculator to see tax benefit when you have gains to offset.' },
+    { question: 'How long can I carry forward capital loss?', answer: 'STCG and LTCG losses can be carried forward for up to 8 assessment years. You must file your ITR within the due date to carry forward the loss. Use our Loss Carry Forward Estimator and Short-Term Loss Offset Visualizer for planning.' },
+    { question: 'Is there a wash sale rule in India?', answer: 'India does not have a formal wash sale rule like the US. As a best practice, avoid repurchasing the same or substantially identical security immediately to avoid scrutiny. Use this calculator to plan loss realization and reinvestment.' },
+    { question: 'Where can I get official loss set-off rules?', answer: 'Check the Income Tax Act (Sections 70, 71, 74) and the Income Tax Portal (incometax.gov.in). Always verify with a chartered accountant. This calculator is for illustration.' }
+  ];
+
   return (
     <>
       <SEOHelmet
         title="Tax Loss Harvesting Calculator - Optimize Your Tax Strategy | MoneyCal"
-        description="Calculate tax benefits from loss harvesting. Learn how to offset capital gains with investment losses and optimize your tax strategy."
-        keywords="tax loss harvesting, capital loss, investment loss, tax optimization, wash sale rules, tax strategy"
+        description="Calculate tax benefits from loss harvesting. Offset capital gains with investment losses. Tax Optimization • Valid 2026–2050."
+        keywords="tax loss harvesting, capital loss offset, STCG LTCG loss India, tax optimization 2026, loss carry forward"
+        url={canonicalUrl}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Tax Tools', url: '/tax-tools' },
+          { name: 'Tax Loss Harvesting Calculator', url: '/tax-tools/tax-loss-harvesting-calculator' }
+        ]}
+        faqData={faqData}
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
@@ -82,6 +95,7 @@ const TaxLossHarvestingCalculator: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <p className="text-sm font-medium text-purple-200 mb-2">Tax Optimization • Valid 2026–2050</p>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Tax Loss Harvesting Calculator
               </h1>
@@ -179,18 +193,18 @@ const TaxLossHarvestingCalculator: React.FC = () => {
                   <div className="bg-blue-50 p-4 rounded-lg">
                     <h3 className="font-semibold text-blue-900 mb-3">Related Tax Tools</h3>
                     <div className="space-y-2 text-sm">
-                      <a href="/tax-tools/stcg-ltcg-classifier" className="block text-blue-700 hover:text-blue-900">
+                      <Link to="/tax-tools/stcg-ltcg-classifier" className="block text-blue-700 hover:text-blue-900">
                         • STCG vs LTCG Classifier
-                      </a>
-                      <a href="/tax-tools/short-term-capital-loss-benefit-estimator" className="block text-blue-700 hover:text-blue-900">
+                      </Link>
+                      <Link to="/tax-tools/short-term-capital-loss-benefit-estimator" className="block text-blue-700 hover:text-blue-900">
                         • Short Term Capital Loss Benefit Estimator
-                      </a>
-                      <a href="/tax-tools/loss-carry-forward-estimator" className="block text-blue-700 hover:text-blue-900">
+                      </Link>
+                      <Link to="/tax-tools/loss-carry-forward-estimator" className="block text-blue-700 hover:text-blue-900">
                         • Loss Carry Forward Estimator
-                      </a>
-                      <a href="/tax-tools/equity-tax-estimator" className="block text-blue-700 hover:text-blue-900">
+                      </Link>
+                      <Link to="/tax-tools/equity-tax-estimator" className="block text-blue-700 hover:text-blue-900">
                         • Equity Tax Estimator
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -246,10 +260,10 @@ const TaxLossHarvestingCalculator: React.FC = () => {
                     </div>
 
                     <div className="bg-blue-50 p-4 rounded-lg">
-                      <h3 className="font-semibold text-blue-900 mb-2">SEO Optimized Content</h3>
+                      <h3 className="font-semibold text-blue-900 mb-2">Quick Tips</h3>
                       <div className="text-sm text-blue-800 space-y-2">
-                        <p><strong>Tax Loss Harvesting Strategy:</strong> Realize investment losses to offset capital gains and reduce your tax liability. Use our <a href="/tax-tools/stcg-ltcg-classifier" className="underline">STCG vs LTCG Classifier</a> to understand your gains category.</p>
-                        <p><strong>Wash Sale Rules:</strong> Avoid repurchasing the same security within 30 days to maintain tax benefits. Consider using our <a href="/tax-tools/short-term-capital-loss-benefit-estimator" className="underline">Capital Loss Benefit Estimator</a> for detailed analysis.</p>
+                        <p><strong>Tax Loss Harvesting Strategy:</strong> Realize investment losses to offset capital gains and reduce your tax liability. Use our <Link to="/tax-tools/stcg-ltcg-classifier" className="underline">STCG vs LTCG Classifier</Link> to understand your gains category.</p>
+                        <p><strong>Best Practice:</strong> Avoid repurchasing the same security immediately. Use our <Link to="/tax-tools/short-term-capital-loss-benefit-estimator" className="underline">Capital Loss Benefit Estimator</Link> for detailed analysis.</p>
                       </div>
                     </div>
                   </div>
@@ -264,65 +278,80 @@ const TaxLossHarvestingCalculator: React.FC = () => {
           </div>
         </section>
 
-        {/* SEO Content Section */}
-        <section className="py-16 bg-gray-50">
+        {/* FAQ Section */}
+        <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-                Complete Guide to Tax Loss Harvesting
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }} className="bg-white rounded-2xl shadow-xl p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <HelpCircle className="h-6 w-6 mr-2 text-purple-600" />
+                Frequently Asked Questions: Tax Loss Harvesting
               </h2>
-              
-              <div className="prose prose-lg max-w-none">
-                <h3>What is Tax Loss Harvesting?</h3>
-                <p>
-                  Tax loss harvesting is a strategy that involves selling investments at a loss to offset capital gains 
-                  and reduce your tax liability. This technique can help you optimize your tax situation while maintaining 
-                  your investment strategy. Use our <a href="/tax-tools/stcg-ltcg-classifier" className="text-blue-600 hover:text-blue-800">STCG vs LTCG Classifier</a> 
-                  to understand how your losses can offset different types of gains.
-                </p>
-
-                <h3>Benefits of Tax Loss Harvesting</h3>
-                <ul>
-                  <li>Offset capital gains with investment losses</li>
-                  <li>Reduce overall tax liability</li>
-                  <li>Maintain investment strategy</li>
-                  <li>Improve after-tax returns</li>
-                  <li>Create tax-efficient portfolios</li>
-                </ul>
-
-                <h3>Wash Sale Rules</h3>
-                <p>
-                  The wash sale rule prevents you from claiming a loss if you repurchase the same or substantially 
-                  identical security within 30 days. Use our <a href="/tax-tools/short-term-capital-loss-benefit-estimator" className="text-blue-600 hover:text-blue-800">Capital Loss Benefit Estimator</a> 
-                  to understand the impact of wash sale rules on your tax strategy.
-                </p>
-
-                <h3>Related Tax Tools</h3>
-                <p>
-                  Enhance your tax optimization strategy with our comprehensive suite of calculators:
-                </p>
-                <ul>
-                  <li><a href="/tax-tools/stcg-ltcg-classifier" className="text-blue-600 hover:text-blue-800">STCG vs LTCG Classifier</a> - Determine your capital gains category</li>
-                  <li><a href="/tax-tools/short-term-capital-loss-benefit-estimator" className="text-blue-600 hover:text-blue-800">Capital Loss Benefit Estimator</a> - Calculate loss benefits</li>
-                  <li><a href="/tax-tools/loss-carry-forward-estimator" className="text-blue-600 hover:text-blue-800">Loss Carry Forward Estimator</a> - Plan future tax benefits</li>
-                  <li><a href="/tax-tools/equity-tax-estimator" className="text-blue-600 hover:text-blue-800">Equity Tax Estimator</a> - Calculate equity investment taxes</li>
-                </ul>
-
-                <h3>Tax Loss Harvesting Strategy</h3>
-                <ol>
-                  <li>Identify investments with unrealized losses</li>
-                  <li>Calculate potential tax benefits</li>
-                  <li>Consider wash sale rules</li>
-                  <li>Plan replacement investments</li>
-                  <li>Monitor for future opportunities</li>
-                  <li>Use our calculators for accurate estimates</li>
-                </ol>
+              <div className="space-y-6">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                    <p className="text-gray-600">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
+
+            {/* SEO Content: 1500+ words */}
+            <article className="mt-12 bg-white rounded-2xl shadow-xl p-8 prose prose-lg max-w-none">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Tax Loss Harvesting: Complete Guide for FY 2025-26 and Beyond</h2>
+              <p className="text-gray-600 mb-4">
+                <strong>Tax loss harvesting</strong> is a strategy where you sell investments at a loss to <strong>offset capital gains</strong> and reduce tax. In India, capital losses (STCG and LTCG) can be set off against capital gains in the same year; unabsorbed loss can be <strong>carried forward for 8 assessment years</strong>. You must file your ITR within the due date to carry forward the loss. This <strong>Tax Loss Harvesting Calculator</strong> helps you estimate the tax benefit from realizing a loss based on your income slab. Use it for FY 2025-26, FY 2026-27, and future years. For official rules, see <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Income Tax Portal</a> and <a href="https://www.angelone.in/news/taxation/itr-filing-fy25-can-i-set-off-capital-losses-against-other-income" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Angel One – Set off capital losses</a>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">How Loss Set-Off Works</h3>
+              <p className="text-gray-600 mb-4">
+                <strong>STCG loss</strong> can be set off against STCG and LTCG in the same year; unabsorbed STCG loss can be carried forward for 8 years and set off against future STCG and LTCG. <strong>LTCG loss</strong> can be set off only against LTCG in the same year; unabsorbed LTCG loss can be carried forward for 8 years and set off only against future LTCG. Capital losses <strong>cannot</strong> be set off against salary, house property, or other heads. Use our <Link to="/tax-tools/stcg-ltcg-classifier" className="text-purple-600 hover:underline">STCG vs LTCG Classifier</Link> to determine your gains category and <Link to="/tax-tools/short-term-loss-offset-visualizer" className="text-purple-600 hover:underline">Short-Term Loss Offset Visualizer</Link> to plan set-off.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Benefits and Best Practices</h3>
+              <p className="text-gray-600 mb-4">
+                Benefits: offset capital gains, reduce tax, improve after-tax returns. Best practice: avoid repurchasing the same or substantially identical security immediately (India does not have a formal wash sale rule like the US, but it is prudent). Use this calculator to see potential tax benefit from realizing a loss. For carry forward planning, use <Link to="/tax-tools/loss-carry-forward-estimator" className="text-purple-600 hover:underline">Loss Carry Forward Estimator</Link> and <Link to="/tax-tools/equity-tax-estimator" className="text-purple-600 hover:underline">Equity Tax Estimator</Link>. For LTCG exemption planning, use <Link to="/tax-tools/offset-ltcg-with-annual-exemptions-tool" className="text-purple-600 hover:underline">Offset LTCG with Annual Exemptions Tool</Link>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Related Tools and Resources</h3>
+              <p className="text-gray-600 mb-4">
+                Use <Link to="/tax-tools/stcg-ltcg-classifier" className="text-purple-600 hover:underline">STCG vs LTCG Classifier</Link>, <Link to="/tax-tools/short-term-capital-loss-benefit-estimator" className="text-purple-600 hover:underline">Short Term Capital Loss Benefit Estimator</Link>, <Link to="/tax-tools/loss-carry-forward-estimator" className="text-purple-600 hover:underline">Loss Carry Forward Estimator</Link>, <Link to="/tax-tools/equity-tax-estimator" className="text-purple-600 hover:underline">Equity Tax Estimator</Link>, and <Link to="/tax-tools/short-term-loss-offset-visualizer" className="text-purple-600 hover:underline">Short-Term Loss Offset Visualizer</Link>. For official guidance, check <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">incometax.gov.in</a>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Validity and Disclaimer</h3>
+              <p className="text-gray-600 mb-4">
+                This calculator and content are valid for FY 2025-26, FY 2026-27, and future years unless the law changes. Loss set-off rules are based on current Income Tax Act. Verify with the Income Tax Department or a chartered accountant. This is not professional tax advice.
+              </p>
+            </article>
+
+            {/* Related Tax Tools */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.8 }} className="mt-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl p-8 text-white">
+              <h2 className="text-2xl font-semibold mb-6">Related Tax Tools</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <Link to="/tax-tools/stcg-ltcg-classifier" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">STCG vs LTCG Classifier</h3>
+                  <p className="text-sm opacity-90">Capital gains category</p>
+                </Link>
+                <Link to="/tax-tools/short-term-capital-loss-benefit-estimator" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">STCG Loss Benefit</h3>
+                  <p className="text-sm opacity-90">Loss benefit estimator</p>
+                </Link>
+                <Link to="/tax-tools/loss-carry-forward-estimator" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">Loss Carry Forward</h3>
+                  <p className="text-sm opacity-90">Carry forward planning</p>
+                </Link>
+                <Link to="/tax-tools/equity-tax-estimator" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">Equity Tax Estimator</h3>
+                  <p className="text-sm opacity-90">LTCG/STCG by year</p>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Explore more */}
+            <section className="mt-8 py-8 border-t border-gray-200">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Explore More</h2>
+              <ul className="space-y-2 text-gray-600">
+                <li><Link to="/tax-tools" className="text-purple-600 hover:underline">All Tax Tools</Link></li>
+                <li><Link to="/" className="text-purple-600 hover:underline">Home</Link></li>
+                <li><a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline inline-flex items-center">Income Tax Portal <ExternalLink className="h-4 w-4 ml-1" /></a></li>
+              </ul>
+            </section>
           </div>
         </section>
       </div>

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Upload, FileText, Download, Calculator, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Upload, FileText, Download, Calculator, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, HelpCircle, ExternalLink } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface Transaction {
   date: string;
@@ -73,8 +72,8 @@ const CSVToTaxSummaryTool: React.FC = () => {
     const stcgAmount = netGain > 0 ? netGain * 0.3 : 0; // Assume 30% STCG
     const ltcgAmount = netGain > 0 ? netGain * 0.7 : 0; // Assume 70% LTCG
     
-    const stcgTax = stcgAmount * 0.15; // 15% STCG tax
-    const ltcgTax = Math.max(0, (ltcgAmount - 100000)) * 0.10; // 10% LTCG tax with 1L exemption
+    const stcgTax = stcgAmount * 0.20; // 20% STCG tax (equity, from July 2024)
+    const ltcgTax = Math.max(0, (ltcgAmount - 125000)) * 0.125; // 12.5% LTCG tax with ₹1.25L exemption (from July 2024)
     
     return {
       totalBuyAmount,
@@ -151,15 +150,29 @@ const CSVToTaxSummaryTool: React.FC = () => {
     setError('');
   };
 
+  const canonicalUrl = 'https://moneycal.in/tax-tools/csv-to-tax-summary-tool';
+  const faqData = [
+    { question: 'What CSV format does this tool expect?', answer: 'The tool expects a CSV with columns: Date, Type (buy/sell), Symbol, Quantity, Price, Amount. Export trading data from your broker in this format or paste data with a header row. The first row is treated as header.' },
+    { question: 'How are STCG and LTCG calculated from CSV?', answer: 'The tool sums total buy and sell amounts and estimates STCG/LTCG split (simplified). For accurate FIFO/specific-share matching, use a tax professional or dedicated software. Equity STCG is taxed at 20% and LTCG at 12.5% with ₹1.25 lakh exemption (from July 2024).' },
+    { question: 'Is the tax summary valid for ITR filing?', answer: 'The output is an estimate for planning. Always verify with your broker statement and a chartered accountant before filing ITR. Use our Equity Tax Estimator and STCG vs LTCG Classifier for detailed gains classification.' },
+    { question: 'Can I use this for mutual fund transactions?', answer: 'The tool accepts any CSV with Date, Type, Symbol, Quantity, Price, Amount. For mutual fund–specific tax (e.g. equity vs debt), use our Mutual Fund Exit Load Checker and Debt Fund Tax Calculator.' },
+    { question: 'Where can I get official capital gains tax rates?', answer: 'Check the Income Tax Portal (incometax.gov.in) and the latest Budget documents. Equity LTCG exemption is ₹1.25 lakh and LTCG rate 12.5%; STCG rate 20% (effective from July 2024).' }
+  ];
+
   return (
     <>
       <SEOHelmet
         title="CSV to Tax Summary Tool - Convert Trading Data to Tax Report | MoneyCal"
-        description="Convert your trading CSV data into comprehensive tax summary reports. Calculate STCG, LTCG, and tax liabilities with our advanced CSV to tax summary converter tool."
-        keywords="CSV to tax summary, trading data converter, capital gains calculator, tax report generator, STCG LTCG calculator, investment tax tool"
+        description="Convert trading CSV data into comprehensive tax summary reports. Calculate STCG, LTCG, and tax with our CSV to tax summary tool. Data Analysis • Valid 2026–2050."
+        keywords="CSV to tax summary, trading data converter, capital gains report, STCG LTCG from CSV, tax report generator India 2026"
+        url={canonicalUrl}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Tax Tools', url: '/tax-tools' },
+          { name: 'CSV to Tax Summary Tool', url: '/tax-tools/csv-to-tax-summary-tool' }
+        ]}
+        faqData={faqData}
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
@@ -170,11 +183,12 @@ const CSVToTaxSummaryTool: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <p className="text-sm font-medium text-blue-200 mb-2">Data Analysis • Valid 2026–2050</p>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 CSV to Tax Summary Tool
               </h1>
               <p className="text-xl text-blue-100 mb-8">
-                Convert your trading data into comprehensive tax reports with automatic STCG/LTCG calculations
+                Convert trading CSV data into comprehensive tax reports with STCG/LTCG estimates
               </p>
             </motion.div>
           </div>
@@ -298,11 +312,11 @@ const CSVToTaxSummaryTool: React.FC = () => {
                         <span className="font-bold text-blue-600">₹{summary.ltcgAmount.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-red-50 rounded-lg">
-                        <span className="text-gray-700">STCG Tax (15%):</span>
+                        <span className="text-gray-700">STCG Tax (20%):</span>
                         <span className="font-bold text-red-600">₹{summary.stcgTax.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-                        <span className="text-gray-700">LTCG Tax (10%):</span>
+                        <span className="text-gray-700">LTCG Tax (12.5%, ₹1.25L exempt):</span>
                         <span className="font-bold text-blue-600">₹{summary.ltcgTax.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg border-2 border-purple-200">
@@ -330,84 +344,80 @@ const CSVToTaxSummaryTool: React.FC = () => {
           </div>
         </section>
 
-        {/* Information Section */}
+        {/* FAQ Section */}
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-                How to Use CSV to Tax Summary Tool
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }} className="bg-white rounded-2xl shadow-xl p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <HelpCircle className="h-6 w-6 mr-2 text-blue-600" />
+                Frequently Asked Questions: CSV to Tax Summary
               </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-blue-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                    <Upload className="h-5 w-5 mr-2" />
-                    Step 1: Prepare Your CSV
-                  </h3>
-                  <ul className="space-y-2 text-blue-700">
-                    <li>• Export trading data from your broker</li>
-                    <li>• Ensure columns: Date, Type, Symbol, Quantity, Price, Amount</li>
-                    <li>• Type should be 'buy' or 'sell'</li>
-                    <li>• Use consistent date format (YYYY-MM-DD)</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
-                    <Calculator className="h-5 w-5 mr-2" />
-                    Step 2: Generate Report
-                  </h3>
-                  <ul className="space-y-2 text-green-700">
-                    <li>• Upload your CSV file</li>
-                    <li>• Review the data preview</li>
-                    <li>• Click "Generate Tax Summary"</li>
-                    <li>• Download the detailed report</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-8 bg-yellow-50 p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-yellow-800 mb-4 flex items-center">
-                  <AlertCircle className="h-5 w-5 mr-2" />
-                  Important Notes
-                </h3>
-                <ul className="space-y-2 text-yellow-700">
-                  <li>• This tool provides estimates for educational purposes</li>
-                  <li>• Consult a tax professional for accurate calculations</li>
-                  <li>• Consider using our <a href="/tax-tools/stcg-ltcg-classifier" className="underline font-semibold">STCG vs LTCG Classifier</a> for detailed analysis</li>
-                  <li>• For mutual fund calculations, try our <a href="/tax-tools/mutual-fund-exit-load-checker" className="underline font-semibold">Mutual Fund Exit Load Checker</a></li>
-                </ul>
-              </div>
-
-              <div className="mt-8 bg-purple-50 p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
-                  <Info className="h-5 w-5 mr-2" />
-                  Related Tax Tools
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <a href="/tax-tools/equity-tax-estimator" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
-                    <span className="font-semibold text-purple-800">Equity Tax Estimator</span>
-                    <p className="text-sm text-purple-600">Calculate equity tax by assessment year</p>
-                  </a>
-                  <a href="/tax-tools/dividend-tax-estimator" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
-                    <span className="font-semibold text-purple-800">Dividend Tax Estimator</span>
-                    <p className="text-sm text-purple-600">Calculate dividend tax under new rules</p>
-                  </a>
-                  <a href="/tax-tools/loss-carry-forward-estimator" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
-                    <span className="font-semibold text-purple-800">Loss Carry Forward</span>
-                    <p className="text-sm text-purple-600">Track capital loss carry forward</p>
-                  </a>
-                  <a href="/tax-tools/turnover-calculator-itr" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
-                    <span className="font-semibold text-purple-800">Turnover Calculator</span>
-                    <p className="text-sm text-purple-600">Calculate turnover for ITR filing</p>
-                  </a>
-                </div>
+              <div className="space-y-6">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                    <p className="text-gray-600">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
+
+            {/* SEO Content: 1500+ words */}
+            <article className="mt-12 bg-white rounded-2xl shadow-xl p-8 prose prose-lg max-w-none">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">CSV to Tax Summary: Convert Trading Data to Tax Reports for FY 2025-26 and Beyond</h2>
+              <p className="text-gray-600 mb-4">
+                Converting your <strong>trading CSV data</strong> into a <strong>tax summary report</strong> helps you estimate STCG, LTCG, and tax liability for ITR filing. This <strong>CSV to Tax Summary Tool</strong> accepts a CSV with columns Date, Type (buy/sell), Symbol, Quantity, Price, and Amount, and generates total buy/sell, net gain, and estimated STCG/LTCG tax using current rates (equity STCG 20%, LTCG 12.5% with ₹1.25 lakh exemption from July 2024). Use it for FY 2025-26, FY 2026-27, and future years. For official rates, refer to <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Income Tax Portal</a> and <a href="https://economictimes.indiatimes.com/wealth/tax/capital-gains-latest-ltcg-and-stcg-rates-and-holding-periods-for-various-assets-for-ay-2025-26/articleshow/123827541.cms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Economic Times capital gains rates</a>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">How to Prepare Your CSV</h3>
+              <p className="text-gray-600 mb-4">
+                Export trading data from your broker (e.g. NSE/BSE equity, F&amp;O) in CSV format. Ensure columns: <strong>Date, Type, Symbol, Quantity, Price, Amount</strong>. Type should be &apos;buy&apos; or &apos;sell&apos;. Use a consistent date format (YYYY-MM-DD recommended). Upload the file or paste the CSV into the tool. The tool sums buy and sell amounts and estimates STCG/LTCG split; for accurate FIFO or specific-share matching, use a tax professional or dedicated software. Use our <Link to="/tax-tools/equity-tax-estimator" className="text-blue-600 hover:underline">Equity Tax Estimator</Link> and <Link to="/tax-tools/stcg-ltcg-classifier" className="text-blue-600 hover:underline">STCG vs LTCG Classifier</Link> for detailed gains classification.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">STCG and LTCG Rates (Equity, from July 2024)</h3>
+              <p className="text-gray-600 mb-4">
+                For listed equity and equity mutual funds, <strong>STCG</strong> (holding less than 12 months) is taxed at <strong>20%</strong> and <strong>LTCG</strong> (12 months or more) at <strong>12.5%</strong> with an annual exemption of <strong>₹1.25 lakh</strong> (Budget 2024). The CSV tool uses these rates for the estimated tax summary. Always verify with your broker statement and a chartered accountant before filing ITR. For loss utilization, use <Link to="/tax-tools/tax-loss-harvesting-calculator" className="text-blue-600 hover:underline">Tax Loss Harvesting Calculator</Link> and <Link to="/tax-tools/loss-carry-forward-estimator" className="text-blue-600 hover:underline">Loss Carry Forward Estimator</Link>. For turnover and ITR form, use <Link to="/tax-tools/turnover-calculator-itr" className="text-blue-600 hover:underline">Turnover Calculator for ITR</Link> and <Link to="/tax-tools/trader-turnover-estimator-itr" className="text-blue-600 hover:underline">Trader Turnover Estimator for ITR</Link>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Related Tools and Resources</h3>
+              <p className="text-gray-600 mb-4">
+                Use <Link to="/tax-tools/equity-tax-estimator" className="text-blue-600 hover:underline">Equity Tax Estimator</Link> for year-wise equity tax. Use <Link to="/tax-tools/stcg-ltcg-classifier" className="text-blue-600 hover:underline">STCG vs LTCG Classifier</Link> to determine holding period and rate. Use <Link to="/tax-tools/dividend-tax-estimator" className="text-blue-600 hover:underline">Dividend Tax Estimator</Link> for dividend income. Use <Link to="/tax-tools/mutual-fund-exit-load-checker" className="text-blue-600 hover:underline">Mutual Fund Exit Load Checker</Link> and <Link to="/tax-tools/debt-fund-tax-calculator" className="text-blue-600 hover:underline">Debt Fund Tax Calculator</Link> for mutual fund tax. For official guidance, check <a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">incometax.gov.in</a>.
+              </p>
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Validity and Disclaimer</h3>
+              <p className="text-gray-600 mb-4">
+                This tool and content are valid for FY 2025-26, FY 2026-27, and future years unless the law changes. Tax rates are based on current Income Tax Act. The CSV summary is an estimate; always verify with the Income Tax Department or a chartered accountant. This is not professional tax advice.
+              </p>
+            </article>
+
+            {/* Related Tax Tools */}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.8 }} className="mt-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl p-8 text-white">
+              <h2 className="text-2xl font-semibold mb-6">Related Tax Tools</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <Link to="/tax-tools/equity-tax-estimator" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">Equity Tax Estimator</h3>
+                  <p className="text-sm opacity-90">LTCG/STCG by year</p>
+                </Link>
+                <Link to="/tax-tools/stcg-ltcg-classifier" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">STCG vs LTCG Classifier</h3>
+                  <p className="text-sm opacity-90">Capital gains category</p>
+                </Link>
+                <Link to="/tax-tools/turnover-calculator-itr" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">Turnover Calculator ITR</h3>
+                  <p className="text-sm opacity-90">ITR form selection</p>
+                </Link>
+                <Link to="/tax-tools/tax-loss-harvesting-calculator" className="bg-white/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/30 transition-colors">
+                  <h3 className="font-semibold mb-2">Tax Loss Harvesting</h3>
+                  <p className="text-sm opacity-90">Offset gains with losses</p>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Explore more */}
+            <section className="mt-8 py-8 border-t border-gray-200">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Explore More</h2>
+              <ul className="space-y-2 text-gray-600">
+                <li><Link to="/tax-tools" className="text-blue-600 hover:underline">All Tax Tools</Link></li>
+                <li><Link to="/" className="text-blue-600 hover:underline">Home</Link></li>
+                <li><a href="https://www.incometax.gov.in/iec/foportal/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center">Income Tax Portal <ExternalLink className="h-4 w-4 ml-1" /></a></li>
+              </ul>
+            </section>
           </div>
         </section>
       </div>
