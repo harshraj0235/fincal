@@ -2,6 +2,10 @@
 # Netlify Redirects Configuration
 # Redirect old/broken URLs to correct pages
 
+# Soft 404 fix: duplicate path moneycal.in/moneycal.in/* -> moneycal.in/*
+/moneycal.in/*                               /:splat                                  301
+/moneycal.in                                 /                                         301
+
 # Help & Feedback redirects
 /feedback                                    /contact-us                              301
 /help                                        /help-center                             301

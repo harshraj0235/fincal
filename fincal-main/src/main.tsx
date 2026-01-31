@@ -6,6 +6,15 @@ import App from './App.tsx';
 import './index.css';
 import './utils/preloadCritical';
 
+// Soft 404 fix: redirect duplicate path /moneycal.in/... to /... (client-side fallback if server redirect missed)
+if (typeof window !== 'undefined') {
+  const p = window.location.pathname;
+  if (p.startsWith('/moneycal.in/') || p === '/moneycal.in') {
+    const correct = p === '/moneycal.in' ? '/' : p.replace(/^\/moneycal\.in/, '') || '/';
+    window.location.replace(correct + window.location.search + window.location.hash);
+  }
+}
+
 // Prefetch Home chunk when landing on / for faster LCP
 if (typeof window !== 'undefined' && (window.location.pathname === '/' || window.location.pathname === '')) {
   import('./pages/HomeInvestopedia');
