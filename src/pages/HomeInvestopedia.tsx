@@ -200,14 +200,110 @@ const HomeInvestopedia: React.FC = () => {
               Calculators, tax tools, gold, GST, loans, insurance – everything for India. Fast, free, SEO-friendly.
             </motion.p>
 
-            {/* Global search */}
+            {/* Global search – results appear ABOVE input for clear view */}
             <motion.form
               onSubmit={handleSearchSubmit}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="max-w-2xl mx-auto relative"
+              className="max-w-2xl mx-auto relative flex flex-col"
             >
+              {/* Results panel – above the input */}
+              <AnimatePresence>
+                {showSearchResults && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute z-50 w-full bottom-full left-0 right-0 mb-2 rounded-2xl bg-white/95 backdrop-blur-xl text-left shadow-2xl shadow-black/25 border border-white/50 max-h-[65vh] overflow-hidden flex flex-col"
+                  >
+                    <div className="p-3 border-b border-slate-200/80 bg-slate-50/80">
+                      <span className="text-sm font-bold text-slate-700">Results for &quot;{searchQuery}&quot;</span>
+                    </div>
+                    <div className="overflow-y-auto p-3 space-y-4">
+                      {searchResults.calculators.length > 0 && (
+                        <div>
+                          <div className="flex items-center gap-2 px-2 py-1.5 mb-1">
+                            <Calculator className="w-4 h-4 text-blue-600" />
+                            <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">Calculators</span>
+                          </div>
+                          {searchResults.calculators.map((r, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-4 py-3 rounded-xl hover:bg-blue-50 hover:border-blue-200 border border-transparent flex items-center justify-between group transition-all">
+                              <span className="font-medium text-slate-900 group-hover:text-blue-700 truncate">{r.name}</span>
+                              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {searchResults.tools.length > 0 && (
+                        <div>
+                          <div className="flex items-center gap-2 px-2 py-1.5 mb-1">
+                            <Wrench className="w-4 h-4 text-emerald-600" />
+                            <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">Tools</span>
+                          </div>
+                          {searchResults.tools.map((r, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-4 py-3 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 border border-transparent flex items-center justify-between group transition-all">
+                              <span className="font-medium text-slate-900 group-hover:text-emerald-700 truncate">{r.name}</span>
+                              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-emerald-600 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {searchResults.pages.length > 0 && (
+                        <div>
+                          <div className="flex items-center gap-2 px-2 py-1.5 mb-1">
+                            <FolderOpen className="w-4 h-4 text-violet-600" />
+                            <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">Pages</span>
+                          </div>
+                          {searchResults.pages.map((r, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-4 py-3 rounded-xl hover:bg-violet-50 hover:border-violet-200 border border-transparent flex items-center justify-between group transition-all">
+                              <span className="font-medium text-slate-900 group-hover:text-violet-700 truncate">{r.name}</span>
+                              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-violet-600 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {searchResults.blog.length > 0 && (
+                        <div>
+                          <div className="flex items-center gap-2 px-2 py-1.5 mb-1">
+                            <FileText className="w-4 h-4 text-amber-600" />
+                            <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">Blog</span>
+                          </div>
+                          {searchResults.blog.map((b, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(b.path)} className="w-full text-left px-4 py-3 rounded-xl hover:bg-amber-50 hover:border-amber-200 border border-transparent flex items-center justify-between group transition-all">
+                              <span className="font-medium text-slate-900 group-hover:text-amber-700 line-clamp-1 pr-2">{b.name}</span>
+                              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-amber-600 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {searchResults.news.length > 0 && (
+                        <div>
+                          <div className="flex items-center gap-2 px-2 py-1.5 mb-1">
+                            <Newspaper className="w-4 h-4 text-rose-600" />
+                            <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">News</span>
+                          </div>
+                          {searchResults.news.map((n, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(n.path)} className="w-full text-left px-4 py-3 rounded-xl hover:bg-rose-50 hover:border-rose-200 border border-transparent flex items-center justify-between group transition-all">
+                              <span className="font-medium text-slate-900 group-hover:text-rose-700 line-clamp-1 pr-2">{n.name}</span>
+                              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-rose-600 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {!hasSearchResults && searchQuery.trim().length >= 2 && (
+                        <div className="px-4 py-8 text-center">
+                          <p className="text-slate-500 font-medium">No results for &quot;{searchQuery}&quot;</p>
+                          <p className="text-sm text-slate-400 mt-1">Try &quot;EMI&quot;, &quot;tax&quot;, &quot;gold&quot;, or &quot;GST&quot;</p>
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Search input – below results */}
               <div className="relative">
                 <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                 <input
@@ -229,80 +325,6 @@ const HomeInvestopedia: React.FC = () => {
                   </button>
                 )}
               </div>
-
-              <AnimatePresence>
-                {showSearchResults && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    className="absolute z-50 w-full mt-2 rounded-2xl bg-white text-left shadow-2xl border border-slate-200 max-h-[70vh] overflow-y-auto"
-                  >
-                    <div className="p-2">
-                      {searchResults.calculators.length > 0 && (
-                        <div className="px-3 py-2">
-                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Calculators</span>
-                          {searchResults.calculators.map((r, i) => (
-                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
-                              <span className="font-medium text-slate-900 group-hover:text-blue-600 truncate">{r.name}</span>
-                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                      {searchResults.tools.length > 0 && (
-                        <div className="px-3 py-2">
-                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Tools</span>
-                          {searchResults.tools.map((r, i) => (
-                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
-                              <span className="font-medium text-slate-900 group-hover:text-blue-600 truncate">{r.name}</span>
-                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                      {searchResults.pages.length > 0 && (
-                        <div className="px-3 py-2">
-                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Pages</span>
-                          {searchResults.pages.map((r, i) => (
-                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
-                              <span className="font-medium text-slate-900 group-hover:text-blue-600 truncate">{r.name}</span>
-                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                      {searchResults.blog.length > 0 && (
-                        <div className="px-3 py-2">
-                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Blog</span>
-                          {searchResults.blog.map((b, i) => (
-                            <button key={i} onClick={() => handleSearchItemClick(b.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
-                              <span className="font-medium text-slate-900 group-hover:text-blue-600 line-clamp-1">{b.name}</span>
-                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                      {searchResults.news.length > 0 && (
-                        <div className="px-3 py-2">
-                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">News</span>
-                          {searchResults.news.map((n, i) => (
-                            <button key={i} onClick={() => handleSearchItemClick(n.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
-                              <span className="font-medium text-slate-900 group-hover:text-blue-600 line-clamp-1">{n.name}</span>
-                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                      {!hasSearchResults && searchQuery.trim().length >= 2 && (
-                        <div className="px-4 py-6 text-center text-slate-500">
-                          No results for &quot;{searchQuery}&quot;. Try &quot;EMI&quot;, &quot;tax&quot;, &quot;gold&quot;, or &quot;GST&quot;.
-                        </div>
-                      )}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </motion.form>
           </div>
         </section>
