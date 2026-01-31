@@ -1,34 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaTwitter, FaGraduationCap, FaCode, FaChartLine, FaUserGraduate } from 'react-icons/fa';
+import { FaLinkedin, FaFacebookF, FaGraduationCap, FaUserGraduate } from 'react-icons/fa';
+import type { BlogAuthor } from '../data/blogAuthors';
+
+const defaultDisclaimer = 'All content shared is for educational purposes only. We are not financial experts. Please consult authorized financial advisors for professional advice.';
 
 interface AuthorProfileProps {
+  author: BlogAuthor;
   isFullPage?: boolean;
 }
 
-const AuthorProfile: React.FC<AuthorProfileProps> = ({ isFullPage = false }) => {
-  const authorData = {
-    name: "Harsh Raj",
-    title: "Software Engineer & Finance Enthusiast",
-    bio: "I am a B.Tech graduate and software engineer with a passion for finance. I love exploring financial concepts and sharing educational content to help others understand complex financial topics. Please note that I share information for educational purposes only - I am not a financial expert, and readers should consult authorized experts for financial advice.",
-    education: "B.Tech Graduate",
-    profession: "Software Engineer",
-    expertise: "Finance Education & Technology",
-    linkedin: "https://linkedin.com/in/harshitpatel9/",
-    twitter: "https://x.com/harshitx9/",
-    avatar: "https://pbs.twimg.com/profile_images/1634415500418588677/uz8L8JKQ_400x400.png",
-    disclaimer: "All content shared is for educational purposes only. I am not a financial expert. Please consult authorized financial advisors for professional advice."
-  };
+const AuthorProfile: React.FC<AuthorProfileProps> = ({ author, isFullPage = false }) => {
+  const hasLinkedIn = (author.sameAs || []).some((u) => u.toLowerCase().includes('linkedin'));
+  const hasFacebook = (author.sameAs || []).some((u) => u.toLowerCase().includes('facebook'));
+  const linkedInUrl = (author.sameAs || []).find((u) => u.toLowerCase().includes('linkedin'));
+  const facebookUrl = (author.sameAs || []).find((u) => u.toLowerCase().includes('facebook'));
 
   const content = (
     <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-      {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 md:p-8">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="relative">
-            <img 
-              src={authorData.avatar} 
-              alt={authorData.name}
+            <img
+              src={author.image}
+              alt={author.name}
               className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover"
             />
             <div className="absolute -bottom-2 -right-2 bg-green-500 rounded-full p-2">
@@ -36,40 +31,30 @@ const AuthorProfile: React.FC<AuthorProfileProps> = ({ isFullPage = false }) => 
             </div>
           </div>
           <div className="text-center md:text-left">
-            <h1 className="text-2xl md:text-3xl font-bold mb-2">{authorData.name}</h1>
-            <p className="text-blue-100 text-lg mb-3">{authorData.title}</p>
+            <h1 className="text-2xl md:text-3xl font-bold mb-2">{author.name}</h1>
+            <p className="text-blue-100 text-lg mb-3">{author.role}</p>
             <div className="flex flex-wrap gap-2 justify-center md:justify-start">
               <span className="bg-blue-500/20 px-3 py-1 rounded-full text-sm flex items-center gap-1">
                 <FaGraduationCap className="text-xs" />
-                {authorData.education}
+                {author.role}
               </span>
-              <span className="bg-blue-500/20 px-3 py-1 rounded-full text-sm flex items-center gap-1">
-                <FaCode className="text-xs" />
-                {authorData.profession}
-              </span>
-              <span className="bg-blue-500/20 px-3 py-1 rounded-full text-sm flex items-center gap-1">
-                <FaChartLine className="text-xs" />
-                {authorData.expertise}
+              <span className="bg-blue-500/20 px-3 py-1 rounded-full text-sm">
+                Interest in finance
               </span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="p-6 md:p-8">
-        {/* Bio */}
         <div className="mb-8">
           <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
             <FaUserGraduate className="text-blue-600" />
             About Me
           </h2>
-          <p className="text-gray-700 leading-relaxed text-justify">
-            {authorData.bio}
-          </p>
+          <p className="text-gray-700 leading-relaxed text-justify">{author.bio}</p>
         </div>
 
-        {/* Disclaimer */}
         <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg mb-8">
           <div className="flex items-start gap-3">
             <div className="text-amber-600 mt-1">
@@ -79,55 +64,51 @@ const AuthorProfile: React.FC<AuthorProfileProps> = ({ isFullPage = false }) => 
             </div>
             <div>
               <h3 className="font-semibold text-amber-800 mb-1">Important Disclaimer</h3>
-              <p className="text-amber-700 text-sm">{authorData.disclaimer}</p>
+              <p className="text-amber-700 text-sm">{defaultDisclaimer}</p>
             </div>
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Connect With Me</h2>
-          <div className="flex flex-wrap gap-4">
-            <a 
-              href={authorData.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md"
-            >
-              <FaLinkedin className="text-xl" />
-              <span>LinkedIn</span>
-            </a>
-            <a 
-              href={authorData.twitter} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md"
-            >
-              <FaTwitter className="text-xl" />
-              <span>Twitter</span>
-            </a>
+        {(hasLinkedIn || hasFacebook) && (
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">Connect With Me</h2>
+            <div className="flex flex-wrap gap-4">
+              {linkedInUrl && (
+                <a
+                  href={linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md"
+                >
+                  <FaLinkedin className="text-xl" />
+                  <span>LinkedIn</span>
+                </a>
+              )}
+              {facebookUrl && (
+                <a
+                  href={facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-[#1877F2] hover:bg-[#166FE5] text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md"
+                >
+                  <FaFacebookF className="text-xl" />
+                  <span>Facebook</span>
+                </a>
+              )}
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* Expertise Areas */}
         <div>
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Areas of Interest</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-              <h3 className="font-semibold text-gray-800 mb-2">Technology</h3>
-              <p className="text-gray-600 text-sm">Software development, web technologies, and digital solutions</p>
+              <h3 className="font-semibold text-gray-800 mb-2">Finance</h3>
+              <p className="text-gray-600 text-sm">Personal finance, investment basics, and money management</p>
             </div>
             <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-              <h3 className="font-semibold text-gray-800 mb-2">Finance Education</h3>
-              <p className="text-gray-600 text-sm">Financial literacy, investment basics, and money management</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-              <h3 className="font-semibold text-gray-800 mb-2">Content Creation</h3>
-              <p className="text-gray-600 text-sm">Educational content, tutorials, and knowledge sharing</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-              <h3 className="font-semibold text-gray-800 mb-2">Learning</h3>
-              <p className="text-gray-600 text-sm">Continuous learning in both technology and finance domains</p>
+              <h3 className="font-semibold text-gray-800 mb-2">Content & Learning</h3>
+              <p className="text-gray-600 text-sm">Educational content and knowledge sharing for Indian readers</p>
             </div>
           </div>
         </div>
@@ -140,14 +121,14 @@ const AuthorProfile: React.FC<AuthorProfileProps> = ({ isFullPage = false }) => 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="mb-8">
-            <Link 
-              to="/" 
+            <Link
+              to="/blog"
               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium mb-4"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Back to Home
+              Back to Blog
             </Link>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Author Profile</h1>
           </div>
@@ -157,11 +138,7 @@ const AuthorProfile: React.FC<AuthorProfileProps> = ({ isFullPage = false }) => 
     );
   }
 
-  return (
-    <div className="max-w-2xl mx-auto">
-      {content}
-    </div>
-  );
+  return <div className="max-w-2xl mx-auto">{content}</div>;
 };
 
-export default AuthorProfile; 
+export default AuthorProfile;

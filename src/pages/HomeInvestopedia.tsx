@@ -1,23 +1,25 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { 
-  Calculator, Search, TrendingUp, BookOpen, FileText, 
-  ArrowRight, Star, Zap, Shield, Award, ChevronRight,
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Calculator, Search, TrendingUp, BookOpen, FileText,
+  ArrowRight, Zap, Shield, Award, ChevronRight,
   DollarSign, Building, Home, PiggyBank,
-  Target, BarChart3, Gift, Umbrella,
-  Rocket, Calendar, CheckCircle, Users,
+  BarChart3, Gift, Umbrella,
+  Rocket, CheckCircle,
   CreditCard, Building2, Briefcase, Heart, GraduationCap,
-  Filter, Grid, List, X, Wrench,
-  Newspaper, Coins, FolderOpen, Sparkles, Menu,
-  Receipt, Calendar as CalendarIcon, Gem, Scale
+  X, Wrench,
+  Newspaper, Coins, FolderOpen, Sparkles,
+  Receipt, Calendar as CalendarIcon, Gem, Scale,
+  Flame, LayoutGrid,
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { calculatorCategories } from '../data/calculatorData';
-import { blogPosts as blogPosts0 } from '../data/blogData';
-import { blogPosts as blogPosts1 } from '../data/blogData1';
+import { getStaticSearchItems, searchStatic, type SearchItem, type SearchItemType } from '../data/siteSearchIndex';
+import { loadAllBlogData } from '../data/lazyBlogData';
+import { contentRegistry } from '../cms-content/contentRegistry';
 
-// Icon mapping for categories
-const categoryIcons: Record<string, any> = {
+const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   'Loan Calculators': Home,
   'Investment Calculators': TrendingUp,
   'Tax Calculators': FileText,
@@ -32,64 +34,111 @@ const categoryIcons: Record<string, any> = {
   'Math & Education Calculators': GraduationCap,
 };
 
-// Build comprehensive search database
-const buildSearchDatabase = () => {
-  const calculators = calculatorCategories.flatMap(category =>
-    category.calculators.map(calc => ({
-      name: calc.name,
-      path: `/calculators/${calc.id}`,
-      category: category.name,
-      keywords: calc.keywords.join(' '),
-      description: calc.description
-    }))
-  );
+const TOOL_HUB_LINKS = [
+  { name: 'Tax Tools', path: '/tax-tools', icon: FileText, keywords: 'income tax, TDS, GST', color: 'from-emerald-500 to-teal-600' },
+  { name: 'Gold Tools', path: '/gold-tools', icon: Gem, keywords: 'gold loan, gold price', color: 'from-amber-500 to-yellow-600' },
+  { name: 'GST Tools', path: '/gst-tools', icon: Receipt, keywords: 'GST, invoice', color: 'from-violet-500 to-purple-600' },
+  { name: 'Finance Tools', path: '/finance-tools', icon: DollarSign, keywords: 'SIP, mutual fund, FD', color: 'from-blue-500 to-indigo-600' },
+  { name: 'Excel Tools', path: '/excel-tools', icon: BarChart3, keywords: 'Excel, spreadsheet', color: 'from-green-500 to-emerald-600' },
+  { name: 'Bank Tools', path: '/bank-tools', icon: Building2, keywords: 'IFSC, ATM, bank', color: 'from-cyan-500 to-blue-600' },
+  { name: 'Loan Tools', path: '/loan-tools', icon: Home, keywords: 'EMI, home loan, personal loan', color: 'from-rose-500 to-pink-600' },
+  { name: 'Insurance Tools', path: '/insurance-tools', icon: Heart, keywords: 'term, health insurance', color: 'from-pink-500 to-rose-600' },
+  { name: 'Festival Tools', path: '/festival-tools', icon: CalendarIcon, keywords: 'festival dates, panchang', color: 'from-orange-500 to-amber-600' },
+  { name: 'All Tools', path: '/tools', icon: Wrench, keywords: '200+ tools', color: 'from-slate-600 to-slate-800' },
+];
 
-  const blogs = [
-    ...blogPosts0.slice(0, 20).map(post => ({ 
-      name: post.title, 
-      path: `/blog/${post.slug}`, 
-      category: 'Blog',
-      keywords: post.categories?.join(' ') || '',
-      description: post.excerpt || ''
-    })),
-    ...blogPosts1.slice(0, 20).map(post => ({ 
-      name: post.title, 
-      path: `/blog/${post.slug}`, 
-      category: 'Blog',
-      keywords: post.categories?.join(' ') || '',
-      description: post.excerpt || ''
-    }))
-  ];
-  
-  return [...calculators, ...blogs];
-};
+const QUICK_LINKS = [
+  { name: 'Calculators', path: '/calculators', icon: Calculator },
+  { name: 'Learn', path: '/learn', icon: BookOpen },
+  { name: 'Blog', path: '/blog', icon: FileText },
+  { name: 'News', path: '/news', icon: Newspaper },
+  { name: 'Govt Schemes', path: '/government-schemes', icon: Gift },
+  { name: 'Crypto', path: '/crypto', icon: Coins },
+];
+
+const popularCalculators = [
+  { id: 'emi-calculator', name: 'EMI Calculator', path: '/calculators/emi-calculator' },
+  { id: 'sip-calculator', name: 'SIP Calculator', path: '/calculators/sip-calculator' },
+  { id: 'income-tax-calculator', name: 'Income Tax', path: '/calculators/income-tax-calculator' },
+  { id: 'gst-calculator', name: 'GST Calculator', path: '/calculators/gst-calculator' },
+  { id: 'ppf-calculator', name: 'PPF Calculator', path: '/calculators/ppf-calculator' },
+  { id: 'fd-calculator', name: 'FD Calculator', path: '/calculators/fd-calculator' },
+  { id: 'home-loan-calculator', name: 'Home Loan', path: '/calculators/home-loan-calculator' },
+  { id: 'gold-investment-calculator', name: 'Gold Investment', path: '/calculators/gold-investment-calculator' },
+];
+
+const totalCalculators = calculatorCategories.reduce((sum, c) => sum + c.calculators.length, 0);
 
 const HomeInvestopedia: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [blogPosts, setBlogPosts] = useState<{ name: string; path: string; category: string; keywords: string }[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'calculators' | 'tools' | 'resources'>('calculators');
   const navigate = useNavigate();
 
-  const searchDatabase = useMemo(() => buildSearchDatabase(), []);
+  useEffect(() => {
+    loadAllBlogData()
+      .then((posts) => {
+        if (posts && Array.isArray(posts)) {
+          setBlogPosts(
+            posts.slice(0, 100).map((p: any) => ({
+              name: p.title || '',
+              path: `/blog/${p.slug || ''}`,
+              category: 'Blog',
+              keywords: (p.categories || []).join(' ') + ' ' + (p.excerpt || ''),
+            }))
+          );
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const newsItems = useMemo(
+    () =>
+      contentRegistry.slice(0, 50).map((a) => ({
+        name: a.title,
+        path: `/news/${a.category}/${a.slug}`,
+        category: 'News',
+        keywords: a.category + ' ' + a.title,
+      })),
+    []
+  );
 
   const searchResults = useMemo(() => {
-    if (searchQuery.trim().length > 1) {
-      const query = searchQuery.toLowerCase();
-      return searchDatabase.filter(item => 
-        item.name.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query) ||
-        item.keywords?.toLowerCase().includes(query) ||
-        item.description?.toLowerCase().includes(query) ||
-        item.path.toLowerCase().includes(query)
-      ).slice(0, 10);
-    }
-    return [];
-  }, [searchQuery, searchDatabase]);
+    if (!searchQuery || searchQuery.trim().length < 2) return { calculators: [], tools: [], blog: [], news: [], pages: [] };
+    const q = searchQuery.trim().toLowerCase();
+    const staticResults = searchStatic(searchQuery, 30);
+    const blogMatches = blogPosts.filter(
+      (b) =>
+        b.name.toLowerCase().includes(q) ||
+        b.keywords.toLowerCase().includes(q)
+    ).slice(0, 8);
+    const newsMatches = newsItems.filter(
+      (n) =>
+        n.name.toLowerCase().includes(q) ||
+        n.keywords.toLowerCase().includes(q)
+    ).slice(0, 8);
+    const byType = (type: SearchItemType) => staticResults.filter((r) => r.type === type);
+    return {
+      calculators: byType('calculator').slice(0, 10),
+      tools: byType('tool').slice(0, 8),
+      pages: byType('page').slice(0, 6),
+      blog: blogMatches,
+      news: newsMatches,
+    };
+  }, [searchQuery, blogPosts, newsItems]);
+
+  const hasSearchResults =
+    searchResults.calculators.length > 0 ||
+    searchResults.tools.length > 0 ||
+    searchResults.pages.length > 0 ||
+    searchResults.blog.length > 0 ||
+    searchResults.news.length > 0;
 
   useEffect(() => {
-    setShowSearchResults(searchResults.length > 0 && searchQuery.length > 1);
-  }, [searchResults, searchQuery]);
+    setShowSearchResults(searchQuery.trim().length >= 2 && hasSearchResults);
+  }, [searchQuery, hasSearchResults]);
 
   const handleSearchItemClick = (path: string) => {
     navigate(path);
@@ -97,238 +146,291 @@ const HomeInvestopedia: React.FC = () => {
     setShowSearchResults(false);
   };
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchResults.length > 0) {
-      handleSearchItemClick(searchResults[0].path);
-    }
+    if (searchResults.calculators.length > 0) handleSearchItemClick(searchResults.calculators[0].path);
+    else if (searchResults.tools.length > 0) handleSearchItemClick(searchResults.tools[0].path);
+    else if (searchResults.blog.length > 0) handleSearchItemClick(searchResults.blog[0].path);
+    else if (searchResults.news.length > 0) handleSearchItemClick(searchResults.news[0].path);
   };
 
-  // Filter calculators by category
   const filteredCategories = useMemo(() => {
     if (!selectedCategory) return calculatorCategories;
-    return calculatorCategories.filter(cat => cat.id === selectedCategory);
+    return calculatorCategories.filter((c) => c.id === selectedCategory);
   }, [selectedCategory]);
-
-  // Popular calculators
-  const popularCalculators = [
-    { id: 'emi-calculator', name: 'EMI Calculator', path: '/calculators/emi-calculator', icon: Calculator },
-    { id: 'sip-calculator', name: 'SIP Calculator', path: '/calculators/sip-calculator', icon: TrendingUp },
-    { id: 'income-tax-calculator', name: 'Income Tax', path: '/calculators/income-tax-calculator', icon: FileText },
-    { id: 'gst-calculator', name: 'GST Calculator', path: '/calculators/gst-calculator', icon: DollarSign },
-    { id: 'ppf-calculator', name: 'PPF Calculator', path: '/calculators/ppf-calculator', icon: PiggyBank },
-    { id: 'home-loan-calculator', name: 'Home Loan', path: '/calculators/home-loan-calculator', icon: Home },
-    { id: 'fd-calculator', name: 'FD Calculator', path: '/calculators/fd-calculator', icon: Building2 },
-    { id: 'retirement-calculator', name: 'Retirement', path: '/calculators/retirement-calculator', icon: Umbrella },
-  ];
-
-  const totalCalculators = calculatorCategories.reduce((sum, cat) => sum + cat.calculators.length, 0);
 
   return (
     <>
       <SEOHelmet
-        title="MoneyCal.in - Free Financial Calculators & Tools for India | 100+ Calculators"
-        description="India's most comprehensive financial platform. 100+ free calculators for EMI, SIP, Income Tax, GST, PPF, FD, Home Loan, and more. Mobile-friendly, fast, and trusted by 1M+ users."
-        keywords="financial calculators India, GST calculator, SIP calculator, EMI calculator, income tax calculator, PPF calculator, FD calculator, home loan calculator, tax calculator, investment calculator"
+        title="MoneyCal.in – Free Tax, Gold, GST & Finance Calculators | 200+ Tools India"
+        description="India's #1 financial tools hub. Free EMI, SIP, Income Tax, GST, Gold, PPF, FD calculators. Tax tools, loan tools, festival tools. Easy to find any calculator – user & Google friendly."
+        keywords="tax calculator, gold calculator, GST calculator, EMI calculator, SIP calculator, income tax India, finance tools, loan calculator, PPF, FD, money control alternative"
         canonicalUrl="https://moneycal.in"
       />
 
-      <div className="min-h-screen bg-white">
-        {/* Hero Section - Compact */}
-        <section className="bg-white border-b border-gray-100 pt-20 pb-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-6">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
-                Free Financial Calculators
-                <span className="text-blue-600"> for India</span>
-              </h1>
-              <p className="text-base md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-                {totalCalculators}+ free tools • Expert guides • Trusted by 1M+ users
-              </p>
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-blue-50/30">
+        {/* Hero – Gen-Z style */}
+        <section className="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white pt-20 pb-12 md:pb-16">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-60" />
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6"
+            >
+              <Flame className="w-4 h-4 text-amber-400" />
+              {totalCalculators}+ free tools • Tax, Gold, GST, Loans & more
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4"
+            >
+              Find any financial tool
+              <span className="block bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-300 bg-clip-text text-transparent">in one search</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto"
+            >
+              Calculators, tax tools, gold, GST, loans, insurance – everything for India. Fast, free, SEO-friendly.
+            </motion.p>
 
-              {/* Search Bar */}
-              <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-6 relative">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search calculators, tools, articles..."
-                    className="w-full pl-12 pr-4 py-3 text-base border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
-                  />
-                  {searchQuery && (
-                    <button
-                      type="button"
-                      onClick={() => setSearchQuery('')}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
-                  )}
-                </div>
-
-                {/* Search Results */}
-                {showSearchResults && (
-                  <div className="absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-80 overflow-y-auto">
-                    <div className="p-2">
-                      {searchResults.map((result, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => handleSearchItemClick(result.path)}
-                          className="w-full text-left px-4 py-2.5 hover:bg-blue-50 rounded transition-colors flex items-center justify-between group"
-                        >
-                          <div className="flex-1 min-w-0">
-                            <div className="font-medium text-gray-900 group-hover:text-blue-600 truncate">{result.name}</div>
-                            <div className="text-xs text-gray-500">{result.category}</div>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 ml-2 flex-shrink-0" />
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+            {/* Global search */}
+            <motion.form
+              onSubmit={handleSearchSubmit}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="max-w-2xl mx-auto relative"
+            >
+              <div className="relative">
+                <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                <input
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => searchQuery.length >= 2 && setShowSearchResults(true)}
+                  placeholder="Search calculators, tax, gold, GST, blog, news..."
+                  className="w-full pl-12 pr-12 py-4 rounded-2xl bg-white text-slate-900 placeholder-slate-400 border-0 shadow-xl shadow-black/20 focus:ring-2 focus:ring-amber-400 outline-none"
+                  aria-label="Search all tools and content"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 )}
-              </form>
+              </div>
+
+              <AnimatePresence>
+                {showSearchResults && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    className="absolute z-50 w-full mt-2 rounded-2xl bg-white text-left shadow-2xl border border-slate-200 max-h-[70vh] overflow-y-auto"
+                  >
+                    <div className="p-2">
+                      {searchResults.calculators.length > 0 && (
+                        <div className="px-3 py-2">
+                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Calculators</span>
+                          {searchResults.calculators.map((r, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
+                              <span className="font-medium text-slate-900 group-hover:text-blue-600 truncate">{r.name}</span>
+                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {searchResults.tools.length > 0 && (
+                        <div className="px-3 py-2">
+                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Tools</span>
+                          {searchResults.tools.map((r, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
+                              <span className="font-medium text-slate-900 group-hover:text-blue-600 truncate">{r.name}</span>
+                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {searchResults.pages.length > 0 && (
+                        <div className="px-3 py-2">
+                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Pages</span>
+                          {searchResults.pages.map((r, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(r.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
+                              <span className="font-medium text-slate-900 group-hover:text-blue-600 truncate">{r.name}</span>
+                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {searchResults.blog.length > 0 && (
+                        <div className="px-3 py-2">
+                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Blog</span>
+                          {searchResults.blog.map((b, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(b.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
+                              <span className="font-medium text-slate-900 group-hover:text-blue-600 line-clamp-1">{b.name}</span>
+                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {searchResults.news.length > 0 && (
+                        <div className="px-3 py-2">
+                          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">News</span>
+                          {searchResults.news.map((n, i) => (
+                            <button key={i} onClick={() => handleSearchItemClick(n.path)} className="w-full text-left px-3 py-2.5 rounded-xl hover:bg-slate-100 flex items-center justify-between group">
+                              <span className="font-medium text-slate-900 group-hover:text-blue-600 line-clamp-1">{n.name}</span>
+                              <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                      {!hasSearchResults && searchQuery.trim().length >= 2 && (
+                        <div className="px-4 py-6 text-center text-slate-500">
+                          No results for &quot;{searchQuery}&quot;. Try &quot;EMI&quot;, &quot;tax&quot;, &quot;gold&quot;, or &quot;GST&quot;.
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.form>
+          </div>
+        </section>
+
+        {/* Quick nav – internal linking */}
+        <section className="sticky top-16 z-30 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {QUICK_LINKS.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition-colors"
+                  >
+                    <Icon className="w-4 h-4" />
+                    {link.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Quick Access Tabs */}
-        <section className="bg-gray-50 border-b border-gray-100 sticky top-0 z-40">
+        {/* Explore by category – Tax, Gold, GST, etc. */}
+        <section className="py-10 bg-white border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center gap-1 overflow-x-auto py-3">
-              <button
-                onClick={() => setActiveTab('calculators')}
-                className={`px-6 py-2.5 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
-                  activeTab === 'calculators'
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                <Calculator className="w-4 h-4 inline mr-2" />
-                Calculators ({totalCalculators}+)
-              </button>
-              <button
-                onClick={() => setActiveTab('tools')}
-                className={`px-6 py-2.5 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
-                  activeTab === 'tools'
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                <Wrench className="w-4 h-4 inline mr-2" />
-                Tools
-              </button>
-              <button
-                onClick={() => setActiveTab('resources')}
-                className={`px-6 py-2.5 rounded-lg font-medium text-sm whitespace-nowrap transition-colors ${
-                  activeTab === 'resources'
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                <FolderOpen className="w-4 h-4 inline mr-2" />
-                Resources
-              </button>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+              <LayoutGrid className="w-6 h-6 text-blue-600" />
+              Explore by category
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {TOOL_HUB_LINKS.map((tool) => {
+                const Icon = tool.icon;
+                return (
+                  <Link
+                    key={tool.path}
+                    to={tool.path}
+                    className="group relative p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:border-transparent hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 overflow-hidden"
+                  >
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-br ${tool.color} bg-opacity-10`} />
+                    <div className="relative">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-3 shadow-lg`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="font-bold text-slate-900 group-hover:text-blue-700">{tool.name}</h3>
+                      <p className="text-xs text-slate-500 mt-0.5">{tool.keywords}</p>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* Popular Calculators - Only visible when Calculators tab is active */}
-        {activeTab === 'calculators' && (
-          <section className="py-8 bg-white border-b border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900">Popular Calculators</h2>
-                <Link 
-                  to="/calculators" 
-                  className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+        {/* Tabs: Calculators | Tools | Resources */}
+        <section className="bg-slate-50/50 border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex gap-2 py-4 overflow-x-auto">
+              {(['calculators', 'tools', 'resources'] as const).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-6 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap transition-all ${
+                    activeTab === tab ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                  }`}
                 >
-                  View All <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-                {popularCalculators.map((calc) => {
-                  const Icon = calc.icon;
-                  return (
-                    <Link
-                      key={calc.id}
-                      to={calc.path}
-                      className="bg-white p-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all group text-center"
-                    >
-                      <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-blue-600 transition-colors">
-                        <Icon className="w-5 h-5 text-blue-600 group-hover:text-white transition-colors" />
-                      </div>
-                      <h3 className="text-xs font-semibold text-gray-900 group-hover:text-blue-600 line-clamp-2">{calc.name}</h3>
-                    </Link>
-                  );
-                })}
-              </div>
+                  {tab === 'calculators' && <><Calculator className="w-4 h-4 inline mr-2" />Calculators ({totalCalculators}+)</>}
+                  {tab === 'tools' && <><Wrench className="w-4 h-4 inline mr-2" />Tools</>}
+                  {tab === 'resources' && <><FolderOpen className="w-4 h-4 inline mr-2" />Resources</>}
+                </button>
+              ))}
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
-        {/* Tab Content */}
         {activeTab === 'calculators' && (
           <>
-            {/* Category Filter - Compact */}
-            <section className="py-4 bg-gray-50 border-b border-gray-100">
+            <section className="py-8 bg-white">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center gap-2 overflow-x-auto pb-2">
-                  <button
-                    onClick={() => setSelectedCategory(null)}
-                    className={`px-4 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
-                      selectedCategory === null
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                    }`}
-                  >
-                    All
-                  </button>
-                  {calculatorCategories.map((category) => {
-                    const Icon = categoryIcons[category.name] || Calculator;
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-xl font-bold text-slate-900">Popular calculators</h2>
+                  <Link to="/calculators" className="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                    View all <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+                  {popularCalculators.map((c) => (
+                    <Link key={c.id} to={c.path} className="p-4 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all text-center group">
+                      <Calculator className="w-6 h-6 text-blue-600 mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                      <span className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 line-clamp-2">{c.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+            <section className="py-4 bg-slate-50/50">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  <button onClick={() => setSelectedCategory(null)} className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap ${selectedCategory === null ? 'bg-blue-600 text-white' : 'bg-white text-slate-600 border border-slate-200'}`}>All</button>
+                  {calculatorCategories.map((cat) => {
+                    const Icon = categoryIcons[cat.name] || Calculator;
                     return (
-                      <button
-                        key={category.id}
-                        onClick={() => setSelectedCategory(category.id)}
-                        className={`px-4 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors flex items-center gap-1.5 ${
-                          selectedCategory === category.id
-                            ? 'bg-blue-600 text-white'
-                            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                        }`}
-                      >
-                        <Icon className="w-3.5 h-3.5" />
-                        {category.name.split(' ')[0]} ({category.calculators.length})
+                      <button key={cat.id} onClick={() => setSelectedCategory(cat.id)} className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap flex items-center gap-1.5 ${selectedCategory === cat.id ? 'bg-blue-600 text-white' : 'bg-white text-slate-600 border border-slate-200'}`}>
+                        <Icon className="w-3.5 h-3.5" />{cat.name.split(' ')[0]} ({cat.calculators.length})
                       </button>
                     );
                   })}
                 </div>
               </div>
             </section>
-
-            {/* Calculators Grid - Compact */}
             <section className="py-8 bg-white">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {filteredCategories.map((category) => {
-                  const CategoryIcon = categoryIcons[category.name] || Calculator;
+                {filteredCategories.map((cat) => {
+                  const Icon = categoryIcons[cat.name] || Calculator;
                   return (
-                    <div key={category.id} className="mb-8 last:mb-0">
-                      <div className="flex items-center gap-2 mb-4">
-                        <CategoryIcon className="w-5 h-5 text-blue-600" />
-                        <h3 className="text-lg font-bold text-gray-900">{category.name}</h3>
-                        <span className="text-xs text-gray-500">({category.calculators.length})</span>
-                      </div>
+                    <div key={cat.id} className="mb-10">
+                      <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <Icon className="w-5 h-5 text-blue-600" />
+                        {cat.name}
+                        <span className="text-slate-500 font-normal">({cat.calculators.length})</span>
+                      </h3>
                       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                        {category.calculators.map((calc) => (
-                          <Link
-                            key={calc.id}
-                            to={`/calculators/${calc.id}`}
-                            className="bg-white p-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all group"
-                          >
-                            <h4 className="font-semibold text-sm text-gray-900 mb-1 group-hover:text-blue-600 line-clamp-2">
-                              {calc.name}
-                            </h4>
-                            <p className="text-xs text-gray-600 line-clamp-2">{calc.description}</p>
+                        {cat.calculators.map((calc) => (
+                          <Link key={calc.id} to={`/calculators/${calc.id}`} className="p-3 rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group">
+                            <h4 className="font-semibold text-sm text-slate-900 group-hover:text-blue-600 line-clamp-2">{calc.name}</h4>
+                            <p className="text-xs text-slate-500 line-clamp-2 mt-0.5">{calc.description}</p>
                           </Link>
                         ))}
                       </div>
@@ -341,71 +443,52 @@ const HomeInvestopedia: React.FC = () => {
         )}
 
         {activeTab === 'tools' && (
-          <section className="py-8 bg-white">
+          <section className="py-10 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                {[
-                  { name: 'Finance Tools', path: '/finance-tools', icon: DollarSign, count: '25+', color: 'bg-blue-50 text-blue-600' },
-                  { name: 'Tax Tools', path: '/tax-tools', icon: FileText, count: '40+', color: 'bg-green-50 text-green-600' },
-                  { name: 'GST Tools', path: '/gst-tools', icon: Calculator, count: '20+', color: 'bg-purple-50 text-purple-600' },
-                  { name: 'Excel Tools', path: '/excel-tools', icon: BarChart3, count: '50+', color: 'bg-orange-50 text-orange-600' },
-                  { name: 'Bank Tools', path: '/bank-tools', icon: Building2, count: '10+', color: 'bg-cyan-50 text-cyan-600' },
-                  { name: 'Loan Tools', path: '/loan-tools', icon: Home, count: '15+', color: 'bg-teal-50 text-teal-600' },
-                  { name: 'Insurance Tools', path: '/insurance-tools', icon: Heart, count: '8+', color: 'bg-pink-50 text-pink-600' },
-                  { name: 'Gold Tools', path: '/gold-tools', icon: Gem, count: '5+', color: 'bg-yellow-50 text-yellow-600' },
-                  { name: 'Invoicing Tools', path: '/invoicing-tools', icon: Receipt, count: '12+', color: 'bg-violet-50 text-violet-600' },
-                  { name: 'Festival Tools', path: '/festival-tools', icon: CalendarIcon, count: '10+', color: 'bg-rose-50 text-rose-600' },
-                  { name: 'Corporate Tools', path: '/corporate-finance', icon: Briefcase, count: '20+', color: 'bg-slate-50 text-slate-600' },
-                  { name: 'All Tools', path: '/tools', icon: Wrench, count: '200+', color: 'bg-indigo-50 text-indigo-600' },
-                ].map((tool, idx) => {
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">All tool hubs</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {TOOL_HUB_LINKS.map((tool) => {
                   const Icon = tool.icon;
                   return (
-                    <Link
-                      key={idx}
-                      to={tool.path}
-                      className="bg-white p-4 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all text-center group"
-                    >
-                      <div className={`w-12 h-12 ${tool.color} rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}>
-                        <Icon className="w-6 h-6" />
+                    <Link key={tool.path} to={tool.path} className="p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all flex items-center gap-4 group">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center flex-shrink-0`}>
+                        <Icon className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="font-semibold text-sm text-gray-900 mb-1 group-hover:text-blue-600">{tool.name}</h3>
-                      <span className="text-xs text-gray-500">{tool.count}</span>
+                      <div>
+                        <h3 className="font-bold text-slate-900 group-hover:text-blue-600">{tool.name}</h3>
+                        <p className="text-xs text-slate-500">{tool.keywords}</p>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600 ml-auto" />
                     </Link>
                   );
                 })}
               </div>
+              <p className="mt-6 text-slate-600 text-sm">
+                <strong>Internal linking:</strong> Use the search bar above to find tax, gold, GST, loan, or any tool. Every tool is linked from the <Link to="/tools" className="text-blue-600 hover:underline">Tools Hub</Link> and category pages for easy discovery and SEO.
+              </p>
             </div>
           </section>
         )}
 
         {activeTab === 'resources' && (
-          <section className="py-8 bg-white">
+          <section className="py-10 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Discover more</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                 {[
-                  { name: 'Learn', path: '/learn', icon: BookOpen, count: '40+', color: 'bg-emerald-50 text-emerald-600' },
-                  { name: 'Blog', path: '/blog', icon: FileText, count: '150+', color: 'bg-blue-50 text-blue-600' },
-                  { name: 'News', path: '/news', icon: Newspaper, count: '100+', color: 'bg-red-50 text-red-600' },
-                  { name: 'Govt Schemes', path: '/government-schemes', icon: Gift, count: '50+', color: 'bg-yellow-50 text-yellow-600' },
-                  { name: 'Crypto', path: '/crypto', icon: Coins, count: '30+', color: 'bg-purple-50 text-purple-600' },
-                  { name: 'Astro Finance', path: '/astro-finance', icon: Sparkles, count: '13+', color: 'bg-indigo-50 text-indigo-600' },
-                  { name: 'Festival', path: '/festival-tools', icon: CalendarIcon, count: '25+', color: 'bg-rose-50 text-rose-600' },
-                  { name: 'Corporate', path: '/corporate-finance', icon: Briefcase, count: '15+', color: 'bg-slate-50 text-slate-600' },
-                  { name: 'Personal Finance', path: '/personal-finance-management', icon: PiggyBank, count: '20+', color: 'bg-cyan-50 text-cyan-600' },
-                  { name: 'Religious', path: '/religious-tools', icon: Scale, count: '10+', color: 'bg-amber-50 text-amber-600' },
-                ].map((resource, idx) => {
-                  const Icon = resource.icon;
+                  { name: 'Learn Finance', path: '/learn', icon: BookOpen, desc: 'Loans, credit, investment guides' },
+                  { name: 'Blog', path: '/blog', icon: FileText, desc: 'Articles & tips' },
+                  { name: 'News', path: '/news', icon: Newspaper, desc: 'Market & business news' },
+                  { name: 'Govt Schemes', path: '/government-schemes', icon: Gift, desc: 'Subsidies & schemes' },
+                  { name: 'Crypto', path: '/crypto', icon: Coins, desc: 'Crypto guides' },
+                  { name: 'Astro Finance', path: '/astro-finance', icon: Sparkles, desc: 'Horoscope & finance' },
+                ].map((r) => {
+                  const Icon = r.icon;
                   return (
-                    <Link
-                      key={idx}
-                      to={resource.path}
-                      className="bg-white p-4 rounded-lg border-2 border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all text-center group"
-                    >
-                      <div className={`w-12 h-12 ${resource.color} rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <h3 className="font-semibold text-sm text-gray-900 mb-1">{resource.name}</h3>
-                      <span className="text-xs text-gray-500">{resource.count}</span>
+                    <Link key={r.path} to={r.path} className="p-5 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group">
+                      <Icon className="w-8 h-8 text-blue-600 mb-3" />
+                      <h3 className="font-bold text-slate-900 group-hover:text-blue-600">{r.name}</h3>
+                      <p className="text-sm text-slate-500 mt-1">{r.desc}</p>
                     </Link>
                   );
                 })}
@@ -414,25 +497,23 @@ const HomeInvestopedia: React.FC = () => {
           </section>
         )}
 
-        {/* Features - Compact */}
-        <section className="py-12 bg-gray-50 border-t border-gray-100">
+        {/* Why MoneyCal – trust & SEO */}
+        <section className="py-12 bg-gradient-to-br from-slate-50 to-blue-50/30 border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Why Choose MoneyCal.in</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">Why users & Google love MoneyCal</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { icon: CheckCircle, title: '100% Free', desc: 'Completely free forever' },
-                { icon: Shield, title: 'Secure', desc: 'Your data is safe' },
-                { icon: Award, title: 'Expert Verified', desc: 'Verified calculations' },
-                { icon: Zap, title: 'Fast', desc: 'Lightning-fast tools' },
-              ].map((feature, idx) => {
-                const Icon = feature.icon;
+                { icon: CheckCircle, title: '100% Free', desc: 'All tools free forever' },
+                { icon: Shield, title: 'Secure', desc: 'No data stored' },
+                { icon: Award, title: 'SEO friendly', desc: 'Easy to find any tool' },
+                { icon: Zap, title: 'Fast', desc: 'Lightning-fast search' },
+              ].map((f) => {
+                const Icon = f.icon;
                 return (
-                  <div key={idx} className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                    <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Icon className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <h3 className="font-semibold text-sm text-gray-900 mb-1">{feature.title}</h3>
-                    <p className="text-xs text-gray-600">{feature.desc}</p>
+                  <div key={f.title} className="text-center p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                    <Icon className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                    <h3 className="font-bold text-slate-900">{f.title}</h3>
+                    <p className="text-sm text-slate-600">{f.desc}</p>
                   </div>
                 );
               })}

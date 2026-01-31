@@ -1,4 +1,4 @@
-﻿import { useEffect, Suspense, lazy } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { initPerformanceOptimizations } from './utils/performance';
 import { initAnalytics } from './utils/analytics';
 import WebVitalsMonitor from './components/WebVitalsMonitor';
@@ -1225,7 +1225,7 @@ function App() {
                 <Route path="/calculators/senior-citizen-savings-planner" element={<SeniorCitizenSavingsPlanner />} />
                 <Route path="/calculators/msme-loan-eligibility" element={<MSMELoanEligibilityChecker />} />
                 <Route path="/calculators/green-energy-investment-calculator" element={<GreenEnergyInvestmentCalculator />} />
-                <Route path="/author/harsh-raj" element={<AuthorProfilePage />} />
+                <Route path="/author/:authorSlug" element={<AuthorProfilePage />} />
                 <Route path="/real-time-stock-portfolio-tracker" element={<RealTimeStockPortfolioTracker />} />
                 <Route path="/festival-tools" element={<FestivalTools />} />
                 <Route path="/festival-tools/diwali-date-finder" element={<DiwaliDateFinder />} />

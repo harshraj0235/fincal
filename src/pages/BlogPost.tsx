@@ -12,8 +12,6 @@ import { astroBlog3 } from '../data/astroBlogs/astroBlog3';
 import { astroBlog4 } from '../data/astroBlogs/astroBlog4';
 import { astroBlog5 } from '../data/astroBlogs/astroBlog5';
 import { astroBlog6 } from '../data/astroBlogs/astroBlog6';
-import WhatsAppBanner from '../components/WhatsAppBanner';
-import AstroFinanceButton from '../components/AstroFinanceButton';
 import SEOHelmet from '../components/SEOHelmet';
 
 // Helper functions for astro blogs
@@ -174,8 +172,6 @@ export const BlogPost: React.FC = () => {
 
   return (
     <>
-      <WhatsAppBanner />
-      <AstroFinanceButton />
       <SEOHelmet
         title={post.title}
         description={post.excerpt}

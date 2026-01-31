@@ -49,3 +49,10 @@ export function getRelatedPosts(slug: string, count: number) {
     })
     .slice(0, count);
 }
+
+// Helper function to get all blog posts by author slug (for author profile pages)
+export function getPostsByAuthorSlug(authorSlug: string) {
+  return allBlogPosts
+    .filter((p: any) => (p.authorSlug || '').trim().toLowerCase() === authorSlug.trim().toLowerCase())
+    .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}

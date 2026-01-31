@@ -1,6 +1,6 @@
 /**
  * Blog authors for EEAT – used across all blog posts.
- * Only these four authors are used (like news bylines).
+ * Four authors: Harsh Raj, Raushan Kumar, Saurabh Kumar, Vikram.
  */
 
 export interface BlogAuthor {
@@ -16,34 +16,34 @@ export const BLOG_AUTHORS: BlogAuthor[] = [
   {
     slug: 'harsh-raj',
     name: 'Harsh Raj',
-    role: 'Finance & Technology',
-    bio: 'Harsh Raj covers personal finance, investments and tech for MoneyCal. Focus on practical tips for Indian readers.',
+    role: 'Software Engineer',
+    bio: 'Software engineer with a strong interest in finance. Writes on personal finance, investments and tech for MoneyCal, with a focus on practical tips for Indian readers.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop',
-    sameAs: ['https://www.linkedin.com/in/harshitpatel9/', 'https://x.com/harshitx9'],
+    sameAs: ['https://www.linkedin.com/in/harshitpatel9'],
+  },
+  {
+    slug: 'raushan-kumar',
+    name: 'Raushan Kumar',
+    role: 'BSc Student',
+    bio: 'Pursuing BSc with a keen interest in finance. Enjoys sharing knowledge on budgeting, savings and financial literacy to make money management simple for everyone.',
+    image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop',
+    sameAs: ['https://www.facebook.com/share/1AcZ9Jr2nb/'],
   },
   {
     slug: 'saurabh-kumar',
     name: 'Saurabh Kumar',
-    role: 'Investment & Markets',
-    bio: 'Saurabh Kumar writes on mutual funds, stocks and market trends. Helping readers make informed investment decisions.',
+    role: 'Graduate',
+    bio: 'Graduate with a focus on finance. Writes on mutual funds, stocks and market trends, helping readers make informed investment decisions.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop',
-    sameAs: [],
+    sameAs: ['https://www.facebook.com/share/1DcAwzKb71/'],
   },
   {
     slug: 'vikram',
     name: 'Vikram',
-    role: 'Tax & Banking',
-    bio: 'Vikram specializes in tax planning, banking and compliance for individuals and small businesses in India.',
+    role: 'Graduate, UPSC Aspirant',
+    bio: 'Completed graduation and currently preparing for UPSC. Writes on tax planning, banking and compliance for individuals and small businesses in India.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop',
-    sameAs: [],
-  },
-  {
-    slug: 'raushan',
-    name: 'Raushan',
-    role: 'Personal Finance',
-    bio: 'Raushan writes on budgeting, savings and financial literacy. Making money management simple for everyone.',
-    image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=200&h=200&fit=crop',
-    sameAs: [],
+    sameAs: ['https://www.facebook.com/share/1JE4QNHs1b/'],
   },
 ];
 

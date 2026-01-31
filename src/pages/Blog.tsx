@@ -15,9 +15,11 @@ import {
   TrendingUp,
   ChevronRight,
   LayoutGrid,
+  User,
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { loadAllBlogData } from '../data/lazyBlogData';
+import { BLOG_AUTHORS, getAuthorBySlug } from '../data/blogAuthors';
 
 const POSTS_PER_PAGE = 12;
 
@@ -29,10 +31,12 @@ const tapScale = { scale: 0.98 };
 export const Blog: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get('category') || '';
+  const authorParam = searchParams.get('author') || '';
   const pageParam = parseInt(searchParams.get('page') || '1', 10);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(categoryParam || 'all');
+  const [selectedAuthor, setSelectedAuthor] = useState(authorParam || '');
   const [sortBy, setSortBy] = useState<'latest' | 'oldest' | 'popular'>('latest');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(isNaN(pageParam) || pageParam < 1 ? 1 : pageParam);
@@ -43,6 +47,10 @@ export const Blog: React.FC = () => {
   useEffect(() => {
     setSelectedCategory(categoryParam || 'all');
   }, [categoryParam]);
+
+  useEffect(() => {
+    setSelectedAuthor(authorParam || '');
+  }, [authorParam]);
 
   useEffect(() => {
     const page = parseInt(searchParams.get('page') || '1', 10);
@@ -71,6 +79,14 @@ export const Blog: React.FC = () => {
       .map(([name, count]) => ({ name, count }));
   }, [allBlogPosts]);
 
+  const authorsWithCount = useMemo(() => {
+    return BLOG_AUTHORS.map((a) => ({
+      slug: a.slug,
+      name: a.name,
+      count: allBlogPosts.filter((p: any) => (p.authorSlug || '').trim().toLowerCase() === a.slug.toLowerCase()).length,
+    })).filter((a) => a.count > 0);
+  }, [allBlogPosts]);
+
   const filteredPosts = useMemo(() => {
     return allBlogPosts
       .filter((post) => {
@@ -80,7 +96,8 @@ export const Blog: React.FC = () => {
           post.excerpt?.toLowerCase().includes(searchTerm.toLowerCase()) ||
           (post.categories || []).some((c: string) => c.toLowerCase().includes(searchTerm.toLowerCase()));
         const matchesCategory = selectedCategory === 'all' || (post.categories || []).includes(selectedCategory);
-        return matchesSearch && matchesCategory;
+        const matchesAuthor = !selectedAuthor || (post.authorSlug || '').trim().toLowerCase() === selectedAuthor.trim().toLowerCase();
+        return matchesSearch && matchesCategory && matchesAuthor;
       })
       .sort((a, b) => {
         switch (sortBy) {
@@ -94,7 +111,7 @@ export const Blog: React.FC = () => {
             return 0;
         }
       });
-  }, [allBlogPosts, searchTerm, selectedCategory, sortBy]);
+  }, [allBlogPosts, searchTerm, selectedCategory, selectedAuthor, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
   const safePage = Math.min(Math.max(1, currentPage), totalPages);
@@ -120,6 +137,15 @@ export const Blog: React.FC = () => {
     const next = new URLSearchParams(searchParams);
     if (cat === 'all') next.delete('category');
     else next.set('category', cat);
+    next.delete('page');
+    setSearchParams(next);
+  };
+
+  const setAuthor = (authorSlug: string) => {
+    setSelectedAuthor(authorSlug);
+    const next = new URLSearchParams(searchParams);
+    if (!authorSlug) next.delete('author');
+    else next.set('author', authorSlug);
     next.delete('page');
     setSearchParams(next);
   };
@@ -152,36 +178,47 @@ export const Blog: React.FC = () => {
     return colors[category] || 'bg-slate-100 text-slate-800';
   };
 
-  const canonicalUrl =
-    selectedCategory !== 'all'
-      ? `https://moneycal.in/blog?category=${encodeURIComponent(selectedCategory)}${safePage > 1 ? `&page=${safePage}` : ''}`
-      : safePage > 1
-        ? `https://moneycal.in/blog?page=${safePage}`
-        : 'https://moneycal.in/blog';
+  const selectedAuthorName = selectedAuthor ? getAuthorBySlug(selectedAuthor)?.name : null;
+  const canonicalUrl = (() => {
+    const base = 'https://moneycal.in/blog';
+    const params = new URLSearchParams();
+    if (selectedCategory !== 'all') params.set('category', selectedCategory);
+    if (selectedAuthor) params.set('author', selectedAuthor);
+    if (safePage > 1) params.set('page', String(safePage));
+    const q = params.toString();
+    return q ? `${base}?${q}` : base;
+  })();
 
   const breadcrumbList = [
     { name: 'Home', url: 'https://moneycal.in/' },
     { name: 'Blog', url: 'https://moneycal.in/blog' },
     ...(selectedCategory !== 'all' ? [{ name: selectedCategory, url: `https://moneycal.in/blog?category=${encodeURIComponent(selectedCategory)}` }] : []),
+    ...(selectedAuthorName ? [{ name: selectedAuthorName, url: canonicalUrl }] : []),
   ];
 
   return (
     <>
       <SEOHelmet
         title={
-          selectedCategory !== 'all'
-            ? `${selectedCategory} Articles – Expert Tips & Guides | MoneyCal.in`
-            : 'Financial Blog – Latest Articles, Tips & Insights | MoneyCal.in'
+          selectedAuthorName
+            ? `Articles by ${selectedAuthorName} – Financial Blog | MoneyCal.in`
+            : selectedCategory !== 'all'
+              ? `${selectedCategory} Articles – Expert Tips & Guides | MoneyCal.in`
+              : 'Financial Blog – Latest Articles, Tips & Insights | MoneyCal.in'
         }
         description={
-          selectedCategory !== 'all'
-            ? `Expert ${selectedCategory.toLowerCase()} articles, guides and insights for Indian users. Practical advice for better financial decisions.`
-            : 'Latest financial news, investment tips, tax updates and expert insights. Stay informed and make better money decisions.'
+          selectedAuthorName
+            ? `Read all articles by ${selectedAuthorName} on MoneyCal. Financial tips, investment guides and money management insights for Indian readers.`
+            : selectedCategory !== 'all'
+              ? `Expert ${selectedCategory.toLowerCase()} articles, guides and insights for Indian users. Practical advice for better financial decisions.`
+              : 'Latest financial news, investment tips, tax updates and expert insights. Stay informed and make better money decisions.'
         }
         keywords={
-          selectedCategory !== 'all'
-            ? `${selectedCategory.toLowerCase()} articles, ${selectedCategory.toLowerCase()} tips, financial blog`
-            : 'financial blog, investment tips, tax advice, money management, personal finance India'
+          selectedAuthorName
+            ? `${selectedAuthorName}, author, financial blog, MoneyCal`
+            : selectedCategory !== 'all'
+              ? `${selectedCategory.toLowerCase()} articles, ${selectedCategory.toLowerCase()} tips, financial blog`
+              : 'financial blog, investment tips, tax advice, money management, personal finance India'
         }
         url={canonicalUrl.replace('https://moneycal.in', '')}
         structuredData={{
@@ -199,7 +236,7 @@ export const Blog: React.FC = () => {
             headline: post.title,
             description: post.excerpt,
             datePublished: post.date,
-            author: { '@type': 'Person', name: post.author || 'MoneyCal Team' },
+            author: { '@type': 'Person', name: getAuthorBySlug((post as any).authorSlug)?.name || (post as any).author || 'MoneyCal Team' },
             url: `https://moneycal.in/blog/${post.slug}`,
           })),
         }}
@@ -254,12 +291,14 @@ export const Blog: React.FC = () => {
               Latest financial insights
             </motion.span>
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-5 tracking-tight leading-[1.1]">
-              {selectedCategory !== 'all' ? `${selectedCategory} Articles` : 'Financial Blog'}
+              {selectedAuthorName ? `Articles by ${selectedAuthorName}` : selectedCategory !== 'all' ? `${selectedCategory} Articles` : 'Financial Blog'}
             </h1>
             <p className="text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              {selectedCategory !== 'all'
-                ? `Expert ${selectedCategory.toLowerCase()} guides and tips for Indian readers.`
-                : 'Expert articles on investments, tax, banking and personal finance. Easy to read, easy to navigate.'}
+              {selectedAuthorName
+                ? `All blog posts by ${selectedAuthorName}. Financial tips and insights for Indian readers.`
+                : selectedCategory !== 'all'
+                  ? `Expert ${selectedCategory.toLowerCase()} guides and tips for Indian readers.`
+                  : 'Expert articles on investments, tax, banking and personal finance. Easy to read, easy to navigate.'}
             </p>
           </motion.header>
 
@@ -299,6 +338,53 @@ export const Blog: React.FC = () => {
               ))}
             </div>
           </motion.section>
+
+          {/* Browse by author */}
+          {authorsWithCount.length > 0 && (
+            <motion.section aria-label="Browse by author" className="mb-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.22, duration: 0.4 }}>
+              <h2 className="text-lg font-semibold text-slate-800 mb-3 flex items-center gap-2">
+                <User className="w-5 h-5 text-blue-600" />
+                Browse by author
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                <motion.button
+                  onClick={() => setAuthor('')}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={tapScale}
+                  className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                    !selectedAuthor
+                      ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-lg shadow-indigo-500/25'
+                      : 'bg-white text-slate-700 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/80 hover:shadow-md'
+                  }`}
+                >
+                  All authors
+                </motion.button>
+                {authorsWithCount.map(({ slug, name, count }, i) => (
+                  <motion.div key={slug} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={stagger(i)} className="flex items-center gap-1">
+                    <motion.button
+                      onClick={() => setAuthor(selectedAuthor === slug ? '' : slug)}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={tapScale}
+                      className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                        selectedAuthor === slug
+                          ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-lg shadow-indigo-500/25'
+                          : 'bg-white text-slate-700 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/80 hover:shadow-md'
+                      }`}
+                    >
+                      {name} ({count})
+                    </motion.button>
+                    <Link
+                      to={`/author/${slug}`}
+                      className="px-2 py-2 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 text-xs font-medium transition-colors"
+                      title={`View ${name}'s profile`}
+                    >
+                      Profile
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.section>
+          )}
 
           {/* Search & filters */}
           <motion.section
@@ -543,6 +629,7 @@ export const Blog: React.FC = () => {
                     onClick={() => {
                       setSearchTerm('');
                       setCategory('all');
+                      setAuthor('');
                       setSortBy('latest');
                     }}
                     whileHover={{ scale: 1.02 }}
@@ -604,8 +691,8 @@ export const Blog: React.FC = () => {
                           </Link>
                         </h3>
                         <p className="text-slate-600 text-sm line-clamp-2 mb-5 flex-1 leading-relaxed">{post.excerpt}</p>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4 text-xs text-slate-500">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
                             <span className="flex items-center gap-1">
                               <Calendar className="w-3.5 h-3.5" />
                               {formatDate(post.date)}
@@ -614,6 +701,19 @@ export const Blog: React.FC = () => {
                               <Clock className="w-3.5 h-3.5" />
                               {(post as any).readingTime || 5} min
                             </span>
+                            {(post as any).authorSlug && (() => {
+                              const author = getAuthorBySlug((post as any).authorSlug);
+                              return author ? (
+                                <Link
+                                  to={`/author/${author.slug}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="flex items-center gap-1 text-slate-500 hover:text-blue-600 transition-colors"
+                                >
+                                  <User className="w-3.5 h-3.5" />
+                                  {author.name}
+                                </Link>
+                              ) : null;
+                            })()}
                           </div>
                           <Link
                             to={`/blog/${post.slug}`}
