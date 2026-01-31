@@ -13,6 +13,28 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // Budget 2026 LIVE Updates - 2025
+  {
+    id: 'economy-budget-2026-live-2025',
+    slug: 'budget-2026-live-updates-sansad-tax-relief-2025',
+    category: 'economy',
+    subCategory: 'budget',
+    title: '📊 Budget 2026 LIVE Updates: संसद में बजट कल पेश होगा — आम जनता को बड़ी राहत, टैक्स/उपयोगी घोषणाएं',
+    authorId: 'harsh-raj',
+    datePublished: '2025-01-31T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541872703-74c32bb95e77?w=1200&h=630&fit=crop&q=80'
+  },
+  // Sensex Nifty 1200 Points Market Highlights - 2025
+  {
+    id: 'markets-sensex-nifty-1200-points-2025',
+    slug: 'sensex-nifty-1200-points-market-highlights-2025',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: '📈 सेंसेक्स 1200 अंकों से ऊपर बंद — बाजार में तेजी की वजहें — निवेशकों पर असर वाले टेक्निकल संकेत',
+    authorId: 'saurabh-kumar',
+    datePublished: '2025-01-31T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
   // DEMO Article: Nifty 50 Record High Nov 2025
   {
     id: 'nifty-50-record-high-fii-inflows-november-2025',

@@ -56,6 +56,8 @@ import { bankingRegulationPolicyChanges2025 } from './news-articles/markets/bank
 import { topCompaniesRevenueTrends2025 } from './news-articles/business/top-companies-revenue-trends-tcs-reliance-2025';
 import { tier3CityStartupFunding2025 } from './news-articles/startups/tier-3-city-startup-funding-ecosystem-2025';
 import { scalableBusinessModels2025 } from './news-articles/startups/scalable-business-models-saas-marketplace-2025';
+import { budget2026LiveUpdates2025 } from './news-articles/economy/budget-2026-live-updates-sansad-tax-relief-2025';
+import { sensexNifty1200PointsMarketHighlights2025 } from './news-articles/markets/sensex-nifty-1200-points-market-highlights-2025';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -111,6 +113,8 @@ export const plainArticleContentMap: Record<string, any> = {
   'top-companies-revenue-trends-tcs-reliance-hdfc-tata-adani-2025': topCompaniesRevenueTrends2025,
   'tier-3-city-startup-funding-jaipur-indore-coimbatore-ecosystem-2025': tier3CityStartupFunding2025,
   'scalable-business-models-saas-marketplace-network-effects-india-2025': scalableBusinessModels2025,
+  'budget-2026-live-updates-sansad-tax-relief-2025': budget2026LiveUpdates2025,
+  'sensex-nifty-1200-points-market-highlights-2025': sensexNifty1200PointsMarketHighlights2025,
 };
 
 /**
