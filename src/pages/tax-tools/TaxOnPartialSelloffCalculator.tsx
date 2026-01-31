@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, Info, TrendingUp, PieChart } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
-
 interface PartialSelloffResult {
   totalShares: number;
   sharesSold: number;
@@ -62,14 +59,15 @@ const TaxOnPartialSelloffCalculator: React.FC = () => {
     if (daysDiff <= 365) {
       holdingPeriod = `${daysDiff} days`;
       taxType = 'STCG';
-      taxRate = 15;
+      taxRate = 20; // Budget 2024
     } else {
       holdingPeriod = `${Math.floor(daysDiff / 365)} years`;
       taxType = 'LTCG';
-      taxRate = 10;
+      taxRate = 12.5; // Budget 2024 (exemption ₹1.25L applied at year level)
     }
 
-    const taxAmount = capitalGain > 0 ? (capitalGain * taxRate) / 100 : 0;
+    const taxableGain = taxType === 'LTCG' ? Math.max(0, capitalGain - 125000) : capitalGain;
+    const taxAmount = capitalGain > 0 ? (taxableGain * taxRate) / 100 : 0;
     const netProceeds = saleProceeds - taxAmount;
 
     setResult({
@@ -105,9 +103,6 @@ const TaxOnPartialSelloffCalculator: React.FC = () => {
         description="Calculate tax implications when selling only a portion of your holdings. Understand STCG vs LTCG tax rates."
         keywords="partial selloff tax calculator, share sale tax, STCG LTCG calculator, capital gains tax"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
-
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

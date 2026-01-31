@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, Info, TrendingUp, Shield } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
-
 interface LTCGOffsetResult {
   totalLTCG: number;
   annualExemption: number;
@@ -26,17 +23,17 @@ const OffsetLTCGWithAnnualExemptionsTool: React.FC = () => {
 
     const ltcg = parseFloat(ltcgAmount);
     
-    // Annual exemption for LTCG (₹1 lakh)
-    const annualExemption = 100000;
+    // Annual exemption for LTCG (₹1.25 lakh per Budget 2024)
+    const annualExemption = 125000;
     
     // Calculate taxable LTCG
     const taxableLTCG = Math.max(0, ltcg - annualExemption);
     
-    // Calculate tax (10% on taxable amount)
-    const taxAmount = taxableLTCG * 0.10;
+    // Calculate tax (12.5% on taxable amount per Budget 2024)
+    const taxAmount = taxableLTCG * 0.125;
     
     // Calculate tax saved due to exemption
-    const taxSaved = Math.min(ltcg, annualExemption) * 0.10;
+    const taxSaved = Math.min(ltcg, annualExemption) * 0.125;
 
     setResult({
       totalLTCG: ltcg,
@@ -60,9 +57,6 @@ const OffsetLTCGWithAnnualExemptionsTool: React.FC = () => {
         description="Calculate how to offset Long Term Capital Gains with annual exemptions. Plan your LTCG sales to maximize tax benefits."
         keywords="LTCG exemption calculator, long term capital gains tax, annual exemption, tax planning"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
-
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

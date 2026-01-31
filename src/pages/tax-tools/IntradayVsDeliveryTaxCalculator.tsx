@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, Info, AlertCircle, TrendingUp, TrendingDown, DollarSign, Clock, BarChart3 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
-
 interface TaxComparison {
   intradayTax: number;
   deliveryTax: number;
@@ -36,8 +33,8 @@ const IntradayVsDeliveryTaxCalculator: React.FC = () => {
     const profit = (sale - purchase) * qty;
     const totalIncome = profit + otherInc;
 
-    // Intraday trading (STCG) - 15% flat rate
-    const intradayTax = profit * 0.15;
+    // Intraday trading (STCG) - 20% flat rate (Budget 2024)
+    const intradayTax = profit * 0.20;
 
     // Delivery trading - depends on holding period
     let deliveryTax = 0;
@@ -48,8 +45,8 @@ const IntradayVsDeliveryTaxCalculator: React.FC = () => {
 
     if (profit > 0) {
       // For delivery, we assume it's STCG (less than 1 year) for comparison
-      // In reality, delivery could be LTCG if held for more than 1 year
-      deliveryTax = profit * 0.15; // Same as intraday for STCG
+      // In reality, delivery could be LTCG if held for more than 1 year (12.5% + ₹1.25L exemption)
+      deliveryTax = profit * 0.20; // Same as intraday for STCG (Budget 2024)
       
       if (intradayTax < deliveryTax) {
         recommendation = 'Intraday Trading';
@@ -124,9 +121,6 @@ const IntradayVsDeliveryTaxCalculator: React.FC = () => {
         description="Compare tax implications between intraday and delivery trading. Calculate tax differences and get recommendations for optimal trading strategy."
         keywords="intraday vs delivery tax calculator, trading tax comparison, STCG tax calculator, stock trading tax, capital gains tax"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
-
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">

@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Clock, ArrowRight } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
-
 interface RedemptionEntry {
   id: string;
   date: string;
@@ -46,7 +43,8 @@ const IntraYearRedemptionTaxTracker: React.FC = () => {
     const holdingPeriod = parseInt(newHoldingPeriod);
     
     const type = holdingPeriod <= 365 ? 'STCG' : 'LTCG';
-    const taxRate = type === 'STCG' ? 15 : 10;
+    // Budget 2024: STCG 20%, LTCG 12.5% (exemption applied at year level)
+    const taxRate = type === 'STCG' ? 20 : 12.5;
     const taxAmount = (amount * taxRate) / 100;
 
     const newRedemption: RedemptionEntry = {
@@ -137,9 +135,6 @@ const IntraYearRedemptionTaxTracker: React.FC = () => {
         description="Track tax implications of multiple redemptions within a year. Monitor STCG and LTCG tax burden with our comprehensive intra-year redemption tracker."
         keywords="intra-year redemption tracker, multiple redemptions tax, STCG LTCG tracker, redemption tax calculator, tax burden tracker"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
-
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
@@ -408,8 +403,8 @@ const IntraYearRedemptionTaxTracker: React.FC = () => {
                     Tax Implications
                   </h3>
                   <ul className="space-y-2 text-green-700">
-                    <li>• STCG: 15% flat rate</li>
-                    <li>• LTCG: 10% with ₹1L exemption</li>
+                    <li>• STCG: 20% flat rate (Budget 2024)</li>
+                    <li>• LTCG: 12.5% with ₹1.25L exemption (Budget 2024)</li>
                     <li>• Cumulative impact assessment</li>
                     <li>• Tax slab considerations</li>
                   </ul>

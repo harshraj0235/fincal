@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Gift, Calculator, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, PieChart } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
-import WhatsAppBanner from '../../components/WhatsAppBanner';
-import AstroFinanceButton from '../../components/AstroFinanceButton';
-
 interface BonusSharesTax {
   originalShares: number;
   bonusRatio: string;
@@ -66,19 +63,19 @@ const BonusSharesTaxImpactTool: React.FC = () => {
       color = 'text-green-600';
       icon = <CheckCircle className="h-5 w-5" />;
     } else if (holdingPeriod <= 365) {
-      taxRate = 15; // STCG
+      taxRate = 20; // STCG (Budget 2024)
       recommendation = 'Short-term capital gains tax applies';
       color = 'text-orange-600';
       icon = <AlertCircle className="h-5 w-5" />;
     } else {
-      taxRate = 10; // LTCG with 1L exemption
-      const taxableAmount = Math.max(0, capitalGain - 100000);
-      recommendation = 'Long-term capital gains tax with ₹1L exemption';
+      taxRate = 12.5; // LTCG (Budget 2024)
+      recommendation = 'Long-term capital gains tax with ₹1.25L exemption';
       color = 'text-blue-600';
       icon = <Info className="h-5 w-5" />;
     }
     
-    const taxAmount = capitalGain > 0 ? (capitalGain * taxRate) / 100 : 0;
+    const taxableForLTCG = holdingPeriod > 365 ? Math.max(0, capitalGain - 125000) : capitalGain;
+    const taxAmount = capitalGain > 0 ? (holdingPeriod > 365 ? taxableForLTCG * 0.125 : capitalGain * (taxRate / 100)) : 0;
     const netAmount = saleAmount - taxAmount;
 
     setTaxCalculation({
@@ -119,9 +116,6 @@ const BonusSharesTaxImpactTool: React.FC = () => {
         description="Calculate tax implications on bonus shares. Determine capital gains tax on bonus shares with our comprehensive bonus shares tax calculator."
         keywords="bonus shares tax, capital gains tax, bonus shares calculator, stock bonus tax, equity bonus tax, dividend tax calculator"
       />
-      <WhatsAppBanner />
-      <AstroFinanceButton />
-
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
