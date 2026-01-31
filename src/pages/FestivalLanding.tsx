@@ -13,13 +13,23 @@ const FestivalLanding: React.FC = () => {
   const fest = festivalSlug ? findFestival(festivalSlug) : undefined;
 
   if (!fest) {
+    const path = festivalSlug ? `/festival-tools/${festivalSlug}` : '/festival-tools';
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-2xl font-bold">Festival not found</div>
-          <RouterLink to="/festival-tools" className="text-rose-700 underline">Back to Festival Tools</RouterLink>
+      <>
+        <SEOHelmet
+          title="Festival not found | MoneyCal.in"
+          description="This festival or tool page was not found. Browse Festival Tools for Diwali, Holi, and more."
+          url={`https://moneycal.in${path}`}
+          noIndex={true}
+          noFollow={true}
+        />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-2xl font-bold">Festival not found</div>
+            <RouterLink to="/festival-tools" className="text-rose-700 underline">Back to Festival Tools</RouterLink>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 

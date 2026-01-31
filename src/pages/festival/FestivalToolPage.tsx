@@ -864,13 +864,23 @@ const FestivalToolPage: React.FC = () => {
   const resultsRef = useRef<HTMLDivElement>(null);
 
   if (!found) {
+    const path = festivalSlug && toolSlug ? `/festival-tools/${festivalSlug}/${toolSlug}` : '/festival-tools';
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-2xl font-bold">Tool not found</div>
-          <RouterLink to="/festival-tools" className="text-rose-700 underline">Back to Festival Tools</RouterLink>
+      <>
+        <SEOHelmet
+          title="Festival tool not found | MoneyCal.in"
+          description="This festival tool page was not found. Browse Festival Tools for Diwali, Holi, and more."
+          url={`https://moneycal.in${path}`}
+          noIndex={true}
+          noFollow={true}
+        />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-2xl font-bold">Tool not found</div>
+            <RouterLink to="/festival-tools" className="text-rose-700 underline">Back to Festival Tools</RouterLink>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
