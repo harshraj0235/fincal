@@ -58,9 +58,30 @@ import { tier3CityStartupFunding2025 } from './news-articles/startups/tier-3-cit
 import { scalableBusinessModels2025 } from './news-articles/startups/scalable-business-models-saas-marketplace-2025';
 import { budget2026LiveUpdates2025 } from './news-articles/economy/budget-2026-live-updates-sansad-tax-relief-2025';
 import { sensexNifty1200PointsMarketHighlights2025 } from './news-articles/markets/sensex-nifty-1200-points-market-highlights-2025';
+// 10 new MoneyCal News articles (Jan 2026)
+import { indiaUsTradeDealRupeeMarketsSurge2026 } from './news-articles/markets/india-us-trade-deal-rupee-markets-surge-2026';
+import { wallStreetIndiaSensexNiftyRally2026 } from './news-articles/markets/wall-street-india-sensex-nifty-rally-2026';
+import { upiAlipaySingaporeCrossBorder2026 } from './news-articles/tech-business/upi-alipay-singapore-cross-border-2026';
+import { budget2026IndiaMarketsBorderlessFpi2026 } from './news-articles/economy/budget-2026-india-markets-borderless-fpi-2026';
+import { indiaGdpFasterThanChina2026 } from './news-articles/economy/india-gdp-faster-than-china-2026';
+import { indianStocksCrashedBouncedBack2026 } from './news-articles/markets/indian-stocks-crashed-bounced-back-2026';
+import { rupeeRocketsFallsTraders2026 } from './news-articles/markets/rupee-rockets-falls-traders-2026';
+import { sttHikeBudget2026TraderProfits2026 } from './news-articles/markets/stt-hike-budget-2026-trader-profits-2026';
+import { budget2026HiddenSurpriseDirectForeignInvestment2026 } from './news-articles/economy/budget-2026-hidden-direct-foreign-investment-2026';
+import { bondsNextBigBetTradeBoom2026 } from './news-articles/markets/bonds-next-big-bet-trade-boom-2026';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
+  'india-us-trade-deal-rupee-markets-surge-overnight-2026': indiaUsTradeDealRupeeMarketsSurge2026,
+  'wall-street-india-sensex-nifty-rally-trade-optimism-2026': wallStreetIndiaSensexNiftyRally2026,
+  'upi-alipay-singapore-cross-border-payments-india-2026': upiAlipaySingaporeCrossBorder2026,
+  'budget-2026-india-markets-borderless-direct-fpi-route-2026': budget2026IndiaMarketsBorderlessFpi2026,
+  'india-gdp-faster-than-china-growth-projection-2026': indiaGdpFasterThanChina2026,
+  'indian-stocks-crashed-bounced-back-stt-volatility-2026': indianStocksCrashedBouncedBack2026,
+  'rupee-rockets-falls-traders-fx-volatility-2026': rupeeRocketsFallsTraders2026,
+  'stt-hike-budget-2026-derivatives-trader-profits-2026': sttHikeBudget2026TraderProfits2026,
+  'budget-2026-hidden-surprise-direct-foreign-investment-2026': budget2026HiddenSurpriseDirectForeignInvestment2026,
+  'bonds-next-big-bet-or-risk-after-trade-boom-india-2026': bondsNextBigBetTradeBoom2026,
   'nifty-50-record-high-fii-inflows-november-2025': demoNiftyArticle,
   'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis': marketRallyDiwali2025,
   'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide': startupFundingWinter2025,

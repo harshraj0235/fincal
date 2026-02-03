@@ -13,6 +13,107 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // === 10 NEW MoneyCal News Articles (Jan 2026) - India-US trade, Budget, Rupee, STT, Bonds, UPI ===
+  {
+    id: 'markets-india-us-trade-deal-rupee-soaring-2026',
+    slug: 'india-us-trade-deal-rupee-markets-surge-overnight-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'Markets EXPLODE Overnight — India-US Trade Deal Sends Rupee Soaring!',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T12:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-wall-street-sensex-nifty-rally-2026',
+    slug: 'wall-street-india-sensex-nifty-rally-trade-optimism-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'Wall Street Comes to India? Sensex & Nifty Rally Hard!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-01-31T11:30:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'tech-upi-alipay-cross-border-payments-2026',
+    slug: 'upi-alipay-singapore-cross-border-payments-india-2026',
+    category: 'tech-business',
+    subCategory: 'fintech',
+    title: 'UPI on Alipay? This One Move Will Change How Indians Pay Abroad!',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'economy-budget-2026-markets-borderless-fpi-2026',
+    slug: 'budget-2026-india-markets-borderless-direct-fpi-route-2026',
+    category: 'economy',
+    subCategory: 'budget',
+    title: 'Budget 2026 Just Made India\'s Markets Borderless — Here\'s How!',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T10:30:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541872703-74c32bb95e77?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'economy-india-gdp-faster-than-china-2026',
+    slug: 'india-gdp-faster-than-china-growth-projection-2026',
+    category: 'economy',
+    subCategory: 'economic-growth',
+    title: 'India Set to Grow Faster Than China? GDP Projected to Boom!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-01-31T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-indian-stocks-crashed-bounced-back-2026',
+    slug: 'indian-stocks-crashed-bounced-back-stt-volatility-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'Why Indian Stocks CRASHED — and How They Bounced Back!',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T09:30:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-rupee-rockets-falls-traders-2026',
+    slug: 'rupee-rockets-falls-traders-fx-volatility-2026',
+    category: 'markets',
+    subCategory: 'forex',
+    title: 'Rupee ROCKETS & Falls — Here\'s What Traders Should Know!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-01-31T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-stt-hike-budget-2026-trader-profits-2026',
+    slug: 'stt-hike-budget-2026-derivatives-trader-profits-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'STT Hike SHOCKER — Did Budget 2026 Just Kill Trader Profits?',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T08:30:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541872703-74c32bb95e77?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'economy-budget-2026-hidden-direct-foreign-investment-2026',
+    slug: 'budget-2026-hidden-surprise-direct-foreign-investment-2026',
+    category: 'economy',
+    subCategory: 'budget',
+    title: 'Hidden Budget Surprise: Direct Foreign Investment Path Unlocked!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-01-31T08:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541872703-74c32bb95e77?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-bonds-next-big-bet-trade-boom-2026',
+    slug: 'bonds-next-big-bet-or-risk-after-trade-boom-india-2026',
+    category: 'markets',
+    subCategory: 'fixed-income',
+    title: 'Are Bonds the Next Big Bet or Risk After Trade Boom?',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T07:30:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
   // Budget 2026 LIVE Updates - 2025
   {
     id: 'economy-budget-2026-live-2025',
