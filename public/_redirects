@@ -94,10 +94,11 @@
 /financial-navigator                         /tools                                   301
 
 # HTTP to HTTPS redirect
-http://moneycal.in/*                         https://moneycal.in/:splat               301!
+http://moneycal.in/*                         https://moneycal.in/:splat               301
 
 # Soft 404 fix: redirect duplicate path /moneycal.in/* to correct URL (e.g. /moneycal.in/learn -> /learn)
 /moneycal.in/*                               /:splat                                 301
 
-# Catch-all for SPA - must be last (Cloudflare Pages handles assets automatically)
+# SPA fallback: explicit index first to avoid loop warning, then catch-all
+/index.html                                  /index.html                              200
 /*                                           /index.html                              200
