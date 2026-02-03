@@ -20,6 +20,7 @@ import {
   type NewsShort,
   type NewsShortCategory,
 } from '../../data/newsShortsData';
+import { formatLatestUpdate, getCurrentDateISO, formatStaticShortDate } from '../../utils/randomCalculators';
 
 const NewsShortsPage: React.FC = () => {
   const { shorts, loading, refetch } = useNewsShorts();
@@ -78,6 +79,22 @@ const NewsShortsPage: React.FC = () => {
           <p className="text-slate-600 mt-2">
             Short. Clear. Actionable. Read in 30–45 seconds. Copy, share, or embed.
           </p>
+          <p className="text-slate-500 text-sm mt-1" role="contentinfo">
+            Last updated: {formatLatestUpdate()}
+          </p>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'CollectionPage',
+                name: 'Moneycal News in 60 Seconds',
+                description: 'Finance news in 60 seconds. Short, clear, actionable.',
+                dateModified: getCurrentDateISO(),
+                url: typeof window !== 'undefined' ? window.location.href : 'https://moneycal.in/news/shorts',
+              }),
+            }}
+          />
         </header>
 
         {/* Category filters */}
@@ -136,6 +153,9 @@ const NewsShortsPage: React.FC = () => {
                 <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">
                   {short.category}
                 </span>
+                <time className="block text-xs text-slate-500 mt-1" dateTime={short.datePublished}>
+                  Published {formatStaticShortDate(short.datePublished)}
+                </time>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mt-2">
                   {short.headline}
                 </h2>

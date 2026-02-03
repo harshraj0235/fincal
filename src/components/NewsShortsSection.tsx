@@ -6,6 +6,7 @@ import {
   newsShortsFilterCategories,
   type NewsShortCategory,
 } from '../data/newsShortsData';
+import { formatLatestUpdate } from '../utils/randomCalculators';
 
 const DISPLAY_LIMIT = 6;
 
@@ -30,7 +31,10 @@ const NewsShortsSection: React.FC = () => {
               <Clock className="w-6 h-6 text-blue-600" />
               Moneycal News in 60 Seconds
             </h2>
-            <p className="text-slate-600 mt-1 text-sm">Short. Clear. Actionable.</p>
+            <p className="text-slate-600 mt-1 text-sm">
+              Short. Clear. Actionable.
+              <span className="ml-2 text-slate-500">· Updated {formatLatestUpdate()}</span>
+            </p>
           </div>
           <Link
             to="/news/shorts"
