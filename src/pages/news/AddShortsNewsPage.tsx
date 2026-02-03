@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, Image as ImageIcon, Video, Link as LinkIcon, Calendar, User, Tag, FileText, Send, Sparkles } from 'lucide-react';
+import { Lock, Image as ImageIcon, Video, Link as LinkIcon, Calendar, User, Tag, FileText, Send, Sparkles, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 import {
   newsShortsFilterCategories,
   saveCustomShort,
   slugifyHeadline,
+  DISCOVER_IMAGES,
+  baseUrl,
   type NewsShort,
   type NewsShortCategory,
 } from '../../data/newsShortsData';
@@ -12,7 +14,43 @@ import { teamProfiles } from '../../data/teamProfiles';
 
 const ADD_SHORTS_PASSWORD = 'Harson';
 const ADD_SHORTS_SESSION_KEY = 'moneycal_add_shorts_unlocked';
-const baseUrl = 'https://moneycal.in';
+
+function AddShortsDiscoverChecklist() {
+  const [open, setOpen] = useState(true);
+  return (
+    <div className="mb-6 rounded-xl border border-blue-200 bg-blue-50/60 overflow-hidden">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full flex items-center justify-between gap-2 px-4 py-3 text-left"
+      >
+        <span className="font-semibold text-slate-800 flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-blue-600" />
+          Add multiple shorts daily — Google Discover ready
+        </span>
+        {open ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+      </button>
+      {open && (
+        <div className="px-4 pb-4 pt-0 space-y-2 text-sm text-slate-700">
+          <ul className="space-y-1.5">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
+              <span><strong>Image:</strong> Use an image URL (min 1200px wide for Discover). You can use: <code className="text-xs bg-white px-1 rounded">{DISCOVER_IMAGES[0]}</code></span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
+              <span><strong>Full story link:</strong> Always use an <strong>internal</strong> link to the full article, e.g. <code className="text-xs bg-white px-1 rounded">{baseUrl}/news/markets/article-slug</code></span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
+              <span><strong>Copy:</strong> Short sentences, human-friendly “Why it matters” and “What should you do?” — see <code className="text-xs bg-white px-1 rounded">docs/ADDING-DAILY-SHORTS-GOOGLE-DISCOVER.md</code> in repo.</span>
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
 
 const AddShortsNewsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -220,6 +258,8 @@ const AddShortsNewsPage: React.FC = () => {
           </button>
         </div>
 
+        <AddShortsDiscoverChecklist />
+
         <form onSubmit={handlePublish} className="space-y-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
           {/* Headline */}
           <div>
@@ -280,7 +320,7 @@ const AddShortsNewsPage: React.FC = () => {
               type="url"
               value={fullStoryLink}
               onChange={(e) => setFullStoryLink(e.target.value)}
-              placeholder="https://moneycal.in/news/economy/article-slug"
+              placeholder={`${baseUrl}/news/markets/article-slug (internal full article link)`}
               className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
             />
           </div>
@@ -288,13 +328,13 @@ const AddShortsNewsPage: React.FC = () => {
           {/* Image URL */}
           <div>
             <label className="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
-              <ImageIcon className="w-4 h-4" /> Image URL (optional)
+              <ImageIcon className="w-4 h-4" /> Image URL (recommended for Discover: 1200px wide)
             </label>
             <input
               type="url"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
-              placeholder="https://images.example.com/thumb.jpg"
+              placeholder={DISCOVER_IMAGES[0]}
               className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
             />
             {imageUrl && (

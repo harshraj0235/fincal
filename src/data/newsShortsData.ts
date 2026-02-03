@@ -106,62 +106,90 @@ export function getShortEmbedCode(short: NewsShort): string {
 </div>`;
 }
 
+// Discover-ready image URLs (min 1200px wide recommended). Use for daily trend shorts.
+export const DISCOVER_IMAGES = [
+  `${baseUrl}/images/optimized/pexels-photo-7063778.jpeg`,
+  `${baseUrl}/images/optimized/pexels-photo-6693661.jpeg`,
+  `${baseUrl}/images/optimized/pexels-photo-6802042.jpeg`,
+  `${baseUrl}/images/optimized/pexels-photo-7876708.jpeg`,
+] as const;
+
 // Pre-built shorts derived from existing news (contentRegistry)
-// In production you could generate these from CMS or AI
+// Add multiple shorts daily based on trends; each needs image + internal full-article link for Google Discover
 export const newsShortsList: NewsShort[] = [
-  // Viral 60-second shorts – Rupee, Nifty, Budget aftermath (linked to full stories)
+  // Viral 60-second shorts – human-friendly, Discover-eligible, internal full-story links
   {
     id: 'markets-rupee-explodes-7-year-rally-trade-deal-2026',
     slug: 'rupee-rally-trade-deal',
     category: 'markets',
-    headline: '🔥 Rupee Explodes! Best Rally in 7 Years After India-US Deal!',
+    headline: '🔥 Rupee Hits 7-Year High — Markets SKYROCKET After India-US Deal!',
     whyItMatters: [
-      'Rupee saw massive one-day gain',
-      'Stocks rallied with strong buying',
-      'Foreign investor sentiment improved',
+      'Indian markets jumped sharply and the rupee posted its strongest one-day gain in years.',
+      'A major trade deal with the U.S. was just announced.',
+      'Huge boost to investor sentiment and export expectations.',
     ],
     keyNumbers: ['Nifty +2.5% today', 'INR ~90.27 vs USD'],
-    whatToDo: 'Export-linked stocks & foreign funds could flow in next session.',
+    whatToDo: 'Keep an eye on export-linked stocks and foreign fund flows; sentiment is strong.',
     fullStoryLink: `${baseUrl}/news/markets/india-us-trade-deal-rupee-markets-surge-overnight-2026`,
     fullStoryPath: '/news/markets/india-us-trade-deal-rupee-markets-surge-overnight-2026',
     datePublished: getNewsShortsTodayISO(),
     readTimeSeconds: 45,
+    imageUrl: DISCOVER_IMAGES[0],
+    source: 'static',
+  },
+  {
+    id: 'markets-rupee-rallies-best-day-since-2018-2026',
+    slug: 'rupee-rallies-best-day-since-2018',
+    category: 'markets',
+    headline: '🚀 Rupee RALLIES Like Crazy — Best Day Since 2018!',
+    whyItMatters: [
+      'The Indian rupee surged to its best performance in years.',
+      'That’s fueling optimism on global flows and export-linked sectors.',
+    ],
+    keyNumbers: ['Rupee best day since 2018', 'Export-linked sectors in focus'],
+    whatToDo: 'Watch export-linked sectors and global flow data for follow-through.',
+    fullStoryLink: `${baseUrl}/news/markets/india-us-trade-deal-rupee-markets-surge-overnight-2026`,
+    fullStoryPath: '/news/markets/india-us-trade-deal-rupee-markets-surge-overnight-2026',
+    datePublished: getNewsShortsTodayISO(),
+    readTimeSeconds: 45,
+    imageUrl: DISCOVER_IMAGES[1],
     source: 'static',
   },
   {
     id: 'markets-nifty-surges-global-deals-confidence-2026',
     slug: 'nifty-rally-markets',
     category: 'markets',
-    headline: '🚀 Nifty Surges Hard As Global Deals Fuel Confidence!',
+    headline: '📈 NIFTY SOARS — Broad Rally Across Stocks Today!',
     whyItMatters: [
-      'Index jumped strongly today',
-      'Trade optimism boosted markets',
-      'Buyers across sectors returned',
+      'India’s blue-chip indices climbed strongly.',
+      'Trade optimism lifted investor confidence — big momentum swing in markets.',
     ],
-    keyNumbers: ['Nifty up ~3% today'],
-    whatToDo: 'Watch auto, tech & export stocks for momentum.',
+    keyNumbers: ['Nifty up ~3% today', 'Broad-based buying across sectors'],
+    whatToDo: 'Watch auto, tech and export stocks for momentum; avoid chasing at the open.',
     fullStoryLink: `${baseUrl}/news/markets/wall-street-india-sensex-nifty-rally-trade-optimism-2026`,
     fullStoryPath: '/news/markets/wall-street-india-sensex-nifty-rally-trade-optimism-2026',
     datePublished: getNewsShortsTodayISO(),
     readTimeSeconds: 45,
+    imageUrl: DISCOVER_IMAGES[2],
     source: 'static',
   },
   {
     id: 'economy-budget-aftermath-rbi-support-markets-2026',
     slug: 'budget-market-reaction',
     category: 'economy',
-    headline: '⚠️ Market Shake After Budget — RBI Steps Up Support!',
+    headline: '⚠️ Budget Aftermath Shocks Markets — RBI Steps In!',
     whyItMatters: [
-      'Volatility after key budget moves',
-      'RBI acted on market jitters',
-      'Bonds & equities feeling impact',
+      'After recent budget announcements, financial markets faced volatility.',
+      'The RBI moved to support sentiment.',
+      'Important for both fixed income and equity investors.',
     ],
-    keyNumbers: ['Bond yields ↔ mixed reactions'],
-    whatToDo: 'Investors may see flight to safety assets soon.',
+    keyNumbers: ['Bond yields mixed', 'RBI support in focus'],
+    whatToDo: 'Stay calm; watch for flight to safety and the RBI’s next steps.',
     fullStoryLink: `${baseUrl}/news/economy/budget-2026-india-markets-borderless-direct-fpi-route-2026`,
     fullStoryPath: '/news/economy/budget-2026-india-markets-borderless-direct-fpi-route-2026',
     datePublished: getNewsShortsTodayISO(),
     readTimeSeconds: 45,
+    imageUrl: DISCOVER_IMAGES[3],
     source: 'static',
   },
   {
