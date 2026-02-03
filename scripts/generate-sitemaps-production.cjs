@@ -198,16 +198,25 @@ function loadNewsMetadata() {
   const content = fs.readFileSync(registryPath, 'utf-8');
   const slugMatches = content.match(/slug:\s*['"]([^'"]+)['"]/g) || [];
   const categoryMatches = content.match(/category:\s*['"]([^'"]+)['"]/g) || [];
-  const titleMatches = content.match(/title:\s*['`]([^'`]+)['`]/g) || [];
-  const dateMatches = content.match(/datePublished:\s*['"]([^'"T]+)/g) || [];
+  const dateMatches = content.match(/datePublished:\s*['"]([^'"]+)['"]/g) || [];
+  // Title: single line with optional \' inside
+  const titleMatches = content.match(/title:\s*['`]((?:[^'`\n\\]|\\.)*)['`]/g) || [];
   
   const articles = [];
   for (let i = 0; i < slugMatches.length; i++) {
+    const slug = slugMatches[i].match(/['"]([^'"]+)['"]/)[1];
+    const category = categoryMatches[i] ? categoryMatches[i].match(/['"]([^'"]+)['"]/)[1] : 'markets';
+    const dateRaw = dateMatches[i] ? dateMatches[i].match(/['"]([^'"]+)['"]/)[1] : TODAY;
+    let title = '';
+    if (titleMatches[i]) {
+      const m = titleMatches[i].match(/title:\s*['`]((?:[^'`\n\\]|\\.)*)['`]/);
+      if (m) title = m[1].replace(/\\'/g, "'");
+    }
     articles.push({
-      slug: slugMatches[i].match(/['"]([^'"]+)['"]/)[1],
-      category: categoryMatches[i] ? categoryMatches[i].match(/['"]([^'"]+)['"]/)[1] : 'markets',
-      title: titleMatches[i] ? titleMatches[i].match(/['`]([^'`]+)['`]/)[1] : '',
-      date: dateMatches[i] ? dateMatches[i].match(/['"]([^'"]+)/)[1] : TODAY
+      slug,
+      category,
+      title,
+      date: dateRaw
     });
   }
   
@@ -310,12 +319,23 @@ try {
   const allFiles = [];
   const urlCounts = {};
   
-  // Load news metadata
+  // Load news metadata and build full news URL list from contentRegistry (all articles)
   const newsArticles = loadNewsMetadata();
+  const newsStatic = [
+    `${BASE_URL}/news`,
+    `${BASE_URL}/news/shorts`,
+    `${BASE_URL}/news/markets`,
+    `${BASE_URL}/news/business`,
+    `${BASE_URL}/news/startups`,
+    `${BASE_URL}/news/economy`,
+    `${BASE_URL}/news/tech-business`,
+    `${BASE_URL}/news/business-analysis`
+  ];
+  const newsUrls = [...newsStatic, ...newsArticles.map(a => `${BASE_URL}/news/${a.category}/${a.slug}`)];
   
-  // Generate all sitemaps
+  // Generate all sitemaps (news = all registry articles in Google News format)
   const sitemapConfigs = [
-    { name: 'news', urls: categories.news, priority: 0.8, changefreq: 'daily', isNews: true },
+    { name: 'news', urls: newsUrls, priority: 0.8, changefreq: 'daily', isNews: true },
     { name: 'calculators', urls: categories.calculators, priority: 0.9, changefreq: 'monthly' },
     { name: 'learn', urls: categories.learn, priority: 0.8, changefreq: 'weekly' },
     { name: 'blog', urls: categories.blog, priority: 0.7, changefreq: 'weekly' },
