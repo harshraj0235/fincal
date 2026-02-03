@@ -37,7 +37,16 @@ export interface NewsShort {
   source?: 'static' | 'custom';
 }
 
-const baseUrl = 'https://moneycal.in';
+/** Canonical site URL – use for Google Discover full URLs and schema */
+export const baseUrl = 'https://moneycal.in';
+
+/** Default image for Discover (min 1200px wide recommended). Replace with 1200×630+ when available. */
+export const DISCOVER_IMAGE_DEFAULT = `${baseUrl}/images/optimized/pexels-photo-7063778.jpeg`;
+
+/** Full URL to this short's full story (Google Discover format). */
+export function getShortFullUrl(short: NewsShort): string {
+  return short.fullStoryLink || `${baseUrl}${short.fullStoryPath}`;
+}
 
 /** Today's date in ISO (for fresh content; use at build/render time) */
 export function getNewsShortsTodayISO(): string {

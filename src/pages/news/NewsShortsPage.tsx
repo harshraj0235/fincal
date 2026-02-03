@@ -17,6 +17,9 @@ import {
   newsShortsFilterCategories,
   getShortAsText,
   getShortEmbedCode,
+  getShortFullUrl,
+  baseUrl,
+  DISCOVER_IMAGE_DEFAULT,
   type NewsShort,
   type NewsShortCategory,
 } from '../../data/newsShortsData';
@@ -51,7 +54,24 @@ const NewsShortsPage: React.FC = () => {
   };
 
   const shareUrl = (path: string) =>
-    typeof window !== 'undefined' ? `${window.location.origin}${path}` : `https://moneycal.in${path}`;
+    typeof window !== 'undefined' ? `${window.location.origin}${path}` : baseUrl + path;
+
+  // Google Discover: allow large image preview
+  React.useEffect(() => {
+    let meta = document.querySelector('meta[name="robots"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'robots');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', 'index, follow, max-image-preview:large');
+    return () => {
+      meta?.setAttribute('content', 'index, follow');
+    };
+  }, []);
+
+  const shortsPageUrl = typeof window !== 'undefined' ? window.location.href : `${baseUrl}/news/shorts`;
+  const discoverItems = filtered.slice(0, 12);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 pt-20">
@@ -59,7 +79,8 @@ const NewsShortsPage: React.FC = () => {
         title="Moneycal News in 60 Seconds | Finance Shorts – Short, Clear, Actionable"
         description="Read finance news in 60 seconds. RBI, markets, tax, loans, crypto – short bullets, key numbers, and what you should do. Inshorts-style for Indian finance."
         keywords="news in 60 seconds, finance shorts, Moneycal news, RBI, markets, tax, loans, Indian economy, finance explainer"
-        canonicalUrl="https://moneycal.in/news/shorts"
+        image={DISCOVER_IMAGE_DEFAULT}
+        url={`${baseUrl}/news/shorts`}
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -91,11 +112,39 @@ const NewsShortsPage: React.FC = () => {
                 name: 'Moneycal News in 60 Seconds',
                 description: 'Finance news in 60 seconds. Short, clear, actionable.',
                 dateModified: getCurrentDateISO(),
-                url: typeof window !== 'undefined' ? window.location.href : 'https://moneycal.in/news/shorts',
+                url: shortsPageUrl,
               }),
             }}
           />
         </header>
+
+        {/* Google Discover: multiple content items with full URLs */}
+        <section aria-label="Content for Google Discover" className="mb-10 p-6 rounded-2xl bg-slate-100/80 border border-slate-200">
+          <h2 className="text-lg font-bold text-slate-800 mb-2">Content for Google Discover</h2>
+          <p className="text-sm text-slate-600 mb-4">
+            Finance news in 60 seconds – each item links to the full story with full URL.
+          </p>
+          <ul className="space-y-4">
+            {discoverItems.map((short) => {
+              const fullUrl = getShortFullUrl(short);
+              return (
+                <li key={short.id} className="bg-white rounded-xl p-4 border border-slate-200">
+                  <h3 className="font-semibold text-slate-900">{short.headline}</h3>
+                  <p className="text-sm text-slate-600 mt-1">
+                    {short.whyItMatters[0]}
+                    {short.whyItMatters.length > 1 ? ` ${short.whyItMatters[1]}` : ''}
+                  </p>
+                  <p className="mt-2 text-sm">
+                    <span className="text-slate-500">Full story URL: </span>
+                    <a href={fullUrl} className="text-blue-600 hover:underline break-all" rel="noopener noreferrer">
+                      {fullUrl}
+                    </a>
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
 
         {/* Category filters */}
         <div className="flex flex-wrap gap-2 mb-8">
@@ -125,6 +174,27 @@ const NewsShortsPage: React.FC = () => {
               id={short.slug}
               className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden scroll-mt-24"
             >
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'NewsArticle',
+                    headline: short.headline,
+                    image: [short.imageUrl || DISCOVER_IMAGE_DEFAULT],
+                    datePublished: short.datePublished,
+                    dateModified: short.datePublished,
+                    author: { '@type': 'Organization', name: 'MoneyCal India', url: baseUrl },
+                    publisher: {
+                      '@type': 'Organization',
+                      name: 'MoneyCal India',
+                      logo: { '@type': 'ImageObject', url: `${baseUrl}/android-chrome-512x512.png` },
+                    },
+                    mainEntityOfPage: { '@type': 'WebPage', '@id': getShortFullUrl(short) },
+                    url: getShortFullUrl(short),
+                  }),
+                }}
+              />
               {short.imageUrl && (
                 <div className="w-full aspect-video bg-slate-100">
                   <img src={short.imageUrl} alt={short.headline} className="w-full h-full object-cover" />
@@ -185,9 +255,20 @@ const NewsShortsPage: React.FC = () => {
                   </div>
                 </div>
 
+                <p className="mt-4 text-sm text-slate-500">
+                  Full story URL:{' '}
+                  <a
+                    href={getShortFullUrl(short)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline break-all"
+                  >
+                    {getShortFullUrl(short)}
+                  </a>
+                </p>
                 <Link
                   to={short.fullStoryPath}
-                  className="inline-block mt-4 text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                  className="inline-block mt-2 text-blue-600 hover:text-blue-700 font-semibold text-sm"
                 >
                   🔗 Read full story →
                 </Link>
