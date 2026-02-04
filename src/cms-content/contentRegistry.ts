@@ -13,6 +13,57 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // === Market Movers, IPOs, IT plunge, Macro/Debt, Deepinder Goyal (Feb 2026) ===
+  {
+    id: 'markets-setup-opening-bell-stocks-watch-2026',
+    slug: 'market-setup-top-15-opening-bell-stocks-to-watch-feb-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'मार्केट सेटअप आज: ओपनिंग बेल से पहले टॉप 15 चीजें — Nifty, Stocks to Watch',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-04T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-seven-ipos-14000-crore-feb-2026',
+    slug: 'seven-ipos-14000-crore-feb-end-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: '7 IPO फरवरी अंत तक — ~₹14,000 करोड़; Fractal, Aye Finance, Clean Max',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-02-04T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-it-stocks-plunge-8-percent-2026',
+    slug: 'indian-it-stocks-plunge-8-percent-global-selloff-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'भारतीय IT स्टॉक्स 8% तक गिरे — ग्लोबल टेक सेलऑफ, Infosys, TCS',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-04T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'economy-macro-debt-bonds-inflation-lic-2026',
+    slug: 'macro-debt-bonds-inflation-rbi-lic-housing-feb-2026',
+    category: 'economy',
+    subCategory: 'debt-markets',
+    title: 'मैक्रो और डेब्ट: बॉन्ड यील्ड्स गिरे, इन्फ्लेशन RBI बैंड में, LIC Housing ₹525',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-02-04T12:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'business-deepinder-goyal-ex-employees-zomato-2026',
+    slug: 'deepinder-goyal-open-call-ex-employees-zomato-hiring-2026',
+    category: 'business',
+    subCategory: 'corporate-leadership',
+    title: 'Deepinder Goyal का पूर्व कर्मचारियों के लिए खुला संदेश — Zomato, हायरिंग ट्रेंड',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-04T14:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=630&fit=crop&q=80'
+  },
   // === Hindi audience high-quality news (Feb 2026) - Fractal IPO, Varaha climate tech ===
   {
     id: 'markets-fractal-analytics-ipo-india-2026',

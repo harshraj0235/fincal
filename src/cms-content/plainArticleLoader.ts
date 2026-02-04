@@ -71,6 +71,11 @@ import { budget2026HiddenSurpriseDirectForeignInvestment2026 } from './news-arti
 import { bondsNextBigBetTradeBoom2026 } from './news-articles/markets/bonds-next-big-bet-trade-boom-2026';
 import { fractalAnalyticsIpoSizePriceBand2026 } from './news-articles/markets/fractal-analytics-ipo-size-price-band-india-2026';
 import { varahaClimateTech45MFunding2026 } from './news-articles/startups/varaha-climate-tech-45m-funding-india-2026';
+import { marketSetupTop15OpeningBellStocksWatchFeb2026 } from './news-articles/markets/market-setup-top-15-opening-bell-stocks-to-watch-feb-2026';
+import { sevenIPOs14000CroreFebEnd2026 } from './news-articles/markets/seven-ipos-14000-crore-feb-end-2026';
+import { indianItStocksPlunge8PercentGlobalSelloff2026 } from './news-articles/markets/indian-it-stocks-plunge-8-percent-global-selloff-2026';
+import { macroDebtBondsInflationRbiLicHousingFeb2026 } from './news-articles/economy/macro-debt-bonds-inflation-rbi-lic-housing-feb-2026';
+import { deepinderGoyalOpenCallExEmployeesZomato2026 } from './news-articles/business/deepinder-goyal-open-call-ex-employees-zomato-2026';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -86,6 +91,11 @@ export const plainArticleContentMap: Record<string, any> = {
   'bonds-next-big-bet-or-risk-after-trade-boom-india-2026': bondsNextBigBetTradeBoom2026,
   'fractal-analytics-ipo-size-price-band-india-2026': fractalAnalyticsIpoSizePriceBand2026,
   'varaha-climate-tech-45-million-funding-india-2026': varahaClimateTech45MFunding2026,
+  'market-setup-top-15-opening-bell-stocks-to-watch-feb-2026': marketSetupTop15OpeningBellStocksWatchFeb2026,
+  'seven-ipos-14000-crore-feb-end-2026': sevenIPOs14000CroreFebEnd2026,
+  'indian-it-stocks-plunge-8-percent-global-selloff-2026': indianItStocksPlunge8PercentGlobalSelloff2026,
+  'macro-debt-bonds-inflation-rbi-lic-housing-feb-2026': macroDebtBondsInflationRbiLicHousingFeb2026,
+  'deepinder-goyal-open-call-ex-employees-zomato-hiring-2026': deepinderGoyalOpenCallExEmployeesZomato2026,
   'nifty-50-record-high-fii-inflows-november-2025': demoNiftyArticle,
   'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis': marketRallyDiwali2025,
   'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide': startupFundingWinter2025,

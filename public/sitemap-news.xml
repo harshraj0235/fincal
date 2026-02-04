@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  <!-- MoneyCal NEWS - Google News Format - includes Fractal IPO, Varaha climate tech - 2026-02-01 -->
+  <!-- MoneyCal NEWS - Market Setup, 7 IPOs, IT plunge, Macro/Debt, Deepinder Goyal, Fractal, Varaha - 2026-02-04 -->
   <url>
     <loc>https://moneycal.in/news</loc>
     <lastmod>2025-11-01</lastmod>
@@ -71,6 +71,81 @@
       <news:keywords>Varaha funding, climate tech India, WestBridge, startups</news:keywords>
     </news:news>
     <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/market-setup-top-15-opening-bell-stocks-to-watch-feb-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-04T09:00:00+05:30</news:publication_date>
+      <news:title>मार्केट सेटअप आज: ओपनिंग बेल से पहले टॉप 15 चीजें — Nifty, Stocks to Watch</news:title>
+      <news:keywords>market setup, opening bell, Nifty, stocks to watch, Bajaj Finance</news:keywords>
+    </news:news>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/seven-ipos-14000-crore-feb-end-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-04T10:00:00+05:30</news:publication_date>
+      <news:title>7 IPO फरवरी अंत तक — ~₹14,000 करोड़; Fractal, Aye Finance, Clean Max</news:title>
+      <news:keywords>IPO, Fractal, Aye Finance, Clean Max, 14000 crore</news:keywords>
+    </news:news>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/indian-it-stocks-plunge-8-percent-global-selloff-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-04T11:00:00+05:30</news:publication_date>
+      <news:title>भारतीय IT स्टॉक्स 8% तक गिरे — ग्लोबल टेक सेलऑफ, Infosys, TCS</news:title>
+      <news:keywords>IT stocks, Infosys, TCS, tech selloff, India</news:keywords>
+    </news:news>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/economy/macro-debt-bonds-inflation-rbi-lic-housing-feb-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-04T12:00:00+05:30</news:publication_date>
+      <news:title>मैक्रो और डेब्ट: बॉन्ड यील्ड्स गिरे, इन्फ्लेशन RBI बैंड में, LIC Housing ₹525</news:title>
+      <news:keywords>bond yields, inflation RBI, LIC Housing, macro, debt</news:keywords>
+    </news:news>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/business/deepinder-goyal-open-call-ex-employees-zomato-hiring-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-04T14:00:00+05:30</news:publication_date>
+      <news:title>Deepinder Goyal का पूर्व कर्मचारियों के लिए खुला संदेश — Zomato, हायरिंग ट्रेंड</news:title>
+      <news:keywords>Deepinder Goyal, Zomato, ex-employees, hiring, business</news:keywords>
+    </news:news>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
