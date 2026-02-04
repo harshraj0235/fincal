@@ -14,6 +14,7 @@
     "generate-manual": "node manual-blog-generator.cjs",
     "generate-sitemaps": "node scripts/build-complete-learn-urls.cjs && node scripts/extract-all-routes-from-code.cjs && node scripts/merge-all-urls.cjs && node scripts/generate-news-sitemap-from-registry.cjs && node scripts/generate-sitemaps-production.cjs",
     "generate-news-sitemap": "node scripts/generate-news-sitemap-from-registry.cjs",
+    "fetch-trending-rss": "node scripts/fetch-trending-rss.cjs",
     "deploy": "node deploy.cjs",
     "auto-news": "node scripts/auto-news-generator.cjs",
     "publish-news": "node scripts/auto-news-publisher/main.js",
