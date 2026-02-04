@@ -9,7 +9,7 @@ import {
   Rocket, CheckCircle,
   CreditCard, Building2, Briefcase, Heart, GraduationCap,
   X, Wrench,
-  Newspaper, Coins, FolderOpen, Sparkles,
+  Newspaper, Coins, FolderOpen, Sparkles, Play,
   Receipt, Calendar as CalendarIcon, Gem, Scale,
   Flame, LayoutGrid,
 } from 'lucide-react';
@@ -329,10 +329,17 @@ const HomeInvestopedia: React.FC = () => {
           </div>
         </section>
 
-        {/* Quick nav – internal linking */}
+        {/* Quick nav – internal linking + Money Shorts tab */}
         <section className="sticky top-16 z-30 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <div className="flex flex-wrap items-center justify-center gap-2">
+              <Link
+                to="/news/shorts"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-500/30 hover:from-amber-400 hover:to-orange-400 hover:shadow-amber-400/40 transition-all"
+              >
+                <Play className="w-5 h-5" fill="currentColor" />
+                Money Shorts
+              </Link>
               {QUICK_LINKS.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -347,6 +354,31 @@ const HomeInvestopedia: React.FC = () => {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* Money Shorts – Inshorts-style section: click to open & scroll */}
+        <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900/30 py-10 md:py-14">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMS41Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-80" />
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <span className="inline-block text-amber-400 text-sm font-semibold uppercase tracking-wider mb-2">News in 60 seconds</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
+                Money Shorts
+              </h2>
+              <p className="text-slate-300 text-base sm:text-lg max-w-xl">
+                Swipe through finance news like Inshorts. One card per story — markets, RBI, economy. Scroll or tap to go to the next.
+              </p>
+            </div>
+            <Link
+              to="/news/shorts"
+              className="group flex-shrink-0 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-amber-500 text-slate-900 font-bold text-lg shadow-xl shadow-amber-500/40 hover:bg-amber-400 hover:shadow-amber-400/50 transition-all"
+            >
+              <span className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Play className="w-7 h-7" fill="currentColor" />
+              </span>
+              Open &amp; scroll
+            </Link>
           </div>
         </section>
 
