@@ -108,7 +108,7 @@ function main() {
   }
   console.log(`Found ${articles.length} articles in registry.`);
 
-  const newsCategories = ['markets', 'business', 'startups', 'economy', 'tech-business'];
+  const newsCategories = ['markets', 'business', 'startups', 'economy', 'tech-business', 'business-analysis'];
 
   const urlEntries = [];
 
