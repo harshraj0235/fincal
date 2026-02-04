@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  <!-- MoneyCal NEWS - Google News Format - 52 URLs - 2025-11-01 -->
+  <!-- MoneyCal NEWS - Google News Format - includes Fractal IPO, Varaha climate tech - 2026-02-01 -->
   <url>
     <loc>https://moneycal.in/news</loc>
     <lastmod>2025-11-01</lastmod>
@@ -37,6 +37,42 @@
     <lastmod>2025-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/shorts</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/fractal-analytics-ipo-size-price-band-india-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-01T10:00:00+05:30</news:publication_date>
+      <news:title>Fractal Analytics ने IPO साइज़ 40% काटा — फिर भी ₹1,600 करोड़ वैल्यूएशन, रिटेल बिडिंग 9 फरवरी</news:title>
+      <news:keywords>Fractal Analytics IPO, AI IPO India, price band, markets</news:keywords>
+    </news:news>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/startups/varaha-climate-tech-45-million-funding-india-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>MoneyCal</news:name>
+        <news:language>hi</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-01T11:00:00+05:30</news:publication_date>
+      <news:title>Varaha को $45M फंडिंग — क्लाइमेट टेक में बड़ा डेब्यू, भारत में ग्रीन कैपिटल का संकेत</news:title>
+      <news:keywords>Varaha funding, climate tech India, WestBridge, startups</news:keywords>
+    </news:news>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/markets/bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis</loc>
