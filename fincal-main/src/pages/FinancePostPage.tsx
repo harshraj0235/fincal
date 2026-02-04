@@ -3,6 +3,31 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Calendar, User, Tag, Share2, BookOpen } from 'lucide-react';
 import { getFinancePostBySlug } from '../data/financePosts';
 import SEOHelmet from '../components/SEOHelmet';
+import ReadingProgressBar from '../components/ReadingProgressBar';
+
+const truncateText = (text: string, maxLength: number) => {
+  const trimmed = text.trim();
+  if (trimmed.length <= maxLength) return trimmed;
+  return `${trimmed.slice(0, Math.max(0, maxLength - 3)).trim()}...`;
+};
+
+const splitParagraphs = (content: string) => {
+  return content
+    .split(/\n+/)
+    .map((section) => section.trim())
+    .filter(Boolean);
+};
+
+const extractSummaryPoints = (content: string, limit: number) => {
+  const paragraphs = splitParagraphs(content);
+  const sentences = content
+    .split(/[.!?]\s+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+
+  const source = paragraphs.length >= limit ? paragraphs : sentences;
+  return source.slice(0, limit).map((item) => truncateText(item, 160));
+};
 
 const FinancePostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -45,6 +70,9 @@ const FinancePostPage: React.FC = () => {
   // Calculate reading time (average 200 words per minute)
   const wordCount = post.content.split(/\s+/).length;
   const readingTime = Math.ceil(wordCount / 200);
+
+  const contentBlocks = splitParagraphs(post.content);
+  const summaryPoints = extractSummaryPoints(post.content, 4);
 
   // Structured data for SEO
   const postStructuredData = {
@@ -90,6 +118,7 @@ const FinancePostPage: React.FC = () => {
 
   return (
     <>
+      <ReadingProgressBar targetId="finance-article" />
       <SEOHelmet
         title={`${post.title} - Moneycal Finance Blog`}
         description={post.content.substring(0, 160) + "..."}
@@ -99,10 +128,10 @@ const FinancePostPage: React.FC = () => {
         tags={[post.category || "Finance", "Personal Finance", "Investment"]}
       />
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-slate-50/60">
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
@@ -113,9 +142,9 @@ const FinancePostPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Article Header */}
-          <article className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <article id="finance-article" className="bg-white rounded-2xl shadow-sm ring-1 ring-slate-200/70 overflow-hidden">
             {/* Featured Image */}
             {post.image && (
               <div className="relative h-64 sm:h-80 overflow-hidden">
@@ -135,7 +164,7 @@ const FinancePostPage: React.FC = () => {
             {/* Article Content */}
             <div className="p-6 sm:p-8">
               {/* Meta Information */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600 mb-6">
                 {post.category && (
                   <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full flex items-center gap-1">
                     <Tag size={14} />
@@ -159,12 +188,23 @@ const FinancePostPage: React.FC = () => {
               </div>
 
               {/* Title */}
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                 {post.title}
               </h1>
 
+              {summaryPoints.length > 0 && (
+                <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50/80 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">Key takeaways</p>
+                  <ul className="list-disc pl-5 space-y-1 text-sm text-slate-700">
+                    {summaryPoints.map((point, idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {/* Share Button */}
-              <div className="flex justify-between items-center mb-8 pb-6 border-b border-gray-200">
+              <div className="mt-6 flex justify-between items-center mb-8 pb-6 border-b border-gray-200">
                 <div className="text-sm text-gray-500">
                   {wordCount} words
                 </div>
@@ -178,10 +218,12 @@ const FinancePostPage: React.FC = () => {
               </div>
 
               {/* Content */}
-              <div className="prose prose-lg max-w-none">
-                <div className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-                  {post.content}
-                </div>
+              <div className="prose prose-slate prose-lg max-w-none">
+                {contentBlocks.map((paragraph, idx) => (
+                  <p key={idx} className="text-slate-700 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
 
               {/* Video */}

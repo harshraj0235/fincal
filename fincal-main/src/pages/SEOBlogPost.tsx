@@ -4,6 +4,50 @@ import { Calendar, User, Tag, ArrowLeft, Share2, BookOpen, Clock, TrendingUp } f
 import { seoBlogPosts } from '../data/seo-blog-posts';
 import { BlogPost } from '../data/blogs/types';
 import AdvancedSEO from '../components/AdvancedSEO';
+import ReadingProgressBar from '../components/ReadingProgressBar';
+
+type TocItem = {
+  id: string;
+  text: string;
+  level: 'heading' | 'subheading';
+};
+
+const truncateText = (text: string, maxLength: number) => {
+  const trimmed = text.trim();
+  if (trimmed.length <= maxLength) return trimmed;
+  return `${trimmed.slice(0, Math.max(0, maxLength - 3)).trim()}...`;
+};
+
+const extractSummaryPoints = (content: BlogPost['content'], limit: number) => {
+  const listPoints: string[] = [];
+  content.forEach((section) => {
+    if (section.type === 'list' && section.items?.length) {
+      listPoints.push(...section.items);
+    }
+  });
+
+  if (listPoints.length > 0) {
+    return listPoints.slice(0, limit).map(item => truncateText(item, 160));
+  }
+
+  const paragraphPoints = content
+    .filter(section => section.type === 'paragraph' && section.content)
+    .map(section => section.content as string);
+
+  return paragraphPoints.slice(0, limit).map(item => truncateText(item, 160));
+};
+
+const countWords = (content: BlogPost['content']) => {
+  return content.reduce((count, item) => {
+    if (item.type === 'paragraph' && item.content) {
+      return count + item.content.split(' ').length;
+    }
+    if (item.type === 'list' && item.items) {
+      return count + item.items.join(' ').split(' ').length;
+    }
+    return count;
+  }, 0);
+};
 
 const SEOBlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -51,11 +95,30 @@ const SEOBlogPost: React.FC = () => {
     });
   };
 
-  const renderContent = (content: any) => {
+  const wordCount = countWords(post.content);
+  const readingTime = Math.max(3, Math.ceil(wordCount / 200));
+
+  const tocItems = post.content
+    .map((section, index) => {
+      if (section.type === 'heading' || section.type === 'subheading') {
+        const text = section.content?.trim();
+        if (!text) return null;
+        return { id: `section-${index}`, text, level: section.type } as TocItem;
+      }
+      return null;
+    })
+    .filter((item): item is TocItem => item !== null);
+
+  const summaryPoints = extractSummaryPoints(post.content, 4);
+
+  const renderContent = (content: any, index: number) => {
     switch (content.type) {
       case 'heading':
         return (
-          <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4 first:mt-0">
+          <h2
+            id={`section-${index}`}
+            className="text-2xl font-bold text-gray-900 mt-8 mb-4 first:mt-0 scroll-mt-24"
+          >
             {content.content}
           </h2>
         );
@@ -74,6 +137,15 @@ const SEOBlogPost: React.FC = () => {
               </li>
             ))}
           </ul>
+        );
+      case 'subheading':
+        return (
+          <h3
+            id={`section-${index}`}
+            className="text-xl font-semibold text-gray-900 mt-6 mb-3 scroll-mt-24"
+          >
+            {content.content}
+          </h3>
         );
       default:
         return null;
@@ -110,30 +182,24 @@ const SEOBlogPost: React.FC = () => {
       },
       "keywords": post.keywords.join(", "),
       "articleSection": post.categories.join(", "),
-      "wordCount": post.content.reduce((count, item) => {
-        if (item.type === 'paragraph') {
-          return count + item.content.split(' ').length;
-        } else if (item.type === 'list') {
-          return count + item.items.join(' ').split(' ').length;
-        }
-        return count;
-      }, 0)
+      "wordCount": wordCount
     };
   };
 
   return (
     <>
+      <ReadingProgressBar targetId="seo-article" />
       <AdvancedSEO
         title={post.title}
         description={post.metaDescription}
         keywords={post.keywords.join(', ')}
         structuredData={generateStructuredData()}
       />
-      
-      <div className="min-h-screen bg-gray-50">
+
+      <div className="min-h-screen bg-slate-50/60">
         {/* Navigation */}
         <div className="bg-white shadow-sm">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <Link
               to="/blog"
               className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
@@ -144,62 +210,72 @@ const SEOBlogPost: React.FC = () => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Article Header */}
-          <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-            {/* Cover Image */}
-            <div className="aspect-w-16 aspect-h-9 bg-gradient-to-r from-blue-500 to-purple-600">
-              <div className="w-full h-64 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <div className="text-4xl font-bold mb-2">📊</div>
-                  <div className="text-lg opacity-90">Finance Guide</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-8">
-              {/* Categories */}
+          <article id="seo-article" className="bg-white rounded-2xl shadow-sm ring-1 ring-slate-200/70 overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-8 text-white">
               <div className="flex flex-wrap gap-2 mb-4">
                 {post.categories.map((category) => (
                   <span
                     key={category}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+                    className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide"
                   >
                     {category}
                   </span>
                 ))}
               </div>
-
-              {/* Title */}
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+              <h1 className="text-3xl md:text-4xl font-bold leading-tight">
                 {post.title}
               </h1>
-
-              {/* Meta Information */}
-              <div className="flex flex-wrap items-center text-gray-600 mb-6 space-x-6">
-                <div className="flex items-center">
-                  <User className="w-4 h-4 mr-2" />
+              <p className="text-blue-50 mt-3 max-w-3xl">
+                {post.excerpt}
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-sm text-blue-100 mt-4">
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4" />
                   <span>{post.author}</span>
                 </div>
-                <div className="flex items-center">
-                  <Calendar className="w-4 h-4 mr-2" />
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
                   <span>{formatDate(post.date)}</span>
                 </div>
-                <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-2" />
-                  <span>15 min read</span>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>{readingTime} min read</span>
                 </div>
-                <div className="flex items-center">
-                  <BookOpen className="w-4 h-4 mr-2" />
-                  <span>{post.content.length} sections</span>
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-4 h-4" />
+                  <span>{wordCount.toLocaleString()} words</span>
                 </div>
               </div>
+            </div>
 
-              {/* Excerpt */}
-              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8">
-                <p className="text-lg text-gray-700 italic">
-                  {post.excerpt}
-                </p>
+            <div className="p-6 sm:p-8">
+              <div className="grid gap-4 lg:grid-cols-2 mb-8">
+                {summaryPoints.length > 0 && (
+                  <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">Key takeaways</p>
+                    <ul className="list-disc pl-5 space-y-1 text-sm text-slate-700">
+                      {summaryPoints.map((point, idx) => (
+                        <li key={idx}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {tocItems.length > 1 && (
+                  <div className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">On this page</p>
+                    <ul className="space-y-2 text-sm text-slate-600">
+                      {tocItems.map((item) => (
+                        <li key={item.id} className={item.level === 'subheading' ? 'ml-3' : ''}>
+                          <a href={`#${item.id}`} className="hover:text-blue-600 transition-colors">
+                            {item.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
 
               {/* Author Bio */}
@@ -231,10 +307,10 @@ const SEOBlogPost: React.FC = () => {
               </div>
 
               {/* Article Content */}
-              <div className="prose prose-lg max-w-none">
+              <div className="prose prose-slate prose-lg lg:prose-xl max-w-none">
                 {post.content.map((content, index) => (
                   <div key={index}>
-                    {renderContent(content)}
+                    {renderContent(content, index)}
                   </div>
                 ))}
               </div>

@@ -5,6 +5,7 @@ import { getGovernmentSchemeBySlug, getRelatedGovernmentSchemes } from '../data/
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
+import ReadingProgressBar from '../components/ReadingProgressBar';
 
 interface TocItem {
   idx: number;
@@ -17,6 +18,31 @@ const AUTHOR = {
   linkedin: 'https://www.linkedin.com/in/harshitpatel9/',
   twitter: 'https://x.com/harshitx9',
   bio: 'Harsh Raj is a Software Engineer with years of experience helping people make smart investment decisions. Passionate about financial literacy and transparent, trustworthy guidance.'
+};
+
+const truncateText = (text: string, maxLength: number) => {
+  const trimmed = text.trim();
+  if (trimmed.length <= maxLength) return trimmed;
+  return `${trimmed.slice(0, Math.max(0, maxLength - 3)).trim()}...`;
+};
+
+const extractSummaryPoints = (content: { type: string; content?: string; items?: string[] }[], limit: number) => {
+  const listPoints: string[] = [];
+  content.forEach((section) => {
+    if (section.type === 'list' && section.items?.length) {
+      listPoints.push(...section.items);
+    }
+  });
+
+  if (listPoints.length > 0) {
+    return listPoints.slice(0, limit).map(item => truncateText(item, 160));
+  }
+
+  const paragraphPoints = content
+    .filter(section => section.type === 'paragraph' && section.content)
+    .map(section => section.content as string);
+
+  return paragraphPoints.slice(0, limit).map(item => truncateText(item, 160));
 };
 
 const GovernmentSchemePost: React.FC = () => {
@@ -36,6 +62,11 @@ const GovernmentSchemePost: React.FC = () => {
         return null;
       })
       .filter((item): item is TocItem => item !== null);
+  }, [scheme]);
+
+  const summaryPoints = useMemo(() => {
+    if (!scheme || !scheme.content) return [];
+    return extractSummaryPoints(scheme.content, 4);
   }, [scheme]);
 
   // Share Link handlers
@@ -77,6 +108,7 @@ const GovernmentSchemePost: React.FC = () => {
 
   return (
     <>
+      <ReadingProgressBar targetId="scheme-article" />
       <WhatsAppBanner />
       <AstroFinanceButton />
       <div className="min-h-screen bg-gray-50">
@@ -143,7 +175,17 @@ const GovernmentSchemePost: React.FC = () => {
       </div>
 
       {/* Main Blog Content */}
-      <div className="max-w-4xl mx-auto px-2 sm:px-4 py-6 sm:py-10">
+      <div id="scheme-article" className="max-w-4xl mx-auto px-2 sm:px-4 py-6 sm:py-10">
+        {summaryPoints.length > 0 && (
+          <div className="mb-8 bg-white p-4 sm:p-6 rounded-lg shadow-sm border">
+            <div className="font-semibold mb-3 text-gray-900 text-base sm:text-lg">मुख्य बातें</div>
+            <ul className="list-disc pl-5 space-y-2 text-gray-800 text-sm sm:text-base">
+              {summaryPoints.map((point, idx) => (
+                <li key={idx}>{point}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         {/* Table of Contents */}
         {toc.length > 2 && (
           <div className="mb-8 bg-white p-4 sm:p-6 rounded-lg shadow-sm border">

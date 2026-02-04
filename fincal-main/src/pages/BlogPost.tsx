@@ -14,6 +14,7 @@ import { astroBlog6 } from '../data/astroBlogs/astroBlog6';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 import SEOHelmet from '../components/SEOHelmet';
+import ReadingProgressBar from '../components/ReadingProgressBar';
 
 const AUTHOR_NAME = "Harsh Raj";
 const AUTHOR_LINKEDIN = "https://www.linkedin.com/in/harshitpatel9/";
@@ -42,6 +43,65 @@ const getRelatedAstroPosts = (currentSlug: string, limit: number = 3) => {
     .slice(0, limit);
 };
 
+type TocItem = {
+  id: string;
+  text: string;
+  level: 'heading' | 'subheading';
+};
+
+type BlogContentSection = {
+  type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'image' | 'quote';
+  content?: string;
+  items?: string[];
+  url?: string;
+  caption?: string;
+  author?: string;
+};
+
+const truncateText = (text: string, maxLength: number) => {
+  const trimmed = text.trim();
+  if (trimmed.length <= maxLength) return trimmed;
+  return `${trimmed.slice(0, Math.max(0, maxLength - 3)).trim()}...`;
+};
+
+const extractSentences = (text: string, limit: number) => {
+  if (!text) return [];
+  const sentences = text
+    .split(/[.!?]\s+/)
+    .map(sentence => sentence.trim())
+    .filter(Boolean);
+  return sentences.slice(0, limit).map(sentence => truncateText(sentence, 160));
+};
+
+const extractSummaryPoints = (sections: BlogContentSection[], limit: number) => {
+  const listPoints: string[] = [];
+  sections.forEach((section) => {
+    if (section.type === 'list' && section.items?.length) {
+      listPoints.push(...section.items);
+    }
+  });
+
+  if (listPoints.length > 0) {
+    return listPoints.slice(0, limit).map(item => truncateText(item, 160));
+  }
+
+  const paragraphPoints = sections
+    .filter(section => section.type === 'paragraph' && section.content)
+    .map(section => section.content as string);
+
+  return paragraphPoints.slice(0, limit).map(item => truncateText(item, 160));
+};
+
+const formatDate = (value: string) => {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString('en-IN', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
 export const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -52,16 +112,6 @@ export const BlogPost: React.FC = () => {
 
   const post = isAstroBlog ? getAstroBlogBySlug(slug || '') : getBlogPostBySlug(slug || '');
   const relatedPosts = isAstroBlog ? getRelatedAstroPosts(slug || '', 3) : getRelatedPosts(slug || '', 3);
-
-  // Content typing helpers to avoid implicit any and union issues
-  type BlogContentSection = {
-    type: 'paragraph' | 'heading' | 'subheading' | 'list' | 'image' | 'quote';
-    content?: string;
-    items?: string[];
-    url?: string;
-    caption?: string;
-    author?: string;
-  };
 
   const astroHtml: string = typeof (post as { content?: unknown })?.content === 'string' ? (post as { content: string }).content : '';
   const sections: BlogContentSection[] = Array.isArray((post as { content?: unknown })?.content) ? ((post as { content: unknown[] }).content as BlogContentSection[]) : [];
@@ -139,6 +189,26 @@ export const BlogPost: React.FC = () => {
     return count;
   }, 0) : 500;
 
+  const formattedDate = formatDate(post.date);
+  const lastUpdated = formatDate(new Date().toISOString());
+
+  const tocItems = isAstroBlog
+    ? []
+    : sections
+        .map((section, index) => {
+          if (section.type === 'heading' || section.type === 'subheading') {
+            const text = section.content?.trim();
+            if (!text) return null;
+            return { id: `section-${index}`, text, level: section.type } as TocItem;
+          }
+          return null;
+        })
+        .filter((item): item is TocItem => item !== null);
+
+  const summaryPoints = isAstroBlog
+    ? extractSentences(post.excerpt || '', 3)
+    : extractSummaryPoints(sections, 4);
+
   // Generate structured data for SEO
   const generateStructuredData = () => {
     return {
@@ -175,6 +245,7 @@ export const BlogPost: React.FC = () => {
 
   return (
     <>
+      <ReadingProgressBar targetId="blog-article" />
       <WhatsAppBanner />
       <AstroFinanceButton />
       <SEOHelmet
@@ -187,7 +258,8 @@ export const BlogPost: React.FC = () => {
       <script type="application/ld+json">
         {JSON.stringify(generateStructuredData())}
       </script>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
+      <div className="bg-slate-50/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         {/* Back button */}
         <div className="mb-6">
           <button
@@ -201,44 +273,49 @@ export const BlogPost: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Main blog section */}
           <div className="lg:col-span-2">
-            <article className="bg-white rounded-xl shadow-sm p-4 sm:p-8">
+            <article id="blog-article" className="bg-white rounded-2xl shadow-sm ring-1 ring-slate-200/70 p-5 sm:p-8 lg:p-10">
               {/* Blog header */}
-              <header className="mb-6">
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mb-2 leading-tight">{post.title}</h1>
-                <div className="flex flex-wrap items-center text-sm text-neutral-500 gap-x-6 gap-y-2">
-                  <div className="flex items-center">
-                    <User className="h-4 w-4 mr-1" />
-                    <Link 
-                      to="/author/harsh-raj" 
+              <header className="mb-8">
+                <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-neutral-500">
+                  <div className="flex items-center gap-2">
+                    <User className="h-4 w-4" />
+                    <Link
+                      to="/author/harsh-raj"
                       className="hover:text-blue-600 transition-colors"
                     >
                       {AUTHOR_NAME}
                     </Link>
                   </div>
-                  <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-1" />
-                    <span>{post.date}</span>
-                    <span className="mx-2">•</span>
-                    <span>Last updated: {new Date().toISOString().split('T')[0]}</span>
-                    <span className="mx-2">•</span>
-                    <span>{readingTime} min read</span>
-                    <span className="mx-2">•</span>
-                    <span>{wordCount.toLocaleString()} words</span>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    <span>{formattedDate}</span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {post.categories.map((category) => (
-                      <span
-                        key={category}
-                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
-                      >
-                        <Tag className="h-3 w-3 mr-1" />
-                        {category}
-                      </span>
-                    ))}
-                  </div>
+                  <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-600">
+                    Updated {lastUpdated}
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-600">
+                    {readingTime} min read
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-xs text-slate-600">
+                    {wordCount.toLocaleString()} words
+                  </span>
+                </div>
+                <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 leading-tight">
+                  {post.title}
+                </h1>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {post.categories.map((category) => (
+                    <span
+                      key={category}
+                      className="inline-flex items-center gap-1 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-medium text-primary-800"
+                    >
+                      <Tag className="h-3 w-3" />
+                      {category}
+                    </span>
+                  ))}
                 </div>
                 {post.coverImage && (
-                  <div className="mt-6 rounded-xl overflow-hidden shadow-md">
+                  <div className="mt-6 rounded-2xl overflow-hidden shadow-md">
                     <picture>
                       <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
                       <img
@@ -250,17 +327,35 @@ export const BlogPost: React.FC = () => {
                     </picture>
                   </div>
                 )}
+                <div className="mt-6 grid gap-4 lg:grid-cols-2">
+                  <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-2">Quick summary</p>
+                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                  {summaryPoints.length > 0 && (
+                    <div className="rounded-xl border border-blue-100 bg-blue-50/70 p-4">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-blue-700 mb-2">Key takeaways</p>
+                      <ul className="list-disc pl-5 space-y-1 text-sm sm:text-base text-blue-900/90">
+                        {summaryPoints.map((point, idx) => (
+                          <li key={idx}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </header>
               {/* Blog content */}
-              <div className="prose prose-lg max-w-none mb-8">
-                 {isAstroBlog ? (
-                   // For astro blogs, content is HTML string
-                   <div 
+              <div className="prose prose-slate prose-lg lg:prose-xl max-w-none mb-10">
+                {isAstroBlog ? (
+                  // For astro blogs, content is HTML string
+                  <div
                     dangerouslySetInnerHTML={{ __html: astroHtml }}
                     className="astro-blog-content"
                   />
-                 ) : (
-                   // For regular blogs, content is structured array
+                ) : (
+                  // For regular blogs, content is structured array
                   sections.map((section: BlogContentSection, index: number) => {
                     // Helper function to render text with links as cards
                     const renderTextWithLinks = (text: string) => {
@@ -268,84 +363,115 @@ export const BlogPost: React.FC = () => {
                       const parts: (string | JSX.Element)[] = [];
                       let lastIndex = 0;
                       let match;
-                      
+
                       while ((match = linkRegex.exec(text)) !== null) {
-                        // Add text before link
                         if (match.index > lastIndex) {
                           parts.push(text.substring(lastIndex, match.index));
                         }
-                        
-                        // Add link as card
+
                         const linkText = match[1];
                         const linkUrl = match[2];
+                        const isExternal = /^https?:\/\//i.test(linkUrl);
+
                         parts.push(
-                          <Link
-                            key={match.index}
-                            to={linkUrl}
-                            className="inline-flex items-center gap-2 px-4 py-2 my-2 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 border-2 border-blue-200 hover:border-blue-400 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-md font-medium text-blue-700 hover:text-blue-900"
-                          >
-                            <span>🔗</span>
-                            <span>{linkText}</span>
-                            <span className="text-xs opacity-70">→</span>
-                          </Link>
+                          isExternal ? (
+                            <a
+                              key={match.index}
+                              href={linkUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-3 py-1.5 my-2 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 border border-blue-200 hover:border-blue-300 rounded-lg transition-all duration-300 font-medium text-blue-700 hover:text-blue-900"
+                            >
+                              <span>🔗</span>
+                              <span>{linkText}</span>
+                              <span className="text-xs opacity-70">→</span>
+                            </a>
+                          ) : (
+                            <Link
+                              key={match.index}
+                              to={linkUrl}
+                              className="inline-flex items-center gap-2 px-3 py-1.5 my-2 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 border border-blue-200 hover:border-blue-300 rounded-lg transition-all duration-300 font-medium text-blue-700 hover:text-blue-900"
+                            >
+                              <span>🔗</span>
+                              <span>{linkText}</span>
+                              <span className="text-xs opacity-70">→</span>
+                            </Link>
+                          )
                         );
-                        
+
                         lastIndex = match.index + match[0].length;
                       }
-                      
-                      // Add remaining text
+
                       if (lastIndex < text.length) {
                         parts.push(text.substring(lastIndex));
                       }
-                      
+
                       return parts.length > 0 ? parts : text;
                     };
-                    
+
                     return (
-                  <div key={index} className="mb-8">
-                    {section.type === 'paragraph' && <p>{renderTextWithLinks(section.content || '')}</p>}
-                    {section.type === 'heading' && <h2 className="text-2xl font-bold mt-8 mb-4">{renderTextWithLinks(section.content || '')}</h2>}
-                    {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{renderTextWithLinks(section.content || '')}</h3>}
-                    {section.type === 'list' && (
-                      <ul className="list-none pl-0 space-y-3">
-                        {(section.items || []).map((item: string, i: number) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-blue-600 mt-1">•</span>
-                            <span className="flex-1">{renderTextWithLinks(item)}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {section.type === 'image' && section.url && (
-                      <figure className="my-6">
-                        <picture>
-                          <source srcSet={section.url.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                          <img
-                            src={section.url}
-                            alt={section.caption || ''}
-                            className="w-full rounded-lg"
-                            loading="lazy"
-                          />
-                        </picture>
-                        {section.caption && (
-                          <figcaption className="text-sm text-neutral-500 text-center mt-2">
-                            {section.caption}
-                          </figcaption>
+                      <div key={index} className="mb-8">
+                        {section.type === 'paragraph' && (
+                          <p className="text-neutral-700 leading-relaxed">
+                            {renderTextWithLinks(section.content || '')}
+                          </p>
                         )}
-                      </figure>
-                    )}
-                    {section.type === 'quote' && (
-                      <blockquote className="border-l-4 border-primary-500 pl-4 py-2 my-6 text-neutral-700 italic">
-                        {renderTextWithLinks(section.content || '')}
-                        {section.author && (
-                          <footer className="text-sm text-neutral-500 mt-2">— {section.author}</footer>
+                        {section.type === 'heading' && (
+                          <h2
+                            id={`section-${index}`}
+                            className="text-2xl font-bold mt-8 mb-4 scroll-mt-24 text-neutral-900"
+                          >
+                            {renderTextWithLinks(section.content || '')}
+                          </h2>
                         )}
-                      </blockquote>
-                    )}
-                  </div>
+                        {section.type === 'subheading' && (
+                          <h3
+                            id={`section-${index}`}
+                            className="text-xl font-semibold mt-6 mb-3 scroll-mt-24 text-neutral-900"
+                          >
+                            {renderTextWithLinks(section.content || '')}
+                          </h3>
+                        )}
+                        {section.type === 'list' && (
+                          <ul className="list-none pl-0 space-y-3">
+                            {(section.items || []).map((item: string, i: number) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-blue-600 mt-1">•</span>
+                                <span className="flex-1 text-neutral-700">{renderTextWithLinks(item)}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {section.type === 'image' && section.url && (
+                          <figure className="my-6">
+                            <picture>
+                              <source srcSet={section.url.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                              <img
+                                src={section.url}
+                                alt={section.caption || ''}
+                                className="w-full rounded-xl shadow-sm"
+                                loading="lazy"
+                              />
+                            </picture>
+                            {section.caption && (
+                              <figcaption className="text-sm text-neutral-500 text-center mt-2">
+                                {section.caption}
+                              </figcaption>
+                            )}
+                          </figure>
+                        )}
+                        {section.type === 'quote' && (
+                          <blockquote className="border-l-4 border-primary-500 pl-4 py-3 my-6 text-neutral-700 italic bg-slate-50 rounded-r-lg">
+                            {renderTextWithLinks(section.content || '')}
+                            {section.author && (
+                              <footer className="text-sm text-neutral-500 mt-2">— {section.author}</footer>
+                            )}
+                          </blockquote>
+                        )}
+                      </div>
                     );
                   })
-                 )}
+                )}
               </div>
               {/* Social Share & Save */}
               <div className="border-t border-b border-neutral-200 py-6 my-8 flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -454,6 +580,24 @@ export const BlogPost: React.FC = () => {
           </div>
           {/* Sidebar */}
           <aside className="lg:col-span-1 space-y-8">
+            {tocItems.length > 1 && (
+              <section className="bg-white rounded-xl shadow-md p-6 lg:sticky lg:top-24">
+                <h3 className="text-lg font-semibold text-neutral-900">On this page</h3>
+                <p className="text-xs text-neutral-500 mt-1 mb-4">Jump to the section you need.</p>
+                <ul className="space-y-2 text-sm text-neutral-600">
+                  {tocItems.map((item) => (
+                    <li key={item.id} className={item.level === 'subheading' ? 'ml-3' : ''}>
+                      <a
+                        href={`#${item.id}`}
+                        className="hover:text-blue-600 transition-colors"
+                      >
+                        {item.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
             {/* Related Articles */}
             <section className="bg-white rounded-xl shadow-md p-6">
               <h3 className="text-xl font-semibold text-neutral-900 mb-4">Related Articles</h3>
@@ -540,6 +684,7 @@ export const BlogPost: React.FC = () => {
             </section>
           </aside>
         </div>
+      </div>
       </div>
       {/* Disclaimer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
