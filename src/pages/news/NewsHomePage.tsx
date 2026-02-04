@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { TrendingUp, ChevronLeft, ChevronRight, Newspaper, LayoutGrid, Clock } from 'lucide-react';
+import { TrendingUp, ChevronLeft, ChevronRight, Newspaper, LayoutGrid, Play } from 'lucide-react';
 import { contentRegistry } from '../../cms-content/contentRegistry';
 import { newsCategories } from '../../data/newsCategories';
 import { teamProfiles } from '../../data/teamProfiles';
@@ -46,9 +46,18 @@ const NewsHomePage: React.FC = () => {
       <div className="sticky top-16 z-30 bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <Newspaper className="w-6 h-6 text-blue-600" />
-              <h1 className="text-xl font-bold text-slate-900">MoneyCal News</h1>
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <Newspaper className="w-6 h-6 text-blue-600" />
+                <h1 className="text-xl font-bold text-slate-900">MoneyCal News</h1>
+              </div>
+              <Link
+                to="/news/shorts"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-amber-500 text-slate-900 hover:bg-amber-400 shadow-md transition-colors"
+              >
+                <Play className="w-4 h-4" />
+                Money Shorts
+              </Link>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <div className="flex-1 max-w-xl">
@@ -85,25 +94,6 @@ const NewsHomePage: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* News in 60 Seconds – Inshorts-style shorts */}
-        <section className="mb-8">
-          <Link
-            to="/news/shorts"
-            className="flex items-center justify-between gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 hover:border-blue-200 hover:shadow-md transition-all"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
-                <Clock className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <h2 className="font-bold text-slate-900">Moneycal News in 60 Seconds</h2>
-                <p className="text-sm text-slate-600">Short. Clear. Actionable. Read in 30–45 seconds.</p>
-              </div>
-            </div>
-            <ChevronRight className="w-5 h-5 text-blue-600 flex-shrink-0" />
-          </Link>
-        </section>
-
         {/* Top story / For you – big card (only when All) */}
         {selectedCategory === 'all' && featuredArticle && (
           <motion.section

@@ -1,7 +1,8 @@
 import { NewsArticle } from '../../../types/news';
 
 /**
- * Macro & Debt — Offshore debt, bond yields, inflation RBI, LIC Housing Finance analyst call
+ * Macro & Debt — Offshore debt window, bond yields lower after trade deal, inflation in RBI band, LIC Housing accumulate
+ * 1000+ words | Hindi audience | Internal links
  */
 export const macroDebtBondsInflationRbiLicHousingFeb2026: NewsArticle = {
   id: 'economy-macro-debt-bonds-inflation-lic-2026',
@@ -38,7 +39,7 @@ export const macroDebtBondsInflationRbiLicHousingFeb2026: NewsArticle = {
 
 <hr class="section-divider" />
 <h2 class="section-heading">बजट और फिस्कल — संक्षिप्त कॉन्टेक्स्ट</h2>
-<p>Budget 2026 को कई विश्लेषक संरचनात्मक ग्रोथ शिफ्ट का निशान मान रहे हैं। सार्वजनिक स्वास्थ्य खर्च पर चिंता जताई गई है कि बढ़ने के बावजूद यह कम ही रहता है — फिस्कल पॉलिसी और सोशल फाइनेंस एंगल से यह थीम रिलेवंट है। मैक्रो और डेब्ट मार्केट अपडेट के लिए ऑफशोर डेट, बॉन्ड यील्ड्स, इन्फ्लेशन RBI और LIC Housing जैसे थीम्स पर नजर रखें। <a href="/news/economy">इकोनॉमी</a>, <a href="/news/markets">मार्केट्स</a> और <a href="/learn">लर्न</a> से जुड़े रहें।</p>
+<p>Budget 2026 को कई विश्लेषक संरचनात्मक ग्रोथ शिफ्ट का निशान मान रहे हैं — "Budget 2026 marks structural growth shift" जैसी हाई-एंगेजमेंट ओपिनियन पीस। सार्वजनिक स्वास्थ्य खर्च पर चिंता जताई गई है कि बढ़ने के बावजूद यह कम ही रहता है — फिस्कल पॉलिसी और सोशल फाइनेंस एंगल से यह थीम रिलेवंट है। मैक्रो और डेब्ट मार्केट अपडेट के लिए ऑफशोर डेट, बॉन्ड यील्ड्स, इन्फ्लेशन RBI और LIC Housing जैसे थीम्स पर नजर रखें। <a href="/news/economy">इकोनॉमी</a>, <a href="/news/markets">मार्केट्स</a> और <a href="/learn">लर्न</a> से जुड़े रहें।</p>
 
 <div class="data-box">
 <p><strong>डेटा:</strong> ऑफशोर डेट विंडो — कॉर्पोरेट सस्ते ग्लोबल फंड्स की ओर। बॉन्ड यील्ड्स ट्रेड डील के बाद निचले। इन्फ्लेशन RBI बैंड में (FM)। LIC Housing Accumulate, टार्गेट ₹525।</p>

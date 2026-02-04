@@ -1,15 +1,16 @@
 import { NewsArticle } from '../../../types/news';
 
 /**
- * Market Trade Setup Today — Top 15 Things Before Opening Bell, Stocks to Watch
- * Nifty, sectors, data cues, Bajaj Finance, Aditya Birla Capital, Castrol, Aarti Drugs, V2 Retail
+ * Market Trade Setup Today — Top 15 Things Before Opening Bell
+ * What traders should watch: Nifty, sectors, data cues. Sensex/Nifty LIVE, Stocks to Watch.
+ * 1000+ words | Hindi audience | Internal links
  */
 export const marketSetupTop15OpeningBellStocksWatchFeb2026: NewsArticle = {
   id: 'markets-setup-opening-bell-stocks-watch-2026',
   slug: 'market-setup-top-15-opening-bell-stocks-to-watch-feb-2026',
   category: 'markets',
   subCategory: 'equity-markets',
-  title: 'मार्केट सेटअप आज: ओपनिंग बेल से पहले टॉप 15 चीजें — Nifty, सेक्टर्स, Stocks to Watch',
+  title: 'मार्केट सेटअप आज: ओपनिंग बेल से पहले टॉप 15 चीजें — Nifty, Stocks to Watch',
   titleEnglish: 'Market Trade Setup Today — Top 15 Things Before Opening Bell; Stocks to Watch',
   excerpt: 'ट्रेडर्स को ओपनिंग बेल से पहले क्या देखना चाहिए — Nifty, सेक्टर, डेटा क्यू। Sensex, Nifty LIVE — मार्केट फ्लैट व वोलैटिलिटी। Bajaj Finance, Aditya Birla Capital, Castrol India, Aarti Drugs, V2 Retail और अन्य फोकस में।',
   content: `
@@ -28,7 +29,7 @@ export const marketSetupTop15OpeningBellStocksWatchFeb2026: NewsArticle = {
 <h3 class="sub-heading">2. FII और DII फ्लो</h3>
 <p>विदेशी संस्थागत निवेशक (FII) और घरेलू संस्थागत निवेशक (DII) के नेट फ्लो बाजार की दिशा तय करने में मदद करते हैं। लगातार FII बिकवाली वोलैटिलिटी बढ़ा सकती है; खरीदारी सेंटिमेंट सपोर्ट करती है। <a href="/news/economy">इकोनॉमी न्यूज़</a> पर फ्लो अपडेट्स पाएं।</p>
 <h3 class="sub-heading">3. क्रूड ऑयल और कमोडिटीज</h3>
-<p>क्रूड की कीमतें OMC, एविएशन और पेट्रोकेमिकल स्टॉक्स को प्रभावित करती हैं। गोल्ड और सिल्वर भी इक्विटी के वैकल्पिक निवेश के रूप में देखे जाते हैं। भारत के क्रूड इम्पोर्ट बिल और मैक्रो पर एक्सक्लूसिव विश्लेषण के लिए <a href="/news/economy">इकोनॉमी</a> सेक्शन फॉलो करें।</p>
+<p>क्रूड की कीमतें OMC, एविएशन और पेट्रोकेमिकल स्टॉक्स को प्रभावित करती हैं। गोल्ड और सिल्वर भी इक्विटी के वैकल्पिक निवेश के रूप में देखे जाते हैं। भारत के क्रूड इम्पोर्ट बिल और मैक्रो पर विश्लेषण के लिए <a href="/news/economy">इकोनॉमी</a> सेक्शन फॉलो करें।</p>
 <h3 class="sub-heading">4. रुपया (INR) बनाम USD</h3>
 <p>रुपये की मजबूती या कमजोरी export/import और FII रिटर्न को प्रभावित करती है। हाल में India-US ट्रेड डील के बाद रुपया मजबूत हुआ — ऐसी खबरें <a href="/news/markets/india-us-trade-deal-rupee-markets-surge-overnight-2026">India-US ट्रेड डील लाइव अपडेट्स</a> पर मिलती हैं।</p>
 <h3 class="sub-heading">5–7. सेक्टर रोटेशन, बैंक और IT</h3>

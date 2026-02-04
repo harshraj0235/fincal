@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Calculator,
-  Home,
-  Plane,
-  DollarSign,
+import { motion } from 'framer-motion';
+import { 
+  Calculator, 
+  Home, 
+  Plane, 
+  DollarSign, 
   Calendar,
   Info,
   FileText,
@@ -15,12 +14,12 @@ import {
   Download,
   Share2,
   BarChart3,
-  ChevronRight,
-  ChevronDown,
-  Sparkles,
-  ExternalLink,
+  MapPin,
+  Building
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import WhatsAppBanner from '../../components/WhatsAppBanner';
+import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface TaxBenefit {
   name: string;
@@ -224,35 +223,28 @@ const HRAvsLTATaxComparisonTool: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="HRA vs LTA Tax Comparison Tool – Allowance Tax 2026–2050 | MoneyCal"
-        description="Compare and optimize HRA vs LTA tax benefits. House rent allowance, leave travel allowance exemptions. Valid 2026 onwards."
-        keywords="HRA LTA comparison India 2026, house rent allowance calculator, leave travel allowance tax exemption, allowance optimization"
-        canonicalUrl="/tax-tools/hra-vs-lta-tax-comparison-tool"
+        title="HRA vs LTA Tax Comparison Tool - Allowance Tax Calculator | MoneyCal"
+        description="Compare and optimize House Rent Allowance vs Leave Travel Allowance tax benefits. Calculate exemptions, tax savings, and choose the best allowance strategy for maximum tax benefits."
+        keywords="HRA LTA comparison, house rent allowance calculator, leave travel allowance tax, allowance optimization, tax exemption calculator, salary allowance benefits"
       />
+      <WhatsAppBanner />
+      <AstroFinanceButton />
 
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        <div className="bg-white border-b border-slate-200">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav className="flex items-center gap-2 text-sm text-slate-600">
-              <Link to="/" className="hover:text-blue-600">Home</Link>
-              <ChevronRight className="w-4 h-4" />
-              <Link to="/tax-tools" className="hover:text-blue-600">Tax Tools</Link>
-              <ChevronRight className="w-4 h-4" />
-              <span className="text-slate-900 font-medium">HRA vs LTA Tax Comparison Tool</span>
-            </nav>
-          </div>
-        </div>
-        <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700 text-white pt-12 pb-16">
-          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
-              <Sparkles className="w-4 h-4" /> Tax Planning • Valid 2026–2050
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <section className="py-16 bg-gradient-to-br from-teal-600 via-blue-600 to-indigo-700">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                HRA vs LTA Tax Comparison Tool
+              </h1>
+              <p className="text-xl text-teal-100 mb-8">
+                Compare and optimize your allowance tax benefits for maximum savings
+              </p>
             </motion.div>
-            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-5xl font-bold mb-4">
-              HRA vs LTA Tax Comparison Tool
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-indigo-100 max-w-2xl mx-auto">
-              Compare and optimize House Rent vs Leave Travel Allowance benefits. Valid 2026 onwards.
-            </motion.p>
           </div>
         </section>
 

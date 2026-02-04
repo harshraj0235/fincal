@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { PieChart, Calculator, Info, AlertCircle, CheckCircle, Target, ChevronRight, ChevronDown, Sparkles, FileText, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { PieChart, Calculator, TrendingUp, TrendingDown, Info, AlertCircle, CheckCircle, XCircle, BarChart3, Calendar, DollarSign, Target } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import WhatsAppBanner from '../../components/WhatsAppBanner';
+import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface DeductionCategory {
   name: string;
@@ -33,7 +34,6 @@ const DeductionBucketVisualizer: React.FC = () => {
   const [nscAmount, setNscAmount] = useState<string>('');
   const [fdAmount, setFdAmount] = useState<string>('');
   const [visualization, setVisualization] = useState<BucketVisualization | null>(null);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const calculateBucketVisualization = () => {
     const elss = parseFloat(elssAmount) || 0;
@@ -157,71 +157,49 @@ const DeductionBucketVisualizer: React.FC = () => {
     setVisualization(null);
   };
 
-  const relatedTools = [
-    { name: 'Section 80C Tally Analyzer', path: '/tax-tools/section-80c-tally-analyzer', desc: '80C tally' },
-    { name: 'ELSS Lock-in vs Tax Benefit', path: '/tax-tools/elss-lockin-vs-tax-benefit-visualizer', desc: 'ELSS 3-year vs benefit' },
-    { name: 'NPS Tax Benefit vs Growth', path: '/tax-tools/nps-tax-benefit-vs-growth-estimator', desc: 'NPS tax vs growth' },
-    { name: 'Tax Filing Deadline Reminder', path: '/tax-tools/tax-filing-deadline-reminder-widget', desc: 'ITR & advance tax' },
-    { name: 'Old vs New Tax Regime Helper', path: '/tax-tools/old-vs-new-tax-regime-helper', desc: 'Compare regimes' },
-    { name: 'Equity Tax Estimator', path: '/tax-tools/equity-tax-estimator', desc: 'Capital gains tax' },
-    { name: 'Offset LTCG with Exemptions', path: '/tax-tools/offset-ltcg-with-annual-exemptions-tool', desc: 'LTCG exemption' },
-    { name: 'HRA vs LTA Comparison', path: '/tax-tools/hra-vs-lta-tax-comparison-tool', desc: 'HRA vs LTA' },
-  ];
-
-  const faqs = [
-    { q: 'What is the 80C deduction limit?', a: 'The maximum deduction under Section 80C is ₹1,50,000 per financial year. This limit applies to the combined total of all eligible investments (ELSS, PPF, EPF, NPS within 80C, life insurance, NSC, ULIP, tax-saving FD, etc.). NPS has an additional ₹50,000 under 80CCD(1B) over and above 80C. Valid for 2026 and future years unless the law changes.' },
-    { q: 'Is 80C available under the new tax regime?', a: 'No. Section 80C deductions are available only under the old tax regime. If you opt for the new tax regime, you cannot claim 80C. Use this visualizer only if you are in or considering the old regime. Valid for 2026–2050 unless the law is amended.' },
-    { q: 'What is the NPS limit in the 80C bucket?', a: 'NPS contribution under Section 80CCD(1) is part of the ₹1.5 lakh 80C limit. Additionally, Section 80CCD(1B) allows an extra deduction of up to ₹50,000 on NPS contribution (old regime only). So total NPS-related deduction can be up to ₹2 lakh (₹1.5L under 80C + ₹50k under 80CCD(1B)) if you invest only in NPS, subject to the 80C cap for the 80C portion.' },
-    { q: 'By when must I invest for 80C?', a: 'Investments must be made during the financial year (April 1 to March 31) to claim deduction for that year. Use our Tax Filing Deadline Reminder to track ITR and other dates. Valid for 2026 onwards unless the law changes.' },
-  ];
-
   return (
     <>
       <SEOHelmet
-        title="80C Deduction Bucket Visualizer – Optimize 80C Investments 2026–2050 | MoneyCal"
-        description="Visualize and optimize Section 80C investments. ELSS, PPF, EPF, NPS, SSY, ULIP, NSC, FD – max ₹1.5L. Valid 2026 onwards."
-        keywords="80C deduction bucket visualizer India, Section 80C calculator 2026, ELSS PPF EPF NPS 80C limit, tax saving investments calculator"
-        canonicalUrl="/tax-tools/80c-deduction-bucket-visualizer"
+        title="80C Deduction Bucket Visualizer - Optimize Your Tax Saving Investments | MoneyCal"
+        description="Visualize and optimize your Section 80C investments. See how to maximize your tax deductions across ELSS, PPF, EPF, NPS and other 80C instruments."
+        keywords="80C deduction calculator, tax saving investments, ELSS calculator, PPF calculator, NPS calculator, 80C bucket visualizer, tax optimization"
       />
+      <WhatsAppBanner />
+      <AstroFinanceButton />
 
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        {/* Breadcrumb */}
-        <div className="bg-white border-b border-slate-200">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav className="flex items-center gap-2 text-sm text-slate-600">
-              <Link to="/" className="hover:text-blue-600">Home</Link>
-              <ChevronRight className="w-4 h-4" />
-              <Link to="/tax-tools" className="hover:text-blue-600">Tax Tools</Link>
-              <ChevronRight className="w-4 h-4" />
-              <span className="text-slate-900 font-medium">80C Deduction Bucket Visualizer</span>
-            </nav>
-          </div>
-        </div>
-
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700 text-white pt-12 pb-16">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-60" />
-          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
-              <Sparkles className="w-4 h-4" /> Tax Planning • Valid 2026–2050
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        {/* Hero Section */}
+        <section className="py-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                80C Deduction Bucket Visualizer
+              </h1>
+              <p className="text-xl text-blue-100 mb-8">
+                Visualize and optimize your Section 80C investments to maximize tax savings
+              </p>
             </motion.div>
-            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-5xl font-bold mb-4">
-              80C Deduction Bucket Visualizer
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-indigo-100 max-w-2xl mx-auto">
-              Visualize and optimize Section 80C investments. Max deduction ₹1.5 lakh. Old regime only.
-            </motion.p>
           </div>
         </section>
 
         {/* Calculator Section */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              <div className="p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-slate-200">
-                <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                  <Calculator className="h-6 w-6 text-indigo-600" />
-                  Investment details
+        <section className="py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Input Form */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white rounded-2xl p-8 shadow-xl"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <Calculator className="h-6 w-6 mr-3 text-blue-600" />
+                  Investment Details
                 </h2>
 
                 <div className="space-y-6">
@@ -330,20 +308,32 @@ const DeductionBucketVisualizer: React.FC = () => {
                   </div>
 
                   <div className="flex space-x-4">
-                    <button onClick={calculateBucketVisualization} className="flex-1 bg-indigo-600 text-white py-3 px-6 rounded-xl hover:bg-indigo-700 font-semibold transition-colors">
-                      Visualize bucket
+                    <button
+                      onClick={calculateBucketVisualization}
+                      className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                    >
+                      Visualize Bucket
                     </button>
-                    <button onClick={resetForm} className="px-6 py-3 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 font-medium transition-colors">
+                    <button
+                      onClick={resetForm}
+                      className="flex-1 bg-gray-500 text-white py-3 px-6 rounded-lg hover:bg-gray-600 transition-colors font-semibold"
+                    >
                       Reset
                     </button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="p-6 lg:p-8 bg-slate-50/50">
-                <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                  <PieChart className="h-6 w-6 text-indigo-600" />
-                  Bucket analysis
+              {/* Results */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white rounded-2xl p-8 shadow-xl"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <PieChart className="h-6 w-6 mr-3 text-blue-600" />
+                  Bucket Analysis
                 </h2>
 
                 {visualization ? (
@@ -407,106 +397,94 @@ const DeductionBucketVisualizer: React.FC = () => {
                   </div>
                 ) : (
                   <div className="text-center py-12">
-                    <PieChart className="h-14 w-14 text-slate-300 mx-auto mb-4" />
-                    <p className="text-slate-500">Enter your investment details to visualize 80C bucket.</p>
+                    <PieChart className="h-16 w-16 text-gray-400 mx-auto mb-4" />
+                    <p className="text-gray-600">Enter your investment details to visualize 80C bucket</p>
                   </div>
                 )}
-              </div>
-            </div>
-          </motion.div>
-        </section>
-
-        {/* Related tools */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">Related tools</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {relatedTools.map((tool) => (
-              <Link key={tool.path} to={tool.path} className="group flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-all">
-                <ChevronRight className="w-5 h-5 text-indigo-600 mt-0.5 flex-shrink-0 group-hover:translate-x-0.5" />
-                <div>
-                  <p className="font-semibold text-slate-900 group-hover:text-indigo-700">{tool.name}</p>
-                  <p className="text-sm text-slate-500">{tool.desc}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently asked questions</h2>
-          <div className="space-y-2">
-            {faqs.map((faq, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left font-medium text-slate-900 hover:bg-slate-50">
-                  {faq.q}
-                  <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
-                </button>
-                <AnimatePresence>
-                  {openFaq === i && (
-                    <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="border-t border-slate-200">
-                      <p className="p-4 text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* SEO content – 1500+ words */}
-        <article className="bg-slate-50 border-t border-slate-200">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <h2 id="80c-bucket-guide" className="text-3xl font-bold text-slate-900 mb-6">80C Deduction Bucket: Complete Guide (Valid 2026–2050)</h2>
-            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
-              <p>Section 80C of the Income Tax Act allows a deduction of up to <strong>₹1,50,000</strong> per financial year on specified investments and payments. Our <strong>80C Deduction Bucket Visualizer</strong> helps you see how much you have allocated across ELSS, PPF, EPF, NPS, Sukanya Samriddhi, ULIP, NSC, and tax-saving FD, and how much deduction you can claim. This guide explains the 80C bucket, NPS additional limit, and remains valid for <strong>2026 and future years</strong> unless the law is amended. 80C applies only under the <strong>old tax regime</strong>.</p>
-              <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">What is the 80C deduction limit?</h3>
-              <p>The maximum deduction under Section 80C is <strong>₹1,50,000</strong> per financial year. No hike was announced in Union Budget 2025. For details see <a href="https://economictimes.indiatimes.com/wealth/tax/has-section-80c-deduction-limit-hiked-check-how-much-you-can-save-after-union-budget-2025/articleshow/117821055.cms" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Economic Times – Section 80C limit</a>. Use our <Link to="/tax-tools/80c-deduction-bucket-visualizer" className="text-indigo-600 hover:underline font-medium">80C Deduction Bucket Visualizer</Link> and <Link to="/tax-tools/section-80c-tally-analyzer" className="text-indigo-600 hover:underline font-medium">Section 80C Tally Analyzer</Link> to optimize 80C.</p>
-              <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Which instruments qualify under 80C?</h3>
-              <p>Eligible instruments include <strong>ELSS</strong>, <strong>PPF</strong>, <strong>EPF</strong>, <strong>NPS</strong> (within 80C cap), <strong>life insurance premium</strong>, <strong>NSC</strong>, <strong>ULIP</strong>, five-year FD, home loan principal, tuition fees, and <strong>Sukanya Samriddhi Yojana</strong>. NPS has an additional <strong>₹50,000</strong> under 80CCD(1B). See <a href="https://groww.in/p/tax/section-80c" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Groww – Section 80C</a>. Use our <Link to="/tax-tools/elss-lockin-vs-tax-benefit-visualizer" className="text-indigo-600 hover:underline font-medium">ELSS Lock-in vs Tax Benefit Visualizer</Link> and <Link to="/tax-tools/nps-tax-benefit-vs-growth-estimator" className="text-indigo-600 hover:underline font-medium">NPS Tax Benefit vs Growth Estimator</Link>.</p>
-              <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Is 80C available in the new tax regime?</h3>
-              <p><strong>No.</strong> Section 80C is available only under the old tax regime. Use our <Link to="/tax-tools/old-vs-new-tax-regime-helper" className="text-indigo-600 hover:underline font-medium">Old vs New Tax Regime Helper</Link> to compare regimes and our <Link to="/tax-tools/tax-filing-deadline-reminder-widget" className="text-indigo-600 hover:underline font-medium">Tax Filing Deadline Reminder Widget</Link> for ITR dates.</p>
-              <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">More resources</h3>
-              <p>We offer <Link to="/tax-tools" className="text-indigo-600 hover:underline font-medium">tax tools</Link> for 80C, NPS, ELSS, capital gains, and deadlines. Visit our <Link to="/learn" className="text-indigo-600 hover:underline font-medium">Learn</Link> section, <Link to="/blog" className="text-indigo-600 hover:underline font-medium">Blog</Link>, and <Link to="/news" className="text-indigo-600 hover:underline font-medium">MoneyCal News</Link>. This tool is for illustration; verify with the Income Tax Act and a tax advisor. Valid for 2026–2050 unless the law is amended.</p>
-              <div className="mt-8 p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3">
-                <AlertCircle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-amber-800">Disclaimer</p>
-                  <p className="text-sm text-amber-700 mt-1">80C rules are as per the Income Tax Act and may change. This tool is for educational use. Valid for 2026–2050. Consult a CA or tax advisor before investing or filing.</p>
-                </div>
-              </div>
+              </motion.div>
             </div>
           </div>
-        </article>
+        </section>
 
-        {/* Explore more */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">Explore more</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <Link to="/blog?category=Tax" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
-              <FileText className="h-10 w-10 text-indigo-600" />
-              <div>
-                <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Tax &amp; investment blog</p>
-                <p className="text-sm text-slate-500">Articles on 80C and tax</p>
+        {/* Information Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Understanding Section 80C Deductions
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-blue-50 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                    <Target className="h-5 w-5 mr-2" />
+                    Section 80C Benefits
+                  </h3>
+                  <ul className="space-y-2 text-blue-700">
+                    <li>• Maximum deduction of ₹1.5 lakh</li>
+                    <li>• Reduces taxable income</li>
+                    <li>• Multiple investment options</li>
+                    <li>• Long-term wealth creation</li>
+                  </ul>
+                </div>
+
+                <div className="bg-green-50 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center">
+                    <Calculator className="h-5 w-5 mr-2" />
+                    Popular 80C Instruments
+                  </h3>
+                  <ul className="space-y-2 text-green-700">
+                    <li>• ELSS (Equity Linked Savings)</li>
+                    <li>• PPF (Public Provident Fund)</li>
+                    <li>• EPF (Employee Provident Fund)</li>
+                    <li>• NPS (National Pension System)</li>
+                  </ul>
+                </div>
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
-            </Link>
-            <Link to="/news" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
-              <ExternalLink className="h-10 w-10 text-indigo-600" />
-              <div>
-                <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Latest news</p>
-                <p className="text-sm text-slate-500">Markets and tax updates</p>
+
+              <div className="mt-8 bg-yellow-50 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-yellow-800 mb-4 flex items-center">
+                  <AlertCircle className="h-5 w-5 mr-2" />
+                  Optimization Tips
+                </h3>
+                <ul className="space-y-2 text-yellow-700">
+                  <li>• Start early to maximize compounding benefits</li>
+                  <li>• Diversify across different instruments</li>
+                  <li>• Consider liquidity requirements</li>
+                  <li>• Factor in lock-in periods</li>
+                  <li>• Review and rebalance annually</li>
+                </ul>
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
-            </Link>
-            <Link to="/tax-tools" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
-              <Calculator className="h-10 w-10 text-indigo-600" />
-              <div>
-                <p className="font-semibold text-slate-900 group-hover:text-indigo-700">All tax tools</p>
-                <p className="text-sm text-slate-500">Calculators for tax planning</p>
+
+              <div className="mt-8 bg-purple-50 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
+                  <Info className="h-5 w-5 mr-2" />
+                  Related Tax Planning Tools
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <a href="/tax-tools/section-80c-tally-analyzer" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
+                    <span className="font-semibold text-purple-800">80C Tally Analyzer</span>
+                    <p className="text-sm text-purple-600">Analyze your 80C investments</p>
+                  </a>
+                  <a href="/tax-tools/elss-lockin-vs-tax-benefit-visualizer" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
+                    <span className="font-semibold text-purple-800">ELSS vs Tax Benefits</span>
+                    <p className="text-sm text-purple-600">Compare ELSS lock-in vs benefits</p>
+                  </a>
+                  <a href="/tax-tools/pf-vs-nps-tax-growth-comparison" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
+                    <span className="font-semibold text-purple-800">PF vs NPS Comparison</span>
+                    <p className="text-sm text-purple-600">Compare retirement schemes</p>
+                  </a>
+                  <a href="/tax-tools/tax-saving-investment-calculator" className="block p-3 bg-white rounded-lg hover:bg-purple-100 transition-colors">
+                    <span className="font-semibold text-purple-800">Tax Saving Calculator</span>
+                    <p className="text-sm text-purple-600">Calculate tax savings</p>
+                  </a>
+                </div>
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
-            </Link>
+            </motion.div>
           </div>
         </section>
       </div>

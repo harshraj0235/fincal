@@ -13,6 +13,107 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // === Today's news (Feb 5, 2026) - Govt borrowing, RBI pause, Delhi budget, Eggs/Honey, Top 5 stocks, Bank rally, PFC, Info Edge, Infosys, RBI MPC ===
+  {
+    id: 'economy-record-govt-borrowing-no-crash-2026',
+    slug: 'record-govt-borrowing-plan-without-market-crash-2026',
+    category: 'economy',
+    subCategory: 'fiscal-policy',
+    title: 'रिकॉर्ड सरकारी उधारी बिना मार्केट क्रैश — यहाँ जानें कैसे!',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-05T08:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'economy-rbi-pause-rate-cuts-loans-fd-2026',
+    slug: 'rbi-may-pause-rate-cuts-loans-fd-returns-2026',
+    category: 'economy',
+    subCategory: 'monetary-policy',
+    title: 'RBI रेट कट पर पॉज कर सकता है — आपके लोन और FD रिटर्न पर क्या असर?',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-02-05T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'economy-delhi-budget-2026-27-changes-2026',
+    slug: 'delhi-budget-2026-27-plans-big-changes-new-taxes-spending-2026',
+    category: 'economy',
+    subCategory: 'budget',
+    title: 'Delhi Budget 2026-27 में बड़े बदलाव — नए टैक्स या खर्च?',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-05T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1541872703-74c32bb95e77?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'economy-eggs-honey-export-boost-2026',
+    slug: 'eggs-honey-export-boost-small-producers-win-2026',
+    category: 'economy',
+    subCategory: 'agriculture-trade',
+    title: 'अंडे और शहद एक्सपोर्ट बूस्ट — छोटे उत्पादक बड़ा मुनाफा कमा सकते हैं!',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-02-05T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-top-5-stocks-us-india-trade-2026',
+    slug: 'top-5-stocks-surging-after-us-india-trade-news-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'US–India ट्रेड न्यूज़ के बाद टॉप 5 स्टॉक्स में उछाल — ये मिस मत करें!',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-05T12:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-bank-stocks-rally-rbi-mpc-2026',
+    slug: 'bank-stocks-rally-before-rbi-mpc-buy-or-sell-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'RBI MPC से पहले बैंक स्टॉक्स रैली — आज खरीदें या बेचें?',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-02-05T13:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-power-finance-jumps-3-2026',
+    slug: 'power-finance-jumps-3-percent-intraday-opportunity-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'Power Finance 3% उछला — इंट्राडे मौका?',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-05T14:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-info-edge-falls-value-play-2026',
+    slug: 'info-edge-falls-hard-today-value-play-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'Info Edge आज तेज गिरा — क्या अब वैल्यू प्ले है?',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-02-05T15:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-infosys-crashes-intraday-tech-2026',
+    slug: 'infosys-crashes-intraday-tech-sector-trouble-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'Infosys इंट्राडे में क्रैश — टेक सेक्टर में मुसीबत?',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-05T16:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-rbi-mpc-starts-today-3-things-2026',
+    slug: 'rbi-mpc-starts-today-3-things-every-investor-should-know-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'RBI MPC आज शुरू — हर इन्वेस्टर को ये 3 बातें पता होनी चाहिए',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-02-05T17:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
+  },
   // === Market Movers, IPOs, IT plunge, Macro/Debt, Deepinder Goyal (Feb 2026) ===
   {
     id: 'markets-setup-opening-bell-stocks-watch-2026',

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  <!-- MoneyCal NEWS - Market Setup, 7 IPOs, IT plunge, Macro/Debt, Deepinder Goyal, Fractal, Varaha - 2026-02-04 -->
+  <!-- MoneyCal NEWS - Today Feb 5 2026 (10 new) + Market Setup, 7 IPOs, IT plunge, Macro, Deepinder, Fractal, Varaha -->
   <url>
     <loc>https://moneycal.in/news</loc>
     <lastmod>2025-11-01</lastmod>
@@ -43,6 +43,106 @@
     <lastmod>2026-02-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/economy/record-govt-borrowing-plan-without-market-crash-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T08:00:00+05:30</news:publication_date>
+      <news:title>रिकॉर्ड सरकारी उधारी बिना मार्केट क्रैश — यहाँ जानें कैसे!</news:title>
+      <news:keywords>govt borrowing, RBI, bond market, India</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/economy/rbi-may-pause-rate-cuts-loans-fd-returns-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T09:00:00+05:30</news:publication_date>
+      <news:title>RBI रेट कट पर पॉज कर सकता है — आपके लोन और FD रिटर्न पर क्या असर?</news:title>
+      <news:keywords>RBI, rate cut, loans, FD, India</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/economy/delhi-budget-2026-27-plans-big-changes-new-taxes-spending-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T10:00:00+05:30</news:publication_date>
+      <news:title>Delhi Budget 2026-27 में बड़े बदलाव — नए टैक्स या खर्च?</news:title>
+      <news:keywords>Delhi budget, 2026-27, India</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/economy/eggs-honey-export-boost-small-producers-win-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T11:00:00+05:30</news:publication_date>
+      <news:title>अंडे और शहद एक्सपोर्ट बूस्ट — छोटे उत्पादक बड़ा मुनाफा कमा सकते हैं!</news:title>
+      <news:keywords>eggs export, honey export, India agriculture</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/top-5-stocks-surging-after-us-india-trade-news-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T12:00:00+05:30</news:publication_date>
+      <news:title>US–India ट्रेड न्यूज़ के बाद टॉप 5 स्टॉक्स में उछाल — ये मिस मत करें!</news:title>
+      <news:keywords>top stocks, US India trade, India markets</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/bank-stocks-rally-before-rbi-mpc-buy-or-sell-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T13:00:00+05:30</news:publication_date>
+      <news:title>RBI MPC से पहले बैंक स्टॉक्स रैली — आज खरीदें या बेचें?</news:title>
+      <news:keywords>bank stocks, RBI MPC, India</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/power-finance-jumps-3-percent-intraday-opportunity-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T14:00:00+05:30</news:publication_date>
+      <news:title>Power Finance 3% उछला — इंट्राडे मौका?</news:title>
+      <news:keywords>Power Finance, PFC, intraday, India</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/info-edge-falls-hard-today-value-play-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T15:00:00+05:30</news:publication_date>
+      <news:title>Info Edge आज तेज गिरा — क्या अब वैल्यू प्ले है?</news:title>
+      <news:keywords>Info Edge, Naukri, value play, India</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/infosys-crashes-intraday-tech-sector-trouble-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T16:00:00+05:30</news:publication_date>
+      <news:title>Infosys इंट्राडे में क्रैश — टेक सेक्टर में मुसीबत?</news:title>
+      <news:keywords>Infosys, tech sector, India, intraday</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/rbi-mpc-starts-today-3-things-every-investor-should-know-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-02-05T17:00:00+05:30</news:publication_date>
+      <news:title>RBI MPC आज शुरू — हर इन्वेस्टर को ये 3 बातें पता होनी चाहिए</news:title>
+      <news:keywords>RBI MPC, investor, India, repo rate</news:keywords>
+    </news:news>
+    <lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/markets/fractal-analytics-ipo-size-price-band-india-2026</loc>

@@ -37,11 +37,10 @@ const WriteBlog = lazy(() => import('./pages/WriteBlog'));
 
 // News Portal Components
 const NewsHomePage = lazy(() => import('./pages/news/NewsHomePage'));
-const NewsShortsPage = lazy(() => import('./pages/news/NewsShortsPage'));
-const AddShortsNewsPage = lazy(() => import('./pages/news/AddShortsNewsPage'));
 const NewsCategoryPage = lazy(() => import('./pages/news/NewsCategoryPage'));
 const NewsArticlePage = lazy(() => import('./pages/news/NewsArticlePage'));
 const AuthorPage = lazy(() => import('./pages/news/AuthorPage'));
+const NewsShortsPage = lazy(() => import('./pages/news/NewsShortsPage'));
 const ChhathPuja2025Schedule = lazy(() => import('./pages/blog/ChhathPuja2025Schedule'));
 const ChhathPujaPreparationGuide = lazy(() => import('./pages/blog/ChhathPujaPreparationGuide'));
 const ChhathPujaPrasadRecipes = lazy(() => import('./pages/blog/ChhathPujaPrasadRecipes'));
@@ -1008,7 +1007,6 @@ function App() {
                 {/* News Portal Routes */}
                 <Route path="/news" element={<NewsHomePage />} />
                 <Route path="/news/shorts" element={<NewsShortsPage />} />
-                <Route path="/add-shorts-news" element={<AddShortsNewsPage />} />
                 <Route path="/news/author/:authorId" element={<AuthorPage />} />
                 <Route path="/news/:categorySlug" element={<NewsCategoryPage />} />
                 <Route path="/news/:categorySlug/:articleId" element={<NewsArticlePage />} />

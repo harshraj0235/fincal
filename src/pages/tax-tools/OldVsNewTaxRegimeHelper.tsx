@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Calculator,
-  TrendingUp,
-  TrendingDown,
-  DollarSign,
+import { motion } from 'framer-motion';
+import { 
+  Calculator, 
+  TrendingUp, 
+  TrendingDown, 
+  DollarSign, 
   Calendar,
   Info,
   FileText,
@@ -17,13 +16,11 @@ import {
   BarChart3,
   Scale,
   AlertTriangle,
-  Percent,
-  ChevronRight,
-  ChevronDown,
-  Sparkles,
-  ExternalLink,
+  Percent
 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
+import WhatsAppBanner from '../../components/WhatsAppBanner';
+import AstroFinanceButton from '../../components/AstroFinanceButton';
 
 interface TaxRegime {
   name: string;
@@ -209,35 +206,28 @@ const OldVsNewTaxRegimeHelper: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Old vs New Tax Regime Helper – Compare Regimes 2026–2050 | MoneyCal"
-        description="Compare old vs new tax regimes. Tax savings, effective rates, recommendations. Valid 2026 onwards."
-        keywords="old vs new tax regime India 2026, tax regime comparison calculator, income tax regime choice, tax planning"
-        canonicalUrl="/tax-tools/old-vs-new-tax-regime-helper"
+        title="Old vs New Tax Regime Helper - Tax Regime Comparison Calculator | MoneyCal"
+        description="Compare old vs new tax regimes and choose the best option for your income. Calculate tax savings, effective rates, and get personalized recommendations for optimal tax planning."
+        keywords="old vs new tax regime, tax regime comparison, tax calculator, tax planning, income tax calculator, tax regime choice, tax optimization"
       />
+      <WhatsAppBanner />
+      <AstroFinanceButton />
 
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        <div className="bg-white border-b border-slate-200">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav className="flex items-center gap-2 text-sm text-slate-600">
-              <Link to="/" className="hover:text-blue-600">Home</Link>
-              <ChevronRight className="w-4 h-4" />
-              <Link to="/tax-tools" className="hover:text-blue-600">Tax Tools</Link>
-              <ChevronRight className="w-4 h-4" />
-              <span className="text-slate-900 font-medium">Old vs New Tax Regime Helper</span>
-            </nav>
-          </div>
-        </div>
-        <section className="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700 text-white pt-12 pb-16">
-          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-6">
-              <Sparkles className="w-4 h-4" /> Tax Planning • Valid 2026–2050
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+        <section className="py-16 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Old vs New Tax Regime Helper
+              </h1>
+              <p className="text-xl text-orange-100 mb-8">
+                Compare tax regimes and choose the optimal option for maximum savings
+              </p>
             </motion.div>
-            <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-4xl md:text-5xl font-bold mb-4">
-              Old vs New Tax Regime Helper
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-indigo-100 max-w-2xl mx-auto">
-              Compare and choose between old and new tax regimes for maximum savings. Valid 2026 onwards.
-            </motion.p>
           </div>
         </section>
 

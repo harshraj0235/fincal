@@ -1,35 +1,24 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Clock,
-  Copy,
-  Check,
-  Share2,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Code,
-  ArrowLeft,
-} from 'lucide-react';
+import { ChevronDown, ChevronUp, ArrowLeft, ExternalLink, Share2 } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import { useNewsShorts } from '../../hooks/useNewsShorts';
 import {
   newsShortsFilterCategories,
-  getShortAsText,
-  getShortEmbedCode,
   getShortFullUrl,
-  baseUrl,
   DISCOVER_IMAGE_DEFAULT,
+  baseUrl,
   type NewsShort,
   type NewsShortCategory,
 } from '../../data/newsShortsData';
-import { formatLatestUpdate, getCurrentDateISO, formatStaticShortDate } from '../../utils/randomCalculators';
+import { formatStaticShortDate } from '../../utils/randomCalculators';
 
+/** Inshorts-style: one full-screen card per short, vertical scroll like reels */
 const NewsShortsPage: React.FC = () => {
-  const { shorts, loading, refetch } = useNewsShorts();
-  const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [embedCopiedId, setEmbedCopiedId] = useState<string | null>(null);
+  const { shorts, loading } = useNewsShorts();
   const [filter, setFilter] = useState<NewsShortCategory | 'latest'>('latest');
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const filtered = useMemo(() => {
     const list = [...shorts].sort(
@@ -39,24 +28,52 @@ const NewsShortsPage: React.FC = () => {
     return list.filter((s) => s.category === filter);
   }, [shorts, filter]);
 
-  const handleCopy = async (short: NewsShort) => {
-    const text = getShortAsText(short);
-    await navigator.clipboard.writeText(text);
-    setCopiedId(short.id);
-    setTimeout(() => setCopiedId(null), 2000);
-  };
+  // Track which card is in view (for progress indicator)
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const cardHeight = el.offsetHeight;
+      const scrollTop = el.scrollTop;
+      const index = Math.round(scrollTop / cardHeight);
+      setActiveIndex(Math.min(index, filtered.length - 1));
+    };
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, [filtered.length]);
 
-  const handleCopyEmbed = async (short: NewsShort) => {
-    const code = getShortEmbedCode(short);
-    await navigator.clipboard.writeText(code);
-    setEmbedCopiedId(short.id);
-    setTimeout(() => setEmbedCopiedId(null), 2000);
-  };
+  const goTo = useCallback(
+    (index: number) => {
+      const el = scrollRef.current;
+      if (!el) return;
+      const cardHeight = el.offsetHeight;
+      el.scrollTo({ top: index * cardHeight, behavior: 'smooth' });
+    },
+    []
+  );
 
-  const shareUrl = (path: string) =>
-    typeof window !== 'undefined' ? `${window.location.origin}${path}` : baseUrl + path;
+  const handleShare = useCallback(async (short: NewsShort) => {
+    const url = getShortFullUrl(short);
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: short.headline,
+          text: short.whyItMatters[0],
+          url,
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(url);
+        alert('Link copied!');
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }, []);
 
-  // Google Discover: allow large image preview
   React.useEffect(() => {
     let meta = document.querySelector('meta[name="robots"]');
     if (!meta) {
@@ -70,276 +87,192 @@ const NewsShortsPage: React.FC = () => {
     };
   }, []);
 
-  const shortsPageUrl = typeof window !== 'undefined' ? window.location.href : `${baseUrl}/news/shorts`;
-  const discoverItems = filtered.slice(0, 12);
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center pt-16">
+        <div className="text-white text-center">
+          <div className="w-10 h-10 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4" />
+          <p>Loading shorts…</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (filtered.length === 0) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center pt-16">
+        <div className="text-white text-center max-w-md px-4">
+          <p className="text-lg mb-4">No shorts in this category yet.</p>
+          <Link to="/news" className="text-amber-400 hover:underline">
+            ← Back to News
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 pt-20">
+    <div className="min-h-screen bg-slate-900 text-white">
       <SEOHelmet
-        title="Moneycal News in 60 Seconds | Finance Shorts – Short, Clear, Actionable"
-        description="Read finance news in 60 seconds. RBI, markets, tax, loans, crypto – short bullets, key numbers, and what you should do. Inshorts-style for Indian finance."
-        keywords="news in 60 seconds, finance shorts, Moneycal news, RBI, markets, tax, loans, Indian economy, finance explainer"
+        title="MoneyCal News in 60 Seconds | Finance Shorts – Inshorts Style"
+        description="Read finance news in 60 seconds. Swipe through RBI, markets, economy shorts. Short, clear, actionable — like Inshorts for Indian finance."
+        keywords="news in 60 seconds, finance shorts, MoneyCal, Inshorts style, RBI, markets, Indian economy"
         image={DISCOVER_IMAGE_DEFAULT}
         url={`${baseUrl}/news/shorts`}
       />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Link
-          to="/news"
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 font-medium mb-6"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to News
-        </Link>
-
-        <header className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 flex items-center gap-3">
-            <Clock className="w-8 h-8 text-blue-600" />
-            Moneycal News in 60 Seconds
-          </h1>
-          <p className="text-slate-600 mt-2">
-            Short. Clear. Actionable. Read in 30–45 seconds. Copy, share, or embed.
-          </p>
-          <p className="text-slate-500 text-sm mt-1" role="contentinfo">
-            Last updated: {formatLatestUpdate()}
-          </p>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'CollectionPage',
-                name: 'Moneycal News in 60 Seconds',
-                description: 'Finance news in 60 seconds. Short, clear, actionable.',
-                dateModified: getCurrentDateISO(),
-                url: shortsPageUrl,
-              }),
-            }}
-          />
-        </header>
-
-        {/* Google Discover: multiple content items with full URLs */}
-        <section aria-label="Content for Google Discover" className="mb-10 p-6 rounded-2xl bg-slate-100/80 border border-slate-200">
-          <h2 className="text-lg font-bold text-slate-800 mb-2">Content for Google Discover</h2>
-          <p className="text-sm text-slate-600 mb-4">
-            Finance news in 60 seconds – each item links to the full story with full URL.
-          </p>
-          <ul className="space-y-4">
-            {discoverItems.map((short) => {
-              const fullUrl = getShortFullUrl(short);
-              return (
-                <li key={short.id} className="bg-white rounded-xl p-4 border border-slate-200">
-                  <h3 className="font-semibold text-slate-900">{short.headline}</h3>
-                  <p className="text-sm text-slate-600 mt-1">
-                    {short.whyItMatters[0]}
-                    {short.whyItMatters.length > 1 ? ` ${short.whyItMatters[1]}` : ''}
-                  </p>
-                  <p className="mt-2 text-sm">
-                    <span className="text-slate-500">Full story URL: </span>
-                    <a href={fullUrl} className="text-blue-600 hover:underline break-all" rel="noopener noreferrer">
-                      {fullUrl}
-                    </a>
-                  </p>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-
-        {/* Category filters */}
-        <div className="flex flex-wrap gap-2 mb-8">
+      {/* Fixed header — Inshorts-style */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur border-b border-white/10">
+        <div className="flex items-center justify-between px-4 py-3">
+          <Link
+            to="/news"
+            className="inline-flex items-center gap-2 text-white/90 hover:text-white font-medium text-sm"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back
+          </Link>
+          <h1 className="text-lg font-bold text-white truncate">Money Shorts</h1>
+          <span className="text-xs text-white/60 w-16 text-right">
+            {activeIndex + 1} / {filtered.length}
+          </span>
+        </div>
+        {/* Tabs — horizontal scroll like Inshorts */}
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide px-4 pb-2" style={{ WebkitOverflowScrolling: 'touch' }}>
           {newsShortsFilterCategories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setFilter(cat.id as NewsShortCategory | 'latest')}
-              className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
+              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 filter === cat.id
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+                  ? 'bg-amber-500 text-slate-900'
+                  : 'bg-white/10 text-white/80 hover:bg-white/20'
               }`}
             >
-              {cat.id === 'latest' && (
-                <span className="inline-block w-2 h-2 bg-red-500 rounded-full mr-1.5 align-middle" />
-              )}
               {cat.label}
             </button>
           ))}
         </div>
+      </header>
 
-        {/* Shorts list */}
-        <div className="space-y-8">
-          {filtered.map((short) => (
-            <article
-              key={short.id}
-              id={short.slug}
-              className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden scroll-mt-24"
-            >
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                  __html: JSON.stringify({
-                    '@context': 'https://schema.org',
-                    '@type': 'NewsArticle',
-                    headline: short.headline,
-                    image: [short.imageUrl || DISCOVER_IMAGE_DEFAULT],
-                    datePublished: short.datePublished,
-                    dateModified: short.datePublished,
-                    author: { '@type': 'Organization', name: 'MoneyCal India', url: baseUrl },
-                    publisher: {
-                      '@type': 'Organization',
-                      name: 'MoneyCal India',
-                      logo: { '@type': 'ImageObject', url: `${baseUrl}/android-chrome-512x512.png` },
-                    },
-                    mainEntityOfPage: { '@type': 'WebPage', '@id': getShortFullUrl(short) },
-                    url: getShortFullUrl(short),
-                  }),
-                }}
+      {/* Reel container — full height snap scroll */}
+      <div
+        ref={scrollRef}
+        className="pt-28 pb-24 h-screen overflow-y-auto snap-y snap-mandatory scrollbar-hide"
+        style={{ scrollSnapType: 'y mandatory' }}
+      >
+        {filtered.map((short, index) => (
+          <article
+            key={short.id}
+            className="h-screen min-h-[100vh] snap-start snap-always flex flex-col relative"
+            style={{ scrollSnapAlign: 'start' }}
+          >
+            {/* Background image + overlay */}
+            <div className="absolute inset-0">
+              <img
+                src={short.imageUrl || DISCOVER_IMAGE_DEFAULT}
+                alt=""
+                className="w-full h-full object-cover"
               />
-              {short.imageUrl && (
-                <div className="w-full aspect-video bg-slate-100">
-                  <img src={short.imageUrl} alt={short.headline} className="w-full h-full object-cover" />
-                </div>
-              )}
-              {short.videoUrl && (
-                <div className="w-full aspect-video bg-slate-900">
-                  {(() => {
-                    const u = short.videoUrl;
-                    const ytMatch = u.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
-                    if (ytMatch) {
-                      return (
-                        <iframe
-                          title={short.headline}
-                          src={`https://www.youtube.com/embed/${ytMatch[1]}`}
-                          className="w-full h-full"
-                          allowFullScreen
-                        />
-                      );
-                    }
-                    return <video src={short.videoUrl} controls className="w-full h-full" />;
-                  })()}
-                </div>
-              )}
-              <div className="p-6 sm:p-8">
-                <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">
-                  {short.category}
-                </span>
-                <time className="block text-xs text-slate-500 mt-1" dateTime={short.datePublished}>
-                  Published {formatStaticShortDate(short.datePublished)}
-                </time>
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mt-2">
-                  {short.headline}
-                </h2>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent" />
+            </div>
 
-                <div className="mt-4 space-y-3 text-slate-700">
-                  <div>
-                    <span className="font-semibold text-slate-800">⚡ Why it matters:</span>
-                    <ul className="list-disc list-inside mt-1 space-y-0.5">
-                      {short.whyItMatters.map((b, i) => (
-                        <li key={i}>{b}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  {short.keyNumbers && short.keyNumbers.length > 0 && (
-                    <div>
-                      <span className="font-semibold text-slate-800">📊 Key numbers:</span>
-                      <ul className="list-disc list-inside mt-1 space-y-0.5">
-                        {short.keyNumbers.map((n, i) => (
-                          <li key={i}>{n}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  <div>
-                    <span className="font-semibold text-slate-800">🧠 What should you do?</span>
-                    <p className="mt-1">{short.whatToDo}</p>
-                  </div>
-                </div>
-
-                <p className="mt-4 text-sm text-slate-500">
-                  Full story URL:{' '}
-                  <a
-                    href={getShortFullUrl(short)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline break-all"
-                  >
-                    {getShortFullUrl(short)}
-                  </a>
+            {/* Content */}
+            <div className="relative flex-1 flex flex-col justify-end p-5 pb-8">
+              <span className="inline-block text-xs font-semibold text-amber-400 uppercase tracking-wide mb-2">
+                {short.category}
+              </span>
+              <time className="text-xs text-white/60 mb-2" dateTime={short.datePublished}>
+                {formatStaticShortDate(short.datePublished)}
+              </time>
+              <h2 className="text-xl sm:text-2xl font-bold text-white leading-tight mb-4">
+                {short.headline}
+              </h2>
+              <div className="text-white/90 text-sm sm:text-base space-y-2 mb-4 max-h-40 overflow-y-auto">
+                {short.whyItMatters.slice(0, 2).map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+                {short.keyNumbers && short.keyNumbers.length > 0 && (
+                  <p className="text-amber-300/90">
+                    📊 {short.keyNumbers.join(' · ')}
+                  </p>
+                )}
+                <p className="text-white/80">
+                  <span className="font-semibold">What to do: </span>
+                  {short.whatToDo}
                 </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href={getShortFullUrl(short)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-amber-500 text-slate-900 font-semibold px-4 py-2.5 rounded-lg hover:bg-amber-400 transition-colors text-sm"
+                >
+                  Read full story
+                  <ExternalLink className="w-4 h-4" />
+                </a>
                 <Link
                   to={short.fullStoryPath}
-                  className="inline-block mt-2 text-blue-600 hover:text-blue-700 font-semibold text-sm"
+                  className="text-white/80 hover:text-white text-sm"
                 >
-                  🔗 Read full story →
+                  Open on site
                 </Link>
-
-                {/* Actions: Copy, Embed, Share */}
-                <div className="mt-6 pt-6 border-t border-slate-200 flex flex-wrap gap-3">
-                  <button
-                    onClick={() => handleCopy(short)}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm transition-colors"
-                  >
-                    {copiedId === short.id ? (
-                      <Check className="w-4 h-4 text-green-600" />
-                    ) : (
-                      <Copy className="w-4 h-4" />
-                    )}
-                    {copiedId === short.id ? 'Copied!' : 'Copy text'}
-                  </button>
-                  <button
-                    onClick={() => handleCopyEmbed(short)}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm transition-colors"
-                  >
-                    {embedCopiedId === short.id ? (
-                      <Check className="w-4 h-4 text-green-600" />
-                    ) : (
-                      <Code className="w-4 h-4" />
-                    )}
-                    {embedCopiedId === short.id ? 'Embed copied!' : 'Copy embed code'}
-                  </button>
-                  <span className="inline-flex items-center gap-2 text-slate-500 text-sm">
-                    <Share2 className="w-4 h-4" />
-                    Share:
-                  </span>
-                  <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl(short.fullStoryPath))}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full hover:bg-blue-50 text-blue-600"
-                    aria-label="Share on Facebook"
-                  >
-                    <Facebook className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl(short.fullStoryPath))}&text=${encodeURIComponent(short.headline)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full hover:bg-sky-50 text-sky-500"
-                    aria-label="Share on Twitter"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl(short.fullStoryPath))}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full hover:bg-blue-50 text-blue-700"
-                    aria-label="Share on LinkedIn"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                </div>
+                <button
+                  onClick={() => handleShare(short)}
+                  className="ml-auto p-2 rounded-full bg-white/10 hover:bg-white/20 text-white"
+                  aria-label="Share"
+                >
+                  <Share2 className="w-5 h-5" />
+                </button>
               </div>
-            </article>
-          ))}
-        </div>
+              <p className="text-xs text-white/50 mt-3">Source: MoneyCal</p>
+            </div>
+          </article>
+        ))}
+      </div>
 
-        {loading && (
-          <p className="text-center text-slate-500 py-12">Loading shorts…</p>
+      {/* Progress dots — Inshorts-style */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex gap-1.5">
+        {filtered.slice(0, 15).map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            className={`h-1.5 rounded-full transition-all ${
+              i === activeIndex ? 'bg-amber-500 w-6' : 'bg-white/40 w-1.5'
+            }`}
+            aria-label={`Go to story ${i + 1}`}
+          />
+        ))}
+        {filtered.length > 15 && (
+          <span className="text-white/50 text-xs ml-1 self-center">
+            +{filtered.length - 15}
+          </span>
         )}
-        {!loading && filtered.length === 0 && (
-          <p className="text-center text-slate-500 py-12">No shorts in this category yet.</p>
-        )}
+      </div>
+
+      {/* Swipe hint */}
+      <p className="fixed bottom-12 left-1/2 -translate-x-1/2 z-40 text-white/50 text-xs">
+        Scroll or swipe for next
+      </p>
+
+      {/* Optional: prev/next buttons on desktop */}
+      <div className="hidden sm:flex fixed right-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-2">
+        <button
+          onClick={() => goTo(activeIndex - 1)}
+          disabled={activeIndex === 0}
+          className="p-2 rounded-full bg-white/10 text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/20"
+          aria-label="Previous"
+        >
+          <ChevronUp className="w-6 h-6" />
+        </button>
+        <button
+          onClick={() => goTo(activeIndex + 1)}
+          disabled={activeIndex >= filtered.length - 1}
+          className="p-2 rounded-full bg-white/10 text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/20"
+          aria-label="Next"
+        >
+          <ChevronDown className="w-6 h-6" />
+        </button>
       </div>
     </div>
   );

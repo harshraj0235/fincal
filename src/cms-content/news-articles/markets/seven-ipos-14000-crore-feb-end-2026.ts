@@ -1,7 +1,8 @@
 import { NewsArticle } from '../../../types/news';
 
 /**
- * Seven IPOs worth ~₹14,000 Crore before Feb end — Fractal, Aye Finance, Clean Max Enviro Energy
+ * Seven IPOs worth ~₹14,000 Crore before Feb end — Fractal, Aye Finance, Clean Max Enviro Energy & more
+ * Big for listings news. 1000+ words | Hindi audience | Internal links
  */
 export const sevenIPOs14000CroreFebEnd2026: NewsArticle = {
   id: 'markets-seven-ipos-14000-crore-feb-2026',
@@ -13,7 +14,7 @@ export const sevenIPOs14000CroreFebEnd2026: NewsArticle = {
   excerpt: 'फरवरी अंत से पहले सात IPO लाइनअप में — कुल मिलाकर लगभग ₹14,000 करोड़। Fractal Analytics, Aye Finance, Clean Max Enviro Energy और अन्य — लिस्टिंग्स न्यूज़ के लिए बड़ी खबर।',
   content: `
 <h2 class="section-heading">7 IPO फरवरी अंत तक — ~₹14,000 करोड़</h2>
-<p class="lead-paragraph">फरवरी के अंत से पहले <strong>सात IPO</strong> लाइनअप में हैं, जिनका कुल आकार लगभग <strong>₹14,000 करोड़</strong> बताया जा रहा है। इनमें <strong>Fractal Analytics</strong>, <strong>Aye Finance</strong>, <strong>Clean Max Enviro Energy</strong> और अन्य कंपनियां शामिल हैं — लिस्टिंग्स और प्राइमरी मार्केट की खबरों के लिए यह बड़ा विषय है। निवेशकों के लिए "7 IPOs Worth ₹14,000 Cr COMING in Feb — Don't Miss!" जैसे हेडलाइन्स ट्रेंड कर रहे हैं; लेकिन हर IPO में अप्लाई करने से पहले बिजनेस और वैल्यूएशन समझना जरूरी है।</p>
+<p class="lead-paragraph">फरवरी के अंत से पहले <strong>सात IPO</strong> लाइनअप में हैं, जिनका कुल आकार लगभग <strong>₹14,000 करोड़</strong> बताया जा रहा है। इनमें <strong>Fractal Analytics</strong>, <strong>Aye Finance</strong>, <strong>Clean Max Enviro Energy</strong> और अन्य कंपनियां शामिल हैं — लिस्टिंग्स और प्राइमरी मार्केट की खबरों के लिए यह बड़ा विषय है। "7 IPOs Worth ₹14,000 Cr COMING in Feb — Don't Miss These Stocks!" जैसे हेडलाइन्स ट्रेंड कर रहे हैं; लेकिन हर IPO में अप्लाई करने से पहले बिजनेस और वैल्यूएशन समझना जरूरी है।</p>
 <p>Fractal IPO की पूरी कहानी के लिए <a href="/news/markets/fractal-analytics-ipo-size-price-band-india-2026">Fractal Analytics IPO आर्टिकल</a> पढ़ें। और अपडेट्स के लिए <a href="/news/markets">मार्केट न्यूज़</a> और <a href="/news/shorts">शॉर्ट्स</a> देखें।</p>
 
 <div class="info-box">

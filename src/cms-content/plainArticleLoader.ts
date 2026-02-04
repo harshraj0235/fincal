@@ -76,6 +76,16 @@ import { sevenIPOs14000CroreFebEnd2026 } from './news-articles/markets/seven-ipo
 import { indianItStocksPlunge8PercentGlobalSelloff2026 } from './news-articles/markets/indian-it-stocks-plunge-8-percent-global-selloff-2026';
 import { macroDebtBondsInflationRbiLicHousingFeb2026 } from './news-articles/economy/macro-debt-bonds-inflation-rbi-lic-housing-feb-2026';
 import { deepinderGoyalOpenCallExEmployeesZomato2026 } from './news-articles/business/deepinder-goyal-open-call-ex-employees-zomato-2026';
+import { recordGovtBorrowingWithoutMarketCrash2026 } from './news-articles/economy/record-govt-borrowing-without-market-crash-2026';
+import { rbiMayPauseRateCutsLoansFd2026 } from './news-articles/economy/rbi-may-pause-rate-cuts-loans-fd-2026';
+import { delhiBudget202627BigChanges2026 } from './news-articles/economy/delhi-budget-2026-27-big-changes-2026';
+import { eggsHoneyExportBoostSmallProducers2026 } from './news-articles/economy/eggs-honey-export-boost-small-producers-2026';
+import { top5StocksSurgingUsIndiaTrade2026 } from './news-articles/markets/top-5-stocks-surging-us-india-trade-2026';
+import { bankStocksRallyBeforeRbiMpc2026 } from './news-articles/markets/bank-stocks-rally-before-rbi-mpc-2026';
+import { powerFinanceJumps3PercentIntraday2026 } from './news-articles/markets/power-finance-jumps-3-intraday-2026';
+import { infoEdgeFallsValuePlay2026 } from './news-articles/markets/info-edge-falls-value-play-2026';
+import { infosysCrashesIntradayTechTrouble2026 } from './news-articles/markets/infosys-crashes-intraday-tech-trouble-2026';
+import { rbiMpcStartsToday3ThingsInvestors2026 } from './news-articles/markets/rbi-mpc-starts-today-3-things-investors-2026';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -96,6 +106,16 @@ export const plainArticleContentMap: Record<string, any> = {
   'indian-it-stocks-plunge-8-percent-global-selloff-2026': indianItStocksPlunge8PercentGlobalSelloff2026,
   'macro-debt-bonds-inflation-rbi-lic-housing-feb-2026': macroDebtBondsInflationRbiLicHousingFeb2026,
   'deepinder-goyal-open-call-ex-employees-zomato-hiring-2026': deepinderGoyalOpenCallExEmployeesZomato2026,
+  'record-govt-borrowing-plan-without-market-crash-2026': recordGovtBorrowingWithoutMarketCrash2026,
+  'rbi-may-pause-rate-cuts-loans-fd-returns-2026': rbiMayPauseRateCutsLoansFd2026,
+  'delhi-budget-2026-27-plans-big-changes-new-taxes-spending-2026': delhiBudget202627BigChanges2026,
+  'eggs-honey-export-boost-small-producers-win-2026': eggsHoneyExportBoostSmallProducers2026,
+  'top-5-stocks-surging-after-us-india-trade-news-2026': top5StocksSurgingUsIndiaTrade2026,
+  'bank-stocks-rally-before-rbi-mpc-buy-or-sell-2026': bankStocksRallyBeforeRbiMpc2026,
+  'power-finance-jumps-3-percent-intraday-opportunity-2026': powerFinanceJumps3PercentIntraday2026,
+  'info-edge-falls-hard-today-value-play-2026': infoEdgeFallsValuePlay2026,
+  'infosys-crashes-intraday-tech-sector-trouble-2026': infosysCrashesIntradayTechTrouble2026,
+  'rbi-mpc-starts-today-3-things-every-investor-should-know-2026': rbiMpcStartsToday3ThingsInvestors2026,
   'nifty-50-record-high-fii-inflows-november-2025': demoNiftyArticle,
   'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis': marketRallyDiwali2025,
   'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide': startupFundingWinter2025,

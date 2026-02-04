@@ -1,7 +1,8 @@
 import { NewsArticle } from '../../../types/news';
 
 /**
- * Indian IT stocks plunge up to 8% — Global tech sell-off hits Infosys, TCS & peers
+ * Indian IT stocks plunge sharply up to 8% — Global tech sell-off hits Infosys, TCS & peers
+ * Huge interest for tech investors. 1000+ words | Hindi audience | Internal links
  */
 export const indianItStocksPlunge8PercentGlobalSelloff2026: NewsArticle = {
   id: 'markets-it-stocks-plunge-8-percent-2026',

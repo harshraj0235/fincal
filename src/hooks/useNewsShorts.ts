@@ -1,34 +1,26 @@
-import { useState, useEffect, useCallback } from 'react';
-import {
-  fetchCustomShortsFromServer,
-  mergeShorts,
-  type NewsShort,
-} from '../data/newsShortsData';
+import { useMemo } from 'react';
+import { getNewsShorts, type NewsShort, type NewsShortCategory } from '../data/newsShortsData';
 
-export function useNewsShorts(): {
+export interface UseNewsShortsResult {
   shorts: NewsShort[];
   loading: boolean;
-  refetch: () => Promise<void>;
-} {
-  const [shorts, setShorts] = useState<NewsShort[]>([]);
-  const [loading, setLoading] = useState(true);
+  refetch: () => void;
+}
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const serverCustom = await fetchCustomShortsFromServer();
-      setShorts(mergeShorts(serverCustom));
-    } catch (_e) {
-      const { getNewsShorts } = await import('../data/newsShortsData');
-      setShorts(getNewsShorts());
-    } finally {
-      setLoading(false);
-    }
+/**
+ * Returns the list of news shorts (Inshorts-style). Static for now; can be extended with fetch/custom later.
+ */
+export function useNewsShorts(): UseNewsShortsResult {
+  const shorts = useMemo(() => {
+    const list = getNewsShorts();
+    return list.sort(
+      (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
+    );
   }, []);
 
-  useEffect(() => {
-    load();
-  }, [load]);
-
-  return { shorts, loading, refetch: load };
+  return {
+    shorts,
+    loading: false,
+    refetch: () => {},
+  };
 }
