@@ -69,6 +69,8 @@ import { rupeeRocketsFallsTraders2026 } from './news-articles/markets/rupee-rock
 import { sttHikeBudget2026TraderProfits2026 } from './news-articles/markets/stt-hike-budget-2026-trader-profits-2026';
 import { budget2026HiddenSurpriseDirectForeignInvestment2026 } from './news-articles/economy/budget-2026-hidden-direct-foreign-investment-2026';
 import { bondsNextBigBetTradeBoom2026 } from './news-articles/markets/bonds-next-big-bet-trade-boom-2026';
+import { fractalAnalyticsIpoSizePriceBand2026 } from './news-articles/markets/fractal-analytics-ipo-size-price-band-india-2026';
+import { varahaClimateTech45MFunding2026 } from './news-articles/startups/varaha-climate-tech-45m-funding-india-2026';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -82,6 +84,8 @@ export const plainArticleContentMap: Record<string, any> = {
   'stt-hike-budget-2026-derivatives-trader-profits-2026': sttHikeBudget2026TraderProfits2026,
   'budget-2026-hidden-surprise-direct-foreign-investment-2026': budget2026HiddenSurpriseDirectForeignInvestment2026,
   'bonds-next-big-bet-or-risk-after-trade-boom-india-2026': bondsNextBigBetTradeBoom2026,
+  'fractal-analytics-ipo-size-price-band-india-2026': fractalAnalyticsIpoSizePriceBand2026,
+  'varaha-climate-tech-45-million-funding-india-2026': varahaClimateTech45MFunding2026,
   'nifty-50-record-high-fii-inflows-november-2025': demoNiftyArticle,
   'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis': marketRallyDiwali2025,
   'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide': startupFundingWinter2025,

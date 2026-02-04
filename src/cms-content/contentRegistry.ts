@@ -13,6 +13,27 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // === Hindi audience high-quality news (Feb 2026) - Fractal IPO, Varaha climate tech ===
+  {
+    id: 'markets-fractal-analytics-ipo-india-2026',
+    slug: 'fractal-analytics-ipo-size-price-band-india-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'Fractal Analytics ने IPO साइज़ 40% काटा — फिर भी ₹1,600 करोड़ वैल्यूएशन, रिटेल बिडिंग 9 फरवरी',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-01T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'startups-varaha-climate-tech-funding-2026',
+    slug: 'varaha-climate-tech-45-million-funding-india-2026',
+    category: 'startups',
+    subCategory: 'climate-technology',
+    title: 'Varaha को $45M फंडिंग — क्लाइमेट टेक में बड़ा डेब्यू, भारत में ग्रीन कैपिटल का संकेत',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-02-01T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=630&fit=crop&q=80'
+  },
   // === 10 NEW MoneyCal News Articles (Jan 2026) - India-US trade, Budget, Rupee, STT, Bonds, UPI ===
   {
     id: 'markets-india-us-trade-deal-rupee-soaring-2026',
