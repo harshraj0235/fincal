@@ -223,6 +223,29 @@ function loadNewsMetadata() {
   return articles;
 }
 
+/** Load custom shorts from public/custom-shorts.json; return full URLs of linked articles for sitemap. */
+function loadCustomShortsArticleUrls() {
+  const customPath = path.join(PUBLIC_DIR, 'custom-shorts.json');
+  if (!fs.existsSync(customPath)) return [];
+  try {
+    const raw = fs.readFileSync(customPath, 'utf-8');
+    const data = JSON.parse(raw);
+    const list = Array.isArray(data) ? data : (data && Array.isArray(data.shorts) ? data.shorts : []);
+    const urls = [];
+    const seen = new Set();
+    for (const s of list) {
+      const link = s.fullStoryLink || (s.fullStoryPath ? BASE_URL + (s.fullStoryPath.startsWith('/') ? s.fullStoryPath : '/' + s.fullStoryPath) : null);
+      if (link && link.startsWith(BASE_URL) && !seen.has(link)) {
+        seen.add(link);
+        urls.push(link);
+      }
+    }
+    return urls;
+  } catch (e) {
+    return [];
+  }
+}
+
 // ═══════════════════════════════════════════════════════════════════════
 // STEP 5: GENERATE SITEMAPS
 // ═══════════════════════════════════════════════════════════════════════
@@ -331,9 +354,14 @@ try {
     `${BASE_URL}/news/tech-business`,
     `${BASE_URL}/news/business-analysis`
   ];
-  const newsUrls = [...newsStatic, ...newsArticles.map(a => `${BASE_URL}/news/${a.category}/${a.slug}`)];
+  const newsFromRegistry = newsArticles.map(a => `${BASE_URL}/news/${a.category}/${a.slug}`);
+  const newsFromCustomShorts = loadCustomShortsArticleUrls();
+  const newsUrlSet = new Set([...newsStatic, ...newsFromRegistry, ...newsFromCustomShorts]);
+  const newsUrls = Array.from(newsUrlSet);
+  // Future: any new news (contentRegistry) or shorts (custom-shorts.json) is included here.
+  // Submit sitemap-news.xml in Google Search Console for indexing and for news. See docs/NEWS-SITEMAP-GOOGLE-SEARCH-CONSOLE.md
   
-  // Generate all sitemaps (news = all registry articles in Google News format)
+  // Generate all sitemaps (news = contentRegistry + custom shorts linked articles, Google News format)
   const sitemapConfigs = [
     { name: 'news', urls: newsUrls, priority: 0.8, changefreq: 'daily', isNews: true },
     { name: 'calculators', urls: categories.calculators, priority: 0.9, changefreq: 'monthly' },

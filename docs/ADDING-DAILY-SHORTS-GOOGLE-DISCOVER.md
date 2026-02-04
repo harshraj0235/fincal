@@ -10,6 +10,7 @@ Add **multiple Moneycal shorts daily** based on trends. When you add a short, ma
 - Add as many shorts as you want per day — one form submit per short.
 - Each short appears on `/news/shorts` and in the **Content for Google Discover** block with a **full URL** to the full story.
 - For site-wide visibility, use the **Publish** flow so the short is saved to `public/custom-shorts.json` and deployed (see [SHORTS-PUBLISH-API-SETUP.md](./SHORTS-PUBLISH-API-SETUP.md)).
+- **Sitemap & indexing:** After you add shorts (and deploy), run **`npm run generate-sitemaps`** (or **`npm run build`**) so the news sitemap includes `/news/shorts` and every **full-story URL** from custom shorts. Then submit **sitemap-news.xml** in **Google Search Console** for indexing and for news. See [NEWS-SITEMAP-GOOGLE-SEARCH-CONSOLE.md](./NEWS-SITEMAP-GOOGLE-SEARCH-CONSOLE.md).
 
 ---
 
@@ -88,3 +89,10 @@ Avoid long paragraphs and heavy jargon. Prefer active voice and concrete numbers
 - **Publish API:** See [SHORTS-PUBLISH-API-SETUP.md](./SHORTS-PUBLISH-API-SETUP.md) and `functions/api/publish-short.js` (Cloudflare) or `api/publish-short.js` (Vercel).
 
 Adding multiple shorts daily with **proper image** and **internal full-article link** keeps them Discover-friendly and drives readers to your full text articles.
+
+---
+
+## 7. Sitemap and Google Search Console
+
+- **News sitemap:** All news articles (contentRegistry) and shorts’ full-story links are included in **sitemap-news.xml** when you run `npm run generate-sitemaps` or `npm run build`.
+- **Submit for indexing:** In Google Search Console → Sitemaps, submit **sitemap-news.xml** so new news and shorts-linked articles get indexed and can appear in Google News. Full steps: [NEWS-SITEMAP-GOOGLE-SEARCH-CONSOLE.md](./NEWS-SITEMAP-GOOGLE-SEARCH-CONSOLE.md).
