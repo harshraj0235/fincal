@@ -82,6 +82,9 @@ async function main() {
   if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2), 'utf8');
   console.log(`Wrote ${items.length} items to ${outPath}`);
+  if (items.length === 0) {
+    console.warn('No items fetched — check RSS URLs or network. File still written for auto mode.');
+  }
 }
 
 main().catch((err) => {
