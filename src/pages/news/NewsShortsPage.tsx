@@ -310,11 +310,24 @@ const NewsShortsPage: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/95 to-slate-900/50" />
             </div>
 
-            {/* Content — glass panel, mobile padding and safe area */}
-            <div className="relative flex-1 flex flex-col justify-end px-3 py-4 sm:p-6 pb-10 sm:pb-12" style={{ paddingBottom: 'max(2.5rem, env(safe-area-inset-bottom))' }}>
-              {/* Readable content card — glass + high contrast, clear on all devices */}
-              <div className="rounded-xl sm:rounded-2xl bg-slate-900/85 backdrop-blur-xl border border-white/10 shadow-2xl p-4 sm:p-6 max-h-[60vh] sm:max-h-[65vh] min-h-[260px] overflow-y-auto scrollbar-hide">
-                <div className="flex items-center gap-2 mb-3">
+            {/* Content — generous top and bottom space (2 inch) so text is easily visible */}
+            <div
+              className="relative flex-1 flex flex-col justify-end px-3 sm:px-6"
+              style={{
+                paddingTop: 'min(2in, 3rem)',
+                paddingBottom: 'max(min(2in, 3rem), env(safe-area-inset-bottom))',
+              }}
+            >
+              {/* Readable content card — paragraph structure, no bullets */}
+              <div
+                className="rounded-xl sm:rounded-2xl bg-slate-900/90 backdrop-blur-xl border border-white/10 shadow-2xl overflow-y-auto scrollbar-hide mx-auto w-full max-w-2xl"
+                style={{
+                  padding: 'clamp(1.25rem, 4vw, 2rem)',
+                  minHeight: '280px',
+                  maxHeight: 'min(65vh, 420px)',
+                }}
+              >
+                <div className="flex items-center gap-2 mb-3 flex-wrap">
                   <span className="inline-block px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500/25 text-amber-300 uppercase tracking-wider">
                     {short.category}
                   </span>
@@ -326,20 +339,28 @@ const NewsShortsPage: React.FC = () => {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-snug mb-4 tracking-tight">
                   {short.headline}
                 </h2>
-                {/* All summary points — larger, more visible text */}
-                <div className="text-white text-base sm:text-lg space-y-3 mb-4 leading-relaxed">
-                  {short.whyItMatters.map((p, i) => (
-                    <p key={i} className="text-white/95 leading-relaxed">{p}</p>
-                  ))}
-                  {short.keyNumbers && short.keyNumbers.length > 0 && (
-                    <p className="text-amber-300 font-semibold text-base sm:text-lg py-1">
-                      📊 {short.keyNumbers.join(' · ')}
-                    </p>
+                {/* Paragraph-only content: short summary, concise, no bullets */}
+                <div className="text-white/95 text-base sm:text-lg leading-relaxed space-y-4">
+                  {short.summaryParagraphs && short.summaryParagraphs.length > 0 ? (
+                    short.summaryParagraphs.map((para, i) => (
+                      <p key={i} className="first:mt-0">
+                        {para}
+                      </p>
+                    ))
+                  ) : (
+                    <>
+                      <p>{short.whyItMatters.join(' ')}</p>
+                      {short.keyNumbers && short.keyNumbers.length > 0 && (
+                        <p className="text-amber-200/95">
+                          Notable figures: {short.keyNumbers.join(', ')}.
+                        </p>
+                      )}
+                      <p>
+                        <span className="font-semibold text-amber-400">What to do: </span>
+                        {short.whatToDo}
+                      </p>
+                    </>
                   )}
-                  <p className="text-white/95 pt-1">
-                    <span className="font-bold text-amber-400">What to do: </span>
-                    {short.whatToDo}
-                  </p>
                 </div>
               </div>
 

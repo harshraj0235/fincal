@@ -23,6 +23,8 @@ export interface NewsShort {
   whyItMatters: string[];
   keyNumbers?: string[];
   whatToDo: string;
+  /** Optional paragraph-style summary (short, concise, no bullets). When set, UI shows these instead of whyItMatters/keyNumbers. */
+  summaryParagraphs?: string[];
   fullStoryLink: string;
   fullStoryPath: string;
   datePublished: string;
@@ -111,6 +113,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['Record borrowing', 'Bond yields stable', 'RBI OMO support'],
     whatToDo: 'Watch bond fund NAVs and bank stocks; stay diversified.',
+    summaryParagraphs: [
+      'The Centre\'s borrowing plan is at a record level, yet bond and equity markets have not crashed. RBI and the government used staged bond issues and liquidity support to avoid a sell-off.',
+      'Notable figures: record borrowing, stable bond yields, and RBI OMO support.',
+      'What to do: Watch bond fund NAVs and bank stocks; stay diversified.',
+    ],
     fullStoryLink: `${baseUrl}/news/economy/record-govt-borrowing-plan-without-market-crash-2026`,
     fullStoryPath: '/news/economy/record-govt-borrowing-plan-without-market-crash-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -129,6 +136,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['Repo rate', 'FD rates', 'Loan EMI'],
     whatToDo: 'Lock in FD tenors if you need fixed income; avoid over-leveraging on loans.',
+    summaryParagraphs: [
+      'The MPC may keep the repo rate unchanged, so loan rates could stay higher for longer. FD returns can remain attractive, while new home and car loans are unlikely to get cheaper soon.',
+      'Key areas to watch: repo rate, FD rates, and loan EMI.',
+      'What to do: Lock in FD tenors if you need fixed income; avoid over-leveraging on loans.',
+    ],
     fullStoryLink: `${baseUrl}/news/economy/rbi-may-pause-rate-cuts-loans-fd-returns-2026`,
     fullStoryPath: '/news/economy/rbi-may-pause-rate-cuts-loans-fd-returns-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -147,6 +159,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['MPC meet', '3 things', 'Repo, inflation, growth'],
     whatToDo: 'Don\'t panic-trade on the outcome; align portfolio with your goal.',
+    summaryParagraphs: [
+      'The repo rate decision affects loans, FDs, bonds, and equity sentiment. Inflation and growth outlook will drive market direction.',
+      'Focus on three things: MPC meet outcome, repo rate, and inflation versus growth.',
+      'What to do: Do not panic-trade on the outcome; align your portfolio with your goal.',
+    ],
     fullStoryLink: `${baseUrl}/news/markets/rbi-mpc-starts-today-3-things-every-investor-should-know-2026`,
     fullStoryPath: '/news/markets/rbi-mpc-starts-today-3-things-every-investor-should-know-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -165,6 +182,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['Top 5', 'US–India trade', 'Export, bank, infra'],
     whatToDo: 'Read full story; do not chase — use SIP and asset allocation.',
+    summaryParagraphs: [
+      'Export-linked, bank, and infra stocks rallied after the U.S.–India trade deal news. The move gives a sentiment boost to equity, but avoid chasing; stick to discipline.',
+      'Sectors in focus: export, banking, and infrastructure.',
+      'What to do: Read the full story; do not chase. Use SIP and asset allocation.',
+    ],
     fullStoryLink: `${baseUrl}/news/markets/top-5-stocks-surging-after-us-india-trade-news-2026`,
     fullStoryPath: '/news/markets/top-5-stocks-surging-after-us-india-trade-news-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -183,6 +205,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['Bank rally', 'RBI MPC', 'NIM'],
     whatToDo: 'Avoid trading only on today\'s move; stick to long-term plan.',
+    summaryParagraphs: [
+      'Bank stocks rallied ahead of the RBI MPC on rate-pause expectations and the NIM outlook. A one-day move is not a buy or sell signal; check your allocation.',
+      'Watch: bank rally, RBI MPC outcome, and net interest margins.',
+      'What to do: Avoid trading only on today\'s move; stick to your long-term plan.',
+    ],
     fullStoryLink: `${baseUrl}/news/markets/bank-stocks-rally-before-rbi-mpc-buy-or-sell-2026`,
     fullStoryPath: '/news/markets/bank-stocks-rally-before-rbi-mpc-buy-or-sell-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -201,6 +228,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['~₹14,000 Cr', '7 IPOs', 'Fractal, Aye, Clean Max'],
     whatToDo: 'Read full list; apply in select names with limited exposure.',
+    summaryParagraphs: [
+      'Fractal, Aye Finance, Clean Max and four more IPOs are lined up before February end, together worth around ₹14,000 crore. It is a big primary market moment; apply only after understanding each business and the risks.',
+      'Notable names: Fractal, Aye Finance, Clean Max, and four others.',
+      'What to do: Read the full list and apply in select names with limited exposure.',
+    ],
     fullStoryLink: `${baseUrl}/news/markets/seven-ipos-14000-crore-feb-end-2026`,
     fullStoryPath: '/news/markets/seven-ipos-14000-crore-feb-end-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -219,6 +251,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['Up to 8% fall', 'Infosys, TCS', 'Global selloff'],
     whatToDo: 'Avoid panic selling; rebalance if overexposed to IT.',
+    summaryParagraphs: [
+      'A global tech sell-off hit Infosys, TCS and their peers, with falls of up to 8%. This is short-term volatility; long-term fundamentals still matter.',
+      'Key points: sharp fall in IT names, Infosys and TCS among the worst hit, global selloff driving the move.',
+      'What to do: Avoid panic selling; rebalance only if you are overexposed to IT.',
+    ],
     fullStoryLink: `${baseUrl}/news/markets/indian-it-stocks-plunge-8-percent-global-selloff-2026`,
     fullStoryPath: '/news/markets/indian-it-stocks-plunge-8-percent-global-selloff-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -237,6 +274,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['Top 15', 'Opening bell', 'Stocks to watch'],
     whatToDo: 'Check full list before market open; avoid chasing at open.',
+    summaryParagraphs: [
+      'Before the opening bell, watch Nifty, sectors, FII/DII flows, crude, and the rupee. Stocks in focus include Bajaj Finance, Aditya Birla Capital, Castrol and a few more.',
+      'Fifteen things to keep in mind before the market opens.',
+      'What to do: Check the full list before market open; avoid chasing at the open.',
+    ],
     fullStoryLink: `${baseUrl}/news/markets/market-setup-top-15-opening-bell-stocks-to-watch-feb-2026`,
     fullStoryPath: '/news/markets/market-setup-top-15-opening-bell-stocks-to-watch-feb-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -255,6 +297,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['Bond yields lower', 'LIC Housing ₹525', 'Inflation RBI band'],
     whatToDo: 'Read macro update; watch bank and debt fund NAVs.',
+    summaryParagraphs: [
+      'Indian bond yields opened lower after the trade deal; the offshore debt window is in focus. The FM said inflation will stay within the RBI band; LIC Housing has an Accumulate rating with a target of ₹525.',
+      'Notable points: bond yields lower, LIC Housing Accumulate ₹525, inflation expected in RBI band.',
+      'What to do: Read the macro update; watch bank and debt fund NAVs.',
+    ],
     fullStoryLink: `${baseUrl}/news/economy/macro-debt-bonds-inflation-rbi-lic-housing-feb-2026`,
     fullStoryPath: '/news/economy/macro-debt-bonds-inflation-rbi-lic-housing-feb-2026',
     datePublished: getNewsShortsTodayISO(),
@@ -273,6 +320,11 @@ export const newsShortsList: NewsShort[] = [
     ],
     keyNumbers: ['Delhi budget', '2026-27', 'Taxes, spending'],
     whatToDo: 'Follow full story for announcements; plan finances accordingly.',
+    summaryParagraphs: [
+      'The Delhi government budget for 2026-27 may bring new taxes or higher spending on infrastructure, health, and education. The outcome matters for local business and citizens.',
+      'Focus areas: Delhi budget 2026-27, taxes, and spending priorities.',
+      'What to do: Follow the full story for announcements; plan your finances accordingly.',
+    ],
     fullStoryLink: `${baseUrl}/news/economy/delhi-budget-2026-27-plans-big-changes-new-taxes-spending-2026`,
     fullStoryPath: '/news/economy/delhi-budget-2026-27-plans-big-changes-new-taxes-spending-2026',
     datePublished: getNewsShortsTodayISO(),
