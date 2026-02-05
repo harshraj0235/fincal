@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, ArrowLeft, ExternalLink, Share2, Play, Copy, X } from 'lucide-react';
+import { ChevronDown, ChevronUp, ArrowLeft, ExternalLink, Share2, Copy, X, BookOpen } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import { useNewsShorts } from '../../hooks/useNewsShorts';
 import {
@@ -14,11 +14,19 @@ import {
 } from '../../data/newsShortsData';
 import { formatStaticShortDate } from '../../utils/randomCalculators';
 
-/** Share options: WhatsApp, Twitter, Copy, Native share */
+/** Inshorts-style: get first ~60 words for card summary */
+function getSummary60(short: NewsShort): string {
+  const source = short.summaryParagraphs?.length
+    ? short.summaryParagraphs.join(' ')
+    : [...short.whyItMatters, short.whatToDo].join(' ');
+  const words = source.trim().split(/\s+/);
+  if (words.length <= 60) return source.trim();
+  return words.slice(0, 60).join(' ') + '…';
+}
+
 function getShareUrls(url: string, title: string, text?: string) {
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
-  const encodedText = encodeURIComponent(text || title);
   return {
     whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
@@ -27,7 +35,11 @@ function getShareUrls(url: string, title: string, text?: string) {
   };
 }
 
-/** Reel-style: one full-screen card per short, vertical scroll — simple, Google-friendly */
+/**
+ * MoneyCal Shorts — Inshorts-style: one card per story, 60-second read.
+ * Structure: image top → headline → 60-word summary → source → actions.
+ * Unique UI: paper-style content card, clear typography, simple navigation.
+ */
 const NewsShortsPage: React.FC = () => {
   const { shorts, loading } = useNewsShorts();
   const [filter, setFilter] = useState<NewsShortCategory | 'latest'>('latest');
@@ -43,6 +55,14 @@ const NewsShortsPage: React.FC = () => {
     return list.filter((s) => s.category === filter);
   }, [shorts, filter]);
 
+  // Reset to first card when category changes
+  useEffect(() => {
+    setActiveIndex(0);
+    setShowSwipeHint(true);
+    const el = scrollRef.current;
+    if (el) el.scrollTo({ top: 0, behavior: 'auto' });
+  }, [filter]);
+
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -50,8 +70,9 @@ const NewsShortsPage: React.FC = () => {
       const cardHeight = el.offsetHeight;
       const scrollTop = el.scrollTop;
       const index = Math.round(scrollTop / cardHeight);
-      setActiveIndex(Math.min(Math.max(0, index), filtered.length - 1));
-      if (scrollTop > 60) setShowSwipeHint(false);
+      const next = Math.min(Math.max(0, index), filtered.length - 1);
+      setActiveIndex(next);
+      if (scrollTop > 80) setShowSwipeHint(false);
     };
     el.addEventListener('scroll', onScroll, { passive: true });
     return () => el.removeEventListener('scroll', onScroll);
@@ -60,9 +81,11 @@ const NewsShortsPage: React.FC = () => {
   const goTo = useCallback((index: number) => {
     const el = scrollRef.current;
     if (!el) return;
+    const i = Math.min(Math.max(0, index), filtered.length - 1);
     const cardHeight = el.offsetHeight;
-    el.scrollTo({ top: index * cardHeight, behavior: 'smooth' });
-  }, []);
+    el.scrollTo({ top: i * cardHeight, behavior: 'smooth' });
+    setActiveIndex(i);
+  }, [filtered.length]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -83,11 +106,10 @@ const NewsShortsPage: React.FC = () => {
   const [copyDone, setCopyDone] = useState(false);
 
   const openShare = useCallback((short: NewsShort) => {
-    const url = getShortFullUrl(short);
     setSharePayload({
-      url,
+      url: getShortFullUrl(short),
       title: short.headline,
-      text: short.whyItMatters[0] || short.headline,
+      text: getSummary60(short),
     });
     setShareOpen(true);
     setCopyDone(false);
@@ -102,9 +124,7 @@ const NewsShortsPage: React.FC = () => {
         url: sharePayload.url,
       });
       setShareOpen(false);
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (_) {}
   }, [sharePayload]);
 
   const handleCopyLink = useCallback(async () => {
@@ -113,9 +133,7 @@ const NewsShortsPage: React.FC = () => {
       await navigator.clipboard.writeText(sharePayload.url);
       setCopyDone(true);
       setTimeout(() => setCopyDone(false), 2000);
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (_) {}
   }, [sharePayload]);
 
   useEffect(() => {
@@ -131,10 +149,10 @@ const NewsShortsPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-950 flex items-center justify-center pt-16">
-        <div className="text-white text-center">
-          <div className="w-12 h-12 border-2 border-amber-400/30 border-t-amber-400 rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-slate-300">Loading shorts…</p>
+      <div className="min-h-screen bg-neutral-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-10 h-10 border-2 border-amber-500/30 border-t-amber-500 rounded-full animate-spin mx-auto mb-3" />
+          <p className="text-neutral-500 text-sm">Loading…</p>
         </div>
       </div>
     );
@@ -142,10 +160,13 @@ const NewsShortsPage: React.FC = () => {
 
   if (filtered.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-950 flex items-center justify-center pt-16">
-        <div className="text-white text-center max-w-md px-4">
-          <p className="text-lg mb-4">No shorts in this category yet.</p>
-          <Link to="/news" className="text-amber-400 hover:underline inline-flex items-center gap-2">
+      <div className="min-h-screen bg-neutral-100 flex items-center justify-center p-4">
+        <div className="text-center max-w-sm">
+          <p className="text-neutral-700 font-medium mb-4">No stories in this category yet.</p>
+          <Link
+            to="/news"
+            className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-semibold"
+          >
             <ArrowLeft className="w-4 h-4" /> Back to News
           </Link>
         </div>
@@ -153,11 +174,11 @@ const NewsShortsPage: React.FC = () => {
     );
   }
 
-  const progressPct = filtered.length > 0 ? (Math.min(activeIndex + 1, filtered.length) / filtered.length) * 100 : 0;
+  const progressPct = (Math.min(activeIndex + 1, filtered.length) / filtered.length) * 100;
 
   return (
     <div
-      className="min-h-screen bg-slate-950 text-white touch-manipulation"
+      className="min-h-screen bg-neutral-200 text-neutral-900 touch-manipulation"
       style={{
         paddingTop: 'env(safe-area-inset-top)',
         paddingLeft: 'env(safe-area-inset-left)',
@@ -165,13 +186,12 @@ const NewsShortsPage: React.FC = () => {
       }}
     >
       <SEOHelmet
-        title="MoneyCal Shorts | Finance News in 60 Seconds"
-        description="Swipe through finance news in 60 seconds. RBI, markets, economy — short, clear, actionable. Scroll for next story."
-        keywords="finance news 60 seconds, MoneyCal Shorts, RBI news, markets, Indian economy, news reels"
+        title="MoneyCal Shorts | News in 60 Seconds"
+        description="Read news in 60 seconds. Swipe through finance, markets, economy — one card per story. Like Inshorts for money."
+        keywords="news in 60 seconds, MoneyCal Shorts, finance news, markets, economy, Inshorts style"
         image={DISCOVER_IMAGE_DEFAULT}
         url={`${baseUrl}/news/shorts`}
       />
-      {/* JSON-LD for Google Discover / rich results */}
       {filtered.length > 0 && (
         <script
           type="application/ld+json"
@@ -179,8 +199,7 @@ const NewsShortsPage: React.FC = () => {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ItemList',
-              name: 'MoneyCal Shorts – Finance News in 60 Seconds',
-              description: 'Short finance news: RBI, markets, economy. One story per card, scroll for next.',
+              name: 'MoneyCal Shorts – News in 60 Seconds',
               numberOfItems: filtered.length,
               itemListOrder: 'ItemListOrderDescending',
               itemListElement: filtered.slice(0, 20).map((short, i) => ({
@@ -200,47 +219,43 @@ const NewsShortsPage: React.FC = () => {
         />
       )}
 
-      {/* Fixed header — glass, safe area, mobile-friendly */}
+      {/* Header — Inshorts-style: minimal, progress, categories */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20"
-        style={{ paddingTop: 'max(0.75rem, env(safe-area-inset-top))' }}
+        className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-neutral-200/80 shadow-sm"
+        style={{ paddingTop: 'max(0.5rem, env(safe-area-inset-top))' }}
       >
-        <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3">
+        <div className="flex items-center justify-between px-3 py-2">
           <Link
             to="/news"
-            className="min-h-[44px] min-w-[44px] sm:min-w-0 inline-flex items-center justify-center gap-2 text-white hover:text-amber-300 font-semibold text-sm transition-colors touch-manipulation -m-2 p-2 sm:m-0 sm:p-0"
+            className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center gap-1.5 text-neutral-700 hover:text-amber-600 font-medium text-sm -m-1 p-1"
           >
-            <ArrowLeft className="w-5 h-5 flex-shrink-0" />
+            <ArrowLeft className="w-5 h-5" />
             <span className="hidden sm:inline">Back</span>
           </Link>
-          <div className="flex items-center gap-2.5">
-            <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
-              <Play className="w-4 h-4 text-white" fill="currentColor" />
-            </span>
-            <h1 className="text-lg sm:text-xl font-bold text-white tracking-tight">Shorts</h1>
+          <div className="flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-amber-600" />
+            <h1 className="text-base font-bold text-neutral-900">In 60 Seconds</h1>
           </div>
-          <span className="text-sm font-semibold text-white/90 tabular-nums">
-            {activeIndex + 1}<span className="text-white/50 font-normal"> / {filtered.length}</span>
+          <span className="text-sm tabular-nums text-neutral-500 min-w-[3ch] text-right">
+            {activeIndex + 1}<span className="text-neutral-400">/{filtered.length}</span>
           </span>
         </div>
-        {/* Progress bar — thicker, more visible */}
-        <div className="h-1 bg-white/10">
+        <div className="h-0.5 bg-neutral-200">
           <motion.div
-            className="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-r"
+            className="h-full bg-amber-500 rounded-r-full"
             style={{ width: `${progressPct}%` }}
-            transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+            transition={{ type: 'spring', stiffness: 120, damping: 24 }}
           />
         </div>
-        {/* Category tabs — simple, touch-friendly */}
-        <div className="flex gap-2 overflow-x-auto scrollbar-hide px-3 sm:px-4 py-2 sm:py-3" style={{ WebkitOverflowScrolling: 'touch' }}>
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide px-3 py-2.5" style={{ WebkitOverflowScrolling: 'touch' }}>
           {newsShortsReelTabs.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setFilter(cat.id as NewsShortCategory | 'latest')}
-              className={`flex-shrink-0 min-h-[44px] px-4 py-2.5 rounded-full text-sm font-semibold transition-all touch-manipulation ${
+              className={`flex-shrink-0 px-3.5 py-2 rounded-full text-sm font-medium transition-all ${
                 filter === cat.id
-                  ? 'bg-amber-500 text-slate-900 shadow-lg shadow-amber-500/30'
-                  : 'bg-white/10 text-white/90 hover:bg-white/20 active:bg-white/25'
+                  ? 'bg-amber-500 text-white shadow'
+                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
               }`}
             >
               {cat.label}
@@ -249,163 +264,124 @@ const NewsShortsPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Reel container — full height snap scroll, safe bottom for notches */}
+      {/* Card stack — one full-screen card per short, Inshorts layout */}
       <div
         ref={scrollRef}
-        className="pt-[130px] sm:pt-[140px] pb-24 sm:pb-28 h-screen overflow-y-auto snap-y snap-mandatory scrollbar-hide"
+        className="pt-[120px] sm:pt-[128px] pb-20 h-screen overflow-y-auto snap-y snap-mandatory scrollbar-hide"
         style={{ scrollSnapType: 'y mandatory', WebkitOverflowScrolling: 'touch' }}
       >
         {filtered.map((short) => (
-          <motion.article
+          <article
             key={short.id}
-            initial={{ opacity: 0.95 }}
-            animate={{ opacity: 1 }}
-            className="h-screen min-h-[100vh] snap-start snap-always flex flex-col relative"
+            className="h-screen min-h-[100vh] snap-start snap-always flex flex-col bg-white shadow-lg"
             style={{ scrollSnapAlign: 'start' }}
           >
-            {/* Background image + stronger gradient for text legibility */}
-            <div className="absolute inset-0">
+            {/* Image — top ~38%, Inshorts-style */}
+            <div className="relative w-full flex-shrink-0" style={{ height: '38vh', minHeight: 200 }}>
               <img
                 src={short.imageUrl || DISCOVER_IMAGE_DEFAULT}
                 alt=""
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/95 to-slate-900/50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute bottom-2 left-3 right-3 flex items-center justify-between">
+                <span className="px-2.5 py-1 rounded-md bg-white/90 text-neutral-800 text-xs font-semibold uppercase tracking-wide">
+                  {short.category.replace(/-/g, ' ')}
+                </span>
+                <span className="text-white/90 text-xs font-medium drop-shadow">
+                  {formatStaticShortDate(short.datePublished)} · 60 sec read
+                </span>
+              </div>
             </div>
 
-            {/* Content — generous top and bottom space (2 inch) so text is easily visible */}
-            <div
-              className="relative flex-1 flex flex-col justify-end px-3 sm:px-6"
-              style={{
-                paddingTop: 'min(2in, 3rem)',
-                paddingBottom: 'max(min(2in, 3rem), env(safe-area-inset-bottom))',
-              }}
-            >
-              {/* Readable content card — paragraph structure, no bullets */}
-              <div
-                className="rounded-xl sm:rounded-2xl bg-slate-900/90 backdrop-blur-xl border border-white/10 shadow-2xl overflow-y-auto scrollbar-hide mx-auto w-full max-w-2xl"
-                style={{
-                  padding: 'clamp(1.25rem, 4vw, 2rem)',
-                  minHeight: '280px',
-                  maxHeight: 'min(65vh, 420px)',
-                }}
-              >
-                <div className="flex items-center gap-2 mb-3 flex-wrap">
-                  <span className="inline-block px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500/25 text-amber-300 uppercase tracking-wider">
-                    {short.category}
-                  </span>
-                  <time className="text-xs text-white/60 font-medium" dateTime={short.datePublished}>
-                    {formatStaticShortDate(short.datePublished)}
-                  </time>
-                  <span className="text-xs text-white/50 ml-auto">60 sec read</span>
-                </div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-snug mb-4 tracking-tight">
-                  {short.headline}
-                </h2>
-                {/* Paragraph-only content: short summary, concise, no bullets */}
-                <div className="text-white/95 text-base sm:text-lg leading-relaxed space-y-4">
-                  {short.summaryParagraphs && short.summaryParagraphs.length > 0 ? (
-                    short.summaryParagraphs.map((para, i) => (
-                      <p key={i} className="first:mt-0">
-                        {para}
-                      </p>
-                    ))
-                  ) : (
-                    <>
-                      <p>{short.whyItMatters.join(' ')}</p>
-                      {short.keyNumbers && short.keyNumbers.length > 0 && (
-                        <p className="text-amber-200/95">
-                          Notable figures: {short.keyNumbers.join(', ')}.
-                        </p>
-                      )}
-                      <p>
-                        <span className="font-semibold text-amber-400">What to do: </span>
-                        {short.whatToDo}
-                      </p>
-                    </>
-                  )}
-                </div>
-              </div>
-
-              {/* Actions — one primary CTA + share */}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
+            {/* Content — paper-style, 62%, scrollable if needed */}
+            <div className="flex-1 overflow-y-auto flex flex-col px-4 sm:px-6 pt-4 pb-6" style={{ paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))' }}>
+              <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 leading-snug mb-3 pr-2">
+                {short.headline}
+              </h2>
+              <p className="text-neutral-600 text-base sm:text-lg leading-relaxed mb-4">
+                {getSummary60(short)}
+              </p>
+              <div className="mt-auto pt-2 flex flex-wrap items-center gap-3">
                 <a
                   href={getShortFullUrl(short)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[44px] inline-flex items-center justify-center gap-2 bg-amber-500 text-slate-900 font-bold px-4 sm:px-5 py-3 rounded-xl hover:bg-amber-400 active:bg-amber-400 transition-all shadow-lg shadow-amber-500/30 text-sm sm:text-base touch-manipulation"
+                  className="inline-flex items-center gap-2 bg-amber-500 text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-amber-600 active:bg-amber-600 text-sm shadow-sm"
                 >
                   Read full story
-                  <ExternalLink className="w-4 h-4 flex-shrink-0" />
+                  <ExternalLink className="w-4 h-4" />
                 </a>
                 <button
                   onClick={() => openShare(short)}
-                  className="min-w-[44px] min-h-[44px] flex items-center justify-center p-3 rounded-xl bg-white/15 hover:bg-white/25 active:bg-white/30 text-white transition-colors touch-manipulation"
+                  className="inline-flex items-center gap-2 text-neutral-600 hover:text-neutral-800 font-medium text-sm"
                   aria-label="Share"
                 >
-                  <Share2 className="w-5 h-5" />
+                  <Share2 className="w-4 h-4" />
+                  Share
                 </button>
               </div>
-              <p className="text-xs text-white/50 mt-2">MoneyCal</p>
+              <p className="text-xs text-neutral-400 mt-2">Source: MoneyCal</p>
             </div>
-          </motion.article>
+          </article>
         ))}
       </div>
 
-      {/* Progress dots — simple, first 8 only */}
+      {/* Bottom nav — dots + swipe hint */}
       <div
-        className="fixed left-1/2 -translate-x-1/2 z-40 flex gap-1.5 items-center px-2.5 py-2 rounded-full bg-slate-900/80 backdrop-blur-sm border border-white/10"
-        style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
+        className="fixed left-0 right-0 z-40 flex flex-col items-center gap-2"
+        style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
       >
-        {filtered.slice(0, 8).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            className={`rounded-full transition-all duration-200 touch-manipulation min-w-[20px] min-h-[20px] flex items-center justify-center ${
-              i === activeIndex ? 'bg-amber-500 w-5 h-1.5' : 'bg-white/40 w-1.5 h-1.5 hover:bg-white/60'
-            }`}
-            aria-label={`Story ${i + 1}`}
-          />
-        ))}
-        {filtered.length > 8 && <span className="text-white/60 text-xs ml-0.5 tabular-nums">{activeIndex + 1}/{filtered.length}</span>}
+        <div className="flex gap-1.5 items-center px-3 py-2 rounded-full bg-white/90 backdrop-blur border border-neutral-200/80 shadow-sm">
+          {filtered.slice(0, 10).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`rounded-full transition-all min-w-[20px] min-h-[20px] flex items-center justify-center ${
+                i === activeIndex ? 'bg-amber-500 w-6 h-1.5' : 'bg-neutral-300 w-1.5 h-1.5 hover:bg-neutral-400'
+              }`}
+              aria-label={`Story ${i + 1}`}
+            />
+          ))}
+          {filtered.length > 10 && (
+            <span className="text-neutral-500 text-xs ml-1 tabular-nums">{activeIndex + 1}/{filtered.length}</span>
+          )}
+        </div>
+        <AnimatePresence>
+          {showSwipeHint && (
+            <motion.p
+              initial={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 4 }}
+              className="text-neutral-500 text-sm flex items-center gap-1.5"
+            >
+              <ChevronDown className="w-4 h-4 animate-bounce" />
+              Swipe or scroll for next
+            </motion.p>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Swipe hint — fades after first scroll, above safe area */}
-      <AnimatePresence>
-        {showSwipeHint && (
-          <motion.p
-            initial={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            className="fixed left-1/2 -translate-x-1/2 z-40 text-white/90 text-sm sm:text-base font-medium flex items-center gap-2 bg-slate-900/60 backdrop-blur px-4 py-2.5 rounded-full border border-white/20 touch-manipulation"
-            style={{ bottom: 'max(5rem, calc(env(safe-area-inset-bottom) + 4rem))' }}
-          >
-            <ChevronDown className="w-5 h-5 animate-bounce flex-shrink-0" />
-            Scroll or swipe for next
-          </motion.p>
-        )}
-      </AnimatePresence>
-
-      {/* Prev/next buttons — desktop, clearer and easier to use */}
-      <div className="hidden sm:flex fixed right-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-3">
+      {/* Desktop prev/next */}
+      <div className="hidden sm:flex fixed right-4 top-1/2 -translate-y-1/2 z-40 flex-col gap-2">
         <button
           onClick={() => goTo(activeIndex - 1)}
           disabled={activeIndex === 0}
-          className="p-3.5 rounded-xl bg-slate-800/90 backdrop-blur border border-white/10 text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/20 hover:border-white/20 transition-all shadow-lg"
+          className="p-3 rounded-xl bg-white/90 backdrop-blur border border-neutral-200 shadow-md text-neutral-700 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white"
           aria-label="Previous"
         >
-          <ChevronUp className="w-6 h-6" />
+          <ChevronUp className="w-5 h-5" />
         </button>
         <button
           onClick={() => goTo(activeIndex + 1)}
           disabled={activeIndex >= filtered.length - 1}
-          className="p-3.5 rounded-xl bg-slate-800/90 backdrop-blur border border-white/10 text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/20 hover:border-white/20 transition-all shadow-lg"
+          className="p-3 rounded-xl bg-white/90 backdrop-blur border border-neutral-200 shadow-md text-neutral-700 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white"
           aria-label="Next"
         >
-          <ChevronDown className="w-6 h-6" />
+          <ChevronDown className="w-5 h-5" />
         </button>
       </div>
 
-      {/* Share sheet — WhatsApp, Twitter, Telegram, LinkedIn, Copy, Native */}
+      {/* Share sheet */}
       <AnimatePresence>
         {shareOpen && sharePayload && (
           <>
@@ -413,7 +389,7 @@ const NewsShortsPage: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm"
               onClick={() => setShareOpen(false)}
               aria-hidden="true"
             />
@@ -421,74 +397,72 @@ const NewsShortsPage: React.FC = () => {
               initial={{ y: '100%' }}
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="fixed bottom-0 left-0 right-0 z-[61] rounded-t-3xl bg-slate-900 border border-white/10 shadow-2xl pb-safe"
+              transition={{ type: 'spring', damping: 28, stiffness: 300 }}
+              className="fixed bottom-0 left-0 right-0 z-[61] rounded-t-2xl bg-white border-t border-neutral-200 shadow-2xl"
               style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
             >
-              <div className="pt-4 pb-2 px-4">
-                <div className="w-10 h-1 rounded-full bg-white/30 mx-auto mb-4" />
-                <h3 className="text-lg font-bold text-white text-center">Share this story</h3>
+              <div className="pt-3 pb-2 px-4">
+                <div className="w-8 h-1 rounded-full bg-neutral-300 mx-auto mb-3" />
+                <h3 className="text-lg font-bold text-neutral-900 text-center">Share this story</h3>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 px-4 pb-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 px-4 pb-4">
                 <a
                   href={getShareUrls(sharePayload.url, sharePayload.title, sharePayload.text).whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[52px] flex flex-col items-center justify-center gap-1.5 rounded-xl bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 active:bg-emerald-500/40 transition-colors touch-manipulation"
+                  className="min-h-[48px] flex flex-col items-center justify-center gap-1 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 font-medium text-sm"
                 >
-                  <span className="text-2xl" aria-hidden>📱</span>
-                  <span className="text-sm font-semibold">WhatsApp</span>
+                  <span className="text-xl">📱</span>
+                  WhatsApp
                 </a>
                 <a
                   href={getShareUrls(sharePayload.url, sharePayload.title).twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[52px] flex flex-col items-center justify-center gap-1.5 rounded-xl bg-sky-500/20 text-sky-300 hover:bg-sky-500/30 active:bg-sky-500/40 transition-colors touch-manipulation"
+                  className="min-h-[48px] flex flex-col items-center justify-center gap-1 rounded-xl bg-sky-50 text-sky-700 hover:bg-sky-100 font-medium text-sm"
                 >
-                  <span className="text-2xl" aria-hidden>𝕏</span>
-                  <span className="text-sm font-semibold">Twitter / X</span>
+                  <span className="text-xl">𝕏</span>
+                  Twitter
                 </a>
                 <a
                   href={getShareUrls(sharePayload.url, sharePayload.title).telegram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[52px] flex flex-col items-center justify-center gap-1.5 rounded-xl bg-blue-500/20 text-blue-300 hover:bg-blue-500/30 active:bg-blue-500/40 transition-colors touch-manipulation"
+                  className="min-h-[48px] flex flex-col items-center justify-center gap-1 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 font-medium text-sm"
                 >
-                  <span className="text-2xl" aria-hidden>✈️</span>
-                  <span className="text-sm font-semibold">Telegram</span>
+                  <span className="text-xl">✈️</span>
+                  Telegram
                 </a>
                 <a
                   href={getShareUrls(sharePayload.url, sharePayload.title).linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-h-[52px] flex flex-col items-center justify-center gap-1.5 rounded-xl bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30 active:bg-indigo-500/40 transition-colors touch-manipulation"
+                  className="min-h-[48px] flex flex-col items-center justify-center gap-1 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-medium text-sm"
                 >
-                  <span className="text-2xl" aria-hidden>in</span>
-                  <span className="text-sm font-semibold">LinkedIn</span>
+                  <span className="text-xl">in</span>
+                  LinkedIn
                 </a>
                 <button
                   onClick={handleCopyLink}
-                  className="min-h-[52px] flex flex-col items-center justify-center gap-1.5 rounded-xl bg-white/10 text-white hover:bg-white/20 active:bg-white/25 transition-colors touch-manipulation"
+                  className="min-h-[48px] flex flex-col items-center justify-center gap-1 rounded-xl bg-neutral-100 text-neutral-700 hover:bg-neutral-200 font-medium text-sm"
                 >
-                  <Copy className="w-6 h-6" />
-                  <span className="text-sm font-semibold">{copyDone ? 'Copied!' : 'Copy link'}</span>
+                  <Copy className="w-5 h-5" />
+                  {copyDone ? 'Copied!' : 'Copy link'}
                 </button>
                 {navigator.share && (
                   <button
                     onClick={handleNativeShare}
-                    className="min-h-[52px] flex flex-col items-center justify-center gap-1.5 rounded-xl bg-amber-500/20 text-amber-300 hover:bg-amber-500/30 active:bg-amber-500/40 transition-colors touch-manipulation"
+                    className="min-h-[48px] flex flex-col items-center justify-center gap-1 rounded-xl bg-amber-50 text-amber-700 hover:bg-amber-100 font-medium text-sm"
                   >
-                    <Share2 className="w-6 h-6" />
-                    <span className="text-sm font-semibold">More options</span>
+                    <Share2 className="w-5 h-5" />
+                    More
                   </button>
                 )}
               </div>
               <button
                 onClick={() => setShareOpen(false)}
-                className="w-full min-h-[48px] flex items-center justify-center gap-2 text-white/70 hover:text-white border-t border-white/10 touch-manipulation"
-                aria-label="Close"
+                className="w-full min-h-[48px] text-neutral-500 hover:text-neutral-700 font-medium border-t border-neutral-100"
               >
-                <X className="w-5 h-5" />
                 Close
               </button>
             </motion.div>
