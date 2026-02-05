@@ -10,6 +10,7 @@ import {
   bulkWorld,
   bulkEntertainment,
   bulkScience,
+  bulkCurrentAffairsFeb2026,
 } from './newsShortsBulk2026';
 
 export type NewsShortCategory =
@@ -871,6 +872,7 @@ const allStaticShorts: NewsShort[] = [
   ...bulkWorld,
   ...bulkEntertainment,
   ...bulkScience,
+  ...bulkCurrentAffairsFeb2026,
 ];
 
 /** All shorts — custom (if any) first, then static. Use in UI. */
