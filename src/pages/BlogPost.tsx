@@ -139,6 +139,19 @@ export const BlogPost: React.FC = () => {
   const searchableKeywords = (post as any)?.searchableKeywords || post.categories || [];
   const keywordsStr = Array.isArray(searchableKeywords) ? searchableKeywords.join(', ') : (post.categories || []).join(', ');
 
+  // Build table of contents from headings (Google-friendly structure)
+  const tocEntries: { id: string; text: string; level: 'h2' | 'h3' }[] = [];
+  sections.forEach((section: BlogContentSection, idx: number) => {
+    if (section.type === 'heading' && section.content) {
+      const id = `section-${idx}-${section.content.slice(0, 30).replace(/\s+/g, '-').replace(/[^\w-]/g, '').toLowerCase()}`;
+      tocEntries.push({ id, text: section.content, level: 'h2' });
+    }
+    if (section.type === 'subheading' && section.content) {
+      const id = `section-${idx}-${section.content.slice(0, 30).replace(/\s+/g, '-').replace(/[^\w-]/g, '').toLowerCase()}`;
+      tocEntries.push({ id, text: section.content, level: 'h3' });
+    }
+  });
+
   const generateStructuredData = () => {
     return {
       "@context": "https://schema.org",
@@ -197,156 +210,153 @@ export const BlogPost: React.FC = () => {
           </button>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-          {/* Main blog section */}
+          {/* Main blog section – reading-optimized layout */}
           <div className="lg:col-span-2">
-            <article className="bg-white rounded-xl shadow-sm p-4 sm:p-8">
-              {/* Blog header */}
-              <header className="mb-6">
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mb-2 leading-tight">{post.title}</h1>
+            <article className="bg-white rounded-2xl shadow-sm border border-neutral-100 overflow-hidden">
+              {/* Blog header – clear hierarchy for Google */}
+              <header className="p-6 sm:p-8 pb-6 border-b border-neutral-100">
+                <h1 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold text-neutral-900 mb-4 leading-tight tracking-tight">
+                  {post.title}
+                </h1>
                 <div className="flex flex-wrap items-center text-sm text-neutral-500 gap-x-6 gap-y-2">
                   <div className="flex items-center">
-                    <User className="h-4 w-4 mr-1" />
-                    <span className="mr-1.5 font-medium text-neutral-600">Written By</span>
-                    <Link 
+                    <User className="h-4 w-4 mr-1.5 text-neutral-400" />
+                    <span className="mr-1.5 font-medium text-neutral-600">By</span>
+                    <Link
                       to={`/author/${displayAuthor?.slug || 'harsh-raj'}`}
-                      className="hover:text-blue-600 transition-colors font-medium"
+                      className="hover:text-blue-600 transition-colors font-medium text-neutral-800"
                     >
                       {displayAuthor?.name || 'MoneyCal Team'}
                     </Link>
                   </div>
-                  <div className="flex items-center flex-wrap gap-x-4 gap-y-1">
-                    <span><span className="font-medium text-neutral-600">Published:</span> {post.date}</span>
-                    <span><span className="font-medium text-neutral-600">Updated:</span> {dateModified}</span>
-                    <span>{readingTime} min read</span>
-                    <span>{wordCount.toLocaleString()} words</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {post.categories.map((category) => (
-                      <span
-                        key={category}
-                        className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800"
-                      >
-                        <Tag className="h-3 w-3 mr-1" />
-                        {category}
-                      </span>
-                    ))}
-                  </div>
+                  <span><Calendar className="h-4 w-4 inline mr-1 align-middle" />{post.date}</span>
+                  <span>{readingTime} min read</span>
+                  <span>{wordCount.toLocaleString()} words</span>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {post.categories.map((category) => (
+                    <span
+                      key={category}
+                      className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-800 border border-blue-100"
+                    >
+                      <Tag className="h-3 w-3 mr-1" />
+                      {category}
+                    </span>
+                  ))}
                 </div>
                 {post.coverImage && (
-                  <div className="mt-6 rounded-xl overflow-hidden shadow-md">
+                  <div className="mt-6 rounded-xl overflow-hidden shadow-md border border-neutral-100">
                     <picture>
                       <source srcSet={post.coverImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
                       <img
                         src={post.coverImage}
                         alt={post.title}
                         className="w-full aspect-[16/9] object-cover"
-                        loading="lazy"
+                        loading="eager"
+                        fetchPriority="high"
                       />
                     </picture>
                   </div>
                 )}
               </header>
-              {/* Blog content */}
-              <div className="prose prose-lg max-w-none mb-8">
-                 {isAstroBlog ? (
-                   // For astro blogs, content is HTML string
-                   <div 
-                    dangerouslySetInnerHTML={{ __html: astroHtml }}
-                    className="astro-blog-content"
-                  />
-                 ) : (
-                   // For regular blogs, content is structured array
-                  sections.map((section: BlogContentSection, index: number) => {
-                    // Helper function to render text with links as cards
-                    const renderTextWithLinks = (text: string) => {
-                      const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-                      const parts: (string | JSX.Element)[] = [];
-                      let lastIndex = 0;
-                      let match;
-                      
-                      while ((match = linkRegex.exec(text)) !== null) {
-                        // Add text before link
-                        if (match.index > lastIndex) {
-                          parts.push(text.substring(lastIndex, match.index));
+
+              <div className="p-6 sm:p-8">
+                {/* Key takeaways – summary box (Google + readability) */}
+                {post.excerpt && (
+                  <section className="blog-post-key-takeaways" aria-label="Key takeaways">
+                    <h2 className="text-sm font-semibold text-sky-800 uppercase tracking-wider mb-2">In this article</h2>
+                    <p>{post.excerpt}</p>
+                  </section>
+                )}
+
+                {/* Table of contents – only when we have headings */}
+                {!isAstroBlog && tocEntries.length > 0 && (
+                  <nav className="blog-post-toc" aria-label="Table of contents">
+                    <h2 className="text-sm font-semibold text-neutral-700 uppercase tracking-wider mb-2">Contents</h2>
+                    <ul>
+                      {tocEntries.map((entry, i) => (
+                        <li key={i} className={entry.level === 'h3' ? 'pl-4' : ''}>
+                          <a href={`#${entry.id}`} className="block py-0.5 hover:text-blue-700">
+                            {entry.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                )}
+
+                {/* Blog content – prose theme for all posts */}
+                <div className="blog-post-prose mt-8 mb-8">
+                  {isAstroBlog ? (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: astroHtml }}
+                      className="astro-blog-content blog-post-prose"
+                    />
+                  ) : (
+                    sections.map((section: BlogContentSection, index: number) => {
+                      const renderTextWithLinks = (text: string) => {
+                        const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+                        const parts: (string | JSX.Element)[] = [];
+                        let lastIndex = 0;
+                        let match;
+                        while ((match = linkRegex.exec(text)) !== null) {
+                          if (match.index > lastIndex) parts.push(text.substring(lastIndex, match.index));
+                          parts.push(
+                            <Link key={match.index} to={match[2]} className="text-blue-600 hover:text-blue-800 font-medium underline underline-offset-2">
+                              {match[1]}
+                            </Link>
+                          );
+                          lastIndex = match.index + match[0].length;
                         }
-                        
-                        // Add link as card
-                        const linkText = match[1];
-                        const linkUrl = match[2];
-                        parts.push(
-                          <Link
-                            key={match.index}
-                            to={linkUrl}
-                            className="inline-flex items-center gap-2 px-4 py-2 my-2 bg-gradient-to-r from-blue-50 to-purple-50 hover:from-blue-100 hover:to-purple-100 border-2 border-blue-200 hover:border-blue-400 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-md font-medium text-blue-700 hover:text-blue-900"
-                          >
-                            <span>🔗</span>
-                            <span>{linkText}</span>
-                            <span className="text-xs opacity-70">→</span>
-                          </Link>
-                        );
-                        
-                        lastIndex = match.index + match[0].length;
-                      }
-                      
-                      // Add remaining text
-                      if (lastIndex < text.length) {
-                        parts.push(text.substring(lastIndex));
-                      }
-                      
-                      return parts.length > 0 ? parts : text;
-                    };
-                    
-                    return (
-                  <div key={index} className="mb-8">
-                    {section.type === 'paragraph' && <p>{renderTextWithLinks(section.content || '')}</p>}
-                    {section.type === 'heading' && <h2 className="text-2xl font-bold mt-8 mb-4">{renderTextWithLinks(section.content || '')}</h2>}
-                    {section.type === 'subheading' && <h3 className="text-xl font-semibold mt-6 mb-3">{renderTextWithLinks(section.content || '')}</h3>}
-                    {section.type === 'list' && (
-                      <ul className="list-none pl-0 space-y-3">
-                        {(section.items || []).map((item: string, i: number) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <span className="text-blue-600 mt-1">•</span>
-                            <span className="flex-1">{renderTextWithLinks(item)}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {section.type === 'image' && section.url && (
-                      <figure className="my-6">
-                        <picture>
-                          <source srcSet={section.url.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                          <img
-                            src={section.url}
-                            alt={section.caption || ''}
-                            className="w-full rounded-lg"
-                            loading="lazy"
-                          />
-                        </picture>
-                        {section.caption && (
-                          <figcaption className="text-sm text-neutral-500 text-center mt-2">
-                            {section.caption}
-                          </figcaption>
-                        )}
-                      </figure>
-                    )}
-                    {section.type === 'quote' && (
-                      <blockquote className="border-l-4 border-primary-500 pl-4 py-2 my-6 text-neutral-700 italic">
-                        {renderTextWithLinks(section.content || '')}
-                        {section.author && (
-                          <footer className="text-sm text-neutral-500 mt-2">— {section.author}</footer>
-                        )}
-                      </blockquote>
-                    )}
-                  </div>
-                    );
-                  })
-                 )}
-              </div>
-              {/* Social Share & Save */}
-              <div className="border-t border-b border-neutral-200 py-6 my-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <div>
-                  <h4 className="text-sm font-medium text-neutral-700 mb-2">Share this article</h4>
-                  <div className="flex space-x-3">
+                        if (lastIndex < text.length) parts.push(text.substring(lastIndex));
+                        return parts.length > 0 ? parts : text;
+                      };
+
+                      const headingId = (section.type === 'heading' || section.type === 'subheading') && section.content
+                        ? `section-${index}-${section.content.slice(0, 30).replace(/\s+/g, '-').replace(/[^\w-]/g, '').toLowerCase()}`
+                        : undefined;
+
+                      return (
+                        <section key={index}>
+                          {section.type === 'paragraph' && <p>{renderTextWithLinks(section.content || '')}</p>}
+                          {section.type === 'heading' && (
+                            <h2 id={headingId} className="scroll-mt-24">{renderTextWithLinks(section.content || '')}</h2>
+                          )}
+                          {section.type === 'subheading' && (
+                            <h3 id={headingId} className="scroll-mt-24">{renderTextWithLinks(section.content || '')}</h3>
+                          )}
+                          {section.type === 'list' && (
+                            <ul>
+                              {(section.items || []).map((item: string, i: number) => (
+                                <li key={i}>{renderTextWithLinks(item)}</li>
+                              ))}
+                            </ul>
+                          )}
+                          {section.type === 'image' && section.url && (
+                            <figure>
+                              <picture>
+                                <source srcSet={section.url.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                                <img src={section.url} alt={section.caption || ''} className="w-full rounded-lg" loading="lazy" />
+                              </picture>
+                              {section.caption && <figcaption>{section.caption}</figcaption>}
+                            </figure>
+                          )}
+                          {section.type === 'quote' && (
+                            <blockquote>
+                              {renderTextWithLinks(section.content || '')}
+                              {section.author && <footer className="text-sm text-neutral-500 mt-2">— {section.author}</footer>}
+                            </blockquote>
+                          )}
+                        </section>
+                      );
+                    })
+                  )}
+                </div>
+                {/* Social Share & Save */}
+                <div className="border-t border-neutral-200 pt-6 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                  <div>
+                    <h3 className="text-sm font-semibold text-neutral-700 mb-2">Share this article</h3>
+                    <div className="flex gap-3">
                     <button
                       aria-label="Share on Facebook"
                       onClick={() => shareOn('facebook')}
@@ -376,6 +386,7 @@ export const BlogPost: React.FC = () => {
                       <Copy className="h-5 w-5" />
                     </button>
                   </div>
+                  </div>
                 </div>
                 <div>
                   <button className="flex items-center text-neutral-700 hover:text-primary-600 transition-colors">
@@ -384,12 +395,12 @@ export const BlogPost: React.FC = () => {
                   </button>
                 </div>
               </div>
-              {/* Author box – EEAT */}
-              <section
-                className="bg-neutral-50 rounded-xl p-6 mb-8 flex flex-col sm:flex-row items-center gap-4"
-                itemScope
-                itemType="https://schema.org/Person"
-              >
+                {/* Author box – EEAT */}
+                <section
+                  className="bg-neutral-50 rounded-xl p-6 my-8 flex flex-col sm:flex-row items-center gap-4 border border-neutral-100"
+                  itemScope
+                  itemType="https://schema.org/Person"
+                >
                 <div className="h-16 w-16 rounded-full overflow-hidden flex-shrink-0 shadow">
                   <img
                     src={displayAuthor?.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200'}
@@ -430,10 +441,10 @@ export const BlogPost: React.FC = () => {
                 </div>
               </section>
 
-              {/* Internal links – browse by category */}
-              {!isAstroBlog && (post.categories || []).length > 0 && (
-                <section className="bg-white rounded-xl border border-neutral-200 p-6 mb-8">
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-1">ये भी पढ़ें</h3>
+                {/* Internal links – browse by category */}
+                {!isAstroBlog && (post.categories || []).length > 0 && (
+                  <section className="bg-neutral-50 rounded-xl border border-neutral-200 p-6 my-8">
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-1">ये भी पढ़ें</h3>
                   <p className="text-sm text-neutral-500 mb-3">More in this topic</p>
                   <div className="flex flex-wrap gap-2">
                     {post.categories.slice(0, 5).map((cat: string) => (
@@ -447,17 +458,18 @@ export const BlogPost: React.FC = () => {
                     ))}
                   </div>
                 </section>
-              )}
+                )}
 
-              {/* References / Sources */}
-              <section className="bg-white rounded-xl border border-neutral-200 p-6 mb-8">
-                <h3 className="text-xl font-semibold text-neutral-900 mb-3">References and Sources</h3>
+                {/* References / Sources */}
+                <section className="bg-neutral-50 rounded-xl border border-neutral-200 p-6 my-8">
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-3">References and Sources</h3>
                 <ul className="list-disc pl-5 space-y-2 text-neutral-700">
                   <li><a href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Reserve Bank of India (RBI)</a></li>
                   <li><a href="https://www.sebi.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Securities and Exchange Board of India (SEBI)</a></li>
                   <li><a href="https://www.incometax.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Income Tax Department (India)</a></li>
-                </ul>
-              </section>
+                  </ul>
+                </section>
+              </div>
             </article>
           </div>
           {/* Sidebar */}
