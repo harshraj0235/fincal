@@ -3,6 +3,15 @@
  * One card per story: headline, why it matters, key numbers, what to do, full story link.
  */
 
+import {
+  bulkNationalPolitical,
+  bulkEconomyMarkets,
+  bulkSports,
+  bulkWorld,
+  bulkEntertainment,
+  bulkScience,
+} from './newsShortsBulk2026';
+
 export type NewsShortCategory =
   | 'rbi'
   | 'markets'
@@ -854,9 +863,19 @@ export const newsShortsList: NewsShort[] = [
   },
 ];
 
+const allStaticShorts: NewsShort[] = [
+  ...newsShortsList,
+  ...bulkNationalPolitical,
+  ...bulkEconomyMarkets,
+  ...bulkSports,
+  ...bulkWorld,
+  ...bulkEntertainment,
+  ...bulkScience,
+];
+
 /** All shorts — custom (if any) first, then static. Use in UI. */
 export function getNewsShorts(): NewsShort[] {
-  const staticList = newsShortsList.map((s) => ({ ...s, source: 'static' as const }));
+  const staticList = allStaticShorts.map((s) => ({ ...s, source: 'static' as const }));
   if (typeof window === 'undefined') return staticList;
   const custom = getCustomShorts();
   return custom.length ? [...custom, ...staticList] : staticList;
