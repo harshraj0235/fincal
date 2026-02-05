@@ -53,6 +53,12 @@ import { termInsuranceSecret90IndiansCalculator } from './term-insurance-secret-
 import { termPlanPremium3xHigherCalculator } from './term-plan-premium-3x-higher-than-should-be-calculator';
 import { howMuchTermInsuranceReallyNeedCalculator } from './how-much-term-insurance-really-need-calculator';
 import { freeTermInsuranceCalculatorNoPhoneInstant } from './free-term-insurance-calculator-no-phone-instant-results';
+import { term2Crore620CalculatorHack } from './2-crore-cover-620-calculator-hack';
+import { termInsuranceVsUlipCrorepatiCry } from './term-insurance-vs-ulip-crorepati-cry';
+import { termRates2026CrashedCheckNow } from './2026-term-insurance-rates-crashed-check-now';
+import { hiddenTermTrickSaves50kYear } from './hidden-term-plan-trick-saves-50000-year';
+import { familySufferWithoutTermCalculatorNow } from './family-suffer-without-term-calculator-now';
+import { term1CroreUnder10kYearTool } from './1-crore-term-cover-under-10000-year-tool';
 
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
@@ -108,6 +114,12 @@ export const blogs: BlogPost[] = [
   termPlanPremium3xHigherCalculator,
   howMuchTermInsuranceReallyNeedCalculator,
   freeTermInsuranceCalculatorNoPhoneInstant,
+  term2Crore620CalculatorHack,
+  termInsuranceVsUlipCrorepatiCry,
+  termRates2026CrashedCheckNow,
+  hiddenTermTrickSaves50kYear,
+  familySufferWithoutTermCalculatorNow,
+  term1CroreUnder10kYearTool,
 ];
 
 // Auto-update blog dates
@@ -173,3 +185,9 @@ export { termInsuranceSecret90IndiansCalculator } from './term-insurance-secret-
 export { termPlanPremium3xHigherCalculator } from './term-plan-premium-3x-higher-than-should-be-calculator';
 export { howMuchTermInsuranceReallyNeedCalculator } from './how-much-term-insurance-really-need-calculator';
 export { freeTermInsuranceCalculatorNoPhoneInstant } from './free-term-insurance-calculator-no-phone-instant-results';
+export { term2Crore620CalculatorHack } from './2-crore-cover-620-calculator-hack';
+export { termInsuranceVsUlipCrorepatiCry } from './term-insurance-vs-ulip-crorepati-cry';
+export { termRates2026CrashedCheckNow } from './2026-term-insurance-rates-crashed-check-now';
+export { hiddenTermTrickSaves50kYear } from './hidden-term-plan-trick-saves-50000-year';
+export { familySufferWithoutTermCalculatorNow } from './family-suffer-without-term-calculator-now';
+export { term1CroreUnder10kYearTool } from './1-crore-term-cover-under-10000-year-tool';
