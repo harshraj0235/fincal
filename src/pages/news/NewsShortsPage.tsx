@@ -14,14 +14,25 @@ import {
 } from '../../data/newsShortsData';
 import { formatStaticShortDate } from '../../utils/randomCalculators';
 
-/** Inshorts-style: get first ~60 words for card summary */
-function getSummary60(short: NewsShort): string {
-  const source = short.summaryParagraphs?.length
-    ? short.summaryParagraphs.join(' ')
-    : [...short.whyItMatters, short.whatToDo].join(' ');
-  const words = source.trim().split(/\s+/);
-  if (words.length <= 60) return source.trim();
-  return words.slice(0, 60).join(' ') + '…';
+/** Card summary: at least 360 characters so user gets a clear idea of the story */
+const MIN_SUMMARY_CHARS = 360;
+const MAX_SUMMARY_CHARS = 520;
+
+function getSummary360(short: NewsShort): string {
+  const parts: string[] = short.summaryParagraphs?.length
+    ? [...short.summaryParagraphs]
+    : [
+        ...short.whyItMatters,
+        ...(short.keyNumbers?.length ? [`Key figures: ${short.keyNumbers.join(', ')}.`] : []),
+        short.whatToDo,
+      ];
+  const full = parts.filter(Boolean).join(' ').trim();
+  if (full.length <= MIN_SUMMARY_CHARS) return full;
+  if (full.length <= MAX_SUMMARY_CHARS) return full;
+  const cut = full.slice(0, MAX_SUMMARY_CHARS);
+  const lastSpace = cut.lastIndexOf(' ');
+  const end = lastSpace > MIN_SUMMARY_CHARS ? lastSpace : MAX_SUMMARY_CHARS;
+  return cut.slice(0, end).trim() + '…';
 }
 
 function getShareUrls(url: string, title: string, text?: string) {
@@ -109,7 +120,7 @@ const NewsShortsPage: React.FC = () => {
     setSharePayload({
       url: getShortFullUrl(short),
       title: short.headline,
-      text: getSummary60(short),
+      text: getSummary360(short),
     });
     setShareOpen(true);
     setCopyDone(false);
@@ -299,29 +310,29 @@ const NewsShortsPage: React.FC = () => {
               <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 leading-snug mb-3 pr-2">
                 {short.headline}
               </h2>
-              <p className="text-neutral-600 text-base sm:text-lg leading-relaxed mb-4">
-                {getSummary60(short)}
+              <p className="text-neutral-600 text-base sm:text-lg leading-relaxed mb-5 min-h-[4.5em]">
+                {getSummary360(short)}
               </p>
-              <div className="mt-auto pt-2 flex flex-wrap items-center gap-3">
-                <a
-                  href={getShortFullUrl(short)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-amber-500 text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-amber-600 active:bg-amber-600 text-sm shadow-sm"
-                >
-                  Read full story
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-                <button
-                  onClick={() => openShare(short)}
-                  className="inline-flex items-center gap-2 text-neutral-600 hover:text-neutral-800 font-medium text-sm"
-                  aria-label="Share"
-                >
-                  <Share2 className="w-4 h-4" />
-                  Share
-                </button>
-              </div>
-              <p className="text-xs text-neutral-400 mt-2">Source: MoneyCal</p>
+              {/* Stylish link to full article */}
+              <a
+                href={getShortFullUrl(short)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl border-2 border-amber-500 bg-amber-50 text-amber-700 font-bold text-base hover:bg-amber-500 hover:text-white hover:border-amber-600 transition-all shadow-sm mb-3"
+              >
+                Read full article
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+              {/* Share feature — prominent */}
+              <button
+                onClick={() => openShare(short)}
+                className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl border-2 border-neutral-300 bg-neutral-50 text-neutral-700 font-semibold text-sm hover:bg-neutral-100 hover:border-neutral-400 active:bg-neutral-200 transition-all"
+                aria-label="Share this story"
+              >
+                <Share2 className="w-4 h-4" />
+                Share this story
+              </button>
+              <p className="text-xs text-neutral-400 mt-3 text-center">Source: MoneyCal</p>
             </div>
           </article>
         ))}
