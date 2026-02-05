@@ -1,12 +1,11 @@
 import React, { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, ArrowLeft, ExternalLink, Share2, Play, Rss, RefreshCw, Globe, Copy, X } from 'lucide-react';
+import { ChevronDown, ChevronUp, ArrowLeft, ExternalLink, Share2, Play, Copy, X } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import { useNewsShorts } from '../../hooks/useNewsShorts';
-import { useTrendingRss } from '../../hooks/useTrendingRss';
 import {
-  newsShortsFilterCategories,
+  newsShortsReelTabs,
   getShortFullUrl,
   DISCOVER_IMAGE_DEFAULT,
   baseUrl,
@@ -14,7 +13,6 @@ import {
   type NewsShortCategory,
 } from '../../data/newsShortsData';
 import { formatStaticShortDate } from '../../utils/randomCalculators';
-import type { TrendingRssItem } from '../../data/trendingRssFeeds';
 
 /** Share options: WhatsApp, Twitter, Copy, Native share */
 function getShareUrls(url: string, title: string, text?: string) {
@@ -29,62 +27,9 @@ function getShareUrls(url: string, title: string, text?: string) {
   };
 }
 
-/** Single RSS item card: image, title, full link, source, date, share — infographic-style */
-function TrendingRssCard({ item, onShare }: { item: TrendingRssItem; onShare?: (item: TrendingRssItem) => void }) {
-  const imgUrl = item.thumbnail || DISCOVER_IMAGE_DEFAULT;
-  const dateStr = item.pubDate ? formatStaticShortDate(item.pubDate) : '';
-  return (
-    <motion.article
-      className="group block rounded-2xl overflow-hidden bg-slate-800/60 backdrop-blur border border-white/10 hover:border-amber-500/40 shadow-xl hover:shadow-amber-500/10 transition-all duration-300 relative"
-      initial={{ opacity: 0.9, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-    >
-      <div className="relative">
-        <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
-          <div className="aspect-[16/10] relative overflow-hidden">
-            <img
-              src={imgUrl}
-              alt=""
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent" />
-            <div className="absolute bottom-2 left-2 right-2 flex items-center gap-2">
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-amber-500/25 text-amber-300 text-xs font-semibold">
-                <Globe className="w-3 h-3" />
-                {item.source}
-              </span>
-              {dateStr && <span className="text-white/70 text-xs">{dateStr}</span>}
-            </div>
-          </div>
-          <div className="p-4">
-            <h3 className="text-white font-semibold text-base sm:text-lg leading-snug line-clamp-2 group-hover:text-amber-200 transition-colors">
-              {item.title}
-            </h3>
-            <span className="inline-flex items-center gap-2 mt-3 text-amber-400 font-medium text-sm">
-              Read full story
-              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </span>
-          </div>
-        </a>
-        {onShare && (
-          <button
-            type="button"
-            onClick={() => onShare(item)}
-            className="absolute top-2 right-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-black/50 hover:bg-black/70 text-white touch-manipulation z-10"
-            aria-label="Share this story"
-          >
-            <Share2 className="w-4 h-4" />
-          </button>
-        )}
-      </div>
-    </motion.article>
-  );
-}
-
-/** Inshorts-style: one full-screen card per short, vertical scroll like reels — attractive & engaging */
+/** Reel-style: one full-screen card per short, vertical scroll — simple, Google-friendly */
 const NewsShortsPage: React.FC = () => {
   const { shorts, loading } = useNewsShorts();
-  const { items: rssItems, loading: rssLoading, error: rssError, refetch: refetchRss, updatedAt: rssUpdatedAt } = useTrendingRss();
   const [filter, setFilter] = useState<NewsShortCategory | 'latest'>('latest');
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -173,16 +118,6 @@ const NewsShortsPage: React.FC = () => {
     }
   }, [sharePayload]);
 
-  const openShareRss = useCallback((item: TrendingRssItem) => {
-    setSharePayload({
-      url: item.link,
-      title: item.title,
-      text: item.description || item.title,
-    });
-    setShareOpen(true);
-    setCopyDone(false);
-  }, []);
-
   useEffect(() => {
     let meta = document.querySelector('meta[name="robots"]');
     if (!meta) {
@@ -230,12 +165,40 @@ const NewsShortsPage: React.FC = () => {
       }}
     >
       <SEOHelmet
-        title="MoneyCal News in 60 Seconds | Finance Shorts – Inshorts Style"
-        description="Read finance news in 60 seconds. Swipe through RBI, markets, economy shorts. Short, clear, actionable — like Inshorts for Indian finance."
-        keywords="news in 60 seconds, finance shorts, MoneyCal, Inshorts style, RBI, markets, Indian economy"
+        title="MoneyCal Shorts | Finance News in 60 Seconds"
+        description="Swipe through finance news in 60 seconds. RBI, markets, economy — short, clear, actionable. Scroll for next story."
+        keywords="finance news 60 seconds, MoneyCal Shorts, RBI news, markets, Indian economy, news reels"
         image={DISCOVER_IMAGE_DEFAULT}
         url={`${baseUrl}/news/shorts`}
       />
+      {/* JSON-LD for Google Discover / rich results */}
+      {filtered.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ItemList',
+              name: 'MoneyCal Shorts – Finance News in 60 Seconds',
+              description: 'Short finance news: RBI, markets, economy. One story per card, scroll for next.',
+              numberOfItems: filtered.length,
+              itemListOrder: 'ItemListOrderDescending',
+              itemListElement: filtered.slice(0, 20).map((short, i) => ({
+                '@type': 'ListItem',
+                position: i + 1,
+                item: {
+                  '@type': 'NewsArticle',
+                  headline: short.headline,
+                  datePublished: short.datePublished,
+                  image: short.imageUrl || DISCOVER_IMAGE_DEFAULT,
+                  url: getShortFullUrl(short),
+                  publisher: { '@type': 'Organization', name: 'MoneyCal', url: baseUrl },
+                },
+              })),
+            }),
+          }}
+        />
+      )}
 
       {/* Fixed header — glass, safe area, mobile-friendly */}
       <header
@@ -254,7 +217,7 @@ const NewsShortsPage: React.FC = () => {
             <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
               <Play className="w-4 h-4 text-white" fill="currentColor" />
             </span>
-            <h1 className="text-lg sm:text-xl font-bold text-white tracking-tight">Money Shorts</h1>
+            <h1 className="text-lg sm:text-xl font-bold text-white tracking-tight">Shorts</h1>
           </div>
           <span className="text-sm font-semibold text-white/90 tabular-nums">
             {activeIndex + 1}<span className="text-white/50 font-normal"> / {filtered.length}</span>
@@ -268,9 +231,9 @@ const NewsShortsPage: React.FC = () => {
             transition={{ type: 'spring', stiffness: 100, damping: 20 }}
           />
         </div>
-        {/* Category tabs — horizontal scroll, touch-friendly */}
+        {/* Category tabs — simple, touch-friendly */}
         <div className="flex gap-2 overflow-x-auto scrollbar-hide px-3 sm:px-4 py-2 sm:py-3" style={{ WebkitOverflowScrolling: 'touch' }}>
-          {newsShortsFilterCategories.map((cat) => (
+          {newsShortsReelTabs.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setFilter(cat.id as NewsShortCategory | 'latest')}
@@ -364,7 +327,7 @@ const NewsShortsPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Actions row — touch-friendly buttons */}
+              {/* Actions — one primary CTA + share */}
               <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
                 <a
                   href={getShortFullUrl(short)}
@@ -375,12 +338,6 @@ const NewsShortsPage: React.FC = () => {
                   Read full story
                   <ExternalLink className="w-4 h-4 flex-shrink-0" />
                 </a>
-                <Link
-                  to={short.fullStoryPath}
-                  className="min-h-[44px] inline-flex items-center justify-center text-white/90 hover:text-white text-sm font-semibold underline underline-offset-2 py-2 touch-manipulation"
-                >
-                  Open on site
-                </Link>
                 <button
                   onClick={() => openShare(short)}
                   className="min-w-[44px] min-h-[44px] flex items-center justify-center p-3 rounded-xl bg-white/15 hover:bg-white/25 active:bg-white/30 text-white transition-colors touch-manipulation"
@@ -389,86 +346,28 @@ const NewsShortsPage: React.FC = () => {
                   <Share2 className="w-5 h-5" />
                 </button>
               </div>
-              <p className="text-xs text-white/50 mt-2">Source: MoneyCal</p>
+              <p className="text-xs text-white/50 mt-2">MoneyCal</p>
             </div>
           </motion.article>
         ))}
-
-        {/* Trending from India — RSS feed section (full link + image, infographic-style) */}
-        <section
-          className="min-h-[100vh] snap-start snap-always flex flex-col relative bg-gradient-to-b from-slate-900 to-slate-950 border-t border-white/10"
-          style={{ scrollSnapAlign: 'start' }}
-        >
-          <div className="flex-1 overflow-y-auto scrollbar-hide p-4 sm:p-6 pb-24">
-            <div className="max-w-5xl mx-auto">
-              <div className="flex items-center justify-between gap-4 mb-6">
-                <div className="flex items-center gap-3">
-                  <span className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                    <Rss className="w-5 h-5 text-amber-400" />
-                  </span>
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-bold text-white">Trending from India</h2>
-                    <p className="text-sm text-white/60">Live headlines · Updated every 2 hours</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => refetchRss()}
-                  disabled={rssLoading}
-                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors disabled:opacity-50"
-                  aria-label="Refresh"
-                >
-                  <RefreshCw className={`w-5 h-5 ${rssLoading ? 'animate-spin' : ''}`} />
-                </button>
-              </div>
-
-              {rssError && (
-                <p className="text-amber-300/90 text-sm mb-4 bg-amber-500/10 border border-amber-500/30 rounded-lg px-4 py-2">
-                  {rssError}
-                </p>
-              )}
-
-              {rssLoading && rssItems.length === 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div key={i} className="rounded-2xl bg-white/5 animate-pulse h-56" />
-                  ))}
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                  {rssItems.map((item: TrendingRssItem, idx: number) => (
-                    <TrendingRssCard key={`${item.link}-${idx}`} item={item} onShare={openShareRss} />
-                  ))}
-                </div>
-              )}
-
-              {rssUpdatedAt && (
-                <p className="text-xs text-white/40 mt-4 text-center">
-                  Last updated: {new Date(rssUpdatedAt).toLocaleString('en-IN', { dateStyle: 'short', timeStyle: 'short' })}
-                </p>
-              )}
-            </div>
-          </div>
-        </section>
       </div>
 
-      {/* Progress dots — larger tap targets on mobile */}
+      {/* Progress dots — simple, first 8 only */}
       <div
-        className="fixed left-1/2 -translate-x-1/2 z-40 flex gap-2 items-center px-3 py-2.5 rounded-full bg-slate-900/70 backdrop-blur-sm border border-white/10"
-        style={{ bottom: 'max(1.5rem, env(safe-area-inset-bottom))' }}
+        className="fixed left-1/2 -translate-x-1/2 z-40 flex gap-1.5 items-center px-2.5 py-2 rounded-full bg-slate-900/80 backdrop-blur-sm border border-white/10"
+        style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
       >
-        {filtered.slice(0, 12).map((_, i) => (
+        {filtered.slice(0, 8).map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
-            className={`rounded-full transition-all duration-200 touch-manipulation min-w-[28px] min-h-[28px] flex items-center justify-center ${
-              i === activeIndex ? 'bg-amber-500 w-7 h-2.5 scale-100' : 'bg-white/50 w-2 h-2 hover:bg-white/70 hover:scale-110 active:scale-110'
+            className={`rounded-full transition-all duration-200 touch-manipulation min-w-[20px] min-h-[20px] flex items-center justify-center ${
+              i === activeIndex ? 'bg-amber-500 w-5 h-1.5' : 'bg-white/40 w-1.5 h-1.5 hover:bg-white/60'
             }`}
-            aria-label={`Go to story ${i + 1}`}
+            aria-label={`Story ${i + 1}`}
           />
         ))}
-        {filtered.length > 12 && (
-          <span className="text-white/70 text-xs font-medium ml-1 tabular-nums">+{filtered.length - 12}</span>
-        )}
+        {filtered.length > 8 && <span className="text-white/60 text-xs ml-0.5 tabular-nums">{activeIndex + 1}/{filtered.length}</span>}
       </div>
 
       {/* Swipe hint — fades after first scroll, above safe area */}

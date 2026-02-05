@@ -88,7 +88,7 @@ export function getShortEmbedCode(short: NewsShort): string {
 </div>`;
 }
 
-/** Inshorts-style tabs: Latest + category filters */
+/** Inshorts-style tabs: Latest + category filters (full list for any UI) */
 export const newsShortsFilterCategories: { id: NewsShortCategory | 'latest'; label: string }[] = [
   { id: 'latest', label: 'Latest' },
   { id: 'markets', label: 'Markets' },
@@ -99,6 +99,9 @@ export const newsShortsFilterCategories: { id: NewsShortCategory | 'latest'; lab
   { id: 'rbi', label: 'RBI' },
   { id: 'personal-finance', label: 'Finance' },
 ];
+
+/** Simplified tabs for reel UI (Google-friendly, minimal) */
+export const newsShortsReelTabs = newsShortsFilterCategories.slice(0, 6);
 
 /** Static list of shorts — Inshorts-style 60-second news */
 export const newsShortsList: NewsShort[] = [
