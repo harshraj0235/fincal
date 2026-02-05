@@ -469,7 +469,6 @@ export const BlogPost: React.FC = () => {
                   <li><a href="https://www.incometax.gov.in/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">Income Tax Department (India)</a></li>
                   </ul>
                 </section>
-              </div>
             </article>
           </div>
           {/* Sidebar */}
