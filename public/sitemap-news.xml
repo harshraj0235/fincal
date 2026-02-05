@@ -1,48 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  <!-- MoneyCal NEWS - Today Feb 5 2026 (10 new) + Market Setup, 7 IPOs, IT plunge, Macro, Deepinder, Fractal, Varaha -->
+  <!-- MoneyCal NEWS - 2026-01-31: 5 new (RBI MPC stable, AI IT pressure, BlackRock India, Sensex-Nifty weak, Gold-Silver surge) + Feb 5 + rest -->
   <url>
     <loc>https://moneycal.in/news</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/markets</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/business</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/startups</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/economy</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/tech-business</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/shorts</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/economy/rbi-mpc-rates-stable-today-mpc-meet-starts-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-01-31T08:00:00+05:30</news:publication_date>
+      <news:title>क्या RBI दरों को स्थिर रखेगा? MPC मीट आज शुरू</news:title>
+      <news:keywords>RBI MPC, repo rate, India-US trade, India, monetary policy</news:keywords>
+    </news:news>
+    <lastmod>2026-01-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/ai-tool-pressure-indian-it-infosys-tcs-shares-down-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-01-31T09:00:00+05:30</news:publication_date>
+      <news:title>नया AI टूल से भारतीय IT कंपनियों पर दबाव, शेयर नीचे?</news:title>
+      <news:keywords>AI tool, Infosys, TCS, IT stocks, India tech</news:keywords>
+    </news:news>
+    <lastmod>2026-01-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/blackrock-india-larry-fink-bullish-fpi-investors-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-01-31T10:00:00+05:30</news:publication_date>
+      <news:title>BlackRock का इंडिया पर बड़ा बयान — निवेशकों को भरोसा?</news:title>
+      <news:keywords>BlackRock, Larry Fink, India, FPI, investors</news:keywords>
+    </news:news>
+    <lastmod>2026-01-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/sensex-nifty-weak-start-today-it-sector-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-01-31T11:00:00+05:30</news:publication_date>
+      <news:title>शेयर बाजार अपडेट: Sensex-Nifty आज कमजोर शुरुआत</news:title>
+      <news:keywords>Sensex, Nifty, IT sector, India markets</news:keywords>
+    </news:news>
+    <lastmod>2026-01-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/news/markets/gold-silver-prices-surge-record-7000-16000-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>hi</news:language></news:publication>
+      <news:publication_date>2026-01-31T12:00:00+05:30</news:publication_date>
+      <news:title>सोना-चांदी की कीमतों में भारी उछाल!</news:title>
+      <news:keywords>gold, silver, commodities, India, prices</news:keywords>
+    </news:news>
+    <lastmod>2026-01-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
   </url>
   <url>
     <loc>https://moneycal.in/news/economy/record-govt-borrowing-plan-without-market-crash-2026</loc>

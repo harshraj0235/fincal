@@ -86,6 +86,11 @@ import { powerFinanceJumps3PercentIntraday2026 } from './news-articles/markets/p
 import { infoEdgeFallsValuePlay2026 } from './news-articles/markets/info-edge-falls-value-play-2026';
 import { infosysCrashesIntradayTechTrouble2026 } from './news-articles/markets/infosys-crashes-intraday-tech-trouble-2026';
 import { rbiMpcStartsToday3ThingsInvestors2026 } from './news-articles/markets/rbi-mpc-starts-today-3-things-investors-2026';
+import { rbiMpcRatesStableToday2026 } from './news-articles/economy/rbi-mpc-rates-stable-today-2026';
+import { aiToolPressureIndianItShares2026 } from './news-articles/markets/ai-tool-pressure-indian-it-shares-2026';
+import { blackrockIndiaLarryFinkBullish2026 } from './news-articles/markets/blackrock-india-larry-fink-bullish-2026';
+import { sensexNiftyWeakStartItSector2026 } from './news-articles/markets/sensex-nifty-weak-start-it-sector-2026';
+import { goldSilverPricesSurgeRecord2026 } from './news-articles/markets/gold-silver-prices-surge-record-2026';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -116,6 +121,11 @@ export const plainArticleContentMap: Record<string, any> = {
   'info-edge-falls-hard-today-value-play-2026': infoEdgeFallsValuePlay2026,
   'infosys-crashes-intraday-tech-sector-trouble-2026': infosysCrashesIntradayTechTrouble2026,
   'rbi-mpc-starts-today-3-things-every-investor-should-know-2026': rbiMpcStartsToday3ThingsInvestors2026,
+  'rbi-mpc-rates-stable-today-mpc-meet-starts-2026': rbiMpcRatesStableToday2026,
+  'ai-tool-pressure-indian-it-infosys-tcs-shares-down-2026': aiToolPressureIndianItShares2026,
+  'blackrock-india-larry-fink-bullish-fpi-investors-2026': blackrockIndiaLarryFinkBullish2026,
+  'sensex-nifty-weak-start-today-it-sector-2026': sensexNiftyWeakStartItSector2026,
+  'gold-silver-prices-surge-record-7000-16000-2026': goldSilverPricesSurgeRecord2026,
   'nifty-50-record-high-fii-inflows-november-2025': demoNiftyArticle,
   'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis': marketRallyDiwali2025,
   'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide': startupFundingWinter2025,

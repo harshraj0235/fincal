@@ -13,6 +13,57 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // === New (Jan 31, 2026) - RBI MPC stable, AI IT pressure, BlackRock India, Sensex-Nifty weak, Gold-Silver surge ===
+  {
+    id: 'economy-rbi-mpc-rates-stable-today-2026',
+    slug: 'rbi-mpc-rates-stable-today-mpc-meet-starts-2026',
+    category: 'economy',
+    subCategory: 'monetary-policy',
+    title: 'क्या RBI दरों को स्थिर रखेगा? MPC मीट आज शुरू',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T08:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-ai-tool-pressure-indian-it-2026',
+    slug: 'ai-tool-pressure-indian-it-infosys-tcs-shares-down-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'नया AI टूल से भारतीय IT कंपनियों पर दबाव, शेयर नीचे?',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-01-31T09:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-blackrock-india-larry-fink-2026',
+    slug: 'blackrock-india-larry-fink-bullish-fpi-investors-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'BlackRock का इंडिया पर बड़ा बयान — निवेशकों को भरोसा?',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T10:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-sensex-nifty-weak-start-2026',
+    slug: 'sensex-nifty-weak-start-today-it-sector-2026',
+    category: 'markets',
+    subCategory: 'equity-markets',
+    title: 'शेयर बाजार अपडेट: Sensex-Nifty आज कमजोर शुरुआत',
+    authorId: 'saurabh-kumar',
+    datePublished: '2026-01-31T11:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&h=630&fit=crop&q=80'
+  },
+  {
+    id: 'markets-gold-silver-surge-record-2026',
+    slug: 'gold-silver-prices-surge-record-7000-16000-2026',
+    category: 'markets',
+    subCategory: 'commodities',
+    title: 'सोना-चांदी की कीमतों में भारी उछाल!',
+    authorId: 'harsh-raj',
+    datePublished: '2026-01-31T12:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?w=1200&h=630&fit=crop&q=80'
+  },
   // === Today's news (Feb 5, 2026) - Govt borrowing, RBI pause, Delhi budget, Eggs/Honey, Top 5 stocks, Bank rally, PFC, Info Edge, Infosys, RBI MPC ===
   {
     id: 'economy-record-govt-borrowing-no-crash-2026',
