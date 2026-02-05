@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- MoneyCal BLOG - ~727 URLs - 2025-11-01 -->
+  <!-- MoneyCal BLOG - 2026-01-31: +5 term insurance articles -->
   <url>
     <loc>https://moneycal.in/blog</loc>
-    <lastmod>2025-11-01</lastmod>
+    <lastmod>2026-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
-  <!-- Build will regenerate with all blog URLs -->
+  <url>
+    <loc>https://moneycal.in/blog/1-crore-term-insurance-399-per-month-calculator</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/term-insurance-secret-90-percent-indians-dont-know-calculator</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/term-plan-premium-3x-higher-than-should-be-calculator</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/how-much-term-insurance-really-need-calculator</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moneycal.in/blog/free-term-insurance-calculator-no-phone-instant-results</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Build may regenerate with full blog list -->
 </urlset>
 
 

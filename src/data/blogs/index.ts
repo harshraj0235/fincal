@@ -48,6 +48,11 @@ import { news } from './news';
 import { calculators } from './calculators';
 import { excelTools } from './excel-tools';
 import { bonusInCtcVsActualReceiptTax } from './bonus-in-ctc-vs-actual-receipt-tax-implications';
+import { termInsurance1Crore399Calculator } from './term-insurance-1-crore-399-per-month-calculator';
+import { termInsuranceSecret90IndiansCalculator } from './term-insurance-secret-90-percent-indians-dont-know-calculator';
+import { termPlanPremium3xHigherCalculator } from './term-plan-premium-3x-higher-than-should-be-calculator';
+import { howMuchTermInsuranceReallyNeedCalculator } from './how-much-term-insurance-really-need-calculator';
+import { freeTermInsuranceCalculatorNoPhoneInstant } from './free-term-insurance-calculator-no-phone-instant-results';
 
 // Auto-generated blog array
 export const blogs: BlogPost[] = [
@@ -98,6 +103,11 @@ export const blogs: BlogPost[] = [
   calculators,
   excelTools,
   bonusInCtcVsActualReceiptTax,
+  termInsurance1Crore399Calculator,
+  termInsuranceSecret90IndiansCalculator,
+  termPlanPremium3xHigherCalculator,
+  howMuchTermInsuranceReallyNeedCalculator,
+  freeTermInsuranceCalculatorNoPhoneInstant,
 ];
 
 // Auto-update blog dates
@@ -158,3 +168,8 @@ export { news } from './news';
 export { calculators } from './calculators';
 export { excelTools } from './excel-tools';
 export { bonusInCtcVsActualReceiptTax } from './bonus-in-ctc-vs-actual-receipt-tax-implications';
+export { termInsurance1Crore399Calculator } from './term-insurance-1-crore-399-per-month-calculator';
+export { termInsuranceSecret90IndiansCalculator } from './term-insurance-secret-90-percent-indians-dont-know-calculator';
+export { termPlanPremium3xHigherCalculator } from './term-plan-premium-3x-higher-than-should-be-calculator';
+export { howMuchTermInsuranceReallyNeedCalculator } from './how-much-term-insurance-really-need-calculator';
+export { freeTermInsuranceCalculatorNoPhoneInstant } from './free-term-insurance-calculator-no-phone-instant-results';
