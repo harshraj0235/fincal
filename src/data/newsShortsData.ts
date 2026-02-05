@@ -42,8 +42,11 @@ export interface NewsShort {
   imageUrl?: string;
   videoUrl?: string;
   authorId?: string;
-  source?: 'static' | 'custom';
+  source?: 'static' | 'custom' | 'feed';
 }
+
+/** Path to auto-updated shorts feed (Indian/Hindi news, updated every 2h). */
+export const SHORTS_FEED_JSON_PATH = '/shorts-feed.json';
 
 export const baseUrl = 'https://moneycal.in';
 export const DISCOVER_IMAGE_DEFAULT = `${baseUrl}/images/optimized/pexels-photo-7063778.jpeg`;

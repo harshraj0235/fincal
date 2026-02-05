@@ -1,0 +1,42 @@
+# Update MoneyCal Shorts feed (Indian/Hindi news, 360+ char summary) every 2 hours
+
+name: Shorts Feed Update
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-shorts-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Fetch shorts feed (RSS → shorts-feed.json)
+        run: node scripts/fetch-shorts-feed.cjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/shorts-feed.json
+          if git diff --staged --quiet; then
+            echo "No changes to push"
+          else
+            git commit -m "chore: update shorts feed (Indian/Hindi news, auto 2h)"
+            git push origin HEAD:main
+          fi
