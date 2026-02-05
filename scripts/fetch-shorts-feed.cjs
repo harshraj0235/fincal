@@ -28,14 +28,15 @@ function stripHtml(html) {
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function ensureSummary360(title, description, source, link) {
-  const raw = stripHtml(description || '') || title;
-  let text = raw.slice(0, 500).trim();
-  if (text.length >= MIN_SUMMARY_CHARS) return text;
-  const suffix = ` For full details and updates, read the complete article at the source. This news is from ${source}.`;
-  const pad = MIN_SUMMARY_CHARS - text.length - suffix.length;
-  if (pad <= 0) return text + suffix;
-  return text + ' ' + raw.slice(500, 500 + pad).trim() + suffix;
+/** Build one quality paragraph (360+ chars) summarizing the whole content. */
+function ensureSummary360(title, description, source) {
+  const raw = stripHtml(description || '') || '';
+  let paragraph = raw ? raw.slice(0, 500).trim() : title;
+  const closing = ` For the full story and latest updates, read the complete article. Source: ${source}.`;
+  if (paragraph.length + closing.length < MIN_SUMMARY_CHARS && raw.length > paragraph.length) {
+    paragraph += ' ' + raw.slice(500, 500 + (MIN_SUMMARY_CHARS - paragraph.length - closing.length)).trim();
+  }
+  return paragraph.trim() + closing;
 }
 
 function extractFirstImageUrl(html) {
@@ -61,7 +62,7 @@ function toNewsShort(item, sourceName, category) {
   if (!title || !link) return null;
   const id = 'feed-' + crypto.createHash('md5').update(link).digest('hex').slice(0, 12);
   const description = item?.description || '';
-  const summary = ensureSummary360(title, description, sourceName, link);
+  const summary = ensureSummary360(title, description, sourceName);
   const imageUrl = item?.thumbnail || extractFirstImageUrl(description) || DEFAULT_IMAGE;
   const pubDate = item?.pubDate || new Date().toISOString();
   return {

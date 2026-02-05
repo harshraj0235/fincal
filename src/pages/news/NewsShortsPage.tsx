@@ -14,9 +14,9 @@ import {
 } from '../../data/newsShortsData';
 import { formatStaticShortDate } from '../../utils/randomCalculators';
 
-/** Card summary: at least 360 characters so user gets a clear idea of the story */
+/** One quality paragraph summary, 360+ chars, for every short. */
 const MIN_SUMMARY_CHARS = 360;
-const MAX_SUMMARY_CHARS = 520;
+const MAX_SUMMARY_CHARS = 560;
 
 function getSummary360(short: NewsShort): string {
   const parts: string[] = short.summaryParagraphs?.length
@@ -26,10 +26,15 @@ function getSummary360(short: NewsShort): string {
         ...(short.keyNumbers?.length ? [`Key figures: ${short.keyNumbers.join(', ')}.`] : []),
         short.whatToDo,
       ];
-  const full = parts.filter(Boolean).join(' ').trim();
-  if (full.length <= MIN_SUMMARY_CHARS) return full;
-  if (full.length <= MAX_SUMMARY_CHARS) return full;
-  const cut = full.slice(0, MAX_SUMMARY_CHARS);
+  let paragraph = parts.filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+  if (paragraph.length < MIN_SUMMARY_CHARS) {
+    paragraph += ' For full details, read the complete article using the link below.';
+  }
+  if (paragraph.length < MIN_SUMMARY_CHARS) {
+    paragraph += ' This summary gives you the main points in one place.';
+  }
+  if (paragraph.length <= MAX_SUMMARY_CHARS) return paragraph;
+  const cut = paragraph.slice(0, MAX_SUMMARY_CHARS);
   const lastSpace = cut.lastIndexOf(' ');
   const end = lastSpace > MIN_SUMMARY_CHARS ? lastSpace : MAX_SUMMARY_CHARS;
   return cut.slice(0, end).trim() + '…';

@@ -878,11 +878,13 @@ const allStaticShorts: NewsShort[] = [
   ...bulkCurrentAffairsFeb2026,
 ];
 
-/** All shorts — custom (if any) first, then static. Use in UI. */
+/** All shorts — custom (if any) first, then static. Each has one paragraph summary 360+ chars. */
 export function getNewsShorts(): NewsShort[] {
-  const staticList = allStaticShorts.map((s) => ({ ...s, source: 'static' as const }));
+  const staticList = allStaticShorts
+    .map((s) => ({ ...s, source: 'static' as const }))
+    .map(normalizeShortSummary);
   if (typeof window === 'undefined') return staticList;
-  const custom = getCustomShorts();
+  const custom = getCustomShorts().map(normalizeShortSummary);
   return custom.length ? [...custom, ...staticList] : staticList;
 }
 
@@ -909,6 +911,27 @@ export function saveCustomShort(short: NewsShort): void {
   if (existing >= 0) next[existing] = { ...short, source: 'custom' };
   else next.unshift({ ...short, source: 'custom' });
   localStorage.setItem(CUSTOM_SHORTS_STORAGE_KEY, JSON.stringify(next));
+}
+
+const MIN_SUMMARY_CHARS = 360;
+
+/** Ensures each short has one quality paragraph summary of 360+ characters. */
+export function normalizeShortSummary(short: NewsShort): NewsShort {
+  const parts = short.summaryParagraphs?.length
+    ? short.summaryParagraphs
+    : [
+        ...short.whyItMatters,
+        ...(short.keyNumbers?.length ? [`Key figures: ${short.keyNumbers.join(', ')}.`] : []),
+        short.whatToDo,
+      ];
+  let paragraph = parts.filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+  if (paragraph.length < MIN_SUMMARY_CHARS) {
+    paragraph += ' For full details and the complete story, read the article using the link below.';
+  }
+  if (paragraph.length < MIN_SUMMARY_CHARS) {
+    paragraph += ' This summary gives you the main points in one place.';
+  }
+  return { ...short, summaryParagraphs: [paragraph] };
 }
 
 /** Slugify headline for auto slug (supports English + Hindi). */

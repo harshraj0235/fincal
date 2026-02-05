@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { getNewsShorts, SHORTS_FEED_JSON_PATH, type NewsShort } from '../data/newsShortsData';
+import { getNewsShorts, SHORTS_FEED_JSON_PATH, normalizeShortSummary, type NewsShort } from '../data/newsShortsData';
 
 export interface UseNewsShortsResult {
   shorts: NewsShort[];
@@ -16,10 +16,9 @@ async function fetchShortsFeed(baseUrl: string): Promise<NewsShort[]> {
   if (!res.ok) return [];
   const data = await res.json();
   if (!data?.items || !Array.isArray(data.items)) return [];
-  return data.items.map((item: Record<string, unknown>) => ({
-    ...item,
-    source: 'feed' as const,
-  })) as NewsShort[];
+  return data.items.map((item: Record<string, unknown>) =>
+    normalizeShortSummary({ ...item, source: 'feed' as const } as NewsShort)
+  );
 }
 
 /**
