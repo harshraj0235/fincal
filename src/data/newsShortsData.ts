@@ -926,7 +926,7 @@ export function saveCustomShort(short: NewsShort): void {
 
 const MIN_SUMMARY_CHARS = 360;
 
-/** Ensures each short has one quality paragraph summary of 360+ characters. */
+/** Ensures each short has one quality paragraph summary of 360+ characters and a valid image. */
 export function normalizeShortSummary(short: NewsShort): NewsShort {
   const parts = short.summaryParagraphs?.length
     ? short.summaryParagraphs
@@ -942,7 +942,8 @@ export function normalizeShortSummary(short: NewsShort): NewsShort {
   if (paragraph.length < MIN_SUMMARY_CHARS) {
     paragraph += ' This summary gives you the main points in one place.';
   }
-  return { ...short, summaryParagraphs: [paragraph] };
+  const imageUrl = short.imageUrl?.trim() || DISCOVER_IMAGE_DEFAULT;
+  return { ...short, summaryParagraphs: [paragraph], imageUrl };
 }
 
 /** Slugify headline for auto slug (supports English + Hindi). */
