@@ -338,25 +338,23 @@ const NewsShortsPage: React.FC = () => {
         ))}
       </div>
 
-      {/* Bottom nav — dots + swipe hint */}
+      {/* Bottom nav — dots (orange active, gray rest) + current/total count */}
       <div
         className="fixed left-0 right-0 z-40 flex flex-col items-center gap-2"
         style={{ bottom: 'max(1rem, env(safe-area-inset-bottom))' }}
       >
-        <div className="flex gap-1.5 items-center px-3 py-2 rounded-full bg-white/90 backdrop-blur border border-neutral-200/80 shadow-sm">
+        <div className="flex gap-1.5 items-center px-3 py-2 rounded-full bg-white shadow border border-neutral-200">
           {filtered.slice(0, 10).map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
-              className={`rounded-full transition-all min-w-[20px] min-h-[20px] flex items-center justify-center ${
-                i === activeIndex ? 'bg-amber-500 w-6 h-1.5' : 'bg-neutral-300 w-1.5 h-1.5 hover:bg-neutral-400'
+              className={`rounded-full transition-all w-2 h-2 flex-shrink-0 ${
+                i === activeIndex ? 'bg-amber-500 scale-110' : 'bg-neutral-300 hover:bg-neutral-400'
               }`}
               aria-label={`Story ${i + 1}`}
             />
           ))}
-          {filtered.length > 10 && (
-            <span className="text-neutral-500 text-xs ml-1 tabular-nums">{activeIndex + 1}/{filtered.length}</span>
-          )}
+          <span className="text-neutral-500 text-sm tabular-nums ml-2">{activeIndex + 1}/{filtered.length}</span>
         </div>
         <AnimatePresence>
           {showSwipeHint && (
