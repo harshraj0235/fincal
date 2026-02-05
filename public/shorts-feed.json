@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-05T20:24:31.066Z",
+  "updatedAt": "2026-02-05T22:19:32.301Z",
   "items": [
     {
       "id": "feed-398eb86de2de",
@@ -15,7 +15,7 @@
       ],
       "fullStoryLink": "https://www.bbc.co.uk/hindi/live/cx2lx0jx3d5t?at_medium=RSS&at_campaign=rss",
       "fullStoryPath": "https://www.bbc.co.uk/hindi/live/cx2lx0jx3d5t?at_medium=RSS&at_campaign=rss",
-      "datePublished": "2026-02-05T20:24:31.065Z",
+      "datePublished": "2026-02-05T22:19:32.300Z",
       "readTimeSeconds": 50,
       "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c185/live/b7102550-02b9-11f1-b7e1-afb6d0884c18.jpg",
       "source": "feed"
@@ -54,6 +54,25 @@
       "fullStoryLink": "https://economictimes.indiatimes.com/industry/banking/finance/insolvency-case-against-alchemist-recalled-after-eds-intervention/articleshow/127951077.cms",
       "fullStoryPath": "https://economictimes.indiatimes.com/industry/banking/finance/insolvency-case-against-alchemist-recalled-after-eds-intervention/articleshow/127951077.cms",
       "datePublished": "2026-02-05 18:48:18",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-cad5fc33ba70",
+      "slug": "new-york-pension-funds-scrutinize-palantir-over-ice-contract-33ba70",
+      "category": "business",
+      "headline": "New York Pension Funds Scrutinize Palantir Over ICE Contract",
+      "whyItMatters": [
+        "New York’s pension funds, which have exposure to $900 million of Palantir Technologies Inc. stock, are questioning the software company over its business dealings with US Immigration and Customs Enfor"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "New York’s pension funds, which have exposure to $900 million of Palantir Technologies Inc. stock, are questioning the software company over its business dealings with US Immigration and Customs Enforcement and the Department of Homeland Security. For the full story and latest updates, read the complete article. Source: Livemint."
+      ],
+      "fullStoryLink": "https://www.livemint.com/companies/new-york-pension-funds-scrutinize-palantir-over-ice-contract-11770317195017.html",
+      "fullStoryPath": "https://www.livemint.com/companies/new-york-pension-funds-scrutinize-palantir-over-ice-contract-11770317195017.html",
+      "datePublished": "2026-02-05 18:46:34",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -415,25 +434,6 @@
       "fullStoryLink": "https://economictimes.indiatimes.com/markets/stocks/earnings/lic-q3-results-cons-pat-jumps-17-yoy-to-rs-12930-crore-net-premium-income-grows-17/articleshow/127932108.cms",
       "fullStoryPath": "https://economictimes.indiatimes.com/markets/stocks/earnings/lic-q3-results-cons-pat-jumps-17-yoy-to-rs-12930-crore-net-premium-income-grows-17/articleshow/127932108.cms",
       "datePublished": "2026-02-05 10:59:07",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-82e65857ed87",
-      "slug": "airtel-revenue-climbs-20-in-q3-arpu-gap-to-jio-rises-57ed87",
-      "category": "business",
-      "headline": "Airtel revenue climbs 20% in Q3; Arpu gap to Jio rises",
-      "whyItMatters": [
-        "The drop in profit in Q3 could be attributed largely to a high base in the year-ago period, when Bharti Airtel reported a net exceptional gain For the full story and latest updates, read the complete "
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "The drop in profit in Q3 could be attributed largely to a high base in the year-ago period, when Bharti Airtel reported a net exceptional gain For the full story and latest updates, read the complete article. Source: Livemint."
-      ],
-      "fullStoryLink": "https://www.livemint.com/companies/company-results/bharti-airtel-q3-pat-falls-55-yoy-to-rs-6-630-5-crore-11770282273651.html",
-      "fullStoryPath": "https://www.livemint.com/companies/company-results/bharti-airtel-q3-pat-falls-55-yoy-to-rs-6-630-5-crore-11770282273651.html",
-      "datePublished": "2026-02-05 10:54:30",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
