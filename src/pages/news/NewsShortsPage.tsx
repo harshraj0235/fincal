@@ -9,6 +9,7 @@ import {
   getShortFullUrl,
   DISCOVER_IMAGE_DEFAULT,
   baseUrl,
+  sortShortsByDateLatestFirst,
   type NewsShort,
   type NewsShortCategory,
 } from '../../data/newsShortsData';
@@ -64,9 +65,7 @@ const NewsShortsPage: React.FC = () => {
   const [showSwipeHint, setShowSwipeHint] = useState(true);
 
   const filtered = useMemo(() => {
-    const list = [...shorts].sort(
-      (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
-    );
+    const list = sortShortsByDateLatestFirst([...shorts]);
     if (filter === 'latest') return list;
     return list.filter((s) => s.category === filter);
   }, [shorts, filter]);

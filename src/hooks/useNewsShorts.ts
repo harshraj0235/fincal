@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { getNewsShorts, SHORTS_FEED_JSON_PATH, normalizeShortSummary, type NewsShort } from '../data/newsShortsData';
+import { getNewsShorts, SHORTS_FEED_JSON_PATH, normalizeShortSummary, sortShortsByDateLatestFirst, type NewsShort } from '../data/newsShortsData';
 
 export interface UseNewsShortsResult {
   shorts: NewsShort[];
@@ -40,9 +40,7 @@ export function useNewsShorts(): UseNewsShortsResult {
         if (raw) {
           const { items, _ts }: { items: NewsShort[]; _ts?: number } = JSON.parse(raw);
           if (items?.length && _ts && Date.now() - _ts < SHORTS_FEED_CACHE_TTL_MS) {
-            const merged = [...items, ...staticAndCustom].sort(
-              (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
-            );
+            const merged = sortShortsByDateLatestFirst([...items, ...staticAndCustom]);
             setShorts(merged);
             setLoading(false);
             return;
@@ -61,9 +59,7 @@ export function useNewsShorts(): UseNewsShortsResult {
           JSON.stringify({ items: feedItems, _ts: Date.now() })
         );
       }
-      const merged = [...feedItems, ...staticAndCustom].sort(
-        (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
-      );
+      const merged = sortShortsByDateLatestFirst([...feedItems, ...staticAndCustom]);
       setShorts(merged);
     } catch {
       setShorts(staticAndCustom);

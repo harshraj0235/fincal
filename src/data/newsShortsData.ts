@@ -48,6 +48,17 @@ export interface NewsShort {
 /** Path to auto-updated shorts feed (Indian/Hindi news, updated every 2h). */
 export const SHORTS_FEED_JSON_PATH = '/shorts-feed.json';
 
+/** Sort shorts by date: latest (most recent) first, then older. Invalid/missing dates go to end. */
+export function sortShortsByDateLatestFirst(shorts: NewsShort[]): NewsShort[] {
+  return [...shorts].sort((a, b) => {
+    const ta = new Date(a.datePublished).getTime();
+    const tb = new Date(b.datePublished).getTime();
+    const va = Number.isNaN(ta) ? 0 : ta;
+    const vb = Number.isNaN(tb) ? 0 : tb;
+    return vb - va;
+  });
+}
+
 export const baseUrl = 'https://moneycal.in';
 export const DISCOVER_IMAGE_DEFAULT = `${baseUrl}/images/optimized/pexels-photo-7063778.jpeg`;
 
