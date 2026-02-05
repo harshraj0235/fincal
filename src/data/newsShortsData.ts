@@ -103,6 +103,156 @@ export const newsShortsFilterCategories: { id: NewsShortCategory | 'latest'; lab
 /** Static list of shorts — Inshorts-style 60-second news */
 export const newsShortsList: NewsShort[] = [
   {
+    id: 'world-roundup-gaza-floods-jellyfish-2026-02-05',
+    slug: 'world-roundup-gaza-floods-jellyfish',
+    category: 'economy',
+    headline: 'World Roundup: Gaza Strikes, Spain Floods, Phantom Jellyfish & More Global Headlines',
+    whyItMatters: [
+      'Middle East tensions, European extreme weather और rare deep-sea discoveries एक ही दिन global risk और science दोनों को highlight करते हैं।',
+      'ऐसी headlines oil prices, travel plans और investor sentiment पर indirect असर डाल सकती हैं — इसलिए Indian investors के लिए भी relevant हैं।',
+    ],
+    whatToDo:
+      'Global news को ignore मत कीजिए — risk management, asset allocation और emergency planning करते समय geopolitical और climate risks को भी factor कीजिए।',
+    summaryParagraphs: [
+      'आज की global खबरों में सबसे बड़ी सुर्खी Gaza से आती है, जहाँ Israel के fresh strikes में कम-से-कम 24 लोगों की मौत हुई, जिनमें बच्चे भी शामिल हैं। इससे फिर से Middle East में tension बढ़ा है और ceasefire talks पर दबाव बढ़ सकता है, जो oil prices और broader risk sentiment को indirectly प्रभावित करता है। इसी के साथ Australia में National Day protest के दौरान हुए attempted bombing को authorities terror act की तरह treat कर रहे हैं, दिखाता है कि developed देशों में भी security risk हमेशा मौजूद रहता है। दुसरी ओर, Spain के Andalucía region में Storm Leonardo की वजह से severe flooding हुई, जिससे evacuations, transport disruption और insurance claims बढ़ने की आशंका है — climate change–linked extreme weather अब regular headline बन चुका है।',
+      'Science और human grit से जुड़ी दो कहानियाँ भी viral हैं: Argentina के coast के पास deep-sea footage में school-bus size phantom jellyfish दिखी, जो दुनिया के सबसे rare jellyfish species में से एक मानी जाती है और ocean biodiversity पर नया insight देती है। Australia में एक 13 साल के लड़के ने family की boat के औकात से बाहर drift होने पर 2+ miles तैर कर coast तक पहुँच कर help बुलवाई और सबकी जान बचाई — ये human endurance और presence of mind की powerful याद दिलाता है। इसी बीच UK में Prince Andrew, जो पहले Epstein controversy से जुड़ चुके हैं, अपने royal residence से move-out की headlines में हैं, जिससे British monarchy और public opinion के बीच की दूरी पर फिर discussion शुरू हो गया है।',
+      'Global context समझना सिर्फ़ curiosity के लिए नहीं, बल्कि investors, travellers और students के लिए भी ज़रूरी है — conflict zones, climate risk और political uncertainty portfolios और life plans पर असर डाल सकते हैं।',
+    ],
+    fullStoryLink: `${baseUrl}/news/shorts`,
+    fullStoryPath: '/news/shorts',
+    datePublished: getNewsShortsTodayISO(),
+    readTimeSeconds: 65,
+    imageUrl:
+      'https://images.unsplash.com/photo-1548266652-99cf27701ced?w=1200&h=630&fit=crop&q=80', // generic world news image
+    authorId: 'harsh-raj',
+    source: 'static',
+  },
+  {
+    id: 'india-roundup-bharat-taxi-metro-dea-2026-02-05',
+    slug: 'india-roundup-bharat-taxi-metro-dea',
+    category: 'business',
+    headline: 'India Today: Bharat Taxi vs Uber-Ola, Metro Fare Hike, Drug Ring Bust & Parliament Fireworks',
+    whyItMatters: [
+      'Bharat Taxi launch से app-based cab market में competition बढ़ेगा, जिसका असर fares और drivers की earnings दोनों पर पड़ सकता है।',
+      'Metro fare hikes, highway jams और land disputes जैसे decisions रोज़मर्रा के खर्च, travel time और local politics को सीधे छूते हैं।',
+    ],
+    whatToDo:
+      'Urban commuters अपने monthly budget और route planning को update करें; policy और courts के बड़े फैसलों को long-term investment और career decisions में factor करें।',
+    summaryParagraphs: [
+      'India से आज की बड़ी national headlines शुरू होती हैं Bharat Taxi के official launch से — एक नया player जो Uber और Ola जैसे giants को सीधे challenge करेगा। इसका मतलब है कि आने वाले महीनों में कुछ routes पर promotional offers, fare wars और drivers के लिए नए incentive structures देखने को मिल सकते हैं, लेकिन साथ ही regulation और safety norms पर भी नया दबाव बनेगा। वहीं Bengaluru Metro ने 9 February से लगभग 5% fare hike का ऐलान किया है, जिससे रोज़ metro से आने-जाने वाले commuters के monthly travel budget में सीधा असर पड़ेगा, खासकर middle-class और students के लिए। US Drug Enforcement Administration (DEA) ने India-linked online drug ring पर बड़ा crackdown करते हुए 200 domains seize किए और चार लोगों को arrest किया, जिससे cyber-enabled crime और India की image पर international स्तर पर सवाल उठ सकते हैं।',
+      'Mumbai-Pune Expressway पर tanker accident की वजह से 5–10 km तक traffic jam रही और कई buses प्रभावित हुईं; हालांकि बाद में traffic धीरे-धीरे normalize हुआ। ऐसे incidents remind करते हैं कि highways पर safety standards और emergency response कितना critical है। Gujarat High Court ने राज्य सरकार को 45,000 sq m land ashram से reclaim करने की अनुमति दी, जो land use, encroachment और religious trusts पर चल रही बहस का नया chapter है। Delhi में Lok Sabha को दोपहर 2 बजे तक के लिए suspend करना पड़ा क्योंकि BJP और Congress के बीच तीखी तकरार चल रही थी, वहीं Bengal सरकार को Supreme Court से एक अहम setback मिला, जो राज्य–centre संबंधों और federal politics पर दूरगामी असर डाल सकता है।',
+      'इन सभी developments का मतलब है कि India का policy, infrastructure और law-&-order landscape तेज़ी से evolve हो रहा है — investors, job seekers और आम नागरिकों को इन बदलावों पर नज़र रखनी चाहिए।',
+    ],
+    fullStoryLink: `${baseUrl}/news/shorts`,
+    fullStoryPath: '/news/shorts',
+    datePublished: getNewsShortsTodayISO(),
+    readTimeSeconds: 70,
+    imageUrl:
+      'https://images.unsplash.com/photo-1586769852044-692d6e3703c8?w=1200&h=630&fit=crop&q=80', // Indian city traffic/metro
+    authorId: 'saurabh-kumar',
+    source: 'static',
+  },
+  {
+    id: 'sports-roundup-u19-ind-eng-nba-2026-02-05',
+    slug: 'sports-roundup-u19-ind-eng-nba',
+    category: 'business',
+    headline: 'Sports Buzz: U-19 World Cup IND vs ENG Final, India–Pakistan Debate & NBA Trade Deadline Drama',
+    whyItMatters: [
+      'India U-19 टीम का World Cup final तक पहुँचना cricket pipeline की ताकत दिखाता है — future stars की पहचान यहीं से होती है।',
+      'India–Pakistan cricket politics और NBA trades दोनों ही billion-dollar sports economies और fan engagement को प्रभावित करते हैं।',
+    ],
+    whatToDo:
+      'Cricket और global sports follow करने वाले fans fixtures, squads और big trades पर नज़र रखें; betting या impulsive financial decisions से बचें — sports को entertainment और learning की तरह देखें।',
+    summaryParagraphs: [
+      'Harare में ICC U-19 World Cup 2026 का final अब India vs England के बीच तय हो चुका है — junior level पर ये clash सिर्फ़ trophy के लिए नहीं, बल्कि अगले 5–10 साल के लिए national teams के talent pipeline की एक झलक भी है। पिछले कुछ editions की तरह इस बार भी India U-19 टीम ने consistency और depth दिखाई है, जिससे selectors को future openers, all-rounders और bowlers की अच्छी list मिल जाएगी। इस बीच former Australia fast bowler Brett Lee ने फिर से India–Pakistan bilateral series के पक्ष में आवाज़ उठाई है, लेकिन Pakistan के PM ने सुरक्षा और political context का हवाला देकर boycott line को ही support किया है, जिससे high-voltage Indo-Pak cricket की वापसी फिलहाल दूर दिखती है।',
+      'दूसरी तरफ Atlantic के पार NBA Trade Deadline का buzz तेज़ है — कई big names के team बदलने की चर्चा है, जो franchises की championship window, salary cap और fan loyalty को सीधे touch करता है। हर blockbuster trade के पीछे detailed analytics, contract math और future picks की chessboard होती है, जो दिखाती है कि modern sports pure entertainment नहीं, बल्कि data-driven business भी है।',
+      'Indian viewers के लिए ये सब सिर्फ़ late-night entertainment नहीं; global sports economics, sponsorship deals और franchise models को समझना startup founders, marketers और finance professionals के लिए भी सीखने का बड़ा source हो सकता है।',
+    ],
+    fullStoryLink: `${baseUrl}/news/shorts`,
+    fullStoryPath: '/news/shorts',
+    datePublished: getNewsShortsTodayISO(),
+    readTimeSeconds: 65,
+    imageUrl:
+      'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1200&h=630&fit=crop&q=80', // generic stadium/sports image
+    authorId: 'raushan-kumar',
+    source: 'static',
+  },
+  {
+    id: 'markets-roundup-gold-silver-sensex-savings-2026-02-05',
+    slug: 'markets-roundup-gold-silver-sensex-savings',
+    category: 'markets',
+    headline: 'Gold–Silver में तगड़ी चाल, Sensex–Nifty सुस्त और Savings Accounts में ~5% तक APY — क्या करें?',
+    whyItMatters: [
+      'Gold और silver की volatility safe-haven demand और global risk mood को reflect करती है — Indian households के लिए ये core asset class है।',
+      'Equity indices की muted opening और higher savings rates मिलकर asset allocation decisions को tricky बनाते हैं।',
+    ],
+    whatToDo:
+      'Short-term price moves पर jump मत करें; goals और risk profile के हिसाब से gold, equity और high-yield savings में balanced allocation बनाईए।',
+    summaryParagraphs: [
+      'आज के commodity और बाजार action में gold और silver दोनों spotlight में हैं: gold ने recent correction के बाद फिर से rebound दिखाया है जबकि silver में intraday dips के साथ choppy trade दिखा, जो industrial demand और speculative positioning दोनों का mix है। Indian households के लिए gold सिर्फ़ investment नहीं, बल्कि cultural और emergency asset भी है, इसलिए बार-बार की volatility के बावजूद long-term allocation generally stable रहती है। इसी बीच Sensex और Nifty ने muted opening दी, जहां mixed commodity moves और global cues की वजह से traders ने wait-and-watch stance लिया हुआ है — sectors में rotation दिख रहा है लेकिन broad-based trend अभी साफ़ नहीं है।',
+      'Banking और fintech side पर सबसे interesting development high-yield savings accounts हैं जो अब ~5.00% APY (या उसके आसपास effective annual yield) offer कर रहे हैं, खासकर कुछ digital-first या private banks में। इससे short-term parking और emergency funds के लिए options बढ़ गए हैं, लेकिन साथ ही customers को fine print, balance slab conditions और FD से तुलना करके ही decision लेना चाहिए। Equity में suust start, gold–silver की तेज़ चाल और savings rates का uptrend मिलकर retail investors के सामने asset allocation का tough सवाल रखते हैं — कहाँ कितना रखें ताकि liquidity, safety और growth तीनों का balance बने रहे।',
+      'Practical तरीका यह है कि short-term जरूरतों और emergency corpus के लिए high-yield savings/short FDs use करें, long-term wealth creation के लिए diversified equity funds या index funds और portfolio hedge व cultural allocation के लिए limited लेकिन disciplined gold exposure रखें।',
+    ],
+    fullStoryLink: `${baseUrl}/news/shorts`,
+    fullStoryPath: '/news/shorts',
+    datePublished: getNewsShortsTodayISO(),
+    readTimeSeconds: 70,
+    imageUrl:
+      'https://images.unsplash.com/photo-1547514701-42782101795e?w=1200&h=630&fit=crop&q=80', // gold/silver coins
+    authorId: 'harsh-raj',
+    source: 'static',
+  },
+  {
+    id: 'ent-viral-ott-jellyfish-2026-02-05',
+    slug: 'ent-viral-ott-jellyfish',
+    category: 'business',
+    headline: 'OTT पर The Raja Saab से लेकर Lincoln Lawyer 4, और Viral Phantom Jellyfish Video ने जीता Internet',
+    whyItMatters: [
+      'New OTT releases binge-watching behaviour और subscription choices को drive करते हैं — entertainment spend अब हर household budget का हिस्सा है।',
+      'Deep-sea phantom jellyfish जैसा rare footage science curiosity और social media virality दोनों को जोड़ता है, जो attention economy को define करता है।',
+    ],
+    whatToDo:
+      'OTT subscriptions को clubbing/bundling के साथ optimise करें, और viral content को सिर्फ़ forwarding नहीं, learning के नज़रिये से भी देखें — ocean health और science stories पर भी ध्यान दें।',
+    summaryParagraphs: [
+      'Entertainment और viral culture की दुनिया में इस हफ्ते OTT platforms पर बड़ा lineup है: Indian audiences के लिए The Raja Saab जैसे बड़े star cast वाले titles ready हैं, वहीं global viewers के लिए Lincoln Lawyer 4 जैसा popular legal drama वापस आ रहा है। Streaming wars का मतलब है कि हर platform exclusive releases के ज़रिए आपका ध्यान और subscription रुपये capture करने की कोशिश कर रहा है; users के लिए इसका upside ज्यादा choice है लेकिन downside ये कि बिना planning के multiple subscriptions pocket पर भारी पड़ सकते हैं। इसी बीच internet पर सबसे ज्यादा share होने वाले clips में से एक Argentina के coast के पास deep-sea में shoot हुआ phantom jellyfish का video है — school-bus size का ये creature बहुत rare है और marine scientists के लिए भी excitement का reason बना हुआ है।',
+      'ऐसे viral clips सिर्फ़ wow-factor नहीं लाते, बल्कि oceans की unexplored दुनिया और climate change के असर पर ध्यान खींचते हैं। Social feeds में जब भी ऐसे videos दिखें, उन्हें सिर्फ़ entertainment नहीं, बल्कि opportunity की तरह देखें — ocean conservation, deep-sea research और biodiversity के बारे में पढ़ने का chance।',
+      'OTT और viral content दोनों मिलकर आज की attention economy की core कहानी बताते हैं: आपका समय, data और subscription पैसा सबसे बड़ी currency है; content चुनते समय mindful रहें ताकि entertainment, learning और budget का healthy balance बन सके।',
+    ],
+    fullStoryLink: `${baseUrl}/news/shorts`,
+    fullStoryPath: '/news/shorts',
+    datePublished: getNewsShortsTodayISO(),
+    readTimeSeconds: 70,
+    imageUrl:
+      'https://images.unsplash.com/photo-1594905791954-6675fc969971?w=1200&h=630&fit=crop&q=80', // TV/OTT style image
+    authorId: 'saurabh-kumar',
+    source: 'static',
+  },
+  {
+    id: 'astro-horoscope-feb5-2026',
+    slug: 'astro-horoscope-feb5-2026',
+    category: 'personal-finance',
+    headline: 'आज का Panchang & Horoscope: Sankashti Chaturthi, शुभ योग और किन राशियों के लिए फायदे के मौके?',
+    whyItMatters: [
+      'बहुत से Indian households रोज़ के decisions (shopping, travel, investments) में Panchang और राशिफल को ध्यान में रखते हैं।',
+      'Astro content high-traffic driver है — लेकिन इसे grounded financial planning के साथ balance करना ज़रूरी है।',
+    ],
+    whatToDo:
+      'Panchang और राशिफल को motivation और reflection के tool की तरह लें; big money decisions हमेशा maths, risk profile और goals के आधार पर लें, सिर्फ़ stars के नहीं।',
+    summaryParagraphs: [
+      'आज के Panchang के मुताबिक यह Sankashti Chaturthi का दिन है, जिसे कई लोग विशेष रूप से गणेश पूजा और मनोकामना पूर्ति से जोड़ते हैं। कुछ पंचांगों के अनुसार शुभ yogs भी बन रहे हैं, जिनमें विशेष time windows को यात्रा, deal-making या नए काम शुरू करने के लिए बेहतर माना जाता है। इसी के साथ daily राशिफल updates बताते हैं कि किन राशियों के लिए आज communication, career या relationships में opportunities खुल सकती हैं और किसे health या खर्चों पर extra ध्यान देने की ज़रूरत है। Astrology content इसलिए popular है क्योंकि यह लोगों को दिन की शुरुआत में एक narrative, hope या caution का फ्रेम दे देता है।',
+      'लेकिन financial और career decisions के लिए सिर्फ़ राशिफल पर भरोसा करना practical नहीं है। अगर आज का horoscope कहता है कि धन लाभ के योग हैं, तो भी SIP बढ़ाने या बड़ी खरीद करने से पहले income, budget और goals को देखना ज़रूरी है। इसी तरह, अगर कहीं challenges का जिक्र है, तो उसे risk management और contingency planning की lens से पढ़ा जा सकता है — जैसे emergency fund बनाना, insurance cover check करना या debt कम करना।',
+      'Best approach यही है कि Panchang और horoscope को self-reflection और discipline बढ़ाने के संकेत की तरह use करें, जबकि वास्तविक पैसे और career decisions data, planning और सलाह के आधार पर लें — stars inspiration दे सकते हैं, लेकिन execution आपके हाथ में है।',
+    ],
+    fullStoryLink: `${baseUrl}/news/shorts`,
+    fullStoryPath: '/news/shorts',
+    datePublished: getNewsShortsTodayISO(),
+    readTimeSeconds: 75,
+    imageUrl:
+      'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&h=630&fit=crop&q=80', // astrology/horoscope style
+    authorId: 'vikram',
+    source: 'static',
+  },
+  {
     id: 'term-1cr-399-month-2026',
     slug: 'term-1cr-399-month',
     category: 'personal-finance',
