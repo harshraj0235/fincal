@@ -29,8 +29,8 @@ async function fetchShortsFeed(baseUrl: string): Promise<NewsShort[]> {
 }
 
 /**
- * Returns news shorts: feed (Indian/Hindi RSS, 360+ char summary) + static + custom.
- * Feed is from shorts-feed.json (India news, 360+ char summary, auto every 10 min); merged and sorted by date.
+ * Returns news shorts: feed (up to 100, every 10 min) + static. Target ≥100 shorts on /news/shorts.
+ * Latest + category tabs; every card has image + 360+ char paragraph.
  */
 export function useNewsShorts(): UseNewsShortsResult {
   const [shorts, setShorts] = useState<NewsShort[]>(() => getNewsShorts());

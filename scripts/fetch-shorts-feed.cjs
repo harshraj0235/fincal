@@ -15,6 +15,9 @@ const MAX_SUMMARY_CHARS = 560;
 const DEFAULT_IMAGE = 'https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg';
 const FETCH_ARTICLE_TIMEOUT_MS = 6000;
 const MAX_ARTICLES_TO_SCRAPE = 12;
+/** At least 100 shorts on https://moneycal.in/news/shorts every 10 min (this feed + static). */
+const MIN_SHORTS_TARGET = 100;
+const MAX_FEED_ITEMS = 100;
 
 /** India-focused + Google News + free news RSS feeds */
 const FEEDS = [
@@ -181,7 +184,7 @@ function mergeAndSort(items) {
     out.push(i);
   }
   out.sort((a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime());
-  return out.slice(0, 60);
+  return out.slice(0, MAX_FEED_ITEMS);
 }
 
 async function main() {
@@ -212,9 +215,11 @@ async function main() {
   const outPath = path.join(publicDir, 'shorts-feed.json');
   if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2), 'utf8');
-  console.log(`Wrote ${items.length} shorts to ${outPath} (India-focused, 360+ char summary, auto every 10 min)`);
+  console.log(`Wrote ${items.length} shorts to ${outPath} (target ≥${MIN_SHORTS_TARGET} with static, 360+ char, image, every 10 min)`);
   if (items.length === 0) {
     console.warn('No items — check RSS URLs. File still written.');
+  } else if (items.length < MIN_SHORTS_TARGET) {
+    console.warn(`Feed has ${items.length} items; static shorts will be merged on site to reach ≥${MIN_SHORTS_TARGET} total.`);
   }
 }
 
