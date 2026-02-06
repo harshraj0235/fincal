@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-05T22:19:32.301Z",
+  "updatedAt": "2026-02-06T01:16:44.868Z",
   "items": [
     {
       "id": "feed-398eb86de2de",
@@ -15,9 +15,28 @@
       ],
       "fullStoryLink": "https://www.bbc.co.uk/hindi/live/cx2lx0jx3d5t?at_medium=RSS&at_campaign=rss",
       "fullStoryPath": "https://www.bbc.co.uk/hindi/live/cx2lx0jx3d5t?at_medium=RSS&at_campaign=rss",
-      "datePublished": "2026-02-05T22:19:32.300Z",
+      "datePublished": "2026-02-06T01:16:44.867Z",
       "readTimeSeconds": 50,
       "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c185/live/b7102550-02b9-11f1-b7e1-afb6d0884c18.jpg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-c61c33743c1e",
+      "slug": "swiss-franc-giving-a-tough-time-to-indians-743c1e",
+      "category": "economy",
+      "headline": "'Swiss Franc giving a tough time to Indians'",
+      "whyItMatters": [
+        "'Swiss Franc giving a tough time to Indians' For the full story and latest updates, read the complete article. Source: Economic Times."
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "'Swiss Franc giving a tough time to Indians' For the full story and latest updates, read the complete article. Source: Economic Times."
+      ],
+      "fullStoryLink": "https://economictimes.indiatimes.com/news/economy/foreign-trade/eu-fta-positive-but-swiss-franc-giving-a-tough-time-to-indians-adrian-bosshard/articleshow/127952367.cms",
+      "fullStoryPath": "https://economictimes.indiatimes.com/news/economy/foreign-trade/eu-fta-positive-but-swiss-franc-giving-a-tough-time-to-indians-adrian-bosshard/articleshow/127952367.cms",
+      "datePublished": "2026-02-06 00:00:00",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
     },
     {
@@ -377,25 +396,6 @@
       "fullStoryLink": "https://www.livemint.com/companies/berger-paints-q3-results-monsoon-festive-season-impact-profit-11770294019115.html",
       "fullStoryPath": "https://www.livemint.com/companies/berger-paints-q3-results-monsoon-festive-season-impact-profit-11770294019115.html",
       "datePublished": "2026-02-05 13:07:16",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-7314970bb6dd",
-      "slug": "myntra-gurgaon-ops-see-transfers-ampamp-layoffs-source-0bb6dd",
-      "category": "economy",
-      "headline": "Myntra Gurgaon ops see transfers &amp;amp; layoffs: Source",
-      "whyItMatters": [
-        "Myntra Gurgaon ops see transfers &amp;amp; layoffs: Source For the full story and latest updates, read the complete article. Source: Economic Times."
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "Myntra Gurgaon ops see transfers &amp;amp; layoffs: Source For the full story and latest updates, read the complete article. Source: Economic Times."
-      ],
-      "fullStoryLink": "https://economictimes.indiatimes.com/industry/cons-products/fashion-/-cosmetics-/-jewellery/myntra-layoffs-relocation-consolidates-gurugram-satellite-ops-with-bengaluru-bangalore-hq-sources/articleshow/127934700.cms",
-      "fullStoryPath": "https://economictimes.indiatimes.com/industry/cons-products/fashion-/-cosmetics-/-jewellery/myntra-layoffs-relocation-consolidates-gurugram-satellite-ops-with-bengaluru-bangalore-hq-sources/articleshow/127934700.cms",
-      "datePublished": "2026-02-05 13:01:26",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
