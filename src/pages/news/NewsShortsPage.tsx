@@ -252,7 +252,7 @@ const NewsShortsPage: React.FC = () => {
               <BookOpen className="w-5 h-5 text-amber-600" />
               <h1 className="text-base font-bold text-neutral-900">In 60 Seconds</h1>
             </div>
-            <span className="text-[10px] sm:text-xs text-neutral-500">India-focused · Fresh every 10 min</span>
+            <span className="text-[10px] sm:text-xs text-neutral-500">India-focused · Fetched every 10 min · Image + summary on every card</span>
           </div>
           <span className="text-sm tabular-nums text-neutral-500 min-w-[3ch] text-right">
             {activeIndex + 1}<span className="text-neutral-400">/{filtered.length}</span>
@@ -294,11 +294,12 @@ const NewsShortsPage: React.FC = () => {
             className="h-screen min-h-[100vh] snap-start snap-always flex flex-col bg-white shadow-lg"
             style={{ scrollSnapAlign: 'start' }}
           >
-            {/* Image — top ~38%, Inshorts-style */}
+            {/* Image — top ~38%, Inshorts-style; every short has image (normalized in hook) */}
             <div className="relative w-full flex-shrink-0" style={{ height: '38vh', minHeight: 200 }}>
               <img
                 src={short.imageUrl || DISCOVER_IMAGE_DEFAULT}
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />

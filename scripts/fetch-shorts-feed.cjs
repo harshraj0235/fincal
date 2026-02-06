@@ -202,6 +202,7 @@ async function main() {
     console.warn('Scrape enrich failed:', err.message);
   }
 
+  // Every item has imageUrl (thumbnail or DEFAULT_IMAGE) and summaryParagraphs (360+ chars) for /news/shorts
   const output = {
     updatedAt: new Date().toISOString(),
     items,

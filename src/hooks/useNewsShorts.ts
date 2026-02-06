@@ -1,6 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import { getNewsShorts, SHORTS_FEED_JSON_PATH, normalizeShortSummary, sortShortsByDateLatestFirst, type NewsShort } from '../data/newsShortsData';
 
+/** Ensure every short has image + 360+ char paragraph for display on /news/shorts */
+function ensureImageAndParagraph(shorts: NewsShort[]): NewsShort[] {
+  return shorts.map(normalizeShortSummary);
+}
+
 export interface UseNewsShortsResult {
   shorts: NewsShort[];
   loading: boolean;
@@ -8,7 +13,8 @@ export interface UseNewsShortsResult {
 }
 
 const SHORTS_FEED_CACHE_KEY = 'moneycal_shorts_feed';
-const SHORTS_FEED_CACHE_TTL_MS = 5 * 60 * 1000; // 5 min — feed updates every 10 min
+const SHORTS_FEED_CACHE_TTL_MS = 10 * 60 * 1000; // 10 min — align with feed update schedule
+const REFETCH_INTERVAL_MS = 10 * 60 * 1000; // Refetch every 10 min on /news/shorts
 
 /** Fetch feed shorts from JSON (India-focused, 360+ char summary, updated every 10 min). */
 async function fetchShortsFeed(baseUrl: string): Promise<NewsShort[]> {
@@ -40,7 +46,7 @@ export function useNewsShorts(): UseNewsShortsResult {
         if (raw) {
           const { items, _ts }: { items: NewsShort[]; _ts?: number } = JSON.parse(raw);
           if (items?.length && _ts && Date.now() - _ts < SHORTS_FEED_CACHE_TTL_MS) {
-            const merged = sortShortsByDateLatestFirst([...items, ...staticAndCustom]);
+            const merged = ensureImageAndParagraph(sortShortsByDateLatestFirst([...items, ...staticAndCustom]));
             setShorts(merged);
             setLoading(false);
             return;
@@ -59,10 +65,10 @@ export function useNewsShorts(): UseNewsShortsResult {
           JSON.stringify({ items: feedItems, _ts: Date.now() })
         );
       }
-      const merged = sortShortsByDateLatestFirst([...feedItems, ...staticAndCustom]);
+      const merged = ensureImageAndParagraph(sortShortsByDateLatestFirst([...feedItems, ...staticAndCustom]));
       setShorts(merged);
     } catch {
-      setShorts(staticAndCustom);
+      setShorts(ensureImageAndParagraph(staticAndCustom));
     } finally {
       setLoading(false);
     }
@@ -70,6 +76,12 @@ export function useNewsShorts(): UseNewsShortsResult {
 
   useEffect(() => {
     load();
+  }, [load]);
+
+  // Refetch feed every 10 min so /news/shorts always shows fresh India news (image + paragraph per card)
+  useEffect(() => {
+    const interval = setInterval(() => load(true), REFETCH_INTERVAL_MS);
+    return () => clearInterval(interval);
   }, [load]);
 
   const refetch = useCallback(() => load(true), [load]);
