@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Calculator, Search, TrendingUp, BookOpen, FileText,
+import { 
+  Calculator, Search, TrendingUp, BookOpen, FileText, 
   ArrowRight, Zap, Shield, Award, ChevronRight,
   DollarSign, Building, Home, PiggyBank,
   BarChart3, Gift, Umbrella,
@@ -304,27 +304,27 @@ const HomeInvestopedia: React.FC = () => {
               </AnimatePresence>
 
               {/* Search input – below results */}
-              <div className="relative">
+                <div className="relative">
                 <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                <input
+                  <input
                   type="search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                   onFocus={() => searchQuery.length >= 2 && setShowSearchResults(true)}
                   placeholder="Search calculators, tax, gold, GST, blog, news..."
                   className="w-full pl-12 pr-12 py-4 rounded-2xl bg-white text-slate-900 placeholder-slate-400 border-0 shadow-xl shadow-black/20 focus:ring-2 focus:ring-amber-400 outline-none"
                   aria-label="Search all tools and content"
-                />
-                {searchQuery && (
-                  <button
-                    type="button"
-                    onClick={() => setSearchQuery('')}
+                  />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery('')}
                     className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                )}
-              </div>
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  )}
+                </div>
             </motion.form>
           </div>
         </section>
@@ -370,16 +370,16 @@ const HomeInvestopedia: React.FC = () => {
                 Swipe through finance news like Inshorts. One card per story — markets, RBI, economy. Scroll or tap to go to the next.
               </p>
             </div>
-            <Link
+                <Link 
               to="/news/shorts"
               className="group flex-shrink-0 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-amber-500 text-slate-900 font-bold text-lg shadow-xl shadow-amber-500/40 hover:bg-amber-400 hover:shadow-amber-400/50 transition-all"
-            >
+                >
               <span className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Play className="w-7 h-7" fill="currentColor" />
               </span>
               Open &amp; scroll
-            </Link>
-          </div>
+                </Link>
+              </div>
         </section>
 
         {/* Explore by category – Tax, Gold, GST, etc. */}
@@ -392,8 +392,8 @@ const HomeInvestopedia: React.FC = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {TOOL_HUB_LINKS.map((tool) => {
                 const Icon = tool.icon;
-                return (
-                  <Link
+                  return (
+                    <Link
                     key={tool.path}
                     to={tool.path}
                     className="group relative p-5 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 hover:border-transparent hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 overflow-hidden"
@@ -406,12 +406,12 @@ const HomeInvestopedia: React.FC = () => {
                       <h3 className="font-bold text-slate-900 group-hover:text-blue-700">{tool.name}</h3>
                       <p className="text-xs text-slate-500 mt-0.5">{tool.keywords}</p>
                     </div>
-                  </Link>
-                );
-              })}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* Tabs: Calculators | Tools | Resources */}
         <section className="bg-slate-50/50 border-b border-slate-100">

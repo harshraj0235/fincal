@@ -53,7 +53,7 @@ const STCGLTCGClassifier: React.FC = () => {
     const purchase = new Date(purchaseDate);
     const sale = new Date(saleDate);
     const holdingPeriod = Math.floor((sale.getTime() - purchase.getTime()) / (1000 * 60 * 60 * 24));
-
+    
     const purchaseAmount = parseFloat(purchasePrice);
     const saleAmount = parseFloat(salePrice);
     const grossProfit = saleAmount - purchaseAmount;
@@ -182,7 +182,7 @@ const STCGLTCGClassifier: React.FC = () => {
 
         {/* Calculator Card */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
-          <motion.div
+              <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -212,7 +212,7 @@ const STCGLTCGClassifier: React.FC = () => {
                       <label className="block text-sm font-medium text-slate-700 mb-1">Purchase date</label>
                       <input type="date" value={purchaseDate} onChange={(e) => setPurchaseDate(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500" />
                     </div>
-                    <div>
+                  <div>
                       <label className="block text-sm font-medium text-slate-700 mb-1">Sale date</label>
                       <input type="date" value={saleDate} onChange={(e) => setSaleDate(e.target.value)} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500" />
                     </div>
@@ -243,11 +243,11 @@ const STCGLTCGClassifier: React.FC = () => {
                   Tax analysis
                 </h2>
                 <AnimatePresence mode="wait">
-                  {result ? (
+                {result ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-6">
                       <div className={`text-center p-5 rounded-xl ${result.type === 'STCG' ? 'bg-amber-50 border border-amber-200' : 'bg-blue-50 border border-blue-200'}`}>
                         <div className={`flex items-center justify-center gap-2 mb-2 ${result.color}`}>
-                          {result.icon}
+                        {result.icon}
                           <span className="text-lg font-bold">{result.type}</span>
                         </div>
                         <p className="text-sm text-slate-600">{result.description}</p>
@@ -256,21 +256,21 @@ const STCGLTCGClassifier: React.FC = () => {
                         <div className="bg-white p-4 rounded-xl border border-slate-200">
                           <p className="text-xs text-slate-500 uppercase tracking-wider">Holding period</p>
                           <p className="text-lg font-bold text-slate-900">{result.holdingPeriod} days</p>
-                        </div>
+                    </div>
                         <div className="bg-white p-4 rounded-xl border border-slate-200">
                           <p className="text-xs text-slate-500 uppercase tracking-wider">Tax rate</p>
                           <p className="text-lg font-bold text-slate-900">{result.taxRate}%</p>
-                        </div>
                       </div>
-                      <div className="space-y-3">
+                      </div>
+                    <div className="space-y-3">
                         <div className="flex justify-between items-center p-3 bg-emerald-50 rounded-xl">
                           <span className="text-slate-700">Gross profit</span>
                           <span className="font-bold text-emerald-700">₹{result.grossProfit.toLocaleString()}</span>
-                        </div>
+                      </div>
                         <div className="flex justify-between items-center p-3 bg-red-50 rounded-xl">
                           <span className="text-slate-700">Tax amount</span>
-                          <span className="font-bold text-red-600">₹{result.taxAmount.toLocaleString()}</span>
-                        </div>
+                        <span className="font-bold text-red-600">₹{result.taxAmount.toLocaleString()}</span>
+                      </div>
                         <div className="flex justify-between items-center p-3 bg-indigo-50 rounded-xl">
                           <span className="text-slate-700">Net amount</span>
                           <span className="font-bold text-indigo-700">₹{result.netAmount.toLocaleString()}</span>
@@ -284,7 +284,7 @@ const STCGLTCGClassifier: React.FC = () => {
                     </div>
                   )}
                 </AnimatePresence>
-              </div>
+                  </div>
             </div>
           </motion.div>
         </section>
@@ -332,7 +332,7 @@ const STCGLTCGClassifier: React.FC = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 id="stcg-ltcg-guide" className="text-3xl font-bold text-slate-900 mb-6">
               STCG vs LTCG in India: Complete Guide to Capital Gains Tax on Equity (2024-25)
-            </h2>
+              </h2>
             <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
               <p>
                 If you invest in <strong>listed equity shares</strong> or <strong>equity-oriented mutual funds</strong> in India, your profits from sale are taxed as either <strong>short-term capital gains (STCG)</strong> or <strong>long-term capital gains (LTCG)</strong>. The classification depends on your <strong>holding period</strong> and directly affects the tax rate and exemptions you get. This guide explains the latest rules (post-Budget 2024 and Budget 2025), how to use our <strong>STCG vs LTCG classifier</strong>, and how to plan your investments for better tax efficiency.
@@ -350,7 +350,7 @@ const STCGLTCGClassifier: React.FC = () => {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Short-term capital gains (STCG):</strong> Taxed at <strong>20%</strong> (flat). There is no exemption limit for STCG.</li>
                 <li><strong>Long-term capital gains (LTCG):</strong> Taxed at <strong>12.5%</strong>. An annual exemption of <strong>₹1,25,000</strong> applies; only LTCG above this limit in a financial year is taxable.</li>
-              </ul>
+                  </ul>
               <p>
                 These rates apply to both the old and new tax regimes. For official details, you can refer to the <a href="https://www.incometax.gov.in" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Income Tax Department</a> and news sources such as <a href="https://economictimes.indiatimes.com/wealth/tax" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Economic Times – Tax</a> and <a href="https://www.business-standard.com/finance/personal-finance" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Business Standard – Personal Finance</a>.
               </p>

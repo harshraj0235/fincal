@@ -182,20 +182,20 @@ const LossCarryForwardEstimator: React.FC = () => {
                   Result
                 </h2>
                 <AnimatePresence mode="wait">
-                  {result ? (
+                {result ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-4">
                       <div className="bg-white p-4 rounded-xl border border-slate-200">
                         <p className="text-sm text-slate-500 uppercase tracking-wider">Loss type</p>
                         <p className="text-lg font-bold text-slate-900">{result.lossType === 'stcl' ? 'Short-term capital loss (STCL)' : 'Long-term capital loss (LTCL)'}</p>
-                      </div>
-                      <div className="space-y-3">
+                    </div>
+                    <div className="space-y-3">
                         <div className="flex justify-between items-center p-3 bg-red-50 rounded-xl">
                           <span className="text-slate-700">Current year loss</span>
-                          <span className="font-bold text-red-600">₹{result.currentYearLoss.toLocaleString()}</span>
-                        </div>
+                        <span className="font-bold text-red-600">₹{result.currentYearLoss.toLocaleString()}</span>
+                      </div>
                         <div className="flex justify-between items-center p-3 bg-orange-50 rounded-xl">
                           <span className="text-slate-700">Brought forward</span>
-                          <span className="font-bold text-orange-600">₹{result.carriedForwardLoss.toLocaleString()}</span>
+                        <span className="font-bold text-orange-600">₹{result.carriedForwardLoss.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between items-center p-3 bg-rose-50 rounded-xl border-2 border-rose-200">
                           <span className="text-slate-700 font-semibold">Total loss</span>
@@ -219,8 +219,8 @@ const LossCarryForwardEstimator: React.FC = () => {
                     </div>
                   )}
                 </AnimatePresence>
-              </div>
-            </div>
+                    </div>
+                  </div>
           </motion.div>
         </section>
 
@@ -237,7 +237,7 @@ const LossCarryForwardEstimator: React.FC = () => {
                 </div>
               </Link>
             ))}
-          </div>
+                  </div>
         </section>
 
         {/* FAQ */}
@@ -257,7 +257,7 @@ const LossCarryForwardEstimator: React.FC = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+            </div>
             ))}
           </div>
         </section>
@@ -267,7 +267,7 @@ const LossCarryForwardEstimator: React.FC = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 id="loss-carry-forward-guide" className="text-3xl font-bold text-slate-900 mb-6">
               Capital Loss Carry Forward in India: Complete Guide (Valid 2026–2050)
-            </h2>
+              </h2>
             <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
               <p>
                 Under the <strong>Income Tax Act, 1961</strong>, <strong>capital losses</strong> (both short-term and long-term) can be <strong>carried forward</strong> for a specified number of assessment years and set off against future capital gains. Understanding carry-forward and set-off rules helps you plan redemptions and reduce tax. This guide explains how capital loss carry forward works, how to use our <strong>Loss Carry Forward Estimator</strong>, and remains valid for <strong>2026 and future years</strong> unless the law is amended (e.g. through 2050). Rules described here reflect current provisions as applicable till such time the law is changed.

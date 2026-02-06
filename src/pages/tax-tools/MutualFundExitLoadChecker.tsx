@@ -56,16 +56,16 @@ const MutualFundExitLoadChecker: React.FC = () => {
         description = `No exit load (held ${period} days ≥ ${loadPeriod} days).`;
       }
     } else {
-      if (period <= 7) {
+    if (period <= 7) {
         exitLoadRate = 1;
         description = 'Illustrative: 1% within 7 days. Actual rate varies by fund; check offer document.';
-      } else if (period <= 30) {
+    } else if (period <= 30) {
         exitLoadRate = 0.5;
         description = 'Illustrative: 0.5% for 8–30 days. Check fund SID for exact exit load structure.';
-      } else if (period <= 365) {
+    } else if (period <= 365) {
         exitLoadRate = 0.25;
         description = 'Illustrative: 0.25% for 31–365 days. SEBI max exit load 2–3%; verify with fund house.';
-      } else {
+    } else {
         exitLoadRate = 0;
         description = 'No exit load (held over 1 year). Many equity funds waive exit load after 1 year.';
       }
@@ -212,7 +212,7 @@ const MutualFundExitLoadChecker: React.FC = () => {
                   Result
                 </h2>
                 <AnimatePresence mode="wait">
-                  {result ? (
+                {result ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-4">
                       <div className="bg-white p-5 rounded-xl border border-slate-200">
                         <p className="text-sm text-slate-500 uppercase tracking-wider">Fund</p>
@@ -230,7 +230,7 @@ const MutualFundExitLoadChecker: React.FC = () => {
                         <div className="flex justify-between items-center p-3 bg-emerald-50 rounded-xl border-2 border-emerald-200">
                           <span className="text-slate-700 font-semibold">Net amount</span>
                           <span className="font-bold text-emerald-700">₹{result.netAmount.toLocaleString()}</span>
-                        </div>
+                      </div>
                       </div>
                       <div className="p-4 rounded-xl bg-slate-100 border border-slate-200">
                         <p className="text-sm text-slate-600">{result.description}</p>
@@ -243,8 +243,8 @@ const MutualFundExitLoadChecker: React.FC = () => {
                     </div>
                   )}
                 </AnimatePresence>
-              </div>
-            </div>
+                    </div>
+                  </div>
           </motion.div>
         </section>
 
@@ -261,7 +261,7 @@ const MutualFundExitLoadChecker: React.FC = () => {
                 </div>
               </Link>
             ))}
-          </div>
+                  </div>
         </section>
 
         {/* FAQ */}
@@ -281,7 +281,7 @@ const MutualFundExitLoadChecker: React.FC = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+            </div>
             ))}
           </div>
         </section>
@@ -291,7 +291,7 @@ const MutualFundExitLoadChecker: React.FC = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 id="exit-load-guide" className="text-3xl font-bold text-slate-900 mb-6">
               Mutual Fund Exit Load: Complete Guide to Redemption Charges (2025–2026)
-            </h2>
+              </h2>
             <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
               <p>
                 When you <strong>redeem mutual fund units</strong>, the fund house may deduct an <strong>exit load</strong>—a charge meant to discourage short-term redemptions and cover costs. Understanding how exit load works helps you plan redemptions and avoid unnecessary charges. This guide explains exit load in line with the <strong>SEBI mutual fund framework (2025–2026)</strong>, how to use our <strong>Mutual Fund Exit Load Checker</strong>, and where to find exact charges for your scheme.
@@ -332,10 +332,10 @@ const MutualFundExitLoadChecker: React.FC = () => {
                 <div>
                   <p className="font-semibold text-amber-800">Disclaimer</p>
                   <p className="text-sm text-amber-700 mt-1">Exit load and SEBI rules are subject to change. This tool is for educational use. Verify with the fund’s Scheme Information Document and SEBI/AMFI for current regulations.</p>
+                    </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
         </article>
 
         {/* Explore more */}

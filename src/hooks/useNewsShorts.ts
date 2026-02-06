@@ -13,8 +13,9 @@ export interface UseNewsShortsResult {
 }
 
 const SHORTS_FEED_CACHE_KEY = 'moneycal_shorts_feed';
-const SHORTS_FEED_CACHE_TTL_MS = 10 * 60 * 1000; // 10 min — align with feed update schedule
-const REFETCH_INTERVAL_MS = 10 * 60 * 1000; // Refetch every 10 min on /news/shorts
+const SHORTS_FEED_LAST_FETCH_KEY = 'moneycal_shorts_last_fetch_ts';
+const SHORTS_FEED_CACHE_TTL_MS = 10 * 60 * 1000; // 10 min — MUST align with feed update
+const REFETCH_INTERVAL_MS = 10 * 60 * 1000; // MUST refetch every 10 min on /news/shorts
 
 /** Fetch feed shorts from JSON (India-focused, 360+ char summary, updated every 10 min). */
 async function fetchShortsFeed(baseUrl: string): Promise<NewsShort[]> {
@@ -59,11 +60,12 @@ export function useNewsShorts(): UseNewsShortsResult {
 
     try {
       const feedItems = await fetchShortsFeed(baseUrl);
-      if (typeof window !== 'undefined' && feedItems.length > 0) {
-        localStorage.setItem(
-          SHORTS_FEED_CACHE_KEY,
-          JSON.stringify({ items: feedItems, _ts: Date.now() })
-        );
+      const now = Date.now();
+      if (typeof window !== 'undefined') {
+        if (feedItems.length > 0) {
+          localStorage.setItem(SHORTS_FEED_CACHE_KEY, JSON.stringify({ items: feedItems, _ts: now }));
+        }
+        localStorage.setItem(SHORTS_FEED_LAST_FETCH_KEY, String(now));
       }
       const merged = ensureImageAndParagraph(sortShortsByDateLatestFirst([...feedItems, ...staticAndCustom]));
       setShorts(merged);
@@ -78,10 +80,27 @@ export function useNewsShorts(): UseNewsShortsResult {
     load();
   }, [load]);
 
-  // Refetch feed every 10 min so /news/shorts always shows fresh India news (image + paragraph per card)
+  // MUST refetch every 10 min — interval (survives tab focus)
   useEffect(() => {
     const interval = setInterval(() => load(true), REFETCH_INTERVAL_MS);
     return () => clearInterval(interval);
+  }, [load]);
+
+  // When user returns to tab after 10+ min, refetch so fresh data shows anyhow
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onVisibilityChange = () => {
+      if (document.visibilityState !== 'visible') return;
+      try {
+        const raw = localStorage.getItem(SHORTS_FEED_LAST_FETCH_KEY);
+        const lastTs = raw ? parseInt(raw, 10) : 0;
+        if (Date.now() - lastTs >= REFETCH_INTERVAL_MS) load(true);
+      } catch {
+        load(true);
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', onVisibilityChange);
   }, [load]);
 
   const refetch = useCallback(() => load(true), [load]);

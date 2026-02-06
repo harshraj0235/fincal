@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useRef, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, ArrowLeft, ExternalLink, Share2, Copy, X, BookOpen } from 'lucide-react';
+import { ChevronDown, ChevronUp, ArrowLeft, ExternalLink, Share2, Copy, X, BookOpen, RefreshCw } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import { useNewsShorts } from '../../hooks/useNewsShorts';
 import {
@@ -58,7 +58,7 @@ function getShareUrls(url: string, title: string, text?: string) {
  * Unique UI: paper-style content card, clear typography, simple navigation.
  */
 const NewsShortsPage: React.FC = () => {
-  const { shorts, loading } = useNewsShorts();
+  const { shorts, loading, refetch } = useNewsShorts();
   const [filter, setFilter] = useState<NewsShortCategory | 'latest'>('latest');
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -254,9 +254,21 @@ const NewsShortsPage: React.FC = () => {
             </div>
             <span className="text-[10px] sm:text-xs text-neutral-500">India-focused · Fetched every 10 min · Image + summary on every card</span>
           </div>
-          <span className="text-sm tabular-nums text-neutral-500 min-w-[3ch] text-right">
-            {activeIndex + 1}<span className="text-neutral-400">/{filtered.length}</span>
-          </span>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => refetch()}
+              disabled={loading}
+              className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-lg text-neutral-500 hover:text-amber-600 hover:bg-amber-50 disabled:opacity-50 transition-colors"
+              aria-label="Refresh news (every 10 min)"
+              title="Refresh news — auto every 10 min"
+            >
+              <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin' : ''}`} />
+            </button>
+            <span className="text-sm tabular-nums text-neutral-500 min-w-[3ch] text-right">
+              {activeIndex + 1}<span className="text-neutral-400">/{filtered.length}</span>
+            </span>
+          </div>
         </div>
         <div className="h-0.5 bg-neutral-200">
           <motion.div

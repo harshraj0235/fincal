@@ -51,7 +51,7 @@ const ShortTermCapitalLossBenefitEstimator: React.FC = () => {
     const slabRate = parseInt(incomeSlab) / 100;
 
     const totalLoss = currentLoss + previousLoss;
-
+    
     // Tax benefit = potential tax saved if loss were set off against gains at this slab
     const taxBenefit = totalLoss * slabRate;
 
@@ -220,56 +220,56 @@ const ShortTermCapitalLossBenefitEstimator: React.FC = () => {
                   Loss benefit analysis
                 </h2>
                 <AnimatePresence mode="wait">
-                  {result ? (
+                {result ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-4">
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                         <div className="bg-red-50 p-4 rounded-xl text-center">
-                          <TrendingDown className="h-8 w-8 text-red-600 mx-auto mb-2" />
+                        <TrendingDown className="h-8 w-8 text-red-600 mx-auto mb-2" />
                           <p className="text-sm text-red-600">Total loss</p>
-                          <p className="text-xl font-bold text-red-900">₹{result.totalLoss.toLocaleString()}</p>
-                        </div>
-                        <div className="bg-green-50 p-4 rounded-xl text-center">
-                          <DollarSign className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                          <p className="text-sm text-green-600">Tax benefit (est.)</p>
-                          <p className="text-xl font-bold text-green-900">₹{result.taxBenefit.toLocaleString()}</p>
-                        </div>
+                        <p className="text-xl font-bold text-red-900">₹{result.totalLoss.toLocaleString()}</p>
                       </div>
+                        <div className="bg-green-50 p-4 rounded-xl text-center">
+                        <DollarSign className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                          <p className="text-sm text-green-600">Tax benefit (est.)</p>
+                        <p className="text-xl font-bold text-green-900">₹{result.taxBenefit.toLocaleString()}</p>
+                      </div>
+                    </div>
                       <div className="flex items-center gap-2 p-4 bg-rose-50 rounded-xl border border-rose-200">
                         <Calendar className="h-5 w-5 text-rose-600 flex-shrink-0" />
                         <span className="font-semibold text-slate-900">Carry forward:</span>
                         <span className="text-slate-700">{result.carryForwardYears} years</span>
                       </div>
-                      <div className="space-y-3">
+                    <div className="space-y-3">
                         <div className="flex justify-between items-center p-3 bg-red-50 rounded-xl">
                           <span className="text-slate-700">Current year loss</span>
-                          <span className="font-bold text-red-600">₹{result.currentYearLoss.toLocaleString()}</span>
-                        </div>
+                        <span className="font-bold text-red-600">₹{result.currentYearLoss.toLocaleString()}</span>
+                      </div>
                         <div className="flex justify-between items-center p-3 bg-orange-50 rounded-xl">
                           <span className="text-slate-700">Brought forward</span>
-                          <span className="font-bold text-orange-600">₹{result.carriedForwardLoss.toLocaleString()}</span>
-                        </div>
+                        <span className="font-bold text-orange-600">₹{result.carriedForwardLoss.toLocaleString()}</span>
                       </div>
+                    </div>
                       <div className="bg-amber-50 p-4 rounded-xl border border-amber-200">
                         <h3 className="font-semibold text-amber-900 mb-2 flex items-center gap-2">
                           <ArrowRight className="h-4 w-4" />
-                          Recommendations
-                        </h3>
+                        Recommendations
+                      </h3>
                         <ul className="space-y-1">
                           {result.recommendations.map((rec, i) => (
                             <li key={i} className="text-sm text-amber-800 flex items-start gap-2">
                               <CheckCircle className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                              {rec}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                            {rec}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                     </motion.div>
-                  ) : (
-                    <div className="text-center py-12">
+                ) : (
+                  <div className="text-center py-12">
                       <TrendingDown className="h-14 w-14 text-slate-300 mx-auto mb-4" />
                       <p className="text-slate-500">Enter current year STCG loss to see tax benefit and recommendations.</p>
-                    </div>
-                  )}
+                  </div>
+                )}
                 </AnimatePresence>
               </div>
             </div>
@@ -319,7 +319,7 @@ const ShortTermCapitalLossBenefitEstimator: React.FC = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 id="stcl-benefit-guide" className="text-3xl font-bold text-slate-900 mb-6">
               Short-Term Capital Loss Benefit: Complete Guide (Valid 2026–2050)
-            </h2>
+              </h2>
             <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
               <p>
                 <strong>Short-term capital loss (STCL)</strong> from equity, equity mutual funds, or other short-term capital assets can be <strong>set off</strong> against <strong>short-term capital gains (STCG)</strong> and <strong>long-term capital gains (LTCG)</strong> in the same year. Unabsorbed STCL can be <strong>carried forward for 8 assessment years</strong> and set off against future STCG and LTCG. Understanding the <strong>tax benefit of short-term capital loss</strong> helps you plan redemptions and reduce tax. This guide explains how STCL benefit works, how to use our <strong>Short-Term Capital Loss Benefit Estimator</strong>, and remains valid for <strong>2026 and future years</strong> unless the law is amended (e.g. through 2050).

@@ -228,7 +228,7 @@ const Section80CTallyAnalyzer: React.FC = () => {
                       <div key={label}>
                         <label className="block text-sm font-medium text-slate-700 mb-1">{label}</label>
                         <input type="number" value={state} onChange={(e) => set(e.target.value)} placeholder={ph} className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent" />
-                      </div>
+                    </div>
                     ))}
                   </div>
                   <div className="flex gap-3 pt-2">
@@ -248,67 +248,67 @@ const Section80CTallyAnalyzer: React.FC = () => {
                   Section 80C analysis
                 </h2>
                 <AnimatePresence mode="wait">
-                  {result ? (
+                {result ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-4">
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                         <div className="bg-indigo-50 p-4 rounded-xl text-center">
                           <TrendingUp className="h-8 w-8 text-indigo-600 mx-auto mb-2" />
                           <p className="text-sm text-indigo-600">Total invested</p>
                           <p className="text-xl font-bold text-indigo-900">₹{result.totalInvested.toLocaleString()}</p>
-                        </div>
-                        <div className="bg-green-50 p-4 rounded-xl text-center">
-                          <DollarSign className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                          <p className="text-sm text-green-600">Tax saved (est.)</p>
-                          <p className="text-xl font-bold text-green-900">₹{result.totalTaxSaved.toLocaleString()}</p>
-                        </div>
                       </div>
+                        <div className="bg-green-50 p-4 rounded-xl text-center">
+                        <DollarSign className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                          <p className="text-sm text-green-600">Tax saved (est.)</p>
+                        <p className="text-xl font-bold text-green-900">₹{result.totalTaxSaved.toLocaleString()}</p>
+                      </div>
+                    </div>
                       <div className="bg-slate-100 p-4 rounded-xl">
-                        <div className="flex justify-between items-center mb-2">
+                      <div className="flex justify-between items-center mb-2">
                           <span className="text-sm font-medium text-slate-700">80C utilization</span>
                           <span className="text-sm font-bold text-slate-900">{result.utilizationPercentage.toFixed(1)}%</span>
                         </div>
                         <div className="w-full bg-slate-200 rounded-full h-2">
                           <div className={`h-2 rounded-full ${result.utilizationPercentage > 100 ? 'bg-red-500' : result.utilizationPercentage > 80 ? 'bg-green-500' : 'bg-indigo-500'}`} style={{ width: `${Math.min(result.utilizationPercentage, 100)}%` }} />
-                        </div>
+                      </div>
                         <p className="text-xs text-slate-600 mt-1">Limit: ₹1,50,000 | Remaining: ₹{result.remainingLimit.toLocaleString()}</p>
                       </div>
                       {result.recommendations.length > 0 && (
                         <div className="bg-amber-50 p-4 rounded-xl border border-amber-200">
                           <h3 className="font-semibold text-amber-900 mb-2 flex items-center gap-2">
                             <Target className="h-4 w-4" />
-                            Recommendations
-                          </h3>
+                        Recommendations
+                      </h3>
                           <ul className="space-y-1">
                             {result.recommendations.map((rec, i) => (
                               <li key={i} className="text-sm text-amber-800 flex items-start gap-2">
                                 <CheckCircle className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                                {rec}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                            {rec}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                       )}
                       <div className="bg-slate-100 p-4 rounded-xl">
                         <h3 className="font-semibold text-slate-900 mb-2 flex items-center gap-2">
                           <PieChart className="h-4 w-4" />
                           Breakdown
-                        </h3>
+                      </h3>
                         <div className="space-y-2 max-h-36 overflow-y-auto">
                           {result.breakdown.filter((item) => item.amount > 0).map((item, i) => (
                             <div key={i} className="flex justify-between items-center text-sm">
                               <span className="text-slate-700">{item.name}</span>
                               <span className="font-semibold text-slate-900">₹{item.amount.toLocaleString()}</span>
-                            </div>
-                          ))}
-                        </div>
+                          </div>
+                        ))}
                       </div>
+                    </div>
                     </motion.div>
-                  ) : (
-                    <div className="text-center py-12">
+                ) : (
+                  <div className="text-center py-12">
                       <PieChart className="h-14 w-14 text-slate-300 mx-auto mb-4" />
                       <p className="text-slate-500">Enter your Section 80C investments to see tally and tax saved.</p>
-                    </div>
-                  )}
+                  </div>
+                )}
                 </AnimatePresence>
               </div>
             </div>
@@ -358,7 +358,7 @@ const Section80CTallyAnalyzer: React.FC = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 id="section-80c-guide" className="text-3xl font-bold text-slate-900 mb-6">
               Section 80C Tax Deduction: Complete Guide (Valid 2026–2050)
-            </h2>
+              </h2>
             <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
               <p>
                 <strong>Section 80C</strong> of the Income Tax Act allows individuals and Hindu Undivided Families to claim a deduction of up to <strong>₹1,50,000</strong> per financial year on specified investments and payments. Using a <strong>Section 80C tally analyzer</strong> helps you see how much you have invested across ELSS, PPF, EPF, NPS, life insurance, home loan principal, tuition fees, and other eligible instruments, and how much <strong>tax you can save</strong>. This guide explains the 80C limit, eligible investments, and how to use our <strong>Section 80C Tally Analyzer</strong>. Provisions are valid for <strong>2026 and future years</strong> unless the law is amended (e.g. through 2050). Note: 80C applies only under the <strong>old tax regime</strong>; it is not available under the new regime.

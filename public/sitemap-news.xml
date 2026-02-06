@@ -40,7 +40,7 @@
   </url>
   <url>
     <loc>https://moneycal.in/news/shorts</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -329,6 +329,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Note: Build will regenerate this file with all 156 news articles -->
-  <!-- This placeholder ensures Google can fetch the sitemap immediately -->
+  <url>
+    <loc>https://moneycal.in/news/economy/rbi-repo-rate-unchanged-5-25-feb-2026</loc>
+    <news:news>
+      <news:publication><news:name>MoneyCal</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-02-06T14:00:00+05:30</news:publication_date>
+      <news:title>RBI keeps repo rate unchanged at 5.25% in the latest policy meeting</news:title>
+      <news:keywords>RBI repo rate, MPC, India, EMI, FD, monetary policy</news:keywords>
+    </news:news>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Note: Build will regenerate this file with all news articles. Top 50 India shorts + full articles. -->
 </urlset>

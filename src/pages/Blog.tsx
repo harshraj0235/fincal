@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Search,
-  Calendar,
-  Clock,
+import { 
+  Search, 
+  Calendar, 
+  Clock, 
   ArrowRight,
   ArrowLeft,
   Grid,
@@ -61,7 +61,7 @@ export const Blog: React.FC = () => {
     loadAllBlogData()
       .then((posts) => {
         setAllBlogPosts(posts || []);
-        setIsLoading(false);
+      setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
   }, []);
@@ -98,19 +98,19 @@ export const Blog: React.FC = () => {
         const matchesCategory = selectedCategory === 'all' || (post.categories || []).includes(selectedCategory);
         const matchesAuthor = !selectedAuthor || (post.authorSlug || '').trim().toLowerCase() === selectedAuthor.trim().toLowerCase();
         return matchesSearch && matchesCategory && matchesAuthor;
-      })
-      .sort((a, b) => {
-        switch (sortBy) {
-          case 'latest':
-            return new Date(b.date).getTime() - new Date(a.date).getTime();
-          case 'oldest':
-            return new Date(a.date).getTime() - new Date(b.date).getTime();
-          case 'popular':
-            return ((b as any).readingTime || 0) - ((a as any).readingTime || 0);
-          default:
-            return 0;
-        }
-      });
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'latest':
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        case 'oldest':
+          return new Date(a.date).getTime() - new Date(b.date).getTime();
+        case 'popular':
+          return ((b as any).readingTime || 0) - ((a as any).readingTime || 0);
+        default:
+          return 0;
+      }
+    });
   }, [allBlogPosts, searchTerm, selectedCategory, selectedAuthor, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
@@ -325,7 +325,7 @@ export const Blog: React.FC = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={tapScale}
                   initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
                   transition={stagger(i)}
                   className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     selectedCategory === name
@@ -336,7 +336,7 @@ export const Blog: React.FC = () => {
                   {name} ({count})
                 </motion.button>
               ))}
-            </div>
+                </div>
           </motion.section>
 
           {/* Browse by author */}
@@ -396,15 +396,15 @@ export const Blog: React.FC = () => {
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                <input
+              <input
                   type="search"
-                  placeholder="Search articles..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                   aria-label="Search blog articles"
                   className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-                />
-              </div>
+              />
+            </div>
               <div className="flex flex-wrap items-center gap-3">
                 <select
                   value={sortBy}
@@ -425,16 +425,16 @@ export const Blog: React.FC = () => {
                   >
                     <Grid className="w-5 h-5" />
                   </button>
-                  <button
+              <button
                     onClick={() => setViewMode('list')}
                     className={`p-2 rounded-md transition-colors ${viewMode === 'list' ? 'bg-white shadow text-blue-600' : 'text-slate-500 hover:text-slate-700'}`}
                     aria-pressed={viewMode === 'list'}
                     aria-label="List view"
                   >
                     <List className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
+              </button>
+            </div>
+          </div>
             </div>
           </motion.section>
 
@@ -490,7 +490,7 @@ export const Blog: React.FC = () => {
                     </Link>
                   </motion.div>
                 ))}
-              </div>
+            </div>
             </motion.section>
           )}
 
@@ -515,7 +515,7 @@ export const Blog: React.FC = () => {
                       <div className="p-4">
                         <h3 className="font-semibold text-slate-900 text-sm line-clamp-2 group-hover:text-blue-600 transition-colors leading-snug">{post.title}</h3>
                         <p className="text-xs text-slate-500 mt-2">{new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}</p>
-                      </div>
+            </div>
                     </Link>
                   </motion.article>
                 ))}
@@ -566,18 +566,18 @@ export const Blog: React.FC = () => {
                         <div className="flex items-center gap-4 text-xs text-slate-500">
                           <span className="flex items-center gap-1">
                             <Calendar className="w-3.5 h-3.5" />
-                            {formatDate(post.date)}
+                          {formatDate(post.date)}
                           </span>
                           <span className="flex items-center gap-1">
                             <Clock className="w-3.5 h-3.5" />
-                            {(post as any).readingTime || 5} min read
+                          {(post as any).readingTime || 5} min read
                           </span>
                         </div>
                       </div>
                     </Link>
                   </motion.article>
                 ))}
-              </div>
+                </div>
             </motion.section>
           )}
 
@@ -595,7 +595,7 @@ export const Blog: React.FC = () => {
           <main id="blog-main" tabIndex={-1}>
             <h2 className="sr-only">
               {selectedCategory !== 'all' ? `${selectedCategory} articles` : 'All articles'}
-            </h2>
+                      </h2>
             <AnimatePresence mode="wait">
               {isLoading ? (
                 <motion.div
@@ -684,7 +684,7 @@ export const Blog: React.FC = () => {
                               {cat}
                             </span>
                           ))}
-                        </div>
+                      </div>
                         <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 leading-snug group">
                           <Link to={`/blog/${post.slug}`} className="hover:text-blue-600 transition-colors duration-200">
                             {post.title}
@@ -714,20 +714,20 @@ export const Blog: React.FC = () => {
                                 </Link>
                               ) : null;
                             })()}
-                          </div>
+                  </div>
                           <Link
                             to={`/blog/${post.slug}`}
                             className="inline-flex items-center gap-1.5 text-blue-600 font-semibold text-sm hover:gap-2 transition-all duration-200"
                           >
                             Read <ArrowRight className="w-4 h-4" />
                           </Link>
-                        </div>
-                      </div>
-                    </motion.article>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  </div>
+                </div>
+                  </motion.article>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
           </main>
 
           {/* Pagination */}
@@ -805,7 +805,7 @@ export const Blog: React.FC = () => {
               ].map((item, i) => {
                 const Icon = item.icon;
                 return (
-                <motion.div
+            <motion.div
                   key={item.to}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -831,18 +831,18 @@ export const Blog: React.FC = () => {
                         {item.label}
                       </h3>
                       <p className="text-sm text-slate-600 mt-0.5">{item.desc}</p>
-                    </div>
+              </div>
                     <ChevronRight className={`w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-0.5 ${
                       item.color === 'blue' ? 'text-blue-500' : item.color === 'emerald' ? 'text-emerald-500' : 'text-violet-500'
                     }`} />
                   </Link>
-                </motion.div>
+            </motion.div>
               );
               })}
             </div>
           </motion.section>
-        </div>
-      </div>
+          </div>
+    </div>
     </>
   );
 };

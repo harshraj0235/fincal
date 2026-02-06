@@ -36,7 +36,7 @@ const TaxFilingDeadlineReminderWidget: React.FC = () => {
   const calculateDeadlines = () => {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-
+    
     let categoryDeadlines: DeadlineInfo[] = [];
 
     if (selectedCategory === 'individual') {
@@ -288,7 +288,7 @@ const TaxFilingDeadlineReminderWidget: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
+                  </div>
           </motion.div>
         </section>
 
@@ -322,10 +322,10 @@ const TaxFilingDeadlineReminderWidget: React.FC = () => {
                   {openFaq === i && (
                     <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="border-t border-slate-200">
                       <p className="p-4 text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-                    </motion.div>
+              </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+            </div>
             ))}
           </div>
         </section>
@@ -335,7 +335,7 @@ const TaxFilingDeadlineReminderWidget: React.FC = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 id="tax-deadline-guide" className="text-3xl font-bold text-slate-900 mb-6">
               Tax Filing Deadlines in India: Complete Guide (Valid 2026–2050)
-            </h2>
+              </h2>
             <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
               <p>
                 <strong>Tax filing deadlines</strong> in India include the <strong>ITR filing due date</strong>, <strong>advance tax</strong> quarterly dates, <strong>self-assessment tax</strong> payment, and for businesses <strong>GST</strong> and <strong>TDS</strong> deadlines. Missing these dates can result in penalties and interest. Our <strong>Tax Filing Deadline Reminder Widget</strong> helps you track upcoming deadlines by category (individual or business). This guide explains key deadlines and remains valid for <strong>2026 and future years</strong> unless the law is amended (e.g. through 2050). Always check <a href="https://www.incometax.gov.in" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">incometax.gov.in</a> and <a href="https://incometaxindia.gov.in/Pages/yearly-deadlines-details.aspx?yfmv=2026" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Income Tax India – yearly deadlines</a> for the latest.

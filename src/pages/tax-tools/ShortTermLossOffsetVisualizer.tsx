@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Calculator,
-  TrendingDown,
-  TrendingUp,
-  DollarSign,
+import { 
+  Calculator, 
+  TrendingDown, 
+  TrendingUp, 
+  DollarSign, 
   Calendar,
   Info,
   FileText,
@@ -258,8 +258,8 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
                     </button>
                   </div>
                 </div>
-              </div>
-
+                      </div>
+                      
               <div className="p-6 lg:p-8 bg-slate-50/50">
                 <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                   <Info className="h-6 w-6 text-rose-600" />
@@ -274,11 +274,11 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
                           <span className="font-semibold text-slate-900">Loss offset summary</span>
                         </div>
                         <div className="grid grid-cols-2 gap-3 mt-3">
-                          <div className="text-center p-3 bg-green-50 rounded-lg">
+                        <div className="text-center p-3 bg-green-50 rounded-lg">
                             <div className="text-xl font-bold text-green-600">₹{result.stLossOffset.toLocaleString()}</div>
                             <div className="text-sm text-green-700">ST loss offset</div>
-                          </div>
-                          <div className="text-center p-3 bg-blue-50 rounded-lg">
+                        </div>
+                        <div className="text-center p-3 bg-blue-50 rounded-lg">
                             <div className="text-xl font-bold text-blue-600">₹{result.ltLossOffset.toLocaleString()}</div>
                             <div className="text-sm text-blue-700">LT loss offset</div>
                           </div>
@@ -287,28 +287,28 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
                           <div className="text-2xl font-bold text-slate-900">₹{result.finalTaxableGains.toLocaleString()}</div>
                           <div className="text-sm text-slate-600">Final taxable gains</div>
                         </div>
-                        {result.carryForwardLoss > 0 && (
+                      {result.carryForwardLoss > 0 && (
                           <div className="mt-3 p-3 bg-amber-50 rounded-xl border border-amber-200">
                             <div className="font-semibold text-amber-800">Carry forward: ₹{result.carryForwardLoss.toLocaleString()}</div>
                             <div className="text-sm text-amber-700">Available for next {CARRY_FORWARD_YEARS} years. File ITR to carry forward.</div>
-                          </div>
-                        )}
-                      </div>
+                        </div>
+                      )}
+                    </div>
                       {result.recommendations.length > 0 && (
                         <div className="bg-rose-50 p-4 rounded-xl border border-rose-200">
                           <h3 className="font-semibold text-rose-900 mb-2 flex items-center gap-2">
                             <ArrowRight className="h-4 w-4" />
-                            Recommendations
-                          </h3>
+                        Recommendations
+                      </h3>
                           <ul className="space-y-1">
                             {result.recommendations.map((rec, i) => (
                               <li key={i} className="text-sm text-rose-800 flex items-start gap-2">
                                 <CheckCircle className="h-3 w-3 mt-0.5 flex-shrink-0" />
                                 {rec}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                       )}
                       <div className="flex gap-3">
                         <button onClick={exportToCSV} className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 text-sm font-medium">
@@ -316,13 +316,13 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
                           Export CSV
                         </button>
                         {typeof navigator !== 'undefined' && navigator.share && (
-                          <button
+                        <button
                             onClick={() => navigator.share({ title: 'Short-Term Loss Offset Analysis', text: `Final Taxable Gains: ₹${result.finalTaxableGains.toLocaleString()}`, url: window.location.href })}
                             className="flex items-center gap-2 px-4 py-2 bg-slate-600 text-white rounded-xl hover:bg-slate-700 text-sm font-medium"
                           >
                             <Share2 className="h-4 w-4" />
-                            Share
-                          </button>
+                          Share
+                        </button>
                         )}
                       </div>
                     </motion.div>
@@ -331,7 +331,7 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
                       <TrendingDown className="h-14 w-14 text-slate-300 mx-auto mb-4" />
                       <p className="text-slate-500">Enter ST/LT gains and losses to see offset and final taxable gains.</p>
                     </div>
-                  )}
+                )}
                 </AnimatePresence>
               </div>
             </div>
@@ -461,7 +461,7 @@ const ShortTermLossOffsetVisualizer: React.FC = () => {
               </div>
               <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-rose-600 ml-auto" />
             </Link>
-          </div>
+        </div>
         </section>
       </div>
     </>

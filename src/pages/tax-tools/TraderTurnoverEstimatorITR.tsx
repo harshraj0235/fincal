@@ -306,7 +306,7 @@ const TraderTurnoverEstimatorITR: React.FC = () => {
                   <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
                     <p className="text-gray-600">{faq.answer}</p>
-                  </div>
+                </div>
                 ))}
               </div>
             </motion.div>

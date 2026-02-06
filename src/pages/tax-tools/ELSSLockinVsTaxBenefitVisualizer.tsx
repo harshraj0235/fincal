@@ -53,13 +53,13 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
     const lockinPeriod = ELSS_LOCKIN_YEARS;
     const potentialReturns = amount * (Math.pow(1 + returns, lockinPeriod) - 1);
     const netBenefit = taxBenefit + potentialReturns;
-
+    
     const alternativeInvestment = amount * (Math.pow(1 + returns - 0.02, lockinPeriod) - 1);
-
+    
     let recommendation: string;
     let color: string;
     let icon: React.ReactNode;
-
+    
     if (netBenefit > alternativeInvestment) {
       recommendation = 'ELSS is beneficial – higher net returns with tax benefits and 3-year lock-in';
       color = 'text-green-600';
@@ -202,11 +202,11 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
                   Comparison analysis
                 </h2>
                 <AnimatePresence mode="wait">
-                  {comparison ? (
+                {comparison ? (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-4">
                       <div className={`text-center p-4 rounded-xl ${comparison.color.includes('green') ? 'bg-green-50 border border-green-200' : 'bg-orange-50 border border-orange-200'}`}>
                         <div className={`flex items-center justify-center gap-2 mb-2 ${comparison.color}`}>
-                          {comparison.icon}
+                        {comparison.icon}
                           <span className="font-bold">Recommendation</span>
                         </div>
                         <p className="text-sm text-slate-600">{comparison.recommendation}</p>
@@ -215,19 +215,19 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
                         <h3 className="font-semibold text-indigo-900 mb-2 flex items-center gap-2">
                           <Lock className="h-4 w-4" />
                           ELSS (3-year lock-in)
-                        </h3>
+                      </h3>
                         <div className="space-y-2 text-sm">
-                          <div className="flex justify-between">
+                        <div className="flex justify-between">
                             <span className="text-slate-700">Tax benefit (80C)</span>
-                            <span className="font-bold text-green-600">₹{comparison.taxBenefit.toLocaleString()}</span>
-                          </div>
-                          <div className="flex justify-between">
+                          <span className="font-bold text-green-600">₹{comparison.taxBenefit.toLocaleString()}</span>
+                        </div>
+                        <div className="flex justify-between">
                             <span className="text-slate-700">Potential returns (3 yr)</span>
                             <span className="font-bold text-indigo-600">₹{comparison.potentialReturns.toLocaleString()}</span>
-                          </div>
+                        </div>
                           <div className="flex justify-between border-t border-indigo-200 pt-2">
                             <span className="font-semibold text-slate-900">Net benefit</span>
-                            <span className="font-bold text-purple-600">₹{comparison.netBenefit.toLocaleString()}</span>
+                          <span className="font-bold text-purple-600">₹{comparison.netBenefit.toLocaleString()}</span>
                           </div>
                         </div>
                       </div>
@@ -240,8 +240,8 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
                           <div className="flex justify-between">
                             <span className="text-slate-700">Tax benefit</span>
                             <span className="font-bold text-slate-600">₹0</span>
-                          </div>
-                          <div className="flex justify-between">
+                    </div>
+                        <div className="flex justify-between">
                             <span className="text-slate-700">Potential returns (3 yr)</span>
                             <span className="font-bold text-slate-600">₹{comparison.alternativeInvestment.toLocaleString()}</span>
                           </div>
@@ -269,8 +269,8 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
                     </div>
                   )}
                 </AnimatePresence>
-              </div>
-            </div>
+                      </div>
+                    </div>
           </motion.div>
         </section>
 
@@ -284,10 +284,10 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
                 <div>
                   <p className="font-semibold text-slate-900 group-hover:text-indigo-700">{tool.name}</p>
                   <p className="text-sm text-slate-500">{tool.desc}</p>
-                </div>
+                  </div>
               </Link>
             ))}
-          </div>
+                  </div>
         </section>
 
         {/* FAQ */}
@@ -307,7 +307,7 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+            </div>
             ))}
           </div>
         </section>
@@ -317,7 +317,7 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 id="elss-guide" className="text-3xl font-bold text-slate-900 mb-6">
               ELSS Lock-in vs Tax Benefit: Complete Guide (Valid 2026–2050)
-            </h2>
+              </h2>
             <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6">
               <p>
                 <strong>ELSS (Equity Linked Savings Scheme)</strong> mutual funds offer <strong>tax deduction under Section 80C</strong> (within the ₹1.5 lakh limit) and have a <strong>3-year lock-in period</strong>. Comparing the <strong>ELSS lock-in vs tax benefit</strong> helps you decide whether ELSS is suitable for you. Our <strong>ELSS Lock-in vs Tax Benefit Visualizer</strong> lets you enter investment amount, tax slab, and expected return to see tax saved and potential returns over 3 years, and compare with an alternative (no lock-in, no 80C). This guide explains ELSS, 80C, and lock-in. Valid for <strong>2026 and future years</strong> unless the law is amended. Note: 80C is available only under the <strong>old tax regime</strong>.
@@ -381,7 +381,7 @@ const ELSSLockinVsTaxBenefitVisualizer: React.FC = () => {
               <div>
                 <p className="font-semibold text-slate-900 group-hover:text-indigo-700">Latest news</p>
                 <p className="text-sm text-slate-500">Markets and tax updates</p>
-              </div>
+                </div>
               <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-600 ml-auto" />
             </Link>
             <Link to="/tax-tools" className="group p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all flex items-center gap-4">
