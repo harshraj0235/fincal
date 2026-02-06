@@ -45,7 +45,7 @@ export interface NewsShort {
   source?: 'static' | 'custom' | 'feed';
 }
 
-/** Path to auto-updated shorts feed (Indian/Hindi news, updated every 2h). */
+/** Path to auto-updated shorts feed (India-focused news, 360+ char summary, updated every 10 min). */
 export const SHORTS_FEED_JSON_PATH = '/shorts-feed.json';
 
 /** Sort shorts by date: latest (most recent) first, then older. Invalid/missing dates go to end. */

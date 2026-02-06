@@ -201,9 +201,9 @@ const NewsShortsPage: React.FC = () => {
       }}
     >
       <SEOHelmet
-        title="MoneyCal Shorts | News in 60 Seconds"
-        description="Read news in 60 seconds. Swipe through finance, markets, economy — one card per story. Like Inshorts for money."
-        keywords="news in 60 seconds, MoneyCal Shorts, finance news, markets, economy, Inshorts style"
+        title="MoneyCal Shorts | India News in 60 Seconds"
+        description="India-focused news in 60 seconds. Finance, markets, economy — auto-updated every 10 min. One card per story with 360+ char summary and image."
+        keywords="India news shorts, MoneyCal Shorts, finance news India, markets, economy, news in 60 seconds, Inshorts style"
         image={DISCOVER_IMAGE_DEFAULT}
         url={`${baseUrl}/news/shorts`}
       />
@@ -247,9 +247,12 @@ const NewsShortsPage: React.FC = () => {
             <ArrowLeft className="w-5 h-5" />
             <span className="hidden sm:inline">Back</span>
           </Link>
-          <div className="flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-amber-600" />
-            <h1 className="text-base font-bold text-neutral-900">In 60 Seconds</h1>
+          <div className="flex flex-col items-center">
+            <div className="flex items-center gap-2">
+              <BookOpen className="w-5 h-5 text-amber-600" />
+              <h1 className="text-base font-bold text-neutral-900">In 60 Seconds</h1>
+            </div>
+            <span className="text-[10px] sm:text-xs text-neutral-500">India-focused · Fresh every 10 min</span>
           </div>
           <span className="text-sm tabular-nums text-neutral-500 min-w-[3ch] text-right">
             {activeIndex + 1}<span className="text-neutral-400">/{filtered.length}</span>

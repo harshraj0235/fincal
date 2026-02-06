@@ -8,9 +8,9 @@ export interface UseNewsShortsResult {
 }
 
 const SHORTS_FEED_CACHE_KEY = 'moneycal_shorts_feed';
-const SHORTS_FEED_CACHE_TTL_MS = 2 * 60 * 60 * 1000; // 2 hours
+const SHORTS_FEED_CACHE_TTL_MS = 5 * 60 * 1000; // 5 min — feed updates every 10 min
 
-/** Fetch feed shorts from JSON (updated every 2h by GitHub Action). */
+/** Fetch feed shorts from JSON (India-focused, 360+ char summary, updated every 10 min). */
 async function fetchShortsFeed(baseUrl: string): Promise<NewsShort[]> {
   const res = await fetch(baseUrl + SHORTS_FEED_JSON_PATH, { cache: 'no-store' });
   if (!res.ok) return [];
@@ -23,7 +23,7 @@ async function fetchShortsFeed(baseUrl: string): Promise<NewsShort[]> {
 
 /**
  * Returns news shorts: feed (Indian/Hindi RSS, 360+ char summary) + static + custom.
- * Feed is fetched from shorts-feed.json (updated every 2h); merged and sorted by date.
+ * Feed is from shorts-feed.json (India news, 360+ char summary, auto every 10 min); merged and sorted by date.
  */
 export function useNewsShorts(): UseNewsShortsResult {
   const [shorts, setShorts] = useState<NewsShort[]>(() => getNewsShorts());
