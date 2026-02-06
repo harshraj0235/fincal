@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Phone, MapPin, Send, CheckCircle, Globe, Shield } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
@@ -25,7 +26,7 @@ const ContactUs: React.FC = () => {
         title="Contact Us - MoneyCal | Get in Touch with Our Team"
         description="Have questions? Contact MoneyCal's support team. We're here to help with any queries about our financial calculators, tools, or services."
         keywords="contact moneycal, customer support, help desk, contact form, get in touch"
-        url="https://moneycal.in/contact"
+        url="https://moneycal.in/contact-us"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
@@ -48,6 +49,11 @@ const ContactUs: React.FC = () => {
         </div>
 
         <div className="max-w-6xl mx-auto px-4 py-12">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-gray-600" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-gray-900">Home</Link>
+            <span>/</span>
+            <span className="text-gray-900 font-medium">Contact Us</span>
+          </nav>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}
             <motion.div

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Users, Target, Award, Heart, TrendingUp, Shield, Globe, 
@@ -13,7 +14,7 @@ const AboutUs: React.FC = () => {
         title="About MoneyCal - India's Most Comprehensive Financial Tools Platform"
         description="Learn about MoneyCal's mission to provide free, accurate financial calculators and educational resources to empower Indians with financial literacy and smart decision-making tools."
         keywords="about moneycal, financial tools India, free calculators, financial education, company mission, financial literacy"
-        url="https://moneycal.in/about"
+        url="https://moneycal.in/about-us"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
@@ -46,6 +47,11 @@ const AboutUs: React.FC = () => {
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-4 py-16">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-gray-600" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-gray-900">Home</Link>
+            <span>/</span>
+            <span className="text-gray-900 font-medium">About Us</span>
+          </nav>
           {/* Our Story */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -60,8 +66,8 @@ const AboutUs: React.FC = () => {
             <div className="prose max-w-none text-lg text-gray-700 leading-relaxed">
               <p className="mb-4">
                 <strong>MoneyCal</strong> was born from a simple observation: millions of Indians struggle with financial planning 
-                because they lack access to simple, reliable calculation tools. In 2023, a team of financial experts, 
-                software engineers, and educators came together with a mission to change this.
+                because they lack access to simple, reliable calculation tools. Founded by <strong>Harsh</strong> and based in 
+                <strong> Uttar Pradesh, India</strong>, our mission is to provide free, accurate financial tools for every Indian.
               </p>
               <p className="mb-4">
                 We saw people making critical financial decisions—buying homes, planning retirement, starting businesses—without 
@@ -345,6 +351,7 @@ const AboutUs: React.FC = () => {
             <p className="text-2xl mb-8 text-white/90">
               Start making smarter financial decisions today with our free tools
             </p>
+            <p className="text-white/80 mb-6">Questions? Email us at <a href="mailto:support@moneycal.in" className="underline font-medium">support@moneycal.in</a></p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.a
                 href="/tools"
@@ -355,7 +362,7 @@ const AboutUs: React.FC = () => {
                 Explore All Tools
               </motion.a>
               <motion.a
-                href="/contact"
+                href="/contact-us"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white rounded-full font-bold text-lg hover:bg-white/30 transition-all"

@@ -1094,6 +1094,7 @@ function App() {
                 <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 <Route path="/terms" element={<Navigate to="/terms-of-service" replace />} />
+                <Route path="/terms-of-use" element={<Navigate to="/terms-of-service" replace />} />
                 <Route path="/disclaimer" element={<Disclaimer />} />
                 <Route path="/cookie-policy" element={<CookiePolicy />} />
                 <Route path="/editorial-policy" element={<EditorialPolicy />} />

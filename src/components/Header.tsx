@@ -64,8 +64,13 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
     ]},
     { name: 'Learn', href: '/learn' },
     { name: 'Blog', href: '/blog' },
-    { name: 'News', href: '/news' },
-    { name: 'Schemes', href: '/government-schemes' }
+    { name: 'News', href: '/news', submenu: [
+      { name: 'All News', href: '/news' },
+      { name: 'Shorts', href: '/news/shorts' }
+    ]},
+    { name: 'Government Schemes', href: '/government-schemes' },
+    { name: 'About', href: '/about-us' },
+    { name: 'Contact', href: '/contact-us' }
   ];
 
   const isActive = (href: string) => {

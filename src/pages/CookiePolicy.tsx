@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SEOHelmet from '../components/SEOHelmet';
 import { Cookie, ArrowLeft, Shield, Settings, Eye, Lock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 
@@ -14,7 +14,7 @@ export const CookiePolicy: React.FC = () => {
         title="Cookie Policy - Privacy & Data Protection | MoneyCal.in"
         description="Learn about our cookie policy and how we use cookies to improve your experience on MoneyCal.in. Understand your privacy rights and cookie management options."
         keywords="cookie policy, privacy policy, data protection, cookies management, website privacy, user consent, GDPR compliance"
-        url="/cookie-policy"
+        url="https://moneycal.in/cookie-policy"
         type="website"
         image="/images/cookie-policy.jpg"
         tags={["privacy", "cookies", "data protection", "GDPR", "user consent"]}
@@ -24,12 +24,17 @@ export const CookiePolicy: React.FC = () => {
       <AstroFinanceButton />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <button onClick={() => navigate(-1)} className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors">
+        <nav className="mb-8 flex items-center justify-between flex-wrap gap-2">
+          <div className="flex items-center gap-2 text-sm text-neutral-600">
+            <Link to="/" className="hover:text-neutral-900">Home</Link>
+            <span>/</span>
+            <span className="text-neutral-900 font-medium">Cookie Policy</span>
+          </div>
+          <button onClick={() => navigate(-1)} className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors text-sm">
             <ArrowLeft className="h-4 w-4 mr-1" />
             <span>Back</span>
           </button>
-        </div>
+        </nav>
 
           {/* Header Section */}
           <div className="text-center mb-12">
@@ -50,7 +55,7 @@ export const CookiePolicy: React.FC = () => {
             <div className="lg:col-span-2">
               <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
           <div className="prose prose-lg max-w-none">
-                  <p className="text-neutral-600 mb-6">Last Updated: June 15, 2025</p>
+                  <p className="text-neutral-600 mb-6">Last Updated: January 2026</p>
 
                   <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4 flex items-center">
                     <Shield className="h-6 w-6 mr-2 text-blue-600" />
@@ -81,9 +86,10 @@ export const CookiePolicy: React.FC = () => {
                     </div>
                     <div className="bg-orange-50 p-4 rounded-lg">
                       <h3 className="font-semibold text-orange-800 mb-2">Advertising Cookies</h3>
-                      <p className="text-orange-700 text-sm">From partners like Google AdSense to provide relevant advertisements</p>
+                      <p className="text-orange-700 text-sm">From Google AdSense and other partners to show relevant ads. You can control ad personalization via <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="underline">Google Ads Settings</a>.</p>
                     </div>
                   </div>
+                  <p className="text-gray-600 text-sm mt-4">We operate from India. Our use of cookies aligns with the Information Technology Act, 2000 and our <Link to="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</Link>.</p>
 
                   <h2 className="text-2xl font-semibold text-neutral-900 mt-8 mb-4 flex items-center">
                     <Eye className="h-6 w-6 mr-2 text-purple-600" />

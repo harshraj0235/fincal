@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Shield, Lock, Eye, UserCheck, Database, AlertCircle } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
@@ -33,6 +34,11 @@ const PrivacyPolicy: React.FC = () => {
           </div>
       
         <div className="max-w-4xl mx-auto px-4 py-12">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-gray-600" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-gray-900">Home</Link>
+            <span>/</span>
+            <span className="text-gray-900 font-medium">Privacy Policy</span>
+          </nav>
           {/* Introduction */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -242,15 +248,28 @@ const PrivacyPolicy: React.FC = () => {
                 </a>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <h3 className="font-bold text-gray-900 mb-2">Google AdSense (if applicable)</h3>
+                <h3 className="font-bold text-gray-900 mb-2">Google AdSense</h3>
                 <p className="text-gray-700 mb-2">
-                  Used for displaying relevant advertisements. Google may use cookies for ad personalization.
+                  We may display advertisements via Google AdSense. Google may use cookies and similar technologies for ad delivery, measurement, and personalization. You can control ad personalization via <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Google Ads Settings</a>. Our ads.txt file at moneycal.in/ads.txt discloses our ad partners.
                 </p>
                 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
                   Google Ads Privacy Policy →
                 </a>
               </div>
             </div>
+          </motion.div>
+
+          {/* India Compliance & Data Retention */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-xl p-8 mb-8 border-l-4 border-emerald-500"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">India Compliance & Data Retention</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              We comply with the <strong>Information Technology Act, 2000</strong> and the <strong>Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011</strong>. Data is stored on servers and may be processed within India. We retain personal data only as long as necessary to provide our services, respond to your requests, comply with law, or resolve disputes. Analytics and log data may be retained for a limited period for security and improvement purposes.
+            </p>
           </motion.div>
 
           {/* Data Security */}
@@ -315,8 +334,8 @@ const PrivacyPolicy: React.FC = () => {
                 </div>
             <div className="mt-6 bg-blue-50 p-4 rounded-lg">
               <p className="text-gray-800">
-                To exercise any of these rights, please contact us at <strong>privacy@moneycal.in</strong> or use our 
-                <a href="/contact" className="text-blue-600 underline ml-1">Contact page</a>.
+                To exercise any of these rights, please contact us at <strong>support@moneycal.in</strong> or <strong>privacy@moneycal.in</strong>, or use our 
+                <a href="/contact-us" className="text-blue-600 underline ml-1">Contact page</a>.
               </p>
               </div>
           </motion.div>
@@ -377,7 +396,7 @@ const PrivacyPolicy: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <strong className="w-32">Email:</strong>
-                <span>privacy@moneycal.in</span>
+                <span>support@moneycal.in / privacy@moneycal.in</span>
                 </div>
               <div className="flex items-center">
                 <strong className="w-32">Website:</strong>
@@ -385,7 +404,7 @@ const PrivacyPolicy: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <strong className="w-32">Contact Form:</strong>
-                <a href="/contact" className="underline">moneycal.in/contact</a>
+                <a href="/contact-us" className="underline">moneycal.in/contact-us</a>
             </div>
           </div>
             <div className="mt-6 pt-6 border-t border-white/20">

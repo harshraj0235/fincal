@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FileText, Scale, AlertTriangle, CheckCircle, Shield } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
@@ -33,6 +34,11 @@ const TermsOfService: React.FC = () => {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 py-12">
+          <nav className="mb-6 flex items-center gap-2 text-sm text-gray-600" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-gray-900">Home</Link>
+            <span>/</span>
+            <span className="text-gray-900 font-medium">Terms of Service</span>
+          </nav>
           {/* Acceptance */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

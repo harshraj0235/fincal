@@ -54,6 +54,7 @@ export const Footer: React.FC = () => {
         { name: 'About Us', href: '/about-us' },
         { name: 'Contact Us', href: '/contact-us' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
+        { name: 'Terms of Use', href: '/terms-of-use' },
         { name: 'Terms & Conditions', href: '/terms-and-conditions' },
         { name: 'Disclaimer', href: '/disclaimer' },
         { name: 'Cookie Policy', href: '/cookie-policy' },

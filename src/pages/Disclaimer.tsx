@@ -1,6 +1,7 @@
 import React from 'react';
 import { AlertTriangle, ArrowLeft } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
 
@@ -9,16 +10,26 @@ export const Disclaimer: React.FC = () => {
 
   return (
     <>
+      <SEOHelmet
+        title="Disclaimer - MoneyCal | Not Financial Advice"
+        description="MoneyCal disclaimer: All calculations are approximate and for informational purposes only. Not professional financial, tax, or investment advice. Consult certified professionals."
+        keywords="disclaimer, financial disclaimer, not financial advice, calculator disclaimer, India finance"
+        url="https://moneycal.in/disclaimer"
+      />
       <WhatsAppBanner />
       <AstroFinanceButton />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <button onClick={() => navigate(-1)} className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors">
+        <nav className="mb-8 flex items-center justify-between flex-wrap gap-2">
+          <div className="flex items-center gap-2 text-sm text-neutral-600">
+            <Link to="/" className="hover:text-neutral-900">Home</Link>
+            <span>/</span>
+            <span className="text-neutral-900 font-medium">Disclaimer</span>
+          </div>
+          <button onClick={() => navigate(-1)} className="flex items-center text-neutral-600 hover:text-neutral-900 transition-colors text-sm">
             <ArrowLeft className="h-4 w-4 mr-1" />
             <span>Back</span>
           </button>
-        </div>
-
+        </nav>
         <div className="mb-8 flex items-center">
           <AlertTriangle className="h-8 w-8 text-amber-600 mr-3" />
           <h1 className="text-3xl font-bold text-neutral-900">Disclaimer</h1>
@@ -26,12 +37,15 @@ export const Disclaimer: React.FC = () => {
 
         <div className="bg-white rounded-xl shadow-md p-8 mb-8">
           <div className="prose prose-lg max-w-none">
-            <p className="text-neutral-600">Last Updated: January 15, 2025</p>
+            <p className="text-neutral-600">Last Updated: January 2026</p>
 
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-8">
               <h3 className="text-lg font-semibold text-amber-800 mb-2">Important Notice</h3>
+              <p className="text-amber-800 font-medium mb-2">
+                All calculations on this site are approximate and for informational purposes only. They do not constitute professional financial, tax, or investment advice. Always consult certified professionals (e.g. CA, SEBI-registered advisors) for your specific situation.
+              </p>
               <p className="text-amber-700">
-                Please read this disclaimer carefully before using our financial calculators and content. By using our website, you acknowledge that you have read, understood, and agree to be bound by this disclaimer.
+                By using our website, you acknowledge that you have read, understood, and agree to be bound by this disclaimer.
               </p>
             </div>
 
@@ -106,8 +120,9 @@ export const Disclaimer: React.FC = () => {
               If you have any questions about this disclaimer or our website, please contact us at:
             </p>
             <p className="font-medium text-gray-800">
-              Email: legal@moneycal.in<br />
-              Website: https://moneycal.in
+              Email: support@moneycal.in<br />
+              Website: <a href="https://moneycal.in" className="text-blue-600 hover:underline">https://moneycal.in</a><br />
+              Contact form: <Link to="/contact-us" className="text-blue-600 hover:underline">moneycal.in/contact-us</Link>
             </p>
           </div>
         </div>
