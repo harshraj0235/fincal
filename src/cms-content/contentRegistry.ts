@@ -13,6 +13,17 @@ export interface NewsArticleMetadata {
 }
 
 export const contentRegistry: NewsArticleMetadata[] = [
+  // === Top 50 India Feb 2026 - RBI repo unchanged (full article) ===
+  {
+    id: 'economy-rbi-repo-rate-unchanged-5-25-feb-2026',
+    slug: 'rbi-repo-rate-unchanged-5-25-feb-2026',
+    category: 'economy',
+    subCategory: 'monetary-policy',
+    title: 'RBI keeps repo rate unchanged at 5.25% in the latest policy meeting',
+    authorId: 'harsh-raj',
+    datePublished: '2026-02-06T14:00:00+05:30',
+    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop&q=80'
+  },
   // === New (Jan 31, 2026) - RBI MPC stable, AI IT pressure, BlackRock India, Sensex-Nifty weak, Gold-Silver surge ===
   {
     id: 'economy-rbi-mpc-rates-stable-today-2026',

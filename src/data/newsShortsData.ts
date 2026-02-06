@@ -12,6 +12,7 @@ import {
   bulkScience,
   bulkCurrentAffairsFeb2026,
 } from './newsShortsBulk2026';
+import { bulkTop50IndiaFeb2026 } from './newsShortsTop50IndiaFeb2026';
 
 export type NewsShortCategory =
   | 'rbi'
@@ -887,6 +888,7 @@ const allStaticShorts: NewsShort[] = [
   ...bulkEntertainment,
   ...bulkScience,
   ...bulkCurrentAffairsFeb2026,
+  ...bulkTop50IndiaFeb2026,
 ];
 
 /** All shorts — custom (if any) first, then static. Each has one paragraph summary 360+ chars. */

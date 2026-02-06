@@ -91,6 +91,7 @@ import { aiToolPressureIndianItShares2026 } from './news-articles/markets/ai-too
 import { blackrockIndiaLarryFinkBullish2026 } from './news-articles/markets/blackrock-india-larry-fink-bullish-2026';
 import { sensexNiftyWeakStartItSector2026 } from './news-articles/markets/sensex-nifty-weak-start-it-sector-2026';
 import { goldSilverPricesSurgeRecord2026 } from './news-articles/markets/gold-silver-prices-surge-record-2026';
+import { rbiRepoRateUnchanged525Feb2026 } from './news-articles/economy/rbi-repo-rate-unchanged-5-25-feb-2026';
 
 // Plain article content map - maps slugs to full article objects
 export const plainArticleContentMap: Record<string, any> = {
@@ -126,6 +127,7 @@ export const plainArticleContentMap: Record<string, any> = {
   'blackrock-india-larry-fink-bullish-fpi-investors-2026': blackrockIndiaLarryFinkBullish2026,
   'sensex-nifty-weak-start-today-it-sector-2026': sensexNiftyWeakStartItSector2026,
   'gold-silver-prices-surge-record-7000-16000-2026': goldSilverPricesSurgeRecord2026,
+  'rbi-repo-rate-unchanged-5-25-feb-2026': rbiRepoRateUnchanged525Feb2026,
   'nifty-50-record-high-fii-inflows-november-2025': demoNiftyArticle,
   'bharatiya-share-bazar-diwali-2025-rally-kyon-aayi-analysis': marketRallyDiwali2025,
   'bharat-startup-funding-gir-gayi-2025-kaise-bachein-hindi-guide': startupFundingWinter2025,
