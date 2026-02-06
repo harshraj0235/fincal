@@ -1,22 +1,81 @@
 {
-  "updatedAt": "2026-02-06T01:20:21.509Z",
+  "updatedAt": "2026-02-06T04:08:23.639Z",
   "items": [
     {
-      "title": "'Swiss Franc giving a tough time to Indians'",
-      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/eu-fta-positive-but-swiss-franc-giving-a-tough-time-to-indians-adrian-bosshard/articleshow/127952367.cms",
-      "pubDate": "2026-02-06 00:00:00",
+      "title": "Japan to restart world's biggest nuclear plant",
+      "link": "https://economictimes.indiatimes.com/news/international/world-news/japan-to-restart-worlds-biggest-nuclear-plant/articleshow/127964819.cms",
+      "pubDate": "2026-02-06 02:10:46",
       "source": "Economic Times"
     },
     {
-      "title": "Bengal SIR throws up bizarre parentage entries",
-      "link": "https://economictimes.indiatimes.com/news/elections/assembly-elections/west-bengal/bengal-sir-throws-up-bizarre-parentage-entries-shows-one-voter-with-over-300-children/articleshow/127951945.cms",
-      "pubDate": "2026-02-05 19:12:58",
+      "title": "Son wins HC nod for forgery probe into father’s Will",
+      "link": "https://economictimes.indiatimes.com/wealth/legal/will/son-challenges-late-fathers-will-giving-property-to-aunt-and-late-grandmother-wins-in-hc-as-court-allows-criminal-will-forgery-probe-against-aunt-to-continue/articleshow/127939188.cms",
+      "pubDate": "2026-02-06 01:46:00",
       "source": "Economic Times"
     },
     {
-      "title": "Insolvency case against Alchemist recalled",
-      "link": "https://economictimes.indiatimes.com/industry/banking/finance/insolvency-case-against-alchemist-recalled-after-eds-intervention/articleshow/127951077.cms",
-      "pubDate": "2026-02-05 18:48:18",
+      "title": "Indian rice export prices near one‑month high",
+      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/indian-rice-export-prices-near-onemonth-high-on-firm-rupee-thai-vietnam-rates-steady/articleshow/127963797.cms",
+      "pubDate": "2026-02-06 01:34:03",
+      "source": "Economic Times"
+    },
+    {
+      "title": "Oil extends decline ahead of US-Iran talks",
+      "link": "https://economictimes.indiatimes.com/news/international/world-news/oil-extends-decline-ahead-of-us-iran-talks/articleshow/127963305.cms",
+      "pubDate": "2026-02-06 01:14:27",
+      "source": "Economic Times"
+    },
+    {
+      "title": "Trump endorses Japan's Takaichi ahead of election",
+      "link": "https://economictimes.indiatimes.com/news/international/world-news/trump-endorses-japans-takaichi-ahead-of-sunday-election/articleshow/127963149.cms",
+      "pubDate": "2026-02-06 01:08:30",
+      "source": "Economic Times"
+    },
+    {
+      "title": "Sikkim's Namchi hit by Magnitude 4.0 earthquake",
+      "link": "https://economictimes.indiatimes.com/news/india/sikkims-namchi-hit-by-magnitude-4-0-earthquake/articleshow/127962921.cms",
+      "pubDate": "2026-02-06 00:58:38",
+      "source": "Economic Times"
+    },
+    {
+      "title": "Aye Finance to test IPO market even as non-bank peers prefer to wait",
+      "link": "https://www.livemint.com/companies/aye-finance-ipo-bad-loan-nbfc-microfinance-industry-startups-india-11770210760099.html",
+      "pubDate": "2026-02-06 00:30:36",
+      "description": "Aye Finance has trimmed the offer size even as several NBFCs and microlenders delayed their IPOs amid sectoral pain and rising bad loans.",
+      "source": "Livemint"
+    },
+    {
+      "title": "AI startups positioned to transform India's IT services, despite SaaS setbacks",
+      "link": "https://www.livemint.com/companies/india-saas-market-artificial-intelligence-startups-it-services-11770284949337.html",
+      "pubDate": "2026-02-06 00:30:16",
+      "description": "As global AI agents begin to automate legacy migrations, Indian IT firms face a valuation crisis, prompting venture capital firms like Lightspeed to hunt for entrepreneurs who can increase margins thr",
+      "source": "Livemint"
+    },
+    {
+      "title": "Uber ordered to pay $8.5 million in trial over driver sex assault claims",
+      "link": "https://www.livemint.com/companies/news/uber-ordered-to-pay-8-5-million-in-trial-over-driver-sex-assault-claims-11770336132758.html",
+      "pubDate": "2026-02-06 00:06:05",
+      "description": "The case was the first trial – known as a 'bellwether' – of more than 3,000 similar lawsuits against Uber that have been consolidated in U.S. federal court. Bellwether trials are used to test legal th",
+      "source": "Livemint"
+    },
+    {
+      "title": "It's all about hours clocked—Urban Company data punctures work value talk",
+      "link": "https://www.livemint.com/companies/news/urban-company-gig-worker-earnings-income-mobility-challenges-india-11770197469198.html",
+      "pubDate": "2026-02-06 00:00:35",
+      "description": "Urban Company's top 5% professionals spent an average of 167 hours a month working for the platform, nearly double the hours logged by the average Urban Company ‘partner’.",
+      "source": "Livemint"
+    },
+    {
+      "title": "Reddit forecasts strong revenue as AI tools drive ad sales",
+      "link": "https://www.livemint.com/companies/news/reddit-forecasts-strong-revenue-as-ai-tools-drive-ad-sales-11770335234207.html",
+      "pubDate": "2026-02-05 23:53:39",
+      "description": "Q4 revenue rose 70% to $726 million, beating estimates of $665.4 million. Its earnings per share of $1.24 also exceeded estimates of 94 cents. Daily active unique visitors rose 19%, to 121.4 million i",
+      "source": "Livemint"
+    },
+    {
+      "title": "Grievances in general, health insurance jump 41%",
+      "link": "https://economictimes.indiatimes.com/industry/banking/finance/insure/grievances-in-general-health-insurance-jump-41-in-fy25/articleshow/127952154.cms",
+      "pubDate": "2026-02-05 19:16:16",
       "source": "Economic Times"
     },
     {
@@ -25,12 +84,6 @@
       "pubDate": "2026-02-05 18:46:34",
       "description": "New York’s pension funds, which have exposure to $900 million of Palantir Technologies Inc. stock, are questioning the software company over its business dealings with US Immigration and Customs Enfor",
       "source": "Livemint"
-    },
-    {
-      "title": "Import norms eased for certified foreign vehicles",
-      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/import-norms-eased-for-certified-foreign-vehicles/articleshow/127950421.cms",
-      "pubDate": "2026-02-05 18:31:37",
-      "source": "Economic Times"
     },
     {
       "title": "Bob’s Discount Furniture Rises 11% After $331 Million IPO",
@@ -47,12 +100,6 @@
       "source": "Livemint"
     },
     {
-      "title": "Pakistan Army downplays casualties in Balochistan",
-      "link": "https://economictimes.indiatimes.com/news/defence/pakistan-army-downplays-casualties-in-balochistan-fiasco-to-safeguard-asim-munir/articleshow/127947571.cms",
-      "pubDate": "2026-02-05 17:32:02",
-      "source": "Economic Times"
-    },
-    {
       "title": "Hero MotoCorp posts highest-ever quarterly revenue as GST cuts spur demand",
       "link": "https://www.livemint.com/companies/company-results/hero-motocorp-continues-tvs-bajaj-record-run-in-q3-as-gst-cuts-deliver-bonanza-for-two-wheeler-makers-11770307726529.html",
       "pubDate": "2026-02-05 17:14:11",
@@ -67,56 +114,9 @@
       "source": "Livemint"
     },
     {
-      "title": "Nike’s ‘mind-altering’ shoes are now available — what's the hype all about?",
-      "link": "https://www.livemint.com/companies/news/nikes-mind-altering-shoes-are-now-available-whats-the-hype-all-about-11770306333685.html",
-      "pubDate": "2026-02-05 16:44:47",
-      "description": "Nike's latest footwear experiment, the Mind 001 and Mind 002, was launched on 5 February. Combining neuroscience research with unique foam nodes, these shoes aim to enhance focus and presence. Details",
-      "source": "Livemint"
-    },
-    {
-      "title": "JLR weighs on Tata Motors PV in Q3 as cyberattack costs reach £260 million",
-      "link": "https://www.livemint.com/companies/company-results/jlr-weighs-on-tata-motors-pv-in-q3-as-cyberattack-costs-reach-260-million-revenue-net-profit-11770302076500.html",
-      "pubDate": "2026-02-05 15:47:54",
-      "description": "India’s third largest carmaker saw a 22% rise in volumes of passenger vehicle sales in the country to 171,000 units, sending its standalone profit—before exceptional items owing to demerger related co",
-      "source": "Livemint"
-    },
-    {
-      "title": "Minority shareholders score win as NCLT admits India's first corporate class action suit",
-      "link": "https://www.livemint.com/companies/nclt-corporate-class-action-suit-jindal-poly-films-11770294163849.html",
-      "pubDate": "2026-02-05 15:25:35",
-      "description": "The shareholders’ plea accuses the company promoters of siphoning and selling assets at undervalued prices worth over  ₹2,500 crore through alleged related-party transactions.",
-      "source": "Livemint"
-    },
-    {
-      "title": "Godrej Properties will outperform real estate sector growth, says Pirojsha Godrej",
-      "link": "https://www.livemint.com/companies/news/godrej-properties-outperform-real-estate-sector-growth-pirojsha-godrej-project-launches-residential-units-11770274249783.html",
-      "pubDate": "2026-02-05 13:57:52",
-      "description": "Mumbai-based Godrej Properties has clocked sales bookings of  ₹24,008 crore in the first nine months of 2025-26, about 74% of its full-year target of  ₹32,500 crore. If achieved, that would be the hig",
-      "source": "Livemint"
-    },
-    {
-      "title": "Modi accuses TMC, Oppn of shielding infiltrators",
-      "link": "https://economictimes.indiatimes.com/news/politics-and-nation/pm-modi-accuses-tmc-opposition-of-shielding-infiltrators-says-they-prioritise-power-over-public-welfare/articleshow/127939161.cms",
-      "pubDate": "2026-02-05 13:47:07",
-      "source": "Economic Times"
-    },
-    {
-      "title": "Berger Paints misses Q3 estimates on long monsoon, shorter festive season",
-      "link": "https://www.livemint.com/companies/berger-paints-q3-results-monsoon-festive-season-impact-profit-11770294019115.html",
-      "pubDate": "2026-02-05 13:07:16",
-      "description": "Berger Paints' third-quarter net profit attributable to the owners falls about 8% quarter-on-quarter to  ₹271.16 crore.",
-      "source": "Livemint"
-    },
-    {
-      "title": "LIC Q3 profit jumps 17% YoY to Rs 12,930 crore",
-      "link": "https://economictimes.indiatimes.com/markets/stocks/earnings/lic-q3-results-cons-pat-jumps-17-yoy-to-rs-12930-crore-net-premium-income-grows-17/articleshow/127932108.cms",
-      "pubDate": "2026-02-05 10:59:07",
-      "source": "Economic Times"
-    },
-    {
-      "title": "Attack on Modi? Om Birla asked PM to skip LS speech",
-      "link": "https://economictimes.indiatimes.com/news/politics-and-nation/physical-attack-on-narendra-modi-speaker-om-birla-asked-prime-minister-to-skip-lok-sabha-reply-to-motion-of-thanks-for-information-on-unforeseen-incident-by-congress-mps/articleshow/127929431.cms",
-      "pubDate": "2026-02-05 10:01:55",
+      "title": "RBI MPC Meet: What's on the table today?",
+      "link": "https://economictimes.indiatimes.com/news/economy/policy/rbi-mpc-meet-whats-on-the-table-for-the-rate-setting-panel/articleshow/127944205.cms",
+      "pubDate": "2026-02-05 16:03:12",
       "source": "Economic Times"
     },
     {
@@ -126,9 +126,9 @@
       "source": "Economic Times"
     },
     {
-      "title": "AI Impact Forum: The room you can’t afford to miss",
-      "link": "https://economictimes.indiatimes.com/ai/ai-insights/et-ai-impact-forum-the-room-you-cant-afford-to-miss/articleshow/127903937.cms",
-      "pubDate": "2026-02-04 08:08:24",
+      "title": "BlackRock CEO flags India’s missed bet on itself",
+      "link": "https://economictimes.indiatimes.com/news/economy/finance/india-must-boost-capital-markets-so-indians-grow-with-economy-larry-fink-chief-executive-blackrock/articleshow/127918099.cms",
+      "pubDate": "2026-02-05 00:25:00",
       "source": "Economic Times"
     }
   ]
