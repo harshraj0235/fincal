@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Info, TrendingUp, DollarSign, RefreshCw } from 'lucide-react';
+import { Calculator, Info, RefreshCw, Copy, Check } from 'lucide-react';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
+import ToolGuideSection from '../../components/ToolGuideSection';
+import { DividendReinvestmentTaxComparisonGuide } from '../../data/toolGuides/dividendReinvestmentTaxComparison';
+import { Link } from 'react-router-dom';
 
 interface DividendComparisonResult {
   directInvestment: {
@@ -22,6 +25,8 @@ interface DividendComparisonResult {
   recommendation: string;
 }
 
+const TOOL_URL = 'https://moneycal.in/tax-tools/dividend-reinvestment-tax-comparison';
+
 const DividendReinvestmentTaxComparison: React.FC = () => {
   const [initialInvestment, setInitialInvestment] = useState('');
   const [dividendYield, setDividendYield] = useState('');
@@ -29,6 +34,24 @@ const DividendReinvestmentTaxComparison: React.FC = () => {
   const [holdingPeriod, setHoldingPeriod] = useState('');
   const [incomeSlab, setIncomeSlab] = useState('30');
   const [result, setResult] = useState<DividendComparisonResult | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const copyResultsToClipboard = useCallback(() => {
+    if (!result) return;
+    const text = [
+      'Dividend Reinvestment Tax Comparison - MoneyCal',
+      `Initial: ₹${result.directInvestment.initialAmount.toLocaleString()}`,
+      `Direct Investment Net: ₹${result.directInvestment.netAmount.toLocaleString()}`,
+      `Dividend Reinvestment Net: ₹${result.dividendReinvestment.netAmount.toLocaleString()}`,
+      `Difference: ₹${result.difference.toLocaleString()} (${result.difference > 0 ? 'Reinvestment better' : 'Direct better'})`,
+      result.recommendation,
+      TOOL_URL,
+    ].join('\n');
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }, [result]);
 
   const calculateComparison = () => {
     if (!initialInvestment || !dividendYield || !growthRate || !holdingPeriod) {
@@ -95,12 +118,40 @@ const DividendReinvestmentTaxComparison: React.FC = () => {
     setResult(null);
   };
 
+  const faqData = [
+    {
+      question: 'Which is better for long-term wealth—growth option or dividend reinvestment?',
+      answer: 'For most investors in higher tax brackets (20% or 30%), growth options (no dividend payout) result in higher after-tax wealth because there is no annual tax drag on dividends. Use this calculator with your slab and horizon to see the exact difference.',
+    },
+    {
+      question: 'Is dividend income taxable in India?',
+      answer: 'Yes. Dividends from shares and equity-oriented mutual funds are taxable under Income from Other Sources at your applicable income tax slab rate.',
+    },
+    {
+      question: 'Can I use this for mutual fund growth vs dividend option?',
+      answer: 'Yes. Enter the fund\'s expected dividend yield (for the dividend option), expected growth rate, your holding period, and tax slab. The result shows the net outcome of dividend option with reinvestment vs growth option.',
+    },
+  ];
+
   return (
     <>
       <SEOHelmet
         title="Dividend Reinvestment Tax Comparison - Compare Investment Strategies | MoneyCal"
-        description="Compare tax implications of dividend reinvestment vs direct investment strategies. Calculate which approach gives better returns."
-        keywords="dividend reinvestment calculator, dividend tax comparison, investment strategy calculator, dividend vs growth"
+        description="Compare tax implications of dividend reinvestment vs direct investment. Free calculator for Indian investors—growth vs dividend option, tax slab impact, 2000+ word guide."
+        keywords="dividend reinvestment calculator, dividend tax comparison, growth vs dividend option, India tax on dividends, investment strategy calculator"
+        url={TOOL_URL}
+        breadcrumbs={[
+          { name: 'Home', url: '/' },
+          { name: 'Tax Tools', url: '/tax-tools' },
+          { name: 'Dividend Reinvestment Tax Comparison', url: '/tax-tools/dividend-reinvestment-tax-comparison' },
+        ]}
+        faqData={faqData}
+        calculatorData={{
+          name: 'Dividend Reinvestment Tax Comparison',
+          description: 'Compare after-tax wealth from direct investment (no dividends) vs dividend reinvestment. Enter investment, dividend yield, growth rate, holding period, and tax slab.',
+          category: 'Tax Tools',
+          features: ['Compare direct vs dividend reinvestment', 'Tax slab impact', 'Holding period analysis', 'Copy results', 'Full guide and FAQs'],
+        }}
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
@@ -285,6 +336,14 @@ const DividendReinvestmentTaxComparison: React.FC = () => {
                       <h3 className="font-semibold text-yellow-900 mb-2">Recommendation</h3>
                       <p className="text-yellow-800">{result.recommendation}</p>
                     </div>
+                    <button
+                      type="button"
+                      onClick={copyResultsToClipboard}
+                      className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg border-2 border-blue-200 bg-blue-50 text-blue-800 font-semibold hover:bg-blue-100 transition-colors"
+                    >
+                      {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+                      {copied ? 'Copied!' : 'Copy results'}
+                    </button>
                   </div>
                 ) : (
                   <div className="text-center py-12">

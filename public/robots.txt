@@ -1,49 +1,30 @@
-# MoneyCal.in Robots.txt - Optimized for Google Search
-# Last Updated: 2025-01-20
-# Total URLs: ~1,800+
+# MoneyCal.in Robots.txt - Optimized for Google Search & Ranking
+# Audit: 2026-01 - Allow all active tool/calculator pages to be indexed for ranking
 
 User-agent: *
 Allow: /
 
-# === DISALLOW DEPRECATED PATHS (410 Gone) ===
-# Hindi pages (removed)
+# === DISALLOW DEPRECATED PATHS ONLY (do not block active /tax-tools, /insurance-tools, etc.) ===
 Disallow: /hi/
-
-# Old category structures
 Disallow: /finance-categories/
 Disallow: /banking/
 Disallow: /real-estate/
 Disallow: /cryptocurrency/
 Disallow: /real-estate-tools
-
-# Business/Tool categories (deprecated)
 Disallow: /business-tools
 Disallow: /accounting-tools
 Disallow: /payroll-tools
-Disallow: /loan-tools/
-
-# Education/Market pages (deprecated)
 Disallow: /stock-market/
 Disallow: /financial-education/
 Disallow: /market-analysis/
-
-# Excel templates (old path)
 Disallow: /excel-templates/
-
-# Old tool paths (deprecated)
-Disallow: /invoicing-tools/
 Disallow: /invoicing-receivables
-Disallow: /insurance-tools/
-Disallow: /finance-tools/
-Disallow: /tax-tools/
-Disallow: /tools/
 Disallow: /design-tools/
 Disallow: /festival-corporate-tools/
 Disallow: /fun-engagement/
 Disallow: /local-seo
 Disallow: /seo-tools/
 Disallow: /regional-tools/
-Disallow: /religious-tools/
 Disallow: /astro-finance-insights
 Disallow: /financial-navigator
 Disallow: /loan-app-directory
@@ -57,7 +38,7 @@ Disallow: /private/
 Disallow: /api/
 Disallow: /blog/write
 
-# === ALLOW ACTIVE SECTIONS ===
+# === ALLOW ACTIVE SECTIONS (all must rank on Google) ===
 Allow: /calculators/
 Allow: /blog/
 Allow: /news/
@@ -72,6 +53,14 @@ Allow: /news-reel/
 Allow: /bank-tools
 Allow: /credit-card-finder
 Allow: /missed-call-banking-directory
+Allow: /tax-tools/
+Allow: /insurance-tools/
+Allow: /finance-tools/
+Allow: /invoicing-tools/
+Allow: /tools/
+Allow: /religious-tools/
+Allow: /loan-tools/
+Allow: /gst-tools/
 Allow: /about/
 Allow: /about-us
 Allow: /contact/
