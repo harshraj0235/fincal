@@ -14,12 +14,36 @@ import {
   type NewsShortCategory,
 } from '../../data/newsShortsData';
 import { formatStaticShortDate } from '../../utils/randomCalculators';
+import { getPlainArticleContent } from '../../cms-content/plainArticleLoader';
 
-/** One quality paragraph summary, 360+ chars, for every short. */
+/** Full summary for display: use site article excerpt when short links to our article, else full summary from short. */
 const MIN_SUMMARY_CHARS = 360;
-const MAX_SUMMARY_CHARS = 560;
+const FULL_SUMMARY_MAX_CHARS = 1400;
 
-function getSummary360(short: NewsShort): string {
+function stripHtml(html: string): string {
+  if (!html || typeof html !== 'string') return '';
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, FULL_SUMMARY_MAX_CHARS);
+}
+
+/** Get slug from fullStoryPath like /news/economy/rbi-repo-rate-unchanged-5-25-feb-2026 */
+function getSlugFromFullStoryPath(path: string): string | null {
+  if (!path || typeof path !== 'string') return null;
+  const match = path.match(/\/news\/[^/]+\/([^/?#]+)/);
+  return match ? match[1] : null;
+}
+
+/** Full summary of the short — from site article when available, else full summaryParagraphs (no truncation at 560). */
+function getDisplaySummary(short: NewsShort): string {
+  const slug = getSlugFromFullStoryPath(short.fullStoryPath || short.fullStoryLink || '');
+  if (slug) {
+    const article = getPlainArticleContent(slug);
+    if (article?.excerpt) return article.excerpt;
+    if (article?.content) return stripHtml(article.content) || buildFullSummaryFromShort(short);
+  }
+  return buildFullSummaryFromShort(short);
+}
+
+function buildFullSummaryFromShort(short: NewsShort): string {
   const parts: string[] = short.summaryParagraphs?.length
     ? [...short.summaryParagraphs]
     : [
@@ -34,11 +58,7 @@ function getSummary360(short: NewsShort): string {
   if (paragraph.length < MIN_SUMMARY_CHARS) {
     paragraph += ' This summary gives you the main points in one place.';
   }
-  if (paragraph.length <= MAX_SUMMARY_CHARS) return paragraph;
-  const cut = paragraph.slice(0, MAX_SUMMARY_CHARS);
-  const lastSpace = cut.lastIndexOf(' ');
-  const end = lastSpace > MIN_SUMMARY_CHARS ? lastSpace : MAX_SUMMARY_CHARS;
-  return cut.slice(0, end).trim() + '…';
+  return paragraph;
 }
 
 function getShareUrls(url: string, title: string, text?: string) {
@@ -124,7 +144,7 @@ const NewsShortsPage: React.FC = () => {
     setSharePayload({
       url: getShortFullUrl(short),
       title: short.headline,
-      text: getSummary360(short),
+      text: getDisplaySummary(short),
     });
     setShareOpen(true);
     setCopyDone(false);
@@ -252,7 +272,7 @@ const NewsShortsPage: React.FC = () => {
               <BookOpen className="w-5 h-5 text-amber-600" />
               <h1 className="text-base font-bold text-neutral-900">In 60 Seconds</h1>
             </div>
-            <span className="text-[10px] sm:text-xs text-neutral-500">All dynamic · Auto-fetched every 10 min · Latest + categories · Image + summary on every card</span>
+            <span className="text-[10px] sm:text-xs text-neutral-500">Full summary of each article · Auto-fetched every 10 min · Latest + categories · Image on every card</span>
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -331,7 +351,7 @@ const NewsShortsPage: React.FC = () => {
                 {short.headline}
               </h2>
               <p className="text-neutral-600 text-base sm:text-lg leading-relaxed mb-5 min-h-[4.5em]">
-                {getSummary360(short)}
+                {getDisplaySummary(short)}
               </p>
               {/* Stylish link to full article */}
               <a

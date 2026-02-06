@@ -11,7 +11,7 @@ const crypto = require('crypto');
 
 const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json';
 const MIN_SUMMARY_CHARS = 360;
-const MAX_SUMMARY_CHARS = 560;
+const MAX_SUMMARY_CHARS = 1200;
 const DEFAULT_IMAGE = 'https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg';
 const FETCH_ARTICLE_TIMEOUT_MS = 6000;
 const MAX_ARTICLES_TO_SCRAPE = 12;
@@ -82,9 +82,9 @@ async function fetchArticleText(url) {
 /** Build one paragraph summary 360+ chars from title, description, and optional scraped full text. */
 function ensureSummary360(title, description, source, scrapedText = '') {
   const raw = stripHtml(description || '') || '';
-  let paragraph = raw ? raw.slice(0, 400).trim() : title;
+  let paragraph = raw ? raw.slice(0, 800).trim() : title;
   if (scrapedText && scrapedText.length > 100) {
-    const fromScrape = scrapedText.slice(0, 380).trim();
+    const fromScrape = scrapedText.slice(0, 1000).trim();
     if (fromScrape.length > paragraph.length) paragraph = fromScrape;
   }
   const closing = ` For the full story and latest updates, read the complete article. Source: ${source}.`;
