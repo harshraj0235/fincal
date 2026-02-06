@@ -29,32 +29,32 @@ async function fetchShortsFeed(baseUrl: string): Promise<NewsShort[]> {
 }
 
 /**
- * Returns news shorts: feed (up to 100, every 10 min) + static. Target ≥100 shorts on /news/shorts.
- * Latest + category tabs; every card has image + 360+ char paragraph.
+ * Returns news shorts: 100% from auto-fetch (dynamic) when available; static only when feed is empty.
+ * All shorts shown are dynamic from shorts-feed.json (every 10 min). Latest + category tabs; image + paragraph on every card.
  */
 export function useNewsShorts(): UseNewsShortsResult {
-  const [shorts, setShorts] = useState<NewsShort[]>(() => getNewsShorts());
+  const [shorts, setShorts] = useState<NewsShort[]>([]);
   const [loading, setLoading] = useState(true);
 
   const load = useCallback(async (skipCache = false) => {
     setLoading(true);
     const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
-    const staticAndCustom = getNewsShorts();
+    const staticFallback = getNewsShorts();
 
+    // Use cached feed (all dynamic) when valid
     if (typeof window !== 'undefined' && !skipCache) {
       try {
         const raw = localStorage.getItem(SHORTS_FEED_CACHE_KEY);
         if (raw) {
           const { items, _ts }: { items: NewsShort[]; _ts?: number } = JSON.parse(raw);
           if (items?.length && _ts && Date.now() - _ts < SHORTS_FEED_CACHE_TTL_MS) {
-            const merged = ensureImageAndParagraph(sortShortsByDateLatestFirst([...items, ...staticAndCustom]));
-            setShorts(merged);
+            setShorts(ensureImageAndParagraph(sortShortsByDateLatestFirst(items)));
             setLoading(false);
             return;
           }
         }
       } catch {
-        // ignore cache errors
+        // ignore
       }
     }
 
@@ -67,10 +67,14 @@ export function useNewsShorts(): UseNewsShortsResult {
         }
         localStorage.setItem(SHORTS_FEED_LAST_FETCH_KEY, String(now));
       }
-      const merged = ensureImageAndParagraph(sortShortsByDateLatestFirst([...feedItems, ...staticAndCustom]));
-      setShorts(merged);
+      // Show only auto-fetched (dynamic) when we have any; otherwise fallback to static
+      if (feedItems.length > 0) {
+        setShorts(ensureImageAndParagraph(sortShortsByDateLatestFirst(feedItems)));
+      } else {
+        setShorts(ensureImageAndParagraph(staticFallback));
+      }
     } catch {
-      setShorts(ensureImageAndParagraph(staticAndCustom));
+      setShorts(ensureImageAndParagraph(staticFallback));
     } finally {
       setLoading(false);
     }

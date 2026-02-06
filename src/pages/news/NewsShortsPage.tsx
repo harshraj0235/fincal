@@ -202,7 +202,7 @@ const NewsShortsPage: React.FC = () => {
     >
       <SEOHelmet
         title="MoneyCal Shorts | India News in 60 Seconds"
-        description="100+ India-focused news shorts in 60 seconds. Finance, markets, economy — fetched every 10 min. Latest + category tabs, image + 360+ char summary on every card."
+        description="All shorts auto-fetched and dynamic. India-focused news in 60 seconds — every 10 min. Latest + category tabs, image + 360+ char summary on every card."
         keywords="India news shorts, MoneyCal Shorts, finance news India, markets, economy, news in 60 seconds, Inshorts style"
         image={DISCOVER_IMAGE_DEFAULT}
         url={`${baseUrl}/news/shorts`}
@@ -252,7 +252,7 @@ const NewsShortsPage: React.FC = () => {
               <BookOpen className="w-5 h-5 text-amber-600" />
               <h1 className="text-base font-bold text-neutral-900">In 60 Seconds</h1>
             </div>
-            <span className="text-[10px] sm:text-xs text-neutral-500">100+ shorts · Fetched every 10 min · Latest + categories · Image + summary on every card</span>
+            <span className="text-[10px] sm:text-xs text-neutral-500">All dynamic · Auto-fetched every 10 min · Latest + categories · Image + summary on every card</span>
           </div>
           <div className="flex items-center gap-2">
             <button
