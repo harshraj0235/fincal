@@ -1,10 +1,10 @@
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
 import { Download, Mail, Phone, MapPin, Linkedin, Github, User, Code, Award, FileText, GraduationCap, Plus, Trash2, Minus, Briefcase } from "lucide-react";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
