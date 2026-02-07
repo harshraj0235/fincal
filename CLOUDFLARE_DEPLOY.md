@@ -101,6 +101,40 @@ In **Cloudflare Dashboard** → your application → **Caching** or **Page Rules
 
 ---
 
+## Fix: "npm ci" / lock file out of sync (Cloudflare build fails)
+
+Cloudflare runs **`npm ci`**, which requires `package-lock.json` to match `package.json`. If you see **"Missing: ... from lock file"** or **"package.json and package-lock.json are in sync"**:
+
+### Option A – Use lock file (recommended long-term)
+
+On your machine (with Node 18+ and npm in PATH):
+
+```bash
+npm install
+git add package-lock.json
+git commit -m "chore: update package-lock.json for Cloudflare npm ci"
+git push origin main
+```
+
+Redeploy on Cloudflare so it uses the new lock file.
+
+### Option B – Skip `npm ci` and use `npm install` in the build
+
+1. **Cloudflare Dashboard** → your Pages project → **Settings** → **Environment variables**.
+2. Add **Variable**: `SKIP_DEPENDENCY_INSTALL`, **Value**: `1` (Production and Preview if you use both).
+3. **Settings** → **Builds & deployments** → **Build configuration**.
+4. Set **Build command** to:
+
+   ```bash
+   npm install --legacy-peer-deps && npx opennextjs-cloudflare build
+   ```
+
+   (Or, if you only need the Next build: `npm install --legacy-peer-deps && npm run build:next && npx opennextjs-cloudflare build`.)
+
+5. Save and **Retry deployment**. Cloudflare will no longer run `npm ci`; your build command will run `npm install` then the OpenNext build.
+
+---
+
 ## Troubleshooting
 
 - **Build fails**: Ensure Node 18+ and `npm run build:next` succeeds locally. Then run `npx opennextjs-cloudflare build` in the repo root.
