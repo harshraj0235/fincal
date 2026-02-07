@@ -382,6 +382,26 @@ const HomeInvestopedia: React.FC = () => {
               </div>
         </section>
 
+        {/* About MoneyCal – substantial visible text for SEO & AdSense */}
+        <section className="py-10 bg-white border-b border-slate-100" aria-labelledby="about-moneycal-heading">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="about-moneycal-heading" className="text-2xl font-bold text-slate-900 mb-4">
+              About MoneyCal.in – Free Financial Calculators &amp; Tools for India
+            </h2>
+            <div className="prose prose-slate max-w-none text-slate-700 space-y-4">
+              <p>
+                MoneyCal is India&apos;s free hub for financial calculators and tools. Whether you need to plan a home loan EMI, compare SIP returns, estimate income tax under the new slabs, or calculate GST on an invoice, you can do it here without sign-up or fees. Every calculator and tool is built for Indian users: amounts in rupees (₹), current tax rules, and local regulations.
+              </p>
+              <p>
+                We offer 200+ tools across tax, gold, GST, loans, insurance, banking, and investments. Our <strong>Blog</strong> and <strong>Learn</strong> sections publish original articles and guides—from understanding TDS and capital gains to choosing term insurance or PPF. <strong>News</strong> and <strong>Money Shorts</strong> keep you updated on markets, RBI, and economy in a quick, readable format. We do not give personalised investment or tax advice; we help you with numbers and clarity so you can decide with your advisor.
+              </p>
+              <p>
+                MoneyCal is free to use, does not store your data in calculations, and is designed to work on mobile and desktop. Use the search bar above to find any calculator or article, or browse by category: Tax Tools, Gold Tools, GST Tools, Loan Tools, and more. For policy and transparency, see our <Link to="/about" className="text-blue-600 hover:underline font-medium">About Us</Link>, <Link to="/contact" className="text-blue-600 hover:underline font-medium">Contact</Link>, <Link to="/privacy-policy" className="text-blue-600 hover:underline font-medium">Privacy Policy</Link>, and <Link to="/disclaimer" className="text-blue-600 hover:underline font-medium">Disclaimer</Link>.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Explore by category – Tax, Gold, GST, etc. */}
         <section className="py-10 bg-white border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

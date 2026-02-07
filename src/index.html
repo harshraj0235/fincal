@@ -154,17 +154,82 @@
       },
       "featureList": [
         "EMI Calculator",
-        "SIP Calculator", 
+        "SIP Calculator",
         "Income Tax Calculator",
         "Mutual Fund Calculator",
         "PPF Calculator",
-        "Retirement Calculator"
+        "Retirement Calculator",
+        "Tax Tools",
+        "GST Calculator",
+        "Gold Calculator"
+      ]
+    }
+    </script>
+    <!-- FAQ schema for E-E-A-T and rich results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is MoneyCal.in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MoneyCal India is a free financial calculator and tools platform for Indian users. We offer EMI, SIP, income tax, PPF, FD, GST, gold, and loan calculators, plus tax tools, original articles in Blog and Learn, and India-focused news."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are MoneyCal calculators free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All calculators and tools on MoneyCal.in are free to use. We do not charge for access. Our goal is to help Indians plan loans, investments, and tax with accurate, easy-to-use tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is MoneyCal only for India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. MoneyCal is built for Indian users: amounts in rupees (₹), current Indian tax slabs, GST, and local regulations. Our Blog, Learn, and News content focus on India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I find tax and GST tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go to Tax Tools for income tax, TDS, capital gains, and ITR-related tools. Go to GST Tools or the calculators section for GST calculation. All are linked from the home page."
+          }
+        }
       ]
     }
     </script>
   </head>
   <body>
     <div id="root"></div>
+    <!-- Noscript: substantial server-visible content for crawlers and no-JS users (SEO & AdSense) -->
+    <noscript>
+      <div style="max-width:800px;margin:2rem auto;padding:1.5rem;font-family:system-ui,sans-serif;line-height:1.6;">
+        <h1 style="font-size:1.75rem;margin-bottom:1rem;">MoneyCal India – Free Financial Calculators &amp; Tools</h1>
+        <p>MoneyCal.in is India’s comprehensive financial calculator platform. We offer free online tools for EMI, SIP, income tax, PPF, FD, mutual funds, GST, gold loans, and more. All calculators are designed for Indian users with rupee (₹), current tax slabs, and local regulations in mind.</p>
+        <p>Use our calculators to plan loans, investments, tax savings, and retirement. We also publish original articles in our Blog, Learn section (guides on home loans, personal loans, credit score, investing), and India-focused news in News and Shorts. Our goal is to help you make informed financial decisions with easy-to-use tools and clear explanations.</p>
+        <h2 style="font-size:1.25rem;margin-top:1.5rem;">Quick links</h2>
+        <ul style="list-style:disc;padding-left:1.5rem;">
+          <li><a href="https://moneycal.in/calculators">Calculators</a> – EMI, SIP, Tax, PPF, FD, Home Loan</li>
+          <li><a href="https://moneycal.in/tax-tools">Tax Tools</a> – Income tax, TDS, capital gains, ITR</li>
+          <li><a href="https://moneycal.in/learn">Learn</a> – Guides on loans, insurance, investing</li>
+          <li><a href="https://moneycal.in/blog">Blog</a> – Articles on personal finance</li>
+          <li><a href="https://moneycal.in/news">News</a> – India finance news</li>
+          <li><a href="https://moneycal.in/news/shorts">News Shorts</a> – 60-second news</li>
+          <li><a href="https://moneycal.in/government-schemes">Government Schemes</a></li>
+          <li><a href="https://moneycal.in/about-us">About Us</a> · <a href="https://moneycal.in/contact-us">Contact</a></li>
+          <li><a href="https://moneycal.in/privacy-policy">Privacy Policy</a> · <a href="https://moneycal.in/disclaimer">Disclaimer</a> · <a href="https://moneycal.in/sitemap">Sitemap</a></li>
+        </ul>
+        <p style="margin-top:1rem;color:#64748b;">Enable JavaScript for the full experience: search, interactive calculators, and all tools.</p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Service Worker Registration for PWA -->

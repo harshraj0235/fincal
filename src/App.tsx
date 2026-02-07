@@ -4,7 +4,7 @@ import { initAnalytics } from './utils/analytics';
 import WebVitalsMonitor from './components/WebVitalsMonitor';
 
 import { Layout } from './components/Layout';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, MemoryRouter } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
 import ToolPlaceholder from './pages/tools/ToolPlaceholder';
@@ -653,7 +653,12 @@ const PersonalFinanceDashboard = lazy(() => import('./pages/tools/PersonalFinanc
 const HowToManagePersonalFinancesIndiaBeginners = lazy(() => import('./pages/personal-finance/HowToManagePersonalFinancesIndiaBeginners'));
 const NotFound404 = lazy(() => import('./pages/NotFound404'));
 
-function App() {
+interface AppProps {
+  /** When set (e.g. from Next.js catch-all), app runs inside MemoryRouter with this pathname for SSG/ISR. */
+  pathname?: string;
+}
+
+function App({ pathname }: AppProps = {}) {
   useEffect(() => {
     // Initialize performance optimizations
     initPerformanceOptimizations();
@@ -699,7 +704,7 @@ function App() {
     }
   }, []);
 
-  return (
+  const appContent = (
     <>
       <WebVitalsMonitor />
     <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
@@ -1419,6 +1424,15 @@ function App() {
     </Suspense>
     </>
   );
+
+  if (pathname) {
+    return (
+      <MemoryRouter key={pathname} initialEntries={[pathname]} initialIndex={0}>
+        {appContent}
+      </MemoryRouter>
+    );
+  }
+  return appContent;
 }
 
 export default App;

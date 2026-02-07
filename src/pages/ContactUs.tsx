@@ -26,7 +26,7 @@ const ContactUs: React.FC = () => {
         title="Contact Us - MoneyCal | Get in Touch with Our Team"
         description="Have questions? Contact MoneyCal's support team. We're here to help with any queries about our financial calculators, tools, or services."
         keywords="contact moneycal, customer support, help desk, contact form, get in touch"
-        url="https://moneycal.in/contact-us"
+        url="/contact-us"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">

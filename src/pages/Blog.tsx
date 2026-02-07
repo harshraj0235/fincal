@@ -18,6 +18,7 @@ import {
   User,
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
+import { allBlogPosts as initialBlogPosts } from '../data/allBlogData';
 import { loadAllBlogData } from '../data/lazyBlogData';
 import { BLOG_AUTHORS, getAuthorBySlug } from '../data/blogAuthors';
 
@@ -40,8 +41,8 @@ export const Blog: React.FC = () => {
   const [sortBy, setSortBy] = useState<'latest' | 'oldest' | 'popular'>('latest');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(isNaN(pageParam) || pageParam < 1 ? 1 : pageParam);
-  const [isLoading, setIsLoading] = useState(true);
-  const [allBlogPosts, setAllBlogPosts] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [allBlogPosts, setAllBlogPosts] = useState<any[]>(initialBlogPosts || []);
 
   // Sync URL with state
   useEffect(() => {
@@ -60,10 +61,9 @@ export const Blog: React.FC = () => {
   useEffect(() => {
     loadAllBlogData()
       .then((posts) => {
-        setAllBlogPosts(posts || []);
-      setIsLoading(false);
+        if (posts && posts.length > 0) setAllBlogPosts(posts);
       })
-      .catch(() => setIsLoading(false));
+      .catch(() => {});
   }, []);
 
   const categoriesWithCount = useMemo(() => {
@@ -299,6 +299,9 @@ export const Blog: React.FC = () => {
                 : selectedCategory !== 'all'
                   ? `Expert ${selectedCategory.toLowerCase()} guides and tips for Indian readers.`
                   : 'Expert articles on investments, tax, banking and personal finance. Easy to read, easy to navigate.'}
+            </p>
+            <p className="text-base text-slate-500 max-w-2xl mx-auto mt-4">
+              MoneyCal Blog publishes original guides, calculators and tips for Indian users. We cover loans, tax, savings, insurance and investments. Not financial advice—for education only.
             </p>
           </motion.header>
 

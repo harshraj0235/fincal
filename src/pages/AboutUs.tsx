@@ -14,7 +14,7 @@ const AboutUs: React.FC = () => {
         title="About MoneyCal - India's Most Comprehensive Financial Tools Platform"
         description="Learn about MoneyCal's mission to provide free, accurate financial calculators and educational resources to empower Indians with financial literacy and smart decision-making tools."
         keywords="about moneycal, financial tools India, free calculators, financial education, company mission, financial literacy"
-        url="https://moneycal.in/about-us"
+        url="/about-us"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">

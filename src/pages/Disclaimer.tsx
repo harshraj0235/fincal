@@ -14,7 +14,7 @@ export const Disclaimer: React.FC = () => {
         title="Disclaimer - MoneyCal | Not Financial Advice"
         description="MoneyCal disclaimer: All calculations are approximate and for informational purposes only. Not professional financial, tax, or investment advice. Consult certified professionals."
         keywords="disclaimer, financial disclaimer, not financial advice, calculator disclaimer, India finance"
-        url="https://moneycal.in/disclaimer"
+        url="/disclaimer"
       />
       <WhatsAppBanner />
       <AstroFinanceButton />
