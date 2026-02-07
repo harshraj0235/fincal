@@ -14,6 +14,20 @@ const nextConfig = {
   experimental: {
     // optimizePackageImports: ['lucide-react'],
   },
+  // Fix CSP: object-src must be only 'none' (no other source expressions)
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "object-src 'none'",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

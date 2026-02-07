@@ -77,10 +77,7 @@
     <link rel="dns-prefetch" href="https://images.pexels.com" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="/src/main.tsx" as="script" type="module" />
-    <link rel="preload" href="/src/index.css" as="style" />
-    <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
+    <!-- Preload: avoid preloading /src/main.tsx to prevent duplicate React/scheduler when Next serves the app -->
     
     <!-- Structured Data for Organization -->
     <script type="application/ld+json">
