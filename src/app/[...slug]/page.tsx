@@ -158,11 +158,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     openGraph: {
+      type: 'website',
       title,
       description,
       url,
       siteName: 'MoneyCal India',
-      images: [{ url: DEFAULT_IMAGE, width: 512, height: 512 }],
+      images: [{ url: DEFAULT_IMAGE, width: 512, height: 512, alt: 'MoneyCal India' }],
     },
     twitter: {
       card: 'summary_large_image',

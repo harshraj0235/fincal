@@ -7,13 +7,14 @@ export const metadata: Metadata = {
   title: 'Contact Us | MoneyCal India',
   description: 'Get in touch with MoneyCal India for feedback, calculator suggestions, or partnership inquiries.',
   openGraph: {
+    type: 'website',
     title: 'Contact Us | MoneyCal India',
     description: 'Get in touch for feedback, calculator suggestions, or partnership inquiries.',
     url: 'https://moneycal.in/contact-us',
     siteName: 'MoneyCal India',
-    images: [{ url: 'https://moneycal.in/android-chrome-512x512.png', width: 512, height: 512 }],
+    images: [{ url: 'https://moneycal.in/android-chrome-512x512.png', width: 512, height: 512, alt: 'MoneyCal India' }],
   },
-  twitter: { card: 'summary_large_image', title: 'Contact Us | MoneyCal India', description: 'Get in touch with MoneyCal India.' },
+  twitter: { card: 'summary_large_image', title: 'Contact Us | MoneyCal India', description: 'Get in touch with MoneyCal India.', images: ['https://moneycal.in/android-chrome-512x512.png'] },
   alternates: { canonical: 'https://moneycal.in/contact-us' },
 };
 

@@ -7,13 +7,14 @@ export const metadata: Metadata = {
   title: 'About Us | MoneyCal India – Free Financial Calculators & Tools',
   description: 'MoneyCal provides free EMI, SIP, tax, and loan calculators for India. Learn about our mission and how we help you plan your finances.',
   openGraph: {
+    type: 'website',
     title: 'About Us | MoneyCal India',
     description: 'Free financial calculators and tools for India. EMI, SIP, tax, loans, and more.',
     url: 'https://moneycal.in/about-us',
     siteName: 'MoneyCal India',
-    images: [{ url: 'https://moneycal.in/android-chrome-512x512.png', width: 512, height: 512 }],
+    images: [{ url: 'https://moneycal.in/android-chrome-512x512.png', width: 512, height: 512, alt: 'MoneyCal India' }],
   },
-  twitter: { card: 'summary_large_image', title: 'About Us | MoneyCal India', description: 'Free financial calculators and tools for India.' },
+  twitter: { card: 'summary_large_image', title: 'About Us | MoneyCal India', description: 'Free financial calculators and tools for India.', images: ['https://moneycal.in/android-chrome-512x512.png'] },
   alternates: { canonical: 'https://moneycal.in/about-us' },
 };
 

@@ -7,13 +7,14 @@ export const metadata: Metadata = {
   title: 'Blog | MoneyCal India – Personal Finance, EMI, Tax & Investment Tips',
   description: 'Expert articles on personal finance, EMI calculators, income tax, SIP, loans, and investments. Practical money tips for India.',
   openGraph: {
+    type: 'website',
     title: 'Blog | MoneyCal India – Finance & Calculator Guides',
     description: 'Expert articles on personal finance, EMI, tax, and investments for India.',
     url: 'https://moneycal.in/blog',
     siteName: 'MoneyCal India',
-    images: [{ url: 'https://moneycal.in/android-chrome-512x512.png', width: 512, height: 512 }],
+    images: [{ url: 'https://moneycal.in/android-chrome-512x512.png', width: 512, height: 512, alt: 'MoneyCal India' }],
   },
-  twitter: { card: 'summary_large_image', title: 'Blog | MoneyCal India', description: 'Expert articles on personal finance, EMI, tax, and investments for India.' },
+  twitter: { card: 'summary_large_image', title: 'Blog | MoneyCal India', description: 'Expert articles on personal finance, EMI, tax, and investments for India.', images: ['https://moneycal.in/android-chrome-512x512.png'] },
   alternates: { canonical: 'https://moneycal.in/blog' },
 };
 

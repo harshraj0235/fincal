@@ -31,11 +31,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     keywords: (calc.keywords || []).slice(0, 10).join(', '),
     openGraph: {
+      type: 'website',
       title,
       description,
       url,
       siteName: 'MoneyCal India',
-      images: [{ url: ogImage, width: 512, height: 512 }],
+      images: [{ url: ogImage, width: 512, height: 512, alt: calc.name }],
     },
     twitter: {
       card: 'summary_large_image',
