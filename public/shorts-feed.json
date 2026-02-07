@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-07T17:47:13.579Z",
+  "updatedAt": "2026-02-07T18:16:06.263Z",
   "items": [
     {
       "id": "feed-bec88eecd4b5",
@@ -15,9 +15,85 @@
       ],
       "fullStoryLink": "https://www.bbc.co.uk/hindi/live/c62n2l7j64jt?at_medium=RSS&at_campaign=rss",
       "fullStoryPath": "https://www.bbc.co.uk/hindi/live/c62n2l7j64jt?at_medium=RSS&at_campaign=rss",
-      "datePublished": "2026-02-07T17:47:11.367Z",
+      "datePublished": "2026-02-07T18:16:04.446Z",
       "readTimeSeconds": 50,
       "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3004/live/7b6073a0-0441-11f1-b5e2-dd58fc65f0f6.jpg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-e2eade6c6c57",
+      "slug": "bjp-shifts-focus-to-telangana-ktaka-civic-polls-6c6c57",
+      "category": "economy",
+      "headline": "BJP shifts focus to Telangana, K'taka civic polls",
+      "whyItMatters": [
+        "EU trade pact: Should Tata, Mahindra worry about ‘European invasion’? Why Boeing is keenly watching Adani-Embraer joint venture Have derivatives joined cigarettes &amp; whiskey in the sin club? After "
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "EU trade pact: Should Tata, Mahindra worry about ‘European invasion’? Why Boeing is keenly watching Adani-Embraer joint venture Have derivatives joined cigarettes &amp; whiskey in the sin club? After Sebi tightens equity F&amp;O trades, punters find new casino From charts to chatbots: How retail investors are deciding stocks Weekly Top Picks: These stocks scored 10 on 10 on Stock Reports Plus For the full story and latest updates, read the complete article. Source: Web."
+      ],
+      "fullStoryLink": "https://economictimes.indiatimes.com/news/politics-and-nation/bjp-shifts-focus-to-telangana-karnataka-civic-polls/articleshow/128041519.cms",
+      "fullStoryPath": "https://economictimes.indiatimes.com/news/politics-and-nation/bjp-shifts-focus-to-telangana-karnataka-civic-polls/articleshow/128041519.cms",
+      "datePublished": "2026-02-07 17:30:00",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-81fc4fbf9e0a",
+      "slug": "sc-relief-to-tn-govt-in-vc-appointment-row-bf9e0a",
+      "category": "economy",
+      "headline": "SC relief to TN Govt in VC appointment row",
+      "whyItMatters": [
+        "EU trade pact: Should Tata, Mahindra worry about ‘European invasion’? Why Boeing is keenly watching Adani-Embraer joint venture Have derivatives joined cigarettes &amp; whiskey in the sin club? After "
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "EU trade pact: Should Tata, Mahindra worry about ‘European invasion’? Why Boeing is keenly watching Adani-Embraer joint venture Have derivatives joined cigarettes &amp; whiskey in the sin club? After Sebi tightens equity F&amp;O trades, punters find new casino From charts to chatbots: How retail investors are deciding stocks Weekly Top Picks: These stocks scored 10 on 10 on Stock Reports Plus For the full story and latest updates, read the complete article. Source: Web."
+      ],
+      "fullStoryLink": "https://economictimes.indiatimes.com/news/politics-and-nation/supreme-court-relief-to-tamil-nadu-govt-in-vice-chancellor-appointment-row/articleshow/128041427.cms",
+      "fullStoryPath": "https://economictimes.indiatimes.com/news/politics-and-nation/supreme-court-relief-to-tamil-nadu-govt-in-vice-chancellor-appointment-row/articleshow/128041427.cms",
+      "datePublished": "2026-02-07 17:30:00",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-bbdb76bf0008",
+      "slug": "three-storeyed-building-collapses-in-rajasthans-kota-several-feared-trapped-bf0008",
+      "category": "economy",
+      "headline": "Three-storeyed building collapses in Rajasthan's Kota; several feared trapped",
+      "whyItMatters": [
+        "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of Indi"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.&quot; Read More For the full story and latest updates, read the complete article. Source: Web."
+      ],
+      "fullStoryLink": "https://timesofindia.indiatimes.com/india/three-storeyed-building-collapses-in-rajasthans-kota-several-feared-trapped/articleshow/128041621.cms",
+      "fullStoryPath": "https://timesofindia.indiatimes.com/india/three-storeyed-building-collapses-in-rajasthans-kota-several-feared-trapped/articleshow/128041621.cms",
+      "datePublished": "2026-02-07 17:24:44",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-9a2cc76848be",
+      "slug": "t20-wc-india-survive-usa-test-register-29-run-win-with-suryakumars-heroics-6848be",
+      "category": "economy",
+      "headline": "T20 WC: India survive USA test; register 29-run win with Suryakumar's heroics",
+      "whyItMatters": [
+        "At TOI Sports Desk, reporters work around the clock to bring you comprehensive updates from the world of sports. Expect nuanced match reports, previews, and reviews, along with statistics-based techni"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "At TOI Sports Desk, reporters work around the clock to bring you comprehensive updates from the world of sports. Expect nuanced match reports, previews, and reviews, along with statistics-based technical analysis, the latest social media trends, and expert insights across cricket, football, tennis, badminton, hockey, motorsports, wrestling, boxing, shooting, athletics, and more. Read More For the full story and latest updates, read the complete article. Source: Web."
+      ],
+      "fullStoryLink": "https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/t20-world-cup-india-survive-usa-test-register-29-run-win-with-suryakumar-yadavs-heroics/articleshow/128041245.cms",
+      "fullStoryPath": "https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/t20-world-cup-india-survive-usa-test-register-29-run-win-with-suryakumar-yadavs-heroics/articleshow/128041245.cms",
+      "datePublished": "2026-02-07 17:21:27",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
     },
     {
@@ -40,6 +116,25 @@
       "source": "feed"
     },
     {
+      "id": "feed-0e89707b740e",
+      "slug": "after-44-yrs-bjp-takes-the-helm-in-mumbai-tawde-set-to-become-mayor-unopposed-7b740e",
+      "category": "economy",
+      "headline": "After 44 yrs, BJP takes the helm in Mumbai: Tawde set to become mayor unopposed",
+      "whyItMatters": [
+        "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of Indi"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.&quot; Read More For the full story and latest updates, read the complete article. Source: Web."
+      ],
+      "fullStoryLink": "https://timesofindia.indiatimes.com/india/after-44-years-bjp-returns-to-mumbai-mayors-office-ritu-tawde-set-to-be-elected-unopposed-end-of-thackeray-era-in-bmc/articleshow/128040287.cms",
+      "fullStoryPath": "https://timesofindia.indiatimes.com/india/after-44-years-bjp-returns-to-mumbai-mayors-office-ritu-tawde-set-to-be-elected-unopposed-end-of-thackeray-era-in-bmc/articleshow/128040287.cms",
+      "datePublished": "2026-02-07 16:41:34",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
       "id": "feed-1338f91b886a",
       "slug": "saboteurs-damage-rail-lines-in-north-italy-disrupt-travel-as-winter-olympics-ope-1b886a",
       "category": "economy",
@@ -56,25 +151,6 @@
       "datePublished": "2026-02-07 16:16:39",
       "readTimeSeconds": 50,
       "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202602/italy-070607462-16x9_0.jpg?VersionId=AR6wvpiTw28tEIUfY5YSeL0iTy7KYpJe",
-      "source": "feed"
-    },
-    {
-      "id": "feed-751878406f43",
-      "slug": "widowed-dils-maintenance-survives-fils-death-delhi-high-court-406f43",
-      "category": "economy",
-      "headline": "Widowed DIL's maintenance survives FIL's death: Delhi High Court",
-      "whyItMatters": [
-        "The ruling settles a long-standing interpretative question that has existed long in relation to Sections 19, 21 and 22 of the HAMA and has extensive consequences on widowed women who are left without "
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "The ruling settles a long-standing interpretative question that has existed long in relation to Sections 19, 21 and 22 of the HAMA and has extensive consequences on widowed women who are left without a means of livelihood after the death of their husband. This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Times of India. For the full story and latest updates, read the complete article. Source: Web."
-      ],
-      "fullStoryLink": "https://timesofindia.indiatimes.com/legal/news/widowed-daughter-in-laws-right-to-maintenance-survives-father-in-laws-death-limited-to-coparcenary-estate-delhi-high-court/articleshow/128039233.cms",
-      "fullStoryPath": "https://timesofindia.indiatimes.com/legal/news/widowed-daughter-in-laws-right-to-maintenance-survives-father-in-laws-death-limited-to-coparcenary-estate-delhi-high-court/articleshow/128039233.cms",
-      "datePublished": "2026-02-07 16:07:36",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
     },
     {
@@ -159,34 +235,15 @@
       "category": "business",
       "headline": "Simply Put: Biopharma Shakti",
       "whyItMatters": [
-        "+&nbsp;266.47 +&nbsp;50.90 +&nbsp;75.00 +&nbsp;3,428.00 +&nbsp;5,185.00 +&nbsp;266.47 +&nbsp;50.90 +&nbsp;50.90 +&nbsp;75.00 +&nbsp;75.00 +&nbsp;3,428.00 Bhuvan and Sam are sharing views on the Budget"
+        "A plan to develop India as a biopharmaceutical hub This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Busi"
       ],
       "whatToDo": "Read full article for more.",
       "summaryParagraphs": [
-        "+&nbsp;266.47 +&nbsp;50.90 +&nbsp;75.00 +&nbsp;3,428.00 +&nbsp;5,185.00 +&nbsp;266.47 +&nbsp;50.90 +&nbsp;50.90 +&nbsp;75.00 +&nbsp;75.00 +&nbsp;3,428.00 Bhuvan and Sam are sharing views on the Budget announcements and Sam wants to know more about the Biopharma Shakti plan. As Bhuvan tracks pharma, Sam fires away at the topic. Sam: Biopharma Shakti, a plan to develop India as a biopharmaceutical hub has been announced. So two questions on that; how will I benefit in the short term and how will I benefit in the long term? Bhuvan: Cutting to the chase, I see. But let me lay it out in detail before I start giving stock recommendations, or as you call it – ‘how will I benefit’, as I guess you are wondering whether your pharma stocks can do better. The minister made an important observation – “India’s disease burden is observed to be shifting towards non-communicable diseases, like diabetes, cancer and autoimmune disorders”. A decade ago these diseases would have accounted for a third of th For the full story and latest updates, read the complete article. Source: Web."
+        "A plan to develop India as a biopharmaceutical hub This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
       ],
       "fullStoryLink": "https://www.thehindubusinessline.com/portfolio/personal-finance/simply-put-biopharma-shakti/article70587783.ece",
       "fullStoryPath": "https://www.thehindubusinessline.com/portfolio/personal-finance/simply-put-biopharma-shakti/article70587783.ece",
       "datePublished": "2026-02-07 15:46:19",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-d81180318541",
-      "slug": "trump-signs-executive-order-lifting-easing-tariffs-with-warning-it-can-be-reimpo-318541",
-      "category": "economy",
-      "headline": "Trump signs executive order lifting easing tariffs – with warning it can be reimposed",
-      "whyItMatters": [
-        "Rajghatta is author of Kamala Harris: Phenomenal Woman Determine the monthly installment amount for a loan Estimate the returns on investments made through SIPs Find out maturity amount and interest e"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "Rajghatta is author of Kamala Harris: Phenomenal Woman Determine the monthly installment amount for a loan Estimate the returns on investments made through SIPs Find out maturity amount and interest earned on PPF Check maturity amount and interest earned on an FD Estimate the pension amount and corpus accumulated under NPS A Mutual Fund Calculator helps estimate the future value of investments For the full story and latest updates, read the complete article. Source: Web."
-      ],
-      "fullStoryLink": "https://timesofindia.indiatimes.com/business/india-business/trump-signs-executive-order-lifting-easing-tariffs-with-warning-it-can-be-reimposed/articleshow/128038569.cms",
-      "fullStoryPath": "https://timesofindia.indiatimes.com/business/india-business/trump-signs-executive-order-lifting-easing-tariffs-with-warning-it-can-be-reimposed/articleshow/128038569.cms",
-      "datePublished": "2026-02-07 15:45:21",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -197,11 +254,11 @@
       "category": "business",
       "headline": "Zetwerk invests ₹100 crore to set up defence electronics facility in Bengaluru, to employ 1,200",
       "whyItMatters": [
-        "+&nbsp;266.47 +&nbsp;50.90 +&nbsp;75.00 +&nbsp;3,428.00 +&nbsp;5,185.00 +&nbsp;266.47 +&nbsp;50.90 +&nbsp;50.90 +&nbsp;75.00 +&nbsp;75.00 +&nbsp;3,428.00 R to L: Ashwini Vaishnaw, and Rahul Sharma at "
+        "The facility spread across 100,000 sq ft is equipped with a state-of-the-art SMT, and FATP lines to cater to defence, and automotives sectors This summary covers the key points. Visit the source for f"
       ],
       "whatToDo": "Read full article for more.",
       "summaryParagraphs": [
-        "+&nbsp;266.47 +&nbsp;50.90 +&nbsp;75.00 +&nbsp;3,428.00 +&nbsp;5,185.00 +&nbsp;266.47 +&nbsp;50.90 +&nbsp;50.90 +&nbsp;75.00 +&nbsp;75.00 +&nbsp;3,428.00 R to L: Ashwini Vaishnaw, and Rahul Sharma at the inauguration Electronics manufacturer Zetwerk has set a defence electronics manufacturing facility in Bengaluru&#039; s Devanahalli. The company has invested ₹100 crore in setting up the factory, and will employ 1200 people. The facility spread across 100,000 sqft is equipped with a state-of-the-art SMT, and FATP lines to cater to defence, and automotives sectors. The facility was inaugurated by Union Minister of Railways, Electronics, and Information, Ashwini Vaishnaw, and Karnataka&#039;s Industries Minister MB Patil inaugurated the facility. Zetwerk had earlier acquired Pinaka Aerospace in 2022. &quot;With this facility, we are creating a dedicated manufacturing space that complies with aerospace and defence standards. The idea is to build a focused facility with the right certifica For the full story and latest updates, read the complete article. Source: Web."
+        "The facility spread across 100,000 sq ft is equipped with a state-of-the-art SMT, and FATP lines to cater to defence, and automotives sectors This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
       ],
       "fullStoryLink": "https://www.thehindubusinessline.com/info-tech/zetwerk-invests-100-crore-to-set-up-defence-electronics-facility-in-bengaluru-to-employ-1200/article70604761.ece",
       "fullStoryPath": "https://www.thehindubusinessline.com/info-tech/zetwerk-invests-100-crore-to-set-up-defence-electronics-facility-in-bengaluru-to-employ-1200/article70604761.ece",
@@ -216,11 +273,11 @@
       "category": "economy",
       "headline": "Indian among 8 injured in stabbing attack at Russian university",
       "whyItMatters": [
-        "At TOI World Desk, our dedicated team of seasoned journalists and passionate writers tirelessly sifts through the vast tapestry of global events to bring you the latest news and diverse perspectives r"
+        "Indian among 8 injured in stabbing attack at Russian university This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article."
       ],
       "whatToDo": "Read full article for more.",
       "summaryParagraphs": [
-        "At TOI World Desk, our dedicated team of seasoned journalists and passionate writers tirelessly sifts through the vast tapestry of global events to bring you the latest news and diverse perspectives round the clock. With an unwavering commitment to accuracy, depth, and timeliness, we strive to keep you informed about the ever-evolving world, delivering a nuanced understanding of international affairs to our readers. Join us on a journey across continents as we unravel the stories that shape our interconnected world. Read More For the full story and latest updates, read the complete article. Source: Web."
+        "Indian among 8 injured in stabbing attack at Russian university This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Times of India."
       ],
       "fullStoryLink": "https://timesofindia.indiatimes.com/world/europe/there-was-blood-all-around-teenager-goes-on-knife-rampage-at-russian-university-indian-among-8-injured/articleshow/128038635.cms",
       "fullStoryPath": "https://timesofindia.indiatimes.com/world/europe/there-was-blood-all-around-teenager-goes-on-knife-rampage-at-russian-university-indian-among-8-injured/articleshow/128038635.cms",
@@ -325,25 +382,6 @@
       "source": "feed"
     },
     {
-      "id": "feed-8ac7fd96a98a",
-      "slug": "start-ing-new-arms-race-usrussia-nuclear-treaty-expires-china-in-focus-96a98a",
-      "category": "economy",
-      "headline": "START-ing new arms race? US–Russia nuclear treaty expires, China in focus",
-      "whyItMatters": [
-        "START-ing new arms race? US–Russia nuclear treaty expires, China in focus This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complet"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "START-ing new arms race? US–Russia nuclear treaty expires, China in focus This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Times of India."
-      ],
-      "fullStoryLink": "https://timesofindia.indiatimes.com/defence/international/start-ing-new-arms-race-why-us-wants-china-in-new-nuclear-treaty-as-old-one-with-russia-expires/articleshow/128036682.cms",
-      "fullStoryPath": "https://timesofindia.indiatimes.com/defence/international/start-ing-new-arms-race-why-us-wants-china-in-new-nuclear-treaty-as-old-one-with-russia-expires/articleshow/128036682.cms",
-      "datePublished": "2026-02-07 15:10:16",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
       "id": "feed-c66722267168",
       "slug": "1-dead-13-hurt-as-fairground-ride-collapses-in-haryanas-surajkund-mela-267168",
       "category": "economy",
@@ -358,25 +396,6 @@
       "fullStoryLink": "https://timesofindia.indiatimes.com/india/fairground-ride-collapses-in-haryanas-surajkund-mela-one-dead-several-injured/articleshow/128037460.cms",
       "fullStoryPath": "https://timesofindia.indiatimes.com/india/fairground-ride-collapses-in-haryanas-surajkund-mela-one-dead-several-injured/articleshow/128037460.cms",
       "datePublished": "2026-02-07 14:54:43",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-263e56cd94e9",
-      "slug": "daring-op-coast-guard-intercepts-3-vessels-oil-smuggling-syndicate-exposed-cd94e9",
-      "category": "economy",
-      "headline": "Daring op: Coast Guard intercepts 3 vessels; oil-smuggling syndicate exposed",
-      "whyItMatters": [
-        "Daring op: Coast Guard intercepts 3 vessels; oil-smuggling syndicate exposed This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the comp"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "Daring op: Coast Guard intercepts 3 vessels; oil-smuggling syndicate exposed This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Times of India."
-      ],
-      "fullStoryLink": "https://timesofindia.indiatimes.com/india/oil-smuggling-syndicate-exposed-at-sea-coast-guard-intercepts-3-vessels-near-mumbai/articleshow/128037175.cms",
-      "fullStoryPath": "https://timesofindia.indiatimes.com/india/oil-smuggling-syndicate-exposed-at-sea-coast-guard-intercepts-3-vessels-near-mumbai/articleshow/128037175.cms",
-      "datePublished": "2026-02-07 14:44:11",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -458,6 +477,25 @@
       "source": "feed"
     },
     {
+      "id": "feed-89ccc1090a36",
+      "slug": "557-days-of-wait-mohammed-sirajs-unexpected-t20i-world-cup-return-090a36",
+      "category": "economy",
+      "headline": "557 days of wait: Mohammed Siraj's unexpected T20I World Cup return",
+      "whyItMatters": [
+        "Mohammed Siraj made an unexpected return to India's T20I side for their World Cup opener against the USA. Called up as standby cover, he was drafted into the playing XI after Jasprit Bumrah fell ill. "
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "Mohammed Siraj made an unexpected return to India's T20I side for their World Cup opener against the USA. Called up as standby cover, he was drafted into the playing XI after Jasprit Bumrah fell ill. This marked Siraj's first T20 international appearance in 557 days, a significant moment on the grandest stage. For the full story and latest updates, read the complete article. Source: Times of India."
+      ],
+      "fullStoryLink": "https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/557-days-of-wait-mohammed-sirajs-unexpected-t20i-world-cup-return/articleshow/128035186.cms",
+      "fullStoryPath": "https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/557-days-of-wait-mohammed-sirajs-unexpected-t20i-world-cup-return/articleshow/128035186.cms",
+      "datePublished": "2026-02-07 13:36:22",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
       "id": "feed-8e6b9e190097",
       "slug": "india-us-trade-deal-zero-duty-for-large-bikes-to-benefit-harley-davidson-190097",
       "category": "business",
@@ -472,25 +510,6 @@
       "fullStoryLink": "https://www.business-standard.com/economy/news/india-us-trade-deal-zero-duty-for-large-bikes-to-benefit-harley-davidson-126020700829_1.html",
       "fullStoryPath": "https://www.business-standard.com/economy/news/india-us-trade-deal-zero-duty-for-large-bikes-to-benefit-harley-davidson-126020700829_1.html",
       "datePublished": "2026-02-07 13:31:56",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-297b3aa1343f",
-      "slug": "t20-wc-romario-shepherd-lights-up-tournament-with-hat-trick-watch-a1343f",
-      "category": "economy",
-      "headline": "T20 WC: Romario Shepherd lights-up tournament with hat-trick - Watch",
-      "whyItMatters": [
-        "Romario Shepherd claimed the inaugural hat-trick of the 2026 T20 World Cup during the West Indies' opening match against Scotland. His crucial wickets in the 17th over significantly hampered Scotland'"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "Romario Shepherd claimed the inaugural hat-trick of the 2026 T20 World Cup during the West Indies' opening match against Scotland. His crucial wickets in the 17th over significantly hampered Scotland's chase of 182. The West Indies ultimately secured a 35-run victory, with Shimron Hetmyer's 64 contributing to their total. For the full story and latest updates, read the complete article. Source: Times of India."
-      ],
-      "fullStoryLink": "https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/t20-world-cup-romario-shepherd-lights-up-tournament-with-hat-trick-on-opening-day-watch/articleshow/128034335.cms",
-      "fullStoryPath": "https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/t20-world-cup-romario-shepherd-lights-up-tournament-with-hat-trick-on-opening-day-watch/articleshow/128034335.cms",
-      "datePublished": "2026-02-07 13:27:40",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -667,6 +686,25 @@
       "source": "feed"
     },
     {
+      "id": "feed-ec298586450c",
+      "slug": "khejri-bachao-andolan-why-rajasthan-is-rallying-to-protect-its-kalpavriksha-86450c",
+      "category": "economy",
+      "headline": "'Khejri Bachao Andolan': Why Rajasthan is rallying to protect its 'Kalpavriksha'?",
+      "whyItMatters": [
+        "A significant protest is under way in Rajasthan over the felling of the khejri tree. Communities are demanding stronger protection for the state tree, alleging that it is being cut to make way for sol"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "A significant protest is under way in Rajasthan over the felling of the khejri tree. Communities are demanding stronger protection for the state tree, alleging that it is being cut to make way for solar power projects. Political leaders across parties have joined the movement, drawing attention to the tree’s cultural and ecological significance. In an arid landscape where survival is closely tied to ecology, the debate in western Rajasthan now extends beyond development to questions of history, identity and survival. For the full story and latest updates, read the complete article. Source: Times of India."
+      ],
+      "fullStoryLink": "https://timesofindia.indiatimes.com/india/khejri-bachao-andolan-why-rajasthan-is-rallying-to-protect-its-kalpavriksha-explained/articleshow/128030637.cms",
+      "fullStoryPath": "https://timesofindia.indiatimes.com/india/khejri-bachao-andolan-why-rajasthan-is-rallying-to-protect-its-kalpavriksha-explained/articleshow/128030637.cms",
+      "datePublished": "2026-02-07 11:43:32",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
       "id": "feed-fff1573087e4",
       "slug": "multifold-opportunities-boeing-on-india-us-pact-3087e4",
       "category": "economy",
@@ -681,25 +719,6 @@
       "fullStoryLink": "https://economictimes.indiatimes.com/industry/transportation/airlines-/-aviation/india-us-trade-pact-will-open-multifold-opportunities-boeing/articleshow/128031161.cms",
       "fullStoryPath": "https://economictimes.indiatimes.com/industry/transportation/airlines-/-aviation/india-us-trade-pact-will-open-multifold-opportunities-boeing/articleshow/128031161.cms",
       "datePublished": "2026-02-07 11:22:42",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-da83ef4439d3",
-      "slug": "boeing-is-major-aircraft-parts-buyer-from-india-4439d3",
-      "category": "economy",
-      "headline": "'Boeing is major aircraft parts buyer from India'",
-      "whyItMatters": [
-        "'Boeing is major aircraft parts buyer from India' This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Econo"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "'Boeing is major aircraft parts buyer from India' This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Economic Times."
-      ],
-      "fullStoryLink": "https://economictimes.indiatimes.com/industry/transportation/airlines-/-aviation/boeing-is-major-aircraft-parts-buyer-from-india-excited-from-trade-pact-piyush-goyal/articleshow/128031048.cms",
-      "fullStoryPath": "https://economictimes.indiatimes.com/industry/transportation/airlines-/-aviation/boeing-is-major-aircraft-parts-buyer-from-india-excited-from-trade-pact-piyush-goyal/articleshow/128031048.cms",
-      "datePublished": "2026-02-07 11:20:33",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -721,25 +740,6 @@
       "datePublished": "2026-02-07 11:04:28",
       "readTimeSeconds": 50,
       "imageUrl": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/3cf7/live/d1cbf3a0-02b0-11f1-83b0-21555a6f44a1.jpg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-4d32e58e52db",
-      "slug": "trust-is-indias-strongest-currency-modi-in-malaysia-8e52db",
-      "category": "economy",
-      "headline": "‘Trust is India’s strongest currency’: Modi in Malaysia",
-      "whyItMatters": [
-        "‘Trust is India’s strongest currency’: Modi in Malaysia This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source:"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "‘Trust is India’s strongest currency’: Modi in Malaysia This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Economic Times."
-      ],
-      "fullStoryLink": "https://economictimes.indiatimes.com/news/international/world-news/trust-is-indias-strongest-currency-modi-says-in-malaysia-as-he-hails-trade-pacts/articleshow/128030050.cms",
-      "fullStoryPath": "https://economictimes.indiatimes.com/news/international/world-news/trust-is-indias-strongest-currency-modi-says-in-malaysia-as-he-hails-trade-pacts/articleshow/128030050.cms",
-      "datePublished": "2026-02-07 11:02:25",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
     },
     {
