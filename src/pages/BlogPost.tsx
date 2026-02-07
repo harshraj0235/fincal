@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { usePathnameSafe, useOriginSafe } from '../contexts/PathnameContext';
 import {
   ArrowLeft, Calendar, User, Tag, Bookmark,
   Facebook, Twitter, Linkedin, Copy, ChevronRight
@@ -37,7 +38,8 @@ const getRelatedAstroPosts = (currentSlug: string, limit: number = 3) => {
 export const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const location = window.location.pathname;
+  const location = usePathnameSafe();
+  const origin = useOriginSafe();
 
   // Check if this is an astro finance blog post
   const isAstroBlog = location.includes('/astro-finance/blog/');
@@ -64,7 +66,7 @@ export const BlogPost: React.FC = () => {
   const sections: BlogContentSection[] = Array.isArray((post as { content?: unknown })?.content) ? ((post as { content: unknown[] }).content as BlogContentSection[]) : [];
 
   function shareOn(platform: 'facebook' | 'twitter' | 'linkedin') {
-    const url = window.location.href;
+    const url = typeof window !== 'undefined' ? window.location.href : `${origin}${location}`;
     const text = post?.title || "Check out this blog on Fincal!";
     let shareUrl = '';
     if (platform === 'facebook') {
@@ -74,12 +76,14 @@ export const BlogPost: React.FC = () => {
     } else if (platform === 'linkedin') {
       shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
     }
-    window.open(shareUrl, '_blank', 'noopener');
+    if (typeof window !== 'undefined') window.open(shareUrl, '_blank', 'noopener');
   }
 
   function copyLink() {
-    navigator.clipboard.writeText(window.location.href);
-    alert('Link copied to clipboard!');
+    if (typeof window !== 'undefined') {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied to clipboard!');
+    }
   }
 
   if (!post) {
@@ -92,7 +96,7 @@ export const BlogPost: React.FC = () => {
         <SEOHelmet
           title="404 - Blog Post Not Found"
           description="The blog post you're looking for doesn't exist or may have been moved."
-          url={window.location.pathname}
+          url={location}
         />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <h1 className="text-2xl font-bold text-neutral-900 mb-4">404 - Blog Post Not Found</h1>

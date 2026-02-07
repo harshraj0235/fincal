@@ -5,6 +5,7 @@ const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   // Required for OpenNext/Cloudflare: standalone output
   output: 'standalone',
+  // SSR enabled for all pages: real HTML in first response (Google, AdSense, E-E-A-T)
   // SSG + ISR: generate static pages, revalidate for incremental updates
   images: {
     unoptimized: true, // Cloudflare: no Next Image optimization; use unoptimized or add IMAGES binding later

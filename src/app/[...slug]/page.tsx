@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { contentRegistry } from '../cms-content/contentRegistry';
 import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../data/nextStaticPaths';
 
-const App = dynamic(() => import('../App'), { ssr: false });
+const App = dynamic(() => import('../App'));
 
 const BASE = 'https://moneycal.in';
 const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;

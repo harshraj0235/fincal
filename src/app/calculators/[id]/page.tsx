@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { calculatorCategories, getCalculatorById } from '../../data/calculatorData';
 import type { Metadata } from 'next';
 
-const App = dynamic(() => import('../../App'), { ssr: false });
+const App = dynamic(() => import('../../App'));
 
 const BASE = 'https://moneycal.in';
 

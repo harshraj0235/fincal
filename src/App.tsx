@@ -4,6 +4,7 @@ import { initAnalytics } from './utils/analytics';
 import WebVitalsMonitor from './components/WebVitalsMonitor';
 
 import { Layout } from './components/Layout';
+import { PathnameContext } from './contexts/PathnameContext';
 import { Routes, Route, Navigate, MemoryRouter } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
@@ -885,6 +886,7 @@ function App({ pathname, skipLayout }: AppProps = {}) {
         {/* All other routes: with Layout (Vite) or content-only (Next.js when skipLayout) */}
         <Route path="*" element={(() => {
           const inner = (
+            <PathnameContext.Provider value={pathname}>
             <>
             <ScrollToTop />
             <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
@@ -1422,6 +1424,7 @@ function App({ pathname, skipLayout }: AppProps = {}) {
               </Routes>
             </Suspense>
           </>
+            </PathnameContext.Provider>
           );
           return skipLayout ? inner : <Layout>{inner}</Layout>;
         })()} />

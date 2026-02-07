@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
-const App = dynamic(() => import('../App'), { ssr: false });
+const App = dynamic(() => import('../App'));
 
 export const metadata: Metadata = {
   title: 'About Us | MoneyCal India – Free Financial Calculators & Tools',
