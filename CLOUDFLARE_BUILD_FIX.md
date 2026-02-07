@@ -1,8 +1,19 @@
-# Fix Cloudflare build (do this in the dashboard)
+# Fix Cloudflare build
 
 Your build fails because **Cloudflare runs `npm ci`**, which needs `package-lock.json` to match `package.json`. The lock file in this repo is out of date.
 
-**Fix in Cloudflare (about 2 minutes):**
+---
+
+## Option A – Regenerate lock file via GitHub Actions (no dashboard change)
+
+1. Open your repo on GitHub → **Actions** → **Update package-lock.json**.
+2. Click **Run workflow** → **Run workflow**.
+3. Wait for the workflow to finish (it runs `npm install` and pushes an updated `package-lock.json`).
+4. Trigger a new Cloudflare deployment (or wait for the push to trigger it). The next build should pass.
+
+---
+
+## Option B – Fix in Cloudflare dashboard (about 2 minutes)
 
 ## Step 1 – Skip automatic install
 
