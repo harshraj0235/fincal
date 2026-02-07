@@ -15,14 +15,15 @@ export async function generateStaticParams() {
 export const dynamicParams = true;
 export const revalidate = 86400; // ISR: revalidate once per day
 
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const calc = getCalculatorById(params.id);
+  const { id } = await params;
+  const calc = getCalculatorById(id);
   if (!calc) return { title: 'Calculator Not Found' };
   const title = `${calc.name} – Free Online Calculator | MoneyCal India`;
   const description = `${calc.name} – Free online calculator for Indian users. ${calc.description} Accurate, no sign-up.`;
-  const url = `${BASE}/calculators/${params.id}`;
+  const url = `${BASE}/calculators/${id}`;
   const ogImage = `${BASE}/android-chrome-512x512.png`;
   return {
     title,
@@ -46,8 +47,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function CalculatorSSGPage({ params }: Props) {
-  const calc = getCalculatorById(params.id);
+export default async function CalculatorSSGPage({ params }: Props) {
+  const { id } = await params;
+  const calc = getCalculatorById(id);
   if (!calc) notFound();
   return (
     <>
@@ -64,7 +66,7 @@ export default function CalculatorSSGPage({ params }: Props) {
           )}
         </header>
       </article>
-      <AppShell pathname={`/calculators/${params.id}`} skipLayout />
+      <AppShell pathname={`/calculators/${id}`} skipLayout />
     </>
   );
 }

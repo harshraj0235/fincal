@@ -9,7 +9,7 @@ const isCloudflare = process.env.CF_PAGES === '1' || process.env.CF_PAGES === 't
 
 if (isCloudflare) {
   console.log('🔷 Cloudflare Pages detected - running OpenNext build');
-  execSync('npm install --legacy-peer-deps && npm run generate-sitemaps && npx opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion', {
+  execSync('npm install --legacy-peer-deps && npm run generate-sitemaps && npx opennextjs-cloudflare build', {
     stdio: 'inherit',
     shell: true,
   });

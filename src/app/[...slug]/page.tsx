@@ -7,7 +7,7 @@ const BASE = 'https://moneycal.in';
 const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;
 
 interface PageProps {
-  params: { slug?: string[] };
+  params: Promise<{ slug?: string[] }>;
 }
 
 /** ISR: revalidate these pages periodically (seconds). */
@@ -147,7 +147,8 @@ const SEGMENT_INTROS: Record<string, { heading: string; body: string }> = {
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const slug = params.slug ?? [];
+  const { slug: slugArr } = await params;
+  const slug = slugArr ?? [];
   const pathname = '/' + slug.join('/');
   const url = BASE + pathname;
   const title = getTitleForSlug(slug);
@@ -173,8 +174,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function CatchAllPage({ params }: PageProps) {
-  const slug = params.slug ?? [];
+export default async function CatchAllPage({ params }: PageProps) {
+  const { slug: slugArr } = await params;
+  const slug = slugArr ?? [];
   const pathname = '/' + slug.join('/');
   const firstSegment = slug[0];
   const intro = firstSegment ? SEGMENT_INTROS[firstSegment] : null;
