@@ -1,5 +1,7 @@
 # Deploy Moneycal (Next.js) to Cloudflare
 
+> **Build failing with "Missing ... from lock file"?** → Do the dashboard steps in **[CLOUDFLARE_BUILD_FIX.md](./CLOUDFLARE_BUILD_FIX.md)** first (env var + build command), then retry the deployment.
+
 This project is set up to deploy the **Next.js** build to **Cloudflare Workers / Pages** using the **OpenNext Cloudflare adapter** (recommended over the deprecated `@cloudflare/next-on-pages`).
 
 ---
