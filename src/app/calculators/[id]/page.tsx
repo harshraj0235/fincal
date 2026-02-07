@@ -41,5 +41,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function CalculatorSSGPage({ params }: Props) {
   const calc = getCalculatorById(params.id);
   if (!calc) notFound();
-  return <App pathname={`/calculators/${params.id}`} />;
+  return <App pathname={`/calculators/${params.id}`} skipLayout />;
 }

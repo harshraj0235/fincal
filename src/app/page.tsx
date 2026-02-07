@@ -6,5 +6,5 @@ const App = dynamic(() => import('../App'), { ssr: false });
 export const revalidate = 3600;
 
 export default function HomePage() {
-  return <App pathname="/" />;
+  return <App pathname="/" skipLayout />;
 }

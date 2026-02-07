@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import { allBlogPosts } from '../data/allBlogData';
 import { contentRegistry } from '../cms-content/contentRegistry';
 import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../data/nextStaticPaths';
 
@@ -15,15 +14,9 @@ export const revalidate = 3600;
 /** Allow paths not in generateStaticParams to be generated on-demand (Google can crawl them). */
 export const dynamicParams = true;
 
-/** SSG/ISR: pre-generate ALL blog, ALL news, ALL tools at build time. */
+/** SSG/ISR: pre-generate ALL news, ALL tools at build time. Blog is handled by app/blog and app/blog/[slug]. */
 export async function generateStaticParams() {
   const params: { slug: string[] }[] = [];
-
-  // ALL blog
-  params.push({ slug: ['blog'] });
-  allBlogPosts.forEach((p: { slug?: string }) => {
-    if (p.slug) params.push({ slug: ['blog', p.slug] });
-  });
 
   // ALL news
   params.push({ slug: ['news'] });
@@ -46,15 +39,13 @@ export async function generateStaticParams() {
 
   // Calculator paths are SSG via app/calculators/[id]/page.tsx
 
-  // Key static pages
+  // Key static pages (about-us, contact-us, blog have dedicated routes but catch-all still needed for other slugs)
   const staticPaths = [
     ['learn'],
     ['tools'],
     ['insurance-tools'],
     ['loan-tools'],
     ['bank-tools'],
-    ['about-us'],
-    ['contact-us'],
     ['privacy-policy'],
     ['disclaimer'],
     ['cookie-policy'],
@@ -72,5 +63,5 @@ export async function generateStaticParams() {
 
 export default function CatchAllPage({ params }: PageProps) {
   const pathname = '/' + (params.slug || []).join('/');
-  return <App pathname={pathname} />;
+  return <App pathname={pathname} skipLayout />;
 }

@@ -656,9 +656,11 @@ const NotFound404 = lazy(() => import('./pages/NotFound404'));
 interface AppProps {
   /** When set (e.g. from Next.js catch-all), app runs inside MemoryRouter with this pathname for SSG/ISR. */
   pathname?: string;
+  /** When true (Next.js app), root layout provides Layout so App renders content only. No double header/footer. */
+  skipLayout?: boolean;
 }
 
-function App({ pathname }: AppProps = {}) {
+function App({ pathname, skipLayout }: AppProps = {}) {
   useEffect(() => {
     // Initialize performance optimizations
     initPerformanceOptimizations();
@@ -880,9 +882,10 @@ function App({ pathname }: AppProps = {}) {
         <Route path="/learn/credit-score/loan-approval" element={<CreditScoreLoanApproval />} />
         <Route path="/learn/credit-score/build-from-scratch" element={<BuildCreditFromScratch />} />
         
-        {/* All other routes inside Layout */}
-        <Route path="*" element={
-          <Layout>
+        {/* All other routes: with Layout (Vite) or content-only (Next.js when skipLayout) */}
+        <Route path="*" element={(() => {
+          const inner = (
+            <>
             <ScrollToTop />
             <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
               <Routes>
@@ -1418,8 +1421,10 @@ function App({ pathname }: AppProps = {}) {
                 <Route path="*" element={<NotFound404 />} />
               </Routes>
             </Suspense>
-          </Layout>
-        } />
+          </>
+          );
+          return skipLayout ? inner : <Layout>{inner}</Layout>;
+        })()} />
       </Routes>
     </Suspense>
     </>

@@ -3,7 +3,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import UniversalCanonical from './UniversalCanonical';
 import { Sidebar } from './Sidebar';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from '../lib/router-compat';
 import CookieConsent from './CookieConsent';
 import { motion, AnimatePresence } from 'framer-motion';
 
