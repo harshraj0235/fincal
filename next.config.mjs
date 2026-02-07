@@ -1,4 +1,8 @@
 import { createRequire } from 'module';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 
 /** @type {import('next').NextConfig} */
@@ -19,17 +23,18 @@ const nextConfig = {
   },
   // CSP set in public/_headers (object-src 'none' only) to avoid merging with other CSP
   webpack: (config) => {
-    // Force single React/react-dom/scheduler instance to avoid unstable_scheduleCallback
+    const root = process.cwd();
+    const nm = path.join(root, 'node_modules');
     const base = config.resolve.alias || {};
     config.resolve.alias = {
       ...base,
-      react: require.resolve('react'),
-      'react-dom': require.resolve('react-dom'),
-      'react/jsx-runtime': require.resolve('react/jsx-runtime'),
-      'react-dom/client': require.resolve('react-dom/client'),
+      react: path.join(nm, 'react'),
+      'react-dom': path.join(nm, 'react-dom'),
+      'react/jsx-runtime': path.join(nm, 'react', 'jsx-runtime.js'),
+      'react-dom/client': path.join(nm, 'react-dom', 'client.js'),
     };
     try {
-      config.resolve.alias.scheduler = require.resolve('scheduler');
+      config.resolve.alias.scheduler = path.join(nm, 'scheduler');
     } catch (_) {}
     return config;
   },
