@@ -672,11 +672,14 @@ function App({ pathname, skipLayout }: AppProps = {}) {
     const CONSENT_KEY = 'fincal_cookie_consent_v1';
     const loadAds = () => {
       if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
-      const adsenseScript = document.createElement('script');
-      adsenseScript.async = true;
-      adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4446717165665089';
-      adsenseScript.crossOrigin = 'anonymous';
-      document.head.appendChild(adsenseScript);
+      try {
+        const adsenseScript = document.createElement('script');
+        adsenseScript.async = true;
+        adsenseScript.crossOrigin = 'anonymous';
+        adsenseScript.onerror = () => {}; // ERR_BLOCKED_BY_CLIENT (ad blocker): avoid breaking app
+        adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4446717165665089';
+        document.head.appendChild(adsenseScript);
+      } catch (_) {}
 
       if (!document.querySelector('meta[name="google-adsense-account"]')) {
         const adsenseMeta = document.createElement('meta');

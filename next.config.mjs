@@ -15,15 +15,18 @@ const nextConfig = {
   },
   transpilePackages: [],
   experimental: {
-    // optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: ['react', 'react-dom', 'lucide-react'],
   },
   // CSP set in public/_headers (object-src 'none' only) to avoid merging with other CSP
   webpack: (config) => {
-    // Force single React/react-dom instance to avoid unstable_scheduleCallback
+    // Force single React/react-dom/scheduler instance to avoid unstable_scheduleCallback
+    const base = config.resolve.alias || {};
     config.resolve.alias = {
-      ...config.resolve.alias,
+      ...base,
       react: require.resolve('react'),
       'react-dom': require.resolve('react-dom'),
+      'react/jsx-runtime': require.resolve('react/jsx-runtime'),
+      'react-dom/client': require.resolve('react-dom/client'),
     };
     try {
       config.resolve.alias.scheduler = require.resolve('scheduler');
