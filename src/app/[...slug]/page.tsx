@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import { allBlogPosts } from '../data/allBlogData';
 import { contentRegistry } from '../cms-content/contentRegistry';
+import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../data/nextStaticPaths';
 
 const App = dynamic(() => import('../App'), { ssr: false });
 
@@ -14,32 +15,41 @@ export const revalidate = 3600;
 /** Allow paths not in generateStaticParams to be generated on-demand (Google can crawl them). */
 export const dynamicParams = true;
 
-/** SSG: pre-generate key paths at build time. */
+/** SSG/ISR: pre-generate ALL blog, ALL news, ALL tools at build time. */
 export async function generateStaticParams() {
   const params: { slug: string[] }[] = [];
 
-  // Blog list and top blog slugs
+  // ALL blog
   params.push({ slug: ['blog'] });
-  allBlogPosts.slice(0, 100).forEach((p: { slug?: string }) => {
+  allBlogPosts.forEach((p: { slug?: string }) => {
     if (p.slug) params.push({ slug: ['blog', p.slug] });
   });
 
-  // News list and top news (category/slug)
+  // ALL news
   params.push({ slug: ['news'] });
   params.push({ slug: ['news', 'shorts'] });
-  contentRegistry.slice(0, 80).forEach((a) => {
+  contentRegistry.forEach((a) => {
     params.push({ slug: ['news', a.category, a.slug] });
   });
 
+  // ALL tax-tools
+  params.push({ slug: ['tax-tools'] });
+  taxToolSlugs.forEach((s) => params.push({ slug: ['tax-tools', s] }));
+
+  // ALL finance-tools
+  params.push({ slug: ['finance-tools'] });
+  financeToolSlugs.forEach((s) => params.push({ slug: ['finance-tools', s] }));
+
+  // ALL gst-tools
+  params.push({ slug: ['gst-tools'] });
+  gstToolSlugs.forEach((s) => params.push({ slug: ['gst-tools', s] }));
+
   // Calculator paths are SSG via app/calculators/[id]/page.tsx
 
-  // Key static pages (Google-friendly)
+  // Key static pages
   const staticPaths = [
     ['learn'],
-    ['tax-tools'],
-    ['finance-tools'],
     ['tools'],
-    ['gst-tools'],
     ['insurance-tools'],
     ['loan-tools'],
     ['bank-tools'],
@@ -53,6 +63,7 @@ export async function generateStaticParams() {
     ['government-schemes'],
     ['crypto'],
     ['astro-finance'],
+    ['calculators'],
   ];
   staticPaths.forEach((s) => params.push({ slug: s }));
 

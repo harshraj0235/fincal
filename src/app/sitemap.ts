@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { calculatorCategories } from '../data/calculatorData';
 import { allBlogPosts } from '../data/allBlogData';
 import { contentRegistry } from '../cms-content/contentRegistry';
+import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../data/nextStaticPaths';
 
 const BASE = 'https://moneycal.in';
 
@@ -22,11 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/disclaimer`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
   ];
 
-  allBlogPosts.slice(0, 500).forEach((p: { slug?: string }) => {
+  allBlogPosts.forEach((p: { slug?: string }) => {
     if (p.slug) entries.push({ url: `${BASE}/blog/${p.slug}`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 });
   });
 
-  contentRegistry.slice(0, 200).forEach((a) => {
+  contentRegistry.forEach((a) => {
     entries.push({ url: `${BASE}/news/${a.category}/${a.slug}`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 });
   });
 
@@ -35,6 +36,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({ url: `${BASE}/calculators/${calc.id}`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 });
     });
   });
+
+  taxToolSlugs.forEach((s) => entries.push({ url: `${BASE}/tax-tools/${s}`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 }));
+  financeToolSlugs.forEach((s) => entries.push({ url: `${BASE}/finance-tools/${s}`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 }));
+  gstToolSlugs.forEach((s) => entries.push({ url: `${BASE}/gst-tools/${s}`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 }));
 
   return entries;
 }
