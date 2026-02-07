@@ -67,6 +67,7 @@ export default function RootLayout({
         <meta property="og:image:alt" content="MoneyCal India" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMAGE} />
+        <meta httpEquiv="Content-Security-Policy" content="object-src 'none'" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased">

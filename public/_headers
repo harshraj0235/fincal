@@ -61,9 +61,8 @@
   Content-Type: text/html; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate
 
-# CSP: object-src must be only 'none' (no other source expressions)
+# Do not set Content-Security-Policy here - if set in Cloudflare, use only object-src 'none' (no other values)
 /*
-  Content-Security-Policy: object-src 'none'
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block

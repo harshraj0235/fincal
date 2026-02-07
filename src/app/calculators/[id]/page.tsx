@@ -1,9 +1,7 @@
-import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
+import AppShell from '../../AppShell';
 import { calculatorCategories, getCalculatorById } from '../../data/calculatorData';
 import type { Metadata } from 'next';
-
-const App = dynamic(() => import('../../App'));
 
 const BASE = 'https://moneycal.in';
 
@@ -66,7 +64,7 @@ export default function CalculatorSSGPage({ params }: Props) {
           )}
         </header>
       </article>
-      <App pathname={`/calculators/${params.id}`} skipLayout />
+      <AppShell pathname={`/calculators/${params.id}`} skipLayout />
     </>
   );
 }

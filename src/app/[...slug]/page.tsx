@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
+import AppShell from '../AppShell';
 import { contentRegistry } from '../cms-content/contentRegistry';
 import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../data/nextStaticPaths';
-
-const App = dynamic(() => import('../App'));
 
 const BASE = 'https://moneycal.in';
 const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;
@@ -189,7 +187,7 @@ export default function CatchAllPage({ params }: PageProps) {
           <p className="text-gray-700 mt-2">{intro.body}</p>
         </main>
       )}
-      <App pathname={pathname} skipLayout />
+      <AppShell pathname={pathname} skipLayout />
     </>
   );
 }

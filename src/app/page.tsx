@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-
-const App = dynamic(() => import('../App'));
+import AppShell from './AppShell';
 
 /** ISR: revalidate home every hour */
 export const revalidate = 3600;
@@ -43,7 +41,7 @@ export default function HomePage() {
           Use our free calculators for loans, investments, tax, GST, insurance, and personal finance—no sign-up required.
         </p>
       </main>
-      <App pathname="/" skipLayout />
+      <AppShell pathname="/" skipLayout />
     </>
   );
 }

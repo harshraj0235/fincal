@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-
-const App = dynamic(() => import('../App'));
+import AppShell from '../AppShell';
 
 export const metadata: Metadata = {
   title: 'Contact Us | MoneyCal India',
@@ -32,7 +30,7 @@ export default function ContactUsPage() {
           Email: <a href="mailto:support@moneycal.in" className="text-blue-600 hover:underline">support@moneycal.in</a>
         </p>
       </section>
-      <App pathname="/contact-us" skipLayout />
+      <AppShell pathname="/contact-us" skipLayout />
     </main>
   );
 }

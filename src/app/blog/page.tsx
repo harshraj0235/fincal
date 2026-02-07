@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-
-const App = dynamic(() => import('../App'));
+import AppShell from '../AppShell';
 
 export const metadata: Metadata = {
   title: 'Blog | MoneyCal India – Personal Finance, EMI, Tax & Investment Tips',
@@ -29,7 +27,7 @@ export default function BlogPage() {
           Read our latest articles on EMI, loans, tax, SIP, and investments. Practical guides and tips to plan your finances in India.
         </p>
       </section>
-      <App pathname="/blog" skipLayout />
+      <AppShell pathname="/blog" skipLayout />
     </main>
   );
 }
