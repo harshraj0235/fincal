@@ -50,5 +50,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function CalculatorSSGPage({ params }: Props) {
   const calc = getCalculatorById(params.id);
   if (!calc) notFound();
-  return <App pathname={`/calculators/${params.id}`} skipLayout />;
+  return (
+    <>
+      <article className="container mx-auto px-4 py-4 max-w-4xl" aria-label="Calculator">
+        <header className="mb-4">
+          <h1 className="text-2xl font-bold text-gray-900">{calc.name}</h1>
+          <p className="text-gray-700 mt-2">{calc.description}</p>
+          {calc.info && calc.info.length > 0 && (
+            <ul className="mt-2 list-disc pl-6 text-gray-600 text-sm space-y-1">
+              {calc.info.slice(0, 3).map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
+          )}
+        </header>
+      </article>
+      <App pathname={`/calculators/${params.id}`} skipLayout />
+    </>
+  );
 }

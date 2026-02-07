@@ -28,5 +28,20 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <App pathname="/" skipLayout />;
+  return (
+    <>
+      <main className="container mx-auto px-4 py-6 max-w-4xl" aria-label="Introduction">
+        <h1 className="text-2xl font-bold text-gray-900">
+          MoneyCal India – Top Financial Calculators &amp; Tools
+        </h1>
+        <p className="text-gray-700 text-lg mb-4">
+          India&apos;s most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users.
+        </p>
+        <p className="text-gray-600">
+          Use our free calculators for loans, investments, tax, GST, insurance, and personal finance—no sign-up required.
+        </p>
+      </main>
+      <App pathname="/" skipLayout />
+    </>
+  );
 }

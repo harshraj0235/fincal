@@ -96,6 +96,58 @@ function getTitleForSlug(slug: string[]): string {
   return `${base} – ${sub} | MoneyCal India`;
 }
 
+/** Server-rendered intro text for key segments (in first HTML for Google). */
+const SEGMENT_INTROS: Record<string, { heading: string; body: string }> = {
+  learn: {
+    heading: 'Learn',
+    body: 'Free guides on personal finance, loans, insurance, investing, tax, and money management for India. Build your financial literacy with practical lessons and calculators.',
+  },
+  tools: {
+    heading: 'Tools',
+    body: 'Free business and productivity tools: EMI affordability, discount calculator, product comparison, time zone converter, and more. No sign-up required.',
+  },
+  news: {
+    heading: 'News',
+    body: 'Latest news and short updates on economy, markets, startups, and personal finance. Bite-sized reads for busy readers.',
+  },
+  calculators: {
+    heading: 'Calculators',
+    body: 'Free online calculators for EMI, SIP, tax, PPF, NPS, loans, insurance, and more. Built for Indian users with accurate formulas and export options.',
+  },
+  'tax-tools': {
+    heading: 'Tax Tools',
+    body: 'Income tax, TDS, capital gains, and tax planning tools for individuals and salaried users in India. Estimate tax and plan investments.',
+  },
+  'finance-tools': {
+    heading: 'Finance Tools',
+    body: 'Mutual fund analysis, SIP vs lumpsum, expense ratio impact, portfolio tools, and investment calculators for better financial decisions.',
+  },
+  'gst-tools': {
+    heading: 'GST Tools',
+    body: 'GST calculators, rate finders, invoice helpers, and compliance tools for businesses and taxpayers in India.',
+  },
+  'insurance-tools': {
+    heading: 'Insurance Tools',
+    body: 'Term insurance, health insurance, and life insurance calculators. Compare premiums and plan your cover with free online tools.',
+  },
+  'loan-tools': {
+    heading: 'Loan Tools',
+    body: 'Loan calculators, EMI comparison, prepayment and refinance tools. Plan home loans, personal loans, and vehicle loans.',
+  },
+  'government-schemes': {
+    heading: 'Government Schemes',
+    body: 'Guides and calculators for PPF, NPS, Sukanya Samriddhi, and other government savings and pension schemes in India.',
+  },
+  crypto: {
+    heading: 'Crypto',
+    body: 'Cryptocurrency basics, tax implications, and resources for Indian investors. Educational content and tools.',
+  },
+  'astro-finance': {
+    heading: 'Astro Finance',
+    body: 'Astrology and finance: horoscope-based tips, muhurat calculators, and zodiac savings guides. For entertainment and planning.',
+  },
+};
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const slug = params.slug ?? [];
   const pathname = '/' + slug.join('/');
@@ -123,6 +175,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default function CatchAllPage({ params }: PageProps) {
-  const pathname = '/' + (params.slug || []).join('/');
-  return <App pathname={pathname} skipLayout />;
+  const slug = params.slug ?? [];
+  const pathname = '/' + slug.join('/');
+  const firstSegment = slug[0];
+  const intro = firstSegment ? SEGMENT_INTROS[firstSegment] : null;
+
+  return (
+    <>
+      {intro && (
+        <main className="container mx-auto px-4 py-4 max-w-4xl" aria-label="Introduction">
+          <h1 className="text-2xl font-bold text-gray-900">{intro.heading}</h1>
+          <p className="text-gray-700 mt-2">{intro.body}</p>
+        </main>
+      )}
+      <App pathname={pathname} skipLayout />
+    </>
+  );
 }
