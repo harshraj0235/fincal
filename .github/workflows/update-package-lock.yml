@@ -1,11 +1,13 @@
-# One-time / on-demand: regenerate package-lock.json so Cloudflare npm ci succeeds
+# Regenerate package-lock.json so Cloudflare npm ci succeeds
 name: Update package-lock.json
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['package.json', '.github/workflows/update-package-lock.yml']
+
+permissions:
+  contents: write
 
 jobs:
   update-lock:
