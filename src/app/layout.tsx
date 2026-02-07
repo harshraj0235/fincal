@@ -31,6 +31,8 @@ const jsonLd = {
       url: 'https://moneycal.in',
       logo: 'https://moneycal.in/android-chrome-512x512.png',
       description: "India's free financial calculators and tools: EMI, SIP, tax, GST, loans, investments.",
+      sameAs: ['https://twitter.com/MoneyCalIN', 'https://linkedin.com/company/moneycal', 'https://github.com/harshraj0235/fincal'],
+      contactPoint: { '@type': 'ContactPoint', email: 'support@moneycal.in', contactType: 'customer support', areaServed: 'IN' },
     },
     {
       '@type': 'WebSite',

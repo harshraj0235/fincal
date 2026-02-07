@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import { calculatorCategories } from '../data/calculatorData';
 import { allBlogPosts } from '../data/allBlogData';
 import { contentRegistry } from '../cms-content/contentRegistry';
 
@@ -32,12 +31,7 @@ export async function generateStaticParams() {
     params.push({ slug: ['news', a.category, a.slug] });
   });
 
-  // All calculator paths
-  calculatorCategories.forEach((cat) => {
-    cat.calculators.forEach((calc) => {
-      params.push({ slug: ['calculators', calc.id] });
-    });
-  });
+  // Calculator paths are SSG via app/calculators/[id]/page.tsx
 
   // Key static pages (Google-friendly)
   const staticPaths = [

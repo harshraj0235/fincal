@@ -1,6 +1,9 @@
 # Next.js migration (SSG + ISR) – Google-friendly
 
-The codebase supports **two run modes**. You can keep using Vite or switch to Next.js. Next.js build is tuned for **Google ranking**: SSG/ISR, sitemap, robots, JSON-LD, metadata.
+The codebase supports **two run modes**. You can keep using Vite or switch to Next.js. Next.js build is tuned for **Google ranking**: SSG/ISR, sitemap, robots, JSON-LD, metadata, and **E-E-A-T** (Experience, Expertise, Authoritativeness, Trustworthiness).
+
+- **Calculators**: Pure SSG via `app/calculators/[id]/page.tsx` (all calculator pages pre-built at build time).
+- **E-E-A-T**: Site-wide footer block (last updated, author, disclaimer) + Organization/WebSite schema with contact and sameAs.
 
 ## Run modes
 

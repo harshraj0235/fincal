@@ -8,6 +8,7 @@ import {
   Twitter,
   Linkedin
 } from 'lucide-react';
+import EEATFooter from './EEATFooter';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -115,7 +116,10 @@ export const Footer: React.FC = () => {
             </div>
           ))}
         </div>
-        
+
+        {/* E-E-A-T: Experience, Expertise, Authoritativeness, Trust (Google quality) */}
+        <EEATFooter />
+
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
