@@ -44,7 +44,15 @@
   Content-Type: image/webp
   Cache-Control: public, max-age=31536000, immutable
 
-# Manifest and icons
+# Manifest and icons (explicit paths for PWA)
+/android-chrome-192x192.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
+/android-chrome-512x512.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
+
 /*.png
   Content-Type: image/png
 
@@ -53,8 +61,9 @@
   Content-Type: text/html; charset=utf-8
   Cache-Control: public, max-age=0, must-revalidate
 
-# All other files
+# CSP: object-src must be only 'none' (no other source expressions)
 /*
+  Content-Security-Policy: object-src 'none'
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block

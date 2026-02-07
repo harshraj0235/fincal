@@ -1,3 +1,6 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -14,19 +17,18 @@ const nextConfig = {
   experimental: {
     // optimizePackageImports: ['lucide-react'],
   },
-  // Fix CSP: object-src must be only 'none' (no other source expressions)
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: "object-src 'none'",
-          },
-        ],
-      },
-    ];
+  // CSP set in public/_headers (object-src 'none' only) to avoid merging with other CSP
+  webpack: (config) => {
+    // Force single React/react-dom instance to avoid unstable_scheduleCallback
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      react: require.resolve('react'),
+      'react-dom': require.resolve('react-dom'),
+    };
+    try {
+      config.resolve.alias.scheduler = require.resolve('scheduler');
+    } catch (_) {}
+    return config;
   },
 };
 
