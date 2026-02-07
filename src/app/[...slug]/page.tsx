@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import AppShell from '../AppShell';
-import { contentRegistry } from '../cms-content/contentRegistry';
-import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../data/nextStaticPaths';
+import { contentRegistry } from '../../cms-content/contentRegistry';
+import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../../data/nextStaticPaths';
 
 const BASE = 'https://moneycal.in';
 const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { allBlogPosts, getBlogPostBySlug, getRelatedPosts } from '../../data/allBlogData';
+import { allBlogPosts, getBlogPostBySlug, getRelatedPosts } from '../../../data/allBlogData';
 import BlogArticleContent from './BlogArticleContent';
 
 type Props = { params: Promise<{ slug: string }> };

@@ -38,7 +38,6 @@ import {
   rupeeVolatilityRisk2025,
   sectorRotationStrategy2025,
   fixedIncomeRisk2025,
-  goldVsEquities2025,
   foreignMoneyRisks2025,
   smallCapBubble2025,
   govPolicyImpact2025

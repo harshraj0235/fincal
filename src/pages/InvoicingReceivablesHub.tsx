@@ -12,7 +12,6 @@ import {
   Users,
   CreditCard,
   Receipt,
-  FileText,
   PieChart,
   Activity,
   Target,
