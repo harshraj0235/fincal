@@ -1,44 +1,35 @@
-# Fix Cloudflare build
+# Fix Cloudflare Pages build (npm ci + wrangler)
 
-Your build fails because **Cloudflare runs `npm ci`**, which needs `package-lock.json` to match `package.json`. The lock file in this repo is out of date.
+## Quick fix – 2 minutes in Cloudflare dashboard
 
----
+Cloudflare runs `npm ci` before your build, which requires `package-lock.json` to be in sync. If it fails, use this:
 
-## Option A – Regenerate lock file via GitHub Actions (no dashboard change)
+### Step 1 – Skip automatic install
 
-1. Open your repo on GitHub → **Actions** → **Update package-lock.json**.
-2. Click **Run workflow** → **Run workflow**.
-3. Wait for the workflow to finish (it runs `npm install` and pushes an updated `package-lock.json`).
-4. Trigger a new Cloudflare deployment (or wait for the push to trigger it). The next build should pass.
-
----
-
-## Option B – Fix in Cloudflare dashboard (about 2 minutes)
-
-## Step 1 – Skip automatic install
-
-1. Open **Cloudflare Dashboard** → **Workers & Pages** → your **fincal** project.
-2. Go to **Settings** → **Environment variables**.
-3. Click **Add variable** (for **Production**; add for **Preview** too if you use it):
-   - **Variable name:** `SKIP_DEPENDENCY_INSTALL`
+1. **Cloudflare Dashboard** → **Workers & Pages** → your project
+2. **Settings** → **Environment variables**
+3. Add variable (Production + Preview):
+   - **Name:** `SKIP_DEPENDENCY_INSTALL`
    - **Value:** `1`
-4. Save.
 
-## Step 2 – Build command does install + OpenNext
+### Step 2 – Build command
 
-1. In the same project, go to **Settings** → **Builds & deployments** → **Build configuration**.
-2. Set **Build command** to exactly:
+1. **Settings** → **Builds & deployments** → **Build configuration**
+2. Set **Build command** to:
    ```bash
-   npm install --legacy-peer-deps && npx opennextjs-cloudflare build
+   npm install --legacy-peer-deps && npm run build
    ```
-3. Save.
+3. **Build output directory:** `.open-next` (or leave default if it uses wrangler)
+4. **Root directory:** empty (use repo root)
 
-## Step 3 – Redeploy
+### Step 3 – Redeploy
 
-- Open the **Deployments** tab and click **Retry deployment** on the latest build (or push a commit to trigger a new build).
-
-After this, Cloudflare will no longer run `npm ci`. Your build command will run `npm install --legacy-peer-deps` (so the lock file does not need to be in sync), then the OpenNext build.
+Click **Retry deployment** or push a commit.
 
 ---
 
-For more options (e.g. updating the lock file and using `npm ci` again), see **CLOUDFLARE_DEPLOY.md** → section “Fix: npm ci / lock file out of sync”.
+## Alternative – Regenerate lock file
+
+1. GitHub → **Actions** → **Update package-lock.json**
+2. **Run workflow**
+3. After it pushes, trigger a new Cloudflare deploy

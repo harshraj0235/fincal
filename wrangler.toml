@@ -1,3 +1,0 @@
-# Cloudflare Pages build config (satisfies pages_build_output_dir requirement)
-name = "moneycal"
-pages_build_output_dir = ".open-next"
