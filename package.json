@@ -9,6 +9,10 @@
     "build": "npm run generate-sitemaps && tsc && vite build",
     "build:next": "next build",
     "start:next": "next start",
+    "preview:cf": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy:cf": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload:cf": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "build:deploy": "npm install && npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -68,7 +72,9 @@
     "typescript-eslint": "^8.3.0",
 "vite": "^5.4.19",
     "vite-plugin-compression": "^0.5.1",
-    "eslint-config-next": "14.2.18"
+    "eslint-config-next": "14.2.18",
+    "@opennextjs/cloudflare": "^1.0.0-beta.15",
+    "wrangler": "^3.99.0"
   }
 }
 

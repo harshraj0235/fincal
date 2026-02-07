@@ -3,12 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   // Use existing src directory
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+  // Required for OpenNext/Cloudflare: standalone output
+  output: 'standalone',
   // SSG + ISR: generate static pages, revalidate for incremental updates
-  // output: 'export', // uncomment for static export only (no ISR)
   images: {
-    unoptimized: true, // set to false if using next/image with remote images
+    unoptimized: true, // Cloudflare: no Next Image optimization; use unoptimized or add IMAGES binding later
   },
-  // Resolve aliases to match existing src imports
   transpilePackages: [],
   experimental: {
     // optimizePackageImports: ['lucide-react'],

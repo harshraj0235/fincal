@@ -1,5 +1,9 @@
 # Headers for proper MIME types and caching
 
+# Next.js static assets (OpenNext/Cloudflare)
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
 # JavaScript files
 /assets/*.js
   Content-Type: application/javascript
