@@ -27,6 +27,7 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src'),
     },
+    dedupe: ['react', 'react-dom', 'scheduler'],
   },
   build: {
     target: 'es2015',
@@ -46,9 +47,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Core dependencies
+          // Core dependencies - keep react, react-dom, scheduler together to avoid unstable_scheduleCallback
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
               return 'vendor-react';
             }
             if (id.includes('react-router-dom')) {
@@ -99,7 +100,7 @@ export default defineConfig({
     host: true,
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
+    include: ['react', 'react-dom', 'react-router-dom', 'scheduler'],
     exclude: ['@vite/client', '@vite/env'],
   },
   css: {
