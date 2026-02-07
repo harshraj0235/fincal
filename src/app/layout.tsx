@@ -22,6 +22,25 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://moneycal.in"),
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'MoneyCal India',
+      url: 'https://moneycal.in',
+      logo: 'https://moneycal.in/android-chrome-512x512.png',
+      description: "India's free financial calculators and tools: EMI, SIP, tax, GST, loans, investments.",
+    },
+    {
+      '@type': 'WebSite',
+      name: 'MoneyCal India',
+      url: 'https://moneycal.in',
+      potentialAction: { '@type': 'SearchAction', target: 'https://moneycal.in/?q={search_term}', 'query-input': 'required name=search_term' },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -32,6 +51,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="canonical" href="https://moneycal.in/" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased">
         {children}

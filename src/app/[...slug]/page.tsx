@@ -12,6 +12,9 @@ interface PageProps {
 /** ISR: revalidate these pages periodically (seconds). */
 export const revalidate = 3600;
 
+/** Allow paths not in generateStaticParams to be generated on-demand (Google can crawl them). */
+export const dynamicParams = true;
+
 /** SSG: pre-generate key paths at build time. */
 export async function generateStaticParams() {
   const params: { slug: string[] }[] = [];
@@ -36,18 +39,26 @@ export async function generateStaticParams() {
     });
   });
 
-  // Key static pages
+  // Key static pages (Google-friendly)
   const staticPaths = [
     ['learn'],
     ['tax-tools'],
     ['finance-tools'],
     ['tools'],
+    ['gst-tools'],
+    ['insurance-tools'],
+    ['loan-tools'],
+    ['bank-tools'],
     ['about-us'],
     ['contact-us'],
     ['privacy-policy'],
     ['disclaimer'],
+    ['cookie-policy'],
+    ['terms-of-service'],
+    ['editorial-policy'],
     ['government-schemes'],
     ['crypto'],
+    ['astro-finance'],
   ];
   staticPaths.forEach((s) => params.push({ slug: s }));
 
