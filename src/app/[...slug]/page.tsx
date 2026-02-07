@@ -1,8 +1,12 @@
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { contentRegistry } from '../cms-content/contentRegistry';
 import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../data/nextStaticPaths';
 
 const App = dynamic(() => import('../App'), { ssr: false });
+
+const BASE = 'https://moneycal.in';
+const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;
 
 interface PageProps {
   params: { slug?: string[] };
@@ -59,6 +63,63 @@ export async function generateStaticParams() {
   staticPaths.forEach((s) => params.push({ slug: s }));
 
   return params;
+}
+
+/** Title/description for common path segments (link previews). */
+function getTitleForSlug(slug: string[]): string {
+  if (slug.length === 0) return 'MoneyCal India – Financial Calculators & Tools';
+  const [first, ...rest] = slug;
+  const segmentTitles: Record<string, string> = {
+    news: 'News',
+    shorts: 'Shorts',
+    'tax-tools': 'Tax Tools',
+    'finance-tools': 'Finance Tools',
+    'gst-tools': 'GST Tools',
+    learn: 'Learn',
+    tools: 'Tools',
+    'insurance-tools': 'Insurance Tools',
+    'loan-tools': 'Loan Tools',
+    'bank-tools': 'Bank Tools',
+    'privacy-policy': 'Privacy Policy',
+    disclaimer: 'Disclaimer',
+    'cookie-policy': 'Cookie Policy',
+    'terms-of-service': 'Terms of Service',
+    'editorial-policy': 'Editorial Policy',
+    'government-schemes': 'Government Schemes',
+    crypto: 'Crypto',
+    'astro-finance': 'Astro Finance',
+    calculators: 'Calculators',
+  };
+  const base = segmentTitles[first] || first;
+  if (rest.length === 0) return `${base} | MoneyCal India`;
+  const sub = rest.join(' ');
+  return `${base} – ${sub} | MoneyCal India`;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const slug = params.slug ?? [];
+  const pathname = '/' + slug.join('/');
+  const url = BASE + pathname;
+  const title = getTitleForSlug(slug);
+  const description = 'Free financial calculators and tools for India. EMI, SIP, tax, loans, investments, and more.';
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: 'MoneyCal India',
+      images: [{ url: DEFAULT_IMAGE, width: 512, height: 512 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [DEFAULT_IMAGE],
+    },
+    alternates: { canonical: url },
+  };
 }
 
 export default function CatchAllPage({ params }: PageProps) {

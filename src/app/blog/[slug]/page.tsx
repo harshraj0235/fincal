@@ -20,13 +20,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
   if (!post) return { title: 'Post | MoneyCal India' };
-  const title = (post as { title?: string }).title || 'Blog | MoneyCal India';
-  const description = (post as { excerpt?: string }).excerpt || (post as { description?: string }).description || '';
+  const p = post as {
+    title?: string;
+    excerpt?: string;
+    description?: string;
+    openGraph?: { image?: string };
+    coverImage?: string;
+  };
+  const title = p.title || 'Blog | MoneyCal India';
+  const description = (p.excerpt || p.description || '').slice(0, 160);
+  const ogImage = p.openGraph?.image || p.coverImage || 'https://moneycal.in/android-chrome-512x512.png';
+  const url = `https://moneycal.in/blog/${slug}`;
   return {
     title: `${title} | MoneyCal India`,
-    description: description.slice(0, 160),
-    openGraph: { title, description, url: `https://moneycal.in/blog/${slug}` },
-    alternates: { canonical: `https://moneycal.in/blog/${slug}` },
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: 'MoneyCal India',
+      images: [{ url: ogImage, width: 1200, height: 630 }],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+    alternates: { canonical: url },
   };
 }
 

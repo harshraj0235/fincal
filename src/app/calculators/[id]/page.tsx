@@ -24,6 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!calc) return { title: 'Calculator Not Found' };
   const title = `${calc.name} – Free Online Calculator | MoneyCal India`;
   const description = `${calc.name} – Free online calculator for Indian users. ${calc.description} Accurate, no sign-up.`;
+  const url = `${BASE}/calculators/${params.id}`;
+  const ogImage = `${BASE}/android-chrome-512x512.png`;
   return {
     title,
     description,
@@ -31,10 +33,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: `${BASE}/calculators/${params.id}`,
+      url,
       siteName: 'MoneyCal India',
+      images: [{ url: ogImage, width: 512, height: 512 }],
     },
-    alternates: { canonical: `${BASE}/calculators/${params.id}` },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+    alternates: { canonical: url },
   };
 }
 

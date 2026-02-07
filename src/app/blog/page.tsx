@@ -10,7 +10,10 @@ export const metadata: Metadata = {
     title: 'Blog | MoneyCal India – Finance & Calculator Guides',
     description: 'Expert articles on personal finance, EMI, tax, and investments for India.',
     url: 'https://moneycal.in/blog',
+    siteName: 'MoneyCal India',
+    images: [{ url: 'https://moneycal.in/android-chrome-512x512.png', width: 512, height: 512 }],
   },
+  twitter: { card: 'summary_large_image', title: 'Blog | MoneyCal India', description: 'Expert articles on personal finance, EMI, tax, and investments for India.' },
   alternates: { canonical: 'https://moneycal.in/blog' },
 };
 

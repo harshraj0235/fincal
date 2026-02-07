@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MoneyCal India - Top Financial Calculators & Tools",
     description: "India's most comprehensive financial calculator platform.",
+    images: ["https://moneycal.in/android-chrome-512x512.png"],
   },
   robots: "index, follow",
   metadataBase: new URL("https://moneycal.in"),

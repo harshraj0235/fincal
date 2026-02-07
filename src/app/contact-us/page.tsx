@@ -8,8 +8,12 @@ export const metadata: Metadata = {
   description: 'Get in touch with MoneyCal India for feedback, calculator suggestions, or partnership inquiries.',
   openGraph: {
     title: 'Contact Us | MoneyCal India',
+    description: 'Get in touch for feedback, calculator suggestions, or partnership inquiries.',
     url: 'https://moneycal.in/contact-us',
+    siteName: 'MoneyCal India',
+    images: [{ url: 'https://moneycal.in/android-chrome-512x512.png', width: 512, height: 512 }],
   },
+  twitter: { card: 'summary_large_image', title: 'Contact Us | MoneyCal India', description: 'Get in touch with MoneyCal India.' },
   alternates: { canonical: 'https://moneycal.in/contact-us' },
 };
 
