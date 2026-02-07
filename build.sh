@@ -1,30 +1,9 @@
-#!/bin/bash
-
-# Build script for automated deployment
-echo "🚀 Starting build process..."
-
-# Install dependencies
-echo "📦 Installing dependencies..."
-npm install
-
-# Check if installation was successful
-if [ $? -eq 0 ]; then
-    echo "✅ Dependencies installed successfully"
-else
-    echo "❌ Failed to install dependencies"
-    exit 1
-fi
-
-# Build the project
-echo "🔨 Building project..."
-npm run build
-
-# Check if build was successful
-if [ $? -eq 0 ]; then
-    echo "✅ Build completed successfully"
-else
-    echo "❌ Build failed"
-    exit 1
-fi
-
-echo "🎉 Build process completed!"
+#!/usr/bin/env bash
+# Cloudflare Pages build - produces .open-next output
+# Use this as Build command in Cloudflare dashboard: bash build.sh
+set -e
+echo "=== Cloudflare Pages build ==="
+npm install --legacy-peer-deps
+npm run generate-sitemaps
+npx opennextjs-cloudflare build
+echo "=== Build complete ==="
