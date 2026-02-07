@@ -2,6 +2,8 @@
 
 The build fails because Cloudflare runs `npm ci` before your build. You **must** apply these settings in the Cloudflare dashboard.
 
+> **Important:** The build command must be `bash build.sh` or `npm run build:cf:ci`, **NOT** `npm run build`. Using `npm run build` would cause an infinite recursion loop.
+
 ## 1. Environment variable
 
 1. **Workers & Pages** → your project → **Settings** → **Environment variables**
@@ -13,7 +15,7 @@ The build fails because Cloudflare runs `npm ci` before your build. You **must**
 
 1. **Settings** → **Builds & deployments** → **Build configuration**
 2. Set:
-   - **Build command:** `bash build.sh`
+   - **Build command:** `bash build.sh` (or `npm run build:cf:ci`)
    - **Build output directory:** `.open-next`
    - **Root directory:** *(leave empty)*
 

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "dev:next": "next dev",
-    "build": "node scripts/select-build.cjs",
+    "build": "next build",
     "build:vite": "npm run generate-sitemaps && tsc && vite build",
     "build:next": "next build",
     "start:next": "next start",
