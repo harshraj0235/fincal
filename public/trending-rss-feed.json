@@ -1,6 +1,30 @@
 {
-  "updatedAt": "2026-02-07T08:21:52.897Z",
+  "updatedAt": "2026-02-07T10:18:39.949Z",
   "items": [
+    {
+      "title": "US deal: India didn't budge on its red lines",
+      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/piyush-goyal-says-farmers-safe-in-us-trade-deal-india-didnt-budge-on-its-red-lines/articleshow/128026312.cms",
+      "pubDate": "2026-02-07 08:48:09",
+      "source": "Economic Times"
+    },
+    {
+      "title": "8th CPC website launched: What employees should know",
+      "link": "https://economictimes.indiatimes.com/wealth/save/8th-pay-commission-website-goes-live-releases-18-questions-to-seek-feedback-from-ministries-employees-others/articleshow/128026379.cms",
+      "pubDate": "2026-02-07 08:36:47",
+      "source": "Economic Times"
+    },
+    {
+      "title": "Russia turns to India for way out of a big crisis",
+      "link": "https://economictimes.indiatimes.com/nri/work/russia-turns-to-india-sri-lanka-for-way-out-of-its-labor-crisis/articleshow/128025570.cms",
+      "pubDate": "2026-02-07 08:01:20",
+      "source": "Economic Times"
+    },
+    {
+      "title": "Shivakumar says ‘time will answer’ on CM question",
+      "link": "https://economictimes.indiatimes.com/news/politics-and-nation/shivakumar-says-time-will-answer-on-cm-question/articleshow/128025039.cms",
+      "pubDate": "2026-02-07 07:41:26",
+      "source": "Economic Times"
+    },
     {
       "title": "India-US trade deal: FY27 textile, apparel exports to grow in double digits",
       "link": "https://www.business-standard.com/industry/news/textile-apparel-exports-to-us-seen-rising-in-double-digits-in-fy27-126020700492_1.html",
@@ -9,10 +33,11 @@
       "source": "Business Standard"
     },
     {
-      "title": "Gangster Pholriwal booked for AAP politician murder",
-      "link": "https://economictimes.indiatimes.com/news/politics-and-nation/aap-leaders-daylight-murder-gangster-joga-pholriwal-among-two-booked/articleshow/128024282.cms",
-      "pubDate": "2026-02-07 07:16:41",
-      "source": "Economic Times"
+      "title": "$40 billion blunder! South Korean crypto exchange accidentally sent 6,20,000 Bitcoins to users — Here's what happened",
+      "link": "https://www.livemint.com/companies/news/bithumb-south-korea-crypto-exchange-40-billion-blunder-accident-sent-promotion-customers-users-620000-bitcoins-selloff-11770444084816.html",
+      "pubDate": "2026-02-07 07:18:55",
+      "description": "South Korean cryptocurrency exchange Bithumb apologised after it mistakenly transferred over $40 billion worth of bitcoins to users as part of a promotion event. Almost all tokens have been recovered ",
+      "source": "Livemint"
     },
     {
       "title": "India-US trade deal: Boost seen for energy, minerals imports over 5 yrs",
@@ -35,12 +60,6 @@
       "source": "Business Standard"
     },
     {
-      "title": "RoKo may get demoted in BCCI contracts shake-up",
-      "link": "https://economictimes.indiatimes.com/news/sports/virat-kohli-rohit-sharma-may-get-demoted-to-grade-b-category-in-bcci-contracts-shake-up/articleshow/128023405.cms",
-      "pubDate": "2026-02-07 06:46:39",
-      "source": "Economic Times"
-    },
-    {
       "title": "India-US trade deal: DDGS duty cuts raise concerns, less so for soybean oil",
       "link": "https://www.business-standard.com/economy/news/india-us-trade-deal-duty-cuts-on-ddgs-soybean-oil-raise-concerns-126020700387_1.html",
       "pubDate": "2026-02-07 06:37:19",
@@ -48,28 +67,17 @@
       "source": "Business Standard"
     },
     {
-      "title": "India–US deal promises cheaper US food imports",
-      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/from-wine-to-walnuts-indiaus-trade-deal-set-to-make-american-imports-cheaper/articleshow/128022912.cms",
-      "pubDate": "2026-02-07 06:25:48",
+      "title": "Reliance acquires majority stake in Goodness Group",
+      "link": "https://economictimes.indiatimes.com/industry/cons-products/fmcg/reliance-consumer-products-acquires-majority-stake-in-australias-goodness-group-founder-of-nexba/articleshow/128022303.cms",
+      "pubDate": "2026-02-07 06:02:06",
       "source": "Economic Times"
     },
     {
-      "title": "IDBI stake sale: Kotak Mahindra Bank's response",
-      "link": "https://economictimes.indiatimes.com/industry/banking/finance/banking/kotak-mahindra-bank-clarifies-it-has-not-submitted-financial-bid-for-idbi-bank-stake/articleshow/128022682.cms",
-      "pubDate": "2026-02-07 06:19:46",
-      "source": "Economic Times"
-    },
-    {
-      "title": "Mahayuti picks candidates for mayor &amp;amp; deputy posts",
-      "link": "https://economictimes.indiatimes.com/news/politics-and-nation/bjp-names-ritu-tawde-as-mumbai-mayor-candidate-shiv-sena-picks-sanjay-ghadi-for-deputy-mayor-post/articleshow/128022701.cms",
-      "pubDate": "2026-02-07 06:15:02",
-      "source": "Economic Times"
-    },
-    {
-      "title": "India U-19 WC win: BCCI announces ₹7.5 cr reward",
-      "link": "https://economictimes.indiatimes.com/news/sports/india-u-19-world-cup-win-bcci-announces-7-5-cr-reward/articleshow/128022335.cms",
-      "pubDate": "2026-02-07 06:06:01",
-      "source": "Economic Times"
+      "title": "Air India unveils ‘The Maharaja Lounge’ at Delhi airport's T3: Check eligibility, amenities, First Class section photos",
+      "link": "https://www.livemint.com/companies/news/air-india-unveils-maharaja-lounge-delhi-airport-t3-check-eligibility-amenities-first-class-guest-business-section-photos-11770440288815.html",
+      "pubDate": "2026-02-07 06:00:16",
+      "description": "Air India opened its first flagship ‘The Maharaja Lounge’ at Delhi airport's Terminal 3. Here's a look at the Business and First-Class sections for guests, amenities and services, and eligibility for ",
+      "source": "Livemint"
     },
     {
       "title": "Trade pact opens $30 trn US market; safeguards key sectors, farmers: Goyal",
@@ -86,17 +94,23 @@
       "source": "Business Standard"
     },
     {
+      "title": "Drugs to aircraft parts, what India gets under US deal",
+      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/from-drugs-to-aircraft-parts-what-india-gets-under-the-500-billion-us-trade-deal/articleshow/128018423.cms",
+      "pubDate": "2026-02-07 03:29:21",
+      "source": "Economic Times"
+    },
+    {
+      "title": "India gets duty free access to US aircraft under BTA",
+      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/india-us-trade-deal-india-gets-duty-free-access-to-us-aircraft-aircraft-parts-under-bta/articleshow/128017563.cms",
+      "pubDate": "2026-02-07 02:48:20",
+      "source": "Economic Times"
+    },
+    {
       "title": "US lifts extra 25% tariffs on Indian goods linked to Russian oil buys",
       "link": "https://www.business-standard.com/economy/news/us-lifts-extra-25-percent-tariffs-indian-goods-russian-oil-buys-126020700096_1.html",
       "pubDate": "2026-02-07 01:37:24",
       "description": "The step is part of a wider agreement to ease trade tensions, under which India plans to buy about $500 billion worth of US goods, including energy, aircraft and technology, over the next five years",
       "source": "Business Standard"
-    },
-    {
-      "title": "US lifts 25% tariff on Indian goods linked to Russia oil",
-      "link": "https://economictimes.indiatimes.com/news/economy/foreign-trade/us-lifts-25-tariff-on-indian-goods-linked-to-russia-oil-purchases/articleshow/128015846.cms",
-      "pubDate": "2026-02-07 01:27:49",
-      "source": "Economic Times"
     },
     {
       "title": "India–US landmark trade deal: What’s in the details",
@@ -185,20 +199,6 @@
       "link": "https://www.livemint.com/companies/news/why-physicswallah-is-betting-on-schools-to-fix-what-coaching-cant-11770380801152.html",
       "pubDate": "2026-02-06 13:50:27",
       "description": "After building a test-prep empire, edtech firm PhysicsWallah is pushing into K–12, arguing that earlier intervention will deliver stronger long-term outcomes.",
-      "source": "Livemint"
-    },
-    {
-      "title": "Maruti loses edge as govt scraps small car concession in new fuel-emission norms: Why did the govt tweak the rules?",
-      "link": "https://www.livemint.com/companies/news/maruti-loses-edge-as-govt-scraps-small-car-concession-in-new-fuel-emission-norms-why-did-the-govt-tweak-the-rules-11770378404651.html",
-      "pubDate": "2026-02-06 13:05:22",
-      "description": "India has scrapped a proposed concession for small cars under new fuel-efficiency rules, impacting Maruti Suzuki, which dominates the market. This development comes after the proposal received pushbac",
-      "source": "Livemint"
-    },
-    {
-      "title": "Kaynes posts 11% sequential revenue drop on delayed railway order, cuts FY26 target",
-      "link": "https://www.livemint.com/companies/company-results/kaynes-revenue-drops-11-on-delayed-railway-order-slashing-fiscal-target-11770376515614.html",
-      "pubDate": "2026-02-06 12:55:08",
-      "description": "Kaynes Technology reported a sequential revenue and profit decline, trims FY26 guidance and flags delayed Kavach execution for Indian Railways, even as rival Syrma SGS reports growth and turns cash-fl",
       "source": "Livemint"
     }
   ]
