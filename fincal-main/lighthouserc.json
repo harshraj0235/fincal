@@ -1,0 +1,21 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "https://moneycal.in/",
+        "https://moneycal.in/calculators/emi-calculator",
+        "https://moneycal.in/blog"
+      ],
+      "numberOfRuns": 3,
+      "settings": { "chromeFlags": "--no-sandbox" }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", { "minScore": 0.9 }]
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+} 

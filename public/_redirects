@@ -1,0 +1,104 @@
+
+# Netlify Redirects Configuration
+# Redirect old/broken URLs to correct pages (301 so Google indexes destination)
+
+# Help, Contact, Excel
+/feedback                                    /contact-us                              301
+/help                                        /help-center                             301
+/contact                                     /contact-us                               301
+/excel                                       /excel-tools                              301
+
+# Real Estate Tools redirects
+/real-estate/*                               /finance-tools                           301
+/real-estate-tools                           /finance-tools                           301
+
+# Cryptocurrency redirects
+/cryptocurrency/*                            /crypto                                  301
+
+# Banking redirects
+/banking/*                                   /bank-tools                              301
+/banking/fd-calculator                       /calculators/fd-calculator               301
+/banking/bank-account-comparison             /bank-tools                              301
+/banking/upi-calculator                      /bank-tools                              301
+
+# Hindi language redirects (301 to English so Google indexes destination)
+/hi                                          /                                         301
+/hi/*                                        /:splat                                  301
+/hi/calculators/*                            /calculators/:splat                      301
+/hi/blog/*                                   /blog/:splat                             301
+
+# Finance categories redirects
+/finance-categories/*                        /finance-tools                           301
+
+# Loan tools redirects
+/loan-tools/*                                /calculators/:splat                      301
+/loan-tools/loan-affordability-calculator    /calculators/loan-affordability-calculator  301
+
+# Business tools redirects
+/business-tools                              /corporate-finance                       301
+/payroll-tools                               /corporate-finance                       301
+/accounting-tools                            /corporate-finance                       301
+
+# Calculator category redirects
+/calculators/personal-finance                /finance-tools                           301
+/calculators/banking-calculators             /bank-tools                              301
+/calculators/business-calculators            /corporate-finance                       301
+/calculators/finance-banking-tools           /finance-tools                           301
+
+# LCM HCF redirect
+/lcm-hcf-calculator                          /calculators/lcm-hcf-calculator          301
+
+# Lumpsum calculator redirect
+/calculators/lumpsum-calculator              /calculators/sip-calculator              301
+
+# Loan app directory
+/loan-app-directory                          /bank-tools                              301
+/loan-app-directory.html                     /bank-tools                              301
+
+# AMP redirects
+/amp-index.html                              /                                        301
+/amp-*.html                                  /                                        301
+
+# Stock market lesson redirects
+/stock-market/*/lesson/*                     /financial-education                     301
+/stock-market/trading-strategies             /financial-education                     301
+/stock-market/basics                         /financial-education                     301
+/stock-market/risk-management                /financial-education                     301
+
+# Financial education redirects
+/financial-education/*                       /financial-education                     301
+
+# Market analysis redirects
+/market-analysis/*                           /finance-tools                           301
+
+# Astro finance redirects
+/astro-finance-insights                      /astro-finance                           301
+
+# Invoice tools redirects
+/invoicing-receivables                       /corporate-finance                       301
+/invoicing-tools/*                           /corporate-finance                       301
+
+# Excel templates (if not serving actual files)
+/excel-templates/*.xlsx                      /excel-tools                             301
+
+# Insurance redirects
+/insurance-tools/car-insurance-calculator    /insurance-tools                         301
+/insurance-tools/health-insurance-estimator  /insurance-tools                         301
+/insurance-tools/two-wheeler-tracker         /insurance-tools                         301
+
+# Tools redirects
+/tools/sales-tracker                         /corporate-finance                       301
+/tools/feedback-form                         /contact-us                              301
+
+# Financial Navigator
+/financial-navigator                         /tools                                   301
+
+# HTTP to HTTPS redirect
+http://moneycal.in/*                         https://moneycal.in/:splat               301
+
+# Soft 404 fix: redirect duplicate path /moneycal.in/* to correct URL (e.g. /moneycal.in/learn -> /learn)
+/moneycal.in/*                               /:splat                                 301
+
+# SPA fallback: explicit index first to avoid loop warning, then catch-all
+/index.html                                  /index.html                              200
+/*                                           /index.html                              200

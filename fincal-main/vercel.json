@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/moneycal.in/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/moneycal.in",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}

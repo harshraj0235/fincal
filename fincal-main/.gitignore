@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env
+# Sitemap backups (auto-generated, no need to commit)
+public/sitemap-backup-*.xml
+sitemap-backup-*.xml
+# Temporary URL extraction files (generated during build)
+public/main-hub-pages.txt
+public/all-urls-extracted.txt
+# Sitemap backups (auto-generated, no need to commit)
+public/sitemap-backup-*.xml
+sitemap-backup-*.xml
+
+# Temporary URL extraction files (generated during build)
+public/main-hub-pages.txt
+public/all-urls-extracted.txt

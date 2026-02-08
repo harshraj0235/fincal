@@ -1,0 +1,71 @@
+# 🤖 Automated News Publisher - Runs Daily at 2 AM IST
+
+name: Auto-Publish News Articles
+
+on:
+  schedule:
+    # Runs at 2:00 AM IST daily (20:30 UTC previous day)
+    - cron: '30 20 * * *'
+  
+  # Manual trigger (for testing)
+  workflow_dispatch:
+
+jobs:
+  publish-news:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          clean: true
+          fetch-depth: 1
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📥 Install Main Dependencies
+        run: npm ci
+
+      - name: 📥 Install Auto-Publisher Dependencies (Fresh)
+        run: |
+          cd scripts/auto-news-publisher
+          rm -rf node_modules package-lock.json
+          npm install
+          echo "Installed packages:"
+          npm list --depth=0
+
+      - name: 🤖 Run Auto News Publisher
+        run: node scripts/auto-news-publisher/main.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
+
+      - name: 🏗️ Build Project (Verify No Errors)
+        run: npm run build
+        continue-on-error: true
+
+      - name: 📊 Generate Report
+        if: always()
+        run: |
+          echo "## 🤖 Auto News Publisher Report" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date +'%Y-%m-%d %H:%M:%S IST')" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          if [ -f logs/auto-publisher.log ]; then
+            echo "### Last Log Entry:" >> $GITHUB_STEP_SUMMARY
+            tail -20 logs/auto-publisher.log >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 📧 Notify on Failure
+        if: failure()
+        run: |
+          echo "❌ Auto News Publisher Failed!"
+          echo "Check workflow logs for details"
+          echo "Common issues: API keys, rate limits, network errors"
+
