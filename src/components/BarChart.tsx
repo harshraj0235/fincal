@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import { getD3 } from '../lib/clientOnlyLibs';
 
 interface BarChartProps {
   data: any[];
@@ -24,8 +24,10 @@ export const BarChart: React.FC<BarChartProps> = ({
   
   useEffect(() => {
     if (!svgRef.current || !data.length) return;
-    
-    const svg = d3.select(svgRef.current);
+    let cancelled = false;
+    getD3().then((d3) => {
+      if (cancelled || !svgRef.current) return;
+      const svg = d3.select(svgRef.current);
     svg.selectAll('*').remove();
     
     const width = svgRef.current.clientWidth;
@@ -146,7 +148,8 @@ export const BarChart: React.FC<BarChartProps> = ({
         .duration(600)
         .style('opacity', 1);
     });
-    
+    });
+    return () => { cancelled = true; };
   }, [data, xKey, yKey, color, xLabel, yLabel, formatY]);
   
   return (

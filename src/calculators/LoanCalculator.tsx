@@ -19,32 +19,10 @@ import {
   Info,
   CheckCircle2
 } from 'lucide-react';
-import { Pie, Line } from 'react-chartjs-2';
-import { 
-  Chart as ChartJS, 
-  ArcElement, 
-  Tooltip, 
-  Legend, 
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title
-} from 'chart.js';
 import { Helmet } from 'react-helmet-async';
+import { LoanCalculatorCharts } from './LoanCalculatorCharts';
 import { getPdfLibs } from '../lib/pdfExportClient';
 import { getXlsx } from '../lib/clientOnlyLibs';
-
-ChartJS.register(
-  ArcElement, 
-  Tooltip, 
-  Legend,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title
-);
 
 interface AmortizationRow {
   month: number;
@@ -824,52 +802,7 @@ export const LoanCalculator: React.FC = () => {
                 <PieChartIcon className="w-6 h-6 mr-2 text-blue-600" />
                 Visual Analysis
               </h3>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-700 mb-3 text-center">
-                    Payment Breakdown
-                  </h4>
-                  <Pie 
-                    data={pieChartData} 
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: true,
-                      plugins: {
-                        legend: {
-                          position: 'bottom'
-                        }
-                      }
-                    }}
-                  />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-700 mb-3 text-center">
-                    Loan Repayment Progress
-                  </h4>
-                  <Line 
-                    data={lineChartData}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: true,
-                      plugins: {
-                        legend: {
-                          position: 'bottom'
-                        }
-                      },
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          ticks: {
-                            callback: function(value) {
-                              return '₹' + (Number(value) / 100000).toFixed(0) + 'L';
-                            }
-                          }
-                        }
-                      }
-                    }}
-                  />
-                </div>
-              </div>
+              <LoanCalculatorCharts pieChartData={pieChartData} lineChartData={lineChartData} />
             </div>
 
             {/* Amortization Schedule */}

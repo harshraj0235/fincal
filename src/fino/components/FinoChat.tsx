@@ -31,33 +31,8 @@ import {
   ThumbsUp,
   ThumbsDown
 } from 'lucide-react';
-import { Line, Bar, Doughnut } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement,
-} from 'chart.js';
+import { getChartJs } from '../../lib/clientOnlyLibs';
 import { queryFino, getPopularQueries, getMarketStatus, FinoQueryRequest } from '../services/finoApi';
-
-// Register Chart.js components
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement
-);
 
 interface Message {
   id: string;
@@ -76,6 +51,7 @@ interface FinoChatProps {
 
 const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [ChartLib, setChartLib] = useState<Awaited<ReturnType<typeof getChartJs>> | null>(null);
   
   const [inputValue, setInputValue] = useState('');
   const [isListening, setIsListening] = useState(false);
@@ -90,6 +66,23 @@ const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const recognitionRef = useRef<any>(null);
   const synthRef = useRef<SpeechSynthesis>(typeof window !== 'undefined' ? window.speechSynthesis : null);
+
+  useEffect(() => {
+    getChartJs().then((lib) => {
+      lib.ChartJS.register(
+        lib.CategoryScale,
+        lib.LinearScale,
+        lib.PointElement,
+        lib.LineElement,
+        lib.BarElement,
+        lib.Title,
+        lib.Tooltip,
+        lib.Legend,
+        lib.ArcElement
+      );
+      setChartLib(lib);
+    });
+  }, []);
 
   // Load chat history and settings
   useEffect(() => {
@@ -257,15 +250,15 @@ const FinoChat: React.FC<FinoChatProps> = ({ className = '' }) => {
   };
 
   const renderChart = (chartData: any) => {
-    if (!chartData) return null;
+    if (!chartData || !ChartLib) return <div className="text-gray-500 text-sm py-2">Loading chart...</div>;
     
     switch (chartData.type) {
       case 'line':
-        return <Line data={chartData.data} options={chartData.options} />;
+        return <ChartLib.Line data={chartData.data} options={chartData.options} />;
       case 'bar':
-        return <Bar data={chartData.data} options={chartData.options} />;
+        return <ChartLib.Bar data={chartData.data} options={chartData.options} />;
       case 'doughnut':
-        return <Doughnut data={chartData.data} options={chartData.options} />;
+        return <ChartLib.Doughnut data={chartData.data} options={chartData.options} />;
       default:
         return null;
     }

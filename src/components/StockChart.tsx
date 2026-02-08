@@ -1,29 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Line } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  Filler
-} from 'chart.js';
+import { getChartJs } from '../lib/clientOnlyLibs';
 import { TrendingUp, TrendingDown, Calendar, DollarSign } from 'lucide-react';
-
-// Register Chart.js components
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  Filler
-);
 
 interface StockChartProps {
   symbol: string;
@@ -46,8 +23,25 @@ const StockChart: React.FC<StockChartProps> = ({
 }) => {
   const [timeframe, setTimeframe] = useState<'1D' | '1W' | '1M' | '3M' | '1Y'>('1M');
   const [showVolume, setShowVolume] = useState(false);
+  const [ChartLib, setChartLib] = useState<Awaited<ReturnType<typeof getChartJs>> | null>(null);
 
-  const chartRef = useRef<ChartJS>(null);
+  const chartRef = useRef<any>(null);
+
+  useEffect(() => {
+    getChartJs().then((lib) => {
+      lib.ChartJS.register(
+        lib.CategoryScale,
+        lib.LinearScale,
+        lib.PointElement,
+        lib.LineElement,
+        lib.Title,
+        lib.Tooltip,
+        lib.Legend,
+        lib.Filler
+      );
+      setChartLib(lib);
+    });
+  }, []);
 
   const isPositive = changePercent >= 0;
   const chartColor = isPositive ? '#10B981' : '#EF4444';
@@ -186,6 +180,14 @@ const StockChart: React.FC<StockChartProps> = ({
     { label: '1Y', value: '1Y' },
   ];
 
+  if (!ChartLib && !isLoading) {
+    return (
+      <div className="bg-white rounded-2xl shadow-lg p-6">
+        <div className="h-64 flex items-center justify-center text-gray-500">Loading chart...</div>
+      </div>
+    );
+  }
+
   if (isLoading) {
     return (
       <div className="bg-white rounded-2xl shadow-lg p-6">
@@ -241,7 +243,7 @@ const StockChart: React.FC<StockChartProps> = ({
 
       {/* Chart */}
       <div className="h-64 mb-6">
-        <Line data={chartData} options={options} ref={chartRef} />
+        {ChartLib && <ChartLib.Line data={chartData} options={options} ref={chartRef} />}
       </div>
 
       {/* Timeframe Selector */}

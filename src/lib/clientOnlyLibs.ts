@@ -59,6 +59,7 @@ export async function getChartJs() {
     LineElement: chartJs.LineElement,
     Title: chartJs.Title,
     BarElement: chartJs.BarElement,
+    Filler: chartJs.Filler,
     ...reactChartJs,
   };
 }

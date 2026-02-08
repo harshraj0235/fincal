@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import { getD3 } from '../lib/clientOnlyLibs';
 
 interface ChartData {
   name: string;
@@ -17,8 +17,10 @@ export const ResultChart: React.FC<ResultChartProps> = ({ data, centerText }) =>
   
   useEffect(() => {
     if (!svgRef.current || !data.length) return;
-    
-    const svg = d3.select(svgRef.current);
+    let cancelled = false;
+    getD3().then((d3) => {
+      if (cancelled || !svgRef.current) return;
+      const svg = d3.select(svgRef.current);
     svg.selectAll('*').remove();
     
     const width = svgRef.current.clientWidth;
@@ -99,7 +101,8 @@ export const ResultChart: React.FC<ResultChartProps> = ({ data, centerText }) =>
       .attr('y', 10)
       .style('fill', '#64748b')
       .text(d => d.name);
-    
+    });
+    return () => { cancelled = true; };
   }, [data, centerText]);
   
   return (
