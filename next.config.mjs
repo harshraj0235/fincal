@@ -23,33 +23,34 @@ const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   transpilePackages: [],
   // Keep heavy client-only packages out of server bundle (Cloudflare 25 MiB limit)
-  serverExternalPackages: ['xlsx', 'firebase', 'chart.js', 'd3', 'recharts', 'html2canvas', 'jspdf'],
+  // Note: recharts omitted - conflicts with transpilePackages
+  serverExternalPackages: ['xlsx', 'firebase', 'chart.js', 'd3', 'html2canvas', 'jspdf'],
+  // Exclude heavy client-only deps from server bundle (moved from experimental in Next 15)
+  outputFileTracingExcludes: {
+    '*': [
+      'node_modules/@ampproject/**',
+      'node_modules/@swc/**',
+      'node_modules/eslint/**',
+      'node_modules/typescript/**',
+      'node_modules/@types/**',
+      'node_modules/xlsx/**',
+      'node_modules/firebase/**',
+      'node_modules/@firebase/**',
+      'node_modules/chart.js/**',
+      'node_modules/react-chartjs-2/**',
+      'node_modules/d3/**',
+      'node_modules/d3-*/**',
+      'node_modules/recharts/**',
+      'node_modules/html2canvas/**',
+      'node_modules/jspdf/**',
+      'node_modules/canvas/**',
+      'node_modules/framer-motion/**',
+      'node_modules/react-icons/**',
+    ],
+  },
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'lucide-react'],
     webpackMemoryOptimizations: true, // Reduce peak memory (Cloudflare Pages OOM)
-    // Exclude heavy client-only deps from server bundle (Cloudflare 25 MiB limit)
-    outputFileTracingExcludes: {
-      '*': [
-        'node_modules/@ampproject/**',
-        'node_modules/@swc/**',
-        'node_modules/eslint/**',
-        'node_modules/typescript/**',
-        'node_modules/@types/**',
-        'node_modules/xlsx/**',
-        'node_modules/firebase/**',
-        'node_modules/@firebase/**',
-        'node_modules/chart.js/**',
-        'node_modules/react-chartjs-2/**',
-        'node_modules/d3/**',
-        'node_modules/d3-*/**',
-        'node_modules/recharts/**',
-        'node_modules/html2canvas/**',
-        'node_modules/jspdf/**',
-        'node_modules/canvas/**',
-        'node_modules/framer-motion/**',
-        'node_modules/react-icons/**',
-      ],
-    },
   },
   // CSP set in public/_headers (object-src 'none' only) to avoid merging with other CSP
   // Note: Avoid overriding react/react-dom aliases - they can cause "cache is not a function"
