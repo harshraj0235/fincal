@@ -968,3 +968,8 @@ const BihuDateCalendar: React.FC = () => {
 
 export default BihuDateCalendar;
 
+/** Force SSR - avoid prerender (classList.add, useContext null) on Cloudflare. */
+export async function getServerSideProps() {
+  return { props: {} };
+}
+
