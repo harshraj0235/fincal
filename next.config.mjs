@@ -23,7 +23,7 @@ const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   transpilePackages: [],
   // Keep heavy client-only packages out of server bundle (Cloudflare 25 MiB limit)
-  serverExternalPackages: ['xlsx', 'firebase', 'chart.js', 'd3', 'recharts', 'html2canvas', 'jspdf'],
+  serverExternalPackages: ['xlsx', 'firebase', 'chart.js', 'd3', 'html2canvas', 'jspdf'],
   // Exclude heavy client-only deps from server bundle (moved from experimental in Next 15)
   outputFileTracingExcludes: {
     '*': [
