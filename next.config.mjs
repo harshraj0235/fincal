@@ -32,12 +32,18 @@ const nextConfig = {
   webpack: (config) => {
     const root = process.cwd();
     const nm = path.join(root, 'node_modules');
+    const src = path.join(root, 'src');
     const base = config.resolve.alias || {};
-    // Only add scheduler if needed for OOM; do NOT alias react/react-dom
+    // @/ alias for Cloudflare build (module resolution)
+    const aliases = {
+      ...base,
+      '@': src,
+    };
     try {
       const schedulerPath = path.join(nm, 'scheduler');
-      config.resolve.alias = { ...base, scheduler: schedulerPath };
+      aliases.scheduler = schedulerPath;
     } catch (_) {}
+    config.resolve.alias = aliases;
     return config;
   },
 };
