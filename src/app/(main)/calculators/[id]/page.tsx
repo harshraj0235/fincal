@@ -50,20 +50,57 @@ export default async function CalculatorSSGPage({ params }: Props) {
   const { id } = await params;
   const calc = getCalculatorById(id);
   if (!calc) notFound();
+  const related = (calc.relatedCalculators || []).slice(0, 4);
+  const relatedCalcs = related
+    .map((rid) => getCalculatorById(rid))
+    .filter((c): c is NonNullable<typeof c> => !!c);
   return (
     <>
       <article className="container mx-auto px-4 py-4 max-w-4xl" aria-label="Calculator">
-        <header className="mb-4">
-          <h1 className="text-2xl font-bold text-gray-900">{calc.name}</h1>
-          <p className="text-gray-700 mt-2">{calc.description}</p>
+        <header className="mb-6">
+          <h1 className="text-3xl font-bold text-gray-900">{calc.name}</h1>
+          <p className="text-lg text-gray-700 mt-2">{calc.description}</p>
           {calc.info && calc.info.length > 0 && (
-            <ul className="mt-2 list-disc pl-6 text-gray-600 text-sm space-y-1">
-              {calc.info.slice(0, 3).map((line, i) => (
-                <li key={i}>{line}</li>
-              ))}
-            </ul>
+            <section className="mt-4">
+              <h2 className="text-lg font-semibold text-gray-900 mb-2">How to use</h2>
+              <ul className="list-disc pl-6 text-gray-600 space-y-1">
+                {calc.info.map((line, i) => (
+                  <li key={i}>{line}</li>
+                ))}
+              </ul>
+            </section>
           )}
         </header>
+        {calc.faqs && calc.faqs.length > 0 && (
+          <section className="mt-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">FAQs</h2>
+            <dl className="space-y-4">
+              {calc.faqs.map((faq, i) => (
+                <div key={i} className="border-l-4 border-blue-200 pl-4">
+                  <dt className="font-semibold text-gray-900">{faq.question}</dt>
+                  <dd className="mt-1 text-gray-600">{faq.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
+        {relatedCalcs.length > 0 && (
+          <section className="mt-8 pt-6 border-t border-gray-200">
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">Related calculators</h2>
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {relatedCalcs.map((rc) => (
+                <li key={rc.id}>
+                  <a
+                    href={`/calculators/${rc.id}`}
+                    className="text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    {rc.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </article>
       <AppShell pathname={`/calculators/${id}`} skipLayout />
     </>

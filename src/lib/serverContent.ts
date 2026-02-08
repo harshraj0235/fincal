@@ -8,6 +8,8 @@ import { contentRegistry } from '../cms-content/contentRegistry';
 import { getArticleContent } from '../cms-content/articleLoader';
 import { getPlainArticleContent } from '../cms-content/plainArticleLoader';
 import type { NewsGuideSection } from '../components/NewsGuideTemplate';
+import { getLearnLesson } from './learnRegistry';
+import { getToolMeta } from './toolsRegistry';
 
 export interface NewsArticleServerContent {
   type: 'news-article';
@@ -29,11 +31,22 @@ export interface LearnLessonServerContent {
   type: 'learn-lesson';
   title: string;
   category: string;
+  categoryName?: string;
   slug: string;
   description: string;
+  relatedCalculators?: string[];
+  relatedLessons?: string[];
 }
 
-export type ServerContent = NewsArticleServerContent | LearnLessonServerContent;
+export interface ToolServerContent {
+  type: 'tool';
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+}
+
+export type ServerContent = NewsArticleServerContent | LearnLessonServerContent | ToolServerContent;
 
 /**
  * Resolve server content for a given pathname.
@@ -72,22 +85,18 @@ export function getServerContentForPath(pathname: string): ServerContent | null 
 
   // Learn lesson: /learn/:category/:lessonSlug (e.g. /learn/business-loans/government-schemes)
   if (first === 'learn' && second && third) {
-    try {
-      const { loanCategories } = require('../data/learn/loansLessons');
-      for (const cat of loanCategories || []) {
-        const lesson = cat.lessons?.find((l: { slug?: string; title?: string }) => l.slug === third);
-        if (lesson) {
-          return {
-            type: 'learn-lesson',
-            title: lesson.title || third,
-            category: second,
-            slug: third,
-            description: (lesson as { description?: string }).description || (lesson as { title?: string }).title || '',
-          };
-        }
-      }
-    } catch {
-      /* ignore */
+    const lesson = getLearnLesson(second, third);
+    if (lesson) {
+      return {
+        type: 'learn-lesson',
+        title: lesson.title,
+        category: lesson.category,
+        categoryName: lesson.categoryName,
+        slug: lesson.slug,
+        description: lesson.description,
+        relatedCalculators: lesson.relatedCalculators,
+        relatedLessons: lesson.relatedLessons,
+      };
     }
     const title = third.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     return {
@@ -96,6 +105,19 @@ export function getServerContentForPath(pathname: string): ServerContent | null 
       category: second,
       slug: third,
       description: `Learn about ${title} - practical financial education for India.`,
+    };
+  }
+
+  // Tools: /tools, /finance-tools, /tax-tools, /gst-tools, /insurance-tools + optional slug
+  const toolCategories = ['tools', 'finance-tools', 'tax-tools', 'gst-tools', 'insurance-tools'];
+  if (toolCategories.includes(first) && second) {
+    const meta = getToolMeta(first, second);
+    return {
+      type: 'tool',
+      slug: meta.slug,
+      title: meta.title,
+      description: meta.description,
+      category: meta.category,
     };
   }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import AppShell from '@/app/AppShell';
 import { getServerContentForPath } from '@/lib/serverContent';
+import { getCategoryDescription } from '@/lib/toolsRegistry';
 
 /** Finance Tools: ISR 1 hour */
 export const revalidate = 3600;
@@ -15,10 +16,20 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { segments } = await params;
   const pathname = '/finance-tools' + (segments?.length ? '/' + segments.join('/') : '');
+  const serverContent = getServerContentForPath(pathname);
+  const isTool = serverContent?.type === 'tool';
+  const title = isTool
+    ? `${(serverContent as { title: string }).title} | Finance Tools | MoneyCal India`
+    : segments?.length
+      ? `Finance Tools – ${segments.join(' ')} | MoneyCal`
+      : 'Finance Tools | MoneyCal India';
+  const description = isTool
+    ? (serverContent as { description: string }).description
+    : getCategoryDescription('finance-tools');
   return {
-    title: segments?.length ? `Finance Tools – ${segments.join(' ')} | MoneyCal` : 'Finance Tools | MoneyCal India',
-    description: 'Mutual fund analysis, SIP vs lumpsum, expense ratio impact, portfolio tools.',
-    openGraph: { url: BASE + pathname },
+    title,
+    description,
+    openGraph: { url: BASE + pathname, title, description },
   };
 }
 
@@ -26,11 +37,23 @@ export default async function FinanceToolsPage({ params }: Props) {
   const { segments } = await params;
   const pathname = '/finance-tools' + (segments?.length ? '/' + segments.join('/') : '');
   const serverContent = getServerContentForPath(pathname);
+  const isTool = serverContent?.type === 'tool';
+  const tool = isTool ? (serverContent as { title: string; description: string }) : null;
+
   return (
     <>
       <main className="container mx-auto px-4 py-4 max-w-4xl" aria-label="Finance Tools">
-        <h1 className="text-2xl font-bold text-gray-900">Finance Tools</h1>
-        <p className="text-gray-700 mt-2">Mutual fund analysis, SIP vs lumpsum, expense ratio impact, portfolio tools.</p>
+        {tool ? (
+          <article>
+            <h1 className="text-3xl font-bold text-gray-900">{tool.title}</h1>
+            <p className="text-lg text-gray-700 mt-2">{tool.description}</p>
+          </article>
+        ) : (
+          <>
+            <h1 className="text-3xl font-bold text-gray-900">Finance Tools</h1>
+            <p className="text-lg text-gray-700 mt-2">{getCategoryDescription('finance-tools')}</p>
+          </>
+        )}
       </main>
       <AppShell pathname={pathname} skipLayout serverContent={serverContent} />
     </>
