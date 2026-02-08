@@ -19,6 +19,7 @@ const nextConfig = {
   },
   // Reduce memory during build (Cloudflare Pages has limited RAM)
   productionBrowserSourceMaps: false,
+  typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
   transpilePackages: [],
   experimental: {

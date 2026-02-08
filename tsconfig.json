@@ -1,6 +1,6 @@
 {
   "files": [],
-  "exclude":["EXAMPLE_CALCULATOR_IMPLEMENTATION.tsx"],"references": [
+  "exclude":["EXAMPLE_CALCULATOR_IMPLEMENTATION.tsx","OLD_LearnHub_BACKUP_Oct31_2025.tsx"],"references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ]
