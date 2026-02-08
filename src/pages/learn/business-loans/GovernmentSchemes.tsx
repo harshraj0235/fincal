@@ -131,5 +131,5 @@ const GovernmentSchemes: React.FC = () => {
   );
 };
 
-export default EMICalculator;
+export default GovernmentSchemes;
 

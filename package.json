@@ -22,6 +22,7 @@
     "generate-crypto": "node crypto-blog-generator.cjs",
     "generate-manual": "node manual-blog-generator.cjs",
     "find-pages-no-default": "node scripts/find-pages-without-default.cjs",
+    "find-mismatched-exports": "node scripts/find-mismatched-exports.cjs",
     "generate-sitemaps": "node scripts/build-complete-learn-urls.cjs && node scripts/extract-all-routes-from-code.cjs && node scripts/merge-all-urls.cjs && node scripts/generate-news-sitemap-from-registry.cjs && node scripts/generate-sitemaps-production.cjs",
     "generate-news-sitemap": "node scripts/generate-news-sitemap-from-registry.cjs",
     "fetch-trending-rss": "node scripts/fetch-trending-rss.cjs",
