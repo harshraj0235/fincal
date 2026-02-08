@@ -17,9 +17,12 @@ const nextConfig = {
   images: {
     unoptimized: true, // Cloudflare: no Next Image optimization; use unoptimized or add IMAGES binding later
   },
+  // Reduce memory during build (Cloudflare Pages has limited RAM)
+  productionBrowserSourceMaps: false,
   transpilePackages: [],
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'lucide-react'],
+    webpackMemoryOptimizations: true, // Reduce peak memory (Cloudflare Pages OOM)
   },
   // CSP set in public/_headers (object-src 'none' only) to avoid merging with other CSP
   webpack: (config) => {

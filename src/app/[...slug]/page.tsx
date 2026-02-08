@@ -16,28 +16,31 @@ export const revalidate = 3600;
 /** Allow paths not in generateStaticParams to be generated on-demand (Google can crawl them). */
 export const dynamicParams = true;
 
-/** SSG/ISR: pre-generate ALL news, ALL tools at build time. Blog is handled by app/blog and app/blog/[slug]. */
+/** Limit pre-rendered paths to avoid OOM on Cloudflare. Rest generated on-demand via dynamicParams. */
+const BUILD_LIMIT = { news: 30, tax: 12, finance: 15, gst: 8 };
+
+/** SSG/ISR: pre-generate news, tools at build time. Blog is handled by app/blog and app/blog/[slug]. */
 export async function generateStaticParams() {
   const params: { slug: string[] }[] = [];
 
-  // ALL news
+  // News (limit on CI to reduce memory)
   params.push({ slug: ['news'] });
   params.push({ slug: ['news', 'shorts'] });
-  contentRegistry.forEach((a) => {
+  contentRegistry.slice(0, BUILD_LIMIT.news).forEach((a) => {
     params.push({ slug: ['news', a.category, a.slug] });
   });
 
-  // ALL tax-tools
+  // Tax-tools
   params.push({ slug: ['tax-tools'] });
-  taxToolSlugs.forEach((s) => params.push({ slug: ['tax-tools', s] }));
+  taxToolSlugs.slice(0, BUILD_LIMIT.tax).forEach((s) => params.push({ slug: ['tax-tools', s] }));
 
-  // ALL finance-tools
+  // Finance-tools
   params.push({ slug: ['finance-tools'] });
-  financeToolSlugs.forEach((s) => params.push({ slug: ['finance-tools', s] }));
+  financeToolSlugs.slice(0, BUILD_LIMIT.finance).forEach((s) => params.push({ slug: ['finance-tools', s] }));
 
-  // ALL gst-tools
+  // GST-tools
   params.push({ slug: ['gst-tools'] });
-  gstToolSlugs.forEach((s) => params.push({ slug: ['gst-tools', s] }));
+  gstToolSlugs.slice(0, BUILD_LIMIT.gst).forEach((s) => params.push({ slug: ['gst-tools', s] }));
 
   // Calculator paths are SSG via app/calculators/[id]/page.tsx
 
