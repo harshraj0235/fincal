@@ -16,7 +16,8 @@ When editing pages or components, avoid these patterns that cause build failures
 - These are excluded in tsconfig.json/tsconfig.next.json. Do NOT remove them from exclude.
 
 ## 3. Not-found page
-- The custom `app/not-found.tsx` must stay minimal (no Layout/Header/Sidebar).
+- The custom `app/not-found.tsx` must stay minimal (no Layout/Header/Sidebar, no `next/link`).
+- Use plain `<a href="...">` instead of `<Link>` to avoid `cache is not a function` build error.
 - Main app routes live under `app/(main)/` so they get ClientLayoutWrapper. The not-found page does NOT use the heavy layout—this avoids "Failed to collect page data for /_not-found" during build.
 
 ## 4. Pages Router files (src/pages/)
