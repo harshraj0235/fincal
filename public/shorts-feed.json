@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-08T20:37:44.356Z",
+  "updatedAt": "2026-02-08T21:00:56.988Z",
   "items": [
     {
       "id": "feed-a1738cd0f637",
@@ -15,7 +15,7 @@
       ],
       "fullStoryLink": "https://www.bbc.co.uk/hindi/live/cgrzjjvyzwyt?at_medium=RSS&at_campaign=rss",
       "fullStoryPath": "https://www.bbc.co.uk/hindi/live/cgrzjjvyzwyt?at_medium=RSS&at_campaign=rss",
-      "datePublished": "2026-02-08T20:37:42.537Z",
+      "datePublished": "2026-02-08T21:00:54.623Z",
       "readTimeSeconds": 50,
       "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9b35/live/c0a61e00-050a-11f1-95ed-5b98410ce4f4.jpg",
       "source": "feed"
@@ -325,6 +325,25 @@
       "source": "feed"
     },
     {
+      "id": "feed-2aff9b9e5881",
+      "slug": "japan-election-pm-takaichi-strengthens-grip-with-sweeping-lower-house-victory-9e5881",
+      "category": "business",
+      "headline": "Japan election: PM Takaichi strengthens grip with sweeping lower house victory",
+      "whyItMatters": [
+        "Japan’s first female prime minister said she would push forward reforms while seeking opposition support This summary covers the key points. Visit the source for full details. For the full story and l"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "Japan’s first female prime minister said she would push forward reforms while seeking opposition support This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
+      ],
+      "fullStoryLink": "https://www.thehindubusinessline.com/news/world/japan-election-pm-takaichi-strengthens-grip-with-sweeping-lower-house-victory/article70608586.ece",
+      "fullStoryPath": "https://www.thehindubusinessline.com/news/world/japan-election-pm-takaichi-strengthens-grip-with-sweeping-lower-house-victory/article70608586.ece",
+      "datePublished": "2026-02-08 18:06:38",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
       "id": "feed-3b00467783b5",
       "slug": "we-dont-have-to-goyal-says-500-bn-figure-is-not-binding-us-import-commitment-7783b5",
       "category": "economy",
@@ -339,6 +358,82 @@
       "fullStoryLink": "https://timesofindia.indiatimes.com/business/india-business/we-dont-have-to-piyush-goyal-says-500-billion-figure-is-not-a-binding-us-import-commitment/articleshow/128079871.cms",
       "fullStoryPath": "https://timesofindia.indiatimes.com/business/india-business/we-dont-have-to-piyush-goyal-says-500-billion-figure-is-not-a-binding-us-import-commitment/articleshow/128079871.cms",
       "datePublished": "2026-02-08 18:02:04",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-56eaba05d157",
+      "slug": "bengaluru-metro-puts-fare-hike-on-hold-board-review-awaited-05d157",
+      "category": "business",
+      "headline": "Bengaluru Metro puts fare hike on hold, board review awaited",
+      "whyItMatters": [
+        "BMRCL said the revised fares will be announced only after a review by its Board and further directions This summary covers the key points. Visit the source for full details. For the full story and lat"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "BMRCL said the revised fares will be announced only after a review by its Board and further directions This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
+      ],
+      "fullStoryLink": "https://www.thehindubusinessline.com/economy/logistics/bengaluru-metro-puts-fare-hike-on-hold-board-review-awaited/article70608561.ece",
+      "fullStoryPath": "https://www.thehindubusinessline.com/economy/logistics/bengaluru-metro-puts-fare-hike-on-hold-board-review-awaited/article70608561.ece",
+      "datePublished": "2026-02-08 17:57:08",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-773728415bfc",
+      "slug": "pm-modi-congratulates-japan-pm-sanae-takaichi-on-election-victory-415bfc",
+      "category": "business",
+      "headline": "PM Modi congratulates Japan PM Sanae Takaichi on election victory",
+      "whyItMatters": [
+        "Expressing confidence in her leadership, Modi said the India-Japan friendship would continue to reach greater heights under Takaichi’s tenure. This summary covers the key points. Visit the source for "
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "Expressing confidence in her leadership, Modi said the India-Japan friendship would continue to reach greater heights under Takaichi’s tenure. This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
+      ],
+      "fullStoryLink": "https://www.thehindubusinessline.com/news/pm-modi-congratulates-japan-pm-sanae-takaichi-on-election-victory/article70608553.ece",
+      "fullStoryPath": "https://www.thehindubusinessline.com/news/pm-modi-congratulates-japan-pm-sanae-takaichi-on-election-victory/article70608553.ece",
+      "datePublished": "2026-02-08 17:47:17",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-00fe84c8f700",
+      "slug": "donald-trump-wishes-team-usa-luck-in-t20-world-cup-in-india-c8f700",
+      "category": "business",
+      "headline": "Donald Trump wishes Team USA luck in T20 World Cup in India",
+      "whyItMatters": [
+        "Trump shared the message on Truth Social, highlighting his support for Team USA. This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the "
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "Trump shared the message on Truth Social, highlighting his support for Team USA. This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
+      ],
+      "fullStoryLink": "https://www.thehindubusinessline.com/news/sports/donald-trump-wishes-team-usa-luck-in-t20-world-cup-in-india/article70608537.ece",
+      "fullStoryPath": "https://www.thehindubusinessline.com/news/sports/donald-trump-wishes-team-usa-luck-in-t20-world-cup-in-india/article70608537.ece",
+      "datePublished": "2026-02-08 17:40:33",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-679c49ff0f9c",
+      "slug": "india-canada-to-forge-shared-work-plan-to-bolster-security-cooperation-ff0f9c",
+      "category": "business",
+      "headline": "India, Canada to forge shared work plan to bolster security cooperation",
+      "whyItMatters": [
+        "The move comes as India and Canada seek to reset relations after tensions triggered by diplomatic disputes in 2023. This summary covers the key points. Visit the source for full details. For the full "
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "The move comes as India and Canada seek to reset relations after tensions triggered by diplomatic disputes in 2023. This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
+      ],
+      "fullStoryLink": "https://www.thehindubusinessline.com/economy/policy/india-canada-to-forge-shared-work-plan-to-bolster-security-cooperation/article70608526.ece",
+      "fullStoryPath": "https://www.thehindubusinessline.com/economy/policy/india-canada-to-forge-shared-work-plan-to-bolster-security-cooperation/article70608526.ece",
+      "datePublished": "2026-02-08 17:31:43",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -515,25 +610,6 @@
       "source": "feed"
     },
     {
-      "id": "feed-13c0fcc15d83",
-      "slug": "draft-i-t-rules-propose-significant-changes-in-perquisite-valuation-c15d83",
-      "category": "business",
-      "headline": "Draft I-T rules propose significant changes in perquisite valuation",
-      "whyItMatters": [
-        "The Income Tax Department has invited suggestions on draft rules and forms till February 22 This summary covers the key points. Visit the source for full details. For the full story and latest updates"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "The Income Tax Department has invited suggestions on draft rules and forms till February 22 This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
-      ],
-      "fullStoryLink": "https://www.thehindubusinessline.com/economy/draft-i-t-rules-propose-significant-changes-in-perquisite-valuation/article70607329.ece",
-      "fullStoryPath": "https://www.thehindubusinessline.com/economy/draft-i-t-rules-propose-significant-changes-in-perquisite-valuation/article70607329.ece",
-      "datePublished": "2026-02-08 16:25:04",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
       "id": "feed-96ffed6a7c31",
       "slug": "below-the-line-6a7c31",
       "category": "business",
@@ -569,25 +645,6 @@
       "datePublished": "2026-02-08 15:58:50",
       "readTimeSeconds": 50,
       "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202602/japan-pm-082259526-16x9_0.jpg?VersionId=0CmMS8AvQZ3jRX.MleiNp_YJuD9GIRMy",
-      "source": "feed"
-    },
-    {
-      "id": "feed-0fa52926fa5e",
-      "slug": "e-way-bill-generation-surges-to-a-second-all-time-high-in-january-26fa5e",
-      "category": "business",
-      "headline": "E-Way Bill generation surges to a second all-time high in January",
-      "whyItMatters": [
-        "Latest data comes at a time when sources say that the Centre is enga­ging with states on revamp­ing the E Way bill frame­work which is likely to be taken in the next meet­ing of the GST Coun­cil This "
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "Latest data comes at a time when sources say that the Centre is enga­ging with states on revamp­ing the E Way bill frame­work which is likely to be taken in the next meet­ing of the GST Coun­cil This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
-      ],
-      "fullStoryLink": "https://www.thehindubusinessline.com/economy/e-way-bill-generation-surged-second-all-time-high-in-jan/article70607576.ece",
-      "fullStoryPath": "https://www.thehindubusinessline.com/economy/e-way-bill-generation-surged-second-all-time-high-in-jan/article70607576.ece",
-      "datePublished": "2026-02-08 15:54:05",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
     },
     {
@@ -629,25 +686,6 @@
       "source": "feed"
     },
     {
-      "id": "feed-b9331366c9a5",
-      "slug": "india-us-deal-premium-us-brands-to-get-more-accessible-for-indian-consumers-66c9a5",
-      "category": "business",
-      "headline": "India-US deal : Premium US brands to get more accessible for Indian consumers",
-      "whyItMatters": [
-        "Drive value-added exports to India, strengthen retail supply chains : Experts This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the com"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "Drive value-added exports to India, strengthen retail supply chains : Experts This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
-      ],
-      "fullStoryLink": "https://www.thehindubusinessline.com/companies/india-us-deal-premium-us-brands-to-get-more-accessible-for-indian-consumers/article70608007.ece",
-      "fullStoryPath": "https://www.thehindubusinessline.com/companies/india-us-deal-premium-us-brands-to-get-more-accessible-for-indian-consumers/article70608007.ece",
-      "datePublished": "2026-02-08 15:33:13",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
       "id": "feed-318b91912ef2",
       "slug": "rupee-could-strengthen-in-near-term-on-back-of-india-us-trade-deal-912ef2",
       "category": "business",
@@ -667,25 +705,6 @@
       "source": "feed"
     },
     {
-      "id": "feed-5c2376d3b474",
-      "slug": "ai-accelerating-faster-than-the-systems-that-support-it-d3b474",
-      "category": "business",
-      "headline": "AI accelerating faster than the systems that support it",
-      "whyItMatters": [
-        "AI accelerating faster than the systems that support it This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source:"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "AI accelerating faster than the systems that support it This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
-      ],
-      "fullStoryLink": "https://www.thehindubusinessline.com/opinion/ai-accelerating-faster-than-the-systems-that-support-it/article70607233.ece",
-      "fullStoryPath": "https://www.thehindubusinessline.com/opinion/ai-accelerating-faster-than-the-systems-that-support-it/article70607233.ece",
-      "datePublished": "2026-02-08 15:23:57",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
       "id": "feed-1b017e7e9b70",
       "slug": "japans-iron-lady-sanae-takaichi-forges-stunning-election-win-7e9b70",
       "category": "business",
@@ -700,25 +719,6 @@
       "fullStoryLink": "https://www.business-standard.com/world-news/japan-s-sanae-takaichi-set-for-landslide-election-win-shows-exit-poll-126020800473_1.html",
       "fullStoryPath": "https://www.business-standard.com/world-news/japan-s-sanae-takaichi-set-for-landslide-election-win-shows-exit-poll-126020800473_1.html",
       "datePublished": "2026-02-08 15:20:22",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-02f50c5b1900",
-      "slug": "develop-scalable-aam-corridor-in-ncr-to-reduce-transit-time-proposes-cii-5b1900",
-      "category": "business",
-      "headline": "Develop scalable AAM corridor in NCR to reduce transit time, proposes CII",
-      "whyItMatters": [
-        "Advanced Air Mobility or AAM refers to an integrated aviation ecosystem that uses next-generation aircraft such as electric vertical take-off and landing vehicles, drones, among others, to transport p"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "Advanced Air Mobility or AAM refers to an integrated aviation ecosystem that uses next-generation aircraft such as electric vertical take-off and landing vehicles, drones, among others, to transport passengers and cargo This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Line."
-      ],
-      "fullStoryLink": "https://www.thehindubusinessline.com/economy/logistics/develop-scalable-aam-corridor-in-ncr-to-reduce-transit-time-proposes-cii/article70607768.ece",
-      "fullStoryPath": "https://www.thehindubusinessline.com/economy/logistics/develop-scalable-aam-corridor-in-ncr-to-reduce-transit-time-proposes-cii/article70607768.ece",
-      "datePublished": "2026-02-08 15:04:05",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -757,6 +757,25 @@
       "fullStoryLink": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObUJNckthazBJNnp2T3oyWk9BcGRvX3ppeVdILUFVUWw2MUVpV3VoalhpY1V4anJfcXFwN3BlR245TFpJR2NZWmEyVFQ1XzJBNGdyUEYtbmxoUW5ObDd1V3NIR3YyWGJGdlpWYWFYaWJzN0J1NVJieXQtRm96RW0wbnQxWWlvanJJZGtmVGRYZVFjd2tJejNWV2R6ekhncEVkSG5sODJ6RnbSAa8BQVVfeXFMTUtrZE05VjJseG81TE9HeklObnBzVWtLalYxNFhMVTZyd0JiMjg2eGRuR2RJNzZ0Z0FXOFlId3d5YmxVZnNKMExXb3VLZElmRE5paHVKSWpMOFVvanRRcHFaQldrd3JoQy1vR1pVcExGRGN3cTMyZVAwZ3dpeHZiZXpxWWp3TmhYeE9RTFZEem41WUYwZVNoWWJLbUttbWJiM2daR0RpLTJLRnBYMHV3cw?oc=5",
       "fullStoryPath": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxObUJNckthazBJNnp2T3oyWk9BcGRvX3ppeVdILUFVUWw2MUVpV3VoalhpY1V4anJfcXFwN3BlR245TFpJR2NZWmEyVFQ1XzJBNGdyUEYtbmxoUW5ObDd1V3NIR3YyWGJGdlpWYWFYaWJzN0J1NVJieXQtRm96RW0wbnQxWWlvanJJZGtmVGRYZVFjd2tJejNWV2R6ekhncEVkSG5sODJ6RnbSAa8BQVVfeXFMTUtrZE05VjJseG81TE9HeklObnBzVWtLalYxNFhMVTZyd0JiMjg2eGRuR2RJNzZ0Z0FXOFlId3d5YmxVZnNKMExXb3VLZElmRE5paHVKSWpMOFVvanRRcHFaQldrd3JoQy1vR1pVcExGRGN3cTMyZVAwZ3dpeHZiZXpxWWp3TmhYeE9RTFZEem41WUYwZVNoWWJLbUttbWJiM2daR0RpLTJLRnBYMHV3cw?oc=5",
       "datePublished": "2026-02-08 14:52:00",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-338160350b2f",
+      "slug": "acme-group-forays-into-packaged-foods-with-snacks-under-acme-poshan-350b2f",
+      "category": "business",
+      "headline": "ACME Group forays into packaged foods with snacks under ACME Poshan",
+      "whyItMatters": [
+        "Launches snacks, protein bars and noodles under ACME Poshan This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Sou"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "Launches snacks, protein bars and noodles under ACME Poshan This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Standard."
+      ],
+      "fullStoryLink": "https://www.business-standard.com/companies/news/companies-news-acme-group-forays-into-packaged-foods-space-126020800548_1.html",
+      "fullStoryPath": "https://www.business-standard.com/companies/news/companies-news-acme-group-forays-into-packaged-foods-space-126020800548_1.html",
+      "datePublished": "2026-02-08 14:48:11",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -857,25 +876,6 @@
       "source": "feed"
     },
     {
-      "id": "feed-d515615dce0c",
-      "slug": "gig-hiring-likely-to-surge-in-2026-as-qcom-ecom-expand-beyond-metros-5dce0c",
-      "category": "business",
-      "headline": "Gig hiring likely to surge in 2026 as qcom, ecom expand beyond metros",
-      "whyItMatters": [
-        "E-commerce and quick commerce platforms are set to add nearly a million gig workers in 2026, driven by last-mile delivery demand and rapid expansion of dark stores in non-metro cities This summary cov"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "E-commerce and quick commerce platforms are set to add nearly a million gig workers in 2026, driven by last-mile delivery demand and rapid expansion of dark stores in non-metro cities This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Standard."
-      ],
-      "fullStoryLink": "https://www.business-standard.com/economy/news/https-www-business-standard-com-economy-jobs-gig-hiring-to-surge-in-2026-as-qcom-ecom-expand-beyond-metros-126020800002-126020800403_1.html",
-      "fullStoryPath": "https://www.business-standard.com/economy/news/https-www-business-standard-com-economy-jobs-gig-hiring-to-surge-in-2026-as-qcom-ecom-expand-beyond-metros-126020800002-126020800403_1.html",
-      "datePublished": "2026-02-08 12:56:18",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
       "id": "feed-4ed1128d962a",
       "slug": "japan-pm-takaichis-alliance-set-to-retain-lower-house-majority-show-exit-polls-8d962a",
       "category": "economy",
@@ -892,25 +892,6 @@
       "datePublished": "2026-02-08 12:42:51",
       "readTimeSeconds": 50,
       "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202602/sanae-takaichi--first-female-japan-prime-minister-2025-083820531-16x9_0.jpg?VersionId=VjJenSQYn0QwGQ62NJlN1EhXYcigOOKA",
-      "source": "feed"
-    },
-    {
-      "id": "feed-91f908c8d843",
-      "slug": "avoid-costly-large-llm-buildouts-focus-on-smaller-models-says-vembu-c8d843",
-      "category": "business",
-      "headline": "Avoid costly, large LLM buildouts; focus on smaller models, says Vembu",
-      "whyItMatters": [
-        "Vembu said there is significant scope for research and development in AI, and added that Zoho is actively pursuing more energy-efficient routes, including smaller models or other approaches This summa"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "Vembu said there is significant scope for research and development in AI, and added that Zoho is actively pursuing more energy-efficient routes, including smaller models or other approaches This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Standard."
-      ],
-      "fullStoryLink": "https://www.business-standard.com/companies/news/avoid-costly-large-llm-buildouts-focus-on-smaller-models-says-vembu-126020800446_1.html",
-      "fullStoryPath": "https://www.business-standard.com/companies/news/avoid-costly-large-llm-buildouts-focus-on-smaller-models-says-vembu-126020800446_1.html",
-      "datePublished": "2026-02-08 12:32:24",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
     },
     {
@@ -1028,25 +1009,6 @@
       "source": "feed"
     },
     {
-      "id": "feed-61700c8c9332",
-      "slug": "titan-expects-sharp-rise-in-swiss-watch-sales-in-india-post-eu-trade-pact-8c9332",
-      "category": "business",
-      "headline": "Titan expects sharp rise in Swiss watch sales in India post EU trade pact",
-      "whyItMatters": [
-        "The Tata group firm, which operates Helios and Helios Luxe formats, said Swiss brands will become more competitive in the domestic market as they pass on duty benefits to consumers This summary covers"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "The Tata group firm, which operates Helios and Helios Luxe formats, said Swiss brands will become more competitive in the domestic market as they pass on duty benefits to consumers This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Standard."
-      ],
-      "fullStoryLink": "https://www.business-standard.com/companies/news/titan-expects-sharp-rise-in-swiss-watch-sales-in-india-post-eu-trade-pact-126020800279_1.html",
-      "fullStoryPath": "https://www.business-standard.com/companies/news/titan-expects-sharp-rise-in-swiss-watch-sales-in-india-post-eu-trade-pact-126020800279_1.html",
-      "datePublished": "2026-02-08 09:16:08",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
       "id": "feed-52743975ff4d",
       "slug": "scouting-scholarships-massages-how-epstein-lured-girls-into-pyramid-of-abuse-75ff4d",
       "category": "economy",
@@ -1080,25 +1042,6 @@
       "fullStoryLink": "https://www.livemint.com/companies/news/from-flyers-to-faithfuls-why-indigo-and-air-india-are-racing-to-lock-in-loyal-customers-11770523400209.html",
       "fullStoryPath": "https://www.livemint.com/companies/news/from-flyers-to-faithfuls-why-indigo-and-air-india-are-racing-to-lock-in-loyal-customers-11770523400209.html",
       "datePublished": "2026-02-08 08:26:19",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-4fd3934c2125",
-      "slug": "lampt-plans-32-mw-data-centre-capacity-by-march-end-eyes-electrolyser-orders-4c2125",
-      "category": "business",
-      "headline": "L&amp;T plans 32 MW data centre capacity by March-end, eyes electrolyser orders",
-      "whyItMatters": [
-        "In the semiconductor business, L&amp;T is focusing on design-led chips and engaging with multiple customers, with most spending being expensed through the profit and loss account This summary covers t"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "In the semiconductor business, L&amp;T is focusing on design-led chips and engaging with multiple customers, with most spending being expensed through the profit and loss account This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Business Standard."
-      ],
-      "fullStoryLink": "https://www.business-standard.com/companies/news/larsen-and-toubro-plans-32-mw-data-centre-capacity-by-march-end-eyes-electrolyser-orders-126020800253_1.html",
-      "fullStoryPath": "https://www.business-standard.com/companies/news/larsen-and-toubro-plans-32-mw-data-centre-capacity-by-march-end-eyes-electrolyser-orders-126020800253_1.html",
-      "datePublished": "2026-02-08 08:19:35",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
