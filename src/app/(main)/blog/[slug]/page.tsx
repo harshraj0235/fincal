@@ -6,7 +6,8 @@ import BlogArticleContent from './BlogArticleContent';
 
 type Props = { params: Promise<{ slug: string }> };
 
-export const revalidate = 86400;
+/** Blog: ISR 1 hour – traffic engine */
+export const revalidate = 3600;
 export const dynamicParams = true;
 
 /** Return empty to avoid OOM on Cloudflare. All posts generated on-demand. */

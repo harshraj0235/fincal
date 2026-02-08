@@ -15,27 +15,17 @@ export const Footer: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  /** Hub-only links – crawl budget control, clean authority funnels (SEO). */
   const footerSections = [
     {
-      title: 'Calculators',
+      title: 'Tools & Calculators',
       links: [
-        { name: 'EMI Calculator', href: '/calculators/emi-calculator' },
-        { name: 'SIP Calculator', href: '/calculators/sip-calculator' },
-        { name: 'Income Tax Calculator', href: '/calculators/income-tax-calculator' },
-        { name: 'Mutual Fund Calculator', href: '/calculators/mutual-fund-returns-calculator' },
-        { name: 'PPF Calculator', href: '/calculators/ppf-calculator' },
-        { name: 'All Calculators', href: '/calculators' },
-      ]
-    },
-    {
-      title: 'Tools',
-      links: [
+        { name: 'Calculators', href: '/calculators' },
         { name: 'Finance Tools', href: '/finance-tools' },
         { name: 'Tax Tools', href: '/tax-tools' },
         { name: 'GST Tools', href: '/gst-tools' },
-        { name: 'Excel Tools', href: '/exceltool' },
-        { name: 'Bank Tools', href: '/bank-tools' },
-        { name: 'All Tools', href: '/tools' },
+        { name: 'Insurance Tools', href: '/insurance-tools' },
+        { name: 'Tools', href: '/tools' },
       ]
     },
     {
@@ -46,17 +36,15 @@ export const Footer: React.FC = () => {
         { name: 'News', href: '/news' },
         { name: 'Government Schemes', href: '/government-schemes' },
         { name: 'Crypto', href: '/crypto' },
-        { name: 'Help Center', href: '/help-center' },
       ]
     },
     {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about-us' },
-        { name: 'Contact Us', href: '/contact-us' },
+        { name: 'Contact', href: '/contact-us' },
         { name: 'Privacy Policy', href: '/privacy-policy' },
         { name: 'Terms of Use', href: '/terms-of-use' },
-        { name: 'Terms & Conditions', href: '/terms-and-conditions' },
         { name: 'Disclaimer', href: '/disclaimer' },
         { name: 'Cookie Policy', href: '/cookie-policy' },
       ]

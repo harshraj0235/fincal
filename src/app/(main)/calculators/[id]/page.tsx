@@ -11,7 +11,8 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = true;
-export const revalidate = 86400; // ISR: revalidate once per day
+/** Calculators: force-dynamic (SSR) – money pages, high CPC */
+export const dynamic = 'force-dynamic';
 
 type Props = { params: Promise<{ id: string }> };
 
