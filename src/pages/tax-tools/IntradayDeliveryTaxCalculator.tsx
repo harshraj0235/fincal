@@ -364,7 +364,7 @@ const IntradayDeliveryTaxCalculator: React.FC = () => {
                     <li>• Hold shares overnight</li>
                     <li>• Taxed as capital gains</li>
                     <li>• STCG: 15% (≤1 year)</li>
-                    <li>• LTCG: 10% (>1 year)</li>
+                    <li>• LTCG: 10% ({'>'}1 year)</li>
                     <li>• ₹1L exemption for LTCG</li>
                   </ul>
                 </div>
