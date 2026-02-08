@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AppShell from '../AppShell';
+import AppShell from '../../AppShell';
 
 export const metadata: Metadata = {
   title: 'Contact Us | MoneyCal India',
@@ -24,7 +24,7 @@ export default function ContactUsPage() {
       </header>
       <section className="container mx-auto px-4 py-4 max-w-4xl" aria-label="Contact">
         <p className="text-gray-700 mb-4">
-          Have a question, suggestion, or want to report an issue? We’d love to hear from you. Use the form below or email us for calculator feedback, content corrections, or business inquiries.
+          Have a question, suggestion, or want to report an issue? We'd love to hear from you. Use the form below or email us for calculator feedback, content corrections, or business inquiries.
         </p>
         <p className="text-gray-600 text-sm">
           Email: <a href="mailto:support@moneycal.in" className="text-blue-600 hover:underline">support@moneycal.in</a>

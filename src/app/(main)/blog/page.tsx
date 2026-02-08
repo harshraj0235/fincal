@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AppShell from '../AppShell';
+import AppShell from '../../AppShell';
 
 export const metadata: Metadata = {
   title: 'Blog | MoneyCal India – Personal Finance, EMI, Tax & Investment Tips',

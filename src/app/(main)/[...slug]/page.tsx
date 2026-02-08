@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AppShell from '../AppShell';
+import AppShell from '../../AppShell';
 
 const BASE = 'https://moneycal.in';
 const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;

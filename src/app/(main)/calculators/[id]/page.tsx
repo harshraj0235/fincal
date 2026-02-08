@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
-import AppShell from '../../AppShell';
-import { calculatorCategories, getCalculatorById } from '../../../data/calculatorData';
+import AppShell from '../../../AppShell';
+import { calculatorCategories, getCalculatorById } from '../../../../data/calculatorData';
 import type { Metadata } from 'next';
 
 const BASE = 'https://moneycal.in';

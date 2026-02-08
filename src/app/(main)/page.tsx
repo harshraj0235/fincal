@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AppShell from './AppShell';
+import AppShell from '../AppShell';
 
 /** ISR: revalidate home every hour */
 export const revalidate = 3600;
@@ -35,7 +35,7 @@ export default function HomePage() {
           MoneyCal India – Top Financial Calculators &amp; Tools
         </h1>
         <p className="text-gray-700 text-lg mb-4">
-          India&apos;s most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more. Free online financial planning tools for Indian users.
+          India&apos;s most comprehensive financial calculator platform. Calculate EMI, SIP returns, income tax, mutual fund returns, and more.
         </p>
         <p className="text-gray-600">
           Use our free calculators for loans, investments, tax, GST, insurance, and personal finance—no sign-up required.

@@ -48,8 +48,6 @@ const jsonLd = {
   ],
 };
 
-import ClientLayoutWrapper from './ClientLayoutWrapper';
-
 export default function RootLayout({
   children,
 }: {
@@ -71,7 +69,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="min-h-screen bg-white text-gray-900 antialiased">
-        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
+        {children}
       </body>
     </html>
   );
