@@ -1,0 +1,35 @@
+# Build on GitHub (7GB RAM) and deploy to Cloudflare - avoids Cloudflare's 4GB OOM
+name: Build and Deploy to Cloudflare
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Generate sitemaps
+        run: npm run generate-sitemaps
+
+      - name: Build (OpenNext for Cloudflare)
+        run: npx opennextjs-cloudflare build
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144
+
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler pages deploy .open-next --project-name=moneycal
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
