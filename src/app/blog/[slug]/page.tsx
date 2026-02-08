@@ -9,14 +9,9 @@ type Props = { params: Promise<{ slug: string }> };
 export const revalidate = 86400;
 export const dynamicParams = true;
 
-/** Limit pre-rendered posts to avoid OOM on Cloudflare. Rest generated on-demand. */
-const BLOG_LIMIT = 60;
-
+/** Return empty to avoid OOM on Cloudflare. All posts generated on-demand. */
 export async function generateStaticParams() {
-  return allBlogPosts
-    .filter((p: { slug?: string }) => p.slug)
-    .slice(0, BLOG_LIMIT)
-    .map((p: { slug: string }) => ({ slug: p.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

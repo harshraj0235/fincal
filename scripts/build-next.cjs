@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 /**
- * Wrapper to run next build with increased heap (Cloudflare Pages has ~4GB limit).
- * Ensures NODE_OPTIONS is set for the child process.
+ * Wrapper to run next build. Pass NODE_OPTIONS explicitly to child.
  */
-process.env.NODE_OPTIONS = (process.env.NODE_OPTIONS || '') + ' --max-old-space-size=4096';
 const { execSync } = require('child_process');
-execSync('npx next build', { stdio: 'inherit' });
+const env = { ...process.env, NODE_OPTIONS: '--max-old-space-size=3072' };
+execSync('npx next build', { stdio: 'inherit', env });

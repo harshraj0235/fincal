@@ -19,6 +19,7 @@ const nextConfig = {
   },
   // Reduce memory during build (Cloudflare Pages has limited RAM)
   productionBrowserSourceMaps: false,
+  eslint: { ignoreDuringBuilds: true },
   transpilePackages: [],
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'lucide-react'],

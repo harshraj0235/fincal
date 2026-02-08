@@ -5,15 +5,9 @@ import type { Metadata } from 'next';
 
 const BASE = 'https://moneycal.in';
 
-/** Limit pre-rendered calculators to avoid OOM on Cloudflare. Rest generated on-demand. */
-const CALC_LIMIT = 40;
-
-/** SSG: pre-generate calculator pages at build time. */
+/** Return empty to avoid OOM on Cloudflare. All calculators generated on-demand. */
 export async function generateStaticParams() {
-  const all = calculatorCategories.flatMap((cat) =>
-    cat.calculators.map((calc) => ({ id: calc.id }))
-  );
-  return all.slice(0, CALC_LIMIT);
+  return [];
 }
 
 export const dynamicParams = true;

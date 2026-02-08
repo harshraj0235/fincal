@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import AppShell from '../AppShell';
-import { contentRegistry } from '../../cms-content/contentRegistry';
-import { taxToolSlugs, financeToolSlugs, gstToolSlugs } from '../../data/nextStaticPaths';
 
 const BASE = 'https://moneycal.in';
 const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;
@@ -16,54 +14,9 @@ export const revalidate = 3600;
 /** Allow paths not in generateStaticParams to be generated on-demand (Google can crawl them). */
 export const dynamicParams = true;
 
-/** Limit pre-rendered paths to avoid OOM on Cloudflare. Rest generated on-demand via dynamicParams. */
-const BUILD_LIMIT = { news: 30, tax: 12, finance: 15, gst: 8 };
-
-/** SSG/ISR: pre-generate news, tools at build time. Blog is handled by app/blog and app/blog/[slug]. */
+/** Return empty to avoid OOM on Cloudflare (4GB limit). All pages generated on-demand via dynamicParams. */
 export async function generateStaticParams() {
-  const params: { slug: string[] }[] = [];
-
-  // News (limit on CI to reduce memory)
-  params.push({ slug: ['news'] });
-  params.push({ slug: ['news', 'shorts'] });
-  contentRegistry.slice(0, BUILD_LIMIT.news).forEach((a) => {
-    params.push({ slug: ['news', a.category, a.slug] });
-  });
-
-  // Tax-tools
-  params.push({ slug: ['tax-tools'] });
-  taxToolSlugs.slice(0, BUILD_LIMIT.tax).forEach((s) => params.push({ slug: ['tax-tools', s] }));
-
-  // Finance-tools
-  params.push({ slug: ['finance-tools'] });
-  financeToolSlugs.slice(0, BUILD_LIMIT.finance).forEach((s) => params.push({ slug: ['finance-tools', s] }));
-
-  // GST-tools
-  params.push({ slug: ['gst-tools'] });
-  gstToolSlugs.slice(0, BUILD_LIMIT.gst).forEach((s) => params.push({ slug: ['gst-tools', s] }));
-
-  // Calculator paths are SSG via app/calculators/[id]/page.tsx
-
-  // Key static pages (about-us, contact-us, blog have dedicated routes but catch-all still needed for other slugs)
-  const staticPaths = [
-    ['learn'],
-    ['tools'],
-    ['insurance-tools'],
-    ['loan-tools'],
-    ['bank-tools'],
-    ['privacy-policy'],
-    ['disclaimer'],
-    ['cookie-policy'],
-    ['terms-of-service'],
-    ['editorial-policy'],
-    ['government-schemes'],
-    ['crypto'],
-    ['astro-finance'],
-    ['calculators'],
-  ];
-  staticPaths.forEach((s) => params.push({ slug: s }));
-
-  return params;
+  return [];
 }
 
 /** Title/description for common path segments (link previews). */
