@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 import AppShell from '../../AppShell';
+import { getServerContentForPath } from '../../lib/serverContent';
+
+/** Force SSR for every request so crawlers get full HTML content (calculators, tools, learn, news). */
+export const dynamic = 'force-dynamic';
 
 const BASE = 'https://moneycal.in';
 const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;
@@ -7,9 +11,6 @@ const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;
 interface PageProps {
   params: Promise<{ slug?: string[] }>;
 }
-
-/** ISR: revalidate these pages periodically (seconds). */
-export const revalidate = 3600;
 
 /** Allow paths not in generateStaticParams to be generated on-demand (Google can crawl them). */
 export const dynamicParams = true;
@@ -137,6 +138,9 @@ export default async function CatchAllPage({ params }: PageProps) {
   const firstSegment = slug[0];
   const intro = firstSegment ? SEGMENT_INTROS[firstSegment] : null;
 
+  // Pre-load content for news, learn, etc. so it appears in initial HTML (SEO)
+  const serverContent = getServerContentForPath(pathname);
+
   return (
     <>
       {intro && (
@@ -145,7 +149,7 @@ export default async function CatchAllPage({ params }: PageProps) {
           <p className="text-gray-700 mt-2">{intro.body}</p>
         </main>
       )}
-      <AppShell pathname={pathname} skipLayout />
+      <AppShell pathname={pathname} skipLayout serverContent={serverContent} />
     </>
   );
 }

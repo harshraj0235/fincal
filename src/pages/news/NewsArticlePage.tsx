@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
+import { useServerContent } from '../../contexts/ServerContentContext';
 import { 
   ArrowLeft, 
   ArrowRight,
@@ -52,8 +53,29 @@ interface Article {
 const NewsArticlePage: React.FC = () => {
   const { categorySlug, articleId } = useParams();
   const navigate = useNavigate();
-  const [article, setArticle] = useState<Article | null>(null);
-  const [loading, setLoading] = useState(true);
+  const serverContent = useServerContent();
+
+  // Use server-provided content when available (ensures full content in initial HTML for SEO)
+  const articleFromServer = useMemo(() => {
+    if (serverContent?.type !== 'news-article' || serverContent.articleMeta.slug !== articleId) return null;
+    const m = serverContent.articleMeta;
+    return {
+      id: m.id,
+      slug: m.slug,
+      title: m.title,
+      content: '',
+      category: m.category,
+      authorId: m.authorId,
+      datePublished: m.datePublished,
+      image: m.image,
+      tags: [],
+      readTime: 8,
+      views: Math.floor(Math.random() * 5000) + 1000,
+    } as Article;
+  }, [serverContent, articleId]);
+
+  const [article, setArticle] = useState<Article | null>(articleFromServer ?? null);
+  const [loading, setLoading] = useState(!articleFromServer);
 
   // Google News Subscribe with Google (SWG) - Auto-loads for all news articles
   useEffect(() => {
@@ -91,42 +113,40 @@ const NewsArticlePage: React.FC = () => {
   }, []); // Run once on mount
 
   useEffect(() => {
+    if (articleFromServer) {
+      setArticle(articleFromServer);
+      setLoading(false);
+      return;
+    }
     const loadArticle = async () => {
       try {
-        // Find article metadata in registry
         const articleMeta = contentRegistry.find(a => a.slug === articleId);
-        
         if (!articleMeta) {
           setLoading(false);
           return;
         }
-
-        // Create article object from metadata
-        // CMS content will be loaded separately via getArticleContent
         const articleData: Article = {
           id: articleMeta.id,
           slug: articleMeta.slug,
           title: articleMeta.title,
-          content: '', // Content comes from CMS via getArticleContent
+          content: '',
           category: articleMeta.category,
           authorId: articleMeta.authorId,
           datePublished: articleMeta.datePublished,
           image: articleMeta.image,
           tags: [],
           readTime: 8,
-          views: Math.floor(Math.random() * 5000) + 1000, // Simulated views
+          views: Math.floor(Math.random() * 5000) + 1000,
         };
-        
         setArticle(articleData);
-        setLoading(false);
       } catch (error) {
         console.error('Error loading article:', error);
+      } finally {
         setLoading(false);
       }
     };
-
     loadArticle();
-  }, [articleId]);
+  }, [articleId, articleFromServer]);
 
   if (loading) {
     return (
