@@ -33,7 +33,7 @@ import {
 } from 'chart.js';
 import { Helmet } from 'react-helmet-async';
 import { getPdfLibs } from '../lib/pdfExportClient';
-import * as XLSX from 'xlsx';
+import { getXlsx } from '../lib/clientOnlyLibs';
 
 ChartJS.register(
   ArcElement, 
@@ -314,9 +314,10 @@ export const LoanCalculator: React.FC = () => {
     }
   };
 
-  const exportToExcel = () => {
+  const exportToExcel = async () => {
     setExportLoading(true);
     try {
+      const XLSX = await getXlsx();
       // Prepare data
       const summaryData = [
         ['Loan Calculator Report', ''],

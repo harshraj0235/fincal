@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as XLSX from 'xlsx';
+import { getXlsx } from '../lib/clientOnlyLibs';
 
 interface InvoiceItem {
   description: string;
@@ -52,7 +52,8 @@ const InvoiceGeneratorBusiness: React.FC = () => {
   const getGST = () => invoice.items.reduce((sum: number, item: InvoiceItem) => sum + (item.quantity * item.rate * (item.gst || 0)) / 100, 0);
   const getTotal = () => getSubtotal() + getGST();
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
+    const XLSX = await getXlsx();
     const wsData = [
       ['Invoice Number', invoice.invoiceNumber],
       ['Date', invoice.date],

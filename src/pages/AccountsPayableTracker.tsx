@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc, query, orderBy, onSnapshot, serverTimestamp } from 'firebase/firestore';
+import { getFirebase } from '../lib/clientOnlyLibs';
 import { Plus, Edit, Trash2, Download, XCircle, CheckCircle } from 'lucide-react';
 
 // IMPORTANT: For XLSX functionality, you need to include the SheetJS CDN script in your HTML file
@@ -39,51 +37,63 @@ function AccountsPayableTracker() {
   const [message, setMessage] = useState<{ text: string; type: string } | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState<{ title: string; message: string; onConfirm: (() => void) | null; onCancel: (() => void) | null }>({ title: '', message: '', onConfirm: null, onCancel: null });
+  const [fs, setFs] = useState<{
+    collection: any;
+    addDoc: any;
+    updateDoc: any;
+    deleteDoc: any;
+    doc: any;
+    onSnapshot: any;
+    serverTimestamp: any;
+  } | null>(null);
 
-  // Initialize Firebase and authenticate
+  // Initialize Firebase and authenticate (client-only to reduce server bundle)
   useEffect(() => {
-    try {
-      const app = initializeApp(firebaseConfig);
-      const firestore = getFirestore(app);
-      const firebaseAuth = getAuth(app);
-
-      setDb(firestore);
-      setAuth(firebaseAuth);
-
-      const unsubscribe = onAuthStateChanged(firebaseAuth, async (user) => {
-        if (user) {
-          setUserId(user.uid);
-          console.log("User authenticated:", user.uid);
-        } else {
-          try {
-            if (initialAuthToken) {
-              await signInWithCustomToken(firebaseAuth, initialAuthToken);
-            } else {
-              await signInAnonymously(firebaseAuth);
+    let unsub: (() => void) | undefined;
+    getFirebase().then((fb) => {
+      try {
+        const app = fb.initializeApp(firebaseConfig);
+        const firestore = fb.getFirestore(app);
+        const firebaseAuth = fb.getAuth(app);
+        setDb(firestore);
+        setAuth(firebaseAuth);
+        setFs({
+          collection: fb.collection,
+          addDoc: fb.addDoc,
+          updateDoc: fb.updateDoc,
+          deleteDoc: fb.deleteDoc,
+          doc: fb.doc,
+          onSnapshot: fb.onSnapshot,
+          serverTimestamp: fb.serverTimestamp,
+        });
+        unsub = fb.onAuthStateChanged(firebaseAuth, async (user: { uid: string }) => {
+          if (user) setUserId(user.uid);
+          else {
+            try {
+              if (initialAuthToken) await fb.signInWithCustomToken(firebaseAuth, initialAuthToken);
+              else await fb.signInAnonymously(firebaseAuth);
+            } catch {
+              setError("Failed to authenticate. Please try again.");
             }
-            console.log("Signed in anonymously or with custom token.");
-          } catch (authError) {
-            console.error("Firebase Auth Error:", authError);
-            setError("Failed to authenticate. Please try again.");
-            setLoading(false);
           }
-        }
+          setLoading(false);
+        });
+      } catch (initError) {
+        setError("Failed to initialize Firebase.");
         setLoading(false);
-      });
-
-      return () => unsubscribe();
-    } catch (initError) {
-      console.error("Firebase Initialization Error:", initError);
-      setError("Failed to initialize Firebase. Check console for details.");
+      }
+    }).catch(() => {
+      setError("Failed to load Firebase.");
       setLoading(false);
-    }
+    });
+    return () => unsub?.();
   }, []);
 
-  // Fetch payables data when userId and db are ready
+  // Fetch payables data when userId, db and fs are ready
   useEffect(() => {
-    if (db && userId) {
-      const payablesCollectionRef = collection(db, `artifacts/${appId}/users/${userId}/payables`);
-      const unsubscribe = onSnapshot(payablesCollectionRef, (snapshot) => {
+    if (db && userId && fs) {
+      const payablesCollectionRef = fs.collection(db, `artifacts/${appId}/users/${userId}/payables`);
+      const unsubscribe = fs.onSnapshot(payablesCollectionRef, (snapshot: { docs: any[] }) => {
         const fetchedPayables = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data(),
@@ -98,7 +108,7 @@ function AccountsPayableTracker() {
       });
       return () => unsubscribe();
     }
-  }, [db, userId]);
+  }, [db, userId, fs]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -114,7 +124,7 @@ function AccountsPayableTracker() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!db || !userId) {
+    if (!db || !userId || !fs) {
       showTemporaryMessage("Database not ready. Please wait.", "error");
       return;
     }
@@ -131,16 +141,16 @@ function AccountsPayableTracker() {
         ...formData,
         amount: parseFloat(formData.amount),
         dueDate: new Date(formData.dueDate),
-        createdAt: serverTimestamp(),
+        createdAt: fs.serverTimestamp(),
       };
       if (editingId) {
-        const payableDocRef = doc(db, `artifacts/${appId}/users/${userId}/payables`, editingId);
-        await updateDoc(payableDocRef, payableData);
+        const payableDocRef = fs.doc(db, `artifacts/${appId}/users/${userId}/payables`, editingId);
+        await fs.updateDoc(payableDocRef, payableData);
         showTemporaryMessage("Payable updated successfully!");
         setEditingId(null);
       } else {
-        const payablesCollectionRef = collection(db, `artifacts/${appId}/users/${userId}/payables`);
-        await addDoc(payablesCollectionRef, payableData);
+        const payablesCollectionRef = fs.collection(db, `artifacts/${appId}/users/${userId}/payables`);
+        await fs.addDoc(payablesCollectionRef, payableData);
         showTemporaryMessage("Payable added successfully!");
       }
       setFormData({
@@ -180,13 +190,13 @@ function AccountsPayableTracker() {
 
   const handleDelete = async (id: string) => {
     setShowModal(false);
-    if (!db || !userId) {
+    if (!db || !userId || !fs) {
       showTemporaryMessage("Database not ready. Please wait.", "error");
       return;
     }
     try {
-      const payableDocRef = doc(db, `artifacts/${appId}/users/${userId}/payables`, id);
-      await deleteDoc(payableDocRef);
+      const payableDocRef = fs.doc(db, `artifacts/${appId}/users/${userId}/payables`, id);
+      await fs.deleteDoc(payableDocRef);
       showTemporaryMessage("Payable deleted successfully!");
     } catch (deleteError) {
       console.error("Error deleting payable:", deleteError);

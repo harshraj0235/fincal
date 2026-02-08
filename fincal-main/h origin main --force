@@ -1,5 +1,0 @@
-[33m8fcc813[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Transform UI to modern news portal design - Remove excel_blogs, add breaking news ticker, featured stories, and NDTV-style layout
-[33m15e94bb[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Enhance Excel tools page with modern UI, blog integration, and new AI Excel 2025 blog
-[33m28896ba[m Fix index.ts - remove problematic template and test-automation imports
-[33mc86a963[m Fix index.ts - remove all deleted blog file imports and exports
-[33m95979fe[m Remove blog files 652-1019 and clean up repository

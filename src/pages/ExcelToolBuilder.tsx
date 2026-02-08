@@ -3,8 +3,7 @@ import { Download, Plus, FileSpreadsheet, ArrowRight, ArrowLeft, Settings, Star 
 import SEOHelmet from '../components/SEOHelmet';
 import WhatsAppBanner from '../components/WhatsAppBanner';
 import AstroFinanceButton from '../components/AstroFinanceButton';
-// SheetJS for Excel export
-import * as XLSX from 'xlsx';
+import { getXlsx } from '../lib/clientOnlyLibs';
 
 const templates = [
   {
@@ -141,7 +140,8 @@ const ExcelToolBuilder: React.FC = () => {
   };
 
   // Download Excel
-  const handleDownload = () => {
+  const handleDownload = async () => {
+    const XLSX = await getXlsx();
     const wsData = [fields.map(f => f.label), ...rows.map(row => fields.map(f => row[f.label] || ''))];
     const ws = XLSX.utils.aoa_to_sheet(wsData);
     const wb = XLSX.utils.book_new();

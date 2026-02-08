@@ -22,6 +22,8 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
   transpilePackages: [],
+  // Keep heavy client-only packages out of server bundle (Cloudflare 25 MiB limit)
+  serverExternalPackages: ['xlsx', 'firebase', 'chart.js', 'd3', 'recharts', 'html2canvas', 'jspdf'],
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'lucide-react'],
     webpackMemoryOptimizations: true, // Reduce peak memory (Cloudflare Pages OOM)
@@ -33,6 +35,19 @@ const nextConfig = {
         'node_modules/eslint/**',
         'node_modules/typescript/**',
         'node_modules/@types/**',
+        'node_modules/xlsx/**',
+        'node_modules/firebase/**',
+        'node_modules/@firebase/**',
+        'node_modules/chart.js/**',
+        'node_modules/react-chartjs-2/**',
+        'node_modules/d3/**',
+        'node_modules/d3-*/**',
+        'node_modules/recharts/**',
+        'node_modules/html2canvas/**',
+        'node_modules/jspdf/**',
+        'node_modules/canvas/**',
+        'node_modules/framer-motion/**',
+        'node_modules/react-icons/**',
       ],
     },
   },

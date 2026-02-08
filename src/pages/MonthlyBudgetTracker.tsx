@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getFirebase } from '../lib/clientOnlyLibs';
 import { Edit, Trash2, Download, XCircle, CheckCircle, BarChart2 } from 'lucide-react';
 
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
@@ -31,27 +29,33 @@ const MonthlyBudgetTracker = () => {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState(null);
 
-  // Firebase init
+  // Firebase init (client-only to reduce server bundle)
   useEffect(() => {
-    try {
-      const app = initializeApp(firebaseConfig);
-      const firestore = getFirestore(app);
-      const firebaseAuth = getAuth(app);
-      setDb(firestore);
-      setAuth(firebaseAuth);
-      const unsubscribe = onAuthStateChanged(firebaseAuth, async (user) => {
-        if (user) setUserId(user.uid);
-        else {
-          if (initialAuthToken) await signInWithCustomToken(firebaseAuth, initialAuthToken);
-          else await signInAnonymously(firebaseAuth);
-        }
+    let unsub: (() => void) | undefined;
+    getFirebase().then(({ initializeApp: init, getAuth, getFirestore, signInAnonymously, signInWithCustomToken, onAuthStateChanged }) => {
+      try {
+        const app = init(firebaseConfig);
+        const firestore = getFirestore(app);
+        const firebaseAuth = getAuth(app);
+        setDb(firestore);
+        setAuth(firebaseAuth);
+        unsub = onAuthStateChanged(firebaseAuth, async (user: { uid: string }) => {
+          if (user) setUserId(user.uid);
+          else {
+            if (initialAuthToken) await signInWithCustomToken(firebaseAuth, initialAuthToken);
+            else await signInAnonymously(firebaseAuth);
+          }
+          setLoading(false);
+        });
+      } catch (err) {
+        setError('Failed to initialize Firebase.');
         setLoading(false);
-      });
-      return () => unsubscribe();
-    } catch (err) {
-      setError('Failed to initialize Firebase.');
+      }
+    }).catch(() => {
+      setError('Failed to load Firebase.');
       setLoading(false);
-    }
+    });
+    return () => unsub?.();
   }, []);
 
   // Chart.js dynamic import

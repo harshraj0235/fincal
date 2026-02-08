@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SEOHelmet from '../components/SEOHelmet';
 import { Receipt, Plus, Trash2, Download, TrendingUp, Calendar, DollarSign, BarChart3, Save, FileSpreadsheet } from 'lucide-react';
-import * as XLSX from 'xlsx';
+import { getXlsx } from '../lib/clientOnlyLibs';
 
 interface ExpenseRow {
   date: string;
@@ -44,7 +44,8 @@ const SimpleDailyExpenseTracker: React.FC = () => {
       .reduce((sum, row) => sum + (row.amount || 0), 0);
   };
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
+    const XLSX = await getXlsx();
     const wsData = [
       ['Date', 'Category', 'Description', 'Amount'],
       ...rows.map(row => [row.date, row.category, row.description, row.amount]),

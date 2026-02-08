@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SEOHelmet from '../components/SEOHelmet';
 import { Calculator, TrendingUp, DollarSign, Plus, Trash2, Download, Save, BarChart3, Target, AlertTriangle } from 'lucide-react';
-import * as XLSX from 'xlsx';
+import { getXlsx } from '../lib/clientOnlyLibs';
 
 interface BudgetRow {
   category: string;
@@ -35,7 +35,8 @@ const MonthlyBudgetPlanner: React.FC = () => {
   const getActualTotal = () => rows.reduce((sum, row) => sum + (row.actual || 0), 0);
   const getVariance = () => getPlannedTotal() - getActualTotal();
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
+    const XLSX = await getXlsx();
     const wsData = [
       ['Category', 'Planned', 'Actual', 'Variance'],
       ...rows.map(row => [row.category, row.planned, row.actual, (row.planned - row.actual).toFixed(2)]),
