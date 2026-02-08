@@ -21,6 +21,7 @@
     "generate-blogs": "node automated-blog-generator.cjs",
     "generate-crypto": "node crypto-blog-generator.cjs",
     "generate-manual": "node manual-blog-generator.cjs",
+    "find-pages-no-default": "node scripts/find-pages-without-default.cjs",
     "generate-sitemaps": "node scripts/build-complete-learn-urls.cjs && node scripts/extract-all-routes-from-code.cjs && node scripts/merge-all-urls.cjs && node scripts/generate-news-sitemap-from-registry.cjs && node scripts/generate-sitemaps-production.cjs",
     "generate-news-sitemap": "node scripts/generate-news-sitemap-from-registry.cjs",
     "fetch-trending-rss": "node scripts/fetch-trending-rss.cjs",
