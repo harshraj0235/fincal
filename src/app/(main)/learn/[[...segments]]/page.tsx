@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import AppShell from '../../../../AppShell';
-import { getServerContentForPath } from '../../../../../lib/serverContent';
+import AppShell from '@/app/AppShell';
+import { getServerContentForPath } from '@/lib/serverContent';
 
 /** Learn: ISR 7 days – authority + internal linking */
 export const revalidate = 604800;

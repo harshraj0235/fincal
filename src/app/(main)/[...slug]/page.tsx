@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import AppShell from '../../AppShell';
-import { getServerContentForPath } from '../../lib/serverContent';
+import AppShell from '@/app/AppShell';
+import { getServerContentForPath } from '@/lib/serverContent';
 
 /** Force SSR for every request so crawlers get full HTML content (calculators, tools, learn, news). */
 export const dynamic = 'force-dynamic';

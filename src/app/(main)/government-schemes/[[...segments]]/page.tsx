@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import AppShell from '../../../../AppShell';
-import { getServerContentForPath } from '../../../../../lib/serverContent';
+import AppShell from '@/app/AppShell';
+import { getServerContentForPath } from '@/lib/serverContent';
 
 /** Government: ISR 7 days – trust + E-E-A-T */
 export const revalidate = 604800;

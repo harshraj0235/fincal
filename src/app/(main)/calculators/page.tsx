@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AppShell from '../../AppShell';
+import AppShell from '@/app/AppShell';
 
 /** Calculators hub: force-dynamic (SSR) */
 export const dynamic = 'force-dynamic';

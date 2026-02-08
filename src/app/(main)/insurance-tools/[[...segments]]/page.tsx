@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import AppShell from '../../../../AppShell';
-import { getServerContentForPath } from '../../../../../lib/serverContent';
+import AppShell from '@/app/AppShell';
+import { getServerContentForPath } from '@/lib/serverContent';
 
 /** Insurance Tools: ISR 24h – AdSense sensitive */
 export const revalidate = 86400;
