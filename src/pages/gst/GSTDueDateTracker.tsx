@@ -4,8 +4,7 @@ import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 import { ArrowLeft, Calendar, Download, Link as LinkIcon } from 'lucide-react';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../../lib/pdfExportClient';
 
 type FilingType = 'GSTR-1' | 'GSTR-3B' | 'GSTR-9' | 'CMP-08';
 
@@ -64,6 +63,7 @@ const GSTDueDateTracker: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
+    const { html2canvas, jsPDF } = await getPdfLibs();
     const canvas = await html2canvas(resultsRef.current, { scale: 2, useCORS: true, allowTaint: true });
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');

@@ -32,9 +32,8 @@ import {
   Title
 } from 'chart.js';
 import { Helmet } from 'react-helmet-async';
-import jsPDF from 'jspdf';
+import { getPdfLibs } from '../lib/pdfExportClient';
 import * as XLSX from 'xlsx';
-import html2canvas from 'html2canvas';
 
 ChartJS.register(
   ArcElement, 
@@ -255,6 +254,7 @@ export const LoanCalculator: React.FC = () => {
   const exportToPDF = async () => {
     setExportLoading(true);
     try {
+      const { html2canvas, jsPDF } = await getPdfLibs();
       const pdf = new jsPDF('p', 'mm', 'a4');
       const pageWidth = pdf.internal.pageSize.getWidth();
       

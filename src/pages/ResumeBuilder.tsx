@@ -6,8 +6,7 @@ import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
 import { Download, Mail, Phone, MapPin, Linkedin, Github, User, Code, Award, FileText, GraduationCap, Plus, Trash2, Minus, Briefcase } from "lucide-react";
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../lib/pdfExportClient';
 
 // Types
 interface PersonalInfo {
@@ -52,6 +51,7 @@ interface ResumeData {
 
 // PDF Generation Function
 const generatePDF = async (resumeData: ResumeData) => {
+  const { html2canvas, jsPDF } = await getPdfLibs();
   try {
     const element = document.getElementById('resume-content');
     if (!element) {

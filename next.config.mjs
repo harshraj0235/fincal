@@ -25,6 +25,16 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'lucide-react'],
     webpackMemoryOptimizations: true, // Reduce peak memory (Cloudflare Pages OOM)
+    // Exclude heavy client-only deps from server bundle (Cloudflare 25 MiB limit)
+    outputFileTracingExcludes: {
+      '*': [
+        'node_modules/@ampproject/**',
+        'node_modules/@swc/**',
+        'node_modules/eslint/**',
+        'node_modules/typescript/**',
+        'node_modules/@types/**',
+      ],
+    },
   },
   // CSP set in public/_headers (object-src 'none' only) to avoid merging with other CSP
   // Note: Avoid overriding react/react-dom aliases - they can cause "cache is not a function"

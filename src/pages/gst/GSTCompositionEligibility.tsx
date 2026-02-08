@@ -4,8 +4,7 @@ import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 import { ArrowLeft, ShieldCheck, Info, Download, Link as LinkIcon } from 'lucide-react';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../../lib/pdfExportClient';
 
 type BusinessType = 'trader_or_manufacturer' | 'restaurant' | 'service_provider';
 type StateCategory = 'normal' | 'special_category';
@@ -65,6 +64,7 @@ const GSTCompositionEligibility: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
+    const { html2canvas, jsPDF } = await getPdfLibs();
     const canvas = await html2canvas(resultsRef.current, { scale: 2, useCORS: true, allowTaint: true });
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');

@@ -5,8 +5,7 @@ import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 import { findGoldTool } from '../../data/goldTools';
 import { ArrowLeft, Download, Link as LinkIcon } from 'lucide-react';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../../lib/pdfExportClient';
 import { BarChart } from '../../components/BarChart';
 import { ResultChart } from '../../components/ResultChart';
 import ToolArticle from '../../components/ToolArticle';
@@ -539,6 +538,7 @@ const GoldToolPage: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
+    const { html2canvas, jsPDF } = await getPdfLibs();
     const canvas = await html2canvas(resultsRef.current, { scale: 2, useCORS: true, allowTaint: true });
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');

@@ -4,8 +4,7 @@ import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 import { ArrowLeft, TrendingUp, Info, Download, Link as LinkIcon } from 'lucide-react';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../../lib/pdfExportClient';
 
 const GSTRateImpactAnalyzer: React.FC = () => {
   const navigate = useNavigate();
@@ -30,6 +29,7 @@ const GSTRateImpactAnalyzer: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
+    const { html2canvas, jsPDF } = await getPdfLibs();
     const canvas = await html2canvas(resultsRef.current, { scale: 2, useCORS: true, allowTaint: true });
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');

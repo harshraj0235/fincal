@@ -4,8 +4,7 @@ import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 import { ArrowLeft, FileText, Plus, Trash2, Download, Info, Link as LinkIcon } from 'lucide-react';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../../lib/pdfExportClient';
 
 interface ItemRow {
   description: string;
@@ -42,6 +41,7 @@ const GSTInvoiceGenerator: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!invoiceRef.current) return;
+    const { html2canvas, jsPDF } = await getPdfLibs();
     const canvas = await html2canvas(invoiceRef.current, { scale: 2, useCORS: true, allowTaint: true });
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');

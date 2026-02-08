@@ -4,8 +4,7 @@ import { ArrowLeft, Percent, Building, BarChart3, Download, Calculator, Trending
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../../lib/pdfExportClient';
 
 type IndustryBenchmark = {
   id: string;
@@ -110,6 +109,7 @@ const CostOfCapitalBenchmarking: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
+    const { html2canvas, jsPDF } = await getPdfLibs();
     try {
       const canvas = await html2canvas(resultsRef.current, { scale: 2, useCORS: true, allowTaint: true });
       const imgData = canvas.toDataURL('image/png');

@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, Target, Calculator, TrendingUp, Users, DollarSign, Info, AlertCircle, Shield, Download, Link } from 'lucide-react';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../../lib/pdfExportClient';
 import SEOHelmet from '../../components/SEOHelmet';
 import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
@@ -95,7 +94,7 @@ export const TermInsurancePlanner: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
-    
+    const { html2canvas, jsPDF } = await getPdfLibs();
     try {
       const canvas = await html2canvas(resultsRef.current, {
         scale: 2,

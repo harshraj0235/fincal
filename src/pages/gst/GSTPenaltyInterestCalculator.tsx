@@ -4,8 +4,7 @@ import WhatsAppBanner from '../../components/WhatsAppBanner';
 import AstroFinanceButton from '../../components/AstroFinanceButton';
 import { ArrowLeft, AlertTriangle, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import { getPdfLibs } from '../../lib/pdfExportClient';
 
 // Simplified assumptions (adjust if rules change):
 // Interest: 18% p.a. for delayed tax payment -> (tax * 18% * days/365)
@@ -32,6 +31,7 @@ const GSTPenaltyInterestCalculator: React.FC = () => {
 
   const downloadPDF = async () => {
     if (!resultsRef.current) return;
+    const { html2canvas, jsPDF } = await getPdfLibs();
     const canvas = await html2canvas(resultsRef.current, { scale: 2, useCORS: true, allowTaint: true });
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF('p', 'mm', 'a4');
