@@ -94,3 +94,5 @@ export const SitemapXml: React.FC = () => {
   }, []);
   return null;
 };
+
+export default SitemapXml;
