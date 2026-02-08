@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import type { GetServerSideProps } from 'next';
 
-/** Placeholder page - redirects to home. Required default export for Next.js Pages Router. */
+/** Placeholder page - redirects to home. Forces SSR to avoid prerender (useEffect null) on Cloudflare. */
 export default function App() {
-  const router = useRouter();
-  useEffect(() => {
-    router.replace('/');
-  }, [router]);
   return null;
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return { redirect: { destination: '/', permanent: false } };
+};
