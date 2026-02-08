@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import AppShell from '@/app/AppShell';
 import { getServerContentForPath } from '@/lib/serverContent';
 
-/** Government: ISR 7 days – trust + E-E-A-T */
-export const revalidate = 604800;
+/** Government: force-dynamic – React Router context null during prerender */
+export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
 
 const BASE = 'https://moneycal.in';

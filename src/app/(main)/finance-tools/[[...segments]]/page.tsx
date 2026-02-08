@@ -3,8 +3,8 @@ import AppShell from '@/app/AppShell';
 import { getServerContentForPath } from '@/lib/serverContent';
 import { getCategoryDescription } from '@/lib/toolsRegistry';
 
-/** Finance Tools: ISR 1 hour */
-export const revalidate = 3600;
+/** Finance Tools: force-dynamic – React Router context null during prerender */
+export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
 
 const BASE = 'https://moneycal.in';

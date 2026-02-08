@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import AppShell from '@/app/AppShell';
 import { getServerContentForPath } from '@/lib/serverContent';
 
-/** Learn: ISR 7 days – authority + internal linking */
-export const revalidate = 604800;
+/** Learn: force-dynamic – React Router context null during prerender */
+export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
 
 const BASE = 'https://moneycal.in';

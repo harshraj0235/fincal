@@ -3,8 +3,8 @@ import AppShell from '@/app/AppShell';
 import { getServerContentForPath } from '@/lib/serverContent';
 import { getCategoryDescription } from '@/lib/toolsRegistry';
 
-/** GST Tools: ISR 24h */
-export const revalidate = 86400;
+/** GST Tools: force-dynamic – React Router context null during prerender */
+export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
 
 const BASE = 'https://moneycal.in';

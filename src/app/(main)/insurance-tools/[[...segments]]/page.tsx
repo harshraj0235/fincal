@@ -3,8 +3,8 @@ import AppShell from '@/app/AppShell';
 import { getServerContentForPath } from '@/lib/serverContent';
 import { getCategoryDescription } from '@/lib/toolsRegistry';
 
-/** Insurance Tools: ISR 24h – AdSense sensitive */
-export const revalidate = 86400;
+/** Insurance Tools: force-dynamic – React Router context null during prerender */
+export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
 
 const BASE = 'https://moneycal.in';

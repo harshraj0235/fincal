@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import AppShell from '../AppShell';
 
-/** ISR: revalidate home every hour */
-export const revalidate = 3600;
+/** force-dynamic – React Router context null during prerender */
+export const dynamic = 'force-dynamic';
 
 const BASE = 'https://moneycal.in';
 const OG_IMAGE = `${BASE}/android-chrome-512x512.png`;
