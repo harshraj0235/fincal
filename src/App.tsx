@@ -8,23 +8,25 @@ import { PathnameContext } from './contexts/PathnameContext';
 import { Routes, Route, Navigate, MemoryRouter } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import { calculatorCategories } from './data/calculatorData';
-import ToolPlaceholder from './pages/tools/ToolPlaceholder';
-import BankReturnsOptimizer from './pages/tools/BankReturnsOptimizer';
-import DiscountProfitCalculator from './pages/tools/DiscountProfitCalculator';
-import ProductComparisonMatrix from './pages/tools/ProductComparisonMatrix';
-import EMIAffordabilityChecker from './pages/tools/EMIAffordabilityChecker';
-import RealTimeStockChecker from './pages/tools/RealTimeStockChecker';
-import PriceTagLabelCreator from './pages/tools/PriceTagLabelCreator';
-import MeetingAgendaNoteTaker from './pages/tools/MeetingAgendaNoteTaker';
-import DigitalBusinessCardCreator from './pages/tools/DigitalBusinessCardCreator';
-import QRCodeGenerator from './pages/tools/QRCodeGenerator';
-import CustomerPersonaBuilder from './pages/tools/CustomerPersonaBuilder';
-import TimeZoneConverter from './pages/tools/TimeZoneConverter';
-import SalesScriptAssistant from './pages/tools/SalesScriptAssistant';
-import SalesPerformanceTracker from './pages/tools/SalesPerformanceTracker';
-import CompetitiveAnalysisCheatSheet from './pages/tools/CompetitiveAnalysisCheatSheet';
-import OfferProposalTemplateBuilder from './pages/tools/OfferProposalTemplateBuilder';
-import SimpleFeedbackFormGenerator from './pages/tools/SimpleFeedbackFormGenerator';
+
+// Lazy load all page-level components (reduces handler bundle for Cloudflare 25 MiB limit)
+const ToolPlaceholder = lazy(() => import('./pages/tools/ToolPlaceholder'));
+const BankReturnsOptimizer = lazy(() => import('./pages/tools/BankReturnsOptimizer'));
+const DiscountProfitCalculator = lazy(() => import('./pages/tools/DiscountProfitCalculator'));
+const ProductComparisonMatrix = lazy(() => import('./pages/tools/ProductComparisonMatrix'));
+const EMIAffordabilityChecker = lazy(() => import('./pages/tools/EMIAffordabilityChecker'));
+const RealTimeStockChecker = lazy(() => import('./pages/tools/RealTimeStockChecker'));
+const PriceTagLabelCreator = lazy(() => import('./pages/tools/PriceTagLabelCreator'));
+const MeetingAgendaNoteTaker = lazy(() => import('./pages/tools/MeetingAgendaNoteTaker'));
+const DigitalBusinessCardCreator = lazy(() => import('./pages/tools/DigitalBusinessCardCreator'));
+const QRCodeGenerator = lazy(() => import('./pages/tools/QRCodeGenerator'));
+const CustomerPersonaBuilder = lazy(() => import('./pages/tools/CustomerPersonaBuilder'));
+const TimeZoneConverter = lazy(() => import('./pages/tools/TimeZoneConverter'));
+const SalesScriptAssistant = lazy(() => import('./pages/tools/SalesScriptAssistant'));
+const SalesPerformanceTracker = lazy(() => import('./pages/tools/SalesPerformanceTracker'));
+const CompetitiveAnalysisCheatSheet = lazy(() => import('./pages/tools/CompetitiveAnalysisCheatSheet'));
+const OfferProposalTemplateBuilder = lazy(() => import('./pages/tools/OfferProposalTemplateBuilder'));
+const SimpleFeedbackFormGenerator = lazy(() => import('./pages/tools/SimpleFeedbackFormGenerator'));
 
 // Lazy load all page-level components
 const Home = lazy(() => import('./pages/HomeInvestopedia'));

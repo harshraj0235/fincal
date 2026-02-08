@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from '../lib/router-compat';
-import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, 
   Search, 
@@ -134,11 +133,9 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                   
                   {/* Dropdown Menu */}
                   {hasSubmenu && isDropdownOpen === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2"
+                    <div
+                      className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2 animate-[fadeSlideIn_0.2s_ease-out]"
+                      style={{ animation: 'fadeSlideIn 0.2s ease-out' }}
                     >
                       {item.submenu?.map((subItem) => (
                         <Link
@@ -150,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                           {subItem.name}
                         </Link>
                       ))}
-                    </motion.div>
+                    </div>
                   )}
                 </div>
               );
@@ -188,13 +185,10 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
       </div>
       
       {/* Search Bar */}
-      <AnimatePresence>
-        {isSearchOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="bg-white border-t border-gray-100"
+      {isSearchOpen && (
+          <div
+            className="bg-white border-t border-gray-100 animate-[fadeIn_0.2s_ease-out]"
+            style={{ animation: 'fadeIn 0.2s ease-out' }}
           >
             <div className="max-w-3xl mx-auto px-4 py-4">
               <form onSubmit={handleSearch} className="relative">
@@ -220,27 +214,20 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                 </button>
               </form>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
 
       {/* Mobile Menu - Comprehensive Navigation */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
+      {isMobileMenuOpen && (
           <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+            <div
               className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+              style={{ animation: 'fadeIn 0.2s ease-out' }}
               onClick={() => setIsMobileMenuOpen(false)}
             />
-            <motion.div
-              initial={{ x: '-100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            <div
               className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-full max-w-sm bg-white z-50 lg:hidden shadow-2xl overflow-y-auto"
+              style={{ animation: 'slideInFromLeft 0.3s ease-out' }}
             >
               <div className="p-4">
                 {/* Mobile Menu Header */}
@@ -348,13 +335,10 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                             }`}
                           />
                         </button>
-                        <AnimatePresence>
-                          {expandedCategory === category.id && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              className="overflow-hidden"
+                        {expandedCategory === category.id && (
+                            <div
+                              className="overflow-hidden animate-[fadeIn_0.2s_ease-out]"
+                              style={{ animation: 'fadeIn 0.2s ease-out' }}
                             >
                               <div className="pl-4 pr-3 py-2 space-y-1 bg-gray-50 rounded-lg mt-1">
                                 {category.calculators.map((calc) => {
@@ -378,9 +362,8 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                                   );
                                 })}
                               </div>
-                            </motion.div>
+                            </div>
                           )}
-                        </AnimatePresence>
                       </div>
                     ))}
                   </div>
@@ -418,10 +401,9 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </>
         )}
-      </AnimatePresence>
     </header>
   );
 };

@@ -5,7 +5,6 @@ import UniversalCanonical from './UniversalCanonical';
 import { Sidebar } from './Sidebar';
 import { useLocation } from '../lib/router-compat';
 import CookieConsent from './CookieConsent';
-import { motion, AnimatePresence } from 'framer-motion';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -19,8 +18,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const isHomePage = location.pathname === '/';
   const isMoneyPage = location.pathname.startsWith('/money/');
   const isNewsPage = location.pathname.startsWith('/news');
-  const isCalculatorPage = location.pathname.includes('/calculators/');
-  const isBlogPage = location.pathname.includes('/blog');
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 100);
@@ -28,7 +25,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   }, [location.pathname]);
 
   useEffect(() => {
-    // Close sidebar when route changes
     setSidebarOpen(false);
   }, [location.pathname]);
 
@@ -37,64 +33,49 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <UniversalCanonical />
       <CookieConsent />
       
-      {/* Header */}
       <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
       
-      {/* Main Layout */}
       <div className="flex-1 flex pt-16">
-        {/* Sidebar for non-home pages */}
         {!isHomePage && !isMoneyPage && !isNewsPage && (
           <>
-            {/* Desktop Sidebar */}
             <aside className="hidden lg:block w-64 flex-shrink-0 border-r border-gray-200 bg-white">
               <Sidebar />
             </aside>
 
-            {/* Mobile Sidebar Overlay */}
-            <AnimatePresence>
-              {sidebarOpen && (
-                <>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-                    onClick={() => setSidebarOpen(false)}
-                  />
-                  <motion.div
-                    initial={{ x: -300 }}
-                    animate={{ x: 0 }}
-                    exit={{ x: -300 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-white z-50 lg:hidden shadow-xl border-r border-gray-200"
-                  >
-                    <Sidebar />
-                  </motion.div>
-                </>
-              )}
-            </AnimatePresence>
+            {/* Mobile Sidebar - CSS transitions (framer-motion removed for bundle size) */}
+            {sidebarOpen && (
+              <>
+                <div
+                  className="fixed inset-0 bg-black/50 z-40 lg:hidden animate-fadeIn"
+                  onClick={() => setSidebarOpen(false)}
+                  style={{ animation: 'fadeIn 0.2s ease-out' }}
+                />
+                <div
+                  className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-white z-50 lg:hidden shadow-xl border-r border-gray-200"
+                  style={{ animation: 'slideIn 0.3s ease-out' }}
+                >
+                  <Sidebar />
+                </div>
+              </>
+            )}
           </>
         )}
         
-        {/* Main Content Area */}
         <main className="flex-1 min-w-0">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={location.pathname}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
-              className="h-full"
-            >
-              {children}
-            </motion.div>
-          </AnimatePresence>
+          <div key={location.pathname} className="h-full animate-contentIn" style={{ animation: 'contentIn 0.2s ease-out' }}>
+            {children}
+          </div>
         </main>
       </div>
 
-      {/* Footer */}
       <Footer />
+      <style>{`
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideIn { from { transform: translateX(-300px); } to { transform: translateX(0); } }
+        @keyframes slideInFromLeft { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+        @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes contentIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      `}</style>
     </div>
   );
 };

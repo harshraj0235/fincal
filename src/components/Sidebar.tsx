@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from '../lib/router-compat';
-import { motion } from 'framer-motion';
 import { 
   Calculator, 
   TrendingUp, 
