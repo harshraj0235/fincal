@@ -1,4 +1,6 @@
 /** Minimal 404 page - no Layout/Header/Sidebar, no next/link (avoids cache() build error). */
+export const dynamic = 'force-static';
+
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-4">

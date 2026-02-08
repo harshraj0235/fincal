@@ -18,7 +18,8 @@ When editing pages or components, avoid these patterns that cause build failures
 ## 3. Not-found page
 - The custom `app/not-found.tsx` must stay minimal (no Layout/Header/Sidebar, no `next/link`).
 - Use plain `<a href="...">` instead of `<Link>` to avoid `cache is not a function` build error.
-- Main app routes live under `app/(main)/` so they get ClientLayoutWrapper. The not-found page does NOT use the heavy layout—this avoids "Failed to collect page data for /_not-found" during build.
+- Export `dynamic = 'force-static'` to help avoid cache resolution issues during build.
+- Do NOT override `react`/`react-dom` in next.config webpack aliases—this breaks React's `cache` API resolution and causes "_not-found" build failure on Cloudflare.
 
 ## 4. Pages Router files (src/pages/)
 - Every page file must have a default export. Empty or placeholder pages need `export default function X() { return <Navigate to="..." />; }` or similar.

@@ -27,19 +27,16 @@ const nextConfig = {
     webpackMemoryOptimizations: true, // Reduce peak memory (Cloudflare Pages OOM)
   },
   // CSP set in public/_headers (object-src 'none' only) to avoid merging with other CSP
+  // Note: Avoid overriding react/react-dom aliases - they can cause "cache is not a function"
+  // in _not-found page (Next.js/React cache API resolution breaks on Cloudflare build).
   webpack: (config) => {
     const root = process.cwd();
     const nm = path.join(root, 'node_modules');
     const base = config.resolve.alias || {};
-    config.resolve.alias = {
-      ...base,
-      react: path.join(nm, 'react'),
-      'react-dom': path.join(nm, 'react-dom'),
-      'react/jsx-runtime': path.join(nm, 'react', 'jsx-runtime.js'),
-      'react-dom/client': path.join(nm, 'react-dom', 'client.js'),
-    };
+    // Only add scheduler if needed for OOM; do NOT alias react/react-dom
     try {
-      config.resolve.alias.scheduler = path.join(nm, 'scheduler');
+      const schedulerPath = path.join(nm, 'scheduler');
+      config.resolve.alias = { ...base, scheduler: schedulerPath };
     } catch (_) {}
     return config;
   },
