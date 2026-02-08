@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-08T17:35:19.040Z",
+  "updatedAt": "2026-02-08T17:58:30.980Z",
   "items": [
     {
       "id": "feed-a1738cd0f637",
@@ -15,7 +15,7 @@
       ],
       "fullStoryLink": "https://www.bbc.co.uk/hindi/live/cgrzjjvyzwyt?at_medium=RSS&at_campaign=rss",
       "fullStoryPath": "https://www.bbc.co.uk/hindi/live/cgrzjjvyzwyt?at_medium=RSS&at_campaign=rss",
-      "datePublished": "2026-02-08T17:35:17.234Z",
+      "datePublished": "2026-02-08T17:58:27.688Z",
       "readTimeSeconds": 50,
       "imageUrl": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/37b5/live/2c8ef680-0508-11f1-b5e2-dd58fc65f0f6.png",
       "source": "feed"
@@ -401,6 +401,25 @@
       "source": "feed"
     },
     {
+      "id": "feed-d35f375f6f33",
+      "slug": "india-grants-duty-concession-to-us-on-just-5-lakh-tonnes-of-ddgs-under-trade-pac-5f6f33",
+      "category": "economy",
+      "headline": "India grants duty concession to US on just 5 lakh tonnes of DDGS under trade pact - The Economic Times",
+      "whyItMatters": [
+        "India grants duty concession to US on just 5 lakh tonnes of DDGS under trade pact The Economic Times View Full coverage on Google News This summary covers the key points. Visit the source for full det"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "India grants duty concession to US on just 5 lakh tonnes of DDGS under trade pact The Economic Times View Full coverage on Google News This summary covers the key points. Visit the source for full details. For the full story and latest updates, read the complete article. Source: Google News India."
+      ],
+      "fullStoryLink": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxORU1Vb2MxbmZ5WGN6YXpqaWs4QzhJQWFUWVB2dHU2blE5dnhwVmYtNERiT1Mtd25rcnNjSlZkNzJReWpaa0cwRThoeFAwbmxfc0tjOTRuTlJlaG5wOTBoU25DNkNyT1FGUVp0UmhfakRFNnd5Q21Kb1l3VW92OVoyX3NQTzB5QVh3Ni1DYW1odTFtU3dXQTJ6ZEwzdzdVMkZMazJDM0R4ekhHNjRXbllVbzJxSmJuWWlmejlvOU1QOFR2dXNaamhod09pd2JDU3JfQzRkMi1tb05HOEE5MS13Z0tuMUdTWF85c1pRa2p1dDJXRTlJ0gH6AUFVX3lxTE9aenh0SG5RSUx4TVpuREtMclI4ay1oQ0RFdWZYZl9xN1JDcTVQY29BeXRaX3pfZ2hiM3NZMEJOdDd0bWJBb1h3d2hnQW9mbEgxYWh6R1JMd0NKVlpxQ21KVnJ6alFURXJEWk9oMllxcGw3dGpFbWFNZzhxUk8weFQ0ZGJWNG1OTTFHTURWdUVIdkRCdkVjVVRBVmdVak92d0dzcC14LWZyX2dMOGNYM1hYbEpJTHhxY1BDV0N4ckRtQV96Q0tfZVRPd3VYSWZwRjJKb2lVYXdxYlBEampwVXc4ZjAwV3htQUJkSU9hdnJFaklmdEhWVUlXcVE?oc=5",
+      "fullStoryPath": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxORU1Vb2MxbmZ5WGN6YXpqaWs4QzhJQWFUWVB2dHU2blE5dnhwVmYtNERiT1Mtd25rcnNjSlZkNzJReWpaa0cwRThoeFAwbmxfc0tjOTRuTlJlaG5wOTBoU25DNkNyT1FGUVp0UmhfakRFNnd5Q21Kb1l3VW92OVoyX3NQTzB5QVh3Ni1DYW1odTFtU3dXQTJ6ZEwzdzdVMkZMazJDM0R4ekhHNjRXbllVbzJxSmJuWWlmejlvOU1QOFR2dXNaamhod09pd2JDU3JfQzRkMi1tb05HOEE5MS13Z0tuMUdTWF85c1pRa2p1dDJXRTlJ0gH6AUFVX3lxTE9aenh0SG5RSUx4TVpuREtMclI4ay1oQ0RFdWZYZl9xN1JDcTVQY29BeXRaX3pfZ2hiM3NZMEJOdDd0bWJBb1h3d2hnQW9mbEgxYWh6R1JMd0NKVlpxQ21KVnJ6alFURXJEWk9oMllxcGw3dGpFbWFNZzhxUk8weFQ0ZGJWNG1OTTFHTURWdUVIdkRCdkVjVVRBVmdVak92d0dzcC14LWZyX2dMOGNYM1hYbEpJTHhxY1BDV0N4ckRtQV96Q0tfZVRPd3VYSWZwRjJKb2lVYXdxYlBEampwVXc4ZjAwV3htQUJkSU9hdnJFaklmdEhWVUlXcVE?oc=5",
+      "datePublished": "2026-02-08 14:37:33",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
       "id": "feed-49b4d0cbb6c9",
       "slug": "dalai-lama-never-met-jeffrey-epstein-tibetan-leaders-office-junks-reports-cbb6c9",
       "category": "economy",
@@ -472,6 +491,25 @@
       "fullStoryLink": "https://economictimes.indiatimes.com/news/politics-and-nation/aap-delhi-chief-saurabh-bhardwaj-detained-in-janakpuri-during-candle-march-over-accident/articleshow/128073682.cms",
       "fullStoryPath": "https://economictimes.indiatimes.com/news/politics-and-nation/aap-delhi-chief-saurabh-bhardwaj-detained-in-janakpuri-during-candle-march-over-accident/articleshow/128073682.cms",
       "datePublished": "2026-02-08 14:03:29",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-7ee8dd7a6b0f",
+      "slug": "amit-shah-chairs-security-meeting-in-raipur-on-left-wing-extremism-thehinducom-7a6b0f",
+      "category": "economy",
+      "headline": "Amit Shah chairs security meeting in Raipur on Left-Wing Extremism - thehindu.com",
+      "whyItMatters": [
+        "Amit Shah chairs security meeting in Raipur on Left-Wing Extremism thehindu.com Amit Shah Lands In Raipur For Final Push Against Maoists By March 31 NDTV Amit Shah sets March 31 deadline to end Maoist"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "Amit Shah chairs security meeting in Raipur on Left-Wing Extremism thehindu.com Amit Shah Lands In Raipur For Final Push Against Maoists By March 31 NDTV Amit Shah sets March 31 deadline to end Maoist insurgency after Raipur review meet Telegraph India Maoism is an ideological problem, not development deficit, says Amit Shah Times of India C’garh: Red Carpet Welcome To Maoists Who Surrender, Naxal Ideology To Be Defeated By People: Shah Deccan Chronicle For the full story and latest updates, read the complete article. Source: Google News India."
+      ],
+      "fullStoryLink": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSjhDMmRtc25SWktBQUlzSzFJNXFMMVhGNUJoeW1jbFo3SFl3Ul8wWXdWOVBwNGdENTBIQUU0NlpkRGE5MWREc21ocDhLb3paVFZvQlFtakNkOHFPMFZXTi01UENTa1hNUk9KZ3RvUTJUbzBDeEg1UGxucHp1aGNqOU9KTm1ITnBXR2dBdEV1S1IxcWZIWGZ2UHliOUI5dFBoMmlwVVdxc1NLdVp3cXhrV0kwRnF4TGNpXzNHaEpRUVjSAccBQVVfeXFMUE8ycXAtdUVmNDlwczdxVktNTUlxczN2UkI2Wnl2YmxpNElqNHVUREtEWEdOTG1DS052a1dNNzVHVWprekd4ekxRcG11cmlDak5wNHk5TWNXZENJVHhJSXFEUzhlNHktWmFCaHpVeGxhS0VNZFJVYXdwNmdwb3dEN1dDRmpTNHktQnVNZ1czejRjREYwT29uOUo4bjJFUTlDSHJ3TFBPNHRFaC1rTXppeWc0eG9oSWk4eVNzYkQ4T3EyajJ1NG5Idw?oc=5",
+      "fullStoryPath": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSjhDMmRtc25SWktBQUlzSzFJNXFMMVhGNUJoeW1jbFo3SFl3Ul8wWXdWOVBwNGdENTBIQUU0NlpkRGE5MWREc21ocDhLb3paVFZvQlFtakNkOHFPMFZXTi01UENTa1hNUk9KZ3RvUTJUbzBDeEg1UGxucHp1aGNqOU9KTm1ITnBXR2dBdEV1S1IxcWZIWGZ2UHliOUI5dFBoMmlwVVdxc1NLdVp3cXhrV0kwRnF4TGNpXzNHaEpRUVjSAccBQVVfeXFMUE8ycXAtdUVmNDlwczdxVktNTUlxczN2UkI2Wnl2YmxpNElqNHVUREtEWEdOTG1DS052a1dNNzVHVWprekd4ekxRcG11cmlDak5wNHk5TWNXZENJVHhJSXFEUzhlNHktWmFCaHpVeGxhS0VNZFJVYXdwNmdwb3dEN1dDRmpTNHktQnVNZ1czejRjREYwT29uOUo4bjJFUTlDSHJ3TFBPNHRFaC1rTXppeWc0eG9oSWk4eVNzYkQ4T3EyajJ1NG5Idw?oc=5",
+      "datePublished": "2026-02-08 14:03:00",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -567,6 +605,25 @@
       "fullStoryLink": "https://www.business-standard.com/economy/news/https-www-business-standard-com-economy-jobs-gig-hiring-to-surge-in-2026-as-qcom-ecom-expand-beyond-metros-126020800002-126020800403_1.html",
       "fullStoryPath": "https://www.business-standard.com/economy/news/https-www-business-standard-com-economy-jobs-gig-hiring-to-surge-in-2026-as-qcom-ecom-expand-beyond-metros-126020800002-126020800403_1.html",
       "datePublished": "2026-02-08 12:56:18",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
+      "id": "feed-57fe72efe1bd",
+      "slug": "trump-removes-25-penal-tariff-what-happens-if-india-stops-buying-russian-crude-o-efe1bd",
+      "category": "economy",
+      "headline": "Trump removes 25% penal tariff: What happens if India stops buying Russian crude oil? - Times of India",
+      "whyItMatters": [
+        "Trump removes 25% penal tariff: What happens if India stops buying Russian crude oil? Times of India India-US trade deal LIVE | Buying oil from US in India's interest, says Goyal; Oppn seeks debate on"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "Trump removes 25% penal tariff: What happens if India stops buying Russian crude oil? Times of India India-US trade deal LIVE | Buying oil from US in India's interest, says Goyal; Oppn seeks debate on trade deal Hindustan Times Why Trump’s Executive Order on India’s Stoppage of Russian Crude has Serious Consequences TheWire.in Each Minister handles his responsibility, says Piyush Goyal on trade deal, Russian oil thehindu.com In US trade deal push, Indian refiners cut back on Russian oil The Economic Times For the full story and latest updates, read the complete article. Source: Google News India."
+      ],
+      "fullStoryLink": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQU0Q3QjU1Rmkyei1PTTh2YnhybERXZlBuRWh2LWlHUDRCOHNaaXk5SHV5LVBLVndkNVNmakEtRldHWmQya3ZqVXJONjJ5OFlISUwzb0ZBQkNqZklHRTBHWGdTQ0RvdmZBcEl2OHFpdGYyRDZlQW1EUGZZVkNUUGJMMy1CcXU0UERMTG9lc1dETEJoT2EyQXVic1MzYmIwNFA0MXNIeHZjRW5OMTNTS0hQZzU1SFg2a05VTEY0T3RwQks3M3ZrS2Y1blJHSnZFa3pGd1dfMGRWU3BDT1NxRW9HMElNX0hPRnVmR0NkTnJ6VEJHTFV5RjZHcnhjS2U?oc=5",
+      "fullStoryPath": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQU0Q3QjU1Rmkyei1PTTh2YnhybERXZlBuRWh2LWlHUDRCOHNaaXk5SHV5LVBLVndkNVNmakEtRldHWmQya3ZqVXJONjJ5OFlISUwzb0ZBQkNqZklHRTBHWGdTQ0RvdmZBcEl2OHFpdGYyRDZlQW1EUGZZVkNUUGJMMy1CcXU0UERMTG9lc1dETEJoT2EyQXVic1MzYmIwNFA0MXNIeHZjRW5OMTNTS0hQZzU1SFg2a05VTEY0T3RwQks3M3ZrS2Y1blJHSnZFa3pGd1dfMGRWU3BDT1NxRW9HMElNX0hPRnVmR0NkTnJ6VEJHTFV5RjZHcnhjS2U?oc=5",
+      "datePublished": "2026-02-08 12:52:00",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -876,25 +933,6 @@
       "source": "feed"
     },
     {
-      "id": "feed-e2d2d3be97e3",
-      "slug": "rss-chief-for-bharat-ratna-to-savarkar-also-speaks-on-turning-75-retirement-indi-be97e3",
-      "category": "economy",
-      "headline": "RSS chief for Bharat Ratna to Savarkar; also speaks on turning 75, retirement | India News - Hindustan Times",
-      "whyItMatters": [
-        "RSS chief for Bharat Ratna to Savarkar; also speaks on turning 75, retirement | India News Hindustan Times \"I Am Not On That Panel\": Mohan Bhagwat On 'Delay' In Bharat Ratna To Savarkar NDTV 'Bharat R"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "RSS chief for Bharat Ratna to Savarkar; also speaks on turning 75, retirement | India News Hindustan Times \"I Am Not On That Panel\": Mohan Bhagwat On 'Delay' In Bharat Ratna To Savarkar NDTV 'Bharat Ratna's prestige will increase': RSS chief Mohan Bhagwat backs award for VD Savarkar, Congress hits back Times of India Bharat Ratna for Veer Savarkar will enhance its prestige: RSS Chief Mohan Bhagwat The Economic Times Bharat Ratna Debate: Mohan Bhagwat Backs Savarkar Deccan Herald For the full story and latest updates, read the complete article. Source: Google News India."
-      ],
-      "fullStoryLink": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNajNIbnZfT0tweU9haDRUWmRxUXViQUdBQWZiejdlWWRQOW1ZSC1YQ0dXalJidXUwc2ZxTnl3MXFaWEY1dThVbXIwQ2hyUWdzVk1zWmVUd3B2enhSdHA5NU4zZFRORHdiOEtBa3AwOWRJenl0MjlxeDcwRXIxeVlJYnhwcEhRRTUtQndxSTA5bkY0WWRMYXRxNHc4V0RRSUxRZ3Q2LWNDLUdvMURTZTI0NXBxb3FzZDVYa3dlclVfQTNoc25lVFNxX0lzeXJqekFpaE9Bd2p4ek90NWZaMjM5VVk2MU96X1A5X3puRmE2dk5TOVk5bHpCRk5UbUZOX1lFdzMtU2c0TFM0Sk800gGSAkFVX3lxTFB0cFUwVG4tdmxNb3NlMVJIYjZDV09uNkRmTDUyMEI4Si0yekY5NGhSU3hTaVM0bC1jb3R6SUNZTlI5MVFuT3NiVEtRNDQxdGpjOXJ6cDdacXFJZjBfLTQ1bC1Da1lld05ycjRvYlpOUzhDdUpMWVdnTm9lOG1kYkg1OW5JUmNWdkZQSFdfRDBVU1ZORlg5Z1gtSDI1WUJrdmstSll0NHRwQWM0U0djRnoyMFpNaHNONFJwNW9jM2tXLXdxWUdjeGJzMVdFUUZCZ2ZvZk9ZNmtnZzBudEhsd3pONGs3WFdmU2l6aVUxV2ZNREVEeEJBQlVuVTAzMDF4ZXBGTlNXcktRRWpHUVVUQjNSSmc?oc=5",
-      "fullStoryPath": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNajNIbnZfT0tweU9haDRUWmRxUXViQUdBQWZiejdlWWRQOW1ZSC1YQ0dXalJidXUwc2ZxTnl3MXFaWEY1dThVbXIwQ2hyUWdzVk1zWmVUd3B2enhSdHA5NU4zZFRORHdiOEtBa3AwOWRJenl0MjlxeDcwRXIxeVlJYnhwcEhRRTUtQndxSTA5bkY0WWRMYXRxNHc4V0RRSUxRZ3Q2LWNDLUdvMURTZTI0NXBxb3FzZDVYa3dlclVfQTNoc25lVFNxX0lzeXJqekFpaE9Bd2p4ek90NWZaMjM5VVk2MU96X1A5X3puRmE2dk5TOVk5bHpCRk5UbUZOX1lFdzMtU2c0TFM0Sk800gGSAkFVX3lxTFB0cFUwVG4tdmxNb3NlMVJIYjZDV09uNkRmTDUyMEI4Si0yekY5NGhSU3hTaVM0bC1jb3R6SUNZTlI5MVFuT3NiVEtRNDQxdGpjOXJ6cDdacXFJZjBfLTQ1bC1Da1lld05ycjRvYlpOUzhDdUpMWVdnTm9lOG1kYkg1OW5JUmNWdkZQSFdfRDBVU1ZORlg5Z1gtSDI1WUJrdmstSll0NHRwQWM0U0djRnoyMFpNaHNONFJwNW9jM2tXLXdxWUdjeGJzMVdFUUZCZ2ZvZk9ZNmtnZzBudEhsd3pONGs3WFdmU2l6aVUxV2ZNREVEeEJBQlVuVTAzMDF4ZXBGTlNXcktRRWpHUVVUQjNSSmc?oc=5",
-      "datePublished": "2026-02-08 07:39:12",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
       "id": "feed-5ca790417839",
       "slug": "piramal-pharma-moves-sc-against-gujarat-pollution-bodys-plant-closure-order-417839",
       "category": "business",
@@ -923,7 +961,7 @@
       ],
       "whatToDo": "Read full article for more.",
       "summaryParagraphs": [
-        "Assam: Congress slams BJP's 'point-blank shot' video for targeting minorities thehindu.com 'Nothing but a call to genocide': Congress hits out at BJP over Himanta Sarma's 'point-blank' video, seeks judicial action Times of India \"Call To Genocide\": Congress On Himanta Sarma's Now-Deleted 'Point-Blank' Video NDTV Congress slams Assam BJP's 'point-blank shot' video for targeting minorities, asks judiciary to act Telegraph India Assam BJP posts, then deletes, AI video showing Himanta taking aim at men in skullcaps The Indian Express For the full story and latest updates, read the complete article. Source: Google News India."
+        "Assam: Congress slams BJP's 'point-blank shot' video for targeting minorities thehindu.com 'Nothing but a call to genocide': Congress hits out at BJP over Himanta Sarma's 'point-blank' video, seeks judicial action Times of India \"Call To Genocide\": Congress On Himanta Sarma's Now-Deleted 'Point-Blank' Video NDTV Opposition trains guns at BJP over Himanta's now-deleted 'point-blank' video India Today Congress slams Assam BJP's 'point-blank shot' video for targeting minorities, asks judiciary to act Telegraph India For the full story and latest updates, read the complete article. Source: Google News India."
       ],
       "fullStoryLink": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNR2JXZEhIQTU5SWlfbW5vYnIwYzA1TmJNQnVxQTZORklhaV82UWRURTJwdVVJaUJkTHkxVDdtWXhXWG9UN1lQWHpORHlVVFFKOV9GbmwxTHlXTWV3TFBkTDY2b2pIT0VyMnVfNUFQMW5oZjM1ei1qMkY4dng2azNIUE5ydUl3cjJFSzhTcTY5dkxJd1E1dVB5LS1wU29IVVFhd2xGVmV3TTBfNTQzOTB1VTZ6Z2otZ0VRQkR1MDdVbk1PdjJ6OENidndrWG1xSmJqMU94N0hWb3BoRnY0aEtTN0pUaEpqb3UwTGc?oc=5",
       "fullStoryPath": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNR2JXZEhIQTU5SWlfbW5vYnIwYzA1TmJNQnVxQTZORklhaV82UWRURTJwdVVJaUJkTHkxVDdtWXhXWG9UN1lQWHpORHlVVFFKOV9GbmwxTHlXTWV3TFBkTDY2b2pIT0VyMnVfNUFQMW5oZjM1ei1qMkY4dng2azNIUE5ydUl3cjJFSzhTcTY5dkxJd1E1dVB5LS1wU29IVVFhd2xGVmV3TTBfNTQzOTB1VTZ6Z2otZ0VRQkR1MDdVbk1PdjJ6OENidndrWG1xSmJqMU94N0hWb3BoRnY0aEtTN0pUaEpqb3UwTGc?oc=5",
@@ -938,11 +976,11 @@
       "category": "economy",
       "headline": "If 1.25 crore Hindus decide to fight...: RSS chief's big remark on Bangladesh - India Today",
       "whyItMatters": [
-        "If 1.25 crore Hindus decide to fight...: RSS chief's big remark on Bangladesh India Today 'Still 1.25 crore Hindus in Bangladesh': RSS chief Mohan Bhagwat issues unity call Times of India Mohan Bhagwa"
+        "If 1.25 crore Hindus decide to fight...: RSS chief's big remark on Bangladesh India Today 'Still 1.25 crore Hindus in Bangladesh': RSS chief Mohan Bhagwat issues unity call Times of India 'Caste Now E"
       ],
       "whatToDo": "Read full article for more.",
       "summaryParagraphs": [
-        "If 1.25 crore Hindus decide to fight...: RSS chief's big remark on Bangladesh India Today 'Still 1.25 crore Hindus in Bangladesh': RSS chief Mohan Bhagwat issues unity call Times of India Mohan Bhagwat flags conversion, infiltration, low birth rate as causes of population imbalance Telegraph India \"Marriage A Social Duty, Not Just Consent\": RSS Chief On 3-Child Philosophy NDTV RSS Chief Mohan Bhagwat Urges People To Detect, Report Infiltrators To Police Deccan Chronicle For the full story and latest updates, read the complete article. Source: Google News India."
+        "If 1.25 crore Hindus decide to fight...: RSS chief's big remark on Bangladesh India Today 'Still 1.25 crore Hindus in Bangladesh': RSS chief Mohan Bhagwat issues unity call Times of India 'Caste Now Exists For Political Purposes, Selfish Interests': RSS Chief NDTV Mohan Bhagwat flags conversion, infiltration, low birth rate as causes of population imbalance Telegraph India 'People must detect, report infiltrators to govt': RSS chief Mohan Bhagwat Deccan Herald For the full story and latest updates, read the complete article. Source: Google News India."
       ],
       "fullStoryLink": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOR0tXMk1wNDBfWnlSX0RLMjkweGRCWGZMQzNfbnlSOHE5bmNNMzk0T29yMmx0Q1l3T0RrdHNUc3ZOSXZqV2hwNDJwUFBqdTRWZUcwOHJTQlpzOElyTmgxaUliM3lRNTJ5MmxvRndONklBbFBvcS1pZW1nY1ZndjZYU3ZOcUNGOUlRM2hzdzVrSFJOTUg4RVhJaVFTRVdOVU94OGdRUVJScGtlR096blVZTDBGYXMtSTFPdGlhNUZpdFlfZTcyVHZCRQ?oc=5",
       "fullStoryPath": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOR0tXMk1wNDBfWnlSX0RLMjkweGRCWGZMQzNfbnlSOHE5bmNNMzk0T29yMmx0Q1l3T0RrdHNUc3ZOSXZqV2hwNDJwUFBqdTRWZUcwOHJTQlpzOElyTmgxaUliM3lRNTJ5MmxvRndONklBbFBvcS1pZW1nY1ZndjZYU3ZOcUNGOUlRM2hzdzVrSFJOTUg4RVhJaVFTRVdOVU94OGdRUVJScGtlR096blVZTDBGYXMtSTFPdGlhNUZpdFlfZTcyVHZCRQ?oc=5",
@@ -1142,25 +1180,6 @@
       "source": "feed"
     },
     {
-      "id": "feed-80d3114c448b",
-      "slug": "pm-modi-in-malaysia-highlights-india-malaysia-renew-pledges-to-boost-trade-colla-4c448b",
-      "category": "economy",
-      "headline": "PM Modi in Malaysia highlights: India, Malaysia renew pledges to boost trade, collaboration - thehindu.com",
-      "whyItMatters": [
-        "PM Modi in Malaysia highlights: India, Malaysia renew pledges to boost trade, collaboration thehindu.com PM Modi meets leading business leaders in Malaysia, praises their role in ‘Indian growth story’"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "PM Modi in Malaysia highlights: India, Malaysia renew pledges to boost trade, collaboration thehindu.com PM Modi meets leading business leaders in Malaysia, praises their role in ‘Indian growth story’ thehindu.com PM spots fellow MGR fan in Malaysian counterpart as lunch features Tamil song India Today PM Modi leaves for India after concluding two-day visit to Malaysia Times of India In Pics | India-Malaysia ties on display as PM Modi gets grand welcome in Kuala Lumpur WION For the full story and latest updates, read the complete article. Source: Google News India."
-      ],
-      "fullStoryLink": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQaE9VMWw4YnlUQVVsd3FRQXBmY1hyNWh2ZjJ0NmJKOVQ4eFkyNUZWS3pJeFk4SjlDZWhBX1paVUVDY1VaR2kyZ3U4THRKMjZjdWhIN21HVVo3UlJOWUdTQjBoWld6Sm1tX0FNWGJDX0ltNVBhbVVmaktqQllmSTZoQUktLXdjaXp4Nkc5ZFVXZHBLbFp6WlVYMDJnWEg5Znl4ZFJfTnl0SGZUSXZneTQwazNvQ0JOWmhXY2lQRTNVSUJoUUExcnlpWnNzU0dueGtnSnQwd2VfcVJUdw?oc=5",
-      "fullStoryPath": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQaE9VMWw4YnlUQVVsd3FRQXBmY1hyNWh2ZjJ0NmJKOVQ4eFkyNUZWS3pJeFk4SjlDZWhBX1paVUVDY1VaR2kyZ3U4THRKMjZjdWhIN21HVVo3UlJOWUdTQjBoWld6Sm1tX0FNWGJDX0ltNVBhbVVmaktqQllmSTZoQUktLXdjaXp4Nkc5ZFVXZHBLbFp6WlVYMDJnWEg5Znl4ZFJfTnl0SGZUSXZneTQwazNvQ0JOWmhXY2lQRTNVSUJoUUExcnlpWnNzU0dueGtnSnQwd2VfcVJUdw?oc=5",
-      "datePublished": "2026-02-08 03:04:00",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
       "id": "feed-421319c71eab",
       "slug": "holocaust-slogans-bloody-swastika-teens-knife-rampage-at-russian-university-c71eab",
       "category": "economy",
@@ -1194,25 +1213,6 @@
       "fullStoryLink": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPUTV0S0hyUi02ekNycTlxNXRRTmN1T1JheEJzeHZhRUpGLXNPbnR2a0NidnBJeHhBSjZWekVGVG1FOFc0OFFGT3VjQ0lQSkt2N0lIeHFIMW1NSkk5c2VsNkhONUdlbEtjeFB3V1J5c0lwaVdtMHZmQ19sdVdSM3VOc1JVUGJlZThET2xpdlljRGdhdHhkQzAtYnhrTzQtRnplMUc3MkVTbENOOVpVR0o4Q1RJSXN6Vnl4M1p5NHhRQnc5bGI2Zy0wQ2s5cTZoMEQ1MWxYcDE5OE1WaEJJWlpqdDZPQUVfbjllQ3RodGF5NjhtQmh5a2VR0gGEAkFVX3lxTE1JSjdLSnNzRFlJTU1sODlmRy1DT3NBU0M0dWpjXzdxMng0cDAyYjJ4cWt0SkU5LWRRSGZnNHZHVUxGamFFYTdYc2ZMWURkTWdfWUEzYWl6djBqc0NSVXZ3X1hDRl83R2phRHJuc180amJkdEhBOXlNejRCX1Mxb2V1TjVKb2dzR2FOa21qVXZjOHl0SlVHLVpnRDBuaGQtYnNZWXI0VllzZkJlUnQtM0lCLVVrWGVsOVlQZjVzWlVUaVdNeXI1cDNKZkZPdWxESHhoRURRa242dzA2T3RjYWhmVGJIeDIxc1BfamU0WGl6WVpWZzZMaFk1Z2pwRzMtZTBJeHFC?oc=5",
       "fullStoryPath": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPUTV0S0hyUi02ekNycTlxNXRRTmN1T1JheEJzeHZhRUpGLXNPbnR2a0NidnBJeHhBSjZWekVGVG1FOFc0OFFGT3VjQ0lQSkt2N0lIeHFIMW1NSkk5c2VsNkhONUdlbEtjeFB3V1J5c0lwaVdtMHZmQ19sdVdSM3VOc1JVUGJlZThET2xpdlljRGdhdHhkQzAtYnhrTzQtRnplMUc3MkVTbENOOVpVR0o4Q1RJSXN6Vnl4M1p5NHhRQnc5bGI2Zy0wQ2s5cTZoMEQ1MWxYcDE5OE1WaEJJWlpqdDZPQUVfbjllQ3RodGF5NjhtQmh5a2VR0gGEAkFVX3lxTE1JSjdLSnNzRFlJTU1sODlmRy1DT3NBU0M0dWpjXzdxMng0cDAyYjJ4cWt0SkU5LWRRSGZnNHZHVUxGamFFYTdYc2ZMWURkTWdfWUEzYWl6djBqc0NSVXZ3X1hDRl83R2phRHJuc180amJkdEhBOXlNejRCX1Mxb2V1TjVKb2dzR2FOa21qVXZjOHl0SlVHLVpnRDBuaGQtYnNZWXI0VllzZkJlUnQtM0lCLVVrWGVsOVlQZjVzWlVUaVdNeXI1cDNKZkZPdWxESHhoRURRa242dzA2T3RjYWhmVGJIeDIxc1BfamU0WGl6WVpWZzZMaFk1Z2pwRzMtZTBJeHFC?oc=5",
       "datePublished": "2026-02-08 02:52:22",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-52c52d571ca7",
-      "slug": "india-embraces-freeer-trade-financial-times-571ca7",
-      "category": "economy",
-      "headline": "India embraces free(er) trade - Financial Times",
-      "whyItMatters": [
-        "India embraces free(er) trade Financial Times Dual Citizenship: The Overdue Mother of All Deals TheWire.in The India-EU trade deal is also a strategic turning point thehindu.com India-EU Treaty: Forge"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "India embraces free(er) trade Financial Times Dual Citizenship: The Overdue Mother of All Deals TheWire.in The India-EU trade deal is also a strategic turning point thehindu.com India-EU Treaty: Forged by geopolitics Daily Pioneer FTA to boost Indian textiles, pharma, chemicals, agri exports as EU remains key trade partner: ICRA The Economic Times For the full story and latest updates, read the complete article. Source: Google News India."
-      ],
-      "fullStoryLink": "https://news.google.com/rss/articles/CBMicEFVX3lxTE41a3QzQTJMUlVQTGVXMm5maWVGTW83ajJzd2tWTDN1UlFxd2hpSzUxU2Vfa2ZzM1MteG0tTG1ocVY2ZGlMclAybzJsdTlIU1NCTFRPUllMcjN2dEs4Z04yYlBzRWxTeUp4MmtyQ0g5NnU?oc=5",
-      "fullStoryPath": "https://news.google.com/rss/articles/CBMicEFVX3lxTE41a3QzQTJMUlVQTGVXMm5maWVGTW83ajJzd2tWTDN1UlFxd2hpSzUxU2Vfa2ZzM1MteG0tTG1ocVY2ZGlMclAybzJsdTlIU1NCTFRPUllMcjN2dEs4Z04yYlBzRWxTeUp4MmtyQ0g5NnU?oc=5",
-      "datePublished": "2026-02-08 02:13:50",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
@@ -1294,6 +1294,25 @@
       "source": "feed"
     },
     {
+      "id": "feed-c28502590e5b",
+      "slug": "punjab-suspends-2-ias-officers-over-delay-in-purchase-of-smartphones-tribuneindi-590e5b",
+      "category": "economy",
+      "headline": "Punjab suspends 2 IAS officers over delay in purchase of smartphones - tribuneindia.com",
+      "whyItMatters": [
+        "Punjab suspends 2 IAS officers over delay in purchase of smartphones tribuneindia.com Two IAS officers suspended in Punjab Times of India ‘Irregularities’: Punjab govt suspends two IAS officers Hindus"
+      ],
+      "whatToDo": "Read full article for more.",
+      "summaryParagraphs": [
+        "Punjab suspends 2 IAS officers over delay in purchase of smartphones tribuneindia.com Two IAS officers suspended in Punjab Times of India ‘Irregularities’: Punjab govt suspends two IAS officers Hindustan Times Three IAS and One PCS Officer Trasnferred; Gurkirat Kirpal Singh Gets Key Departments Babushahi.com 2 IAS officers suspended, 2 transferred over 6-year delay in smartphone procurement for Anganwadi workers tribuneindia.com For the full story and latest updates, read the complete article. Source: Google News India."
+      ],
+      "fullStoryLink": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeHM0ZEhmLVd1SEpuV0l6VW5rb3d5T1hLU1dEbTNzUXFKdmFVQkU1aTUxTm1NdVBOVnk5Ty1pbFRINHhHSkdjQms3eHRObUV4WXMxV2JrU0tEbUdCRHcyZnl2MTlKMjdSekJvcm81VzVjM0FRcGRMRG5jTXo4d0dNZDhJRDE3U3FIaFN1cnAtNS11N3VvTTlxZ3lCcTg2UEJSaFVtamVja3VzMEprMTRN0gGzAUFVX3lxTE1GSUhESEZka0JCZ1RHOGJvU2ltT19ZZEVha1JxanVZc3h4Q1FIaWVkUEhveG5qZGw1czlNT2tQNzhhSWNoWElvTVFieWtDbHNKRlhVNGt0ZUJSMlFleGF4YXR0a0hTSERCdkNoNVRNYzB2THlZXy1lcUtOQTJPeWxyY2lQQjMwdkk4UENJaGNhVXFtNXEzb0FqcTB5X21KYWJMeGhBM0QyTHpiN211NktOVmtz?oc=5",
+      "fullStoryPath": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeHM0ZEhmLVd1SEpuV0l6VW5rb3d5T1hLU1dEbTNzUXFKdmFVQkU1aTUxTm1NdVBOVnk5Ty1pbFRINHhHSkdjQms3eHRObUV4WXMxV2JrU0tEbUdCRHcyZnl2MTlKMjdSekJvcm81VzVjM0FRcGRMRG5jTXo4d0dNZDhJRDE3U3FIaFN1cnAtNS11N3VvTTlxZ3lCcTg2UEJSaFVtamVja3VzMEprMTRN0gGzAUFVX3lxTE1GSUhESEZka0JCZ1RHOGJvU2ltT19ZZEVha1JxanVZc3h4Q1FIaWVkUEhveG5qZGw1czlNT2tQNzhhSWNoWElvTVFieWtDbHNKRlhVNGt0ZUJSMlFleGF4YXR0a0hTSERCdkNoNVRNYzB2THlZXy1lcUtOQTJPeWxyY2lQQjMwdkk4UENJaGNhVXFtNXEzb0FqcTB5X21KYWJMeGhBM0QyTHpiN211NktOVmtz?oc=5",
+      "datePublished": "2026-02-07 20:30:28",
+      "readTimeSeconds": 50,
+      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
+      "source": "feed"
+    },
+    {
       "id": "feed-1ec3fb24d1c1",
       "slug": "american-air-ceo-agrees-to-meet-pilots-union-after-criticism-24d1c1",
       "category": "business",
@@ -1318,11 +1337,11 @@
       "category": "economy",
       "headline": "Namma Metro Fare Hike: No Official Centre Hold Yet - Deccan Herald",
       "whyItMatters": [
-        "Namma Metro Fare Hike: No Official Centre Hold Yet Deccan Herald BJP claims Union govt. has put metro fare hike on hold; BMRCL says no such direction thehindu.com Who calls the shots? Commuters caught"
+        "Namma Metro Fare Hike: No Official Centre Hold Yet Deccan Herald Namma Metro fare hike put on hold after public backlash; BMRCL to review decision thehindu.com Who calls the shots? Commuters caught in"
       ],
       "whatToDo": "Read full article for more.",
       "summaryParagraphs": [
-        "Namma Metro Fare Hike: No Official Centre Hold Yet Deccan Herald BJP claims Union govt. has put metro fare hike on hold; BMRCL says no such direction thehindu.com Who calls the shots? Commuters caught in political crossfire over Bengaluru Metro fare hike Times of India No directive yet to reverse metro fare hike: Bangalore Metro Rail Corp The Economic Times Namma Metro Fare Hike: Centre Can Only Reconstitute Panel, State Must Bear Costs Deccan Herald For the full story and latest updates, read the complete article. Source: Google News India."
+        "Namma Metro Fare Hike: No Official Centre Hold Yet Deccan Herald Namma Metro fare hike put on hold after public backlash; BMRCL to review decision thehindu.com Who calls the shots? Commuters caught in political crossfire over Bengaluru Metro fare hike Times of India No directive yet to reverse metro fare hike: Bangalore Metro Rail Corp The Economic Times Bengaluru metro fare hike paused amid public backlash, political showdown India Today For the full story and latest updates, read the complete article. Source: Google News India."
       ],
       "fullStoryLink": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQaGZYSU9Td0U3ekFSWXVkZ3o3dXVQNWJTWElkQnRtem9kR3Z3MXBRX2lhWTRtZ0RjV3NsTEN3YVlSRzg1N3pvTEFaeHdiX0t3dDdiQ3ZaUmtNZ2JqWnJRbWthNGkxRWVzTXY0a3huUTA1TUFueGZDX29QelM0dlZhcDZSZF9GMER2MXJEV1l2MWFwLUltUDZuVGtYc3NraVZaT2ZfQlJYZFVBUkNuTS0xbEMwa0ZpaERWTHRTYWg3M2hCZmV6Y2Jlek54MA?oc=5",
       "fullStoryPath": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQaGZYSU9Td0U3ekFSWXVkZ3o3dXVQNWJTWElkQnRtem9kR3Z3MXBRX2lhWTRtZ0RjV3NsTEN3YVlSRzg1N3pvTEFaeHdiX0t3dDdiQ3ZaUmtNZ2JqWnJRbWthNGkxRWVzTXY0a3huUTA1TUFueGZDX29QelM0dlZhcDZSZF9GMER2MXJEV1l2MWFwLUltUDZuVGtYc3NraVZaT2ZfQlJYZFVBUkNuTS0xbEMwa0ZpaERWTHRTYWg3M2hCZmV6Y2Jlek54MA?oc=5",
@@ -1341,30 +1360,11 @@
       ],
       "whatToDo": "Read full article for more.",
       "summaryParagraphs": [
-        "Cop Killed, 13 Injured As Swing Collapses At Haryana's Surajkund Fair NDTV Police arrest ride operator, staff in Surajkund swing collapse case Times of India Surajkund swing collapse: Faridabad Police book ride operator; deceased inspector won Police Medal in 2020 thehindu.com Surajkund swing accident: Police arrest operator and staff after on-duty inspector dies trying to save visitors Telegraph India Surajkund swing tragedy revives grim history of ride, ropeway accidents in India The Economic Times For the full story and latest updates, read the complete article. Source: Google News India."
+        "Cop Killed, 13 Injured As Swing Collapses At Haryana's Surajkund Fair NDTV Police arrest ride operator, staff in Surajkund swing collapse case Times of India Surajkund swing collapse: Faridabad Police book ride operator; deceased inspector won Police Medal in 2020 thehindu.com Surajkund swing accident: Police arrest operator and staff after on-duty inspector dies trying to save visitors Telegraph India Surajkund swing collapse: Hero cop cremated with state honours The Economic Times For the full story and latest updates, read the complete article. Source: Google News India."
       ],
       "fullStoryLink": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNXc0bGlUZnd3SWJBSE9jcnRJTUdyZVptVHFCR1ptSFVxbmtfbGZQV0hQUUpSb0J1ZkJIMmNIYXJzZ3Y5c3JfQ0pmUTZIbGhPaGVMWFRvSUcyUUdNejhrZFd0YnBpeWdHV0ZGNzMwWjNRMG5kZXZJam5vQUZlaHdtQUVnTlNzZnZHZTRVZzM4Tm5VX1owLWt6WG5RdHhZc3Q3VU52bFhEbzFIUlNpdW91Q9IBuAFBVV95cUxNTC1vQnkxS050TnlFeGtvdmgxeDM0ZlBld3NEd2xxUWlMSGZ3eW1TVGxmQnItaHRJSmFBMmVqME81TG5OLVQxVndmel85TXJWblRHUXViSjhfNmktWnBNbko3NVcyQXd1c3N2c2prT0RBVzdaR0JjRDZUYldDZzVPZEQwUTdDYjRYU0ZKR1U0LXJTX01ROV94dXVGSlYxRXVIN0poZm9VZDFzSWhJSEVLUjBENlB6Q1ps?oc=5",
       "fullStoryPath": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNXc0bGlUZnd3SWJBSE9jcnRJTUdyZVptVHFCR1ptSFVxbmtfbGZQV0hQUUpSb0J1ZkJIMmNIYXJzZ3Y5c3JfQ0pmUTZIbGhPaGVMWFRvSUcyUUdNejhrZFd0YnBpeWdHV0ZGNzMwWjNRMG5kZXZJam5vQUZlaHdtQUVnTlNzZnZHZTRVZzM4Tm5VX1owLWt6WG5RdHhZc3Q3VU52bFhEbzFIUlNpdW91Q9IBuAFBVV95cUxNTC1vQnkxS050TnlFeGtvdmgxeDM0ZlBld3NEd2xxUWlMSGZ3eW1TVGxmQnItaHRJSmFBMmVqME81TG5OLVQxVndmel85TXJWblRHUXViSjhfNmktWnBNbko3NVcyQXd1c3N2c2prT0RBVzdaR0JjRDZUYldDZzVPZEQwUTdDYjRYU0ZKR1U0LXJTX01ROV94dXVGSlYxRXVIN0poZm9VZDFzSWhJSEVLUjBENlB6Q1ps?oc=5",
       "datePublished": "2026-02-07 15:06:24",
-      "readTimeSeconds": 50,
-      "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
-      "source": "feed"
-    },
-    {
-      "id": "feed-92bf0b24c618",
-      "slug": "8th-pay-commission-update-website-goes-live-inputs-invited-top-points-government-24c618",
-      "category": "economy",
-      "headline": "8th Pay Commission update: Website goes live, inputs invited; top points government employees shouldn’t m - Times of India",
-      "whyItMatters": [
-        "8th Pay Commission update: Website goes live, inputs invited; top points government employees shouldn’t m Times of India DA Hike January 2026: Central Govt Likely To Receive 2% Increase In Dearness Al"
-      ],
-      "whatToDo": "Read full article for more.",
-      "summaryParagraphs": [
-        "8th Pay Commission update: Website goes live, inputs invited; top points government employees shouldn’t m Times of India DA Hike January 2026: Central Govt Likely To Receive 2% Increase In Dearness Allowance | Economy News News18 8th Pay Commission Update: Key Meetings Ahead, Salary Revision Likely by 2027 The Sunday Guardian 8th Pay Commission Big Update: What’s the current status, when will salaries, pensions of central government India.Com 8th Pay Commission website goes live: Releases 18 questions to seek stakeholder feedback; what employees n The Economic Times For the full story and latest updates, read the complete article. Source: Google News India."
-      ],
-      "fullStoryLink": "https://news.google.com/rss/articles/CBMimgJBVV95cUxPVldHclh1UjJCTmh0TEdBQXlMRDJEajl4YkszdldjMmVtMkt6QlE5OU0tRkhJbUp5WnpNSzI4cldFd2JXT2dZb3ZBRlRRQzVINkRjeXhRLWZ3T2tjZXlwbl9qMkZGMGFKOXJQQVFvWWhqQV94MDhSZEZibFFTTS1xaUFxVExFdlBsR2NHTi1ZZWowUDIyZDRKWHAwbFRLYmJVNG1jbzJ6LVR1d21Wa0tJaTZCV1p4N0VobWVLS21RUTFNU0xfaUxBY0puTmZvVThHTlNFQ0VPVFkyRlBtRXpNY29fTy01RUJhZDhPQUlOX2xKXzhIRFItN2VmZUpyQk5fWEZNRndUdndncGtNQzlEbWJ3TUp1QjdQV0E?oc=5",
-      "fullStoryPath": "https://news.google.com/rss/articles/CBMimgJBVV95cUxPVldHclh1UjJCTmh0TEdBQXlMRDJEajl4YkszdldjMmVtMkt6QlE5OU0tRkhJbUp5WnpNSzI4cldFd2JXT2dZb3ZBRlRRQzVINkRjeXhRLWZ3T2tjZXlwbl9qMkZGMGFKOXJQQVFvWWhqQV94MDhSZEZibFFTTS1xaUFxVExFdlBsR2NHTi1ZZWowUDIyZDRKWHAwbFRLYmJVNG1jbzJ6LVR1d21Wa0tJaTZCV1p4N0VobWVLS21RUTFNU0xfaUxBY0puTmZvVThHTlNFQ0VPVFkyRlBtRXpNY29fTy01RUJhZDhPQUlOX2xKXzhIRFItN2VmZUpyQk5fWEZNRndUdndncGtNQzlEbWJ3TUp1QjdQV0E?oc=5",
-      "datePublished": "2026-02-07 14:30:00",
       "readTimeSeconds": 50,
       "imageUrl": "https://moneycal.in/images/optimized/pexels-photo-7063778.jpeg",
       "source": "feed"
