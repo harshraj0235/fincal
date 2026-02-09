@@ -10,9 +10,10 @@ interface PageProps {
   params: Promise<{ slug?: string[] }>;
 }
 
-/** Static export: all paths pre-generated at build time. */
+/** Static export: all paths pre-generated at build time. Root "/" is handled by (main)/page.tsx only. */
 export async function generateStaticParams() {
-  return ALL_SLUG_PARAMS;
+  // Exclude root (empty slug) so only (main)/page.tsx serves "/" with full HomeInvestopedia
+return ALL_SLUG_PARAMS.filter((p) => ((p as { slug?: string[] }).slug ?? (p as unknown as string[])).length > 0);
 }
 
 /** Title/description for common path segments (link previews). */
