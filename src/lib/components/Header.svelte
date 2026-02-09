@@ -16,6 +16,8 @@
     { href: '/contact-us', label: 'Contact' },
     { href: '/privacy-policy', label: 'Privacy' },
     { href: '/terms-of-service', label: 'Terms' },
+    { href: '/sitemap', label: 'Sitemap' },
+    { href: '/help-center', label: 'Help' },
   ];
 
   let menuOpen = false;

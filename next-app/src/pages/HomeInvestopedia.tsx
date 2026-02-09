@@ -17,7 +17,7 @@ import {
   X, Wrench,
   Newspaper, Coins, FolderOpen, Sparkles, Play,
   Receipt, Calendar as CalendarIcon, Gem, Scale,
-  Flame, LayoutGrid,
+  Flame, LayoutGrid, Map, HelpCircle, Spreadsheet,
 } from 'lucide-react';
 import SEOHelmet from '../components/SEOHelmet';
 import { calculatorCategories } from '../data/calculatorData';
@@ -408,7 +408,7 @@ const HomeInvestopedia: React.FC = () => {
                 We offer 200+ tools across tax, gold, GST, loans, insurance, banking, and investments. Our <strong>Blog</strong> and <strong>Learn</strong> sections publish original articles and guides—from understanding TDS and capital gains to choosing term insurance or PPF. <strong>News</strong> and <strong>Money Shorts</strong> keep you updated on markets, RBI, and economy in a quick, readable format. We do not give personalised investment or tax advice; we help you with numbers and clarity so you can decide with your advisor.
               </p>
               <p>
-                MoneyCal is free to use, does not store your data in calculations, and is designed to work on mobile and desktop. Use the search bar above to find any calculator or article, or browse by category: Tax Tools, Gold Tools, GST Tools, Loan Tools, and more. For policy and transparency, see our <Link to="/about" className="text-blue-600 hover:underline font-medium">About Us</Link>, <Link to="/contact" className="text-blue-600 hover:underline font-medium">Contact</Link>, <Link to="/privacy-policy" className="text-blue-600 hover:underline font-medium">Privacy Policy</Link>, and <Link to="/disclaimer" className="text-blue-600 hover:underline font-medium">Disclaimer</Link>.
+                MoneyCal is free to use, does not store your data in calculations, and is designed to work on mobile and desktop. Use the search bar above to find any calculator or article, or browse by category: Tax Tools, Gold Tools, GST Tools, Loan Tools, and more. For policy and transparency, see our <Link to="/about-us" className="text-blue-600 hover:underline font-medium">About Us</Link>, <Link to="/contact-us" className="text-blue-600 hover:underline font-medium">Contact</Link>, <Link to="/privacy-policy" className="text-blue-600 hover:underline font-medium">Privacy Policy</Link>, and <Link to="/disclaimer" className="text-blue-600 hover:underline font-medium">Disclaimer</Link>.
               </p>
             </div>
           </div>
@@ -568,6 +568,11 @@ const HomeInvestopedia: React.FC = () => {
                   { name: 'Govt Schemes', path: '/government-schemes', icon: Gift, desc: 'Subsidies & schemes' },
                   { name: 'Crypto', path: '/crypto', icon: Coins, desc: 'Crypto guides' },
                   { name: 'Astro Finance', path: '/astro-finance', icon: Sparkles, desc: 'Horoscope & finance' },
+                  { name: 'Sitemap', path: '/sitemap', icon: Map, desc: 'All pages in one place' },
+                  { name: 'Help Center', path: '/help-center', icon: HelpCircle, desc: 'FAQs & support' },
+                  { name: 'Excel Tools', path: '/excel-tools', icon: Spreadsheet, desc: 'Templates & spreadsheets' },
+                  { name: 'Comprehensive Finance Hub', path: '/comprehensive-finance-hub', icon: BarChart3, desc: 'All-in-one dashboard' },
+                  { name: 'Missed Call Banking', path: '/missed-call-banking-directory', icon: Building2, desc: 'Bank numbers directory' },
                 ].map((r) => {
                   const Icon = r.icon;
                   return (
@@ -582,6 +587,88 @@ const HomeInvestopedia: React.FC = () => {
             </div>
           </section>
         )}
+
+        {/* Explore all sections – every page open from home */}
+        <section className="py-12 bg-white border-t border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+              <LayoutGrid className="w-6 h-6 text-blue-600" />
+              Open any page from here
+            </h2>
+            <p className="text-slate-600 mb-6">Every section of MoneyCal is one click away. Calculators, tools, learn, blog, news, and more.</p>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/sitemap" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-white bg-slate-700 hover:bg-slate-800 shadow-md hover:shadow-lg transition-all">
+                <Map className="w-4 h-4" /> Sitemap
+              </Link>
+              <Link to="/calculators" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Calculator className="w-4 h-4" /> Calculators
+              </Link>
+              <Link to="/tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Wrench className="w-4 h-4" /> Tools
+              </Link>
+              <Link to="/tax-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <FileText className="w-4 h-4" /> Tax Tools
+              </Link>
+              <Link to="/gst-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Receipt className="w-4 h-4" /> GST Tools
+              </Link>
+              <Link to="/finance-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <DollarSign className="w-4 h-4" /> Finance Tools
+              </Link>
+              <Link to="/loan-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Home className="w-4 h-4" /> Loan Tools
+              </Link>
+              <Link to="/learn" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <BookOpen className="w-4 h-4" /> Learn
+              </Link>
+              <Link to="/blog" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <FileText className="w-4 h-4" /> Blog
+              </Link>
+              <Link to="/news" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Newspaper className="w-4 h-4" /> News
+              </Link>
+              <Link to="/news/shorts" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Play className="w-4 h-4" /> Money Shorts
+              </Link>
+              <Link to="/government-schemes" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Gift className="w-4 h-4" /> Govt Schemes
+              </Link>
+              <Link to="/crypto" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Coins className="w-4 h-4" /> Crypto
+              </Link>
+              <Link to="/gold-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Gem className="w-4 h-4" /> Gold Tools
+              </Link>
+              <Link to="/bank-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Building2 className="w-4 h-4" /> Bank Tools
+              </Link>
+              <Link to="/insurance-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Heart className="w-4 h-4" /> Insurance
+              </Link>
+              <Link to="/festival-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <CalendarIcon className="w-4 h-4" /> Festival
+              </Link>
+              <Link to="/excel-tools" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Spreadsheet className="w-4 h-4" /> Excel
+              </Link>
+              <Link to="/astro-finance" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <Sparkles className="w-4 h-4" /> Astro
+              </Link>
+              <Link to="/help-center" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                <HelpCircle className="w-4 h-4" /> Help
+              </Link>
+              <Link to="/about-us" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                About
+              </Link>
+              <Link to="/contact-us" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-all">
+                Contact
+              </Link>
+              <Link to="/svelte" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-violet-700 bg-violet-50 hover:bg-violet-100 border border-violet-200 transition-all">
+                Svelte version
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Why MoneyCal – trust & SEO */}
         <section className="py-12 bg-gradient-to-br from-slate-50 to-blue-50/30 border-t border-slate-200">

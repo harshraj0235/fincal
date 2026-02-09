@@ -56,6 +56,9 @@
     { name: 'Govt Schemes', path: '/government-schemes', desc: 'Subsidies & schemes' },
     { name: 'Crypto', path: '/crypto', desc: 'Crypto guides' },
     { name: 'Astro Finance', path: '/astro-finance', desc: 'Horoscope & finance' },
+    { name: 'Sitemap', path: '/sitemap', desc: 'All pages in one place' },
+    { name: 'Help Center', path: '/help-center', desc: 'FAQs & support' },
+    { name: 'Excel Tools', path: '/excel-tools', desc: 'Templates & spreadsheets' },
   ];
 
   const whyCards = [
