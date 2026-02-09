@@ -12,7 +12,7 @@
     "start:next": "next start",
     "preview:cf": "npm run build && npx wrangler pages dev out",
     "deploy:cf": "npm run build && npx wrangler pages deploy out --project-name=moneycal",
-    "build:cf:ci": "npm run generate-sitemaps && node scripts/generate-static-params.cjs && npm run build:next",
+    "build:cf:ci": "npm install --legacy-peer-deps && npm run generate-sitemaps && node scripts/generate-static-params.cjs && npm run build:next",
     "upload:cf": "npm run build && npx wrangler pages deploy out --project-name=moneycal",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "build:deploy": "npm install && npm run build",
