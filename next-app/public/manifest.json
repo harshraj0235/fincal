@@ -1,0 +1,141 @@
+{
+  "name": "MoneyCal India - Complete Financial Platform",
+  "short_name": "MoneyCal India",
+  "description": "India's leading financial platform with 200+ calculators, real-time market data, expert analysis, and comprehensive financial tools for personal finance, investments, loans, insurance, and tax planning.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["finance", "business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=192&h=192&fit=crop",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=512&h=512&fit=crop",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "MoneyCal India Desktop View"
+    },
+    {
+      "src": "/images/screenshot-mobile.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "MoneyCal India Mobile View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "EMI Calculator",
+      "short_name": "EMI Calc",
+      "description": "Calculate EMI for loans",
+      "url": "/calculators/emi-calculator",
+      "icons": [
+        {
+          "src": "/images/shortcut-emi.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "SIP Calculator",
+      "short_name": "SIP Calc",
+      "description": "Calculate SIP returns",
+      "url": "/calculators/sip-calculator",
+      "icons": [
+        {
+          "src": "/images/shortcut-sip.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Tax Calculator",
+      "short_name": "Tax Calc",
+      "description": "Calculate income tax",
+      "url": "/calculators/income-tax-calculator",
+      "icons": [
+        {
+          "src": "/images/shortcut-tax.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Market Analysis",
+      "short_name": "Market",
+      "description": "View market trends and analysis",
+      "url": "/market-analysis",
+      "icons": [
+        {
+          "src": "/images/shortcut-market.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://moneycal.in/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "capture_links": "new-client",
+  "protocol_handlers": [
+    {
+      "protocol": "web+moneycal",
+      "url": "/calculator?type=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/upload",
+      "accept": {
+        "text/csv": [".csv"],
+        "application/vnd.ms-excel": [".xls"],
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [".xlsx"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": ["text/csv", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]
+        }
+      ]
+    }
+  }
+}
