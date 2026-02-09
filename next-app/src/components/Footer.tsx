@@ -36,6 +36,7 @@ export const Footer: React.FC = () => {
         { name: 'News', href: '/news' },
         { name: 'Government Schemes', href: '/government-schemes' },
         { name: 'Crypto', href: '/crypto' },
+        { name: 'Svelte version', href: '/svelte' },
       ]
     },
     {

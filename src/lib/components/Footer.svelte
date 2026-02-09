@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { page } from '$app/stores';
+
   const footerSections = [
     {
       title: 'Tools & Calculators',
@@ -40,7 +42,8 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="/" class="footer-logo">MoneyCal.in</a>
+      <a href="{$page.url.origin}/" class="footer-logo">MoneyCal.in</a>
+      <a href="{$page.url.origin}/" class="footer-fullsite">← Full site (Next.js · 200+ tools)</a>
       <p class="footer-tagline">Free financial calculators & tools for India. Tax, Gold, GST, Loans & more.</p>
     </div>
     <div class="footer-grid">
@@ -87,6 +90,16 @@
   }
   .footer-logo:hover {
     color: #2563eb;
+  }
+  .footer-fullsite {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+  }
+  .footer-fullsite:hover {
+    text-decoration: underline;
   }
   .footer-tagline {
     font-size: 0.875rem;

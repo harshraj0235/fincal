@@ -38,6 +38,9 @@
     </button>
     <nav id="main-nav" class="nav" class:open={menuOpen} aria-label="Main navigation">
       <ul class="nav-list">
+        <li>
+          <a href="{$page.url.origin}/" class="nav-link nav-link-fullsite" rel="noopener">Full site (Next.js · 200+ tools)</a>
+        </li>
         {#each navLinks as link}
           <li>
             <a
@@ -186,5 +189,12 @@
   .nav-link.current {
     color: #2563eb;
     font-weight: 600;
+  }
+  .nav-link-fullsite {
+    color: #7c3aed;
+    font-weight: 600;
+  }
+  .nav-link-fullsite:hover {
+    color: #5b21b6;
   }
 </style>

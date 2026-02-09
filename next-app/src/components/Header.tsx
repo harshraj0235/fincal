@@ -71,7 +71,8 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
     { name: 'Govt Schemes', href: '/government-schemes' },
     { name: 'Crypto', href: '/crypto' },
     { name: 'About', href: '/about-us' },
-    { name: 'Contact', href: '/contact-us' }
+    { name: 'Contact', href: '/contact-us' },
+    { name: 'Svelte version', href: '/svelte' }
   ];
 
   const isActive = (href: string) => {
@@ -257,7 +258,8 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
                       { name: 'Learn', href: '/learn', icon: BookOpen },
                       { name: 'Blog', href: '/blog', icon: FileText },
                       { name: 'News', href: '/news', icon: FileText },
-                      { name: 'Schemes', href: '/government-schemes', icon: Shield }
+                      { name: 'Schemes', href: '/government-schemes', icon: Shield },
+                      { name: 'Svelte version', href: '/svelte', icon: FileText }
                     ].map((item) => {
                       const Icon = item.icon;
                       const active = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));

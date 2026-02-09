@@ -359,6 +359,12 @@ const HomeInvestopedia: React.FC = () => {
                   </Link>
                 );
               })}
+              <Link
+                to="/svelte"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-violet-700 hover:bg-violet-50 hover:text-violet-800 transition-colors border border-violet-200"
+              >
+                Svelte version
+              </Link>
             </div>
           </div>
         </section>

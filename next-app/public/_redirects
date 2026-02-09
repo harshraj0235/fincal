@@ -99,6 +99,9 @@ http://moneycal.in/*                         https://moneycal.in/:splat         
 # Soft 404 fix: redirect duplicate path /moneycal.in/* to correct URL (e.g. /moneycal.in/learn -> /learn)
 /moneycal.in/*                               /:splat                                 301
 
+# Svelte app (Next + Svelte mix): SPA fallback for /svelte/* so client router works
+/svelte/*                                    /svelte/200.html                         200
+
 # SPA fallback: explicit index first to avoid loop warning, then catch-all
 /index.html                                  /index.html                              200
 /*                                           /index.html                              200
