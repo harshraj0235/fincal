@@ -28,9 +28,11 @@ const CompetitiveAnalysisCheatSheet = lazy(() => import('./pages/tools/Competiti
 const OfferProposalTemplateBuilder = lazy(() => import('./pages/tools/OfferProposalTemplateBuilder'));
 const SimpleFeedbackFormGenerator = lazy(() => import('./pages/tools/SimpleFeedbackFormGenerator'));
 
-// Lazy load all page-level components
+// Home: direct import so the homepage (/) always shows full HomeInvestopedia without lazy-load delay
+import HomeInvestopedia from './pages/HomeInvestopedia';
+const Home = () => <HomeInvestopedia />;
+// Lazy load all other page-level components
 const HomeMinimal = lazy(() => import('./pages/HomeMinimal'));
-const Home = lazy(() => import('./pages/HomeInvestopedia'));
 const LoanCalculator = lazy(() => import('./calculators/LoanCalculator'));
 const HomeOld = lazy(() => import('./pages/HomeNew'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
