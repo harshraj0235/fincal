@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { resolve } from 'path';
 import viteCompression from 'vite-plugin-compression';
 
@@ -7,6 +8,9 @@ import viteCompression from 'vite-plugin-compression';
 export default defineConfig({
   base: '/',
   plugins: [
+    svelte({
+      compilerOptions: { customElement: true },
+    }),
     react(),
     viteCompression({
       verbose: true,
