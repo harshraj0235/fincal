@@ -14,6 +14,8 @@
     "deploy:cf": "npm run build && npx wrangler pages deploy out --project-name=moneycal",
     "build:cf:ci": "npm install --legacy-peer-deps && npm run generate-sitemaps && node scripts/generate-static-params.cjs && npm run build:next",
     "upload:cf": "npm run build && npx wrangler pages deploy out --project-name=moneycal",
+    "build:sveltekit": "cd sveltekit-app && npm install && npm run build",
+    "deploy:cf:sveltekit": "npm run build:sveltekit && cd sveltekit-app && npx wrangler pages deploy .svelte-kit/cloudflare --project-name=moneycal",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "build:deploy": "npm install && npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-directives --max-warnings 0",

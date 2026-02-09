@@ -12,6 +12,7 @@ dist
 dist-ssr
 .next
 .open-next
+.svelte-kit
 *.local
 
 # Editor directories and files
