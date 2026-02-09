@@ -1,4 +1,5 @@
-# Build SvelteKit (root) and deploy to Cloudflare Pages
+# Build Next.js app (full content) and deploy to Cloudflare Pages
+# Uses next-app/ which has all calculators, learn, blog, news, tools
 name: Build and Deploy to Cloudflare
 
 on:
@@ -15,21 +16,32 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies (next-app)
+        working-directory: next-app
+        run: npm install --legacy-peer-deps
 
-      - name: Build (SvelteKit for Cloudflare)
-        run: npm run build
+      - name: Generate sitemaps
+        working-directory: next-app
+        run: npm run generate-sitemaps
+
+      - name: Generate static params
+        working-directory: next-app
+        run: node scripts/generate-static-params.cjs
+
+      - name: Build Next.js (static export)
+        working-directory: next-app
+        run: npm run build:next
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144
 
       - name: Deploy to Cloudflare Pages
         if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
-        run: npx wrangler pages deploy .svelte-kit/cloudflare --project-name=moneycal
+        run: npx wrangler pages deploy next-app/out --project-name=moneycal
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Skip deploy (no API token)
         if: ${{ secrets.CLOUDFLARE_API_TOKEN == '' }}
-        run: echo "CLOUDFLARE_API_TOKEN not set in repo Secrets - deploy skipped. Add it in Settings → Secrets and variables → Actions."
+        run: echo "CLOUDFLARE_API_TOKEN not set - deploy skipped."
