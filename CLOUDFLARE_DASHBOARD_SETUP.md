@@ -1,23 +1,32 @@
 # Cloudflare Pages – Required Dashboard Setup
 
-The build fails because Cloudflare runs `npm ci` before your build. You **must** apply these settings in the Cloudflare dashboard.
+This project uses **static export** (no OpenNext, no 25 MiB limit). Configure the dashboard as below.
 
-> **Important:** The build command must be `bash build.sh` or `npm run build:cf:ci`, **NOT** `npm run build`. Using `npm run build` would cause an infinite recursion loop.
+## 1. Build configuration
 
-## 1. Environment variable
+1. **Workers & Pages** → your project → **Settings** → **Builds & deployments**
+2. Under **Build configuration** set:
 
-1. **Workers & Pages** → your project → **Settings** → **Environment variables**
+| Setting | Value |
+|--------|--------|
+| **Framework preset** | **Next.js (Static HTML Export)** or **None** |
+| **Build command** | `npm run build` |
+| **Build output directory** | `out` |
+| **Root directory** | *(leave empty)* |
+
+Do **not** use the default **Next.js** preset (it uses OpenNext and produces an 88 MiB handler that fails).
+
+## 2. Optional: skip Cloudflare’s install
+
+If you want the build to use your own install step:
+
+1. **Settings** → **Environment variables**
 2. Add (Production and Preview):
    - **Name:** `SKIP_DEPENDENCY_INSTALL`
    - **Value:** `1`
 
-## 2. Build configuration
-
-1. **Settings** → **Builds & deployments** → **Build configuration**
-2. Set:
-   - **Build command:** `bash build.sh` (or `npm run build:cf:ci`)
-   - **Build output directory:** `.open-next`
-   - **Root directory:** *(leave empty)*
+Then set **Build command** to: `bash build.sh`  
+(build.sh runs `npm install --legacy-peer-deps` then `npm run build`; output is still `out`).
 
 ## 3. Redeploy
 
@@ -25,4 +34,4 @@ Click **Retry deployment** or push a new commit.
 
 ---
 
-After this, Cloudflare skips `npm ci` and `build.sh` will install dependencies and run the OpenNext build.
+See **CLOUDFLARE_PAGES_SETUP.md** for more detail.
