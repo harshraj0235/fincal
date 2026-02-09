@@ -30,6 +30,7 @@ const Home = lazy(() => import('./pages/Home'));
 const LoanCalculator = lazy(() => import('./calculators/LoanCalculator'));
 const HomeOld = lazy(() => import('./pages/HomeNew'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
+const EMICalculatorPage = lazy(() => import('./pages/EMICalculatorPage'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const BlogCategory = lazy(() => import('./pages/BlogCategory'));
@@ -885,7 +886,7 @@ function App() {
                 <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
                 {/* Direct Calculator Routes */}
                 <Route path="/calculators/loan-calculator" element={<LoanCalculator />} />
-                <Route path="/calculators/emi-calculator" element={<CalculatorPage calculatorId="emi-calculator" />} />
+                <Route path="/calculators/emi-calculator" element={<EMICalculatorPage />} />
                 {/* Math & Education Calculators */}
                 <Route path="/calculators/lcm-hcf-calculator" element={<CalculatorPage calculatorId="lcm-hcf-calculator" />} />
                 {calculatorCategories.flatMap(category =>
