@@ -8,7 +8,7 @@
     "dev:next": "next dev",
     "build": "npm run generate-sitemaps && node scripts/generate-static-params.cjs && npm run build:next",
     "build:vite": "npm run generate-sitemaps && tsc && vite build",
-    "build:next": "npx next build",
+    "build:next": "node --max-old-space-size=3072 ./node_modules/next/dist/bin/next build",
     "start:next": "next start",
     "preview:cf": "npm run build && npx wrangler pages dev out",
     "deploy:cf": "npm run build && npx wrangler pages deploy out --project-name=moneycal",

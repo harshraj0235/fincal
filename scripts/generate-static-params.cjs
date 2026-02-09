@@ -10,8 +10,8 @@ const path = require('path');
 const BASE_URL = 'https://moneycal.in';
 const MASTER_PATH = path.join(__dirname, '../public/all-urls-master.txt');
 const OUTPUT_PATH = path.join(__dirname, '../src/lib/staticParams.generated.ts');
-// Cap to avoid heap OOM during next build (Cloudflare ~4GB)
-const MAX_PARAMS = 450;
+// Cap to avoid heap OOM during next build (Cloudflare ~4GB; 180 pages keeps build under ~3GB)
+const MAX_PARAMS = 180;
 
 let urls = [];
 if (fs.existsSync(MASTER_PATH)) {
