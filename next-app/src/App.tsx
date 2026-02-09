@@ -897,7 +897,7 @@ function App({ pathname, skipLayout }: AppProps = {}) {
             <ScrollToTop />
             <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
               <Routes>
-                <Route path="/" element={<HomeMinimal />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/home-old" element={<HomeOld />} />
                 <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
                 {/* Direct Calculator Routes */}
