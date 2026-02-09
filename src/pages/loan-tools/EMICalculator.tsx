@@ -4,6 +4,8 @@ import SEOHelmet from '../../components/SEOHelmet';
 
 const CE_TAG = 'moneycal-emi-calculator';
 
+const publishedDate = '2026-02-09T00:00:00+05:30';
+
 const faqData = [
   {
     question: 'How is EMI calculated for a reducing balance loan?',
@@ -52,6 +54,34 @@ const EMICalculator: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
 
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'EMI Calculator for Home Loan, Car Loan, and Personal Loan',
+    description:
+      'Advanced EMI calculator with prepayment planning, rate reset simulation, and amortization schedule for Indian loans.',
+    author: {
+      '@type': 'Organization',
+      name: 'MoneyCal India',
+      url: 'https://moneycal.in',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'MoneyCal India',
+      url: 'https://moneycal.in',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://moneycal.in/android-chrome-512x512.png',
+      },
+    },
+    datePublished: publishedDate,
+    dateModified: publishedDate,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://moneycal.in/loan-tools/emi-calculator',
+    },
+  };
+
   useEffect(() => {
     let mounted = true;
     import('./EMICalculatorWidget.svelte').then((mod: { default: { element?: typeof HTMLElement } }) => {
@@ -86,6 +116,18 @@ const EMICalculator: React.FC = () => {
         description="Fast EMI calculator with advanced prepayment options, rate reset simulation, and amortization schedule. Plan home loan EMI, personal loan EMI, or car loan EMI with accuracy."
         keywords="emi calculator, loan emi calculator, home loan emi calculator india, personal loan emi calculator, car loan emi calculator, reducing balance emi calculator, emi with prepayment, emi calculation formula, interest rate change emi, amortization schedule"
         url="/loan-tools/emi-calculator"
+        section="Loan Tools"
+        tags={[
+          'EMI calculator',
+          'Home loan EMI',
+          'Personal loan EMI',
+          'Car loan EMI',
+          'Loan affordability',
+          'Prepayment',
+        ]}
+        articlePublishedTime={publishedDate}
+        articleModifiedTime={publishedDate}
+        structuredData={structuredData}
         breadcrumbs={[
           { name: 'Home', url: '/' },
           { name: 'Loan Tools', url: '/loan-tools' },

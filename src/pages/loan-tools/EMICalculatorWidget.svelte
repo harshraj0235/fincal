@@ -1,4 +1,4 @@
-<svelte:options customElement="moneycal-emi-calculator" />
+<svelte:options customElement={{ tag: 'moneycal-emi-calculator', shadow: 'none' }} />
 
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
@@ -246,11 +246,11 @@
   $: shorterTenureEmi = calcEmi(loanAmount, interestRate / 12 / 100, shorterTenureMonths);
 </script>
 
-<div class="emi-page" on:click={handleDelegateClick} role="presentation">
-  <section class="hero">
+<main class="emi-page" on:click={handleDelegateClick} aria-label="EMI calculator page">
+  <section class="hero" aria-labelledby="emi-hero-title">
     <div class="hero-content">
       <span class="eyebrow">Fast EMI Calculator for India</span>
-      <h1>EMI Calculator for Home Loan, Personal Loan, and Car Loan</h1>
+      <h1 id="emi-hero-title">EMI Calculator for Home Loan, Personal Loan, and Car Loan</h1>
       <p>
         Plan your monthly loan repayment with a fast EMI calculator built for Indian borrowers. This advanced EMI
         calculator uses the reducing balance method, supports prepayment planning, and simulates rate resets for floating
@@ -537,7 +537,7 @@
     </div>
   </section>
 
-  <section class="schedule card">
+  <section class="schedule card" aria-label="Amortization schedule">
     <div class="schedule-header">
       <div>
         <h2>Amortization schedule</h2>
@@ -554,7 +554,7 @@
     </div>
 
     <div class="table-wrap">
-      <table>
+      <table aria-label="EMI amortization schedule table">
         <thead>
           <tr>
             <th>Month</th>
@@ -587,7 +587,7 @@
     </p>
   </section>
 
-  <nav class="toc card">
+  <nav class="toc card" aria-label="EMI guide table of contents">
     <h2>EMI calculator guide: read before you borrow</h2>
     <p class="card-subtitle">
       Use this detailed guide to understand EMI calculation, loan cost, and strategies to reduce interest. It includes
@@ -608,7 +608,7 @@
     </div>
   </nav>
 
-  <article class="content card">
+  <article class="content card" aria-label="EMI calculator guide">
     <section id="emi-basics">
       <h2>What is EMI and why it matters for every loan in India</h2>
       <p>
@@ -884,7 +884,7 @@
       </div>
     </section>
   </article>
-</div>
+</main>
 
 <style>
   :global(body) {
