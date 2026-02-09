@@ -59,6 +59,7 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
       { name: 'Finance Tools', href: '/finance-tools' },
       { name: 'Tax Tools', href: '/tax-tools' },
       { name: 'GST Tools', href: '/gst-tools' },
+      { name: 'Insurance Tools', href: '/insurance-tools' },
       { name: 'Excel Tools', href: '/exceltool' }
     ]},
     { name: 'Learn', href: '/learn' },
@@ -67,7 +68,8 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
       { name: 'All News', href: '/news' },
       { name: 'Shorts', href: '/news/shorts' }
     ]},
-    { name: 'Government Schemes', href: '/government-schemes' },
+    { name: 'Govt Schemes', href: '/government-schemes' },
+    { name: 'Crypto', href: '/crypto' },
     { name: 'About', href: '/about-us' },
     { name: 'Contact', href: '/contact-us' }
   ];
