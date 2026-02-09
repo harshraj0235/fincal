@@ -1,4 +1,4 @@
-# Regenerate package-lock.json so Cloudflare npm ci succeeds
+# Regenerate package-lock.json so Cloudflare npm install succeeds
 name: Update package-lock.json
 
 on:
@@ -8,7 +8,7 @@ on:
     paths:
       - 'package.json'
   schedule:
-    - cron: '0 0 * * 0'  # Weekly Sunday midnight - keep lock file fresh for Cloudflare
+    - cron: '0 0 * * 0'  # Weekly Sunday midnight
 
 permissions:
   contents: write
@@ -29,16 +29,20 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies (regenerate lock file)
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       - name: Commit and push if lock file changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add package-lock.json
-          if git diff --staged --quiet; then
-            echo "No changes to package-lock.json"
+          if [ -f package-lock.json ]; then
+            git add package-lock.json
+            if git diff --staged --quiet; then
+              echo "No changes to package-lock.json"
+            else
+              git commit -m "chore: regenerate package-lock.json"
+              git push
+            fi
           else
-            git commit -m "chore: regenerate package-lock.json for Cloudflare npm ci"
-            git push
+            echo "No package-lock.json found (npm may not have created it) - skipping commit"
           fi
