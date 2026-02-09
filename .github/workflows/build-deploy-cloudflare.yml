@@ -24,7 +24,12 @@ jobs:
         run: npm run build
 
       - name: Deploy to Cloudflare Pages
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
         run: npx wrangler pages deploy .svelte-kit/cloudflare --project-name=moneycal
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Skip deploy (no API token)
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN == '' }}
+        run: echo "CLOUDFLARE_API_TOKEN not set in repo Secrets - deploy skipped. Add it in Settings → Secrets and variables → Actions."
