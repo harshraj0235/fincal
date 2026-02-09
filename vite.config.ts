@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import sveltePreprocess from 'svelte-preprocess';
 import { resolve } from 'path';
 import viteCompression from 'vite-plugin-compression';
 
@@ -10,6 +11,9 @@ export default defineConfig({
   plugins: [
     svelte({
       compilerOptions: { customElement: true },
+      preprocess: sveltePreprocess({
+        typescript: true,
+      }),
     }),
     react(),
     viteCompression({
