@@ -2,7 +2,7 @@
 /**
  * Generates static params for Next.js output: "export".
  * Reads all-urls-master.txt and outputs slug arrays for generateStaticParams.
- * Run after generate-sitemaps: npm run generate-sitemaps && node scripts/generate-static-params.cjs
+ * Capped to MAX_PARAMS to avoid OOM on Cloudflare (4GB build env).
  */
 const fs = require('fs');
 const path = require('path');
@@ -10,6 +10,8 @@ const path = require('path');
 const BASE_URL = 'https://moneycal.in';
 const MASTER_PATH = path.join(__dirname, '../public/all-urls-master.txt');
 const OUTPUT_PATH = path.join(__dirname, '../src/lib/staticParams.generated.ts');
+// Cap to avoid heap OOM during next build (Cloudflare ~4GB)
+const MAX_PARAMS = 450;
 
 let urls = [];
 if (fs.existsSync(MASTER_PATH)) {
@@ -17,7 +19,6 @@ if (fs.existsSync(MASTER_PATH)) {
   urls = content.split('\n').map((line) => line.trim()).filter((u) => u && u.startsWith(BASE_URL));
 }
 
-// Also ensure core paths even if master is empty
 const corePaths = [
   [],
   ['news'],
@@ -41,12 +42,19 @@ const corePaths = [
 ];
 
 const slugSet = new Set();
-urls.forEach((url) => {
-  const pathname = url.replace(BASE_URL, '').replace(/^\//, '');
-  const slug = pathname ? pathname.split('/').filter(Boolean) : [];
-  slugSet.add(JSON.stringify(slug));
-});
 corePaths.forEach((slug) => slugSet.add(JSON.stringify(slug)));
+// Add from master list (prioritize shorter paths = main sections) until cap
+const byLength = urls
+  .map((url) => {
+    const pathname = url.replace(BASE_URL, '').replace(/^\//, '');
+    return pathname ? pathname.split('/').filter(Boolean) : [];
+  })
+  .filter((slug) => slug.length > 0)
+  .sort((a, b) => a.length - b.length || String(a).localeCompare(String(b)));
+for (const slug of byLength) {
+  if (slugSet.size >= MAX_PARAMS) break;
+  slugSet.add(JSON.stringify(slug));
+}
 
 const slugs = Array.from(slugSet).map((s) => JSON.parse(s));
 
