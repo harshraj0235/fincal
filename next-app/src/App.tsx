@@ -29,6 +29,7 @@ const OfferProposalTemplateBuilder = lazy(() => import('./pages/tools/OfferPropo
 const SimpleFeedbackFormGenerator = lazy(() => import('./pages/tools/SimpleFeedbackFormGenerator'));
 
 // Lazy load all page-level components
+const HomeMinimal = lazy(() => import('./pages/HomeMinimal'));
 const Home = lazy(() => import('./pages/HomeInvestopedia'));
 const LoanCalculator = lazy(() => import('./calculators/LoanCalculator'));
 const HomeOld = lazy(() => import('./pages/HomeNew'));
@@ -896,7 +897,7 @@ function App({ pathname, skipLayout }: AppProps = {}) {
             <ScrollToTop />
             <Suspense fallback={<div className="p-8 text-center">Loading...</div>}>
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<HomeMinimal />} />
                 <Route path="/home-old" element={<HomeOld />} />
                 <Route path="/calculators/cheque-bounce-charges-calculator" element={<ChequeBounceChargesCalculator />} />
                 {/* Direct Calculator Routes */}
