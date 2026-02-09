@@ -123,7 +123,7 @@
   </section>
 
   <!-- Explore by category -->
-  <section class="explore">
+  <section class="explore" id="explore">
     <h2>Explore by category</h2>
     <div class="tool-grid">
       {#each TOOL_HUB_LINKS as tool}
@@ -145,7 +145,7 @@
   </section>
 
   {#if activeTab === 'calculators'}
-    <section class="section">
+    <section class="section" id="calculators-section">
       <div class="section-head">
         <h2>Popular calculators</h2>
         <a href="/calculators">View all →</a>
@@ -199,7 +199,7 @@
   {/if}
 
   <!-- Why MoneyCal -->
-  <section class="why">
+  <section class="why" id="why">
     <h2>Why users & Google love MoneyCal</h2>
     <div class="why-grid">
       {#each whyCards as card}
@@ -223,7 +223,7 @@
     overflow: hidden;
     background: linear-gradient(135deg, #0f172a, #1e3a8a, #312e81);
     color: white;
-    padding: 5rem 1rem 3rem;
+    padding: clamp(2.5rem, 8vw, 5rem) 1rem clamp(2rem, 5vw, 3rem);
     border-bottom: 1px solid rgba(226, 232, 240, 0.8);
   }
   .hero-pattern {
@@ -290,7 +290,7 @@
 
   .quick-nav {
     position: sticky;
-    top: 4rem;
+    top: 3.5rem;
     z-index: 30;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(12px);
@@ -311,6 +311,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.625rem 1.25rem;
+    min-height: 44px;
+    box-sizing: border-box;
     border-radius: 0.75rem;
     font-size: 0.875rem;
     font-weight: 600;
@@ -323,7 +325,11 @@
     opacity: 0.95;
   }
   .quick-link {
-    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1rem;
+    min-height: 44px;
+    box-sizing: border-box;
     border-radius: 0.75rem;
     font-size: 0.875rem;
     font-weight: 500;
@@ -478,7 +484,9 @@
     overflow-x: auto;
   }
   .tab {
-    padding: 0.625rem 1.5rem;
+    padding: 0.75rem 1.5rem;
+    min-height: 44px;
+    box-sizing: border-box;
     border-radius: 0.75rem;
     font-size: 0.875rem;
     font-weight: 600;
@@ -551,7 +559,9 @@
     margin-bottom: 1.5rem;
   }
   .pill {
-    padding: 0.5rem 1rem;
+    padding: 0.625rem 1rem;
+    min-height: 44px;
+    box-sizing: border-box;
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 500;
