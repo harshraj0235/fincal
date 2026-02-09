@@ -9,7 +9,7 @@ const isCloudflare = process.env.CF_PAGES === '1' || process.env.CF_PAGES === 't
 
 if (isCloudflare) {
   console.log('🔷 Cloudflare Pages detected - running Next.js static export');
-  execSync('npm install --legacy-peer-deps && npm run generate-sitemaps && node scripts/generate-static-params.cjs && next build', {
+  execSync('npm install --legacy-peer-deps && npm run generate-sitemaps && node scripts/generate-static-params.cjs && npx next build', {
     stdio: 'inherit',
     shell: true,
   });

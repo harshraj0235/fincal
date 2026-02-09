@@ -7,5 +7,5 @@ rm -rf node_modules
 npm install --legacy-peer-deps
 npm run generate-sitemaps
 node scripts/generate-static-params.cjs
-next build
+npx next build
 echo "=== Build complete - output in out/ ==="

@@ -27,7 +27,7 @@ jobs:
         run: node scripts/generate-static-params.cjs
 
       - name: Build (static export for Cloudflare Pages)
-        run: next build
+        run: npx next build
         env:
           NODE_OPTIONS: --max-old-space-size=6144
 
