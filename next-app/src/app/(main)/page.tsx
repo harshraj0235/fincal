@@ -24,7 +24,12 @@ export const metadata: Metadata = {
   alternates: { canonical: `${BASE}/` },
 };
 
-/** Home: full content from HomeInvestopedia (hero, search, categories, calculators, tools, resources). */
+/**
+ * Home page: renders full HomeInvestopedia content.
+ * Includes hero, global search, Money Shorts, quick links, About, Explore by category,
+ * Calculators | Tools | Resources tabs, popular calculators, all calculator categories,
+ * tool hubs, Discover more, and Why MoneyCal. All content from HomeInvestopedia.tsx.
+ */
 export default function HomePage() {
   return <AppShell pathname="/" />;
 }
