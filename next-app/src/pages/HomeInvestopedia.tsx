@@ -1,3 +1,9 @@
+/**
+ * Home page component – used as the Next.js homepage (route /).
+ * Rendered via App.tsx <Route path="/" element={<Home />} /> when (main)/page.tsx loads AppShell pathname="/".
+ * Full content: hero, search, Money Shorts, quick links, About, Explore by category,
+ * Calculators | Tools | Resources tabs, popular calculators, all categories, tool hubs, Discover more, Why MoneyCal.
+ */
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
