@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import AppShell from '../../AppShell';
 
-/** force-dynamic – AppShell/App uses useSearchParams which needs Suspense during prerender */
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
   title: 'Contact Us | MoneyCal India',
   description: 'Get in touch with MoneyCal India for feedback, calculator suggestions, or partnership inquiries.',

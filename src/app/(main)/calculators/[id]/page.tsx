@@ -11,9 +11,6 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = true;
-/** Calculators: force-dynamic (SSR) – money pages, high CPC */
-export const dynamic = 'force-dynamic';
-
 type Props = { params: Promise<{ id: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

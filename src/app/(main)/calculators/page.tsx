@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import AppShell from '@/app/AppShell';
 
-/** Calculators hub: force-dynamic (SSR) */
-export const dynamic = 'force-dynamic';
-
 const BASE = 'https://moneycal.in';
 
 export const metadata: Metadata = {

@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import AppShell from '@/app/AppShell';
 import { getServerContentForPath } from '@/lib/serverContent';
-
-/** Force SSR for every request so crawlers get full HTML content (calculators, tools, learn, news). */
-export const dynamic = 'force-dynamic';
+import { ALL_SLUG_PARAMS } from '@/lib/staticParams.generated';
 
 const BASE = 'https://moneycal.in';
 const DEFAULT_IMAGE = `${BASE}/android-chrome-512x512.png`;
@@ -12,12 +10,9 @@ interface PageProps {
   params: Promise<{ slug?: string[] }>;
 }
 
-/** Allow paths not in generateStaticParams to be generated on-demand (Google can crawl them). */
-export const dynamicParams = true;
-
-/** Return empty to avoid OOM on Cloudflare (4GB limit). All pages generated on-demand via dynamicParams. */
+/** Static export: all paths pre-generated at build time. */
 export async function generateStaticParams() {
-  return [];
+  return ALL_SLUG_PARAMS;
 }
 
 /** Title/description for common path segments (link previews). */

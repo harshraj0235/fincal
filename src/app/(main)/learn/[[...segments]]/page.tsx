@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import AppShell from '@/app/AppShell';
 import { getServerContentForPath } from '@/lib/serverContent';
 
-/** Learn: force-dynamic – React Router context null during prerender */
-export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
 
 const BASE = 'https://moneycal.in';

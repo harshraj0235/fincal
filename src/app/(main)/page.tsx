@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import AppShell from '../AppShell';
 
-/** force-dynamic – React Router context null during prerender */
-export const dynamic = 'force-dynamic';
-
 const BASE = 'https://moneycal.in';
 const OG_IMAGE = `${BASE}/android-chrome-512x512.png`;
 export const metadata: Metadata = {

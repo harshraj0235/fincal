@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import AppShell from '../../AppShell';
 
-/** force-dynamic – AppShell/App uses useSearchParams */
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
   title: 'Blog | MoneyCal India – Personal Finance, EMI, Tax & Investment Tips',
   description: 'Expert articles on personal finance, EMI calculators, income tax, SIP, loans, and investments. Practical money tips for India.',

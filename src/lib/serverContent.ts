@@ -1,12 +1,10 @@
 /**
  * Server-side content resolver for SEO.
- * Returns pre-loaded content for key paths so the initial HTML includes full content
- * without waiting for client-side loading.
+ * Returns pre-loaded metadata for key paths. Article body content is loaded
+ * client-side by NewsArticlePage to keep the server bundle under Cloudflare's 25 MiB limit.
  */
 
 import { contentRegistry } from '../cms-content/contentRegistry';
-import { getArticleContent } from '../cms-content/articleLoader';
-import { getPlainArticleContent } from '../cms-content/plainArticleLoader';
 import type { NewsGuideSection } from '../components/NewsGuideTemplate';
 import { getLearnLesson } from './learnRegistry';
 import { getToolMeta } from './toolsRegistry';
@@ -59,12 +57,10 @@ export function getServerContentForPath(pathname: string): ServerContent | null 
   const [first, second, third] = segments;
 
   // News article: /news/:categorySlug/:articleId
+  // Article body loaded client-side to avoid bundling 100+ articles into server handler
   if (first === 'news' && second && third) {
     const articleMeta = contentRegistry.find((a) => a.slug === third);
     if (!articleMeta) return null;
-
-    const cmsContent = getArticleContent(articleMeta.slug);
-    const plainContent = getPlainArticleContent(articleMeta.slug);
 
     return {
       type: 'news-article',
@@ -78,8 +74,8 @@ export function getServerContentForPath(pathname: string): ServerContent | null 
         image: articleMeta.image,
         subCategory: articleMeta.subCategory,
       },
-      cmsContent: cmsContent ?? null,
-      plainContent: plainContent && plainContent.content ? { content: plainContent.content, title: plainContent.title } : null,
+      cmsContent: null,
+      plainContent: null,
     };
   }
 

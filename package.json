@@ -6,17 +6,17 @@
   "scripts": {
     "dev": "vite",
     "dev:next": "next dev",
-    "build": "node scripts/build-next.cjs",
+    "build": "npm run generate-sitemaps && node scripts/generate-static-params.cjs && next build",
     "build:vite": "npm run generate-sitemaps && tsc && vite build",
     "build:next": "next build",
     "start:next": "next start",
-    "preview:cf": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy:cf": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "build:cf:ci": "rm -rf node_modules && npm install --legacy-peer-deps && node scripts/add-getserversideprops-to-pages.cjs && npm run generate-sitemaps && NODE_OPTIONS=--max-old-space-size=4096 npx opennextjs-cloudflare build",
-    "upload:cf": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "preview:cf": "npm run build && npx wrangler pages dev out",
+    "deploy:cf": "npm run build && npx wrangler pages deploy out --project-name=moneycal",
+    "build:cf:ci": "npm run generate-sitemaps && node scripts/generate-static-params.cjs && next build",
+    "upload:cf": "npm run build && npx wrangler pages deploy out --project-name=moneycal",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "build:deploy": "npm install && npm run build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext ts,tsx --report-unused-directives --max-warnings 0",
     "preview": "vite preview",
     "generate-blogs": "node automated-blog-generator.cjs",
     "generate-crypto": "node crypto-blog-generator.cjs",
@@ -78,11 +78,9 @@
     "terser": "^5.29.2",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
-"vite": "^5.4.19",
+    "vite": "^5.4.19",
     "vite-plugin-compression": "^0.5.1",
     "eslint-config-next": "^15.1.0",
-    "@opennextjs/cloudflare": "^1.16.3",
     "wrangler": "^3.99.0"
   }
 }
-

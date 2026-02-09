@@ -8,47 +8,20 @@ const require = createRequire(import.meta.url);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Use existing src directory
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-  // Required for OpenNext/Cloudflare: standalone output
-  output: 'standalone',
-  // SSR enabled for all pages: real HTML in first response (Google, AdSense, E-E-A-T)
-  // SSG + ISR: generate static pages, revalidate for incremental updates
+  // Static export for Cloudflare Pages (no handler.mjs / 25 MiB limit)
+  output: 'export',
   images: {
-    unoptimized: true, // Cloudflare: no Next Image optimization; use unoptimized or add IMAGES binding later
+    unoptimized: true,
+  },
+  async redirects() {
+    return [{ source: '/app', destination: '/', permanent: false }];
   },
   // Reduce memory during build (Cloudflare Pages has limited RAM)
   productionBrowserSourceMaps: false,
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
   transpilePackages: [],
-  // Keep heavy client-only packages out of server bundle (Cloudflare 25 MiB limit)
-  serverExternalPackages: ['xlsx', 'firebase', 'chart.js', 'd3', 'html2canvas', 'jspdf'],
-  // Exclude heavy client-only deps from server bundle (moved from experimental in Next 15)
-  outputFileTracingExcludes: {
-    '*': [
-      'node_modules/@ampproject/**',
-      'node_modules/@swc/**',
-      'node_modules/eslint/**',
-      'node_modules/typescript/**',
-      'node_modules/@types/**',
-      'node_modules/xlsx/**',
-      'node_modules/firebase/**',
-      'node_modules/@firebase/**',
-      'node_modules/chart.js/**',
-      'node_modules/react-chartjs-2/**',
-      'node_modules/d3/**',
-      'node_modules/d3-*/**',
-      'node_modules/recharts/**',
-      'node_modules/html2canvas/**',
-      'node_modules/jspdf/**',
-      'node_modules/canvas/**',
-      'node_modules/framer-motion/**',
-      'node_modules/react-icons/**',
-      'node_modules/axios/**',
-      'node_modules/xml2js/**',
-    ],
-  },
   experimental: {
     optimizePackageImports: ['react', 'react-dom', 'lucide-react'],
     webpackMemoryOptimizations: true, // Reduce peak memory (Cloudflare Pages OOM)
