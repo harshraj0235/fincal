@@ -26,7 +26,7 @@ import OfferProposalTemplateBuilder from './pages/tools/OfferProposalTemplateBui
 import SimpleFeedbackFormGenerator from './pages/tools/SimpleFeedbackFormGenerator';
 
 // Lazy load all page-level components
-const Home = lazy(() => import('./pages/HomeSvelteWrapper'));
+const Home = lazy(() => import('./pages/Home'));
 const LoanCalculator = lazy(() => import('./calculators/LoanCalculator'));
 const HomeOld = lazy(() => import('./pages/HomeNew'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
