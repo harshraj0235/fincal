@@ -259,6 +259,131 @@ body {
   animation: skeleton-loading 1.5s infinite;
 }
 
+/* 3D hero animation */
+.hero-3d-stage {
+  perspective: 1400px;
+  position: relative;
+}
+
+.hero-3d-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: hero-stack 14s ease-in-out infinite;
+  z-index: 1;
+}
+
+.hero-3d-card {
+  --card-x: 0px;
+  --card-y: 0px;
+  --card-z: 0px;
+  --card-rx: 0deg;
+  --card-ry: 0deg;
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 24px 50px rgba(15, 23, 42, 0.18),
+    0 6px 18px rgba(15, 23, 42, 0.08);
+  transform-style: preserve-3d;
+  animation: hero-card-float 9s ease-in-out infinite;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.hero-3d-card--front {
+  --card-z: 60px;
+  --card-rx: 4deg;
+  --card-ry: -6deg;
+}
+
+.hero-3d-card--mid {
+  --card-x: 18px;
+  --card-y: 16px;
+  --card-z: 20px;
+  --card-rx: 2deg;
+  --card-ry: 4deg;
+  animation-delay: -2s;
+  opacity: 0.96;
+}
+
+.hero-3d-card--back {
+  --card-x: 36px;
+  --card-y: 32px;
+  --card-z: -15px;
+  --card-rx: -2deg;
+  --card-ry: 8deg;
+  animation-delay: -4s;
+  opacity: 0.92;
+}
+
+.hero-3d-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: hero-orb 12s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero-3d-glow--one {
+  width: 220px;
+  height: 220px;
+  background: rgba(251, 191, 36, 0.35);
+  top: -40px;
+  right: -20px;
+}
+
+.hero-3d-glow--two {
+  width: 260px;
+  height: 260px;
+  background: rgba(34, 197, 94, 0.28);
+  bottom: -40px;
+  left: -30px;
+  animation-delay: -3s;
+}
+
+.hero-3d-glow--three {
+  width: 180px;
+  height: 180px;
+  background: rgba(59, 130, 246, 0.25);
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -6s;
+}
+
+@keyframes hero-stack {
+  0%, 100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(4deg) rotateY(-6deg);
+  }
+}
+
+@keyframes hero-card-float {
+  0%, 100% {
+    transform: translate3d(var(--card-x), var(--card-y), var(--card-z))
+      rotateX(var(--card-rx)) rotateY(var(--card-ry));
+  }
+  50% {
+    transform: translate3d(calc(var(--card-x) - 6px), calc(var(--card-y) - 8px), var(--card-z))
+      rotateX(calc(var(--card-rx) + 1deg)) rotateY(calc(var(--card-ry) - 1deg));
+  }
+}
+
+@keyframes hero-orb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10px, -12px) scale(1.05);
+  }
+}
+
 /* Performance optimizations */
 img {
   max-width: 100%;

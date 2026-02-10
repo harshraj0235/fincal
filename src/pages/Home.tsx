@@ -333,34 +333,80 @@ export const Home: React.FC = () => {
               </div>
             </div>
               
-              {/* Interactive Calculator Preview */}
+              {/* 3D Finance Stack Preview */}
             <div className="hidden lg:block">
-              <div className="relative">
-                  <div className="absolute -top-8 -left-8 w-32 h-32 bg-yellow-400/20 rounded-full animate-pulse"></div>
-                  <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-orange-400/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                  <div className="bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div className="transform -rotate-2">
-                      <div className="flex items-center justify-between mb-6">
-                        <h3 className="text-xl font-bold text-gray-900">EMI Calculator</h3>
-                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="relative hero-3d-stage h-[420px] w-full max-w-md mx-auto">
+                <div className="hero-3d-glow hero-3d-glow--one"></div>
+                <div className="hero-3d-glow hero-3d-glow--two"></div>
+                <div className="hero-3d-glow hero-3d-glow--three"></div>
+                <div className="hero-3d-stack">
+                  <div className="hero-3d-card hero-3d-card--front">
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-xl font-bold text-gray-900">EMI Calculator India</h3>
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    </div>
+                    <div className="space-y-4">
+                      <div>
+                        <label className="text-sm font-medium text-gray-600">Loan Amount</label>
+                        <div className="text-2xl font-bold text-gray-900">₹25,00,000</div>
                       </div>
-                      <div className="space-y-4">
-                        <div>
-                          <label className="text-sm font-medium text-gray-600">Loan Amount</label>
-                          <div className="text-2xl font-bold text-gray-900">₹25,00,000</div>
-                        </div>
-                        <div>
-                          <label className="text-sm font-medium text-gray-600">Interest Rate</label>
-                          <div className="text-2xl font-bold text-gray-900">8.5%</div>
-          </div>
-                        <div>
-                          <label className="text-sm font-medium text-gray-600">Loan Tenure</label>
-                          <div className="text-2xl font-bold text-gray-900">20 Years</div>
+                      <div>
+                        <label className="text-sm font-medium text-gray-600">Interest Rate</label>
+                        <div className="text-2xl font-bold text-gray-900">8.5%</div>
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-gray-600">Loan Tenure</label>
+                        <div className="text-2xl font-bold text-gray-900">20 Years</div>
+                      </div>
+                      <div className="pt-4 border-t border-gray-200">
+                        <label className="text-sm font-medium text-gray-600">Monthly EMI</label>
+                        <div className="text-3xl font-bold text-primary-600">₹21,761</div>
+                      </div>
                     </div>
-                        <div className="pt-4 border-t border-gray-200">
-                          <label className="text-sm font-medium text-gray-600">Monthly EMI</label>
-                          <div className="text-3xl font-bold text-primary-600">₹21,761</div>
+                  </div>
+
+                  <div className="hero-3d-card hero-3d-card--mid">
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-xl font-bold text-gray-900">SIP Calculator</h3>
+                      <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">Wealth Plan</span>
                     </div>
+                    <div className="space-y-4">
+                      <div>
+                        <label className="text-sm font-medium text-gray-600">Monthly SIP</label>
+                        <div className="text-2xl font-bold text-gray-900">₹5,000</div>
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-gray-600">Expected Return</label>
+                        <div className="text-2xl font-bold text-gray-900">12% p.a.</div>
+                      </div>
+                      <div className="pt-4 border-t border-gray-200">
+                        <label className="text-sm font-medium text-gray-600">Future Value</label>
+                        <div className="text-3xl font-bold text-emerald-600">₹23.3L</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="hero-3d-card hero-3d-card--back">
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-xl font-bold text-gray-900">Income Tax Planner</h3>
+                      <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">FY 2025-26</span>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between text-sm text-gray-600">
+                        <span>Gross Income</span>
+                        <span className="font-semibold text-gray-900">₹12,00,000</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm text-gray-600">
+                        <span>Deductions</span>
+                        <span className="font-semibold text-gray-900">₹1,50,000</span>
+                      </div>
+                      <div className="flex items-center justify-between text-sm text-gray-600">
+                        <span>Tax Payable</span>
+                        <span className="font-semibold text-blue-600">₹78,000</span>
+                      </div>
+                      <div className="pt-3 border-t border-gray-200 text-xs text-gray-500">
+                        Compare old vs new tax regime instantly.
+                      </div>
                     </div>
                   </div>
                 </div>
